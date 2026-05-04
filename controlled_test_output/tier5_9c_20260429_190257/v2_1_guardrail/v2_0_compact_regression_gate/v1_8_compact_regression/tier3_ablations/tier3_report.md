@@ -1,0 +1,104 @@
+# Tier 3 Controlled Architecture Ablation Findings
+
+- Generated: `2026-04-29T23:03:15+00:00`
+- Backend: `mock`
+- Overall status: **PASS**
+- Seeds: `42, 43, 44`
+- Fixed-pattern steps: `180`
+- Ecology steps: `220`
+- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/tier3_ablations`
+
+Tier 3 asks whether named architecture mechanisms are actually doing work. Each result compares an intact organism against a targeted ablation under the same controlled task.
+
+## Artifact Index
+
+- JSON manifest: `tier3_results.json`
+- Summary CSV: `tier3_summary.csv`
+
+## Summary
+
+| Test | Status | Key result | Interpretation |
+| --- | --- | --- | --- |
+| `no_dopamine_ablation` | **PASS** | intact_tail=1, no_da_tail=0, delta=1 | Dopamine-gated learning matters. |
+| `no_plasticity_ablation` | **PASS** | intact_tail=1, frozen_tail=0, delta=1 | Plasticity is required, not just inference. |
+| `no_trophic_selection_ablation` | **PASS** | births=33, all_acc_delta=0.0787879, corr_delta=0.278061, alive_delta=11 | Ecology improves adaptation over the switch stressor. |
+
+## no_dopamine_ablation
+
+Status: **PASS**
+
+Criteria:
+
+| Criterion | Value | Rule | Pass |
+| --- | ---: | --- | --- |
+| intact learns fixed pattern | 1 | >= 0.75 | yes |
+| no-dopamine fails fixed pattern | 0 | <= 0.55 | yes |
+| dopamine ablation performance drop | 1 | >= 0.2 | yes |
+| ablated dopamine is zero | 0 | <= 1e-09 | yes |
+| ablated readout remains frozen | 0 | <= 0.01 | yes |
+
+Case aggregates:
+
+- `intact`: tail_acc_mean=1, max_da_mean=0.999998, births_sum=0, final_alive_mean=1, final_weight_mean=-15.9487
+- `no_dopamine`: tail_acc_mean=0, max_da_mean=0, births_sum=0, final_alive_mean=1, final_weight_mean=0.25
+
+Artifacts:
+
+- `comparison_plot_png`: `no_dopamine_ablation_comparison.png`
+
+![no_dopamine_ablation comparison](no_dopamine_ablation_comparison.png)
+
+
+
+## no_plasticity_ablation
+
+Status: **PASS**
+
+Criteria:
+
+| Criterion | Value | Rule | Pass |
+| --- | ---: | --- | --- |
+| intact learns fixed pattern | 1 | >= 0.75 | yes |
+| no-plasticity fails fixed pattern | 0 | <= 0.55 | yes |
+| plasticity ablation performance drop | 1 | >= 0.2 | yes |
+| dopamine still present under plasticity ablation | 0.86291 | >= 0.5 | yes |
+| ablated readout remains frozen | 0 | <= 0.01 | yes |
+
+Case aggregates:
+
+- `intact`: tail_acc_mean=1, max_da_mean=0.999998, births_sum=0, final_alive_mean=1, final_weight_mean=-15.9487
+- `no_plasticity`: tail_acc_mean=0, max_da_mean=0.86291, births_sum=0, final_alive_mean=1, final_weight_mean=0.25
+
+Artifacts:
+
+- `comparison_plot_png`: `no_plasticity_ablation_comparison.png`
+
+![no_plasticity_ablation comparison](no_plasticity_ablation_comparison.png)
+
+
+
+## no_trophic_selection_ablation
+
+Status: **PASS**
+
+Criteria:
+
+| Criterion | Value | Rule | Pass |
+| --- | ---: | --- | --- |
+| intact trophic selection produces births | 33 | >= 1 | yes |
+| ablated selection has no births | 0 | == 0 | yes |
+| ablated selection has no deaths | 0 | == 0 | yes |
+| trophic selection expands population | 11 | >= 1 | yes |
+| trophic selection improves overall accuracy | 0.0787879 | >= 0.05 | yes |
+| trophic selection improves prediction correlation | 0.278061 | >= 0.1 | yes |
+
+Case aggregates:
+
+- `intact`: tail_acc_mean=1, max_da_mean=0.999978, births_sum=33, final_alive_mean=12, final_weight_mean=-6.40844
+- `no_trophic_selection`: tail_acc_mean=1, max_da_mean=0.999997, births_sum=0, final_alive_mean=1, final_weight_mean=-1.03709
+
+Artifacts:
+
+- `comparison_plot_png`: `no_trophic_selection_ablation_comparison.png`
+
+![no_trophic_selection_ablation comparison](no_trophic_selection_ablation_comparison.png)

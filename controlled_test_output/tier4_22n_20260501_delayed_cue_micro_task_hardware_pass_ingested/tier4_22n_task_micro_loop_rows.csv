@@ -1,0 +1,13 @@
+step,feature,target,target_sign,pending_gap_depth,expected_prediction_raw,observed_prediction_raw,prediction_raw_delta,expected_prediction_sign,observed_prediction_sign,sign_correct,expected_sign_correct,schedule_success,due_timestep,state_after_schedule_success,active_pending_after_schedule,mature_order,matured_after_schedule_step,mature_success,matured_count,expected_readout_weight_raw,observed_readout_weight_raw,state_readout_weight_raw,readout_weight_raw_delta,expected_readout_bias_raw,observed_readout_bias_raw,state_readout_bias_raw,readout_bias_raw_delta,state_after_mature_success,active_pending_after_mature,pending_created_after_mature,pending_matured_after_mature,reward_events_after_mature,decisions_after_mature
+1,1.0,1.0,1,2,0,0,0,1,1,True,True,True,1253,True,1,1,3,True,1,4096,4096,4096,0,4096,4096,4096,0,True,2,3,1,1,3
+2,-1.0,-1.0,-1,2,0,0,0,1,1,False,False,True,1303,True,2,2,4,True,1,8192,8192,8192,0,0,0,0,0,True,2,4,2,2,4
+3,1.0,1.0,1,2,0,0,0,1,1,True,True,True,1354,True,3,3,5,True,1,12288,12288,12288,0,4096,4096,4096,0,True,2,5,3,3,5
+4,-1.0,-1.0,-1,2,0,0,0,1,1,False,False,True,1456,True,3,4,6,True,1,16384,16384,16384,0,0,0,0,0,True,2,6,4,4,6
+5,1.0,1.0,1,2,8192,8192,0,1,1,True,True,True,1557,True,3,5,7,True,1,19456,19456,19456,0,3072,3072,3072,0,True,2,7,5,5,7
+6,-1.0,-1.0,-1,2,-8192,-8192,0,-1,-1,True,True,True,1659,True,3,6,8,True,1,22528,22528,22528,0,0,0,0,0,True,2,8,6,6,8
+7,1.0,1.0,1,2,16384,16384,0,1,1,True,True,True,1761,True,3,7,9,True,1,24576,24576,24576,0,2048,2048,2048,0,True,2,9,7,7,9
+8,-1.0,-1.0,-1,2,-16384,-16384,0,-1,-1,True,True,True,1862,True,3,8,10,True,1,26624,26624,26624,0,0,0,0,0,True,2,10,8,8,10
+9,1.0,1.0,1,2,22528,22528,0,1,1,True,True,True,1964,True,3,9,11,True,1,27904,27904,27904,0,1280,1280,1280,0,True,2,11,9,9,11
+10,-1.0,-1.0,-1,2,-22528,-22528,0,-1,-1,True,True,True,2065,True,3,10,12,True,1,29184,29184,29184,0,0,0,0,0,True,2,12,10,10,12
+11,1.0,1.0,1,2,26624,26624,0,1,1,True,True,True,2167,True,3,11,drain,True,1,29952,29952,29952,0,768,768,768,0,True,1,12,11,11,12
+12,-1.0,-1.0,-1,2,-26624,-26624,0,-1,-1,True,True,True,2268,True,3,12,drain,True,1,30720,30720,30720,0,0,0,0,0,True,0,12,12,12,12

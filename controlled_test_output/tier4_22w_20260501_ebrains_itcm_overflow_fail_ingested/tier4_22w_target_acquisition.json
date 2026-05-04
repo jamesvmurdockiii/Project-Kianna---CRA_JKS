@@ -1,0 +1,7 @@
+{
+  "cleanup": {
+    "status": "not_attempted"
+  },
+  "reason": "blocked_before_target_acquisition",
+  "status": "not_attempted"
+}

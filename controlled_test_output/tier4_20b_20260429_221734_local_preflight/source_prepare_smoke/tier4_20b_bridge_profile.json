@@ -1,0 +1,72 @@
+{
+  "generated_at_utc": "2026-04-30T02:17:35+00:00",
+  "profile": {
+    "contract_declared_not_native_yet": [
+      "keyed context memory",
+      "replay / consolidation",
+      "visible predictive context / predictive binding",
+      "composition and module routing",
+      "self-evaluation / reliability monitoring"
+    ],
+    "explicitly_excluded": [
+      "macro eligibility residual trace"
+    ],
+    "included_in_child_runner": [
+      "PendingHorizon delayed credit / delayed_lr_0_20"
+    ],
+    "macro_eligibility_enabled": false,
+    "profile_name": "v2_1_chunked_bridge_probe",
+    "rows": 7
+  },
+  "rows": [
+    {
+      "boundary": "host-side delayed credit at chunk boundaries; not native on-chip eligibility",
+      "mechanism": "PendingHorizon delayed credit / delayed_lr_0_20",
+      "probe_role": "exercised_by_child_hardware_runner",
+      "status": "included",
+      "tier_source": "Tier 5.4, Tier 4.16a/b"
+    },
+    {
+      "boundary": "requires later adapter/hybrid probe before claiming hardware memory",
+      "mechanism": "keyed context memory",
+      "probe_role": "bridge_contract_declared",
+      "status": "not_native_in_child_runner",
+      "tier_source": "Tier 5.10g"
+    },
+    {
+      "boundary": "requires explicit replay epoch design before hardware replay claims",
+      "mechanism": "replay / consolidation",
+      "probe_role": "bridge_contract_declared",
+      "status": "not_native_in_child_runner",
+      "tier_source": "Tier 5.11d"
+    },
+    {
+      "boundary": "requires metadata scheduler/controls before hardware predictive-binding claims",
+      "mechanism": "visible predictive context / predictive binding",
+      "probe_role": "bridge_contract_declared",
+      "status": "not_native_in_child_runner",
+      "tier_source": "Tier 5.12d, Tier 5.17e"
+    },
+    {
+      "boundary": "requires router/module adapter before hardware routing claims",
+      "mechanism": "composition and module routing",
+      "probe_role": "bridge_contract_declared",
+      "status": "not_native_in_child_runner",
+      "tier_source": "Tier 5.13c, Tier 5.14"
+    },
+    {
+      "boundary": "requires pre-feedback monitor adapter before hardware self-evaluation claims",
+      "mechanism": "self-evaluation / reliability monitoring",
+      "probe_role": "bridge_contract_declared",
+      "status": "not_native_in_child_runner",
+      "tier_source": "Tier 5.18c"
+    },
+    {
+      "boundary": "failed 5.9c; do not port or include in hardware/custom-C work",
+      "mechanism": "macro eligibility residual trace",
+      "probe_role": "explicitly_excluded",
+      "status": "parked",
+      "tier_source": "Tier 5.9a/b/c"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "candidate_tool_roots": [
+    "/home/jovyan/spinnaker/spinnaker_tools",
+    "/opt/spinnaker_tools",
+    "/usr/local/spinnaker_tools",
+    "/home/jovyan/spinnaker_tools"
+  ],
+  "cwd": "/tmp/job7804713621144302745.tmp",
+  "env": {
+    "CPATH": "",
+    "C_INCLUDE_PATH": "",
+    "PATH": "/home/jovyan/spinnaker/bin:/home/jovyan/spinnaker/spinnaker_tools/tools/:/root/.nvm/versions/node/v16.13.0/bin/:/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+    "SPINNAKER_TOOLS": "",
+    "SPINNTOOLS": "",
+    "SPINN_DIRS": "/home/jovyan/spinnaker/spinnaker_tools",
+    "SPINN_PATH": ""
+  },
+  "include_dirs": [
+    "/home/jovyan/spinnaker/spinnaker_tools/include"
+  ],
+  "modules": [
+    {
+      "available": true,
+      "name": "spinnman",
+      "path": "/home/jovyan/spinnaker/SpiNNMan/spinnman/__init__.py"
+    },
+    {
+      "available": true,
+      "name": "spinn_machine",
+      "path": "/home/jovyan/spinnaker/SpiNNMachine/spinn_machine/__init__.py"
+    },
+    {
+      "available": true,
+      "name": "spinn_utilities",
+      "path": "/home/jovyan/spinnaker/SpiNNUtils/spinn_utilities/__init__.py"
+    }
+  ],
+  "official_reference_sources": {
+    "expected_current_mc_event_symbols": [
+      "MC_PACKET_RECEIVED",
+      "MCPL_PACKET_RECEIVED"
+    ],
+    "spin1_api_h": "https://github.com/SpiNNakerManchester/spinnaker_tools/blob/master/include/spin1_api.h",
+    "spinnaker_h": "https://github.com/SpiNNakerManchester/spinnaker_tools/blob/master/include/spinnaker.h"
+  },
+  "python": "/home/jovyan/spinnaker/bin/python",
+  "python_version": "3.13.9 | packaged by conda-forge | (main, Oct 16 2025, 10:31:39) [GCC 14.3.0]",
+  "root": "/tmp/job7804713621144302745.tmp/cra_422k",
+  "runner_revision": "tier4_22k_spin1api_event_discovery_20260430_0001",
+  "tools": {
+    "arm-none-eabi-cpp": "/usr/bin/arm-none-eabi-cpp",
+    "arm-none-eabi-gcc": "/usr/bin/arm-none-eabi-gcc",
+    "cc": "/usr/bin/cc",
+    "gcc": "/usr/bin/gcc",
+    "make": "/usr/bin/make",
+    "ybug": "/home/jovyan/spinnaker/spinnaker_tools/tools/ybug"
+  }
+}

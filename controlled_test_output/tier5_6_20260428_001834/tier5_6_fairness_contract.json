@@ -1,0 +1,294 @@
+{
+  "audit_rule": "CRA setting is locked; external baselines receive the documented tuning budget below.",
+  "baseline_version_under_audit": "CRA evidence baseline v0.9 / locked CRA v0.8 delayed_lr_0_20 model setting",
+  "candidate_budget": [
+    {
+      "base_model": "random_sign",
+      "candidate_id": "random_sign__default",
+      "description": "deterministic/control baseline with no tunable learning budget",
+      "model_family": "chance",
+      "overrides_json": "{}"
+    },
+    {
+      "base_model": "sign_persistence",
+      "candidate_id": "sign_persistence__default",
+      "description": "deterministic/control baseline with no tunable learning budget",
+      "model_family": "rule",
+      "overrides_json": "{}"
+    },
+    {
+      "base_model": "online_perceptron",
+      "candidate_id": "online_perceptron__perceptron_lr_0p02_perceptron_margin_0",
+      "description": "predeclared Tier 5.6 tuned profile",
+      "model_family": "linear",
+      "overrides_json": "{\"perceptron_lr\": 0.02, \"perceptron_margin\": 0.0}"
+    },
+    {
+      "base_model": "online_perceptron",
+      "candidate_id": "online_perceptron__perceptron_lr_0p05_perceptron_margin_0",
+      "description": "predeclared Tier 5.6 tuned profile",
+      "model_family": "linear",
+      "overrides_json": "{\"perceptron_lr\": 0.05, \"perceptron_margin\": 0.0}"
+    },
+    {
+      "base_model": "online_perceptron",
+      "candidate_id": "online_perceptron__perceptron_lr_0p08_perceptron_margin_0p05",
+      "description": "predeclared Tier 5.6 tuned profile",
+      "model_family": "linear",
+      "overrides_json": "{\"perceptron_lr\": 0.08, \"perceptron_margin\": 0.05}"
+    },
+    {
+      "base_model": "online_perceptron",
+      "candidate_id": "online_perceptron__perceptron_lr_0p15_perceptron_margin_0p05",
+      "description": "predeclared Tier 5.6 tuned profile",
+      "model_family": "linear",
+      "overrides_json": "{\"perceptron_lr\": 0.15, \"perceptron_margin\": 0.05}"
+    },
+    {
+      "base_model": "online_perceptron",
+      "candidate_id": "online_perceptron__perceptron_lr_0p25_perceptron_margin_0p1",
+      "description": "predeclared Tier 5.6 tuned profile",
+      "model_family": "linear",
+      "overrides_json": "{\"perceptron_lr\": 0.25, \"perceptron_margin\": 0.1}"
+    },
+    {
+      "base_model": "online_logistic_regression",
+      "candidate_id": "online_logistic_regression__logistic_l2_0_logistic_lr_0p02",
+      "description": "predeclared Tier 5.6 tuned profile",
+      "model_family": "linear",
+      "overrides_json": "{\"logistic_l2\": 0.0, \"logistic_lr\": 0.02}"
+    },
+    {
+      "base_model": "online_logistic_regression",
+      "candidate_id": "online_logistic_regression__logistic_l2_0_logistic_lr_0p05",
+      "description": "predeclared Tier 5.6 tuned profile",
+      "model_family": "linear",
+      "overrides_json": "{\"logistic_l2\": 0.0, \"logistic_lr\": 0.05}"
+    },
+    {
+      "base_model": "online_logistic_regression",
+      "candidate_id": "online_logistic_regression__logistic_l2_0p001_logistic_lr_0p1",
+      "description": "predeclared Tier 5.6 tuned profile",
+      "model_family": "linear",
+      "overrides_json": "{\"logistic_l2\": 0.001, \"logistic_lr\": 0.1}"
+    },
+    {
+      "base_model": "online_logistic_regression",
+      "candidate_id": "online_logistic_regression__logistic_l2_0p001_logistic_lr_0p2",
+      "description": "predeclared Tier 5.6 tuned profile",
+      "model_family": "linear",
+      "overrides_json": "{\"logistic_l2\": 0.001, \"logistic_lr\": 0.2}"
+    },
+    {
+      "base_model": "online_logistic_regression",
+      "candidate_id": "online_logistic_regression__logistic_l2_0p005_logistic_lr_0p3",
+      "description": "predeclared Tier 5.6 tuned profile",
+      "model_family": "linear",
+      "overrides_json": "{\"logistic_l2\": 0.005, \"logistic_lr\": 0.3}"
+    },
+    {
+      "base_model": "echo_state_network",
+      "candidate_id": "echo_state_network__reservoir_hidden_16_reservoir_leak_0p25_reservoir_lr_0p03_reservoir_radius_0p75",
+      "description": "predeclared Tier 5.6 tuned profile",
+      "model_family": "reservoir",
+      "overrides_json": "{\"reservoir_hidden\": 16, \"reservoir_leak\": 0.25, \"reservoir_lr\": 0.03, \"reservoir_radius\": 0.75}"
+    },
+    {
+      "base_model": "echo_state_network",
+      "candidate_id": "echo_state_network__reservoir_hidden_24_reservoir_leak_0p35_reservoir_lr_0p04_reservoir_radius_0p85",
+      "description": "predeclared Tier 5.6 tuned profile",
+      "model_family": "reservoir",
+      "overrides_json": "{\"reservoir_hidden\": 24, \"reservoir_leak\": 0.35, \"reservoir_lr\": 0.04, \"reservoir_radius\": 0.85}"
+    },
+    {
+      "base_model": "echo_state_network",
+      "candidate_id": "echo_state_network__reservoir_hidden_32_reservoir_leak_0p5_reservoir_lr_0p06_reservoir_radius_0p95",
+      "description": "predeclared Tier 5.6 tuned profile",
+      "model_family": "reservoir",
+      "overrides_json": "{\"reservoir_hidden\": 32, \"reservoir_leak\": 0.5, \"reservoir_lr\": 0.06, \"reservoir_radius\": 0.95}"
+    },
+    {
+      "base_model": "echo_state_network",
+      "candidate_id": "echo_state_network__reservoir_hidden_32_reservoir_leak_0p3_reservoir_lr_0p1_reservoir_radius_1p1",
+      "description": "predeclared Tier 5.6 tuned profile",
+      "model_family": "reservoir",
+      "overrides_json": "{\"reservoir_hidden\": 32, \"reservoir_leak\": 0.3, \"reservoir_lr\": 0.1, \"reservoir_radius\": 1.1}"
+    },
+    {
+      "base_model": "echo_state_network",
+      "candidate_id": "echo_state_network__reservoir_hidden_48_reservoir_leak_0p55_reservoir_lr_0p08_reservoir_radius_1p2",
+      "description": "predeclared Tier 5.6 tuned profile",
+      "model_family": "reservoir",
+      "overrides_json": "{\"reservoir_hidden\": 48, \"reservoir_leak\": 0.55, \"reservoir_lr\": 0.08, \"reservoir_radius\": 1.2}"
+    },
+    {
+      "base_model": "small_gru",
+      "candidate_id": "small_gru__gru_hidden_8_gru_lr_0p03",
+      "description": "predeclared Tier 5.6 tuned profile",
+      "model_family": "recurrent",
+      "overrides_json": "{\"gru_hidden\": 8, \"gru_lr\": 0.03}"
+    },
+    {
+      "base_model": "small_gru",
+      "candidate_id": "small_gru__gru_hidden_16_gru_lr_0p04",
+      "description": "predeclared Tier 5.6 tuned profile",
+      "model_family": "recurrent",
+      "overrides_json": "{\"gru_hidden\": 16, \"gru_lr\": 0.04}"
+    },
+    {
+      "base_model": "small_gru",
+      "candidate_id": "small_gru__gru_hidden_16_gru_lr_0p08",
+      "description": "predeclared Tier 5.6 tuned profile",
+      "model_family": "recurrent",
+      "overrides_json": "{\"gru_hidden\": 16, \"gru_lr\": 0.08}"
+    },
+    {
+      "base_model": "small_gru",
+      "candidate_id": "small_gru__gru_hidden_24_gru_lr_0p06",
+      "description": "predeclared Tier 5.6 tuned profile",
+      "model_family": "recurrent",
+      "overrides_json": "{\"gru_hidden\": 24, \"gru_lr\": 0.06}"
+    },
+    {
+      "base_model": "small_gru",
+      "candidate_id": "small_gru__gru_hidden_32_gru_lr_0p1",
+      "description": "predeclared Tier 5.6 tuned profile",
+      "model_family": "recurrent",
+      "overrides_json": "{\"gru_hidden\": 32, \"gru_lr\": 0.1}"
+    },
+    {
+      "base_model": "stdp_only_snn",
+      "candidate_id": "stdp_only_snn__stdp_hidden_16_stdp_lr_0p0005_stdp_threshold_0p15_stdp_trace_decay_0p85",
+      "description": "predeclared Tier 5.6 tuned profile",
+      "model_family": "snn_ablation",
+      "overrides_json": "{\"stdp_hidden\": 16, \"stdp_lr\": 0.0005, \"stdp_threshold\": 0.15, \"stdp_trace_decay\": 0.85}"
+    },
+    {
+      "base_model": "stdp_only_snn",
+      "candidate_id": "stdp_only_snn__stdp_hidden_24_stdp_lr_0p0008_stdp_threshold_0p25_stdp_trace_decay_0p9",
+      "description": "predeclared Tier 5.6 tuned profile",
+      "model_family": "snn_ablation",
+      "overrides_json": "{\"stdp_hidden\": 24, \"stdp_lr\": 0.0008, \"stdp_threshold\": 0.25, \"stdp_trace_decay\": 0.9}"
+    },
+    {
+      "base_model": "stdp_only_snn",
+      "candidate_id": "stdp_only_snn__stdp_hidden_32_stdp_lr_0p0015_stdp_threshold_0p2_stdp_trace_decay_0p95",
+      "description": "predeclared Tier 5.6 tuned profile",
+      "model_family": "snn_ablation",
+      "overrides_json": "{\"stdp_hidden\": 32, \"stdp_lr\": 0.0015, \"stdp_threshold\": 0.2, \"stdp_trace_decay\": 0.95}"
+    },
+    {
+      "base_model": "stdp_only_snn",
+      "candidate_id": "stdp_only_snn__stdp_hidden_32_stdp_lr_0p003_stdp_threshold_0p35_stdp_trace_decay_0p95",
+      "description": "predeclared Tier 5.6 tuned profile",
+      "model_family": "snn_ablation",
+      "overrides_json": "{\"stdp_hidden\": 32, \"stdp_lr\": 0.003, \"stdp_threshold\": 0.35, \"stdp_trace_decay\": 0.95}"
+    },
+    {
+      "base_model": "stdp_only_snn",
+      "candidate_id": "stdp_only_snn__stdp_hidden_48_stdp_lr_0p005_stdp_threshold_0p25_stdp_trace_decay_0p98",
+      "description": "predeclared Tier 5.6 tuned profile",
+      "model_family": "snn_ablation",
+      "overrides_json": "{\"stdp_hidden\": 48, \"stdp_lr\": 0.005, \"stdp_threshold\": 0.25, \"stdp_trace_decay\": 0.98}"
+    },
+    {
+      "base_model": "evolutionary_population",
+      "candidate_id": "evolutionary_population__evo_fitness_decay_0p85_evo_mutation_0p03_evo_population_12",
+      "description": "predeclared Tier 5.6 tuned profile",
+      "model_family": "population",
+      "overrides_json": "{\"evo_fitness_decay\": 0.85, \"evo_mutation\": 0.03, \"evo_population\": 12}"
+    },
+    {
+      "base_model": "evolutionary_population",
+      "candidate_id": "evolutionary_population__evo_fitness_decay_0p92_evo_mutation_0p06_evo_population_24",
+      "description": "predeclared Tier 5.6 tuned profile",
+      "model_family": "population",
+      "overrides_json": "{\"evo_fitness_decay\": 0.92, \"evo_mutation\": 0.06, \"evo_population\": 24}"
+    },
+    {
+      "base_model": "evolutionary_population",
+      "candidate_id": "evolutionary_population__evo_fitness_decay_0p9_evo_mutation_0p04_evo_population_32",
+      "description": "predeclared Tier 5.6 tuned profile",
+      "model_family": "population",
+      "overrides_json": "{\"evo_fitness_decay\": 0.9, \"evo_mutation\": 0.04, \"evo_population\": 32}"
+    },
+    {
+      "base_model": "evolutionary_population",
+      "candidate_id": "evolutionary_population__evo_fitness_decay_0p95_evo_mutation_0p08_evo_population_48",
+      "description": "predeclared Tier 5.6 tuned profile",
+      "model_family": "population",
+      "overrides_json": "{\"evo_fitness_decay\": 0.95, \"evo_mutation\": 0.08, \"evo_population\": 48}"
+    },
+    {
+      "base_model": "evolutionary_population",
+      "candidate_id": "evolutionary_population__evo_fitness_decay_0p97_evo_mutation_0p12_evo_population_64",
+      "description": "predeclared Tier 5.6 tuned profile",
+      "model_family": "population",
+      "overrides_json": "{\"evo_fitness_decay\": 0.97, \"evo_mutation\": 0.12, \"evo_population\": 64}"
+    }
+  ],
+  "causal_rules": [
+    "all candidates receive the same task stream for the same task seed and seed",
+    "all candidates predict before seeing the current evaluation label",
+    "delayed tasks update only when feedback_due_step matures",
+    "no candidate receives future labels, switch locations, reward signs, or privileged task metadata",
+    "CRA and all external candidates share train/evaluation windows and task masks",
+    "candidate selection is reported after the run rather than silently substituted into the task stream"
+  ],
+  "claim_boundary": "Controlled software hyperparameter fairness audit only; not hardware evidence and not proof of universal superiority.",
+  "matrix": {
+    "candidate_count": 32,
+    "candidate_count_by_model": {
+      "echo_state_network": 5,
+      "evolutionary_population": 5,
+      "online_logistic_regression": 5,
+      "online_perceptron": 5,
+      "random_sign": 1,
+      "sign_persistence": 1,
+      "small_gru": 5,
+      "stdp_only_snn": 5
+    },
+    "cra_variants": [
+      "cra_v0_8_delayed_lr_0_20"
+    ],
+    "external_models": [
+      "random_sign",
+      "sign_persistence",
+      "online_perceptron",
+      "online_logistic_regression",
+      "echo_state_network",
+      "small_gru",
+      "stdp_only_snn",
+      "evolutionary_population"
+    ],
+    "run_lengths": [
+      960,
+      1500
+    ],
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "tasks": [
+      "delayed_cue",
+      "hard_noisy_switching",
+      "sensor_control"
+    ]
+  },
+  "not_implemented_in_this_tier": [
+    "surrogate_gradient_snn",
+    "ann_trained_readout",
+    "ann_to_snn_conversion",
+    "contextual_bandit_or_actor_critic",
+    "liquid_state_machine_variant"
+  ],
+  "predeclared_ranking": [
+    "tail_accuracy_mean",
+    "area_under_learning_curve_mean",
+    "absolute prediction_target_corr_mean",
+    "lower runtime_seconds_mean as tie-breaker only"
+  ]
+}

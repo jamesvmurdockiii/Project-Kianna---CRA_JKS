@@ -1,0 +1,12 @@
+name,value,rule,passed,note
+eligibility trace field exists,eligibility_trace,in synapse_t,True,
+trace constants defined,DEFAULT_ELIGIBILITY_DECAY/DEFAULT_TRACE_INCREMENT/MAX_ELIGIBILITY_TRACE,in config.h,True,
+trace increments on spike delivery,synapse_deliver_spike,increments eligibility trace,True,
+trace decay function exists,synapse_decay_traces_all,declared and implemented,True,
+dopamine is trace-gated,"delta_w = FP_MUL(dopamine_level, s->eligibility_trace)",dopamine * trace,True,
+dopamine path is one-shot,g_dopamine_level = 0,main clears after modulation,True,
+timer decays traces,DEFAULT_ELIGIBILITY_DECAY,main decays traces each timer tick,True,
+dopamine signed fixed-point,int32_t g_dopamine_level,supports negative reward,True,
+runtime readout reward update exists,cra_state_apply_reward_to_readout,declared and implemented,True,
+eligibility host test exists,test_synapse_eligibility_modulation,test_runtime.c covers trace-gated dopamine,True,
+reward readout host test exists,test_state_reward_readout_update,test_runtime.c covers reward update,True,

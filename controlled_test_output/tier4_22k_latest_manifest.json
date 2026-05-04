@@ -1,0 +1,11 @@
+{
+  "canonical": false,
+  "claim": "Latest Tier 4.22k Spin1API event-symbol discovery; not board or learning evidence.",
+  "generated_at_utc": "2026-04-30T21:03:46+00:00",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_22k_20260430_ebrains_event_symbol_discovery_pass/tier4_22k_results.json",
+  "mode": "ingest",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_22k_20260430_ebrains_event_symbol_discovery_pass",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_22k_20260430_ebrains_event_symbol_discovery_pass/tier4_22k_report.md",
+  "status": "pass",
+  "tier": "Tier 4.22k - Spin1API Event-Symbol Discovery"
+}

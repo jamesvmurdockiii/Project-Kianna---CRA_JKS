@@ -1,0 +1,9 @@
+{
+  "canonical": false,
+  "claim": "Latest Tier 4.16 harder SpiNNaker hardware capsule; promote only after real hardware review.",
+  "generated_at_utc": "2026-04-30T02:48:01+00:00",
+  "manifest": "/tmp/job7406591636550451632.tmp/cra/tier4_20b_target_check_output/child_tier4_16/tier4_16_results.json",
+  "output_dir": "/tmp/job7406591636550451632.tmp/cra/tier4_20b_target_check_output/child_tier4_16",
+  "report": "/tmp/job7406591636550451632.tmp/cra/tier4_20b_target_check_output/child_tier4_16/tier4_16_report.md",
+  "status": "blocked"
+}

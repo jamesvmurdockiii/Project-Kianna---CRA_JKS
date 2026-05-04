@@ -1,0 +1,14 @@
+{
+  "max_context_slots": 8,
+  "max_route_slots": 8,
+  "max_memory_slots": 8,
+  "max_pending_horizons": 128,
+  "max_schedule_entries": 64,
+  "context_array_bytes": 128,
+  "route_array_bytes": 128,
+  "memory_array_bytes": 128,
+  "pending_array_bytes": 4096,
+  "schedule_array_bytes": 1792,
+  "misc_static_bytes": 100,
+  "dtcm_estimate_bytes": 6372
+}

@@ -1,0 +1,11 @@
+path,function,current_complexity,severity,scale_ready,required_fix
+src/synapse_manager.c,synapse_deliver_spike,O(S) per incoming spike,high,False,add pre-indexed outgoing adjacency: pre_id -> compact outgoing synapse/event list
+src/synapse_manager.c,synapse_decay_traces_all,O(S) per ms tick,high,False,use lazy timestamp decay or an active-trace list updated only for recently touched synapses
+src/synapse_manager.c,synapse_modulate_all,O(S) per dopamine event,medium,limited,modulate only active trace list or lazily evaluated eligible synapses
+src/neuron_manager.c,neuron_add_input/neuron_find,O(N) per delivered input,medium,limited,add direct neuron id -> neuron/state index table or bounded preallocated pool
+src/neuron_manager.c/src/synapse_manager.c/src/router.c,birth/death/create_syn/router_add_neuron,allocation-time variable cost and fragmentation risk,medium,limited,preallocate bounded pools with free lists/active masks and explicit capacity telemetry
+src/host_interface.c,_handle_read_spikes,"insufficient observability, not a runtime cost issue",high,False,"add fragmented or compact state-summary readback for spikes, reward, pending, slots, and weights"
+src/main.c,timer_callback/c_main,single-core proof of concept,medium,limited,"define core-local shard contract, per-core summaries, and inter-core routing/resource budgets"
+src/state_manager.c,cra_state_write_context/cra_state_read_context,O(C) with C=MAX_CONTEXT_SLOTS,low,bounded for current single-core scaffold,keep bounded; increase only with explicit memory-budget artifact
+src/state_manager.c,cra_state_mature_pending_horizons,O(P) with P=MAX_PENDING_HORIZONS,low,bounded for current delayed-readout scaffold,use due-time ring/event queue if P grows beyond the fixed budget
+src/neuron_manager.c,neuron_update_all,O(N) per ms tick,expected,normal per-core neuron integration cost,shard across cores and keep N per core within measured budget

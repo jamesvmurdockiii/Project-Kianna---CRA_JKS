@@ -1,0 +1,146 @@
+{
+  "artifacts": {
+    "comparisons_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_16_20260429_142627/tier5_16_comparisons.csv",
+    "delayed_cue_default_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_16_20260429_142627/delayed_cue_default_seed42_timeseries.csv",
+    "delayed_cue_tau_m_slow_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_16_20260429_142627/delayed_cue_tau_m_slow_seed42_timeseries.csv",
+    "delayed_cue_tau_refrac_long_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_16_20260429_142627/delayed_cue_tau_refrac_long_seed42_timeseries.csv",
+    "delayed_cue_v_thresh_high_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_16_20260429_142627/delayed_cue_v_thresh_high_seed42_timeseries.csv",
+    "fixed_pattern_default_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_16_20260429_142627/fixed_pattern_default_seed42_timeseries.csv",
+    "fixed_pattern_tau_m_slow_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_16_20260429_142627/fixed_pattern_tau_m_slow_seed42_timeseries.csv",
+    "fixed_pattern_tau_refrac_long_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_16_20260429_142627/fixed_pattern_tau_refrac_long_seed42_timeseries.csv",
+    "fixed_pattern_v_thresh_high_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_16_20260429_142627/fixed_pattern_v_thresh_high_seed42_timeseries.csv",
+    "lif_response_probe_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_16_20260429_142627/tier5_16_lif_response_probe.csv",
+    "lif_response_probe_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_16_20260429_142627/tier5_16_lif_response_probe.png",
+    "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_16_20260429_142627/tier5_16_results.json",
+    "parameter_propagation_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_16_20260429_142627/tier5_16_parameter_propagation.csv",
+    "protocol_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_16_20260429_142627/tier5_16_protocol.json",
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_16_20260429_142627/tier5_16_report.md",
+    "robustness_matrix_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_16_20260429_142627/tier5_16_robustness_matrix.png",
+    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_16_20260429_142627/tier5_16_summary.csv"
+  },
+  "command": "experiments/tier5_neuron_model_sensitivity.py --backend mock --smoke --stop-on-fail",
+  "criteria": [
+    {
+      "name": "expected runs observed",
+      "note": "",
+      "operator": "==",
+      "passed": true,
+      "threshold": 8,
+      "value": 8
+    },
+    {
+      "name": "case run errors",
+      "note": "",
+      "operator": "==",
+      "passed": true,
+      "threshold": 0,
+      "value": 0
+    },
+    {
+      "name": "parameter propagation failures",
+      "note": "",
+      "operator": "==",
+      "passed": true,
+      "threshold": 0,
+      "value": 0
+    },
+    {
+      "name": "sim.run failures",
+      "note": "",
+      "operator": "==",
+      "passed": true,
+      "threshold": 0,
+      "value": 0
+    },
+    {
+      "name": "summary read failures",
+      "note": "",
+      "operator": "==",
+      "passed": true,
+      "threshold": 0,
+      "value": 0
+    },
+    {
+      "name": "synthetic fallbacks",
+      "note": "For mock smoke this should still be zero because MockPopulation returns spike data.",
+      "operator": "==",
+      "passed": true,
+      "threshold": 0,
+      "value": 0
+    },
+    {
+      "name": "default minimum tail accuracy",
+      "note": "",
+      "operator": ">=",
+      "passed": true,
+      "threshold": 0.5,
+      "value": 0.5
+    },
+    {
+      "name": "functional cell fraction",
+      "note": "",
+      "operator": ">=",
+      "passed": true,
+      "threshold": 0.5,
+      "value": 0.5
+    },
+    {
+      "name": "collapse count",
+      "note": "",
+      "operator": "<=",
+      "passed": true,
+      "threshold": 99,
+      "value": 0
+    },
+    {
+      "name": "response probe monotonic fraction",
+      "note": "Direct current response should be nondecreasing across injected current levels.",
+      "operator": ">=",
+      "passed": true,
+      "threshold": 0.0,
+      "value": 0.0
+    }
+  ],
+  "failure_reason": "",
+  "generated_at_utc": "2026-04-29T18:26:31+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_16_20260429_142627",
+  "status": "pass",
+  "summary": {
+    "aggregate_cells": 8,
+    "backend": "mock",
+    "claim_boundary": "Software neuron-parameter robustness diagnostic; not hardware/custom-C/on-chip neuron evidence and not a freeze gate by itself.",
+    "collapse_count": 0,
+    "default_min_tail_accuracy": 0.5,
+    "expected_runs": 8,
+    "functional_cell_count": 4,
+    "functional_cell_fraction": 0.5,
+    "observed_runs": 8,
+    "propagation_failures": 0,
+    "response_probe_monotonic_fraction": 0.0,
+    "response_probe_variants": [
+      "default",
+      "tau_m_slow",
+      "tau_refrac_long",
+      "v_thresh_high"
+    ],
+    "run_errors": 0,
+    "seeds": [
+      42
+    ],
+    "sim_run_failures": 0,
+    "summary_read_failures": 0,
+    "synthetic_fallbacks": 0,
+    "tasks": [
+      "fixed_pattern",
+      "delayed_cue"
+    ],
+    "tier": "Tier 5.16 - Neuron Model / Parameter Sensitivity",
+    "variants": [
+      "default",
+      "v_thresh_high",
+      "tau_m_slow",
+      "tau_refrac_long"
+    ]
+  },
+  "tier": "Tier 5.16 - Neuron Model / Parameter Sensitivity"
+}

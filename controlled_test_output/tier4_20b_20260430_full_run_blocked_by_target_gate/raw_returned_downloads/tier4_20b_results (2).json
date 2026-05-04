@@ -1,0 +1,390 @@
+{
+  "artifacts": {
+    "bridge_profile_json": "/tmp/job3246262819706317367.tmp/cra/tier4_20b_job_output/tier4_20b_bridge_profile.json",
+    "child_output_dir": "/tmp/job3246262819706317367.tmp/cra/tier4_20b_job_output/child_tier4_16",
+    "child_stderr_log": "/tmp/job3246262819706317367.tmp/cra/tier4_20b_job_output/tier4_20b_child_stderr.log",
+    "child_stdout_log": "/tmp/job3246262819706317367.tmp/cra/tier4_20b_job_output/tier4_20b_child_stdout.log",
+    "child_tier4_16_report.md": "/tmp/job3246262819706317367.tmp/cra/tier4_20b_job_output/child_tier4_16/tier4_16_report.md",
+    "child_tier4_16_results.json": "/tmp/job3246262819706317367.tmp/cra/tier4_20b_job_output/child_tier4_16/tier4_16_results.json",
+    "child_tier4_16_summary.csv": "/tmp/job3246262819706317367.tmp/cra/tier4_20b_job_output/child_tier4_16/tier4_16_summary.csv",
+    "report_md": "/tmp/job3246262819706317367.tmp/cra/tier4_20b_job_output/tier4_20b_report.md",
+    "results_json": "/tmp/job3246262819706317367.tmp/cra/tier4_20b_job_output/tier4_20b_results.json",
+    "summary_csv": "/tmp/job3246262819706317367.tmp/cra/tier4_20b_job_output/tier4_20b_summary.csv"
+  },
+  "child_command": [
+    "/home/jovyan/spinnaker/bin/python",
+    "/tmp/job3246262819706317367.tmp/cra/experiments/tier4_harder_spinnaker_capsule.py",
+    "--mode",
+    "run-hardware",
+    "--require-real-hardware",
+    "--tasks",
+    "delayed_cue,hard_noisy_switching",
+    "--seeds",
+    "42",
+    "--steps",
+    "1200",
+    "--population-size",
+    "8",
+    "--runtime-mode",
+    "chunked",
+    "--learning-location",
+    "host",
+    "--chunk-size-steps",
+    "50",
+    "--delayed-readout-lr",
+    "0.2",
+    "--output-dir",
+    "/tmp/job3246262819706317367.tmp/cra/tier4_20b_job_output/child_tier4_16",
+    "--stop-on-fail"
+  ],
+  "child_manifest": {
+    "criteria": [
+      {
+        "name": "real SpiNNaker target configured",
+        "note": "",
+        "operator": "==",
+        "passed": false,
+        "threshold": true,
+        "value": {
+          "env_flags": {
+            "EBRAINS_JOB_ID": false,
+            "JOB_ID": false,
+            "REMOTE_SPINNAKER_URL": false,
+            "SLURM_JOB_ID": false,
+            "SPALLOC_SERVER": false,
+            "SPINNAKER_MACHINE": false
+          },
+          "hardware_target_configured": false,
+          "spynnaker_config": {
+            "exists": true,
+            "height": null,
+            "machineName": null,
+            "mode": null,
+            "path": "/home/jovyan/.spynnaker.cfg",
+            "remote_spinnaker_url": null,
+            "spalloc_group": null,
+            "spalloc_port": null,
+            "spalloc_server": null,
+            "spalloc_user": null,
+            "version": null,
+            "virtual_board": null,
+            "width": null
+          }
+        }
+      }
+    ],
+    "environment": {
+      "env_flags": {
+        "EBRAINS_JOB_ID": false,
+        "JOB_ID": false,
+        "REMOTE_SPINNAKER_URL": false,
+        "SLURM_JOB_ID": false,
+        "SPALLOC_SERVER": false,
+        "SPINNAKER_MACHINE": false
+      },
+      "generated_at_utc": "2026-04-30T02:52:03+00:00",
+      "hardware_target_configured": false,
+      "hostname": "73627c0b54d4",
+      "jobmanager_cli": null,
+      "modules": [
+        {
+          "error": "",
+          "name": "pyNN.spiNNaker",
+          "ok": true,
+          "path": "/home/jovyan/spinnaker/lib/python3.13/site-packages/pyNN/spiNNaker/__init__.py",
+          "version": "1!7.4.2"
+        },
+        {
+          "error": "",
+          "name": "spynnaker.pyNN",
+          "ok": true,
+          "path": "/home/jovyan/spinnaker/sPyNNaker/spynnaker/pyNN/__init__.py",
+          "version": "1!7.4.2"
+        },
+        {
+          "error": "",
+          "name": "spalloc_client",
+          "ok": true,
+          "path": "/home/jovyan/spinnaker/spalloc/spalloc_client/__init__.py",
+          "version": "1!7.4.2"
+        },
+        {
+          "error": "",
+          "name": "spinnman",
+          "ok": true,
+          "path": "/home/jovyan/spinnaker/SpiNNMan/spinnman/__init__.py",
+          "version": "1!7.4.2"
+        },
+        {
+          "error": "",
+          "name": "spinn_front_end_common",
+          "ok": true,
+          "path": "/home/jovyan/spinnaker/SpiNNFrontEndCommon/spinn_front_end_common/__init__.py",
+          "version": "1!7.4.2"
+        }
+      ],
+      "platform": "Linux-6.8.0-107-generic-x86_64-with-glibc2.39",
+      "python": "3.13.9 | packaged by conda-forge | (main, Oct 16 2025, 10:31:39) [GCC 14.3.0]",
+      "spalloc_cli": "/home/jovyan/spinnaker/bin/spalloc",
+      "spinnman_numpy2_compat": {
+        "numpy_uint8_overflow": {
+          "already_patched": false,
+          "applied": true,
+          "available": true,
+          "numpy_version": "2.3.4",
+          "target": "numpy.array/numpy.asarray uint8 overflow retry"
+        },
+        "spinnman_write_memory": {
+          "already_patched": false,
+          "applied": true,
+          "available": true,
+          "numpy_version": "2.3.4",
+          "target": "spinnman.processes.write_memory_process.WriteMemoryProcess"
+        },
+        "spynnaker_neuromodulation": {
+          "already_patched": false,
+          "applied": true,
+          "available": true,
+          "target": "SynapseDynamicsNeuromodulation.get_plastic_synaptic_data"
+        }
+      },
+      "spynnaker_config": {
+        "exists": true,
+        "height": null,
+        "machineName": null,
+        "mode": null,
+        "path": "/home/jovyan/.spynnaker.cfg",
+        "remote_spinnaker_url": null,
+        "spalloc_group": null,
+        "spalloc_port": null,
+        "spalloc_server": null,
+        "spalloc_user": null,
+        "version": null,
+        "virtual_board": null,
+        "width": null
+      },
+      "ybug_cli": "/home/jovyan/spinnaker/spinnaker_tools/tools/ybug"
+    },
+    "failure_reason": "No real SpiNNaker target is configured in this environment. pyNN.spiNNaker is installed, but sPyNNaker has no Machine target (no machineName, version, spalloc_server, remote_spinnaker_url, SPINNAKER_MACHINE, or SPALLOC_SERVER). Run inside a real SpiNNaker allocation or provide --spinnaker-hostname if that is the correct target for this EBRAINS job.",
+    "generated_at_utc": "2026-04-30T02:52:03+00:00",
+    "mode": "run-hardware",
+    "status": "blocked",
+    "summary": {
+      "backend": "pyNN.spiNNaker",
+      "chunk_size_steps": 50,
+      "hardware_run_attempted": false,
+      "hardware_target_configured": false,
+      "jobmanager_cli": null,
+      "learning_location": "host",
+      "mode": "run-hardware",
+      "runtime_mode": "chunked",
+      "seeds": [
+        42
+      ],
+      "tasks": [
+        "delayed_cue",
+        "hard_noisy_switching"
+      ]
+    },
+    "tier": "Tier 4.16 - Harder SpiNNaker Hardware Capsule"
+  },
+  "criteria": [
+    {
+      "name": "v2.1 baseline artifact exists",
+      "passed": true,
+      "rule": "exists",
+      "value": "/tmp/job3246262819706317367.tmp/cra/baselines/CRA_EVIDENCE_BASELINE_v2.1.json"
+    },
+    {
+      "name": "source package import path available",
+      "passed": true,
+      "rule": "coral_reef_spinnaker exists",
+      "value": {
+        "action": "already_canonical",
+        "aliases_checked": [
+          "/tmp/job3246262819706317367.tmp/cra/coral-reef-spinnaker",
+          "/tmp/job3246262819706317367.tmp/cra/coral reef spinnaker"
+        ],
+        "canonical_package": "/tmp/job3246262819706317367.tmp/cra/coral_reef_spinnaker",
+        "canonical_package_exists": true
+      }
+    },
+    {
+      "name": "Tier 4.16 child hardware runner exists",
+      "passed": true,
+      "rule": "exists",
+      "value": "/tmp/job3246262819706317367.tmp/cra/experiments/tier4_harder_spinnaker_capsule.py"
+    },
+    {
+      "name": "Tier 4.20a transfer audit context",
+      "passed": true,
+      "rule": "optional; local audit context only",
+      "value": {
+        "manifest": null,
+        "status": "missing"
+      }
+    },
+    {
+      "name": "exactly one seed requested for 4.20b",
+      "passed": true,
+      "rule": "len == 1",
+      "value": [
+        42
+      ]
+    },
+    {
+      "name": "runtime mode is chunked",
+      "passed": true,
+      "rule": "fixed",
+      "value": "chunked"
+    },
+    {
+      "name": "learning location is host",
+      "passed": true,
+      "rule": "fixed",
+      "value": "host"
+    },
+    {
+      "name": "chunk size uses current default unless overridden",
+      "passed": true,
+      "rule": ">= 1",
+      "value": 50
+    },
+    {
+      "name": "macro eligibility disabled",
+      "passed": true,
+      "rule": "== false",
+      "value": false
+    },
+    {
+      "name": "delayed_lr_0_20 selected",
+      "passed": true,
+      "rule": "== 0.20",
+      "value": 0.2
+    },
+    {
+      "name": "mode has explicit claim boundary",
+      "passed": true,
+      "rule": "prepare|run-hardware|ingest",
+      "value": "run-hardware"
+    },
+    {
+      "name": "child Tier 4.16 command exited cleanly",
+      "passed": false,
+      "rule": "== 0",
+      "value": 1
+    },
+    {
+      "name": "child Tier 4.16 manifest exists",
+      "passed": true,
+      "rule": "exists",
+      "value": "/tmp/job3246262819706317367.tmp/cra/tier4_20b_job_output/child_tier4_16/tier4_16_results.json"
+    },
+    {
+      "name": "child hardware status passed",
+      "passed": false,
+      "rule": "== pass",
+      "value": "blocked"
+    },
+    {
+      "name": "child hardware was attempted",
+      "passed": false,
+      "rule": "== true",
+      "value": false
+    },
+    {
+      "name": "child sim.run failures zero",
+      "passed": true,
+      "rule": "== 0",
+      "value": null
+    },
+    {
+      "name": "child summary read failures zero",
+      "passed": true,
+      "rule": "== 0",
+      "value": null
+    },
+    {
+      "name": "child synthetic fallback zero",
+      "passed": true,
+      "rule": "== 0",
+      "value": null
+    },
+    {
+      "name": "child real spike readback nonzero",
+      "passed": false,
+      "rule": "> 0",
+      "value": null
+    },
+    {
+      "name": "child runtime documented",
+      "passed": false,
+      "rule": "finite",
+      "value": null
+    }
+  ],
+  "failure_reason": "Failed criteria: child Tier 4.16 command exited cleanly, child hardware status passed, child hardware was attempted, child real spike readback nonzero, child runtime documented",
+  "generated_at_utc": "2026-04-30T02:52:04+00:00",
+  "mode": "run-hardware",
+  "output_dir": "/tmp/job3246262819706317367.tmp/cra/tier4_20b_job_output",
+  "status": "fail",
+  "summary": {
+    "baseline": "v2.1",
+    "bridge_profile": {
+      "contract_declared_not_native_yet": [
+        "keyed context memory",
+        "replay / consolidation",
+        "visible predictive context / predictive binding",
+        "composition and module routing",
+        "self-evaluation / reliability monitoring"
+      ],
+      "explicitly_excluded": [
+        "macro eligibility residual trace"
+      ],
+      "included_in_child_runner": [
+        "PendingHorizon delayed credit / delayed_lr_0_20"
+      ],
+      "macro_eligibility_enabled": false,
+      "profile_name": "v2_1_chunked_bridge_probe",
+      "rows": 7
+    },
+    "child_backend": "pyNN.spiNNaker",
+    "child_chunk_size_steps": 50,
+    "child_failure_reason": "No real SpiNNaker target is configured in this environment. pyNN.spiNNaker is installed, but sPyNNaker has no Machine target (no machineName, version, spalloc_server, remote_spinnaker_url, SPINNAKER_MACHINE, or SPALLOC_SERVER). Run inside a real SpiNNaker allocation or provide --spinnaker-hostname if that is the correct target for this EBRAINS job.",
+    "child_hardware_run_attempted": false,
+    "child_learning_location": "host",
+    "child_return_code": 1,
+    "child_runs": null,
+    "child_runtime_mode": "chunked",
+    "child_runtime_seconds_mean": null,
+    "child_seeds": [
+      42
+    ],
+    "child_sim_run_failures_sum": null,
+    "child_status": "blocked",
+    "child_summary_read_failures_sum": null,
+    "child_synthetic_fallbacks_sum": null,
+    "child_task_summaries": null,
+    "child_tasks": [
+      "delayed_cue",
+      "hard_noisy_switching"
+    ],
+    "child_total_step_spikes_min": null,
+    "chunk_size_steps": 50,
+    "hardware_run_attempted": false,
+    "learning_location": "host",
+    "macro_eligibility_enabled": false,
+    "population_size": 8,
+    "runtime_mode": "chunked",
+    "runtime_seconds": 3.6008210610598326,
+    "seeds": [
+      42
+    ],
+    "steps": 1200,
+    "tasks": [
+      "delayed_cue",
+      "hard_noisy_switching"
+    ]
+  },
+  "tier": "Tier 4.20b - v2.1 One-Seed Chunked Hardware Probe"
+}

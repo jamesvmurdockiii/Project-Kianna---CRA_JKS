@@ -1,0 +1,11 @@
+{
+  "canonical": false,
+  "claim": "Latest Tier 5.9c macro-eligibility recheck; macro remains parked unless this passes and a later integration gate passes.",
+  "generated_at_utc": "2026-04-29T23:53:13+00:00",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/tier5_9c_results.json",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/tier5_9c_report.md",
+  "status": "fail",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/tier5_9c_summary.csv",
+  "tier": "Tier 5.9c - Macro Eligibility v2.1 Recheck"
+}

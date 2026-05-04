@@ -1,0 +1,219 @@
+{
+  "artifacts": {
+    "report_md": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005646/tier1_controls/tier1_report.md",
+    "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005646/tier1_controls/tier1_summary.csv"
+  },
+  "backend": "MockSimulator",
+  "command": "experiments/tier1_sanity.py --tests all --steps 80 --seeds 3 --base-seed 42 --readout-lr 0.1 --delayed-readout-lr 0.2 --stop-on-fail --output-dir /Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005646/tier1_controls",
+  "generated_at_utc": "2026-04-28T04:56:51+00:00",
+  "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005646/tier1_controls",
+  "results": [
+    {
+      "artifacts": {
+        "plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005646/tier1_controls/zero_signal_timeseries.png",
+        "timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005646/tier1_controls/zero_signal_timeseries.csv"
+      },
+      "criteria": [
+        {
+          "name": "zero target stayed zero",
+          "note": "",
+          "operator": "==",
+          "passed": true,
+          "threshold": 0,
+          "value": 0
+        },
+        {
+          "name": "max absolute dopamine",
+          "note": "",
+          "operator": "<=",
+          "passed": true,
+          "threshold": 1e-09,
+          "value": 0.0
+        },
+        {
+          "name": "capital absolute delta",
+          "note": "",
+          "operator": "<=",
+          "passed": true,
+          "threshold": 1e-09,
+          "value": 0.0
+        },
+        {
+          "name": "tail accuracy EMA",
+          "note": "Zero/zero must not count as learned directional success.",
+          "operator": "<=",
+          "passed": true,
+          "threshold": 0.51,
+          "value": 0.3964916097394337
+        },
+        {
+          "name": "prediction/target correlation",
+          "note": "",
+          "operator": "is None or abs <= ",
+          "passed": true,
+          "threshold": 1e-09,
+          "value": null
+        }
+      ],
+      "failure_reason": "",
+      "name": "zero_signal",
+      "status": "pass",
+      "summary": {
+        "backend": "MockSimulator",
+        "capital_delta": 0.0,
+        "final_accuracy_ema": 0.3117267581421953,
+        "final_capital": 1.0,
+        "final_n_alive": 6,
+        "max_abs_dopamine": 0.0,
+        "max_abs_prediction": 0.14755457343014797,
+        "max_n_alive": 6,
+        "mean_abs_dopamine": 0.0,
+        "mean_abs_prediction": 0.03982624957599754,
+        "nonzero_target_count_tail": 0,
+        "prediction_target_corr": null,
+        "runtime_seconds": 0.20088358299999998,
+        "seed": 42,
+        "steps": 80,
+        "strict_accuracy_all_nonzero_targets": null,
+        "strict_accuracy_tail_nonzero_targets": null,
+        "tail_accuracy_ema": 0.3964916097394337,
+        "tail_mean_abs_prediction": 0.040003459215608286,
+        "tail_prediction_target_corr": null,
+        "tail_steps": 60,
+        "total_births": 5,
+        "total_deaths": 0,
+        "warmup_steps": 20
+      }
+    },
+    {
+      "artifacts": {
+        "plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005646/tier1_controls/shuffled_label_timeseries.png",
+        "timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005646/tier1_controls/shuffled_label_timeseries.csv"
+      },
+      "criteria": [
+        {
+          "name": "tail strict accuracy on nonzero targets",
+          "note": "",
+          "operator": "<=",
+          "passed": true,
+          "threshold": 0.6,
+          "value": 0.38333333333333336
+        },
+        {
+          "name": "tail prediction/target abs correlation",
+          "note": "",
+          "operator": "is None or <=",
+          "passed": true,
+          "threshold": 0.25,
+          "value": 0.07179395839521759
+        },
+        {
+          "name": "capital absolute delta",
+          "note": "",
+          "operator": "<=",
+          "passed": true,
+          "threshold": 0.05,
+          "value": 0.0003185707402941773
+        }
+      ],
+      "failure_reason": "",
+      "name": "shuffled_label",
+      "status": "pass",
+      "summary": {
+        "amplitude": 0.002,
+        "backend": "MockSimulator",
+        "capital_delta": 0.0003185707402941773,
+        "final_accuracy_ema": 0.4634395982943229,
+        "final_capital": 1.0003185707402942,
+        "final_n_alive": 6,
+        "max_abs_dopamine": 0.9983879893733829,
+        "max_abs_prediction": 0.224865960683967,
+        "max_n_alive": 6,
+        "mean_abs_dopamine": 0.296562612495395,
+        "mean_abs_prediction": 0.06708347961193935,
+        "nonzero_target_count_tail": 60,
+        "prediction_target_corr": -0.0926557621279904,
+        "runtime_seconds": 0.19961120899999996,
+        "seed": 42,
+        "steps": 80,
+        "strict_accuracy_all_nonzero_targets": 0.3924050632911392,
+        "strict_accuracy_tail_nonzero_targets": 0.38333333333333336,
+        "tail_accuracy_ema": 0.4753169163856727,
+        "tail_mean_abs_prediction": 0.07538365727734253,
+        "tail_prediction_target_corr": -0.07179395839521759,
+        "tail_steps": 60,
+        "total_births": 5,
+        "total_deaths": 0,
+        "warmup_steps": 20
+      }
+    },
+    {
+      "artifacts": {
+        "plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005646/tier1_controls/seed_repeat_summary.png",
+        "seed_summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005646/tier1_controls/seed_repeat_summary.csv"
+      },
+      "criteria": [
+        {
+          "name": "mean tail strict accuracy",
+          "note": "",
+          "operator": "<=",
+          "passed": true,
+          "threshold": 0.56,
+          "value": 0.48888888888888893
+        },
+        {
+          "name": "high-accuracy seed fraction",
+          "note": "High seed means > 0.600.",
+          "operator": "<=",
+          "passed": true,
+          "threshold": 0.2,
+          "value": 0.0
+        },
+        {
+          "name": "mean absolute tail prediction/target correlation",
+          "note": "",
+          "operator": "<=",
+          "passed": true,
+          "threshold": 0.2,
+          "value": 0.1063742469122602
+        }
+      ],
+      "failure_reason": "",
+      "name": "seed_repeat",
+      "status": "pass",
+      "summary": {
+        "backend": "MockSimulator",
+        "base_seed": 42,
+        "high_seed_count": 0,
+        "high_seed_fraction": 0.0,
+        "max_abs_tail_prediction_target_corr": 0.15898734525033614,
+        "max_tail_strict_accuracy": 0.5666666666666667,
+        "mean_abs_tail_prediction_target_corr": 0.1063742469122602,
+        "mean_tail_strict_accuracy": 0.48888888888888893,
+        "median_tail_strict_accuracy": 0.5166666666666667,
+        "min_tail_strict_accuracy": 0.38333333333333336,
+        "n_seeds": 3,
+        "std_tail_strict_accuracy": 0.09477067838462211,
+        "steps_per_seed": 80,
+        "total_runtime_seconds": 0.6479203340000002
+      }
+    }
+  ],
+  "selected_tests": [
+    "zero_signal",
+    "shuffled_label",
+    "seed_repeat"
+  ],
+  "stopped_after": null,
+  "thresholds": {
+    "delayed_readout_lr": 0.2,
+    "readout_lr": 0.1,
+    "repeat_high_seed_fraction_threshold": 0.2,
+    "repeat_mean_abs_corr_threshold": 0.2,
+    "repeat_mean_accuracy_threshold": 0.56,
+    "single_run_accuracy_threshold": 0.6,
+    "single_run_capital_threshold": 0.05,
+    "single_run_corr_threshold": 0.25
+  },
+  "tier": "Tier 1 - sanity tests"
+}

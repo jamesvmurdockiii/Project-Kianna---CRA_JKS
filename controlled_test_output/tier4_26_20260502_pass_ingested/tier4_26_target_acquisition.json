@@ -1,0 +1,61 @@
+{
+  "status": "pass",
+  "method": "pyNN.spiNNaker_probe",
+  "hostname": "10.11.194.1",
+  "target_ipaddress": "10.11.194.1",
+  "setup_kwargs": {
+    "timestep": 1.0
+  },
+  "probe_population_size": 1,
+  "probe_run_ms": 1.0,
+  "probe_timestep_ms": 1.0,
+  "dest_x": 0,
+  "dest_y": 0,
+  "dest_cpu": 4,
+  "occupied_cores": [
+    1,
+    2,
+    3
+  ],
+  "notes": [
+    "acquired transceiver/IP via PyNN/sPyNNaker DataView because EBRAINS JobManager may not expose a raw hostname",
+    "requested dest_cpu 1 was occupied; selected free core 4"
+  ],
+  "runtime_seconds": 52.74910239316523,
+  "attempts": [
+    {
+      "status": "fail",
+      "method": "hostname_discovery",
+      "hostname": "",
+      "notes": [
+        "no hostname found in args, common environment variables, or spynnaker.cfg"
+      ],
+      "reason": "no explicit hostname/config/environment target found"
+    },
+    {
+      "status": "pass",
+      "method": "pyNN.spiNNaker_probe",
+      "hostname": "10.11.194.1",
+      "target_ipaddress": "10.11.194.1",
+      "setup_kwargs": {
+        "timestep": 1.0
+      },
+      "probe_population_size": 1,
+      "probe_run_ms": 1.0,
+      "probe_timestep_ms": 1.0,
+      "dest_x": 0,
+      "dest_y": 0,
+      "dest_cpu": 4,
+      "occupied_cores": [
+        1,
+        2,
+        3
+      ],
+      "notes": [
+        "acquired transceiver/IP via PyNN/sPyNNaker DataView because EBRAINS JobManager may not expose a raw hostname",
+        "requested dest_cpu 1 was occupied; selected free core 4"
+      ],
+      "runtime_seconds": 52.74910239316523
+    }
+  ]
+}

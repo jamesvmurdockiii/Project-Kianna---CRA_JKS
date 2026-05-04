@@ -1,0 +1,401 @@
+{
+  "api_contract": [
+    {
+      "do_not_rewrite_in_c": true,
+      "keep_in_python": "task definitions, experiment orchestration, evidence exports, baselines, paper tables, PyNN populations/connectors, standard spike readback",
+      "layer": "PyNN/sPyNNaker",
+      "role": "primary hardware construction/mapping/run layer"
+    },
+    {
+      "customize_in_c": "persistent state, delayed-credit queues, eligibility/dopamine/plasticity, compact summaries, lifecycle state, routing/memory kernels when promoted",
+      "do_not_rewrite_in_c": false,
+      "layer": "custom C runtime",
+      "role": "only for substrate mechanics PyNN cannot express or scale as closed-loop on-chip state"
+    },
+    {
+      "do_not_rewrite_in_c": true,
+      "keep_in_python": "offline analysis, registry, preflight, JobManager packaging, result ingestion",
+      "layer": "host Python controller",
+      "role": "commands, configuration, validation, logging, and comparison to canonical software baselines"
+    },
+    {
+      "do_not_rewrite_in_c": false,
+      "layer": "future custom runtime acceptance",
+      "required_before_hardware_learning": "event-indexed spike delivery, lazy/active trace decay, compact state readback, build/load/command acceptance",
+      "role": "hardware proof only after scale blockers are resolved"
+    }
+  ],
+  "artifacts": {
+    "api_contract_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit/tier4_22f0_api_contract.csv",
+    "host_test_stderr": "/Users/james/JKS:CRA/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit/tier4_22f0_host_test_stderr.txt",
+    "host_test_stdout": "/Users/james/JKS:CRA/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit/tier4_22f0_host_test_stdout.txt",
+    "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit/tier4_22f0_results.json",
+    "memory_budget_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit/tier4_22f0_memory_budget.csv",
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit/tier4_22f0_report.md",
+    "runtime_complexity_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit/tier4_22f0_runtime_complexity.csv",
+    "scale_blockers_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit/tier4_22f0_scale_blockers.csv",
+    "static_checks_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit/tier4_22f0_static_checks.csv"
+  },
+  "criteria": [
+    {
+      "name": "runner revision current",
+      "note": "",
+      "passed": true,
+      "rule": "expected current source",
+      "value": "tier4_22f0_custom_runtime_scale_audit_20260430_0000"
+    },
+    {
+      "name": "Tier 4.22e local parity pass exists",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "custom C host tests pass",
+      "note": "",
+      "passed": true,
+      "rule": "returncode == 0 and ALL TESTS PASSED",
+      "value": 0
+    },
+    {
+      "name": "all static audit checks pass",
+      "note": "",
+      "passed": true,
+      "rule": "all pass",
+      "value": "9/9"
+    },
+    {
+      "name": "scale blockers are detected",
+      "note": "",
+      "passed": true,
+      "rule": ">= 5 documented blockers",
+      "value": 7
+    },
+    {
+      "name": "high severity blockers are explicit",
+      "note": "",
+      "passed": true,
+      "rule": ">= 2 known blockers documented",
+      "value": 3
+    },
+    {
+      "name": "direct custom-runtime hardware learning is blocked",
+      "note": "",
+      "passed": true,
+      "rule": "False until blockers are fixed",
+      "value": false
+    },
+    {
+      "name": "PyNN/sPyNNaker boundary remains explicit",
+      "note": "",
+      "passed": true,
+      "rule": "must be documented",
+      "value": "PyNN/sPyNNaker primary, C only for unsupported substrate mechanics"
+    }
+  ],
+  "failure_reason": "",
+  "generated_at_utc": "2026-04-30T19:01:01+00:00",
+  "host_test": {
+    "command": "make -C /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime clean-host test",
+    "returncode": 0,
+    "stderr_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit/tier4_22f0_host_test_stderr.txt",
+    "stdout_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit/tier4_22f0_host_test_stdout.txt"
+  },
+  "memory_budget": [
+    {
+      "approx_bytes_each": 52,
+      "approx_total_bytes": 53248,
+      "bound": "MAX_NEURONS",
+      "component": "neurons",
+      "configured_count": 1024,
+      "scale_note": "current linked-list allocation; production should use bounded pool/index"
+    },
+    {
+      "approx_bytes_each": 20,
+      "approx_total_bytes": 163840,
+      "bound": "MAX_SYNAPSES",
+      "component": "synapses",
+      "configured_count": 8192,
+      "scale_note": "current post-list allocation; production needs pre-index and active-trace metadata"
+    },
+    {
+      "approx_bytes_each": 20,
+      "approx_total_bytes": 160,
+      "bound": "MAX_CONTEXT_SLOTS",
+      "component": "context_slots",
+      "configured_count": 8,
+      "scale_note": "static bounded state; acceptable at current scaffold size"
+    },
+    {
+      "approx_bytes_each": 16,
+      "approx_total_bytes": 2048,
+      "bound": "MAX_PENDING_HORIZONS",
+      "component": "pending_horizons",
+      "configured_count": 128,
+      "scale_note": "static bounded no-leak delayed-credit queue"
+    },
+    {
+      "approx_bytes_each": 72,
+      "approx_total_bytes": 72,
+      "bound": "one per runtime instance",
+      "component": "state_summary",
+      "configured_count": 1,
+      "scale_note": "compact summary state; should be expanded intentionally for readback"
+    }
+  ],
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit",
+  "runtime_complexity": [
+    {
+      "current_complexity": "O(S) per incoming spike",
+      "function": "synapse_deliver_spike",
+      "path": "src/synapse_manager.c",
+      "required_fix": "add pre-indexed outgoing adjacency: pre_id -> compact outgoing synapse/event list",
+      "scale_ready": false,
+      "severity": "high"
+    },
+    {
+      "current_complexity": "O(S) per ms tick",
+      "function": "synapse_decay_traces_all",
+      "path": "src/synapse_manager.c",
+      "required_fix": "use lazy timestamp decay or an active-trace list updated only for recently touched synapses",
+      "scale_ready": false,
+      "severity": "high"
+    },
+    {
+      "current_complexity": "O(S) per dopamine event",
+      "function": "synapse_modulate_all",
+      "path": "src/synapse_manager.c",
+      "required_fix": "modulate only active trace list or lazily evaluated eligible synapses",
+      "scale_ready": "limited",
+      "severity": "medium"
+    },
+    {
+      "current_complexity": "O(N) per delivered input",
+      "function": "neuron_add_input/neuron_find",
+      "path": "src/neuron_manager.c",
+      "required_fix": "add direct neuron id -> neuron/state index table or bounded preallocated pool",
+      "scale_ready": "limited",
+      "severity": "medium"
+    },
+    {
+      "current_complexity": "allocation-time variable cost and fragmentation risk",
+      "function": "birth/death/create_syn/router_add_neuron",
+      "path": "src/neuron_manager.c/src/synapse_manager.c/src/router.c",
+      "required_fix": "preallocate bounded pools with free lists/active masks and explicit capacity telemetry",
+      "scale_ready": "limited",
+      "severity": "medium"
+    },
+    {
+      "current_complexity": "insufficient observability, not a runtime cost issue",
+      "function": "_handle_read_spikes",
+      "path": "src/host_interface.c",
+      "required_fix": "add fragmented or compact state-summary readback for spikes, reward, pending, slots, and weights",
+      "scale_ready": false,
+      "severity": "high"
+    },
+    {
+      "current_complexity": "single-core proof of concept",
+      "function": "timer_callback/c_main",
+      "path": "src/main.c",
+      "required_fix": "define core-local shard contract, per-core summaries, and inter-core routing/resource budgets",
+      "scale_ready": "limited",
+      "severity": "medium"
+    },
+    {
+      "current_complexity": "O(C) with C=MAX_CONTEXT_SLOTS",
+      "function": "cra_state_write_context/cra_state_read_context",
+      "path": "src/state_manager.c",
+      "required_fix": "keep bounded; increase only with explicit memory-budget artifact",
+      "scale_ready": "bounded for current single-core scaffold",
+      "severity": "low"
+    },
+    {
+      "current_complexity": "O(P) with P=MAX_PENDING_HORIZONS",
+      "function": "cra_state_mature_pending_horizons",
+      "path": "src/state_manager.c",
+      "required_fix": "use due-time ring/event queue if P grows beyond the fixed budget",
+      "scale_ready": "bounded for current delayed-readout scaffold",
+      "severity": "low"
+    },
+    {
+      "current_complexity": "O(N) per ms tick",
+      "function": "neuron_update_all",
+      "path": "src/neuron_manager.c",
+      "required_fix": "shard across cores and keep N per core within measured budget",
+      "scale_ready": "normal per-core neuron integration cost",
+      "severity": "expected"
+    }
+  ],
+  "scale_blockers": [
+    {
+      "blocker_id": "SCALE-001",
+      "blocks_custom_runtime_learning_hardware": true,
+      "complexity": "O(S) per incoming spike",
+      "current_pattern": "incoming pre spike scans every post-entry and every synapse",
+      "detected": true,
+      "file": "src/synapse_manager.c",
+      "function": "synapse_deliver_spike",
+      "required_fix": "add pre-indexed outgoing adjacency: pre_id -> compact outgoing synapse/event list",
+      "severity": "high",
+      "why_it_matters": "large CRA populations would spend most runtime scanning irrelevant synapses"
+    },
+    {
+      "blocker_id": "SCALE-002",
+      "blocks_custom_runtime_learning_hardware": true,
+      "complexity": "O(S) per ms tick",
+      "current_pattern": "timer tick sweeps every synapse to decay eligibility traces",
+      "detected": true,
+      "file": "src/synapse_manager.c",
+      "function": "synapse_decay_traces_all",
+      "required_fix": "use lazy timestamp decay or an active-trace list updated only for recently touched synapses",
+      "severity": "high",
+      "why_it_matters": "all-synapse trace decay destroys the expected SpiNNaker speed advantage as S grows"
+    },
+    {
+      "blocker_id": "SCALE-003",
+      "blocks_custom_runtime_learning_hardware": true,
+      "complexity": "O(S) per dopamine event",
+      "current_pattern": "dopamine event sweeps every synapse",
+      "detected": true,
+      "file": "src/synapse_manager.c",
+      "function": "synapse_modulate_all",
+      "required_fix": "modulate only active trace list or lazily evaluated eligible synapses",
+      "severity": "medium",
+      "why_it_matters": "global reward updates should touch active traces, not every synapse"
+    },
+    {
+      "blocker_id": "SCALE-004",
+      "blocks_custom_runtime_learning_hardware": true,
+      "complexity": "O(N) per delivered input",
+      "current_pattern": "each delivered synaptic input performs a linked-list neuron lookup",
+      "detected": true,
+      "file": "src/neuron_manager.c",
+      "function": "neuron_add_input/neuron_find",
+      "required_fix": "add direct neuron id -> neuron/state index table or bounded preallocated pool",
+      "severity": "medium",
+      "why_it_matters": "even after adding outgoing adjacency, input delivery can stay expensive"
+    },
+    {
+      "blocker_id": "SCALE-005",
+      "blocks_custom_runtime_learning_hardware": false,
+      "complexity": "allocation-time variable cost and fragmentation risk",
+      "current_pattern": "runtime birth/death and synapse creation use sark_alloc/sark_free linked structures",
+      "detected": true,
+      "file": "src/neuron_manager.c/src/synapse_manager.c/src/router.c",
+      "function": "birth/death/create_syn/router_add_neuron",
+      "required_fix": "preallocate bounded pools with free lists/active masks and explicit capacity telemetry",
+      "severity": "medium",
+      "why_it_matters": "long-running organism growth should not depend on heap fragmentation behavior"
+    },
+    {
+      "blocker_id": "SCALE-006",
+      "blocks_custom_runtime_learning_hardware": true,
+      "complexity": "insufficient observability, not a runtime cost issue",
+      "current_pattern": "READ_SPIKES returns only neuron count and low 16 bits of timestep",
+      "detected": true,
+      "file": "src/host_interface.c",
+      "function": "_handle_read_spikes",
+      "required_fix": "add fragmented or compact state-summary readback for spikes, reward, pending, slots, and weights",
+      "severity": "high",
+      "why_it_matters": "learning acceptance needs compact summaries/readback, not just count/timestep"
+    },
+    {
+      "blocker_id": "SCALE-007",
+      "blocks_custom_runtime_learning_hardware": false,
+      "complexity": "single-core proof of concept",
+      "current_pattern": "single-core global state and no shard/placement contract",
+      "detected": true,
+      "file": "src/main.c",
+      "function": "timer_callback/c_main",
+      "required_fix": "define core-local shard contract, per-core summaries, and inter-core routing/resource budgets",
+      "severity": "medium",
+      "why_it_matters": "population growth requires shardable per-core state and host-visible partitioning"
+    }
+  ],
+  "static_checks": [
+    {
+      "name": "PyNN/sPyNNaker boundary documented",
+      "note": "",
+      "passed": true,
+      "rule": "runtime README keeps C as experimental sidecar",
+      "value": "Python/PyNN canonical + C sidecar"
+    },
+    {
+      "name": "custom C is limited to unsupported/scaling substrate pieces",
+      "note": "",
+      "passed": true,
+      "rule": "docs must not imply full repo rewrite in C",
+      "value": "state/plasticity/readback/lifecycle substrate"
+    },
+    {
+      "name": "bounded context slots",
+      "note": "",
+      "passed": true,
+      "rule": "defined and used as fixed array",
+      "value": "MAX_CONTEXT_SLOTS"
+    },
+    {
+      "name": "bounded pending horizons",
+      "note": "",
+      "passed": true,
+      "rule": "defined and used as fixed array",
+      "value": "MAX_PENDING_HORIZONS"
+    },
+    {
+      "name": "pending horizons do not store future target",
+      "note": "",
+      "passed": true,
+      "rule": "absent from pending_horizon_t",
+      "value": "int32_t target;"
+    },
+    {
+      "name": "state manager avoids dynamic allocation",
+      "note": "",
+      "passed": true,
+      "rule": "absent from state_manager.c",
+      "value": "malloc/sark_alloc"
+    },
+    {
+      "name": "eligibility trace exists",
+      "note": "",
+      "passed": true,
+      "rule": "in synapse_t and dopamine rule",
+      "value": "eligibility_trace"
+    },
+    {
+      "name": "count-only readback is explicitly marked incomplete",
+      "note": "",
+      "passed": true,
+      "rule": "host_interface documents count/timestep-only readback",
+      "value": "READ_SPIKES"
+    },
+    {
+      "name": "host tests cover runtime substrate",
+      "note": "",
+      "passed": true,
+      "rule": "state/plasticity tests exist",
+      "value": "test_runtime.c"
+    }
+  ],
+  "status": "pass",
+  "summary": {
+    "claim_boundary": "Scale-readiness audit only; PASS means blockers are explicit, not that the runtime is scale-ready.",
+    "custom_c_role": "only CRA-specific on-chip state, delayed credit, plasticity, lifecycle/routing, and compact readback that PyNN cannot express or scale",
+    "custom_runtime_scale_ready": false,
+    "detected_scale_blockers": 7,
+    "direct_custom_runtime_hardware_learning_allowed": false,
+    "hardware_learning_blocking_items": 5,
+    "high_severity_blockers": 3,
+    "host_test_returncode": 0,
+    "host_tests_passed": true,
+    "next_step_if_passed": "Tier 4.22g event-indexed spike delivery plus lazy/active eligibility traces before any custom-runtime learning hardware claim.",
+    "pynn_spynnaker_role": "primary hardware construction/mapping/run layer for supported primitives",
+    "runner_revision": "tier4_22f0_custom_runtime_scale_audit_20260430_0000",
+    "static_checks_passed": 9,
+    "static_checks_total": 9,
+    "tier4_22e_manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_22e_20260430_local_learning_parity/tier4_22e_results.json",
+    "tier4_22e_status": "pass"
+  },
+  "tier": "Tier 4.22f0 - Custom Runtime Scale-Readiness Audit"
+}

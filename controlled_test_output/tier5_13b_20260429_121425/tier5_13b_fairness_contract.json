@@ -1,0 +1,118 @@
+{
+  "claim_boundary": "Tier 5.13b is a software routing diagnostic; it is not native/internal CRA routing or hardware evidence.",
+  "fairness_rules": [
+    "All candidates and baselines see the same event stream, context cues, input signs, decision targets, and feedback timing.",
+    "Held-out routing decisions are scored before feedback updates.",
+    "The context cue is separated from the decision by more steps than the selected online baseline history window.",
+    "Router shams keep comparable module tables but destroy routing, reset routing, or select random/wrong modules.",
+    "Oracle routing is reported only as an upper bound and cannot be promoted as CRA evidence."
+  ],
+  "generated_at_utc": "2026-04-29T12:15:43+00:00",
+  "leakage_rules": [
+    "Feedback due step must never precede the scored decision step.",
+    "Candidate route selection telemetry is logged before feedback is applied for that decision."
+  ],
+  "models": [
+    "sign_persistence",
+    "online_perceptron",
+    "online_logistic_regression",
+    "echo_state_network",
+    "small_gru",
+    "stdp_only_snn"
+  ],
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "tasks": [
+    "heldout_context_routing",
+    "distractor_router_chain",
+    "context_reentry_routing"
+  ],
+  "tier": "Tier 5.13b - Module Routing / Contextual Gating Diagnostic",
+  "variants": [
+    {
+      "group": "frozen_baseline",
+      "hypothesis": "Frozen v1.8-style CRA sees the raw delayed-context event stream without an explicit router feature.",
+      "mode": "raw",
+      "name": "v1_8_raw_cra",
+      "overrides": {
+        "learning.context_memory_enabled": true,
+        "learning.context_memory_mode": "keyed",
+        "learning.context_memory_slot_count": 4,
+        "learning.delayed_readout_learning_rate": 0.2,
+        "learning.macro_eligibility_enabled": false,
+        "learning.predictive_context_enabled": true,
+        "learning.predictive_context_mode": "keyed",
+        "learning.predictive_context_slot_count": 8
+      },
+      "runner": "cra"
+    },
+    {
+      "group": "candidate_bridge",
+      "hypothesis": "CRA receives the routed module output as a host-computed scalar feature at decision time.",
+      "mode": "router_input",
+      "name": "cra_router_input_scaffold",
+      "overrides": {
+        "learning.context_memory_enabled": true,
+        "learning.context_memory_mode": "keyed",
+        "learning.context_memory_slot_count": 4,
+        "learning.delayed_readout_learning_rate": 0.2,
+        "learning.macro_eligibility_enabled": false,
+        "learning.predictive_context_enabled": true,
+        "learning.predictive_context_mode": "keyed",
+        "learning.predictive_context_slot_count": 8
+      },
+      "runner": "cra"
+    },
+    {
+      "group": "candidate_scaffold",
+      "hypothesis": "Learns primitive modules and context-to-module scores, then selects the active module before feedback on held-out routing trials.",
+      "mode": "contextual_router",
+      "name": "contextual_router_scaffold",
+      "overrides": {},
+      "runner": "rule"
+    },
+    {
+      "group": "routing_ablation",
+      "hypothesis": "Control: all modules fire together, so conflicting modules cancel or vote ambiguously.",
+      "mode": "always_on",
+      "name": "always_on_modules",
+      "overrides": {},
+      "runner": "rule"
+    },
+    {
+      "group": "routing_ablation",
+      "hypothesis": "Control: a random learned module is selected at decision time.",
+      "mode": "random_router",
+      "name": "random_router",
+      "overrides": {},
+      "runner": "rule"
+    },
+    {
+      "group": "routing_ablation",
+      "hypothesis": "Control: the learned router table is cleared on held-out routing trials.",
+      "mode": "router_reset",
+      "name": "router_reset_ablation",
+      "overrides": {},
+      "runner": "rule"
+    },
+    {
+      "group": "routing_ablation",
+      "hypothesis": "Control: context keys retrieve a different context's module scores.",
+      "mode": "context_shuffle",
+      "name": "context_shuffle_ablation",
+      "overrides": {},
+      "runner": "rule"
+    },
+    {
+      "group": "oracle_upper_bound",
+      "hypothesis": "Oracle upper bound with the true context-to-skill map; reported but not promoted.",
+      "mode": "oracle",
+      "name": "oracle_router",
+      "overrides": {},
+      "runner": "rule"
+    }
+  ]
+}

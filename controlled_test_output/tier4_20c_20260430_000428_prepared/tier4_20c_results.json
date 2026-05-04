@@ -1,0 +1,157 @@
+{
+  "artifacts": {
+    "bridge_profile_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_20c_20260430_000428_prepared/tier4_20c_bridge_profile.json",
+    "capsule_config_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_20c_20260430_000428_prepared/jobmanager_capsule/capsule_config.json",
+    "capsule_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_20c_20260430_000428_prepared/jobmanager_capsule",
+    "expected_outputs_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_20c_20260430_000428_prepared/jobmanager_capsule/expected_outputs.json",
+    "jobmanager_readme": "/Users/james/JKS:CRA/controlled_test_output/tier4_20c_20260430_000428_prepared/jobmanager_capsule/README_JOBMANAGER.md",
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_20c_20260430_000428_prepared/tier4_20c_report.md",
+    "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_20c_20260430_000428_prepared/tier4_20c_results.json",
+    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_20c_20260430_000428_prepared/tier4_20c_summary.csv",
+    "v2_1_bridge_profile_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_20c_20260430_000428_prepared/jobmanager_capsule/v2_1_bridge_profile.json"
+  },
+  "criteria": [
+    {
+      "name": "Tier 4.20c runner revision",
+      "passed": true,
+      "rule": "expected current source",
+      "value": "tier4_20c_inprocess_no_baselines_20260430_0000"
+    },
+    {
+      "name": "source package import path available",
+      "passed": true,
+      "rule": "coral_reef_spinnaker exists",
+      "value": {
+        "action": "already_canonical",
+        "aliases_checked": [
+          "/Users/james/JKS:CRA/coral-reef-spinnaker",
+          "/Users/james/JKS:CRA/coral reef spinnaker"
+        ],
+        "canonical_package": "/Users/james/JKS:CRA/coral_reef_spinnaker",
+        "canonical_package_exists": true
+      }
+    },
+    {
+      "name": "Tier 4.16 child hardware runner exists",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/experiments/tier4_harder_spinnaker_capsule.py"
+    },
+    {
+      "name": "Tier 4.20b prerequisite pass recorded",
+      "passed": true,
+      "rule": "status == pass",
+      "value": {
+        "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_results.json",
+        "status": "pass"
+      }
+    },
+    {
+      "name": "three predeclared seeds requested",
+      "passed": true,
+      "rule": "== [42, 43, 44]",
+      "value": [
+        42,
+        43,
+        44
+      ]
+    },
+    {
+      "name": "tasks match v2.1 bridge repeat",
+      "passed": true,
+      "rule": "delayed_cue + hard_noisy_switching",
+      "value": [
+        "delayed_cue",
+        "hard_noisy_switching"
+      ]
+    },
+    {
+      "name": "runtime mode is chunked",
+      "passed": true,
+      "rule": "fixed",
+      "value": "chunked"
+    },
+    {
+      "name": "learning location is host",
+      "passed": true,
+      "rule": "fixed",
+      "value": "host"
+    },
+    {
+      "name": "chunk size uses 4.20b default",
+      "passed": true,
+      "rule": "== 50",
+      "value": 50
+    },
+    {
+      "name": "macro eligibility disabled",
+      "passed": true,
+      "rule": "== false",
+      "value": false
+    },
+    {
+      "name": "delayed_lr_0_20 selected",
+      "passed": true,
+      "rule": "== 0.20",
+      "value": 0.2
+    },
+    {
+      "name": "mode has explicit claim boundary",
+      "passed": true,
+      "rule": "prepare|run-hardware|ingest",
+      "value": "prepare"
+    },
+    {
+      "name": "capsule directory exists",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_20c_20260430_000428_prepared/jobmanager_capsule"
+    }
+  ],
+  "failure_reason": "",
+  "generated_at_utc": "2026-04-30T04:04:28+00:00",
+  "mode": "prepare",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_20c_20260430_000428_prepared",
+  "status": "prepared",
+  "summary": {
+    "baseline": "v2.1",
+    "bridge_profile": {
+      "contract_declared_not_native_yet": [
+        "keyed context memory",
+        "replay / consolidation",
+        "visible predictive context / predictive binding",
+        "composition and module routing",
+        "self-evaluation / reliability monitoring"
+      ],
+      "explicitly_excluded": [
+        "macro eligibility residual trace"
+      ],
+      "included_in_child_runner": [
+        "PendingHorizon delayed credit / delayed_lr_0_20"
+      ],
+      "macro_eligibility_enabled": false,
+      "profile_name": "v2_1_chunked_bridge_probe",
+      "rows": 7
+    },
+    "capsule_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_20c_20260430_000428_prepared/jobmanager_capsule",
+    "chunk_size_steps": 50,
+    "expected_child_runs": 6,
+    "hardware_run_attempted": false,
+    "learning_location": "host",
+    "macro_eligibility_enabled": false,
+    "population_size": 8,
+    "runner_revision": "tier4_20c_inprocess_no_baselines_20260430_0000",
+    "runtime_mode": "chunked",
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "steps": 120,
+    "tasks": [
+      "delayed_cue",
+      "hard_noisy_switching"
+    ]
+  },
+  "tier": "Tier 4.20c - v2.1 Three-Seed Chunked Hardware Repeat"
+}

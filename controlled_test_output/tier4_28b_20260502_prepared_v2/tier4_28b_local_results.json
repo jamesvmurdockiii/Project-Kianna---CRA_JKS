@@ -1,0 +1,121 @@
+{
+  "tier": "Tier 4.28b \u2014 Delayed-Cue Four-Core MCPL Hardware Probe",
+  "runner_revision": "tier4_28b_delayed_cue_four_core_mcpl_20260502_0001",
+  "generated_at_utc": "2026-05-03T03:45:46.656948+00:00",
+  "mode": "local",
+  "status": "pass",
+  "criteria": [
+    {
+      "name": "runner revision current",
+      "value": "tier4_28b_delayed_cue_four_core_mcpl_20260502_0001",
+      "rule": "expected",
+      "passed": true
+    },
+    {
+      "name": "MCPL wiring all checks pass",
+      "value": true,
+      "rule": "== True",
+      "passed": true
+    },
+    {
+      "name": "context_core .aplx built",
+      "value": true,
+      "rule": "== True",
+      "passed": true
+    },
+    {
+      "name": "context_core ITCM < 32KB",
+      "value": 11248,
+      "rule": "< 32768",
+      "passed": true
+    },
+    {
+      "name": "route_core .aplx built",
+      "value": true,
+      "rule": "== True",
+      "passed": true
+    },
+    {
+      "name": "route_core ITCM < 32KB",
+      "value": 11280,
+      "rule": "< 32768",
+      "passed": true
+    },
+    {
+      "name": "memory_core .aplx built",
+      "value": true,
+      "rule": "== True",
+      "passed": true
+    },
+    {
+      "name": "memory_core ITCM < 32KB",
+      "value": 11280,
+      "rule": "< 32768",
+      "passed": true
+    },
+    {
+      "name": "learning_core .aplx built",
+      "value": true,
+      "rule": "== True",
+      "passed": true
+    },
+    {
+      "name": "learning_core ITCM < 32KB",
+      "value": 12968,
+      "rule": "< 32768",
+      "passed": true
+    },
+    {
+      "name": "host reference weight negative",
+      "value": -32760,
+      "rule": "< 0",
+      "passed": true
+    },
+    {
+      "name": "host reference tail accuracy high",
+      "value": 1.0,
+      "rule": "> 0.8",
+      "passed": true
+    }
+  ],
+  "wiring_checks": {
+    "CRA_USE_MCPL_LOOKUP defined in Makefile": true,
+    "_send_lookup_request uses MCPL path": true,
+    "_send_lookup_reply uses MCPL path": true,
+    "mcpl_lookup_callback wired in main.c": true,
+    "cra_state_mcpl_init called in c_main": true,
+    "MCPL key macros in config.h": true,
+    "MCPL msg types defined": true
+  },
+  "builds": {
+    "context_core": {
+      "profile": "context_core",
+      "build_returncode": 0,
+      "aplx_exists": true,
+      "aplx_path": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/build/coral_reef_context_core.aplx",
+      "itcm_text_bytes": 11248
+    },
+    "route_core": {
+      "profile": "route_core",
+      "build_returncode": 0,
+      "aplx_exists": true,
+      "aplx_path": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/build/coral_reef_route_core.aplx",
+      "itcm_text_bytes": 11280
+    },
+    "memory_core": {
+      "profile": "memory_core",
+      "build_returncode": 0,
+      "aplx_exists": true,
+      "aplx_path": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/build/coral_reef_memory_core.aplx",
+      "itcm_text_bytes": 11280
+    },
+    "learning_core": {
+      "profile": "learning_core",
+      "build_returncode": 0,
+      "aplx_exists": true,
+      "aplx_path": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/build/coral_reef_learning_core.aplx",
+      "itcm_text_bytes": 12968
+    }
+  },
+  "claim_boundary": "Local build validation only. NOT hardware evidence."
+}

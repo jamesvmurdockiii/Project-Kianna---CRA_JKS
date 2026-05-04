@@ -1,0 +1,51 @@
+# Python caches and virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Build artifacts and compiled binaries
+coral_reef_spinnaker/spinnaker_runtime/build/
+*.aplx
+*.elf
+*.o
+*.a
+*.dylib
+# Host test executables (rebuilt from source)
+coral_reef_spinnaker/spinnaker_runtime/tests/test_runtime
+coral_reef_spinnaker/spinnaker_runtime/tests/test_mcpl_feasibility
+
+# OS and editor noise
+.DS_Store
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Local working directories (not canonical evidence)
+tier4_*_job_output/
+tier4_*_syntax_test/
+tier4_*_local_output*
+tier4_*_prepare_output/
+cra_422b/
+
+# Note: controlled_test_output/ is INTENTIONALLY NOT IGNORED.
+# It contains the reproducible evidence trail and is part of the
+# open-source research artifact. See README.md and codebasecontract.md.
+
+# Note: ebrains_jobs/ is INTENTIONALLY NOT IGNORED.
+# It contains self-contained EBRAINS upload packages that document
+# exactly what source was sent to hardware. See docs/SPINNAKER_EBRAINS_RUNBOOK.md.

@@ -1,0 +1,192 @@
+{
+  "schema_version": "1.0",
+  "entry_id": "tier4_15_spinnaker_hardware_multiseed_repeat",
+  "created_at_utc": "2026-04-27T02:56:39.455055+00:00",
+  "source_download_dir": "/Users/james/Downloads",
+  "canonical_output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_15_20260427_030501_hardware_pass",
+  "policy": "Copied into canonical generated-evidence bundle; Downloads was not modified or deleted.",
+  "records": [
+    {
+      "role": "canonical_artifact",
+      "source_path": "/Users/james/Downloads/tier4_15_results.json",
+      "dest_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_15_20260427_030501_hardware_pass/tier4_15_results.json",
+      "bytes": 40691,
+      "sha256": "1101d99bad6e340a9437cece392a8246ea9b68ca8f92f31a647a459aaac0fdad",
+      "note": ""
+    },
+    {
+      "role": "canonical_artifact",
+      "source_path": "/Users/james/Downloads/tier4_15_report.md",
+      "dest_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_15_20260427_030501_hardware_pass/tier4_15_report.md",
+      "bytes": 4692,
+      "sha256": "9727e231c1128a9cabb527dde6b779b0f7a0e590056f4fb3ed9b32ff7a04a6c8",
+      "note": ""
+    },
+    {
+      "role": "canonical_artifact",
+      "source_path": "/Users/james/Downloads/tier4_15_summary.csv",
+      "dest_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_15_20260427_030501_hardware_pass/tier4_15_summary.csv",
+      "bytes": 2262,
+      "sha256": "90db7db77d6c6bafa7bbcc2cac8b5d269371c2096f51e0bc1b71cbcde7f32ffa",
+      "note": ""
+    },
+    {
+      "role": "canonical_artifact",
+      "source_path": "/Users/james/Downloads/tier4_15_seed_summary.csv",
+      "dest_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_15_20260427_030501_hardware_pass/tier4_15_seed_summary.csv",
+      "bytes": 17600,
+      "sha256": "36356c17e79f7a607742b44af97bd1659b299da6991be5ac09919a9bb67e3b53",
+      "note": ""
+    },
+    {
+      "role": "canonical_artifact",
+      "source_path": "/Users/james/Downloads/tier4_15_multi_seed_summary.png",
+      "dest_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_15_20260427_030501_hardware_pass/tier4_15_multi_seed_summary.png",
+      "bytes": 56982,
+      "sha256": "23d6b6c3f5bc92bb23c70893117cd23a0c1b79306f6094425416832947f7e555",
+      "note": ""
+    },
+    {
+      "role": "canonical_artifact",
+      "source_path": "/Users/james/Downloads/spinnaker_hardware_seed42_timeseries.csv",
+      "dest_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_15_20260427_030501_hardware_pass/spinnaker_hardware_seed42_timeseries.csv",
+      "bytes": 54637,
+      "sha256": "e097bdc0f7c97bf9cfd3a3603f8203070dee2ee79760aa09154244be30d1754f",
+      "note": ""
+    },
+    {
+      "role": "canonical_artifact",
+      "source_path": "/Users/james/Downloads/spinnaker_hardware_seed42_timeseries.png",
+      "dest_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_15_20260427_030501_hardware_pass/spinnaker_hardware_seed42_timeseries.png",
+      "bytes": 379706,
+      "sha256": "8144ead537be528cef426787698bad42abb4634210a3e5feb38b4e31ad9e3bc8",
+      "note": ""
+    },
+    {
+      "role": "canonical_artifact",
+      "source_path": "/Users/james/Downloads/spinnaker_hardware_seed43_timeseries.csv",
+      "dest_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_15_20260427_030501_hardware_pass/spinnaker_hardware_seed43_timeseries.csv",
+      "bytes": 53753,
+      "sha256": "4735d49b5ea0c37c1a69c0feebc831d59e5e9af2917a08b30834027bd877a56f",
+      "note": ""
+    },
+    {
+      "role": "canonical_artifact",
+      "source_path": "/Users/james/Downloads/spinnaker_hardware_seed43_timeseries.png",
+      "dest_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_15_20260427_030501_hardware_pass/spinnaker_hardware_seed43_timeseries.png",
+      "bytes": 383898,
+      "sha256": "019b595bc6c6a96277e0f2b28e2466e68b43e6bbb2ed4c82c57e112cee8e8dff",
+      "note": ""
+    },
+    {
+      "role": "canonical_artifact",
+      "source_path": "/Users/james/Downloads/spinnaker_hardware_seed44_timeseries.csv",
+      "dest_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_15_20260427_030501_hardware_pass/spinnaker_hardware_seed44_timeseries.csv",
+      "bytes": 54634,
+      "sha256": "c95389e6a221f7d0257b9c9bafc4f165955e681ec81fffee109dff07257ded67",
+      "note": ""
+    },
+    {
+      "role": "canonical_artifact",
+      "source_path": "/Users/james/Downloads/spinnaker_hardware_seed44_timeseries.png",
+      "dest_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_15_20260427_030501_hardware_pass/spinnaker_hardware_seed44_timeseries.png",
+      "bytes": 383979,
+      "sha256": "9bad8884d4cc6af4c474d9213ff89896332bdc2ae54beacb4ab498e5acc23809",
+      "note": ""
+    },
+    {
+      "role": "remote_manifest",
+      "source_path": "/Users/james/Downloads/tier4_15_latest_manifest.json",
+      "dest_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_15_20260427_030501_hardware_pass/remote_tier4_15_latest_manifest.json",
+      "bytes": 580,
+      "sha256": "a4084ba9122f4d2e8fee898545b4779fc9abbfc9942c7228f35f0f95aac29a27",
+      "note": "Original JobManager latest manifest. Local canonical pointer is regenerated by evidence_registry.py."
+    },
+    {
+      "role": "raw_provenance_archive",
+      "source_path": "/Users/james/Downloads/reports.zip",
+      "dest_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_15_20260427_030501_hardware_pass/raw_reports/spinnaker_reports_tier4_15_seeds_42_43_44.zip",
+      "bytes": 317379,
+      "sha256": "12bc64f6047a395526a13cfc1e441b316db7b1506143af7d7c199cd324482852",
+      "note": ""
+    },
+    {
+      "role": "spinnaker_provenance_dir",
+      "source_path": "/Users/james/Downloads/reports 2/2026-04-27-03-05-01-872105/finished",
+      "dest_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_15_20260427_030501_hardware_pass/spinnaker_reports/2026-04-27-03-05-01-872105/finished",
+      "bytes": 26,
+      "sha256": "0383484d11b46450aeeb6d9493fb0fcbf91a6554f3b2d95e68974750e4cdc6e6",
+      "note": ""
+    },
+    {
+      "role": "spinnaker_provenance_dir",
+      "source_path": "/Users/james/Downloads/reports 2/2026-04-27-03-05-01-872105/global_provenance.sqlite3",
+      "dest_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_15_20260427_030501_hardware_pass/spinnaker_reports/2026-04-27-03-05-01-872105/global_provenance.sqlite3",
+      "bytes": 602112,
+      "sha256": "79e149d3751dcb57f9abb4ba83a334384c40e453c29defaa9ec052c5ab3e5ba1",
+      "note": ""
+    },
+    {
+      "role": "spinnaker_provenance_dir",
+      "source_path": "/Users/james/Downloads/reports 2/2026-04-27-03-19-49-290162/finished",
+      "dest_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_15_20260427_030501_hardware_pass/spinnaker_reports/2026-04-27-03-19-49-290162/finished",
+      "bytes": 26,
+      "sha256": "72c52e1c68c4436c81d411ce306f145f8032bae3faebb47601bbe5dda720031b",
+      "note": ""
+    },
+    {
+      "role": "spinnaker_provenance_dir",
+      "source_path": "/Users/james/Downloads/reports 2/2026-04-27-03-19-49-290162/global_provenance.sqlite3",
+      "dest_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_15_20260427_030501_hardware_pass/spinnaker_reports/2026-04-27-03-19-49-290162/global_provenance.sqlite3",
+      "bytes": 602112,
+      "sha256": "dbdfe2408f632f393ad02f41159e147d5d42bd330e3a54bcb433ee5f6bada3cd",
+      "note": ""
+    },
+    {
+      "role": "spinnaker_provenance_dir",
+      "source_path": "/Users/james/Downloads/reports 2/2026-04-27-03-34-22-032643/finished",
+      "dest_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_15_20260427_030501_hardware_pass/spinnaker_reports/2026-04-27-03-34-22-032643/finished",
+      "bytes": 26,
+      "sha256": "50f6a60684d25987bda512934f7ba120c17d1526f3a2c96eebebc9d36b0b7ef9",
+      "note": ""
+    },
+    {
+      "role": "spinnaker_provenance_dir",
+      "source_path": "/Users/james/Downloads/reports 2/2026-04-27-03-34-22-032643/global_provenance.sqlite3",
+      "dest_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_15_20260427_030501_hardware_pass/spinnaker_reports/2026-04-27-03-34-22-032643/global_provenance.sqlite3",
+      "bytes": 602112,
+      "sha256": "d2f1b7245b6c0c37d875eaef7a7ad34694aca5270c5aceeb3f74378e9a4bd6ec",
+      "note": ""
+    },
+    {
+      "role": "download_original",
+      "source_path": "/Users/james/Downloads/finished",
+      "dest_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_15_20260427_030501_hardware_pass/_download_intake_originals/finished",
+      "bytes": 26,
+      "sha256": "50f6a60684d25987bda512934f7ba120c17d1526f3a2c96eebebc9d36b0b7ef9",
+      "note": "Root-level downloaded file preserved for audit; canonical per-seed provenance is under spinnaker_reports/."
+    },
+    {
+      "role": "download_original",
+      "source_path": "/Users/james/Downloads/global_provenance.sqlite3",
+      "dest_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_15_20260427_030501_hardware_pass/_download_intake_originals/global_provenance.sqlite3",
+      "bytes": 602112,
+      "sha256": "d2f1b7245b6c0c37d875eaef7a7ad34694aca5270c5aceeb3f74378e9a4bd6ec",
+      "note": "Root-level downloaded file preserved for audit; canonical per-seed provenance is under spinnaker_reports/."
+    },
+    {
+      "role": "normalized_study_record",
+      "source_path": null,
+      "dest_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_15_20260427_030501_hardware_pass/study_data.json",
+      "bytes": 8709,
+      "sha256": "9eff9e6051663923a82ff2156647b173282ddbeec7231b697513a7e3b3593a75",
+      "note": "Local normalized study record generated during import."
+    }
+  ],
+  "ignored_source_candidates": [
+    {
+      "source_path": "/Users/james/Downloads/reports",
+      "reason": "Looks like older Tier 4.13-era reports; Tier 4.15 canonical provenance came from Downloads/reports 2/."
+    }
+  ]
+}

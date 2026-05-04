@@ -1,0 +1,55 @@
+{
+  "tier": "Tier 4.29b \u2014 Native Routing/Composition Gate",
+  "status": "fail",
+  "submode": "multi-seed",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "per_seed": [
+    {
+      "board": "10.11.194.65",
+      "passed": 48,
+      "total": 52,
+      "failed_criteria": [
+        "wrong-route events fail cleanly (route misses)",
+        "route overwrite uses new value (route writes)",
+        "route lookups maintain correctness (route hits)",
+        "route_core active_slots matches expected"
+      ],
+      "weight_raw": 11262,
+      "bias_raw": -6145
+    },
+    {
+      "board": "10.11.194.17",
+      "passed": 48,
+      "total": 52,
+      "failed_criteria": [
+        "wrong-route events fail cleanly (route misses)",
+        "route overwrite uses new value (route writes)",
+        "route lookups maintain correctness (route hits)",
+        "route_core active_slots matches expected"
+      ],
+      "weight_raw": 11262,
+      "bias_raw": -6145
+    },
+    {
+      "board": "10.11.195.65",
+      "passed": 48,
+      "total": 52,
+      "failed_criteria": [
+        "wrong-route events fail cleanly (route misses)",
+        "route overwrite uses new value (route writes)",
+        "route lookups maintain correctness (route hits)",
+        "route_core active_slots matches expected"
+      ],
+      "weight_raw": 11262,
+      "bias_raw": -6145
+    }
+  ],
+  "failure_stage": "hardware execution / metric failure",
+  "root_cause": "host_interface.c host_if_pack_state_summary() emits context-slot counters (slot_writes/slot_hits/slot_misses/active_slots) for ALL profiles, but route_core updates route-slot counters (route_slot_writes/route_slot_hits/route_slot_misses/active_route_slots). Host reads zeros for route metrics.",
+  "ingest_dir": "controlled_test_output/tier4_29b_20260503_hardware_fail_ingested",
+  "generated_at_utc": "2026-05-03T22:32:21.220950+00:00"
+}

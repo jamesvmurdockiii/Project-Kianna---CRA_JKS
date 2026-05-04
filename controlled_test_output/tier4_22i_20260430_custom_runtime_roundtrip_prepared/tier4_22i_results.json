@@ -1,0 +1,406 @@
+{
+  "artifacts": {
+    "job_readme": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/ebrains_upload_bundle/cra_422r/README_TIER4_22I_JOB.md",
+    "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/tier4_22i_results.json",
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/tier4_22i_report.md",
+    "stable_upload_folder": "/Users/james/JKS:CRA/ebrains_jobs/cra_422r",
+    "upload_bundle": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/ebrains_upload_bundle/cra_422r"
+  },
+  "criteria": [
+    {
+      "name": "Tier 4.22h compact-readback pass exists",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "main.c host syntax check pass",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "upload bundle created",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/ebrains_upload_bundle/cra_422r"
+    },
+    {
+      "name": "runtime source included",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/ebrains_upload_bundle/cra_422r/coral_reef_spinnaker/spinnaker_runtime"
+    },
+    {
+      "name": "controller source includes CMD_READ_STATE",
+      "note": "",
+      "passed": true,
+      "rule": "contains CMD_READ_STATE",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/ebrains_upload_bundle/cra_422r/coral_reef_spinnaker/python_host/colony_controller.py"
+    },
+    {
+      "name": "run-hardware command emitted",
+      "note": "",
+      "passed": true,
+      "rule": "contains --mode run-hardware",
+      "value": "cra_422r/experiments/tier4_22i_custom_runtime_roundtrip.py --mode run-hardware --output-dir tier4_22i_job_output"
+    },
+    {
+      "name": "source official no-payload MC callback registered",
+      "note": "",
+      "passed": true,
+      "rule": "uses Tier 4.22k-confirmed official Spin1API enum constant",
+      "value": "spin1_callback_on(MC_PACKET_RECEIVED"
+    },
+    {
+      "name": "source official payload MC callback registered",
+      "note": "",
+      "passed": true,
+      "rule": "uses Tier 4.22k-confirmed official Spin1API enum constant",
+      "value": "spin1_callback_on(MCPL_PACKET_RECEIVED"
+    },
+    {
+      "name": "source legacy guessed callback names absent",
+      "note": "",
+      "passed": true,
+      "rule": "no direct brittle guessed callback names remain",
+      "value": "MC_PACKET_RX/MCPL_PACKET_RX absent"
+    },
+    {
+      "name": "source host stub mirrors confirmed EBRAINS event names",
+      "note": "",
+      "passed": true,
+      "rule": "local syntax guard exposes official names and omits guessed names",
+      "value": "MC_PACKET_RECEIVED/MCPL_PACKET_RECEIVED"
+    },
+    {
+      "name": "source SDP reply uses packed official sdp_msg_t fields",
+      "note": "",
+      "passed": true,
+      "rule": "mirrors real SARK SDP field names instead of local split x/y/cpu guesses",
+      "value": "dest_port/srce_port/dest_addr/srce_addr"
+    },
+    {
+      "name": "source deprecated split SDP fields absent",
+      "note": "",
+      "passed": true,
+      "rule": "EBRAINS SARK sdp_msg_t uses packed address/port fields",
+      "value": "dest_y/src_y/dest_x/src_x/src_cpu absent"
+    },
+    {
+      "name": "source uses official SARK memory copy API",
+      "note": "",
+      "passed": true,
+      "rule": "real spinnaker_tools exposes sark_mem_cpy, not sark_memcpy",
+      "value": "sark_mem_cpy"
+    },
+    {
+      "name": "source host stub mirrors official SARK SDP fields",
+      "note": "",
+      "passed": true,
+      "rule": "local syntax guard exposes the same fields/API that EBRAINS build requires",
+      "value": "srce_port/srce_addr/sark_mem_cpy"
+    },
+    {
+      "name": "source host sends official sdp_msg_t command header",
+      "note": "",
+      "passed": true,
+      "rule": "host must place opcode in cmd_rc and use arg1/arg2/arg3 before data[]",
+      "value": "struct.pack(\"<HHIII\""
+    },
+    {
+      "name": "source host parses cmd_rc before data payload",
+      "note": "",
+      "passed": true,
+      "rule": "board replies expose cmd/status in cmd_rc before data[] on UDP SDP",
+      "value": "struct.unpack_from(\"<HHIII\", data, 10)"
+    },
+    {
+      "name": "source runtime dispatch reads cmd_rc",
+      "note": "",
+      "passed": true,
+      "rule": "Spin1API callback receives an sdp_msg_t whose data[0] follows cmd_rc/seq/args",
+      "value": "msg->cmd_rc"
+    },
+    {
+      "name": "source runtime command args use arg1-arg3",
+      "note": "",
+      "passed": true,
+      "rule": "simple CRA commands use official SDP argument fields instead of hidden data offsets",
+      "value": "msg->arg1/msg->arg2/msg->arg3"
+    },
+    {
+      "name": "source runtime replies put cmd/status into cmd_rc",
+      "note": "",
+      "passed": true,
+      "rule": "host parser expects cmd/status in the command header and optional state bytes in data[]",
+      "value": "reply->cmd_rc"
+    },
+    {
+      "name": "source host stub mirrors command-header fields",
+      "note": "",
+      "passed": true,
+      "rule": "local syntax guard must expose the real Spin1API command header fields",
+      "value": "cmd_rc/seq/arg1/arg2/arg3"
+    },
+    {
+      "name": "source router header includes stdint directly",
+      "note": "",
+      "passed": true,
+      "rule": "router.h must not rely on indirect EBRAINS header includes for uint32_t",
+      "value": "#include <stdint.h>"
+    },
+    {
+      "name": "source router uses official SARK allocation API",
+      "note": "",
+      "passed": true,
+      "rule": "real spinnaker_tools exposes official rtr_* router calls",
+      "value": "rtr_alloc/rtr_mc_set/rtr_free"
+    },
+    {
+      "name": "source deprecated local-only router helpers absent",
+      "note": "",
+      "passed": true,
+      "rule": "local stubs must not hide EBRAINS SARK API drift",
+      "value": "sark_router_alloc/sark_router_free absent"
+    },
+    {
+      "name": "source host stub mirrors official router API",
+      "note": "",
+      "passed": true,
+      "rule": "local syntax guard exposes official SARK router names",
+      "value": "rtr_alloc/rtr_mc_set/rtr_free"
+    },
+    {
+      "name": "source hardware build uses official spinnaker_tools.mk",
+      "note": "",
+      "passed": true,
+      "rule": "official build chain supplies cpu_reset, build object, spin1_api library, and APLX section packing",
+      "value": "spinnaker_tools.mk"
+    },
+    {
+      "name": "source hardware build avoids deprecated Makefile.common include",
+      "note": "",
+      "passed": true,
+      "rule": "Makefile.common inclusion lacks the app build rules needed for APLX creation",
+      "value": "Makefile.common absent"
+    },
+    {
+      "name": "source hardware build avoids manual direct linker recipe",
+      "note": "",
+      "passed": true,
+      "rule": "manual object-only link produced empty ELF without cpu_reset/startup sections on EBRAINS",
+      "value": "no direct $(LD) object-only link"
+    },
+    {
+      "name": "source hardware output stays under build directory",
+      "note": "",
+      "passed": true,
+      "rule": "runner expects build/coral_reef.aplx",
+      "value": "APP_OUTPUT_DIR := build/"
+    },
+    {
+      "name": "source hardware build creates nested object directories",
+      "note": "",
+      "passed": true,
+      "rule": "spinnaker_tools.mk writes build/gnu/src/*.o and does not create nested source subdirectories itself",
+      "value": "$(OBJECTS): | $(OBJECT_DIRS)"
+    },
+    {
+      "name": "bundle official no-payload MC callback registered",
+      "note": "",
+      "passed": true,
+      "rule": "uses Tier 4.22k-confirmed official Spin1API enum constant",
+      "value": "spin1_callback_on(MC_PACKET_RECEIVED"
+    },
+    {
+      "name": "bundle official payload MC callback registered",
+      "note": "",
+      "passed": true,
+      "rule": "uses Tier 4.22k-confirmed official Spin1API enum constant",
+      "value": "spin1_callback_on(MCPL_PACKET_RECEIVED"
+    },
+    {
+      "name": "bundle legacy guessed callback names absent",
+      "note": "",
+      "passed": true,
+      "rule": "no direct brittle guessed callback names remain",
+      "value": "MC_PACKET_RX/MCPL_PACKET_RX absent"
+    },
+    {
+      "name": "bundle host stub mirrors confirmed EBRAINS event names",
+      "note": "",
+      "passed": true,
+      "rule": "local syntax guard exposes official names and omits guessed names",
+      "value": "MC_PACKET_RECEIVED/MCPL_PACKET_RECEIVED"
+    },
+    {
+      "name": "bundle SDP reply uses packed official sdp_msg_t fields",
+      "note": "",
+      "passed": true,
+      "rule": "mirrors real SARK SDP field names instead of local split x/y/cpu guesses",
+      "value": "dest_port/srce_port/dest_addr/srce_addr"
+    },
+    {
+      "name": "bundle deprecated split SDP fields absent",
+      "note": "",
+      "passed": true,
+      "rule": "EBRAINS SARK sdp_msg_t uses packed address/port fields",
+      "value": "dest_y/src_y/dest_x/src_x/src_cpu absent"
+    },
+    {
+      "name": "bundle uses official SARK memory copy API",
+      "note": "",
+      "passed": true,
+      "rule": "real spinnaker_tools exposes sark_mem_cpy, not sark_memcpy",
+      "value": "sark_mem_cpy"
+    },
+    {
+      "name": "bundle host stub mirrors official SARK SDP fields",
+      "note": "",
+      "passed": true,
+      "rule": "local syntax guard exposes the same fields/API that EBRAINS build requires",
+      "value": "srce_port/srce_addr/sark_mem_cpy"
+    },
+    {
+      "name": "bundle host sends official sdp_msg_t command header",
+      "note": "",
+      "passed": true,
+      "rule": "host must place opcode in cmd_rc and use arg1/arg2/arg3 before data[]",
+      "value": "struct.pack(\"<HHIII\""
+    },
+    {
+      "name": "bundle host parses cmd_rc before data payload",
+      "note": "",
+      "passed": true,
+      "rule": "board replies expose cmd/status in cmd_rc before data[] on UDP SDP",
+      "value": "struct.unpack_from(\"<HHIII\", data, 10)"
+    },
+    {
+      "name": "bundle runtime dispatch reads cmd_rc",
+      "note": "",
+      "passed": true,
+      "rule": "Spin1API callback receives an sdp_msg_t whose data[0] follows cmd_rc/seq/args",
+      "value": "msg->cmd_rc"
+    },
+    {
+      "name": "bundle runtime command args use arg1-arg3",
+      "note": "",
+      "passed": true,
+      "rule": "simple CRA commands use official SDP argument fields instead of hidden data offsets",
+      "value": "msg->arg1/msg->arg2/msg->arg3"
+    },
+    {
+      "name": "bundle runtime replies put cmd/status into cmd_rc",
+      "note": "",
+      "passed": true,
+      "rule": "host parser expects cmd/status in the command header and optional state bytes in data[]",
+      "value": "reply->cmd_rc"
+    },
+    {
+      "name": "bundle host stub mirrors command-header fields",
+      "note": "",
+      "passed": true,
+      "rule": "local syntax guard must expose the real Spin1API command header fields",
+      "value": "cmd_rc/seq/arg1/arg2/arg3"
+    },
+    {
+      "name": "bundle router header includes stdint directly",
+      "note": "",
+      "passed": true,
+      "rule": "router.h must not rely on indirect EBRAINS header includes for uint32_t",
+      "value": "#include <stdint.h>"
+    },
+    {
+      "name": "bundle router uses official SARK allocation API",
+      "note": "",
+      "passed": true,
+      "rule": "real spinnaker_tools exposes official rtr_* router calls",
+      "value": "rtr_alloc/rtr_mc_set/rtr_free"
+    },
+    {
+      "name": "bundle deprecated local-only router helpers absent",
+      "note": "",
+      "passed": true,
+      "rule": "local stubs must not hide EBRAINS SARK API drift",
+      "value": "sark_router_alloc/sark_router_free absent"
+    },
+    {
+      "name": "bundle host stub mirrors official router API",
+      "note": "",
+      "passed": true,
+      "rule": "local syntax guard exposes official SARK router names",
+      "value": "rtr_alloc/rtr_mc_set/rtr_free"
+    },
+    {
+      "name": "bundle hardware build uses official spinnaker_tools.mk",
+      "note": "",
+      "passed": true,
+      "rule": "official build chain supplies cpu_reset, build object, spin1_api library, and APLX section packing",
+      "value": "spinnaker_tools.mk"
+    },
+    {
+      "name": "bundle hardware build avoids deprecated Makefile.common include",
+      "note": "",
+      "passed": true,
+      "rule": "Makefile.common inclusion lacks the app build rules needed for APLX creation",
+      "value": "Makefile.common absent"
+    },
+    {
+      "name": "bundle hardware build avoids manual direct linker recipe",
+      "note": "",
+      "passed": true,
+      "rule": "manual object-only link produced empty ELF without cpu_reset/startup sections on EBRAINS",
+      "value": "no direct $(LD) object-only link"
+    },
+    {
+      "name": "bundle hardware output stays under build directory",
+      "note": "",
+      "passed": true,
+      "rule": "runner expects build/coral_reef.aplx",
+      "value": "APP_OUTPUT_DIR := build/"
+    },
+    {
+      "name": "bundle hardware build creates nested object directories",
+      "note": "",
+      "passed": true,
+      "rule": "spinnaker_tools.mk writes build/gnu/src/*.o and does not create nested source subdirectories itself",
+      "value": "$(OBJECTS): | $(OBJECT_DIRS)"
+    }
+  ],
+  "failure_reason": "",
+  "generated_at_utc": "2026-04-30T23:44:08+00:00",
+  "main_syntax_check": {
+    "normal": {
+      "command": "/usr/bin/cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-int-to-pointer-cast -I /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/stubs -I /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src -c /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src/main.c -o /Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/tier4_22i_main_syntax_normal.o",
+      "object_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/tier4_22i_main_syntax_normal.o",
+      "returncode": 0,
+      "status": "pass",
+      "stderr": "",
+      "stderr_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/tier4_22i_main_syntax_normal_stderr.txt",
+      "stdout": "",
+      "stdout_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/tier4_22i_main_syntax_normal_stdout.txt"
+    },
+    "status": "pass"
+  },
+  "mode": "prepare",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared",
+  "runner_revision": "tier4_22i_custom_runtime_roundtrip_20260430_0009",
+  "status": "prepared",
+  "summary": {
+    "claim_boundary": "Prepared source bundle only; no hardware evidence until returned run-hardware artifacts pass.",
+    "jobmanager_command": "cra_422r/experiments/tier4_22i_custom_runtime_roundtrip.py --mode run-hardware --output-dir tier4_22i_job_output",
+    "main_syntax_check_passed": true,
+    "mode": "prepare",
+    "next_step_if_passed": "Run the emitted EBRAINS command and ingest returned files.",
+    "tier4_22h_manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_results.json",
+    "tier4_22h_status": "pass",
+    "upload_folder": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/ebrains_upload_bundle/cra_422r",
+    "what_i_need_from_user": "Upload the generated cra_422r folder to EBRAINS/JobManager and run the emitted command; download returned files after completion."
+  },
+  "tier": "Tier 4.22i - Custom Runtime Board Round-Trip Smoke"
+}

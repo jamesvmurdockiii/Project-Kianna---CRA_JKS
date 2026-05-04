@@ -1,0 +1,2 @@
+mode,backend,hardware_run_attempted,hardware_target_configured,jobmanager_cli,tasks,seeds,chunk_sizes,steps,population_size,runtime_mode,learning_location,delayed_readout_lr,capsule_dir
+prepare,pyNN.spiNNaker,False,False,,"[""delayed_cue"", ""hard_noisy_switching""]",[42],"[10, 25, 50]",1200,8,chunked,host,0.2,/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_18a_20260427_203220_prepared/jobmanager_capsule

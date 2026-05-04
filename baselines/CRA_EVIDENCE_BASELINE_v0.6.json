@@ -1,0 +1,308 @@
+{
+  "baseline_id": "CRA Evidence Baseline v0.6",
+  "status": "frozen",
+  "frozen_at_utc": "2026-04-27T18:48:54.590928+00:00",
+  "source_registry_generated_at_utc": "2026-04-27T18:38:14.134520+00:00",
+  "registry_status": "pass",
+  "evidence_count": 15,
+  "core_test_count": 12,
+  "expanded_test_entry_count": 21,
+  "missing_expected_artifacts": 0,
+  "failed_canonical_criteria": 0,
+  "noncanonical_output_count": 45,
+  "freeze_rule": "Historical evidence lock after Tier 4.16a repaired delayed-cue three-seed hardware repeat passed and before Tier 4.16b hard_noisy_switching returns.",
+  "strongest_claim": "CRA has a controlled post-4.16a evidence baseline: negative controls, positive learning tests, mechanism ablations, scaling/domain/backend evidence, minimal repeatable SpiNNaker fixed-pattern hardware evidence, external-baseline comparison, learning-curve/failure-analysis/delayed-credit confirmation, chunked runtime parity, and repaired delayed-cue SpiNNaker hardware transfer across seeds 42, 43, and 44. Full Tier 4.16 remains pending hard_noisy_switching hardware.",
+  "claim_boundaries": [
+    "Tier 4.16a supports repaired delayed_cue hardware transfer only; it is not hard_noisy_switching transfer, hardware scaling, on-chip learning, or full Tier 4.16.",
+    "Tier 5.4 remains controlled software confirmation and not hard-switching best-baseline superiority.",
+    "Chunked + host is a proof-grade bridge; continuous/hybrid/on-chip learning remains future work.",
+    "Lifecycle/self-scaling value is not yet proven and remains a make-or-break organism claim.",
+    "Expanded baseline fairness, statistics, leakage checks, and reviewer-defense safeguards are required before a strong paper claim."
+  ],
+  "canonical_artifacts": [
+    {
+      "entry_id": "tier1_sanity",
+      "tier_label": "Tier 1 - sanity tests",
+      "status": "pass",
+      "claim": "No usable signal and shuffled labels do not produce false learning.",
+      "caveat": "Passing Tier 1 rules out obvious fake learning; it does not prove positive learning.",
+      "canonical_output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_155758",
+      "results_json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_155758/tier1_results.json",
+      "report_md": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_155758/tier1_report.md",
+      "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_155758/tier1_summary.csv"
+    },
+    {
+      "entry_id": "tier2_learning",
+      "tier_label": "Tier 2 - learning proof tests",
+      "status": "pass",
+      "claim": "Fixed pattern, delayed reward, and nonstationary switch tasks learn above threshold.",
+      "caveat": "Positive-control learning evidence depends on the controlled synthetic task definitions.",
+      "canonical_output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_155821",
+      "results_json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_155821/tier2_results.json",
+      "report_md": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_155821/tier2_report.md",
+      "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_155821/tier2_summary.csv"
+    },
+    {
+      "entry_id": "tier3_architecture",
+      "tier_label": "Tier 3 - architecture ablation tests",
+      "status": "pass",
+      "claim": "Dopamine, plasticity, and trophic selection each contribute measurable value.",
+      "caveat": "Ablation claims are scoped to the controlled tasks and seeds in this bundle.",
+      "canonical_output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_155852",
+      "results_json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_155852/tier3_results.json",
+      "report_md": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_155852/tier3_report.md",
+      "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_155852/tier3_summary.csv"
+    },
+    {
+      "entry_id": "tier4_10_population_scaling",
+      "tier_label": "Tier 4.10 - population scaling",
+      "status": "pass",
+      "claim": "Fixed populations from N=4 to N=64 remain stable on the switch stressor.",
+      "caveat": "This baseline scaling task saturated; the honest claim is stability, not strong scaling advantage.",
+      "canonical_output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_20260426_155103",
+      "results_json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_20260426_155103/tier4_results.json",
+      "report_md": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_20260426_155103/tier4_report.md",
+      "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_20260426_155103/tier4_summary.csv"
+    },
+    {
+      "entry_id": "tier4_10b_hard_population_scaling",
+      "tier_label": "Tier 4.10b - hard population scaling",
+      "status": "pass",
+      "claim": "Hard scaling remains stable and shows value through correlation/recovery/variance rather than raw accuracy.",
+      "caveat": "Hard-scaling accuracy is near baseline; the pass is based on stability plus non-accuracy scaling signals.",
+      "canonical_output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_10b_20260426_161251",
+      "results_json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_10b_20260426_161251/tier4_10b_results.json",
+      "report_md": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_10b_20260426_161251/tier4_10b_report.md",
+      "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_10b_20260426_161251/tier4_10b_summary.csv"
+    },
+    {
+      "entry_id": "tier4_11_domain_transfer",
+      "tier_label": "Tier 4.11 - domain transfer",
+      "status": "pass",
+      "claim": "The same CRA core transfers from finance/signed-return to non-finance sensor_control.",
+      "caveat": "Domain transfer is proven for the controlled adapters here, not arbitrary domains.",
+      "canonical_output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655",
+      "results_json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/tier4_11_results.json",
+      "report_md": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/tier4_11_report.md",
+      "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/tier4_11_summary.csv"
+    },
+    {
+      "entry_id": "tier4_12_backend_parity",
+      "tier_label": "Tier 4.12 - backend parity",
+      "status": "pass",
+      "claim": "The fixed-pattern result survives NEST to Brian2 movement with zero synthetic fallback.",
+      "caveat": "The SpiNNaker item in Tier 4.12 is readiness prep, not a hardware learning result.",
+      "canonical_output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808",
+      "results_json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/tier4_12_results.json",
+      "report_md": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/tier4_12_report.md",
+      "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/tier4_12_summary.csv"
+    },
+    {
+      "entry_id": "tier4_13_spinnaker_hardware_capsule",
+      "tier_label": "Tier 4.13 - SpiNNaker Hardware Capsule",
+      "status": "pass",
+      "claim": "The minimal fixed-pattern CRA capsule executes through pyNN.spiNNaker with real spike readback and passes learning thresholds.",
+      "caveat": "Single-seed N=8 fixed-pattern capsule; not full hardware scaling or full CRA hardware deployment.",
+      "canonical_output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass",
+      "results_json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_results.json",
+      "report_md": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_report.md",
+      "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_summary.csv"
+    },
+    {
+      "entry_id": "tier4_14_hardware_runtime_characterization",
+      "tier_label": "Tier 4.14 - Hardware Runtime Characterization",
+      "status": "pass",
+      "claim": "The Tier 4.13 hardware pass has profiled wall-clock and sPyNNaker provenance costs; overhead is dominated by repeated per-step run/readback orchestration.",
+      "caveat": "Derived from the single-seed N=8 Tier 4.13 hardware pass unless rerun in run-hardware mode; not hardware repeatability or scaling evidence.",
+      "canonical_output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_14_20260426_213430",
+      "results_json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_14_20260426_213430/tier4_14_results.json",
+      "report_md": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_14_20260426_213430/tier4_14_report.md",
+      "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_14_20260426_213430/tier4_14_summary.csv"
+    },
+    {
+      "entry_id": "tier4_15_spinnaker_hardware_multiseed_repeat",
+      "tier_label": "Tier 4.15 - SpiNNaker Hardware Multi-Seed Repeat",
+      "status": "pass",
+      "claim": "The minimal fixed-pattern CRA hardware capsule repeats across seeds 42, 43, and 44 with zero fallback/failures and consistent learning metrics.",
+      "caveat": "Three-seed N=8 fixed-pattern capsule only; not a harder hardware task, hardware population scaling, or full CRA hardware deployment.",
+      "canonical_output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_15_20260427_030501_hardware_pass",
+      "results_json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_15_20260427_030501_hardware_pass/tier4_15_results.json",
+      "report_md": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_15_20260427_030501_hardware_pass/tier4_15_report.md",
+      "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_15_20260427_030501_hardware_pass/tier4_15_summary.csv"
+    },
+    {
+      "entry_id": "tier5_1_external_baselines",
+      "tier_label": "Tier 5.1 - External Baselines",
+      "status": "pass",
+      "claim": "CRA is competitive against simple external learners and shows a defensible median-baseline advantage on sensor_control and hard noisy switching, while simpler online learners dominate the easy delayed-cue task.",
+      "caveat": "Controlled software comparison only; not hardware evidence, not a claim that CRA wins every task, and not proof against all possible baselines.",
+      "canonical_output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_1_20260426_232530",
+      "results_json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_1_20260426_232530/tier5_1_results.json",
+      "report_md": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_1_20260426_232530/tier5_1_report.md",
+      "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_1_20260426_232530/tier5_1_summary.csv"
+    },
+    {
+      "entry_id": "tier5_2_learning_curve_sweep",
+      "tier_label": "Tier 5.2 - Learning Curve / Run-Length Sweep",
+      "status": "pass",
+      "claim": "Across 120, 240, 480, 960, and 1500 steps, CRA's Tier 5.1 hard-task edge does not strengthen at the longest horizon: sensor_control saturates for CRA and baselines, delayed_cue remains externally dominated, and hard_noisy_switching is mixed/negative at 1500 steps.",
+      "caveat": "Controlled software learning-curve characterization only; not hardware evidence, not proof that CRA cannot improve under other tasks/tuning, and not a claim that Tier 5.1 was invalid.",
+      "canonical_output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_2_20260426_234500",
+      "results_json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_2_20260426_234500/tier5_2_results.json",
+      "report_md": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_2_20260426_234500/tier5_2_report.md",
+      "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_2_20260426_234500/tier5_2_summary.csv"
+    },
+    {
+      "entry_id": "tier5_3_cra_failure_analysis",
+      "tier_label": "Tier 5.3 - CRA Failure Analysis / Learning Dynamics Debug",
+      "status": "pass",
+      "claim": "A 78-run CRA-only diagnostic matrix identifies delayed-credit strength as the leading candidate failure mode: `delayed_lr_0_20` restores delayed_cue to 1.0 tail accuracy and improves hard_noisy_switching above the external median at 960 steps.",
+      "caveat": "Controlled software diagnostic only; not hardware evidence, not final competitiveness evidence, and hard_noisy_switching still trails the best external baseline.",
+      "canonical_output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_3_20260427_055629",
+      "results_json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_3_20260427_055629/tier5_3_results.json",
+      "report_md": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_3_20260427_055629/tier5_3_report.md",
+      "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_3_20260427_055629/tier5_3_summary.csv"
+    },
+    {
+      "entry_id": "tier5_4_delayed_credit_confirmation",
+      "tier_label": "Tier 5.4 - Delayed-Credit Confirmation",
+      "status": "pass",
+      "claim": "The Tier 5.3 delayed-credit candidate `cra_delayed_lr_0_20` confirms across 960 and 1500 steps: delayed_cue stays at 1.0 tail accuracy, hard_noisy_switching beats the external median at both lengths, and the candidate does not regress versus current CRA.",
+      "caveat": "Controlled software confirmation only; not hardware evidence and not a superiority claim because hard_noisy_switching still trails the best external baseline.",
+      "canonical_output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_4_20260427_065412",
+      "results_json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_4_20260427_065412/tier5_4_results.json",
+      "report_md": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_4_20260427_065412/tier5_4_report.md",
+      "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_4_20260427_065412/tier5_4_summary.csv"
+    },
+    {
+      "entry_id": "tier4_16a_delayed_cue_hardware_repeat",
+      "tier_label": "Tier 4.16a - Repaired Delayed-Cue Hardware Repeat",
+      "status": "pass",
+      "claim": "The repaired delayed-credit delayed_cue regime transfers to real SpiNNaker hardware across seeds 42, 43, and 44 using chunked host replay.",
+      "caveat": "Three-seed N=8 delayed_cue capsule only; not hard_noisy_switching hardware transfer, hardware scaling, on-chip learning, or a full Tier 4.16 pass.",
+      "canonical_output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_184635_delayed_cue_3seed_hardware_pass",
+      "results_json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_184635_delayed_cue_3seed_hardware_pass/tier4_16_results.json",
+      "report_md": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_184635_delayed_cue_3seed_hardware_pass/tier4_16_report.md",
+      "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_184635_delayed_cue_3seed_hardware_pass/tier4_16_summary.csv"
+    }
+  ],
+  "noncanonical_diagnostics": [
+    {
+      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/_tier5_4_smoke",
+      "name": "_tier5_4_smoke",
+      "role": "probe_or_debug",
+      "status": "pass",
+      "generated_at_utc": "2026-04-27T10:53:59+00:00",
+      "results_files": [
+        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/_tier5_4_smoke/tier5_4_results.json"
+      ]
+    },
+    {
+      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_124916_hardware_fail",
+      "name": "tier4_16_20260427_124916_hardware_fail",
+      "role": "failed_hardware_run",
+      "status": "fail",
+      "generated_at_utc": "2026-04-27T13:12:59+00:00",
+      "results_files": [
+        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_124916_hardware_fail/tier4_16_results.json"
+      ]
+    },
+    {
+      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_131914_prepared",
+      "name": "tier4_16_20260427_131914_prepared",
+      "role": "prepared_capsule",
+      "status": "prepared",
+      "generated_at_utc": "2026-04-27T17:19:14+00:00",
+      "results_files": [
+        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_131914_prepared/tier4_16_results.json"
+      ]
+    },
+    {
+      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_182515_chunked_seed43_hardware_pass",
+      "name": "tier4_16_20260427_182515_chunked_seed43_hardware_pass",
+      "role": "hardware_probe_pass",
+      "status": "pass",
+      "generated_at_utc": "2026-04-27T17:40:46+00:00",
+      "results_files": [
+        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_182515_chunked_seed43_hardware_pass/tier4_16_results.json"
+      ]
+    },
+    {
+      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16a_debug_20260427_141912",
+      "name": "tier4_16a_debug_20260427_141912",
+      "role": "debug_diagnostic",
+      "status": "pass",
+      "generated_at_utc": "2026-04-27T14:20:06+00:00",
+      "results_files": [
+        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16a_debug_20260427_141912/tier4_16a_debug_results.json"
+      ]
+    },
+    {
+      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16a_fix_20260427_143252",
+      "name": "tier4_16a_fix_20260427_143252",
+      "role": "fix_diagnostic",
+      "status": "pass",
+      "generated_at_utc": "2026-04-27T14:53:36+00:00",
+      "results_files": [
+        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16a_fix_20260427_143252/tier4_16a_fix_results.json"
+      ]
+    },
+    {
+      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16a_fix_brian2_1200_20260427_145800",
+      "name": "tier4_16a_fix_brian2_1200_20260427_145800",
+      "role": "fix_diagnostic",
+      "status": "pass",
+      "generated_at_utc": "2026-04-27T15:11:07+00:00",
+      "results_files": [
+        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16a_fix_brian2_1200_20260427_145800/tier4_16a_fix_results.json"
+      ]
+    },
+    {
+      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16a_fix_nest_1200_20260427_145600",
+      "name": "tier4_16a_fix_nest_1200_20260427_145600",
+      "role": "fix_diagnostic",
+      "status": "pass",
+      "generated_at_utc": "2026-04-27T14:58:54+00:00",
+      "results_files": [
+        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16a_fix_nest_1200_20260427_145600/tier4_16a_fix_results.json"
+      ]
+    },
+    {
+      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16a_fix_nest_length_sweep_20260427_145400",
+      "name": "tier4_16a_fix_nest_length_sweep_20260427_145400",
+      "role": "fix_diagnostic",
+      "status": "fail",
+      "generated_at_utc": "2026-04-27T14:56:41+00:00",
+      "results_files": [
+        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16a_fix_nest_length_sweep_20260427_145400/tier4_16a_fix_results.json"
+      ]
+    },
+    {
+      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_17_20260427_171719_runtime_scaffold",
+      "name": "tier4_17_20260427_171719_runtime_scaffold",
+      "role": "runtime_contract_diagnostic",
+      "status": "prepared",
+      "generated_at_utc": "2026-04-27T17:17:19.311029+00:00",
+      "results_files": [
+        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_17_20260427_171719_runtime_scaffold/tier4_17_results.json"
+      ]
+    },
+    {
+      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_17b_20260427_164625_step_chunk_parity",
+      "name": "tier4_17b_20260427_164625_step_chunk_parity",
+      "role": "runtime_parity_diagnostic",
+      "status": "pass",
+      "generated_at_utc": "2026-04-27T16:46:31+00:00",
+      "results_files": [
+        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_17b_20260427_164625_step_chunk_parity/tier4_17b_results.json"
+      ]
+    }
+  ],
+  "next_evidence_after_freeze": [
+    "Tier 4.16b: hard_noisy_switching hardware transfer with delayed_lr_0_20, N=8, seeds 42/43/44, chunked + host, chunk_size_steps=25.",
+    "Tier 4.18: chunked hardware runtime/resource characterization before large hardware expansions.",
+    "Tier 5.5: expanded fair baselines with effect sizes, confidence intervals, matched task streams, and hyperparameter-budget rules.",
+    "Tier 6.1: software lifecycle/self-scaling value benchmark.",
+    "Tier 4.19: hardware lifecycle/self-scaling feasibility if software lifecycle passes."
+  ]
+}

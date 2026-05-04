@@ -1,0 +1,13 @@
+step,purpose,feature,target,feature_raw,target_raw,target_sign,learning_rate,learning_rate_raw,prediction_raw,prediction,prediction_sign,sign_correct,error_raw,error,delta_w_raw,delta_b_raw,readout_weight_raw,readout_bias_raw,readout_weight,readout_bias
+1,fixed-pattern signed feature/target event,1.0,1.0,32768,32768,1,0.25,8192,0,0.0,1,True,32768,1.0,8192,8192,8192,8192,0.25,0.25
+2,fixed-pattern signed feature/target event,-1.0,-1.0,-32768,-32768,-1,0.25,8192,0,0.0,1,False,-32768,-1.0,8192,-8192,16384,0,0.5,0.0
+3,fixed-pattern signed feature/target event,1.0,1.0,32768,32768,1,0.25,8192,16384,0.5,1,True,16384,0.5,4096,4096,20480,4096,0.625,0.125
+4,fixed-pattern signed feature/target event,-1.0,-1.0,-32768,-32768,-1,0.25,8192,-16384,-0.5,-1,True,-16384,-0.5,4096,-4096,24576,0,0.75,0.0
+5,fixed-pattern signed feature/target event,1.0,1.0,32768,32768,1,0.25,8192,24576,0.75,1,True,8192,0.25,2048,2048,26624,2048,0.8125,0.0625
+6,fixed-pattern signed feature/target event,-1.0,-1.0,-32768,-32768,-1,0.25,8192,-24576,-0.75,-1,True,-8192,-0.25,2048,-2048,28672,0,0.875,0.0
+7,fixed-pattern signed feature/target event,1.0,1.0,32768,32768,1,0.25,8192,28672,0.875,1,True,4096,0.125,1024,1024,29696,1024,0.90625,0.03125
+8,fixed-pattern signed feature/target event,-1.0,-1.0,-32768,-32768,-1,0.25,8192,-28672,-0.875,-1,True,-4096,-0.125,1024,-1024,30720,0,0.9375,0.0
+9,fixed-pattern signed feature/target event,1.0,1.0,32768,32768,1,0.25,8192,30720,0.9375,1,True,2048,0.0625,512,512,31232,512,0.953125,0.015625
+10,fixed-pattern signed feature/target event,-1.0,-1.0,-32768,-32768,-1,0.25,8192,-30720,-0.9375,-1,True,-2048,-0.0625,512,-512,31744,0,0.96875,0.0
+11,fixed-pattern signed feature/target event,1.0,1.0,32768,32768,1,0.25,8192,31744,0.96875,1,True,1024,0.03125,256,256,32000,256,0.9765625,0.0078125
+12,fixed-pattern signed feature/target event,-1.0,-1.0,-32768,-32768,-1,0.25,8192,-31744,-0.96875,-1,True,-1024,-0.03125,256,-256,32256,0,0.984375,0.0

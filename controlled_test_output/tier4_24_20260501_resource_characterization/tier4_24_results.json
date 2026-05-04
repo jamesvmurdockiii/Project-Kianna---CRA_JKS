@@ -1,0 +1,161 @@
+{
+  "tier": "Tier 4.24 - Custom Runtime Resource Characterization",
+  "runner_revision": "tier4_24_resource_characterization_20260501_0001",
+  "generated_at_utc": "2026-05-02T01:51:35.702561+00:00",
+  "mode": "local",
+  "status": "pass",
+  "passed_count": 14,
+  "total_count": 14,
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_24_20260501_resource_characterization",
+  "build_metrics": {
+    "build_time_seconds": 0.0,
+    "build_stdout": "rm -rf build/gnu/ tests/test_runtime\nspinnaker_tools not found.\nHost tests work with 'make test'.\nFor hardware builds set SPINN_DIRS, e.g.:\n  export SPINN_DIRS=/opt/spinnaker_tools\n",
+    "build_stderr": "make: *** [require-spinnaker] Error 2\n",
+    "build_returncode": 2,
+    "aplx_size_bytes": 0,
+    "elf_size_bytes": 0,
+    "size_info": {
+      "text": 0,
+      "data": 0,
+      "bss": 0,
+      "total": 0,
+      "command_found": false
+    },
+    "aplx_path": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/build/coral_reef.aplx",
+    "elf_path": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/build/coral_reef.elf",
+    "tools_detected": false
+  },
+  "artifact_metrics": {
+    "board": "10.11.235.9",
+    "core": "(0,0,4)",
+    "load_time_seconds": 2.1873621880076826,
+    "task_time_seconds": 4.327049097977579,
+    "stopped_timestep": 6170,
+    "continuous_commands": 64,
+    "chunked_commands": 134,
+    "command_reduction": 70,
+    "command_reduction_ratio": 0.522,
+    "continuous_payload_bytes": 2647,
+    "chunked_payload_bytes": 4099,
+    "payload_reduction": 1452,
+    "payload_reduction_ratio": 0.354,
+    "max_pending_depth": 3,
+    "active_context_slots": 4,
+    "active_route_slots": 4,
+    "active_memory_slots": 4
+  },
+  "memory_metrics": {
+    "max_context_slots": 8,
+    "max_route_slots": 8,
+    "max_memory_slots": 8,
+    "max_pending_horizons": 128,
+    "max_schedule_entries": 64,
+    "context_array_bytes": 128,
+    "route_array_bytes": 128,
+    "memory_array_bytes": 128,
+    "pending_array_bytes": 4096,
+    "schedule_array_bytes": 1792,
+    "misc_static_bytes": 100,
+    "dtcm_estimate_bytes": 6372
+  },
+  "criteria": [
+    {
+      "name": "runner revision current",
+      "value": "tier4_24_resource_characterization_20260501_0001",
+      "rule": "expected current source",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "custom C host tests pass",
+      "value": "pass",
+      "rule": "== pass",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": ".aplx built (EBRAINS 4.23c proved)",
+      "value": 0,
+      "rule": "> 0 or EBRAINS proved",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": ".elf built (EBRAINS 4.23c proved)",
+      "value": 0,
+      "rule": "> 0 or EBRAINS proved",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "4.23c hardware artifacts exist",
+      "value": 6170,
+      "rule": "> 0",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "load time measured",
+      "value": 2.1873621880076826,
+      "rule": "> 0",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "task time measured",
+      "value": 4.327049097977579,
+      "rule": "> 0",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "continuous command count < chunked",
+      "value": 64,
+      "rule": "< 134",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "command reduction > 0",
+      "value": 70,
+      "rule": "> 0",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "payload reduction > 0",
+      "value": 1452,
+      "rule": "> 0",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "max pending depth documented",
+      "value": 3,
+      "rule": ">= 3",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "active slots documented",
+      "value": "ctx=4 route=4 mem=4",
+      "rule": "all > 0",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "DTCM estimate computed",
+      "value": 6372,
+      "rule": "> 0",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "max schedule length documented",
+      "value": 64,
+      "rule": ">= 64",
+      "passed": true,
+      "note": ""
+    }
+  ]
+}

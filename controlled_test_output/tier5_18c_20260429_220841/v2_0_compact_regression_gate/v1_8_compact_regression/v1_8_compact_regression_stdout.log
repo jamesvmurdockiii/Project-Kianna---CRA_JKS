@@ -1,0 +1,19 @@
+[tier5.12d] running tier1_controls...
+[tier5.12d] tier1_controls: PASS rc=0
+[tier5.12d] running tier2_learning...
+[tier5.12d] tier2_learning: PASS rc=0
+[tier5.12d] running tier3_ablations...
+[tier5.12d] tier3_ablations: PASS rc=0
+[tier5.12d] running target_task_smokes...
+[tier5.12d] target_task_smokes: PASS rc=0
+[tier5.12d] running replay_consolidation_guardrail...
+[tier5.12d] replay_consolidation_guardrail: PASS rc=0
+[tier5.12d] running predictive_context_guardrail...
+[tier5.12d] predictive_context_guardrail: PASS rc=0
+{
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier5_12d_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier5_12d_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier5_12d_summary.csv"
+}

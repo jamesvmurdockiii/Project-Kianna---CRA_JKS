@@ -1,0 +1,126 @@
+{
+  "backend": "nest",
+  "claim_boundary": "Software neuron-parameter robustness diagnostic; not hardware/custom-C/on-chip neuron evidence and not a freeze gate by itself.",
+  "generated_at_utc": "2026-04-29T18:34:01+00:00",
+  "lif_response_probe_currents_nA": [
+    0.0,
+    0.1,
+    0.2,
+    0.4
+  ],
+  "parameter_propagation_audited": true,
+  "prediction_before_feedback": true,
+  "same_feedback_due_steps_across_variants": true,
+  "same_task_stream_across_variants": true,
+  "seeds": [
+    42,
+    43
+  ],
+  "tasks": [
+    "fixed_pattern",
+    "delayed_cue",
+    "sensor_control"
+  ],
+  "tier": "Tier 5.16 - Neuron Model / Parameter Sensitivity",
+  "variants": {
+    "cm_high": {
+      "description": "higher membrane capacitance",
+      "expected_direction": "lower current sensitivity",
+      "is_default": false,
+      "name": "cm_high",
+      "parameters": {
+        "cm": 0.35
+      }
+    },
+    "cm_low": {
+      "description": "lower membrane capacitance",
+      "expected_direction": "higher current sensitivity",
+      "is_default": false,
+      "name": "cm_low",
+      "parameters": {
+        "cm": 0.18
+      }
+    },
+    "default": {
+      "description": "canonical v1.9/v2.0-candidate LIF settings",
+      "expected_direction": "reference",
+      "is_default": true,
+      "name": "default",
+      "parameters": {}
+    },
+    "tau_m_fast": {
+      "description": "shorter membrane time constant",
+      "expected_direction": "faster membrane response",
+      "is_default": false,
+      "name": "tau_m_fast",
+      "parameters": {
+        "tau_m": 12.0
+      }
+    },
+    "tau_m_slow": {
+      "description": "longer membrane time constant",
+      "expected_direction": "slower membrane response",
+      "is_default": false,
+      "name": "tau_m_slow",
+      "parameters": {
+        "tau_m": 32.0
+      }
+    },
+    "tau_refrac_long": {
+      "description": "longer absolute refractory period",
+      "expected_direction": "lower max firing rate",
+      "is_default": false,
+      "name": "tau_refrac_long",
+      "parameters": {
+        "tau_refrac": 5.0
+      }
+    },
+    "tau_refrac_short": {
+      "description": "shorter absolute refractory period",
+      "expected_direction": "higher max firing rate",
+      "is_default": false,
+      "name": "tau_refrac_short",
+      "parameters": {
+        "tau_refrac": 1.0
+      }
+    },
+    "tau_syn_fast": {
+      "description": "faster excitatory/inhibitory synaptic current decay",
+      "expected_direction": "faster synaptic filtering",
+      "is_default": false,
+      "name": "tau_syn_fast",
+      "parameters": {
+        "tau_syn_e": 2.5,
+        "tau_syn_i": 2.5
+      }
+    },
+    "tau_syn_slow": {
+      "description": "slower excitatory/inhibitory synaptic current decay",
+      "expected_direction": "slower synaptic filtering",
+      "is_default": false,
+      "name": "tau_syn_slow",
+      "parameters": {
+        "tau_syn_e": 10.0,
+        "tau_syn_i": 10.0
+      }
+    },
+    "v_thresh_high": {
+      "description": "higher firing threshold; harder spiking",
+      "expected_direction": "lower excitability",
+      "is_default": false,
+      "name": "v_thresh_high",
+      "parameters": {
+        "v_thresh": -52.0
+      }
+    },
+    "v_thresh_low": {
+      "description": "lower firing threshold; easier spiking",
+      "expected_direction": "higher excitability",
+      "is_default": false,
+      "name": "v_thresh_low",
+      "parameters": {
+        "v_thresh": -58.0
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+rm -rf build/gnu/ tests/test_runtime
+spinnaker_tools not found.
+Host tests work with 'make test'.
+For hardware builds set SPINN_DIRS, e.g.:
+  export SPINN_DIRS=/opt/spinnaker_tools

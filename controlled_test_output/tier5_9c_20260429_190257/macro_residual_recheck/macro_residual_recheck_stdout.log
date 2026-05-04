@@ -1,0 +1,22 @@
+[tier5.9b] task=delayed_cue variant=v1_4_pending_horizon seed=42
+[tier5.9b] task=delayed_cue variant=macro_eligibility seed=42
+[tier5.9b] task=delayed_cue variant=macro_eligibility_shuffled seed=42
+[tier5.9b] task=delayed_cue variant=macro_eligibility_zero seed=42
+[tier5.9b] task=delayed_cue baseline=sign_persistence seed=42
+[tier5.9b] task=delayed_cue baseline=online_perceptron seed=42
+[tier5.9b] task=variable_delay_cue variant=v1_4_pending_horizon seed=42
+[tier5.9b] task=variable_delay_cue variant=macro_eligibility seed=42
+[tier5.9b] task=variable_delay_cue variant=macro_eligibility_shuffled seed=42
+[tier5.9b] task=variable_delay_cue variant=macro_eligibility_zero seed=42
+[tier5.9b] task=variable_delay_cue baseline=sign_persistence seed=42
+[tier5.9b] task=variable_delay_cue baseline=online_perceptron seed=42
+{
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/macro_residual_recheck",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/macro_residual_recheck/tier5_9b_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/macro_residual_recheck/tier5_9b_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/macro_residual_recheck/tier5_9b_summary.csv",
+  "comparisons_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/macro_residual_recheck/tier5_9b_comparisons.csv",
+  "fairness_contract_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/macro_residual_recheck/tier5_9b_fairness_contract.json",
+  "failure_reason": ""
+}

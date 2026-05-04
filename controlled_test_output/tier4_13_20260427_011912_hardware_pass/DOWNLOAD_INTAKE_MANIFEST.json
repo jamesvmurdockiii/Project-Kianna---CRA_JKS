@@ -1,0 +1,364 @@
+{
+  "canonical_run_id": "tier4_13_20260427_011912_hardware_pass",
+  "canonical_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass",
+  "created_at_utc": "2026-04-27T00:46:26.856230+00:00",
+  "policy": "Canonical pass artifacts were copied into stable names. Original downloaded files were moved into intake/quarantine folders instead of hard-deleted.",
+  "entries": [
+    {
+      "source": "/Users/james/Downloads/tier4_13_results.json",
+      "canonical_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_results.json",
+      "intake_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_download_intake_originals/tier4_13_results.json",
+      "classification": "canonical",
+      "reason": "canonical pass manifest",
+      "source_metadata": {
+        "exists": true,
+        "size_bytes": 15457,
+        "mtime_utc": "2026-04-27T00:35:46.772845+00:00",
+        "sha256": "7f30d0cd0870844d223a15a350b4abfb970a7610a0f313ec94073a6ad11b9cc1"
+      },
+      "canonical_metadata": {
+        "exists": true,
+        "size_bytes": 15457,
+        "mtime_utc": "2026-04-27T00:35:46.772845+00:00",
+        "sha256": "7f30d0cd0870844d223a15a350b4abfb970a7610a0f313ec94073a6ad11b9cc1"
+      },
+      "intake_metadata": {
+        "exists": true,
+        "size_bytes": 15457,
+        "mtime_utc": "2026-04-27T00:35:46.772845+00:00",
+        "sha256": "7f30d0cd0870844d223a15a350b4abfb970a7610a0f313ec94073a6ad11b9cc1"
+      },
+      "action": "copied_to_canonical_then_moved_original"
+    },
+    {
+      "source": "/Users/james/Downloads/tier4_13_report (9).md",
+      "canonical_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_report.md",
+      "intake_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_download_intake_originals/tier4_13_report (9).md",
+      "classification": "canonical",
+      "reason": "canonical human report",
+      "source_metadata": {
+        "exists": true,
+        "size_bytes": 2683,
+        "mtime_utc": "2026-04-27T00:35:52.406140+00:00",
+        "sha256": "024757ce65b1576a1e6ce41eee0224b548660cc3d53ee378d0a4ce89a9271009"
+      },
+      "canonical_metadata": {
+        "exists": true,
+        "size_bytes": 2683,
+        "mtime_utc": "2026-04-27T00:35:52.406140+00:00",
+        "sha256": "024757ce65b1576a1e6ce41eee0224b548660cc3d53ee378d0a4ce89a9271009"
+      },
+      "intake_metadata": {
+        "exists": true,
+        "size_bytes": 2683,
+        "mtime_utc": "2026-04-27T00:35:52.406140+00:00",
+        "sha256": "024757ce65b1576a1e6ce41eee0224b548660cc3d53ee378d0a4ce89a9271009"
+      },
+      "action": "copied_to_canonical_then_moved_original"
+    },
+    {
+      "source": "/Users/james/Downloads/tier4_13_summary (2).csv",
+      "canonical_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_summary.csv",
+      "intake_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_download_intake_originals/tier4_13_summary (2).csv",
+      "classification": "canonical",
+      "reason": "canonical summary CSV",
+      "source_metadata": {
+        "exists": true,
+        "size_bytes": 1146,
+        "mtime_utc": "2026-04-27T00:35:38.257542+00:00",
+        "sha256": "487e4a1a7b0272dee682955f5fa75c81acf04b39718aca55d73b613c2c3e391b"
+      },
+      "canonical_metadata": {
+        "exists": true,
+        "size_bytes": 1146,
+        "mtime_utc": "2026-04-27T00:35:38.257542+00:00",
+        "sha256": "487e4a1a7b0272dee682955f5fa75c81acf04b39718aca55d73b613c2c3e391b"
+      },
+      "intake_metadata": {
+        "exists": true,
+        "size_bytes": 1146,
+        "mtime_utc": "2026-04-27T00:35:38.257542+00:00",
+        "sha256": "487e4a1a7b0272dee682955f5fa75c81acf04b39718aca55d73b613c2c3e391b"
+      },
+      "action": "copied_to_canonical_then_moved_original"
+    },
+    {
+      "source": "/Users/james/Downloads/spinnaker_hardware_seed42_timeseries.csv",
+      "canonical_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/spinnaker_hardware_seed42_timeseries.csv",
+      "intake_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_download_intake_originals/spinnaker_hardware_seed42_timeseries.csv",
+      "classification": "canonical",
+      "reason": "canonical step time series",
+      "source_metadata": {
+        "exists": true,
+        "size_bytes": 54636,
+        "mtime_utc": "2026-04-27T00:35:51.377389+00:00",
+        "sha256": "ad00987ced677312cca47874fbbcf6353f67ef18b67f2d9c5a64c4f5fdee892a"
+      },
+      "canonical_metadata": {
+        "exists": true,
+        "size_bytes": 54636,
+        "mtime_utc": "2026-04-27T00:35:51.377389+00:00",
+        "sha256": "ad00987ced677312cca47874fbbcf6353f67ef18b67f2d9c5a64c4f5fdee892a"
+      },
+      "intake_metadata": {
+        "exists": true,
+        "size_bytes": 54636,
+        "mtime_utc": "2026-04-27T00:35:51.377389+00:00",
+        "sha256": "ad00987ced677312cca47874fbbcf6353f67ef18b67f2d9c5a64c4f5fdee892a"
+      },
+      "action": "copied_to_canonical_then_moved_original"
+    },
+    {
+      "source": "/Users/james/Downloads/spinnaker_hardware_seed42_timeseries.png",
+      "canonical_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/spinnaker_hardware_seed42_timeseries.png",
+      "intake_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_download_intake_originals/spinnaker_hardware_seed42_timeseries.png",
+      "classification": "canonical",
+      "reason": "canonical time-series plot",
+      "source_metadata": {
+        "exists": true,
+        "size_bytes": 379872,
+        "mtime_utc": "2026-04-27T00:35:42.853986+00:00",
+        "sha256": "dd667fbd5778b2e2bc22487c0f83fdeed09a8bed48b2f0c86e07ece4728531f7"
+      },
+      "canonical_metadata": {
+        "exists": true,
+        "size_bytes": 379872,
+        "mtime_utc": "2026-04-27T00:35:42.853986+00:00",
+        "sha256": "dd667fbd5778b2e2bc22487c0f83fdeed09a8bed48b2f0c86e07ece4728531f7"
+      },
+      "intake_metadata": {
+        "exists": true,
+        "size_bytes": 379872,
+        "mtime_utc": "2026-04-27T00:35:42.853986+00:00",
+        "sha256": "dd667fbd5778b2e2bc22487c0f83fdeed09a8bed48b2f0c86e07ece4728531f7"
+      },
+      "action": "copied_to_canonical_then_moved_original"
+    },
+    {
+      "source": "/Users/james/Downloads/hardware_capsule_summary.png",
+      "canonical_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/hardware_capsule_summary.png",
+      "intake_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_download_intake_originals/hardware_capsule_summary.png",
+      "classification": "canonical",
+      "reason": "canonical summary plot",
+      "source_metadata": {
+        "exists": true,
+        "size_bytes": 28770,
+        "mtime_utc": "2026-04-27T00:35:32.232612+00:00",
+        "sha256": "03e236f9a775052df9835c5b4fa494a2ccc4e03b89cd9c1b756ed0f6d5641887"
+      },
+      "canonical_metadata": {
+        "exists": true,
+        "size_bytes": 28770,
+        "mtime_utc": "2026-04-27T00:35:32.232612+00:00",
+        "sha256": "03e236f9a775052df9835c5b4fa494a2ccc4e03b89cd9c1b756ed0f6d5641887"
+      },
+      "intake_metadata": {
+        "exists": true,
+        "size_bytes": 28770,
+        "mtime_utc": "2026-04-27T00:35:32.232612+00:00",
+        "sha256": "03e236f9a775052df9835c5b4fa494a2ccc4e03b89cd9c1b756ed0f6d5641887"
+      },
+      "action": "copied_to_canonical_then_moved_original"
+    },
+    {
+      "source": "/Users/james/Downloads/tier4_13_latest_manifest (1).json",
+      "canonical_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/remote_tier4_13_latest_manifest.json",
+      "intake_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_download_intake_originals/tier4_13_latest_manifest (1).json",
+      "classification": "canonical",
+      "reason": "remote JobManager latest manifest for pass",
+      "source_metadata": {
+        "exists": true,
+        "size_bytes": 435,
+        "mtime_utc": "2026-04-27T00:35:49.983619+00:00",
+        "sha256": "9f6948ccc78c54340047c0f099ab607187145928d468ae68e7b5a3f6da1f0c0f"
+      },
+      "canonical_metadata": {
+        "exists": true,
+        "size_bytes": 435,
+        "mtime_utc": "2026-04-27T00:35:49.983619+00:00",
+        "sha256": "9f6948ccc78c54340047c0f099ab607187145928d468ae68e7b5a3f6da1f0c0f"
+      },
+      "intake_metadata": {
+        "exists": true,
+        "size_bytes": 435,
+        "mtime_utc": "2026-04-27T00:35:49.983619+00:00",
+        "sha256": "9f6948ccc78c54340047c0f099ab607187145928d468ae68e7b5a3f6da1f0c0f"
+      },
+      "action": "copied_to_canonical_then_moved_original"
+    },
+    {
+      "source": "/Users/james/Downloads/reports (1).zip",
+      "canonical_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/raw_reports/spinnaker_reports_2026-04-27-01-19-12-390038.zip",
+      "classification": "canonical",
+      "reason": "raw sPyNNaker reports zip matching successful pass timestamp",
+      "source_metadata": {
+        "exists": true,
+        "size_bytes": 105309,
+        "mtime_utc": "2026-04-27T00:35:53.865129+00:00",
+        "sha256": "31bf45aba467cbf834cbfa9e969b1d25e2a05e10497987d20e5948d9d0cb9318"
+      },
+      "canonical_metadata": {
+        "exists": true,
+        "size_bytes": 105309,
+        "mtime_utc": "2026-04-27T00:35:53.865129+00:00",
+        "sha256": "31bf45aba467cbf834cbfa9e969b1d25e2a05e10497987d20e5948d9d0cb9318"
+      },
+      "extracted_members": [
+        {
+          "zip_member": "reports/2026-04-27-01-19-12-390038/finished",
+          "extracted_to": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/spinnaker_reports/2026-04-27-01-19-12-390038/finished",
+          "metadata": {
+            "exists": true,
+            "size_bytes": 26,
+            "mtime_utc": "2026-04-27T00:46:26.847964+00:00",
+            "sha256": "cdde36a4d3129c31fb614d59331b82387a76be265c5a1e667d1a72ef36eb8837"
+          }
+        },
+        {
+          "zip_member": "reports/2026-04-27-01-19-12-390038/global_provenance.sqlite3",
+          "extracted_to": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/spinnaker_reports/2026-04-27-01-19-12-390038/global_provenance.sqlite3",
+          "metadata": {
+            "exists": true,
+            "size_bytes": 602112,
+            "mtime_utc": "2026-04-27T00:46:26.848918+00:00",
+            "sha256": "f6bc132fbd294aee89a7959743dfd312f45479f2c18eaa64b9853ee3f78c9be5"
+          }
+        }
+      ],
+      "action": "copied_to_canonical_and_extracted",
+      "intake_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_download_intake_originals/reports (1).zip",
+      "intake_metadata": {
+        "exists": true,
+        "size_bytes": 105309,
+        "mtime_utc": "2026-04-27T00:35:53.865129+00:00",
+        "sha256": "31bf45aba467cbf834cbfa9e969b1d25e2a05e10497987d20e5948d9d0cb9318"
+      }
+    },
+    {
+      "source": "/Users/james/Downloads/global_provenance.sqlite3",
+      "canonical_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/spinnaker_reports/2026-04-27-01-19-12-390038/global_provenance.sqlite3",
+      "classification": "canonical",
+      "reason": "standalone provenance DB for pass; same as extracted reports zip",
+      "source_metadata": {
+        "exists": true,
+        "size_bytes": 602112,
+        "mtime_utc": "2026-04-27T00:35:40.286156+00:00",
+        "sha256": "f6bc132fbd294aee89a7959743dfd312f45479f2c18eaa64b9853ee3f78c9be5"
+      },
+      "canonical_metadata": {
+        "exists": true,
+        "size_bytes": 602112,
+        "mtime_utc": "2026-04-27T00:46:26.848918+00:00",
+        "sha256": "f6bc132fbd294aee89a7959743dfd312f45479f2c18eaa64b9853ee3f78c9be5"
+      },
+      "action": "moved_original_only_duplicate_of_extracted",
+      "intake_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_download_intake_originals/global_provenance.sqlite3",
+      "intake_metadata": {
+        "exists": true,
+        "size_bytes": 602112,
+        "mtime_utc": "2026-04-27T00:35:40.286156+00:00",
+        "sha256": "f6bc132fbd294aee89a7959743dfd312f45479f2c18eaa64b9853ee3f78c9be5"
+      }
+    },
+    {
+      "source": "/Users/james/Downloads/tier4_13_latest_manifest.json",
+      "canonical_destination": null,
+      "intake_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_quarantine_noncanonical/blocked_20260426_230758_tier4_13_latest_manifest.json",
+      "classification": "quarantine",
+      "reason": "older blocked manifest, not pass evidence",
+      "source_metadata": {
+        "exists": true,
+        "size_bytes": 465,
+        "mtime_utc": "2026-04-26T23:10:47.617518+00:00",
+        "sha256": "8e408f3d2ac58c8f9397f7cb7251f80217e1b223e9a7c476a10a94159031930a"
+      },
+      "intake_metadata": {
+        "exists": true,
+        "size_bytes": 465,
+        "mtime_utc": "2026-04-26T23:10:47.617518+00:00",
+        "sha256": "8e408f3d2ac58c8f9397f7cb7251f80217e1b223e9a7c476a10a94159031930a"
+      },
+      "action": "moved_to_quarantine"
+    },
+    {
+      "source": "/Users/james/Downloads/seed_42_backend_diagnostics.json",
+      "canonical_destination": null,
+      "intake_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_quarantine_noncanonical/failed_overflow_seed_42_backend_diagnostics.json",
+      "classification": "quarantine",
+      "reason": "older overflow failure diagnostic, superseded by pass",
+      "source_metadata": {
+        "exists": true,
+        "size_bytes": 6850,
+        "mtime_utc": "2026-04-27T00:11:27.788823+00:00",
+        "sha256": "be90ef1f2b748c1f4b0561af2cdc13961c0d108cafa63a61169eb7c281994d1b"
+      },
+      "intake_metadata": {
+        "exists": true,
+        "size_bytes": 6850,
+        "mtime_utc": "2026-04-27T00:11:27.788823+00:00",
+        "sha256": "be90ef1f2b748c1f4b0561af2cdc13961c0d108cafa63a61169eb7c281994d1b"
+      },
+      "action": "moved_to_quarantine"
+    },
+    {
+      "source": "/Users/james/Downloads/seed_42_failure_traceback.txt",
+      "canonical_destination": null,
+      "intake_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_quarantine_noncanonical/failed_overflow_seed_42_failure_traceback.txt",
+      "classification": "quarantine",
+      "reason": "older overflow failure traceback, superseded by pass",
+      "source_metadata": {
+        "exists": true,
+        "size_bytes": 564,
+        "mtime_utc": "2026-04-27T00:05:41.130200+00:00",
+        "sha256": "da58f489c2953ad5244e26eab460fbbb862007bc6ca3d3880657e19a3ca5d0a6"
+      },
+      "intake_metadata": {
+        "exists": true,
+        "size_bytes": 564,
+        "mtime_utc": "2026-04-27T00:05:41.130200+00:00",
+        "sha256": "da58f489c2953ad5244e26eab460fbbb862007bc6ca3d3880657e19a3ca5d0a6"
+      },
+      "action": "moved_to_quarantine"
+    },
+    {
+      "source": "/Users/james/Downloads/reports.zip",
+      "canonical_destination": null,
+      "intake_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_quarantine_noncanonical/blocked_20260426_223950_reports.zip",
+      "classification": "quarantine",
+      "reason": "older blocked/failure reports zip, not pass evidence",
+      "source_metadata": {
+        "exists": true,
+        "size_bytes": 7574,
+        "mtime_utc": "2026-04-26T21:45:43.747932+00:00",
+        "sha256": "da907dd756a8ab128b92ef9406fbdf0882b4e2ee7b6b7edb6180efbe3263ce7d"
+      },
+      "intake_metadata": {
+        "exists": true,
+        "size_bytes": 7574,
+        "mtime_utc": "2026-04-26T21:45:43.747932+00:00",
+        "sha256": "da907dd756a8ab128b92ef9406fbdf0882b4e2ee7b6b7edb6180efbe3263ce7d"
+      },
+      "action": "moved_to_quarantine"
+    },
+    {
+      "source": "/Users/james/Downloads/finished",
+      "canonical_destination": null,
+      "intake_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_quarantine_noncanonical/older_download_finished_marker",
+      "classification": "quarantine",
+      "reason": "older standalone finished marker, not aligned with pass report timestamp",
+      "source_metadata": {
+        "exists": true,
+        "size_bytes": 26,
+        "mtime_utc": "2026-04-26T21:22:13.531119+00:00",
+        "sha256": "96f22e5bd522abd95effa2ae98b619131a700c07cb68d7204f0524fa3732590d"
+      },
+      "intake_metadata": {
+        "exists": true,
+        "size_bytes": 26,
+        "mtime_utc": "2026-04-26T21:22:13.531119+00:00",
+        "sha256": "96f22e5bd522abd95effa2ae98b619131a700c07cb68d7204f0524fa3732590d"
+      },
+      "action": "moved_to_quarantine"
+    }
+  ]
+}

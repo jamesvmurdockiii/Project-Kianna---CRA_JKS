@@ -1,0 +1,6 @@
+state_component,runtime_owner,storage,bound,current_scope,next_required_gate
+keyed_context_slots,custom_c_runtime,static context_slot_t g_context_slots[MAX_CONTEXT_SLOTS],MAX_CONTEXT_SLOTS,persistent bounded state scaffold,Tier 4.22d reward/plasticity path must use this state causally
+readout_state,custom_c_runtime,cra_state_summary_t readout_weight/readout_bias/last_feature/last_prediction,single fixed-point readout summary per runtime instance,persistent state and prediction primitive,Tier 4.22d must validate reward-modulated updates against reference
+decision_reward_counters,custom_c_runtime,cra_state_summary_t decisions/reward_events/last_reward,uint32 counters and fixed-point reward,auditable summaries for host readback,Tier 4.22d must wire reward delivery and plasticity semantics
+pending_delayed_credit_queue,custom_c_runtime,static pending_horizon_t g_pending_horizons[MAX_PENDING_HORIZONS],MAX_PENDING_HORIZONS,bounded delayed-credit prediction queue without future target leakage,Tier 4.22e must verify fixed-point delayed-readout parity against a no-leak reference
+reset_semantics,custom_c_runtime,cra_state_reset clears slots/readout/counters and records reset count,deterministic reset event,repeatable run hygiene,Tier 4.22d and later hardware runs must expose reset provenance

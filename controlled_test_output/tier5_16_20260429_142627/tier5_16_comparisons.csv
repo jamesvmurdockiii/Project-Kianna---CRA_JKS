@@ -1,0 +1,7 @@
+task,variant,default_tail_accuracy_mean,variant_tail_accuracy_mean,tail_delta_vs_default,default_prediction_target_corr_mean,variant_prediction_target_corr_mean,corr_delta_vs_default,default_mean_spike_total,variant_mean_spike_total,spike_delta_vs_default,sim_run_failures,summary_read_failures,synthetic_fallbacks,variant_parameters
+delayed_cue,tau_m_slow,0.5,0.5,0.0,0.6134921056332019,0.6134921056332019,0.0,1279.825,1279.825,0.0,0,0,0,{'tau_m': 32.0}
+delayed_cue,tau_refrac_long,0.5,0.5,0.0,0.6134921056332019,0.6134921056332019,0.0,1279.825,1279.825,0.0,0,0,0,{'tau_refrac': 5.0}
+delayed_cue,v_thresh_high,0.5,0.5,0.0,0.6134921056332019,0.6134921056332019,0.0,1279.825,1279.825,0.0,0,0,0,{'v_thresh': -52.0}
+fixed_pattern,tau_m_slow,1.0,1.0,0.0,0.8863256659104914,0.8863256659104914,0.0,1280.175,1280.175,0.0,0,0,0,{'tau_m': 32.0}
+fixed_pattern,tau_refrac_long,1.0,1.0,0.0,0.8863256659104914,0.8863256659104914,0.0,1280.175,1280.175,0.0,0,0,0,{'tau_refrac': 5.0}
+fixed_pattern,v_thresh_high,1.0,1.0,0.0,0.8863256659104914,0.8863256659104914,0.0,1280.175,1280.175,0.0,0,0,0,{'v_thresh': -52.0}

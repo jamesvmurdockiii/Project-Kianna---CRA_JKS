@@ -1,0 +1,5 @@
+child,status,return_code,runtime_seconds,manifest_path,output_dir,failure_reason
+tier1_controls,pass,0,17.517979584,/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260428_214807/tier1_controls/tier1_results.json,/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260428_214807/tier1_controls,
+tier2_learning,pass,0,16.093650500000003,/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260428_214807/tier2_learning/tier2_results.json,/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260428_214807/tier2_learning,
+tier3_ablations,pass,0,111.02348941699998,/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260428_214807/tier3_ablations/tier3_results.json,/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260428_214807/tier3_ablations,
+target_task_smokes,pass,0,9.318284333000008,/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260428_214807/target_task_smokes/tier5_6_results.json,/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260428_214807/target_task_smokes,

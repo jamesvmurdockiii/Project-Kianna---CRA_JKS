@@ -1,0 +1,243 @@
+{
+  "artifacts": {
+    "host_test_stderr": "/Users/james/JKS:CRA/controlled_test_output/tier4_22c_20260430_persistent_state_scaffold/tier4_22c_host_test_stderr.txt",
+    "host_test_stdout": "/Users/james/JKS:CRA/controlled_test_output/tier4_22c_20260430_persistent_state_scaffold/tier4_22c_host_test_stdout.txt",
+    "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_22c_20260430_persistent_state_scaffold/tier4_22c_results.json",
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_22c_20260430_persistent_state_scaffold/tier4_22c_report.md",
+    "state_contract_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22c_20260430_persistent_state_scaffold/tier4_22c_state_contract.csv",
+    "static_compliance_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22c_20260430_persistent_state_scaffold/tier4_22c_static_compliance.csv"
+  },
+  "criteria": [
+    {
+      "name": "runner revision current",
+      "note": "",
+      "passed": true,
+      "rule": "expected current source",
+      "value": "tier4_22c_persistent_state_scaffold_20260430_0000"
+    },
+    {
+      "name": "Tier 4.22b continuous transport pass exists",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "custom C host tests pass",
+      "note": "",
+      "passed": true,
+      "rule": "returncode == 0 and ALL TESTS PASSED",
+      "value": 0
+    },
+    {
+      "name": "all static state checks pass",
+      "note": "",
+      "passed": true,
+      "rule": "all pass",
+      "value": "16/16"
+    },
+    {
+      "name": "state manager uses static bounded storage",
+      "note": "",
+      "passed": true,
+      "rule": "bounded fixed-size state",
+      "value": "MAX_CONTEXT_SLOTS"
+    },
+    {
+      "name": "state manager avoids dynamic allocation",
+      "note": "",
+      "passed": true,
+      "rule": "no dynamic allocation in state_manager.c",
+      "value": "malloc/sark_alloc absent"
+    },
+    {
+      "name": "full on-chip target explicit",
+      "note": "",
+      "passed": true,
+      "rule": "hybrid is transitional only",
+      "value": "full custom/on-chip CRA execution"
+    }
+  ],
+  "failure_reason": "",
+  "generated_at_utc": "2026-04-30T18:45:11+00:00",
+  "host_test": {
+    "command": "make -C /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime clean-host test",
+    "returncode": 0,
+    "stderr_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22c_20260430_persistent_state_scaffold/tier4_22c_host_test_stderr.txt",
+    "stdout_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22c_20260430_persistent_state_scaffold/tier4_22c_host_test_stdout.txt"
+  },
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_22c_20260430_persistent_state_scaffold",
+  "state_contract": [
+    {
+      "bound": "MAX_CONTEXT_SLOTS",
+      "current_scope": "persistent bounded state scaffold",
+      "next_required_gate": "Tier 4.22d reward/plasticity path must use this state causally",
+      "runtime_owner": "custom_c_runtime",
+      "state_component": "keyed_context_slots",
+      "storage": "static context_slot_t g_context_slots[MAX_CONTEXT_SLOTS]"
+    },
+    {
+      "bound": "single fixed-point readout summary per runtime instance",
+      "current_scope": "persistent state and prediction primitive",
+      "next_required_gate": "Tier 4.22d must validate reward-modulated updates against reference",
+      "runtime_owner": "custom_c_runtime",
+      "state_component": "readout_state",
+      "storage": "cra_state_summary_t readout_weight/readout_bias/last_feature/last_prediction"
+    },
+    {
+      "bound": "uint32 counters and fixed-point reward",
+      "current_scope": "auditable summaries for host readback",
+      "next_required_gate": "Tier 4.22d must wire reward delivery and plasticity semantics",
+      "runtime_owner": "custom_c_runtime",
+      "state_component": "decision_reward_counters",
+      "storage": "cra_state_summary_t decisions/reward_events/last_reward"
+    },
+    {
+      "bound": "MAX_PENDING_HORIZONS",
+      "current_scope": "bounded delayed-credit prediction queue without future target leakage",
+      "next_required_gate": "Tier 4.22e must verify fixed-point delayed-readout parity against a no-leak reference",
+      "runtime_owner": "custom_c_runtime",
+      "state_component": "pending_delayed_credit_queue",
+      "storage": "static pending_horizon_t g_pending_horizons[MAX_PENDING_HORIZONS]"
+    },
+    {
+      "bound": "deterministic reset event",
+      "current_scope": "repeatable run hygiene",
+      "next_required_gate": "Tier 4.22d and later hardware runs must expose reset provenance",
+      "runtime_owner": "custom_c_runtime",
+      "state_component": "reset_semantics",
+      "storage": "cra_state_reset clears slots/readout/counters and records reset count"
+    }
+  ],
+  "static_checks": [
+    {
+      "name": "state_manager header exists",
+      "note": "",
+      "passed": true,
+      "rule": "file exists",
+      "value": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h"
+    },
+    {
+      "name": "state_manager source exists",
+      "note": "",
+      "passed": true,
+      "rule": "file exists",
+      "value": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c"
+    },
+    {
+      "name": "bounded context slot constant",
+      "note": "",
+      "passed": true,
+      "rule": "defined in config.h",
+      "value": "MAX_CONTEXT_SLOTS"
+    },
+    {
+      "name": "bounded pending horizon constant",
+      "note": "",
+      "passed": true,
+      "rule": "defined in config.h",
+      "value": "MAX_PENDING_HORIZONS"
+    },
+    {
+      "name": "static slot table",
+      "note": "",
+      "passed": true,
+      "rule": "static fixed-size array",
+      "value": "g_context_slots[MAX_CONTEXT_SLOTS]"
+    },
+    {
+      "name": "static pending horizon table",
+      "note": "",
+      "passed": true,
+      "rule": "static fixed-size array",
+      "value": "g_pending_horizons[MAX_PENDING_HORIZONS]"
+    },
+    {
+      "name": "state manager avoids dynamic allocation",
+      "note": "",
+      "passed": true,
+      "rule": "not present in state_manager.c",
+      "value": "malloc/sark_alloc"
+    },
+    {
+      "name": "state init integrated into runtime",
+      "note": "",
+      "passed": true,
+      "rule": "called from main.c",
+      "value": "cra_state_init"
+    },
+    {
+      "name": "state reset integrated into runtime reset",
+      "note": "",
+      "passed": true,
+      "rule": "called from host_interface.c",
+      "value": "cra_state_reset"
+    },
+    {
+      "name": "state source in runtime build",
+      "note": "",
+      "passed": true,
+      "rule": "included in Makefile",
+      "value": "src/state_manager.c"
+    },
+    {
+      "name": "host tests cover state manager",
+      "note": "",
+      "passed": true,
+      "rule": "test_runtime.c exercises state",
+      "value": "state_manager"
+    },
+    {
+      "name": "summary API exists",
+      "note": "",
+      "passed": true,
+      "rule": "declared and implemented",
+      "value": "cra_state_get_summary"
+    },
+    {
+      "name": "reward counter exists",
+      "note": "",
+      "passed": true,
+      "rule": "declared and implemented",
+      "value": "cra_state_record_reward"
+    },
+    {
+      "name": "readout state exists",
+      "note": "",
+      "passed": true,
+      "rule": "declared and implemented",
+      "value": "cra_state_set_readout/cra_state_predict_readout"
+    },
+    {
+      "name": "bounded pending horizon API exists",
+      "note": "",
+      "passed": true,
+      "rule": "declared and implemented",
+      "value": "cra_state_schedule_pending_horizon/cra_state_mature_pending_horizons"
+    },
+    {
+      "name": "pending horizons do not store future target",
+      "note": "",
+      "passed": true,
+      "rule": "absent from pending_horizon_t",
+      "value": "int32_t target;"
+    }
+  ],
+  "status": "pass",
+  "summary": {
+    "claim_boundary": "Persistent state scaffold only; not hardware, learning, reward/plasticity, or speedup evidence.",
+    "dynamic_allocation_in_state_manager": false,
+    "host_test_returncode": 0,
+    "host_tests_passed": true,
+    "next_step_if_passed": "Tier 4.22d reward/plasticity path: use this persistent C state for dopamine/reward and compare against the chunked reference.",
+    "north_star": "full custom/on-chip CRA runtime; hybrid host paths are transitional diagnostics",
+    "runner_revision": "tier4_22c_persistent_state_scaffold_20260430_0000",
+    "runtime_state_owner": "custom_c_runtime",
+    "runtime_state_storage": "static bounded arrays and fixed-point summary fields",
+    "static_checks_passed": 16,
+    "static_checks_total": 16,
+    "tier4_22b_manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_22b_20260430_continuous_transport_hardware_pass_ingested/tier4_22b_results.json",
+    "tier4_22b_status": "pass"
+  },
+  "tier": "Tier 4.22c - Persistent On-Chip State Scaffold"
+}

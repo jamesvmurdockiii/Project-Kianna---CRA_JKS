@@ -1,0 +1,3 @@
+task,sign_persistence_accuracy,oracle_context_accuracy,stream_context_memory_accuracy,shuffled_context_accuracy,memory_reset_accuracy,wrong_context_accuracy,best_standard_model,best_standard_accuracy,best_failure_control_accuracy,oracle_edge_vs_sign,memory_edge_vs_sign,memory_edge_vs_best_failure_control,best_standard_edge_vs_sign,same_current_input_opposite_labels,ambiguous_current_cue_count,decision_count
+delayed_context_cue,0.5714285714285714,1.0,1.0,0.42857142857142855,0.5714285714285714,0.0,online_perceptron,0.0,0.42857142857142855,0.4285714285714286,0.4285714285714286,0.5714285714285714,-0.5714285714285714,True,2,7
+hidden_context_recurrence,0.5,1.0,1.0,0.5,0.5,0.0,online_perceptron,0.25,0.5,0.5,0.5,0.5,-0.25,True,2,12

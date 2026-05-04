@@ -1,0 +1,5 @@
+task,encoding,seed,steps,is_genuinely_temporal,mean_spike_total,mean_spike_sparsity,mean_latency_bin,nonzero_steps,task_metadata
+delayed_cue,latency,42,220,True,0.5636363636363636,0.0046401515151515155,6.398648648648648,37,"{'task_kind': 'delayed_cue', 'delay': 5, 'period': 8, 'trials': 27}"
+delayed_cue,rate,42,220,False,0.8181818181818182,0.007054924242424242,5.2648083623693385,41,"{'task_kind': 'delayed_cue', 'delay': 5, 'period': 8, 'trials': 27}"
+sensor_control,latency,42,220,True,0.7454545454545455,0.0067234848484848475,5.53,50,"{'task_kind': 'sensor_control', 'delay': 3, 'period': 6, 'trials': 37}"
+sensor_control,rate,42,220,False,1.0863636363636364,0.009327651515151516,5.544351073762837,51,"{'task_kind': 'sensor_control', 'delay': 3, 'period': 6, 'trials': 37}"

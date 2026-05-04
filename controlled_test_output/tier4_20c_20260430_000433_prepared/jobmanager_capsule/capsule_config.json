@@ -1,0 +1,29 @@
+{
+  "baseline": "v2.1",
+  "chunk_size_steps": 50,
+  "claim_boundary": [
+    "Prepared capsule is not hardware evidence.",
+    "A PASS requires six child pyNN.spiNNaker runs, zero fallback/failures, and nonzero real spike readback across the three predeclared seeds.",
+    "This is v2.1 bridge repeatability evidence, not native/on-chip v2.1 mechanism execution."
+  ],
+  "delayed_readout_lr": 0.2,
+  "direct_jobmanager_command": "cra_420c/experiments/tier4_20c_v2_1_hardware_repeat.py --mode run-hardware --tasks delayed_cue,hard_noisy_switching --seeds 42,43,44 --steps 1200 --population-size 8 --chunk-size-steps 50 --delayed-readout-lr 0.20 --no-require-real-hardware --output-dir tier4_20c_job_output",
+  "expected_child_runs": 6,
+  "learning_location": "host",
+  "macro_eligibility_enabled": false,
+  "mode": "prepare",
+  "population_size": 8,
+  "prerequisite": "Tier 4.20b one-seed bridge pass",
+  "runtime_mode": "chunked",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "steps": 1200,
+  "tasks": [
+    "delayed_cue",
+    "hard_noisy_switching"
+  ],
+  "tier": "Tier 4.20c - v2.1 Three-Seed Chunked Hardware Repeat"
+}

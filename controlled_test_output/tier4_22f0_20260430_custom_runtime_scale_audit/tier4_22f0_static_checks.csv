@@ -1,0 +1,10 @@
+name,value,rule,passed,note
+PyNN/sPyNNaker boundary documented,Python/PyNN canonical + C sidecar,runtime README keeps C as experimental sidecar,True,
+custom C is limited to unsupported/scaling substrate pieces,state/plasticity/readback/lifecycle substrate,docs must not imply full repo rewrite in C,True,
+bounded context slots,MAX_CONTEXT_SLOTS,defined and used as fixed array,True,
+bounded pending horizons,MAX_PENDING_HORIZONS,defined and used as fixed array,True,
+pending horizons do not store future target,int32_t target;,absent from pending_horizon_t,True,
+state manager avoids dynamic allocation,malloc/sark_alloc,absent from state_manager.c,True,
+eligibility trace exists,eligibility_trace,in synapse_t and dopamine rule,True,
+count-only readback is explicitly marked incomplete,READ_SPIKES,host_interface documents count/timestep-only readback,True,
+host tests cover runtime substrate,test_runtime.c,state/plasticity tests exist,True,

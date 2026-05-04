@@ -1,0 +1,3 @@
+task,case,case_group,profile,initial_population,max_population,runs,seeds,all_accuracy_mean,tail_accuracy_mean,prediction_target_corr_mean,tail_prediction_target_corr_mean,mean_recovery_steps,final_n_alive_mean,mean_n_alive_mean,max_n_alive_observed_mean,total_births_sum,total_deaths_sum,lineage_integrity_failures,tail_active_efficiency_proxy_mean,runtime_seconds_mean
+hard_noisy_switching,fixed4,fixed,fixed,4,4,1,42,0.6086956521739131,0.6,0.24919714472105486,0.5348660062620724,9.666666666666666,4.0,4.0,4.0,0,0,0,0.038148055288297046,0.3016672920000001
+hard_noisy_switching,life4_16,lifecycle,standard,4,16,1,42,0.6521739130434783,0.8,0.27494926471128595,0.463470342230967,7.333333333333333,9.0,7.90625,9.0,5,0,0,0.020127541612978157,0.4991802500000002

@@ -1,0 +1,5 @@
+layer,role,keep_in_python,do_not_rewrite_in_c,customize_in_c,required_before_hardware_learning
+PyNN/sPyNNaker,primary hardware construction/mapping/run layer,"task definitions, experiment orchestration, evidence exports, baselines, paper tables, PyNN populations/connectors, standard spike readback",True,,
+custom C runtime,only for substrate mechanics PyNN cannot express or scale as closed-loop on-chip state,,False,"persistent state, delayed-credit queues, eligibility/dopamine/plasticity, compact summaries, lifecycle state, routing/memory kernels when promoted",
+host Python controller,"commands, configuration, validation, logging, and comparison to canonical software baselines","offline analysis, registry, preflight, JobManager packaging, result ingestion",True,,
+future custom runtime acceptance,hardware proof only after scale blockers are resolved,,False,,"event-indexed spike delivery, lazy/active trace decay, compact state readback, build/load/command acceptance"

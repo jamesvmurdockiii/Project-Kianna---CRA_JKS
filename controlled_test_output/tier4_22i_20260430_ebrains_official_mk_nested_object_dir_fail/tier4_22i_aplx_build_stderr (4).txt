@@ -1,0 +1,4 @@
+/home/jovyan/spinnaker/spinnaker_tools/make/Makefile.common:18: inclusion of Makefile.common instead of spinnaker_tools.mk
+/usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/bin/ld: warning: cannot find entry symbol cpu_reset; not setting start address
+arm-none-eabi-objcopy: error: the input file 'build/coral_reef.elf' has no sections
+make: *** [Makefile:91: build/coral_reef.aplx] Error 1

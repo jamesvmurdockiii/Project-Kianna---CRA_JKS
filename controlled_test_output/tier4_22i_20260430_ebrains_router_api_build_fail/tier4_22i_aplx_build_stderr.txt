@@ -1,0 +1,33 @@
+/home/jovyan/spinnaker/spinnaker_tools/make/Makefile.common:18: inclusion of Makefile.common instead of spinnaker_tools.mk
+In file included from src/router.c:14:
+src/router.h:45:23: error: unknown type name 'uint32_t'
+   45 | int router_add_neuron(uint32_t neuron_id);
+      |                       ^~~~~~~~
+src/router.h:24:1: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+   23 | #include <sark.h>
+  +++ |+#include <stdint.h>
+   24 | 
+src/router.h:49:26: error: unknown type name 'uint32_t'
+   49 | int router_remove_neuron(uint32_t neuron_id);
+      |                          ^~~~~~~~
+src/router.h:49:26: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+src/router.h:55:1: error: unknown type name 'uint32_t'
+   55 | uint32_t router_route_count(void);
+      | ^~~~~~~~
+src/router.h:55:1: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+src/router.c: In function 'router_add_neuron':
+src/router.c:73:26: warning: implicit declaration of function 'sark_router_alloc' [-Wimplicit-function-declaration]
+   73 |     uint32_t cam_index = sark_router_alloc(key, mask, route);
+      |                          ^~~~~~~~~~~~~~~~~
+src/router.c:82:9: warning: implicit declaration of function 'sark_router_free'; did you mean 'sark_lock_free'? [-Wimplicit-function-declaration]
+   82 |         sark_router_free(cam_index);
+      |         ^~~~~~~~~~~~~~~~
+      |         sark_lock_free
+src/router.c: At top level:
+src/router.c:119:10: error: conflicting types for 'router_route_count'; have 'uint32_t(void)' {aka 'long unsigned int(void)'}
+  119 | uint32_t router_route_count(void) {
+      |          ^~~~~~~~~~~~~~~~~~
+src/router.h:55:10: note: previous declaration of 'router_route_count' with type 'int(void)'
+   55 | uint32_t router_route_count(void);
+      |          ^~~~~~~~~~~~~~~~~~
+make: *** [Makefile:87: build/router.o] Error 1

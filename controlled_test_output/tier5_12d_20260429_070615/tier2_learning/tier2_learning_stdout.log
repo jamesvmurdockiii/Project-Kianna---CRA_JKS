@@ -1,0 +1,22 @@
+[tier2] running fixed_pattern on nest...
+
+             -- N E S T --
+
+ Copyright (C) 2004 The NEST Initiative
+
+ Version: 3.10.0-rc.1
+ Built  : Apr 21 2026 08:22:09
+
+ This program is provided AS IS and comes with NO WARRANTY.
+ See the file LICENSE for details.
+
+ Problems or suggestions?
+   Visit https://www.nest-simulator.org
+
+ Type 'nest.help()' to find out more about NEST.
+
+[tier2] fixed_pattern: PASS 
+[tier2] running delayed_reward on nest...
+[tier2] delayed_reward: PASS 
+[tier2] running nonstationary_switch on nest...
+[tier2] nonstationary_switch: PASS 

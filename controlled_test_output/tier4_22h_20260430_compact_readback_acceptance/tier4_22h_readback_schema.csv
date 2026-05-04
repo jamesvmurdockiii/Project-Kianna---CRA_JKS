@@ -1,0 +1,23 @@
+byte_offset,field,type,meaning
+0,cmd,u8,CMD_READ_STATE
+1,status,u8,0 = ok
+2,schema_version,u8,1
+3,reserved,u8,reserved/alignment
+4,timestep,u32,runtime timestep
+8,neuron_count,u32,live neurons
+12,synapse_count,u32,live synapses
+16,active_trace_count,u32,active eligibility traces
+20,active_slots,u32,active context slots
+24,slot_writes,u32,context writes
+28,slot_hits,u32,context hits
+32,slot_misses,u32,context misses
+36,slot_evictions,u32,context evictions
+40,decisions,u32,readout decisions
+44,reward_events,u32,reward events
+48,pending_created,u32,pending horizons created
+52,pending_matured,u32,pending horizons matured
+56,pending_dropped,u32,pending horizons dropped
+60,active_pending,u32,active pending horizons
+64,readout_weight,s32,s16.15 readout weight
+68,readout_bias,s32,s16.15 readout bias
+72,flags,u8,reserved

@@ -1,0 +1,29 @@
+{
+  "backend": "mock",
+  "candidate": "frozen v1.9 host-side software stack: keyed context memory plus internal composition/routing",
+  "claim_boundary": "Tier 5.14 is a software diagnostic only; no hardware, on-chip memory, language, planning, or AGI claim.",
+  "fairness_rules": [
+    "All models receive the same stream, target, evaluation mask, and feedback_due_step arrays per seed.",
+    "Candidate memory/routing features may use current visible context cues, but scored decision feedback must not be available before prediction.",
+    "Reset, shuffled, wrong-key, no-write, random-router, and always-on shams must separate from the candidate before any promotion claim.",
+    "External scaffolds/oracles are reported as upper bounds and are not promoted as internal CRA evidence.",
+    "External sequence baselines are run on the same causal online streams with the same feedback schedule."
+  ],
+  "generated_at_utc": "2026-04-29T23:04:41+00:00",
+  "memory_tasks": "intervening_contexts",
+  "models": "sign_persistence,online_perceptron,online_logistic_regression,echo_state_network,small_gru,stdp_only_snn",
+  "routing_tasks": "heldout_context_routing",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "smoke": true,
+  "subsystems_under_test": [
+    "context/cue binding across ambiguous delayed decisions",
+    "multi-slot context retention under interference",
+    "active module state and delayed contextual routing",
+    "pending subgoal/module selection before feedback"
+  ],
+  "tier": "Tier 5.14 - Working Memory / Context Binding"
+}

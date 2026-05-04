@@ -1,0 +1,11 @@
+{
+  "canonical": false,
+  "claim": "Latest Tier 4.22q tiny integrated-v2 bridge custom-runtime micro-task; pass means a tiny integrated v2 bridge pending-queue on-chip loop matched local fixed-point reference and task metrics only.",
+  "generated_at_utc": "2026-05-01T06:59:01+00:00",
+  "manifest": "/tmp/job18200290945432121555.tmp/tier4_22q_job_output/tier4_22q_results.json",
+  "mode": "run-hardware",
+  "output_dir": "/tmp/job18200290945432121555.tmp/tier4_22q_job_output",
+  "report": "/tmp/job18200290945432121555.tmp/tier4_22q_job_output/tier4_22q_report.md",
+  "status": "pass",
+  "tier": "Tier 4.22q - Tiny Integrated V2 Bridge Custom-Runtime Smoke"
+}

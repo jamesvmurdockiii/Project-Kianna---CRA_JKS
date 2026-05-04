@@ -1,0 +1,362 @@
+{
+  "artifacts": {
+    "job_readme": "/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/ebrains_upload_bundle/cra_422t/README_TIER4_22L_JOB.md",
+    "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/tier4_22l_results.json",
+    "reference_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/tier4_22l_parity_reference.csv",
+    "reference_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/tier4_22l_reference.json",
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/tier4_22l_report.md",
+    "stable_upload_folder": "/Users/james/JKS:CRA/ebrains_jobs/cra_422t",
+    "upload_bundle": "/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/ebrains_upload_bundle/cra_422t"
+  },
+  "criteria": [
+    {
+      "name": "Tier 4.22j minimal learning-smoke pass exists",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "main.c host syntax check pass",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "local fixed-point reference generated",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "upload bundle created",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/ebrains_upload_bundle/cra_422t"
+    },
+    {
+      "name": "runtime source included",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/ebrains_upload_bundle/cra_422t/coral_reef_spinnaker/spinnaker_runtime"
+    },
+    {
+      "name": "run-hardware command emitted",
+      "note": "",
+      "passed": true,
+      "rule": "contains --mode run-hardware",
+      "value": "cra_422t/experiments/tier4_22l_custom_runtime_learning_parity.py --mode run-hardware --output-dir tier4_22l_job_output"
+    },
+    {
+      "name": "source CMD_SCHEDULE_PENDING defined",
+      "note": "",
+      "passed": true,
+      "rule": "config.h defines opcode",
+      "value": "CMD_SCHEDULE_PENDING 9"
+    },
+    {
+      "name": "source CMD_MATURE_PENDING defined",
+      "note": "",
+      "passed": true,
+      "rule": "config.h defines opcode",
+      "value": "CMD_MATURE_PENDING 10"
+    },
+    {
+      "name": "source learning opcodes host-tested",
+      "note": "",
+      "passed": true,
+      "rule": "host tests cover opcodes",
+      "value": "assert command constants"
+    },
+    {
+      "name": "source controller exposes schedule command",
+      "note": "",
+      "passed": true,
+      "rule": "Python host can schedule delayed-credit state on board",
+      "value": "schedule_pending_decision"
+    },
+    {
+      "name": "source controller exposes mature command",
+      "note": "",
+      "passed": true,
+      "rule": "Python host can mature delayed-credit state on board",
+      "value": "mature_pending"
+    },
+    {
+      "name": "source runtime schedule handler exists",
+      "note": "",
+      "passed": true,
+      "rule": "runtime computes prediction and schedules pending horizon",
+      "value": "_handle_schedule_pending"
+    },
+    {
+      "name": "source runtime mature handler exists",
+      "note": "",
+      "passed": true,
+      "rule": "runtime matures pending horizon and updates readout",
+      "value": "_handle_mature_pending"
+    },
+    {
+      "name": "source learning commands dispatched",
+      "note": "",
+      "passed": true,
+      "rule": "SDP dispatcher routes learning commands",
+      "value": "case CMD_SCHEDULE_PENDING / CMD_MATURE_PENDING"
+    },
+    {
+      "name": "source fixed-point helper is s16.15",
+      "note": "",
+      "passed": true,
+      "rule": "config.h defines the same fixed-point scale as the Python reference",
+      "value": "FP_SHIFT 15"
+    },
+    {
+      "name": "source readout prediction equation present",
+      "note": "",
+      "passed": true,
+      "rule": "runtime prediction must match local parity reference",
+      "value": "FP_MUL(readout_weight, feature) + readout_bias"
+    },
+    {
+      "name": "source readout update equation present",
+      "note": "",
+      "passed": true,
+      "rule": "runtime maturation must match local parity reference",
+      "value": "delta_w = lr * error * feature; delta_b = lr * error"
+    },
+    {
+      "name": "source mature command supports explicit mature_timestep",
+      "note": "",
+      "passed": true,
+      "rule": "parity run uses explicit due_timestep to avoid timer-race false failures",
+      "value": "msg->arg3 != 0 ? msg->arg3 : g_timestep"
+    },
+    {
+      "name": "source controller exposes returned due_timestep",
+      "note": "",
+      "passed": true,
+      "rule": "hardware parity can mature exactly the pending event it scheduled",
+      "value": "due_timestep"
+    },
+    {
+      "name": "bundle CMD_SCHEDULE_PENDING defined",
+      "note": "",
+      "passed": true,
+      "rule": "config.h defines opcode",
+      "value": "CMD_SCHEDULE_PENDING 9"
+    },
+    {
+      "name": "bundle CMD_MATURE_PENDING defined",
+      "note": "",
+      "passed": true,
+      "rule": "config.h defines opcode",
+      "value": "CMD_MATURE_PENDING 10"
+    },
+    {
+      "name": "bundle learning opcodes host-tested",
+      "note": "",
+      "passed": true,
+      "rule": "host tests cover opcodes",
+      "value": "assert command constants"
+    },
+    {
+      "name": "bundle controller exposes schedule command",
+      "note": "",
+      "passed": true,
+      "rule": "Python host can schedule delayed-credit state on board",
+      "value": "schedule_pending_decision"
+    },
+    {
+      "name": "bundle controller exposes mature command",
+      "note": "",
+      "passed": true,
+      "rule": "Python host can mature delayed-credit state on board",
+      "value": "mature_pending"
+    },
+    {
+      "name": "bundle runtime schedule handler exists",
+      "note": "",
+      "passed": true,
+      "rule": "runtime computes prediction and schedules pending horizon",
+      "value": "_handle_schedule_pending"
+    },
+    {
+      "name": "bundle runtime mature handler exists",
+      "note": "",
+      "passed": true,
+      "rule": "runtime matures pending horizon and updates readout",
+      "value": "_handle_mature_pending"
+    },
+    {
+      "name": "bundle learning commands dispatched",
+      "note": "",
+      "passed": true,
+      "rule": "SDP dispatcher routes learning commands",
+      "value": "case CMD_SCHEDULE_PENDING / CMD_MATURE_PENDING"
+    },
+    {
+      "name": "bundle fixed-point helper is s16.15",
+      "note": "",
+      "passed": true,
+      "rule": "config.h defines the same fixed-point scale as the Python reference",
+      "value": "FP_SHIFT 15"
+    },
+    {
+      "name": "bundle readout prediction equation present",
+      "note": "",
+      "passed": true,
+      "rule": "runtime prediction must match local parity reference",
+      "value": "FP_MUL(readout_weight, feature) + readout_bias"
+    },
+    {
+      "name": "bundle readout update equation present",
+      "note": "",
+      "passed": true,
+      "rule": "runtime maturation must match local parity reference",
+      "value": "delta_w = lr * error * feature; delta_b = lr * error"
+    },
+    {
+      "name": "bundle mature command supports explicit mature_timestep",
+      "note": "",
+      "passed": true,
+      "rule": "parity run uses explicit due_timestep to avoid timer-race false failures",
+      "value": "msg->arg3 != 0 ? msg->arg3 : g_timestep"
+    },
+    {
+      "name": "bundle controller exposes returned due_timestep",
+      "note": "",
+      "passed": true,
+      "rule": "hardware parity can mature exactly the pending event it scheduled",
+      "value": "due_timestep"
+    }
+  ],
+  "failure_reason": "",
+  "generated_at_utc": "2026-05-01T02:23:48+00:00",
+  "main_syntax_check": {
+    "normal": {
+      "command": "/usr/bin/cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-int-to-pointer-cast -I /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/stubs -I /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src -c /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src/main.c -o /Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/tier4_22i_main_syntax_normal.o",
+      "object_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/tier4_22i_main_syntax_normal.o",
+      "returncode": 0,
+      "status": "pass",
+      "stderr": "",
+      "stderr_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/tier4_22i_main_syntax_normal_stderr.txt",
+      "stdout": "",
+      "stdout_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/tier4_22i_main_syntax_normal_stdout.txt"
+    },
+    "status": "pass"
+  },
+  "mode": "prepare",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared",
+  "reference": {
+    "equation": "prediction=w*feature+bias; error=target-prediction; w+=lr*error*feature; b+=lr*error",
+    "final_readout_bias": -0.125,
+    "final_readout_bias_raw": -4096,
+    "final_readout_weight": -0.125,
+    "final_readout_weight_raw": -4096,
+    "fixed_point": "s16.15",
+    "learning_rate": 0.25,
+    "learning_rate_raw": 8192,
+    "rows": [
+      {
+        "delta_b_raw": 8192,
+        "delta_w_raw": 8192,
+        "error_raw": 32768,
+        "feature": 1.0,
+        "feature_raw": 32768,
+        "learning_rate": 0.25,
+        "learning_rate_raw": 8192,
+        "prediction": 0.0,
+        "prediction_raw": 0,
+        "purpose": "positive feature / positive target",
+        "readout_bias": 0.25,
+        "readout_bias_raw": 8192,
+        "readout_weight": 0.25,
+        "readout_weight_raw": 8192,
+        "step": 1,
+        "target": 1.0,
+        "target_raw": 32768
+      },
+      {
+        "delta_b_raw": -12288,
+        "delta_w_raw": -12288,
+        "error_raw": -49152,
+        "feature": 1.0,
+        "feature_raw": 32768,
+        "learning_rate": 0.25,
+        "learning_rate_raw": 8192,
+        "prediction": 0.5,
+        "prediction_raw": 16384,
+        "purpose": "positive feature / negative target",
+        "readout_bias": -0.125,
+        "readout_bias_raw": -4096,
+        "readout_weight": -0.125,
+        "readout_weight_raw": -4096,
+        "step": 2,
+        "target": -1.0,
+        "target_raw": -32768
+      },
+      {
+        "delta_b_raw": -8192,
+        "delta_w_raw": 8192,
+        "error_raw": -32768,
+        "feature": -1.0,
+        "feature_raw": -32768,
+        "learning_rate": 0.25,
+        "learning_rate_raw": 8192,
+        "prediction": 0.0,
+        "prediction_raw": 0,
+        "purpose": "negative feature / negative target",
+        "readout_bias": -0.375,
+        "readout_bias_raw": -12288,
+        "readout_weight": 0.125,
+        "readout_weight_raw": 4096,
+        "step": 3,
+        "target": -1.0,
+        "target_raw": -32768
+      },
+      {
+        "delta_b_raw": 8192,
+        "delta_w_raw": -8192,
+        "error_raw": 32768,
+        "feature": -1.0,
+        "feature_raw": -32768,
+        "learning_rate": 0.25,
+        "learning_rate_raw": 8192,
+        "prediction": -0.5,
+        "prediction_raw": -16384,
+        "purpose": "negative feature / fractional positive target",
+        "readout_bias": -0.125,
+        "readout_bias_raw": -4096,
+        "readout_weight": -0.125,
+        "readout_weight_raw": -4096,
+        "step": 4,
+        "target": 0.5,
+        "target_raw": 16384
+      }
+    ],
+    "sequence_length": 4,
+    "status": "pass"
+  },
+  "runner_revision": "tier4_22l_custom_runtime_learning_parity_20260501_0001",
+  "status": "prepared",
+  "summary": {
+    "claim_boundary": "Prepared source bundle only; no hardware parity evidence until returned run-hardware artifacts pass.",
+    "jobmanager_command": "cra_422t/experiments/tier4_22l_custom_runtime_learning_parity.py --mode run-hardware --output-dir tier4_22l_job_output",
+    "mode": "prepare",
+    "next_step_if_passed": "Run the emitted EBRAINS command and ingest returned files.",
+    "reference_final_bias": -0.125,
+    "reference_final_weight": -0.125,
+    "reference_sequence_length": 4,
+    "reference_status": "pass",
+    "stable_upload_folder": "/Users/james/JKS:CRA/ebrains_jobs/cra_422t",
+    "tier4_22j_manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/tier4_22j_results.json",
+    "tier4_22j_status": "pass",
+    "upload_folder": "/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/ebrains_upload_bundle/cra_422t",
+    "what_i_need_from_user": "Upload the generated cra_422t folder to EBRAINS/JobManager and run the emitted command; download returned files after completion."
+  },
+  "tier": "Tier 4.22l - Tiny Custom-Runtime Learning Parity"
+}

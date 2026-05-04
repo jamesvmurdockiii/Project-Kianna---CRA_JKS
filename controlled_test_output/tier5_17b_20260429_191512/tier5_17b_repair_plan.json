@@ -1,0 +1,13 @@
+{
+  "classification": "mechanism_needs_intrinsic_predictive_objective",
+  "failure_mode_counts": {
+    "candidate_structure_present": 1,
+    "history_baseline_dominates": 1,
+    "input_encoded_too_easy": 1
+  },
+  "next_step": "Tier 5.17c - intrinsic predictive / MI-based preexposure objective",
+  "promote_pre_reward_representation": false,
+  "rationale": "Temporal-pressure tasks expose that fixed history can dominate the current scaffold, so the next repair should give CRA an intrinsic label-free reason to learn temporal continuation or masked-channel structure.",
+  "revisit_tier5_9_now": false,
+  "tier5_9_revisit_rule": "Only revisit delayed-credit / eligibility if a future pre-reward mechanism forms useful structure but downstream reward cannot credit, preserve, or use it."
+}

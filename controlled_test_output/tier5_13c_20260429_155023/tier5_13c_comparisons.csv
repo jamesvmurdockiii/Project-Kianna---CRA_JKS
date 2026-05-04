@@ -1,0 +1,7 @@
+subsuite,task,candidate_first_accuracy,candidate_heldout_accuracy,candidate_router_accuracy,candidate_feature_active_steps,candidate_module_updates,candidate_router_updates,candidate_pre_feedback_select_steps,raw_first_accuracy,scaffold_first_accuracy,best_ablation_model,best_ablation_first_accuracy,best_standard_model,best_standard_first_accuracy,candidate_first_delta_vs_raw,candidate_first_delta_vs_best_ablation,candidate_first_delta_vs_best_standard
+composition,distractor_skill_chain,1.0,1.0,,225.0,32.0,,,0.0,1.0,internal_reset_ablation,0.5,sign_persistence,0.5,1.0,0.5,0.5
+composition,heldout_skill_pair,1.0,1.0,,288.0,32.0,,,0.0,1.0,internal_reset_ablation,0.5,online_perceptron,0.5833333333333334,1.0,0.5,0.41666666666666663
+composition,order_sensitive_chain,1.0,1.0,,288.0,32.0,,,0.0,1.0,internal_reset_ablation,0.5,online_logistic_regression,1.0,1.0,0.5,0.0
+routing,context_reentry_routing,1.0,1.0,0.6491228070175439,171.0,32.0,24.0,111.0,0.0,1.0,internal_router_reset_ablation,0.5,sign_persistence,0.5,1.0,0.5,0.5
+routing,distractor_router_chain,1.0,1.0,0.42857142857142855,147.0,32.0,32.0,63.0,0.0,1.0,internal_random_router_ablation,0.5,stdp_only_snn,0.5,1.0,0.5,0.5
+routing,heldout_context_routing,1.0,1.0,0.5483870967741935,186.0,32.0,32.0,102.0,0.0,1.0,internal_random_router_ablation,0.5,stdp_only_snn,0.5,1.0,0.5,0.5

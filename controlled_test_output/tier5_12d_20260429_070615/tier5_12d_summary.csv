@@ -1,0 +1,7 @@
+child,status,return_code,runtime_seconds,manifest_path,output_dir,failure_reason
+tier1_controls,pass,0,17.535510125,/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070615/tier1_controls/tier1_results.json,/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070615/tier1_controls,
+tier2_learning,pass,0,15.651181083000004,/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070615/tier2_learning/tier2_results.json,/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070615/tier2_learning,
+tier3_ablations,pass,0,121.998122709,/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070615/tier3_ablations/tier3_results.json,/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070615/tier3_ablations,
+target_task_smokes,pass,0,9.937872499999997,/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070615/target_task_smokes/tier5_6_results.json,/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070615/target_task_smokes,
+replay_consolidation_guardrail,pass,0,8.937478624999983,/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070615/replay_consolidation_guardrail/tier5_11d_results.json,/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070615/replay_consolidation_guardrail,
+predictive_context_guardrail,pass,0,145.56282933399999,/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070615/predictive_context_guardrail/tier5_12c_results.json,/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070615/predictive_context_guardrail,

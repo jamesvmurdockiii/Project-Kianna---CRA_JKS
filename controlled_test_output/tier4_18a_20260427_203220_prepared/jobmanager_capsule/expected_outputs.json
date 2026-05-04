@@ -1,0 +1,21 @@
+{
+  "pass_requires": [
+    "sim_run_failures_sum=0",
+    "summary_read_failures_sum=0",
+    "synthetic_fallbacks_sum=0",
+    "scheduled_input_failures_sum=0",
+    "spike_readback_failures_sum=0",
+    "real spike readback > 0 in every run",
+    "task metrics remain above Tier 4.16 thresholds",
+    "runtime and sim.run call counts documented for every chunk"
+  ],
+  "required": [
+    "tier4_18a_results.json",
+    "tier4_18a_report.md",
+    "tier4_18a_summary.csv",
+    "tier4_18a_runtime_matrix.csv",
+    "tier4_18a_runtime_matrix.png",
+    "spinnaker_hardware_<task>_chunk<chunk>_seed<seed>_timeseries.csv",
+    "spinnaker_hardware_<task>_chunk<chunk>_seed<seed>_timeseries.png"
+  ]
+}

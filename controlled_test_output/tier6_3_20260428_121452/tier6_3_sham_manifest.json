@@ -1,0 +1,102 @@
+{
+  "claim_boundary": "Replay/shuffle controls are derived audit artifacts; performance claims are made against actual fixed/ablation controls plus event-count replay.",
+  "control_definitions": {
+    "active_mask_shuffle": {
+      "actual_run": false,
+      "case_group": "telemetry_shuffle",
+      "control_type": "active_mask_shuffle",
+      "description": "Derived telemetry audit that shuffles alive-count masks; not a learner, only a mechanism-control artifact.",
+      "label": "active-mask shuffle audit",
+      "performance_control": false
+    },
+    "fixed_initial": {
+      "actual_run": true,
+      "case_group": "capacity_control",
+      "control_type": "fixed_initial",
+      "description": "Fixed CRA at the same initial population; no birth/death lifecycle.",
+      "label": "fixed initial N",
+      "performance_control": false
+    },
+    "fixed_max": {
+      "actual_run": true,
+      "case_group": "capacity_control",
+      "control_type": "fixed_max",
+      "description": "Fixed CRA with the full max pool available from step 0; tests extra-capacity explanation.",
+      "label": "fixed max pool",
+      "performance_control": true
+    },
+    "intact": {
+      "actual_run": true,
+      "case_group": "intact",
+      "control_type": "intact",
+      "description": "Unmodified lifecycle-enabled CRA; the Tier 6.1 mechanism under test.",
+      "label": "intact lifecycle",
+      "performance_control": false
+    },
+    "lineage_id_shuffle": {
+      "actual_run": false,
+      "case_group": "lineage_shuffle",
+      "control_type": "lineage_id_shuffle",
+      "description": "Derived lineage audit that deliberately corrupts lineage IDs to prove lineage integrity checks are meaningful.",
+      "label": "lineage-ID shuffle audit",
+      "performance_control": false
+    },
+    "no_dopamine": {
+      "actual_run": true,
+      "case_group": "mechanism_ablation",
+      "control_type": "no_dopamine",
+      "description": "Dopamine teaching signal is clamped to zero while the task stream and lifecycle code remain present.",
+      "label": "no dopamine",
+      "performance_control": true
+    },
+    "no_plasticity": {
+      "actual_run": true,
+      "case_group": "mechanism_ablation",
+      "control_type": "no_plasticity",
+      "description": "Predictive readout and structural plasticity are disabled; lifecycle bookkeeping may still execute.",
+      "label": "no plasticity",
+      "performance_control": true
+    },
+    "no_trophic": {
+      "actual_run": true,
+      "case_group": "mechanism_ablation",
+      "control_type": "no_trophic",
+      "description": "Selective trophic birth/death pressure is disabled; tests whether lifecycle selection matters beyond ordinary fixed learning.",
+      "label": "no trophic pressure",
+      "performance_control": true
+    },
+    "random_event_replay": {
+      "actual_run": false,
+      "case_group": "event_replay_sham",
+      "control_type": "random_event_replay",
+      "description": "Derived sham using fixed-initial performance with the intact lifecycle event count attached; tests whether event count alone explains the advantage.",
+      "label": "event-count matched replay sham",
+      "performance_control": true
+    }
+  },
+  "generated_at_utc": "2026-04-28T16:14:54+00:00",
+  "performance_controls": [
+    "fixed_max",
+    "no_dopamine",
+    "no_plasticity",
+    "no_trophic",
+    "random_event_replay"
+  ],
+  "replay_controls": [
+    "active_mask_shuffle",
+    "lineage_id_shuffle",
+    "random_event_replay"
+  ],
+  "requested_controls": [
+    "intact",
+    "fixed_initial",
+    "fixed_max",
+    "random_event_replay",
+    "active_mask_shuffle",
+    "lineage_id_shuffle",
+    "no_trophic",
+    "no_dopamine",
+    "no_plasticity"
+  ],
+  "tier": "Tier 6.3 - Lifecycle Sham-Control Suite"
+}

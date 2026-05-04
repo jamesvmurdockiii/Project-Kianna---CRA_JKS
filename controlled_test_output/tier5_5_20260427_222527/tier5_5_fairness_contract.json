@@ -1,0 +1,59 @@
+{
+  "baseline_version": "CRA evidence baseline v0.8",
+  "causal_rules": [
+    "all models receive the same task stream for the same task seed and seed",
+    "models predict before seeing the current evaluation label",
+    "delayed tasks update only when the feedback_due_step matures",
+    "no baseline receives future labels, switch locations, or reward signs early",
+    "CRA and baselines share train/evaluation windows and task masks"
+  ],
+  "claim_boundary": "Controlled software baseline comparison only; not hardware evidence and not proof of universal superiority.",
+  "deferred_reviewer_defense_baselines": [
+    "surrogate_gradient_snn",
+    "ann_trained_readout",
+    "ann_to_snn_converted_when_task_compatible",
+    "liquid_state_machine_variant",
+    "contextual_bandit_or_actor_critic_for_action_tasks"
+  ],
+  "fixed_hyperparameters": {
+    "cra_delayed_readout_lr_arg_default": 0.2,
+    "cra_population_size": 8,
+    "cra_readout_lr": 0.1,
+    "evo_mutation": 0.06,
+    "evo_population": 24,
+    "feature_history": 4,
+    "gru_hidden": 16,
+    "gru_lr": 0.04,
+    "logistic_lr": 0.1,
+    "perceptron_lr": 0.08,
+    "reservoir_hidden": 24,
+    "reservoir_leak": 0.35,
+    "reservoir_lr": 0.04,
+    "reservoir_radius": 0.85,
+    "stdp_hidden": 24,
+    "stdp_lr": 0.0008
+  },
+  "matrix": {
+    "cra_variants": [
+      "cra_v0_8_delayed_lr_0_20"
+    ],
+    "external_models": [
+      "random_sign",
+      "sign_persistence"
+    ],
+    "run_lengths": [
+      120
+    ],
+    "seeds": [
+      42
+    ],
+    "tasks": [
+      "delayed_cue",
+      "hard_noisy_switching"
+    ]
+  },
+  "notes": [
+    "Tier 5.6 must audit hyperparameter budgets before final paper claims.",
+    "If Tier 5.5 fails to find a robust advantage regime, narrow the claim or run targeted mechanism diagnostics before adding architecture features."
+  ]
+}

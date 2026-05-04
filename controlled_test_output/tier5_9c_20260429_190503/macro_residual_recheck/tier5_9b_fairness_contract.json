@@ -1,0 +1,37 @@
+{
+  "ablation_controls": [
+    "macro_eligibility_shuffled",
+    "macro_eligibility_zero"
+  ],
+  "backend": "nest",
+  "candidate": "macro_eligibility",
+  "fairness_rules": [
+    "same task stream per seed for CRA variants and selected baselines",
+    "v1.4 PendingHorizon remains the base update in residual variants",
+    "models predict before consequence feedback matures",
+    "feedback_due_step must be greater than or equal to prediction step",
+    "normal residual trace must beat shuffled/zero trace before promotion",
+    "delayed_cue nonregression is mandatory before hard-switch recovery wins count",
+    "passing Tier 5.9b only authorizes compact regression, not hardware or custom C"
+  ],
+  "frozen_comparator": "v1_4_pending_horizon",
+  "repair_decay": 0.92,
+  "repair_hypothesis": "bounded residual trace added to v1.4 PendingHorizon feature",
+  "repair_residual_scale": 0.1,
+  "repair_trace_clip": 1.0,
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "selected_external_baselines": [
+    "sign_persistence",
+    "online_perceptron",
+    "online_logistic_regression",
+    "echo_state_network",
+    "stdp_only_snn"
+  ],
+  "steps": 960,
+  "tasks": "delayed_cue,hard_noisy_switching,variable_delay_cue,aba_recurrence",
+  "tier": "Tier 5.9b - Residual Macro Eligibility Repair Diagnostic"
+}

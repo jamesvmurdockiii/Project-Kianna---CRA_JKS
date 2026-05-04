@@ -1,0 +1,42 @@
+{
+  "encoding": "latency",
+  "is_genuinely_temporal": true,
+  "mean_latency_bin": 6.433774834437086,
+  "mean_spike_sparsity": 0.00546875,
+  "mean_spike_total": 0.6583333333333333,
+  "nonzero_steps": 151,
+  "seed": 42,
+  "steps": 720,
+  "task": "hard_noisy_switching",
+  "task_metadata": {
+    "delay_range": [
+      3,
+      5
+    ],
+    "mean_delay": 4.048543689320389,
+    "noise_rate_actual": 0.17475728155339806,
+    "noisy_trials": 18,
+    "switch_steps": [
+      0,
+      41,
+      85,
+      132,
+      168,
+      212,
+      259,
+      293,
+      336,
+      381,
+      423,
+      466,
+      508,
+      541,
+      578,
+      621,
+      663,
+      701
+    ],
+    "task_kind": "hard_noisy_switching",
+    "trials": 103
+  }
+}

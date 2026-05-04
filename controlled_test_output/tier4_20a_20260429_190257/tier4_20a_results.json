@@ -1,0 +1,221 @@
+{
+  "artifacts": {
+    "matrix_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_20a_20260429_190257/tier4_20a_transfer_matrix.csv",
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_20a_20260429_190257/tier4_20a_report.md",
+    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_20a_20260429_190257/tier4_20a_summary.csv"
+  },
+  "criteria": [
+    {
+      "name": "frozen v2.1 baseline artifact exists",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.1.json"
+    },
+    {
+      "name": "post-chunked-runtime v0.8 baseline artifact exists",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v0.8.json"
+    },
+    {
+      "name": "chunked host runtime contract is implemented",
+      "passed": true,
+      "rule": "implemented == true",
+      "value": "chunked_host_stepcurrent_binned_replay"
+    },
+    {
+      "name": "continuous/on-chip runtime is explicitly not overclaimed",
+      "passed": true,
+      "rule": "implemented == false",
+      "value": "future_custom_runtime"
+    },
+    {
+      "name": "all promoted v2.1 mechanisms classified",
+      "passed": true,
+      "rule": ">= 6 classified transferable/probe rows",
+      "value": 7
+    },
+    {
+      "name": "no mechanism is incorrectly marked on-chip proven",
+      "passed": true,
+      "rule": "none",
+      "value": "none"
+    }
+  ],
+  "failure_reason": "",
+  "generated_at_utc": "2026-04-29T23:02:57+00:00",
+  "mechanism_rows": [
+    {
+      "chunked_host_status": "ready_for_probe",
+      "claim_boundary": "not native on-chip eligibility; host computes delayed credit at chunk boundaries",
+      "continuous_status": "future_custom_runtime",
+      "current_claim": "confirmed delayed-credit setting and hardware-surviving hard-task bridge in earlier chunked host capsules",
+      "current_location": "host-side learning manager",
+      "hardware_probe_priority": "high",
+      "mechanism": "PendingHorizon delayed credit / delayed_lr_0_20",
+      "on_chip_status": "not_implemented",
+      "required_bridge_work": "reuse scheduled input and per-step binned readback; verify matured feedback replay under v2.1 tasks",
+      "risk": "medium",
+      "source_tier": "Tier 5.4, Tier 4.16a/b"
+    },
+    {
+      "chunked_host_status": "needs_bridge_adapter",
+      "claim_boundary": "not native memory and not hardware memory until a returned SpiNNaker probe passes",
+      "continuous_status": "future_custom_runtime",
+      "current_claim": "bounded host-side keyed/multi-slot context memory repairs interference and preserves regression",
+      "current_location": "host metadata/state in learning manager",
+      "hardware_probe_priority": "high",
+      "mechanism": "keyed context memory",
+      "on_chip_status": "not_implemented",
+      "required_bridge_work": "carry visible context/decision metadata through chunk scheduler; replay per-step context writes and decisions after binned readback",
+      "risk": "medium",
+      "source_tier": "Tier 5.10g, Tier 5.10e/f"
+    },
+    {
+      "chunked_host_status": "needs_probe_design",
+      "claim_boundary": "hardware replay is unproven; priority weighting is not the promoted claim",
+      "continuous_status": "future_custom_runtime",
+      "current_claim": "correct-binding replay repairs silent reentry and separates wrong-memory controls",
+      "current_location": "host offline/consolidation loop",
+      "hardware_probe_priority": "medium",
+      "mechanism": "replay / consolidation",
+      "on_chip_status": "not_implemented",
+      "required_bridge_work": "define replay epochs around hardware chunks; prevent replay from fabricating spike readback; log replay events separately from real hardware events",
+      "risk": "high",
+      "source_tier": "Tier 5.11d"
+    },
+    {
+      "chunked_host_status": "needs_bridge_adapter",
+      "claim_boundary": "not full world model and not on-chip predictive coding",
+      "continuous_status": "future_custom_runtime",
+      "current_claim": "bounded host-side predictive-context and predictive-binding evidence through v2.0 guardrails",
+      "current_location": "host metadata/state and diagnostic input injection",
+      "hardware_probe_priority": "high",
+      "mechanism": "visible predictive context / predictive binding",
+      "on_chip_status": "not_implemented",
+      "required_bridge_work": "schedule precursor/decision metadata inside chunks; preserve no-label/no-reward preexposure contract; compare against shuffled/wrong-domain controls in hardware probe",
+      "risk": "medium_high",
+      "source_tier": "Tier 5.12d, Tier 5.17e"
+    },
+    {
+      "chunked_host_status": "needs_bridge_adapter",
+      "claim_boundary": "not hardware/on-chip routing, language, planning, or general compositional reasoning",
+      "continuous_status": "future_custom_runtime",
+      "current_claim": "internal host-side composition/routing and working-memory/context binding survive guardrails",
+      "current_location": "host module tables, router scores, and metadata-driven feature injection",
+      "hardware_probe_priority": "medium",
+      "mechanism": "composition and module routing",
+      "on_chip_status": "not_implemented",
+      "required_bridge_work": "map skill/context events to chunk scheduler; replay module/router updates after feedback; prove pre-feedback route selection with hardware readback",
+      "risk": "high",
+      "source_tier": "Tier 5.13c, Tier 5.14"
+    },
+    {
+      "chunked_host_status": "needs_bridge_adapter",
+      "claim_boundary": "not consciousness, self-awareness, introspection, on-chip self-monitoring, language, planning, or AGI",
+      "continuous_status": "future_custom_runtime",
+      "current_claim": "v2.1 bounded host-side reliability monitor predicts primary-path error/hazard risk and improves confidence-gated behavior",
+      "current_location": "host diagnostic monitor and confidence-gated fallback",
+      "hardware_probe_priority": "medium",
+      "mechanism": "self-evaluation / reliability monitoring",
+      "on_chip_status": "not_implemented",
+      "required_bridge_work": "compute monitor features only from pre-feedback/binned state; log confidence before outcome; verify sham monitors in hardware-compatible capsule",
+      "risk": "medium_high",
+      "source_tier": "Tier 5.18, Tier 5.18c"
+    },
+    {
+      "chunked_host_status": "not_promoted",
+      "claim_boundary": "not native eligibility and not part of the v2.1 claim unless future gates pass",
+      "continuous_status": "future_custom_runtime_if_promoted",
+      "current_claim": "parked unless Tier 5.9c recheck and later integration gate pass",
+      "current_location": "host learning manager diagnostic path",
+      "hardware_probe_priority": "low_until_promoted",
+      "mechanism": "macro eligibility residual trace",
+      "on_chip_status": "not_implemented",
+      "required_bridge_work": "do not port until macro trace beats shuffled/zero controls and v2.1 integration preserves guardrails",
+      "risk": "high",
+      "source_tier": "Tier 5.9a/b/c"
+    },
+    {
+      "chunked_host_status": "needs_dedicated_temporal_probe",
+      "claim_boundary": "not hardware temporal coding until a temporal hardware probe passes",
+      "continuous_status": "future_custom_runtime",
+      "current_claim": "software temporal CRA uses latency/burst/interval structure under diagnostics",
+      "current_location": "software diagnostic encoding/readout path",
+      "hardware_probe_priority": "medium",
+      "mechanism": "spike temporal-code diagnostics",
+      "on_chip_status": "not_implemented",
+      "required_bridge_work": "ensure temporal codes are delivered inside chunks and read back with bin resolution fine enough to preserve timing controls",
+      "risk": "medium_high",
+      "source_tier": "Tier 5.15"
+    }
+  ],
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_20a_20260429_190257",
+  "status": "pass",
+  "summary": {
+    "chunked_plan": {
+      "blockers": [],
+      "call_reduction_factor": 24.0,
+      "chunk_size_steps": 25,
+      "dt_seconds": 0.05,
+      "implementation_stage": "chunked_host_stepcurrent_binned_replay",
+      "implemented": true,
+      "learning_location": "host",
+      "learning_update_interval_steps": 25,
+      "runtime_mode": "chunked",
+      "sim_run_calls": 5,
+      "simulated_ms_per_chunk": 1250.0,
+      "total_steps": 120
+    },
+    "chunked_probe_candidates": [
+      "PendingHorizon delayed credit / delayed_lr_0_20",
+      "keyed context memory",
+      "replay / consolidation",
+      "visible predictive context / predictive binding",
+      "composition and module routing",
+      "self-evaluation / reliability monitoring",
+      "spike temporal-code diagnostics"
+    ],
+    "continuous_on_chip_plan": {
+      "blockers": [
+        "custom_c_or_backend_native_closed_loop",
+        "on_chip_or_hybrid_credit_assignment_state",
+        "hardware_provenance_for_continuous_run"
+      ],
+      "call_reduction_factor": 24.0,
+      "chunk_size_steps": 25,
+      "dt_seconds": 0.05,
+      "implementation_stage": "future_custom_runtime",
+      "implemented": false,
+      "learning_location": "on_chip",
+      "learning_update_interval_steps": 25,
+      "runtime_mode": "continuous",
+      "sim_run_calls": 5,
+      "simulated_ms_per_chunk": 1250.0,
+      "total_steps": 120
+    },
+    "mechanisms_classified": 8,
+    "recommended_sequence": [
+      "Run Tier 5.9c first; keep macro eligibility parked unless it passes and later integration is clean.",
+      "Run Tier 4.20b one-seed v2.1 chunked hardware probe using delayed/context/predictive mechanisms only; no macro eligibility unless promoted.",
+      "If 4.20b passes, run Tier 4.20c three-seed repeat on the smallest v2.1 capsule.",
+      "Only after returned hardware evidence is clean, design Tier 4.21 hybrid/native eligibility or on-chip memory prototypes for the mechanisms that actually mattered."
+    ],
+    "runtime_seconds": 0.0009978749999999953,
+    "step_plan": {
+      "blockers": [],
+      "call_reduction_factor": 1.0,
+      "chunk_size_steps": 1,
+      "dt_seconds": 0.05,
+      "implementation_stage": "current_step_host_loop",
+      "implemented": true,
+      "learning_location": "host",
+      "learning_update_interval_steps": 1,
+      "runtime_mode": "step",
+      "sim_run_calls": 120,
+      "simulated_ms_per_chunk": 50.0,
+      "total_steps": 120
+    }
+  },
+  "tier": "Tier 4.20a - v2.1 Hardware Transfer Readiness Audit"
+}

@@ -1,0 +1,130 @@
+{
+  "tier": "Tier 4.27f \u2014 Three-State-Core MCPL Lookup Smoke",
+  "runner_revision": "tier4_27f_three_core_mcpl_smoke_20260502_0001",
+  "generated_at_utc": "2026-05-03T03:17:09.468741+00:00",
+  "mode": "local",
+  "status": "pass",
+  "criteria": [
+    {
+      "name": "runner revision current",
+      "value": "tier4_27f_three_core_mcpl_smoke_20260502_0001",
+      "rule": "expected",
+      "passed": true
+    },
+    {
+      "name": "source wiring all checks pass",
+      "value": true,
+      "rule": "== True",
+      "passed": true
+    },
+    {
+      "name": "context_core .aplx built with MCPL",
+      "value": true,
+      "rule": "== True",
+      "passed": true
+    },
+    {
+      "name": "context_core ITCM < 32KB",
+      "value": 11248,
+      "rule": "< 32768",
+      "passed": true
+    },
+    {
+      "name": "route_core .aplx built with MCPL",
+      "value": true,
+      "rule": "== True",
+      "passed": true
+    },
+    {
+      "name": "route_core ITCM < 32KB",
+      "value": 11280,
+      "rule": "< 32768",
+      "passed": true
+    },
+    {
+      "name": "memory_core .aplx built with MCPL",
+      "value": true,
+      "rule": "== True",
+      "passed": true
+    },
+    {
+      "name": "memory_core ITCM < 32KB",
+      "value": 11280,
+      "rule": "< 32768",
+      "passed": true
+    },
+    {
+      "name": "learning_core .aplx built with MCPL",
+      "value": true,
+      "rule": "== True",
+      "passed": true
+    },
+    {
+      "name": "learning_core ITCM < 32KB",
+      "value": 12968,
+      "rule": "< 32768",
+      "passed": true
+    },
+    {
+      "name": "MCPL host test pass",
+      "value": 0,
+      "rule": "== 0",
+      "passed": true
+    }
+  ],
+  "wiring_checks": {
+    "learning_core router mask catches all lookup types (0xFFF00000)": true,
+    "state cores use specific lookup type in router key": true,
+    "cra_state_mcpl_lookup_receive handles REQUEST for state cores": true,
+    "cra_state_mcpl_lookup_receive handles REPLY for learning core": true
+  },
+  "builds": {
+    "context_core": {
+      "profile": "context_core",
+      "use_mcpl": true,
+      "build_returncode": 0,
+      "aplx_exists": true,
+      "aplx_path": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/build/coral_reef_context_core.aplx",
+      "itcm_text_bytes": 11248,
+      "stdout": "rm -rf build/gnu/ build/coral_reef.aplx tests/test_runtime tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_four_core_local tests/test_four_core_48event\nmkdir -p build/gnu/src/\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /tmp/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_CONTEXT_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=4 -DCRA_USE_MCPL_LOOKUP=1 -o build/gnu/src/main.o src/main.c\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /tmp/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_CONTEXT_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=4 -DCRA_USE_MCPL_LOOKUP=1 -o build/gnu/src/state_manager.o src/state_manager.c\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /tmp/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_CONTEXT_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=4 -DCRA_USE_MCPL_LOOKUP=1 -o build/gnu/src/host_interface.o src/host_interface.c\nmkdir -p build/gnu/\nPERL5LIB=/tmp/spinnaker_tools/tools:$PERL5LIB /tmp/spinnaker_tools/tools/mkbuild coral_reef > build/gnu/coral_reef_build.c\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /tmp/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_CONTEXT_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=4 -DCRA_USE_MCPL_LOOKUP=1   -c -o build/gnu/coral_reef_build.o build/gnu/coral_reef_build.c\n# spinnaker_tools.mk elf\narm-none-eabi-gcc -T/tmp/spinnaker_tools/tools/sark.lnk -Wl,-e,cpu_reset -Wl,-static -ffreestanding -fdata-sections -ffunction-sections -Wl,--gc-sections -Wl,--use-blx -nostartfiles -static -L /tmp/spinnaker_tools/lib build/gnu/src/main.o build/gnu/src/state_manager.o build/gnu/src/host_interface.o build/gnu/coral_reef_build.o  /tmp/spinnaker_tools/lib/libspin1_api.a -o build/gnu/coral_reef.elf\narm-none-eabi-objdump -dxt > build/gnu/coral_reef.txt build/gnu/coral_reef.elf\narm-none-eabi-objcopy -O binary -j RO_DATA -j EX_DATA build/gnu/coral_reef.elf build/gnu/RO_DATA.bin\narm-none-eabi-objcopy -O binary -j RW_DATA build/gnu/coral_reef.elf build/gnu/RW_DATA.bin\nls -l build/gnu/RO_DATA.bin\n-rwxr-xr-x  1 james  staff  11248 May  2 23:17 build/gnu/RO_DATA.bin\nPERL5LIB=/tmp/spinnaker_tools/tools:$PERL5LIB /tmp/spinnaker_tools/tools/mkbin build/gnu/RO_DATA.bin build/gnu/RW_DATA.bin > build/gnu/coral_reef.bin\nrm -f build/gnu/RO_DATA.bin build/gnu/RW_DATA.bin\narm-none-eabi-nm build/gnu/coral_reef.elf > build/gnu/coral_reef.nm\nmkdir -p build/\nPERL5LIB=/tmp/spinnaker_tools/tools:$PERL5LIB /tmp/spinnaker_tools/tools/mkaplx build/gnu/coral_reef.nm | cat - build/gnu/coral_reef.bin > build/coral_reef.aplx\nrm build/gnu/coral_reef.bin build/gnu/coral_reef_build.c build/gnu/coral_reef.nm build/gnu/coral_reef_build.o\n",
+      "stderr": ""
+    },
+    "route_core": {
+      "profile": "route_core",
+      "use_mcpl": true,
+      "build_returncode": 0,
+      "aplx_exists": true,
+      "aplx_path": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/build/coral_reef_route_core.aplx",
+      "itcm_text_bytes": 11280,
+      "stdout": "rm -rf build/gnu/ build/coral_reef.aplx tests/test_runtime tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_four_core_local tests/test_four_core_48event\nmkdir -p build/gnu/src/\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /tmp/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_ROUTE_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=5 -DCRA_USE_MCPL_LOOKUP=1 -o build/gnu/src/main.o src/main.c\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /tmp/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_ROUTE_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=5 -DCRA_USE_MCPL_LOOKUP=1 -o build/gnu/src/state_manager.o src/state_manager.c\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /tmp/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_ROUTE_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=5 -DCRA_USE_MCPL_LOOKUP=1 -o build/gnu/src/host_interface.o src/host_interface.c\nmkdir -p build/gnu/\nPERL5LIB=/tmp/spinnaker_tools/tools:$PERL5LIB /tmp/spinnaker_tools/tools/mkbuild coral_reef > build/gnu/coral_reef_build.c\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /tmp/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_ROUTE_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=5 -DCRA_USE_MCPL_LOOKUP=1   -c -o build/gnu/coral_reef_build.o build/gnu/coral_reef_build.c\n# spinnaker_tools.mk elf\narm-none-eabi-gcc -T/tmp/spinnaker_tools/tools/sark.lnk -Wl,-e,cpu_reset -Wl,-static -ffreestanding -fdata-sections -ffunction-sections -Wl,--gc-sections -Wl,--use-blx -nostartfiles -static -L /tmp/spinnaker_tools/lib build/gnu/src/main.o build/gnu/src/state_manager.o build/gnu/src/host_interface.o build/gnu/coral_reef_build.o  /tmp/spinnaker_tools/lib/libspin1_api.a -o build/gnu/coral_reef.elf\narm-none-eabi-objdump -dxt > build/gnu/coral_reef.txt build/gnu/coral_reef.elf\narm-none-eabi-objcopy -O binary -j RO_DATA -j EX_DATA build/gnu/coral_reef.elf build/gnu/RO_DATA.bin\narm-none-eabi-objcopy -O binary -j RW_DATA build/gnu/coral_reef.elf build/gnu/RW_DATA.bin\nls -l build/gnu/RO_DATA.bin\n-rwxr-xr-x  1 james  staff  11280 May  2 23:17 build/gnu/RO_DATA.bin\nPERL5LIB=/tmp/spinnaker_tools/tools:$PERL5LIB /tmp/spinnaker_tools/tools/mkbin build/gnu/RO_DATA.bin build/gnu/RW_DATA.bin > build/gnu/coral_reef.bin\nrm -f build/gnu/RO_DATA.bin build/gnu/RW_DATA.bin\narm-none-eabi-nm build/gnu/coral_reef.elf > build/gnu/coral_reef.nm\nmkdir -p build/\nPERL5LIB=/tmp/spinnaker_tools/tools:$PERL5LIB /tmp/spinnaker_tools/tools/mkaplx build/gnu/coral_reef.nm | cat - build/gnu/coral_reef.bin > build/coral_reef.aplx\nrm build/gnu/coral_reef.bin build/gnu/coral_reef_build.c build/gnu/coral_reef.nm build/gnu/coral_reef_build.o\n",
+      "stderr": ""
+    },
+    "memory_core": {
+      "profile": "memory_core",
+      "use_mcpl": true,
+      "build_returncode": 0,
+      "aplx_exists": true,
+      "aplx_path": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/build/coral_reef_memory_core.aplx",
+      "itcm_text_bytes": 11280,
+      "stdout": "rm -rf build/gnu/ build/coral_reef.aplx tests/test_runtime tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_four_core_local tests/test_four_core_48event\nmkdir -p build/gnu/src/\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /tmp/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_MEMORY_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=6 -DCRA_USE_MCPL_LOOKUP=1 -o build/gnu/src/main.o src/main.c\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /tmp/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_MEMORY_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=6 -DCRA_USE_MCPL_LOOKUP=1 -o build/gnu/src/state_manager.o src/state_manager.c\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /tmp/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_MEMORY_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=6 -DCRA_USE_MCPL_LOOKUP=1 -o build/gnu/src/host_interface.o src/host_interface.c\nmkdir -p build/gnu/\nPERL5LIB=/tmp/spinnaker_tools/tools:$PERL5LIB /tmp/spinnaker_tools/tools/mkbuild coral_reef > build/gnu/coral_reef_build.c\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /tmp/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_MEMORY_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=6 -DCRA_USE_MCPL_LOOKUP=1   -c -o build/gnu/coral_reef_build.o build/gnu/coral_reef_build.c\n# spinnaker_tools.mk elf\narm-none-eabi-gcc -T/tmp/spinnaker_tools/tools/sark.lnk -Wl,-e,cpu_reset -Wl,-static -ffreestanding -fdata-sections -ffunction-sections -Wl,--gc-sections -Wl,--use-blx -nostartfiles -static -L /tmp/spinnaker_tools/lib build/gnu/src/main.o build/gnu/src/state_manager.o build/gnu/src/host_interface.o build/gnu/coral_reef_build.o  /tmp/spinnaker_tools/lib/libspin1_api.a -o build/gnu/coral_reef.elf\narm-none-eabi-objdump -dxt > build/gnu/coral_reef.txt build/gnu/coral_reef.elf\narm-none-eabi-objcopy -O binary -j RO_DATA -j EX_DATA build/gnu/coral_reef.elf build/gnu/RO_DATA.bin\narm-none-eabi-objcopy -O binary -j RW_DATA build/gnu/coral_reef.elf build/gnu/RW_DATA.bin\nls -l build/gnu/RO_DATA.bin\n-rwxr-xr-x  1 james  staff  11280 May  2 23:17 build/gnu/RO_DATA.bin\nPERL5LIB=/tmp/spinnaker_tools/tools:$PERL5LIB /tmp/spinnaker_tools/tools/mkbin build/gnu/RO_DATA.bin build/gnu/RW_DATA.bin > build/gnu/coral_reef.bin\nrm -f build/gnu/RO_DATA.bin build/gnu/RW_DATA.bin\narm-none-eabi-nm build/gnu/coral_reef.elf > build/gnu/coral_reef.nm\nmkdir -p build/\nPERL5LIB=/tmp/spinnaker_tools/tools:$PERL5LIB /tmp/spinnaker_tools/tools/mkaplx build/gnu/coral_reef.nm | cat - build/gnu/coral_reef.bin > build/coral_reef.aplx\nrm build/gnu/coral_reef.bin build/gnu/coral_reef_build.c build/gnu/coral_reef.nm build/gnu/coral_reef_build.o\n",
+      "stderr": ""
+    },
+    "learning_core": {
+      "profile": "learning_core",
+      "use_mcpl": true,
+      "build_returncode": 0,
+      "aplx_exists": true,
+      "aplx_path": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/build/coral_reef_learning_core.aplx",
+      "itcm_text_bytes": 12968,
+      "stdout": "rm -rf build/gnu/ build/coral_reef.aplx tests/test_runtime tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_four_core_local tests/test_four_core_48event\nmkdir -p build/gnu/src/\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /tmp/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 -DCRA_USE_MCPL_LOOKUP=1 -o build/gnu/src/main.o src/main.c\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /tmp/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 -DCRA_USE_MCPL_LOOKUP=1 -o build/gnu/src/state_manager.o src/state_manager.c\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /tmp/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 -DCRA_USE_MCPL_LOOKUP=1 -o build/gnu/src/host_interface.o src/host_interface.c\nmkdir -p build/gnu/\nPERL5LIB=/tmp/spinnaker_tools/tools:$PERL5LIB /tmp/spinnaker_tools/tools/mkbuild coral_reef > build/gnu/coral_reef_build.c\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /tmp/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 -DCRA_USE_MCPL_LOOKUP=1   -c -o build/gnu/coral_reef_build.o build/gnu/coral_reef_build.c\n# spinnaker_tools.mk elf\narm-none-eabi-gcc -T/tmp/spinnaker_tools/tools/sark.lnk -Wl,-e,cpu_reset -Wl,-static -ffreestanding -fdata-sections -ffunction-sections -Wl,--gc-sections -Wl,--use-blx -nostartfiles -static -L /tmp/spinnaker_tools/lib build/gnu/src/main.o build/gnu/src/state_manager.o build/gnu/src/host_interface.o build/gnu/coral_reef_build.o  /tmp/spinnaker_tools/lib/libspin1_api.a -o build/gnu/coral_reef.elf\narm-none-eabi-objdump -dxt > build/gnu/coral_reef.txt build/gnu/coral_reef.elf\narm-none-eabi-objcopy -O binary -j RO_DATA -j EX_DATA build/gnu/coral_reef.elf build/gnu/RO_DATA.bin\narm-none-eabi-objcopy -O binary -j RW_DATA build/gnu/coral_reef.elf build/gnu/RW_DATA.bin\nls -l build/gnu/RO_DATA.bin\n-rwxr-xr-x  1 james  staff  12968 May  2 23:17 build/gnu/RO_DATA.bin\nPERL5LIB=/tmp/spinnaker_tools/tools:$PERL5LIB /tmp/spinnaker_tools/tools/mkbin build/gnu/RO_DATA.bin build/gnu/RW_DATA.bin > build/gnu/coral_reef.bin\nrm -f build/gnu/RO_DATA.bin build/gnu/RW_DATA.bin\narm-none-eabi-nm build/gnu/coral_reef.elf > build/gnu/coral_reef.nm\nmkdir -p build/\nPERL5LIB=/tmp/spinnaker_tools/tools:$PERL5LIB /tmp/spinnaker_tools/tools/mkaplx build/gnu/coral_reef.nm | cat - build/gnu/coral_reef.bin > build/coral_reef.aplx\nrm build/gnu/coral_reef.bin build/gnu/coral_reef_build.c build/gnu/coral_reef.nm build/gnu/coral_reef_build.o\n",
+      "stderr": ""
+    }
+  },
+  "mcpl_test": {
+    "command": "make test-mcpl-feasibility",
+    "returncode": 0,
+    "stdout": "cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-int-to-pointer-cast -I stubs -I src -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 tests/test_mcpl_feasibility.c stubs/spin1_api.c src/state_manager.c -lm -o tests/test_mcpl_feasibility\n./tests/test_mcpl_feasibility\n=== Tier 4.27d MCPL Feasibility Tests ===\n\n[1/5] MCPL key packing...\n  PASS: app_id extracted correctly\n  PASS: msg_type extracted correctly\n  PASS: lookup_type extracted correctly\n  PASS: seq_id extracted correctly\n\n[2/5] MCPL lookup request send...\n  PASS: send_request produced non-zero key\n  PASS: send_request msg_type is REQUEST\n  PASS: send_request lookup_type is ROUTE\n  PASS: send_request seq_id is 7\n  PASS: send_request payload is key_id\n  PASS: send_request with_payload flag set\n\n[3/5] MCPL lookup reply send...\n  PASS: send_reply produced non-zero key\n  PASS: send_reply msg_type is REPLY\n  PASS: send_reply lookup_type is MEMORY\n  PASS: send_reply seq_id is 99\n  PASS: send_reply payload is value\n  PASS: send_reply with_payload flag set\n\n[4/5] MCPL lookup receive extraction...\n  PASS: receive compiles and runs\n\n[5/5] Official Spin1API symbol compile...\n  PASS: MCPL_PACKET_RECEIVED compiles (value > 0)\n  PASS: MC_PACKET_RECEIVED compiles (value > 0)\n\n=== Results: 19 passed, 0 failed ===\n",
+    "stderr": ""
+  },
+  "claim_boundary": "Local build and wiring validation for four-core MCPL. NOT hardware evidence."
+}

@@ -1,0 +1,5 @@
+step,feature,target,expected_prediction_raw,observed_prediction_raw,prediction_raw_delta,expected_readout_weight_raw,observed_readout_weight_raw,state_readout_weight_raw,readout_weight_raw_delta,expected_readout_bias_raw,observed_readout_bias_raw,state_readout_bias_raw,readout_bias_raw_delta,schedule_success,mature_success,matured_count,due_timestep,state_after_schedule_success,state_after_mature_success,active_pending_after_schedule,active_pending_after_mature,pending_created_after_mature,pending_matured_after_mature,reward_events_after_mature
+1,1.0,1.0,0,0,0,8192,8192,8192,0,8192,8192,8192,0,True,True,1,1248,True,True,1,0,1,1,1
+2,1.0,-1.0,16384,16384,0,-4096,-4096,-4096,0,-4096,-4096,-4096,0,True,True,1,1349,True,True,1,0,2,2,2
+3,-1.0,-1.0,0,0,0,4096,4096,4096,0,-12288,-12288,-12288,0,True,True,1,1451,True,True,1,0,3,3,3
+4,-1.0,0.5,-16384,-16384,0,-4096,-4096,-4096,0,-4096,-4096,-4096,0,True,True,1,1553,True,True,1,0,4,4,4

@@ -1,0 +1,6 @@
+task,case,seed,event_type,step,polyp_id,lineage_id,parent_id,details
+hard_noisy_switching,life4_16,42,cleavage,0,4,0,0,"{""parent_cyclin_d"": 0.0, ""parent_trophic"": 9.955099854322787}"
+hard_noisy_switching,life4_16,42,cleavage,10,5,0,0,"{""parent_cyclin_d"": 0.0, ""parent_trophic"": 4.736060070384491}"
+hard_noisy_switching,life4_16,42,cleavage,20,6,0,0,"{""parent_cyclin_d"": 0.0, ""parent_trophic"": 2.2755049022804568}"
+hard_noisy_switching,life4_16,42,cleavage,30,7,0,0,"{""parent_cyclin_d"": 0.0, ""parent_trophic"": 1.1160838119938987}"
+hard_noisy_switching,life4_16,42,birth,115,8,0,0,"{""parent_cyclin_d"": 0.0, ""parent_trophic"": 0.7511888214390511}"

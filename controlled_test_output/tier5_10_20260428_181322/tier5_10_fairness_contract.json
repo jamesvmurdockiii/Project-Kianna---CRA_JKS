@@ -1,0 +1,36 @@
+{
+  "ablation_controls": [
+    "no_slow_memory",
+    "no_structural_memory",
+    "no_bocpd_unlock",
+    "overrigid_memory"
+  ],
+  "backend": "nest",
+  "candidate": "multi_timescale_memory",
+  "fairness_rules": [
+    "same task stream per seed for CRA variants and selected baselines",
+    "same recurrent phase schedule, evaluation_target, evaluation_mask, and feedback_due_step arrays",
+    "models predict before consequence feedback matures",
+    "feedback_due_step must be greater than or equal to prediction step",
+    "return-regime performance and reacquisition speed are scored only on predeclared A-return phases",
+    "memory candidate must beat ablations before promotion",
+    "passing Tier 5.10 only authorizes compact regression and sharper mechanism design, not hardware migration"
+  ],
+  "frozen_comparator": "v1_4_pending_horizon",
+  "reacquisition_trials": 10,
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "selected_external_baselines": [
+    "sign_persistence",
+    "online_perceptron",
+    "online_logistic_regression",
+    "echo_state_network",
+    "stdp_only_snn"
+  ],
+  "steps": 960,
+  "tasks": "aba_recurrence,abca_recurrence,hidden_regime_switching",
+  "tier": "Tier 5.10 - Multi-Timescale Memory And Forgetting Diagnostic"
+}

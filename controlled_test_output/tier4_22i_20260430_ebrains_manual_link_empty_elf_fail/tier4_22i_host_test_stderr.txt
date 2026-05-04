@@ -1,0 +1,5 @@
+/home/jovyan/spinnaker/spinnaker_tools/make/Makefile.common:18: inclusion of Makefile.common instead of spinnaker_tools.mk
+src/host_interface.c: In function ‘sdp_send_reply’:
+src/host_interface.c:221:13: warning: comparison is always false due to limited range of data type [-Wtype-limits]
+  221 |     if (len > 255) len = 255;
+      |             ^

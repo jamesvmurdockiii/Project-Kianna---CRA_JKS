@@ -1,0 +1,15 @@
+[tier5.17e] running v1_8_compact_regression...
+[tier5.17e] v1_8_compact_regression: PASS rc=0
+[tier5.17e] running v1_9_composition_routing_guardrail...
+[tier5.17e] v1_9_composition_routing_guardrail: PASS rc=0
+[tier5.17e] running working_memory_context_guardrail...
+[tier5.17e] working_memory_context_guardrail: PASS rc=0
+[tier5.17e] running predictive_binding_guardrail...
+[tier5.17e] predictive_binding_guardrail: PASS rc=0
+{
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/tier5_17e_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/tier5_17e_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/tier5_17e_summary.csv"
+}

@@ -1,0 +1,413 @@
+{
+  "artifacts": {
+    "manifest_json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_17_20260427_171719_runtime_scaffold/tier4_17_results.json",
+    "report_md": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_17_20260427_171719_runtime_scaffold/tier4_17_report.md",
+    "runtime_reduction_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_17_20260427_171719_runtime_scaffold/tier4_17_runtime_reduction.png",
+    "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_17_20260427_171719_runtime_scaffold/tier4_17_runtime_summary.csv"
+  },
+  "criteria": [
+    {
+      "name": "v0.5 baseline exists before runtime refactor",
+      "operator": "==",
+      "passed": true,
+      "threshold": true,
+      "value": true
+    },
+    {
+      "name": "step+host current path represented",
+      "operator": "==",
+      "passed": true,
+      "threshold": true,
+      "value": true
+    },
+    {
+      "name": "chunked+host bridge represented",
+      "operator": "==",
+      "passed": true,
+      "threshold": true,
+      "value": true
+    },
+    {
+      "name": "chunked+host bridge marked implemented",
+      "operator": "==",
+      "passed": true,
+      "threshold": true,
+      "value": true
+    },
+    {
+      "name": "hybrid/on-chip/continuous explicitly marked future",
+      "operator": "==",
+      "passed": true,
+      "threshold": true,
+      "value": true
+    },
+    {
+      "name": "candidate chunking reduces sim.run calls",
+      "operator": ">=",
+      "passed": true,
+      "threshold": 10.0,
+      "value": 50.0
+    },
+    {
+      "name": "result is noncanonical runtime contract inventory",
+      "operator": "==",
+      "passed": true,
+      "threshold": "noncanonical runtime contract inventory",
+      "value": "noncanonical runtime contract inventory"
+    }
+  ],
+  "failure_reason": "",
+  "generated_at_utc": "2026-04-27T17:17:19.311029+00:00",
+  "matplotlib_error": null,
+  "runtime_rows": [
+    {
+      "baseline_step_calls": 1200,
+      "blockers": [],
+      "call_reduction_factor": 1.0,
+      "chunk_count": 1200,
+      "chunk_ranges_preview": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "chunk_size_steps": 1,
+      "dt_seconds": 0.05,
+      "implementation_stage": "current_step_host_loop",
+      "implemented": true,
+      "learning_location": "host",
+      "learning_update_interval_steps": 1,
+      "runtime_mode": "step",
+      "scientific_use": "implemented chunked-host bridge",
+      "sim_run_calls": 1200,
+      "simulated_ms_per_chunk": 50.0,
+      "target_delay_steps": 5,
+      "tier": "Tier 4.17 - Batched / Continuous Hardware Runtime Refactor",
+      "total_steps": 1200,
+      "uses_binned_readback": false,
+      "uses_scheduled_input": false
+    },
+    {
+      "baseline_step_calls": 1200,
+      "blockers": [],
+      "call_reduction_factor": 5.0,
+      "chunk_count": 240,
+      "chunk_ranges_preview": [
+        [
+          0,
+          5
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          10,
+          15
+        ],
+        [
+          15,
+          20
+        ],
+        [
+          20,
+          25
+        ]
+      ],
+      "chunk_size_steps": 5,
+      "dt_seconds": 0.05,
+      "implementation_stage": "chunked_host_stepcurrent_binned_replay",
+      "implemented": true,
+      "learning_location": "host",
+      "learning_update_interval_steps": 5,
+      "runtime_mode": "chunked",
+      "scientific_use": "implemented chunked-host bridge",
+      "sim_run_calls": 240,
+      "simulated_ms_per_chunk": 250.0,
+      "target_delay_steps": 5,
+      "tier": "Tier 4.17 - Batched / Continuous Hardware Runtime Refactor",
+      "total_steps": 1200,
+      "uses_binned_readback": true,
+      "uses_scheduled_input": true
+    },
+    {
+      "baseline_step_calls": 1200,
+      "blockers": [],
+      "call_reduction_factor": 10.0,
+      "chunk_count": 120,
+      "chunk_ranges_preview": [
+        [
+          0,
+          10
+        ],
+        [
+          10,
+          20
+        ],
+        [
+          20,
+          30
+        ],
+        [
+          30,
+          40
+        ],
+        [
+          40,
+          50
+        ]
+      ],
+      "chunk_size_steps": 10,
+      "dt_seconds": 0.05,
+      "implementation_stage": "chunked_host_stepcurrent_binned_replay",
+      "implemented": true,
+      "learning_location": "host",
+      "learning_update_interval_steps": 10,
+      "runtime_mode": "chunked",
+      "scientific_use": "implemented chunked-host bridge",
+      "sim_run_calls": 120,
+      "simulated_ms_per_chunk": 500.0,
+      "target_delay_steps": 5,
+      "tier": "Tier 4.17 - Batched / Continuous Hardware Runtime Refactor",
+      "total_steps": 1200,
+      "uses_binned_readback": true,
+      "uses_scheduled_input": true
+    },
+    {
+      "baseline_step_calls": 1200,
+      "blockers": [],
+      "call_reduction_factor": 25.0,
+      "chunk_count": 48,
+      "chunk_ranges_preview": [
+        [
+          0,
+          25
+        ],
+        [
+          25,
+          50
+        ],
+        [
+          50,
+          75
+        ],
+        [
+          75,
+          100
+        ],
+        [
+          100,
+          125
+        ]
+      ],
+      "chunk_size_steps": 25,
+      "dt_seconds": 0.05,
+      "implementation_stage": "chunked_host_stepcurrent_binned_replay",
+      "implemented": true,
+      "learning_location": "host",
+      "learning_update_interval_steps": 25,
+      "runtime_mode": "chunked",
+      "scientific_use": "implemented chunked-host bridge",
+      "sim_run_calls": 48,
+      "simulated_ms_per_chunk": 1250.0,
+      "target_delay_steps": 5,
+      "tier": "Tier 4.17 - Batched / Continuous Hardware Runtime Refactor",
+      "total_steps": 1200,
+      "uses_binned_readback": true,
+      "uses_scheduled_input": true
+    },
+    {
+      "baseline_step_calls": 1200,
+      "blockers": [],
+      "call_reduction_factor": 50.0,
+      "chunk_count": 24,
+      "chunk_ranges_preview": [
+        [
+          0,
+          50
+        ],
+        [
+          50,
+          100
+        ],
+        [
+          100,
+          150
+        ],
+        [
+          150,
+          200
+        ],
+        [
+          200,
+          250
+        ]
+      ],
+      "chunk_size_steps": 50,
+      "dt_seconds": 0.05,
+      "implementation_stage": "chunked_host_stepcurrent_binned_replay",
+      "implemented": true,
+      "learning_location": "host",
+      "learning_update_interval_steps": 50,
+      "runtime_mode": "chunked",
+      "scientific_use": "implemented chunked-host bridge",
+      "sim_run_calls": 24,
+      "simulated_ms_per_chunk": 2500.0,
+      "target_delay_steps": 5,
+      "tier": "Tier 4.17 - Batched / Continuous Hardware Runtime Refactor",
+      "total_steps": 1200,
+      "uses_binned_readback": true,
+      "uses_scheduled_input": true
+    },
+    {
+      "baseline_step_calls": 1200,
+      "blockers": [
+        "custom_c_or_backend_native_closed_loop",
+        "on_chip_or_hybrid_credit_assignment_state",
+        "hardware_provenance_for_continuous_run"
+      ],
+      "call_reduction_factor": 1200.0,
+      "chunk_count": 1,
+      "chunk_ranges_preview": [
+        [
+          0,
+          1200
+        ]
+      ],
+      "chunk_size_steps": 1200,
+      "dt_seconds": 0.05,
+      "implementation_stage": "future_custom_runtime",
+      "implemented": false,
+      "learning_location": "on_chip",
+      "learning_update_interval_steps": 1200,
+      "runtime_mode": "continuous",
+      "scientific_use": "future custom-runtime target; not citable as chunked hardware learning",
+      "sim_run_calls": 1,
+      "simulated_ms_per_chunk": 60000.0,
+      "target_delay_steps": 5,
+      "tier": "Tier 4.17 - Batched / Continuous Hardware Runtime Refactor",
+      "total_steps": 1200,
+      "uses_binned_readback": false,
+      "uses_scheduled_input": false
+    },
+    {
+      "baseline_step_calls": 1200,
+      "blockers": [
+        "custom_c_or_backend_native_closed_loop",
+        "on_chip_or_hybrid_credit_assignment_state",
+        "hardware_provenance_for_continuous_run"
+      ],
+      "call_reduction_factor": 50.0,
+      "chunk_count": 24,
+      "chunk_ranges_preview": [
+        [
+          0,
+          50
+        ],
+        [
+          50,
+          100
+        ],
+        [
+          100,
+          150
+        ],
+        [
+          150,
+          200
+        ],
+        [
+          200,
+          250
+        ]
+      ],
+      "chunk_size_steps": 50,
+      "dt_seconds": 0.05,
+      "implementation_stage": "future_custom_runtime",
+      "implemented": false,
+      "learning_location": "hybrid",
+      "learning_update_interval_steps": 50,
+      "runtime_mode": "chunked",
+      "scientific_use": "future custom-runtime target; not citable as chunked hardware learning",
+      "sim_run_calls": 24,
+      "simulated_ms_per_chunk": 2500.0,
+      "target_delay_steps": 5,
+      "tier": "Tier 4.17 - Batched / Continuous Hardware Runtime Refactor",
+      "total_steps": 1200,
+      "uses_binned_readback": false,
+      "uses_scheduled_input": false
+    }
+  ],
+  "status": "prepared",
+  "summary": {
+    "baseline_step_calls": 1200,
+    "chunk_sizes": [
+      1,
+      5,
+      10,
+      25,
+      50
+    ],
+    "chunked_host_bridge_count": 4,
+    "dt_seconds": 0.05,
+    "executable_now_count": 5,
+    "future_runtime_count": 2,
+    "learning_locations": [
+      "host",
+      "hybrid",
+      "on_chip"
+    ],
+    "max_call_reduction_factor": 50.0,
+    "next_required_engineering": [
+      "run_repaired_4_16a_seed43_hardware_probe",
+      "repeat_repaired_4_16a_across_seeds_after_probe_pass",
+      "run_hard_noisy_switching_chunked_probe_after_delayed_cue_pass",
+      "future_hybrid_or_on_chip_closed_loop_runtime"
+    ],
+    "recommended_first_parity": {
+      "chunk_sizes": [
+        5,
+        10
+      ],
+      "pass_boundary": "match old step-mode qualitative learning without synthetic fallback before any long hardware run",
+      "seed": 43,
+      "steps": 120,
+      "task": "delayed_cue",
+      "tier": "4.17b"
+    },
+    "recommended_repaired_probe_after_parity": {
+      "delayed_readout_lr": 0.2,
+      "learning_location": "host",
+      "runtime_mode": "chunked",
+      "seed": 43,
+      "steps": 1200,
+      "task": "delayed_cue",
+      "tier": "4.16a-repaired"
+    },
+    "runtime_modes": [
+      "step",
+      "chunked",
+      "continuous"
+    ],
+    "status_boundary": "noncanonical runtime contract inventory",
+    "steps": 1200,
+    "tier": "Tier 4.17 - Batched / Continuous Hardware Runtime Refactor"
+  },
+  "tier": "Tier 4.17 - Batched / Continuous Hardware Runtime Refactor"
+}

@@ -1,0 +1,33 @@
+{
+  "adult_birth_events": 1,
+  "advantage_regimes": [
+    {
+      "advantage_reasons": "tail_accuracy,switch_recovery",
+      "lifecycle_case": "life4_16",
+      "paired_fixed_case": "fixed4",
+      "recovery_improvement_steps_vs_paired_fixed": "8.710144927536234",
+      "tail_delta_vs_paired_fixed": "0.06862745098039208",
+      "task": "hard_noisy_switching"
+    },
+    {
+      "advantage_reasons": "tail_accuracy,switch_recovery",
+      "lifecycle_case": "life8_32",
+      "paired_fixed_case": "fixed8",
+      "recovery_improvement_steps_vs_paired_fixed": "2.4782608695652186",
+      "tail_delta_vs_paired_fixed": "0.039215686274509776",
+      "task": "hard_noisy_switching"
+    }
+  ],
+  "claim_boundary": [
+    "Tier 6.1 supports software lifecycle expansion with clean lineage tracking and hard_noisy_switching advantage regimes.",
+    "Most new-polyp events are cleavage events; exactly one adult birth event occurred and zero death events occurred.",
+    "The result does not yet prove full adult birth/death turnover, sham-control superiority, hardware lifecycle feasibility, or external-baseline superiority."
+  ],
+  "cleavage_events": 74,
+  "death_events": 0,
+  "event_type_counts": {
+    "birth": 1,
+    "cleavage": 74
+  },
+  "new_polyp_events_total": 75
+}

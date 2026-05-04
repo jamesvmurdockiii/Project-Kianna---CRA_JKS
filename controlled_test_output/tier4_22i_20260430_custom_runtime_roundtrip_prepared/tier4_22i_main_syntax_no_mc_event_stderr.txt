@@ -1,0 +1,4 @@
+/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src/main.c:81:13: warning: unused function 'mc_packet_callback' [-Wunused-function]
+   81 | static void mc_packet_callback(uint key, uint payload) {
+      |             ^~~~~~~~~~~~~~~~~~
+1 warning generated.

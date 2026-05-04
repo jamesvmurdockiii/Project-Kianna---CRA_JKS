@@ -1,0 +1,21 @@
+{
+  "generated_at_utc": "2026-05-04T00:05:00.957234+00:00",
+  "source_generated_at_utc": "2026-04-27T10:38:14+00:00",
+  "registry_entry_id": "tier5_3_cra_failure_analysis",
+  "tier": "Tier 5.3 - CRA Failure Analysis / Learning Dynamics Debug",
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_3_20260427_055629",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_3_20260427_055629/tier5_3_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_3_20260427_055629/tier5_3_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_3_20260427_055629/tier5_3_summary.csv",
+  "canonical": true,
+  "claim": "A 78-run CRA-only diagnostic matrix identifies delayed-credit strength as the leading candidate failure mode: `delayed_lr_0_20` restores delayed_cue to 1.0 tail accuracy and improves hard_noisy_switching above the external median at 960 steps.",
+  "caveat": "Controlled software diagnostic only; not hardware evidence, not final competitiveness evidence, and hard_noisy_switching still trails the best external baseline.",
+  "claim_boundary": [
+    "Tier 5.3 is a controlled software CRA-only diagnostic, not a hardware result.",
+    "The matrix used seeds 42, 43, and 44, steps=960, tasks delayed_cue and hard_noisy_switching, and 13 CRA variants.",
+    "The leading candidate fix is stronger delayed credit: delayed_lr_0_20 restores delayed_cue to the external-best tail score and improves hard_noisy_switching above the external median.",
+    "This is not enough to launch Tier 4.16 hardware directly because hard_noisy_switching still trails the best external baseline and the tuned setting needs targeted confirmation at longer horizons.",
+    "sensor_control is intentionally excluded from the advantage probe because Tier 5.2 showed it saturates for CRA and baselines."
+  ]
+}

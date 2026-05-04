@@ -1,0 +1,12 @@
+{
+  "bundle_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_205214_prepared/ebrains_upload_bundle/CRA_TIER4_20B_UPLOAD",
+  "claim_boundary": "Prepared upload bundle only; not hardware evidence until returned run-hardware artifacts pass.",
+  "do_not_upload_only": "jobmanager_capsule",
+  "entrypoint": "run.py",
+  "file_count": 131,
+  "includes_source_tree": true,
+  "output_dir_default": "tier4_20b_job_output",
+  "run_command": "python3 run.py",
+  "zip": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_205214_prepared/ebrains_upload_bundle/CRA_TIER4_20B_UPLOAD.zip",
+  "zip_size_bytes": 979195
+}

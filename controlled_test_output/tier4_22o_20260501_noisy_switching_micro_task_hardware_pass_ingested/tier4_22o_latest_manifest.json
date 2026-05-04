@@ -1,0 +1,11 @@
+{
+  "canonical": false,
+  "claim": "Latest Tier 4.22o tiny noisy-switching custom-runtime micro-task; pass means a tiny delayed switching pending-queue on-chip loop matched local fixed-point reference and task metrics only.",
+  "generated_at_utc": "2026-05-01T03:35:34+00:00",
+  "manifest": "/tmp/job16989089037367810491.tmp/tier4_22o_job_output/tier4_22o_results.json",
+  "mode": "run-hardware",
+  "output_dir": "/tmp/job16989089037367810491.tmp/tier4_22o_job_output",
+  "report": "/tmp/job16989089037367810491.tmp/tier4_22o_job_output/tier4_22o_report.md",
+  "status": "pass",
+  "tier": "Tier 4.22o - Tiny Noisy-Switching Custom-Runtime Micro-Task"
+}

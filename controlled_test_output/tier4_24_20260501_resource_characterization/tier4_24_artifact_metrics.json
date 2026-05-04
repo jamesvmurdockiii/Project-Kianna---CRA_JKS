@@ -1,0 +1,19 @@
+{
+  "board": "10.11.235.9",
+  "core": "(0,0,4)",
+  "load_time_seconds": 2.1873621880076826,
+  "task_time_seconds": 4.327049097977579,
+  "stopped_timestep": 6170,
+  "continuous_commands": 64,
+  "chunked_commands": 134,
+  "command_reduction": 70,
+  "command_reduction_ratio": 0.522,
+  "continuous_payload_bytes": 2647,
+  "chunked_payload_bytes": 4099,
+  "payload_reduction": 1452,
+  "payload_reduction_ratio": 0.354,
+  "max_pending_depth": 3,
+  "active_context_slots": 4,
+  "active_route_slots": 4,
+  "active_memory_slots": 4
+}

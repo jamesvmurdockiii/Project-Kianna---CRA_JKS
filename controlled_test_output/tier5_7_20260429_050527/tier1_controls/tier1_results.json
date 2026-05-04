@@ -1,0 +1,219 @@
+{
+  "artifacts": {
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier1_controls/tier1_report.md",
+    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier1_controls/tier1_summary.csv"
+  },
+  "backend": "MockSimulator",
+  "command": "experiments/tier1_sanity.py --tests all --steps 200 --seeds 20 --base-seed 42 --readout-lr 0.1 --delayed-readout-lr 0.2 --stop-on-fail --output-dir /Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier1_controls",
+  "generated_at_utc": "2026-04-29T09:05:45+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier1_controls",
+  "results": [
+    {
+      "artifacts": {
+        "plot_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier1_controls/zero_signal_timeseries.png",
+        "timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier1_controls/zero_signal_timeseries.csv"
+      },
+      "criteria": [
+        {
+          "name": "zero target stayed zero",
+          "note": "",
+          "operator": "==",
+          "passed": true,
+          "threshold": 0,
+          "value": 0
+        },
+        {
+          "name": "max absolute dopamine",
+          "note": "",
+          "operator": "<=",
+          "passed": true,
+          "threshold": 1e-09,
+          "value": 0.0
+        },
+        {
+          "name": "capital absolute delta",
+          "note": "",
+          "operator": "<=",
+          "passed": true,
+          "threshold": 1e-09,
+          "value": 0.0
+        },
+        {
+          "name": "tail accuracy EMA",
+          "note": "Zero/zero must not count as learned directional success.",
+          "operator": "<=",
+          "passed": true,
+          "threshold": 0.51,
+          "value": 0.20925716860102037
+        },
+        {
+          "name": "prediction/target correlation",
+          "note": "",
+          "operator": "is None or abs <= ",
+          "passed": true,
+          "threshold": 1e-09,
+          "value": null
+        }
+      ],
+      "failure_reason": "",
+      "name": "zero_signal",
+      "status": "pass",
+      "summary": {
+        "backend": "MockSimulator",
+        "capital_delta": 0.0,
+        "final_accuracy_ema": 0.08830317965367855,
+        "final_capital": 1.0,
+        "final_n_alive": 7,
+        "max_abs_dopamine": 0.0,
+        "max_abs_prediction": 0.24412141668063225,
+        "max_n_alive": 7,
+        "mean_abs_dopamine": 0.0,
+        "mean_abs_prediction": 0.2412071206607005,
+        "nonzero_target_count_tail": 0,
+        "prediction_target_corr": null,
+        "runtime_seconds": 0.6481811250000002,
+        "seed": 42,
+        "steps": 200,
+        "strict_accuracy_all_nonzero_targets": null,
+        "strict_accuracy_tail_nonzero_targets": null,
+        "tail_accuracy_ema": 0.20925716860102037,
+        "tail_mean_abs_prediction": 0.24199730802650393,
+        "tail_prediction_target_corr": null,
+        "tail_steps": 150,
+        "total_births": 6,
+        "total_deaths": 0,
+        "warmup_steps": 50
+      }
+    },
+    {
+      "artifacts": {
+        "plot_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier1_controls/shuffled_label_timeseries.png",
+        "timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier1_controls/shuffled_label_timeseries.csv"
+      },
+      "criteria": [
+        {
+          "name": "tail strict accuracy on nonzero targets",
+          "note": "",
+          "operator": "<=",
+          "passed": true,
+          "threshold": 0.6,
+          "value": 0.5266666666666666
+        },
+        {
+          "name": "tail prediction/target abs correlation",
+          "note": "",
+          "operator": "is None or <=",
+          "passed": true,
+          "threshold": 0.25,
+          "value": 0.059011587960830274
+        },
+        {
+          "name": "capital absolute delta",
+          "note": "",
+          "operator": "<=",
+          "passed": true,
+          "threshold": 0.05,
+          "value": 0.00999622527909838
+        }
+      ],
+      "failure_reason": "",
+      "name": "shuffled_label",
+      "status": "pass",
+      "summary": {
+        "amplitude": 0.002,
+        "backend": "MockSimulator",
+        "capital_delta": -0.00999622527909838,
+        "final_accuracy_ema": 0.472616256347407,
+        "final_capital": 0.9900037747209016,
+        "final_n_alive": 9,
+        "max_abs_dopamine": 0.9998420198649667,
+        "max_abs_prediction": 0.49077847708586375,
+        "max_n_alive": 9,
+        "mean_abs_dopamine": 0.644712100380782,
+        "mean_abs_prediction": 0.27542187927569534,
+        "nonzero_target_count_tail": 150,
+        "prediction_target_corr": 0.05854601934107159,
+        "runtime_seconds": 0.661386083,
+        "seed": 42,
+        "steps": 200,
+        "strict_accuracy_all_nonzero_targets": 0.465,
+        "strict_accuracy_tail_nonzero_targets": 0.5266666666666666,
+        "tail_accuracy_ema": 0.4833891738615214,
+        "tail_mean_abs_prediction": 0.27632195389904457,
+        "tail_prediction_target_corr": 0.059011587960830274,
+        "tail_steps": 150,
+        "total_births": 8,
+        "total_deaths": 0,
+        "warmup_steps": 50
+      }
+    },
+    {
+      "artifacts": {
+        "plot_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier1_controls/seed_repeat_summary.png",
+        "seed_summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier1_controls/seed_repeat_summary.csv"
+      },
+      "criteria": [
+        {
+          "name": "mean tail strict accuracy",
+          "note": "",
+          "operator": "<=",
+          "passed": true,
+          "threshold": 0.56,
+          "value": 0.5096666666666667
+        },
+        {
+          "name": "high-accuracy seed fraction",
+          "note": "High seed means > 0.600.",
+          "operator": "<=",
+          "passed": true,
+          "threshold": 0.2,
+          "value": 0.0
+        },
+        {
+          "name": "mean absolute tail prediction/target correlation",
+          "note": "",
+          "operator": "<=",
+          "passed": true,
+          "threshold": 0.2,
+          "value": 0.06048449033430754
+        }
+      ],
+      "failure_reason": "",
+      "name": "seed_repeat",
+      "status": "pass",
+      "summary": {
+        "backend": "MockSimulator",
+        "base_seed": 42,
+        "high_seed_count": 0,
+        "high_seed_fraction": 0.0,
+        "max_abs_tail_prediction_target_corr": 0.18618239823630187,
+        "max_tail_strict_accuracy": 0.56,
+        "mean_abs_tail_prediction_target_corr": 0.06048449033430754,
+        "mean_tail_strict_accuracy": 0.5096666666666667,
+        "median_tail_strict_accuracy": 0.5133333333333334,
+        "min_tail_strict_accuracy": 0.46,
+        "n_seeds": 20,
+        "std_tail_strict_accuracy": 0.029536378600273826,
+        "steps_per_seed": 200,
+        "total_runtime_seconds": 13.704277415000002
+      }
+    }
+  ],
+  "selected_tests": [
+    "zero_signal",
+    "shuffled_label",
+    "seed_repeat"
+  ],
+  "stopped_after": null,
+  "thresholds": {
+    "delayed_readout_lr": 0.2,
+    "readout_lr": 0.1,
+    "repeat_high_seed_fraction_threshold": 0.2,
+    "repeat_mean_abs_corr_threshold": 0.2,
+    "repeat_mean_accuracy_threshold": 0.56,
+    "single_run_accuracy_threshold": 0.6,
+    "single_run_capital_threshold": 0.05,
+    "single_run_corr_threshold": 0.25
+  },
+  "tier": "Tier 1 - sanity tests"
+}

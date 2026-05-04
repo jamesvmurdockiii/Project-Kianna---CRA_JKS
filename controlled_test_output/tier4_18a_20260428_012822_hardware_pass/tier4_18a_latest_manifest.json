@@ -1,0 +1,9 @@
+{
+  "canonical": false,
+  "claim": "Latest Tier 4.18a runtime/resource characterization; promote only after hardware review.",
+  "generated_at_utc": "2026-04-28T01:28:22+00:00",
+  "manifest": "/tmp/job3949139242826171397.tmp/CRA_test_418/controlled_test_output/tier4_18a_20260428_013742_run_hardware/tier4_18a_results.json",
+  "output_dir": "/tmp/job3949139242826171397.tmp/CRA_test_418/controlled_test_output/tier4_18a_20260428_013742_run_hardware",
+  "report": "/tmp/job3949139242826171397.tmp/CRA_test_418/controlled_test_output/tier4_18a_20260428_013742_run_hardware/tier4_18a_report.md",
+  "status": "pass"
+}

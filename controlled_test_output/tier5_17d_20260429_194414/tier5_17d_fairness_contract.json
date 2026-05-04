@@ -1,0 +1,27 @@
+{
+  "claim_boundary": "Software-only predictive binding repair diagnostic. Non-oracle variants receive no hidden labels, reward, correctness, or dopamine during preexposure. Hidden labels are used only after representation generation for held-out ambiguous-episode probes.",
+  "fairness_rules": [
+    "Candidate returns pre-target-update representations only; intrinsic targets can influence future state, not same-step probe rows.",
+    "Probe rows exclude visible cue-onset spans and hold out recurring ambiguous episodes where possible.",
+    "Target-shuffled and wrong-domain controls receive comparable target volume but broken binding/domain alignment.",
+    "Visible-input, fixed-history, random-projection, reservoir, and STDP-only controls test whether input dynamics alone explain the effect.",
+    "Oracle latent upper bound is reported but cannot support no-leakage claims."
+  ],
+  "generated_at_utc": "2026-04-29T19:44:14+00:00",
+  "seeds": [
+    42
+  ],
+  "smoke": true,
+  "steps": 720,
+  "tasks": [
+    "masked_code_binding"
+  ],
+  "tier": "Tier 5.17d - Predictive Preexposure Binding/Sham Repair",
+  "variants": [
+    "predictive_binding_preexposure",
+    "no_preexposure",
+    "target_shuffled_binding",
+    "fixed_history_baseline",
+    "oracle_latent_upper_bound"
+  ]
+}

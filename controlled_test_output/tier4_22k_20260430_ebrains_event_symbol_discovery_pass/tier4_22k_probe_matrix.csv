@@ -1,0 +1,23 @@
+macro,kind,real_mc_event_candidate,compiler,returncode,status,compiled,command,stderr_excerpt
+TIMER_TICK,baseline_timer,False,/usr/bin/arm-none-eabi-gcc,0,compile_pass,True,/usr/bin/arm-none-eabi-gcc -std=gnu99 -ffreestanding -mthumb-interwork -march=armv5te -I /home/jovyan/spinnaker/spinnaker_tools/include -c /tmp/cra_422k_probe_a1ubr3c5/probe_TIMER_TICK.c -o /tmp/cra_422k_probe_a1ubr3c5/probe_TIMER_TICK.o,
+SDP_PACKET_RX,baseline_sdp,False,/usr/bin/arm-none-eabi-gcc,0,compile_pass,True,/usr/bin/arm-none-eabi-gcc -std=gnu99 -ffreestanding -mthumb-interwork -march=armv5te -I /home/jovyan/spinnaker/spinnaker_tools/include -c /tmp/cra_422k_probe_a1ubr3c5/probe_SDP_PACKET_RX.c -o /tmp/cra_422k_probe_a1ubr3c5/probe_SDP_PACKET_RX.o,
+MC_PACKET_RECEIVED,official_mc_no_payload,True,/usr/bin/arm-none-eabi-gcc,0,compile_pass,True,/usr/bin/arm-none-eabi-gcc -std=gnu99 -ffreestanding -mthumb-interwork -march=armv5te -I /home/jovyan/spinnaker/spinnaker_tools/include -c /tmp/cra_422k_probe_a1ubr3c5/probe_MC_PACKET_RECEIVED.c -o /tmp/cra_422k_probe_a1ubr3c5/probe_MC_PACKET_RECEIVED.o,
+MCPL_PACKET_RECEIVED,official_mc_payload,True,/usr/bin/arm-none-eabi-gcc,0,compile_pass,True,/usr/bin/arm-none-eabi-gcc -std=gnu99 -ffreestanding -mthumb-interwork -march=armv5te -I /home/jovyan/spinnaker/spinnaker_tools/include -c /tmp/cra_422k_probe_a1ubr3c5/probe_MCPL_PACKET_RECEIVED.c -o /tmp/cra_422k_probe_a1ubr3c5/probe_MCPL_PACKET_RECEIVED.o,
+MC_PACKET_RX,legacy_or_local_guess,True,/usr/bin/arm-none-eabi-gcc,1,symbol_missing_or_undeclared,False,/usr/bin/arm-none-eabi-gcc -std=gnu99 -ffreestanding -mthumb-interwork -march=armv5te -I /home/jovyan/spinnaker/spinnaker_tools/include -c /tmp/cra_422k_probe_a1ubr3c5/probe_MC_PACKET_RX.c -o /tmp/cra_422k_probe_a1ubr3c5/probe_MC_PACKET_RX.o,"/tmp/cra_422k_probe_a1ubr3c5/probe_MC_PACKET_RX.c: In function 'c_main':
+/tmp/cra_422k_probe_a1ubr3c5/probe_MC_PACKET_RX.c:11:23: error: 'MC_PACKET_RX' undeclared (first use in this function); did you mean 'SDP_PACKET_RX'?
+   11 |     spin1_callback_on(MC_PACKET_RX, cra_probe_callback, 0);
+      |                       ^~~~~~~~~~~~
+      |                       SDP_PACKET_RX
+/tmp/cra_422k_probe_a1ubr3c5/probe_MC_PACKET_RX.c:11:23: note: each undeclared identifier is reported only once for each function it appears in
+"
+MCPL_PACKET_RX,legacy_or_local_guess,True,/usr/bin/arm-none-eabi-gcc,1,symbol_missing_or_undeclared,False,/usr/bin/arm-none-eabi-gcc -std=gnu99 -ffreestanding -mthumb-interwork -march=armv5te -I /home/jovyan/spinnaker/spinnaker_tools/include -c /tmp/cra_422k_probe_a1ubr3c5/probe_MCPL_PACKET_RX.c -o /tmp/cra_422k_probe_a1ubr3c5/probe_MCPL_PACKET_RX.o,"/tmp/cra_422k_probe_a1ubr3c5/probe_MCPL_PACKET_RX.c: In function 'c_main':
+/tmp/cra_422k_probe_a1ubr3c5/probe_MCPL_PACKET_RX.c:11:23: error: 'MCPL_PACKET_RX' undeclared (first use in this function); did you mean 'SDP_PACKET_RX'?
+   11 |     spin1_callback_on(MCPL_PACKET_RX, cra_probe_callback, 0);
+      |                       ^~~~~~~~~~~~~~
+      |                       SDP_PACKET_RX
+/tmp/cra_422k_probe_a1ubr3c5/probe_MCPL_PACKET_RX.c:11:23: note: each undeclared identifier is reported only once for each function it appears in
+"
+FR_PACKET_RECEIVED,official_fixed_route,False,/usr/bin/arm-none-eabi-gcc,0,compile_pass,True,/usr/bin/arm-none-eabi-gcc -std=gnu99 -ffreestanding -mthumb-interwork -march=armv5te -I /home/jovyan/spinnaker/spinnaker_tools/include -c /tmp/cra_422k_probe_a1ubr3c5/probe_FR_PACKET_RECEIVED.c -o /tmp/cra_422k_probe_a1ubr3c5/probe_FR_PACKET_RECEIVED.o,
+FRPL_PACKET_RECEIVED,official_fixed_route_payload,False,/usr/bin/arm-none-eabi-gcc,0,compile_pass,True,/usr/bin/arm-none-eabi-gcc -std=gnu99 -ffreestanding -mthumb-interwork -march=armv5te -I /home/jovyan/spinnaker/spinnaker_tools/include -c /tmp/cra_422k_probe_a1ubr3c5/probe_FRPL_PACKET_RECEIVED.c -o /tmp/cra_422k_probe_a1ubr3c5/probe_FRPL_PACKET_RECEIVED.o,
+USER_EVENT,baseline_user_event,False,/usr/bin/arm-none-eabi-gcc,0,compile_pass,True,/usr/bin/arm-none-eabi-gcc -std=gnu99 -ffreestanding -mthumb-interwork -march=armv5te -I /home/jovyan/spinnaker/spinnaker_tools/include -c /tmp/cra_422k_probe_a1ubr3c5/probe_USER_EVENT.c -o /tmp/cra_422k_probe_a1ubr3c5/probe_USER_EVENT.o,
+CC_MC_INT,interrupt_constant_not_api_event,False,/usr/bin/arm-none-eabi-gcc,0,compile_pass,True,/usr/bin/arm-none-eabi-gcc -std=gnu99 -ffreestanding -mthumb-interwork -march=armv5te -I /home/jovyan/spinnaker/spinnaker_tools/include -c /tmp/cra_422k_probe_a1ubr3c5/probe_CC_MC_INT.c -o /tmp/cra_422k_probe_a1ubr3c5/probe_CC_MC_INT.o,

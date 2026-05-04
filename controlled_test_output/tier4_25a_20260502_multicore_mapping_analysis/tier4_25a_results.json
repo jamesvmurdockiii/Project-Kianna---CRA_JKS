@@ -1,0 +1,638 @@
+{
+  "tier": "Tier 4.25A \u2014 Multi-Core / Mapping Feasibility Analysis",
+  "runner_revision": "tier4_25a_multicore_mapping_analysis_20260501_0001",
+  "generated_at_utc": "2026-05-02T03:34:53.721897+00:00",
+  "mode": "local",
+  "status": "pass",
+  "passed_count": 14,
+  "total_count": 14,
+  "output_dir": "controlled_test_output/tier4_25a_20260502_multicore_mapping_analysis",
+  "hardware": {
+    "dtcm_per_core_bytes": 65536,
+    "itcm_per_core_bytes": 32768,
+    "sdram_per_chip_bytes": 134217728,
+    "cores_per_chip": 18,
+    "app_cores_per_chip": 16,
+    "routing_table_entries_per_chip": 1024,
+    "core_clock_mhz": 200,
+    "packet_payload_bits": 32,
+    "chip_to_chip_links": 6
+  },
+  "struct_sizes": {
+    "context_slot_t": 20,
+    "route_slot_t": 20,
+    "memory_slot_t": 20,
+    "pending_horizon_t": 20,
+    "schedule_entry_t": 28,
+    "cra_state_summary_t": 116
+  },
+  "system_overhead": {
+    "dtcm_overhead_bytes": 16384,
+    "usable_dtcm_per_core": 49152,
+    "itcm_overhead_bytes": 8192,
+    "usable_itcm_per_core": 24576
+  },
+  "budgets": [
+    {
+      "profile_name": "current_default",
+      "description": "Current compile-time defaults from config.h",
+      "arrays": {
+        "context_slots": 160,
+        "route_slots": 160,
+        "memory_slots": 160,
+        "pending_horizons": 2560,
+        "schedule_entries": 1792,
+        "summary": 116
+      },
+      "scalars_bytes": 17,
+      "main_globals_bytes": 8,
+      "host_interface_globals_bytes": 256,
+      "runtime_margin_bytes": 512,
+      "state_manager_total_bytes": 4965,
+      "application_data_bytes": 5741,
+      "system_overhead_bytes": 16384,
+      "total_dtcm_bytes": 22125,
+      "dtcm_headroom_bytes": 43411,
+      "dtcm_utilization_vs_usable": 0.1168,
+      "fits_in_dtcm": true,
+      "fits_comfortably": true
+    },
+    {
+      "profile_name": "2x_slots_2x_pending",
+      "description": "Double slots and pending for richer tasks",
+      "arrays": {
+        "context_slots": 320,
+        "route_slots": 320,
+        "memory_slots": 320,
+        "pending_horizons": 5120,
+        "schedule_entries": 1792,
+        "summary": 116
+      },
+      "scalars_bytes": 17,
+      "main_globals_bytes": 8,
+      "host_interface_globals_bytes": 256,
+      "runtime_margin_bytes": 512,
+      "state_manager_total_bytes": 8005,
+      "application_data_bytes": 8781,
+      "system_overhead_bytes": 16384,
+      "total_dtcm_bytes": 25165,
+      "dtcm_headroom_bytes": 40371,
+      "dtcm_utilization_vs_usable": 0.1786,
+      "fits_in_dtcm": true,
+      "fits_comfortably": true
+    },
+    {
+      "profile_name": "4x_slots_4x_pending",
+      "description": "Quadruple slots and pending for multi-cue tasks",
+      "arrays": {
+        "context_slots": 640,
+        "route_slots": 640,
+        "memory_slots": 640,
+        "pending_horizons": 10240,
+        "schedule_entries": 3584,
+        "summary": 116
+      },
+      "scalars_bytes": 17,
+      "main_globals_bytes": 8,
+      "host_interface_globals_bytes": 256,
+      "runtime_margin_bytes": 512,
+      "state_manager_total_bytes": 15877,
+      "application_data_bytes": 16653,
+      "system_overhead_bytes": 16384,
+      "total_dtcm_bytes": 33037,
+      "dtcm_headroom_bytes": 32499,
+      "dtcm_utilization_vs_usable": 0.3388,
+      "fits_in_dtcm": true,
+      "fits_comfortably": true
+    },
+    {
+      "profile_name": "8x_slots_8x_pending",
+      "description": "Octuple \u2014 approaching DTCM limits",
+      "arrays": {
+        "context_slots": 1280,
+        "route_slots": 1280,
+        "memory_slots": 1280,
+        "pending_horizons": 20480,
+        "schedule_entries": 7168,
+        "summary": 116
+      },
+      "scalars_bytes": 17,
+      "main_globals_bytes": 8,
+      "host_interface_globals_bytes": 256,
+      "runtime_margin_bytes": 512,
+      "state_manager_total_bytes": 31621,
+      "application_data_bytes": 32397,
+      "system_overhead_bytes": 16384,
+      "total_dtcm_bytes": 48781,
+      "dtcm_headroom_bytes": 16755,
+      "dtcm_utilization_vs_usable": 0.6591,
+      "fits_in_dtcm": true,
+      "fits_comfortably": true
+    },
+    {
+      "profile_name": "memory_heavy",
+      "description": "Many memory slots, few context/route (working-memory tasks)",
+      "arrays": {
+        "context_slots": 160,
+        "route_slots": 160,
+        "memory_slots": 1280,
+        "pending_horizons": 2560,
+        "schedule_entries": 1792,
+        "summary": 116
+      },
+      "scalars_bytes": 17,
+      "main_globals_bytes": 8,
+      "host_interface_globals_bytes": 256,
+      "runtime_margin_bytes": 512,
+      "state_manager_total_bytes": 6085,
+      "application_data_bytes": 6861,
+      "system_overhead_bytes": 16384,
+      "total_dtcm_bytes": 23245,
+      "dtcm_headroom_bytes": 42291,
+      "dtcm_utilization_vs_usable": 0.1396,
+      "fits_in_dtcm": true,
+      "fits_comfortably": true
+    },
+    {
+      "profile_name": "pending_heavy",
+      "description": "Many pending horizons, few slots (long-delay tasks)",
+      "arrays": {
+        "context_slots": 160,
+        "route_slots": 160,
+        "memory_slots": 160,
+        "pending_horizons": 20480,
+        "schedule_entries": 1792,
+        "summary": 116
+      },
+      "scalars_bytes": 17,
+      "main_globals_bytes": 8,
+      "host_interface_globals_bytes": 256,
+      "runtime_margin_bytes": 512,
+      "state_manager_total_bytes": 22885,
+      "application_data_bytes": 23661,
+      "system_overhead_bytes": 16384,
+      "total_dtcm_bytes": 40045,
+      "dtcm_headroom_bytes": 25491,
+      "dtcm_utilization_vs_usable": 0.4814,
+      "fits_in_dtcm": true,
+      "fits_comfortably": true
+    }
+  ],
+  "strategies": [
+    {
+      "name": "A_monolithic",
+      "description": "All state (context, route, memory, pending, schedule, readout) on one core.",
+      "cores_needed": 1,
+      "state_split": {
+        "core_0": "context + route + memory + pending + schedule + readout"
+      },
+      "inter_core_messages": [],
+      "pros": [
+        "Simplest",
+        "No inter-core communication",
+        "Proven by 4.23c"
+      ],
+      "cons": [
+        "Limited to one core's DTCM/ITCM",
+        "Cannot scale beyond profile limits"
+      ],
+      "first_useful_test": "Already proven (4.23c)",
+      "routing_pressure": {
+        "strategy": "A_monolithic",
+        "estimated_entries": 1,
+        "max_entries": 1024,
+        "utilization": 0.001,
+        "notes": [
+          "No multicast needed; only SDP host commands."
+        ],
+        "risk": "low"
+      }
+    },
+    {
+      "name": "B_state_learning_split",
+      "description": "Core 1 holds context/route/memory state; Core 2 holds pending/readout/learning loop.",
+      "cores_needed": 2,
+      "state_split": {
+        "core_0": "context_slots + route_slots + memory_slots + schedule",
+        "core_1": "pending_horizons + readout_weight/bias + learning loop"
+      },
+      "inter_core_messages": [
+        "feature + prediction + target + due_timestep (schedule pending)",
+        "mature signal + reward value (apply reward)",
+        "readout_weight request/response (state readback)"
+      ],
+      "pros": [
+        "Separates state storage from learning mechanics",
+        "Each core has more DTCM headroom for its role",
+        "Models future architecture: state module -> readout module"
+      ],
+      "cons": [
+        "Inter-core latency per pending schedule (~200-1000ns per packet)",
+        "Requires multicast routing entries",
+        "More complex to debug than monolithic"
+      ],
+      "first_useful_test": "Two-core smoke: Core 0 schedules pending, Core 1 matures and returns weight",
+      "routing_pressure": {
+        "strategy": "B_state_learning_split",
+        "estimated_entries": 3,
+        "max_entries": 1024,
+        "utilization": 0.0029,
+        "notes": [
+          "One entry per directed communication path.",
+          "Host can use SDP for readback; no multicast needed for simple case."
+        ],
+        "risk": "low"
+      }
+    },
+    {
+      "name": "C_context_route_split",
+      "description": "Core 1 holds context; Core 2 holds route; Core 3 holds memory; Core 4 holds pending/readout.",
+      "cores_needed": 4,
+      "state_split": {
+        "core_0": "context_slots",
+        "core_1": "route_slots",
+        "core_2": "memory_slots",
+        "core_3": "pending_horizons + readout + schedule"
+      },
+      "inter_core_messages": [
+        "context lookup request/response",
+        "route lookup request/response",
+        "memory lookup request/response",
+        "feature composition (context*route*memory*cue)",
+        "pending schedule + mature"
+      ],
+      "pros": [
+        "Maximizes per-slot capacity",
+        "Each slot type can scale independently"
+      ],
+      "cons": [
+        "Heavy inter-core traffic: 3 lookups + 1 composition per event",
+        "Feature multiplication requires round-trips or cached replicas",
+        "Routing table pressure scales with core count"
+      ],
+      "first_useful_test": "Four-core smoke: distributed lookup + composition",
+      "routing_pressure": {
+        "strategy": "C_context_route_split",
+        "estimated_entries": 10,
+        "max_entries": 1024,
+        "utilization": 0.0098,
+        "notes": [
+          "Each lookup direction needs a routing entry.",
+          "Composition result multicast may need duplication."
+        ],
+        "risk": "low"
+      }
+    },
+    {
+      "name": "D_polyp_pool",
+      "description": "Many small independent CRA contexts per core, each with minimal slots.",
+      "cores_needed": 16,
+      "state_split": {
+        "each_core": "N small polyps (2 ctx / 2 route / 2 mem / 16 pending each)"
+      },
+      "inter_core_messages": [
+        "Minimal \u2014 polyps are independent unless cross-polyp routing needed"
+      ],
+      "pros": [
+        "Embarrassingly parallel",
+        "Matches SpiNNaker's many-core design"
+      ],
+      "cons": [
+        "Each polyp is tiny \u2014 may not handle complex tasks",
+        "No shared state between polyps on same core",
+        "Cross-polyp communication requires explicit routing"
+      ],
+      "first_useful_test": "One-core multi-polyp smoke: 4 independent polyps on same core",
+      "routing_pressure": {
+        "strategy": "D_polyp_pool",
+        "estimated_entries": 65,
+        "max_entries": 1024,
+        "utilization": 0.0635,
+        "notes": [
+          "64 polyps; routing can group by core to save entries."
+        ],
+        "risk": "low"
+      }
+    }
+  ],
+  "routing_pressure": [
+    {
+      "strategy": "A_monolithic",
+      "profile": "current_default",
+      "entries": 1,
+      "max_entries": 1024,
+      "utilization_percent": 0.1,
+      "risk": "low"
+    },
+    {
+      "strategy": "A_monolithic",
+      "profile": "2x_slots_2x_pending",
+      "entries": 1,
+      "max_entries": 1024,
+      "utilization_percent": 0.1,
+      "risk": "low"
+    },
+    {
+      "strategy": "A_monolithic",
+      "profile": "4x_slots_4x_pending",
+      "entries": 1,
+      "max_entries": 1024,
+      "utilization_percent": 0.1,
+      "risk": "low"
+    },
+    {
+      "strategy": "A_monolithic",
+      "profile": "8x_slots_8x_pending",
+      "entries": 1,
+      "max_entries": 1024,
+      "utilization_percent": 0.1,
+      "risk": "low"
+    },
+    {
+      "strategy": "A_monolithic",
+      "profile": "memory_heavy",
+      "entries": 1,
+      "max_entries": 1024,
+      "utilization_percent": 0.1,
+      "risk": "low"
+    },
+    {
+      "strategy": "A_monolithic",
+      "profile": "pending_heavy",
+      "entries": 1,
+      "max_entries": 1024,
+      "utilization_percent": 0.1,
+      "risk": "low"
+    },
+    {
+      "strategy": "B_state_learning_split",
+      "profile": "current_default",
+      "entries": 3,
+      "max_entries": 1024,
+      "utilization_percent": 0.29,
+      "risk": "low"
+    },
+    {
+      "strategy": "B_state_learning_split",
+      "profile": "2x_slots_2x_pending",
+      "entries": 3,
+      "max_entries": 1024,
+      "utilization_percent": 0.29,
+      "risk": "low"
+    },
+    {
+      "strategy": "B_state_learning_split",
+      "profile": "4x_slots_4x_pending",
+      "entries": 3,
+      "max_entries": 1024,
+      "utilization_percent": 0.29,
+      "risk": "low"
+    },
+    {
+      "strategy": "B_state_learning_split",
+      "profile": "8x_slots_8x_pending",
+      "entries": 3,
+      "max_entries": 1024,
+      "utilization_percent": 0.29,
+      "risk": "low"
+    },
+    {
+      "strategy": "B_state_learning_split",
+      "profile": "memory_heavy",
+      "entries": 3,
+      "max_entries": 1024,
+      "utilization_percent": 0.29,
+      "risk": "low"
+    },
+    {
+      "strategy": "B_state_learning_split",
+      "profile": "pending_heavy",
+      "entries": 3,
+      "max_entries": 1024,
+      "utilization_percent": 0.29,
+      "risk": "low"
+    },
+    {
+      "strategy": "C_context_route_split",
+      "profile": "current_default",
+      "entries": 10,
+      "max_entries": 1024,
+      "utilization_percent": 0.98,
+      "risk": "low"
+    },
+    {
+      "strategy": "C_context_route_split",
+      "profile": "2x_slots_2x_pending",
+      "entries": 10,
+      "max_entries": 1024,
+      "utilization_percent": 0.98,
+      "risk": "low"
+    },
+    {
+      "strategy": "C_context_route_split",
+      "profile": "4x_slots_4x_pending",
+      "entries": 10,
+      "max_entries": 1024,
+      "utilization_percent": 0.98,
+      "risk": "low"
+    },
+    {
+      "strategy": "C_context_route_split",
+      "profile": "8x_slots_8x_pending",
+      "entries": 10,
+      "max_entries": 1024,
+      "utilization_percent": 0.98,
+      "risk": "low"
+    },
+    {
+      "strategy": "C_context_route_split",
+      "profile": "memory_heavy",
+      "entries": 10,
+      "max_entries": 1024,
+      "utilization_percent": 0.98,
+      "risk": "low"
+    },
+    {
+      "strategy": "C_context_route_split",
+      "profile": "pending_heavy",
+      "entries": 10,
+      "max_entries": 1024,
+      "utilization_percent": 0.98,
+      "risk": "low"
+    },
+    {
+      "strategy": "D_polyp_pool",
+      "profile": "current_default",
+      "entries": 65,
+      "max_entries": 1024,
+      "utilization_percent": 6.35,
+      "risk": "low"
+    },
+    {
+      "strategy": "D_polyp_pool",
+      "profile": "2x_slots_2x_pending",
+      "entries": 65,
+      "max_entries": 1024,
+      "utilization_percent": 6.35,
+      "risk": "low"
+    },
+    {
+      "strategy": "D_polyp_pool",
+      "profile": "4x_slots_4x_pending",
+      "entries": 65,
+      "max_entries": 1024,
+      "utilization_percent": 6.35,
+      "risk": "low"
+    },
+    {
+      "strategy": "D_polyp_pool",
+      "profile": "8x_slots_8x_pending",
+      "entries": 65,
+      "max_entries": 1024,
+      "utilization_percent": 6.35,
+      "risk": "low"
+    },
+    {
+      "strategy": "D_polyp_pool",
+      "profile": "memory_heavy",
+      "entries": 65,
+      "max_entries": 1024,
+      "utilization_percent": 6.35,
+      "risk": "low"
+    },
+    {
+      "strategy": "D_polyp_pool",
+      "profile": "pending_heavy",
+      "entries": 65,
+      "max_entries": 1024,
+      "utilization_percent": 6.35,
+      "risk": "low"
+    }
+  ],
+  "blockers": [
+    {
+      "category": "ITCM",
+      "severity": "info",
+      "description": "ITCM footprint measured by 4.24b: text=13,608 bytes / 32,768 bytes = 41.5%. Comfortable headroom for inter-core messaging code.",
+      "mitigation": "Re-measure if adding significant new code (e.g., inter-core SDP handlers, DMA logic)"
+    },
+    {
+      "category": "SDRAM",
+      "severity": "info",
+      "description": "SDRAM usage not measured \u2014 schedule arrays could move to SDRAM to free DTCM",
+      "mitigation": "DMA schedule from SDRAM to DTCM on demand; measure bandwidth vs latency tradeoff"
+    },
+    {
+      "category": "latency",
+      "severity": "warning",
+      "description": "Inter-core packet latency is 200-1000ns CPU overhead + routing delay. At 1ms timestep, this is 0.02-0.1% of tick.",
+      "mitigation": "Batch messages, use DMA bursts, or relax timestep for multi-core splits"
+    },
+    {
+      "category": "architecture",
+      "severity": "blocking",
+      "description": "Dynamic population creation mid-run is NOT supported by current runtime",
+      "mitigation": "Static pool allocation only. All slots/horizons predeclared at compile time."
+    }
+  ],
+  "criteria": [
+    {
+      "name": "runner revision current",
+      "value": "tier4_25a_multicore_mapping_analysis_20260501_0001",
+      "rule": "expected current source",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "hardware specs documented",
+      "value": "DTCM=64K ITCM=32K SDRAM=128M cores=18 routing=1024",
+      "rule": "all present",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "exact struct sizes computed",
+      "value": 6,
+      "rule": "== 6",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "profile count >= 4",
+      "value": 6,
+      "rule": ">= 4",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "current_default fits in DTCM",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "current_default has DTCM headroom",
+      "value": 43411,
+      "rule": "> 0",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "all profiles have budgets computed",
+      "value": 6,
+      "rule": "== len(PROFILES)",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "mapping strategies >= 3",
+      "value": 4,
+      "rule": ">= 3",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "monolithic strategy documented",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "state_learning_split documented",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "routing pressure analyzed",
+      "value": 24,
+      "rule": "> 0",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "blockers identified",
+      "value": 4,
+      "rule": "> 0",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "dynamic_creation flagged as blocker",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "ITCM measured and documented",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    }
+  ]
+}

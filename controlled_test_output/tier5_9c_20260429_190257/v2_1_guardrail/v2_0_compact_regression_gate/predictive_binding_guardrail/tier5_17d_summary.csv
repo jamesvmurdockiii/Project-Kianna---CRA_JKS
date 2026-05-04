@@ -1,0 +1,6 @@
+task,variant,variant_family,runs,mean_probe_rows,mean_ridge_probe_accuracy,min_ridge_probe_accuracy,std_ridge_probe_accuracy,mean_centroid_probe_accuracy,mean_knn_probe_accuracy,min_knn_probe_accuracy,mean_silhouette_score,mean_latent_factor_abs_corr,mean_labels_to_threshold,min_labels_to_threshold,max_abs_raw_dopamine,label_leakage_runs,reward_leakage_runs
+cross_modal_binding,fixed_history_baseline,history baseline,1,81.0,0.5802469135802469,0.5802469135802469,0.0,0.6790123456790124,0.6790123456790124,0.6790123456790124,0.023155485653650203,0.34450730207867863,,,0.0,0,0
+cross_modal_binding,no_preexposure,candidate ablation,1,81.0,0.6790123456790124,0.6790123456790124,0.0,0.6049382716049383,0.691358024691358,0.691358024691358,0.02854771251522243,0.23008533883748686,,,0.0,0,0
+cross_modal_binding,oracle_latent_upper_bound,oracle upper bound,1,81.0,1.0,1.0,0.0,1.0,1.0,1.0,0.9712871862788622,0.4029141081808604,79.0,79.0,0.0,0,0
+cross_modal_binding,predictive_binding_preexposure,candidate,1,81.0,1.0,1.0,0.0,0.9629629629629629,0.9753086419753086,0.9753086419753086,0.36315170806568764,0.572181153120348,79.0,79.0,0.0,0,0
+cross_modal_binding,target_shuffled_binding,binding sham,1,81.0,1.0,1.0,0.0,0.7654320987654321,0.9382716049382716,0.9382716049382716,0.057424267300102215,0.19163844049100404,79.0,79.0,0.0,0,0

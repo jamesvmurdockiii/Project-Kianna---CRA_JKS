@@ -1,0 +1,9 @@
+task,case,seed,lineage_id,n_alive,n_total_births,n_deaths,max_trophic,support_history_len
+hard_noisy_switching,fixed4,42,0,1,1,0,0.0,0
+hard_noisy_switching,fixed4,42,1,1,1,0,0.0,0
+hard_noisy_switching,fixed4,42,2,1,1,0,0.0,0
+hard_noisy_switching,fixed4,42,3,1,1,0,0.0,0
+hard_noisy_switching,life4_16,42,0,6,6,0,0.0,0
+hard_noisy_switching,life4_16,42,1,1,1,0,0.0,0
+hard_noisy_switching,life4_16,42,2,1,1,0,0.0,0
+hard_noisy_switching,life4_16,42,3,1,1,0,0.0,0

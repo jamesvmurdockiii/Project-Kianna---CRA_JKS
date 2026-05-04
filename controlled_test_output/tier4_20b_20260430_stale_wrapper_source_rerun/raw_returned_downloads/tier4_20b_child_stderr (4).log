@@ -1,0 +1,54 @@
+2026-04-30 04:22:22 INFO: Read configs files: /home/jovyan/spinnaker/SpiNNUtils/spinn_utilities/spinn_utilities.cfg, /home/jovyan/spinnaker/SpiNNMachine/spinn_machine/spinn_machine.cfg, /home/jovyan/spinnaker/PACMAN/pacman/pacman.cfg, /home/jovyan/spinnaker/SpiNNMan/spinnman/spinnman.cfg, /home/jovyan/spinnaker/SpiNNFrontEndCommon/spinn_front_end_common/interface/spinnaker.cfg, /home/jovyan/spinnaker/sPyNNaker/spynnaker/pyNN/spynnaker.cfg, /home/jovyan/.spynnaker.cfg
+2026-04-30 04:22:22 INFO: As mode is Production running all reports and keeping files is turned off unless specifically asked for in cfg
+2026-04-30 04:22:22 INFO: Will search these locations for binaries: /home/jovyan/spinnaker/sPyNNaker/spynnaker/pyNN/model_binaries
+2026-04-30 04:22:23 INFO: Setting hardware timestep as 1000 microseconds based on simulation time step of 1000 and timescale factor of 1.0
+2026-04-30 04:22:23 INFO: Starting execution process
+2026-04-30 04:22:23 INFO: Simulating for 2500 1.0 ms timesteps using a hardware timestep of 1000 us
+2026-04-30 04:22:24 INFO: SpYNNakerNeuronGraphNetworkSpecificationReport skipped as cfg Reports:write_network_graph is False
+2026-04-30 04:22:24 INFO: Network Specification report skipped as cfg Reports:write_network_specification_report is False
+2026-04-30 04:22:24 INFO: Splitter reset took 0:00:00.000017 
+Adding Splitter selectors where appropriate
+|0%                          50%                         100%|
+ ============================================================
+2026-04-30 04:22:24 INFO: Spynnaker splitter selector took 0:00:00.000594 
+Adding delay extensions as required
+|0%                          50%                         100%|
+ ============================================================
+2026-04-30 04:22:24 INFO: DelaySupportAdder took 0:00:00.000176 
+Partitioning Graph
+|0%                          50%                         100%|
+ 2026-04-30 04:22:24 WARNING: The cfg has no version. This is deprecated! Please add a version
+2026-04-30 04:22:25 INFO: Splitter partitioner exited with SpinnMachineException after 0:00:00.078789
+2026-04-30 04:22:25 INFO: Cleanup reports folder based on cfg took 0:00:00.001152 
+2026-04-30 04:22:25 WARNING: Second call to end ignored
+2026-04-30 04:22:25 INFO: Read configs files: /home/jovyan/spinnaker/SpiNNUtils/spinn_utilities/spinn_utilities.cfg, /home/jovyan/spinnaker/SpiNNMachine/spinn_machine/spinn_machine.cfg, /home/jovyan/spinnaker/PACMAN/pacman/pacman.cfg, /home/jovyan/spinnaker/SpiNNMan/spinnman/spinnman.cfg, /home/jovyan/spinnaker/SpiNNFrontEndCommon/spinn_front_end_common/interface/spinnaker.cfg, /home/jovyan/spinnaker/sPyNNaker/spynnaker/pyNN/spynnaker.cfg, /home/jovyan/.spynnaker.cfg
+2026-04-30 04:22:25 INFO: Read configs files: /home/jovyan/spinnaker/SpiNNUtils/spinn_utilities/spinn_utilities.cfg, /home/jovyan/spinnaker/SpiNNMachine/spinn_machine/spinn_machine.cfg, /home/jovyan/spinnaker/PACMAN/pacman/pacman.cfg, /home/jovyan/spinnaker/SpiNNMan/spinnman/spinnman.cfg, /home/jovyan/spinnaker/SpiNNFrontEndCommon/spinn_front_end_common/interface/spinnaker.cfg, /home/jovyan/spinnaker/sPyNNaker/spynnaker/pyNN/spynnaker.cfg, /home/jovyan/.spynnaker.cfg
+2026-04-30 04:22:25 INFO: As mode is Production running all reports and keeping files is turned off unless specifically asked for in cfg
+2026-04-30 04:22:26 INFO: Will search these locations for binaries: /home/jovyan/spinnaker/sPyNNaker/spynnaker/pyNN/model_binaries : /home/jovyan/spinnaker/SpiNNFrontEndCommon/spinn_front_end_common/common_model_binaries
+2026-04-30 04:22:26 INFO: Setting hardware timestep as 1000 microseconds based on simulation time step of 1000 and timescale factor of 1.0
+2026-04-30 04:22:27 INFO: Starting execution process
+2026-04-30 04:22:27 INFO: Simulating for 2500 1.0 ms timesteps using a hardware timestep of 1000 us
+2026-04-30 04:22:27 INFO: SpYNNakerNeuronGraphNetworkSpecificationReport skipped as cfg Reports:write_network_graph is False
+2026-04-30 04:22:27 INFO: Network Specification report skipped as cfg Reports:write_network_specification_report is False
+2026-04-30 04:22:28 INFO: Splitter reset took 0:00:00.000010 
+Adding Splitter selectors where appropriate
+|0%                          50%                         100%|
+ ============================================================
+2026-04-30 04:22:28 INFO: Spynnaker splitter selector took 0:00:00.000327 
+Adding delay extensions as required
+|0%                          50%                         100%|
+ ============================================================
+2026-04-30 04:22:28 INFO: DelaySupportAdder took 0:00:00.000162 
+Partitioning Graph
+|0%                          50%                         100%|
+ 2026-04-30 04:22:28 WARNING: The cfg has no version. This is deprecated! Please add a version
+2026-04-30 04:22:28 INFO: Splitter partitioner exited with SpinnMachineException after 0:00:00.090594
+2026-04-30 04:22:29 INFO: Cleanup reports folder based on cfg took 0:00:00.001080 
+2026-04-30 04:22:29 WARNING: Second call to end ignored
+
+!WARNING: 2 log messages were generated at level WARNING or above.
+This may mean that the results are invalid.
+You are advised to check the details of these in the p_log_view of : /tmp/job1038577973058361128.tmp/cra/reports/2026-04-30-04-22-25-909190/global_provenance.sqlite3
+These are:
+The cfg has no version. This is deprecated! Please add a version
+Second call to end ignored

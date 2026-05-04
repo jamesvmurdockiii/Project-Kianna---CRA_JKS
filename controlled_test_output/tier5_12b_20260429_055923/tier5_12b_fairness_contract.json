@@ -1,0 +1,46 @@
+{
+  "excluded_default_task": "hidden_regime_switching is reserved for later latent-predictive inference, not this visible-precursor binding bridge.",
+  "fairness_rules": [
+    "same sensory stream, target stream, evaluation mask, and feedback_due_step arrays per seed",
+    "standard baselines see only the sensory stream and configured feature history",
+    "candidate internal predictive context can write only at visible precursor metadata rows",
+    "candidate internal predictive context can read only at marked decision/evaluation rows",
+    "wrong/shuffled/no-write predictive-context controls must not match the candidate",
+    "feedback_due_step must be greater than or equal to prediction step",
+    "passing Tier 5.12b does not freeze v1.8 without compact regression"
+  ],
+  "feature_history": 6,
+  "predictive_controls": [
+    "current_reflex",
+    "sign_persistence_control",
+    "rolling_majority",
+    "predictive_memory",
+    "wrong_horizon_control",
+    "shuffled_target_control"
+  ],
+  "purpose": "test bounded internal CRA predictive-context binding after Tier 5.12a task-pressure validation",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "selected_external_baselines": [
+    "sign_persistence",
+    "online_perceptron",
+    "online_logistic_regression",
+    "echo_state_network",
+    "small_gru",
+    "stdp_only_snn"
+  ],
+  "steps": 720,
+  "tasks": "masked_input_prediction,event_stream_prediction,sensor_anomaly_prediction",
+  "tier": "Tier 5.12b - Internal Predictive Context Mechanism Diagnostic",
+  "variants": [
+    "v1_7_reactive",
+    "external_predictive_scaffold",
+    "internal_predictive_context",
+    "wrong_predictive_context",
+    "shuffled_predictive_context",
+    "no_write_predictive_context"
+  ]
+}

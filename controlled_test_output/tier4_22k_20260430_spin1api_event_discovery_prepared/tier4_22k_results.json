@@ -1,0 +1,61 @@
+{
+  "artifacts": {
+    "job_readme": "/Users/james/JKS:CRA/controlled_test_output/tier4_22k_20260430_spin1api_event_discovery_prepared/ebrains_upload_bundle/cra_422k/README_TIER4_22K_JOB.md",
+    "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_22k_20260430_spin1api_event_discovery_prepared/tier4_22k_results.json",
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_22k_20260430_spin1api_event_discovery_prepared/tier4_22k_report.md",
+    "stable_upload_folder": "/Users/james/JKS:CRA/ebrains_jobs/cra_422k",
+    "upload_bundle": "/Users/james/JKS:CRA/controlled_test_output/tier4_22k_20260430_spin1api_event_discovery_prepared/ebrains_upload_bundle/cra_422k"
+  },
+  "criteria": [
+    {
+      "name": "runner revision current",
+      "note": "",
+      "passed": true,
+      "rule": "expected current source",
+      "value": "tier4_22k_spin1api_event_discovery_20260430_0001"
+    },
+    {
+      "name": "upload bundle created",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_22k_20260430_spin1api_event_discovery_prepared/ebrains_upload_bundle/cra_422k"
+    },
+    {
+      "name": "discovery runner included",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_22k_20260430_spin1api_event_discovery_prepared/ebrains_upload_bundle/cra_422k/experiments/tier4_22k_spin1api_event_discovery.py"
+    },
+    {
+      "name": "run-hardware command emitted",
+      "note": "",
+      "passed": true,
+      "rule": "contains --mode run-hardware",
+      "value": "cra_422k/experiments/tier4_22k_spin1api_event_discovery.py --mode run-hardware --output-dir tier4_22k_job_output"
+    },
+    {
+      "name": "stable upload folder refreshed",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/ebrains_jobs/cra_422k"
+    }
+  ],
+  "failure_reason": "",
+  "generated_at_utc": "2026-04-30T20:54:08+00:00",
+  "mode": "prepare",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_22k_20260430_spin1api_event_discovery_prepared",
+  "runner_revision": "tier4_22k_spin1api_event_discovery_20260430_0001",
+  "status": "prepared",
+  "summary": {
+    "claim_boundary": "Prepared source-only discovery package; no hardware/build-image evidence until EBRAINS returns run-hardware artifacts.",
+    "jobmanager_command": "cra_422k/experiments/tier4_22k_spin1api_event_discovery.py --mode run-hardware --output-dir tier4_22k_job_output",
+    "mode": "prepare",
+    "next_step_if_passed": "Run the emitted EBRAINS command and ingest returned Tier 4.22k files.",
+    "upload_folder": "/Users/james/JKS:CRA/ebrains_jobs/cra_422k",
+    "what_i_need_from_user": "Upload /Users/james/JKS:CRA/ebrains_jobs/cra_422k to EBRAINS/JobManager and run the emitted command; download every tier4_22k* file."
+  },
+  "tier": "Tier 4.22k - Spin1API Event-Symbol Discovery"
+}

@@ -1,0 +1,1103 @@
+{
+  "aplx_build": {
+    "aplx_artifact": "/tmp/job10382156983886380828.tmp/cra_422t/coral_reef_spinnaker/spinnaker_runtime/build/coral_reef.aplx",
+    "command": "make -C /tmp/job10382156983886380828.tmp/cra_422t/coral_reef_spinnaker/spinnaker_runtime clean all",
+    "returncode": 0,
+    "spinnaker_tools": "/home/jovyan/spinnaker/spinnaker_tools",
+    "status": "pass",
+    "stderr": "",
+    "stderr_artifact": "/tmp/job10382156983886380828.tmp/tier4_22l_job_output/tier4_22i_aplx_build_stderr.txt",
+    "stdout": "make: Entering directory '/tmp/job10382156983886380828.tmp/cra_422t/coral_reef_spinnaker/spinnaker_runtime'\nrm -rf build/gnu/ tests/test_runtime\nmkdir -p build/gnu/src/\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -o build/gnu/src/main.o src/main.c\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -o build/gnu/src/neuron_manager.o src/neuron_manager.c\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -o build/gnu/src/synapse_manager.o src/synapse_manager.c\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -o build/gnu/src/state_manager.o src/state_manager.c\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -o build/gnu/src/host_interface.o src/host_interface.c\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -o build/gnu/src/router.o src/router.c\nmkdir -p build/gnu/\n/home/jovyan/spinnaker/spinnaker_tools/tools/mkbuild coral_reef > build/gnu/coral_reef_build.c\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src   -c -o build/gnu/coral_reef_build.o build/gnu/coral_reef_build.c\n# spinnaker_tools.mk elf\narm-none-eabi-gcc -T/home/jovyan/spinnaker/spinnaker_tools/tools/sark.lnk -Wl,-e,cpu_reset -Wl,-static -ffreestanding -fdata-sections -ffunction-sections -Wl,--gc-sections -Wl,--use-blx -nostartfiles -static -L /home/jovyan/spinnaker/spinnaker_tools/lib build/gnu/src/main.o build/gnu/src/neuron_manager.o build/gnu/src/synapse_manager.o build/gnu/src/state_manager.o build/gnu/src/host_interface.o build/gnu/src/router.o build/gnu/coral_reef_build.o  /home/jovyan/spinnaker/spinnaker_tools/lib/libspin1_api.a -o build/gnu/coral_reef.elf\narm-none-eabi-objdump -dxt > build/gnu/coral_reef.txt build/gnu/coral_reef.elf\narm-none-eabi-objcopy -O binary -j RO_DATA -j EX_DATA build/gnu/coral_reef.elf build/gnu/RO_DATA.bin\narm-none-eabi-objcopy -O binary -j RW_DATA build/gnu/coral_reef.elf build/gnu/RW_DATA.bin\nls -l build/gnu/RO_DATA.bin\n-rwxr-xr-x 1 jovyan users 22572 May  1 03:16 build/gnu/RO_DATA.bin\n/home/jovyan/spinnaker/spinnaker_tools/tools/mkbin build/gnu/RO_DATA.bin build/gnu/RW_DATA.bin > build/gnu/coral_reef.bin\nrm -f build/gnu/RO_DATA.bin build/gnu/RW_DATA.bin\narm-none-eabi-nm build/gnu/coral_reef.elf > build/gnu/coral_reef.nm\nmkdir -p build/\n/home/jovyan/spinnaker/spinnaker_tools/tools/mkaplx build/gnu/coral_reef.nm | cat - build/gnu/coral_reef.bin > build/coral_reef.aplx\nrm build/gnu/coral_reef.bin build/gnu/coral_reef.nm build/gnu/coral_reef_build.c build/gnu/coral_reef_build.o\nmake: Leaving directory '/tmp/job10382156983886380828.tmp/cra_422t/coral_reef_spinnaker/spinnaker_runtime'\n",
+    "stdout_artifact": "/tmp/job10382156983886380828.tmp/tier4_22l_job_output/tier4_22i_aplx_build_stdout.txt"
+  },
+  "app_load": {
+    "app_id": 17,
+    "hostname": "10.11.194.1",
+    "method": "spynnaker_dataview_transceiver.execute_flood",
+    "p": 4,
+    "runtime_seconds": 1.1987737249583006,
+    "status": "pass",
+    "x": 0,
+    "y": 0
+  },
+  "artifacts": {
+    "aplx_build_stderr": "/tmp/job10382156983886380828.tmp/tier4_22l_job_output/tier4_22i_aplx_build_stderr.txt",
+    "aplx_build_stdout": "/tmp/job10382156983886380828.tmp/tier4_22l_job_output/tier4_22i_aplx_build_stdout.txt",
+    "environment_json": "/tmp/job10382156983886380828.tmp/tier4_22l_job_output/tier4_22l_environment.json",
+    "host_test_stderr": "/tmp/job10382156983886380828.tmp/tier4_22l_job_output/tier4_22i_host_test_stderr.txt",
+    "host_test_stdout": "/tmp/job10382156983886380828.tmp/tier4_22l_job_output/tier4_22i_host_test_stdout.txt",
+    "learning_parity_result_json": "/tmp/job10382156983886380828.tmp/tier4_22l_job_output/tier4_22l_learning_parity_result.json",
+    "learning_parity_rows_csv": "/tmp/job10382156983886380828.tmp/tier4_22l_job_output/tier4_22l_learning_parity_rows.csv",
+    "load_result_json": "/tmp/job10382156983886380828.tmp/tier4_22l_job_output/tier4_22l_load_result.json",
+    "main_syntax_stderr": "/tmp/job10382156983886380828.tmp/tier4_22l_job_output/tier4_22i_main_syntax_normal_stderr.txt",
+    "main_syntax_stdout": "/tmp/job10382156983886380828.tmp/tier4_22l_job_output/tier4_22i_main_syntax_normal_stdout.txt",
+    "manifest_json": "/tmp/job10382156983886380828.tmp/tier4_22l_job_output/tier4_22l_results.json",
+    "reference_csv": "/tmp/job10382156983886380828.tmp/tier4_22l_job_output/tier4_22l_parity_reference.csv",
+    "reference_json": "/tmp/job10382156983886380828.tmp/tier4_22l_job_output/tier4_22l_reference.json",
+    "report_md": "/tmp/job10382156983886380828.tmp/tier4_22l_job_output/tier4_22l_report.md",
+    "target_acquisition_json": "/tmp/job10382156983886380828.tmp/tier4_22l_job_output/tier4_22l_target_acquisition.json"
+  },
+  "criteria": [
+    {
+      "name": "runner revision current",
+      "note": "",
+      "passed": true,
+      "rule": "expected current source",
+      "value": "tier4_22l_custom_runtime_learning_parity_20260501_0001"
+    },
+    {
+      "name": "Tier 4.22j minimal learning-smoke pass exists or fresh bundle",
+      "note": "",
+      "passed": true,
+      "rule": "== pass OR missing in fresh EBRAINS bundle",
+      "value": "missing"
+    },
+    {
+      "name": "local fixed-point reference generated",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "custom C host tests pass",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "main.c host syntax check pass",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "runtime CMD_SCHEDULE_PENDING defined",
+      "note": "",
+      "passed": true,
+      "rule": "config.h defines opcode",
+      "value": "CMD_SCHEDULE_PENDING 9"
+    },
+    {
+      "name": "runtime CMD_MATURE_PENDING defined",
+      "note": "",
+      "passed": true,
+      "rule": "config.h defines opcode",
+      "value": "CMD_MATURE_PENDING 10"
+    },
+    {
+      "name": "runtime learning opcodes host-tested",
+      "note": "",
+      "passed": true,
+      "rule": "host tests cover opcodes",
+      "value": "assert command constants"
+    },
+    {
+      "name": "runtime controller exposes schedule command",
+      "note": "",
+      "passed": true,
+      "rule": "Python host can schedule delayed-credit state on board",
+      "value": "schedule_pending_decision"
+    },
+    {
+      "name": "runtime controller exposes mature command",
+      "note": "",
+      "passed": true,
+      "rule": "Python host can mature delayed-credit state on board",
+      "value": "mature_pending"
+    },
+    {
+      "name": "runtime runtime schedule handler exists",
+      "note": "",
+      "passed": true,
+      "rule": "runtime computes prediction and schedules pending horizon",
+      "value": "_handle_schedule_pending"
+    },
+    {
+      "name": "runtime runtime mature handler exists",
+      "note": "",
+      "passed": true,
+      "rule": "runtime matures pending horizon and updates readout",
+      "value": "_handle_mature_pending"
+    },
+    {
+      "name": "runtime learning commands dispatched",
+      "note": "",
+      "passed": true,
+      "rule": "SDP dispatcher routes learning commands",
+      "value": "case CMD_SCHEDULE_PENDING / CMD_MATURE_PENDING"
+    },
+    {
+      "name": "runtime fixed-point helper is s16.15",
+      "note": "",
+      "passed": true,
+      "rule": "config.h defines the same fixed-point scale as the Python reference",
+      "value": "FP_SHIFT 15"
+    },
+    {
+      "name": "runtime readout prediction equation present",
+      "note": "",
+      "passed": true,
+      "rule": "runtime prediction must match local parity reference",
+      "value": "FP_MUL(readout_weight, feature) + readout_bias"
+    },
+    {
+      "name": "runtime readout update equation present",
+      "note": "",
+      "passed": true,
+      "rule": "runtime maturation must match local parity reference",
+      "value": "delta_w = lr * error * feature; delta_b = lr * error"
+    },
+    {
+      "name": "runtime mature command supports explicit mature_timestep",
+      "note": "",
+      "passed": true,
+      "rule": "parity run uses explicit due_timestep to avoid timer-race false failures",
+      "value": "msg->arg3 != 0 ? msg->arg3 : g_timestep"
+    },
+    {
+      "name": "runtime controller exposes returned due_timestep",
+      "note": "",
+      "passed": true,
+      "rule": "hardware parity can mature exactly the pending event it scheduled",
+      "value": "due_timestep"
+    },
+    {
+      "name": "hardware target acquired",
+      "note": "acquired transceiver/IP via PyNN/sPyNNaker DataView because EBRAINS JobManager may not expose a raw hostname; requested dest_cpu 1 was occupied; selected free core 4",
+      "passed": true,
+      "rule": "status == pass and hostname/IP/transceiver acquired",
+      "value": {
+        "attempts": [
+          {
+            "hostname": "",
+            "method": "hostname_discovery",
+            "notes": [
+              "no hostname found in args, common environment variables, or spynnaker.cfg"
+            ],
+            "reason": "no explicit hostname/config/environment target found",
+            "status": "fail"
+          },
+          {
+            "dest_cpu": 4,
+            "dest_x": 0,
+            "dest_y": 0,
+            "hostname": "10.11.194.1",
+            "method": "pyNN.spiNNaker_probe",
+            "notes": [
+              "acquired transceiver/IP via PyNN/sPyNNaker DataView because EBRAINS JobManager may not expose a raw hostname",
+              "requested dest_cpu 1 was occupied; selected free core 4"
+            ],
+            "occupied_cores": [
+              1,
+              2,
+              3
+            ],
+            "probe_population_size": 1,
+            "probe_run_ms": 1.0,
+            "probe_timestep_ms": 1.0,
+            "runtime_seconds": 54.541590745793656,
+            "setup_kwargs": {
+              "timestep": 1.0
+            },
+            "status": "pass",
+            "target_ipaddress": "10.11.194.1"
+          }
+        ],
+        "dest_cpu": 4,
+        "dest_x": 0,
+        "dest_y": 0,
+        "hostname": "10.11.194.1",
+        "method": "pyNN.spiNNaker_probe",
+        "notes": [
+          "acquired transceiver/IP via PyNN/sPyNNaker DataView because EBRAINS JobManager may not expose a raw hostname",
+          "requested dest_cpu 1 was occupied; selected free core 4"
+        ],
+        "occupied_cores": [
+          1,
+          2,
+          3
+        ],
+        "probe_population_size": 1,
+        "probe_run_ms": 1.0,
+        "probe_timestep_ms": 1.0,
+        "runtime_seconds": 54.541590745793656,
+        "setup_kwargs": {
+          "timestep": 1.0
+        },
+        "status": "pass",
+        "target_ipaddress": "10.11.194.1"
+      }
+    },
+    {
+      "name": "custom runtime .aplx build pass",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "custom runtime app load pass",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "tiny learning parity pass",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "all schedule commands succeeded",
+      "note": "",
+      "passed": true,
+      "rule": "all True",
+      "value": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "name": "all mature commands succeeded",
+      "note": "",
+      "passed": true,
+      "rule": "all True",
+      "value": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "name": "one pending matured per step",
+      "note": "",
+      "passed": true,
+      "rule": "all == 1",
+      "value": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "name": "predictions match local reference",
+      "note": "",
+      "passed": true,
+      "rule": "abs(delta) <= 1",
+      "value": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "weights match local reference",
+      "note": "",
+      "passed": true,
+      "rule": "abs(delta) <= 1",
+      "value": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "biases match local reference",
+      "note": "",
+      "passed": true,
+      "rule": "abs(delta) <= 1",
+      "value": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "pending created count final",
+      "note": "",
+      "passed": true,
+      "rule": "== 4",
+      "value": 4
+    },
+    {
+      "name": "pending matured count final",
+      "note": "",
+      "passed": true,
+      "rule": "== 4",
+      "value": 4
+    },
+    {
+      "name": "reward events final",
+      "note": "",
+      "passed": true,
+      "rule": "== 4",
+      "value": 4
+    },
+    {
+      "name": "active pending cleared final",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "name": "final weight matches reference",
+      "note": "",
+      "passed": true,
+      "rule": "== -4096 +/- 1",
+      "value": -4096
+    },
+    {
+      "name": "final bias matches reference",
+      "note": "",
+      "passed": true,
+      "rule": "== -4096 +/- 1",
+      "value": -4096
+    },
+    {
+      "name": "synthetic fallback zero",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    }
+  ],
+  "environment": {
+    "cwd": "/tmp/job10382156983886380828.tmp",
+    "env": {
+      "SPINNAKER_BOARD": "",
+      "SPINNAKER_HOST": "",
+      "SPINNAKER_HOSTNAME": "",
+      "SPINNAKER_MACHINE": "",
+      "SPINN_DIRS": "/home/jovyan/spinnaker/spinnaker_tools",
+      "SPYNNAKER_MACHINE": ""
+    },
+    "modules": [
+      {
+        "available": true,
+        "name": "spinnman",
+        "path": "/home/jovyan/spinnaker/SpiNNMan/spinnman/__init__.py"
+      },
+      {
+        "available": true,
+        "name": "spinn_machine",
+        "path": "/home/jovyan/spinnaker/SpiNNMachine/spinn_machine/__init__.py"
+      },
+      {
+        "available": true,
+        "name": "spinn_utilities",
+        "path": "/home/jovyan/spinnaker/SpiNNUtils/spinn_utilities/__init__.py"
+      },
+      {
+        "available": true,
+        "name": "pyNN.spiNNaker",
+        "path": "/home/jovyan/spinnaker/lib/python3.13/site-packages/pyNN/__init__.py"
+      },
+      {
+        "available": true,
+        "name": "spynnaker.pyNN",
+        "path": "/home/jovyan/spinnaker/sPyNNaker/spynnaker/__init__.py"
+      },
+      {
+        "available": true,
+        "name": "spinn_front_end_common",
+        "path": "/home/jovyan/spinnaker/SpiNNFrontEndCommon/spinn_front_end_common/__init__.py"
+      },
+      {
+        "available": true,
+        "name": "spalloc_client",
+        "path": "/home/jovyan/spinnaker/spalloc/spalloc_client/__init__.py"
+      }
+    ],
+    "python": "/home/jovyan/spinnaker/bin/python",
+    "python_version": "3.13.9 | packaged by conda-forge | (main, Oct 16 2025, 10:31:39) [GCC 14.3.0]",
+    "spinnaker_tools": "/home/jovyan/spinnaker/spinnaker_tools",
+    "tools": {
+      "cc": "/usr/bin/cc",
+      "make": "/usr/bin/make",
+      "spin1_api": "",
+      "ybug": "/home/jovyan/spinnaker/spinnaker_tools/tools/ybug"
+    }
+  },
+  "failure_reason": "",
+  "generated_at_utc": "2026-05-01T02:17:11+00:00",
+  "host_tests": {
+    "command": "make -C /tmp/job10382156983886380828.tmp/cra_422t/coral_reef_spinnaker/spinnaker_runtime clean-host test",
+    "returncode": 0,
+    "status": "pass",
+    "stderr": "",
+    "stderr_artifact": "/tmp/job10382156983886380828.tmp/tier4_22l_job_output/tier4_22i_host_test_stderr.txt",
+    "stdout": "make: Entering directory '/tmp/job10382156983886380828.tmp/cra_422t/coral_reef_spinnaker/spinnaker_runtime'\nrm -f tests/test_runtime\ncc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-int-to-pointer-cast -I stubs -I src tests/test_runtime.c src/neuron_manager.c src/synapse_manager.c src/state_manager.c src/host_interface.c src/router.c -lm -o tests/test_runtime\n./tests/test_runtime\n=== Coral Reef Runtime Host Tests ===\n\nconfig.h:\n  PASS: MAKE_KEY\n  PASS: fixed-point math\n  PASS: command constants\n  PASS: weight limits\n\nneuron_manager:\n  PASS: neuron birth/death\n  PASS: neuron find\n  PASS: neuron reset all\n\nsynapse_manager:\n  PASS: synapse create/remove\n  PASS: synapse weight limits\n  PASS: eligibility trace modulation\n  PASS: indexed delivery and active trace list\n\nstate_manager:\n  PASS: persistent context slots\n  PASS: bounded slot eviction\n  PASS: readout state and reset\n  PASS: reward readout update\n  PASS: pending horizon maturation\n  PASS: bounded pending horizons\n\nrouter:\n  PASS: router add/remove\n  PASS: router reset all\n\nhost_interface:\n  PASS: host_interface init\n  PASS: compact state summary pack\n\n=== ALL TESTS PASSED ===\nmake: Leaving directory '/tmp/job10382156983886380828.tmp/cra_422t/coral_reef_spinnaker/spinnaker_runtime'\n",
+    "stdout_artifact": "/tmp/job10382156983886380828.tmp/tier4_22l_job_output/tier4_22i_host_test_stdout.txt"
+  },
+  "learning_parity": {
+    "dest_cpu": 4,
+    "dest_x": 0,
+    "dest_y": 0,
+    "final_state": {
+      "active_pending": 0,
+      "active_slots": 0,
+      "active_trace_count": 0,
+      "cmd": 8,
+      "decisions": 4,
+      "flags": 0,
+      "neuron_count": 0,
+      "payload_len": 73,
+      "pending_created": 4,
+      "pending_dropped": 0,
+      "pending_matured": 4,
+      "readout_bias": -0.125,
+      "readout_bias_raw": -4096,
+      "readout_weight": -0.125,
+      "readout_weight_raw": -4096,
+      "reward_events": 4,
+      "schema_version": 1,
+      "slot_evictions": 0,
+      "slot_hits": 0,
+      "slot_misses": 0,
+      "slot_writes": 0,
+      "status": 0,
+      "success": true,
+      "synapse_count": 0,
+      "timestep": 1649
+    },
+    "hostname": "10.11.194.1",
+    "raw_tolerance": 1,
+    "reset_ok": true,
+    "rows": [
+      {
+        "active_pending_after_mature": 0,
+        "active_pending_after_schedule": 1,
+        "due_timestep": 1248,
+        "expected_prediction_raw": 0,
+        "expected_readout_bias_raw": 8192,
+        "expected_readout_weight_raw": 8192,
+        "feature": 1.0,
+        "mature": {
+          "cmd": 10,
+          "matured_count": 1,
+          "readout_bias": 0.25,
+          "readout_bias_raw": 8192,
+          "readout_weight": 0.25,
+          "readout_weight_raw": 8192,
+          "status": 0,
+          "success": true
+        },
+        "mature_success": true,
+        "matured_count": 1,
+        "observed_prediction_raw": 0,
+        "observed_readout_bias_raw": 8192,
+        "observed_readout_weight_raw": 8192,
+        "pending_created_after_mature": 1,
+        "pending_matured_after_mature": 1,
+        "prediction_raw_delta": 0,
+        "readout_bias_raw_delta": 0,
+        "readout_weight_raw_delta": 0,
+        "reward_events_after_mature": 1,
+        "schedule": {
+          "cmd": 9,
+          "due_timestep": 1248,
+          "prediction": 0.0,
+          "prediction_raw": 0,
+          "status": 0,
+          "success": true
+        },
+        "schedule_success": true,
+        "state_after_mature": {
+          "active_pending": 0,
+          "active_slots": 0,
+          "active_trace_count": 0,
+          "cmd": 8,
+          "decisions": 1,
+          "flags": 0,
+          "neuron_count": 0,
+          "payload_len": 73,
+          "pending_created": 1,
+          "pending_dropped": 0,
+          "pending_matured": 1,
+          "readout_bias": 0.25,
+          "readout_bias_raw": 8192,
+          "readout_weight": 0.25,
+          "readout_weight_raw": 8192,
+          "reward_events": 1,
+          "schema_version": 1,
+          "slot_evictions": 0,
+          "slot_hits": 0,
+          "slot_misses": 0,
+          "slot_writes": 0,
+          "status": 0,
+          "success": true,
+          "synapse_count": 0,
+          "timestep": 1344
+        },
+        "state_after_mature_success": true,
+        "state_after_schedule": {
+          "active_pending": 1,
+          "active_slots": 0,
+          "active_trace_count": 0,
+          "cmd": 8,
+          "decisions": 1,
+          "flags": 0,
+          "neuron_count": 0,
+          "payload_len": 73,
+          "pending_created": 1,
+          "pending_dropped": 0,
+          "pending_matured": 0,
+          "readout_bias": 0.0,
+          "readout_bias_raw": 0,
+          "readout_weight": 0.0,
+          "readout_weight_raw": 0,
+          "reward_events": 0,
+          "schema_version": 1,
+          "slot_evictions": 0,
+          "slot_hits": 0,
+          "slot_misses": 0,
+          "slot_writes": 0,
+          "status": 0,
+          "success": true,
+          "synapse_count": 0,
+          "timestep": 1293
+        },
+        "state_after_schedule_success": true,
+        "state_readout_bias_raw": 8192,
+        "state_readout_weight_raw": 8192,
+        "step": 1,
+        "target": 1.0
+      },
+      {
+        "active_pending_after_mature": 0,
+        "active_pending_after_schedule": 1,
+        "due_timestep": 1349,
+        "expected_prediction_raw": 16384,
+        "expected_readout_bias_raw": -4096,
+        "expected_readout_weight_raw": -4096,
+        "feature": 1.0,
+        "mature": {
+          "cmd": 10,
+          "matured_count": 1,
+          "readout_bias": -0.125,
+          "readout_bias_raw": -4096,
+          "readout_weight": -0.125,
+          "readout_weight_raw": -4096,
+          "status": 0,
+          "success": true
+        },
+        "mature_success": true,
+        "matured_count": 1,
+        "observed_prediction_raw": 16384,
+        "observed_readout_bias_raw": -4096,
+        "observed_readout_weight_raw": -4096,
+        "pending_created_after_mature": 2,
+        "pending_matured_after_mature": 2,
+        "prediction_raw_delta": 0,
+        "readout_bias_raw_delta": 0,
+        "readout_weight_raw_delta": 0,
+        "reward_events_after_mature": 2,
+        "schedule": {
+          "cmd": 9,
+          "due_timestep": 1349,
+          "prediction": 0.5,
+          "prediction_raw": 16384,
+          "status": 0,
+          "success": true
+        },
+        "schedule_success": true,
+        "state_after_mature": {
+          "active_pending": 0,
+          "active_slots": 0,
+          "active_trace_count": 0,
+          "cmd": 8,
+          "decisions": 2,
+          "flags": 0,
+          "neuron_count": 0,
+          "payload_len": 73,
+          "pending_created": 2,
+          "pending_dropped": 0,
+          "pending_matured": 2,
+          "readout_bias": -0.125,
+          "readout_bias_raw": -4096,
+          "readout_weight": -0.125,
+          "readout_weight_raw": -4096,
+          "reward_events": 2,
+          "schema_version": 1,
+          "slot_evictions": 0,
+          "slot_hits": 0,
+          "slot_misses": 0,
+          "slot_writes": 0,
+          "status": 0,
+          "success": true,
+          "synapse_count": 0,
+          "timestep": 1446
+        },
+        "state_after_mature_success": true,
+        "state_after_schedule": {
+          "active_pending": 1,
+          "active_slots": 0,
+          "active_trace_count": 0,
+          "cmd": 8,
+          "decisions": 2,
+          "flags": 0,
+          "neuron_count": 0,
+          "payload_len": 73,
+          "pending_created": 2,
+          "pending_dropped": 0,
+          "pending_matured": 1,
+          "readout_bias": 0.25,
+          "readout_bias_raw": 8192,
+          "readout_weight": 0.25,
+          "readout_weight_raw": 8192,
+          "reward_events": 1,
+          "schema_version": 1,
+          "slot_evictions": 0,
+          "slot_hits": 0,
+          "slot_misses": 0,
+          "slot_writes": 0,
+          "status": 0,
+          "success": true,
+          "synapse_count": 0,
+          "timestep": 1395
+        },
+        "state_after_schedule_success": true,
+        "state_readout_bias_raw": -4096,
+        "state_readout_weight_raw": -4096,
+        "step": 2,
+        "target": -1.0
+      },
+      {
+        "active_pending_after_mature": 0,
+        "active_pending_after_schedule": 1,
+        "due_timestep": 1451,
+        "expected_prediction_raw": 0,
+        "expected_readout_bias_raw": -12288,
+        "expected_readout_weight_raw": 4096,
+        "feature": -1.0,
+        "mature": {
+          "cmd": 10,
+          "matured_count": 1,
+          "readout_bias": -0.375,
+          "readout_bias_raw": -12288,
+          "readout_weight": 0.125,
+          "readout_weight_raw": 4096,
+          "status": 0,
+          "success": true
+        },
+        "mature_success": true,
+        "matured_count": 1,
+        "observed_prediction_raw": 0,
+        "observed_readout_bias_raw": -12288,
+        "observed_readout_weight_raw": 4096,
+        "pending_created_after_mature": 3,
+        "pending_matured_after_mature": 3,
+        "prediction_raw_delta": 0,
+        "readout_bias_raw_delta": 0,
+        "readout_weight_raw_delta": 0,
+        "reward_events_after_mature": 3,
+        "schedule": {
+          "cmd": 9,
+          "due_timestep": 1451,
+          "prediction": 0.0,
+          "prediction_raw": 0,
+          "status": 0,
+          "success": true
+        },
+        "schedule_success": true,
+        "state_after_mature": {
+          "active_pending": 0,
+          "active_slots": 0,
+          "active_trace_count": 0,
+          "cmd": 8,
+          "decisions": 3,
+          "flags": 0,
+          "neuron_count": 0,
+          "payload_len": 73,
+          "pending_created": 3,
+          "pending_dropped": 0,
+          "pending_matured": 3,
+          "readout_bias": -0.375,
+          "readout_bias_raw": -12288,
+          "readout_weight": 0.125,
+          "readout_weight_raw": 4096,
+          "reward_events": 3,
+          "schema_version": 1,
+          "slot_evictions": 0,
+          "slot_hits": 0,
+          "slot_misses": 0,
+          "slot_writes": 0,
+          "status": 0,
+          "success": true,
+          "synapse_count": 0,
+          "timestep": 1548
+        },
+        "state_after_mature_success": true,
+        "state_after_schedule": {
+          "active_pending": 1,
+          "active_slots": 0,
+          "active_trace_count": 0,
+          "cmd": 8,
+          "decisions": 3,
+          "flags": 0,
+          "neuron_count": 0,
+          "payload_len": 73,
+          "pending_created": 3,
+          "pending_dropped": 0,
+          "pending_matured": 2,
+          "readout_bias": -0.125,
+          "readout_bias_raw": -4096,
+          "readout_weight": -0.125,
+          "readout_weight_raw": -4096,
+          "reward_events": 2,
+          "schema_version": 1,
+          "slot_evictions": 0,
+          "slot_hits": 0,
+          "slot_misses": 0,
+          "slot_writes": 0,
+          "status": 0,
+          "success": true,
+          "synapse_count": 0,
+          "timestep": 1497
+        },
+        "state_after_schedule_success": true,
+        "state_readout_bias_raw": -12288,
+        "state_readout_weight_raw": 4096,
+        "step": 3,
+        "target": -1.0
+      },
+      {
+        "active_pending_after_mature": 0,
+        "active_pending_after_schedule": 1,
+        "due_timestep": 1553,
+        "expected_prediction_raw": -16384,
+        "expected_readout_bias_raw": -4096,
+        "expected_readout_weight_raw": -4096,
+        "feature": -1.0,
+        "mature": {
+          "cmd": 10,
+          "matured_count": 1,
+          "readout_bias": -0.125,
+          "readout_bias_raw": -4096,
+          "readout_weight": -0.125,
+          "readout_weight_raw": -4096,
+          "status": 0,
+          "success": true
+        },
+        "mature_success": true,
+        "matured_count": 1,
+        "observed_prediction_raw": -16384,
+        "observed_readout_bias_raw": -4096,
+        "observed_readout_weight_raw": -4096,
+        "pending_created_after_mature": 4,
+        "pending_matured_after_mature": 4,
+        "prediction_raw_delta": 0,
+        "readout_bias_raw_delta": 0,
+        "readout_weight_raw_delta": 0,
+        "reward_events_after_mature": 4,
+        "schedule": {
+          "cmd": 9,
+          "due_timestep": 1553,
+          "prediction": -0.5,
+          "prediction_raw": -16384,
+          "status": 0,
+          "success": true
+        },
+        "schedule_success": true,
+        "state_after_mature": {
+          "active_pending": 0,
+          "active_slots": 0,
+          "active_trace_count": 0,
+          "cmd": 8,
+          "decisions": 4,
+          "flags": 0,
+          "neuron_count": 0,
+          "payload_len": 73,
+          "pending_created": 4,
+          "pending_dropped": 0,
+          "pending_matured": 4,
+          "readout_bias": -0.125,
+          "readout_bias_raw": -4096,
+          "readout_weight": -0.125,
+          "readout_weight_raw": -4096,
+          "reward_events": 4,
+          "schema_version": 1,
+          "slot_evictions": 0,
+          "slot_hits": 0,
+          "slot_misses": 0,
+          "slot_writes": 0,
+          "status": 0,
+          "success": true,
+          "synapse_count": 0,
+          "timestep": 1649
+        },
+        "state_after_mature_success": true,
+        "state_after_schedule": {
+          "active_pending": 1,
+          "active_slots": 0,
+          "active_trace_count": 0,
+          "cmd": 8,
+          "decisions": 4,
+          "flags": 0,
+          "neuron_count": 0,
+          "payload_len": 73,
+          "pending_created": 4,
+          "pending_dropped": 0,
+          "pending_matured": 3,
+          "readout_bias": -0.375,
+          "readout_bias_raw": -12288,
+          "readout_weight": 0.125,
+          "readout_weight_raw": 4096,
+          "reward_events": 3,
+          "schema_version": 1,
+          "slot_evictions": 0,
+          "slot_hits": 0,
+          "slot_misses": 0,
+          "slot_writes": 0,
+          "status": 0,
+          "success": true,
+          "synapse_count": 0,
+          "timestep": 1599
+        },
+        "state_after_schedule_success": true,
+        "state_readout_bias_raw": -4096,
+        "state_readout_weight_raw": -4096,
+        "step": 4,
+        "target": 0.5
+      }
+    ],
+    "runtime_seconds": 0.45825891103595495,
+    "state_after_reset": {
+      "active_pending": 0,
+      "active_slots": 0,
+      "active_trace_count": 0,
+      "cmd": 8,
+      "decisions": 0,
+      "flags": 0,
+      "neuron_count": 0,
+      "payload_len": 73,
+      "pending_created": 0,
+      "pending_dropped": 0,
+      "pending_matured": 0,
+      "readout_bias": 0.0,
+      "readout_bias_raw": 0,
+      "readout_weight": 0.0,
+      "readout_weight_raw": 0,
+      "reward_events": 0,
+      "schema_version": 1,
+      "slot_evictions": 0,
+      "slot_hits": 0,
+      "slot_misses": 0,
+      "slot_writes": 0,
+      "status": 0,
+      "success": true,
+      "synapse_count": 0,
+      "timestep": 1242
+    },
+    "status": "pass"
+  },
+  "main_syntax_check": {
+    "normal": {
+      "command": "/usr/bin/cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-int-to-pointer-cast -I /tmp/job10382156983886380828.tmp/cra_422t/coral_reef_spinnaker/spinnaker_runtime/stubs -I /tmp/job10382156983886380828.tmp/cra_422t/coral_reef_spinnaker/spinnaker_runtime/src -c /tmp/job10382156983886380828.tmp/cra_422t/coral_reef_spinnaker/spinnaker_runtime/src/main.c -o /tmp/job10382156983886380828.tmp/tier4_22l_job_output/tier4_22i_main_syntax_normal.o",
+      "object_artifact": "/tmp/job10382156983886380828.tmp/tier4_22l_job_output/tier4_22i_main_syntax_normal.o",
+      "returncode": 0,
+      "status": "pass",
+      "stderr": "",
+      "stderr_artifact": "/tmp/job10382156983886380828.tmp/tier4_22l_job_output/tier4_22i_main_syntax_normal_stderr.txt",
+      "stdout": "",
+      "stdout_artifact": "/tmp/job10382156983886380828.tmp/tier4_22l_job_output/tier4_22i_main_syntax_normal_stdout.txt"
+    },
+    "status": "pass"
+  },
+  "mode": "run-hardware",
+  "output_dir": "/tmp/job10382156983886380828.tmp/tier4_22l_job_output",
+  "reference": {
+    "equation": "prediction=w*feature+bias; error=target-prediction; w+=lr*error*feature; b+=lr*error",
+    "final_readout_bias": -0.125,
+    "final_readout_bias_raw": -4096,
+    "final_readout_weight": -0.125,
+    "final_readout_weight_raw": -4096,
+    "fixed_point": "s16.15",
+    "learning_rate": 0.25,
+    "learning_rate_raw": 8192,
+    "rows": [
+      {
+        "delta_b_raw": 8192,
+        "delta_w_raw": 8192,
+        "error_raw": 32768,
+        "feature": 1.0,
+        "feature_raw": 32768,
+        "learning_rate": 0.25,
+        "learning_rate_raw": 8192,
+        "prediction": 0.0,
+        "prediction_raw": 0,
+        "purpose": "positive feature / positive target",
+        "readout_bias": 0.25,
+        "readout_bias_raw": 8192,
+        "readout_weight": 0.25,
+        "readout_weight_raw": 8192,
+        "step": 1,
+        "target": 1.0,
+        "target_raw": 32768
+      },
+      {
+        "delta_b_raw": -12288,
+        "delta_w_raw": -12288,
+        "error_raw": -49152,
+        "feature": 1.0,
+        "feature_raw": 32768,
+        "learning_rate": 0.25,
+        "learning_rate_raw": 8192,
+        "prediction": 0.5,
+        "prediction_raw": 16384,
+        "purpose": "positive feature / negative target",
+        "readout_bias": -0.125,
+        "readout_bias_raw": -4096,
+        "readout_weight": -0.125,
+        "readout_weight_raw": -4096,
+        "step": 2,
+        "target": -1.0,
+        "target_raw": -32768
+      },
+      {
+        "delta_b_raw": -8192,
+        "delta_w_raw": 8192,
+        "error_raw": -32768,
+        "feature": -1.0,
+        "feature_raw": -32768,
+        "learning_rate": 0.25,
+        "learning_rate_raw": 8192,
+        "prediction": 0.0,
+        "prediction_raw": 0,
+        "purpose": "negative feature / negative target",
+        "readout_bias": -0.375,
+        "readout_bias_raw": -12288,
+        "readout_weight": 0.125,
+        "readout_weight_raw": 4096,
+        "step": 3,
+        "target": -1.0,
+        "target_raw": -32768
+      },
+      {
+        "delta_b_raw": 8192,
+        "delta_w_raw": -8192,
+        "error_raw": 32768,
+        "feature": -1.0,
+        "feature_raw": -32768,
+        "learning_rate": 0.25,
+        "learning_rate_raw": 8192,
+        "prediction": -0.5,
+        "prediction_raw": -16384,
+        "purpose": "negative feature / fractional positive target",
+        "readout_bias": -0.125,
+        "readout_bias_raw": -4096,
+        "readout_weight": -0.125,
+        "readout_weight_raw": -4096,
+        "step": 4,
+        "target": 0.5,
+        "target_raw": 16384
+      }
+    ],
+    "sequence_length": 4,
+    "status": "pass"
+  },
+  "runner_revision": "tier4_22l_custom_runtime_learning_parity_20260501_0001",
+  "status": "pass",
+  "summary": {
+    "aplx_build_status": "pass",
+    "app_load_status": "pass",
+    "claim_boundary": "Tiny on-chip fixed-point parity sequence only; not full CRA task learning or speedup evidence.",
+    "final_pending_created": 4,
+    "final_pending_matured": 4,
+    "final_readout_bias": -0.125,
+    "final_readout_weight": -0.125,
+    "final_reward_events": 4,
+    "hardware_target_configured": true,
+    "learning_parity_status": "pass",
+    "mode": "run-hardware",
+    "next_step_if_passed": "Tier 4.22m: expand from tiny parity to a minimal task micro-loop only after this exact fixed-point path passes on board.",
+    "reference_final_bias": -0.125,
+    "reference_final_weight": -0.125,
+    "reference_sequence_length": 4,
+    "reference_status": "pass",
+    "selected_dest_cpu": 4,
+    "spinnaker_hostname": "10.11.194.1",
+    "tier4_22j_manifest": null,
+    "tier4_22j_status": "missing"
+  },
+  "target_acquisition": {
+    "attempts": [
+      {
+        "hostname": "",
+        "method": "hostname_discovery",
+        "notes": [
+          "no hostname found in args, common environment variables, or spynnaker.cfg"
+        ],
+        "reason": "no explicit hostname/config/environment target found",
+        "status": "fail"
+      },
+      {
+        "dest_cpu": 4,
+        "dest_x": 0,
+        "dest_y": 0,
+        "hostname": "10.11.194.1",
+        "method": "pyNN.spiNNaker_probe",
+        "notes": [
+          "acquired transceiver/IP via PyNN/sPyNNaker DataView because EBRAINS JobManager may not expose a raw hostname",
+          "requested dest_cpu 1 was occupied; selected free core 4"
+        ],
+        "occupied_cores": [
+          1,
+          2,
+          3
+        ],
+        "probe_population_size": 1,
+        "probe_run_ms": 1.0,
+        "probe_timestep_ms": 1.0,
+        "runtime_seconds": 54.541590745793656,
+        "setup_kwargs": {
+          "timestep": 1.0
+        },
+        "status": "pass",
+        "target_ipaddress": "10.11.194.1"
+      }
+    ],
+    "dest_cpu": 4,
+    "dest_x": 0,
+    "dest_y": 0,
+    "hostname": "10.11.194.1",
+    "method": "pyNN.spiNNaker_probe",
+    "notes": [
+      "acquired transceiver/IP via PyNN/sPyNNaker DataView because EBRAINS JobManager may not expose a raw hostname",
+      "requested dest_cpu 1 was occupied; selected free core 4"
+    ],
+    "occupied_cores": [
+      1,
+      2,
+      3
+    ],
+    "probe_population_size": 1,
+    "probe_run_ms": 1.0,
+    "probe_timestep_ms": 1.0,
+    "runtime_seconds": 54.541590745793656,
+    "setup_kwargs": {
+      "timestep": 1.0
+    },
+    "status": "pass",
+    "target_ipaddress": "10.11.194.1"
+  },
+  "target_cleanup": {
+    "action": "pyNN.spiNNaker.end",
+    "method": "pyNN.spiNNaker_probe",
+    "status": "pass"
+  },
+  "tier": "Tier 4.22l - Tiny Custom-Runtime Learning Parity"
+}

@@ -1,0 +1,16 @@
+task,model,model_family,variant_group,feature_mode,memory_runner,runs,steps,all_accuracy_mean,tail_accuracy_mean,prediction_target_corr_mean,tail_prediction_target_corr_mean,runtime_seconds_mean,evaluation_count_mean,feature_active_steps_sum,context_memory_updates_sum,mean_abs_prediction_mean,max_abs_prediction_mean,mean_abs_dopamine_mean
+intervening_contexts,keyed_context_memory,CRA,candidate,keyed,internal,1,240,1.0,1.0,,,2.0023770840000026,2.0,2.0,6.0,0.011481909758651111,0.09367884888783257,0.005700226598027074
+intervening_contexts,memory_reset,context_control,,,,1,240,0.5,0.0,,,0.001201040999998071,2.0,,,0.008333333333333333,1.0,
+intervening_contexts,online_perceptron,linear,,,,1,240,0.0,0.0,,,0.17574520899999868,2.0,,,0.048516666666666666,0.3298,
+intervening_contexts,oracle_context,context_control,,,,1,240,1.0,1.0,,,0.003159291999999425,2.0,,,0.008333333333333333,1.0,
+intervening_contexts,oracle_keyed_scaffold,CRA,external_scaffold,oracle_keyed,external,1,240,1.0,1.0,,,2.241127374999998,2.0,2.0,6.0,0.011481909758651111,0.09367884888783257,0.005700226598027074
+intervening_contexts,overcapacity_keyed_memory,CRA,overcapacity_control,keyed_overcapacity,internal,1,240,0.5,1.0,,,1.0816988750000007,2.0,2.0,6.0,0.006014651238228766,0.07485969068749909,0.0033783120540088834
+intervening_contexts,shuffled_context,context_control,,,,1,240,0.0,0.0,,,0.006201374999999842,2.0,,,0.008333333333333333,1.0,
+intervening_contexts,sign_persistence,rule,,,,1,240,0.5,0.0,,,0.35215074999999985,2.0,,,1.0,1.0,
+intervening_contexts,slot_reset_ablation,CRA,memory_ablation,slot_reset,internal,1,240,0.5,0.0,,,1.3936818749999986,2.0,2.0,6.0,0.011481909758651111,0.09367884888783257,0.005700226598027074
+intervening_contexts,slot_shuffle_ablation,CRA,memory_ablation,slot_shuffle,internal,1,240,0.5,1.0,,,1.0498283330000007,2.0,2.0,6.0,0.006014651238228766,0.07485969068749909,0.0033783120540088834
+intervening_contexts,stream_context_memory,context_control,,,,1,240,0.5,1.0,,,0.35339370800000225,2.0,,,0.008333333333333333,1.0,
+intervening_contexts,v1_4_raw,CRA,frozen_baseline,raw,internal,1,240,0.5,0.0,,,1.6192420839999997,2.0,0.0,0.0,0.011481909758651111,0.09367884888783257,0.005700226598027074
+intervening_contexts,v1_5_single_slot,CRA,single_slot_baseline,normal,internal,1,240,0.5,1.0,,,5.841135709,2.0,2.0,6.0,0.006014651238228766,0.07485969068749909,0.0033783120540088834
+intervening_contexts,wrong_context,context_control,,,,1,240,0.0,0.0,,,0.0008980840000027968,2.0,,,0.008333333333333333,1.0,
+intervening_contexts,wrong_key_ablation,CRA,memory_ablation,wrong_key,internal,1,240,0.5,1.0,,,0.8462977089999981,2.0,2.0,6.0,0.006014651238228766,0.07485969068749909,0.0033783120540088834

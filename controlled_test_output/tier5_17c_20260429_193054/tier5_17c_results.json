@@ -1,0 +1,176 @@
+{
+  "artifacts": {
+    "comparisons_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_17c_20260429_193054/tier5_17c_comparisons.csv",
+    "control_edges_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_17c_20260429_193054/tier5_17c_control_edges.png",
+    "fairness_contract_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_17c_20260429_193054/tier5_17c_fairness_contract.json",
+    "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_17c_20260429_193054/tier5_17c_results.json",
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_17c_20260429_193054/tier5_17c_report.md",
+    "representation_matrix_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_17c_20260429_193054/tier5_17c_representation_matrix.png",
+    "run_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_17c_20260429_193054/tier5_17c_runs.csv",
+    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_17c_20260429_193054/tier5_17c_summary.csv"
+  },
+  "canonical": false,
+  "claim_boundary": "Noncanonical software diagnostic: intrinsic predictive preexposure under zero-label/zero-reward exposure; not hardware/on-chip representation learning or a v2.0 freeze.",
+  "criteria": [
+    {
+      "name": "task/variant/seed matrix completed",
+      "note": "",
+      "operator": "==",
+      "passed": true,
+      "threshold": 99,
+      "value": 99
+    },
+    {
+      "name": "non-oracle exposure has no hidden-label leakage",
+      "note": "",
+      "operator": "==",
+      "passed": true,
+      "threshold": 0,
+      "value": 0
+    },
+    {
+      "name": "exposure has no reward visibility",
+      "note": "",
+      "operator": "==",
+      "passed": true,
+      "threshold": 0,
+      "value": 0
+    },
+    {
+      "name": "pre-reward raw dopamine remains zero",
+      "note": "",
+      "operator": "<=",
+      "passed": true,
+      "threshold": 1e-12,
+      "value": 0.0
+    },
+    {
+      "name": "candidate reaches minimum ridge-probe accuracy",
+      "note": "",
+      "operator": ">=",
+      "passed": true,
+      "threshold": 0.74,
+      "value": 0.7861842105263158
+    },
+    {
+      "name": "candidate reaches minimum kNN-probe accuracy",
+      "note": "",
+      "operator": ">=",
+      "passed": false,
+      "threshold": 0.68,
+      "value": 0.5657894736842105
+    },
+    {
+      "name": "candidate beats no-preexposure control",
+      "note": "",
+      "operator": ">=",
+      "passed": true,
+      "threshold": 0.08,
+      "value": 0.3146929824561404
+    },
+    {
+      "name": "time-shuffled preexposure loses",
+      "note": "",
+      "operator": ">=",
+      "passed": true,
+      "threshold": 0.05,
+      "value": 0.3081140350877194
+    },
+    {
+      "name": "target-shuffled preexposure loses",
+      "note": "",
+      "operator": ">=",
+      "passed": false,
+      "threshold": 0.05,
+      "value": -0.004385964912280826
+    },
+    {
+      "name": "wrong-domain preexposure loses",
+      "note": "",
+      "operator": ">=",
+      "passed": false,
+      "threshold": 0.05,
+      "value": 0.006578947368421018
+    },
+    {
+      "name": "fixed-history baseline does not explain result",
+      "note": "",
+      "operator": ">=",
+      "passed": true,
+      "threshold": 0.02,
+      "value": 0.3026315789473685
+    },
+    {
+      "name": "reservoir baseline does not explain result",
+      "note": "",
+      "operator": ">=",
+      "passed": true,
+      "threshold": 0.02,
+      "value": 0.3464912280701755
+    },
+    {
+      "name": "STDP-only baseline does not explain result",
+      "note": "",
+      "operator": ">=",
+      "passed": true,
+      "threshold": 0.02,
+      "value": 0.03837719298245612
+    },
+    {
+      "name": "candidate beats best non-oracle control",
+      "note": "",
+      "operator": ">=",
+      "passed": false,
+      "threshold": 0.01,
+      "value": -0.004385964912280826
+    },
+    {
+      "name": "downstream sample-efficiency improves",
+      "note": "",
+      "operator": ">=",
+      "passed": true,
+      "threshold": 2,
+      "value": 3
+    }
+  ],
+  "failure_reason": "Failed criteria: candidate reaches minimum kNN-probe accuracy, target-shuffled preexposure loses, wrong-domain preexposure loses, candidate beats best non-oracle control",
+  "generated_at_utc": "2026-04-29T19:30:58+00:00",
+  "name": "Tier 5.17c - Intrinsic Predictive Preexposure",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_17c_20260429_193054",
+  "status": "fail",
+  "summary": {
+    "candidate_min_knn_probe_accuracy": 0.5657894736842105,
+    "candidate_min_ridge_probe_accuracy": 0.7861842105263158,
+    "claim_boundary": "Noncanonical software diagnostic: intrinsic predictive preexposure under zero-label/zero-reward exposure; not hardware/on-chip representation learning or a v2.0 freeze.",
+    "expected_runs": 99,
+    "max_abs_raw_dopamine_non_oracle": 0.0,
+    "non_oracle_label_leakage_runs": 0,
+    "observed_runs": 99,
+    "reward_leakage_runs": 0,
+    "runtime_seconds": 3.5137656250000004,
+    "sample_efficiency_wins": 3,
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "tasks": [
+      "masked_channel_context",
+      "long_gap_temporal_continuation",
+      "same_visible_different_latent"
+    ],
+    "variants": [
+      "intrinsic_predictive_preexposure",
+      "no_preexposure",
+      "shuffled_time_preexposure",
+      "target_shuffled_preexposure",
+      "wrong_domain_preexposure",
+      "current_input_only",
+      "fixed_history_baseline",
+      "random_projection_history",
+      "reservoir_baseline",
+      "stdp_only_unsupervised",
+      "oracle_latent_upper_bound"
+    ]
+  }
+}

@@ -1,0 +1,134 @@
+[tier5.9b] task=delayed_cue variant=v1_4_pending_horizon seed=42
+
+             -- N E S T --
+
+ Copyright (C) 2004 The NEST Initiative
+
+ Version: 3.10.0-rc.1
+ Built  : Apr 21 2026 08:22:09
+
+ This program is provided AS IS and comes with NO WARRANTY.
+ See the file LICENSE for details.
+
+ Problems or suggestions?
+   Visit https://www.nest-simulator.org
+
+ Type 'nest.help()' to find out more about NEST.
+
+[tier5.9b] task=delayed_cue variant=macro_eligibility seed=42
+[tier5.9b] task=delayed_cue variant=macro_eligibility_shuffled seed=42
+[tier5.9b] task=delayed_cue variant=macro_eligibility_zero seed=42
+[tier5.9b] task=delayed_cue baseline=sign_persistence seed=42
+[tier5.9b] task=delayed_cue baseline=online_perceptron seed=42
+[tier5.9b] task=delayed_cue baseline=online_logistic_regression seed=42
+[tier5.9b] task=delayed_cue baseline=echo_state_network seed=42
+[tier5.9b] task=delayed_cue baseline=stdp_only_snn seed=42
+[tier5.9b] task=hard_noisy_switching variant=v1_4_pending_horizon seed=42
+[tier5.9b] task=hard_noisy_switching variant=macro_eligibility seed=42
+[tier5.9b] task=hard_noisy_switching variant=macro_eligibility_shuffled seed=42
+[tier5.9b] task=hard_noisy_switching variant=macro_eligibility_zero seed=42
+[tier5.9b] task=hard_noisy_switching baseline=sign_persistence seed=42
+[tier5.9b] task=hard_noisy_switching baseline=online_perceptron seed=42
+[tier5.9b] task=hard_noisy_switching baseline=online_logistic_regression seed=42
+[tier5.9b] task=hard_noisy_switching baseline=echo_state_network seed=42
+[tier5.9b] task=hard_noisy_switching baseline=stdp_only_snn seed=42
+[tier5.9b] task=variable_delay_cue variant=v1_4_pending_horizon seed=42
+[tier5.9b] task=variable_delay_cue variant=macro_eligibility seed=42
+[tier5.9b] task=variable_delay_cue variant=macro_eligibility_shuffled seed=42
+[tier5.9b] task=variable_delay_cue variant=macro_eligibility_zero seed=42
+[tier5.9b] task=variable_delay_cue baseline=sign_persistence seed=42
+[tier5.9b] task=variable_delay_cue baseline=online_perceptron seed=42
+[tier5.9b] task=variable_delay_cue baseline=online_logistic_regression seed=42
+[tier5.9b] task=variable_delay_cue baseline=echo_state_network seed=42
+[tier5.9b] task=variable_delay_cue baseline=stdp_only_snn seed=42
+[tier5.9b] task=aba_recurrence variant=v1_4_pending_horizon seed=42
+[tier5.9b] task=aba_recurrence variant=macro_eligibility seed=42
+[tier5.9b] task=aba_recurrence variant=macro_eligibility_shuffled seed=42
+[tier5.9b] task=aba_recurrence variant=macro_eligibility_zero seed=42
+[tier5.9b] task=aba_recurrence baseline=sign_persistence seed=42
+[tier5.9b] task=aba_recurrence baseline=online_perceptron seed=42
+[tier5.9b] task=aba_recurrence baseline=online_logistic_regression seed=42
+[tier5.9b] task=aba_recurrence baseline=echo_state_network seed=42
+[tier5.9b] task=aba_recurrence baseline=stdp_only_snn seed=42
+[tier5.9b] task=delayed_cue variant=v1_4_pending_horizon seed=43
+[tier5.9b] task=delayed_cue variant=macro_eligibility seed=43
+[tier5.9b] task=delayed_cue variant=macro_eligibility_shuffled seed=43
+[tier5.9b] task=delayed_cue variant=macro_eligibility_zero seed=43
+[tier5.9b] task=delayed_cue baseline=sign_persistence seed=43
+[tier5.9b] task=delayed_cue baseline=online_perceptron seed=43
+[tier5.9b] task=delayed_cue baseline=online_logistic_regression seed=43
+[tier5.9b] task=delayed_cue baseline=echo_state_network seed=43
+[tier5.9b] task=delayed_cue baseline=stdp_only_snn seed=43
+[tier5.9b] task=hard_noisy_switching variant=v1_4_pending_horizon seed=43
+[tier5.9b] task=hard_noisy_switching variant=macro_eligibility seed=43
+[tier5.9b] task=hard_noisy_switching variant=macro_eligibility_shuffled seed=43
+[tier5.9b] task=hard_noisy_switching variant=macro_eligibility_zero seed=43
+[tier5.9b] task=hard_noisy_switching baseline=sign_persistence seed=43
+[tier5.9b] task=hard_noisy_switching baseline=online_perceptron seed=43
+[tier5.9b] task=hard_noisy_switching baseline=online_logistic_regression seed=43
+[tier5.9b] task=hard_noisy_switching baseline=echo_state_network seed=43
+[tier5.9b] task=hard_noisy_switching baseline=stdp_only_snn seed=43
+[tier5.9b] task=variable_delay_cue variant=v1_4_pending_horizon seed=43
+[tier5.9b] task=variable_delay_cue variant=macro_eligibility seed=43
+[tier5.9b] task=variable_delay_cue variant=macro_eligibility_shuffled seed=43
+[tier5.9b] task=variable_delay_cue variant=macro_eligibility_zero seed=43
+[tier5.9b] task=variable_delay_cue baseline=sign_persistence seed=43
+[tier5.9b] task=variable_delay_cue baseline=online_perceptron seed=43
+[tier5.9b] task=variable_delay_cue baseline=online_logistic_regression seed=43
+[tier5.9b] task=variable_delay_cue baseline=echo_state_network seed=43
+[tier5.9b] task=variable_delay_cue baseline=stdp_only_snn seed=43
+[tier5.9b] task=aba_recurrence variant=v1_4_pending_horizon seed=43
+[tier5.9b] task=aba_recurrence variant=macro_eligibility seed=43
+[tier5.9b] task=aba_recurrence variant=macro_eligibility_shuffled seed=43
+[tier5.9b] task=aba_recurrence variant=macro_eligibility_zero seed=43
+[tier5.9b] task=aba_recurrence baseline=sign_persistence seed=43
+[tier5.9b] task=aba_recurrence baseline=online_perceptron seed=43
+[tier5.9b] task=aba_recurrence baseline=online_logistic_regression seed=43
+[tier5.9b] task=aba_recurrence baseline=echo_state_network seed=43
+[tier5.9b] task=aba_recurrence baseline=stdp_only_snn seed=43
+[tier5.9b] task=delayed_cue variant=v1_4_pending_horizon seed=44
+[tier5.9b] task=delayed_cue variant=macro_eligibility seed=44
+[tier5.9b] task=delayed_cue variant=macro_eligibility_shuffled seed=44
+[tier5.9b] task=delayed_cue variant=macro_eligibility_zero seed=44
+[tier5.9b] task=delayed_cue baseline=sign_persistence seed=44
+[tier5.9b] task=delayed_cue baseline=online_perceptron seed=44
+[tier5.9b] task=delayed_cue baseline=online_logistic_regression seed=44
+[tier5.9b] task=delayed_cue baseline=echo_state_network seed=44
+[tier5.9b] task=delayed_cue baseline=stdp_only_snn seed=44
+[tier5.9b] task=hard_noisy_switching variant=v1_4_pending_horizon seed=44
+[tier5.9b] task=hard_noisy_switching variant=macro_eligibility seed=44
+[tier5.9b] task=hard_noisy_switching variant=macro_eligibility_shuffled seed=44
+[tier5.9b] task=hard_noisy_switching variant=macro_eligibility_zero seed=44
+[tier5.9b] task=hard_noisy_switching baseline=sign_persistence seed=44
+[tier5.9b] task=hard_noisy_switching baseline=online_perceptron seed=44
+[tier5.9b] task=hard_noisy_switching baseline=online_logistic_regression seed=44
+[tier5.9b] task=hard_noisy_switching baseline=echo_state_network seed=44
+[tier5.9b] task=hard_noisy_switching baseline=stdp_only_snn seed=44
+[tier5.9b] task=variable_delay_cue variant=v1_4_pending_horizon seed=44
+[tier5.9b] task=variable_delay_cue variant=macro_eligibility seed=44
+[tier5.9b] task=variable_delay_cue variant=macro_eligibility_shuffled seed=44
+[tier5.9b] task=variable_delay_cue variant=macro_eligibility_zero seed=44
+[tier5.9b] task=variable_delay_cue baseline=sign_persistence seed=44
+[tier5.9b] task=variable_delay_cue baseline=online_perceptron seed=44
+[tier5.9b] task=variable_delay_cue baseline=online_logistic_regression seed=44
+[tier5.9b] task=variable_delay_cue baseline=echo_state_network seed=44
+[tier5.9b] task=variable_delay_cue baseline=stdp_only_snn seed=44
+[tier5.9b] task=aba_recurrence variant=v1_4_pending_horizon seed=44
+[tier5.9b] task=aba_recurrence variant=macro_eligibility seed=44
+[tier5.9b] task=aba_recurrence variant=macro_eligibility_shuffled seed=44
+[tier5.9b] task=aba_recurrence variant=macro_eligibility_zero seed=44
+[tier5.9b] task=aba_recurrence baseline=sign_persistence seed=44
+[tier5.9b] task=aba_recurrence baseline=online_perceptron seed=44
+[tier5.9b] task=aba_recurrence baseline=online_logistic_regression seed=44
+[tier5.9b] task=aba_recurrence baseline=echo_state_network seed=44
+[tier5.9b] task=aba_recurrence baseline=stdp_only_snn seed=44
+{
+  "status": "fail",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/macro_residual_recheck",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/macro_residual_recheck/tier5_9b_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/macro_residual_recheck/tier5_9b_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/macro_residual_recheck/tier5_9b_summary.csv",
+  "comparisons_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/macro_residual_recheck/tier5_9b_comparisons.csv",
+  "fairness_contract_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/macro_residual_recheck/tier5_9b_fairness_contract.json",
+  "failure_reason": "Failed criteria: trace ablations are worse than normal trace"
+}

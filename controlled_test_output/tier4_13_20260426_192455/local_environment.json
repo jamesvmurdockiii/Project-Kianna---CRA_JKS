@@ -1,0 +1,68 @@
+{
+  "env_flags": {
+    "EBRAINS_JOB_ID": false,
+    "JOB_ID": false,
+    "SLURM_JOB_ID": false,
+    "SPALLOC_SERVER": false,
+    "SPINNAKER_MACHINE": false
+  },
+  "generated_at_utc": "2026-04-26T23:24:55+00:00",
+  "hardware_target_configured": false,
+  "hostname": "Jamess-MacBook-Pro.local",
+  "jobmanager_cli": null,
+  "modules": [
+    {
+      "error": "",
+      "name": "pyNN.spiNNaker",
+      "ok": true,
+      "path": "/Users/james/Library/Python/3.9/lib/python/site-packages/pyNN/spiNNaker.py",
+      "version": null
+    },
+    {
+      "error": "",
+      "name": "spynnaker.pyNN",
+      "ok": true,
+      "path": "/Users/james/Library/Python/3.9/lib/python/site-packages/spynnaker/pyNN/__init__.py",
+      "version": "1!7.4.1"
+    },
+    {
+      "error": "",
+      "name": "spalloc_client",
+      "ok": true,
+      "path": "/Users/james/Library/Python/3.9/lib/python/site-packages/spalloc_client/__init__.py",
+      "version": "1!7.4.1"
+    },
+    {
+      "error": "",
+      "name": "spinnman",
+      "ok": true,
+      "path": "/Users/james/Library/Python/3.9/lib/python/site-packages/spinnman/__init__.py",
+      "version": "1!7.4.1"
+    },
+    {
+      "error": "",
+      "name": "spinn_front_end_common",
+      "ok": true,
+      "path": "/Users/james/Library/Python/3.9/lib/python/site-packages/spinn_front_end_common/__init__.py",
+      "version": "1!7.4.1"
+    }
+  ],
+  "platform": "macOS-26.3.1-arm64-arm-64bit",
+  "python": "3.9.6 (default, Mar  6 2026, 16:22:43) \n[Clang 21.0.0 (clang-2100.0.123.102)]",
+  "spalloc_cli": null,
+  "spynnaker_config": {
+    "exists": true,
+    "height": "8",
+    "machineName": "None",
+    "mode": "Production",
+    "path": "/Users/james/.spynnaker.cfg",
+    "spalloc_group": "None",
+    "spalloc_port": "22244",
+    "spalloc_server": "None",
+    "spalloc_user": "None",
+    "version": "None",
+    "virtual_board": "True",
+    "width": "8"
+  },
+  "ybug_cli": null
+}

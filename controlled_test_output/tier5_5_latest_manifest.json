@@ -1,0 +1,22 @@
+{
+  "generated_at_utc": "2026-05-04T00:05:00.980223+00:00",
+  "source_generated_at_utc": "2026-04-28T03:35:32+00:00",
+  "registry_entry_id": "tier5_5_expanded_baselines",
+  "tier": "Tier 5.5 - Expanded Baseline Suite",
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_5_20260427_222736",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_5_20260427_222736/tier5_5_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_5_20260427_222736/tier5_5_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_5_20260427_222736/tier5_5_summary.csv",
+  "canonical": true,
+  "claim": "The locked CRA v0.8 delayed-credit configuration completes the 1,800-run expanded baseline matrix, shows robust advantage regimes, and is not dominated on most hard/adaptive regimes while documenting where strong external baselines tie or win.",
+  "caveat": "Controlled software evidence only; not hardware evidence, not a hyperparameter fairness audit, not a universal superiority claim, and not proof that CRA beats the best external baseline at every horizon.",
+  "claim_boundary": [
+    "Tier 5.5 is controlled software expanded-baseline evidence, not hardware evidence.",
+    "The full run used 10 seeds, run lengths 120/240/480/960/1500, tasks fixed_pattern/delayed_cue/hard_noisy_switching/sensor_control, locked CRA v0.8, and eight implemented external baselines.",
+    "The matrix completed 1,800 runs and produced paired deltas, bootstrap confidence intervals, paired effect sizes, per-seed audit rows, runtime, sample-efficiency, recovery, and a fairness contract.",
+    "CRA shows robust advantage regimes and is not dominated on most hard/adaptive regimes; hard_noisy_switching beats the external median at 1500 steps but does not beat the best external tail score there.",
+    "Do not claim universal superiority, best-baseline dominance, real-world usefulness, hardware transfer, lifecycle/self-scaling value, or hyperparameter-fairness completion from this tier.",
+    "Tier 5.6 supersedes this as the tuned-baseline reviewer-defense audit; cite Tier 5.5 for broad matrix coverage and Tier 5.6 for retuned-baseline fairness."
+  ]
+}

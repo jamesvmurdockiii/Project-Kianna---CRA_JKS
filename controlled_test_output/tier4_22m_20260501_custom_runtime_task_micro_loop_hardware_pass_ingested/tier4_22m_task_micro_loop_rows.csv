@@ -1,0 +1,13 @@
+step,feature,target,target_sign,expected_prediction_raw,observed_prediction_raw,prediction_raw_delta,expected_prediction_sign,observed_prediction_sign,sign_correct,expected_sign_correct,expected_readout_weight_raw,observed_readout_weight_raw,state_readout_weight_raw,readout_weight_raw_delta,expected_readout_bias_raw,observed_readout_bias_raw,state_readout_bias_raw,readout_bias_raw_delta,schedule_success,mature_success,matured_count,due_timestep,state_after_schedule_success,state_after_mature_success,active_pending_after_schedule,active_pending_after_mature,pending_created_after_mature,pending_matured_after_mature,reward_events_after_mature,decisions_after_mature
+1,1.0,1.0,1,0,0,0,1,1,True,True,8192,8192,8192,0,8192,8192,8192,0,True,True,1,1291,True,True,1,0,1,1,1,1
+2,-1.0,-1.0,-1,0,0,0,1,1,False,False,16384,16384,16384,0,0,0,0,0,True,True,1,1392,True,True,1,0,2,2,2,2
+3,1.0,1.0,1,16384,16384,0,1,1,True,True,20480,20480,20480,0,4096,4096,4096,0,True,True,1,1494,True,True,1,0,3,3,3,3
+4,-1.0,-1.0,-1,-16384,-16384,0,-1,-1,True,True,24576,24576,24576,0,0,0,0,0,True,True,1,1596,True,True,1,0,4,4,4,4
+5,1.0,1.0,1,24576,24576,0,1,1,True,True,26624,26624,26624,0,2048,2048,2048,0,True,True,1,1698,True,True,1,0,5,5,5,5
+6,-1.0,-1.0,-1,-24576,-24576,0,-1,-1,True,True,28672,28672,28672,0,0,0,0,0,True,True,1,1800,True,True,1,0,6,6,6,6
+7,1.0,1.0,1,28672,28672,0,1,1,True,True,29696,29696,29696,0,1024,1024,1024,0,True,True,1,1901,True,True,1,0,7,7,7,7
+8,-1.0,-1.0,-1,-28672,-28672,0,-1,-1,True,True,30720,30720,30720,0,0,0,0,0,True,True,1,2003,True,True,1,0,8,8,8,8
+9,1.0,1.0,1,30720,30720,0,1,1,True,True,31232,31232,31232,0,512,512,512,0,True,True,1,2105,True,True,1,0,9,9,9,9
+10,-1.0,-1.0,-1,-30720,-30720,0,-1,-1,True,True,31744,31744,31744,0,0,0,0,0,True,True,1,2207,True,True,1,0,10,10,10,10
+11,1.0,1.0,1,31744,31744,0,1,1,True,True,32000,32000,32000,0,256,256,256,0,True,True,1,2308,True,True,1,0,11,11,11,11
+12,-1.0,-1.0,-1,-31744,-31744,0,-1,-1,True,True,32256,32256,32256,0,0,0,0,0,True,True,1,2410,True,True,1,0,12,12,12,12

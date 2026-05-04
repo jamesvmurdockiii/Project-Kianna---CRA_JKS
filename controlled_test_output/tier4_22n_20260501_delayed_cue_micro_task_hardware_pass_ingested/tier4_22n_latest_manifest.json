@@ -1,0 +1,11 @@
+{
+  "canonical": false,
+  "claim": "Latest Tier 4.22n tiny delayed-cue custom-runtime micro-task; pass means a tiny delayed pending-queue on-chip loop matched local fixed-point reference and task metrics only.",
+  "generated_at_utc": "2026-05-01T03:03:01+00:00",
+  "manifest": "/tmp/job7226896268484819325.tmp/tier4_22n_job_output/tier4_22n_results.json",
+  "mode": "run-hardware",
+  "output_dir": "/tmp/job7226896268484819325.tmp/tier4_22n_job_output",
+  "report": "/tmp/job7226896268484819325.tmp/tier4_22n_job_output/tier4_22n_report.md",
+  "status": "pass",
+  "tier": "Tier 4.22n - Tiny Delayed-Cue Custom-Runtime Micro-Task"
+}

@@ -1,0 +1,45 @@
+{
+  "backend": "mock",
+  "baseline": "v1_6_no_replay",
+  "candidate": "prioritized_replay",
+  "context_controls": [
+    "oracle_context",
+    "stream_context_memory",
+    "shuffled_context",
+    "memory_reset",
+    "wrong_context"
+  ],
+  "fairness_rules": [
+    "all variants use the same silent-reentry streams per seed",
+    "replay buffer contains only visible context events observed at or before replay_step",
+    "replay cycles run only after non-evaluation online steps",
+    "candidate replay selects rare/old observed contexts without reading future labels or targets",
+    "wrong-key/key-label-permuted/priority-only/no-consolidation controls match replay opportunity but remove correct-binding replay semantics",
+    "shuffled-order/random replay remain reported comparators; they do not gate promotion of the broader replay/consolidation claim",
+    "oracle and unbounded keyed controls remain upper bounds, not promoted replay mechanisms"
+  ],
+  "replay_controls": [
+    "shuffled_order_replay",
+    "random_replay",
+    "wrong_key_replay",
+    "key_label_permuted_replay",
+    "priority_only_ablation",
+    "no_consolidation_replay"
+  ],
+  "replay_offline_interval": 24,
+  "replay_selection_count": 4,
+  "seeds": [
+    42
+  ],
+  "selected_external_baselines": [
+    "sign_persistence",
+    "online_perceptron"
+  ],
+  "steps": 240,
+  "tasks": "silent_context_reentry",
+  "tier": "Tier 5.11d - Generic Replay / Consolidation Confirmation",
+  "upper_bounds": [
+    "unbounded_keyed_control",
+    "oracle_context_scaffold"
+  ]
+}

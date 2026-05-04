@@ -1,0 +1,22 @@
+{
+  "child_execution_mode": "in_process",
+  "child_runs": 2,
+  "child_runtime_seconds_mean": 279.21564924542326,
+  "child_sim_run_failures_sum": 0,
+  "child_status": "pass",
+  "child_summary_read_failures_sum": 0,
+  "child_synthetic_fallbacks_sum": 0,
+  "child_total_step_spikes_min": 94900.0,
+  "claim_boundary": "one-seed v2.1 bridge/transport evidence through chunked-host pyNN.spiNNaker path; not native v2.1/on-chip evidence",
+  "classification": "tier4_20b_v2_1_bridge_seed42_hardware_pass",
+  "hardware_run_attempted": true,
+  "runner_revision": "tier4_20b_inprocess_no_baselines_20260429_2330",
+  "seeds": [
+    42
+  ],
+  "status": "pass",
+  "tasks": [
+    "delayed_cue",
+    "hard_noisy_switching"
+  ]
+}

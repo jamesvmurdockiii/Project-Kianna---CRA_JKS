@@ -1,0 +1,37 @@
+{
+  "ablation_controls": [
+    "memory_reset_ablation",
+    "shuffled_memory_ablation",
+    "wrong_memory_ablation"
+  ],
+  "backend": "mock",
+  "candidate": "internal_context_memory",
+  "context_controls": [
+    "oracle_context",
+    "stream_context_memory",
+    "shuffled_context",
+    "memory_reset",
+    "wrong_context"
+  ],
+  "external_scaffold": "external_context_memory_scaffold",
+  "fairness_rules": [
+    "all variants use the same repaired Tier 5.10b task streams per seed",
+    "internal candidate receives raw observations and may update memory only on visible context events",
+    "internal candidate binds retained context to the later visible decision cue inside Organism",
+    "external scaffold is included only as a 5.10c capability reference",
+    "reset/shuffled/wrong-memory controls must lose the benefit before promotion",
+    "models predict before consequence feedback matures",
+    "Tier 5.10d is internal host-side context memory, not native on-chip memory"
+  ],
+  "frozen_comparator": "v1_4_raw",
+  "seeds": [
+    42
+  ],
+  "selected_external_baselines": [
+    "sign_persistence",
+    "online_perceptron"
+  ],
+  "steps": 180,
+  "tasks": "delayed_context_cue,hidden_context_recurrence",
+  "tier": "Tier 5.10d - Internal Context Memory Implementation Diagnostic"
+}

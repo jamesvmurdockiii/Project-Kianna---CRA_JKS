@@ -1,0 +1,483 @@
+{
+  "acceptance_matrix": [
+    {
+      "gate": "host_runtime_tests",
+      "hardware_claim": "none",
+      "meaning": "runtime C command/readback code compiles and host tests pass",
+      "status": "pass"
+    },
+    {
+      "gate": "compact_state_readback",
+      "hardware_claim": "none until board round-trip",
+      "meaning": "CMD_READ_STATE schema is packed and covered by host tests",
+      "status": "pass"
+    },
+    {
+      "gate": "aplx_build",
+      "hardware_claim": "none unless build status is pass and board load/command smoke later passes",
+      "meaning": "local .aplx build attempted only if spinnaker_tools are installed",
+      "status": "not_attempted_spinnaker_tools_missing"
+    },
+    {
+      "gate": "board_load_command_roundtrip",
+      "hardware_claim": "future Tier 4.22i target",
+      "meaning": "requires EBRAINS/board run",
+      "status": "not_attempted"
+    }
+  ],
+  "aplx_build": {
+    "aplx_artifact": "",
+    "attempted": false,
+    "command": "make -C coral_reef_spinnaker/spinnaker_runtime clean all",
+    "returncode": null,
+    "spinnaker_tools": "",
+    "status": "not_attempted_spinnaker_tools_missing",
+    "stderr_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_aplx_build_stderr.txt",
+    "stdout_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_aplx_build_stdout.txt"
+  },
+  "artifacts": {
+    "acceptance_matrix_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_acceptance_matrix.csv",
+    "aplx_build_stderr": "/Users/james/JKS:CRA/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_aplx_build_stderr.txt",
+    "aplx_build_stdout": "/Users/james/JKS:CRA/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_aplx_build_stdout.txt",
+    "host_test_stderr": "/Users/james/JKS:CRA/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_host_test_stderr.txt",
+    "host_test_stdout": "/Users/james/JKS:CRA/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_host_test_stdout.txt",
+    "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_results.json",
+    "readback_schema_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_readback_schema.csv",
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_report.md",
+    "static_checks_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_static_checks.csv"
+  },
+  "criteria": [
+    {
+      "name": "runner revision current",
+      "note": "",
+      "passed": true,
+      "rule": "expected current source",
+      "value": "tier4_22h_compact_readback_acceptance_20260430_0006"
+    },
+    {
+      "name": "Tier 4.22g optimization pass exists",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "custom C host tests pass",
+      "note": "",
+      "passed": true,
+      "rule": "returncode == 0 and ALL TESTS PASSED",
+      "value": 0
+    },
+    {
+      "name": "all static readback checks pass",
+      "note": "",
+      "passed": true,
+      "rule": "all pass",
+      "value": "30/30"
+    },
+    {
+      "name": "compact readback schema <= SDP payload",
+      "note": "",
+      "passed": true,
+      "rule": "<= 255 bytes",
+      "value": 73
+    },
+    {
+      "name": "APLX build status recorded honestly",
+      "note": "",
+      "passed": true,
+      "rule": "pass or not_attempted_spinnaker_tools_missing",
+      "value": "not_attempted_spinnaker_tools_missing"
+    },
+    {
+      "name": "board load/command roundtrip not overclaimed",
+      "note": "",
+      "passed": true,
+      "rule": "not_attempted locally",
+      "value": "not_attempted"
+    },
+    {
+      "name": "custom-runtime learning hardware remains blocked",
+      "note": "",
+      "passed": true,
+      "rule": "False until board command roundtrip passes",
+      "value": false
+    }
+  ],
+  "failure_reason": "",
+  "generated_at_utc": "2026-04-30T23:43:56+00:00",
+  "host_test": {
+    "command": "make -C /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime clean-host test",
+    "returncode": 0,
+    "stderr_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_host_test_stderr.txt",
+    "stdout_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_host_test_stdout.txt"
+  },
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance",
+  "readback_schema": [
+    {
+      "byte_offset": "0",
+      "field": "cmd",
+      "meaning": "CMD_READ_STATE",
+      "type": "u8"
+    },
+    {
+      "byte_offset": "1",
+      "field": "status",
+      "meaning": "0 = ok",
+      "type": "u8"
+    },
+    {
+      "byte_offset": "2",
+      "field": "schema_version",
+      "meaning": "1",
+      "type": "u8"
+    },
+    {
+      "byte_offset": "3",
+      "field": "reserved",
+      "meaning": "reserved/alignment",
+      "type": "u8"
+    },
+    {
+      "byte_offset": "4",
+      "field": "timestep",
+      "meaning": "runtime timestep",
+      "type": "u32"
+    },
+    {
+      "byte_offset": "8",
+      "field": "neuron_count",
+      "meaning": "live neurons",
+      "type": "u32"
+    },
+    {
+      "byte_offset": "12",
+      "field": "synapse_count",
+      "meaning": "live synapses",
+      "type": "u32"
+    },
+    {
+      "byte_offset": "16",
+      "field": "active_trace_count",
+      "meaning": "active eligibility traces",
+      "type": "u32"
+    },
+    {
+      "byte_offset": "20",
+      "field": "active_slots",
+      "meaning": "active context slots",
+      "type": "u32"
+    },
+    {
+      "byte_offset": "24",
+      "field": "slot_writes",
+      "meaning": "context writes",
+      "type": "u32"
+    },
+    {
+      "byte_offset": "28",
+      "field": "slot_hits",
+      "meaning": "context hits",
+      "type": "u32"
+    },
+    {
+      "byte_offset": "32",
+      "field": "slot_misses",
+      "meaning": "context misses",
+      "type": "u32"
+    },
+    {
+      "byte_offset": "36",
+      "field": "slot_evictions",
+      "meaning": "context evictions",
+      "type": "u32"
+    },
+    {
+      "byte_offset": "40",
+      "field": "decisions",
+      "meaning": "readout decisions",
+      "type": "u32"
+    },
+    {
+      "byte_offset": "44",
+      "field": "reward_events",
+      "meaning": "reward events",
+      "type": "u32"
+    },
+    {
+      "byte_offset": "48",
+      "field": "pending_created",
+      "meaning": "pending horizons created",
+      "type": "u32"
+    },
+    {
+      "byte_offset": "52",
+      "field": "pending_matured",
+      "meaning": "pending horizons matured",
+      "type": "u32"
+    },
+    {
+      "byte_offset": "56",
+      "field": "pending_dropped",
+      "meaning": "pending horizons dropped",
+      "type": "u32"
+    },
+    {
+      "byte_offset": "60",
+      "field": "active_pending",
+      "meaning": "active pending horizons",
+      "type": "u32"
+    },
+    {
+      "byte_offset": "64",
+      "field": "readout_weight",
+      "meaning": "s16.15 readout weight",
+      "type": "s32"
+    },
+    {
+      "byte_offset": "68",
+      "field": "readout_bias",
+      "meaning": "s16.15 readout bias",
+      "type": "s32"
+    },
+    {
+      "byte_offset": "72",
+      "field": "flags",
+      "meaning": "reserved",
+      "type": "u8"
+    }
+  ],
+  "static_checks": [
+    {
+      "name": "CMD_READ_STATE defined",
+      "note": "",
+      "passed": true,
+      "rule": "config.h defines opcode",
+      "value": "CMD_READ_STATE 8"
+    },
+    {
+      "name": "CMD_READ_STATE tested",
+      "note": "",
+      "passed": true,
+      "rule": "host tests cover opcode",
+      "value": "assert(CMD_READ_STATE == 8)"
+    },
+    {
+      "name": "state summary pack API declared",
+      "note": "",
+      "passed": true,
+      "rule": "declared in host_interface.h",
+      "value": "host_if_pack_state_summary"
+    },
+    {
+      "name": "state summary pack API implemented",
+      "note": "",
+      "passed": true,
+      "rule": "implemented in host_interface.c",
+      "value": "host_if_pack_state_summary"
+    },
+    {
+      "name": "state summary command handler exists",
+      "note": "",
+      "passed": true,
+      "rule": "implemented in host_interface.c",
+      "value": "_handle_read_state"
+    },
+    {
+      "name": "state summary command dispatched",
+      "note": "",
+      "passed": true,
+      "rule": "sdp switch dispatches read-state",
+      "value": "case CMD_READ_STATE"
+    },
+    {
+      "name": "state summary includes timestep",
+      "note": "",
+      "passed": true,
+      "rule": "packed into payload",
+      "value": "g_timestep"
+    },
+    {
+      "name": "state summary includes neuron/synapse/trace counts",
+      "note": "",
+      "passed": true,
+      "rule": "packed into payload",
+      "value": "neuron_count/synapse_count/synapse_active_trace_count"
+    },
+    {
+      "name": "state summary includes context counters",
+      "note": "",
+      "passed": true,
+      "rule": "packed into payload",
+      "value": "active_slots/slot_writes/hits/misses/evictions"
+    },
+    {
+      "name": "state summary includes decision/reward counters",
+      "note": "",
+      "passed": true,
+      "rule": "packed into payload",
+      "value": "decisions/reward_events"
+    },
+    {
+      "name": "state summary includes pending horizon counters",
+      "note": "",
+      "passed": true,
+      "rule": "packed into payload",
+      "value": "pending_created/matured/dropped/active_pending"
+    },
+    {
+      "name": "state summary includes readout state",
+      "note": "",
+      "passed": true,
+      "rule": "packed into payload",
+      "value": "readout_weight/readout_bias"
+    },
+    {
+      "name": "state summary stays SDP compact",
+      "note": "",
+      "passed": true,
+      "rule": "<= 255 byte payload",
+      "value": "73 bytes"
+    },
+    {
+      "name": "host test covers compact summary",
+      "note": "",
+      "passed": true,
+      "rule": "test_runtime.c exercises pack fields",
+      "value": "test_host_state_summary_pack"
+    },
+    {
+      "name": "runtime Makefile has aplx target",
+      "note": "",
+      "passed": true,
+      "rule": "build path declared",
+      "value": "all hardware aplx"
+    },
+    {
+      "name": "official MC no-payload callback registered",
+      "note": "",
+      "passed": true,
+      "rule": "main.c registers official Spin1API enum event confirmed by Tier 4.22k",
+      "value": "MC_PACKET_RECEIVED"
+    },
+    {
+      "name": "official MC payload callback registered",
+      "note": "",
+      "passed": true,
+      "rule": "main.c registers official Spin1API enum event confirmed by Tier 4.22k",
+      "value": "MCPL_PACKET_RECEIVED"
+    },
+    {
+      "name": "no brittle legacy MC_PACKET_RX callback",
+      "note": "",
+      "passed": true,
+      "rule": "legacy guessed event name is not used",
+      "value": "MC_PACKET_RX absent"
+    },
+    {
+      "name": "host stub mirrors official MC event names",
+      "note": "",
+      "passed": true,
+      "rule": "local syntax guard exposes official enum names and omits legacy guessed names",
+      "value": "MC_PACKET_RECEIVED/MCPL_PACKET_RECEIVED"
+    },
+    {
+      "name": "SDP reply uses packed official sdp_msg_t fields",
+      "note": "",
+      "passed": true,
+      "rule": "host_interface.c mirrors real SARK SDP struct field names",
+      "value": "dest_port/srce_port/dest_addr/srce_addr"
+    },
+    {
+      "name": "SDP reply uses SARK memory copy API",
+      "note": "",
+      "passed": true,
+      "rule": "real spinnaker_tools exposes sark_mem_cpy, not sark_memcpy",
+      "value": "sark_mem_cpy"
+    },
+    {
+      "name": "router header includes stdint directly",
+      "note": "",
+      "passed": true,
+      "rule": "router.h must not rely on indirect EBRAINS header includes for uint32_t",
+      "value": "#include <stdint.h>"
+    },
+    {
+      "name": "router uses official SARK router API",
+      "note": "",
+      "passed": true,
+      "rule": "real spinnaker_tools exposes official rtr_* router calls",
+      "value": "rtr_alloc/rtr_mc_set/rtr_free"
+    },
+    {
+      "name": "deprecated local-only router helpers absent",
+      "note": "",
+      "passed": true,
+      "rule": "local stubs must not hide EBRAINS SARK API drift",
+      "value": "sark_router_alloc/sark_router_free absent"
+    },
+    {
+      "name": "host stub mirrors official router API",
+      "note": "",
+      "passed": true,
+      "rule": "local syntax guard exposes official SARK router names",
+      "value": "rtr_alloc/rtr_mc_set/rtr_free"
+    },
+    {
+      "name": "hardware build uses official spinnaker_tools.mk",
+      "note": "",
+      "passed": true,
+      "rule": "official build chain supplies cpu_reset, build object, spin1_api library, and APLX section packing",
+      "value": "spinnaker_tools.mk"
+    },
+    {
+      "name": "hardware build avoids deprecated Makefile.common include",
+      "note": "",
+      "passed": true,
+      "rule": "Makefile.common inclusion lacks the app build rules needed for APLX creation",
+      "value": "Makefile.common absent"
+    },
+    {
+      "name": "hardware build avoids manual direct linker recipe",
+      "note": "",
+      "passed": true,
+      "rule": "manual object-only link produced empty ELF without cpu_reset/startup sections on EBRAINS",
+      "value": "no direct $(LD) object-only link"
+    },
+    {
+      "name": "hardware output stays under build directory",
+      "note": "",
+      "passed": true,
+      "rule": "runner expects build/coral_reef.aplx",
+      "value": "APP_OUTPUT_DIR := build/"
+    },
+    {
+      "name": "hardware build creates nested object directories",
+      "note": "",
+      "passed": true,
+      "rule": "spinnaker_tools.mk writes build/gnu/src/*.o and does not create nested source subdirectories itself",
+      "value": "$(OBJECTS): | $(OBJECT_DIRS)"
+    }
+  ],
+  "status": "pass",
+  "summary": {
+    "aplx_artifact": "",
+    "aplx_build_attempted": false,
+    "aplx_build_status": "not_attempted_spinnaker_tools_missing",
+    "board_load_command_roundtrip_status": "not_attempted",
+    "claim_boundary": "Local compact-readback/build-readiness only; not hardware, board command round-trip, speedup, or custom-runtime learning evidence.",
+    "compact_readback_command": "CMD_READ_STATE",
+    "compact_readback_payload_bytes": 73,
+    "custom_runtime_learning_hardware_allowed": false,
+    "host_test_returncode": 0,
+    "host_tests_passed": true,
+    "next_step_if_passed": "Tier 4.22i tiny EBRAINS/board custom-runtime load + CMD_READ_STATE round-trip smoke, then minimal closed-loop learning only if that passes.",
+    "readback_schema_version": 1,
+    "runner_revision": "tier4_22h_compact_readback_acceptance_20260430_0006",
+    "static_checks_passed": 30,
+    "static_checks_total": 30,
+    "tier4_22g_manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_22g_20260430_event_indexed_trace_runtime/tier4_22g_results.json",
+    "tier4_22g_status": "pass"
+  },
+  "tier": "Tier 4.22h - Compact Readback / Build-Command Readiness"
+}

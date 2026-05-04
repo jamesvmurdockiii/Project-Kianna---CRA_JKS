@@ -1,0 +1,32 @@
+[tier5.14] starting memory/context-binding subsuite
+[tier5.10g] task=intervening_contexts variant=v1_4_raw seed=42
+[tier5.10g] task=intervening_contexts variant=v1_5_single_slot seed=42
+[tier5.10g] task=intervening_contexts variant=oracle_keyed_scaffold seed=42
+[tier5.10g] task=intervening_contexts variant=keyed_context_memory seed=42
+[tier5.10g] task=intervening_contexts variant=slot_reset_ablation seed=42
+[tier5.10g] task=intervening_contexts variant=slot_shuffle_ablation seed=42
+[tier5.10g] task=intervening_contexts variant=wrong_key_ablation seed=42
+[tier5.10g] task=intervening_contexts variant=overcapacity_keyed_memory seed=42
+[tier5.10g] task=intervening_contexts model=sign_persistence seed=42
+[tier5.10g] task=intervening_contexts model=online_perceptron seed=42
+[tier5.10g] task=intervening_contexts control=oracle_context seed=42
+[tier5.10g] task=intervening_contexts control=stream_context_memory seed=42
+[tier5.10g] task=intervening_contexts control=shuffled_context seed=42
+[tier5.10g] task=intervening_contexts control=memory_reset seed=42
+[tier5.10g] task=intervening_contexts control=wrong_context seed=42
+[tier5.14] starting module-state/routing subsuite
+[tier5.14] subsuite=routing task=heldout_context_routing variant=v1_8_raw_cra seed=42
+[tier5.14] subsuite=routing task=heldout_context_routing variant=internal_composition_routing seed=42
+[tier5.14] subsuite=routing task=heldout_context_routing variant=internal_no_write_ablation seed=42
+[tier5.14] subsuite=routing task=heldout_context_routing variant=internal_router_reset_ablation seed=42
+[tier5.14] subsuite=routing task=heldout_context_routing variant=internal_context_shuffle_ablation seed=42
+[tier5.14] subsuite=routing task=heldout_context_routing variant=internal_random_router_ablation seed=42
+[tier5.14] subsuite=routing task=heldout_context_routing variant=internal_always_on_ablation seed=42
+[tier5.14] subsuite=routing task=heldout_context_routing scaffold=contextual_router_scaffold seed=42
+[tier5.14] subsuite=routing task=heldout_context_routing model=sign_persistence seed=42
+[tier5.14] subsuite=routing task=heldout_context_routing model=online_perceptron seed=42
+{
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail",
+  "failure_reason": ""
+}

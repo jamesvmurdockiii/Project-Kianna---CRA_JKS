@@ -1,0 +1,42 @@
+{
+  "tier": "Tier 4.28e \u2014 Native Failure-Envelope Report",
+  "runner_revision": "tier4_28e_native_failure_envelope_20260503_0001",
+  "generated_at_utc": "2026-05-03T19:29:00.000000+00:00",
+  "mode": "boundary-confirmation",
+  "status": "boundary_confirmed",
+  "output_dir": "controlled_test_output/tier4_28e_pointB_20260503_boundary_confirmed",
+  "hardware_output_dir": "controlled_test_output/tier4_28e_pointB_20260503_boundary_confirmed",
+  "params": {
+    "steps": 160,
+    "seed": 42,
+    "min_delay": 3,
+    "max_delay": 5,
+    "noise_prob": 0.2,
+    "min_switch": 32,
+    "max_switch": 48
+  },
+  "pressure": {
+    "event_count": 78,
+    "context_slots_used": 78,
+    "max_concurrent_pending": 5,
+    "predicted": "fail",
+    "limit_reason": "schedule_overflow (78 > 64)"
+  },
+  "boundary_confirmation": {
+    "predicted_failure": "schedule_overflow",
+    "observed_failure": "schedule_overflow",
+    "max_schedule_entries": 64,
+    "schedule_uploads_succeeded": 64,
+    "schedule_uploads_failed": 14,
+    "pending_created": 64,
+    "pending_matured": 64,
+    "lookup_requests": 192,
+    "lookup_replies": 192,
+    "board": "10.11.193.129",
+    "prediction_match": true
+  },
+  "summary": {
+    "status": "boundary_confirmed",
+    "note": "Point B is a predicted-failure probe. The local sweep predicted schedule_overflow at 78 events (>64 MAX_SCHEDULE_ENTRIES). Hardware confirmed: indices 0-63 uploaded successfully, indices 64-77 rejected. learning_core pending_created=64 (capped at limit), lookup_requests=192 (64*3). No crashes, no exceptions, no stale replies, no timeouts. This confirms the runtime boundary and is preserved as noncanonical diagnostic evidence."
+  }
+}

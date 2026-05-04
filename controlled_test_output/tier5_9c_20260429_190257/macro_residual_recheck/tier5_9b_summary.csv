@@ -1,0 +1,13 @@
+task,model,model_family,variant_group,runs,steps,tail_accuracy_mean,tail_accuracy_std,all_accuracy_mean,prediction_target_corr_mean,tail_prediction_target_corr_mean,mean_recovery_steps,runtime_seconds_mean,evaluation_count_mean,macro_trace_active_steps_sum,macro_matured_updates_sum_sum,macro_trace_abs_sum_mean_mean,configured_horizon_bars_mean,configured_delayed_readout_lr_mean,configured_macro_eligibility_decay_mean,configured_macro_eligibility_residual_scale_mean,configured_macro_eligibility_trace_clip_mean
+delayed_cue,macro_eligibility,CRA,candidate,1,160,1.0,0.0,0.95,0.8961835970379942,0.9932442433813131,,0.38657937499999995,20.0,160.0,88.0,3.359860462470361,5.0,0.2,0.92,0.1,1.0
+delayed_cue,macro_eligibility_shuffled,CRA,trace_ablation,1,160,1.0,0.0,0.95,0.8961835970379942,0.9932442433813131,,0.3869868339999998,20.0,160.0,88.0,3.359860462470361,5.0,0.2,0.92,0.1,1.0
+delayed_cue,macro_eligibility_zero,CRA,trace_ablation,1,160,1.0,0.0,0.95,0.8961835970379942,0.9932442433813131,,0.3881714169999997,20.0,160.0,0.0,3.359860462470361,5.0,0.2,0.92,0.1,1.0
+delayed_cue,online_perceptron,linear,,1,160,1.0,0.0,0.9,0.9486832980505137,1.0,,0.0008737500000002285,20.0,,,,,,,,
+delayed_cue,sign_persistence,rule,,1,160,0.0,0.0,0.0,-0.9999999999999998,-0.9999999999999999,,0.0007369169999997816,20.0,,,,,,,,
+delayed_cue,v1_4_pending_horizon,CRA,frozen_baseline,1,160,1.0,0.0,0.95,0.8961835970379942,0.9932442433813131,,0.38455550000000005,20.0,0.0,0.0,0.0,5.0,0.2,0.92,0.1,1.0
+variable_delay_cue,macro_eligibility,CRA,candidate,1,160,1.0,0.0,0.6842105263157895,0.6168255097496627,0.9484855577742175,,0.41533620900000034,19.0,160.0,128.0,2.6023637614219117,10.0,0.2,0.92,0.1,1.0
+variable_delay_cue,macro_eligibility_shuffled,CRA,trace_ablation,1,160,1.0,0.0,0.6842105263157895,0.6168255097496627,0.9484855577742175,,0.3758757090000002,19.0,160.0,128.0,2.6023637614219117,10.0,0.2,0.92,0.1,1.0
+variable_delay_cue,macro_eligibility_zero,CRA,trace_ablation,1,160,1.0,0.0,0.6842105263157895,0.6168255097496627,0.9484855577742175,,0.37294316699999985,19.0,160.0,0.0,2.6023637614219117,10.0,0.2,0.92,0.1,1.0
+variable_delay_cue,online_perceptron,linear,,1,160,1.0,0.0,0.8947368421052632,0.9457507306074071,1.0,,0.0008259579999991828,19.0,,,,,,,,
+variable_delay_cue,sign_persistence,rule,,1,160,0.0,0.0,0.0,-1.0,-0.9999999999999998,,0.000849957999999873,19.0,,,,,,,,
+variable_delay_cue,v1_4_pending_horizon,CRA,frozen_baseline,1,160,1.0,0.0,0.6842105263157895,0.6168255097496627,0.9484855577742175,,0.3715102090000002,19.0,0.0,0.0,0.0,10.0,0.2,0.92,0.1,1.0

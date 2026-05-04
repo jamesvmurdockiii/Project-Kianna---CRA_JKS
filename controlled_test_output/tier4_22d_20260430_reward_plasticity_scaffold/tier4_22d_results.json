@@ -1,0 +1,204 @@
+{
+  "artifacts": {
+    "host_test_stderr": "/Users/james/JKS:CRA/controlled_test_output/tier4_22d_20260430_reward_plasticity_scaffold/tier4_22d_host_test_stderr.txt",
+    "host_test_stdout": "/Users/james/JKS:CRA/controlled_test_output/tier4_22d_20260430_reward_plasticity_scaffold/tier4_22d_host_test_stdout.txt",
+    "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_22d_20260430_reward_plasticity_scaffold/tier4_22d_results.json",
+    "plasticity_contract_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22d_20260430_reward_plasticity_scaffold/tier4_22d_plasticity_contract.csv",
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_22d_20260430_reward_plasticity_scaffold/tier4_22d_report.md",
+    "static_compliance_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22d_20260430_reward_plasticity_scaffold/tier4_22d_static_compliance.csv"
+  },
+  "criteria": [
+    {
+      "name": "runner revision current",
+      "note": "",
+      "passed": true,
+      "rule": "expected current source",
+      "value": "tier4_22d_reward_plasticity_scaffold_20260430_0000"
+    },
+    {
+      "name": "Tier 4.22c persistent state pass exists",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "custom C host tests pass",
+      "note": "",
+      "passed": true,
+      "rule": "returncode == 0 and ALL TESTS PASSED",
+      "value": 0
+    },
+    {
+      "name": "all static plasticity checks pass",
+      "note": "",
+      "passed": true,
+      "rule": "all pass",
+      "value": "11/11"
+    },
+    {
+      "name": "dopamine is trace-gated",
+      "note": "",
+      "passed": true,
+      "rule": "required causal rule",
+      "value": "dopamine * eligibility_trace"
+    },
+    {
+      "name": "dopamine can be negative",
+      "note": "",
+      "passed": true,
+      "rule": "signed fixed-point reward",
+      "value": "int32_t"
+    },
+    {
+      "name": "claim boundary explicit",
+      "note": "",
+      "passed": true,
+      "rule": "not hardware/parity/speedup",
+      "value": "local scaffold only"
+    }
+  ],
+  "failure_reason": "",
+  "generated_at_utc": "2026-04-30T18:45:12+00:00",
+  "host_test": {
+    "command": "make -C /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime clean-host test",
+    "returncode": 0,
+    "stderr_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22d_20260430_reward_plasticity_scaffold/tier4_22d_host_test_stderr.txt",
+    "stdout_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22d_20260430_reward_plasticity_scaffold/tier4_22d_host_test_stdout.txt"
+  },
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_22d_20260430_reward_plasticity_scaffold",
+  "plasticity_contract": [
+    {
+      "causal_rule": "trace increments when a pre-synaptic spike is delivered to a post-synaptic target",
+      "current_gate": "host C unit tests and static checks",
+      "future_gate": "hardware build/run and learning parity against chunked reference",
+      "implementation": "eligibility_trace field on synapse_t",
+      "mechanism": "synaptic_eligibility_trace",
+      "runtime_owner": "custom_c_runtime"
+    },
+    {
+      "causal_rule": "dopamine without a causal trace does not move the weight",
+      "current_gate": "host C unit tests and static checks",
+      "future_gate": "reward timing/parity under continuous task streams",
+      "implementation": "delta_w = dopamine_level * eligibility_trace",
+      "mechanism": "trace_gated_dopamine",
+      "runtime_owner": "custom_c_runtime"
+    },
+    {
+      "causal_rule": "traces decay on the runtime timer path",
+      "current_gate": "host C unit tests and static checks",
+      "future_gate": "scale audit to avoid sweeping all synapses at unacceptable sizes",
+      "implementation": "synapse_decay_traces_all(DEFAULT_ELIGIBILITY_DECAY)",
+      "mechanism": "fixed_point_trace_decay",
+      "runtime_owner": "custom_c_runtime"
+    },
+    {
+      "causal_rule": "reward updates fixed-point readout weight and bias from last feature/prediction",
+      "current_gate": "host C unit tests and static checks",
+      "future_gate": "compare behavior against v2.1/chunked reference on delayed_cue and hard_noisy_switching",
+      "implementation": "cra_state_apply_reward_to_readout",
+      "mechanism": "readout_reward_update",
+      "runtime_owner": "custom_c_runtime"
+    }
+  ],
+  "static_checks": [
+    {
+      "name": "eligibility trace field exists",
+      "note": "",
+      "passed": true,
+      "rule": "in synapse_t",
+      "value": "eligibility_trace"
+    },
+    {
+      "name": "trace constants defined",
+      "note": "",
+      "passed": true,
+      "rule": "in config.h",
+      "value": "DEFAULT_ELIGIBILITY_DECAY/DEFAULT_TRACE_INCREMENT/MAX_ELIGIBILITY_TRACE"
+    },
+    {
+      "name": "trace increments on spike delivery",
+      "note": "",
+      "passed": true,
+      "rule": "increments eligibility trace",
+      "value": "synapse_deliver_spike"
+    },
+    {
+      "name": "trace decay function exists",
+      "note": "",
+      "passed": true,
+      "rule": "declared and implemented",
+      "value": "synapse_decay_traces_all"
+    },
+    {
+      "name": "dopamine is trace-gated",
+      "note": "",
+      "passed": true,
+      "rule": "dopamine * trace",
+      "value": "delta_w = FP_MUL(dopamine_level, s->eligibility_trace)"
+    },
+    {
+      "name": "dopamine path is one-shot",
+      "note": "",
+      "passed": true,
+      "rule": "main clears after modulation",
+      "value": "g_dopamine_level = 0"
+    },
+    {
+      "name": "timer decays traces",
+      "note": "",
+      "passed": true,
+      "rule": "main decays traces each timer tick",
+      "value": "DEFAULT_ELIGIBILITY_DECAY"
+    },
+    {
+      "name": "dopamine signed fixed-point",
+      "note": "",
+      "passed": true,
+      "rule": "supports negative reward",
+      "value": "int32_t g_dopamine_level"
+    },
+    {
+      "name": "runtime readout reward update exists",
+      "note": "",
+      "passed": true,
+      "rule": "declared and implemented",
+      "value": "cra_state_apply_reward_to_readout"
+    },
+    {
+      "name": "eligibility host test exists",
+      "note": "",
+      "passed": true,
+      "rule": "test_runtime.c covers trace-gated dopamine",
+      "value": "test_synapse_eligibility_modulation"
+    },
+    {
+      "name": "reward readout host test exists",
+      "note": "",
+      "passed": true,
+      "rule": "test_runtime.c covers reward update",
+      "value": "test_state_reward_readout_update"
+    }
+  ],
+  "status": "pass",
+  "summary": {
+    "claim_boundary": "Reward/plasticity scaffold only; not hardware, continuous-learning parity, speedup, or scale-ready all-synapse trace optimization evidence.",
+    "host_test_returncode": 0,
+    "host_tests_passed": true,
+    "mechanisms": [
+      "synaptic_eligibility_trace",
+      "trace_gated_dopamine",
+      "fixed_point_trace_decay",
+      "readout_reward_update"
+    ],
+    "next_step_if_passed": "Tier 4.22e local continuous-learning parity: compare this runtime reward/plasticity path against chunked reference before any new EBRAINS run.",
+    "north_star": "full custom/on-chip CRA runtime; hybrid host paths are transitional diagnostics",
+    "plasticity_owner": "custom_c_runtime",
+    "runner_revision": "tier4_22d_reward_plasticity_scaffold_20260430_0000",
+    "static_checks_passed": 11,
+    "static_checks_total": 11,
+    "tier4_22c_manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_22c_20260430_persistent_state_scaffold/tier4_22c_results.json",
+    "tier4_22c_status": "pass"
+  },
+  "tier": "Tier 4.22d - Reward/Plasticity Runtime Scaffold"
+}

@@ -1,0 +1,106 @@
+{
+  "tier": "Tier 4.24b / 4.25-Preflight \u2014 EBRAINS Build/Size Resource Capture",
+  "runner_revision": "tier4_24b_build_size_capture_20260501_0001",
+  "generated_at_utc": "2026-05-02T03:31:09.219725+00:00",
+  "mode": "run-hardware",
+  "status": "pass",
+  "output_dir": "tier4_24b_job_output",
+  "criteria": [
+    {
+      "name": "runner revision current",
+      "value": "tier4_24b_build_size_capture_20260501_0001",
+      "rule": "expected current source",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "build succeeded",
+      "value": 0,
+      "rule": "== 0",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": ".aplx exists and non-zero",
+      "value": 13684,
+      "rule": "> 0",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": ".elf exists and non-zero",
+      "value": 240892,
+      "rule": "> 0",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "size tool found",
+      "value": "/usr/bin/arm-none-eabi-size",
+      "rule": "non-empty",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "text section measured and non-zero",
+      "value": 13608,
+      "rule": "> 0",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "data section measured",
+      "value": 12,
+      "rule": ">= 0",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "bss section measured",
+      "value": 6813,
+      "rule": ">= 0",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "runtime profile is decoupled_memory_route",
+      "value": "decoupled_memory_route",
+      "rule": "== decoupled_memory_route",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "load captured or skipped",
+      "value": "skipped",
+      "rule": "in {pass, skipped, no_target, no_binary}",
+      "passed": true,
+      "note": ""
+    }
+  ],
+  "build_metrics": {
+    "build_time_seconds": 0.0,
+    "build_returncode": 0,
+    "build_stdout": "make: Entering directory '/tmp/job14962184147325749693.tmp/cra_424c/coral_reef_spinnaker/spinnaker_runtime'\nrm -rf build/gnu/ tests/test_runtime\nmkdir -p build/gnu/src/\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -o build/gnu/src/main.o src/main.c\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -o build/gnu/src/state_manager.o src/state_manager.c\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -o build/gnu/src/host_interface.o src/host_interface.c\nmkdir -p build/gnu/\n/home/jovyan/spinnaker/spinnaker_tools/tools/mkbuild coral_reef > build/gnu/coral_reef_build.c\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1   -c -o build/gnu/coral_reef_build.o build/gnu/coral_reef_build.c\n# spinnaker_tools.mk elf\narm-none-eabi-gcc -T/home/jovyan/spinnaker/spinnaker_tools/tools/sark.lnk -Wl,-e,cpu_reset -Wl,-static -ffreestanding -fdata-sections -ffunction-sections -Wl,--gc-sections -Wl,--use-blx -nostartfiles -static -L /home/jovyan/spinnaker/spinnaker_tools/lib build/gnu/src/main.o build/gnu/src/state_manager.o build/gnu/src/host_interface.o build/gnu/coral_reef_build.o  /home/jovyan/spinnaker/spinnaker_tools/lib/libspin1_api.a -o build/gnu/coral_reef.elf\narm-none-eabi-objdump -dxt > build/gnu/coral_reef.txt build/gnu/coral_reef.elf\narm-none-eabi-objcopy -O binary -j RO_DATA -j EX_DATA build/gnu/coral_reef.elf build/gnu/RO_DATA.bin\narm-none-eabi-objcopy -O binary -j RW_DATA build/gnu/coral_reef.elf build/gnu/RW_DATA.bin\nls -l build/gnu/RO_DATA.bin\n-rwxr-xr-x 1 jovyan users 13608 May  2 04:31 build/gnu/RO_DATA.bin\n/home/jovyan/spinnaker/spinnaker_tools/tools/mkbin build/gnu/RO_DATA.bin build/gnu/RW_DATA.bin > build/gnu/coral_reef.bin\nrm -f build/gnu/RO_DATA.bin build/gnu/RW_DATA.bin\narm-none-eabi-nm build/gnu/coral_reef.elf > build/gnu/coral_reef.nm\nmkdir -p build/\n/home/jovyan/spinnaker/spinnaker_tools/tools/mkaplx build/gnu/coral_reef.nm | cat - build/gnu/coral_reef.bin > build/coral_reef.aplx\nrm build/gnu/coral_reef.bin build/gnu/coral_reef.nm build/gnu/coral_reef_build.c build/gnu/coral_reef_build.o\nmake: Leaving directory '/tmp/job14962184147325749693.tmp/cra_424c/coral_reef_spinnaker/spinnaker_runtime'\n",
+    "build_stderr": "",
+    "aplx_size_bytes": 13684,
+    "elf_size_bytes": 240892,
+    "size_info": {
+      "command_found": true,
+      "text": 13608,
+      "data": 12,
+      "bss": 6813,
+      "total": 20433,
+      "raw": "   text\t   data\t    bss\t    dec\t    hex\tfilename\n  13608\t     12\t   6813\t  20433\t   4fd1\t/tmp/job14962184147325749693.tmp/cra_424c/coral_reef_spinnaker/spinnaker_runtime/build/gnu/coral_reef.elf\n"
+    },
+    "aplx_path": "/tmp/job14962184147325749693.tmp/cra_424c/coral_reef_spinnaker/spinnaker_runtime/build/coral_reef.aplx",
+    "elf_path": "/tmp/job14962184147325749693.tmp/cra_424c/coral_reef_spinnaker/spinnaker_runtime/build/gnu/coral_reef.elf",
+    "elf_path_actual": "/tmp/job14962184147325749693.tmp/cra_424c/coral_reef_spinnaker/spinnaker_runtime/build/gnu/coral_reef.elf",
+    "tools_detected": true,
+    "size_tool_path": "/usr/bin/arm-none-eabi-size",
+    "runtime_profile": "decoupled_memory_route"
+  },
+  "load_metrics": {
+    "status": "skipped",
+    "reason": "--skip-load set"
+  }
+}

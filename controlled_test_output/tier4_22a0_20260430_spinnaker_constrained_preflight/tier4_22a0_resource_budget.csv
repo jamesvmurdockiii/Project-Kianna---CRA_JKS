@@ -1,0 +1,11 @@
+item,current,limit,status,note,quantized
+population_neurons,8,4335,pass,N=8 bridge population should map far below one-chip limits.,
+planned_all_to_all_connections_budget_probe,64,30208,pass,"Conservative planning row; current bridge uses StepCurrentSource, not recurrent Projection.",
+keyed_context_slots,4,16,pass,Dynamic dict semantics must remain bounded before chip/hybrid state work.,
+fixed_point_weight_quantization_probe,-1.2,"[-1.0, 1.0)",pass,Records the fixed-point clipping/rounding contract used for future runtime parity.,-1.0
+fixed_point_weight_quantization_probe,-1.0,"[-1.0, 1.0)",pass,Records the fixed-point clipping/rounding contract used for future runtime parity.,-1.0
+fixed_point_weight_quantization_probe,-0.12345,"[-1.0, 1.0)",pass,Records the fixed-point clipping/rounding contract used for future runtime parity.,-0.123443603515625
+fixed_point_weight_quantization_probe,0.0,"[-1.0, 1.0)",pass,Records the fixed-point clipping/rounding contract used for future runtime parity.,0.0
+fixed_point_weight_quantization_probe,0.12345,"[-1.0, 1.0)",pass,Records the fixed-point clipping/rounding contract used for future runtime parity.,0.123443603515625
+fixed_point_weight_quantization_probe,0.999999,"[-1.0, 1.0)",pass,Records the fixed-point clipping/rounding contract used for future runtime parity.,0.999969482421875
+fixed_point_weight_quantization_probe,1.2,"[-1.0, 1.0)",pass,Records the fixed-point clipping/rounding contract used for future runtime parity.,0.999969482421875

@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-05-04T00:05:00.965606+00:00",
+  "source_generated_at_utc": "2026-05-03T03:11:25.363560+00:00",
+  "registry_entry_id": "tier4_27g_sdp_vs_mcpl_comparison",
+  "tier": "Tier 4.27g - SDP-vs-MCPL Protocol Comparison",
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_27g_20260502_local_pass",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_27g_20260502_local_pass/tier4_27g_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_27g_20260502_local_pass/tier4_27g_report.md",
+  "summary_csv": null,
+  "canonical": true,
+  "claim": "MCPL reduces per-lookup round-trip from 54 bytes (SDP) to 16 bytes (71% reduction). For 48-event schedule, inter-core lookup traffic drops from ~8,064 bytes to ~2,304 bytes. Latency improves from ~5-20 us (monitor-bound SDP) to ~0.5-2 us (hardware router). MCPL requires 4 router entries but scales better than SDP. Recommendation: make MCPL default for Tier 4.28+.",
+  "caveat": "Source-code analysis only. NOT hardware timing measurements. NOT router-table hardware validation. NOT multi-chip scaling evidence."
+}

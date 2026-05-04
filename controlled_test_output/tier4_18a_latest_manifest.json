@@ -1,0 +1,22 @@
+{
+  "generated_at_utc": "2026-05-04T00:05:00.962061+00:00",
+  "source_generated_at_utc": "2026-04-28T01:28:22+00:00",
+  "registry_entry_id": "tier4_18a_chunked_runtime_baseline",
+  "tier": "Tier 4.18a - v0.7 Chunked Hardware Runtime Baseline",
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_18a_20260428_012822_hardware_pass",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_18a_20260428_012822_hardware_pass/tier4_18a_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_18a_20260428_012822_hardware_pass/tier4_18a_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_18a_20260428_012822_hardware_pass/tier4_18a_summary.csv",
+  "canonical": true,
+  "claim": "The v0.7 chunked-host SpiNNaker path remains stable on delayed_cue and hard_noisy_switching at chunk sizes 10, 25, and 50; chunk 50 is the fastest viable default for the current hardware bridge.",
+  "caveat": "Single-seed N=8 runtime/resource characterization only; not hardware scaling, lifecycle/self-scaling, native on-chip dopamine/eligibility, continuous/custom-C runtime, or external-baseline superiority.",
+  "claim_boundary": [
+    "Tier 4.18a is runtime/resource characterization for the already-promoted v0.7 chunked-host SpiNNaker path.",
+    "The run used seed 42, N=8, 1200 steps, tasks delayed_cue and hard_noisy_switching, and chunk sizes 10, 25, and 50.",
+    "Chunk 50 preserved the observed task metrics while cutting sim.run calls to 24 per task, so it is the current default hardware chunk for v0.7.",
+    "raw_dopamine is expected to be zero in this chunked host delayed-credit scaffold; cite matured horizon replay and host-replay outputs, not native on-chip dopamine.",
+    "It does not prove hardware scaling, lifecycle/self-scaling, continuous/custom-C runtime, native dopamine/eligibility, or external-baseline superiority.",
+    "hardware_target_configured is false because local/JobManager environment detection did not expose a config flag, but hardware_run_attempted is true and real spike readback was nonzero for every run."
+  ]
+}

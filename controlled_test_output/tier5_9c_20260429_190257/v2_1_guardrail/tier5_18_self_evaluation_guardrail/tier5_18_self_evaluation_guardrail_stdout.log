@@ -1,0 +1,21 @@
+[tier5.18] task=ambiguous_cue variant=v2_0_no_monitor seed=42
+[tier5.18] task=ambiguous_cue variant=self_eval_gated seed=42
+[tier5.18] task=ambiguous_cue variant=monitor_only_no_behavior seed=42
+[tier5.18] task=ambiguous_cue variant=random_confidence seed=42
+[tier5.18] task=ambiguous_cue variant=time_shuffled_confidence seed=42
+[tier5.18] task=ambiguous_cue variant=oracle_confidence_upper_bound seed=42
+[tier5.18] task=memory_corruption variant=v2_0_no_monitor seed=42
+[tier5.18] task=memory_corruption variant=self_eval_gated seed=42
+[tier5.18] task=memory_corruption variant=monitor_only_no_behavior seed=42
+[tier5.18] task=memory_corruption variant=random_confidence seed=42
+[tier5.18] task=memory_corruption variant=time_shuffled_confidence seed=42
+[tier5.18] task=memory_corruption variant=oracle_confidence_upper_bound seed=42
+{
+  "tier": "Tier 5.18 - Self-Evaluation / Metacognitive Monitoring",
+  "status": "pass",
+  "failure_reason": "",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/tier5_18_self_evaluation_guardrail",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/tier5_18_self_evaluation_guardrail/tier5_18_report.md",
+  "runtime_seconds": 0.061924416999999954,
+  "claim_boundary": "Noncanonical software diagnostic: operational self-evaluation/reliability monitoring over frozen v2.0; not consciousness, self-awareness, hardware evidence, AGI, or a v2.1 freeze."
+}

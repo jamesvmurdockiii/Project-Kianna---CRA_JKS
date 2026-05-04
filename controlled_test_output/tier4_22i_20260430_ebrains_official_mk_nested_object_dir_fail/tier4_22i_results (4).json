@@ -1,0 +1,345 @@
+{
+  "aplx_build": {
+    "aplx_artifact": "",
+    "command": "make -C /tmp/job10424831914402018480.tmp/cra_422o/coral_reef_spinnaker/spinnaker_runtime clean all",
+    "returncode": 2,
+    "spinnaker_tools": "/home/jovyan/spinnaker/spinnaker_tools",
+    "status": "fail",
+    "stderr": "Assembler messages:\nFatal error: can't create build/gnu/src/main.o: No such file or directory\nmake: *** [/home/jovyan/spinnaker/spinnaker_tools/make/spinnaker_tools.mk:195: build/gnu/src/main.o] Error 1\n",
+    "stderr_artifact": "/tmp/job10424831914402018480.tmp/tier4_22i_job_output/tier4_22i_aplx_build_stderr.txt",
+    "stdout": "make: Entering directory '/tmp/job10424831914402018480.tmp/cra_422o/coral_reef_spinnaker/spinnaker_runtime'\nrm -rf build/gnu/ tests/test_runtime\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -o build/gnu/src/main.o src/main.c\nmake: Leaving directory '/tmp/job10424831914402018480.tmp/cra_422o/coral_reef_spinnaker/spinnaker_runtime'\n",
+    "stdout_artifact": "/tmp/job10424831914402018480.tmp/tier4_22i_job_output/tier4_22i_aplx_build_stdout.txt"
+  },
+  "app_load": {
+    "reason": "blocked_before_load",
+    "status": "not_attempted"
+  },
+  "artifacts": {
+    "aplx_build_stderr": "/tmp/job10424831914402018480.tmp/tier4_22i_job_output/tier4_22i_aplx_build_stderr.txt",
+    "aplx_build_stdout": "/tmp/job10424831914402018480.tmp/tier4_22i_job_output/tier4_22i_aplx_build_stdout.txt",
+    "environment_json": "/tmp/job10424831914402018480.tmp/tier4_22i_job_output/tier4_22i_environment.json",
+    "host_test_stderr": "/tmp/job10424831914402018480.tmp/tier4_22i_job_output/tier4_22i_host_test_stderr.txt",
+    "host_test_stdout": "/tmp/job10424831914402018480.tmp/tier4_22i_job_output/tier4_22i_host_test_stdout.txt",
+    "load_result_json": "/tmp/job10424831914402018480.tmp/tier4_22i_job_output/tier4_22i_load_result.json",
+    "main_syntax_stderr": "/tmp/job10424831914402018480.tmp/tier4_22i_job_output/tier4_22i_main_syntax_normal_stderr.txt",
+    "main_syntax_stdout": "/tmp/job10424831914402018480.tmp/tier4_22i_job_output/tier4_22i_main_syntax_normal_stdout.txt",
+    "manifest_json": "/tmp/job10424831914402018480.tmp/tier4_22i_job_output/tier4_22i_results.json",
+    "report_md": "/tmp/job10424831914402018480.tmp/tier4_22i_job_output/tier4_22i_report.md",
+    "roundtrip_result_json": "/tmp/job10424831914402018480.tmp/tier4_22i_job_output/tier4_22i_roundtrip_result.json"
+  },
+  "criteria": [
+    {
+      "name": "runner revision current",
+      "note": "",
+      "passed": true,
+      "rule": "expected current source",
+      "value": "tier4_22i_custom_runtime_roundtrip_20260430_0006"
+    },
+    {
+      "name": "Tier 4.22h compact-readback pass exists or fresh bundle",
+      "note": "",
+      "passed": true,
+      "rule": "== pass OR missing in fresh EBRAINS bundle",
+      "value": "missing"
+    },
+    {
+      "name": "hardware target configured",
+      "note": "no hostname found in args, common environment variables, or spynnaker.cfg",
+      "passed": false,
+      "rule": "non-empty hostname",
+      "value": ""
+    },
+    {
+      "name": "custom C host tests pass",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "main.c host syntax check pass",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "runtime official no-payload MC callback registered",
+      "note": "",
+      "passed": true,
+      "rule": "uses Tier 4.22k-confirmed official Spin1API enum constant",
+      "value": "spin1_callback_on(MC_PACKET_RECEIVED"
+    },
+    {
+      "name": "runtime official payload MC callback registered",
+      "note": "",
+      "passed": true,
+      "rule": "uses Tier 4.22k-confirmed official Spin1API enum constant",
+      "value": "spin1_callback_on(MCPL_PACKET_RECEIVED"
+    },
+    {
+      "name": "runtime legacy guessed callback names absent",
+      "note": "",
+      "passed": true,
+      "rule": "no direct brittle guessed callback names remain",
+      "value": "MC_PACKET_RX/MCPL_PACKET_RX absent"
+    },
+    {
+      "name": "runtime host stub mirrors confirmed EBRAINS event names",
+      "note": "",
+      "passed": true,
+      "rule": "local syntax guard exposes official names and omits guessed names",
+      "value": "MC_PACKET_RECEIVED/MCPL_PACKET_RECEIVED"
+    },
+    {
+      "name": "runtime SDP reply uses packed official sdp_msg_t fields",
+      "note": "",
+      "passed": true,
+      "rule": "mirrors real SARK SDP field names instead of local split x/y/cpu guesses",
+      "value": "dest_port/srce_port/dest_addr/srce_addr"
+    },
+    {
+      "name": "runtime deprecated split SDP fields absent",
+      "note": "",
+      "passed": true,
+      "rule": "EBRAINS SARK sdp_msg_t uses packed address/port fields",
+      "value": "dest_y/src_y/dest_x/src_x/src_cpu absent"
+    },
+    {
+      "name": "runtime uses official SARK memory copy API",
+      "note": "",
+      "passed": true,
+      "rule": "real spinnaker_tools exposes sark_mem_cpy, not sark_memcpy",
+      "value": "sark_mem_cpy"
+    },
+    {
+      "name": "runtime host stub mirrors official SARK SDP fields",
+      "note": "",
+      "passed": true,
+      "rule": "local syntax guard exposes the same fields/API that EBRAINS build requires",
+      "value": "srce_port/srce_addr/sark_mem_cpy"
+    },
+    {
+      "name": "runtime router header includes stdint directly",
+      "note": "",
+      "passed": true,
+      "rule": "router.h must not rely on indirect EBRAINS header includes for uint32_t",
+      "value": "#include <stdint.h>"
+    },
+    {
+      "name": "runtime router uses official SARK allocation API",
+      "note": "",
+      "passed": true,
+      "rule": "real spinnaker_tools exposes official rtr_* router calls",
+      "value": "rtr_alloc/rtr_mc_set/rtr_free"
+    },
+    {
+      "name": "runtime deprecated local-only router helpers absent",
+      "note": "",
+      "passed": true,
+      "rule": "local stubs must not hide EBRAINS SARK API drift",
+      "value": "sark_router_alloc/sark_router_free absent"
+    },
+    {
+      "name": "runtime host stub mirrors official router API",
+      "note": "",
+      "passed": true,
+      "rule": "local syntax guard exposes official SARK router names",
+      "value": "rtr_alloc/rtr_mc_set/rtr_free"
+    },
+    {
+      "name": "runtime hardware build uses official spinnaker_tools.mk",
+      "note": "",
+      "passed": true,
+      "rule": "official build chain supplies cpu_reset, build object, spin1_api library, and APLX section packing",
+      "value": "spinnaker_tools.mk"
+    },
+    {
+      "name": "runtime hardware build avoids deprecated Makefile.common include",
+      "note": "",
+      "passed": true,
+      "rule": "Makefile.common inclusion lacks the app build rules needed for APLX creation",
+      "value": "Makefile.common absent"
+    },
+    {
+      "name": "runtime hardware build avoids manual direct linker recipe",
+      "note": "",
+      "passed": true,
+      "rule": "manual object-only link produced empty ELF without cpu_reset/startup sections on EBRAINS",
+      "value": "no direct $(LD) object-only link"
+    },
+    {
+      "name": "runtime hardware output stays under build directory",
+      "note": "",
+      "passed": true,
+      "rule": "runner expects build/coral_reef.aplx",
+      "value": "APP_OUTPUT_DIR := build/"
+    },
+    {
+      "name": "custom runtime .aplx build pass",
+      "note": "",
+      "passed": false,
+      "rule": "== pass",
+      "value": "fail"
+    },
+    {
+      "name": "custom runtime app load pass",
+      "note": "",
+      "passed": false,
+      "rule": "== pass",
+      "value": "not_attempted"
+    },
+    {
+      "name": "CMD_READ_STATE roundtrip pass",
+      "note": "",
+      "passed": false,
+      "rule": "== pass",
+      "value": "not_attempted"
+    },
+    {
+      "name": "reset command acknowledged",
+      "note": "",
+      "passed": false,
+      "rule": "True",
+      "value": null
+    },
+    {
+      "name": "birth/synapse mutation commands acknowledged",
+      "note": "",
+      "passed": false,
+      "rule": "all True",
+      "value": {
+        "birth_1": null,
+        "birth_2": null,
+        "synapse": null
+      }
+    },
+    {
+      "name": "READ_STATE schema version valid",
+      "note": "",
+      "passed": false,
+      "rule": "== 1",
+      "value": null
+    },
+    {
+      "name": "READ_STATE payload compact",
+      "note": "",
+      "passed": false,
+      "rule": "== 73",
+      "value": null
+    },
+    {
+      "name": "post-mutation neuron count visible",
+      "note": "",
+      "passed": false,
+      "rule": ">= 2",
+      "value": null
+    },
+    {
+      "name": "post-mutation synapse count visible",
+      "note": "",
+      "passed": false,
+      "rule": ">= 1",
+      "value": null
+    },
+    {
+      "name": "synthetic fallback zero",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    }
+  ],
+  "environment": {
+    "cwd": "/tmp/job10424831914402018480.tmp",
+    "env": {
+      "SPINNAKER_BOARD": "",
+      "SPINNAKER_HOST": "",
+      "SPINNAKER_HOSTNAME": "",
+      "SPINNAKER_MACHINE": "",
+      "SPINN_DIRS": "/home/jovyan/spinnaker/spinnaker_tools",
+      "SPYNNAKER_MACHINE": ""
+    },
+    "modules": [
+      {
+        "available": true,
+        "name": "spinnman",
+        "path": "/home/jovyan/spinnaker/SpiNNMan/spinnman/__init__.py"
+      },
+      {
+        "available": true,
+        "name": "spinn_machine",
+        "path": "/home/jovyan/spinnaker/SpiNNMachine/spinn_machine/__init__.py"
+      },
+      {
+        "available": true,
+        "name": "spinn_utilities",
+        "path": "/home/jovyan/spinnaker/SpiNNUtils/spinn_utilities/__init__.py"
+      }
+    ],
+    "python": "/home/jovyan/spinnaker/bin/python",
+    "python_version": "3.13.9 | packaged by conda-forge | (main, Oct 16 2025, 10:31:39) [GCC 14.3.0]",
+    "spinnaker_tools": "/home/jovyan/spinnaker/spinnaker_tools",
+    "tools": {
+      "cc": "/usr/bin/cc",
+      "make": "/usr/bin/make",
+      "spin1_api": "",
+      "ybug": "/home/jovyan/spinnaker/spinnaker_tools/tools/ybug"
+    }
+  },
+  "failure_reason": "Failed criteria: hardware target configured, custom runtime .aplx build pass, custom runtime app load pass, CMD_READ_STATE roundtrip pass, reset command acknowledged, birth/synapse mutation commands acknowledged, READ_STATE schema version valid, READ_STATE payload compact, post-mutation neuron count visible, post-mutation synapse count visible",
+  "generated_at_utc": "2026-04-30T22:40:57+00:00",
+  "host_tests": {
+    "command": "make -C /tmp/job10424831914402018480.tmp/cra_422o/coral_reef_spinnaker/spinnaker_runtime clean-host test",
+    "returncode": 0,
+    "status": "pass",
+    "stderr": "src/host_interface.c: In function \u2018sdp_send_reply\u2019:\nsrc/host_interface.c:221:13: warning: comparison is always false due to limited range of data type [-Wtype-limits]\n  221 |     if (len > 255) len = 255;\n      |             ^\n",
+    "stderr_artifact": "/tmp/job10424831914402018480.tmp/tier4_22i_job_output/tier4_22i_host_test_stderr.txt",
+    "stdout": "make: Entering directory '/tmp/job10424831914402018480.tmp/cra_422o/coral_reef_spinnaker/spinnaker_runtime'\nrm -f tests/test_runtime\ncc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-int-to-pointer-cast -I stubs -I src tests/test_runtime.c src/neuron_manager.c src/synapse_manager.c src/state_manager.c src/host_interface.c src/router.c -lm -o tests/test_runtime\n./tests/test_runtime\n=== Coral Reef Runtime Host Tests ===\n\nconfig.h:\n  PASS: MAKE_KEY\n  PASS: fixed-point math\n  PASS: command constants\n  PASS: weight limits\n\nneuron_manager:\n  PASS: neuron birth/death\n  PASS: neuron find\n  PASS: neuron reset all\n\nsynapse_manager:\n  PASS: synapse create/remove\n  PASS: synapse weight limits\n  PASS: eligibility trace modulation\n  PASS: indexed delivery and active trace list\n\nstate_manager:\n  PASS: persistent context slots\n  PASS: bounded slot eviction\n  PASS: readout state and reset\n  PASS: reward readout update\n  PASS: pending horizon maturation\n  PASS: bounded pending horizons\n\nrouter:\n  PASS: router add/remove\n  PASS: router reset all\n\nhost_interface:\n  PASS: host_interface init\n  PASS: compact state summary pack\n\n=== ALL TESTS PASSED ===\nmake: Leaving directory '/tmp/job10424831914402018480.tmp/cra_422o/coral_reef_spinnaker/spinnaker_runtime'\n",
+    "stdout_artifact": "/tmp/job10424831914402018480.tmp/tier4_22i_job_output/tier4_22i_host_test_stdout.txt"
+  },
+  "main_syntax_check": {
+    "normal": {
+      "command": "/usr/bin/cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-int-to-pointer-cast -I /tmp/job10424831914402018480.tmp/cra_422o/coral_reef_spinnaker/spinnaker_runtime/stubs -I /tmp/job10424831914402018480.tmp/cra_422o/coral_reef_spinnaker/spinnaker_runtime/src -c /tmp/job10424831914402018480.tmp/cra_422o/coral_reef_spinnaker/spinnaker_runtime/src/main.c -o /tmp/job10424831914402018480.tmp/tier4_22i_job_output/tier4_22i_main_syntax_normal.o",
+      "object_artifact": "/tmp/job10424831914402018480.tmp/tier4_22i_job_output/tier4_22i_main_syntax_normal.o",
+      "returncode": 0,
+      "status": "pass",
+      "stderr": "",
+      "stderr_artifact": "/tmp/job10424831914402018480.tmp/tier4_22i_job_output/tier4_22i_main_syntax_normal_stderr.txt",
+      "stdout": "",
+      "stdout_artifact": "/tmp/job10424831914402018480.tmp/tier4_22i_job_output/tier4_22i_main_syntax_normal_stdout.txt"
+    },
+    "status": "pass"
+  },
+  "mode": "run-hardware",
+  "output_dir": "/tmp/job10424831914402018480.tmp/tier4_22i_job_output",
+  "roundtrip": {
+    "reason": "blocked_before_roundtrip",
+    "status": "not_attempted"
+  },
+  "runner_revision": "tier4_22i_custom_runtime_roundtrip_20260430_0006",
+  "status": "fail",
+  "summary": {
+    "aplx_artifact": "",
+    "aplx_build_status": "fail",
+    "app_load_status": "not_attempted",
+    "claim_boundary": "Board-load/CMD_READ_STATE command smoke only; not full CRA learning, speedup, or final custom-runtime evidence.",
+    "command_roundtrip_status": "not_attempted",
+    "custom_runtime_learning_hardware_allowed_next": false,
+    "hardware_target_configured": false,
+    "host_tests_passed": true,
+    "hostname_notes": [
+      "no hostname found in args, common environment variables, or spynnaker.cfg"
+    ],
+    "main_syntax_check_passed": true,
+    "mode": "run-hardware",
+    "next_step_if_passed": "Tier 4.22j minimal custom-runtime closed-loop learning smoke: delayed pending/readout update on board with compact state readback.",
+    "read_state_schema_version": null,
+    "spinnaker_hostname": "",
+    "state_after_mutation_neuron_count": null,
+    "state_after_mutation_synapse_count": null,
+    "tier4_22h_manifest": null,
+    "tier4_22h_status": "missing"
+  },
+  "tier": "Tier 4.22i - Custom Runtime Board Round-Trip Smoke"
+}

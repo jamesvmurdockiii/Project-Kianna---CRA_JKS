@@ -1,0 +1,8 @@
+blocker_id,prior_issue,tier4_22g_status,evidence,remaining_risk
+SCALE-001,synapse_deliver_spike scanned every synapse per incoming spike,repaired_locally,pre index plus host visit-count test,hardware timing still unmeasured
+SCALE-002,synapse_decay_traces_all swept every synapse every millisecond,repaired_locally,active trace list plus host visit-count test,long-trace list density must be characterized on hardware
+SCALE-003,synapse_modulate_all swept every synapse per dopamine event,repaired_locally,dopamine modulation walks active trace list only,reward-event cost scales with active traces
+SCALE-004,neuron_add_input uses linked-list neuron lookup,open,not targeted by 4.22g,needs direct neuron id -> state index or bounded pool
+SCALE-005,dynamic allocation/free-list fragmentation risk,open,not targeted by 4.22g,needs preallocated pools/free lists before long organism runs
+SCALE-006,READ_SPIKES exposes count/timestep only,open_high,not targeted by 4.22g,blocks learning hardware acceptance until compact state readback exists
+SCALE-007,single-core proof-of-concept state,open,not targeted by 4.22g,needs shard contract before scaling across cores/chips

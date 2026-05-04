@@ -1,0 +1,11 @@
+run_length_steps,task,model,model_family,seed,all_accuracy,tail_accuracy,prediction_target_corr,tail_prediction_target_corr,runtime_seconds,evaluation_count,steps_to_threshold,reward_events_to_threshold,area_under_learning_curve,tail_evaluation_count,final_n_alive,total_births,total_deaths,max_abs_dopamine
+80,delayed_cue,cra_v0_8_delayed_lr_0_20,CRA,42,0.7,1.0,0.6107783712695206,,0.17347212499999998,10,64,9,0.6255952380952381,2,8,0,0,0.9906603001481771
+80,delayed_cue,online_logistic_regression__logistic_l2_0_logistic_lr_0p02,linear,42,0.8,1.0,0.8199250150897373,,0.0009279579999998955,10,56,8,0.5642063492063492,2,,,,
+80,delayed_cue,online_logistic_regression__logistic_l2_0_logistic_lr_0p05,linear,42,0.8,1.0,0.8270330784650438,,0.0005672920000001636,10,56,8,0.5642063492063492,2,,,,
+80,delayed_cue,online_perceptron__perceptron_lr_0p02_perceptron_margin_0,linear,42,0.8,1.0,0.8944271909999161,,0.00046229199999991977,10,56,8,0.5642063492063492,2,,,,
+80,delayed_cue,online_perceptron__perceptron_lr_0p05_perceptron_margin_0,linear,42,0.8,1.0,0.8944271909999157,,0.00044020799999988647,10,56,8,0.5642063492063492,2,,,,
+80,hard_noisy_switching,cra_v0_8_delayed_lr_0_20,CRA,42,0.5454545454545454,1.0,-0.14174575681944337,,0.176250958,11,,,0.7070903843631116,2,8,0,0,0.9971141967545799
+80,hard_noisy_switching,online_logistic_regression__logistic_l2_0_logistic_lr_0p02,linear,42,0.2727272727272727,0.0,-0.42870226073280243,,0.0005410409999999644,11,,,0.3492522628886265,2,,,,
+80,hard_noisy_switching,online_logistic_regression__logistic_l2_0_logistic_lr_0p05,linear,42,0.2727272727272727,0.0,-0.41989804175482276,,0.0005353329999999712,11,,,0.3492522628886265,2,,,,
+80,hard_noisy_switching,online_perceptron__perceptron_lr_0p02_perceptron_margin_0,linear,42,0.2727272727272727,0.0,-0.290717239577889,,0.0005787500000000723,11,,,0.36061589925226284,2,,,,
+80,hard_noisy_switching,online_perceptron__perceptron_lr_0p05_perceptron_margin_0,linear,42,0.2727272727272727,0.0,-0.290717239577889,,0.0004789579999999738,11,,,0.36061589925226284,2,,,,

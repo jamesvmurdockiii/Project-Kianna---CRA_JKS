@@ -1,0 +1,21 @@
+{
+  "pass_requires": [
+    "Tier 4.20b prerequisite pass recorded locally",
+    "seeds exactly 42,43,44",
+    "tasks delayed_cue and hard_noisy_switching",
+    "six child hardware runs",
+    "chunked host mode with chunk_size_steps=50",
+    "macro eligibility disabled/excluded",
+    "child Tier 4.16 hardware run status=pass",
+    "zero sim.run failures, read failures, and synthetic fallback",
+    "real spike readback > 0"
+  ],
+  "required": [
+    "tier4_20c_results.json",
+    "tier4_20c_report.md",
+    "tier4_20c_summary.csv",
+    "child_tier4_16/tier4_16_results.json",
+    "child_tier4_16/tier4_16_report.md",
+    "child_tier4_16/spinnaker_hardware_<task>_seed<seed>_timeseries.csv"
+  ]
+}

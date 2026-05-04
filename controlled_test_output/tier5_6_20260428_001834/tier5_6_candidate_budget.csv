@@ -1,0 +1,33 @@
+base_model,candidate_id,model_family,overrides_json,description
+random_sign,random_sign__default,chance,{},deterministic/control baseline with no tunable learning budget
+sign_persistence,sign_persistence__default,rule,{},deterministic/control baseline with no tunable learning budget
+online_perceptron,online_perceptron__perceptron_lr_0p02_perceptron_margin_0,linear,"{""perceptron_lr"": 0.02, ""perceptron_margin"": 0.0}",predeclared Tier 5.6 tuned profile
+online_perceptron,online_perceptron__perceptron_lr_0p05_perceptron_margin_0,linear,"{""perceptron_lr"": 0.05, ""perceptron_margin"": 0.0}",predeclared Tier 5.6 tuned profile
+online_perceptron,online_perceptron__perceptron_lr_0p08_perceptron_margin_0p05,linear,"{""perceptron_lr"": 0.08, ""perceptron_margin"": 0.05}",predeclared Tier 5.6 tuned profile
+online_perceptron,online_perceptron__perceptron_lr_0p15_perceptron_margin_0p05,linear,"{""perceptron_lr"": 0.15, ""perceptron_margin"": 0.05}",predeclared Tier 5.6 tuned profile
+online_perceptron,online_perceptron__perceptron_lr_0p25_perceptron_margin_0p1,linear,"{""perceptron_lr"": 0.25, ""perceptron_margin"": 0.1}",predeclared Tier 5.6 tuned profile
+online_logistic_regression,online_logistic_regression__logistic_l2_0_logistic_lr_0p02,linear,"{""logistic_l2"": 0.0, ""logistic_lr"": 0.02}",predeclared Tier 5.6 tuned profile
+online_logistic_regression,online_logistic_regression__logistic_l2_0_logistic_lr_0p05,linear,"{""logistic_l2"": 0.0, ""logistic_lr"": 0.05}",predeclared Tier 5.6 tuned profile
+online_logistic_regression,online_logistic_regression__logistic_l2_0p001_logistic_lr_0p1,linear,"{""logistic_l2"": 0.001, ""logistic_lr"": 0.1}",predeclared Tier 5.6 tuned profile
+online_logistic_regression,online_logistic_regression__logistic_l2_0p001_logistic_lr_0p2,linear,"{""logistic_l2"": 0.001, ""logistic_lr"": 0.2}",predeclared Tier 5.6 tuned profile
+online_logistic_regression,online_logistic_regression__logistic_l2_0p005_logistic_lr_0p3,linear,"{""logistic_l2"": 0.005, ""logistic_lr"": 0.3}",predeclared Tier 5.6 tuned profile
+echo_state_network,echo_state_network__reservoir_hidden_16_reservoir_leak_0p25_reservoir_lr_0p03_reservoir_radius_0p75,reservoir,"{""reservoir_hidden"": 16, ""reservoir_leak"": 0.25, ""reservoir_lr"": 0.03, ""reservoir_radius"": 0.75}",predeclared Tier 5.6 tuned profile
+echo_state_network,echo_state_network__reservoir_hidden_24_reservoir_leak_0p35_reservoir_lr_0p04_reservoir_radius_0p85,reservoir,"{""reservoir_hidden"": 24, ""reservoir_leak"": 0.35, ""reservoir_lr"": 0.04, ""reservoir_radius"": 0.85}",predeclared Tier 5.6 tuned profile
+echo_state_network,echo_state_network__reservoir_hidden_32_reservoir_leak_0p5_reservoir_lr_0p06_reservoir_radius_0p95,reservoir,"{""reservoir_hidden"": 32, ""reservoir_leak"": 0.5, ""reservoir_lr"": 0.06, ""reservoir_radius"": 0.95}",predeclared Tier 5.6 tuned profile
+echo_state_network,echo_state_network__reservoir_hidden_32_reservoir_leak_0p3_reservoir_lr_0p1_reservoir_radius_1p1,reservoir,"{""reservoir_hidden"": 32, ""reservoir_leak"": 0.3, ""reservoir_lr"": 0.1, ""reservoir_radius"": 1.1}",predeclared Tier 5.6 tuned profile
+echo_state_network,echo_state_network__reservoir_hidden_48_reservoir_leak_0p55_reservoir_lr_0p08_reservoir_radius_1p2,reservoir,"{""reservoir_hidden"": 48, ""reservoir_leak"": 0.55, ""reservoir_lr"": 0.08, ""reservoir_radius"": 1.2}",predeclared Tier 5.6 tuned profile
+small_gru,small_gru__gru_hidden_8_gru_lr_0p03,recurrent,"{""gru_hidden"": 8, ""gru_lr"": 0.03}",predeclared Tier 5.6 tuned profile
+small_gru,small_gru__gru_hidden_16_gru_lr_0p04,recurrent,"{""gru_hidden"": 16, ""gru_lr"": 0.04}",predeclared Tier 5.6 tuned profile
+small_gru,small_gru__gru_hidden_16_gru_lr_0p08,recurrent,"{""gru_hidden"": 16, ""gru_lr"": 0.08}",predeclared Tier 5.6 tuned profile
+small_gru,small_gru__gru_hidden_24_gru_lr_0p06,recurrent,"{""gru_hidden"": 24, ""gru_lr"": 0.06}",predeclared Tier 5.6 tuned profile
+small_gru,small_gru__gru_hidden_32_gru_lr_0p1,recurrent,"{""gru_hidden"": 32, ""gru_lr"": 0.1}",predeclared Tier 5.6 tuned profile
+stdp_only_snn,stdp_only_snn__stdp_hidden_16_stdp_lr_0p0005_stdp_threshold_0p15_stdp_trace_decay_0p85,snn_ablation,"{""stdp_hidden"": 16, ""stdp_lr"": 0.0005, ""stdp_threshold"": 0.15, ""stdp_trace_decay"": 0.85}",predeclared Tier 5.6 tuned profile
+stdp_only_snn,stdp_only_snn__stdp_hidden_24_stdp_lr_0p0008_stdp_threshold_0p25_stdp_trace_decay_0p9,snn_ablation,"{""stdp_hidden"": 24, ""stdp_lr"": 0.0008, ""stdp_threshold"": 0.25, ""stdp_trace_decay"": 0.9}",predeclared Tier 5.6 tuned profile
+stdp_only_snn,stdp_only_snn__stdp_hidden_32_stdp_lr_0p0015_stdp_threshold_0p2_stdp_trace_decay_0p95,snn_ablation,"{""stdp_hidden"": 32, ""stdp_lr"": 0.0015, ""stdp_threshold"": 0.2, ""stdp_trace_decay"": 0.95}",predeclared Tier 5.6 tuned profile
+stdp_only_snn,stdp_only_snn__stdp_hidden_32_stdp_lr_0p003_stdp_threshold_0p35_stdp_trace_decay_0p95,snn_ablation,"{""stdp_hidden"": 32, ""stdp_lr"": 0.003, ""stdp_threshold"": 0.35, ""stdp_trace_decay"": 0.95}",predeclared Tier 5.6 tuned profile
+stdp_only_snn,stdp_only_snn__stdp_hidden_48_stdp_lr_0p005_stdp_threshold_0p25_stdp_trace_decay_0p98,snn_ablation,"{""stdp_hidden"": 48, ""stdp_lr"": 0.005, ""stdp_threshold"": 0.25, ""stdp_trace_decay"": 0.98}",predeclared Tier 5.6 tuned profile
+evolutionary_population,evolutionary_population__evo_fitness_decay_0p85_evo_mutation_0p03_evo_population_12,population,"{""evo_fitness_decay"": 0.85, ""evo_mutation"": 0.03, ""evo_population"": 12}",predeclared Tier 5.6 tuned profile
+evolutionary_population,evolutionary_population__evo_fitness_decay_0p92_evo_mutation_0p06_evo_population_24,population,"{""evo_fitness_decay"": 0.92, ""evo_mutation"": 0.06, ""evo_population"": 24}",predeclared Tier 5.6 tuned profile
+evolutionary_population,evolutionary_population__evo_fitness_decay_0p9_evo_mutation_0p04_evo_population_32,population,"{""evo_fitness_decay"": 0.9, ""evo_mutation"": 0.04, ""evo_population"": 32}",predeclared Tier 5.6 tuned profile
+evolutionary_population,evolutionary_population__evo_fitness_decay_0p95_evo_mutation_0p08_evo_population_48,population,"{""evo_fitness_decay"": 0.95, ""evo_mutation"": 0.08, ""evo_population"": 48}",predeclared Tier 5.6 tuned profile
+evolutionary_population,evolutionary_population__evo_fitness_decay_0p97_evo_mutation_0p12_evo_population_64,population,"{""evo_fitness_decay"": 0.97, ""evo_mutation"": 0.12, ""evo_population"": 64}",predeclared Tier 5.6 tuned profile

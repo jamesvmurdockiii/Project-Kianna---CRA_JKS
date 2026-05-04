@@ -1,0 +1,144 @@
+{
+  "artifacts": {
+    "comparisons_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_17_20260429_185759/tier5_17_comparisons.csv",
+    "control_edges_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_17_20260429_185759/tier5_17_control_edges.png",
+    "fairness_contract_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_17_20260429_185759/tier5_17_fairness_contract.json",
+    "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_17_20260429_185759/tier5_17_results.json",
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_17_20260429_185759/tier5_17_report.md",
+    "representation_matrix_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_17_20260429_185759/tier5_17_representation_matrix.png",
+    "run_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_17_20260429_185759/tier5_17_runs.csv",
+    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_17_20260429_185759/tier5_17_summary.csv"
+  },
+  "canonical": false,
+  "claim_boundary": "Noncanonical software diagnostic: CRA-compatible label-free representation scaffold, offline probes only, not hardware/on-chip representation learning or a v2.0 freeze.",
+  "criteria": [
+    {
+      "name": "task/variant/seed matrix completed",
+      "note": "",
+      "operator": "==",
+      "passed": true,
+      "threshold": 81,
+      "value": 81
+    },
+    {
+      "name": "non-oracle exposure has no hidden-label leakage",
+      "note": "",
+      "operator": "==",
+      "passed": true,
+      "threshold": 0,
+      "value": 0
+    },
+    {
+      "name": "exposure has no reward visibility",
+      "note": "",
+      "operator": "==",
+      "passed": true,
+      "threshold": 0,
+      "value": 0
+    },
+    {
+      "name": "pre-reward raw dopamine remains zero",
+      "note": "",
+      "operator": "<=",
+      "passed": true,
+      "threshold": 1e-12,
+      "value": 0.0
+    },
+    {
+      "name": "candidate reaches minimum ridge-probe accuracy",
+      "note": "",
+      "operator": ">=",
+      "passed": true,
+      "threshold": 0.72,
+      "value": 0.9742489270386266
+    },
+    {
+      "name": "candidate reaches minimum kNN-probe accuracy",
+      "note": "",
+      "operator": ">=",
+      "passed": true,
+      "threshold": 0.7,
+      "value": 0.7735042735042735
+    },
+    {
+      "name": "candidate beats no-state-plasticity control",
+      "note": "",
+      "operator": ">=",
+      "passed": false,
+      "threshold": 0.05,
+      "value": -0.007140900374395076
+    },
+    {
+      "name": "candidate beats random untrained state",
+      "note": "",
+      "operator": ">=",
+      "passed": true,
+      "threshold": 0.2,
+      "value": 0.5142450142450143
+    },
+    {
+      "name": "temporal shams lose on temporal-pressure tasks",
+      "note": "",
+      "operator": ">=",
+      "passed": false,
+      "threshold": 2,
+      "value": 1
+    },
+    {
+      "name": "candidate beats current-input-only on temporal-pressure tasks",
+      "note": "",
+      "operator": ">=",
+      "passed": true,
+      "threshold": 2,
+      "value": 2
+    },
+    {
+      "name": "candidate improves downstream sample efficiency somewhere",
+      "note": "",
+      "operator": ">=",
+      "passed": false,
+      "threshold": 2,
+      "value": 0
+    }
+  ],
+  "failure_reason": "Failed criteria: candidate beats no-state-plasticity control, temporal shams lose on temporal-pressure tasks, candidate improves downstream sample efficiency somewhere",
+  "generated_at_utc": "2026-04-29T18:58:02+00:00",
+  "name": "Tier 5.17 - Pre-Reward Representation Formation",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_17_20260429_185759",
+  "status": "fail",
+  "summary": {
+    "candidate_min_knn_probe_accuracy": 0.7735042735042735,
+    "candidate_min_ridge_probe_accuracy": 0.9742489270386266,
+    "claim_boundary": "Noncanonical software diagnostic: CRA-compatible label-free representation scaffold, offline probes only, not hardware/on-chip representation learning or a v2.0 freeze.",
+    "expected_runs": 81,
+    "max_abs_raw_dopamine_non_oracle": 0.0,
+    "non_encoder_wins": 2,
+    "non_oracle_label_leakage_runs": 0,
+    "observed_runs": 81,
+    "reward_leakage_runs": 0,
+    "runtime_seconds": 3.1323407499999996,
+    "sample_efficiency_wins": 0,
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "tasks": [
+      "latent_cluster_sequence",
+      "temporal_motif_sequence",
+      "ambiguous_reentry_context"
+    ],
+    "temporal_control_losses": 1,
+    "variants": [
+      "cra_pre_reward_state",
+      "no_state_plasticity",
+      "time_shuffled_exposure",
+      "temporal_destroyed_exposure",
+      "current_input_only",
+      "rolling_history_input",
+      "random_projection_history",
+      "random_untrained_state",
+      "oracle_latent_upper_bound"
+    ]
+  }
+}

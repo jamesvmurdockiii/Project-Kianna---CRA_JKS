@@ -1,0 +1,25 @@
+{
+  "tier": "Tier 4.24b / 4.25-Preflight \u2014 EBRAINS Build/Size Resource Capture",
+  "runner_revision": "tier4_24b_build_size_capture_20260501_0001",
+  "generated_at_utc": "2026-05-02T02:42:32.197002+00:00",
+  "mode": "local",
+  "struct_sizes": {
+    "context_slot_t": 20,
+    "route_slot_t": 20,
+    "memory_slot_t": 20,
+    "pending_horizon_t": 20,
+    "schedule_entry_t": 28,
+    "cra_state_summary_t": 116
+  },
+  "arrays": {
+    "context_slots": 160,
+    "route_slots": 160,
+    "memory_slots": 160,
+    "pending_horizons": 2560,
+    "schedule_entries": 1792,
+    "summary": 116
+  },
+  "scalars_bytes": 17,
+  "state_manager_total_bytes": 4965,
+  "note": "Local verification only. Build sizes unknown until EBRAINS run."
+}

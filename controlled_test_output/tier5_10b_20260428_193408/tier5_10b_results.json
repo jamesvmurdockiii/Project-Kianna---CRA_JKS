@@ -1,0 +1,2493 @@
+{
+  "artifacts": {
+    "comparisons_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/tier5_10b_comparisons.csv",
+    "fairness_contract_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/tier5_10b_fairness_contract.json",
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/tier5_10b_report.md",
+    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/tier5_10b_summary.csv",
+    "task_pressure_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/tier5_10b_task_pressure.png"
+  },
+  "command": "experiments/tier5_memory_pressure_tasks.py --backend mock --tasks delayed_context_cue,hidden_context_recurrence --steps 180 --seed-count 1 --models sign_persistence,online_perceptron --smoke",
+  "generated_at_utc": "2026-04-28T23:34:08+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408",
+  "result": {
+    "artifacts": {
+      "comparisons_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/tier5_10b_comparisons.csv",
+      "delayed_context_cue_memory_reset_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/delayed_context_cue_memory_reset_seed42_timeseries.csv",
+      "delayed_context_cue_online_perceptron_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/delayed_context_cue_online_perceptron_seed42_timeseries.csv",
+      "delayed_context_cue_oracle_context_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/delayed_context_cue_oracle_context_seed42_timeseries.csv",
+      "delayed_context_cue_shuffled_context_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/delayed_context_cue_shuffled_context_seed42_timeseries.csv",
+      "delayed_context_cue_sign_persistence_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/delayed_context_cue_sign_persistence_seed42_timeseries.csv",
+      "delayed_context_cue_stream_context_memory_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/delayed_context_cue_stream_context_memory_seed42_timeseries.csv",
+      "delayed_context_cue_wrong_context_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/delayed_context_cue_wrong_context_seed42_timeseries.csv",
+      "fairness_contract_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/tier5_10b_fairness_contract.json",
+      "hidden_context_recurrence_memory_reset_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/hidden_context_recurrence_memory_reset_seed42_timeseries.csv",
+      "hidden_context_recurrence_online_perceptron_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/hidden_context_recurrence_online_perceptron_seed42_timeseries.csv",
+      "hidden_context_recurrence_oracle_context_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/hidden_context_recurrence_oracle_context_seed42_timeseries.csv",
+      "hidden_context_recurrence_shuffled_context_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/hidden_context_recurrence_shuffled_context_seed42_timeseries.csv",
+      "hidden_context_recurrence_sign_persistence_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/hidden_context_recurrence_sign_persistence_seed42_timeseries.csv",
+      "hidden_context_recurrence_stream_context_memory_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/hidden_context_recurrence_stream_context_memory_seed42_timeseries.csv",
+      "hidden_context_recurrence_wrong_context_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/hidden_context_recurrence_wrong_context_seed42_timeseries.csv",
+      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/tier5_10b_summary.csv",
+      "task_pressure_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/tier5_10b_task_pressure.png"
+    },
+    "criteria": [
+      {
+        "name": "full task/model/seed matrix completed",
+        "note": "",
+        "operator": "==",
+        "passed": true,
+        "threshold": 14,
+        "value": 14
+      },
+      {
+        "name": "feedback timing has no leakage violations",
+        "note": "",
+        "operator": "==",
+        "passed": true,
+        "threshold": 0,
+        "value": 0
+      },
+      {
+        "name": "same current input supports opposite labels",
+        "note": "",
+        "operator": "==",
+        "passed": true,
+        "threshold": true,
+        "value": true
+      }
+    ],
+    "failure_reason": "",
+    "name": "Tier 5.10b - Memory-Pressure Task Validation",
+    "status": "pass",
+    "summary": {
+      "aggregates": [
+        {
+          "accuracy_improvement_max": -1.0,
+          "accuracy_improvement_mean": -1.0,
+          "accuracy_improvement_min": -1.0,
+          "accuracy_improvement_std": 0.0,
+          "all_accuracy_max": 0.5714285714285714,
+          "all_accuracy_mean": 0.5714285714285714,
+          "all_accuracy_min": 0.5714285714285714,
+          "all_accuracy_std": 0.0,
+          "ambiguity": {
+            "ambiguous_current_cue_count": 2,
+            "context_balance": 0.5714285714285714,
+            "decision_count": 7,
+            "label_balance": 0.42857142857142855,
+            "same_current_input_opposite_labels": true
+          },
+          "display_name": "Delayed Context Cue",
+          "early_accuracy_max": 1.0,
+          "early_accuracy_mean": 1.0,
+          "early_accuracy_min": 1.0,
+          "early_accuracy_std": 0.0,
+          "evaluation_count_max": 7.0,
+          "evaluation_count_mean": 7.0,
+          "evaluation_count_min": 7.0,
+          "evaluation_count_std": 0.0,
+          "max_abs_prediction_max": 1.0,
+          "max_abs_prediction_mean": 1.0,
+          "max_abs_prediction_min": 1.0,
+          "max_abs_prediction_std": 0.0,
+          "mean_abs_prediction_max": 0.03888888888888889,
+          "mean_abs_prediction_mean": 0.03888888888888889,
+          "mean_abs_prediction_min": 0.03888888888888889,
+          "mean_abs_prediction_std": 0.0,
+          "model": "memory_reset",
+          "model_family": "context_control",
+          "prediction_target_corr_max": 0.16666666666666666,
+          "prediction_target_corr_mean": 0.16666666666666666,
+          "prediction_target_corr_min": 0.16666666666666666,
+          "prediction_target_corr_std": 0.0,
+          "runs": 1,
+          "runtime_seconds_max": 0.0007200419999999763,
+          "runtime_seconds_mean": 0.0007200419999999763,
+          "runtime_seconds_min": 0.0007200419999999763,
+          "runtime_seconds_std": 0.0,
+          "seeds": [
+            42
+          ],
+          "steps": 180,
+          "tail_accuracy_max": 0.0,
+          "tail_accuracy_mean": 0.0,
+          "tail_accuracy_min": 0.0,
+          "tail_accuracy_std": 0.0,
+          "tail_prediction_target_corr_max": null,
+          "tail_prediction_target_corr_mean": null,
+          "tail_prediction_target_corr_min": null,
+          "tail_prediction_target_corr_std": null,
+          "task": "delayed_context_cue",
+          "task_metadata": {
+            "context_events": 7,
+            "context_gap": 12,
+            "context_period": 24,
+            "decision_events": 7,
+            "task_kind": "delayed_context_cue",
+            "trial_records": [
+              {
+                "context_sign": 1,
+                "context_step": 0,
+                "decision_cue_sign": 1,
+                "decision_step": 12,
+                "label_sign": 1,
+                "phase": "independent_context",
+                "trial_id": 0
+              },
+              {
+                "context_sign": 1,
+                "context_step": 24,
+                "decision_cue_sign": -1,
+                "decision_step": 36,
+                "label_sign": -1,
+                "phase": "independent_context",
+                "trial_id": 1
+              },
+              {
+                "context_sign": -1,
+                "context_step": 48,
+                "decision_cue_sign": 1,
+                "decision_step": 60,
+                "label_sign": -1,
+                "phase": "independent_context",
+                "trial_id": 2
+              },
+              {
+                "context_sign": -1,
+                "context_step": 72,
+                "decision_cue_sign": -1,
+                "decision_step": 84,
+                "label_sign": 1,
+                "phase": "independent_context",
+                "trial_id": 3
+              },
+              {
+                "context_sign": 1,
+                "context_step": 96,
+                "decision_cue_sign": 1,
+                "decision_step": 108,
+                "label_sign": 1,
+                "phase": "independent_context",
+                "trial_id": 4
+              },
+              {
+                "context_sign": 1,
+                "context_step": 120,
+                "decision_cue_sign": -1,
+                "decision_step": 132,
+                "label_sign": -1,
+                "phase": "independent_context",
+                "trial_id": 5
+              },
+              {
+                "context_sign": -1,
+                "context_step": 144,
+                "decision_cue_sign": 1,
+                "decision_step": 156,
+                "label_sign": -1,
+                "phase": "independent_context",
+                "trial_id": 6
+              }
+            ],
+            "trials": 7
+          }
+        },
+        {
+          "accuracy_improvement_max": 0.0,
+          "accuracy_improvement_mean": 0.0,
+          "accuracy_improvement_min": 0.0,
+          "accuracy_improvement_std": 0.0,
+          "all_accuracy_max": 0.0,
+          "all_accuracy_mean": 0.0,
+          "all_accuracy_min": 0.0,
+          "all_accuracy_std": 0.0,
+          "ambiguity": {
+            "ambiguous_current_cue_count": 2,
+            "context_balance": 0.5714285714285714,
+            "decision_count": 7,
+            "label_balance": 0.42857142857142855,
+            "same_current_input_opposite_labels": true
+          },
+          "display_name": "Delayed Context Cue",
+          "early_accuracy_max": 0.0,
+          "early_accuracy_mean": 0.0,
+          "early_accuracy_min": 0.0,
+          "early_accuracy_std": 0.0,
+          "evaluation_count_max": 7.0,
+          "evaluation_count_mean": 7.0,
+          "evaluation_count_min": 7.0,
+          "evaluation_count_std": 0.0,
+          "max_abs_prediction_max": 0.33440000000000003,
+          "max_abs_prediction_mean": 0.33440000000000003,
+          "max_abs_prediction_min": 0.33440000000000003,
+          "max_abs_prediction_std": 0.0,
+          "mean_abs_prediction_max": 0.08936444444444444,
+          "mean_abs_prediction_mean": 0.08936444444444444,
+          "mean_abs_prediction_min": 0.08936444444444444,
+          "mean_abs_prediction_std": 0.0,
+          "model": "online_perceptron",
+          "model_family": "linear",
+          "prediction_target_corr_max": -0.674087564389814,
+          "prediction_target_corr_mean": -0.674087564389814,
+          "prediction_target_corr_min": -0.674087564389814,
+          "prediction_target_corr_std": 0.0,
+          "runs": 1,
+          "runtime_seconds_max": 0.0011386250000000597,
+          "runtime_seconds_mean": 0.0011386250000000597,
+          "runtime_seconds_min": 0.0011386250000000597,
+          "runtime_seconds_std": 0.0,
+          "seeds": [
+            42
+          ],
+          "steps": 180,
+          "tail_accuracy_max": 0.0,
+          "tail_accuracy_mean": 0.0,
+          "tail_accuracy_min": 0.0,
+          "tail_accuracy_std": 0.0,
+          "tail_prediction_target_corr_max": null,
+          "tail_prediction_target_corr_mean": null,
+          "tail_prediction_target_corr_min": null,
+          "tail_prediction_target_corr_std": null,
+          "task": "delayed_context_cue",
+          "task_metadata": {
+            "context_events": 7,
+            "context_gap": 12,
+            "context_period": 24,
+            "decision_events": 7,
+            "task_kind": "delayed_context_cue",
+            "trial_records": [
+              {
+                "context_sign": 1,
+                "context_step": 0,
+                "decision_cue_sign": 1,
+                "decision_step": 12,
+                "label_sign": 1,
+                "phase": "independent_context",
+                "trial_id": 0
+              },
+              {
+                "context_sign": 1,
+                "context_step": 24,
+                "decision_cue_sign": -1,
+                "decision_step": 36,
+                "label_sign": -1,
+                "phase": "independent_context",
+                "trial_id": 1
+              },
+              {
+                "context_sign": -1,
+                "context_step": 48,
+                "decision_cue_sign": 1,
+                "decision_step": 60,
+                "label_sign": -1,
+                "phase": "independent_context",
+                "trial_id": 2
+              },
+              {
+                "context_sign": -1,
+                "context_step": 72,
+                "decision_cue_sign": -1,
+                "decision_step": 84,
+                "label_sign": 1,
+                "phase": "independent_context",
+                "trial_id": 3
+              },
+              {
+                "context_sign": 1,
+                "context_step": 96,
+                "decision_cue_sign": 1,
+                "decision_step": 108,
+                "label_sign": 1,
+                "phase": "independent_context",
+                "trial_id": 4
+              },
+              {
+                "context_sign": 1,
+                "context_step": 120,
+                "decision_cue_sign": -1,
+                "decision_step": 132,
+                "label_sign": -1,
+                "phase": "independent_context",
+                "trial_id": 5
+              },
+              {
+                "context_sign": -1,
+                "context_step": 144,
+                "decision_cue_sign": 1,
+                "decision_step": 156,
+                "label_sign": -1,
+                "phase": "independent_context",
+                "trial_id": 6
+              }
+            ],
+            "trials": 7
+          }
+        },
+        {
+          "accuracy_improvement_max": 0.0,
+          "accuracy_improvement_mean": 0.0,
+          "accuracy_improvement_min": 0.0,
+          "accuracy_improvement_std": 0.0,
+          "all_accuracy_max": 1.0,
+          "all_accuracy_mean": 1.0,
+          "all_accuracy_min": 1.0,
+          "all_accuracy_std": 0.0,
+          "ambiguity": {
+            "ambiguous_current_cue_count": 2,
+            "context_balance": 0.5714285714285714,
+            "decision_count": 7,
+            "label_balance": 0.42857142857142855,
+            "same_current_input_opposite_labels": true
+          },
+          "display_name": "Delayed Context Cue",
+          "early_accuracy_max": 1.0,
+          "early_accuracy_mean": 1.0,
+          "early_accuracy_min": 1.0,
+          "early_accuracy_std": 0.0,
+          "evaluation_count_max": 7.0,
+          "evaluation_count_mean": 7.0,
+          "evaluation_count_min": 7.0,
+          "evaluation_count_std": 0.0,
+          "max_abs_prediction_max": 1.0,
+          "max_abs_prediction_mean": 1.0,
+          "max_abs_prediction_min": 1.0,
+          "max_abs_prediction_std": 0.0,
+          "mean_abs_prediction_max": 0.03888888888888889,
+          "mean_abs_prediction_mean": 0.03888888888888889,
+          "mean_abs_prediction_min": 0.03888888888888889,
+          "mean_abs_prediction_std": 0.0,
+          "model": "oracle_context",
+          "model_family": "context_control",
+          "prediction_target_corr_max": 0.9999999999999997,
+          "prediction_target_corr_mean": 0.9999999999999997,
+          "prediction_target_corr_min": 0.9999999999999997,
+          "prediction_target_corr_std": 0.0,
+          "runs": 1,
+          "runtime_seconds_max": 0.0007914589999999944,
+          "runtime_seconds_mean": 0.0007914589999999944,
+          "runtime_seconds_min": 0.0007914589999999944,
+          "runtime_seconds_std": 0.0,
+          "seeds": [
+            42
+          ],
+          "steps": 180,
+          "tail_accuracy_max": 1.0,
+          "tail_accuracy_mean": 1.0,
+          "tail_accuracy_min": 1.0,
+          "tail_accuracy_std": 0.0,
+          "tail_prediction_target_corr_max": null,
+          "tail_prediction_target_corr_mean": null,
+          "tail_prediction_target_corr_min": null,
+          "tail_prediction_target_corr_std": null,
+          "task": "delayed_context_cue",
+          "task_metadata": {
+            "context_events": 7,
+            "context_gap": 12,
+            "context_period": 24,
+            "decision_events": 7,
+            "task_kind": "delayed_context_cue",
+            "trial_records": [
+              {
+                "context_sign": 1,
+                "context_step": 0,
+                "decision_cue_sign": 1,
+                "decision_step": 12,
+                "label_sign": 1,
+                "phase": "independent_context",
+                "trial_id": 0
+              },
+              {
+                "context_sign": 1,
+                "context_step": 24,
+                "decision_cue_sign": -1,
+                "decision_step": 36,
+                "label_sign": -1,
+                "phase": "independent_context",
+                "trial_id": 1
+              },
+              {
+                "context_sign": -1,
+                "context_step": 48,
+                "decision_cue_sign": 1,
+                "decision_step": 60,
+                "label_sign": -1,
+                "phase": "independent_context",
+                "trial_id": 2
+              },
+              {
+                "context_sign": -1,
+                "context_step": 72,
+                "decision_cue_sign": -1,
+                "decision_step": 84,
+                "label_sign": 1,
+                "phase": "independent_context",
+                "trial_id": 3
+              },
+              {
+                "context_sign": 1,
+                "context_step": 96,
+                "decision_cue_sign": 1,
+                "decision_step": 108,
+                "label_sign": 1,
+                "phase": "independent_context",
+                "trial_id": 4
+              },
+              {
+                "context_sign": 1,
+                "context_step": 120,
+                "decision_cue_sign": -1,
+                "decision_step": 132,
+                "label_sign": -1,
+                "phase": "independent_context",
+                "trial_id": 5
+              },
+              {
+                "context_sign": -1,
+                "context_step": 144,
+                "decision_cue_sign": 1,
+                "decision_step": 156,
+                "label_sign": -1,
+                "phase": "independent_context",
+                "trial_id": 6
+              }
+            ],
+            "trials": 7
+          }
+        },
+        {
+          "accuracy_improvement_max": -1.0,
+          "accuracy_improvement_mean": -1.0,
+          "accuracy_improvement_min": -1.0,
+          "accuracy_improvement_std": 0.0,
+          "all_accuracy_max": 0.42857142857142855,
+          "all_accuracy_mean": 0.42857142857142855,
+          "all_accuracy_min": 0.42857142857142855,
+          "all_accuracy_std": 0.0,
+          "ambiguity": {
+            "ambiguous_current_cue_count": 2,
+            "context_balance": 0.5714285714285714,
+            "decision_count": 7,
+            "label_balance": 0.42857142857142855,
+            "same_current_input_opposite_labels": true
+          },
+          "display_name": "Delayed Context Cue",
+          "early_accuracy_max": 1.0,
+          "early_accuracy_mean": 1.0,
+          "early_accuracy_min": 1.0,
+          "early_accuracy_std": 0.0,
+          "evaluation_count_max": 7.0,
+          "evaluation_count_mean": 7.0,
+          "evaluation_count_min": 7.0,
+          "evaluation_count_std": 0.0,
+          "max_abs_prediction_max": 1.0,
+          "max_abs_prediction_mean": 1.0,
+          "max_abs_prediction_min": 1.0,
+          "max_abs_prediction_std": 0.0,
+          "mean_abs_prediction_max": 0.03888888888888889,
+          "mean_abs_prediction_mean": 0.03888888888888889,
+          "mean_abs_prediction_min": 0.03888888888888889,
+          "mean_abs_prediction_std": 0.0,
+          "model": "shuffled_context",
+          "model_family": "context_control",
+          "prediction_target_corr_max": null,
+          "prediction_target_corr_mean": null,
+          "prediction_target_corr_min": null,
+          "prediction_target_corr_std": null,
+          "runs": 1,
+          "runtime_seconds_max": 0.0007509169999999621,
+          "runtime_seconds_mean": 0.0007509169999999621,
+          "runtime_seconds_min": 0.0007509169999999621,
+          "runtime_seconds_std": 0.0,
+          "seeds": [
+            42
+          ],
+          "steps": 180,
+          "tail_accuracy_max": 0.0,
+          "tail_accuracy_mean": 0.0,
+          "tail_accuracy_min": 0.0,
+          "tail_accuracy_std": 0.0,
+          "tail_prediction_target_corr_max": null,
+          "tail_prediction_target_corr_mean": null,
+          "tail_prediction_target_corr_min": null,
+          "tail_prediction_target_corr_std": null,
+          "task": "delayed_context_cue",
+          "task_metadata": {
+            "context_events": 7,
+            "context_gap": 12,
+            "context_period": 24,
+            "decision_events": 7,
+            "task_kind": "delayed_context_cue",
+            "trial_records": [
+              {
+                "context_sign": 1,
+                "context_step": 0,
+                "decision_cue_sign": 1,
+                "decision_step": 12,
+                "label_sign": 1,
+                "phase": "independent_context",
+                "trial_id": 0
+              },
+              {
+                "context_sign": 1,
+                "context_step": 24,
+                "decision_cue_sign": -1,
+                "decision_step": 36,
+                "label_sign": -1,
+                "phase": "independent_context",
+                "trial_id": 1
+              },
+              {
+                "context_sign": -1,
+                "context_step": 48,
+                "decision_cue_sign": 1,
+                "decision_step": 60,
+                "label_sign": -1,
+                "phase": "independent_context",
+                "trial_id": 2
+              },
+              {
+                "context_sign": -1,
+                "context_step": 72,
+                "decision_cue_sign": -1,
+                "decision_step": 84,
+                "label_sign": 1,
+                "phase": "independent_context",
+                "trial_id": 3
+              },
+              {
+                "context_sign": 1,
+                "context_step": 96,
+                "decision_cue_sign": 1,
+                "decision_step": 108,
+                "label_sign": 1,
+                "phase": "independent_context",
+                "trial_id": 4
+              },
+              {
+                "context_sign": 1,
+                "context_step": 120,
+                "decision_cue_sign": -1,
+                "decision_step": 132,
+                "label_sign": -1,
+                "phase": "independent_context",
+                "trial_id": 5
+              },
+              {
+                "context_sign": -1,
+                "context_step": 144,
+                "decision_cue_sign": 1,
+                "decision_step": 156,
+                "label_sign": -1,
+                "phase": "independent_context",
+                "trial_id": 6
+              }
+            ],
+            "trials": 7
+          }
+        },
+        {
+          "accuracy_improvement_max": -1.0,
+          "accuracy_improvement_mean": -1.0,
+          "accuracy_improvement_min": -1.0,
+          "accuracy_improvement_std": 0.0,
+          "all_accuracy_max": 0.5714285714285714,
+          "all_accuracy_mean": 0.5714285714285714,
+          "all_accuracy_min": 0.5714285714285714,
+          "all_accuracy_std": 0.0,
+          "ambiguity": {
+            "ambiguous_current_cue_count": 2,
+            "context_balance": 0.5714285714285714,
+            "decision_count": 7,
+            "label_balance": 0.42857142857142855,
+            "same_current_input_opposite_labels": true
+          },
+          "display_name": "Delayed Context Cue",
+          "early_accuracy_max": 1.0,
+          "early_accuracy_mean": 1.0,
+          "early_accuracy_min": 1.0,
+          "early_accuracy_std": 0.0,
+          "evaluation_count_max": 7.0,
+          "evaluation_count_mean": 7.0,
+          "evaluation_count_min": 7.0,
+          "evaluation_count_std": 0.0,
+          "max_abs_prediction_max": 1.0,
+          "max_abs_prediction_mean": 1.0,
+          "max_abs_prediction_min": 1.0,
+          "max_abs_prediction_std": 0.0,
+          "mean_abs_prediction_max": 1.0,
+          "mean_abs_prediction_mean": 1.0,
+          "mean_abs_prediction_min": 1.0,
+          "mean_abs_prediction_std": 0.0,
+          "model": "sign_persistence",
+          "model_family": "rule",
+          "prediction_target_corr_max": 0.16666666666666666,
+          "prediction_target_corr_mean": 0.16666666666666666,
+          "prediction_target_corr_min": 0.16666666666666666,
+          "prediction_target_corr_std": 0.0,
+          "runs": 1,
+          "runtime_seconds_max": 0.0020039579999999724,
+          "runtime_seconds_mean": 0.0020039579999999724,
+          "runtime_seconds_min": 0.0020039579999999724,
+          "runtime_seconds_std": 0.0,
+          "seeds": [
+            42
+          ],
+          "steps": 180,
+          "tail_accuracy_max": 0.0,
+          "tail_accuracy_mean": 0.0,
+          "tail_accuracy_min": 0.0,
+          "tail_accuracy_std": 0.0,
+          "tail_prediction_target_corr_max": null,
+          "tail_prediction_target_corr_mean": null,
+          "tail_prediction_target_corr_min": null,
+          "tail_prediction_target_corr_std": null,
+          "task": "delayed_context_cue",
+          "task_metadata": {
+            "context_events": 7,
+            "context_gap": 12,
+            "context_period": 24,
+            "decision_events": 7,
+            "task_kind": "delayed_context_cue",
+            "trial_records": [
+              {
+                "context_sign": 1,
+                "context_step": 0,
+                "decision_cue_sign": 1,
+                "decision_step": 12,
+                "label_sign": 1,
+                "phase": "independent_context",
+                "trial_id": 0
+              },
+              {
+                "context_sign": 1,
+                "context_step": 24,
+                "decision_cue_sign": -1,
+                "decision_step": 36,
+                "label_sign": -1,
+                "phase": "independent_context",
+                "trial_id": 1
+              },
+              {
+                "context_sign": -1,
+                "context_step": 48,
+                "decision_cue_sign": 1,
+                "decision_step": 60,
+                "label_sign": -1,
+                "phase": "independent_context",
+                "trial_id": 2
+              },
+              {
+                "context_sign": -1,
+                "context_step": 72,
+                "decision_cue_sign": -1,
+                "decision_step": 84,
+                "label_sign": 1,
+                "phase": "independent_context",
+                "trial_id": 3
+              },
+              {
+                "context_sign": 1,
+                "context_step": 96,
+                "decision_cue_sign": 1,
+                "decision_step": 108,
+                "label_sign": 1,
+                "phase": "independent_context",
+                "trial_id": 4
+              },
+              {
+                "context_sign": 1,
+                "context_step": 120,
+                "decision_cue_sign": -1,
+                "decision_step": 132,
+                "label_sign": -1,
+                "phase": "independent_context",
+                "trial_id": 5
+              },
+              {
+                "context_sign": -1,
+                "context_step": 144,
+                "decision_cue_sign": 1,
+                "decision_step": 156,
+                "label_sign": -1,
+                "phase": "independent_context",
+                "trial_id": 6
+              }
+            ],
+            "trials": 7
+          }
+        },
+        {
+          "accuracy_improvement_max": 0.0,
+          "accuracy_improvement_mean": 0.0,
+          "accuracy_improvement_min": 0.0,
+          "accuracy_improvement_std": 0.0,
+          "all_accuracy_max": 1.0,
+          "all_accuracy_mean": 1.0,
+          "all_accuracy_min": 1.0,
+          "all_accuracy_std": 0.0,
+          "ambiguity": {
+            "ambiguous_current_cue_count": 2,
+            "context_balance": 0.5714285714285714,
+            "decision_count": 7,
+            "label_balance": 0.42857142857142855,
+            "same_current_input_opposite_labels": true
+          },
+          "display_name": "Delayed Context Cue",
+          "early_accuracy_max": 1.0,
+          "early_accuracy_mean": 1.0,
+          "early_accuracy_min": 1.0,
+          "early_accuracy_std": 0.0,
+          "evaluation_count_max": 7.0,
+          "evaluation_count_mean": 7.0,
+          "evaluation_count_min": 7.0,
+          "evaluation_count_std": 0.0,
+          "max_abs_prediction_max": 1.0,
+          "max_abs_prediction_mean": 1.0,
+          "max_abs_prediction_min": 1.0,
+          "max_abs_prediction_std": 0.0,
+          "mean_abs_prediction_max": 0.03888888888888889,
+          "mean_abs_prediction_mean": 0.03888888888888889,
+          "mean_abs_prediction_min": 0.03888888888888889,
+          "mean_abs_prediction_std": 0.0,
+          "model": "stream_context_memory",
+          "model_family": "context_control",
+          "prediction_target_corr_max": 0.9999999999999997,
+          "prediction_target_corr_mean": 0.9999999999999997,
+          "prediction_target_corr_min": 0.9999999999999997,
+          "prediction_target_corr_std": 0.0,
+          "runs": 1,
+          "runtime_seconds_max": 0.0009745419999998006,
+          "runtime_seconds_mean": 0.0009745419999998006,
+          "runtime_seconds_min": 0.0009745419999998006,
+          "runtime_seconds_std": 0.0,
+          "seeds": [
+            42
+          ],
+          "steps": 180,
+          "tail_accuracy_max": 1.0,
+          "tail_accuracy_mean": 1.0,
+          "tail_accuracy_min": 1.0,
+          "tail_accuracy_std": 0.0,
+          "tail_prediction_target_corr_max": null,
+          "tail_prediction_target_corr_mean": null,
+          "tail_prediction_target_corr_min": null,
+          "tail_prediction_target_corr_std": null,
+          "task": "delayed_context_cue",
+          "task_metadata": {
+            "context_events": 7,
+            "context_gap": 12,
+            "context_period": 24,
+            "decision_events": 7,
+            "task_kind": "delayed_context_cue",
+            "trial_records": [
+              {
+                "context_sign": 1,
+                "context_step": 0,
+                "decision_cue_sign": 1,
+                "decision_step": 12,
+                "label_sign": 1,
+                "phase": "independent_context",
+                "trial_id": 0
+              },
+              {
+                "context_sign": 1,
+                "context_step": 24,
+                "decision_cue_sign": -1,
+                "decision_step": 36,
+                "label_sign": -1,
+                "phase": "independent_context",
+                "trial_id": 1
+              },
+              {
+                "context_sign": -1,
+                "context_step": 48,
+                "decision_cue_sign": 1,
+                "decision_step": 60,
+                "label_sign": -1,
+                "phase": "independent_context",
+                "trial_id": 2
+              },
+              {
+                "context_sign": -1,
+                "context_step": 72,
+                "decision_cue_sign": -1,
+                "decision_step": 84,
+                "label_sign": 1,
+                "phase": "independent_context",
+                "trial_id": 3
+              },
+              {
+                "context_sign": 1,
+                "context_step": 96,
+                "decision_cue_sign": 1,
+                "decision_step": 108,
+                "label_sign": 1,
+                "phase": "independent_context",
+                "trial_id": 4
+              },
+              {
+                "context_sign": 1,
+                "context_step": 120,
+                "decision_cue_sign": -1,
+                "decision_step": 132,
+                "label_sign": -1,
+                "phase": "independent_context",
+                "trial_id": 5
+              },
+              {
+                "context_sign": -1,
+                "context_step": 144,
+                "decision_cue_sign": 1,
+                "decision_step": 156,
+                "label_sign": -1,
+                "phase": "independent_context",
+                "trial_id": 6
+              }
+            ],
+            "trials": 7
+          }
+        },
+        {
+          "accuracy_improvement_max": 0.0,
+          "accuracy_improvement_mean": 0.0,
+          "accuracy_improvement_min": 0.0,
+          "accuracy_improvement_std": 0.0,
+          "all_accuracy_max": 0.0,
+          "all_accuracy_mean": 0.0,
+          "all_accuracy_min": 0.0,
+          "all_accuracy_std": 0.0,
+          "ambiguity": {
+            "ambiguous_current_cue_count": 2,
+            "context_balance": 0.5714285714285714,
+            "decision_count": 7,
+            "label_balance": 0.42857142857142855,
+            "same_current_input_opposite_labels": true
+          },
+          "display_name": "Delayed Context Cue",
+          "early_accuracy_max": 0.0,
+          "early_accuracy_mean": 0.0,
+          "early_accuracy_min": 0.0,
+          "early_accuracy_std": 0.0,
+          "evaluation_count_max": 7.0,
+          "evaluation_count_mean": 7.0,
+          "evaluation_count_min": 7.0,
+          "evaluation_count_std": 0.0,
+          "max_abs_prediction_max": 1.0,
+          "max_abs_prediction_mean": 1.0,
+          "max_abs_prediction_min": 1.0,
+          "max_abs_prediction_std": 0.0,
+          "mean_abs_prediction_max": 0.03888888888888889,
+          "mean_abs_prediction_mean": 0.03888888888888889,
+          "mean_abs_prediction_min": 0.03888888888888889,
+          "mean_abs_prediction_std": 0.0,
+          "model": "wrong_context",
+          "model_family": "context_control",
+          "prediction_target_corr_max": -0.9999999999999997,
+          "prediction_target_corr_mean": -0.9999999999999997,
+          "prediction_target_corr_min": -0.9999999999999997,
+          "prediction_target_corr_std": 0.0,
+          "runs": 1,
+          "runtime_seconds_max": 0.0006847919999999341,
+          "runtime_seconds_mean": 0.0006847919999999341,
+          "runtime_seconds_min": 0.0006847919999999341,
+          "runtime_seconds_std": 0.0,
+          "seeds": [
+            42
+          ],
+          "steps": 180,
+          "tail_accuracy_max": 0.0,
+          "tail_accuracy_mean": 0.0,
+          "tail_accuracy_min": 0.0,
+          "tail_accuracy_std": 0.0,
+          "tail_prediction_target_corr_max": null,
+          "tail_prediction_target_corr_mean": null,
+          "tail_prediction_target_corr_min": null,
+          "tail_prediction_target_corr_std": null,
+          "task": "delayed_context_cue",
+          "task_metadata": {
+            "context_events": 7,
+            "context_gap": 12,
+            "context_period": 24,
+            "decision_events": 7,
+            "task_kind": "delayed_context_cue",
+            "trial_records": [
+              {
+                "context_sign": 1,
+                "context_step": 0,
+                "decision_cue_sign": 1,
+                "decision_step": 12,
+                "label_sign": 1,
+                "phase": "independent_context",
+                "trial_id": 0
+              },
+              {
+                "context_sign": 1,
+                "context_step": 24,
+                "decision_cue_sign": -1,
+                "decision_step": 36,
+                "label_sign": -1,
+                "phase": "independent_context",
+                "trial_id": 1
+              },
+              {
+                "context_sign": -1,
+                "context_step": 48,
+                "decision_cue_sign": 1,
+                "decision_step": 60,
+                "label_sign": -1,
+                "phase": "independent_context",
+                "trial_id": 2
+              },
+              {
+                "context_sign": -1,
+                "context_step": 72,
+                "decision_cue_sign": -1,
+                "decision_step": 84,
+                "label_sign": 1,
+                "phase": "independent_context",
+                "trial_id": 3
+              },
+              {
+                "context_sign": 1,
+                "context_step": 96,
+                "decision_cue_sign": 1,
+                "decision_step": 108,
+                "label_sign": 1,
+                "phase": "independent_context",
+                "trial_id": 4
+              },
+              {
+                "context_sign": 1,
+                "context_step": 120,
+                "decision_cue_sign": -1,
+                "decision_step": 132,
+                "label_sign": -1,
+                "phase": "independent_context",
+                "trial_id": 5
+              },
+              {
+                "context_sign": -1,
+                "context_step": 144,
+                "decision_cue_sign": 1,
+                "decision_step": 156,
+                "label_sign": -1,
+                "phase": "independent_context",
+                "trial_id": 6
+              }
+            ],
+            "trials": 7
+          }
+        },
+        {
+          "accuracy_improvement_max": -1.0,
+          "accuracy_improvement_mean": -1.0,
+          "accuracy_improvement_min": -1.0,
+          "accuracy_improvement_std": 0.0,
+          "all_accuracy_max": 0.5,
+          "all_accuracy_mean": 0.5,
+          "all_accuracy_min": 0.5,
+          "all_accuracy_std": 0.0,
+          "ambiguity": {
+            "ambiguous_current_cue_count": 2,
+            "context_balance": 0.5,
+            "decision_count": 12,
+            "label_balance": 0.6666666666666666,
+            "same_current_input_opposite_labels": true
+          },
+          "display_name": "Hidden Context Recurrence",
+          "early_accuracy_max": 1.0,
+          "early_accuracy_mean": 1.0,
+          "early_accuracy_min": 1.0,
+          "early_accuracy_std": 0.0,
+          "evaluation_count_max": 12.0,
+          "evaluation_count_mean": 12.0,
+          "evaluation_count_min": 12.0,
+          "evaluation_count_std": 0.0,
+          "max_abs_prediction_max": 1.0,
+          "max_abs_prediction_mean": 1.0,
+          "max_abs_prediction_min": 1.0,
+          "max_abs_prediction_std": 0.0,
+          "mean_abs_prediction_max": 0.06666666666666667,
+          "mean_abs_prediction_mean": 0.06666666666666667,
+          "mean_abs_prediction_min": 0.06666666666666667,
+          "mean_abs_prediction_std": 0.0,
+          "model": "memory_reset",
+          "model_family": "context_control",
+          "prediction_target_corr_max": 0.0,
+          "prediction_target_corr_mean": 0.0,
+          "prediction_target_corr_min": 0.0,
+          "prediction_target_corr_std": 0.0,
+          "runs": 1,
+          "runtime_seconds_max": 0.0015461670000000982,
+          "runtime_seconds_mean": 0.0015461670000000982,
+          "runtime_seconds_min": 0.0015461670000000982,
+          "runtime_seconds_std": 0.0,
+          "seeds": [
+            42
+          ],
+          "steps": 180,
+          "tail_accuracy_max": 0.0,
+          "tail_accuracy_mean": 0.0,
+          "tail_accuracy_min": 0.0,
+          "tail_accuracy_std": 0.0,
+          "tail_prediction_target_corr_max": -0.9999999999999999,
+          "tail_prediction_target_corr_mean": -0.9999999999999999,
+          "tail_prediction_target_corr_min": -0.9999999999999999,
+          "tail_prediction_target_corr_std": 0.0,
+          "task": "hidden_context_recurrence",
+          "task_metadata": {
+            "context_events": 4,
+            "decision_events": 12,
+            "decision_gap": 16,
+            "phase_len": 45,
+            "phases": [
+              {
+                "context_sign": 1,
+                "name": "A0_start"
+              },
+              {
+                "context_sign": -1,
+                "name": "B_start"
+              },
+              {
+                "context_sign": 1,
+                "name": "A_return_start"
+              },
+              {
+                "context_sign": -1,
+                "name": "B_return_start"
+              }
+            ],
+            "task_kind": "hidden_context_recurrence",
+            "trial_gap": 12,
+            "trial_records": [
+              {
+                "context_sign": 1,
+                "context_step": 0,
+                "decision_cue_sign": 1,
+                "decision_step": 16,
+                "label_sign": 1,
+                "phase": "A0_start",
+                "trial_id": 0
+              },
+              {
+                "context_sign": 1,
+                "context_step": 12,
+                "decision_cue_sign": -1,
+                "decision_step": 28,
+                "label_sign": -1,
+                "phase": "A0_start",
+                "trial_id": 1
+              },
+              {
+                "context_sign": 1,
+                "context_step": 24,
+                "decision_cue_sign": 1,
+                "decision_step": 40,
+                "label_sign": 1,
+                "phase": "A0_start",
+                "trial_id": 2
+              },
+              {
+                "context_sign": -1,
+                "context_step": 45,
+                "decision_cue_sign": -1,
+                "decision_step": 61,
+                "label_sign": 1,
+                "phase": "B_start",
+                "trial_id": 3
+              },
+              {
+                "context_sign": -1,
+                "context_step": 57,
+                "decision_cue_sign": 1,
+                "decision_step": 73,
+                "label_sign": -1,
+                "phase": "B_start",
+                "trial_id": 4
+              },
+              {
+                "context_sign": -1,
+                "context_step": 69,
+                "decision_cue_sign": -1,
+                "decision_step": 85,
+                "label_sign": 1,
+                "phase": "B_start",
+                "trial_id": 5
+              },
+              {
+                "context_sign": 1,
+                "context_step": 90,
+                "decision_cue_sign": 1,
+                "decision_step": 106,
+                "label_sign": 1,
+                "phase": "A_return_start",
+                "trial_id": 6
+              },
+              {
+                "context_sign": 1,
+                "context_step": 102,
+                "decision_cue_sign": -1,
+                "decision_step": 118,
+                "label_sign": -1,
+                "phase": "A_return_start",
+                "trial_id": 7
+              },
+              {
+                "context_sign": 1,
+                "context_step": 114,
+                "decision_cue_sign": 1,
+                "decision_step": 130,
+                "label_sign": 1,
+                "phase": "A_return_start",
+                "trial_id": 8
+              },
+              {
+                "context_sign": -1,
+                "context_step": 135,
+                "decision_cue_sign": -1,
+                "decision_step": 151,
+                "label_sign": 1,
+                "phase": "B_return_start",
+                "trial_id": 9
+              },
+              {
+                "context_sign": -1,
+                "context_step": 147,
+                "decision_cue_sign": 1,
+                "decision_step": 163,
+                "label_sign": -1,
+                "phase": "B_return_start",
+                "trial_id": 10
+              },
+              {
+                "context_sign": -1,
+                "context_step": 159,
+                "decision_cue_sign": -1,
+                "decision_step": 175,
+                "label_sign": 1,
+                "phase": "B_return_start",
+                "trial_id": 11
+              }
+            ],
+            "trials": 12
+          }
+        },
+        {
+          "accuracy_improvement_max": 0.3333333333333333,
+          "accuracy_improvement_mean": 0.3333333333333333,
+          "accuracy_improvement_min": 0.3333333333333333,
+          "accuracy_improvement_std": 0.0,
+          "all_accuracy_max": 0.25,
+          "all_accuracy_mean": 0.25,
+          "all_accuracy_min": 0.25,
+          "all_accuracy_std": 0.0,
+          "ambiguity": {
+            "ambiguous_current_cue_count": 2,
+            "context_balance": 0.5,
+            "decision_count": 12,
+            "label_balance": 0.6666666666666666,
+            "same_current_input_opposite_labels": true
+          },
+          "display_name": "Hidden Context Recurrence",
+          "early_accuracy_max": 0.0,
+          "early_accuracy_mean": 0.0,
+          "early_accuracy_min": 0.0,
+          "early_accuracy_std": 0.0,
+          "evaluation_count_max": 12.0,
+          "evaluation_count_mean": 12.0,
+          "evaluation_count_min": 12.0,
+          "evaluation_count_std": 0.0,
+          "max_abs_prediction_max": 0.3488,
+          "max_abs_prediction_mean": 0.3488,
+          "max_abs_prediction_min": 0.3488,
+          "max_abs_prediction_std": 0.0,
+          "mean_abs_prediction_max": 0.10643555555555553,
+          "mean_abs_prediction_mean": 0.10643555555555553,
+          "mean_abs_prediction_min": 0.10643555555555553,
+          "mean_abs_prediction_std": 0.0,
+          "model": "online_perceptron",
+          "model_family": "linear",
+          "prediction_target_corr_max": -0.3591720227131444,
+          "prediction_target_corr_mean": -0.3591720227131444,
+          "prediction_target_corr_min": -0.3591720227131444,
+          "prediction_target_corr_std": 0.0,
+          "runs": 1,
+          "runtime_seconds_max": 0.0013727499999998116,
+          "runtime_seconds_mean": 0.0013727499999998116,
+          "runtime_seconds_min": 0.0013727499999998116,
+          "runtime_seconds_std": 0.0,
+          "seeds": [
+            42
+          ],
+          "steps": 180,
+          "tail_accuracy_max": 0.3333333333333333,
+          "tail_accuracy_mean": 0.3333333333333333,
+          "tail_accuracy_min": 0.3333333333333333,
+          "tail_accuracy_std": 0.0,
+          "tail_prediction_target_corr_max": -0.4200747003977528,
+          "tail_prediction_target_corr_mean": -0.4200747003977528,
+          "tail_prediction_target_corr_min": -0.4200747003977528,
+          "tail_prediction_target_corr_std": 0.0,
+          "task": "hidden_context_recurrence",
+          "task_metadata": {
+            "context_events": 4,
+            "decision_events": 12,
+            "decision_gap": 16,
+            "phase_len": 45,
+            "phases": [
+              {
+                "context_sign": 1,
+                "name": "A0_start"
+              },
+              {
+                "context_sign": -1,
+                "name": "B_start"
+              },
+              {
+                "context_sign": 1,
+                "name": "A_return_start"
+              },
+              {
+                "context_sign": -1,
+                "name": "B_return_start"
+              }
+            ],
+            "task_kind": "hidden_context_recurrence",
+            "trial_gap": 12,
+            "trial_records": [
+              {
+                "context_sign": 1,
+                "context_step": 0,
+                "decision_cue_sign": 1,
+                "decision_step": 16,
+                "label_sign": 1,
+                "phase": "A0_start",
+                "trial_id": 0
+              },
+              {
+                "context_sign": 1,
+                "context_step": 12,
+                "decision_cue_sign": -1,
+                "decision_step": 28,
+                "label_sign": -1,
+                "phase": "A0_start",
+                "trial_id": 1
+              },
+              {
+                "context_sign": 1,
+                "context_step": 24,
+                "decision_cue_sign": 1,
+                "decision_step": 40,
+                "label_sign": 1,
+                "phase": "A0_start",
+                "trial_id": 2
+              },
+              {
+                "context_sign": -1,
+                "context_step": 45,
+                "decision_cue_sign": -1,
+                "decision_step": 61,
+                "label_sign": 1,
+                "phase": "B_start",
+                "trial_id": 3
+              },
+              {
+                "context_sign": -1,
+                "context_step": 57,
+                "decision_cue_sign": 1,
+                "decision_step": 73,
+                "label_sign": -1,
+                "phase": "B_start",
+                "trial_id": 4
+              },
+              {
+                "context_sign": -1,
+                "context_step": 69,
+                "decision_cue_sign": -1,
+                "decision_step": 85,
+                "label_sign": 1,
+                "phase": "B_start",
+                "trial_id": 5
+              },
+              {
+                "context_sign": 1,
+                "context_step": 90,
+                "decision_cue_sign": 1,
+                "decision_step": 106,
+                "label_sign": 1,
+                "phase": "A_return_start",
+                "trial_id": 6
+              },
+              {
+                "context_sign": 1,
+                "context_step": 102,
+                "decision_cue_sign": -1,
+                "decision_step": 118,
+                "label_sign": -1,
+                "phase": "A_return_start",
+                "trial_id": 7
+              },
+              {
+                "context_sign": 1,
+                "context_step": 114,
+                "decision_cue_sign": 1,
+                "decision_step": 130,
+                "label_sign": 1,
+                "phase": "A_return_start",
+                "trial_id": 8
+              },
+              {
+                "context_sign": -1,
+                "context_step": 135,
+                "decision_cue_sign": -1,
+                "decision_step": 151,
+                "label_sign": 1,
+                "phase": "B_return_start",
+                "trial_id": 9
+              },
+              {
+                "context_sign": -1,
+                "context_step": 147,
+                "decision_cue_sign": 1,
+                "decision_step": 163,
+                "label_sign": -1,
+                "phase": "B_return_start",
+                "trial_id": 10
+              },
+              {
+                "context_sign": -1,
+                "context_step": 159,
+                "decision_cue_sign": -1,
+                "decision_step": 175,
+                "label_sign": 1,
+                "phase": "B_return_start",
+                "trial_id": 11
+              }
+            ],
+            "trials": 12
+          }
+        },
+        {
+          "accuracy_improvement_max": 0.0,
+          "accuracy_improvement_mean": 0.0,
+          "accuracy_improvement_min": 0.0,
+          "accuracy_improvement_std": 0.0,
+          "all_accuracy_max": 1.0,
+          "all_accuracy_mean": 1.0,
+          "all_accuracy_min": 1.0,
+          "all_accuracy_std": 0.0,
+          "ambiguity": {
+            "ambiguous_current_cue_count": 2,
+            "context_balance": 0.5,
+            "decision_count": 12,
+            "label_balance": 0.6666666666666666,
+            "same_current_input_opposite_labels": true
+          },
+          "display_name": "Hidden Context Recurrence",
+          "early_accuracy_max": 1.0,
+          "early_accuracy_mean": 1.0,
+          "early_accuracy_min": 1.0,
+          "early_accuracy_std": 0.0,
+          "evaluation_count_max": 12.0,
+          "evaluation_count_mean": 12.0,
+          "evaluation_count_min": 12.0,
+          "evaluation_count_std": 0.0,
+          "max_abs_prediction_max": 1.0,
+          "max_abs_prediction_mean": 1.0,
+          "max_abs_prediction_min": 1.0,
+          "max_abs_prediction_std": 0.0,
+          "mean_abs_prediction_max": 0.06666666666666667,
+          "mean_abs_prediction_mean": 0.06666666666666667,
+          "mean_abs_prediction_min": 0.06666666666666667,
+          "mean_abs_prediction_std": 0.0,
+          "model": "oracle_context",
+          "model_family": "context_control",
+          "prediction_target_corr_max": 1.0,
+          "prediction_target_corr_mean": 1.0,
+          "prediction_target_corr_min": 1.0,
+          "prediction_target_corr_std": 0.0,
+          "runs": 1,
+          "runtime_seconds_max": 0.0007156249999999975,
+          "runtime_seconds_mean": 0.0007156249999999975,
+          "runtime_seconds_min": 0.0007156249999999975,
+          "runtime_seconds_std": 0.0,
+          "seeds": [
+            42
+          ],
+          "steps": 180,
+          "tail_accuracy_max": 1.0,
+          "tail_accuracy_mean": 1.0,
+          "tail_accuracy_min": 1.0,
+          "tail_accuracy_std": 0.0,
+          "tail_prediction_target_corr_max": 0.9999999999999999,
+          "tail_prediction_target_corr_mean": 0.9999999999999999,
+          "tail_prediction_target_corr_min": 0.9999999999999999,
+          "tail_prediction_target_corr_std": 0.0,
+          "task": "hidden_context_recurrence",
+          "task_metadata": {
+            "context_events": 4,
+            "decision_events": 12,
+            "decision_gap": 16,
+            "phase_len": 45,
+            "phases": [
+              {
+                "context_sign": 1,
+                "name": "A0_start"
+              },
+              {
+                "context_sign": -1,
+                "name": "B_start"
+              },
+              {
+                "context_sign": 1,
+                "name": "A_return_start"
+              },
+              {
+                "context_sign": -1,
+                "name": "B_return_start"
+              }
+            ],
+            "task_kind": "hidden_context_recurrence",
+            "trial_gap": 12,
+            "trial_records": [
+              {
+                "context_sign": 1,
+                "context_step": 0,
+                "decision_cue_sign": 1,
+                "decision_step": 16,
+                "label_sign": 1,
+                "phase": "A0_start",
+                "trial_id": 0
+              },
+              {
+                "context_sign": 1,
+                "context_step": 12,
+                "decision_cue_sign": -1,
+                "decision_step": 28,
+                "label_sign": -1,
+                "phase": "A0_start",
+                "trial_id": 1
+              },
+              {
+                "context_sign": 1,
+                "context_step": 24,
+                "decision_cue_sign": 1,
+                "decision_step": 40,
+                "label_sign": 1,
+                "phase": "A0_start",
+                "trial_id": 2
+              },
+              {
+                "context_sign": -1,
+                "context_step": 45,
+                "decision_cue_sign": -1,
+                "decision_step": 61,
+                "label_sign": 1,
+                "phase": "B_start",
+                "trial_id": 3
+              },
+              {
+                "context_sign": -1,
+                "context_step": 57,
+                "decision_cue_sign": 1,
+                "decision_step": 73,
+                "label_sign": -1,
+                "phase": "B_start",
+                "trial_id": 4
+              },
+              {
+                "context_sign": -1,
+                "context_step": 69,
+                "decision_cue_sign": -1,
+                "decision_step": 85,
+                "label_sign": 1,
+                "phase": "B_start",
+                "trial_id": 5
+              },
+              {
+                "context_sign": 1,
+                "context_step": 90,
+                "decision_cue_sign": 1,
+                "decision_step": 106,
+                "label_sign": 1,
+                "phase": "A_return_start",
+                "trial_id": 6
+              },
+              {
+                "context_sign": 1,
+                "context_step": 102,
+                "decision_cue_sign": -1,
+                "decision_step": 118,
+                "label_sign": -1,
+                "phase": "A_return_start",
+                "trial_id": 7
+              },
+              {
+                "context_sign": 1,
+                "context_step": 114,
+                "decision_cue_sign": 1,
+                "decision_step": 130,
+                "label_sign": 1,
+                "phase": "A_return_start",
+                "trial_id": 8
+              },
+              {
+                "context_sign": -1,
+                "context_step": 135,
+                "decision_cue_sign": -1,
+                "decision_step": 151,
+                "label_sign": 1,
+                "phase": "B_return_start",
+                "trial_id": 9
+              },
+              {
+                "context_sign": -1,
+                "context_step": 147,
+                "decision_cue_sign": 1,
+                "decision_step": 163,
+                "label_sign": -1,
+                "phase": "B_return_start",
+                "trial_id": 10
+              },
+              {
+                "context_sign": -1,
+                "context_step": 159,
+                "decision_cue_sign": -1,
+                "decision_step": 175,
+                "label_sign": 1,
+                "phase": "B_return_start",
+                "trial_id": 11
+              }
+            ],
+            "trials": 12
+          }
+        },
+        {
+          "accuracy_improvement_max": -0.6666666666666667,
+          "accuracy_improvement_mean": -0.6666666666666667,
+          "accuracy_improvement_min": -0.6666666666666667,
+          "accuracy_improvement_std": 0.0,
+          "all_accuracy_max": 0.5,
+          "all_accuracy_mean": 0.5,
+          "all_accuracy_min": 0.5,
+          "all_accuracy_std": 0.0,
+          "ambiguity": {
+            "ambiguous_current_cue_count": 2,
+            "context_balance": 0.5,
+            "decision_count": 12,
+            "label_balance": 0.6666666666666666,
+            "same_current_input_opposite_labels": true
+          },
+          "display_name": "Hidden Context Recurrence",
+          "early_accuracy_max": 1.0,
+          "early_accuracy_mean": 1.0,
+          "early_accuracy_min": 1.0,
+          "early_accuracy_std": 0.0,
+          "evaluation_count_max": 12.0,
+          "evaluation_count_mean": 12.0,
+          "evaluation_count_min": 12.0,
+          "evaluation_count_std": 0.0,
+          "max_abs_prediction_max": 1.0,
+          "max_abs_prediction_mean": 1.0,
+          "max_abs_prediction_min": 1.0,
+          "max_abs_prediction_std": 0.0,
+          "mean_abs_prediction_max": 0.06666666666666667,
+          "mean_abs_prediction_mean": 0.06666666666666667,
+          "mean_abs_prediction_min": 0.06666666666666667,
+          "mean_abs_prediction_std": 0.0,
+          "model": "shuffled_context",
+          "model_family": "context_control",
+          "prediction_target_corr_max": 0.12499999999999996,
+          "prediction_target_corr_mean": 0.12499999999999996,
+          "prediction_target_corr_min": 0.12499999999999996,
+          "prediction_target_corr_std": 0.0,
+          "runs": 1,
+          "runtime_seconds_max": 0.0007022500000000154,
+          "runtime_seconds_mean": 0.0007022500000000154,
+          "runtime_seconds_min": 0.0007022500000000154,
+          "runtime_seconds_std": 0.0,
+          "seeds": [
+            42
+          ],
+          "steps": 180,
+          "tail_accuracy_max": 0.3333333333333333,
+          "tail_accuracy_mean": 0.3333333333333333,
+          "tail_accuracy_min": 0.3333333333333333,
+          "tail_accuracy_std": 0.0,
+          "tail_prediction_target_corr_max": -0.49999999999999983,
+          "tail_prediction_target_corr_mean": -0.49999999999999983,
+          "tail_prediction_target_corr_min": -0.49999999999999983,
+          "tail_prediction_target_corr_std": 0.0,
+          "task": "hidden_context_recurrence",
+          "task_metadata": {
+            "context_events": 4,
+            "decision_events": 12,
+            "decision_gap": 16,
+            "phase_len": 45,
+            "phases": [
+              {
+                "context_sign": 1,
+                "name": "A0_start"
+              },
+              {
+                "context_sign": -1,
+                "name": "B_start"
+              },
+              {
+                "context_sign": 1,
+                "name": "A_return_start"
+              },
+              {
+                "context_sign": -1,
+                "name": "B_return_start"
+              }
+            ],
+            "task_kind": "hidden_context_recurrence",
+            "trial_gap": 12,
+            "trial_records": [
+              {
+                "context_sign": 1,
+                "context_step": 0,
+                "decision_cue_sign": 1,
+                "decision_step": 16,
+                "label_sign": 1,
+                "phase": "A0_start",
+                "trial_id": 0
+              },
+              {
+                "context_sign": 1,
+                "context_step": 12,
+                "decision_cue_sign": -1,
+                "decision_step": 28,
+                "label_sign": -1,
+                "phase": "A0_start",
+                "trial_id": 1
+              },
+              {
+                "context_sign": 1,
+                "context_step": 24,
+                "decision_cue_sign": 1,
+                "decision_step": 40,
+                "label_sign": 1,
+                "phase": "A0_start",
+                "trial_id": 2
+              },
+              {
+                "context_sign": -1,
+                "context_step": 45,
+                "decision_cue_sign": -1,
+                "decision_step": 61,
+                "label_sign": 1,
+                "phase": "B_start",
+                "trial_id": 3
+              },
+              {
+                "context_sign": -1,
+                "context_step": 57,
+                "decision_cue_sign": 1,
+                "decision_step": 73,
+                "label_sign": -1,
+                "phase": "B_start",
+                "trial_id": 4
+              },
+              {
+                "context_sign": -1,
+                "context_step": 69,
+                "decision_cue_sign": -1,
+                "decision_step": 85,
+                "label_sign": 1,
+                "phase": "B_start",
+                "trial_id": 5
+              },
+              {
+                "context_sign": 1,
+                "context_step": 90,
+                "decision_cue_sign": 1,
+                "decision_step": 106,
+                "label_sign": 1,
+                "phase": "A_return_start",
+                "trial_id": 6
+              },
+              {
+                "context_sign": 1,
+                "context_step": 102,
+                "decision_cue_sign": -1,
+                "decision_step": 118,
+                "label_sign": -1,
+                "phase": "A_return_start",
+                "trial_id": 7
+              },
+              {
+                "context_sign": 1,
+                "context_step": 114,
+                "decision_cue_sign": 1,
+                "decision_step": 130,
+                "label_sign": 1,
+                "phase": "A_return_start",
+                "trial_id": 8
+              },
+              {
+                "context_sign": -1,
+                "context_step": 135,
+                "decision_cue_sign": -1,
+                "decision_step": 151,
+                "label_sign": 1,
+                "phase": "B_return_start",
+                "trial_id": 9
+              },
+              {
+                "context_sign": -1,
+                "context_step": 147,
+                "decision_cue_sign": 1,
+                "decision_step": 163,
+                "label_sign": -1,
+                "phase": "B_return_start",
+                "trial_id": 10
+              },
+              {
+                "context_sign": -1,
+                "context_step": 159,
+                "decision_cue_sign": -1,
+                "decision_step": 175,
+                "label_sign": 1,
+                "phase": "B_return_start",
+                "trial_id": 11
+              }
+            ],
+            "trials": 12
+          }
+        },
+        {
+          "accuracy_improvement_max": -1.0,
+          "accuracy_improvement_mean": -1.0,
+          "accuracy_improvement_min": -1.0,
+          "accuracy_improvement_std": 0.0,
+          "all_accuracy_max": 0.5,
+          "all_accuracy_mean": 0.5,
+          "all_accuracy_min": 0.5,
+          "all_accuracy_std": 0.0,
+          "ambiguity": {
+            "ambiguous_current_cue_count": 2,
+            "context_balance": 0.5,
+            "decision_count": 12,
+            "label_balance": 0.6666666666666666,
+            "same_current_input_opposite_labels": true
+          },
+          "display_name": "Hidden Context Recurrence",
+          "early_accuracy_max": 1.0,
+          "early_accuracy_mean": 1.0,
+          "early_accuracy_min": 1.0,
+          "early_accuracy_std": 0.0,
+          "evaluation_count_max": 12.0,
+          "evaluation_count_mean": 12.0,
+          "evaluation_count_min": 12.0,
+          "evaluation_count_std": 0.0,
+          "max_abs_prediction_max": 1.0,
+          "max_abs_prediction_mean": 1.0,
+          "max_abs_prediction_min": 1.0,
+          "max_abs_prediction_std": 0.0,
+          "mean_abs_prediction_max": 1.0,
+          "mean_abs_prediction_mean": 1.0,
+          "mean_abs_prediction_min": 1.0,
+          "mean_abs_prediction_std": 0.0,
+          "model": "sign_persistence",
+          "model_family": "rule",
+          "prediction_target_corr_max": 0.0,
+          "prediction_target_corr_mean": 0.0,
+          "prediction_target_corr_min": 0.0,
+          "prediction_target_corr_std": 0.0,
+          "runs": 1,
+          "runtime_seconds_max": 0.0010247920000001631,
+          "runtime_seconds_mean": 0.0010247920000001631,
+          "runtime_seconds_min": 0.0010247920000001631,
+          "runtime_seconds_std": 0.0,
+          "seeds": [
+            42
+          ],
+          "steps": 180,
+          "tail_accuracy_max": 0.0,
+          "tail_accuracy_mean": 0.0,
+          "tail_accuracy_min": 0.0,
+          "tail_accuracy_std": 0.0,
+          "tail_prediction_target_corr_max": -0.9999999999999999,
+          "tail_prediction_target_corr_mean": -0.9999999999999999,
+          "tail_prediction_target_corr_min": -0.9999999999999999,
+          "tail_prediction_target_corr_std": 0.0,
+          "task": "hidden_context_recurrence",
+          "task_metadata": {
+            "context_events": 4,
+            "decision_events": 12,
+            "decision_gap": 16,
+            "phase_len": 45,
+            "phases": [
+              {
+                "context_sign": 1,
+                "name": "A0_start"
+              },
+              {
+                "context_sign": -1,
+                "name": "B_start"
+              },
+              {
+                "context_sign": 1,
+                "name": "A_return_start"
+              },
+              {
+                "context_sign": -1,
+                "name": "B_return_start"
+              }
+            ],
+            "task_kind": "hidden_context_recurrence",
+            "trial_gap": 12,
+            "trial_records": [
+              {
+                "context_sign": 1,
+                "context_step": 0,
+                "decision_cue_sign": 1,
+                "decision_step": 16,
+                "label_sign": 1,
+                "phase": "A0_start",
+                "trial_id": 0
+              },
+              {
+                "context_sign": 1,
+                "context_step": 12,
+                "decision_cue_sign": -1,
+                "decision_step": 28,
+                "label_sign": -1,
+                "phase": "A0_start",
+                "trial_id": 1
+              },
+              {
+                "context_sign": 1,
+                "context_step": 24,
+                "decision_cue_sign": 1,
+                "decision_step": 40,
+                "label_sign": 1,
+                "phase": "A0_start",
+                "trial_id": 2
+              },
+              {
+                "context_sign": -1,
+                "context_step": 45,
+                "decision_cue_sign": -1,
+                "decision_step": 61,
+                "label_sign": 1,
+                "phase": "B_start",
+                "trial_id": 3
+              },
+              {
+                "context_sign": -1,
+                "context_step": 57,
+                "decision_cue_sign": 1,
+                "decision_step": 73,
+                "label_sign": -1,
+                "phase": "B_start",
+                "trial_id": 4
+              },
+              {
+                "context_sign": -1,
+                "context_step": 69,
+                "decision_cue_sign": -1,
+                "decision_step": 85,
+                "label_sign": 1,
+                "phase": "B_start",
+                "trial_id": 5
+              },
+              {
+                "context_sign": 1,
+                "context_step": 90,
+                "decision_cue_sign": 1,
+                "decision_step": 106,
+                "label_sign": 1,
+                "phase": "A_return_start",
+                "trial_id": 6
+              },
+              {
+                "context_sign": 1,
+                "context_step": 102,
+                "decision_cue_sign": -1,
+                "decision_step": 118,
+                "label_sign": -1,
+                "phase": "A_return_start",
+                "trial_id": 7
+              },
+              {
+                "context_sign": 1,
+                "context_step": 114,
+                "decision_cue_sign": 1,
+                "decision_step": 130,
+                "label_sign": 1,
+                "phase": "A_return_start",
+                "trial_id": 8
+              },
+              {
+                "context_sign": -1,
+                "context_step": 135,
+                "decision_cue_sign": -1,
+                "decision_step": 151,
+                "label_sign": 1,
+                "phase": "B_return_start",
+                "trial_id": 9
+              },
+              {
+                "context_sign": -1,
+                "context_step": 147,
+                "decision_cue_sign": 1,
+                "decision_step": 163,
+                "label_sign": -1,
+                "phase": "B_return_start",
+                "trial_id": 10
+              },
+              {
+                "context_sign": -1,
+                "context_step": 159,
+                "decision_cue_sign": -1,
+                "decision_step": 175,
+                "label_sign": 1,
+                "phase": "B_return_start",
+                "trial_id": 11
+              }
+            ],
+            "trials": 12
+          }
+        },
+        {
+          "accuracy_improvement_max": 0.0,
+          "accuracy_improvement_mean": 0.0,
+          "accuracy_improvement_min": 0.0,
+          "accuracy_improvement_std": 0.0,
+          "all_accuracy_max": 1.0,
+          "all_accuracy_mean": 1.0,
+          "all_accuracy_min": 1.0,
+          "all_accuracy_std": 0.0,
+          "ambiguity": {
+            "ambiguous_current_cue_count": 2,
+            "context_balance": 0.5,
+            "decision_count": 12,
+            "label_balance": 0.6666666666666666,
+            "same_current_input_opposite_labels": true
+          },
+          "display_name": "Hidden Context Recurrence",
+          "early_accuracy_max": 1.0,
+          "early_accuracy_mean": 1.0,
+          "early_accuracy_min": 1.0,
+          "early_accuracy_std": 0.0,
+          "evaluation_count_max": 12.0,
+          "evaluation_count_mean": 12.0,
+          "evaluation_count_min": 12.0,
+          "evaluation_count_std": 0.0,
+          "max_abs_prediction_max": 1.0,
+          "max_abs_prediction_mean": 1.0,
+          "max_abs_prediction_min": 1.0,
+          "max_abs_prediction_std": 0.0,
+          "mean_abs_prediction_max": 0.06666666666666667,
+          "mean_abs_prediction_mean": 0.06666666666666667,
+          "mean_abs_prediction_min": 0.06666666666666667,
+          "mean_abs_prediction_std": 0.0,
+          "model": "stream_context_memory",
+          "model_family": "context_control",
+          "prediction_target_corr_max": 1.0,
+          "prediction_target_corr_mean": 1.0,
+          "prediction_target_corr_min": 1.0,
+          "prediction_target_corr_std": 0.0,
+          "runs": 1,
+          "runtime_seconds_max": 0.0007082080000000435,
+          "runtime_seconds_mean": 0.0007082080000000435,
+          "runtime_seconds_min": 0.0007082080000000435,
+          "runtime_seconds_std": 0.0,
+          "seeds": [
+            42
+          ],
+          "steps": 180,
+          "tail_accuracy_max": 1.0,
+          "tail_accuracy_mean": 1.0,
+          "tail_accuracy_min": 1.0,
+          "tail_accuracy_std": 0.0,
+          "tail_prediction_target_corr_max": 0.9999999999999999,
+          "tail_prediction_target_corr_mean": 0.9999999999999999,
+          "tail_prediction_target_corr_min": 0.9999999999999999,
+          "tail_prediction_target_corr_std": 0.0,
+          "task": "hidden_context_recurrence",
+          "task_metadata": {
+            "context_events": 4,
+            "decision_events": 12,
+            "decision_gap": 16,
+            "phase_len": 45,
+            "phases": [
+              {
+                "context_sign": 1,
+                "name": "A0_start"
+              },
+              {
+                "context_sign": -1,
+                "name": "B_start"
+              },
+              {
+                "context_sign": 1,
+                "name": "A_return_start"
+              },
+              {
+                "context_sign": -1,
+                "name": "B_return_start"
+              }
+            ],
+            "task_kind": "hidden_context_recurrence",
+            "trial_gap": 12,
+            "trial_records": [
+              {
+                "context_sign": 1,
+                "context_step": 0,
+                "decision_cue_sign": 1,
+                "decision_step": 16,
+                "label_sign": 1,
+                "phase": "A0_start",
+                "trial_id": 0
+              },
+              {
+                "context_sign": 1,
+                "context_step": 12,
+                "decision_cue_sign": -1,
+                "decision_step": 28,
+                "label_sign": -1,
+                "phase": "A0_start",
+                "trial_id": 1
+              },
+              {
+                "context_sign": 1,
+                "context_step": 24,
+                "decision_cue_sign": 1,
+                "decision_step": 40,
+                "label_sign": 1,
+                "phase": "A0_start",
+                "trial_id": 2
+              },
+              {
+                "context_sign": -1,
+                "context_step": 45,
+                "decision_cue_sign": -1,
+                "decision_step": 61,
+                "label_sign": 1,
+                "phase": "B_start",
+                "trial_id": 3
+              },
+              {
+                "context_sign": -1,
+                "context_step": 57,
+                "decision_cue_sign": 1,
+                "decision_step": 73,
+                "label_sign": -1,
+                "phase": "B_start",
+                "trial_id": 4
+              },
+              {
+                "context_sign": -1,
+                "context_step": 69,
+                "decision_cue_sign": -1,
+                "decision_step": 85,
+                "label_sign": 1,
+                "phase": "B_start",
+                "trial_id": 5
+              },
+              {
+                "context_sign": 1,
+                "context_step": 90,
+                "decision_cue_sign": 1,
+                "decision_step": 106,
+                "label_sign": 1,
+                "phase": "A_return_start",
+                "trial_id": 6
+              },
+              {
+                "context_sign": 1,
+                "context_step": 102,
+                "decision_cue_sign": -1,
+                "decision_step": 118,
+                "label_sign": -1,
+                "phase": "A_return_start",
+                "trial_id": 7
+              },
+              {
+                "context_sign": 1,
+                "context_step": 114,
+                "decision_cue_sign": 1,
+                "decision_step": 130,
+                "label_sign": 1,
+                "phase": "A_return_start",
+                "trial_id": 8
+              },
+              {
+                "context_sign": -1,
+                "context_step": 135,
+                "decision_cue_sign": -1,
+                "decision_step": 151,
+                "label_sign": 1,
+                "phase": "B_return_start",
+                "trial_id": 9
+              },
+              {
+                "context_sign": -1,
+                "context_step": 147,
+                "decision_cue_sign": 1,
+                "decision_step": 163,
+                "label_sign": -1,
+                "phase": "B_return_start",
+                "trial_id": 10
+              },
+              {
+                "context_sign": -1,
+                "context_step": 159,
+                "decision_cue_sign": -1,
+                "decision_step": 175,
+                "label_sign": 1,
+                "phase": "B_return_start",
+                "trial_id": 11
+              }
+            ],
+            "trials": 12
+          }
+        },
+        {
+          "accuracy_improvement_max": 0.0,
+          "accuracy_improvement_mean": 0.0,
+          "accuracy_improvement_min": 0.0,
+          "accuracy_improvement_std": 0.0,
+          "all_accuracy_max": 0.0,
+          "all_accuracy_mean": 0.0,
+          "all_accuracy_min": 0.0,
+          "all_accuracy_std": 0.0,
+          "ambiguity": {
+            "ambiguous_current_cue_count": 2,
+            "context_balance": 0.5,
+            "decision_count": 12,
+            "label_balance": 0.6666666666666666,
+            "same_current_input_opposite_labels": true
+          },
+          "display_name": "Hidden Context Recurrence",
+          "early_accuracy_max": 0.0,
+          "early_accuracy_mean": 0.0,
+          "early_accuracy_min": 0.0,
+          "early_accuracy_std": 0.0,
+          "evaluation_count_max": 12.0,
+          "evaluation_count_mean": 12.0,
+          "evaluation_count_min": 12.0,
+          "evaluation_count_std": 0.0,
+          "max_abs_prediction_max": 1.0,
+          "max_abs_prediction_mean": 1.0,
+          "max_abs_prediction_min": 1.0,
+          "max_abs_prediction_std": 0.0,
+          "mean_abs_prediction_max": 0.06666666666666667,
+          "mean_abs_prediction_mean": 0.06666666666666667,
+          "mean_abs_prediction_min": 0.06666666666666667,
+          "mean_abs_prediction_std": 0.0,
+          "model": "wrong_context",
+          "model_family": "context_control",
+          "prediction_target_corr_max": -1.0,
+          "prediction_target_corr_mean": -1.0,
+          "prediction_target_corr_min": -1.0,
+          "prediction_target_corr_std": 0.0,
+          "runs": 1,
+          "runtime_seconds_max": 0.0007404589999999711,
+          "runtime_seconds_mean": 0.0007404589999999711,
+          "runtime_seconds_min": 0.0007404589999999711,
+          "runtime_seconds_std": 0.0,
+          "seeds": [
+            42
+          ],
+          "steps": 180,
+          "tail_accuracy_max": 0.0,
+          "tail_accuracy_mean": 0.0,
+          "tail_accuracy_min": 0.0,
+          "tail_accuracy_std": 0.0,
+          "tail_prediction_target_corr_max": -0.9999999999999999,
+          "tail_prediction_target_corr_mean": -0.9999999999999999,
+          "tail_prediction_target_corr_min": -0.9999999999999999,
+          "tail_prediction_target_corr_std": 0.0,
+          "task": "hidden_context_recurrence",
+          "task_metadata": {
+            "context_events": 4,
+            "decision_events": 12,
+            "decision_gap": 16,
+            "phase_len": 45,
+            "phases": [
+              {
+                "context_sign": 1,
+                "name": "A0_start"
+              },
+              {
+                "context_sign": -1,
+                "name": "B_start"
+              },
+              {
+                "context_sign": 1,
+                "name": "A_return_start"
+              },
+              {
+                "context_sign": -1,
+                "name": "B_return_start"
+              }
+            ],
+            "task_kind": "hidden_context_recurrence",
+            "trial_gap": 12,
+            "trial_records": [
+              {
+                "context_sign": 1,
+                "context_step": 0,
+                "decision_cue_sign": 1,
+                "decision_step": 16,
+                "label_sign": 1,
+                "phase": "A0_start",
+                "trial_id": 0
+              },
+              {
+                "context_sign": 1,
+                "context_step": 12,
+                "decision_cue_sign": -1,
+                "decision_step": 28,
+                "label_sign": -1,
+                "phase": "A0_start",
+                "trial_id": 1
+              },
+              {
+                "context_sign": 1,
+                "context_step": 24,
+                "decision_cue_sign": 1,
+                "decision_step": 40,
+                "label_sign": 1,
+                "phase": "A0_start",
+                "trial_id": 2
+              },
+              {
+                "context_sign": -1,
+                "context_step": 45,
+                "decision_cue_sign": -1,
+                "decision_step": 61,
+                "label_sign": 1,
+                "phase": "B_start",
+                "trial_id": 3
+              },
+              {
+                "context_sign": -1,
+                "context_step": 57,
+                "decision_cue_sign": 1,
+                "decision_step": 73,
+                "label_sign": -1,
+                "phase": "B_start",
+                "trial_id": 4
+              },
+              {
+                "context_sign": -1,
+                "context_step": 69,
+                "decision_cue_sign": -1,
+                "decision_step": 85,
+                "label_sign": 1,
+                "phase": "B_start",
+                "trial_id": 5
+              },
+              {
+                "context_sign": 1,
+                "context_step": 90,
+                "decision_cue_sign": 1,
+                "decision_step": 106,
+                "label_sign": 1,
+                "phase": "A_return_start",
+                "trial_id": 6
+              },
+              {
+                "context_sign": 1,
+                "context_step": 102,
+                "decision_cue_sign": -1,
+                "decision_step": 118,
+                "label_sign": -1,
+                "phase": "A_return_start",
+                "trial_id": 7
+              },
+              {
+                "context_sign": 1,
+                "context_step": 114,
+                "decision_cue_sign": 1,
+                "decision_step": 130,
+                "label_sign": 1,
+                "phase": "A_return_start",
+                "trial_id": 8
+              },
+              {
+                "context_sign": -1,
+                "context_step": 135,
+                "decision_cue_sign": -1,
+                "decision_step": 151,
+                "label_sign": 1,
+                "phase": "B_return_start",
+                "trial_id": 9
+              },
+              {
+                "context_sign": -1,
+                "context_step": 147,
+                "decision_cue_sign": 1,
+                "decision_step": 163,
+                "label_sign": -1,
+                "phase": "B_return_start",
+                "trial_id": 10
+              },
+              {
+                "context_sign": -1,
+                "context_step": 159,
+                "decision_cue_sign": -1,
+                "decision_step": 175,
+                "label_sign": 1,
+                "phase": "B_return_start",
+                "trial_id": 11
+              }
+            ],
+            "trials": 12
+          }
+        }
+      ],
+      "comparisons": [
+        {
+          "ambiguous_current_cue_count": 2,
+          "best_failure_control_accuracy": 0.42857142857142855,
+          "best_standard_accuracy": 0.0,
+          "best_standard_edge_vs_sign": -0.5714285714285714,
+          "best_standard_model": "online_perceptron",
+          "decision_count": 7,
+          "memory_edge_vs_best_failure_control": 0.5714285714285714,
+          "memory_edge_vs_sign": 0.4285714285714286,
+          "memory_reset_accuracy": 0.5714285714285714,
+          "oracle_context_accuracy": 1.0,
+          "oracle_edge_vs_sign": 0.4285714285714286,
+          "same_current_input_opposite_labels": true,
+          "shuffled_context_accuracy": 0.42857142857142855,
+          "sign_persistence_accuracy": 0.5714285714285714,
+          "stream_context_memory_accuracy": 1.0,
+          "task": "delayed_context_cue",
+          "wrong_context_accuracy": 0.0
+        },
+        {
+          "ambiguous_current_cue_count": 2,
+          "best_failure_control_accuracy": 0.5,
+          "best_standard_accuracy": 0.25,
+          "best_standard_edge_vs_sign": -0.25,
+          "best_standard_model": "online_perceptron",
+          "decision_count": 12,
+          "memory_edge_vs_best_failure_control": 0.5,
+          "memory_edge_vs_sign": 0.5,
+          "memory_reset_accuracy": 0.5,
+          "oracle_context_accuracy": 1.0,
+          "oracle_edge_vs_sign": 0.5,
+          "same_current_input_opposite_labels": true,
+          "shuffled_context_accuracy": 0.5,
+          "sign_persistence_accuracy": 0.5,
+          "stream_context_memory_accuracy": 1.0,
+          "task": "hidden_context_recurrence",
+          "wrong_context_accuracy": 0.0
+        }
+      ],
+      "runtime_seconds": 0.165317167,
+      "tier_summary": {
+        "claim_boundary": "Task-validation evidence only; it proves memory pressure, not CRA memory performance.",
+        "controls": [
+          "oracle_context",
+          "stream_context_memory",
+          "shuffled_context",
+          "memory_reset",
+          "wrong_context"
+        ],
+        "expected_runs": 14,
+        "leakage": {
+          "checked_feedback_rows": 133,
+          "example_violations": [],
+          "feedback_due_violations": 0
+        },
+        "models": [
+          "sign_persistence",
+          "online_perceptron"
+        ],
+        "observed_runs": 14,
+        "seeds": [
+          42
+        ],
+        "smoke": true,
+        "steps": 180,
+        "tasks": [
+          "delayed_context_cue",
+          "hidden_context_recurrence"
+        ]
+      }
+    }
+  },
+  "status": "pass",
+  "summary": {
+    "claim_boundary": "Task-validation evidence only; it proves memory pressure, not CRA memory performance.",
+    "comparisons": [
+      {
+        "ambiguous_current_cue_count": 2,
+        "best_failure_control_accuracy": 0.42857142857142855,
+        "best_standard_accuracy": 0.0,
+        "best_standard_edge_vs_sign": -0.5714285714285714,
+        "best_standard_model": "online_perceptron",
+        "decision_count": 7,
+        "memory_edge_vs_best_failure_control": 0.5714285714285714,
+        "memory_edge_vs_sign": 0.4285714285714286,
+        "memory_reset_accuracy": 0.5714285714285714,
+        "oracle_context_accuracy": 1.0,
+        "oracle_edge_vs_sign": 0.4285714285714286,
+        "same_current_input_opposite_labels": true,
+        "shuffled_context_accuracy": 0.42857142857142855,
+        "sign_persistence_accuracy": 0.5714285714285714,
+        "stream_context_memory_accuracy": 1.0,
+        "task": "delayed_context_cue",
+        "wrong_context_accuracy": 0.0
+      },
+      {
+        "ambiguous_current_cue_count": 2,
+        "best_failure_control_accuracy": 0.5,
+        "best_standard_accuracy": 0.25,
+        "best_standard_edge_vs_sign": -0.25,
+        "best_standard_model": "online_perceptron",
+        "decision_count": 12,
+        "memory_edge_vs_best_failure_control": 0.5,
+        "memory_edge_vs_sign": 0.5,
+        "memory_reset_accuracy": 0.5,
+        "oracle_context_accuracy": 1.0,
+        "oracle_edge_vs_sign": 0.5,
+        "same_current_input_opposite_labels": true,
+        "shuffled_context_accuracy": 0.5,
+        "sign_persistence_accuracy": 0.5,
+        "stream_context_memory_accuracy": 1.0,
+        "task": "hidden_context_recurrence",
+        "wrong_context_accuracy": 0.0
+      }
+    ],
+    "controls": [
+      "oracle_context",
+      "stream_context_memory",
+      "shuffled_context",
+      "memory_reset",
+      "wrong_context"
+    ],
+    "expected_runs": 14,
+    "leakage": {
+      "checked_feedback_rows": 133,
+      "example_violations": [],
+      "feedback_due_violations": 0
+    },
+    "models": [
+      "sign_persistence",
+      "online_perceptron"
+    ],
+    "observed_runs": 14,
+    "runtime_seconds": 0.165317167,
+    "seeds": [
+      42
+    ],
+    "smoke": true,
+    "steps": 180,
+    "tasks": [
+      "delayed_context_cue",
+      "hidden_context_recurrence"
+    ]
+  },
+  "tier": "Tier 5.10b - Memory-Pressure Task Validation"
+}

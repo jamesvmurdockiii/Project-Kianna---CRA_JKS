@@ -1,0 +1,116 @@
+{
+  "child_status": "fail",
+  "classification": "noncanonical_environment_failure",
+  "diagnostic_id": "tier4_20b_no_machine_target_fail_20260430",
+  "env_flags": {
+    "EBRAINS_JOB_ID": false,
+    "JOB_ID": false,
+    "SLURM_JOB_ID": false,
+    "SPALLOC_SERVER": false,
+    "SPINNAKER_MACHINE": false
+  },
+  "generated_at_utc": "2026-04-30T01:54:00+00:00",
+  "hardware_target_configured": false,
+  "next_action": "Rerun the updated source folder inside an EBRAINS/SpiNNaker job with a real machine target configured, or pass --spinnaker-hostname if EBRAINS provides a target hostname.",
+  "not_a_package_layout_failure": true,
+  "not_a_science_failure": true,
+  "package_checks": [
+    {
+      "name": "v2.1 baseline artifact exists",
+      "passed": true,
+      "rule": "exists",
+      "value": "/tmp/job17535888640787705408.tmp/CRA_TIER4_20B_SOURCE/baselines/CRA_EVIDENCE_BASELINE_v2.1.json"
+    },
+    {
+      "name": "source package import path available",
+      "passed": true,
+      "rule": "coral_reef_spinnaker exists",
+      "value": {
+        "action": "already_canonical",
+        "aliases_checked": [
+          "/tmp/job17535888640787705408.tmp/CRA_TIER4_20B_SOURCE/coral-reef-spinnaker",
+          "/tmp/job17535888640787705408.tmp/CRA_TIER4_20B_SOURCE/coral reef spinnaker"
+        ],
+        "canonical_package": "/tmp/job17535888640787705408.tmp/CRA_TIER4_20B_SOURCE/coral_reef_spinnaker",
+        "canonical_package_exists": true
+      }
+    },
+    {
+      "name": "Tier 4.16 child hardware runner exists",
+      "passed": true,
+      "rule": "exists",
+      "value": "/tmp/job17535888640787705408.tmp/CRA_TIER4_20B_SOURCE/experiments/tier4_harder_spinnaker_capsule.py"
+    },
+    {
+      "name": "Tier 4.20a transfer audit context",
+      "passed": true,
+      "rule": "optional; local audit context only",
+      "value": {
+        "manifest": null,
+        "status": "missing"
+      }
+    },
+    {
+      "name": "exactly one seed requested for 4.20b",
+      "passed": true,
+      "rule": "len == 1",
+      "value": [
+        42
+      ]
+    },
+    {
+      "name": "runtime mode is chunked",
+      "passed": true,
+      "rule": "fixed",
+      "value": "chunked"
+    },
+    {
+      "name": "learning location is host",
+      "passed": true,
+      "rule": "fixed",
+      "value": "host"
+    },
+    {
+      "name": "chunk size uses current default unless overridden",
+      "passed": true,
+      "rule": ">= 1",
+      "value": 50
+    },
+    {
+      "name": "macro eligibility disabled",
+      "passed": true,
+      "rule": "== false",
+      "value": false
+    },
+    {
+      "name": "delayed_lr_0_20 selected",
+      "passed": true,
+      "rule": "== 0.20",
+      "value": 0.2
+    },
+    {
+      "name": "mode has explicit claim boundary",
+      "passed": true,
+      "rule": "prepare|run-hardware|ingest",
+      "value": "run-hardware"
+    }
+  ],
+  "parent_status": "fail",
+  "root_cause": "pyNN.spiNNaker/sPyNNaker had libraries installed but no real SpiNNaker Machine target configured.",
+  "spynnaker_config": {
+    "exists": true,
+    "height": null,
+    "machineName": null,
+    "mode": null,
+    "path": "/home/jovyan/.spynnaker.cfg",
+    "spalloc_group": null,
+    "spalloc_port": null,
+    "spalloc_server": null,
+    "spalloc_user": null,
+    "version": null,
+    "virtual_board": null,
+    "width": null
+  },
+  "spynnaker_exception": "task hard_noisy_switching seed 42 raised SpinnMachineException: No version with cfg [Machine] values version=None, machine_name=None, spalloc_server=None, remote_spinnaker_url=None, virtual_board=False, width=None, and height=None",
+  "status": "fail"
+}

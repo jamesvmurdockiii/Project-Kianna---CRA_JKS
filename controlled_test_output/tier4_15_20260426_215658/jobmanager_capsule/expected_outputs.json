@@ -1,0 +1,19 @@
+{
+  "pass_requires": [
+    "all requested seeds completed",
+    "zero synthetic fallback for every seed",
+    "zero sim.run failures for every seed",
+    "zero summary-read failures for every seed",
+    "real spike readback > 0 for every seed",
+    "accuracy/correlation above thresholds for every seed"
+  ],
+  "required": [
+    "tier4_15_report.md",
+    "tier4_15_results.json",
+    "tier4_15_summary.csv",
+    "tier4_15_seed_summary.csv",
+    "tier4_15_multi_seed_summary.png",
+    "spinnaker_hardware_seed<seed>_timeseries.csv",
+    "spinnaker_hardware_seed<seed>_timeseries.png"
+  ]
+}

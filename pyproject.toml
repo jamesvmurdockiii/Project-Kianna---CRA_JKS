@@ -1,0 +1,10 @@
+[project]
+name = "coral-reef-spinnaker"
+version = "0.1.0"
+description = "Controlled Coral Reef Architecture experiments for neuromorphic SpiNNaker backends"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+testpaths = ["coral_reef_spinnaker/tests"]
+pythonpath = ["."]
+addopts = "-q"

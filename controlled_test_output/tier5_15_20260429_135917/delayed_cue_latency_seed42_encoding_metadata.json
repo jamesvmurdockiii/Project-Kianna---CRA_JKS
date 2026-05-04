@@ -1,0 +1,17 @@
+{
+  "encoding": "latency",
+  "is_genuinely_temporal": true,
+  "mean_latency_bin": 6.398648648648648,
+  "mean_spike_sparsity": 0.0046401515151515155,
+  "mean_spike_total": 0.5636363636363636,
+  "nonzero_steps": 37,
+  "seed": 42,
+  "steps": 220,
+  "task": "delayed_cue",
+  "task_metadata": {
+    "delay": 5,
+    "period": 8,
+    "task_kind": "delayed_cue",
+    "trials": 27
+  }
+}

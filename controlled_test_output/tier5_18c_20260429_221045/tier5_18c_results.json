@@ -1,0 +1,95 @@
+{
+  "artifacts": {
+    "child_manifests_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_221045/tier5_18c_child_manifests.json",
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_221045/tier5_18c_report.md",
+    "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_221045/tier5_18c_results.json",
+    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_221045/tier5_18c_summary.csv"
+  },
+  "baseline_in": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.0.json",
+  "children": [
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "experiments/tier5_predictive_binding_compact_regression.py",
+        "--backend",
+        "nest",
+        "--readout-lr",
+        "0.1",
+        "--delayed-readout-lr",
+        "0.2",
+        "--stop-on-fail",
+        "--output-dir",
+        "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_221045/v2_0_compact_regression_gate"
+      ],
+      "failure_reason": "",
+      "manifest_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_221045/v2_0_compact_regression_gate/tier5_17e_results.json",
+      "name": "v2_0_compact_regression_gate",
+      "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_221045/v2_0_compact_regression_gate",
+      "purpose": "rerun the v2.0 promotion/regression stack: v1.8 compact regression, v1.9 composition/routing, Tier 5.14, and Tier 5.17d guardrails remain green",
+      "return_code": 0,
+      "runtime_seconds": 1531.03552575,
+      "status": "pass",
+      "stderr_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_221045/v2_0_compact_regression_gate/v2_0_compact_regression_gate_stderr.log",
+      "stdout_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_221045/v2_0_compact_regression_gate/v2_0_compact_regression_gate_stdout.log"
+    },
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "experiments/tier5_self_evaluation_metacognition.py",
+        "--stop-on-fail",
+        "--output-dir",
+        "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_221045/tier5_18_self_evaluation_guardrail"
+      ],
+      "failure_reason": "",
+      "manifest_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_221045/tier5_18_self_evaluation_guardrail/tier5_18_results.json",
+      "name": "tier5_18_self_evaluation_guardrail",
+      "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_221045/tier5_18_self_evaluation_guardrail",
+      "purpose": "rerun the Tier 5.18 calibrated pre-feedback reliability-monitoring and confidence-gated adaptation diagnostic",
+      "return_code": 0,
+      "runtime_seconds": 3.168745541999897,
+      "status": "pass",
+      "stderr_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_221045/tier5_18_self_evaluation_guardrail/tier5_18_self_evaluation_guardrail_stderr.log",
+      "stdout_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_221045/tier5_18_self_evaluation_guardrail/tier5_18_self_evaluation_guardrail_stdout.log"
+    }
+  ],
+  "criteria": [
+    {
+      "name": "frozen v2.0 baseline artifact exists",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.0.json"
+    },
+    {
+      "name": "v2.0 compact regression gate remains green",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "Tier 5.18 self-evaluation guardrail remains green",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "all child commands succeeded",
+      "passed": true,
+      "rule": "== 2/2",
+      "value": "2/2"
+    }
+  ],
+  "failure_reason": "",
+  "generated_at_utc": "2026-04-29T22:36:19+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_221045",
+  "status": "pass",
+  "summary": {
+    "children_passed": 2,
+    "children_total": 2,
+    "claim_boundary": "Promotion/regression gate for bounded host-side software self-evaluation evidence. Not consciousness, self-awareness, hardware evidence, AGI, language, planning, or external-baseline superiority.",
+    "criteria_passed": 4,
+    "criteria_total": 4,
+    "runtime_seconds": 1534.207275167,
+    "smoke": false
+  },
+  "tier": "Tier 5.18c - Self-Evaluation Compact Regression"
+}

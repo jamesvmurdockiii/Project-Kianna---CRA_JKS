@@ -1,0 +1,64 @@
+{
+  "baseline": null,
+  "child_failure_reason": null,
+  "child_hardware_run_attempted": null,
+  "child_status": null,
+  "chunk_size_steps": null,
+  "classification": "ebrains_target_check_blocked_no_machine_target",
+  "env_flags": {
+    "EBRAINS_JOB_ID": false,
+    "JOB_ID": false,
+    "REMOTE_SPINNAKER_URL": false,
+    "SLURM_JOB_ID": false,
+    "SPALLOC_SERVER": false,
+    "SPINNAKER_MACHINE": false
+  },
+  "hardware_run_attempted": null,
+  "not_type_error": true,
+  "seeds": null,
+  "source_layout_ok": true,
+  "spynnaker_config": {
+    "exists": true,
+    "height": null,
+    "machineName": null,
+    "mode": null,
+    "path": "/home/jovyan/.spynnaker.cfg",
+    "remote_spinnaker_url": null,
+    "spalloc_group": null,
+    "spalloc_port": null,
+    "spalloc_server": null,
+    "spalloc_user": null,
+    "version": null,
+    "virtual_board": null,
+    "width": null
+  },
+  "spynnaker_modules_ok": [
+    [
+      "pyNN.spiNNaker",
+      true,
+      "1!7.4.2"
+    ],
+    [
+      "spynnaker.pyNN",
+      true,
+      "1!7.4.2"
+    ],
+    [
+      "spalloc_client",
+      true,
+      "1!7.4.2"
+    ],
+    [
+      "spinnman",
+      true,
+      "1!7.4.2"
+    ],
+    [
+      "spinn_front_end_common",
+      true,
+      "1!7.4.2"
+    ]
+  ],
+  "steps": null,
+  "tasks": null
+}

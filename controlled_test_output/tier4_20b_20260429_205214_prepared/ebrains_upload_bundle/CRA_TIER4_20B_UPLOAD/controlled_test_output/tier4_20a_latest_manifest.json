@@ -1,0 +1,11 @@
+{
+  "canonical": false,
+  "claim": "Latest Tier 4.20a v2.1 hardware-transfer readiness audit; engineering plan only, not hardware evidence.",
+  "generated_at_utc": "2026-04-29T23:54:03+00:00",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_20a_20260429_195403/tier4_20a_results.json",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_20a_20260429_195403",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_20a_20260429_195403/tier4_20a_report.md",
+  "status": "pass",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_20a_20260429_195403/tier4_20a_summary.csv",
+  "tier": "Tier 4.20a - v2.1 Hardware Transfer Readiness Audit"
+}

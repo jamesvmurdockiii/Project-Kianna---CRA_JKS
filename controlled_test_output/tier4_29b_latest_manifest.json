@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-05-04T00:05:01.003001+00:00",
+  "source_generated_at_utc": "2026-05-03T22:51:44.776711+00:00",
+  "registry_entry_id": "tier4_29b_native_routing_composition_gate",
+  "tier": "Tier 4.29b - Native Routing/Composition Gate",
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_29b_20260503_hardware_pass_ingested",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_29b_20260503_hardware_pass_ingested/tier4_29b_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_29b_20260503_hardware_pass_ingested/tier4_29b_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_29b_20260503_hardware_pass_ingested/tier4_29b_summary.csv",
+  "canonical": true,
+  "claim": "Native keyed context * route composition works on real SpiNNaker across three seeds on three different boards with explicit wrong-context, wrong-route, overwrite, and host-composed sham controls.",
+  "caveat": "Native routing/composition hardware evidence only; not speedup evidence, not multi-chip scaling, not a general multi-core framework, not full native v2.1 autonomy, and not true continuous generation."
+}

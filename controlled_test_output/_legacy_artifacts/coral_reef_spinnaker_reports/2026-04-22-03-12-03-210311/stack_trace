@@ -1,0 +1,15 @@
+Traceback of setup call:
+  File "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/coral_reef_spinnaker/demo.py", line 781, in <module>
+    sys.exit(main())
+  File "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/coral_reef_spinnaker/demo.py", line 729, in main
+    results = run_cra_demo(
+  File "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/coral_reef_spinnaker/demo.py", line 253, in run_cra_demo
+    sim.setup(timestep=timestep)
+  File "/Users/james/Library/Python/3.9/lib/python/site-packages/spynnaker/pyNN/__init__.py", line 329, in setup
+    __simulator = SpiNNaker(
+  File "/Users/james/Library/Python/3.9/lib/python/site-packages/spynnaker/pyNN/spinnaker.py", line 111, in __init__
+    super().__init__(SpynnakerDataWriter)
+  File "/Users/james/Library/Python/3.9/lib/python/site-packages/spinn_front_end_common/interface/abstract_spinnaker_base.py", line 207, in __init__
+    self._set_up_report_specifics()
+  File "/Users/james/Library/Python/3.9/lib/python/site-packages/spinn_front_end_common/interface/config_handler.py", line 242, in _set_up_report_specifics
+    traceback.print_stack(file=f)

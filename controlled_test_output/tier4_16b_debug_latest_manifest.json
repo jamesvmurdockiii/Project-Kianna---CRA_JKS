@@ -1,0 +1,12 @@
+{
+  "canonical": false,
+  "claim": "Tier 4.16b local hard-switch root-cause diagnostic; not hardware success evidence.",
+  "classification": "hardware_transfer_or_timing_failure",
+  "generated_at_utc": "2026-04-27T22:09:38+00:00",
+  "manifest": "controlled_test_output/tier4_16b_bridge_repair_orderfix_aligned_brian2_20260427/tier4_16b_debug_results.json",
+  "next_step": "compare spike/readback timing and run one repaired hardware probe only",
+  "output_dir": "controlled_test_output/tier4_16b_bridge_repair_orderfix_aligned_brian2_20260427",
+  "report": "controlled_test_output/tier4_16b_bridge_repair_orderfix_aligned_brian2_20260427/tier4_16b_debug_report.md",
+  "status": "pass",
+  "summary_csv": "controlled_test_output/tier4_16b_bridge_repair_orderfix_aligned_brian2_20260427/tier4_16b_debug_summary.csv"
+}

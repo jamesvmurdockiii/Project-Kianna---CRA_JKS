@@ -1,0 +1,59 @@
+{
+  "tier": "Tier 4.28b \u2014 Delayed-Cue Four-Core MCPL Hardware Probe",
+  "runner_revision": "tier4_28b_delayed_cue_four_core_mcpl_20260502_0001",
+  "generated_at_utc": "2026-05-03T03:45:46.684924+00:00",
+  "mode": "prepare",
+  "status": "prepared",
+  "output_dir": "controlled_test_output/tier4_28b_20260502_prepared_v2",
+  "summary": {
+    "upload_bundle": "controlled_test_output/tier4_28b_20260502_prepared_v2/ebrains_upload_bundle/cra_428g",
+    "stable_upload_folder": "/Users/james/JKS:CRA/ebrains_jobs/cra_428g",
+    "job_command": "cra_428g/experiments/tier4_28b_delayed_cue_four_core_mcpl.py --mode run-hardware --seed 42",
+    "what_i_need_from_user": "Upload cra_428g to EBRAINS/JobManager and run the emitted command for seeds 42, 43, 44.",
+    "claim_boundary": "Local package preparation only. NOT hardware evidence."
+  },
+  "criteria": [
+    {
+      "name": "local validation passed",
+      "value": "pass",
+      "rule": "== pass",
+      "passed": true
+    },
+    {
+      "name": "upload bundle created",
+      "value": "controlled_test_output/tier4_28b_20260502_prepared_v2/ebrains_upload_bundle/cra_428g",
+      "rule": "exists",
+      "passed": true
+    },
+    {
+      "name": "context_core .aplx in bundle",
+      "value": true,
+      "rule": "== True",
+      "passed": true
+    },
+    {
+      "name": "route_core .aplx in bundle",
+      "value": true,
+      "rule": "== True",
+      "passed": true
+    },
+    {
+      "name": "memory_core .aplx in bundle",
+      "value": true,
+      "rule": "== True",
+      "passed": true
+    },
+    {
+      "name": "learning_core .aplx in bundle",
+      "value": true,
+      "rule": "== True",
+      "passed": true
+    },
+    {
+      "name": "stable upload folder created",
+      "value": "/Users/james/JKS:CRA/ebrains_jobs/cra_428g",
+      "rule": "exists",
+      "passed": true
+    }
+  ]
+}

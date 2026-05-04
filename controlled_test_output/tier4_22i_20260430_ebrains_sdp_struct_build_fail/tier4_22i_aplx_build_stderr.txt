@@ -1,0 +1,51 @@
+/home/jovyan/spinnaker/spinnaker_tools/make/Makefile.common:18: inclusion of Makefile.common instead of spinnaker_tools.mk
+src/host_interface.c: In function 'sdp_send_reply':
+src/host_interface.c:211:10: error: 'sdp_msg_t' {aka 'struct sdp_msg'} has no member named 'dest_y'
+  211 |     reply->dest_y    = req->src_y;
+      |          ^~
+src/host_interface.c:211:27: error: 'sdp_msg_t' {aka 'struct sdp_msg'} has no member named 'src_y'
+  211 |     reply->dest_y    = req->src_y;
+      |                           ^~
+src/host_interface.c:212:10: error: 'sdp_msg_t' {aka 'struct sdp_msg'} has no member named 'dest_x'
+  212 |     reply->dest_x    = req->src_x;
+      |          ^~
+src/host_interface.c:212:27: error: 'sdp_msg_t' {aka 'struct sdp_msg'} has no member named 'src_x'
+  212 |     reply->dest_x    = req->src_x;
+      |                           ^~
+src/host_interface.c:213:29: error: 'sdp_msg_t' {aka 'struct sdp_msg'} has no member named 'src_port'; did you mean 'srce_port'?
+  213 |     reply->dest_port = req->src_port;
+      |                             ^~~~~~~~
+      |                             srce_port
+src/host_interface.c:214:10: error: 'sdp_msg_t' {aka 'struct sdp_msg'} has no member named 'dest_cpu'
+  214 |     reply->dest_cpu  = req->src_cpu;
+      |          ^~
+src/host_interface.c:214:27: error: 'sdp_msg_t' {aka 'struct sdp_msg'} has no member named 'src_cpu'
+  214 |     reply->dest_cpu  = req->src_cpu;
+      |                           ^~
+src/host_interface.c:215:10: error: 'sdp_msg_t' {aka 'struct sdp_msg'} has no member named 'src_y'
+  215 |     reply->src_y     = req->dest_y;
+      |          ^~
+src/host_interface.c:215:27: error: 'sdp_msg_t' {aka 'struct sdp_msg'} has no member named 'dest_y'
+  215 |     reply->src_y     = req->dest_y;
+      |                           ^~
+src/host_interface.c:216:10: error: 'sdp_msg_t' {aka 'struct sdp_msg'} has no member named 'src_x'
+  216 |     reply->src_x     = req->dest_x;
+      |          ^~
+src/host_interface.c:216:27: error: 'sdp_msg_t' {aka 'struct sdp_msg'} has no member named 'dest_x'
+  216 |     reply->src_x     = req->dest_x;
+      |                           ^~
+src/host_interface.c:217:12: error: 'sdp_msg_t' {aka 'struct sdp_msg'} has no member named 'src_port'; did you mean 'srce_port'?
+  217 |     reply->src_port  = req->dest_port;
+      |            ^~~~~~~~
+      |            srce_port
+src/host_interface.c:218:10: error: 'sdp_msg_t' {aka 'struct sdp_msg'} has no member named 'src_cpu'
+  218 |     reply->src_cpu   = req->dest_cpu;
+      |          ^~
+src/host_interface.c:218:27: error: 'sdp_msg_t' {aka 'struct sdp_msg'} has no member named 'dest_cpu'
+  218 |     reply->src_cpu   = req->dest_cpu;
+      |                           ^~
+src/host_interface.c:225:5: warning: implicit declaration of function 'sark_memcpy'; did you mean 'sark_mem_cpy'? [-Wimplicit-function-declaration]
+  225 |     sark_memcpy(reply->data, payload, len);
+      |     ^~~~~~~~~~~
+      |     sark_mem_cpy
+make: *** [Makefile:87: build/host_interface.o] Error 1

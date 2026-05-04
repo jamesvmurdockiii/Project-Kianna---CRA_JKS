@@ -1,0 +1,92 @@
+2026-04-30 02:49:47 INFO: Read configs files: /home/jovyan/spinnaker/SpiNNUtils/spinn_utilities/spinn_utilities.cfg, /home/jovyan/spinnaker/SpiNNMachine/spinn_machine/spinn_machine.cfg, /home/jovyan/spinnaker/PACMAN/pacman/pacman.cfg, /home/jovyan/spinnaker/SpiNNMan/spinnman/spinnman.cfg, /home/jovyan/spinnaker/SpiNNFrontEndCommon/spinn_front_end_common/interface/spinnaker.cfg, /home/jovyan/spinnaker/sPyNNaker/spynnaker/pyNN/spynnaker.cfg, /home/jovyan/.spynnaker.cfg
+2026-04-30 02:49:47 INFO: As mode is Production running all reports and keeping files is turned off unless specifically asked for in cfg
+2026-04-30 02:49:48 INFO: Will search these locations for binaries: /home/jovyan/spinnaker/sPyNNaker/spynnaker/pyNN/model_binaries
+2026-04-30 02:49:48 INFO: Setting hardware timestep as 1000 microseconds based on simulation time step of 1000 and timescale factor of 1.0
+2026-04-30 02:49:49 INFO: Starting execution process
+2026-04-30 02:49:49 INFO: Simulating for 2500 1.0 ms timesteps using a hardware timestep of 1000 us
+2026-04-30 02:49:49 INFO: SpYNNakerNeuronGraphNetworkSpecificationReport skipped as cfg Reports:write_network_graph is False
+2026-04-30 02:49:49 INFO: Network Specification report skipped as cfg Reports:write_network_specification_report is False
+2026-04-30 02:49:49 INFO: Splitter reset took 0:00:00.000022 
+Adding Splitter selectors where appropriate
+|0%                          50%                         100%|
+ ============================================================
+2026-04-30 02:49:50 INFO: Spynnaker splitter selector took 0:00:00.000821 
+Adding delay extensions as required
+|0%                          50%                         100%|
+ ============================================================
+2026-04-30 02:49:50 INFO: DelaySupportAdder took 0:00:00.000276 
+Partitioning Graph
+|0%                          50%                         100%|
+ 2026-04-30 02:49:50 WARNING: The cfg has no version. This is deprecated! Please add a version
+2026-04-30 02:49:50 INFO: Splitter partitioner exited with SpinnMachineException after 0:00:00.090644
+2026-04-30 02:49:50 INFO: Cleanup reports folder based on cfg took 0:00:00.001113 
+2026-04-30 02:49:51 WARNING: Second call to end ignored
+2026-04-30 02:49:51 INFO: Read configs files: /home/jovyan/spinnaker/SpiNNUtils/spinn_utilities/spinn_utilities.cfg, /home/jovyan/spinnaker/SpiNNMachine/spinn_machine/spinn_machine.cfg, /home/jovyan/spinnaker/PACMAN/pacman/pacman.cfg, /home/jovyan/spinnaker/SpiNNMan/spinnman/spinnman.cfg, /home/jovyan/spinnaker/SpiNNFrontEndCommon/spinn_front_end_common/interface/spinnaker.cfg, /home/jovyan/spinnaker/sPyNNaker/spynnaker/pyNN/spynnaker.cfg, /home/jovyan/.spynnaker.cfg
+2026-04-30 02:49:51 INFO: Read configs files: /home/jovyan/spinnaker/SpiNNUtils/spinn_utilities/spinn_utilities.cfg, /home/jovyan/spinnaker/SpiNNMachine/spinn_machine/spinn_machine.cfg, /home/jovyan/spinnaker/PACMAN/pacman/pacman.cfg, /home/jovyan/spinnaker/SpiNNMan/spinnman/spinnman.cfg, /home/jovyan/spinnaker/SpiNNFrontEndCommon/spinn_front_end_common/interface/spinnaker.cfg, /home/jovyan/spinnaker/sPyNNaker/spynnaker/pyNN/spynnaker.cfg, /home/jovyan/.spynnaker.cfg
+2026-04-30 02:49:51 INFO: As mode is Production running all reports and keeping files is turned off unless specifically asked for in cfg
+2026-04-30 02:49:51 INFO: Will search these locations for binaries: /home/jovyan/spinnaker/sPyNNaker/spynnaker/pyNN/model_binaries : /home/jovyan/spinnaker/SpiNNFrontEndCommon/spinn_front_end_common/common_model_binaries
+2026-04-30 02:49:51 INFO: Setting hardware timestep as 1000 microseconds based on simulation time step of 1000 and timescale factor of 1.0
+2026-04-30 02:49:52 INFO: Starting execution process
+2026-04-30 02:49:52 INFO: Simulating for 2500 1.0 ms timesteps using a hardware timestep of 1000 us
+2026-04-30 02:49:52 INFO: SpYNNakerNeuronGraphNetworkSpecificationReport skipped as cfg Reports:write_network_graph is False
+2026-04-30 02:49:53 INFO: Network Specification report skipped as cfg Reports:write_network_specification_report is False
+2026-04-30 02:49:53 INFO: Splitter reset took 0:00:00.000009 
+Adding Splitter selectors where appropriate
+|0%                          50%                         100%|
+ ============================================================
+2026-04-30 02:49:53 INFO: Spynnaker splitter selector took 0:00:00.000332 
+Adding delay extensions as required
+|0%                          50%                         100%|
+ ============================================================
+2026-04-30 02:49:53 INFO: DelaySupportAdder took 0:00:00.000193 
+Partitioning Graph
+|0%                          50%                         100%|
+ 2026-04-30 02:49:53 WARNING: The cfg has no version. This is deprecated! Please add a version
+2026-04-30 02:49:54 INFO: Splitter partitioner exited with SpinnMachineException after 0:00:00.108613
+2026-04-30 02:49:54 INFO: Cleanup reports folder based on cfg took 0:00:00.001165 
+2026-04-30 02:49:54 WARNING: Second call to end ignored
+Traceback (most recent call last):
+  File "/tmp/job17535888640787705408.tmp/CRA_TIER4_20B_SOURCE/experiments/tier4_harder_spinnaker_capsule.py", line 1440, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/tmp/job17535888640787705408.tmp/CRA_TIER4_20B_SOURCE/experiments/tier4_harder_spinnaker_capsule.py", line 1433, in main
+    return run_hardware(args, output_dir)
+  File "/tmp/job17535888640787705408.tmp/CRA_TIER4_20B_SOURCE/experiments/tier4_harder_spinnaker_capsule.py", line 1302, in run_hardware
+    write_latest(output_dir, report_path, manifest_path, status)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/job17535888640787705408.tmp/CRA_TIER4_20B_SOURCE/experiments/tier4_harder_spinnaker_capsule.py", line 1057, in write_latest
+    write_json(
+    ~~~~~~~~~~^
+        ROOT / "controlled_test_output" / "tier4_16_latest_manifest.json",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<8 lines>...
+        },
+        ^^
+    )
+    ^
+  File "/tmp/job17535888640787705408.tmp/CRA_TIER4_20B_SOURCE/experiments/tier2_learning.py", line 113, in write_json
+    path.write_text(
+    ~~~~~~~~~~~~~~~^
+        json.dumps(json_safe(payload), indent=2, sort_keys=True),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        encoding="utf-8",
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/conda/lib/python3.13/pathlib/_local.py", line 555, in write_text
+    return PathBase.write_text(self, data, encoding, errors, newline)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.13/pathlib/_abc.py", line 651, in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.13/pathlib/_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/job17535888640787705408.tmp/CRA_TIER4_20B_SOURCE/controlled_test_output/tier4_16_latest_manifest.json'
+
+!WARNING: 2 log messages were generated at level WARNING or above.
+This may mean that the results are invalid.
+You are advised to check the details of these in the p_log_view of : /tmp/job17535888640787705408.tmp/CRA_TIER4_20B_SOURCE/reports/2026-04-30-02-49-51-241186/global_provenance.sqlite3
+These are:
+The cfg has no version. This is deprecated! Please add a version
+Second call to end ignored

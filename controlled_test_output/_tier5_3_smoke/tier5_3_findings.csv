@@ -1,0 +1,2 @@
+task,best_tail_variant,best_tail_accuracy_mean,best_tail_delta_vs_current_cra,best_tail_delta_vs_external_median,best_improvement_variant,best_improvement_group,best_improvement_tail_delta,best_corr_variant,best_abs_corr_mean,best_recovery_variant,best_recovery_steps,recovered_vs_external_median_tail,likely_diagnosis
+delayed_cue,baseline_current,,0.0,,baseline_current,control,0.0,baseline_current,0.9401332600470711,,,False,no single tested mechanism clearly explains delayed-cue weakness

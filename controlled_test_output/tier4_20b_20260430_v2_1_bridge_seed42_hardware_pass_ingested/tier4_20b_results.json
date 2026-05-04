@@ -1,0 +1,1378 @@
+{
+  "artifacts": {
+    "bridge_profile_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_bridge_profile.json",
+    "ingested_source": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass/tier4_20b_results.json",
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_report.md",
+    "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_results.json",
+    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_summary.csv",
+    "tier4_20b_bridge_profile.json": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_bridge_profile.json",
+    "tier4_20b_child_stderr.log": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_child_stderr.log",
+    "tier4_20b_child_stdout.log": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_child_stdout.log",
+    "tier4_20b_latest_manifest.json": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_latest_manifest.json",
+    "tier4_20b_report.md": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_report.md",
+    "tier4_20b_results.json": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_results.json",
+    "tier4_20b_summary.csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_summary.csv"
+  },
+  "criteria": [
+    {
+      "name": "v2.1 baseline identity recorded",
+      "passed": true,
+      "rule": "runtime does not require baselines/",
+      "value": {
+        "artifact": "/tmp/job4002618516063700101.tmp/cra_420b/baselines/CRA_EVIDENCE_BASELINE_v2.1.json",
+        "artifact_present": false,
+        "baseline": "v2.1"
+      }
+    },
+    {
+      "name": "Tier 4.20b runner revision",
+      "passed": true,
+      "rule": "expected current source",
+      "value": "tier4_20b_inprocess_no_baselines_20260429_2330"
+    },
+    {
+      "name": "source package import path available",
+      "passed": true,
+      "rule": "coral_reef_spinnaker exists",
+      "value": {
+        "action": "already_canonical",
+        "aliases_checked": [
+          "/tmp/job4002618516063700101.tmp/cra_420b/coral-reef-spinnaker",
+          "/tmp/job4002618516063700101.tmp/cra_420b/coral reef spinnaker"
+        ],
+        "canonical_package": "/tmp/job4002618516063700101.tmp/cra_420b/coral_reef_spinnaker",
+        "canonical_package_exists": true
+      }
+    },
+    {
+      "name": "Tier 4.16 child hardware runner exists",
+      "passed": true,
+      "rule": "exists",
+      "value": "/tmp/job4002618516063700101.tmp/cra_420b/experiments/tier4_harder_spinnaker_capsule.py"
+    },
+    {
+      "name": "Tier 4.20a transfer audit context",
+      "passed": true,
+      "rule": "optional; local audit context only",
+      "value": {
+        "manifest": null,
+        "status": "missing"
+      }
+    },
+    {
+      "name": "exactly one seed requested for 4.20b",
+      "passed": true,
+      "rule": "len == 1",
+      "value": [
+        42
+      ]
+    },
+    {
+      "name": "runtime mode is chunked",
+      "passed": true,
+      "rule": "fixed",
+      "value": "chunked"
+    },
+    {
+      "name": "learning location is host",
+      "passed": true,
+      "rule": "fixed",
+      "value": "host"
+    },
+    {
+      "name": "chunk size uses current default unless overridden",
+      "passed": true,
+      "rule": ">= 1",
+      "value": 50
+    },
+    {
+      "name": "macro eligibility disabled",
+      "passed": true,
+      "rule": "== false",
+      "value": false
+    },
+    {
+      "name": "delayed_lr_0_20 selected",
+      "passed": true,
+      "rule": "== 0.20",
+      "value": 0.2
+    },
+    {
+      "name": "mode has explicit claim boundary",
+      "passed": true,
+      "rule": "prepare|run-hardware|ingest",
+      "value": "run-hardware"
+    },
+    {
+      "name": "child Tier 4.16 in-process runner exited cleanly",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "name": "child Tier 4.16 manifest exists",
+      "passed": true,
+      "rule": "exists",
+      "value": "/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/tier4_16_results.json"
+    },
+    {
+      "name": "child hardware status passed",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "child hardware was attempted",
+      "passed": true,
+      "rule": "== true",
+      "value": true
+    },
+    {
+      "name": "child sim.run failures zero",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "name": "child summary read failures zero",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "name": "child synthetic fallback zero",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "name": "child real spike readback nonzero",
+      "passed": true,
+      "rule": "> 0",
+      "value": 94900.0
+    },
+    {
+      "name": "child runtime documented",
+      "passed": true,
+      "rule": "finite",
+      "value": 279.21564924542326
+    }
+  ],
+  "failure_reason": "",
+  "generated_at_utc": "2026-04-30T03:55:05+00:00",
+  "mode": "ingest",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested",
+  "source_manifest": {
+    "artifacts": {
+      "bridge_profile_json": "/tmp/job4002618516063700101.tmp/tier4_20b_job_output/tier4_20b_bridge_profile.json",
+      "child_output_dir": "/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16",
+      "child_spinnaker_hardware_delayed_cue_seed42_timeseries.csv": "/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/spinnaker_hardware_delayed_cue_seed42_timeseries.csv",
+      "child_spinnaker_hardware_delayed_cue_seed42_timeseries.png": "/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/spinnaker_hardware_delayed_cue_seed42_timeseries.png",
+      "child_spinnaker_hardware_hard_noisy_switching_seed42_timeseries.csv": "/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/spinnaker_hardware_hard_noisy_switching_seed42_timeseries.csv",
+      "child_spinnaker_hardware_hard_noisy_switching_seed42_timeseries.png": "/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/spinnaker_hardware_hard_noisy_switching_seed42_timeseries.png",
+      "child_stderr_log": "/tmp/job4002618516063700101.tmp/tier4_20b_job_output/tier4_20b_child_stderr.log",
+      "child_stdout_log": "/tmp/job4002618516063700101.tmp/tier4_20b_job_output/tier4_20b_child_stdout.log",
+      "child_tier4_16_hardware_summary.png": "/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/tier4_16_hardware_summary.png",
+      "child_tier4_16_report.md": "/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/tier4_16_report.md",
+      "child_tier4_16_results.json": "/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/tier4_16_results.json",
+      "child_tier4_16_summary.csv": "/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/tier4_16_summary.csv",
+      "child_tier4_16_task_summary.csv": "/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/tier4_16_task_summary.csv",
+      "report_md": "/tmp/job4002618516063700101.tmp/tier4_20b_job_output/tier4_20b_report.md",
+      "results_json": "/tmp/job4002618516063700101.tmp/tier4_20b_job_output/tier4_20b_results.json",
+      "summary_csv": "/tmp/job4002618516063700101.tmp/tier4_20b_job_output/tier4_20b_summary.csv"
+    },
+    "child_command": [
+      "/home/jovyan/spinnaker/bin/python",
+      "/tmp/job4002618516063700101.tmp/cra_420b/experiments/tier4_harder_spinnaker_capsule.py",
+      "--mode",
+      "run-hardware",
+      "--no-require-real-hardware",
+      "--tasks",
+      "delayed_cue,hard_noisy_switching",
+      "--seeds",
+      "42",
+      "--steps",
+      "1200",
+      "--population-size",
+      "8",
+      "--runtime-mode",
+      "chunked",
+      "--learning-location",
+      "host",
+      "--chunk-size-steps",
+      "50",
+      "--delayed-readout-lr",
+      "0.2",
+      "--output-dir",
+      "/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16"
+    ],
+    "child_manifest": {
+      "artifacts": {
+        "delayed_cue_seed_42_timeseries_csv": "/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/spinnaker_hardware_delayed_cue_seed42_timeseries.csv",
+        "delayed_cue_seed_42_timeseries_png": "/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/spinnaker_hardware_delayed_cue_seed42_timeseries.png",
+        "hard_noisy_switching_seed_42_timeseries_csv": "/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/spinnaker_hardware_hard_noisy_switching_seed42_timeseries.csv",
+        "hard_noisy_switching_seed_42_timeseries_png": "/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/spinnaker_hardware_hard_noisy_switching_seed42_timeseries.png",
+        "hardware_summary_png": "/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/tier4_16_hardware_summary.png",
+        "spinnaker_report_1": "/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/spinnaker_reports/2026-04-30-04-31-53-248207",
+        "spinnaker_report_2": "/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/spinnaker_reports/2026-04-30-04-36-42-014935"
+      },
+      "criteria": [
+        {
+          "name": "all requested task/seed hardware runs completed",
+          "note": "",
+          "operator": "==",
+          "passed": true,
+          "threshold": 2,
+          "value": 2
+        },
+        {
+          "name": "sim.run failures sum",
+          "note": "",
+          "operator": "==",
+          "passed": true,
+          "threshold": 0,
+          "value": 0
+        },
+        {
+          "name": "summary read failures sum",
+          "note": "",
+          "operator": "==",
+          "passed": true,
+          "threshold": 0,
+          "value": 0
+        },
+        {
+          "name": "synthetic fallback sum",
+          "note": "",
+          "operator": "==",
+          "passed": true,
+          "threshold": 0,
+          "value": 0
+        },
+        {
+          "name": "real spike readback in every run",
+          "note": "",
+          "operator": ">",
+          "passed": true,
+          "threshold": 0,
+          "value": 94900.0
+        },
+        {
+          "name": "fixed population has no births/deaths",
+          "note": "",
+          "operator": "==",
+          "passed": true,
+          "threshold": {
+            "births": 0,
+            "deaths": 0
+          },
+          "value": {
+            "births": 0,
+            "deaths": 0
+          }
+        },
+        {
+          "name": "4.16a delayed_cue tail accuracy",
+          "note": "",
+          "operator": ">=",
+          "passed": true,
+          "threshold": 0.85,
+          "value": 1.0
+        },
+        {
+          "name": "4.16b hard_noisy_switching tail accuracy",
+          "note": "",
+          "operator": ">=",
+          "passed": true,
+          "threshold": 0.5,
+          "value": 0.5952380952380952
+        },
+        {
+          "name": "4.16b hard_noisy_switching tail correlation is finite",
+          "note": "",
+          "operator": "is finite",
+          "passed": true,
+          "threshold": true,
+          "value": 0.05827046543382765
+        },
+        {
+          "name": "confirmed delayed-credit setting used",
+          "note": "",
+          "operator": "==",
+          "passed": true,
+          "threshold": 0.2,
+          "value": 0.2
+        }
+      ],
+      "environment": {
+        "env_flags": {
+          "EBRAINS_JOB_ID": false,
+          "JOB_ID": false,
+          "REMOTE_SPINNAKER_URL": false,
+          "SLURM_JOB_ID": false,
+          "SPALLOC_SERVER": false,
+          "SPINNAKER_MACHINE": false
+        },
+        "generated_at_utc": "2026-04-30T03:31:53+00:00",
+        "hardware_target_configured": false,
+        "hostname": "e1d51840142b",
+        "jobmanager_cli": null,
+        "modules": [
+          {
+            "error": "",
+            "name": "pyNN.spiNNaker",
+            "ok": true,
+            "path": "/home/jovyan/spinnaker/lib/python3.13/site-packages/pyNN/spiNNaker/__init__.py",
+            "version": "1!7.4.2"
+          },
+          {
+            "error": "",
+            "name": "spynnaker.pyNN",
+            "ok": true,
+            "path": "/home/jovyan/spinnaker/sPyNNaker/spynnaker/pyNN/__init__.py",
+            "version": "1!7.4.2"
+          },
+          {
+            "error": "",
+            "name": "spalloc_client",
+            "ok": true,
+            "path": "/home/jovyan/spinnaker/spalloc/spalloc_client/__init__.py",
+            "version": "1!7.4.2"
+          },
+          {
+            "error": "",
+            "name": "spinnman",
+            "ok": true,
+            "path": "/home/jovyan/spinnaker/SpiNNMan/spinnman/__init__.py",
+            "version": "1!7.4.2"
+          },
+          {
+            "error": "",
+            "name": "spinn_front_end_common",
+            "ok": true,
+            "path": "/home/jovyan/spinnaker/SpiNNFrontEndCommon/spinn_front_end_common/__init__.py",
+            "version": "1!7.4.2"
+          }
+        ],
+        "platform": "Linux-6.8.0-107-generic-x86_64-with-glibc2.39",
+        "python": "3.13.9 | packaged by conda-forge | (main, Oct 16 2025, 10:31:39) [GCC 14.3.0]",
+        "spalloc_cli": "/home/jovyan/spinnaker/bin/spalloc",
+        "spinnman_numpy2_compat": {
+          "numpy_uint8_overflow": {
+            "already_patched": false,
+            "applied": true,
+            "available": true,
+            "numpy_version": "2.3.4",
+            "target": "numpy.array/numpy.asarray uint8 overflow retry"
+          },
+          "spinnman_write_memory": {
+            "already_patched": false,
+            "applied": true,
+            "available": true,
+            "numpy_version": "2.3.4",
+            "target": "spinnman.processes.write_memory_process.WriteMemoryProcess"
+          },
+          "spynnaker_neuromodulation": {
+            "already_patched": false,
+            "applied": true,
+            "available": true,
+            "target": "SynapseDynamicsNeuromodulation.get_plastic_synaptic_data"
+          }
+        },
+        "spynnaker_config": {
+          "exists": true,
+          "height": null,
+          "machineName": null,
+          "mode": null,
+          "path": "/home/jovyan/.spynnaker.cfg",
+          "remote_spinnaker_url": null,
+          "spalloc_group": null,
+          "spalloc_port": null,
+          "spalloc_server": null,
+          "spalloc_user": null,
+          "version": null,
+          "virtual_board": null,
+          "width": null
+        },
+        "ybug_cli": "/home/jovyan/spinnaker/spinnaker_tools/tools/ybug"
+      },
+      "failure_reason": "",
+      "generated_at_utc": "2026-04-30T03:41:16+00:00",
+      "mode": "run-hardware",
+      "seed_summaries": [
+        {
+          "accuracy_improvement": 0.033333333333333326,
+          "all_accuracy": 0.9933333333333333,
+          "backend": "pyNN.spiNNaker",
+          "backend_path": "direct_pynn_stepcurrent_chunked_host_replay",
+          "binned_readback": true,
+          "call_reduction_factor": 50.0,
+          "chunk_size_steps": 50,
+          "early_accuracy": 0.9666666666666667,
+          "evaluation_count": 150,
+          "final_mean_readout_weight": -20.0,
+          "final_n_alive": 8,
+          "host_replay": true,
+          "learning_location": "host",
+          "max_abs_dopamine": 0.0,
+          "max_abs_prediction": 0.9999877116507956,
+          "max_n_alive": 8,
+          "mean_abs_dopamine": 0.0,
+          "mean_abs_prediction": 0.11551570383609724,
+          "mean_step_spikes": 79.16916666666667,
+          "population_size": 8,
+          "prediction_target_corr": 0.9789078348647698,
+          "runtime_mode": "chunked",
+          "runtime_seconds": 286.35446491488256,
+          "scheduled_current_changes": 300,
+          "scheduled_current_max": 1.5999999999999999,
+          "scheduled_current_min": 1.2,
+          "scheduled_input_failures": 0,
+          "scheduled_input_mode": "StepCurrentSource",
+          "seed": 42,
+          "sim_run_calls": 24,
+          "sim_run_failures": 0,
+          "spike_readback_failures": 0,
+          "spinnman_numpy2_compat": {
+            "numpy_uint8_overflow": {
+              "already_patched": true,
+              "applied": false,
+              "available": true,
+              "numpy_version": "2.3.4"
+            },
+            "spinnman_write_memory": {
+              "already_patched": true,
+              "applied": false,
+              "available": true,
+              "numpy_version": "2.3.4"
+            },
+            "spynnaker_neuromodulation": {
+              "already_patched": true,
+              "applied": false,
+              "available": true,
+              "target": "SynapseDynamicsNeuromodulation.get_plastic_synaptic_data"
+            }
+          },
+          "steps": 1200,
+          "summary_read_failures": 0,
+          "synthetic_fallbacks": 0,
+          "tail_accuracy": 1.0,
+          "tail_prediction_target_corr": 0.9999999999999998,
+          "task": "delayed_cue",
+          "task_display_name": "Delayed Cue",
+          "task_metadata": {
+            "delay": 5,
+            "period": 8,
+            "task_kind": "delayed_cue",
+            "trials": 150
+          },
+          "tier_part": "4.16a",
+          "total_births": 0,
+          "total_deaths": 0,
+          "total_step_spikes": 95003
+        },
+        {
+          "accuracy_improvement": 0.05238095238095242,
+          "all_accuracy": 0.543859649122807,
+          "backend": "pyNN.spiNNaker",
+          "backend_path": "direct_pynn_stepcurrent_chunked_host_replay",
+          "binned_readback": true,
+          "call_reduction_factor": 50.0,
+          "chunk_size_steps": 50,
+          "early_accuracy": 0.5428571428571428,
+          "evaluation_count": 171,
+          "final_mean_readout_weight": 0.43997781191392593,
+          "final_n_alive": 8,
+          "host_replay": true,
+          "learning_location": "host",
+          "max_abs_dopamine": 0.0,
+          "max_abs_prediction": 0.5370970295326852,
+          "max_n_alive": 8,
+          "mean_abs_dopamine": 0.0,
+          "mean_abs_prediction": 0.023447587929550078,
+          "mean_step_spikes": 79.08333333333333,
+          "population_size": 8,
+          "prediction_target_corr": 0.0440914673365101,
+          "runtime_mode": "chunked",
+          "runtime_seconds": 272.076833575964,
+          "scheduled_current_changes": 342,
+          "scheduled_current_max": 1.7334377084086874,
+          "scheduled_current_min": 1.087169792440875,
+          "scheduled_input_failures": 0,
+          "scheduled_input_mode": "StepCurrentSource",
+          "seed": 42,
+          "sim_run_calls": 24,
+          "sim_run_failures": 0,
+          "spike_readback_failures": 0,
+          "spinnman_numpy2_compat": {
+            "numpy_uint8_overflow": {
+              "already_patched": true,
+              "applied": false,
+              "available": true,
+              "numpy_version": "2.3.4"
+            },
+            "spinnman_write_memory": {
+              "already_patched": true,
+              "applied": false,
+              "available": true,
+              "numpy_version": "2.3.4"
+            },
+            "spynnaker_neuromodulation": {
+              "already_patched": true,
+              "applied": false,
+              "available": true,
+              "target": "SynapseDynamicsNeuromodulation.get_plastic_synaptic_data"
+            }
+          },
+          "steps": 1200,
+          "summary_read_failures": 0,
+          "synthetic_fallbacks": 0,
+          "tail_accuracy": 0.5952380952380952,
+          "tail_prediction_target_corr": 0.05827046543382765,
+          "task": "hard_noisy_switching",
+          "task_display_name": "Hard Noisy Switching",
+          "task_metadata": {
+            "delay_range": [
+              3,
+              5
+            ],
+            "mean_delay": 3.9298245614035086,
+            "noise_rate_actual": 0.2222222222222222,
+            "noisy_trials": 38,
+            "switch_steps": [
+              0,
+              44,
+              81,
+              122,
+              154,
+              191,
+              233,
+              271,
+              308,
+              346,
+              383,
+              422,
+              458,
+              490,
+              537,
+              575,
+              613,
+              649,
+              687,
+              733,
+              775,
+              809,
+              849,
+              896,
+              937,
+              982,
+              1025,
+              1062,
+              1100,
+              1134,
+              1175
+            ],
+            "task_kind": "hard_noisy_switching",
+            "trials": 171
+          },
+          "tier_part": "4.16b",
+          "total_births": 0,
+          "total_deaths": 0,
+          "total_step_spikes": 94900
+        }
+      ],
+      "status": "pass",
+      "summary": {
+        "backend": "pyNN.spiNNaker",
+        "failure_diagnostics": {},
+        "failure_reason": "",
+        "failure_step": null,
+        "hardware_run_attempted": true,
+        "hardware_target_configured": false,
+        "jobmanager_cli": null,
+        "mode": "run-hardware",
+        "runs": 2,
+        "runtime_seconds_mean": 279.21564924542326,
+        "seeds": [
+          42
+        ],
+        "sim_run_failures_sum": 0,
+        "summary_read_failures_sum": 0,
+        "synthetic_fallbacks_sum": 0,
+        "task_summaries": [
+          {
+            "all_accuracy_max": 0.9933333333333333,
+            "all_accuracy_mean": 0.9933333333333333,
+            "all_accuracy_min": 0.9933333333333333,
+            "all_accuracy_std": 0.0,
+            "evaluation_count_max": 150.0,
+            "evaluation_count_mean": 150.0,
+            "evaluation_count_min": 150.0,
+            "evaluation_count_std": 0.0,
+            "final_mean_readout_weight_max": -20.0,
+            "final_mean_readout_weight_mean": -20.0,
+            "final_mean_readout_weight_min": -20.0,
+            "final_mean_readout_weight_std": 0.0,
+            "final_n_alive_max": 8.0,
+            "final_n_alive_mean": 8.0,
+            "final_n_alive_min": 8.0,
+            "final_n_alive_std": 0.0,
+            "max_abs_dopamine_max": 0.0,
+            "max_abs_dopamine_mean": 0.0,
+            "max_abs_dopamine_min": 0.0,
+            "max_abs_dopamine_std": 0.0,
+            "mean_abs_dopamine_max": 0.0,
+            "mean_abs_dopamine_mean": 0.0,
+            "mean_abs_dopamine_min": 0.0,
+            "mean_abs_dopamine_std": 0.0,
+            "mean_step_spikes_max": 79.16916666666667,
+            "mean_step_spikes_mean": 79.16916666666667,
+            "mean_step_spikes_min": 79.16916666666667,
+            "mean_step_spikes_std": 0.0,
+            "prediction_target_corr_max": 0.9789078348647698,
+            "prediction_target_corr_mean": 0.9789078348647698,
+            "prediction_target_corr_min": 0.9789078348647698,
+            "prediction_target_corr_std": 0.0,
+            "runs": 1,
+            "runtime_seconds_max": 286.35446491488256,
+            "runtime_seconds_mean": 286.35446491488256,
+            "runtime_seconds_min": 286.35446491488256,
+            "runtime_seconds_std": 0.0,
+            "seeds": [
+              42
+            ],
+            "sim_run_failures_max": 0.0,
+            "sim_run_failures_mean": 0.0,
+            "sim_run_failures_min": 0.0,
+            "sim_run_failures_std": 0.0,
+            "sim_run_failures_sum": 0,
+            "summary_read_failures_max": 0.0,
+            "summary_read_failures_mean": 0.0,
+            "summary_read_failures_min": 0.0,
+            "summary_read_failures_std": 0.0,
+            "summary_read_failures_sum": 0,
+            "synthetic_fallbacks_max": 0.0,
+            "synthetic_fallbacks_mean": 0.0,
+            "synthetic_fallbacks_min": 0.0,
+            "synthetic_fallbacks_std": 0.0,
+            "synthetic_fallbacks_sum": 0,
+            "tail_accuracy_max": 1.0,
+            "tail_accuracy_mean": 1.0,
+            "tail_accuracy_min": 1.0,
+            "tail_accuracy_std": 0.0,
+            "tail_prediction_target_corr_max": 0.9999999999999998,
+            "tail_prediction_target_corr_mean": 0.9999999999999998,
+            "tail_prediction_target_corr_min": 0.9999999999999998,
+            "tail_prediction_target_corr_std": 0.0,
+            "task": "delayed_cue",
+            "tier_part": "4.16a",
+            "total_births_max": 0.0,
+            "total_births_mean": 0.0,
+            "total_births_min": 0.0,
+            "total_births_std": 0.0,
+            "total_births_sum": 0,
+            "total_deaths_max": 0.0,
+            "total_deaths_mean": 0.0,
+            "total_deaths_min": 0.0,
+            "total_deaths_std": 0.0,
+            "total_deaths_sum": 0,
+            "total_step_spikes_max": 95003.0,
+            "total_step_spikes_mean": 95003.0,
+            "total_step_spikes_min": 95003.0,
+            "total_step_spikes_std": 0.0
+          },
+          {
+            "all_accuracy_max": 0.543859649122807,
+            "all_accuracy_mean": 0.543859649122807,
+            "all_accuracy_min": 0.543859649122807,
+            "all_accuracy_std": 0.0,
+            "evaluation_count_max": 171.0,
+            "evaluation_count_mean": 171.0,
+            "evaluation_count_min": 171.0,
+            "evaluation_count_std": 0.0,
+            "final_mean_readout_weight_max": 0.43997781191392593,
+            "final_mean_readout_weight_mean": 0.43997781191392593,
+            "final_mean_readout_weight_min": 0.43997781191392593,
+            "final_mean_readout_weight_std": 0.0,
+            "final_n_alive_max": 8.0,
+            "final_n_alive_mean": 8.0,
+            "final_n_alive_min": 8.0,
+            "final_n_alive_std": 0.0,
+            "max_abs_dopamine_max": 0.0,
+            "max_abs_dopamine_mean": 0.0,
+            "max_abs_dopamine_min": 0.0,
+            "max_abs_dopamine_std": 0.0,
+            "mean_abs_dopamine_max": 0.0,
+            "mean_abs_dopamine_mean": 0.0,
+            "mean_abs_dopamine_min": 0.0,
+            "mean_abs_dopamine_std": 0.0,
+            "mean_step_spikes_max": 79.08333333333333,
+            "mean_step_spikes_mean": 79.08333333333333,
+            "mean_step_spikes_min": 79.08333333333333,
+            "mean_step_spikes_std": 0.0,
+            "prediction_target_corr_max": 0.0440914673365101,
+            "prediction_target_corr_mean": 0.0440914673365101,
+            "prediction_target_corr_min": 0.0440914673365101,
+            "prediction_target_corr_std": 0.0,
+            "runs": 1,
+            "runtime_seconds_max": 272.076833575964,
+            "runtime_seconds_mean": 272.076833575964,
+            "runtime_seconds_min": 272.076833575964,
+            "runtime_seconds_std": 0.0,
+            "seeds": [
+              42
+            ],
+            "sim_run_failures_max": 0.0,
+            "sim_run_failures_mean": 0.0,
+            "sim_run_failures_min": 0.0,
+            "sim_run_failures_std": 0.0,
+            "sim_run_failures_sum": 0,
+            "summary_read_failures_max": 0.0,
+            "summary_read_failures_mean": 0.0,
+            "summary_read_failures_min": 0.0,
+            "summary_read_failures_std": 0.0,
+            "summary_read_failures_sum": 0,
+            "synthetic_fallbacks_max": 0.0,
+            "synthetic_fallbacks_mean": 0.0,
+            "synthetic_fallbacks_min": 0.0,
+            "synthetic_fallbacks_std": 0.0,
+            "synthetic_fallbacks_sum": 0,
+            "tail_accuracy_max": 0.5952380952380952,
+            "tail_accuracy_mean": 0.5952380952380952,
+            "tail_accuracy_min": 0.5952380952380952,
+            "tail_accuracy_std": 0.0,
+            "tail_prediction_target_corr_max": 0.05827046543382765,
+            "tail_prediction_target_corr_mean": 0.05827046543382765,
+            "tail_prediction_target_corr_min": 0.05827046543382765,
+            "tail_prediction_target_corr_std": 0.0,
+            "task": "hard_noisy_switching",
+            "tier_part": "4.16b",
+            "total_births_max": 0.0,
+            "total_births_mean": 0.0,
+            "total_births_min": 0.0,
+            "total_births_std": 0.0,
+            "total_births_sum": 0,
+            "total_deaths_max": 0.0,
+            "total_deaths_mean": 0.0,
+            "total_deaths_min": 0.0,
+            "total_deaths_std": 0.0,
+            "total_deaths_sum": 0,
+            "total_step_spikes_max": 94900.0,
+            "total_step_spikes_mean": 94900.0,
+            "total_step_spikes_min": 94900.0,
+            "total_step_spikes_std": 0.0
+          }
+        ],
+        "tasks": [
+          "delayed_cue",
+          "hard_noisy_switching"
+        ],
+        "total_births_sum": 0,
+        "total_deaths_sum": 0,
+        "total_step_spikes_mean": 94951.5,
+        "total_step_spikes_min": 94900.0
+      },
+      "tier": "Tier 4.16 - Harder SpiNNaker Hardware Capsule"
+    },
+    "criteria": [
+      {
+        "name": "v2.1 baseline identity recorded",
+        "passed": true,
+        "rule": "runtime does not require baselines/",
+        "value": {
+          "artifact": "/tmp/job4002618516063700101.tmp/cra_420b/baselines/CRA_EVIDENCE_BASELINE_v2.1.json",
+          "artifact_present": false,
+          "baseline": "v2.1"
+        }
+      },
+      {
+        "name": "Tier 4.20b runner revision",
+        "passed": true,
+        "rule": "expected current source",
+        "value": "tier4_20b_inprocess_no_baselines_20260429_2330"
+      },
+      {
+        "name": "source package import path available",
+        "passed": true,
+        "rule": "coral_reef_spinnaker exists",
+        "value": {
+          "action": "already_canonical",
+          "aliases_checked": [
+            "/tmp/job4002618516063700101.tmp/cra_420b/coral-reef-spinnaker",
+            "/tmp/job4002618516063700101.tmp/cra_420b/coral reef spinnaker"
+          ],
+          "canonical_package": "/tmp/job4002618516063700101.tmp/cra_420b/coral_reef_spinnaker",
+          "canonical_package_exists": true
+        }
+      },
+      {
+        "name": "Tier 4.16 child hardware runner exists",
+        "passed": true,
+        "rule": "exists",
+        "value": "/tmp/job4002618516063700101.tmp/cra_420b/experiments/tier4_harder_spinnaker_capsule.py"
+      },
+      {
+        "name": "Tier 4.20a transfer audit context",
+        "passed": true,
+        "rule": "optional; local audit context only",
+        "value": {
+          "manifest": null,
+          "status": "missing"
+        }
+      },
+      {
+        "name": "exactly one seed requested for 4.20b",
+        "passed": true,
+        "rule": "len == 1",
+        "value": [
+          42
+        ]
+      },
+      {
+        "name": "runtime mode is chunked",
+        "passed": true,
+        "rule": "fixed",
+        "value": "chunked"
+      },
+      {
+        "name": "learning location is host",
+        "passed": true,
+        "rule": "fixed",
+        "value": "host"
+      },
+      {
+        "name": "chunk size uses current default unless overridden",
+        "passed": true,
+        "rule": ">= 1",
+        "value": 50
+      },
+      {
+        "name": "macro eligibility disabled",
+        "passed": true,
+        "rule": "== false",
+        "value": false
+      },
+      {
+        "name": "delayed_lr_0_20 selected",
+        "passed": true,
+        "rule": "== 0.20",
+        "value": 0.2
+      },
+      {
+        "name": "mode has explicit claim boundary",
+        "passed": true,
+        "rule": "prepare|run-hardware|ingest",
+        "value": "run-hardware"
+      },
+      {
+        "name": "child Tier 4.16 in-process runner exited cleanly",
+        "passed": true,
+        "rule": "== 0",
+        "value": 0
+      },
+      {
+        "name": "child Tier 4.16 manifest exists",
+        "passed": true,
+        "rule": "exists",
+        "value": "/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/tier4_16_results.json"
+      },
+      {
+        "name": "child hardware status passed",
+        "passed": true,
+        "rule": "== pass",
+        "value": "pass"
+      },
+      {
+        "name": "child hardware was attempted",
+        "passed": true,
+        "rule": "== true",
+        "value": true
+      },
+      {
+        "name": "child sim.run failures zero",
+        "passed": true,
+        "rule": "== 0",
+        "value": 0
+      },
+      {
+        "name": "child summary read failures zero",
+        "passed": true,
+        "rule": "== 0",
+        "value": 0
+      },
+      {
+        "name": "child synthetic fallback zero",
+        "passed": true,
+        "rule": "== 0",
+        "value": 0
+      },
+      {
+        "name": "child real spike readback nonzero",
+        "passed": true,
+        "rule": "> 0",
+        "value": 94900.0
+      },
+      {
+        "name": "child runtime documented",
+        "passed": true,
+        "rule": "finite",
+        "value": 279.21564924542326
+      }
+    ],
+    "failure_reason": "",
+    "generated_at_utc": "2026-04-30T03:41:16+00:00",
+    "mode": "run-hardware",
+    "output_dir": "/tmp/job4002618516063700101.tmp/tier4_20b_job_output",
+    "status": "pass",
+    "summary": {
+      "baseline": "v2.1",
+      "bridge_profile": {
+        "contract_declared_not_native_yet": [
+          "keyed context memory",
+          "replay / consolidation",
+          "visible predictive context / predictive binding",
+          "composition and module routing",
+          "self-evaluation / reliability monitoring"
+        ],
+        "explicitly_excluded": [
+          "macro eligibility residual trace"
+        ],
+        "included_in_child_runner": [
+          "PendingHorizon delayed credit / delayed_lr_0_20"
+        ],
+        "macro_eligibility_enabled": false,
+        "profile_name": "v2_1_chunked_bridge_probe",
+        "rows": 7
+      },
+      "child_backend": "pyNN.spiNNaker",
+      "child_chunk_size_steps": null,
+      "child_execution_mode": "in_process",
+      "child_failure_reason": "",
+      "child_hardware_run_attempted": true,
+      "child_learning_location": null,
+      "child_return_code": 0,
+      "child_runs": 2,
+      "child_runtime_mode": null,
+      "child_runtime_seconds_mean": 279.21564924542326,
+      "child_seeds": [
+        42
+      ],
+      "child_sim_run_failures_sum": 0,
+      "child_status": "pass",
+      "child_summary_read_failures_sum": 0,
+      "child_synthetic_fallbacks_sum": 0,
+      "child_task_summaries": [
+        {
+          "all_accuracy_max": 0.9933333333333333,
+          "all_accuracy_mean": 0.9933333333333333,
+          "all_accuracy_min": 0.9933333333333333,
+          "all_accuracy_std": 0.0,
+          "evaluation_count_max": 150.0,
+          "evaluation_count_mean": 150.0,
+          "evaluation_count_min": 150.0,
+          "evaluation_count_std": 0.0,
+          "final_mean_readout_weight_max": -20.0,
+          "final_mean_readout_weight_mean": -20.0,
+          "final_mean_readout_weight_min": -20.0,
+          "final_mean_readout_weight_std": 0.0,
+          "final_n_alive_max": 8.0,
+          "final_n_alive_mean": 8.0,
+          "final_n_alive_min": 8.0,
+          "final_n_alive_std": 0.0,
+          "max_abs_dopamine_max": 0.0,
+          "max_abs_dopamine_mean": 0.0,
+          "max_abs_dopamine_min": 0.0,
+          "max_abs_dopamine_std": 0.0,
+          "mean_abs_dopamine_max": 0.0,
+          "mean_abs_dopamine_mean": 0.0,
+          "mean_abs_dopamine_min": 0.0,
+          "mean_abs_dopamine_std": 0.0,
+          "mean_step_spikes_max": 79.16916666666667,
+          "mean_step_spikes_mean": 79.16916666666667,
+          "mean_step_spikes_min": 79.16916666666667,
+          "mean_step_spikes_std": 0.0,
+          "prediction_target_corr_max": 0.9789078348647698,
+          "prediction_target_corr_mean": 0.9789078348647698,
+          "prediction_target_corr_min": 0.9789078348647698,
+          "prediction_target_corr_std": 0.0,
+          "runs": 1,
+          "runtime_seconds_max": 286.35446491488256,
+          "runtime_seconds_mean": 286.35446491488256,
+          "runtime_seconds_min": 286.35446491488256,
+          "runtime_seconds_std": 0.0,
+          "seeds": [
+            42
+          ],
+          "sim_run_failures_max": 0.0,
+          "sim_run_failures_mean": 0.0,
+          "sim_run_failures_min": 0.0,
+          "sim_run_failures_std": 0.0,
+          "sim_run_failures_sum": 0,
+          "summary_read_failures_max": 0.0,
+          "summary_read_failures_mean": 0.0,
+          "summary_read_failures_min": 0.0,
+          "summary_read_failures_std": 0.0,
+          "summary_read_failures_sum": 0,
+          "synthetic_fallbacks_max": 0.0,
+          "synthetic_fallbacks_mean": 0.0,
+          "synthetic_fallbacks_min": 0.0,
+          "synthetic_fallbacks_std": 0.0,
+          "synthetic_fallbacks_sum": 0,
+          "tail_accuracy_max": 1.0,
+          "tail_accuracy_mean": 1.0,
+          "tail_accuracy_min": 1.0,
+          "tail_accuracy_std": 0.0,
+          "tail_prediction_target_corr_max": 0.9999999999999998,
+          "tail_prediction_target_corr_mean": 0.9999999999999998,
+          "tail_prediction_target_corr_min": 0.9999999999999998,
+          "tail_prediction_target_corr_std": 0.0,
+          "task": "delayed_cue",
+          "tier_part": "4.16a",
+          "total_births_max": 0.0,
+          "total_births_mean": 0.0,
+          "total_births_min": 0.0,
+          "total_births_std": 0.0,
+          "total_births_sum": 0,
+          "total_deaths_max": 0.0,
+          "total_deaths_mean": 0.0,
+          "total_deaths_min": 0.0,
+          "total_deaths_std": 0.0,
+          "total_deaths_sum": 0,
+          "total_step_spikes_max": 95003.0,
+          "total_step_spikes_mean": 95003.0,
+          "total_step_spikes_min": 95003.0,
+          "total_step_spikes_std": 0.0
+        },
+        {
+          "all_accuracy_max": 0.543859649122807,
+          "all_accuracy_mean": 0.543859649122807,
+          "all_accuracy_min": 0.543859649122807,
+          "all_accuracy_std": 0.0,
+          "evaluation_count_max": 171.0,
+          "evaluation_count_mean": 171.0,
+          "evaluation_count_min": 171.0,
+          "evaluation_count_std": 0.0,
+          "final_mean_readout_weight_max": 0.43997781191392593,
+          "final_mean_readout_weight_mean": 0.43997781191392593,
+          "final_mean_readout_weight_min": 0.43997781191392593,
+          "final_mean_readout_weight_std": 0.0,
+          "final_n_alive_max": 8.0,
+          "final_n_alive_mean": 8.0,
+          "final_n_alive_min": 8.0,
+          "final_n_alive_std": 0.0,
+          "max_abs_dopamine_max": 0.0,
+          "max_abs_dopamine_mean": 0.0,
+          "max_abs_dopamine_min": 0.0,
+          "max_abs_dopamine_std": 0.0,
+          "mean_abs_dopamine_max": 0.0,
+          "mean_abs_dopamine_mean": 0.0,
+          "mean_abs_dopamine_min": 0.0,
+          "mean_abs_dopamine_std": 0.0,
+          "mean_step_spikes_max": 79.08333333333333,
+          "mean_step_spikes_mean": 79.08333333333333,
+          "mean_step_spikes_min": 79.08333333333333,
+          "mean_step_spikes_std": 0.0,
+          "prediction_target_corr_max": 0.0440914673365101,
+          "prediction_target_corr_mean": 0.0440914673365101,
+          "prediction_target_corr_min": 0.0440914673365101,
+          "prediction_target_corr_std": 0.0,
+          "runs": 1,
+          "runtime_seconds_max": 272.076833575964,
+          "runtime_seconds_mean": 272.076833575964,
+          "runtime_seconds_min": 272.076833575964,
+          "runtime_seconds_std": 0.0,
+          "seeds": [
+            42
+          ],
+          "sim_run_failures_max": 0.0,
+          "sim_run_failures_mean": 0.0,
+          "sim_run_failures_min": 0.0,
+          "sim_run_failures_std": 0.0,
+          "sim_run_failures_sum": 0,
+          "summary_read_failures_max": 0.0,
+          "summary_read_failures_mean": 0.0,
+          "summary_read_failures_min": 0.0,
+          "summary_read_failures_std": 0.0,
+          "summary_read_failures_sum": 0,
+          "synthetic_fallbacks_max": 0.0,
+          "synthetic_fallbacks_mean": 0.0,
+          "synthetic_fallbacks_min": 0.0,
+          "synthetic_fallbacks_std": 0.0,
+          "synthetic_fallbacks_sum": 0,
+          "tail_accuracy_max": 0.5952380952380952,
+          "tail_accuracy_mean": 0.5952380952380952,
+          "tail_accuracy_min": 0.5952380952380952,
+          "tail_accuracy_std": 0.0,
+          "tail_prediction_target_corr_max": 0.05827046543382765,
+          "tail_prediction_target_corr_mean": 0.05827046543382765,
+          "tail_prediction_target_corr_min": 0.05827046543382765,
+          "tail_prediction_target_corr_std": 0.0,
+          "task": "hard_noisy_switching",
+          "tier_part": "4.16b",
+          "total_births_max": 0.0,
+          "total_births_mean": 0.0,
+          "total_births_min": 0.0,
+          "total_births_std": 0.0,
+          "total_births_sum": 0,
+          "total_deaths_max": 0.0,
+          "total_deaths_mean": 0.0,
+          "total_deaths_min": 0.0,
+          "total_deaths_std": 0.0,
+          "total_deaths_sum": 0,
+          "total_step_spikes_max": 94900.0,
+          "total_step_spikes_mean": 94900.0,
+          "total_step_spikes_min": 94900.0,
+          "total_step_spikes_std": 0.0
+        }
+      ],
+      "child_tasks": [
+        "delayed_cue",
+        "hard_noisy_switching"
+      ],
+      "child_total_step_spikes_min": 94900.0,
+      "chunk_size_steps": 50,
+      "hardware_run_attempted": true,
+      "learning_location": "host",
+      "macro_eligibility_enabled": false,
+      "population_size": 8,
+      "runner_revision": "tier4_20b_inprocess_no_baselines_20260429_2330",
+      "runtime_mode": "chunked",
+      "runtime_seconds": 566.6714808128309,
+      "seeds": [
+        42
+      ],
+      "steps": 1200,
+      "tasks": [
+        "delayed_cue",
+        "hard_noisy_switching"
+      ]
+    },
+    "tier": "Tier 4.20b - v2.1 One-Seed Chunked Hardware Probe"
+  },
+  "status": "pass",
+  "summary": {
+    "baseline": "v2.1",
+    "bridge_profile": {
+      "contract_declared_not_native_yet": [
+        "keyed context memory",
+        "replay / consolidation",
+        "visible predictive context / predictive binding",
+        "composition and module routing",
+        "self-evaluation / reliability monitoring"
+      ],
+      "explicitly_excluded": [
+        "macro eligibility residual trace"
+      ],
+      "included_in_child_runner": [
+        "PendingHorizon delayed credit / delayed_lr_0_20"
+      ],
+      "macro_eligibility_enabled": false,
+      "profile_name": "v2_1_chunked_bridge_probe",
+      "rows": 7
+    },
+    "child_backend": "pyNN.spiNNaker",
+    "child_chunk_size_steps": null,
+    "child_execution_mode": "in_process",
+    "child_failure_reason": "",
+    "child_hardware_run_attempted": true,
+    "child_learning_location": null,
+    "child_return_code": 0,
+    "child_runs": 2,
+    "child_runtime_mode": null,
+    "child_runtime_seconds_mean": 279.21564924542326,
+    "child_seeds": [
+      42
+    ],
+    "child_sim_run_failures_sum": 0,
+    "child_status": "pass",
+    "child_summary_read_failures_sum": 0,
+    "child_synthetic_fallbacks_sum": 0,
+    "child_task_summaries": [
+      {
+        "all_accuracy_max": 0.9933333333333333,
+        "all_accuracy_mean": 0.9933333333333333,
+        "all_accuracy_min": 0.9933333333333333,
+        "all_accuracy_std": 0.0,
+        "evaluation_count_max": 150.0,
+        "evaluation_count_mean": 150.0,
+        "evaluation_count_min": 150.0,
+        "evaluation_count_std": 0.0,
+        "final_mean_readout_weight_max": -20.0,
+        "final_mean_readout_weight_mean": -20.0,
+        "final_mean_readout_weight_min": -20.0,
+        "final_mean_readout_weight_std": 0.0,
+        "final_n_alive_max": 8.0,
+        "final_n_alive_mean": 8.0,
+        "final_n_alive_min": 8.0,
+        "final_n_alive_std": 0.0,
+        "max_abs_dopamine_max": 0.0,
+        "max_abs_dopamine_mean": 0.0,
+        "max_abs_dopamine_min": 0.0,
+        "max_abs_dopamine_std": 0.0,
+        "mean_abs_dopamine_max": 0.0,
+        "mean_abs_dopamine_mean": 0.0,
+        "mean_abs_dopamine_min": 0.0,
+        "mean_abs_dopamine_std": 0.0,
+        "mean_step_spikes_max": 79.16916666666667,
+        "mean_step_spikes_mean": 79.16916666666667,
+        "mean_step_spikes_min": 79.16916666666667,
+        "mean_step_spikes_std": 0.0,
+        "prediction_target_corr_max": 0.9789078348647698,
+        "prediction_target_corr_mean": 0.9789078348647698,
+        "prediction_target_corr_min": 0.9789078348647698,
+        "prediction_target_corr_std": 0.0,
+        "runs": 1,
+        "runtime_seconds_max": 286.35446491488256,
+        "runtime_seconds_mean": 286.35446491488256,
+        "runtime_seconds_min": 286.35446491488256,
+        "runtime_seconds_std": 0.0,
+        "seeds": [
+          42
+        ],
+        "sim_run_failures_max": 0.0,
+        "sim_run_failures_mean": 0.0,
+        "sim_run_failures_min": 0.0,
+        "sim_run_failures_std": 0.0,
+        "sim_run_failures_sum": 0,
+        "summary_read_failures_max": 0.0,
+        "summary_read_failures_mean": 0.0,
+        "summary_read_failures_min": 0.0,
+        "summary_read_failures_std": 0.0,
+        "summary_read_failures_sum": 0,
+        "synthetic_fallbacks_max": 0.0,
+        "synthetic_fallbacks_mean": 0.0,
+        "synthetic_fallbacks_min": 0.0,
+        "synthetic_fallbacks_std": 0.0,
+        "synthetic_fallbacks_sum": 0,
+        "tail_accuracy_max": 1.0,
+        "tail_accuracy_mean": 1.0,
+        "tail_accuracy_min": 1.0,
+        "tail_accuracy_std": 0.0,
+        "tail_prediction_target_corr_max": 0.9999999999999998,
+        "tail_prediction_target_corr_mean": 0.9999999999999998,
+        "tail_prediction_target_corr_min": 0.9999999999999998,
+        "tail_prediction_target_corr_std": 0.0,
+        "task": "delayed_cue",
+        "tier_part": "4.16a",
+        "total_births_max": 0.0,
+        "total_births_mean": 0.0,
+        "total_births_min": 0.0,
+        "total_births_std": 0.0,
+        "total_births_sum": 0,
+        "total_deaths_max": 0.0,
+        "total_deaths_mean": 0.0,
+        "total_deaths_min": 0.0,
+        "total_deaths_std": 0.0,
+        "total_deaths_sum": 0,
+        "total_step_spikes_max": 95003.0,
+        "total_step_spikes_mean": 95003.0,
+        "total_step_spikes_min": 95003.0,
+        "total_step_spikes_std": 0.0
+      },
+      {
+        "all_accuracy_max": 0.543859649122807,
+        "all_accuracy_mean": 0.543859649122807,
+        "all_accuracy_min": 0.543859649122807,
+        "all_accuracy_std": 0.0,
+        "evaluation_count_max": 171.0,
+        "evaluation_count_mean": 171.0,
+        "evaluation_count_min": 171.0,
+        "evaluation_count_std": 0.0,
+        "final_mean_readout_weight_max": 0.43997781191392593,
+        "final_mean_readout_weight_mean": 0.43997781191392593,
+        "final_mean_readout_weight_min": 0.43997781191392593,
+        "final_mean_readout_weight_std": 0.0,
+        "final_n_alive_max": 8.0,
+        "final_n_alive_mean": 8.0,
+        "final_n_alive_min": 8.0,
+        "final_n_alive_std": 0.0,
+        "max_abs_dopamine_max": 0.0,
+        "max_abs_dopamine_mean": 0.0,
+        "max_abs_dopamine_min": 0.0,
+        "max_abs_dopamine_std": 0.0,
+        "mean_abs_dopamine_max": 0.0,
+        "mean_abs_dopamine_mean": 0.0,
+        "mean_abs_dopamine_min": 0.0,
+        "mean_abs_dopamine_std": 0.0,
+        "mean_step_spikes_max": 79.08333333333333,
+        "mean_step_spikes_mean": 79.08333333333333,
+        "mean_step_spikes_min": 79.08333333333333,
+        "mean_step_spikes_std": 0.0,
+        "prediction_target_corr_max": 0.0440914673365101,
+        "prediction_target_corr_mean": 0.0440914673365101,
+        "prediction_target_corr_min": 0.0440914673365101,
+        "prediction_target_corr_std": 0.0,
+        "runs": 1,
+        "runtime_seconds_max": 272.076833575964,
+        "runtime_seconds_mean": 272.076833575964,
+        "runtime_seconds_min": 272.076833575964,
+        "runtime_seconds_std": 0.0,
+        "seeds": [
+          42
+        ],
+        "sim_run_failures_max": 0.0,
+        "sim_run_failures_mean": 0.0,
+        "sim_run_failures_min": 0.0,
+        "sim_run_failures_std": 0.0,
+        "sim_run_failures_sum": 0,
+        "summary_read_failures_max": 0.0,
+        "summary_read_failures_mean": 0.0,
+        "summary_read_failures_min": 0.0,
+        "summary_read_failures_std": 0.0,
+        "summary_read_failures_sum": 0,
+        "synthetic_fallbacks_max": 0.0,
+        "synthetic_fallbacks_mean": 0.0,
+        "synthetic_fallbacks_min": 0.0,
+        "synthetic_fallbacks_std": 0.0,
+        "synthetic_fallbacks_sum": 0,
+        "tail_accuracy_max": 0.5952380952380952,
+        "tail_accuracy_mean": 0.5952380952380952,
+        "tail_accuracy_min": 0.5952380952380952,
+        "tail_accuracy_std": 0.0,
+        "tail_prediction_target_corr_max": 0.05827046543382765,
+        "tail_prediction_target_corr_mean": 0.05827046543382765,
+        "tail_prediction_target_corr_min": 0.05827046543382765,
+        "tail_prediction_target_corr_std": 0.0,
+        "task": "hard_noisy_switching",
+        "tier_part": "4.16b",
+        "total_births_max": 0.0,
+        "total_births_mean": 0.0,
+        "total_births_min": 0.0,
+        "total_births_std": 0.0,
+        "total_births_sum": 0,
+        "total_deaths_max": 0.0,
+        "total_deaths_mean": 0.0,
+        "total_deaths_min": 0.0,
+        "total_deaths_std": 0.0,
+        "total_deaths_sum": 0,
+        "total_step_spikes_max": 94900.0,
+        "total_step_spikes_mean": 94900.0,
+        "total_step_spikes_min": 94900.0,
+        "total_step_spikes_std": 0.0
+      }
+    ],
+    "child_tasks": [
+      "delayed_cue",
+      "hard_noisy_switching"
+    ],
+    "child_total_step_spikes_min": 94900.0,
+    "chunk_size_steps": 50,
+    "hardware_run_attempted": true,
+    "ingested_from": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass/tier4_20b_results.json",
+    "learning_location": "host",
+    "macro_eligibility_enabled": false,
+    "population_size": 8,
+    "runner_revision": "tier4_20b_inprocess_no_baselines_20260429_2330",
+    "runtime_mode": "chunked",
+    "runtime_seconds": 566.6714808128309,
+    "seeds": [
+      42
+    ],
+    "steps": 1200,
+    "tasks": [
+      "delayed_cue",
+      "hard_noisy_switching"
+    ]
+  },
+  "tier": "Tier 4.20b - v2.1 One-Seed Chunked Hardware Probe"
+}

@@ -1,0 +1,3 @@
+child,status,return_code,runtime_seconds,manifest
+v2_1_guardrail,pass,0,1471.409875667,/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/v2_1_guardrail/tier5_18c_results.json
+macro_residual_recheck,fail,1,1418.5058925419999,/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/macro_residual_recheck/tier5_9b_results.json

@@ -1,0 +1,458 @@
+{
+  "baseline_id": "v1.5",
+  "canonical_artifacts": [
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier1_20260426_155758",
+      "caveat": "Passing Tier 1 rules out obvious fake learning; it does not prove positive learning.",
+      "claim": "No usable signal and shuffled labels do not produce false learning.",
+      "entry_id": "tier1_sanity",
+      "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier1_20260426_155758/tier1_results.json",
+      "report": "/Users/james/JKS:CRA/controlled_test_output/tier1_20260426_155758/tier1_report.md",
+      "status": "pass",
+      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier1_20260426_155758/tier1_summary.csv"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier2_20260426_155821",
+      "caveat": "Positive-control learning evidence depends on the controlled synthetic task definitions.",
+      "claim": "Fixed pattern, delayed reward, and nonstationary switch tasks learn above threshold.",
+      "entry_id": "tier2_learning",
+      "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier2_20260426_155821/tier2_results.json",
+      "report": "/Users/james/JKS:CRA/controlled_test_output/tier2_20260426_155821/tier2_report.md",
+      "status": "pass",
+      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier2_20260426_155821/tier2_summary.csv"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier3_20260426_155852",
+      "caveat": "Ablation claims are scoped to the controlled tasks and seeds in this bundle.",
+      "claim": "Dopamine, plasticity, and trophic selection each contribute measurable value.",
+      "entry_id": "tier3_architecture",
+      "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier3_20260426_155852/tier3_results.json",
+      "report": "/Users/james/JKS:CRA/controlled_test_output/tier3_20260426_155852/tier3_report.md",
+      "status": "pass",
+      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier3_20260426_155852/tier3_summary.csv"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_20260426_155103",
+      "caveat": "This baseline scaling task saturated; the honest claim is stability, not strong scaling advantage.",
+      "claim": "Fixed populations from N=4 to N=64 remain stable on the switch stressor.",
+      "entry_id": "tier4_10_population_scaling",
+      "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_20260426_155103/tier4_results.json",
+      "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_20260426_155103/tier4_report.md",
+      "status": "pass",
+      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_20260426_155103/tier4_summary.csv"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_10b_20260426_161251",
+      "caveat": "Hard-scaling accuracy is near baseline; the pass is based on stability plus non-accuracy scaling signals.",
+      "claim": "Hard scaling remains stable and shows value through correlation/recovery/variance rather than raw accuracy.",
+      "entry_id": "tier4_10b_hard_population_scaling",
+      "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_10b_20260426_161251/tier4_10b_results.json",
+      "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_10b_20260426_161251/tier4_10b_report.md",
+      "status": "pass",
+      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_10b_20260426_161251/tier4_10b_summary.csv"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_11_20260426_164655",
+      "caveat": "Domain transfer is proven for the controlled adapters here, not arbitrary domains.",
+      "claim": "The same CRA core transfers from finance/signed-return to non-finance sensor_control.",
+      "entry_id": "tier4_11_domain_transfer",
+      "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_11_20260426_164655/tier4_11_results.json",
+      "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_11_20260426_164655/tier4_11_report.md",
+      "status": "pass",
+      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_11_20260426_164655/tier4_11_summary.csv"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_12_20260426_170808",
+      "caveat": "The SpiNNaker item in Tier 4.12 is readiness prep, not a hardware learning result.",
+      "claim": "The fixed-pattern result survives NEST to Brian2 movement with zero synthetic fallback.",
+      "entry_id": "tier4_12_backend_parity",
+      "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_12_20260426_170808/tier4_12_results.json",
+      "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_12_20260426_170808/tier4_12_report.md",
+      "status": "pass",
+      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_12_20260426_170808/tier4_12_summary.csv"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_13_20260427_011912_hardware_pass",
+      "caveat": "Single-seed N=8 fixed-pattern capsule; not full hardware scaling or full CRA hardware deployment.",
+      "claim": "The minimal fixed-pattern CRA capsule executes through pyNN.spiNNaker with real spike readback and passes learning thresholds.",
+      "entry_id": "tier4_13_spinnaker_hardware_capsule",
+      "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_results.json",
+      "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_report.md",
+      "status": "pass",
+      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_summary.csv"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_14_20260426_213430",
+      "caveat": "Derived from the single-seed N=8 Tier 4.13 hardware pass unless rerun in run-hardware mode; not hardware repeatability or scaling evidence.",
+      "claim": "The Tier 4.13 hardware pass has profiled wall-clock and sPyNNaker provenance costs; overhead is dominated by repeated per-step run/readback orchestration.",
+      "entry_id": "tier4_14_hardware_runtime_characterization",
+      "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_14_20260426_213430/tier4_14_results.json",
+      "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_14_20260426_213430/tier4_14_report.md",
+      "status": "pass",
+      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_14_20260426_213430/tier4_14_summary.csv"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_15_20260427_030501_hardware_pass",
+      "caveat": "Three-seed N=8 fixed-pattern capsule only; not a harder hardware task, hardware population scaling, or full CRA hardware deployment.",
+      "claim": "The minimal fixed-pattern CRA hardware capsule repeats across seeds 42, 43, and 44 with zero fallback/failures and consistent learning metrics.",
+      "entry_id": "tier4_15_spinnaker_hardware_multiseed_repeat",
+      "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_15_20260427_030501_hardware_pass/tier4_15_results.json",
+      "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_15_20260427_030501_hardware_pass/tier4_15_report.md",
+      "status": "pass",
+      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_15_20260427_030501_hardware_pass/tier4_15_summary.csv"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_1_20260426_232530",
+      "caveat": "Controlled software comparison only; not hardware evidence, not a claim that CRA wins every task, and not proof against all possible baselines.",
+      "claim": "CRA is competitive against simple external learners and shows a defensible median-baseline advantage on sensor_control and hard noisy switching, while simpler online learners dominate the easy delayed-cue task.",
+      "entry_id": "tier5_1_external_baselines",
+      "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_1_20260426_232530/tier5_1_results.json",
+      "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_1_20260426_232530/tier5_1_report.md",
+      "status": "pass",
+      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_1_20260426_232530/tier5_1_summary.csv"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_2_20260426_234500",
+      "caveat": "Controlled software learning-curve characterization only; not hardware evidence, not proof that CRA cannot improve under other tasks/tuning, and not a claim that Tier 5.1 was invalid.",
+      "claim": "Across 120, 240, 480, 960, and 1500 steps, CRA's Tier 5.1 hard-task edge does not strengthen at the longest horizon: sensor_control saturates for CRA and baselines, delayed_cue remains externally dominated, and hard_noisy_switching is mixed/negative at 1500 steps.",
+      "entry_id": "tier5_2_learning_curve_sweep",
+      "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_2_20260426_234500/tier5_2_results.json",
+      "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_2_20260426_234500/tier5_2_report.md",
+      "status": "pass",
+      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_2_20260426_234500/tier5_2_summary.csv"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_3_20260427_055629",
+      "caveat": "Controlled software diagnostic only; not hardware evidence, not final competitiveness evidence, and hard_noisy_switching still trails the best external baseline.",
+      "claim": "A 78-run CRA-only diagnostic matrix identifies delayed-credit strength as the leading candidate failure mode: `delayed_lr_0_20` restores delayed_cue to 1.0 tail accuracy and improves hard_noisy_switching above the external median at 960 steps.",
+      "entry_id": "tier5_3_cra_failure_analysis",
+      "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_3_20260427_055629/tier5_3_results.json",
+      "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_3_20260427_055629/tier5_3_report.md",
+      "status": "pass",
+      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_3_20260427_055629/tier5_3_summary.csv"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_4_20260427_065412",
+      "caveat": "Controlled software confirmation only; not hardware evidence and not a superiority claim because hard_noisy_switching still trails the best external baseline.",
+      "claim": "The Tier 5.3 delayed-credit candidate `cra_delayed_lr_0_20` confirms across 960 and 1500 steps: delayed_cue stays at 1.0 tail accuracy, hard_noisy_switching beats the external median at both lengths, and the candidate does not regress versus current CRA.",
+      "entry_id": "tier5_4_delayed_credit_confirmation",
+      "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_4_20260427_065412/tier5_4_results.json",
+      "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_4_20260427_065412/tier5_4_report.md",
+      "status": "pass",
+      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_4_20260427_065412/tier5_4_summary.csv"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_16_20260427_184635_delayed_cue_3seed_hardware_pass",
+      "caveat": "Three-seed N=8 delayed_cue capsule only; not hard_noisy_switching hardware transfer, hardware scaling, on-chip learning, or a full Tier 4.16 pass.",
+      "claim": "The repaired delayed-credit delayed_cue regime transfers to real SpiNNaker hardware across seeds 42, 43, and 44 using chunked host replay.",
+      "entry_id": "tier4_16a_delayed_cue_hardware_repeat",
+      "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_16_20260427_184635_delayed_cue_3seed_hardware_pass/tier4_16_results.json",
+      "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_16_20260427_184635_delayed_cue_3seed_hardware_pass/tier4_16_report.md",
+      "status": "pass",
+      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_16_20260427_184635_delayed_cue_3seed_hardware_pass/tier4_16_summary.csv"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass",
+      "caveat": "Three-seed N=8 hard_noisy_switching capsule only; close-to-threshold transfer, not hardware scaling, on-chip learning, lifecycle/self-scaling, or external-baseline superiority.",
+      "claim": "The repaired hard_noisy_switching regime transfers to real SpiNNaker hardware across seeds 42, 43, and 44 using chunked host replay.",
+      "entry_id": "tier4_16b_hard_switch_hardware_repeat",
+      "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass/tier4_16_results.json",
+      "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass/tier4_16_report.md",
+      "status": "pass",
+      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass/tier4_16_summary.csv"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_18a_20260428_012822_hardware_pass",
+      "caveat": "Single-seed N=8 runtime/resource characterization only; not hardware scaling, lifecycle/self-scaling, native on-chip dopamine/eligibility, continuous/custom-C runtime, or external-baseline superiority.",
+      "claim": "The v0.7 chunked-host SpiNNaker path remains stable on delayed_cue and hard_noisy_switching at chunk sizes 10, 25, and 50; chunk 50 is the fastest viable default for the current hardware bridge.",
+      "entry_id": "tier4_18a_chunked_runtime_baseline",
+      "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_18a_20260428_012822_hardware_pass/tier4_18a_results.json",
+      "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_18a_20260428_012822_hardware_pass/tier4_18a_report.md",
+      "status": "pass",
+      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_18a_20260428_012822_hardware_pass/tier4_18a_summary.csv"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_5_20260427_222736",
+      "caveat": "Controlled software evidence only; not hardware evidence, not a hyperparameter fairness audit, not a universal superiority claim, and not proof that CRA beats the best external baseline at every horizon.",
+      "claim": "The locked CRA v0.8 delayed-credit configuration completes the 1,800-run expanded baseline matrix, shows robust advantage regimes, and is not dominated on most hard/adaptive regimes while documenting where strong external baselines tie or win.",
+      "entry_id": "tier5_5_expanded_baselines",
+      "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_5_20260427_222736/tier5_5_results.json",
+      "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_5_20260427_222736/tier5_5_report.md",
+      "status": "pass",
+      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_5_20260427_222736/tier5_5_summary.csv"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_6_20260428_001834",
+      "caveat": "Controlled software fairness audit only; not hardware evidence, not universal superiority, and not proof that CRA beats the best tuned external baseline at every metric or horizon.",
+      "claim": "With CRA locked at the promoted delayed-credit setting, the 990-run Tier 5.6 audit gives external baselines a documented tuning budget and finds surviving target regimes after retuning.",
+      "entry_id": "tier5_6_baseline_hyperparameter_fairness_audit",
+      "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_6_20260428_001834/tier5_6_results.json",
+      "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_6_20260428_001834/tier5_6_report.md",
+      "status": "pass",
+      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_6_20260428_001834/tier5_6_summary.csv"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260428_005723",
+      "caveat": "Controlled software regression evidence only; not a new capability claim, not hardware evidence, not lifecycle/self-scaling evidence, and not external-baseline superiority.",
+      "claim": "The promoted v1.0 delayed-credit setting passes compact negative controls, positive learning controls, architecture ablations, and delayed_cue/hard_noisy_switching smoke checks before lifecycle/self-scaling work.",
+      "entry_id": "tier5_7_compact_regression",
+      "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260428_005723/tier5_7_results.json",
+      "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260428_005723/tier5_7_report.md",
+      "status": "pass",
+      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260428_005723/tier5_7_summary.csv"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier6_1_20260428_012109",
+      "caveat": "Controlled software lifecycle evidence only; growth is cleavage-dominated with one adult birth and zero deaths, so this is not full adult turnover, not sham-control proof, not hardware lifecycle evidence, and not external-baseline superiority.",
+      "claim": "Lifecycle-enabled CRA expands from fixed initial populations with clean lineage tracking and shows hard_noisy_switching advantage regimes versus same-initial fixed-N controls.",
+      "entry_id": "tier6_1_lifecycle_self_scaling",
+      "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier6_1_20260428_012109/tier6_1_results.json",
+      "report": "/Users/james/JKS:CRA/controlled_test_output/tier6_1_20260428_012109/tier6_1_report.md",
+      "status": "pass",
+      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier6_1_20260428_012109/tier6_1_summary.csv"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier6_3_20260428_121504",
+      "caveat": "Controlled software sham-control evidence only; replay/shuffle controls are audit artifacts, not independent learners, and this is not hardware lifecycle evidence, full adult turnover, external-baseline superiority, or compositional/world-model evidence.",
+      "claim": "Lifecycle-enabled CRA beats fixed max-pool, event-count replay, no-trophic, no-dopamine, and no-plasticity sham controls on hard_noisy_switching while preserving clean lineage integrity.",
+      "entry_id": "tier6_3_lifecycle_sham_controls",
+      "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier6_3_20260428_121504/tier6_3_results.json",
+      "report": "/Users/james/JKS:CRA/controlled_test_output/tier6_3_20260428_121504/tier6_3_report.md",
+      "status": "pass",
+      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier6_3_20260428_121504/tier6_3_summary.csv"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier6_4_20260428_144354",
+      "caveat": "Controlled software motif-causality evidence only; motif-diverse graph is seeded for this suite, motif-label shuffle shows labels alone are not causal, and this is not hardware motif evidence, custom-C/on-chip learning, compositionality, or full world-model evidence.",
+      "claim": "Seeded motif-diverse CRA passes motif-causality controls on hard_noisy_switching: ablations cause predicted losses, motif activity is logged before reward/learning, and random/monolithic controls do not dominate across adaptation metrics.",
+      "entry_id": "tier6_4_circuit_motif_causality",
+      "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier6_4_20260428_144354/tier6_4_results.json",
+      "report": "/Users/james/JKS:CRA/controlled_test_output/tier6_4_20260428_144354/tier6_4_report.md",
+      "status": "pass",
+      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier6_4_20260428_144354/tier6_4_summary.csv"
+    }
+  ],
+  "canonical_evidence_count": 23,
+  "claim_boundaries": [
+    "Tier 5.10e is noncanonical controlled software stress evidence only; it is not a new canonical registry entry.",
+    "The memory mechanism remains host-side software inside Organism, not native SpiNNaker/on-chip memory.",
+    "The result does not prove sleep/replay consolidation, hardware transfer of memory, capacity-limited memory, broad catastrophic-forgetting resolution, or general working memory.",
+    "The absence of decay in this stressor means sleep/replay remains planned but not yet justified as a repair.",
+    "Future Tier 5.10f capacity/interference testing may narrow or expand this memory claim."
+  ],
+  "core_test_count": 12,
+  "evidence_count": 23,
+  "expanded_test_entry_count": 27,
+  "failed_canonical_criteria": 0,
+  "freeze_rule": "Historical evidence lock after Tier 5.10e internal memory retention stressor passed and before Tier 5.10f capacity/interference or later sleep/replay/predictive/compositional mechanisms.",
+  "frozen_at": "2026-04-29T02:40:32.088258+00:00",
+  "frozen_at_utc": "2026-04-29T02:40:32.088258+00:00",
+  "missing_expected_artifacts": 0,
+  "next_evidence_after_freeze": [
+    "Tier 5.10f memory capacity/interference stressor before sleep/replay repair claims.",
+    "Tier 5.11 sleep/replay only if a later retention/capacity/forgetting stressor creates a measured need.",
+    "Tier 5.12 predictive-coding/world-model prototype if reactive behavior remains a measured blocker.",
+    "Tier 5.13+ composition/routing/working-memory and SNN-native coverage one mechanism at a time with ablations and baseline comparisons.",
+    "Tier 4.19+ hardware lifecycle/custom C/on-chip migration only for mechanisms already proven useful in software."
+  ],
+  "noncanonical_output_count": 88,
+  "registry_status": "pass",
+  "source_registry_generated_at_utc": "2026-04-29T02:35:13.225076+00:00",
+  "status": "frozen",
+  "strongest_claim": "CRA now has post-Tier-5.10e noncanonical internal host-side memory-retention evidence: all v1.4 canonical evidence remains intact, and the internal Organism context-memory path survives longer context gaps, denser distractors, and hidden recurrence pressure while matching the external scaffold and beating v1.4/raw CRA, memory ablations, sign persistence, and the best standard baseline on the tested stress tasks.",
+  "tier5_10e_summary": {
+    "backend": "nest",
+    "candidate_context_memory_updates_sum": 60.0,
+    "candidate_feature_active_steps_sum": 144.0,
+    "checked_feedback_rows": 2448,
+    "comparisons": [
+      {
+        "baseline_abs_corr": 0.026159908667506598,
+        "baseline_all_accuracy": 0.6,
+        "baseline_tail_accuracy": 0.6666666666666666,
+        "best_ablation_all_accuracy": 0.6,
+        "best_ablation_model": "memory_reset_ablation",
+        "best_standard_all_accuracy": 0.6,
+        "best_standard_model": "sign_persistence",
+        "candidate_abs_corr": 0.9272252552914484,
+        "candidate_abs_corr_delta_vs_v1_4": 0.9010653466239418,
+        "candidate_all_accuracy": 1.0,
+        "candidate_all_delta_vs_best_ablation": 0.4,
+        "candidate_all_delta_vs_best_standard": 0.4,
+        "candidate_all_delta_vs_context_control": 0.0,
+        "candidate_all_delta_vs_external_scaffold": 0.0,
+        "candidate_all_delta_vs_sign_persistence": 0.4,
+        "candidate_all_delta_vs_v1_4": 0.4,
+        "candidate_composite_delta_vs_best_ablation": 0.6351598019935913,
+        "candidate_context_memory_updates": 30.0,
+        "candidate_feature_active_steps": 30.0,
+        "candidate_tail_accuracy": 1.0,
+        "candidate_tail_delta_vs_external_scaffold": 0.0,
+        "candidate_tail_delta_vs_v1_4": 0.33333333333333337,
+        "scaffold_all_accuracy": 1.0,
+        "scaffold_tail_accuracy": 1.0,
+        "sign_persistence_all_accuracy": 0.6,
+        "stream_context_memory_all_accuracy": 1.0,
+        "task": "delayed_context_cue"
+      },
+      {
+        "baseline_abs_corr": 0.06116338380601143,
+        "baseline_all_accuracy": 0.6666666666666666,
+        "baseline_tail_accuracy": 1.0,
+        "best_ablation_all_accuracy": 0.6666666666666666,
+        "best_ablation_model": "memory_reset_ablation",
+        "best_standard_all_accuracy": 0.6666666666666666,
+        "best_standard_model": "sign_persistence",
+        "candidate_abs_corr": 0.9555443013794062,
+        "candidate_abs_corr_delta_vs_v1_4": 0.8943809175733948,
+        "candidate_all_accuracy": 1.0,
+        "candidate_all_delta_vs_best_ablation": 0.33333333333333337,
+        "candidate_all_delta_vs_best_standard": 0.33333333333333337,
+        "candidate_all_delta_vs_context_control": 0.0,
+        "candidate_all_delta_vs_external_scaffold": 0.0,
+        "candidate_all_delta_vs_sign_persistence": 0.33333333333333337,
+        "candidate_all_delta_vs_v1_4": 0.33333333333333337,
+        "candidate_composite_delta_vs_best_ablation": 0.4674904709693426,
+        "candidate_context_memory_updates": 18.0,
+        "candidate_feature_active_steps": 18.0,
+        "candidate_tail_accuracy": 1.0,
+        "candidate_tail_delta_vs_external_scaffold": 0.0,
+        "candidate_tail_delta_vs_v1_4": 0.0,
+        "scaffold_all_accuracy": 1.0,
+        "scaffold_tail_accuracy": 1.0,
+        "sign_persistence_all_accuracy": 0.6666666666666666,
+        "stream_context_memory_all_accuracy": 1.0,
+        "task": "distractor_gap_context"
+      },
+      {
+        "baseline_abs_corr": 0.19230967670154805,
+        "baseline_all_accuracy": 0.5,
+        "baseline_tail_accuracy": 0.0,
+        "best_ablation_all_accuracy": 0.5,
+        "best_ablation_model": "memory_reset_ablation",
+        "best_standard_all_accuracy": 0.6041666666666666,
+        "best_standard_model": "online_perceptron",
+        "candidate_abs_corr": 0.9048699448256022,
+        "candidate_abs_corr_delta_vs_v1_4": 0.7125602681240542,
+        "candidate_all_accuracy": 1.0,
+        "candidate_all_delta_vs_best_ablation": 0.5,
+        "candidate_all_delta_vs_best_standard": 0.39583333333333337,
+        "candidate_all_delta_vs_context_control": 0.0,
+        "candidate_all_delta_vs_external_scaffold": 0.0,
+        "candidate_all_delta_vs_sign_persistence": 0.5,
+        "candidate_all_delta_vs_v1_4": 0.5,
+        "candidate_composite_delta_vs_best_ablation": 0.906884040218608,
+        "candidate_context_memory_updates": 12.0,
+        "candidate_feature_active_steps": 96.0,
+        "candidate_tail_accuracy": 1.0,
+        "candidate_tail_delta_vs_external_scaffold": 0.0,
+        "candidate_tail_delta_vs_v1_4": 1.0,
+        "scaffold_all_accuracy": 1.0,
+        "scaffold_tail_accuracy": 1.0,
+        "sign_persistence_all_accuracy": 0.5,
+        "stream_context_memory_all_accuracy": 1.0,
+        "task": "hidden_context_recurrence"
+      }
+    ],
+    "criteria": [
+      {
+        "name": "full variant/baseline/control/task/seed matrix completed",
+        "operator": "==",
+        "passed": true,
+        "threshold": 153,
+        "value": 153
+      },
+      {
+        "name": "feedback timing has no leakage violations",
+        "operator": "==",
+        "passed": true,
+        "threshold": 0,
+        "value": 0
+      },
+      {
+        "name": "candidate context feature is active",
+        "operator": ">",
+        "passed": true,
+        "threshold": 0,
+        "value": 144.0
+      },
+      {
+        "name": "candidate memory receives context updates",
+        "operator": ">",
+        "passed": true,
+        "threshold": 0,
+        "value": 60.0
+      },
+      {
+        "name": "candidate reaches minimum accuracy on retention-stress tasks",
+        "operator": ">=",
+        "passed": true,
+        "threshold": 0.7,
+        "value": 1.0
+      },
+      {
+        "name": "candidate improves over v1.4 raw CRA",
+        "operator": ">=",
+        "passed": true,
+        "threshold": 0.1,
+        "value": 0.33333333333333337
+      },
+      {
+        "name": "internal candidate approaches external scaffold",
+        "operator": ">=",
+        "passed": true,
+        "threshold": -0.05,
+        "value": 0.0
+      },
+      {
+        "name": "memory ablations are worse than candidate",
+        "operator": ">=",
+        "passed": true,
+        "threshold": 0.1,
+        "value": 0.33333333333333337
+      },
+      {
+        "name": "candidate beats sign persistence",
+        "operator": ">=",
+        "passed": true,
+        "threshold": 0.2,
+        "value": 0.33333333333333337
+      },
+      {
+        "name": "candidate is competitive with best standard baseline",
+        "operator": ">=",
+        "passed": true,
+        "threshold": -0.05,
+        "value": 0.33333333333333337
+      }
+    ],
+    "expected_runs": 153,
+    "feedback_leakage_violations": 0,
+    "observed_runs": 153,
+    "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_10e_20260428_220316",
+    "retention_stressor_profile": {
+      "context_gap": 48,
+      "context_period": 96,
+      "distractor_density": 0.85,
+      "distractor_scale": 0.45,
+      "long_context_gap": 96,
+      "long_context_period": 160,
+      "recurrence_decision_gap": 64,
+      "recurrence_phase_len": 240,
+      "recurrence_trial_gap": 24
+    },
+    "runtime_seconds": 1654.597358166,
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "status": "pass",
+    "steps": 960,
+    "tasks": [
+      "delayed_context_cue",
+      "distractor_gap_context",
+      "hidden_context_recurrence"
+    ]
+  }
+}

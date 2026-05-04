@@ -1,0 +1,46 @@
+{
+  "tier": "Tier 4.23c - One-Board Hardware Continuous Smoke",
+  "runner_revision": "tier4_23c_continuous_hardware_smoke_20260501_0004",
+  "generated_at_utc": "2026-05-02T01:11:01.662879+00:00",
+  "mode": "prepare",
+  "status": "prepared",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_23c_prepare_test",
+  "summary": {
+    "upload_bundle": "/Users/james/JKS:CRA/controlled_test_output/tier4_23c_prepare_test/ebrains_upload_bundle/cra_423b",
+    "stable_upload_folder": "/Users/james/JKS:CRA/ebrains_jobs/cra_423b",
+    "job_command": "cra_423b/experiments/tier4_23c_continuous_hardware_smoke.py --mode run-hardware --output-dir tier4_23c_job_output",
+    "what_i_need_from_user": "Upload cra_423b to EBRAINS/JobManager and run the emitted command.",
+    "claim_boundary": "Prepared source bundle only; no hardware evidence until returned artifacts pass ingest.",
+    "next_step_if_passed": "Run the emitted EBRAINS command and ingest returned files."
+  },
+  "criteria": [
+    {
+      "name": "local reference generated",
+      "value": 0,
+      "rule": "== 0",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "upload bundle created",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_23c_prepare_test/ebrains_upload_bundle/cra_423b",
+      "rule": "exists",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "runtime source included",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_23c_prepare_test/ebrains_upload_bundle/cra_423b/coral_reef_spinnaker/spinnaker_runtime",
+      "rule": "exists",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "run-hardware command emitted",
+      "value": "cra_423b/experiments/tier4_23c_continuous_hardware_smoke.py --mode run-hardware --output-dir tier4_23c_job_output",
+      "rule": "contains --mode run-hardware",
+      "passed": true,
+      "note": ""
+    }
+  ]
+}

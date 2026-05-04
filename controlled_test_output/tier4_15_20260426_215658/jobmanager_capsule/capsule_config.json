@@ -1,0 +1,20 @@
+{
+  "amplitude": 0.01,
+  "claim_boundary": "Prepared capsule is not evidence. PASS requires every seed to complete on real hardware with zero fallback/failures.",
+  "dt_seconds": 0.05,
+  "population_size": 8,
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "steps": 120,
+  "task": "fixed_pattern multi-seed hardware repeat",
+  "thresholds": {
+    "all_accuracy_threshold": 0.65,
+    "corr_threshold": 0.6,
+    "tail_accuracy_threshold": 0.75
+  },
+  "tier": "Tier 4.15 - SpiNNaker Hardware Multi-Seed Repeat",
+  "timestep_ms": 1.0
+}

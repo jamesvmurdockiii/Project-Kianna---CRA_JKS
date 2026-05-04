@@ -1,0 +1,21 @@
+{
+  "generated_at_utc": "2026-05-04T00:05:00.948140+00:00",
+  "source_generated_at_utc": "2026-04-27T00:33:33+00:00",
+  "registry_entry_id": "tier4_13_spinnaker_hardware_capsule",
+  "tier": "Tier 4.13 - SpiNNaker Hardware Capsule",
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_13_20260427_011912_hardware_pass",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_summary.csv",
+  "canonical": true,
+  "claim": "The minimal fixed-pattern CRA capsule executes through pyNN.spiNNaker with real spike readback and passes learning thresholds.",
+  "caveat": "Single-seed N=8 fixed-pattern capsule; not full hardware scaling or full CRA hardware deployment.",
+  "study_data": "/Users/james/JKS:CRA/controlled_test_output/tier4_13_20260427_011912_hardware_pass/study_data.json",
+  "spinnaker_provenance_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_13_20260427_011912_hardware_pass/spinnaker_reports/2026-04-27-01-19-12-390038",
+  "claim_boundary": [
+    "This is a minimal fixed-pattern hardware capsule, not a full hardware scaling claim.",
+    "The run used one seed (42), N=8, 120 steps, and a fixed population.",
+    "hardware_target_configured is false because local/JobManager environment detection did not expose a config flag, but hardware_run_attempted is true and real spike readback was nonzero."
+  ]
+}

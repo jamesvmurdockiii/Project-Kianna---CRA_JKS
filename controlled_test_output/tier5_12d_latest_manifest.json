@@ -1,0 +1,21 @@
+{
+  "generated_at_utc": "2026-05-04T00:05:00.996812+00:00",
+  "source_generated_at_utc": "2026-04-29T11:11:35+00:00",
+  "registry_entry_id": "tier5_12d_predictive_context_compact_regression",
+  "tier": "Tier 5.12d - Predictive-Context Compact Regression",
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070615",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070615/tier5_12d_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070615/tier5_12d_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070615/tier5_12d_summary.csv",
+  "canonical": true,
+  "claim": "The host-side visible predictive-context mechanism preserves Tier 1/2/3 controls, target hard-task smokes, v1.7 replay/consolidation guardrails, and predictive sham separation, authorizing a bounded v1.8 software baseline.",
+  "caveat": "Software-only promotion gate; v1.8 remains bounded to visible predictive-context tasks and is not hidden-regime inference, full world modeling, language, planning, hardware prediction, hardware scaling, native on-chip learning, compositionality, or external-baseline superiority.",
+  "claim_boundary": [
+    "Tier 5.12d is controlled software compact-regression and promotion-gate evidence.",
+    "The run used NEST for Tier 1/2/3, target hard-task smokes, and the predictive-context guardrail; it also reran the v1.7 replay/consolidation guardrail.",
+    "All six child checks passed: Tier 1 negative controls, Tier 2 positive controls, Tier 3 architecture ablations, delayed_cue/hard_noisy_switching smokes, replay/consolidation, and compact predictive-context sham separation.",
+    "This authorizes a bounded v1.8 host-side visible predictive-context software baseline.",
+    "Do not cite Tier 5.12d as hidden-regime inference, full world modeling, language, planning, lifecycle/self-scaling, hardware prediction, hardware scaling, native on-chip learning, compositionality, or external-baseline superiority."
+  ]
+}

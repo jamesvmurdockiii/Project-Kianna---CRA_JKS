@@ -1,0 +1,46 @@
+{
+  "ablation_controls": [
+    "slot_reset_ablation",
+    "slot_shuffle_ablation",
+    "wrong_key_ablation"
+  ],
+  "backend": "mock",
+  "candidate": "keyed_context_memory",
+  "context_controls": [
+    "oracle_context",
+    "stream_context_memory",
+    "shuffled_context",
+    "memory_reset",
+    "wrong_context"
+  ],
+  "fairness_rules": [
+    "all variants use the same stressed Tier 5.10b-derived task streams per seed",
+    "internal candidate receives raw observations and may update memory only on visible context events",
+    "keyed candidate binds retained context slots to later visible decision cues inside Organism",
+    "oracle-key scaffold is included only as an upper-bound capability reference",
+    "slot-reset/slot-shuffle/wrong-key controls must lose the benefit before promotion",
+    "overcapacity keyed control documents degradation when too few slots are available",
+    "models predict before consequence feedback matures",
+    "Tier 5.10g is internal host-side keyed context memory under capacity/interference stress, not native on-chip memory or sleep/replay"
+  ],
+  "oracle_key_upper_bound": "oracle_keyed_scaffold",
+  "overcapacity_control": "overcapacity_keyed_memory",
+  "raw_comparator": "v1_4_raw",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "selected_external_baselines": [
+    "sign_persistence",
+    "online_perceptron",
+    "online_logistic_regression",
+    "echo_state_network",
+    "small_gru",
+    "stdp_only_snn"
+  ],
+  "single_slot_comparator": "v1_5_single_slot",
+  "steps": 720,
+  "tasks": "intervening_contexts,overlapping_contexts,context_reentry_interference",
+  "tier": "Tier 5.10g - Multi-Slot / Keyed Context Memory Repair"
+}

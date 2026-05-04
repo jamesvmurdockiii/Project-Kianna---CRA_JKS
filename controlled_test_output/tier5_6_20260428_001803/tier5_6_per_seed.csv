@@ -1,0 +1,6 @@
+run_length_steps,task,model,model_family,seed,all_accuracy,tail_accuracy,prediction_target_corr,tail_prediction_target_corr,runtime_seconds,evaluation_count,steps_to_threshold,reward_events_to_threshold,area_under_learning_curve,tail_evaluation_count,final_n_alive,total_births,total_deaths,max_abs_dopamine
+120,hard_noisy_switching,cra_v0_8_delayed_lr_0_20,CRA,42,0.5294117647058824,0.5,0.0492028554385736,,0.25807345800000014,17,,,0.666297317638148,4,8,0,0,0.9998406935306564
+120,hard_noisy_switching,online_logistic_regression__logistic_l2_0_logistic_lr_0p02,linear,42,0.47058823529411764,0.75,-0.05409326859773986,,0.000811166999999724,17,,,0.38765330690071176,4,,,,
+120,hard_noisy_switching,online_logistic_regression__logistic_l2_0_logistic_lr_0p05,linear,42,0.47058823529411764,0.75,-0.03478407683602306,,0.0007880000000000109,17,,,0.38765330690071176,4,,,,
+120,hard_noisy_switching,online_perceptron__perceptron_lr_0p02_perceptron_margin_0,linear,42,0.5882352941176471,0.75,0.11069278047574478,,0.0007723749999999363,17,98,15,0.5172715308528458,4,,,,
+120,hard_noisy_switching,online_perceptron__perceptron_lr_0p05_perceptron_margin_0,linear,42,0.5882352941176471,0.75,0.11069278047574482,,0.0006685840000000276,17,98,15,0.5172715308528458,4,,,,

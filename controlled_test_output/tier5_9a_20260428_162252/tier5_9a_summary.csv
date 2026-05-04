@@ -1,0 +1,13 @@
+task,model,model_family,variant_group,runs,steps,tail_accuracy_mean,tail_accuracy_std,all_accuracy_mean,prediction_target_corr_mean,tail_prediction_target_corr_mean,mean_recovery_steps,runtime_seconds_mean,evaluation_count_mean,macro_trace_active_steps_sum,macro_matured_updates_sum_sum,macro_trace_abs_sum_mean_mean,configured_horizon_bars_mean,configured_delayed_readout_lr_mean,configured_macro_eligibility_decay_mean
+delayed_cue,macro_eligibility,CRA,candidate,1,160,0.2,0.0,0.65,0.4178295583200035,-0.6281711901644849,,0.4464373340000001,20.0,160.0,88.0,2.567592136026729,5.0,0.2,0.92
+delayed_cue,macro_eligibility_shuffled,CRA,trace_ablation,1,160,0.2,0.0,0.65,0.4178295583200035,-0.6281711901644849,,0.4557189589999999,20.0,160.0,88.0,2.567592136026729,5.0,0.2,0.92
+delayed_cue,macro_eligibility_zero,CRA,trace_ablation,1,160,0.2,0.0,0.45,-0.4248435629935844,-0.8276384383721,,0.4161157919999998,20.0,160.0,0.0,1.8127042423343724,5.0,0.2,0.92
+delayed_cue,online_perceptron,linear,,1,160,1.0,0.0,0.9,0.9486832980505137,1.0,,0.0013256669999996973,20.0,,,,,,
+delayed_cue,sign_persistence,rule,,1,160,0.0,0.0,0.0,-0.9999999999999998,-0.9999999999999999,,0.0009793330000000822,20.0,,,,,,
+delayed_cue,v1_4_pending_horizon,CRA,frozen_baseline,1,160,1.0,0.0,0.95,0.8961835970379942,0.9932442433813131,,0.4313576250000002,20.0,0.0,0.0,0.0,5.0,0.2,0.92
+variable_delay_cue,macro_eligibility,CRA,candidate,1,160,1.0,0.0,0.5263157894736842,-0.06343040950388908,0.9413444030544702,,0.4138661250000002,19.0,160.0,128.0,3.0763506863986985,10.0,0.2,0.92
+variable_delay_cue,macro_eligibility_shuffled,CRA,trace_ablation,1,160,1.0,0.0,0.5263157894736842,-0.06343040950388908,0.9413444030544702,,0.4940470829999999,19.0,160.0,128.0,3.0763506863986985,10.0,0.2,0.92
+variable_delay_cue,macro_eligibility_zero,CRA,trace_ablation,1,160,0.25,0.0,0.21052631578947367,-0.6733361298028273,0.4641038378115811,,0.43276716599999965,19.0,160.0,0.0,2.335891759694802,10.0,0.2,0.92
+variable_delay_cue,online_perceptron,linear,,1,160,1.0,0.0,0.8947368421052632,0.9457507306074071,1.0,,0.0010225830000001324,19.0,,,,,,
+variable_delay_cue,sign_persistence,rule,,1,160,0.0,0.0,0.0,-1.0,-0.9999999999999998,,0.000943249999999729,19.0,,,,,,
+variable_delay_cue,v1_4_pending_horizon,CRA,frozen_baseline,1,160,1.0,0.0,0.6842105263157895,0.6168255097496627,0.9484855577742175,,0.4018500000000005,19.0,0.0,0.0,0.0,10.0,0.2,0.92

@@ -1,0 +1,15 @@
+{
+  "encoding": "rate",
+  "is_genuinely_temporal": false,
+  "mean_latency_bin": 5.512442129629629,
+  "mean_spike_sparsity": 0.05172164351851851,
+  "mean_spike_total": 6.0777777777777775,
+  "nonzero_steps": 720,
+  "seed": 44,
+  "steps": 720,
+  "task": "fixed_pattern",
+  "task_metadata": {
+    "feedback": "immediate",
+    "task_kind": "fixed_pattern"
+  }
+}

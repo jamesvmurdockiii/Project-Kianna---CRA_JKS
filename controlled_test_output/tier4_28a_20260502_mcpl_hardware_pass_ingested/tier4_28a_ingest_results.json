@@ -1,0 +1,583 @@
+{
+  "tier": "Tier 4.28a \u2014 Four-Core MCPL Repeatability",
+  "runner_revision": "tier4_28a_four_core_mcpl_repeatability_20260502_0003",
+  "generated_at_utc": "2026-05-03T02:47:37.888887+00:00",
+  "mode": "ingest",
+  "status": "pass",
+  "output_dir": "controlled_test_output/tier4_28a_20260502_mcpl_hardware_pass_ingested",
+  "hardware_output_dir": "/Users/james/Downloads",
+  "passed_count": 38,
+  "total_count": 38,
+  "criteria": [
+    {
+      "name": "runner revision current",
+      "value": "tier4_28a_four_core_mcpl_repeatability_20260502_0003",
+      "rule": "expected current source",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "custom C host tests pass",
+      "value": "pass",
+      "rule": "== pass",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "main.c syntax check pass",
+      "value": "pass",
+      "rule": "== pass",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "hardware target acquired",
+      "value": {
+        "status": "pass",
+        "method": "pyNN.spiNNaker_probe",
+        "hostname": "10.11.204.129",
+        "target_ipaddress": "10.11.204.129",
+        "setup_kwargs": {
+          "timestep": 1.0
+        },
+        "probe_population_size": 1,
+        "probe_run_ms": 1.0,
+        "probe_timestep_ms": 1.0,
+        "dest_x": 0,
+        "dest_y": 0,
+        "dest_cpu": 4,
+        "occupied_cores": [
+          1,
+          2,
+          3
+        ],
+        "notes": [
+          "acquired transceiver/IP via PyNN/sPyNNaker DataView because EBRAINS JobManager may not expose a raw hostname",
+          "requested dest_cpu 1 was occupied; selected free core 4"
+        ],
+        "runtime_seconds": 59.05204671807587,
+        "attempts": [
+          {
+            "status": "fail",
+            "method": "hostname_discovery",
+            "hostname": "",
+            "notes": [
+              "no hostname found in args, common environment variables, or spynnaker.cfg"
+            ],
+            "reason": "no explicit hostname/config/environment target found"
+          },
+          {
+            "status": "pass",
+            "method": "pyNN.spiNNaker_probe",
+            "hostname": "10.11.204.129",
+            "target_ipaddress": "10.11.204.129",
+            "setup_kwargs": {
+              "timestep": 1.0
+            },
+            "probe_population_size": 1,
+            "probe_run_ms": 1.0,
+            "probe_timestep_ms": 1.0,
+            "dest_x": 0,
+            "dest_y": 0,
+            "dest_cpu": 4,
+            "occupied_cores": [
+              1,
+              2,
+              3
+            ],
+            "notes": [
+              "acquired transceiver/IP via PyNN/sPyNNaker DataView because EBRAINS JobManager may not expose a raw hostname",
+              "requested dest_cpu 1 was occupied; selected free core 4"
+            ],
+            "runtime_seconds": 59.05204671807587
+          }
+        ]
+      },
+      "rule": "status == pass",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "context_core .aplx built",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "route_core .aplx built",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "memory_core .aplx built",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core .aplx built",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "context_core load pass",
+      "value": "pass",
+      "rule": "== pass",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "route_core load pass",
+      "value": "pass",
+      "rule": "== pass",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "memory_core load pass",
+      "value": "pass",
+      "rule": "== pass",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core load pass",
+      "value": "pass",
+      "rule": "== pass",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "all context writes succeeded",
+      "value": [
+        {
+          "key": "ctx_A",
+          "success": true
+        },
+        {
+          "key": "ctx_B",
+          "success": true
+        },
+        {
+          "key": "ctx_C",
+          "success": true
+        },
+        {
+          "key": "ctx_D",
+          "success": true
+        }
+      ],
+      "rule": "all success",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "all route writes succeeded",
+      "value": [
+        {
+          "key": "route_A",
+          "success": true
+        },
+        {
+          "key": "route_B",
+          "success": true
+        },
+        {
+          "key": "route_C",
+          "success": true
+        },
+        {
+          "key": "route_D",
+          "success": true
+        }
+      ],
+      "rule": "all success",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "all memory writes succeeded",
+      "value": [
+        {
+          "key": "mem_A",
+          "success": true
+        },
+        {
+          "key": "mem_B",
+          "success": true
+        },
+        {
+          "key": "mem_C",
+          "success": true
+        },
+        {
+          "key": "mem_D",
+          "success": true
+        }
+      ],
+      "rule": "all success",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "all schedule uploads succeeded",
+      "value": [
+        {
+          "index": 0,
+          "success": true
+        },
+        {
+          "index": 1,
+          "success": true
+        },
+        {
+          "index": 2,
+          "success": true
+        },
+        {
+          "index": 3,
+          "success": true
+        },
+        {
+          "index": 4,
+          "success": true
+        },
+        {
+          "index": 5,
+          "success": true
+        },
+        {
+          "index": 6,
+          "success": true
+        },
+        {
+          "index": 7,
+          "success": true
+        },
+        {
+          "index": 8,
+          "success": true
+        },
+        {
+          "index": 9,
+          "success": true
+        },
+        {
+          "index": 10,
+          "success": true
+        },
+        {
+          "index": 11,
+          "success": true
+        },
+        {
+          "index": 12,
+          "success": true
+        },
+        {
+          "index": 13,
+          "success": true
+        },
+        {
+          "index": 14,
+          "success": true
+        },
+        {
+          "index": 15,
+          "success": true
+        },
+        {
+          "index": 16,
+          "success": true
+        },
+        {
+          "index": 17,
+          "success": true
+        },
+        {
+          "index": 18,
+          "success": true
+        },
+        {
+          "index": 19,
+          "success": true
+        },
+        {
+          "index": 20,
+          "success": true
+        },
+        {
+          "index": 21,
+          "success": true
+        },
+        {
+          "index": 22,
+          "success": true
+        },
+        {
+          "index": 23,
+          "success": true
+        },
+        {
+          "index": 24,
+          "success": true
+        },
+        {
+          "index": 25,
+          "success": true
+        },
+        {
+          "index": 26,
+          "success": true
+        },
+        {
+          "index": 27,
+          "success": true
+        },
+        {
+          "index": 28,
+          "success": true
+        },
+        {
+          "index": 29,
+          "success": true
+        },
+        {
+          "index": 30,
+          "success": true
+        },
+        {
+          "index": 31,
+          "success": true
+        },
+        {
+          "index": 32,
+          "success": true
+        },
+        {
+          "index": 33,
+          "success": true
+        },
+        {
+          "index": 34,
+          "success": true
+        },
+        {
+          "index": 35,
+          "success": true
+        },
+        {
+          "index": 36,
+          "success": true
+        },
+        {
+          "index": 37,
+          "success": true
+        },
+        {
+          "index": 38,
+          "success": true
+        },
+        {
+          "index": 39,
+          "success": true
+        },
+        {
+          "index": 40,
+          "success": true
+        },
+        {
+          "index": 41,
+          "success": true
+        },
+        {
+          "index": 42,
+          "success": true
+        },
+        {
+          "index": 43,
+          "success": true
+        },
+        {
+          "index": 44,
+          "success": true
+        },
+        {
+          "index": 45,
+          "success": true
+        },
+        {
+          "index": 46,
+          "success": true
+        },
+        {
+          "index": 47,
+          "success": true
+        }
+      ],
+      "rule": "all success",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "context_core run_continuous succeeded",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "route_core run_continuous succeeded",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "memory_core run_continuous succeeded",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core run_continuous succeeded",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "context_core final read succeeded",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "route_core final read succeeded",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "memory_core final read succeeded",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core final read succeeded",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core weight near reference",
+      "value": 32768,
+      "rule": "within +/- 8192 of 32768",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core bias near reference",
+      "value": 0,
+      "rule": "within +/- 8192 of 0",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core pending_created matches reference",
+      "value": 48,
+      "rule": "== 48",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core pending_matured matches reference",
+      "value": 48,
+      "rule": "== 48",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core active_pending cleared",
+      "value": 0,
+      "rule": "== 0",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "no unhandled hardware exception",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core schema_version v2",
+      "value": 2,
+      "rule": "== 2",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core lookup_requests == 144",
+      "value": 144,
+      "rule": "== 144",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core lookup_replies == 144",
+      "value": 144,
+      "rule": "== 144",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core stale_replies == 0",
+      "value": 0,
+      "rule": "== 0",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core timeouts == 0",
+      "value": 0,
+      "rule": "== 0",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "context_core lookup_replies == 0",
+      "value": 0,
+      "rule": "== 0",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "route_core lookup_replies == 0",
+      "value": 0,
+      "rule": "== 0",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "memory_core lookup_replies == 0",
+      "value": 0,
+      "rule": "== 0",
+      "passed": true,
+      "note": ""
+    }
+  ]
+}

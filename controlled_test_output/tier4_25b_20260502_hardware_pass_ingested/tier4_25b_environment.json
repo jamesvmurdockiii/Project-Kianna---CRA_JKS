@@ -1,0 +1,57 @@
+{
+  "cwd": "/tmp/job4445315681533454371.tmp",
+  "python": "/home/jovyan/spinnaker/bin/python",
+  "python_version": "3.13.9 | packaged by conda-forge | (main, Oct 16 2025, 10:31:39) [GCC 14.3.0]",
+  "env": {
+    "SPINN_DIRS": "/home/jovyan/spinnaker/spinnaker_tools",
+    "SPINNAKER_HOSTNAME": "",
+    "SPINNAKER_HOST": "",
+    "SPINNAKER_BOARD": "",
+    "SPYNNAKER_MACHINE": "",
+    "SPINNAKER_MACHINE": ""
+  },
+  "spinnaker_tools": "/home/jovyan/spinnaker/spinnaker_tools",
+  "tools": {
+    "ybug": "/home/jovyan/spinnaker/spinnaker_tools/tools/ybug",
+    "spin1_api": "",
+    "make": "/usr/bin/make",
+    "cc": "/usr/bin/cc"
+  },
+  "modules": [
+    {
+      "name": "spinnman",
+      "available": true,
+      "path": "/home/jovyan/spinnaker/SpiNNMan/spinnman/__init__.py"
+    },
+    {
+      "name": "spinn_machine",
+      "available": true,
+      "path": "/home/jovyan/spinnaker/SpiNNMachine/spinn_machine/__init__.py"
+    },
+    {
+      "name": "spinn_utilities",
+      "available": true,
+      "path": "/home/jovyan/spinnaker/SpiNNUtils/spinn_utilities/__init__.py"
+    },
+    {
+      "name": "pyNN.spiNNaker",
+      "available": true,
+      "path": "/home/jovyan/spinnaker/lib/python3.13/site-packages/pyNN/__init__.py"
+    },
+    {
+      "name": "spynnaker.pyNN",
+      "available": true,
+      "path": "/home/jovyan/spinnaker/sPyNNaker/spynnaker/__init__.py"
+    },
+    {
+      "name": "spinn_front_end_common",
+      "available": true,
+      "path": "/home/jovyan/spinnaker/SpiNNFrontEndCommon/spinn_front_end_common/__init__.py"
+    },
+    {
+      "name": "spalloc_client",
+      "available": true,
+      "path": "/home/jovyan/spinnaker/spalloc/spalloc_client/__init__.py"
+    }
+  ]
+}

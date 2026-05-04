@@ -1,0 +1,26 @@
+{
+  "generated_at_utc": "2026-05-04T00:05:00.949971+00:00",
+  "source_generated_at_utc": "2026-04-27T02:48:50+00:00",
+  "registry_entry_id": "tier4_15_spinnaker_hardware_multiseed_repeat",
+  "tier": "Tier 4.15 - SpiNNaker Hardware Multi-Seed Repeat",
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_15_20260427_030501_hardware_pass",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_15_20260427_030501_hardware_pass/tier4_15_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_15_20260427_030501_hardware_pass/tier4_15_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_15_20260427_030501_hardware_pass/tier4_15_summary.csv",
+  "canonical": true,
+  "claim": "The minimal fixed-pattern CRA hardware capsule repeats across seeds 42, 43, and 44 with zero fallback/failures and consistent learning metrics.",
+  "caveat": "Three-seed N=8 fixed-pattern capsule only; not a harder hardware task, hardware population scaling, or full CRA hardware deployment.",
+  "study_data": "/Users/james/JKS:CRA/controlled_test_output/tier4_15_20260427_030501_hardware_pass/study_data.json",
+  "spinnaker_provenance_dirs": [
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_15_20260427_030501_hardware_pass/spinnaker_reports/2026-04-27-03-05-01-872105",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_15_20260427_030501_hardware_pass/spinnaker_reports/2026-04-27-03-19-49-290162",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_15_20260427_030501_hardware_pass/spinnaker_reports/2026-04-27-03-34-22-032643"
+  ],
+  "claim_boundary": [
+    "This is a three-seed repeatability result for the minimal fixed-pattern hardware capsule.",
+    "The run used seeds 42, 43, and 44, N=8, 120 steps, and a fixed population.",
+    "It is not a harder-task hardware result, hardware population scaling result, or full CRA hardware deployment.",
+    "hardware_target_configured is false because local/JobManager environment detection did not expose a config flag, but hardware_run_attempted is true and real spike readback was nonzero for every seed."
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "mode": "local",
+  "status": "pass",
+  "data_generation": {
+    "status": "pass",
+    "stdout": "Generated /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/tests/test_four_core_48event_data.h with 48 events.\n",
+    "stderr": ""
+  },
+  "monolithic_reference": {
+    "final_weight_raw": 32768,
+    "final_bias_raw": 0,
+    "accuracy": 0.9583333333333334,
+    "tail_accuracy": 1.0
+  },
+  "c_distributed_test": {
+    "status": "pass",
+    "returncode": 0,
+    "stdout": "cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-int-to-pointer-cast -I stubs -I src -I tests -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 tests/test_four_core_48event.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_four_core_48event\n./tests/test_four_core_48event\npending_created=48\npending_matured=48\nactive_pending=0\ndecisions=48\nreward_events=48\nreadout_weight=32768\nreadout_bias=0\nlookup_requests=144\nlookup_replies=144\nstale_replies=0\ntimeouts=0\nfinal_timestep=50\nPASS: All 48-event four-core distributed criteria met.\n",
+    "stderr": "src/host_interface.c:149:13: warning: unused function '_handle_schedule_pending_split' [-Wunused-function]\n  149 | static void _handle_schedule_pending_split(sdp_msg_t *msg) {\n      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nsrc/host_interface.c:216:13: warning: unused function '_handle_write_context' [-Wunused-function]\n  216 | static void _handle_write_context(sdp_msg_t *msg) {\n      |             ^~~~~~~~~~~~~~~~~~~~~\nsrc/host_interface.c:232:13: warning: unused function '_handle_read_context' [-Wunused-function]\n  232 | static void _handle_read_context(sdp_msg_t *msg) {\n      |             ^~~~~~~~~~~~~~~~~~~~\nsrc/host_interface.c:346:13: warning: unused function '_handle_write_route_slot' [-Wunused-function]\n  346 | static void _handle_write_route_slot(sdp_msg_t *msg) {\n      |             ^~~~~~~~~~~~~~~~~~~~~~~~\nsrc/host_interface.c:362:13: warning: unused function '_handle_read_route_slot' [-Wunused-function]\n  362 | static void _handle_read_route_slot(sdp_msg_t *msg) {\n      |             ^~~~~~~~~~~~~~~~~~~~~~~\nsrc/host_interface.c:416:13: warning: unused function '_handle_write_memory_slot' [-Wunused-function]\n  416 | static void _handle_write_memory_slot(sdp_msg_t *msg) {\n      |             ^~~~~~~~~~~~~~~~~~~~~~~~~\nsrc/host_interface.c:432:13: warning: unused function '_handle_read_memory_slot' [-Wunused-function]\n  432 | static void _handle_read_memory_slot(sdp_msg_t *msg) {\n      |             ^~~~~~~~~~~~~~~~~~~~~~~~\nsrc/host_interface.c:517:13: warning: unused function '_handle_schedule_decoupled_memory_route_context_pending' [-Wunused-function]\n  517 | static void _handle_schedule_decoupled_memory_route_context_pending(sdp_msg_t *msg) {\n      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n8 warnings generated.\n",
+    "parsed": {
+      "cc -std": "c11 -Wall -Wextra -Wno-unused-parameter -Wno-int-to-pointer-cast -I stubs -I src -I tests -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 tests/test_four_core_48event.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_four_core_48event",
+      "pending_created": 48,
+      "pending_matured": 48,
+      "active_pending": 0,
+      "decisions": 48,
+      "reward_events": 48,
+      "readout_weight": 32768,
+      "readout_bias": 0,
+      "lookup_requests": 144,
+      "lookup_replies": 144,
+      "stale_replies": 0,
+      "timeouts": 0,
+      "final_timestep": 50
+    }
+  },
+  "criteria": [
+    {
+      "name": "pending_created",
+      "value": 48,
+      "expected": 48,
+      "passed": true
+    },
+    {
+      "name": "pending_matured",
+      "value": 48,
+      "expected": 48,
+      "passed": true
+    },
+    {
+      "name": "active_pending",
+      "value": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "decisions",
+      "value": 48,
+      "expected": 48,
+      "passed": true
+    },
+    {
+      "name": "reward_events",
+      "value": 48,
+      "expected": 48,
+      "passed": true
+    },
+    {
+      "name": "lookup_requests",
+      "value": 144,
+      "expected": 144,
+      "passed": true
+    },
+    {
+      "name": "lookup_replies",
+      "value": 144,
+      "expected": 144,
+      "passed": true
+    },
+    {
+      "name": "stale_replies",
+      "value": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "timeouts",
+      "value": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "readout_weight",
+      "value": 32768,
+      "expected": 32768,
+      "passed": true
+    },
+    {
+      "name": "readout_bias",
+      "value": 0,
+      "expected": 0,
+      "passed": true
+    }
+  ]
+}

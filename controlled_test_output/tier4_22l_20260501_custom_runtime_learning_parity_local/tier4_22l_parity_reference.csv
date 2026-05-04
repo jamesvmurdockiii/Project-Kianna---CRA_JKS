@@ -1,0 +1,5 @@
+step,purpose,feature,target,feature_raw,target_raw,learning_rate,learning_rate_raw,prediction_raw,prediction,error_raw,delta_w_raw,delta_b_raw,readout_weight_raw,readout_bias_raw,readout_weight,readout_bias
+1,positive feature / positive target,1.0,1.0,32768,32768,0.25,8192,0,0.0,32768,8192,8192,8192,8192,0.25,0.25
+2,positive feature / negative target,1.0,-1.0,32768,-32768,0.25,8192,16384,0.5,-49152,-12288,-12288,-4096,-4096,-0.125,-0.125
+3,negative feature / negative target,-1.0,-1.0,-32768,-32768,0.25,8192,0,0.0,-32768,8192,-8192,4096,-12288,0.125,-0.375
+4,negative feature / fractional positive target,-1.0,0.5,-32768,16384,0.25,8192,-16384,-0.5,32768,-8192,8192,-4096,-4096,-0.125,-0.125

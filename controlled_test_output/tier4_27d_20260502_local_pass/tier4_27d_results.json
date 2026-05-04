@@ -1,0 +1,105 @@
+{
+  "tier": "Tier 4.27d \u2014 MCPL Inter-Core Lookup Compile-Time Feasibility",
+  "runner_revision": "tier4_27d_mcpl_feasibility_20260502_0001",
+  "generated_at_utc": "2026-05-03T03:11:27.031328+00:00",
+  "mode": "local",
+  "status": "fail",
+  "criteria": [
+    {
+      "name": "runner revision current",
+      "value": "tier4_27d_mcpl_feasibility_20260502_0001",
+      "rule": "expected",
+      "passed": true
+    },
+    {
+      "name": "MCPL host test pass",
+      "value": 0,
+      "rule": "== 0",
+      "passed": true
+    },
+    {
+      "name": "context_core .aplx built",
+      "value": false,
+      "rule": "== True",
+      "passed": false
+    },
+    {
+      "name": "route_core .aplx built",
+      "value": false,
+      "rule": "== True",
+      "passed": false
+    },
+    {
+      "name": "memory_core .aplx built",
+      "value": false,
+      "rule": "== True",
+      "passed": false
+    },
+    {
+      "name": "learning_core .aplx built",
+      "value": true,
+      "rule": "== True",
+      "passed": true
+    },
+    {
+      "name": "ITCM under 32KB",
+      "value": 0,
+      "rule": "< 32768",
+      "passed": false
+    },
+    {
+      "name": "MCPL callback registered in main.c",
+      "value": "mcpl_lookup_callback + MCPL_PACKET_RECEIVED",
+      "rule": "present",
+      "passed": true
+    },
+    {
+      "name": "MCPL key macros in config.h",
+      "value": "MAKE_MCPL_KEY / EXTRACT_MCPL_*",
+      "rule": "present",
+      "passed": true
+    }
+  ],
+  "mcpl_test": {
+    "command": "make test-mcpl-feasibility",
+    "returncode": 0,
+    "stdout": "cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-int-to-pointer-cast -I stubs -I src -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 tests/test_mcpl_feasibility.c stubs/spin1_api.c src/state_manager.c -lm -o tests/test_mcpl_feasibility\n./tests/test_mcpl_feasibility\n=== Tier 4.27d MCPL Feasibility Tests ===\n\n[1/5] MCPL key packing...\n  PASS: app_id extracted correctly\n  PASS: msg_type extracted correctly\n  PASS: lookup_type extracted correctly\n  PASS: seq_id extracted correctly\n\n[2/5] MCPL lookup request send...\n  PASS: send_request produced non-zero key\n  PASS: send_request msg_type is REQUEST\n  PASS: send_request lookup_type is ROUTE\n  PASS: send_request seq_id is 7\n  PASS: send_request payload is key_id\n  PASS: send_request with_payload flag set\n\n[3/5] MCPL lookup reply send...\n  PASS: send_reply produced non-zero key\n  PASS: send_reply msg_type is REPLY\n  PASS: send_reply lookup_type is MEMORY\n  PASS: send_reply seq_id is 99\n  PASS: send_reply payload is value\n  PASS: send_reply with_payload flag set\n\n[4/5] MCPL lookup receive extraction...\n  PASS: receive compiles and runs\n\n[5/5] Official Spin1API symbol compile...\n  PASS: MCPL_PACKET_RECEIVED compiles (value > 0)\n  PASS: MC_PACKET_RECEIVED compiles (value > 0)\n\n=== Results: 19 passed, 0 failed ===\n",
+    "stderr": ""
+  },
+  "builds": {
+    "context_core": {
+      "profile": "context_core",
+      "build_returncode": 2,
+      "aplx_exists": false,
+      "aplx_path": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/build/coral_reef.aplx",
+      "stdout": "rm -rf build/gnu/ build/coral_reef.aplx tests/test_runtime tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_four_core_local tests/test_four_core_48event\nspinnaker_tools not found.\nHost tests work with 'make test'.\nFor hardware builds set SPINN_DIRS, e.g.:\n  export SPINN_DIRS=/opt/spinnaker_tools\n",
+      "stderr": "make: *** [require-spinnaker] Error 2\n"
+    },
+    "route_core": {
+      "profile": "route_core",
+      "build_returncode": 2,
+      "aplx_exists": false,
+      "aplx_path": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/build/coral_reef.aplx",
+      "stdout": "rm -rf build/gnu/ build/coral_reef.aplx tests/test_runtime tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_four_core_local tests/test_four_core_48event\nspinnaker_tools not found.\nHost tests work with 'make test'.\nFor hardware builds set SPINN_DIRS, e.g.:\n  export SPINN_DIRS=/opt/spinnaker_tools\n",
+      "stderr": "make: *** [require-spinnaker] Error 2\n"
+    },
+    "memory_core": {
+      "profile": "memory_core",
+      "build_returncode": 2,
+      "aplx_exists": false,
+      "aplx_path": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/build/coral_reef.aplx",
+      "stdout": "rm -rf build/gnu/ build/coral_reef.aplx tests/test_runtime tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_four_core_local tests/test_four_core_48event\nspinnaker_tools not found.\nHost tests work with 'make test'.\nFor hardware builds set SPINN_DIRS, e.g.:\n  export SPINN_DIRS=/opt/spinnaker_tools\n",
+      "stderr": "make: *** [require-spinnaker] Error 2\n"
+    },
+    "learning_core": {
+      "profile": "learning_core",
+      "build_returncode": 2,
+      "aplx_exists": true,
+      "aplx_path": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/build/coral_reef_learning_core.aplx",
+      "stdout": "rm -rf build/gnu/ build/coral_reef.aplx tests/test_runtime tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_four_core_local tests/test_four_core_48event\nspinnaker_tools not found.\nHost tests work with 'make test'.\nFor hardware builds set SPINN_DIRS, e.g.:\n  export SPINN_DIRS=/opt/spinnaker_tools\n",
+      "stderr": "make: *** [require-spinnaker] Error 2\n"
+    }
+  },
+  "itcm_text_bytes": 0,
+  "claim_boundary": "Compile-time feasibility only. NOT hardware evidence. NOT full protocol integration. NOT SDP replacement."
+}

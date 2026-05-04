@@ -1,0 +1,51 @@
+{
+  "ablation_controls": [
+    "slot_reset_ablation",
+    "slot_shuffle_ablation",
+    "wrong_key_ablation"
+  ],
+  "backend": "nest",
+  "capacity_upper_bound": "unbounded_keyed_control",
+  "context_controls": [
+    "oracle_context",
+    "stream_context_memory",
+    "shuffled_context",
+    "memory_reset",
+    "wrong_context"
+  ],
+  "decision_rules": {
+    "inconclusive": "upper bounds fail or gaps do not clearly support either decision",
+    "replay_not_needed_yet": "v1.6 no-replay solves and remains close to oracle/unbounded controls",
+    "replay_or_consolidation_needed": "v1.6 no-replay degrades while unbounded keyed memory solves and the gap exceeds the predeclared threshold"
+  },
+  "fairness_rules": [
+    "all variants use the same silent-reentry task streams per seed",
+    "v1.6 no-replay receives raw observations and can update keyed slots only on visible context events",
+    "return phases query old context keys without refreshing the context slot",
+    "unbounded keyed control is a capacity upper bound, not a replay mechanism",
+    "oracle scaffold is included only as a solvability upper bound",
+    "slot-reset/slot-shuffle/wrong-key controls document whether key binding, not metadata alone, explains behavior",
+    "models predict before consequence feedback matures",
+    "Tier 5.11a is a need test; it does not implement sleep/replay or promote hardware memory"
+  ],
+  "no_replay_candidate": "v1_6_no_replay",
+  "oracle_upper_bound": "oracle_context_scaffold",
+  "overcapacity_control": "overcapacity_keyed_memory",
+  "raw_comparator": "v1_4_raw",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "selected_external_baselines": [
+    "sign_persistence",
+    "online_perceptron",
+    "online_logistic_regression",
+    "echo_state_network",
+    "small_gru",
+    "stdp_only_snn"
+  ],
+  "steps": 960,
+  "tasks": "silent_context_reentry,long_gap_silent_reentry,partial_key_reentry",
+  "tier": "Tier 5.11a - Sleep/Replay Need Test"
+}

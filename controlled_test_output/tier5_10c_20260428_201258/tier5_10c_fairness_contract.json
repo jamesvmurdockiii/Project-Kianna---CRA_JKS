@@ -1,0 +1,35 @@
+{
+  "ablation_controls": [
+    "memory_reset_ablation",
+    "shuffled_memory_ablation",
+    "wrong_memory_ablation"
+  ],
+  "backend": "mock",
+  "candidate": "explicit_context_memory",
+  "context_controls": [
+    "oracle_context",
+    "stream_context_memory",
+    "shuffled_context",
+    "memory_reset",
+    "wrong_context"
+  ],
+  "fairness_rules": [
+    "all variants use the same repaired Tier 5.10b task streams per seed",
+    "candidate may update memory only on visible context events",
+    "candidate binds retained context to the later visible decision cue",
+    "reset/shuffled/wrong-memory controls must lose the benefit before promotion",
+    "models predict before consequence feedback matures",
+    "Tier 5.10c is host-side explicit-memory scaffolding, not native on-chip memory"
+  ],
+  "frozen_comparator": "v1_4_raw",
+  "seeds": [
+    42
+  ],
+  "selected_external_baselines": [
+    "sign_persistence",
+    "online_perceptron"
+  ],
+  "steps": 180,
+  "tasks": "delayed_context_cue,hidden_context_recurrence",
+  "tier": "Tier 5.10c - Explicit Context Memory Mechanism Diagnostic"
+}

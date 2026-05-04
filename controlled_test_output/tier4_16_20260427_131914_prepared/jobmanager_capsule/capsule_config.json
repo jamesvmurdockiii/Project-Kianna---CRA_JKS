@@ -1,0 +1,23 @@
+{
+  "binned_readback": true,
+  "chunk_size_steps": 25,
+  "claim_boundary": "Prepared capsule is not hardware evidence. PASS requires real pyNN.spiNNaker execution with zero fallback/failures and real spike readback.",
+  "delayed_readout_lr": 0.2,
+  "host_replay": true,
+  "learning_location": "host",
+  "parts": {
+    "delayed_cue": "4.16a"
+  },
+  "population_size": 8,
+  "readout_lr": 0.1,
+  "runtime_mode": "chunked",
+  "scheduled_input_mode": "StepCurrentSource",
+  "seeds": [
+    43
+  ],
+  "steps": 1200,
+  "tasks": [
+    "delayed_cue"
+  ],
+  "tier": "Tier 4.16 - Harder SpiNNaker Hardware Capsule"
+}

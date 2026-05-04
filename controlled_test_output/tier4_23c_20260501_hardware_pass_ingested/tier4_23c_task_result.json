@@ -1,0 +1,450 @@
+{
+  "status": "pass",
+  "hostname": "10.11.235.9",
+  "dest_x": 0,
+  "dest_y": 0,
+  "dest_cpu": 4,
+  "runtime_seconds": 4.327049097977579,
+  "reset_ok": true,
+  "state_writes": {
+    "context": [
+      {
+        "key": 101,
+        "value": 1,
+        "success": true
+      },
+      {
+        "key": 202,
+        "value": -1,
+        "success": true
+      },
+      {
+        "key": 303,
+        "value": 1,
+        "success": true
+      },
+      {
+        "key": 404,
+        "value": -1,
+        "success": true
+      }
+    ],
+    "route": [
+      {
+        "key": 1101,
+        "value": 1,
+        "success": true
+      },
+      {
+        "key": 1202,
+        "value": -1,
+        "success": true
+      },
+      {
+        "key": 1303,
+        "value": -1,
+        "success": true
+      },
+      {
+        "key": 1404,
+        "value": 1,
+        "success": true
+      }
+    ],
+    "memory": [
+      {
+        "key": 2101,
+        "value": 1,
+        "success": true
+      },
+      {
+        "key": 2202,
+        "value": -1,
+        "success": true
+      },
+      {
+        "key": 2303,
+        "value": 1,
+        "success": true
+      },
+      {
+        "key": 2404,
+        "value": -1,
+        "success": true
+      }
+    ]
+  },
+  "schedule_uploads": [
+    {
+      "index": 0,
+      "success": true
+    },
+    {
+      "index": 1,
+      "success": true
+    },
+    {
+      "index": 2,
+      "success": true
+    },
+    {
+      "index": 3,
+      "success": true
+    },
+    {
+      "index": 4,
+      "success": true
+    },
+    {
+      "index": 5,
+      "success": true
+    },
+    {
+      "index": 6,
+      "success": true
+    },
+    {
+      "index": 7,
+      "success": true
+    },
+    {
+      "index": 8,
+      "success": true
+    },
+    {
+      "index": 9,
+      "success": true
+    },
+    {
+      "index": 10,
+      "success": true
+    },
+    {
+      "index": 11,
+      "success": true
+    },
+    {
+      "index": 12,
+      "success": true
+    },
+    {
+      "index": 13,
+      "success": true
+    },
+    {
+      "index": 14,
+      "success": true
+    },
+    {
+      "index": 15,
+      "success": true
+    },
+    {
+      "index": 16,
+      "success": true
+    },
+    {
+      "index": 17,
+      "success": true
+    },
+    {
+      "index": 18,
+      "success": true
+    },
+    {
+      "index": 19,
+      "success": true
+    },
+    {
+      "index": 20,
+      "success": true
+    },
+    {
+      "index": 21,
+      "success": true
+    },
+    {
+      "index": 22,
+      "success": true
+    },
+    {
+      "index": 23,
+      "success": true
+    },
+    {
+      "index": 24,
+      "success": true
+    },
+    {
+      "index": 25,
+      "success": true
+    },
+    {
+      "index": 26,
+      "success": true
+    },
+    {
+      "index": 27,
+      "success": true
+    },
+    {
+      "index": 28,
+      "success": true
+    },
+    {
+      "index": 29,
+      "success": true
+    },
+    {
+      "index": 30,
+      "success": true
+    },
+    {
+      "index": 31,
+      "success": true
+    },
+    {
+      "index": 32,
+      "success": true
+    },
+    {
+      "index": 33,
+      "success": true
+    },
+    {
+      "index": 34,
+      "success": true
+    },
+    {
+      "index": 35,
+      "success": true
+    },
+    {
+      "index": 36,
+      "success": true
+    },
+    {
+      "index": 37,
+      "success": true
+    },
+    {
+      "index": 38,
+      "success": true
+    },
+    {
+      "index": 39,
+      "success": true
+    },
+    {
+      "index": 40,
+      "success": true
+    },
+    {
+      "index": 41,
+      "success": true
+    },
+    {
+      "index": 42,
+      "success": true
+    },
+    {
+      "index": 43,
+      "success": true
+    },
+    {
+      "index": 44,
+      "success": true
+    },
+    {
+      "index": 45,
+      "success": true
+    },
+    {
+      "index": 46,
+      "success": true
+    },
+    {
+      "index": 47,
+      "success": true
+    }
+  ],
+  "run_continuous": {
+    "success": true,
+    "cmd": 24,
+    "status": 0
+  },
+  "pause": {
+    "success": true,
+    "cmd": 25,
+    "status": 0,
+    "stopped_timestep": 6170
+  },
+  "stopped_timestep": 6170,
+  "final_state": {
+    "success": true,
+    "cmd": 8,
+    "status": 0,
+    "schema_version": 1,
+    "payload_len": 73,
+    "timestep": 6170,
+    "neuron_count": 0,
+    "synapse_count": 0,
+    "active_trace_count": 0,
+    "active_slots": 4,
+    "slot_writes": 4,
+    "slot_hits": 48,
+    "slot_misses": 0,
+    "slot_evictions": 0,
+    "decisions": 48,
+    "reward_events": 48,
+    "pending_created": 48,
+    "pending_matured": 48,
+    "pending_dropped": 0,
+    "active_pending": 0,
+    "readout_weight_raw": 32768,
+    "readout_bias_raw": 0,
+    "readout_weight": 1.0,
+    "readout_bias": 0.0,
+    "flags": 0
+  },
+  "context_states": [
+    {
+      "success": true,
+      "cmd": 12,
+      "status": 0,
+      "value_raw": 32768,
+      "value": 1.0,
+      "confidence_raw": 32768,
+      "confidence": 1.0,
+      "slot_hits": 49,
+      "slot_misses": 0
+    },
+    {
+      "success": true,
+      "cmd": 12,
+      "status": 0,
+      "value_raw": -32768,
+      "value": -1.0,
+      "confidence_raw": 32768,
+      "confidence": 1.0,
+      "slot_hits": 50,
+      "slot_misses": 0
+    },
+    {
+      "success": true,
+      "cmd": 12,
+      "status": 0,
+      "value_raw": 32768,
+      "value": 1.0,
+      "confidence_raw": 32768,
+      "confidence": 1.0,
+      "slot_hits": 51,
+      "slot_misses": 0
+    },
+    {
+      "success": true,
+      "cmd": 12,
+      "status": 0,
+      "value_raw": -32768,
+      "value": -1.0,
+      "confidence_raw": 32768,
+      "confidence": 1.0,
+      "slot_hits": 52,
+      "slot_misses": 0
+    }
+  ],
+  "route_states": [
+    {
+      "success": true,
+      "cmd": 18,
+      "status": 0,
+      "route_value_raw": 32768,
+      "route_value": 1.0,
+      "route_confidence_raw": 32768,
+      "route_confidence": 1.0,
+      "route_slot_hits": 49,
+      "route_slot_misses": 0
+    },
+    {
+      "success": true,
+      "cmd": 18,
+      "status": 0,
+      "route_value_raw": -32768,
+      "route_value": -1.0,
+      "route_confidence_raw": 32768,
+      "route_confidence": 1.0,
+      "route_slot_hits": 50,
+      "route_slot_misses": 0
+    },
+    {
+      "success": true,
+      "cmd": 18,
+      "status": 0,
+      "route_value_raw": -32768,
+      "route_value": -1.0,
+      "route_confidence_raw": 32768,
+      "route_confidence": 1.0,
+      "route_slot_hits": 51,
+      "route_slot_misses": 0
+    },
+    {
+      "success": true,
+      "cmd": 18,
+      "status": 0,
+      "route_value_raw": 32768,
+      "route_value": 1.0,
+      "route_confidence_raw": 32768,
+      "route_confidence": 1.0,
+      "route_slot_hits": 52,
+      "route_slot_misses": 0
+    }
+  ],
+  "memory_states": [
+    {
+      "success": true,
+      "cmd": 21,
+      "status": 0,
+      "memory_value_raw": 32768,
+      "memory_value": 1.0,
+      "memory_confidence_raw": 32768,
+      "memory_confidence": 1.0,
+      "memory_slot_hits": 49,
+      "memory_slot_misses": 0
+    },
+    {
+      "success": true,
+      "cmd": 21,
+      "status": 0,
+      "memory_value_raw": -32768,
+      "memory_value": -1.0,
+      "memory_confidence_raw": 32768,
+      "memory_confidence": 1.0,
+      "memory_slot_hits": 50,
+      "memory_slot_misses": 0
+    },
+    {
+      "success": true,
+      "cmd": 21,
+      "status": 0,
+      "memory_value_raw": 32768,
+      "memory_value": 1.0,
+      "memory_confidence_raw": 32768,
+      "memory_confidence": 1.0,
+      "memory_slot_hits": 51,
+      "memory_slot_misses": 0
+    },
+    {
+      "success": true,
+      "cmd": 21,
+      "status": 0,
+      "memory_value_raw": -32768,
+      "memory_value": -1.0,
+      "memory_confidence_raw": 32768,
+      "memory_confidence": 1.0,
+      "memory_slot_hits": 52,
+      "memory_slot_misses": 0
+    }
+  ],
+  "final_readout_weight_raw": 32768,
+  "final_readout_bias_raw": 0
+}

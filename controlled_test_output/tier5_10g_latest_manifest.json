@@ -1,0 +1,11 @@
+{
+  "canonical": false,
+  "claim": "Latest Tier 5.10g keyed context-memory repair diagnostic; passing is not hardware or native on-chip memory evidence.",
+  "generated_at_utc": "2026-04-29T03:54:38+00:00",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_10g_20260428_232844/tier5_10g_results.json",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_10g_20260428_232844",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_10g_20260428_232844/tier5_10g_report.md",
+  "status": "pass",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10g_20260428_232844/tier5_10g_summary.csv",
+  "tier": "Tier 5.10g - Multi-Slot / Keyed Context Memory Repair"
+}

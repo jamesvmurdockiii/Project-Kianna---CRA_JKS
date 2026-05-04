@@ -1,0 +1,1633 @@
+{
+  "tier": "Tier 4.28d \u2014 Hard Noisy Switching Four-Core MCPL Hardware Probe",
+  "runner_revision": "tier4_28d_hard_noisy_switching_20260503_0001",
+  "generated_at_utc": "2026-05-03T05:31:42.326283+00:00",
+  "mode": "run-hardware",
+  "status": "pass",
+  "output_dir": "tier4_28d_seed43_job_output",
+  "criteria": [
+    {
+      "name": "runner revision current",
+      "value": "tier4_28d_hard_noisy_switching_20260503_0001",
+      "rule": "expected current source",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "custom C host tests pass",
+      "value": "pass",
+      "rule": "== pass",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "main.c syntax check pass",
+      "value": "pass",
+      "rule": "== pass",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "hardware target acquired",
+      "value": {
+        "status": "pass",
+        "method": "pyNN.spiNNaker_probe",
+        "hostname": "10.11.242.1",
+        "target_ipaddress": "10.11.242.1",
+        "setup_kwargs": {
+          "timestep": 1.0
+        },
+        "probe_population_size": 1,
+        "probe_run_ms": 1.0,
+        "probe_timestep_ms": 1.0,
+        "dest_x": 0,
+        "dest_y": 0,
+        "dest_cpu": 4,
+        "occupied_cores": [
+          1,
+          2,
+          3
+        ],
+        "notes": [
+          "acquired transceiver/IP via PyNN/sPyNNaker DataView because EBRAINS JobManager may not expose a raw hostname",
+          "requested dest_cpu 1 was occupied; selected free core 4"
+        ],
+        "runtime_seconds": 53.311076330952346,
+        "attempts": [
+          {
+            "status": "fail",
+            "method": "hostname_discovery",
+            "hostname": "",
+            "notes": [
+              "no hostname found in args, common environment variables, or spynnaker.cfg"
+            ],
+            "reason": "no explicit hostname/config/environment target found"
+          },
+          {
+            "status": "pass",
+            "method": "pyNN.spiNNaker_probe",
+            "hostname": "10.11.242.1",
+            "target_ipaddress": "10.11.242.1",
+            "setup_kwargs": {
+              "timestep": 1.0
+            },
+            "probe_population_size": 1,
+            "probe_run_ms": 1.0,
+            "probe_timestep_ms": 1.0,
+            "dest_x": 0,
+            "dest_y": 0,
+            "dest_cpu": 4,
+            "occupied_cores": [
+              1,
+              2,
+              3
+            ],
+            "notes": [
+              "acquired transceiver/IP via PyNN/sPyNNaker DataView because EBRAINS JobManager may not expose a raw hostname",
+              "requested dest_cpu 1 was occupied; selected free core 4"
+            ],
+            "runtime_seconds": 53.311076330952346
+          }
+        ]
+      },
+      "rule": "status == pass",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "context_core .aplx built",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "route_core .aplx built",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "memory_core .aplx built",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core .aplx built",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "context_core load pass",
+      "value": "pass",
+      "rule": "== pass",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "route_core load pass",
+      "value": "pass",
+      "rule": "== pass",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "memory_core load pass",
+      "value": "pass",
+      "rule": "== pass",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core load pass",
+      "value": "pass",
+      "rule": "== pass",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "all context writes succeeded",
+      "value": [
+        {
+          "key": "ctx_regime_0",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_1",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_2",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_3",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_4",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_5",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_6",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_7",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_8",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_9",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_10",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_11",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_12",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_13",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_14",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_15",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_16",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_17",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_18",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_19",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_20",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_21",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_22",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_23",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_24",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_25",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_26",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_27",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_28",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_29",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_30",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_31",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_32",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_33",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_34",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_35",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_36",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_37",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_38",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_39",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_40",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_41",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_42",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_43",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_44",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_45",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_46",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_47",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_48",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_49",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_50",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_51",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_52",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_53",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_54",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_55",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_56",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_57",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_58",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_59",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_60",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_61",
+          "success": true
+        }
+      ],
+      "rule": "all success",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "all route writes succeeded",
+      "value": [
+        {
+          "key": "route_A",
+          "success": true
+        },
+        {
+          "key": "route_B",
+          "success": true
+        },
+        {
+          "key": "route_C",
+          "success": true
+        },
+        {
+          "key": "route_D",
+          "success": true
+        }
+      ],
+      "rule": "all success",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "all memory writes succeeded",
+      "value": [
+        {
+          "key": "mem_A",
+          "success": true
+        },
+        {
+          "key": "mem_B",
+          "success": true
+        },
+        {
+          "key": "mem_C",
+          "success": true
+        },
+        {
+          "key": "mem_D",
+          "success": true
+        }
+      ],
+      "rule": "all success",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "all schedule uploads succeeded",
+      "value": [
+        {
+          "index": 0,
+          "success": true
+        },
+        {
+          "index": 1,
+          "success": true
+        },
+        {
+          "index": 2,
+          "success": true
+        },
+        {
+          "index": 3,
+          "success": true
+        },
+        {
+          "index": 4,
+          "success": true
+        },
+        {
+          "index": 5,
+          "success": true
+        },
+        {
+          "index": 6,
+          "success": true
+        },
+        {
+          "index": 7,
+          "success": true
+        },
+        {
+          "index": 8,
+          "success": true
+        },
+        {
+          "index": 9,
+          "success": true
+        },
+        {
+          "index": 10,
+          "success": true
+        },
+        {
+          "index": 11,
+          "success": true
+        },
+        {
+          "index": 12,
+          "success": true
+        },
+        {
+          "index": 13,
+          "success": true
+        },
+        {
+          "index": 14,
+          "success": true
+        },
+        {
+          "index": 15,
+          "success": true
+        },
+        {
+          "index": 16,
+          "success": true
+        },
+        {
+          "index": 17,
+          "success": true
+        },
+        {
+          "index": 18,
+          "success": true
+        },
+        {
+          "index": 19,
+          "success": true
+        },
+        {
+          "index": 20,
+          "success": true
+        },
+        {
+          "index": 21,
+          "success": true
+        },
+        {
+          "index": 22,
+          "success": true
+        },
+        {
+          "index": 23,
+          "success": true
+        },
+        {
+          "index": 24,
+          "success": true
+        },
+        {
+          "index": 25,
+          "success": true
+        },
+        {
+          "index": 26,
+          "success": true
+        },
+        {
+          "index": 27,
+          "success": true
+        },
+        {
+          "index": 28,
+          "success": true
+        },
+        {
+          "index": 29,
+          "success": true
+        },
+        {
+          "index": 30,
+          "success": true
+        },
+        {
+          "index": 31,
+          "success": true
+        },
+        {
+          "index": 32,
+          "success": true
+        },
+        {
+          "index": 33,
+          "success": true
+        },
+        {
+          "index": 34,
+          "success": true
+        },
+        {
+          "index": 35,
+          "success": true
+        },
+        {
+          "index": 36,
+          "success": true
+        },
+        {
+          "index": 37,
+          "success": true
+        },
+        {
+          "index": 38,
+          "success": true
+        },
+        {
+          "index": 39,
+          "success": true
+        },
+        {
+          "index": 40,
+          "success": true
+        },
+        {
+          "index": 41,
+          "success": true
+        },
+        {
+          "index": 42,
+          "success": true
+        },
+        {
+          "index": 43,
+          "success": true
+        },
+        {
+          "index": 44,
+          "success": true
+        },
+        {
+          "index": 45,
+          "success": true
+        },
+        {
+          "index": 46,
+          "success": true
+        },
+        {
+          "index": 47,
+          "success": true
+        },
+        {
+          "index": 48,
+          "success": true
+        },
+        {
+          "index": 49,
+          "success": true
+        },
+        {
+          "index": 50,
+          "success": true
+        },
+        {
+          "index": 51,
+          "success": true
+        },
+        {
+          "index": 52,
+          "success": true
+        },
+        {
+          "index": 53,
+          "success": true
+        },
+        {
+          "index": 54,
+          "success": true
+        },
+        {
+          "index": 55,
+          "success": true
+        },
+        {
+          "index": 56,
+          "success": true
+        },
+        {
+          "index": 57,
+          "success": true
+        },
+        {
+          "index": 58,
+          "success": true
+        },
+        {
+          "index": 59,
+          "success": true
+        },
+        {
+          "index": 60,
+          "success": true
+        },
+        {
+          "index": 61,
+          "success": true
+        }
+      ],
+      "rule": "all success",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "context_core run_continuous succeeded",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "route_core run_continuous succeeded",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "memory_core run_continuous succeeded",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core run_continuous succeeded",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "context_core final read succeeded",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "route_core final read succeeded",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "memory_core final read succeeded",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core final read succeeded",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core weight positive and near reference",
+      "value": 34208,
+      "rule": "within +/- 8192 of 32768",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core bias near reference",
+      "value": -1440,
+      "rule": "within +/- 8192 of 0",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core pending_created matches reference",
+      "value": 62,
+      "rule": "== 62",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core pending_matured matches reference",
+      "value": 62,
+      "rule": "== 62",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core active_pending cleared",
+      "value": 0,
+      "rule": "== 0",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "no unhandled hardware exception",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core schema_version v2",
+      "value": 2,
+      "rule": "== 2",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core lookup_requests == 186",
+      "value": 186,
+      "rule": "== 186",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core lookup_replies == 186",
+      "value": 186,
+      "rule": "== 186",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core stale_replies == 0",
+      "value": 0,
+      "rule": "== 0",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core timeouts == 0",
+      "value": 0,
+      "rule": "== 0",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "context_core lookup_replies == 0",
+      "value": 0,
+      "rule": "== 0",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "route_core lookup_replies == 0",
+      "value": 0,
+      "rule": "== 0",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "memory_core lookup_replies == 0",
+      "value": 0,
+      "rule": "== 0",
+      "passed": true,
+      "note": ""
+    }
+  ],
+  "loads": {
+    "context": {
+      "status": "pass",
+      "method": "spynnaker_dataview_transceiver.execute_flood",
+      "hostname": "10.11.242.1",
+      "x": 0,
+      "y": 0,
+      "p": 4,
+      "app_id": 1,
+      "runtime_seconds": 2.114564151968807
+    },
+    "route": {
+      "status": "pass",
+      "method": "spynnaker_dataview_transceiver.execute_flood",
+      "hostname": "10.11.242.1",
+      "x": 0,
+      "y": 0,
+      "p": 5,
+      "app_id": 2,
+      "runtime_seconds": 2.1150030829012394
+    },
+    "memory": {
+      "status": "pass",
+      "method": "spynnaker_dataview_transceiver.execute_flood",
+      "hostname": "10.11.242.1",
+      "x": 0,
+      "y": 0,
+      "p": 6,
+      "app_id": 3,
+      "runtime_seconds": 2.1150388489477336
+    },
+    "learning": {
+      "status": "pass",
+      "method": "spynnaker_dataview_transceiver.execute_flood",
+      "hostname": "10.11.242.1",
+      "x": 0,
+      "y": 0,
+      "p": 7,
+      "app_id": 4,
+      "runtime_seconds": 2.1311817271634936
+    }
+  },
+  "task": {
+    "status": "completed",
+    "reset": {
+      "context": true,
+      "route": true,
+      "memory": true,
+      "learning": true
+    },
+    "state_writes": {
+      "context": [
+        {
+          "key": "ctx_regime_0",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_1",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_2",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_3",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_4",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_5",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_6",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_7",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_8",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_9",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_10",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_11",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_12",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_13",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_14",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_15",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_16",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_17",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_18",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_19",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_20",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_21",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_22",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_23",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_24",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_25",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_26",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_27",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_28",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_29",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_30",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_31",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_32",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_33",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_34",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_35",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_36",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_37",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_38",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_39",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_40",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_41",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_42",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_43",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_44",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_45",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_46",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_47",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_48",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_49",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_50",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_51",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_52",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_53",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_54",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_55",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_56",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_57",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_58",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_59",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_60",
+          "success": true
+        },
+        {
+          "key": "ctx_regime_61",
+          "success": true
+        }
+      ],
+      "route": [
+        {
+          "key": "route_A",
+          "success": true
+        },
+        {
+          "key": "route_B",
+          "success": true
+        },
+        {
+          "key": "route_C",
+          "success": true
+        },
+        {
+          "key": "route_D",
+          "success": true
+        }
+      ],
+      "memory": [
+        {
+          "key": "mem_A",
+          "success": true
+        },
+        {
+          "key": "mem_B",
+          "success": true
+        },
+        {
+          "key": "mem_C",
+          "success": true
+        },
+        {
+          "key": "mem_D",
+          "success": true
+        }
+      ]
+    },
+    "schedule_uploads": [
+      {
+        "index": 0,
+        "success": true
+      },
+      {
+        "index": 1,
+        "success": true
+      },
+      {
+        "index": 2,
+        "success": true
+      },
+      {
+        "index": 3,
+        "success": true
+      },
+      {
+        "index": 4,
+        "success": true
+      },
+      {
+        "index": 5,
+        "success": true
+      },
+      {
+        "index": 6,
+        "success": true
+      },
+      {
+        "index": 7,
+        "success": true
+      },
+      {
+        "index": 8,
+        "success": true
+      },
+      {
+        "index": 9,
+        "success": true
+      },
+      {
+        "index": 10,
+        "success": true
+      },
+      {
+        "index": 11,
+        "success": true
+      },
+      {
+        "index": 12,
+        "success": true
+      },
+      {
+        "index": 13,
+        "success": true
+      },
+      {
+        "index": 14,
+        "success": true
+      },
+      {
+        "index": 15,
+        "success": true
+      },
+      {
+        "index": 16,
+        "success": true
+      },
+      {
+        "index": 17,
+        "success": true
+      },
+      {
+        "index": 18,
+        "success": true
+      },
+      {
+        "index": 19,
+        "success": true
+      },
+      {
+        "index": 20,
+        "success": true
+      },
+      {
+        "index": 21,
+        "success": true
+      },
+      {
+        "index": 22,
+        "success": true
+      },
+      {
+        "index": 23,
+        "success": true
+      },
+      {
+        "index": 24,
+        "success": true
+      },
+      {
+        "index": 25,
+        "success": true
+      },
+      {
+        "index": 26,
+        "success": true
+      },
+      {
+        "index": 27,
+        "success": true
+      },
+      {
+        "index": 28,
+        "success": true
+      },
+      {
+        "index": 29,
+        "success": true
+      },
+      {
+        "index": 30,
+        "success": true
+      },
+      {
+        "index": 31,
+        "success": true
+      },
+      {
+        "index": 32,
+        "success": true
+      },
+      {
+        "index": 33,
+        "success": true
+      },
+      {
+        "index": 34,
+        "success": true
+      },
+      {
+        "index": 35,
+        "success": true
+      },
+      {
+        "index": 36,
+        "success": true
+      },
+      {
+        "index": 37,
+        "success": true
+      },
+      {
+        "index": 38,
+        "success": true
+      },
+      {
+        "index": 39,
+        "success": true
+      },
+      {
+        "index": 40,
+        "success": true
+      },
+      {
+        "index": 41,
+        "success": true
+      },
+      {
+        "index": 42,
+        "success": true
+      },
+      {
+        "index": 43,
+        "success": true
+      },
+      {
+        "index": 44,
+        "success": true
+      },
+      {
+        "index": 45,
+        "success": true
+      },
+      {
+        "index": 46,
+        "success": true
+      },
+      {
+        "index": 47,
+        "success": true
+      },
+      {
+        "index": 48,
+        "success": true
+      },
+      {
+        "index": 49,
+        "success": true
+      },
+      {
+        "index": 50,
+        "success": true
+      },
+      {
+        "index": 51,
+        "success": true
+      },
+      {
+        "index": 52,
+        "success": true
+      },
+      {
+        "index": 53,
+        "success": true
+      },
+      {
+        "index": 54,
+        "success": true
+      },
+      {
+        "index": 55,
+        "success": true
+      },
+      {
+        "index": 56,
+        "success": true
+      },
+      {
+        "index": 57,
+        "success": true
+      },
+      {
+        "index": 58,
+        "success": true
+      },
+      {
+        "index": 59,
+        "success": true
+      },
+      {
+        "index": 60,
+        "success": true
+      },
+      {
+        "index": 61,
+        "success": true
+      }
+    ],
+    "run_continuous": {
+      "context": {
+        "success": true
+      },
+      "route": {
+        "success": true
+      },
+      "memory": {
+        "success": true
+      },
+      "learning": {
+        "success": true
+      }
+    },
+    "pause": {
+      "context": {
+        "success": true
+      },
+      "route": {
+        "success": true
+      },
+      "memory": {
+        "success": true
+      },
+      "learning": {
+        "success": true
+      }
+    },
+    "final_state": {
+      "context": {
+        "success": true,
+        "cmd": 8,
+        "status": 0,
+        "schema_version": 2,
+        "payload_len": 105,
+        "timestep": 9264,
+        "neuron_count": 0,
+        "synapse_count": 0,
+        "active_trace_count": 0,
+        "active_slots": 62,
+        "slot_writes": 62,
+        "slot_hits": 62,
+        "slot_misses": 0,
+        "slot_evictions": 0,
+        "decisions": 0,
+        "reward_events": 0,
+        "pending_created": 0,
+        "pending_matured": 0,
+        "pending_dropped": 0,
+        "active_pending": 0,
+        "readout_weight_raw": 0,
+        "readout_bias_raw": 0,
+        "readout_weight": 0.0,
+        "readout_bias": 0.0,
+        "profile_id": 4,
+        "flags": 0,
+        "lookup_requests": 0,
+        "lookup_replies": 0,
+        "stale_replies": 0,
+        "duplicate_replies": 0,
+        "timeouts": 0,
+        "commands_received": 65,
+        "schedule_length": 0,
+        "readback_bytes": 105
+      },
+      "route": {
+        "success": true,
+        "cmd": 8,
+        "status": 0,
+        "schema_version": 2,
+        "payload_len": 105,
+        "timestep": 7149,
+        "neuron_count": 0,
+        "synapse_count": 0,
+        "active_trace_count": 0,
+        "active_slots": 0,
+        "slot_writes": 0,
+        "slot_hits": 0,
+        "slot_misses": 0,
+        "slot_evictions": 0,
+        "decisions": 0,
+        "reward_events": 0,
+        "pending_created": 0,
+        "pending_matured": 0,
+        "pending_dropped": 0,
+        "active_pending": 0,
+        "readout_weight_raw": 0,
+        "readout_bias_raw": 0,
+        "readout_weight": 0.0,
+        "readout_bias": 0.0,
+        "profile_id": 5,
+        "flags": 0,
+        "lookup_requests": 0,
+        "lookup_replies": 0,
+        "stale_replies": 0,
+        "duplicate_replies": 0,
+        "timeouts": 0,
+        "commands_received": 7,
+        "schedule_length": 0,
+        "readback_bytes": 105
+      },
+      "memory": {
+        "success": true,
+        "cmd": 8,
+        "status": 0,
+        "schema_version": 2,
+        "payload_len": 105,
+        "timestep": 5035,
+        "neuron_count": 0,
+        "synapse_count": 0,
+        "active_trace_count": 0,
+        "active_slots": 0,
+        "slot_writes": 0,
+        "slot_hits": 0,
+        "slot_misses": 0,
+        "slot_evictions": 0,
+        "decisions": 0,
+        "reward_events": 0,
+        "pending_created": 0,
+        "pending_matured": 0,
+        "pending_dropped": 0,
+        "active_pending": 0,
+        "readout_weight_raw": 0,
+        "readout_bias_raw": 0,
+        "readout_weight": 0.0,
+        "readout_bias": 0.0,
+        "profile_id": 6,
+        "flags": 0,
+        "lookup_requests": 0,
+        "lookup_replies": 0,
+        "stale_replies": 0,
+        "duplicate_replies": 0,
+        "timeouts": 0,
+        "commands_received": 7,
+        "schedule_length": 0,
+        "readback_bytes": 105
+      },
+      "learning": {
+        "success": true,
+        "cmd": 8,
+        "status": 0,
+        "schema_version": 2,
+        "payload_len": 105,
+        "timestep": 2919,
+        "neuron_count": 0,
+        "synapse_count": 0,
+        "active_trace_count": 0,
+        "active_slots": 0,
+        "slot_writes": 0,
+        "slot_hits": 0,
+        "slot_misses": 0,
+        "slot_evictions": 0,
+        "decisions": 62,
+        "reward_events": 62,
+        "pending_created": 62,
+        "pending_matured": 62,
+        "pending_dropped": 0,
+        "active_pending": 0,
+        "readout_weight_raw": 34208,
+        "readout_bias_raw": -1440,
+        "readout_weight": 1.0439453125,
+        "readout_bias": -0.0439453125,
+        "profile_id": 3,
+        "flags": 0,
+        "lookup_requests": 186,
+        "lookup_replies": 186,
+        "stale_replies": 0,
+        "duplicate_replies": 0,
+        "timeouts": 0,
+        "commands_received": 66,
+        "schedule_length": 62,
+        "readback_bytes": 210
+      }
+    },
+    "waited_seconds": 0.5
+  },
+  "hardware_exception": null
+}

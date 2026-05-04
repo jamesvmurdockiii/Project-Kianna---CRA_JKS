@@ -1,0 +1,10 @@
+{
+  "canonical": false,
+  "claim": "Latest Tier 4.21a keyed-memory bridge probe; pass is bridge evidence, not native/on-chip memory.",
+  "generated_at_utc": "2026-04-30T17:12:07+00:00",
+  "manifest": "/tmp/job3097767355678456774.tmp/tier4_21a_job_output/tier4_21a_results.json",
+  "output_dir": "/tmp/job3097767355678456774.tmp/tier4_21a_job_output",
+  "report": "/tmp/job3097767355678456774.tmp/tier4_21a_job_output/tier4_21a_report.md",
+  "status": "pass",
+  "tier": "Tier 4.21a - Keyed Context-Memory Hardware Bridge Probe"
+}

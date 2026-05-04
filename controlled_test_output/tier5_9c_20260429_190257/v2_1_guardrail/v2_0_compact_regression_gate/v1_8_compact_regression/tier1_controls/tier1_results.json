@@ -1,0 +1,219 @@
+{
+  "artifacts": {
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls/tier1_report.md",
+    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls/tier1_summary.csv"
+  },
+  "backend": "MockSimulator",
+  "command": "experiments/tier1_sanity.py --tests all --steps 80 --seeds 3 --base-seed 42 --readout-lr 0.1 --delayed-readout-lr 0.2 --stop-on-fail --output-dir /Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls",
+  "generated_at_utc": "2026-04-29T23:03:01+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls",
+  "results": [
+    {
+      "artifacts": {
+        "plot_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls/zero_signal_timeseries.png",
+        "timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls/zero_signal_timeseries.csv"
+      },
+      "criteria": [
+        {
+          "name": "zero target stayed zero",
+          "note": "",
+          "operator": "==",
+          "passed": true,
+          "threshold": 0,
+          "value": 0
+        },
+        {
+          "name": "max absolute dopamine",
+          "note": "",
+          "operator": "<=",
+          "passed": true,
+          "threshold": 1e-09,
+          "value": 0.0
+        },
+        {
+          "name": "capital absolute delta",
+          "note": "",
+          "operator": "<=",
+          "passed": true,
+          "threshold": 1e-09,
+          "value": 0.0
+        },
+        {
+          "name": "tail accuracy EMA",
+          "note": "Zero/zero must not count as learned directional success.",
+          "operator": "<=",
+          "passed": true,
+          "threshold": 0.51,
+          "value": 0.3964916097394337
+        },
+        {
+          "name": "prediction/target correlation",
+          "note": "",
+          "operator": "is None or abs <= ",
+          "passed": true,
+          "threshold": 1e-09,
+          "value": null
+        }
+      ],
+      "failure_reason": "",
+      "name": "zero_signal",
+      "status": "pass",
+      "summary": {
+        "backend": "MockSimulator",
+        "capital_delta": 0.0,
+        "final_accuracy_ema": 0.3117267581421953,
+        "final_capital": 1.0,
+        "final_n_alive": 6,
+        "max_abs_dopamine": 0.0,
+        "max_abs_prediction": 0.24412141668063225,
+        "max_n_alive": 6,
+        "mean_abs_dopamine": 0.0,
+        "mean_abs_prediction": 0.24003175911105673,
+        "nonzero_target_count_tail": 0,
+        "prediction_target_corr": null,
+        "runtime_seconds": 0.2385774580000002,
+        "seed": 42,
+        "steps": 80,
+        "strict_accuracy_all_nonzero_targets": null,
+        "strict_accuracy_tail_nonzero_targets": null,
+        "tail_accuracy_ema": 0.3964916097394337,
+        "tail_mean_abs_prediction": 0.24224894556665458,
+        "tail_prediction_target_corr": null,
+        "tail_steps": 60,
+        "total_births": 5,
+        "total_deaths": 0,
+        "warmup_steps": 20
+      }
+    },
+    {
+      "artifacts": {
+        "plot_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls/shuffled_label_timeseries.png",
+        "timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls/shuffled_label_timeseries.csv"
+      },
+      "criteria": [
+        {
+          "name": "tail strict accuracy on nonzero targets",
+          "note": "",
+          "operator": "<=",
+          "passed": true,
+          "threshold": 0.6,
+          "value": 0.5833333333333334
+        },
+        {
+          "name": "tail prediction/target abs correlation",
+          "note": "",
+          "operator": "is None or <=",
+          "passed": true,
+          "threshold": 0.25,
+          "value": 0.0539729530185239
+        },
+        {
+          "name": "capital absolute delta",
+          "note": "",
+          "operator": "<=",
+          "passed": true,
+          "threshold": 0.05,
+          "value": 0.015827143086569184
+        }
+      ],
+      "failure_reason": "",
+      "name": "shuffled_label",
+      "status": "pass",
+      "summary": {
+        "amplitude": 0.002,
+        "backend": "MockSimulator",
+        "capital_delta": -0.015827143086569184,
+        "final_accuracy_ema": 0.533032707776298,
+        "final_capital": 0.9841728569134308,
+        "final_n_alive": 7,
+        "max_abs_dopamine": 0.9999570469432036,
+        "max_abs_prediction": 0.41837122440918995,
+        "max_n_alive": 7,
+        "mean_abs_dopamine": 0.6686785320424675,
+        "mean_abs_prediction": 0.27272817965677054,
+        "nonzero_target_count_tail": 60,
+        "prediction_target_corr": 0.05347669134829066,
+        "runtime_seconds": 0.21641145800000006,
+        "seed": 42,
+        "steps": 80,
+        "strict_accuracy_all_nonzero_targets": 0.5569620253164557,
+        "strict_accuracy_tail_nonzero_targets": 0.5833333333333334,
+        "tail_accuracy_ema": 0.5104374830872203,
+        "tail_mean_abs_prediction": 0.28497491094973826,
+        "tail_prediction_target_corr": 0.0539729530185239,
+        "tail_steps": 60,
+        "total_births": 6,
+        "total_deaths": 0,
+        "warmup_steps": 20
+      }
+    },
+    {
+      "artifacts": {
+        "plot_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls/seed_repeat_summary.png",
+        "seed_summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls/seed_repeat_summary.csv"
+      },
+      "criteria": [
+        {
+          "name": "mean tail strict accuracy",
+          "note": "",
+          "operator": "<=",
+          "passed": true,
+          "threshold": 0.56,
+          "value": 0.5499999999999999
+        },
+        {
+          "name": "high-accuracy seed fraction",
+          "note": "High seed means > 0.600.",
+          "operator": "<=",
+          "passed": true,
+          "threshold": 0.2,
+          "value": 0.0
+        },
+        {
+          "name": "mean absolute tail prediction/target correlation",
+          "note": "",
+          "operator": "<=",
+          "passed": true,
+          "threshold": 0.2,
+          "value": 0.04597000663015894
+        }
+      ],
+      "failure_reason": "",
+      "name": "seed_repeat",
+      "status": "pass",
+      "summary": {
+        "backend": "MockSimulator",
+        "base_seed": 42,
+        "high_seed_count": 0,
+        "high_seed_fraction": 0.0,
+        "max_abs_tail_prediction_target_corr": 0.056781433055066964,
+        "max_tail_strict_accuracy": 0.5833333333333334,
+        "mean_abs_tail_prediction_target_corr": 0.04597000663015894,
+        "mean_tail_strict_accuracy": 0.5499999999999999,
+        "median_tail_strict_accuracy": 0.5666666666666667,
+        "min_tail_strict_accuracy": 0.5,
+        "n_seeds": 3,
+        "std_tail_strict_accuracy": 0.04409585518440986,
+        "steps_per_seed": 80,
+        "total_runtime_seconds": 0.6470544990000002
+      }
+    }
+  ],
+  "selected_tests": [
+    "zero_signal",
+    "shuffled_label",
+    "seed_repeat"
+  ],
+  "stopped_after": null,
+  "thresholds": {
+    "delayed_readout_lr": 0.2,
+    "readout_lr": 0.1,
+    "repeat_high_seed_fraction_threshold": 0.2,
+    "repeat_mean_abs_corr_threshold": 0.2,
+    "repeat_mean_accuracy_threshold": 0.56,
+    "single_run_accuracy_threshold": 0.6,
+    "single_run_capital_threshold": 0.05,
+    "single_run_corr_threshold": 0.25
+  },
+  "tier": "Tier 1 - sanity tests"
+}

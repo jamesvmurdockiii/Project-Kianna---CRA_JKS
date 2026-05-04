@@ -1,0 +1,13 @@
+{
+  "canonical": false,
+  "claim": "Latest Tier 4.22i custom-runtime board round-trip smoke; run-hardware pass is board-load and CMD_READ_STATE command-roundtrip evidence only, not full CRA learning or speedup evidence.",
+  "generated_at_utc": "2026-05-01T00:53:20+00:00",
+  "ingested_from": "/Users/james/Downloads",
+  "local_ingest_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260501_ebrains_board_roundtrip_pass",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260501_ebrains_board_roundtrip_pass/tier4_22i_results.json",
+  "mode": "run-hardware",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260501_ebrains_board_roundtrip_pass",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260501_ebrains_board_roundtrip_pass/tier4_22i_report.md",
+  "status": "pass",
+  "tier": "Tier 4.22i - Custom Runtime Board Round-Trip Smoke"
+}

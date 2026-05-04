@@ -1,0 +1,59 @@
+{
+  "tier": "Tier 4.25C \u2014 Two-Core State/Learning Split Repeatability",
+  "runner_revision": "tier4_25c_two_core_split_smoke_20260502_0001",
+  "generated_at_utc": "2026-05-02T16:08:27.368696+00:00",
+  "status": "pass",
+  "seeds": {
+    "42": {
+      "board": "unknown",
+      "state_cpu": "unknown",
+      "decisions": 48,
+      "reward_events": 48,
+      "pending_created": 48,
+      "pending_matured": 48,
+      "active_pending": 0,
+      "readout_weight_raw": 32767,
+      "readout_bias_raw": -1,
+      "ingest_passed": 23,
+      "ingest_total": 23
+    },
+    "43": {
+      "board": "unknown",
+      "state_cpu": "unknown",
+      "decisions": 48,
+      "reward_events": 48,
+      "pending_created": 48,
+      "pending_matured": 48,
+      "active_pending": 0,
+      "readout_weight_raw": 32767,
+      "readout_bias_raw": -1,
+      "ingest_passed": 23,
+      "ingest_total": 23
+    },
+    "44": {
+      "board": "unknown",
+      "state_cpu": "unknown",
+      "decisions": 48,
+      "reward_events": 48,
+      "pending_created": 48,
+      "pending_matured": 48,
+      "active_pending": 0,
+      "readout_weight_raw": 32767,
+      "readout_bias_raw": -1,
+      "ingest_passed": 23,
+      "ingest_total": 23
+    }
+  },
+  "aggregate": {
+    "max_weight_delta": 0,
+    "max_bias_delta": 0,
+    "weight_tolerance": 8192,
+    "bias_tolerance": 8192,
+    "weight_delta_within_tolerance": true,
+    "bias_delta_within_tolerance": true,
+    "all_seeds_individual_pass": true,
+    "all_pending_created_48": true,
+    "all_pending_matured_48": true,
+    "all_active_pending_0": true
+  }
+}

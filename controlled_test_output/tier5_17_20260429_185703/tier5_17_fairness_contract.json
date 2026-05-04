@@ -1,0 +1,29 @@
+{
+  "claim_boundary": "Software-only, noncanonical pre-reward representation diagnostic. Hidden labels are used only after exposure for probes, except oracle upper bound rows which are explicitly excluded from no-leakage promotion checks.",
+  "exposure_rules": [
+    "No non-oracle variant receives latent labels during representation exposure.",
+    "No variant receives reward, correctness, dopamine, or downstream task outcome during representation exposure.",
+    "Representations are snapshotted/frozen before offline probes read hidden labels.",
+    "Current-input and rolling-history encoders are included to test whether the visible encoder alone explains the result.",
+    "Time-shuffled and temporal-destroyed controls preserve visible sample statistics while damaging order information.",
+    "Oracle latent upper bound is reported but cannot support a no-leakage claim."
+  ],
+  "generated_at_utc": "2026-04-29T18:57:03+00:00",
+  "probe_train_fraction": 0.55,
+  "seeds": [
+    42
+  ],
+  "smoke": true,
+  "steps": 520,
+  "tasks": [
+    "latent_cluster_sequence"
+  ],
+  "tier": "Tier 5.17 - Pre-Reward Representation Formation",
+  "variants": [
+    "cra_pre_reward_state",
+    "no_state_plasticity",
+    "time_shuffled_exposure",
+    "current_input_only",
+    "random_untrained_state"
+  ]
+}

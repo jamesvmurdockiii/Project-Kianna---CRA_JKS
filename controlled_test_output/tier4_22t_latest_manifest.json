@@ -1,0 +1,11 @@
+{
+  "canonical": false,
+  "claim": "Latest Tier 4.22t tiny native keyed route-state custom-runtime micro-task; pass means a tiny native keyed route-state pending-queue on-chip loop matched local fixed-point reference and task metrics only.",
+  "generated_at_utc": "2026-05-01T08:19:24+00:00",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_22t_20260501_native_keyed_route_state_smoke_hardware_pass_ingested/tier4_22t_results.json",
+  "mode": "ingest",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_22t_20260501_native_keyed_route_state_smoke_hardware_pass_ingested",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_22t_20260501_native_keyed_route_state_smoke_hardware_pass_ingested/tier4_22t_report.md",
+  "status": "pass",
+  "tier": "Tier 4.22t - Tiny Native Keyed Route-State Custom-Runtime Smoke"
+}

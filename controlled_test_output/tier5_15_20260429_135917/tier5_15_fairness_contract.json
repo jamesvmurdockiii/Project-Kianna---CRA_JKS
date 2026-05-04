@@ -1,0 +1,11 @@
+{
+  "claim_boundary": "Software-only temporal-code diagnostic; promote only after review and separate freeze gate.",
+  "generated_at_utc": "2026-04-29T17:59:17+00:00",
+  "non_finance_adapter_required": "sensor_control",
+  "prediction_before_feedback": true,
+  "rate_only_preserves_counts_but_removes_timing_features": true,
+  "same_feedback_due_step_as_task_stream": true,
+  "same_task_stream_and_labels_across_encodings": true,
+  "tier": "Tier 5.15 - Spike Encoding / Temporal Code Suite",
+  "time_shuffle_preserves_count_and_channel_but_randomizes_bins": true
+}

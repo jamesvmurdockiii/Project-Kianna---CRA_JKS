@@ -1,0 +1,20 @@
+
+             -- N E S T --
+
+ Copyright (C) 2004 The NEST Initiative
+
+ Version: 3.10.0-rc.1
+ Built  : Apr 21 2026 08:22:09
+
+ This program is provided AS IS and comes with NO WARRANTY.
+ See the file LICENSE for details.
+
+ Problems or suggestions?
+   Visit https://www.nest-simulator.org
+
+ Type 'nest.help()' to find out more about NEST.
+
+{
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/tier4_20b_preflight_output/local_step_chunk_parity"
+}

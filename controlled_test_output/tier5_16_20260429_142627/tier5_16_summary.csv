@@ -1,0 +1,9 @@
+task,variant,backend,runs,tail_accuracy_mean,tail_accuracy_std,all_accuracy_mean,prediction_target_corr_mean,tail_prediction_target_corr_mean,mean_backend_spike_total_mean,max_backend_spike_total_mean,runtime_seconds_mean,sim_run_failures,summary_read_failures,synthetic_fallbacks,variant_parameters
+delayed_cue,default,MockSimulator,1,0.5,0.0,0.7,0.6134921056332019,,1279.825,1351.0,0.3105930410000006,0,0,0,{}
+delayed_cue,tau_m_slow,MockSimulator,1,0.5,0.0,0.7,0.6134921056332019,,1279.825,1351.0,0.3675390839999997,0,0,0,{'tau_m': 32.0}
+delayed_cue,tau_refrac_long,MockSimulator,1,0.5,0.0,0.7,0.6134921056332019,,1279.825,1351.0,0.40289758300000056,0,0,0,{'tau_refrac': 5.0}
+delayed_cue,v_thresh_high,MockSimulator,1,0.5,0.0,0.7,0.6134921056332019,,1279.825,1351.0,0.275230917,0,0,0,{'v_thresh': -52.0}
+fixed_pattern,default,MockSimulator,1,1.0,0.0,0.9620253164556962,0.8863256659104914,0.9998349030597778,1280.175,1347.0,0.6938339999999998,0,0,0,{}
+fixed_pattern,tau_m_slow,MockSimulator,1,1.0,0.0,0.9620253164556962,0.8863256659104914,0.9998349030597778,1280.175,1347.0,0.28352754199999985,0,0,0,{'tau_m': 32.0}
+fixed_pattern,tau_refrac_long,MockSimulator,1,1.0,0.0,0.9620253164556962,0.8863256659104914,0.9998349030597778,1280.175,1347.0,0.33683604199999984,0,0,0,{'tau_refrac': 5.0}
+fixed_pattern,v_thresh_high,MockSimulator,1,1.0,0.0,0.9620253164556962,0.8863256659104914,0.9998349030597778,1280.175,1347.0,0.44012883300000016,0,0,0,{'v_thresh': -52.0}

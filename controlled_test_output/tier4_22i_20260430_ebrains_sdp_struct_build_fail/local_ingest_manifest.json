@@ -1,0 +1,11 @@
+{
+  "canonical": false,
+  "claim": "Failed noncanonical EBRAINS .aplx build attempt: custom runtime reached host_interface.c and failed because local SDP struct field assumptions did not match official packed SARK sdp_msg_t fields; board load and CMD_READ_STATE round-trip were not attempted.",
+  "generated_at_utc": "2026-04-30T21:37:40+00:00",
+  "ingested_at_local": "2026-04-30",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_ebrains_sdp_struct_build_fail/tier4_22i_results.json",
+  "mode": "run-hardware",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_ebrains_sdp_struct_build_fail/tier4_22i_report.md",
+  "status": "fail",
+  "tier": "Tier 4.22i - Custom Runtime Board Round-Trip Smoke"
+}

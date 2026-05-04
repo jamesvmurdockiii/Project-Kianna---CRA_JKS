@@ -1,0 +1,4 @@
+/usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/bin/ld: build/gnu/coral_reef.elf section `RO_DATA' will not fit in region `ITCM'
+/usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/bin/ld: region `ITCM' overflowed by 16 bytes
+collect2: error: ld returned 1 exit status
+make: *** [/home/jovyan/spinnaker/spinnaker_tools/make/spinnaker_tools.mk:184: build/gnu/coral_reef.elf] Error 1

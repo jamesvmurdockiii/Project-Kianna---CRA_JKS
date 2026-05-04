@@ -1,0 +1,32 @@
+{
+  "ablation_controls": [
+    "module_reset_ablation",
+    "module_shuffle_ablation",
+    "module_order_shuffle_ablation"
+  ],
+  "candidate": "module_composition_scaffold",
+  "fairness_rules": [
+    "all models see the same scalar event stream, target stream, evaluation mask, and feedback_due_step arrays per seed",
+    "standard baselines receive no skill metadata beyond the scalar sensory event stream",
+    "the module scaffold may update primitive module tables only after primitive decision feedback is available",
+    "held-out pair accuracy is scored before pair-specific combo memorization can learn the new combination",
+    "module-reset, module-shuffle, and order-shuffle shams must lose before a composition claim is promoted",
+    "raw v1.8 CRA is included as a frozen comparator, not as a tuned composition model",
+    "passing Tier 5.13 does not prove internal/native CRA composition or module routing"
+  ],
+  "feature_history": 8,
+  "frozen_comparator": "v1_8_raw_cra",
+  "oracle_upper_bound": "oracle_composition",
+  "purpose": "test held-out compositional skill reuse before internal CRA/routing implementation",
+  "seeds": [
+    42
+  ],
+  "selected_external_baselines": [
+    "sign_persistence",
+    "online_perceptron"
+  ],
+  "shortcut_control": "combo_memorization_control",
+  "steps": 360,
+  "tasks": "heldout_skill_pair,order_sensitive_chain",
+  "tier": "Tier 5.13 - Compositional Skill Reuse Diagnostic"
+}

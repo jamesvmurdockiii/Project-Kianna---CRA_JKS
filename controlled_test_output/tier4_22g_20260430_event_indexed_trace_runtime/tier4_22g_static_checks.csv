@@ -1,0 +1,13 @@
+name,value,rule,passed,note
+pre index type exists,pre_entry_t,source defines pre-indexed adjacency,True,
+synapse stores post id,post_id,needed for outgoing pre-index delivery,True,
+dual index links exist,next_post/next_pre,synapse_t has post and pre links,True,
+active trace list exists,g_active_trace_head,source maintains active trace list,True,
+spike delivery uses pre index,_find_pre(pre_id),deliver path starts from pre index,True,
+spike delivery no longer scans post index,g_post_index,absent from synapse_deliver_spike body,True,
+decay uses active trace list,g_active_trace_head,decay path starts from active trace head,True,
+decay no longer scans post index,g_post_index,absent from synapse_decay_traces_all body,True,
+dopamine uses active trace list,g_active_trace_head,modulation path starts from active trace head,True,
+dopamine no longer scans post index,g_post_index,absent from synapse_modulate_all body,True,
+diagnostic visit counters exist,synapse_last_*_visit_count,host tests can prove bounded visits,True,
+host test covers indexed delivery,test_synapse_indexed_delivery_and_active_traces,test_runtime.c exercises new path,True,

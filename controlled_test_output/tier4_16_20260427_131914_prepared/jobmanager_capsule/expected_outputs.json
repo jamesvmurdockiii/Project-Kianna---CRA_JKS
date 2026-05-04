@@ -1,0 +1,21 @@
+{
+  "pass_requires": [
+    "hardware_run_attempted=true",
+    "sim_run_failures_sum=0",
+    "summary_read_failures_sum=0",
+    "synthetic_fallbacks_sum=0",
+    "real spike readback > 0 in every run",
+    "delayed_readout_lr=0.20",
+    "for chunked mode: scheduled input, binned readback, and host replay enabled",
+    "task metrics above thresholds"
+  ],
+  "required": [
+    "tier4_16_results.json",
+    "tier4_16_report.md",
+    "tier4_16_summary.csv",
+    "tier4_16_task_summary.csv",
+    "tier4_16_hardware_summary.png",
+    "spinnaker_hardware_<task>_seed<seed>_timeseries.csv",
+    "spinnaker_hardware_<task>_seed<seed>_timeseries.png"
+  ]
+}

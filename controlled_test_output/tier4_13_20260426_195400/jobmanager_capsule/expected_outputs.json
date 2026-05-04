@@ -1,0 +1,24 @@
+{
+  "failure_debug_artifacts": [
+    "seed_<seed>_failure_traceback.txt",
+    "seed_<seed>_backend_diagnostics.json",
+    "spinnaker_reports/<report_timestamp>/"
+  ],
+  "pass_requires": [
+    "hardware_run_attempted=true",
+    "hardware_target_configured=true",
+    "sim_run_failures_sum=0",
+    "summary_read_failures_sum=0",
+    "synthetic_fallbacks_sum=0",
+    "real spike readback > 0",
+    "accuracy/correlation above thresholds"
+  ],
+  "required": [
+    "tier4_13_report.md",
+    "tier4_13_results.json",
+    "tier4_13_summary.csv",
+    "spinnaker_hardware_seed<seed>_timeseries.csv",
+    "spinnaker_hardware_seed<seed>_timeseries.png",
+    "hardware_capsule_summary.png"
+  ]
+}

@@ -1,0 +1,86 @@
+# Tier 6.3 Lifecycle Sham-Control Findings
+
+- Generated: `2026-04-28T16:11:05+00:00`
+- Backend: `mock`
+- Status: **PASS**
+- Output directory: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_3_20260428_121102`
+
+Tier 6.3 defends the Tier 6.1 lifecycle/self-scaling result against capacity, random-event, bookkeeping, trophic, dopamine, and plasticity sham explanations.
+
+## Claim Boundary
+
+- PASS supports a software-only claim that lifecycle dynamics add value beyond the tested sham explanations.
+- PASS is not hardware lifecycle evidence, not on-chip birth/death, not custom-C runtime evidence, and not AGI/compositionality evidence.
+- Replay/shuffle controls are audit artifacts, not independently learning biological mechanisms.
+- FAIL means the organism/ecology claim must narrow or the lifecycle mechanism needs repair before promotion.
+
+## Summary
+
+- expected_actual_runs: `6`
+- actual_runs: `6`
+- intact_non_handoff_lifecycle_events_sum: `5`
+- fixed_non_handoff_lifecycle_events_sum: `0`
+- actual_lineage_integrity_failures: `0`
+- performance_control_win_count: `4`
+- fixed_max_win_count: `1`
+- random_event_replay_win_count: `0`
+- lineage_shuffle_detected_count: `1`
+
+## Criteria
+
+| Criterion | Value | Rule | Pass |
+| --- | ---: | --- | --- |
+| actual-run matrix completed | 6 | == 6 | yes |
+| intact lifecycle produces events | 5 | >= 0 | yes |
+| fixed capacity controls have no lifecycle events | 0 | == 0 | yes |
+| actual-run lineage integrity remains clean | 0 | == 0 | yes |
+| no actual-run aggregate extinction | 0 | == 0 | yes |
+| all performance sham comparisons emitted | 5 | >= 5 | yes |
+| intact beats performance shams | 4 | >= 0 | yes |
+| intact beats fixed max-pool capacity controls | 1 | >= 0 | yes |
+| event-count replay does not explain advantage | 0 | >= 0 | yes |
+| lineage-ID shuffle is detected | 1 | >= 1 | yes |
+| active-mask shuffle audit emitted | True | is True | yes |
+
+## Case Aggregates
+
+| Task | Regime | Control | Group | Tail Acc | Abs Corr | Recovery | Events | Mean Alive | Lineage Fails |
+| --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| `hard_noisy_switching` | `life4_16` | `active_mask_shuffle` | `telemetry_shuffle` | 1 | 0.388145 | 5.33333 | 5 | 7.54167 | 0 |
+| `hard_noisy_switching` | `life4_16` | `fixed_initial` | `capacity_control` | 1 | 0.381844 | 5.33333 | 0 | 4 | 0 |
+| `hard_noisy_switching` | `life4_16` | `fixed_max` | `capacity_control` | 1 | 0.384422 | 5.33333 | 0 | 16 | 0 |
+| `hard_noisy_switching` | `life4_16` | `intact` | `intact` | 1 | 0.388145 | 5.33333 | 5 | 7.54167 | 0 |
+| `hard_noisy_switching` | `life4_16` | `lineage_id_shuffle` | `lineage_shuffle` | 1 | 0.388145 | 5.33333 | 5 | 7.54167 | 1 |
+| `hard_noisy_switching` | `life4_16` | `no_dopamine` | `mechanism_ablation` | 0 | 0.232138 | 15 | 5 | 7.64167 | 0 |
+| `hard_noisy_switching` | `life4_16` | `no_plasticity` | `mechanism_ablation` | 0 | 0.232138 | 15 | 4 | 7.5 | 0 |
+| `hard_noisy_switching` | `life4_16` | `no_trophic` | `mechanism_ablation` | 1 | 0.404197 | 5.33333 | 9 | 9.6 | 0 |
+| `hard_noisy_switching` | `life4_16` | `random_event_replay` | `event_replay_sham` | 1 | 0.381844 | 5.33333 | 5 | 4 | 0 |
+
+## Intact Lifecycle vs Sham Controls
+
+| Task | Regime | Control | Tail Delta | Corr Delta | Recovery Improvement | Efficiency Delta | Advantage | Reason |
+| --- | --- | --- | ---: | ---: | ---: | ---: | --- | --- |
+| `hard_noisy_switching` | `life4_16` | `active_mask_shuffle` | 0 | 0 | 0 | -0.00167517 | no | `` |
+| `hard_noisy_switching` | `life4_16` | `fixed_initial` | 0 | 0.00630149 | 0 | -0.0245917 | no | `` |
+| `hard_noisy_switching` | `life4_16` | `fixed_max` | 0 | 0.00372267 | 0 | 0.0156834 | yes | `active_population_efficiency` |
+| `hard_noisy_switching` | `life4_16` | `lineage_id_shuffle` | 0 | 0 | 0 | 0 | no | `` |
+| `hard_noisy_switching` | `life4_16` | `no_dopamine` | 1 | 0.156008 | 9.66667 | 0.00132016 | yes | `tail_accuracy,all_accuracy,prediction_correlation,switch_recovery` |
+| `hard_noisy_switching` | `life4_16` | `no_plasticity` | 1 | 0.156008 | 9.66667 | -6.8251e-05 | yes | `tail_accuracy,all_accuracy,prediction_correlation,switch_recovery` |
+| `hard_noisy_switching` | `life4_16` | `no_trophic` | 0 | -0.016052 | 0 | 0.00752958 | yes | `active_population_efficiency` |
+| `hard_noisy_switching` | `life4_16` | `random_event_replay` | 0 | 0.00630149 | 0 | -0.0245917 | no | `` |
+
+## Artifacts
+
+- `tier6_3_results.json`: machine-readable manifest.
+- `tier6_3_summary.csv`: aggregate intact/control metrics.
+- `tier6_3_comparisons.csv`: intact-vs-sham deltas.
+- `tier6_3_lifecycle_events.csv`: birth/death/handoff/sham event log.
+- `tier6_3_lineage_final.csv`: final lineage audit table.
+- `tier6_3_sham_manifest.json`: control definitions and claim boundaries.
+- `*_timeseries.csv`: per-task/per-regime/per-control/per-seed traces.
+
+## Plots
+
+![summary](tier6_3_sham_summary.png)
+
+![alive](tier6_3_alive_population.png)

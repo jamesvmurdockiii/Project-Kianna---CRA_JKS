@@ -1,0 +1,3 @@
+task,sign_persistence_tail,oracle_context_tail,stream_context_memory_tail,shuffled_context_tail,memory_reset_tail,wrong_context_tail,best_standard_model,best_standard_tail,best_failure_control_tail,oracle_edge_vs_sign,memory_edge_vs_sign,memory_edge_vs_best_failure_control,best_standard_edge_vs_sign,same_current_input_opposite_labels,ambiguous_current_cue_count,decision_count
+delayed_context_cue,1.0,1.0,1.0,0.0,1.0,0.0,sign_persistence,1.0,1.0,0.0,0.0,0.0,0.0,False,1,7
+hidden_context_recurrence,1.0,1.0,1.0,1.0,1.0,0.0,online_perceptron,1.0,1.0,0.0,0.0,0.0,0.0,False,0,14

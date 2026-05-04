@@ -1,0 +1,157 @@
+{
+  "artifacts": {
+    "child_manifests_json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier5_7_child_manifests.json",
+    "report_md": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier5_7_report.md",
+    "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier5_7_summary.csv"
+  },
+  "backend": "mock",
+  "child_runs": [
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "experiments/tier1_sanity.py",
+        "--tests",
+        "all",
+        "--steps",
+        "80",
+        "--seeds",
+        "3",
+        "--base-seed",
+        "42",
+        "--readout-lr",
+        "0.1",
+        "--delayed-readout-lr",
+        "0.2",
+        "--stop-on-fail",
+        "--output-dir",
+        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier1_controls"
+      ],
+      "failure_reason": "",
+      "manifest_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier1_controls/tier1_results.json",
+      "name": "tier1_controls",
+      "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier1_controls",
+      "purpose": "negative controls stay negative under the promoted learning setting",
+      "return_code": 0,
+      "runtime_seconds": 3.6448067920000002,
+      "status": "pass",
+      "stderr_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier1_controls/tier1_controls_stderr.log",
+      "stdout_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier1_controls/tier1_controls_stdout.log"
+    },
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "experiments/tier2_learning.py",
+        "--tests",
+        "all",
+        "--backend",
+        "mock",
+        "--steps",
+        "120",
+        "--base-seed",
+        "42",
+        "--readout-lr",
+        "0.1",
+        "--delayed-readout-lr",
+        "0.2",
+        "--stop-on-fail",
+        "--output-dir",
+        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier2_learning"
+      ],
+      "failure_reason": "",
+      "manifest_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier2_learning/tier2_results.json",
+      "name": "tier2_learning",
+      "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier2_learning",
+      "purpose": "positive learning controls still pass under the promoted setting",
+      "return_code": 0,
+      "runtime_seconds": 2.957093875,
+      "status": "pass",
+      "stderr_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier2_learning/tier2_learning_stderr.log",
+      "stdout_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier2_learning/tier2_learning_stdout.log"
+    },
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "experiments/tier3_ablation.py",
+        "--tests",
+        "all",
+        "--backend",
+        "mock",
+        "--steps",
+        "120",
+        "--ecology-steps",
+        "140",
+        "--seed-count",
+        "1",
+        "--base-seed",
+        "42",
+        "--readout-lr",
+        "0.1",
+        "--delayed-readout-lr",
+        "0.2",
+        "--stop-on-fail",
+        "--output-dir",
+        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier3_ablations"
+      ],
+      "failure_reason": "failed child results: no_trophic_selection_ablation",
+      "manifest_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier3_ablations/tier3_results.json",
+      "name": "tier3_ablations",
+      "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier3_ablations",
+      "purpose": "core mechanism ablation gaps remain meaningful under the promoted setting",
+      "return_code": 1,
+      "runtime_seconds": 4.096824792,
+      "status": "fail",
+      "stderr_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier3_ablations/tier3_ablations_stderr.log",
+      "stdout_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier3_ablations/tier3_ablations_stdout.log"
+    }
+  ],
+  "claim_boundary": [
+    "Tier 5.7 is software-only compact regression evidence.",
+    "It checks that the promoted v1.0 delayed-credit setting does not break controls, learning proofs, ablations, or target task smokes.",
+    "It does not prove lifecycle/self-scaling, hardware scaling, native on-chip learning, compositionality, world modeling, or external-baseline superiority."
+  ],
+  "command": "experiments/tier5_compact_regression.py --backend mock --tier1-steps 80 --tier1-seeds 3 --tier2-steps 120 --tier3-steps 120 --tier3-ecology-steps 140 --tier3-seed-count 1 --smoke-steps 80 --smoke-seed-count 1 --bootstrap-reps 20 --readout-lr 0.10 --delayed-readout-lr 0.20 --stop-on-fail",
+  "criteria": [
+    {
+      "name": "Tier 1 negative controls pass under promoted setting",
+      "passed": true,
+      "rule": "status == pass and return_code == 0",
+      "value": "pass"
+    },
+    {
+      "name": "Tier 2 positive controls pass under promoted setting",
+      "passed": true,
+      "rule": "status == pass and return_code == 0",
+      "value": "pass"
+    },
+    {
+      "name": "Tier 3 architecture ablations pass under promoted setting",
+      "passed": false,
+      "rule": "status == pass and return_code == 0",
+      "value": "fail"
+    },
+    {
+      "name": "target task smoke matrix completes under promoted setting",
+      "passed": false,
+      "rule": "status == pass and return_code == 0",
+      "value": "not_run"
+    }
+  ],
+  "generated_at_utc": "2026-04-28T04:56:21+00:00",
+  "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610",
+  "promoted_setting": {
+    "baseline": "v1.0",
+    "cra_variant": "cra_v0_8_delayed_lr_0_20",
+    "delayed_readout_lr": 0.2,
+    "readout_lr": 0.1
+  },
+  "runtime_seconds": 10.703560167000001,
+  "status": "fail",
+  "summary": {
+    "children_passed": 2,
+    "children_run": 3,
+    "criteria_passed": 2,
+    "criteria_total": 4,
+    "expected_children": 4
+  },
+  "tier": "Tier 5.7 - Compact Regression After Promoted Tuning"
+}

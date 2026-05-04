@@ -1,0 +1,66 @@
+{
+  "artifacts": {
+    "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_22b_20260430_prepared/tier4_22b_results.json",
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_22b_20260430_prepared/tier4_22b_report.md"
+  },
+  "criteria": [
+    {
+      "name": "prepare mode explicit",
+      "note": "",
+      "passed": true,
+      "rule": "== prepare",
+      "value": "prepare"
+    },
+    {
+      "name": "Tier 4.22a0 local preflight pass exists",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "continuous transport command emitted",
+      "note": "",
+      "passed": true,
+      "rule": "contains --mode run-hardware",
+      "value": "cra_422b/experiments/tier4_22b_continuous_transport_scaffold.py --mode run-hardware --tasks delayed_cue,hard_noisy_switching --seeds 42 --steps 1200 --population-size 8 --output-dir tier4_22b_job_output"
+    },
+    {
+      "name": "learning disabled by design",
+      "note": "",
+      "passed": true,
+      "rule": "False for 4.22b",
+      "value": false
+    }
+  ],
+  "failure_reason": "",
+  "generated_at_utc": "2026-04-30T17:59:06+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_22b_20260430_prepared",
+  "status": "prepared",
+  "summary": {
+    "future_runtime_plan_stage": "future_custom_runtime",
+    "jobmanager_command": "cra_422b/experiments/tier4_22b_continuous_transport_scaffold.py --mode run-hardware --tasks delayed_cue,hard_noisy_switching --seeds 42 --steps 1200 --population-size 8 --output-dir tier4_22b_job_output",
+    "learning_enabled": false,
+    "mode": "prepare",
+    "population_size": 8,
+    "runner_revision": "tier4_22b_continuous_transport_scaffold_20260430_0000",
+    "runtime_mode": "continuous_transport",
+    "seeds": [
+      42
+    ],
+    "sim_run_calls_target_per_case": 1,
+    "steps": 1200,
+    "tasks": [
+      "delayed_cue",
+      "hard_noisy_switching"
+    ],
+    "tier4_22a0_manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_22a0_20260430_spinnaker_constrained_preflight/tier4_22a0_results.json",
+    "tier4_22a0_status": "pass",
+    "upload_contract": [
+      "Upload source folders only under cra_422b/: experiments/ and coral_reef_spinnaker/.",
+      "Do not upload controlled_test_output/; it is local evidence storage.",
+      "Run the JobManager command directly, not via bash wrapper unless EBRAINS requires it."
+    ]
+  },
+  "tier": "Tier 4.22b - Continuous Transport Scaffold"
+}

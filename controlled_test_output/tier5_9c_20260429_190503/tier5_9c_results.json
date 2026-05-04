@@ -1,0 +1,111 @@
+{
+  "artifacts": {
+    "child_manifests_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/tier5_9c_child_manifests.json",
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/tier5_9c_report.md",
+    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/tier5_9c_summary.csv"
+  },
+  "children": [
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "experiments/tier5_self_evaluation_compact_regression.py",
+        "--backend",
+        "nest",
+        "--readout-lr",
+        "0.1",
+        "--delayed-readout-lr",
+        "0.2",
+        "--stop-on-fail",
+        "--output-dir",
+        "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/v2_1_guardrail"
+      ],
+      "failure_reason": "",
+      "manifest_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/v2_1_guardrail/tier5_18c_results.json",
+      "name": "v2_1_guardrail",
+      "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/v2_1_guardrail",
+      "purpose": "rerun the v2.1 promotion/regression gate so the current baseline remains intact before interpreting macro-credit work",
+      "return_code": 0,
+      "runtime_seconds": 1471.409875667,
+      "status": "pass",
+      "stderr_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/v2_1_guardrail/v2_1_guardrail_stderr.log",
+      "stdout_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/v2_1_guardrail/v2_1_guardrail_stdout.log"
+    },
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "experiments/tier5_macro_eligibility_repair.py",
+        "--backend",
+        "nest",
+        "--tasks",
+        "delayed_cue,hard_noisy_switching,variable_delay_cue,aba_recurrence",
+        "--steps",
+        "960",
+        "--seed-count",
+        "3",
+        "--models",
+        "sign_persistence,online_perceptron,online_logistic_regression,echo_state_network,stdp_only_snn",
+        "--variants",
+        "all",
+        "--repair-residual-scale",
+        "0.1",
+        "--repair-trace-clip",
+        "1.0",
+        "--repair-decay",
+        "0.92",
+        "--stop-on-fail",
+        "--output-dir",
+        "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/macro_residual_recheck"
+      ],
+      "failure_reason": "command exited 1",
+      "manifest_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/macro_residual_recheck/tier5_9b_results.json",
+      "name": "macro_residual_recheck",
+      "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/macro_residual_recheck",
+      "purpose": "rerun the residual macro-eligibility diagnostic that previously failed trace-ablation separation",
+      "return_code": 1,
+      "runtime_seconds": 1418.5058925419999,
+      "status": "fail",
+      "stderr_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/macro_residual_recheck/macro_residual_recheck_stderr.log",
+      "stdout_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/macro_residual_recheck/macro_residual_recheck_stdout.log"
+    }
+  ],
+  "command": "experiments/tier5_macro_eligibility_v2_1_recheck.py --backend nest --tasks delayed_cue,hard_noisy_switching,variable_delay_cue,aba_recurrence --steps 960 --seed-count 3 --models sign_persistence,online_perceptron,online_logistic_regression,echo_state_network,stdp_only_snn --stop-on-fail",
+  "criteria": [
+    {
+      "name": "frozen v2.1 baseline artifact exists",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.1.json"
+    },
+    {
+      "name": "v2.1 guardrail remains green",
+      "passed": true,
+      "rule": "status == pass and return_code == 0",
+      "value": "pass"
+    },
+    {
+      "name": "residual macro eligibility earns promotion gate",
+      "passed": false,
+      "rule": "status == pass and return_code == 0",
+      "value": "fail"
+    },
+    {
+      "name": "all child commands succeeded",
+      "passed": false,
+      "rule": "== 2/2",
+      "value": "1/2"
+    }
+  ],
+  "failure_reason": "Failed criteria: residual macro eligibility earns promotion gate, all child commands succeeded",
+  "generated_at_utc": "2026-04-29T23:53:13+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503",
+  "status": "fail",
+  "summary": {
+    "children_passed": 1,
+    "children_total": 2,
+    "criteria_passed": 2,
+    "criteria_total": 4,
+    "runtime_seconds": 2889.924358084,
+    "smoke": false
+  },
+  "tier": "Tier 5.9c - Macro Eligibility v2.1 Recheck"
+}

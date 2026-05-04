@@ -1,0 +1,29 @@
+make: Entering directory '/tmp/job2366536137130301970.tmp/cra_425i/coral_reef_spinnaker/spinnaker_runtime'
+rm -rf build/gnu/ tests/test_runtime
+mkdir -p build/gnu/src/
+# spinnaker_tools.mk c
+mkdir -p build/gnu/
+arm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_STATE_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -o build/gnu/src/main.o src/main.c
+# spinnaker_tools.mk c
+mkdir -p build/gnu/
+arm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_STATE_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -o build/gnu/src/state_manager.o src/state_manager.c
+# spinnaker_tools.mk c
+mkdir -p build/gnu/
+arm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_STATE_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -o build/gnu/src/host_interface.o src/host_interface.c
+mkdir -p build/gnu/
+/home/jovyan/spinnaker/spinnaker_tools/tools/mkbuild coral_reef > build/gnu/coral_reef_build.c
+arm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_STATE_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1   -c -o build/gnu/coral_reef_build.o build/gnu/coral_reef_build.c
+# spinnaker_tools.mk elf
+arm-none-eabi-gcc -T/home/jovyan/spinnaker/spinnaker_tools/tools/sark.lnk -Wl,-e,cpu_reset -Wl,-static -ffreestanding -fdata-sections -ffunction-sections -Wl,--gc-sections -Wl,--use-blx -nostartfiles -static -L /home/jovyan/spinnaker/spinnaker_tools/lib build/gnu/src/main.o build/gnu/src/state_manager.o build/gnu/src/host_interface.o build/gnu/coral_reef_build.o  /home/jovyan/spinnaker/spinnaker_tools/lib/libspin1_api.a -o build/gnu/coral_reef.elf
+arm-none-eabi-objdump -dxt > build/gnu/coral_reef.txt build/gnu/coral_reef.elf
+arm-none-eabi-objcopy -O binary -j RO_DATA -j EX_DATA build/gnu/coral_reef.elf build/gnu/RO_DATA.bin
+arm-none-eabi-objcopy -O binary -j RW_DATA build/gnu/coral_reef.elf build/gnu/RW_DATA.bin
+ls -l build/gnu/RO_DATA.bin
+-rwxr-xr-x 1 jovyan users 13416 May  2 17:02 build/gnu/RO_DATA.bin
+/home/jovyan/spinnaker/spinnaker_tools/tools/mkbin build/gnu/RO_DATA.bin build/gnu/RW_DATA.bin > build/gnu/coral_reef.bin
+rm -f build/gnu/RO_DATA.bin build/gnu/RW_DATA.bin
+arm-none-eabi-nm build/gnu/coral_reef.elf > build/gnu/coral_reef.nm
+mkdir -p build/
+/home/jovyan/spinnaker/spinnaker_tools/tools/mkaplx build/gnu/coral_reef.nm | cat - build/gnu/coral_reef.bin > build/coral_reef.aplx
+rm build/gnu/coral_reef.bin build/gnu/coral_reef.nm build/gnu/coral_reef_build.c build/gnu/coral_reef_build.o
+make: Leaving directory '/tmp/job2366536137130301970.tmp/cra_425i/coral_reef_spinnaker/spinnaker_runtime'

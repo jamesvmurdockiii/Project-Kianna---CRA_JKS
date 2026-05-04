@@ -1,0 +1,209 @@
+{
+  "artifacts": {
+    "delayed_cue_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22b_20260430_continuous_transport_local/tier4_22b_delayed_cue_seed42_timeseries.csv",
+    "hard_noisy_switching_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22b_20260430_continuous_transport_local/tier4_22b_hard_noisy_switching_seed42_timeseries.csv",
+    "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_22b_20260430_continuous_transport_local/tier4_22b_results.json",
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_22b_20260430_continuous_transport_local/tier4_22b_report.md",
+    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22b_20260430_continuous_transport_local/tier4_22b_summary.csv",
+    "timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22b_20260430_continuous_transport_local/tier4_22b_timeseries.csv"
+  },
+  "case_summaries": [
+    {
+      "backend": "pyNN.nest",
+      "backend_path": "local_constrained_nest_continuous_transport",
+      "claim_boundary": "Continuous transport scaffold only; learning/reward/plasticity disabled for this tier.",
+      "dt_seconds": 0.05,
+      "learning_enabled": false,
+      "max_step_spikes": 96,
+      "mean_step_spikes": 84.26,
+      "nonzero_spike_bins": 1200,
+      "population_size": 8,
+      "readback_failures": 0,
+      "runtime_mode": "continuous_transport",
+      "runtime_seconds": 0.8892539580000003,
+      "scheduled_current_changes": 300,
+      "scheduled_current_max": 1.5999999999999999,
+      "scheduled_current_min": 1.2,
+      "scheduled_input_failures": 0,
+      "scheduled_input_mode": "StepCurrentSource",
+      "seed": 42,
+      "sim_run_calls": 1,
+      "sim_run_failures": 0,
+      "spinnman_numpy2_compat": {
+        "applied": false,
+        "reason": "local mode"
+      },
+      "status": "pass",
+      "steps": 1200,
+      "summary_read_failures": 0,
+      "synthetic_fallbacks": 0,
+      "task": "delayed_cue",
+      "tier_part": "4.16a",
+      "timestep_ms": 1.0,
+      "total_step_spikes": 101112,
+      "transport_only": true
+    },
+    {
+      "backend": "pyNN.nest",
+      "backend_path": "local_constrained_nest_continuous_transport",
+      "claim_boundary": "Continuous transport scaffold only; learning/reward/plasticity disabled for this tier.",
+      "dt_seconds": 0.05,
+      "learning_enabled": false,
+      "max_step_spikes": 96,
+      "mean_step_spikes": 84.21333333333334,
+      "nonzero_spike_bins": 1200,
+      "population_size": 8,
+      "readback_failures": 0,
+      "runtime_mode": "continuous_transport",
+      "runtime_seconds": 0.30663125000000013,
+      "scheduled_current_changes": 342,
+      "scheduled_current_max": 1.7334377084086874,
+      "scheduled_current_min": 1.087169792440875,
+      "scheduled_input_failures": 0,
+      "scheduled_input_mode": "StepCurrentSource",
+      "seed": 42,
+      "sim_run_calls": 1,
+      "sim_run_failures": 0,
+      "spinnman_numpy2_compat": {
+        "applied": false,
+        "reason": "local mode"
+      },
+      "status": "pass",
+      "steps": 1200,
+      "summary_read_failures": 0,
+      "synthetic_fallbacks": 0,
+      "task": "hard_noisy_switching",
+      "tier_part": "4.16b",
+      "timestep_ms": 1.0,
+      "total_step_spikes": 101056,
+      "transport_only": true
+    }
+  ],
+  "criteria": [
+    {
+      "name": "runner revision current",
+      "note": "",
+      "passed": true,
+      "rule": "expected current source",
+      "value": "tier4_22b_continuous_transport_scaffold_20260430_0000"
+    },
+    {
+      "name": "Tier 4.22a0 preflight pass exists or bundle is fresh",
+      "note": "Fresh EBRAINS/source-smoke bundles do not need local controlled_test_output uploaded.",
+      "passed": true,
+      "rule": "== pass locally OR missing in fresh source bundle",
+      "value": "pass"
+    },
+    {
+      "name": "mode has explicit claim boundary",
+      "note": "",
+      "passed": true,
+      "rule": "prepare|local|run-hardware|ingest",
+      "value": "local"
+    },
+    {
+      "name": "case count matches tasks x seeds",
+      "note": "",
+      "passed": true,
+      "rule": "== 2",
+      "value": 2
+    },
+    {
+      "name": "all cases passed",
+      "note": "",
+      "passed": true,
+      "rule": "True",
+      "value": true
+    },
+    {
+      "name": "exactly one sim.run per case",
+      "note": "",
+      "passed": true,
+      "rule": "sum == case_count and max == 1",
+      "value": {
+        "calls": 2,
+        "expected": 2
+      }
+    },
+    {
+      "name": "sim.run failures zero",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "name": "readback failures zero",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "name": "synthetic fallback zero",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "name": "scheduled input failures zero",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "name": "nonzero spike readback",
+      "note": "",
+      "passed": true,
+      "rule": "> 0 per case",
+      "value": 101056
+    },
+    {
+      "name": "transport-only learning disabled",
+      "note": "",
+      "passed": true,
+      "rule": "required for 4.22b isolation",
+      "value": "disabled"
+    }
+  ],
+  "failure_reason": "",
+  "generated_at_utc": "2026-04-30T18:08:05+00:00",
+  "mode": "local",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_22b_20260430_continuous_transport_local",
+  "status": "pass",
+  "summary": {
+    "all_cases_passed": true,
+    "backend_keys": [
+      "pyNN.nest"
+    ],
+    "case_count": 2,
+    "claim_boundary": "Continuous transport scaffold only; not learning, custom-C, native/on-chip plasticity, or speedup evidence.",
+    "expected_sim_run_calls": 2,
+    "mode": "local",
+    "next_step_if_passed": "Tier 4.22c persistent local state scaffold, then Tier 4.22d reward/plasticity learning path.",
+    "nonzero_spike_bins_sum": 2400,
+    "readback_failures_sum": 0,
+    "runner_revision": "tier4_22b_continuous_transport_scaffold_20260430_0000",
+    "runtime_seconds_sum": 1.1958852080000004,
+    "scheduled_input_failures_sum": 0,
+    "seeds": [
+      42
+    ],
+    "sim_run_calls_max": 1,
+    "sim_run_calls_sum": 2,
+    "sim_run_failures_sum": 0,
+    "summary_read_failures_sum": 0,
+    "synthetic_fallbacks_sum": 0,
+    "tasks": [
+      "delayed_cue",
+      "hard_noisy_switching"
+    ],
+    "tier4_22a0_manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_22a0_20260430_spinnaker_constrained_preflight/tier4_22a0_results.json",
+    "tier4_22a0_status": "pass",
+    "total_step_spikes_min": 101056,
+    "total_step_spikes_sum": 202168
+  },
+  "tier": "Tier 4.22b - Continuous Transport Scaffold"
+}

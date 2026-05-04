@@ -1,0 +1,14 @@
+{
+  "pass_requires": [
+    "keyed memory updates observed",
+    "keyed memory feature active",
+    "zero fallback/failures",
+    "real spike readback in run-hardware"
+  ],
+  "required": [
+    "tier4_21a_results.json",
+    "tier4_21a_report.md",
+    "tier4_21a_summary.csv",
+    "spinnaker_hardware_<task>_<variant>_seed<seed>_timeseries.csv"
+  ]
+}

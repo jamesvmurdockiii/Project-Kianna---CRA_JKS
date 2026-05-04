@@ -1,0 +1,229 @@
+{
+  "artifacts": {
+    "host_test_stderr": "/Users/james/JKS:CRA/controlled_test_output/tier4_22e_20260430_local_learning_parity/tier4_22e_host_test_stderr.txt",
+    "host_test_stdout": "/Users/james/JKS:CRA/controlled_test_output/tier4_22e_20260430_local_learning_parity/tier4_22e_host_test_stdout.txt",
+    "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_22e_20260430_local_learning_parity/tier4_22e_results.json",
+    "parity_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22e_20260430_local_learning_parity/tier4_22e_parity_timeseries.csv",
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_22e_20260430_local_learning_parity/tier4_22e_report.md",
+    "source_checks_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22e_20260430_local_learning_parity/tier4_22e_source_checks.csv",
+    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22e_20260430_local_learning_parity/tier4_22e_summary.csv"
+  },
+  "case_summaries": [
+    {
+      "bias_abs_delta": 3.0517578125e-05,
+      "event_count": 150,
+      "fixed_accuracy": 0.9866666666666667,
+      "fixed_bias": -3.0517578125e-05,
+      "fixed_tail_accuracy": 1.0,
+      "fixed_weight": 0.999969482421875,
+      "float_accuracy": 0.9866666666666667,
+      "float_bias": 0.0,
+      "float_tail_accuracy": 1.0,
+      "float_weight": 1.0,
+      "learning_rate": 0.25,
+      "max_pending": 1,
+      "max_prediction_abs_delta": 0.0001201629638671875,
+      "no_pending_accuracy": 0.0,
+      "no_pending_bias": 0.0,
+      "no_pending_tail_accuracy": 0.0,
+      "no_pending_weight": 0.0,
+      "pending_created": 150,
+      "pending_dropped": 0,
+      "pending_matured": 150,
+      "seed": 42,
+      "sign_agreement": 1.0,
+      "steps": 1200,
+      "task": "delayed_cue",
+      "weight_abs_delta": 3.0517578125e-05
+    },
+    {
+      "bias_abs_delta": 4.720929766377502e-05,
+      "event_count": 171,
+      "fixed_accuracy": 0.5730994152046783,
+      "fixed_bias": -0.73565673828125,
+      "fixed_tail_accuracy": 0.5476190476190477,
+      "fixed_weight": -0.199462890625,
+      "float_accuracy": 0.5730994152046783,
+      "float_bias": -0.7356095289835862,
+      "float_tail_accuracy": 0.5476190476190477,
+      "float_weight": -0.1994214668137721,
+      "learning_rate": 0.25,
+      "max_pending": 1,
+      "max_prediction_abs_delta": 0.00021408498287200928,
+      "no_pending_accuracy": 0.0,
+      "no_pending_bias": 0.0,
+      "no_pending_tail_accuracy": 0.0,
+      "no_pending_weight": 0.0,
+      "pending_created": 171,
+      "pending_dropped": 0,
+      "pending_matured": 171,
+      "seed": 42,
+      "sign_agreement": 1.0,
+      "steps": 1200,
+      "task": "hard_noisy_switching",
+      "weight_abs_delta": 4.142381122790306e-05
+    }
+  ],
+  "criteria": [
+    {
+      "name": "runner revision current",
+      "note": "",
+      "passed": true,
+      "rule": "expected current source",
+      "value": "tier4_22e_local_learning_parity_20260430_0000"
+    },
+    {
+      "name": "Tier 4.22d reward/plasticity scaffold pass exists",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "custom C host tests pass",
+      "note": "",
+      "passed": true,
+      "rule": "returncode == 0 and ALL TESTS PASSED",
+      "value": 0
+    },
+    {
+      "name": "all source checks pass",
+      "note": "",
+      "passed": true,
+      "rule": "all pass",
+      "value": "6/6"
+    },
+    {
+      "name": "fixed/float sign agreement",
+      "note": "",
+      "passed": true,
+      "rule": ">= 0.999",
+      "value": 1.0
+    },
+    {
+      "name": "final weight parity",
+      "note": "",
+      "passed": true,
+      "rule": "<= 0.001",
+      "value": 4.142381122790306e-05
+    },
+    {
+      "name": "final bias parity",
+      "note": "",
+      "passed": true,
+      "rule": "<= 0.001",
+      "value": 4.720929766377502e-05
+    },
+    {
+      "name": "delayed_cue tail accuracy",
+      "note": "",
+      "passed": true,
+      "rule": ">= 0.95",
+      "value": 1.0
+    },
+    {
+      "name": "hard_noisy_switching tail accuracy",
+      "note": "",
+      "passed": true,
+      "rule": ">= 0.5",
+      "value": 0.5476190476190477
+    },
+    {
+      "name": "pending queue beats no-pending ablation",
+      "note": "",
+      "passed": true,
+      "rule": ">= 0.2",
+      "value": 0.5476190476190477
+    },
+    {
+      "name": "pending queue does not overflow",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    }
+  ],
+  "failure_reason": "",
+  "generated_at_utc": "2026-04-30T18:45:15+00:00",
+  "host_test": {
+    "command": "make -C /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime clean-host test",
+    "returncode": 0,
+    "stderr_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22e_20260430_local_learning_parity/tier4_22e_host_test_stderr.txt",
+    "stdout_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22e_20260430_local_learning_parity/tier4_22e_host_test_stdout.txt"
+  },
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_22e_20260430_local_learning_parity",
+  "source_checks": [
+    {
+      "name": "bounded pending queue constant",
+      "note": "",
+      "passed": true,
+      "rule": "defined in config.h",
+      "value": "MAX_PENDING_HORIZONS"
+    },
+    {
+      "name": "pending horizon type exists",
+      "note": "",
+      "passed": true,
+      "rule": "declared",
+      "value": "pending_horizon_t"
+    },
+    {
+      "name": "pending horizon does not store future target",
+      "note": "",
+      "passed": true,
+      "rule": "absent from pending struct",
+      "value": "int32_t target;"
+    },
+    {
+      "name": "schedule pending horizon API exists",
+      "note": "",
+      "passed": true,
+      "rule": "declared/implemented",
+      "value": "cra_state_schedule_pending_horizon"
+    },
+    {
+      "name": "mature pending horizon receives target at maturity",
+      "note": "",
+      "passed": true,
+      "rule": "target supplied to mature API",
+      "value": "cra_state_mature_pending_horizons(uint32_t timestep, int32_t target"
+    },
+    {
+      "name": "pending horizon host tests exist",
+      "note": "",
+      "passed": true,
+      "rule": "test_runtime.c covers queue",
+      "value": "pending horizon maturation/bound"
+    }
+  ],
+  "status": "pass",
+  "summary": {
+    "claim_boundary": "Local minimal delayed-readout parity only; not hardware, full CRA parity, speedup, or final on-chip proof.",
+    "delayed_cue_tail_accuracy_min": 1.0,
+    "hard_noisy_switching_tail_accuracy_min": 0.5476190476190477,
+    "host_tests_passed": true,
+    "learning_rate": 0.25,
+    "max_bias_abs_delta": 4.720929766377502e-05,
+    "max_pending": 1,
+    "max_pending_dropped": 0,
+    "max_weight_abs_delta": 4.142381122790306e-05,
+    "min_fixed_tail_accuracy": 0.5476190476190477,
+    "min_pending_tail_advantage": 0.5476190476190477,
+    "min_sign_agreement": 1.0,
+    "next_step_if_passed": "Tier 4.22f hardware command/readback acceptance or APLX build/load gate before any learning hardware claim.",
+    "runner_revision": "tier4_22e_local_learning_parity_20260430_0000",
+    "seeds": [
+      42
+    ],
+    "source_checks_passed": 6,
+    "source_checks_total": 6,
+    "steps": 1200,
+    "tasks": [
+      "delayed_cue",
+      "hard_noisy_switching"
+    ],
+    "tier4_22d_manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_22d_20260430_reward_plasticity_scaffold/tier4_22d_results.json",
+    "tier4_22d_status": "pass"
+  },
+  "tier": "Tier 4.22e - Local Continuous-Learning Parity Scaffold"
+}

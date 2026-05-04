@@ -1,0 +1,22 @@
+{
+  "chunk_sizes": [
+    10,
+    25,
+    50
+  ],
+  "claim_boundary": "Prepared capsule is not hardware evidence. Tier 4.18a measures v0.7 chunked-host runtime/resource cost and stability; it is not a new learning or scaling claim.",
+  "delayed_readout_lr": 0.2,
+  "learning_location": "host",
+  "mode": "prepare",
+  "population_size": 8,
+  "runtime_mode": "chunked",
+  "seeds": [
+    42
+  ],
+  "steps": 1200,
+  "tasks": [
+    "delayed_cue",
+    "hard_noisy_switching"
+  ],
+  "tier": "Tier 4.18a - v0.7 Chunked Hardware Runtime Baseline"
+}

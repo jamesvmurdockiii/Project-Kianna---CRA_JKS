@@ -1,0 +1,46 @@
+# Tier 4.28e — Native Failure-Envelope Report — Ingest Report
+
+- Status: **PASS**
+- Passed: 38/38
+- Hardware output: `controlled_test_output/tier4_28e_pointC_20260503_hardware_pass_ingested`
+
+## Criteria
+
+- ✓ runner revision current: `tier4_28e_native_failure_envelope_20260503_0001` (expected current source)
+- ✓ custom C host tests pass: `pass` (== pass)
+- ✓ main.c syntax check pass: `pass` (== pass)
+- ✓ hardware target acquired: `{'status': 'pass', 'method': 'pyNN.spiNNaker_probe', 'hostname': '10.11.194.1', 'target_ipaddress': '10.11.194.1', 'setup_kwargs': {'timestep': 1.0}, 'probe_population_size': 1, 'probe_run_ms': 1.0, 'probe_timestep_ms': 1.0, 'dest_x': 0, 'dest_y': 0, 'dest_cpu': 4, 'occupied_cores': [1, 2, 3], 'notes': ['acquired transceiver/IP via PyNN/sPyNNaker DataView because EBRAINS JobManager may not expose a raw hostname', 'requested dest_cpu 1 was occupied; selected free core 4'], 'runtime_seconds': 54.85763420211151, 'attempts': [{'status': 'fail', 'method': 'hostname_discovery', 'hostname': '', 'notes': ['no hostname found in args, common environment variables, or spynnaker.cfg'], 'reason': 'no explicit hostname/config/environment target found'}, {'status': 'pass', 'method': 'pyNN.spiNNaker_probe', 'hostname': '10.11.194.1', 'target_ipaddress': '10.11.194.1', 'setup_kwargs': {'timestep': 1.0}, 'probe_population_size': 1, 'probe_run_ms': 1.0, 'probe_timestep_ms': 1.0, 'dest_x': 0, 'dest_y': 0, 'dest_cpu': 4, 'occupied_cores': [1, 2, 3], 'notes': ['acquired transceiver/IP via PyNN/sPyNNaker DataView because EBRAINS JobManager may not expose a raw hostname', 'requested dest_cpu 1 was occupied; selected free core 4'], 'runtime_seconds': 54.85763420211151}]}` (status == pass)
+- ✓ context_core .aplx built: `True` (== True)
+- ✓ route_core .aplx built: `True` (== True)
+- ✓ memory_core .aplx built: `True` (== True)
+- ✓ learning_core .aplx built: `True` (== True)
+- ✓ context_core load pass: `pass` (== pass)
+- ✓ route_core load pass: `pass` (== pass)
+- ✓ memory_core load pass: `pass` (== pass)
+- ✓ learning_core load pass: `pass` (== pass)
+- ✓ all context writes succeeded: `[{'key': 'ctx_regime_0', 'success': True}, {'key': 'ctx_regime_1', 'success': True}, {'key': 'ctx_regime_2', 'success': True}, {'key': 'ctx_regime_3', 'success': True}, {'key': 'ctx_regime_4', 'success': True}, {'key': 'ctx_regime_5', 'success': True}, {'key': 'ctx_regime_6', 'success': True}, {'key': 'ctx_regime_7', 'success': True}, {'key': 'ctx_regime_8', 'success': True}, {'key': 'ctx_regime_9', 'success': True}, {'key': 'ctx_regime_10', 'success': True}, {'key': 'ctx_regime_11', 'success': True}, {'key': 'ctx_regime_12', 'success': True}, {'key': 'ctx_regime_13', 'success': True}, {'key': 'ctx_regime_14', 'success': True}, {'key': 'ctx_regime_15', 'success': True}, {'key': 'ctx_regime_16', 'success': True}, {'key': 'ctx_regime_17', 'success': True}, {'key': 'ctx_regime_18', 'success': True}, {'key': 'ctx_regime_19', 'success': True}, {'key': 'ctx_regime_20', 'success': True}, {'key': 'ctx_regime_21', 'success': True}, {'key': 'ctx_regime_22', 'success': True}, {'key': 'ctx_regime_23', 'success': True}, {'key': 'ctx_regime_24', 'success': True}, {'key': 'ctx_regime_25', 'success': True}, {'key': 'ctx_regime_26', 'success': True}, {'key': 'ctx_regime_27', 'success': True}, {'key': 'ctx_regime_28', 'success': True}, {'key': 'ctx_regime_29', 'success': True}, {'key': 'ctx_regime_30', 'success': True}, {'key': 'ctx_regime_31', 'success': True}, {'key': 'ctx_regime_32', 'success': True}, {'key': 'ctx_regime_33', 'success': True}, {'key': 'ctx_regime_34', 'success': True}, {'key': 'ctx_regime_35', 'success': True}, {'key': 'ctx_regime_36', 'success': True}, {'key': 'ctx_regime_37', 'success': True}, {'key': 'ctx_regime_38', 'success': True}, {'key': 'ctx_regime_39', 'success': True}, {'key': 'ctx_regime_40', 'success': True}, {'key': 'ctx_regime_41', 'success': True}, {'key': 'ctx_regime_42', 'success': True}]` (all success)
+- ✓ all route writes succeeded: `[{'key': 'route_A', 'success': True}, {'key': 'route_B', 'success': True}, {'key': 'route_C', 'success': True}, {'key': 'route_D', 'success': True}]` (all success)
+- ✓ all memory writes succeeded: `[{'key': 'mem_A', 'success': True}, {'key': 'mem_B', 'success': True}, {'key': 'mem_C', 'success': True}, {'key': 'mem_D', 'success': True}]` (all success)
+- ✓ all schedule uploads succeeded: `[{'index': 0, 'success': True}, {'index': 1, 'success': True}, {'index': 2, 'success': True}, {'index': 3, 'success': True}, {'index': 4, 'success': True}, {'index': 5, 'success': True}, {'index': 6, 'success': True}, {'index': 7, 'success': True}, {'index': 8, 'success': True}, {'index': 9, 'success': True}, {'index': 10, 'success': True}, {'index': 11, 'success': True}, {'index': 12, 'success': True}, {'index': 13, 'success': True}, {'index': 14, 'success': True}, {'index': 15, 'success': True}, {'index': 16, 'success': True}, {'index': 17, 'success': True}, {'index': 18, 'success': True}, {'index': 19, 'success': True}, {'index': 20, 'success': True}, {'index': 21, 'success': True}, {'index': 22, 'success': True}, {'index': 23, 'success': True}, {'index': 24, 'success': True}, {'index': 25, 'success': True}, {'index': 26, 'success': True}, {'index': 27, 'success': True}, {'index': 28, 'success': True}, {'index': 29, 'success': True}, {'index': 30, 'success': True}, {'index': 31, 'success': True}, {'index': 32, 'success': True}, {'index': 33, 'success': True}, {'index': 34, 'success': True}, {'index': 35, 'success': True}, {'index': 36, 'success': True}, {'index': 37, 'success': True}, {'index': 38, 'success': True}, {'index': 39, 'success': True}, {'index': 40, 'success': True}, {'index': 41, 'success': True}, {'index': 42, 'success': True}]` (all success)
+- ✓ context_core run_continuous succeeded: `True` (== True)
+- ✓ route_core run_continuous succeeded: `True` (== True)
+- ✓ memory_core run_continuous succeeded: `True` (== True)
+- ✓ learning_core run_continuous succeeded: `True` (== True)
+- ✓ context_core final read succeeded: `True` (== True)
+- ✓ route_core final read succeeded: `True` (== True)
+- ✓ memory_core final read succeeded: `True` (== True)
+- ✓ learning_core final read succeeded: `True` (== True)
+- ✓ learning_core weight near reference: `101376` (within +/- 50688 of 101376)
+- ✓ learning_core bias near reference: `5120` (within +/- 8192 of 5120)
+- ✓ learning_core pending_created matches reference: `43` (== 43)
+- ✓ learning_core pending_matured matches reference: `43` (== 43)
+- ✓ learning_core active_pending cleared: `0` (== 0)
+- ✓ no unhandled hardware exception: `True` (== True)
+- ✓ learning_core schema_version v2: `2` (== 2)
+- ✓ learning_core lookup_requests == 129: `129` (== 129)
+- ✓ learning_core lookup_replies == 129: `129` (== 129)
+- ✓ learning_core stale_replies == 0: `0` (== 0)
+- ✓ learning_core timeouts == 0: `0` (== 0)
+- ✓ context_core lookup_replies == 0: `0` (== 0)
+- ✓ route_core lookup_replies == 0: `0` (== 0)
+- ✓ memory_core lookup_replies == 0: `0` (== 0)

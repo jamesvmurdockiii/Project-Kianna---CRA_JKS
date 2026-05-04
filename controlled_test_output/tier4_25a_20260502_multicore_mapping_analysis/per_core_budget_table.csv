@@ -1,0 +1,7 @@
+profile_name,context_slots,route_slots,memory_slots,pending_horizons,schedule_entries,state_manager_bytes,application_data_bytes,total_dtcm_bytes,dtcm_headroom_bytes,dtcm_utilization_percent,fits_in_dtcm,fits_comfortably
+current_default,8,8,8,128,64,4965,5741,22125,43411,11.68,True,True
+2x_slots_2x_pending,16,16,16,256,64,8005,8781,25165,40371,17.86,True,True
+4x_slots_4x_pending,32,32,32,512,128,15877,16653,33037,32499,33.88,True,True
+8x_slots_8x_pending,64,64,64,1024,256,31621,32397,48781,16755,65.91,True,True
+memory_heavy,8,8,64,128,64,6085,6861,23245,42291,13.96,True,True
+pending_heavy,8,8,8,1024,64,22885,23661,40045,25491,48.14,True,True

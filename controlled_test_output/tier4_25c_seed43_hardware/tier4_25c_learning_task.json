@@ -1,0 +1,38 @@
+{
+  "status": "completed",
+  "reset_ok": true,
+  "run_continuous": {
+    "success": true
+  },
+  "pause": {
+    "success": true
+  },
+  "final_state": {
+    "success": true,
+    "cmd": 8,
+    "status": 0,
+    "schema_version": 1,
+    "payload_len": 73,
+    "timestep": 4959,
+    "neuron_count": 0,
+    "synapse_count": 0,
+    "active_trace_count": 0,
+    "active_slots": 0,
+    "slot_writes": 0,
+    "slot_hits": 0,
+    "slot_misses": 0,
+    "slot_evictions": 0,
+    "decisions": 0,
+    "reward_events": 48,
+    "pending_created": 48,
+    "pending_matured": 48,
+    "pending_dropped": 0,
+    "active_pending": 0,
+    "readout_weight_raw": 32767,
+    "readout_bias_raw": -1,
+    "readout_weight": 0.999969482421875,
+    "readout_bias": -3.0517578125e-05,
+    "flags": 0
+  },
+  "waited_seconds": 2.5
+}

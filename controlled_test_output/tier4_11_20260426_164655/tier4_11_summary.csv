@@ -1,0 +1,7 @@
+case,status,domain,adapter,control_kind,uses_trading_bridge,runs,all_accuracy_mean,all_accuracy_std,tail_accuracy_mean,prediction_target_corr_mean,max_abs_dopamine_mean,final_n_alive_mean,total_births_sum,total_deaths_sum,trading_bridge_present_any_run,runtime_seconds_mean
+finance_signed_return,pass,finance,TradingBridge,none,True,3,0.8636363636363636,0.022727272727272707,0.8484848484848485,0.6924158639980268,0.9999999996987582,8.0,0,0,True,8.099907388666667
+sensor_control,pass,sensor_control,SensorControlAdapter,none,False,3,0.9545454545454546,0.0,1.0,0.8569409240757159,0.0,8.0,0,0,False,5.715546958000001
+finance_zero_signal,pass,finance,TradingBridge,zero,True,3,,,,,0.0,8.0,0,0,True,6.476018805999999
+sensor_zero_signal,pass,sensor_control,SensorControlAdapter,zero,False,3,,,,,0.0,8.0,0,0,False,9.892281486000007
+finance_shuffled_label,pass,finance,TradingBridge,shuffled,True,3,0.5303030303030303,0.03471648253754427,0.5151515151515151,0.08374920051315841,0.9999999717612006,8.0,0,0,True,10.673032805333335
+sensor_shuffled_label,pass,sensor_control,SensorControlAdapter,shuffled,False,3,0.5606060606060607,0.11211097414355108,0.5454545454545454,0.06446604412636929,0.0,8.0,0,0,False,9.419342985999995

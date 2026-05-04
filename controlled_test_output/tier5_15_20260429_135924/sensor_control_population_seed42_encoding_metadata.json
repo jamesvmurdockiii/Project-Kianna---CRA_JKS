@@ -1,0 +1,17 @@
+{
+  "encoding": "population",
+  "is_genuinely_temporal": false,
+  "mean_latency_bin": 5.458116883116883,
+  "mean_spike_sparsity": 0.009664351851851853,
+  "mean_spike_total": 1.0041666666666667,
+  "nonzero_steps": 176,
+  "seed": 42,
+  "steps": 720,
+  "task": "sensor_control",
+  "task_metadata": {
+    "delay": 3,
+    "period": 6,
+    "task_kind": "sensor_control",
+    "trials": 120
+  }
+}

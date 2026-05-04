@@ -1,0 +1,31 @@
+{
+  "context_controls": [
+    "oracle_context",
+    "stream_context_memory",
+    "shuffled_context",
+    "memory_reset",
+    "wrong_context"
+  ],
+  "context_gap": 12,
+  "fairness_rules": [
+    "same sensory stream, target stream, evaluation mask, and feedback_due_step arrays per seed",
+    "standard baselines see only the sensory stream and their configured feature history",
+    "oracle_context and stream_context_memory are task-validation controls, not CRA competitors",
+    "shuffled_context, memory_reset, and wrong_context must lose before the task is accepted",
+    "feedback_due_step must be greater than or equal to prediction step",
+    "passing Tier 5.10b authorizes Tier 5.10c mechanism testing only, not a CRA memory claim"
+  ],
+  "feature_history": 5,
+  "long_context_gap": 32,
+  "purpose": "validate memory-pressure tasks before testing CRA memory mechanisms",
+  "seeds": [
+    42
+  ],
+  "selected_external_baselines": [
+    "sign_persistence",
+    "online_perceptron"
+  ],
+  "steps": 180,
+  "tasks": "delayed_context_cue,hidden_context_recurrence",
+  "tier": "Tier 5.10b - Memory-Pressure Task Validation"
+}

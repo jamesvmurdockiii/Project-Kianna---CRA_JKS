@@ -1,0 +1,78 @@
+{
+  "artifacts": {
+    "local_step_chunk_parity": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_221734_local_preflight/local_step_chunk_parity",
+    "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_221734_local_preflight/tier4_20b_preflight_results.json",
+    "source_prepare_smoke": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_221734_local_preflight/source_prepare_smoke"
+  },
+  "claim_boundary": [
+    "This is a cheap source/simulation preflight, not hardware evidence.",
+    "PASS means the source-only folder and local chunked parity contract are runnable before the EBRAINS hardware attempt.",
+    "It cannot prove EBRAINS has attached a real SpiNNaker machine target."
+  ],
+  "commands": [
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "experiments/tier4_20b_v2_1_hardware_probe.py",
+        "--mode",
+        "prepare",
+        "--tasks",
+        "delayed_cue",
+        "--seeds",
+        "42",
+        "--steps",
+        "120",
+        "--population-size",
+        "8",
+        "--chunk-size-steps",
+        "25",
+        "--delayed-readout-lr",
+        "0.20",
+        "--output-dir",
+        "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_221734_local_preflight/source_prepare_smoke"
+      ],
+      "label": "source prepare smoke",
+      "return_code": 0,
+      "started_at_utc": "2026-04-30T02:17:34+00:00",
+      "stderr_log": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_221734_local_preflight/source_prepare_smoke_stderr.log",
+      "stdout_log": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_221734_local_preflight/source_prepare_smoke_stdout.log"
+    },
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "experiments/tier4_17b_step_vs_chunked_parity.py",
+        "--backends",
+        "nest",
+        "--steps",
+        "40",
+        "--chunk-sizes",
+        "5,10",
+        "--output-dir",
+        "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_221734_local_preflight/local_step_chunk_parity"
+      ],
+      "label": "local step chunk parity",
+      "return_code": 0,
+      "started_at_utc": "2026-04-30T02:17:35+00:00",
+      "stderr_log": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_221734_local_preflight/local_step_chunk_parity_stderr.log",
+      "stdout_log": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_221734_local_preflight/local_step_chunk_parity_stdout.log"
+    }
+  ],
+  "criteria": [
+    {
+      "name": "source-only prepare smoke passed",
+      "passed": true,
+      "rule": "== prepared",
+      "value": "prepared"
+    },
+    {
+      "name": "local step-vs-chunked parity passed",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    }
+  ],
+  "failure_reason": "",
+  "generated_at_utc": "2026-04-30T02:17:37+00:00",
+  "status": "pass",
+  "tier": "Tier 4.20b - Source/Simulation Preflight"
+}

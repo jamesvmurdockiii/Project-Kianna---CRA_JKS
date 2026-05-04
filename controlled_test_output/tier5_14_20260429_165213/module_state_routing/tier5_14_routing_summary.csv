@@ -1,0 +1,11 @@
+subsuite,task,model,model_family,variant_group,runs,steps,all_accuracy_mean,tail_accuracy_mean,heldout_accuracy_mean,heldout_first_accuracy_mean,first_heldout_accuracy_mean,router_accuracy_mean,primitive_accuracy_mean,composition_train_accuracy_mean,route_train_accuracy_mean,prediction_target_corr_mean,runtime_seconds_mean,feature_active_steps_sum,router_active_steps_sum,module_updates_max,router_updates_max,pre_feedback_select_steps_sum
+routing,heldout_context_routing,contextual_router_scaffold,routing_scaffold,candidate_scaffold,1,360,0.2692307692307692,1.0,,,,,0.0,,0.7,0.4146623828509827,0.0023844170000000275,,0.0,32.0,19.0,0.0
+routing,heldout_context_routing,internal_always_on_ablation,CRA_internal,internal_ablation,1,360,0.7115384615384616,0.2857142857142857,,,,,0.875,,0.45,0.5599856466952542,1.1075698749999994,,0.0,32.0,20.0,0.0
+routing,heldout_context_routing,internal_composition_routing,CRA_internal,candidate_internal,1,360,0.8461538461538461,1.0,,,,,0.875,,0.8,0.7621159620290685,1.1226071659999999,,0.0,32.0,20.0,0.0
+routing,heldout_context_routing,internal_context_shuffle_ablation,CRA_internal,internal_ablation,1,360,0.6923076923076923,0.2857142857142857,,,,,0.875,,0.4,0.4260873028476759,1.0985197499999995,,0.0,32.0,20.0,0.0
+routing,heldout_context_routing,internal_no_write_ablation,CRA_internal,internal_ablation,1,360,0.2692307692307692,0.0,,,,,0.4375,,0.0,0.008601720392334873,1.1429112920000009,,0.0,0.0,0.0,0.0
+routing,heldout_context_routing,internal_random_router_ablation,CRA_internal,internal_ablation,1,360,0.75,0.8571428571428571,,,,,0.875,,0.55,0.5424647454763221,1.1326845839999997,,0.0,32.0,20.0,0.0
+routing,heldout_context_routing,internal_router_reset_ablation,CRA_internal,internal_ablation,1,360,0.8461538461538461,1.0,,,,,0.875,,0.8,0.7621159620290685,1.0937349170000008,,0.0,32.0,20.0,0.0
+routing,heldout_context_routing,online_perceptron,linear,,1,360,0.5384615384615384,0.5714285714285714,,,,,0.5,,0.6,-0.2007831119224713,0.0026867090000006755,,0.0,0.0,0.0,0.0
+routing,heldout_context_routing,sign_persistence,rule,,1,360,0.4807692307692308,0.2857142857142857,,,,,0.5,,0.45,-0.03849001794597507,0.0025820420000002287,,0.0,0.0,0.0,0.0
+routing,heldout_context_routing,v1_8_raw_cra,CRA_internal,frozen_baseline,1,360,0.2692307692307692,0.0,,,,,0.4375,,0.0,0.008601720392334873,1.103669666000001,,0.0,0.0,0.0,0.0

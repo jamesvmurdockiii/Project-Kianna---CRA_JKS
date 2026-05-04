@@ -1,0 +1,3 @@
+backend_key,backend,seed,task,reference_runtime_mode,runtime_mode,learning_location,chunk_size_steps,reference_sim_run_calls,sim_run_calls,call_reduction_factor,same_evaluation_targets,all_accuracy_reference,all_accuracy_candidate,all_accuracy_abs_delta,tail_accuracy_reference,tail_accuracy_candidate,tail_accuracy_abs_delta,prediction_corr_with_reference,max_abs_prediction_delta,total_spikes_reference,total_spikes_candidate,total_spike_abs_delta,max_step_spike_abs_delta,spike_bin_corr_with_reference,zero_fallback,zero_failures
+nest,NEST,42,delayed_cue,step,chunked,host,5,40,8,5.0,True,0.8,0.8,0.0,1.0,1.0,0.0,1.0,0.0,1688,1688,0,0,1.0,True,True
+nest,NEST,42,delayed_cue,step,chunked,host,10,40,4,10.0,True,0.8,0.8,0.0,1.0,1.0,0.0,1.0,0.0,1688,1688,0,0,1.0,True,True

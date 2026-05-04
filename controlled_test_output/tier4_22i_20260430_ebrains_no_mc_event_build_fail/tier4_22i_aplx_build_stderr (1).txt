@@ -1,0 +1,10 @@
+/home/jovyan/spinnaker/spinnaker_tools/make/Makefile.common:18: inclusion of Makefile.common instead of spinnaker_tools.mk
+src/main.c:34:2: error: #error "No supported Spin1API multicast callback event macro found"
+   34 | #error "No supported Spin1API multicast callback event macro found"
+      |  ^~~~~
+src/main.c: In function 'c_main':
+src/main.c:128:23: error: 'CRA_MC_PACKET_EVENT' undeclared (first use in this function)
+  128 |     spin1_callback_on(CRA_MC_PACKET_EVENT, mc_packet_callback, 0);
+      |                       ^~~~~~~~~~~~~~~~~~~
+src/main.c:128:23: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Makefile:87: build/main.o] Error 1

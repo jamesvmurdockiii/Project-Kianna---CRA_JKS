@@ -1,0 +1,7 @@
+{
+  "contract": "Tier 4.22a uses these as reference traces; it does not promote new hardware behavior by itself.",
+  "tier4_20c_latest": "/Users/james/JKS:CRA/controlled_test_output/tier4_20c_latest_manifest.json",
+  "tier4_20c_manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_20c_20260430_v2_1_bridge_three_seed_hardware_pass_ingested/tier4_20c_results.json",
+  "tier4_21a_latest": "/Users/james/JKS:CRA/controlled_test_output/tier4_21a_latest_manifest.json",
+  "tier4_21a_manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_21a_20260430_keyed_context_memory_seed42_hardware_pass_ingested/tier4_21a_results.json"
+}

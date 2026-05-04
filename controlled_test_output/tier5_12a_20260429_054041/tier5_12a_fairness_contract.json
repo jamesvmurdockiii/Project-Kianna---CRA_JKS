@@ -1,0 +1,31 @@
+{
+  "fairness_rules": [
+    "same sensory stream, target stream, evaluation mask, and feedback_due_step arrays per seed",
+    "standard baselines see only the sensory stream and configured feature history",
+    "predictive_memory is a task-validation control, not a CRA mechanism or competitor",
+    "wrong_horizon_control and shuffled_target_control must fail before the task is accepted",
+    "feedback_due_step must be greater than or equal to prediction step",
+    "passing Tier 5.12a authorizes Tier 5.12b predictive mechanism testing only"
+  ],
+  "feature_history": 6,
+  "predictive_controls": [
+    "current_reflex",
+    "sign_persistence_control",
+    "rolling_majority",
+    "predictive_memory",
+    "wrong_horizon_control",
+    "shuffled_target_control"
+  ],
+  "predictive_horizon": 8,
+  "purpose": "validate predictive task pressure before testing any CRA predictive/world-model mechanism",
+  "seeds": [
+    42
+  ],
+  "selected_external_baselines": [
+    "sign_persistence",
+    "online_perceptron"
+  ],
+  "steps": 180,
+  "tasks": "hidden_regime_switching,event_stream_prediction",
+  "tier": "Tier 5.12a - Predictive Task-Pressure Validation"
+}

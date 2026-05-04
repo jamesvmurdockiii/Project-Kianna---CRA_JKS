@@ -1,0 +1,10 @@
+{
+  "canonical": false,
+  "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/v2_1_guardrail/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_results.json",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/v2_1_guardrail/v2_0_compact_regression_gate/predictive_binding_guardrail",
+  "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/v2_1_guardrail/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_report.md",
+  "status": "pass",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/v2_1_guardrail/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_summary.csv",
+  "tier": "Tier 5.17d - Predictive Preexposure Binding/Sham Repair",
+  "updated_at_utc": "2026-04-29T23:29:31+00:00"
+}

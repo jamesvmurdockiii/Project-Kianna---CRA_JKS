@@ -1,0 +1,35 @@
+[tier5.17d] task=cross_modal_binding variant=predictive_binding_preexposure seed=42
+[tier5.17d] task=cross_modal_binding variant=no_preexposure seed=42
+[tier5.17d] task=cross_modal_binding variant=target_shuffled_binding seed=42
+[tier5.17d] task=cross_modal_binding variant=fixed_history_baseline seed=42
+[tier5.17d] task=cross_modal_binding variant=oracle_latent_upper_bound seed=42
+{
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/predictive_binding_guardrail",
+  "status": "pass",
+  "summary": {
+    "candidate_min_knn_probe_accuracy": 0.9753086419753086,
+    "candidate_min_ridge_probe_accuracy": 1.0,
+    "claim_boundary": "Noncanonical software diagnostic: predictive binding preexposure under zero-label/zero-reward exposure; not hardware/on-chip representation learning or a v2.0 freeze.",
+    "expected_runs": 5,
+    "max_abs_raw_dopamine_non_oracle": 0.0,
+    "min_candidate_probe_rows": 81.0,
+    "non_oracle_label_leakage_runs": 0,
+    "observed_runs": 5,
+    "reward_leakage_runs": 0,
+    "runtime_seconds": 0.2549293749999999,
+    "sample_efficiency_wins": 1,
+    "seeds": [
+      42
+    ],
+    "tasks": [
+      "cross_modal_binding"
+    ],
+    "variants": [
+      "predictive_binding_preexposure",
+      "no_preexposure",
+      "target_shuffled_binding",
+      "fixed_history_baseline",
+      "oracle_latent_upper_bound"
+    ]
+  }
+}

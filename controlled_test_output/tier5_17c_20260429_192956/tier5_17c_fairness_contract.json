@@ -1,0 +1,39 @@
+{
+  "claim_boundary": "Software-only intrinsic preexposure diagnostic. Non-oracle variants receive no hidden labels, reward, correctness, or dopamine during preexposure. Hidden labels are used only after frozen representation generation for offline probes.",
+  "fairness_rules": [
+    "Candidate uses only visible encoder input and visible intrinsic targets such as masked-channel or temporal-continuation signals.",
+    "No non-oracle row receives latent labels during representation exposure.",
+    "No row receives task reward, correctness, or dopamine during representation exposure.",
+    "Shuffled-time, target-shuffled, and wrong-domain controls receive comparable target volume but broken temporal/binding/domain alignment.",
+    "Current-input, fixed-history, random-projection, reservoir, and STDP-only baselines test whether simple encoders or unsupervised dynamics explain the result.",
+    "Oracle latent upper bound is reported but cannot support no-leakage or promotion claims."
+  ],
+  "generated_at_utc": "2026-04-29T19:30:02+00:00",
+  "primary_objective": "intrinsic predictive preexposure",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "smoke": false,
+  "steps": 640,
+  "tasks": [
+    "masked_channel_context",
+    "long_gap_temporal_continuation",
+    "same_visible_different_latent"
+  ],
+  "tier": "Tier 5.17c - Intrinsic Predictive Preexposure",
+  "variants": [
+    "intrinsic_predictive_preexposure",
+    "no_preexposure",
+    "shuffled_time_preexposure",
+    "target_shuffled_preexposure",
+    "wrong_domain_preexposure",
+    "current_input_only",
+    "fixed_history_baseline",
+    "random_projection_history",
+    "reservoir_baseline",
+    "stdp_only_unsupervised",
+    "oracle_latent_upper_bound"
+  ]
+}

@@ -1,0 +1,838 @@
+{
+  "status": "success",
+  "elapsed_wait": 10.199999999999996,
+  "state_writes": {
+    "context": [
+      {
+        "key": "ctx_regime_0",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_1",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_2",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_3",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_4",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_5",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_6",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_7",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_8",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_9",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_10",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_11",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_12",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_13",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_14",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_15",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_16",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_17",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_18",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_19",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_20",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_21",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_22",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_23",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_24",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_25",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_26",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_27",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_28",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_29",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_30",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_31",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_32",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_33",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_34",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_35",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_36",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_37",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_38",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_39",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_40",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_41",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_42",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_43",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_44",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_45",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_46",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_47",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_48",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_49",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_50",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_51",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_52",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_53",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_54",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_55",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_56",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_57",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_58",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_59",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_60",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_61",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_62",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_63",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_64",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_65",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_66",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_67",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_68",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_69",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_70",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_71",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_72",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_73",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_74",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_75",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_76",
+        "success": true
+      },
+      {
+        "key": "ctx_regime_77",
+        "success": true
+      }
+    ],
+    "route": [
+      {
+        "key": "route_A",
+        "success": true
+      },
+      {
+        "key": "route_B",
+        "success": true
+      },
+      {
+        "key": "route_C",
+        "success": true
+      },
+      {
+        "key": "route_D",
+        "success": true
+      }
+    ],
+    "memory": [
+      {
+        "key": "mem_A",
+        "success": true
+      },
+      {
+        "key": "mem_B",
+        "success": true
+      },
+      {
+        "key": "mem_C",
+        "success": true
+      },
+      {
+        "key": "mem_D",
+        "success": true
+      }
+    ]
+  },
+  "schedule_uploads": [
+    {
+      "index": 0,
+      "success": true
+    },
+    {
+      "index": 1,
+      "success": true
+    },
+    {
+      "index": 2,
+      "success": true
+    },
+    {
+      "index": 3,
+      "success": true
+    },
+    {
+      "index": 4,
+      "success": true
+    },
+    {
+      "index": 5,
+      "success": true
+    },
+    {
+      "index": 6,
+      "success": true
+    },
+    {
+      "index": 7,
+      "success": true
+    },
+    {
+      "index": 8,
+      "success": true
+    },
+    {
+      "index": 9,
+      "success": true
+    },
+    {
+      "index": 10,
+      "success": true
+    },
+    {
+      "index": 11,
+      "success": true
+    },
+    {
+      "index": 12,
+      "success": true
+    },
+    {
+      "index": 13,
+      "success": true
+    },
+    {
+      "index": 14,
+      "success": true
+    },
+    {
+      "index": 15,
+      "success": true
+    },
+    {
+      "index": 16,
+      "success": true
+    },
+    {
+      "index": 17,
+      "success": true
+    },
+    {
+      "index": 18,
+      "success": true
+    },
+    {
+      "index": 19,
+      "success": true
+    },
+    {
+      "index": 20,
+      "success": true
+    },
+    {
+      "index": 21,
+      "success": true
+    },
+    {
+      "index": 22,
+      "success": true
+    },
+    {
+      "index": 23,
+      "success": true
+    },
+    {
+      "index": 24,
+      "success": true
+    },
+    {
+      "index": 25,
+      "success": true
+    },
+    {
+      "index": 26,
+      "success": true
+    },
+    {
+      "index": 27,
+      "success": true
+    },
+    {
+      "index": 28,
+      "success": true
+    },
+    {
+      "index": 29,
+      "success": true
+    },
+    {
+      "index": 30,
+      "success": true
+    },
+    {
+      "index": 31,
+      "success": true
+    },
+    {
+      "index": 32,
+      "success": true
+    },
+    {
+      "index": 33,
+      "success": true
+    },
+    {
+      "index": 34,
+      "success": true
+    },
+    {
+      "index": 35,
+      "success": true
+    },
+    {
+      "index": 36,
+      "success": true
+    },
+    {
+      "index": 37,
+      "success": true
+    },
+    {
+      "index": 38,
+      "success": true
+    },
+    {
+      "index": 39,
+      "success": true
+    },
+    {
+      "index": 40,
+      "success": true
+    },
+    {
+      "index": 41,
+      "success": true
+    },
+    {
+      "index": 42,
+      "success": true
+    },
+    {
+      "index": 43,
+      "success": true
+    },
+    {
+      "index": 44,
+      "success": true
+    },
+    {
+      "index": 45,
+      "success": true
+    },
+    {
+      "index": 46,
+      "success": true
+    },
+    {
+      "index": 47,
+      "success": true
+    },
+    {
+      "index": 48,
+      "success": true
+    },
+    {
+      "index": 49,
+      "success": true
+    },
+    {
+      "index": 50,
+      "success": true
+    },
+    {
+      "index": 51,
+      "success": true
+    },
+    {
+      "index": 52,
+      "success": true
+    },
+    {
+      "index": 53,
+      "success": true
+    },
+    {
+      "index": 54,
+      "success": true
+    },
+    {
+      "index": 55,
+      "success": true
+    },
+    {
+      "index": 56,
+      "success": true
+    },
+    {
+      "index": 57,
+      "success": true
+    },
+    {
+      "index": 58,
+      "success": true
+    },
+    {
+      "index": 59,
+      "success": true
+    },
+    {
+      "index": 60,
+      "success": true
+    },
+    {
+      "index": 61,
+      "success": true
+    },
+    {
+      "index": 62,
+      "success": true
+    },
+    {
+      "index": 63,
+      "success": true
+    },
+    {
+      "index": 64,
+      "success": false
+    },
+    {
+      "index": 65,
+      "success": false
+    },
+    {
+      "index": 66,
+      "success": false
+    },
+    {
+      "index": 67,
+      "success": false
+    },
+    {
+      "index": 68,
+      "success": false
+    },
+    {
+      "index": 69,
+      "success": false
+    },
+    {
+      "index": 70,
+      "success": false
+    },
+    {
+      "index": 71,
+      "success": false
+    },
+    {
+      "index": 72,
+      "success": false
+    },
+    {
+      "index": 73,
+      "success": false
+    },
+    {
+      "index": 74,
+      "success": false
+    },
+    {
+      "index": 75,
+      "success": false
+    },
+    {
+      "index": 76,
+      "success": false
+    },
+    {
+      "index": 77,
+      "success": false
+    }
+  ],
+  "run_continuous": {
+    "context": {
+      "success": true,
+      "cmd": 24,
+      "status": 0
+    },
+    "route": {
+      "success": true,
+      "cmd": 24,
+      "status": 0
+    },
+    "memory": {
+      "success": true,
+      "cmd": 24,
+      "status": 0
+    },
+    "learning": {
+      "success": true,
+      "cmd": 24,
+      "status": 0
+    }
+  },
+  "final_state": {
+    "context": {
+      "success": true,
+      "cmd": 8,
+      "status": 0,
+      "schema_version": 2,
+      "payload_len": 105,
+      "timestep": 18877,
+      "neuron_count": 0,
+      "synapse_count": 0,
+      "active_trace_count": 0,
+      "active_slots": 78,
+      "slot_writes": 78,
+      "slot_hits": 64,
+      "slot_misses": 0,
+      "slot_evictions": 0,
+      "decisions": 0,
+      "reward_events": 0,
+      "pending_created": 0,
+      "pending_matured": 0,
+      "pending_dropped": 0,
+      "active_pending": 0,
+      "readout_weight_raw": 0,
+      "readout_bias_raw": 0,
+      "readout_weight": 0.0,
+      "readout_bias": 0.0,
+      "profile_id": 4,
+      "flags": 0,
+      "lookup_requests": 0,
+      "lookup_replies": 0,
+      "stale_replies": 0,
+      "duplicate_replies": 0,
+      "timeouts": 0,
+      "commands_received": 80,
+      "schedule_length": 0,
+      "readback_bytes": 105
+    },
+    "route": {
+      "success": true,
+      "cmd": 8,
+      "status": 0,
+      "schema_version": 2,
+      "payload_len": 105,
+      "timestep": 16772,
+      "neuron_count": 0,
+      "synapse_count": 0,
+      "active_trace_count": 0,
+      "active_slots": 0,
+      "slot_writes": 0,
+      "slot_hits": 0,
+      "slot_misses": 0,
+      "slot_evictions": 0,
+      "decisions": 0,
+      "reward_events": 0,
+      "pending_created": 0,
+      "pending_matured": 0,
+      "pending_dropped": 0,
+      "active_pending": 0,
+      "readout_weight_raw": 0,
+      "readout_bias_raw": 0,
+      "readout_weight": 0.0,
+      "readout_bias": 0.0,
+      "profile_id": 5,
+      "flags": 0,
+      "lookup_requests": 0,
+      "lookup_replies": 0,
+      "stale_replies": 0,
+      "duplicate_replies": 0,
+      "timeouts": 0,
+      "commands_received": 6,
+      "schedule_length": 0,
+      "readback_bytes": 105
+    },
+    "memory": {
+      "success": true,
+      "cmd": 8,
+      "status": 0,
+      "schema_version": 2,
+      "payload_len": 105,
+      "timestep": 14667,
+      "neuron_count": 0,
+      "synapse_count": 0,
+      "active_trace_count": 0,
+      "active_slots": 0,
+      "slot_writes": 0,
+      "slot_hits": 0,
+      "slot_misses": 0,
+      "slot_evictions": 0,
+      "decisions": 0,
+      "reward_events": 0,
+      "pending_created": 0,
+      "pending_matured": 0,
+      "pending_dropped": 0,
+      "active_pending": 0,
+      "readout_weight_raw": 0,
+      "readout_bias_raw": 0,
+      "readout_weight": 0.0,
+      "readout_bias": 0.0,
+      "profile_id": 6,
+      "flags": 0,
+      "lookup_requests": 0,
+      "lookup_replies": 0,
+      "stale_replies": 0,
+      "duplicate_replies": 0,
+      "timeouts": 0,
+      "commands_received": 6,
+      "schedule_length": 0,
+      "readback_bytes": 105
+    },
+    "learning": {
+      "success": true,
+      "cmd": 8,
+      "status": 0,
+      "schema_version": 2,
+      "payload_len": 105,
+      "timestep": 12560,
+      "neuron_count": 0,
+      "synapse_count": 0,
+      "active_trace_count": 0,
+      "active_slots": 0,
+      "slot_writes": 0,
+      "slot_hits": 0,
+      "slot_misses": 0,
+      "slot_evictions": 0,
+      "decisions": 64,
+      "reward_events": 64,
+      "pending_created": 64,
+      "pending_matured": 64,
+      "pending_dropped": 0,
+      "active_pending": 0,
+      "readout_weight_raw": 33760,
+      "readout_bias_raw": -992,
+      "readout_weight": 1.0302734375,
+      "readout_bias": -0.0302734375,
+      "profile_id": 3,
+      "flags": 0,
+      "lookup_requests": 192,
+      "lookup_replies": 192,
+      "stale_replies": 0,
+      "duplicate_replies": 0,
+      "timeouts": 0,
+      "commands_received": 131,
+      "schedule_length": 78,
+      "readback_bytes": 5460
+    }
+  }
+}

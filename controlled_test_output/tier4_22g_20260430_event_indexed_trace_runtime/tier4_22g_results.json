@@ -1,0 +1,267 @@
+{
+  "artifacts": {
+    "blocker_status_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22g_20260430_event_indexed_trace_runtime/tier4_22g_blocker_status.csv",
+    "host_test_stderr": "/Users/james/JKS:CRA/controlled_test_output/tier4_22g_20260430_event_indexed_trace_runtime/tier4_22g_host_test_stderr.txt",
+    "host_test_stdout": "/Users/james/JKS:CRA/controlled_test_output/tier4_22g_20260430_event_indexed_trace_runtime/tier4_22g_host_test_stdout.txt",
+    "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_22g_20260430_event_indexed_trace_runtime/tier4_22g_results.json",
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_22g_20260430_event_indexed_trace_runtime/tier4_22g_report.md",
+    "runtime_complexity_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22g_20260430_event_indexed_trace_runtime/tier4_22g_runtime_complexity.csv",
+    "static_checks_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22g_20260430_event_indexed_trace_runtime/tier4_22g_static_checks.csv"
+  },
+  "blocker_status": [
+    {
+      "blocker_id": "SCALE-001",
+      "evidence": "pre index plus host visit-count test",
+      "prior_issue": "synapse_deliver_spike scanned every synapse per incoming spike",
+      "remaining_risk": "hardware timing still unmeasured",
+      "tier4_22g_status": "repaired_locally"
+    },
+    {
+      "blocker_id": "SCALE-002",
+      "evidence": "active trace list plus host visit-count test",
+      "prior_issue": "synapse_decay_traces_all swept every synapse every millisecond",
+      "remaining_risk": "long-trace list density must be characterized on hardware",
+      "tier4_22g_status": "repaired_locally"
+    },
+    {
+      "blocker_id": "SCALE-003",
+      "evidence": "dopamine modulation walks active trace list only",
+      "prior_issue": "synapse_modulate_all swept every synapse per dopamine event",
+      "remaining_risk": "reward-event cost scales with active traces",
+      "tier4_22g_status": "repaired_locally"
+    },
+    {
+      "blocker_id": "SCALE-004",
+      "evidence": "not targeted by 4.22g",
+      "prior_issue": "neuron_add_input uses linked-list neuron lookup",
+      "remaining_risk": "needs direct neuron id -> state index or bounded pool",
+      "tier4_22g_status": "open"
+    },
+    {
+      "blocker_id": "SCALE-005",
+      "evidence": "not targeted by 4.22g",
+      "prior_issue": "dynamic allocation/free-list fragmentation risk",
+      "remaining_risk": "needs preallocated pools/free lists before long organism runs",
+      "tier4_22g_status": "open"
+    },
+    {
+      "blocker_id": "SCALE-006",
+      "evidence": "not targeted by 4.22g",
+      "prior_issue": "READ_SPIKES exposes count/timestep only",
+      "remaining_risk": "blocks learning hardware acceptance until compact state readback exists",
+      "tier4_22g_status": "open_high"
+    },
+    {
+      "blocker_id": "SCALE-007",
+      "evidence": "not targeted by 4.22g",
+      "prior_issue": "single-core proof-of-concept state",
+      "remaining_risk": "needs shard contract before scaling across cores/chips",
+      "tier4_22g_status": "open"
+    }
+  ],
+  "criteria": [
+    {
+      "name": "runner revision current",
+      "note": "",
+      "passed": true,
+      "rule": "expected current source",
+      "value": "tier4_22g_event_indexed_trace_runtime_20260430_0000"
+    },
+    {
+      "name": "Tier 4.22f0 audit pass exists",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "custom C host tests pass",
+      "note": "",
+      "passed": true,
+      "rule": "returncode == 0 and ALL TESTS PASSED",
+      "value": 0
+    },
+    {
+      "name": "all static optimization checks pass",
+      "note": "",
+      "passed": true,
+      "rule": "all pass",
+      "value": "12/12"
+    },
+    {
+      "name": "SCALE-001/002/003 repaired locally",
+      "note": "",
+      "passed": true,
+      "rule": "== 3",
+      "value": 3
+    },
+    {
+      "name": "hardware learning still blocked by readback",
+      "note": "",
+      "passed": true,
+      "rule": ">= 1",
+      "value": 1
+    },
+    {
+      "name": "no hardware/speedup overclaim",
+      "note": "",
+      "passed": true,
+      "rule": "boundary explicit",
+      "value": "local C optimization only"
+    }
+  ],
+  "failure_reason": "",
+  "generated_at_utc": "2026-04-30T19:10:43+00:00",
+  "host_test": {
+    "command": "make -C /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime clean-host test",
+    "returncode": 0,
+    "stderr_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22g_20260430_event_indexed_trace_runtime/tier4_22g_host_test_stderr.txt",
+    "stdout_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22g_20260430_event_indexed_trace_runtime/tier4_22g_host_test_stdout.txt"
+  },
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_22g_20260430_event_indexed_trace_runtime",
+  "runtime_complexity": [
+    {
+      "after_4_22g": "O(out_degree(pre_id)) per incoming spike",
+      "before_4_22g": "O(S) per incoming spike",
+      "function": "synapse_deliver_spike",
+      "hardware_claim": "not yet measured"
+    },
+    {
+      "after_4_22g": "O(active_traces) per timer tick",
+      "before_4_22g": "O(S) per timer tick",
+      "function": "synapse_decay_traces_all",
+      "hardware_claim": "not yet measured"
+    },
+    {
+      "after_4_22g": "O(active_traces) per dopamine event",
+      "before_4_22g": "O(S) per dopamine event",
+      "function": "synapse_modulate_all",
+      "hardware_claim": "not yet measured"
+    },
+    {
+      "after_4_22g": "unchanged",
+      "before_4_22g": "O(N) per delivered input",
+      "function": "neuron_add_input/neuron_find",
+      "hardware_claim": "open blocker"
+    },
+    {
+      "after_4_22g": "unchanged",
+      "before_4_22g": "count/timestep only",
+      "function": "_handle_read_spikes",
+      "hardware_claim": "open blocker"
+    }
+  ],
+  "static_checks": [
+    {
+      "name": "pre index type exists",
+      "note": "",
+      "passed": true,
+      "rule": "source defines pre-indexed adjacency",
+      "value": "pre_entry_t"
+    },
+    {
+      "name": "synapse stores post id",
+      "note": "",
+      "passed": true,
+      "rule": "needed for outgoing pre-index delivery",
+      "value": "post_id"
+    },
+    {
+      "name": "dual index links exist",
+      "note": "",
+      "passed": true,
+      "rule": "synapse_t has post and pre links",
+      "value": "next_post/next_pre"
+    },
+    {
+      "name": "active trace list exists",
+      "note": "",
+      "passed": true,
+      "rule": "source maintains active trace list",
+      "value": "g_active_trace_head"
+    },
+    {
+      "name": "spike delivery uses pre index",
+      "note": "",
+      "passed": true,
+      "rule": "deliver path starts from pre index",
+      "value": "_find_pre(pre_id)"
+    },
+    {
+      "name": "spike delivery no longer scans post index",
+      "note": "",
+      "passed": true,
+      "rule": "absent from synapse_deliver_spike body",
+      "value": "g_post_index"
+    },
+    {
+      "name": "decay uses active trace list",
+      "note": "",
+      "passed": true,
+      "rule": "decay path starts from active trace head",
+      "value": "g_active_trace_head"
+    },
+    {
+      "name": "decay no longer scans post index",
+      "note": "",
+      "passed": true,
+      "rule": "absent from synapse_decay_traces_all body",
+      "value": "g_post_index"
+    },
+    {
+      "name": "dopamine uses active trace list",
+      "note": "",
+      "passed": true,
+      "rule": "modulation path starts from active trace head",
+      "value": "g_active_trace_head"
+    },
+    {
+      "name": "dopamine no longer scans post index",
+      "note": "",
+      "passed": true,
+      "rule": "absent from synapse_modulate_all body",
+      "value": "g_post_index"
+    },
+    {
+      "name": "diagnostic visit counters exist",
+      "note": "",
+      "passed": true,
+      "rule": "host tests can prove bounded visits",
+      "value": "synapse_last_*_visit_count"
+    },
+    {
+      "name": "host test covers indexed delivery",
+      "note": "",
+      "passed": true,
+      "rule": "test_runtime.c exercises new path",
+      "value": "test_synapse_indexed_delivery_and_active_traces"
+    }
+  ],
+  "status": "pass",
+  "summary": {
+    "claim_boundary": "Local custom-C optimization only; not hardware, speedup, full CRA parity, or final on-chip learning evidence.",
+    "custom_c_role": "only optimized CRA-specific on-chip substrate mechanics that PyNN cannot express or scale directly",
+    "custom_runtime_hardware_learning_allowed": false,
+    "host_test_returncode": 0,
+    "host_tests_passed": true,
+    "next_step_if_passed": "Tier 4.22h compact state readback plus build/load/command acceptance before custom-runtime learning hardware.",
+    "open_scale_blockers": [
+      "SCALE-004",
+      "SCALE-005",
+      "SCALE-006",
+      "SCALE-007"
+    ],
+    "pynn_spynnaker_role": "primary hardware construction/mapping/run layer for supported primitives",
+    "repaired_scale_blockers": [
+      "SCALE-001",
+      "SCALE-002",
+      "SCALE-003"
+    ],
+    "runner_revision": "tier4_22g_event_indexed_trace_runtime_20260430_0000",
+    "static_checks_passed": 12,
+    "static_checks_total": 12,
+    "tier4_22f0_manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit/tier4_22f0_results.json",
+    "tier4_22f0_status": "pass"
+  },
+  "tier": "Tier 4.22g - Event-Indexed Active-Trace Runtime"
+}

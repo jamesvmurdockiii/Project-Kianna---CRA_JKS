@@ -1,0 +1,34 @@
+{
+  "classification": "empirical_spynnaker_run_failed_no_machine_version",
+  "command_format": "jobmanager_direct_command_ok",
+  "env_flags": {
+    "EBRAINS_JOB_ID": false,
+    "JOB_ID": false,
+    "REMOTE_SPINNAKER_URL": false,
+    "SLURM_JOB_ID": false,
+    "SPALLOC_SERVER": false,
+    "SPINNAKER_MACHINE": false
+  },
+  "failure_reason": "task hard_noisy_switching seed 42 raised SpinnMachineException: No version with cfg [Machine] values version=None, machine_name=None, spalloc_server=None, remote_spinnaker_url=None, virtual_board=False, width=None, and height=None",
+  "hardware_run_attempted": true,
+  "interpretation": "sPyNNaker imported and started mapping, but no Machine version/target was configured, so PACMAN could not partition the graph.",
+  "no_require_real_hardware_propagated": true,
+  "not_cra_learning_failure": true,
+  "not_source_layout_failure": true,
+  "runs_completed": 0,
+  "spynnaker_config": {
+    "exists": true,
+    "height": null,
+    "machineName": null,
+    "mode": null,
+    "path": "/home/jovyan/.spynnaker.cfg",
+    "remote_spinnaker_url": null,
+    "spalloc_group": null,
+    "spalloc_port": null,
+    "spalloc_server": null,
+    "spalloc_user": null,
+    "version": null,
+    "virtual_board": null,
+    "width": null
+  }
+}

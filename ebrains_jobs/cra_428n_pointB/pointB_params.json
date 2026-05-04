@@ -1,0 +1,12 @@
+{
+  "steps": 160,
+  "seed": 42,
+  "amplitude": 1.0,
+  "hard_period": 2,
+  "min_delay": 3,
+  "max_delay": 5,
+  "noise_prob": 0.2,
+  "sensory_noise_fraction": 0.25,
+  "min_switch_interval": 32,
+  "max_switch_interval": 48
+}

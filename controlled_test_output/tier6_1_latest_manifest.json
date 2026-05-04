@@ -1,0 +1,22 @@
+{
+  "generated_at_utc": "2026-05-04T00:05:00.998143+00:00",
+  "source_generated_at_utc": "2026-04-28T05:59:44+00:00",
+  "registry_entry_id": "tier6_1_lifecycle_self_scaling",
+  "tier": "Tier 6.1 - Software Lifecycle / Self-Scaling Benchmark",
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier6_1_20260428_012109",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier6_1_20260428_012109/tier6_1_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier6_1_20260428_012109/tier6_1_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier6_1_20260428_012109/tier6_1_summary.csv",
+  "canonical": true,
+  "claim": "Lifecycle-enabled CRA expands from fixed initial populations with clean lineage tracking and shows hard_noisy_switching advantage regimes versus same-initial fixed-N controls.",
+  "caveat": "Controlled software lifecycle evidence only; growth is cleavage-dominated with one adult birth and zero deaths, so this is not full adult turnover, not sham-control proof, not hardware lifecycle evidence, and not external-baseline superiority.",
+  "claim_boundary": [
+    "Tier 6.1 is controlled software lifecycle/self-scaling evidence, not hardware evidence.",
+    "The run used backend NEST, seeds 42/43/44, steps=960, tasks hard_noisy_switching and delayed_cue, and cases fixed4/fixed8/fixed16/life4_16/life8_32/life16_64.",
+    "Lifecycle cases produced 75 new-polyp events with clean lineage integrity and no aggregate extinction.",
+    "Event-type analysis shows 74 cleavage events, one adult birth event, and zero death events; cite this as lifecycle expansion/self-scaling evidence, not full adult birth/death turnover.",
+    "The lifecycle advantage appears on hard_noisy_switching for life4_16 and life8_32 versus same-initial fixed controls; delayed_cue saturated for fixed and lifecycle cases.",
+    "Do not cite Tier 6.1 as hardware lifecycle evidence, sham-control proof, external-baseline superiority, native on-chip lifecycle, continuous runtime, compositionality, or world modeling."
+  ]
+}

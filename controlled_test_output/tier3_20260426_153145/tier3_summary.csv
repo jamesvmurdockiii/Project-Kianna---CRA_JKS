@@ -1,0 +1,4 @@
+test_name,status,failure_reason,intact_tail_accuracy_mean,ablated_tail_accuracy_mean,delta_tail_accuracy_mean,ablated_max_abs_dopamine_mean,tail_accuracy_delta_mean,intact_births_sum,ablated_births_sum,final_alive_delta_mean
+no_dopamine_ablation,pass,,0.837037037037037,0.0,0.837037037037037,0.0,,,,
+no_plasticity_ablation,pass,,0.837037037037037,0.0,0.837037037037037,0.862910098764195,,,,
+no_trophic_selection_ablation,pass,,0.9575757575757576,0.8303030303030302,,,0.12727272727272743,30,0,10.0

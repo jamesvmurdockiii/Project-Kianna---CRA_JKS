@@ -1,0 +1,334 @@
+{
+  "artifacts": {
+    "comparisons_csv": "controlled_test_output/_tier5_2_smoke/tier5_2_comparisons.csv",
+    "cra_edges_png": "controlled_test_output/_tier5_2_smoke/tier5_2_cra_edges_by_length.png",
+    "curve_analysis_csv": "controlled_test_output/_tier5_2_smoke/tier5_2_curve_analysis.csv",
+    "learning_curves_png": "controlled_test_output/_tier5_2_smoke/tier5_2_learning_curves.png",
+    "report_md": "controlled_test_output/_tier5_2_smoke/tier5_2_report.md",
+    "runtime_png": "controlled_test_output/_tier5_2_smoke/tier5_2_runtime_by_length.png",
+    "summary_csv": "controlled_test_output/_tier5_2_smoke/tier5_2_summary.csv"
+  },
+  "backend": "mock",
+  "command": "experiments/tier5_learning_curve.py --backend mock --seed-count 1 --run-lengths 12 --tasks sensor_control --models cra,random_sign --output-dir controlled_test_output/_tier5_2_smoke --stop-on-fail",
+  "generated_at_utc": "2026-04-27T03:44:52+00:00",
+  "output_dir": "controlled_test_output/_tier5_2_smoke",
+  "result": {
+    "artifacts": {
+      "comparisons_csv": "controlled_test_output/_tier5_2_smoke/tier5_2_comparisons.csv",
+      "cra_edges_png": "controlled_test_output/_tier5_2_smoke/tier5_2_cra_edges_by_length.png",
+      "curve_analysis_csv": "controlled_test_output/_tier5_2_smoke/tier5_2_curve_analysis.csv",
+      "learning_curves_png": "controlled_test_output/_tier5_2_smoke/tier5_2_learning_curves.png",
+      "runtime_png": "controlled_test_output/_tier5_2_smoke/tier5_2_runtime_by_length.png",
+      "steps12_sensor_control_cra_seed42_timeseries_csv": "controlled_test_output/_tier5_2_smoke/steps12_sensor_control_cra_seed42_timeseries.csv",
+      "steps12_sensor_control_random_sign_seed42_timeseries_csv": "controlled_test_output/_tier5_2_smoke/steps12_sensor_control_random_sign_seed42_timeseries.csv",
+      "summary_csv": "controlled_test_output/_tier5_2_smoke/tier5_2_summary.csv"
+    },
+    "criteria": [
+      {
+        "name": "full run-length/task/model/seed matrix completed",
+        "note": "",
+        "operator": "==",
+        "passed": true,
+        "threshold": 2,
+        "value": 2
+      },
+      {
+        "name": "all requested run lengths represented",
+        "note": "",
+        "operator": "==",
+        "passed": true,
+        "threshold": [
+          12
+        ],
+        "value": [
+          12
+        ]
+      },
+      {
+        "name": "all aggregate curve cells produced",
+        "note": "",
+        "operator": "==",
+        "passed": true,
+        "threshold": 2,
+        "value": 2
+      },
+      {
+        "name": "task-level learning-curve interpretations produced",
+        "note": "",
+        "operator": "==",
+        "passed": true,
+        "threshold": 1,
+        "value": 1
+      },
+      {
+        "name": "runtime recorded for every aggregate cell",
+        "note": "",
+        "operator": "==",
+        "passed": true,
+        "threshold": 2,
+        "value": 2
+      }
+    ],
+    "failure_reason": "",
+    "name": "learning_curve_run_length_sweep",
+    "status": "pass",
+    "summary": {
+      "aggregates": [
+        {
+          "accuracy_improvement_mean": null,
+          "accuracy_improvement_min": null,
+          "accuracy_improvement_std": null,
+          "all_accuracy_mean": 0.0,
+          "all_accuracy_min": 0.0,
+          "all_accuracy_std": 0.0,
+          "display_name": "Sensor Control",
+          "domain": "sensor_control",
+          "early_accuracy_mean": 0.0,
+          "early_accuracy_min": 0.0,
+          "early_accuracy_std": 0.0,
+          "evaluation_count_mean": 2.0,
+          "evaluation_count_min": 2.0,
+          "evaluation_count_std": 0.0,
+          "final_n_alive_mean": 8.0,
+          "final_n_alive_min": 8.0,
+          "final_n_alive_std": 0.0,
+          "max_abs_dopamine_mean": 0.0,
+          "max_abs_dopamine_min": 0.0,
+          "max_abs_dopamine_std": 0.0,
+          "max_abs_prediction_mean": 0.07086635087118909,
+          "max_abs_prediction_min": 0.07086635087118909,
+          "max_abs_prediction_std": 0.0,
+          "max_recovery_steps": null,
+          "mean_abs_dopamine_mean": 0.0,
+          "mean_abs_dopamine_min": 0.0,
+          "mean_abs_dopamine_std": 0.0,
+          "mean_abs_prediction_mean": 0.00837832350276572,
+          "mean_abs_prediction_min": 0.00837832350276572,
+          "mean_abs_prediction_std": 0.0,
+          "mean_recovery_steps": null,
+          "model": "cra",
+          "model_family": "CRA",
+          "prediction_target_corr_mean": null,
+          "prediction_target_corr_min": null,
+          "prediction_target_corr_std": null,
+          "run_length_steps": 12,
+          "runs": 1,
+          "runtime_seconds_mean": 0.03968154200000029,
+          "runtime_seconds_min": 0.03968154200000029,
+          "runtime_seconds_std": 0.0,
+          "seeds": [
+            42
+          ],
+          "tail_accuracy_mean": null,
+          "tail_accuracy_min": null,
+          "tail_accuracy_std": null,
+          "tail_prediction_target_corr_mean": null,
+          "tail_prediction_target_corr_min": null,
+          "tail_prediction_target_corr_std": null,
+          "task": "sensor_control",
+          "total_births_mean": 0.0,
+          "total_births_min": 0.0,
+          "total_births_std": 0.0,
+          "total_deaths_mean": 0.0,
+          "total_deaths_min": 0.0,
+          "total_deaths_std": 0.0
+        },
+        {
+          "accuracy_improvement_mean": null,
+          "accuracy_improvement_min": null,
+          "accuracy_improvement_std": null,
+          "all_accuracy_mean": 0.5,
+          "all_accuracy_min": 0.5,
+          "all_accuracy_std": 0.0,
+          "display_name": "Sensor Control",
+          "domain": "sensor_control",
+          "early_accuracy_mean": 1.0,
+          "early_accuracy_min": 1.0,
+          "early_accuracy_std": 0.0,
+          "evaluation_count_mean": 2.0,
+          "evaluation_count_min": 2.0,
+          "evaluation_count_std": 0.0,
+          "final_n_alive_mean": null,
+          "final_n_alive_min": null,
+          "final_n_alive_std": null,
+          "max_abs_dopamine_mean": null,
+          "max_abs_dopamine_min": null,
+          "max_abs_dopamine_std": null,
+          "max_abs_prediction_mean": 1.0,
+          "max_abs_prediction_min": 1.0,
+          "max_abs_prediction_std": 0.0,
+          "max_recovery_steps": null,
+          "mean_abs_dopamine_mean": null,
+          "mean_abs_dopamine_min": null,
+          "mean_abs_dopamine_std": null,
+          "mean_abs_prediction_mean": 1.0,
+          "mean_abs_prediction_min": 1.0,
+          "mean_abs_prediction_std": 0.0,
+          "mean_recovery_steps": null,
+          "model": "random_sign",
+          "model_family": "chance",
+          "prediction_target_corr_mean": null,
+          "prediction_target_corr_min": null,
+          "prediction_target_corr_std": null,
+          "run_length_steps": 12,
+          "runs": 1,
+          "runtime_seconds_mean": 0.0007618339999999613,
+          "runtime_seconds_min": 0.0007618339999999613,
+          "runtime_seconds_std": 0.0,
+          "seeds": [
+            42
+          ],
+          "tail_accuracy_mean": null,
+          "tail_accuracy_min": null,
+          "tail_accuracy_std": null,
+          "tail_prediction_target_corr_mean": null,
+          "tail_prediction_target_corr_min": null,
+          "tail_prediction_target_corr_std": null,
+          "task": "sensor_control",
+          "total_births_mean": null,
+          "total_births_min": null,
+          "total_births_std": null,
+          "total_deaths_mean": null,
+          "total_deaths_min": null,
+          "total_deaths_std": null
+        }
+      ],
+      "backend": "mock",
+      "claim_boundary": "Controlled software learning-curve characterization only; not hardware evidence and not proof that CRA wins every task.",
+      "comparisons": [
+        {
+          "best_external_abs_corr_mean": 0.0,
+          "best_external_corr_model": "random_sign",
+          "best_external_tail_accuracy_mean": null,
+          "best_external_tail_model": "random_sign",
+          "cra_abs_corr_mean": 0.0,
+          "cra_abs_corr_minus_best_external": 0.0,
+          "cra_abs_corr_minus_external_median": 0.0,
+          "cra_all_accuracy_mean": 0.0,
+          "cra_runtime_minus_external_median_seconds": 0.03891970800000033,
+          "cra_runtime_seconds_mean": 0.03968154200000029,
+          "cra_tail_accuracy_mean": null,
+          "cra_tail_minus_best_external": 0.0,
+          "cra_tail_minus_external_median": 0.0,
+          "external_median_abs_corr": 0.0,
+          "external_median_runtime_seconds": 0.0007618339999999613,
+          "external_median_tail_accuracy": 0.0,
+          "run_length_steps": 12,
+          "task": "sensor_control"
+        }
+      ],
+      "curve_analysis": [
+        {
+          "abs_corr_edge_slope_normalized": null,
+          "best_external_tail_at_final_length": null,
+          "best_external_tail_model_at_final_length": "random_sign",
+          "classification": "mixed_or_neutral",
+          "cra_tail_at_final_length": null,
+          "final_cra_abs_corr_minus_external_median": 0.0,
+          "final_cra_tail_minus_external_median": 0.0,
+          "final_median_recovery_minus_cra": 0.0,
+          "initial_cra_tail_minus_external_median": 0.0,
+          "max_run_length_steps": 12,
+          "min_run_length_steps": 12,
+          "recovery_edge_slope_normalized": null,
+          "tail_edge_slope_normalized": null,
+          "task": "sensor_control"
+        }
+      ],
+      "models": [
+        "cra",
+        "random_sign"
+      ],
+      "run_lengths": [
+        12
+      ],
+      "runtime_seconds": 0.8333640829999998,
+      "seeds": [
+        42
+      ],
+      "tasks": [
+        "sensor_control"
+      ],
+      "tier_summary": {
+        "claim_boundary": "Controlled software learning-curve characterization only; not hardware evidence and not a claim that CRA wins every task.",
+        "expected_curve_cells": 2,
+        "expected_runs": 2,
+        "final_advantage_task_count": 0,
+        "final_advantage_tasks": [],
+        "final_run_length_steps": 12,
+        "models": [
+          "cra",
+          "random_sign"
+        ],
+        "observed_curve_cells": 2,
+        "observed_run_lengths": [
+          12
+        ],
+        "observed_runs": 2,
+        "run_lengths": [
+          12
+        ],
+        "seeds": [
+          42
+        ],
+        "task_classifications": {
+          "sensor_control": "mixed_or_neutral"
+        },
+        "tasks": [
+          "sensor_control"
+        ]
+      }
+    }
+  },
+  "status": "pass",
+  "summary": {
+    "backend": "mock",
+    "claim_boundary": "Controlled software learning-curve characterization only; not hardware evidence and not a claim that CRA wins every task.",
+    "curve_analysis": [
+      {
+        "abs_corr_edge_slope_normalized": null,
+        "best_external_tail_at_final_length": null,
+        "best_external_tail_model_at_final_length": "random_sign",
+        "classification": "mixed_or_neutral",
+        "cra_tail_at_final_length": null,
+        "final_cra_abs_corr_minus_external_median": 0.0,
+        "final_cra_tail_minus_external_median": 0.0,
+        "final_median_recovery_minus_cra": 0.0,
+        "initial_cra_tail_minus_external_median": 0.0,
+        "max_run_length_steps": 12,
+        "min_run_length_steps": 12,
+        "recovery_edge_slope_normalized": null,
+        "tail_edge_slope_normalized": null,
+        "task": "sensor_control"
+      }
+    ],
+    "expected_curve_cells": 2,
+    "expected_runs": 2,
+    "final_advantage_task_count": 0,
+    "final_advantage_tasks": [],
+    "final_run_length_steps": 12,
+    "models": [
+      "cra",
+      "random_sign"
+    ],
+    "observed_curve_cells": 2,
+    "observed_run_lengths": [
+      12
+    ],
+    "observed_runs": 2,
+    "run_lengths": [
+      12
+    ],
+    "runtime_seconds": 0.8333640829999998,
+    "seeds": [
+      42
+    ],
+    "task_classifications": {
+      "sensor_control": "mixed_or_neutral"
+    },
+    "tasks": [
+      "sensor_control"
+    ]
+  },
+  "tier": "Tier 5.2 - Learning Curve / Run-Length Sweep"
+}

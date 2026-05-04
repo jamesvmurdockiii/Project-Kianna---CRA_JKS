@@ -1,0 +1,3 @@
+child,status,return_code,runtime_seconds,manifest_path,output_dir,failure_reason
+v1_8_compact_regression,pass,0,599.110544583,/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_160245/v1_8_compact_regression/tier5_12d_results.json,/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_160245/v1_8_compact_regression,
+v1_9_composition_routing_guardrail,fail,0,816.504465417,/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_160245/v1_9_composition_routing_guardrail/tier5_13c_results.json,/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_160245/v1_9_composition_routing_guardrail,missing manifest: /Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_160245/v1_9_composition_routing_guardrail/tier5_13c_results.json

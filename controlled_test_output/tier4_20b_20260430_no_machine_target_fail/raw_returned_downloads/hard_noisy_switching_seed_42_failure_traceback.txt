@@ -1,0 +1,51 @@
+Traceback (most recent call last):
+  File "/tmp/job17535888640787705408.tmp/CRA_TIER4_20B_SOURCE/experiments/tier4_harder_spinnaker_capsule.py", line 1216, in run_hardware
+    rows, summary = run_chunked_spinnaker_task_seed(task_name=task_name, seed=seed, args=args)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/job17535888640787705408.tmp/CRA_TIER4_20B_SOURCE/experiments/tier4_harder_spinnaker_capsule.py", line 590, in run_chunked_spinnaker_task_seed
+    sim.run(float(stop - start) * dt_ms)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/spinnaker/lib/python3.13/site-packages/pyNN/spiNNaker/__init__.py", line 690, in run
+    return __pynn["run"](simtime, callbacks)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/spinnaker/lib/python3.13/site-packages/pyNN/common/control.py", line 114, in run
+    return run_until(simulator.state.t + simtime, callbacks)
+  File "/home/jovyan/spinnaker/lib/python3.13/site-packages/pyNN/common/control.py", line 96, in run_until
+    simulator.state.run_until(time_point)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/jovyan/spinnaker/sPyNNaker/spynnaker/pyNN/spinnaker.py", line 175, in run_until
+    self._clear_and_run(tstop - self.t)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/jovyan/spinnaker/sPyNNaker/spynnaker/pyNN/spinnaker.py", line 146, in _clear_and_run
+    super(SpiNNaker, self).run(run_time, sync_time)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/spinnaker/SpiNNFrontEndCommon/spinn_front_end_common/interface/abstract_spinnaker_base.py", line 363, in run
+    self._run(run_time, sync_time)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/spinnaker/SpiNNFrontEndCommon/spinn_front_end_common/interface/abstract_spinnaker_base.py", line 437, in _run
+    self.__run(run_time, sync_time)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/spinnaker/SpiNNFrontEndCommon/spinn_front_end_common/interface/abstract_spinnaker_base.py", line 518, in __run
+    self._do_mapping(total_run_time, n_machine_time_steps)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/spinnaker/SpiNNFrontEndCommon/spinn_front_end_common/interface/abstract_spinnaker_base.py", line 1274, in _do_mapping
+    self._execute_splitter_partitioner()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/jovyan/spinnaker/SpiNNFrontEndCommon/spinn_front_end_common/interface/abstract_spinnaker_base.py", line 834, in _execute_splitter_partitioner
+    self._data_writer.set_n_chips_in_graph(splitter_partitioner())
+                                           ~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/jovyan/spinnaker/PACMAN/pacman/operations/partition_algorithms/splitter_partitioner.py", line 33, in splitter_partitioner
+    chip_counter = ChipCounter()
+  File "/home/jovyan/spinnaker/PACMAN/pacman/utilities/utility_objs/chip_counter.py", line 44, in __init__
+    version = PacmanDataView.get_machine_version()
+  File "/home/jovyan/spinnaker/SpiNNMachine/spinn_machine/data/machine_data_view.py", line 278, in get_machine_version
+    cls.__data._machine_version = version_factory()
+                                  ~~~~~~~~~~~~~~~^^
+  File "/home/jovyan/spinnaker/SpiNNMachine/spinn_machine/version/version_factory.py", line 70, in version_factory
+    raise_version_error("No version", None)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/spinnaker/SpiNNMachine/spinn_machine/version/version_factory.py", line 202, in raise_version_error
+    raise SpinnMachineException(
+    ...<2 lines>...
+        f"{virtual_board=}, {width=}, and {height=}")
+spinn_machine.exceptions.SpinnMachineException: No version with cfg [Machine] values version=None, machine_name=None, spalloc_server=None, remote_spinnaker_url=None, virtual_board=False, width=None, and height=None

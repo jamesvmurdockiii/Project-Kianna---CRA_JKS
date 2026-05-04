@@ -1,0 +1,16 @@
+{
+  "amplitude": 0.01,
+  "claim_boundary": "Capsule prep is not a hardware pass. A pass requires run-hardware mode on a real SpiNNaker target with zero backend fallbacks.",
+  "dt_seconds": 0.05,
+  "population_size": 8,
+  "seed": 42,
+  "steps": 120,
+  "task": "fixed_pattern",
+  "thresholds": {
+    "all_accuracy_threshold": 0.65,
+    "corr_threshold": 0.6,
+    "tail_accuracy_threshold": 0.75
+  },
+  "tier": "Tier 4.13 SpiNNaker Hardware Capsule",
+  "timestep_ms": 1.0
+}

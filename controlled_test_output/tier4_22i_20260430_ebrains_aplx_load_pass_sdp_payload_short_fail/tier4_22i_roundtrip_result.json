@@ -1,0 +1,23 @@
+{
+  "birth_1_ok": false,
+  "birth_2_ok": false,
+  "create_synapse_ok": false,
+  "dest_cpu": 4,
+  "dest_x": 0,
+  "dest_y": 0,
+  "dopamine_ok": false,
+  "hostname": "10.11.194.49",
+  "reset_ok": false,
+  "runtime_seconds": 0.15224636299535632,
+  "state_after_mutation": {
+    "payload_len": 2,
+    "reason": "payload_too_short",
+    "success": false
+  },
+  "state_after_reset": {
+    "payload_len": 2,
+    "reason": "payload_too_short",
+    "success": false
+  },
+  "status": "fail"
+}

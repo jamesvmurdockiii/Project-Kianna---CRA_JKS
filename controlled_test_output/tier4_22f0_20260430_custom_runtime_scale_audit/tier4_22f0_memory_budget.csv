@@ -1,0 +1,6 @@
+component,bound,configured_count,approx_bytes_each,approx_total_bytes,scale_note
+neurons,MAX_NEURONS,1024,52,53248,current linked-list allocation; production should use bounded pool/index
+synapses,MAX_SYNAPSES,8192,20,163840,current post-list allocation; production needs pre-index and active-trace metadata
+context_slots,MAX_CONTEXT_SLOTS,8,20,160,static bounded state; acceptable at current scaffold size
+pending_horizons,MAX_PENDING_HORIZONS,128,16,2048,static bounded no-leak delayed-credit queue
+state_summary,one per runtime instance,1,72,72,compact summary state; should be expanded intentionally for readback

@@ -1,0 +1,282 @@
+{
+  "schema_version": "1.0",
+  "entry_id": "tier4_15_spinnaker_hardware_multiseed_repeat",
+  "tier": "Tier 4.15 - SpiNNaker Hardware Multi-Seed Repeat",
+  "status": "pass",
+  "mode": "run-hardware",
+  "source_generated_at_utc": "2026-04-27T02:48:50+00:00",
+  "imported_at_utc": "2026-04-27T02:56:39.454053+00:00",
+  "source_output_dir": null,
+  "canonical_output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_15_20260427_030501_hardware_pass",
+  "claim": "The minimal fixed-pattern CRA SpiNNaker hardware capsule repeats across seeds 42, 43, and 44 with zero fallback/failures and consistent learning metrics.",
+  "claim_boundary": [
+    "Repeatability evidence for the minimal fixed-pattern hardware capsule only.",
+    "N=8 fixed population, 120 steps, seeds 42/43/44.",
+    "Not a harder-task hardware result, not population scaling on hardware, and not full CRA hardware deployment.",
+    "hardware_target_configured is false because local/JobManager environment detection did not expose a target flag; accepted because hardware_run_attempted is true, pyNN.spiNNaker ran, fallback/failures are zero, and real spike readback is nonzero for every seed."
+  ],
+  "summary_metrics": {
+    "all_accuracy_max": 0.9747899159663865,
+    "all_accuracy_mean": 0.9747899159663865,
+    "all_accuracy_min": 0.9747899159663865,
+    "all_accuracy_std": 0.0,
+    "all_seed_statuses_pass": true,
+    "backend": "pyNN.spiNNaker",
+    "failure_diagnostics": {},
+    "failure_reason": "",
+    "final_mean_readout_weight_max": -10.087745609748552,
+    "final_mean_readout_weight_mean": -10.549574832999506,
+    "final_mean_readout_weight_min": -10.826239057066477,
+    "final_mean_readout_weight_std": 0.40256390874615333,
+    "final_n_alive_max": 8.0,
+    "final_n_alive_mean": 8.0,
+    "final_n_alive_min": 8.0,
+    "final_n_alive_std": 0.0,
+    "hardware_run_attempted": true,
+    "hardware_target_configured": false,
+    "jobmanager_cli": null,
+    "mean_step_spikes_max": 2462.675,
+    "mean_step_spikes_mean": 2425.8638888888886,
+    "mean_step_spikes_min": 2367.95,
+    "mean_step_spikes_std": 50.76614845252416,
+    "mode": "run-hardware",
+    "prediction_target_corr_max": 0.9288690921539946,
+    "prediction_target_corr_mean": 0.915035900980274,
+    "prediction_target_corr_min": 0.8917325875598855,
+    "prediction_target_corr_std": 0.02029882767285333,
+    "requested_seeds": [
+      42,
+      43,
+      44
+    ],
+    "runs": 3,
+    "runtime_seconds_max": 884.8983335739467,
+    "runtime_seconds_mean": 873.6344163606409,
+    "runtime_seconds_min": 865.3982471250929,
+    "runtime_seconds_std": 10.096473950880362,
+    "seed_statuses": {
+      "42": "pass",
+      "43": "pass",
+      "44": "pass"
+    },
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "sim_run_failures_max": 0.0,
+    "sim_run_failures_mean": 0.0,
+    "sim_run_failures_min": 0.0,
+    "sim_run_failures_std": 0.0,
+    "sim_run_failures_sum": 0,
+    "summary_read_failures_max": 0.0,
+    "summary_read_failures_mean": 0.0,
+    "summary_read_failures_min": 0.0,
+    "summary_read_failures_std": 0.0,
+    "summary_read_failures_sum": 0,
+    "synthetic_fallbacks_max": 0.0,
+    "synthetic_fallbacks_mean": 0.0,
+    "synthetic_fallbacks_min": 0.0,
+    "synthetic_fallbacks_std": 0.0,
+    "synthetic_fallbacks_sum": 0,
+    "tail_accuracy_max": 1.0,
+    "tail_accuracy_mean": 1.0,
+    "tail_accuracy_min": 1.0,
+    "tail_accuracy_std": 0.0,
+    "tail_prediction_target_corr_max": 0.9999935839112062,
+    "tail_prediction_target_corr_mean": 0.9999901037892215,
+    "tail_prediction_target_corr_min": 0.9999839178111984,
+    "tail_prediction_target_corr_std": 5.37118376286853e-06,
+    "total_births_max": 0.0,
+    "total_births_mean": 0.0,
+    "total_births_min": 0.0,
+    "total_births_std": 0.0,
+    "total_births_sum": 0,
+    "total_deaths_max": 0.0,
+    "total_deaths_mean": 0.0,
+    "total_deaths_min": 0.0,
+    "total_deaths_std": 0.0,
+    "total_deaths_sum": 0,
+    "total_step_spikes_max": 295521.0,
+    "total_step_spikes_mean": 291103.6666666667,
+    "total_step_spikes_min": 284154.0,
+    "total_step_spikes_std": 6091.937814302878
+  },
+  "seed_results": [
+    {
+      "seed": 42,
+      "status": "pass",
+      "overall_accuracy": 0.9747899159663865,
+      "tail_accuracy": 1.0,
+      "prediction_target_corr": 0.8917325875598855,
+      "tail_prediction_target_corr": 0.9999839178111984,
+      "total_step_spikes": 284154,
+      "runtime_seconds": 884.8983335739467,
+      "final_n_alive": 8,
+      "total_births": 0,
+      "total_deaths": 0,
+      "synthetic_fallbacks": 0,
+      "sim_run_failures": 0,
+      "summary_read_failures": 0
+    },
+    {
+      "seed": 43,
+      "status": "pass",
+      "overall_accuracy": 0.9747899159663865,
+      "tail_accuracy": 1.0,
+      "prediction_target_corr": 0.9245060232269418,
+      "tail_prediction_target_corr": 0.9999928096452596,
+      "total_step_spikes": 293636,
+      "runtime_seconds": 870.6066683828831,
+      "final_n_alive": 8,
+      "total_births": 0,
+      "total_deaths": 0,
+      "synthetic_fallbacks": 0,
+      "sim_run_failures": 0,
+      "summary_read_failures": 0
+    },
+    {
+      "seed": 44,
+      "status": "pass",
+      "overall_accuracy": 0.9747899159663865,
+      "tail_accuracy": 1.0,
+      "prediction_target_corr": 0.9288690921539946,
+      "tail_prediction_target_corr": 0.9999935839112062,
+      "total_step_spikes": 295521,
+      "runtime_seconds": 865.3982471250929,
+      "final_n_alive": 8,
+      "total_births": 0,
+      "total_deaths": 0,
+      "synthetic_fallbacks": 0,
+      "sim_run_failures": 0,
+      "summary_read_failures": 0
+    }
+  ],
+  "criteria": [
+    {
+      "name": "all requested seeds completed",
+      "note": "",
+      "operator": "==",
+      "passed": true,
+      "threshold": 3,
+      "value": 3
+    },
+    {
+      "name": "all per-seed criteria pass",
+      "note": "",
+      "operator": "==",
+      "passed": true,
+      "threshold": true,
+      "value": true
+    },
+    {
+      "name": "sim.run failures sum",
+      "note": "",
+      "operator": "==",
+      "passed": true,
+      "threshold": 0,
+      "value": 0
+    },
+    {
+      "name": "summary read failures sum",
+      "note": "",
+      "operator": "==",
+      "passed": true,
+      "threshold": 0,
+      "value": 0
+    },
+    {
+      "name": "synthetic fallback sum",
+      "note": "",
+      "operator": "==",
+      "passed": true,
+      "threshold": 0,
+      "value": 0
+    },
+    {
+      "name": "real spike readback in every seed",
+      "note": "",
+      "operator": ">",
+      "passed": true,
+      "threshold": 0,
+      "value": 284154.0
+    },
+    {
+      "name": "fixed population has no births/deaths",
+      "note": "",
+      "operator": "==",
+      "passed": true,
+      "threshold": {
+        "births": 0,
+        "deaths": 0
+      },
+      "value": {
+        "births": 0,
+        "deaths": 0
+      }
+    },
+    {
+      "name": "no extinction/collapse in any seed",
+      "note": "",
+      "operator": "==",
+      "passed": true,
+      "threshold": 8,
+      "value": 8.0
+    },
+    {
+      "name": "minimum overall strict accuracy",
+      "note": "",
+      "operator": ">=",
+      "passed": true,
+      "threshold": 0.65,
+      "value": 0.9747899159663865
+    },
+    {
+      "name": "minimum tail strict accuracy",
+      "note": "",
+      "operator": ">=",
+      "passed": true,
+      "threshold": 0.75,
+      "value": 1.0
+    },
+    {
+      "name": "minimum tail prediction/target correlation",
+      "note": "",
+      "operator": ">=",
+      "passed": true,
+      "threshold": 0.6,
+      "value": 0.9999839178111984
+    },
+    {
+      "name": "runtime documented for every seed",
+      "note": "",
+      "operator": ">",
+      "passed": true,
+      "threshold": 0,
+      "value": 865.3982471250929
+    }
+  ],
+  "canonical_artifacts": {
+    "results_json": "tier4_15_results.json",
+    "report_md": "tier4_15_report.md",
+    "summary_csv": "tier4_15_summary.csv",
+    "seed_summary_csv": "tier4_15_seed_summary.csv",
+    "summary_png": "tier4_15_multi_seed_summary.png",
+    "per_seed_timeseries": [
+      "spinnaker_hardware_seed42_timeseries.csv",
+      "spinnaker_hardware_seed43_timeseries.csv",
+      "spinnaker_hardware_seed44_timeseries.csv"
+    ],
+    "per_seed_plots": [
+      "spinnaker_hardware_seed42_timeseries.png",
+      "spinnaker_hardware_seed43_timeseries.png",
+      "spinnaker_hardware_seed44_timeseries.png"
+    ],
+    "spinnaker_reports": [
+      "spinnaker_reports/2026-04-27-03-05-01-872105/",
+      "spinnaker_reports/2026-04-27-03-19-49-290162/",
+      "spinnaker_reports/2026-04-27-03-34-22-032643/"
+    ],
+    "raw_reports_zip": "raw_reports/spinnaker_reports_tier4_15_seeds_42_43_44.zip"
+  }
+}

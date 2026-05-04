@@ -1,0 +1,26 @@
+./tests/test_runtime
+=== Coral Reef Runtime Host Tests ===
+
+config.h:
+  PASS: MAKE_KEY
+  PASS: fixed-point math
+  PASS: command constants
+  PASS: weight limits
+
+neuron_manager:
+  PASS: neuron birth/death
+  PASS: neuron find
+  PASS: neuron reset all
+
+synapse_manager:
+  PASS: synapse create/remove
+  PASS: synapse weight limits
+
+router:
+  PASS: router add/remove
+  PASS: router reset all
+
+host_interface:
+  PASS: host_interface init
+
+=== ALL TESTS PASSED ===

@@ -1,0 +1,13 @@
+step,purpose,feature,target,feature_raw,target_raw,target_sign,learning_rate,learning_rate_raw,pending_gap_depth,prediction_raw,prediction,prediction_sign,sign_correct,scheduled_readout_weight_raw,scheduled_readout_bias_raw,scheduled_readout_weight,scheduled_readout_bias,matured_after_schedule_step,mature_order,mature_error_raw,mature_error,delta_w_raw,delta_b_raw,readout_weight_raw,readout_bias_raw,readout_weight,readout_bias,matured_step
+1,delayed-cue signed feature/target event,1.0,1.0,32768,32768,1,0.125,4096,2,0,0.0,1,True,0,0,0.0,0.0,3,1,32768,1.0,4096,4096,4096,4096,0.125,0.125,1
+2,delayed-cue signed feature/target event,-1.0,-1.0,-32768,-32768,-1,0.125,4096,2,0,0.0,1,False,0,0,0.0,0.0,4,2,-32768,-1.0,4096,-4096,8192,0,0.25,0.0,2
+3,delayed-cue signed feature/target event,1.0,1.0,32768,32768,1,0.125,4096,2,0,0.0,1,True,0,0,0.0,0.0,5,3,32768,1.0,4096,4096,12288,4096,0.375,0.125,3
+4,delayed-cue signed feature/target event,-1.0,-1.0,-32768,-32768,-1,0.125,4096,2,0,0.0,1,False,4096,4096,0.125,0.125,6,4,-32768,-1.0,4096,-4096,16384,0,0.5,0.0,4
+5,delayed-cue signed feature/target event,1.0,1.0,32768,32768,1,0.125,4096,2,8192,0.25,1,True,8192,0,0.25,0.0,7,5,24576,0.75,3072,3072,19456,3072,0.59375,0.09375,5
+6,delayed-cue signed feature/target event,-1.0,-1.0,-32768,-32768,-1,0.125,4096,2,-8192,-0.25,-1,True,12288,4096,0.375,0.125,8,6,-24576,-0.75,3072,-3072,22528,0,0.6875,0.0,6
+7,delayed-cue signed feature/target event,1.0,1.0,32768,32768,1,0.125,4096,2,16384,0.5,1,True,16384,0,0.5,0.0,9,7,16384,0.5,2048,2048,24576,2048,0.75,0.0625,7
+8,delayed-cue signed feature/target event,-1.0,-1.0,-32768,-32768,-1,0.125,4096,2,-16384,-0.5,-1,True,19456,3072,0.59375,0.09375,10,8,-16384,-0.5,2048,-2048,26624,0,0.8125,0.0,8
+9,delayed-cue signed feature/target event,1.0,1.0,32768,32768,1,0.125,4096,2,22528,0.6875,1,True,22528,0,0.6875,0.0,11,9,10240,0.3125,1280,1280,27904,1280,0.8515625,0.0390625,9
+10,delayed-cue signed feature/target event,-1.0,-1.0,-32768,-32768,-1,0.125,4096,2,-22528,-0.6875,-1,True,24576,2048,0.75,0.0625,12,10,-10240,-0.3125,1280,-1280,29184,0,0.890625,0.0,10
+11,delayed-cue signed feature/target event,1.0,1.0,32768,32768,1,0.125,4096,2,26624,0.8125,1,True,26624,0,0.8125,0.0,drain,11,6144,0.1875,768,768,29952,768,0.9140625,0.0234375,11
+12,delayed-cue signed feature/target event,-1.0,-1.0,-32768,-32768,-1,0.125,4096,2,-26624,-0.8125,-1,True,27904,1280,0.8515625,0.0390625,drain,12,-6144,-0.1875,768,-768,30720,0,0.9375,0.0,12

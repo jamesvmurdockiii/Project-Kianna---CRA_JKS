@@ -1,0 +1,87 @@
+{
+  "artifacts": {
+    "comparisons_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_comparisons.csv",
+    "control_edges_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_control_edges.png",
+    "fairness_contract_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_fairness_contract.json",
+    "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_results.json",
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_report.md",
+    "representation_matrix_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_representation_matrix.png",
+    "run_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_runs.csv",
+    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_summary.csv"
+  },
+  "canonical": false,
+  "claim_boundary": "Noncanonical software diagnostic: predictive binding preexposure under zero-label/zero-reward exposure; not hardware/on-chip representation learning or a v2.0 freeze.",
+  "criteria": [
+    {
+      "name": "task/variant/seed matrix completed",
+      "note": "",
+      "operator": "==",
+      "passed": true,
+      "threshold": 5,
+      "value": 5
+    },
+    {
+      "name": "non-oracle exposure has no hidden-label leakage",
+      "note": "",
+      "operator": "==",
+      "passed": true,
+      "threshold": 0,
+      "value": 0
+    },
+    {
+      "name": "exposure has no reward visibility",
+      "note": "",
+      "operator": "==",
+      "passed": true,
+      "threshold": 0,
+      "value": 0
+    },
+    {
+      "name": "pre-reward raw dopamine remains zero",
+      "note": "",
+      "operator": "<=",
+      "passed": true,
+      "threshold": 1e-12,
+      "value": 0.0
+    },
+    {
+      "name": "held-out ambiguous probe rows available",
+      "note": "",
+      "operator": ">=",
+      "passed": true,
+      "threshold": 70,
+      "value": 81.0
+    }
+  ],
+  "failure_reason": "",
+  "generated_at_utc": "2026-04-29T22:10:30+00:00",
+  "name": "Tier 5.17d - Predictive Preexposure Binding/Sham Repair",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/predictive_binding_guardrail",
+  "status": "pass",
+  "summary": {
+    "candidate_min_knn_probe_accuracy": 0.9753086419753086,
+    "candidate_min_ridge_probe_accuracy": 1.0,
+    "claim_boundary": "Noncanonical software diagnostic: predictive binding preexposure under zero-label/zero-reward exposure; not hardware/on-chip representation learning or a v2.0 freeze.",
+    "expected_runs": 5,
+    "max_abs_raw_dopamine_non_oracle": 0.0,
+    "min_candidate_probe_rows": 81.0,
+    "non_oracle_label_leakage_runs": 0,
+    "observed_runs": 5,
+    "reward_leakage_runs": 0,
+    "runtime_seconds": 0.27656504199999987,
+    "sample_efficiency_wins": 1,
+    "seeds": [
+      42
+    ],
+    "tasks": [
+      "cross_modal_binding"
+    ],
+    "variants": [
+      "predictive_binding_preexposure",
+      "no_preexposure",
+      "target_shuffled_binding",
+      "fixed_history_baseline",
+      "oracle_latent_upper_bound"
+    ]
+  }
+}

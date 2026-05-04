@@ -1,0 +1,18 @@
+{
+  "build_time_seconds": 0.0,
+  "build_stdout": "rm -rf build/gnu/ tests/test_runtime\nspinnaker_tools not found.\nHost tests work with 'make test'.\nFor hardware builds set SPINN_DIRS, e.g.:\n  export SPINN_DIRS=/opt/spinnaker_tools\n",
+  "build_stderr": "make: *** [require-spinnaker] Error 2\n",
+  "build_returncode": 2,
+  "aplx_size_bytes": 0,
+  "elf_size_bytes": 0,
+  "size_info": {
+    "text": 0,
+    "data": 0,
+    "bss": 0,
+    "total": 0,
+    "command_found": false
+  },
+  "aplx_path": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/build/coral_reef.aplx",
+  "elf_path": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/build/coral_reef.elf",
+  "tools_detected": false
+}

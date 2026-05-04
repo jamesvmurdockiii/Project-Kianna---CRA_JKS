@@ -1,0 +1,427 @@
+{
+  "artifacts": {
+    "constrained_nest_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22a0_20260430_spinnaker_constrained_preflight/tier4_22a0_constrained_nest_timeseries.csv",
+    "imports_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22a0_20260430_spinnaker_constrained_preflight/tier4_22a0_imports.csv",
+    "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_22a0_20260430_spinnaker_constrained_preflight/tier4_22a0_results.json",
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_22a0_20260430_spinnaker_constrained_preflight/tier4_22a0_report.md",
+    "resource_budget_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22a0_20260430_spinnaker_constrained_preflight/tier4_22a0_resource_budget.csv",
+    "runtime_host_test_stderr": "/Users/james/JKS:CRA/controlled_test_output/tier4_22a0_20260430_spinnaker_constrained_preflight/spinnaker_runtime_host_test_stderr.log",
+    "runtime_host_test_stdout": "/Users/james/JKS:CRA/controlled_test_output/tier4_22a0_20260430_spinnaker_constrained_preflight/spinnaker_runtime_host_test_stdout.log",
+    "static_compliance_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22a0_20260430_spinnaker_constrained_preflight/tier4_22a0_static_compliance.csv"
+  },
+  "constrained_nest_summary": {
+    "backend": "pyNN.nest",
+    "claim_boundary": "Local constrained NEST smoke only; not SpiNNaker hardware evidence.",
+    "error": "",
+    "max_bin_spikes": 8,
+    "mean_bin_spikes": 0.5333333333333333,
+    "nonzero_spike_bins": 8,
+    "population_size": 8,
+    "readback_failures": 0,
+    "runtime_seconds": 0.044348541999999824,
+    "scheduled_current_changes": 25,
+    "scheduled_input_mode": "StepCurrentSource",
+    "setup_ok": true,
+    "sim_run_calls": 1,
+    "sim_run_failures": 0,
+    "status": "pass",
+    "steps": 120,
+    "timestep_ms": 1.0,
+    "total_spikes": 64
+  },
+  "criteria": [
+    {
+      "name": "runner revision current",
+      "note": "",
+      "passed": true,
+      "rule": "expected current source",
+      "value": "tier4_22a0_spinnaker_constrained_preflight_20260430_0000"
+    },
+    {
+      "name": "Tier 4.20c reference pass exists",
+      "note": "Reference chunked-host bridge repeat.",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "Tier 4.21a reference pass exists",
+      "note": "Reference keyed-memory bridge pass.",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "Tier 4.22a contract pass exists",
+      "note": "Engineering contract must exist before this preflight.",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "NEST imports locally",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "pyNN.nest imports locally",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "pyNN.spiNNaker imports locally",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "sPyNNaker exposes required PyNN primitives",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "optional sPyNNaker tiny smoke satisfied if required",
+      "note": "",
+      "passed": true,
+      "rule": "pass OR skipped when not required",
+      "value": "skipped"
+    },
+    {
+      "name": "constrained NEST StepCurrentSource probe passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "constrained NEST produced nonzero spikes",
+      "note": "",
+      "passed": true,
+      "rule": "> 0",
+      "value": 64
+    },
+    {
+      "name": "constrained NEST sim/readback failures zero",
+      "note": "",
+      "passed": true,
+      "rule": "all == 0",
+      "value": {
+        "readback": 0,
+        "sim": 0
+      }
+    },
+    {
+      "name": "static PyNN bridge compliance passed",
+      "note": "",
+      "passed": true,
+      "rule": "== 0 failed checks",
+      "value": 0
+    },
+    {
+      "name": "resource budget checks passed",
+      "note": "",
+      "passed": true,
+      "rule": "== 0 failed rows",
+      "value": 0
+    },
+    {
+      "name": "custom runtime host tests passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "chunked reference remains implemented",
+      "note": "",
+      "passed": true,
+      "rule": "True",
+      "value": true
+    },
+    {
+      "name": "continuous/on-chip remains future until proven",
+      "note": "",
+      "passed": true,
+      "rule": "False",
+      "value": false
+    }
+  ],
+  "failure_reason": "",
+  "generated_at_utc": "2026-04-30T17:47:50+00:00",
+  "imports": [
+    {
+      "error": "",
+      "module": "nest",
+      "runtime_seconds": 0.4325854170000001,
+      "status": "pass",
+      "version": "3.10.0-rc.1"
+    },
+    {
+      "error": "",
+      "module": "pyNN",
+      "runtime_seconds": 0.0005567920000000282,
+      "status": "pass",
+      "version": "0.12.4"
+    },
+    {
+      "error": "",
+      "module": "pyNN.nest",
+      "runtime_seconds": 0.625689792,
+      "status": "pass",
+      "version": ""
+    },
+    {
+      "error": "",
+      "module": "pyNN.spiNNaker",
+      "runtime_seconds": 0.8837891659999999,
+      "status": "pass",
+      "version": ""
+    }
+  ],
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_22a0_20260430_spinnaker_constrained_preflight",
+  "resource_budget": [
+    {
+      "current": 8,
+      "item": "population_neurons",
+      "limit": 4335,
+      "note": "N=8 bridge population should map far below one-chip limits.",
+      "status": "pass"
+    },
+    {
+      "current": 64,
+      "item": "planned_all_to_all_connections_budget_probe",
+      "limit": 30208,
+      "note": "Conservative planning row; current bridge uses StepCurrentSource, not recurrent Projection.",
+      "status": "pass"
+    },
+    {
+      "current": 4,
+      "item": "keyed_context_slots",
+      "limit": 16,
+      "note": "Dynamic dict semantics must remain bounded before chip/hybrid state work.",
+      "status": "pass"
+    },
+    {
+      "current": -1.2,
+      "item": "fixed_point_weight_quantization_probe",
+      "limit": "[-1.0, 1.0)",
+      "note": "Records the fixed-point clipping/rounding contract used for future runtime parity.",
+      "quantized": -1.0,
+      "status": "pass"
+    },
+    {
+      "current": -1.0,
+      "item": "fixed_point_weight_quantization_probe",
+      "limit": "[-1.0, 1.0)",
+      "note": "Records the fixed-point clipping/rounding contract used for future runtime parity.",
+      "quantized": -1.0,
+      "status": "pass"
+    },
+    {
+      "current": -0.12345,
+      "item": "fixed_point_weight_quantization_probe",
+      "limit": "[-1.0, 1.0)",
+      "note": "Records the fixed-point clipping/rounding contract used for future runtime parity.",
+      "quantized": -0.123443603515625,
+      "status": "pass"
+    },
+    {
+      "current": 0.0,
+      "item": "fixed_point_weight_quantization_probe",
+      "limit": "[-1.0, 1.0)",
+      "note": "Records the fixed-point clipping/rounding contract used for future runtime parity.",
+      "quantized": 0.0,
+      "status": "pass"
+    },
+    {
+      "current": 0.12345,
+      "item": "fixed_point_weight_quantization_probe",
+      "limit": "[-1.0, 1.0)",
+      "note": "Records the fixed-point clipping/rounding contract used for future runtime parity.",
+      "quantized": 0.123443603515625,
+      "status": "pass"
+    },
+    {
+      "current": 0.999999,
+      "item": "fixed_point_weight_quantization_probe",
+      "limit": "[-1.0, 1.0)",
+      "note": "Records the fixed-point clipping/rounding contract used for future runtime parity.",
+      "quantized": 0.999969482421875,
+      "status": "pass"
+    },
+    {
+      "current": 1.2,
+      "item": "fixed_point_weight_quantization_probe",
+      "limit": "[-1.0, 1.0)",
+      "note": "Records the fixed-point clipping/rounding contract used for future runtime parity.",
+      "quantized": 0.999969482421875,
+      "status": "pass"
+    }
+  ],
+  "resource_checker_summary": {
+    "enabled": true,
+    "errors": [],
+    "max_neurons_per_core": 255,
+    "n_errors": 0,
+    "n_warnings": 0,
+    "num_chips": 1,
+    "rebuild_cost_s": 0.0,
+    "rebuild_count": 0,
+    "routing_entries_per_chip": 992,
+    "routing_entries_used": 8,
+    "sdram_per_core": 120832,
+    "synaptic_bytes_used": 256,
+    "total_neurons": 8,
+    "total_projections": 1,
+    "warnings": []
+  },
+  "runtime_host_test": {
+    "claim_boundary": "Host C runtime unit tests only; not hardware .aplx evidence.",
+    "return_code": 0,
+    "started_at_utc": "2026-04-30T17:47:50+00:00",
+    "status": "pass",
+    "stderr_log": "/Users/james/JKS:CRA/controlled_test_output/tier4_22a0_20260430_spinnaker_constrained_preflight/spinnaker_runtime_host_test_stderr.log",
+    "stdout_log": "/Users/james/JKS:CRA/controlled_test_output/tier4_22a0_20260430_spinnaker_constrained_preflight/spinnaker_runtime_host_test_stdout.log"
+  },
+  "spynnaker_feature_check": {
+    "available": [
+      "IF_curr_exp",
+      "StepCurrentSource",
+      "Population",
+      "Projection",
+      "StaticSynapse",
+      "FromListConnector",
+      "OneToOneConnector"
+    ],
+    "claim_boundary": "Feature import only by default; no hardware allocation or science run is attempted.",
+    "error": "",
+    "missing": [],
+    "required": [
+      "IF_curr_exp",
+      "StepCurrentSource",
+      "Population",
+      "Projection",
+      "StaticSynapse",
+      "FromListConnector",
+      "OneToOneConnector"
+    ],
+    "status": "pass"
+  },
+  "spynnaker_smoke": {
+    "reason": "--run-spynnaker-smoke not requested",
+    "status": "skipped"
+  },
+  "static_compliance": [
+    {
+      "check": "uses pyNN.spiNNaker in direct runner",
+      "passed": true,
+      "path": "/Users/james/JKS:CRA/experiments/tier4_harder_spinnaker_capsule.py",
+      "rule": "required",
+      "scope": "tier4_16_chunked_bridge_function",
+      "status": "pass"
+    },
+    {
+      "check": "uses IF_curr_exp",
+      "passed": true,
+      "path": "/Users/james/JKS:CRA/experiments/tier4_harder_spinnaker_capsule.py",
+      "rule": "required hardware-supported cell model",
+      "scope": "tier4_16_chunked_bridge_function",
+      "status": "pass"
+    },
+    {
+      "check": "uses StepCurrentSource scheduled input",
+      "passed": true,
+      "path": "/Users/james/JKS:CRA/experiments/tier4_harder_spinnaker_capsule.py",
+      "rule": "required bridge input primitive",
+      "scope": "tier4_16_chunked_bridge_function",
+      "status": "pass"
+    },
+    {
+      "check": "uses Population",
+      "passed": true,
+      "path": "/Users/james/JKS:CRA/experiments/tier4_harder_spinnaker_capsule.py",
+      "rule": "required hardware population primitive",
+      "scope": "tier4_16_chunked_bridge_function",
+      "status": "pass"
+    },
+    {
+      "check": "reads spikes through get_data",
+      "passed": true,
+      "path": "/Users/james/JKS:CRA/experiments/tier4_harder_spinnaker_capsule.py",
+      "rule": "required binned readback path",
+      "scope": "tier4_16_chunked_bridge_function",
+      "status": "pass"
+    },
+    {
+      "check": "does not create PyNN Projection in chunk bridge",
+      "passed": true,
+      "path": "/Users/james/JKS:CRA/experiments/tier4_harder_spinnaker_capsule.py",
+      "rule": "no dynamic graph/projection mutation in bridge loop",
+      "scope": "tier4_16_chunked_bridge_function",
+      "status": "pass"
+    },
+    {
+      "check": "does not use STDPMechanism in bridge runner",
+      "passed": true,
+      "path": "/Users/james/JKS:CRA/experiments/tier4_harder_spinnaker_capsule.py",
+      "rule": "host replay bridge must not imply unsupported native plasticity",
+      "scope": "tier4_16_chunked_bridge_function",
+      "status": "pass"
+    },
+    {
+      "check": "keyed memory bridge has explicit variants",
+      "passed": true,
+      "path": "/Users/james/JKS:CRA/experiments/tier4_21a_keyed_context_memory_bridge.py",
+      "rule": "candidate and shams must stay explicit",
+      "scope": "tier4_21a_keyed_bridge_source",
+      "status": "pass"
+    },
+    {
+      "check": "keyed memory is bounded by configured slot count",
+      "passed": true,
+      "path": "/Users/james/JKS:CRA/experiments/tier4_21a_keyed_context_memory_bridge.py",
+      "rule": "bounded-state telemetry required",
+      "scope": "tier4_21a_keyed_bridge_source",
+      "status": "pass"
+    },
+    {
+      "check": "contract declares constrained-NEST/sPyNNaker preflight",
+      "passed": true,
+      "path": "/Users/james/JKS:CRA/experiments/tier4_22a_custom_runtime_contract.py",
+      "rule": "Tier 4.22a0 must stay in roadmap/contract",
+      "scope": "tier4_22a_contract_source",
+      "status": "pass"
+    }
+  ],
+  "status": "pass",
+  "summary": {
+    "claim_boundary": "Local constrained preflight only; not real hardware evidence, not custom C evidence, not continuous/on-chip execution, and not speedup evidence.",
+    "continuous_target_sim_run_calls": 1,
+    "nest_nonzero_spike_bins": 8,
+    "nest_status": "pass",
+    "nest_total_spikes": 64,
+    "next_step_if_failed": "Fix local constrained/mapping issue before spending EBRAINS hardware time.",
+    "next_step_if_passed": "Tier 4.22b continuous no-learning scaffold: scheduled input, compact readback, no learning claim.",
+    "reference_chunked_sim_run_calls": 24,
+    "resource_failed_rows": 0,
+    "runner_revision": "tier4_22a0_spinnaker_constrained_preflight_20260430_0000",
+    "runtime_host_test_status": "pass",
+    "spynnaker_feature_status": "pass",
+    "spynnaker_smoke_status": "skipped",
+    "static_compliance_failed_checks": 0,
+    "tier4_20c_manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_20c_20260430_v2_1_bridge_three_seed_hardware_pass_ingested/tier4_20c_results.json",
+    "tier4_20c_status": "pass",
+    "tier4_21a_manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_21a_20260430_keyed_context_memory_seed42_hardware_pass_ingested/tier4_21a_results.json",
+    "tier4_21a_status": "pass",
+    "tier4_22a_manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_22a_20260430_custom_runtime_contract/tier4_22a_results.json",
+    "tier4_22a_status": "pass"
+  },
+  "tier": "Tier 4.22a0 - SpiNNaker-Constrained Local Preflight"
+}

@@ -1,0 +1,7 @@
+name,value,rule,passed,note
+bounded pending queue constant,MAX_PENDING_HORIZONS,defined in config.h,True,
+pending horizon type exists,pending_horizon_t,declared,True,
+pending horizon does not store future target,int32_t target;,absent from pending struct,True,
+schedule pending horizon API exists,cra_state_schedule_pending_horizon,declared/implemented,True,
+mature pending horizon receives target at maturity,"cra_state_mature_pending_horizons(uint32_t timestep, int32_t target",target supplied to mature API,True,
+pending horizon host tests exist,pending horizon maturation/bound,test_runtime.c covers queue,True,

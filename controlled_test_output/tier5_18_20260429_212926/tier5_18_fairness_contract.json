@@ -1,0 +1,39 @@
+{
+  "baseline": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.0.json",
+  "claim_boundary": "Software-only operational self-evaluation diagnostic. Non-oracle monitors receive no outcome/reward labels before producing confidence and uncertainty values.",
+  "fairness_rules": [
+    "Monitor features are generated from pre-feedback primary-path margin, novelty, memory-conflict, prediction-residual, and routing-entropy traces.",
+    "The candidate and monitor-only ablation receive identical confidence; only the candidate may use it behaviorally.",
+    "Random, time-shuffled, always-on, always-off, and anti-confidence controls test whether the confidence signal is causal rather than incidental.",
+    "The oracle confidence upper bound is reported but excluded from no-leakage promotion checks.",
+    "Tier 5.18 cannot freeze v2.1 without a later compact regression gate."
+  ],
+  "generated_at_utc": "2026-04-29T21:29:28+00:00",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "smoke": false,
+  "steps": 720,
+  "tasks": [
+    "ambiguous_cue",
+    "ood_context_insertion",
+    "memory_corruption",
+    "hidden_regime_mismatch",
+    "module_routing_uncertainty"
+  ],
+  "tier": "Tier 5.18 - Self-Evaluation / Metacognitive Monitoring",
+  "variants": [
+    "v2_0_no_monitor",
+    "self_eval_gated",
+    "monitor_only_no_behavior",
+    "confidence_disabled",
+    "random_confidence",
+    "time_shuffled_confidence",
+    "always_confident",
+    "always_uncertain",
+    "anti_confidence",
+    "oracle_confidence_upper_bound"
+  ]
+}

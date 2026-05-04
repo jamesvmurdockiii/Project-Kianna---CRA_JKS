@@ -1,0 +1,1238 @@
+{
+  "tier": "Tier 4.29b \u2014 Native Routing/Composition Gate",
+  "runner_revision": "tier4_29b_native_routing_composition_20260503_0002",
+  "generated_at_utc": "2026-05-03T22:44:24.728036+00:00",
+  "mode": "run-hardware",
+  "status": "pass",
+  "output_dir": "tier4_29b_seed44_job_output",
+  "criteria": [
+    {
+      "name": "runner revision current",
+      "value": "tier4_29b_native_routing_composition_20260503_0002",
+      "rule": "expected current source",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "custom C host tests pass",
+      "value": "pass",
+      "rule": "== pass",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "main.c syntax check pass",
+      "value": "pass",
+      "rule": "== pass",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "hardware target acquired",
+      "value": {
+        "status": "pass",
+        "method": "pyNN.spiNNaker_probe",
+        "hostname": "10.11.195.129",
+        "target_ipaddress": "10.11.195.129",
+        "setup_kwargs": {
+          "timestep": 1.0
+        },
+        "probe_population_size": 1,
+        "probe_run_ms": 1.0,
+        "probe_timestep_ms": 1.0,
+        "dest_x": 0,
+        "dest_y": 0,
+        "dest_cpu": 4,
+        "occupied_cores": [
+          1,
+          2,
+          3
+        ],
+        "notes": [
+          "acquired transceiver/IP via PyNN/sPyNNaker DataView because EBRAINS JobManager may not expose a raw hostname",
+          "requested dest_cpu 1 was occupied; selected free core 4"
+        ],
+        "runtime_seconds": 46.30740720499307,
+        "attempts": [
+          {
+            "status": "fail",
+            "method": "hostname_discovery",
+            "hostname": "",
+            "notes": [
+              "no hostname found in args, common environment variables, or spynnaker.cfg"
+            ],
+            "reason": "no explicit hostname/config/environment target found"
+          },
+          {
+            "status": "pass",
+            "method": "pyNN.spiNNaker_probe",
+            "hostname": "10.11.195.129",
+            "target_ipaddress": "10.11.195.129",
+            "setup_kwargs": {
+              "timestep": 1.0
+            },
+            "probe_population_size": 1,
+            "probe_run_ms": 1.0,
+            "probe_timestep_ms": 1.0,
+            "dest_x": 0,
+            "dest_y": 0,
+            "dest_cpu": 4,
+            "occupied_cores": [
+              1,
+              2,
+              3
+            ],
+            "notes": [
+              "acquired transceiver/IP via PyNN/sPyNNaker DataView because EBRAINS JobManager may not expose a raw hostname",
+              "requested dest_cpu 1 was occupied; selected free core 4"
+            ],
+            "runtime_seconds": 46.30740720499307
+          }
+        ]
+      },
+      "rule": "status == pass",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "context_core .aplx built",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "route_core .aplx built",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "memory_core .aplx built",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core .aplx built",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "context_core load pass",
+      "value": "pass",
+      "rule": "== pass",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "route_core load pass",
+      "value": "pass",
+      "rule": "== pass",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "memory_core load pass",
+      "value": "pass",
+      "rule": "== pass",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core load pass",
+      "value": "pass",
+      "rule": "== pass",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "all context writes succeeded",
+      "value": true,
+      "rule": "len>0 and all success",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "all route writes succeeded",
+      "value": true,
+      "rule": "len>0 and all success",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "all memory writes succeeded",
+      "value": true,
+      "rule": "len>0 and all success",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "all schedule uploads succeeded",
+      "value": true,
+      "rule": "len>0 and all success",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "phase1 context_core run_continuous succeeded",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "phase1 route_core run_continuous succeeded",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "phase1 memory_core run_continuous succeeded",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "phase1 learning_core run_continuous succeeded",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "phase2 context_core run_continuous succeeded",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "phase2 route_core run_continuous succeeded",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "phase2 memory_core run_continuous succeeded",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "phase2 learning_core run_continuous succeeded",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "context overwrite write succeeded",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "route overwrite write succeeded",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "context_core final read succeeded",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "route_core final read succeeded",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "memory_core final read succeeded",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core final read succeeded",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core weight near reference",
+      "value": 32781,
+      "rule": "within +/- 8192 of 35329",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core bias near reference",
+      "value": 3,
+      "rule": "within +/- 8192 of 655",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core pending_created matches reference",
+      "value": 32,
+      "rule": "== 32",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core pending_matured matches reference",
+      "value": 32,
+      "rule": "== 32",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core active_pending cleared",
+      "value": 0,
+      "rule": "== 0",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "no unhandled hardware exception",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core schema_version v2",
+      "value": 2,
+      "rule": "== 2",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core lookup_requests == 96",
+      "value": 96,
+      "rule": "== 96",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core lookup_replies == 96",
+      "value": 96,
+      "rule": "== 96",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core stale_replies == 0",
+      "value": 0,
+      "rule": "== 0",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core timeouts == 0",
+      "value": 0,
+      "rule": "== 0",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "context_core lookup_replies == 0",
+      "value": 0,
+      "rule": "== 0",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "route_core lookup_replies == 0",
+      "value": 0,
+      "rule": "== 0",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "memory_core lookup_replies == 0",
+      "value": 0,
+      "rule": "== 0",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "wrong-context events fail cleanly (context misses)",
+      "value": 8,
+      "rule": "== 8",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "context overwrite events use new value (context writes)",
+      "value": 9,
+      "rule": "== 9",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "slot-shuffle maintains correctness (context hits)",
+      "value": 24,
+      "rule": "== 24",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "context_core active_slots matches expected",
+      "value": 8,
+      "rule": "== 8",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "wrong-route events fail cleanly (route misses)",
+      "value": 8,
+      "rule": "== 8",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "route overwrite events use new value (route writes)",
+      "value": 3,
+      "rule": "== 3",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "route-shuffle maintains correctness (route hits)",
+      "value": 24,
+      "rule": "== 24",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "route_core active_route_slots matches expected",
+      "value": 2,
+      "rule": "== 2",
+      "passed": true,
+      "note": ""
+    }
+  ],
+  "loads": {
+    "context": {
+      "status": "pass",
+      "method": "spynnaker_dataview_transceiver.execute_flood",
+      "hostname": "10.11.195.129",
+      "x": 0,
+      "y": 0,
+      "p": 4,
+      "app_id": 1,
+      "runtime_seconds": 2.103344541043043
+    },
+    "route": {
+      "status": "pass",
+      "method": "spynnaker_dataview_transceiver.execute_flood",
+      "hostname": "10.11.195.129",
+      "x": 0,
+      "y": 0,
+      "p": 5,
+      "app_id": 2,
+      "runtime_seconds": 2.1038470468483865
+    },
+    "memory": {
+      "status": "pass",
+      "method": "spynnaker_dataview_transceiver.execute_flood",
+      "hostname": "10.11.195.129",
+      "x": 0,
+      "y": 0,
+      "p": 6,
+      "app_id": 3,
+      "runtime_seconds": 2.1043057180941105
+    },
+    "learning": {
+      "status": "pass",
+      "method": "spynnaker_dataview_transceiver.execute_flood",
+      "hostname": "10.11.195.129",
+      "x": 0,
+      "y": 0,
+      "p": 7,
+      "app_id": 4,
+      "runtime_seconds": 2.1180309392511845
+    }
+  },
+  "task": {
+    "status": "completed",
+    "reset": {
+      "context": true,
+      "route": true,
+      "memory": true,
+      "learning": true
+    },
+    "state_writes": {
+      "context": [
+        {
+          "key": 201,
+          "value": 1.0,
+          "success": true
+        },
+        {
+          "key": 202,
+          "value": 1.0,
+          "success": true
+        },
+        {
+          "key": 203,
+          "value": 1.0,
+          "success": true
+        },
+        {
+          "key": 204,
+          "value": 1.0,
+          "success": true
+        },
+        {
+          "key": 205,
+          "value": -1.0,
+          "success": true
+        },
+        {
+          "key": 206,
+          "value": -1.0,
+          "success": true
+        },
+        {
+          "key": 207,
+          "value": -0.5,
+          "success": true
+        },
+        {
+          "key": 208,
+          "value": -0.5,
+          "success": true
+        }
+      ],
+      "route": [
+        {
+          "key": 101,
+          "value": 1.0,
+          "success": true
+        },
+        {
+          "key": 102,
+          "value": -1.0,
+          "success": true
+        }
+      ],
+      "memory": [
+        {
+          "key": 1,
+          "success": true
+        }
+      ]
+    },
+    "overwrite_write": {
+      "success": true,
+      "active_slots_after": 8,
+      "slot_writes_after": 9
+    },
+    "route_overwrite_write": {
+      "success": true,
+      "active_slots_after": null,
+      "slot_writes_after": null
+    },
+    "schedule_uploads": [
+      {
+        "index": 0,
+        "success": true
+      },
+      {
+        "index": 1,
+        "success": true
+      },
+      {
+        "index": 2,
+        "success": true
+      },
+      {
+        "index": 3,
+        "success": true
+      },
+      {
+        "index": 4,
+        "success": true
+      },
+      {
+        "index": 5,
+        "success": true
+      },
+      {
+        "index": 6,
+        "success": true
+      },
+      {
+        "index": 7,
+        "success": true
+      },
+      {
+        "index": 8,
+        "success": true
+      },
+      {
+        "index": 9,
+        "success": true
+      },
+      {
+        "index": 10,
+        "success": true
+      },
+      {
+        "index": 11,
+        "success": true
+      },
+      {
+        "index": 12,
+        "success": true
+      },
+      {
+        "index": 13,
+        "success": true
+      },
+      {
+        "index": 14,
+        "success": true
+      },
+      {
+        "index": 15,
+        "success": true
+      },
+      {
+        "index": 16,
+        "success": true
+      },
+      {
+        "index": 17,
+        "success": true
+      },
+      {
+        "index": 18,
+        "success": true
+      },
+      {
+        "index": 19,
+        "success": true
+      },
+      {
+        "index": 20,
+        "success": true
+      },
+      {
+        "index": 21,
+        "success": true
+      },
+      {
+        "index": 22,
+        "success": true
+      },
+      {
+        "index": 23,
+        "success": true
+      },
+      {
+        "index": 24,
+        "success": true
+      },
+      {
+        "index": 25,
+        "success": true
+      },
+      {
+        "index": 26,
+        "success": true
+      },
+      {
+        "index": 27,
+        "success": true
+      },
+      {
+        "index": 28,
+        "success": true
+      },
+      {
+        "index": 29,
+        "success": true
+      },
+      {
+        "index": 30,
+        "success": true
+      },
+      {
+        "index": 31,
+        "success": true
+      }
+    ],
+    "run_continuous": {
+      "phase1": {
+        "context": {
+          "success": true
+        },
+        "route": {
+          "success": true
+        },
+        "memory": {
+          "success": true
+        },
+        "learning": {
+          "success": true
+        }
+      },
+      "phase2": {
+        "context": {
+          "success": true
+        },
+        "route": {
+          "success": true
+        },
+        "memory": {
+          "success": true
+        },
+        "learning": {
+          "success": true
+        }
+      }
+    },
+    "pause": {
+      "context": {
+        "success": true
+      },
+      "route": {
+        "success": true
+      },
+      "memory": {
+        "success": true
+      },
+      "learning": {
+        "success": true
+      }
+    },
+    "mid_state": {
+      "context": {
+        "success": true,
+        "cmd": 8,
+        "status": 0,
+        "schema_version": 2,
+        "payload_len": 105,
+        "timestep": 9081,
+        "neuron_count": 0,
+        "synapse_count": 0,
+        "active_trace_count": 0,
+        "active_slots": 8,
+        "slot_writes": 8,
+        "slot_hits": 12,
+        "slot_misses": 4,
+        "slot_evictions": 0,
+        "decisions": 0,
+        "reward_events": 0,
+        "pending_created": 0,
+        "pending_matured": 0,
+        "pending_dropped": 0,
+        "active_pending": 0,
+        "readout_weight_raw": 0,
+        "readout_bias_raw": 0,
+        "readout_weight": 0.0,
+        "readout_bias": 0.0,
+        "profile_id": 4,
+        "flags": 0,
+        "lookup_requests": 0,
+        "lookup_replies": 0,
+        "stale_replies": 0,
+        "duplicate_replies": 0,
+        "timeouts": 0,
+        "commands_received": 10,
+        "schedule_length": 0,
+        "readback_bytes": 105
+      },
+      "route": {
+        "success": true,
+        "cmd": 8,
+        "status": 0,
+        "schema_version": 2,
+        "payload_len": 105,
+        "timestep": 6978,
+        "neuron_count": 0,
+        "synapse_count": 0,
+        "active_trace_count": 0,
+        "active_slots": 2,
+        "slot_writes": 2,
+        "slot_hits": 12,
+        "slot_misses": 4,
+        "slot_evictions": 0,
+        "decisions": 0,
+        "reward_events": 0,
+        "pending_created": 0,
+        "pending_matured": 0,
+        "pending_dropped": 0,
+        "active_pending": 0,
+        "readout_weight_raw": 0,
+        "readout_bias_raw": 0,
+        "readout_weight": 0.0,
+        "readout_bias": 0.0,
+        "profile_id": 5,
+        "flags": 0,
+        "lookup_requests": 0,
+        "lookup_replies": 0,
+        "stale_replies": 0,
+        "duplicate_replies": 0,
+        "timeouts": 0,
+        "commands_received": 4,
+        "schedule_length": 0,
+        "readback_bytes": 105
+      },
+      "learning": {
+        "success": true,
+        "cmd": 8,
+        "status": 0,
+        "schema_version": 2,
+        "payload_len": 105,
+        "timestep": 2768,
+        "neuron_count": 0,
+        "synapse_count": 0,
+        "active_trace_count": 0,
+        "active_slots": 0,
+        "slot_writes": 0,
+        "slot_hits": 0,
+        "slot_misses": 0,
+        "slot_evictions": 0,
+        "decisions": 16,
+        "reward_events": 16,
+        "pending_created": 16,
+        "pending_matured": 16,
+        "pending_dropped": 0,
+        "active_pending": 0,
+        "readout_weight_raw": 24724,
+        "readout_bias_raw": -8404,
+        "readout_weight": 0.7545166015625,
+        "readout_bias": -0.2564697265625,
+        "profile_id": 3,
+        "flags": 0,
+        "lookup_requests": 48,
+        "lookup_replies": 48,
+        "stale_replies": 0,
+        "duplicate_replies": 0,
+        "timeouts": 0,
+        "commands_received": 19,
+        "schedule_length": 16,
+        "readback_bytes": 210
+      }
+    },
+    "final_state": {
+      "context": {
+        "success": true,
+        "cmd": 8,
+        "status": 0,
+        "schema_version": 2,
+        "payload_len": 105,
+        "timestep": 9738,
+        "neuron_count": 0,
+        "synapse_count": 0,
+        "active_trace_count": 0,
+        "active_slots": 8,
+        "slot_writes": 9,
+        "slot_hits": 24,
+        "slot_misses": 8,
+        "slot_evictions": 0,
+        "decisions": 0,
+        "reward_events": 0,
+        "pending_created": 0,
+        "pending_matured": 0,
+        "pending_dropped": 0,
+        "active_pending": 0,
+        "readout_weight_raw": 0,
+        "readout_bias_raw": 0,
+        "readout_weight": 0.0,
+        "readout_bias": 0.0,
+        "profile_id": 4,
+        "flags": 0,
+        "lookup_requests": 0,
+        "lookup_replies": 0,
+        "stale_replies": 0,
+        "duplicate_replies": 0,
+        "timeouts": 0,
+        "commands_received": 14,
+        "schedule_length": 0,
+        "readback_bytes": 210
+      },
+      "route": {
+        "success": true,
+        "cmd": 8,
+        "status": 0,
+        "schema_version": 2,
+        "payload_len": 105,
+        "timestep": 7635,
+        "neuron_count": 0,
+        "synapse_count": 0,
+        "active_trace_count": 0,
+        "active_slots": 2,
+        "slot_writes": 3,
+        "slot_hits": 24,
+        "slot_misses": 8,
+        "slot_evictions": 0,
+        "decisions": 0,
+        "reward_events": 0,
+        "pending_created": 0,
+        "pending_matured": 0,
+        "pending_dropped": 0,
+        "active_pending": 0,
+        "readout_weight_raw": 0,
+        "readout_bias_raw": 0,
+        "readout_weight": 0.0,
+        "readout_bias": 0.0,
+        "profile_id": 5,
+        "flags": 0,
+        "lookup_requests": 0,
+        "lookup_replies": 0,
+        "stale_replies": 0,
+        "duplicate_replies": 0,
+        "timeouts": 0,
+        "commands_received": 8,
+        "schedule_length": 0,
+        "readback_bytes": 210
+      },
+      "memory": {
+        "success": true,
+        "cmd": 8,
+        "status": 0,
+        "schema_version": 2,
+        "payload_len": 105,
+        "timestep": 5532,
+        "neuron_count": 0,
+        "synapse_count": 0,
+        "active_trace_count": 0,
+        "active_slots": 1,
+        "slot_writes": 1,
+        "slot_hits": 32,
+        "slot_misses": 0,
+        "slot_evictions": 0,
+        "decisions": 0,
+        "reward_events": 0,
+        "pending_created": 0,
+        "pending_matured": 0,
+        "pending_dropped": 0,
+        "active_pending": 0,
+        "readout_weight_raw": 0,
+        "readout_bias_raw": 0,
+        "readout_weight": 0.0,
+        "readout_bias": 0.0,
+        "profile_id": 6,
+        "flags": 0,
+        "lookup_requests": 0,
+        "lookup_replies": 0,
+        "stale_replies": 0,
+        "duplicate_replies": 0,
+        "timeouts": 0,
+        "commands_received": 5,
+        "schedule_length": 0,
+        "readback_bytes": 105
+      },
+      "learning": {
+        "success": true,
+        "cmd": 8,
+        "status": 0,
+        "schema_version": 2,
+        "payload_len": 105,
+        "timestep": 3426,
+        "neuron_count": 0,
+        "synapse_count": 0,
+        "active_trace_count": 0,
+        "active_slots": 0,
+        "slot_writes": 0,
+        "slot_hits": 0,
+        "slot_misses": 0,
+        "slot_evictions": 0,
+        "decisions": 32,
+        "reward_events": 32,
+        "pending_created": 32,
+        "pending_matured": 32,
+        "pending_dropped": 0,
+        "active_pending": 0,
+        "readout_weight_raw": 32781,
+        "readout_bias_raw": 3,
+        "readout_weight": 1.000396728515625,
+        "readout_bias": 9.1552734375e-05,
+        "profile_id": 3,
+        "flags": 0,
+        "lookup_requests": 96,
+        "lookup_replies": 96,
+        "stale_replies": 0,
+        "duplicate_replies": 0,
+        "timeouts": 0,
+        "commands_received": 39,
+        "schedule_length": 32,
+        "readback_bytes": 420
+      }
+    },
+    "waited_seconds": {
+      "phase1": 0.5,
+      "phase2": 0.5
+    }
+  },
+  "hardware_exception": null,
+  "reference": {
+    "weight_raw": 35329,
+    "weight": 1.078155517578125,
+    "bias_raw": 655,
+    "bias": 0.019989013671875,
+    "tail_accuracy": 1.0,
+    "rows": [
+      {
+        "step": 1,
+        "sign_correct": true,
+        "gated": false,
+        "feature_raw": 32768,
+        "prediction_raw": 0
+      },
+      {
+        "step": 2,
+        "sign_correct": true,
+        "gated": false,
+        "feature_raw": 32768,
+        "prediction_raw": 0
+      },
+      {
+        "step": 3,
+        "sign_correct": true,
+        "gated": false,
+        "feature_raw": 32768,
+        "prediction_raw": 0
+      },
+      {
+        "step": 4,
+        "sign_correct": true,
+        "gated": false,
+        "feature_raw": 32768,
+        "prediction_raw": 16384
+      },
+      {
+        "step": 5,
+        "sign_correct": true,
+        "gated": false,
+        "feature_raw": 32768,
+        "prediction_raw": 32768
+      },
+      {
+        "step": 6,
+        "sign_correct": true,
+        "gated": false,
+        "feature_raw": 32768,
+        "prediction_raw": 49152
+      },
+      {
+        "step": 7,
+        "sign_correct": true,
+        "gated": false,
+        "feature_raw": 32768,
+        "prediction_raw": 57344
+      },
+      {
+        "step": 8,
+        "sign_correct": true,
+        "gated": false,
+        "feature_raw": 32768,
+        "prediction_raw": 57344
+      },
+      {
+        "step": 9,
+        "sign_correct": true,
+        "gated": false,
+        "feature_raw": 0,
+        "prediction_raw": 24576
+      },
+      {
+        "step": 10,
+        "sign_correct": true,
+        "gated": false,
+        "feature_raw": 0,
+        "prediction_raw": 18432
+      },
+      {
+        "step": 11,
+        "sign_correct": true,
+        "gated": false,
+        "feature_raw": 0,
+        "prediction_raw": 12288
+      },
+      {
+        "step": 12,
+        "sign_correct": true,
+        "gated": false,
+        "feature_raw": 0,
+        "prediction_raw": 6144
+      },
+      {
+        "step": 13,
+        "sign_correct": true,
+        "gated": false,
+        "feature_raw": 0,
+        "prediction_raw": 1536
+      },
+      {
+        "step": 14,
+        "sign_correct": false,
+        "gated": false,
+        "feature_raw": 0,
+        "prediction_raw": -1536
+      },
+      {
+        "step": 15,
+        "sign_correct": true,
+        "gated": false,
+        "feature_raw": -32768,
+        "prediction_raw": -15360
+      },
+      {
+        "step": 16,
+        "sign_correct": true,
+        "gated": false,
+        "feature_raw": -32768,
+        "prediction_raw": -15744
+      },
+      {
+        "step": 17,
+        "sign_correct": true,
+        "gated": false,
+        "feature_raw": -32768,
+        "prediction_raw": -15360
+      },
+      {
+        "step": 18,
+        "sign_correct": true,
+        "gated": false,
+        "feature_raw": 32768,
+        "prediction_raw": 9216
+      },
+      {
+        "step": 19,
+        "sign_correct": true,
+        "gated": false,
+        "feature_raw": 32768,
+        "prediction_raw": 9216
+      },
+      {
+        "step": 20,
+        "sign_correct": true,
+        "gated": false,
+        "feature_raw": -32768,
+        "prediction_raw": -41280
+      },
+      {
+        "step": 21,
+        "sign_correct": true,
+        "gated": false,
+        "feature_raw": 32768,
+        "prediction_raw": 20992
+      },
+      {
+        "step": 22,
+        "sign_correct": true,
+        "gated": false,
+        "feature_raw": 32768,
+        "prediction_raw": 32768
+      },
+      {
+        "step": 23,
+        "sign_correct": true,
+        "gated": false,
+        "feature_raw": -32768,
+        "prediction_raw": -37024
+      },
+      {
+        "step": 24,
+        "sign_correct": true,
+        "gated": false,
+        "feature_raw": 16384,
+        "prediction_raw": 19736
+      },
+      {
+        "step": 25,
+        "sign_correct": true,
+        "gated": false,
+        "feature_raw": -16384,
+        "prediction_raw": -18104
+      },
+      {
+        "step": 26,
+        "sign_correct": true,
+        "gated": false,
+        "feature_raw": 0,
+        "prediction_raw": 1880
+      },
+      {
+        "step": 27,
+        "sign_correct": true,
+        "gated": false,
+        "feature_raw": 0,
+        "prediction_raw": 1042
+      },
+      {
+        "step": 28,
+        "sign_correct": true,
+        "gated": false,
+        "feature_raw": 0,
+        "prediction_raw": 1472
+      },
+      {
+        "step": 29,
+        "sign_correct": true,
+        "gated": false,
+        "feature_raw": 0,
+        "prediction_raw": 1002
+      },
+      {
+        "step": 30,
+        "sign_correct": true,
+        "gated": false,
+        "feature_raw": 0,
+        "prediction_raw": 741
+      },
+      {
+        "step": 31,
+        "sign_correct": true,
+        "gated": false,
+        "feature_raw": 0,
+        "prediction_raw": 373
+      },
+      {
+        "step": 32,
+        "sign_correct": true,
+        "gated": false,
+        "feature_raw": -32768,
+        "prediction_raw": -36020
+      }
+    ],
+    "wrong_ctx_count": 8,
+    "wrong_route_count": 8,
+    "ctx_overwrite_events": 2,
+    "route_overwrite_events": 6,
+    "slot_writes": 9,
+    "slot_hits": 24,
+    "slot_misses": 8,
+    "active_slots": 8,
+    "route_slot_writes": 3,
+    "route_slot_hits": 24,
+    "route_slot_misses": 8,
+    "active_route_slots": 2,
+    "sequence_length": 32
+  }
+}

@@ -1,0 +1,41 @@
+make: Entering directory '/tmp/job11618096177016154229.tmp/cra_422r/coral_reef_spinnaker/spinnaker_runtime'
+rm -f tests/test_runtime
+cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-int-to-pointer-cast -I stubs -I src tests/test_runtime.c src/neuron_manager.c src/synapse_manager.c src/state_manager.c src/host_interface.c src/router.c -lm -o tests/test_runtime
+./tests/test_runtime
+=== Coral Reef Runtime Host Tests ===
+
+config.h:
+  PASS: MAKE_KEY
+  PASS: fixed-point math
+  PASS: command constants
+  PASS: weight limits
+
+neuron_manager:
+  PASS: neuron birth/death
+  PASS: neuron find
+  PASS: neuron reset all
+
+synapse_manager:
+  PASS: synapse create/remove
+  PASS: synapse weight limits
+  PASS: eligibility trace modulation
+  PASS: indexed delivery and active trace list
+
+state_manager:
+  PASS: persistent context slots
+  PASS: bounded slot eviction
+  PASS: readout state and reset
+  PASS: reward readout update
+  PASS: pending horizon maturation
+  PASS: bounded pending horizons
+
+router:
+  PASS: router add/remove
+  PASS: router reset all
+
+host_interface:
+  PASS: host_interface init
+  PASS: compact state summary pack
+
+=== ALL TESTS PASSED ===
+make: Leaving directory '/tmp/job11618096177016154229.tmp/cra_422r/coral_reef_spinnaker/spinnaker_runtime'

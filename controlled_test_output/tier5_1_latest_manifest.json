@@ -1,0 +1,20 @@
+{
+  "generated_at_utc": "2026-05-04T00:05:00.951435+00:00",
+  "source_generated_at_utc": "2026-04-27T03:27:05+00:00",
+  "registry_entry_id": "tier5_1_external_baselines",
+  "tier": "Tier 5.1 - External Baselines",
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_1_20260426_232530",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_1_20260426_232530/tier5_1_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_1_20260426_232530/tier5_1_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_1_20260426_232530/tier5_1_summary.csv",
+  "canonical": true,
+  "claim": "CRA is competitive against simple external learners and shows a defensible median-baseline advantage on sensor_control and hard noisy switching, while simpler online learners dominate the easy delayed-cue task.",
+  "caveat": "Controlled software comparison only; not hardware evidence, not a claim that CRA wins every task, and not proof against all possible baselines.",
+  "claim_boundary": [
+    "Tier 5.1 is a controlled software baseline comparison, not a hardware result.",
+    "The baseline matrix used CRA plus random/sign persistence, online perceptron, online logistic regression, echo-state network, small GRU readout, STDP-only SNN, and evolutionary population baselines.",
+    "CRA does not win every task; simpler learners dominate the easy delayed-cue mapping.",
+    "The pass claim is limited to a defensible median-baseline advantage on sensor_control and hard noisy switching plus full matrix completion."
+  ]
+}

@@ -1,0 +1,5 @@
+gate,status,meaning,hardware_claim
+host_runtime_tests,pass,runtime C command/readback code compiles and host tests pass,none
+compact_state_readback,pass,CMD_READ_STATE schema is packed and covered by host tests,none until board round-trip
+aplx_build,not_attempted_spinnaker_tools_missing,local .aplx build attempted only if spinnaker_tools are installed,none unless build status is pass and board load/command smoke later passes
+board_load_command_roundtrip,not_attempted,requires EBRAINS/board run,future Tier 4.22i target

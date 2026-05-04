@@ -1,0 +1,21 @@
+{
+  "generated_at_utc": "2026-05-04T00:05:00.958911+00:00",
+  "source_generated_at_utc": "2026-04-27T11:11:14+00:00",
+  "registry_entry_id": "tier5_4_delayed_credit_confirmation",
+  "tier": "Tier 5.4 - Delayed-Credit Confirmation",
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_4_20260427_065412",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_4_20260427_065412/tier5_4_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_4_20260427_065412/tier5_4_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_4_20260427_065412/tier5_4_summary.csv",
+  "canonical": true,
+  "claim": "The Tier 5.3 delayed-credit candidate `cra_delayed_lr_0_20` confirms across 960 and 1500 steps: delayed_cue stays at 1.0 tail accuracy, hard_noisy_switching beats the external median at both lengths, and the candidate does not regress versus current CRA.",
+  "caveat": "Controlled software confirmation only; not hardware evidence and not a superiority claim because hard_noisy_switching still trails the best external baseline.",
+  "claim_boundary": [
+    "Tier 5.4 is a controlled software confirmation, not a hardware result.",
+    "The matrix used seeds 42, 43, and 44, run lengths 960 and 1500, tasks delayed_cue and hard_noisy_switching, current CRA, cra_delayed_lr_0_20, and eight external baselines.",
+    "The delayed-credit candidate confirms versus the predeclared Tier 5.4 criteria: delayed_cue stays at 1.0 tail accuracy, hard_noisy_switching beats the external median, no regression versus current CRA, and seed variance is acceptable.",
+    "Do not claim hard-switch superiority: hard_noisy_switching still trails the best external baseline at both run lengths.",
+    "This result supports designing Tier 4.16 as a harder SpiNNaker capsule using delayed_lr_0_20, not claiming full hardware readiness."
+  ]
+}

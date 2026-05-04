@@ -1,0 +1,205 @@
+{
+  "tier": "Tier 4.27g \u2014 SDP-vs-MCPL Protocol Comparison",
+  "runner_revision": "tier4_27g_sdp_vs_mcpl_comparison_20260502_0001",
+  "generated_at_utc": "2026-05-03T03:11:25.363560+00:00",
+  "mode": "local",
+  "status": "pass",
+  "criteria": [
+    {
+      "name": "runner revision current",
+      "value": "tier4_27g_sdp_vs_mcpl_comparison_20260502_0001",
+      "rule": "expected",
+      "passed": true
+    },
+    {
+      "name": "SDP request path exists in source",
+      "value": true,
+      "rule": "== True",
+      "passed": true
+    },
+    {
+      "name": "SDP reply path exists in source",
+      "value": true,
+      "rule": "== True",
+      "passed": true
+    },
+    {
+      "name": "MCPL request path exists in source",
+      "value": true,
+      "rule": "== True",
+      "passed": true
+    },
+    {
+      "name": "MCPL reply path exists in source",
+      "value": true,
+      "rule": "== True",
+      "passed": true
+    },
+    {
+      "name": "MCPL callback wired in main.c",
+      "value": true,
+      "rule": "== True",
+      "passed": true
+    },
+    {
+      "name": "MCPL init wired in main.c",
+      "value": true,
+      "rule": "== True",
+      "passed": true
+    },
+    {
+      "name": "MCPL round-trip smaller than SDP",
+      "value": true,
+      "rule": "== True",
+      "passed": true
+    },
+    {
+      "name": "router entry count documented",
+      "value": 4,
+      "rule": "> 0",
+      "passed": true
+    },
+    {
+      "name": "failure modes documented",
+      "value": 6,
+      "rule": "> 0",
+      "passed": true
+    },
+    {
+      "name": "latency paths documented",
+      "value": "~5-20 us per hop (monitor-dependent)",
+      "rule": "present",
+      "passed": true
+    },
+    {
+      "name": "risk recommendation explicit",
+      "value": "Make MCPL the default inter-core lookup data plane for Tier 4.28+; keep SDP code path as fallback until MCPL hardware smoke passes",
+      "rule": "present",
+      "passed": true
+    }
+  ],
+  "sdp_payloads": {
+    "request_header_bytes": 26,
+    "request_data_bytes": 0,
+    "request_total_bytes": 26,
+    "reply_header_bytes": 26,
+    "reply_data_bytes": 2,
+    "reply_total_bytes": 28,
+    "round_trip_bytes": 54,
+    "request_fields_set": {
+      "flags": false,
+      "tag": false,
+      "dest_port": false,
+      "srce_port": false,
+      "dest_addr": false,
+      "srce_addr": false,
+      "cmd_rc": false,
+      "arg1": false,
+      "arg2": false,
+      "arg3": false,
+      "length": false
+    },
+    "reply_fields_set": {
+      "flags": true,
+      "tag": true,
+      "dest_port": true,
+      "srce_port": true,
+      "dest_addr": true,
+      "srce_addr": true,
+      "cmd_rc": true,
+      "arg1": true,
+      "arg2": true,
+      "arg3": true,
+      "data0": true,
+      "data1": true,
+      "length": true
+    }
+  },
+  "mcpl_payloads": {
+    "request_bytes": 8,
+    "reply_bytes": 8,
+    "round_trip_bytes": 16,
+    "key_packing_in_source": true,
+    "payload_packing_in_source": true,
+    "key_format": "app_id(8) | msg_type(8) | lookup_type(8) | seq_id(8)",
+    "reply_payload_format": "value(16) | confidence(8) | hit(8) [4.27e/f format]"
+  },
+  "message_counts": {
+    "lookup_types_per_event": 3,
+    "messages_per_lookup_round_trip": 2,
+    "inter_core_messages_per_event": 6,
+    "reference_schedule_events": 48,
+    "total_lookup_messages_48event": 288,
+    "sdp_total_bytes_48event": 8064,
+    "mcpl_total_bytes_48event": 2304
+  },
+  "router_entries": {
+    "sdp_entries_required": 0,
+    "sdp_routing_mechanism": "Monitor processor handles destination CPU selection via SDP header dest_port field",
+    "mcpl_entries_required": 4,
+    "mcpl_routing_mechanism": "Hardware router matches 32-bit key against routing table entries",
+    "mcpl_entry_breakdown": {
+      "context_core": "match REQUEST/CONTEXT keys -> route to context core",
+      "route_core": "match REQUEST/ROUTE keys -> route to route core",
+      "memory_core": "match REQUEST/MEMORY keys -> route to memory core",
+      "learning_core": "match REPLY/* keys (mask 0xFFFF0000) -> route to learning core"
+    },
+    "mcpl_learning_core_mask": "0xFFFF0000 (ignores lookup_type and seq_id)",
+    "mcpl_state_core_mask": "0xFFFFFF00 (ignores seq_id only)"
+  },
+  "failure_modes": {
+    "sdp": {
+      "drop_causes": [
+        "Monitor processor SDP queue overflow (core sends faster than monitor routes)",
+        "Destination core mailbox full (32-entry limit per core)",
+        "Monitor processor crash or reset during routing"
+      ],
+      "drop_behavior": "Learning core times out; no automatic retry; request counted as timeout",
+      "drop_detectability": "High \u2014 timeout counter increments, stale reply check may fire",
+      "mitigation": "Reduce schedule density, add host-side pacing, or switch to MCPL",
+      "scaling_risk": "Monitor processor is single bottleneck; risk increases with core count"
+    },
+    "mcpl": {
+      "drop_causes": [
+        "Router table miss (no matching entry for key)",
+        "Router congestion (too many multicast packets in flight)",
+        "Multicast key collision with another application"
+      ],
+      "drop_behavior": "Learning core times out; same timeout counter as SDP",
+      "drop_detectability": "High \u2014 timeout counter increments; router miss is silent hardware drop",
+      "mitigation": "Verify router entries loaded, use unique app_id in key, monitor router utilization",
+      "scaling_risk": "Hardware router is parallel and chip-wide; scales better than monitor processor"
+    }
+  },
+  "latency": {
+    "sdp": {
+      "path": "Source core -> monitor processor SDP queue -> monitor parses header -> monitor writes to dest core mailbox -> dest core CPU reads mailbox",
+      "bottleneck": "Monitor processor CPU and mailbox delivery loop",
+      "intra_chip_estimate_us": "~5-20 us per hop (monitor-dependent)",
+      "notes": "Monitor processor is shared across all 18 cores; contention increases latency"
+    },
+    "mcpl": {
+      "path": "Source core -> hardware router key match -> router forwards to target core(s) -> target core DMA receives packet -> Spin1API callback fires",
+      "bottleneck": "Router table lookup (hardware, parallel)",
+      "intra_chip_estimate_us": "~0.5-2 us per hop (hardware router)",
+      "notes": "No monitor involvement; router handles all keys in parallel; latency is deterministic"
+    }
+  },
+  "risk_assessment": {
+    "sdp_maturity": "PROVEN \u2014 4.27a hardware pass on board 10.11.194.65 with 144/144 lookup requests/replies, zero timeouts",
+    "mcpl_maturity": "COMPILE-FEASIBLE + WIRED \u2014 4.27d/f pass locally; all four profiles build; callback wired; router init defined",
+    "mcpl_hardware_uncertainty": "Router table load behavior not yet validated on actual SpiNNaker chip",
+    "mcpl_risk_level": "LOW for intra-chip; MEDIUM for inter-chip (untested)",
+    "sdp_risk_level": "LOW for 4-core; HIGH for scaling beyond 4 cores (monitor bottleneck)",
+    "source_evidence": {
+      "sdp_request_path": true,
+      "sdp_reply_path": true,
+      "mcpl_request_path": true,
+      "mcpl_reply_path": true,
+      "mcpl_callback_wired": true,
+      "mcpl_init_wired": true
+    },
+    "recommendation": "Make MCPL the default inter-core lookup data plane for Tier 4.28+; keep SDP code path as fallback until MCPL hardware smoke passes"
+  },
+  "claim_boundary": "Source-code-based protocol analysis only. NOT hardware timing measurements. NOT router-table hardware validation. NOT multi-chip scaling evidence."
+}

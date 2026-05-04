@@ -1,0 +1,6 @@
+function,before_4_22g,after_4_22g,hardware_claim
+synapse_deliver_spike,O(S) per incoming spike,O(out_degree(pre_id)) per incoming spike,not yet measured
+synapse_decay_traces_all,O(S) per timer tick,O(active_traces) per timer tick,not yet measured
+synapse_modulate_all,O(S) per dopamine event,O(active_traces) per dopamine event,not yet measured
+neuron_add_input/neuron_find,O(N) per delivered input,unchanged,open blocker
+_handle_read_spikes,count/timestep only,unchanged,open blocker

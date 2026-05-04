@@ -1,0 +1,10 @@
+{
+  "canonical": false,
+  "claim": "Tier 4.17 runtime contract only; chunked host bridge still needs real hardware evidence.",
+  "generated_at_utc": "2026-04-27T17:17:19.311779+00:00",
+  "manifest": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_17_20260427_171719_runtime_scaffold/tier4_17_results.json",
+  "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_17_20260427_171719_runtime_scaffold",
+  "report": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_17_20260427_171719_runtime_scaffold/tier4_17_report.md",
+  "status": "prepared",
+  "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_17_20260427_171719_runtime_scaffold/tier4_17_runtime_summary.csv"
+}

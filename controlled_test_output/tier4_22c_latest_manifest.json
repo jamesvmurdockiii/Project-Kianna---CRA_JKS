@@ -1,0 +1,10 @@
+{
+  "canonical": false,
+  "claim": "Latest Tier 4.22c persistent custom-C state scaffold; not hardware or on-chip learning evidence.",
+  "generated_at_utc": "2026-04-30T18:45:11+00:00",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_22c_20260430_persistent_state_scaffold/tier4_22c_results.json",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_22c_20260430_persistent_state_scaffold",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_22c_20260430_persistent_state_scaffold/tier4_22c_report.md",
+  "status": "pass",
+  "tier": "Tier 4.22c - Persistent On-Chip State Scaffold"
+}

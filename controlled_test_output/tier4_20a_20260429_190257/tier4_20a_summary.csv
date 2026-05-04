@@ -1,0 +1,2 @@
+status,frozen v2.1 baseline artifact exists,post-chunked-runtime v0.8 baseline artifact exists,chunked host runtime contract is implemented,continuous/on-chip runtime is explicitly not overclaimed,all promoted v2.1 mechanisms classified,no mechanism is incorrectly marked on-chip proven
+pass,True,True,True,True,True,True

@@ -1,0 +1,5 @@
+mechanism,runtime_owner,implementation,causal_rule,current_gate,future_gate
+synaptic_eligibility_trace,custom_c_runtime,eligibility_trace field on synapse_t,trace increments when a pre-synaptic spike is delivered to a post-synaptic target,host C unit tests and static checks,hardware build/run and learning parity against chunked reference
+trace_gated_dopamine,custom_c_runtime,delta_w = dopamine_level * eligibility_trace,dopamine without a causal trace does not move the weight,host C unit tests and static checks,reward timing/parity under continuous task streams
+fixed_point_trace_decay,custom_c_runtime,synapse_decay_traces_all(DEFAULT_ELIGIBILITY_DECAY),traces decay on the runtime timer path,host C unit tests and static checks,scale audit to avoid sweeping all synapses at unacceptable sizes
+readout_reward_update,custom_c_runtime,cra_state_apply_reward_to_readout,reward updates fixed-point readout weight and bias from last feature/prediction,host C unit tests and static checks,compare behavior against v2.1/chunked reference on delayed_cue and hard_noisy_switching

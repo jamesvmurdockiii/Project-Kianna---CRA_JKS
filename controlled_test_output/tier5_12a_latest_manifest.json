@@ -1,0 +1,19 @@
+{
+  "generated_at_utc": "2026-05-04T00:05:00.993260+00:00",
+  "source_generated_at_utc": "2026-04-29T09:40:56+00:00",
+  "registry_entry_id": "tier5_12a_predictive_task_pressure",
+  "tier": "Tier 5.12a - Predictive Task-Pressure Validation",
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_12a_20260429_054052",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_12a_20260429_054052/tier5_12a_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_12a_20260429_054052/tier5_12a_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_12a_20260429_054052/tier5_12a_summary.csv",
+  "canonical": true,
+  "claim": "Predictive-pressure streams defeat current-reflex, sign-persistence, wrong-horizon, and shuffled-target shortcuts while causal predictive-memory controls solve them.",
+  "caveat": "Task-validation evidence only; not CRA predictive coding, world modeling, language, planning, hardware prediction, or a v1.8 freeze.",
+  "claim_boundary": [
+    "Tier 5.12a is controlled software task-validation evidence, not a CRA mechanism promotion.",
+    "The run validates that the predictive-pressure task family defeats reflex/sign-persistence/wrong-horizon/shuffled-target shortcuts while causal predictive-memory controls can solve it.",
+    "It does not prove CRA predictive coding, world modeling, language, planning, hardware prediction, hardware scaling, or v1.8."
+  ]
+}

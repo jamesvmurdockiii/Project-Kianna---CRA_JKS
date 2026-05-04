@@ -1,0 +1,15 @@
+task,model,model_family,runs,steps,tail_accuracy_mean,tail_accuracy_std,all_accuracy_mean,prediction_target_corr_mean,tail_prediction_target_corr_mean,runtime_seconds_mean,evaluation_count_mean
+delayed_context_cue,memory_reset,context_control,1,180,1.0,0.0,0.5714285714285714,0.35355339059327373,,0.000981292000000078,7.0
+delayed_context_cue,online_perceptron,linear,1,180,0.0,0.0,0.5714285714285714,-0.2403856803060548,,0.0015378329999999885,7.0
+delayed_context_cue,oracle_context,context_control,1,180,1.0,0.0,1.0,1.0,,0.0006956249999998665,7.0
+delayed_context_cue,shuffled_context,context_control,1,180,0.0,0.0,0.14285714285714285,-0.6454972243679028,,0.0006872499999999171,7.0
+delayed_context_cue,sign_persistence,rule,1,180,1.0,0.0,0.5714285714285714,0.35355339059327373,,0.0015356250000000404,7.0
+delayed_context_cue,stream_context_memory,context_control,1,180,1.0,0.0,1.0,1.0,,0.000665625000000114,7.0
+delayed_context_cue,wrong_context,context_control,1,180,0.0,0.0,0.0,-1.0,,0.0007146670000000022,7.0
+hidden_context_recurrence,memory_reset,context_control,1,180,1.0,0.0,1.0,1.0,0.9999999999999998,0.0013569159999999858,14.0
+hidden_context_recurrence,online_perceptron,linear,1,180,1.0,0.0,0.8571428571428571,0.8863215438823724,0.9990448392620083,0.0011149999999999771,14.0
+hidden_context_recurrence,oracle_context,context_control,1,180,1.0,0.0,1.0,1.0,0.9999999999999998,0.0009050409999999953,14.0
+hidden_context_recurrence,shuffled_context,context_control,1,180,1.0,0.0,1.0,1.0,0.9999999999999998,0.0007427499999999032,14.0
+hidden_context_recurrence,sign_persistence,rule,1,180,1.0,0.0,1.0,1.0,0.9999999999999998,0.0010340840000000462,14.0
+hidden_context_recurrence,stream_context_memory,context_control,1,180,1.0,0.0,1.0,1.0,0.9999999999999998,0.0008090000000000597,14.0
+hidden_context_recurrence,wrong_context,context_control,1,180,0.0,0.0,0.0,-1.0,-0.9999999999999998,0.0008754159999999622,14.0

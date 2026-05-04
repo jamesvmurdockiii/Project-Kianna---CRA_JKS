@@ -1,0 +1,99 @@
+{
+  "claim_boundary": "Software motif-causality suite with seeded motif-diverse graph; not hardware/on-chip motif evidence.",
+  "generated_at_utc": "2026-04-28T20:05:28+00:00",
+  "message_passing": {
+    "context_gain": 0.025,
+    "prediction_mix": 0.35,
+    "steps": 1
+  },
+  "performance_variants": [
+    "monolithic_same_capacity",
+    "motif_shuffled",
+    "no_feedback",
+    "no_feedforward",
+    "no_lateral",
+    "no_wta",
+    "random_graph_same_edge_count"
+  ],
+  "requested_variants": [
+    "intact",
+    "no_feedforward",
+    "random_graph_same_edge_count",
+    "monolithic_same_capacity"
+  ],
+  "tier": "Tier 6.4 - Circuit Motif Causality",
+  "variant_definitions": {
+    "intact": {
+      "description": "Motif-diverse lifecycle CRA; the motif structure under test.",
+      "group": "intact",
+      "label": "intact motif graph",
+      "lifecycle_enabled": true,
+      "performance_control": false,
+      "seed_graph": true,
+      "variant_type": "intact"
+    },
+    "monolithic_same_capacity": {
+      "description": "Fixed max-pool CRA with graph message passing disabled.",
+      "group": "monolithic_control",
+      "label": "monolithic same capacity",
+      "lifecycle_enabled": false,
+      "performance_control": true,
+      "seed_graph": false,
+      "variant_type": "monolithic_same_capacity"
+    },
+    "motif_shuffled": {
+      "description": "Same source/target/weights as intact with motif labels shuffled.",
+      "group": "same_edges_label_control",
+      "label": "motif-label shuffled graph",
+      "lifecycle_enabled": true,
+      "performance_control": true,
+      "seed_graph": true,
+      "variant_type": "motif_shuffled"
+    },
+    "no_feedback": {
+      "description": "Seeded graph with feedback/recurrent edges removed before the run.",
+      "group": "motif_ablation",
+      "label": "no feedback motif",
+      "lifecycle_enabled": true,
+      "performance_control": true,
+      "seed_graph": true,
+      "variant_type": "no_feedback"
+    },
+    "no_feedforward": {
+      "description": "Seeded graph with feedforward edges removed before the run.",
+      "group": "motif_ablation",
+      "label": "no feedforward motif",
+      "lifecycle_enabled": true,
+      "performance_control": true,
+      "seed_graph": true,
+      "variant_type": "no_feedforward"
+    },
+    "no_lateral": {
+      "description": "Seeded graph with lateral coordination and lateral inhibition removed.",
+      "group": "motif_ablation",
+      "label": "no lateral motif",
+      "lifecycle_enabled": true,
+      "performance_control": true,
+      "seed_graph": true,
+      "variant_type": "no_lateral"
+    },
+    "no_wta": {
+      "description": "All-polyps readout plus no inhibitory lateral motif edges.",
+      "group": "motif_ablation",
+      "label": "no WTA / lateral inhibition",
+      "lifecycle_enabled": true,
+      "performance_control": true,
+      "seed_graph": true,
+      "variant_type": "no_wta"
+    },
+    "random_graph_same_edge_count": {
+      "description": "Same number and weight signs as intact, but randomized source/target pairs.",
+      "group": "same_capacity_graph_control",
+      "label": "random graph same edge count",
+      "lifecycle_enabled": true,
+      "performance_control": true,
+      "seed_graph": true,
+      "variant_type": "random_graph_same_edge_count"
+    }
+  }
+}

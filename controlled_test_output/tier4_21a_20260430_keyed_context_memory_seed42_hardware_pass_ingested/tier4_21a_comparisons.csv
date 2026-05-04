@@ -1,0 +1,2 @@
+best_ablation,best_ablation_all_accuracy,keyed_all_accuracy,keyed_context_memory_updates,keyed_delta_vs_best_ablation,keyed_feature_active_steps,keyed_max_slots,keyed_tail_accuracy,keyed_tail_delta_vs_best_ablation,task
+slot_reset_ablation,0.5,1.0,11.0,0.5,20.0,4.0,1.0,0.0,context_reentry_interference

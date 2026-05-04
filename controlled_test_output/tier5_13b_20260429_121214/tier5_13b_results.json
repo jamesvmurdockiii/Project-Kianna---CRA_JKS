@@ -1,0 +1,8 @@
+{
+  "command": "experiments/tier5_module_routing.py --backend mock --tasks heldout_context_routing,distractor_router_chain --steps 420 --seed-count 1 --models sign_persistence,online_perceptron --variants all --smoke",
+  "failure_reason": "'pass'",
+  "generated_at_utc": "2026-04-29T12:12:20+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_13b_20260429_121214",
+  "status": "blocked",
+  "tier": "Tier 5.13b - Module Routing / Contextual Gating Diagnostic"
+}

@@ -1,0 +1,3 @@
+task,classification,run_lengths,candidate_tail_min_across_lengths,candidate_tail_final,candidate_tail_delta_vs_current_min,candidate_tail_delta_vs_external_median_min,candidate_tail_delta_vs_best_external_min,candidate_tail_std_max,near_one_tail_all_lengths,beats_external_median_all_lengths,beats_best_external_all_lengths,no_regression_vs_current_all_lengths,variance_acceptable,final_best_external_tail_model,final_best_external_tail_accuracy,final_candidate_recovery_steps,final_external_median_recovery_steps
+delayed_cue,confirmed,24,0.0,,0.0,0.0,0.0,0.0,True,True,True,True,True,echo_state_network,,,
+hard_noisy_switching,confirmed_vs_best_external,24,0.0,,0.0,0.0,0.0,0.0,,True,True,True,True,echo_state_network,,,

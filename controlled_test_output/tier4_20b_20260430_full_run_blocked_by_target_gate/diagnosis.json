@@ -1,0 +1,46 @@
+{
+  "child_failure_reason": "No real SpiNNaker target is configured in this environment. pyNN.spiNNaker is installed, but sPyNNaker has no Machine target (no machineName, version, spalloc_server, remote_spinnaker_url, SPINNAKER_MACHINE, or SPALLOC_SERVER). Run inside a real SpiNNaker allocation or provide --spinnaker-hostname if that is the correct target for this EBRAINS job.",
+  "child_summary": {
+    "backend": "pyNN.spiNNaker",
+    "chunk_size_steps": 50,
+    "hardware_run_attempted": false,
+    "hardware_target_configured": false,
+    "jobmanager_cli": null,
+    "learning_location": "host",
+    "mode": "run-hardware",
+    "runtime_mode": "chunked",
+    "seeds": [
+      42
+    ],
+    "tasks": [
+      "delayed_cue",
+      "hard_noisy_switching"
+    ]
+  },
+  "classification": "full_run_blocked_by_strict_target_gate",
+  "env_flags": {
+    "EBRAINS_JOB_ID": false,
+    "JOB_ID": false,
+    "REMOTE_SPINNAKER_URL": false,
+    "SLURM_JOB_ID": false,
+    "SPALLOC_SERVER": false,
+    "SPINNAKER_MACHINE": false
+  },
+  "interpretation": "source layout and v2.1 bridge runner are present; strict target precheck blocked before sim.run; hardware evidence was not attempted",
+  "recommended_fix": "make hardware target precheck advisory for run-hardware; require real evidence via sim.run/readback/fallback metrics instead",
+  "spynnaker_config": {
+    "exists": true,
+    "height": null,
+    "machineName": null,
+    "mode": null,
+    "path": "/home/jovyan/.spynnaker.cfg",
+    "remote_spinnaker_url": null,
+    "spalloc_group": null,
+    "spalloc_port": null,
+    "spalloc_server": null,
+    "spalloc_user": null,
+    "version": null,
+    "virtual_board": null,
+    "width": null
+  }
+}

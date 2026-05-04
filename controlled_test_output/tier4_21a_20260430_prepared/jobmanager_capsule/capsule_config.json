@@ -1,0 +1,25 @@
+{
+  "baseline": "v2.1",
+  "chunk_size_steps": 50,
+  "claim_boundary": "Targeted keyed context-memory bridge adapter; not native/on-chip memory.",
+  "context_memory_slot_count": 4,
+  "direct_jobmanager_command": "cra_421a/experiments/tier4_21a_keyed_context_memory_bridge.py --mode run-hardware --tasks context_reentry_interference --variants keyed_context_memory,slot_reset_ablation,slot_shuffle_ablation,wrong_key_ablation --seeds 42 --steps 720 --population-size 8 --chunk-size-steps 50 --delayed-readout-lr 0.2 --context-memory-slot-count 4 --no-require-real-hardware --output-dir tier4_21a_job_output",
+  "learning_location": "host",
+  "population_size": 8,
+  "runner_revision": "tier4_21a_keyed_memory_bridge_20260430_0000",
+  "runtime_mode": "chunked",
+  "seeds": [
+    42
+  ],
+  "steps": 720,
+  "tasks": [
+    "context_reentry_interference"
+  ],
+  "tier": "Tier 4.21a - Keyed Context-Memory Hardware Bridge Probe",
+  "variants": [
+    "keyed_context_memory",
+    "slot_reset_ablation",
+    "slot_shuffle_ablation",
+    "wrong_key_ablation"
+  ]
+}

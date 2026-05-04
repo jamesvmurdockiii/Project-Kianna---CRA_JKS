@@ -1,0 +1,8 @@
+/home/jovyan/spinnaker/spinnaker_tools/make/Makefile.common:18: inclusion of Makefile.common instead of spinnaker_tools.mk
+src/main.c: In function 'c_main':
+src/main.c:113:23: error: 'MC_PACKET_RX' undeclared (first use in this function); did you mean 'SDP_PACKET_RX'?
+  113 |     spin1_callback_on(MC_PACKET_RX, mc_packet_callback, 0);
+      |                       ^~~~~~~~~~~~
+      |                       SDP_PACKET_RX
+src/main.c:113:23: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Makefile:87: build/main.o] Error 1

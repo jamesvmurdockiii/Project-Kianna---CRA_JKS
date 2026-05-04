@@ -1,0 +1,59 @@
+{
+  "checks": [
+    {
+      "details": "13 files present",
+      "name": "required source documentation files exist",
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "details": "63 files present",
+      "name": "required baseline files exist",
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "details": "no .DS_Store, caches, or pyc files found",
+      "name": "no transient generated clutter in repo tree",
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "details": "27 canonical bundles, 27 entries, 0 missing artifacts, 0 failed criteria",
+      "name": "canonical registry exists and passes",
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "details": "all canonical latest pointers are aligned",
+      "name": "latest manifest pointers match canonical registry",
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "details": "paper Markdown and CSV are aligned with registry",
+      "name": "paper-facing results table matches registry",
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "details": "v0.1 through v2.1 baselines remain frozen at their recorded counts",
+      "name": "frozen evidence baselines are intact",
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "details": "no stale current evidence-count claims outside frozen baselines",
+      "name": "current docs have no stale evidence-count claims",
+      "passed": true,
+      "severity": "error"
+    }
+  ],
+  "generated_at_utc": "2026-05-04T00:05:02.462494+00:00",
+  "registry_summary": {
+    "evidence_count": 39,
+    "expanded_test_entry_count": 39,
+    "registry_status": "pass"
+  },
+  "status": "pass"
+}

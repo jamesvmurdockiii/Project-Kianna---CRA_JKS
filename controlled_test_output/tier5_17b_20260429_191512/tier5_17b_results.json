@@ -1,0 +1,117 @@
+{
+  "artifacts": {
+    "failure_modes_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_17b_20260429_191512/tier5_17b_failure_modes.csv",
+    "failure_modes_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_17b_20260429_191512/tier5_17b_failure_modes.png",
+    "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_17b_20260429_191512/tier5_17b_results.json",
+    "repair_plan_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_17b_20260429_191512/tier5_17b_repair_plan.json",
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_17b_20260429_191512/tier5_17b_report.md",
+    "task_diagnostics_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_17b_20260429_191512/tier5_17b_task_diagnostics.csv"
+  },
+  "canonical": false,
+  "criteria": [
+    {
+      "name": "source Tier 5.17 bundle was found",
+      "note": "",
+      "operator": "exists",
+      "passed": true,
+      "threshold": true,
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier5_17_20260429_190501"
+    },
+    {
+      "name": "source Tier 5.17 completed expected matrix",
+      "note": "",
+      "operator": "==",
+      "passed": true,
+      "threshold": 81,
+      "value": 81
+    },
+    {
+      "name": "non-oracle source had no label leakage",
+      "note": "",
+      "operator": "==",
+      "passed": true,
+      "threshold": 0,
+      "value": 0
+    },
+    {
+      "name": "source had no reward visibility",
+      "note": "",
+      "operator": "==",
+      "passed": true,
+      "threshold": 0,
+      "value": 0
+    },
+    {
+      "name": "source raw dopamine stayed zero",
+      "note": "",
+      "operator": "<=",
+      "passed": true,
+      "threshold": 1e-12,
+      "value": 0.0
+    },
+    {
+      "name": "all expected tasks classified",
+      "note": "",
+      "operator": "==",
+      "passed": true,
+      "threshold": 3,
+      "value": 3
+    },
+    {
+      "name": "at least one concrete failure mode assigned",
+      "note": "",
+      "operator": ">=",
+      "passed": true,
+      "threshold": 1,
+      "value": 3
+    },
+    {
+      "name": "repair plan does not promote representation",
+      "note": "",
+      "operator": "==",
+      "passed": true,
+      "threshold": false,
+      "value": false
+    },
+    {
+      "name": "repair plan does not jump to Tier 5.9",
+      "note": "",
+      "operator": "==",
+      "passed": true,
+      "threshold": false,
+      "value": false
+    }
+  ],
+  "failure_reason": "",
+  "generated_at_utc": "2026-04-29T19:15:13+00:00",
+  "name": "Tier 5.17b - Pre-Reward Representation Failure Analysis",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_17b_20260429_191512",
+  "status": "pass",
+  "summary": {
+    "claim_boundary": "Noncanonical diagnostic classification only; not a pre-reward representation-learning promotion, not hardware evidence, and not a v2.0 freeze.",
+    "decision": {
+      "classification": "mechanism_needs_intrinsic_predictive_objective",
+      "failure_mode_counts": {
+        "candidate_structure_present": 1,
+        "history_baseline_dominates": 1,
+        "input_encoded_too_easy": 1
+      },
+      "next_step": "Tier 5.17c - intrinsic predictive / MI-based preexposure objective",
+      "promote_pre_reward_representation": false,
+      "rationale": "Temporal-pressure tasks expose that fixed history can dominate the current scaffold, so the next repair should give CRA an intrinsic label-free reason to learn temporal continuation or masked-channel structure.",
+      "revisit_tier5_9_now": false,
+      "tier5_9_revisit_rule": "Only revisit delayed-credit / eligibility if a future pre-reward mechanism forms useful structure but downstream reward cannot credit, preserve, or use it."
+    },
+    "failure_mode_count": 3,
+    "leakage_summary": {
+      "label_leakage_runs": 0,
+      "max_abs_raw_dopamine_non_oracle": 0.0,
+      "non_oracle_run_count": 72,
+      "reward_leakage_runs": 0
+    },
+    "runtime_seconds": 0.185946709,
+    "source_bundle": "/Users/james/JKS:CRA/controlled_test_output/tier5_17_20260429_190501",
+    "source_status": "fail",
+    "task_count": 3
+  }
+}

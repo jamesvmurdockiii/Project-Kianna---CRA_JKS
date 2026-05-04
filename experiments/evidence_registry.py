@@ -1,0 +1,1865 @@
+#!/usr/bin/env python3
+"""Build and validate the CRA controlled-study evidence registry.
+
+This script is intentionally separate from the experiment runners. The runners
+produce raw evidence bundles; this registry decides which bundles are canonical
+study evidence, checks that their expected artifacts exist, repairs the
+`*_latest_manifest.json` convenience pointers, and writes a human-readable
+study index.
+"""
+
+from __future__ import annotations
+
+import csv
+import json
+from dataclasses import dataclass
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any
+
+
+ROOT = Path(__file__).resolve().parents[1]
+OUTPUT_ROOT = ROOT / "controlled_test_output"
+
+
+@dataclass(frozen=True)
+class EvidenceSpec:
+    entry_id: str
+    tier_label: str
+    plan_position: str
+    canonical_dir: str
+    results_file: str
+    report_file: str
+    summary_file: str | None
+    harness: str
+    evidence_role: str
+    claim: str
+    caveat: str
+    latest_manifest_names: tuple[str, ...]
+    expected_extra_files: tuple[str, ...] = ()
+
+
+SPECS: tuple[EvidenceSpec, ...] = (
+    EvidenceSpec(
+        entry_id="tier1_sanity",
+        tier_label="Tier 1 - sanity tests",
+        plan_position="Core tests 1-3",
+        canonical_dir="tier1_20260426_155758",
+        results_file="tier1_results.json",
+        report_file="tier1_report.md",
+        summary_file="tier1_summary.csv",
+        harness="experiments/tier1_sanity.py",
+        evidence_role="negative controls",
+        claim="No usable signal and shuffled labels do not produce false learning.",
+        caveat="Passing Tier 1 rules out obvious fake learning; it does not prove positive learning.",
+        latest_manifest_names=("tier1_latest_manifest.json",),
+        expected_extra_files=(
+            "zero_signal_timeseries.csv",
+            "zero_signal_timeseries.png",
+            "shuffled_label_timeseries.csv",
+            "shuffled_label_timeseries.png",
+            "seed_repeat_summary.csv",
+            "seed_repeat_summary.png",
+        ),
+    ),
+    EvidenceSpec(
+        entry_id="tier2_learning",
+        tier_label="Tier 2 - learning proof tests",
+        plan_position="Core tests 4-6",
+        canonical_dir="tier2_20260426_155821",
+        results_file="tier2_results.json",
+        report_file="tier2_report.md",
+        summary_file="tier2_summary.csv",
+        harness="experiments/tier2_learning.py",
+        evidence_role="positive learning controls",
+        claim="Fixed pattern, delayed reward, and nonstationary switch tasks learn above threshold.",
+        caveat="Positive-control learning evidence depends on the controlled synthetic task definitions.",
+        latest_manifest_names=("tier2_latest_manifest.json",),
+        expected_extra_files=(
+            "fixed_pattern_timeseries.csv",
+            "fixed_pattern_timeseries.png",
+            "delayed_reward_timeseries.csv",
+            "delayed_reward_timeseries.png",
+            "nonstationary_switch_timeseries.csv",
+            "nonstationary_switch_timeseries.png",
+        ),
+    ),
+    EvidenceSpec(
+        entry_id="tier3_architecture",
+        tier_label="Tier 3 - architecture ablation tests",
+        plan_position="Core tests 7-9",
+        canonical_dir="tier3_20260426_155852",
+        results_file="tier3_results.json",
+        report_file="tier3_report.md",
+        summary_file="tier3_summary.csv",
+        harness="experiments/tier3_ablation.py",
+        evidence_role="mechanism ablations",
+        claim="Dopamine, plasticity, and trophic selection each contribute measurable value.",
+        caveat="Ablation claims are scoped to the controlled tasks and seeds in this bundle.",
+        latest_manifest_names=("tier3_latest_manifest.json",),
+        expected_extra_files=(
+            "no_dopamine_ablation_comparison.png",
+            "no_plasticity_ablation_comparison.png",
+            "no_trophic_selection_ablation_comparison.png",
+        ),
+    ),
+    EvidenceSpec(
+        entry_id="tier4_10_population_scaling",
+        tier_label="Tier 4.10 - population scaling",
+        plan_position="Core test 10",
+        canonical_dir="tier4_20260426_155103",
+        results_file="tier4_results.json",
+        report_file="tier4_report.md",
+        summary_file="tier4_summary.csv",
+        harness="experiments/tier4_scaling.py",
+        evidence_role="baseline scaling",
+        claim="Fixed populations from N=4 to N=64 remain stable on the switch stressor.",
+        caveat="This baseline scaling task saturated; the honest claim is stability, not strong scaling advantage.",
+        latest_manifest_names=("tier4_latest_manifest.json", "tier4_10_latest_manifest.json"),
+        expected_extra_files=(
+            "population_scaling_summary.png",
+            "population_scaling_timeseries.png",
+        ),
+    ),
+    EvidenceSpec(
+        entry_id="tier4_10b_hard_population_scaling",
+        tier_label="Tier 4.10b - hard population scaling",
+        plan_position="Addendum after core test 10",
+        canonical_dir="tier4_10b_20260426_161251",
+        results_file="tier4_10b_results.json",
+        report_file="tier4_10b_report.md",
+        summary_file="tier4_10b_summary.csv",
+        harness="experiments/tier4_hard_scaling.py",
+        evidence_role="hard scaling stressor",
+        claim="Hard scaling remains stable and shows value through correlation/recovery/variance rather than raw accuracy.",
+        caveat="Hard-scaling accuracy is near baseline; the pass is based on stability plus non-accuracy scaling signals.",
+        latest_manifest_names=("tier4_10b_latest_manifest.json",),
+        expected_extra_files=(
+            "hard_population_scaling_summary.png",
+            "hard_population_scaling_timeseries.png",
+        ),
+    ),
+    EvidenceSpec(
+        entry_id="tier4_11_domain_transfer",
+        tier_label="Tier 4.11 - domain transfer",
+        plan_position="Core test 11",
+        canonical_dir="tier4_11_20260426_164655",
+        results_file="tier4_11_results.json",
+        report_file="tier4_11_report.md",
+        summary_file="tier4_11_summary.csv",
+        harness="experiments/tier4_domain_transfer.py",
+        evidence_role="domain transfer",
+        claim="The same CRA core transfers from finance/signed-return to non-finance sensor_control.",
+        caveat="Domain transfer is proven for the controlled adapters here, not arbitrary domains.",
+        latest_manifest_names=("tier4_11_latest_manifest.json",),
+        expected_extra_files=("domain_transfer_summary.png",),
+    ),
+    EvidenceSpec(
+        entry_id="tier4_12_backend_parity",
+        tier_label="Tier 4.12 - backend parity",
+        plan_position="Core test 12",
+        canonical_dir="tier4_12_20260426_170808",
+        results_file="tier4_12_results.json",
+        report_file="tier4_12_report.md",
+        summary_file="tier4_12_summary.csv",
+        harness="experiments/tier4_backend_parity.py",
+        evidence_role="backend parity",
+        claim="The fixed-pattern result survives NEST to Brian2 movement with zero synthetic fallback.",
+        caveat="The SpiNNaker item in Tier 4.12 is readiness prep, not a hardware learning result.",
+        latest_manifest_names=("tier4_12_latest_manifest.json",),
+        expected_extra_files=("backend_parity_summary.png",),
+    ),
+    EvidenceSpec(
+        entry_id="tier4_13_spinnaker_hardware_capsule",
+        tier_label="Tier 4.13 - SpiNNaker Hardware Capsule",
+        plan_position="Hardware addendum after core test 12",
+        canonical_dir="tier4_13_20260427_011912_hardware_pass",
+        results_file="tier4_13_results.json",
+        report_file="tier4_13_report.md",
+        summary_file="tier4_13_summary.csv",
+        harness="experiments/tier4_spinnaker_hardware_capsule.py",
+        evidence_role="hardware capsule",
+        claim="The minimal fixed-pattern CRA capsule executes through pyNN.spiNNaker with real spike readback and passes learning thresholds.",
+        caveat="Single-seed N=8 fixed-pattern capsule; not full hardware scaling or full CRA hardware deployment.",
+        latest_manifest_names=("tier4_13_latest_manifest.json",),
+        expected_extra_files=(
+            "study_data.json",
+            "DOWNLOAD_INTAKE_MANIFEST.json",
+            "remote_tier4_13_latest_manifest.json",
+            "hardware_capsule_summary.png",
+            "spinnaker_hardware_seed42_timeseries.csv",
+            "spinnaker_hardware_seed42_timeseries.png",
+            "spinnaker_reports/2026-04-27-01-19-12-390038/finished",
+            "spinnaker_reports/2026-04-27-01-19-12-390038/global_provenance.sqlite3",
+            "raw_reports/spinnaker_reports_2026-04-27-01-19-12-390038.zip",
+        ),
+    ),
+    EvidenceSpec(
+        entry_id="tier4_14_hardware_runtime_characterization",
+        tier_label="Tier 4.14 - Hardware Runtime Characterization",
+        plan_position="Post-v0.1 hardware addendum after Tier 4.13",
+        canonical_dir="tier4_14_20260426_213430",
+        results_file="tier4_14_results.json",
+        report_file="tier4_14_report.md",
+        summary_file="tier4_14_summary.csv",
+        harness="experiments/tier4_hardware_runtime_characterization.py",
+        evidence_role="hardware runtime profile",
+        claim="The Tier 4.13 hardware pass has profiled wall-clock and sPyNNaker provenance costs; overhead is dominated by repeated per-step run/readback orchestration.",
+        caveat="Derived from the single-seed N=8 Tier 4.13 hardware pass unless rerun in run-hardware mode; not hardware repeatability or scaling evidence.",
+        latest_manifest_names=("tier4_14_latest_manifest.json",),
+        expected_extra_files=(
+            "tier4_14_category_timers.csv",
+            "tier4_14_top_algorithms.csv",
+            "tier4_14_runtime_breakdown.csv",
+            "tier4_14_runtime_breakdown.png",
+        ),
+    ),
+    EvidenceSpec(
+        entry_id="tier4_15_spinnaker_hardware_multiseed_repeat",
+        tier_label="Tier 4.15 - SpiNNaker Hardware Multi-Seed Repeat",
+        plan_position="Hardware repeatability addendum after Tier 4.14",
+        canonical_dir="tier4_15_20260427_030501_hardware_pass",
+        results_file="tier4_15_results.json",
+        report_file="tier4_15_report.md",
+        summary_file="tier4_15_summary.csv",
+        harness="experiments/tier4_spinnaker_hardware_repeat.py",
+        evidence_role="hardware repeatability",
+        claim="The minimal fixed-pattern CRA hardware capsule repeats across seeds 42, 43, and 44 with zero fallback/failures and consistent learning metrics.",
+        caveat="Three-seed N=8 fixed-pattern capsule only; not a harder hardware task, hardware population scaling, or full CRA hardware deployment.",
+        latest_manifest_names=("tier4_15_latest_manifest.json",),
+        expected_extra_files=(
+            "README.md",
+            "study_data.json",
+            "DOWNLOAD_INTAKE_MANIFEST.json",
+            "remote_tier4_15_latest_manifest.json",
+            "tier4_15_seed_summary.csv",
+            "tier4_15_multi_seed_summary.png",
+            "spinnaker_hardware_seed42_timeseries.csv",
+            "spinnaker_hardware_seed42_timeseries.png",
+            "spinnaker_hardware_seed43_timeseries.csv",
+            "spinnaker_hardware_seed43_timeseries.png",
+            "spinnaker_hardware_seed44_timeseries.csv",
+            "spinnaker_hardware_seed44_timeseries.png",
+            "spinnaker_reports/2026-04-27-03-05-01-872105/finished",
+            "spinnaker_reports/2026-04-27-03-05-01-872105/global_provenance.sqlite3",
+            "spinnaker_reports/2026-04-27-03-19-49-290162/finished",
+            "spinnaker_reports/2026-04-27-03-19-49-290162/global_provenance.sqlite3",
+            "spinnaker_reports/2026-04-27-03-34-22-032643/finished",
+            "spinnaker_reports/2026-04-27-03-34-22-032643/global_provenance.sqlite3",
+            "raw_reports/spinnaker_reports_tier4_15_seeds_42_43_44.zip",
+        ),
+    ),
+    EvidenceSpec(
+        entry_id="tier5_1_external_baselines",
+        tier_label="Tier 5.1 - External Baselines",
+        plan_position="Post-hardware external baseline comparison",
+        canonical_dir="tier5_1_20260426_232530",
+        results_file="tier5_1_results.json",
+        report_file="tier5_1_report.md",
+        summary_file="tier5_1_summary.csv",
+        harness="experiments/tier5_external_baselines.py",
+        evidence_role="external baseline comparison",
+        claim="CRA is competitive against simple external learners and shows a defensible median-baseline advantage on sensor_control and hard noisy switching, while simpler online learners dominate the easy delayed-cue task.",
+        caveat="Controlled software comparison only; not hardware evidence, not a claim that CRA wins every task, and not proof against all possible baselines.",
+        latest_manifest_names=("tier5_1_latest_manifest.json",),
+        expected_extra_files=(
+            "tier5_1_comparisons.csv",
+            "tier5_1_task_model_matrix.png",
+            "tier5_1_cra_edges.png",
+            "fixed_pattern_cra_seed42_timeseries.csv",
+            "delayed_cue_online_perceptron_seed42_timeseries.csv",
+            "sensor_control_cra_seed42_timeseries.csv",
+            "hard_noisy_switching_cra_seed42_timeseries.csv",
+        ),
+    ),
+    EvidenceSpec(
+        entry_id="tier5_2_learning_curve_sweep",
+        tier_label="Tier 5.2 - Learning Curve / Run-Length Sweep",
+        plan_position="Post-v0.2 external baseline learning-curve addendum",
+        canonical_dir="tier5_2_20260426_234500",
+        results_file="tier5_2_results.json",
+        report_file="tier5_2_report.md",
+        summary_file="tier5_2_summary.csv",
+        harness="experiments/tier5_learning_curve.py",
+        evidence_role="external baseline run-length sweep",
+        claim="Across 120, 240, 480, 960, and 1500 steps, CRA's Tier 5.1 hard-task edge does not strengthen at the longest horizon: sensor_control saturates for CRA and baselines, delayed_cue remains externally dominated, and hard_noisy_switching is mixed/negative at 1500 steps.",
+        caveat="Controlled software learning-curve characterization only; not hardware evidence, not proof that CRA cannot improve under other tasks/tuning, and not a claim that Tier 5.1 was invalid.",
+        latest_manifest_names=("tier5_2_latest_manifest.json",),
+        expected_extra_files=(
+            "tier5_2_comparisons.csv",
+            "tier5_2_curve_analysis.csv",
+            "tier5_2_learning_curves.png",
+            "tier5_2_cra_edges_by_length.png",
+            "tier5_2_runtime_by_length.png",
+            "steps1500_sensor_control_cra_seed42_timeseries.csv",
+            "steps1500_hard_noisy_switching_cra_seed42_timeseries.csv",
+            "steps1500_delayed_cue_cra_seed42_timeseries.csv",
+        ),
+    ),
+    EvidenceSpec(
+        entry_id="tier5_3_cra_failure_analysis",
+        tier_label="Tier 5.3 - CRA Failure Analysis / Learning Dynamics Debug",
+        plan_position="Post-Tier-5.2 learning-dynamics diagnostic",
+        canonical_dir="tier5_3_20260427_055629",
+        results_file="tier5_3_results.json",
+        report_file="tier5_3_report.md",
+        summary_file="tier5_3_summary.csv",
+        harness="experiments/tier5_cra_failure_analysis.py",
+        evidence_role="CRA learning-dynamics failure analysis",
+        claim="A 78-run CRA-only diagnostic matrix identifies delayed-credit strength as the leading candidate failure mode: `delayed_lr_0_20` restores delayed_cue to 1.0 tail accuracy and improves hard_noisy_switching above the external median at 960 steps.",
+        caveat="Controlled software diagnostic only; not hardware evidence, not final competitiveness evidence, and hard_noisy_switching still trails the best external baseline.",
+        latest_manifest_names=("tier5_3_latest_manifest.json",),
+        expected_extra_files=(
+            "tier5_3_comparisons.csv",
+            "tier5_3_findings.csv",
+            "tier5_3_variant_matrix.png",
+            "tier5_3_group_effects.png",
+            "delayed_cue_delayed_lr_0_20_seed42_timeseries.csv",
+            "hard_noisy_switching_delayed_lr_0_20_seed42_timeseries.csv",
+            "hard_noisy_switching_horizon_3_seed42_timeseries.csv",
+        ),
+    ),
+    EvidenceSpec(
+        entry_id="tier5_4_delayed_credit_confirmation",
+        tier_label="Tier 5.4 - Delayed-Credit Confirmation",
+        plan_position="Post-Tier-5.3 candidate-fix confirmation",
+        canonical_dir="tier5_4_20260427_065412",
+        results_file="tier5_4_results.json",
+        report_file="tier5_4_report.md",
+        summary_file="tier5_4_summary.csv",
+        harness="experiments/tier5_delayed_credit_confirmation.py",
+        evidence_role="delayed-credit candidate confirmation",
+        claim="The Tier 5.3 delayed-credit candidate `cra_delayed_lr_0_20` confirms across 960 and 1500 steps: delayed_cue stays at 1.0 tail accuracy, hard_noisy_switching beats the external median at both lengths, and the candidate does not regress versus current CRA.",
+        caveat="Controlled software confirmation only; not hardware evidence and not a superiority claim because hard_noisy_switching still trails the best external baseline.",
+        latest_manifest_names=("tier5_4_latest_manifest.json",),
+        expected_extra_files=(
+            "tier5_4_confirmation.csv",
+            "tier5_4_findings.csv",
+            "tier5_4_confirmation.png",
+            "tier5_4_seed_variance.png",
+            "steps1500_delayed_cue_cra_delayed_lr_0_20_seed42_timeseries.csv",
+            "steps1500_hard_noisy_switching_cra_delayed_lr_0_20_seed42_timeseries.csv",
+            "steps1500_hard_noisy_switching_online_perceptron_seed42_timeseries.csv",
+        ),
+    ),
+    EvidenceSpec(
+        entry_id="tier4_16a_delayed_cue_hardware_repeat",
+        tier_label="Tier 4.16a - Repaired Delayed-Cue Hardware Repeat",
+        plan_position="Post-Tier-5.4/Tier-4.17b repaired harder-task hardware transfer",
+        canonical_dir="tier4_16_20260427_184635_delayed_cue_3seed_hardware_pass",
+        results_file="tier4_16_results.json",
+        report_file="tier4_16_report.md",
+        summary_file="tier4_16_summary.csv",
+        harness="experiments/tier4_harder_spinnaker_capsule.py",
+        evidence_role="repaired delayed-credit hardware transfer",
+        claim="The repaired delayed-credit delayed_cue regime transfers to real SpiNNaker hardware across seeds 42, 43, and 44 using chunked host replay.",
+        caveat="Three-seed N=8 delayed_cue capsule only; not hard_noisy_switching hardware transfer, hardware scaling, on-chip learning, or a full Tier 4.16 pass.",
+        latest_manifest_names=("tier4_16a_latest_manifest.json",),
+        expected_extra_files=(
+            "tier4_16_task_summary.csv",
+            "tier4_16_hardware_summary.png",
+            "spinnaker_hardware_delayed_cue_seed42_timeseries.csv",
+            "spinnaker_hardware_delayed_cue_seed42_timeseries.png",
+            "spinnaker_hardware_delayed_cue_seed43_timeseries.csv",
+            "spinnaker_hardware_delayed_cue_seed43_timeseries.png",
+            "spinnaker_hardware_delayed_cue_seed44_timeseries.csv",
+            "spinnaker_hardware_delayed_cue_seed44_timeseries.png",
+            "raw_hardware_artifacts/finished",
+            "raw_hardware_artifacts/global_provenance.sqlite3",
+            "raw_hardware_artifacts/reports.zip",
+            "raw_hardware_artifacts/source_tier4_16_report.md",
+            "raw_hardware_artifacts/tier4_16_latest_manifest.json",
+        ),
+    ),
+    EvidenceSpec(
+        entry_id="tier4_16b_hard_switch_hardware_repeat",
+        tier_label="Tier 4.16b - Repaired Hard-Switch Hardware Repeat",
+        plan_position="Post-Tier-4.16a repaired harder-task hardware transfer",
+        canonical_dir="tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass",
+        results_file="tier4_16_results.json",
+        report_file="tier4_16_report.md",
+        summary_file="tier4_16_summary.csv",
+        harness="experiments/tier4_harder_spinnaker_capsule.py",
+        evidence_role="repaired hard-switch hardware transfer",
+        claim="The repaired hard_noisy_switching regime transfers to real SpiNNaker hardware across seeds 42, 43, and 44 using chunked host replay.",
+        caveat="Three-seed N=8 hard_noisy_switching capsule only; close-to-threshold transfer, not hardware scaling, on-chip learning, lifecycle/self-scaling, or external-baseline superiority.",
+        latest_manifest_names=("tier4_16b_latest_manifest.json",),
+        expected_extra_files=(
+            "tier4_16_task_summary.csv",
+            "tier4_16_hardware_summary.png",
+            "tier4_16b_3seed_pass_analysis.md",
+            "spinnaker_hardware_hard_noisy_switching_seed42_timeseries.csv",
+            "spinnaker_hardware_hard_noisy_switching_seed42_timeseries.png",
+            "spinnaker_hardware_hard_noisy_switching_seed43_timeseries.csv",
+            "spinnaker_hardware_hard_noisy_switching_seed43_timeseries.png",
+            "spinnaker_hardware_hard_noisy_switching_seed44_timeseries.csv",
+            "spinnaker_hardware_hard_noisy_switching_seed44_timeseries.png",
+            "raw_hardware_artifacts/finished",
+            "raw_hardware_artifacts/global_provenance.sqlite3",
+            "raw_hardware_artifacts/reports.zip",
+            "raw_hardware_artifacts/source_tier4_16_report.md",
+            "raw_hardware_artifacts/tier4_16_latest_manifest.json",
+        ),
+    ),
+    EvidenceSpec(
+        entry_id="tier4_18a_chunked_runtime_baseline",
+        tier_label="Tier 4.18a - v0.7 Chunked Hardware Runtime Baseline",
+        plan_position="Post-Tier-4.16b runtime/resource characterization",
+        canonical_dir="tier4_18a_20260428_012822_hardware_pass",
+        results_file="tier4_18a_results.json",
+        report_file="tier4_18a_report.md",
+        summary_file="tier4_18a_summary.csv",
+        harness="experiments/tier4_18a_chunked_runtime_baseline.py",
+        evidence_role="chunked hardware runtime profile",
+        claim="The v0.7 chunked-host SpiNNaker path remains stable on delayed_cue and hard_noisy_switching at chunk sizes 10, 25, and 50; chunk 50 is the fastest viable default for the current hardware bridge.",
+        caveat="Single-seed N=8 runtime/resource characterization only; not hardware scaling, lifecycle/self-scaling, native on-chip dopamine/eligibility, continuous/custom-C runtime, or external-baseline superiority.",
+        latest_manifest_names=("tier4_18a_latest_manifest.json",),
+        expected_extra_files=(
+            "tier4_18a_runtime_matrix.csv",
+            "tier4_18a_runtime_matrix.png",
+            "tier4_18a_pass_analysis.md",
+            "spinnaker_hardware_delayed_cue_chunk10_seed42_timeseries.csv",
+            "spinnaker_hardware_delayed_cue_chunk10_seed42_timeseries.png",
+            "spinnaker_hardware_delayed_cue_chunk25_seed42_timeseries.csv",
+            "spinnaker_hardware_delayed_cue_chunk25_seed42_timeseries.png",
+            "spinnaker_hardware_delayed_cue_chunk50_seed42_timeseries.csv",
+            "spinnaker_hardware_delayed_cue_chunk50_seed42_timeseries.png",
+            "spinnaker_hardware_hard_noisy_switching_chunk10_seed42_timeseries.csv",
+            "spinnaker_hardware_hard_noisy_switching_chunk10_seed42_timeseries.png",
+            "spinnaker_hardware_hard_noisy_switching_chunk25_seed42_timeseries.csv",
+            "spinnaker_hardware_hard_noisy_switching_chunk25_seed42_timeseries.png",
+            "spinnaker_hardware_hard_noisy_switching_chunk50_seed42_timeseries.csv",
+            "spinnaker_hardware_hard_noisy_switching_chunk50_seed42_timeseries.png",
+            "raw_hardware_artifacts/finished",
+            "raw_hardware_artifacts/global_provenance.sqlite3",
+            "raw_hardware_artifacts/reports.zip",
+        ),
+    ),
+    EvidenceSpec(
+        entry_id="tier4_26_four_core_distributed_smoke",
+        tier_label="Tier 4.26 - Four-Core Distributed Smoke",
+        plan_position="Post-Tier-4.25C multi-core distributed architecture gate",
+        canonical_dir="tier4_26_20260502_pass_ingested",
+        results_file="tier4_26_hardware_results.json",
+        report_file="tier4_26_ingest_report.md",
+        summary_file=None,
+        harness="experiments/tier4_26_four_core_distributed_smoke.py",
+        evidence_role="four-core distributed custom-runtime smoke",
+        claim="Four independent SpiNNaker cores can hold distributed context, route, memory, and learning state and cooperate via inter-core SDP lookup request/reply to reproduce the monolithic single-core delayed-credit result within tolerance.",
+        caveat="Single-seed seed-42 smoke on one chip only; not speedup evidence, not multi-chip scaling, not a general multi-core framework, and not full native v2.1 autonomy.",
+        latest_manifest_names=("tier4_26_latest_manifest.json",),
+        expected_extra_files=(
+            "tier4_26_ingest_results.json",
+            "tier4_26_local_results.json",
+            "tier4_26_task.json",
+            "tier4_26_target_acquisition.json",
+            "tier4_26_environment.json",
+            "tier4_26_context_load.json",
+            "tier4_26_route_load.json",
+            "tier4_26_memory_load.json",
+            "tier4_26_learning_load.json",
+        ),
+    ),
+    EvidenceSpec(
+        entry_id="tier4_27a_four_core_characterization",
+        tier_label="Tier 4.27a - Four-Core Runtime Resource / Timing Characterization",
+        plan_position="Post-Tier-4.26 runtime instrumentation and resource envelope gate",
+        canonical_dir="tier4_27a_20260502_pass_ingested",
+        results_file="tier4_27a_hardware_results.json",
+        report_file="tier4_27a_ingest_report.md",
+        summary_file=None,
+        harness="experiments/tier4_27a_four_core_distributed_smoke.py",
+        evidence_role="four-core distributed custom-runtime characterization",
+        claim="The four-core SDP scaffold can be instrumented to measure lookup request/reply counts, stale replies, timeouts, schema version, payload bytes, and per-core commands. Hardware execution reproduces the monolithic reference within tolerance while providing counter telemetry.",
+        caveat="Single-seed seed-42 smoke on one chip only; not speedup evidence, not multi-chip scaling, not a general multi-core framework, not full native v2.1 autonomy, and not MCPL/multicast. SDP remains transitional.",
+        latest_manifest_names=("tier4_27a_latest_manifest.json",),
+        expected_extra_files=(
+            "tier4_27a_ingest_results.json",
+            "tier4_27a_task.json",
+            "tier4_27a_target_acquisition.json",
+            "tier4_27a_environment.json",
+            "tier4_27a_context_load.json",
+            "tier4_27a_route_load.json",
+            "tier4_27a_memory_load.json",
+            "tier4_27a_learning_load.json",
+            "tier4_27a_build_context_core_stdout.txt",
+            "tier4_27a_build_context_core_stderr.txt",
+            "tier4_27a_build_route_core_stdout.txt",
+            "tier4_27a_build_route_core_stderr.txt",
+            "tier4_27a_build_memory_core_stdout.txt",
+            "tier4_27a_build_memory_core_stderr.txt",
+            "tier4_27a_build_learning_core_stdout.txt",
+            "tier4_27a_build_learning_core_stderr.txt",
+        ),
+    ),
+    EvidenceSpec(
+        entry_id="tier4_27e_two_core_mcpl_smoke",
+        tier_label="Tier 4.27e - Two-Core MCPL Round-trip Smoke",
+        plan_position="Post-Tier-4.27d MCPL compile-time feasibility gate",
+        canonical_dir="tier4_27e_20260502_local_pass",
+        results_file="tier4_27e_results.json",
+        report_file="tier4_27e_report.md",
+        summary_file=None,
+        harness="experiments/tier4_27e_two_core_mcpl_smoke.py",
+        evidence_role="two-core MCPL inter-core lookup local build validation",
+        claim="MCPL is fully wired into the distributed lookup state machine: learning core sends requests via multicast payload, state core receives via MCPL callback and replies via MCPL, learning core stores results. Router table init per core role. Local builds pass for both profiles with ITCM under budget.",
+        caveat="Local build and wiring validation only. NOT hardware evidence. Router table behavior on actual SpiNNaker chip not yet validated. Multi-state-core (context+route+memory) MCPL routing not yet tested.",
+        latest_manifest_names=("tier4_27e_latest_manifest.json",),
+        expected_extra_files=(),
+    ),
+    EvidenceSpec(
+        entry_id="tier4_27f_three_core_mcpl_smoke",
+        tier_label="Tier 4.27f - Three-State-Core MCPL Lookup Smoke",
+        plan_position="Post-Tier-4.27e two-core MCPL round-trip",
+        canonical_dir="tier4_27f_20260502_local_pass",
+        results_file="tier4_27f_results.json",
+        report_file="tier4_27f_report.md",
+        summary_file=None,
+        harness="experiments/tier4_27f_three_core_mcpl_smoke.py",
+        evidence_role="three-state-core MCPL inter-core lookup local build validation",
+        claim="MCPL supports three state cores (context/route/memory) replying to a single learning core. Learning core uses a single broad router entry (0xFFFF0000 mask) to catch all reply types. All four profile .aplx images build with MCPL enabled and fit within ITCM budget.",
+        caveat="Local build and wiring validation only. NOT hardware evidence. Actual router table behavior with multiple state cores on a single chip not yet validated. SDP-vs-MCPL comparison not yet performed.",
+        latest_manifest_names=("tier4_27f_latest_manifest.json",),
+        expected_extra_files=(),
+    ),
+    EvidenceSpec(
+        entry_id="tier4_27g_sdp_vs_mcpl_comparison",
+        tier_label="Tier 4.27g - SDP-vs-MCPL Protocol Comparison",
+        plan_position="Post-Tier-4.27f three-state-core MCPL lookup smoke",
+        canonical_dir="tier4_27g_20260502_local_pass",
+        results_file="tier4_27g_results.json",
+        report_file="tier4_27g_report.md",
+        summary_file=None,
+        harness="experiments/tier4_27g_sdp_vs_mcpl_comparison.py",
+        evidence_role="source-code-based protocol analysis and migration recommendation",
+        claim="MCPL reduces per-lookup round-trip from 54 bytes (SDP) to 16 bytes (71% reduction). For 48-event schedule, inter-core lookup traffic drops from ~8,064 bytes to ~2,304 bytes. Latency improves from ~5-20 us (monitor-bound SDP) to ~0.5-2 us (hardware router). MCPL requires 4 router entries but scales better than SDP. Recommendation: make MCPL default for Tier 4.28+.",
+        caveat="Source-code analysis only. NOT hardware timing measurements. NOT router-table hardware validation. NOT multi-chip scaling evidence.",
+        latest_manifest_names=("tier4_27g_latest_manifest.json",),
+        expected_extra_files=(),
+    ),
+    EvidenceSpec(
+        entry_id="tier4_28a_four_core_mcpl_repeatability",
+        tier_label="Tier 4.28a - Four-Core MCPL Repeatability",
+        plan_position="Post-Tier-4.27g MCPL migration decision",
+        canonical_dir="tier4_28a_20260502_mcpl_hardware_pass_ingested",
+        results_file="tier4_28a_ingest_results.json",
+        report_file="tier4_28a_ingest_report.md",
+        summary_file=None,
+        harness="experiments/tier4_28a_four_core_mcpl_repeatability.py",
+        evidence_role="MCPL-enabled four-core hardware repeatability",
+        claim="MCPL-based four-core distributed lookup executes successfully on SpiNNaker hardware across three seeds (42, 43, 44). All 38/38 criteria pass per seed. Zero stale replies, zero timeouts, 144 lookup requests and 144 lookup replies per seed. Learning core readout weight=32768, bias=0, pending=48/48. ITCM sizes: context_core 11248B, route_core 11280B, memory_core 11280B, learning_core 12968B.",
+        caveat="Single-chip four-core only; not multi-chip scaling, not speedup evidence, not full v2.1 mechanism transfer, not continuous host-free operation. Host still required for setup and readback. SDP fallback code remains in source but is not the active data plane for v0.1 baseline.",
+        latest_manifest_names=("tier4_28a_latest_manifest.json",),
+        expected_extra_files=(),
+    ),
+    EvidenceSpec(
+        entry_id="tier4_28b_delayed_cue_four_core_mcpl",
+        tier_label="Tier 4.28b - Delayed-Cue Four-Core MCPL Hardware Probe",
+        plan_position="Post-Tier-4.28a MCPL repeatability baseline",
+        canonical_dir="tier4_28b_20260502_hardware_pass_ingested",
+        results_file="tier4_28b_ingest_results.json",
+        report_file="tier4_28b_ingest_report.md",
+        summary_file=None,
+        harness="experiments/tier4_28b_delayed_cue_four_core_mcpl.py",
+        evidence_role="delayed-cue task transfer to four-core MCPL scaffold",
+        claim="The four-core MCPL distributed scaffold executes a 48-event delayed-cue task (target=-feature) on SpiNNaker hardware. Weight converges to -32769 (~-1.0), bias=-1 (~0). All 38/38 criteria pass. Zero stale replies, zero timeouts, 144 lookup requests/replies.",
+        caveat="Single-seed probe (seed 42) on one chip only. Not three-seed repeatability, not multi-chip scaling, not speedup evidence, not full v2.1 mechanism transfer. Host still required for setup and readback.",
+        latest_manifest_names=("tier4_28b_latest_manifest.json",),
+        expected_extra_files=(),
+    ),
+    EvidenceSpec(
+        entry_id="tier4_28c_delayed_cue_repeatability",
+        tier_label="Tier 4.28c - Delayed-Cue Three-Seed Repeatability",
+        plan_position="Post-Tier-4.28b delayed-cue hardware probe",
+        canonical_dir="tier4_28c_20260503_hardware_pass_ingested",
+        results_file="tier4_28c_ingest_results.json",
+        report_file="tier4_28c_ingest_report.md",
+        summary_file=None,
+        harness="experiments/tier4_28c_delayed_cue_repeatability.py",
+        evidence_role="three-seed delayed-cue repeatability on four-core MCPL scaffold",
+        claim="The four-core MCPL distributed scaffold executes a 48-event delayed-cue task (target=-feature) across seeds 42, 43, and 44. All 38/38 criteria pass per seed. Weight converges to -32769, bias=-1 on all three seeds. Zero stale replies, zero timeouts, 144 lookup requests/replies per seed.",
+        caveat="Single-chip four-core only. Not multi-chip scaling, not speedup evidence, not full v2.1 mechanism transfer. Host still required for setup and readback.",
+        latest_manifest_names=("tier4_28c_latest_manifest.json",),
+        expected_extra_files=(),
+    ),
+    EvidenceSpec(
+        entry_id="tier4_28d_hard_noisy_switching",
+        tier_label="Tier 4.28d - Hard Noisy Switching Four-Core MCPL",
+        plan_position="Post-Tier-4.28c delayed-cue repeatability",
+        canonical_dir="tier4_28d_20260503_hardware_pass_ingested",
+        results_file="tier4_28d_ingest_results.json",
+        report_file="tier4_28d_ingest_report.md",
+        summary_file=None,
+        harness="experiments/tier4_28d_hard_noisy_switching_four_core_mcpl.py",
+        evidence_role="hard noisy switching task transfer to four-core MCPL scaffold",
+        claim="The four-core MCPL distributed scaffold executes a ~62-event hard_noisy_switching task (regime switches, 20% noisy trials, variable delay 3-5) across seeds 42, 43, and 44. All 38/38 criteria pass per seed. Weight converges to 34208 (~+1.04), bias=-1440 (~-0.04) on all three seeds. Zero variance across seeds. Zero stale replies, zero timeouts, 186 lookup requests/replies per seed.",
+        caveat="Single-chip four-core only. Host-pre-written regime context; not autonomous regime detection. Not multi-chip scaling, not speedup evidence, not full v2.1 mechanism transfer. Host still required for setup and readback.",
+        latest_manifest_names=("tier4_28d_latest_manifest.json",),
+        expected_extra_files=(),
+    ),
+    EvidenceSpec(
+        entry_id="tier4_28e_failure_envelope_pointA",
+        tier_label="Tier 4.28e - Native Failure-Envelope Report Point A",
+        plan_position="Post-Tier-4.28d hard noisy switching probe",
+        canonical_dir="tier4_28e_pointA_20260503_hardware_pass_ingested",
+        results_file="tier4_28e_ingest_results.json",
+        report_file="tier4_28e_ingest_report.md",
+        summary_file=None,
+        harness="experiments/tier4_28e_native_failure_envelope_report.py",
+        evidence_role="failure-envelope characterization - highest-pressure passing config",
+        claim="Four-core MCPL runtime passes at schedule limit (64 events) with delay=1, noise=0.6. All 38/38 criteria pass. Weight=-3225, bias=8530. Pending=64/64, lookups=192/192, stale=0, timeouts=0. Host reference updated to exact hardware timing (one-tick MCPL lookup latency).",
+        caveat="Single-chip four-core only. Host-pre-written regime context. Not multi-chip scaling, not speedup evidence, not full v2.1 mechanism transfer. Point A is one of three probe points (A/B/C) in the failure-envelope report.",
+        latest_manifest_names=("tier4_28e_pointA_latest_manifest.json",),
+        expected_extra_files=(),
+    ),
+    EvidenceSpec(
+        entry_id="tier4_28e_failure_envelope_pointC",
+        tier_label="Tier 4.28e - Native Failure-Envelope Report Point C",
+        plan_position="Post-Tier-4.28d hard noisy switching probe",
+        canonical_dir="tier4_28e_pointC_20260503_hardware_pass_ingested",
+        results_file="tier4_28e_ingest_results.json",
+        report_file="tier4_28e_ingest_report.md",
+        summary_file=None,
+        harness="experiments/tier4_28e_native_failure_envelope_report.py",
+        evidence_role="failure-envelope characterization - high-pending-pressure passing config",
+        claim="Four-core MCPL runtime passes with high pending pressure (max_concurrent_pending=10) and longer delays (delay=7-10), noise=0.2, 43 events. All 38/38 criteria pass. Weight=101376, bias=5120, exact 0% error vs reference. Pending=43/43, lookups=129/129, stale=0, timeouts=0. Confirms safe operation well below schedule limit with accurate exact-HW-timing reference.",
+        caveat="Single-chip four-core only. Host-pre-written regime context. Not multi-chip scaling, not speedup evidence, not full v2.1 mechanism transfer. Point C is one of three probe points (A/B/C) in the failure-envelope report.",
+        latest_manifest_names=("tier4_28e_pointC_latest_manifest.json",),
+        expected_extra_files=(),
+    ),
+    EvidenceSpec(
+        entry_id="tier4_29a_native_keyed_memory_overcapacity",
+        tier_label="Tier 4.29a - Native Keyed-Memory Overcapacity Gate",
+        plan_position="Post-Tier-4.28e failure envelope / Phase C mechanism migration",
+        canonical_dir="tier4_29a_20260503_hardware_pass_ingested",
+        results_file="tier4_29a_multi_seed_ingest_summary.json",
+        report_file="tier4_29a_ingest_report.md",
+        summary_file="tier4_29a_combined_results.json",
+        harness="experiments/tier4_29a_native_keyed_memory_overcapacity_gate.py",
+        evidence_role="native mechanism migration - keyed memory with controls",
+        claim="Native four-core MCPL runtime handles keyed context memory with wrong-key, overwrite, and slot-shuffle controls across seeds 42, 43, 44 on three different boards. All 47/47 criteria pass per seed (141/141 total). Weight=32768, bias=0, pending=32/32, active_pending=0, decisions=32, reward_events=32, lookup_requests=96, lookup_replies=96, stale=0, timeouts=0, context hits=26, misses=6, active_slots=8, slot_writes=9. Exact parity with local reference on all three seeds.",
+        caveat="Single-chip four-core only. Host-pre-written keyed context slots. Schedule-driven (not true continuous generation). Not multi-chip scaling, not speedup evidence, not full v2.1 mechanism transfer. MAX_SCHEDULE_ENTRIES=512 allows longer task streams but still uses pre-loaded static schedule.",
+        latest_manifest_names=("tier4_29a_latest_manifest.json",),
+        expected_extra_files=(
+            "tier4_29a_environment.json",
+            "tier4_29a_task.json",
+            "tier4_29a_target_acquisition.json",
+        ),
+    ),
+    EvidenceSpec(
+        entry_id="tier5_5_expanded_baselines",
+        tier_label="Tier 5.5 - Expanded Baseline Suite",
+        plan_position="Post-Tier-4.18a expanded software baseline/fairness gate",
+        canonical_dir="tier5_5_20260427_222736",
+        results_file="tier5_5_results.json",
+        report_file="tier5_5_report.md",
+        summary_file="tier5_5_summary.csv",
+        harness="experiments/tier5_expanded_baselines.py",
+        evidence_role="expanded software baseline comparison",
+        claim="The locked CRA v0.8 delayed-credit configuration completes the 1,800-run expanded baseline matrix, shows robust advantage regimes, and is not dominated on most hard/adaptive regimes while documenting where strong external baselines tie or win.",
+        caveat="Controlled software evidence only; not hardware evidence, not a hyperparameter fairness audit, not a universal superiority claim, and not proof that CRA beats the best external baseline at every horizon.",
+        latest_manifest_names=("tier5_5_latest_manifest.json",),
+        expected_extra_files=(
+            "tier5_5_comparisons.csv",
+            "tier5_5_per_seed.csv",
+            "tier5_5_fairness_contract.json",
+            "tier5_5_edge_summary.png",
+            "steps1500_delayed_cue_cra_v0_8_delayed_lr_0_20_seed42_timeseries.csv",
+            "steps1500_hard_noisy_switching_cra_v0_8_delayed_lr_0_20_seed42_timeseries.csv",
+            "steps1500_hard_noisy_switching_online_perceptron_seed42_timeseries.csv",
+            "steps1500_sensor_control_cra_v0_8_delayed_lr_0_20_seed42_timeseries.csv",
+        ),
+    ),
+    EvidenceSpec(
+        entry_id="tier5_6_baseline_hyperparameter_fairness_audit",
+        tier_label="Tier 5.6 - Baseline Hyperparameter Fairness Audit",
+        plan_position="Post-Tier-5.5 tuned-baseline reviewer-defense gate",
+        canonical_dir="tier5_6_20260428_001834",
+        results_file="tier5_6_results.json",
+        report_file="tier5_6_report.md",
+        summary_file="tier5_6_summary.csv",
+        harness="experiments/tier5_baseline_fairness_audit.py",
+        evidence_role="retuned external-baseline fairness audit",
+        claim="With CRA locked at the promoted delayed-credit setting, the 990-run Tier 5.6 audit gives external baselines a documented tuning budget and finds surviving target regimes after retuning.",
+        caveat="Controlled software fairness audit only; not hardware evidence, not universal superiority, and not proof that CRA beats the best tuned external baseline at every metric or horizon.",
+        latest_manifest_names=("tier5_6_latest_manifest.json",),
+        expected_extra_files=(
+            "tier5_6_comparisons.csv",
+            "tier5_6_best_profiles.csv",
+            "tier5_6_candidate_budget.csv",
+            "tier5_6_per_seed.csv",
+            "tier5_6_fairness_contract.json",
+            "tier5_6_edge_summary.png",
+            "steps1500_hard_noisy_switching_cra_v0_8_delayed_lr_0_20_seed42_timeseries.csv",
+            "steps1500_hard_noisy_switching_online_perceptron__perceptron_lr_0p08_perceptron_margin_0p05_seed42_timeseries.csv",
+            "steps1500_sensor_control_cra_v0_8_delayed_lr_0_20_seed42_timeseries.csv",
+        ),
+    ),
+    EvidenceSpec(
+        entry_id="tier5_7_compact_regression",
+        tier_label="Tier 5.7 - Compact Regression After Promoted Tuning",
+        plan_position="Post-v1.0 compact control/learning/ablation regression before lifecycle work",
+        canonical_dir="tier5_7_20260428_005723",
+        results_file="tier5_7_results.json",
+        report_file="tier5_7_report.md",
+        summary_file="tier5_7_summary.csv",
+        harness="experiments/tier5_compact_regression.py",
+        evidence_role="compact regression guardrail",
+        claim="The promoted v1.0 delayed-credit setting passes compact negative controls, positive learning controls, architecture ablations, and delayed_cue/hard_noisy_switching smoke checks before lifecycle/self-scaling work.",
+        caveat="Controlled software regression evidence only; not a new capability claim, not hardware evidence, not lifecycle/self-scaling evidence, and not external-baseline superiority.",
+        latest_manifest_names=("tier5_7_latest_manifest.json",),
+        expected_extra_files=(
+            "tier5_7_child_manifests.json",
+            "tier1_controls/tier1_results.json",
+            "tier2_learning/tier2_results.json",
+            "tier3_ablations/tier3_results.json",
+            "target_task_smokes/tier5_6_results.json",
+        ),
+    ),
+    EvidenceSpec(
+        entry_id="tier5_12a_predictive_task_pressure",
+        tier_label="Tier 5.12a - Predictive Task-Pressure Validation",
+        plan_position="Predictive/context modeling task-validation gate after v1.7 memory/replay baseline",
+        canonical_dir="tier5_12a_20260429_054052",
+        results_file="tier5_12a_results.json",
+        report_file="tier5_12a_report.md",
+        summary_file="tier5_12a_summary.csv",
+        harness="experiments/tier5_predictive_task_pressure.py",
+        evidence_role="predictive task-pressure validation",
+        claim="Predictive-pressure streams defeat current-reflex, sign-persistence, wrong-horizon, and shuffled-target shortcuts while causal predictive-memory controls solve them.",
+        caveat="Task-validation evidence only; not CRA predictive coding, world modeling, language, planning, hardware prediction, or a v1.8 freeze.",
+        latest_manifest_names=("tier5_12a_latest_manifest.json",),
+        expected_extra_files=(
+            "tier5_12a_comparisons.csv",
+            "tier5_12a_fairness_contract.json",
+            "tier5_12a_task_pressure.png",
+            "hidden_regime_switching_predictive_memory_seed42_timeseries.csv",
+            "masked_input_prediction_predictive_memory_seed42_timeseries.csv",
+            "event_stream_prediction_predictive_memory_seed42_timeseries.csv",
+            "sensor_anomaly_prediction_predictive_memory_seed42_timeseries.csv",
+        ),
+    ),
+    EvidenceSpec(
+        entry_id="tier5_12c_predictive_context_sham_repair",
+        tier_label="Tier 5.12c - Predictive Context Sham-Separation Repair",
+        plan_position="Predictive/context software mechanism gate after failed Tier 5.12b diagnostic",
+        canonical_dir="tier5_12c_20260429_062256",
+        results_file="tier5_12c_results.json",
+        report_file="tier5_12c_report.md",
+        summary_file="tier5_12c_summary.csv",
+        harness="experiments/tier5_predictive_context_sham_repair.py",
+        evidence_role="host-side predictive-context mechanism diagnostic",
+        claim="Internal visible predictive-context binding matches the external scaffold and beats v1.7 reactive CRA, shuffled/permuted/no-write shams, shortcut controls, and selected external baselines.",
+        caveat="Host-side software evidence only; Tier 5.12d provides the separate promotion gate. Not hidden-regime inference, full world modeling, language, planning, hardware prediction, hardware scaling, native on-chip learning, compositionality, or external-baseline superiority.",
+        latest_manifest_names=("tier5_12c_latest_manifest.json",),
+        expected_extra_files=(
+            "tier5_12c_comparisons.csv",
+            "tier5_12c_fairness_contract.json",
+            "tier5_12c_predictive_context.png",
+            "masked_input_prediction_internal_predictive_context_seed42_timeseries.csv",
+            "event_stream_prediction_internal_predictive_context_seed42_timeseries.csv",
+            "sensor_anomaly_prediction_internal_predictive_context_seed42_timeseries.csv",
+            "masked_input_prediction_permuted_predictive_context_seed42_timeseries.csv",
+        ),
+    ),
+    EvidenceSpec(
+        entry_id="tier5_12d_predictive_context_compact_regression",
+        tier_label="Tier 5.12d - Predictive-Context Compact Regression",
+        plan_position="Promotion gate after Tier 5.12c before freezing v1.8",
+        canonical_dir="tier5_12d_20260429_070615",
+        results_file="tier5_12d_results.json",
+        report_file="tier5_12d_report.md",
+        summary_file="tier5_12d_summary.csv",
+        harness="experiments/tier5_predictive_context_compact_regression.py",
+        evidence_role="predictive-context compact regression guardrail",
+        claim="The host-side visible predictive-context mechanism preserves Tier 1/2/3 controls, target hard-task smokes, v1.7 replay/consolidation guardrails, and predictive sham separation, authorizing a bounded v1.8 software baseline.",
+        caveat="Software-only promotion gate; v1.8 remains bounded to visible predictive-context tasks and is not hidden-regime inference, full world modeling, language, planning, hardware prediction, hardware scaling, native on-chip learning, compositionality, or external-baseline superiority.",
+        latest_manifest_names=("tier5_12d_latest_manifest.json",),
+        expected_extra_files=(
+            "tier5_12d_child_manifests.json",
+            "tier1_controls/tier1_results.json",
+            "tier2_learning/tier2_results.json",
+            "tier3_ablations/tier3_results.json",
+            "target_task_smokes/tier5_6_results.json",
+            "replay_consolidation_guardrail/tier5_11d_results.json",
+            "predictive_context_guardrail/tier5_12c_results.json",
+        ),
+    ),
+    EvidenceSpec(
+        entry_id="tier6_1_lifecycle_self_scaling",
+        tier_label="Tier 6.1 - Software Lifecycle / Self-Scaling Benchmark",
+        plan_position="Phase 4 organism/lifecycle/self-scaling proof",
+        canonical_dir="tier6_1_20260428_012109",
+        results_file="tier6_1_results.json",
+        report_file="tier6_1_report.md",
+        summary_file="tier6_1_summary.csv",
+        harness="experiments/tier6_lifecycle_self_scaling.py",
+        evidence_role="software lifecycle/self-scaling benchmark",
+        claim="Lifecycle-enabled CRA expands from fixed initial populations with clean lineage tracking and shows hard_noisy_switching advantage regimes versus same-initial fixed-N controls.",
+        caveat="Controlled software lifecycle evidence only; growth is cleavage-dominated with one adult birth and zero deaths, so this is not full adult turnover, not sham-control proof, not hardware lifecycle evidence, and not external-baseline superiority.",
+        latest_manifest_names=("tier6_1_latest_manifest.json",),
+        expected_extra_files=(
+            "tier6_1_comparisons.csv",
+            "tier6_1_lifecycle_events.csv",
+            "tier6_1_lineage_final.csv",
+            "tier6_1_lifecycle_summary.png",
+            "tier6_1_alive_population.png",
+            "tier6_1_event_analysis.json",
+            "tier6_1_event_analysis.md",
+            "hard_noisy_switching_life4_16_seed42_timeseries.csv",
+            "hard_noisy_switching_life8_32_seed42_timeseries.csv",
+            "delayed_cue_life4_16_seed42_timeseries.csv",
+        ),
+    ),
+    EvidenceSpec(
+        entry_id="tier6_3_lifecycle_sham_controls",
+        tier_label="Tier 6.3 - Lifecycle Sham-Control Suite",
+        plan_position="Phase 4 organism/lifecycle reviewer-defense gate after Tier 6.1",
+        canonical_dir="tier6_3_20260428_121504",
+        results_file="tier6_3_results.json",
+        report_file="tier6_3_report.md",
+        summary_file="tier6_3_summary.csv",
+        harness="experiments/tier6_lifecycle_sham_controls.py",
+        evidence_role="software lifecycle sham-control benchmark",
+        claim="Lifecycle-enabled CRA beats fixed max-pool, event-count replay, no-trophic, no-dopamine, and no-plasticity sham controls on hard_noisy_switching while preserving clean lineage integrity.",
+        caveat="Controlled software sham-control evidence only; replay/shuffle controls are audit artifacts, not independent learners, and this is not hardware lifecycle evidence, full adult turnover, external-baseline superiority, or compositional/world-model evidence.",
+        latest_manifest_names=("tier6_3_latest_manifest.json",),
+        expected_extra_files=(
+            "tier6_3_comparisons.csv",
+            "tier6_3_lifecycle_events.csv",
+            "tier6_3_lineage_final.csv",
+            "tier6_3_sham_manifest.json",
+            "tier6_3_sham_summary.png",
+            "tier6_3_alive_population.png",
+            "hard_noisy_switching_life4_16_intact_seed42_timeseries.csv",
+            "hard_noisy_switching_life4_16_fixed_max_seed42_timeseries.csv",
+            "hard_noisy_switching_life4_16_random_event_replay_seed42_timeseries.csv",
+            "hard_noisy_switching_life8_32_intact_seed42_timeseries.csv",
+            "hard_noisy_switching_life8_32_fixed_max_seed42_timeseries.csv",
+            "hard_noisy_switching_life8_32_random_event_replay_seed42_timeseries.csv",
+        ),
+    ),
+    EvidenceSpec(
+        entry_id="tier6_4_circuit_motif_causality",
+        tier_label="Tier 6.4 - Circuit Motif Causality",
+        plan_position="Phase 4 organism/circuit-motif reviewer-defense gate after Tier 6.3",
+        canonical_dir="tier6_4_20260428_144354",
+        results_file="tier6_4_results.json",
+        report_file="tier6_4_report.md",
+        summary_file="tier6_4_summary.csv",
+        harness="experiments/tier6_circuit_motif_causality.py",
+        evidence_role="software circuit-motif causality benchmark",
+        claim="Seeded motif-diverse CRA passes motif-causality controls on hard_noisy_switching: ablations cause predicted losses, motif activity is logged before reward/learning, and random/monolithic controls do not dominate across adaptation metrics.",
+        caveat="Controlled software motif-causality evidence only; motif-diverse graph is seeded for this suite, motif-label shuffle shows labels alone are not causal, and this is not hardware motif evidence, custom-C/on-chip learning, compositionality, or full world-model evidence.",
+        latest_manifest_names=("tier6_4_latest_manifest.json",),
+        expected_extra_files=(
+            "tier6_4_comparisons.csv",
+            "tier6_4_motif_graph.csv",
+            "tier6_4_lifecycle_events.csv",
+            "tier6_4_lineage_final.csv",
+            "tier6_4_motif_manifest.json",
+            "tier6_4_motif_summary.png",
+            "tier6_4_motif_activity.png",
+            "hard_noisy_switching_life4_16_intact_seed42_timeseries.csv",
+            "hard_noisy_switching_life4_16_no_feedback_seed42_timeseries.csv",
+            "hard_noisy_switching_life8_32_intact_seed42_timeseries.csv",
+            "hard_noisy_switching_life8_32_no_feedforward_seed42_timeseries.csv",
+            "hard_noisy_switching_life8_32_random_graph_same_edge_count_seed42_timeseries.csv",
+        ),
+    ),
+    EvidenceSpec(
+        entry_id="tier4_29b_native_routing_composition_gate",
+        tier_label="Tier 4.29b - Native Routing/Composition Gate",
+        plan_position="Phase C mechanism migration: native keyed context + route composition",
+        canonical_dir="tier4_29b_20260503_hardware_pass_ingested",
+        results_file="tier4_29b_results.json",
+        report_file="tier4_29b_report.md",
+        summary_file="tier4_29b_summary.csv",
+        harness="experiments/tier4_29b_native_routing_composition_gate.py",
+        evidence_role="native routing/composition hardware benchmark",
+        claim="Native keyed context * route composition works on real SpiNNaker across three seeds on three different boards with explicit wrong-context, wrong-route, overwrite, and host-composed sham controls.",
+        caveat="Native routing/composition hardware evidence only; not speedup evidence, not multi-chip scaling, not a general multi-core framework, not full native v2.1 autonomy, and not true continuous generation.",
+        latest_manifest_names=("tier4_29b_latest_manifest.json",),
+        expected_extra_files=(
+            "tier4_29b_combined_results.json",
+            "tier4_29b_multi_seed_ingest_summary.json",
+            "tier4_29b_hardware_results.json",
+            "tier4_29b_task.json",
+            "tier4_29b_environment.json",
+            "tier4_29b_target_acquisition.json",
+            "tier4_29b_context_load.json",
+            "tier4_29b_route_load.json",
+            "tier4_29b_memory_load.json",
+            "tier4_29b_learning_load.json",
+            "tier4_29b_reports.zip",
+        ),
+    ),
+)
+
+
+def utc_now() -> str:
+    return datetime.now(timezone.utc).isoformat()
+
+
+def read_json(path: Path) -> dict[str, Any]:
+    with path.open() as f:
+        return json.load(f)
+
+
+def write_json(path: Path, data: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(data, indent=2, sort_keys=False) + "\n")
+
+
+def scalar(value: Any) -> bool:
+    return value is None or isinstance(value, (bool, int, float, str))
+
+
+def select_scalar_metrics(data: dict[str, Any], limit: int = 24) -> dict[str, Any]:
+    """Keep registry metrics useful without duplicating entire raw manifests."""
+    preferred = [
+        "all_accuracy_mean",
+        "tail_accuracy_mean",
+        "prediction_target_corr_mean",
+        "tail_prediction_target_corr_mean",
+        "tail_prediction_target_corr_min",
+        "tail_prediction_target_corr_max",
+        "total_step_spikes_mean",
+        "total_step_spikes_min",
+        "total_step_spikes_max",
+        "mean_step_spikes_mean",
+        "synthetic_fallbacks_sum",
+        "sim_run_failures_sum",
+        "summary_read_failures_sum",
+        "final_n_alive_mean",
+        "total_births_sum",
+        "total_deaths_sum",
+        "runtime_seconds_mean",
+        "runtime_seconds_min",
+        "runtime_seconds_max",
+        "hardware_run_attempted",
+        "hardware_target_configured",
+        "all_seed_statuses_pass",
+        "hard_advantage_task_count",
+        "observed_runs",
+        "expected_runs",
+        "aggregate_cells",
+        "functional_cell_count",
+        "functional_cell_fraction",
+        "default_min_tail_accuracy",
+        "collapse_count",
+        "propagation_failures",
+        "response_probe_monotonic_fraction",
+        "best_fixed_external_tail_accuracy",
+        "robust_advantage_regime_count",
+        "not_dominated_hard_regime_count",
+        "final_advantage_task_count",
+        "final_run_length_steps",
+        "expected_cells",
+        "observed_cells",
+        "expected_comparison_rows",
+        "observed_comparison_rows",
+        "observed_run_lengths",
+        "candidate_count",
+        "expected_profile_groups",
+        "observed_profile_groups",
+        "robust_target_regime_count",
+        "not_dominated_target_regime_count",
+        "surviving_target_regime_count",
+        "children_run",
+        "children_passed",
+        "expected_children",
+        "criteria_passed",
+        "criteria_total",
+        "actual_runs",
+        "fixed_births_sum",
+        "fixed_deaths_sum",
+        "lifecycle_births_sum",
+        "lifecycle_deaths_sum",
+        "lineage_integrity_failures",
+        "advantage_regime_count",
+        "advantage_tasks",
+        "max_tail_delta_vs_paired_fixed",
+        "max_abs_corr_delta_vs_paired_fixed",
+        "max_recovery_improvement_steps_vs_paired_fixed",
+        "expected_actual_runs",
+        "intact_non_handoff_lifecycle_events_sum",
+        "fixed_non_handoff_lifecycle_events_sum",
+        "actual_lineage_integrity_failures",
+        "extinct_actual_aggregate_count",
+        "performance_control_win_count",
+        "fixed_max_win_count",
+        "random_event_replay_win_count",
+        "no_trophic_win_count",
+        "no_dopamine_win_count",
+        "no_plasticity_win_count",
+        "lineage_shuffle_detected_count",
+        "active_mask_shuffle_present",
+        "intact_motif_diverse_aggregate_count",
+        "expected_intact_aggregates",
+        "intact_motif_activity_steps_sum",
+        "motif_loss_count",
+        "motif_ablation_loss_count",
+        "random_or_monolithic_domination_count",
+        "motif_shuffled_row_count",
+        "no_wta_row_count",
+        "external_models",
+        "cra_variants",
+        "runs",
+        "backend",
+        "seed",
+        "seeds",
+        "requested_seeds",
+        "population_sizes",
+        "steps",
+    ]
+    metrics: dict[str, Any] = {}
+    for key in preferred:
+        if key in data and (scalar(data[key]) or isinstance(data[key], list)):
+            metrics[key] = data[key]
+    for key in sorted(data):
+        if len(metrics) >= limit:
+            break
+        if key not in metrics and scalar(data[key]):
+            metrics[key] = data[key]
+    return metrics
+
+
+def iter_result_items(manifest: dict[str, Any]) -> list[dict[str, Any]]:
+    if isinstance(manifest.get("results"), list):
+        return [item for item in manifest["results"] if isinstance(item, dict)]
+    if isinstance(manifest.get("result"), dict):
+        return [manifest["result"]]
+    if manifest.get("criteria"):
+        return [manifest]
+    return []
+
+
+def status_from_manifest(manifest: dict[str, Any]) -> str:
+    if isinstance(manifest.get("status"), str):
+        return manifest["status"].lower()
+    items = iter_result_items(manifest)
+    if items:
+        statuses = [str(item.get("status", "")).lower() for item in items]
+        if statuses and all(status == "pass" for status in statuses):
+            return "pass"
+        if any(status in {"fail", "failed"} for status in statuses):
+            return "fail"
+        if any(status == "blocked" for status in statuses):
+            return "blocked"
+    if manifest.get("stopped_after"):
+        return "fail"
+    return "unknown"
+
+
+def criteria_summary(item: dict[str, Any]) -> dict[str, Any]:
+    criteria = item.get("criteria") or []
+    if not isinstance(criteria, list):
+        return {"total": 0, "passed": 0, "failed": 0, "failures": []}
+    failures = [
+        {
+            "name": c.get("name"),
+            "value": c.get("value"),
+            "operator": c.get("operator"),
+            "threshold": c.get("threshold"),
+            "note": c.get("note", ""),
+        }
+        for c in criteria
+        if isinstance(c, dict) and not c.get("passed")
+    ]
+    return {
+        "total": len(criteria),
+        "passed": sum(1 for c in criteria if isinstance(c, dict) and c.get("passed")),
+        "failed": len(failures),
+        "failures": failures,
+    }
+
+
+def normalize_test_results(manifest: dict[str, Any]) -> list[dict[str, Any]]:
+    tests = []
+    for item in iter_result_items(manifest):
+        summary = item.get("summary") if isinstance(item.get("summary"), dict) else {}
+        if not summary and isinstance(item.get("metrics"), dict):
+            summary = item["metrics"]
+        tests.append(
+            {
+                "name": item.get("name") or item.get("test") or manifest.get("tier"),
+                "status": str(item.get("status") or manifest.get("status") or "unknown").lower(),
+                "criteria": criteria_summary(item),
+                "metrics": select_scalar_metrics(summary),
+                "artifacts": item.get("artifacts", {}),
+            }
+        )
+    return tests
+
+
+def expected_artifacts(spec: EvidenceSpec) -> list[Path]:
+    run_dir = OUTPUT_ROOT / spec.canonical_dir
+    artifacts = [
+        run_dir / spec.results_file,
+        run_dir / spec.report_file,
+    ]
+    if spec.summary_file:
+        artifacts.append(run_dir / spec.summary_file)
+    artifacts.extend(run_dir / rel for rel in spec.expected_extra_files)
+    return artifacts
+
+
+def latest_manifest_payload(spec: EvidenceSpec, manifest: dict[str, Any], entry: dict[str, Any]) -> dict[str, Any]:
+    run_dir = OUTPUT_ROOT / spec.canonical_dir
+    payload = {
+        "generated_at_utc": utc_now(),
+        "source_generated_at_utc": manifest.get("generated_at_utc"),
+        "registry_entry_id": spec.entry_id,
+        "tier": spec.tier_label,
+        "status": entry["status"],
+        "output_dir": str(run_dir),
+        "manifest": str(run_dir / spec.results_file),
+        "report": str(run_dir / spec.report_file),
+        "summary_csv": str(run_dir / spec.summary_file) if spec.summary_file else None,
+        "canonical": True,
+        "claim": spec.claim,
+        "caveat": spec.caveat,
+    }
+    if spec.entry_id == "tier3_architecture":
+        # Backward-compatible keys for older tooling that reads this manifest.
+        payload["latest_manifest"] = payload["manifest"]
+        payload["latest_report"] = payload["report"]
+        payload["latest_summary_csv"] = payload["summary_csv"]
+    if spec.entry_id == "tier4_13_spinnaker_hardware_capsule":
+        study_data = run_dir / "study_data.json"
+        provenance_dir = run_dir / "spinnaker_reports" / "2026-04-27-01-19-12-390038"
+        payload["study_data"] = str(study_data)
+        payload["spinnaker_provenance_dir"] = str(provenance_dir)
+        payload["claim_boundary"] = [
+            "This is a minimal fixed-pattern hardware capsule, not a full hardware scaling claim.",
+            "The run used one seed (42), N=8, 120 steps, and a fixed population.",
+            "hardware_target_configured is false because local/JobManager environment detection did not expose a config flag, but hardware_run_attempted is true and real spike readback was nonzero.",
+        ]
+    if spec.entry_id == "tier4_15_spinnaker_hardware_multiseed_repeat":
+        study_data = run_dir / "study_data.json"
+        provenance_dirs = [
+            run_dir / "spinnaker_reports" / "2026-04-27-03-05-01-872105",
+            run_dir / "spinnaker_reports" / "2026-04-27-03-19-49-290162",
+            run_dir / "spinnaker_reports" / "2026-04-27-03-34-22-032643",
+        ]
+        payload["study_data"] = str(study_data)
+        payload["spinnaker_provenance_dirs"] = [str(path) for path in provenance_dirs]
+        payload["claim_boundary"] = [
+            "This is a three-seed repeatability result for the minimal fixed-pattern hardware capsule.",
+            "The run used seeds 42, 43, and 44, N=8, 120 steps, and a fixed population.",
+            "It is not a harder-task hardware result, hardware population scaling result, or full CRA hardware deployment.",
+            "hardware_target_configured is false because local/JobManager environment detection did not expose a config flag, but hardware_run_attempted is true and real spike readback was nonzero for every seed.",
+        ]
+    if spec.entry_id == "tier5_1_external_baselines":
+        payload["claim_boundary"] = [
+            "Tier 5.1 is a controlled software baseline comparison, not a hardware result.",
+            "The baseline matrix used CRA plus random/sign persistence, online perceptron, online logistic regression, echo-state network, small GRU readout, STDP-only SNN, and evolutionary population baselines.",
+            "CRA does not win every task; simpler learners dominate the easy delayed-cue mapping.",
+            "The pass claim is limited to a defensible median-baseline advantage on sensor_control and hard noisy switching plus full matrix completion.",
+        ]
+    if spec.entry_id == "tier5_2_learning_curve_sweep":
+        payload["claim_boundary"] = [
+            "Tier 5.2 is a controlled software run-length sweep, not a hardware result.",
+            "The matrix used the same CRA and external baselines as Tier 5.1 on sensor_control, hard_noisy_switching, and delayed_cue.",
+            "The tier passes methodologically because the full 405-run matrix completed and produced interpretable curves.",
+            "The scientific finding is not a CRA win at the final horizon: final_advantage_task_count is zero at 1500 steps.",
+            "Tier 4.16 hardware should not blindly move these exact tasks to hardware without first deciding whether to tune CRA or design a sharper hard-task probe.",
+        ]
+    if spec.entry_id == "tier5_3_cra_failure_analysis":
+        payload["claim_boundary"] = [
+            "Tier 5.3 is a controlled software CRA-only diagnostic, not a hardware result.",
+            "The matrix used seeds 42, 43, and 44, steps=960, tasks delayed_cue and hard_noisy_switching, and 13 CRA variants.",
+            "The leading candidate fix is stronger delayed credit: delayed_lr_0_20 restores delayed_cue to the external-best tail score and improves hard_noisy_switching above the external median.",
+            "This is not enough to launch Tier 4.16 hardware directly because hard_noisy_switching still trails the best external baseline and the tuned setting needs targeted confirmation at longer horizons.",
+            "sensor_control is intentionally excluded from the advantage probe because Tier 5.2 showed it saturates for CRA and baselines.",
+        ]
+    if spec.entry_id == "tier5_4_delayed_credit_confirmation":
+        payload["claim_boundary"] = [
+            "Tier 5.4 is a controlled software confirmation, not a hardware result.",
+            "The matrix used seeds 42, 43, and 44, run lengths 960 and 1500, tasks delayed_cue and hard_noisy_switching, current CRA, cra_delayed_lr_0_20, and eight external baselines.",
+            "The delayed-credit candidate confirms versus the predeclared Tier 5.4 criteria: delayed_cue stays at 1.0 tail accuracy, hard_noisy_switching beats the external median, no regression versus current CRA, and seed variance is acceptable.",
+            "Do not claim hard-switch superiority: hard_noisy_switching still trails the best external baseline at both run lengths.",
+            "This result supports designing Tier 4.16 as a harder SpiNNaker capsule using delayed_lr_0_20, not claiming full hardware readiness.",
+        ]
+    if spec.entry_id == "tier4_16a_delayed_cue_hardware_repeat":
+        payload["claim_boundary"] = [
+            "Tier 4.16a is a repaired delayed_cue hardware-transfer result using the Tier 5.4 delayed_lr_0_20 setting.",
+            "The run used seeds 42, 43, and 44, N=8, 1200 steps, runtime_mode=chunked, learning_location=host, and chunk_size_steps=25.",
+            "It passed with zero synthetic fallback, zero sim.run failures, zero summary-read failures, and real spike readback in every seed.",
+            "It does not prove hard_noisy_switching transfer, hardware scaling, self-scaling lifecycle behavior, continuous/on-chip learning, or full Tier 4.16.",
+            "hardware_target_configured is false because local/JobManager environment detection did not expose a config flag, but hardware_run_attempted is true and real spike readback was nonzero for every seed.",
+        ]
+    if spec.entry_id == "tier4_16b_hard_switch_hardware_repeat":
+        payload["claim_boundary"] = [
+            "Tier 4.16b is a repaired hard_noisy_switching hardware-transfer result using the Tier 5.4 delayed_lr_0_20 setting.",
+            "The run used seeds 42, 43, and 44, N=8, 1200 steps, runtime_mode=chunked, learning_location=host, and chunk_size_steps=25.",
+            "It passed with zero synthetic fallback, zero sim.run failures, zero summary-read failures, and real spike readback in every seed.",
+            "The hard-switch pass is close to threshold: tail_accuracy_min is 0.5238095238095238 against a 0.5 gate.",
+            "raw_dopamine is expected to be zero in this chunked host delayed-credit scaffold; cite matured horizon replay and host_replay_weight movement, not native on-chip dopamine.",
+            "It does not prove hardware scaling, self-scaling lifecycle behavior, continuous/on-chip learning, native eligibility traces, or external-baseline superiority.",
+            "hardware_target_configured is false because local/JobManager environment detection did not expose a config flag, but hardware_run_attempted is true and real spike readback was nonzero for every seed.",
+        ]
+    if spec.entry_id == "tier4_18a_chunked_runtime_baseline":
+        payload["claim_boundary"] = [
+            "Tier 4.18a is runtime/resource characterization for the already-promoted v0.7 chunked-host SpiNNaker path.",
+            "The run used seed 42, N=8, 1200 steps, tasks delayed_cue and hard_noisy_switching, and chunk sizes 10, 25, and 50.",
+            "Chunk 50 preserved the observed task metrics while cutting sim.run calls to 24 per task, so it is the current default hardware chunk for v0.7.",
+            "raw_dopamine is expected to be zero in this chunked host delayed-credit scaffold; cite matured horizon replay and host-replay outputs, not native on-chip dopamine.",
+            "It does not prove hardware scaling, lifecycle/self-scaling, continuous/custom-C runtime, native dopamine/eligibility, or external-baseline superiority.",
+            "hardware_target_configured is false because local/JobManager environment detection did not expose a config flag, but hardware_run_attempted is true and real spike readback was nonzero for every run.",
+        ]
+    if spec.entry_id == "tier5_5_expanded_baselines":
+        payload["claim_boundary"] = [
+            "Tier 5.5 is controlled software expanded-baseline evidence, not hardware evidence.",
+            "The full run used 10 seeds, run lengths 120/240/480/960/1500, tasks fixed_pattern/delayed_cue/hard_noisy_switching/sensor_control, locked CRA v0.8, and eight implemented external baselines.",
+            "The matrix completed 1,800 runs and produced paired deltas, bootstrap confidence intervals, paired effect sizes, per-seed audit rows, runtime, sample-efficiency, recovery, and a fairness contract.",
+            "CRA shows robust advantage regimes and is not dominated on most hard/adaptive regimes; hard_noisy_switching beats the external median at 1500 steps but does not beat the best external tail score there.",
+            "Do not claim universal superiority, best-baseline dominance, real-world usefulness, hardware transfer, lifecycle/self-scaling value, or hyperparameter-fairness completion from this tier.",
+            "Tier 5.6 supersedes this as the tuned-baseline reviewer-defense audit; cite Tier 5.5 for broad matrix coverage and Tier 5.6 for retuned-baseline fairness.",
+        ]
+    if spec.entry_id == "tier5_6_baseline_hyperparameter_fairness_audit":
+        payload["claim_boundary"] = [
+            "Tier 5.6 is controlled software tuned-baseline fairness evidence, not hardware evidence.",
+            "CRA was locked at the promoted delayed-credit setting while implemented external baselines received a predeclared tuning budget.",
+            "The standard run completed 990 observed runs, 198 cells, 32 candidate profiles, 48 profile groups, and six task/run-length comparison rows.",
+            "CRA retained four surviving target regimes after retuning: hard_noisy_switching and sensor_control at 960 and 1500 steps.",
+            "Do not claim universal superiority, real-world usefulness, all-possible-baselines coverage, hardware transfer, lifecycle/self-scaling value, or best-baseline dominance from this tier.",
+            "The hard_noisy_switching 1500-step tail metric remains weaker than the best tuned perceptron tail score, even though the regime survives the audit through other paired criteria.",
+        ]
+    if spec.entry_id == "tier5_7_compact_regression":
+        payload["claim_boundary"] = [
+            "Tier 5.7 is controlled software compact-regression evidence, not hardware evidence.",
+            "The run used backend NEST, readout_lr=0.10, delayed_readout_lr=0.20, and the v1.0 promoted CRA setting.",
+            "Tier 1 negative controls, Tier 2 positive controls, Tier 3 architecture ablations, and delayed_cue/hard_noisy_switching task smokes all passed.",
+            "This authorizes moving to Tier 6 lifecycle/self-scaling work without rewriting the v1.0 setting.",
+            "Do not cite Tier 5.7 as a new learning capability, external-baseline superiority, lifecycle/self-scaling evidence, hardware scaling, native on-chip learning, compositionality, or world modeling.",
+        ]
+    if spec.entry_id == "tier5_12a_predictive_task_pressure":
+        payload["claim_boundary"] = [
+            "Tier 5.12a is controlled software task-validation evidence, not a CRA mechanism promotion.",
+            "The run validates that the predictive-pressure task family defeats reflex/sign-persistence/wrong-horizon/shuffled-target shortcuts while causal predictive-memory controls can solve it.",
+            "It does not prove CRA predictive coding, world modeling, language, planning, hardware prediction, hardware scaling, or v1.8.",
+        ]
+    if spec.entry_id == "tier5_12c_predictive_context_sham_repair":
+        payload["claim_boundary"] = [
+            "Tier 5.12c is controlled host-side software predictive-context evidence, not hardware evidence.",
+            "The full NEST matrix completed 171/171 cells with zero leakage; the internal visible predictive-context candidate matched the external scaffold and beat v1.7 reactive CRA, shuffled/permuted/no-write shams, shortcut controls, and selected external baselines.",
+            "Wrong-sign context is reported as a learnable alternate code from the failed Tier 5.12b diagnostic, not as the promotion sham.",
+            "Tier 5.12d compact regression is the promotion gate that freezes the bounded v1.8 software baseline.",
+            "Do not cite Tier 5.12c as hidden-regime inference, full world modeling, language, planning, hardware prediction, hardware scaling, native on-chip learning, compositionality, or external-baseline superiority.",
+        ]
+    if spec.entry_id == "tier5_12d_predictive_context_compact_regression":
+        payload["claim_boundary"] = [
+            "Tier 5.12d is controlled software compact-regression and promotion-gate evidence.",
+            "The run used NEST for Tier 1/2/3, target hard-task smokes, and the predictive-context guardrail; it also reran the v1.7 replay/consolidation guardrail.",
+            "All six child checks passed: Tier 1 negative controls, Tier 2 positive controls, Tier 3 architecture ablations, delayed_cue/hard_noisy_switching smokes, replay/consolidation, and compact predictive-context sham separation.",
+            "This authorizes a bounded v1.8 host-side visible predictive-context software baseline.",
+            "Do not cite Tier 5.12d as hidden-regime inference, full world modeling, language, planning, lifecycle/self-scaling, hardware prediction, hardware scaling, native on-chip learning, compositionality, or external-baseline superiority.",
+        ]
+    if spec.entry_id == "tier6_1_lifecycle_self_scaling":
+        payload["claim_boundary"] = [
+            "Tier 6.1 is controlled software lifecycle/self-scaling evidence, not hardware evidence.",
+            "The run used backend NEST, seeds 42/43/44, steps=960, tasks hard_noisy_switching and delayed_cue, and cases fixed4/fixed8/fixed16/life4_16/life8_32/life16_64.",
+            "Lifecycle cases produced 75 new-polyp events with clean lineage integrity and no aggregate extinction.",
+            "Event-type analysis shows 74 cleavage events, one adult birth event, and zero death events; cite this as lifecycle expansion/self-scaling evidence, not full adult birth/death turnover.",
+            "The lifecycle advantage appears on hard_noisy_switching for life4_16 and life8_32 versus same-initial fixed controls; delayed_cue saturated for fixed and lifecycle cases.",
+            "Do not cite Tier 6.1 as hardware lifecycle evidence, sham-control proof, external-baseline superiority, native on-chip lifecycle, continuous runtime, compositionality, or world modeling.",
+        ]
+    if spec.entry_id == "tier6_3_lifecycle_sham_controls":
+        payload["claim_boundary"] = [
+            "Tier 6.3 is controlled software sham-control evidence for the Tier 6.1 organism/lifecycle claim.",
+            "The run used NEST, hard_noisy_switching, seeds 42/43/44, regimes life4_16 and life8_32, and 960 steps.",
+            "Intact lifecycle produced 26 non-handoff lifecycle events and beat all 10 requested performance-sham comparisons.",
+            "Performance shams include fixed max-pool capacity, event-count replay, no trophic pressure, no dopamine, and no plasticity.",
+            "Active-mask shuffle and lineage-ID shuffle are derived audit artifacts, not independently learning baselines; lineage-ID corruption was detected in 6/6 shuffled runs.",
+            "This does not prove hardware lifecycle, native on-chip lifecycle, full adult birth/death turnover, external-baseline superiority, compositionality, or world modeling.",
+        ]
+    if spec.entry_id == "tier6_4_circuit_motif_causality":
+        payload["claim_boundary"] = [
+            "Tier 6.4 is controlled software circuit-motif causality evidence, not hardware motif evidence.",
+            "The run used NEST, hard_noisy_switching, seeds 42/43/44, regimes life4_16 and life8_32, 960 steps, and a seeded motif-diverse graph before the first outcome feedback.",
+            "Intact graphs contained FF/LAT/FB motif edges in both task/regime aggregates and logged 1920 motif-active steps before reward/learning updates.",
+            "Four predeclared motif ablation comparisons produced predicted losses, and random/monolithic controls did not dominate intact when recovery and active-population efficiency were included.",
+            "Motif-label shuffle behaved identically to intact, so cite this as motif structure/edge-role evidence, not evidence that labels alone carry computational semantics.",
+            "This does not prove hardware motif execution, custom-C/on-chip learning, compositionality, world modeling, real-world task usefulness, or superiority over all external baselines.",
+        ]
+    return payload
+
+
+def backend_from_manifest(manifest: dict[str, Any]) -> str | None:
+    if manifest.get("backend"):
+        return str(manifest["backend"])
+    summary = manifest.get("summary")
+    if isinstance(summary, dict) and summary.get("backend"):
+        return str(summary["backend"])
+    backend_keys = manifest.get("backend_keys")
+    if isinstance(backend_keys, list):
+        return ", ".join(str(item) for item in backend_keys)
+    return None
+
+
+def classify_noncanonical(canonical_dirs: set[str]) -> list[dict[str, Any]]:
+    entries = []
+    for path in sorted(OUTPUT_ROOT.iterdir()):
+        if not path.is_dir() or path.name in canonical_dirs:
+            continue
+        if path.name.startswith("_legacy"):
+            role = "legacy_generated_artifacts"
+        elif path.name.startswith("_"):
+            role = "probe_or_debug"
+        elif path.name.startswith("tier") and "fix" in path.name:
+            role = "fix_diagnostic"
+        elif path.name.startswith("tier") and "debug" in path.name:
+            role = "debug_diagnostic"
+        elif path.name.startswith("tier4_17b"):
+            role = "runtime_parity_diagnostic"
+        elif path.name.startswith("tier4_17"):
+            role = "runtime_contract_diagnostic"
+        elif path.name.startswith("tier4_20a"):
+            role = "hardware_transfer_readiness_audit"
+        elif path.name.startswith("tier4_20b"):
+            role = "v2_1_chunked_hardware_probe"
+        elif path.name.startswith("tier4_20c"):
+            role = "v2_1_three_seed_hardware_repeat"
+        elif path.name.startswith("tier4_21a"):
+            role = "keyed_context_memory_hardware_bridge"
+        elif path.name.startswith("tier4_22a0"):
+            role = "spinnaker_constrained_preflight"
+        elif path.name.startswith("tier4_22c"):
+            role = "persistent_custom_c_state_scaffold"
+        elif path.name.startswith("tier4_22d"):
+            role = "custom_c_reward_plasticity_scaffold"
+        elif path.name.startswith("tier4_22f0"):
+            role = "custom_runtime_scale_readiness_audit"
+        elif path.name.startswith("tier4_22g"):
+            role = "event_indexed_active_trace_runtime"
+        elif path.name.startswith("tier4_22h"):
+            role = "compact_readback_build_readiness"
+        elif path.name.startswith("tier4_22k"):
+            role = "spin1api_event_symbol_discovery"
+        elif path.name.startswith("tier4_22w"):
+            role = "native_decoupled_memory_route_composition_custom_runtime_smoke"
+        elif path.name.startswith("tier4_22v"):
+            role = "native_memory_route_reentry_composition_custom_runtime_smoke"
+        elif path.name.startswith("tier4_22u"):
+            role = "native_memory_route_state_custom_runtime_smoke"
+        elif path.name.startswith("tier4_22t"):
+            role = "native_keyed_route_state_custom_runtime_smoke"
+        elif path.name.startswith("tier4_22s"):
+            role = "native_route_state_custom_runtime_smoke"
+        elif path.name.startswith("tier4_22r"):
+            role = "native_context_state_custom_runtime_smoke"
+        elif path.name.startswith("tier4_22q"):
+            role = "integrated_v2_bridge_custom_runtime_smoke"
+        elif path.name.startswith("tier4_22p"):
+            role = "aba_reentry_custom_runtime_micro_task"
+        elif path.name.startswith("tier4_22o"):
+            role = "noisy_switching_custom_runtime_micro_task"
+        elif path.name.startswith("tier4_22n"):
+            role = "delayed_cue_custom_runtime_micro_task"
+        elif path.name.startswith("tier4_22m"):
+            role = "fixed_pattern_custom_runtime_task_micro_loop"
+        elif path.name.startswith("tier4_22l"):
+            role = "custom_runtime_learning_parity"
+        elif path.name.startswith("tier4_22j"):
+            role = "minimal_custom_runtime_learning_smoke"
+        elif path.name.startswith("tier4_22i"):
+            role = "custom_runtime_board_roundtrip"
+        elif path.name.startswith("tier4_22e"):
+            role = "local_custom_c_learning_parity_scaffold"
+        elif path.name.startswith("tier4_22b"):
+            role = "continuous_transport_scaffold"
+        elif path.name.startswith("tier4_22a"):
+            role = "custom_runtime_contract"
+        elif path.name.startswith("tier4_23c"):
+            role = "continuous_hardware_smoke"
+        elif path.name.startswith("tier4_25b"):
+            role = "two_core_state_learning_split_smoke"
+        elif path.name.startswith("tier4_25c"):
+            role = "two_core_state_learning_split_repeatability"
+        elif path.name.startswith("tier4_26"):
+            role = "four_core_distributed_smoke"
+        elif path.name.startswith("tier4_28e_pointB"):
+            role = "failure_envelope_boundary_diagnostic"
+        elif path.name.startswith("tier5_9c"):
+            role = "macro_eligibility_v2_1_recheck"
+        elif path.name.startswith("tier5_15"):
+            role = "temporal_code_diagnostic"
+        elif path.name.startswith("tier5_16"):
+            role = "neuron_model_sensitivity_diagnostic"
+        elif path.name.startswith("tier5_17b"):
+            role = "pre_reward_representation_failure_analysis"
+        elif path.name.startswith("tier5_17c"):
+            role = "intrinsic_predictive_preexposure_diagnostic"
+        elif path.name.startswith("tier5_17d"):
+            role = "predictive_binding_preexposure_diagnostic"
+        elif path.name.startswith("tier5_17e"):
+            role = "predictive_binding_compact_regression_gate"
+        elif path.name.startswith("tier5_18c"):
+            role = "self_evaluation_compact_regression_gate"
+        elif path.name.startswith("tier5_18"):
+            role = "self_evaluation_metacognition_diagnostic"
+        elif path.name.startswith("tier5_17"):
+            role = "pre_reward_representation_diagnostic"
+        elif path.name.startswith("tier") and (
+            path.name.endswith("_hardware_fail") or path.name.endswith("_run_hardware_fail")
+        ):
+            role = "failed_hardware_run"
+        elif path.name.startswith("tier") and (
+            "hardware_pass" in path.name or path.name.endswith("_probe_pass")
+        ):
+            role = "hardware_probe_pass"
+        elif path.name.startswith("tier") and path.name.endswith("_prepared"):
+            role = "prepared_capsule"
+        elif path.name.startswith("tier"):
+            role = "superseded_rerun"
+        else:
+            role = "unclassified"
+        results_files = sorted(path.glob("*results.json"))
+        generated = None
+        status = "unknown"
+        if results_files:
+            try:
+                manifest = read_json(results_files[0])
+                generated = manifest.get("generated_at_utc")
+                status = status_from_manifest(manifest)
+            except Exception as exc:  # pragma: no cover - defensive registry path
+                status = f"unreadable: {exc}"
+        entries.append(
+            {
+                "path": str(path),
+                "name": path.name,
+                "role": role,
+                "status": status,
+                "generated_at_utc": generated,
+                "results_files": [str(p) for p in results_files],
+            }
+        )
+    return entries
+
+
+def build_registry() -> dict[str, Any]:
+    OUTPUT_ROOT.mkdir(parents=True, exist_ok=True)
+    entries = []
+    integrity = {
+        "missing_expected_artifacts": [],
+        "failed_criteria": [],
+        "latest_manifest_updates": [],
+    }
+    canonical_dirs = {spec.canonical_dir for spec in SPECS}
+
+    for spec in SPECS:
+        run_dir = OUTPUT_ROOT / spec.canonical_dir
+        results_path = run_dir / spec.results_file
+        report_path = run_dir / spec.report_file
+        summary_path = run_dir / spec.summary_file if spec.summary_file else None
+        manifest = read_json(results_path)
+        status = status_from_manifest(manifest)
+        tests = normalize_test_results(manifest)
+        missing = [str(path) for path in expected_artifacts(spec) if not path.exists()]
+        for missing_path in missing:
+            integrity["missing_expected_artifacts"].append(
+                {"entry_id": spec.entry_id, "path": missing_path}
+            )
+        for test in tests:
+            if test["criteria"]["failed"]:
+                integrity["failed_criteria"].append(
+                    {
+                        "entry_id": spec.entry_id,
+                        "test": test["name"],
+                        "failures": test["criteria"]["failures"],
+                    }
+                )
+        entry = {
+            "entry_id": spec.entry_id,
+            "tier_label": spec.tier_label,
+            "plan_position": spec.plan_position,
+            "status": status,
+            "source_generated_at_utc": manifest.get("generated_at_utc"),
+            "canonical_output_dir": str(run_dir),
+            "results_json": str(results_path),
+            "report_md": str(report_path),
+            "summary_csv": str(summary_path) if summary_path else None,
+            "harness": spec.harness,
+            "evidence_role": spec.evidence_role,
+            "claim": spec.claim,
+            "caveat": spec.caveat,
+            "backend": backend_from_manifest(manifest),
+            "selected_tests": manifest.get("selected_tests"),
+            "test_results": tests,
+            "top_level_metrics": select_scalar_metrics(manifest.get("summary", {})),
+            "missing_expected_artifacts": missing,
+        }
+        entries.append(entry)
+        payload = latest_manifest_payload(spec, manifest, entry)
+        for manifest_name in spec.latest_manifest_names:
+            manifest_path = OUTPUT_ROOT / manifest_name
+            previous = None
+            if manifest_path.exists():
+                try:
+                    previous = read_json(manifest_path)
+                except Exception:
+                    previous = {"unreadable": True}
+            write_json(manifest_path, payload)
+            integrity["latest_manifest_updates"].append(
+                {
+                    "path": str(manifest_path),
+                    "registry_entry_id": spec.entry_id,
+                    "previous_manifest": previous,
+                    "new_manifest": payload,
+                }
+            )
+
+    noncanonical = classify_noncanonical(canonical_dirs)
+    registry_status = (
+        "pass"
+        if all(entry["status"] == "pass" for entry in entries)
+        and not integrity["missing_expected_artifacts"]
+        and not integrity["failed_criteria"]
+        else "needs_attention"
+    )
+    return {
+        "schema_version": "1.0",
+        "generated_at_utc": utc_now(),
+        "registry_status": registry_status,
+        "study_name": "CRA controlled learning and SpiNNaker hardware evidence",
+        "evidence_count": len(entries),
+        "core_test_count": 12,
+        "expanded_test_entry_count": len(entries),
+        "entries": entries,
+        "noncanonical_outputs": noncanonical,
+        "integrity": integrity,
+    }
+
+
+def write_registry_csv(registry: dict[str, Any]) -> None:
+    csv_path = OUTPUT_ROOT / "STUDY_REGISTRY.csv"
+    with csv_path.open("w", newline="") as f:
+        writer = csv.DictWriter(
+            f,
+            fieldnames=[
+                "entry_id",
+                "tier_label",
+                "plan_position",
+                "status",
+                "source_generated_at_utc",
+                "canonical_output_dir",
+                "harness",
+                "evidence_role",
+                "claim",
+                "caveat",
+                "backend",
+                "test_count",
+                "missing_expected_artifacts",
+            ],
+        )
+        writer.writeheader()
+        for entry in registry["entries"]:
+            writer.writerow(
+                {
+                    "entry_id": entry["entry_id"],
+                    "tier_label": entry["tier_label"],
+                    "plan_position": entry["plan_position"],
+                    "status": entry["status"],
+                    "source_generated_at_utc": entry["source_generated_at_utc"],
+                    "canonical_output_dir": entry["canonical_output_dir"],
+                    "harness": entry["harness"],
+                    "evidence_role": entry["evidence_role"],
+                    "claim": entry["claim"],
+                    "caveat": entry["caveat"],
+                    "backend": entry["backend"],
+                    "test_count": len(entry["test_results"]),
+                    "missing_expected_artifacts": len(entry["missing_expected_artifacts"]),
+                }
+            )
+
+
+def status_mark(status: str) -> str:
+    return "PASS" if status == "pass" else status.upper()
+
+
+def artifact_label(path: str | None) -> str:
+    if not path:
+        return ""
+    p = Path(path)
+    try:
+        return str(p.relative_to(ROOT))
+    except ValueError:
+        return str(p)
+
+
+def write_controlled_readme(registry: dict[str, Any]) -> None:
+    lines = [
+        "# Controlled Test Output Registry",
+        "",
+        "This directory is generated evidence, not source code. The canonical study",
+        "ledger is `STUDY_REGISTRY.json`; the compact table is `STUDY_REGISTRY.csv`.",
+        "Older reruns, prepared capsules, debug probes, and baseline-frozen",
+        "mechanism bundles outside the formal registry are preserved for audit.",
+        "",
+        f"- Generated: `{registry['generated_at_utc']}`",
+        f"- Registry status: **{status_mark(registry['registry_status'])}**",
+        f"- Canonical evidence entries: `{registry['evidence_count']}`",
+        f"- Expanded test-entry count: `{registry['expanded_test_entry_count']}` (`12` core tests + `10b` + `4.13` + `4.14` + `4.15` + `5.1` + `5.2` + `5.3` + `5.4` + `4.16a` + `4.16b` + `4.18a` + `5.5` + `5.12a` + `5.12c` + `5.12d` + `6.1` + `6.3` + `6.4`; Tiers `5.6` and `5.7` are tracked as additional reviewer-defense/guardrail evidence bundles)",
+        "",
+        "## Evidence Categories",
+        "",
+        "- Canonical registry evidence: rows in this registry and the paper-facing table.",
+        "- Baseline-frozen mechanism evidence: passed mechanism/promotion diagnostics with compact regression and a frozen `baselines/CRA_EVIDENCE_BASELINE_vX.Y.*` lock, even when the source bundle is not a canonical registry row.",
+        "- Noncanonical diagnostic evidence: useful pass/fail diagnostics that answer a design question but do not freeze a baseline by themselves.",
+        "- Failed/parked diagnostic evidence: clean negative evidence retained to prevent p-hacking and explain why a mechanism was not promoted.",
+        "- Hardware prepare/probe evidence: run packages and one-off probes that are not hardware claims until reviewed and promoted.",
+        "",
+        "## Canonical Evidence",
+        "",
+        "| Entry | Status | Canonical Directory | Claim Boundary |",
+        "| --- | --- | --- | --- |",
+    ]
+    for entry in registry["entries"]:
+        rel = artifact_label(entry["canonical_output_dir"])
+        lines.append(
+            f"| `{entry['entry_id']}` | **{status_mark(entry['status'])}** | `{rel}` | {entry['caveat']} |"
+        )
+    lines.extend(
+        [
+            "",
+            "## Noncanonical Outputs",
+            "",
+            "These are retained for audit/debug history. Some source bundles also back",
+            "baseline-frozen mechanism claims through `baselines/`; otherwise, do not",
+            "cite them as current study results unless promoted in `STUDY_REGISTRY.json`.",
+            "",
+            "| Path | Role | Status | Generated |",
+            "| --- | --- | --- | --- |",
+        ]
+    )
+    for item in registry["noncanonical_outputs"]:
+        lines.append(
+            f"| `{artifact_label(item['path'])}` | `{item['role']}` | `{item['status']}` | `{item.get('generated_at_utc')}` |"
+        )
+    lines.extend(
+        [
+            "",
+            "## Integrity",
+            "",
+            f"- Missing expected artifacts: `{len(registry['integrity']['missing_expected_artifacts'])}`",
+            f"- Failed criteria in canonical entries: `{len(registry['integrity']['failed_criteria'])}`",
+            "- Latest manifest pointers are regenerated by `python3 experiments/evidence_registry.py`.",
+            "",
+        ]
+    )
+    (OUTPUT_ROOT / "README.md").write_text("\n".join(lines))
+
+
+def write_study_index(registry: dict[str, Any]) -> None:
+    lines = [
+        "# CRA Study Evidence Index",
+        "",
+        "This is the source-facing index for the controlled evidence trail. Raw bundles",
+        "live under `controlled_test_output/`; each canonical entry below has a JSON",
+        "manifest, CSV summary, Markdown report, and plots/provenance where relevant.",
+        "",
+        "Research narrative companions:",
+        "",
+        "- `docs/ABSTRACT.md`",
+        "- `docs/WHITEPAPER.md`",
+        "- `docs/CODEBASE_MAP.md`",
+        "",
+        f"- Registry generated: `{registry['generated_at_utc']}`",
+        f"- Registry status: **{status_mark(registry['registry_status'])}**",
+        "- Core validation suite: `12` tests",
+        f"- Expanded evidence suite: `{registry['expanded_test_entry_count']}` entries (`10b` hard scaling, `4.13` hardware capsule, `4.14` runtime characterization, `4.15` hardware repeatability, `5.1` external baselines, `5.2` learning curves, `5.3` failure analysis, `5.4` delayed-credit confirmation, `4.16a` repaired delayed-cue hardware repeat, `4.16b` repaired hard-switch hardware repeat, `4.18a` chunked runtime baseline, `5.5` expanded baselines, `5.12a` predictive task-pressure, `5.12c` predictive-context sham repair, `5.12d` predictive-context compact regression, `6.1` software lifecycle/self-scaling, `6.3` lifecycle sham controls, and `6.4` circuit motif causality added; `5.6` and `5.7` are additional tuned-baseline reviewer-defense/guardrail bundles)",
+        "",
+        "## Canonical Claims",
+        "",
+        "| Evidence entry | Plan position | Status | What it supports | Boundary |",
+        "| --- | --- | --- | --- | --- |",
+    ]
+    for entry in registry["entries"]:
+        lines.append(
+            f"| `{entry['entry_id']}` | {entry['plan_position']} | **{status_mark(entry['status'])}** | {entry['claim']} | {entry['caveat']} |"
+        )
+    lines.extend(
+        [
+            "",
+            "## Canonical Artifacts",
+            "",
+            "| Evidence entry | Results | Report | Summary CSV |",
+            "| --- | --- | --- | --- |",
+        ]
+    )
+    for entry in registry["entries"]:
+        lines.append(
+            "| "
+            f"`{entry['entry_id']}` | "
+            f"`{artifact_label(entry['results_json'])}` | "
+            f"`{artifact_label(entry['report_md'])}` | "
+            f"`{artifact_label(entry['summary_csv'])}` |"
+        )
+    selected_noncanonical_notes = {
+        "tier4_16_20260427_194526_hard_noisy_switching_3seed_hardware_fail": "Clean hard-switch hardware execution, but the learning gate failed; not a Tier 4.16 pass.",
+        "tier4_16_20260427_223210_hard_noisy_switching_seed44_probe_pass": "Repaired hard-switch seed-44 hardware probe passed narrowly; authorizes the repaired three-seed rerun, but is not full hard-switch repeatability evidence.",
+        "tier4_16b_bridge_repair_orderfix_aligned_nest_20260427": "Aligned NEST bridge-repair diagnostic passes locally and points to hardware transfer/timing.",
+        "tier4_16b_bridge_repair_orderfix_aligned_brian2_20260427": "Aligned Brian2 bridge-repair diagnostic passes locally and agrees with the NEST classification.",
+        "tier5_12b_20260429_055923": "Failed predictive-context diagnostic; wrong-sign context was learnably informative, so the sham contract was repaired in Tier 5.12c.",
+        "tier5_15_20260429_135924": "Passed software temporal-code diagnostic: timing codes carry task information under time-shuffle/rate-only controls; not hardware/on-chip temporal coding or a v2.0 freeze.",
+        "tier5_16_20260429_142647": "Passed NEST neuron-parameter sensitivity diagnostic: LIF threshold/tau/refractory/capacitance/synaptic-tau variants remain functional with zero fallback and audited parameter propagation; not hardware/custom-C/on-chip neuron evidence or a v2.0 freeze.",
+        "tier5_17_20260429_190501": "Failed pre-reward representation diagnostic: non-oracle exposure had zero label/reward leakage and zero raw dopamine, but the strict no-history-input scaffold did not meet probe, sham-separation, or sample-efficiency promotion gates; representation learning remains unpromoted.",
+        "tier5_17b_20260429_191512": "Passed pre-reward representation failure-analysis diagnostic: classifies Tier 5.17 as one positive subcase, one input-encoded/easy task, and one history-baseline-dominated temporal task; points to Tier 5.17c intrinsic predictive/MI preexposure and explicitly does not promote representation learning or revisit Tier 5.9 yet.",
+        "tier5_17c_20260429_193147": "Failed intrinsic predictive preexposure diagnostic: zero label/reward leakage and zero dopamine, candidate beat no-preexposure and simple history/reservoir controls, but did not clear probe accuracy or target-shuffled/wrong-domain/STDP-only/best-control gates under held-out episode probes; reward-free representation remains unpromoted.",
+        "tier5_17d_20260429_194613": "Passed predictive binding repair diagnostic: zero label/reward leakage and zero dopamine; candidate cleared held-out ambiguous-episode target-shuffled, wrong-domain, history/reservoir, STDP-only, and best-control gates on cross-modal and reentry binding tasks. Bounded pre-reward predictive-binding evidence only, not general unsupervised representation learning or a v2.0 freeze.",
+        "tier5_17e_20260429_163058": "Passed predictive-binding compact regression/promotion gate: v1.8 compact regression, v1.9 composition/routing, Tier 5.14 working-memory/context binding, and Tier 5.17d predictive-binding guardrails all passed. Authorizes bounded v2.0 host-side software baseline freeze; not hardware/on-chip representation, general unsupervised concept learning, world modeling, language, planning, AGI, or external-baseline superiority.",
+        "tier5_18_20260429_213002": "Passed self-evaluation/metacognitive monitoring diagnostic: pre-feedback uncertainty predicted primary-path errors and hazard/OOD/mismatch state, calibrated confidence passed Brier/ECE gates, and confidence-gated behavior beat v2.0, monitor-only, random, shuffled, disabled, and anti-confidence controls. Noncanonical software diagnostic only; not consciousness, self-awareness, hardware evidence, AGI, or a v2.1 freeze.",
+        "tier5_18c_20260429_221045": "Passed self-evaluation compact regression/promotion gate: the full v2.0 compact gate and Tier 5.18 self-evaluation guardrail both passed. Authorizes bounded v2.1 host-side software self-evaluation/reliability-monitoring baseline freeze; not consciousness, self-awareness, hardware evidence, AGI, language, planning, or external-baseline superiority.",
+        "tier5_9c_20260429_190503": "Failed macro-eligibility v2.1-era recheck: the full v2.1 guardrail passed, but the residual macro trace still failed trace-ablation separation because normal, shuffled, zero, and no-macro paths remained identical on the delayed-credit harness. Macro eligibility remains parked and should not move to hardware/custom C.",
+        "tier4_20a_20260429_195403": "Passed v2.1 hardware-transfer readiness audit: classifies v2.1 mechanisms by chunked-host readiness versus future custom runtime/on-chip blockers. This is an engineering transfer plan only, not hardware evidence; it recommends a one-seed v2.1 chunked hardware probe without macro eligibility.",
+        "tier4_20b_20260429_205214_prepared": "Prepared Tier 4.20b v2.1 one-seed chunked hardware probe: seed 42, delayed_cue plus hard_noisy_switching, 1200 steps, N=8, chunk 50, macro eligibility excluded. Superseded by the returned Tier 4.20b pass.",
+        "tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested": "Passed Tier 4.20b v2.1 one-seed bridge/transport hardware probe: real pyNN.spiNNaker execution, runner revision tier4_20b_inprocess_no_baselines_20260429_2330, in-process Tier 4.16 child runner, zero fallback, zero sim.run/readback failures, nonzero spike readback, delayed_cue tail accuracy 1.0, hard_noisy_switching tail accuracy 0.5952380952380952. This is not native/on-chip v2.1 mechanism evidence.",
+        "tier4_20c_20260430_000433_prepared": "Prepared Tier 4.20c v2.1 three-seed chunked hardware repeat: seeds 42,43,44, delayed_cue plus hard_noisy_switching, 1200 steps, N=8, chunk 50, macro eligibility excluded. This is a JobManager run package only, not hardware evidence until returned artifacts pass.",
+        "tier4_20c_20260430_v2_1_bridge_three_seed_hardware_pass_ingested": "Passed Tier 4.20c v2.1 three-seed bridge/transport hardware repeat: six real pyNN.spiNNaker child runs across delayed_cue and hard_noisy_switching, seeds 42/43/44, zero fallback, zero sim.run/readback failures, minimum real spike readback 94727, delayed_cue tail accuracy min/mean 1.0/1.0, hard_noisy_switching tail accuracy min/mean/max 0.5238095238095238/0.5476190476190476/0.5952380952380952. Raw wrapper false-fail preserved separately; failure was missing local Tier 4.20b manifest in fresh EBRAINS source bundle, not hardware/science failure. Not native/on-chip v2.1 mechanism evidence.",
+        "tier4_21a_local_bridge_smoke": "Passed Tier 4.21a local bridge smoke: the keyed-context-memory scheduler, chunked host replay, memory-event logging, and ablation matrix execute locally with zero fallback/failures and active keyed-memory features. This is source/logic preflight only, not SpiNNaker hardware evidence and not native/on-chip memory.",
+        "tier4_21a_20260430_prepared": "Prepared Tier 4.21a keyed context-memory hardware bridge capsule: one-seed context_reentry_interference, keyed candidate plus memory ablations, 720 steps, N=8, chunk 50, host-side scheduler. This is a JobManager run package only, not hardware evidence until returned run-hardware artifacts pass.",
+        "tier4_21a_20260430_keyed_context_memory_seed42_hardware_pass_ingested": "Passed Tier 4.21a keyed context-memory hardware bridge probe: one real pyNN.spiNNaker seed-42 matrix with keyed_context_memory plus slot-reset/slot-shuffle/wrong-key ablations, 720 steps, N=8, chunk 50, zero fallback, zero sim.run/readback failures, minimum real spike readback 714601, keyed memory updates 11, active keyed feature decisions 20, four slots used, keyed all/tail accuracy 1.0/1.0, best-ablation all accuracy 0.5. This is host-side keyed-memory bridge evidence only, not native/on-chip memory, custom C, continuous runtime, or broader v2 mechanism transfer.",
+        "tier4_22a_20260430_custom_runtime_contract": "Passed Tier 4.22a custom/hybrid on-chip runtime contract: references the Tier 4.20c repeatable bridge and Tier 4.21a keyed-memory bridge pass, defines constrained-NEST plus sPyNNaker mapping preflight before further expensive hardware, assigns host/hybrid/on-chip state ownership, declares runtime stages 4.22a0-4.23, parity gates, and memory/resource risks. Engineering contract only; not custom C, native/on-chip execution, continuous runtime, speedup, or new hardware science evidence.",
+        "tier4_22a0_20260430_spinnaker_constrained_preflight": "Passed Tier 4.22a0 SpiNNaker-constrained local preflight: NEST/PyNN/sPyNNaker imports passed, sPyNNaker exposed required PyNN primitives, constrained PyNN/NEST StepCurrentSource smoke returned 64 binned spikes with zero sim/readback failures, static bridge compliance/resource/fixed-point checks passed, and custom C host runtime tests passed. Local transfer-risk-reduction evidence only; not real SpiNNaker hardware evidence, custom-C hardware execution, native/on-chip learning, continuous runtime, or speedup evidence.",
+        "tier4_22b_20260430_continuous_transport_local": "Passed Tier 4.22b local continuous transport scaffold: delayed_cue and hard_noisy_switching seed 42 ran for 1200 steps under PyNN/NEST with one scheduled-input sim.run per task, zero fallback, zero sim.run/readback/scheduled-input failures, and minimum per-case binned spike readback 101056. Transport-isolation evidence only; learning is disabled by design and this is not real hardware evidence, custom-C execution, native/on-chip learning, continuous-learning parity, or speedup evidence.",
+        "tier4_22b_20260430_continuous_transport_hardware_pass_ingested": "Passed Tier 4.22b real SpiNNaker continuous transport scaffold: delayed_cue and hard_noisy_switching seed 42 ran for 1200 steps through pyNN.spiNNaker with one scheduled-input sim.run per task, zero fallback, zero sim.run/readback/scheduled-input failures, minimum per-case binned spike readback 94896, and runtimes 111.5257s/109.3603s. Transport evidence only; learning is disabled by design and this is not custom-C execution, native/on-chip learning, continuous-learning parity, or speedup evidence.",
+        "tier4_22c_20260430_persistent_state_scaffold": "Passed Tier 4.22c persistent custom-C state scaffold: Tier 4.22b transport reference exists, custom C host tests passed, static checks passed, bounded keyed context slots use MAX_CONTEXT_SLOTS, pending horizons use MAX_PENDING_HORIZONS without storing future targets, state_manager.c avoids dynamic allocation, runtime init/reset owns state lifecycle, and the exported state contract covers keyed slots, pending horizons, readout state, decision/reward counters, and reset semantics. Custom-C state scaffold only; not a hardware run, on-chip reward/plasticity learning, speedup evidence, or full CRA deployment.",
+        "tier4_22d_20260430_reward_plasticity_scaffold": "Passed Tier 4.22d local custom-C reward/plasticity scaffold: Tier 4.22c persistent state reference exists, custom C host tests passed, 11/11 static checks passed, synaptic eligibility traces, trace-gated dopamine, fixed-point trace decay, signed one-shot dopamine, and runtime-owned readout reward updates exist. Local scaffold only; not hardware evidence, continuous-learning parity, scale-ready eligibility optimization, speedup evidence, or full CRA deployment.",
+        "tier4_22e_20260430_local_learning_parity": "Passed Tier 4.22e local minimal delayed-readout parity scaffold: Tier 4.22d reference exists, custom C host tests passed, source checks confirm the bounded pending queue does not store future targets, fixed-point C-equation mirror matched the floating reference on delayed_cue and hard_noisy_switching seed 42 with sign agreement 1.0, max final weight delta about 4.14e-05, delayed_cue tail accuracy 1.0, hard_noisy_switching tail accuracy 0.547619, no-pending ablation tail accuracy 0.0, and zero pending drops. Local parity only; not hardware evidence, full CRA parity, lifecycle/replay/routing parity, speedup evidence, or final on-chip proof.",
+        "tier4_22f0_20260430_custom_runtime_scale_audit": "Passed Tier 4.22f0 custom-runtime scale-readiness audit: Tier 4.22e reference exists, custom C host tests passed, 9/9 static audit checks passed, PyNN/sPyNNaker is preserved as the primary supported hardware layer, and 7 custom-C scale blockers were documented with 3 high-severity blockers. Audit pass only; custom_runtime_scale_ready=false and direct custom-runtime learning hardware claims are blocked until event-indexed spike delivery, lazy/active eligibility traces, and compact state readback are implemented.",
+        "tier4_22g_20260430_event_indexed_trace_runtime": "Passed Tier 4.22g local event-indexed active-trace runtime optimization: Tier 4.22f0 reference exists, custom C host tests passed, 12/12 static optimization checks passed, SCALE-001/002/003 were repaired locally, spike delivery now uses pre-indexed outgoing adjacency, trace decay and dopamine modulation use active traces, and Tier 4.22i later cleared the compact state-readback/build-load acceptance gate. Not hardware, speedup, full CRA parity, or final on-chip learning evidence.",
+        "tier4_22h_20260430_compact_readback_acceptance": "Passed Tier 4.22h local compact-readback/build-readiness gate: Tier 4.22g reference exists, custom C host tests passed, 30/30 static readback/callback/SARK-SDP/router-API/build-recipe compatibility checks passed, CMD_READ_STATE schema v1 packs a 73-byte compact runtime summary, and .aplx build status was honestly recorded as not_attempted_spinnaker_tools_missing. Not hardware evidence, board-load evidence, command round-trip evidence, speedup evidence, or custom-runtime learning evidence.",
+        "tier4_22i_20260430_custom_runtime_roundtrip_prepared": "Prepared Tier 4.22i custom-runtime board round-trip smoke package: emits the refreshed cache-busting ebrains_jobs/cra_422r EBRAINS upload folder and run-hardware command for .aplx build/load plus CMD_READ_STATE schema-v1 state-mutation round-trip, with local `main.c` syntax guards, Tier 4.22k-confirmed official MC event constants, SARK SDP packed-field guards, official SDP command-header guards (`cmd_rc`/`seq`/`arg1`/`arg2`/`arg3` before `data[]`), official SARK router API guards (`rtr_alloc`, `rtr_mc_set`, `rtr_free`), official spinnaker_tools.mk build-recipe guards, nested object-directory guards for build/gnu/src/*.o, and auto target acquisition through explicit hostname or a pyNN.spiNNaker/SpynnakerDataView probe. Prepared source package only; not hardware evidence, speedup evidence, full CRA learning, or final on-chip autonomy until returned run-hardware artifacts pass.",
+        "tier4_22i_20260430_ebrains_aplx_build_fail": "Failed noncanonical Tier 4.22i EBRAINS attempt: .aplx build failed before board round-trip because the EBRAINS Spin1API headers did not define MC_PACKET_RX; CMD_READ_STATE round-trip was not attempted. Preserved as toolchain-compatibility evidence.",
+        "tier4_22i_20260430_ebrains_no_mc_event_build_fail": "Failed noncanonical Tier 4.22i EBRAINS attempt: .aplx build failed before board round-trip because the EBRAINS build image did not expose the guessed multicast receive event compatibility names either. Preserved as evidence that blind callback-name patching is unsafe; routes next step to Tier 4.22k Spin1API event-symbol discovery.",
+        "tier4_22i_20260430_ebrains_sdp_struct_build_fail": "Failed noncanonical Tier 4.22i EBRAINS attempt: .aplx build reached host_interface.c after the multicast event repair, then failed because EBRAINS SARK exposes packed sdp_msg_t fields (dest_port/srce_port/dest_addr/srce_addr) and sark_mem_cpy rather than local split coordinate/CPU fields and sark_memcpy. Board load and CMD_READ_STATE round-trip were not attempted; preserved as toolchain/API compatibility evidence before regenerated cra_422m.",
+        "tier4_22i_20260430_ebrains_router_api_build_fail": "Failed noncanonical Tier 4.22i EBRAINS attempt: .aplx build compiled past host_interface.c after the SARK SDP repair, then failed in router.c because router.h relied on indirect uint32_t definitions and the runtime used local-stub-only sark_router_alloc/sark_router_free helpers. Official SpiNNakerManchester SARK exposes rtr_alloc, rtr_mc_set, and rtr_free; board load and CMD_READ_STATE round-trip were not attempted. Preserved as toolchain/API compatibility evidence before regenerated cra_422n.",
+        "tier4_22i_20260430_ebrains_manual_link_empty_elf_fail": "Failed noncanonical Tier 4.22i EBRAINS attempt: .aplx build compiled all custom C sources through router.c and linked a coral_reef.elf, but the manual object-only link recipe omitted the official SpiNNaker startup/build object and spin1_api library, causing missing cpu_reset, an ELF with no sections, and objcopy failure before APLX creation. Board load and CMD_READ_STATE round-trip were not attempted. Preserved as build-recipe compatibility evidence before regenerated cra_422o.",
+        "tier4_22i_20260430_ebrains_official_mk_nested_object_dir_fail": "Failed noncanonical Tier 4.22i EBRAINS attempt: regenerated cra_422o used official spinnaker_tools.mk and compiled through the official rule path, but the generated OBJECTS preserved source subdirectories and the build did not create build/gnu/src/ before compiling build/gnu/src/main.o. Board load and CMD_READ_STATE round-trip were not attempted. Preserved as build-directory compatibility evidence before regenerated cra_422p/cra_422q.",
+        "tier4_22i_20260430_ebrains_aplx_build_pass_target_missing_fail": "Failed noncanonical Tier 4.22i EBRAINS attempt: regenerated cra_422p built the custom runtime .aplx successfully with official spinnaker_tools.mk, passed host C tests and main syntax checks, but the raw loader did not discover a board hostname/transceiver/IP, so app load and CMD_READ_STATE round-trip were not attempted. Preserved as target-acquisition evidence before regenerated cra_422q with pyNN.spiNNaker/SpynnakerDataView auto acquisition.",
+        "tier4_22i_20260430_ebrains_aplx_load_pass_sdp_payload_short_fail": "Failed noncanonical Tier 4.22i EBRAINS attempt: regenerated cra_422q built the custom runtime .aplx, acquired a real board through pyNN.spiNNaker/SpynnakerDataView, selected free core 4, and loaded the app, but command round-trip returned 2-byte short payloads because the host/runtime SDP command protocol did not use the official cmd_rc/seq/arg1/arg2/arg3/data[] layout. Preserved as command-protocol evidence before regenerated cra_422r.",
+        "tier4_22i_20260501_ebrains_board_roundtrip_pass": "Passed noncanonical Tier 4.22i EBRAINS custom-runtime board round-trip: regenerated cra_422r built the custom runtime .aplx, acquired a real board through pyNN.spiNNaker/SpynnakerDataView at 10.11.194.113, selected free core (0,0,4), loaded the app, acknowledged RESET/BIRTH/CREATE_SYN/DOPAMINE, and returned CMD_READ_STATE schema-v1 73-byte payload with visible post-mutation state (2 neurons, 1 synapse, reward_events=1) and zero synthetic fallback. Board-load and command-roundtrip evidence only; not full CRA learning, speedup, multi-core scaling, continuous runtime, or final on-chip autonomy.",
+        "tier4_22j_20260501_minimal_custom_runtime_learning_prepared": "Prepared Tier 4.22j minimal custom-runtime closed-loop learning smoke package: emits the cache-busting ebrains_jobs/cra_422s EBRAINS upload folder and run-hardware command for one chip-owned delayed pending/readout update after the Tier 4.22i board-roundtrip pass. Source and bundle guards cover CMD_SCHEDULE_PENDING, CMD_MATURE_PENDING, controller methods, runtime handlers, dispatcher routing, and official SDP command-header usage. Prepared source package only; not hardware evidence, full CRA task learning, v2.1 mechanism transfer, speedup evidence, multi-core scaling, or final on-chip autonomy until returned run-hardware artifacts pass.",
+        "tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested": "Passed Tier 4.22j EBRAINS minimal custom-runtime closed-loop learning smoke after ingest correction: raw returned status was fail because the runner criterion treated active_pending=0 as missing via Python `or -1`, but returned hardware data show target acquisition, .aplx build, app load, CMD_SCHEDULE_PENDING, active pending creation, CMD_MATURE_PENDING, pending maturation, reward_events=1, readout_weight=0.25, readout_bias=0.25, active_pending=0, and zero synthetic fallback. Raw remote manifest/report are preserved as false-fail artifacts. This is one minimal chip-owned delayed pending/readout update only; not full CRA task learning, v2.1 mechanism transfer, speedup evidence, multi-core scaling, or final on-chip autonomy.",
+        "tier4_22l_20260501_custom_runtime_learning_parity_local": "Passed local Tier 4.22l tiny custom-runtime learning parity gate: Tier 4.22j latest pass exists, main.c syntax check passed, a four-update signed s16.15 reference was generated, and source guards confirmed CMD_SCHEDULE_PENDING/CMD_MATURE_PENDING plus the fixed-point prediction/update equations. Local parity/reference evidence only; not hardware evidence, full CRA task learning, v2.1 mechanism transfer, speedup evidence, or final on-chip autonomy.",
+        "tier4_22l_20260501_custom_runtime_learning_parity_prepared": "Prepared Tier 4.22l tiny custom-runtime learning parity package: emits ebrains_jobs/cra_422t and a JobManager run-hardware command for four chip-owned pending/readout updates that must match the local s16.15 reference within raw tolerance 1 and finish with pending_created=4, pending_matured=4, reward_events=4, active_pending=0, final readout_weight_raw=-4096, and final readout_bias_raw=-4096. Prepared source package only; not hardware evidence until returned EBRAINS artifacts pass.",
+        "tier4_22l_20260501_custom_runtime_learning_parity_hardware_pass_ingested": "Passed Tier 4.22l EBRAINS tiny custom-runtime learning parity: raw remote status was pass, target acquisition succeeded through pyNN.spiNNaker/SpynnakerDataView on board 10.11.194.1, free core (0,0,4) was selected, .aplx build and app load passed, four CMD_SCHEDULE_PENDING/CMD_MATURE_PENDING pairs succeeded, each mature command matured exactly one pending horizon, prediction/weight/bias raw deltas were all 0, and final state was pending_created=4, pending_matured=4, reward_events=4, active_pending=0, readout_weight_raw=-4096, readout_bias_raw=-4096. Tiny fixed-point custom-runtime parity evidence only; not full CRA task learning, v2.1 mechanism transfer, speedup evidence, multi-core scaling, or final on-chip autonomy.",
+        "tier4_22m_20260501_custom_runtime_task_micro_loop_local": "Passed local Tier 4.22m minimal custom-runtime task micro-loop gate: Tier 4.22l latest pass exists, main.c syntax check passed, a 12-event signed fixed-pattern s16.15 task reference was generated, and source guards confirmed pre-update prediction scoring plus CMD_SCHEDULE_PENDING/CMD_MATURE_PENDING fixed-point maturation. Reference accuracy was 0.9166666667, tail accuracy was 1.0, final readout_weight_raw=32256, and final readout_bias_raw=0. Local reference evidence only; not hardware evidence, full CRA task learning, v2.1 mechanism transfer, speedup evidence, or final on-chip autonomy.",
+        "tier4_22m_20260501_custom_runtime_task_micro_loop_prepared": "Prepared Tier 4.22m minimal custom-runtime task micro-loop package: emits ebrains_jobs/cra_422u and a JobManager run-hardware command for twelve chip-owned pending/readout task events that must match the local s16.15 reference within raw tolerance 1, satisfy tail accuracy 1.0, and finish with pending_created=pending_matured=reward_events=decisions=12, active_pending=0, final readout_weight_raw=32256, and final readout_bias_raw=0. Prepared source package only; not hardware evidence until returned EBRAINS artifacts pass.",
+        "tier4_22m_20260501_custom_runtime_task_micro_loop_hardware_pass_ingested": "Passed Tier 4.22m EBRAINS minimal custom-runtime task micro-loop: raw remote status was pass, target acquisition succeeded through pyNN.spiNNaker/SpynnakerDataView on board 10.11.202.65, free core (0,0,4) was selected, .aplx build and app load passed, twelve CMD_SCHEDULE_PENDING/CMD_MATURE_PENDING task events succeeded, each mature command matured exactly one pending horizon, prediction/weight/bias raw deltas were all 0, observed accuracy was 0.9166666667, tail accuracy was 1.0, and final state was pending_created=12, pending_matured=12, reward_events=12, decisions=12, active_pending=0, readout_weight_raw=32256, readout_bias_raw=0. Minimal fixed-pattern custom-runtime task micro-loop evidence only; not full CRA task learning, v2.1 mechanism transfer, speedup evidence, multi-core scaling, or final on-chip autonomy.",
+        "tier4_22n_20260501_delayed_cue_micro_task_local": "Passed local Tier 4.22n tiny delayed-cue custom-runtime micro-task gate: Tier 4.22m latest hardware pass exists, main.c syntax check passed, a 12-event signed pending-queue s16.15 reference was generated with pending_gap_depth=2 and max_pending_depth=3, and source guards confirmed pre-update prediction scoring plus CMD_SCHEDULE_PENDING/CMD_MATURE_PENDING fixed-point maturation. Reference accuracy was 0.8333333333, tail accuracy was 1.0, final readout_weight_raw=30720, and final readout_bias_raw=0. Local reference evidence only; not hardware evidence, full CRA task learning, v2.1 mechanism transfer, speedup evidence, or final on-chip autonomy.",
+        "tier4_22n_20260501_delayed_cue_micro_task_prepared": "Prepared Tier 4.22n tiny delayed-cue custom-runtime micro-task package: emits ebrains_jobs/cra_422v and a JobManager run-hardware command for twelve chip-owned pending/readout task events that must keep a rolling pending depth of at least 3, mature one oldest pending event per target, match the local s16.15 reference within raw tolerance 1, satisfy tail accuracy 1.0, and finish with pending_created=pending_matured=reward_events=decisions=12, active_pending=0, final readout_weight_raw=30720, and final readout_bias_raw=0. Prepared source package only; not hardware evidence until returned EBRAINS artifacts pass.",
+        "tier4_22p_20260501_aba_reentry_micro_task_local": "Passed local Tier 4.22p tiny A-B-A reentry custom-runtime micro-task gate: generated the 30-event signed A-B-A reentry s16.15 reference with pending_gap_depth=2, max_pending_depth=3, accuracy 0.8666666667, tail accuracy 1.0, final readout_weight_raw=30810, and final readout_bias_raw=-1. Local reference evidence only; not hardware evidence, full CRA recurrence, v2.1 mechanism transfer, speedup evidence, or final autonomy.",
+        "tier4_22p_20260501_aba_reentry_micro_task_prepared": "Prepared Tier 4.22p tiny A-B-A reentry custom-runtime package: emits ebrains_jobs/cra_422y and a JobManager run-hardware command for thirty chip-owned pending/readout reentry events that must keep a rolling pending depth of at least 3, match the local s16.15 reference, and finish with pending_created=pending_matured=reward_events=decisions=30, active_pending=0, final readout_weight_raw=30810, and final readout_bias_raw=-1. Prepared source package only; not hardware evidence until returned EBRAINS artifacts pass.",
+        "tier4_22p_20260501_aba_reentry_micro_task_hardware_pass_ingested": "Passed Tier 4.22p EBRAINS tiny A-B-A reentry custom-runtime micro-task: raw remote status was pass, target acquisition succeeded through pyNN.spiNNaker/SpynnakerDataView on board 10.11.222.17, free core (0,0,4) was selected, .aplx build and app load passed, thirty CMD_SCHEDULE_PENDING/CMD_MATURE_PENDING pairs succeeded, prediction/weight/bias raw deltas were all 0, observed accuracy was 0.8666666667, tail accuracy was 1.0, and final state was pending_created=30, pending_matured=30, reward_events=30, decisions=30, active_pending=0, readout_weight_raw=30810, readout_bias_raw=-1. Tiny A-B-A reentry evidence only; not full CRA recurrence, v2.1 mechanism transfer, speedup evidence, multi-core scaling, or final autonomy.",
+        "tier4_22q_20260501_integrated_v2_bridge_smoke_local": "Passed local Tier 4.22q tiny integrated host-v2/custom-runtime bridge smoke: generated a 30-event signed stream from a host-side keyed-context plus route-state bridge, with context keys ctx_A/ctx_B/ctx_C, context updates 9, route updates 9, max keyed slots 3, pending_gap_depth=2, max_pending_depth=3, accuracy 0.9333333333, tail accuracy 1.0, final readout_weight_raw=32768, and final readout_bias_raw=0. Local reference evidence only; not hardware evidence, native/on-chip v2 memory/routing, full CRA task learning, speedup evidence, or final autonomy.",
+        "tier4_22q_20260501_integrated_v2_bridge_smoke_prepared": "Prepared Tier 4.22q tiny integrated host-v2/custom-runtime bridge smoke package: emits ebrains_jobs/cra_422z and a JobManager run-hardware command for thirty chip-owned pending/readout events generated by a host keyed-context plus route-state transform. Prepared source package only; not hardware evidence until returned EBRAINS artifacts pass. A returned pass would prove only the tiny bridge smoke, not native/on-chip v2 memory/routing, full CRA task learning, speedup evidence, scaling, or final autonomy.",
+        "tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested": "Passed Tier 4.22q EBRAINS tiny integrated host-v2/custom-runtime bridge smoke: raw remote status was pass, target acquisition succeeded through pyNN.spiNNaker/SpynnakerDataView on board 10.11.236.65, free core (0,0,4) was selected, .aplx build and app load passed, thirty CMD_SCHEDULE_PENDING/CMD_MATURE_PENDING pairs succeeded, bridge context/route updates were 9/9, max keyed slots was 3, prediction/weight/bias raw deltas were all 0, observed accuracy was 0.9333333333, tail accuracy was 1.0, and final state was pending_created=30, pending_matured=30, reward_events=30, decisions=30, active_pending=0, readout_weight_raw=32768, readout_bias_raw=0. Tiny integrated bridge evidence only; not native/on-chip v2 memory/routing, full CRA task learning, speedup evidence, multi-core scaling, or final autonomy.",
+        "tier4_22r_20260501_native_context_state_smoke_local": "Passed local Tier 4.22r tiny native context-state custom-runtime smoke: generated a 30-event signed stream where the chip-side contract retrieves keyed context and computes feature=context*cue, with context keys ctx_A/ctx_B/ctx_C, key ids 101/202/303, context writes 9, context reads 30, max native context slots 3, pending_gap_depth=2, max_pending_depth=3, accuracy 0.9333333333, tail accuracy 1.0, final readout_weight_raw=32752, and final readout_bias_raw=-16. Local reference evidence only; not hardware evidence, full native v2.1 memory/routing, full CRA task learning, speedup evidence, or final autonomy.",
+        "tier4_22r_20260501_native_context_state_smoke_prepared": "Prepared Tier 4.22r tiny native context-state custom-runtime smoke package: emits ebrains_jobs/cra_422aa and a JobManager run-hardware command for thirty chip-owned pending/readout events where the host writes keyed context slots and the runtime computes feature=context*cue from key+cue. Prepared source package only; not hardware evidence until returned EBRAINS artifacts pass. A returned pass would prove only the tiny native keyed-context state primitive, not full native v2.1 memory/routing, full CRA task learning, speedup evidence, scaling, or final autonomy.",
+        "tier4_22r_20260501_native_context_state_smoke_hardware_pass_ingested": "Passed Tier 4.22r EBRAINS tiny native context-state custom-runtime smoke: raw remote status was pass, target acquisition succeeded through pyNN.spiNNaker/SpynnakerDataView on board 10.11.237.25, free core (0,0,4) was selected, .aplx build and app load passed, thirty context/schedule/mature events succeeded, context writes were 9, context reads were 30, max native context slots was 3, feature/context/prediction/weight/bias raw deltas were all 0, observed accuracy was 0.9333333333, tail accuracy was 1.0, and final state was pending_created=30, pending_matured=30, reward_events=30, decisions=30, active_pending=0, readout_weight_raw=32752, readout_bias_raw=-16. Tiny native keyed-context state evidence only; not full native v2.1 memory/routing, full CRA task learning, speedup evidence, multi-core scaling, or final autonomy.",
+        "tier4_22s_20260501_native_route_state_smoke_local": "Passed local Tier 4.22s tiny native route-state custom-runtime smoke: generated a 30-event signed stream where the chip-side contract retrieves keyed context plus chip-owned route state and computes feature=context*route*cue, with context keys ctx_A/ctx_B/ctx_C, context writes 9, context reads 30, route writes 9, route reads 30, route values -1 and 1, pending_gap_depth=2, max_pending_depth=3, accuracy 0.9333333333, tail accuracy 1.0, final readout_weight_raw=32768, and final readout_bias_raw=0. Local reference evidence only; not hardware evidence, full native v2.1 memory/routing, full CRA task learning, speedup evidence, or final autonomy.",
+        "tier4_22s_20260501_native_route_state_smoke_prepared": "Prepared Tier 4.22s tiny native route-state custom-runtime smoke package: emits ebrains_jobs/cra_422ab and JobManager command `cra_422ab/experiments/tier4_22s_native_route_state_smoke.py --mode run-hardware --output-dir tier4_22s_job_output` for thirty chip-owned pending/readout events where the host writes keyed context and route state, then the runtime computes feature=context*route*cue from key+cue. Prepared source package only; not hardware evidence until returned EBRAINS artifacts pass. A returned pass would prove only the tiny native route-state primitive layered on native context, not full native v2.1 memory/routing, full CRA task learning, speedup evidence, scaling, or final autonomy.",
+        "tier4_22s_20260501_native_route_state_smoke_hardware_pass_ingested": "Passed Tier 4.22s EBRAINS tiny native route-state custom-runtime smoke after ingest correction: raw remote status was fail because the runner incorrectly expected route_writes in the final CMD_READ_ROUTE reply, but returned hardware data show target acquisition through pyNN.spiNNaker/SpynnakerDataView on board 10.11.237.89, free core (0,0,4), .aplx build/load pass, thirty context/route/schedule/mature events succeeded, observed CMD_WRITE_ROUTE counter reached 9, final route reads were 31, chip-computed feature/context/route/prediction/weight/bias raw deltas were all 0, observed accuracy was 0.9333333333, tail accuracy was 1.0, and final state was pending_created=30, pending_matured=30, reward_events=30, decisions=30, active_pending=0, readout_weight_raw=32768, readout_bias_raw=0. Tiny native route-state evidence only; not full native v2.1 memory/routing, full CRA task learning, speedup evidence, multi-core scaling, or final autonomy.",
+        "tier4_22t_20260501_native_keyed_route_state_smoke_local": "Passed local Tier 4.22t tiny native keyed route-state custom-runtime smoke: generated a 30-event signed stream where the chip-side contract retrieves keyed context plus keyed route slots and computes feature=context[key]*route[key]*cue, with context keys ctx_A/ctx_B/ctx_C, context writes 9, context reads 30, route-slot writes 15, route-slot reads 30, max route slots 3, route values -1 and 1, pending_gap_depth=2, max_pending_depth=3, accuracy 0.9333333333, tail accuracy 1.0, final readout_weight_raw=32768, and final readout_bias_raw=0. Local reference evidence only; not hardware evidence, full native v2.1 memory/routing, full CRA task learning, speedup evidence, or final autonomy.",
+        "tier4_22t_20260501_native_keyed_route_state_smoke_prepared": "Prepared Tier 4.22t tiny native keyed route-state custom-runtime smoke package: emits ebrains_jobs/cra_422ac and JobManager command `cra_422ac/experiments/tier4_22t_native_keyed_route_state_smoke.py --mode run-hardware --output-dir tier4_22t_job_output` for thirty chip-owned pending/readout events where the host writes keyed context and keyed route slots, then the runtime computes feature=context[key]*route[key]*cue from key+cue. Prepared source package only; not hardware evidence until returned EBRAINS artifacts pass. A returned pass would prove only the tiny keyed route-state primitive layered on native context, not full native v2.1 memory/routing, full CRA task learning, speedup evidence, scaling, or final autonomy.",
+        "tier4_22t_20260501_native_keyed_route_state_smoke_hardware_pass_ingested": "Passed Tier 4.22t EBRAINS tiny native keyed route-state custom-runtime smoke: raw remote status was pass, target acquisition succeeded through pyNN.spiNNaker/SpynnakerDataView on board 10.11.235.25, free core (0,0,4), .aplx build/load pass, thirty context/route-slot/schedule/mature events succeeded, observed CMD_WRITE_ROUTE_SLOT counter reached 15, active route slots reached 3, route-slot hits/misses were 33/0, chip-computed feature/context/route/prediction/weight/bias raw deltas were all 0, observed accuracy was 0.9333333333, tail accuracy was 1.0, and final state was pending_created=30, pending_matured=30, reward_events=30, decisions=30, active_pending=0, readout_weight_raw=32768, readout_bias_raw=0. Tiny native keyed route-state evidence only; not full native v2.1 memory/routing, full CRA task learning, speedup evidence, multi-core scaling, or final autonomy.",
+        "tier4_22u_20260501_native_memory_route_state_smoke_local": "Passed local Tier 4.22u tiny native memory-route custom-runtime smoke: generated a 30-event signed stream where the chip-side contract retrieves keyed context, keyed route slots, and keyed memory/working-state slots, then computes feature=context[key]*route[key]*memory[key]*cue. Context writes/reads were 9/30, route-slot writes/reads were 15/30, memory-slot writes/reads were 15/30, max context/route/memory slots were 3/3/3, route and memory values covered -1 and 1, pending_gap_depth=2, max_pending_depth=3, accuracy was 0.9666666667, tail accuracy was 1.0, final readout_weight_raw=32768, and final readout_bias_raw=0. Local reference evidence only; not hardware evidence, full native v2.1 memory/routing, full CRA task learning, speedup evidence, or final autonomy.",
+        "tier4_22u_20260501_native_memory_route_state_smoke_prepared": "Prepared Tier 4.22u tiny native memory-route custom-runtime smoke package: emits ebrains_jobs/cra_422ad and JobManager command `cra_422ad/experiments/tier4_22u_native_memory_route_state_smoke.py --mode run-hardware --output-dir tier4_22u_job_output` for thirty chip-owned pending/readout events where the host writes keyed context, keyed route slots, and keyed memory/working-state slots, then the runtime computes feature=context[key]*route[key]*memory[key]*cue from key+cue. Prepared source package only; not hardware evidence until returned EBRAINS artifacts pass. A returned pass would prove only the tiny memory-route state primitive layered on native context and keyed route state, not full native v2.1 memory/routing, full CRA task learning, speedup evidence, scaling, or final autonomy.",
+        "tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested": "Passed Tier 4.22u EBRAINS tiny native memory-route custom-runtime smoke: raw remote status was pass, target acquisition succeeded through pyNN.spiNNaker/SpynnakerDataView on board 10.11.235.89, free core (0,0,4), .aplx build/load pass, thirty context/route-slot/memory-slot/schedule/mature events succeeded, final route-slot writes/hits/misses were 15/33/0, final memory-slot writes/hits/misses were 15/33/0, active route and memory slots were 3/3, chip-computed feature/context/route/memory/prediction/weight/bias raw deltas were all 0, observed accuracy was 0.9666666667, tail accuracy was 1.0, and final state was pending_created=30, pending_matured=30, reward_events=30, decisions=30, active_pending=0, readout_weight_raw=32768, readout_bias_raw=0. Tiny native memory-route evidence only; not full native v2.1 memory/routing, full CRA task learning, speedup evidence, multi-core scaling, or final autonomy.",
+        "tier4_22v_20260501_native_memory_route_reentry_composition_smoke_local": "Passed local Tier 4.22v tiny native memory-route reentry/composition custom-runtime smoke: generated a harder 48-event signed stream with four keyed context/route/memory slots, independent context/route/memory updates, interleaved recalls, and reentry pressure while preserving the chip-side contract feature=context[key]*route[key]*memory[key]*cue. Context writes/reads were 18/48, route-slot writes/reads were 21/48, memory-slot writes/reads were 21/48, max context/route/memory slots were 4/4/4, route and memory values covered -1 and 1, pending_gap_depth=2, max_pending_depth=3, accuracy was 0.9375, tail accuracy was 1.0, final readout_weight_raw=32768, and final readout_bias_raw=0. Local reference evidence only; not hardware evidence, full native v2.1 memory/routing, full CRA task learning, speedup evidence, or final autonomy.",
+        "tier4_22v_20260501_native_memory_route_reentry_composition_smoke_prepared": "Prepared Tier 4.22v tiny native memory-route reentry/composition custom-runtime smoke package: emits ebrains_jobs/cra_422ae and JobManager command `cra_422ae/experiments/tier4_22v_native_memory_route_reentry_composition_smoke.py --mode run-hardware --output-dir tier4_22v_job_output` for forty-eight chip-owned pending/readout events where the host writes keyed context, keyed route slots, and keyed memory/working-state slots, then the runtime computes feature=context[key]*route[key]*memory[key]*cue from key+cue under longer interleaved reentry pressure. Prepared source package only; not hardware evidence until returned EBRAINS artifacts pass. A returned pass would prove only the tiny harder memory-route reentry/composition primitive layered on native context, route, and memory state, not full native v2.1 memory/routing, full CRA task learning, speedup evidence, scaling, or final autonomy.",
+        "tier4_22v_20260501_native_memory_route_reentry_composition_smoke_hardware_pass_ingested": "Passed Tier 4.22v EBRAINS tiny native memory-route reentry/composition custom-runtime smoke: raw remote status was pass, target acquisition succeeded through pyNN.spiNNaker/SpynnakerDataView on board 10.11.240.153, free core (0,0,4), .aplx build/load pass, forty-eight context/route-slot/memory-slot/schedule/mature events succeeded, final route-slot writes/hits/misses were 21/52/0, final memory-slot writes/hits/misses were 21/52/0, active route and memory slots were 4/4, chip-computed feature/context/route/memory/prediction/weight/bias raw deltas were all 0, observed accuracy was 0.9375, tail accuracy was 1.0, and final state was pending_created=48, pending_matured=48, reward_events=48, decisions=48, active_pending=0, readout_weight_raw=32768, readout_bias_raw=0. Tiny harder native memory-route reentry/composition evidence only; not full native v2.1 memory/routing, full CRA task learning, speedup evidence, multi-core scaling, or final autonomy.",
+        "tier4_22w_20260501_native_decoupled_memory_route_composition_smoke_local_profiled": "Passed local Tier 4.22w tiny native decoupled memory-route composition custom-runtime smoke: generated a 48-event signed stream with independent context, route, and memory key spaces. The reference uses context keys ctx_A/ctx_B/ctx_C/ctx_D, route keys route_A/route_B/route_C/route_D, memory keys mem_A/mem_B/mem_C/mem_D, and requires the chip-side contract feature=context[context_key]*route[route_key]*memory[memory_key]*cue. Context writes/reads were 18/48, route-slot writes/reads were 15/48, memory-slot writes/reads were 18/48, max context/route/memory slots were 4/4/4, route and memory values covered -1 and 1, pending_gap_depth=2, max_pending_depth=3, accuracy was 0.9583333333, tail accuracy was 1.0, final readout_weight_raw=32768, and final readout_bias_raw=0. Local reference evidence only; not hardware evidence, full native v2.1 memory/routing, full CRA task learning, speedup evidence, or final autonomy.",
+        "tier4_22w_20260501_native_decoupled_memory_route_composition_smoke_prepared_profiled": "Prepared Tier 4.22w tiny native decoupled memory-route composition custom-runtime smoke package: emits ebrains_jobs/cra_422ag, RUNTIME_PROFILE=decoupled_memory_route, and JobManager command `cra_422ag/experiments/tier4_22w_native_decoupled_memory_route_composition_smoke.py --mode run-hardware --output-dir tier4_22w_job_output` for forty-eight chip-owned pending/readout events where the host writes keyed context, keyed route slots, and keyed memory/working-state slots, then schedules with independent context_key, route_key, memory_key, cue, and delay via CMD_SCHEDULE_DECOUPLED_MEMORY_ROUTE_CONTEXT_PENDING. Prepared source package only; not hardware evidence until returned EBRAINS artifacts pass. A returned pass would prove only the tiny independent-key composition primitive layered on native context, route, and memory state, not full native v2.1 memory/routing, full CRA task learning, speedup evidence, scaling, or final autonomy.",
+        "tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested": "Failed noncanonical Tier 4.22w EBRAINS attempt: cra_422af never acquired a target, loaded an app, or ran the task because the unprofiled custom-runtime .aplx link failed with RO_DATA will not fit in region ITCM and region ITCM overflowed by 16 bytes. Preserved as build-size/resource-budget evidence. Repair is cra_422ag with RUNTIME_PROFILE=decoupled_memory_route, C schedule-path deduplication, and size-optimized hardware build.",
+        "tier4_22k_20260430_spin1api_event_discovery_prepared": "Prepared Tier 4.22k Spin1API event-symbol discovery package: emits ebrains_jobs/cra_422k and a JobManager command that inspects the EBRAINS Spin1API headers, writes a header inventory, and compiles callback probes for timer/SDP/multicast event candidates. Prepared toolchain-discovery package only; not board, command-roundtrip, learning, or speedup evidence.",
+        "tier4_22k_20260430_ebrains_event_symbol_discovery_pass": "Passed Tier 4.22k EBRAINS Spin1API event-symbol discovery: the job image exposed /home/jovyan/spinnaker/spinnaker_tools/include, spin1_callback_on, MC_PACKET_RECEIVED, and MCPL_PACKET_RECEIVED; timer, SDP, and both official MC receive callback probes compiled with arm-none-eabi-gcc while legacy guessed MC_PACKET_RX/MCPL_PACKET_RX failed. Toolchain/header discovery only; not board execution, command round-trip, learning, or speedup evidence.",
+        "tier4_23a_20260501_continuous_local_reference": "Passed local Tier 4.23a continuous / stop-batching parity reference: the fixed-point continuous event-loop reference matches the chunked 4.22x reference exactly with all feature/prediction/weight/bias raw deltas 0, accuracy 0.958333, tail accuracy 1.0, max pending depth 3, autonomous timesteps 50, and zero host interventions. Local reference evidence only; not hardware evidence, full continuous on-chip learning, speedup evidence, or multi-core scaling.",
+        "tier4_23c_20260501_hardware_pass_ingested": "Passed Tier 4.23c EBRAINS one-board hardware continuous smoke: board 10.11.235.9, core (0,0,4), .aplx build/load pass, all 12 state writes succeeded, all 48 schedule uploads succeeded, run_continuous and pause succeeded, final state read succeeded, final readout_weight_raw=32768, readout_bias_raw=0, decisions=48, reward_events=48, pending_created=48, pending_matured=48, active_pending=0, stopped_timestep=6170, 22/22 run-hardware criteria passed, 15/15 ingest criteria passed, zero synthetic fallback. Timer-driven autonomous event-loop evidence only; not full native v2.1, not speedup evidence, not multi-core scaling, and not final on-chip autonomy.",
+        "tier4_26_20260502_pass_ingested": "Passed Tier 4.26 EBRAINS four-core distributed context/route/memory/learning smoke: board 10.11.194.1, cores 4/5/6/7, four independent .aplx builds passed, four core loads passed, all state writes succeeded, all 48 schedule uploads succeeded, all four run_continuous and pause commands succeeded, all four final reads succeeded, learning core final state decisions=48, reward_events=48, pending_created=48, pending_matured=48, active_pending=0, readout_weight_raw=32768, readout_bias_raw=0, context core served 48 lookup hits, 30/30 criteria passed, zero synthetic fallback. Distributed multi-core CRA mechanism evidence only; not speedup evidence, not multi-chip scaling, not a general multi-core framework, and not full native v2.1 autonomy.",
+        "tier4_24_20260501_resource_characterization": "Passed Tier 4.24 custom runtime resource characterization: continuous path uses 64 commands vs 134 for chunked 4.22x (52.2% reduction), 2647 bytes payload vs 4099 chunked (35.4% reduction), load time 2.187s, task time 4.327s, DTCM estimate 6372 bytes, max pending depth 3, max schedule entries 64, active context/route/memory slots 4/4/4. Resource-measurement evidence only; does not prove speedup, multi-core scaling, or final autonomy.",
+        "tier4_28e_pointB_20260503_boundary_confirmed": "Predicted schedule-overflow boundary confirmed on hardware: board 10.11.193.129, 78 events generated, 64 schedule uploads succeeded (indices 0-63), 14 rejected (indices 64-77). learning_core pending_created=64 (capped at MAX_SCHEDULE_ENTRIES), lookup_requests=192 (64x3), stale=0, timeouts=0, no crashes. This is the intended failure-envelope probe: the local sweep predicted schedule_overflow at >64 entries, and hardware confirmed the exact boundary. Preserved as noncanonical runtime-limit diagnostic evidence. Not a canonical pass claim.",
+    }
+    selected_noncanonical = [
+        item
+        for item in registry["noncanonical_outputs"]
+        if item["name"] in selected_noncanonical_notes
+    ]
+    if selected_noncanonical:
+        lines.extend(
+            [
+                "",
+                "## Selected Noncanonical Diagnostics",
+                "",
+                "| Diagnostic | Role | Status | Boundary |",
+                "| --- | --- | --- | --- |",
+            ]
+        )
+        for item in sorted(selected_noncanonical, key=lambda x: x["name"]):
+            lines.append(
+                "| "
+                f"`{artifact_label(item['path'])}` | "
+                f"`{item['role']}` | "
+                f"**{status_mark(item['status'])}** | "
+                f"{selected_noncanonical_notes[item['name']]} |"
+            )
+    lines.extend(
+        [
+            "",
+            "## Alignment Rules",
+            "",
+            "- Cite only entries listed as canonical in `controlled_test_output/STUDY_REGISTRY.json`.",
+            "- Treat `_phase3_probe_*`, superseded timestamped reruns, and quarantine folders as audit history.",
+            "- A `PASS` claim requires all canonical criteria to pass and all expected artifacts to exist.",
+            "- Tier 4.13 is a real hardware-capsule pass, not a full hardware-scaling claim.",
+            "- Tier 4.14 characterizes runtime/provenance overhead; it is not repeatability or scaling evidence.",
+            "- Tier 4.15 repeats the minimal hardware capsule across three seeds; it is not a harder-task or hardware-scaling claim.",
+            "- Tier 5.1 compares CRA to simple external learners; it documents where baselines beat CRA as well as where CRA has an edge.",
+            "- Tier 5.2 shows those Tier 5.1 edges do not strengthen at the 1500-step horizon under the tested settings.",
+            "- Tier 5.3 diagnoses the Tier 5.2 weakness and identifies stronger delayed credit as the leading candidate fix, while preserving the boundary that hard switching still trails the best external baseline.",
+            "- Tier 5.4 confirms the delayed-credit candidate across 960 and 1500 steps; it authorizes designing a harder hardware capsule but not claiming hard-switch superiority.",
+            "- Tier 4.16b bridge repair is local diagnostic evidence only; the canonical hard-switch hardware claim comes from the repaired three-seed Tier 4.16b pass.",
+            "- Re-run `python3 experiments/evidence_registry.py` after adding or ingesting a result.",
+            "",
+            "## Integrity Snapshot",
+            "",
+            f"- Missing expected artifacts: `{len(registry['integrity']['missing_expected_artifacts'])}`",
+            f"- Failed canonical criteria: `{len(registry['integrity']['failed_criteria'])}`",
+            f"- Noncanonical output folders preserved: `{len(registry['noncanonical_outputs'])}`",
+            "",
+        ]
+    )
+    (ROOT / "STUDY_EVIDENCE_INDEX.md").write_text("\n".join(lines))
+
+
+def main() -> None:
+    registry = build_registry()
+    write_json(OUTPUT_ROOT / "STUDY_REGISTRY.json", registry)
+    write_registry_csv(registry)
+    write_controlled_readme(registry)
+    write_study_index(registry)
+    print(
+        json.dumps(
+            {
+                "registry_status": registry["registry_status"],
+                "evidence_count": registry["evidence_count"],
+                "missing_expected_artifacts": len(registry["integrity"]["missing_expected_artifacts"]),
+                "failed_criteria": len(registry["integrity"]["failed_criteria"]),
+                "noncanonical_outputs": len(registry["noncanonical_outputs"]),
+                "outputs": {
+                    "registry_json": str(OUTPUT_ROOT / "STUDY_REGISTRY.json"),
+                    "registry_csv": str(OUTPUT_ROOT / "STUDY_REGISTRY.csv"),
+                    "controlled_readme": str(OUTPUT_ROOT / "README.md"),
+                    "study_index": str(ROOT / "STUDY_EVIDENCE_INDEX.md"),
+                },
+            },
+            indent=2,
+        )
+    )
+
+
+if __name__ == "__main__":
+    main()

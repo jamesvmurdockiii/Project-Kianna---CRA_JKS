@@ -1,0 +1,4 @@
+test_name,status,failure_reason,intact_tail_accuracy_mean,ablated_tail_accuracy_mean,delta_tail_accuracy_mean,ablated_max_abs_dopamine_mean,tail_accuracy_delta_mean,all_accuracy_delta_mean,prediction_corr_delta_mean,intact_births_sum,ablated_births_sum,final_alive_delta_mean
+no_dopamine_ablation,pass,,1.0,0.0,1.0,0.0,,,,,,
+no_plasticity_ablation,pass,,1.0,0.0,1.0,0.7877058190209179,,,,,,
+no_trophic_selection_ablation,fail,Failed criteria: trophic selection improves overall accuracy,1.0,1.0,,,0.0,0.042857142857142816,0.1643322002465058,9,0,9.0

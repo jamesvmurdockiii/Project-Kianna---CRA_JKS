@@ -1,0 +1,402 @@
+{
+  "status": "completed",
+  "reset": {
+    "context": true,
+    "route": true,
+    "memory": true,
+    "learning": true
+  },
+  "state_writes": {
+    "context": [
+      {
+        "key": "ctx_A",
+        "success": true
+      },
+      {
+        "key": "ctx_B",
+        "success": true
+      },
+      {
+        "key": "ctx_C",
+        "success": true
+      },
+      {
+        "key": "ctx_D",
+        "success": true
+      }
+    ],
+    "route": [
+      {
+        "key": "route_A",
+        "success": true
+      },
+      {
+        "key": "route_B",
+        "success": true
+      },
+      {
+        "key": "route_C",
+        "success": true
+      },
+      {
+        "key": "route_D",
+        "success": true
+      }
+    ],
+    "memory": [
+      {
+        "key": "mem_A",
+        "success": true
+      },
+      {
+        "key": "mem_B",
+        "success": true
+      },
+      {
+        "key": "mem_C",
+        "success": true
+      },
+      {
+        "key": "mem_D",
+        "success": true
+      }
+    ]
+  },
+  "schedule_uploads": [
+    {
+      "index": 0,
+      "success": true
+    },
+    {
+      "index": 1,
+      "success": true
+    },
+    {
+      "index": 2,
+      "success": true
+    },
+    {
+      "index": 3,
+      "success": true
+    },
+    {
+      "index": 4,
+      "success": true
+    },
+    {
+      "index": 5,
+      "success": true
+    },
+    {
+      "index": 6,
+      "success": true
+    },
+    {
+      "index": 7,
+      "success": true
+    },
+    {
+      "index": 8,
+      "success": true
+    },
+    {
+      "index": 9,
+      "success": true
+    },
+    {
+      "index": 10,
+      "success": true
+    },
+    {
+      "index": 11,
+      "success": true
+    },
+    {
+      "index": 12,
+      "success": true
+    },
+    {
+      "index": 13,
+      "success": true
+    },
+    {
+      "index": 14,
+      "success": true
+    },
+    {
+      "index": 15,
+      "success": true
+    },
+    {
+      "index": 16,
+      "success": true
+    },
+    {
+      "index": 17,
+      "success": true
+    },
+    {
+      "index": 18,
+      "success": true
+    },
+    {
+      "index": 19,
+      "success": true
+    },
+    {
+      "index": 20,
+      "success": true
+    },
+    {
+      "index": 21,
+      "success": true
+    },
+    {
+      "index": 22,
+      "success": true
+    },
+    {
+      "index": 23,
+      "success": true
+    },
+    {
+      "index": 24,
+      "success": true
+    },
+    {
+      "index": 25,
+      "success": true
+    },
+    {
+      "index": 26,
+      "success": true
+    },
+    {
+      "index": 27,
+      "success": true
+    },
+    {
+      "index": 28,
+      "success": true
+    },
+    {
+      "index": 29,
+      "success": true
+    },
+    {
+      "index": 30,
+      "success": true
+    },
+    {
+      "index": 31,
+      "success": true
+    },
+    {
+      "index": 32,
+      "success": true
+    },
+    {
+      "index": 33,
+      "success": true
+    },
+    {
+      "index": 34,
+      "success": true
+    },
+    {
+      "index": 35,
+      "success": true
+    },
+    {
+      "index": 36,
+      "success": true
+    },
+    {
+      "index": 37,
+      "success": true
+    },
+    {
+      "index": 38,
+      "success": true
+    },
+    {
+      "index": 39,
+      "success": true
+    },
+    {
+      "index": 40,
+      "success": true
+    },
+    {
+      "index": 41,
+      "success": true
+    },
+    {
+      "index": 42,
+      "success": true
+    },
+    {
+      "index": 43,
+      "success": true
+    },
+    {
+      "index": 44,
+      "success": true
+    },
+    {
+      "index": 45,
+      "success": true
+    },
+    {
+      "index": 46,
+      "success": true
+    },
+    {
+      "index": 47,
+      "success": true
+    }
+  ],
+  "run_continuous": {
+    "context": {
+      "success": true
+    },
+    "route": {
+      "success": true
+    },
+    "memory": {
+      "success": true
+    },
+    "learning": {
+      "success": true
+    }
+  },
+  "pause": {
+    "context": {
+      "success": true
+    },
+    "route": {
+      "success": true
+    },
+    "memory": {
+      "success": true
+    },
+    "learning": {
+      "success": true
+    }
+  },
+  "final_state": {
+    "context": {
+      "success": true,
+      "cmd": 8,
+      "status": 0,
+      "schema_version": 1,
+      "payload_len": 73,
+      "timestep": 9195,
+      "neuron_count": 0,
+      "synapse_count": 0,
+      "active_trace_count": 0,
+      "active_slots": 4,
+      "slot_writes": 4,
+      "slot_hits": 48,
+      "slot_misses": 0,
+      "slot_evictions": 0,
+      "decisions": 0,
+      "reward_events": 0,
+      "pending_created": 0,
+      "pending_matured": 0,
+      "pending_dropped": 0,
+      "active_pending": 0,
+      "readout_weight_raw": 0,
+      "readout_bias_raw": 0,
+      "readout_weight": 0.0,
+      "readout_bias": 0.0,
+      "profile_id": 4,
+      "flags": 0
+    },
+    "route": {
+      "success": true,
+      "cmd": 8,
+      "status": 0,
+      "schema_version": 1,
+      "payload_len": 73,
+      "timestep": 7097,
+      "neuron_count": 0,
+      "synapse_count": 0,
+      "active_trace_count": 0,
+      "active_slots": 0,
+      "slot_writes": 0,
+      "slot_hits": 0,
+      "slot_misses": 0,
+      "slot_evictions": 0,
+      "decisions": 0,
+      "reward_events": 0,
+      "pending_created": 0,
+      "pending_matured": 0,
+      "pending_dropped": 0,
+      "active_pending": 0,
+      "readout_weight_raw": 0,
+      "readout_bias_raw": 0,
+      "readout_weight": 0.0,
+      "readout_bias": 0.0,
+      "profile_id": 5,
+      "flags": 0
+    },
+    "memory": {
+      "success": true,
+      "cmd": 8,
+      "status": 0,
+      "schema_version": 1,
+      "payload_len": 73,
+      "timestep": 5000,
+      "neuron_count": 0,
+      "synapse_count": 0,
+      "active_trace_count": 0,
+      "active_slots": 0,
+      "slot_writes": 0,
+      "slot_hits": 0,
+      "slot_misses": 0,
+      "slot_evictions": 0,
+      "decisions": 0,
+      "reward_events": 0,
+      "pending_created": 0,
+      "pending_matured": 0,
+      "pending_dropped": 0,
+      "active_pending": 0,
+      "readout_weight_raw": 0,
+      "readout_bias_raw": 0,
+      "readout_weight": 0.0,
+      "readout_bias": 0.0,
+      "profile_id": 6,
+      "flags": 0
+    },
+    "learning": {
+      "success": true,
+      "cmd": 8,
+      "status": 0,
+      "schema_version": 1,
+      "payload_len": 73,
+      "timestep": 2902,
+      "neuron_count": 0,
+      "synapse_count": 0,
+      "active_trace_count": 0,
+      "active_slots": 0,
+      "slot_writes": 0,
+      "slot_hits": 0,
+      "slot_misses": 0,
+      "slot_evictions": 0,
+      "decisions": 48,
+      "reward_events": 48,
+      "pending_created": 48,
+      "pending_matured": 48,
+      "pending_dropped": 0,
+      "active_pending": 0,
+      "readout_weight_raw": 32768,
+      "readout_bias_raw": 0,
+      "readout_weight": 1.0,
+      "readout_bias": 0.0,
+      "profile_id": 3,
+      "flags": 0
+    }
+  },
+  "waited_seconds": 0.5
+}
