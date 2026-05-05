@@ -79,13 +79,27 @@ not multi-chip scaling, not arbitrary task execution, not lifecycle hardware,
 not full native v2.1, and not final autonomy.
 ```
 
+Latest lifecycle hardware result:
+
+```text
+Tier 4.30b-hw = HARDWARE FUNCTIONAL PASS AFTER INGEST CORRECTION
+output = controlled_test_output/tier4_30b_hw_20260505_hardware_pass_ingested/
+raw remote status = fail
+corrected ingest status = pass
+reason = rev-0001 checked cumulative readback_bytes instead of compact payload_len
+board = 10.11.226.17
+selected core = (0,0,4)
+canonical_32 corrected scenario criteria = 16/16
+boundary_64 corrected scenario criteria = 16/16
+payload_len = 68 for both scenarios
+active masks / lineage checksums / trophic checksums matched reference
+fallback = 0
+```
+
 Current active step:
 
 ```text
-Tier 4.30b-hw single-core lifecycle active-mask/lineage hardware smoke
-Prepared package: ebrains_jobs/cra_430b
-JobManager command:
-cra_430b/experiments/tier4_30b_lifecycle_hardware_smoke.py --mode run-hardware --output-dir tier4_30b_hw_job_output
+Tier 4.30c multi-core lifecycle state split contract/local reference
 ```
 
 ## 2. Immediate Baseline Decision
@@ -526,7 +540,7 @@ ability.
     Boundary: local source/runtime host evidence only; not EBRAINS hardware,
     not task benefit, not multi-core lifecycle, and not a baseline freeze.
 
-39. 🔄 **CURRENT ACTIVE STEP** - Tier 4.30b single-core lifecycle active-mask /
+39. ✅ **COMPLETE** - Tier 4.30b single-core lifecycle active-mask /
     lineage hardware smoke package/run: package the audited runtime surface and
     run the smallest EBRAINS smoke that proves lifecycle metadata survives a real
     SpiNNaker execution/readback path. Scope is active mask, lineage/checksum,
@@ -537,10 +551,16 @@ ability.
     status `prepared`, 6/6 criteria. The package includes the current
     lifecycle host controller, `RUNTIME_PROFILE=decoupled_memory_route` build
     path, canonical_32 and boundary_64 lifecycle reference expectations, and
-    the JobManager command. No hardware evidence exists until returned
-    `run-hardware` artifacts are ingested.
+    the JobManager command.
+    Returned result: `controlled_test_output/tier4_30b_hw_20260505_hardware_pass_ingested/`,
+    corrected ingest status `pass`, 5/5 ingest criteria. The raw remote status
+    was `fail` because runner rev-0001 checked cumulative `readback_bytes`
+    instead of actual compact `payload_len`; raw artifacts preserved both
+    `payload_len=68` and exact lifecycle state/reference parity for
+    `canonical_32` and `boundary_64`.
 
-40. Tier 4.30c multi-core lifecycle state split: distribute lifecycle masks and
+40. 🔄 **CURRENT ACTIVE STEP** - Tier 4.30c multi-core lifecycle state split:
+    distribute lifecycle masks and
     lineage across the selected runtime protocol without corrupting state.
 
 41. Tier 4.30d lifecycle sham-control hardware subset: fixed max pool, random
@@ -812,7 +832,7 @@ After each completed run or design tier:
 The next concrete action is:
 
 ```text
-Tier 4.30b single-core lifecycle active-mask/lineage hardware smoke package/run
+Tier 4.30c multi-core lifecycle state split contract/local reference
 ```
 
 Current reference state:
@@ -824,10 +844,11 @@ Readiness audit: Tier 4.30-readiness PASS, 16/16
 Lifecycle contract: Tier 4.30 PASS, 14/14
 Local reference: Tier 4.30a PASS, 20/20
 Source/runtime audit: Tier 4.30b PASS, 13/13
-Hardware package: Tier 4.30b-hw PREPARED, 6/6
-Upload folder: /Users/james/JKS:CRA/ebrains_jobs/cra_430b
-JobManager command:
-cra_430b/experiments/tier4_30b_lifecycle_hardware_smoke.py --mode run-hardware --output-dir tier4_30b_hw_job_output
+Hardware smoke: Tier 4.30b-hw PASS after ingest correction
+Ingested output: controlled_test_output/tier4_30b_hw_20260505_hardware_pass_ingested/
+Raw remote status: fail
+Correction: rev-0001 checked cumulative readback_bytes instead of compact payload_len
+Board/core: 10.11.226.17 / (0,0,4)
 Temporal substrate status: fading-memory promoted in software only; nonlinear
 recurrence and native/on-chip temporal dynamics remain unproven
 ```
@@ -835,24 +856,23 @@ recurrence and native/on-chip temporal dynamics remain unproven
 Purpose:
 
 ```text
-Package and run only the minimum single-core lifecycle hardware smoke now that
-source audit and local host tests passed. The smoke must prove active-mask,
-lineage/checksum, event counters, and compact lifecycle readback survive real
-SpiNNaker execution/readback. Do not claim task benefit, multi-core lifecycle,
+Define the smallest multi-core lifecycle state split that builds on the passed
+single-core lifecycle smoke. The next tier must specify exactly which lifecycle
+state remains local to a lifecycle core, what is exchanged over the selected
+runtime protocol, which checksums/readbacks prove state integrity, and what
+failure classes force redesign. Do not claim task benefit, full ecology,
 v2.2 temporal migration, scaling, speedup, or lifecycle baseline freeze.
-The package is already prepared; the next action is an EBRAINS/JobManager
-`run-hardware` submission, then ingest of the returned files.
 ```
 
 Required coverage:
 
 ```text
-Use the Tier 4.30b artifacts as the source-audited runtime reference:
+Use the Tier 4.30b and Tier 4.30b-hw artifacts as the source-audited runtime reference:
 controlled_test_output/tier4_30b_20260505_lifecycle_source_audit/.
-The hardware package/run must preserve exact 4.30a canonical/boundary lifecycle
-telemetry expectations for the scoped smoke, zero synthetic fallback, zero
-sim/run/readback failures, and real lifecycle state readback from the custom
-runtime.
+controlled_test_output/tier4_30b_hw_20260505_hardware_pass_ingested/.
+The multi-core split must preserve exact 4.30a canonical/boundary lifecycle
+telemetry expectations, zero synthetic fallback, zero sim/run/readback failures,
+and real lifecycle state readback from the custom runtime.
 ```
 
 Do not jump to multi-core lifecycle, sham-control hardware, task-effect claims,

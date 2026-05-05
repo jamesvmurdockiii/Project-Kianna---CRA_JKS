@@ -6399,10 +6399,29 @@ Result: runtime lifecycle opcodes, static-pool lifecycle structs, exact 4.30a
 Boundary: local source/runtime host evidence only; not hardware evidence, not
           task benefit, not multi-core lifecycle, not v2.2 temporal-state
           migration, and not a baseline freeze.
-Next: Tier 4.30b-hw single-core lifecycle active-mask/lineage hardware smoke.
-Prepared package exists at `ebrains_jobs/cra_430b` with local prepared status
-6/6. The next evidence action is EBRAINS/JobManager `run-hardware`, followed by
-ingest of returned artifacts. Prepared package status is not hardware evidence.
+Tier 4.30b-hw result:
+
+```text
+Output: controlled_test_output/tier4_30b_hw_20260505_hardware_pass_ingested/
+Raw remote status: fail
+Corrected ingest status: pass
+Correction: runner rev-0001 checked cumulative readback_bytes instead of compact payload_len
+Board/core: 10.11.226.17 / (0,0,4)
+Ingest criteria: 5/5
+canonical_32 corrected scenario criteria: 16/16
+boundary_64 corrected scenario criteria: 16/16
+payload_len: 68 for both scenarios
+fallback: 0
+```
+
+Meaning: the scoped single-core lifecycle metadata/readback surface transfers
+to real SpiNNaker hardware. The raw remote failure is preserved as a criterion
+bug and corrected only because raw artifacts already contained compact
+`payload_len=68` and exact state/reference parity. Boundary remains unchanged:
+not task-benefit evidence, not multi-core lifecycle migration, not speedup, not
+v2.2 temporal-state migration, and not a lifecycle baseline freeze.
+
+Next: Tier 4.30c multi-core lifecycle state split contract/local reference.
 ```
 
 Detailed Tier 5.19 contract:

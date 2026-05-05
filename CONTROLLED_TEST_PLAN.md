@@ -123,8 +123,8 @@ They remain part of the peer-review audit trail:
 4.30 lifecycle-native static-pool contract = passed; command/readback/event/gate/failure schema defined before local reference or hardware work
 4.30a local static-pool lifecycle reference = passed; canonical and boundary deterministic traces plus lifecycle shams precomputed
 4.30b lifecycle runtime source audit = passed; runtime static-pool lifecycle surface and host/schema parity tests complete
-4.30b-hw single-core lifecycle active-mask/lineage hardware smoke = prepared locally; awaiting EBRAINS run
-4.30+ native lifecycle/ecology migration = roadmap; initial runtime source surface exists, hardware smoke pending
+4.30b-hw single-core lifecycle active-mask/lineage hardware smoke = hardware functional pass after ingest correction; raw remote fail was runner rev-0001 readback counter criterion defect
+4.30c native lifecycle/ecology migration = current next; multi-core lifecycle state split contract/local reference
 ```
 
 These planned tiers may move in order as evidence arrives, but completed pass,
@@ -8244,10 +8244,10 @@ temporal-state migration, and not a lifecycle baseline freeze.
 Next step:
 
 ```text
-Tier 4.30b-hw single-core lifecycle active-mask/lineage hardware smoke. Package
-and run the audited runtime surface on EBRAINS/SpiNNaker. Require zero fallback,
-zero sim/run/readback failures, real lifecycle state readback, active-mask and
-checksum agreement, and no task-effect or scaling claim.
+Tier 4.30c multi-core lifecycle state split contract/local reference. Define
+which lifecycle state lives on which runtime core, how active masks and lineage
+move across the selected protocol, and what checksums/readbacks prove state
+integrity before another EBRAINS package.
 ```
 
 Prepared package update:
@@ -8287,3 +8287,28 @@ boundary_64 readback matches active mask 127, lineage checksum 18496,
   trophic checksum 761336, and zero invalid events
 zero synthetic fallback
 ```
+
+Returned hardware result after ingest correction:
+
+```text
+Status: PASS after ingest correction
+Raw remote status: fail
+Corrected ingest output: controlled_test_output/tier4_30b_hw_20260505_hardware_pass_ingested/
+Board/core: 10.11.226.17 / (0,0,4)
+Runner raw revision: tier4_30b_lifecycle_hardware_smoke_20260505_0001
+Corrected runner revision: tier4_30b_lifecycle_hardware_smoke_20260505_0002
+Reason: rev-0001 checked cumulative readback_bytes instead of compact payload_len
+Ingest criteria: 5/5
+canonical_32 corrected scenario criteria: 16/16
+boundary_64 corrected scenario criteria: 16/16
+payload_len: 68 for both scenarios
+fallback: 0
+```
+
+Meaning: the single-core lifecycle metadata surface executed on real
+SpiNNaker, with exact active-mask, event-count, lineage-checksum, and
+trophic-checksum parity. The raw remote failure is preserved as an
+instrumentation/criterion defect, not a lifecycle-state failure. Boundary
+remains unchanged: this is not task-benefit evidence, not multi-core lifecycle
+migration, not speedup evidence, not v2.2 temporal-state migration, and not a
+lifecycle baseline freeze.

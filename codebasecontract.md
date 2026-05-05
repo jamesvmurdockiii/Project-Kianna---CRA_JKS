@@ -62,8 +62,14 @@ FROZEN: CRA_NATIVE_MECHANISM_BRIDGE_v0.3
   Current: Tier 4.30 lifecycle-native contract PASS, 14/14.
   Current: Tier 4.30a local static-pool lifecycle reference PASS, 20/20.
   Current: Tier 4.30b lifecycle runtime source audit PASS, 13/13.
-  Next: Tier 4.30b single-core lifecycle active-mask/lineage hardware smoke
-        package/run.
+  Current: Tier 4.30b-hw single-core lifecycle active-mask/lineage hardware
+        smoke PASS after ingest correction.
+        Ingested output:
+        `controlled_test_output/tier4_30b_hw_20260505_hardware_pass_ingested/`.
+        Raw remote status was `fail` because runner rev-0001 checked cumulative
+        `readback_bytes` instead of compact `payload_len`; raw artifacts show
+        `payload_len=68` and exact lifecycle state/reference parity.
+  Next: Tier 4.30c multi-core lifecycle state split contract/local reference.
         Lifecycle hardware layers initially on CRA_NATIVE_MECHANISM_BRIDGE_v0.3,
         with v2.2 as a software reference boundary only. Temporal-state hardware
         migration is not automatic from v2.2; it requires a separately defined
@@ -346,19 +352,27 @@ Tier 4.30b — COMPLETE. Source audit / single-core lifecycle mask smoke prep.
   Boundary: local source/runtime host evidence only; not hardware evidence, not
     task benefit, not multi-core lifecycle, and not a baseline freeze.
 
-Tier 4.30b-hw — CURRENT NEXT. Single-core lifecycle active-mask/lineage hardware
+Tier 4.30b-hw — COMPLETE. Single-core lifecycle active-mask/lineage hardware
   smoke run/ingest.
   Prepared package: `/Users/james/JKS:CRA/ebrains_jobs/cra_430b`.
   Prepared output: `controlled_test_output/tier4_30b_hw_20260505_prepared/`.
-  JobManager command:
-  `cra_430b/experiments/tier4_30b_lifecycle_hardware_smoke.py --mode run-hardware --output-dir tier4_30b_hw_job_output`.
+  Ingested output: `controlled_test_output/tier4_30b_hw_20260505_hardware_pass_ingested/`.
   Purpose: prove the audited lifecycle metadata surface survives real SpiNNaker
     execution/readback on the smallest possible single-core smoke.
-  Rule: upload the prepared `cra_430b` folder itself. Do not upload
-    `controlled_test_output`. Require zero fallback, zero sim/run/readback
-    failure, real lifecycle readback, active-mask and checksum agreement. Do not
+  Result: hardware functional pass after ingest correction. Raw remote status
+    was `fail`; corrected ingest status is `pass`. Correction reason:
+    runner rev-0001 checked cumulative `readback_bytes` instead of actual
+    compact `payload_len`. Returned artifacts preserved both the raw failure and
+    the corrected status.
+  Rule: require zero fallback, zero sim/run/readback failure, real lifecycle
+    readback, active-mask and checksum agreement. Do not
     claim task benefit, multi-core lifecycle, v2.2 temporal migration, scaling,
     speedup, or lifecycle baseline freeze.
+
+Tier 4.30c — CURRENT NEXT. Multi-core lifecycle state split contract/local
+  reference. Define which lifecycle state lives on which runtime core, how masks
+  and lineage are exchanged, and what compact readbacks prove state integrity
+  before any EBRAINS package.
 
 
 Current status summary:
@@ -499,10 +513,10 @@ Local build capability (established 2026-05-02):
 
 Immediate next steps:
 
-1. Package/run Tier 4.30b single-core lifecycle active-mask/lineage hardware
-   smoke from the source-audited runtime surface. The package must use the
-   exact current repo state and prove real lifecycle readback, active-mask and
-   checksum agreement, zero fallback, and zero sim/run/readback failures.
+1. Design Tier 4.30c multi-core lifecycle state split contract/local reference
+   from the source-audited runtime surface and the ingested 4.30b-hw hardware
+   pass. The tier must prove how lifecycle state will be partitioned before
+   another EBRAINS upload.
 2. Do not migrate v2.2 temporal fading-memory state to hardware merely because
    v2.2 froze. Native temporal-state migration requires a separate readiness
    tier with fixed-point state equations and local parity.
@@ -1779,6 +1793,10 @@ Specific failures that must be caught by guardrails:
 13. Criteria counts are reported ambiguously. If a run has remote criteria plus
     ingest criteria, docs must say both, for example `89 remote + 1 ingest = 90
     total`, not a loose `89/89` everywhere.
+14. A compact-readback criterion checks a cumulative telemetry counter instead
+    of the actual host-observed payload length. For lifecycle schema-v1,
+    `payload_len` proves the compact reply size; `readback_bytes` is cumulative
+    and is expected to grow after repeated replies.
 
 Definition of done for a new guardrail:
 

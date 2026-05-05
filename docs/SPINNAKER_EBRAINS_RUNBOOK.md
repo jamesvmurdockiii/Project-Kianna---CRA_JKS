@@ -26,42 +26,41 @@ Tier 4.29f - Compact Native Mechanism Regression
 Latest active hardware-facing tier:
 
 ```text
-Tier 4.30b-hw - Single-Core Lifecycle Active-Mask/Lineage Hardware Smoke
-  Status: PREPARED / AWAITING EBRAINS RUN
-  Upload: ebrains_jobs/cra_430b
-  Command:
-    cra_430b/experiments/tier4_30b_lifecycle_hardware_smoke.py --mode run-hardware --output-dir tier4_30b_hw_job_output
-  Boundary: lifecycle metadata/readback smoke only; not task-benefit evidence,
-    not multi-core lifecycle migration, not speedup evidence, and not a
-    lifecycle baseline freeze.
+Tier 4.30c - Multi-Core Lifecycle State Split
+  Status: CONTRACT / LOCAL REFERENCE NEXT
+  Boundary: design/local evidence first; no EBRAINS package until state
+    partitioning, protocol fields, checksum/readback expectations, and failure
+    classes are predeclared.
 ```
 
 Latest passed hardware-facing tier:
 
 ```text
-Tier 4.29e - Native Replay/Consolidation Bridge
-  Status: HARDWARE PASS, INGESTED (cra_429p)
-  Seeds: 42/43/44 on boards 10.11.226.129 / 10.11.226.1 / 10.11.226.65
-  Criteria: 38/38 per seed (114/114 total)
+Tier 4.30b-hw - Single-Core Lifecycle Active-Mask/Lineage Hardware Smoke
+  Status: HARDWARE FUNCTIONAL PASS AFTER INGEST CORRECTION
+  Ingest: controlled_test_output/tier4_30b_hw_20260505_hardware_pass_ingested/
+  Board/core: 10.11.226.17 / (0,0,4)
+  Raw remote status: fail
+  Corrected ingest status: pass
+  Correction: rev-0001 checked cumulative readback_bytes instead of compact
+    payload_len. Raw artifacts show payload_len=68 and exact lifecycle
+    state/reference parity for canonical_32 and boundary_64.
 ```
 
 Latest passed EBRAINS upload package:
 
 ```text
-Tier 4.29e - Native Replay/Consolidation Bridge
-upload = ebrains_jobs/cra_429p
-status = returned hardware pass ingested
-runner = experiments/tier4_29e_native_replay_consolidation_bridge.py
+Tier 4.30b-hw - Single-Core Lifecycle Active-Mask/Lineage Hardware Smoke
+upload = ebrains_jobs/cra_430b
+status = returned hardware functional pass after ingest correction
+runner = experiments/tier4_30b_lifecycle_hardware_smoke.py
 ```
 
 Latest prepared EBRAINS upload package:
 
 ```text
-Tier 4.30b-hw - Single-Core Lifecycle Active-Mask/Lineage Hardware Smoke
-upload = ebrains_jobs/cra_430b
-status = prepared locally, not hardware evidence
-runner = experiments/tier4_30b_lifecycle_hardware_smoke.py
-prepared output = controlled_test_output/tier4_30b_hw_20260505_prepared/
+None pending. Tier 4.30b-hw was prepared, run, and ingested. Do not reupload
+cra_430b unless a new 4.30b rerun is explicitly requested.
 ```
 
 Tier 4.28e Point A passed after ingest at:
@@ -445,22 +444,23 @@ That means:
 4. auto-select a free destination CPU when the probe already occupies the requested core.
 ```
 
-### cra_430b (PREPARED / AWAITING EBRAINS)
+### cra_430b (RETURNED / PASS AFTER INGEST CORRECTION)
 
-Status: **PREPARED ONLY**
+Status: **HARDWARE FUNCTIONAL PASS AFTER INGEST CORRECTION**
 
 Upload folder: `ebrains_jobs/cra_430b`
 
-JobManager command:
+JobManager command that produced the returned artifacts:
 
 ```text
 cra_430b/experiments/tier4_30b_lifecycle_hardware_smoke.py --mode run-hardware --output-dir tier4_30b_hw_job_output
 ```
 
-Prepared artifacts:
+Prepared and ingested artifacts:
 
 ```text
 controlled_test_output/tier4_30b_hw_20260505_prepared/
+controlled_test_output/tier4_30b_hw_20260505_hardware_pass_ingested/
 controlled_test_output/tier4_30b_hw_latest_manifest.json
 ```
 
@@ -470,7 +470,7 @@ lifecycle pool, apply both reference lifecycle schedules (`canonical_32` and
 `boundary_64`), and read compact lifecycle telemetry through
 `CMD_LIFECYCLE_READ_STATE`.
 
-Expected hardware pass:
+Returned hardware result:
 - target acquired through hostname/config or pyNN.spiNNaker probe fallback;
 - `.aplx` builds and loads on a selected free core;
 - lifecycle init and all event commands succeed;
@@ -479,6 +479,12 @@ Expected hardware pass:
 - boundary_64 readback matches active mask `127`, lineage checksum `18496`,
   trophic checksum `761336`, and zero invalid events;
 - zero synthetic fallback and no task-effect or scaling claim.
+
+The raw remote runner returned `fail` only because rev-0001 checked
+`readback_bytes == 68`. That field is a cumulative runtime byte counter.
+The actual compact reply size is `payload_len`, which was `68` for both
+scenarios in the returned raw artifacts. The corrected ingest preserves the raw
+failure and records corrected status `pass`.
 
 Packaging lesson: the local Spin1API syntax guard initially failed because the
 stub callback typedef used `uint32_t,uint32_t` while `main.c` uses the
@@ -491,16 +497,22 @@ targets share `spinnaker_runtime/tests/*` binaries and can race, producing a
 false `No such file or directory` failure after one process deletes a binary the
 other just built. Serialize C-runtime build/test/package commands.
 
+Protocol lesson: do not use cumulative counters such as `readback_bytes_sent` as
+proof of compact payload size. For lifecycle schema-v1, compact readback size is
+the host-observed `payload_len`; `readback_bytes` is cumulative telemetry and
+should increase after repeated replies.
+
 Do not add `--no-require-real-hardware` to this custom-runtime lifecycle job.
 That flag belonged to earlier pyNN/sPyNNaker bridge jobs; Tier 4.30b-hw needs a
 real board load and real lifecycle command/readback round-trips.
 
 ## Required Source Revision Check
 
-For the current Tier 4.30b-hw package, returned artifacts must report:
+For the returned Tier 4.30b-hw package, artifacts report:
 
 ```text
-runner_revision = tier4_30b_lifecycle_hardware_smoke_20260505_0001
+raw runner_revision = tier4_30b_lifecycle_hardware_smoke_20260505_0001
+current corrected runner_revision = tier4_30b_lifecycle_hardware_smoke_20260505_0002
 upload package = cra_430b
 ```
 

@@ -20,15 +20,15 @@ controlled ablations, baseline comparisons, and explicit claim boundaries.
 | --- | --- |
 | Software baseline | `v2.2`, frozen after bounded host-side fading-memory temporal-state evidence plus full NEST compact regression. |
 | Native hardware baseline | `CRA_NATIVE_MECHANISM_BRIDGE_v0.3`, frozen after Tier 4.29f audited the 4.29a-e native mechanism hardware passes. |
-| Latest ingested hardware pass | Tier 4.29e, native host-scheduled replay/consolidation bridge, `38/38` criteria per seed across seeds `42`, `43`, and `44`. |
+| Latest ingested hardware pass | Tier 4.30b-hw, single-core lifecycle active-mask/lineage smoke. Raw remote status was `fail`, corrected ingest status is `pass` because rev-0001 checked cumulative `readback_bytes` instead of compact `payload_len`; returned artifacts show `payload_len=68` and exact lifecycle state parity. |
 | Latest software benchmark diagnostic | Tier 5.19c fading-memory narrowing gate passed and froze v2.2: fading-memory temporal state is promoted, while bounded nonlinear recurrence and universal benchmark superiority remain unproven. |
 | Latest engineering audit | Tier 4.30-readiness passed `16/16`, selecting a static-pool lifecycle-native path layered on `CRA_NATIVE_MECHANISM_BRIDGE_v0.3` with v2.2 as software reference only. |
 | Latest engineering contract | Tier 4.30 passed `14/14`, defining lifecycle init/event/trophic/readback/sham commands, `23` readback fields, event invariants, gates, and failure classes. |
 | Latest local lifecycle reference | Tier 4.30a passed `20/20`: deterministic 8-slot / 2-founder static-pool state, canonical 32-event trace, boundary 64-event trace, and lifecycle shams. |
 | Latest lifecycle runtime source audit | Tier 4.30b passed `13/13`: runtime lifecycle static-pool surface, exact 4.30a checksum parity, lifecycle SDP readback, and existing runtime/profile tests preserved. |
-| Active next gate | Tier 4.30b single-core EBRAINS active-mask/lineage lifecycle smoke package/run. |
+| Active next gate | Tier 4.30c multi-core lifecycle state split contract/local reference. |
 | Canonical registry | 54 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
-| Validation suite | 147 pytest tests plus registry, paper-table, and repository-audit generation. |
+| Validation suite | 149 pytest tests plus registry, paper-table, and repository-audit generation. |
 
 ## What CRA Implements
 

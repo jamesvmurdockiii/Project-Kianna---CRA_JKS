@@ -41,7 +41,8 @@ from experiments.tier4_30a_static_pool_lifecycle_reference import (  # noqa: E40
 
 
 TIER = "Tier 4.30b-hw - Single-Core Lifecycle Active-Mask/Lineage Hardware Smoke"
-RUNNER_REVISION = "tier4_30b_lifecycle_hardware_smoke_20260505_0001"
+RUNNER_REVISION = "tier4_30b_lifecycle_hardware_smoke_20260505_0002"
+KNOWN_FALSE_FAIL_REVISIONS = {"tier4_30b_lifecycle_hardware_smoke_20260505_0001"}
 UPLOAD_PACKAGE_NAME = "cra_430b"
 STABLE_EBRAINS_UPLOAD = ROOT / "ebrains_jobs" / UPLOAD_PACKAGE_NAME
 DEFAULT_PREPARE_OUTPUT = CONTROLLED / "tier4_30b_hw_20260505_prepared"
@@ -176,7 +177,7 @@ def scenario_criteria(name: str, observed: dict[str, Any], expected: dict[str, A
         criterion(f"{name} invalid event count", observed.get("invalid_event_count"), "== 0", observed.get("invalid_event_count") == 0),
         criterion(f"{name} lineage checksum", observed.get("lineage_checksum"), f"== {expected['lineage_checksum']}", observed.get("lineage_checksum") == expected["lineage_checksum"]),
         criterion(f"{name} trophic checksum", observed.get("trophic_checksum"), f"== {expected['trophic_checksum']}", observed.get("trophic_checksum") == expected["trophic_checksum"]),
-        criterion(f"{name} compact lifecycle readback bytes", observed.get("readback_bytes"), "== 68", observed.get("readback_bytes") == 68),
+        criterion(f"{name} compact lifecycle payload length", observed.get("payload_len"), "== 68", observed.get("payload_len") == 68),
     ]
 
 
@@ -424,6 +425,9 @@ def write_report(path: Path, result: dict[str, Any]) -> None:
         "aplx_build_status",
         "app_load_status",
         "task_status",
+        "raw_remote_status",
+        "corrected_ingest_status",
+        "false_fail_correction",
     ]:
         if key in summary:
             lines.append(f"- {key}: `{summary[key]}`")
@@ -446,6 +450,116 @@ def finalize(output_dir: Path, result: dict[str, Any]) -> int:
     write_json(CONTROLLED / "tier4_30b_hw_latest_manifest.json", result)
     print(json.dumps({"status": result.get("status"), "output_dir": str(output_dir), "results": str(result_path)}, indent=2))
     return 0 if str(result.get("status", "")).lower() in {"pass", "prepared"} else 1
+
+
+def copy_returned_artifacts(ingest_dir: Path, output_dir: Path, *, anchor: Path | None = None) -> list[str]:
+    """Preserve returned JobManager files without treating Downloads as canonical."""
+    if not ingest_dir.exists():
+        return []
+    returned_dir = output_dir / "returned_artifacts"
+    returned_dir.mkdir(parents=True, exist_ok=True)
+    copied: list[str] = []
+    prefixes = (
+        "tier4_30b_hw_",
+        "tier4_22i_main_syntax_normal",
+        "coral_reef",
+        "main ",
+        "state_manager ",
+        "host_interface ",
+    )
+    anchor_mtime = anchor.stat().st_mtime if anchor and anchor.exists() else None
+    for path in sorted(ingest_dir.iterdir()):
+        if not path.is_file():
+            continue
+        if anchor_mtime is not None and abs(path.stat().st_mtime - anchor_mtime) > 900:
+            continue
+        if path.suffix in {".o", ".elf", ".aplx"}:
+            continue
+        name = path.name
+        should_copy = (
+            name.startswith(prefixes)
+            or name.startswith("reports")
+            or name in {"finished", "global_provenance.sqlite3"}
+        )
+        if not should_copy:
+            continue
+        dest = returned_dir / name
+        shutil.copy2(path, dest)
+        copied.append(str(dest))
+    return copied
+
+
+def known_false_fail_correction(hardware: dict[str, Any]) -> dict[str, Any]:
+    """Detect the rev-0001 payload-length criterion bug without hiding raw status.
+
+    Rev 0001 checked `readback_bytes == 68`, but that field is a cumulative
+    runtime byte counter. The actual compact reply length is `payload_len`, which
+    was already captured in the raw returned artifacts.
+    """
+    raw_status = hardware.get("status")
+    revision = hardware.get("runner_revision")
+    failed_names = [item.get("name") for item in hardware.get("criteria", []) if not item.get("passed")]
+    known_false_fail_names = {
+        "lifecycle hardware task pass",
+        "canonical_32 scenario executed",
+        "boundary_64 scenario executed",
+        "canonical_32 compact lifecycle readback bytes",
+        "boundary_64 compact lifecycle readback bytes",
+    }
+    correction = {
+        "applied": False,
+        "raw_status": raw_status,
+        "runner_revision": revision,
+        "failed_criteria": failed_names,
+        "corrected_status": raw_status,
+        "reason": "",
+        "corrected_scenarios": {},
+    }
+    if raw_status == "pass":
+        correction["reason"] = "raw hardware status already passed"
+        return correction
+    if revision not in KNOWN_FALSE_FAIL_REVISIONS:
+        correction["reason"] = "runner revision is not in known false-fail list"
+        return correction
+    if not set(failed_names).issubset(known_false_fail_names):
+        correction["reason"] = "raw failure includes criteria beyond the known payload-length bug"
+        return correction
+
+    task = hardware.get("task", {})
+    references = hardware.get("references", {})
+    corrected_scenarios: dict[str, Any] = {}
+    for name in SCENARIOS:
+        scenario = task.get("scenarios", {}).get(name, {})
+        final = scenario.get("final_readback") or scenario.get("final") or scenario.get("observed") or {}
+        expected = references.get(name, {}).get("expected", {}) or scenario.get("expected", {})
+        old_nonpayload_failures = [
+            item.get("name")
+            for item in scenario.get("criteria", [])
+            if not item.get("passed") and item.get("name") != f"{name} compact lifecycle readback bytes"
+        ]
+        corrected_criteria = scenario_criteria(name, final, expected)
+        corrected_scenarios[name] = {
+            "raw_status": scenario.get("status"),
+            "old_nonpayload_failures": old_nonpayload_failures,
+            "corrected_criteria": corrected_criteria,
+            "corrected_status": "pass" if not old_nonpayload_failures and all(item["passed"] for item in corrected_criteria) else "fail",
+        }
+
+    corrected_ok = bool(corrected_scenarios) and all(
+        item.get("corrected_status") == "pass" for item in corrected_scenarios.values()
+    )
+    correction.update({
+        "applied": corrected_ok,
+        "corrected_status": "pass" if corrected_ok else "fail",
+        "reason": (
+            "rev-0001 checked cumulative readback_bytes instead of compact payload_len; "
+            "raw payload_len was 68 and lifecycle state matched reference"
+            if corrected_ok else
+            "scenario recomputation did not resolve all failures"
+        ),
+        "corrected_scenarios": corrected_scenarios,
+    })
+    return correction
 
 
 def mode_prepare(args: argparse.Namespace, output_dir: Path) -> int:
@@ -591,6 +705,7 @@ def mode_run_hardware(args: argparse.Namespace, output_dir: Path) -> int:
 
 def mode_ingest(args: argparse.Namespace, output_dir: Path) -> int:
     ingest_dir = Path(args.ingest_dir or output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
     candidate = Path(args.hardware_results) if args.hardware_results else ingest_dir / "tier4_30b_hw_results.json"
     if not candidate.exists():
         matches = sorted(ingest_dir.glob("**/tier4_30b_hw_results.json"))
@@ -608,12 +723,21 @@ def mode_ingest(args: argparse.Namespace, output_dir: Path) -> int:
             "claim_boundary": "Failed ingest only; not hardware evidence.",
         }
         return finalize(output_dir, result)
+    returned_artifacts = copy_returned_artifacts(ingest_dir, output_dir, anchor=candidate)
     hardware = read_json(candidate)
+    correction = known_false_fail_correction(hardware)
+    status_ok = hardware.get("status") == "pass" or correction.get("corrected_status") == "pass"
+    revision_ok = hardware.get("runner_revision") == RUNNER_REVISION or hardware.get("runner_revision") in KNOWN_FALSE_FAIL_REVISIONS
     criteria = [
         criterion("hardware results json exists", str(candidate), "exists", True),
         criterion("hardware mode was run-hardware", hardware.get("mode"), "== run-hardware", hardware.get("mode") == "run-hardware"),
-        criterion("hardware status pass", hardware.get("status"), "== pass", hardware.get("status") == "pass"),
-        criterion("runner revision matches", hardware.get("runner_revision"), f"== {RUNNER_REVISION}", hardware.get("runner_revision") == RUNNER_REVISION),
+        criterion("hardware status pass or known false-fail corrected", {
+            "raw_status": hardware.get("status"),
+            "corrected_status": correction.get("corrected_status"),
+            "correction_applied": correction.get("applied"),
+        }, "raw pass OR corrected known false fail", status_ok, correction.get("reason", "")),
+        criterion("runner revision recognized", hardware.get("runner_revision"), f"== {RUNNER_REVISION} or known false-fail rev", revision_ok),
+        criterion("returned artifacts preserved", len(returned_artifacts), "> 0", len(returned_artifacts) > 0),
     ]
     status = "pass" if all(item["passed"] for item in criteria) else "fail"
     result = {
@@ -625,8 +749,24 @@ def mode_ingest(args: argparse.Namespace, output_dir: Path) -> int:
         "failure_reason": "" if status == "pass" else "Failed criteria: " + ", ".join(item["name"] for item in criteria if not item["passed"]),
         "output_dir": str(output_dir),
         "criteria": criteria,
+        "raw_remote_status": hardware.get("status"),
+        "corrected_ingest_status": status,
+        "false_fail_correction": correction,
+        "returned_artifacts": returned_artifacts,
         "hardware_results": hardware,
-        "claim_boundary": "Ingest confirms returned EBRAINS run-hardware artifacts only; no new claim beyond Tier 4.30b-hw.",
+        "summary": {
+            "raw_remote_status": hardware.get("status"),
+            "corrected_ingest_status": status,
+            "false_fail_correction": correction.get("reason", ""),
+            "hardware_target_configured": hardware.get("summary", {}).get("hardware_target_configured"),
+            "spinnaker_hostname": hardware.get("summary", {}).get("spinnaker_hostname"),
+            "selected_dest_cpu": hardware.get("summary", {}).get("selected_dest_cpu"),
+            "runtime_profile": hardware.get("summary", {}).get("runtime_profile"),
+            "aplx_build_status": hardware.get("summary", {}).get("aplx_build_status"),
+            "app_load_status": hardware.get("summary", {}).get("app_load_status"),
+            "task_status": "pass" if status == "pass" else hardware.get("summary", {}).get("task_status"),
+        },
+        "claim_boundary": "Ingest confirms returned EBRAINS run-hardware artifacts only; no new claim beyond Tier 4.30b-hw. Raw remote status is preserved when a known runner criterion defect is corrected.",
     }
     return finalize(output_dir, result)
 
