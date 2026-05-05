@@ -2,7 +2,7 @@
 
 This repository is public Apache-2.0 research infrastructure. Treat every commit
 as something a reviewer, reproducer, or future maintainer may inspect without
-private chat history.
+uncommitted context.
 
 ## Public-Repo Goals
 

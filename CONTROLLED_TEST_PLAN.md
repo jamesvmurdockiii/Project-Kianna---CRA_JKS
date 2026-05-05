@@ -1,70 +1,64 @@
 # Controlled CRA Test Plan
 
-This plan defines the staged evidence required before calling the Coral Reef
-Architecture a real primitive rather than an attractive simulation artifact.
+This plan defines the staged evidence required before treating the Coral Reef
+Architecture as a validated research system rather than an untested simulation.
 
 The test order is intentional. If any test fails, stop, debug, and rerun from
 the failed test before moving forward.
 
 ## Test Count
 
-The core plan remains **12 numbered tests**. `Tier 4.10b - Hard Population
-Scaling` is an added addendum after core test 10. `Tier 4.13 - SpiNNaker
-Hardware Capsule` is a post-core hardware addendum after backend parity.
-`Tier 4.14 - Hardware Runtime Characterization` is a post-v0.1 hardware
-engineering addendum. `Tier 4.15 - SpiNNaker Hardware Multi-Seed Repeat` is a
-hardware repeatability addendum. `Tier 5.1 - External Baselines` is the first
-post-hardware comparison tier. `Tier 5.2 - Learning Curve / Run-Length Sweep`
-tests whether the Tier 5.1 comparison changes when runs get longer. `Tier 5.3 -
-CRA Failure Analysis / Learning Dynamics Debug` diagnoses why the longer-run
-advantage fades. `Tier 5.4 - Delayed-Credit Confirmation` confirms the leading
-Tier 5.3 candidate against current CRA and external baselines before any harder
-hardware capsule. Tier 4.16a proves the repaired delayed-cue capsule transfers
-to real SpiNNaker across three seeds. Tier 4.16b proves the repaired
-hard_noisy_switching capsule transfers across the same three seeds. Tier 4.18a
-characterizes chunk sizes `10`, `25`, and `50` and recommends chunk `50` for
-the current chunked-host hardware bridge. Tier 5.5 now passes as the expanded
-baseline/fairness suite for the locked v0.8 CRA configuration. Tier 5.6 now
-passes as the tuned-baseline fairness audit with CRA locked and external
-baselines retuned under documented budgets. Tier 5.7 now passes as the compact
-regression guardrail after the v1.0 promotion. Tier 6.1 now passes as the first
-software lifecycle/self-scaling benchmark. Tier 6.3 now passes as the
-lifecycle sham-control reviewer-defense gate. Tier 6.4 now passes as the
-software circuit-motif causality gate. Tier 5.12d now passes as the
-predictive-context compact-regression gate and freezes bounded v1.8.
-The current canonical evidence trail contains **27 tracked test
-entries**. Tier 4.16b-debug and the first hard-switch hardware failure remain
-noncanonical root-cause/audit diagnostics and are intentionally not counted as
-successful evidence:
+The original controlled plan contains **12 core numbered tests**. Later work adds
+post-core tiers for hardware transfer, external baselines, runtime engineering,
+mechanism promotion, lifecycle/ecology evidence, and native SpiNNaker runtime
+migration. The generated registry is the authority for which results are
+canonical.
+
+The current canonical evidence trail contains **41 registered evidence bundles**
+with all expected artifacts present and all criteria passing:
 
 ```text
-1-3 sanity controls
-4-6 learning proof tests
-7-9 architecture ablations
-10 baseline population scaling
-10b hard population scaling
-11 domain transfer
-12 backend parity
-13 SpiNNaker hardware capsule
-14 hardware runtime characterization
-15 SpiNNaker hardware multi-seed repeat
-5.1 external baseline comparison
-5.2 learning curve / run-length sweep
-5.3 CRA failure analysis / learning dynamics debug
-5.4 delayed-credit confirmation
-4.16a repaired delayed-cue hardware repeat
-4.16b repaired hard-switch hardware repeat
-4.18a v0.7 chunked hardware runtime baseline
-5.5 expanded baseline/fairness suite
-5.6 tuned-baseline fairness audit
-5.7 compact regression guardrail
-5.12a predictive task-pressure validation
-5.12c predictive-context sham repair
-5.12d predictive-context compact regression
-6.1 software lifecycle/self-scaling benchmark
-6.3 lifecycle sham-control suite
-6.4 circuit-motif causality suite
-4.26 four-core distributed context/route/memory/learning smoke
+1. Tier 1 - sanity tests
+2. Tier 2 - learning proof tests
+3. Tier 3 - architecture ablation tests
+4. Tier 4.10 - population scaling
+5. Tier 4.10b - hard population scaling
+6. Tier 4.11 - domain transfer
+7. Tier 4.12 - backend parity
+8. Tier 4.13 - SpiNNaker Hardware Capsule
+9. Tier 4.14 - Hardware Runtime Characterization
+10. Tier 4.15 - SpiNNaker Hardware Multi-Seed Repeat
+11. Tier 5.1 - External Baselines
+12. Tier 5.2 - Learning Curve / Run-Length Sweep
+13. Tier 5.3 - CRA Failure Analysis / Learning Dynamics Debug
+14. Tier 5.4 - Delayed-Credit Confirmation
+15. Tier 4.16a - Repaired Delayed-Cue Hardware Repeat
+16. Tier 4.16b - Repaired Hard-Switch Hardware Repeat
+17. Tier 4.18a - v0.7 Chunked Hardware Runtime Baseline
+18. Tier 4.26 - Four-Core Distributed Smoke
+19. Tier 4.27a - Four-Core Runtime Resource / Timing Characterization
+20. Tier 4.27e - Two-Core MCPL Round-trip Smoke
+21. Tier 4.27f - Three-State-Core MCPL Lookup Smoke
+22. Tier 4.27g - SDP-vs-MCPL Protocol Comparison
+23. Tier 4.28a - Four-Core MCPL Repeatability
+24. Tier 4.28b - Delayed-Cue Four-Core MCPL Hardware Probe
+25. Tier 4.28c - Delayed-Cue Three-Seed Repeatability
+26. Tier 4.28d - Hard Noisy Switching Four-Core MCPL
+27. Tier 4.28e - Native Failure-Envelope Report Point A
+28. Tier 4.28e - Native Failure-Envelope Report Point C
+29. Tier 4.29a - Native Keyed-Memory Overcapacity Gate
+30. Tier 5.5 - Expanded Baseline Suite
+31. Tier 5.6 - Baseline Hyperparameter Fairness Audit
+32. Tier 5.7 - Compact Regression After Promoted Tuning
+33. Tier 5.12a - Predictive Task-Pressure Validation
+34. Tier 5.12c - Predictive Context Sham-Separation Repair
+35. Tier 5.12d - Predictive-Context Compact Regression
+36. Tier 6.1 - Software Lifecycle / Self-Scaling Benchmark
+37. Tier 6.3 - Lifecycle Sham-Control Suite
+38. Tier 6.4 - Circuit Motif Causality
+39. Tier 4.29b - Native Routing/Composition Gate
+40. Tier 4.29c - Native Predictive Binding Bridge
+41. Tier 4.29d - Native Self-Evaluation Bridge
 ```
 
 Completed noncanonical diagnostics:
@@ -86,21 +80,22 @@ Completed noncanonical diagnostics:
 5.10g keyed context-memory repair = completed; keyed/multi-slot internal memory repaired the measured 5.10f failure and compact regression passed
 ```
 
-Planned future architecture/debug tiers are not counted as canonical evidence
-until they run and are registered. They are now part of the peer-review roadmap:
+Non-registry baseline, diagnostic, and roadmap tiers are not counted as
+canonical registry evidence until they are explicitly ingested and registered.
+They remain part of the peer-review audit trail:
 
 ```text
 0.9 ongoing reproduction package
 5.9 macro eligibility trace confirmation = parked until a measured blocker justifies revival
-5.11 sleep/replay consolidation only after a later retention/capacity/forgetting stressor shows measured decay or consolidation need under v1.6
+5.11 replay/consolidation = software mechanism promoted as v1.7 after sham-separation; native bridge active as 4.29e
 5.12a predictive task-pressure validation = completed; 5.12b failed diagnostic kept; 5.12c visible predictive-context repair passed; 5.12d compact regression passed and freezes bounded v1.8
-5.13 compositional skill reuse
-5.13b module routing / contextual gating
-5.13c internal composition / routing promotion gate
-5.14 working memory / context binding
+5.13 compositional skill reuse = completed diagnostic/promotion sequence
+5.13b module routing / contextual gating = completed diagnostic/promotion sequence
+5.13c internal composition / routing promotion gate = completed and folded into later baseline locks
+5.14 working memory / context binding = completed guardrail sequence
 5.14b optional working-memory promotion gate = superseded for v2.0 by Tier 5.17e including Tier 5.14 guardrail
-5.15 spike encoding / temporal code suite
-5.16 neuron model / parameter sensitivity
+5.15 spike encoding / temporal code suite = completed diagnostic
+5.16 neuron model / parameter sensitivity = completed diagnostic
 5.17 unsupervised representation formation = broad claim failed; 5.17d predictive-binding repair passed; 5.17e compact gate froze v2.0
 5.18 self-evaluation / metacognitive monitoring = passed software diagnostic
 5.18c self-evaluation compact regression = passed and froze bounded v2.1
@@ -113,13 +108,9 @@ until they run and are registered. They are now part of the peer-review roadmap:
 7.5 curriculum / environment generator
 7.6 long-horizon planning / subgoal control
 4.19 hardware lifecycle feasibility
-4.20b v2.1 one-seed chunked hardware bridge/probe pass
-4.20c v2.1 three-seed chunked hardware repeat pass
-4.21a keyed context-memory targeted bridge probe
-4.22a custom/hybrid runtime contract with constrained-NEST + sPyNNaker mapping preflight
-4.22a0 executable constrained-NEST/static-PyNN/sPyNNaker local preflight
-4.22 custom C/native eligibility/on-chip prototype
-4.23 continuous / stop-batching parity
+4.29e native replay/consolidation bridge = active EBRAINS hardware result pending
+4.29f compact native mechanism regression = run only if 4.29e passes
+4.30+ native lifecycle/ecology migration = roadmap; not yet canonical evidence
 ```
 
 These planned tiers may move in order as evidence arrives, but completed pass,
@@ -135,7 +126,7 @@ This repo uses five evidence labels so paper claims stay clean:
 - **Failed/parked diagnostic evidence**: clean negative evidence retained to prevent p-hacking and explain why a mechanism was not promoted.
 - **Hardware prepare/probe evidence**: prepared capsules and one-off probes; these are not hardware claims until returned artifacts are reviewed and explicitly promoted.
 
-In short: `noncanonical` does not mean worthless. It means "not a formal registry/paper-table claim by itself." A frozen baseline such as v1.6, v1.7, v1.9, v2.0, or v2.1 is stronger than an ordinary diagnostic even when its source bundle remains outside the canonical registry.
+In short: `noncanonical` does not mean the result has no value. It means "not a formal registry/paper-table claim by itself." A frozen baseline such as v1.6, v1.7, v1.9, v2.0, or v2.1 is stronger than an ordinary diagnostic even when its source bundle remains outside the canonical registry.
 
 ## Paper-Grade Safeguards
 
@@ -5406,10 +5397,10 @@ Promotion/freeze condition: Not a promotion gate. This is a custom-runtime primi
 Re-entry condition if parked: Repair host bridge logic, chip command protocol, or task stream design. Re-run local reference and protocol tests before hardware retry.
 
 
-## Tier 4.23 — Continuous / Stop-Batching Parity Contract
+## Tier 4.23 - Continuous / Stop-Batching Parity Contract
 
-Tier: 4.23 — Continuous / Stop-Batching Parity Contract  
-Status: **CONTRACT DEFINED — ready for 4.23a local reference**  
+Tier: 4.23 - Continuous / Stop-Batching Parity Contract
+Status: **CONTRACT DEFINED - ready for 4.23a local reference**
 Current baseline: v2.1 software + 4.22x native decoupled primitive hardware pass
 
 ### Question
@@ -5536,7 +5527,7 @@ One seed for feasibility. Report exact deltas per event, not just averages.
    - per-event correctness flag
    - compact state summary (reuses CMD_READ_STATE schema where possible)
 4. Failure classes predeclared (see below).
-5. For hardware smoke (4.23c — COMPLETED):
+5. For hardware smoke (4.23c - COMPLETED):
    - final readout_weight_raw == 32768 (exact match with local reference)
    - final readout_bias_raw == 0 (exact match)
    - decisions == 48, reward_events == 48
@@ -5597,15 +5588,15 @@ return to runtime resource characterization (Tier 4.24) before retrying.
 
 ### Failure classes predeclared
 
-1. Build/load failure — platform/runtime packaging issue.
-2. Schedule upload failure — protocol/SDRAM allocation issue.
-3. Event loop doesn't advance — timer callback not firing or loop blocked.
-4. Feature computation diverges — fixed-point or lookup bug.
-5. Pending maturation order wrong — queue/horizon implementation bug.
-6. Readback schema mismatch — protocol drift between C and Python.
-7. Accuracy below tolerance — science failure (loop correct but learning
+1. Build/load failure - platform/runtime packaging issue.
+2. Schedule upload failure - protocol/SDRAM allocation issue.
+3. Event loop doesn't advance - timer callback not firing or loop blocked.
+4. Feature computation diverges - fixed-point or lookup bug.
+5. Pending maturation order wrong - queue/horizon implementation bug.
+6. Readback schema mismatch - protocol drift between C and Python.
+7. Accuracy below tolerance - science failure (loop correct but learning
    pressure insufficient or timing breaks credit assignment).
-8. Host intervention count too high — contract violation (not truly
+8. Host intervention count too high - contract violation (not truly
    continuous enough for the claim).
 
 ### Continuous event-loop contract (draft v0.1)
@@ -5630,11 +5621,11 @@ return to runtime resource characterization (Tier 4.24) before retrying.
 
 ### Host command cadence
 
-1. CMD_RESET — once at start.
-2. Schedule upload — once before run (may be multiple SDP packets).
-3. CMD_RUN_CONTINUOUS — once to start autonomous execution.
-4. CMD_READ_STATE — once at end (or optionally periodic during long runs).
-5. CMD_RESET — once to clear before next run.
+1. CMD_RESET - once at start.
+2. Schedule upload - once before run (may be multiple SDP packets).
+3. CMD_RUN_CONTINUOUS - once to start autonomous execution.
+4. CMD_READ_STATE - once at end (or optionally periodic during long runs).
+5. CMD_RESET - once to clear before next run.
 Total host commands per 48-event run: <= 5 (excluding schedule upload chunks).
 
 ### State ownership
@@ -5679,7 +5670,7 @@ Rationale: timing differences in a continuous loop (e.g., maturation at
 exact tick boundary vs host command latency) may cause minor fixed-point
 shifts, but the learning trajectory must remain materially identical.
 
-### Tier 4.23a — Continuous / Stop-Batching Parity Local Reference
+### Tier 4.23a - Continuous / Stop-Batching Parity Local Reference
 
 Status: **LOCAL PASS (21/21 criteria)**
 
@@ -5712,7 +5703,7 @@ zero_synthetic_fallback = True
 
 Claim boundary: LOCAL only. Proves the continuous loop logic matches the chunked 4.22x reference exactly (all raw deltas 0). NOT hardware evidence, NOT full continuous on-chip learning, NOT speedup evidence, NOT multi-core scaling, and NOT final autonomy.
 
-### Tier 4.23b — Runtime Continuous Loop Implementation
+### Tier 4.23b - Runtime Continuous Loop Implementation
 
 Status: **PASS (28/28 host tests)**
 
@@ -5730,9 +5721,9 @@ Continuous auto-pause when schedule exhausted
 Host test coverage:
 
 ```text
-test_state_schedule_entry_write_and_read — PASS
-test_state_continuous_tick — PASS
-test_state_continuous_auto_pause — PASS
+test_state_schedule_entry_write_and_read - PASS
+test_state_continuous_tick - PASS
+test_state_continuous_auto_pause - PASS
 (plus 25 existing tests, all PASS)
 ```
 
@@ -5746,9 +5737,9 @@ colony_controller.pause()
 
 Protocol spec: promoted to 0.11, Section 8 no longer DRAFT.
 
-### Tier 4.23c — One-Board Hardware Continuous Smoke
+### Tier 4.23c - One-Board Hardware Continuous Smoke
 
-Status: **HARDWARE PASS — INGESTED**
+Status: **HARDWARE PASS - INGESTED**
 
 Runner: `experiments/tier4_23c_continuous_hardware_smoke.py`
 Modes: `local`, `prepare`, `run-hardware`, `ingest`
@@ -5809,7 +5800,7 @@ learning parity with the local fixed-point reference. It is not full
 native v2.1, not speedup evidence, not multi-core scaling, and not
 final on-chip autonomy.
 
-### Tier 4.24 — Custom Runtime Resource Characterization
+### Tier 4.24 - Custom Runtime Resource Characterization
 
 Status: **PASS (16/16 criteria)**
 
@@ -5843,9 +5834,9 @@ Claim boundary: resource-measurement evidence only. Proves the continuous path
 reduces host commands during execution versus the chunked command-driven
 micro-loop. Does not prove speedup, multi-core scaling, or final autonomy.
 
-### Tier 4.25B — Two-Core State/Learning Split Smoke
+### Tier 4.25B - Two-Core State/Learning Split Smoke
 
-Status: **HARDWARE PASS — INGESTED (23/23 criteria)**
+Status: **HARDWARE PASS - INGESTED (23/23 criteria)**
 
 Runner: `experiments/tier4_25b_two_core_split_smoke.py`
 Modes: `local`, `prepare`, `run-hardware`, `ingest`
@@ -5911,9 +5902,9 @@ Claim boundary: The returned hardware pass proves that a two-core state/learning
 
 Key design insight: The state core weight stays at 0 because it never matures. The learning core must compute prediction dynamically at maturation time using its own weight, not use the stale prediction=0 sent by the state core.
 
-## Tier 4.25C — Two-Core State/Learning Split Repeatability
+## Tier 4.25C - Two-Core State/Learning Split Repeatability
 
-Status: **HARDWARE PASS — INGESTED (23/23 criteria per seed, 3 seeds)**
+Status: **HARDWARE PASS - INGESTED (23/23 criteria per seed, 3 seeds)**
 
 Question: Does the two-core state/learning split reproduce the monolithic
 single-core result within tolerance across seeds 42, 43, and 44?
@@ -5971,13 +5962,13 @@ Reference traces:
 
 Host command cadence per seed:
 ```text
-1. CMD_RESET — once on both cores at start.
-2. State slot writes — once before run (4 ctx + 4 route + 4 memory).
-3. Schedule upload — 48 CMD_WRITE_SCHEDULE_ENTRY to state core.
-4. CMD_RUN_CONTINUOUS — once on both cores.
-5. CMD_PAUSE — once on both cores at end.
-6. CMD_READ_STATE — once on both cores at end.
-7. CMD_RESET — once on both cores before next seed.
+1. CMD_RESET - once on both cores at start.
+2. State slot writes - once before run (4 ctx + 4 route + 4 memory).
+3. Schedule upload - 48 CMD_WRITE_SCHEDULE_ENTRY to state core.
+4. CMD_RUN_CONTINUOUS - once on both cores.
+5. CMD_PAUSE - once on both cores at end.
+6. CMD_READ_STATE - once on both cores at end.
+7. CMD_RESET - once on both cores before next seed.
 Total host commands per seed: <= 10 + 48 schedule entries.
 ```
 
@@ -6030,7 +6021,7 @@ Nonclaims:
 
 ### Next step after 4.25C pass
 
-Tier 4.26 — Four-Core Context/Route/Memory/Learning Distributed Smoke.
+Tier 4.26 - Four-Core Context/Route/Memory/Learning Distributed Smoke.
 
 ### Next step if 4.25C fails or blocks
 
@@ -6038,9 +6029,9 @@ Ingest and classify the exact failure stage. Preserve returned artifacts.
 Update EBRAINS/custom-runtime lessons. Repair the smallest failing layer
 locally. Do not expand to four cores until two-core repeatability is proven.
 
-## Tier 4.26 — Four-Core Context/Route/Memory/Learning Distributed Smoke
+## Tier 4.26 - Four-Core Context/Route/Memory/Learning Distributed Smoke
 
-Status: **Step 7 PASSED, Step 8 INGESTED** — EBRAINS package `cra_426f`
+Status: **Step 7 PASSED, Step 8 INGESTED** - EBRAINS package `cra_426f`
 passed on hardware (board 10.11.194.1, cores 4/5/6/7). All 30/30 criteria
 passed. Learning core returned exact monolithic reference values:
 weight=32768, bias=0, 48 decisions, 48 reward events, 48 pending created,
@@ -6131,16 +6122,16 @@ Reference traces:
 
 Host command cadence:
 ```text
-1. CMD_RESET — once on all four cores at start.
-2. State slot writes — once per core before run:
+1. CMD_RESET - once on all four cores at start.
+2. State slot writes - once per core before run:
    - 4 context writes to core 4
    - 4 route writes to core 5
    - 4 memory writes to core 6
-3. Schedule upload — 48 CMD_WRITE_SCHEDULE_ENTRY to core 7.
-4. CMD_RUN_CONTINUOUS — once on all four cores.
-5. CMD_PAUSE — once on all four cores at end.
-6. CMD_READ_STATE — once on all four cores at end.
-7. CMD_RESET — once on all four cores before next run.
+3. Schedule upload - 48 CMD_WRITE_SCHEDULE_ENTRY to core 7.
+4. CMD_RUN_CONTINUOUS - once on all four cores.
+5. CMD_PAUSE - once on all four cores at end.
+6. CMD_READ_STATE - once on all four cores at end.
+7. CMD_RESET - once on all four cores before next run.
 Total host commands per run: <= 14 + 48 schedule entries.
 ```
 
@@ -6271,11 +6262,11 @@ Decision rule:
 - If MCPL fails, repair MCPL before claiming scalable runtime architecture; any SDP-based continuation must be labeled temporary/non-scaling.
 
 
-## Tier 4.28a — Four-Core MCPL Repeatability
+## Tier 4.28a - Four-Core MCPL Repeatability
 
 Tier 4.28a follows the Tier 4.27 MCPL migration decision. It is the three-seed hardware repeatability gate required to freeze `CRA_NATIVE_RUNTIME_BASELINE_v0.1`.
 
-Status: **PASS, INGESTED, BASELINE FROZEN** — `baselines/CRA_NATIVE_RUNTIME_BASELINE_v0.1.md`
+Status: **PASS, INGESTED, BASELINE FROZEN** - `baselines/CRA_NATIVE_RUNTIME_BASELINE_v0.1.md`
 
 Question: Does the MCPL-based four-core distributed scaffold execute reliably on real SpiNNaker silicon across multiple seeds?
 
@@ -6320,9 +6311,9 @@ Excluded from baseline (nonclaims):
 
 Phase B (4.28b+): v0.1+ mechanism maturation or harder task transfer.
 
-### Tier 4.28b — Delayed-Cue Four-Core MCPL Hardware Probe
+### Tier 4.28b - Delayed-Cue Four-Core MCPL Hardware Probe
 
-Status: **PASS, INGESTED** — Board 10.11.213.9, cores 4/5/6/7, 38/38 criteria.
+Status: **PASS, INGESTED** - Board 10.11.213.9, cores 4/5/6/7, 38/38 criteria.
 
 Question: Can the four-core MCPL scaffold execute a real delayed-cue task where
 target = -feature (predict opposite sign)?
@@ -6343,12 +6334,12 @@ Not speedup. Not v2.1 mechanism transfer.
 
 ### Next Step After 4.28b Pass
 
-Tier 4.28c — Three-seed delayed-cue repeatability (seeds 42, 43, 44) to validate
+Tier 4.28c - Three-seed delayed-cue repeatability (seeds 42, 43, 44) to validate
 task transfer robustness before mechanism maturation.
 
-### Tier 4.28c — Delayed-Cue Three-Seed Repeatability
+### Tier 4.28c - Delayed-Cue Three-Seed Repeatability
 
-Status: **PASS, INGESTED** — Seeds 42/43/44, all 38/38 criteria per seed.
+Status: **PASS, INGESTED** - Seeds 42/43/44, all 38/38 criteria per seed.
 
 Evidence:
 - Seed 42: weight=-32769, bias=-1, pending=48/48, stale=0, timeouts=0
@@ -6363,20 +6354,20 @@ Still single-chip only. Not multi-chip, not speedup, not v2.1 transfer.
 ### Next Step After 4.28c Pass
 
 Phase B continues. Options:
-1. Harder task transfer — hard_noisy_switching or sensor_control on four-core MCPL
-2. Mechanism maturation — add keyed context-memory, predictive binding, or replay
-3. Resource expansion — test schedule lengths 96/192 to characterize DTCM headroom
-4. Multi-chip feasibility — local build/wiring validation
+1. Harder task transfer - hard_noisy_switching or sensor_control on four-core MCPL
+2. Mechanism maturation - add keyed context-memory, predictive binding, or replay
+3. Resource expansion - test schedule lengths 96/192 to characterize DTCM headroom
+4. Multi-chip feasibility - local build/wiring validation
 
 Candidate directions (pick one per Phase B cycle):
-1. **Harder task transfer** — Move the 48-event delayed-credit micro-loop to a harder task (e.g., delayed cue, hard noisy switching) while preserving the four-core MCPL scaffold.
-2. **Mechanism maturation** — Add one v2.1 software mechanism to the native runtime (e.g., keyed context-memory, internal replay, or predictive binding) and validate it on the 48-event scaffold.
-3. **Resource expansion** — Test schedule lengths beyond 48 events (96, 192) to characterize ITCM/RAM headroom before adding mechanisms.
-4. **Multi-chip feasibility** — Local build and wiring validation for multi-chip MCPL routing.
+1. **Harder task transfer** - Move the 48-event delayed-credit micro-loop to a harder task (e.g., delayed cue, hard noisy switching) while preserving the four-core MCPL scaffold.
+2. **Mechanism maturation** - Add one v2.1 software mechanism to the native runtime (e.g., keyed context-memory, internal replay, or predictive binding) and validate it on the 48-event scaffold.
+3. **Resource expansion** - Test schedule lengths beyond 48 events (96, 192) to characterize ITCM/RAM headroom before adding mechanisms.
+4. **Multi-chip feasibility** - Local build and wiring validation for multi-chip MCPL routing.
 
-### Tier 4.28d — Hard Noisy Switching Four-Core MCPL Hardware Probe
+### Tier 4.28d - Hard Noisy Switching Four-Core MCPL Hardware Probe
 
-Status: **PASS, INGESTED** — Package `cra_428j`. Seeds 42/43/44, all 38/38 criteria per seed.
+Status: **PASS, INGESTED** - Package `cra_428j`. Seeds 42/43/44, all 38/38 criteria per seed.
   (cra_428i deprecated: `test_runtime.c` assertion failure due to surprise gating
    mismatch in `test_state_pending_horizon_signed_switch_update`; fixed by
    lowering prediction from 1.5→0.5 so |error|=1.5 < SURPRISE_THRESHOLD=2.0.)
@@ -6402,9 +6393,9 @@ Claim boundary:
 - Single-chip only; not multi-chip, not speedup, not v2.1 mechanism transfer
 - Host still required for setup and readback
 
-### Tier 4.28e — Native Failure-Envelope Report
+### Tier 4.28e - Native Failure-Envelope Report
 
-Status: **COMPLETE** — Local sweep executed, three hardware probe points run, all ingested.
+Status: **COMPLETE** - Local sweep executed, three hardware probe points run, all ingested.
 
 Question: What is the measured operating envelope of the four-core MCPL runtime?
 Where does it fail as schedule length, state pressure, pending concurrency, and lookup
@@ -6421,7 +6412,7 @@ Hypothesis: The runtime fails predictably at resource limits:
 - Short delays increase concurrent pending without changing event count ✓ OBSERVED
 
 Null hypothesis: The runtime has hidden failure modes before advertised limits,
-or the limits are not the actual bottlenecks. REJECTED — hardware confirmed exact boundary.
+or the limits are not the actual bottlenecks. REJECTED - hardware confirmed exact boundary.
 
 Sweep dimensions (local):
 1. Schedule length: 16, 32, 48, 64, 80, 96, 128, 192 events
@@ -6439,12 +6430,12 @@ Predicted breakpoints:
 - MCPL timeout/stale when lookup volume exceeds router bandwidth
 
 Hardware probe points (executed):
-- Point A: Highest-pressure passing config — 64 events, delay=(1,1), noise=0.6, seed=42.
+- Point A: Highest-pressure passing config - 64 events, delay=(1,1), noise=0.6, seed=42.
   Board 10.11.193.65. PASS 38/38. Weight=-3225, bias=8530. Pending=64/64, lookups=192/192.
-- Point B: First predicted failure — 78 events, delay=(3,5), noise=0.2, seed=42.
+- Point B: First predicted failure - 78 events, delay=(3,5), noise=0.2, seed=42.
   Board 10.11.193.129. BOUNDARY CONFIRMED. 64/78 schedule uploads succeeded, 14 rejected.
   pending_created=64 (capped at limit), lookup_requests=192 (64×3). No crashes, no exceptions.
-- Point C: High pending-pressure passing config — 43 events, delay=(7,10), noise=0.2, seed=42.
+- Point C: High pending-pressure passing config - 43 events, delay=(7,10), noise=0.2, seed=42.
   Board 10.11.194.1. PASS 38/38. Weight=101376, bias=5120, exact 0% error vs reference.
   Pending=43/43, lookups=129/129, max_concurrent_pending=10.
 
@@ -6456,9 +6447,9 @@ Pass criteria:
 - Claim boundary documents exact safe operating region ✓
 
 Fail criteria:
-- Local sweep does not predict any breakpoint — NOT TRIGGERED
-- Hardware fails at a point local sweep predicted as safe — NOT TRIGGERED
-- All hardware points pass, giving no envelope boundary — NOT TRIGGERED
+- Local sweep does not predict any breakpoint - NOT TRIGGERED
+- Hardware fails at a point local sweep predicted as safe - NOT TRIGGERED
+- All hardware points pass, giving no envelope boundary - NOT TRIGGERED
 
 Claim boundary:
 - This is resource/timing characterization evidence, not a new learning mechanism
@@ -6468,9 +6459,9 @@ Claim boundary:
 
 ---
 
-## Phase C — Mechanism Migration Map (v2.1 → Native)
+## Phase C - Mechanism Migration Map (v2.1 → Native)
 
-Status: **DEFINED** — Baseline `CRA_NATIVE_TASK_BASELINE_v0.2` frozen. Mechanism migration
+Status: **DEFINED** - Baseline `CRA_NATIVE_TASK_BASELINE_v0.2` frozen. Mechanism migration
 order and blockers documented. Phase C entry authorized.
 
 ### Promoted Mechanisms (eligible for native transfer)
@@ -6504,9 +6495,9 @@ Branch from `CRA_NATIVE_TASK_BASELINE_v0.2` only. Run local build validation bef
 
 ---
 
-### Tier 4.29a — Native Keyed-Memory Overcapacity Gate
+### Tier 4.29a - Native Keyed-Memory Overcapacity Gate
 
-Status: **HARDWARE PASS, INGESTED** — Three-seed repeatability complete.
+Status: **HARDWARE PASS, INGESTED** - Three-seed repeatability complete.
   Seed 42: board 10.11.193.145, 47/47 criteria
   Seed 43: board 10.11.194.129, 47/47 criteria
   Seed 44: board 10.11.193.81, 47/47 criteria
@@ -6524,16 +6515,16 @@ Hypothesis: The native context slot table can support multiple keyed entries (up
 correctly retrieve `context[key]` for feature computation.
 
 Null hypothesis: The native context table corrupts under multi-slot pressure, wrong keys
-return garbage instead of failing cleanly, slot overwrites leak old data, or shuffle
+return invalid data instead of failing cleanly, slot overwrites leak old data, or shuffle
 reordering breaks lookup consistency.
 
-Mechanism under test: **Keyed context memory** — promoted from v2.1 Tier 5.10g.
+Mechanism under test: **Keyed context memory** - promoted from v2.1 Tier 5.10g.
 The host writes keyed context slots (`ctx_A`, `ctx_B`, `ctx_C`, ...) and the runtime
 retrieves the correct slot by key during feature composition.
 
 Claim boundary:
 - Native keyed context lookup works for up to N slots (where N ≤ 128 and fits in ITCM).
-- Wrong-key lookups fail cleanly (return default/zero, not garbage).
+- Wrong-key lookups fail cleanly (return default/zero, not invalid data).
 - Slot overwrites replace old data without leakage.
 - Slot-shuffle reordering preserves lookup correctness.
 - This is a single-mechanism bridge; not routing, not replay, not predictive binding.
@@ -6561,7 +6552,7 @@ Backends: Local custom C reference first; SpiNNaker hardware second.
 Hardware mode: Chunked scheduling (within 512-event envelope).
 
 Controls:
-1. **Wrong-key control**: Schedule event with key not in table → expect default/zero feature, not garbage.
+1. **Wrong-key control**: Schedule event with key not in table → expect default/zero feature, not invalid data.
 2. **Slot-shuffle control**: Rewrite slots in different order → key-based lookup must still return correct values.
 3. **Overwrite control**: Rewrite existing slot with new value → old value must not leak into subsequent lookups.
 4. **Host-composed sham**: Host computes feature directly from known slot values → compare to chip-computed feature raw deltas.
@@ -6592,14 +6583,14 @@ Pass criteria:
 - All slot writes succeed
 - All schedule uploads succeed (≤64 events)
 - Chip-computed features match host reference within raw delta 0
-- Wrong-key events fail cleanly (no garbage, no crash)
+- Wrong-key events fail cleanly (no invalid data, no crash)
 - Overwrite events retrieve new value, not old value
 - Shuffle events maintain correct key-value mapping
 - Final readback shows expected slot hit/miss counts
 - 38/38 criteria pass (or tier-specific equivalent)
 
 Fail criteria:
-- Wrong-key lookup returns garbage instead of default
+- Wrong-key lookup returns invalid data instead of default
 - Slot overwrite leaks old data
 - Shuffle breaks key-value mapping
 - Feature raw deltas nonzero (indicates lookup error)
@@ -6638,17 +6629,17 @@ Promotion/freeze condition:
 Re-entry condition if parked:
 - If ITCM overflow prevents multi-slot profile: profile size, reduce slot count, or
   defer to host-side keyed context until ITCM budget allows.
-- If wrong-key lookup returns garbage: fix slot table initialization/default-value policy.
+- If wrong-key lookup returns invalid data: fix slot table initialization/default-value policy.
 - If overwrite leaks: fix slot table write logic (clear old value before writing new).
 
 Next step after 4.29a: Tier 4.29b (native routing/composition gate) only if 4.29a
 passes compact regression. If 4.29a fails, park keyed memory and document blocker.
 
-### Tier 4.29b — Native Routing/Composition Gate
+### Tier 4.29b - Native Routing/Composition Gate
 
-Status: **HARDWARE PASS, INGESTED** — Three-seed repeatability complete.
+Status: **HARDWARE PASS, INGESTED** - Three-seed repeatability complete.
 Previous: cra_429c FAILED on EBRAINS (48/52 per seed, 3 seeds). Root cause:
-C runtime readback bug in host_interface.c — context-slot counters were emitted
+C runtime readback bug in host_interface.c - context-slot counters were emitted
 for ALL profiles, but route_core updated route-slot counters. Host read zeros.
 Fixed with profile-specific readback logic. Rebuilt all profiles. Bumped to cra_429d.
 Hardware evidence (cra_429d):
@@ -6672,17 +6663,17 @@ values, and the chip-side contract correctly retrieves `route[key]` for feature
 composition alongside context.
 
 Null hypothesis: Route lookups corrupt feature composition, wrong-route keys return
-garbage, route overwrites leak old data, or the composition formula breaks when
+invalid data, route overwrites leak old data, or the composition formula breaks when
 route is not neutral.
 
-Mechanism under test: **Keyed route composition** — promoted from v2.1 Tier 5.13c.
+Mechanism under test: **Keyed route composition** - promoted from v2.1 Tier 5.13c.
 The host writes keyed context slots and keyed route slots; the runtime retrieves
 both by key and computes `feature = context[key] * route[key] * cue`.
 
 Claim boundary:
 - Native keyed route lookup works for up to N slots (where N ≤ 8 and fits in ITCM).
 - Non-neutral route values (+1.0, -1.0) correctly affect feature composition.
-- Wrong-route lookups fail cleanly (return default/zero, not garbage).
+- Wrong-route lookups fail cleanly (return default/zero, not invalid data).
 - Route overwrites replace old data without leakage.
 - Context controls from 4.29a still pass with route added to composition.
 - This is a single-mechanism bridge; not replay, not predictive binding.
@@ -6750,7 +6741,7 @@ Pass criteria:
 - Final readback shows expected context and route slot hit/miss counts
 
 Fail criteria:
-- Wrong-route lookup returns garbage instead of default
+- Wrong-route lookup returns invalid data instead of default
 - Route overwrite leaks old data
 - Feature raw deltas nonzero (indicates composition error)
 - ITCM overflow under multi-slot profile
@@ -6783,15 +6774,15 @@ Promotion/freeze condition:
 
 Re-entry condition if parked:
 - If route lookup corrupts context: verify lookup isolation in C runtime.
-- If wrong-route returns garbage: fix route slot table default-value policy.
+- If wrong-route returns invalid data: fix route slot table default-value policy.
 - If route overwrite leaks: fix route slot table write logic.
 
 Next step after 4.29b: Tier 4.29c (native predictive binding bridge) only if 4.29b
 passes compact regression. If 4.29b fails, park routing/composition and document blocker.
 
-### Tier 4.29c — Native Predictive Binding Bridge
+### Tier 4.29c - Native Predictive Binding Bridge
 
-Status: **HARDWARE PASS, INGESTED** — Three-seed repeatability complete.
+Status: **HARDWARE PASS, INGESTED** - Three-seed repeatability complete.
 Previous: No previous hardware attempt. First pass with cra_429h.
 Hardware evidence (cra_429h):
   Seed 42: board 10.11.214.49, 24/24 criteria, weight=30912, bias=-1856
@@ -6813,14 +6804,14 @@ and the weight update uses this prediction target instead of the raw cue.
 Null hypothesis: Prediction target equals reward target (no separation), or
 prediction computation corrupts learning.
 
-Mechanism under test: **Predictive binding** — promoted from v2.1 Tier 5.17e.
+Mechanism under test: **Predictive binding** - promoted from v2.1 Tier 5.17e.
 The host writes context and route slots; the runtime computes prediction target
 before outcome and uses it for weight update.
 
 Claim boundary:
 - Native prediction-before-reward works for up to N slots (where N ≤ 8 and fits in ITCM).
 - Prediction target differs from reward target when context is present.
-- Zero-context prediction returns default/zero, not garbage.
+- Zero-context prediction returns default/zero, not invalid data.
 - This is a single-mechanism bridge; not replay, not confidence gating.
 
 Nonclaims:
@@ -6910,9 +6901,9 @@ Re-entry condition if parked:
 Next step after 4.29c: Tier 4.29d (native self-evaluation bridge) only if 4.29c
 passes compact regression. If 4.29c fails, park predictive binding and document blocker.
 
-### Tier 4.29d — Native Self-Evaluation Bridge
+### Tier 4.29d - Native Self-Evaluation Bridge
 
-Status: **HARDWARE PASS, INGESTED** — Three-seed repeatability complete.
+Status: **HARDWARE PASS, INGESTED** - Three-seed repeatability complete.
 Previous: cra_429i FAILED on EBRAINS (all controls received effective confidence=1.0,
 producing identical weight=30912 regardless of confidence condition). Root cause:
 C runtime MCPL lookup protocol does not transmit confidence.
@@ -6944,7 +6935,7 @@ learning exactly when any slot confidence is zero.
 Null hypothesis: Learning proceeds regardless of confidence (confidence is
 ignored), or confidence scaling corrupts weight updates beyond tolerance.
 
-Mechanism under test: **Confidence-gated learning (self-evaluation)** — promoted
+Mechanism under test: **Confidence-gated learning (self-evaluation)** - promoted
 from v2.1 Tier 5.18c. The host writes context/route/memory slots with confidence
 values; the runtime computes composite confidence and modulates learning rate
 in `_apply_reward_to_feature_prediction`.
@@ -7058,9 +7049,9 @@ Re-entry condition if parked:
 Next step after 4.29d: Tier 4.29e (replay/consolidation bridge) only if 4.29d
 passes compact regression. If 4.29d fails, park self-evaluation and document blocker.
 
-### Tier 4.29e — Native Replay/Consolidation Bridge
+### Tier 4.29e - Native Replay/Consolidation Bridge
 
-Status: **DESIGN COMPLETE, LOCAL PASS, HARDWARE PENDING** — Local reference passes
+Status: **DESIGN COMPLETE, LOCAL PASS, HARDWARE PENDING** - Local reference passes
 all four controls. Package `cra_429o` prepared and submitted (reuses `cra_429j`
 binaries; no C runtime changes required). Earlier attempts failed and are
 noncanonical: `cra_429k` missing runner, `cra_429l` bad board-probe helper,
@@ -7081,7 +7072,7 @@ correct-key, wrong-key, and random-event replay conditions.
 Null hypothesis: Replay events corrupt the native state pipeline, or the runtime
 cannot distinguish correct-key replay from wrong-key/no-replay conditions.
 
-Mechanism under test: **Host-scheduled replay/consolidation** — promoted from
+Mechanism under test: **Host-scheduled replay/consolidation** - promoted from
 v2.1 Tier 5.11d. The host writes context/route/memory slots and constructs a
 schedule where later events replay earlier ones. No native replay buffers are
 used; the existing schedule primitive handles all event presentations.

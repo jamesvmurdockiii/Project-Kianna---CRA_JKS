@@ -16,7 +16,7 @@ Tier 5.2 extends Tier 5.1 by repeating the same CRA and external-baseline compar
 - This is controlled software evidence, not hardware evidence.
 - Passing this tier means the learning curves are complete and interpretable; it does not require CRA to win every task.
 - A simple learner beating CRA is recorded as a scientific finding, not hidden as a harness failure.
-- Tier 4.16 hardware should use the strongest task identified here, not a task chosen by vibes.
+- Tier 4.16 hardware should use the strongest task identified here, not a task chosen without evidence.
 
 ## Task-Level Interpretation
 

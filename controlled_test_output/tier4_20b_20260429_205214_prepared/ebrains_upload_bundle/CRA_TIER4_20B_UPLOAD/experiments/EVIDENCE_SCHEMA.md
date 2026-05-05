@@ -74,7 +74,7 @@ This repo uses five evidence labels so paper claims stay clean:
 - **Failed/parked diagnostic evidence**: clean negative evidence retained to prevent p-hacking and explain why a mechanism was not promoted.
 - **Hardware prepare/probe evidence**: prepared capsules and one-off probes; these are not hardware claims until returned artifacts are reviewed and explicitly promoted.
 
-In short: `noncanonical` does not mean worthless. It means "not a formal registry/paper-table claim by itself." A frozen baseline such as v1.6, v1.7, v1.9, v2.0, or v2.1 is stronger than an ordinary diagnostic even when its source bundle remains outside the canonical registry.
+In short: `noncanonical` means the result is audit-relevant but not a formal registry/paper-table claim by itself. A frozen baseline such as v1.6, v1.7, v1.9, v2.0, or v2.1 is stronger than an ordinary diagnostic even when its source bundle remains outside the canonical registry.
 
 ## Citation Rules
 

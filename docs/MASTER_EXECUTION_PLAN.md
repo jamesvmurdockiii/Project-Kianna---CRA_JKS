@@ -238,31 +238,31 @@ What claim boundary follows?
 
 ### Phase B - Native Task Hardening After Runtime Decision
 
-13. ✅ **COMPLETE** — Tier 4.28a four-core MCPL repeatability (2026-05-02).
+13. ✅ **COMPLETE** - Tier 4.28a four-core MCPL repeatability (2026-05-02).
     Seeds 42/43/44 all pass 38/38 criteria. Zero stale replies, zero timeouts.
     Weight=32768, bias=0, pending=48/48. Freezes `CRA_NATIVE_RUNTIME_BASELINE_v0.1`.
 
-14. ✅ **COMPLETE** — Tier 4.28b delayed-cue four-core MCPL hardware probe
+14. ✅ **COMPLETE** - Tier 4.28b delayed-cue four-core MCPL hardware probe
     (2026-05-02). Seed 42, board 10.11.213.9. Weight=-32769, bias=-1, 38/38.
     First attempt (cra_428f) failed: lookup key mismatch. Fixed in cra_428g.
 
-15. ✅ **COMPLETE** — Tier 4.28c delayed-cue three-seed repeatability (2026-05-03).
+15. ✅ **COMPLETE** - Tier 4.28c delayed-cue three-seed repeatability (2026-05-03).
     Seeds 42/43/44, all 38/38. Weight=-32769, bias=-1 on all. Zero variance.
 
-16. ✅ **COMPLETE** — Tier 4.28d hard noisy switching four-core MCPL hardware probe
+16. ✅ **COMPLETE** - Tier 4.28d hard noisy switching four-core MCPL hardware probe
     (2026-05-03). Seeds 42/43/44, all 38/38. Weight=34208, bias=-1440 on all.
     Zero variance. ~62 events, regime switches, 20% noisy trials, variable delay.
     Package cra_428j (cra_428i deprecated: host test assertion failure).
 
-17. ✅ **COMPLETE** — Tier 4.28e native failure-envelope report.
+17. ✅ **COMPLETE** - Tier 4.28e native failure-envelope report.
     Local sweep complete (30 configs, 28 predicted pass, 2 predicted fail).
     Predicted breakpoint: schedule_overflow at >64 events (MAX_SCHEDULE_ENTRIES hard limit).
-    Probe Point A — HARDWARE PASS, INGESTED. Seed 42, board 10.11.193.65. 38/38 criteria.
+    Probe Point A - HARDWARE PASS, INGESTED. Seed 42, board 10.11.193.65. 38/38 criteria.
       Weight=-3225, bias=8530. Pending=64/64, lookups=192/192, stale=0, timeouts=0.
-    Probe Point B — BOUNDARY CONFIRMED (noncanonical diagnostic). Seed 42, board 10.11.193.129.
+    Probe Point B - BOUNDARY CONFIRMED (noncanonical diagnostic). Seed 42, board 10.11.193.129.
       78 events generated, 64 schedule uploads succeeded, 14 rejected. pending_created=64 (capped at limit).
       Confirms exact MAX_SCHEDULE_ENTRIES=64 boundary. No crashes, no exceptions, no stale replies.
-    Probe Point C — HARDWARE PASS, INGESTED. Seed 42, board 10.11.194.1. 38/38 criteria.
+    Probe Point C - HARDWARE PASS, INGESTED. Seed 42, board 10.11.194.1. 38/38 criteria.
       Weight=101376, bias=5120, exact 0% error vs reference. Pending=43/43, lookups=129/129, stale=0, timeouts=0.
       Confirms safe operation well below schedule limit with high pending pressure (max_concurrent_pending=10).
     POST-4.28E DECISION: MAX_SCHEDULE_ENTRIES raised from 64 to 512.
@@ -270,18 +270,18 @@ What claim boundary follows?
       (~200-step hard noisy switching, lifecycle, multi-core) without DTCM pressure.
       True on-chip event generation (no schedule array) is Tier 4.32 future work.
 
-18. ✅ **COMPLETE** — Freeze `CRA_NATIVE_TASK_BASELINE_v0.2`.
+18. ✅ **COMPLETE** - Freeze `CRA_NATIVE_TASK_BASELINE_v0.2`.
     Repeatability: 4.28a (three-seed MCPL), 4.28c (delayed-cue three-seed), 4.28d (hard switching three-seed).
     Harder native tasks: 4.28b (delayed-cue four-core), 4.28d (hard noisy switching four-core).
     Envelope measured: 4.28e (≤512 schedule entries, ≤128 context slots, ≤128 pending).
     Baseline file: `baselines/CRA_NATIVE_TASK_BASELINE_v0.2.md`.
     Registry snapshot: `baselines/CRA_NATIVE_TASK_BASELINE_v0.2_STUDY_REGISTRY.snapshot.json`.
     Supersedes `CRA_NATIVE_RUNTIME_BASELINE_v0.1`.
-    Next: Phase C (4.29a+) — mechanism migration toward native v2.1.
+    Next: Phase C (4.29a+) - mechanism migration toward native v2.1.
 
 ### Phase C - Move Promoted v2 Mechanisms Toward Native/On-Chip
 
-19. ✅ **COMPLETE** — Mechanism migration map defined.
+19. ✅ **COMPLETE** - Mechanism migration map defined.
     Promoted to native: keyed context memory (4.29a), composition/routing (4.29b),
     predictive binding (4.29c), self-evaluation (4.29d), replay/consolidation (4.29e),
     lifecycle (4.30). Parked: macro eligibility (5.9c, stays host-side).
@@ -289,23 +289,23 @@ What claim boundary follows?
     resource budget checked, compact regression after each bridge.
     Documented in `CONTROLLED_TEST_PLAN.md` Phase C section.
 
-20. ✅ **COMPLETE** — Tier 4.29a native keyed-memory overcapacity gate.
+20. ✅ **COMPLETE** - Tier 4.29a native keyed-memory overcapacity gate.
     HARDWARE PASS, INGESTED. Three-seed repeatability complete.
     Seeds 42/43/44, all 10/10 criteria. Wrong-key and slot-shuffle controls pass.
 
-21. ✅ **COMPLETE** — Tier 4.29b native routing/composition gate.
+21. ✅ **COMPLETE** - Tier 4.29b native routing/composition gate.
     HARDWARE PASS, INGESTED. Three-seed repeatability complete.
     Seeds 42/43/44, all 52/52 criteria. Previous cra_429c FAILED (48/52).
     Root cause: host_interface.c context-slot counter emission for ALL profiles.
     Fixed in C runtime, rebuilt, bumped to cra_429d.
 
-22. ✅ **COMPLETE** — Tier 4.29c native predictive-binding bridge.
+22. ✅ **COMPLETE** - Tier 4.29c native predictive-binding bridge.
     HARDWARE PASS, INGESTED. Three-seed repeatability complete.
     Seeds 42/43/44, all 24/24 criteria. Zero variance.
     Weight=30912, bias=-1856 on all seeds. Pending=20/20, lookups=60/60.
     Package: cra_429h.
 
-23. ✅ **COMPLETE** — Tier 4.29d native self-evaluation bridge.
+23. ✅ **COMPLETE** - Tier 4.29d native self-evaluation bridge.
     HARDWARE PASS, INGESTED. Three-seed repeatability complete.
     Seeds 42/43/44, all 30/30 criteria per seed, 90/90 total.
     Zero-confidence: exact weight=0, bias=0 (proves confidence gating).
@@ -313,7 +313,7 @@ What claim boundary follows?
     First attempt (cra_429i) failed: MCPL lookup lacks confidence transmission.
     Fix: revert to SDP inter-core lookup. Rebuilt as cra_429j.
 
-24. 🔄 **IN PROGRESS** — Tier 4.29e replay/consolidation bridge.
+24. 🔄 **IN PROGRESS** - Tier 4.29e replay/consolidation bridge.
     DESIGN COMPLETE, LOCAL PASS, HARDWARE PENDING.
     Host-scheduled replay through native state primitives; no C runtime changes.
     Four controls: no_replay, correct_replay, wrong_key_replay, random_event_replay.
@@ -498,7 +498,7 @@ Pass:
 the four-core runtime envelope is measured
 the bottleneck is identified
 MCPL migration decision and scope are explicit
-next tier is selected from evidence, not vibes
+next tier is selected from evidence, not informal rationale
 ```
 
 Decision logic:

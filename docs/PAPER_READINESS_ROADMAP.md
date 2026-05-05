@@ -3,7 +3,7 @@
 Generated: 2026-04-27
 
 This document is the working plan from the current evidence state to a serious
-paper-ready CRA claim. It is deliberately stricter than a hype roadmap. The goal
+paper-ready CRA claim. It is deliberately stricter than a speculative roadmap. The goal
 is to know exactly what we are trying to prove, what would count as a pass, what
 would count as a fail, and where the project would need to stop, debug, narrow
 its claim, or change direction.
@@ -276,7 +276,7 @@ failed/parked diagnostic evidence = clean negative evidence retained for audit a
 hardware prepare/probe evidence = run package or one-off probe until reviewed and promoted
 ```
 
-`Noncanonical` does not mean worthless. It means the bundle is not a formal registry/paper-table claim by itself. v1.6, v1.7, and v1.9 are baseline-frozen mechanism evidence even though their source experiment bundles are not all canonical registry entries.
+`Noncanonical` means audit-relevant but not a formal registry/paper-table claim by itself. v1.6, v1.7, and v1.9 are baseline-frozen mechanism evidence even though their source experiment bundles are not all canonical registry entries.
 
 
 This plan is allowed to move as evidence arrives. It is not allowed to quietly
@@ -398,7 +398,7 @@ predeclared pass/fail criteria before final matrices
 mean, median, std, min/max, and confidence intervals where practical
 per-seed tables and paired deltas versus baselines
 effect size versus the strongest baseline, not just the median baseline
-baseline fairness contract and comparable hyperparameter budget
+baseline fairness contract and comparable unsupported speculationrparameter budget
 compact Tier 1/Tier 2/Tier 3 regression after promoted CRA tuning changes
 leakage/oracle checks for every task adapter
 mechanism traces for dopamine, delayed credit, trophic health, lifecycle, and lineage
@@ -879,7 +879,7 @@ Fairness and statistics:
 ```text
 same task stream and causal information boundary for every model
 same train/evaluation windows and delayed reward visibility
-comparable hyperparameter sweep budget
+comparable unsupported speculationrparameter sweep budget
 report best, median, and default baseline settings
 mean, median, std, min, confidence interval, and paired per-seed deltas
 effect size versus strongest baseline
@@ -982,7 +982,7 @@ tier5_6_results.json
 Pass:
 
 ```text
-hyperparameter budgets documented
+unsupported speculationrparameter budgets documented
 best and median baseline settings reported
 CRA has at least one target-regime edge after retuning
 CRA has at least one surviving target regime:
@@ -5090,7 +5090,7 @@ trace/replay behavior cannot be audited
 
 ### Tier 4.23: Continuous / Stop-Batching Parity
 
-Current status: **4.25B HARDWARE PASS — INGESTED (23/23 criteria)**.
+Current status: **4.25B HARDWARE PASS - INGESTED (23/23 criteria)**.
 
 Tier 4.23a local reference result:
 
@@ -5159,11 +5159,11 @@ and NOT final autonomy.
 
 **Host command cadence:**
 ```text
-1. CMD_RESET — once at start.
-2. Schedule upload — once before run (may be multiple SDP packets).
-3. CMD_RUN_CONTINUOUS — once to start autonomous execution.
-4. CMD_READ_STATE — once at end (or optionally periodic during long runs).
-5. CMD_RESET — once to clear before next run.
+1. CMD_RESET - once at start.
+2. Schedule upload - once before run (may be multiple SDP packets).
+3. CMD_RUN_CONTINUOUS - once to start autonomous execution.
+4. CMD_READ_STATE - once at end (or optionally periodic during long runs).
+5. CMD_RESET - once to clear before next run.
 Total host commands per 48-event run: <= 5 (excluding schedule upload chunks).
 ```
 
@@ -5438,7 +5438,7 @@ From the exact current point:
 9. Keep Tier 0.9 reproduction hygiene current while all later work proceeds.
 10. Run Tier 4.18b expanded runtime characterization only if chunk `100` or additional seeds are worth the hardware cost.
 11. Promote Tier 5.5 expanded baselines as v0.9 controlled software evidence.
-12. Promote Tier 5.6 baseline hyperparameter fairness audit as v1.0 controlled software evidence.
+12. Promote Tier 5.6 baseline unsupported speculationrparameter fairness audit as v1.0 controlled software evidence.
 13. Promote Tier 5.7 compact regression as v1.1 controlled software evidence.
 14. Promote Tier 6.1 lifecycle/self-scaling as v1.2 controlled software evidence.
 15. Promote Tier 6.3 lifecycle sham controls as v1.3 controlled software evidence.
@@ -5965,7 +5965,7 @@ What changes from 4.25B:
 - Runner accepts `--seed` argument and rebuilds schedule per seed.
 - Aggregate criteria: max weight/bias delta across seeds ≤ 8192.
 
-Status: **HARDWARE PASS — INGESTED (23/23 per seed, 3 seeds)**
+Status: **HARDWARE PASS - INGESTED (23/23 per seed, 3 seeds)**
 
 Expected runner: `experiments/tier4_25b_two_core_split_smoke.py` with `--seed`
 argument added.
@@ -6016,7 +6016,7 @@ Hardware mode: run-hardware with RUNTIME_PROFILE=state_core on core 4 and
 RUNTIME_PROFILE=learning_core on core 5.
 
 Next plan if 4.25C passes:
-Tier 4.26 — Four-Core Context/Route/Memory/Learning Distributed Smoke.
+Tier 4.26 - Four-Core Context/Route/Memory/Learning Distributed Smoke.
 
 Next plan if 4.25C fails or blocks:
 Ingest and classify the exact failure stage per seed. Preserve returned
@@ -6077,7 +6077,7 @@ What changes from 4.25C:
 - Sequence IDs detect stale reply contamination.
 - New failure class: missing reply / timeout.
 
-Status: **HARDWARE PASS, INGESTED** — EBRAINS package `cra_426f` passed on
+Status: **HARDWARE PASS, INGESTED** - EBRAINS package `cra_426f` passed on
 hardware (board 10.11.194.1, cores 4/5/6/7). All 30/30 criteria passed.
 Learning core returned exact monolithic reference values: weight=32768, bias=0,
 48 decisions, 48 reward events, 48 pending created, 48 pending matured,

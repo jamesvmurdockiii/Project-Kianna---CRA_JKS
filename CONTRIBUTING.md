@@ -8,22 +8,22 @@ governs the core team.
 
 Read these documents in order:
 
-1. `codebasecontract.md` — the operating contract for this repo
-2. `README.md` — current status and start-here index
-3. `ARCHITECTURE.md` — three-column implementation truth matrix
-4. `docs/CODEBASE_MAP.md` — where everything lives
-5. `docs/REVIEWER_DEFENSE_PLAN.md` — how claims are defended
+1. `codebasecontract.md` - the operating contract for this repo
+2. `README.md` - current status and start-here index
+3. `ARCHITECTURE.md` - three-column implementation truth matrix
+4. `docs/CODEBASE_MAP.md` - where everything lives
+5. `docs/REVIEWER_DEFENSE_PLAN.md` - how claims are defended
 
 ## Evidence Discipline (Non-Negotiable)
 
-CRA does not accept vibe-based contributions. Every change that affects a claim
+CRA does not accept unsupported claim-based contributions. Every change that affects a claim
 must be accompanied by:
 
-1. **Explicit claim boundary** — what it proves and what it does not prove
-2. **Pass/fail criteria** — declared before looking at results
-3. **Controls or ablations** — showing the effect is causal, not leakage
-4. **Reproducible artifacts** — JSON/CSV/MD outputs with timestamps
-5. **Registry update** — if adding a new evidence tier, update
+1. **Explicit claim boundary** - what it proves and what it does not prove
+2. **Pass/fail criteria** - declared before looking at results
+3. **Controls or ablations** - showing the effect is causal, not leakage
+4. **Reproducible artifacts** - JSON/CSV/MD outputs with timestamps
+5. **Registry update** - if adding a new evidence tier, update
    `experiments/evidence_registry.py`
 
 ## How to Contribute
@@ -78,4 +78,4 @@ Custom SpiNNaker C runtime work has additional rules:
 ## License
 
 By contributing, you agree that your contributions will be licensed under the
-MIT License. See `LICENSE`.
+Apache License 2.0. See `LICENSE`.

@@ -1,88 +1,125 @@
 # Coral Reef Architecture (CRA)
 
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![Tests](https://img.shields.io/badge/tests-147%20passing-brightgreen.svg)]()
-[![Evidence](https://img.shields.io/badge/canonical%20evidence-41%20bundles-blue.svg)]()
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
+[![Tests](https://img.shields.io/badge/tests-147%20passing-brightgreen.svg)](#validation)
+[![Evidence](https://img.shields.io/badge/canonical%20evidence-41%20bundles-blue.svg)](STUDY_EVIDENCE_INDEX.md)
 
-> A biologically-inspired neuromorphic learning system that replaces global backpropagation with local spiking plasticity, trophic energy economies, and population-level selection — running on Python/PyNN and bare-metal SpiNNaker.
+Coral Reef Architecture (CRA) is a neuromorphic learning research platform for
+studying local spiking plasticity, delayed credit assignment, population-level
+selection, and SpiNNaker hardware execution without relying on global
+backpropagation as the organizing learning rule.
 
-## What is CRA?
+The repository is structured as a reproducible research artifact. Claims are tied
+to predeclared tiers, generated evidence registries, pass/fail criteria,
+controlled ablations, baseline comparisons, and explicit claim boundaries.
 
-The Coral Reef Architecture (CRA) is a research platform for neuromorphic learning built around a colony of **polyps** — leaky integrate-and-fire (LIF) neural agents connected by a directed **reef graph**. Each polyp:
+## Current Status
 
-- Earns or loses **trophic support** through three-channel energy capture
-- Modifies synapses via **dopamine-modulated STDP** (no backpropagation)
-- Survives or dies under **BAX-driven apoptosis** and **cyclin-D-gated reproduction**
-- Computes locally with **s16.15 fixed-point arithmetic** on custom SpiNNaker runtime
+| Area | Current state |
+| --- | --- |
+| Software baseline | `v2.1`, frozen after bounded host-side self-evaluation / reliability-monitoring evidence. |
+| Native hardware baseline | `CRA_NATIVE_TASK_BASELINE_v0.2`, frozen after Tiers 4.22i-4.28e. |
+| Latest ingested hardware pass | Tier 4.29d, native self-evaluation / confidence-gated learning, `30/30` criteria per seed across seeds `42`, `43`, and `44`. |
+| Active hardware run | Tier 4.29e `cra_429o`, native replay/consolidation bridge submitted; hardware result pending. |
+| Canonical registry | 41 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
+| Validation suite | 147 pytest tests plus registry, paper-table, and repository-audit generation. |
 
-The system is designed as a controlled research prototype with explicit claim boundaries, reproducible evidence bundles, and hardware execution on real SpiNNaker boards.
+## What CRA Implements
 
-## Key Features
+CRA models a population of small spiking agents called polyps. The biological
+terminology is used as an engineering abstraction, not as a claim of biological
+realism.
 
-| Feature | Implementation | Evidence |
-|---------|---------------|----------|
-| **Multi-backend learning** | NEST, Brian2, PyNN-SpiNNaker, MockSimulator | Tiers 1–3, 5.1–5.6 |
-| **Dopamine-modulated STDP** | Winner-take-all readout, delayed matured credit | Tiers 3–5.4 |
-| **Trophic energy economy** | Three-channel (sensory/outcome/retrograde), pro-rata allocation | Tiers 3, 6.1–6.3 |
-| **Lifecycle dynamics** | Cyclin-D reproduction, BAX apoptosis, lineage tracking | Tiers 6.1–6.3 |
-| **Custom C runtime** | Bare-metal SpiNNaker, four-core distributed scaffold | Tiers 4.22–4.29 |
-| **Hardware-native memory/mechanisms** | Keyed context/route/memory slots, composition, predictive binding, confidence gating, replay bridge pending | Tiers 4.29a–4.29e |
-| **Evidence discipline** | 41 canonical bundles, frozen baselines, ablations, sham controls | Registry v2.1 |
+Core implementation areas:
 
-## Hardware Evidence Summary
+- Leaky integrate-and-fire neural substrate with NEST, Brian2, mock, and
+  SpiNNaker-oriented backends.
+- Dopamine-modulated local plasticity and delayed consequence handling.
+- Trophic energy accounting, lifecycle pressure, lineage tracking, and
+  population-level selection.
+- Domain-neutral task adapters plus historical finance/trading adapters.
+- A custom SpiNNaker C runtime for native state, routing, memory, learning, and
+  mechanism-transfer experiments.
+- A tiered experiment suite with canonical and noncanonical evidence tracking.
 
-| Tier | What Was Proven | Result | Seeds |
-|------|----------------|--------|-------|
-| **4.28a** | Four-core MCPL repeatability (fixed-pattern) | 38/38 criteria, weight=32768, bias=0 | 42/43/44 |
-| **4.28b** | Delayed-cue task on MCPL scaffold | 38/38 criteria, weight=-32769, bias=-1 | 42 |
-| **4.28c** | Delayed-cue three-seed repeatability | 38/38 per seed, zero variance | 42/43/44 |
-| **4.28d** | Hard noisy switching with oracle context | 38/38 per seed, weight=34208, bias=-1440 | 42/43/44 |
-| **4.29a** | Native keyed-memory overcapacity gate | 10/10 per seed, context hits=24, misses=4 | 42/43/44 |
-| **4.29b** | Native routing/composition (context × route × cue) | **52/52 per seed**, exact parity, zero variance | 42/43/44 |
-| **4.29c** | Native predictive binding (prediction before reward) | **24/24 per seed**, weight=30912, bias=-1856 | 42/43/44 |
-| **4.29d** | Native self-evaluation (confidence-gated learning) | **30/30 per seed**, zero-confidence exact weight=0 | 42/43/44 |
-| **4.29e** | Native replay/consolidation bridge | Local pass; `cra_429o` submitted, hardware pending | 42/43/44 planned |
+## Evidence Highlights
 
-> **Claim boundary:** These prove that narrow fixed-pattern, delayed-credit, hard-switch, distributed custom-runtime, keyed-memory, routing/composition, predictive-binding, and confidence-gated-learning capsules can execute on SpiNNaker hardware and preserve expected behavior repeatably. They are **not** evidence of full hardware scaling, dynamic lifecycle on hardware, external-baseline superiority, or native on-chip replay buffers.
+| Tier | Evidence | Boundary |
+| --- | --- | --- |
+| 1-3 | Negative controls, positive learning controls, and architecture ablations. | Software controls; not hardware evidence. |
+| 4.13-4.18a | PyNN/SpiNNaker hardware capsule, repeatability, harder-task transfer, and chunked-runtime characterization. | Real hardware evidence for bounded capsules; not full hardware scaling. |
+| 5.1-5.7 | External baselines, learning curves, failure analysis, delayed-credit confirmation, fairness audit, compact regression. | Software evidence; not universal superiority. |
+| 5.10-5.18 | Memory, replay/consolidation, predictive context, composition/routing, working memory diagnostics, temporal coding, neuron-parameter sensitivity, predictive binding, and self-evaluation gates. | Mostly host-side software mechanisms unless explicitly migrated to hardware. |
+| 6.1-6.4 | Lifecycle/self-scaling, lifecycle sham controls, and circuit-motif causality. | Software organism/ecology evidence; not hardware lifecycle. |
+| 4.22-4.29 | Custom SpiNNaker runtime progression from roundtrip/load tests to four-core MCPL tasks, keyed memory, routing/composition, predictive binding, and confidence-gated learning. | Native hardware mechanism evidence for the tested capsules only. |
+
+The most current paper-facing evidence index is generated at
+[`STUDY_EVIDENCE_INDEX.md`](STUDY_EVIDENCE_INDEX.md). The machine-readable
+registry is [`controlled_test_output/STUDY_REGISTRY.json`](controlled_test_output/STUDY_REGISTRY.json).
+
+## Claim Boundary
+
+Current evidence supports this bounded claim:
+
+> CRA is a controlled neuromorphic research platform that demonstrates local
+> learning, delayed credit, mechanism sensitivity, backend portability, selected
+> software capability upgrades, and repeatable SpiNNaker hardware execution for
+> bounded task capsules and native-runtime mechanism bridges.
+
+Current evidence does not prove:
+
+- General intelligence or broad autonomous reasoning.
+- Universal superiority over external baselines.
+- Full organism lifecycle running natively on hardware.
+- Multi-chip scaling.
+- Production readiness.
+- Native on-chip replay buffers or fully autonomous on-chip learning for all
+  promoted software mechanisms.
+
+## Repository Layout
+
+| Path | Purpose |
+| --- | --- |
+| [`coral_reef_spinnaker/`](coral_reef_spinnaker) | Main Python package, task adapters, backend integration, and custom SpiNNaker runtime. |
+| [`experiments/`](experiments) | Tier runners, evidence registry tooling, audit tooling, and paper-table export. |
+| [`controlled_test_output/`](controlled_test_output) | Reproducible evidence bundles, generated registry, paper table CSV, and noncanonical audit history. |
+| [`baselines/`](baselines) | Frozen baseline locks for software and native-runtime evidence states. |
+| [`docs/`](docs) | Research documentation, roadmap, reviewer-defense plan, runbooks, whitepaper, and codebase map. |
+| [`ebrains_jobs/`](ebrains_jobs) | Source-only EBRAINS JobManager upload packages preserving what was sent to hardware. |
 
 ## Quick Start
 
-### Installation
-
 ```bash
-# Clone the repository
 git clone https://github.com/jamesvmurdockiii/Project-Kianna---CRA_JKS.git
 cd Project-Kianna---CRA_JKS
-
-# Create virtual environment
 python3 -m venv .venv
-source .venv/bin/activate  # or .venv\Scripts\activate on Windows
-
-# Install dependencies
+source .venv/bin/activate
 pip install numpy scipy matplotlib
-pip install sPyNNaker  # for SpiNNaker backend
-# OR
-pip install nest-simulator  # for NEST backend
 ```
 
-### Run Smoke Test
+Optional backend dependencies depend on the experiment being run:
 
 ```bash
-# Run validation suite
+pip install nest-simulator   # NEST-backed local experiments, if available
+pip install sPyNNaker        # SpiNNaker/PyNN experiments, if available
+```
+
+Run the standard validation suite:
+
+```bash
 make validate
-
-# Run a single smoke test with mock backend
-python3 experiments/tier1_sanity.py --backend mock
-
-# Run Tier 2 learning controls on NEST
-python3 experiments/tier2_learning.py --backend nest --seed 42
 ```
 
-### Run External Baseline Comparison
+Run a small local smoke test:
 
 ```bash
-# Compare CRA against 8 external baselines on 4 tasks
+python3 experiments/tier1_sanity.py --backend mock
+```
+
+Run a baseline comparison example:
+
+```bash
 python3 experiments/tier5_external_baselines.py \
   --backend nest \
   --seed-count 3 \
@@ -91,132 +128,60 @@ python3 experiments/tier5_external_baselines.py \
   --tasks all
 ```
 
-## Project Structure
-
-```
-coral_reef_spinnaker/          # Main Python package
-├── config.py                  # All CRA parameters with provenance tags
-├── organism.py                # Top-level orchestrator
-├── reef_network.py            # Graph topology, motifs, structural dynamics
-├── polyp_state.py             # LIF neuron with trophic/bax/cyclin-D state
-├── polyp_population.py        # PyNN population management
-├── learning_manager.py        # Dopamine STDP, no backprop
-├── energy_manager.py          # Three-channel trophic economy
-├── lifecycle.py               # Birth/death/reproduction
-├── measurement.py             # KSG MI, GCMI, BOCPD
-├── backend_factory.py         # NEST/Brian2/SpiNNaker/Mock backends
-├── spinnaker_runner.py        # Execution harness
-├── trading_bridge.py          # Finance-specific task adapter
-└── spinnaker_runtime/         # Custom bare-metal C runtime
-    ├── src/                   # C source (main.c, neuron_manager.c, etc.)
-    ├── tests/                 # Host-side C unit tests
-    ├── PROTOCOL_SPEC.md       # Host↔runtime wire protocol
-    └── Makefile               # Build system for .aplx images
-
-experiments/                   # Tier runners and tooling
-├── evidence_registry.py       # Canonical evidence registry
-├── repo_audit.py              # Repository hygiene validation
-├── export_paper_results_table.py
-├── EVIDENCE_SCHEMA.md         # Artifact schema documentation
-└── tier*.py                   # 90+ tier runners
-
-controlled_test_output/        # Reproducible evidence trail
-├── STUDY_REGISTRY.json        # Machine-readable evidence index
-├── PAPER_RESULTS_TABLE.csv    # Paper-facing results
-└── tier*_*_*/                 # Per-tier artifact bundles
-
-baselines/                     # Frozen evidence baseline locks
-├── CRA_EVIDENCE_BASELINE_v2.1.md
-├── CRA_EVIDENCE_BASELINE_v2.1.json
-└── ...
-
-docs/                          # Research documentation
-├── PAPER_READINESS_ROADMAP.md
-├── MASTER_EXECUTION_PLAN.md
-├── REVIEWER_DEFENSE_PLAN.md
-├── CODEBASE_MAP.md
-├── SPINNAKER_EBRAINS_RUNBOOK.md
-├── ABSTRACT.md
-├── WHITEPAPER.md
-└── FULL_PROJECT_STATUS.md     # Complete tier-by-tier narrative
-
-ebrains_jobs/                  # Self-contained EBRAINS upload packages
-└── cra_*/                     # Per-tier source-only packages
-```
-
-## Documentation
-
-| Document | Purpose |
-|----------|---------|
-| [`codebasecontract.md`](codebasecontract.md) | Operating contract for all contributors |
-| [`ARCHITECTURE.md`](ARCHITECTURE.md) | Three-column implementation truth matrix |
-| [`CONTROLLED_TEST_PLAN.md`](CONTROLLED_TEST_PLAN.md) | Staged tiers, pass/fail criteria, boundaries |
-| [`docs/REVIEWER_DEFENSE_PLAN.md`](docs/REVIEWER_DEFENSE_PLAN.md) | Adversarial reviewer attacks and empirical responses |
-| [`docs/PUBLIC_REPO_HYGIENE.md`](docs/PUBLIC_REPO_HYGIENE.md) | Public-repo artifact, ignore, security, EBRAINS-package, and clean/commit policy |
-| [`docs/SPINNAKER_EBRAINS_RUNBOOK.md`](docs/SPINNAKER_EBRAINS_RUNBOOK.md) | Hardware upload/run/ingest operations |
-| [`coral_reef_spinnaker/spinnaker_runtime/PROTOCOL_SPEC.md`](coral_reef_spinnaker/spinnaker_runtime/PROTOCOL_SPEC.md) | Host↔runtime wire protocol (schema v2, 105 bytes) |
-| [`STUDY_EVIDENCE_INDEX.md`](STUDY_EVIDENCE_INDEX.md) | 41-entry canonical evidence registry (human-readable) |
-| [`docs/FULL_PROJECT_STATUS.md`](docs/FULL_PROJECT_STATUS.md) | Complete tier-by-tier narrative (1,500+ lines) |
-
 ## Validation
 
-```bash
-make validate
-```
+`make validate` currently runs:
 
-Runs:
-- 147 pytest unit tests
-- Evidence registry build (41 entries, 0 failures)
-- Paper results table export
-- Repository audit (paperwork alignment)
+- 147 pytest unit tests.
+- Evidence registry generation: 41 canonical bundles, 0 failed criteria.
+- Paper results table export.
+- Repository audit.
 
-## Evidence Philosophy
+Generated outputs include:
 
-CRA is built on an unusually explicit evidence discipline:
+- [`STUDY_EVIDENCE_INDEX.md`](STUDY_EVIDENCE_INDEX.md)
+- [`docs/PAPER_RESULTS_TABLE.md`](docs/PAPER_RESULTS_TABLE.md)
+- [`docs/RESEARCH_GRADE_AUDIT.md`](docs/RESEARCH_GRADE_AUDIT.md)
+- [`controlled_test_output/README.md`](controlled_test_output/README.md)
 
-1. **No hidden failures** — failed tiers are preserved as noncanonical diagnostics
-2. **Claim boundaries are mandatory** — every result states what it does **not** prove
-3. **Frozen baselines** — historical evidence locks are never rewritten
-4. **Hardware first** — real SpiNNaker execution, zero synthetic fallback
-5. **Sham controls** — every mechanism is tested against leakage artifacts
+## Documentation Map
 
-See [`codebasecontract.md`](codebasecontract.md) Section 2 for the full thinking contract.
-
-## Current Status
-
-- **Software baseline:** v2.1 frozen (host-side self-evaluation / reliability-monitoring)
-- **Hardware baseline:** `CRA_NATIVE_TASK_BASELINE_v0.2` frozen (Tiers 4.22i–4.28e)
-- **Latest ingested hardware pass:** Tier 4.29d — native self-evaluation / confidence-gated learning, 30/30 criteria per seed, 3 seeds
-- **Active hardware run:** Tier 4.29e `cra_429o` — native replay/consolidation bridge submitted, hardware pending
-- **Registry:** 41 canonical bundles, 0 missing artifacts, 0 failed criteria
+| Document | Purpose |
+| --- | --- |
+| [`docs/ABSTRACT.md`](docs/ABSTRACT.md) | Concise project abstract and current evidence boundary. |
+| [`docs/WHITEPAPER.md`](docs/WHITEPAPER.md) | Technical overview of architecture, evidence, limitations, and roadmap. |
+| [`docs/PAPER_READINESS_ROADMAP.md`](docs/PAPER_READINESS_ROADMAP.md) | Strategic roadmap toward paper-ready claims. |
+| [`docs/MASTER_EXECUTION_PLAN.md`](docs/MASTER_EXECUTION_PLAN.md) | Operational execution sequence from the current state. |
+| [`CONTROLLED_TEST_PLAN.md`](CONTROLLED_TEST_PLAN.md) | Tier definitions, hypotheses, controls, pass/fail criteria, and claim boundaries. |
+| [`docs/REVIEWER_DEFENSE_PLAN.md`](docs/REVIEWER_DEFENSE_PLAN.md) | Reviewer attack matrix and planned safeguards. |
+| [`docs/CODEBASE_MAP.md`](docs/CODEBASE_MAP.md) | File-by-file map of source, experiments, runtime code, and evidence areas. |
+| [`docs/SPINNAKER_EBRAINS_RUNBOOK.md`](docs/SPINNAKER_EBRAINS_RUNBOOK.md) | EBRAINS/SpiNNaker upload, run, ingest, and troubleshooting guide. |
+| [`docs/PUBLIC_REPO_HYGIENE.md`](docs/PUBLIC_REPO_HYGIENE.md) | Public repository artifact policy, security checks, and clean/commit SOP. |
+| [`codebasecontract.md`](codebasecontract.md) | Maintainer operating contract for evidence discipline and repository updates. |
 
 ## Contributing
 
-Read [`CONTRIBUTING.md`](CONTRIBUTING.md) before opening issues or PRs. Key rules:
-
-- Evidence first — no claim without pass criteria declared upfront
-- One mechanism at a time — add, test, ablate, compare, regress, then freeze
-- Local before hardware — `make validate` must pass before EBRAINS runs
-- Update docs immediately — stale docs are bugs
+Read [`CONTRIBUTING.md`](CONTRIBUTING.md) before opening issues or pull requests.
+Changes that affect claims must include explicit pass/fail criteria, controls or
+ablations, reproducible artifacts, and documentation updates. Generated registry
+and paper-table files should be regenerated through tooling rather than edited by
+hand.
 
 ## Citation
 
-If you use CRA in your research, please cite the canonical evidence registry:
+If you use this repository in research, cite the evidence registry and the exact
+commit used. A placeholder software citation is:
 
 ```bibtex
 @software{cra_2026,
-  title={Coral Reef Architecture: A Biologically-Inspired Neuromorphic Learning System},
-  author={Murdock, James V. and CRA Contributors},
-  year={2026},
-  url={https://github.com/jamesvmurdockiii/Project-Kianna---CRA_JKS},
-  note={41 canonical evidence bundles. Hardware validated on SpiNNaker.}
+  title        = {Coral Reef Architecture: A Neuromorphic Local-Learning Research Platform},
+  author       = {Murdock, James V. and CRA Contributors},
+  year         = {2026},
+  url          = {https://github.com/jamesvmurdockiii/Project-Kianna---CRA_JKS},
+  note         = {41 canonical evidence bundles; bounded SpiNNaker hardware validation}
 }
 ```
 
 ## License
 
-Apache 2.0 — see [`LICENSE`](LICENSE).
-
----
-
-**Built for review by serious neuromorphic, SNN, and machine-learning researchers.**
+Apache License 2.0. See [`LICENSE`](LICENSE).
