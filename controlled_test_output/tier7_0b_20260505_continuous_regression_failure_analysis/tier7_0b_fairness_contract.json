@@ -1,0 +1,17 @@
+{
+  "capture_timing": "adapter.evaluate callback before current target learning",
+  "no_future_leakage": [
+    "ridge probes fit only on train prefix",
+    "features captured before current target updates CRA state",
+    "same chronological stream generation as Tier 7.0"
+  ],
+  "nonclaims": [
+    "not hardware evidence",
+    "not a tuning run",
+    "not a promoted mechanism",
+    "not a new baseline freeze"
+  ],
+  "same_tasks_and_split": true,
+  "source_tier": "Tier 7.0",
+  "tier": "Tier 7.0b - Continuous-Regression Failure Analysis"
+}

@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-05-05T14:03:08.435500+00:00",
+  "source_generated_at_utc": "2026-05-05T13:57:35+00:00",
+  "registry_entry_id": "tier7_0b_continuous_regression_failure_analysis",
+  "tier": "Tier 7.0b - Continuous-Regression Failure Analysis",
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_0b_20260505_continuous_regression_failure_analysis",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_0b_20260505_continuous_regression_failure_analysis/tier7_0b_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_0b_20260505_continuous_regression_failure_analysis/tier7_0b_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_0b_20260505_continuous_regression_failure_analysis/tier7_0b_summary.csv",
+  "canonical": true,
+  "claim": "Tier 7.0b localized the Tier 7.0 continuous-regression gap to a recoverable state-signal/default-readout failure. A leakage-safe ridge probe over CRA internal state improved aggregate geomean MSE from raw CRA 1.2233 to 0.4433, and CRA state plus the same causal lag budget improved to 0.0544; shuffled-target state control remained worse at 0.7533.",
+  "caveat": "Software diagnostic evidence only; not a tuning run, not a promoted mechanism, not hardware evidence, not a new baseline freeze, and not proof that a repaired CRA will beat standard baselines. It authorizes a bounded continuous readout/interface repair tier before hardware migration."
+}

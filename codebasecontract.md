@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-05T09:41-04:00.
+Last updated: 2026-05-05T09:58-04:00.
 
 Current repo root:
 
@@ -48,8 +48,8 @@ FROZEN: CRA_NATIVE_MECHANISM_BRIDGE_v0.3
             not a monolithic all-mechanism task, not lifecycle, not multi-chip,
             not speedup, and not external-baseline superiority.
   Supersedes: CRA_NATIVE_TASK_BASELINE_v0.2
-  Next: Tier 7.0b continuous-regression failure analysis before any tuning,
-        mechanism promotion, or benchmark migration to hardware.
+  Next: Tier 7.0c bounded continuous readout/interface repair before benchmark
+        migration to hardware.
 ```
 
 Current active hardware/custom-runtime tier:
@@ -211,14 +211,22 @@ Tier 7.0 — COMPLETE. Standard dynamical benchmark suite in software.
     best. This is not a superiority claim; it is a clean benchmark failure
     signal.
 
-Tier 7.0b — CURRENT NEXT. Continuous-regression failure analysis.
+Tier 7.0b — COMPLETE. Continuous-regression failure analysis.
   Purpose: determine why CRA underperformed on Tier 7.0 before adding,
     tuning, or moving anything to hardware.
-  Required failure classes: continuous-valued readout mismatch, long-memory or
-    reservoir-state deficiency, normalization/task-interface mismatch,
-    policy/credit mismatch, and baseline/harness unfairness.
-  Rule: no blind tuning and no hardware migration until the failure class is
-    diagnosed with artifacts.
+  Status: DIAGNOSTIC PASS. Failure class =
+    recoverable_state_signal_default_readout_failure. Raw CRA geomean MSE was
+    1.2233; leakage-safe CRA internal-state ridge probe improved to 0.4433;
+    CRA state plus the same causal lag budget improved to 0.0544; shuffled
+    target state control remained worse at 0.7533.
+
+Tier 7.0c — CURRENT NEXT. Bounded continuous readout/interface repair.
+  Purpose: test whether a predeclared, leakage-safe continuous readout/interface
+    can use the state signal found in 7.0b without becoming an unconstrained
+    supervised model.
+  Rule: add only this diagnosed mechanism, include ablations/shuffled controls,
+    compare against Tier 7.0 baselines, and run compact regression before any
+    promotion. Do not migrate this benchmark to hardware yet.
 
 
 Current status summary:
@@ -359,15 +367,15 @@ Local build capability (established 2026-05-02):
 
 Immediate next steps:
 
-1. Implement Tier 7.0b continuous-regression failure analysis over the completed
-   Tier 7.0 benchmark outputs.
-2. Compare CRA v2.1 online against diagnostic CRA variants and readout probes
-   without treating those probes as promoted mechanisms.
-3. Classify whether the failure is continuous-valued readout, internal
-   state/reservoir memory, normalization/task-interface, policy/credit
-   mismatch, or benchmark unfairness.
-4. Do not move benchmark workloads to hardware and do not tune blindly until the
-   failure class is documented.
+1. Implement Tier 7.0c bounded continuous readout/interface repair from the
+   Tier 7.0b diagnosis.
+2. Keep the repair narrow: use causal CRA state/readout features and causal lag
+   budget only; no future targets, no hidden labels, no test-row fitting.
+3. Compare against Tier 7.0 baselines plus ablations: no-state, shuffled-state,
+   shuffled-target, lag-only, and frozen/no-learning variants as appropriate.
+4. If 7.0c passes, run a compact regression/promotion gate before freezing any
+   software baseline. If it fails, narrow the claim and decide whether the next
+   mechanism is history/reservoir dynamics.
 5. Keep public repo hygiene green before the next upload or commit: no
    credentialed remotes, no `ebrains_jobs/` symlinks, no transient root output
    dirs, no generated host binaries, and `make validate` passing.

@@ -79,7 +79,7 @@ not full native v2.1, and not final autonomy.
 Current active step:
 
 ```text
-Tier 7.0b - Continuous-Regression Failure Analysis
+Tier 7.0c - Bounded Continuous Readout / Interface Repair
 ```
 
 ## 2. Immediate Baseline Decision
@@ -347,34 +347,41 @@ What claim boundary follows?
     network was best. This is a diagnostic pass and a capability gap, not a
     superiority claim and not a new baseline freeze.
 
-28. 🔄 **CURRENT ACTIVE STEP** - Tier 7.0b continuous-regression failure analysis:
-    diagnose whether the Tier 7.0 gap comes from continuous-valued readout,
-    insufficient recurrent/state memory, missing reservoir dynamics,
-    normalization/task-interface mismatch, policy/credit mismatch, or benchmark
-    unfairness. Do not tune blindly and do not move the benchmark to hardware
-    until the failure class is documented.
+28. ✅ **COMPLETE** - Tier 7.0b continuous-regression failure analysis:
+    localized the Tier 7.0 gap to
+    `recoverable_state_signal_default_readout_failure`. Raw CRA geomean MSE was
+    1.2233; leakage-safe CRA internal-state ridge probe improved to 0.4433;
+    CRA state plus the same causal lag budget improved to 0.0544; shuffled
+    target state control remained worse at 0.7533. This is diagnostic evidence,
+    not a promoted repair.
+
+29. 🔄 **CURRENT ACTIVE STEP** - Tier 7.0c bounded continuous readout/interface repair:
+    use the Tier 7.0b diagnosis to test a narrow, auditable continuous readout
+    or interface mechanism. Must include ablations/shuffled controls, compare
+    against Tier 7.0 baselines, and remain software-only until a promotion gate
+    passes.
 
 ### Phase D - Lifecycle / Organism Dynamics Native Path
 
-29. Tier 4.30 lifecycle-native contract: preallocated pool only. No dynamic
+30. Tier 4.30 lifecycle-native contract: preallocated pool only. No dynamic
     PyNN population creation mid-run. Birth/cleavage/death are activation,
     masking, assignment, or lineage events inside static state.
 
-30. Tier 4.30a local static-pool lifecycle reference: active/inactive masks,
+31. Tier 4.30a local static-pool lifecycle reference: active/inactive masks,
     lineage IDs, trophic state, birth/cleavage/death counters, fixed max-pool
     control, random event replay control.
 
-31. Tier 4.30b single-core lifecycle mask smoke: prove a tiny static pool can
+32. Tier 4.30b single-core lifecycle mask smoke: prove a tiny static pool can
     activate/silence units, preserve lineage, and read back lifecycle telemetry.
 
-32. Tier 4.30c multi-core lifecycle state split: distribute lifecycle masks and
+33. Tier 4.30c multi-core lifecycle state split: distribute lifecycle masks and
     lineage across the selected runtime protocol without corrupting state.
 
-33. Tier 4.30d lifecycle sham-control hardware subset: fixed max pool, random
+34. Tier 4.30d lifecycle sham-control hardware subset: fixed max pool, random
     event replay, mask shuffle, no trophic pressure, no dopamine/plasticity if
     applicable. Keep it small but reviewer-defensible.
 
-34. Freeze `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` only if lifecycle telemetry,
+35. Freeze `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` only if lifecycle telemetry,
     controls, resource accounting, and at least one useful task effect pass. If
     lifecycle does not help, narrow the organism claim.
 
@@ -614,30 +621,31 @@ After each completed run or design tier:
 The next concrete action is:
 
 ```text
-Tier 7.0b - Continuous-Regression Failure Analysis
+Tier 7.0c - Bounded Continuous Readout / Interface Repair
 ```
 
 Purpose:
 
 ```text
-Diagnose why CRA v2.1 ranked 5/5 on the completed Tier 7.0 standard dynamical
-benchmark suite before tuning, mechanism work, or hardware migration.
+Use the Tier 7.0b diagnosis to test whether a bounded, leakage-safe continuous
+readout/interface can extract the predictive signal already present in CRA
+state on Mackey-Glass, Lorenz, and NARMA10.
 ```
 
 Required coverage:
 
 ```text
-Use completed Tier 7.0 artifacts for Mackey-Glass, Lorenz, and NARMA10.
-Readout probe: test whether a fair causal probe on CRA state closes the gap.
-State-memory probe: test whether CRA carries enough history for NARMA10.
-Task-interface probe: test whether continuous target scaling or sign-oriented
-feedback explains the gap.
-Credit/policy probe: test whether dopamine/consequence timing mismatches MSE.
-Fairness probe: verify no baseline/CRA leakage or stream mismatch.
+Use same Tier 7.0 task streams, seeds, splits, and train-prefix normalization.
+Repair candidate: bounded continuous readout/interface over causal CRA state.
+Controls: no-state/readout-only, lag-only, shuffled-state, shuffled-target,
+frozen/no-learning where applicable.
+Metrics: MSE, NMSE, tail MSE, geomean aggregate, per-seed variance.
+Compare against Tier 7.0 baselines and Tier 7.0 raw CRA.
 ```
 
-Do not tune blindly. Tier 7.0b may recommend a repair tier, but it must not
-silently promote a mechanism and must not move this benchmark to hardware.
+Do not tune blindly. Tier 7.0c is still software-only. If it passes, run a
+separate compact regression/promotion gate before freezing a software baseline
+or planning hardware migration.
 
 
 ## 13. Make-Or-Break Gates

@@ -14,7 +14,7 @@ mechanism promotion, lifecycle/ecology evidence, and native SpiNNaker runtime
 migration. The generated registry is the authority for which results are
 canonical.
 
-The current canonical evidence trail contains **44 registered evidence bundles**
+The current canonical evidence trail contains **45 registered evidence bundles**
 with all expected artifacts present and all criteria passing:
 
 ```text
@@ -62,6 +62,7 @@ with all expected artifacts present and all criteria passing:
 42. Tier 4.29e - Native Replay/Consolidation Bridge
 43. Tier 4.29f - Compact Native Mechanism Regression
 44. Tier 7.0 - Standard Dynamical Benchmark Suite
+45. Tier 7.0b - Continuous-Regression Failure Analysis
 ```
 
 Completed noncanonical diagnostics:
@@ -7374,7 +7375,7 @@ diagnosed.
 
 ### Tier 7.0b - Continuous-Regression Failure Analysis
 
-Status: **DEFINED / CURRENT NEXT GATE**.
+Status: **PASS / DIAGNOSTIC COMPLETE**.
 
 Question: Why does CRA v2.1 underperform standard causal sequence baselines on
 the Tier 7.0 continuous-valued dynamical benchmark suite?
@@ -7427,3 +7428,72 @@ Promotion/freeze condition:
 - Tier 7.0b does not freeze a baseline by itself.
 - A later repair or mechanism tier must pass ablations, baselines, and compact
   regression before any new software baseline is frozen.
+
+Canonical result:
+- Output: `controlled_test_output/tier7_0b_20260505_continuous_regression_failure_analysis/`.
+- Runner: `experiments/tier7_0b_continuous_regression_failure_analysis.py`.
+- Criteria: `10 / 10`.
+- Failure class: `recoverable_state_signal_default_readout_failure`.
+- Raw CRA aggregate geomean MSE: `1.223255942741316`.
+- CRA internal-state ridge probe geomean MSE: `0.44329167010892245`.
+- CRA state plus same causal lag budget geomean MSE: `0.054439372091655114`.
+- Shuffled-target state control geomean MSE: `0.7532851635211467`.
+- State improvement over raw CRA: `2.759483259499883`.
+- State plus lag improvement over raw CRA: `22.47005973327209`.
+
+Interpretation:
+- The Tier 7.0 gap is not simply "CRA has no useful signal."
+- CRA internal state carries useful continuous-regression information, but the
+  default online colony readout/interface does not extract it well.
+- The large state-plus-lag improvement indicates these benchmarks reward causal
+  history features; a bounded readout/interface repair is justified before
+  adding broader organism mechanisms.
+
+Next step after Tier 7.0b: Tier 7.0c bounded continuous readout/interface
+repair. Do not move this benchmark to hardware until a repair/promotion gate
+passes.
+
+### Tier 7.0c - Bounded Continuous Readout / Interface Repair
+
+Status: **DEFINED / CURRENT NEXT GATE**.
+
+Question: Can CRA use the predictive signal identified in Tier 7.0b through a
+bounded, leakage-safe continuous readout/interface rather than an external
+diagnostic probe?
+
+Hypothesis: A narrow continuous readout/interface over causal CRA state will
+improve Mackey-Glass, Lorenz, NARMA10, and aggregate geomean MSE versus raw CRA
+while surviving shuffled/ablated controls and not becoming an unconstrained
+supervised model.
+
+Null hypothesis: The Tier 7.0b diagnostic improvement cannot be converted into
+a bounded CRA mechanism, or the improvement is explained by lag-only features,
+shuffled targets, or leakage.
+
+Required comparisons:
+- Raw CRA v2.1 online from Tier 7.0.
+- Bounded continuous readout/interface repair.
+- No-state/readout-only ablation.
+- Lag-only baseline with same causal lag budget.
+- Shuffled-state control.
+- Shuffled-target control.
+- Frozen/no-learning control where applicable.
+- Tier 7.0 external baselines for context.
+
+Pass criteria:
+- Repair improves aggregate geomean MSE over raw CRA.
+- Repair is meaningfully better than shuffled-state and shuffled-target
+  controls.
+- Repair is not fully explained by lag-only features.
+- No future leakage, no test-row fitting, and same causal stream/split.
+- Compact regression is scheduled before any baseline freeze.
+
+Fail criteria:
+- Repair only wins through test leakage or unconstrained supervised fitting.
+- Lag-only or shuffled controls explain the improvement.
+- Repair degrades prior compact controls enough that it cannot be promoted.
+
+Promotion/freeze condition:
+- Tier 7.0c alone does not freeze a baseline.
+- A separate compact regression/promotion gate must pass before freezing a new
+  software baseline.

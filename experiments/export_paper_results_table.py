@@ -88,6 +88,14 @@ PREFERRED_METRICS = [
     "best_non_cra_model",
     "best_non_cra_geomean_mse_mean",
     "cra_vs_best_non_cra_mse_ratio",
+    "failure_class",
+    "raw_cra_geomean_mse",
+    "state_probe_geomean_mse",
+    "state_plus_lag_geomean_mse",
+    "shuffled_control_geomean_mse",
+    "state_improvement_over_raw",
+    "state_plus_lag_improvement_over_raw",
+    "state_vs_shuffled_control_advantage",
 ]
 
 

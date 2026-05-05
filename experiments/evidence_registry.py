@@ -992,6 +992,26 @@ SPECS: tuple[EvidenceSpec, ...] = (
             "tier7_0_fairness_contract.json",
         ),
     ),
+    EvidenceSpec(
+        entry_id="tier7_0b_continuous_regression_failure_analysis",
+        tier_label="Tier 7.0b - Continuous-Regression Failure Analysis",
+        plan_position="Phase E standard benchmark diagnostics: CRA continuous-regression gap localization",
+        canonical_dir="tier7_0b_20260505_continuous_regression_failure_analysis",
+        results_file="tier7_0b_results.json",
+        report_file="tier7_0b_report.md",
+        summary_file="tier7_0b_summary.csv",
+        harness="experiments/tier7_0b_continuous_regression_failure_analysis.py",
+        evidence_role="standard benchmark failure-analysis diagnostic",
+        claim="Tier 7.0b localized the Tier 7.0 continuous-regression gap to a recoverable state-signal/default-readout failure. A leakage-safe ridge probe over CRA internal state improved aggregate geomean MSE from raw CRA 1.2233 to 0.4433, and CRA state plus the same causal lag budget improved to 0.0544; shuffled-target state control remained worse at 0.7533.",
+        caveat="Software diagnostic evidence only; not a tuning run, not a promoted mechanism, not hardware evidence, not a new baseline freeze, and not proof that a repaired CRA will beat standard baselines. It authorizes a bounded continuous readout/interface repair tier before hardware migration.",
+        latest_manifest_names=("tier7_0b_latest_manifest.json",),
+        expected_extra_files=(
+            "tier7_0b_aggregate.csv",
+            "tier7_0b_fairness_contract.json",
+            "tier7_0b_feature_inventory.csv",
+            "tier7_0b_probe_timeseries.csv",
+        ),
+    ),
 )
 
 

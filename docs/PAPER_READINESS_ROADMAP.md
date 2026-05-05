@@ -6217,12 +6217,15 @@ Immediate roadmap boundary:
 Tier 4.29f is an evidence-regression gate over already-ingested real hardware
 passes, not a new hardware execution and not a single-task all-mechanism stack
 proof.
-Tier 7.0 standard dynamical benchmarks are now complete. The harness passed
-10/10 criteria, but CRA v2.1 online ranked 5/5 against the tested causal
-sequence baselines by aggregate geometric-mean MSE. The current next gate is
-Tier 7.0b continuous-regression failure analysis.
-Do not move benchmark workloads to hardware until the software failure class is
-diagnosed.
+Tier 7.0 standard dynamical benchmarks are complete. The harness passed 10/10
+criteria, but CRA v2.1 online ranked 5/5 against the tested causal sequence
+baselines by aggregate geometric-mean MSE. Tier 7.0b is also complete and
+localized the gap to a recoverable state-signal/default-readout failure: raw
+CRA geomean MSE was 1.2233, a leakage-safe internal-state probe improved to
+0.4433, and CRA state plus the same causal lag budget improved to 0.0544.
+The current next gate is Tier 7.0c bounded continuous readout/interface repair.
+Do not move benchmark workloads to hardware until a software repair/promotion
+gate passes.
 ```
 
 Paper implication:
@@ -6234,7 +6237,9 @@ migrated into the custom SpiNNaker runtime one mechanism at a time.
 native replay buffers, biological sleep, lifecycle hardware, multi-chip scaling,
 speedup, or external-baseline superiority.
 Tier 7.0 adds a reviewer-facing limitation: CRA v2.1 is not yet competitive on
-the tested continuous-valued standard dynamical regression suite. The correct
-paper posture is to cite this honestly and run Tier 7.0b before any repair or
-claim expansion.
+the tested continuous-valued standard dynamical regression suite. Tier 7.0b
+turns that limitation into a specific engineering/science question: the
+organism state contains useful signal, but the default online readout/interface
+does not extract it. The correct paper posture is to cite this honestly and
+test Tier 7.0c before any claim expansion.
 ```

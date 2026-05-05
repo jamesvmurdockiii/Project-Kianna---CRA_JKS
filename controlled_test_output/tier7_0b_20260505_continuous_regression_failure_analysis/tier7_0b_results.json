@@ -1,0 +1,1624 @@
+{
+  "aggregate_rows": [
+    {
+      "geomean_mse": 0.45507128707181765,
+      "geomean_nmse": 0.6223726886655784,
+      "model": "cra_internal_state_ridge_probe",
+      "seed": 42,
+      "status": "pass",
+      "task": "all_three_geomean"
+    },
+    {
+      "geomean_mse": 0.3142313581397442,
+      "geomean_nmse": 0.5049069949977721,
+      "model": "cra_internal_state_ridge_probe",
+      "seed": 43,
+      "status": "pass",
+      "task": "all_three_geomean"
+    },
+    {
+      "geomean_mse": 0.5605723651152055,
+      "geomean_nmse": 0.8838626420197648,
+      "model": "cra_internal_state_ridge_probe",
+      "seed": 44,
+      "status": "pass",
+      "task": "all_three_geomean"
+    },
+    {
+      "geomean_mse": 0.7054909682997896,
+      "geomean_nmse": 0.9648561076997343,
+      "model": "cra_internal_state_shuffled_target_control",
+      "seed": 42,
+      "status": "pass",
+      "task": "all_three_geomean"
+    },
+    {
+      "geomean_mse": 0.8398575464769114,
+      "geomean_nmse": 1.3494832359451427,
+      "model": "cra_internal_state_shuffled_target_control",
+      "seed": 43,
+      "status": "pass",
+      "task": "all_three_geomean"
+    },
+    {
+      "geomean_mse": 0.714506975786739,
+      "geomean_nmse": 1.1265735927432523,
+      "model": "cra_internal_state_shuffled_target_control",
+      "seed": 44,
+      "status": "pass",
+      "task": "all_three_geomean"
+    },
+    {
+      "geomean_mse": 1.3166091674767206,
+      "geomean_nmse": 1.80064445014066,
+      "model": "cra_online_raw",
+      "seed": 42,
+      "status": "pass",
+      "task": "all_three_geomean"
+    },
+    {
+      "geomean_mse": 1.2316074184773704,
+      "geomean_nmse": 1.9789469910378148,
+      "model": "cra_online_raw",
+      "seed": 43,
+      "status": "pass",
+      "task": "all_three_geomean"
+    },
+    {
+      "geomean_mse": 1.1215512422698573,
+      "geomean_nmse": 1.768366237514152,
+      "model": "cra_online_raw",
+      "seed": 44,
+      "status": "pass",
+      "task": "all_three_geomean"
+    },
+    {
+      "geomean_mse": 0.7113623962998381,
+      "geomean_nmse": 0.97288609450512,
+      "model": "cra_prediction_affine_probe",
+      "seed": 42,
+      "status": "pass",
+      "task": "all_three_geomean"
+    },
+    {
+      "geomean_mse": 0.650179604342242,
+      "geomean_nmse": 1.044708689103173,
+      "model": "cra_prediction_affine_probe",
+      "seed": 43,
+      "status": "pass",
+      "task": "all_three_geomean"
+    },
+    {
+      "geomean_mse": 0.5679243537581011,
+      "geomean_nmse": 0.8954546299777755,
+      "model": "cra_prediction_affine_probe",
+      "seed": 44,
+      "status": "pass",
+      "task": "all_three_geomean"
+    },
+    {
+      "geomean_mse": 0.4515672545942209,
+      "geomean_nmse": 0.6175804414370486,
+      "model": "cra_prediction_plus_observed_probe",
+      "seed": 42,
+      "status": "pass",
+      "task": "all_three_geomean"
+    },
+    {
+      "geomean_mse": 0.3701165149525113,
+      "geomean_nmse": 0.5947032736325895,
+      "model": "cra_prediction_plus_observed_probe",
+      "seed": 43,
+      "status": "pass",
+      "task": "all_three_geomean"
+    },
+    {
+      "geomean_mse": 0.41748676238847576,
+      "geomean_nmse": 0.6582574807038892,
+      "model": "cra_prediction_plus_observed_probe",
+      "seed": 44,
+      "status": "pass",
+      "task": "all_three_geomean"
+    },
+    {
+      "geomean_mse": 0.051520643387590936,
+      "geomean_nmse": 0.07046157878524877,
+      "model": "cra_state_plus_lag_probe",
+      "seed": 42,
+      "status": "pass",
+      "task": "all_three_geomean"
+    },
+    {
+      "geomean_mse": 0.04891975591718032,
+      "geomean_nmse": 0.0786042713954204,
+      "model": "cra_state_plus_lag_probe",
+      "seed": 43,
+      "status": "pass",
+      "task": "all_three_geomean"
+    },
+    {
+      "geomean_mse": 0.06287771697019409,
+      "geomean_nmse": 0.09914021543681556,
+      "model": "cra_state_plus_lag_probe",
+      "seed": 44,
+      "status": "pass",
+      "task": "all_three_geomean"
+    }
+  ],
+  "aggregate_summary": [
+    {
+      "geomean_mse_mean": 0.054439372091655114,
+      "geomean_mse_median": 0.051520643387590936,
+      "geomean_mse_worst": 0.06287771697019409,
+      "geomean_nmse_mean": 0.08273535520582824,
+      "model": "cra_state_plus_lag_probe",
+      "rank_by_geomean_mse": 1,
+      "seed_count": 3,
+      "status": "pass"
+    },
+    {
+      "geomean_mse_mean": 0.41305684397840264,
+      "geomean_mse_median": 0.41748676238847576,
+      "geomean_mse_worst": 0.4515672545942209,
+      "geomean_nmse_mean": 0.6235137319245091,
+      "model": "cra_prediction_plus_observed_probe",
+      "rank_by_geomean_mse": 2,
+      "seed_count": 3,
+      "status": "pass"
+    },
+    {
+      "geomean_mse_mean": 0.44329167010892245,
+      "geomean_mse_median": 0.45507128707181765,
+      "geomean_mse_worst": 0.5605723651152055,
+      "geomean_nmse_mean": 0.6703807752277052,
+      "model": "cra_internal_state_ridge_probe",
+      "rank_by_geomean_mse": 3,
+      "seed_count": 3,
+      "status": "pass"
+    },
+    {
+      "geomean_mse_mean": 0.6431554514667271,
+      "geomean_mse_median": 0.650179604342242,
+      "geomean_mse_worst": 0.7113623962998381,
+      "geomean_nmse_mean": 0.9710164711953562,
+      "model": "cra_prediction_affine_probe",
+      "rank_by_geomean_mse": 4,
+      "seed_count": 3,
+      "status": "pass"
+    },
+    {
+      "geomean_mse_mean": 0.7532851635211467,
+      "geomean_mse_median": 0.714506975786739,
+      "geomean_mse_worst": 0.8398575464769114,
+      "geomean_nmse_mean": 1.1469709787960432,
+      "model": "cra_internal_state_shuffled_target_control",
+      "rank_by_geomean_mse": 5,
+      "seed_count": 3,
+      "status": "pass"
+    },
+    {
+      "geomean_mse_mean": 1.223255942741316,
+      "geomean_mse_median": 1.2316074184773704,
+      "geomean_mse_worst": 1.3166091674767206,
+      "geomean_nmse_mean": 1.8493192262308755,
+      "model": "cra_online_raw",
+      "rank_by_geomean_mse": 6,
+      "seed_count": 3,
+      "status": "pass"
+    }
+  ],
+  "backend": "mock",
+  "claim_boundary": "Tier 7.0b is software diagnostic evidence only. It localizes the Tier 7.0 continuous-regression benchmark gap using leakage-safe readout/state probes. It is not a tuning run, not a promoted mechanism, not hardware evidence, and not a new baseline freeze.",
+  "criteria": [
+    {
+      "name": "runner revision current",
+      "note": "",
+      "passed": true,
+      "rule": "expected current source",
+      "value": "tier7_0b_continuous_regression_failure_analysis_20260505_0001"
+    },
+    {
+      "name": "all task names known",
+      "note": "",
+      "passed": true,
+      "rule": "subset of Tier 7.0 tasks",
+      "value": [
+        "mackey_glass",
+        "lorenz",
+        "narma10"
+      ]
+    },
+    {
+      "name": "all probes completed",
+      "note": "",
+      "passed": true,
+      "rule": "all pass",
+      "value": "54/54"
+    },
+    {
+      "name": "pre-learning capture documented",
+      "note": "",
+      "passed": true,
+      "rule": "present",
+      "value": "pre_current_target_learning"
+    },
+    {
+      "name": "feature rows complete",
+      "note": "",
+      "passed": true,
+      "rule": "== 9",
+      "value": 9
+    },
+    {
+      "name": "aggregate rows complete",
+      "note": "",
+      "passed": true,
+      "rule": "== 18",
+      "value": 18
+    },
+    {
+      "name": "failure class selected",
+      "note": "",
+      "passed": true,
+      "rule": "non-empty",
+      "value": "recoverable_state_signal_default_readout_failure"
+    },
+    {
+      "name": "shuffled control present",
+      "note": "",
+      "passed": true,
+      "rule": "== true",
+      "value": true
+    },
+    {
+      "name": "raw CRA probe present",
+      "note": "",
+      "passed": true,
+      "rule": "== true",
+      "value": true
+    },
+    {
+      "name": "state probe present",
+      "note": "",
+      "passed": true,
+      "rule": "== true",
+      "value": true
+    }
+  ],
+  "criteria_passed": 10,
+  "criteria_total": 10,
+  "failed_criteria": [],
+  "failure_classification": {
+    "affine_improvement_over_raw": 1.901960000419276,
+    "failure_class": "recoverable_state_signal_default_readout_failure",
+    "prediction_affine_geomean_mse": 0.6431554514667271,
+    "prediction_plus_observed_geomean_mse": 0.41305684397840264,
+    "raw_cra_geomean_mse": 1.223255942741316,
+    "recommendation": "Design a bounded continuous readout/interface repair before adding new organism mechanisms.",
+    "shuffled_control_geomean_mse": 0.7532851635211467,
+    "state_improvement_over_raw": 2.759483259499883,
+    "state_plus_lag_advantage_over_state": 8.142850534032402,
+    "state_plus_lag_geomean_mse": 0.054439372091655114,
+    "state_plus_lag_improvement_over_raw": 22.47005973327209,
+    "state_probe_geomean_mse": 0.44329167010892245,
+    "state_vs_shuffled_control_advantage": 1.6992991619627207
+  },
+  "fairness_contract": {
+    "capture_timing": "adapter.evaluate callback before current target learning",
+    "no_future_leakage": [
+      "ridge probes fit only on train prefix",
+      "features captured before current target updates CRA state",
+      "same chronological stream generation as Tier 7.0"
+    ],
+    "nonclaims": [
+      "not hardware evidence",
+      "not a tuning run",
+      "not a promoted mechanism",
+      "not a new baseline freeze"
+    ],
+    "same_tasks_and_split": true,
+    "source_tier": "Tier 7.0",
+    "tier": "Tier 7.0b - Continuous-Regression Failure Analysis"
+  },
+  "feature_rows": [
+    {
+      "capture_steps": 720,
+      "feature_count": 95,
+      "feature_names": "bias,observed_current,cra_colony_prediction,context_memory_value,predictive_context_value,composition_module_uses,composition_router_uses,polyp0_alive,polyp0_last_output,polyp0_current_prediction,polyp0_readout_weight,polyp0_readout_bias,polyp0_activity_rate,polyp0_dopamine_ema,polyp0_output_scale,polyp0_trophic_health,polyp0_last_feature,polyp0_matured_credit,polyp1_alive,polyp1_last_output,polyp1_current_prediction,polyp1_readout_weight,polyp1_readout_bias,polyp1_activity_rate,polyp1_dopamine_ema,polyp1_output_scale,polyp1_trophic_health,polyp1_last_feature,polyp1_matured_credit,polyp2_alive,polyp2_last_output,polyp2_current_prediction,polyp2_readout_weight,polyp2_readout_bias,polyp2_activity_rate,polyp2_dopamine_ema,polyp2_output_scale,polyp2_trophic_health,polyp2_last_feature,polyp2_matured_credit,polyp3_alive,polyp3_last_output,polyp3_current_prediction,polyp3_readout_weight,polyp3_readout_bias,polyp3_activity_rate,polyp3_dopamine_ema,polyp3_output_scale,polyp3_trophic_health,polyp3_last_feature,polyp3_matured_credit,polyp4_alive,polyp4_last_output,polyp4_current_prediction,polyp4_readout_weight,polyp4_readout_bias,polyp4_activity_rate,polyp4_dopamine_ema,polyp4_output_scale,polyp4_trophic_health,polyp4_last_feature,polyp4_matured_credit,polyp5_alive,polyp5_last_output,polyp5_current_prediction,polyp5_readout_weight,polyp5_readout_bias,polyp5_activity_rate,polyp5_dopamine_ema,polyp5_output_scale,polyp5_trophic_health,polyp5_last_feature,polyp5_matured_credit,polyp6_alive,polyp6_last_output,polyp6_current_prediction,polyp6_readout_weight,polyp6_readout_bias,polyp6_activity_rate,polyp6_dopamine_ema,polyp6_output_scale,polyp6_trophic_health,polyp6_last_feature,polyp6_matured_credit,polyp7_alive,polyp7_last_output,polyp7_current_prediction,polyp7_readout_weight,polyp7_readout_bias,polyp7_activity_rate,polyp7_dopamine_ema,polyp7_output_scale,polyp7_trophic_health,polyp7_last_feature,polyp7_matured_credit",
+      "seed": 42,
+      "task": "mackey_glass",
+      "train_end": 468
+    },
+    {
+      "capture_steps": 720,
+      "feature_count": 95,
+      "feature_names": "bias,observed_current,cra_colony_prediction,context_memory_value,predictive_context_value,composition_module_uses,composition_router_uses,polyp0_alive,polyp0_last_output,polyp0_current_prediction,polyp0_readout_weight,polyp0_readout_bias,polyp0_activity_rate,polyp0_dopamine_ema,polyp0_output_scale,polyp0_trophic_health,polyp0_last_feature,polyp0_matured_credit,polyp1_alive,polyp1_last_output,polyp1_current_prediction,polyp1_readout_weight,polyp1_readout_bias,polyp1_activity_rate,polyp1_dopamine_ema,polyp1_output_scale,polyp1_trophic_health,polyp1_last_feature,polyp1_matured_credit,polyp2_alive,polyp2_last_output,polyp2_current_prediction,polyp2_readout_weight,polyp2_readout_bias,polyp2_activity_rate,polyp2_dopamine_ema,polyp2_output_scale,polyp2_trophic_health,polyp2_last_feature,polyp2_matured_credit,polyp3_alive,polyp3_last_output,polyp3_current_prediction,polyp3_readout_weight,polyp3_readout_bias,polyp3_activity_rate,polyp3_dopamine_ema,polyp3_output_scale,polyp3_trophic_health,polyp3_last_feature,polyp3_matured_credit,polyp4_alive,polyp4_last_output,polyp4_current_prediction,polyp4_readout_weight,polyp4_readout_bias,polyp4_activity_rate,polyp4_dopamine_ema,polyp4_output_scale,polyp4_trophic_health,polyp4_last_feature,polyp4_matured_credit,polyp5_alive,polyp5_last_output,polyp5_current_prediction,polyp5_readout_weight,polyp5_readout_bias,polyp5_activity_rate,polyp5_dopamine_ema,polyp5_output_scale,polyp5_trophic_health,polyp5_last_feature,polyp5_matured_credit,polyp6_alive,polyp6_last_output,polyp6_current_prediction,polyp6_readout_weight,polyp6_readout_bias,polyp6_activity_rate,polyp6_dopamine_ema,polyp6_output_scale,polyp6_trophic_health,polyp6_last_feature,polyp6_matured_credit,polyp7_alive,polyp7_last_output,polyp7_current_prediction,polyp7_readout_weight,polyp7_readout_bias,polyp7_activity_rate,polyp7_dopamine_ema,polyp7_output_scale,polyp7_trophic_health,polyp7_last_feature,polyp7_matured_credit",
+      "seed": 42,
+      "task": "lorenz",
+      "train_end": 468
+    },
+    {
+      "capture_steps": 720,
+      "feature_count": 95,
+      "feature_names": "bias,observed_current,cra_colony_prediction,context_memory_value,predictive_context_value,composition_module_uses,composition_router_uses,polyp0_alive,polyp0_last_output,polyp0_current_prediction,polyp0_readout_weight,polyp0_readout_bias,polyp0_activity_rate,polyp0_dopamine_ema,polyp0_output_scale,polyp0_trophic_health,polyp0_last_feature,polyp0_matured_credit,polyp1_alive,polyp1_last_output,polyp1_current_prediction,polyp1_readout_weight,polyp1_readout_bias,polyp1_activity_rate,polyp1_dopamine_ema,polyp1_output_scale,polyp1_trophic_health,polyp1_last_feature,polyp1_matured_credit,polyp2_alive,polyp2_last_output,polyp2_current_prediction,polyp2_readout_weight,polyp2_readout_bias,polyp2_activity_rate,polyp2_dopamine_ema,polyp2_output_scale,polyp2_trophic_health,polyp2_last_feature,polyp2_matured_credit,polyp3_alive,polyp3_last_output,polyp3_current_prediction,polyp3_readout_weight,polyp3_readout_bias,polyp3_activity_rate,polyp3_dopamine_ema,polyp3_output_scale,polyp3_trophic_health,polyp3_last_feature,polyp3_matured_credit,polyp4_alive,polyp4_last_output,polyp4_current_prediction,polyp4_readout_weight,polyp4_readout_bias,polyp4_activity_rate,polyp4_dopamine_ema,polyp4_output_scale,polyp4_trophic_health,polyp4_last_feature,polyp4_matured_credit,polyp5_alive,polyp5_last_output,polyp5_current_prediction,polyp5_readout_weight,polyp5_readout_bias,polyp5_activity_rate,polyp5_dopamine_ema,polyp5_output_scale,polyp5_trophic_health,polyp5_last_feature,polyp5_matured_credit,polyp6_alive,polyp6_last_output,polyp6_current_prediction,polyp6_readout_weight,polyp6_readout_bias,polyp6_activity_rate,polyp6_dopamine_ema,polyp6_output_scale,polyp6_trophic_health,polyp6_last_feature,polyp6_matured_credit,polyp7_alive,polyp7_last_output,polyp7_current_prediction,polyp7_readout_weight,polyp7_readout_bias,polyp7_activity_rate,polyp7_dopamine_ema,polyp7_output_scale,polyp7_trophic_health,polyp7_last_feature,polyp7_matured_credit",
+      "seed": 42,
+      "task": "narma10",
+      "train_end": 468
+    },
+    {
+      "capture_steps": 720,
+      "feature_count": 95,
+      "feature_names": "bias,observed_current,cra_colony_prediction,context_memory_value,predictive_context_value,composition_module_uses,composition_router_uses,polyp0_alive,polyp0_last_output,polyp0_current_prediction,polyp0_readout_weight,polyp0_readout_bias,polyp0_activity_rate,polyp0_dopamine_ema,polyp0_output_scale,polyp0_trophic_health,polyp0_last_feature,polyp0_matured_credit,polyp1_alive,polyp1_last_output,polyp1_current_prediction,polyp1_readout_weight,polyp1_readout_bias,polyp1_activity_rate,polyp1_dopamine_ema,polyp1_output_scale,polyp1_trophic_health,polyp1_last_feature,polyp1_matured_credit,polyp2_alive,polyp2_last_output,polyp2_current_prediction,polyp2_readout_weight,polyp2_readout_bias,polyp2_activity_rate,polyp2_dopamine_ema,polyp2_output_scale,polyp2_trophic_health,polyp2_last_feature,polyp2_matured_credit,polyp3_alive,polyp3_last_output,polyp3_current_prediction,polyp3_readout_weight,polyp3_readout_bias,polyp3_activity_rate,polyp3_dopamine_ema,polyp3_output_scale,polyp3_trophic_health,polyp3_last_feature,polyp3_matured_credit,polyp4_alive,polyp4_last_output,polyp4_current_prediction,polyp4_readout_weight,polyp4_readout_bias,polyp4_activity_rate,polyp4_dopamine_ema,polyp4_output_scale,polyp4_trophic_health,polyp4_last_feature,polyp4_matured_credit,polyp5_alive,polyp5_last_output,polyp5_current_prediction,polyp5_readout_weight,polyp5_readout_bias,polyp5_activity_rate,polyp5_dopamine_ema,polyp5_output_scale,polyp5_trophic_health,polyp5_last_feature,polyp5_matured_credit,polyp6_alive,polyp6_last_output,polyp6_current_prediction,polyp6_readout_weight,polyp6_readout_bias,polyp6_activity_rate,polyp6_dopamine_ema,polyp6_output_scale,polyp6_trophic_health,polyp6_last_feature,polyp6_matured_credit,polyp7_alive,polyp7_last_output,polyp7_current_prediction,polyp7_readout_weight,polyp7_readout_bias,polyp7_activity_rate,polyp7_dopamine_ema,polyp7_output_scale,polyp7_trophic_health,polyp7_last_feature,polyp7_matured_credit",
+      "seed": 43,
+      "task": "mackey_glass",
+      "train_end": 468
+    },
+    {
+      "capture_steps": 720,
+      "feature_count": 95,
+      "feature_names": "bias,observed_current,cra_colony_prediction,context_memory_value,predictive_context_value,composition_module_uses,composition_router_uses,polyp0_alive,polyp0_last_output,polyp0_current_prediction,polyp0_readout_weight,polyp0_readout_bias,polyp0_activity_rate,polyp0_dopamine_ema,polyp0_output_scale,polyp0_trophic_health,polyp0_last_feature,polyp0_matured_credit,polyp1_alive,polyp1_last_output,polyp1_current_prediction,polyp1_readout_weight,polyp1_readout_bias,polyp1_activity_rate,polyp1_dopamine_ema,polyp1_output_scale,polyp1_trophic_health,polyp1_last_feature,polyp1_matured_credit,polyp2_alive,polyp2_last_output,polyp2_current_prediction,polyp2_readout_weight,polyp2_readout_bias,polyp2_activity_rate,polyp2_dopamine_ema,polyp2_output_scale,polyp2_trophic_health,polyp2_last_feature,polyp2_matured_credit,polyp3_alive,polyp3_last_output,polyp3_current_prediction,polyp3_readout_weight,polyp3_readout_bias,polyp3_activity_rate,polyp3_dopamine_ema,polyp3_output_scale,polyp3_trophic_health,polyp3_last_feature,polyp3_matured_credit,polyp4_alive,polyp4_last_output,polyp4_current_prediction,polyp4_readout_weight,polyp4_readout_bias,polyp4_activity_rate,polyp4_dopamine_ema,polyp4_output_scale,polyp4_trophic_health,polyp4_last_feature,polyp4_matured_credit,polyp5_alive,polyp5_last_output,polyp5_current_prediction,polyp5_readout_weight,polyp5_readout_bias,polyp5_activity_rate,polyp5_dopamine_ema,polyp5_output_scale,polyp5_trophic_health,polyp5_last_feature,polyp5_matured_credit,polyp6_alive,polyp6_last_output,polyp6_current_prediction,polyp6_readout_weight,polyp6_readout_bias,polyp6_activity_rate,polyp6_dopamine_ema,polyp6_output_scale,polyp6_trophic_health,polyp6_last_feature,polyp6_matured_credit,polyp7_alive,polyp7_last_output,polyp7_current_prediction,polyp7_readout_weight,polyp7_readout_bias,polyp7_activity_rate,polyp7_dopamine_ema,polyp7_output_scale,polyp7_trophic_health,polyp7_last_feature,polyp7_matured_credit",
+      "seed": 43,
+      "task": "lorenz",
+      "train_end": 468
+    },
+    {
+      "capture_steps": 720,
+      "feature_count": 95,
+      "feature_names": "bias,observed_current,cra_colony_prediction,context_memory_value,predictive_context_value,composition_module_uses,composition_router_uses,polyp0_alive,polyp0_last_output,polyp0_current_prediction,polyp0_readout_weight,polyp0_readout_bias,polyp0_activity_rate,polyp0_dopamine_ema,polyp0_output_scale,polyp0_trophic_health,polyp0_last_feature,polyp0_matured_credit,polyp1_alive,polyp1_last_output,polyp1_current_prediction,polyp1_readout_weight,polyp1_readout_bias,polyp1_activity_rate,polyp1_dopamine_ema,polyp1_output_scale,polyp1_trophic_health,polyp1_last_feature,polyp1_matured_credit,polyp2_alive,polyp2_last_output,polyp2_current_prediction,polyp2_readout_weight,polyp2_readout_bias,polyp2_activity_rate,polyp2_dopamine_ema,polyp2_output_scale,polyp2_trophic_health,polyp2_last_feature,polyp2_matured_credit,polyp3_alive,polyp3_last_output,polyp3_current_prediction,polyp3_readout_weight,polyp3_readout_bias,polyp3_activity_rate,polyp3_dopamine_ema,polyp3_output_scale,polyp3_trophic_health,polyp3_last_feature,polyp3_matured_credit,polyp4_alive,polyp4_last_output,polyp4_current_prediction,polyp4_readout_weight,polyp4_readout_bias,polyp4_activity_rate,polyp4_dopamine_ema,polyp4_output_scale,polyp4_trophic_health,polyp4_last_feature,polyp4_matured_credit,polyp5_alive,polyp5_last_output,polyp5_current_prediction,polyp5_readout_weight,polyp5_readout_bias,polyp5_activity_rate,polyp5_dopamine_ema,polyp5_output_scale,polyp5_trophic_health,polyp5_last_feature,polyp5_matured_credit,polyp6_alive,polyp6_last_output,polyp6_current_prediction,polyp6_readout_weight,polyp6_readout_bias,polyp6_activity_rate,polyp6_dopamine_ema,polyp6_output_scale,polyp6_trophic_health,polyp6_last_feature,polyp6_matured_credit,polyp7_alive,polyp7_last_output,polyp7_current_prediction,polyp7_readout_weight,polyp7_readout_bias,polyp7_activity_rate,polyp7_dopamine_ema,polyp7_output_scale,polyp7_trophic_health,polyp7_last_feature,polyp7_matured_credit",
+      "seed": 43,
+      "task": "narma10",
+      "train_end": 468
+    },
+    {
+      "capture_steps": 720,
+      "feature_count": 95,
+      "feature_names": "bias,observed_current,cra_colony_prediction,context_memory_value,predictive_context_value,composition_module_uses,composition_router_uses,polyp0_alive,polyp0_last_output,polyp0_current_prediction,polyp0_readout_weight,polyp0_readout_bias,polyp0_activity_rate,polyp0_dopamine_ema,polyp0_output_scale,polyp0_trophic_health,polyp0_last_feature,polyp0_matured_credit,polyp1_alive,polyp1_last_output,polyp1_current_prediction,polyp1_readout_weight,polyp1_readout_bias,polyp1_activity_rate,polyp1_dopamine_ema,polyp1_output_scale,polyp1_trophic_health,polyp1_last_feature,polyp1_matured_credit,polyp2_alive,polyp2_last_output,polyp2_current_prediction,polyp2_readout_weight,polyp2_readout_bias,polyp2_activity_rate,polyp2_dopamine_ema,polyp2_output_scale,polyp2_trophic_health,polyp2_last_feature,polyp2_matured_credit,polyp3_alive,polyp3_last_output,polyp3_current_prediction,polyp3_readout_weight,polyp3_readout_bias,polyp3_activity_rate,polyp3_dopamine_ema,polyp3_output_scale,polyp3_trophic_health,polyp3_last_feature,polyp3_matured_credit,polyp4_alive,polyp4_last_output,polyp4_current_prediction,polyp4_readout_weight,polyp4_readout_bias,polyp4_activity_rate,polyp4_dopamine_ema,polyp4_output_scale,polyp4_trophic_health,polyp4_last_feature,polyp4_matured_credit,polyp5_alive,polyp5_last_output,polyp5_current_prediction,polyp5_readout_weight,polyp5_readout_bias,polyp5_activity_rate,polyp5_dopamine_ema,polyp5_output_scale,polyp5_trophic_health,polyp5_last_feature,polyp5_matured_credit,polyp6_alive,polyp6_last_output,polyp6_current_prediction,polyp6_readout_weight,polyp6_readout_bias,polyp6_activity_rate,polyp6_dopamine_ema,polyp6_output_scale,polyp6_trophic_health,polyp6_last_feature,polyp6_matured_credit,polyp7_alive,polyp7_last_output,polyp7_current_prediction,polyp7_readout_weight,polyp7_readout_bias,polyp7_activity_rate,polyp7_dopamine_ema,polyp7_output_scale,polyp7_trophic_health,polyp7_last_feature,polyp7_matured_credit",
+      "seed": 44,
+      "task": "mackey_glass",
+      "train_end": 468
+    },
+    {
+      "capture_steps": 720,
+      "feature_count": 95,
+      "feature_names": "bias,observed_current,cra_colony_prediction,context_memory_value,predictive_context_value,composition_module_uses,composition_router_uses,polyp0_alive,polyp0_last_output,polyp0_current_prediction,polyp0_readout_weight,polyp0_readout_bias,polyp0_activity_rate,polyp0_dopamine_ema,polyp0_output_scale,polyp0_trophic_health,polyp0_last_feature,polyp0_matured_credit,polyp1_alive,polyp1_last_output,polyp1_current_prediction,polyp1_readout_weight,polyp1_readout_bias,polyp1_activity_rate,polyp1_dopamine_ema,polyp1_output_scale,polyp1_trophic_health,polyp1_last_feature,polyp1_matured_credit,polyp2_alive,polyp2_last_output,polyp2_current_prediction,polyp2_readout_weight,polyp2_readout_bias,polyp2_activity_rate,polyp2_dopamine_ema,polyp2_output_scale,polyp2_trophic_health,polyp2_last_feature,polyp2_matured_credit,polyp3_alive,polyp3_last_output,polyp3_current_prediction,polyp3_readout_weight,polyp3_readout_bias,polyp3_activity_rate,polyp3_dopamine_ema,polyp3_output_scale,polyp3_trophic_health,polyp3_last_feature,polyp3_matured_credit,polyp4_alive,polyp4_last_output,polyp4_current_prediction,polyp4_readout_weight,polyp4_readout_bias,polyp4_activity_rate,polyp4_dopamine_ema,polyp4_output_scale,polyp4_trophic_health,polyp4_last_feature,polyp4_matured_credit,polyp5_alive,polyp5_last_output,polyp5_current_prediction,polyp5_readout_weight,polyp5_readout_bias,polyp5_activity_rate,polyp5_dopamine_ema,polyp5_output_scale,polyp5_trophic_health,polyp5_last_feature,polyp5_matured_credit,polyp6_alive,polyp6_last_output,polyp6_current_prediction,polyp6_readout_weight,polyp6_readout_bias,polyp6_activity_rate,polyp6_dopamine_ema,polyp6_output_scale,polyp6_trophic_health,polyp6_last_feature,polyp6_matured_credit,polyp7_alive,polyp7_last_output,polyp7_current_prediction,polyp7_readout_weight,polyp7_readout_bias,polyp7_activity_rate,polyp7_dopamine_ema,polyp7_output_scale,polyp7_trophic_health,polyp7_last_feature,polyp7_matured_credit",
+      "seed": 44,
+      "task": "lorenz",
+      "train_end": 468
+    },
+    {
+      "capture_steps": 720,
+      "feature_count": 95,
+      "feature_names": "bias,observed_current,cra_colony_prediction,context_memory_value,predictive_context_value,composition_module_uses,composition_router_uses,polyp0_alive,polyp0_last_output,polyp0_current_prediction,polyp0_readout_weight,polyp0_readout_bias,polyp0_activity_rate,polyp0_dopamine_ema,polyp0_output_scale,polyp0_trophic_health,polyp0_last_feature,polyp0_matured_credit,polyp1_alive,polyp1_last_output,polyp1_current_prediction,polyp1_readout_weight,polyp1_readout_bias,polyp1_activity_rate,polyp1_dopamine_ema,polyp1_output_scale,polyp1_trophic_health,polyp1_last_feature,polyp1_matured_credit,polyp2_alive,polyp2_last_output,polyp2_current_prediction,polyp2_readout_weight,polyp2_readout_bias,polyp2_activity_rate,polyp2_dopamine_ema,polyp2_output_scale,polyp2_trophic_health,polyp2_last_feature,polyp2_matured_credit,polyp3_alive,polyp3_last_output,polyp3_current_prediction,polyp3_readout_weight,polyp3_readout_bias,polyp3_activity_rate,polyp3_dopamine_ema,polyp3_output_scale,polyp3_trophic_health,polyp3_last_feature,polyp3_matured_credit,polyp4_alive,polyp4_last_output,polyp4_current_prediction,polyp4_readout_weight,polyp4_readout_bias,polyp4_activity_rate,polyp4_dopamine_ema,polyp4_output_scale,polyp4_trophic_health,polyp4_last_feature,polyp4_matured_credit,polyp5_alive,polyp5_last_output,polyp5_current_prediction,polyp5_readout_weight,polyp5_readout_bias,polyp5_activity_rate,polyp5_dopamine_ema,polyp5_output_scale,polyp5_trophic_health,polyp5_last_feature,polyp5_matured_credit,polyp6_alive,polyp6_last_output,polyp6_current_prediction,polyp6_readout_weight,polyp6_readout_bias,polyp6_activity_rate,polyp6_dopamine_ema,polyp6_output_scale,polyp6_trophic_health,polyp6_last_feature,polyp6_matured_credit,polyp7_alive,polyp7_last_output,polyp7_current_prediction,polyp7_readout_weight,polyp7_readout_bias,polyp7_activity_rate,polyp7_dopamine_ema,polyp7_output_scale,polyp7_trophic_health,polyp7_last_feature,polyp7_matured_credit",
+      "seed": 44,
+      "task": "narma10",
+      "train_end": 468
+    }
+  ],
+  "generated_at_utc": "2026-05-05T13:57:35+00:00",
+  "horizon": 8,
+  "length": 720,
+  "run_rows": [
+    {
+      "diagnostics": {
+        "probe": "raw CRA colony prediction"
+      },
+      "model": "cra_online_raw",
+      "mse": 2.3305004000924288,
+      "nmse": 2.3140420213624053,
+      "seed": 42,
+      "status": "pass",
+      "tail_mse": 2.5299124312831838,
+      "task": "mackey_glass",
+      "test_corr": -0.18542613545070719,
+      "train_mse": 2.218163494929608
+    },
+    {
+      "diagnostics": {
+        "probe": "ridge over raw CRA prediction only",
+        "weight_norm": 0.13405466902052451
+      },
+      "model": "cra_prediction_affine_probe",
+      "mse": 0.9758355642053148,
+      "nmse": 0.9689440522822617,
+      "seed": 42,
+      "status": "pass",
+      "tail_mse": 0.9070889794515767,
+      "task": "mackey_glass",
+      "test_corr": 0.18542613545070724,
+      "train_mse": 0.9835014017005805
+    },
+    {
+      "diagnostics": {
+        "probe": "ridge over CRA prediction plus current observation",
+        "weight_norm": 0.8261474309439713
+      },
+      "model": "cra_prediction_plus_observed_probe",
+      "mse": 0.6258440885255862,
+      "nmse": 0.6214242742082439,
+      "seed": 42,
+      "status": "pass",
+      "tail_mse": 0.5415381568501252,
+      "task": "mackey_glass",
+      "test_corr": 0.615625620048246,
+      "train_mse": 0.6276711581852324
+    },
+    {
+      "diagnostics": {
+        "probe": "ridge over pre-learning CRA internal state",
+        "weight_norm": 29.712596660653883
+      },
+      "model": "cra_internal_state_ridge_probe",
+      "mse": 0.5749736629373087,
+      "nmse": 0.5709131039672113,
+      "seed": 42,
+      "status": "pass",
+      "tail_mse": 0.6131032832950579,
+      "task": "mackey_glass",
+      "test_corr": 0.6561248883272646,
+      "train_mse": 0.5456110327831616
+    },
+    {
+      "diagnostics": {
+        "probe": "ridge over CRA internal state plus same lag budget used by ridge_lag",
+        "weight_norm": 35.89994295930836
+      },
+      "model": "cra_state_plus_lag_probe",
+      "mse": 0.14334480103375724,
+      "nmse": 0.14233247637408336,
+      "seed": 42,
+      "status": "pass",
+      "tail_mse": 0.13050906667949572,
+      "task": "mackey_glass",
+      "test_corr": 0.9307918267965348,
+      "train_mse": 0.14850072972334039
+    },
+    {
+      "diagnostics": {
+        "probe": "same state features fit to shuffled train targets",
+        "weight_norm": 38.67374921150511
+      },
+      "model": "cra_internal_state_shuffled_target_control",
+      "mse": 0.8614928624218495,
+      "nmse": 0.8554088575435889,
+      "seed": 42,
+      "status": "pass",
+      "tail_mse": 0.9287000501698993,
+      "task": "mackey_glass",
+      "test_corr": 0.5369794953947757,
+      "train_mse": 0.8789360991603915
+    },
+    {
+      "diagnostics": {
+        "probe": "raw CRA colony prediction"
+      },
+      "model": "cra_online_raw",
+      "mse": 0.7001235024243871,
+      "nmse": 1.7255489524820928,
+      "seed": 42,
+      "status": "pass",
+      "tail_mse": 0.7808340337939342,
+      "task": "lorenz",
+      "test_corr": 0.5207531630273728,
+      "train_mse": 0.787752266774439
+    },
+    {
+      "diagnostics": {
+        "probe": "ridge over raw CRA prediction only",
+        "weight_norm": 0.6139417991522375
+      },
+      "model": "cra_prediction_affine_probe",
+      "mse": 0.39102888231523125,
+      "nmse": 0.9637435051570237,
+      "seed": 42,
+      "status": "pass",
+      "tail_mse": 0.5167625918312659,
+      "task": "lorenz",
+      "test_corr": 0.5207531630273728,
+      "train_mse": 0.6476802893084496
+    },
+    {
+      "diagnostics": {
+        "probe": "ridge over CRA prediction plus current observation",
+        "weight_norm": 0.9237034647324097
+      },
+      "model": "cra_prediction_plus_observed_probe",
+      "mse": 0.1851846497470028,
+      "nmse": 0.45641258617969993,
+      "seed": 42,
+      "status": "pass",
+      "tail_mse": 0.3081688814158066,
+      "task": "lorenz",
+      "test_corr": 0.7447185015693776,
+      "train_mse": 0.21887177817409706
+    },
+    {
+      "diagnostics": {
+        "probe": "ridge over pre-learning CRA internal state",
+        "weight_norm": 17.156547279373964
+      },
+      "model": "cra_internal_state_ridge_probe",
+      "mse": 0.1478603536955782,
+      "nmse": 0.3644218163645945,
+      "seed": 42,
+      "status": "pass",
+      "tail_mse": 0.39167141985756876,
+      "task": "lorenz",
+      "test_corr": 0.8041468674844395,
+      "train_mse": 0.12537360975725023
+    },
+    {
+      "diagnostics": {
+        "probe": "ridge over CRA internal state plus same lag budget used by ridge_lag",
+        "weight_norm": 19.2775606478443
+      },
+      "model": "cra_state_plus_lag_probe",
+      "mse": 0.004145658623754223,
+      "nmse": 0.010217535721620817,
+      "seed": 42,
+      "status": "pass",
+      "tail_mse": 0.00879548225786607,
+      "task": "lorenz",
+      "test_corr": 0.9962918955499945,
+      "train_mse": 0.00585055646423862
+    },
+    {
+      "diagnostics": {
+        "probe": "same state features fit to shuffled train targets",
+        "weight_norm": 39.50683696948029
+      },
+      "model": "cra_internal_state_shuffled_target_control",
+      "mse": 0.4072515534656033,
+      "nmse": 1.0037264697526298,
+      "seed": 42,
+      "status": "pass",
+      "tail_mse": 0.5950497906614083,
+      "task": "lorenz",
+      "test_corr": 0.4609257021357982,
+      "train_mse": 0.8809952784657996
+    },
+    {
+      "diagnostics": {
+        "probe": "raw CRA colony prediction"
+      },
+      "model": "cra_online_raw",
+      "mse": 1.398771534448518,
+      "nmse": 1.4621279354341292,
+      "seed": 42,
+      "status": "pass",
+      "tail_mse": 1.4128410099095094,
+      "task": "narma10",
+      "test_corr": 0.27763730010860976,
+      "train_mse": 1.3934007163319593
+    },
+    {
+      "diagnostics": {
+        "probe": "ridge over raw CRA prediction only",
+        "weight_norm": 0.2903709583908576
+      },
+      "model": "cra_prediction_affine_probe",
+      "mse": 0.9433812353200667,
+      "nmse": 0.9861110438379416,
+      "seed": 42,
+      "status": "pass",
+      "tail_mse": 0.9855576526779689,
+      "task": "narma10",
+      "test_corr": 0.2776373001086098,
+      "train_mse": 0.9221053001550044
+    },
+    {
+      "diagnostics": {
+        "probe": "ridge over CRA prediction plus current observation",
+        "weight_norm": 0.4931228792990501
+      },
+      "model": "cra_prediction_plus_observed_probe",
+      "mse": 0.7945041786339009,
+      "nmse": 0.830490702584804,
+      "seed": 42,
+      "status": "pass",
+      "tail_mse": 0.8624518412928851,
+      "task": "narma10",
+      "test_corr": 0.4705509514057776,
+      "train_mse": 0.7778556129551836
+    },
+    {
+      "diagnostics": {
+        "probe": "ridge over pre-learning CRA internal state",
+        "weight_norm": 25.577123108340235
+      },
+      "model": "cra_internal_state_ridge_probe",
+      "mse": 1.1085074350051611,
+      "nmse": 1.1587165219204218,
+      "seed": 42,
+      "status": "pass",
+      "tail_mse": 1.4385538397768396,
+      "task": "narma10",
+      "test_corr": 0.4739441861153314,
+      "train_mse": 0.681510684318819
+    },
+    {
+      "diagnostics": {
+        "probe": "ridge over CRA internal state plus same lag budget used by ridge_lag",
+        "weight_norm": 14.100019280124995
+      },
+      "model": "cra_state_plus_lag_probe",
+      "mse": 0.2301274103383451,
+      "nmse": 0.24055087416221024,
+      "seed": 42,
+      "status": "pass",
+      "tail_mse": 0.1996066856310666,
+      "task": "narma10",
+      "test_corr": 0.8963949091599193,
+      "train_mse": 0.14999847693389223
+    },
+    {
+      "diagnostics": {
+        "probe": "same state features fit to shuffled train targets",
+        "weight_norm": 32.35842567493663
+      },
+      "model": "cra_internal_state_shuffled_target_control",
+      "mse": 1.000829139792781,
+      "nmse": 1.04616101189425,
+      "seed": 42,
+      "status": "pass",
+      "tail_mse": 1.078937042610376,
+      "task": "narma10",
+      "test_corr": -0.00744568612210343,
+      "train_mse": 1.0213511296120492
+    },
+    {
+      "diagnostics": {
+        "probe": "raw CRA colony prediction"
+      },
+      "model": "cra_online_raw",
+      "mse": 2.3046522404228362,
+      "nmse": 2.4969489994314396,
+      "seed": 43,
+      "status": "pass",
+      "tail_mse": 2.684446340187236,
+      "task": "mackey_glass",
+      "test_corr": -0.24100217730258153,
+      "train_mse": 2.1298362859992066
+    },
+    {
+      "diagnostics": {
+        "probe": "ridge over raw CRA prediction only",
+        "weight_norm": 0.09726731477131599
+      },
+      "model": "cra_prediction_affine_probe",
+      "mse": 0.8899615078986634,
+      "nmse": 0.9642185739364981,
+      "seed": 43,
+      "status": "pass",
+      "tail_mse": 0.9465871027173964,
+      "task": "mackey_glass",
+      "test_corr": 0.24100217730258156,
+      "train_mse": 0.9912111822412075
+    },
+    {
+      "diagnostics": {
+        "probe": "ridge over CRA prediction plus current observation",
+        "weight_norm": 0.776394123152267
+      },
+      "model": "cra_prediction_plus_observed_probe",
+      "mse": 0.5640417735868731,
+      "nmse": 0.6111045812000166,
+      "seed": 43,
+      "status": "pass",
+      "tail_mse": 0.556820606557886,
+      "task": "mackey_glass",
+      "test_corr": 0.6253127485462748,
+      "train_mse": 0.6612915477865278
+    },
+    {
+      "diagnostics": {
+        "probe": "ridge over pre-learning CRA internal state",
+        "weight_norm": 31.07335828121226
+      },
+      "model": "cra_internal_state_ridge_probe",
+      "mse": 0.5353343441272765,
+      "nmse": 0.5800018464758238,
+      "seed": 43,
+      "status": "pass",
+      "tail_mse": 0.5820340568580944,
+      "task": "mackey_glass",
+      "test_corr": 0.6509043585122541,
+      "train_mse": 0.5988740660470424
+    },
+    {
+      "diagnostics": {
+        "probe": "ridge over CRA internal state plus same lag budget used by ridge_lag",
+        "weight_norm": 18.601393170755944
+      },
+      "model": "cra_state_plus_lag_probe",
+      "mse": 0.10856885765245441,
+      "nmse": 0.11762768183844223,
+      "seed": 43,
+      "status": "pass",
+      "tail_mse": 0.12302363759479748,
+      "task": "mackey_glass",
+      "test_corr": 0.9397878447720579,
+      "train_mse": 0.16030141736649156
+    },
+    {
+      "diagnostics": {
+        "probe": "same state features fit to shuffled train targets",
+        "weight_norm": 36.38992812454856
+      },
+      "model": "cra_internal_state_shuffled_target_control",
+      "mse": 0.8960362075620341,
+      "nmse": 0.9708001375148353,
+      "seed": 43,
+      "status": "pass",
+      "tail_mse": 0.9793221910840967,
+      "task": "mackey_glass",
+      "test_corr": 0.20965801561279723,
+      "train_mse": 0.9406495492294948
+    },
+    {
+      "diagnostics": {
+        "probe": "raw CRA colony prediction"
+      },
+      "model": "cra_online_raw",
+      "mse": 0.6390936036612621,
+      "nmse": 2.432839771142028,
+      "seed": 43,
+      "status": "pass",
+      "tail_mse": 0.8023344930701648,
+      "task": "lorenz",
+      "test_corr": 0.47134360860869323,
+      "train_mse": 0.7151843974334706
+    },
+    {
+      "diagnostics": {
+        "probe": "ridge over raw CRA prediction only",
+        "weight_norm": 0.6528580502420533
+      },
+      "model": "cra_prediction_affine_probe",
+      "mse": 0.3537638661358637,
+      "nmse": 1.3466740993772535,
+      "seed": 43,
+      "status": "pass",
+      "tail_mse": 0.4905731766783799,
+      "task": "lorenz",
+      "test_corr": 0.4713436086086934,
+      "train_mse": 0.6028889245551656
+    },
+    {
+      "diagnostics": {
+        "probe": "ridge over CRA prediction plus current observation",
+        "weight_norm": 0.8857097231553019
+      },
+      "model": "cra_prediction_plus_observed_probe",
+      "mse": 0.12272745461286041,
+      "nmse": 0.46718701436331206,
+      "seed": 43,
+      "status": "pass",
+      "tail_mse": 0.17103162377455972,
+      "task": "lorenz",
+      "test_corr": 0.7399244756929109,
+      "train_mse": 0.22438801922452214
+    },
+    {
+      "diagnostics": {
+        "probe": "ridge over pre-learning CRA internal state",
+        "weight_norm": 12.684929312827096
+      },
+      "model": "cra_internal_state_ridge_probe",
+      "mse": 0.07762633720757628,
+      "nmse": 0.29550043900419154,
+      "seed": 43,
+      "status": "pass",
+      "tail_mse": 0.12998959395692156,
+      "task": "lorenz",
+      "test_corr": 0.9207853564600434,
+      "train_mse": 0.13837935491339473
+    },
+    {
+      "diagnostics": {
+        "probe": "ridge over CRA internal state plus same lag budget used by ridge_lag",
+        "weight_norm": 18.425779555758854
+      },
+      "model": "cra_state_plus_lag_probe",
+      "mse": 0.005730679796605933,
+      "nmse": 0.02181499806130525,
+      "seed": 43,
+      "status": "pass",
+      "tail_mse": 0.0041884350956014425,
+      "task": "lorenz",
+      "test_corr": 0.9982905469592157,
+      "train_mse": 0.006849725951470051
+    },
+    {
+      "diagnostics": {
+        "probe": "same state features fit to shuffled train targets",
+        "weight_norm": 36.39585268502075
+      },
+      "model": "cra_internal_state_shuffled_target_control",
+      "mse": 0.5847668906083799,
+      "nmse": 2.226034089793783,
+      "seed": 43,
+      "status": "pass",
+      "tail_mse": 0.7029657669379746,
+      "task": "lorenz",
+      "test_corr": -0.31599092035660564,
+      "train_mse": 1.1282164061015973
+    },
+    {
+      "diagnostics": {
+        "probe": "raw CRA colony prediction"
+      },
+      "model": "cra_online_raw",
+      "mse": 1.2683730788842915,
+      "nmse": 1.2757903260001404,
+      "seed": 43,
+      "status": "pass",
+      "tail_mse": 0.8516272252706685,
+      "task": "narma10",
+      "test_corr": 0.3508413580513253,
+      "train_mse": 1.2654073306586098
+    },
+    {
+      "diagnostics": {
+        "probe": "ridge over raw CRA prediction only",
+        "weight_norm": 0.3585708626450103
+      },
+      "model": "cra_prediction_affine_probe",
+      "mse": 0.873002185522304,
+      "nmse": 0.8781073655757873,
+      "seed": 43,
+      "status": "pass",
+      "tail_mse": 0.9111573459814856,
+      "task": "narma10",
+      "test_corr": 0.3508413580513253,
+      "train_mse": 0.8798598550340778
+    },
+    {
+      "diagnostics": {
+        "probe": "ridge over CRA prediction plus current observation",
+        "weight_norm": 0.48761237315274264
+      },
+      "model": "cra_prediction_plus_observed_probe",
+      "mse": 0.7324237119557632,
+      "nmse": 0.7367068111128834,
+      "seed": 43,
+      "status": "pass",
+      "tail_mse": 0.7862405036465163,
+      "task": "narma10",
+      "test_corr": 0.5146223231837443,
+      "train_mse": 0.7465794264813975
+    },
+    {
+      "diagnostics": {
+        "probe": "ridge over pre-learning CRA internal state",
+        "weight_norm": 44.81441055476364
+      },
+      "model": "cra_internal_state_ridge_probe",
+      "mse": 0.7466453534391719,
+      "nmse": 0.7510116185283287,
+      "seed": 43,
+      "status": "pass",
+      "tail_mse": 0.5928481674195893,
+      "task": "narma10",
+      "test_corr": 0.5203308267578167,
+      "train_mse": 0.6924240589285237
+    },
+    {
+      "diagnostics": {
+        "probe": "ridge over CRA internal state plus same lag budget used by ridge_lag",
+        "weight_norm": 25.260487218831887
+      },
+      "model": "cra_state_plus_lag_probe",
+      "mse": 0.18816612153831033,
+      "nmse": 0.18926648754695205,
+      "seed": 43,
+      "status": "pass",
+      "tail_mse": 0.18427541206943562,
+      "task": "narma10",
+      "test_corr": 0.9117861349599178,
+      "train_mse": 0.18401324161757512
+    },
+    {
+      "diagnostics": {
+        "probe": "same state features fit to shuffled train targets",
+        "weight_norm": 33.59742179038118
+      },
+      "model": "cra_internal_state_shuffled_target_control",
+      "mse": 1.130598884023348,
+      "nmse": 1.1372104492255053,
+      "seed": 43,
+      "status": "pass",
+      "tail_mse": 1.8003145627151729,
+      "task": "narma10",
+      "test_corr": -0.3247237987217475,
+      "train_mse": 1.0217926205671017
+    },
+    {
+      "diagnostics": {
+        "probe": "raw CRA colony prediction"
+      },
+      "model": "cra_online_raw",
+      "mse": 2.039106052701705,
+      "nmse": 2.3568833331861647,
+      "seed": 44,
+      "status": "pass",
+      "tail_mse": 2.023274233750217,
+      "task": "mackey_glass",
+      "test_corr": -0.12340541041499892,
+      "train_mse": 2.089625700211871
+    },
+    {
+      "diagnostics": {
+        "probe": "ridge over raw CRA prediction only",
+        "weight_norm": 0.07320569131198153
+      },
+      "model": "cra_prediction_affine_probe",
+      "mse": 0.854099765478762,
+      "nmse": 0.9872039266755999,
+      "seed": 44,
+      "status": "pass",
+      "tail_mse": 0.8488875471555776,
+      "task": "mackey_glass",
+      "test_corr": 0.12340541041499899,
+      "train_mse": 0.9950267950619647
+    },
+    {
+      "diagnostics": {
+        "probe": "ridge over CRA prediction plus current observation",
+        "weight_norm": 0.7690711880388532
+      },
+      "model": "cra_prediction_plus_observed_probe",
+      "mse": 0.5847310768812081,
+      "nmse": 0.6758564262370524,
+      "seed": 44,
+      "status": "pass",
+      "tail_mse": 0.5953132886057549,
+      "task": "mackey_glass",
+      "test_corr": 0.5729773150342298,
+      "train_mse": 0.6599041696115567
+    },
+    {
+      "diagnostics": {
+        "probe": "ridge over pre-learning CRA internal state",
+        "weight_norm": 47.65251275088206
+      },
+      "model": "cra_internal_state_ridge_probe",
+      "mse": 0.5762697247759309,
+      "nmse": 0.6660764445991554,
+      "seed": 44,
+      "status": "pass",
+      "tail_mse": 0.5708110089365401,
+      "task": "mackey_glass",
+      "test_corr": 0.5889476569418606,
+      "train_mse": 0.5803413216776118
+    },
+    {
+      "diagnostics": {
+        "probe": "ridge over CRA internal state plus same lag budget used by ridge_lag",
+        "weight_norm": 25.557435271327652
+      },
+      "model": "cra_state_plus_lag_probe",
+      "mse": 0.17317213527540007,
+      "nmse": 0.20015953503844405,
+      "seed": 44,
+      "status": "pass",
+      "tail_mse": 0.16295312643330184,
+      "task": "mackey_glass",
+      "test_corr": 0.8983372926516923,
+      "train_mse": 0.1810906719553421
+    },
+    {
+      "diagnostics": {
+        "probe": "same state features fit to shuffled train targets",
+        "weight_norm": 57.18184662573444
+      },
+      "model": "cra_internal_state_shuffled_target_control",
+      "mse": 0.9447739986889423,
+      "nmse": 1.092008965491191,
+      "seed": 44,
+      "status": "pass",
+      "tail_mse": 0.8748897257275663,
+      "task": "mackey_glass",
+      "test_corr": -0.12024281563741822,
+      "train_mse": 1.055028564945313
+    },
+    {
+      "diagnostics": {
+        "probe": "raw CRA colony prediction"
+      },
+      "model": "cra_online_raw",
+      "mse": 0.6587197195192347,
+      "nmse": 1.4008271117675932,
+      "seed": 44,
+      "status": "pass",
+      "tail_mse": 0.6778234977338029,
+      "task": "lorenz",
+      "test_corr": 0.5896059416616829,
+      "train_mse": 0.7974835360652768
+    },
+    {
+      "diagnostics": {
+        "probe": "ridge over raw CRA prediction only",
+        "weight_norm": 0.6079885371066225
+      },
+      "model": "cra_prediction_affine_probe",
+      "mse": 0.3781776663019408,
+      "nmse": 0.8042290405506636,
+      "seed": 44,
+      "status": "pass",
+      "tail_mse": 0.46756101673527745,
+      "task": "lorenz",
+      "test_corr": 0.589605941661683,
+      "train_mse": 0.6494593775949916
+    },
+    {
+      "diagnostics": {
+        "probe": "ridge over CRA prediction plus current observation",
+        "weight_norm": 0.9277436977226488
+      },
+      "model": "cra_prediction_plus_observed_probe",
+      "mse": 0.2276542506604923,
+      "nmse": 0.484127371603669,
+      "seed": 44,
+      "status": "pass",
+      "tail_mse": 0.40546643268826027,
+      "task": "lorenz",
+      "test_corr": 0.7302821359914722,
+      "train_mse": 0.21703847437046353
+    },
+    {
+      "diagnostics": {
+        "probe": "ridge over pre-learning CRA internal state",
+        "weight_norm": 14.152513731316509
+      },
+      "model": "cra_internal_state_ridge_probe",
+      "mse": 0.22981634014969163,
+      "nmse": 0.48872525061774896,
+      "seed": 44,
+      "status": "pass",
+      "tail_mse": 0.6389293256280356,
+      "task": "lorenz",
+      "test_corr": 0.7552402485975535,
+      "train_mse": 0.11846287465894886
+    },
+    {
+      "diagnostics": {
+        "probe": "ridge over CRA internal state plus same lag budget used by ridge_lag",
+        "weight_norm": 19.84663138431419
+      },
+      "model": "cra_state_plus_lag_probe",
+      "mse": 0.006068621654350264,
+      "nmse": 0.012905473287908031,
+      "seed": 44,
+      "status": "pass",
+      "tail_mse": 0.016423935783033417,
+      "task": "lorenz",
+      "test_corr": 0.9947339523765565,
+      "train_mse": 0.005339971382651023
+    },
+    {
+      "diagnostics": {
+        "probe": "same state features fit to shuffled train targets",
+        "weight_norm": 33.280334264874554
+      },
+      "model": "cra_internal_state_shuffled_target_control",
+      "mse": 0.4674331915547914,
+      "nmse": 0.994038994533071,
+      "seed": 44,
+      "status": "pass",
+      "tail_mse": 0.655707158033322,
+      "task": "lorenz",
+      "test_corr": 0.44148104636196384,
+      "train_mse": 0.8776029091641069
+    },
+    {
+      "diagnostics": {
+        "probe": "raw CRA colony prediction"
+      },
+      "model": "cra_online_raw",
+      "mse": 1.0503085085778447,
+      "nmse": 1.6749198125518234,
+      "seed": 44,
+      "status": "pass",
+      "tail_mse": 0.9276416450284583,
+      "task": "narma10",
+      "test_corr": 0.35076251744875736,
+      "train_mse": 1.3318268869224115
+    },
+    {
+      "diagnostics": {
+        "probe": "ridge over raw CRA prediction only",
+        "weight_norm": 0.3227473025836916
+      },
+      "model": "cra_prediction_affine_probe",
+      "mse": 0.5671095978451554,
+      "nmse": 0.9043658063908252,
+      "seed": 44,
+      "status": "pass",
+      "tail_mse": 0.6212098598101463,
+      "task": "narma10",
+      "test_corr": 0.3507625174487573,
+      "train_mse": 0.9025605262254776
+    },
+    {
+      "diagnostics": {
+        "probe": "ridge over CRA prediction plus current observation",
+        "weight_norm": 0.6433695530912222
+      },
+      "model": "cra_prediction_plus_observed_probe",
+      "mse": 0.5466334310193205,
+      "nmse": 0.8717126028590885,
+      "seed": 44,
+      "status": "pass",
+      "tail_mse": 0.5774086677051629,
+      "task": "narma10",
+      "test_corr": 0.4675006399103606,
+      "train_mse": 0.6736452324156643
+    },
+    {
+      "diagnostics": {
+        "probe": "ridge over pre-learning CRA internal state",
+        "weight_norm": 41.07181383956027
+      },
+      "model": "cra_internal_state_ridge_probe",
+      "mse": 1.3301124078858573,
+      "nmse": 2.1211211817236424,
+      "seed": 44,
+      "status": "pass",
+      "tail_mse": 2.6766306183606146,
+      "task": "narma10",
+      "test_corr": 0.23660955360305605,
+      "train_mse": 0.5267851645514329
+    },
+    {
+      "diagnostics": {
+        "probe": "ridge over CRA internal state plus same lag budget used by ridge_lag",
+        "weight_norm": 12.621049635377275
+      },
+      "model": "cra_state_plus_lag_probe",
+      "mse": 0.23654960058724306,
+      "nmse": 0.37722403411857053,
+      "seed": 44,
+      "status": "pass",
+      "tail_mse": 0.4145019342671036,
+      "task": "narma10",
+      "test_corr": 0.8327799481868507,
+      "train_mse": 0.12583616399041728
+    },
+    {
+      "diagnostics": {
+        "probe": "same state features fit to shuffled train targets",
+        "weight_norm": 47.54371211910929
+      },
+      "model": "cra_internal_state_shuffled_target_control",
+      "mse": 0.825984579670966,
+      "nmse": 1.31719197364824,
+      "seed": 44,
+      "status": "pass",
+      "tail_mse": 1.1584191543201863,
+      "task": "narma10",
+      "test_corr": -0.2198109962201249,
+      "train_mse": 1.1510237499350437
+    }
+  ],
+  "runner_revision": "tier7_0b_continuous_regression_failure_analysis_20260505_0001",
+  "runtime_seconds": 30.448753125000003,
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "status": "pass",
+  "summary": {
+    "affine_improvement_over_raw": 1.901960000419276,
+    "failure_class": "recoverable_state_signal_default_readout_failure",
+    "prediction_affine_geomean_mse": 0.6431554514667271,
+    "prediction_plus_observed_geomean_mse": 0.41305684397840264,
+    "raw_cra_geomean_mse": 1.223255942741316,
+    "recommendation": "Design a bounded continuous readout/interface repair before adding new organism mechanisms.",
+    "shuffled_control_geomean_mse": 0.7532851635211467,
+    "state_improvement_over_raw": 2.759483259499883,
+    "state_plus_lag_advantage_over_state": 8.142850534032402,
+    "state_plus_lag_geomean_mse": 0.054439372091655114,
+    "state_plus_lag_improvement_over_raw": 22.47005973327209,
+    "state_probe_geomean_mse": 0.44329167010892245,
+    "state_vs_shuffled_control_advantage": 1.6992991619627207
+  },
+  "summary_rows": [
+    {
+      "model": "cra_internal_state_ridge_probe",
+      "mse_mean": 0.562192577280172,
+      "mse_median": 0.5749736629373087,
+      "mse_std": 0.023268937666852212,
+      "mse_worst": 0.5762697247759309,
+      "nmse_mean": 0.6056637983473968,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.5886494496965641,
+      "task": "mackey_glass",
+      "test_corr_mean": 0.6319923012604597
+    },
+    {
+      "model": "cra_internal_state_shuffled_target_control",
+      "mse_mean": 0.9007676895576086,
+      "mse_median": 0.8960362075620341,
+      "mse_std": 0.0418416910018029,
+      "mse_worst": 0.9447739986889423,
+      "nmse_mean": 0.9727393201832051,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.9276373223271874,
+      "task": "mackey_glass",
+      "test_corr_mean": 0.20879823179005155
+    },
+    {
+      "model": "cra_online_raw",
+      "mse_mean": 2.22475289773899,
+      "mse_median": 2.3046522404228362,
+      "mse_std": 0.16129350620468094,
+      "mse_worst": 2.3305004000924288,
+      "nmse_mean": 2.38929145132667,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 2.412544335073546,
+      "task": "mackey_glass",
+      "test_corr_mean": -0.18327790772276256
+    },
+    {
+      "model": "cra_prediction_affine_probe",
+      "mse_mean": 0.9066322791942466,
+      "mse_median": 0.8899615078986634,
+      "mse_std": 0.06255667138355572,
+      "mse_worst": 0.9758355642053148,
+      "nmse_mean": 0.9734555176314532,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.9008545431081836,
+      "task": "mackey_glass",
+      "test_corr_mean": 0.18327790772276262
+    },
+    {
+      "model": "cra_prediction_plus_observed_probe",
+      "mse_mean": 0.5915389796645557,
+      "mse_median": 0.5847310768812081,
+      "mse_std": 0.03145857892811757,
+      "mse_worst": 0.6258440885255862,
+      "nmse_mean": 0.6361284272151043,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.5645573506712553,
+      "task": "mackey_glass",
+      "test_corr_mean": 0.6046385612095836
+    },
+    {
+      "model": "cra_state_plus_lag_probe",
+      "mse_mean": 0.14169526465387058,
+      "mse_median": 0.14334480103375724,
+      "mse_std": 0.03233321199027828,
+      "mse_worst": 0.17317213527540007,
+      "nmse_mean": 0.15337323108365655,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.138828610235865,
+      "task": "mackey_glass",
+      "test_corr_mean": 0.9229723214067617
+    },
+    {
+      "model": "cra_internal_state_ridge_probe",
+      "mse_mean": 0.15176767701761537,
+      "mse_median": 0.1478603536955782,
+      "mse_std": 0.0761702017230982,
+      "mse_worst": 0.22981634014969163,
+      "nmse_mean": 0.3828825019955116,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.38686344648084203,
+      "task": "lorenz",
+      "test_corr_mean": 0.8267241575140121
+    },
+    {
+      "model": "cra_internal_state_shuffled_target_control",
+      "mse_mean": 0.48648387854292485,
+      "mse_median": 0.4674331915547914,
+      "mse_std": 0.09027801635098266,
+      "mse_worst": 0.5847668906083799,
+      "nmse_mean": 1.407933184693161,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.6512409052109017,
+      "task": "lorenz",
+      "test_corr_mean": 0.19547194271371882
+    },
+    {
+      "model": "cra_online_raw",
+      "mse_mean": 0.6659789418682946,
+      "mse_median": 0.6587197195192347,
+      "mse_std": 0.03115580792716089,
+      "mse_worst": 0.7001235024243871,
+      "nmse_mean": 1.8530719451305713,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.7536640081993008,
+      "task": "lorenz",
+      "test_corr_mean": 0.5272342377659163
+    },
+    {
+      "model": "cra_prediction_affine_probe",
+      "mse_mean": 0.37432347158434526,
+      "mse_median": 0.3781776663019408,
+      "mse_std": 0.018929117000087127,
+      "mse_worst": 0.39102888231523125,
+      "nmse_mean": 1.0382155483616469,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.49163226174830776,
+      "task": "lorenz",
+      "test_corr_mean": 0.5272342377659164
+    },
+    {
+      "model": "cra_prediction_plus_observed_probe",
+      "mse_mean": 0.17852211834011852,
+      "mse_median": 0.1851846497470028,
+      "mse_std": 0.05277973214943521,
+      "mse_worst": 0.2276542506604923,
+      "nmse_mean": 0.46924232404889366,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.29488897929287555,
+      "task": "lorenz",
+      "test_corr_mean": 0.7383083710845869
+    },
+    {
+      "model": "cra_state_plus_lag_probe",
+      "mse_mean": 0.0053149866915701395,
+      "mse_median": 0.005730679796605933,
+      "mse_std": 0.00102666804393655,
+      "mse_worst": 0.006068621654350264,
+      "nmse_mean": 0.014979335690278033,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.009802617712166976,
+      "task": "lorenz",
+      "test_corr_mean": 0.9964387982952556
+    },
+    {
+      "model": "cra_internal_state_ridge_probe",
+      "mse_mean": 1.061755065443397,
+      "mse_median": 1.1085074350051611,
+      "mse_std": 0.2945297760004965,
+      "mse_worst": 1.3301124078858573,
+      "nmse_mean": 1.343616440724131,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 1.5693442085190146,
+      "task": "narma10",
+      "test_corr_mean": 0.41029485549206807
+    },
+    {
+      "model": "cra_internal_state_shuffled_target_control",
+      "mse_mean": 0.985804201162365,
+      "mse_median": 1.000829139792781,
+      "mse_std": 0.15286196449626457,
+      "mse_worst": 1.130598884023348,
+      "nmse_mean": 1.1668544782559984,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 1.345890253215245,
+      "task": "narma10",
+      "test_corr_mean": -0.18399349368799198
+    },
+    {
+      "model": "cra_online_raw",
+      "mse_mean": 1.2391510406368849,
+      "mse_median": 1.2683730788842915,
+      "mse_std": 0.17605983567877162,
+      "mse_worst": 1.398771534448518,
+      "nmse_mean": 1.470946024662031,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 1.064036626736212,
+      "task": "narma10",
+      "test_corr_mean": 0.3264137252028975
+    },
+    {
+      "model": "cra_prediction_affine_probe",
+      "mse_mean": 0.794497672895842,
+      "mse_median": 0.873002185522304,
+      "mse_std": 0.20004325824443953,
+      "mse_worst": 0.9433812353200667,
+      "nmse_mean": 0.9228614052681846,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.8393082861565336,
+      "task": "narma10",
+      "test_corr_mean": 0.32641372520289746
+    },
+    {
+      "model": "cra_prediction_plus_observed_probe",
+      "mse_mean": 0.6911871072029948,
+      "mse_median": 0.7324237119557632,
+      "mse_std": 0.12897798284747974,
+      "mse_worst": 0.7945041786339009,
+      "nmse_mean": 0.8129700388522586,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.7420336708815215,
+      "task": "narma10",
+      "test_corr_mean": 0.4842246381666275
+    },
+    {
+      "model": "cra_state_plus_lag_probe",
+      "mse_mean": 0.21828104415463281,
+      "mse_median": 0.2301274103383451,
+      "mse_std": 0.02627722502545844,
+      "mse_worst": 0.23654960058724306,
+      "nmse_mean": 0.2690137986092443,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.2661280106558686,
+      "task": "narma10",
+      "test_corr_mean": 0.8803203307688959
+    }
+  ],
+  "tasks": [
+    "mackey_glass",
+    "lorenz",
+    "narma10"
+  ],
+  "tier": "Tier 7.0b - Continuous-Regression Failure Analysis",
+  "trace_diagnostics": [
+    {
+      "backend": "MockSimulator",
+      "backend_diagnostics": {
+        "backend": "MockSimulator",
+        "last_backend_exception_type": "",
+        "last_backend_failure_stage": "",
+        "last_backend_traceback": "",
+        "last_sim_run_error": "",
+        "sim_run_failures": 0,
+        "summary_read_failures": 0,
+        "synthetic_fallbacks": 0
+      },
+      "capture_steps": 720,
+      "capture_timing": "inside adapter.evaluate before current target learning update",
+      "seed": 42,
+      "task": "mackey_glass"
+    },
+    {
+      "backend": "MockSimulator",
+      "backend_diagnostics": {
+        "backend": "MockSimulator",
+        "last_backend_exception_type": "",
+        "last_backend_failure_stage": "",
+        "last_backend_traceback": "",
+        "last_sim_run_error": "",
+        "sim_run_failures": 0,
+        "summary_read_failures": 0,
+        "synthetic_fallbacks": 0
+      },
+      "capture_steps": 720,
+      "capture_timing": "inside adapter.evaluate before current target learning update",
+      "seed": 42,
+      "task": "lorenz"
+    },
+    {
+      "backend": "MockSimulator",
+      "backend_diagnostics": {
+        "backend": "MockSimulator",
+        "last_backend_exception_type": "",
+        "last_backend_failure_stage": "",
+        "last_backend_traceback": "",
+        "last_sim_run_error": "",
+        "sim_run_failures": 0,
+        "summary_read_failures": 0,
+        "synthetic_fallbacks": 0
+      },
+      "capture_steps": 720,
+      "capture_timing": "inside adapter.evaluate before current target learning update",
+      "seed": 42,
+      "task": "narma10"
+    },
+    {
+      "backend": "MockSimulator",
+      "backend_diagnostics": {
+        "backend": "MockSimulator",
+        "last_backend_exception_type": "",
+        "last_backend_failure_stage": "",
+        "last_backend_traceback": "",
+        "last_sim_run_error": "",
+        "sim_run_failures": 0,
+        "summary_read_failures": 0,
+        "synthetic_fallbacks": 0
+      },
+      "capture_steps": 720,
+      "capture_timing": "inside adapter.evaluate before current target learning update",
+      "seed": 43,
+      "task": "mackey_glass"
+    },
+    {
+      "backend": "MockSimulator",
+      "backend_diagnostics": {
+        "backend": "MockSimulator",
+        "last_backend_exception_type": "",
+        "last_backend_failure_stage": "",
+        "last_backend_traceback": "",
+        "last_sim_run_error": "",
+        "sim_run_failures": 0,
+        "summary_read_failures": 0,
+        "synthetic_fallbacks": 0
+      },
+      "capture_steps": 720,
+      "capture_timing": "inside adapter.evaluate before current target learning update",
+      "seed": 43,
+      "task": "lorenz"
+    },
+    {
+      "backend": "MockSimulator",
+      "backend_diagnostics": {
+        "backend": "MockSimulator",
+        "last_backend_exception_type": "",
+        "last_backend_failure_stage": "",
+        "last_backend_traceback": "",
+        "last_sim_run_error": "",
+        "sim_run_failures": 0,
+        "summary_read_failures": 0,
+        "synthetic_fallbacks": 0
+      },
+      "capture_steps": 720,
+      "capture_timing": "inside adapter.evaluate before current target learning update",
+      "seed": 43,
+      "task": "narma10"
+    },
+    {
+      "backend": "MockSimulator",
+      "backend_diagnostics": {
+        "backend": "MockSimulator",
+        "last_backend_exception_type": "",
+        "last_backend_failure_stage": "",
+        "last_backend_traceback": "",
+        "last_sim_run_error": "",
+        "sim_run_failures": 0,
+        "summary_read_failures": 0,
+        "synthetic_fallbacks": 0
+      },
+      "capture_steps": 720,
+      "capture_timing": "inside adapter.evaluate before current target learning update",
+      "seed": 44,
+      "task": "mackey_glass"
+    },
+    {
+      "backend": "MockSimulator",
+      "backend_diagnostics": {
+        "backend": "MockSimulator",
+        "last_backend_exception_type": "",
+        "last_backend_failure_stage": "",
+        "last_backend_traceback": "",
+        "last_sim_run_error": "",
+        "sim_run_failures": 0,
+        "summary_read_failures": 0,
+        "synthetic_fallbacks": 0
+      },
+      "capture_steps": 720,
+      "capture_timing": "inside adapter.evaluate before current target learning update",
+      "seed": 44,
+      "task": "lorenz"
+    },
+    {
+      "backend": "MockSimulator",
+      "backend_diagnostics": {
+        "backend": "MockSimulator",
+        "last_backend_exception_type": "",
+        "last_backend_failure_stage": "",
+        "last_backend_traceback": "",
+        "last_sim_run_error": "",
+        "sim_run_failures": 0,
+        "summary_read_failures": 0,
+        "synthetic_fallbacks": 0
+      },
+      "capture_steps": 720,
+      "capture_timing": "inside adapter.evaluate before current target learning update",
+      "seed": 44,
+      "task": "narma10"
+    }
+  ],
+  "train_fraction": 0.65
+}
