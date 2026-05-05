@@ -183,6 +183,7 @@ are source, which files are generated evidence, and where claims are recorded.
 | `tier4_29c_native_predictive_binding_bridge.py` | Tier 4.29c native predictive binding | Tests prediction-before-reward separation in the four-core custom runtime. |
 | `tier4_29d_native_self_evaluation_bridge.py` | Tier 4.29d native self-evaluation | Tests confidence-gated learning via context/route/memory confidence products. |
 | `tier4_29e_native_replay_consolidation_bridge.py` | Tier 4.29e native replay/consolidation bridge | Tests host-scheduled replay through native state primitives; `cra_429p` passed three-seed hardware ingest after repairing the noncanonical `cra_429o` schedule/reference diagnostic failure. |
+| `tier4_29f_compact_native_mechanism_regression.py` | Tier 4.29f compact native mechanism regression | Audits the canonical 4.29a-e hardware evidence set and freezes `CRA_NATIVE_MECHANISM_BRIDGE_v0.3`; not a new hardware execution. |
 | `tier5_external_baselines.py` | Tier 5.1 comparison | Compare CRA against random, linear, reservoir, GRU, STDP-only, and evolutionary baselines. |
 | `tier5_learning_curve.py` | Tier 5.2 comparison | Repeat Tier 5.1-style comparisons across multiple run lengths. |
 | `tier5_cra_failure_analysis.py` | Tier 5.3 diagnostic | Run CRA-only tuning/failure-analysis variants for delayed credit, horizon, dopamine smoothing, retention, population, and lifecycle pressure. |

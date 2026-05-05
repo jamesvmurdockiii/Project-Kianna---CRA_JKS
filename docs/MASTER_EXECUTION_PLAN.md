@@ -49,6 +49,7 @@ Tier 4.29b = HARDWARE PASS (native routing/composition, 3 seeds)
 Tier 4.29c = HARDWARE PASS (native predictive binding, 3 seeds)
 Tier 4.29d = HARDWARE PASS (native self-evaluation/confidence gating, 3 seeds)
 Tier 4.29e = HARDWARE PASS (native replay/consolidation bridge, 38/38 x3 seeds)
+Tier 4.29f = EVIDENCE-REGRESSION PASS (native mechanism bridge audit, 113/113)
 ```
 
 Important Tier 4.26 result:
@@ -78,7 +79,7 @@ not full native v2.1, and not final autonomy.
 Current active step:
 
 ```text
-Tier 4.29f - Compact Native Mechanism Regression
+Tier 7.0 - Standard Dynamical Benchmark Suite
 ```
 
 ## 2. Immediate Baseline Decision
@@ -137,7 +138,7 @@ native/on-chip is not claimed until all of these are true for the claimed scope:
 | Distributed state | Four-core context/route/memory/learning split passed in 4.26. |
 | Runtime resource envelope | Partly measured; four-core timing/message envelope still needs 4.27. |
 | Stable inter-core protocol | SDP works for 4.26 as a transitional scaffold; MCPL/multicast is the scaling target and needs a migration gate. |
-| Promoted v2 mechanisms native | Keyed memory (4.29a), routing/composition (4.29b), predictive binding (4.29c), and self-evaluation (4.29d) all complete. Replay/consolidation/lifecycle remain. |
+| Promoted v2 mechanisms native | Keyed memory (4.29a), routing/composition (4.29b), predictive binding (4.29c), self-evaluation (4.29d), and host-scheduled replay/consolidation (4.29e) complete. 4.29f froze the cumulative native mechanism bridge evidence baseline. Lifecycle remains. |
 | Lifecycle/self-scaling native | Not started; must use static pools and masks, not dynamic graph creation. |
 | Multi-chip scaling | Not started. |
 | Useful task-level native proof | Not complete beyond tiny micro-tasks. |
@@ -328,83 +329,94 @@ What claim boundary follows?
     Boundary: host-scheduled replay through native state primitives only; not
     native replay buffers or biological sleep.
 
-25. 🔄 **CURRENT ACTIVE STEP** - Tier 4.29f compact native mechanism regression: rerun the strongest tiny native keyed-memory, routing/composition, predictive-binding, confidence-gating, and replay/consolidation controls after 4.29a-e. Do not freeze the cumulative native mechanism bridge baseline until this passes.
+25. ✅ **COMPLETE** - Tier 4.29f compact native mechanism regression.
+    Evidence-regression audit over canonical 4.29a-e hardware passes.
+    Criteria: 113/113.
+    Output: `controlled_test_output/tier4_29f_20260505_native_mechanism_regression/`.
+    Boundary: not a new SpiNNaker execution and not a monolithic all-mechanism task.
 
-26. Freeze `CRA_NATIVE_MECHANISM_BRIDGE_v0.3` only if the selected mechanism
-    bridges pass their controls and compact native regression. If any mechanism
-    fails, keep it host-side or parked.
+26. ✅ **COMPLETE** - Freeze `CRA_NATIVE_MECHANISM_BRIDGE_v0.3`.
+    Baseline file: `baselines/CRA_NATIVE_MECHANISM_BRIDGE_v0.3.md`.
+    Registry snapshot: `baselines/CRA_NATIVE_MECHANISM_BRIDGE_v0.3_STUDY_REGISTRY.snapshot.json`.
+    Supersedes `CRA_NATIVE_TASK_BASELINE_v0.2` for native mechanism bridge evidence.
+
+27. 🔄 **CURRENT ACTIVE STEP** - Tier 7.0 standard dynamical benchmarks in software:
+    Mackey-Glass, Lorenz, NARMA10, and geometric-mean aggregate MSE. Run on
+    frozen software baseline v2.1 and the frozen native mechanism evidence state
+    as the hardware boundary, but do not move benchmarks to hardware until the
+    software benchmark suite is stable and diagnostic.
 
 ### Phase D - Lifecycle / Organism Dynamics Native Path
 
-27. Tier 4.30 lifecycle-native contract: preallocated pool only. No dynamic
+28. Tier 4.30 lifecycle-native contract: preallocated pool only. No dynamic
     PyNN population creation mid-run. Birth/cleavage/death are activation,
     masking, assignment, or lineage events inside static state.
 
-28. Tier 4.30a local static-pool lifecycle reference: active/inactive masks,
+29. Tier 4.30a local static-pool lifecycle reference: active/inactive masks,
     lineage IDs, trophic state, birth/cleavage/death counters, fixed max-pool
     control, random event replay control.
 
-29. Tier 4.30b single-core lifecycle mask smoke: prove a tiny static pool can
+30. Tier 4.30b single-core lifecycle mask smoke: prove a tiny static pool can
     activate/silence units, preserve lineage, and read back lifecycle telemetry.
 
-30. Tier 4.30c multi-core lifecycle state split: distribute lifecycle masks and
+31. Tier 4.30c multi-core lifecycle state split: distribute lifecycle masks and
     lineage across the selected runtime protocol without corrupting state.
 
-31. Tier 4.30d lifecycle sham-control hardware subset: fixed max pool, random
+32. Tier 4.30d lifecycle sham-control hardware subset: fixed max pool, random
     event replay, mask shuffle, no trophic pressure, no dopamine/plasticity if
     applicable. Keep it small but reviewer-defensible.
 
-32. Freeze `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` only if lifecycle telemetry,
+33. Freeze `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` only if lifecycle telemetry,
     controls, resource accounting, and at least one useful task effect pass. If
     lifecycle does not help, narrow the organism claim.
 
 ### Phase E - Multi-Core And Multi-Chip Scaling
 
-33. Tier 4.31 update the mapping model with measured 4.27-4.30 data: ITCM,
+34. Tier 4.31 update the mapping model with measured 4.27-4.30 data: ITCM,
     DTCM, schedule length, lookup pressure, message bytes, readback bytes,
     per-core utilization, and state-slot limits.
 
-34. Tier 4.31a single-chip multi-core scale stress: increase cores on one chip
+35. Tier 4.31a single-chip multi-core scale stress: increase cores on one chip
     in controlled increments, for example 4 -> 8 -> 16 cores if resources allow,
     using MCPL/multicast for core-to-core event traffic unless a documented
     hardware constraint forces a temporary exception.
 
-35. Tier 4.31b static reef partition smoke: map groups/modules/polyps to cores
+36. Tier 4.31b static reef partition smoke: map groups/modules/polyps to cores
     using the measured static-pool strategy. Do not pretend one polyp equals one
     chip unless measured mapping proves that is correct.
 
-36. Tier 4.31c inter-chip feasibility contract: define routing keys, message
+37. Tier 4.31c inter-chip feasibility contract: define routing keys, message
     path, board/chip selection, failure classes, readback, and resource limits
     before attempting multi-chip.
 
-37. Tier 4.31d first multi-chip smoke: smallest possible cross-chip message and
+38. Tier 4.31d first multi-chip smoke: smallest possible cross-chip message and
     state lookup. No learning claim until communication and readback are clean.
 
-38. Tier 4.31e multi-chip learning micro-task: only after cross-chip smoke
+39. Tier 4.31e multi-chip learning micro-task: only after cross-chip smoke
     passes, run a tiny delayed-credit or reentry task with explicit claim
     boundary and resource measurements.
 
-39. Freeze `CRA_NATIVE_SCALE_BASELINE_v0.5` only if single-chip multi-core and
+40. Freeze `CRA_NATIVE_SCALE_BASELINE_v0.5` only if single-chip multi-core and
     first multi-chip evidence are stable enough for the final paper claim. If
     not, publish measured single-chip limits honestly.
 
 ### Phase F - Software Usefulness And Final Baselines
 
-40. Tier 6.2 hard synthetic suite: variable-delay cue, multi-cue delayed reward,
+41. Tier 6.2 hard synthetic suite: variable-delay cue, multi-cue delayed reward,
     hidden regime switching, drifting bandit, concept drift, anomaly stream,
     and small delayed-reward control proxy.
 
-41. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+42. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines.
 
-42. Tier 7.2 held-out task challenge: define held-out families before running;
+43. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout.
 
-43. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+44. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines.
 
-44. Tier 7.4 policy/action selection: state -> action -> delayed consequence,
+45. Tier 7.4 policy/action selection: state -> action -> delayed consequence,
     exploration versus exploitation, uncertainty-gated actions.
 
 45. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
@@ -594,30 +606,32 @@ After each completed run or design tier:
 The next concrete action is:
 
 ```text
-Tier 4.29f - Compact Native Mechanism Regression
+Tier 7.0 - Standard Dynamical Benchmark Suite
 ```
 
 Purpose:
 
 ```text
-Verify that the native mechanism bridges 4.29a-e remain mutually compatible
-before freezing a cumulative native mechanism bridge baseline or starting the
-standard dynamical benchmark suite.
+Create a software benchmark harness for Mackey-Glass, Lorenz, NARMA10, and a
+geometric-mean aggregate MSE score so CRA can be compared against standard
+temporal prediction/memory baselines before moving benchmark workloads to
+hardware.
 ```
 
 Required coverage:
 
 ```text
-4.29a keyed memory / wrong-key / overcapacity
-4.29b routing-composition / wrong-route / overwrite
-4.29c predictive binding
-4.29d confidence-gated learning
-4.29e host-scheduled replay/consolidation
+Mackey-Glass future prediction
+Lorenz future prediction
+NARMA10 memory/nonlinear system identification
+Aggregate geometric mean MSE
+Fixed splits/seeds, leakage checks, external baselines, CRA v2.1 comparison
 ```
 
-If 4.29f passes, freeze the cumulative native mechanism bridge baseline and then
-start Tier 7.1 standard dynamical benchmarks in software. If it fails, repair or
-park only the failing mechanism and do not benchmark an unstable stack.
+Do not tune blindly from this suite. If CRA underperforms, classify the failure
+mode first, then decide whether a planned mechanism tier (lifecycle,
+policy/action, longer-horizon planning, native replay buffers, or another
+predeclared mechanism) is justified.
 
 
 ## 13. Make-Or-Break Gates

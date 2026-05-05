@@ -959,6 +959,21 @@ SPECS: tuple[EvidenceSpec, ...] = (
             "reports.zip",
         ),
     ),
+    EvidenceSpec(
+        entry_id="tier4_29f_compact_native_mechanism_regression",
+        tier_label="Tier 4.29f - Compact Native Mechanism Regression",
+        plan_position="Phase C mechanism migration: cumulative native bridge freeze gate",
+        canonical_dir="tier4_29f_20260505_native_mechanism_regression",
+        results_file="tier4_29f_results.json",
+        report_file="tier4_29f_report.md",
+        summary_file="tier4_29f_summary.csv",
+        harness="experiments/tier4_29f_compact_native_mechanism_regression.py",
+        evidence_role="native mechanism bridge evidence-regression guardrail",
+        claim="The canonical hardware evidence for native keyed memory, routing/composition, predictive binding, confidence gating, and host-scheduled replay/consolidation remains complete and internally aligned. All 113/113 evidence-regression criteria pass.",
+        caveat="Evidence-regression gate over already-ingested real hardware passes; not a new hardware execution, not a single monolithic all-mechanism task, not lifecycle/self-scaling evidence, not multi-chip scaling, and not speedup evidence.",
+        latest_manifest_names=("tier4_29f_latest_manifest.json",),
+        expected_extra_files=(),
+    ),
 )
 
 

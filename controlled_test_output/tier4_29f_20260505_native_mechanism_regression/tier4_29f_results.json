@@ -1,0 +1,1725 @@
+{
+  "claim_boundary": "Tier 4.29f is a canonical evidence-regression gate over the real hardware passes from 4.29a-e. It verifies that native keyed memory, routing/composition, predictive binding, confidence gating, and host-scheduled replay/consolidation all remain complete and aligned as ingested evidence. It is not a new SpiNNaker execution, not a single-task all-mechanism stack proof, not lifecycle evidence, not multi-chip scaling, and not speedup evidence.",
+  "criteria": [
+    {
+      "name": "runner revision current",
+      "note": "",
+      "passed": true,
+      "rule": "expected current source",
+      "value": "tier4_29f_compact_native_mechanism_regression_20260505_0001"
+    },
+    {
+      "name": "all mechanism rows pass",
+      "note": "",
+      "passed": true,
+      "rule": "all == pass",
+      "value": [
+        "pass",
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "name": "4.29a canonical directory exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29a_20260503_hardware_pass_ingested"
+    },
+    {
+      "name": "4.29a results file exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29a_20260503_hardware_pass_ingested/tier4_29a_multi_seed_ingest_summary.json"
+    },
+    {
+      "name": "4.29a summary file exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29a_20260503_hardware_pass_ingested/tier4_29a_combined_results.json"
+    },
+    {
+      "name": "4.29a report file exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29a_20260503_hardware_pass_ingested/tier4_29a_ingest_report.md"
+    },
+    {
+      "name": "4.29a results status pass",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "4.29a summary status pass",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "4.29a runner revision matches",
+      "note": "",
+      "passed": true,
+      "rule": "tier4_29a_native_keyed_memory_overcapacity_20260503_0001",
+      "value": "tier4_29a_native_keyed_memory_overcapacity_20260503_0001"
+    },
+    {
+      "name": "4.29a expected seeds present",
+      "note": "",
+      "passed": true,
+      "rule": "(42, 43, 44)",
+      "value": [
+        42,
+        43,
+        44
+      ]
+    },
+    {
+      "name": "4.29a total criteria count matches",
+      "note": "",
+      "passed": true,
+      "rule": "== 141",
+      "value": 141
+    },
+    {
+      "name": "4.29a total criteria all passed",
+      "note": "",
+      "passed": true,
+      "rule": "== 141",
+      "value": 141
+    },
+    {
+      "name": "4.29a per-seed rows present",
+      "note": "",
+      "passed": true,
+      "rule": "== 3",
+      "value": 3
+    },
+    {
+      "name": "4.29a seed unknown criteria total matches",
+      "note": "",
+      "passed": true,
+      "rule": "== 47",
+      "value": 47
+    },
+    {
+      "name": "4.29a seed unknown criteria all pass",
+      "note": "",
+      "passed": true,
+      "rule": "== 47",
+      "value": 47
+    },
+    {
+      "name": "4.29a seed unknown criteria total matches",
+      "note": "",
+      "passed": true,
+      "rule": "== 47",
+      "value": 47
+    },
+    {
+      "name": "4.29a seed unknown criteria all pass",
+      "note": "",
+      "passed": true,
+      "rule": "== 47",
+      "value": 47
+    },
+    {
+      "name": "4.29a seed unknown criteria total matches",
+      "note": "",
+      "passed": true,
+      "rule": "== 47",
+      "value": 47
+    },
+    {
+      "name": "4.29a seed unknown criteria all pass",
+      "note": "",
+      "passed": true,
+      "rule": "== 47",
+      "value": 47
+    },
+    {
+      "name": "4.29a required control criterion present",
+      "note": "",
+      "passed": true,
+      "rule": "substring found",
+      "value": "wrong-key events fail cleanly"
+    },
+    {
+      "name": "4.29a required control criterion present",
+      "note": "",
+      "passed": true,
+      "rule": "substring found",
+      "value": "overwrite events use new value"
+    },
+    {
+      "name": "4.29a required control criterion present",
+      "note": "",
+      "passed": true,
+      "rule": "substring found",
+      "value": "slot-shuffle maintains correctness"
+    },
+    {
+      "name": "4.29b canonical directory exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29b_20260503_hardware_pass_ingested"
+    },
+    {
+      "name": "4.29b results file exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29b_20260503_hardware_pass_ingested/tier4_29b_multi_seed_ingest_summary.json"
+    },
+    {
+      "name": "4.29b summary file exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29b_20260503_hardware_pass_ingested/tier4_29b_combined_results.json"
+    },
+    {
+      "name": "4.29b report file exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29b_20260503_hardware_pass_ingested/tier4_29b_report.md"
+    },
+    {
+      "name": "4.29b results status pass",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "4.29b summary status pass",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "4.29b runner revision matches",
+      "note": "",
+      "passed": true,
+      "rule": "tier4_29b_native_routing_composition_20260503_0002",
+      "value": "tier4_29b_native_routing_composition_20260503_0002"
+    },
+    {
+      "name": "4.29b expected seeds present",
+      "note": "",
+      "passed": true,
+      "rule": "(42, 43, 44)",
+      "value": [
+        42,
+        43,
+        44
+      ]
+    },
+    {
+      "name": "4.29b total criteria count matches",
+      "note": "",
+      "passed": true,
+      "rule": "== 156",
+      "value": 156
+    },
+    {
+      "name": "4.29b total criteria all passed",
+      "note": "",
+      "passed": true,
+      "rule": "== 156",
+      "value": 156
+    },
+    {
+      "name": "4.29b per-seed rows present",
+      "note": "",
+      "passed": true,
+      "rule": "== 3",
+      "value": 3
+    },
+    {
+      "name": "4.29b seed 42 criteria total matches",
+      "note": "",
+      "passed": true,
+      "rule": "== 52",
+      "value": 52
+    },
+    {
+      "name": "4.29b seed 42 criteria all pass",
+      "note": "",
+      "passed": true,
+      "rule": "== 52",
+      "value": 52
+    },
+    {
+      "name": "4.29b seed 43 criteria total matches",
+      "note": "",
+      "passed": true,
+      "rule": "== 52",
+      "value": 52
+    },
+    {
+      "name": "4.29b seed 43 criteria all pass",
+      "note": "",
+      "passed": true,
+      "rule": "== 52",
+      "value": 52
+    },
+    {
+      "name": "4.29b seed 44 criteria total matches",
+      "note": "",
+      "passed": true,
+      "rule": "== 52",
+      "value": 52
+    },
+    {
+      "name": "4.29b seed 44 criteria all pass",
+      "note": "",
+      "passed": true,
+      "rule": "== 52",
+      "value": 52
+    },
+    {
+      "name": "4.29b required control criterion present",
+      "note": "",
+      "passed": true,
+      "rule": "substring found",
+      "value": "wrong-context events fail cleanly"
+    },
+    {
+      "name": "4.29b required control criterion present",
+      "note": "",
+      "passed": true,
+      "rule": "substring found",
+      "value": "wrong-route events fail cleanly"
+    },
+    {
+      "name": "4.29b required control criterion present",
+      "note": "",
+      "passed": true,
+      "rule": "substring found",
+      "value": "route overwrite events use new value"
+    },
+    {
+      "name": "4.29b required control criterion present",
+      "note": "",
+      "passed": true,
+      "rule": "substring found",
+      "value": "route-shuffle maintains correctness"
+    },
+    {
+      "name": "4.29c canonical directory exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29c_20260504_pass_ingested"
+    },
+    {
+      "name": "4.29c results file exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29c_20260504_pass_ingested/tier4_29c_ingest_results.json"
+    },
+    {
+      "name": "4.29c summary file exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29c_20260504_pass_ingested/tier4_29c_combined_results.json"
+    },
+    {
+      "name": "4.29c report file exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29c_20260504_pass_ingested/tier4_29c_report_seed42.json"
+    },
+    {
+      "name": "4.29c results status pass",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "4.29c summary status pass",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "4.29c runner revision matches",
+      "note": "",
+      "passed": true,
+      "rule": "tier4_29c_native_predictive_binding_20260503_0001",
+      "value": "tier4_29c_native_predictive_binding_20260503_0001"
+    },
+    {
+      "name": "4.29c expected seeds present",
+      "note": "",
+      "passed": true,
+      "rule": "(42, 43, 44)",
+      "value": [
+        42,
+        43,
+        44
+      ]
+    },
+    {
+      "name": "4.29c total criteria count matches",
+      "note": "",
+      "passed": true,
+      "rule": "== 78",
+      "value": 78
+    },
+    {
+      "name": "4.29c total criteria all passed",
+      "note": "",
+      "passed": true,
+      "rule": "== 78",
+      "value": 78
+    },
+    {
+      "name": "4.29c per-seed rows present",
+      "note": "",
+      "passed": true,
+      "rule": "== 3",
+      "value": 3
+    },
+    {
+      "name": "4.29c seed 42 criteria total matches",
+      "note": "",
+      "passed": true,
+      "rule": "== 26",
+      "value": 26
+    },
+    {
+      "name": "4.29c seed 42 criteria all pass",
+      "note": "",
+      "passed": true,
+      "rule": "== 26",
+      "value": 26
+    },
+    {
+      "name": "4.29c seed 43 criteria total matches",
+      "note": "",
+      "passed": true,
+      "rule": "== 26",
+      "value": 26
+    },
+    {
+      "name": "4.29c seed 43 criteria all pass",
+      "note": "",
+      "passed": true,
+      "rule": "== 26",
+      "value": 26
+    },
+    {
+      "name": "4.29c seed 44 criteria total matches",
+      "note": "",
+      "passed": true,
+      "rule": "== 26",
+      "value": 26
+    },
+    {
+      "name": "4.29c seed 44 criteria all pass",
+      "note": "",
+      "passed": true,
+      "rule": "== 26",
+      "value": 26
+    },
+    {
+      "name": "4.29c required control criterion present",
+      "note": "",
+      "passed": true,
+      "rule": "substring found",
+      "value": "learning final weight within tolerance"
+    },
+    {
+      "name": "4.29c required control criterion present",
+      "note": "",
+      "passed": true,
+      "rule": "substring found",
+      "value": "learning final bias within tolerance"
+    },
+    {
+      "name": "4.29c required control criterion present",
+      "note": "",
+      "passed": true,
+      "rule": "substring found",
+      "value": "all pending matured"
+    },
+    {
+      "name": "4.29d canonical directory exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29d_20260504_pass_ingested"
+    },
+    {
+      "name": "4.29d results file exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_ingest_results.json"
+    },
+    {
+      "name": "4.29d summary file exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_combined_results.json"
+    },
+    {
+      "name": "4.29d report file exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_report_seed44.json"
+    },
+    {
+      "name": "4.29d results status pass",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "4.29d summary status pass",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "4.29d runner revision matches",
+      "note": "",
+      "passed": true,
+      "rule": "tier4_29d_native_self_evaluation_20260504_0002",
+      "value": "tier4_29d_native_self_evaluation_20260504_0002"
+    },
+    {
+      "name": "4.29d expected seeds present",
+      "note": "",
+      "passed": true,
+      "rule": "(42, 43, 44)",
+      "value": [
+        42,
+        43,
+        44
+      ]
+    },
+    {
+      "name": "4.29d total criteria count matches",
+      "note": "",
+      "passed": true,
+      "rule": "== 90",
+      "value": 90
+    },
+    {
+      "name": "4.29d total criteria all passed",
+      "note": "",
+      "passed": true,
+      "rule": "== 90",
+      "value": 90
+    },
+    {
+      "name": "4.29d per-seed rows present",
+      "note": "",
+      "passed": true,
+      "rule": "== 3",
+      "value": 3
+    },
+    {
+      "name": "4.29d seed 42 criteria total matches",
+      "note": "",
+      "passed": true,
+      "rule": "== 30",
+      "value": 30
+    },
+    {
+      "name": "4.29d seed 42 criteria all pass",
+      "note": "",
+      "passed": true,
+      "rule": "== 30",
+      "value": 30
+    },
+    {
+      "name": "4.29d seed 43 criteria total matches",
+      "note": "",
+      "passed": true,
+      "rule": "== 30",
+      "value": 30
+    },
+    {
+      "name": "4.29d seed 43 criteria all pass",
+      "note": "",
+      "passed": true,
+      "rule": "== 30",
+      "value": 30
+    },
+    {
+      "name": "4.29d seed 44 criteria total matches",
+      "note": "",
+      "passed": true,
+      "rule": "== 30",
+      "value": 30
+    },
+    {
+      "name": "4.29d seed 44 criteria all pass",
+      "note": "",
+      "passed": true,
+      "rule": "== 30",
+      "value": 30
+    },
+    {
+      "name": "4.29d required control criterion present",
+      "note": "",
+      "passed": true,
+      "rule": "substring found",
+      "value": "full_confidence_hardware_weight_within_tolerance"
+    },
+    {
+      "name": "4.29d required control criterion present",
+      "note": "",
+      "passed": true,
+      "rule": "substring found",
+      "value": "zero_confidence_weight_zero"
+    },
+    {
+      "name": "4.29d required control criterion present",
+      "note": "",
+      "passed": true,
+      "rule": "substring found",
+      "value": "zero_context_confidence_weight_zero"
+    },
+    {
+      "name": "4.29d required control criterion present",
+      "note": "",
+      "passed": true,
+      "rule": "substring found",
+      "value": "half_context_confidence_weight_magnitude_less_than_full"
+    },
+    {
+      "name": "4.29d required control summary present",
+      "note": "",
+      "passed": true,
+      "rule": "in controls",
+      "value": "full_confidence"
+    },
+    {
+      "name": "4.29d required control summary present",
+      "note": "",
+      "passed": true,
+      "rule": "in controls",
+      "value": "zero_confidence"
+    },
+    {
+      "name": "4.29d required control summary present",
+      "note": "",
+      "passed": true,
+      "rule": "in controls",
+      "value": "zero_context_confidence"
+    },
+    {
+      "name": "4.29d required control summary present",
+      "note": "",
+      "passed": true,
+      "rule": "in controls",
+      "value": "half_context_confidence"
+    },
+    {
+      "name": "4.29e canonical directory exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29e_20260505_pass_ingested"
+    },
+    {
+      "name": "4.29e results file exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29e_20260505_pass_ingested/tier4_29e_ingest_results.json"
+    },
+    {
+      "name": "4.29e summary file exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29e_20260505_pass_ingested/tier4_29e_combined_results.json"
+    },
+    {
+      "name": "4.29e report file exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29e_20260505_pass_ingested/tier4_29e_report.md"
+    },
+    {
+      "name": "4.29e results status pass",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "4.29e summary status pass",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "4.29e runner revision matches",
+      "note": "",
+      "passed": true,
+      "rule": "tier4_29e_native_replay_consolidation_20260505_0003",
+      "value": "tier4_29e_native_replay_consolidation_20260505_0003"
+    },
+    {
+      "name": "4.29e expected seeds present",
+      "note": "",
+      "passed": true,
+      "rule": "(42, 43, 44)",
+      "value": [
+        42,
+        43,
+        44
+      ]
+    },
+    {
+      "name": "4.29e total criteria count matches",
+      "note": "",
+      "passed": true,
+      "rule": "== 114",
+      "value": 114
+    },
+    {
+      "name": "4.29e total criteria all passed",
+      "note": "",
+      "passed": true,
+      "rule": "== 114",
+      "value": 114
+    },
+    {
+      "name": "4.29e per-seed rows present",
+      "note": "",
+      "passed": true,
+      "rule": "== 3",
+      "value": 3
+    },
+    {
+      "name": "4.29e seed 42 criteria total matches",
+      "note": "",
+      "passed": true,
+      "rule": "== 38",
+      "value": 38
+    },
+    {
+      "name": "4.29e seed 42 criteria all pass",
+      "note": "",
+      "passed": true,
+      "rule": "== 38",
+      "value": 38
+    },
+    {
+      "name": "4.29e seed 43 criteria total matches",
+      "note": "",
+      "passed": true,
+      "rule": "== 38",
+      "value": 38
+    },
+    {
+      "name": "4.29e seed 43 criteria all pass",
+      "note": "",
+      "passed": true,
+      "rule": "== 38",
+      "value": 38
+    },
+    {
+      "name": "4.29e seed 44 criteria total matches",
+      "note": "",
+      "passed": true,
+      "rule": "== 38",
+      "value": 38
+    },
+    {
+      "name": "4.29e seed 44 criteria all pass",
+      "note": "",
+      "passed": true,
+      "rule": "== 38",
+      "value": 38
+    },
+    {
+      "name": "4.29e required control criterion present",
+      "note": "",
+      "passed": true,
+      "rule": "substring found",
+      "value": "correct_replay_differs_from_wrong_key"
+    },
+    {
+      "name": "4.29e required control criterion present",
+      "note": "",
+      "passed": true,
+      "rule": "substring found",
+      "value": "correct_replay_weight_differs_from_no_replay"
+    },
+    {
+      "name": "4.29e required control criterion present",
+      "note": "",
+      "passed": true,
+      "rule": "substring found",
+      "value": "wrong_key_replay_weight_approx_no_replay"
+    },
+    {
+      "name": "4.29e required control criterion present",
+      "note": "",
+      "passed": true,
+      "rule": "substring found",
+      "value": "random_event_replay_differs_from_correct_replay"
+    },
+    {
+      "name": "4.29e required control summary present",
+      "note": "",
+      "passed": true,
+      "rule": "in controls",
+      "value": "no_replay"
+    },
+    {
+      "name": "4.29e required control summary present",
+      "note": "",
+      "passed": true,
+      "rule": "in controls",
+      "value": "correct_replay"
+    },
+    {
+      "name": "4.29e required control summary present",
+      "note": "",
+      "passed": true,
+      "rule": "in controls",
+      "value": "wrong_key_replay"
+    },
+    {
+      "name": "4.29e required control summary present",
+      "note": "",
+      "passed": true,
+      "rule": "in controls",
+      "value": "random_event_replay"
+    }
+  ],
+  "criteria_passed": 113,
+  "criteria_total": 113,
+  "failed_criteria": [],
+  "generated_at_utc": "2026-05-05T13:20:42.804040+00:00",
+  "mechanisms": [
+    {
+      "canonical_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_29a_20260503_hardware_pass_ingested",
+      "criteria": [
+        {
+          "name": "canonical directory exists",
+          "note": "",
+          "passed": true,
+          "rule": "exists",
+          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29a_20260503_hardware_pass_ingested"
+        },
+        {
+          "name": "results file exists",
+          "note": "",
+          "passed": true,
+          "rule": "exists",
+          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29a_20260503_hardware_pass_ingested/tier4_29a_multi_seed_ingest_summary.json"
+        },
+        {
+          "name": "summary file exists",
+          "note": "",
+          "passed": true,
+          "rule": "exists",
+          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29a_20260503_hardware_pass_ingested/tier4_29a_combined_results.json"
+        },
+        {
+          "name": "report file exists",
+          "note": "",
+          "passed": true,
+          "rule": "exists",
+          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29a_20260503_hardware_pass_ingested/tier4_29a_ingest_report.md"
+        },
+        {
+          "name": "results status pass",
+          "note": "",
+          "passed": true,
+          "rule": "== pass",
+          "value": "pass"
+        },
+        {
+          "name": "summary status pass",
+          "note": "",
+          "passed": true,
+          "rule": "== pass",
+          "value": "pass"
+        },
+        {
+          "name": "runner revision matches",
+          "note": "",
+          "passed": true,
+          "rule": "tier4_29a_native_keyed_memory_overcapacity_20260503_0001",
+          "value": "tier4_29a_native_keyed_memory_overcapacity_20260503_0001"
+        },
+        {
+          "name": "expected seeds present",
+          "note": "",
+          "passed": true,
+          "rule": "(42, 43, 44)",
+          "value": [
+            42,
+            43,
+            44
+          ]
+        },
+        {
+          "name": "total criteria count matches",
+          "note": "",
+          "passed": true,
+          "rule": "== 141",
+          "value": 141
+        },
+        {
+          "name": "total criteria all passed",
+          "note": "",
+          "passed": true,
+          "rule": "== 141",
+          "value": 141
+        },
+        {
+          "name": "per-seed rows present",
+          "note": "",
+          "passed": true,
+          "rule": "== 3",
+          "value": 3
+        },
+        {
+          "name": "seed unknown criteria total matches",
+          "note": "",
+          "passed": true,
+          "rule": "== 47",
+          "value": 47
+        },
+        {
+          "name": "seed unknown criteria all pass",
+          "note": "",
+          "passed": true,
+          "rule": "== 47",
+          "value": 47
+        },
+        {
+          "name": "seed unknown criteria total matches",
+          "note": "",
+          "passed": true,
+          "rule": "== 47",
+          "value": 47
+        },
+        {
+          "name": "seed unknown criteria all pass",
+          "note": "",
+          "passed": true,
+          "rule": "== 47",
+          "value": 47
+        },
+        {
+          "name": "seed unknown criteria total matches",
+          "note": "",
+          "passed": true,
+          "rule": "== 47",
+          "value": 47
+        },
+        {
+          "name": "seed unknown criteria all pass",
+          "note": "",
+          "passed": true,
+          "rule": "== 47",
+          "value": 47
+        },
+        {
+          "name": "required control criterion present",
+          "note": "",
+          "passed": true,
+          "rule": "substring found",
+          "value": "wrong-key events fail cleanly"
+        },
+        {
+          "name": "required control criterion present",
+          "note": "",
+          "passed": true,
+          "rule": "substring found",
+          "value": "overwrite events use new value"
+        },
+        {
+          "name": "required control criterion present",
+          "note": "",
+          "passed": true,
+          "rule": "substring found",
+          "value": "slot-shuffle maintains correctness"
+        }
+      ],
+      "criteria_passed": 20,
+      "criteria_total": 20,
+      "entry_id": "tier4_29a_native_keyed_memory_overcapacity",
+      "failed_criteria": [],
+      "mechanism": "native keyed-memory overcapacity",
+      "passed_criteria": 141,
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "status": "pass",
+      "tier": "4.29a",
+      "total_criteria": 141
+    },
+    {
+      "canonical_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_29b_20260503_hardware_pass_ingested",
+      "criteria": [
+        {
+          "name": "canonical directory exists",
+          "note": "",
+          "passed": true,
+          "rule": "exists",
+          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29b_20260503_hardware_pass_ingested"
+        },
+        {
+          "name": "results file exists",
+          "note": "",
+          "passed": true,
+          "rule": "exists",
+          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29b_20260503_hardware_pass_ingested/tier4_29b_multi_seed_ingest_summary.json"
+        },
+        {
+          "name": "summary file exists",
+          "note": "",
+          "passed": true,
+          "rule": "exists",
+          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29b_20260503_hardware_pass_ingested/tier4_29b_combined_results.json"
+        },
+        {
+          "name": "report file exists",
+          "note": "",
+          "passed": true,
+          "rule": "exists",
+          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29b_20260503_hardware_pass_ingested/tier4_29b_report.md"
+        },
+        {
+          "name": "results status pass",
+          "note": "",
+          "passed": true,
+          "rule": "== pass",
+          "value": "pass"
+        },
+        {
+          "name": "summary status pass",
+          "note": "",
+          "passed": true,
+          "rule": "== pass",
+          "value": "pass"
+        },
+        {
+          "name": "runner revision matches",
+          "note": "",
+          "passed": true,
+          "rule": "tier4_29b_native_routing_composition_20260503_0002",
+          "value": "tier4_29b_native_routing_composition_20260503_0002"
+        },
+        {
+          "name": "expected seeds present",
+          "note": "",
+          "passed": true,
+          "rule": "(42, 43, 44)",
+          "value": [
+            42,
+            43,
+            44
+          ]
+        },
+        {
+          "name": "total criteria count matches",
+          "note": "",
+          "passed": true,
+          "rule": "== 156",
+          "value": 156
+        },
+        {
+          "name": "total criteria all passed",
+          "note": "",
+          "passed": true,
+          "rule": "== 156",
+          "value": 156
+        },
+        {
+          "name": "per-seed rows present",
+          "note": "",
+          "passed": true,
+          "rule": "== 3",
+          "value": 3
+        },
+        {
+          "name": "seed 42 criteria total matches",
+          "note": "",
+          "passed": true,
+          "rule": "== 52",
+          "value": 52
+        },
+        {
+          "name": "seed 42 criteria all pass",
+          "note": "",
+          "passed": true,
+          "rule": "== 52",
+          "value": 52
+        },
+        {
+          "name": "seed 43 criteria total matches",
+          "note": "",
+          "passed": true,
+          "rule": "== 52",
+          "value": 52
+        },
+        {
+          "name": "seed 43 criteria all pass",
+          "note": "",
+          "passed": true,
+          "rule": "== 52",
+          "value": 52
+        },
+        {
+          "name": "seed 44 criteria total matches",
+          "note": "",
+          "passed": true,
+          "rule": "== 52",
+          "value": 52
+        },
+        {
+          "name": "seed 44 criteria all pass",
+          "note": "",
+          "passed": true,
+          "rule": "== 52",
+          "value": 52
+        },
+        {
+          "name": "required control criterion present",
+          "note": "",
+          "passed": true,
+          "rule": "substring found",
+          "value": "wrong-context events fail cleanly"
+        },
+        {
+          "name": "required control criterion present",
+          "note": "",
+          "passed": true,
+          "rule": "substring found",
+          "value": "wrong-route events fail cleanly"
+        },
+        {
+          "name": "required control criterion present",
+          "note": "",
+          "passed": true,
+          "rule": "substring found",
+          "value": "route overwrite events use new value"
+        },
+        {
+          "name": "required control criterion present",
+          "note": "",
+          "passed": true,
+          "rule": "substring found",
+          "value": "route-shuffle maintains correctness"
+        }
+      ],
+      "criteria_passed": 21,
+      "criteria_total": 21,
+      "entry_id": "tier4_29b_native_routing_composition_gate",
+      "failed_criteria": [],
+      "mechanism": "native routing/composition",
+      "passed_criteria": 156,
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "status": "pass",
+      "tier": "4.29b",
+      "total_criteria": 156
+    },
+    {
+      "canonical_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_29c_20260504_pass_ingested",
+      "criteria": [
+        {
+          "name": "canonical directory exists",
+          "note": "",
+          "passed": true,
+          "rule": "exists",
+          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29c_20260504_pass_ingested"
+        },
+        {
+          "name": "results file exists",
+          "note": "",
+          "passed": true,
+          "rule": "exists",
+          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29c_20260504_pass_ingested/tier4_29c_ingest_results.json"
+        },
+        {
+          "name": "summary file exists",
+          "note": "",
+          "passed": true,
+          "rule": "exists",
+          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29c_20260504_pass_ingested/tier4_29c_combined_results.json"
+        },
+        {
+          "name": "report file exists",
+          "note": "",
+          "passed": true,
+          "rule": "exists",
+          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29c_20260504_pass_ingested/tier4_29c_report_seed42.json"
+        },
+        {
+          "name": "results status pass",
+          "note": "",
+          "passed": true,
+          "rule": "== pass",
+          "value": "pass"
+        },
+        {
+          "name": "summary status pass",
+          "note": "",
+          "passed": true,
+          "rule": "== pass",
+          "value": "pass"
+        },
+        {
+          "name": "runner revision matches",
+          "note": "",
+          "passed": true,
+          "rule": "tier4_29c_native_predictive_binding_20260503_0001",
+          "value": "tier4_29c_native_predictive_binding_20260503_0001"
+        },
+        {
+          "name": "expected seeds present",
+          "note": "",
+          "passed": true,
+          "rule": "(42, 43, 44)",
+          "value": [
+            42,
+            43,
+            44
+          ]
+        },
+        {
+          "name": "total criteria count matches",
+          "note": "",
+          "passed": true,
+          "rule": "== 78",
+          "value": 78
+        },
+        {
+          "name": "total criteria all passed",
+          "note": "",
+          "passed": true,
+          "rule": "== 78",
+          "value": 78
+        },
+        {
+          "name": "per-seed rows present",
+          "note": "",
+          "passed": true,
+          "rule": "== 3",
+          "value": 3
+        },
+        {
+          "name": "seed 42 criteria total matches",
+          "note": "",
+          "passed": true,
+          "rule": "== 26",
+          "value": 26
+        },
+        {
+          "name": "seed 42 criteria all pass",
+          "note": "",
+          "passed": true,
+          "rule": "== 26",
+          "value": 26
+        },
+        {
+          "name": "seed 43 criteria total matches",
+          "note": "",
+          "passed": true,
+          "rule": "== 26",
+          "value": 26
+        },
+        {
+          "name": "seed 43 criteria all pass",
+          "note": "",
+          "passed": true,
+          "rule": "== 26",
+          "value": 26
+        },
+        {
+          "name": "seed 44 criteria total matches",
+          "note": "",
+          "passed": true,
+          "rule": "== 26",
+          "value": 26
+        },
+        {
+          "name": "seed 44 criteria all pass",
+          "note": "",
+          "passed": true,
+          "rule": "== 26",
+          "value": 26
+        },
+        {
+          "name": "required control criterion present",
+          "note": "",
+          "passed": true,
+          "rule": "substring found",
+          "value": "learning final weight within tolerance"
+        },
+        {
+          "name": "required control criterion present",
+          "note": "",
+          "passed": true,
+          "rule": "substring found",
+          "value": "learning final bias within tolerance"
+        },
+        {
+          "name": "required control criterion present",
+          "note": "",
+          "passed": true,
+          "rule": "substring found",
+          "value": "all pending matured"
+        }
+      ],
+      "criteria_passed": 20,
+      "criteria_total": 20,
+      "entry_id": "tier4_29c_native_predictive_binding",
+      "failed_criteria": [],
+      "mechanism": "native predictive binding",
+      "passed_criteria": 78,
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "status": "pass",
+      "tier": "4.29c",
+      "total_criteria": 78
+    },
+    {
+      "canonical_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_29d_20260504_pass_ingested",
+      "criteria": [
+        {
+          "name": "canonical directory exists",
+          "note": "",
+          "passed": true,
+          "rule": "exists",
+          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29d_20260504_pass_ingested"
+        },
+        {
+          "name": "results file exists",
+          "note": "",
+          "passed": true,
+          "rule": "exists",
+          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_ingest_results.json"
+        },
+        {
+          "name": "summary file exists",
+          "note": "",
+          "passed": true,
+          "rule": "exists",
+          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_combined_results.json"
+        },
+        {
+          "name": "report file exists",
+          "note": "",
+          "passed": true,
+          "rule": "exists",
+          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_report_seed44.json"
+        },
+        {
+          "name": "results status pass",
+          "note": "",
+          "passed": true,
+          "rule": "== pass",
+          "value": "pass"
+        },
+        {
+          "name": "summary status pass",
+          "note": "",
+          "passed": true,
+          "rule": "== pass",
+          "value": "pass"
+        },
+        {
+          "name": "runner revision matches",
+          "note": "",
+          "passed": true,
+          "rule": "tier4_29d_native_self_evaluation_20260504_0002",
+          "value": "tier4_29d_native_self_evaluation_20260504_0002"
+        },
+        {
+          "name": "expected seeds present",
+          "note": "",
+          "passed": true,
+          "rule": "(42, 43, 44)",
+          "value": [
+            42,
+            43,
+            44
+          ]
+        },
+        {
+          "name": "total criteria count matches",
+          "note": "",
+          "passed": true,
+          "rule": "== 90",
+          "value": 90
+        },
+        {
+          "name": "total criteria all passed",
+          "note": "",
+          "passed": true,
+          "rule": "== 90",
+          "value": 90
+        },
+        {
+          "name": "per-seed rows present",
+          "note": "",
+          "passed": true,
+          "rule": "== 3",
+          "value": 3
+        },
+        {
+          "name": "seed 42 criteria total matches",
+          "note": "",
+          "passed": true,
+          "rule": "== 30",
+          "value": 30
+        },
+        {
+          "name": "seed 42 criteria all pass",
+          "note": "",
+          "passed": true,
+          "rule": "== 30",
+          "value": 30
+        },
+        {
+          "name": "seed 43 criteria total matches",
+          "note": "",
+          "passed": true,
+          "rule": "== 30",
+          "value": 30
+        },
+        {
+          "name": "seed 43 criteria all pass",
+          "note": "",
+          "passed": true,
+          "rule": "== 30",
+          "value": 30
+        },
+        {
+          "name": "seed 44 criteria total matches",
+          "note": "",
+          "passed": true,
+          "rule": "== 30",
+          "value": 30
+        },
+        {
+          "name": "seed 44 criteria all pass",
+          "note": "",
+          "passed": true,
+          "rule": "== 30",
+          "value": 30
+        },
+        {
+          "name": "required control criterion present",
+          "note": "",
+          "passed": true,
+          "rule": "substring found",
+          "value": "full_confidence_hardware_weight_within_tolerance"
+        },
+        {
+          "name": "required control criterion present",
+          "note": "",
+          "passed": true,
+          "rule": "substring found",
+          "value": "zero_confidence_weight_zero"
+        },
+        {
+          "name": "required control criterion present",
+          "note": "",
+          "passed": true,
+          "rule": "substring found",
+          "value": "zero_context_confidence_weight_zero"
+        },
+        {
+          "name": "required control criterion present",
+          "note": "",
+          "passed": true,
+          "rule": "substring found",
+          "value": "half_context_confidence_weight_magnitude_less_than_full"
+        },
+        {
+          "name": "required control summary present",
+          "note": "",
+          "passed": true,
+          "rule": "in controls",
+          "value": "full_confidence"
+        },
+        {
+          "name": "required control summary present",
+          "note": "",
+          "passed": true,
+          "rule": "in controls",
+          "value": "zero_confidence"
+        },
+        {
+          "name": "required control summary present",
+          "note": "",
+          "passed": true,
+          "rule": "in controls",
+          "value": "zero_context_confidence"
+        },
+        {
+          "name": "required control summary present",
+          "note": "",
+          "passed": true,
+          "rule": "in controls",
+          "value": "half_context_confidence"
+        }
+      ],
+      "criteria_passed": 25,
+      "criteria_total": 25,
+      "entry_id": "tier4_29d_native_self_evaluation",
+      "failed_criteria": [],
+      "mechanism": "native self-evaluation / confidence gating",
+      "passed_criteria": 90,
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "status": "pass",
+      "tier": "4.29d",
+      "total_criteria": 90
+    },
+    {
+      "canonical_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_29e_20260505_pass_ingested",
+      "criteria": [
+        {
+          "name": "canonical directory exists",
+          "note": "",
+          "passed": true,
+          "rule": "exists",
+          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29e_20260505_pass_ingested"
+        },
+        {
+          "name": "results file exists",
+          "note": "",
+          "passed": true,
+          "rule": "exists",
+          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29e_20260505_pass_ingested/tier4_29e_ingest_results.json"
+        },
+        {
+          "name": "summary file exists",
+          "note": "",
+          "passed": true,
+          "rule": "exists",
+          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29e_20260505_pass_ingested/tier4_29e_combined_results.json"
+        },
+        {
+          "name": "report file exists",
+          "note": "",
+          "passed": true,
+          "rule": "exists",
+          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29e_20260505_pass_ingested/tier4_29e_report.md"
+        },
+        {
+          "name": "results status pass",
+          "note": "",
+          "passed": true,
+          "rule": "== pass",
+          "value": "pass"
+        },
+        {
+          "name": "summary status pass",
+          "note": "",
+          "passed": true,
+          "rule": "== pass",
+          "value": "pass"
+        },
+        {
+          "name": "runner revision matches",
+          "note": "",
+          "passed": true,
+          "rule": "tier4_29e_native_replay_consolidation_20260505_0003",
+          "value": "tier4_29e_native_replay_consolidation_20260505_0003"
+        },
+        {
+          "name": "expected seeds present",
+          "note": "",
+          "passed": true,
+          "rule": "(42, 43, 44)",
+          "value": [
+            42,
+            43,
+            44
+          ]
+        },
+        {
+          "name": "total criteria count matches",
+          "note": "",
+          "passed": true,
+          "rule": "== 114",
+          "value": 114
+        },
+        {
+          "name": "total criteria all passed",
+          "note": "",
+          "passed": true,
+          "rule": "== 114",
+          "value": 114
+        },
+        {
+          "name": "per-seed rows present",
+          "note": "",
+          "passed": true,
+          "rule": "== 3",
+          "value": 3
+        },
+        {
+          "name": "seed 42 criteria total matches",
+          "note": "",
+          "passed": true,
+          "rule": "== 38",
+          "value": 38
+        },
+        {
+          "name": "seed 42 criteria all pass",
+          "note": "",
+          "passed": true,
+          "rule": "== 38",
+          "value": 38
+        },
+        {
+          "name": "seed 43 criteria total matches",
+          "note": "",
+          "passed": true,
+          "rule": "== 38",
+          "value": 38
+        },
+        {
+          "name": "seed 43 criteria all pass",
+          "note": "",
+          "passed": true,
+          "rule": "== 38",
+          "value": 38
+        },
+        {
+          "name": "seed 44 criteria total matches",
+          "note": "",
+          "passed": true,
+          "rule": "== 38",
+          "value": 38
+        },
+        {
+          "name": "seed 44 criteria all pass",
+          "note": "",
+          "passed": true,
+          "rule": "== 38",
+          "value": 38
+        },
+        {
+          "name": "required control criterion present",
+          "note": "",
+          "passed": true,
+          "rule": "substring found",
+          "value": "correct_replay_differs_from_wrong_key"
+        },
+        {
+          "name": "required control criterion present",
+          "note": "",
+          "passed": true,
+          "rule": "substring found",
+          "value": "correct_replay_weight_differs_from_no_replay"
+        },
+        {
+          "name": "required control criterion present",
+          "note": "",
+          "passed": true,
+          "rule": "substring found",
+          "value": "wrong_key_replay_weight_approx_no_replay"
+        },
+        {
+          "name": "required control criterion present",
+          "note": "",
+          "passed": true,
+          "rule": "substring found",
+          "value": "random_event_replay_differs_from_correct_replay"
+        },
+        {
+          "name": "required control summary present",
+          "note": "",
+          "passed": true,
+          "rule": "in controls",
+          "value": "no_replay"
+        },
+        {
+          "name": "required control summary present",
+          "note": "",
+          "passed": true,
+          "rule": "in controls",
+          "value": "correct_replay"
+        },
+        {
+          "name": "required control summary present",
+          "note": "",
+          "passed": true,
+          "rule": "in controls",
+          "value": "wrong_key_replay"
+        },
+        {
+          "name": "required control summary present",
+          "note": "",
+          "passed": true,
+          "rule": "in controls",
+          "value": "random_event_replay"
+        }
+      ],
+      "criteria_passed": 25,
+      "criteria_total": 25,
+      "entry_id": "tier4_29e_native_replay_consolidation",
+      "failed_criteria": [],
+      "mechanism": "native host-scheduled replay/consolidation",
+      "passed_criteria": 114,
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "status": "pass",
+      "tier": "4.29e",
+      "total_criteria": 114
+    }
+  ],
+  "mode": "local-evidence-regression",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_29f_20260505_native_mechanism_regression",
+  "runner_revision": "tier4_29f_compact_native_mechanism_regression_20260505_0001",
+  "status": "pass",
+  "tier": "Tier 4.29f - Compact Native Mechanism Regression"
+}

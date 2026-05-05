@@ -13,27 +13,22 @@ something about the platform, update this file in the same work session.
 Latest passed hardware-facing gate:
 
 ```text
-Tier 4.29e - Native Replay/Consolidation Bridge
-  Status: HARDWARE PASS, INGESTED (cra_429p)
-  Seeds: 42/43/44 on boards 10.11.226.129 / 10.11.226.1 / 10.11.226.65
-  Criteria: 38/38 per seed (114/114 total)
-  no_replay: weight=32768, bias=0
-  correct_replay: weight=47896, bias=-232
-  wrong_key_replay: weight=32768, bias=0 (weight consolidation blocked)
-  random_event_replay: weight=57344, bias=0
-  Previous: cra_429o FAILED as noncanonical diagnostic due to schedule/reference gate.
-    Fix: preserve per-event wrong-key scheduling and mirror native continuous reference.
+Tier 4.29f - Compact Native Mechanism Regression
+  Status: EVIDENCE-REGRESSION PASS, INGESTED
+  Criteria: 113/113
+  Audits: 4.29a keyed memory, 4.29b routing/composition, 4.29c predictive
+    binding, 4.29d confidence gating, 4.29e host-scheduled replay/consolidation.
+  Baseline frozen: CRA_NATIVE_MECHANISM_BRIDGE_v0.3
+  Boundary: not a new hardware execution; it audits already-ingested real
+    hardware passes before benchmarks.
 ```
 
 Latest active hardware-facing tier:
 
 ```text
-Tier 4.29f - Compact Native Mechanism Regression
-  Status: CURRENT NEXT GATE
-  Purpose: verify that native bridges 4.29a-e remain mutually compatible before
-    freezing a cumulative native mechanism bridge baseline or starting benchmarks.
-  Coverage: keyed memory, routing/composition, predictive binding, confidence
-    gating, and host-scheduled replay/consolidation.
+None. Current next gate is Tier 7.0 standard dynamical benchmarks in software.
+Do not move benchmark workloads to EBRAINS until the software benchmark harness
+is stable, leakage-checked, and diagnostic.
 ```
 
 Latest passed hardware-facing tier:

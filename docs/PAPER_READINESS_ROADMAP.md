@@ -6208,23 +6208,26 @@ has advanced substantially:
 - Tier 4.29c passed native predictive binding across three seeds.
 - Tier 4.29d passed native self-evaluation / confidence-gated learning across three seeds.
 - Tier 4.29e passed hardware after `cra_429p` repair: host-scheduled replay/consolidation ran through native four-core state primitives across seeds 42/43/44 with 38/38 criteria per seed. `cra_429o` remains preserved as a noncanonical diagnostic failure.
+- Tier 4.29f passed the compact native mechanism evidence-regression gate over 4.29a-4.29e with 113/113 criteria and froze `CRA_NATIVE_MECHANISM_BRIDGE_v0.3`.
 
 Immediate roadmap boundary:
 
 ```text
-Do not freeze a cumulative native mechanism baseline from a single mechanism bridge.
-Tier 4.29e is promoted as native host-scheduled replay/consolidation evidence.
-Run 4.29f compact native mechanism regression across 4.29a-4.29e next.
-If 4.29f passes, freeze the cumulative native mechanism bridge baseline.
-If 4.29f fails, repair or park only the failing native mechanism before benchmarks.
+`CRA_NATIVE_MECHANISM_BRIDGE_v0.3` is frozen from 4.29f.
+Tier 4.29f is an evidence-regression gate over already-ingested real hardware
+passes, not a new hardware execution and not a single-task all-mechanism stack
+proof.
+The next gate is Tier 7.0 standard dynamical benchmarks in software.
+Do not move benchmark workloads to hardware until the software benchmark suite
+is stable, diagnostic, and leakage-checked.
 ```
 
 Paper implication:
 
 ```text
-4.29a-4.29d already support a bounded claim that promoted v2.1 mechanisms are
-being migrated into the custom SpiNNaker runtime one mechanism at a time.
-4.29e adds host-scheduled replay/consolidation bridge evidence; it does
-not prove native replay buffers, biological sleep, multi-chip scaling, speedup,
-or external-baseline superiority.
+4.29a-4.29e support a bounded claim that promoted v2.1 mechanisms are being
+migrated into the custom SpiNNaker runtime one mechanism at a time.
+4.29f freezes the cumulative mechanism-bridge evidence set. It does not prove
+native replay buffers, biological sleep, lifecycle hardware, multi-chip scaling,
+speedup, or external-baseline superiority.
 ```

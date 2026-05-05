@@ -4,11 +4,11 @@ This table is generated from `controlled_test_output/STUDY_REGISTRY.json`.
 It is intended as a paper/technical-note citation table, not as a new
 source of claims. If the registry changes, regenerate this file.
 
-- Generated: `2026-05-05T13:13:34.301859+00:00`
-- Registry generated: `2026-05-05T13:13:34.207447+00:00`
+- Generated: `2026-05-05T13:29:32.133314+00:00`
+- Registry generated: `2026-05-05T13:29:32.042322+00:00`
 - Registry status: **PASS**
-- Canonical bundles: `42`
-- Expanded entries: `42`
+- Canonical bundles: `43`
+- Expanded entries: `43`
 
 ## Summary Table
 
@@ -56,6 +56,7 @@ source of claims. If the registry changes, regenerate this file.
 | `tier4_29c_native_predictive_binding` | PASS | see manifest |  |  | Native predictive binding hardware evidence only; not speedup evidence, not multi-chip scaling, not full native v2.1 autonomy, not continuous generation, and not general task learning. | results: `controlled_test_output/tier4_29c_20260504_pass_ingested/tier4_29c_ingest_results.json`; report: `controlled_test_output/tier4_29c_20260504_pass_ingested/tier4_29c_report_seed42.json`; summary: `controlled_test_output/tier4_29c_20260504_pass_ingested/tier4_29c_combined_results.json` |
 | `tier4_29d_native_self_evaluation` | PASS | see manifest |  |  | Native confidence-gated learning hardware evidence only; not speedup evidence, not multi-chip scaling, not full native v2.1 autonomy, not continuous generation, not dynamic lifecycle, and not external-baseline superiority. | results: `controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_ingest_results.json`; report: `controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_report_seed44.json`; summary: `controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_combined_results.json` |
 | `tier4_29e_native_replay_consolidation` | PASS | see manifest |  |  | Native host-scheduled replay/consolidation bridge evidence only; not native on-chip replay buffers, not biological sleep, not speedup evidence, not multi-chip scaling, not full native autonomy, and not external-baseline superiority. | results: `controlled_test_output/tier4_29e_20260505_pass_ingested/tier4_29e_ingest_results.json`; report: `controlled_test_output/tier4_29e_20260505_pass_ingested/tier4_29e_report.md`; summary: `controlled_test_output/tier4_29e_20260505_pass_ingested/tier4_29e_combined_results.json` |
+| `tier4_29f_compact_native_mechanism_regression` | PASS | see manifest | Tier 4.29f - Compact Native Mechanism Regression |  | Evidence-regression gate over already-ingested real hardware passes; not a new hardware execution, not a single monolithic all-mechanism task, not lifecycle/self-scaling evidence, not multi-chip scaling, and not speedup evidence. | results: `controlled_test_output/tier4_29f_20260505_native_mechanism_regression/tier4_29f_results.json`; report: `controlled_test_output/tier4_29f_20260505_native_mechanism_regression/tier4_29f_report.md`; summary: `controlled_test_output/tier4_29f_20260505_native_mechanism_regression/tier4_29f_summary.csv` |
 
 ## Claim Discipline
 

@@ -109,7 +109,7 @@ They remain part of the peer-review audit trail:
 7.6 long-horizon planning / subgoal control
 4.19 hardware lifecycle feasibility
 4.29e native replay/consolidation bridge = hardware pass ingested after cra_429p repair
-4.29f compact native mechanism regression = current next gate after 4.29e pass
+4.29f compact native mechanism regression = pass; freezes CRA_NATIVE_MECHANISM_BRIDGE_v0.3
 4.30+ native lifecycle/ecology migration = roadmap; not yet canonical evidence
 ```
 
@@ -7214,7 +7214,8 @@ Docs to update:
 
 Promotion/freeze condition:
 - 4.29e is promoted as carried-forward native host-scheduled replay/consolidation evidence.
-- Do not freeze a new cumulative native mechanism bridge baseline until compact native regression (4.29f) passes.
+- Follow-up compact native regression (4.29f) passed and froze
+  `CRA_NATIVE_MECHANISM_BRIDGE_v0.3`.
 
 Re-entry condition if parked:
 - If replay events corrupt state: verify schedule upload isolation in C runtime.
@@ -7231,17 +7232,18 @@ bridge baseline freeze.
 
 ### Tier 4.29f - Compact Native Mechanism Regression
 
-Status: **DEFINED / CURRENT NEXT GATE**.
+Status: **PASS / BASELINE FREEZE GATE COMPLETE**.
 
 Question: Do the promoted native mechanism bridges from 4.29a-e remain stable
-when checked as a compact cumulative regression suite?
+when checked as a compact cumulative evidence-regression suite?
 
-Hypothesis: The native runtime can carry keyed memory, routing/composition,
-predictive binding, confidence-gated learning, and host-scheduled replay without
-regressing any previously passing mechanism-specific control.
+Hypothesis: The canonical hardware evidence set for native keyed memory,
+routing/composition, predictive binding, confidence-gated learning, and
+host-scheduled replay remains complete, internally aligned, and safe to freeze
+as a cumulative native mechanism bridge baseline.
 
-Null hypothesis: At least one promoted native mechanism only passed in isolation
-and fails when the cumulative bridge state is audited.
+Null hypothesis: At least one promoted native mechanism evidence row is missing,
+stale, internally inconsistent, or no longer satisfies its own pass boundary.
 
 Required coverage:
 - 4.29a keyed-memory overcapacity/wrong-key controls.
@@ -7251,22 +7253,102 @@ Required coverage:
 - 4.29e host-scheduled replay/consolidation controls.
 
 Pass criteria:
-- All selected compact controls pass locally before hardware.
-- Hardware pass requires real SpiNNaker execution, current runner revision, zero
-  fallback, successful target acquisition/load/readback, and no failed compact
-  criteria.
+- The 4.29a-e canonical hardware-pass directories exist and are registry-aligned.
+- Each promoted mechanism reports expected runner revision, seeds, status,
+  criteria totals, and mechanism-specific control criteria.
 - No previously promoted mechanism regresses versus its own hardware pass
   boundary.
+- The 4.29f evidence-regression runner passes all criteria and produces citable
+  `tier4_29f_results.json`, `tier4_29f_summary.csv`, and `tier4_29f_report.md`.
 
 Fail criteria:
-- Any selected compact control fails.
-- Any returned result has stale runner revision/package identity.
-- Any hardware target/load/readback failure is not explicitly classified.
+- Any 4.29a-e canonical artifact is missing, stale, or not `pass`.
+- Any expected control criterion is absent.
+- Any runner revision/package identity mismatch appears.
+- Any required three-seed coverage is missing.
+
+Result:
+- Output: `controlled_test_output/tier4_29f_20260505_native_mechanism_regression/`
+- Runner revision: `tier4_29f_compact_native_mechanism_regression_20260505_0001`
+- Status: `pass`
+- Criteria: `113/113`
+- Audited mechanisms: 4.29a, 4.29b, 4.29c, 4.29d, 4.29e
+- Baseline frozen: `baselines/CRA_NATIVE_MECHANISM_BRIDGE_v0.3.md`
 
 Promotion/freeze condition:
-- If 4.29f passes, freeze a cumulative native mechanism bridge baseline.
-- If 4.29f fails, park or repair only the failing native mechanism; do not run
-  standard benchmarks against an unstable stack.
+- Passed. `CRA_NATIVE_MECHANISM_BRIDGE_v0.3` is frozen as a cumulative native
+  mechanism bridge evidence baseline.
+- Boundary: 4.29f is an evidence-regression gate over already-ingested real
+  hardware passes, not a new SpiNNaker execution and not a single monolithic
+  all-mechanism runtime task.
 
-Next step after 4.29f: freeze cumulative native mechanism bridge baseline if it
-passes, then run Tier 7.1 standard dynamical benchmarks in software.
+Next step after 4.29f: run Tier 7.0 standard dynamical benchmarks in software
+before moving any benchmark workload to hardware.
+
+### Tier 7.0 - Standard Dynamical Benchmark Suite
+
+Status: **DEFINED / CURRENT NEXT GATE**.
+
+Question: How does the frozen CRA software baseline perform on standard
+temporal prediction and memory benchmarks before any additional mechanism work
+or hardware benchmark migration?
+
+Hypothesis: CRA will show a measurable capability profile on dynamical
+prediction/memory tasks that can be compared fairly against standard baselines
+and used to diagnose the next useful mechanism gap.
+
+Null hypothesis: CRA is dominated by simpler baselines or fails to produce a
+stable, reproducible signal on these standard benchmarks under fair evaluation.
+
+Tasks:
+- Mackey-Glass future prediction.
+- Lorenz future prediction.
+- NARMA10 nonlinear memory/system-identification.
+- Aggregate geometric-mean MSE across all three tasks.
+
+Required baselines:
+- Persistence / naive last-value predictor.
+- Linear regression or ridge regression.
+- Online perceptron/logistic where applicable.
+- Reservoir / echo-state network.
+- Small GRU or comparable sequence learner.
+- Optional STDP-only or rate-only SNN baseline if it can be run fairly.
+
+Required metrics:
+- MSE and normalized MSE.
+- Tail-window MSE.
+- Seed mean, median, standard deviation, and worst case.
+- Confidence/bootstrap interval where practical.
+- Runtime and memory footprint.
+- Per-task and aggregate geometric-mean MSE.
+
+Controls and guardrails:
+- Fixed train/test splits and seeds.
+- No future-window leakage.
+- Same prediction horizon per model.
+- Same input normalization fitted only on train split.
+- Hyperparameter budget recorded for all baselines.
+- No blind CRA tuning from the benchmark score; diagnose failure mode first.
+
+Pass criteria:
+- Benchmark harness produces deterministic, reproducible artifacts.
+- All baselines and CRA run successfully across predeclared seeds.
+- Leakage checks pass.
+- Metrics table and per-seed outputs are generated.
+- The result is interpretable enough to decide whether the next work should be
+  lifecycle, policy/action, planning, memory/replay, or hardware migration.
+
+Fail criteria:
+- Any benchmark has leakage or split contamination.
+- Baselines are missing or unfairly under-specified.
+- CRA-specific preprocessing gives extra information unavailable to baselines.
+- Results cannot be reproduced from generated artifacts.
+
+Promotion/freeze condition:
+- Tier 7.0 is a benchmark/diagnostic gate, not automatically a new baseline.
+- Freeze a new software baseline only if a subsequent repair or mechanism tier
+  passes ablation, baseline comparison, and compact regression.
+
+Next step after Tier 7.0: classify the benchmark outcome before choosing the
+next roadmap branch. Do not move to hardware benchmarking until software results
+are stable and diagnostic.

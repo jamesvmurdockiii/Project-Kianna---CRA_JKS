@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-05T09:08-04:00.
+Last updated: 2026-05-05T09:35-04:00.
 
 Current repo root:
 
@@ -35,16 +35,21 @@ v2.1 = post-Tier-5.18c bounded host-side self-evaluation / reliability-monitorin
 Current hardware/runtime baseline decision:
 
 ```text
-FROZEN: CRA_NATIVE_TASK_BASELINE_v0.2
-  Source: Tiers 4.22i through 4.28e
-  File: baselines/CRA_NATIVE_TASK_BASELINE_v0.2.md
-  Claim: four-core MCPL distributed scaffold handles harder tasks repeatably;
-         operating envelope measured (≤64 schedule entries, ≤128 context slots,
-         ≤128 pending horizons); graceful degradation confirmed at boundary.
-  Boundary: single-chip only; chunked scheduling only; not continuous mode,
-            not multi-chip, not speedup, not v2.1 mechanism transfer.
-  Supersedes: CRA_NATIVE_RUNTIME_BASELINE_v0.1
-  Next: Phase C (4.29a+) mechanism migration toward native v2.1
+FROZEN: CRA_NATIVE_MECHANISM_BRIDGE_v0.3
+  Source: Tiers 4.22i through 4.29f
+  File: baselines/CRA_NATIVE_MECHANISM_BRIDGE_v0.3.md
+  Claim: native keyed memory, native routing/composition, native predictive
+         binding, native confidence-gated learning, and host-scheduled
+         replay/consolidation have each passed bounded real-hardware gates
+         across seeds 42/43/44, and 4.29f passed a cumulative evidence-regression
+         audit over those hardware passes.
+  Boundary: single-chip mechanism bridge evidence only; host still owns setup,
+            schedule/state writes, and readback; 4.29f is not a new hardware run,
+            not a monolithic all-mechanism task, not lifecycle, not multi-chip,
+            not speedup, and not external-baseline superiority.
+  Supersedes: CRA_NATIVE_TASK_BASELINE_v0.2
+  Next: Tier 7.0 standard dynamical benchmarks in software before moving
+        benchmark workloads to hardware.
 ```
 
 Current active hardware/custom-runtime tier:
@@ -166,8 +171,8 @@ Tier 4.29d — COMPLETE. Native self-evaluation bridge.
   Runner: experiments/tier4_29d_native_self_evaluation_bridge.py
   Claim boundary: Native confidence-gated learning hardware evidence only;
     not full world modeling, not hidden-regime inference, not speedup, not multi-chip.
-  Next: Tier 4.29f compact native mechanism regression, then cumulative
-    native mechanism bridge freeze if 4.29f passes.
+  Follow-up complete: Tier 4.29f passed compact native mechanism regression and
+    froze `CRA_NATIVE_MECHANISM_BRIDGE_v0.3`.
 
 Tier 4.29e — COMPLETE. Native replay/consolidation bridge.
   Status: HARDWARE PASS, INGESTED after `cra_429p` repair.
@@ -190,11 +195,19 @@ Tier 4.29e — COMPLETE. Native replay/consolidation bridge.
     four-core state primitives only. Not native on-chip replay buffers, not
     biological sleep, not speedup, not multi-chip, not performance superiority.
 
-Tier 4.29f — CURRENT NEXT. Compact native mechanism regression.
-  Purpose: verify that the promoted native mechanism bridges 4.29a-e remain
-    mutually compatible before freezing any cumulative native mechanism bridge
-    baseline.
-  Rule: do not start benchmarks until 4.29f passes or parks the failing mechanism.
+Tier 4.29f — COMPLETE. Compact native mechanism regression.
+  Status: PASS. Evidence-regression audit over canonical 4.29a-e real-hardware
+    passes. 113/113 criteria.
+  Output: controlled_test_output/tier4_29f_20260505_native_mechanism_regression/
+  Baseline frozen: baselines/CRA_NATIVE_MECHANISM_BRIDGE_v0.3.md
+  Boundary: not a new SpiNNaker execution and not a single-task all-mechanism
+    stack proof.
+
+Tier 7.0 — CURRENT NEXT. Standard dynamical benchmark suite in software.
+  Purpose: benchmark CRA on Mackey-Glass, Lorenz, NARMA10, and aggregate
+    geometric-mean MSE against standard baselines before hardware migration.
+  Rule: do not tune blindly. Diagnose failure mode first; only add planned
+    mechanisms when the benchmark identifies a matching failure.
 
 
 Current status summary:
@@ -252,6 +265,14 @@ Tier 4.29d = HARDWARE PASS, INGESTED. Three-seed repeatability complete.
   Zero-confidence controls: exact weight=0, bias=0 on all seeds.
   Half-confidence: weight=28093, bias=3517 (diff=61 from ref).
   Package: cra_429j (cra_429i deprecated: MCPL lacked confidence transmission).
+
+Tier 4.29e = HARDWARE PASS, INGESTED. Native host-scheduled replay/consolidation
+  bridge after `cra_429p` repair. Seeds 42/43/44, 38/38 criteria per seed,
+  114/114 total. `cra_429o` preserved as noncanonical schedule/reference failure.
+
+Tier 4.29f = EVIDENCE-REGRESSION PASS, INGESTED. Compact audit over canonical
+  4.29a-e hardware passes. 113/113 criteria. Freezes
+  `CRA_NATIVE_MECHANISM_BRIDGE_v0.3`.
 ```
 
 Tier 4.27a canonical evidence:
@@ -327,15 +348,15 @@ Local build capability (established 2026-05-02):
 
 Immediate next steps:
 
-1. Define and run Tier 4.29f compact native mechanism regression across the
-   promoted native mechanism bridges 4.29a-e.
-2. Include at minimum: keyed-memory overcapacity/wrong-key, routing/composition
-   wrong-route/overwrite, predictive binding, confidence-gated learning, and
-   replay/consolidation controls.
-3. If 4.29f passes, freeze the cumulative native mechanism bridge baseline and
-   then move to Tier 7.1 standard dynamical benchmarks in software.
-4. If 4.29f fails, park or repair only the failing native mechanism; do not
-   benchmark an unstable cumulative mechanism stack.
+1. Implement Tier 7.0 standard dynamical benchmark suite in software:
+   Mackey-Glass, Lorenz, NARMA10, and aggregate geometric-mean MSE.
+2. Compare CRA v2.1 against predeclared baselines with fixed splits/seeds,
+   leakage checks, and traceable result artifacts.
+3. If CRA underperforms, diagnose whether the failure is prediction, memory,
+   policy/action, lifecycle, replay/consolidation, or scaling before adding
+   mechanisms.
+4. Do not move benchmark workloads to hardware until the software benchmark
+   suite is stable, auditable, and diagnostic.
 5. Keep public repo hygiene green before the next upload or commit: no
    credentialed remotes, no `ebrains_jobs/` symlinks, no transient root output
    dirs, no generated host binaries, and `make validate` passing.

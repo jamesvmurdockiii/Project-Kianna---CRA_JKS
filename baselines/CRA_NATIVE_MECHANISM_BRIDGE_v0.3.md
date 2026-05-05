@@ -1,0 +1,50 @@
+# CRA Native Mechanism Bridge v0.3
+
+- Frozen at: `2026-05-05T13:21:42.857050+00:00`
+- Source registry generated at: `2026-05-05T13:21:14.964293+00:00`
+- Registry status: **PASS**
+- Canonical evidence bundles in registry: `43`
+- Supersedes: `CRA_NATIVE_TASK_BASELINE_v0.2`
+
+## Freeze Rule
+
+Frozen after Tier 4.29f compact native mechanism regression passed 113/113 evidence-regression criteria over the canonical real-hardware passes from Tiers 4.29a-e.
+
+## Strongest Current Claim
+
+CRA has a bounded native mechanism bridge baseline on SpiNNaker: native keyed context memory, native routing/composition, native predictive binding, native confidence-gated learning, and host-scheduled replay/consolidation have each passed real-hardware gates across seeds 42, 43, and 44, and the cumulative evidence set passed the 4.29f regression audit.
+
+## Claim Boundaries
+
+- Native mechanism bridge baseline, not a full organism runtime.
+- 4.29f is an evidence-regression gate over real hardware passes, not a new hardware execution.
+- Does not prove all mechanisms are simultaneously active in one single monolithic task.
+- Does not prove lifecycle/self-scaling, on-chip replay buffers, biological sleep, multi-chip scaling, speedup, or external-baseline superiority.
+- Host still performs setup/schedule/state writes and readback for these mechanism bridges.
+
+## Frozen Native Mechanism Evidence
+
+| Entry | Status | Claim | Boundary |
+| --- | --- | --- | --- |
+| `tier4_29a_native_keyed_memory_overcapacity` | `pass` | Native four-core MCPL runtime handles keyed context memory with wrong-key, overwrite, and slot-shuffle controls across seeds 42, 43, 44 on three different boards. All 47/47 criteria pass per seed (141/141 total). Weight=32768, bias=0, pending=32/32, active_pending=0, decisions=32, reward_events=32, lookup_requests=96, lookup_replies=96, stale=0, timeouts=0, context hits=26, misses=6, active_slots=8, slot_writes=9. Exact parity with local reference on all three seeds. | Single-chip four-core only. Host-pre-written keyed context slots. Schedule-driven (not true continuous generation). Not multi-chip scaling, not speedup evidence, not full v2.1 mechanism transfer. MAX_SCHEDULE_ENTRIES=512 allows longer task streams but still uses pre-loaded static schedule. |
+| `tier4_29b_native_routing_composition_gate` | `pass` | Native keyed context * route composition works on real SpiNNaker across three seeds on three different boards with explicit wrong-context, wrong-route, overwrite, and host-composed sham controls. | Native routing/composition hardware evidence only; not speedup evidence, not multi-chip scaling, not a general multi-core framework, not full native v2.1 autonomy, and not true continuous generation. |
+| `tier4_29c_native_predictive_binding` | `pass` | Native four-core runtime separates prediction target from reward target before outcome on real SpiNNaker across three seeds on three different boards. All 24/24 criteria pass per seed (72/72 total). Full-context prediction weight=30912, bias=-1856; zero-context prediction weight=0, bias=0. Confidence parity confirms prediction-before-reward isolation. | Native predictive binding hardware evidence only; not speedup evidence, not multi-chip scaling, not full native v2.1 autonomy, not continuous generation, and not general task learning. |
+| `tier4_29d_native_self_evaluation` | `pass` | Native four-core runtime gates learning by composite confidence (context × route × memory) on real SpiNNaker across three seeds on three different boards. All 30/30 criteria pass per seed (90/90 total). Full confidence weight=30912, bias=-1856; zero confidence weight=0, bias=0; zero-context confidence weight=0, bias=0; half-context confidence weight=28093, bias=3517. MCPL lookup lacks confidence transmission; SDP used instead. | Native confidence-gated learning hardware evidence only; not speedup evidence, not multi-chip scaling, not full native v2.1 autonomy, not continuous generation, not dynamic lifecycle, and not external-baseline superiority. |
+| `tier4_29e_native_replay_consolidation` | `pass` | Host-scheduled replay/consolidation events run through native four-core state primitives on real SpiNNaker across three seeds on three different boards. All 38/38 criteria pass per seed (114/114 total). Correct replay changes readout weight versus no replay, wrong-key replay blocks weight consolidation, and random-event replay stays distinct from correct replay. | Native host-scheduled replay/consolidation bridge evidence only; not native on-chip replay buffers, not biological sleep, not speedup evidence, not multi-chip scaling, not full native autonomy, and not external-baseline superiority. |
+| `tier4_29f_compact_native_mechanism_regression` | `pass` | The canonical hardware evidence for native keyed memory, routing/composition, predictive binding, confidence gating, and host-scheduled replay/consolidation remains complete and internally aligned. All 113/113 evidence-regression criteria pass. | Evidence-regression gate over already-ingested real hardware passes; not a new hardware execution, not a single monolithic all-mechanism task, not lifecycle/self-scaling evidence, not multi-chip scaling, and not speedup evidence. |
+
+## Files Frozen
+
+- `baselines/CRA_NATIVE_MECHANISM_BRIDGE_v0.3.json`
+- `baselines/CRA_NATIVE_MECHANISM_BRIDGE_v0.3.md`
+- `baselines/CRA_NATIVE_MECHANISM_BRIDGE_v0.3_STUDY_REGISTRY.snapshot.json`
+
+## Next Steps
+
+- Run Tier 7.0 standard dynamical benchmarks in software before hardware benchmarking.
+- If benchmark failure points to missing native lifecycle/replay/planning mechanisms, return to the relevant roadmap tier with a predeclared repair gate.
+- Continue native lifecycle path at Tier 4.30 after benchmark pressure and mechanism freeze are documented.
+
+## Re-entry Condition
+
+If a future native/lifecycle/multi-chip tier invalidates any 4.29a-e mechanism boundary or reveals cross-mechanism interference, return to the failing mechanism tier and rerun 4.29f before citing v0.3.
