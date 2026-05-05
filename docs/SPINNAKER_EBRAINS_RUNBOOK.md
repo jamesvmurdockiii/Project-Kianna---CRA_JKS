@@ -26,11 +26,22 @@ Tier 4.29f - Compact Native Mechanism Regression
 Latest active hardware-facing tier:
 
 ```text
+None pending.
+  Next EBRAINS package must wait until Tier 4.30d source/local C tests pass.
+  Do not package the multi-core lifecycle split directly from the 4.30c local
+    contract/reference.
+```
+
+Latest local/native lifecycle tier:
+
+```text
 Tier 4.30c - Multi-Core Lifecycle State Split
-  Status: CONTRACT / LOCAL REFERENCE NEXT
-  Boundary: design/local evidence first; no EBRAINS package until state
-    partitioning, protocol fields, checksum/readback expectations, and failure
-    classes are predeclared.
+  Status: LOCAL CONTRACT/REFERENCE PASS
+  Criteria: 22/22
+  Output: controlled_test_output/tier4_30c_20260505_multicore_lifecycle_split/
+  Boundary: five-core ownership/message/failure contract only; not C
+    implementation, not hardware evidence, not task benefit, not speedup, and
+    not a lifecycle baseline freeze.
 ```
 
 Latest passed hardware-facing tier:

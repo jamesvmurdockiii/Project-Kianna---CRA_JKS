@@ -124,7 +124,8 @@ They remain part of the peer-review audit trail:
 4.30a local static-pool lifecycle reference = passed; canonical and boundary deterministic traces plus lifecycle shams precomputed
 4.30b lifecycle runtime source audit = passed; runtime static-pool lifecycle surface and host/schema parity tests complete
 4.30b-hw single-core lifecycle active-mask/lineage hardware smoke = hardware functional pass after ingest correction; raw remote fail was runner rev-0001 readback counter criterion defect
-4.30c native lifecycle/ecology migration = current next; multi-core lifecycle state split contract/local reference
+4.30c native lifecycle/ecology migration = complete; multi-core lifecycle state split contract/local reference passed
+4.30d native lifecycle/ecology migration = current next; multi-core lifecycle runtime source audit/local C host test
 ```
 
 These planned tiers may move in order as evidence arrives, but completed pass,
@@ -8125,8 +8126,10 @@ Commands: lifecycle init, lifecycle event, trophic update, lifecycle readback,
 Readback: 23 summary/per-slot fields including masks, lineage, trophic state,
           event counters, checksums, and invalid-event count
 Events: trophic_update, cleavage, adult_birth, death, maturity_handoff
-Gates: 4.30 contract, 4.30a local reference, 4.30b single-core smoke,
-       4.30c multi-core split, 4.30d sham-control subset
+Gates: 4.30 contract, 4.30a local reference, 4.30b source audit,
+       4.30b-hw single-core smoke, 4.30c multi-core split,
+       4.30d source/local C host test, 4.30e hardware smoke,
+       4.30f lifecycle sham-control subset
 Failure classes: contract gap, dynamic allocation dependency, local reference
                  mismatch, readback mismatch, lineage/mask corruption, sham
                  explains effect, unsupported claim jump
@@ -8244,10 +8247,10 @@ temporal-state migration, and not a lifecycle baseline freeze.
 Next step:
 
 ```text
-Tier 4.30c multi-core lifecycle state split contract/local reference. Define
-which lifecycle state lives on which runtime core, how active masks and lineage
-move across the selected protocol, and what checksums/readbacks prove state
-integrity before another EBRAINS package.
+Tier 4.30c multi-core lifecycle state split contract/local reference
+(completed). Define which lifecycle state lives on which runtime core, how
+active masks and lineage move across the selected protocol, and what
+checksums/readbacks prove state integrity before another EBRAINS package.
 ```
 
 Prepared package update:
@@ -8312,3 +8315,85 @@ instrumentation/criterion defect, not a lifecycle-state failure. Boundary
 remains unchanged: this is not task-benefit evidence, not multi-core lifecycle
 migration, not speedup evidence, not v2.2 temporal-state migration, and not a
 lifecycle baseline freeze.
+
+### Tier 4.30c - Multi-Core Lifecycle State Split
+
+Status: COMPLETE - LOCAL CONTRACT/REFERENCE PASS.
+
+Question:
+
+```text
+Can lifecycle ownership, active-mask synchronization, lineage/trophic checksums,
+and failure classes be split across the four-core native bridge plus a dedicated
+lifecycle core before any multi-core lifecycle runtime C or EBRAINS package?
+```
+
+Result:
+
+```text
+Output: controlled_test_output/tier4_30c_20260505_multicore_lifecycle_split/
+Runner: experiments/tier4_30c_multicore_lifecycle_split.py
+Criteria: 22/22
+Mode: local-contract-reference
+```
+
+Core ownership contract:
+
+```text
+context_core: owns context slots/confidence; receives active-mask snapshots
+route_core: owns route slots/confidence; receives active-mask snapshots
+memory_core: owns memory slots/replay keys/confidence; receives active-mask snapshots
+learning_core: owns pending horizons/readout/reward updates; requests lifecycle events
+lifecycle_core: owns fixed slot pool, active masks, lineage IDs, trophic health,
+                event counters, sham mode, event acks, and lifecycle summaries
+```
+
+Message contract:
+
+```text
+LIFE_INIT_CONTROL: host SDP control to lifecycle_core
+LIFE_EVENT_REQUEST: learning_core to lifecycle_core; MCPL/multicast target
+LIFE_TROPHIC_UPDATE: learning_core to lifecycle_core; MCPL/multicast target
+LIFE_ACTIVE_MASK_SYNC: lifecycle_core broadcast to context/route/memory/learning
+LIFE_SUMMARY_READBACK: host SDP readback, compact summary payload_len=68
+```
+
+Scenario parity:
+
+```text
+canonical_32: 32 event acks, 13 mask syncs, final_mask=63,
+              lineage_checksum=105428, trophic_checksum=466851, match=True
+boundary_64: 64 event acks, 22 mask syncs, final_mask=127,
+             lineage_checksum=18496, trophic_checksum=761336, match=True
+```
+
+Failure classes:
+
+```text
+duplicate_event
+stale_event
+missing_ack
+mask_desync
+checksum_mismatch
+invalid_event_hidden
+wrong_owner_write
+payload_schema_drift
+```
+
+Claim boundary:
+
+```text
+Tier 4.30c is local contract/reference evidence only. It is not runtime C
+implementation, not hardware evidence, not task-benefit evidence, not
+multi-chip scaling, not speedup evidence, not v2.2 temporal migration, and not
+a lifecycle baseline freeze.
+```
+
+Next step:
+
+```text
+Tier 4.30d multi-core lifecycle runtime source audit/local C host test. Implement
+only the source/local-test layer for the 4.30c split: lifecycle-core profile,
+message/readback stubs, active-mask sync bookkeeping, and source guards before
+any EBRAINS package.
+```

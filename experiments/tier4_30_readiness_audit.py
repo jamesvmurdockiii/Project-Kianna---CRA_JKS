@@ -319,9 +319,10 @@ def build_audit() -> dict[str, Any]:
         "recommended_sequence": [
             "Tier 4.30 contract: formalize static-pool lifecycle surface and command/readback schema.",
             "Tier 4.30a local reference: deterministic static-pool event stream and fixed-point parity.",
-            "Tier 4.30b single-core hardware smoke: active-mask and lineage telemetry only.",
-            "Tier 4.30c multi-core lifecycle state split if 4.30b passes.",
-            "Tier 4.30d lifecycle sham-control hardware subset before any lifecycle-native baseline freeze.",
+            "Tier 4.30b source audit plus Tier 4.30b-hw single-core hardware smoke: active-mask and lineage telemetry only.",
+            "Tier 4.30c local multi-core lifecycle state split contract/reference if 4.30b-hw passes.",
+            "Tier 4.30d source/local C host test for the multi-core lifecycle split before EBRAINS packaging.",
+            "Tier 4.30e multi-core lifecycle hardware smoke, then Tier 4.30f lifecycle sham-control hardware subset before any lifecycle-native baseline freeze.",
             "Separate native temporal-readiness tier only if v2.2 fading-memory state is selected for hardware migration.",
         ],
         "claim_boundary": (

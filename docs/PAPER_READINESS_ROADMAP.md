@@ -6399,6 +6399,8 @@ Result: runtime lifecycle opcodes, static-pool lifecycle structs, exact 4.30a
 Boundary: local source/runtime host evidence only; not hardware evidence, not
           task benefit, not multi-core lifecycle, not v2.2 temporal-state
           migration, and not a baseline freeze.
+```
+
 Tier 4.30b-hw result:
 
 ```text
@@ -6421,7 +6423,22 @@ bug and corrected only because raw artifacts already contained compact
 not task-benefit evidence, not multi-core lifecycle migration, not speedup, not
 v2.2 temporal-state migration, and not a lifecycle baseline freeze.
 
-Next: Tier 4.30c multi-core lifecycle state split contract/local reference.
+Tier 4.30c result:
+
+```text
+Output: controlled_test_output/tier4_30c_20260505_multicore_lifecycle_split/
+Runner: experiments/tier4_30c_multicore_lifecycle_split.py
+Criteria: 22/22
+Result: five-core lifecycle ownership contract, single-writer lifecycle_core
+        semantics, host-only init/readback, inter-core lifecycle event/trophic/
+        mask-sync messages, explicit MCPL/multicast target, exact 4.30a
+        canonical/boundary split parity, final active-mask sync, payload_len=68
+        requirement, and eight distributed failure classes.
+Boundary: local contract/reference evidence only; not C implementation, not
+          hardware evidence, not task benefit, not speedup, not multi-chip
+          scaling, not v2.2 temporal-state migration, and not a lifecycle
+          baseline freeze.
+Next: Tier 4.30d multi-core lifecycle runtime source audit/local C host test.
 ```
 
 Detailed Tier 5.19 contract:

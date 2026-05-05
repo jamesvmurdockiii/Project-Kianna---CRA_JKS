@@ -2,7 +2,7 @@
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
-[![Tests](https://img.shields.io/badge/tests-147%20passing-brightgreen.svg)](#validation)
+[![Tests](https://img.shields.io/badge/tests-149%20passing-brightgreen.svg)](#validation)
 [![Evidence](https://img.shields.io/badge/canonical%20evidence-54%20bundles-blue.svg)](STUDY_EVIDENCE_INDEX.md)
 
 Coral Reef Architecture (CRA) is a neuromorphic learning research platform for
@@ -26,7 +26,8 @@ controlled ablations, baseline comparisons, and explicit claim boundaries.
 | Latest engineering contract | Tier 4.30 passed `14/14`, defining lifecycle init/event/trophic/readback/sham commands, `23` readback fields, event invariants, gates, and failure classes. |
 | Latest local lifecycle reference | Tier 4.30a passed `20/20`: deterministic 8-slot / 2-founder static-pool state, canonical 32-event trace, boundary 64-event trace, and lifecycle shams. |
 | Latest lifecycle runtime source audit | Tier 4.30b passed `13/13`: runtime lifecycle static-pool surface, exact 4.30a checksum parity, lifecycle SDP readback, and existing runtime/profile tests preserved. |
-| Active next gate | Tier 4.30c multi-core lifecycle state split contract/local reference. |
+| Latest multi-core lifecycle split | Tier 4.30c passed `22/22`: five-core lifecycle ownership contract, MCPL/multicast-target message semantics, final active-mask sync, exact canonical/boundary parity, and distributed failure classes. |
+| Active next gate | Tier 4.30d multi-core lifecycle runtime source audit/local C host test. |
 | Canonical registry | 54 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
 | Validation suite | 149 pytest tests plus registry, paper-table, and repository-audit generation. |
 

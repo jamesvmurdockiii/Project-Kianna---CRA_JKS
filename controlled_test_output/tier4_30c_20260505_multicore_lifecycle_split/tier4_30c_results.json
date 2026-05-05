@@ -1,0 +1,482 @@
+{
+  "claim_boundary": "Tier 4.30c is a local multi-core lifecycle split contract/reference. It proves ownership, message semantics, failure classes, and deterministic split-reference parity against Tier 4.30a plus the ingested 4.30b-hw smoke. It is not C implementation, not hardware evidence, not task-benefit evidence, not multi-chip scaling, not speedup, not v2.2 temporal migration, and not a lifecycle baseline freeze.",
+  "core_roles": [
+    {
+      "accepts": "active-mask snapshot for optional future context gating",
+      "emits": "context lookup replies",
+      "forbidden": "must not mutate lifecycle slots, lineage, trophic state, or active masks",
+      "owner": "native context mechanism bridge",
+      "owns_state": "context slots and context confidence",
+      "proposed_p_core": 4,
+      "role": "context_core"
+    },
+    {
+      "accepts": "active-mask snapshot for optional future route gating",
+      "emits": "route lookup replies",
+      "forbidden": "must not mutate lifecycle slots, lineage, trophic state, or active masks",
+      "owner": "native route/composition mechanism bridge",
+      "owns_state": "route slots and route confidence",
+      "proposed_p_core": 5,
+      "role": "route_core"
+    },
+    {
+      "accepts": "active-mask snapshot for optional future memory-slot gating",
+      "emits": "memory lookup replies",
+      "forbidden": "must not mutate lifecycle slots, lineage, trophic state, or active masks",
+      "owner": "native keyed-memory/replay mechanism bridge",
+      "owns_state": "memory slots, replay/consolidation keys, memory confidence",
+      "proposed_p_core": 6,
+      "role": "memory_core"
+    },
+    {
+      "accepts": "lifecycle event ack, active-mask snapshot, compact lifecycle summary",
+      "emits": "trophic update request, lifecycle event request, lifecycle read request",
+      "forbidden": "must not directly write lifecycle slot state or fabricate lineage",
+      "owner": "native delayed-credit/readout mechanism bridge",
+      "owns_state": "pending horizons, readout weight/bias, confidence-gated reward updates",
+      "proposed_p_core": 7,
+      "role": "learning_core"
+    },
+    {
+      "accepts": "init, trophic/event requests, sham mode, readback request",
+      "emits": "event ack, active-mask sync, compact summary, optional full-slot rows",
+      "forbidden": "must not run task readout learning or rewrite context/route/memory tables",
+      "owner": "Tier 4.30 static-pool lifecycle surface",
+      "owns_state": "fixed slot pool, active masks, lineage IDs, trophic health, event counters, sham mode",
+      "proposed_p_core": 8,
+      "role": "lifecycle_core"
+    }
+  ],
+  "criteria": [
+    {
+      "name": "Tier 4.30a reference passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "Tier 4.30b source audit passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "Tier 4.30b-hw corrected ingest passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "Tier 4.30b-hw raw remote failure preserved",
+      "note": "",
+      "passed": true,
+      "rule": "== fail with correction",
+      "value": "fail"
+    },
+    {
+      "name": "five-core role map declared",
+      "note": "",
+      "passed": true,
+      "rule": "includes lifecycle core plus 4.29 bridge cores",
+      "value": [
+        "context_core",
+        "route_core",
+        "memory_core",
+        "learning_core",
+        "lifecycle_core"
+      ]
+    },
+    {
+      "name": "lifecycle fields single-owned",
+      "note": "",
+      "passed": true,
+      "rule": "all lifecycle fields owned once",
+      "value": {
+        "active masks": 1,
+        "event counters": 1,
+        "fixed slot pool": 1,
+        "lineage IDs": 1,
+        "sham mode": 1,
+        "trophic health": 1
+      }
+    },
+    {
+      "name": "learning core cannot write lifecycle slots",
+      "note": "",
+      "passed": true,
+      "rule": "forbidden direct slot writes",
+      "value": [
+        "must not directly write lifecycle slot state or fabricate lineage"
+      ]
+    },
+    {
+      "name": "host limited to control/readback",
+      "note": "",
+      "passed": true,
+      "rule": "host only init/readback",
+      "value": [
+        "LIFE_INIT_CONTROL",
+        "LIFE_SUMMARY_READBACK"
+      ]
+    },
+    {
+      "name": "inter-core lifecycle messages declared",
+      "note": "",
+      "passed": true,
+      "rule": "event, trophic, mask sync present",
+      "value": [
+        "LIFE_EVENT_REQUEST",
+        "LIFE_TROPHIC_UPDATE",
+        "LIFE_ACTIVE_MASK_SYNC"
+      ]
+    },
+    {
+      "name": "MCPL/multicast target explicit",
+      "note": "",
+      "passed": true,
+      "rule": "inter-core transport names MCPL/multicast target",
+      "value": [
+        "host SDP control",
+        "inter-core event packet; MCPL/multicast target, SDP permitted only in local transitional tests",
+        "inter-core event packet; MCPL/multicast target",
+        "inter-core broadcast; MCPL/multicast target",
+        "host SDP readback"
+      ]
+    },
+    {
+      "name": "canonical split matches artifact reference",
+      "note": "",
+      "passed": true,
+      "rule": "== true",
+      "value": true
+    },
+    {
+      "name": "boundary split matches artifact reference",
+      "note": "",
+      "passed": true,
+      "rule": "== true",
+      "value": true
+    },
+    {
+      "name": "canonical split matches regenerated reference",
+      "note": "",
+      "passed": true,
+      "rule": "== true",
+      "value": true
+    },
+    {
+      "name": "boundary split matches regenerated reference",
+      "note": "",
+      "passed": true,
+      "rule": "== true",
+      "value": true
+    },
+    {
+      "name": "canonical event ack count",
+      "note": "",
+      "passed": true,
+      "rule": "== 32",
+      "value": 32
+    },
+    {
+      "name": "boundary event ack count",
+      "note": "",
+      "passed": true,
+      "rule": "== 64",
+      "value": 64
+    },
+    {
+      "name": "canonical consumers receive final active mask",
+      "note": "",
+      "passed": true,
+      "rule": "== true",
+      "value": true
+    },
+    {
+      "name": "boundary consumers receive final active mask",
+      "note": "",
+      "passed": true,
+      "rule": "== true",
+      "value": true
+    },
+    {
+      "name": "payload length requirement explicit",
+      "note": "",
+      "passed": true,
+      "rule": "not cumulative readback_bytes",
+      "value": "payload_len=68"
+    },
+    {
+      "name": "failure classes cover distributed lifecycle risks",
+      "note": "",
+      "passed": true,
+      "rule": ">= 8 classes",
+      "value": [
+        "duplicate_event",
+        "stale_event",
+        "missing_ack",
+        "mask_desync",
+        "checksum_mismatch",
+        "invalid_event_hidden",
+        "wrong_owner_write",
+        "payload_schema_drift"
+      ]
+    },
+    {
+      "name": "no EBRAINS package generated",
+      "note": "",
+      "passed": true,
+      "rule": "mode is local only",
+      "value": "local-contract-reference"
+    },
+    {
+      "name": "claim boundary excludes hardware/task/speedup/baseline",
+      "note": "",
+      "passed": true,
+      "rule": "explicit exclusions",
+      "value": "bounded local contract"
+    }
+  ],
+  "criteria_passed": 22,
+  "criteria_total": 22,
+  "failed_criteria": [],
+  "failure_classes": [
+    {
+      "detection": "same event_index accepted twice",
+      "failure_class": "duplicate_event",
+      "meaning": "event replay/transport defect",
+      "required_response": "fail gate; add dedup counter before hardware"
+    },
+    {
+      "detection": "event_index lower than lifecycle event counter",
+      "failure_class": "stale_event",
+      "meaning": "out-of-order lifecycle mutation risk",
+      "required_response": "fail gate; add stale counter/readback"
+    },
+    {
+      "detection": "learning_core request has no lifecycle ack",
+      "failure_class": "missing_ack",
+      "meaning": "inter-core timeout or routing failure",
+      "required_response": "fail gate; no inferred success"
+    },
+    {
+      "detection": "consumer active mask differs from lifecycle_core",
+      "failure_class": "mask_desync",
+      "meaning": "distributed state corruption",
+      "required_response": "fail gate; require active-mask sync readback"
+    },
+    {
+      "detection": "lineage/trophic checksum differs from reference",
+      "failure_class": "checksum_mismatch",
+      "meaning": "lifecycle state corruption",
+      "required_response": "fail gate; inspect event trace"
+    },
+    {
+      "detection": "invalid event not counted",
+      "failure_class": "invalid_event_hidden",
+      "meaning": "invariant audit broken",
+      "required_response": "fail gate; invalid_event_count must be explicit"
+    },
+    {
+      "detection": "non-lifecycle core writes slot fields",
+      "failure_class": "wrong_owner_write",
+      "meaning": "architecture boundary violation",
+      "required_response": "fail gate; reject implementation"
+    },
+    {
+      "detection": "payload_len/schema version mismatch",
+      "failure_class": "payload_schema_drift",
+      "meaning": "host/runtime parser drift",
+      "required_response": "fail gate; update protocol/tests before EBRAINS"
+    }
+  ],
+  "generated_at_utc": "2026-05-05T21:23:33+00:00",
+  "message_specs": [
+    {
+      "ack_or_readback": "compact lifecycle summary with payload_len=68",
+      "destination": "lifecycle_core",
+      "deterministic_rule": "initialize exactly the Tier 4.30a static pool",
+      "failure_if": "wrong pool size, nonzero invalid events, missing compact summary",
+      "message": "LIFE_INIT_CONTROL",
+      "payload_fields": "pool_size, founder_count, seed, trophic_seed_raw, generation_seed",
+      "source": "host",
+      "transport": "host SDP control"
+    },
+    {
+      "ack_or_readback": "event_count, active_mask_bits, lineage_checksum, trophic_checksum",
+      "destination": "lifecycle_core",
+      "deterministic_rule": "lifecycle_core applies event once if invariants hold",
+      "failure_if": "duplicate event, stale event, invalid event hidden, or checksum mismatch",
+      "message": "LIFE_EVENT_REQUEST",
+      "payload_fields": "event_index, event_type, target_slot, parent_slot, child_slot, trophic_delta_raw, reward_raw",
+      "source": "learning_core",
+      "transport": "inter-core event packet; MCPL/multicast target, SDP permitted only in local transitional tests"
+    },
+    {
+      "ack_or_readback": "slot status and compact trophic checksum",
+      "destination": "lifecycle_core",
+      "deterministic_rule": "trophic update changes trophic/cyclin/bax only; no lineage mutation",
+      "failure_if": "inactive slot silently accepted or lineage changes on trophic-only event",
+      "message": "LIFE_TROPHIC_UPDATE",
+      "payload_fields": "slot_id, trophic_delta_raw, reward_raw, confidence_raw, source_timestep",
+      "source": "learning_core",
+      "transport": "inter-core event packet; MCPL/multicast target"
+    },
+    {
+      "ack_or_readback": "receiving cores expose last_seen_lifecycle_event_count in later source audits",
+      "destination": "context_core, route_core, memory_core, learning_core",
+      "deterministic_rule": "emitted after every accepted mask-mutating event and after init",
+      "failure_if": "consumer sees stale active mask after cleavage, birth, or death",
+      "message": "LIFE_ACTIVE_MASK_SYNC",
+      "payload_fields": "event_count, active_mask_bits, active_count, lineage_checksum",
+      "source": "lifecycle_core",
+      "transport": "inter-core broadcast; MCPL/multicast target"
+    },
+    {
+      "ack_or_readback": "compact summary, optional full-slot rows in later tiers",
+      "destination": "lifecycle_core",
+      "deterministic_rule": "readback is versioned; compact schema-v1 length is payload_len=68",
+      "failure_if": "unversioned readback, cumulative byte counter used as payload-size proof",
+      "message": "LIFE_SUMMARY_READBACK",
+      "payload_fields": "read_scope, start_slot, slot_count, schema_version",
+      "source": "host",
+      "transport": "host SDP readback"
+    }
+  ],
+  "mode": "local-contract-reference",
+  "next_step": "Tier 4.30d multi-core lifecycle runtime source audit/local C host test: implement the lifecycle-core profile and inter-core message/readback stubs against this contract before any EBRAINS package.",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_30c_20260505_multicore_lifecycle_split",
+  "runner_revision": "tier4_30c_multicore_lifecycle_split_20260505_0001",
+  "scenarios": [
+    {
+      "ack_count": 32,
+      "artifact_expected": {
+        "active_count": 6,
+        "active_mask_bits": 63,
+        "attempted_event_count": 32,
+        "birth_count": 4,
+        "cleavage_count": 4,
+        "death_count": 4,
+        "event_count": 32,
+        "founder_count": 2,
+        "inactive_count": 2,
+        "invalid_event_count": 0,
+        "lineage_checksum": 105428,
+        "pool_size": 8,
+        "trophic_checksum": 466851
+      },
+      "consumer_masks": {
+        "context_core": 63,
+        "learning_core": 63,
+        "memory_core": 63,
+        "route_core": 63
+      },
+      "consumer_masks_match": true,
+      "event_count": 32,
+      "local_expected": {
+        "active_count": 6,
+        "active_mask_bits": 63,
+        "attempted_event_count": 32,
+        "birth_count": 4,
+        "cleavage_count": 4,
+        "death_count": 4,
+        "event_count": 32,
+        "founder_count": 2,
+        "inactive_count": 2,
+        "invalid_event_count": 0,
+        "lineage_checksum": 105428,
+        "pool_size": 8,
+        "trophic_checksum": 466851
+      },
+      "mask_sync_count": 13,
+      "matches_artifact_expected": true,
+      "matches_local_expected": true,
+      "scenario": "canonical_32",
+      "summary": {
+        "active_count": 6,
+        "active_mask_bits": 63,
+        "attempted_event_count": 32,
+        "birth_count": 4,
+        "cleavage_count": 4,
+        "death_count": 4,
+        "event_count": 32,
+        "founder_count": 2,
+        "inactive_count": 2,
+        "invalid_event_count": 0,
+        "lineage_checksum": 105428,
+        "pool_size": 8,
+        "trophic_checksum": 466851
+      }
+    },
+    {
+      "ack_count": 64,
+      "artifact_expected": {
+        "active_count": 7,
+        "active_mask_bits": 127,
+        "attempted_event_count": 64,
+        "birth_count": 5,
+        "cleavage_count": 8,
+        "death_count": 8,
+        "event_count": 64,
+        "founder_count": 2,
+        "inactive_count": 1,
+        "invalid_event_count": 0,
+        "lineage_checksum": 18496,
+        "pool_size": 8,
+        "trophic_checksum": 761336
+      },
+      "consumer_masks": {
+        "context_core": 127,
+        "learning_core": 127,
+        "memory_core": 127,
+        "route_core": 127
+      },
+      "consumer_masks_match": true,
+      "event_count": 64,
+      "local_expected": {
+        "active_count": 7,
+        "active_mask_bits": 127,
+        "attempted_event_count": 64,
+        "birth_count": 5,
+        "cleavage_count": 8,
+        "death_count": 8,
+        "event_count": 64,
+        "founder_count": 2,
+        "inactive_count": 1,
+        "invalid_event_count": 0,
+        "lineage_checksum": 18496,
+        "pool_size": 8,
+        "trophic_checksum": 761336
+      },
+      "mask_sync_count": 22,
+      "matches_artifact_expected": true,
+      "matches_local_expected": true,
+      "scenario": "boundary_64",
+      "summary": {
+        "active_count": 7,
+        "active_mask_bits": 127,
+        "attempted_event_count": 64,
+        "birth_count": 5,
+        "cleavage_count": 8,
+        "death_count": 8,
+        "event_count": 64,
+        "founder_count": 2,
+        "inactive_count": 1,
+        "invalid_event_count": 0,
+        "lineage_checksum": 18496,
+        "pool_size": 8,
+        "trophic_checksum": 761336
+      }
+    }
+  ],
+  "source_inputs": {
+    "tier4_30a_results": "/Users/james/JKS:CRA/controlled_test_output/tier4_30a_20260505_static_pool_lifecycle_reference/tier4_30a_results.json",
+    "tier4_30b_hw_results": "/Users/james/JKS:CRA/controlled_test_output/tier4_30b_hw_20260505_hardware_pass_ingested/tier4_30b_hw_results.json",
+    "tier4_30b_results": "/Users/james/JKS:CRA/controlled_test_output/tier4_30b_20260505_lifecycle_source_audit/tier4_30b_results.json"
+  },
+  "status": "pass",
+  "tier": "Tier 4.30c - Multi-Core Lifecycle State Split Contract/Reference"
+}

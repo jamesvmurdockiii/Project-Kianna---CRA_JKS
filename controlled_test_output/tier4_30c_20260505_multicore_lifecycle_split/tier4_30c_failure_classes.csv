@@ -1,0 +1,9 @@
+failure_class,detection,meaning,required_response
+duplicate_event,same event_index accepted twice,event replay/transport defect,fail gate; add dedup counter before hardware
+stale_event,event_index lower than lifecycle event counter,out-of-order lifecycle mutation risk,fail gate; add stale counter/readback
+missing_ack,learning_core request has no lifecycle ack,inter-core timeout or routing failure,fail gate; no inferred success
+mask_desync,consumer active mask differs from lifecycle_core,distributed state corruption,fail gate; require active-mask sync readback
+checksum_mismatch,lineage/trophic checksum differs from reference,lifecycle state corruption,fail gate; inspect event trace
+invalid_event_hidden,invalid event not counted,invariant audit broken,fail gate; invalid_event_count must be explicit
+wrong_owner_write,non-lifecycle core writes slot fields,architecture boundary violation,fail gate; reject implementation
+payload_schema_drift,payload_len/schema version mismatch,host/runtime parser drift,fail gate; update protocol/tests before EBRAINS

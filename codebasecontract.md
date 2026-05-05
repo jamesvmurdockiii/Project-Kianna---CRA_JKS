@@ -69,7 +69,15 @@ FROZEN: CRA_NATIVE_MECHANISM_BRIDGE_v0.3
         Raw remote status was `fail` because runner rev-0001 checked cumulative
         `readback_bytes` instead of compact `payload_len`; raw artifacts show
         `payload_len=68` and exact lifecycle state/reference parity.
-  Next: Tier 4.30c multi-core lifecycle state split contract/local reference.
+  Current: Tier 4.30c multi-core lifecycle state split contract/local reference
+        PASS, 22/22.
+        Output:
+        `controlled_test_output/tier4_30c_20260505_multicore_lifecycle_split/`.
+        The split defines a five-core ownership model with lifecycle state
+        single-owned by `lifecycle_core`, inter-core lifecycle request/trophic
+        update/active-mask-sync messages targeting MCPL/multicast, and exact
+        canonical/boundary parity.
+  Next: Tier 4.30d multi-core lifecycle runtime source audit/local C host test.
         Lifecycle hardware layers initially on CRA_NATIVE_MECHANISM_BRIDGE_v0.3,
         with v2.2 as a software reference boundary only. Temporal-state hardware
         migration is not automatic from v2.2; it requires a separately defined
@@ -369,10 +377,23 @@ Tier 4.30b-hw — COMPLETE. Single-core lifecycle active-mask/lineage hardware
     claim task benefit, multi-core lifecycle, v2.2 temporal migration, scaling,
     speedup, or lifecycle baseline freeze.
 
-Tier 4.30c — CURRENT NEXT. Multi-core lifecycle state split contract/local
-  reference. Define which lifecycle state lives on which runtime core, how masks
-  and lineage are exchanged, and what compact readbacks prove state integrity
-  before any EBRAINS package.
+Tier 4.30c — COMPLETE. Multi-core lifecycle state split contract/local
+  reference.
+  Status: PASS, 22/22 criteria.
+  Runner: `experiments/tier4_30c_multicore_lifecycle_split.py`.
+  Output: `controlled_test_output/tier4_30c_20260505_multicore_lifecycle_split/`.
+  Result: five-core ownership contract (`context_core`, `route_core`,
+    `memory_core`, `learning_core`, `lifecycle_core`), host setup/readback only,
+    MCPL/multicast-targeted inter-core lifecycle messages, explicit distributed
+    lifecycle failure classes, and exact canonical/boundary split-reference
+    parity.
+  Boundary: local contract/reference only; not C implementation, not hardware
+    evidence, not task benefit, not speedup, not v2.2 temporal migration, and
+    not a lifecycle baseline freeze.
+
+Tier 4.30d — CURRENT NEXT. Multi-core lifecycle runtime source audit/local C
+  host test. Implement the lifecycle-core profile and inter-core
+  message/readback stubs against Tier 4.30c before any EBRAINS package.
 
 
 Current status summary:
@@ -513,10 +534,10 @@ Local build capability (established 2026-05-02):
 
 Immediate next steps:
 
-1. Design Tier 4.30c multi-core lifecycle state split contract/local reference
-   from the source-audited runtime surface and the ingested 4.30b-hw hardware
-   pass. The tier must prove how lifecycle state will be partitioned before
-   another EBRAINS upload.
+1. Implement Tier 4.30d multi-core lifecycle runtime source audit/local C host
+   test from the Tier 4.30c split contract. The tier must add the lifecycle-core
+   profile and local inter-core message/readback stubs before another EBRAINS
+   upload.
 2. Do not migrate v2.2 temporal fading-memory state to hardware merely because
    v2.2 froze. Native temporal-state migration requires a separate readiness
    tier with fixed-point state equations and local parity.
