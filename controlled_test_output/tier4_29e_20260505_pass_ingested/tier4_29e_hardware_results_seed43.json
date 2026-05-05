@@ -1,0 +1,2011 @@
+{
+  "tier": "Tier 4.29e \u2014 Native Replay/Consolidation Bridge",
+  "runner_revision": "tier4_29e_native_replay_consolidation_20260505_0003",
+  "mode": "run-hardware",
+  "seed": 43,
+  "hostname": "10.11.226.1",
+  "status": "pass",
+  "criteria": [
+    {
+      "name": "runner revision current",
+      "value": "tier4_29e_native_replay_consolidation_20260505_0003",
+      "rule": "expected current source",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "custom C host tests pass",
+      "value": "pass",
+      "rule": "== pass",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "main.c syntax check pass",
+      "value": "pass",
+      "rule": "== pass",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "hardware target acquired",
+      "value": {
+        "status": "pass",
+        "method": "pyNN.spiNNaker_probe",
+        "hostname": "10.11.226.1",
+        "target_ipaddress": "10.11.226.1",
+        "setup_kwargs": {
+          "timestep": 1.0
+        },
+        "probe_population_size": 1,
+        "probe_run_ms": 1.0,
+        "probe_timestep_ms": 1.0,
+        "dest_x": 0,
+        "dest_y": 0,
+        "dest_cpu": 4,
+        "occupied_cores": [
+          1,
+          2,
+          3
+        ],
+        "notes": [
+          "acquired transceiver/IP via PyNN/sPyNNaker DataView because EBRAINS JobManager may not expose a raw hostname",
+          "requested dest_cpu 1 was occupied; selected free core 4"
+        ],
+        "runtime_seconds": 53.34720715973526,
+        "attempts": [
+          {
+            "status": "fail",
+            "method": "hostname_discovery",
+            "hostname": "",
+            "notes": [
+              "no hostname found in args, common environment variables, or spynnaker.cfg"
+            ],
+            "reason": "no explicit hostname/config/environment target found"
+          },
+          {
+            "status": "pass",
+            "method": "pyNN.spiNNaker_probe",
+            "hostname": "10.11.226.1",
+            "target_ipaddress": "10.11.226.1",
+            "setup_kwargs": {
+              "timestep": 1.0
+            },
+            "probe_population_size": 1,
+            "probe_run_ms": 1.0,
+            "probe_timestep_ms": 1.0,
+            "dest_x": 0,
+            "dest_y": 0,
+            "dest_cpu": 4,
+            "occupied_cores": [
+              1,
+              2,
+              3
+            ],
+            "notes": [
+              "acquired transceiver/IP via PyNN/sPyNNaker DataView because EBRAINS JobManager may not expose a raw hostname",
+              "requested dest_cpu 1 was occupied; selected free core 4"
+            ],
+            "runtime_seconds": 53.34720715973526
+          }
+        ]
+      },
+      "rule": "status == pass",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "context_core .aplx built",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "route_core .aplx built",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "memory_core .aplx built",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core .aplx built",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "context_core load pass",
+      "value": "pass",
+      "rule": "== pass",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "route_core load pass",
+      "value": "pass",
+      "rule": "== pass",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "memory_core load pass",
+      "value": "pass",
+      "rule": "== pass",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core load pass",
+      "value": "pass",
+      "rule": "== pass",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "no_replay_weight_finite",
+      "value": 32768,
+      "threshold": 65536,
+      "passed": true,
+      "note": "final weight = 1.0000"
+    },
+    {
+      "name": "no_replay_bias_finite",
+      "value": 0,
+      "threshold": 65536,
+      "passed": true,
+      "note": "final bias = 0.0000"
+    },
+    {
+      "name": "no_replay_hardware_weight_within_tolerance",
+      "value": 32768,
+      "threshold": 8192,
+      "passed": true,
+      "note": "hw=32768 ref=32768 diff=0"
+    },
+    {
+      "name": "no_replay_hardware_bias_within_tolerance",
+      "value": 0,
+      "threshold": 8192,
+      "passed": true,
+      "note": "hw=0 ref=0 diff=0"
+    },
+    {
+      "name": "no_replay_all_events_matured",
+      "value": 16,
+      "threshold": 16,
+      "passed": true,
+      "note": "matured 16/16"
+    },
+    {
+      "name": "correct_replay_weight_finite",
+      "value": 47896,
+      "threshold": 65536,
+      "passed": true,
+      "note": "final weight = 1.4617"
+    },
+    {
+      "name": "correct_replay_bias_finite",
+      "value": 232,
+      "threshold": 65536,
+      "passed": true,
+      "note": "final bias = -0.0071"
+    },
+    {
+      "name": "correct_replay_differs_from_wrong_key",
+      "value": 15128,
+      "threshold": 8192,
+      "passed": true,
+      "note": "weight_diff=15128 bias_diff=5011"
+    },
+    {
+      "name": "correct_replay_weight_differs_from_no_replay",
+      "value": 15128,
+      "threshold": 8192,
+      "passed": true,
+      "note": "correct_replay weight=1.4617; no_replay=1.0000; diff=15128"
+    },
+    {
+      "name": "correct_replay_hardware_weight_within_tolerance",
+      "value": 47896,
+      "threshold": 8192,
+      "passed": true,
+      "note": "hw=47896 ref=47896 diff=0"
+    },
+    {
+      "name": "correct_replay_hardware_bias_within_tolerance",
+      "value": -232,
+      "threshold": 8192,
+      "passed": true,
+      "note": "hw=-232 ref=-232 diff=0"
+    },
+    {
+      "name": "correct_replay_all_events_matured",
+      "value": 24,
+      "threshold": 24,
+      "passed": true,
+      "note": "matured 24/24"
+    },
+    {
+      "name": "wrong_key_replay_weight_finite",
+      "value": 32768,
+      "threshold": 65536,
+      "passed": true,
+      "note": "final weight = 1.0000"
+    },
+    {
+      "name": "wrong_key_replay_bias_finite",
+      "value": 5243,
+      "threshold": 65536,
+      "passed": true,
+      "note": "final bias = -0.1600"
+    },
+    {
+      "name": "wrong_key_replay_differs_from_correct_replay",
+      "value": 15128,
+      "threshold": 8192,
+      "passed": true,
+      "note": "weight_diff=15128 bias_diff=5011"
+    },
+    {
+      "name": "wrong_key_replay_weight_approx_no_replay",
+      "value": 0,
+      "threshold": 8192,
+      "passed": true,
+      "note": "wrong_key=1.0000 \u2248 no_replay=1.0000 diff=0"
+    },
+    {
+      "name": "wrong_key_replay_bias_bounded_near_no_replay",
+      "value": 5243,
+      "threshold": 8192,
+      "passed": true,
+      "note": "wrong_key bias=-0.1600; no_replay=0.0000; diff=5243"
+    },
+    {
+      "name": "wrong_key_replay_hardware_weight_within_tolerance",
+      "value": 32768,
+      "threshold": 8192,
+      "passed": true,
+      "note": "hw=32768 ref=32768 diff=0"
+    },
+    {
+      "name": "wrong_key_replay_hardware_bias_within_tolerance",
+      "value": 0,
+      "threshold": 8192,
+      "passed": true,
+      "note": "hw=0 ref=-5243 diff=5243"
+    },
+    {
+      "name": "wrong_key_replay_all_events_matured",
+      "value": 24,
+      "threshold": 24,
+      "passed": true,
+      "note": "matured 24/24"
+    },
+    {
+      "name": "random_event_replay_weight_finite",
+      "value": 57344,
+      "threshold": 65536,
+      "passed": true,
+      "note": "final weight = 1.7500"
+    },
+    {
+      "name": "random_event_replay_bias_finite",
+      "value": 0,
+      "threshold": 65536,
+      "passed": true,
+      "note": "final bias = 0.0000"
+    },
+    {
+      "name": "random_event_replay_differs_from_correct_replay",
+      "value": 9448,
+      "threshold": 8192,
+      "passed": true,
+      "note": "weight_diff=9448 bias_diff=232"
+    },
+    {
+      "name": "random_event_replay_hardware_weight_within_tolerance",
+      "value": 57344,
+      "threshold": 8192,
+      "passed": true,
+      "note": "hw=57344 ref=57344 diff=0"
+    },
+    {
+      "name": "random_event_replay_hardware_bias_within_tolerance",
+      "value": 0,
+      "threshold": 8192,
+      "passed": true,
+      "note": "hw=0 ref=0 diff=0"
+    },
+    {
+      "name": "random_event_replay_all_events_matured",
+      "value": 24,
+      "threshold": 24,
+      "passed": true,
+      "note": "matured 24/24"
+    }
+  ],
+  "control_results": [
+    {
+      "status": "completed",
+      "control": "no_replay",
+      "criteria": [
+        {
+          "name": "no_replay_weight_finite",
+          "value": 32768,
+          "threshold": 65536,
+          "passed": true,
+          "note": "final weight = 1.0000"
+        },
+        {
+          "name": "no_replay_bias_finite",
+          "value": 0,
+          "threshold": 65536,
+          "passed": true,
+          "note": "final bias = 0.0000"
+        },
+        {
+          "name": "no_replay_hardware_weight_within_tolerance",
+          "value": 32768,
+          "threshold": 8192,
+          "passed": true,
+          "note": "hw=32768 ref=32768 diff=0"
+        },
+        {
+          "name": "no_replay_hardware_bias_within_tolerance",
+          "value": 0,
+          "threshold": 8192,
+          "passed": true,
+          "note": "hw=0 ref=0 diff=0"
+        },
+        {
+          "name": "no_replay_all_events_matured",
+          "value": 16,
+          "threshold": 16,
+          "passed": true,
+          "note": "matured 16/16"
+        }
+      ],
+      "reference": {
+        "final_weight_raw": 32768,
+        "final_bias_raw": 0,
+        "final_weight_float": 1.0,
+        "final_bias_float": 0.0
+      },
+      "reset": {
+        "context": true,
+        "route": true,
+        "memory": true,
+        "learning": true
+      },
+      "state_writes": {
+        "context": [
+          {
+            "key": 101,
+            "success": true
+          }
+        ],
+        "route": [
+          {
+            "key": 201,
+            "success": true
+          }
+        ],
+        "memory": [
+          {
+            "key": 301,
+            "success": true
+          }
+        ]
+      },
+      "schedule_uploads": [
+        {
+          "index": 0,
+          "success": true
+        },
+        {
+          "index": 1,
+          "success": true
+        },
+        {
+          "index": 2,
+          "success": true
+        },
+        {
+          "index": 3,
+          "success": true
+        },
+        {
+          "index": 4,
+          "success": true
+        },
+        {
+          "index": 5,
+          "success": true
+        },
+        {
+          "index": 6,
+          "success": true
+        },
+        {
+          "index": 7,
+          "success": true
+        },
+        {
+          "index": 8,
+          "success": true
+        },
+        {
+          "index": 9,
+          "success": true
+        },
+        {
+          "index": 10,
+          "success": true
+        },
+        {
+          "index": 11,
+          "success": true
+        },
+        {
+          "index": 12,
+          "success": true
+        },
+        {
+          "index": 13,
+          "success": true
+        },
+        {
+          "index": 14,
+          "success": true
+        },
+        {
+          "index": 15,
+          "success": true
+        }
+      ],
+      "run_continuous": {
+        "context": {
+          "success": true,
+          "cmd": 24,
+          "status": 0
+        },
+        "route": {
+          "success": true,
+          "cmd": 24,
+          "status": 0
+        },
+        "memory": {
+          "success": true,
+          "cmd": 24,
+          "status": 0
+        },
+        "learning": {
+          "success": true,
+          "cmd": 24,
+          "status": 0
+        }
+      },
+      "pause": {
+        "context": {
+          "success": true,
+          "cmd": 25,
+          "status": 0,
+          "stopped_timestep": 9127
+        },
+        "route": {
+          "success": true,
+          "cmd": 25,
+          "status": 0,
+          "stopped_timestep": 7014
+        },
+        "memory": {
+          "success": true,
+          "cmd": 25,
+          "status": 0,
+          "stopped_timestep": 4900
+        },
+        "learning": {
+          "success": true,
+          "cmd": 25,
+          "status": 0,
+          "stopped_timestep": 2784
+        },
+        "all_paused": true
+      },
+      "final_state": {
+        "context": {
+          "success": true,
+          "cmd": 8,
+          "status": 0,
+          "schema_version": 2,
+          "payload_len": 105,
+          "timestep": 9228,
+          "neuron_count": 0,
+          "synapse_count": 0,
+          "active_trace_count": 0,
+          "active_slots": 1,
+          "slot_writes": 1,
+          "slot_hits": 16,
+          "slot_misses": 0,
+          "slot_evictions": 0,
+          "decisions": 0,
+          "reward_events": 0,
+          "pending_created": 0,
+          "pending_matured": 0,
+          "pending_dropped": 0,
+          "active_pending": 0,
+          "readout_weight_raw": 0,
+          "readout_bias_raw": 0,
+          "readout_weight": 0.0,
+          "readout_bias": 0.0,
+          "profile_id": 4,
+          "flags": 0,
+          "lookup_requests": 0,
+          "lookup_replies": 0,
+          "stale_replies": 0,
+          "duplicate_replies": 0,
+          "timeouts": 0,
+          "commands_received": 20,
+          "schedule_length": 0,
+          "readback_bytes": 105
+        },
+        "route": {
+          "success": true,
+          "cmd": 8,
+          "status": 0,
+          "schema_version": 2,
+          "payload_len": 105,
+          "timestep": 7115,
+          "neuron_count": 0,
+          "synapse_count": 0,
+          "active_trace_count": 0,
+          "active_slots": 1,
+          "slot_writes": 1,
+          "slot_hits": 16,
+          "slot_misses": 0,
+          "slot_evictions": 0,
+          "decisions": 0,
+          "reward_events": 0,
+          "pending_created": 0,
+          "pending_matured": 0,
+          "pending_dropped": 0,
+          "active_pending": 0,
+          "readout_weight_raw": 0,
+          "readout_bias_raw": 0,
+          "readout_weight": 0.0,
+          "readout_bias": 0.0,
+          "profile_id": 5,
+          "flags": 0,
+          "lookup_requests": 0,
+          "lookup_replies": 0,
+          "stale_replies": 0,
+          "duplicate_replies": 0,
+          "timeouts": 0,
+          "commands_received": 20,
+          "schedule_length": 0,
+          "readback_bytes": 105
+        },
+        "memory": {
+          "success": true,
+          "cmd": 8,
+          "status": 0,
+          "schema_version": 2,
+          "payload_len": 105,
+          "timestep": 5001,
+          "neuron_count": 0,
+          "synapse_count": 0,
+          "active_trace_count": 0,
+          "active_slots": 1,
+          "slot_writes": 1,
+          "slot_hits": 16,
+          "slot_misses": 0,
+          "slot_evictions": 0,
+          "decisions": 0,
+          "reward_events": 0,
+          "pending_created": 0,
+          "pending_matured": 0,
+          "pending_dropped": 0,
+          "active_pending": 0,
+          "readout_weight_raw": 0,
+          "readout_bias_raw": 0,
+          "readout_weight": 0.0,
+          "readout_bias": 0.0,
+          "profile_id": 6,
+          "flags": 0,
+          "lookup_requests": 0,
+          "lookup_replies": 0,
+          "stale_replies": 0,
+          "duplicate_replies": 0,
+          "timeouts": 0,
+          "commands_received": 20,
+          "schedule_length": 0,
+          "readback_bytes": 105
+        },
+        "learning": {
+          "success": true,
+          "cmd": 8,
+          "status": 0,
+          "schema_version": 2,
+          "payload_len": 105,
+          "timestep": 2886,
+          "neuron_count": 0,
+          "synapse_count": 0,
+          "active_trace_count": 0,
+          "active_slots": 0,
+          "slot_writes": 0,
+          "slot_hits": 0,
+          "slot_misses": 0,
+          "slot_evictions": 0,
+          "decisions": 16,
+          "reward_events": 16,
+          "pending_created": 16,
+          "pending_matured": 16,
+          "pending_dropped": 0,
+          "active_pending": 0,
+          "readout_weight_raw": 32768,
+          "readout_bias_raw": 0,
+          "readout_weight": 1.0,
+          "readout_bias": 0.0,
+          "profile_id": 3,
+          "flags": 0,
+          "lookup_requests": 48,
+          "lookup_replies": 48,
+          "stale_replies": 0,
+          "duplicate_replies": 0,
+          "timeouts": 0,
+          "commands_received": 68,
+          "schedule_length": 16,
+          "readback_bytes": 210
+        }
+      },
+      "wait_time": 0.5
+    },
+    {
+      "status": "completed",
+      "control": "correct_replay",
+      "criteria": [
+        {
+          "name": "correct_replay_weight_finite",
+          "value": 47896,
+          "threshold": 65536,
+          "passed": true,
+          "note": "final weight = 1.4617"
+        },
+        {
+          "name": "correct_replay_bias_finite",
+          "value": 232,
+          "threshold": 65536,
+          "passed": true,
+          "note": "final bias = -0.0071"
+        },
+        {
+          "name": "correct_replay_differs_from_wrong_key",
+          "value": 15128,
+          "threshold": 8192,
+          "passed": true,
+          "note": "weight_diff=15128 bias_diff=5011"
+        },
+        {
+          "name": "correct_replay_weight_differs_from_no_replay",
+          "value": 15128,
+          "threshold": 8192,
+          "passed": true,
+          "note": "correct_replay weight=1.4617; no_replay=1.0000; diff=15128"
+        },
+        {
+          "name": "correct_replay_hardware_weight_within_tolerance",
+          "value": 47896,
+          "threshold": 8192,
+          "passed": true,
+          "note": "hw=47896 ref=47896 diff=0"
+        },
+        {
+          "name": "correct_replay_hardware_bias_within_tolerance",
+          "value": -232,
+          "threshold": 8192,
+          "passed": true,
+          "note": "hw=-232 ref=-232 diff=0"
+        },
+        {
+          "name": "correct_replay_all_events_matured",
+          "value": 24,
+          "threshold": 24,
+          "passed": true,
+          "note": "matured 24/24"
+        }
+      ],
+      "reference": {
+        "final_weight_raw": 47896,
+        "final_bias_raw": -232,
+        "final_weight_float": 1.461669921875,
+        "final_bias_float": -0.007080078125
+      },
+      "reset": {
+        "context": true,
+        "route": true,
+        "memory": true,
+        "learning": true
+      },
+      "state_writes": {
+        "context": [
+          {
+            "key": 101,
+            "success": true
+          }
+        ],
+        "route": [
+          {
+            "key": 201,
+            "success": true
+          }
+        ],
+        "memory": [
+          {
+            "key": 301,
+            "success": true
+          }
+        ]
+      },
+      "schedule_uploads": [
+        {
+          "index": 0,
+          "success": true
+        },
+        {
+          "index": 1,
+          "success": true
+        },
+        {
+          "index": 2,
+          "success": true
+        },
+        {
+          "index": 3,
+          "success": true
+        },
+        {
+          "index": 4,
+          "success": true
+        },
+        {
+          "index": 5,
+          "success": true
+        },
+        {
+          "index": 6,
+          "success": true
+        },
+        {
+          "index": 7,
+          "success": true
+        },
+        {
+          "index": 8,
+          "success": true
+        },
+        {
+          "index": 9,
+          "success": true
+        },
+        {
+          "index": 10,
+          "success": true
+        },
+        {
+          "index": 11,
+          "success": true
+        },
+        {
+          "index": 12,
+          "success": true
+        },
+        {
+          "index": 13,
+          "success": true
+        },
+        {
+          "index": 14,
+          "success": true
+        },
+        {
+          "index": 15,
+          "success": true
+        },
+        {
+          "index": 16,
+          "success": true
+        },
+        {
+          "index": 17,
+          "success": true
+        },
+        {
+          "index": 18,
+          "success": true
+        },
+        {
+          "index": 19,
+          "success": true
+        },
+        {
+          "index": 20,
+          "success": true
+        },
+        {
+          "index": 21,
+          "success": true
+        },
+        {
+          "index": 22,
+          "success": true
+        },
+        {
+          "index": 23,
+          "success": true
+        }
+      ],
+      "run_continuous": {
+        "context": {
+          "success": true,
+          "cmd": 24,
+          "status": 0
+        },
+        "route": {
+          "success": true,
+          "cmd": 24,
+          "status": 0
+        },
+        "memory": {
+          "success": true,
+          "cmd": 24,
+          "status": 0
+        },
+        "learning": {
+          "success": true,
+          "cmd": 24,
+          "status": 0
+        }
+      },
+      "pause": {
+        "context": {
+          "success": true,
+          "cmd": 25,
+          "status": 0,
+          "stopped_timestep": 9894
+        },
+        "route": {
+          "success": true,
+          "cmd": 25,
+          "status": 0,
+          "stopped_timestep": 7781
+        },
+        "memory": {
+          "success": true,
+          "cmd": 25,
+          "status": 0,
+          "stopped_timestep": 5667
+        },
+        "learning": {
+          "success": true,
+          "cmd": 25,
+          "status": 0,
+          "stopped_timestep": 3551
+        },
+        "all_paused": true
+      },
+      "final_state": {
+        "context": {
+          "success": true,
+          "cmd": 8,
+          "status": 0,
+          "schema_version": 2,
+          "payload_len": 105,
+          "timestep": 9996,
+          "neuron_count": 0,
+          "synapse_count": 0,
+          "active_trace_count": 0,
+          "active_slots": 1,
+          "slot_writes": 1,
+          "slot_hits": 24,
+          "slot_misses": 0,
+          "slot_evictions": 0,
+          "decisions": 0,
+          "reward_events": 0,
+          "pending_created": 0,
+          "pending_matured": 0,
+          "pending_dropped": 0,
+          "active_pending": 0,
+          "readout_weight_raw": 0,
+          "readout_bias_raw": 0,
+          "readout_weight": 0.0,
+          "readout_bias": 0.0,
+          "profile_id": 4,
+          "flags": 0,
+          "lookup_requests": 0,
+          "lookup_replies": 0,
+          "stale_replies": 0,
+          "duplicate_replies": 0,
+          "timeouts": 0,
+          "commands_received": 28,
+          "schedule_length": 0,
+          "readback_bytes": 105
+        },
+        "route": {
+          "success": true,
+          "cmd": 8,
+          "status": 0,
+          "schema_version": 2,
+          "payload_len": 105,
+          "timestep": 7883,
+          "neuron_count": 0,
+          "synapse_count": 0,
+          "active_trace_count": 0,
+          "active_slots": 1,
+          "slot_writes": 1,
+          "slot_hits": 24,
+          "slot_misses": 0,
+          "slot_evictions": 0,
+          "decisions": 0,
+          "reward_events": 0,
+          "pending_created": 0,
+          "pending_matured": 0,
+          "pending_dropped": 0,
+          "active_pending": 0,
+          "readout_weight_raw": 0,
+          "readout_bias_raw": 0,
+          "readout_weight": 0.0,
+          "readout_bias": 0.0,
+          "profile_id": 5,
+          "flags": 0,
+          "lookup_requests": 0,
+          "lookup_replies": 0,
+          "stale_replies": 0,
+          "duplicate_replies": 0,
+          "timeouts": 0,
+          "commands_received": 28,
+          "schedule_length": 0,
+          "readback_bytes": 105
+        },
+        "memory": {
+          "success": true,
+          "cmd": 8,
+          "status": 0,
+          "schema_version": 2,
+          "payload_len": 105,
+          "timestep": 5769,
+          "neuron_count": 0,
+          "synapse_count": 0,
+          "active_trace_count": 0,
+          "active_slots": 1,
+          "slot_writes": 1,
+          "slot_hits": 24,
+          "slot_misses": 0,
+          "slot_evictions": 0,
+          "decisions": 0,
+          "reward_events": 0,
+          "pending_created": 0,
+          "pending_matured": 0,
+          "pending_dropped": 0,
+          "active_pending": 0,
+          "readout_weight_raw": 0,
+          "readout_bias_raw": 0,
+          "readout_weight": 0.0,
+          "readout_bias": 0.0,
+          "profile_id": 6,
+          "flags": 0,
+          "lookup_requests": 0,
+          "lookup_replies": 0,
+          "stale_replies": 0,
+          "duplicate_replies": 0,
+          "timeouts": 0,
+          "commands_received": 28,
+          "schedule_length": 0,
+          "readback_bytes": 105
+        },
+        "learning": {
+          "success": true,
+          "cmd": 8,
+          "status": 0,
+          "schema_version": 2,
+          "payload_len": 105,
+          "timestep": 3653,
+          "neuron_count": 0,
+          "synapse_count": 0,
+          "active_trace_count": 0,
+          "active_slots": 0,
+          "slot_writes": 0,
+          "slot_hits": 0,
+          "slot_misses": 0,
+          "slot_evictions": 0,
+          "decisions": 24,
+          "reward_events": 24,
+          "pending_created": 24,
+          "pending_matured": 24,
+          "pending_dropped": 0,
+          "active_pending": 0,
+          "readout_weight_raw": 47896,
+          "readout_bias_raw": -232,
+          "readout_weight": 1.461669921875,
+          "readout_bias": -0.007080078125,
+          "profile_id": 3,
+          "flags": 0,
+          "lookup_requests": 72,
+          "lookup_replies": 72,
+          "stale_replies": 0,
+          "duplicate_replies": 0,
+          "timeouts": 0,
+          "commands_received": 100,
+          "schedule_length": 24,
+          "readback_bytes": 210
+        }
+      },
+      "wait_time": 0.5
+    },
+    {
+      "status": "completed",
+      "control": "wrong_key_replay",
+      "criteria": [
+        {
+          "name": "wrong_key_replay_weight_finite",
+          "value": 32768,
+          "threshold": 65536,
+          "passed": true,
+          "note": "final weight = 1.0000"
+        },
+        {
+          "name": "wrong_key_replay_bias_finite",
+          "value": 5243,
+          "threshold": 65536,
+          "passed": true,
+          "note": "final bias = -0.1600"
+        },
+        {
+          "name": "wrong_key_replay_differs_from_correct_replay",
+          "value": 15128,
+          "threshold": 8192,
+          "passed": true,
+          "note": "weight_diff=15128 bias_diff=5011"
+        },
+        {
+          "name": "wrong_key_replay_weight_approx_no_replay",
+          "value": 0,
+          "threshold": 8192,
+          "passed": true,
+          "note": "wrong_key=1.0000 \u2248 no_replay=1.0000 diff=0"
+        },
+        {
+          "name": "wrong_key_replay_bias_bounded_near_no_replay",
+          "value": 5243,
+          "threshold": 8192,
+          "passed": true,
+          "note": "wrong_key bias=-0.1600; no_replay=0.0000; diff=5243"
+        },
+        {
+          "name": "wrong_key_replay_hardware_weight_within_tolerance",
+          "value": 32768,
+          "threshold": 8192,
+          "passed": true,
+          "note": "hw=32768 ref=32768 diff=0"
+        },
+        {
+          "name": "wrong_key_replay_hardware_bias_within_tolerance",
+          "value": 0,
+          "threshold": 8192,
+          "passed": true,
+          "note": "hw=0 ref=-5243 diff=5243"
+        },
+        {
+          "name": "wrong_key_replay_all_events_matured",
+          "value": 24,
+          "threshold": 24,
+          "passed": true,
+          "note": "matured 24/24"
+        }
+      ],
+      "reference": {
+        "final_weight_raw": 32768,
+        "final_bias_raw": -5243,
+        "final_weight_float": 1.0,
+        "final_bias_float": -0.160003662109375
+      },
+      "reset": {
+        "context": true,
+        "route": true,
+        "memory": true,
+        "learning": true
+      },
+      "state_writes": {
+        "context": [
+          {
+            "key": 101,
+            "success": true
+          }
+        ],
+        "route": [
+          {
+            "key": 201,
+            "success": true
+          }
+        ],
+        "memory": [
+          {
+            "key": 301,
+            "success": true
+          }
+        ]
+      },
+      "schedule_uploads": [
+        {
+          "index": 0,
+          "success": true
+        },
+        {
+          "index": 1,
+          "success": true
+        },
+        {
+          "index": 2,
+          "success": true
+        },
+        {
+          "index": 3,
+          "success": true
+        },
+        {
+          "index": 4,
+          "success": true
+        },
+        {
+          "index": 5,
+          "success": true
+        },
+        {
+          "index": 6,
+          "success": true
+        },
+        {
+          "index": 7,
+          "success": true
+        },
+        {
+          "index": 8,
+          "success": true
+        },
+        {
+          "index": 9,
+          "success": true
+        },
+        {
+          "index": 10,
+          "success": true
+        },
+        {
+          "index": 11,
+          "success": true
+        },
+        {
+          "index": 12,
+          "success": true
+        },
+        {
+          "index": 13,
+          "success": true
+        },
+        {
+          "index": 14,
+          "success": true
+        },
+        {
+          "index": 15,
+          "success": true
+        },
+        {
+          "index": 16,
+          "success": true
+        },
+        {
+          "index": 17,
+          "success": true
+        },
+        {
+          "index": 18,
+          "success": true
+        },
+        {
+          "index": 19,
+          "success": true
+        },
+        {
+          "index": 20,
+          "success": true
+        },
+        {
+          "index": 21,
+          "success": true
+        },
+        {
+          "index": 22,
+          "success": true
+        },
+        {
+          "index": 23,
+          "success": true
+        }
+      ],
+      "run_continuous": {
+        "context": {
+          "success": true,
+          "cmd": 24,
+          "status": 0
+        },
+        "route": {
+          "success": true,
+          "cmd": 24,
+          "status": 0
+        },
+        "memory": {
+          "success": true,
+          "cmd": 24,
+          "status": 0
+        },
+        "learning": {
+          "success": true,
+          "cmd": 24,
+          "status": 0
+        }
+      },
+      "pause": {
+        "context": {
+          "success": true,
+          "cmd": 25,
+          "status": 0,
+          "stopped_timestep": 10660
+        },
+        "route": {
+          "success": true,
+          "cmd": 25,
+          "status": 0,
+          "stopped_timestep": 8547
+        },
+        "memory": {
+          "success": true,
+          "cmd": 25,
+          "status": 0,
+          "stopped_timestep": 6433
+        },
+        "learning": {
+          "success": true,
+          "cmd": 25,
+          "status": 0,
+          "stopped_timestep": 4317
+        },
+        "all_paused": true
+      },
+      "final_state": {
+        "context": {
+          "success": true,
+          "cmd": 8,
+          "status": 0,
+          "schema_version": 2,
+          "payload_len": 105,
+          "timestep": 10762,
+          "neuron_count": 0,
+          "synapse_count": 0,
+          "active_trace_count": 0,
+          "active_slots": 1,
+          "slot_writes": 1,
+          "slot_hits": 16,
+          "slot_misses": 8,
+          "slot_evictions": 0,
+          "decisions": 0,
+          "reward_events": 0,
+          "pending_created": 0,
+          "pending_matured": 0,
+          "pending_dropped": 0,
+          "active_pending": 0,
+          "readout_weight_raw": 0,
+          "readout_bias_raw": 0,
+          "readout_weight": 0.0,
+          "readout_bias": 0.0,
+          "profile_id": 4,
+          "flags": 0,
+          "lookup_requests": 0,
+          "lookup_replies": 0,
+          "stale_replies": 0,
+          "duplicate_replies": 0,
+          "timeouts": 0,
+          "commands_received": 28,
+          "schedule_length": 0,
+          "readback_bytes": 105
+        },
+        "route": {
+          "success": true,
+          "cmd": 8,
+          "status": 0,
+          "schema_version": 2,
+          "payload_len": 105,
+          "timestep": 8649,
+          "neuron_count": 0,
+          "synapse_count": 0,
+          "active_trace_count": 0,
+          "active_slots": 1,
+          "slot_writes": 1,
+          "slot_hits": 24,
+          "slot_misses": 0,
+          "slot_evictions": 0,
+          "decisions": 0,
+          "reward_events": 0,
+          "pending_created": 0,
+          "pending_matured": 0,
+          "pending_dropped": 0,
+          "active_pending": 0,
+          "readout_weight_raw": 0,
+          "readout_bias_raw": 0,
+          "readout_weight": 0.0,
+          "readout_bias": 0.0,
+          "profile_id": 5,
+          "flags": 0,
+          "lookup_requests": 0,
+          "lookup_replies": 0,
+          "stale_replies": 0,
+          "duplicate_replies": 0,
+          "timeouts": 0,
+          "commands_received": 28,
+          "schedule_length": 0,
+          "readback_bytes": 105
+        },
+        "memory": {
+          "success": true,
+          "cmd": 8,
+          "status": 0,
+          "schema_version": 2,
+          "payload_len": 105,
+          "timestep": 6535,
+          "neuron_count": 0,
+          "synapse_count": 0,
+          "active_trace_count": 0,
+          "active_slots": 1,
+          "slot_writes": 1,
+          "slot_hits": 24,
+          "slot_misses": 0,
+          "slot_evictions": 0,
+          "decisions": 0,
+          "reward_events": 0,
+          "pending_created": 0,
+          "pending_matured": 0,
+          "pending_dropped": 0,
+          "active_pending": 0,
+          "readout_weight_raw": 0,
+          "readout_bias_raw": 0,
+          "readout_weight": 0.0,
+          "readout_bias": 0.0,
+          "profile_id": 6,
+          "flags": 0,
+          "lookup_requests": 0,
+          "lookup_replies": 0,
+          "stale_replies": 0,
+          "duplicate_replies": 0,
+          "timeouts": 0,
+          "commands_received": 28,
+          "schedule_length": 0,
+          "readback_bytes": 105
+        },
+        "learning": {
+          "success": true,
+          "cmd": 8,
+          "status": 0,
+          "schema_version": 2,
+          "payload_len": 105,
+          "timestep": 4419,
+          "neuron_count": 0,
+          "synapse_count": 0,
+          "active_trace_count": 0,
+          "active_slots": 0,
+          "slot_writes": 0,
+          "slot_hits": 0,
+          "slot_misses": 0,
+          "slot_evictions": 0,
+          "decisions": 24,
+          "reward_events": 24,
+          "pending_created": 24,
+          "pending_matured": 24,
+          "pending_dropped": 0,
+          "active_pending": 0,
+          "readout_weight_raw": 32768,
+          "readout_bias_raw": 0,
+          "readout_weight": 1.0,
+          "readout_bias": 0.0,
+          "profile_id": 3,
+          "flags": 0,
+          "lookup_requests": 72,
+          "lookup_replies": 72,
+          "stale_replies": 0,
+          "duplicate_replies": 0,
+          "timeouts": 0,
+          "commands_received": 100,
+          "schedule_length": 24,
+          "readback_bytes": 210
+        }
+      },
+      "wait_time": 0.5
+    },
+    {
+      "status": "completed",
+      "control": "random_event_replay",
+      "criteria": [
+        {
+          "name": "random_event_replay_weight_finite",
+          "value": 57344,
+          "threshold": 65536,
+          "passed": true,
+          "note": "final weight = 1.7500"
+        },
+        {
+          "name": "random_event_replay_bias_finite",
+          "value": 0,
+          "threshold": 65536,
+          "passed": true,
+          "note": "final bias = 0.0000"
+        },
+        {
+          "name": "random_event_replay_differs_from_correct_replay",
+          "value": 9448,
+          "threshold": 8192,
+          "passed": true,
+          "note": "weight_diff=9448 bias_diff=232"
+        },
+        {
+          "name": "random_event_replay_hardware_weight_within_tolerance",
+          "value": 57344,
+          "threshold": 8192,
+          "passed": true,
+          "note": "hw=57344 ref=57344 diff=0"
+        },
+        {
+          "name": "random_event_replay_hardware_bias_within_tolerance",
+          "value": 0,
+          "threshold": 8192,
+          "passed": true,
+          "note": "hw=0 ref=0 diff=0"
+        },
+        {
+          "name": "random_event_replay_all_events_matured",
+          "value": 24,
+          "threshold": 24,
+          "passed": true,
+          "note": "matured 24/24"
+        }
+      ],
+      "reference": {
+        "final_weight_raw": 57344,
+        "final_bias_raw": 0,
+        "final_weight_float": 1.75,
+        "final_bias_float": 0.0
+      },
+      "reset": {
+        "context": true,
+        "route": true,
+        "memory": true,
+        "learning": true
+      },
+      "state_writes": {
+        "context": [
+          {
+            "key": 101,
+            "success": true
+          }
+        ],
+        "route": [
+          {
+            "key": 201,
+            "success": true
+          }
+        ],
+        "memory": [
+          {
+            "key": 301,
+            "success": true
+          }
+        ]
+      },
+      "schedule_uploads": [
+        {
+          "index": 0,
+          "success": true
+        },
+        {
+          "index": 1,
+          "success": true
+        },
+        {
+          "index": 2,
+          "success": true
+        },
+        {
+          "index": 3,
+          "success": true
+        },
+        {
+          "index": 4,
+          "success": true
+        },
+        {
+          "index": 5,
+          "success": true
+        },
+        {
+          "index": 6,
+          "success": true
+        },
+        {
+          "index": 7,
+          "success": true
+        },
+        {
+          "index": 8,
+          "success": true
+        },
+        {
+          "index": 9,
+          "success": true
+        },
+        {
+          "index": 10,
+          "success": true
+        },
+        {
+          "index": 11,
+          "success": true
+        },
+        {
+          "index": 12,
+          "success": true
+        },
+        {
+          "index": 13,
+          "success": true
+        },
+        {
+          "index": 14,
+          "success": true
+        },
+        {
+          "index": 15,
+          "success": true
+        },
+        {
+          "index": 16,
+          "success": true
+        },
+        {
+          "index": 17,
+          "success": true
+        },
+        {
+          "index": 18,
+          "success": true
+        },
+        {
+          "index": 19,
+          "success": true
+        },
+        {
+          "index": 20,
+          "success": true
+        },
+        {
+          "index": 21,
+          "success": true
+        },
+        {
+          "index": 22,
+          "success": true
+        },
+        {
+          "index": 23,
+          "success": true
+        }
+      ],
+      "run_continuous": {
+        "context": {
+          "success": true,
+          "cmd": 24,
+          "status": 0
+        },
+        "route": {
+          "success": true,
+          "cmd": 24,
+          "status": 0
+        },
+        "memory": {
+          "success": true,
+          "cmd": 24,
+          "status": 0
+        },
+        "learning": {
+          "success": true,
+          "cmd": 24,
+          "status": 0
+        }
+      },
+      "pause": {
+        "context": {
+          "success": true,
+          "cmd": 25,
+          "status": 0,
+          "stopped_timestep": 11427
+        },
+        "route": {
+          "success": true,
+          "cmd": 25,
+          "status": 0,
+          "stopped_timestep": 9314
+        },
+        "memory": {
+          "success": true,
+          "cmd": 25,
+          "status": 0,
+          "stopped_timestep": 7200
+        },
+        "learning": {
+          "success": true,
+          "cmd": 25,
+          "status": 0,
+          "stopped_timestep": 5084
+        },
+        "all_paused": true
+      },
+      "final_state": {
+        "context": {
+          "success": true,
+          "cmd": 8,
+          "status": 0,
+          "schema_version": 2,
+          "payload_len": 105,
+          "timestep": 11529,
+          "neuron_count": 0,
+          "synapse_count": 0,
+          "active_trace_count": 0,
+          "active_slots": 1,
+          "slot_writes": 1,
+          "slot_hits": 24,
+          "slot_misses": 0,
+          "slot_evictions": 0,
+          "decisions": 0,
+          "reward_events": 0,
+          "pending_created": 0,
+          "pending_matured": 0,
+          "pending_dropped": 0,
+          "active_pending": 0,
+          "readout_weight_raw": 0,
+          "readout_bias_raw": 0,
+          "readout_weight": 0.0,
+          "readout_bias": 0.0,
+          "profile_id": 4,
+          "flags": 0,
+          "lookup_requests": 0,
+          "lookup_replies": 0,
+          "stale_replies": 0,
+          "duplicate_replies": 0,
+          "timeouts": 0,
+          "commands_received": 28,
+          "schedule_length": 0,
+          "readback_bytes": 105
+        },
+        "route": {
+          "success": true,
+          "cmd": 8,
+          "status": 0,
+          "schema_version": 2,
+          "payload_len": 105,
+          "timestep": 9416,
+          "neuron_count": 0,
+          "synapse_count": 0,
+          "active_trace_count": 0,
+          "active_slots": 1,
+          "slot_writes": 1,
+          "slot_hits": 24,
+          "slot_misses": 0,
+          "slot_evictions": 0,
+          "decisions": 0,
+          "reward_events": 0,
+          "pending_created": 0,
+          "pending_matured": 0,
+          "pending_dropped": 0,
+          "active_pending": 0,
+          "readout_weight_raw": 0,
+          "readout_bias_raw": 0,
+          "readout_weight": 0.0,
+          "readout_bias": 0.0,
+          "profile_id": 5,
+          "flags": 0,
+          "lookup_requests": 0,
+          "lookup_replies": 0,
+          "stale_replies": 0,
+          "duplicate_replies": 0,
+          "timeouts": 0,
+          "commands_received": 28,
+          "schedule_length": 0,
+          "readback_bytes": 105
+        },
+        "memory": {
+          "success": true,
+          "cmd": 8,
+          "status": 0,
+          "schema_version": 2,
+          "payload_len": 105,
+          "timestep": 7302,
+          "neuron_count": 0,
+          "synapse_count": 0,
+          "active_trace_count": 0,
+          "active_slots": 1,
+          "slot_writes": 1,
+          "slot_hits": 24,
+          "slot_misses": 0,
+          "slot_evictions": 0,
+          "decisions": 0,
+          "reward_events": 0,
+          "pending_created": 0,
+          "pending_matured": 0,
+          "pending_dropped": 0,
+          "active_pending": 0,
+          "readout_weight_raw": 0,
+          "readout_bias_raw": 0,
+          "readout_weight": 0.0,
+          "readout_bias": 0.0,
+          "profile_id": 6,
+          "flags": 0,
+          "lookup_requests": 0,
+          "lookup_replies": 0,
+          "stale_replies": 0,
+          "duplicate_replies": 0,
+          "timeouts": 0,
+          "commands_received": 28,
+          "schedule_length": 0,
+          "readback_bytes": 105
+        },
+        "learning": {
+          "success": true,
+          "cmd": 8,
+          "status": 0,
+          "schema_version": 2,
+          "payload_len": 105,
+          "timestep": 5186,
+          "neuron_count": 0,
+          "synapse_count": 0,
+          "active_trace_count": 0,
+          "active_slots": 0,
+          "slot_writes": 0,
+          "slot_hits": 0,
+          "slot_misses": 0,
+          "slot_evictions": 0,
+          "decisions": 24,
+          "reward_events": 24,
+          "pending_created": 24,
+          "pending_matured": 24,
+          "pending_dropped": 0,
+          "active_pending": 0,
+          "readout_weight_raw": 57344,
+          "readout_bias_raw": 0,
+          "readout_weight": 1.75,
+          "readout_bias": 0.0,
+          "profile_id": 3,
+          "flags": 0,
+          "lookup_requests": 72,
+          "lookup_replies": 72,
+          "stale_replies": 0,
+          "duplicate_replies": 0,
+          "timeouts": 0,
+          "commands_received": 100,
+          "schedule_length": 24,
+          "readback_bytes": 210
+        }
+      },
+      "wait_time": 0.5
+    }
+  ],
+  "build": {
+    "context": {
+      "profile": "context_core",
+      "returncode": 0,
+      "stdout": "make: Entering directory '/tmp/job6478061466308414436.tmp/cra_429p/coral_reef_spinnaker/spinnaker_runtime'\nrm -rf build/gnu/ build/coral_reef.aplx tests/test_runtime tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_four_core_local tests/test_four_core_48event\nmkdir -p build/gnu/src/\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_CONTEXT_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=4 -DCRA_USE_MCPL_LOOKUP=1 -o build/gnu/src/main.o src/main.c\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_CONTEXT_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=4 -DCRA_USE_MCPL_LOOKUP=1 -o build/gnu/src/state_manager.o src/state_manager.c\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_CONTEXT_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=4 -DCRA_USE_MCPL_LOOKUP=1 -o build/gnu/src/host_interface.o src/host_interface.c\nmkdir -p build/gnu/\n/home/jovyan/spinnaker/spinnaker_tools/tools/mkbuild coral_reef > build/gnu/coral_reef_build.c\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_CONTEXT_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=4 -DCRA_USE_MCPL_LOOKUP=1   -c -o build/gnu/coral_reef_build.o build/gnu/coral_reef_build.c\n# spinnaker_tools.mk elf\narm-none-eabi-gcc -T/home/jovyan/spinnaker/spinnaker_tools/tools/sark.lnk -Wl,-e,cpu_reset -Wl,-static -ffreestanding -fdata-sections -ffunction-sections -Wl,--gc-sections -Wl,--use-blx -nostartfiles -static -L /home/jovyan/spinnaker/spinnaker_tools/lib build/gnu/src/main.o build/gnu/src/state_manager.o build/gnu/src/host_interface.o build/gnu/coral_reef_build.o  /home/jovyan/spinnaker/spinnaker_tools/lib/libspin1_api.a -o build/gnu/coral_reef.elf\narm-none-eabi-objdump -dxt > build/gnu/coral_reef.txt build/gnu/coral_reef.elf\narm-none-eabi-objcopy -O binary -j RO_DATA -j EX_DATA build/gnu/coral_reef.elf build/gnu/RO_DATA.bin\narm-none-eabi-objcopy -O binary -j RW_DATA build/gnu/coral_reef.elf build/gnu/RW_DATA.bin\nls -l build/gnu/RO_DATA.bin\n-rwxr-xr-x 1 jovyan users 11160 May  5 13:58 build/gnu/RO_DATA.bin\n/home/jovyan/spinnaker/spinnaker_tools/tools/mkbin build/gnu/RO_DATA.bin build/gnu/RW_DATA.bin > build/gnu/coral_reef.bin\nrm -f build/gnu/RO_DATA.bin build/gnu/RW_DATA.bin\narm-none-eabi-nm build/gnu/coral_reef.elf > build/gnu/coral_reef.nm\nmkdir -p build/\n/home/jovyan/spinnaker/spinnaker_tools/tools/mkaplx build/gnu/coral_reef.nm | cat - build/gnu/coral_reef.bin > build/coral_reef.aplx\nrm build/gnu/coral_reef.bin build/gnu/coral_reef.nm build/gnu/coral_reef_build.c build/gnu/coral_reef_build.o\nmake: Leaving directory '/tmp/job6478061466308414436.tmp/cra_429p/coral_reef_spinnaker/spinnaker_runtime'\n",
+      "stderr": "",
+      "aplx_exists": true,
+      "size_text": 11172
+    },
+    "route": {
+      "profile": "route_core",
+      "returncode": 0,
+      "stdout": "make: Entering directory '/tmp/job6478061466308414436.tmp/cra_429p/coral_reef_spinnaker/spinnaker_runtime'\nrm -rf build/gnu/ build/coral_reef.aplx tests/test_runtime tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_four_core_local tests/test_four_core_48event\nmkdir -p build/gnu/src/\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_ROUTE_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=5 -DCRA_USE_MCPL_LOOKUP=1 -o build/gnu/src/main.o src/main.c\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_ROUTE_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=5 -DCRA_USE_MCPL_LOOKUP=1 -o build/gnu/src/state_manager.o src/state_manager.c\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_ROUTE_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=5 -DCRA_USE_MCPL_LOOKUP=1 -o build/gnu/src/host_interface.o src/host_interface.c\nmkdir -p build/gnu/\n/home/jovyan/spinnaker/spinnaker_tools/tools/mkbuild coral_reef > build/gnu/coral_reef_build.c\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_ROUTE_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=5 -DCRA_USE_MCPL_LOOKUP=1   -c -o build/gnu/coral_reef_build.o build/gnu/coral_reef_build.c\n# spinnaker_tools.mk elf\narm-none-eabi-gcc -T/home/jovyan/spinnaker/spinnaker_tools/tools/sark.lnk -Wl,-e,cpu_reset -Wl,-static -ffreestanding -fdata-sections -ffunction-sections -Wl,--gc-sections -Wl,--use-blx -nostartfiles -static -L /home/jovyan/spinnaker/spinnaker_tools/lib build/gnu/src/main.o build/gnu/src/state_manager.o build/gnu/src/host_interface.o build/gnu/coral_reef_build.o  /home/jovyan/spinnaker/spinnaker_tools/lib/libspin1_api.a -o build/gnu/coral_reef.elf\narm-none-eabi-objdump -dxt > build/gnu/coral_reef.txt build/gnu/coral_reef.elf\narm-none-eabi-objcopy -O binary -j RO_DATA -j EX_DATA build/gnu/coral_reef.elf build/gnu/RO_DATA.bin\narm-none-eabi-objcopy -O binary -j RW_DATA build/gnu/coral_reef.elf build/gnu/RW_DATA.bin\nls -l build/gnu/RO_DATA.bin\n-rwxr-xr-x 1 jovyan users 11192 May  5 13:58 build/gnu/RO_DATA.bin\n/home/jovyan/spinnaker/spinnaker_tools/tools/mkbin build/gnu/RO_DATA.bin build/gnu/RW_DATA.bin > build/gnu/coral_reef.bin\nrm -f build/gnu/RO_DATA.bin build/gnu/RW_DATA.bin\narm-none-eabi-nm build/gnu/coral_reef.elf > build/gnu/coral_reef.nm\nmkdir -p build/\n/home/jovyan/spinnaker/spinnaker_tools/tools/mkaplx build/gnu/coral_reef.nm | cat - build/gnu/coral_reef.bin > build/coral_reef.aplx\nrm build/gnu/coral_reef.bin build/gnu/coral_reef.nm build/gnu/coral_reef_build.c build/gnu/coral_reef_build.o\nmake: Leaving directory '/tmp/job6478061466308414436.tmp/cra_429p/coral_reef_spinnaker/spinnaker_runtime'\n",
+      "stderr": "",
+      "aplx_exists": true,
+      "size_text": 11204
+    },
+    "memory": {
+      "profile": "memory_core",
+      "returncode": 0,
+      "stdout": "make: Entering directory '/tmp/job6478061466308414436.tmp/cra_429p/coral_reef_spinnaker/spinnaker_runtime'\nrm -rf build/gnu/ build/coral_reef.aplx tests/test_runtime tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_four_core_local tests/test_four_core_48event\nmkdir -p build/gnu/src/\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_MEMORY_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=6 -DCRA_USE_MCPL_LOOKUP=1 -o build/gnu/src/main.o src/main.c\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_MEMORY_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=6 -DCRA_USE_MCPL_LOOKUP=1 -o build/gnu/src/state_manager.o src/state_manager.c\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_MEMORY_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=6 -DCRA_USE_MCPL_LOOKUP=1 -o build/gnu/src/host_interface.o src/host_interface.c\nmkdir -p build/gnu/\n/home/jovyan/spinnaker/spinnaker_tools/tools/mkbuild coral_reef > build/gnu/coral_reef_build.c\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_MEMORY_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=6 -DCRA_USE_MCPL_LOOKUP=1   -c -o build/gnu/coral_reef_build.o build/gnu/coral_reef_build.c\n# spinnaker_tools.mk elf\narm-none-eabi-gcc -T/home/jovyan/spinnaker/spinnaker_tools/tools/sark.lnk -Wl,-e,cpu_reset -Wl,-static -ffreestanding -fdata-sections -ffunction-sections -Wl,--gc-sections -Wl,--use-blx -nostartfiles -static -L /home/jovyan/spinnaker/spinnaker_tools/lib build/gnu/src/main.o build/gnu/src/state_manager.o build/gnu/src/host_interface.o build/gnu/coral_reef_build.o  /home/jovyan/spinnaker/spinnaker_tools/lib/libspin1_api.a -o build/gnu/coral_reef.elf\narm-none-eabi-objdump -dxt > build/gnu/coral_reef.txt build/gnu/coral_reef.elf\narm-none-eabi-objcopy -O binary -j RO_DATA -j EX_DATA build/gnu/coral_reef.elf build/gnu/RO_DATA.bin\narm-none-eabi-objcopy -O binary -j RW_DATA build/gnu/coral_reef.elf build/gnu/RW_DATA.bin\nls -l build/gnu/RO_DATA.bin\n-rwxr-xr-x 1 jovyan users 11192 May  5 13:58 build/gnu/RO_DATA.bin\n/home/jovyan/spinnaker/spinnaker_tools/tools/mkbin build/gnu/RO_DATA.bin build/gnu/RW_DATA.bin > build/gnu/coral_reef.bin\nrm -f build/gnu/RO_DATA.bin build/gnu/RW_DATA.bin\narm-none-eabi-nm build/gnu/coral_reef.elf > build/gnu/coral_reef.nm\nmkdir -p build/\n/home/jovyan/spinnaker/spinnaker_tools/tools/mkaplx build/gnu/coral_reef.nm | cat - build/gnu/coral_reef.bin > build/coral_reef.aplx\nrm build/gnu/coral_reef.bin build/gnu/coral_reef.nm build/gnu/coral_reef_build.c build/gnu/coral_reef_build.o\nmake: Leaving directory '/tmp/job6478061466308414436.tmp/cra_429p/coral_reef_spinnaker/spinnaker_runtime'\n",
+      "stderr": "",
+      "aplx_exists": true,
+      "size_text": 11204
+    },
+    "learning": {
+      "profile": "learning_core",
+      "returncode": 0,
+      "stdout": "make: Entering directory '/tmp/job6478061466308414436.tmp/cra_429p/coral_reef_spinnaker/spinnaker_runtime'\nrm -rf build/gnu/ build/coral_reef.aplx tests/test_runtime tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_four_core_local tests/test_four_core_48event\nmkdir -p build/gnu/src/\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 -DCRA_USE_MCPL_LOOKUP=1 -o build/gnu/src/main.o src/main.c\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 -DCRA_USE_MCPL_LOOKUP=1 -o build/gnu/src/state_manager.o src/state_manager.c\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 -DCRA_USE_MCPL_LOOKUP=1 -o build/gnu/src/host_interface.o src/host_interface.c\nmkdir -p build/gnu/\n/home/jovyan/spinnaker/spinnaker_tools/tools/mkbuild coral_reef > build/gnu/coral_reef_build.c\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 -DCRA_USE_MCPL_LOOKUP=1   -c -o build/gnu/coral_reef_build.o build/gnu/coral_reef_build.c\n# spinnaker_tools.mk elf\narm-none-eabi-gcc -T/home/jovyan/spinnaker/spinnaker_tools/tools/sark.lnk -Wl,-e,cpu_reset -Wl,-static -ffreestanding -fdata-sections -ffunction-sections -Wl,--gc-sections -Wl,--use-blx -nostartfiles -static -L /home/jovyan/spinnaker/spinnaker_tools/lib build/gnu/src/main.o build/gnu/src/state_manager.o build/gnu/src/host_interface.o build/gnu/coral_reef_build.o  /home/jovyan/spinnaker/spinnaker_tools/lib/libspin1_api.a -o build/gnu/coral_reef.elf\narm-none-eabi-objdump -dxt > build/gnu/coral_reef.txt build/gnu/coral_reef.elf\narm-none-eabi-objcopy -O binary -j RO_DATA -j EX_DATA build/gnu/coral_reef.elf build/gnu/RO_DATA.bin\narm-none-eabi-objcopy -O binary -j RW_DATA build/gnu/coral_reef.elf build/gnu/RW_DATA.bin\nls -l build/gnu/RO_DATA.bin\n-rwxr-xr-x 1 jovyan users 13008 May  5 13:58 build/gnu/RO_DATA.bin\n/home/jovyan/spinnaker/spinnaker_tools/tools/mkbin build/gnu/RO_DATA.bin build/gnu/RW_DATA.bin > build/gnu/coral_reef.bin\nrm -f build/gnu/RO_DATA.bin build/gnu/RW_DATA.bin\narm-none-eabi-nm build/gnu/coral_reef.elf > build/gnu/coral_reef.nm\nmkdir -p build/\n/home/jovyan/spinnaker/spinnaker_tools/tools/mkaplx build/gnu/coral_reef.nm | cat - build/gnu/coral_reef.bin > build/coral_reef.aplx\nrm build/gnu/coral_reef.bin build/gnu/coral_reef.nm build/gnu/coral_reef_build.c build/gnu/coral_reef_build.o\nmake: Leaving directory '/tmp/job6478061466308414436.tmp/cra_429p/coral_reef_spinnaker/spinnaker_runtime'\n",
+      "stderr": "",
+      "aplx_exists": true,
+      "size_text": 13024
+    }
+  },
+  "loads": {
+    "context": {
+      "status": "pass",
+      "method": "spynnaker_dataview_transceiver.execute_flood",
+      "hostname": "10.11.226.1",
+      "x": 0,
+      "y": 0,
+      "p": 4,
+      "app_id": 1,
+      "runtime_seconds": 2.1113280691206455
+    },
+    "route": {
+      "status": "pass",
+      "method": "spynnaker_dataview_transceiver.execute_flood",
+      "hostname": "10.11.226.1",
+      "x": 0,
+      "y": 0,
+      "p": 5,
+      "app_id": 2,
+      "runtime_seconds": 2.1148332180455327
+    },
+    "memory": {
+      "status": "pass",
+      "method": "spynnaker_dataview_transceiver.execute_flood",
+      "hostname": "10.11.226.1",
+      "x": 0,
+      "y": 0,
+      "p": 6,
+      "app_id": 3,
+      "runtime_seconds": 2.11481166863814
+    },
+    "learning": {
+      "status": "pass",
+      "method": "spynnaker_dataview_transceiver.execute_flood",
+      "hostname": "10.11.226.1",
+      "x": 0,
+      "y": 0,
+      "p": 7,
+      "app_id": 4,
+      "runtime_seconds": 2.131766838952899
+    }
+  },
+  "target": {
+    "status": "pass",
+    "method": "pyNN.spiNNaker_probe",
+    "hostname": "10.11.226.1",
+    "target_ipaddress": "10.11.226.1",
+    "setup_kwargs": {
+      "timestep": 1.0
+    },
+    "probe_population_size": 1,
+    "probe_run_ms": 1.0,
+    "probe_timestep_ms": 1.0,
+    "dest_x": 0,
+    "dest_y": 0,
+    "dest_cpu": 4,
+    "occupied_cores": [
+      1,
+      2,
+      3
+    ],
+    "notes": [
+      "acquired transceiver/IP via PyNN/sPyNNaker DataView because EBRAINS JobManager may not expose a raw hostname",
+      "requested dest_cpu 1 was occupied; selected free core 4"
+    ],
+    "runtime_seconds": 53.34720715973526,
+    "attempts": [
+      {
+        "status": "fail",
+        "method": "hostname_discovery",
+        "hostname": "",
+        "notes": [
+          "no hostname found in args, common environment variables, or spynnaker.cfg"
+        ],
+        "reason": "no explicit hostname/config/environment target found"
+      },
+      {
+        "status": "pass",
+        "method": "pyNN.spiNNaker_probe",
+        "hostname": "10.11.226.1",
+        "target_ipaddress": "10.11.226.1",
+        "setup_kwargs": {
+          "timestep": 1.0
+        },
+        "probe_population_size": 1,
+        "probe_run_ms": 1.0,
+        "probe_timestep_ms": 1.0,
+        "dest_x": 0,
+        "dest_y": 0,
+        "dest_cpu": 4,
+        "occupied_cores": [
+          1,
+          2,
+          3
+        ],
+        "notes": [
+          "acquired transceiver/IP via PyNN/sPyNNaker DataView because EBRAINS JobManager may not expose a raw hostname",
+          "requested dest_cpu 1 was occupied; selected free core 4"
+        ],
+        "runtime_seconds": 53.34720715973526
+      }
+    ]
+  },
+  "environment": {
+    "cwd": "/tmp/job6478061466308414436.tmp",
+    "python": "/home/jovyan/spinnaker/bin/python",
+    "python_version": "3.13.9 | packaged by conda-forge | (main, Oct 16 2025, 10:31:39) [GCC 14.3.0]",
+    "env": {
+      "SPINN_DIRS": "/home/jovyan/spinnaker/spinnaker_tools",
+      "SPINNAKER_HOSTNAME": "",
+      "SPINNAKER_HOST": "",
+      "SPINNAKER_BOARD": "",
+      "SPYNNAKER_MACHINE": "",
+      "SPINNAKER_MACHINE": ""
+    },
+    "spinnaker_tools": "/home/jovyan/spinnaker/spinnaker_tools",
+    "tools": {
+      "ybug": "/home/jovyan/spinnaker/spinnaker_tools/tools/ybug",
+      "spin1_api": "",
+      "make": "/usr/bin/make",
+      "cc": "/usr/bin/cc"
+    },
+    "modules": [
+      {
+        "name": "spinnman",
+        "available": true,
+        "path": "/home/jovyan/spinnaker/SpiNNMan/spinnman/__init__.py"
+      },
+      {
+        "name": "spinn_machine",
+        "available": true,
+        "path": "/home/jovyan/spinnaker/SpiNNMachine/spinn_machine/__init__.py"
+      },
+      {
+        "name": "spinn_utilities",
+        "available": true,
+        "path": "/home/jovyan/spinnaker/SpiNNUtils/spinn_utilities/__init__.py"
+      },
+      {
+        "name": "pyNN.spiNNaker",
+        "available": true,
+        "path": "/home/jovyan/spinnaker/lib/python3.13/site-packages/pyNN/__init__.py"
+      },
+      {
+        "name": "spynnaker.pyNN",
+        "available": true,
+        "path": "/home/jovyan/spinnaker/sPyNNaker/spynnaker/__init__.py"
+      },
+      {
+        "name": "spinn_front_end_common",
+        "available": true,
+        "path": "/home/jovyan/spinnaker/SpiNNFrontEndCommon/spinn_front_end_common/__init__.py"
+      },
+      {
+        "name": "spalloc_client",
+        "available": true,
+        "path": "/home/jovyan/spinnaker/spalloc/spalloc_client/__init__.py"
+      }
+    ]
+  },
+  "hardware_exception": null
+}

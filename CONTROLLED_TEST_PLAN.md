@@ -87,7 +87,7 @@ They remain part of the peer-review audit trail:
 ```text
 0.9 ongoing reproduction package
 5.9 macro eligibility trace confirmation = parked until a measured blocker justifies revival
-5.11 replay/consolidation = software mechanism promoted as v1.7 after sham-separation; native bridge active as 4.29e
+5.11 replay/consolidation = software mechanism promoted as v1.7 after sham-separation; native host-scheduled bridge passed as 4.29e
 5.12a predictive task-pressure validation = completed; 5.12b failed diagnostic kept; 5.12c visible predictive-context repair passed; 5.12d compact regression passed and freezes bounded v1.8
 5.13 compositional skill reuse = completed diagnostic/promotion sequence
 5.13b module routing / contextual gating = completed diagnostic/promotion sequence
@@ -108,8 +108,8 @@ They remain part of the peer-review audit trail:
 7.5 curriculum / environment generator
 7.6 long-horizon planning / subgoal control
 4.19 hardware lifecycle feasibility
-4.29e native replay/consolidation bridge = cra_429o noncanonical hardware diagnostic fail; cra_429p local repair pass / hardware rerun pending
-4.29f compact native mechanism regression = run only if 4.29e passes
+4.29e native replay/consolidation bridge = hardware pass ingested after cra_429p repair
+4.29f compact native mechanism regression = current next gate after 4.29e pass
 4.30+ native lifecycle/ecology migration = roadmap; not yet canonical evidence
 ```
 
@@ -7051,7 +7051,7 @@ passes compact regression. If 4.29d fails, park self-evaluation and document blo
 
 ### Tier 4.29e - Native Replay/Consolidation Bridge
 
-Status: **IN PROGRESS - `cra_429o` HARDWARE DIAGNOSTIC FAIL; `cra_429p` LOCAL REPAIR PASS / PACKAGE PREPARED**.
+Status: **HARDWARE PASS, INGESTED** - `cra_429p` passed seeds 42/43/44 with `38/38` criteria per seed (`114/114` total).
 
 `cra_429o` returned real SpiNNaker hardware execution across seeds 42/43/44,
 but failed two tolerance criteria per seed. The failure is preserved as
@@ -7066,9 +7066,23 @@ memory/learning core loads passed, all controls completed, pending horizons
 matured, lookup replies matched requests, stale replies/timeouts were zero. The
 failed criteria were reference/schedule-gate failures, not promoted evidence.
 
-Current repaired package: `cra_429p`, runner revision
+Canonical package: `cra_429p`, runner revision
 `tier4_29e_native_replay_consolidation_20260505_0003`. It reuses `cra_429j`
 binaries; no C runtime changes are made for 4.29e.
+
+Canonical artifact:
+
+```text
+controlled_test_output/tier4_29e_20260505_pass_ingested/
+```
+
+Hardware evidence:
+
+```text
+Seed 42: board 10.11.226.129, 38/38 criteria
+Seed 43: board 10.11.226.1,   38/38 criteria
+Seed 44: board 10.11.226.65,  38/38 criteria
+```
 
 Current native task baseline: `CRA_NATIVE_TASK_BASELINE_v0.2` (cumulative native mechanism bridge is not frozen until the post-4.29 compact regression).
 
@@ -7122,7 +7136,7 @@ Seeds: 42/43/44 local repaired reference; 42/43/44 hardware repeatability.
 
 Run lengths: 16-24 events (well within <=512 envelope).
 
-Backends: Local native-continuous host reference first; SpiNNaker hardware second.
+Backends: Local native-continuous host reference first; SpiNNaker hardware second. Both passed.
 
 Hardware mode: Chunked host scheduling through native four-core state primitives.
 Reuses `cra_429j` binaries; no C runtime changes for 4.29e.
@@ -7184,11 +7198,11 @@ Leakage checks:
 - Verify per-event context keys are preserved in the schedule.
 - Verify schedule length is consistent across controls.
 
-Expected artifacts:
-- `tier4_29e_local_results_seed{42,43,44}.json`
+Canonical artifacts:
 - `tier4_29e_hardware_results_seed{42,43,44}.json`
 - `tier4_29e_ingest_results.json`
 - `tier4_29e_combined_results.json`
+- `tier4_29e_report.md`
 
 Docs to update:
 - `codebasecontract.md` (live handoff state)
@@ -7199,9 +7213,8 @@ Docs to update:
 - `experiments/evidence_registry.py` (after promoted ingest)
 
 Promotion/freeze condition:
-- Promote to carried-forward native mechanism only if all hardware controls pass
-  and compact native regression (4.29f) still passes afterward.
-- Do not freeze a new baseline for a single mechanism bridge.
+- 4.29e is promoted as carried-forward native host-scheduled replay/consolidation evidence.
+- Do not freeze a new cumulative native mechanism bridge baseline until compact native regression (4.29f) passes.
 
 Re-entry condition if parked:
 - If replay events corrupt state: verify schedule upload isolation in C runtime.
@@ -7213,4 +7226,47 @@ Re-entry condition if parked:
 
 
 Next step after 4.29e: Tier 4.29f (compact native mechanism regression) to verify
-that 4.29e did not break any previously passing native mechanism (4.29a–4.29d).
+that 4.29a-e remain mutually compatible before a cumulative native mechanism
+bridge baseline freeze.
+
+### Tier 4.29f - Compact Native Mechanism Regression
+
+Status: **DEFINED / CURRENT NEXT GATE**.
+
+Question: Do the promoted native mechanism bridges from 4.29a-e remain stable
+when checked as a compact cumulative regression suite?
+
+Hypothesis: The native runtime can carry keyed memory, routing/composition,
+predictive binding, confidence-gated learning, and host-scheduled replay without
+regressing any previously passing mechanism-specific control.
+
+Null hypothesis: At least one promoted native mechanism only passed in isolation
+and fails when the cumulative bridge state is audited.
+
+Required coverage:
+- 4.29a keyed-memory overcapacity/wrong-key controls.
+- 4.29b routing/composition wrong-route and overwrite controls.
+- 4.29c predictive-binding prediction-before-reward controls.
+- 4.29d confidence-gated learning controls.
+- 4.29e host-scheduled replay/consolidation controls.
+
+Pass criteria:
+- All selected compact controls pass locally before hardware.
+- Hardware pass requires real SpiNNaker execution, current runner revision, zero
+  fallback, successful target acquisition/load/readback, and no failed compact
+  criteria.
+- No previously promoted mechanism regresses versus its own hardware pass
+  boundary.
+
+Fail criteria:
+- Any selected compact control fails.
+- Any returned result has stale runner revision/package identity.
+- Any hardware target/load/readback failure is not explicitly classified.
+
+Promotion/freeze condition:
+- If 4.29f passes, freeze a cumulative native mechanism bridge baseline.
+- If 4.29f fails, park or repair only the failing native mechanism; do not run
+  standard benchmarks against an unstable stack.
+
+Next step after 4.29f: freeze cumulative native mechanism bridge baseline if it
+passes, then run Tier 7.1 standard dynamical benchmarks in software.

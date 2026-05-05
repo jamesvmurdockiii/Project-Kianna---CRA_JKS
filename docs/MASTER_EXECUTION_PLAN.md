@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-05T08:45-04:00.
+Last updated: 2026-05-05T09:08-04:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -48,7 +48,7 @@ Tier 4.29a = HARDWARE PASS (native keyed-memory overcapacity, 3 seeds)
 Tier 4.29b = HARDWARE PASS (native routing/composition, 3 seeds)
 Tier 4.29c = HARDWARE PASS (native predictive binding, 3 seeds)
 Tier 4.29d = HARDWARE PASS (native self-evaluation/confidence gating, 3 seeds)
-Tier 4.29e = cra_429o HARDWARE DIAGNOSTIC FAIL / cra_429p LOCAL REPAIR PASS + PACKAGE PREPARED
+Tier 4.29e = HARDWARE PASS (native replay/consolidation bridge, 38/38 x3 seeds)
 ```
 
 Important Tier 4.26 result:
@@ -78,7 +78,7 @@ not full native v2.1, and not final autonomy.
 Current active step:
 
 ```text
-Tier 4.29e - Replay/Consolidation Bridge (cra_429p repaired EBRAINS package prepared)
+Tier 4.29f - Compact Native Mechanism Regression
 ```
 
 ## 2. Immediate Baseline Decision
@@ -313,32 +313,22 @@ What claim boundary follows?
     First attempt (cra_429i) failed: MCPL lookup lacks confidence transmission.
     Fix: revert to SDP inter-core lookup. Rebuilt as cra_429j.
 
-24. 🔄 **IN PROGRESS** - Tier 4.29e replay/consolidation bridge.
-    `cra_429o` returned REAL HARDWARE but failed as a noncanonical diagnostic.
-    All three seeds executed on hardware, target acquisition and four-core loads
-    passed, all controls completed, pending matured, and stale/timeouts stayed 0.
-    However each seed failed 2/34 criteria: wrong-key replay bias reference
-    tolerance and random-event replay weight reference tolerance.
-    Diagnostic artifact: `controlled_test_output/tier4_29e_20260505_cra_429o_hardware_fail/`.
-    Root cause: the Python schedule/reference gate was wrong, not a promoted
-    mechanism failure. `_build_schedule()` ignored per-event wrong context keys,
-    and the local host reference did not mirror native continuous-runtime ordering
-    or surprise-threshold behavior.
-    Repair: `cra_429p`, runner revision
-    `tier4_29e_native_replay_consolidation_20260505_0003`.
-    Local repair gate passes seeds 42/43/44 with native-continuous expected values:
-    no_replay weight=32768/bias=0; correct_replay weight=47896/bias=-232;
-    wrong_key_replay weight=32768/bias=-5243; random_event_replay weight=57344/bias=0.
-    Correct replay now differs from no replay, wrong-key replay does not
-    consolidate weight, and random-event replay remains distinct.
-    Package prepared: `ebrains_jobs/cra_429p`.
-    Next: upload/run `cra_429p`, then ingest only runner revision 20260505_0003.
-    If it passes, run 4.29f compact native mechanism regression; if it fails,
-    classify exactly and repair with a fresh package name.
+24. ✅ **COMPLETE** - Tier 4.29e replay/consolidation bridge.
+    HARDWARE PASS, INGESTED after `cra_429p` repair.
+    `cra_429o` returned real hardware but failed as a noncanonical diagnostic
+    because the local schedule/reference gate was wrong. That failure is
+    preserved at `controlled_test_output/tier4_29e_20260505_cra_429o_hardware_fail/`.
+    Canonical artifact: `controlled_test_output/tier4_29e_20260505_pass_ingested/`.
+    Runner revision: `tier4_29e_native_replay_consolidation_20260505_0003`.
+    Seeds 42/43/44 passed on boards 10.11.226.129 / 10.11.226.1 / 10.11.226.65.
+    Criteria: 38/38 per seed, 114/114 total.
+    Controls: no_replay, correct_replay, wrong_key_replay, random_event_replay.
+    Correct replay changes readout weight versus no_replay; wrong-key replay
+    blocks weight consolidation; random-event replay remains distinct.
+    Boundary: host-scheduled replay through native state primitives only; not
+    native replay buffers or biological sleep.
 
-25. Tier 4.29f compact native mechanism regression: rerun the strongest tiny
-    native delayed, switching, reentry, and mechanism controls after each
-    promoted bridge. Do not stack unvalidated mechanisms.
+25. 🔄 **CURRENT ACTIVE STEP** - Tier 4.29f compact native mechanism regression: rerun the strongest tiny native keyed-memory, routing/composition, predictive-binding, confidence-gating, and replay/consolidation controls after 4.29a-e. Do not freeze the cumulative native mechanism bridge baseline until this passes.
 
 26. Freeze `CRA_NATIVE_MECHANISM_BRIDGE_v0.3` only if the selected mechanism
     bridges pass their controls and compact native regression. If any mechanism
@@ -604,31 +594,30 @@ After each completed run or design tier:
 The next concrete action is:
 
 ```text
-Upload/run repaired EBRAINS package `cra_429p` for Tier 4.29e.
+Tier 4.29f - Compact Native Mechanism Regression
 ```
 
-JobManager command:
+Purpose:
 
 ```text
-cra_429p/experiments/tier4_29e_native_replay_consolidation_bridge.py --mode run-hardware --seeds 42,43,44
+Verify that the native mechanism bridges 4.29a-e remain mutually compatible
+before freezing a cumulative native mechanism bridge baseline or starting the
+standard dynamical benchmark suite.
 ```
 
-When the returned files are available:
+Required coverage:
 
-1. Verify result timestamps and runner revision before ingesting. Current valid
-   package metadata is `cra_429p` with runner revision
-   `tier4_29e_native_replay_consolidation_20260505_0003`.
-2. Do not promote `cra_429o` results. They are preserved only as noncanonical
-   diagnostic hardware evidence at
-   `controlled_test_output/tier4_29e_20260505_cra_429o_hardware_fail/`.
-3. If all three seeds pass, ingest Tier 4.29e, update the registry/docs, and run
-   Tier 4.29f compact native mechanism regression across 4.29a-4.29e.
-4. If any seed fails, classify the failure, preserve artifacts, repair only the
-   proven failure class, regenerate with a fresh package name, and rerun the
-   minimal necessary hardware gate.
+```text
+4.29a keyed memory / wrong-key / overcapacity
+4.29b routing-composition / wrong-route / overwrite
+4.29c predictive binding
+4.29d confidence-gated learning
+4.29e host-scheduled replay/consolidation
+```
 
-Do not mark 4.29e canonical from local-only repair evidence, prepared-only
-evidence, or stale downloads.
+If 4.29f passes, freeze the cumulative native mechanism bridge baseline and then
+start Tier 7.1 standard dynamical benchmarks in software. If it fails, repair or
+park only the failing mechanism and do not benchmark an unstable stack.
 
 
 ## 13. Make-Or-Break Gates

@@ -935,6 +935,30 @@ SPECS: tuple[EvidenceSpec, ...] = (
             "tier4_29d_task_half_context_confidence.json",
         ),
     ),
+    EvidenceSpec(
+        entry_id="tier4_29e_native_replay_consolidation",
+        tier_label="Tier 4.29e - Native Replay/Consolidation Bridge",
+        plan_position="Phase C mechanism migration: native host-scheduled replay/consolidation",
+        canonical_dir="tier4_29e_20260505_pass_ingested",
+        results_file="tier4_29e_ingest_results.json",
+        report_file="tier4_29e_report.md",
+        summary_file="tier4_29e_combined_results.json",
+        harness="experiments/tier4_29e_native_replay_consolidation_bridge.py",
+        evidence_role="native replay/consolidation hardware benchmark",
+        claim="Host-scheduled replay/consolidation events run through native four-core state primitives on real SpiNNaker across three seeds on three different boards. All 38/38 criteria pass per seed (114/114 total). Correct replay changes readout weight versus no replay, wrong-key replay blocks weight consolidation, and random-event replay stays distinct from correct replay.",
+        caveat="Native host-scheduled replay/consolidation bridge evidence only; not native on-chip replay buffers, not biological sleep, not speedup evidence, not multi-chip scaling, not full native autonomy, and not external-baseline superiority.",
+        latest_manifest_names=("tier4_29e_latest_manifest.json",),
+        expected_extra_files=(
+            "tier4_29e_hardware_results_seed42.json",
+            "tier4_29e_hardware_results_seed43.json",
+            "tier4_29e_hardware_results_seed44.json",
+            "tier4_29e_task_no_replay.json",
+            "tier4_29e_task_correct_replay.json",
+            "tier4_29e_task_wrong_key_replay.json",
+            "tier4_29e_task_random_event_replay.json",
+            "reports.zip",
+        ),
+    ),
 )
 
 

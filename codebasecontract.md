@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-05T08:45-04:00.
+Last updated: 2026-05-05T09:08-04:00.
 
 Current repo root:
 
@@ -166,67 +166,36 @@ Tier 4.29d — COMPLETE. Native self-evaluation bridge.
   Runner: experiments/tier4_29d_native_self_evaluation_bridge.py
   Claim boundary: Native confidence-gated learning hardware evidence only;
     not full world modeling, not hidden-regime inference, not speedup, not multi-chip.
-  Next: Complete Tier 4.29e hardware replay/consolidation bridge, then compact
-    native mechanism regression if 4.29e passes.
+  Next: Tier 4.29f compact native mechanism regression, then cumulative
+    native mechanism bridge freeze if 4.29f passes.
 
-Tier 4.29e — IN PROGRESS. Native replay/consolidation bridge.
-  Status: HARDWARE DIAGNOSTIC FAILED on `cra_429o`; LOCAL REPAIR PASS; `cra_429p` prepared.
-  Previous: 4.29d passed compact regression; 4.29e authorized per Phase C map.
-  Question: Can the host schedule replay events through native state primitives
-    (context/route/memory slots, learning core) on real SpiNNaker hardware?
-  Mechanism: Host-scheduled replay only. No C runtime changes required.
-    Reuses cra_429j binaries. Schedule entries specify context/route/memory keys
-    per event; replay events repeat earlier events with same or different keys.
+Tier 4.29e — COMPLETE. Native replay/consolidation bridge.
+  Status: HARDWARE PASS, INGESTED after `cra_429p` repair.
+  Previous: `cra_429o` returned real hardware but failed as a noncanonical
+    reference/schedule diagnostic; preserved at
+    controlled_test_output/tier4_29e_20260505_cra_429o_hardware_fail/.
+  Canonical artifact: controlled_test_output/tier4_29e_20260505_pass_ingested/
+  Runner revision: tier4_29e_native_replay_consolidation_20260505_0003
+  Hardware evidence: seeds 42/43/44, boards 10.11.226.129 / 10.11.226.1 /
+    10.11.226.65, 38/38 criteria per seed (114/114 total).
   Controls:
-    - no_replay: 16 base events only; baseline learning.
-    - correct_replay: 16 base + 8 balanced replay events with correct keys;
-      must produce a native readout-weight change versus no_replay.
-    - wrong_key_replay: 16 base + 8 balanced replay events with wrong context
-      keys; feature=0 on replay events, so replay does not consolidate weight;
-      bias may move because native bias updates are feature-independent.
-    - random_event_replay: 16 base + 8 random conflicting events; must stay
-      distinct from correct-key replay.
-  `cra_429o` hardware return: REAL HARDWARE EXECUTED but FAIL / NONCANONICAL.
-    Artifact: controlled_test_output/tier4_29e_20260505_cra_429o_hardware_fail/
-    Runner revision: tier4_29e_native_replay_consolidation_20260505_0002
-    Seeds 42/43/44 all returned 32/34 criteria.
-    Failed criteria on all seeds:
-      - wrong_key_replay_hardware_bias_within_tolerance: hw=0 ref=36288 diff=36288
-      - random_event_replay_hardware_weight_within_tolerance: hw=57344 ref=48128 diff=9216
-    Hardware health was good: target acquisition passed, four core loads passed,
-      all controls completed, pending matured, lookup replies matched requests,
-      stale replies/timeouts = 0.
-    Classification: reference/schedule-gate failure, not promoted hardware evidence.
-  Root-cause repair in `cra_429p` / runner revision
-    `tier4_29e_native_replay_consolidation_20260505_0003`:
-    - `_build_schedule()` now preserves per-event `context_key`, so wrong-key
-      replay is a real sham instead of accidentally using the control key.
-    - Host reference now mirrors native continuous-runtime ordering: lookup reply
-      timing, pending maturation, oldest-due maturation, and surprise threshold.
-    - Correct replay events are balanced +/- target=1.5 pairs, so correct replay
-      produces a real weight effect under native semantics and the gate no
-      longer accepts a no-op replay path.
-    - Wrong-key bias criterion changed from exact reference match/divergence to
-      bounded-near-no-replay, because native bias updates do not depend on
-      feature.
-  Local repair gate: PASS across seeds 42/43/44 at
-    controlled_test_output/tier4_29e_20260505_cra_429p_local_repair/
-    Expected native reference values:
-      - no_replay: weight=32768 (1.0000), bias=0 (0.0000)
-      - correct_replay: weight=47896 (1.4617), bias=-232 (-0.0071)
-      - wrong_key_replay: weight=32768 (1.0000), bias=-5243 (-0.1600)
-      - random_event_replay: weight=57344 (1.7500), bias=0 (0.0000)
-  Hardware evidence: PENDING for repaired package `cra_429p`.
-    Upload folder: ebrains_jobs/cra_429p
-    JobManager command:
-      cra_429p/experiments/tier4_29e_native_replay_consolidation_bridge.py --mode run-hardware --seeds 42,43,44
-  Runner: experiments/tier4_29e_native_replay_consolidation_bridge.py
-  Claim boundary: Native host-scheduled replay hardware evidence only;
-    not native on-chip replay buffers, not biological sleep, not speedup,
-    not multi-chip, not performance improvement claim.
-  Next: upload/run `cra_429p`; ingest only runner revision 20260505_0003
-    results. If all seeds pass, promote to 4.29f compact native mechanism
-    regression; otherwise classify and repair with a fresh package name.
+    - no_replay: hardware weight=32768, bias=0; exact reference match.
+    - correct_replay: hardware weight=47896, bias=-232; exact reference match;
+      differs from no_replay and wrong_key_replay.
+    - wrong_key_replay: hardware weight=32768, bias=0; weight matches no_replay
+      and differs from correct_replay; bias within repaired tolerance.
+    - random_event_replay: hardware weight=57344, bias=0; exact reference match;
+      differs from correct_replay.
+  Claim boundary: Native host-scheduled replay/consolidation through existing
+    four-core state primitives only. Not native on-chip replay buffers, not
+    biological sleep, not speedup, not multi-chip, not performance superiority.
+
+Tier 4.29f — CURRENT NEXT. Compact native mechanism regression.
+  Purpose: verify that the promoted native mechanism bridges 4.29a-e remain
+    mutually compatible before freezing any cumulative native mechanism bridge
+    baseline.
+  Rule: do not start benchmarks until 4.29f passes or parks the failing mechanism.
+
 
 Current status summary:
 
@@ -358,20 +327,16 @@ Local build capability (established 2026-05-02):
 
 Immediate next steps:
 
-1. Upload/run repaired Tier 4.29e package `ebrains_jobs/cra_429p`.
-2. Use JobManager command:
-   `cra_429p/experiments/tier4_29e_native_replay_consolidation_bridge.py --mode run-hardware --seeds 42,43,44`.
-3. Verify returned file timestamps and runner revision before ingesting:
-   `tier4_29e_native_replay_consolidation_20260505_0003`.
-4. Reject stale `cra_429o` / runner revision `20260505_0002` results for
-   promotion; keep them only as preserved noncanonical diagnostic evidence.
-5. If `cra_429p` passes all predeclared criteria, ingest under
-   `controlled_test_output/`, update docs/registry status, and move to Tier
-   4.29f compact native mechanism regression.
-6. If `cra_429p` fails, classify whether it is packaging, schedule/reference,
-   protocol/readback, hardware, or mechanism behavior; document the failure,
-   repair locally, bump to a fresh EBRAINS package name, and do not promote.
-7. Keep public repo hygiene green before the next upload or commit: no
+1. Define and run Tier 4.29f compact native mechanism regression across the
+   promoted native mechanism bridges 4.29a-e.
+2. Include at minimum: keyed-memory overcapacity/wrong-key, routing/composition
+   wrong-route/overwrite, predictive binding, confidence-gated learning, and
+   replay/consolidation controls.
+3. If 4.29f passes, freeze the cumulative native mechanism bridge baseline and
+   then move to Tier 7.1 standard dynamical benchmarks in software.
+4. If 4.29f fails, park or repair only the failing native mechanism; do not
+   benchmark an unstable cumulative mechanism stack.
+5. Keep public repo hygiene green before the next upload or commit: no
    credentialed remotes, no `ebrains_jobs/` symlinks, no transient root output
    dirs, no generated host binaries, and `make validate` passing.
 

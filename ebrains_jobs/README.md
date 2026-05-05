@@ -22,7 +22,7 @@ Public repository hygiene rules live in
 
 ### `cra_429p`
 
-Status: **PREPARED / HARDWARE RERUN PENDING** for Tier 4.29e native replay/consolidation bridge.
+Status: **HARDWARE PASS / INGESTED** for Tier 4.29e native replay/consolidation bridge.
 
 Purpose: Verify that host-scheduled replay/consolidation events run through the
 native four-core state pipeline using context, route, memory, and learning cores.
@@ -35,7 +35,7 @@ Upload folder:
 ebrains_jobs/cra_429p
 ```
 
-JobManager command:
+JobManager command used:
 
 ```text
 cra_429p/experiments/tier4_29e_native_replay_consolidation_bridge.py --mode run-hardware --seeds 42,43,44
@@ -47,14 +47,16 @@ Package metadata:
 - C runtime changes: none for 4.29e
 - Controls: `no_replay`, `correct_replay`, `wrong_key_replay`, `random_event_replay`
 
-Why this package exists:
-- `cra_429o` returned real SpiNNaker hardware execution but failed two
-  replay-control tolerance criteria on all three seeds.
-- The failure is preserved at
-  `controlled_test_output/tier4_29e_20260505_cra_429o_hardware_fail/`.
-- `cra_429p` repairs the local schedule/reference gate: per-event wrong context
-  keys are preserved, the host reference mirrors native continuous-runtime order,
-  and correct replay now has a real weight effect versus no replay.
+Canonical artifact:
+
+```text
+controlled_test_output/tier4_29e_20260505_pass_ingested/
+```
+
+Result:
+- Seed 42: board `10.11.226.129`, `38/38` criteria.
+- Seed 43: board `10.11.226.1`, `38/38` criteria.
+- Seed 44: board `10.11.226.65`, `38/38` criteria.
 
 Known noncanonical failure chain before `cra_429p`:
 - `cra_429k`: missing 4.29e runner from package.
@@ -63,9 +65,7 @@ Known noncanonical failure chain before `cra_429p`:
 - `cra_429n`: context/route/memory state-write fixed-point double conversion.
 - `cra_429o`: real hardware diagnostic fail due to schedule/reference gate, not promoted.
 
-Next action: upload `ebrains_jobs/cra_429p`, run the command above, download all
-returned files, and ingest only results with runner revision
-`tier4_29e_native_replay_consolidation_20260505_0003`.
+Next action: Tier 4.29f compact native mechanism regression.
 
 
 ### `cra_429d`

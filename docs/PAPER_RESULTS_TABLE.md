@@ -4,11 +4,11 @@ This table is generated from `controlled_test_output/STUDY_REGISTRY.json`.
 It is intended as a paper/technical-note citation table, not as a new
 source of claims. If the registry changes, regenerate this file.
 
-- Generated: `2026-05-05T12:51:24.357626+00:00`
-- Registry generated: `2026-05-05T12:51:24.268135+00:00`
+- Generated: `2026-05-05T13:13:34.301859+00:00`
+- Registry generated: `2026-05-05T13:13:34.207447+00:00`
 - Registry status: **PASS**
-- Canonical bundles: `41`
-- Expanded entries: `41`
+- Canonical bundles: `42`
+- Expanded entries: `42`
 
 ## Summary Table
 
@@ -55,6 +55,7 @@ source of claims. If the registry changes, regenerate this file.
 | `tier4_29b_native_routing_composition_gate` | PASS | see manifest | Tier 4.29b — Native Routing/Composition Gate |  | Native routing/composition hardware evidence only; not speedup evidence, not multi-chip scaling, not a general multi-core framework, not full native v2.1 autonomy, and not true continuous generation. | results: `controlled_test_output/tier4_29b_20260503_hardware_pass_ingested/tier4_29b_results.json`; report: `controlled_test_output/tier4_29b_20260503_hardware_pass_ingested/tier4_29b_report.md`; summary: `controlled_test_output/tier4_29b_20260503_hardware_pass_ingested/tier4_29b_summary.csv` |
 | `tier4_29c_native_predictive_binding` | PASS | see manifest |  |  | Native predictive binding hardware evidence only; not speedup evidence, not multi-chip scaling, not full native v2.1 autonomy, not continuous generation, and not general task learning. | results: `controlled_test_output/tier4_29c_20260504_pass_ingested/tier4_29c_ingest_results.json`; report: `controlled_test_output/tier4_29c_20260504_pass_ingested/tier4_29c_report_seed42.json`; summary: `controlled_test_output/tier4_29c_20260504_pass_ingested/tier4_29c_combined_results.json` |
 | `tier4_29d_native_self_evaluation` | PASS | see manifest |  |  | Native confidence-gated learning hardware evidence only; not speedup evidence, not multi-chip scaling, not full native v2.1 autonomy, not continuous generation, not dynamic lifecycle, and not external-baseline superiority. | results: `controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_ingest_results.json`; report: `controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_report_seed44.json`; summary: `controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_combined_results.json` |
+| `tier4_29e_native_replay_consolidation` | PASS | see manifest |  |  | Native host-scheduled replay/consolidation bridge evidence only; not native on-chip replay buffers, not biological sleep, not speedup evidence, not multi-chip scaling, not full native autonomy, and not external-baseline superiority. | results: `controlled_test_output/tier4_29e_20260505_pass_ingested/tier4_29e_ingest_results.json`; report: `controlled_test_output/tier4_29e_20260505_pass_ingested/tier4_29e_report.md`; summary: `controlled_test_output/tier4_29e_20260505_pass_ingested/tier4_29e_combined_results.json` |
 
 ## Claim Discipline
 

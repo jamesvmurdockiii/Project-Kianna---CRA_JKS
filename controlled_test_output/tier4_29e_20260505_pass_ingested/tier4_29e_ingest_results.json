@@ -1,0 +1,71 @@
+{
+  "tier": "Tier 4.29e - Native Replay/Consolidation Bridge",
+  "runner_revision": "tier4_29e_native_replay_consolidation_20260505_0003",
+  "mode": "ingest",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "status": "pass",
+  "total_criteria": 114,
+  "passed_criteria": 114,
+  "per_seed": [
+    {
+      "seed": 42,
+      "status": "pass",
+      "criteria_passed": 38,
+      "criteria_total": 38,
+      "board": "10.11.226.129"
+    },
+    {
+      "seed": 43,
+      "status": "pass",
+      "criteria_passed": 38,
+      "criteria_total": 38,
+      "board": "10.11.226.1"
+    },
+    {
+      "seed": 44,
+      "status": "pass",
+      "criteria_passed": 38,
+      "criteria_total": 38,
+      "board": "10.11.226.65"
+    }
+  ],
+  "control_summary": {
+    "no_replay": {
+      "hw_weight": 32768,
+      "hw_bias": 0,
+      "ref_weight": 32768,
+      "ref_bias": 0,
+      "note": "consistent across all 3 seeds"
+    },
+    "correct_replay": {
+      "hw_weight": 47896,
+      "hw_bias": -232,
+      "ref_weight": 47896,
+      "ref_bias": -232,
+      "note": "consistent across all 3 seeds"
+    },
+    "wrong_key_replay": {
+      "hw_weight": 32768,
+      "hw_bias": 0,
+      "ref_weight": 32768,
+      "ref_bias": -5243,
+      "note": "consistent across all 3 seeds"
+    },
+    "random_event_replay": {
+      "hw_weight": 57344,
+      "hw_bias": 0,
+      "ref_weight": 57344,
+      "ref_bias": 0,
+      "note": "consistent across all 3 seeds"
+    }
+  },
+  "packages": {
+    "noncanonical_diagnostic": "cra_429o (real hardware, failed old schedule/reference tolerance gate)",
+    "canonical": "cra_429p (repaired native-continuous reference and per-event wrong-key scheduling)"
+  },
+  "claim_boundary": "Host-scheduled replay/consolidation works through native four-core state primitives on real SpiNNaker for this bounded capsule. This is not native on-chip replay buffers, biological sleep, speedup, multi-chip scaling, or external-baseline superiority."
+}

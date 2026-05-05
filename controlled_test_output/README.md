@@ -5,10 +5,10 @@ ledger is `STUDY_REGISTRY.json`; the compact table is `STUDY_REGISTRY.csv`.
 Older reruns, prepared capsules, debug probes, and baseline-frozen
 mechanism bundles outside the formal registry are preserved for audit.
 
-- Generated: `2026-05-05T12:51:24.268135+00:00`
+- Generated: `2026-05-05T13:13:34.207447+00:00`
 - Registry status: **PASS**
-- Canonical evidence entries: `41`
-- Expanded test-entry count: `41` (`12` core tests + `10b` + `4.13` + `4.14` + `4.15` + `5.1` + `5.2` + `5.3` + `5.4` + `4.16a` + `4.16b` + `4.18a` + `5.5` + `5.12a` + `5.12c` + `5.12d` + `6.1` + `6.3` + `6.4`; Tiers `5.6` and `5.7` are tracked as additional reviewer-defense/guardrail evidence bundles)
+- Canonical evidence entries: `42`
+- Expanded test-entry count: `42` (`12` core tests + `10b` + `4.13` + `4.14` + `4.15` + `5.1` + `5.2` + `5.3` + `5.4` + `4.16a` + `4.16b` + `4.18a` + `5.5` + `5.12a` + `5.12c` + `5.12d` + `6.1` + `6.3` + `6.4`; Tiers `5.6` and `5.7` are tracked as additional reviewer-defense/guardrail evidence bundles)
 
 ## Evidence Categories
 
@@ -63,6 +63,7 @@ mechanism bundles outside the formal registry are preserved for audit.
 | `tier4_29b_native_routing_composition_gate` | **PASS** | `controlled_test_output/tier4_29b_20260503_hardware_pass_ingested` | Native routing/composition hardware evidence only; not speedup evidence, not multi-chip scaling, not a general multi-core framework, not full native v2.1 autonomy, and not true continuous generation. |
 | `tier4_29c_native_predictive_binding` | **PASS** | `controlled_test_output/tier4_29c_20260504_pass_ingested` | Native predictive binding hardware evidence only; not speedup evidence, not multi-chip scaling, not full native v2.1 autonomy, not continuous generation, and not general task learning. |
 | `tier4_29d_native_self_evaluation` | **PASS** | `controlled_test_output/tier4_29d_20260504_pass_ingested` | Native confidence-gated learning hardware evidence only; not speedup evidence, not multi-chip scaling, not full native v2.1 autonomy, not continuous generation, not dynamic lifecycle, and not external-baseline superiority. |
+| `tier4_29e_native_replay_consolidation` | **PASS** | `controlled_test_output/tier4_29e_20260505_pass_ingested` | Native host-scheduled replay/consolidation bridge evidence only; not native on-chip replay buffers, not biological sleep, not speedup evidence, not multi-chip scaling, not full native autonomy, and not external-baseline superiority. |
 
 ## Noncanonical Outputs
 

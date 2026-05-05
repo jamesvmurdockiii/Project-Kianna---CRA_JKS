@@ -49,10 +49,10 @@
       "severity": "error"
     }
   ],
-  "generated_at_utc": "2026-05-05T12:51:25.330017+00:00",
+  "generated_at_utc": "2026-05-05T13:13:35.203199+00:00",
   "registry_summary": {
-    "evidence_count": 41,
-    "expanded_test_entry_count": 41,
+    "evidence_count": 42,
+    "expanded_test_entry_count": 42,
     "registry_status": "pass"
   },
   "status": "pass"

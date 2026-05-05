@@ -3,7 +3,7 @@
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
 [![Tests](https://img.shields.io/badge/tests-147%20passing-brightgreen.svg)](#validation)
-[![Evidence](https://img.shields.io/badge/canonical%20evidence-41%20bundles-blue.svg)](STUDY_EVIDENCE_INDEX.md)
+[![Evidence](https://img.shields.io/badge/canonical%20evidence-42%20bundles-blue.svg)](STUDY_EVIDENCE_INDEX.md)
 
 Coral Reef Architecture (CRA) is a neuromorphic learning research platform for
 studying local spiking plasticity, delayed credit assignment, population-level
@@ -20,9 +20,9 @@ controlled ablations, baseline comparisons, and explicit claim boundaries.
 | --- | --- |
 | Software baseline | `v2.1`, frozen after bounded host-side self-evaluation / reliability-monitoring evidence. |
 | Native hardware baseline | `CRA_NATIVE_TASK_BASELINE_v0.2`, frozen after Tiers 4.22i-4.28e. |
-| Latest ingested hardware pass | Tier 4.29d, native self-evaluation / confidence-gated learning, `30/30` criteria per seed across seeds `42`, `43`, and `44`. |
-| Active hardware run | Tier 4.29e `cra_429p`, repaired native replay/consolidation bridge prepared after noncanonical `cra_429o` hardware diagnostic failure. |
-| Canonical registry | 41 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
+| Latest ingested hardware pass | Tier 4.29e, native host-scheduled replay/consolidation bridge, `38/38` criteria per seed across seeds `42`, `43`, and `44`. |
+| Active hardware run | Tier 4.29f compact native mechanism regression is next after Tier 4.29e `cra_429p` passed hardware ingest. |
+| Canonical registry | 42 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
 | Validation suite | 147 pytest tests plus registry, paper-table, and repository-audit generation. |
 
 ## What CRA Implements
@@ -52,7 +52,7 @@ Core implementation areas:
 | 5.1-5.7 | External baselines, learning curves, failure analysis, delayed-credit confirmation, fairness audit, compact regression. | Software evidence; not universal superiority. |
 | 5.10-5.18 | Memory, replay/consolidation, predictive context, composition/routing, working memory diagnostics, temporal coding, neuron-parameter sensitivity, predictive binding, and self-evaluation gates. | Mostly host-side software mechanisms unless explicitly migrated to hardware. |
 | 6.1-6.4 | Lifecycle/self-scaling, lifecycle sham controls, and circuit-motif causality. | Software organism/ecology evidence; not hardware lifecycle. |
-| 4.22-4.29 | Custom SpiNNaker runtime progression from roundtrip/load tests to four-core MCPL tasks, keyed memory, routing/composition, predictive binding, and confidence-gated learning. | Native hardware mechanism evidence for the tested capsules only. |
+| 4.22-4.29 | Custom SpiNNaker runtime progression from roundtrip/load tests to four-core MCPL tasks, keyed memory, routing/composition, predictive binding, confidence-gated learning, and host-scheduled replay/consolidation. | Native hardware mechanism evidence for the tested capsules only. |
 
 The most current paper-facing evidence index is generated at
 [`STUDY_EVIDENCE_INDEX.md`](STUDY_EVIDENCE_INDEX.md). The machine-readable

@@ -13,50 +13,45 @@ something about the platform, update this file in the same work session.
 Latest passed hardware-facing gate:
 
 ```text
-Tier 4.29d - Native Self-Evaluation Bridge
-  Status: HARDWARE PASS, INGESTED (cra_429j)
-  Seeds: 42/43/44 on boards 10.11.214.49 / 10.11.214.113 / 10.11.215.161
-  Criteria: 30/30 per seed (90/90 total)
-  Full confidence: weight=30912, bias=-1856
-  Zero confidence: weight=0, bias=0 (exact zero — proves confidence gating)
-  Zero-context confidence: weight=0, bias=0 (exact zero)
-  Half-context confidence: weight=28093, bias=3517 (diff=61 from ref)
-  Previous: cra_429i FAILED on EBRAINS (all controls received confidence=1.0).
-    Root cause: MCPL lookup protocol does not transmit confidence.
-    Fix: Disable MCPL lookup paths; revert to SDP. Rebuilt as cra_429j per Rule 10.
+Tier 4.29e - Native Replay/Consolidation Bridge
+  Status: HARDWARE PASS, INGESTED (cra_429p)
+  Seeds: 42/43/44 on boards 10.11.226.129 / 10.11.226.1 / 10.11.226.65
+  Criteria: 38/38 per seed (114/114 total)
+  no_replay: weight=32768, bias=0
+  correct_replay: weight=47896, bias=-232
+  wrong_key_replay: weight=32768, bias=0 (weight consolidation blocked)
+  random_event_replay: weight=57344, bias=0
+  Previous: cra_429o FAILED as noncanonical diagnostic due to schedule/reference gate.
+    Fix: preserve per-event wrong-key scheduling and mirror native continuous reference.
 ```
 
 Latest active hardware-facing tier:
 
 ```text
-Tier 4.29e - Native Replay/Consolidation Bridge
-  Status: cra_429o HARDWARE DIAGNOSTIC FAIL; cra_429p LOCAL REPAIR PASS / PREPARED
-  Reuses cra_429j binaries (no C runtime changes required).
-  Four controls: no_replay, correct_replay, wrong_key_replay, random_event_replay.
-  cra_429o returned real hardware but failed two replay-control tolerance checks on all seeds.
-  cra_429p repairs per-event wrong-key scheduling, native-continuous reference mirroring,
-    and correct-replay-vs-no-replay separation.
-  Runner revision: tier4_29e_native_replay_consolidation_20260505_0003
-  Current package to upload: ebrains_jobs/cra_429p
-  Next: run cra_429p, verify revision/timestamps, then ingest or repair.
+Tier 4.29f - Compact Native Mechanism Regression
+  Status: CURRENT NEXT GATE
+  Purpose: verify that native bridges 4.29a-e remain mutually compatible before
+    freezing a cumulative native mechanism bridge baseline or starting benchmarks.
+  Coverage: keyed memory, routing/composition, predictive binding, confidence
+    gating, and host-scheduled replay/consolidation.
 ```
 
 Latest passed hardware-facing tier:
 
 ```text
-Tier 4.29d - Native Self-Evaluation Bridge
-  Status: HARDWARE PASS, INGESTED (cra_429j)
-  Seeds: 42/43/44 on boards 10.11.214.49 / 10.11.214.113 / 10.11.215.161
-  Criteria: 30/30 per seed (90/90 total)
+Tier 4.29e - Native Replay/Consolidation Bridge
+  Status: HARDWARE PASS, INGESTED (cra_429p)
+  Seeds: 42/43/44 on boards 10.11.226.129 / 10.11.226.1 / 10.11.226.65
+  Criteria: 38/38 per seed (114/114 total)
 ```
 
 Latest passed EBRAINS upload package:
 
 ```text
-Tier 4.29d - Native Self-Evaluation Bridge
-upload = ebrains_jobs/cra_429j
+Tier 4.29e - Native Replay/Consolidation Bridge
+upload = ebrains_jobs/cra_429p
 status = returned hardware pass ingested
-runner = experiments/tier4_29d_native_self_evaluation_bridge.py
+runner = experiments/tier4_29e_native_replay_consolidation_bridge.py
 ```
 
 Tier 4.28e Point A passed after ingest at:
@@ -2299,9 +2294,9 @@ per-event wrong context keys, and the old host reference did not mirror native
 continuous-runtime ordering or surprise-threshold behavior. This is a
 noncanonical diagnostic failure, not replay/consolidation hardware evidence.
 
-### cra_429p (CURRENT REPAIR PACKAGE)
+### cra_429p (HARDWARE PASS / INGESTED)
 
-Status: **LOCAL REPAIR PASS / HARDWARE RERUN PENDING**
+Status: **HARDWARE PASS / INGESTED**
 
 Upload folder: `ebrains_jobs/cra_429p`
 
@@ -2337,13 +2332,11 @@ wrong_key_replay:     weight=32768, bias=-5243
 random_event_replay:  weight=57344, bias=0
 ```
 
-Expected pass criteria per seed:
-- All 4 controls run successfully.
-- Hardware weight/bias match repaired native-continuous reference within +/-8192.
-- Correct replay weight differs from no replay by >8192.
-- Wrong-key replay weight approximates no-replay weight (diff <=8192).
-- Wrong-key replay differs from correct replay.
-- Random-event replay differs from correct replay.
+Passed criteria per seed:
+- Seed 42: board `10.11.226.129`, `38/38` criteria.
+- Seed 43: board `10.11.226.1`, `38/38` criteria.
+- Seed 44: board `10.11.226.65`, `38/38` criteria.
+- All 4 controls ran successfully and matched repaired native-continuous reference within tolerance.
 
 
 After ingest, update:
@@ -2352,6 +2345,6 @@ After ingest, update:
 - `STUDY_EVIDENCE_INDEX.md` (regenerate)
 - `docs/PAPER_RESULTS_TABLE.md` (regenerate)
 - `docs/RESEARCH_GRADE_AUDIT.md` (count 42)
-- `CONTROLLED_TEST_PLAN.md` (mark 4.29e HARDWARE PASS only after repaired `cra_429p` ingest passes)
+- `CONTROLLED_TEST_PLAN.md` (4.29e marked HARDWARE PASS; 4.29f marked next gate)
 - `docs/MASTER_EXECUTION_PLAN.md` (step 24 complete)
 - `codebasecontract.md` (Section 0 update)

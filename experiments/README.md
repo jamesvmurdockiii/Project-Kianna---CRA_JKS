@@ -59,7 +59,7 @@ Tier 4.16b, Tier 4.18a, Tier 5.5, Tier 5.6, Tier 5.7,
 Tier 5.12a, Tier 5.12c, Tier 5.12d, Tier 6.1, Tier 6.3,
 Tier 6.4, Tier 4.26, Tiers 4.27/4.28 hardware-native runtime gates, and
 Tiers 4.29a-4.29d native mechanism bridges have been implemented and run.
-Tier 4.29e is active: `cra_429o` is submitted and hardware results are pending.
+Tier 4.29e is complete: `cra_429p` passed hardware ingest. Tier 4.29f compact native mechanism regression is the current next gate.
 Tier 4.12 proves NEST/Brian2 parity plus SpiNNaker
 PyNN readiness prep. Tier 4.13 records a real SpiNNaker hardware-capsule pass
 for the minimal fixed-pattern task through EBRAINS/JobManager. Tier 4.14
