@@ -126,7 +126,7 @@ They remain part of the peer-review audit trail:
 4.30b-hw single-core lifecycle active-mask/lineage hardware smoke = hardware functional pass after ingest correction; raw remote fail was runner rev-0001 readback counter criterion defect
 4.30c native lifecycle/ecology migration = complete; multi-core lifecycle state split contract/local reference passed
 4.30d native lifecycle/ecology migration = complete; multi-core lifecycle runtime source audit/local C host test passed
-4.30e native lifecycle/ecology migration = prepared; multi-core lifecycle hardware smoke package at ebrains_jobs/cra_430e awaits EBRAINS run/ingest
+4.30e native lifecycle/ecology migration = hardware pass ingested; five-profile lifecycle smoke passed on board 10.11.226.145 with 75/75 hardware criteria and 5/5 ingest criteria
 ```
 
 These planned tiers may move in order as evidence arrives, but completed pass,
@@ -8457,14 +8457,13 @@ freeze.
 Next step:
 
 ```text
-Tier 4.30e multi-core lifecycle hardware smoke run/ingest. The package is now
-prepared at `ebrains_jobs/cra_430e`; run the emitted JobManager command and
-ingest returned artifacts before any lifecycle sham-control hardware subset.
+Tier 4.30e multi-core lifecycle hardware smoke passed and has been ingested.
+Next: Tier 4.30f lifecycle sham-control hardware subset design/prepare.
 ```
 
 ### Tier 4.30e - Multi-Core Lifecycle Hardware Smoke
 
-Status: PREPARED ONLY - awaiting EBRAINS run/ingest.
+Status: HARDWARE PASS / INGESTED.
 
 Question:
 
@@ -8473,15 +8472,21 @@ Does the Tier 4.30d five-profile lifecycle runtime surface survive real
 SpiNNaker build/load/execution/readback before hardware lifecycle sham controls?
 ```
 
-Prepared result:
+Result:
 
 ```text
-Output: controlled_test_output/tier4_30e_hw_20260505_prepared/
+Prepared output: controlled_test_output/tier4_30e_hw_20260505_prepared/
+Ingested output: controlled_test_output/tier4_30e_hw_20260505_hardware_pass_ingested/
 Runner: experiments/tier4_30e_multicore_lifecycle_hardware_smoke.py
 Runner revision: tier4_30e_multicore_lifecycle_hardware_smoke_20260505_0001
 Upload folder: ebrains_jobs/cra_430e
-JobManager command:
-cra_430e/experiments/tier4_30e_multicore_lifecycle_hardware_smoke.py --mode run-hardware --output-dir tier4_30e_hw_job_output
+Board: 10.11.226.145
+Raw remote status: pass
+Ingest status: pass
+Hardware criteria: 75/75
+Ingest criteria: 5/5
+Returned artifacts preserved: 32
+Task runtime: 0.21091535408049822 seconds
 ```
 
 Required hardware coverage:
@@ -8526,5 +8531,4 @@ Boundary:
 Tier 4.30e is a hardware smoke gate only. It is not lifecycle task-benefit
 evidence, not lifecycle sham-control success, not speedup, not multi-chip
 scaling, not v2.2 temporal-state migration, and not a lifecycle baseline freeze.
-Prepared status is not hardware evidence.
 ```

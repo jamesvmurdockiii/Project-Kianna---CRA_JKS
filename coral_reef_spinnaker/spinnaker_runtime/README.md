@@ -108,9 +108,14 @@ coverage, and ownership guards so non-lifecycle profiles reject direct
 lifecycle mutation commands. The local gate passed
 `14/14` criteria in
 `controlled_test_output/tier4_30d_20260505_lifecycle_runtime_source_audit/`.
-This is source/runtime host evidence only. Tier 4.30e is now packaged for
-EBRAINS at `ebrains_jobs/cra_430e`; it becomes hardware evidence only after the
-returned run artifacts pass ingest.
+This is source/runtime host evidence only. Tier 4.30e then passed after EBRAINS
+ingest at
+`controlled_test_output/tier4_30e_hw_20260505_hardware_pass_ingested/`: board
+`10.11.226.145`, raw remote status `pass`, ingest status `pass`, 75/75 hardware
+criteria, 5/5 ingest criteria, five profile builds/loads/readbacks, exact
+canonical/boundary lifecycle parity, and duplicate/stale lifecycle event
+rejection. This remains hardware-smoke evidence only, not lifecycle task-benefit
+or baseline-freeze evidence.
 
 Promotion criteria before this C runtime becomes a near-term backend:
 

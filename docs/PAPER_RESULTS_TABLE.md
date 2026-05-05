@@ -4,11 +4,11 @@ This table is generated from `controlled_test_output/STUDY_REGISTRY.json`.
 It is intended as a paper/technical-note citation table, not as a new
 source of claims. If the registry changes, regenerate this file.
 
-- Generated: `2026-05-05T22:21:13.085718+00:00`
-- Registry generated: `2026-05-05T22:21:12.991243+00:00`
+- Generated: `2026-05-05T22:57:41.796852+00:00`
+- Registry generated: `2026-05-05T22:57:41.706435+00:00`
 - Registry status: **PASS**
-- Canonical bundles: `57`
-- Expanded entries: `57`
+- Canonical bundles: `58`
+- Expanded entries: `58`
 
 ## Summary Table
 
@@ -71,6 +71,7 @@ source of claims. If the registry changes, regenerate this file.
 | `tier4_30b_hw_lifecycle_smoke` | PASS | see manifest | Tier 4.30b-hw - Single-Core Lifecycle Active-Mask/Lineage Hardware Smoke |  | Hardware smoke only; not lifecycle task benefit, not multi-core lifecycle migration, not speedup, not multi-chip scaling, and not a lifecycle baseline freeze. | results: `controlled_test_output/tier4_30b_hw_20260505_hardware_pass_ingested/tier4_30b_hw_results.json`; report: `controlled_test_output/tier4_30b_hw_20260505_hardware_pass_ingested/tier4_30b_hw_report.md`; summary: `` |
 | `tier4_30c_multicore_lifecycle_split` | PASS | see manifest | Tier 4.30c - Multi-Core Lifecycle State Split Contract/Reference |  | Local contract/reference evidence only; not C runtime implementation, not EBRAINS hardware evidence, not lifecycle task benefit, and not a lifecycle baseline freeze. | results: `controlled_test_output/tier4_30c_20260505_multicore_lifecycle_split/tier4_30c_results.json`; report: `controlled_test_output/tier4_30c_20260505_multicore_lifecycle_split/tier4_30c_report.md`; summary: `controlled_test_output/tier4_30c_20260505_multicore_lifecycle_split/tier4_30c_scenario_summary.csv` |
 | `tier4_30d_lifecycle_runtime_source_audit` | PASS | see manifest | Tier 4.30d - Multi-Core Lifecycle Runtime Source Audit |  | Local source/runtime host evidence only; not EBRAINS hardware evidence, not task benefit, not speedup, not multi-chip scaling, not v2.2 temporal migration, and not a lifecycle baseline freeze. | results: `controlled_test_output/tier4_30d_20260505_lifecycle_runtime_source_audit/tier4_30d_results.json`; report: `controlled_test_output/tier4_30d_20260505_lifecycle_runtime_source_audit/tier4_30d_report.md`; summary: `` |
+| `tier4_30e_multicore_lifecycle_hardware_smoke` | PASS | see manifest | Tier 4.30e - Multi-Core Lifecycle Hardware Smoke |  | Hardware smoke only; not lifecycle task benefit, not lifecycle sham-control success, not speedup, not multi-chip scaling, not v2.2 temporal migration, and not a lifecycle baseline freeze. | results: `controlled_test_output/tier4_30e_hw_20260505_hardware_pass_ingested/tier4_30e_hw_results.json`; report: `controlled_test_output/tier4_30e_hw_20260505_hardware_pass_ingested/tier4_30e_hw_report.md`; summary: `` |
 
 ## Claim Discipline
 

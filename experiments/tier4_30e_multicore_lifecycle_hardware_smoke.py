@@ -724,7 +724,6 @@ def copy_returned_artifacts(ingest_dir: Path, output_dir: Path, *, anchor: Path 
         name = path.name
         if (
             name.startswith("tier4_30e")
-            or name.startswith("coral_reef")
             or name.startswith("main ")
             or name.startswith("state_manager ")
             or name.startswith("host_interface ")

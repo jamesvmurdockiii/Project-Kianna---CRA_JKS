@@ -5,10 +5,10 @@ ledger is `STUDY_REGISTRY.json`; the compact table is `STUDY_REGISTRY.csv`.
 Older reruns, prepared capsules, debug probes, and baseline-frozen
 mechanism bundles outside the formal registry are preserved for audit.
 
-- Generated: `2026-05-05T22:21:12.991243+00:00`
+- Generated: `2026-05-05T22:57:41.706435+00:00`
 - Registry status: **PASS**
-- Canonical evidence entries: `57`
-- Expanded test-entry count: `57`; see the canonical evidence table below for the exact current tier list.
+- Canonical evidence entries: `58`
+- Expanded test-entry count: `58`; see the canonical evidence table below for the exact current tier list.
 
 ## Evidence Categories
 
@@ -79,6 +79,7 @@ mechanism bundles outside the formal registry are preserved for audit.
 | `tier4_30b_hw_lifecycle_smoke` | **PASS** | `controlled_test_output/tier4_30b_hw_20260505_hardware_pass_ingested` | Hardware smoke only; not lifecycle task benefit, not multi-core lifecycle migration, not speedup, not multi-chip scaling, and not a lifecycle baseline freeze. |
 | `tier4_30c_multicore_lifecycle_split` | **PASS** | `controlled_test_output/tier4_30c_20260505_multicore_lifecycle_split` | Local contract/reference evidence only; not C runtime implementation, not EBRAINS hardware evidence, not lifecycle task benefit, and not a lifecycle baseline freeze. |
 | `tier4_30d_lifecycle_runtime_source_audit` | **PASS** | `controlled_test_output/tier4_30d_20260505_lifecycle_runtime_source_audit` | Local source/runtime host evidence only; not EBRAINS hardware evidence, not task benefit, not speedup, not multi-chip scaling, not v2.2 temporal migration, and not a lifecycle baseline freeze. |
+| `tier4_30e_multicore_lifecycle_hardware_smoke` | **PASS** | `controlled_test_output/tier4_30e_hw_20260505_hardware_pass_ingested` | Hardware smoke only; not lifecycle task benefit, not lifecycle sham-control success, not speedup, not multi-chip scaling, not v2.2 temporal migration, and not a lifecycle baseline freeze. |
 
 ## Noncanonical Outputs
 

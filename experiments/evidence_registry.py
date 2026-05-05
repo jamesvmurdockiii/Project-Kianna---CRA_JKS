@@ -1232,6 +1232,29 @@ SPECS: tuple[EvidenceSpec, ...] = (
             "tier4_30d_source_checks.csv",
         ),
     ),
+    EvidenceSpec(
+        entry_id="tier4_30e_multicore_lifecycle_hardware_smoke",
+        tier_label="Tier 4.30e - Multi-Core Lifecycle Hardware Smoke",
+        plan_position="Phase E lifecycle-native five-profile hardware smoke before sham-control subset",
+        canonical_dir="tier4_30e_hw_20260505_hardware_pass_ingested",
+        results_file="tier4_30e_hw_results.json",
+        report_file="tier4_30e_hw_report.md",
+        summary_file=None,
+        harness="experiments/tier4_30e_multicore_lifecycle_hardware_smoke.py",
+        evidence_role="multi-core lifecycle hardware smoke",
+        claim="The five-profile lifecycle runtime surface built, loaded, and executed on real SpiNNaker with profile ownership guards, duplicate/stale lifecycle rejection, and exact canonical/boundary lifecycle parity.",
+        caveat="Hardware smoke only; not lifecycle task benefit, not lifecycle sham-control success, not speedup, not multi-chip scaling, not v2.2 temporal migration, and not a lifecycle baseline freeze.",
+        latest_manifest_names=("tier4_30e_hw_latest_manifest.json",),
+        expected_extra_files=(
+            "returned_artifacts/tier4_30e_hw_task_result.json",
+            "returned_artifacts/tier4_30e_hw_target_acquisition.json",
+            "returned_artifacts/tier4_30e_hw_context_load.json",
+            "returned_artifacts/tier4_30e_hw_route_load.json",
+            "returned_artifacts/tier4_30e_hw_memory_load.json",
+            "returned_artifacts/tier4_30e_hw_learning_load.json",
+            "returned_artifacts/tier4_30e_hw_lifecycle_load.json",
+        ),
+    ),
 )
 
 

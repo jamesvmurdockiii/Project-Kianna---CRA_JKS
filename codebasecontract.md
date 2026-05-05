@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-05T18:09:11-04:00.
+Last updated: 2026-05-05T18:52:03-04:00.
 
 Current repo root:
 
@@ -86,19 +86,24 @@ FROZEN: CRA_NATIVE_MECHANISM_BRIDGE_v0.3
         active-mask/count/lineage sync payload coverage, lifecycle split
         counters, non-lifecycle ownership guards, and local C host coverage
         against the Tier 4.30c contract.
-  Current: Tier 4.30e multi-core lifecycle hardware smoke package PREPARED.
-        Prepared output:
-        `controlled_test_output/tier4_30e_hw_20260505_prepared/`.
-        Upload folder:
-        `ebrains_jobs/cra_430e`.
-        JobManager command:
-        `cra_430e/experiments/tier4_30e_multicore_lifecycle_hardware_smoke.py --mode run-hardware --output-dir tier4_30e_hw_job_output`.
-        The runner builds/loads `context_core`, `route_core`, `memory_core`,
-        `learning_core`, and `lifecycle_core`, verifies profile readback and
-        lifecycle ownership guards, runs canonical/boundary lifecycle schedules
-        on `lifecycle_core`, and probes duplicate/stale lifecycle event
-        rejection. This is prepared-only until returned artifacts pass ingest.
-  Next: Run and ingest Tier 4.30e multi-core lifecycle hardware smoke.
+  Current: Tier 4.30e multi-core lifecycle hardware smoke PASS after EBRAINS
+        ingest.
+        Ingested output:
+        `controlled_test_output/tier4_30e_hw_20260505_hardware_pass_ingested/`.
+        Raw remote status: `pass`.
+        Ingest status: `pass`.
+        Board: `10.11.226.145`.
+        Hardware criteria: 75/75.
+        Ingest criteria: 5/5.
+        Profiles: `context_core`, `route_core`, `memory_core`,
+        `learning_core`, and `lifecycle_core` all built, loaded, and returned
+        profile readback.
+        Lifecycle scenarios: `canonical_32` and `boundary_64` passed exact
+        parity; duplicate/stale lifecycle events were rejected.
+        Boundary: hardware smoke only; not lifecycle task benefit, not
+        lifecycle sham-control success, not speedup, not multi-chip scaling,
+        not v2.2 temporal migration, and not a lifecycle baseline freeze.
+  Next: Design/prepare Tier 4.30f lifecycle sham-control hardware subset.
         Lifecycle hardware layers initially on CRA_NATIVE_MECHANISM_BRIDGE_v0.3,
         with v2.2 as a software reference boundary only. Temporal-state hardware
         migration is not automatic from v2.2; it requires a separately defined
@@ -427,15 +432,20 @@ Tier 4.30d — COMPLETE. Multi-core lifecycle runtime source audit/local C
     evidence, not task benefit, not speedup, not multi-chip scaling, not v2.2
     temporal migration, and not a lifecycle baseline freeze.
 
-Tier 4.30e — PREPARED / AWAITING EBRAINS RUN. Multi-core lifecycle hardware
-  smoke package/run.
+Tier 4.30e — HARDWARE PASS / INGESTED. Multi-core lifecycle hardware smoke.
   Runner: `experiments/tier4_30e_multicore_lifecycle_hardware_smoke.py`.
   Prepared output: `controlled_test_output/tier4_30e_hw_20260505_prepared/`.
-  Upload folder: `ebrains_jobs/cra_430e`.
-  JobManager command:
-    `cra_430e/experiments/tier4_30e_multicore_lifecycle_hardware_smoke.py --mode run-hardware --output-dir tier4_30e_hw_job_output`.
-  Package the 4.30d runtime source surface and prove real SpiNNaker
-  execution/readback before any lifecycle sham-control hardware subset.
+  Ingested output:
+    `controlled_test_output/tier4_30e_hw_20260505_hardware_pass_ingested/`.
+  Board: `10.11.226.145`.
+  Raw remote status: `pass`; ingest status: `pass`.
+  Hardware criteria: 75/75; ingest criteria: 5/5.
+  Result: five profile builds/loads/readbacks, profile ownership guards,
+    canonical/boundary lifecycle parity, and duplicate/stale lifecycle event
+    rejection passed on real SpiNNaker.
+  Boundary: hardware smoke only; not lifecycle task benefit, not sham-control
+    success, not speedup, not multi-chip scaling, not v2.2 temporal migration,
+    and not a lifecycle baseline freeze.
 
 
 Current status summary:
@@ -576,10 +586,10 @@ Local build capability (established 2026-05-02):
 
 Immediate next steps:
 
-1. Upload `ebrains_jobs/cra_430e` to EBRAINS/JobManager and run:
-   `cra_430e/experiments/tier4_30e_multicore_lifecycle_hardware_smoke.py --mode run-hardware --output-dir tier4_30e_hw_job_output`.
-   Then ingest returned artifacts with the same runner's `--mode ingest` before
-   making any lifecycle hardware claim.
+1. Design/prepare Tier 4.30f lifecycle sham-control hardware subset. Keep it
+   small, reviewer-defensible, and explicitly scoped to lifecycle control
+   separation after the Tier 4.30e smoke pass. Do not freeze a lifecycle-native
+   baseline yet.
 2. Do not migrate v2.2 temporal fading-memory state to hardware merely because
    v2.2 froze. Native temporal-state migration requires a separate readiness
    tier with fixed-point state equations and local parity.

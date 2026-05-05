@@ -22,8 +22,8 @@ Public repository hygiene rules live in
 
 ### `cra_430e`
 
-Status: **PREPARED / AWAITING EBRAINS RUN** for Tier 4.30e multi-core
-lifecycle hardware smoke.
+Status: **HARDWARE PASS / INGESTED** for Tier 4.30e multi-core lifecycle
+hardware smoke.
 
 Purpose: Verify the native lifecycle/core split on real SpiNNaker with five
 runtime profiles: context, route, memory, learning, and lifecycle. The job
@@ -38,24 +38,33 @@ Upload folder:
 ebrains_jobs/cra_430e
 ```
 
-JobManager command:
+JobManager command that produced the returned artifacts:
 
 ```text
 cra_430e/experiments/tier4_30e_multicore_lifecycle_hardware_smoke.py --mode run-hardware --output-dir tier4_30e_hw_job_output
 ```
 
-Prepared artifact:
+Prepared and ingested artifacts:
 
 ```text
 controlled_test_output/tier4_30e_hw_20260505_prepared/
+controlled_test_output/tier4_30e_hw_20260505_hardware_pass_ingested/
 ```
 
-Boundary: this prepared package is not hardware evidence until returned
-artifacts pass ingest. A hardware pass would show five-profile lifecycle smoke
-execution, lifecycle ownership guards, duplicate/stale event rejection, and
-canonical/boundary lifecycle parity on real SpiNNaker. It is not lifecycle
-task-benefit evidence, not lifecycle sham-control evidence, not multi-chip
-scaling, not speedup evidence, and not a baseline freeze.
+Returned metrics:
+- Board: `10.11.226.145`
+- Raw remote status: `pass`
+- Ingest status: `pass`
+- Hardware criteria: `75/75`
+- Ingest criteria: `5/5`
+- Returned artifacts preserved: `32`
+- Scenario parity: `canonical_32` and `boundary_64` passed
+- Duplicate/stale lifecycle event rejection: passed
+
+Boundary: this is hardware smoke evidence for the five-profile lifecycle
+surface only. It is not lifecycle task-benefit evidence, not lifecycle
+sham-control evidence, not multi-chip scaling, not speedup evidence, not v2.2
+temporal migration, and not a baseline freeze.
 
 ### `cra_429p`
 

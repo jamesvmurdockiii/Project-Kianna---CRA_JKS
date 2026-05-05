@@ -27,15 +27,18 @@ Latest active hardware-facing tier:
 
 ```text
 Tier 4.30e - Multi-Core Lifecycle Hardware Smoke
-  Status: PREPARED, awaiting EBRAINS run/ingest
+  Status: HARDWARE PASS, INGESTED
   Source prerequisite: Tier 4.30d local source/runtime host pass, 14/14
   Prepared output: controlled_test_output/tier4_30e_hw_20260505_prepared/
+  Ingested output: controlled_test_output/tier4_30e_hw_20260505_hardware_pass_ingested/
   Upload folder: ebrains_jobs/cra_430e
-  JobManager command:
-    cra_430e/experiments/tier4_30e_multicore_lifecycle_hardware_smoke.py --mode run-hardware --output-dir tier4_30e_hw_job_output
-  Required rule: package only from the passed 4.30d runtime source surface.
-  Boundary: prove real SpiNNaker execution/readback for the lifecycle_core
-    profile and split lifecycle surface; do not claim lifecycle task benefit,
+  Board: 10.11.226.145
+  Raw remote status: pass
+  Ingest status: pass
+  Hardware criteria: 75/75
+  Ingest criteria: 5/5
+  Boundary: real SpiNNaker smoke evidence for the lifecycle_core profile and
+    split lifecycle surface only; do not claim lifecycle task benefit,
     sham-control success, speedup, multi-chip scaling, v2.2 temporal migration,
     or a lifecycle baseline freeze.
 ```
@@ -53,7 +56,7 @@ Tier 4.30d - Multi-Core Lifecycle Runtime Source Audit
     and not a lifecycle baseline freeze.
 ```
 
-Latest passed hardware-facing tier:
+Previous passed hardware-facing tier:
 
 ```text
 Tier 4.30b-hw - Single-Core Lifecycle Active-Mask/Lineage Hardware Smoke
@@ -70,19 +73,18 @@ Tier 4.30b-hw - Single-Core Lifecycle Active-Mask/Lineage Hardware Smoke
 Latest passed EBRAINS upload package:
 
 ```text
-Tier 4.30b-hw - Single-Core Lifecycle Active-Mask/Lineage Hardware Smoke
-upload = ebrains_jobs/cra_430b
-status = returned hardware functional pass after ingest correction
-runner = experiments/tier4_30b_lifecycle_hardware_smoke.py
+Tier 4.30e - Multi-Core Lifecycle Hardware Smoke
+upload = ebrains_jobs/cra_430e
+status = returned hardware pass after ingest
+runner = experiments/tier4_30e_multicore_lifecycle_hardware_smoke.py
 ```
 
 Latest prepared EBRAINS upload package:
 
 ```text
-Tier 4.30e - Multi-Core Lifecycle Hardware Smoke
-upload = ebrains_jobs/cra_430e
-status = prepared-only; no hardware evidence until returned artifacts pass
-runner = experiments/tier4_30e_multicore_lifecycle_hardware_smoke.py
+None pending after Tier 4.30e ingest. Prepare the next clean `cra_*` folder only
+after the Tier 4.30f lifecycle sham-control hardware subset is explicitly
+defined.
 ```
 
 Tier 4.28e Point A passed after ingest at:
@@ -436,13 +438,19 @@ For the current custom-runtime job, use the generated source-only folder under
 
 ## Current EBRAINS Command
 
-Use the JobManager command-line field directly. Do not wrap this in `bash`,
-`cd`, `python3`, or a local shell recipe unless the package README explicitly
-says to.
+There is no pending EBRAINS command after Tier 4.30e ingest. The next command
+must be emitted by the Tier 4.30f lifecycle sham-control hardware subset
+prepare step after its contract is checked.
+
+Last Tier 4.30e command used:
 
 ```text
 cra_430e/experiments/tier4_30e_multicore_lifecycle_hardware_smoke.py --mode run-hardware --output-dir tier4_30e_hw_job_output
 ```
+
+Use the JobManager command-line field directly. Do not wrap this in `bash`,
+`cd`, `python3`, or a local shell recipe unless the package README explicitly
+says to.
 
 If EBRAINS exposes a board hostname manually and the runner cannot discover it,
 append:
@@ -466,24 +474,38 @@ That means:
 4. auto-select a free destination CPU when the probe already occupies the requested core.
 ```
 
-### cra_430e (PREPARED / AWAITING RUN)
+### cra_430e (RETURNED / HARDWARE PASS)
 
-Status: **PREPARED ONLY**
+Status: **HARDWARE PASS / INGESTED**
 
 Upload folder: `ebrains_jobs/cra_430e`
 
-JobManager command:
+JobManager command that produced the returned artifacts:
 
 ```text
 cra_430e/experiments/tier4_30e_multicore_lifecycle_hardware_smoke.py --mode run-hardware --output-dir tier4_30e_hw_job_output
 ```
 
-Prepared artifacts:
+Prepared and ingested artifacts:
 
 ```text
 controlled_test_output/tier4_30e_hw_20260505_prepared/
+controlled_test_output/tier4_30e_hw_20260505_hardware_pass_ingested/
 controlled_test_output/tier4_30e_hw_latest_manifest.json
 ```
+
+Returned metrics:
+- Board: `10.11.226.145`
+- Raw remote status: `pass`
+- Ingest status: `pass`
+- Hardware criteria: `75/75`
+- Ingest criteria: `5/5`
+- Preserved returned artifacts: `32`
+- Task runtime: `0.21091535408049822` seconds
+- Profile loads: context core 4, route core 5, memory core 6, learning core 7,
+  lifecycle core 8
+- Scenario results: `canonical_32` and `boundary_64` both passed exact parity
+- Duplicate/stale lifecycle event rejection probe passed
 
 Purpose: build and load the five runtime profiles (`context_core`, `route_core`,
 `memory_core`, `learning_core`, `lifecycle_core`) on one SpiNNaker chip, verify
