@@ -26,9 +26,14 @@ Tier 4.29f - Compact Native Mechanism Regression
 Latest active hardware-facing tier:
 
 ```text
-None. Current next gate is Tier 7.0 standard dynamical benchmarks in software.
-Do not move benchmark workloads to EBRAINS until the software benchmark harness
-is stable, leakage-checked, and diagnostic.
+Tier 4.30b-hw - Single-Core Lifecycle Active-Mask/Lineage Hardware Smoke
+  Status: PREPARED / AWAITING EBRAINS RUN
+  Upload: ebrains_jobs/cra_430b
+  Command:
+    cra_430b/experiments/tier4_30b_lifecycle_hardware_smoke.py --mode run-hardware --output-dir tier4_30b_hw_job_output
+  Boundary: lifecycle metadata/readback smoke only; not task-benefit evidence,
+    not multi-core lifecycle migration, not speedup evidence, and not a
+    lifecycle baseline freeze.
 ```
 
 Latest passed hardware-facing tier:
@@ -47,6 +52,16 @@ Tier 4.29e - Native Replay/Consolidation Bridge
 upload = ebrains_jobs/cra_429p
 status = returned hardware pass ingested
 runner = experiments/tier4_29e_native_replay_consolidation_bridge.py
+```
+
+Latest prepared EBRAINS upload package:
+
+```text
+Tier 4.30b-hw - Single-Core Lifecycle Active-Mask/Lineage Hardware Smoke
+upload = ebrains_jobs/cra_430b
+status = prepared locally, not hardware evidence
+runner = experiments/tier4_30b_lifecycle_hardware_smoke.py
+prepared output = controlled_test_output/tier4_30b_hw_20260505_prepared/
 ```
 
 Tier 4.28e Point A passed after ingest at:
@@ -405,7 +420,7 @@ Use the JobManager command-line field directly. Do not wrap this in `bash`,
 says to.
 
 ```text
-cra_422z/experiments/tier4_22q_integrated_v2_bridge_smoke.py --mode run-hardware --output-dir tier4_22q_job_output
+cra_430b/experiments/tier4_30b_lifecycle_hardware_smoke.py --mode run-hardware --output-dir tier4_30b_hw_job_output
 ```
 
 If EBRAINS exposes a board hostname manually and the runner cannot discover it,
@@ -415,7 +430,7 @@ append:
 --spinnaker-hostname <board-host-or-ip>
 ```
 
-By default Tier 4.22q inherits the Tier 4.22i/4.22j target-acquisition path:
+By default Tier 4.30b-hw inherits the Tier 4.22i/4.22j target-acquisition path:
 
 ```text
 --target-acquisition auto
@@ -430,25 +445,72 @@ That means:
 4. auto-select a free destination CPU when the probe already occupies the requested core.
 ```
 
-Do not add `--no-require-real-hardware` to this custom-runtime reentry job. That
-flag belonged to prior pyNN/sPyNNaker bridge jobs; Tier 4.22p needs a real
-board load and real learning-command round-trips.
+### cra_430b (PREPARED / AWAITING EBRAINS)
+
+Status: **PREPARED ONLY**
+
+Upload folder: `ebrains_jobs/cra_430b`
+
+JobManager command:
+
+```text
+cra_430b/experiments/tier4_30b_lifecycle_hardware_smoke.py --mode run-hardware --output-dir tier4_30b_hw_job_output
+```
+
+Prepared artifacts:
+
+```text
+controlled_test_output/tier4_30b_hw_20260505_prepared/
+controlled_test_output/tier4_30b_hw_latest_manifest.json
+```
+
+Purpose: build and load the custom runtime with
+`RUNTIME_PROFILE=decoupled_memory_route`, initialize the Tier 4.30 static
+lifecycle pool, apply both reference lifecycle schedules (`canonical_32` and
+`boundary_64`), and read compact lifecycle telemetry through
+`CMD_LIFECYCLE_READ_STATE`.
+
+Expected hardware pass:
+- target acquired through hostname/config or pyNN.spiNNaker probe fallback;
+- `.aplx` builds and loads on a selected free core;
+- lifecycle init and all event commands succeed;
+- canonical_32 readback matches active mask `63`, lineage checksum `105428`,
+  trophic checksum `466851`, and zero invalid events;
+- boundary_64 readback matches active mask `127`, lineage checksum `18496`,
+  trophic checksum `761336`, and zero invalid events;
+- zero synthetic fallback and no task-effect or scaling claim.
+
+Packaging lesson: the local Spin1API syntax guard initially failed because the
+stub callback typedef used `uint32_t,uint32_t` while `main.c` uses the
+SpiNNaker/SARK-style `uint,uint` callback shape. The stub has been corrected to
+match the runtime callback contract before EBRAINS time is spent.
+
+Local workflow lesson: do not run EBRAINS prepare mode in parallel with raw
+runtime `make clean-host`, `test-lifecycle`, or `test-profiles` commands. Those
+targets share `spinnaker_runtime/tests/*` binaries and can race, producing a
+false `No such file or directory` failure after one process deletes a binary the
+other just built. Serialize C-runtime build/test/package commands.
+
+Do not add `--no-require-real-hardware` to this custom-runtime lifecycle job.
+That flag belonged to earlier pyNN/sPyNNaker bridge jobs; Tier 4.30b-hw needs a
+real board load and real lifecycle command/readback round-trips.
 
 ## Required Source Revision Check
 
-For the current Tier 4.22p package, returned artifacts must report:
+For the current Tier 4.30b-hw package, returned artifacts must report:
 
 ```text
-runner_revision = tier4_22p_reentry_micro_task_20260501_0001
-upload package = cra_422y
+runner_revision = tier4_30b_lifecycle_hardware_smoke_20260505_0001
+upload package = cra_430b
 ```
 
 The generated prepare manifest must show:
 
 ```text
 status = prepared
-source and bundle protocol guards all pass
-source and bundle learning command/reentry guards all pass
+lifecycle host tests pass = true
+main.c host syntax check pass = true
+run-hardware command emitted = true
 ```
 
 If returned artifacts mention an older package such as:
@@ -470,10 +532,11 @@ cra_422v
 cra_422x
 cra_422y
 cra_422z
+cra_429p
 ```
 
 then EBRAINS ran stale source. Delete the remote folder and reupload
-`ebrains_jobs/cra_422z` for the current Tier 4.22q run.
+`ebrains_jobs/cra_430b` for the current Tier 4.30b-hw run.
 
 ## Tier 4.22q Result And Pass Criteria
 

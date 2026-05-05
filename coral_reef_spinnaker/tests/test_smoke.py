@@ -248,6 +248,70 @@ class TestSDPPacketFormat(unittest.TestCase):
         self.assertEqual(cmd, 1)
         self.assertEqual(status, 0)
 
+    def test_lifecycle_payload_parser(self):
+        from coral_reef_spinnaker.python_host.colony_controller import (
+            CMD_LIFECYCLE_READ_STATE,
+            ColonyController,
+        )
+
+        payload = bytearray(68)
+        payload[0] = CMD_LIFECYCLE_READ_STATE
+        payload[1] = 0
+        payload[2] = 1
+        payload[3] = 0
+
+        def put_u32(offset, value):
+            payload[offset:offset + 4] = int(value).to_bytes(4, "little", signed=False)
+
+        def put_s32(offset, value):
+            payload[offset:offset + 4] = int(value).to_bytes(4, "little", signed=True)
+
+        put_u32(4, 8)
+        put_u32(8, 2)
+        put_u32(12, 6)
+        put_u32(16, 2)
+        put_u32(20, 63)
+        put_u32(24, 32)
+        put_u32(28, 32)
+        put_u32(32, 4)
+        put_u32(36, 4)
+        put_u32(40, 4)
+        put_u32(44, 4)
+        put_u32(48, 16)
+        put_u32(52, 0)
+        put_u32(56, 105428)
+        put_s32(60, 466851)
+        put_u32(64, 68)
+
+        state = ColonyController.parse_lifecycle_payload(bytes(payload))
+        self.assertTrue(state["success"])
+        self.assertEqual(state["schema_version"], 1)
+        self.assertEqual(state["pool_size"], 8)
+        self.assertEqual(state["active_mask_bits"], 63)
+        self.assertEqual(state["lineage_checksum"], 105428)
+        self.assertEqual(state["trophic_checksum"], 466851)
+
+    def test_lifecycle_event_packet_format(self):
+        from coral_reef_spinnaker.python_host.colony_controller import (
+            CMD_LIFECYCLE_EVENT,
+            LIFECYCLE_EVENT_CLEAVAGE,
+            ColonyController,
+        )
+
+        ctrl = ColonyController()
+        pkt = ctrl._build_sdp(
+            CMD_LIFECYCLE_EVENT,
+            payload=struct.pack("<iiii", 1, 2, 0, 0),
+            args=(3, LIFECYCLE_EVENT_CLEAVAGE, 0),
+        )
+
+        self.assertEqual(len(pkt), 42)
+        cmd_rc, seq, arg1, arg2, arg3 = struct.unpack_from("<HHIII", pkt, 10)
+        self.assertEqual(cmd_rc, CMD_LIFECYCLE_EVENT)
+        self.assertEqual(seq, 0)
+        self.assertEqual((arg1, arg2, arg3), (3, LIFECYCLE_EVENT_CLEAVAGE, 0))
+        self.assertEqual(struct.unpack_from("<iiii", pkt, 26), (1, 2, 0, 0))
+
 
 class TestBackendConformance(unittest.TestCase):
     """Verify backend_factory.py detects backends and exposes a uniform API."""

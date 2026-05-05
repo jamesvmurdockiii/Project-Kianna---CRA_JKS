@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-05T16:12-04:00.
+Last updated: 2026-05-05T16:36-04:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -82,7 +82,10 @@ not full native v2.1, and not final autonomy.
 Current active step:
 
 ```text
-Tier 4.30b single-core lifecycle active-mask/lineage hardware smoke package/run
+Tier 4.30b-hw single-core lifecycle active-mask/lineage hardware smoke
+Prepared package: ebrains_jobs/cra_430b
+JobManager command:
+cra_430b/experiments/tier4_30b_lifecycle_hardware_smoke.py --mode run-hardware --output-dir tier4_30b_hw_job_output
 ```
 
 ## 2. Immediate Baseline Decision
@@ -529,6 +532,13 @@ ability.
     SpiNNaker execution/readback path. Scope is active mask, lineage/checksum,
     event counters, and compact lifecycle readback only; still no task-effect or
     multi-core lifecycle claim.
+    Prepared package: `ebrains_jobs/cra_430b`.
+    Prepared result: `controlled_test_output/tier4_30b_hw_20260505_prepared/`,
+    status `prepared`, 6/6 criteria. The package includes the current
+    lifecycle host controller, `RUNTIME_PROFILE=decoupled_memory_route` build
+    path, canonical_32 and boundary_64 lifecycle reference expectations, and
+    the JobManager command. No hardware evidence exists until returned
+    `run-hardware` artifacts are ingested.
 
 40. Tier 4.30c multi-core lifecycle state split: distribute lifecycle masks and
     lineage across the selected runtime protocol without corrupting state.
@@ -814,6 +824,10 @@ Readiness audit: Tier 4.30-readiness PASS, 16/16
 Lifecycle contract: Tier 4.30 PASS, 14/14
 Local reference: Tier 4.30a PASS, 20/20
 Source/runtime audit: Tier 4.30b PASS, 13/13
+Hardware package: Tier 4.30b-hw PREPARED, 6/6
+Upload folder: /Users/james/JKS:CRA/ebrains_jobs/cra_430b
+JobManager command:
+cra_430b/experiments/tier4_30b_lifecycle_hardware_smoke.py --mode run-hardware --output-dir tier4_30b_hw_job_output
 Temporal substrate status: fading-memory promoted in software only; nonlinear
 recurrence and native/on-chip temporal dynamics remain unproven
 ```
@@ -826,6 +840,8 @@ source audit and local host tests passed. The smoke must prove active-mask,
 lineage/checksum, event counters, and compact lifecycle readback survive real
 SpiNNaker execution/readback. Do not claim task benefit, multi-core lifecycle,
 v2.2 temporal migration, scaling, speedup, or lifecycle baseline freeze.
+The package is already prepared; the next action is an EBRAINS/JobManager
+`run-hardware` submission, then ingest of the returned files.
 ```
 
 Required coverage:

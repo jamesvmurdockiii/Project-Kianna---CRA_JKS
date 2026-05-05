@@ -6400,6 +6400,9 @@ Boundary: local source/runtime host evidence only; not hardware evidence, not
           task benefit, not multi-core lifecycle, not v2.2 temporal-state
           migration, and not a baseline freeze.
 Next: Tier 4.30b-hw single-core lifecycle active-mask/lineage hardware smoke.
+Prepared package exists at `ebrains_jobs/cra_430b` with local prepared status
+6/6. The next evidence action is EBRAINS/JobManager `run-hardware`, followed by
+ingest of returned artifacts. Prepared package status is not hardware evidence.
 ```
 
 Detailed Tier 5.19 contract:

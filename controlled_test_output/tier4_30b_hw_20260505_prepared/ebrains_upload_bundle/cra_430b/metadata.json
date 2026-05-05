@@ -1,0 +1,10 @@
+{
+  "claim_boundary": "Prepared source bundle only. Hardware evidence requires returned run-hardware artifacts from EBRAINS/SpiNNaker.",
+  "job_command": "cra_430b/experiments/tier4_30b_lifecycle_hardware_smoke.py --mode run-hardware --output-dir tier4_30b_hw_job_output",
+  "prepared_at_utc": "2026-05-05T20:39:00+00:00",
+  "runner": "experiments/tier4_30b_lifecycle_hardware_smoke.py",
+  "runner_revision": "tier4_30b_lifecycle_hardware_smoke_20260505_0001",
+  "runtime_profile": "decoupled_memory_route",
+  "tier": "Tier 4.30b-hw - Single-Core Lifecycle Active-Mask/Lineage Hardware Smoke",
+  "upload_package": "cra_430b"
+}

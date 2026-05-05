@@ -123,7 +123,7 @@ They remain part of the peer-review audit trail:
 4.30 lifecycle-native static-pool contract = passed; command/readback/event/gate/failure schema defined before local reference or hardware work
 4.30a local static-pool lifecycle reference = passed; canonical and boundary deterministic traces plus lifecycle shams precomputed
 4.30b lifecycle runtime source audit = passed; runtime static-pool lifecycle surface and host/schema parity tests complete
-4.30b-hw single-core lifecycle active-mask/lineage hardware smoke = next active gate
+4.30b-hw single-core lifecycle active-mask/lineage hardware smoke = prepared locally; awaiting EBRAINS run
 4.30+ native lifecycle/ecology migration = roadmap; initial runtime source surface exists, hardware smoke pending
 ```
 
@@ -8248,4 +8248,42 @@ Tier 4.30b-hw single-core lifecycle active-mask/lineage hardware smoke. Package
 and run the audited runtime surface on EBRAINS/SpiNNaker. Require zero fallback,
 zero sim/run/readback failures, real lifecycle state readback, active-mask and
 checksum agreement, and no task-effect or scaling claim.
+```
+
+Prepared package update:
+
+```text
+Status: PREPARED ONLY, not hardware evidence
+Prepared output: controlled_test_output/tier4_30b_hw_20260505_prepared/
+Upload folder: ebrains_jobs/cra_430b
+Runner: experiments/tier4_30b_lifecycle_hardware_smoke.py
+Runner revision: tier4_30b_lifecycle_hardware_smoke_20260505_0001
+JobManager command:
+cra_430b/experiments/tier4_30b_lifecycle_hardware_smoke.py --mode run-hardware --output-dir tier4_30b_hw_job_output
+Prepared criteria: 6/6
+```
+
+Prepared pass criteria already satisfied:
+
+```text
+reference scenarios generated = canonical_32 and boundary_64
+lifecycle host tests pass
+main.c host syntax check pass
+upload bundle created
+stable upload folder created
+run-hardware command emitted
+```
+
+Hardware pass criteria remain unchanged:
+
+```text
+real SpiNNaker target acquired
+decoupled_memory_route .aplx builds and loads
+lifecycle init succeeds
+all lifecycle event commands succeed
+canonical_32 readback matches active mask 63, lineage checksum 105428,
+  trophic checksum 466851, and zero invalid events
+boundary_64 readback matches active mask 127, lineage checksum 18496,
+  trophic checksum 761336, and zero invalid events
+zero synthetic fallback
 ```

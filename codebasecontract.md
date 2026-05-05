@@ -347,13 +347,18 @@ Tier 4.30b — COMPLETE. Source audit / single-core lifecycle mask smoke prep.
     task benefit, not multi-core lifecycle, and not a baseline freeze.
 
 Tier 4.30b-hw — CURRENT NEXT. Single-core lifecycle active-mask/lineage hardware
-  smoke package/run.
+  smoke run/ingest.
+  Prepared package: `/Users/james/JKS:CRA/ebrains_jobs/cra_430b`.
+  Prepared output: `controlled_test_output/tier4_30b_hw_20260505_prepared/`.
+  JobManager command:
+  `cra_430b/experiments/tier4_30b_lifecycle_hardware_smoke.py --mode run-hardware --output-dir tier4_30b_hw_job_output`.
   Purpose: prove the audited lifecycle metadata surface survives real SpiNNaker
     execution/readback on the smallest possible single-core smoke.
-  Rule: package from current repo state only after local audit pass; require zero
-    fallback, zero sim/run/readback failure, real lifecycle readback, active-mask
-    and checksum agreement. Do not claim task benefit, multi-core lifecycle,
-    v2.2 temporal migration, scaling, speedup, or lifecycle baseline freeze.
+  Rule: upload the prepared `cra_430b` folder itself. Do not upload
+    `controlled_test_output`. Require zero fallback, zero sim/run/readback
+    failure, real lifecycle readback, active-mask and checksum agreement. Do not
+    claim task benefit, multi-core lifecycle, v2.2 temporal migration, scaling,
+    speedup, or lifecycle baseline freeze.
 
 
 Current status summary:
@@ -2385,6 +2390,13 @@ update it if the current run teaches a new lesson.
     never fire. The runtime must record `g_timestep` at `run_continuous` and
     offset every schedule comparison by that base. Host tests must validate this
     behavior because local test mocks do not experience real timer drift.
+24. Do not run two C-runtime build/test/package commands in parallel. Targets
+    such as `clean-host`, `test-lifecycle`, `test-profiles`, and EBRAINS
+    prepare modes share `spinnaker_runtime/tests/*` binaries and `build/`
+    outputs. Parallel execution can delete a freshly built test binary and
+    create a false infrastructure failure. Run Python validation in parallel
+    with read-only checks if useful, but serialize all commands that invoke
+    `make -C coral_reef_spinnaker/spinnaker_runtime ...`.
 
 ### 26.4 Where To Add New Lessons
 
