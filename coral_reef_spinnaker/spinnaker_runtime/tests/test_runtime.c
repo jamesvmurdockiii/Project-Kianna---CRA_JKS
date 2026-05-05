@@ -99,6 +99,15 @@ static void test_cmd_values(void) {
     assert(CMD_RUN_CONTINUOUS == 24);
     assert(CMD_PAUSE == 25);
     assert(CMD_WRITE_SCHEDULE_ENTRY == 26);
+    assert(CMD_SCHEDULE_PENDING_SPLIT == 30);
+    assert(CMD_MATURE_ACK_SPLIT == 31);
+    assert(CMD_LOOKUP_REQUEST == 32);
+    assert(CMD_LOOKUP_REPLY == 33);
+    assert(CMD_LIFECYCLE_INIT == 34);
+    assert(CMD_LIFECYCLE_EVENT == 35);
+    assert(CMD_LIFECYCLE_TROPHIC_UPDATE == 36);
+    assert(CMD_LIFECYCLE_READ_STATE == 37);
+    assert(CMD_LIFECYCLE_SHAM_MODE == 38);
     printf("  PASS: command constants\n");
 }
 

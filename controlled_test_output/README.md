@@ -5,10 +5,10 @@ ledger is `STUDY_REGISTRY.json`; the compact table is `STUDY_REGISTRY.csv`.
 Older reruns, prepared capsules, debug probes, and baseline-frozen
 mechanism bundles outside the formal registry are preserved for audit.
 
-- Generated: `2026-05-05T19:56:33.416600+00:00`
+- Generated: `2026-05-05T20:21:29.115335+00:00`
 - Registry status: **PASS**
-- Canonical evidence entries: `47`
-- Expanded test-entry count: `47`; see the canonical evidence table below for the exact current tier list.
+- Canonical evidence entries: `54`
+- Expanded test-entry count: `54`; see the canonical evidence table below for the exact current tier list.
 
 ## Evidence Categories
 
@@ -69,6 +69,13 @@ mechanism bundles outside the formal registry are preserved for audit.
 | `tier7_0b_continuous_regression_failure_analysis` | **PASS** | `controlled_test_output/tier7_0b_20260505_continuous_regression_failure_analysis` | Software diagnostic evidence only; not a tuning run, not a promoted mechanism, not hardware evidence, not a new baseline freeze, and not proof that a repaired CRA will beat standard baselines. It authorizes a bounded continuous readout/interface repair tier before hardware migration. |
 | `tier7_0c_continuous_readout_repair` | **PASS** | `controlled_test_output/tier7_0c_20260505_continuous_readout_repair` | Software repair-candidate evidence only; not hardware evidence, not a new baseline freeze, not a promoted CRA mechanism, and not a superiority claim. The correct next move is a stricter state-specific repair or claim narrowing, not hardware migration. |
 | `tier7_0d_state_specific_continuous_interface` | **PASS** | `controlled_test_output/tier7_0d_20260505_state_specific_continuous_interface` | Software diagnostic evidence only; not hardware evidence, not a baseline freeze, not a promoted continuous-readout mechanism, and not a superiority claim. The Tier 7 continuous-regression benchmark path should be narrowed and not migrated to hardware unless a future mechanism changes the failure class. |
+| `tier5_19a_temporal_substrate_reference` | **PASS** | `controlled_test_output/tier5_19a_20260505_temporal_substrate_reference` | Software local-reference evidence only; recurrence-specific value, hardware transfer, and benchmark superiority remain unproven. |
+| `tier5_19b_temporal_substrate_gate` | **PASS** | `controlled_test_output/tier5_19b_20260505_temporal_substrate_gate` | Software diagnostic evidence only; does not freeze a baseline or prove native/on-chip temporal dynamics. |
+| `tier5_19c_fading_memory_regression` | **PASS** | `controlled_test_output/tier5_19c_20260505_fading_memory_regression` | Software evidence only; not bounded nonlinear recurrence, native/on-chip temporal dynamics, universal benchmark superiority, language, planning, AGI, or ASI. |
+| `tier4_30_readiness_lifecycle_native_audit` | **PASS** | `controlled_test_output/tier4_30_readiness_20260505_lifecycle_native_audit` | Engineering audit only; not lifecycle implementation, not hardware evidence, not speedup, not multi-chip scaling, and not native v2.2 temporal migration. |
+| `tier4_30_lifecycle_native_contract` | **PASS** | `controlled_test_output/tier4_30_20260505_lifecycle_native_contract` | Local engineering contract only; not runtime implementation, not hardware evidence, not lifecycle/self-scaling proof, and not v2.2 temporal migration. |
+| `tier4_30a_static_pool_lifecycle_reference` | **PASS** | `controlled_test_output/tier4_30a_20260505_static_pool_lifecycle_reference` | Local deterministic reference only; not runtime C, not hardware evidence, not task benefit, not lifecycle baseline freeze, and not v2.2 temporal-state migration. |
+| `tier4_30b_lifecycle_runtime_source_audit` | **PASS** | `controlled_test_output/tier4_30b_20260505_lifecycle_source_audit` | Local source/runtime host evidence only; not hardware evidence, not task-effect evidence, not multi-core lifecycle migration, and not a baseline freeze. |
 
 ## Noncanonical Outputs
 
@@ -256,9 +263,6 @@ cite them as current study results unless promoted in `STUDY_REGISTRY.json`.
 | `controlled_test_output/tier4_29e_20260505_0758_local_audit` | `superseded_rerun` | `pass` | `None` |
 | `controlled_test_output/tier4_29e_20260505_cra_429o_hardware_fail` | `failed_hardware_run` | `unknown` | `None` |
 | `controlled_test_output/tier4_29e_20260505_cra_429p_local_repair` | `superseded_rerun` | `unknown` | `None` |
-| `controlled_test_output/tier4_30_20260505_lifecycle_native_contract` | `superseded_rerun` | `pass` | `2026-05-05T19:41:04+00:00` |
-| `controlled_test_output/tier4_30_readiness_20260505_lifecycle_native_audit` | `superseded_rerun` | `pass` | `2026-05-05T19:31:07+00:00` |
-| `controlled_test_output/tier4_30a_20260505_static_pool_lifecycle_reference` | `superseded_rerun` | `pass` | `2026-05-05T19:56:20+00:00` |
 | `controlled_test_output/tier5_10_20260428_181304` | `superseded_rerun` | `pass` | `2026-04-28T22:13:10+00:00` |
 | `controlled_test_output/tier5_10_20260428_181322` | `superseded_rerun` | `fail` | `2026-04-28T22:45:43+00:00` |
 | `controlled_test_output/tier5_10b_20260428_193205` | `superseded_rerun` | `fail` | `2026-04-28T23:32:05+00:00` |
@@ -346,9 +350,6 @@ cite them as current study results unless promoted in `STUDY_REGISTRY.json`.
 | `controlled_test_output/tier5_18_20260429_213002` | `self_evaluation_metacognition_diagnostic` | `pass` | `2026-04-29T21:30:04+00:00` |
 | `controlled_test_output/tier5_18c_20260429_220841` | `self_evaluation_compact_regression_gate` | `pass` | `2026-04-29T22:10:32+00:00` |
 | `controlled_test_output/tier5_18c_20260429_221045` | `self_evaluation_compact_regression_gate` | `pass` | `2026-04-29T22:36:19+00:00` |
-| `controlled_test_output/tier5_19a_20260505_temporal_substrate_reference` | `superseded_rerun` | `pass` | `2026-05-05T17:38:02+00:00` |
-| `controlled_test_output/tier5_19b_20260505_temporal_substrate_gate` | `superseded_rerun` | `pass` | `2026-05-05T17:56:17+00:00` |
-| `controlled_test_output/tier5_19c_20260505_fading_memory_regression` | `superseded_rerun` | `pass` | `2026-05-05T19:01:36+00:00` |
 | `controlled_test_output/tier5_5_20260427_222527` | `superseded_rerun` | `pass` | `2026-04-28T02:25:28+00:00` |
 | `controlled_test_output/tier5_6_20260428_001803` | `superseded_rerun` | `pass` | `2026-04-28T04:18:03+00:00` |
 | `controlled_test_output/tier5_7_20260428_005610` | `superseded_rerun` | `fail` | `2026-04-28T04:56:21+00:00` |

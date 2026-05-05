@@ -87,6 +87,41 @@ typedef struct cra_state_summary {
     uint32_t readback_bytes_sent;
 } cra_state_summary_t;
 
+typedef struct lifecycle_slot {
+    uint32_t slot_id;
+    uint32_t polyp_id;
+    uint32_t lineage_id;
+    int32_t parent_slot;
+    uint32_t generation;
+    uint32_t age;
+    int32_t trophic;
+    int32_t cyclin;
+    int32_t bax;
+    uint32_t event_count;
+    uint8_t active;
+    uint8_t last_event_type;
+} lifecycle_slot_t;
+
+typedef struct cra_lifecycle_summary {
+    uint32_t schema_version;
+    uint32_t pool_size;
+    uint32_t founder_count;
+    uint32_t active_count;
+    uint32_t inactive_count;
+    uint32_t active_mask_bits;
+    uint32_t attempted_event_count;
+    uint32_t lifecycle_event_count;
+    uint32_t cleavage_count;
+    uint32_t adult_birth_count;
+    uint32_t death_count;
+    uint32_t maturity_count;
+    uint32_t trophic_update_count;
+    uint32_t invalid_event_count;
+    uint32_t lineage_checksum;
+    int32_t trophic_checksum;
+    uint32_t sham_mode;
+} cra_lifecycle_summary_t;
+
 extern cra_state_summary_t g_summary;
 
 void cra_state_init(void);
@@ -158,6 +193,35 @@ int cra_state_schedule_pending_horizon_with_target_and_confidence(
 uint32_t cra_state_mature_oldest_pending(uint32_t timestep, int32_t learning_rate);
 
 void cra_state_get_summary(cra_state_summary_t *summary_out);
+
+// ------------------------------------------------------------------
+// 4.30 static lifecycle pool
+// ------------------------------------------------------------------
+void cra_lifecycle_reset(void);
+int cra_lifecycle_init(
+    uint32_t pool_size,
+    uint32_t founder_count,
+    uint32_t seed,
+    int32_t trophic_seed_raw,
+    uint32_t generation_seed
+);
+int cra_lifecycle_apply_event(
+    uint32_t event_index,
+    uint8_t event_type,
+    uint32_t target_slot,
+    int32_t parent_slot,
+    int32_t child_slot,
+    int32_t trophic_delta_raw,
+    int32_t reward_raw
+);
+int cra_lifecycle_apply_trophic_update(
+    uint32_t target_slot,
+    int32_t trophic_delta_raw,
+    int32_t reward_raw
+);
+int cra_lifecycle_set_sham_mode(uint32_t mode);
+void cra_lifecycle_get_summary(cra_lifecycle_summary_t *summary_out);
+int cra_lifecycle_get_slot(uint32_t slot_id, lifecycle_slot_t *slot_out);
 
 // ------------------------------------------------------------------
 // 4.26 inter-core lookup protocol (transitional SDP; target is multicast/MCPL)

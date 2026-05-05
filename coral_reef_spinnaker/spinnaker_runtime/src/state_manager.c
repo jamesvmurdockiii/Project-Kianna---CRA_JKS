@@ -18,8 +18,320 @@ static uint32_t g_schedule_index = 0;
 static uint32_t g_schedule_base_timestep = 0;
 static uint8_t g_continuous_mode = 0;
 static int32_t g_learning_rate = 0;
+static lifecycle_slot_t g_lifecycle_slots[MAX_LIFECYCLE_SLOTS];
+static cra_lifecycle_summary_t g_lifecycle_summary;
+static uint32_t g_lifecycle_next_polyp_id = 2000;
+static uint32_t g_lifecycle_next_lineage_id = 100;
 
 extern uint32_t g_timestep;
+
+static int32_t _floor_div_i32(int32_t value, int32_t divisor) {
+    if (divisor <= 0) {
+        return 0;
+    }
+    if (value >= 0) {
+        return value / divisor;
+    }
+    return -(((-value) + divisor - 1) / divisor);
+}
+
+static int32_t _clamp_i32(int32_t value, int32_t min_value, int32_t max_value) {
+    if (value < min_value) {
+        return min_value;
+    }
+    if (value > max_value) {
+        return max_value;
+    }
+    return value;
+}
+
+static void _lifecycle_recompute_summary(void) {
+    uint32_t active_count = 0;
+    uint32_t active_mask_bits = 0;
+    uint32_t lineage_checksum = 0;
+    int64_t trophic_checksum = 0;
+
+    for (uint32_t i = 0; i < MAX_LIFECYCLE_SLOTS; i++) {
+        lifecycle_slot_t *slot = &g_lifecycle_slots[i];
+        if (i < g_lifecycle_summary.pool_size && slot->active) {
+            active_count++;
+            active_mask_bits |= (1u << i);
+        }
+        if (i < g_lifecycle_summary.pool_size) {
+            int32_t parent_factor = slot->parent_slot + 3;
+            uint32_t active_factor = slot->active ? 1u : 5u;
+            uint64_t line = (uint64_t)(slot->slot_id + 1)
+                * (uint64_t)(slot->lineage_id + 17)
+                * (uint64_t)(slot->generation + 1)
+                * (uint64_t)parent_factor
+                * (uint64_t)active_factor;
+            lineage_checksum = (uint32_t)(lineage_checksum + (uint32_t)line);
+            trophic_checksum += (int64_t)(slot->slot_id + 1)
+                * (int64_t)(slot->trophic + slot->cyclin - slot->bax);
+        }
+    }
+
+    g_lifecycle_summary.active_count = active_count;
+    g_lifecycle_summary.inactive_count = g_lifecycle_summary.pool_size - active_count;
+    g_lifecycle_summary.active_mask_bits = active_mask_bits;
+    g_lifecycle_summary.lineage_checksum = lineage_checksum;
+    g_lifecycle_summary.trophic_checksum = (int32_t)trophic_checksum;
+}
+
+static void _lifecycle_touch_active_ages(void) {
+    for (uint32_t i = 0; i < g_lifecycle_summary.pool_size; i++) {
+        if (g_lifecycle_slots[i].active) {
+            g_lifecycle_slots[i].age++;
+        }
+    }
+}
+
+static int _lifecycle_slot_is_valid(uint32_t slot_id) {
+    return slot_id < g_lifecycle_summary.pool_size && slot_id < MAX_LIFECYCLE_SLOTS;
+}
+
+static int _lifecycle_apply_trophic_to_slot(
+    lifecycle_slot_t *slot,
+    int32_t trophic_delta_raw,
+    int32_t reward_raw
+) {
+    if (slot == 0 || !slot->active) {
+        return -1;
+    }
+
+    int32_t reward_component = _floor_div_i32(reward_raw, 4);
+    int32_t net = trophic_delta_raw + reward_component;
+    slot->trophic = _clamp_i32(slot->trophic + net, -4 * FP_ONE, 4 * FP_ONE);
+
+    if (net >= 0) {
+        slot->cyclin = _clamp_i32(slot->cyclin + _floor_div_i32(net, 2), 0, 4 * FP_ONE);
+        slot->bax = _clamp_i32(slot->bax - _floor_div_i32(net, 4), 0, 4 * FP_ONE);
+    } else {
+        int32_t loss = -net;
+        slot->bax = _clamp_i32(slot->bax + _floor_div_i32(loss, 2), 0, 4 * FP_ONE);
+        slot->cyclin = _clamp_i32(slot->cyclin + _floor_div_i32(net, 4), 0, 4 * FP_ONE);
+    }
+    return 0;
+}
+
+void cra_lifecycle_reset(void) {
+    for (uint32_t i = 0; i < MAX_LIFECYCLE_SLOTS; i++) {
+        g_lifecycle_slots[i].slot_id = i;
+        g_lifecycle_slots[i].polyp_id = 0;
+        g_lifecycle_slots[i].lineage_id = 0;
+        g_lifecycle_slots[i].parent_slot = -1;
+        g_lifecycle_slots[i].generation = 0;
+        g_lifecycle_slots[i].age = 0;
+        g_lifecycle_slots[i].trophic = 0;
+        g_lifecycle_slots[i].cyclin = 0;
+        g_lifecycle_slots[i].bax = 0;
+        g_lifecycle_slots[i].event_count = 0;
+        g_lifecycle_slots[i].active = 0;
+        g_lifecycle_slots[i].last_event_type = LIFECYCLE_EVENT_NONE;
+    }
+
+    g_lifecycle_summary.schema_version = LIFECYCLE_SCHEMA_VERSION;
+    g_lifecycle_summary.pool_size = 0;
+    g_lifecycle_summary.founder_count = 0;
+    g_lifecycle_summary.active_count = 0;
+    g_lifecycle_summary.inactive_count = 0;
+    g_lifecycle_summary.active_mask_bits = 0;
+    g_lifecycle_summary.attempted_event_count = 0;
+    g_lifecycle_summary.lifecycle_event_count = 0;
+    g_lifecycle_summary.cleavage_count = 0;
+    g_lifecycle_summary.adult_birth_count = 0;
+    g_lifecycle_summary.death_count = 0;
+    g_lifecycle_summary.maturity_count = 0;
+    g_lifecycle_summary.trophic_update_count = 0;
+    g_lifecycle_summary.invalid_event_count = 0;
+    g_lifecycle_summary.lineage_checksum = 0;
+    g_lifecycle_summary.trophic_checksum = 0;
+    g_lifecycle_summary.sham_mode = LIFECYCLE_SHAM_ENABLED;
+    g_lifecycle_next_polyp_id = 2000;
+    g_lifecycle_next_lineage_id = 100;
+}
+
+int cra_lifecycle_init(
+    uint32_t pool_size,
+    uint32_t founder_count,
+    uint32_t seed,
+    int32_t trophic_seed_raw,
+    uint32_t generation_seed
+) {
+    (void)seed;
+    if (pool_size == 0 || pool_size > MAX_LIFECYCLE_SLOTS || founder_count > pool_size) {
+        cra_lifecycle_reset();
+        g_lifecycle_summary.invalid_event_count++;
+        return -1;
+    }
+
+    cra_lifecycle_reset();
+    g_lifecycle_summary.pool_size = pool_size;
+    g_lifecycle_summary.founder_count = founder_count;
+    g_lifecycle_next_polyp_id = 2000 + generation_seed;
+    g_lifecycle_next_lineage_id = 100 + generation_seed;
+
+    for (uint32_t i = 0; i < pool_size; i++) {
+        lifecycle_slot_t *slot = &g_lifecycle_slots[i];
+        slot->slot_id = i;
+        slot->parent_slot = -1;
+        if (i < founder_count) {
+            slot->active = 1;
+            slot->polyp_id = 1000 + i;
+            slot->lineage_id = i + 1;
+            slot->trophic = trophic_seed_raw;
+            slot->cyclin = 0;
+            slot->bax = 0;
+        }
+    }
+
+    _lifecycle_recompute_summary();
+    return 0;
+}
+
+int cra_lifecycle_apply_trophic_update(
+    uint32_t target_slot,
+    int32_t trophic_delta_raw,
+    int32_t reward_raw
+) {
+    return cra_lifecycle_apply_event(
+        g_lifecycle_summary.attempted_event_count,
+        LIFECYCLE_EVENT_TROPHIC,
+        target_slot,
+        -1,
+        -1,
+        trophic_delta_raw,
+        reward_raw
+    );
+}
+
+int cra_lifecycle_apply_event(
+    uint32_t event_index,
+    uint8_t event_type,
+    uint32_t target_slot,
+    int32_t parent_slot,
+    int32_t child_slot,
+    int32_t trophic_delta_raw,
+    int32_t reward_raw
+) {
+    (void)event_index;
+    int rc = 0;
+
+    g_lifecycle_summary.attempted_event_count++;
+    _lifecycle_touch_active_ages();
+
+    if (g_lifecycle_summary.pool_size == 0) {
+        g_lifecycle_summary.invalid_event_count++;
+        _lifecycle_recompute_summary();
+        return -1;
+    }
+
+    lifecycle_slot_t *target = _lifecycle_slot_is_valid(target_slot)
+        ? &g_lifecycle_slots[target_slot]
+        : 0;
+
+    if (event_type == LIFECYCLE_EVENT_TROPHIC) {
+        if (_lifecycle_apply_trophic_to_slot(target, trophic_delta_raw, reward_raw) != 0) {
+            rc = -1;
+        } else {
+            target->event_count++;
+            target->last_event_type = event_type;
+            g_lifecycle_summary.trophic_update_count++;
+            g_lifecycle_summary.lifecycle_event_count++;
+        }
+    } else if (event_type == LIFECYCLE_EVENT_CLEAVAGE || event_type == LIFECYCLE_EVENT_ADULT_BIRTH) {
+        if (parent_slot < 0 || child_slot < 0 ||
+            !_lifecycle_slot_is_valid((uint32_t)parent_slot) ||
+            !_lifecycle_slot_is_valid((uint32_t)child_slot) ||
+            !g_lifecycle_slots[(uint32_t)parent_slot].active ||
+            g_lifecycle_slots[(uint32_t)child_slot].active) {
+            rc = -1;
+        } else {
+            lifecycle_slot_t *parent = &g_lifecycle_slots[(uint32_t)parent_slot];
+            lifecycle_slot_t *child = &g_lifecycle_slots[(uint32_t)child_slot];
+            child->active = 1;
+            child->polyp_id = g_lifecycle_next_polyp_id++;
+            child->lineage_id = (event_type == LIFECYCLE_EVENT_CLEAVAGE)
+                ? parent->lineage_id
+                : g_lifecycle_next_lineage_id++;
+            child->parent_slot = parent_slot;
+            child->generation = parent->generation + 1;
+            child->age = 0;
+            child->trophic = parent->trophic / 2;
+            if (child->trophic < FP_FROM_FLOAT(0.25f)) {
+                child->trophic = FP_FROM_FLOAT(0.25f);
+            }
+            child->cyclin = 0;
+            child->bax = 0;
+            child->event_count = 1;
+            child->last_event_type = event_type;
+            parent->trophic = _clamp_i32(parent->trophic - (child->trophic / 4), -4 * FP_ONE, 4 * FP_ONE);
+            parent->event_count++;
+            parent->last_event_type = event_type;
+            if (event_type == LIFECYCLE_EVENT_CLEAVAGE) {
+                g_lifecycle_summary.cleavage_count++;
+            } else {
+                g_lifecycle_summary.adult_birth_count++;
+            }
+            g_lifecycle_summary.lifecycle_event_count++;
+        }
+    } else if (event_type == LIFECYCLE_EVENT_DEATH) {
+        if (target == 0 || !target->active) {
+            rc = -1;
+        } else {
+            target->active = 0;
+            target->event_count++;
+            target->last_event_type = event_type;
+            g_lifecycle_summary.death_count++;
+            g_lifecycle_summary.lifecycle_event_count++;
+        }
+    } else if (event_type == LIFECYCLE_EVENT_MATURITY) {
+        if (target == 0 || !target->active) {
+            rc = -1;
+        } else {
+            target->trophic = _clamp_i32(target->trophic + FP_FROM_FLOAT(0.0625f), -4 * FP_ONE, 4 * FP_ONE);
+            target->cyclin = _clamp_i32(target->cyclin + FP_FROM_FLOAT(0.125f), 0, 4 * FP_ONE);
+            target->bax = _clamp_i32(target->bax - FP_FROM_FLOAT(0.03125f), 0, 4 * FP_ONE);
+            target->event_count++;
+            target->last_event_type = event_type;
+            g_lifecycle_summary.maturity_count++;
+            g_lifecycle_summary.lifecycle_event_count++;
+        }
+    } else {
+        rc = -1;
+    }
+
+    if (rc != 0) {
+        g_lifecycle_summary.invalid_event_count++;
+    }
+    _lifecycle_recompute_summary();
+    return rc;
+}
+
+int cra_lifecycle_set_sham_mode(uint32_t mode) {
+    if (mode > LIFECYCLE_SHAM_NO_DOPAMINE) {
+        g_lifecycle_summary.invalid_event_count++;
+        return -1;
+    }
+    g_lifecycle_summary.sham_mode = mode;
+    return 0;
+}
+
+void cra_lifecycle_get_summary(cra_lifecycle_summary_t *summary_out) {
+    if (summary_out == 0) {
+        return;
+    }
+    _lifecycle_recompute_summary();
+    *summary_out = g_lifecycle_summary;
+}
+
+int cra_lifecycle_get_slot(uint32_t slot_id, lifecycle_slot_t *slot_out) {
+    if (!_lifecycle_slot_is_valid(slot_id) || slot_out == 0) {
+        return -1;
+    }
+    *slot_out = g_lifecycle_slots[slot_id];
+    return 0;
+}
 
 static void _clear_slots(void) {
     for (uint32_t i = 0; i < MAX_CONTEXT_SLOTS; i++) {
@@ -201,6 +513,7 @@ void cra_state_init(void) {
     _clear_memory_slots();
     _clear_pending();
     cra_state_schedule_init();
+    cra_lifecycle_reset();
     _clear_summary(0);
 }
 
@@ -211,6 +524,7 @@ void cra_state_reset(void) {
     _clear_memory_slots();
     _clear_pending();
     cra_state_schedule_init();
+    cra_lifecycle_reset();
     g_learning_rate = 0;
     _clear_summary(reset_count);
 }
@@ -1051,6 +1365,8 @@ void cra_state_mcpl_lookup_send_reply(uint32_t seq_id, int32_t value, int32_t co
 void cra_state_mcpl_lookup_receive(uint32_t key, uint32_t payload) {
     uint8_t msg_type = EXTRACT_MCPL_MSG_TYPE(key);
     uint32_t seq_id = EXTRACT_MCPL_SEQ_ID(key);
+    (void)msg_type;
+    (void)seq_id;
 
 #ifdef CRA_RUNTIME_PROFILE_LEARNING_CORE
     if (msg_type == MCPL_MSG_LOOKUP_REPLY) {

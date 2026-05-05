@@ -1,8 +1,14 @@
 {
-  "generated_at_utc": "2026-05-05T19:41:04+00:00",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_30_20260505_lifecycle_native_contract/tier4_30_contract_results.json",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_30_20260505_lifecycle_native_contract",
-  "runner_revision": "tier4_30_lifecycle_native_contract_20260505_0001",
+  "generated_at_utc": "2026-05-05T20:21:28.799318+00:00",
+  "source_generated_at_utc": "2026-05-05T19:41:04+00:00",
+  "registry_entry_id": "tier4_30_lifecycle_native_contract",
+  "tier": "Tier 4.30 - Lifecycle-Native Static-Pool Contract",
   "status": "pass",
-  "tier": "Tier 4.30 - Lifecycle-Native Static-Pool Contract"
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_30_20260505_lifecycle_native_contract",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_30_20260505_lifecycle_native_contract/tier4_30_contract_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_30_20260505_lifecycle_native_contract/tier4_30_contract_report.md",
+  "summary_csv": null,
+  "canonical": true,
+  "claim": "Tier 4.30 defines the lifecycle init/event/trophic/readback/sham command schema, readback fields, event semantics, gate sequence, and failure classes for static-pool lifecycle migration.",
+  "caveat": "Local engineering contract only; not runtime implementation, not hardware evidence, not lifecycle/self-scaling proof, and not v2.2 temporal migration."
 }

@@ -81,14 +81,14 @@ BUILD_DIR := build/gnu/
 HOST_TEST := tests/test_runtime
 HOST_TEST_SOURCES := tests/test_runtime.c stubs/spin1_api.c $(FULL_RUNTIME_SOURCES)
 HOST_CC ?= cc
-HOST_CFLAGS ?= -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-int-to-pointer-cast -I stubs -I src
+HOST_CFLAGS ?= -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src
 HOST_LDFLAGS ?= -lm
 
 # ------------------------------------------------------------------------------
 # Host-side tests
 # ------------------------------------------------------------------------------
 
-.PHONY: test host-test test-profiles test-four-core-local test-four-core-48event test-context-core test-route-core test-memory-core test-learning-core test-mcpl-feasibility
+.PHONY: test host-test test-profiles test-four-core-local test-four-core-48event test-context-core test-route-core test-memory-core test-learning-core test-mcpl-feasibility test-lifecycle
 test host-test: $(HOST_TEST)
 	./$(HOST_TEST)
 
@@ -129,6 +129,12 @@ MCPL_TEST_SOURCES := tests/test_mcpl_feasibility.c stubs/spin1_api.c src/state_m
 test-mcpl-feasibility: $(MCPL_TEST_SOURCES) src/config.h stubs/sark.h stubs/spin1_api.h
 	$(HOST_CC) $(HOST_CFLAGS) -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 $(MCPL_TEST_SOURCES) $(HOST_LDFLAGS) -o tests/test_mcpl_feasibility
 	./tests/test_mcpl_feasibility
+
+LIFECYCLE_TEST_SOURCES := tests/test_lifecycle.c stubs/spin1_api.c src/state_manager.c src/host_interface.c
+
+test-lifecycle: $(LIFECYCLE_TEST_SOURCES) src/config.h src/state_manager.h src/host_interface.h stubs/sark.h stubs/spin1_api.h
+	$(HOST_CC) $(HOST_CFLAGS) -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=1 $(LIFECYCLE_TEST_SOURCES) $(HOST_LDFLAGS) -o tests/test_lifecycle
+	./tests/test_lifecycle
 
 $(HOST_TEST): $(HOST_TEST_SOURCES) src/config.h stubs/sark.h stubs/spin1_api.h
 	$(HOST_CC) $(HOST_CFLAGS) $(HOST_TEST_SOURCES) $(HOST_LDFLAGS) -o $@
@@ -191,10 +197,10 @@ require-spinnaker:
 
 .PHONY: clean clean-host help
 clean:
-	rm -rf $(BUILD_DIR) $(APP_OUTPUT_DIR)$(APP).aplx $(HOST_TEST) tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_four_core_local tests/test_four_core_48event
+	rm -rf $(BUILD_DIR) $(APP_OUTPUT_DIR)$(APP).aplx $(HOST_TEST) tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_four_core_local tests/test_four_core_48event tests/test_mcpl_feasibility tests/test_lifecycle
 
 clean-host:
-	rm -f $(HOST_TEST) tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_four_core_local tests/test_four_core_48event
+	rm -f $(HOST_TEST) tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_four_core_local tests/test_four_core_48event tests/test_mcpl_feasibility tests/test_lifecycle
 
 help:
 	@printf '%s\n' \
@@ -202,6 +208,7 @@ help:
 		'  make test              Build and run host-side tests (no SPINN_DIRS needed)' \
 		'  make host-test         Alias for make test' \
 		'  make test-profiles     Build and run all four 4.26 profile tests' \
+		'  make test-lifecycle    Build and run Tier 4.30 lifecycle/static-pool host tests' \
 		'  make all               Build hardware .aplx image (requires spinnaker_tools)' \
 		'  make hardware          Alias for make all' \
 		'  make clean             Remove generated build/test artifacts'

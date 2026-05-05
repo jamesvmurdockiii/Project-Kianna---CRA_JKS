@@ -225,11 +225,11 @@ def check_registry() -> tuple[Check, dict[str, Any]]:
     failures: list[str] = []
     if registry.get("registry_status") != "pass":
         failures.append(f"registry_status={registry.get('registry_status')}")
-    if registry.get("evidence_count") != 47:
-        failures.append(f"evidence_count={registry.get('evidence_count')} expected 47")
-    if registry.get("expanded_test_entry_count") != 47:
+    if registry.get("evidence_count") != 54:
+        failures.append(f"evidence_count={registry.get('evidence_count')} expected 54")
+    if registry.get("expanded_test_entry_count") != 54:
         failures.append(
-            f"expanded_test_entry_count={registry.get('expanded_test_entry_count')} expected 47"
+            f"expanded_test_entry_count={registry.get('expanded_test_entry_count')} expected 54"
         )
     integrity = registry.get("integrity") or {}
     if integrity.get("missing_expected_artifacts"):
@@ -601,6 +601,10 @@ def build_report(checks: list[Check], registry: dict[str, Any]) -> str:
             "- Tier 5.18c is baseline-frozen host-side self-evaluation compact-regression evidence; it freezes v2.1 only after the full v2.0 compact gate and Tier 5.18 guardrail both pass, and it is not consciousness, self-awareness, hardware evidence, AGI, language, planning, or external-baseline superiority.",
             "- Tier 5.9c is failed noncanonical macro-eligibility recheck evidence; the v2.1 guardrail stayed green but the macro residual still failed trace-ablation specificity, so macro eligibility remains parked and is not hardware/custom-C ready.",
             "- Tier 5.19c is baseline-frozen host-side software fading-memory temporal-state evidence; it freezes v2.2 only after a full NEST compact regression gate and destructive temporal shams pass, and it is not bounded nonlinear recurrence, hardware evidence, native on-chip temporal dynamics, universal benchmark superiority, language, planning, AGI, or ASI.",
+            "- Tier 4.30-readiness is a lifecycle-native engineering audit; it selects a static-pool path layered on the native mechanism bridge, not a lifecycle implementation or hardware claim.",
+            "- Tier 4.30 is a lifecycle-native static-pool contract; it defines commands, readback, event semantics, gates, and failure classes, but it is not runtime implementation or hardware evidence.",
+            "- Tier 4.30a is a deterministic local lifecycle reference with active-mask, lineage, event-count, checksum, and sham-control outputs; it is not runtime C or hardware evidence.",
+            "- Tier 4.30b is local source/runtime host evidence that the lifecycle static-pool surface matches the 4.30a checksums and preserves existing runtime tests; it is not hardware evidence, task-effect evidence, multi-core lifecycle migration, or a baseline freeze.",
             "- Tier 4.20a is a passed hardware-transfer readiness audit; it classifies v2.1 mechanisms by chunked-host readiness versus future custom-runtime/on-chip blockers, but it is not SpiNNaker hardware evidence or v2.1 hardware transfer.",
             "- Tier 4.20b is passed one-seed v2.1 chunked-host bridge/transport hardware evidence; it returned real pyNN.spiNNaker execution, zero fallback, zero sim.run/readback failures, and nonzero spike readback, but it is not repeatability evidence or full native/on-chip v2.1 mechanism execution.",
             "- Tier 6.1 is controlled software lifecycle/self-scaling evidence with clean lineage and hard-switch advantage regimes; it is not full adult turnover, sham-control proof, hardware lifecycle, or external-baseline superiority.",

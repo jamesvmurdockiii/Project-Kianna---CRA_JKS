@@ -172,6 +172,97 @@ static void _handle_read_state(sdp_msg_t *msg) {
     sdp_send_reply(msg, reply, len);
 }
 
+static void _handle_lifecycle_init(sdp_msg_t *msg) {
+    uint32_t pool_size = msg->arg1;
+    uint32_t founder_count = msg->arg2;
+    uint32_t seed = msg->arg3;
+    int32_t trophic_seed_raw = _read_s32(&msg->data[0]);
+    uint32_t generation_seed = _read_u32(&msg->data[4]);
+    int rc = cra_lifecycle_init(pool_size, founder_count, seed, trophic_seed_raw, generation_seed);
+    uint8_t reply[80];
+    uint8_t len = host_if_pack_lifecycle_summary(reply, sizeof(reply));
+    if (len == 0) {
+        reply[0] = CMD_LIFECYCLE_INIT;
+        reply[1] = 1;
+        sdp_send_reply(msg, reply, 2);
+        return;
+    }
+    reply[0] = CMD_LIFECYCLE_INIT;
+    reply[1] = (rc == 0) ? 0 : 1;
+    sdp_send_reply(msg, reply, len);
+}
+
+static void _handle_lifecycle_event(sdp_msg_t *msg) {
+    uint32_t event_index = msg->arg1;
+    uint8_t event_type = (uint8_t)(msg->arg2 & 0xFF);
+    uint32_t target_slot = msg->arg3;
+    int32_t parent_slot = _read_s32(&msg->data[0]);
+    int32_t child_slot = _read_s32(&msg->data[4]);
+    int32_t trophic_delta_raw = _read_s32(&msg->data[8]);
+    int32_t reward_raw = _read_s32(&msg->data[12]);
+    int rc = cra_lifecycle_apply_event(
+        event_index,
+        event_type,
+        target_slot,
+        parent_slot,
+        child_slot,
+        trophic_delta_raw,
+        reward_raw
+    );
+    uint8_t reply[80];
+    uint8_t len = host_if_pack_lifecycle_summary(reply, sizeof(reply));
+    if (len == 0) {
+        reply[0] = CMD_LIFECYCLE_EVENT;
+        reply[1] = 1;
+        sdp_send_reply(msg, reply, 2);
+        return;
+    }
+    reply[0] = CMD_LIFECYCLE_EVENT;
+    reply[1] = (rc == 0) ? 0 : 1;
+    sdp_send_reply(msg, reply, len);
+}
+
+static void _handle_lifecycle_trophic_update(sdp_msg_t *msg) {
+    uint32_t target_slot = msg->arg1;
+    int32_t trophic_delta_raw = (int32_t)msg->arg2;
+    int32_t reward_raw = (int32_t)msg->arg3;
+    int rc = cra_lifecycle_apply_trophic_update(target_slot, trophic_delta_raw, reward_raw);
+    uint8_t reply[80];
+    uint8_t len = host_if_pack_lifecycle_summary(reply, sizeof(reply));
+    if (len == 0) {
+        reply[0] = CMD_LIFECYCLE_TROPHIC_UPDATE;
+        reply[1] = 1;
+        sdp_send_reply(msg, reply, 2);
+        return;
+    }
+    reply[0] = CMD_LIFECYCLE_TROPHIC_UPDATE;
+    reply[1] = (rc == 0) ? 0 : 1;
+    sdp_send_reply(msg, reply, len);
+}
+
+static void _handle_lifecycle_read_state(sdp_msg_t *msg) {
+    uint8_t reply[80];
+    uint8_t len = host_if_pack_lifecycle_summary(reply, sizeof(reply));
+    if (len == 0) return;
+    sdp_send_reply(msg, reply, len);
+}
+
+static void _handle_lifecycle_sham_mode(sdp_msg_t *msg) {
+    uint32_t mode = msg->arg1;
+    int rc = cra_lifecycle_set_sham_mode(mode);
+    uint8_t reply[80];
+    uint8_t len = host_if_pack_lifecycle_summary(reply, sizeof(reply));
+    if (len == 0) {
+        reply[0] = CMD_LIFECYCLE_SHAM_MODE;
+        reply[1] = 1;
+        sdp_send_reply(msg, reply, 2);
+        return;
+    }
+    reply[0] = CMD_LIFECYCLE_SHAM_MODE;
+    reply[1] = (rc == 0) ? 0 : 1;
+    sdp_send_reply(msg, reply, len);
+}
+
 #ifndef CRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE
 static void _handle_schedule_pending(sdp_msg_t *msg) {
     int32_t feature = (int32_t) msg->arg1;
@@ -627,6 +718,16 @@ void sdp_rx_callback(uint mailbox, uint port) {
         case CMD_READ_STATE:  _handle_read_state(msg);  break;
 
 // ------------------------------------------------------------------
+// Tier 4.30 lifecycle/static-pool surface. This is metadata/mask state,
+// not legacy dynamic neuron allocation.
+// ------------------------------------------------------------------
+        case CMD_LIFECYCLE_INIT:           _handle_lifecycle_init(msg);           break;
+        case CMD_LIFECYCLE_EVENT:          _handle_lifecycle_event(msg);          break;
+        case CMD_LIFECYCLE_TROPHIC_UPDATE: _handle_lifecycle_trophic_update(msg); break;
+        case CMD_LIFECYCLE_READ_STATE:     _handle_lifecycle_read_state(msg);     break;
+        case CMD_LIFECYCLE_SHAM_MODE:      _handle_lifecycle_sham_mode(msg);      break;
+
+// ------------------------------------------------------------------
 // 4.25B two-core split opcodes (state_core only)
 // ------------------------------------------------------------------
 #ifdef CRA_RUNTIME_PROFILE_STATE_CORE
@@ -778,6 +879,38 @@ uint8_t host_if_pack_state_summary(uint8_t *payload, uint8_t max_len) {
     _write_u32(&payload[93], summary.commands_received);
     _write_u32(&payload[97], cra_state_schedule_entry_count());
     _write_u32(&payload[101], summary.readback_bytes_sent + required_len);
+    g_summary.readback_bytes_sent += required_len;
+    return required_len;
+}
+
+uint8_t host_if_pack_lifecycle_summary(uint8_t *payload, uint8_t max_len) {
+    cra_lifecycle_summary_t summary;
+    const uint8_t required_len = 68;
+    if (payload == 0 || max_len < required_len) {
+        return 0;
+    }
+    cra_lifecycle_get_summary(&summary);
+
+    payload[0] = CMD_LIFECYCLE_READ_STATE;
+    payload[1] = 0;
+    payload[2] = (uint8_t)summary.schema_version;
+    payload[3] = (uint8_t)(summary.sham_mode & 0xFF);
+    _write_u32(&payload[4], summary.pool_size);
+    _write_u32(&payload[8], summary.founder_count);
+    _write_u32(&payload[12], summary.active_count);
+    _write_u32(&payload[16], summary.inactive_count);
+    _write_u32(&payload[20], summary.active_mask_bits);
+    _write_u32(&payload[24], summary.attempted_event_count);
+    _write_u32(&payload[28], summary.lifecycle_event_count);
+    _write_u32(&payload[32], summary.cleavage_count);
+    _write_u32(&payload[36], summary.adult_birth_count);
+    _write_u32(&payload[40], summary.death_count);
+    _write_u32(&payload[44], summary.maturity_count);
+    _write_u32(&payload[48], summary.trophic_update_count);
+    _write_u32(&payload[52], summary.invalid_event_count);
+    _write_u32(&payload[56], summary.lineage_checksum);
+    _write_s32(&payload[60], summary.trophic_checksum);
+    _write_u32(&payload[64], g_summary.readback_bytes_sent + required_len);
     g_summary.readback_bytes_sent += required_len;
     return required_len;
 }

@@ -122,7 +122,9 @@ They remain part of the peer-review audit trail:
 4.30-readiness lifecycle-native preflight/layering audit = passed; static-pool lifecycle-native path layers on native mechanism bridge v0.3 with v2.2 as software reference only
 4.30 lifecycle-native static-pool contract = passed; command/readback/event/gate/failure schema defined before local reference or hardware work
 4.30a local static-pool lifecycle reference = passed; canonical and boundary deterministic traces plus lifecycle shams precomputed
-4.30+ native lifecycle/ecology migration = roadmap; not yet canonical evidence
+4.30b lifecycle runtime source audit = passed; runtime static-pool lifecycle surface and host/schema parity tests complete
+4.30b-hw single-core lifecycle active-mask/lineage hardware smoke = next active gate
+4.30+ native lifecycle/ecology migration = roadmap; initial runtime source surface exists, hardware smoke pending
 ```
 
 These planned tiers may move in order as evidence arrives, but completed pass,
@@ -8198,10 +8200,52 @@ migration. It only proves the local static-pool reference is bounded,
 repeatable, and sham-instrumented.
 ```
 
+### Tier 4.30b - Lifecycle Runtime Source Audit
+
+Status: COMPLETE - LOCAL SOURCE/RUNTIME PASS.
+
+Question:
+
+```text
+Can the Tier 4.30a static-pool lifecycle reference be mapped into the smallest
+custom-runtime lifecycle state surface while preserving existing runtime and
+profile behavior?
+```
+
+Result:
+
+```text
+Output: controlled_test_output/tier4_30b_20260505_lifecycle_source_audit/
+Runner: experiments/tier4_30b_lifecycle_source_audit.py
+Criteria: 13/13
+Mode: local-source-audit
+```
+
+Key source/runtime results:
+
+```text
+runtime lifecycle opcodes declared: init, event, trophic update, read state, sham mode
+runtime state structs declared: lifecycle_slot_t, cra_lifecycle_summary_t
+host lifecycle readback added separately from CMD_READ_STATE
+existing CMD_READ_STATE schema remains version 2
+canonical_32 checksum parity: lineage=105428, trophic=466851
+boundary_64 checksum parity: lineage=18496, trophic=761336
+runtime test-lifecycle, test-profiles, and test all passed
+```
+
+Claim boundary:
+
+```text
+Tier 4.30b source audit is local source/runtime host evidence only. It is not
+hardware evidence, not task-effect evidence, not multi-core lifecycle, not v2.2
+temporal-state migration, and not a lifecycle baseline freeze.
+```
+
 Next step:
 
 ```text
-Tier 4.30b source audit / single-core lifecycle mask-smoke preparation. Map the
-4.30a reference into the smallest runtime-facing lifecycle state surface, then
-run local host/schema tests before any EBRAINS package.
+Tier 4.30b-hw single-core lifecycle active-mask/lineage hardware smoke. Package
+and run the audited runtime surface on EBRAINS/SpiNNaker. Require zero fallback,
+zero sim/run/readback failures, real lifecycle state readback, active-mask and
+checksum agreement, and no task-effect or scaling claim.
 ```

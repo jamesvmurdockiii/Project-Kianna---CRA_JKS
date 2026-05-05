@@ -6280,6 +6280,9 @@ Near-term roadmap insertion:
 7. Tier 4.30a local static-pool lifecycle reference. COMPLETE: deterministic
    local reference and sham-control outputs passed.
 8. Tier 4.30b source audit / single-core lifecycle mask-smoke preparation.
+   COMPLETE: runtime lifecycle static-pool surface and local host/schema parity
+   passed.
+9. Tier 4.30b-hw single-core lifecycle active-mask/lineage hardware smoke.
    CURRENT.
 ```
 
@@ -6362,7 +6365,7 @@ Boundary: local engineering contract only; not runtime implementation, not
           hardware evidence, not lifecycle/self-scaling proof, not v2.2 temporal
           migration, not speedup, not multi-chip scaling.
 Next: Tier 4.30a local static-pool lifecycle reference (completed; superseded
-by current Tier 4.30b source audit / single-core lifecycle mask-smoke prep).
+by current Tier 4.30b-hw single-core lifecycle hardware smoke package/run).
 ```
 
 Tier 4.30a result:
@@ -6379,7 +6382,24 @@ Controls: fixed pool, random event replay, active-mask shuffle, lineage-ID
 Boundary: local deterministic reference only; not runtime C, not hardware, not
           task benefit, not lifecycle baseline freeze, not v2.2 temporal-state
           migration.
-Next: Tier 4.30b source audit / single-core lifecycle mask-smoke preparation.
+Next: Tier 4.30b source audit / single-core lifecycle mask-smoke preparation
+(completed; superseded by current Tier 4.30b-hw single-core lifecycle hardware
+smoke package/run).
+```
+
+Tier 4.30b result:
+
+```text
+Output: controlled_test_output/tier4_30b_20260505_lifecycle_source_audit/
+Runner: experiments/tier4_30b_lifecycle_source_audit.py
+Criteria: 13/13
+Result: runtime lifecycle opcodes, static-pool lifecycle structs, exact 4.30a
+        canonical/boundary checksum parity, lifecycle SDP readback, and
+        existing runtime/profile tests preserved.
+Boundary: local source/runtime host evidence only; not hardware evidence, not
+          task benefit, not multi-core lifecycle, not v2.2 temporal-state
+          migration, and not a baseline freeze.
+Next: Tier 4.30b-hw single-core lifecycle active-mask/lineage hardware smoke.
 ```
 
 Detailed Tier 5.19 contract:

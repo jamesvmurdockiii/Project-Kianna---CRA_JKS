@@ -1,0 +1,185 @@
+{
+  "artifacts": {
+    "command_log": "/Users/james/JKS:CRA/controlled_test_output/tier4_30b_20260505_lifecycle_source_audit/tier4_30b_command_log.txt",
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_30b_20260505_lifecycle_source_audit/tier4_30b_report.md",
+    "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_30b_20260505_lifecycle_source_audit/tier4_30b_results.json"
+  },
+  "claim_boundary": "PASS means the lifecycle static-pool state surface exists in the custom runtime, matches the Tier 4.30a local reference in host tests, preserves existing profile/readback tests, and is ready for a single-core lifecycle mask-smoke package. It is not hardware evidence, not task-effect evidence, not multi-core lifecycle migration, and not a baseline freeze.",
+  "command_log": "COMMAND: make -C coral_reef_spinnaker/spinnaker_runtime test-lifecycle\nRETURNCODE: 0\nSTDOUT:\ncc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=1 tests/test_lifecycle.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_lifecycle\n./tests/test_lifecycle\nRunning Tier 4.30 lifecycle/static-pool tests...\n  PASS: 4.30a canonical_32 lifecycle parity\n  PASS: 4.30a boundary_64 lifecycle parity\n  PASS: lifecycle SDP readback schema\n  PASS: lifecycle sham mode bounds\nAll lifecycle/static-pool tests passed.\n\nSTDERR:\n\n\nCOMMAND: make -C coral_reef_spinnaker/spinnaker_runtime test-profiles\nRETURNCODE: 0\nSTDOUT:\ncc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_RUNTIME_PROFILE_CONTEXT_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=4 tests/test_profiles.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_context_core\n./tests/test_context_core\nProfile test (RUNTIME_PROFILE_ID=4)\n  PASS: RESET ack\n  PASS: READ_STATE profile_id=4 flags=0\n  PASS: context_core expected commands ack\n  PASS: context_core unexpected commands nak\n  PASS: lookup request/reply format\n  PASS: wrong-type lookup rejected safely\nAll tests passed.\ncc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_RUNTIME_PROFILE_ROUTE_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=5 tests/test_profiles.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_route_core\n./tests/test_route_core\nProfile test (RUNTIME_PROFILE_ID=5)\n  PASS: RESET ack\n  PASS: READ_STATE profile_id=5 flags=0\n  PASS: route_core expected commands ack\n  PASS: route_core unexpected commands nak\n  PASS: lookup request/reply format\n  PASS: wrong-type lookup rejected safely\nAll tests passed.\ncc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_RUNTIME_PROFILE_MEMORY_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=6 tests/test_profiles.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_memory_core\n./tests/test_memory_core\nProfile test (RUNTIME_PROFILE_ID=6)\n  PASS: RESET ack\n  PASS: READ_STATE profile_id=6 flags=0\n  PASS: memory_core expected commands ack\n  PASS: memory_core unexpected commands nak\n  PASS: lookup request/reply format\n  PASS: wrong-type lookup rejected safely\nAll tests passed.\ncc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 tests/test_profiles.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_learning_core\n./tests/test_learning_core\nProfile test (RUNTIME_PROFILE_ID=3)\n  PASS: RESET ack\n  PASS: READ_STATE profile_id=3 flags=0\n  PASS: learning_core expected commands ack\n  PASS: learning_core unexpected commands nak\n  PASS: lookup state machine (3 replies stored)\n  PASS: stale reply detection\n  PASS: timeout detection\nAll tests passed.\n\nSTDERR:\n\n\nCOMMAND: make -C coral_reef_spinnaker/spinnaker_runtime test\nRETURNCODE: 0\nSTDOUT:\n./tests/test_runtime\n=== Coral Reef Runtime Host Tests ===\n\nconfig.h:\n  PASS: MAKE_KEY\n  PASS: fixed-point math\n  PASS: signed large fixed-point product\n  PASS: command constants\n  PASS: weight limits\n\nneuron_manager:\n  PASS: neuron birth/death\n  PASS: neuron find\n  PASS: neuron reset all\n\nsynapse_manager:\n  PASS: synapse create/remove\n  PASS: synapse weight limits\n  PASS: eligibility trace modulation\n  PASS: indexed delivery and active trace list\n\nstate_manager:\n  PASS: persistent context slots\n  PASS: bounded slot eviction\n  PASS: readout state and reset\n  PASS: reward readout update\n  PASS: pending horizon maturation\n  PASS: pending signed switch update\n  PASS: context-derived feature scheduling reference\n  PASS: routed context-derived feature scheduling reference\n  PASS: keyed route/context-derived feature scheduling reference\n  PASS: memory/route/context-derived feature scheduling reference\n  PASS: decoupled memory/route/context-derived feature scheduling reference\n  PASS: bounded pending horizons\n  PASS: schedule entry write and read\n  PASS: continuous tick processing\n  PASS: continuous auto-pause\n\nrouter:\n  PASS: router add/remove\n  PASS: router reset all\n\nhost_interface:\n  PASS: host_interface init\n  PASS: compact state summary pack\n\n=== ALL TESTS PASSED ===\n\nSTDERR:\n",
+  "command_results": [
+    {
+      "command": [
+        "make",
+        "-C",
+        "coral_reef_spinnaker/spinnaker_runtime",
+        "test-lifecycle"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=1 tests/test_lifecycle.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_lifecycle\n./tests/test_lifecycle\nRunning Tier 4.30 lifecycle/static-pool tests...\n  PASS: 4.30a canonical_32 lifecycle parity\n  PASS: 4.30a boundary_64 lifecycle parity\n  PASS: lifecycle SDP readback schema\n  PASS: lifecycle sham mode bounds\nAll lifecycle/static-pool tests passed.\n"
+    },
+    {
+      "command": [
+        "make",
+        "-C",
+        "coral_reef_spinnaker/spinnaker_runtime",
+        "test-profiles"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_RUNTIME_PROFILE_CONTEXT_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=4 tests/test_profiles.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_context_core\n./tests/test_context_core\nProfile test (RUNTIME_PROFILE_ID=4)\n  PASS: RESET ack\n  PASS: READ_STATE profile_id=4 flags=0\n  PASS: context_core expected commands ack\n  PASS: context_core unexpected commands nak\n  PASS: lookup request/reply format\n  PASS: wrong-type lookup rejected safely\nAll tests passed.\ncc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_RUNTIME_PROFILE_ROUTE_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=5 tests/test_profiles.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_route_core\n./tests/test_route_core\nProfile test (RUNTIME_PROFILE_ID=5)\n  PASS: RESET ack\n  PASS: READ_STATE profile_id=5 flags=0\n  PASS: route_core expected commands ack\n  PASS: route_core unexpected commands nak\n  PASS: lookup request/reply format\n  PASS: wrong-type lookup rejected safely\nAll tests passed.\ncc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_RUNTIME_PROFILE_MEMORY_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=6 tests/test_profiles.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_memory_core\n./tests/test_memory_core\nProfile test (RUNTIME_PROFILE_ID=6)\n  PASS: RESET ack\n  PASS: READ_STATE profile_id=6 flags=0\n  PASS: memory_core expected commands ack\n  PASS: memory_core unexpected commands nak\n  PASS: lookup request/reply format\n  PASS: wrong-type lookup rejected safely\nAll tests passed.\ncc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 tests/test_profiles.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_learning_core\n./tests/test_learning_core\nProfile test (RUNTIME_PROFILE_ID=3)\n  PASS: RESET ack\n  PASS: READ_STATE profile_id=3 flags=0\n  PASS: learning_core expected commands ack\n  PASS: learning_core unexpected commands nak\n  PASS: lookup state machine (3 replies stored)\n  PASS: stale reply detection\n  PASS: timeout detection\nAll tests passed.\n"
+    },
+    {
+      "command": [
+        "make",
+        "-C",
+        "coral_reef_spinnaker/spinnaker_runtime",
+        "test"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "./tests/test_runtime\n=== Coral Reef Runtime Host Tests ===\n\nconfig.h:\n  PASS: MAKE_KEY\n  PASS: fixed-point math\n  PASS: signed large fixed-point product\n  PASS: command constants\n  PASS: weight limits\n\nneuron_manager:\n  PASS: neuron birth/death\n  PASS: neuron find\n  PASS: neuron reset all\n\nsynapse_manager:\n  PASS: synapse create/remove\n  PASS: synapse weight limits\n  PASS: eligibility trace modulation\n  PASS: indexed delivery and active trace list\n\nstate_manager:\n  PASS: persistent context slots\n  PASS: bounded slot eviction\n  PASS: readout state and reset\n  PASS: reward readout update\n  PASS: pending horizon maturation\n  PASS: pending signed switch update\n  PASS: context-derived feature scheduling reference\n  PASS: routed context-derived feature scheduling reference\n  PASS: keyed route/context-derived feature scheduling reference\n  PASS: memory/route/context-derived feature scheduling reference\n  PASS: decoupled memory/route/context-derived feature scheduling reference\n  PASS: bounded pending horizons\n  PASS: schedule entry write and read\n  PASS: continuous tick processing\n  PASS: continuous auto-pause\n\nrouter:\n  PASS: router add/remove\n  PASS: router reset all\n\nhost_interface:\n  PASS: host_interface init\n  PASS: compact state summary pack\n\n=== ALL TESTS PASSED ===\n"
+    }
+  ],
+  "criteria": [
+    {
+      "name": "Tier 4.30a reference passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "Tier 4.30a criteria complete",
+      "note": "",
+      "passed": true,
+      "rule": "== 20/20",
+      "value": "20/20"
+    },
+    {
+      "name": "lifecycle opcodes declared",
+      "note": "",
+      "passed": true,
+      "rule": "all required tokens present",
+      "value": {
+        "CMD_LIFECYCLE_EVENT": true,
+        "CMD_LIFECYCLE_INIT": true,
+        "CMD_LIFECYCLE_READ_STATE": true,
+        "CMD_LIFECYCLE_SHAM_MODE": true,
+        "CMD_LIFECYCLE_TROPHIC_UPDATE": true,
+        "LIFECYCLE_EVENT_ADULT_BIRTH": true,
+        "LIFECYCLE_EVENT_CLEAVAGE": true,
+        "LIFECYCLE_EVENT_DEATH": true,
+        "MAX_LIFECYCLE_SLOTS": true
+      }
+    },
+    {
+      "name": "lifecycle state API declared",
+      "note": "",
+      "passed": true,
+      "rule": "all required tokens present",
+      "value": {
+        "cra_lifecycle_apply_event": true,
+        "cra_lifecycle_get_slot": true,
+        "cra_lifecycle_get_summary": true,
+        "cra_lifecycle_init": true,
+        "cra_lifecycle_summary_t": true,
+        "lifecycle_slot_t": true
+      }
+    },
+    {
+      "name": "lifecycle host handlers declared",
+      "note": "",
+      "passed": true,
+      "rule": "all required tokens present",
+      "value": {
+        "_handle_lifecycle_event": true,
+        "_handle_lifecycle_init": true,
+        "_handle_lifecycle_read_state": true,
+        "case CMD_LIFECYCLE_INIT": true,
+        "host_if_pack_lifecycle_summary": true
+      }
+    },
+    {
+      "name": "lifecycle parity constants tested",
+      "note": "",
+      "passed": true,
+      "rule": "all required tokens present",
+      "value": {
+        "105428": true,
+        "18496": true,
+        "4.30a boundary_64 lifecycle parity": true,
+        "4.30a canonical_32 lifecycle parity": true,
+        "466851": true,
+        "761336": true
+      }
+    },
+    {
+      "name": "lifecycle handlers avoid legacy allocation",
+      "note": "",
+      "passed": true,
+      "rule": "no neuron_birth/neuron_death in lifecycle handler slice",
+      "value": true
+    },
+    {
+      "name": "lifecycle state reset wired",
+      "note": "",
+      "passed": true,
+      "rule": "cra_state_init/reset call cra_lifecycle_reset",
+      "value": true
+    },
+    {
+      "name": "CMD_READ_STATE schema preserved",
+      "note": "",
+      "passed": true,
+      "rule": "existing schema remains version 2",
+      "value": true
+    },
+    {
+      "name": "runtime test-lifecycle passed",
+      "note": "",
+      "passed": true,
+      "rule": "returncode == 0",
+      "value": true
+    },
+    {
+      "name": "runtime test-profiles passed",
+      "note": "",
+      "passed": true,
+      "rule": "returncode == 0",
+      "value": true
+    },
+    {
+      "name": "runtime test passed",
+      "note": "",
+      "passed": true,
+      "rule": "returncode == 0",
+      "value": true
+    },
+    {
+      "name": "no EBRAINS package generated",
+      "note": "",
+      "passed": true,
+      "rule": "mode == local-source-audit",
+      "value": "local-source-audit"
+    }
+  ],
+  "criteria_passed": 13,
+  "criteria_total": 13,
+  "failed_criteria": [],
+  "generated_at_utc": "2026-05-05T20:20:10+00:00",
+  "mode": "local-source-audit",
+  "next_step": "Tier 4.30b hardware package/run: single-core active-mask/lineage lifecycle smoke.",
+  "runner_revision": "tier4_30b_lifecycle_source_audit_20260505_0001",
+  "source_inputs": {
+    "config_h": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src/config.h",
+    "host_interface_c": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src/host_interface.c",
+    "host_interface_h": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src/host_interface.h",
+    "state_manager_c": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c",
+    "state_manager_h": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h",
+    "test_lifecycle_c": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/tests/test_lifecycle.c",
+    "tier4_30a_results": "/Users/james/JKS:CRA/controlled_test_output/tier4_30a_20260505_static_pool_lifecycle_reference/tier4_30a_results.json"
+  },
+  "status": "pass",
+  "tier": "Tier 4.30b - Lifecycle Runtime Source Audit"
+}

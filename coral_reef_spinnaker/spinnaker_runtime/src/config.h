@@ -38,6 +38,7 @@
 #define MAX_ROUTE_SLOTS 8            // Bounded keyed route-state slots per core
 #define MAX_MEMORY_SLOTS 8           // Bounded keyed memory/working-state slots per core
 #define MAX_PENDING_HORIZONS 128     // Bounded delayed-credit queue per core
+#define MAX_LIFECYCLE_SLOTS 8        // Tier 4.30 static lifecycle pool; no dynamic birth/death allocation
 #define DEFAULT_TAU_M     FP_FROM_FLOAT(20.0f)
 #define DEFAULT_V_THRESH  FP_FROM_FLOAT(-55.0f)
 #define DEFAULT_V_RESET   FP_FROM_FLOAT(-70.0f)
@@ -119,6 +120,36 @@
 // ------------------------------------------------------------------
 #define CMD_LOOKUP_REQUEST 32
 #define CMD_LOOKUP_REPLY   33
+
+// ------------------------------------------------------------------
+// 4.30 lifecycle/static-pool protocol opcodes
+//
+// These commands deliberately do NOT call legacy neuron_birth/neuron_death.
+// Tier 4.30 models lifecycle as a fixed hardware slot pool with active masks,
+// lineage metadata, and compact telemetry before any multi-core migration.
+// ------------------------------------------------------------------
+#define CMD_LIFECYCLE_INIT           34
+#define CMD_LIFECYCLE_EVENT          35
+#define CMD_LIFECYCLE_TROPHIC_UPDATE 36
+#define CMD_LIFECYCLE_READ_STATE     37
+#define CMD_LIFECYCLE_SHAM_MODE      38
+
+#define LIFECYCLE_SCHEMA_VERSION 1
+
+#define LIFECYCLE_EVENT_NONE          0
+#define LIFECYCLE_EVENT_TROPHIC       1
+#define LIFECYCLE_EVENT_CLEAVAGE      2
+#define LIFECYCLE_EVENT_ADULT_BIRTH   3
+#define LIFECYCLE_EVENT_DEATH         4
+#define LIFECYCLE_EVENT_MATURITY      5
+
+#define LIFECYCLE_SHAM_ENABLED        0
+#define LIFECYCLE_SHAM_FIXED_POOL     1
+#define LIFECYCLE_SHAM_RANDOM_REPLAY  2
+#define LIFECYCLE_SHAM_MASK_SHUFFLE   3
+#define LIFECYCLE_SHAM_LINEAGE_SHUFFLE 4
+#define LIFECYCLE_SHAM_NO_TROPHIC     5
+#define LIFECYCLE_SHAM_NO_DOPAMINE    6
 
 #define LOOKUP_TYPE_CONTEXT 0
 #define LOOKUP_TYPE_ROUTE   1
