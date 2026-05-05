@@ -182,7 +182,7 @@ are source, which files are generated evidence, and where claims are recorded.
 | `tier4_29b_native_routing_composition_gate.py` | Tier 4.29b native routing/composition | Tests native `context * route * cue` composition with wrong-route and overwrite controls. |
 | `tier4_29c_native_predictive_binding_bridge.py` | Tier 4.29c native predictive binding | Tests prediction-before-reward separation in the four-core custom runtime. |
 | `tier4_29d_native_self_evaluation_bridge.py` | Tier 4.29d native self-evaluation | Tests confidence-gated learning via context/route/memory confidence products. |
-| `tier4_29e_native_replay_consolidation_bridge.py` | Tier 4.29e native replay/consolidation bridge | Tests host-scheduled replay through native state primitives; `cra_429o` is the current hardware-pending package. |
+| `tier4_29e_native_replay_consolidation_bridge.py` | Tier 4.29e native replay/consolidation bridge | Tests host-scheduled replay through native state primitives; `cra_429p` is the repaired package after the noncanonical `cra_429o` hardware diagnostic failure. |
 | `tier5_external_baselines.py` | Tier 5.1 comparison | Compare CRA against random, linear, reservoir, GRU, STDP-only, and evolutionary baselines. |
 | `tier5_learning_curve.py` | Tier 5.2 comparison | Repeat Tier 5.1-style comparisons across multiple run lengths. |
 | `tier5_cra_failure_analysis.py` | Tier 5.3 diagnostic | Run CRA-only tuning/failure-analysis variants for delayed credit, horizon, dopamine smoothing, retention, population, and lifecycle pressure. |

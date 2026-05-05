@@ -48,7 +48,7 @@ Tier 4.29a = HARDWARE PASS (native keyed-memory overcapacity, 3 seeds)
 Tier 4.29b = HARDWARE PASS (native routing/composition, 3 seeds)
 Tier 4.29c = HARDWARE PASS (native predictive binding, 3 seeds)
 Tier 4.29d = HARDWARE PASS (native self-evaluation/confidence gating, 3 seeds)
-Tier 4.29e = DESIGN COMPLETE / LOCAL PASS / HARDWARE PENDING (native replay/consolidation bridge; cra_429o submitted)
+Tier 4.29e = cra_429o HARDWARE DIAGNOSTIC FAIL / cra_429p LOCAL REPAIR PASS + PACKAGE PREPARED
 ```
 
 Important Tier 4.26 result:
@@ -78,7 +78,7 @@ not full native v2.1, and not final autonomy.
 Current active step:
 
 ```text
-Tier 4.29e - Replay/Consolidation Bridge (cra_429o EBRAINS hardware pending)
+Tier 4.29e - Replay/Consolidation Bridge (cra_429p repaired EBRAINS package prepared)
 ```
 
 ## 2. Immediate Baseline Decision
@@ -314,20 +314,27 @@ What claim boundary follows?
     Fix: revert to SDP inter-core lookup. Rebuilt as cra_429j.
 
 24. 🔄 **IN PROGRESS** - Tier 4.29e replay/consolidation bridge.
-    DESIGN COMPLETE, LOCAL PASS, HARDWARE PENDING.
-    Host-scheduled replay through native state primitives; no C runtime changes.
-    Four controls: no_replay, correct_replay, wrong_key_replay, random_event_replay.
-    Local reference passes all controls; current runner revision is
-    `tier4_29e_native_replay_consolidation_20260505_0002`.
-    Package `cra_429o` prepared and submitted through EBRAINS folder `429o`.
-    Reuses `cra_429j` binaries.
-    Failure chain preserved: `cra_429k` missing runner, `cra_429l` bad board-probe
-    helper, `cra_429m` schedule-entry fixed-point double conversion, `cra_429n`
-    state-write fixed-point double conversion. `cra_429o` fixes both conversion
-    classes by passing raw floats to host write helpers.
-    Next: wait for EBRAINS `cra_429o` results, ingest if returned, then either
-    promote to 4.29f compact native mechanism regression or repair with a fresh
-    package name if hardware fails.
+    `cra_429o` returned REAL HARDWARE but failed as a noncanonical diagnostic.
+    All three seeds executed on hardware, target acquisition and four-core loads
+    passed, all controls completed, pending matured, and stale/timeouts stayed 0.
+    However each seed failed 2/34 criteria: wrong-key replay bias reference
+    tolerance and random-event replay weight reference tolerance.
+    Diagnostic artifact: `controlled_test_output/tier4_29e_20260505_cra_429o_hardware_fail/`.
+    Root cause: the Python schedule/reference gate was wrong, not a promoted
+    mechanism failure. `_build_schedule()` ignored per-event wrong context keys,
+    and the local host reference did not mirror native continuous-runtime ordering
+    or surprise-threshold behavior.
+    Repair: `cra_429p`, runner revision
+    `tier4_29e_native_replay_consolidation_20260505_0003`.
+    Local repair gate passes seeds 42/43/44 with native-continuous expected values:
+    no_replay weight=32768/bias=0; correct_replay weight=47896/bias=-232;
+    wrong_key_replay weight=32768/bias=-5243; random_event_replay weight=57344/bias=0.
+    Correct replay now differs from no replay, wrong-key replay does not
+    consolidate weight, and random-event replay remains distinct.
+    Package prepared: `ebrains_jobs/cra_429p`.
+    Next: upload/run `cra_429p`, then ingest only runner revision 20260505_0003.
+    If it passes, run 4.29f compact native mechanism regression; if it fails,
+    classify exactly and repair with a fresh package name.
 
 25. Tier 4.29f compact native mechanism regression: rerun the strongest tiny
     native delayed, switching, reentry, and mechanism controls after each
@@ -597,23 +604,32 @@ After each completed run or design tier:
 The next concrete action is:
 
 ```text
-Wait for the EBRAINS `cra_429o` Tier 4.29e hardware results.
+Upload/run repaired EBRAINS package `cra_429p` for Tier 4.29e.
+```
+
+JobManager command:
+
+```text
+cra_429p/experiments/tier4_29e_native_replay_consolidation_bridge.py --mode run-hardware --seeds 42,43,44
 ```
 
 When the returned files are available:
 
 1. Verify result timestamps and runner revision before ingesting. Current valid
-   package metadata is `cra_429o` with runner revision
-   `tier4_29e_native_replay_consolidation_20260505_0002`. Older downloaded
-   results with revision `20260504_0001` belong to failed pre-`cra_429o` attempts
-   and must not be promoted.
-2. If all three seeds pass, ingest Tier 4.29e, update the registry/docs, and run
+   package metadata is `cra_429p` with runner revision
+   `tier4_29e_native_replay_consolidation_20260505_0003`.
+2. Do not promote `cra_429o` results. They are preserved only as noncanonical
+   diagnostic hardware evidence at
+   `controlled_test_output/tier4_29e_20260505_cra_429o_hardware_fail/`.
+3. If all three seeds pass, ingest Tier 4.29e, update the registry/docs, and run
    Tier 4.29f compact native mechanism regression across 4.29a-4.29e.
-3. If any seed fails, classify the failure, preserve artifacts, repair only the
+4. If any seed fails, classify the failure, preserve artifacts, repair only the
    proven failure class, regenerate with a fresh package name, and rerun the
    minimal necessary hardware gate.
 
-Do not mark 4.29e canonical from prepared-only evidence or from stale downloads.
+Do not mark 4.29e canonical from local-only repair evidence, prepared-only
+evidence, or stale downloads.
+
 
 ## 13. Make-Or-Break Gates
 

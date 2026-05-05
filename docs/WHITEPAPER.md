@@ -38,8 +38,9 @@ The hardware program has progressed from PyNN/SpiNNaker capsule execution to a
 custom native runtime. The native runtime has passed bounded SpiNNaker hardware
 checks for four-core MCPL task execution, keyed memory, routing/composition,
 predictive binding, and confidence-gated learning. Tier 4.29e, the native
-replay/consolidation bridge, is currently pending hardware return from EBRAINS as
-package `cra_429o`.
+replay/consolidation bridge, is currently under repaired hardware rerun: `cra_429o`
+returned real hardware but failed two replay-control tolerance checks, and `cra_429p`
+repairs the local schedule/reference gate before rerun.
 
 The current evidence supports a bounded research claim: CRA is a reproducible
 neuromorphic platform with demonstrated local learning, mechanism sensitivity,
@@ -171,7 +172,7 @@ into native SpiNNaker C code. This line includes:
 | 4.29b | Native routing/composition gate, three-seed hardware pass. |
 | 4.29c | Native predictive binding bridge, three-seed hardware pass. |
 | 4.29d | Native self-evaluation / confidence-gated learning bridge, three-seed hardware pass. |
-| 4.29e | Native replay/consolidation bridge, local pass and hardware pending as `cra_429o`. |
+| 4.29e | Native replay/consolidation bridge, `cra_429o` noncanonical hardware diagnostic fail; `cra_429p` local repair pass and hardware rerun pending. |
 
 The current custom runtime remains a research runtime, not a production runtime.
 Its purpose is to make mechanism transfer testable under SpiNNaker constraints.
@@ -218,8 +219,8 @@ paper claims bounded.
 The forward plan is maintained in `docs/MASTER_EXECUTION_PLAN.md` and
 `docs/PAPER_READINESS_ROADMAP.md`. The high-level sequence is:
 
-1. Finish Tier 4.29e hardware replay/consolidation bridge and ingest only true
-   `cra_429o` results.
+1. Run repaired Tier 4.29e hardware replay/consolidation bridge and ingest only true
+   `cra_429p` / runner revision `20260505_0003` results.
 2. Run compact native mechanism regression if 4.29e passes.
 3. Continue native migration for lifecycle, energy, and remaining promoted
    host-side mechanisms one bounded bridge at a time.

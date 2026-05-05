@@ -1,0 +1,123 @@
+{
+  "tier": "Tier 4.29e - Native Replay/Consolidation Bridge",
+  "classification": "noncanonical_hardware_failure_diagnostic",
+  "package": "cra_429o",
+  "valid_runner_revision": "tier4_29e_native_replay_consolidation_20260505_0002",
+  "ingested_at_utc": "2026-05-05T12:39:59.208339+00:00",
+  "overall_status": "fail",
+  "claim_boundary": "Real SpiNNaker hardware execution occurred, but Tier 4.29e is not promoted because replay-control reference tolerance criteria failed on all three seeds.",
+  "seeds": [
+    {
+      "seed": 42,
+      "status": "fail",
+      "runner_revision": "tier4_29e_native_replay_consolidation_20260505_0002",
+      "hostname": "10.11.225.17",
+      "criteria_passed": 32,
+      "criteria_total": 34,
+      "failed_criteria": [
+        "wrong_key_replay_hardware_bias_within_tolerance",
+        "random_event_replay_hardware_weight_within_tolerance"
+      ],
+      "loads": {
+        "context": "pass",
+        "route": "pass",
+        "memory": "pass",
+        "learning": "pass"
+      },
+      "target_status": "pass"
+    },
+    {
+      "seed": 43,
+      "status": "fail",
+      "runner_revision": "tier4_29e_native_replay_consolidation_20260505_0002",
+      "hostname": "10.11.225.145",
+      "criteria_passed": 32,
+      "criteria_total": 34,
+      "failed_criteria": [
+        "wrong_key_replay_hardware_bias_within_tolerance",
+        "random_event_replay_hardware_weight_within_tolerance"
+      ],
+      "loads": {
+        "context": "pass",
+        "route": "pass",
+        "memory": "pass",
+        "learning": "pass"
+      },
+      "target_status": "pass"
+    },
+    {
+      "seed": 44,
+      "status": "fail",
+      "runner_revision": "tier4_29e_native_replay_consolidation_20260505_0002",
+      "hostname": "10.11.225.81",
+      "criteria_passed": 32,
+      "criteria_total": 34,
+      "failed_criteria": [
+        "wrong_key_replay_hardware_bias_within_tolerance",
+        "random_event_replay_hardware_weight_within_tolerance"
+      ],
+      "loads": {
+        "context": "pass",
+        "route": "pass",
+        "memory": "pass",
+        "learning": "pass"
+      },
+      "target_status": "pass"
+    }
+  ],
+  "failures": [
+    {
+      "seed": 42,
+      "name": "wrong_key_replay_hardware_bias_within_tolerance",
+      "value": 0,
+      "threshold": 8192,
+      "passed": false,
+      "note": "hw=0 ref=36288 diff=36288"
+    },
+    {
+      "seed": 42,
+      "name": "random_event_replay_hardware_weight_within_tolerance",
+      "value": 57344,
+      "threshold": 8192,
+      "passed": false,
+      "note": "hw=57344 ref=48128 diff=9216"
+    },
+    {
+      "seed": 43,
+      "name": "wrong_key_replay_hardware_bias_within_tolerance",
+      "value": 0,
+      "threshold": 8192,
+      "passed": false,
+      "note": "hw=0 ref=36288 diff=36288"
+    },
+    {
+      "seed": 43,
+      "name": "random_event_replay_hardware_weight_within_tolerance",
+      "value": 57344,
+      "threshold": 8192,
+      "passed": false,
+      "note": "hw=57344 ref=48128 diff=9216"
+    },
+    {
+      "seed": 44,
+      "name": "wrong_key_replay_hardware_bias_within_tolerance",
+      "value": 0,
+      "threshold": 8192,
+      "passed": false,
+      "note": "hw=0 ref=36288 diff=36288"
+    },
+    {
+      "seed": 44,
+      "name": "random_event_replay_hardware_weight_within_tolerance",
+      "value": 57344,
+      "threshold": 8192,
+      "passed": false,
+      "note": "hw=57344 ref=48128 diff=9216"
+    }
+  ],
+  "root_cause_hypothesis": [
+    "Python schedule builder did not preserve per-event wrong context keys for wrong_key_replay.",
+    "Host reference did not fully mirror native continuous-runtime update/order semantics, including native readout bias behavior/tolerance for replay controls."
+  ],
+  "next_action": "Repair local reference/schedule gate, regenerate a fresh package name, and rerun minimal hardware gate only after local parity catches the previous failure class."
+}

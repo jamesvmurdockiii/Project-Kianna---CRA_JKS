@@ -30,13 +30,15 @@ Latest active hardware-facing tier:
 
 ```text
 Tier 4.29e - Native Replay/Consolidation Bridge
-  Status: SUBMITTED / HARDWARE PENDING (cra_429o)
+  Status: cra_429o HARDWARE DIAGNOSTIC FAIL; cra_429p LOCAL REPAIR PASS / PREPARED
   Reuses cra_429j binaries (no C runtime changes required).
   Four controls: no_replay, correct_replay, wrong_key_replay, random_event_replay.
-  Local reference passes all controls.
-  Runner revision: tier4_29e_native_replay_consolidation_20260505_0002
-  Current package has been submitted through EBRAINS folder 429o.
-  Next: wait for returned files, verify revision/timestamps, then ingest or repair.
+  cra_429o returned real hardware but failed two replay-control tolerance checks on all seeds.
+  cra_429p repairs per-event wrong-key scheduling, native-continuous reference mirroring,
+    and correct-replay-vs-no-replay separation.
+  Runner revision: tier4_29e_native_replay_consolidation_20260505_0003
+  Current package to upload: ebrains_jobs/cra_429p
+  Next: run cra_429p, verify revision/timestamps, then ingest or repair.
 ```
 
 Latest passed hardware-facing tier:
@@ -2271,37 +2273,78 @@ produced zero feature and zero confidence before any learning could occur.
 Repair: Pass raw float values (not pre-converted fixed-point) to `write_context`,
 `write_route_slot`, and `write_memory_slot`. Regenerate as `cra_429o` per Rule 10.
 
-### cra_429o (PENDING)
+### cra_429o (NONCANONICAL HARDWARE DIAGNOSTIC FAIL)
 
-Status: **SUBMITTED / HARDWARE PENDING**
+Status: **REAL HARDWARE EXECUTED / NOT PROMOTED**
 
 Upload folder: `ebrains_jobs/cra_429o`
+
+Runner revision: `tier4_29e_native_replay_consolidation_20260505_0002`
+
+Returned artifact: `controlled_test_output/tier4_29e_20260505_cra_429o_hardware_fail/`
+
+Result: seeds 42/43/44 all returned 32/34 criteria. Hardware health was good:
+target acquisition passed, context/route/memory/learning loads passed, all
+controls completed, pending matured, lookup replies matched requests, and
+stale replies/timeouts were zero.
+
+Failed criteria on all seeds:
+- `wrong_key_replay_hardware_bias_within_tolerance`: hardware bias 0 vs old
+  reference 36288.
+- `random_event_replay_hardware_weight_within_tolerance`: hardware weight 57344
+  vs old reference 48128.
+
+Root cause: local schedule/reference gate was wrong. `_build_schedule()` ignored
+per-event wrong context keys, and the old host reference did not mirror native
+continuous-runtime ordering or surprise-threshold behavior. This is a
+noncanonical diagnostic failure, not replay/consolidation hardware evidence.
+
+### cra_429p (CURRENT REPAIR PACKAGE)
+
+Status: **LOCAL REPAIR PASS / HARDWARE RERUN PENDING**
+
+Upload folder: `ebrains_jobs/cra_429p`
 
 JobManager command:
 
 ```text
-cra_429o/experiments/tier4_29e_native_replay_consolidation_bridge.py --mode run-hardware --seeds 42,43,44
+cra_429p/experiments/tier4_29e_native_replay_consolidation_bridge.py --mode run-hardware --seeds 42,43,44
 ```
 
 Purpose: Test host-scheduled replay/consolidation through native state primitives.
-No C runtime changes; reuses cra_429j binaries. Fixes cra_429n double-conversion
-bug in state-write path. Current valid runner revision is
-`tier4_29e_native_replay_consolidation_20260505_0002`; older returned files with
-revision `20260504_0001` are stale pre-cra_429o results and must not be promoted.
+No C runtime changes; reuses cra_429j binaries. Current valid runner revision is
+`tier4_29e_native_replay_consolidation_20260505_0003`.
+
+Repair details:
+- Preserve per-event `context_key` in schedule construction.
+- Mirror native continuous-runtime order in the local reference.
+- Use balanced correct replay events so correct replay differs from no replay.
+- Treat wrong-key bias as bounded-near-no-replay, because native bias updates are
+  feature-independent while replay weight consolidation is blocked by feature=0.
 
 Controls:
 - no_replay: 16 base events only
-- correct_replay: 16 base + 8 replay with correct context keys
-- wrong_key_replay: 16 base + 8 replay with wrong context keys (feature=0)
+- correct_replay: 16 base + 8 balanced replay events with correct context keys
+- wrong_key_replay: 16 base + 8 balanced replay events with wrong context keys
 - random_event_replay: 16 base + 8 random conflicting events
 
+Expected native-continuous local reference:
+
+```text
+no_replay:            weight=32768, bias=0
+correct_replay:       weight=47896, bias=-232
+wrong_key_replay:     weight=32768, bias=-5243
+random_event_replay:  weight=57344, bias=0
+```
+
 Expected pass criteria per seed:
-- All 4 controls run successfully
-- wrong_key_replay weight ≈ no_replay weight (diff ≤ 8192)
-- wrong_key_replay bias diverges from no_replay (diff > 8192)
-- correct_replay differs from wrong_key_replay (diff > 8192)
-- random_event_replay differs from correct_replay (diff > 8192)
-- Hardware weight/bias within ±8192 of host reference per control
+- All 4 controls run successfully.
+- Hardware weight/bias match repaired native-continuous reference within +/-8192.
+- Correct replay weight differs from no replay by >8192.
+- Wrong-key replay weight approximates no-replay weight (diff <=8192).
+- Wrong-key replay differs from correct replay.
+- Random-event replay differs from correct replay.
+
 
 After ingest, update:
 - `experiments/evidence_registry.py` (add tier4_29e spec)
@@ -2309,6 +2352,6 @@ After ingest, update:
 - `STUDY_EVIDENCE_INDEX.md` (regenerate)
 - `docs/PAPER_RESULTS_TABLE.md` (regenerate)
 - `docs/RESEARCH_GRADE_AUDIT.md` (count 42)
-- `CONTROLLED_TEST_PLAN.md` (mark 4.29e HARDWARE PASS)
+- `CONTROLLED_TEST_PLAN.md` (mark 4.29e HARDWARE PASS only after repaired `cra_429p` ingest passes)
 - `docs/MASTER_EXECUTION_PLAN.md` (step 24 complete)
 - `codebasecontract.md` (Section 0 update)

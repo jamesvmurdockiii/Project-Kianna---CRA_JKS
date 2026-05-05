@@ -170,62 +170,63 @@ Tier 4.29d — COMPLETE. Native self-evaluation bridge.
     native mechanism regression if 4.29e passes.
 
 Tier 4.29e — IN PROGRESS. Native replay/consolidation bridge.
-  Status: DESIGN COMPLETE, LOCAL PASS, HARDWARE PENDING.
+  Status: HARDWARE DIAGNOSTIC FAILED on `cra_429o`; LOCAL REPAIR PASS; `cra_429p` prepared.
   Previous: 4.29d passed compact regression; 4.29e authorized per Phase C map.
   Question: Can the host schedule replay events through native state primitives
     (context/route/memory slots, learning core) on real SpiNNaker hardware?
-  Hypothesis: Yes. Host constructs a schedule with original + replay events;
-    native runtime processes them through the same pipeline.
-  Null hypothesis: Replay events corrupt the pipeline, or outcomes are not
-    differentiable across correct-key / wrong-key / random-event conditions.
   Mechanism: Host-scheduled replay only. No C runtime changes required.
     Reuses cra_429j binaries. Schedule entries specify context/route/memory keys
     per event; replay events repeat earlier events with same or different keys.
   Controls:
     - no_replay: 16 base events only; baseline learning.
-    - correct_replay: 16 base + 8 replay with correct keys; consolidation.
-    - wrong_key_replay: 16 base + 8 replay with wrong context keys; feature=0
-      on replay events, so weight approximates no-replay baseline (delta_w=0),
-      but bias diverges (delta_b = lr * error, independent of feature).
-    - random_event_replay: 16 base + 8 random conflicting events; should diverge
-      from correct-key replay.
-  Local reference: 16 base events, 8 replay events, delay=2, lr=0.25.
-    All 4 controls pass local criteria (seeds 42/43/44):
-      - no_replay: weight=1.1250, bias=0.1250
-      - correct_replay: weight=0.9375, bias=-0.0625
-      - wrong_key_replay: weight=1.1250 (≈ no_replay weight=1.1250, diff=0),
-        bias=1.1074 (diverges from no_replay bias=0.1250 because delta_b≠0)
-      - random_event_replay: weight=1.4688, bias=-0.0312 (differs from correct)
-  Hardware evidence: PENDING. Package cra_429o prepared and submitted via EBRAINS folder 429o.
-    Reuses cra_429j binaries (no C runtime changes for 4.29e).
-    Failure chain:
-    - cra_429k FAILED: runner file missing from package.
-      Fix: copy runner into experiments/; regenerate as cra_429l.
-    - cra_429l FAILED: `base.probe_board_hostname()` does not exist.
-      Fix: rewrite mode_run_hardware to match 4.29d pattern with
-      `base.acquire_hardware_target()`; regenerate as cra_429m.
-    - cra_429m FAILED: `fp_from_float()` values passed to `write_schedule_entry`,
-      which internally calls `float_to_fp()` — double conversion overflow.
-      For target=2.0: fp_from_float(2.0)=65536, float_to_fp(65536)=2,147,483,648
-      exceeds signed 32-bit max by 1.
-      Fix: pass raw floats to write_schedule_entry; regenerate as cra_429n.
-    - cra_429n FAILED: `fp_from_float()` values passed to `write_context`,
-      `write_route_slot`, and `write_memory_slot` — same double-conversion class
-      as cra_429m, but missed in the state-write path. State cores store
-      value=confidence=1073741824 (≈32768.0 in s16.15). Learning core lookup
-      replies return these huge values. `FP_MUL` overflows int32_t and wraps to 0,
-      so `feature=0` and `composite_confidence=0`. `effective_lr=0` blocks all
-      weight/bias updates. Hardware returns weight=0 bias=0 for all controls
-      despite decisions=16/24 and pending_matured=16/24.
-      Fix: pass raw floats to write_context/write_route_slot/write_memory_slot;
-      regenerate as cra_429o.
+    - correct_replay: 16 base + 8 balanced replay events with correct keys;
+      must produce a native readout-weight change versus no_replay.
+    - wrong_key_replay: 16 base + 8 balanced replay events with wrong context
+      keys; feature=0 on replay events, so replay does not consolidate weight;
+      bias may move because native bias updates are feature-independent.
+    - random_event_replay: 16 base + 8 random conflicting events; must stay
+      distinct from correct-key replay.
+  `cra_429o` hardware return: REAL HARDWARE EXECUTED but FAIL / NONCANONICAL.
+    Artifact: controlled_test_output/tier4_29e_20260505_cra_429o_hardware_fail/
+    Runner revision: tier4_29e_native_replay_consolidation_20260505_0002
+    Seeds 42/43/44 all returned 32/34 criteria.
+    Failed criteria on all seeds:
+      - wrong_key_replay_hardware_bias_within_tolerance: hw=0 ref=36288 diff=36288
+      - random_event_replay_hardware_weight_within_tolerance: hw=57344 ref=48128 diff=9216
+    Hardware health was good: target acquisition passed, four core loads passed,
+      all controls completed, pending matured, lookup replies matched requests,
+      stale replies/timeouts = 0.
+    Classification: reference/schedule-gate failure, not promoted hardware evidence.
+  Root-cause repair in `cra_429p` / runner revision
+    `tier4_29e_native_replay_consolidation_20260505_0003`:
+    - `_build_schedule()` now preserves per-event `context_key`, so wrong-key
+      replay is a real sham instead of accidentally using the control key.
+    - Host reference now mirrors native continuous-runtime ordering: lookup reply
+      timing, pending maturation, oldest-due maturation, and surprise threshold.
+    - Correct replay events are balanced +/- target=1.5 pairs, so correct replay
+      produces a real weight effect under native semantics and the gate no
+      longer accepts a no-op replay path.
+    - Wrong-key bias criterion changed from exact reference match/divergence to
+      bounded-near-no-replay, because native bias updates do not depend on
+      feature.
+  Local repair gate: PASS across seeds 42/43/44 at
+    controlled_test_output/tier4_29e_20260505_cra_429p_local_repair/
+    Expected native reference values:
+      - no_replay: weight=32768 (1.0000), bias=0 (0.0000)
+      - correct_replay: weight=47896 (1.4617), bias=-232 (-0.0071)
+      - wrong_key_replay: weight=32768 (1.0000), bias=-5243 (-0.1600)
+      - random_event_replay: weight=57344 (1.7500), bias=0 (0.0000)
+  Hardware evidence: PENDING for repaired package `cra_429p`.
+    Upload folder: ebrains_jobs/cra_429p
+    JobManager command:
+      cra_429p/experiments/tier4_29e_native_replay_consolidation_bridge.py --mode run-hardware --seeds 42,43,44
   Runner: experiments/tier4_29e_native_replay_consolidation_bridge.py
   Claim boundary: Native host-scheduled replay hardware evidence only;
     not native on-chip replay buffers, not biological sleep, not speedup,
     not multi-chip, not performance improvement claim.
-  Next: wait for returned cra_429o EBRAINS files. Verify runner revision/timestamps,
-    ingest only true cra_429o results, then promote to 4.29f compact native
-    mechanism regression if all seeds pass; otherwise repair with a fresh package.
+  Next: upload/run `cra_429p`; ingest only runner revision 20260505_0003
+    results. If all seeds pass, promote to 4.29f compact native mechanism
+    regression; otherwise classify and repair with a fresh package name.
 
 Current status summary:
 
@@ -357,20 +358,23 @@ Local build capability (established 2026-05-02):
 
 Immediate next steps:
 
-1. Wait for returned Tier 4.29e `cra_429o` EBRAINS files.
-2. Verify returned file timestamps and runner revision before ingesting:
-   `tier4_29e_native_replay_consolidation_20260505_0002`.
-3. Reject stale pre-`cra_429o` 4.29e results from runner revision
-   `20260504_0001` or prepared-only artifacts.
-4. If 4.29e passes all predeclared criteria, ingest under
+1. Upload/run repaired Tier 4.29e package `ebrains_jobs/cra_429p`.
+2. Use JobManager command:
+   `cra_429p/experiments/tier4_29e_native_replay_consolidation_bridge.py --mode run-hardware --seeds 42,43,44`.
+3. Verify returned file timestamps and runner revision before ingesting:
+   `tier4_29e_native_replay_consolidation_20260505_0003`.
+4. Reject stale `cra_429o` / runner revision `20260505_0002` results for
+   promotion; keep them only as preserved noncanonical diagnostic evidence.
+5. If `cra_429p` passes all predeclared criteria, ingest under
    `controlled_test_output/`, update docs/registry status, and move to Tier
    4.29f compact native mechanism regression.
-5. If 4.29e fails, classify whether it is packaging, fixed-point/state-write,
+6. If `cra_429p` fails, classify whether it is packaging, schedule/reference,
    protocol/readback, hardware, or mechanism behavior; document the failure,
    repair locally, bump to a fresh EBRAINS package name, and do not promote.
-6. Keep public repo hygiene green before the next upload or commit: no
+7. Keep public repo hygiene green before the next upload or commit: no
    credentialed remotes, no `ebrains_jobs/` symlinks, no transient root output
    dirs, no generated host binaries, and `make validate` passing.
+
 
 ## 1. North Star
 

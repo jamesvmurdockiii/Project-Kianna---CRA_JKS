@@ -108,7 +108,7 @@ They remain part of the peer-review audit trail:
 7.5 curriculum / environment generator
 7.6 long-horizon planning / subgoal control
 4.19 hardware lifecycle feasibility
-4.29e native replay/consolidation bridge = active EBRAINS hardware result pending
+4.29e native replay/consolidation bridge = cra_429o noncanonical hardware diagnostic fail; cra_429p local repair pass / hardware rerun pending
 4.29f compact native mechanism regression = run only if 4.29e passes
 4.30+ native lifecycle/ecology migration = roadmap; not yet canonical evidence
 ```
@@ -6792,7 +6792,7 @@ Hardware evidence (cra_429h):
   Confidence parity confirms prediction-before-reward isolation.
   Ingest: controlled_test_output/tier4_29c_20260504_pass_ingested/
 
-Current baseline: `CRA_NATIVE_TASK_BASELINE_v0.3`
+Current native task baseline: `CRA_NATIVE_TASK_BASELINE_v0.2` (cumulative native mechanism bridge is not frozen until the post-4.29 compact regression).
 
 Question: Can the native `learning_core` runtime compute a prediction target from
 context before the outcome arrives, keeping it separate from the reward target?
@@ -6922,7 +6922,7 @@ Hardware evidence (cra_429j):
   Half-context confidence: weight=28093, bias=3517 (diff=61 from ref, within ±8192)
   Ingest: controlled_test_output/tier4_29d_20260504_pass_ingested/
 
-Current baseline: `CRA_NATIVE_TASK_BASELINE_v0.4`
+Current native task baseline: `CRA_NATIVE_TASK_BASELINE_v0.2` (cumulative native mechanism bridge is not frozen until the post-4.29 compact regression).
 
 Question: Can the native `learning_core` runtime gate learning by composite
 confidence (context × route × memory) on real SpiNNaker hardware?
@@ -7051,15 +7051,26 @@ passes compact regression. If 4.29d fails, park self-evaluation and document blo
 
 ### Tier 4.29e - Native Replay/Consolidation Bridge
 
-Status: **DESIGN COMPLETE, LOCAL PASS, HARDWARE PENDING** - Local reference passes
-all four controls. Package `cra_429o` prepared and submitted (reuses `cra_429j`
-binaries; no C runtime changes required). Earlier attempts failed and are
-noncanonical: `cra_429k` missing runner, `cra_429l` bad board-probe helper,
-`cra_429m` schedule-entry fixed-point double conversion, and `cra_429n`
-state-write fixed-point double conversion. `cra_429o` fixes both conversion
-classes by passing raw floats to host write helpers.
+Status: **IN PROGRESS - `cra_429o` HARDWARE DIAGNOSTIC FAIL; `cra_429p` LOCAL REPAIR PASS / PACKAGE PREPARED**.
 
-Current baseline: `CRA_NATIVE_TASK_BASELINE_v0.4`
+`cra_429o` returned real SpiNNaker hardware execution across seeds 42/43/44,
+but failed two tolerance criteria per seed. The failure is preserved as
+noncanonical diagnostic evidence at:
+
+```text
+controlled_test_output/tier4_29e_20260505_cra_429o_hardware_fail/
+```
+
+Hardware health in `cra_429o` was good: target acquisition passed, context/route/
+memory/learning core loads passed, all controls completed, pending horizons
+matured, lookup replies matched requests, stale replies/timeouts were zero. The
+failed criteria were reference/schedule-gate failures, not promoted evidence.
+
+Current repaired package: `cra_429p`, runner revision
+`tier4_29e_native_replay_consolidation_20260505_0003`. It reuses `cra_429j`
+binaries; no C runtime changes are made for 4.29e.
+
+Current native task baseline: `CRA_NATIVE_TASK_BASELINE_v0.2` (cumulative native mechanism bridge is not frozen until the post-4.29 compact regression).
 
 Question: Can the host schedule replay events through native state primitives
 (context/route/memory slots, learning core) on real SpiNNaker hardware?
@@ -7067,10 +7078,11 @@ Question: Can the host schedule replay events through native state primitives
 Hypothesis: The host can construct a schedule containing both original events
 and replay events; the native four-core runtime processes them through the same
 pipeline without native replay buffers, producing differentiable outcomes for
-correct-key, wrong-key, and random-event replay conditions.
+correct-key, wrong-key, no-replay, and random-event replay conditions.
 
 Null hypothesis: Replay events corrupt the native state pipeline, or the runtime
-cannot distinguish correct-key replay from wrong-key/no-replay conditions.
+cannot distinguish correct-key replay from wrong-key/no-replay/random-event
+conditions.
 
 Mechanism under test: **Host-scheduled replay/consolidation** - promoted from
 v2.1 Tier 5.11d. The host writes context/route/memory slots and constructs a
@@ -7079,10 +7091,13 @@ used; the existing schedule primitive handles all event presentations.
 
 Claim boundary:
 - Host-scheduled replay works through native state primitives on real SpiNNaker.
-- Correct-key replay produces a different outcome than wrong-key replay.
+- Correct-key replay produces a different outcome than no-replay and wrong-key replay.
 - Random-event replay produces a different outcome than correct-key replay.
-- Wrong-key replay approximates the no-replay baseline (replay events contribute
-  no weight update because feature=0 when context lookup fails).
+- Wrong-key replay approximates the no-replay **weight** baseline because failed
+  context lookup makes feature=0 and therefore delta_w=0 on replay events.
+- Wrong-key replay bias may drift because native bias updates are
+  feature-independent; the valid gate is bounded-near-no-replay, not exact
+  no-replay equality.
 - This is host-scheduled replay only; not native on-chip replay buffers, not
   biological sleep, not multi-chip scaling.
 
@@ -7092,85 +7107,85 @@ Nonclaims:
 - Not multi-chip.
 - Not speedup.
 - Not autonomy (host constructs the schedule and writes slots).
-- Not performance improvement claim (replay may refine but not necessarily
-  increase weight on a converged model).
+- Not performance improvement claim.
 
 Tasks:
-- Fixed-pattern signed stream with 16 base events
-- 8 replay events interleaved after base events
+- Fixed-pattern signed stream with 16 base events.
+- 8 balanced correct replay events using target +/-1.5.
 - Four replay conditions:
-  - no_replay: 16 base events only
-  - correct_replay: 16 base + 8 replay with correct context keys
-  - wrong_key_replay: 16 base + 8 replay with wrong context keys (feature=0,
-    so delta_w=0; but delta_b = lr * error still applies, so bias diverges)
-  - random_event_replay: 16 base + 8 random conflicting events
+  - no_replay: 16 base events only.
+  - correct_replay: 16 base + 8 balanced replay events with correct context keys.
+  - wrong_key_replay: 16 base + 8 balanced replay events with wrong context keys.
+  - random_event_replay: 16 base + 8 random conflicting events.
 
-Seeds: 42 (local reference), 42/43/44 (hardware repeatability)
+Seeds: 42/43/44 local repaired reference; 42/43/44 hardware repeatability.
 
-Run lengths: 16-24 events (well within ≤512 envelope)
+Run lengths: 16-24 events (well within <=512 envelope).
 
-Backends: Local custom C reference first; SpiNNaker hardware second.
+Backends: Local native-continuous host reference first; SpiNNaker hardware second.
 
-Hardware mode: Chunked scheduling (within 512-event envelope). Reuses cra_429j
-binaries; no C runtime changes for 4.29e.
+Hardware mode: Chunked host scheduling through native four-core state primitives.
+Reuses `cra_429j` binaries; no C runtime changes for 4.29e.
 
 Controls:
 1. **No-replay baseline**: 16 base events only; establishes weight/bias baseline.
-2. **Correct-key replay**: Replay events use same context/route keys as originals;
-   should produce differentiable outcome from wrong-key and no-replay.
+2. **Correct-key replay**: Replay events use correct context/route/memory keys;
+   should produce a real readout-weight change versus no_replay and differ from wrong-key.
 3. **Wrong-key replay**: Replay events use wrong context keys; context lookup
-   returns default 0, so feature=0 and no weight update occurs on replay events.
-   Final weight should approximate no-replay baseline.
-4. **Random-event replay**: Replay events have conflicting cues/targets
-   (e.g., cue=1.0, target=-1.0); should diverge from correct-key replay.
+   returns default 0, so feature=0 and replay events do not consolidate weight.
+4. **Random-event replay**: Replay events have conflicting cues/targets; should
+   diverge from correct-key replay.
 
 Ablations:
-- No ablations needed; the four controls themselves form the sham separation.
+- No additional ablations needed; the four controls themselves form the sham separation.
 
-External baselines: None. This is mechanism evidence, not comparative.
+External baselines: None. This is mechanism-transfer evidence, not comparative.
 
 Metrics:
-- Weight/bias raw deltas per control condition
-- Cross-control weight/bias differences
-- Event maturation counts
-- Schedule upload success
+- Weight/bias raw deltas per control condition.
+- Cross-control weight/bias differences.
+- Event maturation counts.
+- Schedule upload success.
+- Hardware-reference tolerance per control.
 
-Statistical summary:
-- Expected weight/bias documented from local reference for each condition
-- wrong_key_replay weight ≈ no_replay weight (diff ≤ 8192) because feature=0
-  blocks delta_w; but bias diverges because delta_b = lr * error
-- correct_replay differs from wrong_key_replay (diff > 8192)
-- random_event_replay differs from correct_replay (diff > 8192)
+Repaired local reference summary (`cra_429p`, seeds 42/43/44):
+
+```text
+no_replay:            weight=32768 (1.0000), bias=0 (0.0000)
+correct_replay:       weight=47896 (1.4617), bias=-232 (-0.0071)
+wrong_key_replay:     weight=32768 (1.0000), bias=-5243 (-0.1600)
+random_event_replay:  weight=57344 (1.7500), bias=0 (0.0000)
+```
 
 Pass criteria:
-- Local reference passes with all cross-control differences within tolerance
-- Hardware target acquisition succeeds
-- All context/route/memory slot writes succeed
-- All schedule uploads succeed (≤512 events)
-- Hardware weight/bias matches reference within ±8192 tolerance per control
-- Wrong-key replay weight approximates no-replay baseline (proves delta_w=0)
-- Wrong-key replay bias differs from no-replay baseline (proves delta_b still fires)
-- Correct-key replay differs from wrong-key replay
-- Random-event replay differs from correct-key replay
-- All events matured per control
+- Local repaired reference passes all controls across seeds 42/43/44.
+- Hardware target acquisition succeeds.
+- All context/route/memory slot writes succeed.
+- All schedule uploads succeed (<=512 events).
+- Hardware weight/bias matches native-continuous reference within +/-8192 tolerance per control.
+- Correct-key replay weight differs from no-replay by >8192.
+- Wrong-key replay weight approximates no-replay weight (<=8192).
+- Wrong-key replay differs from correct-key replay.
+- Random-event replay differs from correct-key replay.
+- All events mature per control.
 
 Fail criteria:
-- Wrong-key replay weight differs from no-replay by >8192 (indicates feature≠0
-  on wrong-key events, or context default value is nonzero)
-- Wrong-key replay bias approximates no-replay (indicates delta_b was blocked,
-  which would be a C runtime deviation from standard perceptron update)
-- Correct-key replay does not differ from wrong-key replay
-- Random-event replay does not differ from correct-key replay
-- Schedule upload fails or exceeds 512-event envelope
-- Any unhandled hardware exception
+- Correct-key replay does not differ from no-replay.
+- Wrong-key replay weight differs from no-replay by >8192.
+- Wrong-key replay reproduces correct-key replay.
+- Random-event replay does not differ from correct-key replay.
+- Hardware deviates from the repaired native-continuous reference by >8192.
+- Schedule upload fails or exceeds the <=512-event envelope.
+- Any unhandled hardware exception.
 
 Leakage checks:
-- Verify replay events do not corrupt base event state
-- Verify wrong-key replay events do not affect unrelated slots
-- Verify schedule length is consistent across controls
+- Verify replay events do not corrupt base event state.
+- Verify wrong-key replay events do not affect weight through the correct context.
+- Verify per-event context keys are preserved in the schedule.
+- Verify schedule length is consistent across controls.
 
 Expected artifacts:
-- `tier4_29e_local_results.json`
+- `tier4_29e_local_results_seed{42,43,44}.json`
 - `tier4_29e_hardware_results_seed{42,43,44}.json`
 - `tier4_29e_ingest_results.json`
 - `tier4_29e_combined_results.json`
@@ -7181,18 +7196,21 @@ Docs to update:
 - `docs/SPINNAKER_EBRAINS_RUNBOOK.md`
 - `CONTROLLED_TEST_PLAN.md`
 - `docs/MASTER_EXECUTION_PLAN.md` (step 24 status)
-- `experiments/evidence_registry.py` (after ingest)
+- `experiments/evidence_registry.py` (after promoted ingest)
 
 Promotion/freeze condition:
-- Promote to carried-forward native mechanism only if all controls pass and compact
-  native regression (4.29f) still passes afterward.
+- Promote to carried-forward native mechanism only if all hardware controls pass
+  and compact native regression (4.29f) still passes afterward.
 - Do not freeze a new baseline for a single mechanism bridge.
 
 Re-entry condition if parked:
 - If replay events corrupt state: verify schedule upload isolation in C runtime.
 - If wrong-key replay produces nonzero feature: verify context slot default-value
-  policy returns 0 for missing keys.
+  policy returns 0 for missing keys and per-event context keys are preserved.
+- If hardware-reference mismatch recurs: compare against native-continuous host
+  reference, not simplified delayed-credit reference.
 - If schedule exceeds envelope: reduce event count or split into chunks.
+
 
 Next step after 4.29e: Tier 4.29f (compact native mechanism regression) to verify
 that 4.29e did not break any previously passing native mechanism (4.29a–4.29d).

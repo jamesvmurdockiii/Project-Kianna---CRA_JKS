@@ -20,9 +20,9 @@ Public repository hygiene rules live in
 
 ## Current Jobs
 
-### `cra_429o`
+### `cra_429p`
 
-Status: **SUBMITTED / HARDWARE PENDING** for Tier 4.29e native replay/consolidation bridge.
+Status: **PREPARED / HARDWARE RERUN PENDING** for Tier 4.29e native replay/consolidation bridge.
 
 Purpose: Verify that host-scheduled replay/consolidation events run through the
 native four-core state pipeline using context, route, memory, and learning cores.
@@ -32,30 +32,41 @@ biological sleep.
 Upload folder:
 
 ```text
-ebrains_jobs/cra_429o
+ebrains_jobs/cra_429p
 ```
 
 JobManager command:
 
 ```text
-cra_429o/experiments/tier4_29e_native_replay_consolidation_bridge.py --mode run-hardware --seeds 42,43,44
+cra_429p/experiments/tier4_29e_native_replay_consolidation_bridge.py --mode run-hardware --seeds 42,43,44
 ```
 
 Package metadata:
-- Runner revision: `tier4_29e_native_replay_consolidation_20260505_0002`
+- Runner revision: `tier4_29e_native_replay_consolidation_20260505_0003`
 - Based on: `cra_429j` binaries
 - C runtime changes: none for 4.29e
 - Controls: `no_replay`, `correct_replay`, `wrong_key_replay`, `random_event_replay`
 
-Known noncanonical failure chain before `cra_429o`:
+Why this package exists:
+- `cra_429o` returned real SpiNNaker hardware execution but failed two
+  replay-control tolerance criteria on all three seeds.
+- The failure is preserved at
+  `controlled_test_output/tier4_29e_20260505_cra_429o_hardware_fail/`.
+- `cra_429p` repairs the local schedule/reference gate: per-event wrong context
+  keys are preserved, the host reference mirrors native continuous-runtime order,
+  and correct replay now has a real weight effect versus no replay.
+
+Known noncanonical failure chain before `cra_429p`:
 - `cra_429k`: missing 4.29e runner from package.
 - `cra_429l`: runner called nonexistent `base.probe_board_hostname()`.
 - `cra_429m`: schedule-entry fixed-point double conversion.
 - `cra_429n`: context/route/memory state-write fixed-point double conversion.
+- `cra_429o`: real hardware diagnostic fail due to schedule/reference gate, not promoted.
 
-Next action: wait for returned `cra_429o` files. Verify timestamps and runner
-revision before ingesting; older `20260504_0001` results are stale pre-`cra_429o`
-artifacts and must not be promoted.
+Next action: upload `ebrains_jobs/cra_429p`, run the command above, download all
+returned files, and ingest only results with runner revision
+`tier4_29e_native_replay_consolidation_20260505_0003`.
+
 
 ### `cra_429d`
 

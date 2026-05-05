@@ -6207,16 +6207,16 @@ has advanced substantially:
 - Tier 4.29b passed native routing/composition with wrong-route and overwrite controls.
 - Tier 4.29c passed native predictive binding across three seeds.
 - Tier 4.29d passed native self-evaluation / confidence-gated learning across three seeds.
-- Tier 4.29e is the current active bridge: host-scheduled replay/consolidation through native state primitives. Local reference passes; `cra_429o` is submitted and hardware results are pending.
+- Tier 4.29e is the current active bridge: `cra_429o` returned real hardware but failed two replay-control tolerance checks on all three seeds; the failure is preserved as noncanonical diagnostic evidence. `cra_429p` repairs the schedule/reference gate and has passed local repair across seeds 42/43/44; hardware rerun is pending.
 
 Immediate roadmap boundary:
 
 ```text
-Do not freeze a new native mechanism baseline from prepared-only 4.29e evidence.
-Do not promote stale 4.29e downloads from runner revision 20260504_0001.
-Wait for true cra_429o results with runner revision 20260505_0002.
-If 4.29e passes, run 4.29f compact native mechanism regression across 4.29a-4.29e.
-If 4.29e fails, classify the exact failure and regenerate with a fresh package name.
+Do not freeze a new native mechanism baseline from local-only 4.29e repair evidence.
+Do not promote `cra_429o` / runner revision 20260505_0002; it is a preserved noncanonical hardware diagnostic.
+Run repaired package `cra_429p` and ingest only runner revision 20260505_0003.
+If `cra_429p` passes, run 4.29f compact native mechanism regression across 4.29a-4.29e.
+If `cra_429p` fails, classify the exact failure and regenerate with a fresh package name.
 ```
 
 Paper implication:

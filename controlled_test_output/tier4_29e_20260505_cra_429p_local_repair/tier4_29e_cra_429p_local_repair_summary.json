@@ -1,0 +1,129 @@
+{
+  "tier": "Tier 4.29e - Native Replay/Consolidation Bridge",
+  "classification": "local_repair_gate",
+  "package": "cra_429p",
+  "runner_revision": "tier4_29e_native_replay_consolidation_20260505_0003",
+  "status": "pass",
+  "claim_boundary": "Local repaired native-continuous reference and schedule gate only; not hardware evidence. Repairs the cra_429o failure class before a fresh EBRAINS rerun.",
+  "seeds": [
+    {
+      "seed": 42,
+      "status": "pass",
+      "controls": [
+        {
+          "control": "no_replay",
+          "status": "pass",
+          "final_weight": 32768,
+          "final_bias": 0,
+          "final_weight_float": 1.0,
+          "final_bias_float": 0.0
+        },
+        {
+          "control": "correct_replay",
+          "status": "pass",
+          "final_weight": 47896,
+          "final_bias": -232,
+          "final_weight_float": 1.461669921875,
+          "final_bias_float": -0.007080078125
+        },
+        {
+          "control": "wrong_key_replay",
+          "status": "pass",
+          "final_weight": 32768,
+          "final_bias": -5243,
+          "final_weight_float": 1.0,
+          "final_bias_float": -0.160003662109375
+        },
+        {
+          "control": "random_event_replay",
+          "status": "pass",
+          "final_weight": 57344,
+          "final_bias": 0,
+          "final_weight_float": 1.75,
+          "final_bias_float": 0.0
+        }
+      ],
+      "failed_criteria": []
+    },
+    {
+      "seed": 43,
+      "status": "pass",
+      "controls": [
+        {
+          "control": "no_replay",
+          "status": "pass",
+          "final_weight": 32768,
+          "final_bias": 0,
+          "final_weight_float": 1.0,
+          "final_bias_float": 0.0
+        },
+        {
+          "control": "correct_replay",
+          "status": "pass",
+          "final_weight": 47896,
+          "final_bias": -232,
+          "final_weight_float": 1.461669921875,
+          "final_bias_float": -0.007080078125
+        },
+        {
+          "control": "wrong_key_replay",
+          "status": "pass",
+          "final_weight": 32768,
+          "final_bias": -5243,
+          "final_weight_float": 1.0,
+          "final_bias_float": -0.160003662109375
+        },
+        {
+          "control": "random_event_replay",
+          "status": "pass",
+          "final_weight": 57344,
+          "final_bias": 0,
+          "final_weight_float": 1.75,
+          "final_bias_float": 0.0
+        }
+      ],
+      "failed_criteria": []
+    },
+    {
+      "seed": 44,
+      "status": "pass",
+      "controls": [
+        {
+          "control": "no_replay",
+          "status": "pass",
+          "final_weight": 32768,
+          "final_bias": 0,
+          "final_weight_float": 1.0,
+          "final_bias_float": 0.0
+        },
+        {
+          "control": "correct_replay",
+          "status": "pass",
+          "final_weight": 47896,
+          "final_bias": -232,
+          "final_weight_float": 1.461669921875,
+          "final_bias_float": -0.007080078125
+        },
+        {
+          "control": "wrong_key_replay",
+          "status": "pass",
+          "final_weight": 32768,
+          "final_bias": -5243,
+          "final_weight_float": 1.0,
+          "final_bias_float": -0.160003662109375
+        },
+        {
+          "control": "random_event_replay",
+          "status": "pass",
+          "final_weight": 57344,
+          "final_bias": 0,
+          "final_weight_float": 1.75,
+          "final_bias_float": 0.0
+        }
+      ],
+      "failed_criteria": []
+    }
+  ],
+  "expected_hardware_package": "ebrains_jobs/cra_429p",
+  "next_action": "Upload EBRAINS folder cra_429p and run the 3-seed hardware command; ingest only runner revision 20260505_0003 results."
+}

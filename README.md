@@ -21,7 +21,7 @@ controlled ablations, baseline comparisons, and explicit claim boundaries.
 | Software baseline | `v2.1`, frozen after bounded host-side self-evaluation / reliability-monitoring evidence. |
 | Native hardware baseline | `CRA_NATIVE_TASK_BASELINE_v0.2`, frozen after Tiers 4.22i-4.28e. |
 | Latest ingested hardware pass | Tier 4.29d, native self-evaluation / confidence-gated learning, `30/30` criteria per seed across seeds `42`, `43`, and `44`. |
-| Active hardware run | Tier 4.29e `cra_429o`, native replay/consolidation bridge submitted; hardware result pending. |
+| Active hardware run | Tier 4.29e `cra_429p`, repaired native replay/consolidation bridge prepared after noncanonical `cra_429o` hardware diagnostic failure. |
 | Canonical registry | 41 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
 | Validation suite | 147 pytest tests plus registry, paper-table, and repository-audit generation. |
 

@@ -1,0 +1,26 @@
+{
+  "tier": "Tier 4.29e \u2014 Native Replay/Consolidation Bridge",
+  "runner_revision": "tier4_29e_native_replay_consolidation_20260505_0003",
+  "upload_package": "cra_429p",
+  "based_on": "cra_429j",
+  "change_summary": "No C runtime changes. Repairs 4.29e schedule-key/reference gate after cra_429o failed two hardware tolerance criteria.",
+  "profiles": [
+    "context_core",
+    "route_core",
+    "memory_core",
+    "learning_core"
+  ],
+  "app_ids": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "cores": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "prepared_at": "2026-05-05T12:44:36.998155+00:00"
+}

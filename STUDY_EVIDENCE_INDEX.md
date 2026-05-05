@@ -10,7 +10,7 @@ Research narrative companions:
 - `docs/WHITEPAPER.md`
 - `docs/CODEBASE_MAP.md`
 
-- Registry generated: `2026-05-05T12:14:49.685494+00:00`
+- Registry generated: `2026-05-05T12:51:24.268135+00:00`
 - Registry status: **PASS**
 - Core validation suite: `12` tests
 - Expanded evidence suite: `41` entries (`10b` hard scaling, `4.13` hardware capsule, `4.14` runtime characterization, `4.15` hardware repeatability, `5.1` external baselines, `5.2` learning curves, `5.3` failure analysis, `5.4` delayed-credit confirmation, `4.16a` repaired delayed-cue hardware repeat, `4.16b` repaired hard-switch hardware repeat, `4.18a` chunked runtime baseline, `5.5` expanded baselines, `5.12a` predictive task-pressure, `5.12c` predictive-context sham repair, `5.12d` predictive-context compact regression, `6.1` software lifecycle/self-scaling, `6.3` lifecycle sham controls, and `6.4` circuit motif causality added; `5.6` and `5.7` are additional tuned-baseline reviewer-defense/guardrail bundles)
@@ -214,4 +214,4 @@ Research narrative companions:
 
 - Missing expected artifacts: `0`
 - Failed canonical criteria: `0`
-- Noncanonical output folders preserved: `289`
+- Noncanonical output folders preserved: `291`
