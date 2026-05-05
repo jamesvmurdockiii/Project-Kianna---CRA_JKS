@@ -18,6 +18,19 @@
 extern uint32_t g_timestep;
 extern int32_t g_dopamine_level;
 
+// Direct host lifecycle commands are allowed only for the legacy monolithic /
+// single-core lifecycle smoke surface and the dedicated lifecycle_core profile.
+// Context, route, memory, learning, and state cores must not mutate lifecycle
+// slots directly in the multi-core split.
+#if defined(CRA_RUNTIME_PROFILE_LIFECYCLE_CORE) || \
+    (!defined(CRA_RUNTIME_PROFILE_STATE_CORE) && \
+     !defined(CRA_RUNTIME_PROFILE_LEARNING_CORE) && \
+     !defined(CRA_RUNTIME_PROFILE_CONTEXT_CORE) && \
+     !defined(CRA_RUNTIME_PROFILE_ROUTE_CORE) && \
+     !defined(CRA_RUNTIME_PROFILE_MEMORY_CORE))
+#define CRA_RUNTIME_PROFILE_LIFECYCLE_HOST_SURFACE 1
+#endif
+
 // ------------------------------------------------------------------
 // Helpers
 // ------------------------------------------------------------------
@@ -721,11 +734,13 @@ void sdp_rx_callback(uint mailbox, uint port) {
 // Tier 4.30 lifecycle/static-pool surface. This is metadata/mask state,
 // not legacy dynamic neuron allocation.
 // ------------------------------------------------------------------
+#ifdef CRA_RUNTIME_PROFILE_LIFECYCLE_HOST_SURFACE
         case CMD_LIFECYCLE_INIT:           _handle_lifecycle_init(msg);           break;
         case CMD_LIFECYCLE_EVENT:          _handle_lifecycle_event(msg);          break;
         case CMD_LIFECYCLE_TROPHIC_UPDATE: _handle_lifecycle_trophic_update(msg); break;
         case CMD_LIFECYCLE_READ_STATE:     _handle_lifecycle_read_state(msg);     break;
         case CMD_LIFECYCLE_SHAM_MODE:      _handle_lifecycle_sham_mode(msg);      break;
+#endif
 
 // ------------------------------------------------------------------
 // 4.25B two-core split opcodes (state_core only)
@@ -785,7 +800,7 @@ void sdp_rx_callback(uint mailbox, uint port) {
 // ------------------------------------------------------------------
 // decoupled_memory_route and state_core: all state commands
 // ------------------------------------------------------------------
-#if defined(CRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE) && !defined(CRA_RUNTIME_PROFILE_CONTEXT_CORE) && !defined(CRA_RUNTIME_PROFILE_ROUTE_CORE) && !defined(CRA_RUNTIME_PROFILE_MEMORY_CORE) && !defined(CRA_RUNTIME_PROFILE_LEARNING_CORE)
+#if defined(CRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE) && !defined(CRA_RUNTIME_PROFILE_CONTEXT_CORE) && !defined(CRA_RUNTIME_PROFILE_ROUTE_CORE) && !defined(CRA_RUNTIME_PROFILE_MEMORY_CORE) && !defined(CRA_RUNTIME_PROFILE_LEARNING_CORE) && !defined(CRA_RUNTIME_PROFILE_LIFECYCLE_CORE)
         case CMD_MATURE_PENDING:   _handle_mature_pending(msg);   break;
         case CMD_WRITE_CONTEXT:    _handle_write_context(msg);    break;
         case CMD_READ_CONTEXT:     _handle_read_context(msg);     break;

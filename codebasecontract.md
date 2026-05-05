@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-05T16:12:37-04:00.
+Last updated: 2026-05-05T17:52:33-04:00.
 
 Current repo root:
 
@@ -77,7 +77,16 @@ FROZEN: CRA_NATIVE_MECHANISM_BRIDGE_v0.3
         single-owned by `lifecycle_core`, inter-core lifecycle request/trophic
         update/active-mask-sync messages targeting MCPL/multicast, and exact
         canonical/boundary parity.
-  Next: Tier 4.30d multi-core lifecycle runtime source audit/local C host test.
+  Current: Tier 4.30d multi-core lifecycle runtime source audit/local C host
+        test PASS, 14/14.
+        Output:
+        `controlled_test_output/tier4_30d_20260505_lifecycle_runtime_source_audit/`.
+        The runtime source/local test layer adds a dedicated `lifecycle_core`
+        profile, lifecycle inter-core request/trophic/active-mask-sync stubs,
+        active-mask/count/lineage sync payload coverage, lifecycle split
+        counters, non-lifecycle ownership guards, and local C host coverage
+        against the Tier 4.30c contract.
+  Next: Tier 4.30e multi-core lifecycle hardware smoke package/run.
         Lifecycle hardware layers initially on CRA_NATIVE_MECHANISM_BRIDGE_v0.3,
         with v2.2 as a software reference boundary only. Temporal-state hardware
         migration is not automatic from v2.2; it requires a separately defined
@@ -391,9 +400,24 @@ Tier 4.30c — COMPLETE. Multi-core lifecycle state split contract/local
     evidence, not task benefit, not speedup, not v2.2 temporal migration, and
     not a lifecycle baseline freeze.
 
-Tier 4.30d — CURRENT NEXT. Multi-core lifecycle runtime source audit/local C
-  host test. Implement the lifecycle-core profile and inter-core
-  message/readback stubs against Tier 4.30c before any EBRAINS package.
+Tier 4.30d — COMPLETE. Multi-core lifecycle runtime source audit/local C
+  host test.
+  Status: PASS, 14/14 criteria.
+  Runner: `experiments/tier4_30d_lifecycle_runtime_source_audit.py`.
+  Output:
+    `controlled_test_output/tier4_30d_20260505_lifecycle_runtime_source_audit/`.
+  Result: dedicated `lifecycle_core` profile, lifecycle inter-core
+    event/trophic request stubs, active-mask/count/lineage sync send/receive
+    bookkeeping, duplicate/stale/missing-ack counters, non-lifecycle profile
+    ownership guards, compact `payload_len=68` preservation, and local C host
+    tests.
+  Boundary: local source/runtime host evidence only; not EBRAINS hardware
+    evidence, not task benefit, not speedup, not multi-chip scaling, not v2.2
+    temporal migration, and not a lifecycle baseline freeze.
+
+Tier 4.30e — CURRENT NEXT. Multi-core lifecycle hardware smoke package/run.
+  Package the 4.30d runtime source surface and prove real SpiNNaker
+  execution/readback before any lifecycle sham-control hardware subset.
 
 
 Current status summary:
@@ -534,10 +558,11 @@ Local build capability (established 2026-05-02):
 
 Immediate next steps:
 
-1. Implement Tier 4.30d multi-core lifecycle runtime source audit/local C host
-   test from the Tier 4.30c split contract. The tier must add the lifecycle-core
-   profile and local inter-core message/readback stubs before another EBRAINS
-   upload.
+1. Prepare Tier 4.30e multi-core lifecycle hardware smoke package/run from the
+   passed Tier 4.30d runtime source surface. The package must use a fresh
+   EBRAINS upload folder, preserve exact JobManager command syntax in the job
+   README, and prove real SpiNNaker execution/readback before any lifecycle
+   sham-control hardware subset.
 2. Do not migrate v2.2 temporal fading-memory state to hardware merely because
    v2.2 froze. Native temporal-state migration requires a separate readiness
    tier with fixed-point state equations and local parity.

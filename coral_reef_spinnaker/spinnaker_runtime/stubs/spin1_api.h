@@ -18,6 +18,13 @@ typedef void (*callback_t)(uint, uint);
 extern sdp_msg_t g_spin1_msg_stub;
 extern sdp_msg_t g_test_last_sdp_msg;
 extern uint8_t   g_test_last_sdp_msg_valid;
+extern uint32_t  g_test_last_mc_key;
+extern uint32_t  g_test_last_mc_payload;
+extern uint32_t  g_test_last_mc_with_payload;
+extern uint32_t  g_test_mc_packet_count;
+extern uint32_t  g_test_mc_keys[8];
+extern uint32_t  g_test_mc_payloads[8];
+extern uint32_t  g_test_mc_with_payloads[8];
 
 sdp_msg_t *spin1_msg_get(void);
 void spin1_msg_free(sdp_msg_t *msg);

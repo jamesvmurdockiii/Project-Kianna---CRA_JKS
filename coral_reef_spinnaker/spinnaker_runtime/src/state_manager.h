@@ -85,6 +85,17 @@ typedef struct cra_state_summary {
     uint32_t commands_received;
     uint32_t schedule_length;
     uint32_t readback_bytes_sent;
+    uint32_t lifecycle_event_requests_sent;
+    uint32_t lifecycle_trophic_requests_sent;
+    uint32_t lifecycle_event_acks_received;
+    uint32_t lifecycle_mask_syncs_sent;
+    uint32_t lifecycle_mask_syncs_received;
+    uint32_t lifecycle_last_seen_event_count;
+    uint32_t lifecycle_last_seen_active_mask_bits;
+    uint32_t lifecycle_last_seen_lineage_checksum;
+    uint32_t lifecycle_duplicate_events;
+    uint32_t lifecycle_stale_events;
+    uint32_t lifecycle_missing_acks;
 } cra_state_summary_t;
 
 typedef struct lifecycle_slot {
@@ -222,6 +233,33 @@ int cra_lifecycle_apply_trophic_update(
 int cra_lifecycle_set_sham_mode(uint32_t mode);
 void cra_lifecycle_get_summary(cra_lifecycle_summary_t *summary_out);
 int cra_lifecycle_get_slot(uint32_t slot_id, lifecycle_slot_t *slot_out);
+
+// ------------------------------------------------------------------
+// 4.30d multi-core lifecycle split stubs
+// ------------------------------------------------------------------
+void cra_lifecycle_send_event_request_stub(uint32_t event_index, uint8_t event_type, uint32_t target_slot);
+void cra_lifecycle_send_trophic_update_stub(uint32_t target_slot, int32_t trophic_delta_raw);
+int cra_lifecycle_handle_event_request(
+    uint32_t event_index,
+    uint8_t event_type,
+    uint32_t target_slot,
+    int32_t parent_slot,
+    int32_t child_slot,
+    int32_t trophic_delta_raw,
+    int32_t reward_raw
+);
+int cra_lifecycle_handle_trophic_request(
+    uint32_t event_index,
+    uint32_t target_slot,
+    int32_t trophic_delta_raw,
+    int32_t reward_raw
+);
+void cra_lifecycle_receive_active_mask_sync(
+    uint32_t event_count,
+    uint32_t active_mask_bits,
+    uint32_t lineage_checksum
+);
+void cra_lifecycle_record_missing_ack(void);
 
 // ------------------------------------------------------------------
 // 4.26 inter-core lookup protocol (transitional SDP; target is multicast/MCPL)

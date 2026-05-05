@@ -168,6 +168,12 @@
 
 #define MCPL_MSG_LOOKUP_REQUEST   1
 #define MCPL_MSG_LOOKUP_REPLY     2
+#define MCPL_MSG_LIFECYCLE_EVENT_REQUEST 3
+#define MCPL_MSG_LIFECYCLE_TROPHIC_UPDATE 4
+#define MCPL_MSG_LIFECYCLE_ACTIVE_MASK_SYNC 5
+
+#define MCPL_LIFECYCLE_SYNC_MASK    0
+#define MCPL_LIFECYCLE_SYNC_LINEAGE 1
 
 #define MAKE_MCPL_KEY(app, msg_type, lookup_type, seq_id) \
     (((app) << MCPL_KEY_APP_SHIFT) | \
@@ -193,6 +199,7 @@
 #define PROFILE_CONTEXT_CORE           4
 #define PROFILE_ROUTE_CORE             5
 #define PROFILE_MEMORY_CORE            6
+#define PROFILE_LIFECYCLE_CORE         7
 
 #define MAKE_STATE_FLAGS(profile_id, flags) (((flags) & 0x0F) << 4 | ((profile_id) & 0x0F))
 #define EXTRACT_PROFILE_ID(state_flags) ((state_flags) & 0x0F)

@@ -125,7 +125,8 @@ They remain part of the peer-review audit trail:
 4.30b lifecycle runtime source audit = passed; runtime static-pool lifecycle surface and host/schema parity tests complete
 4.30b-hw single-core lifecycle active-mask/lineage hardware smoke = hardware functional pass after ingest correction; raw remote fail was runner rev-0001 readback counter criterion defect
 4.30c native lifecycle/ecology migration = complete; multi-core lifecycle state split contract/local reference passed
-4.30d native lifecycle/ecology migration = current next; multi-core lifecycle runtime source audit/local C host test
+4.30d native lifecycle/ecology migration = complete; multi-core lifecycle runtime source audit/local C host test passed
+4.30e native lifecycle/ecology migration = current next; multi-core lifecycle hardware smoke package/run
 ```
 
 These planned tiers may move in order as evidence arrives, but completed pass,
@@ -8392,8 +8393,71 @@ a lifecycle baseline freeze.
 Next step:
 
 ```text
-Tier 4.30d multi-core lifecycle runtime source audit/local C host test. Implement
-only the source/local-test layer for the 4.30c split: lifecycle-core profile,
-message/readback stubs, active-mask sync bookkeeping, and source guards before
-any EBRAINS package.
+Tier 4.30d multi-core lifecycle runtime source audit/local C host test
+(completed). Implement only the source/local-test layer for the 4.30c split:
+lifecycle-core profile, message/readback stubs, active-mask/count/lineage sync
+bookkeeping, and source guards before any EBRAINS package.
+```
+
+### Tier 4.30d - Multi-Core Lifecycle Runtime Source Audit
+
+Status: COMPLETE - LOCAL SOURCE/RUNTIME HOST PASS.
+
+Question:
+
+```text
+Can the Tier 4.30c five-core lifecycle ownership contract be represented in the
+custom runtime source surface and local C host tests before a multi-core
+lifecycle EBRAINS package is prepared?
+```
+
+Result:
+
+```text
+Output: controlled_test_output/tier4_30d_20260505_lifecycle_runtime_source_audit/
+Runner: experiments/tier4_30d_lifecycle_runtime_source_audit.py
+Runner revision: tier4_30d_lifecycle_runtime_source_audit_20260505_0001
+Criteria: 14/14
+Mode: local-source-audit
+```
+
+Implemented source/runtime surface:
+
+```text
+PROFILE_LIFECYCLE_CORE = 7
+MCPL_MSG_LIFECYCLE_EVENT_REQUEST = 3
+MCPL_MSG_LIFECYCLE_TROPHIC_UPDATE = 4
+MCPL_MSG_LIFECYCLE_ACTIVE_MASK_SYNC = 5
+test-lifecycle-split local host test target
+lifecycle_core runtime profile build/test target
+non-lifecycle profile lifecycle-write NAK guards
+active-mask/count/lineage sync send/receive bookkeeping
+duplicate/stale/missing-ack lifecycle counters
+compact lifecycle summary payload_len=68 preserved
+```
+
+Local test coverage:
+
+```text
+make -C coral_reef_spinnaker/spinnaker_runtime test-lifecycle
+make -C coral_reef_spinnaker/spinnaker_runtime test-lifecycle-split
+make -C coral_reef_spinnaker/spinnaker_runtime test-profiles
+make -C coral_reef_spinnaker/spinnaker_runtime test
+```
+
+Claim boundary:
+
+```text
+Tier 4.30d is local source/runtime host evidence only. It is not EBRAINS
+hardware evidence, not task-benefit evidence, not speedup, not multi-chip
+scaling, not v2.2 temporal-state migration, and not a lifecycle baseline
+freeze.
+```
+
+Next step:
+
+```text
+Tier 4.30e multi-core lifecycle hardware smoke package/run. Package the 4.30d
+runtime source surface and prove real SpiNNaker execution/readback before any
+lifecycle sham-control hardware subset.
 ```

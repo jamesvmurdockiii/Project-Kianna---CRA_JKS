@@ -26,11 +26,21 @@ void spin1_send_sdp_msg(sdp_msg_t *msg, uint32_t timeout) {
 uint32_t g_test_last_mc_key = 0;
 uint32_t g_test_last_mc_payload = 0;
 uint32_t g_test_last_mc_with_payload = 0;
+uint32_t g_test_mc_packet_count = 0;
+uint32_t g_test_mc_keys[8];
+uint32_t g_test_mc_payloads[8];
+uint32_t g_test_mc_with_payloads[8];
 
 void spin1_send_mc_packet(uint32_t key, uint32_t data, uint32_t with_payload) {
     g_test_last_mc_key = key;
     g_test_last_mc_payload = data;
     g_test_last_mc_with_payload = with_payload;
+    if (g_test_mc_packet_count < 8) {
+        g_test_mc_keys[g_test_mc_packet_count] = key;
+        g_test_mc_payloads[g_test_mc_packet_count] = data;
+        g_test_mc_with_payloads[g_test_mc_packet_count] = with_payload;
+    }
+    g_test_mc_packet_count++;
 }
 
 void spin1_set_timer_tick(uint32_t period) {

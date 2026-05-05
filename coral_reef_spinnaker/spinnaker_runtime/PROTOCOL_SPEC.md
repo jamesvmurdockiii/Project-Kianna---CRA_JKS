@@ -1,8 +1,8 @@
 # Coral Reef Custom C Runtime — Protocol Specification
 
-**Version:** 0.8  
-**Date:** 2026-05-01  
-**Status:** EXPERIMENTAL SIDECAR - Tier 4.22i board load/command round-trip passed; Tier 4.22j minimal closed-loop learning smoke passed after raw false-fail correction; Tier 4.22l tiny fixed-point learning parity passed on EBRAINS; Tier 4.22m minimal task micro-loop passed on EBRAINS; Tier 4.22n delayed-cue micro-task passed on EBRAINS; Tier 4.22o noisy-switching micro-task passed on EBRAINS after fixed-point multiply repair; Tier 4.22p A-B-A reentry micro-task passed on EBRAINS; Tier 4.22q integrated host-v2/custom-runtime bridge smoke passed on EBRAINS; Tier 4.22r native keyed-context state smoke passed on EBRAINS; Tier 4.22s native route-state smoke passed on EBRAINS after raw false-fail correction; Tier 4.22t native keyed route-state smoke passed on EBRAINS; Tier 4.22u native memory-route smoke passed on EBRAINS; Tier 4.22v native memory-route reentry/composition smoke passed on EBRAINS; Tier 4.22w native decoupled memory-route composition local/prepared gate passed
+**Version:** 0.12
+**Date:** 2026-05-05
+**Status:** EXPERIMENTAL SIDECAR - Tier 4.22i board load/command round-trip passed; Tier 4.22j minimal closed-loop learning smoke passed after raw false-fail correction; Tier 4.22l tiny fixed-point learning parity passed on EBRAINS; Tier 4.22m minimal task micro-loop passed on EBRAINS; Tier 4.22n delayed-cue micro-task passed on EBRAINS; Tier 4.22o noisy-switching micro-task passed on EBRAINS after fixed-point multiply repair; Tier 4.22p A-B-A reentry micro-task passed on EBRAINS; Tier 4.22q integrated host-v2/custom-runtime bridge smoke passed on EBRAINS; Tier 4.22r native keyed-context state smoke passed on EBRAINS; Tier 4.22s native route-state smoke passed on EBRAINS after raw false-fail correction; Tier 4.22t native keyed route-state smoke passed on EBRAINS; Tier 4.22u native memory-route smoke passed on EBRAINS; Tier 4.22v native memory-route reentry/composition smoke passed on EBRAINS; Tier 4.22w native decoupled memory-route composition hardware passed after profiled build repair; Tier 4.30d multi-core lifecycle runtime source audit/local C host test passed
 
 ---
 
@@ -157,6 +157,13 @@ returned run artifacts pass. The first `cra_422af` attempt is preserved as a
 noncanonical build-size failure: the unprofiled image overflowed ITCM by 16
 bytes before target acquisition/app load/task execution.
 
+Tier 4.30d adds the local source/runtime host surface for the multi-core
+lifecycle split. It introduces `RUNTIME_PROFILE=lifecycle_core`, profile ID
+`7`, lifecycle MCPL/multicast-target message IDs, active-mask/count/lineage
+sync bookkeeping, and ownership guards that prevent context/route/memory/learning
+profiles from mutating lifecycle state directly. This tier is local source/runtime
+evidence only; EBRAINS hardware evidence begins with Tier 4.30e.
+
 It is the **single source of truth** for:
 - SDP command opcodes
 - Multicast key layout
@@ -263,6 +270,18 @@ Defined in `config.h` and `colony_controller.py`.
 | `21` | `READ_MEMORY_SLOT` | Host -> Chip | `arg1 = key` | `cmd_rc = cmd/status`, data = `s32 memory_value + s32 confidence + u32 memory_slot_hits + u32 memory_slot_misses` |
 | `22` | `SCHEDULE_MEMORY_ROUTE_CONTEXT_PENDING` | Host -> Chip | `arg1 = key`, `arg2 = cue`, `arg3 = delay_steps` | `cmd_rc = cmd/status`, data = `prediction/due/feature/context/route/memory/key` |
 | `23` | `SCHEDULE_DECOUPLED_MEMORY_ROUTE_CONTEXT_PENDING` | Host -> Chip | `arg1 = context_key`, `data[0:16] = route_key + memory_key + cue + delay_steps` | `cmd_rc = cmd/status`, data = `prediction/due/feature/context/route/memory/context_key/route_key/memory_key` |
+| `24` | `RUN_CONTINUOUS` | Host -> Chip | `arg1 = learning_rate_fp`, `arg2 = schedule_count` | `cmd_rc = cmd/status` |
+| `25` | `PAUSE` | Host -> Chip | no args | `cmd_rc = cmd/status`, data = `u32 stopped_timestep` |
+| `26` | `WRITE_SCHEDULE_ENTRY` | Host -> Chip | `arg1 = index`, `data[] = schedule_entry_t` | `cmd_rc = cmd/status`, data = `u32 index` |
+| `30` | `SCHEDULE_PENDING_SPLIT` | Host -> learning core | split/inter-core pending schedule | `cmd_rc = cmd/status` |
+| `31` | `MATURE_ACK_SPLIT` | Host -> learning core | split/inter-core maturity ack | `cmd_rc = cmd/status` |
+| `32` | `LOOKUP_REQUEST` | core -> state core | transitional SDP lookup request | `cmd_rc = cmd/status` |
+| `33` | `LOOKUP_REPLY` | state core -> learning core | transitional SDP lookup reply | `cmd_rc = cmd/status` |
+| `34` | `LIFECYCLE_INIT` | Host -> lifecycle core | `arg1 = pool_size`, `arg2 = founder_count`, `arg3 = seed`, `data[] = trophic/generation seeds` | `cmd_rc = cmd/status`, data = lifecycle summary |
+| `35` | `LIFECYCLE_EVENT` | Host -> lifecycle core | `arg1 = event_index`, `arg2 = event_type`, `arg3 = target_slot`, `data[] = parent/child/trophic/reward` | `cmd_rc = cmd/status`, data = lifecycle summary |
+| `36` | `LIFECYCLE_TROPHIC_UPDATE` | Host -> lifecycle core | `arg1 = target_slot`, `arg2 = trophic_delta_raw`, `arg3 = reward_raw` | `cmd_rc = cmd/status`, data = lifecycle summary |
+| `37` | `LIFECYCLE_READ_STATE` | Host -> lifecycle core | no args | `cmd_rc = cmd/status`, data = 68-byte lifecycle summary |
+| `38` | `LIFECYCLE_SHAM_MODE` | Host -> lifecycle core | `arg1 = sham_mode` | `cmd_rc = cmd/status`, data = lifecycle summary |
 
 For host requests:
 
@@ -1032,7 +1051,72 @@ The production protocol surface now includes Sections 1–8.
 
 ---
 
-## 9. Version History
+## 9. Runtime Profiles and Lifecycle MCPL Surface
+
+### 9.1 Runtime Profile IDs
+
+Runtime profile IDs are packed into the low four bits of byte `72` in the
+standard `CMD_READ_STATE` payload.
+
+| ID | Profile | Purpose |
+|---|---|---|
+| `0` | `full` | Legacy/full command surface for local tests and early smoke work |
+| `1` | `decoupled_memory_route` | Tier 4.22w compact independent-key composition profile |
+| `2` | `state_core` | Legacy state split profile |
+| `3` | `learning_core` | Split learning/pending/readout owner |
+| `4` | `context_core` | Keyed context state owner |
+| `5` | `route_core` | Keyed route state owner |
+| `6` | `memory_core` | Keyed memory state owner |
+| `7` | `lifecycle_core` | Tier 4.30d lifecycle state owner |
+
+Direct host lifecycle commands are valid only for legacy full/single-core
+lifecycle smoke surfaces and for `lifecycle_core`. Context, route, memory,
+learning, and state profiles must reject direct lifecycle state mutation.
+
+### 9.2 MCPL Key Layout
+
+MCPL keys use the compile-time layout from `config.h`:
+
+```text
+app_id (8 bits) | msg_type (4 bits) | lookup_type (4 bits) | seq_id (16 bits)
+```
+
+Message IDs:
+
+```text
+1 = MCPL_MSG_LOOKUP_REQUEST
+2 = MCPL_MSG_LOOKUP_REPLY
+3 = MCPL_MSG_LIFECYCLE_EVENT_REQUEST
+4 = MCPL_MSG_LIFECYCLE_TROPHIC_UPDATE
+5 = MCPL_MSG_LIFECYCLE_ACTIVE_MASK_SYNC
+```
+
+For `MCPL_MSG_LIFECYCLE_ACTIVE_MASK_SYNC`, lookup type is a sync subtype:
+
+```text
+0 = MCPL_LIFECYCLE_SYNC_MASK
+    payload = active_mask_bits low 16 bits + active_count in bits 16-23
+1 = MCPL_LIFECYCLE_SYNC_LINEAGE
+    payload = lineage_checksum
+```
+
+Tier 4.30d currently tests lifecycle MCPL/multicast-target traffic through local
+host stubs and packet-inspection hooks. Tier 4.30e must prove the surface on
+real SpiNNaker hardware before any multi-core lifecycle task or sham-control
+claim.
+
+### 9.3 Lifecycle Summary Readback
+
+`CMD_LIFECYCLE_READ_STATE` returns a compact 68-byte summary. The host must
+check the observed payload length (`payload_len=68`), not cumulative
+`readback_bytes`, when validating compact readback correctness.
+
+The summary includes schema/sham mode, pool/founder counts, active/inactive
+counts, active mask, attempted/effective lifecycle events, cleavage/adult birth
+/death/maturity/trophic counters, invalid events, lineage checksum, trophic
+checksum, and cumulative readback bytes.
+
+## 10. Version History
 
 | Version | Date | Changes |
 |---|---|---|
@@ -1043,3 +1127,4 @@ The production protocol surface now includes Sections 1–8.
 | 0.9 | 2026-05-01 | Added runtime-profile discipline after the `cra_422af` ITCM overflow: Tier 4.22w now prepares `cra_422ag` with `RUNTIME_PROFILE=decoupled_memory_route` so tiny native gates compile only their required command surface |
 | 0.10 | 2026-05-01 | Added Section 8 Draft — Continuous Runtime Contract (Tier 4.23). Reserved opcodes 24–26 for `RUN_CONTINUOUS`, `PAUSE`, and `WRITE_SCHEDULE_ENTRY`. Not yet implemented. |
 | 0.11 | 2026-05-01 | Promoted Section 8 to implemented. Added `CMD_RUN_CONTINUOUS` (24), `CMD_PAUSE` (25), `CMD_WRITE_SCHEDULE_ENTRY` (26). C runtime host tests 28/28 pass. Python host controller synchronized. |
+| 0.12 | 2026-05-05 | Added Tier 4.30d lifecycle split runtime source surface: `lifecycle_core` profile ID 7, lifecycle MCPL message IDs 3-5, mask/count/lineage sync subtypes, direct lifecycle ownership guards, and compact lifecycle summary validation rule. |

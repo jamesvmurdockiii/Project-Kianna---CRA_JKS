@@ -1,0 +1,24 @@
+file,token,present,purpose
+coral_reef_spinnaker/spinnaker_runtime/src/config.h,PROFILE_LIFECYCLE_CORE,True,dedicated lifecycle_core profile id
+coral_reef_spinnaker/spinnaker_runtime/src/config.h,MCPL_MSG_LIFECYCLE_EVENT_REQUEST,True,event request MCPL message id
+coral_reef_spinnaker/spinnaker_runtime/src/config.h,MCPL_MSG_LIFECYCLE_TROPHIC_UPDATE,True,trophic update MCPL message id
+coral_reef_spinnaker/spinnaker_runtime/src/config.h,MCPL_MSG_LIFECYCLE_ACTIVE_MASK_SYNC,True,active-mask sync MCPL message id
+coral_reef_spinnaker/spinnaker_runtime/src/config.h,MCPL_LIFECYCLE_SYNC_LINEAGE,True,lineage checksum sync subtype
+coral_reef_spinnaker/spinnaker_runtime/Makefile,"RUNTIME_PROFILE),lifecycle_core",True,hardware/local build profile
+coral_reef_spinnaker/spinnaker_runtime/Makefile,test-lifecycle-split,True,local split host test target
+coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h,cra_lifecycle_handle_event_request,True,lifecycle-core event request API
+coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h,cra_lifecycle_receive_active_mask_sync,True,consumer active-mask sync API
+coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h,lifecycle_duplicate_events,True,duplicate event counter
+coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h,lifecycle_stale_events,True,stale event counter
+coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h,lifecycle_missing_acks,True,missing-ack counter
+coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c,cra_lifecycle_send_event_request_stub,True,learning-side event request stub
+coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c,cra_lifecycle_send_trophic_update_stub,True,learning-side trophic request stub
+coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c,spin1_send_mc_packet,True,MCPL/multicast-target send surface
+coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c,_lifecycle_broadcast_active_mask_sync,True,active-mask sync broadcast stub
+coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c,_lifecycle_reject_duplicate_or_stale,True,duplicate/stale failure guard
+coral_reef_spinnaker/spinnaker_runtime/src/host_interface.c,CRA_RUNTIME_PROFILE_LIFECYCLE_HOST_SURFACE,True,direct lifecycle host surface guard
+coral_reef_spinnaker/spinnaker_runtime/src/host_interface.c,!defined(CRA_RUNTIME_PROFILE_LIFECYCLE_CORE),True,decoupled catch-all excludes lifecycle_core
+coral_reef_spinnaker/spinnaker_runtime/tests/test_profiles.c,CMD_LIFECYCLE_INIT,True,non-lifecycle profile ownership guard test
+coral_reef_spinnaker/spinnaker_runtime/tests/test_lifecycle_split.c,active-mask/count/lineage sync send/receive bookkeeping,True,4.30d split host test
+coral_reef_spinnaker/spinnaker_runtime/stubs/spin1_api.h,g_test_last_mc_key,True,host-side MCPL packet inspection
+coral_reef_spinnaker/spinnaker_runtime/stubs/spin1_api.h,g_test_mc_packet_count,True,host-side multi-packet MCPL inspection

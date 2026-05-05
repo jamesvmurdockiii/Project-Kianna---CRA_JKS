@@ -99,6 +99,18 @@ handlers needed by this tiny primitive and records the enabled command surface
 in the Tier 4.22w artifacts. This is tiny native independent-key composition
 evidence only, not full native v2.1 or full CRA task learning.
 
+Tier 4.30d adds the first local runtime source surface for the multi-core
+lifecycle split. It introduces the dedicated `lifecycle_core` profile
+(`PROFILE_LIFECYCLE_CORE=7`), MCPL/multicast-target lifecycle message IDs for
+event requests, trophic updates, and active-mask sync, local C stubs/counters
+for lifecycle inter-core traffic, two-packet active-mask/count/lineage sync
+coverage, and ownership guards so non-lifecycle profiles reject direct
+lifecycle mutation commands. The local gate passed
+`14/14` criteria in
+`controlled_test_output/tier4_30d_20260505_lifecycle_runtime_source_audit/`.
+This is source/runtime host evidence only; EBRAINS hardware evidence starts at
+Tier 4.30e.
+
 Promotion criteria before this C runtime becomes a near-term backend:
 
 1. Build and load `build/coral_reef.aplx` on real SpiNNaker hardware.
@@ -200,12 +212,13 @@ make RUNTIME_PROFILE=context_core                  # Tier 4.26+ state server
 make RUNTIME_PROFILE=route_core                    # Tier 4.26+ state server
 make RUNTIME_PROFILE=memory_core                   # Tier 4.26+ state server
 make RUNTIME_PROFILE=learning_core                 # Tier 4.26+ learning client
+make RUNTIME_PROFILE=lifecycle_core                # Tier 4.30d+ lifecycle state owner
 ```
 
 `full` is the default for host tests and legacy smoke work.
-The four-core distributed profiles (`context_core`, `route_core`, `memory_core`,
-`learning_core`) each compile only the command handlers needed for that role,
-keeping per-core image size under the 32KB ITCM budget.
+The distributed profiles (`context_core`, `route_core`, `memory_core`,
+`learning_core`, `lifecycle_core`) each compile only the command handlers needed
+for that role, keeping per-core image size under the 32KB ITCM budget.
 
 As of 2026-05-02:
 - `learning_core` text section = 12,448 bytes (with MCPL feasibility code)
@@ -218,6 +231,8 @@ make test                  # runtime host tests
 make test-profiles         # all four core profile tests
 make test-four-core-48event  # 48-event distributed integration test
 make test-mcpl-feasibility # Tier 4.27d MCPL compile-time feasibility
+make test-lifecycle        # Tier 4.30 lifecycle static-pool host tests
+make test-lifecycle-split  # Tier 4.30d lifecycle-core split host tests
 ```
 
 ## Loading onto SpiNNaker

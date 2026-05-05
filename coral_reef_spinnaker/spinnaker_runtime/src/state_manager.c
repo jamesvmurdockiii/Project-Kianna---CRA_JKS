@@ -22,6 +22,8 @@ static lifecycle_slot_t g_lifecycle_slots[MAX_LIFECYCLE_SLOTS];
 static cra_lifecycle_summary_t g_lifecycle_summary;
 static uint32_t g_lifecycle_next_polyp_id = 2000;
 static uint32_t g_lifecycle_next_lineage_id = 100;
+static uint8_t g_lifecycle_have_last_event_index = 0;
+static uint32_t g_lifecycle_last_event_index = 0;
 
 extern uint32_t g_timestep;
 
@@ -149,6 +151,8 @@ void cra_lifecycle_reset(void) {
     g_lifecycle_summary.sham_mode = LIFECYCLE_SHAM_ENABLED;
     g_lifecycle_next_polyp_id = 2000;
     g_lifecycle_next_lineage_id = 100;
+    g_lifecycle_have_last_event_index = 0;
+    g_lifecycle_last_event_index = 0;
 }
 
 int cra_lifecycle_init(
@@ -333,6 +337,138 @@ int cra_lifecycle_get_slot(uint32_t slot_id, lifecycle_slot_t *slot_out) {
     return 0;
 }
 
+static uint8_t _lifecycle_event_mutates_active_mask(uint8_t event_type) {
+    return event_type == LIFECYCLE_EVENT_CLEAVAGE
+        || event_type == LIFECYCLE_EVENT_ADULT_BIRTH
+        || event_type == LIFECYCLE_EVENT_DEATH;
+}
+
+static void _lifecycle_broadcast_active_mask_sync(void) {
+    cra_lifecycle_summary_t summary;
+    cra_lifecycle_get_summary(&summary);
+    uint32_t seq = summary.lifecycle_event_count & MCPL_KEY_SEQ_MASK;
+    uint32_t mask_key = MAKE_MCPL_KEY(
+        APP_ID,
+        MCPL_MSG_LIFECYCLE_ACTIVE_MASK_SYNC,
+        MCPL_LIFECYCLE_SYNC_MASK,
+        seq);
+    uint32_t mask_payload = (summary.active_mask_bits & 0xFFFF)
+        | ((summary.active_count & 0xFF) << 16);
+    spin1_send_mc_packet(mask_key, mask_payload, WITH_PAYLOAD);
+
+    uint32_t lineage_key = MAKE_MCPL_KEY(
+        APP_ID,
+        MCPL_MSG_LIFECYCLE_ACTIVE_MASK_SYNC,
+        MCPL_LIFECYCLE_SYNC_LINEAGE,
+        seq);
+    spin1_send_mc_packet(lineage_key, summary.lineage_checksum, WITH_PAYLOAD);
+    g_summary.lifecycle_mask_syncs_sent++;
+}
+
+void cra_lifecycle_send_event_request_stub(uint32_t event_index, uint8_t event_type, uint32_t target_slot) {
+    uint32_t key = MAKE_MCPL_KEY(
+        APP_ID,
+        MCPL_MSG_LIFECYCLE_EVENT_REQUEST,
+        event_type & 0x0F,
+        event_index & MCPL_KEY_SEQ_MASK);
+    spin1_send_mc_packet(key, target_slot, WITH_PAYLOAD);
+    g_summary.lifecycle_event_requests_sent++;
+}
+
+void cra_lifecycle_send_trophic_update_stub(uint32_t target_slot, int32_t trophic_delta_raw) {
+    uint32_t key = MAKE_MCPL_KEY(
+        APP_ID,
+        MCPL_MSG_LIFECYCLE_TROPHIC_UPDATE,
+        0,
+        target_slot & MCPL_KEY_SEQ_MASK);
+    spin1_send_mc_packet(key, (uint32_t)trophic_delta_raw, WITH_PAYLOAD);
+    g_summary.lifecycle_trophic_requests_sent++;
+}
+
+static int _lifecycle_reject_duplicate_or_stale(uint32_t event_index) {
+    if (!g_lifecycle_have_last_event_index) {
+        return 0;
+    }
+    if (event_index == g_lifecycle_last_event_index) {
+        g_summary.lifecycle_duplicate_events++;
+        g_lifecycle_summary.invalid_event_count++;
+        return -1;
+    }
+    if (event_index < g_lifecycle_last_event_index) {
+        g_summary.lifecycle_stale_events++;
+        g_lifecycle_summary.invalid_event_count++;
+        return -1;
+    }
+    return 0;
+}
+
+int cra_lifecycle_handle_event_request(
+    uint32_t event_index,
+    uint8_t event_type,
+    uint32_t target_slot,
+    int32_t parent_slot,
+    int32_t child_slot,
+    int32_t trophic_delta_raw,
+    int32_t reward_raw
+) {
+    if (_lifecycle_reject_duplicate_or_stale(event_index) != 0) {
+        _lifecycle_recompute_summary();
+        return -1;
+    }
+
+    uint32_t before_mask = g_lifecycle_summary.active_mask_bits;
+    int rc = cra_lifecycle_apply_event(
+        event_index,
+        event_type,
+        target_slot,
+        parent_slot,
+        child_slot,
+        trophic_delta_raw,
+        reward_raw);
+
+    if (rc == 0) {
+        g_lifecycle_have_last_event_index = 1;
+        g_lifecycle_last_event_index = event_index;
+        g_summary.lifecycle_event_acks_received++;
+        if (_lifecycle_event_mutates_active_mask(event_type)
+            && g_lifecycle_summary.active_mask_bits != before_mask) {
+            _lifecycle_broadcast_active_mask_sync();
+        }
+    }
+    return rc;
+}
+
+int cra_lifecycle_handle_trophic_request(
+    uint32_t event_index,
+    uint32_t target_slot,
+    int32_t trophic_delta_raw,
+    int32_t reward_raw
+) {
+    return cra_lifecycle_handle_event_request(
+        event_index,
+        LIFECYCLE_EVENT_TROPHIC,
+        target_slot,
+        -1,
+        -1,
+        trophic_delta_raw,
+        reward_raw);
+}
+
+void cra_lifecycle_receive_active_mask_sync(
+    uint32_t event_count,
+    uint32_t active_mask_bits,
+    uint32_t lineage_checksum
+) {
+    g_summary.lifecycle_mask_syncs_received++;
+    g_summary.lifecycle_last_seen_event_count = event_count;
+    g_summary.lifecycle_last_seen_active_mask_bits = active_mask_bits;
+    g_summary.lifecycle_last_seen_lineage_checksum = lineage_checksum;
+}
+
+void cra_lifecycle_record_missing_ack(void) {
+    g_summary.lifecycle_missing_acks++;
+}
+
 static void _clear_slots(void) {
     for (uint32_t i = 0; i < MAX_CONTEXT_SLOTS; i++) {
         g_context_slots[i].key = 0;
@@ -403,6 +539,17 @@ static void _clear_summary(uint32_t reset_count) {
     g_summary.commands_received = 0;
     g_summary.schedule_length = 0;
     g_summary.readback_bytes_sent = 0;
+    g_summary.lifecycle_event_requests_sent = 0;
+    g_summary.lifecycle_trophic_requests_sent = 0;
+    g_summary.lifecycle_event_acks_received = 0;
+    g_summary.lifecycle_mask_syncs_sent = 0;
+    g_summary.lifecycle_mask_syncs_received = 0;
+    g_summary.lifecycle_last_seen_event_count = 0;
+    g_summary.lifecycle_last_seen_active_mask_bits = 0;
+    g_summary.lifecycle_last_seen_lineage_checksum = 0;
+    g_summary.lifecycle_duplicate_events = 0;
+    g_summary.lifecycle_stale_events = 0;
+    g_summary.lifecycle_missing_acks = 0;
 }
 
 static void _clear_pending(void) {

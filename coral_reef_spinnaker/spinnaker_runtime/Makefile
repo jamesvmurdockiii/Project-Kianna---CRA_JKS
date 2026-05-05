@@ -70,8 +70,13 @@ RUNTIME_SOURCES := \
 	src/state_manager.c \
 	src/host_interface.c
 RUNTIME_PROFILE_CFLAGS := -DCRA_RUNTIME_PROFILE_MEMORY_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=6
+else ifeq ($(RUNTIME_PROFILE),lifecycle_core)
+RUNTIME_SOURCES := \
+	src/state_manager.c \
+	src/host_interface.c
+RUNTIME_PROFILE_CFLAGS := -DCRA_RUNTIME_PROFILE_LIFECYCLE_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=7
 else
-$(error Unsupported RUNTIME_PROFILE '$(RUNTIME_PROFILE)'; expected full, decoupled_memory_route, state_core, learning_core, context_core, route_core, or memory_core)
+$(error Unsupported RUNTIME_PROFILE '$(RUNTIME_PROFILE)'; expected full, decoupled_memory_route, state_core, learning_core, context_core, route_core, memory_core, or lifecycle_core)
 endif
 
 HARDWARE_SOURCES := src/main.c $(RUNTIME_SOURCES)
@@ -88,11 +93,11 @@ HOST_LDFLAGS ?= -lm
 # Host-side tests
 # ------------------------------------------------------------------------------
 
-.PHONY: test host-test test-profiles test-four-core-local test-four-core-48event test-context-core test-route-core test-memory-core test-learning-core test-mcpl-feasibility test-lifecycle
+.PHONY: test host-test test-profiles test-four-core-local test-four-core-48event test-context-core test-route-core test-memory-core test-learning-core test-lifecycle-core test-mcpl-feasibility test-lifecycle test-lifecycle-split
 test host-test: $(HOST_TEST)
 	./$(HOST_TEST)
 
-test-profiles: test-context-core test-route-core test-memory-core test-learning-core
+test-profiles: test-context-core test-route-core test-memory-core test-learning-core test-lifecycle-core
 
 PROFILE_TEST_SOURCES := tests/test_profiles.c stubs/spin1_api.c src/state_manager.c src/host_interface.c
 
@@ -111,6 +116,10 @@ test-memory-core: $(PROFILE_TEST_SOURCES) src/config.h stubs/sark.h stubs/spin1_
 test-learning-core: $(PROFILE_TEST_SOURCES) src/config.h stubs/sark.h stubs/spin1_api.h
 	$(HOST_CC) $(HOST_CFLAGS) -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 $(PROFILE_TEST_SOURCES) $(HOST_LDFLAGS) -o tests/test_learning_core
 	./tests/test_learning_core
+
+test-lifecycle-core: $(PROFILE_TEST_SOURCES) src/config.h stubs/sark.h stubs/spin1_api.h
+	$(HOST_CC) $(HOST_CFLAGS) -DCRA_RUNTIME_PROFILE_LIFECYCLE_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=7 $(PROFILE_TEST_SOURCES) $(HOST_LDFLAGS) -o tests/test_lifecycle_core
+	./tests/test_lifecycle_core
 
 FOUR_CORE_TEST_SOURCES := tests/test_four_core_local.c stubs/spin1_api.c src/state_manager.c src/host_interface.c
 
@@ -135,6 +144,12 @@ LIFECYCLE_TEST_SOURCES := tests/test_lifecycle.c stubs/spin1_api.c src/state_man
 test-lifecycle: $(LIFECYCLE_TEST_SOURCES) src/config.h src/state_manager.h src/host_interface.h stubs/sark.h stubs/spin1_api.h
 	$(HOST_CC) $(HOST_CFLAGS) -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=1 $(LIFECYCLE_TEST_SOURCES) $(HOST_LDFLAGS) -o tests/test_lifecycle
 	./tests/test_lifecycle
+
+LIFECYCLE_SPLIT_TEST_SOURCES := tests/test_lifecycle_split.c stubs/spin1_api.c src/state_manager.c src/host_interface.c
+
+test-lifecycle-split: $(LIFECYCLE_SPLIT_TEST_SOURCES) src/config.h src/state_manager.h src/host_interface.h stubs/sark.h stubs/spin1_api.h
+	$(HOST_CC) $(HOST_CFLAGS) -DCRA_RUNTIME_PROFILE_LIFECYCLE_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=7 $(LIFECYCLE_SPLIT_TEST_SOURCES) $(HOST_LDFLAGS) -o tests/test_lifecycle_split
+	./tests/test_lifecycle_split
 
 $(HOST_TEST): $(HOST_TEST_SOURCES) src/config.h stubs/sark.h stubs/spin1_api.h
 	$(HOST_CC) $(HOST_CFLAGS) $(HOST_TEST_SOURCES) $(HOST_LDFLAGS) -o $@
@@ -197,10 +212,10 @@ require-spinnaker:
 
 .PHONY: clean clean-host help
 clean:
-	rm -rf $(BUILD_DIR) $(APP_OUTPUT_DIR)$(APP).aplx $(HOST_TEST) tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_four_core_local tests/test_four_core_48event tests/test_mcpl_feasibility tests/test_lifecycle
+	rm -rf $(BUILD_DIR) $(APP_OUTPUT_DIR)$(APP).aplx $(HOST_TEST) tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_lifecycle_core tests/test_four_core_local tests/test_four_core_48event tests/test_mcpl_feasibility tests/test_lifecycle tests/test_lifecycle_split
 
 clean-host:
-	rm -f $(HOST_TEST) tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_four_core_local tests/test_four_core_48event tests/test_mcpl_feasibility tests/test_lifecycle
+	rm -f $(HOST_TEST) tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_lifecycle_core tests/test_four_core_local tests/test_four_core_48event tests/test_mcpl_feasibility tests/test_lifecycle tests/test_lifecycle_split
 
 help:
 	@printf '%s\n' \
@@ -209,6 +224,7 @@ help:
 		'  make host-test         Alias for make test' \
 		'  make test-profiles     Build and run all four 4.26 profile tests' \
 		'  make test-lifecycle    Build and run Tier 4.30 lifecycle/static-pool host tests' \
+		'  make test-lifecycle-split Build and run Tier 4.30d lifecycle-core split host tests' \
 		'  make all               Build hardware .aplx image (requires spinnaker_tools)' \
 		'  make hardware          Alias for make all' \
 		'  make clean             Remove generated build/test artifacts'

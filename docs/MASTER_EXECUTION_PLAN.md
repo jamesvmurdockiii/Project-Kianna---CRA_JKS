@@ -108,10 +108,22 @@ transport target = inter-core MCPL/multicast for lifecycle requests and mask syn
 boundary = local contract/reference only; no C implementation or hardware claim
 ```
 
+Latest lifecycle runtime source result:
+
+```text
+Tier 4.30d = LOCAL SOURCE/RUNTIME HOST PASS, 14/14
+output = controlled_test_output/tier4_30d_20260505_lifecycle_runtime_source_audit/
+runner = experiments/tier4_30d_lifecycle_runtime_source_audit.py
+runtime additions = lifecycle_core profile, lifecycle MCPL/multicast-target
+  event/trophic/active-mask-sync stubs, active-mask/count/lineage sync payload
+  coverage, lifecycle split counters, ownership guards, and local C host tests
+boundary = local source/runtime host evidence only; no EBRAINS hardware claim
+```
+
 Current active step:
 
 ```text
-Tier 4.30d multi-core lifecycle runtime source audit/local C host test
+Tier 4.30e multi-core lifecycle hardware smoke package/run
 ```
 
 ## 2. Immediate Baseline Decision
@@ -586,13 +598,23 @@ ability.
     evidence, not task benefit, not speedup, not v2.2 temporal migration, and
     not a lifecycle baseline freeze.
 
-41. 🔄 **CURRENT ACTIVE STEP** - Tier 4.30d multi-core lifecycle runtime source
-    audit/local C host test: implement the lifecycle-core profile and
-    inter-core message/readback stubs against the Tier 4.30c contract before
-    any EBRAINS package.
+41. ✅ **COMPLETE** - Tier 4.30d multi-core lifecycle runtime source
+    audit/local C host test:
+    Result: local source/runtime host pass, 14/14 criteria.
+    Output: `controlled_test_output/tier4_30d_20260505_lifecycle_runtime_source_audit/`.
+    Runner: `experiments/tier4_30d_lifecycle_runtime_source_audit.py`.
+    Scope: dedicated `lifecycle_core` profile, lifecycle inter-core
+    event/trophic request stubs, active-mask/count/lineage sync send/receive
+    bookkeeping, duplicate/stale/missing-ack counters, non-lifecycle ownership
+    guards, compact `payload_len=68` preservation, and local C host tests
+    against the Tier 4.30c contract.
+    Boundary: local source/runtime host evidence only; not EBRAINS hardware
+    evidence, not task benefit, not speedup, not multi-chip scaling, not v2.2
+    temporal migration, and not a lifecycle baseline freeze.
 
-42. Tier 4.30e multi-core lifecycle hardware smoke package/run: prove the
-    4.30d runtime source surface survives real SpiNNaker execution/readback.
+42. 🔄 **CURRENT ACTIVE STEP** - Tier 4.30e multi-core lifecycle hardware smoke
+    package/run: prove the 4.30d runtime source surface survives real
+    SpiNNaker execution/readback.
 
 43. Tier 4.30f lifecycle sham-control hardware subset: fixed max pool, random
     event replay, mask shuffle, no trophic pressure, no dopamine/plasticity if
@@ -863,7 +885,7 @@ After each completed run or design tier:
 The next concrete action is:
 
 ```text
-Tier 4.30d multi-core lifecycle runtime source audit/local C host test
+Tier 4.30e multi-core lifecycle hardware smoke package/run
 ```
 
 Current reference state:
@@ -882,6 +904,8 @@ Correction: rev-0001 checked cumulative readback_bytes instead of compact payloa
 Board/core: 10.11.226.17 / (0,0,4)
 Multi-core lifecycle split: Tier 4.30c PASS, 22/22
 Output: controlled_test_output/tier4_30c_20260505_multicore_lifecycle_split/
+Runtime source/local C audit: Tier 4.30d PASS, 14/14
+Output: controlled_test_output/tier4_30d_20260505_lifecycle_runtime_source_audit/
 Temporal substrate status: fading-memory promoted in software only; nonlinear
 recurrence and native/on-chip temporal dynamics remain unproven
 ```
@@ -889,29 +913,30 @@ recurrence and native/on-chip temporal dynamics remain unproven
 Purpose:
 
 ```text
-Implement only the source/local-test layer for the Tier 4.30c split. Add the
-lifecycle-core runtime profile and inter-core message/readback stubs needed to
-exercise lifecycle requests, active-mask sync, stale/duplicate/timeout counters,
-and compact summaries in local C host tests. Do not package EBRAINS until the
-source audit and local C parity tests pass.
+Package the passed Tier 4.30d runtime source surface for EBRAINS and prove the
+multi-core lifecycle profile/readback path survives real SpiNNaker
+execution/readback. Keep this a smoke gate: no lifecycle task-benefit claim, no
+sham-control claim, no speedup claim, no multi-chip claim, and no lifecycle
+baseline freeze.
 ```
 
 Required coverage:
 
 ```text
 Use the Tier 4.30b, Tier 4.30b-hw, and Tier 4.30c artifacts as the
-source-audited runtime reference:
+source-audited runtime reference, with Tier 4.30d as the package source:
 controlled_test_output/tier4_30b_20260505_lifecycle_source_audit/.
 controlled_test_output/tier4_30b_hw_20260505_hardware_pass_ingested/.
 controlled_test_output/tier4_30c_20260505_multicore_lifecycle_split/.
-The source audit/local C test must preserve exact 4.30a canonical/boundary
-lifecycle telemetry expectations, explicit lifecycle ownership, active-mask sync
-semantics, and the `payload_len=68` compact-readback rule.
+controlled_test_output/tier4_30d_20260505_lifecycle_runtime_source_audit/.
+The hardware smoke must preserve explicit lifecycle ownership,
+active-mask/count/lineage sync semantics, duplicate/stale/missing-ack counters,
+and the compact-readback rule.
 ```
 
-Do not jump to multi-core lifecycle, sham-control hardware, task-effect claims,
-or baseline freeze until the single-core hardware smoke is packaged, run,
-ingested, and documented.
+Do not jump to lifecycle sham-control hardware, task-effect claims, or baseline
+freeze until the multi-core lifecycle smoke is packaged, run, ingested, and
+documented.
 
 
 ## 13. Make-Or-Break Gates

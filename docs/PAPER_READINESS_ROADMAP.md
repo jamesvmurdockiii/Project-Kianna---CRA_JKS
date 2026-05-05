@@ -6441,6 +6441,24 @@ Boundary: local contract/reference evidence only; not C implementation, not
 Next: Tier 4.30d multi-core lifecycle runtime source audit/local C host test.
 ```
 
+Tier 4.30d result:
+
+```text
+Output: controlled_test_output/tier4_30d_20260505_lifecycle_runtime_source_audit/
+Runner: experiments/tier4_30d_lifecycle_runtime_source_audit.py
+Runner revision: tier4_30d_lifecycle_runtime_source_audit_20260505_0001
+Criteria: 14/14
+Result: dedicated lifecycle_core runtime profile, lifecycle inter-core
+        event/trophic request stubs, active-mask/count/lineage sync
+        send/receive bookkeeping, duplicate/stale/missing-ack counters,
+        non-lifecycle ownership guards, compact payload_len=68 preservation,
+        and local C host tests against the Tier 4.30c split contract.
+Boundary: local source/runtime host evidence only; not EBRAINS hardware
+          evidence, not task benefit, not speedup, not multi-chip scaling, not
+          v2.2 temporal-state migration, and not a lifecycle baseline freeze.
+Next: Tier 4.30e multi-core lifecycle hardware smoke package/run.
+```
+
 Detailed Tier 5.19 contract:
 
 ```text

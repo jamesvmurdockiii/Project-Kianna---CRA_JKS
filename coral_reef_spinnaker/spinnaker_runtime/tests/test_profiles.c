@@ -84,6 +84,8 @@ static void test_unexpected_handlers(void) {
     assert(_dispatch(CMD_READ_MEMORY_SLOT, 1, 0, 0) == 0xFF);
     assert(_dispatch(CMD_WRITE_SCHEDULE_ENTRY, 0, 0, 0) == 0xFF);
     assert(_dispatch(CMD_MATURE_PENDING, 0, 0, 0) == 0xFF);
+    assert(_dispatch(CMD_LIFECYCLE_INIT, MAX_LIFECYCLE_SLOTS, 2, 42) == 0xFF);
+    assert(_dispatch(CMD_LIFECYCLE_READ_STATE, 0, 0, 0) == 0xFF);
     printf("  PASS: context_core unexpected commands nak\n");
 }
 static void test_lookup_request(void) {
@@ -124,6 +126,8 @@ static void test_unexpected_handlers(void) {
     assert(_dispatch(CMD_READ_MEMORY_SLOT, 1, 0, 0) == 0xFF);
     assert(_dispatch(CMD_WRITE_SCHEDULE_ENTRY, 0, 0, 0) == 0xFF);
     assert(_dispatch(CMD_MATURE_PENDING, 0, 0, 0) == 0xFF);
+    assert(_dispatch(CMD_LIFECYCLE_INIT, MAX_LIFECYCLE_SLOTS, 2, 42) == 0xFF);
+    assert(_dispatch(CMD_LIFECYCLE_READ_STATE, 0, 0, 0) == 0xFF);
     printf("  PASS: route_core unexpected commands nak\n");
 }
 static void test_lookup_request(void) {
@@ -162,6 +166,8 @@ static void test_unexpected_handlers(void) {
     assert(_dispatch(CMD_READ_ROUTE_SLOT, 1, 0, 0) == 0xFF);
     assert(_dispatch(CMD_WRITE_SCHEDULE_ENTRY, 0, 0, 0) == 0xFF);
     assert(_dispatch(CMD_MATURE_PENDING, 0, 0, 0) == 0xFF);
+    assert(_dispatch(CMD_LIFECYCLE_INIT, MAX_LIFECYCLE_SLOTS, 2, 42) == 0xFF);
+    assert(_dispatch(CMD_LIFECYCLE_READ_STATE, 0, 0, 0) == 0xFF);
     printf("  PASS: memory_core unexpected commands nak\n");
 }
 static void test_lookup_request(void) {
@@ -201,6 +207,8 @@ static void test_unexpected_handlers(void) {
     assert(_dispatch(CMD_READ_ROUTE_SLOT, 1, 0, 0) == 0xFF);
     assert(_dispatch(CMD_WRITE_MEMORY_SLOT, 1, FP_ONE, FP_ONE) == 0xFF);
     assert(_dispatch(CMD_READ_MEMORY_SLOT, 1, 0, 0) == 0xFF);
+    assert(_dispatch(CMD_LIFECYCLE_INIT, MAX_LIFECYCLE_SLOTS, 2, 42) == 0xFF);
+    assert(_dispatch(CMD_LIFECYCLE_READ_STATE, 0, 0, 0) == 0xFF);
     printf("  PASS: learning_core unexpected commands nak\n");
 }
 static void test_lookup_state_machine(void) {
@@ -249,6 +257,26 @@ static void test_timeout(void) {
     assert(cra_state_lookup_check_timeout(15, timed_out, 4) == 1); /* timed out */
     assert(timed_out[0] == 30);
     printf("  PASS: timeout detection\n");
+}
+#elif CRA_RUNTIME_PROFILE_LIFECYCLE_CORE
+static void test_expected_handlers(void) {
+    assert(_dispatch(CMD_LIFECYCLE_INIT, MAX_LIFECYCLE_SLOTS, 2, 42) == 0);
+    assert(_dispatch(CMD_LIFECYCLE_READ_STATE, 0, 0, 0) == 0);
+    assert(_dispatch(CMD_LIFECYCLE_SHAM_MODE, LIFECYCLE_SHAM_FIXED_POOL, 0, 0) == 0);
+    printf("  PASS: lifecycle_core expected commands ack\n");
+}
+static void test_unexpected_handlers(void) {
+    assert(_dispatch(CMD_WRITE_CONTEXT, 1, FP_ONE, FP_ONE) == 0xFF);
+    assert(_dispatch(CMD_READ_CONTEXT, 1, 0, 0) == 0xFF);
+    assert(_dispatch(CMD_WRITE_ROUTE_SLOT, 1, FP_ONE, FP_ONE) == 0xFF);
+    assert(_dispatch(CMD_READ_ROUTE_SLOT, 1, 0, 0) == 0xFF);
+    assert(_dispatch(CMD_WRITE_MEMORY_SLOT, 1, FP_ONE, FP_ONE) == 0xFF);
+    assert(_dispatch(CMD_READ_MEMORY_SLOT, 1, 0, 0) == 0xFF);
+    assert(_dispatch(CMD_WRITE_SCHEDULE_ENTRY, 0, 0, 0) == 0xFF);
+    assert(_dispatch(CMD_MATURE_PENDING, 0, 0, 0) == 0xFF);
+    assert(_dispatch(CMD_RUN_CONTINUOUS, 0, 0, 0) == 0xFF);
+    assert(_dispatch(CMD_PAUSE, 0, 0, 0) == 0xFF);
+    printf("  PASS: lifecycle_core unexpected commands nak\n");
 }
 #else
 static void test_expected_handlers(void) {

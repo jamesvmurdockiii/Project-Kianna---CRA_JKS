@@ -10,7 +10,7 @@ something about the platform, update this file in the same work session.
 
 ## Current State
 
-Latest passed hardware-facing gate:
+Latest frozen native mechanism evidence-regression gate:
 
 ```text
 Tier 4.29f - Compact Native Mechanism Regression
@@ -26,22 +26,27 @@ Tier 4.29f - Compact Native Mechanism Regression
 Latest active hardware-facing tier:
 
 ```text
-None pending.
-  Next EBRAINS package must wait until Tier 4.30d source/local C tests pass.
-  Do not package the multi-core lifecycle split directly from the 4.30c local
-    contract/reference.
+Tier 4.30e - Multi-Core Lifecycle Hardware Smoke
+  Status: CURRENT NEXT, not prepared yet
+  Source prerequisite: Tier 4.30d local source/runtime host pass, 14/14
+  Required rule: package only from the passed 4.30d runtime source surface.
+  Boundary: prove real SpiNNaker execution/readback for the lifecycle_core
+    profile and split lifecycle surface; do not claim lifecycle task benefit,
+    sham-control success, speedup, multi-chip scaling, v2.2 temporal migration,
+    or a lifecycle baseline freeze.
 ```
 
 Latest local/native lifecycle tier:
 
 ```text
-Tier 4.30c - Multi-Core Lifecycle State Split
-  Status: LOCAL CONTRACT/REFERENCE PASS
-  Criteria: 22/22
-  Output: controlled_test_output/tier4_30c_20260505_multicore_lifecycle_split/
-  Boundary: five-core ownership/message/failure contract only; not C
-    implementation, not hardware evidence, not task benefit, not speedup, and
-    not a lifecycle baseline freeze.
+Tier 4.30d - Multi-Core Lifecycle Runtime Source Audit
+  Status: LOCAL SOURCE/RUNTIME HOST PASS
+  Criteria: 14/14
+  Output: controlled_test_output/tier4_30d_20260505_lifecycle_runtime_source_audit/
+  Boundary: dedicated lifecycle_core profile, lifecycle inter-core stubs,
+    active-mask/count/lineage sync bookkeeping, counters, and local ownership
+    guards only; not EBRAINS hardware evidence, not task benefit, not speedup,
+    and not a lifecycle baseline freeze.
 ```
 
 Latest passed hardware-facing tier:
