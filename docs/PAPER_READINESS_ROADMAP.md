@@ -6217,9 +6217,12 @@ Immediate roadmap boundary:
 Tier 4.29f is an evidence-regression gate over already-ingested real hardware
 passes, not a new hardware execution and not a single-task all-mechanism stack
 proof.
-The next gate is Tier 7.0 standard dynamical benchmarks in software.
-Do not move benchmark workloads to hardware until the software benchmark suite
-is stable, diagnostic, and leakage-checked.
+Tier 7.0 standard dynamical benchmarks are now complete. The harness passed
+10/10 criteria, but CRA v2.1 online ranked 5/5 against the tested causal
+sequence baselines by aggregate geometric-mean MSE. The current next gate is
+Tier 7.0b continuous-regression failure analysis.
+Do not move benchmark workloads to hardware until the software failure class is
+diagnosed.
 ```
 
 Paper implication:
@@ -6230,4 +6233,8 @@ migrated into the custom SpiNNaker runtime one mechanism at a time.
 4.29f freezes the cumulative mechanism-bridge evidence set. It does not prove
 native replay buffers, biological sleep, lifecycle hardware, multi-chip scaling,
 speedup, or external-baseline superiority.
+Tier 7.0 adds a reviewer-facing limitation: CRA v2.1 is not yet competitive on
+the tested continuous-valued standard dynamical regression suite. The correct
+paper posture is to cite this honestly and run Tier 7.0b before any repair or
+claim expansion.
 ```

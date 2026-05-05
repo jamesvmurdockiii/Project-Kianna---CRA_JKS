@@ -4,11 +4,11 @@ This table is generated from `controlled_test_output/STUDY_REGISTRY.json`.
 It is intended as a paper/technical-note citation table, not as a new
 source of claims. If the registry changes, regenerate this file.
 
-- Generated: `2026-05-05T13:29:32.133314+00:00`
-- Registry generated: `2026-05-05T13:29:32.042322+00:00`
+- Generated: `2026-05-05T13:48:34.398675+00:00`
+- Registry generated: `2026-05-05T13:48:34.303993+00:00`
 - Registry status: **PASS**
-- Canonical bundles: `43`
-- Expanded entries: `43`
+- Canonical bundles: `44`
+- Expanded entries: `44`
 
 ## Summary Table
 
@@ -57,6 +57,7 @@ source of claims. If the registry changes, regenerate this file.
 | `tier4_29d_native_self_evaluation` | PASS | see manifest |  |  | Native confidence-gated learning hardware evidence only; not speedup evidence, not multi-chip scaling, not full native v2.1 autonomy, not continuous generation, not dynamic lifecycle, and not external-baseline superiority. | results: `controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_ingest_results.json`; report: `controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_report_seed44.json`; summary: `controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_combined_results.json` |
 | `tier4_29e_native_replay_consolidation` | PASS | see manifest |  |  | Native host-scheduled replay/consolidation bridge evidence only; not native on-chip replay buffers, not biological sleep, not speedup evidence, not multi-chip scaling, not full native autonomy, and not external-baseline superiority. | results: `controlled_test_output/tier4_29e_20260505_pass_ingested/tier4_29e_ingest_results.json`; report: `controlled_test_output/tier4_29e_20260505_pass_ingested/tier4_29e_report.md`; summary: `controlled_test_output/tier4_29e_20260505_pass_ingested/tier4_29e_combined_results.json` |
 | `tier4_29f_compact_native_mechanism_regression` | PASS | see manifest | Tier 4.29f - Compact Native Mechanism Regression |  | Evidence-regression gate over already-ingested real hardware passes; not a new hardware execution, not a single monolithic all-mechanism task, not lifecycle/self-scaling evidence, not multi-chip scaling, and not speedup evidence. | results: `controlled_test_output/tier4_29f_20260505_native_mechanism_regression/tier4_29f_results.json`; report: `controlled_test_output/tier4_29f_20260505_native_mechanism_regression/tier4_29f_report.md`; summary: `controlled_test_output/tier4_29f_20260505_native_mechanism_regression/tier4_29f_summary.csv` |
+| `tier7_0_standard_dynamical_benchmarks` | PASS | see manifest | Tier 7.0 - Standard Dynamical Benchmark Suite | outcome=cra_underperforms_standard_sequence_baselines; best_model=echo_state_network; cra_rank=5; cra_geomean_mse_mean=1.22326; best_non_cra_model=echo_state_network; best_non_cra_geomean_mse_mean=0.0227245; cra_vs_best_non_cra_mse_ratio=53.8298 | Software diagnostic evidence only; not hardware evidence, not a superiority claim, not a tuning run, not a new baseline freeze, and not evidence that CRA is generally weak outside these continuous-regression benchmarks. It triggers Tier 7.0b failure analysis before mechanism changes or hardware migration. | results: `controlled_test_output/tier7_0_20260505_standard_dynamical_benchmarks/tier7_0_results.json`; report: `controlled_test_output/tier7_0_20260505_standard_dynamical_benchmarks/tier7_0_report.md`; summary: `controlled_test_output/tier7_0_20260505_standard_dynamical_benchmarks/tier7_0_summary.csv` |
 
 ## Claim Discipline
 

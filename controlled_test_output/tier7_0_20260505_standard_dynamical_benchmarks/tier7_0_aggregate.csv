@@ -1,0 +1,16 @@
+task,model,seed,status,geomean_mse,geomean_nmse
+all_three_geomean,persistence,42,pass,0.8027449428739922,1.097864318410264
+all_three_geomean,persistence,43,pass,0.6450385660456428,1.0364480679707972
+all_three_geomean,persistence,44,pass,0.7962229869232851,1.255416421953395
+all_three_geomean,online_lms,42,pass,0.09290301694556728,0.1270576766413995
+all_three_geomean,online_lms,43,pass,0.06828375012501171,0.10971834029201474
+all_three_geomean,online_lms,44,pass,0.0796292461965029,0.12555259642672356
+all_three_geomean,ridge_lag,42,pass,0.03256791719938963,0.04454111425496996
+all_three_geomean,ridge_lag,43,pass,0.026950780700076674,0.043304518609082014
+all_three_geomean,ridge_lag,44,pass,0.04149833089498144,0.06543102490739211
+all_three_geomean,echo_state_network,42,pass,0.02237107057138041,0.030595521482857515
+all_three_geomean,echo_state_network,43,pass,0.015600073841812452,0.025066201068672536
+all_three_geomean,echo_state_network,44,pass,0.03020244683480168,0.0476206393966337
+all_three_geomean,cra_v2_1_online,42,pass,1.3166091674767206,1.80064445014066
+all_three_geomean,cra_v2_1_online,43,pass,1.2316074184773704,1.9789469910378148
+all_three_geomean,cra_v2_1_online,44,pass,1.1215512422698573,1.768366237514152

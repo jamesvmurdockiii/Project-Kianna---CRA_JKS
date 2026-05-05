@@ -1,0 +1,15 @@
+{
+  "display_name": "Mackey-Glass",
+  "horizon": 8,
+  "length": 720,
+  "metadata": {
+    "obs_mu": 0.9265332161522112,
+    "obs_sd": 0.23235897165545655,
+    "target_mu": 0.9252937638603783,
+    "target_sd": 0.2327276477229907,
+    "tau": 17
+  },
+  "name": "mackey_glass",
+  "seed": 42,
+  "train_end": 468
+}

@@ -81,6 +81,13 @@ PREFERRED_METRICS = [
     "max_tail_delta_vs_paired_fixed",
     "max_abs_corr_delta_vs_paired_fixed",
     "max_recovery_improvement_steps_vs_paired_fixed",
+    "outcome",
+    "best_model",
+    "cra_rank",
+    "cra_geomean_mse_mean",
+    "best_non_cra_model",
+    "best_non_cra_geomean_mse_mean",
+    "cra_vs_best_non_cra_mse_ratio",
 ]
 
 
@@ -421,7 +428,7 @@ def build_rows(registry: dict[str, Any]) -> list[dict[str, str]]:
 def write_csv_table(rows: list[dict[str, str]]) -> None:
     CSV_PATH.parent.mkdir(parents=True, exist_ok=True)
     with CSV_PATH.open("w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
+        writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()), lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 

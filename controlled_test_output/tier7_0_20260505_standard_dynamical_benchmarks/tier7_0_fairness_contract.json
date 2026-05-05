@@ -1,0 +1,37 @@
+{
+  "models": [
+    "persistence",
+    "online_lms",
+    "ridge_lag",
+    "echo_state_network",
+    "cra_v2_1_online"
+  ],
+  "no_future_leakage_rules": [
+    "target horizon is shifted before split",
+    "normalization uses train prefix only",
+    "ridge/ESN readouts fit only on train rows",
+    "online models update after producing each prediction"
+  ],
+  "nonclaims": [
+    "not hardware evidence",
+    "not a superiority claim",
+    "not a tuning run",
+    "not a new software baseline freeze"
+  ],
+  "normalization": "z-score fit on train prefix only per task/seed",
+  "prediction": "predict before update; CRA scored prequentially on test rows only",
+  "runner_revision": "tier7_0_standard_dynamical_benchmarks_20260505_0001",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "split": "chronological",
+  "tasks": [
+    "mackey_glass",
+    "lorenz",
+    "narma10"
+  ],
+  "tier": "Tier 7.0 - Standard Dynamical Benchmark Suite",
+  "train_fraction": 0.65
+}

@@ -79,7 +79,7 @@ not full native v2.1, and not final autonomy.
 Current active step:
 
 ```text
-Tier 7.0 - Standard Dynamical Benchmark Suite
+Tier 7.0b - Continuous-Regression Failure Analysis
 ```
 
 ## 2. Immediate Baseline Decision
@@ -340,33 +340,41 @@ What claim boundary follows?
     Registry snapshot: `baselines/CRA_NATIVE_MECHANISM_BRIDGE_v0.3_STUDY_REGISTRY.snapshot.json`.
     Supersedes `CRA_NATIVE_TASK_BASELINE_v0.2` for native mechanism bridge evidence.
 
-27. 🔄 **CURRENT ACTIVE STEP** - Tier 7.0 standard dynamical benchmarks in software:
-    Mackey-Glass, Lorenz, NARMA10, and geometric-mean aggregate MSE. Run on
-    frozen software baseline v2.1 and the frozen native mechanism evidence state
-    as the hardware boundary, but do not move benchmarks to hardware until the
-    software benchmark suite is stable and diagnostic.
+27. ✅ **COMPLETE** - Tier 7.0 standard dynamical benchmarks in software:
+    Mackey-Glass, Lorenz, NARMA10, and geometric-mean aggregate MSE completed
+    with 10/10 harness criteria. CRA v2.1 online ranked 5/5 by aggregate
+    geomean MSE against the tested causal sequence baselines; echo-state
+    network was best. This is a diagnostic pass and a capability gap, not a
+    superiority claim and not a new baseline freeze.
+
+28. 🔄 **CURRENT ACTIVE STEP** - Tier 7.0b continuous-regression failure analysis:
+    diagnose whether the Tier 7.0 gap comes from continuous-valued readout,
+    insufficient recurrent/state memory, missing reservoir dynamics,
+    normalization/task-interface mismatch, policy/credit mismatch, or benchmark
+    unfairness. Do not tune blindly and do not move the benchmark to hardware
+    until the failure class is documented.
 
 ### Phase D - Lifecycle / Organism Dynamics Native Path
 
-28. Tier 4.30 lifecycle-native contract: preallocated pool only. No dynamic
+29. Tier 4.30 lifecycle-native contract: preallocated pool only. No dynamic
     PyNN population creation mid-run. Birth/cleavage/death are activation,
     masking, assignment, or lineage events inside static state.
 
-29. Tier 4.30a local static-pool lifecycle reference: active/inactive masks,
+30. Tier 4.30a local static-pool lifecycle reference: active/inactive masks,
     lineage IDs, trophic state, birth/cleavage/death counters, fixed max-pool
     control, random event replay control.
 
-30. Tier 4.30b single-core lifecycle mask smoke: prove a tiny static pool can
+31. Tier 4.30b single-core lifecycle mask smoke: prove a tiny static pool can
     activate/silence units, preserve lineage, and read back lifecycle telemetry.
 
-31. Tier 4.30c multi-core lifecycle state split: distribute lifecycle masks and
+32. Tier 4.30c multi-core lifecycle state split: distribute lifecycle masks and
     lineage across the selected runtime protocol without corrupting state.
 
-32. Tier 4.30d lifecycle sham-control hardware subset: fixed max pool, random
+33. Tier 4.30d lifecycle sham-control hardware subset: fixed max pool, random
     event replay, mask shuffle, no trophic pressure, no dopamine/plasticity if
     applicable. Keep it small but reviewer-defensible.
 
-33. Freeze `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` only if lifecycle telemetry,
+34. Freeze `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` only if lifecycle telemetry,
     controls, resource accounting, and at least one useful task effect pass. If
     lifecycle does not help, narrow the organism claim.
 
@@ -606,32 +614,30 @@ After each completed run or design tier:
 The next concrete action is:
 
 ```text
-Tier 7.0 - Standard Dynamical Benchmark Suite
+Tier 7.0b - Continuous-Regression Failure Analysis
 ```
 
 Purpose:
 
 ```text
-Create a software benchmark harness for Mackey-Glass, Lorenz, NARMA10, and a
-geometric-mean aggregate MSE score so CRA can be compared against standard
-temporal prediction/memory baselines before moving benchmark workloads to
-hardware.
+Diagnose why CRA v2.1 ranked 5/5 on the completed Tier 7.0 standard dynamical
+benchmark suite before tuning, mechanism work, or hardware migration.
 ```
 
 Required coverage:
 
 ```text
-Mackey-Glass future prediction
-Lorenz future prediction
-NARMA10 memory/nonlinear system identification
-Aggregate geometric mean MSE
-Fixed splits/seeds, leakage checks, external baselines, CRA v2.1 comparison
+Use completed Tier 7.0 artifacts for Mackey-Glass, Lorenz, and NARMA10.
+Readout probe: test whether a fair causal probe on CRA state closes the gap.
+State-memory probe: test whether CRA carries enough history for NARMA10.
+Task-interface probe: test whether continuous target scaling or sign-oriented
+feedback explains the gap.
+Credit/policy probe: test whether dopamine/consequence timing mismatches MSE.
+Fairness probe: verify no baseline/CRA leakage or stream mismatch.
 ```
 
-Do not tune blindly from this suite. If CRA underperforms, classify the failure
-mode first, then decide whether a planned mechanism tier (lifecycle,
-policy/action, longer-horizon planning, native replay buffers, or another
-predeclared mechanism) is justified.
+Do not tune blindly. Tier 7.0b may recommend a repair tier, but it must not
+silently promote a mechanism and must not move this benchmark to hardware.
 
 
 ## 13. Make-Or-Break Gates

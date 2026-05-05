@@ -974,6 +974,24 @@ SPECS: tuple[EvidenceSpec, ...] = (
         latest_manifest_names=("tier4_29f_latest_manifest.json",),
         expected_extra_files=(),
     ),
+    EvidenceSpec(
+        entry_id="tier7_0_standard_dynamical_benchmarks",
+        tier_label="Tier 7.0 - Standard Dynamical Benchmark Suite",
+        plan_position="Phase E standard benchmark diagnostics: software-only sequence benchmark harness",
+        canonical_dir="tier7_0_20260505_standard_dynamical_benchmarks",
+        results_file="tier7_0_results.json",
+        report_file="tier7_0_report.md",
+        summary_file="tier7_0_summary.csv",
+        harness="experiments/tier7_0_standard_dynamical_benchmarks.py",
+        evidence_role="standard dynamical benchmark diagnostic",
+        claim="The Tier 7.0 software benchmark harness completed Mackey-Glass, Lorenz, NARMA10, and aggregate geometric-mean MSE across CRA v2.1 and standard causal sequence baselines. It diagnosed CRA v2.1 online underperformance on these continuous-valued dynamical regression benchmarks: CRA ranked 5/5 by aggregate geomean MSE, while the echo-state network was best.",
+        caveat="Software diagnostic evidence only; not hardware evidence, not a superiority claim, not a tuning run, not a new baseline freeze, and not evidence that CRA is generally weak outside these continuous-regression benchmarks. It triggers Tier 7.0b failure analysis before mechanism changes or hardware migration.",
+        latest_manifest_names=("tier7_0_latest_manifest.json",),
+        expected_extra_files=(
+            "tier7_0_aggregate.csv",
+            "tier7_0_fairness_contract.json",
+        ),
+    ),
 )
 
 
@@ -1633,6 +1651,7 @@ def write_registry_csv(registry: dict[str, Any]) -> None:
                 "test_count",
                 "missing_expected_artifacts",
             ],
+            lineterminator="\n",
         )
         writer.writeheader()
         for entry in registry["entries"]:

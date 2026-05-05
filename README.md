@@ -3,7 +3,7 @@
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
 [![Tests](https://img.shields.io/badge/tests-147%20passing-brightgreen.svg)](#validation)
-[![Evidence](https://img.shields.io/badge/canonical%20evidence-43%20bundles-blue.svg)](STUDY_EVIDENCE_INDEX.md)
+[![Evidence](https://img.shields.io/badge/canonical%20evidence-44%20bundles-blue.svg)](STUDY_EVIDENCE_INDEX.md)
 
 Coral Reef Architecture (CRA) is a neuromorphic learning research platform for
 studying local spiking plasticity, delayed credit assignment, population-level
@@ -21,8 +21,9 @@ controlled ablations, baseline comparisons, and explicit claim boundaries.
 | Software baseline | `v2.1`, frozen after bounded host-side self-evaluation / reliability-monitoring evidence. |
 | Native hardware baseline | `CRA_NATIVE_MECHANISM_BRIDGE_v0.3`, frozen after Tier 4.29f audited the 4.29a-e native mechanism hardware passes. |
 | Latest ingested hardware pass | Tier 4.29e, native host-scheduled replay/consolidation bridge, `38/38` criteria per seed across seeds `42`, `43`, and `44`. |
-| Active next gate | Tier 7.0 standard dynamical benchmarks in software: Mackey-Glass, Lorenz, NARMA10, and aggregate geometric-mean MSE. |
-| Canonical registry | 43 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
+| Latest software benchmark diagnostic | Tier 7.0 completed Mackey-Glass, Lorenz, NARMA10, and aggregate geometric-mean MSE; CRA v2.1 ranked `5/5` against the tested causal sequence baselines. |
+| Active next gate | Tier 7.0b continuous-regression failure analysis: diagnose whether the Tier 7.0 gap is readout, memory/state, reservoir dynamics, normalization, policy/credit mismatch, or task-interface mismatch before tuning or hardware migration. |
+| Canonical registry | 44 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
 | Validation suite | 147 pytest tests plus registry, paper-table, and repository-audit generation. |
 
 ## What CRA Implements
@@ -53,6 +54,7 @@ Core implementation areas:
 | 5.10-5.18 | Memory, replay/consolidation, predictive context, composition/routing, working memory diagnostics, temporal coding, neuron-parameter sensitivity, predictive binding, and self-evaluation gates. | Mostly host-side software mechanisms unless explicitly migrated to hardware. |
 | 6.1-6.4 | Lifecycle/self-scaling, lifecycle sham controls, and circuit-motif causality. | Software organism/ecology evidence; not hardware lifecycle. |
 | 4.22-4.29 | Custom SpiNNaker runtime progression from roundtrip/load tests to four-core MCPL tasks, keyed memory, routing/composition, predictive binding, confidence-gated learning, host-scheduled replay/consolidation, and the 4.29f evidence-regression freeze gate. | Native hardware mechanism evidence for the tested capsules only; 4.29f is an audit over hardware passes, not a new hardware execution. |
+| 7.0 | Standard dynamical benchmarks: Mackey-Glass, Lorenz, NARMA10, aggregate geometric-mean MSE. | Software diagnostic only; CRA v2.1 underperformed simple continuous-regression sequence baselines, so the next step is failure analysis rather than claims or tuning. |
 
 The most current paper-facing evidence index is generated at
 [`STUDY_EVIDENCE_INDEX.md`](STUDY_EVIDENCE_INDEX.md). The machine-readable
@@ -71,6 +73,8 @@ Current evidence does not prove:
 
 - General intelligence or broad autonomous reasoning.
 - Universal superiority over external baselines.
+- Competitive performance on the Tier 7.0 continuous-valued standard dynamical
+  benchmark suite.
 - Full organism lifecycle running natively on hardware.
 - Multi-chip scaling.
 - Production readiness.

@@ -14,7 +14,7 @@ mechanism promotion, lifecycle/ecology evidence, and native SpiNNaker runtime
 migration. The generated registry is the authority for which results are
 canonical.
 
-The current canonical evidence trail contains **41 registered evidence bundles**
+The current canonical evidence trail contains **44 registered evidence bundles**
 with all expected artifacts present and all criteria passing:
 
 ```text
@@ -59,6 +59,9 @@ with all expected artifacts present and all criteria passing:
 39. Tier 4.29b - Native Routing/Composition Gate
 40. Tier 4.29c - Native Predictive Binding Bridge
 41. Tier 4.29d - Native Self-Evaluation Bridge
+42. Tier 4.29e - Native Replay/Consolidation Bridge
+43. Tier 4.29f - Compact Native Mechanism Regression
+44. Tier 7.0 - Standard Dynamical Benchmark Suite
 ```
 
 Completed noncanonical diagnostics:
@@ -7287,7 +7290,7 @@ before moving any benchmark workload to hardware.
 
 ### Tier 7.0 - Standard Dynamical Benchmark Suite
 
-Status: **DEFINED / CURRENT NEXT GATE**.
+Status: **PASS / DIAGNOSTIC COMPLETE**.
 
 Question: How does the frozen CRA software baseline perform on standard
 temporal prediction and memory benchmarks before any additional mechanism work
@@ -7349,6 +7352,78 @@ Promotion/freeze condition:
 - Freeze a new software baseline only if a subsequent repair or mechanism tier
   passes ablation, baseline comparison, and compact regression.
 
-Next step after Tier 7.0: classify the benchmark outcome before choosing the
-next roadmap branch. Do not move to hardware benchmarking until software results
-are stable and diagnostic.
+Canonical result:
+- Output: `controlled_test_output/tier7_0_20260505_standard_dynamical_benchmarks/`.
+- Runner: `experiments/tier7_0_standard_dynamical_benchmarks.py`.
+- Criteria: `10 / 10`.
+- Outcome: `cra_underperforms_standard_sequence_baselines`.
+- Best aggregate model: `echo_state_network`.
+- CRA rank by aggregate geomean MSE: `5 / 5`.
+- CRA / best non-CRA aggregate MSE ratio: `53.82975667035733`.
+
+Interpretation:
+- The benchmark harness and leakage guardrails passed.
+- CRA v2.1 did not earn a performance claim on these continuous-valued
+  dynamical regression benchmarks.
+- This is a citable diagnostic failure/limitation, not a reason to hide the run
+  and not a reason to tune blindly.
+
+Next step after Tier 7.0: Tier 7.0b continuous-regression failure analysis.
+Do not move to hardware benchmarking until the software failure class is
+diagnosed.
+
+### Tier 7.0b - Continuous-Regression Failure Analysis
+
+Status: **DEFINED / CURRENT NEXT GATE**.
+
+Question: Why does CRA v2.1 underperform standard causal sequence baselines on
+the Tier 7.0 continuous-valued dynamical benchmark suite?
+
+Hypothesis: The gap is explainable by one or more diagnosable mismatches
+between the current CRA interface and continuous regression: readout form,
+state/history capacity, reservoir-style dynamics, normalization/interface,
+or consequence/credit objective.
+
+Null hypothesis: The Tier 7.0 gap cannot be localized by controlled probes, or
+the benchmark harness/baseline setup is unfair enough that the result cannot be
+interpreted.
+
+Required probes:
+- Causal readout probe on CRA state: can a fair linear/ridge readout over CRA
+  internal state close the gap without giving future information?
+- History/state probe: does increasing available causal history or state
+  exposure specifically improve NARMA10?
+- Target/interface probe: do regression target scaling, signed reward feedback,
+  or adapter semantics explain the MSE gap?
+- Reservoir-dynamics probe: does a reservoir-like state/control baseline explain
+  the missing capability better than CRA polyps do?
+- Credit/policy probe: does dopamine/consequence timing mismatch continuous MSE
+  optimization?
+- Fairness audit: verify the same causal stream, split, normalization rules,
+  and update timing for all models.
+
+Controls and guardrails:
+- Use the same generated task streams, seeds, train/test split, and
+  train-prefix normalization as Tier 7.0.
+- Diagnostic probes are not promoted CRA mechanisms.
+- Do not tune on test rows.
+- Do not add hidden future context, task labels, or target leakage.
+- Preserve all failed probes as diagnostic evidence.
+
+Pass criteria:
+- The failure class is narrowed with artifact-backed evidence.
+- At least one probe either closes a meaningful portion of the gap or rules out
+  a suspected cause.
+- Baseline fairness remains intact.
+- A concrete next action is selected: repair tier, mechanism tier, benchmark
+  redesign, or claim narrowing.
+
+Fail criteria:
+- Probes use information unavailable to the baselines.
+- The suite becomes a tuning loop instead of a diagnosis.
+- The gap remains unexplained and the next action is not bounded.
+
+Promotion/freeze condition:
+- Tier 7.0b does not freeze a baseline by itself.
+- A later repair or mechanism tier must pass ablations, baselines, and compact
+  regression before any new software baseline is frozen.

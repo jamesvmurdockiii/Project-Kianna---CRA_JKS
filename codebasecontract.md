@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-05T09:35-04:00.
+Last updated: 2026-05-05T09:41-04:00.
 
 Current repo root:
 
@@ -48,8 +48,8 @@ FROZEN: CRA_NATIVE_MECHANISM_BRIDGE_v0.3
             not a monolithic all-mechanism task, not lifecycle, not multi-chip,
             not speedup, and not external-baseline superiority.
   Supersedes: CRA_NATIVE_TASK_BASELINE_v0.2
-  Next: Tier 7.0 standard dynamical benchmarks in software before moving
-        benchmark workloads to hardware.
+  Next: Tier 7.0b continuous-regression failure analysis before any tuning,
+        mechanism promotion, or benchmark migration to hardware.
 ```
 
 Current active hardware/custom-runtime tier:
@@ -203,11 +203,22 @@ Tier 4.29f — COMPLETE. Compact native mechanism regression.
   Boundary: not a new SpiNNaker execution and not a single-task all-mechanism
     stack proof.
 
-Tier 7.0 — CURRENT NEXT. Standard dynamical benchmark suite in software.
+Tier 7.0 — COMPLETE. Standard dynamical benchmark suite in software.
   Purpose: benchmark CRA on Mackey-Glass, Lorenz, NARMA10, and aggregate
     geometric-mean MSE against standard baselines before hardware migration.
-  Rule: do not tune blindly. Diagnose failure mode first; only add planned
-    mechanisms when the benchmark identifies a matching failure.
+  Status: DIAGNOSTIC PASS. The harness completed with 10/10 criteria, but CRA
+    v2.1 online ranked 5/5 by aggregate geomean MSE. Echo-state network was
+    best. This is not a superiority claim; it is a clean benchmark failure
+    signal.
+
+Tier 7.0b — CURRENT NEXT. Continuous-regression failure analysis.
+  Purpose: determine why CRA underperformed on Tier 7.0 before adding,
+    tuning, or moving anything to hardware.
+  Required failure classes: continuous-valued readout mismatch, long-memory or
+    reservoir-state deficiency, normalization/task-interface mismatch,
+    policy/credit mismatch, and baseline/harness unfairness.
+  Rule: no blind tuning and no hardware migration until the failure class is
+    diagnosed with artifacts.
 
 
 Current status summary:
@@ -348,15 +359,15 @@ Local build capability (established 2026-05-02):
 
 Immediate next steps:
 
-1. Implement Tier 7.0 standard dynamical benchmark suite in software:
-   Mackey-Glass, Lorenz, NARMA10, and aggregate geometric-mean MSE.
-2. Compare CRA v2.1 against predeclared baselines with fixed splits/seeds,
-   leakage checks, and traceable result artifacts.
-3. If CRA underperforms, diagnose whether the failure is prediction, memory,
-   policy/action, lifecycle, replay/consolidation, or scaling before adding
-   mechanisms.
-4. Do not move benchmark workloads to hardware until the software benchmark
-   suite is stable, auditable, and diagnostic.
+1. Implement Tier 7.0b continuous-regression failure analysis over the completed
+   Tier 7.0 benchmark outputs.
+2. Compare CRA v2.1 online against diagnostic CRA variants and readout probes
+   without treating those probes as promoted mechanisms.
+3. Classify whether the failure is continuous-valued readout, internal
+   state/reservoir memory, normalization/task-interface, policy/credit
+   mismatch, or benchmark unfairness.
+4. Do not move benchmark workloads to hardware and do not tune blindly until the
+   failure class is documented.
 5. Keep public repo hygiene green before the next upload or commit: no
    credentialed remotes, no `ebrains_jobs/` symlinks, no transient root output
    dirs, no generated host binaries, and `make validate` passing.

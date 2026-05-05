@@ -59,7 +59,7 @@ Tier 4.16b, Tier 4.18a, Tier 5.5, Tier 5.6, Tier 5.7,
 Tier 5.12a, Tier 5.12c, Tier 5.12d, Tier 6.1, Tier 6.3,
 Tier 6.4, Tier 4.26, Tiers 4.27/4.28 hardware-native runtime gates, and
 Tiers 4.29a-4.29d native mechanism bridges have been implemented and run.
-Tier 4.29f is complete: the compact native mechanism evidence-regression gate passed over 4.29a-e and froze `CRA_NATIVE_MECHANISM_BRIDGE_v0.3`. Tier 7.0 standard dynamical benchmarks are the current next gate.
+Tier 4.29f is complete: the compact native mechanism evidence-regression gate passed over 4.29a-e and froze `CRA_NATIVE_MECHANISM_BRIDGE_v0.3`. Tier 7.0 standard dynamical benchmarks are complete as a diagnostic: CRA v2.1 ranked 5/5 on the tested continuous-valued sequence baselines. Tier 7.0b continuous-regression failure analysis is the current next gate.
 Tier 4.12 proves NEST/Brian2 parity plus SpiNNaker
 PyNN readiness prep. Tier 4.13 records a real SpiNNaker hardware-capsule pass
 for the minimal fixed-pattern task through EBRAINS/JobManager. Tier 4.14
