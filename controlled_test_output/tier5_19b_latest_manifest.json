@@ -1,0 +1,8 @@
+{
+  "generated_at_utc": "2026-05-05T17:56:17+00:00",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_19b_20260505_temporal_substrate_gate/tier5_19b_results.json",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_19b_20260505_temporal_substrate_gate",
+  "runner_revision": "tier5_19b_temporal_substrate_gate_20260505_0002",
+  "status": "pass",
+  "tier": "Tier 5.19b - Temporal Substrate Benchmark / Sham / Regression Gate"
+}

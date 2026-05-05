@@ -259,13 +259,29 @@ Tier 5.19a — COMPLETE. Local continuous temporal substrate reference.
     not a promoted temporal-substrate mechanism, and not recurrence-specific
     proof.
 
-Tier 5.19b — CURRENT NEXT. Benchmark/sham/regression gate.
-  Purpose: sharpen recurrence-specific ablations and rerun the temporal
-    substrate candidate against standard benchmarks, held-out temporal-state
-    diagnostics, and compact CRA guardrails.
-  Rule: do not promote unless the mechanism beats lag-only and shams, preserves
-    existing v2.1 claims, and proves which part is causal: fading memory,
-    recurrence, local continuous interface, or their combination.
+Tier 5.19b — COMPLETE. Temporal-substrate benchmark/sham gate.
+  Status: LOCAL SOFTWARE PASS, claim-narrowing diagnostic.
+  Runner: experiments/tier5_19b_temporal_substrate_gate.py
+  Output: controlled_test_output/tier5_19b_20260505_temporal_substrate_gate/
+  Criteria: 12/12.
+  Classification: fading_memory_supported_recurrence_unproven.
+  Key result: held-out long-memory candidate MSE 0.3857 vs lag-only 1.2710
+    (3.30x margin), and recurrence-pressure candidate MSE 0.8982 vs lag-only
+    0.8967 (0.998x), fading-only 1.0348 (1.15x), state-reset 0.9029
+    (1.01x), and shuffled-state 1.1686 (1.30x).
+  Boundary: 5.19b supports a narrowed fading-memory temporal-state story but
+    does not prove bounded nonlinear recurrence, does not freeze a software
+    baseline, and does not authorize hardware migration.
+
+Tier 5.19c — CURRENT NEXT. Fading-memory narrowing / compact-regression
+  decision gate.
+  Purpose: decide whether to promote a narrowed multi-timescale fading-memory
+    temporal substrate, without claiming nonlinear recurrence, or park the
+    temporal-substrate branch until a recurrence-specific repair exists.
+  Rule: promote only if the narrowed mechanism preserves v2.1 guardrails,
+    survives compact controls, and gives a useful, reproducible advantage on
+    temporal-memory diagnostics without hiding behind lag-only or recurrence
+    shams.
 
 Tier 4.30 — QUEUED AFTER TEMPORAL-SUBSTRATE DECISION. Lifecycle-native contract.
   Purpose: define how lifecycle/self-scaling moves onto the custom runtime using
@@ -413,16 +429,19 @@ Local build capability (established 2026-05-02):
 
 Immediate next steps:
 
-1. Design Tier 5.19b before implementation changes. It must use the completed
-   Tier 5.19a result and explicitly sharpen recurrence-specific controls.
-2. Required 5.19b controls: current v2.1, lag-only, fixed/random reservoir,
-   no-recurrence/fading-only, recurrence-only where meaningful, frozen state,
-   shuffled temporal state, shuffled target, no plasticity, and compact Tier
-   1/2/3 plus v2.1 guardrails.
-3. Required 5.19b decision: distinguish "fading memory helps" from "bounded
-   nonlinear recurrence helps" from "simple lag/readout still explains it."
-4. Do not jump straight to lifecycle hardware or EBRAINS from 5.19a. No hardware
-   migration until a software mechanism earns promotion.
+1. Design Tier 5.19c before implementation changes. It must use the completed
+   Tier 5.19a and 5.19b results and explicitly narrow the claim away from
+   recurrence unless recurrence-specific controls are repaired.
+2. Required 5.19c controls: current v2.1, lag-only, fixed/random reservoir,
+   fading-memory candidate, full temporal candidate as a non-promoted reference,
+   frozen state, shuffled temporal state, shuffled target, no plasticity, and
+   compact Tier 1/2/3 plus v2.1 guardrails.
+3. Required 5.19c decision: distinguish "narrowed fading-memory temporal state
+   earns promotion" from "temporal branch remains diagnostic only." Do not
+   relabel 5.19b as recurrence evidence.
+4. Do not jump straight to lifecycle hardware or EBRAINS from 5.19b. No hardware
+   migration until a software mechanism earns promotion and passes compact
+   regression.
 5. After the temporal-substrate decision, run the Tier 4.30-readiness audit and
    decide whether native lifecycle layers on v2.1 or on a promoted newer
    software baseline.

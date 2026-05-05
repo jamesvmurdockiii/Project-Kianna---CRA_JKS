@@ -1,0 +1,22 @@
+{
+  "hardware_policy": "software-only; hardware blocked until promotion and compact regression",
+  "nonclaims": [
+    "not hardware evidence",
+    "not a software baseline freeze",
+    "not native/on-chip temporal dynamics",
+    "not recurrence-specific proof unless classification says so"
+  ],
+  "normalization": "train-prefix z-score for tasks; train-prefix feature normalization for online readouts",
+  "prediction": "online readouts predict before update",
+  "recurrence_specific_controls": [
+    "fading-memory-only",
+    "recurrent-hidden-only",
+    "state-reset",
+    "permuted-recurrence",
+    "shuffled-state",
+    "frozen-state"
+  ],
+  "source": "Tier 5.19a local temporal substrate reference",
+  "split": "chronological",
+  "tier": "Tier 5.19b - Temporal Substrate Benchmark / Sham / Regression Gate"
+}

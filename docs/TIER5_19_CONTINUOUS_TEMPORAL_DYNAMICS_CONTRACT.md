@@ -3,7 +3,8 @@
 Last updated: 2026-05-05.
 
 Status: contract complete. Tier 5.19a has run as a local software reference and
-the current active step is Tier 5.19b.
+Tier 5.19b has run as a stricter software sham gate. The current active step is
+Tier 5.19c.
 
 Tier 5.19a result:
 
@@ -13,6 +14,17 @@ Criteria: 12/12
 Classification: fading_memory_ready_but_recurrence_not_yet_specific
 Boundary: noncanonical local reference only; no baseline freeze and no hardware
 migration.
+```
+
+Tier 5.19b result:
+
+```text
+Output: controlled_test_output/tier5_19b_20260505_temporal_substrate_gate/
+Criteria: 12/12
+Classification: fading_memory_supported_recurrence_unproven
+Boundary: local claim-narrowing evidence only. Fading-memory temporal state is
+supported; bounded nonlinear recurrence is not proven. No baseline freeze and
+no hardware migration.
 ```
 
 ## Purpose
@@ -61,6 +73,9 @@ native on-chip temporal dynamics
 ```
 
 Hardware migration remains blocked until a software mechanism earns promotion.
+After 5.19b, the next legitimate promotion question is narrowed: can
+multi-timescale fading temporal state earn promotion without claiming bounded
+nonlinear recurrence?
 
 ## Mechanism Scope
 
@@ -278,7 +293,17 @@ depends on them.
 
 ## Pass Criteria
 
-Tier 5.19a/b may pass only if all of these are true:
+Tier 5.19 runners can have two different pass meanings:
+
+```text
+integrity/diagnostic pass = runner completed all predeclared controls and
+classified the outcome honestly
+
+promotion pass = mechanism cleared the scientific margins and compact guardrails
+needed for a freeze decision
+```
+
+Promotion may occur only if all of these are true:
 
 ```text
 No leakage or held-out-row fitting.
@@ -299,6 +324,9 @@ Existing CRA guardrails do not materially regress.
 
 Artifacts are sufficient for paper-grade audit.
 ```
+
+Tier 5.19b achieved an integrity/diagnostic pass, not a promotion pass, because
+recurrence-pressure did not separate from lag-only or state-reset.
 
 Default margin unless overridden by the runner contract:
 
@@ -339,7 +367,8 @@ Promotion requires:
 
 ```text
 Tier 5.19a local reference pass
-Tier 5.19b benchmark/sham/regression pass
+Tier 5.19b benchmark/sham gate pass
+Tier 5.19c narrowed promotion/regression pass if recurrence remains unproven
 compact regression pass
 updated evidence registry or explicit noncanonical freeze note
 baseline document if a new software baseline is frozen
@@ -347,7 +376,9 @@ baseline document if a new software baseline is frozen
 
 If promoted, freeze a new software baseline only after compact regression. If
 not promoted, keep `v2.1` as the current software baseline and leave Tier 7.0
-as an honest limitation.
+as an honest limitation. Tier 5.19b did not prove bounded nonlinear recurrence,
+so any 5.19c promotion must either narrow to fading-memory temporal state or
+run a separately defined recurrence repair.
 
 ## Hardware Migration Decision
 

@@ -1,0 +1,16 @@
+{
+  "display_name": "Held-out nonlinear long-memory diagnostic",
+  "horizon": 8,
+  "length": 720,
+  "metadata": {
+    "hidden_timescale": "slow accumulator decay 0.985 plus nonlinear gate decay 0.94",
+    "not_in_tier7_standard_suite": true,
+    "obs_mu": 0.013500538644399438,
+    "obs_sd": 0.44636514000227584,
+    "target_mu": 0.009809078204779,
+    "target_sd": 0.02217282258311018
+  },
+  "seed": 43,
+  "task": "heldout_long_memory",
+  "train_end": 468
+}

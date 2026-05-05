@@ -442,17 +442,26 @@ ability.
     1.2710, shuffled-state 1.8900, frozen-state 0.5685), but no-recurrence MSE
     0.3974 leaves recurrence-specific value insufficiently separated.
 
-33. 🔄 **CURRENT ACTIVE STEP** - Tier 5.19b benchmark and regression gate: rerun Mackey-Glass, Lorenz,
-    NARMA10, delayed_cue, hard_noisy_switching, memory/context tasks, and compact
-    Tier 1/2/3 guardrails. Add sharper recurrence-specific controls so the
-    result distinguishes fading-memory value from nonlinear recurrent-state
-    value. Do not promote if it only helps one benchmark, if no-recurrence
-    controls explain the gain, or if current core claims regress.
+33. ✅ **COMPLETE** - Tier 5.19b benchmark/sham gate: implemented a stricter
+    software-only matrix over Mackey-Glass, Lorenz, NARMA10, held-out long
+    memory, and recurrence-pressure diagnostics with current v2.1, lag-only,
+    random/fixed reservoir, fading-only, recurrent-only, state-reset,
+    recurrent-permutation, frozen-state, shuffled-state, shuffled-target, and
+    no-plasticity controls.
+    Result: pass, 12/12 criteria. Classification =
+    `fading_memory_supported_recurrence_unproven`. Held-out long-memory value
+    remained strong (candidate MSE 0.3857 vs lag-only 1.2710), but
+    recurrence-pressure did not separate from lag-only or state-reset
+    (candidate 0.8982, lag-only 0.8967, state-reset 0.9029). Do not claim
+    bounded nonlinear recurrence and do not freeze or migrate to hardware.
 
-34. Tier 5.19c promotion/freeze decision: freeze a new software baseline only if
-    the temporal substrate beats lag-only where state should matter, survives
-    controls, improves or preserves existing CRA tasks, and passes compact
-    regression. If it fails, park it and narrow the benchmark claim.
+34. 🔄 **CURRENT ACTIVE STEP** - Tier 5.19c fading-memory narrowing / compact
+    regression decision: decide whether a narrowed multi-timescale fading-memory
+    temporal substrate, without a recurrence claim, earns promotion. Freeze a
+    new software baseline only if the narrowed mechanism preserves v2.1
+    guardrails, survives compact controls, and beats appropriate lag/sham
+    controls on temporal-memory diagnostics. If it fails, park the temporal
+    branch and keep Tier 7 limitation explicit.
 
 35. Tier 4.30-readiness audit: only after the temporal-substrate decision, decide
     whether lifecycle hardware should layer on v2.1 as-is or on a promoted newer
@@ -743,7 +752,7 @@ After each completed run or design tier:
 The next concrete action is:
 
 ```text
-Tier 5.19b - Temporal Substrate Benchmark/Sham/Regression Gate
+Tier 5.19c - Fading-Memory Narrowing / Compact-Regression Decision
 ```
 
 Detailed contract:
@@ -755,24 +764,24 @@ docs/TIER5_19_CONTINUOUS_TEMPORAL_DYNAMICS_CONTRACT.md
 Purpose:
 
 ```text
-Use the completed 5.19a local reference to run the stricter promotion-facing
-gate. The key unresolved question is whether the causal ingredient is fading
-memory alone, bounded nonlinear recurrence, the local continuous interface, or
-some combination.
+Use the completed 5.19a and 5.19b evidence to decide whether a narrowed
+multi-timescale fading-memory temporal substrate earns promotion without
+claiming bounded nonlinear recurrence.
 ```
 
 Required coverage:
 
 ```text
-Rerun standard and held-out temporal tasks plus compact CRA guardrails. Preserve
-lag-only, fixed/random reservoir, no-recurrence, no-plasticity, frozen temporal
-state, shuffled temporal state, shuffled target, and current v2.1 controls. Add
-sharper recurrence-specific controls before any promotion/freeze decision.
+Rerun the temporal-memory diagnostics and compact CRA guardrails. Preserve
+current v2.1, lag-only, fixed/random reservoir, narrowed fading-memory,
+full temporal candidate as a non-promoted reference, no-plasticity, frozen
+temporal state, shuffled temporal state, and shuffled target controls.
 ```
 
-Do not jump straight to hardware or lifecycle. Tier 5.19a was promising but not
-promotion evidence. Tier 5.19b decides whether the substrate earns promotion,
-needs repair, or should be parked/narrowed.
+Do not jump straight to hardware or lifecycle. Tier 5.19b was useful but it
+narrowed the claim: fading-memory temporal state is supported; recurrence is
+not proven. Tier 5.19c decides whether that narrowed mechanism earns promotion
+or whether the whole temporal-substrate branch stays diagnostic-only.
 
 
 ## 13. Make-Or-Break Gates

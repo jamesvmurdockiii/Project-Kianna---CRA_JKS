@@ -6268,8 +6268,9 @@ Near-term roadmap insertion:
 1. Tier 5.19 / 7.0e - Continuous Temporal Dynamics Substrate Contract. COMPLETE.
 2. Tier 5.19a - Local temporal-substrate reference. COMPLETE: fading memory is
    promising, recurrence-specific value not yet separated.
-3. Tier 5.19b - Benchmark, sham-control, and compact-regression gate. CURRENT.
-4. Tier 5.19c - Promotion/freeze decision.
+3. Tier 5.19b - Benchmark and sham-control gate. COMPLETE: fading-memory value
+   supported; bounded nonlinear recurrence still not proven.
+4. Tier 5.19c - Fading-memory narrowing / compact-regression decision. CURRENT.
 5. Tier 4.30-readiness audit.
 6. Tier 4.30 lifecycle-native contract, if still appropriate.
 ```
@@ -6284,6 +6285,21 @@ Interpretation: fading-memory state helped the held-out long-memory diagnostic
 against lag-only and destructive shams, but the no-recurrence ablation was too
 close to the full candidate. Tier 5.19b must sharpen recurrence-specific
 controls before any promotion/freeze decision.
+```
+
+Tier 5.19b result:
+
+```text
+Output: controlled_test_output/tier5_19b_20260505_temporal_substrate_gate/
+Criteria: 12/12
+Classification: fading_memory_supported_recurrence_unproven
+Interpretation: the temporal substrate remained useful on the held-out
+long-memory diagnostic (candidate MSE 0.3857 vs lag-only 1.2710), but the
+recurrence-pressure diagnostic did not separate from lag-only or state-reset
+(candidate 0.8982, lag-only 0.8967, state-reset 0.9029). Therefore the paper
+cannot claim bounded nonlinear recurrence from 5.19b. The next valid step is a
+narrowed fading-memory promotion/regression decision or a separate recurrence
+repair.
 ```
 
 Detailed Tier 5.19 contract:

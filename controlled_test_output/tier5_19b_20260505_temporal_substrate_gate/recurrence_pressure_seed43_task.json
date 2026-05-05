@@ -1,0 +1,16 @@
+{
+  "display_name": "Held-out nonlinear recurrence-pressure diagnostic",
+  "horizon": 8,
+  "length": 720,
+  "metadata": {
+    "hidden_dynamics": "two coupled tanh state variables plus nonlinear product accumulator",
+    "obs_mu": -0.05698935474455187,
+    "obs_sd": 0.44251785225996615,
+    "purpose": "separate bounded recurrence from fading-memory-only traces",
+    "target_mu": 0.008164193555753653,
+    "target_sd": 0.12960213060826964
+  },
+  "seed": 43,
+  "task": "recurrence_pressure",
+  "train_end": 468
+}

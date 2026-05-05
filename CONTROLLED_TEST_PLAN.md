@@ -7826,7 +7826,7 @@ controls. Do not freeze, promote, or migrate to hardware from Tier 5.19a alone.
 
 ### Tier 5.19b - Temporal Substrate Benchmark / Sham / Regression Gate
 
-Status: DEFINED / CURRENT IMPLEMENTATION GATE.
+Status: COMPLETE - LOCAL SOFTWARE PASS / CLAIM-NARROWING DIAGNOSTIC.
 
 Question:
 
@@ -7861,11 +7861,6 @@ Lorenz
 NARMA10
 heldout_long_memory from Tier 5.19a
 one recurrence-pressure diagnostic where fading-memory-only should be weaker
-delayed_cue guardrail
-hard_noisy_switching guardrail
-memory/context guardrail
-compact Tier 1/2/3 guardrails, either directly or by invoking the compact
-regression harness if the candidate passes the benchmark/sham stage
 ```
 
 Pass criteria:
@@ -7881,10 +7876,94 @@ No target leakage, held-out-row fitting, or task-name-specific mechanism branch
 is present.
 ```
 
+Result:
+
+```text
+Output: controlled_test_output/tier5_19b_20260505_temporal_substrate_gate/
+Runner: experiments/tier5_19b_temporal_substrate_gate.py
+Criteria: 12/12
+Classification: fading_memory_supported_recurrence_unproven
+```
+
+Key metrics:
+
+```text
+heldout_long_memory:
+  temporal_full_candidate MSE = 0.3857
+  lag_only_online_lms_control MSE = 1.2710
+  margin vs lag-only = 3.30x
+
+recurrence_pressure:
+  temporal_full_candidate MSE = 0.8982
+  lag_only_online_lms_control MSE = 0.8967
+  fading_memory_only_ablation MSE = 1.0348
+  state_reset_ablation MSE = 0.9029
+  shuffled_temporal_state_sham MSE = 1.1686
+```
+
+Interpretation:
+
+```text
+Tier 5.19b supports a narrowed fading-memory temporal-state story, but it does
+not prove bounded nonlinear recurrence. The full candidate did not beat lag-only
+on recurrence_pressure, and state-reset was too close. No baseline freeze and no
+hardware migration are authorized from 5.19b.
+```
+
 Promotion boundary:
 
 ```text
-Tier 5.19b may recommend promotion, repair, or parking. It still does not freeze
-a baseline by itself unless the compact regression/promotion portion passes and
-a baseline document is written.
+Tier 5.19b recommends narrowing or repair. It does not freeze a baseline.
+Compact CRA guardrails are deferred to Tier 5.19c because 5.19b did not earn a
+recurrence-specific promotion.
+```
+
+### Tier 5.19c - Fading-Memory Narrowing / Compact-Regression Decision
+
+Status: DEFINED / CURRENT NEXT.
+
+Question:
+
+```text
+Does a narrowed multi-timescale fading-memory temporal substrate, with no
+bounded-recurrence claim, earn promotion after compact CRA guardrails and
+sham controls?
+```
+
+Required comparisons:
+
+```text
+current v2.1
+lag-only causal readout
+fixed ESN / reservoir
+random reservoir
+narrowed fading-memory candidate
+full temporal candidate as non-promoted reference
+frozen temporal-state ablation
+shuffled temporal-state sham
+shuffled-target control
+no-plasticity readout ablation
+compact Tier 1/2/3 plus v2.1 guardrails
+```
+
+Pass criteria:
+
+```text
+Narrowed fading-memory candidate preserves existing CRA claims.
+Narrowed candidate improves held-out temporal-memory diagnostics versus current
+v2.1 and destructive shams.
+Lag-only does not fully explain the claimed improvement where the claim says
+temporal state should matter.
+No recurrence-specific claim is made unless a recurrence repair is run later.
+No leakage, target peeking, or task-name-specific mechanism branch is present.
+```
+
+Fail / park criteria:
+
+```text
+Existing v2.1 guardrails regress.
+Lag-only explains the narrowed mechanism.
+Shuffled/frozen/no-plasticity controls match the candidate.
+The mechanism only helps a synthetic diagnostic but does not preserve the
+research baseline.
 ```

@@ -21,8 +21,8 @@ controlled ablations, baseline comparisons, and explicit claim boundaries.
 | Software baseline | `v2.1`, frozen after bounded host-side self-evaluation / reliability-monitoring evidence. |
 | Native hardware baseline | `CRA_NATIVE_MECHANISM_BRIDGE_v0.3`, frozen after Tier 4.29f audited the 4.29a-e native mechanism hardware passes. |
 | Latest ingested hardware pass | Tier 4.29e, native host-scheduled replay/consolidation bridge, `38/38` criteria per seed across seeds `42`, `43`, and `44`. |
-| Latest software benchmark diagnostic | Tier 5.19a local temporal-substrate reference passed as noncanonical diagnostic evidence: fading memory helped the held-out long-memory task, but recurrence-specific value was not yet separated. |
-| Active next gate | Tier 5.19b temporal-substrate benchmark/sham/regression gate with sharper recurrence-specific controls. |
+| Latest software benchmark diagnostic | Tier 5.19b temporal-substrate sham gate passed as claim-narrowing evidence: fading memory remains useful on held-out long memory, but bounded nonlinear recurrence is still unproven. |
+| Active next gate | Tier 5.19c fading-memory narrowing / compact-regression decision. |
 | Canonical registry | 47 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
 | Validation suite | 147 pytest tests plus registry, paper-table, and repository-audit generation. |
 
