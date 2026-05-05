@@ -120,6 +120,7 @@ They remain part of the peer-review audit trail:
 5.19b temporal-substrate benchmark/sham gate = completed; fading memory supported, bounded nonlinear recurrence unproven
 5.19c fading-memory narrowing compact-regression gate = passed and froze bounded v2.2
 4.30-readiness lifecycle-native preflight/layering audit = passed; static-pool lifecycle-native path layers on native mechanism bridge v0.3 with v2.2 as software reference only
+4.30 lifecycle-native static-pool contract = passed; command/readback/event/gate/failure schema defined before local reference or hardware work
 4.30+ native lifecycle/ecology migration = roadmap; not yet canonical evidence
 ```
 
@@ -8088,4 +8089,58 @@ Next step:
 ```text
 Tier 4.30 lifecycle-native contract: formalize static-pool command/readback
 schema and local parity criteria before implementation or EBRAINS packaging.
+```
+
+### Tier 4.30 - Lifecycle-Native Static-Pool Contract
+
+Status: COMPLETE - LOCAL ENGINEERING PASS.
+
+Question:
+
+```text
+Can the lifecycle-native path be specified precisely enough to implement a
+static-pool local reference and later hardware smoke without dynamic graph
+creation, hidden host state, or unscoped v2.2 temporal migration?
+```
+
+Result:
+
+```text
+Output: controlled_test_output/tier4_30_20260505_lifecycle_native_contract/
+Runner: experiments/tier4_30_lifecycle_native_contract.py
+Criteria: 14/14
+Mode: local-contract
+```
+
+Contract summary:
+
+```text
+Pool: 8 static slots
+Founders: 2 active founders
+Commands: lifecycle init, lifecycle event, trophic update, lifecycle readback,
+          lifecycle sham mode
+Readback: 23 summary/per-slot fields including masks, lineage, trophic state,
+          event counters, checksums, and invalid-event count
+Events: trophic_update, cleavage, adult_birth, death, maturity_handoff
+Gates: 4.30 contract, 4.30a local reference, 4.30b single-core smoke,
+       4.30c multi-core split, 4.30d sham-control subset
+Failure classes: contract gap, dynamic allocation dependency, local reference
+                 mismatch, readback mismatch, lineage/mask corruption, sham
+                 explains effect, unsupported claim jump
+```
+
+Claim boundary:
+
+```text
+Tier 4.30 is not runtime implementation, not hardware evidence, not a
+lifecycle/self-scaling proof, not a lifecycle baseline freeze, not v2.2 temporal
+state migration, not speedup, and not multi-chip scaling.
+```
+
+Next step:
+
+```text
+Tier 4.30a local static-pool lifecycle reference: implement deterministic
+expected active-mask, lineage, event-count, checksum, and control outputs before
+any C runtime implementation or EBRAINS package.
 ```

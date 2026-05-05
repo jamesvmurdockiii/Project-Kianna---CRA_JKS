@@ -1,0 +1,24 @@
+field,type,owner,when_read,purpose,pass_rule
+schema_version,uint16,host_interface,every read,detect stale parser/report mismatch,matches contract version
+pool_size,uint16,lifecycle_core,every read,prove fixed capacity,equals declared static pool
+active_count,uint16,lifecycle_core,every read,prove mask state,matches popcount(active_mask)
+inactive_count,uint16,lifecycle_core,every read,capacity accounting,active + inactive == pool_size
+active_mask_bits,uint32,lifecycle_core,every read,compact active/inactive proof,matches reference bitmask
+lineage_checksum,uint32,lifecycle_core,every read,compact lineage integrity,matches local reference
+trophic_checksum,int32,lifecycle_core,every read,compact trophic integrity,within fixed-point tolerance
+event_count,uint32,lifecycle_core,every read,event accounting,matches accepted events
+cleavage_count,uint32,lifecycle_core,every read,reproduction accounting,matches reference
+birth_count,uint32,lifecycle_core,every read,adult birth accounting,matches reference
+death_count,uint32,lifecycle_core,every read,death accounting,matches reference
+invalid_event_count,uint32,lifecycle_core,every read,invariant failure accounting,zero in canonical pass
+slot_id,uint16,lifecycle_core,debug/full read,stable static-pool index,0 <= slot_id < pool_size
+active_mask,uint8,lifecycle_core,debug/full read,per-slot active flag,matches reference
+polyp_id,uint32,lifecycle_core,debug/full read,auditable identity,stable unless slot is reassigned by accepted event
+lineage_id,uint32,lifecycle_core,debug/full read,lineage audit,matches reference lineage tree
+parent_slot,int16,lifecycle_core,debug/full read,birth provenance,-1 for founders or valid parent slot
+generation,uint16,lifecycle_core,debug/full read,lifecycle depth,increments only on accepted child event
+age_steps,uint32,lifecycle_core,debug/full read,maturity gates,monotonic while active
+trophic_health_raw,s16.15,lifecycle_core,debug/full read,survival/reproduction pressure,clipped and matches fixed-point reference
+cyclin_d_raw,s16.15,lifecycle_core,debug/full read,reproduction gate,clipped and matches fixed-point reference
+bax_raw,s16.15,lifecycle_core,debug/full read,death gate,clipped and matches fixed-point reference
+last_event_type,uint8,lifecycle_core,debug/full read,event audit,matches final accepted event for slot

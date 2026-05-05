@@ -1,0 +1,8 @@
+failure_class,meaning,required_response
+contract_gap,"A command, field, control, artifact, or claim boundary is not specified.",Do not implement runtime code; repair the contract first.
+dynamic_allocation_dependency,The proposed lifecycle proof depends on dynamic graph creation or malloc/free neuron birth/death.,Reject as noncanonical for Tier 4.30; redesign as static pool/mask.
+local_reference_mismatch,C/local candidate does not match the deterministic Python reference.,Debug locally; no EBRAINS upload.
+readback_schema_mismatch,Hardware emits a state schema the ingest/parser cannot verify.,Stop and repair schema/versioning; no scientific claim.
+lineage_or_mask_corruption,"Active mask, lineage checksum, parent links, or event counters diverge.",Classify as lifecycle-state failure and debug before controls.
+sham_explains_effect,"Fixed capacity, random events, shuffled masks, shuffled lineage, or no-trophic controls match the enabled path.",Do not promote lifecycle-native baseline; narrow organism claim or redesign mechanism.
+unsupported_claim_jump,"A report claims lifecycle superiority, multi-chip scaling, speedup, or native v2.2 temporal state from this contract.",Reject report wording and correct source-of-truth docs.

@@ -6275,7 +6275,9 @@ Near-term roadmap insertion:
    COMPLETE: v2.2 frozen for bounded fading-memory temporal state only.
 5. Tier 4.30-readiness audit. COMPLETE: lifecycle-native path layers on the
    native mechanism bridge v0.3 with v2.2 as software reference only.
-6. Tier 4.30 lifecycle-native contract. CURRENT.
+6. Tier 4.30 lifecycle-native contract. COMPLETE: static-pool command/readback
+   contract defined.
+7. Tier 4.30a local static-pool lifecycle reference. CURRENT.
 ```
 
 Tier 5.19a result:
@@ -6319,7 +6321,9 @@ Key metric: temporal-memory geomean candidate MSE 0.2275 vs lag-only 0.8954
 Boundary: bounded host-side fading-memory temporal state only; not bounded
           nonlinear recurrence, not hardware/on-chip temporal dynamics, not
           universal benchmark superiority, not language/planning/AGI/ASI.
-Next: Tier 4.30-readiness audit before lifecycle-native implementation.
+Next: Tier 4.30-readiness audit before lifecycle-native implementation
+(completed; superseded by Tier 4.30 contract and current Tier 4.30a local
+reference work).
 ```
 
 Tier 4.30-readiness result:
@@ -6340,6 +6344,21 @@ Boundary: not hardware evidence, not lifecycle implementation, not speedup,
           not multi-chip scaling, not native/on-chip v2.2 temporal migration,
           and not a lifecycle baseline freeze.
 Next: Tier 4.30 lifecycle-native contract.
+```
+
+Tier 4.30 result:
+
+```text
+Output: controlled_test_output/tier4_30_20260505_lifecycle_native_contract/
+Runner: experiments/tier4_30_lifecycle_native_contract.py
+Criteria: 14/14
+Contract: 8 static slots, 2 founders, lifecycle init/event/trophic/readback/sham
+          command schema, 23 readback fields, 5 lifecycle event semantics, 5
+          gate definitions, and 7 failure classes.
+Boundary: local engineering contract only; not runtime implementation, not
+          hardware evidence, not lifecycle/self-scaling proof, not v2.2 temporal
+          migration, not speedup, not multi-chip scaling.
+Next: Tier 4.30a local static-pool lifecycle reference.
 ```
 
 Detailed Tier 5.19 contract:

@@ -1,0 +1,514 @@
+{
+  "claim_boundary": "Tier 4.30 is a local engineering contract. It does not implement the C runtime lifecycle surface, does not run hardware, does not prove lifecycle/self-scaling, does not freeze a lifecycle baseline, does not migrate v2.2 temporal state, and does not claim speedup or multi-chip scaling.",
+  "command_schema": [
+    {
+      "command": "CMD_LIFECYCLE_INIT",
+      "deterministic_rule": "initial active slots are 0..founder_count-1; all other slots inactive",
+      "forbidden_behavior": "no dynamic allocation, no graph rebuild, no implicit extra founders",
+      "owner": "host -> lifecycle core",
+      "payload_fields": "pool_size, founder_count, seed, trophic_seed_raw, generation_seed",
+      "phase": "setup before run",
+      "required_ack": "pool_size, active_count, inactive_count, lineage_checksum"
+    },
+    {
+      "command": "CMD_LIFECYCLE_EVENT",
+      "deterministic_rule": "event is applied only if invariants hold; invalid events increment invalid_event_count",
+      "forbidden_behavior": "no silent overwrite of active child slot, no lineage mutation without event telemetry",
+      "owner": "host/reference -> lifecycle core",
+      "payload_fields": "event_index, event_type, parent_slot, target_slot, child_slot, trophic_delta_raw, reward_raw",
+      "phase": "local reference and first hardware smoke",
+      "required_ack": "event_index, last_event_type, event_count, active_mask_checksum"
+    },
+    {
+      "command": "CMD_LIFECYCLE_TROPHIC_UPDATE",
+      "deterministic_rule": "trophic_health, cyclin_d, and bax update in fixed-point with explicit clipping",
+      "forbidden_behavior": "no float-only host trophic decision in hardware claim",
+      "owner": "learning core -> lifecycle core",
+      "payload_fields": "slot_id, reward_raw, activity_raw, prediction_error_raw, decay_raw",
+      "phase": "after lifecycle smoke, before task-effect claims",
+      "required_ack": "slot_id, trophic_health_raw, cyclin_d_raw, bax_raw"
+    },
+    {
+      "command": "CMD_LIFECYCLE_READ_STATE",
+      "deterministic_rule": "readback schema is stable and versioned; compact summary always available",
+      "forbidden_behavior": "no paper claim from unversioned or partial lifecycle state",
+      "owner": "host <- lifecycle core",
+      "payload_fields": "read_scope, start_slot, slot_count, schema_version",
+      "phase": "debug, ingest, and paper audit",
+      "required_ack": "schema_version, pool_summary, per-slot compact rows or declared truncation"
+    },
+    {
+      "command": "CMD_LIFECYCLE_SHAM_MODE",
+      "deterministic_rule": "control perturbation is seeded and reproduced exactly by local reference",
+      "forbidden_behavior": "no post-hoc relabeling of failed lifecycle runs as controls",
+      "owner": "host -> lifecycle core",
+      "payload_fields": "control_mode, event_budget, shuffle_seed, disable_trophic, disable_plasticity",
+      "phase": "sham-control runs",
+      "required_ack": "control_mode, shuffle_seed, event_budget, sham_counter"
+    }
+  ],
+  "contract": {
+    "hardware_package_rule": {
+      "allowed_after": "contract pass, local reference pass, source audit pass, generated package contains source only",
+      "first_hardware_scope": "single-core active-mask and lineage telemetry smoke",
+      "first_hardware_seed": 42,
+      "ingest_required": true
+    },
+    "layering": {
+      "base_native_line": "CRA_NATIVE_MECHANISM_BRIDGE_v0.3",
+      "forbidden": [
+        "dynamic PyNN population creation mid-run",
+        "legacy SDRAM malloc/free neuron_birth/neuron_death as lifecycle proof",
+        "host-only lifecycle decisions without readback",
+        "unscoped native v2.2 fading-memory migration",
+        "multi-chip or speedup claims"
+      ],
+      "software_reference_line": "v2.2",
+      "software_reference_rule": "v2.2 informs future comparisons but is not migrated into hardware lifecycle in Tier 4.30."
+    },
+    "local_reference": {
+      "event_count": "32 canonical events plus optional 64-event boundary smoke",
+      "language": "Python deterministic reference first; C fixed-point parity second",
+      "seed_rule": "seed 42 for first local reference; seeds 42/43/44 only after deterministic seed-42 pass",
+      "tolerance": "exact for integer/mask/lineage/event counters; <=1 raw unit for fixed-point summaries unless predeclared otherwise"
+    },
+    "pool": {
+      "capacity_model": "fixed compile-time pool; lifecycle events activate, silence, or reassign slots",
+      "first_task_scope": "state mechanics only; task-effect claims begin only after local and hardware state parity",
+      "founder_count": 2,
+      "max_events_for_first_reference": 64,
+      "pool_size": 8
+    }
+  },
+  "criteria": [
+    {
+      "name": "readiness audit passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "readiness audit criteria complete",
+      "note": "",
+      "passed": true,
+      "rule": "== 16/16",
+      "value": "16/16"
+    },
+    {
+      "name": "layering decision imported",
+      "note": "",
+      "passed": true,
+      "rule": "uses native mechanism bridge with v2.2 software reference only",
+      "value": "layer_initial_lifecycle_native_work_on_native_mechanism_bridge_v0_3_with_v2_2_as_software_reference_only"
+    },
+    {
+      "name": "static runtime capacity sufficient for first reference",
+      "note": "",
+      "passed": true,
+      "rule": "MAX_NEURONS>=8 and schedule>=64",
+      "value": {
+        "MAX_CONTEXT_SLOTS": 128,
+        "MAX_MEMORY_SLOTS": 8,
+        "MAX_NEURONS": 1024,
+        "MAX_PENDING_HORIZONS": 128,
+        "MAX_ROUTE_SLOTS": 8,
+        "MAX_SCHEDULE_ENTRIES": 512
+      }
+    },
+    {
+      "name": "legacy dynamic birth/death excluded",
+      "note": "The legacy path exists but is explicitly not the Tier 4.30 proof.",
+      "passed": true,
+      "rule": "identified and excluded",
+      "value": true
+    },
+    {
+      "name": "lifecycle surface not already silently present",
+      "note": "",
+      "passed": true,
+      "rule": "== false before implementation",
+      "value": false
+    },
+    {
+      "name": "command schema declared",
+      "note": "",
+      "passed": true,
+      "rule": ">= 5 commands",
+      "value": 5
+    },
+    {
+      "name": "readback schema declared",
+      "note": "",
+      "passed": true,
+      "rule": ">= 20 fields",
+      "value": 23
+    },
+    {
+      "name": "event semantics declared",
+      "note": "",
+      "passed": true,
+      "rule": ">= 5 lifecycle event types",
+      "value": 5
+    },
+    {
+      "name": "gate sequence declared",
+      "note": "",
+      "passed": true,
+      "rule": ">= 5 gates",
+      "value": 5
+    },
+    {
+      "name": "failure classes declared",
+      "note": "",
+      "passed": true,
+      "rule": ">= 6 classes",
+      "value": 7
+    },
+    {
+      "name": "static-pool contract declares bounded pool",
+      "note": "",
+      "passed": true,
+      "rule": "== 8 with 2 founders",
+      "value": 8
+    },
+    {
+      "name": "local reference required before hardware",
+      "note": "",
+      "passed": true,
+      "rule": "mentions contract/local/source audit before package",
+      "value": "contract pass, local reference pass, source audit pass, generated package contains source only"
+    },
+    {
+      "name": "claim boundary forbids unsupported jumps",
+      "note": "",
+      "passed": true,
+      "rule": ">= 5 forbidden behaviors",
+      "value": [
+        "dynamic PyNN population creation mid-run",
+        "legacy SDRAM malloc/free neuron_birth/neuron_death as lifecycle proof",
+        "host-only lifecycle decisions without readback",
+        "unscoped native v2.2 fading-memory migration",
+        "multi-chip or speedup claims"
+      ]
+    }
+  ],
+  "criteria_passed": 14,
+  "criteria_total": 14,
+  "event_semantics": [
+    {
+      "event_type": "trophic_update",
+      "required_invariants": "slot active; fixed-point values clipped; no lineage mutation",
+      "sham_control": "no_trophic_pressure_control",
+      "state_updates": "trophic_health, cyclin_d, bax, age_steps",
+      "trigger_inputs": "slot activity/reward/error summary"
+    },
+    {
+      "event_type": "cleavage",
+      "required_invariants": "parent remains active; child was inactive; event increments exactly once",
+      "sham_control": "random_event_replay_control",
+      "state_updates": "child active, child parent_slot, child generation, child lineage_id, cleavage_count",
+      "trigger_inputs": "parent active, inactive child slot available, cyclin gate passes"
+    },
+    {
+      "event_type": "adult_birth",
+      "required_invariants": "adult gate explicit; no dynamic allocation; no hidden extra capacity",
+      "sham_control": "fixed_static_pool_control",
+      "state_updates": "child active, child lineage_id/parent/generation, birth_count",
+      "trigger_inputs": "adult parent active, inactive child slot available, trophic and maturity gates pass"
+    },
+    {
+      "event_type": "death",
+      "required_invariants": "active_count decreases by one; lineage remains readable after death",
+      "sham_control": "active_mask_shuffle_control",
+      "state_updates": "slot inactive, death_count, final lineage telemetry preserved",
+      "trigger_inputs": "active slot, bax/death gate passes or explicit reference event"
+    },
+    {
+      "event_type": "maturity_handoff",
+      "required_invariants": "no active-mask change unless paired with accepted birth/cleavage/death",
+      "sham_control": "lineage_id_shuffle_control",
+      "state_updates": "last_event_type, maturity marker encoded through cyclin/trophic state",
+      "trigger_inputs": "age threshold or trophic threshold reached"
+    }
+  ],
+  "failed_criteria": [],
+  "failure_classes": [
+    {
+      "failure_class": "contract_gap",
+      "meaning": "A command, field, control, artifact, or claim boundary is not specified.",
+      "required_response": "Do not implement runtime code; repair the contract first."
+    },
+    {
+      "failure_class": "dynamic_allocation_dependency",
+      "meaning": "The proposed lifecycle proof depends on dynamic graph creation or malloc/free neuron birth/death.",
+      "required_response": "Reject as noncanonical for Tier 4.30; redesign as static pool/mask."
+    },
+    {
+      "failure_class": "local_reference_mismatch",
+      "meaning": "C/local candidate does not match the deterministic Python reference.",
+      "required_response": "Debug locally; no EBRAINS upload."
+    },
+    {
+      "failure_class": "readback_schema_mismatch",
+      "meaning": "Hardware emits a state schema the ingest/parser cannot verify.",
+      "required_response": "Stop and repair schema/versioning; no scientific claim."
+    },
+    {
+      "failure_class": "lineage_or_mask_corruption",
+      "meaning": "Active mask, lineage checksum, parent links, or event counters diverge.",
+      "required_response": "Classify as lifecycle-state failure and debug before controls."
+    },
+    {
+      "failure_class": "sham_explains_effect",
+      "meaning": "Fixed capacity, random events, shuffled masks, shuffled lineage, or no-trophic controls match the enabled path.",
+      "required_response": "Do not promote lifecycle-native baseline; narrow organism claim or redesign mechanism."
+    },
+    {
+      "failure_class": "unsupported_claim_jump",
+      "meaning": "A report claims lifecycle superiority, multi-chip scaling, speedup, or native v2.2 temporal state from this contract.",
+      "required_response": "Reject report wording and correct source-of-truth docs."
+    }
+  ],
+  "gate_sequence": [
+    {
+      "artifacts": "results JSON, report MD, command/readback/event/gate/failure CSVs",
+      "fail_criteria": "ambiguous ownership, missing shams, dynamic allocation dependency, or unscoped v2.2 migration",
+      "gate": "Tier 4.30 contract",
+      "mode": "local engineering",
+      "pass_criteria": "all readiness inputs pass; command/readback/event/gate/failure schemas complete",
+      "scope": "command/readback schema and invariant specification"
+    },
+    {
+      "artifacts": "local reference JSON, per-event CSV, final state CSV, control summaries",
+      "fail_criteria": "any nondeterminism, hidden capacity growth, invalid events in canonical pass",
+      "gate": "Tier 4.30a local static-pool reference",
+      "mode": "local deterministic reference",
+      "pass_criteria": "exact active mask/lineage/event/checksum parity and all controls precomputed",
+      "scope": "8-slot pool, 2 founders, 32-64 lifecycle events, no hardware"
+    },
+    {
+      "artifacts": "hardware results JSON, report MD, board/core info, compact readback, ingest report",
+      "fail_criteria": "readback schema mismatch, stale state, dynamic allocation, timeout, or lineage checksum mismatch",
+      "gate": "Tier 4.30b single-core hardware smoke",
+      "mode": "EBRAINS/SpiNNaker",
+      "pass_criteria": "real hardware, zero fallback, compact readback matches local reference within fixed-point tolerance",
+      "scope": "active-mask and lineage telemetry only, one seed first"
+    },
+    {
+      "artifacts": "core map, message counters, compact readback, local/hardware diff",
+      "fail_criteria": "cross-core stale reply, timeout, corrupted lineage, or unmatched event count",
+      "gate": "Tier 4.30c multi-core lifecycle split",
+      "mode": "EBRAINS/SpiNNaker",
+      "pass_criteria": "no stale replies, no mask corruption, local parity preserved across cores",
+      "scope": "lifecycle state split from learning/context/route/memory cores"
+    },
+    {
+      "artifacts": "control matrix CSV, effect sizes, per-seed rows, failure classification",
+      "fail_criteria": "shams match lifecycle, no task effect, or lineage telemetry is decorative",
+      "gate": "Tier 4.30d lifecycle sham-control subset",
+      "mode": "local then hardware subset",
+      "pass_criteria": "lifecycle-enabled path separates from shams on a predeclared lifecycle-pressure task",
+      "scope": "fixed pool, random events, mask shuffle, lineage shuffle, no trophic, no dopamine/plasticity"
+    }
+  ],
+  "generated_at_utc": "2026-05-05T19:41:04+00:00",
+  "mode": "local-contract",
+  "next_step": "Tier 4.30a local static-pool lifecycle reference",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_30_20260505_lifecycle_native_contract",
+  "readback_schema": [
+    {
+      "field": "schema_version",
+      "owner": "host_interface",
+      "pass_rule": "matches contract version",
+      "purpose": "detect stale parser/report mismatch",
+      "type": "uint16",
+      "when_read": "every read"
+    },
+    {
+      "field": "pool_size",
+      "owner": "lifecycle_core",
+      "pass_rule": "equals declared static pool",
+      "purpose": "prove fixed capacity",
+      "type": "uint16",
+      "when_read": "every read"
+    },
+    {
+      "field": "active_count",
+      "owner": "lifecycle_core",
+      "pass_rule": "matches popcount(active_mask)",
+      "purpose": "prove mask state",
+      "type": "uint16",
+      "when_read": "every read"
+    },
+    {
+      "field": "inactive_count",
+      "owner": "lifecycle_core",
+      "pass_rule": "active + inactive == pool_size",
+      "purpose": "capacity accounting",
+      "type": "uint16",
+      "when_read": "every read"
+    },
+    {
+      "field": "active_mask_bits",
+      "owner": "lifecycle_core",
+      "pass_rule": "matches reference bitmask",
+      "purpose": "compact active/inactive proof",
+      "type": "uint32",
+      "when_read": "every read"
+    },
+    {
+      "field": "lineage_checksum",
+      "owner": "lifecycle_core",
+      "pass_rule": "matches local reference",
+      "purpose": "compact lineage integrity",
+      "type": "uint32",
+      "when_read": "every read"
+    },
+    {
+      "field": "trophic_checksum",
+      "owner": "lifecycle_core",
+      "pass_rule": "within fixed-point tolerance",
+      "purpose": "compact trophic integrity",
+      "type": "int32",
+      "when_read": "every read"
+    },
+    {
+      "field": "event_count",
+      "owner": "lifecycle_core",
+      "pass_rule": "matches accepted events",
+      "purpose": "event accounting",
+      "type": "uint32",
+      "when_read": "every read"
+    },
+    {
+      "field": "cleavage_count",
+      "owner": "lifecycle_core",
+      "pass_rule": "matches reference",
+      "purpose": "reproduction accounting",
+      "type": "uint32",
+      "when_read": "every read"
+    },
+    {
+      "field": "birth_count",
+      "owner": "lifecycle_core",
+      "pass_rule": "matches reference",
+      "purpose": "adult birth accounting",
+      "type": "uint32",
+      "when_read": "every read"
+    },
+    {
+      "field": "death_count",
+      "owner": "lifecycle_core",
+      "pass_rule": "matches reference",
+      "purpose": "death accounting",
+      "type": "uint32",
+      "when_read": "every read"
+    },
+    {
+      "field": "invalid_event_count",
+      "owner": "lifecycle_core",
+      "pass_rule": "zero in canonical pass",
+      "purpose": "invariant failure accounting",
+      "type": "uint32",
+      "when_read": "every read"
+    },
+    {
+      "field": "slot_id",
+      "owner": "lifecycle_core",
+      "pass_rule": "0 <= slot_id < pool_size",
+      "purpose": "stable static-pool index",
+      "type": "uint16",
+      "when_read": "debug/full read"
+    },
+    {
+      "field": "active_mask",
+      "owner": "lifecycle_core",
+      "pass_rule": "matches reference",
+      "purpose": "per-slot active flag",
+      "type": "uint8",
+      "when_read": "debug/full read"
+    },
+    {
+      "field": "polyp_id",
+      "owner": "lifecycle_core",
+      "pass_rule": "stable unless slot is reassigned by accepted event",
+      "purpose": "auditable identity",
+      "type": "uint32",
+      "when_read": "debug/full read"
+    },
+    {
+      "field": "lineage_id",
+      "owner": "lifecycle_core",
+      "pass_rule": "matches reference lineage tree",
+      "purpose": "lineage audit",
+      "type": "uint32",
+      "when_read": "debug/full read"
+    },
+    {
+      "field": "parent_slot",
+      "owner": "lifecycle_core",
+      "pass_rule": "-1 for founders or valid parent slot",
+      "purpose": "birth provenance",
+      "type": "int16",
+      "when_read": "debug/full read"
+    },
+    {
+      "field": "generation",
+      "owner": "lifecycle_core",
+      "pass_rule": "increments only on accepted child event",
+      "purpose": "lifecycle depth",
+      "type": "uint16",
+      "when_read": "debug/full read"
+    },
+    {
+      "field": "age_steps",
+      "owner": "lifecycle_core",
+      "pass_rule": "monotonic while active",
+      "purpose": "maturity gates",
+      "type": "uint32",
+      "when_read": "debug/full read"
+    },
+    {
+      "field": "trophic_health_raw",
+      "owner": "lifecycle_core",
+      "pass_rule": "clipped and matches fixed-point reference",
+      "purpose": "survival/reproduction pressure",
+      "type": "s16.15",
+      "when_read": "debug/full read"
+    },
+    {
+      "field": "cyclin_d_raw",
+      "owner": "lifecycle_core",
+      "pass_rule": "clipped and matches fixed-point reference",
+      "purpose": "reproduction gate",
+      "type": "s16.15",
+      "when_read": "debug/full read"
+    },
+    {
+      "field": "bax_raw",
+      "owner": "lifecycle_core",
+      "pass_rule": "clipped and matches fixed-point reference",
+      "purpose": "death gate",
+      "type": "s16.15",
+      "when_read": "debug/full read"
+    },
+    {
+      "field": "last_event_type",
+      "owner": "lifecycle_core",
+      "pass_rule": "matches final accepted event for slot",
+      "purpose": "event audit",
+      "type": "uint8",
+      "when_read": "debug/full read"
+    }
+  ],
+  "runner_revision": "tier4_30_lifecycle_native_contract_20260505_0001",
+  "source_inputs": {
+    "legacy_neuron_manager": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src/neuron_manager.c",
+    "readiness_results": "/Users/james/JKS:CRA/controlled_test_output/tier4_30_readiness_20260505_lifecycle_native_audit/tier4_30_readiness_results.json",
+    "runtime_config": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src/config.h",
+    "runtime_state_header": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h"
+  },
+  "status": "pass",
+  "tier": "Tier 4.30 - Lifecycle-Native Static-Pool Contract"
+}

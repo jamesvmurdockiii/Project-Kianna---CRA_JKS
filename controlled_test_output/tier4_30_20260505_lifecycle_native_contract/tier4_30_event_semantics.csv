@@ -1,0 +1,6 @@
+event_type,trigger_inputs,state_updates,required_invariants,sham_control
+trophic_update,slot activity/reward/error summary,"trophic_health, cyclin_d, bax, age_steps",slot active; fixed-point values clipped; no lineage mutation,no_trophic_pressure_control
+cleavage,"parent active, inactive child slot available, cyclin gate passes","child active, child parent_slot, child generation, child lineage_id, cleavage_count",parent remains active; child was inactive; event increments exactly once,random_event_replay_control
+adult_birth,"adult parent active, inactive child slot available, trophic and maturity gates pass","child active, child lineage_id/parent/generation, birth_count",adult gate explicit; no dynamic allocation; no hidden extra capacity,fixed_static_pool_control
+death,"active slot, bax/death gate passes or explicit reference event","slot inactive, death_count, final lineage telemetry preserved",active_count decreases by one; lineage remains readable after death,active_mask_shuffle_control
+maturity_handoff,age threshold or trophic threshold reached,"last_event_type, maturity marker encoded through cyclin/trophic state",no active-mask change unless paired with accepted birth/cleavage/death,lineage_id_shuffle_control

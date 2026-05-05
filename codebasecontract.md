@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-05T15:28:26-04:00.
+Last updated: 2026-05-05T15:38:23-04:00.
 
 Current repo root:
 
@@ -59,7 +59,8 @@ FROZEN: CRA_NATIVE_MECHANISM_BRIDGE_v0.3
             not speedup, and not external-baseline superiority.
   Supersedes: CRA_NATIVE_TASK_BASELINE_v0.2
   Current: Tier 4.30-readiness PASS, 16/16.
-  Next: Tier 4.30 lifecycle-native contract.
+  Current: Tier 4.30 lifecycle-native contract PASS, 14/14.
+  Next: Tier 4.30a local static-pool lifecycle reference.
         Lifecycle hardware layers initially on CRA_NATIVE_MECHANISM_BRIDGE_v0.3,
         with v2.2 as a software reference boundary only. Temporal-state hardware
         migration is not automatic from v2.2; it requires a separately defined
@@ -311,12 +312,21 @@ Tier 4.30-readiness — COMPLETE. Lifecycle-native preflight / layering audit.
     software boundary, static-pool constraints, metrics, shams, and artifacts
     before implementation.
 
-Tier 4.30 — CURRENT NEXT. Lifecycle-native contract.
+Tier 4.30 — COMPLETE. Lifecycle-native contract.
+  Status: PASS, 14/14 criteria.
+  Runner: experiments/tier4_30_lifecycle_native_contract.py
+  Output: controlled_test_output/tier4_30_20260505_lifecycle_native_contract/
   Purpose: define how lifecycle/self-scaling moves onto the custom runtime using
     a static preallocated pool.
   Rule: birth/cleavage/death are active-mask, allocation, lineage, and trophic
     state transitions inside fixed capacity. Do not design dynamic PyNN
     population creation mid-run.
+
+Tier 4.30a — CURRENT NEXT. Local static-pool lifecycle reference.
+  Purpose: build the deterministic reference for the Tier 4.30 command/readback
+    schema before any runtime C implementation or EBRAINS package.
+  Rule: exact active-mask, lineage, event-count, checksum, and sham-control
+    outputs first; no hardware before local reference and source audit pass.
 
 
 Current status summary:
@@ -457,9 +467,10 @@ Local build capability (established 2026-05-02):
 
 Immediate next steps:
 
-1. Define Tier 4.30 lifecycle-native contract after the audit: static max pool,
-   active masks, lineage IDs, trophic state, birth/cleavage/death counters,
-   fixed-pool and sham controls, and exact readback fields.
+1. Build Tier 4.30a local static-pool lifecycle reference from the Tier 4.30
+   contract: 8-slot pool, 2 founders, active masks, lineage IDs, trophic state,
+   birth/cleavage/death counters, fixed-pool and sham controls, exact expected
+   readback.
 2. Do not migrate v2.2 temporal fading-memory state to hardware merely because
    v2.2 froze. Native temporal-state migration requires a separate readiness
    tier with fixed-point state equations and local parity.

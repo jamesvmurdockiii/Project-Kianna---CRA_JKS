@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-05T15:28-04:00.
+Last updated: 2026-05-05T15:38-04:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -82,8 +82,7 @@ not full native v2.1, and not final autonomy.
 Current active step:
 
 ```text
-Tier 4.30 lifecycle-native contract - static-pool lifecycle surface and
-command/readback schema
+Tier 4.30a local static-pool lifecycle reference
 ```
 
 ## 2. Immediate Baseline Decision
@@ -489,12 +488,18 @@ ability.
 
 ### Phase E - Lifecycle / Organism Dynamics Native Path
 
-36. 🔄 **CURRENT ACTIVE STEP** - Tier 4.30 lifecycle-native contract:
+36. ✅ **COMPLETE** - Tier 4.30 lifecycle-native contract:
     preallocated pool only. No dynamic
     PyNN population creation mid-run. Birth/cleavage/death are activation,
     masking, assignment, or lineage events inside static state.
+    Result: pass, 14/14 criteria.
+    Output: `controlled_test_output/tier4_30_20260505_lifecycle_native_contract/`.
+    Runner: `experiments/tier4_30_lifecycle_native_contract.py`.
+    Contract: 8-slot static pool, 2 founders, command schema for lifecycle
+    init/event/trophic update/readback/sham mode, 23 readback fields, 5 event
+    semantics, 5 gate definitions, and 7 failure classes.
 
-37. Tier 4.30a local static-pool lifecycle reference: active/inactive masks,
+37. 🔄 **CURRENT ACTIVE STEP** - Tier 4.30a local static-pool lifecycle reference: active/inactive masks,
     lineage IDs, trophic state, birth/cleavage/death counters, fixed max-pool
     control, random event replay control.
 
@@ -773,7 +778,7 @@ After each completed run or design tier:
 The next concrete action is:
 
 ```text
-Tier 4.30 lifecycle-native contract - Static-Pool Lifecycle Surface
+Tier 4.30a local static-pool lifecycle reference
 ```
 
 Current reference state:
@@ -782,6 +787,7 @@ Current reference state:
 Software baseline: v2.2 (`baselines/CRA_EVIDENCE_BASELINE_v2.2.md`)
 Native mechanism bridge: CRA_NATIVE_MECHANISM_BRIDGE_v0.3
 Readiness audit: Tier 4.30-readiness PASS, 16/16
+Lifecycle contract: Tier 4.30 PASS, 14/14
 Temporal substrate status: fading-memory promoted in software only; nonlinear
 recurrence and native/on-chip temporal dynamics remain unproven
 ```
@@ -789,22 +795,18 @@ recurrence and native/on-chip temporal dynamics remain unproven
 Purpose:
 
 ```text
-Define the exact contract for moving lifecycle/self-scaling onto the custom
-runtime using the audited static-pool path: fixed capacity, active masks,
-lineage IDs, parent links, trophic counters, birth/cleavage/death telemetry,
-compact readback, and sham controls.
+Build the deterministic local reference for the contracted static-pool lifecycle
+surface before editing the C runtime or preparing EBRAINS hardware packages.
 ```
 
 Required coverage:
 
 ```text
-Use the Tier 4.30-readiness artifacts as the input contract:
-controlled_test_output/tier4_30_readiness_20260505_lifecycle_native_audit/.
-Predeclare static-pool size, active masks, lineage IDs, parent slots,
-generation, age, trophic health, cyclin-D, Bax, lifecycle event type/count,
-fixed-pool control, random-event replay, active-mask shuffle, lineage-ID
-shuffle, no trophic pressure, no dopamine/plasticity, local parity criteria,
-and hardware-ingest artifact requirements.
+Use the Tier 4.30 contract artifacts as the input:
+controlled_test_output/tier4_30_20260505_lifecycle_native_contract/.
+Implement a local deterministic 8-slot / 2-founder reference with exact
+active-mask, lineage, event-count, checksum, and sham-control expected outputs.
+No runtime C edits and no hardware package until this local reference passes.
 ```
 
 Do not jump straight to EBRAINS. Tier 4.30 implementation starts with the
