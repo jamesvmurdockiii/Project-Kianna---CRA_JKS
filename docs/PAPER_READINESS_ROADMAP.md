@@ -6277,7 +6277,10 @@ Near-term roadmap insertion:
    native mechanism bridge v0.3 with v2.2 as software reference only.
 6. Tier 4.30 lifecycle-native contract. COMPLETE: static-pool command/readback
    contract defined.
-7. Tier 4.30a local static-pool lifecycle reference. CURRENT.
+7. Tier 4.30a local static-pool lifecycle reference. COMPLETE: deterministic
+   local reference and sham-control outputs passed.
+8. Tier 4.30b source audit / single-core lifecycle mask-smoke preparation.
+   CURRENT.
 ```
 
 Tier 5.19a result:
@@ -6358,7 +6361,25 @@ Contract: 8 static slots, 2 founders, lifecycle init/event/trophic/readback/sham
 Boundary: local engineering contract only; not runtime implementation, not
           hardware evidence, not lifecycle/self-scaling proof, not v2.2 temporal
           migration, not speedup, not multi-chip scaling.
-Next: Tier 4.30a local static-pool lifecycle reference.
+Next: Tier 4.30a local static-pool lifecycle reference (completed; superseded
+by current Tier 4.30b source audit / single-core lifecycle mask-smoke prep).
+```
+
+Tier 4.30a result:
+
+```text
+Output: controlled_test_output/tier4_30a_20260505_static_pool_lifecycle_reference/
+Runner: experiments/tier4_30a_static_pool_lifecycle_reference.py
+Criteria: 20/20
+Reference: 8 static slots, 2 founders, canonical 32-event trace, boundary
+           64-event trace, exact deterministic repeat, zero invalid events on
+           enabled path, capacity bounded at <=8 active slots.
+Controls: fixed pool, random event replay, active-mask shuffle, lineage-ID
+          shuffle, no trophic pressure, no dopamine/plasticity.
+Boundary: local deterministic reference only; not runtime C, not hardware, not
+          task benefit, not lifecycle baseline freeze, not v2.2 temporal-state
+          migration.
+Next: Tier 4.30b source audit / single-core lifecycle mask-smoke preparation.
 ```
 
 Detailed Tier 5.19 contract:

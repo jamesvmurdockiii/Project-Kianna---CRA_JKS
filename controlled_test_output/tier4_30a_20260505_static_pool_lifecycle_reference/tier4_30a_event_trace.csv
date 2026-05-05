@@ -1,0 +1,673 @@
+scenario,mode,event_index,event_type,target_slot,parent_slot,child_slot,trophic_delta_raw,reward_raw,accepted,note,pool_size,founder_count,active_count,inactive_count,active_mask_bits,lineage_checksum,trophic_checksum,event_count,attempted_event_count,cleavage_count,birth_count,death_count,invalid_event_count,sham_counter,max_active_count
+canonical_32,enabled,0,trophic_update,0,-1,-1,6554,3277,1,trophic update,8,2,2,6,3,5722,109363,1,1,0,0,0,0,0,2
+canonical_32,enabled,1,cleavage,-1,1,2,0,0,1,cleavage,8,2,3,5,7,5668,150323,2,2,1,0,0,0,0,2
+canonical_32,enabled,2,trophic_update,2,-1,-1,-3277,-1638,1,trophic update,8,2,3,5,7,5668,133733,3,3,1,0,0,0,0,3
+canonical_32,enabled,3,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,3,5,7,5668,139877,4,4,1,0,0,0,0,3
+canonical_32,enabled,4,adult_birth,-1,2,3,0,0,1,adult_birth,8,2,4,4,15,12008,166501,5,5,1,1,0,0,0,3
+canonical_32,enabled,5,trophic_update,2,-1,-1,2621,655,1,trophic update,8,2,4,4,15,12008,181117,6,6,1,1,0,0,0,4
+canonical_32,enabled,6,death,3,-1,-1,0,0,1,death,8,2,3,5,7,40088,181117,7,7,1,1,1,0,0,4
+canonical_32,enabled,7,trophic_update,2,-1,-1,-1311,0,1,trophic update,8,2,3,5,7,40088,174235,8,8,1,1,1,0,0,4
+canonical_32,enabled,8,trophic_update,1,-1,-1,6554,3277,1,trophic update,8,2,3,5,7,40088,196353,9,9,1,1,1,0,0,4
+canonical_32,enabled,9,cleavage,-1,0,3,0,0,1,cleavage,8,2,4,4,15,5420,242688,10,10,2,1,1,0,0,4
+canonical_32,enabled,10,trophic_update,3,-1,-1,-3277,-1638,1,trophic update,8,2,4,4,15,5420,220568,11,11,2,1,1,0,0,4
+canonical_32,enabled,11,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,4,4,15,5420,226712,12,12,2,1,1,0,0,4
+canonical_32,enabled,12,adult_birth,-1,3,4,0,0,1,adult_birth,8,2,5,3,31,15190,261527,13,13,2,2,1,0,0,4
+canonical_32,enabled,13,trophic_update,4,-1,-1,2621,655,1,trophic update,8,2,5,3,31,15190,282407,14,14,2,2,1,0,0,5
+canonical_32,enabled,14,death,4,-1,-1,0,0,1,death,8,2,4,4,15,57670,282407,15,15,2,2,2,0,0,5
+canonical_32,enabled,15,trophic_update,2,-1,-1,-1311,0,1,trophic update,8,2,4,4,15,57670,275525,16,16,2,2,2,0,0,5
+canonical_32,enabled,16,trophic_update,2,-1,-1,6554,3277,1,trophic update,8,2,4,4,15,57670,314231,17,17,2,2,2,0,0,5
+canonical_32,enabled,17,cleavage,-1,3,4,0,0,1,cleavage,8,2,5,3,31,6190,282604,18,18,3,2,2,0,0,5
+canonical_32,enabled,18,trophic_update,4,-1,-1,-3277,-1638,1,trophic update,8,2,5,3,31,6190,254954,19,19,3,2,2,0,0,5
+canonical_32,enabled,19,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,5,3,31,6190,261098,20,20,3,2,2,0,0,5
+canonical_32,enabled,20,adult_birth,-1,4,5,0,0,1,adult_birth,8,2,6,2,63,25162,300010,21,21,3,3,2,0,0,5
+canonical_32,enabled,21,trophic_update,4,-1,-1,2621,655,1,trophic update,8,2,6,2,63,25162,324370,22,22,3,3,2,0,0,6
+canonical_32,enabled,22,death,5,-1,-1,0,0,1,death,8,2,5,3,31,105130,324370,23,23,3,3,3,0,0,6
+canonical_32,enabled,23,trophic_update,1,-1,-1,-1311,0,1,trophic update,8,2,5,3,31,105130,319782,24,24,3,3,3,0,0,6
+canonical_32,enabled,24,trophic_update,3,-1,-1,6554,3277,1,trophic update,8,2,5,3,31,105130,371390,25,25,3,3,3,0,0,6
+canonical_32,enabled,25,cleavage,-1,0,5,0,0,1,cleavage,8,2,6,2,63,5818,440148,26,26,4,3,3,0,0,6
+canonical_32,enabled,26,trophic_update,5,-1,-1,-3277,-1638,1,trophic update,8,2,6,2,63,5818,406968,27,27,4,3,3,0,0,6
+canonical_32,enabled,27,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,6,2,63,5818,413112,28,28,4,3,3,0,0,6
+canonical_32,enabled,28,adult_birth,-1,5,6,0,0,1,adult_birth,8,2,7,1,127,24788,459363,29,29,4,4,3,0,0,6
+canonical_32,enabled,29,trophic_update,2,-1,-1,2621,655,1,trophic update,8,2,7,1,127,24788,473733,30,30,4,4,3,0,0,7
+canonical_32,enabled,30,death,6,-1,-1,0,0,1,death,8,2,6,2,63,105428,473733,31,31,4,4,4,0,0,7
+canonical_32,enabled,31,trophic_update,2,-1,-1,-1311,0,1,trophic update,8,2,6,2,63,105428,466851,32,32,4,4,4,0,0,7
+canonical_32,fixed_static_pool_control,0,trophic_update,0,-1,-1,6554,3277,1,trophic update,8,2,2,6,3,5722,109363,1,1,0,0,0,0,0,2
+canonical_32,fixed_static_pool_control,1,cleavage,-1,1,2,0,0,1,fixed-pool sham suppressed mask mutation,8,2,2,6,3,5722,109363,2,2,0,0,0,0,1,2
+canonical_32,fixed_static_pool_control,2,trophic_update,2,-1,-1,-3277,-1638,0,inactive trophic target,8,2,2,6,3,5722,109363,3,3,0,0,0,1,2,2
+canonical_32,fixed_static_pool_control,3,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,2,6,3,5722,115507,4,4,0,0,0,1,2,2
+canonical_32,fixed_static_pool_control,4,adult_birth,-1,2,3,0,0,1,fixed-pool sham suppressed mask mutation,8,2,2,6,3,5722,115507,5,5,0,0,0,1,3,2
+canonical_32,fixed_static_pool_control,5,trophic_update,2,-1,-1,2621,655,0,inactive trophic target,8,2,2,6,3,5722,115507,6,6,0,0,0,2,4,2
+canonical_32,fixed_static_pool_control,6,death,3,-1,-1,0,0,1,fixed-pool sham suppressed mask mutation,8,2,2,6,3,5722,115507,7,7,0,0,0,2,5,2
+canonical_32,fixed_static_pool_control,7,trophic_update,2,-1,-1,-1311,0,0,inactive trophic target,8,2,2,6,3,5722,115507,8,8,0,0,0,3,6,2
+canonical_32,fixed_static_pool_control,8,trophic_update,1,-1,-1,6554,3277,1,trophic update,8,2,2,6,3,5722,137625,9,9,0,0,0,3,6,2
+canonical_32,fixed_static_pool_control,9,cleavage,-1,0,3,0,0,1,fixed-pool sham suppressed mask mutation,8,2,2,6,3,5722,137625,10,10,0,0,0,3,7,2
+canonical_32,fixed_static_pool_control,10,trophic_update,3,-1,-1,-3277,-1638,0,inactive trophic target,8,2,2,6,3,5722,137625,11,11,0,0,0,4,8,2
+canonical_32,fixed_static_pool_control,11,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,2,6,3,5722,143769,12,12,0,0,0,4,8,2
+canonical_32,fixed_static_pool_control,12,adult_birth,-1,3,4,0,0,1,fixed-pool sham suppressed mask mutation,8,2,2,6,3,5722,143769,13,13,0,0,0,4,9,2
+canonical_32,fixed_static_pool_control,13,trophic_update,4,-1,-1,2621,655,0,inactive trophic target,8,2,2,6,3,5722,143769,14,14,0,0,0,5,10,2
+canonical_32,fixed_static_pool_control,14,death,4,-1,-1,0,0,1,fixed-pool sham suppressed mask mutation,8,2,2,6,3,5722,143769,15,15,0,0,0,5,11,2
+canonical_32,fixed_static_pool_control,15,trophic_update,2,-1,-1,-1311,0,0,inactive trophic target,8,2,2,6,3,5722,143769,16,16,0,0,0,6,12,2
+canonical_32,fixed_static_pool_control,16,trophic_update,2,-1,-1,6554,3277,0,inactive trophic target,8,2,2,6,3,5722,143769,17,17,0,0,0,7,13,2
+canonical_32,fixed_static_pool_control,17,cleavage,-1,3,4,0,0,1,fixed-pool sham suppressed mask mutation,8,2,2,6,3,5722,143769,18,18,0,0,0,7,14,2
+canonical_32,fixed_static_pool_control,18,trophic_update,4,-1,-1,-3277,-1638,0,inactive trophic target,8,2,2,6,3,5722,143769,19,19,0,0,0,8,15,2
+canonical_32,fixed_static_pool_control,19,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,2,6,3,5722,149913,20,20,0,0,0,8,15,2
+canonical_32,fixed_static_pool_control,20,adult_birth,-1,4,5,0,0,1,fixed-pool sham suppressed mask mutation,8,2,2,6,3,5722,149913,21,21,0,0,0,8,16,2
+canonical_32,fixed_static_pool_control,21,trophic_update,4,-1,-1,2621,655,0,inactive trophic target,8,2,2,6,3,5722,149913,22,22,0,0,0,9,17,2
+canonical_32,fixed_static_pool_control,22,death,5,-1,-1,0,0,1,fixed-pool sham suppressed mask mutation,8,2,2,6,3,5722,149913,23,23,0,0,0,9,18,2
+canonical_32,fixed_static_pool_control,23,trophic_update,1,-1,-1,-1311,0,1,trophic update,8,2,2,6,3,5722,145325,24,24,0,0,0,9,18,2
+canonical_32,fixed_static_pool_control,24,trophic_update,3,-1,-1,6554,3277,0,inactive trophic target,8,2,2,6,3,5722,145325,25,25,0,0,0,10,19,2
+canonical_32,fixed_static_pool_control,25,cleavage,-1,0,5,0,0,1,fixed-pool sham suppressed mask mutation,8,2,2,6,3,5722,145325,26,26,0,0,0,10,20,2
+canonical_32,fixed_static_pool_control,26,trophic_update,5,-1,-1,-3277,-1638,0,inactive trophic target,8,2,2,6,3,5722,145325,27,27,0,0,0,11,21,2
+canonical_32,fixed_static_pool_control,27,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,2,6,3,5722,151469,28,28,0,0,0,11,21,2
+canonical_32,fixed_static_pool_control,28,adult_birth,-1,5,6,0,0,1,fixed-pool sham suppressed mask mutation,8,2,2,6,3,5722,151469,29,29,0,0,0,11,22,2
+canonical_32,fixed_static_pool_control,29,trophic_update,2,-1,-1,2621,655,0,inactive trophic target,8,2,2,6,3,5722,151469,30,30,0,0,0,12,23,2
+canonical_32,fixed_static_pool_control,30,death,6,-1,-1,0,0,1,fixed-pool sham suppressed mask mutation,8,2,2,6,3,5722,151469,31,31,0,0,0,12,24,2
+canonical_32,fixed_static_pool_control,31,trophic_update,2,-1,-1,-1311,0,0,inactive trophic target,8,2,2,6,3,5722,151469,32,32,0,0,0,13,25,2
+canonical_32,random_event_replay_control,0,trophic_update,6,-1,-1,-1311,0,0,inactive trophic target,8,2,2,6,3,5722,98304,1,1,0,0,0,1,1,2
+canonical_32,random_event_replay_control,1,death,0,-1,-1,0,0,1,death,8,2,1,7,2,5866,98304,2,2,0,0,1,1,1,2
+canonical_32,random_event_replay_control,2,death,2,-1,-1,0,0,0,invalid death,8,2,1,7,2,5866,98304,3,3,0,0,1,2,2,2
+canonical_32,random_event_replay_control,3,death,5,-1,-1,0,0,0,invalid death,8,2,1,7,2,5866,98304,4,4,0,0,1,3,3,2
+canonical_32,random_event_replay_control,4,cleavage,-1,5,0,0,0,0,invalid child event,8,2,1,7,2,5866,98304,5,5,0,0,1,4,4,2
+canonical_32,random_event_replay_control,5,trophic_update,6,-1,-1,-1311,0,0,inactive trophic target,8,2,1,7,2,5866,98304,6,6,0,0,1,5,5,2
+canonical_32,random_event_replay_control,6,cleavage,-1,4,5,0,0,0,invalid child event,8,2,1,7,2,5866,98304,7,7,0,0,1,6,6,2
+canonical_32,random_event_replay_control,7,cleavage,-1,4,2,0,0,0,invalid child event,8,2,1,7,2,5866,98304,8,8,0,0,1,7,7,2
+canonical_32,random_event_replay_control,8,cleavage,-1,7,6,0,0,0,invalid child event,8,2,1,7,2,5866,98304,9,9,0,0,1,8,8,2
+canonical_32,random_event_replay_control,9,trophic_update,0,-1,-1,-3277,-1638,0,inactive trophic target,8,2,1,7,2,5866,98304,10,10,0,0,1,9,9,2
+canonical_32,random_event_replay_control,10,maturity_handoff,4,-1,-1,0,0,0,invalid maturity,8,2,1,7,2,5866,98304,11,11,0,0,1,10,10,2
+canonical_32,random_event_replay_control,11,trophic_update,0,-1,-1,2621,655,0,inactive trophic target,8,2,1,7,2,5866,98304,12,12,0,0,1,11,11,2
+canonical_32,random_event_replay_control,12,trophic_update,5,-1,-1,6554,3277,0,inactive trophic target,8,2,1,7,2,5866,98304,13,13,0,0,1,12,12,2
+canonical_32,random_event_replay_control,13,trophic_update,6,-1,-1,-3277,-1638,0,inactive trophic target,8,2,1,7,2,5866,98304,14,14,0,0,1,13,13,2
+canonical_32,random_event_replay_control,14,adult_birth,-1,0,2,0,0,0,invalid child event,8,2,1,7,2,5866,98304,15,15,0,0,1,14,14,2
+canonical_32,random_event_replay_control,15,maturity_handoff,4,-1,-1,0,0,0,invalid maturity,8,2,1,7,2,5866,98304,16,16,0,0,1,15,15,2
+canonical_32,random_event_replay_control,16,adult_birth,-1,2,1,0,0,0,invalid child event,8,2,1,7,2,5866,98304,17,17,0,0,1,16,16,2
+canonical_32,random_event_replay_control,17,death,1,-1,-1,0,0,1,death,8,2,0,8,0,6170,98304,18,18,0,0,2,16,16,2
+canonical_32,random_event_replay_control,18,trophic_update,7,-1,-1,-1311,0,0,inactive trophic target,8,2,0,8,0,6170,98304,19,19,0,0,2,17,17,2
+canonical_32,random_event_replay_control,19,trophic_update,0,-1,-1,2621,655,0,inactive trophic target,8,2,0,8,0,6170,98304,20,20,0,0,2,18,18,2
+canonical_32,random_event_replay_control,20,trophic_update,6,-1,-1,2621,655,0,inactive trophic target,8,2,0,8,0,6170,98304,21,21,0,0,2,19,19,2
+canonical_32,random_event_replay_control,21,trophic_update,6,-1,-1,-1311,0,0,inactive trophic target,8,2,0,8,0,6170,98304,22,22,0,0,2,20,20,2
+canonical_32,random_event_replay_control,22,trophic_update,6,-1,-1,6554,3277,0,inactive trophic target,8,2,0,8,0,6170,98304,23,23,0,0,2,21,21,2
+canonical_32,random_event_replay_control,23,trophic_update,6,-1,-1,2621,655,0,inactive trophic target,8,2,0,8,0,6170,98304,24,24,0,0,2,22,22,2
+canonical_32,random_event_replay_control,24,trophic_update,7,-1,-1,6554,3277,0,inactive trophic target,8,2,0,8,0,6170,98304,25,25,0,0,2,23,23,2
+canonical_32,random_event_replay_control,25,trophic_update,5,-1,-1,-3277,-1638,0,inactive trophic target,8,2,0,8,0,6170,98304,26,26,0,0,2,24,24,2
+canonical_32,random_event_replay_control,26,maturity_handoff,4,-1,-1,0,0,0,invalid maturity,8,2,0,8,0,6170,98304,27,27,0,0,2,25,25,2
+canonical_32,random_event_replay_control,27,adult_birth,-1,5,0,0,0,0,invalid child event,8,2,0,8,0,6170,98304,28,28,0,0,2,26,26,2
+canonical_32,random_event_replay_control,28,maturity_handoff,4,-1,-1,0,0,0,invalid maturity,8,2,0,8,0,6170,98304,29,29,0,0,2,27,27,2
+canonical_32,random_event_replay_control,29,trophic_update,4,-1,-1,6554,3277,0,inactive trophic target,8,2,0,8,0,6170,98304,30,30,0,0,2,28,28,2
+canonical_32,random_event_replay_control,30,adult_birth,-1,6,5,0,0,0,invalid child event,8,2,0,8,0,6170,98304,31,31,0,0,2,29,29,2
+canonical_32,random_event_replay_control,31,trophic_update,2,-1,-1,-3277,-1638,0,inactive trophic target,8,2,0,8,0,6170,98304,32,32,0,0,2,30,30,2
+canonical_32,active_mask_shuffle_control,0,trophic_update,4,-1,-1,6554,3277,0,inactive trophic target,8,2,2,6,3,5722,98304,1,1,0,0,0,1,1,2
+canonical_32,active_mask_shuffle_control,1,cleavage,-1,7,6,0,0,0,invalid child event,8,2,2,6,3,5722,98304,2,2,0,0,0,2,2,2
+canonical_32,active_mask_shuffle_control,2,trophic_update,6,-1,-1,-3277,-1638,0,inactive trophic target,8,2,2,6,3,5722,98304,3,3,0,0,0,3,3,2
+canonical_32,active_mask_shuffle_control,3,maturity_handoff,4,-1,-1,0,0,0,invalid maturity,8,2,2,6,3,5722,98304,4,4,0,0,0,4,4,2
+canonical_32,active_mask_shuffle_control,4,adult_birth,-1,6,5,0,0,0,invalid child event,8,2,2,6,3,5722,98304,5,5,0,0,0,5,5,2
+canonical_32,active_mask_shuffle_control,5,trophic_update,6,-1,-1,2621,655,0,inactive trophic target,8,2,2,6,3,5722,98304,6,6,0,0,0,6,6,2
+canonical_32,active_mask_shuffle_control,6,death,5,-1,-1,0,0,0,invalid death,8,2,2,6,3,5722,98304,7,7,0,0,0,7,7,2
+canonical_32,active_mask_shuffle_control,7,trophic_update,6,-1,-1,-1311,0,0,inactive trophic target,8,2,2,6,3,5722,98304,8,8,0,0,0,8,8,2
+canonical_32,active_mask_shuffle_control,8,trophic_update,7,-1,-1,6554,3277,0,inactive trophic target,8,2,2,6,3,5722,98304,9,9,0,0,0,9,9,2
+canonical_32,active_mask_shuffle_control,9,cleavage,-1,4,5,0,0,0,invalid child event,8,2,2,6,3,5722,98304,10,10,0,0,0,10,10,2
+canonical_32,active_mask_shuffle_control,10,trophic_update,5,-1,-1,-3277,-1638,0,inactive trophic target,8,2,2,6,3,5722,98304,11,11,0,0,0,11,11,2
+canonical_32,active_mask_shuffle_control,11,maturity_handoff,4,-1,-1,0,0,0,invalid maturity,8,2,2,6,3,5722,98304,12,12,0,0,0,12,12,2
+canonical_32,active_mask_shuffle_control,12,adult_birth,-1,5,0,0,0,0,invalid child event,8,2,2,6,3,5722,98304,13,13,0,0,0,13,13,2
+canonical_32,active_mask_shuffle_control,13,trophic_update,0,-1,-1,2621,655,1,trophic update,8,2,2,6,3,5722,102480,14,14,0,0,0,13,13,2
+canonical_32,active_mask_shuffle_control,14,death,0,-1,-1,0,0,1,death,8,2,1,7,2,5866,102480,15,15,0,0,1,13,13,2
+canonical_32,active_mask_shuffle_control,15,trophic_update,6,-1,-1,-1311,0,0,inactive trophic target,8,2,1,7,2,5866,102480,16,16,0,0,1,14,14,2
+canonical_32,active_mask_shuffle_control,16,trophic_update,6,-1,-1,6554,3277,0,inactive trophic target,8,2,1,7,2,5866,102480,17,17,0,0,1,15,15,2
+canonical_32,active_mask_shuffle_control,17,cleavage,-1,5,0,0,0,0,invalid child event,8,2,1,7,2,5866,102480,18,18,0,0,1,16,16,2
+canonical_32,active_mask_shuffle_control,18,trophic_update,0,-1,-1,-3277,-1638,0,inactive trophic target,8,2,1,7,2,5866,102480,19,19,0,0,1,17,17,2
+canonical_32,active_mask_shuffle_control,19,maturity_handoff,4,-1,-1,0,0,0,invalid maturity,8,2,1,7,2,5866,102480,20,20,0,0,1,18,18,2
+canonical_32,active_mask_shuffle_control,20,adult_birth,-1,0,2,0,0,0,invalid child event,8,2,1,7,2,5866,102480,21,21,0,0,1,19,19,2
+canonical_32,active_mask_shuffle_control,21,trophic_update,0,-1,-1,2621,655,0,inactive trophic target,8,2,1,7,2,5866,102480,22,22,0,0,1,20,20,2
+canonical_32,active_mask_shuffle_control,22,death,2,-1,-1,0,0,0,invalid death,8,2,1,7,2,5866,102480,23,23,0,0,1,21,21,2
+canonical_32,active_mask_shuffle_control,23,trophic_update,7,-1,-1,-1311,0,0,inactive trophic target,8,2,1,7,2,5866,102480,24,24,0,0,1,22,22,2
+canonical_32,active_mask_shuffle_control,24,trophic_update,5,-1,-1,6554,3277,0,inactive trophic target,8,2,1,7,2,5866,102480,25,25,0,0,1,23,23,2
+canonical_32,active_mask_shuffle_control,25,cleavage,-1,4,2,0,0,0,invalid child event,8,2,1,7,2,5866,102480,26,26,0,0,1,24,24,2
+canonical_32,active_mask_shuffle_control,26,trophic_update,2,-1,-1,-3277,-1638,0,inactive trophic target,8,2,1,7,2,5866,102480,27,27,0,0,1,25,25,2
+canonical_32,active_mask_shuffle_control,27,maturity_handoff,4,-1,-1,0,0,0,invalid maturity,8,2,1,7,2,5866,102480,28,28,0,0,1,26,26,2
+canonical_32,active_mask_shuffle_control,28,adult_birth,-1,2,1,0,0,0,invalid child event,8,2,1,7,2,5866,102480,29,29,0,0,1,27,27,2
+canonical_32,active_mask_shuffle_control,29,trophic_update,6,-1,-1,2621,655,0,inactive trophic target,8,2,1,7,2,5866,102480,30,30,0,0,1,28,28,2
+canonical_32,active_mask_shuffle_control,30,death,1,-1,-1,0,0,1,death,8,2,0,8,0,6170,102480,31,31,0,0,2,28,28,2
+canonical_32,active_mask_shuffle_control,31,trophic_update,6,-1,-1,-1311,0,0,inactive trophic target,8,2,0,8,0,6170,102480,32,32,0,0,2,29,29,2
+canonical_32,lineage_id_shuffle_control,0,trophic_update,0,-1,-1,6554,3277,1,trophic update,8,2,2,6,3,5756,109363,1,1,0,0,0,0,0,2
+canonical_32,lineage_id_shuffle_control,1,cleavage,-1,1,2,0,0,1,cleavage,8,2,3,5,7,5822,150323,2,2,1,0,0,0,0,2
+canonical_32,lineage_id_shuffle_control,2,trophic_update,2,-1,-1,-3277,-1638,1,trophic update,8,2,3,5,7,5822,133733,3,3,1,0,0,0,0,3
+canonical_32,lineage_id_shuffle_control,3,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,3,5,7,5822,139877,4,4,1,0,0,0,0,3
+canonical_32,lineage_id_shuffle_control,4,adult_birth,-1,2,3,0,0,1,adult_birth,8,2,4,4,15,12162,166501,5,5,1,1,0,0,0,3
+canonical_32,lineage_id_shuffle_control,5,trophic_update,2,-1,-1,2621,655,1,trophic update,8,2,4,4,15,12162,181117,6,6,1,1,0,0,0,4
+canonical_32,lineage_id_shuffle_control,6,death,3,-1,-1,0,0,1,death,8,2,3,5,7,40242,181117,7,7,1,1,1,0,0,4
+canonical_32,lineage_id_shuffle_control,7,trophic_update,2,-1,-1,-1311,0,1,trophic update,8,2,3,5,7,40242,174235,8,8,1,1,1,0,0,4
+canonical_32,lineage_id_shuffle_control,8,trophic_update,1,-1,-1,6554,3277,1,trophic update,8,2,3,5,7,40242,196353,9,9,1,1,1,0,0,4
+canonical_32,lineage_id_shuffle_control,9,cleavage,-1,0,3,0,0,1,cleavage,8,2,4,4,15,5742,242688,10,10,2,1,1,0,0,4
+canonical_32,lineage_id_shuffle_control,10,trophic_update,3,-1,-1,-3277,-1638,1,trophic update,8,2,4,4,15,5742,220568,11,11,2,1,1,0,0,4
+canonical_32,lineage_id_shuffle_control,11,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,4,4,15,5742,226712,12,12,2,1,1,0,0,4
+canonical_32,lineage_id_shuffle_control,12,adult_birth,-1,3,4,0,0,1,adult_birth,8,2,5,3,31,15512,261527,13,13,2,2,1,0,0,4
+canonical_32,lineage_id_shuffle_control,13,trophic_update,4,-1,-1,2621,655,1,trophic update,8,2,5,3,31,15512,282407,14,14,2,2,1,0,0,5
+canonical_32,lineage_id_shuffle_control,14,death,4,-1,-1,0,0,1,death,8,2,4,4,15,57992,282407,15,15,2,2,2,0,0,5
+canonical_32,lineage_id_shuffle_control,15,trophic_update,2,-1,-1,-1311,0,1,trophic update,8,2,4,4,15,57992,275525,16,16,2,2,2,0,0,5
+canonical_32,lineage_id_shuffle_control,16,trophic_update,2,-1,-1,6554,3277,1,trophic update,8,2,4,4,15,57992,314231,17,17,2,2,2,0,0,5
+canonical_32,lineage_id_shuffle_control,17,cleavage,-1,3,4,0,0,1,cleavage,8,2,5,3,31,7142,282604,18,18,3,2,2,0,0,5
+canonical_32,lineage_id_shuffle_control,18,trophic_update,4,-1,-1,-3277,-1638,1,trophic update,8,2,5,3,31,7142,254954,19,19,3,2,2,0,0,5
+canonical_32,lineage_id_shuffle_control,19,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,5,3,31,7142,261098,20,20,3,2,2,0,0,5
+canonical_32,lineage_id_shuffle_control,20,adult_birth,-1,4,5,0,0,1,adult_birth,8,2,6,2,63,26114,300010,21,21,3,3,2,0,0,5
+canonical_32,lineage_id_shuffle_control,21,trophic_update,4,-1,-1,2621,655,1,trophic update,8,2,6,2,63,26114,324370,22,22,3,3,2,0,0,6
+canonical_32,lineage_id_shuffle_control,22,death,5,-1,-1,0,0,1,death,8,2,5,3,31,106082,324370,23,23,3,3,3,0,0,6
+canonical_32,lineage_id_shuffle_control,23,trophic_update,1,-1,-1,-1311,0,1,trophic update,8,2,5,3,31,106082,319782,24,24,3,3,3,0,0,6
+canonical_32,lineage_id_shuffle_control,24,trophic_update,3,-1,-1,6554,3277,1,trophic update,8,2,5,3,31,106082,371390,25,25,3,3,3,0,0,6
+canonical_32,lineage_id_shuffle_control,25,cleavage,-1,0,5,0,0,1,cleavage,8,2,6,2,63,7022,440148,26,26,4,3,3,0,0,6
+canonical_32,lineage_id_shuffle_control,26,trophic_update,5,-1,-1,-3277,-1638,1,trophic update,8,2,6,2,63,7022,406968,27,27,4,3,3,0,0,6
+canonical_32,lineage_id_shuffle_control,27,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,6,2,63,7022,413112,28,28,4,3,3,0,0,6
+canonical_32,lineage_id_shuffle_control,28,adult_birth,-1,5,6,0,0,1,adult_birth,8,2,7,1,127,25992,459363,29,29,4,4,3,0,0,6
+canonical_32,lineage_id_shuffle_control,29,trophic_update,2,-1,-1,2621,655,1,trophic update,8,2,7,1,127,25992,473733,30,30,4,4,3,0,0,7
+canonical_32,lineage_id_shuffle_control,30,death,6,-1,-1,0,0,1,death,8,2,6,2,63,106632,473733,31,31,4,4,4,0,0,7
+canonical_32,lineage_id_shuffle_control,31,trophic_update,2,-1,-1,-1311,0,1,trophic update,8,2,6,2,63,106632,466851,32,32,4,4,4,0,0,7
+canonical_32,no_trophic_pressure_control,0,trophic_update,0,-1,-1,6554,3277,1,trophic update,8,2,2,6,3,5722,98304,1,1,0,0,0,0,1,2
+canonical_32,no_trophic_pressure_control,1,cleavage,-1,1,2,0,0,1,cleavage,8,2,3,5,7,5668,139264,2,2,1,0,0,0,1,2
+canonical_32,no_trophic_pressure_control,2,trophic_update,2,-1,-1,-3277,-1638,1,trophic update,8,2,3,5,7,5668,139264,3,3,1,0,0,0,2,3
+canonical_32,no_trophic_pressure_control,3,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,3,5,7,5668,139264,4,4,1,0,0,0,3,3
+canonical_32,no_trophic_pressure_control,4,adult_birth,-1,2,3,0,0,1,adult_birth,8,2,4,4,15,12008,165888,5,5,1,1,0,0,3,3
+canonical_32,no_trophic_pressure_control,5,trophic_update,2,-1,-1,2621,655,1,trophic update,8,2,4,4,15,12008,165888,6,6,1,1,0,0,4,4
+canonical_32,no_trophic_pressure_control,6,death,3,-1,-1,0,0,1,death,8,2,3,5,7,40088,165888,7,7,1,1,1,0,4,4
+canonical_32,no_trophic_pressure_control,7,trophic_update,2,-1,-1,-1311,0,1,trophic update,8,2,3,5,7,40088,165888,8,8,1,1,1,0,5,4
+canonical_32,no_trophic_pressure_control,8,trophic_update,1,-1,-1,6554,3277,1,trophic update,8,2,3,5,7,40088,165888,9,9,1,1,1,0,6,4
+canonical_32,no_trophic_pressure_control,9,cleavage,-1,0,3,0,0,1,cleavage,8,2,4,4,15,5420,194560,10,10,2,1,1,0,6,4
+canonical_32,no_trophic_pressure_control,10,trophic_update,3,-1,-1,-3277,-1638,1,trophic update,8,2,4,4,15,5420,194560,11,11,2,1,1,0,7,4
+canonical_32,no_trophic_pressure_control,11,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,4,4,15,5420,194560,12,12,2,1,1,0,8,4
+canonical_32,no_trophic_pressure_control,12,adult_birth,-1,3,4,0,0,1,adult_birth,8,2,5,3,31,15190,227328,13,13,2,2,1,0,8,4
+canonical_32,no_trophic_pressure_control,13,trophic_update,4,-1,-1,2621,655,1,trophic update,8,2,5,3,31,15190,227328,14,14,2,2,1,0,9,5
+canonical_32,no_trophic_pressure_control,14,death,4,-1,-1,0,0,1,death,8,2,4,4,15,57670,227328,15,15,2,2,2,0,9,5
+canonical_32,no_trophic_pressure_control,15,trophic_update,2,-1,-1,-1311,0,1,trophic update,8,2,4,4,15,57670,227328,16,16,2,2,2,0,10,5
+canonical_32,no_trophic_pressure_control,16,trophic_update,2,-1,-1,6554,3277,1,trophic update,8,2,4,4,15,57670,227328,17,17,2,2,2,0,11,5
+canonical_32,no_trophic_pressure_control,17,cleavage,-1,3,4,0,0,1,cleavage,8,2,5,3,31,6190,219136,18,18,3,2,2,0,11,5
+canonical_32,no_trophic_pressure_control,18,trophic_update,4,-1,-1,-3277,-1638,1,trophic update,8,2,5,3,31,6190,219136,19,19,3,2,2,0,12,5
+canonical_32,no_trophic_pressure_control,19,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,5,3,31,6190,219136,20,20,3,2,2,0,13,5
+canonical_32,no_trophic_pressure_control,20,adult_birth,-1,4,5,0,0,1,adult_birth,8,2,6,2,63,25162,258048,21,21,3,3,2,0,13,5
+canonical_32,no_trophic_pressure_control,21,trophic_update,4,-1,-1,2621,655,1,trophic update,8,2,6,2,63,25162,258048,22,22,3,3,2,0,14,6
+canonical_32,no_trophic_pressure_control,22,death,5,-1,-1,0,0,1,death,8,2,5,3,31,105130,258048,23,23,3,3,3,0,14,6
+canonical_32,no_trophic_pressure_control,23,trophic_update,1,-1,-1,-1311,0,1,trophic update,8,2,5,3,31,105130,258048,24,24,3,3,3,0,15,6
+canonical_32,no_trophic_pressure_control,24,trophic_update,3,-1,-1,6554,3277,1,trophic update,8,2,5,3,31,105130,258048,25,25,3,3,3,0,16,6
+canonical_32,no_trophic_pressure_control,25,cleavage,-1,0,5,0,0,1,cleavage,8,2,6,2,63,5818,291328,26,26,4,3,3,0,16,6
+canonical_32,no_trophic_pressure_control,26,trophic_update,5,-1,-1,-3277,-1638,1,trophic update,8,2,6,2,63,5818,291328,27,27,4,3,3,0,17,6
+canonical_32,no_trophic_pressure_control,27,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,6,2,63,5818,291328,28,28,4,3,3,0,18,6
+canonical_32,no_trophic_pressure_control,28,adult_birth,-1,5,6,0,0,1,adult_birth,8,2,7,1,127,24788,336384,29,29,4,4,3,0,18,6
+canonical_32,no_trophic_pressure_control,29,trophic_update,2,-1,-1,2621,655,1,trophic update,8,2,7,1,127,24788,336384,30,30,4,4,3,0,19,7
+canonical_32,no_trophic_pressure_control,30,death,6,-1,-1,0,0,1,death,8,2,6,2,63,105428,336384,31,31,4,4,4,0,19,7
+canonical_32,no_trophic_pressure_control,31,trophic_update,2,-1,-1,-1311,0,1,trophic update,8,2,6,2,63,105428,336384,32,32,4,4,4,0,20,7
+canonical_32,no_dopamine_or_plasticity_control,0,trophic_update,0,-1,-1,6554,3277,1,trophic update,8,2,2,6,3,5722,108135,1,1,0,0,0,0,0,2
+canonical_32,no_dopamine_or_plasticity_control,1,cleavage,-1,1,2,0,0,1,cleavage,8,2,3,5,7,5668,149095,2,2,1,0,0,0,0,2
+canonical_32,no_dopamine_or_plasticity_control,2,trophic_update,2,-1,-1,-3277,-1638,1,trophic update,8,2,3,5,7,5668,134350,3,3,1,0,0,0,0,3
+canonical_32,no_dopamine_or_plasticity_control,3,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,3,5,7,5668,140494,4,4,1,0,0,0,0,3
+canonical_32,no_dopamine_or_plasticity_control,4,adult_birth,-1,2,3,0,0,1,adult_birth,8,2,4,4,15,12008,167118,5,5,1,1,0,0,0,3
+canonical_32,no_dopamine_or_plasticity_control,5,trophic_update,2,-1,-1,2621,655,1,trophic update,8,2,4,4,15,12008,180876,6,6,1,1,0,0,0,4
+canonical_32,no_dopamine_or_plasticity_control,6,death,3,-1,-1,0,0,1,death,8,2,3,5,7,40088,180876,7,7,1,1,1,0,0,4
+canonical_32,no_dopamine_or_plasticity_control,7,trophic_update,2,-1,-1,-1311,0,1,trophic update,8,2,3,5,7,40088,173994,8,8,1,1,1,0,0,4
+canonical_32,no_dopamine_or_plasticity_control,8,trophic_update,1,-1,-1,6554,3277,1,trophic update,8,2,3,5,7,40088,193656,9,9,1,1,1,0,0,4
+canonical_32,no_dopamine_or_plasticity_control,9,cleavage,-1,0,3,0,0,1,cleavage,8,2,4,4,15,5420,238457,10,10,2,1,1,0,0,4
+canonical_32,no_dopamine_or_plasticity_control,10,trophic_update,3,-1,-1,-3277,-1638,1,trophic update,8,2,4,4,15,5420,218797,11,11,2,1,1,0,0,4
+canonical_32,no_dopamine_or_plasticity_control,11,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,4,4,15,5420,224941,12,12,2,1,1,0,0,4
+canonical_32,no_dopamine_or_plasticity_control,12,adult_birth,-1,3,4,0,0,1,adult_birth,8,2,5,3,31,15190,259757,13,13,2,2,1,0,0,4
+canonical_32,no_dopamine_or_plasticity_control,13,trophic_update,4,-1,-1,2621,655,1,trophic update,8,2,5,3,31,15190,279412,14,14,2,2,1,0,0,5
+canonical_32,no_dopamine_or_plasticity_control,14,death,4,-1,-1,0,0,1,death,8,2,4,4,15,57670,279412,15,15,2,2,2,0,0,5
+canonical_32,no_dopamine_or_plasticity_control,15,trophic_update,2,-1,-1,-1311,0,1,trophic update,8,2,4,4,15,57670,272530,16,16,2,2,2,0,0,5
+canonical_32,no_dopamine_or_plasticity_control,16,trophic_update,2,-1,-1,6554,3277,1,trophic update,8,2,4,4,15,57670,306937,17,17,2,2,2,0,0,5
+canonical_32,no_dopamine_or_plasticity_control,17,cleavage,-1,3,4,0,0,1,cleavage,8,2,5,3,31,6190,276530,18,18,3,2,2,0,0,5
+canonical_32,no_dopamine_or_plasticity_control,18,trophic_update,4,-1,-1,-3277,-1638,1,trophic update,8,2,5,3,31,6190,251955,19,19,3,2,2,0,0,5
+canonical_32,no_dopamine_or_plasticity_control,19,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,5,3,31,6190,258099,20,20,3,2,2,0,0,5
+canonical_32,no_dopamine_or_plasticity_control,20,adult_birth,-1,4,5,0,0,1,adult_birth,8,2,6,2,63,25162,297011,21,21,3,3,2,0,0,5
+canonical_32,no_dopamine_or_plasticity_control,21,trophic_update,4,-1,-1,2621,655,1,trophic update,8,2,6,2,63,25162,319941,22,22,3,3,2,0,0,6
+canonical_32,no_dopamine_or_plasticity_control,22,death,5,-1,-1,0,0,1,death,8,2,5,3,31,105130,319941,23,23,3,3,3,0,0,6
+canonical_32,no_dopamine_or_plasticity_control,23,trophic_update,1,-1,-1,-1311,0,1,trophic update,8,2,5,3,31,105130,315353,24,24,3,3,3,0,0,6
+canonical_32,no_dopamine_or_plasticity_control,24,trophic_update,3,-1,-1,6554,3277,1,trophic update,8,2,5,3,31,105130,361229,25,25,3,3,3,0,0,6
+canonical_32,no_dopamine_or_plasticity_control,25,cleavage,-1,0,5,0,0,1,cleavage,8,2,6,2,63,5818,427923,26,26,4,3,3,0,0,6
+canonical_32,no_dopamine_or_plasticity_control,26,trophic_update,5,-1,-1,-3277,-1638,1,trophic update,8,2,6,2,63,5818,398433,27,27,4,3,3,0,0,6
+canonical_32,no_dopamine_or_plasticity_control,27,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,6,2,63,5818,404577,28,28,4,3,3,0,0,6
+canonical_32,no_dopamine_or_plasticity_control,28,adult_birth,-1,5,6,0,0,1,adult_birth,8,2,7,1,127,24788,450974,29,29,4,4,3,0,0,6
+canonical_32,no_dopamine_or_plasticity_control,29,trophic_update,2,-1,-1,2621,655,1,trophic update,8,2,7,1,127,24788,464732,30,30,4,4,3,0,0,7
+canonical_32,no_dopamine_or_plasticity_control,30,death,6,-1,-1,0,0,1,death,8,2,6,2,63,105428,464732,31,31,4,4,4,0,0,7
+canonical_32,no_dopamine_or_plasticity_control,31,trophic_update,2,-1,-1,-1311,0,1,trophic update,8,2,6,2,63,105428,457850,32,32,4,4,4,0,0,7
+boundary_64,enabled,0,trophic_update,0,-1,-1,6554,3277,1,trophic update,8,2,2,6,3,5722,109363,1,1,0,0,0,0,0,2
+boundary_64,enabled,1,cleavage,-1,1,2,0,0,1,cleavage,8,2,3,5,7,5668,150323,2,2,1,0,0,0,0,2
+boundary_64,enabled,2,trophic_update,2,-1,-1,-3277,-1638,1,trophic update,8,2,3,5,7,5668,133733,3,3,1,0,0,0,0,3
+boundary_64,enabled,3,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,3,5,7,5668,139877,4,4,1,0,0,0,0,3
+boundary_64,enabled,4,adult_birth,-1,2,3,0,0,1,adult_birth,8,2,4,4,15,12008,166501,5,5,1,1,0,0,0,3
+boundary_64,enabled,5,trophic_update,2,-1,-1,2621,655,1,trophic update,8,2,4,4,15,12008,181117,6,6,1,1,0,0,0,4
+boundary_64,enabled,6,death,3,-1,-1,0,0,1,death,8,2,3,5,7,40088,181117,7,7,1,1,1,0,0,4
+boundary_64,enabled,7,trophic_update,2,-1,-1,-1311,0,1,trophic update,8,2,3,5,7,40088,174235,8,8,1,1,1,0,0,4
+boundary_64,enabled,8,trophic_update,1,-1,-1,6554,3277,1,trophic update,8,2,3,5,7,40088,196353,9,9,1,1,1,0,0,4
+boundary_64,enabled,9,cleavage,-1,0,3,0,0,1,cleavage,8,2,4,4,15,5420,242688,10,10,2,1,1,0,0,4
+boundary_64,enabled,10,trophic_update,3,-1,-1,-3277,-1638,1,trophic update,8,2,4,4,15,5420,220568,11,11,2,1,1,0,0,4
+boundary_64,enabled,11,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,4,4,15,5420,226712,12,12,2,1,1,0,0,4
+boundary_64,enabled,12,adult_birth,-1,3,4,0,0,1,adult_birth,8,2,5,3,31,15190,261527,13,13,2,2,1,0,0,4
+boundary_64,enabled,13,trophic_update,4,-1,-1,2621,655,1,trophic update,8,2,5,3,31,15190,282407,14,14,2,2,1,0,0,5
+boundary_64,enabled,14,death,4,-1,-1,0,0,1,death,8,2,4,4,15,57670,282407,15,15,2,2,2,0,0,5
+boundary_64,enabled,15,trophic_update,2,-1,-1,-1311,0,1,trophic update,8,2,4,4,15,57670,275525,16,16,2,2,2,0,0,5
+boundary_64,enabled,16,trophic_update,2,-1,-1,6554,3277,1,trophic update,8,2,4,4,15,57670,314231,17,17,2,2,2,0,0,5
+boundary_64,enabled,17,cleavage,-1,3,4,0,0,1,cleavage,8,2,5,3,31,6190,282604,18,18,3,2,2,0,0,5
+boundary_64,enabled,18,trophic_update,4,-1,-1,-3277,-1638,1,trophic update,8,2,5,3,31,6190,254954,19,19,3,2,2,0,0,5
+boundary_64,enabled,19,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,5,3,31,6190,261098,20,20,3,2,2,0,0,5
+boundary_64,enabled,20,adult_birth,-1,4,5,0,0,1,adult_birth,8,2,6,2,63,25162,300010,21,21,3,3,2,0,0,5
+boundary_64,enabled,21,trophic_update,4,-1,-1,2621,655,1,trophic update,8,2,6,2,63,25162,324370,22,22,3,3,2,0,0,6
+boundary_64,enabled,22,death,5,-1,-1,0,0,1,death,8,2,5,3,31,105130,324370,23,23,3,3,3,0,0,6
+boundary_64,enabled,23,trophic_update,1,-1,-1,-1311,0,1,trophic update,8,2,5,3,31,105130,319782,24,24,3,3,3,0,0,6
+boundary_64,enabled,24,trophic_update,3,-1,-1,6554,3277,1,trophic update,8,2,5,3,31,105130,371390,25,25,3,3,3,0,0,6
+boundary_64,enabled,25,cleavage,-1,0,5,0,0,1,cleavage,8,2,6,2,63,5818,440148,26,26,4,3,3,0,0,6
+boundary_64,enabled,26,trophic_update,5,-1,-1,-3277,-1638,1,trophic update,8,2,6,2,63,5818,406968,27,27,4,3,3,0,0,6
+boundary_64,enabled,27,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,6,2,63,5818,413112,28,28,4,3,3,0,0,6
+boundary_64,enabled,28,adult_birth,-1,5,6,0,0,1,adult_birth,8,2,7,1,127,24788,459363,29,29,4,4,3,0,0,6
+boundary_64,enabled,29,trophic_update,2,-1,-1,2621,655,1,trophic update,8,2,7,1,127,24788,473733,30,30,4,4,3,0,0,7
+boundary_64,enabled,30,death,6,-1,-1,0,0,1,death,8,2,6,2,63,105428,473733,31,31,4,4,4,0,0,7
+boundary_64,enabled,31,trophic_update,2,-1,-1,-1311,0,1,trophic update,8,2,6,2,63,105428,466851,32,32,4,4,4,0,0,7
+boundary_64,enabled,32,trophic_update,4,-1,-1,6554,3277,1,trophic update,8,2,6,2,63,105428,527881,33,33,4,4,4,0,0,7
+boundary_64,enabled,33,cleavage,-1,3,6,0,0,1,cleavage,8,2,7,1,127,6896,530688,34,34,5,4,4,0,0,7
+boundary_64,enabled,34,trophic_update,6,-1,-1,-3277,-1638,1,trophic update,8,2,7,1,127,6896,491978,35,35,5,4,4,0,0,7
+boundary_64,enabled,35,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,7,1,127,6896,498122,36,36,5,4,4,0,0,7
+boundary_64,enabled,36,adult_birth,-1,6,7,0,0,1,adult_birth,8,2,8,0,255,40384,549322,37,37,5,5,4,0,0,7
+boundary_64,enabled,37,trophic_update,6,-1,-1,2621,655,1,trophic update,8,2,8,0,255,40384,583426,38,38,5,5,4,0,0,8
+boundary_64,enabled,38,death,7,-1,-1,0,0,1,death,8,2,7,1,127,179776,583426,39,39,5,5,5,0,0,8
+boundary_64,enabled,39,trophic_update,1,-1,-1,-1311,0,1,trophic update,8,2,7,1,127,179776,578838,40,40,5,5,5,0,0,8
+boundary_64,enabled,40,trophic_update,5,-1,-1,6554,3277,1,trophic update,8,2,7,1,127,179776,656250,41,41,5,5,5,0,0,8
+boundary_64,enabled,41,cleavage,-1,4,7,0,0,1,cleavage,8,2,8,0,255,9568,646010,42,42,6,5,5,0,0,8
+boundary_64,enabled,42,trophic_update,7,-1,-1,-3277,-1638,1,trophic update,8,2,8,0,255,9568,601770,43,43,6,5,5,0,0,8
+boundary_64,enabled,43,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,8,0,255,9568,607914,44,44,6,5,5,0,0,8
+boundary_64,enabled,44,trophic_update,0,-1,-1,-1311,0,1,trophic update,8,2,8,0,255,9568,605620,45,45,6,5,5,0,0,8
+boundary_64,enabled,45,trophic_update,6,-1,-1,2621,655,1,trophic update,8,2,8,0,255,9568,639724,46,46,6,5,5,0,0,8
+boundary_64,enabled,46,death,7,-1,-1,0,0,1,death,8,2,7,1,127,25696,639724,47,47,6,5,6,0,0,8
+boundary_64,enabled,47,trophic_update,3,-1,-1,-1311,0,1,trophic update,8,2,7,1,127,25696,630548,48,48,6,5,6,0,0,8
+boundary_64,enabled,48,trophic_update,6,-1,-1,6554,3277,1,trophic update,8,2,7,1,127,25696,711118,49,49,6,5,6,0,0,8
+boundary_64,enabled,49,cleavage,-1,0,7,0,0,1,cleavage,8,2,8,0,255,6400,847605,50,50,7,5,6,0,0,8
+boundary_64,enabled,50,trophic_update,7,-1,-1,-3277,-1638,1,trophic update,8,2,8,0,255,6400,803365,51,51,7,5,6,0,0,8
+boundary_64,enabled,51,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,8,0,255,6400,810164,52,52,7,5,6,0,0,8
+boundary_64,enabled,52,trophic_update,0,-1,-1,-1311,0,1,trophic update,8,2,8,0,255,6400,807870,53,53,7,5,6,0,0,8
+boundary_64,enabled,53,trophic_update,6,-1,-1,2621,655,1,trophic update,8,2,8,0,255,6400,837102,54,54,7,5,6,0,0,8
+boundary_64,enabled,54,death,7,-1,-1,0,0,1,death,8,2,7,1,127,9856,837102,55,55,7,5,7,0,0,8
+boundary_64,enabled,55,trophic_update,5,-1,-1,-1311,0,1,trophic update,8,2,7,1,127,9856,823338,56,56,7,5,7,0,0,8
+boundary_64,enabled,56,trophic_update,0,-1,-1,6554,3277,1,trophic update,8,2,7,1,127,9856,835052,57,57,7,5,7,0,0,8
+boundary_64,enabled,57,cleavage,-1,3,7,0,0,1,cleavage,8,2,8,0,255,8128,774788,58,58,8,5,7,0,0,8
+boundary_64,enabled,58,trophic_update,7,-1,-1,-3277,-1638,1,trophic update,8,2,8,0,255,8128,730548,59,59,8,5,7,0,0,8
+boundary_64,enabled,59,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,8,0,255,8128,736692,60,60,8,5,7,0,0,8
+boundary_64,enabled,60,trophic_update,0,-1,-1,-1311,0,1,trophic update,8,2,8,0,255,8128,734398,61,61,8,5,7,0,0,8
+boundary_64,enabled,61,trophic_update,6,-1,-1,2621,655,1,trophic update,8,2,8,0,255,8128,763630,62,62,8,5,7,0,0,8
+boundary_64,enabled,62,death,7,-1,-1,0,0,1,death,8,2,7,1,127,18496,763630,63,63,8,5,8,0,0,8
+boundary_64,enabled,63,trophic_update,0,-1,-1,-1311,0,1,trophic update,8,2,7,1,127,18496,761336,64,64,8,5,8,0,0,8
+boundary_64,fixed_static_pool_control,0,trophic_update,0,-1,-1,6554,3277,1,trophic update,8,2,2,6,3,5722,109363,1,1,0,0,0,0,0,2
+boundary_64,fixed_static_pool_control,1,cleavage,-1,1,2,0,0,1,fixed-pool sham suppressed mask mutation,8,2,2,6,3,5722,109363,2,2,0,0,0,0,1,2
+boundary_64,fixed_static_pool_control,2,trophic_update,2,-1,-1,-3277,-1638,0,inactive trophic target,8,2,2,6,3,5722,109363,3,3,0,0,0,1,2,2
+boundary_64,fixed_static_pool_control,3,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,2,6,3,5722,115507,4,4,0,0,0,1,2,2
+boundary_64,fixed_static_pool_control,4,adult_birth,-1,2,3,0,0,1,fixed-pool sham suppressed mask mutation,8,2,2,6,3,5722,115507,5,5,0,0,0,1,3,2
+boundary_64,fixed_static_pool_control,5,trophic_update,2,-1,-1,2621,655,0,inactive trophic target,8,2,2,6,3,5722,115507,6,6,0,0,0,2,4,2
+boundary_64,fixed_static_pool_control,6,death,3,-1,-1,0,0,1,fixed-pool sham suppressed mask mutation,8,2,2,6,3,5722,115507,7,7,0,0,0,2,5,2
+boundary_64,fixed_static_pool_control,7,trophic_update,2,-1,-1,-1311,0,0,inactive trophic target,8,2,2,6,3,5722,115507,8,8,0,0,0,3,6,2
+boundary_64,fixed_static_pool_control,8,trophic_update,1,-1,-1,6554,3277,1,trophic update,8,2,2,6,3,5722,137625,9,9,0,0,0,3,6,2
+boundary_64,fixed_static_pool_control,9,cleavage,-1,0,3,0,0,1,fixed-pool sham suppressed mask mutation,8,2,2,6,3,5722,137625,10,10,0,0,0,3,7,2
+boundary_64,fixed_static_pool_control,10,trophic_update,3,-1,-1,-3277,-1638,0,inactive trophic target,8,2,2,6,3,5722,137625,11,11,0,0,0,4,8,2
+boundary_64,fixed_static_pool_control,11,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,2,6,3,5722,143769,12,12,0,0,0,4,8,2
+boundary_64,fixed_static_pool_control,12,adult_birth,-1,3,4,0,0,1,fixed-pool sham suppressed mask mutation,8,2,2,6,3,5722,143769,13,13,0,0,0,4,9,2
+boundary_64,fixed_static_pool_control,13,trophic_update,4,-1,-1,2621,655,0,inactive trophic target,8,2,2,6,3,5722,143769,14,14,0,0,0,5,10,2
+boundary_64,fixed_static_pool_control,14,death,4,-1,-1,0,0,1,fixed-pool sham suppressed mask mutation,8,2,2,6,3,5722,143769,15,15,0,0,0,5,11,2
+boundary_64,fixed_static_pool_control,15,trophic_update,2,-1,-1,-1311,0,0,inactive trophic target,8,2,2,6,3,5722,143769,16,16,0,0,0,6,12,2
+boundary_64,fixed_static_pool_control,16,trophic_update,2,-1,-1,6554,3277,0,inactive trophic target,8,2,2,6,3,5722,143769,17,17,0,0,0,7,13,2
+boundary_64,fixed_static_pool_control,17,cleavage,-1,3,4,0,0,1,fixed-pool sham suppressed mask mutation,8,2,2,6,3,5722,143769,18,18,0,0,0,7,14,2
+boundary_64,fixed_static_pool_control,18,trophic_update,4,-1,-1,-3277,-1638,0,inactive trophic target,8,2,2,6,3,5722,143769,19,19,0,0,0,8,15,2
+boundary_64,fixed_static_pool_control,19,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,2,6,3,5722,149913,20,20,0,0,0,8,15,2
+boundary_64,fixed_static_pool_control,20,adult_birth,-1,4,5,0,0,1,fixed-pool sham suppressed mask mutation,8,2,2,6,3,5722,149913,21,21,0,0,0,8,16,2
+boundary_64,fixed_static_pool_control,21,trophic_update,4,-1,-1,2621,655,0,inactive trophic target,8,2,2,6,3,5722,149913,22,22,0,0,0,9,17,2
+boundary_64,fixed_static_pool_control,22,death,5,-1,-1,0,0,1,fixed-pool sham suppressed mask mutation,8,2,2,6,3,5722,149913,23,23,0,0,0,9,18,2
+boundary_64,fixed_static_pool_control,23,trophic_update,1,-1,-1,-1311,0,1,trophic update,8,2,2,6,3,5722,145325,24,24,0,0,0,9,18,2
+boundary_64,fixed_static_pool_control,24,trophic_update,3,-1,-1,6554,3277,0,inactive trophic target,8,2,2,6,3,5722,145325,25,25,0,0,0,10,19,2
+boundary_64,fixed_static_pool_control,25,cleavage,-1,0,5,0,0,1,fixed-pool sham suppressed mask mutation,8,2,2,6,3,5722,145325,26,26,0,0,0,10,20,2
+boundary_64,fixed_static_pool_control,26,trophic_update,5,-1,-1,-3277,-1638,0,inactive trophic target,8,2,2,6,3,5722,145325,27,27,0,0,0,11,21,2
+boundary_64,fixed_static_pool_control,27,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,2,6,3,5722,151469,28,28,0,0,0,11,21,2
+boundary_64,fixed_static_pool_control,28,adult_birth,-1,5,6,0,0,1,fixed-pool sham suppressed mask mutation,8,2,2,6,3,5722,151469,29,29,0,0,0,11,22,2
+boundary_64,fixed_static_pool_control,29,trophic_update,2,-1,-1,2621,655,0,inactive trophic target,8,2,2,6,3,5722,151469,30,30,0,0,0,12,23,2
+boundary_64,fixed_static_pool_control,30,death,6,-1,-1,0,0,1,fixed-pool sham suppressed mask mutation,8,2,2,6,3,5722,151469,31,31,0,0,0,12,24,2
+boundary_64,fixed_static_pool_control,31,trophic_update,2,-1,-1,-1311,0,0,inactive trophic target,8,2,2,6,3,5722,151469,32,32,0,0,0,13,25,2
+boundary_64,fixed_static_pool_control,32,trophic_update,4,-1,-1,6554,3277,0,inactive trophic target,8,2,2,6,3,5722,151469,33,33,0,0,0,14,26,2
+boundary_64,fixed_static_pool_control,33,cleavage,-1,3,6,0,0,1,fixed-pool sham suppressed mask mutation,8,2,2,6,3,5722,151469,34,34,0,0,0,14,27,2
+boundary_64,fixed_static_pool_control,34,trophic_update,6,-1,-1,-3277,-1638,0,inactive trophic target,8,2,2,6,3,5722,151469,35,35,0,0,0,15,28,2
+boundary_64,fixed_static_pool_control,35,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,2,6,3,5722,157613,36,36,0,0,0,15,28,2
+boundary_64,fixed_static_pool_control,36,adult_birth,-1,6,7,0,0,1,fixed-pool sham suppressed mask mutation,8,2,2,6,3,5722,157613,37,37,0,0,0,15,29,2
+boundary_64,fixed_static_pool_control,37,trophic_update,6,-1,-1,2621,655,0,inactive trophic target,8,2,2,6,3,5722,157613,38,38,0,0,0,16,30,2
+boundary_64,fixed_static_pool_control,38,death,7,-1,-1,0,0,1,fixed-pool sham suppressed mask mutation,8,2,2,6,3,5722,157613,39,39,0,0,0,16,31,2
+boundary_64,fixed_static_pool_control,39,trophic_update,1,-1,-1,-1311,0,1,trophic update,8,2,2,6,3,5722,153025,40,40,0,0,0,16,31,2
+boundary_64,fixed_static_pool_control,40,trophic_update,5,-1,-1,6554,3277,0,inactive trophic target,8,2,2,6,3,5722,153025,41,41,0,0,0,17,32,2
+boundary_64,fixed_static_pool_control,41,cleavage,-1,4,7,0,0,1,fixed-pool sham suppressed mask mutation,8,2,2,6,3,5722,153025,42,42,0,0,0,17,33,2
+boundary_64,fixed_static_pool_control,42,trophic_update,7,-1,-1,-3277,-1638,0,inactive trophic target,8,2,2,6,3,5722,153025,43,43,0,0,0,18,34,2
+boundary_64,fixed_static_pool_control,43,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,2,6,3,5722,159169,44,44,0,0,0,18,34,2
+boundary_64,fixed_static_pool_control,44,trophic_update,0,-1,-1,-1311,0,1,trophic update,8,2,2,6,3,5722,156875,45,45,0,0,0,18,34,2
+boundary_64,fixed_static_pool_control,45,trophic_update,6,-1,-1,2621,655,0,inactive trophic target,8,2,2,6,3,5722,156875,46,46,0,0,0,19,35,2
+boundary_64,fixed_static_pool_control,46,death,7,-1,-1,0,0,1,fixed-pool sham suppressed mask mutation,8,2,2,6,3,5722,156875,47,47,0,0,0,19,36,2
+boundary_64,fixed_static_pool_control,47,trophic_update,3,-1,-1,-1311,0,0,inactive trophic target,8,2,2,6,3,5722,156875,48,48,0,0,0,20,37,2
+boundary_64,fixed_static_pool_control,48,trophic_update,6,-1,-1,6554,3277,0,inactive trophic target,8,2,2,6,3,5722,156875,49,49,0,0,0,21,38,2
+boundary_64,fixed_static_pool_control,49,cleavage,-1,0,7,0,0,1,fixed-pool sham suppressed mask mutation,8,2,2,6,3,5722,156875,50,50,0,0,0,21,39,2
+boundary_64,fixed_static_pool_control,50,trophic_update,7,-1,-1,-3277,-1638,0,inactive trophic target,8,2,2,6,3,5722,156875,51,51,0,0,0,22,40,2
+boundary_64,fixed_static_pool_control,51,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,2,6,3,5722,163674,52,52,0,0,0,22,40,2
+boundary_64,fixed_static_pool_control,52,trophic_update,0,-1,-1,-1311,0,1,trophic update,8,2,2,6,3,5722,161380,53,53,0,0,0,22,40,2
+boundary_64,fixed_static_pool_control,53,trophic_update,6,-1,-1,2621,655,0,inactive trophic target,8,2,2,6,3,5722,161380,54,54,0,0,0,23,41,2
+boundary_64,fixed_static_pool_control,54,death,7,-1,-1,0,0,1,fixed-pool sham suppressed mask mutation,8,2,2,6,3,5722,161380,55,55,0,0,0,23,42,2
+boundary_64,fixed_static_pool_control,55,trophic_update,5,-1,-1,-1311,0,0,inactive trophic target,8,2,2,6,3,5722,161380,56,56,0,0,0,24,43,2
+boundary_64,fixed_static_pool_control,56,trophic_update,0,-1,-1,6554,3277,1,trophic update,8,2,2,6,3,5722,173094,57,57,0,0,0,24,43,2
+boundary_64,fixed_static_pool_control,57,cleavage,-1,3,7,0,0,1,fixed-pool sham suppressed mask mutation,8,2,2,6,3,5722,173094,58,58,0,0,0,24,44,2
+boundary_64,fixed_static_pool_control,58,trophic_update,7,-1,-1,-3277,-1638,0,inactive trophic target,8,2,2,6,3,5722,173094,59,59,0,0,0,25,45,2
+boundary_64,fixed_static_pool_control,59,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,2,6,3,5722,179238,60,60,0,0,0,25,45,2
+boundary_64,fixed_static_pool_control,60,trophic_update,0,-1,-1,-1311,0,1,trophic update,8,2,2,6,3,5722,176944,61,61,0,0,0,25,45,2
+boundary_64,fixed_static_pool_control,61,trophic_update,6,-1,-1,2621,655,0,inactive trophic target,8,2,2,6,3,5722,176944,62,62,0,0,0,26,46,2
+boundary_64,fixed_static_pool_control,62,death,7,-1,-1,0,0,1,fixed-pool sham suppressed mask mutation,8,2,2,6,3,5722,176944,63,63,0,0,0,26,47,2
+boundary_64,fixed_static_pool_control,63,trophic_update,0,-1,-1,-1311,0,1,trophic update,8,2,2,6,3,5722,174650,64,64,0,0,0,26,47,2
+boundary_64,random_event_replay_control,0,trophic_update,0,-1,-1,-3277,-1638,1,trophic update,8,2,2,6,3,5722,92774,1,1,0,0,0,0,0,2
+boundary_64,random_event_replay_control,1,cleavage,-1,5,3,0,0,0,invalid child event,8,2,2,6,3,5722,92774,2,2,0,0,0,1,1,2
+boundary_64,random_event_replay_control,2,trophic_update,3,-1,-1,-3277,-1638,0,inactive trophic target,8,2,2,6,3,5722,92774,3,3,0,0,0,2,2,2
+boundary_64,random_event_replay_control,3,death,3,-1,-1,0,0,0,invalid death,8,2,2,6,3,5722,92774,4,4,0,0,0,3,3,2
+boundary_64,random_event_replay_control,4,death,5,-1,-1,0,0,0,invalid death,8,2,2,6,3,5722,92774,5,5,0,0,0,4,4,2
+boundary_64,random_event_replay_control,5,cleavage,-1,5,1,0,0,0,invalid child event,8,2,2,6,3,5722,92774,6,6,0,0,0,5,5,2
+boundary_64,random_event_replay_control,6,death,2,-1,-1,0,0,0,invalid death,8,2,2,6,3,5722,92774,7,7,0,0,0,6,6,2
+boundary_64,random_event_replay_control,7,trophic_update,5,-1,-1,-1311,0,0,inactive trophic target,8,2,2,6,3,5722,92774,8,8,0,0,0,7,7,2
+boundary_64,random_event_replay_control,8,trophic_update,6,-1,-1,-3277,-1638,0,inactive trophic target,8,2,2,6,3,5722,92774,9,9,0,0,0,8,8,2
+boundary_64,random_event_replay_control,9,maturity_handoff,4,-1,-1,0,0,0,invalid maturity,8,2,2,6,3,5722,92774,10,10,0,0,0,9,9,2
+boundary_64,random_event_replay_control,10,trophic_update,0,-1,-1,2621,655,1,trophic update,8,2,2,6,3,5722,97646,11,11,0,0,0,9,9,2
+boundary_64,random_event_replay_control,11,trophic_update,2,-1,-1,-3277,-1638,0,inactive trophic target,8,2,2,6,3,5722,97646,12,12,0,0,0,10,10,2
+boundary_64,random_event_replay_control,12,trophic_update,4,-1,-1,-1311,0,0,inactive trophic target,8,2,2,6,3,5722,97646,13,13,0,0,0,11,11,2
+boundary_64,random_event_replay_control,13,death,3,-1,-1,0,0,0,invalid death,8,2,2,6,3,5722,97646,14,14,0,0,0,12,12,2
+boundary_64,random_event_replay_control,14,adult_birth,-1,6,5,0,0,0,invalid child event,8,2,2,6,3,5722,97646,15,15,0,0,0,13,13,2
+boundary_64,random_event_replay_control,15,trophic_update,1,-1,-1,6554,3277,1,trophic update,8,2,2,6,3,5722,119764,16,16,0,0,0,13,13,2
+boundary_64,random_event_replay_control,16,trophic_update,7,-1,-1,-1311,0,0,inactive trophic target,8,2,2,6,3,5722,119764,17,17,0,0,0,14,14,2
+boundary_64,random_event_replay_control,17,maturity_handoff,4,-1,-1,0,0,0,invalid maturity,8,2,2,6,3,5722,119764,18,18,0,0,0,15,15,2
+boundary_64,random_event_replay_control,18,cleavage,-1,0,3,0,0,1,cleavage,8,2,3,5,11,5474,179509,19,19,1,0,0,15,15,2
+boundary_64,random_event_replay_control,19,cleavage,-1,4,2,0,0,0,invalid child event,8,2,3,5,11,5474,179509,20,20,1,0,0,16,16,3
+boundary_64,random_event_replay_control,20,trophic_update,3,-1,-1,-3277,-1638,1,trophic update,8,2,3,5,11,5474,157389,21,21,1,0,0,16,16,3
+boundary_64,random_event_replay_control,21,adult_birth,-1,5,0,0,0,0,invalid child event,8,2,3,5,11,5474,157389,22,22,1,0,0,17,17,3
+boundary_64,random_event_replay_control,22,maturity_handoff,4,-1,-1,0,0,0,invalid maturity,8,2,3,5,11,5474,157389,23,23,1,0,0,18,18,3
+boundary_64,random_event_replay_control,23,trophic_update,2,-1,-1,6554,3277,0,inactive trophic target,8,2,3,5,11,5474,157389,24,24,1,0,0,19,19,3
+boundary_64,random_event_replay_control,24,trophic_update,4,-1,-1,-1311,0,0,inactive trophic target,8,2,3,5,11,5474,157389,25,25,1,0,0,20,20,3
+boundary_64,random_event_replay_control,25,trophic_update,6,-1,-1,2621,655,0,inactive trophic target,8,2,3,5,11,5474,157389,26,26,1,0,0,21,21,3
+boundary_64,random_event_replay_control,26,trophic_update,6,-1,-1,6554,3277,0,inactive trophic target,8,2,3,5,11,5474,157389,27,27,1,0,0,22,22,3
+boundary_64,random_event_replay_control,27,trophic_update,6,-1,-1,2621,655,0,inactive trophic target,8,2,3,5,11,5474,157389,28,28,1,0,0,23,23,3
+boundary_64,random_event_replay_control,28,trophic_update,1,-1,-1,-3277,-1638,1,trophic update,8,2,3,5,11,5474,144485,29,29,1,0,0,23,23,3
+boundary_64,random_event_replay_control,29,trophic_update,1,-1,-1,2621,655,1,trophic update,8,2,3,5,11,5474,154229,30,30,1,0,0,23,23,3
+boundary_64,random_event_replay_control,30,trophic_update,4,-1,-1,6554,3277,0,inactive trophic target,8,2,3,5,11,5474,154229,31,31,1,0,0,24,24,3
+boundary_64,random_event_replay_control,31,trophic_update,4,-1,-1,-1311,0,0,inactive trophic target,8,2,3,5,11,5474,154229,32,32,1,0,0,25,25,3
+boundary_64,random_event_replay_control,32,trophic_update,4,-1,-1,6554,3277,0,inactive trophic target,8,2,3,5,11,5474,154229,33,33,1,0,0,26,26,3
+boundary_64,random_event_replay_control,33,maturity_handoff,4,-1,-1,0,0,0,invalid maturity,8,2,3,5,11,5474,154229,34,34,1,0,0,27,27,3
+boundary_64,random_event_replay_control,34,adult_birth,-1,2,1,0,0,0,invalid child event,8,2,3,5,11,5474,154229,35,35,1,0,0,28,28,3
+boundary_64,random_event_replay_control,35,death,0,-1,-1,0,0,1,death,8,2,2,6,10,5618,154229,36,36,1,0,1,28,28,3
+boundary_64,random_event_replay_control,36,trophic_update,6,-1,-1,-1311,0,0,inactive trophic target,8,2,2,6,10,5618,154229,37,37,1,0,1,29,29,3
+boundary_64,random_event_replay_control,37,trophic_update,3,-1,-1,-3277,-1638,1,trophic update,8,2,2,6,10,5618,132109,38,38,1,0,1,29,29,3
+boundary_64,random_event_replay_control,38,trophic_update,1,-1,-1,2621,655,1,trophic update,8,2,2,6,10,5618,141853,39,39,1,0,1,29,29,3
+boundary_64,random_event_replay_control,39,trophic_update,0,-1,-1,2621,655,0,inactive trophic target,8,2,2,6,10,5618,141853,40,40,1,0,1,30,30,3
+boundary_64,random_event_replay_control,40,trophic_update,2,-1,-1,-1311,0,0,inactive trophic target,8,2,2,6,10,5618,141853,41,41,1,0,1,31,31,3
+boundary_64,random_event_replay_control,41,cleavage,-1,4,3,0,0,0,invalid child event,8,2,2,6,10,5618,141853,42,42,1,0,1,32,32,3
+boundary_64,random_event_replay_control,42,death,3,-1,-1,0,0,1,death,8,2,1,7,2,7346,141853,43,43,1,0,2,32,32,3
+boundary_64,random_event_replay_control,43,death,3,-1,-1,0,0,0,invalid death,8,2,1,7,2,7346,141853,44,44,1,0,2,33,33,3
+boundary_64,random_event_replay_control,44,trophic_update,4,-1,-1,-1311,0,0,inactive trophic target,8,2,1,7,2,7346,141853,45,45,1,0,2,34,34,3
+boundary_64,random_event_replay_control,45,trophic_update,6,-1,-1,-1311,0,0,inactive trophic target,8,2,1,7,2,7346,141853,46,46,1,0,2,35,35,3
+boundary_64,random_event_replay_control,46,maturity_handoff,4,-1,-1,0,0,0,invalid maturity,8,2,1,7,2,7346,141853,47,47,1,0,2,36,36,3
+boundary_64,random_event_replay_control,47,maturity_handoff,4,-1,-1,0,0,0,invalid maturity,8,2,1,7,2,7346,141853,48,48,1,0,2,37,37,3
+boundary_64,random_event_replay_control,48,adult_birth,-1,1,3,0,0,1,adult_birth,8,2,2,6,10,8930,195905,49,49,1,1,2,37,37,3
+boundary_64,random_event_replay_control,49,cleavage,-1,4,5,0,0,0,invalid child event,8,2,2,6,10,8930,195905,50,50,1,1,2,38,38,3
+boundary_64,random_event_replay_control,50,trophic_update,5,-1,-1,-3277,-1638,0,inactive trophic target,8,2,2,6,10,8930,195905,51,51,1,1,2,39,39,3
+boundary_64,random_event_replay_control,51,death,1,-1,-1,0,0,1,death,8,2,1,7,8,9234,195905,52,52,1,1,3,39,39,3
+boundary_64,random_event_replay_control,52,trophic_update,1,-1,-1,2621,655,0,inactive trophic target,8,2,1,7,8,9234,195905,53,53,1,1,3,40,40,3
+boundary_64,random_event_replay_control,53,trophic_update,6,-1,-1,-1311,0,0,inactive trophic target,8,2,1,7,8,9234,195905,54,54,1,1,3,41,41,3
+boundary_64,random_event_replay_control,54,trophic_update,0,-1,-1,6554,3277,0,inactive trophic target,8,2,1,7,8,9234,195905,55,55,1,1,3,42,42,3
+boundary_64,random_event_replay_control,55,maturity_handoff,4,-1,-1,0,0,0,invalid maturity,8,2,1,7,8,9234,195905,56,56,1,1,3,43,43,3
+boundary_64,random_event_replay_control,56,cleavage,-1,5,0,0,0,0,invalid child event,8,2,1,7,8,9234,195905,57,57,1,1,3,44,44,3
+boundary_64,random_event_replay_control,57,adult_birth,-1,0,2,0,0,0,invalid child event,8,2,1,7,8,9234,195905,58,58,1,1,3,45,45,3
+boundary_64,random_event_replay_control,58,maturity_handoff,4,-1,-1,0,0,0,invalid maturity,8,2,1,7,8,9234,195905,59,59,1,1,3,46,46,3
+boundary_64,random_event_replay_control,59,trophic_update,5,-1,-1,6554,3277,0,inactive trophic target,8,2,1,7,8,9234,195905,60,60,1,1,3,47,47,3
+boundary_64,random_event_replay_control,60,trophic_update,7,-1,-1,-1311,0,0,inactive trophic target,8,2,1,7,8,9234,195905,61,61,1,1,3,48,48,3
+boundary_64,random_event_replay_control,61,cleavage,-1,7,6,0,0,0,invalid child event,8,2,1,7,8,9234,195905,62,62,1,1,3,49,49,3
+boundary_64,random_event_replay_control,62,trophic_update,7,-1,-1,6554,3277,0,inactive trophic target,8,2,1,7,8,9234,195905,63,63,1,1,3,50,50,3
+boundary_64,random_event_replay_control,63,trophic_update,1,-1,-1,2621,655,0,inactive trophic target,8,2,1,7,8,9234,195905,64,64,1,1,3,51,51,3
+boundary_64,active_mask_shuffle_control,0,trophic_update,4,-1,-1,6554,3277,0,inactive trophic target,8,2,2,6,3,5722,98304,1,1,0,0,0,1,1,2
+boundary_64,active_mask_shuffle_control,1,cleavage,-1,7,6,0,0,0,invalid child event,8,2,2,6,3,5722,98304,2,2,0,0,0,2,2,2
+boundary_64,active_mask_shuffle_control,2,trophic_update,6,-1,-1,-3277,-1638,0,inactive trophic target,8,2,2,6,3,5722,98304,3,3,0,0,0,3,3,2
+boundary_64,active_mask_shuffle_control,3,maturity_handoff,4,-1,-1,0,0,0,invalid maturity,8,2,2,6,3,5722,98304,4,4,0,0,0,4,4,2
+boundary_64,active_mask_shuffle_control,4,adult_birth,-1,6,5,0,0,0,invalid child event,8,2,2,6,3,5722,98304,5,5,0,0,0,5,5,2
+boundary_64,active_mask_shuffle_control,5,trophic_update,6,-1,-1,2621,655,0,inactive trophic target,8,2,2,6,3,5722,98304,6,6,0,0,0,6,6,2
+boundary_64,active_mask_shuffle_control,6,death,5,-1,-1,0,0,0,invalid death,8,2,2,6,3,5722,98304,7,7,0,0,0,7,7,2
+boundary_64,active_mask_shuffle_control,7,trophic_update,6,-1,-1,-1311,0,0,inactive trophic target,8,2,2,6,3,5722,98304,8,8,0,0,0,8,8,2
+boundary_64,active_mask_shuffle_control,8,trophic_update,7,-1,-1,6554,3277,0,inactive trophic target,8,2,2,6,3,5722,98304,9,9,0,0,0,9,9,2
+boundary_64,active_mask_shuffle_control,9,cleavage,-1,4,5,0,0,0,invalid child event,8,2,2,6,3,5722,98304,10,10,0,0,0,10,10,2
+boundary_64,active_mask_shuffle_control,10,trophic_update,5,-1,-1,-3277,-1638,0,inactive trophic target,8,2,2,6,3,5722,98304,11,11,0,0,0,11,11,2
+boundary_64,active_mask_shuffle_control,11,maturity_handoff,4,-1,-1,0,0,0,invalid maturity,8,2,2,6,3,5722,98304,12,12,0,0,0,12,12,2
+boundary_64,active_mask_shuffle_control,12,adult_birth,-1,5,0,0,0,0,invalid child event,8,2,2,6,3,5722,98304,13,13,0,0,0,13,13,2
+boundary_64,active_mask_shuffle_control,13,trophic_update,0,-1,-1,2621,655,1,trophic update,8,2,2,6,3,5722,102480,14,14,0,0,0,13,13,2
+boundary_64,active_mask_shuffle_control,14,death,0,-1,-1,0,0,1,death,8,2,1,7,2,5866,102480,15,15,0,0,1,13,13,2
+boundary_64,active_mask_shuffle_control,15,trophic_update,6,-1,-1,-1311,0,0,inactive trophic target,8,2,1,7,2,5866,102480,16,16,0,0,1,14,14,2
+boundary_64,active_mask_shuffle_control,16,trophic_update,6,-1,-1,6554,3277,0,inactive trophic target,8,2,1,7,2,5866,102480,17,17,0,0,1,15,15,2
+boundary_64,active_mask_shuffle_control,17,cleavage,-1,5,0,0,0,0,invalid child event,8,2,1,7,2,5866,102480,18,18,0,0,1,16,16,2
+boundary_64,active_mask_shuffle_control,18,trophic_update,0,-1,-1,-3277,-1638,0,inactive trophic target,8,2,1,7,2,5866,102480,19,19,0,0,1,17,17,2
+boundary_64,active_mask_shuffle_control,19,maturity_handoff,4,-1,-1,0,0,0,invalid maturity,8,2,1,7,2,5866,102480,20,20,0,0,1,18,18,2
+boundary_64,active_mask_shuffle_control,20,adult_birth,-1,0,2,0,0,0,invalid child event,8,2,1,7,2,5866,102480,21,21,0,0,1,19,19,2
+boundary_64,active_mask_shuffle_control,21,trophic_update,0,-1,-1,2621,655,0,inactive trophic target,8,2,1,7,2,5866,102480,22,22,0,0,1,20,20,2
+boundary_64,active_mask_shuffle_control,22,death,2,-1,-1,0,0,0,invalid death,8,2,1,7,2,5866,102480,23,23,0,0,1,21,21,2
+boundary_64,active_mask_shuffle_control,23,trophic_update,7,-1,-1,-1311,0,0,inactive trophic target,8,2,1,7,2,5866,102480,24,24,0,0,1,22,22,2
+boundary_64,active_mask_shuffle_control,24,trophic_update,5,-1,-1,6554,3277,0,inactive trophic target,8,2,1,7,2,5866,102480,25,25,0,0,1,23,23,2
+boundary_64,active_mask_shuffle_control,25,cleavage,-1,4,2,0,0,0,invalid child event,8,2,1,7,2,5866,102480,26,26,0,0,1,24,24,2
+boundary_64,active_mask_shuffle_control,26,trophic_update,2,-1,-1,-3277,-1638,0,inactive trophic target,8,2,1,7,2,5866,102480,27,27,0,0,1,25,25,2
+boundary_64,active_mask_shuffle_control,27,maturity_handoff,4,-1,-1,0,0,0,invalid maturity,8,2,1,7,2,5866,102480,28,28,0,0,1,26,26,2
+boundary_64,active_mask_shuffle_control,28,adult_birth,-1,2,1,0,0,0,invalid child event,8,2,1,7,2,5866,102480,29,29,0,0,1,27,27,2
+boundary_64,active_mask_shuffle_control,29,trophic_update,6,-1,-1,2621,655,0,inactive trophic target,8,2,1,7,2,5866,102480,30,30,0,0,1,28,28,2
+boundary_64,active_mask_shuffle_control,30,death,1,-1,-1,0,0,1,death,8,2,0,8,0,6170,102480,31,31,0,0,2,28,28,2
+boundary_64,active_mask_shuffle_control,31,trophic_update,6,-1,-1,-1311,0,0,inactive trophic target,8,2,0,8,0,6170,102480,32,32,0,0,2,29,29,2
+boundary_64,active_mask_shuffle_control,32,trophic_update,0,-1,-1,6554,3277,0,inactive trophic target,8,2,0,8,0,6170,102480,33,33,0,0,2,30,30,2
+boundary_64,active_mask_shuffle_control,33,cleavage,-1,5,1,0,0,0,invalid child event,8,2,0,8,0,6170,102480,34,34,0,0,2,31,31,2
+boundary_64,active_mask_shuffle_control,34,trophic_update,1,-1,-1,-3277,-1638,0,inactive trophic target,8,2,0,8,0,6170,102480,35,35,0,0,2,32,32,2
+boundary_64,active_mask_shuffle_control,35,maturity_handoff,4,-1,-1,0,0,0,invalid maturity,8,2,0,8,0,6170,102480,36,36,0,0,2,33,33,2
+boundary_64,active_mask_shuffle_control,36,adult_birth,-1,1,3,0,0,0,invalid child event,8,2,0,8,0,6170,102480,37,37,0,0,2,34,34,2
+boundary_64,active_mask_shuffle_control,37,trophic_update,1,-1,-1,2621,655,0,inactive trophic target,8,2,0,8,0,6170,102480,38,38,0,0,2,35,35,2
+boundary_64,active_mask_shuffle_control,38,death,3,-1,-1,0,0,0,invalid death,8,2,0,8,0,6170,102480,39,39,0,0,2,36,36,2
+boundary_64,active_mask_shuffle_control,39,trophic_update,7,-1,-1,-1311,0,0,inactive trophic target,8,2,0,8,0,6170,102480,40,40,0,0,2,37,37,2
+boundary_64,active_mask_shuffle_control,40,trophic_update,2,-1,-1,6554,3277,0,inactive trophic target,8,2,0,8,0,6170,102480,41,41,0,0,2,38,38,2
+boundary_64,active_mask_shuffle_control,41,cleavage,-1,0,3,0,0,0,invalid child event,8,2,0,8,0,6170,102480,42,42,0,0,2,39,39,2
+boundary_64,active_mask_shuffle_control,42,trophic_update,3,-1,-1,-3277,-1638,0,inactive trophic target,8,2,0,8,0,6170,102480,43,43,0,0,2,40,40,2
+boundary_64,active_mask_shuffle_control,43,maturity_handoff,4,-1,-1,0,0,0,invalid maturity,8,2,0,8,0,6170,102480,44,44,0,0,2,41,41,2
+boundary_64,active_mask_shuffle_control,44,trophic_update,4,-1,-1,-1311,0,0,inactive trophic target,8,2,0,8,0,6170,102480,45,45,0,0,2,42,42,2
+boundary_64,active_mask_shuffle_control,45,trophic_update,1,-1,-1,2621,655,0,inactive trophic target,8,2,0,8,0,6170,102480,46,46,0,0,2,43,43,2
+boundary_64,active_mask_shuffle_control,46,death,3,-1,-1,0,0,0,invalid death,8,2,0,8,0,6170,102480,47,47,0,0,2,44,44,2
+boundary_64,active_mask_shuffle_control,47,trophic_update,5,-1,-1,-1311,0,0,inactive trophic target,8,2,0,8,0,6170,102480,48,48,0,0,2,45,45,2
+boundary_64,active_mask_shuffle_control,48,trophic_update,1,-1,-1,6554,3277,0,inactive trophic target,8,2,0,8,0,6170,102480,49,49,0,0,2,46,46,2
+boundary_64,active_mask_shuffle_control,49,cleavage,-1,4,3,0,0,0,invalid child event,8,2,0,8,0,6170,102480,50,50,0,0,2,47,47,2
+boundary_64,active_mask_shuffle_control,50,trophic_update,3,-1,-1,-3277,-1638,0,inactive trophic target,8,2,0,8,0,6170,102480,51,51,0,0,2,48,48,2
+boundary_64,active_mask_shuffle_control,51,maturity_handoff,4,-1,-1,0,0,0,invalid maturity,8,2,0,8,0,6170,102480,52,52,0,0,2,49,49,2
+boundary_64,active_mask_shuffle_control,52,trophic_update,4,-1,-1,-1311,0,0,inactive trophic target,8,2,0,8,0,6170,102480,53,53,0,0,2,50,50,2
+boundary_64,active_mask_shuffle_control,53,trophic_update,1,-1,-1,2621,655,0,inactive trophic target,8,2,0,8,0,6170,102480,54,54,0,0,2,51,51,2
+boundary_64,active_mask_shuffle_control,54,death,3,-1,-1,0,0,0,invalid death,8,2,0,8,0,6170,102480,55,55,0,0,2,52,52,2
+boundary_64,active_mask_shuffle_control,55,trophic_update,2,-1,-1,-1311,0,0,inactive trophic target,8,2,0,8,0,6170,102480,56,56,0,0,2,53,53,2
+boundary_64,active_mask_shuffle_control,56,trophic_update,4,-1,-1,6554,3277,0,inactive trophic target,8,2,0,8,0,6170,102480,57,57,0,0,2,54,54,2
+boundary_64,active_mask_shuffle_control,57,cleavage,-1,5,3,0,0,0,invalid child event,8,2,0,8,0,6170,102480,58,58,0,0,2,55,55,2
+boundary_64,active_mask_shuffle_control,58,trophic_update,3,-1,-1,-3277,-1638,0,inactive trophic target,8,2,0,8,0,6170,102480,59,59,0,0,2,56,56,2
+boundary_64,active_mask_shuffle_control,59,maturity_handoff,4,-1,-1,0,0,0,invalid maturity,8,2,0,8,0,6170,102480,60,60,0,0,2,57,57,2
+boundary_64,active_mask_shuffle_control,60,trophic_update,4,-1,-1,-1311,0,0,inactive trophic target,8,2,0,8,0,6170,102480,61,61,0,0,2,58,58,2
+boundary_64,active_mask_shuffle_control,61,trophic_update,1,-1,-1,2621,655,0,inactive trophic target,8,2,0,8,0,6170,102480,62,62,0,0,2,59,59,2
+boundary_64,active_mask_shuffle_control,62,death,3,-1,-1,0,0,0,invalid death,8,2,0,8,0,6170,102480,63,63,0,0,2,60,60,2
+boundary_64,active_mask_shuffle_control,63,trophic_update,4,-1,-1,-1311,0,0,inactive trophic target,8,2,0,8,0,6170,102480,64,64,0,0,2,61,61,2
+boundary_64,lineage_id_shuffle_control,0,trophic_update,0,-1,-1,6554,3277,1,trophic update,8,2,2,6,3,5756,109363,1,1,0,0,0,0,0,2
+boundary_64,lineage_id_shuffle_control,1,cleavage,-1,1,2,0,0,1,cleavage,8,2,3,5,7,5822,150323,2,2,1,0,0,0,0,2
+boundary_64,lineage_id_shuffle_control,2,trophic_update,2,-1,-1,-3277,-1638,1,trophic update,8,2,3,5,7,5822,133733,3,3,1,0,0,0,0,3
+boundary_64,lineage_id_shuffle_control,3,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,3,5,7,5822,139877,4,4,1,0,0,0,0,3
+boundary_64,lineage_id_shuffle_control,4,adult_birth,-1,2,3,0,0,1,adult_birth,8,2,4,4,15,12162,166501,5,5,1,1,0,0,0,3
+boundary_64,lineage_id_shuffle_control,5,trophic_update,2,-1,-1,2621,655,1,trophic update,8,2,4,4,15,12162,181117,6,6,1,1,0,0,0,4
+boundary_64,lineage_id_shuffle_control,6,death,3,-1,-1,0,0,1,death,8,2,3,5,7,40242,181117,7,7,1,1,1,0,0,4
+boundary_64,lineage_id_shuffle_control,7,trophic_update,2,-1,-1,-1311,0,1,trophic update,8,2,3,5,7,40242,174235,8,8,1,1,1,0,0,4
+boundary_64,lineage_id_shuffle_control,8,trophic_update,1,-1,-1,6554,3277,1,trophic update,8,2,3,5,7,40242,196353,9,9,1,1,1,0,0,4
+boundary_64,lineage_id_shuffle_control,9,cleavage,-1,0,3,0,0,1,cleavage,8,2,4,4,15,5742,242688,10,10,2,1,1,0,0,4
+boundary_64,lineage_id_shuffle_control,10,trophic_update,3,-1,-1,-3277,-1638,1,trophic update,8,2,4,4,15,5742,220568,11,11,2,1,1,0,0,4
+boundary_64,lineage_id_shuffle_control,11,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,4,4,15,5742,226712,12,12,2,1,1,0,0,4
+boundary_64,lineage_id_shuffle_control,12,adult_birth,-1,3,4,0,0,1,adult_birth,8,2,5,3,31,15512,261527,13,13,2,2,1,0,0,4
+boundary_64,lineage_id_shuffle_control,13,trophic_update,4,-1,-1,2621,655,1,trophic update,8,2,5,3,31,15512,282407,14,14,2,2,1,0,0,5
+boundary_64,lineage_id_shuffle_control,14,death,4,-1,-1,0,0,1,death,8,2,4,4,15,57992,282407,15,15,2,2,2,0,0,5
+boundary_64,lineage_id_shuffle_control,15,trophic_update,2,-1,-1,-1311,0,1,trophic update,8,2,4,4,15,57992,275525,16,16,2,2,2,0,0,5
+boundary_64,lineage_id_shuffle_control,16,trophic_update,2,-1,-1,6554,3277,1,trophic update,8,2,4,4,15,57992,314231,17,17,2,2,2,0,0,5
+boundary_64,lineage_id_shuffle_control,17,cleavage,-1,3,4,0,0,1,cleavage,8,2,5,3,31,7142,282604,18,18,3,2,2,0,0,5
+boundary_64,lineage_id_shuffle_control,18,trophic_update,4,-1,-1,-3277,-1638,1,trophic update,8,2,5,3,31,7142,254954,19,19,3,2,2,0,0,5
+boundary_64,lineage_id_shuffle_control,19,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,5,3,31,7142,261098,20,20,3,2,2,0,0,5
+boundary_64,lineage_id_shuffle_control,20,adult_birth,-1,4,5,0,0,1,adult_birth,8,2,6,2,63,26114,300010,21,21,3,3,2,0,0,5
+boundary_64,lineage_id_shuffle_control,21,trophic_update,4,-1,-1,2621,655,1,trophic update,8,2,6,2,63,26114,324370,22,22,3,3,2,0,0,6
+boundary_64,lineage_id_shuffle_control,22,death,5,-1,-1,0,0,1,death,8,2,5,3,31,106082,324370,23,23,3,3,3,0,0,6
+boundary_64,lineage_id_shuffle_control,23,trophic_update,1,-1,-1,-1311,0,1,trophic update,8,2,5,3,31,106082,319782,24,24,3,3,3,0,0,6
+boundary_64,lineage_id_shuffle_control,24,trophic_update,3,-1,-1,6554,3277,1,trophic update,8,2,5,3,31,106082,371390,25,25,3,3,3,0,0,6
+boundary_64,lineage_id_shuffle_control,25,cleavage,-1,0,5,0,0,1,cleavage,8,2,6,2,63,7022,440148,26,26,4,3,3,0,0,6
+boundary_64,lineage_id_shuffle_control,26,trophic_update,5,-1,-1,-3277,-1638,1,trophic update,8,2,6,2,63,7022,406968,27,27,4,3,3,0,0,6
+boundary_64,lineage_id_shuffle_control,27,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,6,2,63,7022,413112,28,28,4,3,3,0,0,6
+boundary_64,lineage_id_shuffle_control,28,adult_birth,-1,5,6,0,0,1,adult_birth,8,2,7,1,127,25992,459363,29,29,4,4,3,0,0,6
+boundary_64,lineage_id_shuffle_control,29,trophic_update,2,-1,-1,2621,655,1,trophic update,8,2,7,1,127,25992,473733,30,30,4,4,3,0,0,7
+boundary_64,lineage_id_shuffle_control,30,death,6,-1,-1,0,0,1,death,8,2,6,2,63,106632,473733,31,31,4,4,4,0,0,7
+boundary_64,lineage_id_shuffle_control,31,trophic_update,2,-1,-1,-1311,0,1,trophic update,8,2,6,2,63,106632,466851,32,32,4,4,4,0,0,7
+boundary_64,lineage_id_shuffle_control,32,trophic_update,4,-1,-1,6554,3277,1,trophic update,8,2,6,2,63,106632,527881,33,33,4,4,4,0,0,7
+boundary_64,lineage_id_shuffle_control,33,cleavage,-1,3,6,0,0,1,cleavage,8,2,7,1,127,8982,530688,34,34,5,4,4,0,0,7
+boundary_64,lineage_id_shuffle_control,34,trophic_update,6,-1,-1,-3277,-1638,1,trophic update,8,2,7,1,127,8982,491978,35,35,5,4,4,0,0,7
+boundary_64,lineage_id_shuffle_control,35,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,7,1,127,8982,498122,36,36,5,4,4,0,0,7
+boundary_64,lineage_id_shuffle_control,36,adult_birth,-1,6,7,0,0,1,adult_birth,8,2,8,0,255,42470,549322,37,37,5,5,4,0,0,7
+boundary_64,lineage_id_shuffle_control,37,trophic_update,6,-1,-1,2621,655,1,trophic update,8,2,8,0,255,42470,583426,38,38,5,5,4,0,0,8
+boundary_64,lineage_id_shuffle_control,38,death,7,-1,-1,0,0,1,death,8,2,7,1,127,181862,583426,39,39,5,5,5,0,0,8
+boundary_64,lineage_id_shuffle_control,39,trophic_update,1,-1,-1,-1311,0,1,trophic update,8,2,7,1,127,181862,578838,40,40,5,5,5,0,0,8
+boundary_64,lineage_id_shuffle_control,40,trophic_update,5,-1,-1,6554,3277,1,trophic update,8,2,7,1,127,181862,656250,41,41,5,5,5,0,0,8
+boundary_64,lineage_id_shuffle_control,41,cleavage,-1,4,7,0,0,1,cleavage,8,2,8,0,255,13222,646010,42,42,6,5,5,0,0,8
+boundary_64,lineage_id_shuffle_control,42,trophic_update,7,-1,-1,-3277,-1638,1,trophic update,8,2,8,0,255,13222,601770,43,43,6,5,5,0,0,8
+boundary_64,lineage_id_shuffle_control,43,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,8,0,255,13222,607914,44,44,6,5,5,0,0,8
+boundary_64,lineage_id_shuffle_control,44,trophic_update,0,-1,-1,-1311,0,1,trophic update,8,2,8,0,255,13222,605620,45,45,6,5,5,0,0,8
+boundary_64,lineage_id_shuffle_control,45,trophic_update,6,-1,-1,2621,655,1,trophic update,8,2,8,0,255,13222,639724,46,46,6,5,5,0,0,8
+boundary_64,lineage_id_shuffle_control,46,death,7,-1,-1,0,0,1,death,8,2,7,1,127,35622,639724,47,47,6,5,6,0,0,8
+boundary_64,lineage_id_shuffle_control,47,trophic_update,3,-1,-1,-1311,0,1,trophic update,8,2,7,1,127,35622,630548,48,48,6,5,6,0,0,8
+boundary_64,lineage_id_shuffle_control,48,trophic_update,6,-1,-1,6554,3277,1,trophic update,8,2,7,1,127,35622,711118,49,49,6,5,6,0,0,8
+boundary_64,lineage_id_shuffle_control,49,cleavage,-1,0,7,0,0,1,cleavage,8,2,8,0,255,8822,847605,50,50,7,5,6,0,0,8
+boundary_64,lineage_id_shuffle_control,50,trophic_update,7,-1,-1,-3277,-1638,1,trophic update,8,2,8,0,255,8822,803365,51,51,7,5,6,0,0,8
+boundary_64,lineage_id_shuffle_control,51,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,8,0,255,8822,810164,52,52,7,5,6,0,0,8
+boundary_64,lineage_id_shuffle_control,52,trophic_update,0,-1,-1,-1311,0,1,trophic update,8,2,8,0,255,8822,807870,53,53,7,5,6,0,0,8
+boundary_64,lineage_id_shuffle_control,53,trophic_update,6,-1,-1,2621,655,1,trophic update,8,2,8,0,255,8822,837102,54,54,7,5,6,0,0,8
+boundary_64,lineage_id_shuffle_control,54,death,7,-1,-1,0,0,1,death,8,2,7,1,127,13622,837102,55,55,7,5,7,0,0,8
+boundary_64,lineage_id_shuffle_control,55,trophic_update,5,-1,-1,-1311,0,1,trophic update,8,2,7,1,127,13622,823338,56,56,7,5,7,0,0,8
+boundary_64,lineage_id_shuffle_control,56,trophic_update,0,-1,-1,6554,3277,1,trophic update,8,2,7,1,127,13622,835052,57,57,7,5,7,0,0,8
+boundary_64,lineage_id_shuffle_control,57,cleavage,-1,3,7,0,0,1,cleavage,8,2,8,0,255,11222,774788,58,58,8,5,7,0,0,8
+boundary_64,lineage_id_shuffle_control,58,trophic_update,7,-1,-1,-3277,-1638,1,trophic update,8,2,8,0,255,11222,730548,59,59,8,5,7,0,0,8
+boundary_64,lineage_id_shuffle_control,59,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,8,0,255,11222,736692,60,60,8,5,7,0,0,8
+boundary_64,lineage_id_shuffle_control,60,trophic_update,0,-1,-1,-1311,0,1,trophic update,8,2,8,0,255,11222,734398,61,61,8,5,7,0,0,8
+boundary_64,lineage_id_shuffle_control,61,trophic_update,6,-1,-1,2621,655,1,trophic update,8,2,8,0,255,11222,763630,62,62,8,5,7,0,0,8
+boundary_64,lineage_id_shuffle_control,62,death,7,-1,-1,0,0,1,death,8,2,7,1,127,25622,763630,63,63,8,5,8,0,0,8
+boundary_64,lineage_id_shuffle_control,63,trophic_update,0,-1,-1,-1311,0,1,trophic update,8,2,7,1,127,25622,761336,64,64,8,5,8,0,0,8
+boundary_64,no_trophic_pressure_control,0,trophic_update,0,-1,-1,6554,3277,1,trophic update,8,2,2,6,3,5722,98304,1,1,0,0,0,0,1,2
+boundary_64,no_trophic_pressure_control,1,cleavage,-1,1,2,0,0,1,cleavage,8,2,3,5,7,5668,139264,2,2,1,0,0,0,1,2
+boundary_64,no_trophic_pressure_control,2,trophic_update,2,-1,-1,-3277,-1638,1,trophic update,8,2,3,5,7,5668,139264,3,3,1,0,0,0,2,3
+boundary_64,no_trophic_pressure_control,3,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,3,5,7,5668,139264,4,4,1,0,0,0,3,3
+boundary_64,no_trophic_pressure_control,4,adult_birth,-1,2,3,0,0,1,adult_birth,8,2,4,4,15,12008,165888,5,5,1,1,0,0,3,3
+boundary_64,no_trophic_pressure_control,5,trophic_update,2,-1,-1,2621,655,1,trophic update,8,2,4,4,15,12008,165888,6,6,1,1,0,0,4,4
+boundary_64,no_trophic_pressure_control,6,death,3,-1,-1,0,0,1,death,8,2,3,5,7,40088,165888,7,7,1,1,1,0,4,4
+boundary_64,no_trophic_pressure_control,7,trophic_update,2,-1,-1,-1311,0,1,trophic update,8,2,3,5,7,40088,165888,8,8,1,1,1,0,5,4
+boundary_64,no_trophic_pressure_control,8,trophic_update,1,-1,-1,6554,3277,1,trophic update,8,2,3,5,7,40088,165888,9,9,1,1,1,0,6,4
+boundary_64,no_trophic_pressure_control,9,cleavage,-1,0,3,0,0,1,cleavage,8,2,4,4,15,5420,194560,10,10,2,1,1,0,6,4
+boundary_64,no_trophic_pressure_control,10,trophic_update,3,-1,-1,-3277,-1638,1,trophic update,8,2,4,4,15,5420,194560,11,11,2,1,1,0,7,4
+boundary_64,no_trophic_pressure_control,11,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,4,4,15,5420,194560,12,12,2,1,1,0,8,4
+boundary_64,no_trophic_pressure_control,12,adult_birth,-1,3,4,0,0,1,adult_birth,8,2,5,3,31,15190,227328,13,13,2,2,1,0,8,4
+boundary_64,no_trophic_pressure_control,13,trophic_update,4,-1,-1,2621,655,1,trophic update,8,2,5,3,31,15190,227328,14,14,2,2,1,0,9,5
+boundary_64,no_trophic_pressure_control,14,death,4,-1,-1,0,0,1,death,8,2,4,4,15,57670,227328,15,15,2,2,2,0,9,5
+boundary_64,no_trophic_pressure_control,15,trophic_update,2,-1,-1,-1311,0,1,trophic update,8,2,4,4,15,57670,227328,16,16,2,2,2,0,10,5
+boundary_64,no_trophic_pressure_control,16,trophic_update,2,-1,-1,6554,3277,1,trophic update,8,2,4,4,15,57670,227328,17,17,2,2,2,0,11,5
+boundary_64,no_trophic_pressure_control,17,cleavage,-1,3,4,0,0,1,cleavage,8,2,5,3,31,6190,219136,18,18,3,2,2,0,11,5
+boundary_64,no_trophic_pressure_control,18,trophic_update,4,-1,-1,-3277,-1638,1,trophic update,8,2,5,3,31,6190,219136,19,19,3,2,2,0,12,5
+boundary_64,no_trophic_pressure_control,19,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,5,3,31,6190,219136,20,20,3,2,2,0,13,5
+boundary_64,no_trophic_pressure_control,20,adult_birth,-1,4,5,0,0,1,adult_birth,8,2,6,2,63,25162,258048,21,21,3,3,2,0,13,5
+boundary_64,no_trophic_pressure_control,21,trophic_update,4,-1,-1,2621,655,1,trophic update,8,2,6,2,63,25162,258048,22,22,3,3,2,0,14,6
+boundary_64,no_trophic_pressure_control,22,death,5,-1,-1,0,0,1,death,8,2,5,3,31,105130,258048,23,23,3,3,3,0,14,6
+boundary_64,no_trophic_pressure_control,23,trophic_update,1,-1,-1,-1311,0,1,trophic update,8,2,5,3,31,105130,258048,24,24,3,3,3,0,15,6
+boundary_64,no_trophic_pressure_control,24,trophic_update,3,-1,-1,6554,3277,1,trophic update,8,2,5,3,31,105130,258048,25,25,3,3,3,0,16,6
+boundary_64,no_trophic_pressure_control,25,cleavage,-1,0,5,0,0,1,cleavage,8,2,6,2,63,5818,291328,26,26,4,3,3,0,16,6
+boundary_64,no_trophic_pressure_control,26,trophic_update,5,-1,-1,-3277,-1638,1,trophic update,8,2,6,2,63,5818,291328,27,27,4,3,3,0,17,6
+boundary_64,no_trophic_pressure_control,27,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,6,2,63,5818,291328,28,28,4,3,3,0,18,6
+boundary_64,no_trophic_pressure_control,28,adult_birth,-1,5,6,0,0,1,adult_birth,8,2,7,1,127,24788,336384,29,29,4,4,3,0,18,6
+boundary_64,no_trophic_pressure_control,29,trophic_update,2,-1,-1,2621,655,1,trophic update,8,2,7,1,127,24788,336384,30,30,4,4,3,0,19,7
+boundary_64,no_trophic_pressure_control,30,death,6,-1,-1,0,0,1,death,8,2,6,2,63,105428,336384,31,31,4,4,4,0,19,7
+boundary_64,no_trophic_pressure_control,31,trophic_update,2,-1,-1,-1311,0,1,trophic update,8,2,6,2,63,105428,336384,32,32,4,4,4,0,20,7
+boundary_64,no_trophic_pressure_control,32,trophic_update,4,-1,-1,6554,3277,1,trophic update,8,2,6,2,63,105428,336384,33,33,4,4,4,0,21,7
+boundary_64,no_trophic_pressure_control,33,cleavage,-1,3,6,0,0,1,cleavage,8,2,7,1,127,6896,328192,34,34,5,4,4,0,21,7
+boundary_64,no_trophic_pressure_control,34,trophic_update,6,-1,-1,-3277,-1638,1,trophic update,8,2,7,1,127,6896,328192,35,35,5,4,4,0,22,7
+boundary_64,no_trophic_pressure_control,35,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,7,1,127,6896,328192,36,36,5,4,4,0,23,7
+boundary_64,no_trophic_pressure_control,36,adult_birth,-1,6,7,0,0,1,adult_birth,8,2,8,0,255,40384,379392,37,37,5,5,4,0,23,7
+boundary_64,no_trophic_pressure_control,37,trophic_update,6,-1,-1,2621,655,1,trophic update,8,2,8,0,255,40384,379392,38,38,5,5,4,0,24,8
+boundary_64,no_trophic_pressure_control,38,death,7,-1,-1,0,0,1,death,8,2,7,1,127,179776,379392,39,39,5,5,5,0,24,8
+boundary_64,no_trophic_pressure_control,39,trophic_update,1,-1,-1,-1311,0,1,trophic update,8,2,7,1,127,179776,379392,40,40,5,5,5,0,25,8
+boundary_64,no_trophic_pressure_control,40,trophic_update,5,-1,-1,6554,3277,1,trophic update,8,2,7,1,127,179776,379392,41,41,5,5,5,0,26,8
+boundary_64,no_trophic_pressure_control,41,cleavage,-1,4,7,0,0,1,cleavage,8,2,8,0,255,9568,369152,42,42,6,5,5,0,26,8
+boundary_64,no_trophic_pressure_control,42,trophic_update,7,-1,-1,-3277,-1638,1,trophic update,8,2,8,0,255,9568,369152,43,43,6,5,5,0,27,8
+boundary_64,no_trophic_pressure_control,43,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,8,0,255,9568,369152,44,44,6,5,5,0,28,8
+boundary_64,no_trophic_pressure_control,44,trophic_update,0,-1,-1,-1311,0,1,trophic update,8,2,8,0,255,9568,369152,45,45,6,5,5,0,29,8
+boundary_64,no_trophic_pressure_control,45,trophic_update,6,-1,-1,2621,655,1,trophic update,8,2,8,0,255,9568,369152,46,46,6,5,5,0,30,8
+boundary_64,no_trophic_pressure_control,46,death,7,-1,-1,0,0,1,death,8,2,7,1,127,25696,369152,47,47,6,5,6,0,30,8
+boundary_64,no_trophic_pressure_control,47,trophic_update,3,-1,-1,-1311,0,1,trophic update,8,2,7,1,127,25696,369152,48,48,6,5,6,0,31,8
+boundary_64,no_trophic_pressure_control,48,trophic_update,6,-1,-1,6554,3277,1,trophic update,8,2,7,1,127,25696,369152,49,49,6,5,6,0,32,8
+boundary_64,no_trophic_pressure_control,49,cleavage,-1,0,7,0,0,1,cleavage,8,2,8,0,255,6400,400832,50,50,7,5,6,0,32,8
+boundary_64,no_trophic_pressure_control,50,trophic_update,7,-1,-1,-3277,-1638,1,trophic update,8,2,8,0,255,6400,400832,51,51,7,5,6,0,33,8
+boundary_64,no_trophic_pressure_control,51,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,8,0,255,6400,400832,52,52,7,5,6,0,34,8
+boundary_64,no_trophic_pressure_control,52,trophic_update,0,-1,-1,-1311,0,1,trophic update,8,2,8,0,255,6400,400832,53,53,7,5,6,0,35,8
+boundary_64,no_trophic_pressure_control,53,trophic_update,6,-1,-1,2621,655,1,trophic update,8,2,8,0,255,6400,400832,54,54,7,5,6,0,36,8
+boundary_64,no_trophic_pressure_control,54,death,7,-1,-1,0,0,1,death,8,2,7,1,127,9856,400832,55,55,7,5,7,0,36,8
+boundary_64,no_trophic_pressure_control,55,trophic_update,5,-1,-1,-1311,0,1,trophic update,8,2,7,1,127,9856,400832,56,56,7,5,7,0,37,8
+boundary_64,no_trophic_pressure_control,56,trophic_update,0,-1,-1,6554,3277,1,trophic update,8,2,7,1,127,9856,400832,57,57,7,5,7,0,38,8
+boundary_64,no_trophic_pressure_control,57,cleavage,-1,3,7,0,0,1,cleavage,8,2,8,0,255,8128,357824,58,58,8,5,7,0,38,8
+boundary_64,no_trophic_pressure_control,58,trophic_update,7,-1,-1,-3277,-1638,1,trophic update,8,2,8,0,255,8128,357824,59,59,8,5,7,0,39,8
+boundary_64,no_trophic_pressure_control,59,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,8,0,255,8128,357824,60,60,8,5,7,0,40,8
+boundary_64,no_trophic_pressure_control,60,trophic_update,0,-1,-1,-1311,0,1,trophic update,8,2,8,0,255,8128,357824,61,61,8,5,7,0,41,8
+boundary_64,no_trophic_pressure_control,61,trophic_update,6,-1,-1,2621,655,1,trophic update,8,2,8,0,255,8128,357824,62,62,8,5,7,0,42,8
+boundary_64,no_trophic_pressure_control,62,death,7,-1,-1,0,0,1,death,8,2,7,1,127,18496,357824,63,63,8,5,8,0,42,8
+boundary_64,no_trophic_pressure_control,63,trophic_update,0,-1,-1,-1311,0,1,trophic update,8,2,7,1,127,18496,357824,64,64,8,5,8,0,43,8
+boundary_64,no_dopamine_or_plasticity_control,0,trophic_update,0,-1,-1,6554,3277,1,trophic update,8,2,2,6,3,5722,108135,1,1,0,0,0,0,0,2
+boundary_64,no_dopamine_or_plasticity_control,1,cleavage,-1,1,2,0,0,1,cleavage,8,2,3,5,7,5668,149095,2,2,1,0,0,0,0,2
+boundary_64,no_dopamine_or_plasticity_control,2,trophic_update,2,-1,-1,-3277,-1638,1,trophic update,8,2,3,5,7,5668,134350,3,3,1,0,0,0,0,3
+boundary_64,no_dopamine_or_plasticity_control,3,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,3,5,7,5668,140494,4,4,1,0,0,0,0,3
+boundary_64,no_dopamine_or_plasticity_control,4,adult_birth,-1,2,3,0,0,1,adult_birth,8,2,4,4,15,12008,167118,5,5,1,1,0,0,0,3
+boundary_64,no_dopamine_or_plasticity_control,5,trophic_update,2,-1,-1,2621,655,1,trophic update,8,2,4,4,15,12008,180876,6,6,1,1,0,0,0,4
+boundary_64,no_dopamine_or_plasticity_control,6,death,3,-1,-1,0,0,1,death,8,2,3,5,7,40088,180876,7,7,1,1,1,0,0,4
+boundary_64,no_dopamine_or_plasticity_control,7,trophic_update,2,-1,-1,-1311,0,1,trophic update,8,2,3,5,7,40088,173994,8,8,1,1,1,0,0,4
+boundary_64,no_dopamine_or_plasticity_control,8,trophic_update,1,-1,-1,6554,3277,1,trophic update,8,2,3,5,7,40088,193656,9,9,1,1,1,0,0,4
+boundary_64,no_dopamine_or_plasticity_control,9,cleavage,-1,0,3,0,0,1,cleavage,8,2,4,4,15,5420,238457,10,10,2,1,1,0,0,4
+boundary_64,no_dopamine_or_plasticity_control,10,trophic_update,3,-1,-1,-3277,-1638,1,trophic update,8,2,4,4,15,5420,218797,11,11,2,1,1,0,0,4
+boundary_64,no_dopamine_or_plasticity_control,11,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,4,4,15,5420,224941,12,12,2,1,1,0,0,4
+boundary_64,no_dopamine_or_plasticity_control,12,adult_birth,-1,3,4,0,0,1,adult_birth,8,2,5,3,31,15190,259757,13,13,2,2,1,0,0,4
+boundary_64,no_dopamine_or_plasticity_control,13,trophic_update,4,-1,-1,2621,655,1,trophic update,8,2,5,3,31,15190,279412,14,14,2,2,1,0,0,5
+boundary_64,no_dopamine_or_plasticity_control,14,death,4,-1,-1,0,0,1,death,8,2,4,4,15,57670,279412,15,15,2,2,2,0,0,5
+boundary_64,no_dopamine_or_plasticity_control,15,trophic_update,2,-1,-1,-1311,0,1,trophic update,8,2,4,4,15,57670,272530,16,16,2,2,2,0,0,5
+boundary_64,no_dopamine_or_plasticity_control,16,trophic_update,2,-1,-1,6554,3277,1,trophic update,8,2,4,4,15,57670,306937,17,17,2,2,2,0,0,5
+boundary_64,no_dopamine_or_plasticity_control,17,cleavage,-1,3,4,0,0,1,cleavage,8,2,5,3,31,6190,276530,18,18,3,2,2,0,0,5
+boundary_64,no_dopamine_or_plasticity_control,18,trophic_update,4,-1,-1,-3277,-1638,1,trophic update,8,2,5,3,31,6190,251955,19,19,3,2,2,0,0,5
+boundary_64,no_dopamine_or_plasticity_control,19,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,5,3,31,6190,258099,20,20,3,2,2,0,0,5
+boundary_64,no_dopamine_or_plasticity_control,20,adult_birth,-1,4,5,0,0,1,adult_birth,8,2,6,2,63,25162,297011,21,21,3,3,2,0,0,5
+boundary_64,no_dopamine_or_plasticity_control,21,trophic_update,4,-1,-1,2621,655,1,trophic update,8,2,6,2,63,25162,319941,22,22,3,3,2,0,0,6
+boundary_64,no_dopamine_or_plasticity_control,22,death,5,-1,-1,0,0,1,death,8,2,5,3,31,105130,319941,23,23,3,3,3,0,0,6
+boundary_64,no_dopamine_or_plasticity_control,23,trophic_update,1,-1,-1,-1311,0,1,trophic update,8,2,5,3,31,105130,315353,24,24,3,3,3,0,0,6
+boundary_64,no_dopamine_or_plasticity_control,24,trophic_update,3,-1,-1,6554,3277,1,trophic update,8,2,5,3,31,105130,361229,25,25,3,3,3,0,0,6
+boundary_64,no_dopamine_or_plasticity_control,25,cleavage,-1,0,5,0,0,1,cleavage,8,2,6,2,63,5818,427923,26,26,4,3,3,0,0,6
+boundary_64,no_dopamine_or_plasticity_control,26,trophic_update,5,-1,-1,-3277,-1638,1,trophic update,8,2,6,2,63,5818,398433,27,27,4,3,3,0,0,6
+boundary_64,no_dopamine_or_plasticity_control,27,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,6,2,63,5818,404577,28,28,4,3,3,0,0,6
+boundary_64,no_dopamine_or_plasticity_control,28,adult_birth,-1,5,6,0,0,1,adult_birth,8,2,7,1,127,24788,450974,29,29,4,4,3,0,0,6
+boundary_64,no_dopamine_or_plasticity_control,29,trophic_update,2,-1,-1,2621,655,1,trophic update,8,2,7,1,127,24788,464732,30,30,4,4,3,0,0,7
+boundary_64,no_dopamine_or_plasticity_control,30,death,6,-1,-1,0,0,1,death,8,2,6,2,63,105428,464732,31,31,4,4,4,0,0,7
+boundary_64,no_dopamine_or_plasticity_control,31,trophic_update,2,-1,-1,-1311,0,1,trophic update,8,2,6,2,63,105428,457850,32,32,4,4,4,0,0,7
+boundary_64,no_dopamine_or_plasticity_control,32,trophic_update,4,-1,-1,6554,3277,1,trophic update,8,2,6,2,63,105428,511920,33,33,4,4,4,0,0,7
+boundary_64,no_dopamine_or_plasticity_control,33,cleavage,-1,3,6,0,0,1,cleavage,8,2,7,1,127,6896,512090,34,34,5,4,4,0,0,7
+boundary_64,no_dopamine_or_plasticity_control,34,trophic_update,6,-1,-1,-3277,-1638,1,trophic update,8,2,7,1,127,6896,477685,35,35,5,4,4,0,0,7
+boundary_64,no_dopamine_or_plasticity_control,35,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,7,1,127,6896,483829,36,36,5,4,4,0,0,7
+boundary_64,no_dopamine_or_plasticity_control,36,adult_birth,-1,6,7,0,0,1,adult_birth,8,2,8,0,255,40384,535029,37,37,5,5,4,0,0,7
+boundary_64,no_dopamine_or_plasticity_control,37,trophic_update,6,-1,-1,2621,655,1,trophic update,8,2,8,0,255,40384,567131,38,38,5,5,4,0,0,8
+boundary_64,no_dopamine_or_plasticity_control,38,death,7,-1,-1,0,0,1,death,8,2,7,1,127,179776,567131,39,39,5,5,5,0,0,8
+boundary_64,no_dopamine_or_plasticity_control,39,trophic_update,1,-1,-1,-1311,0,1,trophic update,8,2,7,1,127,179776,562543,40,40,5,5,5,0,0,8
+boundary_64,no_dopamine_or_plasticity_control,40,trophic_update,5,-1,-1,6554,3277,1,trophic update,8,2,7,1,127,179776,631357,41,41,5,5,5,0,0,8
+boundary_64,no_dopamine_or_plasticity_control,41,cleavage,-1,4,7,0,0,1,cleavage,8,2,8,0,255,9568,621117,42,42,6,5,5,0,0,8
+boundary_64,no_dopamine_or_plasticity_control,42,trophic_update,7,-1,-1,-3277,-1638,1,trophic update,8,2,8,0,255,9568,581797,43,43,6,5,5,0,0,8
+boundary_64,no_dopamine_or_plasticity_control,43,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,8,0,255,9568,587941,44,44,6,5,5,0,0,8
+boundary_64,no_dopamine_or_plasticity_control,44,trophic_update,0,-1,-1,-1311,0,1,trophic update,8,2,8,0,255,9568,585647,45,45,6,5,5,0,0,8
+boundary_64,no_dopamine_or_plasticity_control,45,trophic_update,6,-1,-1,2621,655,1,trophic update,8,2,8,0,255,9568,617749,46,46,6,5,5,0,0,8
+boundary_64,no_dopamine_or_plasticity_control,46,death,7,-1,-1,0,0,1,death,8,2,7,1,127,25696,617749,47,47,6,5,6,0,0,8
+boundary_64,no_dopamine_or_plasticity_control,47,trophic_update,3,-1,-1,-1311,0,1,trophic update,8,2,7,1,127,25696,608573,48,48,6,5,6,0,0,8
+boundary_64,no_dopamine_or_plasticity_control,48,trophic_update,6,-1,-1,6554,3277,1,trophic update,8,2,7,1,127,25696,679686,49,49,6,5,6,0,0,8
+boundary_64,no_dopamine_or_plasticity_control,49,cleavage,-1,0,7,0,0,1,cleavage,8,2,8,0,255,6400,808827,50,50,7,5,6,0,0,8
+boundary_64,no_dopamine_or_plasticity_control,50,trophic_update,7,-1,-1,-3277,-1638,1,trophic update,8,2,8,0,255,6400,769507,51,51,7,5,6,0,0,8
+boundary_64,no_dopamine_or_plasticity_control,51,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,8,0,255,6400,776306,52,52,7,5,6,0,0,8
+boundary_64,no_dopamine_or_plasticity_control,52,trophic_update,0,-1,-1,-1311,0,1,trophic update,8,2,8,0,255,6400,774012,53,53,7,5,6,0,0,8
+boundary_64,no_dopamine_or_plasticity_control,53,trophic_update,6,-1,-1,2621,655,1,trophic update,8,2,8,0,255,6400,801529,54,54,7,5,6,0,0,8
+boundary_64,no_dopamine_or_plasticity_control,54,death,7,-1,-1,0,0,1,death,8,2,7,1,127,9856,801529,55,55,7,5,7,0,0,8
+boundary_64,no_dopamine_or_plasticity_control,55,trophic_update,5,-1,-1,-1311,0,1,trophic update,8,2,7,1,127,9856,787765,56,56,7,5,7,0,0,8
+boundary_64,no_dopamine_or_plasticity_control,56,trophic_update,0,-1,-1,6554,3277,1,trophic update,8,2,7,1,127,9856,798251,57,57,7,5,7,0,0,8
+boundary_64,no_dopamine_or_plasticity_control,57,cleavage,-1,3,7,0,0,1,cleavage,8,2,8,0,255,8128,734547,58,58,8,5,7,0,0,8
+boundary_64,no_dopamine_or_plasticity_control,58,trophic_update,7,-1,-1,-3277,-1638,1,trophic update,8,2,8,0,255,8128,695227,59,59,8,5,7,0,0,8
+boundary_64,no_dopamine_or_plasticity_control,59,maturity_handoff,0,-1,-1,0,0,1,maturity handoff,8,2,8,0,255,8128,701371,60,60,8,5,7,0,0,8
+boundary_64,no_dopamine_or_plasticity_control,60,trophic_update,0,-1,-1,-1311,0,1,trophic update,8,2,8,0,255,8128,699077,61,61,8,5,7,0,0,8
+boundary_64,no_dopamine_or_plasticity_control,61,trophic_update,6,-1,-1,2621,655,1,trophic update,8,2,8,0,255,8128,726594,62,62,8,5,7,0,0,8
+boundary_64,no_dopamine_or_plasticity_control,62,death,7,-1,-1,0,0,1,death,8,2,7,1,127,18496,726594,63,63,8,5,8,0,0,8
+boundary_64,no_dopamine_or_plasticity_control,63,trophic_update,0,-1,-1,-1311,0,1,trophic update,8,2,7,1,127,18496,724300,64,64,8,5,8,0,0,8

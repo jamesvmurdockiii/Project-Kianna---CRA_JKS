@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-05T15:38:23-04:00.
+Last updated: 2026-05-05T15:53:08-04:00.
 
 Current repo root:
 
@@ -60,7 +60,8 @@ FROZEN: CRA_NATIVE_MECHANISM_BRIDGE_v0.3
   Supersedes: CRA_NATIVE_TASK_BASELINE_v0.2
   Current: Tier 4.30-readiness PASS, 16/16.
   Current: Tier 4.30 lifecycle-native contract PASS, 14/14.
-  Next: Tier 4.30a local static-pool lifecycle reference.
+  Current: Tier 4.30a local static-pool lifecycle reference PASS, 20/20.
+  Next: Tier 4.30b source audit / single-core lifecycle mask smoke preparation.
         Lifecycle hardware layers initially on CRA_NATIVE_MECHANISM_BRIDGE_v0.3,
         with v2.2 as a software reference boundary only. Temporal-state hardware
         migration is not automatic from v2.2; it requires a separately defined
@@ -322,11 +323,21 @@ Tier 4.30 — COMPLETE. Lifecycle-native contract.
     state transitions inside fixed capacity. Do not design dynamic PyNN
     population creation mid-run.
 
-Tier 4.30a — CURRENT NEXT. Local static-pool lifecycle reference.
+Tier 4.30a — COMPLETE. Local static-pool lifecycle reference.
+  Status: PASS, 20/20 criteria.
+  Runner: experiments/tier4_30a_static_pool_lifecycle_reference.py
+  Output: controlled_test_output/tier4_30a_20260505_static_pool_lifecycle_reference/
   Purpose: build the deterministic reference for the Tier 4.30 command/readback
     schema before any runtime C implementation or EBRAINS package.
   Rule: exact active-mask, lineage, event-count, checksum, and sham-control
     outputs first; no hardware before local reference and source audit pass.
+
+Tier 4.30b — CURRENT NEXT. Source audit / single-core lifecycle mask smoke prep.
+  Purpose: map the 4.30a static-pool reference into the smallest runtime-facing
+    lifecycle state surface needed for a single-core active-mask/lineage smoke.
+  Rule: source audit and local host/schema tests first; no task-effect claim,
+    no multi-core lifecycle, no v2.2 temporal migration, and no EBRAINS upload
+    before local checks pass.
 
 
 Current status summary:
@@ -467,10 +478,9 @@ Local build capability (established 2026-05-02):
 
 Immediate next steps:
 
-1. Build Tier 4.30a local static-pool lifecycle reference from the Tier 4.30
-   contract: 8-slot pool, 2 founders, active masks, lineage IDs, trophic state,
-   birth/cleavage/death counters, fixed-pool and sham controls, exact expected
-   readback.
+1. Build Tier 4.30b source audit / single-core lifecycle mask smoke preparation
+   from the Tier 4.30a reference: runtime-facing active masks, lineage IDs,
+   event counters, checksums, schema versioning, and local host/schema tests.
 2. Do not migrate v2.2 temporal fading-memory state to hardware merely because
    v2.2 froze. Native temporal-state migration requires a separate readiness
    tier with fixed-point state equations and local parity.

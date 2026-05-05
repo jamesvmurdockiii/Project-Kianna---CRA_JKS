@@ -121,6 +121,7 @@ They remain part of the peer-review audit trail:
 5.19c fading-memory narrowing compact-regression gate = passed and froze bounded v2.2
 4.30-readiness lifecycle-native preflight/layering audit = passed; static-pool lifecycle-native path layers on native mechanism bridge v0.3 with v2.2 as software reference only
 4.30 lifecycle-native static-pool contract = passed; command/readback/event/gate/failure schema defined before local reference or hardware work
+4.30a local static-pool lifecycle reference = passed; canonical and boundary deterministic traces plus lifecycle shams precomputed
 4.30+ native lifecycle/ecology migration = roadmap; not yet canonical evidence
 ```
 
@@ -8143,4 +8144,64 @@ Next step:
 Tier 4.30a local static-pool lifecycle reference: implement deterministic
 expected active-mask, lineage, event-count, checksum, and control outputs before
 any C runtime implementation or EBRAINS package.
+```
+
+### Tier 4.30a - Local Static-Pool Lifecycle Reference
+
+Status: COMPLETE - LOCAL REFERENCE PASS.
+
+Question:
+
+```text
+Can the Tier 4.30 static-pool lifecycle contract be expressed as a deterministic
+local reference with exact active-mask, lineage, event-count, checksum, and sham
+outputs before runtime C or hardware work?
+```
+
+Result:
+
+```text
+Output: controlled_test_output/tier4_30a_20260505_static_pool_lifecycle_reference/
+Runner: experiments/tier4_30a_static_pool_lifecycle_reference.py
+Criteria: 20/20
+Mode: local-reference
+```
+
+Key local-reference results:
+
+```text
+canonical_32 enabled: 32 events, 0 invalid, active_mask=63, active=6,
+                      cleavage=4, birth=4, death=4,
+                      lineage_checksum=105428, trophic_checksum=466851
+boundary_64 enabled: 64 events, 0 invalid, active_mask=127, active=7,
+                     cleavage=8, birth=5, death=8,
+                     lineage_checksum=18496, trophic_checksum=761336
+```
+
+Controls precomputed:
+
+```text
+fixed_static_pool_control
+random_event_replay_control
+active_mask_shuffle_control
+lineage_id_shuffle_control
+no_trophic_pressure_control
+no_dopamine_or_plasticity_control
+```
+
+Claim boundary:
+
+```text
+Tier 4.30a is not runtime implementation, not hardware evidence, not a task
+benefit claim, not a lifecycle baseline freeze, and not v2.2 temporal-state
+migration. It only proves the local static-pool reference is bounded,
+repeatable, and sham-instrumented.
+```
+
+Next step:
+
+```text
+Tier 4.30b source audit / single-core lifecycle mask-smoke preparation. Map the
+4.30a reference into the smallest runtime-facing lifecycle state surface, then
+run local host/schema tests before any EBRAINS package.
 ```

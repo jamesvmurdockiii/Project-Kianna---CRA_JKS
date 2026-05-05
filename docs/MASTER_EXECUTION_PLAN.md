@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-05T15:38-04:00.
+Last updated: 2026-05-05T15:53-04:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -82,7 +82,7 @@ not full native v2.1, and not final autonomy.
 Current active step:
 
 ```text
-Tier 4.30a local static-pool lifecycle reference
+Tier 4.30b source audit / single-core lifecycle mask smoke preparation
 ```
 
 ## 2. Immediate Baseline Decision
@@ -499,12 +499,21 @@ ability.
     init/event/trophic update/readback/sham mode, 23 readback fields, 5 event
     semantics, 5 gate definitions, and 7 failure classes.
 
-37. 🔄 **CURRENT ACTIVE STEP** - Tier 4.30a local static-pool lifecycle reference: active/inactive masks,
+37. ✅ **COMPLETE** - Tier 4.30a local static-pool lifecycle reference: active/inactive masks,
     lineage IDs, trophic state, birth/cleavage/death counters, fixed max-pool
     control, random event replay control.
+    Result: pass, 20/20 criteria.
+    Output: `controlled_test_output/tier4_30a_20260505_static_pool_lifecycle_reference/`.
+    Runner: `experiments/tier4_30a_static_pool_lifecycle_reference.py`.
+    Scope: canonical 32-event trace plus boundary 64-event trace, 8-slot pool,
+    2 founders, zero invalid events on enabled path, deterministic repeat,
+    fixed-pool/random-replay/mask-shuffle/lineage-shuffle/no-trophic/no-dopamine
+    controls precomputed.
 
-38. Tier 4.30b single-core lifecycle mask smoke: prove a tiny static pool can
-    activate/silence units, preserve lineage, and read back lifecycle telemetry.
+38. 🔄 **CURRENT ACTIVE STEP** - Tier 4.30b source audit / single-core
+    lifecycle mask smoke preparation: implement the smallest runtime-facing
+    lifecycle state surface only after source audit. The first hardware scope is
+    still active-mask and lineage telemetry, not task benefit.
 
 39. Tier 4.30c multi-core lifecycle state split: distribute lifecycle masks and
     lineage across the selected runtime protocol without corrupting state.
@@ -778,7 +787,7 @@ After each completed run or design tier:
 The next concrete action is:
 
 ```text
-Tier 4.30a local static-pool lifecycle reference
+Tier 4.30b source audit / single-core lifecycle mask smoke preparation
 ```
 
 Current reference state:
@@ -788,6 +797,7 @@ Software baseline: v2.2 (`baselines/CRA_EVIDENCE_BASELINE_v2.2.md`)
 Native mechanism bridge: CRA_NATIVE_MECHANISM_BRIDGE_v0.3
 Readiness audit: Tier 4.30-readiness PASS, 16/16
 Lifecycle contract: Tier 4.30 PASS, 14/14
+Local reference: Tier 4.30a PASS, 20/20
 Temporal substrate status: fading-memory promoted in software only; nonlinear
 recurrence and native/on-chip temporal dynamics remain unproven
 ```
@@ -795,18 +805,20 @@ recurrence and native/on-chip temporal dynamics remain unproven
 Purpose:
 
 ```text
-Build the deterministic local reference for the contracted static-pool lifecycle
-surface before editing the C runtime or preparing EBRAINS hardware packages.
+Audit and implement only the minimum runtime-facing lifecycle state surface
+needed for the single-core mask/lineage smoke. Do not add task-effect claims,
+multi-core lifecycle, temporal-state migration, or EBRAINS upload until source
+audit and local host tests pass.
 ```
 
 Required coverage:
 
 ```text
-Use the Tier 4.30 contract artifacts as the input:
-controlled_test_output/tier4_30_20260505_lifecycle_native_contract/.
-Implement a local deterministic 8-slot / 2-founder reference with exact
-active-mask, lineage, event-count, checksum, and sham-control expected outputs.
-No runtime C edits and no hardware package until this local reference passes.
+Use the Tier 4.30a artifacts as the reference:
+controlled_test_output/tier4_30a_20260505_static_pool_lifecycle_reference/.
+Map the exact 8-slot / 2-founder active-mask, lineage, event-count, checksum,
+and sham-control expected outputs into a source-audited runtime surface. No
+hardware package until local compile/host tests and schema checks pass.
 ```
 
 Do not jump straight to EBRAINS. Tier 4.30 implementation starts with the
