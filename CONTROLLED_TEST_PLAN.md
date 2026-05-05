@@ -117,6 +117,8 @@ They remain part of the peer-review audit trail:
 4.29e native replay/consolidation bridge = hardware pass ingested after cra_429p repair
 4.29f compact native mechanism regression = pass; freezes CRA_NATIVE_MECHANISM_BRIDGE_v0.3
 5.19a local continuous temporal substrate reference = completed; fading memory helped held-out long-memory task, recurrence-specific value not yet separated
+5.19b temporal-substrate benchmark/sham gate = completed; fading memory supported, bounded nonlinear recurrence unproven
+5.19c fading-memory narrowing compact-regression gate = passed and froze bounded v2.2
 4.30+ native lifecycle/ecology migration = roadmap; not yet canonical evidence
 ```
 
@@ -133,7 +135,7 @@ This repo uses five evidence labels so paper claims stay clean:
 - **Failed/parked diagnostic evidence**: clean negative evidence retained to prevent p-hacking and explain why a mechanism was not promoted.
 - **Hardware prepare/probe evidence**: prepared capsules and one-off probes; these are not hardware claims until returned artifacts are reviewed and explicitly promoted.
 
-In short: `noncanonical` does not mean the result has no value. It means "not a formal registry/paper-table claim by itself." A frozen baseline such as v1.6, v1.7, v1.9, v2.0, or v2.1 is stronger than an ordinary diagnostic even when its source bundle remains outside the canonical registry.
+In short: `noncanonical` does not mean the result has no value. It means "not a formal registry/paper-table claim by itself." A frozen baseline such as v1.6, v1.7, v1.9, v2.0, v2.1, or v2.2 is stronger than an ordinary diagnostic even when its source bundle remains outside the canonical registry.
 
 ## Paper-Grade Safeguards
 
@@ -7920,7 +7922,7 @@ recurrence-specific promotion.
 
 ### Tier 5.19c - Fading-Memory Narrowing / Compact-Regression Decision
 
-Status: DEFINED / CURRENT NEXT.
+Status: COMPLETE - SOFTWARE PASS / v2.2 BASELINE FREEZE.
 
 Question:
 
@@ -7966,4 +7968,53 @@ Lag-only explains the narrowed mechanism.
 Shuffled/frozen/no-plasticity controls match the candidate.
 The mechanism only helps a synthetic diagnostic but does not preserve the
 research baseline.
+```
+
+Result:
+
+```text
+Output: controlled_test_output/tier5_19c_20260505_fading_memory_regression/
+Runner: experiments/tier5_19c_fading_memory_regression.py
+Criteria: 11/11
+Classification: fading_memory_ready_for_v2_2_freeze
+Baseline frozen: baselines/CRA_EVIDENCE_BASELINE_v2.2.md
+Compact mode/backend: full / NEST
+```
+
+Key metrics:
+
+```text
+Temporal-memory geomean candidate MSE = 0.2275222950
+Temporal-memory geomean lag-only MSE = 0.8953538817
+Temporal margin vs lag-only = 3.9352358045x
+Temporal margin vs raw v2.1 = 9.5999245538x
+
+Standard-three candidate geomean MSE = 0.1985397576
+Standard-three lag-only geomean MSE = 0.1536819662
+```
+
+Interpretation:
+
+```text
+Tier 5.19c promotes only the narrowed fading-memory temporal-state substrate.
+It does not revive the bounded nonlinear recurrence claim from Tier 5.19a/b.
+It also does not claim universal benchmark superiority because lag-only remains
+stronger on the standard Mackey-Glass / Lorenz / NARMA10 aggregate.
+```
+
+Claim boundary:
+
+```text
+v2.2 is bounded host-side software evidence for multi-timescale fading-memory
+temporal state. It is not hardware evidence, not native on-chip temporal
+dynamics, not bounded nonlinear recurrence, not language, not planning, not
+AGI, and not ASI.
+```
+
+Next step:
+
+```text
+Tier 4.30-readiness audit. Decide how lifecycle-native work layers on v2.2
+software evidence and the existing v2.1-era native mechanism bridge before
+writing Tier 4.30 hardware code.
 ```

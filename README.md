@@ -18,11 +18,11 @@ controlled ablations, baseline comparisons, and explicit claim boundaries.
 
 | Area | Current state |
 | --- | --- |
-| Software baseline | `v2.1`, frozen after bounded host-side self-evaluation / reliability-monitoring evidence. |
+| Software baseline | `v2.2`, frozen after bounded host-side fading-memory temporal-state evidence plus full NEST compact regression. |
 | Native hardware baseline | `CRA_NATIVE_MECHANISM_BRIDGE_v0.3`, frozen after Tier 4.29f audited the 4.29a-e native mechanism hardware passes. |
 | Latest ingested hardware pass | Tier 4.29e, native host-scheduled replay/consolidation bridge, `38/38` criteria per seed across seeds `42`, `43`, and `44`. |
-| Latest software benchmark diagnostic | Tier 5.19b temporal-substrate sham gate passed as claim-narrowing evidence: fading memory remains useful on held-out long memory, but bounded nonlinear recurrence is still unproven. |
-| Active next gate | Tier 5.19c fading-memory narrowing / compact-regression decision. |
+| Latest software benchmark diagnostic | Tier 5.19c fading-memory narrowing gate passed and froze v2.2: fading-memory temporal state is promoted, while bounded nonlinear recurrence and universal benchmark superiority remain unproven. |
+| Active next gate | Tier 4.30-readiness audit, then Tier 4.30 lifecycle-native contract if the v2.2/v2.1 layering decision is explicit. |
 | Canonical registry | 47 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
 | Validation suite | 147 pytest tests plus registry, paper-table, and repository-audit generation. |
 
@@ -59,7 +59,8 @@ Core implementation areas:
 | 5.10-5.18 | Memory, replay/consolidation, predictive context, composition/routing, working memory diagnostics, temporal coding, neuron-parameter sensitivity, predictive binding, and self-evaluation gates. | Mostly host-side software mechanisms unless explicitly migrated to hardware. |
 | 6.1-6.4 | Lifecycle/self-scaling, lifecycle sham controls, and circuit-motif causality. | Software organism/ecology evidence; not hardware lifecycle. |
 | 4.22-4.29 | Custom SpiNNaker runtime progression from roundtrip/load tests to four-core MCPL tasks, keyed memory, routing/composition, predictive binding, confidence-gated learning, host-scheduled replay/consolidation, and the 4.29f evidence-regression freeze gate. | Native hardware mechanism evidence for the tested capsules only; 4.29f is an audit over hardware passes, not a new hardware execution. |
-| 7.0-7.0d | Standard dynamical benchmarks and failure analysis: Mackey-Glass, Lorenz, NARMA10, aggregate geometric-mean MSE, CRA state/readout probes, bounded online readout repair, and state-specific claim narrowing. | Software diagnostics only; CRA v2.1 underperformed simple continuous-regression sequence baselines. 7.0d showed lag regression explains this benchmark path under the current interface, so no mechanism promotion or hardware migration is claimed. |
+| 7.0-7.0d | Standard dynamical benchmarks and failure analysis: Mackey-Glass, Lorenz, NARMA10, aggregate geometric-mean MSE, CRA state/readout probes, bounded online readout repair, and state-specific claim narrowing. | Software diagnostics only; CRA v2.1 underperformed simple continuous-regression sequence baselines. 7.0d showed lag regression explains this benchmark path under the prior interface, so no direct benchmark-superiority claim was made. |
+| 5.19a-5.19c | Continuous temporal-dynamics repair path: local temporal substrate reference, recurrence sham gate, then narrowed fading-memory compact-regression promotion. | v2.2 supports bounded host-side fading-memory temporal state. It does not prove nonlinear recurrence, hardware/on-chip temporal dynamics, universal benchmark superiority, language, planning, AGI, or ASI. |
 
 The most current paper-facing evidence index is generated at
 [`STUDY_EVIDENCE_INDEX.md`](STUDY_EVIDENCE_INDEX.md). The machine-readable
@@ -79,8 +80,8 @@ Current evidence does not prove:
 - General intelligence or broad autonomous reasoning.
 - Universal superiority over external baselines.
 - Competitive performance on the Tier 7.0 continuous-valued standard dynamical
-  benchmark suite; Tier 7.0d narrows that path to a lag-regression-explained
-  limitation under the current interface.
+  benchmark suite; Tier 5.19c promotes a bounded fading-memory substrate but
+  standard-three lag-only remains stronger under the tested metrics.
 - Full organism lifecycle running natively on hardware.
 - Multi-chip scaling.
 - Production readiness.
@@ -98,7 +99,9 @@ Current evidence does not prove:
 | [`docs/`](docs) | Research documentation, roadmap, reviewer-defense plan, runbooks, whitepaper, and codebase map. |
 | [`ebrains_jobs/`](ebrains_jobs) | Source-only EBRAINS JobManager upload packages preserving what was sent to hardware. |
 
-Current next-tier contract:
+Current execution queue:
+[`docs/MASTER_EXECUTION_PLAN.md`](docs/MASTER_EXECUTION_PLAN.md). The completed
+Tier 5.19 temporal-dynamics contract is preserved at
 [`docs/TIER5_19_CONTINUOUS_TEMPORAL_DYNAMICS_CONTRACT.md`](docs/TIER5_19_CONTINUOUS_TEMPORAL_DYNAMICS_CONTRACT.md).
 
 ## Quick Start

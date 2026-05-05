@@ -25,14 +25,15 @@ The project contains three integrated layers:
 3. A staged evidence system that records canonical results, failed diagnostics,
    frozen baselines, and claim boundaries.
 
-As of the current registry, CRA has 41 canonical evidence bundles with zero
+As of the current registry, CRA has 47 canonical evidence bundles with zero
 missing expected artifacts and zero failed criteria in canonical entries. The
 software program has validated negative controls, positive learning controls,
 architecture ablations, external-baseline comparisons, delayed-credit repairs,
 lifecycle/self-scaling, lifecycle sham controls, circuit-motif causality, and
 bounded host-side mechanisms for memory, replay/consolidation, predictive
 context, composition/routing, working-memory diagnostics, temporal spike coding,
-neuron-parameter sensitivity, predictive binding, and self-evaluation.
+neuron-parameter sensitivity, predictive binding, self-evaluation, and
+fading-memory temporal state.
 
 The hardware program has progressed from PyNN/SpiNNaker capsule execution to a
 custom native runtime. The native runtime has passed bounded SpiNNaker hardware
@@ -218,10 +219,12 @@ paper claims bounded.
 The forward plan is maintained in `docs/MASTER_EXECUTION_PLAN.md` and
 `docs/PAPER_READINESS_ROADMAP.md`. The high-level sequence is:
 
-1. Run Tier 4.29f compact native mechanism regression across 4.29a-e.
-2. If 4.29f passes, freeze a cumulative native mechanism bridge baseline.
-3. Then run standard dynamical benchmark suites before any additional mechanism
-   development or paper benchmark lock.
+1. Run Tier 4.30-readiness audit to decide how lifecycle-native work layers on
+   v2.2 software evidence and the existing native mechanism bridge.
+2. Define and run Tier 4.30 lifecycle-native static-pool gates with lineage,
+   masks, trophic state, sham controls, and compact hardware readback.
+3. Define any future native temporal-state migration separately; v2.2 does not
+   by itself prove on-chip temporal dynamics.
 4. Add resource, timing, and scalability characterization before larger hardware
    claims.
 5. Re-run final software and hardware matrices against fair baselines.

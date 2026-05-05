@@ -1,11 +1,11 @@
 {
   "canonical": false,
   "claim": "Latest Tier 5.13c internal composition/routing promotion gate; requires compact regression before baseline freeze.",
-  "generated_at_utc": "2026-04-29T23:19:07+00:00",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/v2_1_guardrail/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/tier5_13c_results.json",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/v2_1_guardrail/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/v2_1_guardrail/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/tier5_13c_report.md",
+  "generated_at_utc": "2026-05-05T18:51:06+00:00",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/tier5_13c_results.json",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/tier5_13c_report.md",
   "status": "pass",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/v2_1_guardrail/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/tier5_13c_summary.csv",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/tier5_13c_summary.csv",
   "tier": "Tier 5.13c - Internal Composition / Routing Promotion Gate"
 }

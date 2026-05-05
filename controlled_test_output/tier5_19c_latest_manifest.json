@@ -1,0 +1,9 @@
+{
+  "classification": "fading_memory_ready_for_v2_2_freeze",
+  "generated_at_utc": "2026-05-05T19:01:36+00:00",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/tier5_19c_results.json",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression",
+  "runner_revision": "tier5_19c_fading_memory_regression_20260505_0001",
+  "status": "pass",
+  "tier": "Tier 5.19c - Fading-Memory Narrowing / Compact-Regression Decision"
+}

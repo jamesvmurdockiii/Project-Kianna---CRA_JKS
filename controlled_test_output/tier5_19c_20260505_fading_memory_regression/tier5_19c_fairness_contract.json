@@ -1,0 +1,26 @@
+{
+  "candidate": "fading_memory_only_ablation treated as narrowed mechanism",
+  "controls": [
+    "current v2.1 raw CRA",
+    "lag-only causal readout",
+    "fixed ESN",
+    "random reservoir",
+    "full temporal candidate as non-promoted reference",
+    "frozen temporal state",
+    "shuffled temporal state",
+    "shuffled target",
+    "no plasticity",
+    "compact v2.1 guardrail"
+  ],
+  "full_temporal_candidate": "non-promoted reference only",
+  "nonclaims": [
+    "not bounded nonlinear recurrence",
+    "not hardware evidence",
+    "not native on-chip temporal dynamics",
+    "not universal benchmark superiority",
+    "not language, planning, AGI, or ASI"
+  ],
+  "normalization": "train-prefix z-score for tasks; online readout updates predict before target update",
+  "split": "chronological",
+  "tier": "Tier 5.19c - Fading-Memory Narrowing / Compact-Regression Decision"
+}

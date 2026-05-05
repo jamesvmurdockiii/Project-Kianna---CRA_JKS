@@ -1,0 +1,16 @@
+{
+  "display_name": "Held-out multi-timescale echo diagnostic",
+  "horizon": 8,
+  "length": 720,
+  "metadata": {
+    "hidden_timescales": "latent 0.992, mid 0.965, slow 0.992",
+    "obs_mu": -0.05648409460917345,
+    "obs_sd": 0.5856217868577596,
+    "purpose": "test whether adaptive fading traces denoise and track a latent slow state",
+    "target_mu": -0.10045292429455334,
+    "target_sd": 0.08967650690414627
+  },
+  "seed": 43,
+  "task": "multiscale_echo",
+  "train_end": 468
+}

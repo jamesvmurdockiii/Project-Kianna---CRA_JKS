@@ -1,9 +1,9 @@
 {
   "canonical": false,
-  "generated_at_utc": "2026-04-29T23:29:27+00:00",
-  "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/v2_1_guardrail/v2_0_compact_regression_gate/working_memory_context_guardrail/tier5_14_results.json",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/v2_1_guardrail/v2_0_compact_regression_gate/working_memory_context_guardrail",
-  "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/v2_1_guardrail/v2_0_compact_regression_gate/working_memory_context_guardrail/tier5_14_report.md",
+  "generated_at_utc": "2026-05-05T19:01:29+00:00",
+  "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/v2_0_compact_regression_gate/working_memory_context_guardrail/tier5_14_results.json",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/v2_0_compact_regression_gate/working_memory_context_guardrail",
+  "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/v2_0_compact_regression_gate/working_memory_context_guardrail/tier5_14_report.md",
   "status": "pass",
   "tier": "Tier 5.14 - Working Memory / Context Binding"
 }

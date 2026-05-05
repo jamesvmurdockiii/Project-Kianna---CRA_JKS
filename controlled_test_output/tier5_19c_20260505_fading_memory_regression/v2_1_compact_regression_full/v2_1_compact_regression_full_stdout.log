@@ -1,0 +1,11 @@
+[tier5.18c] child=v2_0_compact_regression_gate
+[tier5.18c] child=tier5_18_self_evaluation_guardrail
+{
+  "tier": "Tier 5.18c - Self-Evaluation Compact Regression",
+  "status": "pass",
+  "failure_reason": "",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/tier5_18c_report.md",
+  "runtime_seconds": 1487.359327416,
+  "claim_boundary": "Promotion/regression gate for bounded host-side software self-evaluation evidence. Not consciousness, self-awareness, hardware evidence, AGI, language, planning, or external-baseline superiority."
+}

@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-05T13:39-04:00.
+Last updated: 2026-05-05T15:06:17-04:00.
 
 Current repo root:
 
@@ -29,7 +29,17 @@ Current repo root:
 Current frozen software baseline:
 
 ```text
-v2.1 = post-Tier-5.18c bounded host-side self-evaluation / reliability-monitoring evidence lock
+v2.2 = post-Tier-5.19c bounded host-side fading-memory temporal-state evidence lock
+       Source: controlled_test_output/tier5_19c_20260505_fading_memory_regression/
+       Runner: experiments/tier5_19c_fading_memory_regression.py
+       Criteria: 11/11
+       Compact gate: full NEST compact regression passed
+       Claim: multi-timescale fading-memory temporal state is useful on the
+              tested temporal-memory diagnostics while preserving existing CRA
+              guardrails.
+       Boundary: not bounded nonlinear recurrence, not hardware evidence, not
+                 native on-chip temporal dynamics, not universal benchmark
+                 superiority, not language/planning/AGI/ASI.
 ```
 
 Current hardware/runtime baseline decision:
@@ -48,10 +58,11 @@ FROZEN: CRA_NATIVE_MECHANISM_BRIDGE_v0.3
             not a monolithic all-mechanism task, not lifecycle, not multi-chip,
             not speedup, and not external-baseline superiority.
   Supersedes: CRA_NATIVE_TASK_BASELINE_v0.2
-  Next: Tier 5.19 / 7.0e continuous temporal dynamics substrate contract.
-        Tier 7.0d narrowed the standard dynamical benchmark path and blocked
-        benchmark migration to hardware under the current interface. Lifecycle
-        hardware remains queued after the temporal-substrate decision.
+  Next: Tier 4.30-readiness audit, then Tier 4.30 lifecycle-native contract.
+        Lifecycle hardware must explicitly state whether it layers on v2.2
+        software state, the v2.1-era native mechanism bridge, or a scoped subset
+        of each. Temporal-state hardware migration is not automatic from v2.2;
+        it requires a separately defined native temporal-readiness tier.
 ```
 
 Current active tier state:
@@ -273,17 +284,28 @@ Tier 5.19b — COMPLETE. Temporal-substrate benchmark/sham gate.
     does not prove bounded nonlinear recurrence, does not freeze a software
     baseline, and does not authorize hardware migration.
 
-Tier 5.19c — CURRENT NEXT. Fading-memory narrowing / compact-regression
-  decision gate.
-  Purpose: decide whether to promote a narrowed multi-timescale fading-memory
-    temporal substrate, without claiming nonlinear recurrence, or park the
-    temporal-substrate branch until a recurrence-specific repair exists.
-  Rule: promote only if the narrowed mechanism preserves v2.1 guardrails,
-    survives compact controls, and gives a useful, reproducible advantage on
-    temporal-memory diagnostics without hiding behind lag-only or recurrence
-    shams.
+Tier 5.19c — COMPLETE. Fading-memory narrowing / compact-regression decision.
+  Status: PASS. Baseline freeze authorized and recorded as v2.2.
+  Runner: experiments/tier5_19c_fading_memory_regression.py
+  Output: controlled_test_output/tier5_19c_20260505_fading_memory_regression/
+  Criteria: 11/11.
+  Classification: fading_memory_ready_for_v2_2_freeze.
+  Key result: temporal-memory geomean candidate MSE 0.2275 vs lag-only 0.8954
+    (3.94x margin) and vs raw v2.1 2.1842 (9.60x margin). Standard-three
+    lag-only remains stronger than the candidate, so do not claim universal
+    benchmark superiority.
+  Boundary: v2.2 is bounded host-side fading-memory temporal state only; not
+    nonlinear recurrence, not hardware/on-chip temporal dynamics, not language,
+    planning, AGI, or ASI.
 
-Tier 4.30 — QUEUED AFTER TEMPORAL-SUBSTRATE DECISION. Lifecycle-native contract.
+Tier 4.30-readiness — CURRENT NEXT. Lifecycle-native preflight / layering audit.
+  Purpose: decide exactly how native lifecycle work layers on the current repo
+    state before writing Tier 4.30 hardware code.
+  Rule: confirm source-of-truth docs, native mechanism bridge status, v2.2
+    software boundary, static-pool constraints, metrics, shams, and artifacts
+    before implementation.
+
+Tier 4.30 — QUEUED AFTER READINESS AUDIT. Lifecycle-native contract.
   Purpose: define how lifecycle/self-scaling moves onto the custom runtime using
     a static preallocated pool.
   Rule: birth/cleavage/death are active-mask, allocation, lineage, and trophic
@@ -429,23 +451,18 @@ Local build capability (established 2026-05-02):
 
 Immediate next steps:
 
-1. Design Tier 5.19c before implementation changes. It must use the completed
-   Tier 5.19a and 5.19b results and explicitly narrow the claim away from
-   recurrence unless recurrence-specific controls are repaired.
-2. Required 5.19c controls: current v2.1, lag-only, fixed/random reservoir,
-   fading-memory candidate, full temporal candidate as a non-promoted reference,
-   frozen state, shuffled temporal state, shuffled target, no plasticity, and
-   compact Tier 1/2/3 plus v2.1 guardrails.
-3. Required 5.19c decision: distinguish "narrowed fading-memory temporal state
-   earns promotion" from "temporal branch remains diagnostic only." Do not
-   relabel 5.19b as recurrence evidence.
-4. Do not jump straight to lifecycle hardware or EBRAINS from 5.19b. No hardware
-   migration until a software mechanism earns promotion and passes compact
-   regression.
-5. After the temporal-substrate decision, run the Tier 4.30-readiness audit and
-   decide whether native lifecycle layers on v2.1 or on a promoted newer
-   software baseline.
-6. Keep public repo hygiene green before the next upload or commit: no
+1. Close and commit Tier 5.19c / v2.2 with docs, registry, audit, validation,
+   and baseline files synchronized.
+2. Run Tier 4.30-readiness audit before writing lifecycle-native code. The audit
+   must decide whether lifecycle hardware layers on v2.2 software state, the
+   v2.1-era native mechanism bridge, or a deliberately scoped subset of each.
+3. Define Tier 4.30 lifecycle-native contract after the audit: static max pool,
+   active masks, lineage IDs, trophic state, birth/cleavage/death counters,
+   fixed-pool and sham controls, and exact readback fields.
+4. Do not migrate v2.2 temporal fading-memory state to hardware merely because
+   v2.2 froze. Native temporal-state migration requires a separate readiness
+   tier with fixed-point state equations and local parity.
+5. Keep public repo hygiene green before the next upload or commit: no
    credentialed remotes, no `ebrains_jobs/` symlinks, no transient root output
    dirs, no generated host binaries, and `make validate` passing.
 

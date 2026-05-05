@@ -1,0 +1,519 @@
+{
+  "diagnostics": [
+    {
+      "fading_only_feature_count": 16,
+      "full_feature_count": 32,
+      "lag_feature_count": 13,
+      "recurrent_only_feature_count": 18,
+      "seed": 42,
+      "task": "mackey_glass",
+      "trace_backend": "MockSimulator"
+    },
+    {
+      "fading_only_feature_count": 16,
+      "full_feature_count": 32,
+      "lag_feature_count": 13,
+      "recurrent_only_feature_count": 18,
+      "seed": 42,
+      "task": "lorenz",
+      "trace_backend": "MockSimulator"
+    },
+    {
+      "fading_only_feature_count": 16,
+      "full_feature_count": 32,
+      "lag_feature_count": 13,
+      "recurrent_only_feature_count": 18,
+      "seed": 42,
+      "task": "narma10",
+      "trace_backend": "MockSimulator"
+    },
+    {
+      "fading_only_feature_count": 16,
+      "full_feature_count": 32,
+      "lag_feature_count": 13,
+      "recurrent_only_feature_count": 18,
+      "seed": 42,
+      "task": "heldout_long_memory",
+      "trace_backend": "MockSimulator"
+    },
+    {
+      "fading_only_feature_count": 16,
+      "full_feature_count": 32,
+      "lag_feature_count": 13,
+      "recurrent_only_feature_count": 18,
+      "seed": 42,
+      "task": "slow_context_drift",
+      "trace_backend": "MockSimulator"
+    },
+    {
+      "fading_only_feature_count": 16,
+      "full_feature_count": 32,
+      "lag_feature_count": 13,
+      "recurrent_only_feature_count": 18,
+      "seed": 42,
+      "task": "multiscale_echo",
+      "trace_backend": "MockSimulator"
+    },
+    {
+      "fading_only_feature_count": 16,
+      "full_feature_count": 32,
+      "lag_feature_count": 13,
+      "recurrent_only_feature_count": 18,
+      "seed": 42,
+      "task": "recurrence_pressure",
+      "trace_backend": "MockSimulator"
+    },
+    {
+      "fading_only_feature_count": 16,
+      "full_feature_count": 32,
+      "lag_feature_count": 13,
+      "recurrent_only_feature_count": 18,
+      "seed": 43,
+      "task": "mackey_glass",
+      "trace_backend": "MockSimulator"
+    },
+    {
+      "fading_only_feature_count": 16,
+      "full_feature_count": 32,
+      "lag_feature_count": 13,
+      "recurrent_only_feature_count": 18,
+      "seed": 43,
+      "task": "lorenz",
+      "trace_backend": "MockSimulator"
+    },
+    {
+      "fading_only_feature_count": 16,
+      "full_feature_count": 32,
+      "lag_feature_count": 13,
+      "recurrent_only_feature_count": 18,
+      "seed": 43,
+      "task": "narma10",
+      "trace_backend": "MockSimulator"
+    },
+    {
+      "fading_only_feature_count": 16,
+      "full_feature_count": 32,
+      "lag_feature_count": 13,
+      "recurrent_only_feature_count": 18,
+      "seed": 43,
+      "task": "heldout_long_memory",
+      "trace_backend": "MockSimulator"
+    },
+    {
+      "fading_only_feature_count": 16,
+      "full_feature_count": 32,
+      "lag_feature_count": 13,
+      "recurrent_only_feature_count": 18,
+      "seed": 43,
+      "task": "slow_context_drift",
+      "trace_backend": "MockSimulator"
+    },
+    {
+      "fading_only_feature_count": 16,
+      "full_feature_count": 32,
+      "lag_feature_count": 13,
+      "recurrent_only_feature_count": 18,
+      "seed": 43,
+      "task": "multiscale_echo",
+      "trace_backend": "MockSimulator"
+    },
+    {
+      "fading_only_feature_count": 16,
+      "full_feature_count": 32,
+      "lag_feature_count": 13,
+      "recurrent_only_feature_count": 18,
+      "seed": 43,
+      "task": "recurrence_pressure",
+      "trace_backend": "MockSimulator"
+    },
+    {
+      "fading_only_feature_count": 16,
+      "full_feature_count": 32,
+      "lag_feature_count": 13,
+      "recurrent_only_feature_count": 18,
+      "seed": 44,
+      "task": "mackey_glass",
+      "trace_backend": "MockSimulator"
+    },
+    {
+      "fading_only_feature_count": 16,
+      "full_feature_count": 32,
+      "lag_feature_count": 13,
+      "recurrent_only_feature_count": 18,
+      "seed": 44,
+      "task": "lorenz",
+      "trace_backend": "MockSimulator"
+    },
+    {
+      "fading_only_feature_count": 16,
+      "full_feature_count": 32,
+      "lag_feature_count": 13,
+      "recurrent_only_feature_count": 18,
+      "seed": 44,
+      "task": "narma10",
+      "trace_backend": "MockSimulator"
+    },
+    {
+      "fading_only_feature_count": 16,
+      "full_feature_count": 32,
+      "lag_feature_count": 13,
+      "recurrent_only_feature_count": 18,
+      "seed": 44,
+      "task": "heldout_long_memory",
+      "trace_backend": "MockSimulator"
+    },
+    {
+      "fading_only_feature_count": 16,
+      "full_feature_count": 32,
+      "lag_feature_count": 13,
+      "recurrent_only_feature_count": 18,
+      "seed": 44,
+      "task": "slow_context_drift",
+      "trace_backend": "MockSimulator"
+    },
+    {
+      "fading_only_feature_count": 16,
+      "full_feature_count": 32,
+      "lag_feature_count": 13,
+      "recurrent_only_feature_count": 18,
+      "seed": 44,
+      "task": "multiscale_echo",
+      "trace_backend": "MockSimulator"
+    },
+    {
+      "fading_only_feature_count": 16,
+      "full_feature_count": 32,
+      "lag_feature_count": 13,
+      "recurrent_only_feature_count": 18,
+      "seed": 44,
+      "task": "recurrence_pressure",
+      "trace_backend": "MockSimulator"
+    }
+  ],
+  "tasks": [
+    {
+      "display_name": "Mackey-Glass",
+      "horizon": 8,
+      "length": 720,
+      "metadata": {
+        "obs_mu": 0.9265332161522112,
+        "obs_sd": 0.23235897165545655,
+        "target_mu": 0.9252937638603783,
+        "target_sd": 0.2327276477229907,
+        "tau": 17
+      },
+      "seed": 42,
+      "task": "mackey_glass",
+      "train_end": 468
+    },
+    {
+      "display_name": "Lorenz x(t)",
+      "horizon": 8,
+      "length": 720,
+      "metadata": {
+        "dt": 0.01,
+        "obs_mu": -4.784154716276213,
+        "obs_sd": 6.270667325401456,
+        "target_mu": -4.894437799776764,
+        "target_sd": 6.325606255798692
+      },
+      "seed": 42,
+      "task": "lorenz",
+      "train_end": 468
+    },
+    {
+      "display_name": "NARMA10",
+      "horizon": 1,
+      "length": 720,
+      "metadata": {
+        "obs_mu": 0.2432689370476514,
+        "obs_sd": 0.14080877031080336,
+        "target_mu": 0.3641535655401237,
+        "target_sd": 0.09944671760061433
+      },
+      "seed": 42,
+      "task": "narma10",
+      "train_end": 468
+    },
+    {
+      "display_name": "Held-out nonlinear long-memory diagnostic",
+      "horizon": 8,
+      "length": 720,
+      "metadata": {
+        "hidden_timescale": "slow accumulator decay 0.985 plus nonlinear gate decay 0.94",
+        "not_in_tier7_standard_suite": true,
+        "obs_mu": 0.010835953095499897,
+        "obs_sd": 0.45703722075292785,
+        "target_mu": 0.01374339035698152,
+        "target_sd": 0.018005962153954617
+      },
+      "seed": 42,
+      "task": "heldout_long_memory",
+      "train_end": 468
+    },
+    {
+      "display_name": "Held-out slow context drift diagnostic",
+      "horizon": 8,
+      "length": 720,
+      "metadata": {
+        "hidden_timescales": "slow decay 0.975 and very_slow decay 0.994",
+        "obs_mu": -0.010265641518806285,
+        "obs_sd": 0.41543741431371406,
+        "purpose": "test narrowed fading-memory value without a recurrence claim",
+        "target_mu": 0.00043279332899205506,
+        "target_sd": 0.06914913356488449
+      },
+      "seed": 42,
+      "task": "slow_context_drift",
+      "train_end": 468
+    },
+    {
+      "display_name": "Held-out multi-timescale echo diagnostic",
+      "horizon": 8,
+      "length": 720,
+      "metadata": {
+        "hidden_timescales": "latent 0.992, mid 0.965, slow 0.992",
+        "obs_mu": 0.08903082531819836,
+        "obs_sd": 0.5969521596793441,
+        "purpose": "test whether adaptive fading traces denoise and track a latent slow state",
+        "target_mu": 0.14372008944143683,
+        "target_sd": 0.07115168694315369
+      },
+      "seed": 42,
+      "task": "multiscale_echo",
+      "train_end": 468
+    },
+    {
+      "display_name": "Held-out nonlinear recurrence-pressure diagnostic",
+      "horizon": 8,
+      "length": 720,
+      "metadata": {
+        "hidden_dynamics": "two coupled tanh state variables plus nonlinear product accumulator",
+        "obs_mu": -0.0499674924675964,
+        "obs_sd": 0.43660138787359354,
+        "purpose": "separate bounded recurrence from fading-memory-only traces",
+        "target_mu": 0.01006780561002837,
+        "target_sd": 0.13227649975507075
+      },
+      "seed": 42,
+      "task": "recurrence_pressure",
+      "train_end": 468
+    },
+    {
+      "display_name": "Mackey-Glass",
+      "horizon": 8,
+      "length": 720,
+      "metadata": {
+        "obs_mu": 0.9258327184448738,
+        "obs_sd": 0.23292140581562826,
+        "target_mu": 0.9250992470656233,
+        "target_sd": 0.23282818698272212,
+        "tau": 17
+      },
+      "seed": 43,
+      "task": "mackey_glass",
+      "train_end": 468
+    },
+    {
+      "display_name": "Lorenz x(t)",
+      "horizon": 8,
+      "length": 720,
+      "metadata": {
+        "dt": 0.01,
+        "obs_mu": -4.719782842793352,
+        "obs_sd": 6.283351599562125,
+        "target_mu": -4.797774739161822,
+        "target_sd": 6.311910068313094
+      },
+      "seed": 43,
+      "task": "lorenz",
+      "train_end": 468
+    },
+    {
+      "display_name": "NARMA10",
+      "horizon": 1,
+      "length": 720,
+      "metadata": {
+        "obs_mu": 0.24685635248322665,
+        "obs_sd": 0.14791005447786726,
+        "target_mu": 0.3760472088027921,
+        "target_sd": 0.10342455322038897
+      },
+      "seed": 43,
+      "task": "narma10",
+      "train_end": 468
+    },
+    {
+      "display_name": "Held-out nonlinear long-memory diagnostic",
+      "horizon": 8,
+      "length": 720,
+      "metadata": {
+        "hidden_timescale": "slow accumulator decay 0.985 plus nonlinear gate decay 0.94",
+        "not_in_tier7_standard_suite": true,
+        "obs_mu": 0.013500538644399438,
+        "obs_sd": 0.44636514000227584,
+        "target_mu": 0.009809078204779,
+        "target_sd": 0.02217282258311018
+      },
+      "seed": 43,
+      "task": "heldout_long_memory",
+      "train_end": 468
+    },
+    {
+      "display_name": "Held-out slow context drift diagnostic",
+      "horizon": 8,
+      "length": 720,
+      "metadata": {
+        "hidden_timescales": "slow decay 0.975 and very_slow decay 0.994",
+        "obs_mu": 0.03543712159431617,
+        "obs_sd": 0.4273486128509627,
+        "purpose": "test narrowed fading-memory value without a recurrence claim",
+        "target_mu": 0.03228922069519024,
+        "target_sd": 0.06399122379895264
+      },
+      "seed": 43,
+      "task": "slow_context_drift",
+      "train_end": 468
+    },
+    {
+      "display_name": "Held-out multi-timescale echo diagnostic",
+      "horizon": 8,
+      "length": 720,
+      "metadata": {
+        "hidden_timescales": "latent 0.992, mid 0.965, slow 0.992",
+        "obs_mu": -0.05648409460917345,
+        "obs_sd": 0.5856217868577596,
+        "purpose": "test whether adaptive fading traces denoise and track a latent slow state",
+        "target_mu": -0.10045292429455334,
+        "target_sd": 0.08967650690414627
+      },
+      "seed": 43,
+      "task": "multiscale_echo",
+      "train_end": 468
+    },
+    {
+      "display_name": "Held-out nonlinear recurrence-pressure diagnostic",
+      "horizon": 8,
+      "length": 720,
+      "metadata": {
+        "hidden_dynamics": "two coupled tanh state variables plus nonlinear product accumulator",
+        "obs_mu": -0.05698935474455187,
+        "obs_sd": 0.44251785225996615,
+        "purpose": "separate bounded recurrence from fading-memory-only traces",
+        "target_mu": 0.008164193555753653,
+        "target_sd": 0.12960213060826964
+      },
+      "seed": 43,
+      "task": "recurrence_pressure",
+      "train_end": 468
+    },
+    {
+      "display_name": "Mackey-Glass",
+      "horizon": 8,
+      "length": 720,
+      "metadata": {
+        "obs_mu": 0.9337145641386806,
+        "obs_sd": 0.2310389245327399,
+        "target_mu": 0.926386728166712,
+        "target_sd": 0.23692585957976622,
+        "tau": 17
+      },
+      "seed": 44,
+      "task": "mackey_glass",
+      "train_end": 468
+    },
+    {
+      "display_name": "Lorenz x(t)",
+      "horizon": 8,
+      "length": 720,
+      "metadata": {
+        "dt": 0.01,
+        "obs_mu": -4.800900329735356,
+        "obs_sd": 6.270014114735243,
+        "target_mu": -4.9211313185979035,
+        "target_sd": 6.3347103743364075
+      },
+      "seed": 44,
+      "task": "lorenz",
+      "train_end": 468
+    },
+    {
+      "display_name": "NARMA10",
+      "horizon": 1,
+      "length": 720,
+      "metadata": {
+        "obs_mu": 0.25193021235385626,
+        "obs_sd": 0.14196641909866065,
+        "target_mu": 0.4125473532855099,
+        "target_sd": 0.12673299047958334
+      },
+      "seed": 44,
+      "task": "narma10",
+      "train_end": 468
+    },
+    {
+      "display_name": "Held-out nonlinear long-memory diagnostic",
+      "horizon": 8,
+      "length": 720,
+      "metadata": {
+        "hidden_timescale": "slow accumulator decay 0.985 plus nonlinear gate decay 0.94",
+        "not_in_tier7_standard_suite": true,
+        "obs_mu": -0.010937148868565769,
+        "obs_sd": 0.4595787674535245,
+        "target_mu": -0.001073228350273468,
+        "target_sd": 0.030816002228495048
+      },
+      "seed": 44,
+      "task": "heldout_long_memory",
+      "train_end": 468
+    },
+    {
+      "display_name": "Held-out slow context drift diagnostic",
+      "horizon": 8,
+      "length": 720,
+      "metadata": {
+        "hidden_timescales": "slow decay 0.975 and very_slow decay 0.994",
+        "obs_mu": -0.020443644651902407,
+        "obs_sd": 0.41864096265497464,
+        "purpose": "test narrowed fading-memory value without a recurrence claim",
+        "target_mu": -0.02697085412356536,
+        "target_sd": 0.06824641524096975
+      },
+      "seed": 44,
+      "task": "slow_context_drift",
+      "train_end": 468
+    },
+    {
+      "display_name": "Held-out multi-timescale echo diagnostic",
+      "horizon": 8,
+      "length": 720,
+      "metadata": {
+        "hidden_timescales": "latent 0.992, mid 0.965, slow 0.992",
+        "obs_mu": 0.07538508095879717,
+        "obs_sd": 0.5703892280291781,
+        "purpose": "test whether adaptive fading traces denoise and track a latent slow state",
+        "target_mu": 0.0937238844268283,
+        "target_sd": 0.05414752475048889
+      },
+      "seed": 44,
+      "task": "multiscale_echo",
+      "train_end": 468
+    },
+    {
+      "display_name": "Held-out nonlinear recurrence-pressure diagnostic",
+      "horizon": 8,
+      "length": 720,
+      "metadata": {
+        "hidden_dynamics": "two coupled tanh state variables plus nonlinear product accumulator",
+        "obs_mu": 0.0023647180685161828,
+        "obs_sd": 0.41857646614955596,
+        "purpose": "separate bounded recurrence from fading-memory-only traces",
+        "target_mu": 0.003556538123164153,
+        "target_sd": 0.12026495046822452
+      },
+      "seed": 44,
+      "task": "recurrence_pressure",
+      "train_end": 468
+    }
+  ]
+}

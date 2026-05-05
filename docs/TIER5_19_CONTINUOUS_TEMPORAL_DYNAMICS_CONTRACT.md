@@ -2,9 +2,10 @@
 
 Last updated: 2026-05-05.
 
-Status: contract complete. Tier 5.19a has run as a local software reference and
-Tier 5.19b has run as a stricter software sham gate. The current active step is
-Tier 5.19c.
+Status: complete through Tier 5.19c. Tier 5.19a ran as a local software
+reference, Tier 5.19b ran as a stricter software sham gate, and Tier 5.19c
+passed the narrowed fading-memory compact-regression gate. v2.2 is frozen as a
+bounded host-side fading-memory temporal-state baseline.
 
 Tier 5.19a result:
 
@@ -25,6 +26,19 @@ Classification: fading_memory_supported_recurrence_unproven
 Boundary: local claim-narrowing evidence only. Fading-memory temporal state is
 supported; bounded nonlinear recurrence is not proven. No baseline freeze and
 no hardware migration.
+```
+
+Tier 5.19c result:
+
+```text
+Output: controlled_test_output/tier5_19c_20260505_fading_memory_regression/
+Runner: experiments/tier5_19c_fading_memory_regression.py
+Criteria: 11/11
+Classification: fading_memory_ready_for_v2_2_freeze
+Baseline frozen: baselines/CRA_EVIDENCE_BASELINE_v2.2.md
+Compact regression: full NEST compact gate passed
+Boundary: bounded fading-memory temporal state only; no nonlinear recurrence,
+no hardware/on-chip temporal dynamics, and no universal benchmark superiority.
 ```
 
 ## Purpose
@@ -374,25 +388,25 @@ updated evidence registry or explicit noncanonical freeze note
 baseline document if a new software baseline is frozen
 ```
 
-If promoted, freeze a new software baseline only after compact regression. If
-not promoted, keep `v2.1` as the current software baseline and leave Tier 7.0
-as an honest limitation. Tier 5.19b did not prove bounded nonlinear recurrence,
-so any 5.19c promotion must either narrow to fading-memory temporal state or
-run a separately defined recurrence repair.
+Tier 5.19c did promote the narrowed fading-memory temporal-state substrate after
+full compact regression and froze v2.2. Tier 5.19b did not prove bounded
+nonlinear recurrence, and Tier 5.19c deliberately did not claim it. Any future
+recurrence claim needs a separately defined recurrence repair.
 
 ## Hardware Migration Decision
 
 Hardware migration is conditional:
 
 ```text
-If Tier 5.19 promotes a temporal substrate:
-  run Tier 4.30e native temporal-substrate readiness.
-  define the smallest chip-owned temporal subset.
+If v2.2 temporal state is selected for hardware migration:
+  run a separate native temporal-substrate readiness tier.
+  define the smallest chip-owned fading-memory subset.
   build local fixed-point parity before EBRAINS.
 
-If Tier 5.19 fails:
-  do not move the Tier 7 benchmark path to hardware.
-  keep lifecycle-native work queued on v2.1 or another promoted baseline.
+If lifecycle-native work proceeds first:
+  run Tier 4.30-readiness audit.
+  state whether lifecycle layers on v2.2 software, the v2.1-era native
+  mechanism bridge, or a scoped subset of both.
 ```
 
 No SpiNNaker run is allowed solely because a mechanism sounds biologically right.

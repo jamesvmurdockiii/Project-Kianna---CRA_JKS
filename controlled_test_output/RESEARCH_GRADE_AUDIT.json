@@ -7,7 +7,7 @@
       "severity": "error"
     },
     {
-      "details": "63 files present",
+      "details": "66 files present",
       "name": "required baseline files exist",
       "passed": true,
       "severity": "error"
@@ -37,7 +37,7 @@
       "severity": "error"
     },
     {
-      "details": "v0.1 through v2.1 baselines remain frozen at their recorded counts",
+      "details": "v0.1 through v2.2 baselines remain frozen at their recorded counts",
       "name": "frozen evidence baselines are intact",
       "passed": true,
       "severity": "error"
@@ -49,7 +49,7 @@
       "severity": "error"
     }
   ],
-  "generated_at_utc": "2026-05-05T17:56:27.317783+00:00",
+  "generated_at_utc": "2026-05-05T19:12:47.801337+00:00",
   "registry_summary": {
     "evidence_count": 47,
     "expanded_test_entry_count": 47,

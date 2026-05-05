@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-05T13:39-04:00.
+Last updated: 2026-05-05T15:06-04:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -23,9 +23,10 @@ Every broad claim must be earned. If a gate fails, the claim narrows.
 Current software baseline:
 
 ```text
-v2.1 = post-Tier-5.18c bounded host-side self-evaluation / reliability-monitoring evidence lock
-Tier 5.19a = LOCAL SOFTWARE PASS / noncanonical temporal-substrate reference
-              diagnostic; no baseline freeze
+v2.2 = post-Tier-5.19c bounded host-side fading-memory temporal-state evidence lock
+Tier 5.19c = SOFTWARE PASS / full NEST compact regression / v2.2 freeze
+              no bounded nonlinear recurrence claim and no hardware/on-chip
+              temporal-dynamics claim
 ```
 
 Current hardware/custom-runtime state:
@@ -81,7 +82,7 @@ not full native v2.1, and not final autonomy.
 Current active step:
 
 ```text
-Tier 5.19 / 7.0e - Continuous Temporal Dynamics Substrate Contract
+Tier 4.30-readiness audit - lifecycle-native preflight and layering decision
 ```
 
 ## 2. Immediate Baseline Decision
@@ -92,7 +93,7 @@ Do not freeze a new software baseline from Tier 7.0d or from the next Tier
 Current frozen lines:
 
 ```text
-Software baseline: v2.1
+Software baseline: v2.2
 Native mechanism bridge baseline: CRA_NATIVE_MECHANISM_BRIDGE_v0.3
 ```
 
@@ -109,11 +110,12 @@ pass.
 Baseline decision rule:
 
 ```text
-If Tier 5.19a/b/c passes, freeze a new software baseline.
-If it fails, park or narrow the temporal-substrate candidate and keep v2.1 as
-the software baseline.
-If lifecycle starts before temporal-substrate promotion, document whether it is
-layering on v2.1 or on a later promoted baseline.
+Tier 5.19c passed and froze v2.2 as a bounded fading-memory temporal-state
+software baseline. It did not prove nonlinear recurrence, hardware temporal
+dynamics, or universal benchmark superiority.
+Before lifecycle starts, run the Tier 4.30-readiness audit and document whether
+the native lifecycle path layers on v2.2 software state, the v2.1-era native
+mechanism bridge, or a deliberately scoped subset of both.
 ```
 
 The native runtime and native mechanism bridge lines remain separate from the
@@ -146,7 +148,7 @@ native/on-chip is not claimed until all of these are true for the claimed scope:
 | Stable inter-core protocol | SDP works for 4.26 as a transitional scaffold; MCPL/multicast is the scaling target and needs a migration gate. |
 | Promoted v2 mechanisms native | Keyed memory (4.29a), routing/composition (4.29b), predictive binding (4.29c), self-evaluation (4.29d), and host-scheduled replay/consolidation (4.29e) complete. 4.29f froze the cumulative native mechanism bridge evidence baseline. Lifecycle remains. |
 | Lifecycle/self-scaling native | Not started; must use static pools and masks, not dynamic graph creation. |
-| Continuous temporal dynamics substrate | Not promoted; Tier 7.0-7.0d show standard continuous-regression benchmarks are currently explained by causal lag regression. |
+| Continuous temporal dynamics substrate | v2.2 promotes bounded host-side fading-memory temporal state after Tier 5.19c; native/on-chip temporal dynamics and bounded nonlinear recurrence remain unproven. |
 | Multi-chip scaling | Not started. |
 | Useful task-level native proof | Not complete beyond tiny micro-tasks. |
 
@@ -455,17 +457,23 @@ ability.
     (candidate 0.8982, lag-only 0.8967, state-reset 0.9029). Do not claim
     bounded nonlinear recurrence and do not freeze or migrate to hardware.
 
-34. 🔄 **CURRENT ACTIVE STEP** - Tier 5.19c fading-memory narrowing / compact
-    regression decision: decide whether a narrowed multi-timescale fading-memory
-    temporal substrate, without a recurrence claim, earns promotion. Freeze a
-    new software baseline only if the narrowed mechanism preserves v2.1
-    guardrails, survives compact controls, and beats appropriate lag/sham
-    controls on temporal-memory diagnostics. If it fails, park the temporal
-    branch and keep Tier 7 limitation explicit.
+34. ✅ **COMPLETE** - Tier 5.19c fading-memory narrowing / compact regression
+    decision: the narrowed multi-timescale fading-memory temporal substrate
+    earned promotion without a recurrence claim.
+    Result: pass, 11/11 criteria, full NEST compact regression passed.
+    Classification = `fading_memory_ready_for_v2_2_freeze`.
+    v2.2 frozen at `baselines/CRA_EVIDENCE_BASELINE_v2.2.md`.
+    Key metrics: temporal-memory geomean candidate MSE 0.2275 vs lag-only
+    0.8954 (3.94x margin) and raw v2.1 2.1842 (9.60x margin). Standard-three
+    lag-only remains stronger than the candidate, so do not claim universal
+    benchmark superiority or migrate the benchmark path to hardware.
 
-35. Tier 4.30-readiness audit: only after the temporal-substrate decision, decide
-    whether lifecycle hardware should layer on v2.1 as-is or on a promoted newer
-    software baseline.
+35. 🔄 **CURRENT ACTIVE STEP** - Tier 4.30-readiness audit: before writing
+    lifecycle-native code, decide whether lifecycle hardware should layer on
+    v2.2 software state, the v2.1-era native mechanism bridge, or a deliberately
+    scoped subset of both. This audit must define the static-pool constraints,
+    lifecycle counters, lineage/mask/trophic readback fields, sham controls, and
+    artifact expectations for Tier 4.30.
 
 ### Phase E - Lifecycle / Organism Dynamics Native Path
 
@@ -752,36 +760,40 @@ After each completed run or design tier:
 The next concrete action is:
 
 ```text
-Tier 5.19c - Fading-Memory Narrowing / Compact-Regression Decision
+Tier 4.30-readiness audit - Lifecycle-Native Preflight / Layering Decision
 ```
 
-Detailed contract:
+Current reference state:
 
 ```text
-docs/TIER5_19_CONTINUOUS_TEMPORAL_DYNAMICS_CONTRACT.md
+Software baseline: v2.2 (`baselines/CRA_EVIDENCE_BASELINE_v2.2.md`)
+Native mechanism bridge: CRA_NATIVE_MECHANISM_BRIDGE_v0.3
+Temporal substrate status: fading-memory promoted in software only; nonlinear
+recurrence and native/on-chip temporal dynamics remain unproven
 ```
 
 Purpose:
 
 ```text
-Use the completed 5.19a and 5.19b evidence to decide whether a narrowed
-multi-timescale fading-memory temporal substrate earns promotion without
-claiming bounded nonlinear recurrence.
+Decide the exact contract for moving lifecycle/self-scaling onto the custom
+runtime without smuggling in dynamic PyNN graph creation, hidden host logic, or
+unscoped v2.2 temporal-state migration.
 ```
 
 Required coverage:
 
 ```text
-Rerun the temporal-memory diagnostics and compact CRA guardrails. Preserve
-current v2.1, lag-only, fixed/random reservoir, narrowed fading-memory,
-full temporal candidate as a non-promoted reference, no-plasticity, frozen
-temporal state, shuffled temporal state, and shuffled target controls.
+Read and update the source-of-truth hierarchy before implementation:
+codebasecontract.md, this plan, CONTROLLED_TEST_PLAN.md,
+docs/PAPER_READINESS_ROADMAP.md, docs/CODEBASE_MAP.md, and relevant runtime C
+docs. Predeclare static-pool size, active masks, lineage IDs, trophic state,
+birth/cleavage/death semantics, fixed-pool and sham controls, readback fields,
+local parity criteria, and hardware-ingest artifact requirements.
 ```
 
-Do not jump straight to hardware or lifecycle. Tier 5.19b was useful but it
-narrowed the claim: fading-memory temporal state is supported; recurrence is
-not proven. Tier 5.19c decides whether that narrowed mechanism earns promotion
-or whether the whole temporal-substrate branch stays diagnostic-only.
+Do not jump straight to EBRAINS. Tier 4.30-readiness is an audit/contract gate.
+Tier 4.30 implementation starts only after the lifecycle-native contract is
+defined and the layering boundary is explicit.
 
 
 ## 13. Make-Or-Break Gates

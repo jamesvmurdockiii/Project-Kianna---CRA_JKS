@@ -101,6 +101,9 @@ REQUIRED_BASELINE_FILES = [
     "baselines/CRA_EVIDENCE_BASELINE_v2.1.md",
     "baselines/CRA_EVIDENCE_BASELINE_v2.1.json",
     "baselines/CRA_EVIDENCE_BASELINE_v2.1_STUDY_REGISTRY.snapshot.json",
+    "baselines/CRA_EVIDENCE_BASELINE_v2.2.md",
+    "baselines/CRA_EVIDENCE_BASELINE_v2.2.json",
+    "baselines/CRA_EVIDENCE_BASELINE_v2.2_STUDY_REGISTRY.snapshot.json",
 ]
 
 FORBIDDEN_GENERATED_NAMES = {".DS_Store", ".pytest_cache", "__pycache__"}
@@ -427,6 +430,14 @@ def check_frozen_baselines() -> Check:
             "core_test_count": 12,
             "expanded_test_entry_count": 28,
         },
+        "v2.2": {
+            "status": "frozen",
+            "registry_status": "pass",
+            "evidence_count": 47,
+            "core_test_count": 12,
+            "expanded_test_entry_count": 47,
+            "noncanonical_output_count": 294,
+        },
     }
     failures: list[str] = []
     for version, expected in expectations.items():
@@ -444,7 +455,7 @@ def check_frozen_baselines() -> Check:
     return Check(
         name="frozen evidence baselines are intact",
         passed=not failures,
-        details="; ".join(failures) if failures else "v0.1 through v2.1 baselines remain frozen at their recorded counts",
+        details="; ".join(failures) if failures else "v0.1 through v2.2 baselines remain frozen at their recorded counts",
     )
 
 
@@ -544,6 +555,7 @@ def build_report(checks: list[Check], registry: dict[str, Any]) -> str:
             "- Frozen v1.9 baseline: `baselines/CRA_EVIDENCE_BASELINE_v1.9.md`",
             "- Frozen v2.0 baseline: `baselines/CRA_EVIDENCE_BASELINE_v2.0.md`",
             "- Frozen v2.1 baseline: `baselines/CRA_EVIDENCE_BASELINE_v2.1.md`",
+            "- Frozen v2.2 baseline: `baselines/CRA_EVIDENCE_BASELINE_v2.2.md`",
             "- Full narrative: `docs/WHITEPAPER.md`",
             "- Reviewer defense plan: `docs/REVIEWER_DEFENSE_PLAN.md`",
             "- Codebase map: `docs/CODEBASE_MAP.md`",
@@ -588,6 +600,7 @@ def build_report(checks: list[Check], registry: dict[str, Any]) -> str:
             "- Tier 5.18 is passed noncanonical self-evaluation/metacognitive-monitoring diagnostic evidence; it supports operational pre-feedback reliability monitoring and confidence-gated adaptation over frozen v2.0, but it is not consciousness, self-awareness, hardware evidence, AGI, or a v2.1 freeze.",
             "- Tier 5.18c is baseline-frozen host-side self-evaluation compact-regression evidence; it freezes v2.1 only after the full v2.0 compact gate and Tier 5.18 guardrail both pass, and it is not consciousness, self-awareness, hardware evidence, AGI, language, planning, or external-baseline superiority.",
             "- Tier 5.9c is failed noncanonical macro-eligibility recheck evidence; the v2.1 guardrail stayed green but the macro residual still failed trace-ablation specificity, so macro eligibility remains parked and is not hardware/custom-C ready.",
+            "- Tier 5.19c is baseline-frozen host-side software fading-memory temporal-state evidence; it freezes v2.2 only after a full NEST compact regression gate and destructive temporal shams pass, and it is not bounded nonlinear recurrence, hardware evidence, native on-chip temporal dynamics, universal benchmark superiority, language, planning, AGI, or ASI.",
             "- Tier 4.20a is a passed hardware-transfer readiness audit; it classifies v2.1 mechanisms by chunked-host readiness versus future custom-runtime/on-chip blockers, but it is not SpiNNaker hardware evidence or v2.1 hardware transfer.",
             "- Tier 4.20b is passed one-seed v2.1 chunked-host bridge/transport hardware evidence; it returned real pyNN.spiNNaker execution, zero fallback, zero sim.run/readback failures, and nonzero spike readback, but it is not repeatability evidence or full native/on-chip v2.1 mechanism execution.",
             "- Tier 6.1 is controlled software lifecycle/self-scaling evidence with clean lineage and hard-switch advantage regimes; it is not full adult turnover, sham-control proof, hardware lifecycle, or external-baseline superiority.",

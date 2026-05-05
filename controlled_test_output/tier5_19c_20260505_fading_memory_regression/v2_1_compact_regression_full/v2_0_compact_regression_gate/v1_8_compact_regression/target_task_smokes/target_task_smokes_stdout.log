@@ -1,0 +1,39 @@
+[tier5.6] steps=120 task=delayed_cue model=cra_v0_8_delayed_lr_0_20 seed=42
+
+             -- N E S T --
+
+ Copyright (C) 2004 The NEST Initiative
+
+ Version: 3.10.0-rc.1
+ Built  : Apr 21 2026 08:22:09
+
+ This program is provided AS IS and comes with NO WARRANTY.
+ See the file LICENSE for details.
+
+ Problems or suggestions?
+   Visit https://www.nest-simulator.org
+
+ Type 'nest.help()' to find out more about NEST.
+
+[tier5.6] steps=120 task=delayed_cue candidate=online_perceptron__perceptron_lr_0p02_perceptron_margin_0 seed=42
+[tier5.6] steps=120 task=delayed_cue candidate=online_perceptron__perceptron_lr_0p05_perceptron_margin_0 seed=42
+[tier5.6] steps=120 task=delayed_cue candidate=online_logistic_regression__logistic_l2_0_logistic_lr_0p02 seed=42
+[tier5.6] steps=120 task=delayed_cue candidate=online_logistic_regression__logistic_l2_0_logistic_lr_0p05 seed=42
+[tier5.6] steps=120 task=hard_noisy_switching model=cra_v0_8_delayed_lr_0_20 seed=42
+[tier5.6] steps=120 task=hard_noisy_switching candidate=online_perceptron__perceptron_lr_0p02_perceptron_margin_0 seed=42
+[tier5.6] steps=120 task=hard_noisy_switching candidate=online_perceptron__perceptron_lr_0p05_perceptron_margin_0 seed=42
+[tier5.6] steps=120 task=hard_noisy_switching candidate=online_logistic_regression__logistic_l2_0_logistic_lr_0p02 seed=42
+[tier5.6] steps=120 task=hard_noisy_switching candidate=online_logistic_regression__logistic_l2_0_logistic_lr_0p05 seed=42
+{
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/v2_0_compact_regression_gate/v1_8_compact_regression/target_task_smokes",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/v2_0_compact_regression_gate/v1_8_compact_regression/target_task_smokes/tier5_6_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/v2_0_compact_regression_gate/v1_8_compact_regression/target_task_smokes/tier5_6_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/v2_0_compact_regression_gate/v1_8_compact_regression/target_task_smokes/tier5_6_summary.csv",
+  "comparisons_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/v2_0_compact_regression_gate/v1_8_compact_regression/target_task_smokes/tier5_6_comparisons.csv",
+  "best_profiles_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/v2_0_compact_regression_gate/v1_8_compact_regression/target_task_smokes/tier5_6_best_profiles.csv",
+  "candidate_budget_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/v2_0_compact_regression_gate/v1_8_compact_regression/target_task_smokes/tier5_6_candidate_budget.csv",
+  "per_seed_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/v2_0_compact_regression_gate/v1_8_compact_regression/target_task_smokes/tier5_6_per_seed.csv",
+  "fairness_contract_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/v2_0_compact_regression_gate/v1_8_compact_regression/target_task_smokes/tier5_6_fairness_contract.json",
+  "failure_reason": ""
+}

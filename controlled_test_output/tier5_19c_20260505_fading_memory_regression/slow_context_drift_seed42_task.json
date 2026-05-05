@@ -1,0 +1,16 @@
+{
+  "display_name": "Held-out slow context drift diagnostic",
+  "horizon": 8,
+  "length": 720,
+  "metadata": {
+    "hidden_timescales": "slow decay 0.975 and very_slow decay 0.994",
+    "obs_mu": -0.010265641518806285,
+    "obs_sd": 0.41543741431371406,
+    "purpose": "test narrowed fading-memory value without a recurrence claim",
+    "target_mu": 0.00043279332899205506,
+    "target_sd": 0.06914913356488449
+  },
+  "seed": 42,
+  "task": "slow_context_drift",
+  "train_end": 468
+}

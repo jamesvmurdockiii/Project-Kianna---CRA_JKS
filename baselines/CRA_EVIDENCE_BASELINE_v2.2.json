@@ -1,0 +1,472 @@
+{
+  "baseline_id": "v2.2",
+  "canonical_entries": [
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier1_20260426_155758",
+      "caveat": "Passing Tier 1 rules out obvious fake learning; it does not prove positive learning.",
+      "claim": "No usable signal and shuffled labels do not produce false learning.",
+      "entry_id": "tier1_sanity",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier2_20260426_155821",
+      "caveat": "Positive-control learning evidence depends on the controlled synthetic task definitions.",
+      "claim": "Fixed pattern, delayed reward, and nonstationary switch tasks learn above threshold.",
+      "entry_id": "tier2_learning",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier3_20260426_155852",
+      "caveat": "Ablation claims are scoped to the controlled tasks and seeds in this bundle.",
+      "claim": "Dopamine, plasticity, and trophic selection each contribute measurable value.",
+      "entry_id": "tier3_architecture",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_20260426_155103",
+      "caveat": "This baseline scaling task saturated; the honest claim is stability, not strong scaling advantage.",
+      "claim": "Fixed populations from N=4 to N=64 remain stable on the switch stressor.",
+      "entry_id": "tier4_10_population_scaling",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_10b_20260426_161251",
+      "caveat": "Hard-scaling accuracy is near baseline; the pass is based on stability plus non-accuracy scaling signals.",
+      "claim": "Hard scaling remains stable and shows value through correlation/recovery/variance rather than raw accuracy.",
+      "entry_id": "tier4_10b_hard_population_scaling",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_11_20260426_164655",
+      "caveat": "Domain transfer is proven for the controlled adapters here, not arbitrary domains.",
+      "claim": "The same CRA core transfers from finance/signed-return to non-finance sensor_control.",
+      "entry_id": "tier4_11_domain_transfer",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_12_20260426_170808",
+      "caveat": "The SpiNNaker item in Tier 4.12 is readiness prep, not a hardware learning result.",
+      "claim": "The fixed-pattern result survives NEST to Brian2 movement with zero synthetic fallback.",
+      "entry_id": "tier4_12_backend_parity",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_13_20260427_011912_hardware_pass",
+      "caveat": "Single-seed N=8 fixed-pattern capsule; not full hardware scaling or full CRA hardware deployment.",
+      "claim": "The minimal fixed-pattern CRA capsule executes through pyNN.spiNNaker with real spike readback and passes learning thresholds.",
+      "entry_id": "tier4_13_spinnaker_hardware_capsule",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_14_20260426_213430",
+      "caveat": "Derived from the single-seed N=8 Tier 4.13 hardware pass unless rerun in run-hardware mode; not hardware repeatability or scaling evidence.",
+      "claim": "The Tier 4.13 hardware pass has profiled wall-clock and sPyNNaker provenance costs; overhead is dominated by repeated per-step run/readback orchestration.",
+      "entry_id": "tier4_14_hardware_runtime_characterization",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_15_20260427_030501_hardware_pass",
+      "caveat": "Three-seed N=8 fixed-pattern capsule only; not a harder hardware task, hardware population scaling, or full CRA hardware deployment.",
+      "claim": "The minimal fixed-pattern CRA hardware capsule repeats across seeds 42, 43, and 44 with zero fallback/failures and consistent learning metrics.",
+      "entry_id": "tier4_15_spinnaker_hardware_multiseed_repeat",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_1_20260426_232530",
+      "caveat": "Controlled software comparison only; not hardware evidence, not a claim that CRA wins every task, and not proof against all possible baselines.",
+      "claim": "CRA is competitive against simple external learners and shows a defensible median-baseline advantage on sensor_control and hard noisy switching, while simpler online learners dominate the easy delayed-cue task.",
+      "entry_id": "tier5_1_external_baselines",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_2_20260426_234500",
+      "caveat": "Controlled software learning-curve characterization only; not hardware evidence, not proof that CRA cannot improve under other tasks/tuning, and not a claim that Tier 5.1 was invalid.",
+      "claim": "Across 120, 240, 480, 960, and 1500 steps, CRA's Tier 5.1 hard-task edge does not strengthen at the longest horizon: sensor_control saturates for CRA and baselines, delayed_cue remains externally dominated, and hard_noisy_switching is mixed/negative at 1500 steps.",
+      "entry_id": "tier5_2_learning_curve_sweep",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_3_20260427_055629",
+      "caveat": "Controlled software diagnostic only; not hardware evidence, not final competitiveness evidence, and hard_noisy_switching still trails the best external baseline.",
+      "claim": "A 78-run CRA-only diagnostic matrix identifies delayed-credit strength as the leading candidate failure mode: `delayed_lr_0_20` restores delayed_cue to 1.0 tail accuracy and improves hard_noisy_switching above the external median at 960 steps.",
+      "entry_id": "tier5_3_cra_failure_analysis",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_4_20260427_065412",
+      "caveat": "Controlled software confirmation only; not hardware evidence and not a superiority claim because hard_noisy_switching still trails the best external baseline.",
+      "claim": "The Tier 5.3 delayed-credit candidate `cra_delayed_lr_0_20` confirms across 960 and 1500 steps: delayed_cue stays at 1.0 tail accuracy, hard_noisy_switching beats the external median at both lengths, and the candidate does not regress versus current CRA.",
+      "entry_id": "tier5_4_delayed_credit_confirmation",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_16_20260427_184635_delayed_cue_3seed_hardware_pass",
+      "caveat": "Three-seed N=8 delayed_cue capsule only; not hard_noisy_switching hardware transfer, hardware scaling, on-chip learning, or a full Tier 4.16 pass.",
+      "claim": "The repaired delayed-credit delayed_cue regime transfers to real SpiNNaker hardware across seeds 42, 43, and 44 using chunked host replay.",
+      "entry_id": "tier4_16a_delayed_cue_hardware_repeat",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass",
+      "caveat": "Three-seed N=8 hard_noisy_switching capsule only; close-to-threshold transfer, not hardware scaling, on-chip learning, lifecycle/self-scaling, or external-baseline superiority.",
+      "claim": "The repaired hard_noisy_switching regime transfers to real SpiNNaker hardware across seeds 42, 43, and 44 using chunked host replay.",
+      "entry_id": "tier4_16b_hard_switch_hardware_repeat",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_18a_20260428_012822_hardware_pass",
+      "caveat": "Single-seed N=8 runtime/resource characterization only; not hardware scaling, lifecycle/self-scaling, native on-chip dopamine/eligibility, continuous/custom-C runtime, or external-baseline superiority.",
+      "claim": "The v0.7 chunked-host SpiNNaker path remains stable on delayed_cue and hard_noisy_switching at chunk sizes 10, 25, and 50; chunk 50 is the fastest viable default for the current hardware bridge.",
+      "entry_id": "tier4_18a_chunked_runtime_baseline",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_26_20260502_pass_ingested",
+      "caveat": "Single-seed seed-42 smoke on one chip only; not speedup evidence, not multi-chip scaling, not a general multi-core framework, and not full native v2.1 autonomy.",
+      "claim": "Four independent SpiNNaker cores can hold distributed context, route, memory, and learning state and cooperate via inter-core SDP lookup request/reply to reproduce the monolithic single-core delayed-credit result within tolerance.",
+      "entry_id": "tier4_26_four_core_distributed_smoke",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_27a_20260502_pass_ingested",
+      "caveat": "Single-seed seed-42 smoke on one chip only; not speedup evidence, not multi-chip scaling, not a general multi-core framework, not full native v2.1 autonomy, and not MCPL/multicast. SDP remains transitional.",
+      "claim": "The four-core SDP scaffold can be instrumented to measure lookup request/reply counts, stale replies, timeouts, schema version, payload bytes, and per-core commands. Hardware execution reproduces the monolithic reference within tolerance while providing counter telemetry.",
+      "entry_id": "tier4_27a_four_core_characterization",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_27e_20260502_local_pass",
+      "caveat": "Local build and wiring validation only. NOT hardware evidence. Router table behavior on actual SpiNNaker chip not yet validated. Multi-state-core (context+route+memory) MCPL routing not yet tested.",
+      "claim": "MCPL is fully wired into the distributed lookup state machine: learning core sends requests via multicast payload, state core receives via MCPL callback and replies via MCPL, learning core stores results. Router table init per core role. Local builds pass for both profiles with ITCM under budget.",
+      "entry_id": "tier4_27e_two_core_mcpl_smoke",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_27f_20260502_local_pass",
+      "caveat": "Local build and wiring validation only. NOT hardware evidence. Actual router table behavior with multiple state cores on a single chip not yet validated. SDP-vs-MCPL comparison not yet performed.",
+      "claim": "MCPL supports three state cores (context/route/memory) replying to a single learning core. Learning core uses a single broad router entry (0xFFFF0000 mask) to catch all reply types. All four profile .aplx images build with MCPL enabled and fit within ITCM budget.",
+      "entry_id": "tier4_27f_three_core_mcpl_smoke",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_27g_20260502_local_pass",
+      "caveat": "Source-code analysis only. NOT hardware timing measurements. NOT router-table hardware validation. NOT multi-chip scaling evidence.",
+      "claim": "MCPL reduces per-lookup round-trip from 54 bytes (SDP) to 16 bytes (71% reduction). For 48-event schedule, inter-core lookup traffic drops from ~8,064 bytes to ~2,304 bytes. Latency improves from ~5-20 us (monitor-bound SDP) to ~0.5-2 us (hardware router). MCPL requires 4 router entries but scales better than SDP. Recommendation: make MCPL default for Tier 4.28+.",
+      "entry_id": "tier4_27g_sdp_vs_mcpl_comparison",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_28a_20260502_mcpl_hardware_pass_ingested",
+      "caveat": "Single-chip four-core only; not multi-chip scaling, not speedup evidence, not full v2.1 mechanism transfer, not continuous host-free operation. Host still required for setup and readback. SDP fallback code remains in source but is not the active data plane for v0.1 baseline.",
+      "claim": "MCPL-based four-core distributed lookup executes successfully on SpiNNaker hardware across three seeds (42, 43, 44). All 38/38 criteria pass per seed. Zero stale replies, zero timeouts, 144 lookup requests and 144 lookup replies per seed. Learning core readout weight=32768, bias=0, pending=48/48. ITCM sizes: context_core 11248B, route_core 11280B, memory_core 11280B, learning_core 12968B.",
+      "entry_id": "tier4_28a_four_core_mcpl_repeatability",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_28b_20260502_hardware_pass_ingested",
+      "caveat": "Single-seed probe (seed 42) on one chip only. Not three-seed repeatability, not multi-chip scaling, not speedup evidence, not full v2.1 mechanism transfer. Host still required for setup and readback.",
+      "claim": "The four-core MCPL distributed scaffold executes a 48-event delayed-cue task (target=-feature) on SpiNNaker hardware. Weight converges to -32769 (~-1.0), bias=-1 (~0). All 38/38 criteria pass. Zero stale replies, zero timeouts, 144 lookup requests/replies.",
+      "entry_id": "tier4_28b_delayed_cue_four_core_mcpl",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_28c_20260503_hardware_pass_ingested",
+      "caveat": "Single-chip four-core only. Not multi-chip scaling, not speedup evidence, not full v2.1 mechanism transfer. Host still required for setup and readback.",
+      "claim": "The four-core MCPL distributed scaffold executes a 48-event delayed-cue task (target=-feature) across seeds 42, 43, and 44. All 38/38 criteria pass per seed. Weight converges to -32769, bias=-1 on all three seeds. Zero stale replies, zero timeouts, 144 lookup requests/replies per seed.",
+      "entry_id": "tier4_28c_delayed_cue_repeatability",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_28d_20260503_hardware_pass_ingested",
+      "caveat": "Single-chip four-core only. Host-pre-written regime context; not autonomous regime detection. Not multi-chip scaling, not speedup evidence, not full v2.1 mechanism transfer. Host still required for setup and readback.",
+      "claim": "The four-core MCPL distributed scaffold executes a ~62-event hard_noisy_switching task (regime switches, 20% noisy trials, variable delay 3-5) across seeds 42, 43, and 44. All 38/38 criteria pass per seed. Weight converges to 34208 (~+1.04), bias=-1440 (~-0.04) on all three seeds. Zero variance across seeds. Zero stale replies, zero timeouts, 186 lookup requests/replies per seed.",
+      "entry_id": "tier4_28d_hard_noisy_switching",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_28e_pointA_20260503_hardware_pass_ingested",
+      "caveat": "Single-chip four-core only. Host-pre-written regime context. Not multi-chip scaling, not speedup evidence, not full v2.1 mechanism transfer. Point A is one of three probe points (A/B/C) in the failure-envelope report.",
+      "claim": "Four-core MCPL runtime passes at schedule limit (64 events) with delay=1, noise=0.6. All 38/38 criteria pass. Weight=-3225, bias=8530. Pending=64/64, lookups=192/192, stale=0, timeouts=0. Host reference updated to exact hardware timing (one-tick MCPL lookup latency).",
+      "entry_id": "tier4_28e_failure_envelope_pointA",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_28e_pointC_20260503_hardware_pass_ingested",
+      "caveat": "Single-chip four-core only. Host-pre-written regime context. Not multi-chip scaling, not speedup evidence, not full v2.1 mechanism transfer. Point C is one of three probe points (A/B/C) in the failure-envelope report.",
+      "claim": "Four-core MCPL runtime passes with high pending pressure (max_concurrent_pending=10) and longer delays (delay=7-10), noise=0.2, 43 events. All 38/38 criteria pass. Weight=101376, bias=5120, exact 0% error vs reference. Pending=43/43, lookups=129/129, stale=0, timeouts=0. Confirms safe operation well below schedule limit with accurate exact-HW-timing reference.",
+      "entry_id": "tier4_28e_failure_envelope_pointC",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_29a_20260503_hardware_pass_ingested",
+      "caveat": "Single-chip four-core only. Host-pre-written keyed context slots. Schedule-driven (not true continuous generation). Not multi-chip scaling, not speedup evidence, not full v2.1 mechanism transfer. MAX_SCHEDULE_ENTRIES=512 allows longer task streams but still uses pre-loaded static schedule.",
+      "claim": "Native four-core MCPL runtime handles keyed context memory with wrong-key, overwrite, and slot-shuffle controls across seeds 42, 43, 44 on three different boards. All 47/47 criteria pass per seed (141/141 total). Weight=32768, bias=0, pending=32/32, active_pending=0, decisions=32, reward_events=32, lookup_requests=96, lookup_replies=96, stale=0, timeouts=0, context hits=26, misses=6, active_slots=8, slot_writes=9. Exact parity with local reference on all three seeds.",
+      "entry_id": "tier4_29a_native_keyed_memory_overcapacity",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_5_20260427_222736",
+      "caveat": "Controlled software evidence only; not hardware evidence, not a hyperparameter fairness audit, not a universal superiority claim, and not proof that CRA beats the best external baseline at every horizon.",
+      "claim": "The locked CRA v0.8 delayed-credit configuration completes the 1,800-run expanded baseline matrix, shows robust advantage regimes, and is not dominated on most hard/adaptive regimes while documenting where strong external baselines tie or win.",
+      "entry_id": "tier5_5_expanded_baselines",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_6_20260428_001834",
+      "caveat": "Controlled software fairness audit only; not hardware evidence, not universal superiority, and not proof that CRA beats the best tuned external baseline at every metric or horizon.",
+      "claim": "With CRA locked at the promoted delayed-credit setting, the 990-run Tier 5.6 audit gives external baselines a documented tuning budget and finds surviving target regimes after retuning.",
+      "entry_id": "tier5_6_baseline_hyperparameter_fairness_audit",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260428_005723",
+      "caveat": "Controlled software regression evidence only; not a new capability claim, not hardware evidence, not lifecycle/self-scaling evidence, and not external-baseline superiority.",
+      "claim": "The promoted v1.0 delayed-credit setting passes compact negative controls, positive learning controls, architecture ablations, and delayed_cue/hard_noisy_switching smoke checks before lifecycle/self-scaling work.",
+      "entry_id": "tier5_7_compact_regression",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_12a_20260429_054052",
+      "caveat": "Task-validation evidence only; not CRA predictive coding, world modeling, language, planning, hardware prediction, or a v1.8 freeze.",
+      "claim": "Predictive-pressure streams defeat current-reflex, sign-persistence, wrong-horizon, and shuffled-target shortcuts while causal predictive-memory controls solve them.",
+      "entry_id": "tier5_12a_predictive_task_pressure",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_12c_20260429_062256",
+      "caveat": "Host-side software evidence only; Tier 5.12d provides the separate promotion gate. Not hidden-regime inference, full world modeling, language, planning, hardware prediction, hardware scaling, native on-chip learning, compositionality, or external-baseline superiority.",
+      "claim": "Internal visible predictive-context binding matches the external scaffold and beats v1.7 reactive CRA, shuffled/permuted/no-write shams, shortcut controls, and selected external baselines.",
+      "entry_id": "tier5_12c_predictive_context_sham_repair",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070615",
+      "caveat": "Software-only promotion gate; v1.8 remains bounded to visible predictive-context tasks and is not hidden-regime inference, full world modeling, language, planning, hardware prediction, hardware scaling, native on-chip learning, compositionality, or external-baseline superiority.",
+      "claim": "The host-side visible predictive-context mechanism preserves Tier 1/2/3 controls, target hard-task smokes, v1.7 replay/consolidation guardrails, and predictive sham separation, authorizing a bounded v1.8 software baseline.",
+      "entry_id": "tier5_12d_predictive_context_compact_regression",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier6_1_20260428_012109",
+      "caveat": "Controlled software lifecycle evidence only; growth is cleavage-dominated with one adult birth and zero deaths, so this is not full adult turnover, not sham-control proof, not hardware lifecycle evidence, and not external-baseline superiority.",
+      "claim": "Lifecycle-enabled CRA expands from fixed initial populations with clean lineage tracking and shows hard_noisy_switching advantage regimes versus same-initial fixed-N controls.",
+      "entry_id": "tier6_1_lifecycle_self_scaling",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier6_3_20260428_121504",
+      "caveat": "Controlled software sham-control evidence only; replay/shuffle controls are audit artifacts, not independent learners, and this is not hardware lifecycle evidence, full adult turnover, external-baseline superiority, or compositional/world-model evidence.",
+      "claim": "Lifecycle-enabled CRA beats fixed max-pool, event-count replay, no-trophic, no-dopamine, and no-plasticity sham controls on hard_noisy_switching while preserving clean lineage integrity.",
+      "entry_id": "tier6_3_lifecycle_sham_controls",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier6_4_20260428_144354",
+      "caveat": "Controlled software motif-causality evidence only; motif-diverse graph is seeded for this suite, motif-label shuffle shows labels alone are not causal, and this is not hardware motif evidence, custom-C/on-chip learning, compositionality, or full world-model evidence.",
+      "claim": "Seeded motif-diverse CRA passes motif-causality controls on hard_noisy_switching: ablations cause predicted losses, motif activity is logged before reward/learning, and random/monolithic controls do not dominate across adaptation metrics.",
+      "entry_id": "tier6_4_circuit_motif_causality",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_29b_20260503_hardware_pass_ingested",
+      "caveat": "Native routing/composition hardware evidence only; not speedup evidence, not multi-chip scaling, not a general multi-core framework, not full native v2.1 autonomy, and not true continuous generation.",
+      "claim": "Native keyed context * route composition works on real SpiNNaker across three seeds on three different boards with explicit wrong-context, wrong-route, overwrite, and host-composed sham controls.",
+      "entry_id": "tier4_29b_native_routing_composition_gate",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_29c_20260504_pass_ingested",
+      "caveat": "Native predictive binding hardware evidence only; not speedup evidence, not multi-chip scaling, not full native v2.1 autonomy, not continuous generation, and not general task learning.",
+      "claim": "Native four-core runtime separates prediction target from reward target before outcome on real SpiNNaker across three seeds on three different boards. All 24/24 criteria pass per seed (72/72 total). Full-context prediction weight=30912, bias=-1856; zero-context prediction weight=0, bias=0. Confidence parity confirms prediction-before-reward isolation.",
+      "entry_id": "tier4_29c_native_predictive_binding",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_29d_20260504_pass_ingested",
+      "caveat": "Native confidence-gated learning hardware evidence only; not speedup evidence, not multi-chip scaling, not full native v2.1 autonomy, not continuous generation, not dynamic lifecycle, and not external-baseline superiority.",
+      "claim": "Native four-core runtime gates learning by composite confidence (context \u00d7 route \u00d7 memory) on real SpiNNaker across three seeds on three different boards. All 30/30 criteria pass per seed (90/90 total). Full confidence weight=30912, bias=-1856; zero confidence weight=0, bias=0; zero-context confidence weight=0, bias=0; half-context confidence weight=28093, bias=3517. MCPL lookup lacks confidence transmission; SDP used instead.",
+      "entry_id": "tier4_29d_native_self_evaluation",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_29e_20260505_pass_ingested",
+      "caveat": "Native host-scheduled replay/consolidation bridge evidence only; not native on-chip replay buffers, not biological sleep, not speedup evidence, not multi-chip scaling, not full native autonomy, and not external-baseline superiority.",
+      "claim": "Host-scheduled replay/consolidation events run through native four-core state primitives on real SpiNNaker across three seeds on three different boards. All 38/38 criteria pass per seed (114/114 total). Correct replay changes readout weight versus no replay, wrong-key replay blocks weight consolidation, and random-event replay stays distinct from correct replay.",
+      "entry_id": "tier4_29e_native_replay_consolidation",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_29f_20260505_native_mechanism_regression",
+      "caveat": "Evidence-regression gate over already-ingested real hardware passes; not a new hardware execution, not a single monolithic all-mechanism task, not lifecycle/self-scaling evidence, not multi-chip scaling, and not speedup evidence.",
+      "claim": "The canonical hardware evidence for native keyed memory, routing/composition, predictive binding, confidence gating, and host-scheduled replay/consolidation remains complete and internally aligned. All 113/113 evidence-regression criteria pass.",
+      "entry_id": "tier4_29f_compact_native_mechanism_regression",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_0_20260505_standard_dynamical_benchmarks",
+      "caveat": "Software diagnostic evidence only; not hardware evidence, not a superiority claim, not a tuning run, not a new baseline freeze, and not evidence that CRA is generally weak outside these continuous-regression benchmarks. It triggers Tier 7.0b failure analysis before mechanism changes or hardware migration.",
+      "claim": "The Tier 7.0 software benchmark harness completed Mackey-Glass, Lorenz, NARMA10, and aggregate geometric-mean MSE across CRA v2.1 and standard causal sequence baselines. It diagnosed CRA v2.1 online underperformance on these continuous-valued dynamical regression benchmarks: CRA ranked 5/5 by aggregate geomean MSE, while the echo-state network was best.",
+      "entry_id": "tier7_0_standard_dynamical_benchmarks",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_0b_20260505_continuous_regression_failure_analysis",
+      "caveat": "Software diagnostic evidence only; not a tuning run, not a promoted mechanism, not hardware evidence, not a new baseline freeze, and not proof that a repaired CRA will beat standard baselines. It authorizes a bounded continuous readout/interface repair tier before hardware migration.",
+      "claim": "Tier 7.0b localized the Tier 7.0 continuous-regression gap to a recoverable state-signal/default-readout failure. A leakage-safe ridge probe over CRA internal state improved aggregate geomean MSE from raw CRA 1.2233 to 0.4433, and CRA state plus the same causal lag budget improved to 0.0544; shuffled-target state control remained worse at 0.7533.",
+      "entry_id": "tier7_0b_continuous_regression_failure_analysis",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_0c_20260505_continuous_readout_repair",
+      "caveat": "Software repair-candidate evidence only; not hardware evidence, not a new baseline freeze, not a promoted CRA mechanism, and not a superiority claim. The correct next move is a stricter state-specific repair or claim narrowing, not hardware migration.",
+      "claim": "Tier 7.0c converted the Tier 7.0b state-signal diagnosis into a bounded online continuous readout/interface repair candidate. The best repair improved aggregate geomean MSE over raw CRA by 6.424x and beat shuffled/frozen controls, but lag-only online LMS still performed better and explains most of the benchmark gain.",
+      "entry_id": "tier7_0c_continuous_readout_repair",
+      "status": "pass"
+    },
+    {
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_0d_20260505_state_specific_continuous_interface",
+      "caveat": "Software diagnostic evidence only; not hardware evidence, not a baseline freeze, not a promoted continuous-readout mechanism, and not a superiority claim. The Tier 7 continuous-regression benchmark path should be narrowed and not migrated to hardware unless a future mechanism changes the failure class.",
+      "claim": "Tier 7.0d tested whether CRA state adds value beyond causal lag regression on Mackey-Glass, Lorenz, and NARMA10. It passed 10/10 integrity criteria and classified the benchmark path as lag-regression explained: train-prefix ridge lag-only beat lag+state probes, the best state-specific online candidate only marginally beat lag-only, and shuffled residual controls matched or exceeded the candidate.",
+      "entry_id": "tier7_0d_state_specific_continuous_interface",
+      "status": "pass"
+    }
+  ],
+  "canonical_evidence_count": 47,
+  "claim_boundaries": [
+    "v2.2 is host-side software evidence for bounded multi-timescale fading-memory temporal state.",
+    "v2.2 does not prove bounded nonlinear recurrence; Tier 5.19b/5.19c explicitly leave recurrence unproven.",
+    "v2.2 does not prove hardware transfer or native on-chip temporal dynamics.",
+    "v2.2 does not prove universal superiority on Mackey-Glass, Lorenz, NARMA10, or external baselines; lag-only remains stronger on the standard-three geomean in this gate.",
+    "v2.2 does not prove language, long-horizon planning, AGI, or ASI."
+  ],
+  "core_test_count": 12,
+  "evidence_count": 47,
+  "expanded_test_entry_count": 47,
+  "failed_canonical_criteria": [],
+  "files_frozen": [
+    "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.2.json",
+    "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.2.md",
+    "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.2_STUDY_REGISTRY.snapshot.json"
+  ],
+  "freeze_rule": "Historical evidence lock after Tier 5.19c passed the narrowed fading-memory temporal-state promotion gate and reran the full v2.1 compact regression guardrail on NEST.",
+  "frozen_at_utc": "2026-05-05T19:03:36.955036+00:00",
+  "missing_expected_artifacts": [],
+  "next_recommended_evidence": [
+    "Run Tier 4.30-readiness audit to decide whether lifecycle-native work layers on v2.2 or remains on v2.1.",
+    "If temporal substrate is migrated later, first define a native temporal-state readiness tier; do not jump directly to SpiNNaker.",
+    "If bounded nonlinear recurrence is still desired, design a separate recurrence-repair tier; do not cite v2.2 as recurrence evidence."
+  ],
+  "noncanonical_output_count": 294,
+  "promotion_gate": {
+    "compact_backend": "nest",
+    "compact_mode": "full",
+    "compact_pass": true,
+    "criteria_passed": 11,
+    "criteria_total": 11,
+    "freeze_authorized": true,
+    "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression",
+    "runner_revision": "tier5_19c_fading_memory_regression_20260505_0001",
+    "runtime_seconds": 1563.5435204999999,
+    "status": "pass",
+    "tier": "Tier 5.19c - Fading-Memory Narrowing / Compact-Regression Decision"
+  },
+  "registry_status": "pass",
+  "source_registry_generated_at_utc": "2026-05-05T19:02:48.153050+00:00",
+  "status": "frozen",
+  "strongest_claim": "CRA has a bounded v2.2 host-side software baseline for multi-timescale fading-memory temporal state: fading-memory traces improve held-out temporal-memory diagnostics versus raw v2.1, lag-only, frozen/shuffled temporal-state shams, shuffled-target controls, and no-plasticity controls while the full v2.1 compact regression guardrail remains green.",
+  "tier5_19c_summary": {
+    "claim": "bounded multi-timescale fading-memory temporal state",
+    "geomean": {
+      "standard_candidate_mse": 0.19853975759572184,
+      "standard_lag_mse": 0.15368196619186625,
+      "standard_margin_vs_lag": 0.7740614174859747,
+      "standard_margin_vs_raw_v2_1": 3.774190928552936,
+      "standard_raw_v2_1_mse": 0.7493269520748722,
+      "temporal_candidate_mse": 0.22752229502159751,
+      "temporal_frozen_mse": 0.29067054823266797,
+      "temporal_lag_mse": 0.8953538816902333,
+      "temporal_margin_vs_lag": 3.9352358044966187,
+      "temporal_margin_vs_raw_v2_1": 9.599924553845483,
+      "temporal_margins_vs_destructive_shams": {
+        "frozen": 1.277547539704081,
+        "no_plasticity": 9.599924553845483,
+        "shuffled_state": 5.6817606027374215,
+        "shuffled_target": 4.9627458753378315
+      },
+      "temporal_no_plasticity_mse": 2.18419686652511,
+      "temporal_raw_v2_1_mse": 2.18419686652511,
+      "temporal_shuffled_state_mse": 1.2927272120981133,
+      "temporal_shuffled_target_mse": 1.1291353311658303
+    },
+    "nonclaims": [
+      "not bounded nonlinear recurrence",
+      "not hardware evidence",
+      "not native on-chip temporal dynamics",
+      "not universal benchmark superiority",
+      "not language, planning, AGI, or ASI"
+    ],
+    "outcome": "fading_memory_ready_for_v2_2_freeze",
+    "recommendation": "Freeze a bounded v2.2 software baseline for multi-timescale fading-memory temporal state; do not claim nonlinear recurrence.",
+    "standard_tasks": [
+      "mackey_glass",
+      "lorenz",
+      "narma10"
+    ],
+    "task_lag_wins": 3,
+    "temporal_metrics": {
+      "heldout_long_memory": {
+        "candidate_mse": 0.3653083872204199,
+        "frozen_mse": 0.5685427820285273,
+        "full_reference_mse": 0.38570722690740805,
+        "lag_mse": 1.2710078678632046,
+        "margin_vs_frozen": 1.5563365143474783,
+        "margin_vs_lag": 3.4792737104508453,
+        "margin_vs_no_plasticity": 8.14389588889863,
+        "margin_vs_raw_v2_1": 8.14389588889863,
+        "margin_vs_shuffled_state": 5.173690104384198,
+        "margin_vs_shuffled_target": 4.867187873042798,
+        "no_plasticity_mse": 2.9750334728645664,
+        "raw_v2_1_mse": 2.9750334728645664,
+        "shuffled_state_mse": 1.8899923880108374,
+        "shuffled_target_mse": 1.7780245522000506
+      },
+      "multiscale_echo": {
+        "candidate_mse": 0.4325717367470247,
+        "frozen_mse": 0.358163067554659,
+        "full_reference_mse": 0.45096284321205343,
+        "lag_mse": 1.3483432700742046,
+        "margin_vs_frozen": 0.8279853654981597,
+        "margin_vs_lag": 3.1170396850563047,
+        "margin_vs_no_plasticity": 10.120097274596253,
+        "margin_vs_raw_v2_1": 10.120097274596253,
+        "margin_vs_shuffled_state": 3.3638572631712513,
+        "margin_vs_shuffled_target": 2.7055485529640486,
+        "no_plasticity_mse": 4.3776680541209325,
+        "raw_v2_1_mse": 4.3776680541209325,
+        "shuffled_state_mse": 1.4551095784990815,
+        "shuffled_target_mse": 1.1703438364090581
+      },
+      "slow_context_drift": {
+        "candidate_mse": 0.074533942806697,
+        "frozen_mse": 0.12060328518305595,
+        "full_reference_mse": 0.08148993382930726,
+        "lag_mse": 0.418827752735567,
+        "margin_vs_frozen": 1.6180988237243707,
+        "margin_vs_lag": 5.619288836252664,
+        "margin_vs_no_plasticity": 10.734617145204638,
+        "margin_vs_raw_v2_1": 10.734617145204638,
+        "margin_vs_shuffled_state": 10.539277076712002,
+        "margin_vs_shuffled_target": 9.281809888645052,
+        "no_plasticity_mse": 0.8000933403524716,
+        "raw_v2_1_mse": 0.8000933403524716,
+        "shuffled_state_mse": 0.7855338748595851,
+        "shuffled_target_mse": 0.691809887382905
+      }
+    },
+    "temporal_tasks": [
+      "heldout_long_memory",
+      "slow_context_drift",
+      "multiscale_echo"
+    ]
+  }
+}

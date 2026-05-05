@@ -149,6 +149,7 @@ Tier 4.18a v0.7 chunked hardware runtime baseline: passed
 Tier 4.20a v2.1 hardware-transfer readiness audit: passed (engineering plan, not hardware evidence)
 Tier 4.20b v2.1 one-seed chunked hardware probe: passed (bridge/transport evidence)
 Tier 4.20c v2.1 three-seed chunked hardware repeat: passed (bridge/transport repeatability)
+Tier 5.19c fading-memory compact-regression gate: passed and froze v2.2 (software only)
 Tier 4.21a keyed context-memory hardware bridge probe: passed (one-seed bridge evidence)
 Tier 4.22a custom runtime contract: passed (engineering contract)
 Tier 4.22a0 SpiNNaker-constrained local preflight: passed (transfer-risk reduction)
@@ -6270,8 +6271,9 @@ Near-term roadmap insertion:
    promising, recurrence-specific value not yet separated.
 3. Tier 5.19b - Benchmark and sham-control gate. COMPLETE: fading-memory value
    supported; bounded nonlinear recurrence still not proven.
-4. Tier 5.19c - Fading-memory narrowing / compact-regression decision. CURRENT.
-5. Tier 4.30-readiness audit.
+4. Tier 5.19c - Fading-memory narrowing / compact-regression decision.
+   COMPLETE: v2.2 frozen for bounded fading-memory temporal state only.
+5. Tier 4.30-readiness audit. CURRENT.
 6. Tier 4.30 lifecycle-native contract, if still appropriate.
 ```
 
@@ -6300,6 +6302,23 @@ recurrence-pressure diagnostic did not separate from lag-only or state-reset
 cannot claim bounded nonlinear recurrence from 5.19b. The next valid step is a
 narrowed fading-memory promotion/regression decision or a separate recurrence
 repair.
+```
+
+Tier 5.19c result:
+
+```text
+Output: controlled_test_output/tier5_19c_20260505_fading_memory_regression/
+Runner: experiments/tier5_19c_fading_memory_regression.py
+Criteria: 11/11
+Classification: fading_memory_ready_for_v2_2_freeze
+Baseline frozen: baselines/CRA_EVIDENCE_BASELINE_v2.2.md
+Compact regression: full NEST compact gate passed
+Key metric: temporal-memory geomean candidate MSE 0.2275 vs lag-only 0.8954
+            (3.94x margin) and raw v2.1 2.1842 (9.60x margin)
+Boundary: bounded host-side fading-memory temporal state only; not bounded
+          nonlinear recurrence, not hardware/on-chip temporal dynamics, not
+          universal benchmark superiority, not language/planning/AGI/ASI.
+Next: Tier 4.30-readiness audit before lifecycle-native implementation.
 ```
 
 Detailed Tier 5.19 contract:
