@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-05T15:06:17-04:00.
+Last updated: 2026-05-05T15:28:26-04:00.
 
 Current repo root:
 
@@ -58,11 +58,12 @@ FROZEN: CRA_NATIVE_MECHANISM_BRIDGE_v0.3
             not a monolithic all-mechanism task, not lifecycle, not multi-chip,
             not speedup, and not external-baseline superiority.
   Supersedes: CRA_NATIVE_TASK_BASELINE_v0.2
-  Next: Tier 4.30-readiness audit, then Tier 4.30 lifecycle-native contract.
-        Lifecycle hardware must explicitly state whether it layers on v2.2
-        software state, the v2.1-era native mechanism bridge, or a scoped subset
-        of each. Temporal-state hardware migration is not automatic from v2.2;
-        it requires a separately defined native temporal-readiness tier.
+  Current: Tier 4.30-readiness PASS, 16/16.
+  Next: Tier 4.30 lifecycle-native contract.
+        Lifecycle hardware layers initially on CRA_NATIVE_MECHANISM_BRIDGE_v0.3,
+        with v2.2 as a software reference boundary only. Temporal-state hardware
+        migration is not automatic from v2.2; it requires a separately defined
+        native temporal-readiness tier.
 ```
 
 Current active tier state:
@@ -298,14 +299,19 @@ Tier 5.19c — COMPLETE. Fading-memory narrowing / compact-regression decision.
     nonlinear recurrence, not hardware/on-chip temporal dynamics, not language,
     planning, AGI, or ASI.
 
-Tier 4.30-readiness — CURRENT NEXT. Lifecycle-native preflight / layering audit.
+Tier 4.30-readiness — COMPLETE. Lifecycle-native preflight / layering audit.
+  Status: PASS, 16/16 criteria.
+  Runner: experiments/tier4_30_readiness_audit.py
+  Output: controlled_test_output/tier4_30_readiness_20260505_lifecycle_native_audit/
   Purpose: decide exactly how native lifecycle work layers on the current repo
     state before writing Tier 4.30 hardware code.
+  Decision: initial lifecycle-native work layers on
+    CRA_NATIVE_MECHANISM_BRIDGE_v0.3, with v2.2 as software reference only.
   Rule: confirm source-of-truth docs, native mechanism bridge status, v2.2
     software boundary, static-pool constraints, metrics, shams, and artifacts
     before implementation.
 
-Tier 4.30 — QUEUED AFTER READINESS AUDIT. Lifecycle-native contract.
+Tier 4.30 — CURRENT NEXT. Lifecycle-native contract.
   Purpose: define how lifecycle/self-scaling moves onto the custom runtime using
     a static preallocated pool.
   Rule: birth/cleavage/death are active-mask, allocation, lineage, and trophic
@@ -451,18 +457,13 @@ Local build capability (established 2026-05-02):
 
 Immediate next steps:
 
-1. Close and commit Tier 5.19c / v2.2 with docs, registry, audit, validation,
-   and baseline files synchronized.
-2. Run Tier 4.30-readiness audit before writing lifecycle-native code. The audit
-   must decide whether lifecycle hardware layers on v2.2 software state, the
-   v2.1-era native mechanism bridge, or a deliberately scoped subset of each.
-3. Define Tier 4.30 lifecycle-native contract after the audit: static max pool,
+1. Define Tier 4.30 lifecycle-native contract after the audit: static max pool,
    active masks, lineage IDs, trophic state, birth/cleavage/death counters,
    fixed-pool and sham controls, and exact readback fields.
-4. Do not migrate v2.2 temporal fading-memory state to hardware merely because
+2. Do not migrate v2.2 temporal fading-memory state to hardware merely because
    v2.2 froze. Native temporal-state migration requires a separate readiness
    tier with fixed-point state equations and local parity.
-5. Keep public repo hygiene green before the next upload or commit: no
+3. Keep public repo hygiene green before the next upload or commit: no
    credentialed remotes, no `ebrains_jobs/` symlinks, no transient root output
    dirs, no generated host binaries, and `make validate` passing.
 

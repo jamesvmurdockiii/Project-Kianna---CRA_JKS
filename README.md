@@ -22,7 +22,8 @@ controlled ablations, baseline comparisons, and explicit claim boundaries.
 | Native hardware baseline | `CRA_NATIVE_MECHANISM_BRIDGE_v0.3`, frozen after Tier 4.29f audited the 4.29a-e native mechanism hardware passes. |
 | Latest ingested hardware pass | Tier 4.29e, native host-scheduled replay/consolidation bridge, `38/38` criteria per seed across seeds `42`, `43`, and `44`. |
 | Latest software benchmark diagnostic | Tier 5.19c fading-memory narrowing gate passed and froze v2.2: fading-memory temporal state is promoted, while bounded nonlinear recurrence and universal benchmark superiority remain unproven. |
-| Active next gate | Tier 4.30-readiness audit, then Tier 4.30 lifecycle-native contract if the v2.2/v2.1 layering decision is explicit. |
+| Latest engineering audit | Tier 4.30-readiness passed `16/16`, selecting a static-pool lifecycle-native path layered on `CRA_NATIVE_MECHANISM_BRIDGE_v0.3` with v2.2 as software reference only. |
+| Active next gate | Tier 4.30 lifecycle-native contract: static pool, active masks, lineage, trophic counters, lifecycle shams, and readback schema. |
 | Canonical registry | 47 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
 | Validation suite | 147 pytest tests plus registry, paper-table, and repository-audit generation. |
 

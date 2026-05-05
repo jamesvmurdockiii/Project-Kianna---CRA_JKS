@@ -1,0 +1,13 @@
+field,type,owner,required_for,initial_value,readback
+slot_id,uint16,lifecycle_core,stable static-pool index,0..pool_size-1,True
+active_mask,uint8,lifecycle_core,activate/silence preallocated units,founder slots active only,True
+polyp_id,uint32,lifecycle_core,auditable identity,stable deterministic id,True
+lineage_id,uint32,lifecycle_core,lineage accounting,founder lineage id,True
+parent_slot,int16,lifecycle_core,birth/cleavage provenance,-1 for founders,True
+generation,uint16,lifecycle_core,cleavage/birth depth,0,True
+age_steps,uint32,lifecycle_core,maturity / juvenile gates,0,True
+trophic_health,s16.15,lifecycle_core,survival/reproduction gates,initial trophic seed,True
+cyclin_d,s16.15,lifecycle_core,reproduction gate,0,True
+bax,s16.15,lifecycle_core,death gate,0,True
+last_event_type,uint8,lifecycle_core,event audit,none,True
+event_count,uint32,lifecycle_core,lifecycle telemetry,0,True

@@ -1,0 +1,8 @@
+{
+  "generated_at_utc": "2026-05-05T19:31:07+00:00",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_30_readiness_20260505_lifecycle_native_audit/tier4_30_readiness_results.json",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_30_readiness_20260505_lifecycle_native_audit",
+  "runner_revision": "tier4_30_readiness_audit_20260505_0001",
+  "status": "pass",
+  "tier": "Tier 4.30-readiness - Lifecycle-Native Preflight / Layering Audit"
+}

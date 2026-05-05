@@ -1,0 +1,7 @@
+name,purpose,expected_effect
+fixed_static_pool_control,Shows any benefit is not just the preallocated max capacity.,Lifecycle-enabled path must beat or differ from fixed active mask only on lifecycle-pressure tasks.
+random_event_replay_control,Matches event count while destroying event causality.,Random matched events should not reproduce lineage/trophic/task benefit.
+active_mask_shuffle_control,Destroys identity-to-slot binding while preserving active count.,Mask shuffle should break lineage-specific or specialist reuse claims.
+lineage_id_shuffle_control,Checks whether lineage bookkeeping is causal or decorative.,Lineage shuffle should damage lineage-dependent claims without changing raw capacity.
+no_trophic_pressure_control,Removes ecology pressure while leaving state machinery alive.,No-trophic path should lose lifecycle selection-specific effects.
+no_dopamine_or_plasticity_control,Separates lifecycle bookkeeping from actual learning/reward coupling.,No learning/plasticity should not pass task-effect gates.

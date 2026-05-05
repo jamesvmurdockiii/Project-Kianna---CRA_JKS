@@ -119,6 +119,7 @@ They remain part of the peer-review audit trail:
 5.19a local continuous temporal substrate reference = completed; fading memory helped held-out long-memory task, recurrence-specific value not yet separated
 5.19b temporal-substrate benchmark/sham gate = completed; fading memory supported, bounded nonlinear recurrence unproven
 5.19c fading-memory narrowing compact-regression gate = passed and froze bounded v2.2
+4.30-readiness lifecycle-native preflight/layering audit = passed; static-pool lifecycle-native path layers on native mechanism bridge v0.3 with v2.2 as software reference only
 4.30+ native lifecycle/ecology migration = roadmap; not yet canonical evidence
 ```
 
@@ -8017,4 +8018,74 @@ Next step:
 Tier 4.30-readiness audit. Decide how lifecycle-native work layers on v2.2
 software evidence and the existing v2.1-era native mechanism bridge before
 writing Tier 4.30 hardware code.
+```
+
+### Tier 4.30-readiness - Lifecycle-Native Preflight / Layering Audit
+
+Status: COMPLETE - LOCAL ENGINEERING PASS.
+
+Question:
+
+```text
+Before writing lifecycle-native code, what exactly is the allowed layering
+between v2.2 host-side temporal state, the v2.1-era native mechanism bridge,
+and the future lifecycle/self-scaling runtime?
+```
+
+Result:
+
+```text
+Output: controlled_test_output/tier4_30_readiness_20260505_lifecycle_native_audit/
+Runner: experiments/tier4_30_readiness_audit.py
+Criteria: 16/16
+Mode: local-readiness-audit
+```
+
+Decision:
+
+```text
+Initial lifecycle-native work layers on CRA_NATIVE_MECHANISM_BRIDGE_v0.3.
+v2.2 is used as a software reference boundary only.
+Native/on-chip v2.2 fading-memory temporal state is not automatically migrated.
+```
+
+Required lifecycle-native surface:
+
+```text
+static preallocated pool
+active/inactive mask
+polyp_id / lineage_id / parent_slot / generation
+age_steps
+trophic_health
+cyclin_d
+bax
+last_event_type
+event_count
+compact readback for all lifecycle fields
+```
+
+Required controls:
+
+```text
+fixed_static_pool_control
+random_event_replay_control
+active_mask_shuffle_control
+lineage_id_shuffle_control
+no_trophic_pressure_control
+no_dopamine_or_plasticity_control
+```
+
+Claim boundary:
+
+```text
+Tier 4.30-readiness is not hardware evidence, does not implement lifecycle,
+does not freeze a native lifecycle baseline, does not prove speedup, does not
+prove multi-chip scaling, and does not migrate v2.2 temporal state.
+```
+
+Next step:
+
+```text
+Tier 4.30 lifecycle-native contract: formalize static-pool command/readback
+schema and local parity criteria before implementation or EBRAINS packaging.
 ```

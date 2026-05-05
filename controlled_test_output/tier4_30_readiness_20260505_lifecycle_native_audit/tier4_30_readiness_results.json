@@ -1,0 +1,344 @@
+{
+  "claim_boundary": "Tier 4.30-readiness is a local engineering audit. It does not implement lifecycle hardware, does not run EBRAINS/SpiNNaker, does not prove native lifecycle, does not migrate v2.2 temporal state, and does not freeze a new lifecycle or native baseline.",
+  "criteria": [
+    {
+      "name": "v2.2 baseline exists and is frozen",
+      "note": "",
+      "passed": true,
+      "rule": "== v2.2 and status frozen",
+      "value": "v2.2"
+    },
+    {
+      "name": "v2.2 registry stayed green",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "v2.2 boundary excludes hardware/on-chip temporal claim",
+      "note": "",
+      "passed": true,
+      "rule": "mentions no hardware/on-chip temporal dynamics",
+      "value": [
+        "v2.2 is host-side software evidence for bounded multi-timescale fading-memory temporal state.",
+        "v2.2 does not prove bounded nonlinear recurrence; Tier 5.19b/5.19c explicitly leave recurrence unproven.",
+        "v2.2 does not prove hardware transfer or native on-chip temporal dynamics.",
+        "v2.2 does not prove universal superiority on Mackey-Glass, Lorenz, NARMA10, or external baselines; lag-only remains stronger on the standard-three geomean in this gate.",
+        "v2.2 does not prove language, long-horizon planning, AGI, or ASI."
+      ]
+    },
+    {
+      "name": "native mechanism bridge v0.3 exists",
+      "note": "",
+      "passed": true,
+      "rule": "== CRA_NATIVE_MECHANISM_BRIDGE_v0.3",
+      "value": "CRA_NATIVE_MECHANISM_BRIDGE_v0.3"
+    },
+    {
+      "name": "native bridge registry stayed green",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "Tier 4.29f evidence regression passed",
+      "note": "",
+      "passed": true,
+      "rule": "== 113/113 and status pass",
+      "value": "113/113"
+    },
+    {
+      "name": "runtime source tree exists",
+      "note": "",
+      "passed": true,
+      "rule": "config/state/host/neuron source files present",
+      "value": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src"
+    },
+    {
+      "name": "static state capacity exists",
+      "note": "",
+      "passed": true,
+      "rule": "context>=16 route>=4 memory>=4 pending>=32 schedule>=128",
+      "value": {
+        "MAX_CONTEXT_SLOTS": 128,
+        "MAX_MEMORY_SLOTS": 8,
+        "MAX_NEURONS": 1024,
+        "MAX_PENDING_HORIZONS": 128,
+        "MAX_ROUTE_SLOTS": 8,
+        "MAX_SCHEDULE_ENTRIES": 512
+      }
+    },
+    {
+      "name": "MCPL data plane available for native scaling path",
+      "note": "",
+      "passed": true,
+      "rule": "== true",
+      "value": true
+    },
+    {
+      "name": "compact readback path available",
+      "note": "",
+      "passed": true,
+      "rule": "== true",
+      "value": true
+    },
+    {
+      "name": "legacy dynamic birth/death identified",
+      "note": "Existing neuron_birth/death uses SDRAM allocation/free and must not be treated as the static-pool lifecycle proof.",
+      "passed": true,
+      "rule": "== true and excluded from initial lifecycle-native proof",
+      "value": true
+    },
+    {
+      "name": "lifecycle static-pool fields are not already implemented",
+      "note": "This is expected at readiness stage; Tier 4.30 must add a bounded lifecycle state surface before hardware.",
+      "passed": true,
+      "rule": "== false; blocker explicitly declared",
+      "value": false
+    },
+    {
+      "name": "layering decision explicit",
+      "note": "",
+      "passed": true,
+      "rule": "non-empty with out-of-scope list",
+      "value": "layer_initial_lifecycle_native_work_on_native_mechanism_bridge_v0_3_with_v2_2_as_software_reference_only"
+    },
+    {
+      "name": "static-pool contract fields declared",
+      "note": "",
+      "passed": true,
+      "rule": ">= 10 readback fields",
+      "value": 12
+    },
+    {
+      "name": "lifecycle sham controls declared",
+      "note": "",
+      "passed": true,
+      "rule": ">= 6 controls",
+      "value": 6
+    },
+    {
+      "name": "artifact expectations declared",
+      "note": "",
+      "passed": true,
+      "rule": ">= 6 artifacts",
+      "value": 7
+    }
+  ],
+  "criteria_passed": 16,
+  "criteria_total": 16,
+  "failed_criteria": [],
+  "generated_at_utc": "2026-05-05T19:31:07+00:00",
+  "layering_decision": {
+    "decision": "layer_initial_lifecycle_native_work_on_native_mechanism_bridge_v0_3_with_v2_2_as_software_reference_only",
+    "explicitly_out_of_scope": [
+      "dynamic PyNN population creation mid-run",
+      "legacy SDRAM malloc/free neuron_birth/neuron_death as the lifecycle proof",
+      "native v2.2 temporal fading-memory state",
+      "native nonlinear recurrence",
+      "multi-chip scaling",
+      "speedup claims",
+      "paper-level lifecycle superiority"
+    ],
+    "initially_in_scope": [
+      "static preallocated lifecycle pool",
+      "active/inactive masks",
+      "lineage IDs and parent links",
+      "trophic-health counters",
+      "birth/cleavage/death event telemetry",
+      "fixed-pool and sham controls",
+      "compact readback and local fixed-point parity"
+    ],
+    "why": "Lifecycle/self-scaling is an organism/ecology mechanism. The existing native bridge already owns context, route, memory, prediction, confidence, replay, pending maturation, and MCPL-distributed lookup primitives. v2.2 adds useful host-side fading-memory temporal state, but it is not yet native/on-chip and should not be smuggled into the first lifecycle hardware gate."
+  },
+  "lifecycle_controls": [
+    {
+      "expected_effect": "Lifecycle-enabled path must beat or differ from fixed active mask only on lifecycle-pressure tasks.",
+      "name": "fixed_static_pool_control",
+      "purpose": "Shows any benefit is not just the preallocated max capacity."
+    },
+    {
+      "expected_effect": "Random matched events should not reproduce lineage/trophic/task benefit.",
+      "name": "random_event_replay_control",
+      "purpose": "Matches event count while destroying event causality."
+    },
+    {
+      "expected_effect": "Mask shuffle should break lineage-specific or specialist reuse claims.",
+      "name": "active_mask_shuffle_control",
+      "purpose": "Destroys identity-to-slot binding while preserving active count."
+    },
+    {
+      "expected_effect": "Lineage shuffle should damage lineage-dependent claims without changing raw capacity.",
+      "name": "lineage_id_shuffle_control",
+      "purpose": "Checks whether lineage bookkeeping is causal or decorative."
+    },
+    {
+      "expected_effect": "No-trophic path should lose lifecycle selection-specific effects.",
+      "name": "no_trophic_pressure_control",
+      "purpose": "Removes ecology pressure while leaving state machinery alive."
+    },
+    {
+      "expected_effect": "No learning/plasticity should not pass task-effect gates.",
+      "name": "no_dopamine_or_plasticity_control",
+      "purpose": "Separates lifecycle bookkeeping from actual learning/reward coupling."
+    }
+  ],
+  "lifecycle_fields": [
+    {
+      "field": "slot_id",
+      "initial_value": "0..pool_size-1",
+      "owner": "lifecycle_core",
+      "readback": true,
+      "required_for": "stable static-pool index",
+      "type": "uint16"
+    },
+    {
+      "field": "active_mask",
+      "initial_value": "founder slots active only",
+      "owner": "lifecycle_core",
+      "readback": true,
+      "required_for": "activate/silence preallocated units",
+      "type": "uint8"
+    },
+    {
+      "field": "polyp_id",
+      "initial_value": "stable deterministic id",
+      "owner": "lifecycle_core",
+      "readback": true,
+      "required_for": "auditable identity",
+      "type": "uint32"
+    },
+    {
+      "field": "lineage_id",
+      "initial_value": "founder lineage id",
+      "owner": "lifecycle_core",
+      "readback": true,
+      "required_for": "lineage accounting",
+      "type": "uint32"
+    },
+    {
+      "field": "parent_slot",
+      "initial_value": "-1 for founders",
+      "owner": "lifecycle_core",
+      "readback": true,
+      "required_for": "birth/cleavage provenance",
+      "type": "int16"
+    },
+    {
+      "field": "generation",
+      "initial_value": "0",
+      "owner": "lifecycle_core",
+      "readback": true,
+      "required_for": "cleavage/birth depth",
+      "type": "uint16"
+    },
+    {
+      "field": "age_steps",
+      "initial_value": "0",
+      "owner": "lifecycle_core",
+      "readback": true,
+      "required_for": "maturity / juvenile gates",
+      "type": "uint32"
+    },
+    {
+      "field": "trophic_health",
+      "initial_value": "initial trophic seed",
+      "owner": "lifecycle_core",
+      "readback": true,
+      "required_for": "survival/reproduction gates",
+      "type": "s16.15"
+    },
+    {
+      "field": "cyclin_d",
+      "initial_value": "0",
+      "owner": "lifecycle_core",
+      "readback": true,
+      "required_for": "reproduction gate",
+      "type": "s16.15"
+    },
+    {
+      "field": "bax",
+      "initial_value": "0",
+      "owner": "lifecycle_core",
+      "readback": true,
+      "required_for": "death gate",
+      "type": "s16.15"
+    },
+    {
+      "field": "last_event_type",
+      "initial_value": "none",
+      "owner": "lifecycle_core",
+      "readback": true,
+      "required_for": "event audit",
+      "type": "uint8"
+    },
+    {
+      "field": "event_count",
+      "initial_value": "0",
+      "owner": "lifecycle_core",
+      "readback": true,
+      "required_for": "lifecycle telemetry",
+      "type": "uint32"
+    }
+  ],
+  "mode": "local-readiness-audit",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_30_readiness_20260505_lifecycle_native_audit",
+  "recommended_sequence": [
+    "Tier 4.30 contract: formalize static-pool lifecycle surface and command/readback schema.",
+    "Tier 4.30a local reference: deterministic static-pool event stream and fixed-point parity.",
+    "Tier 4.30b single-core hardware smoke: active-mask and lineage telemetry only.",
+    "Tier 4.30c multi-core lifecycle state split if 4.30b passes.",
+    "Tier 4.30d lifecycle sham-control hardware subset before any lifecycle-native baseline freeze.",
+    "Separate native temporal-readiness tier only if v2.2 fading-memory state is selected for hardware migration."
+  ],
+  "required_artifacts": [
+    "tier4_30_contract_or_readiness_results.json",
+    "tier4_30_contract_or_readiness_report.md",
+    "tier4_30_lifecycle_fields.csv",
+    "tier4_30_lifecycle_controls.csv",
+    "local fixed-point reference JSON for Tier 4.30a",
+    "prepared EBRAINS source-only package only after local pass",
+    "ingested hardware report only after returned real hardware artifacts"
+  ],
+  "runner_revision": "tier4_30_readiness_audit_20260505_0001",
+  "runtime_observations": {
+    "compact_read_state_present": true,
+    "constants": {
+      "MAX_CONTEXT_SLOTS": 128,
+      "MAX_MEMORY_SLOTS": 8,
+      "MAX_NEURONS": 1024,
+      "MAX_PENDING_HORIZONS": 128,
+      "MAX_ROUTE_SLOTS": 8,
+      "MAX_SCHEDULE_ENTRIES": 512
+    },
+    "legacy_dynamic_neuron_birth_death": true,
+    "lifecycle_static_fields_present": false,
+    "mcpl_lookup_surface_present": true,
+    "neuron_manager_boundary": "neuron_birth/neuron_death are useful legacy primitives but use SDRAM allocation/free. Tier 4.30 lifecycle-native proof must use a static pool/mask/lineage surface instead of dynamic allocation."
+  },
+  "source_inputs": {
+    "native_bridge_baseline": "baselines/CRA_NATIVE_MECHANISM_BRIDGE_v0.3.json",
+    "runtime_config": "coral_reef_spinnaker/spinnaker_runtime/src/config.h",
+    "runtime_state": "coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h",
+    "tier4_29f_results": "controlled_test_output/tier4_29f_20260505_native_mechanism_regression/tier4_29f_results.json",
+    "v2_2_baseline": "baselines/CRA_EVIDENCE_BASELINE_v2.2.json"
+  },
+  "static_pool_contract": {
+    "capacity_rule": "fixed compile-time pool; events toggle/assign slots rather than allocate/free graph objects",
+    "event_semantics": {
+      "birth": "activate one inactive slot after adult gates pass; parent remains active",
+      "cleavage": "activate one inactive slot from a parent lineage with deterministic parent/child split",
+      "death": "clear active_mask and preserve final lineage/event telemetry",
+      "handoff": "record maturity transition; no dynamic graph creation"
+    },
+    "first_hardware_task": "single-board seed-42 lifecycle mask smoke only after local parity and source audit",
+    "first_local_task": "short static-pool lifecycle event stream with fixed reference and no hardware allocation",
+    "initial_active_slots": 2,
+    "initial_pool_slots": 8,
+    "runtime_owner": "new lifecycle state path or lifecycle profile layered beside existing state/context/route/memory/learning cores"
+  },
+  "status": "pass",
+  "tier": "Tier 4.30-readiness - Lifecycle-Native Preflight / Layering Audit"
+}

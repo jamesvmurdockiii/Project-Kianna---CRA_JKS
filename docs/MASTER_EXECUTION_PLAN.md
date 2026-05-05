@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-05T15:06-04:00.
+Last updated: 2026-05-05T15:28-04:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -82,7 +82,8 @@ not full native v2.1, and not final autonomy.
 Current active step:
 
 ```text
-Tier 4.30-readiness audit - lifecycle-native preflight and layering decision
+Tier 4.30 lifecycle-native contract - static-pool lifecycle surface and
+command/readback schema
 ```
 
 ## 2. Immediate Baseline Decision
@@ -113,9 +114,11 @@ Baseline decision rule:
 Tier 5.19c passed and froze v2.2 as a bounded fading-memory temporal-state
 software baseline. It did not prove nonlinear recurrence, hardware temporal
 dynamics, or universal benchmark superiority.
-Before lifecycle starts, run the Tier 4.30-readiness audit and document whether
-the native lifecycle path layers on v2.2 software state, the v2.1-era native
-mechanism bridge, or a deliberately scoped subset of both.
+Tier 4.30-readiness passed on 2026-05-05 with 16/16 criteria. The lifecycle
+native path layers initially on `CRA_NATIVE_MECHANISM_BRIDGE_v0.3`, using v2.2
+only as a software reference boundary. Do not smuggle v2.2 host-side temporal
+state into lifecycle hardware unless a separate native temporal-readiness tier
+defines and passes that migration.
 ```
 
 The native runtime and native mechanism bridge lines remain separate from the
@@ -468,16 +471,26 @@ ability.
     lag-only remains stronger than the candidate, so do not claim universal
     benchmark superiority or migrate the benchmark path to hardware.
 
-35. 🔄 **CURRENT ACTIVE STEP** - Tier 4.30-readiness audit: before writing
+35. ✅ **COMPLETE** - Tier 4.30-readiness audit: before writing
     lifecycle-native code, decide whether lifecycle hardware should layer on
     v2.2 software state, the v2.1-era native mechanism bridge, or a deliberately
     scoped subset of both. This audit must define the static-pool constraints,
     lifecycle counters, lineage/mask/trophic readback fields, sham controls, and
     artifact expectations for Tier 4.30.
+    Result: pass, 16/16 criteria.
+    Output: `controlled_test_output/tier4_30_readiness_20260505_lifecycle_native_audit/`.
+    Runner: `experiments/tier4_30_readiness_audit.py`.
+    Decision: layer initial lifecycle-native work on
+    `CRA_NATIVE_MECHANISM_BRIDGE_v0.3`, with v2.2 as a software reference only.
+    Explicitly exclude dynamic PyNN population creation, legacy SDRAM
+    malloc/free neuron birth/death as the proof, unscoped v2.2 temporal-state
+    migration, multi-chip scaling, speedup claims, and paper-level lifecycle
+    superiority.
 
 ### Phase E - Lifecycle / Organism Dynamics Native Path
 
-36. Tier 4.30 lifecycle-native contract: preallocated pool only. No dynamic
+36. 🔄 **CURRENT ACTIVE STEP** - Tier 4.30 lifecycle-native contract:
+    preallocated pool only. No dynamic
     PyNN population creation mid-run. Birth/cleavage/death are activation,
     masking, assignment, or lineage events inside static state.
 
@@ -760,7 +773,7 @@ After each completed run or design tier:
 The next concrete action is:
 
 ```text
-Tier 4.30-readiness audit - Lifecycle-Native Preflight / Layering Decision
+Tier 4.30 lifecycle-native contract - Static-Pool Lifecycle Surface
 ```
 
 Current reference state:
@@ -768,6 +781,7 @@ Current reference state:
 ```text
 Software baseline: v2.2 (`baselines/CRA_EVIDENCE_BASELINE_v2.2.md`)
 Native mechanism bridge: CRA_NATIVE_MECHANISM_BRIDGE_v0.3
+Readiness audit: Tier 4.30-readiness PASS, 16/16
 Temporal substrate status: fading-memory promoted in software only; nonlinear
 recurrence and native/on-chip temporal dynamics remain unproven
 ```
@@ -775,25 +789,27 @@ recurrence and native/on-chip temporal dynamics remain unproven
 Purpose:
 
 ```text
-Decide the exact contract for moving lifecycle/self-scaling onto the custom
-runtime without smuggling in dynamic PyNN graph creation, hidden host logic, or
-unscoped v2.2 temporal-state migration.
+Define the exact contract for moving lifecycle/self-scaling onto the custom
+runtime using the audited static-pool path: fixed capacity, active masks,
+lineage IDs, parent links, trophic counters, birth/cleavage/death telemetry,
+compact readback, and sham controls.
 ```
 
 Required coverage:
 
 ```text
-Read and update the source-of-truth hierarchy before implementation:
-codebasecontract.md, this plan, CONTROLLED_TEST_PLAN.md,
-docs/PAPER_READINESS_ROADMAP.md, docs/CODEBASE_MAP.md, and relevant runtime C
-docs. Predeclare static-pool size, active masks, lineage IDs, trophic state,
-birth/cleavage/death semantics, fixed-pool and sham controls, readback fields,
-local parity criteria, and hardware-ingest artifact requirements.
+Use the Tier 4.30-readiness artifacts as the input contract:
+controlled_test_output/tier4_30_readiness_20260505_lifecycle_native_audit/.
+Predeclare static-pool size, active masks, lineage IDs, parent slots,
+generation, age, trophic health, cyclin-D, Bax, lifecycle event type/count,
+fixed-pool control, random-event replay, active-mask shuffle, lineage-ID
+shuffle, no trophic pressure, no dopamine/plasticity, local parity criteria,
+and hardware-ingest artifact requirements.
 ```
 
-Do not jump straight to EBRAINS. Tier 4.30-readiness is an audit/contract gate.
-Tier 4.30 implementation starts only after the lifecycle-native contract is
-defined and the layering boundary is explicit.
+Do not jump straight to EBRAINS. Tier 4.30 implementation starts with the
+contract and local/static reference. Hardware starts only after the contract,
+local parity, source audit, and package-prep checks pass.
 
 
 ## 13. Make-Or-Break Gates

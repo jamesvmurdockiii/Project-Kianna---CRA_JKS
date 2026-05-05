@@ -6273,8 +6273,9 @@ Near-term roadmap insertion:
    supported; bounded nonlinear recurrence still not proven.
 4. Tier 5.19c - Fading-memory narrowing / compact-regression decision.
    COMPLETE: v2.2 frozen for bounded fading-memory temporal state only.
-5. Tier 4.30-readiness audit. CURRENT.
-6. Tier 4.30 lifecycle-native contract, if still appropriate.
+5. Tier 4.30-readiness audit. COMPLETE: lifecycle-native path layers on the
+   native mechanism bridge v0.3 with v2.2 as software reference only.
+6. Tier 4.30 lifecycle-native contract. CURRENT.
 ```
 
 Tier 5.19a result:
@@ -6319,6 +6320,26 @@ Boundary: bounded host-side fading-memory temporal state only; not bounded
           nonlinear recurrence, not hardware/on-chip temporal dynamics, not
           universal benchmark superiority, not language/planning/AGI/ASI.
 Next: Tier 4.30-readiness audit before lifecycle-native implementation.
+```
+
+Tier 4.30-readiness result:
+
+```text
+Output: controlled_test_output/tier4_30_readiness_20260505_lifecycle_native_audit/
+Runner: experiments/tier4_30_readiness_audit.py
+Criteria: 16/16
+Decision: initial lifecycle-native work layers on
+          CRA_NATIVE_MECHANISM_BRIDGE_v0.3; v2.2 is a software reference only.
+Required surface: static preallocated pool, active masks, lineage IDs, parent
+                  slots, generation, age, trophic health, cyclin-D, Bax,
+                  lifecycle event telemetry, compact readback.
+Required controls: fixed pool, random event replay, active-mask shuffle,
+                   lineage-ID shuffle, no trophic pressure, no dopamine or
+                   plasticity.
+Boundary: not hardware evidence, not lifecycle implementation, not speedup,
+          not multi-chip scaling, not native/on-chip v2.2 temporal migration,
+          and not a lifecycle baseline freeze.
+Next: Tier 4.30 lifecycle-native contract.
 ```
 
 Detailed Tier 5.19 contract:
