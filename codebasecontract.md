@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-05T12:50-04:00.
+Last updated: 2026-05-05T13:25-04:00.
 
 Current repo root:
 
@@ -48,12 +48,13 @@ FROZEN: CRA_NATIVE_MECHANISM_BRIDGE_v0.3
             not a monolithic all-mechanism task, not lifecycle, not multi-chip,
             not speedup, and not external-baseline superiority.
   Supersedes: CRA_NATIVE_TASK_BASELINE_v0.2
-  Next: Tier 4.30 lifecycle-native contract. Tier 7.0d narrowed the standard
-        dynamical benchmark path and blocked benchmark migration to hardware
-        under the current interface.
+  Next: Tier 5.19 / 7.0e continuous temporal dynamics substrate contract.
+        Tier 7.0d narrowed the standard dynamical benchmark path and blocked
+        benchmark migration to hardware under the current interface. Lifecycle
+        hardware remains queued after the temporal-substrate decision.
 ```
 
-Current active hardware/custom-runtime tier:
+Current active tier state:
 
 ```text
 Tier 4.28a-e — COMPLETE. Native task baseline v0.2 frozen.
@@ -241,7 +242,17 @@ Tier 7.0d — COMPLETE. State-specific continuous interface repair / claim-narro
     Do not promote, freeze, or move this benchmark path to hardware under the
     current interface.
 
-Tier 4.30 — CURRENT NEXT. Lifecycle-native contract.
+Tier 5.19 / 7.0e — CURRENT NEXT. Continuous temporal dynamics substrate contract.
+  Purpose: define the general fading-memory / nonlinear recurrent temporal
+    substrate missing from the Tier 7.0 benchmark branch before writing code.
+  Rule: this must not be a Mackey-Glass/Lorenz/NARMA-specific trick. It must
+    specify bounded state variables, local update equations, readout interface,
+    parameter budget, shams, anti-leakage controls, and compact regression gates.
+  Required controls: current v2.1, lag-only, fixed/random reservoir, no
+    recurrence, no plasticity, frozen temporal state, shuffled temporal state,
+    shuffled target, and compact CRA guardrails.
+
+Tier 4.30 — QUEUED AFTER TEMPORAL-SUBSTRATE DECISION. Lifecycle-native contract.
   Purpose: define how lifecycle/self-scaling moves onto the custom runtime using
     a static preallocated pool.
   Rule: birth/cleavage/death are active-mask, allocation, lineage, and trophic
@@ -387,16 +398,19 @@ Local build capability (established 2026-05-02):
 
 Immediate next steps:
 
-1. Design Tier 4.30 lifecycle-native contract before writing hardware code.
-2. Define fixed maximum pool, active masks, lineage IDs, parent/child links,
-   trophic state, birth/cleavage/death counters, allocation/reset policy,
-   readback schema, failure classes, and sham controls.
-3. Required controls: fixed-N same pool, random lifecycle event replay,
-   active-mask shuffle, lineage-ID shuffle if applicable, no trophic pressure,
-   no dopamine/plasticity where applicable.
-4. Only after Tier 4.30 is explicit should Tier 4.30a implement a local
-   static-pool lifecycle reference. Do not jump straight to EBRAINS hardware.
-5. Keep public repo hygiene green before the next upload or commit: no
+1. Define Tier 5.19 / 7.0e before writing code. This is a software contract gate.
+2. Specify the temporal-substrate mechanism boundary: state variables, decay
+   timescales, nonlinear recurrence, local continuous prediction/readout,
+   learning/update equations, parameter budget, and anti-benchmark-chasing rule.
+3. Predeclare controls: current v2.1, lag-only, fixed/random reservoir, no
+   recurrence, no plasticity, frozen temporal state, shuffled temporal state,
+   shuffled target, and compact Tier 1/2/3 plus current v2.1 guardrails.
+4. Only after Tier 5.19 / 7.0e is explicit should Tier 5.19a implement a local
+   software reference. Do not jump straight to lifecycle hardware or EBRAINS.
+5. After the temporal-substrate decision, run the Tier 4.30-readiness audit and
+   decide whether native lifecycle layers on v2.1 or on a promoted newer
+   software baseline.
+6. Keep public repo hygiene green before the next upload or commit: no
    credentialed remotes, no `ebrains_jobs/` symlinks, no transient root output
    dirs, no generated host binaries, and `make validate` passing.
 
@@ -406,6 +420,24 @@ Immediate next steps:
 CRA is being developed and tested as a local-learning, organism-inspired,
 spiking, population/ecology architecture with a long-term path toward scalable
 neuromorphic substrate research.
+
+Do not interpret every planned capability as something that must live inside one
+giant polyp. A polyp should remain a small specialist. Larger capabilities are
+allowed to emerge from distributed reef machinery: many polyps, shared runtime
+state, routing, memory slots, lifecycle masks, readout interfaces, and carefully
+bounded native primitives. When adding a mechanism, state explicitly whether it
+is a per-polyp mechanism, a population mechanism, a readout/interface mechanism,
+a lifecycle mechanism, or a runtime substrate mechanism.
+
+Known remaining or unpromoted mechanism families must stay visible in the master
+plan: continuous temporal dynamics / fading memory, CRA-native nonlinear
+recurrent state, local continuous-value interface, macro/native eligibility if a
+measured blocker justifies it, lifecycle/self-scaling, native lifecycle,
+on-chip temporal state, on-chip replay buffers, on-chip eligibility traces,
+policy/action selection, real-ish task adapters, curriculum generation,
+long-horizon planning, single-chip scale stress, multi-chip scaling, final
+baseline fairness, and reproduction packaging. This is not a license to add all
+features at once; it is a queue that must be worked one mechanism at a time.
 
 The project is not allowed to rely on informal rationale, unsupported speculation, or single-run demonstrations. Every
 claim must be earned through staged evidence, controls, ablations, baselines,

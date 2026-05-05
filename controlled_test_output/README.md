@@ -5,7 +5,7 @@ ledger is `STUDY_REGISTRY.json`; the compact table is `STUDY_REGISTRY.csv`.
 Older reruns, prepared capsules, debug probes, and baseline-frozen
 mechanism bundles outside the formal registry are preserved for audit.
 
-- Generated: `2026-05-05T16:46:00.524067+00:00`
+- Generated: `2026-05-05T17:18:08.850888+00:00`
 - Registry status: **PASS**
 - Canonical evidence entries: `47`
 - Expanded test-entry count: `47`; see the canonical evidence table below for the exact current tier list.

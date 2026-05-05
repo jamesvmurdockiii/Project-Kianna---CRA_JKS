@@ -7627,6 +7627,132 @@ Interpretation:
 - Do not migrate this benchmark path to hardware unless a future mechanism
   changes the failure class.
 
-Next step after Tier 7.0d: return to the native roadmap at Tier 4.30
-lifecycle-native contract. Tier 7.0-7.0d remains a clean limitation and
-claim-narrowing branch, not the active performance-improvement path.
+Next step after Tier 7.0d: Tier 5.19 / 7.0e continuous temporal dynamics
+substrate contract. Tier 7.0-7.0d remains a clean limitation and claim-narrowing
+branch, but it exposed a general missing substrate that must be tested before
+assuming lifecycle alone will evolve the ability.
+
+### Tier 5.19 / 7.0e - Continuous Temporal Dynamics Substrate Contract
+
+Status: DEFINED / CURRENT CONTRACT GATE. This section defines the next software
+mechanism gate before code is written. It is not yet canonical evidence and does
+not change the registry count until a completed run is ingested.
+
+Question:
+
+```text
+Can CRA add a general continuous temporal/fading-memory substrate that helps
+stateful sequence tasks without reducing to causal lag regression, benchmark-
+specific tricks, or unconstrained supervised readouts?
+```
+
+Hypothesis:
+
+```text
+A bounded CRA-native temporal substrate with multi-timescale fading state,
+nonlinear recurrent state, and a local continuous prediction/readout interface
+will improve tasks where hidden temporal state matters, while preserving current
+CRA delayed-credit, memory, routing, prediction, self-evaluation, and hardware-
+bridge claims.
+```
+
+Null hypothesis:
+
+```text
+Any apparent improvement is explained by lag-only regression, fixed/random
+reservoir dynamics, shuffled temporal state, target leakage, or task-specific
+benchmark fitting.
+```
+
+Mechanism boundary:
+
+```text
+This is a runtime/software substrate candidate, not a per-polyp feature dump.
+It may provide shared temporal state, bounded recurrent summaries, and local
+continuous interfaces that polyps/readouts can use. It must keep individual
+polyps small and declare which state is per-polyp, population-level, readout-
+level, or runtime-level.
+```
+
+Required contract before implementation:
+
+```text
+state variables
+timescales and decay equations
+nonlinear recurrent update rule
+local continuous readout/prediction rule
+plasticity/update rule, if any
+parameter budget
+anti-leakage guardrails
+anti-benchmark-chasing guardrails
+expected artifacts
+compact regression suite
+promotion/freeze rule
+```
+
+Required comparisons and controls:
+
+```text
+current CRA v2.1
+lag-only online LMS with the same causal lag budget
+state-only online model
+state plus lag online model
+fixed ESN / reservoir baseline
+random reservoir baseline
+no-recurrence ablation
+no-plasticity ablation
+frozen temporal-state ablation
+shuffled temporal-state sham
+shuffled-target control
+current Tier 7.0 benchmark baselines
+compact Tier 1/2/3 CRA guardrails
+current delayed_cue / hard_noisy_switching / memory-context guardrails
+```
+
+Required tasks:
+
+```text
+Mackey-Glass
+Lorenz
+NARMA10
+aggregate geometric-mean MSE
+delayed_cue
+hard_noisy_switching
+memory/context pressure tasks
+at least one held-out temporal-state diagnostic that is not one of the three
+standard benchmarks
+```
+
+Pass criteria:
+
+```text
+All predeclared tasks and controls run without leakage.
+Temporal substrate beats raw v2.1 where stateful continuous prediction matters.
+Temporal substrate beats lag-only by a meaningful predeclared margin on at least
+one task where lag-only should be insufficient.
+Temporal substrate separates from shuffled-state, frozen-state, no-recurrence,
+and shuffled-target controls.
+Current CRA core guardrails do not regress.
+Any improvement is not isolated to a single benchmark family.
+```
+
+Fail criteria:
+
+```text
+Lag-only or fixed/random reservoirs explain the gain.
+Shuffled or frozen temporal state performs similarly to the proposed substrate.
+The mechanism helps only one benchmark through task-specific tuning.
+Existing CRA claims regress.
+Any future-target, held-out-row, or label leakage is found.
+The mechanism cannot be described as a bounded CRA-native substrate.
+```
+
+Promotion/freeze condition:
+
+```text
+Tier 5.19 / 7.0e itself is a contract gate and does not freeze a baseline.
+Tier 5.19a/b may lead to a software freeze only if the implemented substrate
+passes shams, baselines, and compact regression. If it fails, park or narrow it.
+Do not migrate this benchmark path to hardware until a software mechanism earns
+promotion.
+```

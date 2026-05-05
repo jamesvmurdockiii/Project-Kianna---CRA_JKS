@@ -1,6 +1,6 @@
 # CRA Paper-Readiness Roadmap
 
-Generated: 2026-04-27
+Last updated: 2026-05-05
 
 This document is the working plan from the current evidence state to a serious
 paper-ready CRA claim. It is deliberately stricter than a speculative roadmap. The goal
@@ -6230,9 +6230,14 @@ value beyond lag regression and classified the benchmark path as
 `lag_regression_explains_benchmark`: the best state-specific online candidate
 did not clear the lag-only margin or sham-separation gates, and train-prefix
 ridge lag-only beat lag+state probes.
-The current next gate returns to the native roadmap at Tier 4.30 lifecycle-
-native contract. Do not move Tier 7.0 benchmark workloads to hardware under the
-current interface.
+The current next gate is Tier 5.19 / 7.0e continuous temporal dynamics
+substrate contract. Tier 7.0d exposed a general missing substrate: CRA needs a
+bounded fading-memory / nonlinear recurrent temporal-state mechanism and local
+continuous prediction interface before the standard continuous benchmark path
+can be considered for promotion or hardware migration. Do not move Tier 7.0
+benchmark workloads to hardware under the current interface. Do not jump
+directly to lifecycle-native hardware until the temporal-substrate decision is
+made.
 ```
 
 Paper implication:
@@ -6255,4 +6260,47 @@ paper posture is to cite this honestly as a limitation: the current CRA
 interface is not competitive on these continuous-valued standard dynamical
 regression tasks, and the path should not be migrated to hardware unless a
 future mechanism changes the failure class.
+```
+
+Near-term roadmap insertion:
+
+```text
+1. Tier 5.19 / 7.0e - Continuous Temporal Dynamics Substrate Contract.
+2. Tier 5.19a - Local temporal-substrate reference.
+3. Tier 5.19b - Benchmark, sham-control, and compact-regression gate.
+4. Tier 5.19c - Promotion/freeze decision.
+5. Tier 4.30-readiness audit.
+6. Tier 4.30 lifecycle-native contract, if still appropriate.
+```
+
+Remaining mechanism families to keep visible:
+
+```text
+continuous temporal dynamics / fading memory
+CRA-native nonlinear recurrent state
+local continuous-value readout/interface
+macro/native eligibility only if a measured blocker justifies it
+lifecycle/self-scaling
+native lifecycle with static pools/masks/lineage
+native/on-chip temporal state
+native/on-chip replay buffers or sleep-like replay
+native/on-chip eligibility traces at scale if justified
+policy/action selection
+real-ish task adapters and held-out task families
+curriculum/environment generator
+long-horizon planning / subgoal control
+single-chip multi-core stress
+multi-chip communication and learning
+final expanded baselines, fairness audit, reproduction capsule, and paper lock
+```
+
+Mechanism scope rule:
+
+```text
+Do not force every capability into one overloaded polyp. Polyps should remain
+small specialists. Larger capability belongs in distributed reef machinery:
+population state, routing state, memory slots, lifecycle masks, readout
+interfaces, and native runtime primitives. Each future mechanism must declare
+whether it is per-polyp, population-level, readout/interface-level,
+lifecycle-level, or runtime-substrate-level.
 ```

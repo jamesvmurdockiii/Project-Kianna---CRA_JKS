@@ -22,7 +22,7 @@ controlled ablations, baseline comparisons, and explicit claim boundaries.
 | Native hardware baseline | `CRA_NATIVE_MECHANISM_BRIDGE_v0.3`, frozen after Tier 4.29f audited the 4.29a-e native mechanism hardware passes. |
 | Latest ingested hardware pass | Tier 4.29e, native host-scheduled replay/consolidation bridge, `38/38` criteria per seed across seeds `42`, `43`, and `44`. |
 | Latest software benchmark diagnostic | Tier 7.0d showed the current standard dynamical benchmark path is explained by causal lag regression, not a promoted CRA state-specific mechanism. |
-| Active next gate | Return to the native roadmap: Tier 4.30 lifecycle-native contract with static preallocated pool, lifecycle masks, lineage telemetry, and sham controls. |
+| Active next gate | Tier 5.19 / 7.0e continuous temporal dynamics substrate contract, inserted before lifecycle-native hardware work because Tier 7.0d exposed a lag-regression-explained limitation. |
 | Canonical registry | 47 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
 | Validation suite | 147 pytest tests plus registry, paper-table, and repository-audit generation. |
 
@@ -31,6 +31,11 @@ controlled ablations, baseline comparisons, and explicit claim boundaries.
 CRA models a population of small spiking agents called polyps. The biological
 terminology is used as an engineering abstraction, not as a claim of biological
 realism.
+
+Planned capabilities are not intended to make every polyp into a large
+all-purpose model. Polyps remain small specialists; larger capabilities are
+tested as distributed substrate mechanisms across population state, routing,
+memory, lifecycle machinery, readout interfaces, and the custom runtime.
 
 Core implementation areas:
 

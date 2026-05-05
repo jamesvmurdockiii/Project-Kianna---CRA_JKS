@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-05T09:08-04:00.
+Last updated: 2026-05-05T13:25-04:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -79,39 +79,43 @@ not full native v2.1, and not final autonomy.
 Current active step:
 
 ```text
-Tier 4.30 - Lifecycle-Native Contract
+Tier 5.19 / 7.0e - Continuous Temporal Dynamics Substrate Contract
 ```
 
 ## 2. Immediate Baseline Decision
 
-Do not freeze `v2.2` from Tier 4.26.
+Do not freeze a new software baseline from Tier 7.0d or from the next Tier
+5.19 / 7.0e contract alone.
+
+Current frozen lines:
+
+```text
+Software baseline: v2.1
+Native mechanism bridge baseline: CRA_NATIVE_MECHANISM_BRIDGE_v0.3
+```
 
 Reason:
 
 ```text
 v2.x software baselines are for promoted CRA mechanisms plus regression.
-Tier 4.26 is a hardware-native distributed-runtime milestone, not a new software
-mechanism promotion.
+Tier 7.0d narrowed a benchmark claim and exposed a missing temporal substrate;
+it did not promote a mechanism. Tier 5.19 / 7.0e is a design contract; it cannot
+freeze anything until implementation, shams, baselines, and compact regression
+pass.
 ```
 
-Record 4.26 as:
+Baseline decision rule:
 
 ```text
-major hardware-native distributed-runtime pass
+If Tier 5.19a/b/c passes, freeze a new software baseline.
+If it fails, park or narrow the temporal-substrate candidate and keep v2.1 as
+the software baseline.
+If lifecycle starts before temporal-substrate promotion, document whether it is
+layering on v2.1 or on a later promoted baseline.
 ```
 
-Only consider a native-runtime baseline freeze after Tier 4.27 measures the
-four-core runtime envelope and defines the MCPL/multicast migration path. SDP is
-a transitional control/debug scaffold for inter-core traffic, not the scaling
-destination.
-
-Possible future freeze name:
-
-```text
-CRA_NATIVE_RUNTIME_BASELINE_v0.1
-```
-
-This is separate from the `CRA_EVIDENCE_BASELINE_v2.x` software line.
+The native runtime and native mechanism bridge lines remain separate from the
+`CRA_EVIDENCE_BASELINE_v2.x` software line.
 
 ## 3. Baseline Freeze Rules From Here
 
@@ -140,6 +144,7 @@ native/on-chip is not claimed until all of these are true for the claimed scope:
 | Stable inter-core protocol | SDP works for 4.26 as a transitional scaffold; MCPL/multicast is the scaling target and needs a migration gate. |
 | Promoted v2 mechanisms native | Keyed memory (4.29a), routing/composition (4.29b), predictive binding (4.29c), self-evaluation (4.29d), and host-scheduled replay/consolidation (4.29e) complete. 4.29f froze the cumulative native mechanism bridge evidence baseline. Lifecycle remains. |
 | Lifecycle/self-scaling native | Not started; must use static pools and masks, not dynamic graph creation. |
+| Continuous temporal dynamics substrate | Not promoted; Tier 7.0-7.0d show standard continuous-regression benchmarks are currently explained by causal lag regression. |
 | Multi-chip scaling | Not started. |
 | Useful task-level native proof | Not complete beyond tiny micro-tasks. |
 
@@ -163,7 +168,52 @@ What is inferred?
 What claim boundary follows?
 ```
 
-## 6. Next 55-Step Execution Plan
+## 5.1 Remaining Mechanic Queue And Dependency Order
+
+This list is deliberately broader than the next few tiers. It prevents the
+project from forgetting planned mechanisms, while preserving the rule that only
+one major mechanism is implemented and promoted at a time.
+
+These mechanics are not all meant to live inside every single polyp. They are
+substrate capabilities distributed across polyps, population state, routing
+state, readout interfaces, lifecycle machinery, and native runtime support. A
+polyp should remain small; the reef earns capability through many small
+specialists, shared state primitives, and controlled composition.
+
+Known remaining or unpromoted mechanics:
+
+```text
+1. Continuous temporal dynamics / fading-memory substrate.
+2. CRA-native nonlinear recurrent state, distinct from simple lag regression.
+3. Local continuous-value readout/interface that survives lag-only and sham controls.
+4. Revisit macro/native eligibility only if temporal dynamics exposes a credit blocker.
+5. Lifecycle/self-scaling layered on the stronger temporal substrate.
+6. Native lifecycle/self-scaling with static pools, masks, lineage, and sham controls.
+7. Native/on-chip temporal dynamics and compact state update.
+8. Native/on-chip replay buffers or sleep-like replay, beyond host-scheduled replay.
+9. Native/on-chip eligibility traces at scale, if justified by measured blockers.
+10. Policy/action-selection loop with delayed consequences and exploration pressure.
+11. Real-ish task adapters and held-out task families.
+12. Curriculum/environment generator.
+13. Long-horizon planning / subgoal control.
+14. Single-chip multi-core scale stress.
+15. Multi-chip communication and learning.
+16. Final expanded baselines, fairness audit, reproduction capsule, and paper lock.
+```
+
+Mechanism policy:
+
+```text
+Add one major mechanism -> targeted test -> sham controls -> baseline comparison
+-> compact regression -> freeze if earned, otherwise park or narrow.
+```
+
+The Tier 7.0 benchmark branch did not justify a benchmark-specific trick. It
+did expose a general missing substrate: continuous temporal dynamics. That
+mechanism must be tested before assuming lifecycle alone will evolve the
+ability.
+
+## 6. Next 66-Step Execution Plan
 
 ### Phase A - Close 4.26 And Decide The Runtime Protocol
 
@@ -371,109 +421,161 @@ What claim boundary follows?
     continuous-readout mechanism is promoted and this benchmark path should not
     move to hardware under the current interface.
 
-### Phase D - Lifecycle / Organism Dynamics Native Path
+### Phase D - Continuous Temporal Dynamics Substrate
 
-31. 🔄 **CURRENT ACTIVE STEP** - Tier 4.30 lifecycle-native contract: preallocated pool only. No dynamic
+31. 🔄 **CURRENT ACTIVE STEP** - Tier 5.19 / 7.0e continuous temporal dynamics substrate contract:
+    define the general fading-memory / recurrent temporal-state mechanism before
+    writing code. This is not a Mackey-Glass trick; it is a substrate repair for
+    continuous temporal memory, nonlinear recurrence, and local continuous
+    prediction under strict lag-only and sham controls.
+
+32. Tier 5.19a local temporal substrate reference: implement the smallest
+    software-only candidate with multi-timescale fading state, bounded nonlinear
+    recurrent state, and a local online continuous interface. Compare against
+    lag-only, random reservoir, fixed ESN, no recurrence, frozen state,
+    shuffled state, shuffled target, and current v2.1.
+
+33. Tier 5.19b benchmark and regression gate: rerun Mackey-Glass, Lorenz,
+    NARMA10, delayed_cue, hard_noisy_switching, memory/context tasks, and compact
+    Tier 1/2/3 guardrails. Do not promote if it only helps one benchmark or
+    regresses current core claims.
+
+34. Tier 5.19c promotion/freeze decision: freeze a new software baseline only if
+    the temporal substrate beats lag-only where state should matter, survives
+    controls, improves or preserves existing CRA tasks, and passes compact
+    regression. If it fails, park it and narrow the benchmark claim.
+
+35. Tier 4.30-readiness audit: only after the temporal-substrate decision, decide
+    whether lifecycle hardware should layer on v2.1 as-is or on a promoted newer
+    software baseline.
+
+### Phase E - Lifecycle / Organism Dynamics Native Path
+
+36. Tier 4.30 lifecycle-native contract: preallocated pool only. No dynamic
     PyNN population creation mid-run. Birth/cleavage/death are activation,
     masking, assignment, or lineage events inside static state.
 
-32. Tier 4.30a local static-pool lifecycle reference: active/inactive masks,
+37. Tier 4.30a local static-pool lifecycle reference: active/inactive masks,
     lineage IDs, trophic state, birth/cleavage/death counters, fixed max-pool
     control, random event replay control.
 
-33. Tier 4.30b single-core lifecycle mask smoke: prove a tiny static pool can
+38. Tier 4.30b single-core lifecycle mask smoke: prove a tiny static pool can
     activate/silence units, preserve lineage, and read back lifecycle telemetry.
 
-34. Tier 4.30c multi-core lifecycle state split: distribute lifecycle masks and
+39. Tier 4.30c multi-core lifecycle state split: distribute lifecycle masks and
     lineage across the selected runtime protocol without corrupting state.
 
-35. Tier 4.30d lifecycle sham-control hardware subset: fixed max pool, random
+40. Tier 4.30d lifecycle sham-control hardware subset: fixed max pool, random
     event replay, mask shuffle, no trophic pressure, no dopamine/plasticity if
     applicable. Keep it small but reviewer-defensible.
 
-36. Freeze `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` only if lifecycle telemetry,
+41. Freeze `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` only if lifecycle telemetry,
     controls, resource accounting, and at least one useful task effect pass. If
     lifecycle does not help, narrow the organism claim.
 
-### Phase E - Multi-Core And Multi-Chip Scaling
+### Phase F - Native Temporal / Replay / Eligibility Bridge Decisions
 
-37. Tier 4.31 update the mapping model with measured 4.27-4.30 data: ITCM,
+42. Tier 4.30e native temporal-substrate readiness: only if Tier 5.19 promotes a
+    software substrate, decide the smallest chip-owned temporal state subset.
+    If Tier 5.19 fails, skip this and keep the Tier 7 benchmark limitation.
+
+43. Tier 4.30f native temporal-substrate local reference: fixed-point state
+    update, readback schema, resource budget, and parity against the promoted
+    software mechanism. No hardware before local parity and source audit.
+
+44. Tier 4.30g native temporal-substrate hardware smoke: one board, one seed,
+    one minimal temporal-state task, explicit lag-only and shuffled-state
+    controls. Do not claim full benchmark performance from a smoke.
+
+45. Tier 4.30h native replay-buffer / sleep-like replay decision: only if the
+    software replay/consolidation path still needs chip-owned buffers for scale
+    or if a measured hardware bottleneck requires it. Host-scheduled replay from
+    4.29e remains the current bounded evidence.
+
+46. Tier 4.30i native eligibility-trace decision: revisit macro/native
+    eligibility only if a current promoted mechanism exposes a measured credit
+    assignment or on-chip timing blocker. Do not revive 5.9 by vibes alone.
+
+### Phase G - Multi-Core And Multi-Chip Scaling
+
+47. Tier 4.31 update the mapping model with measured 4.27-4.30 data: ITCM,
     DTCM, schedule length, lookup pressure, message bytes, readback bytes,
-    per-core utilization, and state-slot limits.
+    per-core utilization, state-slot limits, lifecycle masks, and any promoted
+    temporal-state footprint.
 
-38. Tier 4.31a single-chip multi-core scale stress: increase cores on one chip
+48. Tier 4.31a single-chip multi-core scale stress: increase cores on one chip
     in controlled increments, for example 4 -> 8 -> 16 cores if resources allow,
     using MCPL/multicast for core-to-core event traffic unless a documented
     hardware constraint forces a temporary exception.
 
-39. Tier 4.31b static reef partition smoke: map groups/modules/polyps to cores
+49. Tier 4.31b static reef partition smoke: map groups/modules/polyps to cores
     using the measured static-pool strategy. Do not pretend one polyp equals one
     chip unless measured mapping proves that is correct.
 
-40. Tier 4.31c inter-chip feasibility contract: define routing keys, message
+50. Tier 4.31c inter-chip feasibility contract: define routing keys, message
     path, board/chip selection, failure classes, readback, and resource limits
     before attempting multi-chip.
 
-41. Tier 4.31d first multi-chip smoke: smallest possible cross-chip message and
+51. Tier 4.31d first multi-chip smoke: smallest possible cross-chip message and
     state lookup. No learning claim until communication and readback are clean.
 
-42. Tier 4.31e multi-chip learning micro-task: only after cross-chip smoke
+52. Tier 4.31e multi-chip learning micro-task: only after cross-chip smoke
     passes, run a tiny delayed-credit or reentry task with explicit claim
     boundary and resource measurements.
 
-43. Freeze `CRA_NATIVE_SCALE_BASELINE_v0.5` only if single-chip multi-core and
+53. Freeze `CRA_NATIVE_SCALE_BASELINE_v0.5` only if single-chip multi-core and
     first multi-chip evidence are stable enough for the final paper claim. If
     not, publish measured single-chip limits honestly.
 
-### Phase F - Software Usefulness And Final Baselines
+### Phase H - Software Usefulness And Final Baselines
 
-44. Tier 6.2 hard synthetic suite: variable-delay cue, multi-cue delayed reward,
+54. Tier 6.2 hard synthetic suite: variable-delay cue, multi-cue delayed reward,
     hidden regime switching, drifting bandit, concept drift, anomaly stream,
     and small delayed-reward control proxy.
 
-45. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+55. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines.
 
-46. Tier 7.2 held-out task challenge: define held-out families before running;
+56. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout.
 
-47. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+57. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines.
 
-48. Tier 7.4 policy/action selection: state -> action -> delayed consequence,
+58. Tier 7.4 policy/action selection: state -> action -> delayed consequence,
     exploration versus exploitation, uncertainty-gated actions.
 
-49. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
+59. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
     planning/subgoal control: run only after the shorter hard/real-ish tasks are
     stable. Do not claim language, AGI, or broad planning from toy gates.
 
-50. Run expanded external baselines and fairness audit at the phase lock:
+60. Run expanded external baselines and fairness audit at the phase lock:
     random/sign persistence, online perceptron/logistic, reservoir/ESN, small
     GRU, STDP-only SNN, simple evolutionary population, and SNN reviewer-defense
     baselines where practical.
 
-51. Freeze the next software baseline only if new software capability work passes
-    ablations, fair baselines, and compact regression. If no new software
+61. Freeze the next software baseline only if new software capability work
+    passes ablations, fair baselines, and compact regression. If no new software
     mechanism is promoted, keep v2.1.
 
-### Phase G - Final Paper Lock
+### Phase I - Final Paper Lock
 
-52. Select final paper claim level: strong usefulness paper, bounded architecture
+62. Select final paper claim level: strong usefulness paper, bounded architecture
     study, or narrowed diagnostic report. Let the evidence decide.
 
-53. Run final software matrix and final hardware subset matrix. Include effect
+63. Run final software matrix and final hardware subset matrix. Include effect
     sizes, confidence intervals, worst seed, sample efficiency, runtime, command
     count, resource budgets, and claim-boundary table.
 
-54. Build the independent reproduction capsule: fresh checkout instructions,
+64. Build the independent reproduction capsule: fresh checkout instructions,
     environment lock, validation command, registry/table regeneration, EBRAINS
     ingest instructions, artifact hash manifest, and one local tier rerun.
 
-55. Draft paper/whitepaper only after Step 53 and Step 54 pass. Write limitations
-    first, then claims. Preserve failed and parked diagnostics.
+65. Draft paper/whitepaper only after Step 63 and Step 64 pass. Write
+    limitations first, then claims. Preserve failed and parked diagnostics.
 
-52. External dry run: have a clean agent or human follow only the docs. If they
+66. External dry run: have a clean agent or human follow only the docs. If they
     need hidden chat context, the repo is not ready.
 
 ## 7. Current Tier 4.27 Definition
@@ -560,10 +662,10 @@ not multi-chip scaling, and not a baseline freeze by itself.
 
 ## 8. When Life Dynamics Start
 
-Native lifecycle work starts after the runtime communication path is stable
-through 4.27 and after at least the key native state/memory/routing gates are
-mapped. The first lifecycle hardware tier is not dynamic population creation.
-It is:
+Native lifecycle work starts after the runtime communication path is stable,
+after the key native state/memory/routing gates are mapped, and after the
+Tier 5.19 / 7.0e temporal-substrate decision is explicit. The first lifecycle
+hardware tier is not dynamic population creation. It is:
 
 ```text
 preallocated static pool
@@ -576,7 +678,8 @@ random event replay control
 mask shuffle control
 ```
 
-This begins at Tier 4.30 in the current execution plan.
+This begins at Tier 4.30 in the current execution plan, after the
+Tier 4.30-readiness audit.
 
 ## 9. When Multi-Core And Multi-Chip Start
 
@@ -631,37 +734,38 @@ After each completed run or design tier:
 The next concrete action is:
 
 ```text
-Tier 4.30 - Lifecycle-Native Contract
+Tier 5.19 / 7.0e - Continuous Temporal Dynamics Substrate Contract
 ```
 
 Purpose:
 
 ```text
-Design the native lifecycle/self-scaling hardware contract around a static
-preallocated pool. Birth, cleavage, death, and active/inactive membership are
-state transitions inside fixed hardware capacity, not dynamic PyNN population
-creation.
+Define the general temporal substrate missing from the Tier 7.0 benchmark
+branch: multi-timescale fading memory, bounded nonlinear recurrent state, and a
+local continuous prediction interface that is not reducible to simple lag
+regression.
 ```
 
 Required coverage:
 
 ```text
-Define max pool, active masks, lineage IDs, parent/child links, trophic state,
-birth/cleavage/death counters, allocation policy, reset policy, readback schema,
-failure classes, sham controls, and the smallest local reference task.
-Predeclare fixed-capacity controls: fixed-N same pool, random event replay,
-mask shuffle, no trophic pressure, and no dopamine/plasticity where applicable.
+Define mechanism boundary, state variables, update equations, learning rules,
+readout interface, parameter budget, ablations, and anti-benchmark-chasing
+controls. Required controls include lag-only, fixed/random reservoir,
+no-recurrence, no-plasticity, frozen temporal state, shuffled temporal state,
+shuffled target, and current v2.1.
 ```
 
-Do not jump straight to hardware. Tier 4.30 is a contract gate. The next local
-implementation step is Tier 4.30a static-pool lifecycle reference only after the
-contract is explicit.
+Do not jump straight to hardware or lifecycle. Tier 5.19 / 7.0e is a contract
+gate. The next local implementation step is a software-only temporal substrate
+reference after the contract is explicit.
 
 
 ## 13. Make-Or-Break Gates
 
 | Gate | If it passes | If it fails |
 | --- | --- | --- |
+| Tier 5.19 temporal substrate | CRA gains a general fading-memory/recurrent-state path for continuous temporal tasks. | Keep Tier 7 benchmark limitation explicit and do not migrate that path to hardware. |
 | Tier 4.27 runtime envelope | Native runtime path becomes a stable engineering foundation. | Repair SDP/MCPL protocol before scaling. |
 | Native task hardening | Hardware-native path supports harder delayed/adaptive tasks. | Keep native claim to micro-runtime primitives. |
 | Native mechanism bridges | Promoted v2 mechanisms begin moving on chip. | Keep those mechanisms host-side and narrow hardware claim. |
