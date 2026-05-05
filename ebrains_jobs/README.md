@@ -12,13 +12,54 @@ Rules:
 - The JobManager command should include the uploaded folder name, e.g. `cra_422r/experiments/...`.
 - Do not upload `controlled_test_output/`; it is local evidence storage and can be GBs large.
 - Do not upload compiled host binaries, caches, or downloaded reports.
+- Do not commit or upload symlinked `cra_*` folders; upload packages must be real, self-contained source directories.
 - Returned EBRAINS files should be downloaded and then ingested/documented into `controlled_test_output/` by a tier-specific ingest step.
+
+Public repository hygiene rules live in
+[`docs/PUBLIC_REPO_HYGIENE.md`](../docs/PUBLIC_REPO_HYGIENE.md).
 
 ## Current Jobs
 
+### `cra_429o`
+
+Status: **SUBMITTED / HARDWARE PENDING** for Tier 4.29e native replay/consolidation bridge.
+
+Purpose: Verify that host-scheduled replay/consolidation events run through the
+native four-core state pipeline using context, route, memory, and learning cores.
+This is host-scheduled replay only; it is not native on-chip replay buffers or
+biological sleep.
+
+Upload folder:
+
+```text
+ebrains_jobs/cra_429o
+```
+
+JobManager command:
+
+```text
+cra_429o/experiments/tier4_29e_native_replay_consolidation_bridge.py --mode run-hardware --seeds 42,43,44
+```
+
+Package metadata:
+- Runner revision: `tier4_29e_native_replay_consolidation_20260505_0002`
+- Based on: `cra_429j` binaries
+- C runtime changes: none for 4.29e
+- Controls: `no_replay`, `correct_replay`, `wrong_key_replay`, `random_event_replay`
+
+Known noncanonical failure chain before `cra_429o`:
+- `cra_429k`: missing 4.29e runner from package.
+- `cra_429l`: runner called nonexistent `base.probe_board_hostname()`.
+- `cra_429m`: schedule-entry fixed-point double conversion.
+- `cra_429n`: context/route/memory state-write fixed-point double conversion.
+
+Next action: wait for returned `cra_429o` files. Verify timestamps and runner
+revision before ingesting; older `20260504_0001` results are stale pre-`cra_429o`
+artifacts and must not be promoted.
+
 ### `cra_429d`
 
-Status: **PREPARED** (local pass complete, awaiting hardware run).
+Status: **HISTORICAL / SUPERSEDED** (Tier 4.29b pass has been ingested; retained for audit history).
 
 Purpose: Tier 4.29b native routing/composition gate. Tests whether the native
 route_core can handle keyed routing with non-neutral values (+1.0, -1.0) and

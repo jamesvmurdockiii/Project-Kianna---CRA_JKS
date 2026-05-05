@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-03T23:45-04:00.
+Last updated: 2026-05-05T08:45-04:00.
 
 Current repo root:
 
@@ -85,15 +85,147 @@ Tier 4.29b — COMPLETE. Native routing/composition gate.
   Claim boundary: Native routing/composition hardware evidence only; not speedup,
     not multi-chip scaling, not full v2.1 mechanism transfer, not lifecycle,
     not external-baseline superiority.
-  Previous: cra_429a BLOCKED on EBRAINS (container missing jq, stale upload).
-  Previous: cra_429a BLOCKED on EBRAINS (container missing `jq`, stale upload
-    suspected: zip 72KB vs expected ~213KB). Fresh package per Rule 10.
-  Question: Can native context_core handle multi-slot keyed lookup with controls?
-  Mechanism: Keyed context memory (promoted from v2.1 Tier 5.10g).
-  Controls: wrong-key, slot-shuffle, overwrite, host-composed sham.
-  Rule: local first, then hardware. Within ≤512 event envelope (MAX_SCHEDULE_ENTRIES=512).
-  Local reference: 28 events, 8-12 keyed slots, 10/10 criteria pass.
-  Wrong-key events: 4 present. Overwrite events: 7 present. Shuffle events: 4 present.
+
+Tier 4.29c — COMPLETE. Native predictive binding bridge.
+  Status: HARDWARE PASS, INGESTED. Three-seed repeatability complete.
+  Previous: 4.29b passed compact regression; 4.29c authorized per Phase C map.
+  Question: Can the native learning_core compute, store, and use predictions
+    before feedback arrives, separating prediction from reward?
+  Mechanism: Existing C runtime prediction path (`cra_state_predict_readout`,
+    `g_pending_horizons[].prediction`, `_apply_reward_to_feature_prediction`).
+    Host verifies prediction parity, pre-reward readback, and error-sign controls.
+  Controls: zero-error (stable weight), positive-surprise (weight increases),
+    negative-surprise (weight decreases), sign-flip (prediction sign matches cue).
+  Rule: local first, then hardware. One mechanism at a time.
+  Local reference: 20 events, delay=2, lr=0.25, feature=cue (+1.0/-1.0 context).
+    5 zero-error, 5 positive-surprise, 5 negative-surprise, 5 sign-flip.
+    All 7 local criteria PASS (seed 42):
+      - zero_error_events_have_near_zero_error: max |error| = 0
+      - positive_surprise_increases_weight: all positive_err events have delta_w > 0
+      - negative_surprise_decreases_weight: all negative_err events have delta_w < 0
+      - sign_flip_prediction_matches_feature_sign: prediction sign matches feature sign
+      - all_events_matured: 20/20
+      - final_weight_in_reasonable_range: final weight = 0.9062
+      - no_missing_predictions: missing predictions = 0
+    Final weight: 0.9062, bias: -0.0938.
+  Hardware evidence: 24/24 criteria per seed, 3 seeds, 3 boards.
+    Seed 42: board 10.11.218.169, 24/24 criteria
+    Seed 43: board 10.11.218.41, 24/24 criteria
+    Seed 44: board 10.11.218.105, 24/24 criteria
+    Weight=30912 (0.943), bias=-1856 (-0.057) on ALL three seeds.
+    Exact zero variance across seeds.
+    Pending=20/20, decisions=20, reward_events=20, active_pending=0.
+    Lookups=60/60, stale=0, timeouts=0.
+    Context/route/memory slot_hits=20 each (all lookups hit).
+    Reference: final_weight_raw=29696 (0.906), final_bias_raw=-3072 (-0.094).
+    Weight delta=1216 (0.037), bias delta=1216 (0.037) — within ±8192 tolerance.
+  Package: cra_429h (cra_429e deprecated: monolithic commands; cra_429f
+    deprecated: Rule 2 violation; cra_429g deprecated: timestep=0 unreachable).
+  Claim boundary: Native predictive-binding hardware evidence only; not full
+    world modeling, not hidden-regime inference, not speedup, not multi-chip.
+  Canonical evidence: controlled_test_output/tier4_29c_20260504_pass_ingested/
+
+Tier 4.29d — COMPLETE. Native self-evaluation bridge.
+  Status: HARDWARE PASS, INGESTED. Three-seed repeatability complete.
+  Previous: 4.29c passed compact regression; 4.29d authorized per Phase C map.
+  Question: Does the native learning_core modulate plasticity by the composite
+    confidence of contextual, routing, and memory slots?
+  Hypothesis: Yes. Effective LR = base_lr * product(ctx_conf, route_conf, mem_conf).
+  Null hypothesis: Learning rate is invariant to slot confidence.
+  Mechanism: C runtime `_apply_reward_to_feature_prediction` now receives
+    `effective_lr` scaled by `ph->composite_confidence` when `ph->has_confidence`.
+    Learning core tick retrieves lookup confidences, computes composite product,
+    stores it in pending horizon via new `schedule_pending_horizon_with_target_and_confidence`.
+  Controls:
+    - full_confidence: all slots confidence=1.0; learning proceeds normally.
+    - zero_confidence: all slots confidence=0.0; zero weight/bias change (exact).
+    - zero_context_confidence: ctx_conf=0.0, others=1.0; product=0; zero change (exact).
+    - half_context_confidence: ctx_conf=0.5, others=1.0; reduced magnitude vs full.
+  Local reference: 20 events, delay=2, lr=0.25, initial weight=0, initial bias=0.
+    Host reference computes composite_confidence = product of slot confidences.
+    All 4 controls pass local criteria (seed 42):
+      - full: final weight=0.8750, bias=-0.1250
+      - zero: final weight=0.0000, bias=0.0000
+      - zero_context: final weight=0.0000, bias=0.0000
+      - half_context: final weight=0.8555, bias=0.1055 (magnitude < full)
+  Hardware evidence: 30/30 criteria per seed, 3 seeds, 3 boards. 90/90 total.
+    Seed 42: board 10.11.214.49, 30/30 criteria
+    Seed 43: board 10.11.214.113, 30/30 criteria
+    Seed 44: board 10.11.215.161, 30/30 criteria
+    Full confidence: weight=30912, bias=-1856 (consistent with 4.29c baseline).
+    Zero confidence: weight=0, bias=0 (exact zero on all seeds — proves confidence gating).
+    Zero-context confidence: weight=0, bias=0 (exact zero — single-slot zero blocks all learning).
+    Half-context confidence: weight=28093, bias=3517 (diff=61 from ref, within tolerance).
+  First attempt failed (cra_429i): MCPL lookup protocol does not transmit confidence.
+    `cra_state_mcpl_lookup_send_reply` ignores confidence arg; learning core's
+    `cra_state_mcpl_lookup_receive` hardcodes confidence=FP_ONE. All controls
+    received effective confidence=1.0, producing identical weight=30912.
+  Fix: Disable MCPL lookup paths in `_send_lookup_request` and `_send_lookup_reply`;
+    revert to SDP which transmits confidence via `msg->arg3`. Rebuilt as cra_429j.
+  Package: cra_429j (cra_429i deprecated: MCPL lookup lacks confidence transmission).
+  Runner: experiments/tier4_29d_native_self_evaluation_bridge.py
+  Claim boundary: Native confidence-gated learning hardware evidence only;
+    not full world modeling, not hidden-regime inference, not speedup, not multi-chip.
+  Next: Complete Tier 4.29e hardware replay/consolidation bridge, then compact
+    native mechanism regression if 4.29e passes.
+
+Tier 4.29e — IN PROGRESS. Native replay/consolidation bridge.
+  Status: DESIGN COMPLETE, LOCAL PASS, HARDWARE PENDING.
+  Previous: 4.29d passed compact regression; 4.29e authorized per Phase C map.
+  Question: Can the host schedule replay events through native state primitives
+    (context/route/memory slots, learning core) on real SpiNNaker hardware?
+  Hypothesis: Yes. Host constructs a schedule with original + replay events;
+    native runtime processes them through the same pipeline.
+  Null hypothesis: Replay events corrupt the pipeline, or outcomes are not
+    differentiable across correct-key / wrong-key / random-event conditions.
+  Mechanism: Host-scheduled replay only. No C runtime changes required.
+    Reuses cra_429j binaries. Schedule entries specify context/route/memory keys
+    per event; replay events repeat earlier events with same or different keys.
+  Controls:
+    - no_replay: 16 base events only; baseline learning.
+    - correct_replay: 16 base + 8 replay with correct keys; consolidation.
+    - wrong_key_replay: 16 base + 8 replay with wrong context keys; feature=0
+      on replay events, so weight approximates no-replay baseline (delta_w=0),
+      but bias diverges (delta_b = lr * error, independent of feature).
+    - random_event_replay: 16 base + 8 random conflicting events; should diverge
+      from correct-key replay.
+  Local reference: 16 base events, 8 replay events, delay=2, lr=0.25.
+    All 4 controls pass local criteria (seeds 42/43/44):
+      - no_replay: weight=1.1250, bias=0.1250
+      - correct_replay: weight=0.9375, bias=-0.0625
+      - wrong_key_replay: weight=1.1250 (≈ no_replay weight=1.1250, diff=0),
+        bias=1.1074 (diverges from no_replay bias=0.1250 because delta_b≠0)
+      - random_event_replay: weight=1.4688, bias=-0.0312 (differs from correct)
+  Hardware evidence: PENDING. Package cra_429o prepared and submitted via EBRAINS folder 429o.
+    Reuses cra_429j binaries (no C runtime changes for 4.29e).
+    Failure chain:
+    - cra_429k FAILED: runner file missing from package.
+      Fix: copy runner into experiments/; regenerate as cra_429l.
+    - cra_429l FAILED: `base.probe_board_hostname()` does not exist.
+      Fix: rewrite mode_run_hardware to match 4.29d pattern with
+      `base.acquire_hardware_target()`; regenerate as cra_429m.
+    - cra_429m FAILED: `fp_from_float()` values passed to `write_schedule_entry`,
+      which internally calls `float_to_fp()` — double conversion overflow.
+      For target=2.0: fp_from_float(2.0)=65536, float_to_fp(65536)=2,147,483,648
+      exceeds signed 32-bit max by 1.
+      Fix: pass raw floats to write_schedule_entry; regenerate as cra_429n.
+    - cra_429n FAILED: `fp_from_float()` values passed to `write_context`,
+      `write_route_slot`, and `write_memory_slot` — same double-conversion class
+      as cra_429m, but missed in the state-write path. State cores store
+      value=confidence=1073741824 (≈32768.0 in s16.15). Learning core lookup
+      replies return these huge values. `FP_MUL` overflows int32_t and wraps to 0,
+      so `feature=0` and `composite_confidence=0`. `effective_lr=0` blocks all
+      weight/bias updates. Hardware returns weight=0 bias=0 for all controls
+      despite decisions=16/24 and pending_matured=16/24.
+      Fix: pass raw floats to write_context/write_route_slot/write_memory_slot;
+      regenerate as cra_429o.
+  Runner: experiments/tier4_29e_native_replay_consolidation_bridge.py
+  Claim boundary: Native host-scheduled replay hardware evidence only;
+    not native on-chip replay buffers, not biological sleep, not speedup,
+    not multi-chip, not performance improvement claim.
+  Next: wait for returned cra_429o EBRAINS files. Verify runner revision/timestamps,
+    ingest only true cra_429o results, then promote to 4.29f compact native
+    mechanism regression if all seeds pass; otherwise repair with a fresh package.
 
 Current status summary:
 
@@ -122,6 +254,34 @@ Tier 4.28b = HARDWARE PASS, INGESTED. Board 10.11.213.9, cores 4/5/6/7.
   stale_replies=0, timeouts=0. First EBRAINS attempt (cra_428f) failed due to
   lookup key mismatch (key_id=0 vs written slots at 101/1101/2101); fixed in
   cra_428g per fresh-package Rule 10.
+
+Tier 4.29a = HARDWARE PASS, INGESTED. Three-seed repeatability complete.
+  Seed 42: board 10.11.213.9, 24/24 criteria
+  Seed 43: board 10.11.213.73, 24/24 criteria
+  Seed 44: board 10.11.212.201, 24/24 criteria
+  Overcapacity gate: pending_created=20/20, pending_matured=20/20, active_pending=0,
+  decisions=20, reward_events=20. Context slots active=20/128, evictions=0.
+
+Tier 4.29b = HARDWARE PASS, INGESTED. Three-seed repeatability complete.
+  Seed 42: board 10.11.194.81, 47/47 criteria
+  Seed 43: board 10.11.195.1, 47/47 criteria
+  Seed 44: board 10.11.195.129, 47/47 criteria
+  Weight=32781, bias=3 on all seeds. Exact parity. Pending=32/32, lookups=96/96.
+
+Tier 4.29c = HARDWARE PASS, INGESTED. Three-seed repeatability complete.
+  Seed 42: board 10.11.218.169, 24/24 criteria
+  Seed 43: board 10.11.218.41, 24/24 criteria
+  Seed 44: board 10.11.218.105, 24/24 criteria
+  Weight=30912 (0.943), bias=-1856 (-0.057) on ALL seeds. Exact zero variance.
+  Pending=20/20, decisions=20, reward_events=20, lookups=60/60.
+
+Tier 4.29d = HARDWARE PASS, INGESTED. Three-seed repeatability complete.
+  Seed 42: board 10.11.214.49, 30/30 criteria
+  Seed 43: board 10.11.214.113, 30/30 criteria
+  Seed 44: board 10.11.215.161, 30/30 criteria
+  Zero-confidence controls: exact weight=0, bias=0 on all seeds.
+  Half-confidence: weight=28093, bias=3517 (diff=61 from ref).
+  Package: cra_429j (cra_429i deprecated: MCPL lacked confidence transmission).
 ```
 
 Tier 4.27a canonical evidence:
@@ -197,22 +357,20 @@ Local build capability (established 2026-05-02):
 
 Immediate next steps:
 
-1. ~~Define Tier 4.27 in `CONTROLLED_TEST_PLAN.md` and roadmap docs.~~ DONE.
-2. ~~Add local instrumentation for request/reply counts, stale/duplicate replies,
-   timeouts, payload bytes, command counts, readback bytes, and schedule length.~~ DONE.
-3. ~~Run EBRAINS hardware characterization on the current SDP four-core path.~~ DONE.
-   Board 10.11.194.65, cores 4/5/6/7, seed 42. 38/38 criteria pass.
-4. ~~Run MCPL feasibility and smoke gates using official Spin1API callback symbols~~ DONE.
-   Tiers 4.27e-g passed. MCPL is default protocol.
-5. ~~Compare SDP and MCPL, then decide the concrete migration plan.~~ DONE.
-   MCPL selected; SDP is transitional fallback.
-6. ~~Run harder native tasks (delayed-cue, hard noisy switching) with repeatability.~~ DONE.
-   Tiers 4.28b, 4.28c, 4.28d passed with zero variance across seeds.
-7. ~~Run native failure-envelope report to measure operating limits.~~ DONE.
-   Tier 4.28e complete; boundary confirmed at 64 schedule entries.
-8. ~~Freeze `CRA_NATIVE_TASK_BASELINE_v0.2`.~~ DONE.
-9. Define mechanism migration map for Phase C (4.29a+).
-10. Start Tier 4.29a: native keyed-memory overcapacity gate (local first).
+1. Wait for returned Tier 4.29e `cra_429o` EBRAINS files.
+2. Verify returned file timestamps and runner revision before ingesting:
+   `tier4_29e_native_replay_consolidation_20260505_0002`.
+3. Reject stale pre-`cra_429o` 4.29e results from runner revision
+   `20260504_0001` or prepared-only artifacts.
+4. If 4.29e passes all predeclared criteria, ingest under
+   `controlled_test_output/`, update docs/registry status, and move to Tier
+   4.29f compact native mechanism regression.
+5. If 4.29e fails, classify whether it is packaging, fixed-point/state-write,
+   protocol/readback, hardware, or mechanism behavior; document the failure,
+   repair locally, bump to a fresh EBRAINS package name, and do not promote.
+6. Keep public repo hygiene green before the next upload or commit: no
+   credentialed remotes, no `ebrains_jobs/` symlinks, no transient root output
+   dirs, no generated host binaries, and `make validate` passing.
 
 ## 1. North Star
 
@@ -265,6 +423,9 @@ These rules are non-negotiable.
     statistics, mathematics, and hardware engineering. If the relevant standard
     is not known, stop and research it from primary or official sources before
     implementing.
+15. Public-repo hygiene is evidence integrity. Do not commit credentials,
+    machine-local symlinks, transient root output directories, generated host
+    binaries, or private Downloads artifacts.
 
 ## 2.1 Agent Thinking Contract
 
@@ -634,7 +795,9 @@ Start with these documents in this order when orienting yourself:
     command contract.
 16. `coral_reef_spinnaker/spinnaker_runtime/README.md`: custom runtime status,
     scope, and limitations.
-17. `baselines/CRA_EVIDENCE_BASELINE_vX.Y.md`: frozen baseline locks.
+17. `docs/PUBLIC_REPO_HYGIENE.md`: public Apache-2.0 artifact policy, ignore
+    policy, EBRAINS package rules, security scans, and clean/commit SOP.
+18. `baselines/CRA_EVIDENCE_BASELINE_vX.Y.md`: frozen baseline locks.
 
 If these documents conflict, do not guess. Prefer the most specific current
 source for the topic, then update the stale document so the conflict disappears.
@@ -664,7 +827,8 @@ exists.
 | How do we ingest JobManager results? | Section 9.4 of this contract | Tier-specific `--mode ingest`, runbook |
 | How does custom C runtime protocol work? | `coral_reef_spinnaker/spinnaker_runtime/PROTOCOL_SPEC.md` | Runtime README, custom-runtime guide |
 | Why custom C instead of PyNN? | `coral_reef_spinnaker/spinnaker_runtime/README.md` | Section 10 of this contract |
-| What is source versus generated? | `ARTIFACTS.md` | `docs/CODEBASE_MAP.md` |
+| What is source versus generated? | `ARTIFACTS.md` | `docs/CODEBASE_MAP.md`, `docs/PUBLIC_REPO_HYGIENE.md` |
+| What belongs in the public Git repo? | `docs/PUBLIC_REPO_HYGIENE.md` | `.gitignore`, `.gitattributes`, `ARTIFACTS.md` |
 | What is CRA architecturally? | `ARCHITECTURE.md` | `MICROCIRCUIT_DESIGN.md`, whitepaper |
 | What code owns configuration? | `coral_reef_spinnaker/config.py` | `coral_reef_spinnaker/config_adapters.py`, codebase map |
 | What code owns runtime modes? | `coral_reef_spinnaker/runtime_modes.py` | Tier 4.17+ runners, codebase map |
@@ -722,6 +886,7 @@ Important top-level paths:
 | `docs/` | Research-facing docs, roadmap, reviewer defense, runbooks. | Update whenever claims, workflows, tiers, or hardware lessons change. |
 | `ebrains_jobs/` | Clean source-only EBRAINS upload folders. | Upload the specific `cra_*` folder only. Do not upload the full repo. |
 | `/Users/james/Downloads` | Temporary location where returned EBRAINS artifacts arrive. | Ingest/copy relevant outputs into `controlled_test_output/`; do not treat Downloads as canonical evidence. |
+| `docs/PUBLIC_REPO_HYGIENE.md` | Public repo hygiene SOP. | Use for artifact classification, clean/commit passes, security scans, and GitHub readiness. |
 
 ## 5. Evidence Levels
 
@@ -867,7 +1032,10 @@ Hardware work has caused the most avoidable pain. Follow this exactly.
    generated clutter.
 6. If code changes after a failed EBRAINS run, create a fresh upload folder name
    to avoid stale cache confusion.
-7. The JobManager command must include the uploaded folder name, for example:
+7. `ebrains_jobs/cra_*` folders committed to Git must be real source
+   directories, never symlinks to `/tmp`, `/private/tmp`, `tier*_output/`, or
+   any machine-local path.
+8. The JobManager command must include the uploaded folder name, for example:
 
 ```text
 cra_422ag/experiments/tier4_22w_native_decoupled_memory_route_composition_smoke.py --mode run-hardware --output-dir tier4_22w_job_output
@@ -1202,6 +1370,7 @@ When something changes, update the right docs.
 | New EBRAINS upload folder | `ebrains_jobs/README.md`, `docs/SPINNAKER_EBRAINS_RUNBOOK.md` if command or lesson changed |
 | New custom runtime command | `PROTOCOL_SPEC.md`, runtime `README.md`, `docs/SPINNAKER_EBRAINS_CUSTOM_RUNTIME_GUIDE.md`, host tests |
 | New baseline model or fairness rule | `docs/REVIEWER_DEFENSE_PLAN.md`, `CONTROLLED_TEST_PLAN.md`, `experiments/README.md` |
+| Public-repo hygiene or artifact-policy change | `.gitignore`, `.gitattributes`, `ARTIFACTS.md`, `docs/PUBLIC_REPO_HYGIENE.md`, `docs/CODEBASE_MAP.md` |
 | Prepared package QA issue | Fix runner/package source first, regenerate prepared output, update job README/report references, then validation |
 | Generated doc becomes stale | Fix generator, then run validation. Do not hand-edit generated output unless documented. |
 
@@ -1677,8 +1846,11 @@ Before saying a task is done:
 7. Section 0 of this contract was updated if the current status, active tier,
    baseline, or next plan changed.
 8. Validation ran or the residual risk was stated.
-9. The final answer includes absolute file references when pointing to files.
-10. The next step is clear.
+9. Public-repo checks were considered for commits: no credentialed remotes, no
+   `ebrains_jobs/` symlinks, no transient root outputs, no generated host
+   binaries, and no unexpected large files.
+10. The final answer includes absolute file references when pointing to files.
+11. The next step is clear.
 
 ## 23. Agent Quality And Handoff Contract
 

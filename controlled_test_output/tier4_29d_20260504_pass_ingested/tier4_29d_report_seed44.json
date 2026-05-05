@@ -1,0 +1,1714 @@
+{
+  "tier": "Tier 4.29d \u2014 Native Self-Evaluation Bridge",
+  "runner_revision": "tier4_29d_native_self_evaluation_20260504_0002",
+  "mode": "run-hardware",
+  "seed": 44,
+  "hostname": "10.11.215.161",
+  "status": "pass",
+  "criteria": [
+    {
+      "name": "runner revision current",
+      "value": "tier4_29d_native_self_evaluation_20260504_0002",
+      "rule": "expected current source",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "custom C host tests pass",
+      "value": "pass",
+      "rule": "== pass",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "main.c syntax check pass",
+      "value": "pass",
+      "rule": "== pass",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "hardware target acquired",
+      "value": {
+        "status": "pass",
+        "method": "pyNN.spiNNaker_probe",
+        "hostname": "10.11.215.161",
+        "target_ipaddress": "10.11.215.161",
+        "setup_kwargs": {
+          "timestep": 1.0
+        },
+        "probe_population_size": 1,
+        "probe_run_ms": 1.0,
+        "probe_timestep_ms": 1.0,
+        "dest_x": 0,
+        "dest_y": 0,
+        "dest_cpu": 4,
+        "occupied_cores": [
+          1,
+          2,
+          3
+        ],
+        "notes": [
+          "acquired transceiver/IP via PyNN/sPyNNaker DataView because EBRAINS JobManager may not expose a raw hostname",
+          "requested dest_cpu 1 was occupied; selected free core 4"
+        ],
+        "runtime_seconds": 47.829225501045585,
+        "attempts": [
+          {
+            "status": "fail",
+            "method": "hostname_discovery",
+            "hostname": "",
+            "notes": [
+              "no hostname found in args, common environment variables, or spynnaker.cfg"
+            ],
+            "reason": "no explicit hostname/config/environment target found"
+          },
+          {
+            "status": "pass",
+            "method": "pyNN.spiNNaker_probe",
+            "hostname": "10.11.215.161",
+            "target_ipaddress": "10.11.215.161",
+            "setup_kwargs": {
+              "timestep": 1.0
+            },
+            "probe_population_size": 1,
+            "probe_run_ms": 1.0,
+            "probe_timestep_ms": 1.0,
+            "dest_x": 0,
+            "dest_y": 0,
+            "dest_cpu": 4,
+            "occupied_cores": [
+              1,
+              2,
+              3
+            ],
+            "notes": [
+              "acquired transceiver/IP via PyNN/sPyNNaker DataView because EBRAINS JobManager may not expose a raw hostname",
+              "requested dest_cpu 1 was occupied; selected free core 4"
+            ],
+            "runtime_seconds": 47.829225501045585
+          }
+        ]
+      },
+      "rule": "status == pass",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "context_core .aplx built",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "route_core .aplx built",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "memory_core .aplx built",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core .aplx built",
+      "value": true,
+      "rule": "== True",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "context_core load pass",
+      "value": "pass",
+      "rule": "== pass",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "route_core load pass",
+      "value": "pass",
+      "rule": "== pass",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "memory_core load pass",
+      "value": "pass",
+      "rule": "== pass",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "learning_core load pass",
+      "value": "pass",
+      "rule": "== pass",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "full_confidence_weight_finite",
+      "value": 28672,
+      "threshold": 65536,
+      "passed": true,
+      "note": "final weight = 0.8750"
+    },
+    {
+      "name": "full_confidence_bias_finite",
+      "value": 4096,
+      "threshold": 65536,
+      "passed": true,
+      "note": "final bias = -0.1250"
+    },
+    {
+      "name": "full_confidence_hardware_weight_within_tolerance",
+      "value": 30912,
+      "threshold": 8192,
+      "passed": true,
+      "note": "hw=30912 ref=28672 diff=2240"
+    },
+    {
+      "name": "full_confidence_hardware_bias_within_tolerance",
+      "value": -1856,
+      "threshold": 8192,
+      "passed": true,
+      "note": "hw=-1856 ref=-4096 diff=2240"
+    },
+    {
+      "name": "full_confidence_all_events_matured",
+      "value": 20,
+      "threshold": 20,
+      "passed": true,
+      "note": "matured 20/20"
+    },
+    {
+      "name": "zero_confidence_weight_zero",
+      "value": 0,
+      "threshold": 0,
+      "passed": true,
+      "note": "final weight = 0.0000"
+    },
+    {
+      "name": "zero_confidence_bias_zero",
+      "value": 0,
+      "threshold": 0,
+      "passed": true,
+      "note": "final bias = 0.0000"
+    },
+    {
+      "name": "zero_confidence_hardware_weight_within_tolerance",
+      "value": 0,
+      "threshold": 8192,
+      "passed": true,
+      "note": "hw=0 ref=0 diff=0"
+    },
+    {
+      "name": "zero_confidence_hardware_bias_within_tolerance",
+      "value": 0,
+      "threshold": 8192,
+      "passed": true,
+      "note": "hw=0 ref=0 diff=0"
+    },
+    {
+      "name": "zero_confidence_all_events_matured",
+      "value": 20,
+      "threshold": 20,
+      "passed": true,
+      "note": "matured 20/20"
+    },
+    {
+      "name": "zero_context_confidence_weight_zero",
+      "value": 0,
+      "threshold": 0,
+      "passed": true,
+      "note": "final weight = 0.0000"
+    },
+    {
+      "name": "zero_context_confidence_bias_zero",
+      "value": 0,
+      "threshold": 0,
+      "passed": true,
+      "note": "final bias = 0.0000"
+    },
+    {
+      "name": "zero_context_confidence_hardware_weight_within_tolerance",
+      "value": 0,
+      "threshold": 8192,
+      "passed": true,
+      "note": "hw=0 ref=0 diff=0"
+    },
+    {
+      "name": "zero_context_confidence_hardware_bias_within_tolerance",
+      "value": 0,
+      "threshold": 8192,
+      "passed": true,
+      "note": "hw=0 ref=0 diff=0"
+    },
+    {
+      "name": "zero_context_confidence_all_events_matured",
+      "value": 20,
+      "threshold": 20,
+      "passed": true,
+      "note": "matured 20/20"
+    },
+    {
+      "name": "half_context_confidence_weight_magnitude_less_than_full",
+      "value": 28032,
+      "threshold": "abs(w) < abs(full_ref)=28672",
+      "passed": true,
+      "note": "final weight = 0.8555 (full=0.8750)"
+    },
+    {
+      "name": "half_context_confidence_bias_magnitude_less_than_full",
+      "value": 3456,
+      "threshold": "abs(b) < abs(full_ref)=4096",
+      "passed": true,
+      "note": "final bias = 0.1055 (full=-0.1250)"
+    },
+    {
+      "name": "half_context_confidence_hardware_weight_within_tolerance",
+      "value": 28093,
+      "threshold": 8192,
+      "passed": true,
+      "note": "hw=28093 ref=28032 diff=61"
+    },
+    {
+      "name": "half_context_confidence_hardware_bias_within_tolerance",
+      "value": 3517,
+      "threshold": 8192,
+      "passed": true,
+      "note": "hw=3517 ref=3456 diff=61"
+    },
+    {
+      "name": "half_context_confidence_all_events_matured",
+      "value": 20,
+      "threshold": 20,
+      "passed": true,
+      "note": "matured 20/20"
+    }
+  ],
+  "control_results": [
+    {
+      "status": "completed",
+      "control": "full_confidence",
+      "criteria": [
+        {
+          "name": "full_confidence_weight_finite",
+          "value": 28672,
+          "threshold": 65536,
+          "passed": true,
+          "note": "final weight = 0.8750"
+        },
+        {
+          "name": "full_confidence_bias_finite",
+          "value": 4096,
+          "threshold": 65536,
+          "passed": true,
+          "note": "final bias = -0.1250"
+        },
+        {
+          "name": "full_confidence_hardware_weight_within_tolerance",
+          "value": 30912,
+          "threshold": 8192,
+          "passed": true,
+          "note": "hw=30912 ref=28672 diff=2240"
+        },
+        {
+          "name": "full_confidence_hardware_bias_within_tolerance",
+          "value": -1856,
+          "threshold": 8192,
+          "passed": true,
+          "note": "hw=-1856 ref=-4096 diff=2240"
+        },
+        {
+          "name": "full_confidence_all_events_matured",
+          "value": 20,
+          "threshold": 20,
+          "passed": true,
+          "note": "matured 20/20"
+        }
+      ],
+      "reference": {
+        "final_weight_raw": 28672,
+        "final_bias_raw": -4096,
+        "final_weight_float": 0.875,
+        "final_bias_float": -0.125
+      },
+      "reset": {
+        "context": true,
+        "route": true,
+        "memory": true,
+        "learning": true
+      },
+      "state_writes": {
+        "context": [
+          {
+            "key": 101,
+            "success": true
+          }
+        ],
+        "route": [
+          {
+            "key": 201,
+            "success": true
+          }
+        ],
+        "memory": [
+          {
+            "key": 301,
+            "success": true
+          }
+        ]
+      },
+      "schedule_uploads": [
+        {
+          "index": 0,
+          "success": true
+        },
+        {
+          "index": 1,
+          "success": true
+        },
+        {
+          "index": 2,
+          "success": true
+        },
+        {
+          "index": 3,
+          "success": true
+        },
+        {
+          "index": 4,
+          "success": true
+        },
+        {
+          "index": 5,
+          "success": true
+        },
+        {
+          "index": 6,
+          "success": true
+        },
+        {
+          "index": 7,
+          "success": true
+        },
+        {
+          "index": 8,
+          "success": true
+        },
+        {
+          "index": 9,
+          "success": true
+        },
+        {
+          "index": 10,
+          "success": true
+        },
+        {
+          "index": 11,
+          "success": true
+        },
+        {
+          "index": 12,
+          "success": true
+        },
+        {
+          "index": 13,
+          "success": true
+        },
+        {
+          "index": 14,
+          "success": true
+        },
+        {
+          "index": 15,
+          "success": true
+        },
+        {
+          "index": 16,
+          "success": true
+        },
+        {
+          "index": 17,
+          "success": true
+        },
+        {
+          "index": 18,
+          "success": true
+        },
+        {
+          "index": 19,
+          "success": true
+        }
+      ],
+      "run_continuous": {
+        "context": {
+          "success": true,
+          "cmd": 24,
+          "status": 0
+        },
+        "route": {
+          "success": true,
+          "cmd": 24,
+          "status": 0
+        },
+        "memory": {
+          "success": true,
+          "cmd": 24,
+          "status": 0
+        },
+        "learning": {
+          "success": true,
+          "cmd": 24,
+          "status": 0
+        }
+      },
+      "pause": {
+        "context": {
+          "success": true,
+          "cmd": 25,
+          "status": 0,
+          "stopped_timestep": 9082
+        },
+        "route": {
+          "success": true,
+          "cmd": 25,
+          "status": 0,
+          "stopped_timestep": 6978
+        },
+        "memory": {
+          "success": true,
+          "cmd": 25,
+          "status": 0,
+          "stopped_timestep": 4877
+        },
+        "learning": {
+          "success": true,
+          "cmd": 25,
+          "status": 0,
+          "stopped_timestep": 2772
+        },
+        "all_paused": true
+      },
+      "final_state": {
+        "context": {
+          "success": true,
+          "cmd": 8,
+          "status": 0,
+          "schema_version": 2,
+          "payload_len": 105,
+          "timestep": 9183,
+          "neuron_count": 0,
+          "synapse_count": 0,
+          "active_trace_count": 0,
+          "active_slots": 1,
+          "slot_writes": 1,
+          "slot_hits": 20,
+          "slot_misses": 0,
+          "slot_evictions": 0,
+          "decisions": 0,
+          "reward_events": 0,
+          "pending_created": 0,
+          "pending_matured": 0,
+          "pending_dropped": 0,
+          "active_pending": 0,
+          "readout_weight_raw": 0,
+          "readout_bias_raw": 0,
+          "readout_weight": 0.0,
+          "readout_bias": 0.0,
+          "profile_id": 4,
+          "flags": 0,
+          "lookup_requests": 0,
+          "lookup_replies": 0,
+          "stale_replies": 0,
+          "duplicate_replies": 0,
+          "timeouts": 0,
+          "commands_received": 24,
+          "schedule_length": 0,
+          "readback_bytes": 105
+        },
+        "route": {
+          "success": true,
+          "cmd": 8,
+          "status": 0,
+          "schema_version": 2,
+          "payload_len": 105,
+          "timestep": 7080,
+          "neuron_count": 0,
+          "synapse_count": 0,
+          "active_trace_count": 0,
+          "active_slots": 1,
+          "slot_writes": 1,
+          "slot_hits": 20,
+          "slot_misses": 0,
+          "slot_evictions": 0,
+          "decisions": 0,
+          "reward_events": 0,
+          "pending_created": 0,
+          "pending_matured": 0,
+          "pending_dropped": 0,
+          "active_pending": 0,
+          "readout_weight_raw": 0,
+          "readout_bias_raw": 0,
+          "readout_weight": 0.0,
+          "readout_bias": 0.0,
+          "profile_id": 5,
+          "flags": 0,
+          "lookup_requests": 0,
+          "lookup_replies": 0,
+          "stale_replies": 0,
+          "duplicate_replies": 0,
+          "timeouts": 0,
+          "commands_received": 24,
+          "schedule_length": 0,
+          "readback_bytes": 105
+        },
+        "memory": {
+          "success": true,
+          "cmd": 8,
+          "status": 0,
+          "schema_version": 2,
+          "payload_len": 105,
+          "timestep": 4978,
+          "neuron_count": 0,
+          "synapse_count": 0,
+          "active_trace_count": 0,
+          "active_slots": 1,
+          "slot_writes": 1,
+          "slot_hits": 20,
+          "slot_misses": 0,
+          "slot_evictions": 0,
+          "decisions": 0,
+          "reward_events": 0,
+          "pending_created": 0,
+          "pending_matured": 0,
+          "pending_dropped": 0,
+          "active_pending": 0,
+          "readout_weight_raw": 0,
+          "readout_bias_raw": 0,
+          "readout_weight": 0.0,
+          "readout_bias": 0.0,
+          "profile_id": 6,
+          "flags": 0,
+          "lookup_requests": 0,
+          "lookup_replies": 0,
+          "stale_replies": 0,
+          "duplicate_replies": 0,
+          "timeouts": 0,
+          "commands_received": 24,
+          "schedule_length": 0,
+          "readback_bytes": 105
+        },
+        "learning": {
+          "success": true,
+          "cmd": 8,
+          "status": 0,
+          "schema_version": 2,
+          "payload_len": 105,
+          "timestep": 2874,
+          "neuron_count": 0,
+          "synapse_count": 0,
+          "active_trace_count": 0,
+          "active_slots": 0,
+          "slot_writes": 0,
+          "slot_hits": 0,
+          "slot_misses": 0,
+          "slot_evictions": 0,
+          "decisions": 20,
+          "reward_events": 20,
+          "pending_created": 20,
+          "pending_matured": 20,
+          "pending_dropped": 0,
+          "active_pending": 0,
+          "readout_weight_raw": 30912,
+          "readout_bias_raw": -1856,
+          "readout_weight": 0.943359375,
+          "readout_bias": -0.056640625,
+          "profile_id": 3,
+          "flags": 0,
+          "lookup_requests": 60,
+          "lookup_replies": 60,
+          "stale_replies": 0,
+          "duplicate_replies": 0,
+          "timeouts": 0,
+          "commands_received": 84,
+          "schedule_length": 20,
+          "readback_bytes": 210
+        }
+      },
+      "wait_time": 0.5
+    },
+    {
+      "status": "completed",
+      "control": "zero_confidence",
+      "criteria": [
+        {
+          "name": "zero_confidence_weight_zero",
+          "value": 0,
+          "threshold": 0,
+          "passed": true,
+          "note": "final weight = 0.0000"
+        },
+        {
+          "name": "zero_confidence_bias_zero",
+          "value": 0,
+          "threshold": 0,
+          "passed": true,
+          "note": "final bias = 0.0000"
+        },
+        {
+          "name": "zero_confidence_hardware_weight_within_tolerance",
+          "value": 0,
+          "threshold": 8192,
+          "passed": true,
+          "note": "hw=0 ref=0 diff=0"
+        },
+        {
+          "name": "zero_confidence_hardware_bias_within_tolerance",
+          "value": 0,
+          "threshold": 8192,
+          "passed": true,
+          "note": "hw=0 ref=0 diff=0"
+        },
+        {
+          "name": "zero_confidence_all_events_matured",
+          "value": 20,
+          "threshold": 20,
+          "passed": true,
+          "note": "matured 20/20"
+        }
+      ],
+      "reference": {
+        "final_weight_raw": 0,
+        "final_bias_raw": 0,
+        "final_weight_float": 0.0,
+        "final_bias_float": 0.0
+      },
+      "reset": {
+        "context": true,
+        "route": true,
+        "memory": true,
+        "learning": true
+      },
+      "state_writes": {
+        "context": [
+          {
+            "key": 101,
+            "success": true
+          }
+        ],
+        "route": [
+          {
+            "key": 201,
+            "success": true
+          }
+        ],
+        "memory": [
+          {
+            "key": 301,
+            "success": true
+          }
+        ]
+      },
+      "schedule_uploads": [
+        {
+          "index": 0,
+          "success": true
+        },
+        {
+          "index": 1,
+          "success": true
+        },
+        {
+          "index": 2,
+          "success": true
+        },
+        {
+          "index": 3,
+          "success": true
+        },
+        {
+          "index": 4,
+          "success": true
+        },
+        {
+          "index": 5,
+          "success": true
+        },
+        {
+          "index": 6,
+          "success": true
+        },
+        {
+          "index": 7,
+          "success": true
+        },
+        {
+          "index": 8,
+          "success": true
+        },
+        {
+          "index": 9,
+          "success": true
+        },
+        {
+          "index": 10,
+          "success": true
+        },
+        {
+          "index": 11,
+          "success": true
+        },
+        {
+          "index": 12,
+          "success": true
+        },
+        {
+          "index": 13,
+          "success": true
+        },
+        {
+          "index": 14,
+          "success": true
+        },
+        {
+          "index": 15,
+          "success": true
+        },
+        {
+          "index": 16,
+          "success": true
+        },
+        {
+          "index": 17,
+          "success": true
+        },
+        {
+          "index": 18,
+          "success": true
+        },
+        {
+          "index": 19,
+          "success": true
+        }
+      ],
+      "run_continuous": {
+        "context": {
+          "success": true,
+          "cmd": 24,
+          "status": 0
+        },
+        "route": {
+          "success": true,
+          "cmd": 24,
+          "status": 0
+        },
+        "memory": {
+          "success": true,
+          "cmd": 24,
+          "status": 0
+        },
+        "learning": {
+          "success": true,
+          "cmd": 24,
+          "status": 0
+        }
+      },
+      "pause": {
+        "context": {
+          "success": true,
+          "cmd": 25,
+          "status": 0,
+          "stopped_timestep": 9847
+        },
+        "route": {
+          "success": true,
+          "cmd": 25,
+          "status": 0,
+          "stopped_timestep": 7744
+        },
+        "memory": {
+          "success": true,
+          "cmd": 25,
+          "status": 0,
+          "stopped_timestep": 5642
+        },
+        "learning": {
+          "success": true,
+          "cmd": 25,
+          "status": 0,
+          "stopped_timestep": 3538
+        },
+        "all_paused": true
+      },
+      "final_state": {
+        "context": {
+          "success": true,
+          "cmd": 8,
+          "status": 0,
+          "schema_version": 2,
+          "payload_len": 105,
+          "timestep": 9949,
+          "neuron_count": 0,
+          "synapse_count": 0,
+          "active_trace_count": 0,
+          "active_slots": 1,
+          "slot_writes": 1,
+          "slot_hits": 20,
+          "slot_misses": 0,
+          "slot_evictions": 0,
+          "decisions": 0,
+          "reward_events": 0,
+          "pending_created": 0,
+          "pending_matured": 0,
+          "pending_dropped": 0,
+          "active_pending": 0,
+          "readout_weight_raw": 0,
+          "readout_bias_raw": 0,
+          "readout_weight": 0.0,
+          "readout_bias": 0.0,
+          "profile_id": 4,
+          "flags": 0,
+          "lookup_requests": 0,
+          "lookup_replies": 0,
+          "stale_replies": 0,
+          "duplicate_replies": 0,
+          "timeouts": 0,
+          "commands_received": 24,
+          "schedule_length": 0,
+          "readback_bytes": 105
+        },
+        "route": {
+          "success": true,
+          "cmd": 8,
+          "status": 0,
+          "schema_version": 2,
+          "payload_len": 105,
+          "timestep": 7845,
+          "neuron_count": 0,
+          "synapse_count": 0,
+          "active_trace_count": 0,
+          "active_slots": 1,
+          "slot_writes": 1,
+          "slot_hits": 20,
+          "slot_misses": 0,
+          "slot_evictions": 0,
+          "decisions": 0,
+          "reward_events": 0,
+          "pending_created": 0,
+          "pending_matured": 0,
+          "pending_dropped": 0,
+          "active_pending": 0,
+          "readout_weight_raw": 0,
+          "readout_bias_raw": 0,
+          "readout_weight": 0.0,
+          "readout_bias": 0.0,
+          "profile_id": 5,
+          "flags": 0,
+          "lookup_requests": 0,
+          "lookup_replies": 0,
+          "stale_replies": 0,
+          "duplicate_replies": 0,
+          "timeouts": 0,
+          "commands_received": 24,
+          "schedule_length": 0,
+          "readback_bytes": 105
+        },
+        "memory": {
+          "success": true,
+          "cmd": 8,
+          "status": 0,
+          "schema_version": 2,
+          "payload_len": 105,
+          "timestep": 5744,
+          "neuron_count": 0,
+          "synapse_count": 0,
+          "active_trace_count": 0,
+          "active_slots": 1,
+          "slot_writes": 1,
+          "slot_hits": 20,
+          "slot_misses": 0,
+          "slot_evictions": 0,
+          "decisions": 0,
+          "reward_events": 0,
+          "pending_created": 0,
+          "pending_matured": 0,
+          "pending_dropped": 0,
+          "active_pending": 0,
+          "readout_weight_raw": 0,
+          "readout_bias_raw": 0,
+          "readout_weight": 0.0,
+          "readout_bias": 0.0,
+          "profile_id": 6,
+          "flags": 0,
+          "lookup_requests": 0,
+          "lookup_replies": 0,
+          "stale_replies": 0,
+          "duplicate_replies": 0,
+          "timeouts": 0,
+          "commands_received": 24,
+          "schedule_length": 0,
+          "readback_bytes": 105
+        },
+        "learning": {
+          "success": true,
+          "cmd": 8,
+          "status": 0,
+          "schema_version": 2,
+          "payload_len": 105,
+          "timestep": 3640,
+          "neuron_count": 0,
+          "synapse_count": 0,
+          "active_trace_count": 0,
+          "active_slots": 0,
+          "slot_writes": 0,
+          "slot_hits": 0,
+          "slot_misses": 0,
+          "slot_evictions": 0,
+          "decisions": 20,
+          "reward_events": 20,
+          "pending_created": 20,
+          "pending_matured": 20,
+          "pending_dropped": 0,
+          "active_pending": 0,
+          "readout_weight_raw": 0,
+          "readout_bias_raw": 0,
+          "readout_weight": 0.0,
+          "readout_bias": 0.0,
+          "profile_id": 3,
+          "flags": 0,
+          "lookup_requests": 60,
+          "lookup_replies": 60,
+          "stale_replies": 0,
+          "duplicate_replies": 0,
+          "timeouts": 0,
+          "commands_received": 84,
+          "schedule_length": 20,
+          "readback_bytes": 210
+        }
+      },
+      "wait_time": 0.5
+    },
+    {
+      "status": "completed",
+      "control": "zero_context_confidence",
+      "criteria": [
+        {
+          "name": "zero_context_confidence_weight_zero",
+          "value": 0,
+          "threshold": 0,
+          "passed": true,
+          "note": "final weight = 0.0000"
+        },
+        {
+          "name": "zero_context_confidence_bias_zero",
+          "value": 0,
+          "threshold": 0,
+          "passed": true,
+          "note": "final bias = 0.0000"
+        },
+        {
+          "name": "zero_context_confidence_hardware_weight_within_tolerance",
+          "value": 0,
+          "threshold": 8192,
+          "passed": true,
+          "note": "hw=0 ref=0 diff=0"
+        },
+        {
+          "name": "zero_context_confidence_hardware_bias_within_tolerance",
+          "value": 0,
+          "threshold": 8192,
+          "passed": true,
+          "note": "hw=0 ref=0 diff=0"
+        },
+        {
+          "name": "zero_context_confidence_all_events_matured",
+          "value": 20,
+          "threshold": 20,
+          "passed": true,
+          "note": "matured 20/20"
+        }
+      ],
+      "reference": {
+        "final_weight_raw": 0,
+        "final_bias_raw": 0,
+        "final_weight_float": 0.0,
+        "final_bias_float": 0.0
+      },
+      "reset": {
+        "context": true,
+        "route": true,
+        "memory": true,
+        "learning": true
+      },
+      "state_writes": {
+        "context": [
+          {
+            "key": 101,
+            "success": true
+          }
+        ],
+        "route": [
+          {
+            "key": 201,
+            "success": true
+          }
+        ],
+        "memory": [
+          {
+            "key": 301,
+            "success": true
+          }
+        ]
+      },
+      "schedule_uploads": [
+        {
+          "index": 0,
+          "success": true
+        },
+        {
+          "index": 1,
+          "success": true
+        },
+        {
+          "index": 2,
+          "success": true
+        },
+        {
+          "index": 3,
+          "success": true
+        },
+        {
+          "index": 4,
+          "success": true
+        },
+        {
+          "index": 5,
+          "success": true
+        },
+        {
+          "index": 6,
+          "success": true
+        },
+        {
+          "index": 7,
+          "success": true
+        },
+        {
+          "index": 8,
+          "success": true
+        },
+        {
+          "index": 9,
+          "success": true
+        },
+        {
+          "index": 10,
+          "success": true
+        },
+        {
+          "index": 11,
+          "success": true
+        },
+        {
+          "index": 12,
+          "success": true
+        },
+        {
+          "index": 13,
+          "success": true
+        },
+        {
+          "index": 14,
+          "success": true
+        },
+        {
+          "index": 15,
+          "success": true
+        },
+        {
+          "index": 16,
+          "success": true
+        },
+        {
+          "index": 17,
+          "success": true
+        },
+        {
+          "index": 18,
+          "success": true
+        },
+        {
+          "index": 19,
+          "success": true
+        }
+      ],
+      "run_continuous": {
+        "context": {
+          "success": true,
+          "cmd": 24,
+          "status": 0
+        },
+        "route": {
+          "success": true,
+          "cmd": 24,
+          "status": 0
+        },
+        "memory": {
+          "success": true,
+          "cmd": 24,
+          "status": 0
+        },
+        "learning": {
+          "success": true,
+          "cmd": 24,
+          "status": 0
+        }
+      },
+      "pause": {
+        "context": {
+          "success": true,
+          "cmd": 25,
+          "status": 0,
+          "stopped_timestep": 10612
+        },
+        "route": {
+          "success": true,
+          "cmd": 25,
+          "status": 0,
+          "stopped_timestep": 8509
+        },
+        "memory": {
+          "success": true,
+          "cmd": 25,
+          "status": 0,
+          "stopped_timestep": 6408
+        },
+        "learning": {
+          "success": true,
+          "cmd": 25,
+          "status": 0,
+          "stopped_timestep": 4303
+        },
+        "all_paused": true
+      },
+      "final_state": {
+        "context": {
+          "success": true,
+          "cmd": 8,
+          "status": 0,
+          "schema_version": 2,
+          "payload_len": 105,
+          "timestep": 10714,
+          "neuron_count": 0,
+          "synapse_count": 0,
+          "active_trace_count": 0,
+          "active_slots": 1,
+          "slot_writes": 1,
+          "slot_hits": 20,
+          "slot_misses": 0,
+          "slot_evictions": 0,
+          "decisions": 0,
+          "reward_events": 0,
+          "pending_created": 0,
+          "pending_matured": 0,
+          "pending_dropped": 0,
+          "active_pending": 0,
+          "readout_weight_raw": 0,
+          "readout_bias_raw": 0,
+          "readout_weight": 0.0,
+          "readout_bias": 0.0,
+          "profile_id": 4,
+          "flags": 0,
+          "lookup_requests": 0,
+          "lookup_replies": 0,
+          "stale_replies": 0,
+          "duplicate_replies": 0,
+          "timeouts": 0,
+          "commands_received": 24,
+          "schedule_length": 0,
+          "readback_bytes": 105
+        },
+        "route": {
+          "success": true,
+          "cmd": 8,
+          "status": 0,
+          "schema_version": 2,
+          "payload_len": 105,
+          "timestep": 8611,
+          "neuron_count": 0,
+          "synapse_count": 0,
+          "active_trace_count": 0,
+          "active_slots": 1,
+          "slot_writes": 1,
+          "slot_hits": 20,
+          "slot_misses": 0,
+          "slot_evictions": 0,
+          "decisions": 0,
+          "reward_events": 0,
+          "pending_created": 0,
+          "pending_matured": 0,
+          "pending_dropped": 0,
+          "active_pending": 0,
+          "readout_weight_raw": 0,
+          "readout_bias_raw": 0,
+          "readout_weight": 0.0,
+          "readout_bias": 0.0,
+          "profile_id": 5,
+          "flags": 0,
+          "lookup_requests": 0,
+          "lookup_replies": 0,
+          "stale_replies": 0,
+          "duplicate_replies": 0,
+          "timeouts": 0,
+          "commands_received": 24,
+          "schedule_length": 0,
+          "readback_bytes": 105
+        },
+        "memory": {
+          "success": true,
+          "cmd": 8,
+          "status": 0,
+          "schema_version": 2,
+          "payload_len": 105,
+          "timestep": 6509,
+          "neuron_count": 0,
+          "synapse_count": 0,
+          "active_trace_count": 0,
+          "active_slots": 1,
+          "slot_writes": 1,
+          "slot_hits": 20,
+          "slot_misses": 0,
+          "slot_evictions": 0,
+          "decisions": 0,
+          "reward_events": 0,
+          "pending_created": 0,
+          "pending_matured": 0,
+          "pending_dropped": 0,
+          "active_pending": 0,
+          "readout_weight_raw": 0,
+          "readout_bias_raw": 0,
+          "readout_weight": 0.0,
+          "readout_bias": 0.0,
+          "profile_id": 6,
+          "flags": 0,
+          "lookup_requests": 0,
+          "lookup_replies": 0,
+          "stale_replies": 0,
+          "duplicate_replies": 0,
+          "timeouts": 0,
+          "commands_received": 24,
+          "schedule_length": 0,
+          "readback_bytes": 105
+        },
+        "learning": {
+          "success": true,
+          "cmd": 8,
+          "status": 0,
+          "schema_version": 2,
+          "payload_len": 105,
+          "timestep": 4405,
+          "neuron_count": 0,
+          "synapse_count": 0,
+          "active_trace_count": 0,
+          "active_slots": 0,
+          "slot_writes": 0,
+          "slot_hits": 0,
+          "slot_misses": 0,
+          "slot_evictions": 0,
+          "decisions": 20,
+          "reward_events": 20,
+          "pending_created": 20,
+          "pending_matured": 20,
+          "pending_dropped": 0,
+          "active_pending": 0,
+          "readout_weight_raw": 0,
+          "readout_bias_raw": 0,
+          "readout_weight": 0.0,
+          "readout_bias": 0.0,
+          "profile_id": 3,
+          "flags": 0,
+          "lookup_requests": 60,
+          "lookup_replies": 60,
+          "stale_replies": 0,
+          "duplicate_replies": 0,
+          "timeouts": 0,
+          "commands_received": 84,
+          "schedule_length": 20,
+          "readback_bytes": 210
+        }
+      },
+      "wait_time": 0.5
+    },
+    {
+      "status": "completed",
+      "control": "half_context_confidence",
+      "criteria": [
+        {
+          "name": "half_context_confidence_weight_magnitude_less_than_full",
+          "value": 28032,
+          "threshold": "abs(w) < abs(full_ref)=28672",
+          "passed": true,
+          "note": "final weight = 0.8555 (full=0.8750)"
+        },
+        {
+          "name": "half_context_confidence_bias_magnitude_less_than_full",
+          "value": 3456,
+          "threshold": "abs(b) < abs(full_ref)=4096",
+          "passed": true,
+          "note": "final bias = 0.1055 (full=-0.1250)"
+        },
+        {
+          "name": "half_context_confidence_hardware_weight_within_tolerance",
+          "value": 28093,
+          "threshold": 8192,
+          "passed": true,
+          "note": "hw=28093 ref=28032 diff=61"
+        },
+        {
+          "name": "half_context_confidence_hardware_bias_within_tolerance",
+          "value": 3517,
+          "threshold": 8192,
+          "passed": true,
+          "note": "hw=3517 ref=3456 diff=61"
+        },
+        {
+          "name": "half_context_confidence_all_events_matured",
+          "value": 20,
+          "threshold": 20,
+          "passed": true,
+          "note": "matured 20/20"
+        }
+      ],
+      "reference": {
+        "final_weight_raw": 28032,
+        "final_bias_raw": 3456,
+        "final_weight_float": 0.85546875,
+        "final_bias_float": 0.10546875
+      },
+      "reset": {
+        "context": true,
+        "route": true,
+        "memory": true,
+        "learning": true
+      },
+      "state_writes": {
+        "context": [
+          {
+            "key": 101,
+            "success": true
+          }
+        ],
+        "route": [
+          {
+            "key": 201,
+            "success": true
+          }
+        ],
+        "memory": [
+          {
+            "key": 301,
+            "success": true
+          }
+        ]
+      },
+      "schedule_uploads": [
+        {
+          "index": 0,
+          "success": true
+        },
+        {
+          "index": 1,
+          "success": true
+        },
+        {
+          "index": 2,
+          "success": true
+        },
+        {
+          "index": 3,
+          "success": true
+        },
+        {
+          "index": 4,
+          "success": true
+        },
+        {
+          "index": 5,
+          "success": true
+        },
+        {
+          "index": 6,
+          "success": true
+        },
+        {
+          "index": 7,
+          "success": true
+        },
+        {
+          "index": 8,
+          "success": true
+        },
+        {
+          "index": 9,
+          "success": true
+        },
+        {
+          "index": 10,
+          "success": true
+        },
+        {
+          "index": 11,
+          "success": true
+        },
+        {
+          "index": 12,
+          "success": true
+        },
+        {
+          "index": 13,
+          "success": true
+        },
+        {
+          "index": 14,
+          "success": true
+        },
+        {
+          "index": 15,
+          "success": true
+        },
+        {
+          "index": 16,
+          "success": true
+        },
+        {
+          "index": 17,
+          "success": true
+        },
+        {
+          "index": 18,
+          "success": true
+        },
+        {
+          "index": 19,
+          "success": true
+        }
+      ],
+      "run_continuous": {
+        "context": {
+          "success": true,
+          "cmd": 24,
+          "status": 0
+        },
+        "route": {
+          "success": true,
+          "cmd": 24,
+          "status": 0
+        },
+        "memory": {
+          "success": true,
+          "cmd": 24,
+          "status": 0
+        },
+        "learning": {
+          "success": true,
+          "cmd": 24,
+          "status": 0
+        }
+      },
+      "pause": {
+        "context": {
+          "success": true,
+          "cmd": 25,
+          "status": 0,
+          "stopped_timestep": 11377
+        },
+        "route": {
+          "success": true,
+          "cmd": 25,
+          "status": 0,
+          "stopped_timestep": 9274
+        },
+        "memory": {
+          "success": true,
+          "cmd": 25,
+          "status": 0,
+          "stopped_timestep": 7173
+        },
+        "learning": {
+          "success": true,
+          "cmd": 25,
+          "status": 0,
+          "stopped_timestep": 5068
+        },
+        "all_paused": true
+      },
+      "final_state": {
+        "context": {
+          "success": true,
+          "cmd": 8,
+          "status": 0,
+          "schema_version": 2,
+          "payload_len": 105,
+          "timestep": 11479,
+          "neuron_count": 0,
+          "synapse_count": 0,
+          "active_trace_count": 0,
+          "active_slots": 1,
+          "slot_writes": 1,
+          "slot_hits": 20,
+          "slot_misses": 0,
+          "slot_evictions": 0,
+          "decisions": 0,
+          "reward_events": 0,
+          "pending_created": 0,
+          "pending_matured": 0,
+          "pending_dropped": 0,
+          "active_pending": 0,
+          "readout_weight_raw": 0,
+          "readout_bias_raw": 0,
+          "readout_weight": 0.0,
+          "readout_bias": 0.0,
+          "profile_id": 4,
+          "flags": 0,
+          "lookup_requests": 0,
+          "lookup_replies": 0,
+          "stale_replies": 0,
+          "duplicate_replies": 0,
+          "timeouts": 0,
+          "commands_received": 24,
+          "schedule_length": 0,
+          "readback_bytes": 105
+        },
+        "route": {
+          "success": true,
+          "cmd": 8,
+          "status": 0,
+          "schema_version": 2,
+          "payload_len": 105,
+          "timestep": 9376,
+          "neuron_count": 0,
+          "synapse_count": 0,
+          "active_trace_count": 0,
+          "active_slots": 1,
+          "slot_writes": 1,
+          "slot_hits": 20,
+          "slot_misses": 0,
+          "slot_evictions": 0,
+          "decisions": 0,
+          "reward_events": 0,
+          "pending_created": 0,
+          "pending_matured": 0,
+          "pending_dropped": 0,
+          "active_pending": 0,
+          "readout_weight_raw": 0,
+          "readout_bias_raw": 0,
+          "readout_weight": 0.0,
+          "readout_bias": 0.0,
+          "profile_id": 5,
+          "flags": 0,
+          "lookup_requests": 0,
+          "lookup_replies": 0,
+          "stale_replies": 0,
+          "duplicate_replies": 0,
+          "timeouts": 0,
+          "commands_received": 24,
+          "schedule_length": 0,
+          "readback_bytes": 105
+        },
+        "memory": {
+          "success": true,
+          "cmd": 8,
+          "status": 0,
+          "schema_version": 2,
+          "payload_len": 105,
+          "timestep": 7274,
+          "neuron_count": 0,
+          "synapse_count": 0,
+          "active_trace_count": 0,
+          "active_slots": 1,
+          "slot_writes": 1,
+          "slot_hits": 20,
+          "slot_misses": 0,
+          "slot_evictions": 0,
+          "decisions": 0,
+          "reward_events": 0,
+          "pending_created": 0,
+          "pending_matured": 0,
+          "pending_dropped": 0,
+          "active_pending": 0,
+          "readout_weight_raw": 0,
+          "readout_bias_raw": 0,
+          "readout_weight": 0.0,
+          "readout_bias": 0.0,
+          "profile_id": 6,
+          "flags": 0,
+          "lookup_requests": 0,
+          "lookup_replies": 0,
+          "stale_replies": 0,
+          "duplicate_replies": 0,
+          "timeouts": 0,
+          "commands_received": 24,
+          "schedule_length": 0,
+          "readback_bytes": 105
+        },
+        "learning": {
+          "success": true,
+          "cmd": 8,
+          "status": 0,
+          "schema_version": 2,
+          "payload_len": 105,
+          "timestep": 5170,
+          "neuron_count": 0,
+          "synapse_count": 0,
+          "active_trace_count": 0,
+          "active_slots": 0,
+          "slot_writes": 0,
+          "slot_hits": 0,
+          "slot_misses": 0,
+          "slot_evictions": 0,
+          "decisions": 20,
+          "reward_events": 20,
+          "pending_created": 20,
+          "pending_matured": 20,
+          "pending_dropped": 0,
+          "active_pending": 0,
+          "readout_weight_raw": 28093,
+          "readout_bias_raw": 3517,
+          "readout_weight": 0.857330322265625,
+          "readout_bias": 0.107330322265625,
+          "profile_id": 3,
+          "flags": 0,
+          "lookup_requests": 60,
+          "lookup_replies": 60,
+          "stale_replies": 0,
+          "duplicate_replies": 0,
+          "timeouts": 0,
+          "commands_received": 84,
+          "schedule_length": 20,
+          "readback_bytes": 210
+        }
+      },
+      "wait_time": 0.5
+    }
+  ],
+  "loads": {
+    "context": {
+      "status": "pass"
+    },
+    "route": {
+      "status": "pass"
+    },
+    "memory": {
+      "status": "pass"
+    },
+    "learning": {
+      "status": "pass"
+    }
+  }
+}

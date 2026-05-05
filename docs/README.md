@@ -13,6 +13,7 @@ This directory contains the research-facing narrative docs.
 | `PAPER_RESULTS_TABLE.md` | Paper-facing evidence table generated from the canonical registry. |
 | `RESEARCH_GRADE_AUDIT.md` | Generated hygiene/evidence-paperwork audit. |
 | `CODEBASE_MAP.md` | Complete repository map covering source files, experiment harnesses, tests, runtime sidecar, and generated evidence groups. |
+| `PUBLIC_REPO_HYGIENE.md` | Public Apache-2.0 repository hygiene policy: what belongs in Git, what stays ignored, EBRAINS package rules, security checks, and clean/commit SOP. |
 | `SPINNAKER_EBRAINS_RUNBOOK.md` | Dedicated operational guide for EBRAINS/SpiNNaker uploads, JobManager commands, pass criteria, and lessons learned. |
 | `SPINNAKER_EBRAINS_CUSTOM_RUNTIME_GUIDE.md` | Canonical custom-runtime guide based on official SpiNNakerManchester SDP/SCP, Spin1API, SARK, and EBRAINS JobManager lessons. |
 

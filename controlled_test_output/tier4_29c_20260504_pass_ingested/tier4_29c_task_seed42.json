@@ -1,0 +1,307 @@
+{
+  "status": "completed",
+  "reset": {
+    "context": true,
+    "route": true,
+    "memory": true,
+    "learning": true
+  },
+  "state_writes": {
+    "context": [
+      {
+        "key": 101,
+        "success": true
+      }
+    ],
+    "route": [
+      {
+        "key": 201,
+        "success": true
+      }
+    ],
+    "memory": [
+      {
+        "key": 301,
+        "success": true
+      }
+    ]
+  },
+  "schedule_uploads": [
+    {
+      "index": 0,
+      "success": true
+    },
+    {
+      "index": 1,
+      "success": true
+    },
+    {
+      "index": 2,
+      "success": true
+    },
+    {
+      "index": 3,
+      "success": true
+    },
+    {
+      "index": 4,
+      "success": true
+    },
+    {
+      "index": 5,
+      "success": true
+    },
+    {
+      "index": 6,
+      "success": true
+    },
+    {
+      "index": 7,
+      "success": true
+    },
+    {
+      "index": 8,
+      "success": true
+    },
+    {
+      "index": 9,
+      "success": true
+    },
+    {
+      "index": 10,
+      "success": true
+    },
+    {
+      "index": 11,
+      "success": true
+    },
+    {
+      "index": 12,
+      "success": true
+    },
+    {
+      "index": 13,
+      "success": true
+    },
+    {
+      "index": 14,
+      "success": true
+    },
+    {
+      "index": 15,
+      "success": true
+    },
+    {
+      "index": 16,
+      "success": true
+    },
+    {
+      "index": 17,
+      "success": true
+    },
+    {
+      "index": 18,
+      "success": true
+    },
+    {
+      "index": 19,
+      "success": true
+    }
+  ],
+  "run_continuous": {
+    "context": {
+      "success": true,
+      "cmd": 24,
+      "status": 0
+    },
+    "route": {
+      "success": true,
+      "cmd": 24,
+      "status": 0
+    },
+    "memory": {
+      "success": true,
+      "cmd": 24,
+      "status": 0
+    },
+    "learning": {
+      "success": true,
+      "cmd": 24,
+      "status": 0
+    }
+  },
+  "pause": {
+    "context": {
+      "success": true,
+      "cmd": 25,
+      "status": 0,
+      "stopped_timestep": 9110
+    },
+    "route": {
+      "success": true,
+      "cmd": 25,
+      "status": 0,
+      "stopped_timestep": 7005
+    },
+    "memory": {
+      "success": true,
+      "cmd": 25,
+      "status": 0,
+      "stopped_timestep": 4900
+    },
+    "learning": {
+      "success": true,
+      "cmd": 25,
+      "status": 0,
+      "stopped_timestep": 2793
+    },
+    "all_paused": true
+  },
+  "final_state": {
+    "context": {
+      "success": true,
+      "cmd": 8,
+      "status": 0,
+      "schema_version": 2,
+      "payload_len": 105,
+      "timestep": 9212,
+      "neuron_count": 0,
+      "synapse_count": 0,
+      "active_trace_count": 0,
+      "active_slots": 1,
+      "slot_writes": 1,
+      "slot_hits": 20,
+      "slot_misses": 0,
+      "slot_evictions": 0,
+      "decisions": 0,
+      "reward_events": 0,
+      "pending_created": 0,
+      "pending_matured": 0,
+      "pending_dropped": 0,
+      "active_pending": 0,
+      "readout_weight_raw": 0,
+      "readout_bias_raw": 0,
+      "readout_weight": 0.0,
+      "readout_bias": 0.0,
+      "profile_id": 4,
+      "flags": 0,
+      "lookup_requests": 0,
+      "lookup_replies": 0,
+      "stale_replies": 0,
+      "duplicate_replies": 0,
+      "timeouts": 0,
+      "commands_received": 4,
+      "schedule_length": 0,
+      "readback_bytes": 105
+    },
+    "route": {
+      "success": true,
+      "cmd": 8,
+      "status": 0,
+      "schema_version": 2,
+      "payload_len": 105,
+      "timestep": 7107,
+      "neuron_count": 0,
+      "synapse_count": 0,
+      "active_trace_count": 0,
+      "active_slots": 1,
+      "slot_writes": 1,
+      "slot_hits": 20,
+      "slot_misses": 0,
+      "slot_evictions": 0,
+      "decisions": 0,
+      "reward_events": 0,
+      "pending_created": 0,
+      "pending_matured": 0,
+      "pending_dropped": 0,
+      "active_pending": 0,
+      "readout_weight_raw": 0,
+      "readout_bias_raw": 0,
+      "readout_weight": 0.0,
+      "readout_bias": 0.0,
+      "profile_id": 5,
+      "flags": 0,
+      "lookup_requests": 0,
+      "lookup_replies": 0,
+      "stale_replies": 0,
+      "duplicate_replies": 0,
+      "timeouts": 0,
+      "commands_received": 4,
+      "schedule_length": 0,
+      "readback_bytes": 105
+    },
+    "memory": {
+      "success": true,
+      "cmd": 8,
+      "status": 0,
+      "schema_version": 2,
+      "payload_len": 105,
+      "timestep": 5002,
+      "neuron_count": 0,
+      "synapse_count": 0,
+      "active_trace_count": 0,
+      "active_slots": 1,
+      "slot_writes": 1,
+      "slot_hits": 20,
+      "slot_misses": 0,
+      "slot_evictions": 0,
+      "decisions": 0,
+      "reward_events": 0,
+      "pending_created": 0,
+      "pending_matured": 0,
+      "pending_dropped": 0,
+      "active_pending": 0,
+      "readout_weight_raw": 0,
+      "readout_bias_raw": 0,
+      "readout_weight": 0.0,
+      "readout_bias": 0.0,
+      "profile_id": 6,
+      "flags": 0,
+      "lookup_requests": 0,
+      "lookup_replies": 0,
+      "stale_replies": 0,
+      "duplicate_replies": 0,
+      "timeouts": 0,
+      "commands_received": 4,
+      "schedule_length": 0,
+      "readback_bytes": 105
+    },
+    "learning": {
+      "success": true,
+      "cmd": 8,
+      "status": 0,
+      "schema_version": 2,
+      "payload_len": 105,
+      "timestep": 2895,
+      "neuron_count": 0,
+      "synapse_count": 0,
+      "active_trace_count": 0,
+      "active_slots": 0,
+      "slot_writes": 0,
+      "slot_hits": 0,
+      "slot_misses": 0,
+      "slot_evictions": 0,
+      "decisions": 20,
+      "reward_events": 20,
+      "pending_created": 20,
+      "pending_matured": 20,
+      "pending_dropped": 0,
+      "active_pending": 0,
+      "readout_weight_raw": 30912,
+      "readout_bias_raw": -1856,
+      "readout_weight": 0.943359375,
+      "readout_bias": -0.056640625,
+      "profile_id": 3,
+      "flags": 0,
+      "lookup_requests": 60,
+      "lookup_replies": 60,
+      "stale_replies": 0,
+      "duplicate_replies": 0,
+      "timeouts": 0,
+      "commands_received": 24,
+      "schedule_length": 20,
+      "readback_bytes": 210
+    }
+  },
+  "wait_time": 0.5
+}

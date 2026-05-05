@@ -1,0 +1,26 @@
+{
+  "tier": "Tier 4.29e \u2014 Native Replay/Consolidation Bridge",
+  "runner_revision": "tier4_29e_native_replay_consolidation_20260504_0001",
+  "upload_package": "cra_429l",
+  "based_on": "cra_429j",
+  "change_summary": "No C runtime changes. Host-scheduled replay uses existing schedule primitives.",
+  "profiles": [
+    "context_core",
+    "route_core",
+    "memory_core",
+    "learning_core"
+  ],
+  "app_ids": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "cores": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "prepared_at": "2026-05-04T23:36:51.816029+00:00"
+}

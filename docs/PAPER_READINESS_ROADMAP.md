@@ -6193,3 +6193,38 @@ artifacts. Distinguish build/load, inter-core messaging, stale/missing reply,
 composition mismatch, and readback mismatch. Repair the smallest failing layer
 locally. Do not expand to multi-seed or harder tasks until four-core
 single-seed smoke passes.
+
+## Current Native Runtime Update - 2026-05-05
+
+Since the original Tier 4.27 protocol-gate text above, the native runtime path
+has advanced substantially:
+
+- Tier 4.28a passed four-core MCPL repeatability across seeds 42/43/44.
+- Tier 4.28b/c passed delayed-cue MCPL task transfer and repeatability.
+- Tier 4.28d passed hard-noisy-switching MCPL task transfer across seeds 42/43/44.
+- Tier 4.28e measured the native failure envelope and froze `CRA_NATIVE_TASK_BASELINE_v0.2`.
+- Tier 4.29a passed native keyed-memory overcapacity/repeatability.
+- Tier 4.29b passed native routing/composition with wrong-route and overwrite controls.
+- Tier 4.29c passed native predictive binding across three seeds.
+- Tier 4.29d passed native self-evaluation / confidence-gated learning across three seeds.
+- Tier 4.29e is the current active bridge: host-scheduled replay/consolidation through native state primitives. Local reference passes; `cra_429o` is submitted and hardware results are pending.
+
+Immediate roadmap boundary:
+
+```text
+Do not freeze a new native mechanism baseline from prepared-only 4.29e evidence.
+Do not promote stale 4.29e downloads from runner revision 20260504_0001.
+Wait for true cra_429o results with runner revision 20260505_0002.
+If 4.29e passes, run 4.29f compact native mechanism regression across 4.29a-4.29e.
+If 4.29e fails, classify the exact failure and regenerate with a fresh package name.
+```
+
+Paper implication:
+
+```text
+4.29a-4.29d already support a bounded claim that promoted v2.1 mechanisms are
+being migrated into the custom SpiNNaker runtime one mechanism at a time.
+4.29e can only add host-scheduled replay/consolidation bridge evidence; it will
+not prove native replay buffers, biological sleep, multi-chip scaling, speedup,
+or external-baseline superiority.
+```

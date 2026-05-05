@@ -3,7 +3,7 @@
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![Tests](https://img.shields.io/badge/tests-147%20passing-brightgreen.svg)]()
-[![Evidence](https://img.shields.io/badge/canonical%20evidence-39%20bundles-blue.svg)]()
+[![Evidence](https://img.shields.io/badge/canonical%20evidence-41%20bundles-blue.svg)]()
 
 > A biologically-inspired neuromorphic learning system that replaces global backpropagation with local spiking plasticity, trophic energy economies, and population-level selection — running on Python/PyNN and bare-metal SpiNNaker.
 
@@ -26,9 +26,9 @@ The system is designed as a controlled research prototype with explicit claim bo
 | **Dopamine-modulated STDP** | Winner-take-all readout, delayed matured credit | Tiers 3–5.4 |
 | **Trophic energy economy** | Three-channel (sensory/outcome/retrograde), pro-rata allocation | Tiers 3, 6.1–6.3 |
 | **Lifecycle dynamics** | Cyclin-D reproduction, BAX apoptosis, lineage tracking | Tiers 6.1–6.3 |
-| **Custom C runtime** | Bare-metal SpiNNaker, four-core MCPL distributed scaffold | Tiers 4.22–4.29 |
-| **Hardware-native memory** | Keyed context/route slots, composition controls | Tiers 4.29a–4.29b |
-| **Evidence discipline** | 39 canonical bundles, frozen baselines, ablations, sham controls | Registry v2.1 |
+| **Custom C runtime** | Bare-metal SpiNNaker, four-core distributed scaffold | Tiers 4.22–4.29 |
+| **Hardware-native memory/mechanisms** | Keyed context/route/memory slots, composition, predictive binding, confidence gating, replay bridge pending | Tiers 4.29a–4.29e |
+| **Evidence discipline** | 41 canonical bundles, frozen baselines, ablations, sham controls | Registry v2.1 |
 
 ## Hardware Evidence Summary
 
@@ -40,8 +40,11 @@ The system is designed as a controlled research prototype with explicit claim bo
 | **4.28d** | Hard noisy switching with oracle context | 38/38 per seed, weight=34208, bias=-1440 | 42/43/44 |
 | **4.29a** | Native keyed-memory overcapacity gate | 10/10 per seed, context hits=24, misses=4 | 42/43/44 |
 | **4.29b** | Native routing/composition (context × route × cue) | **52/52 per seed**, exact parity, zero variance | 42/43/44 |
+| **4.29c** | Native predictive binding (prediction before reward) | **24/24 per seed**, weight=30912, bias=-1856 | 42/43/44 |
+| **4.29d** | Native self-evaluation (confidence-gated learning) | **30/30 per seed**, zero-confidence exact weight=0 | 42/43/44 |
+| **4.29e** | Native replay/consolidation bridge | Local pass; `cra_429o` submitted, hardware pending | 42/43/44 planned |
 
-> **Claim boundary:** These prove that narrow fixed-pattern, delayed-credit, hard-switch, and distributed custom-runtime capsules can execute on SpiNNaker hardware and preserve expected behavior repeatably. They are **not** evidence of full hardware scaling, dynamic lifecycle on hardware, or external-baseline superiority.
+> **Claim boundary:** These prove that narrow fixed-pattern, delayed-credit, hard-switch, distributed custom-runtime, keyed-memory, routing/composition, predictive-binding, and confidence-gated-learning capsules can execute on SpiNNaker hardware and preserve expected behavior repeatably. They are **not** evidence of full hardware scaling, dynamic lifecycle on hardware, external-baseline superiority, or native on-chip replay buffers.
 
 ## Quick Start
 
@@ -149,9 +152,10 @@ ebrains_jobs/                  # Self-contained EBRAINS upload packages
 | [`ARCHITECTURE.md`](ARCHITECTURE.md) | Three-column implementation truth matrix |
 | [`CONTROLLED_TEST_PLAN.md`](CONTROLLED_TEST_PLAN.md) | Staged tiers, pass/fail criteria, boundaries |
 | [`docs/REVIEWER_DEFENSE_PLAN.md`](docs/REVIEWER_DEFENSE_PLAN.md) | Adversarial reviewer attacks and empirical responses |
+| [`docs/PUBLIC_REPO_HYGIENE.md`](docs/PUBLIC_REPO_HYGIENE.md) | Public-repo artifact, ignore, security, EBRAINS-package, and clean/commit policy |
 | [`docs/SPINNAKER_EBRAINS_RUNBOOK.md`](docs/SPINNAKER_EBRAINS_RUNBOOK.md) | Hardware upload/run/ingest operations |
 | [`coral_reef_spinnaker/spinnaker_runtime/PROTOCOL_SPEC.md`](coral_reef_spinnaker/spinnaker_runtime/PROTOCOL_SPEC.md) | Host↔runtime wire protocol (schema v2, 105 bytes) |
-| [`STUDY_EVIDENCE_INDEX.md`](STUDY_EVIDENCE_INDEX.md) | 39-entry canonical evidence registry (human-readable) |
+| [`STUDY_EVIDENCE_INDEX.md`](STUDY_EVIDENCE_INDEX.md) | 41-entry canonical evidence registry (human-readable) |
 | [`docs/FULL_PROJECT_STATUS.md`](docs/FULL_PROJECT_STATUS.md) | Complete tier-by-tier narrative (1,500+ lines) |
 
 ## Validation
@@ -162,7 +166,7 @@ make validate
 
 Runs:
 - 147 pytest unit tests
-- Evidence registry build (39 entries, 0 failures)
+- Evidence registry build (41 entries, 0 failures)
 - Paper results table export
 - Repository audit (paperwork alignment)
 
@@ -182,8 +186,9 @@ See [`codebasecontract.md`](codebasecontract.md) Section 2 for the full thinking
 
 - **Software baseline:** v2.1 frozen (host-side self-evaluation / reliability-monitoring)
 - **Hardware baseline:** `CRA_NATIVE_TASK_BASELINE_v0.2` frozen (Tiers 4.22i–4.28e)
-- **Latest hardware pass:** Tier 4.29b — native routing/composition, 52/52 criteria, 3 seeds, zero variance
-- **Registry:** 39 canonical bundles, 0 missing artifacts, 0 failed criteria
+- **Latest ingested hardware pass:** Tier 4.29d — native self-evaluation / confidence-gated learning, 30/30 criteria per seed, 3 seeds
+- **Active hardware run:** Tier 4.29e `cra_429o` — native replay/consolidation bridge submitted, hardware pending
+- **Registry:** 41 canonical bundles, 0 missing artifacts, 0 failed criteria
 
 ## Contributing
 
@@ -204,7 +209,7 @@ If you use CRA in your research, please cite the canonical evidence registry:
   author={Murdock, James V. and CRA Contributors},
   year={2026},
   url={https://github.com/jamesvmurdockiii/Project-Kianna---CRA_JKS},
-  note={39 canonical evidence bundles. Hardware validated on SpiNNaker.}
+  note={41 canonical evidence bundles. Hardware validated on SpiNNaker.}
 }
 ```
 

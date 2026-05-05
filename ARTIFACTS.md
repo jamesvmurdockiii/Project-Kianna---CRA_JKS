@@ -8,6 +8,7 @@ These files should be treated as project source:
 
 - `README.md`, `RUNBOOK.md`, `Makefile`, `pyproject.toml`
 - `docs/*.md`
+- `.gitignore`, `.gitattributes`
 - `baselines/*.md`, `baselines/*.json`
 - `ARCHITECTURE.md`, `MICROCIRCUIT_DESIGN.md`, `plan.md`
 - `CONTROLLED_TEST_PLAN.md`, `STUDY_EVIDENCE_INDEX.md`
@@ -15,6 +16,7 @@ These files should be treated as project source:
 - `experiments/evidence_registry.py`
 - `experiments/*.py`
 - `ebrains_jobs/README.md` and source-only `ebrains_jobs/cra_*/README_*.md` upload instructions
+- source-only `ebrains_jobs/cra_*` upload folders that preserve exactly what was sent to EBRAINS
 - `coral_reef_spinnaker/*.py`
 - `coral_reef_spinnaker/tests/*.py`
 - `coral_reef_spinnaker/spinnaker_runtime/src/*`
@@ -37,6 +39,10 @@ These files are useful evidence, but they are not source:
 - `controlled_test_output/_legacy_artifacts/`
 - `coral_reef_spinnaker/spinnaker_runtime/build/`
 - `coral_reef_spinnaker/spinnaker_runtime/tests/test_runtime`
+- root scratch outputs such as `tier4_*_output/`
+
+See `docs/PUBLIC_REPO_HYGIENE.md` for the public-repo policy, security scan,
+EBRAINS package rules, and clean/commit SOP.
 
 Historical root/package generated reports and demo outputs have been moved under
 `controlled_test_output/_legacy_artifacts/`. Treat them as reproducibility or
@@ -140,8 +146,8 @@ flag, but the pass is accepted because `hardware_run_attempted=True`, hardware
 `sim.run` completed, synthetic fallback stayed at `0`, and real spike readback
 was nonzero.
 
-Registry alignment status after Tier 5.15 temporal-code diagnostic coverage:
-26 canonical evidence bundles, 128 noncanonical outputs, 0 missing expected artifacts, and 0 failed
+Current registry alignment status:
+41 canonical evidence bundles, 0 missing expected artifacts, and 0 failed
 criteria in canonical entries. The v0.1 and v0.2 frozen baselines remain locked at their
 recorded historical counts, v0.3 freezes the post-Tier-5.3 diagnostic baseline,
 v0.4 freezes the post-Tier-5.4 delayed-credit confirmation baseline, v0.5

@@ -1,0 +1,33 @@
+{
+  "tier": "Tier 4.29c \u2014 Native Predictive Binding Bridge",
+  "runner_revision": "tier4_29c_native_predictive_binding_20260503_0001",
+  "mode": "ingest",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "status": "pass",
+  "total_criteria": 78,
+  "passed_criteria": 78,
+  "per_seed": [
+    {
+      "seed": 42,
+      "status": "pass",
+      "criteria_passed": 26,
+      "criteria_total": 26
+    },
+    {
+      "seed": 43,
+      "status": "pass",
+      "criteria_passed": 26,
+      "criteria_total": 26
+    },
+    {
+      "seed": 44,
+      "status": "pass",
+      "criteria_passed": 26,
+      "criteria_total": 26
+    }
+  ]
+}

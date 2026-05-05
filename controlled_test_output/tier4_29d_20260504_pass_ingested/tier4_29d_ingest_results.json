@@ -1,0 +1,24 @@
+{
+  "tier": "Tier 4.29d — Native Self-Evaluation Bridge",
+  "runner_revision": "tier4_29d_native_self_evaluation_20260504_0002",
+  "mode": "ingest",
+  "seeds": [42, 43, 44],
+  "status": "pass",
+  "total_criteria": 90,
+  "passed_criteria": 90,
+  "per_seed": [
+    {"seed": 42, "status": "pass", "criteria_passed": 30, "criteria_total": 30, "board": "10.11.214.49"},
+    {"seed": 43, "status": "pass", "criteria_passed": 30, "criteria_total": 30, "board": "10.11.214.113"},
+    {"seed": 44, "status": "pass", "criteria_passed": 30, "criteria_total": 30, "board": "10.11.215.161"}
+  ],
+  "control_summary": {
+    "full_confidence": {"hw_weight": 30912, "hw_bias": -1856, "note": "consistent across all 3 seeds"},
+    "zero_confidence": {"hw_weight": 0, "hw_bias": 0, "note": "exact zero on all 3 seeds — proves confidence gating"},
+    "zero_context_confidence": {"hw_weight": 0, "hw_bias": 0, "note": "exact zero on all 3 seeds — single-slot zero blocks all learning"},
+    "half_context_confidence": {"hw_weight": 28093, "hw_bias": 3517, "note": "diff=61 from ref, within tolerance"}
+  },
+  "packages": {
+    "deprecated": "cra_429i (MCPL lookup lacked confidence transmission)",
+    "canonical": "cra_429j (SDP inter-core lookup, confidence transmitted)"
+  }
+}

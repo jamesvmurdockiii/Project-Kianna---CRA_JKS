@@ -10,10 +10,10 @@ Research narrative companions:
 - `docs/WHITEPAPER.md`
 - `docs/CODEBASE_MAP.md`
 
-- Registry generated: `2026-05-04T00:05:01.347076+00:00`
+- Registry generated: `2026-05-05T12:14:49.685494+00:00`
 - Registry status: **PASS**
 - Core validation suite: `12` tests
-- Expanded evidence suite: `39` entries (`10b` hard scaling, `4.13` hardware capsule, `4.14` runtime characterization, `4.15` hardware repeatability, `5.1` external baselines, `5.2` learning curves, `5.3` failure analysis, `5.4` delayed-credit confirmation, `4.16a` repaired delayed-cue hardware repeat, `4.16b` repaired hard-switch hardware repeat, `4.18a` chunked runtime baseline, `5.5` expanded baselines, `5.12a` predictive task-pressure, `5.12c` predictive-context sham repair, `5.12d` predictive-context compact regression, `6.1` software lifecycle/self-scaling, `6.3` lifecycle sham controls, and `6.4` circuit motif causality added; `5.6` and `5.7` are additional tuned-baseline reviewer-defense/guardrail bundles)
+- Expanded evidence suite: `41` entries (`10b` hard scaling, `4.13` hardware capsule, `4.14` runtime characterization, `4.15` hardware repeatability, `5.1` external baselines, `5.2` learning curves, `5.3` failure analysis, `5.4` delayed-credit confirmation, `4.16a` repaired delayed-cue hardware repeat, `4.16b` repaired hard-switch hardware repeat, `4.18a` chunked runtime baseline, `5.5` expanded baselines, `5.12a` predictive task-pressure, `5.12c` predictive-context sham repair, `5.12d` predictive-context compact regression, `6.1` software lifecycle/self-scaling, `6.3` lifecycle sham controls, and `6.4` circuit motif causality added; `5.6` and `5.7` are additional tuned-baseline reviewer-defense/guardrail bundles)
 
 ## Canonical Claims
 
@@ -58,6 +58,8 @@ Research narrative companions:
 | `tier6_3_lifecycle_sham_controls` | Phase 4 organism/lifecycle reviewer-defense gate after Tier 6.1 | **PASS** | Lifecycle-enabled CRA beats fixed max-pool, event-count replay, no-trophic, no-dopamine, and no-plasticity sham controls on hard_noisy_switching while preserving clean lineage integrity. | Controlled software sham-control evidence only; replay/shuffle controls are audit artifacts, not independent learners, and this is not hardware lifecycle evidence, full adult turnover, external-baseline superiority, or compositional/world-model evidence. |
 | `tier6_4_circuit_motif_causality` | Phase 4 organism/circuit-motif reviewer-defense gate after Tier 6.3 | **PASS** | Seeded motif-diverse CRA passes motif-causality controls on hard_noisy_switching: ablations cause predicted losses, motif activity is logged before reward/learning, and random/monolithic controls do not dominate across adaptation metrics. | Controlled software motif-causality evidence only; motif-diverse graph is seeded for this suite, motif-label shuffle shows labels alone are not causal, and this is not hardware motif evidence, custom-C/on-chip learning, compositionality, or full world-model evidence. |
 | `tier4_29b_native_routing_composition_gate` | Phase C mechanism migration: native keyed context + route composition | **PASS** | Native keyed context * route composition works on real SpiNNaker across three seeds on three different boards with explicit wrong-context, wrong-route, overwrite, and host-composed sham controls. | Native routing/composition hardware evidence only; not speedup evidence, not multi-chip scaling, not a general multi-core framework, not full native v2.1 autonomy, and not true continuous generation. |
+| `tier4_29c_native_predictive_binding` | Phase C mechanism migration: native predictive binding | **PASS** | Native four-core runtime separates prediction target from reward target before outcome on real SpiNNaker across three seeds on three different boards. All 24/24 criteria pass per seed (72/72 total). Full-context prediction weight=30912, bias=-1856; zero-context prediction weight=0, bias=0. Confidence parity confirms prediction-before-reward isolation. | Native predictive binding hardware evidence only; not speedup evidence, not multi-chip scaling, not full native v2.1 autonomy, not continuous generation, and not general task learning. |
+| `tier4_29d_native_self_evaluation` | Phase C mechanism migration: native confidence-gated learning | **PASS** | Native four-core runtime gates learning by composite confidence (context × route × memory) on real SpiNNaker across three seeds on three different boards. All 30/30 criteria pass per seed (90/90 total). Full confidence weight=30912, bias=-1856; zero confidence weight=0, bias=0; zero-context confidence weight=0, bias=0; half-context confidence weight=28093, bias=3517. MCPL lookup lacks confidence transmission; SDP used instead. | Native confidence-gated learning hardware evidence only; not speedup evidence, not multi-chip scaling, not full native v2.1 autonomy, not continuous generation, not dynamic lifecycle, and not external-baseline superiority. |
 
 ## Canonical Artifacts
 
@@ -102,6 +104,8 @@ Research narrative companions:
 | `tier6_3_lifecycle_sham_controls` | `controlled_test_output/tier6_3_20260428_121504/tier6_3_results.json` | `controlled_test_output/tier6_3_20260428_121504/tier6_3_report.md` | `controlled_test_output/tier6_3_20260428_121504/tier6_3_summary.csv` |
 | `tier6_4_circuit_motif_causality` | `controlled_test_output/tier6_4_20260428_144354/tier6_4_results.json` | `controlled_test_output/tier6_4_20260428_144354/tier6_4_report.md` | `controlled_test_output/tier6_4_20260428_144354/tier6_4_summary.csv` |
 | `tier4_29b_native_routing_composition_gate` | `controlled_test_output/tier4_29b_20260503_hardware_pass_ingested/tier4_29b_results.json` | `controlled_test_output/tier4_29b_20260503_hardware_pass_ingested/tier4_29b_report.md` | `controlled_test_output/tier4_29b_20260503_hardware_pass_ingested/tier4_29b_summary.csv` |
+| `tier4_29c_native_predictive_binding` | `controlled_test_output/tier4_29c_20260504_pass_ingested/tier4_29c_ingest_results.json` | `controlled_test_output/tier4_29c_20260504_pass_ingested/tier4_29c_report_seed42.json` | `controlled_test_output/tier4_29c_20260504_pass_ingested/tier4_29c_combined_results.json` |
+| `tier4_29d_native_self_evaluation` | `controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_ingest_results.json` | `controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_report_seed44.json` | `controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_combined_results.json` |
 
 ## Selected Noncanonical Diagnostics
 
@@ -210,4 +214,4 @@ Research narrative companions:
 
 - Missing expected artifacts: `0`
 - Failed canonical criteria: `0`
-- Noncanonical output folders preserved: `288`
+- Noncanonical output folders preserved: `289`

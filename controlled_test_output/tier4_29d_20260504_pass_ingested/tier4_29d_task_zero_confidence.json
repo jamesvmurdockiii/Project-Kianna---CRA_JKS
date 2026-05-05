@@ -1,0 +1,351 @@
+{
+  "status": "completed",
+  "control": "zero_confidence",
+  "criteria": [
+    {
+      "name": "zero_confidence_weight_zero",
+      "value": 0,
+      "threshold": 0,
+      "passed": true,
+      "note": "final weight = 0.0000"
+    },
+    {
+      "name": "zero_confidence_bias_zero",
+      "value": 0,
+      "threshold": 0,
+      "passed": true,
+      "note": "final bias = 0.0000"
+    },
+    {
+      "name": "zero_confidence_hardware_weight_within_tolerance",
+      "value": 0,
+      "threshold": 8192,
+      "passed": true,
+      "note": "hw=0 ref=0 diff=0"
+    },
+    {
+      "name": "zero_confidence_hardware_bias_within_tolerance",
+      "value": 0,
+      "threshold": 8192,
+      "passed": true,
+      "note": "hw=0 ref=0 diff=0"
+    },
+    {
+      "name": "zero_confidence_all_events_matured",
+      "value": 20,
+      "threshold": 20,
+      "passed": true,
+      "note": "matured 20/20"
+    }
+  ],
+  "reference": {
+    "final_weight_raw": 0,
+    "final_bias_raw": 0,
+    "final_weight_float": 0.0,
+    "final_bias_float": 0.0
+  },
+  "reset": {
+    "context": true,
+    "route": true,
+    "memory": true,
+    "learning": true
+  },
+  "state_writes": {
+    "context": [
+      {
+        "key": 101,
+        "success": true
+      }
+    ],
+    "route": [
+      {
+        "key": 201,
+        "success": true
+      }
+    ],
+    "memory": [
+      {
+        "key": 301,
+        "success": true
+      }
+    ]
+  },
+  "schedule_uploads": [
+    {
+      "index": 0,
+      "success": true
+    },
+    {
+      "index": 1,
+      "success": true
+    },
+    {
+      "index": 2,
+      "success": true
+    },
+    {
+      "index": 3,
+      "success": true
+    },
+    {
+      "index": 4,
+      "success": true
+    },
+    {
+      "index": 5,
+      "success": true
+    },
+    {
+      "index": 6,
+      "success": true
+    },
+    {
+      "index": 7,
+      "success": true
+    },
+    {
+      "index": 8,
+      "success": true
+    },
+    {
+      "index": 9,
+      "success": true
+    },
+    {
+      "index": 10,
+      "success": true
+    },
+    {
+      "index": 11,
+      "success": true
+    },
+    {
+      "index": 12,
+      "success": true
+    },
+    {
+      "index": 13,
+      "success": true
+    },
+    {
+      "index": 14,
+      "success": true
+    },
+    {
+      "index": 15,
+      "success": true
+    },
+    {
+      "index": 16,
+      "success": true
+    },
+    {
+      "index": 17,
+      "success": true
+    },
+    {
+      "index": 18,
+      "success": true
+    },
+    {
+      "index": 19,
+      "success": true
+    }
+  ],
+  "run_continuous": {
+    "context": {
+      "success": true,
+      "cmd": 24,
+      "status": 0
+    },
+    "route": {
+      "success": true,
+      "cmd": 24,
+      "status": 0
+    },
+    "memory": {
+      "success": true,
+      "cmd": 24,
+      "status": 0
+    },
+    "learning": {
+      "success": true,
+      "cmd": 24,
+      "status": 0
+    }
+  },
+  "pause": {
+    "context": {
+      "success": true,
+      "cmd": 25,
+      "status": 0,
+      "stopped_timestep": 9847
+    },
+    "route": {
+      "success": true,
+      "cmd": 25,
+      "status": 0,
+      "stopped_timestep": 7744
+    },
+    "memory": {
+      "success": true,
+      "cmd": 25,
+      "status": 0,
+      "stopped_timestep": 5642
+    },
+    "learning": {
+      "success": true,
+      "cmd": 25,
+      "status": 0,
+      "stopped_timestep": 3538
+    },
+    "all_paused": true
+  },
+  "final_state": {
+    "context": {
+      "success": true,
+      "cmd": 8,
+      "status": 0,
+      "schema_version": 2,
+      "payload_len": 105,
+      "timestep": 9949,
+      "neuron_count": 0,
+      "synapse_count": 0,
+      "active_trace_count": 0,
+      "active_slots": 1,
+      "slot_writes": 1,
+      "slot_hits": 20,
+      "slot_misses": 0,
+      "slot_evictions": 0,
+      "decisions": 0,
+      "reward_events": 0,
+      "pending_created": 0,
+      "pending_matured": 0,
+      "pending_dropped": 0,
+      "active_pending": 0,
+      "readout_weight_raw": 0,
+      "readout_bias_raw": 0,
+      "readout_weight": 0.0,
+      "readout_bias": 0.0,
+      "profile_id": 4,
+      "flags": 0,
+      "lookup_requests": 0,
+      "lookup_replies": 0,
+      "stale_replies": 0,
+      "duplicate_replies": 0,
+      "timeouts": 0,
+      "commands_received": 24,
+      "schedule_length": 0,
+      "readback_bytes": 105
+    },
+    "route": {
+      "success": true,
+      "cmd": 8,
+      "status": 0,
+      "schema_version": 2,
+      "payload_len": 105,
+      "timestep": 7845,
+      "neuron_count": 0,
+      "synapse_count": 0,
+      "active_trace_count": 0,
+      "active_slots": 1,
+      "slot_writes": 1,
+      "slot_hits": 20,
+      "slot_misses": 0,
+      "slot_evictions": 0,
+      "decisions": 0,
+      "reward_events": 0,
+      "pending_created": 0,
+      "pending_matured": 0,
+      "pending_dropped": 0,
+      "active_pending": 0,
+      "readout_weight_raw": 0,
+      "readout_bias_raw": 0,
+      "readout_weight": 0.0,
+      "readout_bias": 0.0,
+      "profile_id": 5,
+      "flags": 0,
+      "lookup_requests": 0,
+      "lookup_replies": 0,
+      "stale_replies": 0,
+      "duplicate_replies": 0,
+      "timeouts": 0,
+      "commands_received": 24,
+      "schedule_length": 0,
+      "readback_bytes": 105
+    },
+    "memory": {
+      "success": true,
+      "cmd": 8,
+      "status": 0,
+      "schema_version": 2,
+      "payload_len": 105,
+      "timestep": 5744,
+      "neuron_count": 0,
+      "synapse_count": 0,
+      "active_trace_count": 0,
+      "active_slots": 1,
+      "slot_writes": 1,
+      "slot_hits": 20,
+      "slot_misses": 0,
+      "slot_evictions": 0,
+      "decisions": 0,
+      "reward_events": 0,
+      "pending_created": 0,
+      "pending_matured": 0,
+      "pending_dropped": 0,
+      "active_pending": 0,
+      "readout_weight_raw": 0,
+      "readout_bias_raw": 0,
+      "readout_weight": 0.0,
+      "readout_bias": 0.0,
+      "profile_id": 6,
+      "flags": 0,
+      "lookup_requests": 0,
+      "lookup_replies": 0,
+      "stale_replies": 0,
+      "duplicate_replies": 0,
+      "timeouts": 0,
+      "commands_received": 24,
+      "schedule_length": 0,
+      "readback_bytes": 105
+    },
+    "learning": {
+      "success": true,
+      "cmd": 8,
+      "status": 0,
+      "schema_version": 2,
+      "payload_len": 105,
+      "timestep": 3640,
+      "neuron_count": 0,
+      "synapse_count": 0,
+      "active_trace_count": 0,
+      "active_slots": 0,
+      "slot_writes": 0,
+      "slot_hits": 0,
+      "slot_misses": 0,
+      "slot_evictions": 0,
+      "decisions": 20,
+      "reward_events": 20,
+      "pending_created": 20,
+      "pending_matured": 20,
+      "pending_dropped": 0,
+      "active_pending": 0,
+      "readout_weight_raw": 0,
+      "readout_bias_raw": 0,
+      "readout_weight": 0.0,
+      "readout_bias": 0.0,
+      "profile_id": 3,
+      "flags": 0,
+      "lookup_requests": 60,
+      "lookup_replies": 60,
+      "stale_replies": 0,
+      "duplicate_replies": 0,
+      "timeouts": 0,
+      "commands_received": 84,
+      "schedule_length": 20,
+      "readback_bytes": 210
+    }
+  },
+  "wait_time": 0.5
+}

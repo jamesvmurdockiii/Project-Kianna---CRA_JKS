@@ -5,10 +5,10 @@ ledger is `STUDY_REGISTRY.json`; the compact table is `STUDY_REGISTRY.csv`.
 Older reruns, prepared capsules, debug probes, and baseline-frozen
 mechanism bundles outside the formal registry are preserved for audit.
 
-- Generated: `2026-05-04T00:05:01.347076+00:00`
+- Generated: `2026-05-05T12:14:49.685494+00:00`
 - Registry status: **PASS**
-- Canonical evidence entries: `39`
-- Expanded test-entry count: `39` (`12` core tests + `10b` + `4.13` + `4.14` + `4.15` + `5.1` + `5.2` + `5.3` + `5.4` + `4.16a` + `4.16b` + `4.18a` + `5.5` + `5.12a` + `5.12c` + `5.12d` + `6.1` + `6.3` + `6.4`; Tiers `5.6` and `5.7` are tracked as additional reviewer-defense/guardrail evidence bundles)
+- Canonical evidence entries: `41`
+- Expanded test-entry count: `41` (`12` core tests + `10b` + `4.13` + `4.14` + `4.15` + `5.1` + `5.2` + `5.3` + `5.4` + `4.16a` + `4.16b` + `4.18a` + `5.5` + `5.12a` + `5.12c` + `5.12d` + `6.1` + `6.3` + `6.4`; Tiers `5.6` and `5.7` are tracked as additional reviewer-defense/guardrail evidence bundles)
 
 ## Evidence Categories
 
@@ -61,6 +61,8 @@ mechanism bundles outside the formal registry are preserved for audit.
 | `tier6_3_lifecycle_sham_controls` | **PASS** | `controlled_test_output/tier6_3_20260428_121504` | Controlled software sham-control evidence only; replay/shuffle controls are audit artifacts, not independent learners, and this is not hardware lifecycle evidence, full adult turnover, external-baseline superiority, or compositional/world-model evidence. |
 | `tier6_4_circuit_motif_causality` | **PASS** | `controlled_test_output/tier6_4_20260428_144354` | Controlled software motif-causality evidence only; motif-diverse graph is seeded for this suite, motif-label shuffle shows labels alone are not causal, and this is not hardware motif evidence, custom-C/on-chip learning, compositionality, or full world-model evidence. |
 | `tier4_29b_native_routing_composition_gate` | **PASS** | `controlled_test_output/tier4_29b_20260503_hardware_pass_ingested` | Native routing/composition hardware evidence only; not speedup evidence, not multi-chip scaling, not a general multi-core framework, not full native v2.1 autonomy, and not true continuous generation. |
+| `tier4_29c_native_predictive_binding` | **PASS** | `controlled_test_output/tier4_29c_20260504_pass_ingested` | Native predictive binding hardware evidence only; not speedup evidence, not multi-chip scaling, not full native v2.1 autonomy, not continuous generation, and not general task learning. |
+| `tier4_29d_native_self_evaluation` | **PASS** | `controlled_test_output/tier4_29d_20260504_pass_ingested` | Native confidence-gated learning hardware evidence only; not speedup evidence, not multi-chip scaling, not full native v2.1 autonomy, not continuous generation, not dynamic lifecycle, and not external-baseline superiority. |
 
 ## Noncanonical Outputs
 
@@ -245,6 +247,7 @@ cite them as current study results unless promoted in `STUDY_REGISTRY.json`.
 | `controlled_test_output/tier4_28c_20260503_prepared` | `prepared_capsule` | `pass` | `2026-05-03T04:13:48.915273+00:00` |
 | `controlled_test_output/tier4_28e_pointB_20260503_boundary_confirmed` | `failure_envelope_boundary_diagnostic` | `boundary_confirmed` | `2026-05-03T19:29:00.000000+00:00` |
 | `controlled_test_output/tier4_29b_20260503_hardware_fail_ingested` | `superseded_rerun` | `fail` | `None` |
+| `controlled_test_output/tier4_29e_20260505_0758_local_audit` | `superseded_rerun` | `pass` | `None` |
 | `controlled_test_output/tier5_10_20260428_181304` | `superseded_rerun` | `pass` | `2026-04-28T22:13:10+00:00` |
 | `controlled_test_output/tier5_10_20260428_181322` | `superseded_rerun` | `fail` | `2026-04-28T22:45:43+00:00` |
 | `controlled_test_output/tier5_10b_20260428_193205` | `superseded_rerun` | `fail` | `2026-04-28T23:32:05+00:00` |

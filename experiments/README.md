@@ -30,8 +30,10 @@ the repaired hard_noisy_switching capsule on the same hardware path. `Tier
 chunked-host hardware bridge and selects chunk `50` as the fastest viable
 default. Tiers 5.12a/5.12c/5.12d validate predictive-pressure tasks, repair the
 visible predictive-context mechanism shams, and freeze a bounded v1.8 software
-baseline after compact regression. With these addenda included, the tracked
-evidence suite is **27 entries total**:
+baseline after compact regression. With all current canonical addenda included, the tracked
+evidence suite is **41 entries total**. The generated registry is the authority
+for the exact current list; the historical expansion sketch below is retained
+as context and may lag behind newly ingested hardware-native tiers:
 
 ```text
 3 sanity + 3 learning + 3 architecture + 1 baseline scaling
@@ -55,7 +57,10 @@ As of the latest documented run, tests 1-12, 10b, Tier 4.13, Tier 4.14,
 Tier 4.15, Tier 5.1, Tier 5.2, Tier 5.3, Tier 5.4, Tier 4.16a,
 Tier 4.16b, Tier 4.18a, Tier 5.5, Tier 5.6, Tier 5.7,
 Tier 5.12a, Tier 5.12c, Tier 5.12d, Tier 6.1, Tier 6.3,
-Tier 6.4, and Tier 4.26 have been implemented and run. Tier 4.12 proves NEST/Brian2 parity plus SpiNNaker
+Tier 6.4, Tier 4.26, Tiers 4.27/4.28 hardware-native runtime gates, and
+Tiers 4.29a-4.29d native mechanism bridges have been implemented and run.
+Tier 4.29e is active: `cra_429o` is submitted and hardware results are pending.
+Tier 4.12 proves NEST/Brian2 parity plus SpiNNaker
 PyNN readiness prep. Tier 4.13 records a real SpiNNaker hardware-capsule pass
 for the minimal fixed-pattern task through EBRAINS/JobManager. Tier 4.14
 characterizes the runtime overhead of that hardware pass while keeping the

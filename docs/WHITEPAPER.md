@@ -242,7 +242,7 @@ contains 27 tracked evidence entries:
 = 27 tracked entries including reviewer-defense/guardrail bundles
 ```
 
-The registry evidence is grouped into 26 canonical bundles. The broader ladder below also includes baseline-frozen mechanism evidence and selected diagnostics so the narrative does not hide non-registry proof gates or failures.
+The registry evidence is currently grouped into 41 canonical bundles. The broader ladder below also includes baseline-frozen mechanism evidence and selected diagnostics so the narrative does not hide non-registry proof gates or failures.
 
 | Bundle / diagnostic | Evidence category | Current claim |
 | --- | --- | --- |

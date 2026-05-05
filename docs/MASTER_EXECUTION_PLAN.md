@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-03T02:00-04:00.
+Last updated: 2026-05-05T08:45-04:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -38,6 +38,17 @@ Tier 4.25A = MAPPING ANALYSIS PASS (14/14)
 Tier 4.25B = HARDWARE PASS (two-core state/learning split, 23/23)
 Tier 4.25C = HARDWARE PASS (two-core repeatability, 3 seeds)
 Tier 4.26 = HARDWARE PASS (four-core distributed context/route/memory/learning, 30/30)
+Tier 4.27a = HARDWARE PASS (four-core SDP instrumentation, 38/38 + 38/38 ingest)
+Tier 4.28a = HARDWARE PASS (four-core MCPL repeatability, 38/38 x3 seeds)
+Tier 4.28b = HARDWARE PASS (delayed-cue four-core MCPL, 38/38)
+Tier 4.28c = HARDWARE PASS (delayed-cue three-seed repeatability, 38/38 x3)
+Tier 4.28d = HARDWARE PASS (hard noisy switching four-core MCPL, 38/38 x3)
+Tier 4.28e = LOCAL PASS / HARDWARE PASS (native failure-envelope report, 3 probes)
+Tier 4.29a = HARDWARE PASS (native keyed-memory overcapacity, 3 seeds)
+Tier 4.29b = HARDWARE PASS (native routing/composition, 3 seeds)
+Tier 4.29c = HARDWARE PASS (native predictive binding, 3 seeds)
+Tier 4.29d = HARDWARE PASS (native self-evaluation/confidence gating, 3 seeds)
+Tier 4.29e = DESIGN COMPLETE / LOCAL PASS / HARDWARE PENDING (native replay/consolidation bridge; cra_429o submitted)
 ```
 
 Important Tier 4.26 result:
@@ -67,7 +78,7 @@ not full native v2.1, and not final autonomy.
 Current active step:
 
 ```text
-Tier 4.27 - Four-Core Runtime Resource / Timing Characterization + MCPL Decision Gate
+Tier 4.29e - Replay/Consolidation Bridge (cra_429o EBRAINS hardware pending)
 ```
 
 ## 2. Immediate Baseline Decision
@@ -126,7 +137,7 @@ native/on-chip is not claimed until all of these are true for the claimed scope:
 | Distributed state | Four-core context/route/memory/learning split passed in 4.26. |
 | Runtime resource envelope | Partly measured; four-core timing/message envelope still needs 4.27. |
 | Stable inter-core protocol | SDP works for 4.26 as a transitional scaffold; MCPL/multicast is the scaling target and needs a migration gate. |
-| Promoted v2 mechanisms native | Not complete. Keyed memory/routing primitives started; predictive/self-evaluation/replay/lifecycle remain. |
+| Promoted v2 mechanisms native | Keyed memory (4.29a), routing/composition (4.29b), predictive binding (4.29c), and self-evaluation (4.29d) all complete. Replay/consolidation/lifecycle remain. |
 | Lifecycle/self-scaling native | Not started; must use static pools and masks, not dynamic graph creation. |
 | Multi-chip scaling | Not started. |
 | Useful task-level native proof | Not complete beyond tiny micro-tasks. |
@@ -177,13 +188,12 @@ What claim boundary follows?
    Board 10.11.194.65, cores 4/5/6/7, seed 42. 38/38 criteria pass.
    Schema v2 readback validated with instrumentation counters.
 
-6. Tier 4.27c schedule-length/resource sweep: 48, 96, and 192 events if
-   practical. Run local first; run hardware only after local passes and the
-   runtime envelope is safe.
+6. ~~Tier 4.27c schedule-length/resource sweep: 48, 96, and 192 events if
+    practical.~~ DEPRECATED. Envelope characterization moved to 4.28e.
 
-7. Tier 4.27 decision point: SDP characterization decides only how much, if
-   any, near-term debugging work may remain on SDP. It does not decide whether
-   MCPL matters. MCPL/multicast is the target for scalable inter-core traffic.
+7. ~~Tier 4.27 decision point: SDP characterization decides only how much, if
+    any, near-term debugging work may remain on SDP.~~ DONE.
+    MCPL selected as default protocol; SDP remains transitional fallback.
 
 8. ~~Run Tier 4.27d MCPL feasibility regardless of whether SDP survives as a
    temporary scaffold: compile-time and local tests using official
@@ -221,10 +231,10 @@ What claim boundary follows?
     (one per core role) and scales via hardware router. Recommendation: make
     MCPL default for Tier 4.28+; keep SDP as fallback until MCPL hardware smoke.
 
-12. Freeze `CRA_NATIVE_RUNTIME_BASELINE_v0.1` only if Tier 4.27 gives a measured
-    resource/timing envelope plus a concrete MCPL migration result or schedule.
-    If MCPL cannot pass the smoke, do not freeze a scaling runtime baseline;
-    record SDP as transitional only and repair the MCPL path.
+12. ~~Freeze `CRA_NATIVE_RUNTIME_BASELINE_v0.1` only if Tier 4.27 gives a measured
+    resource/timing envelope plus a concrete MCPL migration result or schedule.~~ DONE.
+    Baseline v0.1 frozen from 4.28a. Later superseded by `CRA_NATIVE_TASK_BASELINE_v0.2`
+    (from 4.28a-e).
 
 ### Phase B - Native Task Hardening After Runtime Decision
 
@@ -279,24 +289,45 @@ What claim boundary follows?
     resource budget checked, compact regression after each bridge.
     Documented in `CONTROLLED_TEST_PLAN.md` Phase C section.
 
-20. Tier 4.29a native keyed-memory overcapacity gate: multi-slot context/memory
-    state, wrong-key control, slot-shuffle control, slot overwrite policy,
-    compact readback.
+20. ✅ **COMPLETE** — Tier 4.29a native keyed-memory overcapacity gate.
+    HARDWARE PASS, INGESTED. Three-seed repeatability complete.
+    Seeds 42/43/44, all 10/10 criteria. Wrong-key and slot-shuffle controls pass.
 
-21. Tier 4.29b native routing/composition gate: route table ownership, wrong-
-    route control, route-shuffle control, host-composed sham, feature parity.
+21. ✅ **COMPLETE** — Tier 4.29b native routing/composition gate.
+    HARDWARE PASS, INGESTED. Three-seed repeatability complete.
+    Seeds 42/43/44, all 52/52 criteria. Previous cra_429c FAILED (48/52).
+    Root cause: host_interface.c context-slot counter emission for ALL profiles.
+    Fixed in C runtime, rebuilt, bumped to cra_429d.
 
-22. Tier 4.29c native predictive-binding bridge: tiny masked/next-state signal,
-    prediction target separated from reward target, shuffled target control,
-    no feedback leakage.
+22. ✅ **COMPLETE** — Tier 4.29c native predictive-binding bridge.
+    HARDWARE PASS, INGESTED. Three-seed repeatability complete.
+    Seeds 42/43/44, all 24/24 criteria. Zero variance.
+    Weight=30912, bias=-1856 on all seeds. Pending=20/20, lookups=60/60.
+    Package: cra_429h.
 
-23. Tier 4.29d native self-evaluation bridge: bounded confidence/reliability
-    state, confidence computed before outcome, random/shuffled/anti-confidence
-    controls, confidence-gated learning/routing rule.
+23. ✅ **COMPLETE** — Tier 4.29d native self-evaluation bridge.
+    HARDWARE PASS, INGESTED. Three-seed repeatability complete.
+    Seeds 42/43/44, all 30/30 criteria per seed, 90/90 total.
+    Zero-confidence: exact weight=0, bias=0 (proves confidence gating).
+    Half-confidence: weight=28093, bias=3517 (diff=61 from ref).
+    First attempt (cra_429i) failed: MCPL lookup lacks confidence transmission.
+    Fix: revert to SDP inter-core lookup. Rebuilt as cra_429j.
 
-24. Tier 4.29e replay/consolidation bridge: host-scheduled replay through native
-    state primitives first; native replay buffers only after resource budget
-    supports them. Include wrong-key/permuted replay controls.
+24. 🔄 **IN PROGRESS** — Tier 4.29e replay/consolidation bridge.
+    DESIGN COMPLETE, LOCAL PASS, HARDWARE PENDING.
+    Host-scheduled replay through native state primitives; no C runtime changes.
+    Four controls: no_replay, correct_replay, wrong_key_replay, random_event_replay.
+    Local reference passes all controls; current runner revision is
+    `tier4_29e_native_replay_consolidation_20260505_0002`.
+    Package `cra_429o` prepared and submitted through EBRAINS folder `429o`.
+    Reuses `cra_429j` binaries.
+    Failure chain preserved: `cra_429k` missing runner, `cra_429l` bad board-probe
+    helper, `cra_429m` schedule-entry fixed-point double conversion, `cra_429n`
+    state-write fixed-point double conversion. `cra_429o` fixes both conversion
+    classes by passing raw floats to host write helpers.
+    Next: wait for EBRAINS `cra_429o` results, ingest if returned, then either
+    promote to 4.29f compact native mechanism regression or repair with a fresh
+    package name if hardware fails.
 
 25. Tier 4.29f compact native mechanism regression: rerun the strongest tiny
     native delayed, switching, reentry, and mechanism controls after each
@@ -566,13 +597,23 @@ After each completed run or design tier:
 The next concrete action is:
 
 ```text
-Tier 4.27 contract/local instrumentation design, with MCPL/multicast declared as
-the target inter-core data plane and SDP declared transitional.
+Wait for the EBRAINS `cra_429o` Tier 4.29e hardware results.
 ```
 
-Do not prepare a hardware package until the 4.27 contract is explicit in
-`CONTROLLED_TEST_PLAN.md` and the local instrumentation plus MCPL feasibility
-path is clear.
+When the returned files are available:
+
+1. Verify result timestamps and runner revision before ingesting. Current valid
+   package metadata is `cra_429o` with runner revision
+   `tier4_29e_native_replay_consolidation_20260505_0002`. Older downloaded
+   results with revision `20260504_0001` belong to failed pre-`cra_429o` attempts
+   and must not be promoted.
+2. If all three seeds pass, ingest Tier 4.29e, update the registry/docs, and run
+   Tier 4.29f compact native mechanism regression across 4.29a-4.29e.
+3. If any seed fails, classify the failure, preserve artifacts, repair only the
+   proven failure class, regenerate with a fresh package name, and rerun the
+   minimal necessary hardware gate.
+
+Do not mark 4.29e canonical from prepared-only evidence or from stale downloads.
 
 ## 13. Make-Or-Break Gates
 

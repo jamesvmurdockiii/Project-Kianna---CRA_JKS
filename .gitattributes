@@ -1,0 +1,11 @@
+# Keep generated evidence readable in the repo without letting GitHub language
+# stats or review diffs pretend that CSV/registry output is handwritten source.
+controlled_test_output/** linguist-generated=true
+STUDY_EVIDENCE_INDEX.md linguist-generated=true
+docs/PAPER_RESULTS_TABLE.md linguist-generated=true
+docs/RESEARCH_GRADE_AUDIT.md linguist-generated=true
+
+controlled_test_output/**/*.csv diff=false
+controlled_test_output/**/*.json diff=false
+controlled_test_output/**/*.png binary
+controlled_test_output/**/*.zip binary

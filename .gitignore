@@ -24,6 +24,12 @@ coral_reef_spinnaker/spinnaker_runtime/build/
 # Host test executables (rebuilt from source)
 coral_reef_spinnaker/spinnaker_runtime/tests/test_runtime
 coral_reef_spinnaker/spinnaker_runtime/tests/test_mcpl_feasibility
+coral_reef_spinnaker/spinnaker_runtime/tests/test_four_core_local
+coral_reef_spinnaker/spinnaker_runtime/tests/test_learning_core
+ebrains_jobs/cra_*/coral_reef_spinnaker/spinnaker_runtime/tests/test_runtime
+ebrains_jobs/cra_*/coral_reef_spinnaker/spinnaker_runtime/tests/test_mcpl_feasibility
+ebrains_jobs/cra_*/coral_reef_spinnaker/spinnaker_runtime/tests/test_four_core_local
+ebrains_jobs/cra_*/coral_reef_spinnaker/spinnaker_runtime/tests/test_learning_core
 
 # OS and editor noise
 .DS_Store
@@ -37,6 +43,7 @@ coral_reef_spinnaker/spinnaker_runtime/tests/test_mcpl_feasibility
 
 # Local working directories (not canonical evidence)
 tier4_*_job_output/
+tier4_*_output/
 tier4_*_syntax_test/
 tier4_*_local_output*
 tier4_*_prepare_output/

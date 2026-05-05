@@ -4,11 +4,11 @@ This table is generated from `controlled_test_output/STUDY_REGISTRY.json`.
 It is intended as a paper/technical-note citation table, not as a new
 source of claims. If the registry changes, regenerate this file.
 
-- Generated: `2026-05-04T00:05:01.445107+00:00`
-- Registry generated: `2026-05-04T00:05:01.347076+00:00`
+- Generated: `2026-05-05T12:14:49.877675+00:00`
+- Registry generated: `2026-05-05T12:14:49.685494+00:00`
 - Registry status: **PASS**
-- Canonical bundles: `39`
-- Expanded entries: `39`
+- Canonical bundles: `41`
+- Expanded entries: `41`
 
 ## Summary Table
 
@@ -53,6 +53,8 @@ source of claims. If the registry changes, regenerate this file.
 | `tier6_3_lifecycle_sham_controls` | PASS | nest | lifecycle_sham_controls | seeds=[42, 43, 44]; actual_runs=36; expected_actual_runs=36; intact_non_handoff_lifecycle_events_sum=26; fixed_non_handoff_lifecycle_events_sum=0; actual_lineage_integrity_failures=0; performance_control_win_count=10; fixed_max_win_count=2; random_event_replay_win_count=2; lineage_shuffle_detected_count=6; performance_sham_wins=10/10; fixed_max_wins=2/2; event_replay_wins=2/2; lineage_shuffle_detections=6/6 | Controlled software sham-control evidence only; replay/shuffle controls are audit artifacts, not independent learners, and this is not hardware lifecycle evidence, full adult turnover, external-baseline superiority, or compositional/world-model evidence. | results: `controlled_test_output/tier6_3_20260428_121504/tier6_3_results.json`; report: `controlled_test_output/tier6_3_20260428_121504/tier6_3_report.md`; summary: `controlled_test_output/tier6_3_20260428_121504/tier6_3_summary.csv` |
 | `tier6_4_circuit_motif_causality` | PASS | nest | circuit_motif_causality | seeds=[42, 43, 44]; expected_runs=48; actual_runs=48; intact_motif_diverse_aggregate_count=2; expected_intact_aggregates=2; intact_motif_activity_steps_sum=1920; motif_loss_count=7; motif_ablation_loss_count=4; random_or_monolithic_domination_count=0; motif_shuffled_row_count=2; no_wta_row_count=2; lineage_integrity_failures=0; motif_ablation_losses=4/8; label_shuffle_losses=0/2; random_or_monolithic_dominations=0/4; motif_active_steps=1920; motif_diverse_intact=2/2 | Controlled software motif-causality evidence only; motif-diverse graph is seeded for this suite, motif-label shuffle shows labels alone are not causal, and this is not hardware motif evidence, custom-C/on-chip learning, compositionality, or full world-model evidence. | results: `controlled_test_output/tier6_4_20260428_144354/tier6_4_results.json`; report: `controlled_test_output/tier6_4_20260428_144354/tier6_4_report.md`; summary: `controlled_test_output/tier6_4_20260428_144354/tier6_4_summary.csv` |
 | `tier4_29b_native_routing_composition_gate` | PASS | see manifest | Tier 4.29b — Native Routing/Composition Gate |  | Native routing/composition hardware evidence only; not speedup evidence, not multi-chip scaling, not a general multi-core framework, not full native v2.1 autonomy, and not true continuous generation. | results: `controlled_test_output/tier4_29b_20260503_hardware_pass_ingested/tier4_29b_results.json`; report: `controlled_test_output/tier4_29b_20260503_hardware_pass_ingested/tier4_29b_report.md`; summary: `controlled_test_output/tier4_29b_20260503_hardware_pass_ingested/tier4_29b_summary.csv` |
+| `tier4_29c_native_predictive_binding` | PASS | see manifest |  |  | Native predictive binding hardware evidence only; not speedup evidence, not multi-chip scaling, not full native v2.1 autonomy, not continuous generation, and not general task learning. | results: `controlled_test_output/tier4_29c_20260504_pass_ingested/tier4_29c_ingest_results.json`; report: `controlled_test_output/tier4_29c_20260504_pass_ingested/tier4_29c_report_seed42.json`; summary: `controlled_test_output/tier4_29c_20260504_pass_ingested/tier4_29c_combined_results.json` |
+| `tier4_29d_native_self_evaluation` | PASS | see manifest |  |  | Native confidence-gated learning hardware evidence only; not speedup evidence, not multi-chip scaling, not full native v2.1 autonomy, not continuous generation, not dynamic lifecycle, and not external-baseline superiority. | results: `controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_ingest_results.json`; report: `controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_report_seed44.json`; summary: `controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_combined_results.json` |
 
 ## Claim Discipline
 

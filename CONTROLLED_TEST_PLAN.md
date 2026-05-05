@@ -6788,3 +6788,420 @@ Re-entry condition if parked:
 
 Next step after 4.29b: Tier 4.29c (native predictive binding bridge) only if 4.29b
 passes compact regression. If 4.29b fails, park routing/composition and document blocker.
+
+### Tier 4.29c — Native Predictive Binding Bridge
+
+Status: **HARDWARE PASS, INGESTED** — Three-seed repeatability complete.
+Previous: No previous hardware attempt. First pass with cra_429h.
+Hardware evidence (cra_429h):
+  Seed 42: board 10.11.214.49, 24/24 criteria, weight=30912, bias=-1856
+  Seed 43: board 10.11.214.113, 24/24 criteria, weight=30912, bias=-1856
+  Seed 44: board 10.11.215.161, 24/24 criteria, weight=30912, bias=-1856
+  Full-context prediction weight=30912, bias=-1856; zero-context prediction weight=0, bias=0
+  Confidence parity confirms prediction-before-reward isolation.
+  Ingest: controlled_test_output/tier4_29c_20260504_pass_ingested/
+
+Current baseline: `CRA_NATIVE_TASK_BASELINE_v0.3`
+
+Question: Can the native `learning_core` runtime compute a prediction target from
+context before the outcome arrives, keeping it separate from the reward target?
+
+Hypothesis: The native runtime can compute
+`prediction_target = context[key] * route[key] * cue` before reward delivery,
+and the weight update uses this prediction target instead of the raw cue.
+
+Null hypothesis: Prediction target equals reward target (no separation), or
+prediction computation corrupts learning.
+
+Mechanism under test: **Predictive binding** — promoted from v2.1 Tier 5.17e.
+The host writes context and route slots; the runtime computes prediction target
+before outcome and uses it for weight update.
+
+Claim boundary:
+- Native prediction-before-reward works for up to N slots (where N ≤ 8 and fits in ITCM).
+- Prediction target differs from reward target when context is present.
+- Zero-context prediction returns default/zero, not garbage.
+- This is a single-mechanism bridge; not replay, not confidence gating.
+
+Nonclaims:
+- Not full v2.1 predictive binding (no capacity stress at NEST scale).
+- Not confidence-gated learning (those are 4.29d).
+- Not multi-chip.
+- Not speedup.
+- Not autonomy (host still writes slots and schedules events).
+
+Tasks:
+- Fixed-pattern signed stream with predictive binding enabled
+- Events alternate between context-present and context-absent to test prediction isolation
+- Zero-context events mixed in as sham controls
+
+Seeds: 42 (local reference), 42/43/44 (hardware repeatability)
+
+Run lengths: 32 events (within ≤512 envelope)
+
+Backends: Local custom C reference first; SpiNNaker hardware second.
+
+Hardware mode: Chunked scheduling (within 512-event envelope).
+
+Controls:
+1. **Full-context prediction**: Schedule event with context key in table → prediction weight=30912, bias=-1856.
+2. **Zero-context prediction**: Schedule event with context key not in table → prediction weight=0, bias=0.
+
+Ablations:
+- Prediction disabled (raw cue used for weight update) → should match 4.29b behavior
+
+External baselines: None. This is mechanism evidence, not comparative.
+
+Metrics:
+- Prediction weight/bias raw deltas
+- Reward weight/bias raw deltas
+- Confidence parity (prediction vs reward target separation)
+- Context slot hit/miss counts
+
+Statistical summary:
+- Expected prediction weight/bias documented from local reference
+- Full-context prediction weight=30912, bias=-1856
+- Zero-context prediction weight=0, bias=0
+
+Pass criteria:
+- Local reference passes with all raw deltas 0
+- Hardware target acquisition succeeds
+- All context and route slot writes succeed
+- All schedule uploads succeed (≤512 events)
+- Full-context prediction weight matches reward weight from 4.29b
+- Zero-context prediction weight=0, bias=0
+- Prediction target differs from reward target for context-present events
+
+Fail criteria:
+- Prediction target equals reward target (no separation)
+- Zero-context prediction returns nonzero weight/bias
+- Feature raw deltas nonzero (indicates composition error)
+- ITCM overflow under multi-slot profile
+- Any unhandled hardware exception
+
+Leakage checks:
+- Verify prediction computation does not corrupt reward path
+- Verify zero-context events do not affect full-context learning
+
+Expected artifacts:
+- `tier4_29c_ingest_results.json`
+- `tier4_29c_report_seed42.json`
+- `tier4_29c_combined_results.json`
+- `tier4_29c_hardware_results_seed{42,43,44}.json`
+- `tier4_29c_task_seed42.json`
+
+Docs to update:
+- `codebasecontract.md` (live handoff state)
+- `ebrains_jobs/README.md`
+- `docs/SPINNAKER_EBRAINS_RUNBOOK.md`
+- `CONTROLLED_TEST_PLAN.md`
+- `docs/MASTER_EXECUTION_PLAN.md` (step 22 status)
+- `experiments/evidence_registry.py` (after ingest)
+
+Promotion/freeze condition:
+- Promote to carried-forward native mechanism only if all controls pass and compact
+  native regression (4.29g) still passes afterward.
+- Do not freeze a new baseline for a single mechanism bridge.
+
+Re-entry condition if parked:
+- If prediction corrupts reward path: verify target isolation in C runtime.
+- If zero-context returns nonzero: fix default-value policy for prediction path.
+
+Next step after 4.29c: Tier 4.29d (native self-evaluation bridge) only if 4.29c
+passes compact regression. If 4.29c fails, park predictive binding and document blocker.
+
+### Tier 4.29d — Native Self-Evaluation Bridge
+
+Status: **HARDWARE PASS, INGESTED** — Three-seed repeatability complete.
+Previous: cra_429i FAILED on EBRAINS (all controls received effective confidence=1.0,
+producing identical weight=30912 regardless of confidence condition). Root cause:
+C runtime MCPL lookup protocol does not transmit confidence.
+`cra_state_mcpl_lookup_send_reply` ignores confidence argument;
+learning core's `cra_state_mcpl_lookup_receive` hardcodes confidence=FP_ONE.
+Fixed by disabling MCPL lookup paths (`#if 0` in `_send_lookup_request` and
+`_send_lookup_reply`) and reverting to SDP, which transmits confidence via
+`msg->arg3`. Rebuilt all profiles. Bumped to cra_429j.
+Hardware evidence (cra_429j):
+  Seed 42: board 10.11.214.49, 30/30 criteria
+  Seed 43: board 10.11.214.113, 30/30 criteria
+  Seed 44: board 10.11.215.161, 30/30 criteria
+  Full confidence: weight=30912, bias=-1856
+  Zero confidence: weight=0, bias=0
+  Zero-context confidence: weight=0, bias=0
+  Half-context confidence: weight=28093, bias=3517 (diff=61 from ref, within ±8192)
+  Ingest: controlled_test_output/tier4_29d_20260504_pass_ingested/
+
+Current baseline: `CRA_NATIVE_TASK_BASELINE_v0.4`
+
+Question: Can the native `learning_core` runtime gate learning by composite
+confidence (context × route × memory) on real SpiNNaker hardware?
+
+Hypothesis: The native runtime computes
+`composite_confidence = context_conf * route_conf * memory_conf` in s16.15
+fixed-point and scales the effective learning rate by this product, blocking
+learning exactly when any slot confidence is zero.
+
+Null hypothesis: Learning proceeds regardless of confidence (confidence is
+ignored), or confidence scaling corrupts weight updates beyond tolerance.
+
+Mechanism under test: **Confidence-gated learning (self-evaluation)** — promoted
+from v2.1 Tier 5.18c. The host writes context/route/memory slots with confidence
+values; the runtime computes composite confidence and modulates learning rate
+in `_apply_reward_to_feature_prediction`.
+
+Claim boundary:
+- Native confidence gating works for up to N slots (where N ≤ 8 and fits in ITCM).
+- Composite confidence correctly scales learning rate in s16.15 fixed-point.
+- Zero confidence blocks learning exactly (weight=0, bias=0).
+- Zero-context confidence blocks all learning (single zero in product → zero).
+- Half confidence scales learning proportionally (within ±8192 tolerance).
+- This is a single-mechanism bridge; not replay, not predictive binding.
+
+Nonclaims:
+- Not full v2.1 self-evaluation (no capacity stress at NEST scale).
+- Not predictive binding (those are 4.29c).
+- Not multi-chip.
+- Not speedup.
+- Not autonomy (host still writes slots and schedules events).
+- Not dynamic lifecycle confidence (confidence is host-pre-written, not emergent).
+
+Tasks:
+- Fixed-pattern signed stream with four confidence conditions:
+  - Full confidence (all slot confidences = 1.0)
+  - Zero confidence (all slot confidences = 0.0)
+  - Zero-context confidence (context confidence = 0.0, route/memory = 1.0)
+  - Half-context confidence (context confidence = 0.5, route/memory = 1.0)
+
+Seeds: 42 (local reference), 42/43/44 (hardware repeatability)
+
+Run lengths: 32 events (within ≤512 envelope)
+
+Backends: Local custom C reference first; SpiNNaker hardware second.
+
+Hardware mode: Chunked scheduling (within 512-event envelope).
+
+Controls:
+1. **Full confidence control**: All slot confidences = 1.0 → weight=30912, bias=-1856.
+2. **Zero confidence control**: All slot confidences = 0.0 → weight=0, bias=0.
+3. **Zero-context confidence control**: Context confidence = 0.0, route/memory = 1.0 → weight=0, bias=0.
+4. **Half-context confidence control**: Context confidence = 0.5, route/memory = 1.0 → weight ≈ 28093, bias ≈ 3517.
+
+Ablations:
+- Confidence gating disabled (`has_confidence=false`) → should match 4.29c behavior
+
+External baselines: None. This is mechanism evidence, not comparative.
+
+Metrics:
+- Weight/bias raw deltas per confidence condition
+- Composite confidence computation accuracy
+- Context/route/memory slot hit/miss counts
+- Learning rate scaling verification
+
+Statistical summary:
+- Expected weight/bias documented from local reference for each condition
+- Full confidence: weight=30912, bias=-1856
+- Zero confidence: weight=0, bias=0
+- Zero-context confidence: weight=0, bias=0
+- Half-context confidence: weight ≈ 28093, bias ≈ 3517 (±8192 tolerance)
+
+Pass criteria:
+- Local reference passes with all raw deltas within tolerance
+- Hardware target acquisition succeeds
+- All context/route/memory slot writes succeed
+- All schedule uploads succeed (≤512 events)
+- Full confidence weight/bias matches 4.29c baseline
+- Zero confidence blocks learning exactly (weight=0, bias=0)
+- Zero-context confidence blocks learning exactly (weight=0, bias=0)
+- Half-context confidence scales proportionally (within ±8192 tolerance)
+- All criteria pass per seed (30/30)
+
+Fail criteria:
+- Zero confidence does not block learning (weight ≠ 0)
+- Confidence scaling exceeds ±8192 tolerance
+- MCPL lookup used for confidence transmission (known protocol limitation)
+- ITCM overflow under multi-slot profile
+- Any unhandled hardware exception
+
+Leakage checks:
+- Verify confidence computation does not corrupt slot data
+- Verify zero confidence does not leave residual weight updates
+- Verify half-confidence scaling is monotonic and bounded
+
+Expected artifacts:
+- `tier4_29d_ingest_results.json`
+- `tier4_29d_combined_results.json`
+- `tier4_29d_report_seed44.json`
+- `tier4_29d_task_full_confidence.json`
+- `tier4_29d_task_zero_confidence.json`
+- `tier4_29d_task_zero_context_confidence.json`
+- `tier4_29d_task_half_context_confidence.json`
+
+Docs to update:
+- `codebasecontract.md` (live handoff state)
+- `ebrains_jobs/README.md`
+- `docs/SPINNAKER_EBRAINS_RUNBOOK.md`
+- `CONTROLLED_TEST_PLAN.md`
+- `docs/MASTER_EXECUTION_PLAN.md` (step 23 status)
+- `experiments/evidence_registry.py` (after ingest)
+
+Promotion/freeze condition:
+- Promote to carried-forward native mechanism only if all controls pass and compact
+  native regression (4.29h) still passes afterward.
+- Do not freeze a new baseline for a single mechanism bridge.
+
+Re-entry condition if parked:
+- If confidence does not block learning: verify `has_confidence` flag and
+  `effective_lr = FP_MUL(learning_rate, composite_confidence)` logic in C runtime.
+- If MCPL lookup is accidentally active: verify `#if 0` guards remain in place.
+- If half-confidence scaling is non-monotonic: review s16.15 multiplication order.
+
+Next step after 4.29d: Tier 4.29e (replay/consolidation bridge) only if 4.29d
+passes compact regression. If 4.29d fails, park self-evaluation and document blocker.
+
+### Tier 4.29e — Native Replay/Consolidation Bridge
+
+Status: **DESIGN COMPLETE, LOCAL PASS, HARDWARE PENDING** — Local reference passes
+all four controls. Package `cra_429o` prepared and submitted (reuses `cra_429j`
+binaries; no C runtime changes required). Earlier attempts failed and are
+noncanonical: `cra_429k` missing runner, `cra_429l` bad board-probe helper,
+`cra_429m` schedule-entry fixed-point double conversion, and `cra_429n`
+state-write fixed-point double conversion. `cra_429o` fixes both conversion
+classes by passing raw floats to host write helpers.
+
+Current baseline: `CRA_NATIVE_TASK_BASELINE_v0.4`
+
+Question: Can the host schedule replay events through native state primitives
+(context/route/memory slots, learning core) on real SpiNNaker hardware?
+
+Hypothesis: The host can construct a schedule containing both original events
+and replay events; the native four-core runtime processes them through the same
+pipeline without native replay buffers, producing differentiable outcomes for
+correct-key, wrong-key, and random-event replay conditions.
+
+Null hypothesis: Replay events corrupt the native state pipeline, or the runtime
+cannot distinguish correct-key replay from wrong-key/no-replay conditions.
+
+Mechanism under test: **Host-scheduled replay/consolidation** — promoted from
+v2.1 Tier 5.11d. The host writes context/route/memory slots and constructs a
+schedule where later events replay earlier ones. No native replay buffers are
+used; the existing schedule primitive handles all event presentations.
+
+Claim boundary:
+- Host-scheduled replay works through native state primitives on real SpiNNaker.
+- Correct-key replay produces a different outcome than wrong-key replay.
+- Random-event replay produces a different outcome than correct-key replay.
+- Wrong-key replay approximates the no-replay baseline (replay events contribute
+  no weight update because feature=0 when context lookup fails).
+- This is host-scheduled replay only; not native on-chip replay buffers, not
+  biological sleep, not multi-chip scaling.
+
+Nonclaims:
+- Not native on-chip replay buffers (DTCM budget blocker remains).
+- Not biological sleep or circadian replay.
+- Not multi-chip.
+- Not speedup.
+- Not autonomy (host constructs the schedule and writes slots).
+- Not performance improvement claim (replay may refine but not necessarily
+  increase weight on a converged model).
+
+Tasks:
+- Fixed-pattern signed stream with 16 base events
+- 8 replay events interleaved after base events
+- Four replay conditions:
+  - no_replay: 16 base events only
+  - correct_replay: 16 base + 8 replay with correct context keys
+  - wrong_key_replay: 16 base + 8 replay with wrong context keys (feature=0,
+    so delta_w=0; but delta_b = lr * error still applies, so bias diverges)
+  - random_event_replay: 16 base + 8 random conflicting events
+
+Seeds: 42 (local reference), 42/43/44 (hardware repeatability)
+
+Run lengths: 16-24 events (well within ≤512 envelope)
+
+Backends: Local custom C reference first; SpiNNaker hardware second.
+
+Hardware mode: Chunked scheduling (within 512-event envelope). Reuses cra_429j
+binaries; no C runtime changes for 4.29e.
+
+Controls:
+1. **No-replay baseline**: 16 base events only; establishes weight/bias baseline.
+2. **Correct-key replay**: Replay events use same context/route keys as originals;
+   should produce differentiable outcome from wrong-key and no-replay.
+3. **Wrong-key replay**: Replay events use wrong context keys; context lookup
+   returns default 0, so feature=0 and no weight update occurs on replay events.
+   Final weight should approximate no-replay baseline.
+4. **Random-event replay**: Replay events have conflicting cues/targets
+   (e.g., cue=1.0, target=-1.0); should diverge from correct-key replay.
+
+Ablations:
+- No ablations needed; the four controls themselves form the sham separation.
+
+External baselines: None. This is mechanism evidence, not comparative.
+
+Metrics:
+- Weight/bias raw deltas per control condition
+- Cross-control weight/bias differences
+- Event maturation counts
+- Schedule upload success
+
+Statistical summary:
+- Expected weight/bias documented from local reference for each condition
+- wrong_key_replay weight ≈ no_replay weight (diff ≤ 8192) because feature=0
+  blocks delta_w; but bias diverges because delta_b = lr * error
+- correct_replay differs from wrong_key_replay (diff > 8192)
+- random_event_replay differs from correct_replay (diff > 8192)
+
+Pass criteria:
+- Local reference passes with all cross-control differences within tolerance
+- Hardware target acquisition succeeds
+- All context/route/memory slot writes succeed
+- All schedule uploads succeed (≤512 events)
+- Hardware weight/bias matches reference within ±8192 tolerance per control
+- Wrong-key replay weight approximates no-replay baseline (proves delta_w=0)
+- Wrong-key replay bias differs from no-replay baseline (proves delta_b still fires)
+- Correct-key replay differs from wrong-key replay
+- Random-event replay differs from correct-key replay
+- All events matured per control
+
+Fail criteria:
+- Wrong-key replay weight differs from no-replay by >8192 (indicates feature≠0
+  on wrong-key events, or context default value is nonzero)
+- Wrong-key replay bias approximates no-replay (indicates delta_b was blocked,
+  which would be a C runtime deviation from standard perceptron update)
+- Correct-key replay does not differ from wrong-key replay
+- Random-event replay does not differ from correct-key replay
+- Schedule upload fails or exceeds 512-event envelope
+- Any unhandled hardware exception
+
+Leakage checks:
+- Verify replay events do not corrupt base event state
+- Verify wrong-key replay events do not affect unrelated slots
+- Verify schedule length is consistent across controls
+
+Expected artifacts:
+- `tier4_29e_local_results.json`
+- `tier4_29e_hardware_results_seed{42,43,44}.json`
+- `tier4_29e_ingest_results.json`
+- `tier4_29e_combined_results.json`
+
+Docs to update:
+- `codebasecontract.md` (live handoff state)
+- `ebrains_jobs/README.md`
+- `docs/SPINNAKER_EBRAINS_RUNBOOK.md`
+- `CONTROLLED_TEST_PLAN.md`
+- `docs/MASTER_EXECUTION_PLAN.md` (step 24 status)
+- `experiments/evidence_registry.py` (after ingest)
+
+Promotion/freeze condition:
+- Promote to carried-forward native mechanism only if all controls pass and compact
+  native regression (4.29f) still passes afterward.
+- Do not freeze a new baseline for a single mechanism bridge.
+
+Re-entry condition if parked:
+- If replay events corrupt state: verify schedule upload isolation in C runtime.
+- If wrong-key replay produces nonzero feature: verify context slot default-value
+  policy returns 0 for missing keys.
+- If schedule exceeds envelope: reduce event count or split into chunks.
+
+Next step after 4.29e: Tier 4.29f (compact native mechanism regression) to verify
+that 4.29e did not break any previously passing native mechanism (4.29a–4.29d).
