@@ -6273,6 +6273,12 @@ Near-term roadmap insertion:
 6. Tier 4.30 lifecycle-native contract, if still appropriate.
 ```
 
+Detailed Tier 5.19 contract:
+
+```text
+docs/TIER5_19_CONTINUOUS_TEMPORAL_DYNAMICS_CONTRACT.md
+```
+
 Remaining mechanism families to keep visible:
 
 ```text

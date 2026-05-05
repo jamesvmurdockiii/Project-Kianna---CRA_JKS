@@ -7638,6 +7638,12 @@ Status: DEFINED / CURRENT CONTRACT GATE. This section defines the next software
 mechanism gate before code is written. It is not yet canonical evidence and does
 not change the registry count until a completed run is ingested.
 
+Detailed contract:
+
+```text
+docs/TIER5_19_CONTINUOUS_TEMPORAL_DYNAMICS_CONTRACT.md
+```
+
 Question:
 
 ```text

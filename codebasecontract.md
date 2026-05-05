@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-05T13:25-04:00.
+Last updated: 2026-05-05T13:28-04:00.
 
 Current repo root:
 
@@ -399,6 +399,8 @@ Local build capability (established 2026-05-02):
 Immediate next steps:
 
 1. Define Tier 5.19 / 7.0e before writing code. This is a software contract gate.
+   Detailed contract:
+   `docs/TIER5_19_CONTINUOUS_TEMPORAL_DYNAMICS_CONTRACT.md`.
 2. Specify the temporal-substrate mechanism boundary: state variables, decay
    timescales, nonlinear recurrence, local continuous prediction/readout,
    learning/update equations, parameter budget, and anti-benchmark-chasing rule.

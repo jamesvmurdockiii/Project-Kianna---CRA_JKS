@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-05T13:25-04:00.
+Last updated: 2026-05-05T13:28-04:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -735,6 +735,12 @@ The next concrete action is:
 
 ```text
 Tier 5.19 / 7.0e - Continuous Temporal Dynamics Substrate Contract
+```
+
+Detailed contract:
+
+```text
+docs/TIER5_19_CONTINUOUS_TEMPORAL_DYNAMICS_CONTRACT.md
 ```
 
 Purpose:

@@ -35,6 +35,7 @@ are source, which files are generated evidence, and where claims are recorded.
 | `docs/ABSTRACT.md` | Short research abstract and current claim boundary. |
 | `docs/PAPER_READINESS_ROADMAP.md` | Strategic roadmap from current evidence to paper-ready claims, including capability ladder, SNN-native coverage tiers, pass/fail gates, reproduction hygiene, and make-or-break criteria. |
 | `docs/MASTER_EXECUTION_PLAN.md` | Operational execution queue from the current state through chip-native migration, remaining software capability work, final matrices, reproduction, and paper lock. |
+| `docs/TIER5_19_CONTINUOUS_TEMPORAL_DYNAMICS_CONTRACT.md` | Current Tier 5.19 / 7.0e contract gate for the continuous temporal dynamics substrate; defines mechanism scope, controls, NEST/hardware policy, pass/fail gates, and promotion rules before implementation. |
 | `docs/REVIEWER_DEFENSE_PLAN.md` | Adversarial reviewer-attack matrix, baseline fairness/statistics requirements, leakage checks, SNN-native mechanism controls, future capability controls, and reproduction requirements. |
 | `docs/WHITEPAPER.md` | Comprehensive technical whitepaper with architecture, evidence, limitations, and roadmap. |
 | `docs/PAPER_RESULTS_TABLE.md` | Paper-facing results table generated from the canonical registry. |
