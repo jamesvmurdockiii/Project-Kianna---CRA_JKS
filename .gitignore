@@ -31,6 +31,8 @@ coral_reef_spinnaker/spinnaker_runtime/tests/test_route_core
 coral_reef_spinnaker/spinnaker_runtime/tests/test_memory_core
 coral_reef_spinnaker/spinnaker_runtime/tests/test_learning_core
 coral_reef_spinnaker/spinnaker_runtime/tests/test_lifecycle
+coral_reef_spinnaker/spinnaker_runtime/tests/test_lifecycle_core
+coral_reef_spinnaker/spinnaker_runtime/tests/test_lifecycle_split
 ebrains_jobs/cra_*/coral_reef_spinnaker/spinnaker_runtime/tests/test_runtime
 ebrains_jobs/cra_*/coral_reef_spinnaker/spinnaker_runtime/tests/test_mcpl_feasibility
 ebrains_jobs/cra_*/coral_reef_spinnaker/spinnaker_runtime/tests/test_four_core_local
@@ -40,6 +42,8 @@ ebrains_jobs/cra_*/coral_reef_spinnaker/spinnaker_runtime/tests/test_route_core
 ebrains_jobs/cra_*/coral_reef_spinnaker/spinnaker_runtime/tests/test_memory_core
 ebrains_jobs/cra_*/coral_reef_spinnaker/spinnaker_runtime/tests/test_learning_core
 ebrains_jobs/cra_*/coral_reef_spinnaker/spinnaker_runtime/tests/test_lifecycle
+ebrains_jobs/cra_*/coral_reef_spinnaker/spinnaker_runtime/tests/test_lifecycle_core
+ebrains_jobs/cra_*/coral_reef_spinnaker/spinnaker_runtime/tests/test_lifecycle_split
 
 # OS and editor noise
 .DS_Store
