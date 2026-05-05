@@ -5,10 +5,10 @@ ledger is `STUDY_REGISTRY.json`; the compact table is `STUDY_REGISTRY.csv`.
 Older reruns, prepared capsules, debug probes, and baseline-frozen
 mechanism bundles outside the formal registry are preserved for audit.
 
-- Generated: `2026-05-05T14:15:53.310081+00:00`
+- Generated: `2026-05-05T16:46:00.524067+00:00`
 - Registry status: **PASS**
-- Canonical evidence entries: `46`
-- Expanded test-entry count: `46`; see the canonical evidence table below for the exact current tier list.
+- Canonical evidence entries: `47`
+- Expanded test-entry count: `47`; see the canonical evidence table below for the exact current tier list.
 
 ## Evidence Categories
 
@@ -68,6 +68,7 @@ mechanism bundles outside the formal registry are preserved for audit.
 | `tier7_0_standard_dynamical_benchmarks` | **PASS** | `controlled_test_output/tier7_0_20260505_standard_dynamical_benchmarks` | Software diagnostic evidence only; not hardware evidence, not a superiority claim, not a tuning run, not a new baseline freeze, and not evidence that CRA is generally weak outside these continuous-regression benchmarks. It triggers Tier 7.0b failure analysis before mechanism changes or hardware migration. |
 | `tier7_0b_continuous_regression_failure_analysis` | **PASS** | `controlled_test_output/tier7_0b_20260505_continuous_regression_failure_analysis` | Software diagnostic evidence only; not a tuning run, not a promoted mechanism, not hardware evidence, not a new baseline freeze, and not proof that a repaired CRA will beat standard baselines. It authorizes a bounded continuous readout/interface repair tier before hardware migration. |
 | `tier7_0c_continuous_readout_repair` | **PASS** | `controlled_test_output/tier7_0c_20260505_continuous_readout_repair` | Software repair-candidate evidence only; not hardware evidence, not a new baseline freeze, not a promoted CRA mechanism, and not a superiority claim. The correct next move is a stricter state-specific repair or claim narrowing, not hardware migration. |
+| `tier7_0d_state_specific_continuous_interface` | **PASS** | `controlled_test_output/tier7_0d_20260505_state_specific_continuous_interface` | Software diagnostic evidence only; not hardware evidence, not a baseline freeze, not a promoted continuous-readout mechanism, and not a superiority claim. The Tier 7 continuous-regression benchmark path should be narrowed and not migrated to hardware unless a future mechanism changes the failure class. |
 
 ## Noncanonical Outputs
 

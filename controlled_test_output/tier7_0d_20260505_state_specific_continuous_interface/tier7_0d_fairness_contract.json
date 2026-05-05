@@ -1,0 +1,24 @@
+{
+  "feature_normalization": "train prefix only",
+  "no_future_leakage": [
+    "all online candidates consume only current/past features",
+    "normalization and state residualization use train prefix only",
+    "online updates occur after each prediction",
+    "ridge probes fit only chronological train prefix"
+  ],
+  "nonclaims": [
+    "not hardware evidence",
+    "not a baseline freeze",
+    "not a promoted continuous readout mechanism unless a later promotion/regression gate passes"
+  ],
+  "readout_update": "prediction before update; online normalized LMS; no batch test fit for online candidates",
+  "same_tasks_and_split": true,
+  "source_tiers": [
+    "Tier 7.0",
+    "Tier 7.0b",
+    "Tier 7.0c"
+  ],
+  "state_orthogonalization": "state residualized against lag features using train prefix only",
+  "tier": "Tier 7.0d - State-Specific Continuous Interface / Claim-Narrowing",
+  "upper_bound_probes": "train-prefix ridge only; diagnostic, not promoted mechanism"
+}

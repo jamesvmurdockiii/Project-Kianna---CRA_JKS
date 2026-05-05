@@ -79,7 +79,7 @@ not full native v2.1, and not final autonomy.
 Current active step:
 
 ```text
-Tier 7.0d - State-Specific Continuous Interface Repair / Claim-Narrowing Contract
+Tier 4.30 - Lifecycle-Native Contract
 ```
 
 ## 2. Immediate Baseline Decision
@@ -362,14 +362,18 @@ What claim boundary follows?
     limited repair-candidate evidence, not a promoted CRA mechanism, not a
     baseline freeze, and not a hardware-migration trigger.
 
-30. 🔄 **CURRENT ACTIVE STEP** - Tier 7.0d state-specific continuous interface repair / claim-narrowing contract:
-    decide whether CRA state adds value beyond causal lag regression under
-    stricter controls. If state-specific value is not shown, narrow the Tier 7
-    benchmark claim and do not spend hardware time on this benchmark path yet.
+30. ✅ **COMPLETE** - Tier 7.0d state-specific continuous interface repair / claim-narrowing contract:
+    passed 10/10 criteria and classified the Tier 7 standard dynamical benchmark
+    path as `lag_regression_explains_benchmark`. The best state-specific online
+    candidate reached geomean MSE 0.1455 versus lag-only 0.1515, but this did
+    not clear the predeclared margin and a shuffled residual sham reached
+    0.1409. Train-prefix ridge lag-only also beat lag+state probes. No
+    continuous-readout mechanism is promoted and this benchmark path should not
+    move to hardware under the current interface.
 
 ### Phase D - Lifecycle / Organism Dynamics Native Path
 
-31. Tier 4.30 lifecycle-native contract: preallocated pool only. No dynamic
+31. 🔄 **CURRENT ACTIVE STEP** - Tier 4.30 lifecycle-native contract: preallocated pool only. No dynamic
     PyNN population creation mid-run. Birth/cleavage/death are activation,
     masking, assignment, or lineage events inside static state.
 
@@ -627,34 +631,31 @@ After each completed run or design tier:
 The next concrete action is:
 
 ```text
-Tier 7.0d - State-Specific Continuous Interface Repair / Claim-Narrowing Contract
+Tier 4.30 - Lifecycle-Native Contract
 ```
 
 Purpose:
 
 ```text
-Use the Tier 7.0c limited repair result to decide whether CRA state adds
-state-specific value beyond causal lag regression on Mackey-Glass, Lorenz, and
-NARMA10, or whether the benchmark claim must narrow.
+Design the native lifecycle/self-scaling hardware contract around a static
+preallocated pool. Birth, cleavage, death, and active/inactive membership are
+state transitions inside fixed hardware capacity, not dynamic PyNN population
+creation.
 ```
 
 Required coverage:
 
 ```text
-Use same Tier 7.0 task streams, seeds, splits, and train-prefix normalization.
-Candidate: state-specific continuous interface that cannot be explained by the
-same causal lag budget alone.
-Controls: lag-only, state-only, state+lag, state-delta/residual if defined,
-shuffled-state, shuffled-target, frozen/no-learning where applicable.
-Metrics: MSE, NMSE, tail MSE, geomean aggregate, per-seed variance.
-Compare against Tier 7.0 baselines and Tier 7.0 raw CRA.
+Define max pool, active masks, lineage IDs, parent/child links, trophic state,
+birth/cleavage/death counters, allocation policy, reset policy, readback schema,
+failure classes, sham controls, and the smallest local reference task.
+Predeclare fixed-capacity controls: fixed-N same pool, random event replay,
+mask shuffle, no trophic pressure, and no dopamine/plasticity where applicable.
 ```
 
-Do not tune blindly. Tier 7.0d is still software-only. If it shows
-state-specific value beyond lag-only, run a separate compact
-regression/promotion gate before freezing a software baseline or planning
-hardware migration. If it does not, narrow the Tier 7 benchmark claim and move
-back to the roadmap without hiding the limitation.
+Do not jump straight to hardware. Tier 4.30 is a contract gate. The next local
+implementation step is Tier 4.30a static-pool lifecycle reference only after the
+contract is explicit.
 
 
 ## 13. Make-Or-Break Gates

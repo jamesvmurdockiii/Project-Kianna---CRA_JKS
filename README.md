@@ -3,7 +3,7 @@
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
 [![Tests](https://img.shields.io/badge/tests-147%20passing-brightgreen.svg)](#validation)
-[![Evidence](https://img.shields.io/badge/canonical%20evidence-46%20bundles-blue.svg)](STUDY_EVIDENCE_INDEX.md)
+[![Evidence](https://img.shields.io/badge/canonical%20evidence-47%20bundles-blue.svg)](STUDY_EVIDENCE_INDEX.md)
 
 Coral Reef Architecture (CRA) is a neuromorphic learning research platform for
 studying local spiking plasticity, delayed credit assignment, population-level
@@ -21,9 +21,9 @@ controlled ablations, baseline comparisons, and explicit claim boundaries.
 | Software baseline | `v2.1`, frozen after bounded host-side self-evaluation / reliability-monitoring evidence. |
 | Native hardware baseline | `CRA_NATIVE_MECHANISM_BRIDGE_v0.3`, frozen after Tier 4.29f audited the 4.29a-e native mechanism hardware passes. |
 | Latest ingested hardware pass | Tier 4.29e, native host-scheduled replay/consolidation bridge, `38/38` criteria per seed across seeds `42`, `43`, and `44`. |
-| Latest software benchmark diagnostic | Tier 7.0c tested a bounded continuous readout/interface repair after Tier 7.0b. The repair improved raw CRA but lag-only online LMS still explained most of the benchmark gain. |
-| Active next gate | Tier 7.0d state-specific continuous interface repair or benchmark claim-narrowing contract: determine whether CRA state adds value beyond causal lag regression before any hardware migration. |
-| Canonical registry | 46 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
+| Latest software benchmark diagnostic | Tier 7.0d showed the current standard dynamical benchmark path is explained by causal lag regression, not a promoted CRA state-specific mechanism. |
+| Active next gate | Return to the native roadmap: Tier 4.30 lifecycle-native contract with static preallocated pool, lifecycle masks, lineage telemetry, and sham controls. |
+| Canonical registry | 47 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
 | Validation suite | 147 pytest tests plus registry, paper-table, and repository-audit generation. |
 
 ## What CRA Implements
@@ -54,7 +54,7 @@ Core implementation areas:
 | 5.10-5.18 | Memory, replay/consolidation, predictive context, composition/routing, working memory diagnostics, temporal coding, neuron-parameter sensitivity, predictive binding, and self-evaluation gates. | Mostly host-side software mechanisms unless explicitly migrated to hardware. |
 | 6.1-6.4 | Lifecycle/self-scaling, lifecycle sham controls, and circuit-motif causality. | Software organism/ecology evidence; not hardware lifecycle. |
 | 4.22-4.29 | Custom SpiNNaker runtime progression from roundtrip/load tests to four-core MCPL tasks, keyed memory, routing/composition, predictive binding, confidence-gated learning, host-scheduled replay/consolidation, and the 4.29f evidence-regression freeze gate. | Native hardware mechanism evidence for the tested capsules only; 4.29f is an audit over hardware passes, not a new hardware execution. |
-| 7.0-7.0c | Standard dynamical benchmarks and failure analysis: Mackey-Glass, Lorenz, NARMA10, aggregate geometric-mean MSE, CRA state/readout probes, and bounded online readout repair. | Software diagnostics only; CRA v2.1 underperformed simple continuous-regression sequence baselines. 7.0b localized useful state signal, while 7.0c showed the repair improves raw CRA but remains explained mostly by lag-only regression, so no mechanism promotion is claimed. |
+| 7.0-7.0d | Standard dynamical benchmarks and failure analysis: Mackey-Glass, Lorenz, NARMA10, aggregate geometric-mean MSE, CRA state/readout probes, bounded online readout repair, and state-specific claim narrowing. | Software diagnostics only; CRA v2.1 underperformed simple continuous-regression sequence baselines. 7.0d showed lag regression explains this benchmark path under the current interface, so no mechanism promotion or hardware migration is claimed. |
 
 The most current paper-facing evidence index is generated at
 [`STUDY_EVIDENCE_INDEX.md`](STUDY_EVIDENCE_INDEX.md). The machine-readable
@@ -74,7 +74,8 @@ Current evidence does not prove:
 - General intelligence or broad autonomous reasoning.
 - Universal superiority over external baselines.
 - Competitive performance on the Tier 7.0 continuous-valued standard dynamical
-  benchmark suite.
+  benchmark suite; Tier 7.0d narrows that path to a lag-regression-explained
+  limitation under the current interface.
 - Full organism lifecycle running natively on hardware.
 - Multi-chip scaling.
 - Production readiness.
@@ -137,7 +138,7 @@ python3 experiments/tier5_external_baselines.py \
 `make validate` currently runs:
 
 - 147 pytest unit tests.
-- Evidence registry generation: 46 canonical bundles, 0 failed criteria.
+- Evidence registry generation: 47 canonical bundles, 0 failed criteria.
 - Paper results table export.
 - Repository audit.
 
@@ -182,7 +183,7 @@ commit used. A placeholder software citation is:
   author       = {Murdock, James V. and CRA Contributors},
   year         = {2026},
   url          = {https://github.com/jamesvmurdockiii/Project-Kianna---CRA_JKS},
-  note         = {46 canonical evidence bundles; bounded SpiNNaker hardware validation}
+  note         = {47 canonical evidence bundles; bounded SpiNNaker hardware validation}
 }
 ```
 

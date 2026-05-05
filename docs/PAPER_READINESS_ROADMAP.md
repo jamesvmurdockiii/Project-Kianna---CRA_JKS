@@ -6225,11 +6225,14 @@ CRA geomean MSE was 1.2233, a leakage-safe internal-state probe improved to
 0.4433, and CRA state plus the same causal lag budget improved to 0.0544. Tier
 7.0c then tested a bounded continuous readout/interface repair. It improved raw
 CRA and beat shuffled/frozen controls, but lag-only online LMS remained better
-and explains most of the benchmark gain.
-The current next gate is Tier 7.0d state-specific continuous interface repair
-or benchmark claim-narrowing. Do not move benchmark workloads to hardware until
-software evidence shows value beyond lag-only regression or the claim is
-narrowed honestly.
+and explains most of the benchmark gain. Tier 7.0d then tested state-specific
+value beyond lag regression and classified the benchmark path as
+`lag_regression_explains_benchmark`: the best state-specific online candidate
+did not clear the lag-only margin or sham-separation gates, and train-prefix
+ridge lag-only beat lag+state probes.
+The current next gate returns to the native roadmap at Tier 4.30 lifecycle-
+native contract. Do not move Tier 7.0 benchmark workloads to hardware under the
+current interface.
 ```
 
 Paper implication:
@@ -6246,7 +6249,10 @@ turns that limitation into a specific engineering/science question: the
 organism state contains useful signal, but the default online readout/interface
 does not extract it. Tier 7.0c shows a bounded readout/interface improves raw
 CRA but does not yet establish a CRA-specific mechanism advantage because the
-lag-only control is stronger. The correct paper posture is to cite this
-honestly, run Tier 7.0d only if it can isolate state-specific value, and narrow
-the benchmark claim if lag-only remains the right explanation.
+lag-only control is stronger. Tier 7.0d completes that branch by showing the
+state-specific repair does not separate from lag-only/sham controls. The correct
+paper posture is to cite this honestly as a limitation: the current CRA
+interface is not competitive on these continuous-valued standard dynamical
+regression tasks, and the path should not be migrated to hardware unless a
+future mechanism changes the failure class.
 ```

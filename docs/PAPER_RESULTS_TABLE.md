@@ -4,11 +4,11 @@ This table is generated from `controlled_test_output/STUDY_REGISTRY.json`.
 It is intended as a paper/technical-note citation table, not as a new
 source of claims. If the registry changes, regenerate this file.
 
-- Generated: `2026-05-05T14:15:53.402770+00:00`
-- Registry generated: `2026-05-05T14:15:53.310081+00:00`
+- Generated: `2026-05-05T16:46:00.617472+00:00`
+- Registry generated: `2026-05-05T16:46:00.524067+00:00`
 - Registry status: **PASS**
-- Canonical bundles: `46`
-- Expanded entries: `46`
+- Canonical bundles: `47`
+- Expanded entries: `47`
 
 ## Summary Table
 
@@ -60,6 +60,7 @@ source of claims. If the registry changes, regenerate this file.
 | `tier7_0_standard_dynamical_benchmarks` | PASS | see manifest | Tier 7.0 - Standard Dynamical Benchmark Suite | outcome=cra_underperforms_standard_sequence_baselines; best_model=echo_state_network; cra_rank=5; cra_geomean_mse_mean=1.22326; best_non_cra_model=echo_state_network; best_non_cra_geomean_mse_mean=0.0227245; cra_vs_best_non_cra_mse_ratio=53.8298 | Software diagnostic evidence only; not hardware evidence, not a superiority claim, not a tuning run, not a new baseline freeze, and not evidence that CRA is generally weak outside these continuous-regression benchmarks. It triggers Tier 7.0b failure analysis before mechanism changes or hardware migration. | results: `controlled_test_output/tier7_0_20260505_standard_dynamical_benchmarks/tier7_0_results.json`; report: `controlled_test_output/tier7_0_20260505_standard_dynamical_benchmarks/tier7_0_report.md`; summary: `controlled_test_output/tier7_0_20260505_standard_dynamical_benchmarks/tier7_0_summary.csv` |
 | `tier7_0b_continuous_regression_failure_analysis` | PASS | mock | Tier 7.0b - Continuous-Regression Failure Analysis | failure_class=recoverable_state_signal_default_readout_failure; raw_cra_geomean_mse=1.22326; state_probe_geomean_mse=0.443292; state_plus_lag_geomean_mse=0.0544394; shuffled_control_geomean_mse=0.753285; state_improvement_over_raw=2.75948; state_plus_lag_improvement_over_raw=22.4701; state_vs_shuffled_control_advantage=1.6993 | Software diagnostic evidence only; not a tuning run, not a promoted mechanism, not hardware evidence, not a new baseline freeze, and not proof that a repaired CRA will beat standard baselines. It authorizes a bounded continuous readout/interface repair tier before hardware migration. | results: `controlled_test_output/tier7_0b_20260505_continuous_regression_failure_analysis/tier7_0b_results.json`; report: `controlled_test_output/tier7_0b_20260505_continuous_regression_failure_analysis/tier7_0b_report.md`; summary: `controlled_test_output/tier7_0b_20260505_continuous_regression_failure_analysis/tier7_0b_summary.csv` |
 | `tier7_0c_continuous_readout_repair` | PASS | mock | Tier 7.0c - Bounded Continuous Readout / Interface Repair | outcome=repair_works_but_lag_only_explains_most_gain; raw_cra_geomean_mse=1.22326 | Software repair-candidate evidence only; not hardware evidence, not a new baseline freeze, not a promoted CRA mechanism, and not a superiority claim. The correct next move is a stricter state-specific repair or claim narrowing, not hardware migration. | results: `controlled_test_output/tier7_0c_20260505_continuous_readout_repair/tier7_0c_results.json`; report: `controlled_test_output/tier7_0c_20260505_continuous_readout_repair/tier7_0c_report.md`; summary: `controlled_test_output/tier7_0c_20260505_continuous_readout_repair/tier7_0c_summary.csv` |
+| `tier7_0d_state_specific_continuous_interface` | PASS | mock | Tier 7.0d - State-Specific Continuous Interface / Claim-Narrowing | outcome=lag_regression_explains_benchmark; raw_cra_geomean_mse=1.22326 | Software diagnostic evidence only; not hardware evidence, not a baseline freeze, not a promoted continuous-readout mechanism, and not a superiority claim. The Tier 7 continuous-regression benchmark path should be narrowed and not migrated to hardware unless a future mechanism changes the failure class. | results: `controlled_test_output/tier7_0d_20260505_state_specific_continuous_interface/tier7_0d_results.json`; report: `controlled_test_output/tier7_0d_20260505_state_specific_continuous_interface/tier7_0d_report.md`; summary: `controlled_test_output/tier7_0d_20260505_state_specific_continuous_interface/tier7_0d_summary.csv` |
 
 ## Claim Discipline
 

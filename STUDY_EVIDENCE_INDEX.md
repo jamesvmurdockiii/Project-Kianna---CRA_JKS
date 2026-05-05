@@ -10,10 +10,10 @@ Research narrative companions:
 - `docs/WHITEPAPER.md`
 - `docs/CODEBASE_MAP.md`
 
-- Registry generated: `2026-05-05T14:15:53.310081+00:00`
+- Registry generated: `2026-05-05T16:46:00.524067+00:00`
 - Registry status: **PASS**
 - Core validation suite: `12` tests
-- Expanded evidence suite: `46` entries; see the canonical evidence table below for the exact current tier list.
+- Expanded evidence suite: `47` entries; see the canonical evidence table below for the exact current tier list.
 
 ## Canonical Claims
 
@@ -65,6 +65,7 @@ Research narrative companions:
 | `tier7_0_standard_dynamical_benchmarks` | Phase E standard benchmark diagnostics: software-only sequence benchmark harness | **PASS** | The Tier 7.0 software benchmark harness completed Mackey-Glass, Lorenz, NARMA10, and aggregate geometric-mean MSE across CRA v2.1 and standard causal sequence baselines. It diagnosed CRA v2.1 online underperformance on these continuous-valued dynamical regression benchmarks: CRA ranked 5/5 by aggregate geomean MSE, while the echo-state network was best. | Software diagnostic evidence only; not hardware evidence, not a superiority claim, not a tuning run, not a new baseline freeze, and not evidence that CRA is generally weak outside these continuous-regression benchmarks. It triggers Tier 7.0b failure analysis before mechanism changes or hardware migration. |
 | `tier7_0b_continuous_regression_failure_analysis` | Phase E standard benchmark diagnostics: CRA continuous-regression gap localization | **PASS** | Tier 7.0b localized the Tier 7.0 continuous-regression gap to a recoverable state-signal/default-readout failure. A leakage-safe ridge probe over CRA internal state improved aggregate geomean MSE from raw CRA 1.2233 to 0.4433, and CRA state plus the same causal lag budget improved to 0.0544; shuffled-target state control remained worse at 0.7533. | Software diagnostic evidence only; not a tuning run, not a promoted mechanism, not hardware evidence, not a new baseline freeze, and not proof that a repaired CRA will beat standard baselines. It authorizes a bounded continuous readout/interface repair tier before hardware migration. |
 | `tier7_0c_continuous_readout_repair` | Phase E standard benchmark diagnostics: bounded readout repair candidate | **PASS** | Tier 7.0c converted the Tier 7.0b state-signal diagnosis into a bounded online continuous readout/interface repair candidate. The best repair improved aggregate geomean MSE over raw CRA by 6.424x and beat shuffled/frozen controls, but lag-only online LMS still performed better and explains most of the benchmark gain. | Software repair-candidate evidence only; not hardware evidence, not a new baseline freeze, not a promoted CRA mechanism, and not a superiority claim. The correct next move is a stricter state-specific repair or claim narrowing, not hardware migration. |
+| `tier7_0d_state_specific_continuous_interface` | Phase E standard benchmark diagnostics: lag-regression claim-narrowing gate | **PASS** | Tier 7.0d tested whether CRA state adds value beyond causal lag regression on Mackey-Glass, Lorenz, and NARMA10. It passed 10/10 integrity criteria and classified the benchmark path as lag-regression explained: train-prefix ridge lag-only beat lag+state probes, the best state-specific online candidate only marginally beat lag-only, and shuffled residual controls matched or exceeded the candidate. | Software diagnostic evidence only; not hardware evidence, not a baseline freeze, not a promoted continuous-readout mechanism, and not a superiority claim. The Tier 7 continuous-regression benchmark path should be narrowed and not migrated to hardware unless a future mechanism changes the failure class. |
 
 ## Canonical Artifacts
 
@@ -116,6 +117,7 @@ Research narrative companions:
 | `tier7_0_standard_dynamical_benchmarks` | `controlled_test_output/tier7_0_20260505_standard_dynamical_benchmarks/tier7_0_results.json` | `controlled_test_output/tier7_0_20260505_standard_dynamical_benchmarks/tier7_0_report.md` | `controlled_test_output/tier7_0_20260505_standard_dynamical_benchmarks/tier7_0_summary.csv` |
 | `tier7_0b_continuous_regression_failure_analysis` | `controlled_test_output/tier7_0b_20260505_continuous_regression_failure_analysis/tier7_0b_results.json` | `controlled_test_output/tier7_0b_20260505_continuous_regression_failure_analysis/tier7_0b_report.md` | `controlled_test_output/tier7_0b_20260505_continuous_regression_failure_analysis/tier7_0b_summary.csv` |
 | `tier7_0c_continuous_readout_repair` | `controlled_test_output/tier7_0c_20260505_continuous_readout_repair/tier7_0c_results.json` | `controlled_test_output/tier7_0c_20260505_continuous_readout_repair/tier7_0c_report.md` | `controlled_test_output/tier7_0c_20260505_continuous_readout_repair/tier7_0c_summary.csv` |
+| `tier7_0d_state_specific_continuous_interface` | `controlled_test_output/tier7_0d_20260505_state_specific_continuous_interface/tier7_0d_results.json` | `controlled_test_output/tier7_0d_20260505_state_specific_continuous_interface/tier7_0d_report.md` | `controlled_test_output/tier7_0d_20260505_state_specific_continuous_interface/tier7_0d_summary.csv` |
 
 ## Selected Noncanonical Diagnostics
 

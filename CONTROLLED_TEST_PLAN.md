@@ -14,7 +14,7 @@ mechanism promotion, lifecycle/ecology evidence, and native SpiNNaker runtime
 migration. The generated registry is the authority for which results are
 canonical.
 
-The current canonical evidence trail contains **46 registered evidence bundles**
+The current canonical evidence trail contains **47 registered evidence bundles**
 with all expected artifacts present and all criteria passing:
 
 ```text
@@ -64,6 +64,7 @@ with all expected artifacts present and all criteria passing:
 44. Tier 7.0 - Standard Dynamical Benchmark Suite
 45. Tier 7.0b - Continuous-Regression Failure Analysis
 46. Tier 7.0c - Bounded Continuous Readout / Interface Repair
+47. Tier 7.0d - State-Specific Continuous Interface / Claim-Narrowing
 ```
 
 Completed noncanonical diagnostics:
@@ -7531,3 +7532,101 @@ remains the best explanation, the paper claim should narrow to: CRA contains
 some predictive state signal, but these continuous-valued standard dynamical
 regression benchmarks are currently better served by simple causal sequence
 baselines.
+
+### Tier 7.0d - State-Specific Continuous Interface / Claim-Narrowing
+
+Status: **DEFINED / CURRENT GATE**.
+
+Question: Does CRA state add state-specific predictive value beyond the same
+causal lag budget that explains most of the Tier 7.0c gain?
+
+Hypothesis: Lag-orthogonal CRA state contains useful information that improves
+Mackey-Glass, Lorenz, NARMA10, and aggregate geomean MSE beyond lag-only
+regression while surviving shuffled-state, shuffled-target, and frozen-control
+checks.
+
+Null hypothesis: Once causal lag history is accounted for, CRA state does not
+add useful continuous-regression value on these benchmarks; the honest claim is
+that this benchmark suite is currently better served by simple causal sequence
+baselines.
+
+Required comparisons:
+- Raw CRA v2.1 online from Tier 7.0.
+- Lag-only online LMS control with the same causal lag budget.
+- State-only online LMS control.
+- State plus lag online reference.
+- Lag-orthogonal state online candidate.
+- Lag plus lag-orthogonal state online candidate.
+- Two-stage lag then residual-state online candidate.
+- Shuffled lag-orthogonal state controls.
+- Shuffled-target control.
+- Frozen/no-learning control.
+- Train-prefix ridge lag upper-bound probe.
+- Train-prefix ridge lag plus state upper-bound probe.
+- Train-prefix ridge lag plus lag-orthogonal state upper-bound probe.
+
+Required guardrails:
+- Same Tier 7.0 streams, seeds, chronological splits, horizons, and train-prefix
+  normalization.
+- Lag-orthogonal state must be residualized using train-prefix data only.
+- Online predictions must be emitted before online updates.
+- Train-prefix ridge probes are upper-bound diagnostics only; they are not
+  promoted mechanisms.
+- No test-row batch fitting, future target leakage, task labels, or hidden
+  target-derived features.
+
+Pass criteria:
+- All comparisons run across predeclared tasks and seeds.
+- Lag-only, state-specific candidates, shuffled controls, frozen controls, and
+  train-prefix upper-bound probes are present.
+- If a state-specific online candidate beats lag-only by a meaningful margin and
+  beats shuffled controls, schedule a compact promotion/regression gate.
+- If only train-prefix ridge state probes beat lag-only, classify the result as
+  an online-interface failure rather than a promoted mechanism.
+- If neither online nor train-prefix state probes beat lag-only, narrow the Tier
+  7 benchmark claim and do not migrate this benchmark path to hardware.
+
+Fail criteria:
+- Any candidate uses future targets, test-row fitting, or target-derived hidden
+  features.
+- State residualization uses held-out rows.
+- Shuffled controls explain the state-specific gain.
+- Results cannot decide between state-specific value and lag-only explanation.
+
+Promotion/freeze condition:
+- Tier 7.0d alone does not freeze a baseline.
+- A separate compact regression/promotion gate is required before any software
+  baseline freeze.
+- Hardware migration is blocked until a software mechanism earns promotion or
+  the benchmark claim is explicitly narrowed.
+
+Canonical result:
+- Output: `controlled_test_output/tier7_0d_20260505_state_specific_continuous_interface/`.
+- Runner: `experiments/tier7_0d_state_specific_continuous_interface.py`.
+- Criteria: `10 / 10`.
+- Outcome: `lag_regression_explains_benchmark`.
+- Raw CRA aggregate geomean MSE: `1.223255942741316`.
+- Lag-only online LMS aggregate geomean MSE: `0.1514560842638888`.
+- Best state-specific online model: `two_stage_lag_residual_state_online_repair`.
+- Best state-specific online aggregate geomean MSE: `0.14545708938088173`.
+- Best state-specific online margin versus lag-only: `1.041242368512535`.
+- Best state-specific online margin versus best sham: `0.9685029838920843`.
+- Train-prefix ridge lag-only upper-bound geomean MSE: `0.044288645167134134`.
+- Train-prefix ridge lag plus orthogonal state upper-bound geomean MSE:
+  `0.05474449238029897`.
+
+Interpretation:
+- The current Tier 7 standard dynamical benchmark path is explained by causal
+  lag regression under this interface.
+- CRA state-specific online candidates improve raw CRA, but do not beat lag-only
+  by a meaningful margin and do not separate from shuffled residual controls.
+- Train-prefix ridge probes also favor lag-only over lag plus state, which means
+  even the diagnostic upper bound does not justify a state-specific mechanism on
+  this benchmark suite.
+- Do not promote a continuous-readout mechanism from Tier 7.0d.
+- Do not migrate this benchmark path to hardware unless a future mechanism
+  changes the failure class.
+
+Next step after Tier 7.0d: return to the native roadmap at Tier 4.30
+lifecycle-native contract. Tier 7.0-7.0d remains a clean limitation and
+claim-narrowing branch, not the active performance-improvement path.

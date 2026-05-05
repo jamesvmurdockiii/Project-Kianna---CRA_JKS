@@ -1031,6 +1031,25 @@ SPECS: tuple[EvidenceSpec, ...] = (
             "tier7_0c_timeseries.csv",
         ),
     ),
+    EvidenceSpec(
+        entry_id="tier7_0d_state_specific_continuous_interface",
+        tier_label="Tier 7.0d - State-Specific Continuous Interface / Claim-Narrowing",
+        plan_position="Phase E standard benchmark diagnostics: lag-regression claim-narrowing gate",
+        canonical_dir="tier7_0d_20260505_state_specific_continuous_interface",
+        results_file="tier7_0d_results.json",
+        report_file="tier7_0d_report.md",
+        summary_file="tier7_0d_summary.csv",
+        harness="experiments/tier7_0d_state_specific_continuous_interface.py",
+        evidence_role="standard benchmark claim-narrowing diagnostic",
+        claim="Tier 7.0d tested whether CRA state adds value beyond causal lag regression on Mackey-Glass, Lorenz, and NARMA10. It passed 10/10 integrity criteria and classified the benchmark path as lag-regression explained: train-prefix ridge lag-only beat lag+state probes, the best state-specific online candidate only marginally beat lag-only, and shuffled residual controls matched or exceeded the candidate.",
+        caveat="Software diagnostic evidence only; not hardware evidence, not a baseline freeze, not a promoted continuous-readout mechanism, and not a superiority claim. The Tier 7 continuous-regression benchmark path should be narrowed and not migrated to hardware unless a future mechanism changes the failure class.",
+        latest_manifest_names=("tier7_0d_latest_manifest.json",),
+        expected_extra_files=(
+            "tier7_0d_aggregate.csv",
+            "tier7_0d_fairness_contract.json",
+            "tier7_0d_timeseries.csv",
+        ),
+    ),
 )
 
 

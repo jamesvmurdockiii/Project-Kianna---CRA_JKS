@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-05T10:15-04:00.
+Last updated: 2026-05-05T12:50-04:00.
 
 Current repo root:
 
@@ -48,8 +48,9 @@ FROZEN: CRA_NATIVE_MECHANISM_BRIDGE_v0.3
             not a monolithic all-mechanism task, not lifecycle, not multi-chip,
             not speedup, and not external-baseline superiority.
   Supersedes: CRA_NATIVE_TASK_BASELINE_v0.2
-  Next: Tier 7.0d state-specific continuous interface repair / claim-narrowing
-        contract before benchmark migration to hardware.
+  Next: Tier 4.30 lifecycle-native contract. Tier 7.0d narrowed the standard
+        dynamical benchmark path and blocked benchmark migration to hardware
+        under the current interface.
 ```
 
 Current active hardware/custom-runtime tier:
@@ -230,12 +231,22 @@ Tier 7.0c — COMPLETE. Bounded continuous readout/interface repair.
     explains most of the benchmark gain. Do not promote, freeze, or migrate this
     benchmark to hardware from 7.0c alone.
 
-Tier 7.0d — CURRENT NEXT. State-specific continuous interface repair / claim-narrowing contract.
+Tier 7.0d — COMPLETE. State-specific continuous interface repair / claim-narrowing contract.
   Purpose: decide whether CRA state adds value beyond causal lag regression
     under stricter controls.
-  Rule: if a state-specific interface cannot beat lag-only under fair controls,
-    narrow the Tier 7 benchmark claim and move back to roadmap priorities rather
-    than tuning blindly.
+  Status: CLAIM-NARROWING DIAGNOSTIC PASS. Outcome =
+    lag_regression_explains_benchmark. The best state-specific online candidate
+    did not clear the margin versus lag-only and did not separate from shuffled
+    residual controls. Train-prefix ridge lag-only also beat lag+state probes.
+    Do not promote, freeze, or move this benchmark path to hardware under the
+    current interface.
+
+Tier 4.30 — CURRENT NEXT. Lifecycle-native contract.
+  Purpose: define how lifecycle/self-scaling moves onto the custom runtime using
+    a static preallocated pool.
+  Rule: birth/cleavage/death are active-mask, allocation, lineage, and trophic
+    state transitions inside fixed capacity. Do not design dynamic PyNN
+    population creation mid-run.
 
 
 Current status summary:
@@ -376,16 +387,15 @@ Local build capability (established 2026-05-02):
 
 Immediate next steps:
 
-1. Design Tier 7.0d from the Tier 7.0c limited result before writing code.
-2. Keep the repair/contract narrow: test state-specific value beyond causal lag
-   regression; no future targets, hidden labels, test-row batch fitting, or
-   blind score tuning.
-3. Required controls: lag-only, state-only, state+lag, shuffled-state,
-   shuffled-target, frozen/no-learning, and any residual/state-delta control if
-   introduced.
-4. If 7.0d shows state-specific value, run a compact regression/promotion gate
-   before freezing any software baseline. If it does not, narrow the Tier 7
-   benchmark claim and do not move this benchmark path to hardware yet.
+1. Design Tier 4.30 lifecycle-native contract before writing hardware code.
+2. Define fixed maximum pool, active masks, lineage IDs, parent/child links,
+   trophic state, birth/cleavage/death counters, allocation/reset policy,
+   readback schema, failure classes, and sham controls.
+3. Required controls: fixed-N same pool, random lifecycle event replay,
+   active-mask shuffle, lineage-ID shuffle if applicable, no trophic pressure,
+   no dopamine/plasticity where applicable.
+4. Only after Tier 4.30 is explicit should Tier 4.30a implement a local
+   static-pool lifecycle reference. Do not jump straight to EBRAINS hardware.
 5. Keep public repo hygiene green before the next upload or commit: no
    credentialed remotes, no `ebrains_jobs/` symlinks, no transient root output
    dirs, no generated host binaries, and `make validate` passing.
