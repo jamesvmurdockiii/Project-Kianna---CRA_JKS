@@ -2,8 +2,18 @@
 
 Last updated: 2026-05-05.
 
-Status: current contract gate. This document must be completed before Tier 5.19a
-implementation work begins.
+Status: contract complete. Tier 5.19a has run as a local software reference and
+the current active step is Tier 5.19b.
+
+Tier 5.19a result:
+
+```text
+Output: controlled_test_output/tier5_19a_20260505_temporal_substrate_reference/
+Criteria: 12/12
+Classification: fading_memory_ready_but_recurrence_not_yet_specific
+Boundary: noncanonical local reference only; no baseline freeze and no hardware
+migration.
+```
 
 ## Purpose
 
@@ -97,7 +107,8 @@ benchmark-specific tuning.
 
 ## Required Mechanism Definition
 
-Tier 5.19a may not start until the implementation proposal explicitly defines:
+Any further Tier 5.19 implementation may not start until the implementation
+proposal explicitly defines:
 
 ```text
 state variables
@@ -117,6 +128,47 @@ promotion and parking rule
 
 The candidate must be bounded. It must not become an unconstrained supervised
 model hiding inside CRA.
+
+## Tier 5.19b Additional Requirements
+
+Tier 5.19a proved a narrower point:
+
+```text
+Fading-memory state is useful on the held-out long-memory diagnostic.
+```
+
+It did not prove:
+
+```text
+Bounded nonlinear recurrence is the causal ingredient.
+```
+
+Tier 5.19b therefore must add sharper recurrence-specific controls:
+
+```text
+fading-memory-only ablation
+recurrent-hidden-only ablation
+state-reset ablation that periodically destroys long recurrent continuity
+recurrent-weight shuffle or sign-permutation sham
+no-plasticity readout ablation
+frozen temporal-state ablation
+shuffled temporal-state sham
+lag-only control with the same causal lag budget
+fixed/random reservoir controls
+```
+
+Tier 5.19b must also include at least one recurrence-pressure diagnostic where a
+linear fading-memory trace should be weaker than a bounded nonlinear recurrent
+state. If recurrence-specific value still does not separate, the correct claim
+is:
+
+```text
+CRA currently benefits from fading memory, but nonlinear recurrence is not yet
+proven necessary.
+```
+
+That outcome may still justify a fading-memory mechanism, but not a stronger
+recurrent-substrate claim.
 
 ## Anti-Benchmark-Chasing Rules
 
@@ -347,4 +399,3 @@ baseline document only if frozen
 ```
 
 Run `make validate` before committing.
-

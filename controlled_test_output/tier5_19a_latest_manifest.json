@@ -1,0 +1,8 @@
+{
+  "generated_at_utc": "2026-05-05T17:38:02+00:00",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_19a_20260505_temporal_substrate_reference/tier5_19a_results.json",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_19a_20260505_temporal_substrate_reference",
+  "runner_revision": "tier5_19a_temporal_substrate_reference_20260505_0001",
+  "status": "pass",
+  "tier": "Tier 5.19a - Local Continuous Temporal Substrate Reference"
+}

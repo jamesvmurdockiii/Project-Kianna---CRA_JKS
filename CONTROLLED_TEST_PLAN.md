@@ -116,6 +116,7 @@ They remain part of the peer-review audit trail:
 4.19 hardware lifecycle feasibility
 4.29e native replay/consolidation bridge = hardware pass ingested after cra_429p repair
 4.29f compact native mechanism regression = pass; freezes CRA_NATIVE_MECHANISM_BRIDGE_v0.3
+5.19a local continuous temporal substrate reference = completed; fading memory helped held-out long-memory task, recurrence-specific value not yet separated
 4.30+ native lifecycle/ecology migration = roadmap; not yet canonical evidence
 ```
 
@@ -7761,4 +7762,129 @@ Tier 5.19a/b may lead to a software freeze only if the implemented substrate
 passes shams, baselines, and compact regression. If it fails, park or narrow it.
 Do not migrate this benchmark path to hardware until a software mechanism earns
 promotion.
+```
+
+### Tier 5.19a - Local Continuous Temporal Substrate Reference
+
+Status: LOCAL SOFTWARE PASS / NONCANONICAL DIAGNOSTIC. This tier does not enter
+the canonical registry and does not freeze a baseline.
+
+Output:
+
+```text
+controlled_test_output/tier5_19a_20260505_temporal_substrate_reference/
+```
+
+Runner:
+
+```text
+experiments/tier5_19a_temporal_substrate_reference.py
+```
+
+Criteria:
+
+```text
+12 / 12
+```
+
+Classification:
+
+```text
+fading_memory_ready_but_recurrence_not_yet_specific
+```
+
+Key metrics:
+
+```text
+heldout_long_memory candidate MSE = 0.38570722690740805
+heldout_long_memory lag-only MSE = 1.2710078678632046
+heldout margin vs lag-only = 3.2952658887263206
+heldout margin vs shuffled-state = 4.900069939484292
+heldout margin vs frozen-state = 1.474026780849015
+heldout margin vs no-plasticity = 7.713190900565484
+heldout margin vs no-recurrence = 1.0303693588886562
+standard-three candidate geomean MSE = 0.1488559612698296
+standard-three lag-only geomean MSE = 0.1514560842638888
+```
+
+Interpretation:
+
+```text
+The local fading-memory substrate is promising and clearly useful on the held-out
+long-memory diagnostic. Shuffled-state, frozen-state, no-plasticity, and lag-only
+controls lose there. However, the no-recurrence control is too close to the full
+candidate, so Tier 5.19a does not prove bounded nonlinear recurrence is the
+causal ingredient.
+```
+
+Next step:
+
+```text
+Tier 5.19b benchmark/sham/regression gate with sharper recurrence-specific
+controls. Do not freeze, promote, or migrate to hardware from Tier 5.19a alone.
+```
+
+### Tier 5.19b - Temporal Substrate Benchmark / Sham / Regression Gate
+
+Status: DEFINED / CURRENT IMPLEMENTATION GATE.
+
+Question:
+
+```text
+Does the temporal substrate earn promotion after separating fading-memory value
+from bounded nonlinear recurrent-state value and preserving the current CRA
+guardrails?
+```
+
+Required additional controls beyond Tier 5.19a:
+
+```text
+fading-memory-only ablation
+recurrent-hidden-only ablation
+state-reset ablation
+recurrent-weight shuffle or sign-permutation sham
+lag-only control
+fixed ESN / reservoir control
+random reservoir control
+frozen temporal-state ablation
+shuffled temporal-state sham
+shuffled-target control
+no-plasticity readout ablation
+current v2.1 raw CRA control
+```
+
+Required tasks:
+
+```text
+Mackey-Glass
+Lorenz
+NARMA10
+heldout_long_memory from Tier 5.19a
+one recurrence-pressure diagnostic where fading-memory-only should be weaker
+delayed_cue guardrail
+hard_noisy_switching guardrail
+memory/context guardrail
+compact Tier 1/2/3 guardrails, either directly or by invoking the compact
+regression harness if the candidate passes the benchmark/sham stage
+```
+
+Pass criteria:
+
+```text
+All required controls run.
+Temporal candidate beats lag-only and destructive shams on the held-out
+long-memory diagnostic.
+Temporal candidate beats fading-memory-only or no-recurrence controls on the
+recurrence-pressure diagnostic by a predeclared margin.
+Existing CRA guardrails do not materially regress.
+No target leakage, held-out-row fitting, or task-name-specific mechanism branch
+is present.
+```
+
+Promotion boundary:
+
+```text
+Tier 5.19b may recommend promotion, repair, or parking. It still does not freeze
+a baseline by itself unless the compact regression/promotion portion passes and
+a baseline document is written.
 ```

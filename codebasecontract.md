@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-05T13:28-04:00.
+Last updated: 2026-05-05T13:39-04:00.
 
 Current repo root:
 
@@ -242,15 +242,30 @@ Tier 7.0d — COMPLETE. State-specific continuous interface repair / claim-narro
     Do not promote, freeze, or move this benchmark path to hardware under the
     current interface.
 
-Tier 5.19 / 7.0e — CURRENT NEXT. Continuous temporal dynamics substrate contract.
-  Purpose: define the general fading-memory / nonlinear recurrent temporal
-    substrate missing from the Tier 7.0 benchmark branch before writing code.
-  Rule: this must not be a Mackey-Glass/Lorenz/NARMA-specific trick. It must
-    specify bounded state variables, local update equations, readout interface,
-    parameter budget, shams, anti-leakage controls, and compact regression gates.
-  Required controls: current v2.1, lag-only, fixed/random reservoir, no
-    recurrence, no plasticity, frozen temporal state, shuffled temporal state,
-    shuffled target, and compact CRA guardrails.
+Tier 5.19 / 7.0e — COMPLETE. Continuous temporal dynamics substrate contract.
+  Status: contract written and linked.
+  Contract: docs/TIER5_19_CONTINUOUS_TEMPORAL_DYNAMICS_CONTRACT.md
+
+Tier 5.19a — COMPLETE. Local continuous temporal substrate reference.
+  Status: LOCAL SOFTWARE PASS, noncanonical diagnostic/reference evidence.
+  Output: controlled_test_output/tier5_19a_20260505_temporal_substrate_reference/
+  Criteria: 12/12.
+  Classification: fading_memory_ready_but_recurrence_not_yet_specific.
+  Key result: held-out long-memory candidate MSE 0.3857 vs lag-only 1.2710
+    (3.30x margin), shuffled-state 1.8900 (4.90x margin), frozen-state 0.5685
+    (1.47x margin), no-plasticity 2.9750 (7.71x margin), but no-recurrence
+    MSE 0.3974 gives only 1.03x recurrence-specific margin.
+  Boundary: local software reference only; not a baseline freeze, not hardware,
+    not a promoted temporal-substrate mechanism, and not recurrence-specific
+    proof.
+
+Tier 5.19b — CURRENT NEXT. Benchmark/sham/regression gate.
+  Purpose: sharpen recurrence-specific ablations and rerun the temporal
+    substrate candidate against standard benchmarks, held-out temporal-state
+    diagnostics, and compact CRA guardrails.
+  Rule: do not promote unless the mechanism beats lag-only and shams, preserves
+    existing v2.1 claims, and proves which part is causal: fading memory,
+    recurrence, local continuous interface, or their combination.
 
 Tier 4.30 — QUEUED AFTER TEMPORAL-SUBSTRATE DECISION. Lifecycle-native contract.
   Purpose: define how lifecycle/self-scaling moves onto the custom runtime using
@@ -398,17 +413,16 @@ Local build capability (established 2026-05-02):
 
 Immediate next steps:
 
-1. Define Tier 5.19 / 7.0e before writing code. This is a software contract gate.
-   Detailed contract:
-   `docs/TIER5_19_CONTINUOUS_TEMPORAL_DYNAMICS_CONTRACT.md`.
-2. Specify the temporal-substrate mechanism boundary: state variables, decay
-   timescales, nonlinear recurrence, local continuous prediction/readout,
-   learning/update equations, parameter budget, and anti-benchmark-chasing rule.
-3. Predeclare controls: current v2.1, lag-only, fixed/random reservoir, no
-   recurrence, no plasticity, frozen temporal state, shuffled temporal state,
-   shuffled target, and compact Tier 1/2/3 plus current v2.1 guardrails.
-4. Only after Tier 5.19 / 7.0e is explicit should Tier 5.19a implement a local
-   software reference. Do not jump straight to lifecycle hardware or EBRAINS.
+1. Design Tier 5.19b before implementation changes. It must use the completed
+   Tier 5.19a result and explicitly sharpen recurrence-specific controls.
+2. Required 5.19b controls: current v2.1, lag-only, fixed/random reservoir,
+   no-recurrence/fading-only, recurrence-only where meaningful, frozen state,
+   shuffled temporal state, shuffled target, no plasticity, and compact Tier
+   1/2/3 plus v2.1 guardrails.
+3. Required 5.19b decision: distinguish "fading memory helps" from "bounded
+   nonlinear recurrence helps" from "simple lag/readout still explains it."
+4. Do not jump straight to lifecycle hardware or EBRAINS from 5.19a. No hardware
+   migration until a software mechanism earns promotion.
 5. After the temporal-substrate decision, run the Tier 4.30-readiness audit and
    decide whether native lifecycle layers on v2.1 or on a promoted newer
    software baseline.

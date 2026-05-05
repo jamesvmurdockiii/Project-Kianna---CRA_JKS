@@ -1,0 +1,21 @@
+{
+  "contract": "docs/TIER5_19_CONTINUOUS_TEMPORAL_DYNAMICS_CONTRACT.md",
+  "hardware_policy": "software-only local reference; hardware blocked until promotion",
+  "no_future_leakage": [
+    "task normalization uses chronological train prefix only",
+    "feature normalization uses train prefix only",
+    "online readouts update after prediction",
+    "shuffled controls shuffle within train/test splits",
+    "ESN readout fits train prefix only"
+  ],
+  "nonclaims": [
+    "not hardware evidence",
+    "not a software baseline freeze",
+    "not a promoted temporal-substrate mechanism",
+    "not universal benchmark superiority"
+  ],
+  "normalization": "train-prefix z-score for tasks; train-prefix feature normalization for online readouts",
+  "prediction": "online readouts predict before update",
+  "split": "chronological",
+  "tier": "Tier 5.19a - Local Continuous Temporal Substrate Reference"
+}

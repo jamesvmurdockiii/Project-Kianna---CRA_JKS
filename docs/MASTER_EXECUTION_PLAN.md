@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-05T13:28-04:00.
+Last updated: 2026-05-05T13:39-04:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -24,6 +24,8 @@ Current software baseline:
 
 ```text
 v2.1 = post-Tier-5.18c bounded host-side self-evaluation / reliability-monitoring evidence lock
+Tier 5.19a = LOCAL SOFTWARE PASS / noncanonical temporal-substrate reference
+              diagnostic; no baseline freeze
 ```
 
 Current hardware/custom-runtime state:
@@ -423,22 +425,29 @@ ability.
 
 ### Phase D - Continuous Temporal Dynamics Substrate
 
-31. 🔄 **CURRENT ACTIVE STEP** - Tier 5.19 / 7.0e continuous temporal dynamics substrate contract:
+31. ✅ **COMPLETE** - Tier 5.19 / 7.0e continuous temporal dynamics substrate contract:
     define the general fading-memory / recurrent temporal-state mechanism before
     writing code. This is not a Mackey-Glass trick; it is a substrate repair for
     continuous temporal memory, nonlinear recurrence, and local continuous
     prediction under strict lag-only and sham controls.
 
-32. Tier 5.19a local temporal substrate reference: implement the smallest
+32. ✅ **COMPLETE** - Tier 5.19a local temporal substrate reference: implemented the smallest
     software-only candidate with multi-timescale fading state, bounded nonlinear
     recurrent state, and a local online continuous interface. Compare against
     lag-only, random reservoir, fixed ESN, no recurrence, frozen state,
     shuffled state, shuffled target, and current v2.1.
+    Result: local software pass, 12/12 criteria. Classification =
+    `fading_memory_ready_but_recurrence_not_yet_specific`. Held-out long-memory
+    task showed strong fading-memory value (candidate MSE 0.3857 vs lag-only
+    1.2710, shuffled-state 1.8900, frozen-state 0.5685), but no-recurrence MSE
+    0.3974 leaves recurrence-specific value insufficiently separated.
 
-33. Tier 5.19b benchmark and regression gate: rerun Mackey-Glass, Lorenz,
+33. 🔄 **CURRENT ACTIVE STEP** - Tier 5.19b benchmark and regression gate: rerun Mackey-Glass, Lorenz,
     NARMA10, delayed_cue, hard_noisy_switching, memory/context tasks, and compact
-    Tier 1/2/3 guardrails. Do not promote if it only helps one benchmark or
-    regresses current core claims.
+    Tier 1/2/3 guardrails. Add sharper recurrence-specific controls so the
+    result distinguishes fading-memory value from nonlinear recurrent-state
+    value. Do not promote if it only helps one benchmark, if no-recurrence
+    controls explain the gain, or if current core claims regress.
 
 34. Tier 5.19c promotion/freeze decision: freeze a new software baseline only if
     the temporal substrate beats lag-only where state should matter, survives
@@ -734,7 +743,7 @@ After each completed run or design tier:
 The next concrete action is:
 
 ```text
-Tier 5.19 / 7.0e - Continuous Temporal Dynamics Substrate Contract
+Tier 5.19b - Temporal Substrate Benchmark/Sham/Regression Gate
 ```
 
 Detailed contract:
@@ -746,25 +755,24 @@ docs/TIER5_19_CONTINUOUS_TEMPORAL_DYNAMICS_CONTRACT.md
 Purpose:
 
 ```text
-Define the general temporal substrate missing from the Tier 7.0 benchmark
-branch: multi-timescale fading memory, bounded nonlinear recurrent state, and a
-local continuous prediction interface that is not reducible to simple lag
-regression.
+Use the completed 5.19a local reference to run the stricter promotion-facing
+gate. The key unresolved question is whether the causal ingredient is fading
+memory alone, bounded nonlinear recurrence, the local continuous interface, or
+some combination.
 ```
 
 Required coverage:
 
 ```text
-Define mechanism boundary, state variables, update equations, learning rules,
-readout interface, parameter budget, ablations, and anti-benchmark-chasing
-controls. Required controls include lag-only, fixed/random reservoir,
-no-recurrence, no-plasticity, frozen temporal state, shuffled temporal state,
-shuffled target, and current v2.1.
+Rerun standard and held-out temporal tasks plus compact CRA guardrails. Preserve
+lag-only, fixed/random reservoir, no-recurrence, no-plasticity, frozen temporal
+state, shuffled temporal state, shuffled target, and current v2.1 controls. Add
+sharper recurrence-specific controls before any promotion/freeze decision.
 ```
 
-Do not jump straight to hardware or lifecycle. Tier 5.19 / 7.0e is a contract
-gate. The next local implementation step is a software-only temporal substrate
-reference after the contract is explicit.
+Do not jump straight to hardware or lifecycle. Tier 5.19a was promising but not
+promotion evidence. Tier 5.19b decides whether the substrate earns promotion,
+needs repair, or should be parked/narrowed.
 
 
 ## 13. Make-Or-Break Gates
