@@ -1012,6 +1012,25 @@ SPECS: tuple[EvidenceSpec, ...] = (
             "tier7_0b_probe_timeseries.csv",
         ),
     ),
+    EvidenceSpec(
+        entry_id="tier7_0c_continuous_readout_repair",
+        tier_label="Tier 7.0c - Bounded Continuous Readout / Interface Repair",
+        plan_position="Phase E standard benchmark diagnostics: bounded readout repair candidate",
+        canonical_dir="tier7_0c_20260505_continuous_readout_repair",
+        results_file="tier7_0c_results.json",
+        report_file="tier7_0c_report.md",
+        summary_file="tier7_0c_summary.csv",
+        harness="experiments/tier7_0c_continuous_readout_repair.py",
+        evidence_role="standard benchmark repair diagnostic",
+        claim="Tier 7.0c converted the Tier 7.0b state-signal diagnosis into a bounded online continuous readout/interface repair candidate. The best repair improved aggregate geomean MSE over raw CRA by 6.424x and beat shuffled/frozen controls, but lag-only online LMS still performed better and explains most of the benchmark gain.",
+        caveat="Software repair-candidate evidence only; not hardware evidence, not a new baseline freeze, not a promoted CRA mechanism, and not a superiority claim. The correct next move is a stricter state-specific repair or claim narrowing, not hardware migration.",
+        latest_manifest_names=("tier7_0c_latest_manifest.json",),
+        expected_extra_files=(
+            "tier7_0c_aggregate.csv",
+            "tier7_0c_fairness_contract.json",
+            "tier7_0c_timeseries.csv",
+        ),
+    ),
 )
 
 
@@ -1720,7 +1739,7 @@ def write_controlled_readme(registry: dict[str, Any]) -> None:
         f"- Generated: `{registry['generated_at_utc']}`",
         f"- Registry status: **{status_mark(registry['registry_status'])}**",
         f"- Canonical evidence entries: `{registry['evidence_count']}`",
-        f"- Expanded test-entry count: `{registry['expanded_test_entry_count']}` (`12` core tests + `10b` + `4.13` + `4.14` + `4.15` + `5.1` + `5.2` + `5.3` + `5.4` + `4.16a` + `4.16b` + `4.18a` + `5.5` + `5.12a` + `5.12c` + `5.12d` + `6.1` + `6.3` + `6.4`; Tiers `5.6` and `5.7` are tracked as additional reviewer-defense/guardrail evidence bundles)",
+        f"- Expanded test-entry count: `{registry['expanded_test_entry_count']}`; see the canonical evidence table below for the exact current tier list.",
         "",
         "## Evidence Categories",
         "",
@@ -1788,7 +1807,7 @@ def write_study_index(registry: dict[str, Any]) -> None:
         f"- Registry generated: `{registry['generated_at_utc']}`",
         f"- Registry status: **{status_mark(registry['registry_status'])}**",
         "- Core validation suite: `12` tests",
-        f"- Expanded evidence suite: `{registry['expanded_test_entry_count']}` entries (`10b` hard scaling, `4.13` hardware capsule, `4.14` runtime characterization, `4.15` hardware repeatability, `5.1` external baselines, `5.2` learning curves, `5.3` failure analysis, `5.4` delayed-credit confirmation, `4.16a` repaired delayed-cue hardware repeat, `4.16b` repaired hard-switch hardware repeat, `4.18a` chunked runtime baseline, `5.5` expanded baselines, `5.12a` predictive task-pressure, `5.12c` predictive-context sham repair, `5.12d` predictive-context compact regression, `6.1` software lifecycle/self-scaling, `6.3` lifecycle sham controls, and `6.4` circuit motif causality added; `5.6` and `5.7` are additional tuned-baseline reviewer-defense/guardrail bundles)",
+        f"- Expanded evidence suite: `{registry['expanded_test_entry_count']}` entries; see the canonical evidence table below for the exact current tier list.",
         "",
         "## Canonical Claims",
         "",

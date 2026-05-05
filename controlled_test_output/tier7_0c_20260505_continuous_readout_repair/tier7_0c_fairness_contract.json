@@ -1,0 +1,21 @@
+{
+  "feature_normalization": "train prefix only",
+  "no_future_leakage": [
+    "all repairs consume only current/past features",
+    "feature normalization uses train prefix only",
+    "online updates occur after each prediction",
+    "no model fits on held-out test rows in batch"
+  ],
+  "nonclaims": [
+    "not hardware evidence",
+    "not a baseline freeze",
+    "not proof of superiority until promotion/regression"
+  ],
+  "readout_update": "prediction before update; online normalized LMS; no batch test fit",
+  "same_tasks_and_split": true,
+  "source_tiers": [
+    "Tier 7.0",
+    "Tier 7.0b"
+  ],
+  "tier": "Tier 7.0c - Bounded Continuous Readout / Interface Repair"
+}

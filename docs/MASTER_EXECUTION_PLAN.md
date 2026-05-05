@@ -79,7 +79,7 @@ not full native v2.1, and not final autonomy.
 Current active step:
 
 ```text
-Tier 7.0c - Bounded Continuous Readout / Interface Repair
+Tier 7.0d - State-Specific Continuous Interface Repair / Claim-Narrowing Contract
 ```
 
 ## 2. Immediate Baseline Decision
@@ -163,7 +163,7 @@ What is inferred?
 What claim boundary follows?
 ```
 
-## 6. Next 50-Step Execution Plan
+## 6. Next 55-Step Execution Plan
 
 ### Phase A - Close 4.26 And Decide The Runtime Protocol
 
@@ -355,112 +355,118 @@ What claim boundary follows?
     target state control remained worse at 0.7533. This is diagnostic evidence,
     not a promoted repair.
 
-29. 🔄 **CURRENT ACTIVE STEP** - Tier 7.0c bounded continuous readout/interface repair:
-    use the Tier 7.0b diagnosis to test a narrow, auditable continuous readout
-    or interface mechanism. Must include ablations/shuffled controls, compare
-    against Tier 7.0 baselines, and remain software-only until a promotion gate
-    passes.
+29. ✅ **COMPLETE** - Tier 7.0c bounded continuous readout/interface repair:
+    passed 10/10 integrity criteria and improved raw CRA aggregate geomean MSE
+    from 1.2233 to 0.1904 with the best bounded state+lag repair. However,
+    lag-only online LMS reached 0.1515 and explains most of the gain. This is
+    limited repair-candidate evidence, not a promoted CRA mechanism, not a
+    baseline freeze, and not a hardware-migration trigger.
+
+30. 🔄 **CURRENT ACTIVE STEP** - Tier 7.0d state-specific continuous interface repair / claim-narrowing contract:
+    decide whether CRA state adds value beyond causal lag regression under
+    stricter controls. If state-specific value is not shown, narrow the Tier 7
+    benchmark claim and do not spend hardware time on this benchmark path yet.
 
 ### Phase D - Lifecycle / Organism Dynamics Native Path
 
-30. Tier 4.30 lifecycle-native contract: preallocated pool only. No dynamic
+31. Tier 4.30 lifecycle-native contract: preallocated pool only. No dynamic
     PyNN population creation mid-run. Birth/cleavage/death are activation,
     masking, assignment, or lineage events inside static state.
 
-31. Tier 4.30a local static-pool lifecycle reference: active/inactive masks,
+32. Tier 4.30a local static-pool lifecycle reference: active/inactive masks,
     lineage IDs, trophic state, birth/cleavage/death counters, fixed max-pool
     control, random event replay control.
 
-32. Tier 4.30b single-core lifecycle mask smoke: prove a tiny static pool can
+33. Tier 4.30b single-core lifecycle mask smoke: prove a tiny static pool can
     activate/silence units, preserve lineage, and read back lifecycle telemetry.
 
-33. Tier 4.30c multi-core lifecycle state split: distribute lifecycle masks and
+34. Tier 4.30c multi-core lifecycle state split: distribute lifecycle masks and
     lineage across the selected runtime protocol without corrupting state.
 
-34. Tier 4.30d lifecycle sham-control hardware subset: fixed max pool, random
+35. Tier 4.30d lifecycle sham-control hardware subset: fixed max pool, random
     event replay, mask shuffle, no trophic pressure, no dopamine/plasticity if
     applicable. Keep it small but reviewer-defensible.
 
-35. Freeze `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` only if lifecycle telemetry,
+36. Freeze `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` only if lifecycle telemetry,
     controls, resource accounting, and at least one useful task effect pass. If
     lifecycle does not help, narrow the organism claim.
 
 ### Phase E - Multi-Core And Multi-Chip Scaling
 
-34. Tier 4.31 update the mapping model with measured 4.27-4.30 data: ITCM,
+37. Tier 4.31 update the mapping model with measured 4.27-4.30 data: ITCM,
     DTCM, schedule length, lookup pressure, message bytes, readback bytes,
     per-core utilization, and state-slot limits.
 
-35. Tier 4.31a single-chip multi-core scale stress: increase cores on one chip
+38. Tier 4.31a single-chip multi-core scale stress: increase cores on one chip
     in controlled increments, for example 4 -> 8 -> 16 cores if resources allow,
     using MCPL/multicast for core-to-core event traffic unless a documented
     hardware constraint forces a temporary exception.
 
-36. Tier 4.31b static reef partition smoke: map groups/modules/polyps to cores
+39. Tier 4.31b static reef partition smoke: map groups/modules/polyps to cores
     using the measured static-pool strategy. Do not pretend one polyp equals one
     chip unless measured mapping proves that is correct.
 
-37. Tier 4.31c inter-chip feasibility contract: define routing keys, message
+40. Tier 4.31c inter-chip feasibility contract: define routing keys, message
     path, board/chip selection, failure classes, readback, and resource limits
     before attempting multi-chip.
 
-38. Tier 4.31d first multi-chip smoke: smallest possible cross-chip message and
+41. Tier 4.31d first multi-chip smoke: smallest possible cross-chip message and
     state lookup. No learning claim until communication and readback are clean.
 
-39. Tier 4.31e multi-chip learning micro-task: only after cross-chip smoke
+42. Tier 4.31e multi-chip learning micro-task: only after cross-chip smoke
     passes, run a tiny delayed-credit or reentry task with explicit claim
     boundary and resource measurements.
 
-40. Freeze `CRA_NATIVE_SCALE_BASELINE_v0.5` only if single-chip multi-core and
+43. Freeze `CRA_NATIVE_SCALE_BASELINE_v0.5` only if single-chip multi-core and
     first multi-chip evidence are stable enough for the final paper claim. If
     not, publish measured single-chip limits honestly.
 
 ### Phase F - Software Usefulness And Final Baselines
 
-41. Tier 6.2 hard synthetic suite: variable-delay cue, multi-cue delayed reward,
+44. Tier 6.2 hard synthetic suite: variable-delay cue, multi-cue delayed reward,
     hidden regime switching, drifting bandit, concept drift, anomaly stream,
     and small delayed-reward control proxy.
 
-42. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+45. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines.
 
-43. Tier 7.2 held-out task challenge: define held-out families before running;
+46. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout.
 
-44. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+47. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines.
 
-45. Tier 7.4 policy/action selection: state -> action -> delayed consequence,
+48. Tier 7.4 policy/action selection: state -> action -> delayed consequence,
     exploration versus exploitation, uncertainty-gated actions.
 
-45. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
+49. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
     planning/subgoal control: run only after the shorter hard/real-ish tasks are
     stable. Do not claim language, AGI, or broad planning from toy gates.
 
-46. Run expanded external baselines and fairness audit at the phase lock:
+50. Run expanded external baselines and fairness audit at the phase lock:
     random/sign persistence, online perceptron/logistic, reservoir/ESN, small
     GRU, STDP-only SNN, simple evolutionary population, and SNN reviewer-defense
     baselines where practical.
 
-47. Freeze the next software baseline only if new software capability work passes
+51. Freeze the next software baseline only if new software capability work passes
     ablations, fair baselines, and compact regression. If no new software
     mechanism is promoted, keep v2.1.
 
 ### Phase G - Final Paper Lock
 
-48. Select final paper claim level: strong usefulness paper, bounded architecture
+52. Select final paper claim level: strong usefulness paper, bounded architecture
     study, or narrowed diagnostic report. Let the evidence decide.
 
-49. Run final software matrix and final hardware subset matrix. Include effect
+53. Run final software matrix and final hardware subset matrix. Include effect
     sizes, confidence intervals, worst seed, sample efficiency, runtime, command
     count, resource budgets, and claim-boundary table.
 
-50. Build the independent reproduction capsule: fresh checkout instructions,
+54. Build the independent reproduction capsule: fresh checkout instructions,
     environment lock, validation command, registry/table regeneration, EBRAINS
     ingest instructions, artifact hash manifest, and one local tier rerun.
 
-51. Draft paper/whitepaper only after Step 49 and Step 50 pass. Write limitations
+55. Draft paper/whitepaper only after Step 53 and Step 54 pass. Write limitations
     first, then claims. Preserve failed and parked diagnostics.
 
 52. External dry run: have a clean agent or human follow only the docs. If they
@@ -621,31 +627,34 @@ After each completed run or design tier:
 The next concrete action is:
 
 ```text
-Tier 7.0c - Bounded Continuous Readout / Interface Repair
+Tier 7.0d - State-Specific Continuous Interface Repair / Claim-Narrowing Contract
 ```
 
 Purpose:
 
 ```text
-Use the Tier 7.0b diagnosis to test whether a bounded, leakage-safe continuous
-readout/interface can extract the predictive signal already present in CRA
-state on Mackey-Glass, Lorenz, and NARMA10.
+Use the Tier 7.0c limited repair result to decide whether CRA state adds
+state-specific value beyond causal lag regression on Mackey-Glass, Lorenz, and
+NARMA10, or whether the benchmark claim must narrow.
 ```
 
 Required coverage:
 
 ```text
 Use same Tier 7.0 task streams, seeds, splits, and train-prefix normalization.
-Repair candidate: bounded continuous readout/interface over causal CRA state.
-Controls: no-state/readout-only, lag-only, shuffled-state, shuffled-target,
-frozen/no-learning where applicable.
+Candidate: state-specific continuous interface that cannot be explained by the
+same causal lag budget alone.
+Controls: lag-only, state-only, state+lag, state-delta/residual if defined,
+shuffled-state, shuffled-target, frozen/no-learning where applicable.
 Metrics: MSE, NMSE, tail MSE, geomean aggregate, per-seed variance.
 Compare against Tier 7.0 baselines and Tier 7.0 raw CRA.
 ```
 
-Do not tune blindly. Tier 7.0c is still software-only. If it passes, run a
-separate compact regression/promotion gate before freezing a software baseline
-or planning hardware migration.
+Do not tune blindly. Tier 7.0d is still software-only. If it shows
+state-specific value beyond lag-only, run a separate compact
+regression/promotion gate before freezing a software baseline or planning
+hardware migration. If it does not, narrow the Tier 7 benchmark claim and move
+back to the roadmap without hiding the limitation.
 
 
 ## 13. Make-Or-Break Gates

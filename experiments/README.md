@@ -30,27 +30,12 @@ the repaired hard_noisy_switching capsule on the same hardware path. `Tier
 chunked-host hardware bridge and selects chunk `50` as the fastest viable
 default. Tiers 5.12a/5.12c/5.12d validate predictive-pressure tasks, repair the
 visible predictive-context mechanism shams, and freeze a bounded v1.8 software
-baseline after compact regression. With all current canonical addenda included, the tracked
-evidence suite is **41 entries total**. The generated registry is the authority
-for the exact current list; the historical expansion sketch below is retained
-as context and may lag behind newly ingested hardware-native tiers:
+baseline after compact regression. With all current canonical addenda included,
+the tracked evidence suite is **46 entries total**. The generated registry is
+the authority for the exact current list:
 
 ```text
-3 sanity + 3 learning + 3 architecture + 1 baseline scaling
-+ 1 hard-scaling addendum + 1 domain transfer + 1 backend parity
-+ 1 hardware capsule + 1 runtime characterization + 1 hardware repeat
-+ 1 external-baseline comparison + 1 learning-curve sweep
-+ 1 failure-analysis diagnostic + 1 delayed-credit confirmation
-+ 1 repaired delayed-cue hardware repeat
-+ 1 repaired hard-switch hardware repeat
-+ 1 v0.7 chunked hardware runtime baseline
-+ 1 expanded baseline suite + 1 tuned-baseline fairness audit
-+ 1 compact regression guardrail
-+ 1 predictive task-pressure validation + 1 predictive-context sham repair
-+ 1 predictive-context compact-regression gate
-+ 1 lifecycle/self-scaling + 1 lifecycle sham-control suite
-+ 1 circuit motif causality suite
-+ 1 four-core distributed context/route/memory/learning smoke = 27
+python3 experiments/evidence_registry.py
 ```
 
 As of the latest documented run, tests 1-12, 10b, Tier 4.13, Tier 4.14,
@@ -59,7 +44,7 @@ Tier 4.16b, Tier 4.18a, Tier 5.5, Tier 5.6, Tier 5.7,
 Tier 5.12a, Tier 5.12c, Tier 5.12d, Tier 6.1, Tier 6.3,
 Tier 6.4, Tier 4.26, Tiers 4.27/4.28 hardware-native runtime gates, and
 Tiers 4.29a-4.29d native mechanism bridges have been implemented and run.
-Tier 4.29f is complete: the compact native mechanism evidence-regression gate passed over 4.29a-e and froze `CRA_NATIVE_MECHANISM_BRIDGE_v0.3`. Tier 7.0 standard dynamical benchmarks are complete as a diagnostic: CRA v2.1 ranked 5/5 on the tested continuous-valued sequence baselines. Tier 7.0b localized the gap to a recoverable state-signal/default-readout failure. Tier 7.0c bounded continuous readout/interface repair is the current next gate.
+Tier 4.29f is complete: the compact native mechanism evidence-regression gate passed over 4.29a-e and froze `CRA_NATIVE_MECHANISM_BRIDGE_v0.3`. Tier 7.0 standard dynamical benchmarks are complete as a diagnostic: CRA v2.1 ranked 5/5 on the tested continuous-valued sequence baselines. Tier 7.0b localized the gap to a recoverable state-signal/default-readout failure. Tier 7.0c bounded continuous readout/interface repair passed its integrity criteria, improved raw CRA, and beat shuffled/frozen controls, but lag-only online LMS still explained most of the benchmark gain. Tier 7.0d state-specific repair or benchmark claim-narrowing is the current next gate.
 Tier 4.12 proves NEST/Brian2 parity plus SpiNNaker
 PyNN readiness prep. Tier 4.13 records a real SpiNNaker hardware-capsule pass
 for the minimal fixed-pattern task through EBRAINS/JobManager. Tier 4.14

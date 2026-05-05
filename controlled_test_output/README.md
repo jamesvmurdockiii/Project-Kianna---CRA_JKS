@@ -5,10 +5,10 @@ ledger is `STUDY_REGISTRY.json`; the compact table is `STUDY_REGISTRY.csv`.
 Older reruns, prepared capsules, debug probes, and baseline-frozen
 mechanism bundles outside the formal registry are preserved for audit.
 
-- Generated: `2026-05-05T14:03:08.769457+00:00`
+- Generated: `2026-05-05T14:15:53.310081+00:00`
 - Registry status: **PASS**
-- Canonical evidence entries: `45`
-- Expanded test-entry count: `45` (`12` core tests + `10b` + `4.13` + `4.14` + `4.15` + `5.1` + `5.2` + `5.3` + `5.4` + `4.16a` + `4.16b` + `4.18a` + `5.5` + `5.12a` + `5.12c` + `5.12d` + `6.1` + `6.3` + `6.4`; Tiers `5.6` and `5.7` are tracked as additional reviewer-defense/guardrail evidence bundles)
+- Canonical evidence entries: `46`
+- Expanded test-entry count: `46`; see the canonical evidence table below for the exact current tier list.
 
 ## Evidence Categories
 
@@ -67,6 +67,7 @@ mechanism bundles outside the formal registry are preserved for audit.
 | `tier4_29f_compact_native_mechanism_regression` | **PASS** | `controlled_test_output/tier4_29f_20260505_native_mechanism_regression` | Evidence-regression gate over already-ingested real hardware passes; not a new hardware execution, not a single monolithic all-mechanism task, not lifecycle/self-scaling evidence, not multi-chip scaling, and not speedup evidence. |
 | `tier7_0_standard_dynamical_benchmarks` | **PASS** | `controlled_test_output/tier7_0_20260505_standard_dynamical_benchmarks` | Software diagnostic evidence only; not hardware evidence, not a superiority claim, not a tuning run, not a new baseline freeze, and not evidence that CRA is generally weak outside these continuous-regression benchmarks. It triggers Tier 7.0b failure analysis before mechanism changes or hardware migration. |
 | `tier7_0b_continuous_regression_failure_analysis` | **PASS** | `controlled_test_output/tier7_0b_20260505_continuous_regression_failure_analysis` | Software diagnostic evidence only; not a tuning run, not a promoted mechanism, not hardware evidence, not a new baseline freeze, and not proof that a repaired CRA will beat standard baselines. It authorizes a bounded continuous readout/interface repair tier before hardware migration. |
+| `tier7_0c_continuous_readout_repair` | **PASS** | `controlled_test_output/tier7_0c_20260505_continuous_readout_repair` | Software repair-candidate evidence only; not hardware evidence, not a new baseline freeze, not a promoted CRA mechanism, and not a superiority claim. The correct next move is a stricter state-specific repair or claim narrowing, not hardware migration. |
 
 ## Noncanonical Outputs
 

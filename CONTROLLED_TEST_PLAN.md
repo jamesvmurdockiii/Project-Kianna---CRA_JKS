@@ -14,7 +14,7 @@ mechanism promotion, lifecycle/ecology evidence, and native SpiNNaker runtime
 migration. The generated registry is the authority for which results are
 canonical.
 
-The current canonical evidence trail contains **45 registered evidence bundles**
+The current canonical evidence trail contains **46 registered evidence bundles**
 with all expected artifacts present and all criteria passing:
 
 ```text
@@ -63,6 +63,7 @@ with all expected artifacts present and all criteria passing:
 43. Tier 4.29f - Compact Native Mechanism Regression
 44. Tier 7.0 - Standard Dynamical Benchmark Suite
 45. Tier 7.0b - Continuous-Regression Failure Analysis
+46. Tier 7.0c - Bounded Continuous Readout / Interface Repair
 ```
 
 Completed noncanonical diagnostics:
@@ -7455,7 +7456,7 @@ passes.
 
 ### Tier 7.0c - Bounded Continuous Readout / Interface Repair
 
-Status: **DEFINED / CURRENT NEXT GATE**.
+Status: **PASS / LIMITED REPAIR DIAGNOSTIC COMPLETE**.
 
 Question: Can CRA use the predictive signal identified in Tier 7.0b through a
 bounded, leakage-safe continuous readout/interface rather than an external
@@ -7497,3 +7498,36 @@ Promotion/freeze condition:
 - Tier 7.0c alone does not freeze a baseline.
 - A separate compact regression/promotion gate must pass before freezing a new
   software baseline.
+
+Canonical result:
+- Output: `controlled_test_output/tier7_0c_20260505_continuous_readout_repair/`.
+- Runner: `experiments/tier7_0c_continuous_readout_repair.py`.
+- Criteria: `10 / 10`.
+- Outcome: `repair_works_but_lag_only_explains_most_gain`.
+- Raw CRA aggregate geomean MSE: `1.223255942741316`.
+- Bounded state readout repair aggregate geomean MSE: `0.3747367253327713`.
+- Bounded state plus lag repair aggregate geomean MSE: `0.19040922596175056`.
+- Lag-only online LMS control aggregate geomean MSE: `0.1514560842638888`.
+- Best repair improvement over raw CRA: `6.42435226845071`.
+- Best repair margin versus best shuffled control: `3.607897109468084`.
+- Best repair margin versus lag-only: `0.7954240846203183`.
+
+Interpretation:
+- Tier 7.0c improved raw CRA and beat shuffled/frozen controls, so the raw
+  colony output is not the best possible use of the CRA state stream.
+- The best non-CRA lag-only online LMS control still beat the bounded CRA-state
+  repair. This means the current standard dynamical benchmark suite is strongly
+  rewarding causal lag regression and Tier 7.0c does not yet prove a promoted
+  CRA mechanism.
+- Do not freeze a new software baseline from Tier 7.0c.
+- Do not migrate this benchmark workload to hardware until the software repair
+  either proves state-specific value beyond lag regression or the benchmark
+  claim is narrowed honestly.
+
+Next step after Tier 7.0c: Tier 7.0d state-specific continuous interface
+repair or claim-narrowing contract. The next tier must decide whether CRA state
+adds value beyond causal lag features under stricter controls. If lag-only
+remains the best explanation, the paper claim should narrow to: CRA contains
+some predictive state signal, but these continuous-valued standard dynamical
+regression benchmarks are currently better served by simple causal sequence
+baselines.

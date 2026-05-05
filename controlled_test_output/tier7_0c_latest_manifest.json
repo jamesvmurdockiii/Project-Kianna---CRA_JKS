@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-05-05T14:15:53.051737+00:00",
+  "source_generated_at_utc": "2026-05-05T14:09:26+00:00",
+  "registry_entry_id": "tier7_0c_continuous_readout_repair",
+  "tier": "Tier 7.0c - Bounded Continuous Readout / Interface Repair",
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_0c_20260505_continuous_readout_repair",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_0c_20260505_continuous_readout_repair/tier7_0c_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_0c_20260505_continuous_readout_repair/tier7_0c_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_0c_20260505_continuous_readout_repair/tier7_0c_summary.csv",
+  "canonical": true,
+  "claim": "Tier 7.0c converted the Tier 7.0b state-signal diagnosis into a bounded online continuous readout/interface repair candidate. The best repair improved aggregate geomean MSE over raw CRA by 6.424x and beat shuffled/frozen controls, but lag-only online LMS still performed better and explains most of the benchmark gain.",
+  "caveat": "Software repair-candidate evidence only; not hardware evidence, not a new baseline freeze, not a promoted CRA mechanism, and not a superiority claim. The correct next move is a stricter state-specific repair or claim narrowing, not hardware migration."
+}

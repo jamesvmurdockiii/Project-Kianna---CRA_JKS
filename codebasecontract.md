@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-05T09:58-04:00.
+Last updated: 2026-05-05T10:15-04:00.
 
 Current repo root:
 
@@ -48,8 +48,8 @@ FROZEN: CRA_NATIVE_MECHANISM_BRIDGE_v0.3
             not a monolithic all-mechanism task, not lifecycle, not multi-chip,
             not speedup, and not external-baseline superiority.
   Supersedes: CRA_NATIVE_TASK_BASELINE_v0.2
-  Next: Tier 7.0c bounded continuous readout/interface repair before benchmark
-        migration to hardware.
+  Next: Tier 7.0d state-specific continuous interface repair / claim-narrowing
+        contract before benchmark migration to hardware.
 ```
 
 Current active hardware/custom-runtime tier:
@@ -220,13 +220,22 @@ Tier 7.0b — COMPLETE. Continuous-regression failure analysis.
     CRA state plus the same causal lag budget improved to 0.0544; shuffled
     target state control remained worse at 0.7533.
 
-Tier 7.0c — CURRENT NEXT. Bounded continuous readout/interface repair.
+Tier 7.0c — COMPLETE. Bounded continuous readout/interface repair.
   Purpose: test whether a predeclared, leakage-safe continuous readout/interface
     can use the state signal found in 7.0b without becoming an unconstrained
     supervised model.
-  Rule: add only this diagnosed mechanism, include ablations/shuffled controls,
-    compare against Tier 7.0 baselines, and run compact regression before any
-    promotion. Do not migrate this benchmark to hardware yet.
+  Status: LIMITED REPAIR DIAGNOSTIC PASS. The best bounded state+lag repair
+    improved raw CRA aggregate geomean MSE from 1.2233 to 0.1904 and beat
+    shuffled/frozen controls, but lag-only online LMS reached 0.1515 and
+    explains most of the benchmark gain. Do not promote, freeze, or migrate this
+    benchmark to hardware from 7.0c alone.
+
+Tier 7.0d — CURRENT NEXT. State-specific continuous interface repair / claim-narrowing contract.
+  Purpose: decide whether CRA state adds value beyond causal lag regression
+    under stricter controls.
+  Rule: if a state-specific interface cannot beat lag-only under fair controls,
+    narrow the Tier 7 benchmark claim and move back to roadmap priorities rather
+    than tuning blindly.
 
 
 Current status summary:
@@ -367,15 +376,16 @@ Local build capability (established 2026-05-02):
 
 Immediate next steps:
 
-1. Implement Tier 7.0c bounded continuous readout/interface repair from the
-   Tier 7.0b diagnosis.
-2. Keep the repair narrow: use causal CRA state/readout features and causal lag
-   budget only; no future targets, no hidden labels, no test-row fitting.
-3. Compare against Tier 7.0 baselines plus ablations: no-state, shuffled-state,
-   shuffled-target, lag-only, and frozen/no-learning variants as appropriate.
-4. If 7.0c passes, run a compact regression/promotion gate before freezing any
-   software baseline. If it fails, narrow the claim and decide whether the next
-   mechanism is history/reservoir dynamics.
+1. Design Tier 7.0d from the Tier 7.0c limited result before writing code.
+2. Keep the repair/contract narrow: test state-specific value beyond causal lag
+   regression; no future targets, hidden labels, test-row batch fitting, or
+   blind score tuning.
+3. Required controls: lag-only, state-only, state+lag, shuffled-state,
+   shuffled-target, frozen/no-learning, and any residual/state-delta control if
+   introduced.
+4. If 7.0d shows state-specific value, run a compact regression/promotion gate
+   before freezing any software baseline. If it does not, narrow the Tier 7
+   benchmark claim and do not move this benchmark path to hardware yet.
 5. Keep public repo hygiene green before the next upload or commit: no
    credentialed remotes, no `ebrains_jobs/` symlinks, no transient root output
    dirs, no generated host binaries, and `make validate` passing.

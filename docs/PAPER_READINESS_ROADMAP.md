@@ -6222,10 +6222,14 @@ criteria, but CRA v2.1 online ranked 5/5 against the tested causal sequence
 baselines by aggregate geometric-mean MSE. Tier 7.0b is also complete and
 localized the gap to a recoverable state-signal/default-readout failure: raw
 CRA geomean MSE was 1.2233, a leakage-safe internal-state probe improved to
-0.4433, and CRA state plus the same causal lag budget improved to 0.0544.
-The current next gate is Tier 7.0c bounded continuous readout/interface repair.
-Do not move benchmark workloads to hardware until a software repair/promotion
-gate passes.
+0.4433, and CRA state plus the same causal lag budget improved to 0.0544. Tier
+7.0c then tested a bounded continuous readout/interface repair. It improved raw
+CRA and beat shuffled/frozen controls, but lag-only online LMS remained better
+and explains most of the benchmark gain.
+The current next gate is Tier 7.0d state-specific continuous interface repair
+or benchmark claim-narrowing. Do not move benchmark workloads to hardware until
+software evidence shows value beyond lag-only regression or the claim is
+narrowed honestly.
 ```
 
 Paper implication:
@@ -6240,6 +6244,9 @@ Tier 7.0 adds a reviewer-facing limitation: CRA v2.1 is not yet competitive on
 the tested continuous-valued standard dynamical regression suite. Tier 7.0b
 turns that limitation into a specific engineering/science question: the
 organism state contains useful signal, but the default online readout/interface
-does not extract it. The correct paper posture is to cite this honestly and
-test Tier 7.0c before any claim expansion.
+does not extract it. Tier 7.0c shows a bounded readout/interface improves raw
+CRA but does not yet establish a CRA-specific mechanism advantage because the
+lag-only control is stronger. The correct paper posture is to cite this
+honestly, run Tier 7.0d only if it can isolate state-specific value, and narrow
+the benchmark claim if lag-only remains the right explanation.
 ```
