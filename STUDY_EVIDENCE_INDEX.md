@@ -10,10 +10,10 @@ Research narrative companions:
 - `docs/WHITEPAPER.md`
 - `docs/CODEBASE_MAP.md`
 
-- Registry generated: `2026-05-05T21:53:15.158966+00:00`
+- Registry generated: `2026-05-05T22:20:14.651219+00:00`
 - Registry status: **PASS**
 - Core validation suite: `12` tests
-- Expanded evidence suite: `54` entries; see the canonical evidence table below for the exact current tier list.
+- Expanded evidence suite: `57` entries; see the canonical evidence table below for the exact current tier list.
 
 ## Canonical Claims
 
@@ -73,6 +73,9 @@ Research narrative companions:
 | `tier4_30_lifecycle_native_contract` | Phase E lifecycle-native contract before reference/runtime work | **PASS** | Tier 4.30 defines the lifecycle init/event/trophic/readback/sham command schema, readback fields, event semantics, gate sequence, and failure classes for static-pool lifecycle migration. | Local engineering contract only; not runtime implementation, not hardware evidence, not lifecycle/self-scaling proof, and not v2.2 temporal migration. |
 | `tier4_30a_static_pool_lifecycle_reference` | Phase E lifecycle-native deterministic local reference | **PASS** | The Tier 4.30 static-pool lifecycle contract has deterministic 8-slot/2-founder reference traces with exact active-mask, lineage, event-count, checksum, and sham-control outputs. | Local deterministic reference only; not runtime C, not hardware evidence, not task benefit, not lifecycle baseline freeze, and not v2.2 temporal-state migration. |
 | `tier4_30b_lifecycle_runtime_source_audit` | Phase E lifecycle-native runtime source/schema gate before hardware smoke | **PASS** | The lifecycle static-pool state surface exists in the custom runtime, matches Tier 4.30a reference checksums in host tests, preserves existing profile/readback tests, and is ready for a single-core hardware mask/lineage smoke. | Local source/runtime host evidence only; not hardware evidence, not task-effect evidence, not multi-core lifecycle migration, and not a baseline freeze. |
+| `tier4_30b_hw_lifecycle_smoke` | Phase E lifecycle-native single-core hardware smoke | **PASS** | The lifecycle static-pool metadata surface executed on real SpiNNaker with compact lifecycle readback and exact canonical/boundary state parity after correcting a known runner criterion defect. | Hardware smoke only; not lifecycle task benefit, not multi-core lifecycle migration, not speedup, not multi-chip scaling, and not a lifecycle baseline freeze. |
+| `tier4_30c_multicore_lifecycle_split` | Phase E lifecycle-native multi-core split contract/reference | **PASS** | Lifecycle state ownership can be split across context, route, memory, learning, and lifecycle roles with explicit MCPL/multicast lifecycle messages, active-mask sync, and reference parity. | Local contract/reference evidence only; not C runtime implementation, not EBRAINS hardware evidence, not lifecycle task benefit, and not a lifecycle baseline freeze. |
+| `tier4_30d_lifecycle_runtime_source_audit` | Phase E lifecycle-native runtime source/local C gate before multi-core hardware smoke | **PASS** | The custom runtime source surface represents the Tier 4.30c five-core lifecycle split with a dedicated lifecycle_core profile, lifecycle MCPL stubs/counters, ownership guards, and local C host tests. | Local source/runtime host evidence only; not EBRAINS hardware evidence, not task benefit, not speedup, not multi-chip scaling, not v2.2 temporal migration, and not a lifecycle baseline freeze. |
 
 ## Canonical Artifacts
 
@@ -132,6 +135,9 @@ Research narrative companions:
 | `tier4_30_lifecycle_native_contract` | `controlled_test_output/tier4_30_20260505_lifecycle_native_contract/tier4_30_contract_results.json` | `controlled_test_output/tier4_30_20260505_lifecycle_native_contract/tier4_30_contract_report.md` | `` |
 | `tier4_30a_static_pool_lifecycle_reference` | `controlled_test_output/tier4_30a_20260505_static_pool_lifecycle_reference/tier4_30a_results.json` | `controlled_test_output/tier4_30a_20260505_static_pool_lifecycle_reference/tier4_30a_report.md` | `controlled_test_output/tier4_30a_20260505_static_pool_lifecycle_reference/tier4_30a_control_summary.csv` |
 | `tier4_30b_lifecycle_runtime_source_audit` | `controlled_test_output/tier4_30b_20260505_lifecycle_source_audit/tier4_30b_results.json` | `controlled_test_output/tier4_30b_20260505_lifecycle_source_audit/tier4_30b_report.md` | `` |
+| `tier4_30b_hw_lifecycle_smoke` | `controlled_test_output/tier4_30b_hw_20260505_hardware_pass_ingested/tier4_30b_hw_results.json` | `controlled_test_output/tier4_30b_hw_20260505_hardware_pass_ingested/tier4_30b_hw_report.md` | `` |
+| `tier4_30c_multicore_lifecycle_split` | `controlled_test_output/tier4_30c_20260505_multicore_lifecycle_split/tier4_30c_results.json` | `controlled_test_output/tier4_30c_20260505_multicore_lifecycle_split/tier4_30c_report.md` | `controlled_test_output/tier4_30c_20260505_multicore_lifecycle_split/tier4_30c_scenario_summary.csv` |
+| `tier4_30d_lifecycle_runtime_source_audit` | `controlled_test_output/tier4_30d_20260505_lifecycle_runtime_source_audit/tier4_30d_results.json` | `controlled_test_output/tier4_30d_20260505_lifecycle_runtime_source_audit/tier4_30d_report.md` | `` |
 
 ## Selected Noncanonical Diagnostics
 
@@ -240,4 +246,4 @@ Research narrative companions:
 
 - Missing expected artifacts: `0`
 - Failed canonical criteria: `0`
-- Noncanonical output folders preserved: `295`
+- Noncanonical output folders preserved: `293`

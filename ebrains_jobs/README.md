@@ -20,6 +20,43 @@ Public repository hygiene rules live in
 
 ## Current Jobs
 
+### `cra_430e`
+
+Status: **PREPARED / AWAITING EBRAINS RUN** for Tier 4.30e multi-core
+lifecycle hardware smoke.
+
+Purpose: Verify the native lifecycle/core split on real SpiNNaker with five
+runtime profiles: context, route, memory, learning, and lifecycle. The job
+builds and loads all five profile binaries, verifies compact profile readback,
+checks that non-lifecycle profiles reject lifecycle reads, probes duplicate and
+stale lifecycle event rejection, and runs the canonical 32-event plus boundary
+64-event lifecycle schedules against the local Tier 4.30 reference.
+
+Upload folder:
+
+```text
+ebrains_jobs/cra_430e
+```
+
+JobManager command:
+
+```text
+cra_430e/experiments/tier4_30e_multicore_lifecycle_hardware_smoke.py --mode run-hardware --output-dir tier4_30e_hw_job_output
+```
+
+Prepared artifact:
+
+```text
+controlled_test_output/tier4_30e_hw_20260505_prepared/
+```
+
+Boundary: this prepared package is not hardware evidence until returned
+artifacts pass ingest. A hardware pass would show five-profile lifecycle smoke
+execution, lifecycle ownership guards, duplicate/stale event rejection, and
+canonical/boundary lifecycle parity on real SpiNNaker. It is not lifecycle
+task-benefit evidence, not lifecycle sham-control evidence, not multi-chip
+scaling, not speedup evidence, and not a baseline freeze.
+
 ### `cra_429p`
 
 Status: **HARDWARE PASS / INGESTED** for Tier 4.29e native replay/consolidation bridge.

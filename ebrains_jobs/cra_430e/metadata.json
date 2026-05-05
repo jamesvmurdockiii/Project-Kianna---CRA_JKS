@@ -1,0 +1,41 @@
+{
+  "claim_boundary": "Prepared source bundle only. Hardware evidence requires returned run-hardware artifacts from EBRAINS/SpiNNaker.",
+  "core_roles": {
+    "context": {
+      "app_id": 1,
+      "core": 4,
+      "profile": "context_core",
+      "profile_id": 4
+    },
+    "learning": {
+      "app_id": 4,
+      "core": 7,
+      "profile": "learning_core",
+      "profile_id": 3
+    },
+    "lifecycle": {
+      "app_id": 5,
+      "core": 8,
+      "profile": "lifecycle_core",
+      "profile_id": 7
+    },
+    "memory": {
+      "app_id": 3,
+      "core": 6,
+      "profile": "memory_core",
+      "profile_id": 6
+    },
+    "route": {
+      "app_id": 2,
+      "core": 5,
+      "profile": "route_core",
+      "profile_id": 5
+    }
+  },
+  "job_command": "cra_430e/experiments/tier4_30e_multicore_lifecycle_hardware_smoke.py --mode run-hardware --output-dir tier4_30e_hw_job_output",
+  "prepared_at_utc": "2026-05-05T22:20:02+00:00",
+  "runner": "experiments/tier4_30e_multicore_lifecycle_hardware_smoke.py",
+  "runner_revision": "tier4_30e_multicore_lifecycle_hardware_smoke_20260505_0001",
+  "tier": "Tier 4.30e - Multi-Core Lifecycle Hardware Smoke",
+  "upload_package": "cra_430e"
+}

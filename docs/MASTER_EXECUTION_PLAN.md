@@ -120,10 +120,18 @@ runtime additions = lifecycle_core profile, lifecycle MCPL/multicast-target
 boundary = local source/runtime host evidence only; no EBRAINS hardware claim
 ```
 
-Current active step:
+Latest lifecycle hardware package:
 
 ```text
-Tier 4.30e multi-core lifecycle hardware smoke package/run
+Tier 4.30e = PREPARED ONLY, awaiting EBRAINS run/ingest
+output = controlled_test_output/tier4_30e_hw_20260505_prepared/
+runner = experiments/tier4_30e_multicore_lifecycle_hardware_smoke.py
+upload = ebrains_jobs/cra_430e
+command = cra_430e/experiments/tier4_30e_multicore_lifecycle_hardware_smoke.py --mode run-hardware --output-dir tier4_30e_hw_job_output
+scope = five-profile hardware smoke package: context_core, route_core,
+  memory_core, learning_core, lifecycle_core
+boundary = prepared source bundle only; no EBRAINS hardware evidence until
+  returned artifacts pass ingest
 ```
 
 ## 2. Immediate Baseline Decision
@@ -612,9 +620,22 @@ ability.
     evidence, not task benefit, not speedup, not multi-chip scaling, not v2.2
     temporal migration, and not a lifecycle baseline freeze.
 
-42. 🔄 **CURRENT ACTIVE STEP** - Tier 4.30e multi-core lifecycle hardware smoke
-    package/run: prove the 4.30d runtime source surface survives real
-    SpiNNaker execution/readback.
+42. 🔄 **PREPARED / AWAITING EBRAINS RUN** - Tier 4.30e multi-core lifecycle
+    hardware smoke package/run: prove the 4.30d runtime source surface survives
+    real SpiNNaker execution/readback before any lifecycle sham-control
+    hardware subset.
+    Prepared output: `controlled_test_output/tier4_30e_hw_20260505_prepared/`.
+    Upload folder: `ebrains_jobs/cra_430e`.
+    Runner: `experiments/tier4_30e_multicore_lifecycle_hardware_smoke.py`.
+    JobManager command:
+    `cra_430e/experiments/tier4_30e_multicore_lifecycle_hardware_smoke.py --mode run-hardware --output-dir tier4_30e_hw_job_output`.
+    The runner builds/loads `context_core`, `route_core`, `memory_core`,
+    `learning_core`, and `lifecycle_core`, verifies profile readback and
+    non-lifecycle ownership guards, runs canonical/boundary lifecycle schedules
+    on `lifecycle_core`, and probes duplicate/stale lifecycle event rejection.
+    Boundary: prepared-only until returned EBRAINS artifacts pass; not lifecycle
+    task benefit, not sham-control success, not speedup, not multi-chip scaling,
+    not v2.2 temporal migration, and not a lifecycle baseline freeze.
 
 43. Tier 4.30f lifecycle sham-control hardware subset: fixed max pool, random
     event replay, mask shuffle, no trophic pressure, no dopamine/plasticity if
@@ -885,7 +906,9 @@ After each completed run or design tier:
 The next concrete action is:
 
 ```text
-Tier 4.30e multi-core lifecycle hardware smoke package/run
+Run returned-hardware half of Tier 4.30e multi-core lifecycle hardware smoke.
+Upload ebrains_jobs/cra_430e and run:
+cra_430e/experiments/tier4_30e_multicore_lifecycle_hardware_smoke.py --mode run-hardware --output-dir tier4_30e_hw_job_output
 ```
 
 Current reference state:
@@ -906,6 +929,9 @@ Multi-core lifecycle split: Tier 4.30c PASS, 22/22
 Output: controlled_test_output/tier4_30c_20260505_multicore_lifecycle_split/
 Runtime source/local C audit: Tier 4.30d PASS, 14/14
 Output: controlled_test_output/tier4_30d_20260505_lifecycle_runtime_source_audit/
+Prepared hardware package: Tier 4.30e PREPARED
+Prepared output: controlled_test_output/tier4_30e_hw_20260505_prepared/
+Upload folder: ebrains_jobs/cra_430e
 Temporal substrate status: fading-memory promoted in software only; nonlinear
 recurrence and native/on-chip temporal dynamics remain unproven
 ```
@@ -913,11 +939,10 @@ recurrence and native/on-chip temporal dynamics remain unproven
 Purpose:
 
 ```text
-Package the passed Tier 4.30d runtime source surface for EBRAINS and prove the
-multi-core lifecycle profile/readback path survives real SpiNNaker
-execution/readback. Keep this a smoke gate: no lifecycle task-benefit claim, no
-sham-control claim, no speedup claim, no multi-chip claim, and no lifecycle
-baseline freeze.
+The source bundle has been prepared. The next action is to run it on EBRAINS and
+then ingest the returned artifacts. Keep this a smoke gate: no lifecycle
+task-benefit claim, no sham-control claim, no speedup claim, no multi-chip
+claim, and no lifecycle baseline freeze.
 ```
 
 Required coverage:
@@ -929,6 +954,7 @@ controlled_test_output/tier4_30b_20260505_lifecycle_source_audit/.
 controlled_test_output/tier4_30b_hw_20260505_hardware_pass_ingested/.
 controlled_test_output/tier4_30c_20260505_multicore_lifecycle_split/.
 controlled_test_output/tier4_30d_20260505_lifecycle_runtime_source_audit/.
+controlled_test_output/tier4_30e_hw_20260505_prepared/.
 The hardware smoke must preserve explicit lifecycle ownership,
 active-mask/count/lineage sync semantics, duplicate/stale/missing-ack counters,
 and the compact-readback rule.

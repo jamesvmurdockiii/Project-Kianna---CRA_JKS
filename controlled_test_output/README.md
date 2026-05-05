@@ -5,10 +5,10 @@ ledger is `STUDY_REGISTRY.json`; the compact table is `STUDY_REGISTRY.csv`.
 Older reruns, prepared capsules, debug probes, and baseline-frozen
 mechanism bundles outside the formal registry are preserved for audit.
 
-- Generated: `2026-05-05T21:53:15.158966+00:00`
+- Generated: `2026-05-05T22:20:14.651219+00:00`
 - Registry status: **PASS**
-- Canonical evidence entries: `54`
-- Expanded test-entry count: `54`; see the canonical evidence table below for the exact current tier list.
+- Canonical evidence entries: `57`
+- Expanded test-entry count: `57`; see the canonical evidence table below for the exact current tier list.
 
 ## Evidence Categories
 
@@ -76,6 +76,9 @@ mechanism bundles outside the formal registry are preserved for audit.
 | `tier4_30_lifecycle_native_contract` | **PASS** | `controlled_test_output/tier4_30_20260505_lifecycle_native_contract` | Local engineering contract only; not runtime implementation, not hardware evidence, not lifecycle/self-scaling proof, and not v2.2 temporal migration. |
 | `tier4_30a_static_pool_lifecycle_reference` | **PASS** | `controlled_test_output/tier4_30a_20260505_static_pool_lifecycle_reference` | Local deterministic reference only; not runtime C, not hardware evidence, not task benefit, not lifecycle baseline freeze, and not v2.2 temporal-state migration. |
 | `tier4_30b_lifecycle_runtime_source_audit` | **PASS** | `controlled_test_output/tier4_30b_20260505_lifecycle_source_audit` | Local source/runtime host evidence only; not hardware evidence, not task-effect evidence, not multi-core lifecycle migration, and not a baseline freeze. |
+| `tier4_30b_hw_lifecycle_smoke` | **PASS** | `controlled_test_output/tier4_30b_hw_20260505_hardware_pass_ingested` | Hardware smoke only; not lifecycle task benefit, not multi-core lifecycle migration, not speedup, not multi-chip scaling, and not a lifecycle baseline freeze. |
+| `tier4_30c_multicore_lifecycle_split` | **PASS** | `controlled_test_output/tier4_30c_20260505_multicore_lifecycle_split` | Local contract/reference evidence only; not C runtime implementation, not EBRAINS hardware evidence, not lifecycle task benefit, and not a lifecycle baseline freeze. |
+| `tier4_30d_lifecycle_runtime_source_audit` | **PASS** | `controlled_test_output/tier4_30d_20260505_lifecycle_runtime_source_audit` | Local source/runtime host evidence only; not EBRAINS hardware evidence, not task benefit, not speedup, not multi-chip scaling, not v2.2 temporal migration, and not a lifecycle baseline freeze. |
 
 ## Noncanonical Outputs
 
@@ -263,10 +266,8 @@ cite them as current study results unless promoted in `STUDY_REGISTRY.json`.
 | `controlled_test_output/tier4_29e_20260505_0758_local_audit` | `superseded_rerun` | `pass` | `None` |
 | `controlled_test_output/tier4_29e_20260505_cra_429o_hardware_fail` | `failed_hardware_run` | `unknown` | `None` |
 | `controlled_test_output/tier4_29e_20260505_cra_429p_local_repair` | `superseded_rerun` | `unknown` | `None` |
-| `controlled_test_output/tier4_30b_hw_20260505_hardware_pass_ingested` | `hardware_probe_pass` | `pass` | `2026-05-05T21:01:28+00:00` |
 | `controlled_test_output/tier4_30b_hw_20260505_prepared` | `prepared_capsule` | `prepared` | `2026-05-05T20:39:00+00:00` |
-| `controlled_test_output/tier4_30c_20260505_multicore_lifecycle_split` | `superseded_rerun` | `pass` | `2026-05-05T21:23:33+00:00` |
-| `controlled_test_output/tier4_30d_20260505_lifecycle_runtime_source_audit` | `superseded_rerun` | `pass` | `2026-05-05T21:53:12+00:00` |
+| `controlled_test_output/tier4_30e_hw_20260505_prepared` | `prepared_capsule` | `prepared` | `2026-05-05T22:20:02+00:00` |
 | `controlled_test_output/tier5_10_20260428_181304` | `superseded_rerun` | `pass` | `2026-04-28T22:13:10+00:00` |
 | `controlled_test_output/tier5_10_20260428_181322` | `superseded_rerun` | `fail` | `2026-04-28T22:45:43+00:00` |
 | `controlled_test_output/tier5_10b_20260428_193205` | `superseded_rerun` | `fail` | `2026-04-28T23:32:05+00:00` |

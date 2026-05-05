@@ -1,8 +1,14 @@
 {
-  "generated_at_utc": "2026-05-05T21:23:33+00:00",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_30c_20260505_multicore_lifecycle_split/tier4_30c_results.json",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_30c_20260505_multicore_lifecycle_split",
-  "runner_revision": "tier4_30c_multicore_lifecycle_split_20260505_0001",
+  "generated_at_utc": "2026-05-05T22:20:14.337271+00:00",
+  "source_generated_at_utc": "2026-05-05T21:23:33+00:00",
+  "registry_entry_id": "tier4_30c_multicore_lifecycle_split",
+  "tier": "Tier 4.30c - Multi-Core Lifecycle State Split",
   "status": "pass",
-  "tier": "Tier 4.30c - Multi-Core Lifecycle State Split Contract/Reference"
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_30c_20260505_multicore_lifecycle_split",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_30c_20260505_multicore_lifecycle_split/tier4_30c_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_30c_20260505_multicore_lifecycle_split/tier4_30c_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_30c_20260505_multicore_lifecycle_split/tier4_30c_scenario_summary.csv",
+  "canonical": true,
+  "claim": "Lifecycle state ownership can be split across context, route, memory, learning, and lifecycle roles with explicit MCPL/multicast lifecycle messages, active-mask sync, and reference parity.",
+  "caveat": "Local contract/reference evidence only; not C runtime implementation, not EBRAINS hardware evidence, not lifecycle task benefit, and not a lifecycle baseline freeze."
 }

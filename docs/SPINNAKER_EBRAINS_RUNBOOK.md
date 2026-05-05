@@ -27,8 +27,12 @@ Latest active hardware-facing tier:
 
 ```text
 Tier 4.30e - Multi-Core Lifecycle Hardware Smoke
-  Status: CURRENT NEXT, not prepared yet
+  Status: PREPARED, awaiting EBRAINS run/ingest
   Source prerequisite: Tier 4.30d local source/runtime host pass, 14/14
+  Prepared output: controlled_test_output/tier4_30e_hw_20260505_prepared/
+  Upload folder: ebrains_jobs/cra_430e
+  JobManager command:
+    cra_430e/experiments/tier4_30e_multicore_lifecycle_hardware_smoke.py --mode run-hardware --output-dir tier4_30e_hw_job_output
   Required rule: package only from the passed 4.30d runtime source surface.
   Boundary: prove real SpiNNaker execution/readback for the lifecycle_core
     profile and split lifecycle surface; do not claim lifecycle task benefit,
@@ -75,8 +79,10 @@ runner = experiments/tier4_30b_lifecycle_hardware_smoke.py
 Latest prepared EBRAINS upload package:
 
 ```text
-None pending. Tier 4.30b-hw was prepared, run, and ingested. Do not reupload
-cra_430b unless a new 4.30b rerun is explicitly requested.
+Tier 4.30e - Multi-Core Lifecycle Hardware Smoke
+upload = ebrains_jobs/cra_430e
+status = prepared-only; no hardware evidence until returned artifacts pass
+runner = experiments/tier4_30e_multicore_lifecycle_hardware_smoke.py
 ```
 
 Tier 4.28e Point A passed after ingest at:
@@ -435,7 +441,7 @@ Use the JobManager command-line field directly. Do not wrap this in `bash`,
 says to.
 
 ```text
-cra_430b/experiments/tier4_30b_lifecycle_hardware_smoke.py --mode run-hardware --output-dir tier4_30b_hw_job_output
+cra_430e/experiments/tier4_30e_multicore_lifecycle_hardware_smoke.py --mode run-hardware --output-dir tier4_30e_hw_job_output
 ```
 
 If EBRAINS exposes a board hostname manually and the runner cannot discover it,
@@ -445,7 +451,7 @@ append:
 --spinnaker-hostname <board-host-or-ip>
 ```
 
-By default Tier 4.30b-hw inherits the Tier 4.22i/4.22j target-acquisition path:
+By default Tier 4.30e inherits the Tier 4.22i/4.22j target-acquisition path:
 
 ```text
 --target-acquisition auto
@@ -459,6 +465,47 @@ That means:
 3. reuse SpynnakerDataView's transceiver/IP for custom APLX load and SDP round-trip;
 4. auto-select a free destination CPU when the probe already occupies the requested core.
 ```
+
+### cra_430e (PREPARED / AWAITING RUN)
+
+Status: **PREPARED ONLY**
+
+Upload folder: `ebrains_jobs/cra_430e`
+
+JobManager command:
+
+```text
+cra_430e/experiments/tier4_30e_multicore_lifecycle_hardware_smoke.py --mode run-hardware --output-dir tier4_30e_hw_job_output
+```
+
+Prepared artifacts:
+
+```text
+controlled_test_output/tier4_30e_hw_20260505_prepared/
+controlled_test_output/tier4_30e_hw_latest_manifest.json
+```
+
+Purpose: build and load the five runtime profiles (`context_core`, `route_core`,
+`memory_core`, `learning_core`, `lifecycle_core`) on one SpiNNaker chip, verify
+profile readback and direct lifecycle ownership guards, run canonical and
+boundary lifecycle schedules on `lifecycle_core`, and probe duplicate/stale
+lifecycle event rejection.
+
+Pass requirements:
+- target acquired through hostname/config or pyNN.spiNNaker probe fallback;
+- all five `.aplx` profile builds pass;
+- all five profiles load on cores 4-8;
+- `CMD_READ_STATE` reports the expected profile IDs;
+- non-lifecycle profiles reject direct lifecycle read commands;
+- `lifecycle_core` compact readback has `payload_len=68`;
+- canonical and boundary lifecycle summaries match the Tier 4.30a/4.30c
+  reference;
+- duplicate/stale lifecycle events are rejected in the hardware probe;
+- zero synthetic fallback and no unhandled hardware exception.
+
+Claim boundary: this is a smoke-gate hardware execution/readback test only. It
+does not prove lifecycle task benefit, sham-control success, speedup,
+multi-chip scaling, v2.2 temporal migration, or a lifecycle baseline freeze.
 
 ### cra_430b (RETURNED / PASS AFTER INGEST CORRECTION)
 

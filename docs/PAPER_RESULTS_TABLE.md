@@ -4,11 +4,11 @@ This table is generated from `controlled_test_output/STUDY_REGISTRY.json`.
 It is intended as a paper/technical-note citation table, not as a new
 source of claims. If the registry changes, regenerate this file.
 
-- Generated: `2026-05-05T21:53:15.249258+00:00`
-- Registry generated: `2026-05-05T21:53:15.158966+00:00`
+- Generated: `2026-05-05T22:20:14.742846+00:00`
+- Registry generated: `2026-05-05T22:20:14.651219+00:00`
 - Registry status: **PASS**
-- Canonical bundles: `54`
-- Expanded entries: `54`
+- Canonical bundles: `57`
+- Expanded entries: `57`
 
 ## Summary Table
 
@@ -68,6 +68,9 @@ source of claims. If the registry changes, regenerate this file.
 | `tier4_30_lifecycle_native_contract` | PASS | see manifest | Tier 4.30 - Lifecycle-Native Static-Pool Contract |  | Local engineering contract only; not runtime implementation, not hardware evidence, not lifecycle/self-scaling proof, and not v2.2 temporal migration. | results: `controlled_test_output/tier4_30_20260505_lifecycle_native_contract/tier4_30_contract_results.json`; report: `controlled_test_output/tier4_30_20260505_lifecycle_native_contract/tier4_30_contract_report.md`; summary: `` |
 | `tier4_30a_static_pool_lifecycle_reference` | PASS | see manifest | Tier 4.30a - Local Static-Pool Lifecycle Reference |  | Local deterministic reference only; not runtime C, not hardware evidence, not task benefit, not lifecycle baseline freeze, and not v2.2 temporal-state migration. | results: `controlled_test_output/tier4_30a_20260505_static_pool_lifecycle_reference/tier4_30a_results.json`; report: `controlled_test_output/tier4_30a_20260505_static_pool_lifecycle_reference/tier4_30a_report.md`; summary: `controlled_test_output/tier4_30a_20260505_static_pool_lifecycle_reference/tier4_30a_control_summary.csv` |
 | `tier4_30b_lifecycle_runtime_source_audit` | PASS | see manifest | Tier 4.30b - Lifecycle Runtime Source Audit |  | Local source/runtime host evidence only; not hardware evidence, not task-effect evidence, not multi-core lifecycle migration, and not a baseline freeze. | results: `controlled_test_output/tier4_30b_20260505_lifecycle_source_audit/tier4_30b_results.json`; report: `controlled_test_output/tier4_30b_20260505_lifecycle_source_audit/tier4_30b_report.md`; summary: `` |
+| `tier4_30b_hw_lifecycle_smoke` | PASS | see manifest | Tier 4.30b-hw - Single-Core Lifecycle Active-Mask/Lineage Hardware Smoke |  | Hardware smoke only; not lifecycle task benefit, not multi-core lifecycle migration, not speedup, not multi-chip scaling, and not a lifecycle baseline freeze. | results: `controlled_test_output/tier4_30b_hw_20260505_hardware_pass_ingested/tier4_30b_hw_results.json`; report: `controlled_test_output/tier4_30b_hw_20260505_hardware_pass_ingested/tier4_30b_hw_report.md`; summary: `` |
+| `tier4_30c_multicore_lifecycle_split` | PASS | see manifest | Tier 4.30c - Multi-Core Lifecycle State Split Contract/Reference |  | Local contract/reference evidence only; not C runtime implementation, not EBRAINS hardware evidence, not lifecycle task benefit, and not a lifecycle baseline freeze. | results: `controlled_test_output/tier4_30c_20260505_multicore_lifecycle_split/tier4_30c_results.json`; report: `controlled_test_output/tier4_30c_20260505_multicore_lifecycle_split/tier4_30c_report.md`; summary: `controlled_test_output/tier4_30c_20260505_multicore_lifecycle_split/tier4_30c_scenario_summary.csv` |
+| `tier4_30d_lifecycle_runtime_source_audit` | PASS | see manifest | Tier 4.30d - Multi-Core Lifecycle Runtime Source Audit |  | Local source/runtime host evidence only; not EBRAINS hardware evidence, not task benefit, not speedup, not multi-chip scaling, not v2.2 temporal migration, and not a lifecycle baseline freeze. | results: `controlled_test_output/tier4_30d_20260505_lifecycle_runtime_source_audit/tier4_30d_results.json`; report: `controlled_test_output/tier4_30d_20260505_lifecycle_runtime_source_audit/tier4_30d_report.md`; summary: `` |
 
 ## Claim Discipline
 

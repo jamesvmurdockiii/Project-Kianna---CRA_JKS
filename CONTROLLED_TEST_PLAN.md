@@ -126,7 +126,7 @@ They remain part of the peer-review audit trail:
 4.30b-hw single-core lifecycle active-mask/lineage hardware smoke = hardware functional pass after ingest correction; raw remote fail was runner rev-0001 readback counter criterion defect
 4.30c native lifecycle/ecology migration = complete; multi-core lifecycle state split contract/local reference passed
 4.30d native lifecycle/ecology migration = complete; multi-core lifecycle runtime source audit/local C host test passed
-4.30e native lifecycle/ecology migration = current next; multi-core lifecycle hardware smoke package/run
+4.30e native lifecycle/ecology migration = prepared; multi-core lifecycle hardware smoke package at ebrains_jobs/cra_430e awaits EBRAINS run/ingest
 ```
 
 These planned tiers may move in order as evidence arrives, but completed pass,
@@ -8457,7 +8457,74 @@ freeze.
 Next step:
 
 ```text
-Tier 4.30e multi-core lifecycle hardware smoke package/run. Package the 4.30d
-runtime source surface and prove real SpiNNaker execution/readback before any
-lifecycle sham-control hardware subset.
+Tier 4.30e multi-core lifecycle hardware smoke run/ingest. The package is now
+prepared at `ebrains_jobs/cra_430e`; run the emitted JobManager command and
+ingest returned artifacts before any lifecycle sham-control hardware subset.
+```
+
+### Tier 4.30e - Multi-Core Lifecycle Hardware Smoke
+
+Status: PREPARED ONLY - awaiting EBRAINS run/ingest.
+
+Question:
+
+```text
+Does the Tier 4.30d five-profile lifecycle runtime surface survive real
+SpiNNaker build/load/execution/readback before hardware lifecycle sham controls?
+```
+
+Prepared result:
+
+```text
+Output: controlled_test_output/tier4_30e_hw_20260505_prepared/
+Runner: experiments/tier4_30e_multicore_lifecycle_hardware_smoke.py
+Runner revision: tier4_30e_multicore_lifecycle_hardware_smoke_20260505_0001
+Upload folder: ebrains_jobs/cra_430e
+JobManager command:
+cra_430e/experiments/tier4_30e_multicore_lifecycle_hardware_smoke.py --mode run-hardware --output-dir tier4_30e_hw_job_output
+```
+
+Required hardware coverage:
+
+```text
+build/load context_core, route_core, memory_core, learning_core, lifecycle_core
+CMD_READ_STATE profile IDs: context=4, route=5, memory=6, learning=3, lifecycle=7
+non-lifecycle profiles reject direct lifecycle read commands
+lifecycle_core runs canonical_32 and boundary_64 lifecycle schedules
+compact lifecycle readback uses host-observed payload_len=68
+duplicate/stale lifecycle event probe rejects repeated/old event IDs
+zero synthetic fallback
+zero unhandled hardware exception
+```
+
+Pass means:
+
+```text
+real SpiNNaker target acquired
+all five profile builds pass
+all five profile loads pass
+all profile/readback criteria pass
+canonical/boundary lifecycle summaries match Tier 4.30a/4.30c references
+duplicate/stale lifecycle rejection probe passes
+returned artifacts ingest cleanly
+```
+
+Fail means:
+
+```text
+any profile fails to build/load
+profile IDs do not match the role map
+non-lifecycle profiles accept lifecycle mutation/readback
+lifecycle summaries diverge from the reference
+duplicate/stale guard does not reject as expected
+target acquisition/readback fails
+```
+
+Boundary:
+
+```text
+Tier 4.30e is a hardware smoke gate only. It is not lifecycle task-benefit
+evidence, not lifecycle sham-control success, not speedup, not multi-chip
+scaling, not v2.2 temporal-state migration, and not a lifecycle baseline freeze.
+Prepared status is not hardware evidence.
 ```

@@ -225,11 +225,11 @@ def check_registry() -> tuple[Check, dict[str, Any]]:
     failures: list[str] = []
     if registry.get("registry_status") != "pass":
         failures.append(f"registry_status={registry.get('registry_status')}")
-    if registry.get("evidence_count") != 54:
-        failures.append(f"evidence_count={registry.get('evidence_count')} expected 54")
-    if registry.get("expanded_test_entry_count") != 54:
+    if registry.get("evidence_count") != 57:
+        failures.append(f"evidence_count={registry.get('evidence_count')} expected 57")
+    if registry.get("expanded_test_entry_count") != 57:
         failures.append(
-            f"expanded_test_entry_count={registry.get('expanded_test_entry_count')} expected 54"
+            f"expanded_test_entry_count={registry.get('expanded_test_entry_count')} expected 57"
         )
     integrity = registry.get("integrity") or {}
     if integrity.get("missing_expected_artifacts"):
@@ -605,6 +605,10 @@ def build_report(checks: list[Check], registry: dict[str, Any]) -> str:
             "- Tier 4.30 is a lifecycle-native static-pool contract; it defines commands, readback, event semantics, gates, and failure classes, but it is not runtime implementation or hardware evidence.",
             "- Tier 4.30a is a deterministic local lifecycle reference with active-mask, lineage, event-count, checksum, and sham-control outputs; it is not runtime C or hardware evidence.",
             "- Tier 4.30b is local source/runtime host evidence that the lifecycle static-pool surface matches the 4.30a checksums and preserves existing runtime tests; it is not hardware evidence, task-effect evidence, multi-core lifecycle migration, or a baseline freeze.",
+            "- Tier 4.30b-hw is single-core lifecycle hardware smoke evidence after corrected ingest; it proves compact lifecycle metadata readback and reference parity on a real board, not task benefit, multi-core lifecycle migration, speedup, multi-chip scaling, or a lifecycle baseline freeze.",
+            "- Tier 4.30c is local multi-core lifecycle split contract/reference evidence; it defines the five-core role split and MCPL/multicast lifecycle messages, but it is not C runtime implementation or EBRAINS hardware evidence.",
+            "- Tier 4.30d is local source/runtime host evidence for the five-core lifecycle split; it proves the dedicated lifecycle_core profile, stubs/counters, ownership guards, and local C tests, not EBRAINS hardware execution.",
+            "- Tier 4.30e is prepared-only until returned artifacts pass; the cra_430e package is not a hardware claim by itself.",
             "- Tier 4.20a is a passed hardware-transfer readiness audit; it classifies v2.1 mechanisms by chunked-host readiness versus future custom-runtime/on-chip blockers, but it is not SpiNNaker hardware evidence or v2.1 hardware transfer.",
             "- Tier 4.20b is passed one-seed v2.1 chunked-host bridge/transport hardware evidence; it returned real pyNN.spiNNaker execution, zero fallback, zero sim.run/readback failures, and nonzero spike readback, but it is not repeatability evidence or full native/on-chip v2.1 mechanism execution.",
             "- Tier 6.1 is controlled software lifecycle/self-scaling evidence with clean lineage and hard-switch advantage regimes; it is not full adult turnover, sham-control proof, hardware lifecycle, or external-baseline superiority.",

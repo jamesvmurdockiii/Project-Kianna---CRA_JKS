@@ -6459,6 +6459,25 @@ Boundary: local source/runtime host evidence only; not EBRAINS hardware
 Next: Tier 4.30e multi-core lifecycle hardware smoke package/run.
 ```
 
+Tier 4.30e prepared package:
+
+```text
+Output: controlled_test_output/tier4_30e_hw_20260505_prepared/
+Runner: experiments/tier4_30e_multicore_lifecycle_hardware_smoke.py
+Runner revision: tier4_30e_multicore_lifecycle_hardware_smoke_20260505_0001
+Upload folder: ebrains_jobs/cra_430e
+JobManager command:
+cra_430e/experiments/tier4_30e_multicore_lifecycle_hardware_smoke.py --mode run-hardware --output-dir tier4_30e_hw_job_output
+Status: prepared-only; no hardware claim until returned artifacts pass ingest.
+Purpose: five-profile lifecycle hardware smoke over context_core, route_core,
+         memory_core, learning_core, and lifecycle_core with compact lifecycle
+         readback, non-lifecycle ownership guards, canonical/boundary lifecycle
+         reference parity, and duplicate/stale event rejection.
+Boundary: not lifecycle task benefit, not sham-control success, not speedup,
+          not multi-chip scaling, not v2.2 temporal-state migration, and not a
+          lifecycle baseline freeze.
+```
+
 Detailed Tier 5.19 contract:
 
 ```text
