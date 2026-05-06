@@ -10,10 +10,10 @@ Research narrative companions:
 - `docs/WHITEPAPER.md`
 - `docs/CODEBASE_MAP.md`
 
-- Registry generated: `2026-05-06T22:30:02.873490+00:00`
+- Registry generated: `2026-05-06T22:48:13.571573+00:00`
 - Registry status: **PASS**
 - Core validation suite: `12` tests
-- Expanded evidence suite: `68` entries; see the canonical evidence table below for the exact current tier list.
+- Expanded evidence suite: `69` entries; see the canonical evidence table below for the exact current tier list.
 
 ## Canonical Claims
 
@@ -87,6 +87,7 @@ Research narrative companions:
 | `tier4_31e_native_replay_eligibility_decision_closeout` | Phase F closeout decision after native temporal hardware smoke | **PASS** | Measured evidence does not currently justify immediate native replay buffers, sleep-like replay, or native macro eligibility; Tier 4.31f is deferred and Tier 4.32 mapping/resource modeling is authorized next. | Local documentation/decision evidence only; not a hardware run, not a new mechanism implementation, not speedup, not multi-chip scaling, not native replay/sleep proof, not native eligibility proof, not full v2.2 hardware transfer, and not a baseline freeze. |
 | `tier4_32_native_runtime_mapping_resource_model` | Phase G native-runtime mapping/resource model before single-chip scale stress | **PASS** | Measured 4.27-4.31 evidence is consolidated into a single native-runtime resource envelope: MCPL is the scale path, current single-chip profile builds have positive ITCM/DTCM headroom, 4.32a single-chip scale stress is authorized next, and no native-scale baseline freeze is authorized yet. | Local resource/mapping model only; not a new hardware run, not speedup evidence, not multi-chip scaling, not benchmark superiority, not full organism autonomy, and not a baseline freeze. |
 | `tier4_32a_single_chip_scale_stress_preflight` | Phase G single-chip multi-core scale-stress preflight before EBRAINS hardware stress | **PASS** | Tier 4.32a converts the Tier 4.32 resource model into a predeclared single-chip MCPL-first stress envelope and catches a source-level scale blocker: the current MCPL lookup key has no shard/group field and dest_core is reserved/ignored. It authorizes only single-shard 4/5-core 4.32a-hw stress, requires Tier 4.32a-r1 shard-aware MCPL repair before replicated 8/12/16-core stress, and keeps 4.32b/multi-chip/native-scale baseline freeze blocked. | Local preflight/source-inspection evidence only; not a SpiNNaker hardware run, not speedup evidence, not replicated-shard scaling, not multi-chip scaling, not static reef partition proof, not benchmark superiority, and not a baseline freeze. |
+| `tier4_32a_r0_protocol_truth_audit` | Phase G corrective audit before MCPL-first EBRAINS scale stress | **PASS** | Tier 4.32a-r0 prevents a misleading MCPL-first hardware package: source inspection proves confidence-gated lookup still uses transitional SDP, MCPL replies drop confidence, MCPL receive hardcodes confidence=1.0, and the MCPL key lacks shard identity. Tier 4.32a-r1 is required before MCPL-first scale stress. | Local source/documentation audit only; not SpiNNaker hardware evidence, not speedup evidence, not multi-chip scaling, not static reef partition proof, and not a baseline freeze. |
 
 ## Canonical Artifacts
 
@@ -160,6 +161,7 @@ Research narrative companions:
 | `tier4_31e_native_replay_eligibility_decision_closeout` | `controlled_test_output/tier4_31e_20260506_native_replay_eligibility_decision_closeout/tier4_31e_results.json` | `controlled_test_output/tier4_31e_20260506_native_replay_eligibility_decision_closeout/tier4_31e_report.md` | `controlled_test_output/tier4_31e_20260506_native_replay_eligibility_decision_closeout/tier4_31e_summary.csv` |
 | `tier4_32_native_runtime_mapping_resource_model` | `controlled_test_output/tier4_32_20260506_mapping_resource_model/tier4_32_results.json` | `controlled_test_output/tier4_32_20260506_mapping_resource_model/tier4_32_report.md` | `controlled_test_output/tier4_32_20260506_mapping_resource_model/tier4_32_resource_envelope.csv` |
 | `tier4_32a_single_chip_scale_stress_preflight` | `controlled_test_output/tier4_32a_20260506_single_chip_scale_stress/tier4_32a_results.json` | `controlled_test_output/tier4_32a_20260506_single_chip_scale_stress/tier4_32a_report.md` | `controlled_test_output/tier4_32a_20260506_single_chip_scale_stress/tier4_32a_scale_points.csv` |
+| `tier4_32a_r0_protocol_truth_audit` | `controlled_test_output/tier4_32a_r0_20260506_protocol_truth_audit/tier4_32a_r0_results.json` | `controlled_test_output/tier4_32a_r0_20260506_protocol_truth_audit/tier4_32a_r0_report.md` | `controlled_test_output/tier4_32a_r0_20260506_protocol_truth_audit/tier4_32a_r0_criteria.csv` |
 
 ## Selected Noncanonical Diagnostics
 

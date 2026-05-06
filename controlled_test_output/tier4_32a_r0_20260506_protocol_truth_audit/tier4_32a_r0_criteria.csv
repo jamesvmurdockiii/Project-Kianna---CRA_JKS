@@ -1,0 +1,11 @@
+name,value,rule,passed,note
+Tier 4.32a prerequisite passed,pass,== pass,True,
+confidence lookup SDP fallback found,True,== True,True,
+MCPL reply drops confidence found,True,== True,True,
+MCPL receive hardcodes confidence found,True,== True,True,
+MCPL key lacks shard identity found,True,== True,True,
+MCPL dest_core reserved/ignored found,True,== True,True,
+all protocol blockers classified,5,== 5,True,
+MCPL-first 4.32a-hw package blocked,blocked,== blocked,True,
+Tier 4.32a-r1 protocol repair required next,required_next,== required_next,True,
+native scale baseline freeze remains blocked,not_authorized,== not_authorized,True,

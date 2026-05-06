@@ -33,10 +33,11 @@ controlled ablations, baseline comparisons, and explicit claim boundaries.
 | Latest temporal decision closeout | Tier 4.31e passed `15/15` from [`controlled_test_output/tier4_31e_20260506_native_replay_eligibility_decision_closeout`](controlled_test_output/tier4_31e_20260506_native_replay_eligibility_decision_closeout): native replay buffers, sleep-like replay, and native macro eligibility are deferred until measured blockers exist; Tier 4.31f is deferred; Tier 4.32 mapping/resource modeling is authorized next; no baseline freeze. |
 | Latest native resource model | Tier 4.32 passed `23/23` from [`controlled_test_output/tier4_32_20260506_mapping_resource_model`](controlled_test_output/tier4_32_20260506_mapping_resource_model): MCPL is the scale data plane (`16` bytes round trip vs SDP `54`), measured profile builds retain positive ITCM/DTCM headroom, 4.32a single-chip scale stress is authorized next, and no native-scale baseline freeze is authorized yet. |
 | Latest single-chip scale preflight | Tier 4.32a passed `19/19` from [`controlled_test_output/tier4_32a_20260506_single_chip_scale_stress`](controlled_test_output/tier4_32a_20260506_single_chip_scale_stress): 4/5-core single-shard MCPL-first stress is authorized next, while replicated 8/12/16-core stress is blocked until Tier 4.32a-r1 adds shard-aware MCPL routing because the current key has no shard/group field and `dest_core` is reserved/ignored. |
+| Latest protocol truth audit | Tier 4.32a-r0 passed `10/10` from [`controlled_test_output/tier4_32a_r0_20260506_protocol_truth_audit`](controlled_test_output/tier4_32a_r0_20260506_protocol_truth_audit): the MCPL-first 4.32a-hw package is blocked because confidence-gated learning still uses transitional SDP, MCPL replies drop confidence, MCPL receive hardcodes confidence `1.0`, and the MCPL key lacks shard identity. Tier 4.32a-r1 is now required before MCPL-first scale stress. |
 | Latest temporal-native readiness | Tier 4.31a passed `24/24`, scoping the first native v2.2 temporal migration to seven causal fixed-point EMA traces. Tier 4.31b passed `16/16` with fixed/float ratio `0.9987474666079806` and zero selected saturations. Tier 4.31c passed `17/17`, adding C-owned temporal state, command codes `39-42`, compact temporal readback length `48`, behavior-backed shams, profile ownership guards, and local C host tests. |
 | Latest temporal hardware return | First Tier 4.31d EBRAINS return was incomplete: only `tier4_31d_test_profiles_stdout.txt` and `coral_reef (26).elf` came back, with no `tier4_31d_hw_results.json`. This is not hardware evidence; it only shows profile host tests passed and an ARM ELF linked before structured finalization. The incomplete return is preserved at [`controlled_test_output/tier4_31d_hw_20260506_incomplete_return`](controlled_test_output/tier4_31d_hw_20260506_incomplete_return). |
-| Active next gate | Tier 4.32a-hw EBRAINS single-shard single-chip stress using the 4.32a preflight: run only the eligible 4-core reference and 5-core lifecycle points, return compact per-core readback/profile artifacts, and measure stale/duplicate/timeout/drop counters. Then Tier 4.32a-r1 must repair shard-aware MCPL before 8/12/16-core replicated stress, static reef partitioning, or multi-chip work. |
-| Canonical registry | 68 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
+| Active next gate | Tier 4.32a-r1 confidence-bearing shard-aware MCPL lookup repair: restore MCPL as the scale data plane without losing confidence/hit semantics, add shard/group identity or equivalent directed routing, and prove local cross-talk controls before any MCPL-first 4.32a-hw package, replicated 8/12/16-core stress, static reef partitioning, or multi-chip work. |
+| Canonical registry | 69 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
 | Validation suite | 151 pytest tests plus registry, paper-table, and repository-audit generation. |
 
 ## What CRA Implements
@@ -163,7 +164,7 @@ python3 experiments/tier5_external_baselines.py \
 `make validate` currently runs:
 
 - 151 pytest unit tests.
-- Evidence registry generation: 68 canonical bundles, 0 failed criteria.
+- Evidence registry generation: 69 canonical bundles, 0 failed criteria.
 - Paper results table export.
 - Repository audit.
 
@@ -208,7 +209,7 @@ commit used. A placeholder software citation is:
   author       = {Murdock, James V. and CRA Contributors},
   year         = {2026},
   url          = {https://github.com/jamesvmurdockiii/Project-Kianna---CRA_JKS},
-  note         = {68 canonical evidence bundles; bounded SpiNNaker hardware validation}
+  note         = {69 canonical evidence bundles; bounded SpiNNaker hardware validation}
 }
 ```
 

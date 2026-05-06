@@ -5,10 +5,10 @@ ledger is `STUDY_REGISTRY.json`; the compact table is `STUDY_REGISTRY.csv`.
 Older reruns, prepared capsules, debug probes, and baseline-frozen
 mechanism bundles outside the formal registry are preserved for audit.
 
-- Generated: `2026-05-06T22:30:02.873490+00:00`
+- Generated: `2026-05-06T22:48:13.571573+00:00`
 - Registry status: **PASS**
-- Canonical evidence entries: `68`
-- Expanded test-entry count: `68`; see the canonical evidence table below for the exact current tier list.
+- Canonical evidence entries: `69`
+- Expanded test-entry count: `69`; see the canonical evidence table below for the exact current tier list.
 
 ## Evidence Categories
 
@@ -90,6 +90,7 @@ mechanism bundles outside the formal registry are preserved for audit.
 | `tier4_31e_native_replay_eligibility_decision_closeout` | **PASS** | `controlled_test_output/tier4_31e_20260506_native_replay_eligibility_decision_closeout` | Local documentation/decision evidence only; not a hardware run, not a new mechanism implementation, not speedup, not multi-chip scaling, not native replay/sleep proof, not native eligibility proof, not full v2.2 hardware transfer, and not a baseline freeze. |
 | `tier4_32_native_runtime_mapping_resource_model` | **PASS** | `controlled_test_output/tier4_32_20260506_mapping_resource_model` | Local resource/mapping model only; not a new hardware run, not speedup evidence, not multi-chip scaling, not benchmark superiority, not full organism autonomy, and not a baseline freeze. |
 | `tier4_32a_single_chip_scale_stress_preflight` | **PASS** | `controlled_test_output/tier4_32a_20260506_single_chip_scale_stress` | Local preflight/source-inspection evidence only; not a SpiNNaker hardware run, not speedup evidence, not replicated-shard scaling, not multi-chip scaling, not static reef partition proof, not benchmark superiority, and not a baseline freeze. |
+| `tier4_32a_r0_protocol_truth_audit` | **PASS** | `controlled_test_output/tier4_32a_r0_20260506_protocol_truth_audit` | Local source/documentation audit only; not SpiNNaker hardware evidence, not speedup evidence, not multi-chip scaling, not static reef partition proof, and not a baseline freeze. |
 
 ## Noncanonical Outputs
 

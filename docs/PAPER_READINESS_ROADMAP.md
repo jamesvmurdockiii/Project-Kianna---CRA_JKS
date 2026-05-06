@@ -6344,6 +6344,16 @@ Near-term roadmap insertion:
     authorized single-shard only, Tier 4.32a-r1 is required before replicated
     stress, and Tier 4.32b/multi-chip/native-scale baseline freeze remain
     blocked.
+24. Tier 4.32a-r0 protocol truth audit. COMPLETE:
+    local pass 10/10 at
+    `controlled_test_output/tier4_32a_r0_20260506_protocol_truth_audit/`;
+    the planned MCPL-first 4.32a-hw package is blocked because the current
+    confidence-gated lookup path still uses transitional SDP, MCPL replies drop
+    confidence/hit status, MCPL receive hardcodes confidence=1.0, and the MCPL
+    key lacks shard/group identity. Tier 4.32a-r1 confidence-bearing
+    shard-aware MCPL repair is required before MCPL-first hardware stress,
+    replicated stress, static reef partitioning, multi-chip scaling, or native
+    scale baseline freeze.
 ```
 
 Tier 5.19a result:
@@ -6647,9 +6657,9 @@ Tests: test-temporal-state, test-profiles, test, test-lifecycle, test-lifecycle-
 Boundary: local source/runtime host evidence only, not hardware
 ```
 
-Next: Tier 4.32a-hw EBRAINS single-shard single-chip stress using only the
-      eligible Tier 4.32a 4/5-core points, followed by Tier 4.32a-r1
-      shard-aware MCPL routing repair before replicated 8/12/16-core stress.
+Next: Tier 4.32a-r1 confidence-bearing shard-aware MCPL lookup repair. Only
+      after that passes should a MCPL-first Tier 4.32a-hw single-shard package
+      be prepared from the eligible Tier 4.32a 4/5-core points.
       Reopen native replay-buffer, sleep-like replay, or eligibility-trace
       implementation only if a later measured blocker specifically demands it.
 ```

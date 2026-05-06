@@ -8937,3 +8937,33 @@ Boundary: local preflight/source-inspection evidence only; not hardware,
 speedup, replicated-shard scaling, multi-chip scaling, static reef partition
 proof, benchmark superiority, or baseline freeze.
 ```
+
+## Tier 4.32a-r0 - Protocol Truth Audit
+
+Question: Is the planned MCPL-first Tier 4.32a-hw package honest against the
+current C source after the promoted confidence-gated learning repair?
+
+Hypothesis: Source inspection will either confirm that MCPL carries all fields
+needed for promoted v2.1/v2.2 scale stress, or it will block the hardware
+package before a misleading EBRAINS run is prepared.
+
+Result:
+
+```text
+Tier 4.32a-r0 protocol truth audit passed locally at
+controlled_test_output/tier4_32a_r0_20260506_protocol_truth_audit/.
+Runner revision: tier4_32a_r0_protocol_truth_audit_20260506_0001.
+Criteria: 10/10.
+Findings:
+- confidence-gated lookup still uses transitional SDP
+- MCPL reply helper drops confidence
+- MCPL receive hardcodes confidence=1.0 and hit=1
+- MCPL key has no shard/group field
+- dest_core is reserved/ignored by MCPL send helpers
+Decision: block MCPL-first 4.32a-hw until Tier 4.32a-r1 repairs
+confidence-bearing and shard-aware MCPL lookup. A transitional SDP debug run is
+allowed only if labelled as SDP debug, not scale evidence.
+Boundary: local source/documentation audit only; not hardware, speedup,
+multi-chip scaling, static reef partition proof, benchmark superiority, or
+baseline freeze.
+```

@@ -1480,6 +1480,24 @@ SPECS: tuple[EvidenceSpec, ...] = (
             "tier4_32a_criteria.csv",
         ),
     ),
+    EvidenceSpec(
+        entry_id="tier4_32a_r0_protocol_truth_audit",
+        tier_label="Tier 4.32a-r0 - Protocol Truth Audit",
+        plan_position="Phase G corrective audit before MCPL-first EBRAINS scale stress",
+        canonical_dir="tier4_32a_r0_20260506_protocol_truth_audit",
+        results_file="tier4_32a_r0_results.json",
+        report_file="tier4_32a_r0_report.md",
+        summary_file="tier4_32a_r0_criteria.csv",
+        harness="experiments/tier4_32a_r0_protocol_truth_audit.py",
+        evidence_role="native runtime protocol truth audit",
+        claim="Tier 4.32a-r0 prevents a misleading MCPL-first hardware package: source inspection proves confidence-gated lookup still uses transitional SDP, MCPL replies drop confidence, MCPL receive hardcodes confidence=1.0, and the MCPL key lacks shard identity. Tier 4.32a-r1 is required before MCPL-first scale stress.",
+        caveat="Local source/documentation audit only; not SpiNNaker hardware evidence, not speedup evidence, not multi-chip scaling, not static reef partition proof, and not a baseline freeze.",
+        latest_manifest_names=("tier4_32a_r0_latest_manifest.json",),
+        expected_extra_files=(
+            "tier4_32a_r0_source_findings.csv",
+            "tier4_32a_r0_final_decision.json",
+        ),
+    ),
 )
 
 

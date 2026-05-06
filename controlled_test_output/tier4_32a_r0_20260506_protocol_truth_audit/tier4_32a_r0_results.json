@@ -1,0 +1,165 @@
+{
+  "artifacts": {
+    "criteria_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_r0_20260506_protocol_truth_audit/tier4_32a_r0_criteria.csv",
+    "final_decision_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_r0_20260506_protocol_truth_audit/tier4_32a_r0_final_decision.json",
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_r0_20260506_protocol_truth_audit/tier4_32a_r0_report.md",
+    "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_r0_20260506_protocol_truth_audit/tier4_32a_r0_results.json",
+    "source_findings_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_r0_20260506_protocol_truth_audit/tier4_32a_r0_source_findings.csv"
+  },
+  "claim_boundary": "Tier 4.32a-r0 is a source/documentation truth audit. It proves that the planned MCPL-first scale stress cannot be honestly packaged yet because the current confidence-gated lookup path still uses SDP and the MCPL lookup helpers do not carry confidence or shard identity. It is not a hardware run, not speedup evidence, not multi-chip scaling, and not a baseline freeze.",
+  "criteria": [
+    {
+      "name": "Tier 4.32a prerequisite passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "confidence lookup SDP fallback found",
+      "note": "",
+      "passed": true,
+      "rule": "== True",
+      "value": true
+    },
+    {
+      "name": "MCPL reply drops confidence found",
+      "note": "",
+      "passed": true,
+      "rule": "== True",
+      "value": true
+    },
+    {
+      "name": "MCPL receive hardcodes confidence found",
+      "note": "",
+      "passed": true,
+      "rule": "== True",
+      "value": true
+    },
+    {
+      "name": "MCPL key lacks shard identity found",
+      "note": "",
+      "passed": true,
+      "rule": "== True",
+      "value": true
+    },
+    {
+      "name": "MCPL dest_core reserved/ignored found",
+      "note": "",
+      "passed": true,
+      "rule": "== True",
+      "value": true
+    },
+    {
+      "name": "all protocol blockers classified",
+      "note": "",
+      "passed": true,
+      "rule": "== 5",
+      "value": 5
+    },
+    {
+      "name": "MCPL-first 4.32a-hw package blocked",
+      "note": "",
+      "passed": true,
+      "rule": "== blocked",
+      "value": "blocked"
+    },
+    {
+      "name": "Tier 4.32a-r1 protocol repair required next",
+      "note": "",
+      "passed": true,
+      "rule": "== required_next",
+      "value": "required_next"
+    },
+    {
+      "name": "native scale baseline freeze remains blocked",
+      "note": "",
+      "passed": true,
+      "rule": "== not_authorized",
+      "value": "not_authorized"
+    }
+  ],
+  "criteria_passed": 10,
+  "criteria_total": 10,
+  "failed_criteria": [],
+  "final_decision": {
+    "claim_boundary": "Tier 4.32a-r0 is a source/documentation truth audit. It proves that the planned MCPL-first scale stress cannot be honestly packaged yet because the current confidence-gated lookup path still uses SDP and the MCPL lookup helpers do not carry confidence or shard identity. It is not a hardware run, not speedup evidence, not multi-chip scaling, and not a baseline freeze.",
+    "native_scale_baseline_freeze": "not_authorized",
+    "status": "pass",
+    "tier4_32a_hw_mcpl_first": "blocked_until_4_32a_r1_protocol_repair",
+    "tier4_32a_hw_replicated": "blocked_until_confidence_and_shard_aware_mcpl_passes",
+    "tier4_32a_r1": "required_next",
+    "tier4_32a_sdp_debug_hw": "allowed_only_if_relabelled_transitional_sdp_debug_not_scale_evidence",
+    "tier4_32b": "blocked_until_confidence_and_shard_aware_4_32a_hardware_stress_passes"
+  },
+  "generated_at_utc": "2026-05-06T22:39:38+00:00",
+  "required_next_gate": {
+    "blocked_until_passes": [
+      "MCPL-first Tier 4.32a-hw hardware scale stress",
+      "replicated 8/12/16-core hardware stress",
+      "Tier 4.32b static reef partitioning",
+      "multi-chip scaling",
+      "CRA_NATIVE_SCALE_BASELINE_v0.5"
+    ],
+    "name": "Confidence-bearing shard-aware MCPL lookup repair",
+    "required_repairs": [
+      "MCPL reply payload/sequence carries value, confidence, hit/status, and lookup type.",
+      "MCPL receive path no longer hardcodes confidence=FP_ONE.",
+      "4.29d full/zero/zero-context/half-confidence controls pass over the repaired path.",
+      "MCPL key/routing carries shard/group identity or equivalent directed semantics.",
+      "Local C tests prove two independent shards can issue identical lookup types and sequence ranges without cross-talk."
+    ],
+    "tier": "Tier 4.32a-r1"
+  },
+  "runner_revision": "tier4_32a_r0_protocol_truth_audit_20260506_0001",
+  "source_findings": [
+    {
+      "blocks": "MCPL-first 4.32a-hw scale-stress packaging",
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c",
+      "finding_id": "confidence_lookup_uses_sdp",
+      "line": 1467,
+      "observed": "#if 0 disables MCPL lookup request send; SDP path remains active for confidence-gated learning.",
+      "present": true,
+      "required_repair": "Pack value, confidence, hit/status, and lookup type through MCPL or another measured multicast-compatible protocol."
+    },
+    {
+      "blocks": "confidence-gated learning over MCPL",
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c",
+      "finding_id": "mcpl_reply_drops_confidence",
+      "line": 1707,
+      "observed": "MCPL reply helper discards confidence.",
+      "present": true,
+      "required_repair": "Define and test a confidence-bearing MCPL reply payload/packet sequence."
+    },
+    {
+      "blocks": "self-evaluation/confidence-gated v2.1 transfer over MCPL",
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c",
+      "finding_id": "mcpl_receive_hardcodes_confidence",
+      "line": 1724,
+      "observed": "MCPL receive path hardcodes confidence=FP_ONE and hit=1.",
+      "present": true,
+      "required_repair": "Decode confidence/hit/status in MCPL receive and preserve 4.29d zero/half-confidence controls."
+    },
+    {
+      "blocks": "replicated 8/12/16-core shard stress and multi-chip routing",
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/config.h",
+      "finding_id": "mcpl_key_lacks_shard_identity",
+      "line": 201,
+      "observed": "MCPL key layout has app_id, msg_type, lookup_type, and seq_id, but no shard/group field.",
+      "present": true,
+      "required_repair": "Add shard/group identity or equivalent directed-routing semantics with local cross-talk tests."
+    },
+    {
+      "blocks": "directed replicated-shard lookup routing",
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c",
+      "finding_id": "mcpl_dest_core_reserved",
+      "line": 1700,
+      "observed": "MCPL send helpers reserve/ignore dest_core.",
+      "present": true,
+      "required_repair": "Either use shard-aware key/routing masks or implement measured directed-core routing semantics."
+    }
+  ],
+  "status": "pass",
+  "tier": "4.32a-r0",
+  "tier_name": "Tier 4.32a-r0 - Protocol Truth Audit"
+}

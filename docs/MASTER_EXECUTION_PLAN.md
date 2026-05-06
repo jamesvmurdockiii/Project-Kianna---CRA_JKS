@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-06T11:45-04:00.
+Last updated: 2026-05-06T18:46-04:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -807,89 +807,100 @@ ability.
     shard-aware MCPL before replicated stress, and kept
     4.32b/multi-chip/native-scale baseline freeze blocked.
 
-55. **CURRENT ACTIVE STEP** - Tier 4.32a-hw EBRAINS single-shard single-chip
-    stress: run only `point_04c_reference` and `point_05c_lifecycle` from
+55. Tier 4.32a-r0 protocol truth audit: **COMPLETED**. Local pass `10/10` at
+    `controlled_test_output/tier4_32a_r0_20260506_protocol_truth_audit/`.
+    This corrective audit blocked the planned MCPL-first 4.32a-hw package:
+    confidence-gated learning still uses transitional SDP because MCPL replies
+    drop confidence/hit status and MCPL receive hardcodes confidence=1.0. The
+    audit also preserved the earlier shard blocker: the MCPL key has no
+    shard/group field and `dest_core` is reserved/ignored.
+
+56. **CURRENT ACTIVE STEP** - Tier 4.32a-r1 confidence-bearing shard-aware MCPL
+    lookup repair: define MCPL payload/packet semantics that preserve value,
+    confidence, hit/status, and lookup type; stop hardcoding confidence=1.0;
+    add shard/group identity or equivalent directed-routing semantics; and prove
+    locally that 4.29d confidence controls still pass and independent shards do
+    not cross-talk.
+
+57. Tier 4.32a-hw EBRAINS single-shard single-chip stress: only after
+    4.32a-r1 passes, run `point_04c_reference` and `point_05c_lifecycle` from
     4.32a. Return compact per-core readback, profile/build artifacts, lookup
     request/reply parity, stale/duplicate/timeout/drop counters, and
     schedule/slot high-water marks. This is hardware stress only, not
     replicated-shard scaling and not a baseline freeze.
 
-56. Tier 4.32a-r1 shard-aware MCPL routing repair: add shard/group key bits or
-    directed routing semantics, update host/core routing setup, and prove with
-    local C tests that two independent shards can issue identical lookup types
-    and sequence ranges without cross-talk.
-
-57. Tier 4.32a-hw-replicated: only after 4.32a-r1 passes, run the 8/12/16-core
+58. Tier 4.32a-hw-replicated: only after 4.32a-r1 passes and the single-shard
+    hardware stress is clean, run the 8/12/16-core
     replicated shard stress points with the same readback/counter gates.
 
-58. Tier 4.32b static reef partition smoke: map groups/modules/polyps to cores
+59. Tier 4.32b static reef partition smoke: map groups/modules/polyps to cores
     using the measured static-pool strategy. Do not pretend one polyp equals one
     chip unless measured mapping proves that is correct.
 
-59. Tier 4.32c inter-chip feasibility contract: define routing keys, message
+60. Tier 4.32c inter-chip feasibility contract: define routing keys, message
     path, board/chip selection, failure classes, readback, and resource limits
     before attempting multi-chip.
 
-60. Tier 4.32d first multi-chip smoke: smallest possible cross-chip message and
+61. Tier 4.32d first multi-chip smoke: smallest possible cross-chip message and
     state lookup. No learning claim until communication and readback are clean.
 
-61. Tier 4.32e multi-chip learning micro-task: only after cross-chip smoke
+62. Tier 4.32e multi-chip learning micro-task: only after cross-chip smoke
     passes, run a tiny delayed-credit or reentry task with explicit claim
     boundary and resource measurements.
 
-62. Freeze `CRA_NATIVE_SCALE_BASELINE_v0.5` only if single-chip multi-core and
+63. Freeze `CRA_NATIVE_SCALE_BASELINE_v0.5` only if single-chip multi-core and
     first multi-chip evidence are stable enough for the final paper claim. If
     not, publish measured single-chip limits honestly.
 
 ### Phase H - Software Usefulness And Final Baselines
 
-63. Tier 6.2 hard synthetic suite: variable-delay cue, multi-cue delayed reward,
+64. Tier 6.2 hard synthetic suite: variable-delay cue, multi-cue delayed reward,
     hidden regime switching, drifting bandit, concept drift, anomaly stream,
     and small delayed-reward control proxy.
 
-64. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+65. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines.
 
-65. Tier 7.2 held-out task challenge: define held-out families before running;
+66. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout.
 
-66. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+67. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines.
 
-67. Tier 7.4 policy/action selection: state -> action -> delayed consequence,
+68. Tier 7.4 policy/action selection: state -> action -> delayed consequence,
     exploration versus exploitation, uncertainty-gated actions.
 
-68. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
+69. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
     planning/subgoal control: run only after the shorter hard/real-ish tasks are
     stable. Do not claim language, AGI, or broad planning from toy gates.
 
-69. Run expanded external baselines and fairness audit at the phase lock:
+70. Run expanded external baselines and fairness audit at the phase lock:
     random/sign persistence, online perceptron/logistic, reservoir/ESN, small
     GRU, STDP-only SNN, simple evolutionary population, and SNN reviewer-defense
     baselines where practical.
 
-70. Freeze the next software baseline only if new software capability work
+71. Freeze the next software baseline only if new software capability work
     passes ablations, fair baselines, and compact regression. If no new software
     mechanism is promoted, keep v2.2.
 
 ### Phase I - Final Paper Lock
 
-71. Select final paper claim level: strong usefulness paper, bounded architecture
+72. Select final paper claim level: strong usefulness paper, bounded architecture
     study, or narrowed diagnostic report. Let the evidence decide.
 
-72. Run final software matrix and final hardware subset matrix. Include effect
+73. Run final software matrix and final hardware subset matrix. Include effect
     sizes, confidence intervals, worst seed, sample efficiency, runtime, command
     count, resource budgets, and claim-boundary table.
 
-73. Build the independent reproduction capsule: fresh checkout instructions,
+74. Build the independent reproduction capsule: fresh checkout instructions,
     environment lock, validation command, registry/table regeneration, EBRAINS
     ingest instructions, artifact hash manifest, and one local tier rerun.
 
-74. Draft paper/whitepaper only after Step 69 and Step 70 pass. Write
+75. Draft paper/whitepaper only after Step 70 and Step 71 pass. Write
     limitations first, then claims. Preserve failed and parked diagnostics.
 
-71. External dry run: have a clean agent or human follow only the docs. If they
+76. External dry run: have a clean agent or human follow only the docs. If they
     need hidden chat context, the repo is not ready.
 
 ## 7. Current Tier 4.27 Definition
@@ -1048,10 +1059,13 @@ After each completed run or design tier:
 The next concrete action is:
 
 ```text
-Tier 4.32a-hw EBRAINS single-shard single-chip stress: use the Tier 4.32a
-preflight to run only the eligible 4-core reference and 5-core lifecycle points.
-Then implement Tier 4.32a-r1 shard-aware MCPL before replicated 8/12/16-core
-stress, static reef partitioning, or multi-chip communication claims.
+Tier 4.32a-r1 confidence-bearing shard-aware MCPL lookup repair: Tier 4.32a-r0
+blocked the planned MCPL-first 4.32a-hw package because confidence-gated lookup
+traffic still uses transitional SDP, MCPL replies drop confidence/hit status,
+MCPL receive hardcodes confidence=1.0, and the MCPL key lacks shard/group
+identity. Repair the protocol before any MCPL-first 4.32a hardware package,
+replicated 8/12/16-core stress, static reef partitioning, or multi-chip
+communication claims.
 ```
 
 Current reference state:
@@ -1078,12 +1092,14 @@ unproven
 Tier 4.31e decision status: passed 15/15; native replay buffers, sleep-like
 replay, and native macro eligibility deferred until measured blockers exist;
 Tier 4.32 authorized next
-Tier 4.32 resource-model status: passed 23/23; MCPL-first scale path selected;
-4.32a authorized next; no native-scale baseline freeze
+Tier 4.32 resource-model status: passed 23/23; MCPL-first scale path selected
+as the target; no native-scale baseline freeze
 Tier 4.32a preflight status: passed 19/19; 4/5/8/12/16-core stress envelope
 predeclared; 4/5-core single-shard stress authorized next; replicated 8/12/16
 core stress blocked until shard-aware MCPL; 4.32b/multi-chip/native-scale
 baseline freeze remain blocked
+Tier 4.32a-r0 protocol truth audit: passed 10/10; MCPL-first 4.32a-hw blocked
+until confidence-bearing and shard-aware MCPL lookup repair passes
 ```
 
 Purpose:
@@ -1097,9 +1113,11 @@ eligibility. Tier 4.32 converted measured 4.27-4.31 evidence into an explicit
 resource envelope. Tier 4.32a then turned that envelope into a concrete local
 preflight and caught a real scale blocker: replicated shards need shard-aware
 MCPL routing because the current key has no shard/group field and `dest_core` is
-reserved/ignored. The next action is the EBRAINS Tier 4.32a-hw single-shard
-hardware stress, followed by Tier 4.32a-r1 routing repair before replicated
-stress, not a benchmark, speedup, static partition, or multi-chip claim.
+reserved/ignored. Tier 4.32a-r0 then caught the remaining protocol truth
+problem before packaging hardware: the promoted confidence-gated learning path
+still uses SDP because MCPL does not yet transmit confidence/hit status. The
+next action is Tier 4.32a-r1 protocol repair, not an EBRAINS package, benchmark,
+speedup, static partition, or multi-chip claim.
 ```
 
 Required coverage:
@@ -1109,10 +1127,11 @@ Use v2.2 as the software reference and `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` as
 the native lifecycle baseline. Keep Tier 4.31d's boundary strict: one-board
 temporal-state hardware smoke only; not nonlinear recurrence, not speedup, not
 multi-chip scaling, not benchmark superiority, and not full organism autonomy.
-The next native work must execute Tier 4.32a-hw using only the eligible Tier
-4.32a single-shard points, then implement Tier 4.32a-r1 before replicated shard
-stress. Only reopen replay buffers, sleep-like replay, or native eligibility if
-a later measured blocker specifically demands it.
+The next native work must repair confidence-bearing and shard-aware MCPL lookup
+first. Only after Tier 4.32a-r1 passes may we prepare a MCPL-first Tier
+4.32a-hw package using the eligible Tier 4.32a single-shard points. Only reopen
+replay buffers, sleep-like replay, or native eligibility if a later measured
+blocker specifically demands it.
 ```
 
 

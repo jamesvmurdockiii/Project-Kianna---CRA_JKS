@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-06T20:28:16+00:00.
+Last updated: 2026-05-06T22:46:22+00:00.
 
 Current repo root:
 
@@ -99,12 +99,14 @@ FROZEN: CRA_LIFECYCLE_NATIVE_BASELINE_v0.4
             temporal migration, not external-baseline superiority, and not
             language/planning/AGI/ASI.
 
-  Next: Tier 4.32a-hw EBRAINS single-shard single-chip stress. Tier 4.32a
-        passed the local preflight but caught a replicated-shard blocker: the
-        current MCPL lookup key has no shard/group field and dest_core is
-        reserved/ignored. Run only the eligible 4/5-core hardware points, then
-        implement Tier 4.32a-r1 shard-aware MCPL before 8/12/16-core stress.
-        Do not freeze a new native baseline or claim full v2.2 transfer.
+  Next: Tier 4.32a-r1 confidence-bearing shard-aware MCPL lookup repair.
+        Tier 4.32a-r0 passed the protocol truth audit and blocked the planned
+        MCPL-first 4.32a-hw package: confidence-gated learning still uses
+        transitional SDP, MCPL replies drop confidence, MCPL receive hardcodes
+        confidence=1.0, and the MCPL key has no shard/group field. Repair this
+        before any MCPL-first scale-stress package, replicated 8/12/16-core
+        stress, static reef partitioning, multi-chip work, or native-scale
+        baseline freeze.
 ```
 
 Current active tier state:
@@ -209,26 +211,41 @@ Tier 4.32a — COMPLETE. Single-chip multi-core scale-stress preflight.
     not replicated-shard scaling, not static reef partition proof, not
     benchmark superiority, and not a baseline freeze.
 
-Tier 4.32a-hw — CURRENT ACTIVE. EBRAINS single-shard single-chip stress.
-  Question: How far can the current single-chip MCPL-first native runtime be
-    stressed before schedule length, slot pressure, readback volume, lookup
-    pressure, or profile headroom breaks?
-  Required coverage: use only the Tier 4.32a scale points marked eligible
-    (`point_04c_reference`, `point_05c_lifecycle`); MCPL-first messaging,
-    compact readback cadence, profile size/headroom, schedule-length sweep,
-    context/route/memory/lifecycle slot pressure, pending-horizon pressure,
-    stale/duplicate/timeout/drop counters, and explicit breakpoints before
-    shard-aware MCPL repair.
+Tier 4.32a-r0 — COMPLETE. Protocol truth audit.
+  Status: LOCAL PASS, 10/10.
+  Output: controlled_test_output/tier4_32a_r0_20260506_protocol_truth_audit/
+  Decision: the MCPL-first 4.32a-hw package is blocked. The source still uses
+    SDP for confidence-gated lookup traffic because MCPL reply payload packing
+    drops confidence/hit status and MCPL receive hardcodes confidence=1.0.
+    The same source inspection also confirms the MCPL key has no shard/group
+    field and dest_core is reserved/ignored.
+  Boundary: local source/documentation truth audit only; not hardware, not
+    speedup, not multi-chip scaling, not static reef partitioning, and not a
+    baseline freeze.
 
-Tier 4.32a-r1 — BLOCKED UNTIL 4.32a-hw RETURNS OR IF PREPARING REPLICATED
-  STRESS. Shard-aware MCPL routing repair.
-  Question: Can the MCPL lookup protocol address independent replicated shards
-    without duplicate cross-shard replies?
-  Required coverage: add shard/group key bits or directed-routing semantics,
-    update host/core routing setup, and prove with local C tests that two
-    independent shards can issue identical lookup types/sequence ranges without
-    cross-talk. No static reef partitioning, 8/12/16-core stress, or multi-chip
-    work can proceed until this passes.
+Tier 4.32a-r1 — CURRENT ACTIVE. Confidence-bearing shard-aware MCPL lookup
+  repair.
+  Question: Can the MCPL lookup protocol preserve value, confidence, hit/status,
+    lookup type, and shard/group identity without duplicate cross-shard replies?
+  Required coverage:
+    - Define confidence-bearing MCPL reply payload/sequence semantics.
+    - Stop hardcoding MCPL confidence=1.0 in the learning-core receive path.
+    - Preserve 4.29d full/zero/zero-context/half-confidence controls over the
+      repaired path.
+    - Add shard/group key bits or equivalent directed-routing semantics.
+    - Add local C tests proving two independent shards can issue identical
+      lookup types and sequence ranges without cross-talk.
+  No MCPL-first 4.32a-hw package, replicated 8/12/16-core stress, static reef
+    partitioning, multi-chip work, or native-scale baseline freeze can proceed
+    until this passes.
+
+Tier 4.32a-hw — BLOCKED UNTIL 4.32a-r1. EBRAINS single-shard single-chip
+  stress. Once unblocked, run only `point_04c_reference` and
+  `point_05c_lifecycle` first; return compact per-core readback,
+  profile/build artifacts, lookup request/reply parity,
+  stale/duplicate/timeout/drop counters, and schedule/slot high-water marks.
+  This will be hardware stress only, not replicated-shard scaling and not a
+  baseline freeze.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware
@@ -713,9 +730,11 @@ Immediate next steps:
 
 1. Keep Tier 4.31d/4.31e boundaries strict: one-board temporal-state smoke plus
    local replay/eligibility decision closeout only, no new freeze.
-2. Tier 4.32a passed and authorized only single-shard Tier 4.32a-hw. The next
-   native step is an EBRAINS 4/5-core single-chip stress, followed by Tier
-   4.32a-r1 shard-aware MCPL repair before any replicated 8/12/16-core stress;
+2. Tier 4.32a-r0 supersedes the earlier 4.32a-hw packaging order. The next
+   native step is Tier 4.32a-r1 confidence-bearing shard-aware MCPL repair,
+   because the current promoted confidence-gated lookup path still uses SDP and
+   current MCPL lookup helpers lack both confidence payload semantics and
+   shard/group identity.
    do not jump directly to static reef partitioning, multi-chip, benchmarks, or
    a native-scale baseline freeze.
 3. Keep the 4.31b/4.31c range refinement explicit: selected trace bound is ±2

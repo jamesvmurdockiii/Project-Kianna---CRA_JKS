@@ -25,7 +25,7 @@ The project contains three integrated layers:
 3. A staged evidence system that records canonical results, failed diagnostics,
    frozen baselines, and claim boundaries.
 
-As of the current registry, CRA has 68 canonical evidence bundles with zero
+As of the current registry, CRA has 69 canonical evidence bundles with zero
 missing expected artifacts and zero failed criteria in canonical entries. The
 software program has validated negative controls, positive learning controls,
 architecture ablations, external-baseline comparisons, delayed-credit repairs,
@@ -57,8 +57,11 @@ blockers justify them, and authorizing Tier 4.32 mapping/resource modeling. Tier
 profile builds have positive ITCM/DTCM headroom. Tier 4.32a then passed the
 local single-chip scale-stress preflight, authorizing only the 4/5-core
 single-shard hardware stress points and blocking replicated 8/12/16-core stress
-until shard-aware MCPL routing exists. Static partitioning, multi-chip work, and
-native-scale baseline freeze remain blocked.
+until shard-aware MCPL routing exists. Tier 4.32a-r0 then blocked the planned
+MCPL-first hardware package: confidence-gated learning still uses transitional
+SDP, MCPL replies drop confidence/hit status, MCPL receive hardcodes
+confidence=1.0, and the MCPL key lacks shard identity. Static partitioning,
+multi-chip work, and native-scale baseline freeze remain blocked.
 
 The current evidence supports a bounded research claim: CRA is a reproducible
 neuromorphic platform with demonstrated local learning, mechanism sensitivity,
@@ -67,8 +70,9 @@ constrained task capsules and native-runtime mechanism bridges. The evidence doe
 not establish general intelligence, universal superiority over baselines,
 production readiness, full multi-chip scaling, autonomous lifecycle-to-learning
 MCPL, repeatable/full native v2.2 temporal dynamics beyond the one-board
-seven-EMA smoke, native replay/sleep or native macro eligibility, or fully
-autonomous on-chip implementations of all promoted software mechanisms.
+seven-EMA smoke, confidence-bearing shard-aware MCPL scale stress, native
+replay/sleep or native macro eligibility, or fully autonomous on-chip
+implementations of all promoted software mechanisms.
 
 ## Motivation
 

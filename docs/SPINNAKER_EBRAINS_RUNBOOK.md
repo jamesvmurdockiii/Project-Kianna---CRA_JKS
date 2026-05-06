@@ -37,24 +37,30 @@ copies of the same state profile would therefore receive the same lookup
 requests and can generate duplicate/cross-shard replies. Tier 4.32a correctly
 blocks replicated-shard stress until Tier 4.32a-r1 adds shard-aware MCPL routing
 or equivalent directed-routing semantics.
+
+Do not prepare the MCPL-first Tier 4.32a-hw single-shard package yet either.
+Tier 4.32a-r0 found that confidence-gated lookup traffic still uses
+transitional SDP because MCPL replies do not carry confidence/hit status and
+MCPL receive hardcodes confidence=1.0. A transitional SDP debug run must be
+labelled as SDP debug only, not MCPL-first scale evidence.
 ```
 
 Latest active hardware-facing tier:
 
 ```text
-Tier 4.32a-hw - EBRAINS Single-Shard Single-Chip Stress
-  Status: CURRENT ACTIVE, awaiting EBRAINS package/run
+Tier 4.32a-r1 - Confidence-Bearing Shard-Aware MCPL Lookup Repair
+  Status: CURRENT ACTIVE, local source/runtime repair before EBRAINS package
   Local prerequisite: Tier 4.32a local preflight pass, 19/19
-  Local output: controlled_test_output/tier4_32a_20260506_single_chip_scale_stress/
-  Required stress points now: 4-core reference and 5-core lifecycle only.
-  Blocked stress points: 8-core dual shard, 12-core triple shard, 16-core quad
-    shard until Tier 4.32a-r1 adds shard-aware MCPL routing.
-  Required evidence: MCPL-first core-to-core traffic, compact per-core readback,
-    profile/build artifacts, schedule/slot/pending high-water marks, lookup
-    request/reply parity, and stale/duplicate/timeout/drop counters.
-  Boundary: single-shard single-chip hardware stress only; not replicated-shard
-    scaling, not speedup, not static reef partition proof, not multi-chip
-    scaling, not benchmark superiority, and not CRA_NATIVE_SCALE_BASELINE_v0.5.
+  Corrective prerequisite: Tier 4.32a-r0 protocol truth audit pass, 10/10
+  Local output: controlled_test_output/tier4_32a_r0_20260506_protocol_truth_audit/
+  Required repair now: MCPL lookup must carry value, confidence, hit/status,
+    lookup type, and shard/group identity or equivalent directed-routing
+    semantics.
+  Blocked EBRAINS packages: MCPL-first 4.32a-hw, replicated 8/12/16-core
+    stress, static reef partitioning, multi-chip work, and native-scale
+    baseline freeze.
+  Boundary: source/runtime repair and local C tests first; no hardware package
+    until the repaired protocol passes locally.
 
 Recent passed hardware-facing lifecycle tier:
 
@@ -187,10 +193,10 @@ Tier 4.31c - Native Temporal-Substrate Runtime Source Audit
     superiority.
   Next status: Tier 4.31d hardware smoke passed, Tier 4.31e local decision
     closeout passed, Tier 4.32 mapping/resource model passed, and Tier 4.32a
-    single-chip scale-stress preflight passed. Tier 4.32a-hw EBRAINS
-    single-chip multi-core scale stress is current; native replay buffers,
-    sleep-like replay, and native macro eligibility remain deferred until
-    measured blockers demand them.
+    single-chip scale-stress preflight passed. Tier 4.32a-r0 then blocked the
+    MCPL-first hardware package until confidence-bearing and shard-aware MCPL
+    lookup is repaired. Native replay buffers, sleep-like replay, and native
+    macro eligibility remain deferred until measured blockers demand them.
 ```
 
 Tier 4.28e Point A passed after ingest at:
