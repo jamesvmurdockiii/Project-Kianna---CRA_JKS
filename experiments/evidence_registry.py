@@ -1422,6 +1422,23 @@ SPECS: tuple[EvidenceSpec, ...] = (
             "returned_artifacts/tier4_31d_test_temporal_state_stdout.txt",
         ),
     ),
+    EvidenceSpec(
+        entry_id="tier4_31e_native_replay_eligibility_decision_closeout",
+        tier_label="Tier 4.31e - Native Replay/Eligibility Decision Closeout",
+        plan_position="Phase F closeout decision after native temporal hardware smoke",
+        canonical_dir="tier4_31e_20260506_native_replay_eligibility_decision_closeout",
+        results_file="tier4_31e_results.json",
+        report_file="tier4_31e_report.md",
+        summary_file="tier4_31e_summary.csv",
+        harness="experiments/tier4_31e_native_replay_eligibility_decision_closeout.py",
+        evidence_role="native replay/eligibility decision gate",
+        claim="Measured evidence does not currently justify immediate native replay buffers, sleep-like replay, or native macro eligibility; Tier 4.31f is deferred and Tier 4.32 mapping/resource modeling is authorized next.",
+        caveat="Local documentation/decision evidence only; not a hardware run, not a new mechanism implementation, not speedup, not multi-chip scaling, not native replay/sleep proof, not native eligibility proof, not full v2.2 hardware transfer, and not a baseline freeze.",
+        latest_manifest_names=("tier4_31e_latest_manifest.json",),
+        expected_extra_files=(
+            "tier4_31e_evidence_inputs.csv",
+        ),
+    ),
 )
 
 

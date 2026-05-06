@@ -18,7 +18,7 @@ is organized through predeclared tiers, generated registries, JSON/CSV/Markdown
 artifacts, frozen baselines, controls, ablations, external baselines, and explicit
 claim boundaries.
 
-As of the current registry, CRA contains 65 canonical evidence bundles with zero
+As of the current registry, CRA contains 66 canonical evidence bundles with zero
 missing expected artifacts and zero failed criteria in canonical entries. The
 software evidence includes negative controls, positive learning controls,
 architecture ablations, external-baseline comparisons, delayed-credit repairs,
@@ -35,7 +35,10 @@ on real SpiNNaker boards, a local Tier 4.31a readiness contract for the next
 v2.2 temporal-state migration, Tier 4.31b local fixed-point parity for the
 selected seven-EMA temporal subset, Tier 4.31c local C/runtime ownership of
 that subset, and Tier 4.31d-hw one-board hardware smoke for compact temporal
-state readback and enabled/zero/frozen/reset controls.
+state readback and enabled/zero/frozen/reset controls. Tier 4.31e then closed
+the native replay/eligibility decision gate by deferring native replay buffers,
+sleep-like replay, and native macro eligibility until measured blockers exist,
+and authorizing Tier 4.32 mapping/resource modeling next.
 
 The current bounded claim is that CRA is a reproducible neuromorphic research
 platform with demonstrated local learning, mechanism sensitivity, selected
@@ -44,5 +47,6 @@ hardware capsules and native-runtime mechanism bridges. The evidence does not ye
 establish general intelligence, universal superiority over baselines, full
 multi-chip scaling, production readiness, autonomous native hardware lifecycle-
 to-learning MCPL, repeatable/full native v2.2 temporal dynamics beyond the
-one-board seven-EMA smoke, or fully autonomous on-chip implementations of every
-promoted software mechanism.
+one-board seven-EMA smoke, native replay/sleep or native macro eligibility,
+or fully autonomous on-chip implementations of every promoted software
+mechanism.

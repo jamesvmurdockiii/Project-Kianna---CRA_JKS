@@ -5,10 +5,10 @@ ledger is `STUDY_REGISTRY.json`; the compact table is `STUDY_REGISTRY.csv`.
 Older reruns, prepared capsules, debug probes, and baseline-frozen
 mechanism bundles outside the formal registry are preserved for audit.
 
-- Generated: `2026-05-06T20:13:11.517845+00:00`
+- Generated: `2026-05-06T20:36:18.198105+00:00`
 - Registry status: **PASS**
-- Canonical evidence entries: `65`
-- Expanded test-entry count: `65`; see the canonical evidence table below for the exact current tier list.
+- Canonical evidence entries: `66`
+- Expanded test-entry count: `66`; see the canonical evidence table below for the exact current tier list.
 
 ## Evidence Categories
 
@@ -87,6 +87,7 @@ mechanism bundles outside the formal registry are preserved for audit.
 | `tier4_31b_native_temporal_fixed_point_reference` | **PASS** | `controlled_test_output/tier4_31b_20260506_native_temporal_fixed_point_reference` | Local fixed-point reference/parity evidence only; not C runtime implementation, not SpiNNaker hardware evidence, not speedup, not multi-chip scaling, not nonlinear recurrence, not universal benchmark superiority, and not a new baseline freeze. |
 | `tier4_31c_native_temporal_runtime_source_audit` | **PASS** | `controlled_test_output/tier4_31c_20260506_native_temporal_runtime_source_audit` | Local source/runtime host evidence only; not SpiNNaker hardware evidence, not speedup, not multi-chip scaling, not nonlinear recurrence, not native replay/sleep, not native macro eligibility, not universal benchmark superiority, and not a new baseline freeze. |
 | `tier4_31d_native_temporal_hardware_smoke` | **PASS** | `controlled_test_output/tier4_31d_hw_20260506_hardware_pass_ingested` | One-board hardware smoke only; not repeatability, not speedup, not benchmark superiority, not multi-chip scaling, not nonlinear recurrence, not native replay/sleep, not native macro eligibility, not full v2.2 hardware transfer, and not a baseline freeze. |
+| `tier4_31e_native_replay_eligibility_decision_closeout` | **PASS** | `controlled_test_output/tier4_31e_20260506_native_replay_eligibility_decision_closeout` | Local documentation/decision evidence only; not a hardware run, not a new mechanism implementation, not speedup, not multi-chip scaling, not native replay/sleep proof, not native eligibility proof, not full v2.2 hardware transfer, and not a baseline freeze. |
 
 ## Noncanonical Outputs
 

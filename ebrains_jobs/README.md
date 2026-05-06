@@ -20,6 +20,20 @@ Public repository hygiene rules live in
 
 ## Current Jobs
 
+### Tier 4.31e
+
+Status: **LOCAL DECISION PASS**. No EBRAINS upload folder is needed for this
+gate. Tier 4.31e is documented at
+`controlled_test_output/tier4_31e_20260506_native_replay_eligibility_decision_closeout/`
+and passed `15/15`.
+
+Decision: native replay buffers, sleep-like replay, and native macro eligibility
+are deferred until measured blockers exist; Tier 4.31f is deferred; Tier 4.32
+mapping/resource modeling is authorized next; no baseline freeze.
+
+Boundary: local decision evidence only. It is not hardware evidence and should
+not produce or upload an EBRAINS job folder.
+
 ### `cra_431d_r1`
 
 Status: **HARDWARE PASS / INGESTED** for Tier 4.31d native temporal-substrate

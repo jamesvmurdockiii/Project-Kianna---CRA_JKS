@@ -766,22 +766,25 @@ ability.
     benchmark superiority, multi-chip scaling, nonlinear recurrence, native
     replay/sleep, native macro eligibility, or full v2.2 hardware transfer.
 
-51. **CURRENT ACTIVE STEP** - Tier 4.31e native replay-buffer / sleep-like replay
-    and eligibility decision closeout: decide from measured blockers whether
-    chip-owned replay buffers or native eligibility traces are needed now. Do
-    not implement either by momentum. Host-scheduled replay from 4.29e remains
-    the current bounded evidence unless this gate finds a concrete scale/timing
-    blocker.
+51. ✅ **COMPLETE** - Tier 4.31e native replay-buffer / sleep-like replay
+    and eligibility decision closeout:
+    local pass, 15/15. Output:
+    `controlled_test_output/tier4_31e_20260506_native_replay_eligibility_decision_closeout/`.
+    Decision: native replay buffers, native sleep-like replay, and native macro
+    eligibility are deferred until measured blockers exist; Tier 4.31f is
+    deferred; Tier 4.32 mapping/resource modeling is authorized next; no
+    baseline freeze. Boundary: local decision evidence only, not hardware, not
+    implementation, not speedup, not multi-chip scaling, and not full v2.2
+    hardware transfer.
 
-52. Tier 4.31f native eligibility-trace implementation gate, only if the 4.31e
-    decision finds a measured blocker. Otherwise mark as deferred and move to
-    Tier 4.32. Revisit macro/native
-    eligibility only if a current promoted mechanism exposes a measured credit
-    assignment or on-chip timing blocker. Do not revive 5.9 by vibes alone.
+52. Tier 4.31f native eligibility-trace implementation gate: DEFERRED by
+    4.31e. Revisit macro/native eligibility only if a current promoted
+    mechanism exposes a measured credit-assignment or on-chip timing blocker.
+    Do not revive 5.9 by vibes alone.
 
 ### Phase G - Multi-Core And Multi-Chip Scaling
 
-53. Tier 4.32 update the mapping model with measured 4.27-4.31 data: ITCM,
+53. **CURRENT ACTIVE STEP** - Tier 4.32 update the mapping model with measured 4.27-4.31 data: ITCM,
     DTCM, schedule length, lookup pressure, message bytes, readback bytes,
     per-core utilization, state-slot limits, lifecycle masks, and any promoted
     temporal-state footprint.
@@ -1017,9 +1020,9 @@ After each completed run or design tier:
 The next concrete action is:
 
 ```text
-Tier 4.31e native replay/eligibility decision closeout: decide whether current
-hardware evidence exposes a measured need for native replay buffers or native
-eligibility traces now. If not, proceed to Tier 4.32 mapping/resource model.
+Tier 4.32 mapping/resource model: consolidate measured 4.27-4.31 hardware data
+into an explicit resource and scaling envelope before single-chip multi-core
+stress or multi-chip communication claims.
 ```
 
 Current reference state:
@@ -1043,14 +1046,19 @@ Temporal substrate status: Tier 4.31d one-board hardware smoke passed and was
 ingested; repeatability, speedup, multi-chip scaling, nonlinear recurrence,
 native replay/sleep, native eligibility, and full v2.2 hardware transfer remain
 unproven
+Tier 4.31e decision status: passed 15/15; native replay buffers, sleep-like
+replay, and native macro eligibility deferred until measured blockers exist;
+Tier 4.32 authorized next
 ```
 
 Purpose:
 
 ```text
 Tier 4.31d completed the first one-board hardware smoke for moving the v2.2
-fading-memory temporal-state subset toward chip-native form. The next action is
-a decision closeout for native replay/eligibility needs, not a benchmark or
+fading-memory temporal-state subset toward chip-native form. Tier 4.31e then
+closed the replay/eligibility decision gate and found no measured blocker that
+justifies immediate native replay buffers, sleep-like replay, or native macro
+eligibility. The next action is mapping/resource modeling, not a benchmark or
 speedup claim.
 ```
 
@@ -1061,8 +1069,9 @@ Use v2.2 as the software reference and `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` as
 the native lifecycle baseline. Keep Tier 4.31d's boundary strict: one-board
 temporal-state hardware smoke only; not nonlinear recurrence, not speedup, not
 multi-chip scaling, not benchmark superiority, and not full organism autonomy.
-The next native work must either document a measured replay/eligibility blocker
-or proceed to mapping/resource modeling.
+The next native work must build the Tier 4.32 mapping/resource model over
+measured hardware data. Only reopen replay buffers, sleep-like replay, or
+native eligibility if a later measured blocker specifically demands it.
 ```
 
 

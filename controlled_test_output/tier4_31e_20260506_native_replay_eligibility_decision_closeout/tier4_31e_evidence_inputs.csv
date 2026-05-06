@@ -1,0 +1,8 @@
+source_id,path,status,role,extracted_signal
+tier4_31d_hardware_smoke,controlled_test_output/tier4_31d_hw_20260506_hardware_pass_ingested/returned_artifacts/tier4_31d_hw_results.json,pass,latest native temporal hardware evidence,59/59 criteria; board 10.11.216.121; payload 48; enabled/zero/frozen/reset all passed
+tier4_31d_ingest,controlled_test_output/tier4_31d_hw_20260506_hardware_pass_ingested/tier4_31d_hw_results.json,pass,canonical ingest wrapper,returned artifacts 21; ingest criteria 5/5
+tier4_29e_native_replay_bridge,controlled_test_output/tier4_29e_20260505_pass_ingested/tier4_29e_combined_results.json,pass,current bounded replay/consolidation hardware evidence,host-scheduled replay/consolidation works through native four-core state primitives; criteria 114/114
+tier5_9c_macro_eligibility_recheck,controlled_test_output/tier5_9c_20260429_190503/tier5_9c_results.json,fail,eligibility promotion guardrail,macro eligibility failed promotion/trace-ablation specificity and remains parked
+tier4_22g_event_indexed_trace_runtime,controlled_test_output/tier4_22g_20260430_event_indexed_trace_runtime/tier4_22g_results.json,pass,historical native eligibility substrate optimization,"repaired blockers ['SCALE-001', 'SCALE-002', 'SCALE-003']; open blockers ['SCALE-004', 'SCALE-005', 'SCALE-006', 'SCALE-007']"
+cra_evidence_baseline_v2_2,baselines/CRA_EVIDENCE_BASELINE_v2.2.json,frozen,current promoted software mechanism baseline,bounded host-side fading-memory temporal state; not yet full native v2.2 transfer
+cra_lifecycle_native_baseline_v0_4,baselines/CRA_LIFECYCLE_NATIVE_BASELINE_v0.4.json,frozen,current promoted native lifecycle baseline,lifecycle-native baseline already frozen separately; 4.31e does not supersede it

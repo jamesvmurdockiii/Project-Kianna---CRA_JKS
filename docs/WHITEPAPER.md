@@ -25,7 +25,7 @@ The project contains three integrated layers:
 3. A staged evidence system that records canonical results, failed diagnostics,
    frozen baselines, and claim boundaries.
 
-As of the current registry, CRA has 65 canonical evidence bundles with zero
+As of the current registry, CRA has 66 canonical evidence bundles with zero
 missing expected artifacts and zero failed criteria in canonical entries. The
 software program has validated negative controls, positive learning controls,
 architecture ablations, external-baseline comparisons, delayed-credit repairs,
@@ -50,6 +50,9 @@ C-owned temporal state, compact 48-byte readback, command codes 39-42,
 behavior-backed shams, profile ownership guards, and local C host tests. Tier
 4.31d-hw passed the first one-board SpiNNaker hardware smoke for that temporal
 subset with compact payload length 48 and enabled/zero/frozen/reset controls.
+Tier 4.31e then passed a replay/eligibility decision closeout, deferring native
+replay buffers, sleep-like replay, and native macro eligibility until measured
+blockers justify them, and authorizing Tier 4.32 mapping/resource modeling next.
 
 The current evidence supports a bounded research claim: CRA is a reproducible
 neuromorphic platform with demonstrated local learning, mechanism sensitivity,
@@ -58,8 +61,8 @@ constrained task capsules and native-runtime mechanism bridges. The evidence doe
 not establish general intelligence, universal superiority over baselines,
 production readiness, full multi-chip scaling, autonomous lifecycle-to-learning
 MCPL, repeatable/full native v2.2 temporal dynamics beyond the one-board
-seven-EMA smoke, or fully autonomous on-chip implementations of all promoted
-software mechanisms.
+seven-EMA smoke, native replay/sleep or native macro eligibility, or fully
+autonomous on-chip implementations of all promoted software mechanisms.
 
 ## Motivation
 

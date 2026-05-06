@@ -156,9 +156,10 @@ Tier 4.31c - Native Temporal-Substrate Runtime Source Audit
   Boundary: local source/runtime host evidence only; not hardware, not speedup,
     not nonlinear recurrence, not native replay/sleep, and not benchmark
     superiority.
-  Next: Tier 4.31e decision closeout for native replay/eligibility needs, then
-    Tier 4.32 mapping/resource model if no measured blocker demands new native
-    replay or eligibility work.
+  Next status: Tier 4.31d hardware smoke passed and Tier 4.31e local decision
+    closeout passed. Tier 4.32 mapping/resource model is current; native replay
+    buffers, sleep-like replay, and native macro eligibility remain deferred
+    until measured blockers demand them.
 ```
 
 Tier 4.28e Point A passed after ingest at:
@@ -537,6 +538,20 @@ returned artifacts preserved = 21
 temporal_payload_len = 48
 scenario_statuses = enabled/pass, zero_state/pass, frozen_state/pass, reset_each_update/pass
 synthetic_fallback_used = false
+```
+
+Current Tier 4.31e closeout:
+
+```text
+controlled_test_output/tier4_31e_20260506_native_replay_eligibility_decision_closeout/
+status = pass
+criteria = 15/15
+native_replay_buffers = deferred until measured resource/autonomy blocker
+native_sleep_like_replay = deferred until measured retention/interference blocker
+native_macro_eligibility = deferred until specific credit-assignment blocker
+tier4_31f = deferred
+tier4_32 = authorized next
+baseline_freeze = not authorized
 ```
 
 Earlier incomplete Tier 4.31d return:

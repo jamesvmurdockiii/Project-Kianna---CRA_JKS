@@ -6321,6 +6321,12 @@ Near-term roadmap insertion:
     zero-state, frozen-state, and reset-each-update shams all passed. First
     EBRAINS return was incomplete and remains preserved as non-evidence at
     `controlled_test_output/tier4_31d_hw_20260506_incomplete_return/`.
+21. Tier 4.31e native replay/eligibility decision closeout. COMPLETE:
+    local pass 15/15 at
+    `controlled_test_output/tier4_31e_20260506_native_replay_eligibility_decision_closeout/`;
+    native replay buffers, sleep-like replay, and native macro eligibility are
+    deferred until measured blockers exist; Tier 4.31f is deferred; Tier 4.32
+    mapping/resource modeling is authorized next; no baseline freeze.
 ```
 
 Tier 5.19a result:
@@ -6624,9 +6630,9 @@ Tests: test-temporal-state, test-profiles, test, test-lifecycle, test-lifecycle-
 Boundary: local source/runtime host evidence only, not hardware
 ```
 
-Next: Tier 4.31e native replay/eligibility decision closeout, then Tier 4.32
-      mapping/resource model if no measured blocker demands immediate native
-      replay-buffer or eligibility-trace implementation.
+Next: Tier 4.32 mapping/resource model over measured 4.27-4.31 hardware data.
+      Reopen native replay-buffer, sleep-like replay, or eligibility-trace
+      implementation only if a later measured blocker specifically demands it.
 ```
 
 Detailed Tier 5.19 contract:

@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-06T19:05:21+00:00.
+Last updated: 2026-05-06T20:28:16+00:00.
 
 Current repo root:
 
@@ -99,11 +99,12 @@ FROZEN: CRA_LIFECYCLE_NATIVE_BASELINE_v0.4
             temporal migration, not external-baseline superiority, and not
             language/planning/AGI/ASI.
 
-  Next: Tier 4.31e decision/closeout gate for native replay-buffer and
-        eligibility-trace timing. Tier 4.31d-hw now passed and is ingested at
-        `controlled_test_output/tier4_31d_hw_20260506_hardware_pass_ingested/`.
-        Use this as one-board temporal-state smoke evidence only; do not freeze
-        a new native baseline or claim full v2.2 transfer from it.
+  Next: Tier 4.32 mapping/resource model. Tier 4.31d-hw passed as one-board
+        temporal-state smoke evidence, and Tier 4.31e passed the replay/
+        eligibility closeout by deferring native replay buffers, sleep-like
+        replay, and native macro eligibility until measured blockers exist.
+        Do not freeze a new native baseline or claim full v2.2 transfer from
+        either gate.
 ```
 
 Current active tier state:
@@ -171,12 +172,25 @@ Tier 4.31d — COMPLETE. Native temporal-substrate hardware smoke.
     scaling, not nonlinear recurrence, not native replay/sleep, not native
     macro eligibility, and not full v2.2 hardware transfer.
 
-Tier 4.31e — CURRENT ACTIVE. Native replay/eligibility decision closeout.
+Tier 4.31e — COMPLETE. Native replay/eligibility decision closeout.
   Question: Do current promoted mechanisms expose a measured blocker that
     requires native replay buffers or native eligibility traces now?
-  Rule: make this a documented decision gate first, not an implementation by
-    momentum. If no measured blocker is present, proceed to Tier 4.32 mapping
-    and resource modeling using the measured 4.27-4.31 hardware data.
+  Status: LOCAL PASS, 15/15.
+  Output: controlled_test_output/tier4_31e_20260506_native_replay_eligibility_decision_closeout/
+  Decision: native replay buffers, native sleep-like replay, and native macro
+    eligibility are deferred until measured blockers exist. Tier 4.31f is
+    deferred. Tier 4.32 mapping/resource modeling is authorized next. No
+    baseline freeze.
+  Boundary: local decision evidence only; not hardware, not implementation, not
+    speedup, not multi-chip scaling, not native replay/sleep proof, not native
+    eligibility proof, and not full v2.2 hardware transfer.
+
+Tier 4.32 — CURRENT ACTIVE. Mapping/resource model over measured 4.27-4.31 data.
+  Question: What is the measured native-runtime resource and scaling envelope
+    before single-chip multi-core stress or multi-chip communication claims?
+  Required coverage: ITCM/DTCM, schedule length, lookup pressure, message bytes,
+    readback bytes, per-core utilization, state-slot limits, lifecycle masks,
+    temporal footprint, MCPL traffic, and failure classes.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware
@@ -659,14 +673,11 @@ Local build capability (established 2026-05-02):
 
 Immediate next steps:
 
-1. Close Tier 4.31d as hardware pass ingested and keep its boundary strict:
-   one-board C-owned seven-EMA temporal-state build/load/command/readback only.
-2. Run Tier 4.31e as a decision/closeout gate. Decide whether native replay
-   buffers or native eligibility traces are required now by measured blockers.
-   If no blocker exists, defer those implementations and proceed to Tier 4.32.
-3. Tier 4.32 should update the mapping/resource model with measured 4.27-4.31
+1. Keep Tier 4.31d/4.31e boundaries strict: one-board temporal-state smoke plus
+   local replay/eligibility decision closeout only, no new freeze.
+2. Tier 4.32 should update the mapping/resource model with measured 4.27-4.31
    hardware data before single-chip/multi-core scale stress.
-4. Keep the 4.31b/4.31c range refinement explicit: selected trace bound is ±2
+3. Keep the 4.31b/4.31c range refinement explicit: selected trace bound is ±2
    in s16.15; the older ±1 sketch saturated and must not silently return.
 5. Keep public repo hygiene green before the next upload or commit: no
    credentialed remotes, no `ebrains_jobs/` symlinks, no transient root output

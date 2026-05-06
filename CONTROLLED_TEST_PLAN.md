@@ -8886,3 +8886,20 @@ Boundary: one-board hardware smoke only; not repeatability, speedup, benchmark
 superiority, multi-chip scaling, nonlinear recurrence, native replay/sleep,
 native eligibility, or full v2.2 hardware transfer.
 ```
+
+Result:
+
+```text
+Tier 4.31e native replay/eligibility decision closeout passed locally at
+controlled_test_output/tier4_31e_20260506_native_replay_eligibility_decision_closeout/.
+Runner revision: tier4_31e_native_replay_eligibility_decision_20260506_0001.
+Criteria: 15/15.
+Decision: native replay buffers, sleep-like replay, and native macro
+eligibility are deferred until measured blockers exist.
+Tier 4.31f: deferred.
+Tier 4.32: authorized next.
+Baseline freeze: not authorized.
+Boundary: local documentation/decision evidence only; not hardware, not
+implementation, not speedup, not multi-chip scaling, not native replay/sleep
+proof, not native eligibility proof, and not full v2.2 hardware transfer.
+```
