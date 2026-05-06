@@ -20,14 +20,32 @@ Public repository hygiene rules live in
 
 ## Current Jobs
 
-### No pending Tier 4.31 temporal upload
+### `cra_431d`
 
-Tier 4.31c passed locally as a source/runtime audit for C-owned temporal state,
-but it is not an EBRAINS package and should not be uploaded. The next required
-work is Tier 4.31d temporal hardware smoke. Only prepare a new temporal upload
-folder for the one-board/one-seed smoke boundary, preserving the same compact
-readback length (`48`), command codes (`39-42`), enabled/zero/frozen/reset
-controls, and zero-fallback evidence rules.
+Status: **PREPARED / PENDING HARDWARE RUN** for Tier 4.31d native
+temporal-substrate hardware smoke.
+
+Purpose: Verify on one real SpiNNaker board that the C-owned seven-EMA temporal
+state from Tier 4.31c builds, loads, updates, and reads back through commands
+`39-42`. The probe checks compact temporal payload length `48`, exact
+fixed-point reference counters/checksums, and enabled versus zero/frozen/reset
+controls.
+
+Upload folder:
+
+```text
+ebrains_jobs/cra_431d
+```
+
+JobManager command:
+
+```text
+cra_431d/experiments/tier4_31d_native_temporal_hardware_smoke.py --mode run-hardware --output-dir tier4_31d_hw_job_output
+```
+
+Boundary: one-board hardware execution/readback smoke only. It is not speedup,
+benchmark superiority, multi-chip scaling, nonlinear recurrence, replay/sleep,
+or full v2.2 hardware-transfer evidence.
 
 ### `cra_430g`
 

@@ -312,6 +312,65 @@ class TestSDPPacketFormat(unittest.TestCase):
         self.assertEqual((arg1, arg2, arg3), (3, LIFECYCLE_EVENT_CLEAVAGE, 0))
         self.assertEqual(struct.unpack_from("<iiii", pkt, 26), (1, 2, 0, 0))
 
+    def test_temporal_payload_parser(self):
+        from coral_reef_spinnaker.python_host.colony_controller import (
+            CMD_TEMPORAL_READ_STATE,
+            ColonyController,
+            float_to_fp,
+        )
+
+        payload = bytearray(48)
+        payload[0] = CMD_TEMPORAL_READ_STATE
+        payload[1] = 0
+
+        def put_u32(offset, value):
+            payload[offset:offset + 4] = int(value).to_bytes(4, "little", signed=False)
+
+        def put_s32(offset, value):
+            payload[offset:offset + 4] = int(value).to_bytes(4, "little", signed=True)
+
+        put_u32(2, 1)
+        payload[6] = 7
+        payload[7] = 0
+        put_u32(8, 1811900589)
+        put_u32(12, 5)
+        put_u32(16, 0)
+        put_u32(20, 1)
+        put_u32(24, 0)
+        put_u32(28, 123456)
+        put_u32(32, abs(float_to_fp(0.75)))
+        put_s32(36, float_to_fp(-0.25))
+        put_s32(40, float_to_fp(0.125))
+        put_u32(44, 48)
+
+        state = ColonyController.parse_temporal_payload(bytes(payload))
+        self.assertTrue(state["success"])
+        self.assertEqual(state["schema_version"], 1)
+        self.assertEqual(state["trace_count"], 7)
+        self.assertEqual(state["timescale_checksum"], 1811900589)
+        self.assertEqual(state["payload_len"], 48)
+        self.assertEqual(state["update_count"], 5)
+        self.assertAlmostEqual(state["trace_abs_sum"], 0.75)
+        self.assertAlmostEqual(state["latest_input"], -0.25)
+        self.assertAlmostEqual(state["latest_novelty"], 0.125)
+
+    def test_temporal_update_packet_format(self):
+        from coral_reef_spinnaker.python_host.colony_controller import (
+            CMD_TEMPORAL_UPDATE,
+            ColonyController,
+            float_to_fp,
+        )
+
+        ctrl = ColonyController()
+        input_raw = float_to_fp(0.5)
+        pkt = ctrl._build_sdp(CMD_TEMPORAL_UPDATE, args=(input_raw, 0, 0))
+
+        self.assertEqual(len(pkt), 26)
+        cmd_rc, seq, arg1, arg2, arg3 = struct.unpack_from("<HHIII", pkt, 10)
+        self.assertEqual(cmd_rc, CMD_TEMPORAL_UPDATE)
+        self.assertEqual(seq, 0)
+        self.assertEqual((arg1, arg2, arg3), (input_raw, 0, 0))
+
 
 class TestBackendConformance(unittest.TestCase):
     """Verify backend_factory.py detects backends and exposes a uniform API."""

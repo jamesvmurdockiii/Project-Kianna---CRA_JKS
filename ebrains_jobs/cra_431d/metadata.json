@@ -1,0 +1,16 @@
+{
+  "claim_boundary": "Prepared source bundle only. Hardware evidence requires returned run-hardware artifacts from EBRAINS/SpiNNaker.",
+  "controls": [
+    "enabled",
+    "zero_state",
+    "frozen_state",
+    "reset_each_update"
+  ],
+  "job_command": "cra_431d/experiments/tier4_31d_native_temporal_hardware_smoke.py --mode run-hardware --output-dir tier4_31d_hw_job_output",
+  "prepared_at_utc": "2026-05-06T17:56:56+00:00",
+  "runner": "experiments/tier4_31d_native_temporal_hardware_smoke.py",
+  "runner_revision": "tier4_31d_native_temporal_hardware_smoke_20260506_0001",
+  "temporal_payload_len": 48,
+  "tier": "Tier 4.31d - Native Temporal-Substrate Hardware Smoke",
+  "upload_package": "cra_431d"
+}

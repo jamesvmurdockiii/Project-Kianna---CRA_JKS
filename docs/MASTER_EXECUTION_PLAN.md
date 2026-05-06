@@ -748,7 +748,9 @@ ability.
 50. **CURRENT ACTIVE STEP** - Tier 4.31d native temporal-substrate hardware smoke:
     one board, one seed, one minimal temporal-state task, explicit enabled versus
     zero/frozen/reset controls, compact payload_len=48, zero fallback, and real
-    readback. Do not claim full benchmark performance or speedup from a smoke.
+    readback. Prepared package: `ebrains_jobs/cra_431d`; JobManager command:
+    `cra_431d/experiments/tier4_31d_native_temporal_hardware_smoke.py --mode run-hardware --output-dir tier4_31d_hw_job_output`.
+    Do not claim full benchmark performance or speedup from a smoke.
 
 51. Tier 4.31e native replay-buffer / sleep-like replay decision: only if the
     software replay/consolidation path still needs chip-owned buffers for scale
@@ -997,7 +999,7 @@ After each completed run or design tier:
 The next concrete action is:
 
 ```text
-Tier 4.31d native temporal-substrate hardware smoke: prepare and run a compact
+Tier 4.31d native temporal-substrate hardware smoke: run the prepared compact
 one-board/one-seed EBRAINS probe for the C-owned seven-EMA temporal state from
 Tier 4.31c.
 ```

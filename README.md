@@ -2,7 +2,7 @@
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
-[![Tests](https://img.shields.io/badge/tests-149%20passing-brightgreen.svg)](#validation)
+[![Tests](https://img.shields.io/badge/tests-151%20passing-brightgreen.svg)](#validation)
 [![Evidence](https://img.shields.io/badge/canonical%20evidence-64%20bundles-blue.svg)](STUDY_EVIDENCE_INDEX.md)
 
 Coral Reef Architecture (CRA) is a neuromorphic learning research platform for
@@ -29,11 +29,11 @@ controlled ablations, baseline comparisons, and explicit claim boundaries.
 | Latest lifecycle runtime source audit | Tier 4.30b passed `13/13`: runtime lifecycle static-pool surface, exact 4.30a checksum parity, lifecycle SDP readback, and existing runtime/profile tests preserved. |
 | Latest multi-core lifecycle split | Tier 4.30c passed `22/22`: five-core lifecycle ownership contract, MCPL/multicast-target message semantics, final active-mask sync, exact canonical/boundary parity, and distributed failure classes. |
 | Latest multi-core lifecycle runtime source audit | Tier 4.30d passed `14/14`: dedicated `lifecycle_core` runtime profile, lifecycle inter-core stubs/counters, active-mask/count/lineage sync bookkeeping, ownership guards, and local C host tests against the 4.30c contract. |
-| Latest prepared EBRAINS package | No active EBRAINS package is pending after Tier 4.31c. The next step is Tier 4.31d native temporal-substrate hardware smoke preparation/run. |
+| Latest prepared EBRAINS package | Tier 4.31d-hw is prepared as source-only upload folder [`ebrains_jobs/cra_431d`](ebrains_jobs/cra_431d). Run `cra_431d/experiments/tier4_31d_native_temporal_hardware_smoke.py --mode run-hardware --output-dir tier4_31d_hw_job_output` in EBRAINS/JobManager. |
 | Latest temporal-native readiness | Tier 4.31a passed `24/24`, scoping the first native v2.2 temporal migration to seven causal fixed-point EMA traces. Tier 4.31b passed `16/16` with fixed/float ratio `0.9987474666079806` and zero selected saturations. Tier 4.31c passed `17/17`, adding C-owned temporal state, command codes `39-42`, compact temporal readback length `48`, behavior-backed shams, profile ownership guards, and local C host tests. |
-| Active next gate | Tier 4.31d native temporal-substrate hardware smoke: prepare and run a one-board/one-seed compact temporal-state probe with explicit controls. It should prove board execution/readback only, not benchmark superiority or speedup. |
+| Active next gate | Tier 4.31d native temporal-substrate hardware smoke: run the prepared one-board/one-seed compact temporal-state probe with enabled/zero/frozen/reset controls. It should prove board execution/readback only, not benchmark superiority or speedup. |
 | Canonical registry | 64 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
-| Validation suite | 149 pytest tests plus registry, paper-table, and repository-audit generation. |
+| Validation suite | 151 pytest tests plus registry, paper-table, and repository-audit generation. |
 
 ## What CRA Implements
 

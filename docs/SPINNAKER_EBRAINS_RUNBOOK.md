@@ -132,7 +132,10 @@ runner = experiments/tier4_30g_lifecycle_task_benefit_resource_bridge.py
 Latest prepared EBRAINS upload package:
 
 ```text
-No active EBRAINS package is pending. Tier 4.31c local source/runtime audit passed; next step is Tier 4.31d temporal hardware smoke package/run.
+Tier 4.31d - Native Temporal-Substrate Hardware Smoke
+upload = ebrains_jobs/cra_431d
+status = prepared locally; not hardware evidence yet
+runner = experiments/tier4_31d_native_temporal_hardware_smoke.py
 ```
 
 Latest local temporal-native gate:
@@ -147,7 +150,7 @@ Tier 4.31c - Native Temporal-Substrate Runtime Source Audit
   Boundary: local source/runtime host evidence only; not hardware, not speedup,
     not nonlinear recurrence, not native replay/sleep, and not benchmark
     superiority.
-  Next: Tier 4.31d temporal hardware smoke package/run.
+  Next: run prepared Tier 4.31d temporal hardware smoke package `cra_431d`.
 ```
 
 Tier 4.28e Point A passed after ingest at:
@@ -501,12 +504,16 @@ For the current custom-runtime job, use the generated source-only folder under
 
 ## Current EBRAINS Command
 
-No EBRAINS command is currently pending. Tier 4.31c local temporal-substrate
-source/runtime audit passed and did not create a hardware package. The next step
-is Tier 4.31d hardware smoke preparation/run. Create a new source-only
-`ebrains_jobs/` package only after the one-board smoke command, compact
-payload/readback checks, enabled versus temporal-sham controls, and claim
-boundary are defined.
+Upload the source-only folder `ebrains_jobs/cra_431d` and run this exact
+JobManager command:
+
+```text
+cra_431d/experiments/tier4_31d_native_temporal_hardware_smoke.py --mode run-hardware --output-dir tier4_31d_hw_job_output
+```
+
+Do not upload `controlled_test_output`. This is a one-board/one-seed smoke for
+temporal commands `39-42`, compact payload length `48`, and enabled versus
+zero/frozen/reset controls only.
 
 Last Tier 4.30g command used:
 

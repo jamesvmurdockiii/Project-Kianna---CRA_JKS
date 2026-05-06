@@ -6312,9 +6312,10 @@ Near-term roadmap insertion:
 19. Tier 4.31c native temporal-substrate source/runtime implementation. COMPLETE:
     local pass 17/17; C-owned seven-EMA temporal state, compact 48-byte readback,
     behavior-backed shams, ownership guards, and local C host tests passed.
-20. Tier 4.31d native temporal-substrate hardware smoke. NEXT:
-    one board / one seed compact hardware probe with enabled versus temporal
-    shams, zero fallback, and real readback.
+20. Tier 4.31d native temporal-substrate hardware smoke. NEXT/PREPARED:
+    source-only upload `ebrains_jobs/cra_431d`; one board / one seed compact
+    hardware probe with enabled versus temporal shams, zero fallback, and real
+    readback.
 ```
 
 Tier 5.19a result:
@@ -6618,8 +6619,8 @@ Tests: test-temporal-state, test-profiles, test, test-lifecycle, test-lifecycle-
 Boundary: local source/runtime host evidence only, not hardware
 ```
 
-Next: Tier 4.31d native temporal-substrate hardware smoke before any repeatability
-      or resource-characterization claim.
+Next: Run prepared Tier 4.31d native temporal-substrate hardware smoke before
+      any repeatability or resource-characterization claim.
 ```
 
 Detailed Tier 5.19 contract:

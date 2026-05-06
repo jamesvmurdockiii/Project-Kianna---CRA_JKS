@@ -8873,7 +8873,8 @@ eligibility, or benchmark superiority.
 Next:
 
 ```text
-Tier 4.31d native temporal-substrate hardware smoke. Prepare and run a one-board,
-one-seed compact hardware probe with enabled versus temporal shams, payload_len
-48, zero fallback, and real readback. Treat this as smoke evidence only.
+Tier 4.31d native temporal-substrate hardware smoke. Prepared source-only
+upload: ebrains_jobs/cra_431d. Run one board, one seed, compact hardware probe
+with enabled versus temporal shams, payload_len 48, zero fallback, and real
+readback. Treat this as smoke evidence only.
 ```
