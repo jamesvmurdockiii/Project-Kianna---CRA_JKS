@@ -373,7 +373,21 @@ def clean_copy_tree(src: Path, dst: Path) -> None:
         shutil.rmtree(dst)
 
     def ignore(_dir: str, names: list[str]) -> set[str]:
-        ignored = {"__pycache__", ".pytest_cache", "build", "test_runtime"}
+        generated_host_tests = {
+            "test_runtime",
+            "test_context_core",
+            "test_route_core",
+            "test_memory_core",
+            "test_learning_core",
+            "test_lifecycle_core",
+            "test_four_core_local",
+            "test_four_core_48event",
+            "test_mcpl_feasibility",
+            "test_lifecycle",
+            "test_lifecycle_split",
+            "test_temporal_state",
+        }
+        ignored = {"__pycache__", ".pytest_cache", "build"} | generated_host_tests
         return {name for name in names if name in ignored or name.endswith((".pyc", ".o", ".aplx", ".elf"))}
 
     shutil.copytree(src, dst, ignore=ignore)
