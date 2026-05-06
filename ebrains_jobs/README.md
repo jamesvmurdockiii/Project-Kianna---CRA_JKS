@@ -20,6 +20,40 @@ Public repository hygiene rules live in
 
 ## Current Jobs
 
+### `cra_430g`
+
+Status: **PREPARED / WAITING FOR EBRAINS RUN** for Tier 4.30g lifecycle
+task-benefit/resource bridge.
+
+Purpose: Verify on real SpiNNaker that native lifecycle state can be ferried
+into the bounded task-bearing context/route/memory/learning path. Enabled
+lifecycle must open the bridge gate; fixed-pool, random replay, active-mask
+shuffle, no-trophic, and no-dopamine/no-plasticity controls must close it.
+
+Upload folder:
+
+```text
+ebrains_jobs/cra_430g
+```
+
+JobManager command:
+
+```text
+cra_430g/experiments/tier4_30g_lifecycle_task_benefit_resource_bridge.py --mode run-hardware --output-dir tier4_30g_hw_job_output
+```
+
+Prepared artifact:
+
+```text
+controlled_test_output/tier4_30g_hw_20260506_prepared/
+```
+
+Boundary: prepared source bundle only. It is not hardware evidence until
+returned artifacts pass ingest. The run is still a host-ferried bridge, not
+autonomous lifecycle-to-learning MCPL, not speedup, not multi-chip scaling, and
+not a lifecycle baseline freeze.
+
+
 ### `cra_430f`
 
 Status: **HARDWARE PASS / INGESTED** for Tier 4.30f lifecycle sham-control
@@ -70,8 +104,7 @@ Returned artifacts preserved: 35
 Boundary: this is a compact lifecycle sham-control hardware subset, not full
 Tier 6.3 hardware, not lifecycle task-benefit evidence, not speedup evidence,
 not multi-chip scaling, and not a baseline freeze. Tier 4.30g local contract now
-passes; no new EBRAINS package is pending until the 4.30g hardware
-runner/source checks are implemented and validated.
+passes and `cra_430g` is prepared for the hardware task-benefit/resource bridge.
 
 ### `cra_430e`
 

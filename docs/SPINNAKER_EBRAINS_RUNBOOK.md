@@ -27,17 +27,20 @@ Latest active hardware-facing tier:
 
 ```text
 Tier 4.30g - Lifecycle Task-Benefit / Resource Bridge
-  Status: LOCAL CONTRACT PASS; hardware package not prepared yet.
-  Output: controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/
+  Status: PREPARED; waiting for EBRAINS hardware run.
+  Local output: controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/
+  Prepared output: controlled_test_output/tier4_30g_hw_20260506_prepared/
+  Upload folder: ebrains_jobs/cra_430g
   Runner: experiments/tier4_30g_lifecycle_task_benefit_resource_bridge.py
-  Criteria: 9/9
+  Local criteria: 9/9
+  Prepare criteria: 7/7
+  Command:
+    cra_430g/experiments/tier4_30g_lifecycle_task_benefit_resource_bridge.py --mode run-hardware --output-dir tier4_30g_hw_job_output
   Purpose: connect native lifecycle state to a task-bearing capsule and compare
     enabled lifecycle against predeclared controls while recording
     resource/readback accounting.
-  Local result: enabled gate open with tail accuracy 1.0; all five controls
-    gate closed with tail accuracy ceiling 0.375; resource fields declared.
-  Boundary: local contract/reference only until hardware package/run returns;
-    no lifecycle baseline freeze unless hardware task effect, controls, and
+  Boundary: prepared source bundle only until hardware package/run returns; no
+    lifecycle baseline freeze unless hardware task effect, controls, and
     resource evidence pass.
 
 Tier 4.30f - Lifecycle Sham-Control Hardware Subset
@@ -120,8 +123,7 @@ runner = experiments/tier4_30f_lifecycle_sham_hardware_subset.py
 Latest prepared EBRAINS upload package:
 
 ```text
-None. Tier 4.30g local contract passed. Create the next upload package only
-after adding and validating the 4.30g hardware runner/source checks.
+Tier 4.30g package is prepared: `ebrains_jobs/cra_430g`.
 ```
 
 Tier 4.28e Point A passed after ingest at:
@@ -475,9 +477,12 @@ For the current custom-runtime job, use the generated source-only folder under
 
 ## Current EBRAINS Command
 
-No EBRAINS package is currently pending after the Tier 4.30g local contract
-pass. The next upload package should not be created until the 4.30g hardware
-runner/source checks are implemented and validated.
+Tier 4.30g package is prepared and pending hardware execution. Upload
+`ebrains_jobs/cra_430g` as folder `cra_430g` and run:
+
+```text
+cra_430g/experiments/tier4_30g_lifecycle_task_benefit_resource_bridge.py --mode run-hardware --output-dir tier4_30g_hw_job_output
+```
 
 Last Tier 4.30f command used:
 

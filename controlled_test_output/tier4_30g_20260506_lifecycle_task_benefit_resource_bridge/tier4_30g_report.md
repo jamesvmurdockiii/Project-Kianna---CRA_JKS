@@ -1,6 +1,6 @@
 # Tier 4.30g - Lifecycle Task-Benefit / Resource Bridge Findings
 
-- Generated: `2026-05-06T02:51:44+00:00`
+- Generated: `2026-05-06T03:09:56+00:00`
 - Status: **PASS**
 - Runner revision: `tier4_30g_lifecycle_task_benefit_resource_bridge_20260506_0001`
 - Output directory: `controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge`
@@ -14,7 +14,7 @@
 - The enabled lifecycle summary must expose intact structural state and trophic readiness.
 - Controls are allowed to run, but their lifecycle-derived task gate must close.
 - The local task path uses the closed/open lifecycle gate as a bounded memory-slot feature.
-- Hardware preparation is intentionally deferred until this contract is green.
+- Hardware package preparation is allowed only after this local contract is green.
 
 ## Mode Summary
 
@@ -49,4 +49,3 @@
 - `bridge_features_csv`: `controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/tier4_30g_bridge_features.csv`
 - `task_trace_csv`: `controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/tier4_30g_task_trace.csv`
 - `resource_accounting_csv`: `controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/tier4_30g_resource_accounting.csv`
-

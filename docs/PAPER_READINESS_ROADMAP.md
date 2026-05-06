@@ -6236,11 +6236,12 @@ bounded host-side fading-memory temporal state only; bounded nonlinear
 recurrence, universal benchmark superiority, and native/on-chip temporal
 dynamics remain unproven. Tier 4.30-readiness through Tier 4.30g then advanced
 the lifecycle-native path on top of `CRA_NATIVE_MECHANISM_BRIDGE_v0.3`, with
-v2.2 retained as a software reference boundary only. Tier 4.30g is currently a
-local task-benefit/resource bridge contract, not hardware task-benefit evidence.
-The current next hardware gate is the Tier 4.30g hardware task-benefit/resource
-package/run. Do not move Tier 7.0 benchmark workloads to hardware under the
-current interface.
+v2.2 retained as a software reference boundary only. Tier 4.30g has a local
+task-benefit/resource bridge pass and a prepared source-only EBRAINS package;
+it is not hardware task-benefit evidence until returned hardware artifacts pass
+ingest. The current next hardware gate is the Tier 4.30g EBRAINS run/ingest.
+Do not move Tier 7.0 benchmark workloads to hardware under the current
+interface.
 ```
 
 Paper implication:
@@ -6294,9 +6295,10 @@ Near-term roadmap insertion:
 14. Tier 4.30g lifecycle task-benefit/resource bridge local contract/reference.
     COMPLETE: 9/9 local pass with enabled gate open, all controls gated closed,
     and resource/readback fields declared.
-15. Tier 4.30g hardware task-benefit/resource bridge. NEXT: prepare/run only
-    after hardware runner/source checks; no lifecycle native baseline freeze
-    until hardware task effect and resource/readback accounting pass.
+15. Tier 4.30g hardware task-benefit/resource bridge. NEXT: run the prepared
+    `ebrains_jobs/cra_430g` source package on EBRAINS and ingest returned
+    artifacts; no lifecycle native baseline freeze until hardware task effect
+    and resource/readback accounting pass.
 ```
 
 Tier 5.19a result:
@@ -6528,9 +6530,10 @@ Boundary: compact lifecycle sham-control hardware subset only, not full Tier 6.3
           multi-chip scaling, not v2.2 temporal-state migration, and not a
           lifecycle baseline freeze.
 Next: Tier 4.30g lifecycle task-benefit/resource bridge local contract/reference
-      has passed. Prepare/run the hardware task-benefit/resource bridge only
-      after hardware runner/source checks preserve the same enabled/control
-      contract and resource/readback accounting.
+      has passed and the hardware source package is prepared at
+      `ebrains_jobs/cra_430g`. Run the prepared package on EBRAINS, then ingest
+      returned artifacts to evaluate hardware task effect and resource/readback
+      accounting.
 ```
 
 Tier 4.30g result:
@@ -6550,8 +6553,8 @@ Boundary: local contract/reference only, not hardware task-benefit evidence,
           not autonomous lifecycle-to-learning MCPL, not speedup, not
           multi-chip scaling, not v2.2 temporal-state migration, and not a
           lifecycle baseline freeze.
-Next: Tier 4.30g hardware task-benefit/resource bridge package/run after
-      hardware runner/source validation.
+Next: Tier 4.30g hardware task-benefit/resource bridge EBRAINS run/ingest.
+      Prepared folder: `ebrains_jobs/cra_430g`. Command: `cra_430g/experiments/tier4_30g_lifecycle_task_benefit_resource_bridge.py --mode run-hardware --output-dir tier4_30g_hw_job_output`.
 ```
 
 Detailed Tier 5.19 contract:

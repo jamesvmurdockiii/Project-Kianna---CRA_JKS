@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-05T22:55:00-04:00.
+Last updated: 2026-05-05T23:07:00-04:00.
 
 Current repo root:
 
@@ -144,11 +144,22 @@ FROZEN: CRA_NATIVE_MECHANISM_BRIDGE_v0.3
         task-benefit evidence, not autonomous lifecycle-to-learning MCPL, not
         speedup, not multi-chip scaling, not v2.2 temporal migration, and not a
         lifecycle baseline freeze.
-  Next: Prepare and run the Tier 4.30g hardware task-benefit/resource bridge
-        only after adding and validating the hardware runner/source checks. The
-        EBRAINS package must preserve the same enabled/control task contract,
-        include returned resource/readback accounting, and keep the narrow claim
-        boundary unless hardware task-effect evidence passes.
+  Current: Tier 4.30g hardware task-benefit/resource bridge PREPARED.
+        Prepared output:
+        `controlled_test_output/tier4_30g_hw_20260506_prepared/`.
+        Upload folder: `ebrains_jobs/cra_430g`.
+        Runner:
+        `experiments/tier4_30g_lifecycle_task_benefit_resource_bridge.py`.
+        Prepare criteria: 7/7.
+        JobManager command:
+        `cra_430g/experiments/tier4_30g_lifecycle_task_benefit_resource_bridge.py --mode run-hardware --output-dir tier4_30g_hw_job_output`.
+        Boundary: prepared source bundle only; not hardware evidence until
+        returned EBRAINS artifacts pass ingest.
+  Next: User should upload `ebrains_jobs/cra_430g` as folder `cra_430g`, run the
+        command above in EBRAINS JobManager, download all returned files, and
+        then ingest them. The run must preserve the same enabled/control task
+        contract, include returned resource/readback accounting, and keep the
+        narrow claim boundary unless hardware task-effect evidence passes.
         Lifecycle hardware layers initially on CRA_NATIVE_MECHANISM_BRIDGE_v0.3,
         with v2.2 as a software reference boundary only. Temporal-state hardware
         migration is not automatic from v2.2; it requires a separately defined
@@ -631,9 +642,9 @@ Local build capability (established 2026-05-02):
 
 Immediate next steps:
 
-1. Prepare and run the Tier 4.30g hardware task-benefit/resource bridge after
-   the local 4.30g contract pass. Do not freeze a lifecycle native baseline from
-   local 4.30g alone; hardware task-effect evidence is still required.
+1. Run the prepared Tier 4.30g hardware task-benefit/resource bridge on EBRAINS.
+   Upload `ebrains_jobs/cra_430g` as folder `cra_430g` and use `cra_430g/experiments/tier4_30g_lifecycle_task_benefit_resource_bridge.py --mode run-hardware --output-dir tier4_30g_hw_job_output`. Do not
+   freeze a lifecycle native baseline until returned hardware artifacts pass ingest.
 2. Keep sham/control commands behavior-backed. A readback flag alone is not
    reviewer-defensible; local C host tests must prove the control changes the
    intended counters/checksums before a package is uploaded.

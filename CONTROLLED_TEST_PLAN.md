@@ -8421,8 +8421,9 @@ Next step:
 Tier 4.30e multi-core lifecycle hardware smoke passed and has been ingested.
 Tier 4.30f lifecycle sham-control hardware subset also passed after ingest.
 Tier 4.30g lifecycle task-benefit/resource bridge local contract/reference also
-passed. Next: prepare/run the Tier 4.30g hardware task-benefit/resource bridge
-after hardware runner/source validation.
+passed. The Tier 4.30g hardware task-benefit/resource bridge source package is
+now prepared at `ebrains_jobs/cra_430g` after hardware runner/source validation.
+Next: run the prepared package on EBRAINS and ingest returned artifacts.
 ```
 
 ### Tier 4.30e - Multi-Core Lifecycle Hardware Smoke
@@ -8742,15 +8743,16 @@ claim boundary overstates hardware or lifecycle-baseline evidence
 Boundary:
 
 ```text
-Tier 4.30g is local contract/reference evidence only. It is not hardware
-task-benefit evidence, not autonomous lifecycle-to-learning MCPL, not speedup,
-not multi-chip scaling, not v2.2 temporal-state migration, and not a lifecycle
-baseline freeze.
+Tier 4.30g currently has local contract/reference evidence plus a prepared
+source-only EBRAINS package. It is not hardware task-benefit evidence, not
+autonomous lifecycle-to-learning MCPL, not speedup, not multi-chip scaling, not
+v2.2 temporal-state migration, and not a lifecycle baseline freeze until
+returned hardware artifacts pass ingest.
 ```
 
 Next:
 
 ```text
-Prepare and run the Tier 4.30g hardware task-benefit/resource bridge only after
-adding and validating the hardware runner/source checks.
+Run the prepared Tier 4.30g hardware task-benefit/resource bridge on EBRAINS,
+then ingest returned artifacts. Command: `cra_430g/experiments/tier4_30g_lifecycle_task_benefit_resource_bridge.py --mode run-hardware --output-dir tier4_30g_hw_job_output`.
 ```
