@@ -1,11 +1,11 @@
 # Tier 4.31d EBRAINS Native Temporal-Substrate Hardware Smoke
 
-Upload the `cra_431d` folder itself so the JobManager path starts with `cra_431d/`. Do not upload `controlled_test_output`.
+Upload the `cra_431d_r1` folder itself so the JobManager path starts with `cra_431d_r1/`. Do not upload `controlled_test_output`.
 
 JobManager command:
 
 ```text
-cra_431d/experiments/tier4_31d_native_temporal_hardware_smoke.py --mode run-hardware --output-dir tier4_31d_hw_job_output
+cra_431d_r1/experiments/tier4_31d_native_temporal_hardware_smoke.py --mode run-hardware --output-dir tier4_31d_hw_job_output
 ```
 
 Runner revision: `tier4_31d_native_temporal_hardware_smoke_20260506_0003`.

@@ -748,8 +748,8 @@ ability.
 50. **CURRENT ACTIVE STEP** - Tier 4.31d native temporal-substrate hardware smoke:
     one board, one seed, one minimal temporal-state task, explicit enabled versus
     zero/frozen/reset controls, compact payload_len=48, zero fallback, and real
-    readback. Prepared package: `ebrains_jobs/cra_431d`; JobManager command:
-    `cra_431d/experiments/tier4_31d_native_temporal_hardware_smoke.py --mode run-hardware --output-dir tier4_31d_hw_job_output`.
+    readback. Prepared package: `ebrains_jobs/cra_431d_r1`; JobManager command:
+    `cra_431d_r1/experiments/tier4_31d_native_temporal_hardware_smoke.py --mode run-hardware --output-dir tier4_31d_hw_job_output`.
     First EBRAINS return was incomplete: two partial artifacts came back
     (`tier4_31d_test_profiles_stdout.txt`, `coral_reef (26).elf`) but no
     `tier4_31d_hw_results.json`, so it is not hardware evidence. The partial
@@ -1051,7 +1051,7 @@ passed source/runtime implementation, compact readback, and local C host tests
 against the 4.31b reference. For 4.31d, keep the boundary strict: one-board
 temporal-state hardware smoke only; not nonlinear recurrence, not speedup, not
 multi-chip scaling, not benchmark superiority, and not full organism autonomy.
-The current rerun package is `ebrains_jobs/cra_431d`, runner revision
+The current rerun package is `ebrains_jobs/cra_431d_r1`, runner revision
 `tier4_31d_native_temporal_hardware_smoke_20260506_0003`.
 ```
 

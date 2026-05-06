@@ -1,26 +1,23 @@
 {
   "artifacts": {
-    "report_md": "/private/tmp/tier4_31d_runner_failure_repro_v3/tier4_31d_hw_report.md",
-    "results_json": "/private/tmp/tier4_31d_runner_failure_repro_v3/tier4_31d_hw_results.json",
-    "summary_csv": "/private/tmp/tier4_31d_runner_failure_repro_v3/tier4_31d_hw_summary.csv"
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_prepared/tier4_31d_hw_report.md",
+    "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_prepared/tier4_31d_hw_results.json",
+    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_prepared/tier4_31d_hw_summary.csv"
   },
-  "build": {
-    "aplx_artifact": "/private/tmp/tier4_31d_runner_failure_repro_v3/coral_reef_learning_core_temporal.aplx",
-    "aplx_exists": true,
-    "base_aplx_exists": true,
-    "base_elf_exists": true,
-    "command": "make -C /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime clean all",
-    "returncode": 0,
-    "runtime_profile": "learning_core",
-    "runtime_seconds": 0.6217204999999995,
-    "spinnaker_tools": "/tmp/spinnaker_tools",
-    "status": "pass",
-    "stderr_artifact": "/private/tmp/tier4_31d_runner_failure_repro_v3/tier4_31d_aplx_build_stderr.txt",
-    "stdout_artifact": "/private/tmp/tier4_31d_runner_failure_repro_v3/tier4_31d_aplx_build_stdout.txt",
-    "timed_out": false
+  "bundle_artifacts": {
+    "job_readme": "/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_prepared/ebrains_upload_bundle/cra_431d_r1/README_TIER4_31D_HW_JOB.md",
+    "stable_upload_folder": "/Users/james/JKS:CRA/ebrains_jobs/cra_431d_r1",
+    "upload_bundle": "/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_prepared/ebrains_upload_bundle/cra_431d_r1"
   },
-  "claim_boundary": "Tier 4.31d is a one-board native temporal-state hardware smoke. It proves build/load/command/readback of the C-owned seven-EMA temporal subset only; it does not prove speedup, benchmark superiority, multi-chip scaling, nonlinear recurrence, replay/sleep, or full v2.2 hardware transfer.",
+  "claim_boundary": "Prepared source bundle only; no hardware evidence until returned run-hardware artifacts pass.",
   "criteria": [
+    {
+      "name": "Tier 4.31c prerequisite passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
     {
       "name": "runtime temporal/profile host checks pass",
       "note": "",
@@ -36,482 +33,36 @@
       "value": 0
     },
     {
-      "name": "learning_core APLX build pass",
+      "name": "upload bundle created",
       "note": "",
       "passed": true,
-      "rule": "== pass",
-      "value": "pass"
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_prepared/ebrains_upload_bundle/cra_431d_r1"
     },
     {
-      "name": "hardware target configured",
+      "name": "stable upload folder created",
       "note": "",
       "passed": true,
-      "rule": "== pass",
-      "value": "pass"
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/ebrains_jobs/cra_431d_r1"
     },
     {
-      "name": "hardware load pass",
+      "name": "run-hardware command emitted",
       "note": "",
-      "passed": false,
-      "rule": "== pass",
-      "value": "not_attempted"
+      "passed": true,
+      "rule": "contains --mode run-hardware",
+      "value": "cra_431d_r1/experiments/tier4_31d_native_temporal_hardware_smoke.py --mode run-hardware --output-dir tier4_31d_hw_job_output"
     },
     {
-      "name": "temporal roundtrip pass",
+      "name": "bundle controller includes temporal parser",
       "note": "",
-      "passed": false,
-      "rule": "== pass",
-      "value": "fail"
-    },
-    {
-      "name": "all four temporal scenarios executed",
-      "note": "",
-      "passed": false,
-      "rule": "enabled/zero/frozen/reset all pass",
-      "value": {
-        "enabled": "fail",
-        "frozen_state": "fail",
-        "reset_each_update": "fail",
-        "zero_state": "fail"
-      }
-    },
-    {
-      "name": "enabled schema_version matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 1",
-      "value": null
-    },
-    {
-      "name": "enabled trace_count matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 7",
-      "value": null
-    },
-    {
-      "name": "enabled sham_mode matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 0",
-      "value": null
-    },
-    {
-      "name": "enabled timescale_checksum matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 1811900589",
-      "value": null
-    },
-    {
-      "name": "enabled update_count matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 16",
-      "value": null
-    },
-    {
-      "name": "enabled saturation_count matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 0",
-      "value": null
-    },
-    {
-      "name": "enabled reset_count matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 0",
-      "value": null
-    },
-    {
-      "name": "enabled input_clip_count matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 0",
-      "value": null
-    },
-    {
-      "name": "enabled trace_checksum matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 2782142982",
-      "value": null
-    },
-    {
-      "name": "enabled trace_abs_sum_raw matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 5086",
-      "value": null
-    },
-    {
-      "name": "enabled latest_input_raw matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== -4096",
-      "value": null
-    },
-    {
-      "name": "enabled latest_novelty_raw matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== -4342",
-      "value": null
-    },
-    {
-      "name": "enabled compact readback bytes monotonic",
-      "note": "",
-      "passed": false,
-      "rule": ">= 48 and multiple of 48",
-      "value": 0
-    },
-    {
-      "name": "zero_state schema_version matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 1",
-      "value": null
-    },
-    {
-      "name": "zero_state trace_count matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 7",
-      "value": null
-    },
-    {
-      "name": "zero_state sham_mode matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 1",
-      "value": null
-    },
-    {
-      "name": "zero_state timescale_checksum matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 1811900589",
-      "value": null
-    },
-    {
-      "name": "zero_state update_count matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 16",
-      "value": null
-    },
-    {
-      "name": "zero_state saturation_count matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 0",
-      "value": null
-    },
-    {
-      "name": "zero_state reset_count matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 1",
-      "value": null
-    },
-    {
-      "name": "zero_state input_clip_count matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 0",
-      "value": null
-    },
-    {
-      "name": "zero_state trace_checksum matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 0",
-      "value": null
-    },
-    {
-      "name": "zero_state trace_abs_sum_raw matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 0",
-      "value": null
-    },
-    {
-      "name": "zero_state latest_input_raw matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== -4096",
-      "value": null
-    },
-    {
-      "name": "zero_state latest_novelty_raw matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 0",
-      "value": null
-    },
-    {
-      "name": "zero_state compact readback bytes monotonic",
-      "note": "",
-      "passed": false,
-      "rule": ">= 48 and multiple of 48",
-      "value": 0
-    },
-    {
-      "name": "frozen_state schema_version matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 1",
-      "value": null
-    },
-    {
-      "name": "frozen_state trace_count matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 7",
-      "value": null
-    },
-    {
-      "name": "frozen_state sham_mode matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 2",
-      "value": null
-    },
-    {
-      "name": "frozen_state timescale_checksum matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 1811900589",
-      "value": null
-    },
-    {
-      "name": "frozen_state update_count matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 17",
-      "value": null
-    },
-    {
-      "name": "frozen_state saturation_count matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 0",
-      "value": null
-    },
-    {
-      "name": "frozen_state reset_count matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 0",
-      "value": null
-    },
-    {
-      "name": "frozen_state input_clip_count matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 0",
-      "value": null
-    },
-    {
-      "name": "frozen_state trace_checksum matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 3255268949",
-      "value": null
-    },
-    {
-      "name": "frozen_state trace_abs_sum_raw matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 17340",
-      "value": null
-    },
-    {
-      "name": "frozen_state latest_input_raw matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== -4096",
-      "value": null
-    },
-    {
-      "name": "frozen_state latest_novelty_raw matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== -4255",
-      "value": null
-    },
-    {
-      "name": "frozen_state compact readback bytes monotonic",
-      "note": "",
-      "passed": false,
-      "rule": ">= 48 and multiple of 48",
-      "value": 0
-    },
-    {
-      "name": "reset_each_update schema_version matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 1",
-      "value": null
-    },
-    {
-      "name": "reset_each_update trace_count matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 7",
-      "value": null
-    },
-    {
-      "name": "reset_each_update sham_mode matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 3",
-      "value": null
-    },
-    {
-      "name": "reset_each_update timescale_checksum matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 1811900589",
-      "value": null
-    },
-    {
-      "name": "reset_each_update update_count matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 16",
-      "value": null
-    },
-    {
-      "name": "reset_each_update saturation_count matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 0",
-      "value": null
-    },
-    {
-      "name": "reset_each_update reset_count matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 17",
-      "value": null
-    },
-    {
-      "name": "reset_each_update input_clip_count matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 0",
-      "value": null
-    },
-    {
-      "name": "reset_each_update trace_checksum matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 2744195752",
-      "value": null
-    },
-    {
-      "name": "reset_each_update trace_abs_sum_raw matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== 3471",
-      "value": null
-    },
-    {
-      "name": "reset_each_update latest_input_raw matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== -4096",
-      "value": null
-    },
-    {
-      "name": "reset_each_update latest_novelty_raw matches reference",
-      "note": "",
-      "passed": false,
-      "rule": "== -4159",
-      "value": null
-    },
-    {
-      "name": "reset_each_update compact readback bytes monotonic",
-      "note": "",
-      "passed": false,
-      "rule": ">= 48 and multiple of 48",
-      "value": 0
+      "passed": true,
+      "rule": "present",
+      "value": "parse_temporal_payload"
     }
   ],
-  "expected": {
-    "enabled": {
-      "input_clip_count": 0,
-      "latest_input": -0.125,
-      "latest_input_raw": -4096,
-      "latest_novelty": -0.13250732421875,
-      "latest_novelty_raw": -4342,
-      "reset_count": 0,
-      "saturation_count": 0,
-      "schema_version": 1,
-      "sham_mode": 0,
-      "timescale_checksum": 1811900589,
-      "trace_abs_sum": 0.15521240234375,
-      "trace_abs_sum_raw": 5086,
-      "trace_checksum": 2782142982,
-      "trace_count": 7,
-      "update_count": 16
-    },
-    "frozen_state": {
-      "input_clip_count": 0,
-      "latest_input": -0.125,
-      "latest_input_raw": -4096,
-      "latest_novelty": -0.129852294921875,
-      "latest_novelty_raw": -4255,
-      "reset_count": 0,
-      "saturation_count": 0,
-      "schema_version": 1,
-      "sham_mode": 2,
-      "timescale_checksum": 1811900589,
-      "trace_abs_sum": 0.5291748046875,
-      "trace_abs_sum_raw": 17340,
-      "trace_checksum": 3255268949,
-      "trace_count": 7,
-      "update_count": 17
-    },
-    "reset_each_update": {
-      "input_clip_count": 0,
-      "latest_input": -0.125,
-      "latest_input_raw": -4096,
-      "latest_novelty": -0.126922607421875,
-      "latest_novelty_raw": -4159,
-      "reset_count": 17,
-      "saturation_count": 0,
-      "schema_version": 1,
-      "sham_mode": 3,
-      "timescale_checksum": 1811900589,
-      "trace_abs_sum": 0.105926513671875,
-      "trace_abs_sum_raw": 3471,
-      "trace_checksum": 2744195752,
-      "trace_count": 7,
-      "update_count": 16
-    },
-    "zero_state": {
-      "input_clip_count": 0,
-      "latest_input": -0.125,
-      "latest_input_raw": -4096,
-      "latest_novelty": 0.0,
-      "latest_novelty_raw": 0,
-      "reset_count": 1,
-      "saturation_count": 0,
-      "schema_version": 1,
-      "sham_mode": 1,
-      "timescale_checksum": 1811900589,
-      "trace_abs_sum": 0.0,
-      "trace_abs_sum_raw": 0,
-      "trace_checksum": 0,
-      "trace_count": 7,
-      "update_count": 16
-    }
-  },
-  "failure_reason": "Failed criteria: hardware load pass, temporal roundtrip pass, all four temporal scenarios executed, enabled schema_version matches reference, enabled trace_count matches reference, enabled sham_mode matches reference, enabled timescale_checksum matches reference, enabled update_count matches reference, enabled saturation_count matches reference, enabled reset_count matches reference, enabled input_clip_count matches reference, enabled trace_checksum matches reference, enabled trace_abs_sum_raw matches reference, enabled latest_input_raw matches reference, enabled latest_novelty_raw matches reference, enabled compact readback bytes monotonic, zero_state schema_version matches reference, zero_state trace_count matches reference, zero_state sham_mode matches reference, zero_state timescale_checksum matches reference, zero_state update_count matches reference, zero_state saturation_count matches reference, zero_state reset_count matches reference, zero_state input_clip_count matches reference, zero_state trace_checksum matches reference, zero_state trace_abs_sum_raw matches reference, zero_state latest_input_raw matches reference, zero_state latest_novelty_raw matches reference, zero_state compact readback bytes monotonic, frozen_state schema_version matches reference, frozen_state trace_count matches reference, frozen_state sham_mode matches reference, frozen_state timescale_checksum matches reference, frozen_state update_count matches reference, frozen_state saturation_count matches reference, frozen_state reset_count matches reference, frozen_state input_clip_count matches reference, frozen_state trace_checksum matches reference, frozen_state trace_abs_sum_raw matches reference, frozen_state latest_input_raw matches reference, frozen_state latest_novelty_raw matches reference, frozen_state compact readback bytes monotonic, reset_each_update schema_version matches reference, reset_each_update trace_count matches reference, reset_each_update sham_mode matches reference, reset_each_update timescale_checksum matches reference, reset_each_update update_count matches reference, reset_each_update saturation_count matches reference, reset_each_update reset_count matches reference, reset_each_update input_clip_count matches reference, reset_each_update trace_checksum matches reference, reset_each_update trace_abs_sum_raw matches reference, reset_each_update latest_input_raw matches reference, reset_each_update latest_novelty_raw matches reference, reset_each_update compact readback bytes monotonic",
-  "generated_at_utc": "2026-05-06T18:45:17+00:00",
+  "failure_reason": "",
+  "generated_at_utc": "2026-05-06T18:50:47+00:00",
   "host_checks": {
     "status": "pass",
     "test_profiles": {
@@ -529,11 +80,8 @@
       "stdout": "rm -f tests/test_runtime tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_lifecycle_core tests/test_four_core_local tests/test_four_core_48event tests/test_mcpl_feasibility tests/test_lifecycle tests/test_lifecycle_split tests/test_temporal_state\ncc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 tests/test_temporal_state.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_temporal_state\n./tests/test_temporal_state\nRunning Tier 4.31c temporal-state tests...\n  PASS: temporal constants\n  PASS: temporal fixed-point mirror updates\n  PASS: temporal bounds and sham behavior\n  PASS: temporal compact host readback\nAll temporal-state tests passed.\n"
     }
   },
-  "load": {
-    "status": "not_attempted"
-  },
-  "mode": "run-hardware",
-  "output_dir": "/private/tmp/tier4_31d_runner_failure_repro_v3",
+  "mode": "prepare",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_prepared",
   "py_compile": {
     "command": "/Library/Developer/CommandLineTools/usr/bin/python3 -m py_compile experiments/tier4_31d_native_temporal_hardware_smoke.py",
     "returncode": 0,
@@ -541,161 +89,15 @@
     "stderr": "",
     "stdout": ""
   },
-  "roundtrip": {
-    "runtime_seconds": 0.40454320900000074,
-    "scenarios": {
-      "enabled": {
-        "final": {
-          "payload_len": 0,
-          "raw_hex": "",
-          "raw_len": 0,
-          "reason": "payload_too_short",
-          "received": false,
-          "success": false
-        },
-        "reason": "temporal_init_failed",
-        "status": "fail",
-        "trace": [
-          {
-            "action": "init",
-            "payload_len": 0,
-            "raw_hex": "",
-            "raw_len": 0,
-            "reason": "payload_too_short",
-            "received": false,
-            "scenario": "enabled",
-            "success": false
-          }
-        ]
-      },
-      "frozen_state": {
-        "final": {
-          "payload_len": 0,
-          "raw_hex": "",
-          "raw_len": 0,
-          "reason": "payload_too_short",
-          "received": false,
-          "success": false
-        },
-        "reason": "temporal_init_failed",
-        "status": "fail",
-        "trace": [
-          {
-            "action": "init",
-            "payload_len": 0,
-            "raw_hex": "",
-            "raw_len": 0,
-            "reason": "payload_too_short",
-            "received": false,
-            "scenario": "frozen_state",
-            "success": false
-          }
-        ]
-      },
-      "reset_each_update": {
-        "final": {
-          "payload_len": 0,
-          "raw_hex": "",
-          "raw_len": 0,
-          "reason": "payload_too_short",
-          "received": false,
-          "success": false
-        },
-        "reason": "temporal_init_failed",
-        "status": "fail",
-        "trace": [
-          {
-            "action": "init",
-            "payload_len": 0,
-            "raw_hex": "",
-            "raw_len": 0,
-            "reason": "payload_too_short",
-            "received": false,
-            "scenario": "reset_each_update",
-            "success": false
-          }
-        ]
-      },
-      "zero_state": {
-        "final": {
-          "payload_len": 0,
-          "raw_hex": "",
-          "raw_len": 0,
-          "reason": "payload_too_short",
-          "received": false,
-          "success": false
-        },
-        "reason": "temporal_init_failed",
-        "status": "fail",
-        "trace": [
-          {
-            "action": "init",
-            "payload_len": 0,
-            "raw_hex": "",
-            "raw_len": 0,
-            "reason": "payload_too_short",
-            "received": false,
-            "scenario": "zero_state",
-            "success": false
-          }
-        ]
-      }
-    },
-    "status": "fail"
-  },
   "runner_revision": "tier4_31d_native_temporal_hardware_smoke_20260506_0003",
-  "status": "fail",
+  "status": "prepared",
   "summary": {
-    "claim_boundary": "Tier 4.31d is a one-board native temporal-state hardware smoke. It proves build/load/command/readback of the C-owned seven-EMA temporal subset only; it does not prove speedup, benchmark superiority, multi-chip scaling, nonlinear recurrence, replay/sleep, or full v2.2 hardware transfer.",
-    "dest_cpu": 1,
-    "dest_x": 0,
-    "dest_y": 0,
-    "hardware_target_configured": true,
-    "hostname": "127.0.0.1",
-    "runtime_profile": "learning_core",
-    "scenario_statuses": {
-      "enabled": "fail",
-      "frozen_state": "fail",
-      "reset_each_update": "fail",
-      "zero_state": "fail"
-    },
-    "synthetic_fallback_used": false,
-    "target_method": "hostname_discovery",
-    "temporal_payload_len": 48
-  },
-  "target": {
-    "attempts": [
-      {
-        "dest_cpu": 1,
-        "dest_x": 0,
-        "dest_y": 0,
-        "hostname": "127.0.0.1",
-        "method": "hostname_discovery",
-        "notes": [
-          "from --spinnaker-hostname",
-          "requested dest_cpu was free"
-        ],
-        "occupied_cores": [],
-        "status": "pass",
-        "target_ipaddress": "127.0.0.1"
-      }
-    ],
-    "cleanup": {
-      "method": "hostname_discovery",
-      "status": "not_needed"
-    },
-    "dest_cpu": 1,
-    "dest_x": 0,
-    "dest_y": 0,
-    "hostname": "127.0.0.1",
-    "method": "hostname_discovery",
-    "notes": [
-      "from --spinnaker-hostname",
-      "requested dest_cpu was free"
-    ],
-    "occupied_cores": [],
-    "status": "pass",
-    "target_ipaddress": "127.0.0.1"
+    "claim_boundary": "Prepared source bundle only; no hardware evidence until returned run-hardware artifacts pass.",
+    "job_command": "cra_431d_r1/experiments/tier4_31d_native_temporal_hardware_smoke.py --mode run-hardware --output-dir tier4_31d_hw_job_output",
+    "stable_upload_folder": "/Users/james/JKS:CRA/ebrains_jobs/cra_431d_r1",
+    "upload_bundle": "/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_prepared/ebrains_upload_bundle/cra_431d_r1",
+    "upload_package": "cra_431d_r1",
+    "what_i_need_from_user": "Upload `cra_431d_r1` to EBRAINS/JobManager and run the emitted command."
   },
   "tier": "4.31d-hw",
   "tier_name": "Tier 4.31d - Native Temporal-Substrate Hardware Smoke"

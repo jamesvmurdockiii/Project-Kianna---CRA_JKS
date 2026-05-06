@@ -6313,7 +6313,7 @@ Near-term roadmap insertion:
     local pass 17/17; C-owned seven-EMA temporal state, compact 48-byte readback,
     behavior-backed shams, ownership guards, and local C host tests passed.
 20. Tier 4.31d native temporal-substrate hardware smoke. NEXT/PREPARED:
-    source-only upload `ebrains_jobs/cra_431d`; one board / one seed compact
+    source-only upload `ebrains_jobs/cra_431d_r1`; one board / one seed compact
     hardware probe with enabled versus temporal shams, zero fallback, and real
     readback. First EBRAINS return was incomplete, returning only profile-test
     stdout and an ARM ELF with no `tier4_31d_hw_results.json`; preserve it as

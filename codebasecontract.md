@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-06T18:40:53+00:00.
+Last updated: 2026-05-06T18:49:39+00:00.
 
 Current repo root:
 
@@ -102,7 +102,7 @@ FROZEN: CRA_LIFECYCLE_NATIVE_BASELINE_v0.4
   Next: Tier 4.31d native temporal-substrate hardware smoke.
         Tier 4.31c has proven C-owned seven-EMA temporal state locally.
         Tier 4.31d-hw is now prepared as source-only EBRAINS upload folder
-        `ebrains_jobs/cra_431d` with runner revision
+        `ebrains_jobs/cra_431d_r1` with runner revision
         `tier4_31d_native_temporal_hardware_smoke_20260506_0003` and the same
         compact readback/control boundary.
         Run only the emitted command in JobManager; do not upload
@@ -153,9 +153,9 @@ Tier 4.31d — CURRENT ACTIVE. Native temporal-substrate hardware smoke.
   Prepared output:
     controlled_test_output/tier4_31d_hw_20260506_prepared/
   Upload folder:
-    ebrains_jobs/cra_431d
+    ebrains_jobs/cra_431d_r1
   JobManager command:
-    cra_431d/experiments/tier4_31d_native_temporal_hardware_smoke.py --mode run-hardware --output-dir tier4_31d_hw_job_output
+    cra_431d_r1/experiments/tier4_31d_native_temporal_hardware_smoke.py --mode run-hardware --output-dir tier4_31d_hw_job_output
   Runner revision:
     tier4_31d_native_temporal_hardware_smoke_20260506_0003
   First EBRAINS return:
@@ -650,10 +650,10 @@ Local build capability (established 2026-05-02):
 Immediate next steps:
 
 1. Upload the prepared Tier 4.31d compact temporal-state hardware smoke package
-   from `ebrains_jobs/cra_431d`. Use the Tier 4.31c C runtime exactly; do not
+   from `ebrains_jobs/cra_431d_r1`. Use the Tier 4.31c C runtime exactly; do not
    add new temporal mechanics in the hardware runner.
 2. Run one board / one seed first with this exact JobManager command:
-   `cra_431d/experiments/tier4_31d_native_temporal_hardware_smoke.py --mode run-hardware --output-dir tier4_31d_hw_job_output`.
+   `cra_431d_r1/experiments/tier4_31d_native_temporal_hardware_smoke.py --mode run-hardware --output-dir tier4_31d_hw_job_output`.
    Required evidence: real SpiNNaker build/load,
    zero fallback, temporal init/update/readback, compact payload length 48,
    schema/checksum/update/saturation/reset/sham counters, and explicit enabled

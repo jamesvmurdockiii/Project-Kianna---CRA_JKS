@@ -49,7 +49,7 @@ DEFAULT_RUN_OUTPUT = CONTROLLED / f"tier4_31d_hw_{datetime.now(timezone.utc).str
 DEFAULT_INGEST_OUTPUT = CONTROLLED / "tier4_31d_hw_ingested"
 LATEST_MANIFEST = CONTROLLED / "tier4_31d_hw_latest_manifest.json"
 TIER431C_RESULTS = CONTROLLED / "tier4_31c_20260506_native_temporal_runtime_source_audit" / "tier4_31c_results.json"
-UPLOAD_PACKAGE_NAME = "cra_431d"
+UPLOAD_PACKAGE_NAME = "cra_431d_r1"
 STABLE_EBRAINS_UPLOAD = ROOT / "ebrains_jobs" / UPLOAD_PACKAGE_NAME
 
 FP_SHIFT = 15
@@ -468,9 +468,10 @@ def clean_copy_tree(src: Path, dst: Path) -> None:
 
 
 def prepare_bundle(output_dir: Path) -> tuple[Path, str, dict[str, str]]:
-    bundle = output_dir / "ebrains_upload_bundle" / UPLOAD_PACKAGE_NAME
-    if bundle.exists():
-        shutil.rmtree(bundle)
+    bundle_root = output_dir / "ebrains_upload_bundle"
+    if bundle_root.exists():
+        shutil.rmtree(bundle_root)
+    bundle = bundle_root / UPLOAD_PACKAGE_NAME
     (bundle / "experiments").mkdir(parents=True, exist_ok=True)
     (bundle / "coral_reef_spinnaker" / "python_host").mkdir(parents=True, exist_ok=True)
 

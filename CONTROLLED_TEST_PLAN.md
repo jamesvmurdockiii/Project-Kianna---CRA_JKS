@@ -8874,7 +8874,7 @@ Next:
 
 ```text
 Tier 4.31d native temporal-substrate hardware smoke. Prepared source-only
-upload: ebrains_jobs/cra_431d. Run one board, one seed, compact hardware probe
+upload: ebrains_jobs/cra_431d_r1. Run one board, one seed, compact hardware probe
 with enabled versus temporal shams, payload_len 48, zero fallback, and real
 readback. Treat this as smoke evidence only. The first EBRAINS return produced
 only profile-test stdout and an ARM ELF, with no tier results JSON; it is

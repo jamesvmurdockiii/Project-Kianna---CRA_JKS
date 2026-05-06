@@ -133,7 +133,7 @@ Latest prepared EBRAINS upload package:
 
 ```text
 Tier 4.31d - Native Temporal-Substrate Hardware Smoke
-upload = ebrains_jobs/cra_431d
+upload = ebrains_jobs/cra_431d_r1
 status = prepared locally; first EBRAINS return incomplete; rerun revision 0003
 runner = experiments/tier4_31d_native_temporal_hardware_smoke.py
 runner_revision = tier4_31d_native_temporal_hardware_smoke_20260506_0003
@@ -151,7 +151,7 @@ Tier 4.31c - Native Temporal-Substrate Runtime Source Audit
   Boundary: local source/runtime host evidence only; not hardware, not speedup,
     not nonlinear recurrence, not native replay/sleep, and not benchmark
     superiority.
-  Next: run prepared Tier 4.31d temporal hardware smoke package `cra_431d`.
+  Next: run prepared Tier 4.31d temporal hardware smoke package `cra_431d_r1`.
 ```
 
 Tier 4.28e Point A passed after ingest at:
@@ -505,11 +505,11 @@ For the current custom-runtime job, use the generated source-only folder under
 
 ## Current EBRAINS Command
 
-Upload the source-only folder `ebrains_jobs/cra_431d` and run this exact
+Upload the source-only folder `ebrains_jobs/cra_431d_r1` and run this exact
 JobManager command:
 
 ```text
-cra_431d/experiments/tier4_31d_native_temporal_hardware_smoke.py --mode run-hardware --output-dir tier4_31d_hw_job_output
+cra_431d_r1/experiments/tier4_31d_native_temporal_hardware_smoke.py --mode run-hardware --output-dir tier4_31d_hw_job_output
 ```
 
 Do not upload `controlled_test_output`. This is a one-board/one-seed smoke for
@@ -529,7 +529,7 @@ interpretation = not a pass and not a temporal-state science failure
 
 The returned profile stdout shows all local profile host tests passed and the
 returned ELF shows an ARM executable linked, but the runner did not return the
-structured hardware JSON/report. Revision `0003` of the `cra_431d` package adds:
+structured hardware JSON/report. Revision `0003` of the `cra_431d_r1` package adds:
 
 ```text
 - streamed APLX build stdout/stderr files

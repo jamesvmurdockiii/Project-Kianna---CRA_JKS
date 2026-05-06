@@ -20,7 +20,7 @@ Public repository hygiene rules live in
 
 ## Current Jobs
 
-### `cra_431d`
+### `cra_431d_r1`
 
 Status: **PREPARED / PENDING RERUN** for Tier 4.31d native temporal-substrate
 hardware smoke. The first EBRAINS return was incomplete and is preserved at
@@ -35,13 +35,13 @@ controls.
 Upload folder:
 
 ```text
-ebrains_jobs/cra_431d
+ebrains_jobs/cra_431d_r1
 ```
 
 JobManager command:
 
 ```text
-cra_431d/experiments/tier4_31d_native_temporal_hardware_smoke.py --mode run-hardware --output-dir tier4_31d_hw_job_output
+cra_431d_r1/experiments/tier4_31d_native_temporal_hardware_smoke.py --mode run-hardware --output-dir tier4_31d_hw_job_output
 ```
 
 Runner revision:

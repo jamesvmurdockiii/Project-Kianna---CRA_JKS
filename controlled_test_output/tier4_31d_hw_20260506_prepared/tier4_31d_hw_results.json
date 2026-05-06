@@ -5,9 +5,9 @@
     "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_prepared/tier4_31d_hw_summary.csv"
   },
   "bundle_artifacts": {
-    "job_readme": "/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_prepared/ebrains_upload_bundle/cra_431d/README_TIER4_31D_HW_JOB.md",
-    "stable_upload_folder": "/Users/james/JKS:CRA/ebrains_jobs/cra_431d",
-    "upload_bundle": "/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_prepared/ebrains_upload_bundle/cra_431d"
+    "job_readme": "/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_prepared/ebrains_upload_bundle/cra_431d_r1/README_TIER4_31D_HW_JOB.md",
+    "stable_upload_folder": "/Users/james/JKS:CRA/ebrains_jobs/cra_431d_r1",
+    "upload_bundle": "/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_prepared/ebrains_upload_bundle/cra_431d_r1"
   },
   "claim_boundary": "Prepared source bundle only; no hardware evidence until returned run-hardware artifacts pass.",
   "criteria": [
@@ -37,21 +37,21 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_prepared/ebrains_upload_bundle/cra_431d"
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_prepared/ebrains_upload_bundle/cra_431d_r1"
     },
     {
       "name": "stable upload folder created",
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/ebrains_jobs/cra_431d"
+      "value": "/Users/james/JKS:CRA/ebrains_jobs/cra_431d_r1"
     },
     {
       "name": "run-hardware command emitted",
       "note": "",
       "passed": true,
       "rule": "contains --mode run-hardware",
-      "value": "cra_431d/experiments/tier4_31d_native_temporal_hardware_smoke.py --mode run-hardware --output-dir tier4_31d_hw_job_output"
+      "value": "cra_431d_r1/experiments/tier4_31d_native_temporal_hardware_smoke.py --mode run-hardware --output-dir tier4_31d_hw_job_output"
     },
     {
       "name": "bundle controller includes temporal parser",
@@ -62,7 +62,7 @@
     }
   ],
   "failure_reason": "",
-  "generated_at_utc": "2026-05-06T18:44:01+00:00",
+  "generated_at_utc": "2026-05-06T18:50:47+00:00",
   "host_checks": {
     "status": "pass",
     "test_profiles": {
@@ -93,11 +93,11 @@
   "status": "prepared",
   "summary": {
     "claim_boundary": "Prepared source bundle only; no hardware evidence until returned run-hardware artifacts pass.",
-    "job_command": "cra_431d/experiments/tier4_31d_native_temporal_hardware_smoke.py --mode run-hardware --output-dir tier4_31d_hw_job_output",
-    "stable_upload_folder": "/Users/james/JKS:CRA/ebrains_jobs/cra_431d",
-    "upload_bundle": "/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_prepared/ebrains_upload_bundle/cra_431d",
-    "upload_package": "cra_431d",
-    "what_i_need_from_user": "Upload `cra_431d` to EBRAINS/JobManager and run the emitted command."
+    "job_command": "cra_431d_r1/experiments/tier4_31d_native_temporal_hardware_smoke.py --mode run-hardware --output-dir tier4_31d_hw_job_output",
+    "stable_upload_folder": "/Users/james/JKS:CRA/ebrains_jobs/cra_431d_r1",
+    "upload_bundle": "/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_prepared/ebrains_upload_bundle/cra_431d_r1",
+    "upload_package": "cra_431d_r1",
+    "what_i_need_from_user": "Upload `cra_431d_r1` to EBRAINS/JobManager and run the emitted command."
   },
   "tier": "4.31d-hw",
   "tier_name": "Tier 4.31d - Native Temporal-Substrate Hardware Smoke"
