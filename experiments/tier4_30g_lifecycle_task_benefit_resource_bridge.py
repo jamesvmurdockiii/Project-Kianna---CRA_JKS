@@ -1308,7 +1308,7 @@ def mode_ingest(args: argparse.Namespace, output_dir: Path) -> int:
             "task_status": hardware.get("summary", {}).get("task_status"),
             "sham_modes": hardware.get("summary", {}).get("sham_modes"),
         },
-        "claim_boundary": "Ingest confirms returned EBRAINS run-hardware artifacts only; no lifecycle baseline freeze until documentation and registry promotion.",
+        "claim_boundary": "Ingest confirms returned EBRAINS run-hardware artifacts only; baseline status is decided by the registry and baseline documents, not by the ingest report alone.",
     }
     return finalize_hardware(output_dir, result)
 

@@ -4,11 +4,11 @@ This table is generated from `controlled_test_output/STUDY_REGISTRY.json`.
 It is intended as a paper/technical-note citation table, not as a new
 source of claims. If the registry changes, regenerate this file.
 
-- Generated: `2026-05-06T03:10:11.816119+00:00`
-- Registry generated: `2026-05-06T03:10:11.716564+00:00`
+- Generated: `2026-05-06T03:55:20.037237+00:00`
+- Registry generated: `2026-05-06T03:55:19.939012+00:00`
 - Registry status: **PASS**
-- Canonical bundles: `60`
-- Expanded entries: `60`
+- Canonical bundles: `61`
+- Expanded entries: `61`
 
 ## Summary Table
 
@@ -74,6 +74,7 @@ source of claims. If the registry changes, regenerate this file.
 | `tier4_30e_multicore_lifecycle_hardware_smoke` | PASS | see manifest | Tier 4.30e - Multi-Core Lifecycle Hardware Smoke |  | Hardware smoke only; not lifecycle task benefit, not lifecycle sham-control success, not speedup, not multi-chip scaling, not v2.2 temporal migration, and not a lifecycle baseline freeze. | results: `controlled_test_output/tier4_30e_hw_20260505_hardware_pass_ingested/tier4_30e_hw_results.json`; report: `controlled_test_output/tier4_30e_hw_20260505_hardware_pass_ingested/tier4_30e_hw_report.md`; summary: `` |
 | `tier4_30f_lifecycle_sham_hardware_subset` | PASS | see manifest | Tier 4.30f - Lifecycle Sham-Control Hardware Subset |  | Hardware sham-control subset only; not lifecycle task benefit, not autonomous lifecycle-to-learning MCPL, not speedup, not multi-chip scaling, not v2.2 temporal migration, and not a lifecycle baseline freeze. | results: `controlled_test_output/tier4_30f_hw_20260505_hardware_pass_ingested/tier4_30f_hw_results.json`; report: `controlled_test_output/tier4_30f_hw_20260505_hardware_pass_ingested/tier4_30f_hw_report.md`; summary: `` |
 | `tier4_30g_lifecycle_task_benefit_resource_bridge` | PASS | see manifest | 4.30g |  | Local contract/reference evidence only; not a hardware task-benefit pass, not autonomous lifecycle-to-learning MCPL, not multi-chip scaling, and not a lifecycle baseline freeze. | results: `controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/tier4_30g_results.json`; report: `controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/tier4_30g_report.md`; summary: `controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/tier4_30g_mode_summary.csv` |
+| `tier4_30g_lifecycle_task_benefit_hardware_bridge` | PASS | see manifest | 4.30g-hw |  | Hardware task-benefit/resource bridge only; host ferries the lifecycle gate into the task path. Not autonomous lifecycle-to-learning MCPL, not speedup, not multi-chip scaling, not v2.2 temporal migration, and not full organism autonomy. | results: `controlled_test_output/tier4_30g_hw_20260505_hardware_pass_ingested/tier4_30g_hw_results.json`; report: `controlled_test_output/tier4_30g_hw_20260505_hardware_pass_ingested/tier4_30g_hw_report.md`; summary: `` |
 
 ## Claim Discipline
 

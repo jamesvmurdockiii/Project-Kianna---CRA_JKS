@@ -10,38 +10,47 @@ something about the platform, update this file in the same work session.
 
 ## Current State
 
-Latest frozen native mechanism evidence-regression gate:
+Latest frozen native lifecycle baseline:
 
 ```text
-Tier 4.29f - Compact Native Mechanism Regression
-  Status: EVIDENCE-REGRESSION PASS, INGESTED
-  Criteria: 113/113
-  Audits: 4.29a keyed memory, 4.29b routing/composition, 4.29c predictive
-    binding, 4.29d confidence gating, 4.29e host-scheduled replay/consolidation.
-  Baseline frozen: CRA_NATIVE_MECHANISM_BRIDGE_v0.3
-  Boundary: not a new hardware execution; it audits already-ingested real
-    hardware passes before benchmarks.
+CRA_LIFECYCLE_NATIVE_BASELINE_v0.4
+  Status: FROZEN AFTER HARDWARE PASS / INGEST
+  Baseline file: baselines/CRA_LIFECYCLE_NATIVE_BASELINE_v0.4.md
+  Supersedes: CRA_NATIVE_MECHANISM_BRIDGE_v0.3 for lifecycle-native evidence
+  Source: Tier 4.30-readiness through Tier 4.30g-hw.
+  Claim: static-pool lifecycle state, lineage/active-mask/trophic counters,
+    multi-core lifecycle profile isolation, sham controls, and a host-ferried
+    lifecycle-to-task bridge have passed canonical gates on real SpiNNaker.
+  Boundary: not autonomous lifecycle-to-learning MCPL, not speedup, not
+    multi-chip scaling, not dynamic population creation, not v2.2 temporal
+    migration, and not full organism autonomy.
 ```
 
 Latest active hardware-facing tier:
 
 ```text
 Tier 4.30g - Lifecycle Task-Benefit / Resource Bridge
-  Status: PREPARED; waiting for EBRAINS hardware run.
+  Status: HARDWARE PASS, INGESTED
   Local output: controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/
   Prepared output: controlled_test_output/tier4_30g_hw_20260506_prepared/
+  Ingested output: controlled_test_output/tier4_30g_hw_20260505_hardware_pass_ingested/
   Upload folder: ebrains_jobs/cra_430g
   Runner: experiments/tier4_30g_lifecycle_task_benefit_resource_bridge.py
+  Board: 10.11.242.97
+  Raw remote status: pass
+  Ingest status: pass
   Local criteria: 9/9
-  Prepare criteria: 7/7
-  Command:
+  Hardware criteria: 285/285
+  Ingest criteria: 5/5
+  Returned artifacts preserved: 36
+  Command used:
     cra_430g/experiments/tier4_30g_lifecycle_task_benefit_resource_bridge.py --mode run-hardware --output-dir tier4_30g_hw_job_output
-  Purpose: connect native lifecycle state to a task-bearing capsule and compare
-    enabled lifecycle against predeclared controls while recording
-    resource/readback accounting.
-  Boundary: prepared source bundle only until hardware package/run returns; no
-    lifecycle baseline freeze unless hardware task effect, controls, and
-    resource evidence pass.
+  Result: enabled lifecycle opened the bounded task gate; fixed-pool, random
+    replay, active-mask shuffle, no-trophic, and no-dopamine/no-plasticity
+    controls closed it. Resource/readback accounting returned for every mode.
+  Boundary: host-ferried lifecycle task-benefit/resource bridge only; not
+    autonomous lifecycle-to-learning MCPL, not speedup, not multi-chip scaling,
+    not v2.2 temporal migration, and not full organism autonomy.
 
 Tier 4.30f - Lifecycle Sham-Control Hardware Subset
   Status: HARDWARE PASS, INGESTED
@@ -114,16 +123,16 @@ Tier 4.30b-hw - Single-Core Lifecycle Active-Mask/Lineage Hardware Smoke
 Latest passed EBRAINS upload package:
 
 ```text
-Tier 4.30f - Lifecycle Sham-Control Hardware Subset
-upload = ebrains_jobs/cra_430f
+Tier 4.30g - Lifecycle Task-Benefit / Resource Bridge
+upload = ebrains_jobs/cra_430g
 status = returned hardware pass after ingest
-runner = experiments/tier4_30f_lifecycle_sham_hardware_subset.py
+runner = experiments/tier4_30g_lifecycle_task_benefit_resource_bridge.py
 ```
 
 Latest prepared EBRAINS upload package:
 
 ```text
-Tier 4.30g package is prepared: `ebrains_jobs/cra_430g`.
+No active EBRAINS package is pending. Next step is local Tier 4.31a readiness.
 ```
 
 Tier 4.28e Point A passed after ingest at:
@@ -477,8 +486,12 @@ For the current custom-runtime job, use the generated source-only folder under
 
 ## Current EBRAINS Command
 
-Tier 4.30g package is prepared and pending hardware execution. Upload
-`ebrains_jobs/cra_430g` as folder `cra_430g` and run:
+No EBRAINS command is currently pending. Tier 4.30g-hw passed and was ingested.
+The next step is local Tier 4.31a native temporal-substrate readiness. Create a
+new source-only `ebrains_jobs/` package only after that local contract, source
+checks, and claim boundary are defined.
+
+Last Tier 4.30g command used:
 
 ```text
 cra_430g/experiments/tier4_30g_lifecycle_task_benefit_resource_bridge.py --mode run-hardware --output-dir tier4_30g_hw_job_output

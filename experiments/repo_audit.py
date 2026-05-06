@@ -104,6 +104,15 @@ REQUIRED_BASELINE_FILES = [
     "baselines/CRA_EVIDENCE_BASELINE_v2.2.md",
     "baselines/CRA_EVIDENCE_BASELINE_v2.2.json",
     "baselines/CRA_EVIDENCE_BASELINE_v2.2_STUDY_REGISTRY.snapshot.json",
+    "baselines/CRA_NATIVE_RUNTIME_BASELINE_v0.1.md",
+    "baselines/CRA_NATIVE_TASK_BASELINE_v0.2.md",
+    "baselines/CRA_NATIVE_TASK_BASELINE_v0.2_STUDY_REGISTRY.snapshot.json",
+    "baselines/CRA_NATIVE_MECHANISM_BRIDGE_v0.3.md",
+    "baselines/CRA_NATIVE_MECHANISM_BRIDGE_v0.3.json",
+    "baselines/CRA_NATIVE_MECHANISM_BRIDGE_v0.3_STUDY_REGISTRY.snapshot.json",
+    "baselines/CRA_LIFECYCLE_NATIVE_BASELINE_v0.4.md",
+    "baselines/CRA_LIFECYCLE_NATIVE_BASELINE_v0.4.json",
+    "baselines/CRA_LIFECYCLE_NATIVE_BASELINE_v0.4_STUDY_REGISTRY.snapshot.json",
 ]
 
 FORBIDDEN_GENERATED_NAMES = {".DS_Store", ".pytest_cache", "__pycache__"}
@@ -225,11 +234,11 @@ def check_registry() -> tuple[Check, dict[str, Any]]:
     failures: list[str] = []
     if registry.get("registry_status") != "pass":
         failures.append(f"registry_status={registry.get('registry_status')}")
-    if registry.get("evidence_count") != 60:
-        failures.append(f"evidence_count={registry.get('evidence_count')} expected 60")
-    if registry.get("expanded_test_entry_count") != 60:
+    if registry.get("evidence_count") != 61:
+        failures.append(f"evidence_count={registry.get('evidence_count')} expected 61")
+    if registry.get("expanded_test_entry_count") != 61:
         failures.append(
-            f"expanded_test_entry_count={registry.get('expanded_test_entry_count')} expected 60"
+            f"expanded_test_entry_count={registry.get('expanded_test_entry_count')} expected 61"
         )
     integrity = registry.get("integrity") or {}
     if integrity.get("missing_expected_artifacts"):
@@ -556,6 +565,10 @@ def build_report(checks: list[Check], registry: dict[str, Any]) -> str:
             "- Frozen v2.0 baseline: `baselines/CRA_EVIDENCE_BASELINE_v2.0.md`",
             "- Frozen v2.1 baseline: `baselines/CRA_EVIDENCE_BASELINE_v2.1.md`",
             "- Frozen v2.2 baseline: `baselines/CRA_EVIDENCE_BASELINE_v2.2.md`",
+            "- Frozen native runtime baseline: `baselines/CRA_NATIVE_RUNTIME_BASELINE_v0.1.md`",
+            "- Frozen native task baseline: `baselines/CRA_NATIVE_TASK_BASELINE_v0.2.md`",
+            "- Frozen native mechanism bridge: `baselines/CRA_NATIVE_MECHANISM_BRIDGE_v0.3.md`",
+            "- Frozen lifecycle native baseline: `baselines/CRA_LIFECYCLE_NATIVE_BASELINE_v0.4.md`",
             "- Full narrative: `docs/WHITEPAPER.md`",
             "- Reviewer defense plan: `docs/REVIEWER_DEFENSE_PLAN.md`",
             "- Codebase map: `docs/CODEBASE_MAP.md`",
@@ -609,6 +622,8 @@ def build_report(checks: list[Check], registry: dict[str, Any]) -> str:
             "- Tier 4.30c is local multi-core lifecycle split contract/reference evidence; it defines the five-core role split and MCPL/multicast lifecycle messages, but it is not C runtime implementation or EBRAINS hardware evidence.",
             "- Tier 4.30d is local source/runtime host evidence for the five-core lifecycle split; it proves the dedicated lifecycle_core profile, stubs/counters, ownership guards, and local C tests, not EBRAINS hardware execution.",
             "- Tier 4.30e is multi-core lifecycle hardware smoke evidence; it proves the five-profile lifecycle runtime surface builds/loads/executes on one real SpiNNaker board with ownership guards, duplicate/stale rejection, and canonical/boundary lifecycle parity, but it is not lifecycle task-benefit evidence, lifecycle sham-control success, speedup, multi-chip scaling, v2.2 temporal migration, or a lifecycle baseline freeze.",
+            "- Tier 4.30f is lifecycle sham-control hardware subset evidence; it proves enabled and five predeclared lifecycle controls separate on real SpiNNaker, but it is not lifecycle task-benefit evidence, full Tier 6.3 hardware, speedup, multi-chip scaling, v2.2 temporal migration, or a lifecycle baseline freeze by itself.",
+            "- Tier 4.30g-hw is lifecycle task-benefit/resource bridge hardware evidence; it proves a bounded host-ferried lifecycle gate opens for enabled mode and closes for five controls with returned resource accounting, but it is not autonomous lifecycle-to-learning MCPL, speedup, multi-chip scaling, dynamic population creation, v2.2 temporal migration, or full organism autonomy.",
             "- Tier 4.20a is a passed hardware-transfer readiness audit; it classifies v2.1 mechanisms by chunked-host readiness versus future custom-runtime/on-chip blockers, but it is not SpiNNaker hardware evidence or v2.1 hardware transfer.",
             "- Tier 4.20b is passed one-seed v2.1 chunked-host bridge/transport hardware evidence; it returned real pyNN.spiNNaker execution, zero fallback, zero sim.run/readback failures, and nonzero spike readback, but it is not repeatability evidence or full native/on-chip v2.1 mechanism execution.",
             "- Tier 6.1 is controlled software lifecycle/self-scaling evidence with clean lineage and hard-switch advantage regimes; it is not full adult turnover, sham-control proof, hardware lifecycle, or external-baseline superiority.",

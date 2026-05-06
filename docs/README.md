@@ -86,8 +86,13 @@ predictive-context evidence, `baselines/CRA_EVIDENCE_BASELINE_v1.9.md` freezes
 internal host-side composition/routing evidence, and
 `baselines/CRA_EVIDENCE_BASELINE_v2.0.md` freezes bounded host-side
 predictive-binding evidence. `baselines/CRA_EVIDENCE_BASELINE_v2.1.md` freezes
-bounded host-side self-evaluation / reliability-monitoring evidence. The older v0.1, v0.2, and v0.3
-baselines remain historical locks.
+bounded host-side self-evaluation / reliability-monitoring evidence, and
+`baselines/CRA_EVIDENCE_BASELINE_v2.2.md` freezes bounded host-side
+fading-memory temporal-state evidence. Native runtime locks are tracked
+separately: `CRA_NATIVE_RUNTIME_BASELINE_v0.1`, `CRA_NATIVE_TASK_BASELINE_v0.2`,
+`CRA_NATIVE_MECHANISM_BRIDGE_v0.3`, and the current
+`CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` lifecycle-native hardware baseline. The
+older software v0.1, v0.2, and v0.3 baselines remain historical locks.
 
 Tier 5.18 now supplies noncanonical software self-evaluation /
 metacognitive-monitoring diagnostic evidence over v2.0. It is useful

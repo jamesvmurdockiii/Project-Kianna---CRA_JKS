@@ -1,0 +1,7 @@
+mode,bridge_gate,mode_status,lifecycle_payload_len,lifecycle_readback_bytes,task_runtime_seconds,task_schedule_uploads,learning_lookup_requests,learning_lookup_replies,learning_stale_replies,learning_timeouts,learning_readback_bytes,learning_commands_received,observed_weight_raw,expected_weight_raw,observed_bias_raw,expected_bias_raw,reference_tail_accuracy
+enabled,1,pass,68,2380,0.2652983949519694,24,72,72,0,0,210,100,32768,33024,0,-256,1.0
+fixed_static_pool_control,0,pass,68,2380,0.26492914091795683,24,72,72,0,0,210,100,0,0,-4936,-7426,0.375
+random_event_replay_control,0,pass,68,2380,0.26519529102370143,24,72,72,0,0,210,100,0,0,-4936,-7426,0.375
+active_mask_shuffle_control,0,pass,68,2380,0.26430960185825825,24,72,72,0,0,210,100,0,0,-4936,-7426,0.375
+no_trophic_pressure_control,0,pass,68,2380,0.26536728581413627,24,72,72,0,0,210,100,0,0,-4936,-7426,0.375
+no_dopamine_or_plasticity_control,0,pass,68,2380,0.26524166483432055,24,72,72,0,0,210,100,0,0,-4936,-7426,0.375

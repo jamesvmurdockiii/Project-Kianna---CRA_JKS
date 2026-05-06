@@ -10,10 +10,10 @@ Research narrative companions:
 - `docs/WHITEPAPER.md`
 - `docs/CODEBASE_MAP.md`
 
-- Registry generated: `2026-05-06T03:10:11.716564+00:00`
+- Registry generated: `2026-05-06T03:55:19.939012+00:00`
 - Registry status: **PASS**
 - Core validation suite: `12` tests
-- Expanded evidence suite: `60` entries; see the canonical evidence table below for the exact current tier list.
+- Expanded evidence suite: `61` entries; see the canonical evidence table below for the exact current tier list.
 
 ## Canonical Claims
 
@@ -79,6 +79,7 @@ Research narrative companions:
 | `tier4_30e_multicore_lifecycle_hardware_smoke` | Phase E lifecycle-native five-profile hardware smoke before sham-control subset | **PASS** | The five-profile lifecycle runtime surface built, loaded, and executed on real SpiNNaker with profile ownership guards, duplicate/stale lifecycle rejection, and exact canonical/boundary lifecycle parity. | Hardware smoke only; not lifecycle task benefit, not lifecycle sham-control success, not speedup, not multi-chip scaling, not v2.2 temporal migration, and not a lifecycle baseline freeze. |
 | `tier4_30f_lifecycle_sham_hardware_subset` | Phase E lifecycle-native sham-control hardware subset before task-benefit bridge | **PASS** | The five-profile lifecycle runtime executed the enabled lifecycle path and five predeclared sham-control modes on real SpiNNaker with exact expected summaries, no fallback, and preserved returned build/load/readback artifacts. | Hardware sham-control subset only; not lifecycle task benefit, not autonomous lifecycle-to-learning MCPL, not speedup, not multi-chip scaling, not v2.2 temporal migration, and not a lifecycle baseline freeze. |
 | `tier4_30g_lifecycle_task_benefit_resource_bridge` | Phase E lifecycle-native local task-benefit/resource bridge before hardware package | **PASS** | A bounded lifecycle-derived feature bridge locally separates the enabled lifecycle mode from sham controls on a compact delayed task and declares the resource/readback contract required before hardware packaging. | Local contract/reference evidence only; not a hardware task-benefit pass, not autonomous lifecycle-to-learning MCPL, not multi-chip scaling, and not a lifecycle baseline freeze. |
+| `tier4_30g_lifecycle_task_benefit_hardware_bridge` | Phase E lifecycle-native hardware task-benefit/resource bridge before lifecycle-native baseline freeze | **PASS** | The five-profile lifecycle runtime connected enabled lifecycle state into a bounded task-bearing path on real SpiNNaker while five predeclared lifecycle controls closed the task gate, with returned resource/readback accounting and zero failed criteria. | Hardware task-benefit/resource bridge only; host ferries the lifecycle gate into the task path. Not autonomous lifecycle-to-learning MCPL, not speedup, not multi-chip scaling, not v2.2 temporal migration, and not full organism autonomy. |
 
 ## Canonical Artifacts
 
@@ -144,6 +145,7 @@ Research narrative companions:
 | `tier4_30e_multicore_lifecycle_hardware_smoke` | `controlled_test_output/tier4_30e_hw_20260505_hardware_pass_ingested/tier4_30e_hw_results.json` | `controlled_test_output/tier4_30e_hw_20260505_hardware_pass_ingested/tier4_30e_hw_report.md` | `` |
 | `tier4_30f_lifecycle_sham_hardware_subset` | `controlled_test_output/tier4_30f_hw_20260505_hardware_pass_ingested/tier4_30f_hw_results.json` | `controlled_test_output/tier4_30f_hw_20260505_hardware_pass_ingested/tier4_30f_hw_report.md` | `` |
 | `tier4_30g_lifecycle_task_benefit_resource_bridge` | `controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/tier4_30g_results.json` | `controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/tier4_30g_report.md` | `controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/tier4_30g_mode_summary.csv` |
+| `tier4_30g_lifecycle_task_benefit_hardware_bridge` | `controlled_test_output/tier4_30g_hw_20260505_hardware_pass_ingested/tier4_30g_hw_results.json` | `controlled_test_output/tier4_30g_hw_20260505_hardware_pass_ingested/tier4_30g_hw_report.md` | `` |
 
 ## Selected Noncanonical Diagnostics
 

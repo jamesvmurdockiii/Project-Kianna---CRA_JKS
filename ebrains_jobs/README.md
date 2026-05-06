@@ -22,7 +22,7 @@ Public repository hygiene rules live in
 
 ### `cra_430g`
 
-Status: **PREPARED / WAITING FOR EBRAINS RUN** for Tier 4.30g lifecycle
+Status: **HARDWARE PASS / INGESTED** for Tier 4.30g lifecycle
 task-benefit/resource bridge.
 
 Purpose: Verify on real SpiNNaker that native lifecycle state can be ferried
@@ -36,7 +36,7 @@ Upload folder:
 ebrains_jobs/cra_430g
 ```
 
-JobManager command:
+JobManager command used:
 
 ```text
 cra_430g/experiments/tier4_30g_lifecycle_task_benefit_resource_bridge.py --mode run-hardware --output-dir tier4_30g_hw_job_output
@@ -48,10 +48,29 @@ Prepared artifact:
 controlled_test_output/tier4_30g_hw_20260506_prepared/
 ```
 
-Boundary: prepared source bundle only. It is not hardware evidence until
-returned artifacts pass ingest. The run is still a host-ferried bridge, not
-autonomous lifecycle-to-learning MCPL, not speedup, not multi-chip scaling, and
-not a lifecycle baseline freeze.
+Ingested artifact:
+
+```text
+controlled_test_output/tier4_30g_hw_20260505_hardware_pass_ingested/
+```
+
+Returned metrics:
+
+```text
+Board: 10.11.242.97
+Raw remote status: pass
+Ingest status: pass
+Hardware criteria: 285/285
+Ingest criteria: 5/5
+Returned artifacts preserved: 36
+Enabled lifecycle gate: open
+Five predeclared controls: closed
+```
+
+Boundary: host-ferried lifecycle task-benefit/resource bridge only. It is not
+autonomous lifecycle-to-learning MCPL, not speedup, not multi-chip scaling, not
+v2.2 temporal migration, and not full organism autonomy. This pass contributes
+to `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4`.
 
 
 ### `cra_430f`
@@ -103,8 +122,7 @@ Returned artifacts preserved: 35
 
 Boundary: this is a compact lifecycle sham-control hardware subset, not full
 Tier 6.3 hardware, not lifecycle task-benefit evidence, not speedup evidence,
-not multi-chip scaling, and not a baseline freeze. Tier 4.30g local contract now
-passes and `cra_430g` is prepared for the hardware task-benefit/resource bridge.
+not multi-chip scaling, and not a baseline freeze. Tier 4.30g-hw now passes and is ingested; lifecycle-native baseline v0.4 is frozen with a host-ferried bridge boundary.
 
 ### `cra_430e`
 

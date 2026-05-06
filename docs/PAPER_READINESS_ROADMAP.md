@@ -6234,14 +6234,14 @@ ridge lag-only beat lag+state probes.
 Tier 5.19 / 7.0e is complete. The narrowed Tier 5.19c gate froze v2.2 for
 bounded host-side fading-memory temporal state only; bounded nonlinear
 recurrence, universal benchmark superiority, and native/on-chip temporal
-dynamics remain unproven. Tier 4.30-readiness through Tier 4.30g then advanced
+dynamics remain unproven. Tier 4.30-readiness through Tier 4.30g-hw then advanced and froze
 the lifecycle-native path on top of `CRA_NATIVE_MECHANISM_BRIDGE_v0.3`, with
-v2.2 retained as a software reference boundary only. Tier 4.30g has a local
-task-benefit/resource bridge pass and a prepared source-only EBRAINS package;
-it is not hardware task-benefit evidence until returned hardware artifacts pass
-ingest. The current next hardware gate is the Tier 4.30g EBRAINS run/ingest.
-Do not move Tier 7.0 benchmark workloads to hardware under the current
-interface.
+v2.2 retained as a software reference boundary only. Tier 4.30g-hw returned a
+real SpiNNaker pass and ingest pass for a bounded host-ferried lifecycle-to-task
+bridge: enabled lifecycle opened the task gate, all five predeclared controls
+closed it, resource/readback accounting returned cleanly, and
+`CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` is now frozen. Do not move Tier 7.0
+benchmark workloads to hardware under the current interface.
 ```
 
 Paper implication:
@@ -6295,10 +6295,17 @@ Near-term roadmap insertion:
 14. Tier 4.30g lifecycle task-benefit/resource bridge local contract/reference.
     COMPLETE: 9/9 local pass with enabled gate open, all controls gated closed,
     and resource/readback fields declared.
-15. Tier 4.30g hardware task-benefit/resource bridge. NEXT: run the prepared
-    `ebrains_jobs/cra_430g` source package on EBRAINS and ingest returned
-    artifacts; no lifecycle native baseline freeze until hardware task effect
-    and resource/readback accounting pass.
+15. Tier 4.30g hardware task-benefit/resource bridge. COMPLETE: raw hardware
+    pass and ingest pass on board `10.11.242.97`, 285/285 hardware criteria,
+    5/5 ingest criteria, 36 returned artifacts preserved, enabled lifecycle
+    gate open, five controls gated closed, and resource/readback accounting
+    returned.
+16. `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4`. COMPLETE: frozen after lifecycle
+    telemetry, controls, resource accounting, and one bounded useful hardware
+    task effect passed.
+17. Tier 4.31a native temporal-substrate readiness. NEXT: local contract only;
+    decide the smallest chip-owned subset for v2.2 fading memory before any new
+    EBRAINS package.
 ```
 
 Tier 5.19a result:
@@ -6496,7 +6503,7 @@ Boundary: not lifecycle task benefit, not sham-control success, not speedup,
           not multi-chip scaling, not v2.2 temporal-state migration, and not a
           lifecycle baseline freeze.
 Next: Tier 4.30f lifecycle sham-control hardware subset (completed; superseded
-by Tier 4.30g task-benefit/resource bridge local pass and pending hardware bridge).
+by Tier 4.30g-hw task-benefit/resource bridge hardware pass and v0.4 freeze).
 ```
 
 Tier 4.30f result:
@@ -6539,22 +6546,30 @@ Next: Tier 4.30g lifecycle task-benefit/resource bridge local contract/reference
 Tier 4.30g result:
 
 ```text
-Output: controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/
+Local output: controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/
+Hardware ingested output: controlled_test_output/tier4_30g_hw_20260505_hardware_pass_ingested/
 Runner: experiments/tier4_30g_lifecycle_task_benefit_resource_bridge.py
 Runner revision: tier4_30g_lifecycle_task_benefit_resource_bridge_20260506_0001
-Status: local contract/reference pass
-Criteria: 9/9
+Local status: pass, 9/9
+Hardware raw remote status: pass
+Hardware ingest status: pass
+Board: 10.11.242.97
+Hardware criteria: 285/285
+Ingest criteria: 5/5
+Returned artifacts preserved: 36
 Scope: enabled lifecycle versus fixed-pool, random-replay, active-mask-shuffle,
        no-trophic, and no-dopamine/no-plasticity controls.
-Result: enabled bridge gate opened with tail accuracy 1.0; all five controls
-        closed the bridge gate with control tail-accuracy ceiling 0.375;
-        enabled-control tail margin 0.625; resource/readback fields declared.
-Boundary: local contract/reference only, not hardware task-benefit evidence,
-          not autonomous lifecycle-to-learning MCPL, not speedup, not
-          multi-chip scaling, not v2.2 temporal-state migration, and not a
-          lifecycle baseline freeze.
-Next: Tier 4.30g hardware task-benefit/resource bridge EBRAINS run/ingest.
-      Prepared folder: `ebrains_jobs/cra_430g`. Command: `cra_430g/experiments/tier4_30g_lifecycle_task_benefit_resource_bridge.py --mode run-hardware --output-dir tier4_30g_hw_job_output`.
+Result: enabled bridge gate opened; all five controls closed the bridge gate;
+        enabled reference tail accuracy 1.0; control reference tail accuracy
+        0.375; compact lifecycle payload length 68; stale replies/timeouts 0;
+        resource/readback accounting returned for every mode.
+Boundary: hardware task-benefit/resource bridge only, still host-ferried; not
+          autonomous lifecycle-to-learning MCPL, not speedup, not multi-chip
+          scaling, not v2.2 temporal-state migration, and not full organism
+          autonomy.
+Baseline: CRA_LIFECYCLE_NATIVE_BASELINE_v0.4 frozen.
+Next: Tier 4.31a native temporal-substrate readiness before any temporal-state
+      hardware package.
 ```
 
 Detailed Tier 5.19 contract:

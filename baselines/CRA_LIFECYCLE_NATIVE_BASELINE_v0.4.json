@@ -1,0 +1,486 @@
+{
+  "baseline_id": "CRA_LIFECYCLE_NATIVE_BASELINE_v0.4",
+  "frozen_at": "2026-05-06T03:45:16.594436+00:00",
+  "source_registry_generated_at": "2026-05-06T03:44:18.428888+00:00",
+  "registry_status": "pass",
+  "evidence_count": 61,
+  "supersedes": "CRA_NATIVE_MECHANISM_BRIDGE_v0.3",
+  "freeze_rule": "Frozen after Tier 4.30g-hw passed returned EBRAINS hardware ingest with lifecycle telemetry, predeclared lifecycle sham controls, resource/readback accounting, and one bounded useful task effect: enabled lifecycle opened the task gate while five controls closed it.",
+  "strongest_claim": "CRA has a bounded lifecycle-native baseline on real SpiNNaker: static-pool lifecycle state, lineage/active-mask/trophic counters, multi-core lifecycle profile isolation, lifecycle sham controls, and a host-ferried lifecycle-to-task bridge have all passed canonical gates. Enabled lifecycle opens the bounded task gate; five predeclared controls close it; resource/readback accounting is returned and preserved.",
+  "claim_boundaries": [
+    "Lifecycle-native baseline, not full organism autonomy.",
+    "Tier 4.30g-hw is a host-ferried lifecycle task-benefit/resource bridge; it is not autonomous lifecycle-to-learning MCPL.",
+    "Static-pool lifecycle only; no dynamic PyNN population creation and no multi-chip scaling claim.",
+    "Not speedup evidence and not proof that all software v2.2 temporal mechanisms are native on chip.",
+    "Does not prove external-baseline superiority, language, planning, AGI, ASI, or long-horizon autonomous behavior.",
+    "Host still owns setup, package execution, selected bridge ferrying, and evidence readback."
+  ],
+  "canonical_evidence_entries": [
+    {
+      "entry_id": "tier4_30_readiness_lifecycle_native_audit",
+      "tier_label": "Tier 4.30-readiness - Lifecycle-Native Preflight / Layering Audit",
+      "plan_position": "Phase E lifecycle-native path selection before implementation",
+      "status": "pass",
+      "source_generated_at_utc": "2026-05-05T19:31:07+00:00",
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_30_readiness_20260505_lifecycle_native_audit",
+      "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_30_readiness_20260505_lifecycle_native_audit/tier4_30_readiness_results.json",
+      "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_30_readiness_20260505_lifecycle_native_audit/tier4_30_readiness_report.md",
+      "summary_csv": null,
+      "harness": "experiments/tier4_30_readiness_audit.py",
+      "evidence_role": "lifecycle-native readiness audit",
+      "claim": "Initial lifecycle-native work should layer on CRA_NATIVE_MECHANISM_BRIDGE_v0.3 with v2.2 as software reference only, using static-pool lifecycle constraints.",
+      "caveat": "Engineering audit only; not lifecycle implementation, not hardware evidence, not speedup, not multi-chip scaling, and not native v2.2 temporal migration.",
+      "backend": null,
+      "selected_tests": null,
+      "test_results": [
+        {
+          "name": "Tier 4.30-readiness - Lifecycle-Native Preflight / Layering Audit",
+          "status": "pass",
+          "criteria": {
+            "total": 16,
+            "passed": 16,
+            "failed": 0,
+            "failures": []
+          },
+          "metrics": {},
+          "artifacts": {}
+        }
+      ],
+      "top_level_metrics": {},
+      "missing_expected_artifacts": []
+    },
+    {
+      "entry_id": "tier4_30_lifecycle_native_contract",
+      "tier_label": "Tier 4.30 - Lifecycle-Native Static-Pool Contract",
+      "plan_position": "Phase E lifecycle-native contract before reference/runtime work",
+      "status": "pass",
+      "source_generated_at_utc": "2026-05-05T19:41:04+00:00",
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_30_20260505_lifecycle_native_contract",
+      "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_30_20260505_lifecycle_native_contract/tier4_30_contract_results.json",
+      "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_30_20260505_lifecycle_native_contract/tier4_30_contract_report.md",
+      "summary_csv": null,
+      "harness": "experiments/tier4_30_lifecycle_native_contract.py",
+      "evidence_role": "lifecycle-native static-pool contract",
+      "claim": "Tier 4.30 defines the lifecycle init/event/trophic/readback/sham command schema, readback fields, event semantics, gate sequence, and failure classes for static-pool lifecycle migration.",
+      "caveat": "Local engineering contract only; not runtime implementation, not hardware evidence, not lifecycle/self-scaling proof, and not v2.2 temporal migration.",
+      "backend": null,
+      "selected_tests": null,
+      "test_results": [
+        {
+          "name": "Tier 4.30 - Lifecycle-Native Static-Pool Contract",
+          "status": "pass",
+          "criteria": {
+            "total": 14,
+            "passed": 14,
+            "failed": 0,
+            "failures": []
+          },
+          "metrics": {},
+          "artifacts": {}
+        }
+      ],
+      "top_level_metrics": {},
+      "missing_expected_artifacts": []
+    },
+    {
+      "entry_id": "tier4_30a_static_pool_lifecycle_reference",
+      "tier_label": "Tier 4.30a - Local Static-Pool Lifecycle Reference",
+      "plan_position": "Phase E lifecycle-native deterministic local reference",
+      "status": "pass",
+      "source_generated_at_utc": "2026-05-05T19:56:20+00:00",
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_30a_20260505_static_pool_lifecycle_reference",
+      "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_30a_20260505_static_pool_lifecycle_reference/tier4_30a_results.json",
+      "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_30a_20260505_static_pool_lifecycle_reference/tier4_30a_report.md",
+      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_30a_20260505_static_pool_lifecycle_reference/tier4_30a_control_summary.csv",
+      "harness": "experiments/tier4_30a_static_pool_lifecycle_reference.py",
+      "evidence_role": "lifecycle static-pool local reference",
+      "claim": "The Tier 4.30 static-pool lifecycle contract has deterministic 8-slot/2-founder reference traces with exact active-mask, lineage, event-count, checksum, and sham-control outputs.",
+      "caveat": "Local deterministic reference only; not runtime C, not hardware evidence, not task benefit, not lifecycle baseline freeze, and not v2.2 temporal-state migration.",
+      "backend": null,
+      "selected_tests": null,
+      "test_results": [
+        {
+          "name": "Tier 4.30a - Local Static-Pool Lifecycle Reference",
+          "status": "pass",
+          "criteria": {
+            "total": 20,
+            "passed": 20,
+            "failed": 0,
+            "failures": []
+          },
+          "metrics": {},
+          "artifacts": {}
+        }
+      ],
+      "top_level_metrics": {},
+      "missing_expected_artifacts": []
+    },
+    {
+      "entry_id": "tier4_30b_lifecycle_runtime_source_audit",
+      "tier_label": "Tier 4.30b - Lifecycle Runtime Source Audit",
+      "plan_position": "Phase E lifecycle-native runtime source/schema gate before hardware smoke",
+      "status": "pass",
+      "source_generated_at_utc": "2026-05-05T20:20:10+00:00",
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_30b_20260505_lifecycle_source_audit",
+      "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_30b_20260505_lifecycle_source_audit/tier4_30b_results.json",
+      "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_30b_20260505_lifecycle_source_audit/tier4_30b_report.md",
+      "summary_csv": null,
+      "harness": "experiments/tier4_30b_lifecycle_source_audit.py",
+      "evidence_role": "lifecycle runtime source/schema audit",
+      "claim": "The lifecycle static-pool state surface exists in the custom runtime, matches Tier 4.30a reference checksums in host tests, preserves existing profile/readback tests, and is ready for a single-core hardware mask/lineage smoke.",
+      "caveat": "Local source/runtime host evidence only; not hardware evidence, not task-effect evidence, not multi-core lifecycle migration, and not a baseline freeze.",
+      "backend": null,
+      "selected_tests": null,
+      "test_results": [
+        {
+          "name": "Tier 4.30b - Lifecycle Runtime Source Audit",
+          "status": "pass",
+          "criteria": {
+            "total": 13,
+            "passed": 13,
+            "failed": 0,
+            "failures": []
+          },
+          "metrics": {},
+          "artifacts": {
+            "command_log": "/Users/james/JKS:CRA/controlled_test_output/tier4_30b_20260505_lifecycle_source_audit/tier4_30b_command_log.txt",
+            "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_30b_20260505_lifecycle_source_audit/tier4_30b_report.md",
+            "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_30b_20260505_lifecycle_source_audit/tier4_30b_results.json"
+          }
+        }
+      ],
+      "top_level_metrics": {},
+      "missing_expected_artifacts": []
+    },
+    {
+      "entry_id": "tier4_30b_hw_lifecycle_smoke",
+      "tier_label": "Tier 4.30b-hw - Single-Core Lifecycle Active-Mask/Lineage Hardware Smoke",
+      "plan_position": "Phase E lifecycle-native single-core hardware smoke",
+      "status": "pass",
+      "source_generated_at_utc": "2026-05-05T21:01:28+00:00",
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_30b_hw_20260505_hardware_pass_ingested",
+      "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_30b_hw_20260505_hardware_pass_ingested/tier4_30b_hw_results.json",
+      "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_30b_hw_20260505_hardware_pass_ingested/tier4_30b_hw_report.md",
+      "summary_csv": null,
+      "harness": "experiments/tier4_30b_lifecycle_hardware_smoke.py",
+      "evidence_role": "single-core lifecycle hardware smoke",
+      "claim": "The lifecycle static-pool metadata surface executed on real SpiNNaker with compact lifecycle readback and exact canonical/boundary state parity after correcting a known runner criterion defect.",
+      "caveat": "Hardware smoke only; not lifecycle task benefit, not multi-core lifecycle migration, not speedup, not multi-chip scaling, and not a lifecycle baseline freeze.",
+      "backend": null,
+      "selected_tests": null,
+      "test_results": [
+        {
+          "name": "Tier 4.30b-hw - Single-Core Lifecycle Active-Mask/Lineage Hardware Smoke",
+          "status": "pass",
+          "criteria": {
+            "total": 5,
+            "passed": 5,
+            "failed": 0,
+            "failures": []
+          },
+          "metrics": {
+            "hardware_target_configured": true,
+            "aplx_build_status": "pass",
+            "app_load_status": "pass",
+            "corrected_ingest_status": "pass",
+            "false_fail_correction": "rev-0001 checked cumulative readback_bytes instead of compact payload_len; raw payload_len was 68 and lifecycle state matched reference",
+            "raw_remote_status": "fail",
+            "runtime_profile": "decoupled_memory_route",
+            "selected_dest_cpu": 4,
+            "spinnaker_hostname": "10.11.226.17",
+            "task_status": "pass"
+          },
+          "artifacts": {
+            "report_md": "controlled_test_output/tier4_30b_hw_20260505_hardware_pass_ingested/tier4_30b_hw_report.md",
+            "results_json": "controlled_test_output/tier4_30b_hw_20260505_hardware_pass_ingested/tier4_30b_hw_results.json"
+          }
+        }
+      ],
+      "top_level_metrics": {
+        "hardware_target_configured": true,
+        "aplx_build_status": "pass",
+        "app_load_status": "pass",
+        "corrected_ingest_status": "pass",
+        "false_fail_correction": "rev-0001 checked cumulative readback_bytes instead of compact payload_len; raw payload_len was 68 and lifecycle state matched reference",
+        "raw_remote_status": "fail",
+        "runtime_profile": "decoupled_memory_route",
+        "selected_dest_cpu": 4,
+        "spinnaker_hostname": "10.11.226.17",
+        "task_status": "pass"
+      },
+      "missing_expected_artifacts": []
+    },
+    {
+      "entry_id": "tier4_30c_multicore_lifecycle_split",
+      "tier_label": "Tier 4.30c - Multi-Core Lifecycle State Split",
+      "plan_position": "Phase E lifecycle-native multi-core split contract/reference",
+      "status": "pass",
+      "source_generated_at_utc": "2026-05-05T21:23:33+00:00",
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_30c_20260505_multicore_lifecycle_split",
+      "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_30c_20260505_multicore_lifecycle_split/tier4_30c_results.json",
+      "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_30c_20260505_multicore_lifecycle_split/tier4_30c_report.md",
+      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_30c_20260505_multicore_lifecycle_split/tier4_30c_scenario_summary.csv",
+      "harness": "experiments/tier4_30c_multicore_lifecycle_split.py",
+      "evidence_role": "multi-core lifecycle split contract/reference",
+      "claim": "Lifecycle state ownership can be split across context, route, memory, learning, and lifecycle roles with explicit MCPL/multicast lifecycle messages, active-mask sync, and reference parity.",
+      "caveat": "Local contract/reference evidence only; not C runtime implementation, not EBRAINS hardware evidence, not lifecycle task benefit, and not a lifecycle baseline freeze.",
+      "backend": null,
+      "selected_tests": null,
+      "test_results": [
+        {
+          "name": "Tier 4.30c - Multi-Core Lifecycle State Split Contract/Reference",
+          "status": "pass",
+          "criteria": {
+            "total": 22,
+            "passed": 22,
+            "failed": 0,
+            "failures": []
+          },
+          "metrics": {},
+          "artifacts": {}
+        }
+      ],
+      "top_level_metrics": {},
+      "missing_expected_artifacts": []
+    },
+    {
+      "entry_id": "tier4_30d_lifecycle_runtime_source_audit",
+      "tier_label": "Tier 4.30d - Multi-Core Lifecycle Runtime Source Audit",
+      "plan_position": "Phase E lifecycle-native runtime source/local C gate before multi-core hardware smoke",
+      "status": "pass",
+      "source_generated_at_utc": "2026-05-05T22:11:32+00:00",
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_30d_20260505_lifecycle_runtime_source_audit",
+      "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_30d_20260505_lifecycle_runtime_source_audit/tier4_30d_results.json",
+      "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_30d_20260505_lifecycle_runtime_source_audit/tier4_30d_report.md",
+      "summary_csv": null,
+      "harness": "experiments/tier4_30d_lifecycle_runtime_source_audit.py",
+      "evidence_role": "multi-core lifecycle runtime source/local C audit",
+      "claim": "The custom runtime source surface represents the Tier 4.30c five-core lifecycle split with a dedicated lifecycle_core profile, lifecycle MCPL stubs/counters, ownership guards, and local C host tests.",
+      "caveat": "Local source/runtime host evidence only; not EBRAINS hardware evidence, not task benefit, not speedup, not multi-chip scaling, not v2.2 temporal migration, and not a lifecycle baseline freeze.",
+      "backend": null,
+      "selected_tests": null,
+      "test_results": [
+        {
+          "name": "Tier 4.30d - Multi-Core Lifecycle Runtime Source Audit",
+          "status": "pass",
+          "criteria": {
+            "total": 14,
+            "passed": 14,
+            "failed": 0,
+            "failures": []
+          },
+          "metrics": {},
+          "artifacts": {
+            "command_log": "/Users/james/JKS:CRA/controlled_test_output/tier4_30d_20260505_lifecycle_runtime_source_audit/tier4_30d_command_log.txt",
+            "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_30d_20260505_lifecycle_runtime_source_audit/tier4_30d_report.md",
+            "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_30d_20260505_lifecycle_runtime_source_audit/tier4_30d_results.json",
+            "source_checks_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_30d_20260505_lifecycle_runtime_source_audit/tier4_30d_source_checks.csv"
+          }
+        }
+      ],
+      "top_level_metrics": {},
+      "missing_expected_artifacts": []
+    },
+    {
+      "entry_id": "tier4_30e_multicore_lifecycle_hardware_smoke",
+      "tier_label": "Tier 4.30e - Multi-Core Lifecycle Hardware Smoke",
+      "plan_position": "Phase E lifecycle-native five-profile hardware smoke before sham-control subset",
+      "status": "pass",
+      "source_generated_at_utc": "2026-05-05T22:57:26+00:00",
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_30e_hw_20260505_hardware_pass_ingested",
+      "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_30e_hw_20260505_hardware_pass_ingested/tier4_30e_hw_results.json",
+      "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_30e_hw_20260505_hardware_pass_ingested/tier4_30e_hw_report.md",
+      "summary_csv": null,
+      "harness": "experiments/tier4_30e_multicore_lifecycle_hardware_smoke.py",
+      "evidence_role": "multi-core lifecycle hardware smoke",
+      "claim": "The five-profile lifecycle runtime surface built, loaded, and executed on real SpiNNaker with profile ownership guards, duplicate/stale lifecycle rejection, and exact canonical/boundary lifecycle parity.",
+      "caveat": "Hardware smoke only; not lifecycle task benefit, not lifecycle sham-control success, not speedup, not multi-chip scaling, not v2.2 temporal migration, and not a lifecycle baseline freeze.",
+      "backend": null,
+      "selected_tests": null,
+      "test_results": [
+        {
+          "name": "Tier 4.30e - Multi-Core Lifecycle Hardware Smoke",
+          "status": "pass",
+          "criteria": {
+            "total": 5,
+            "passed": 5,
+            "failed": 0,
+            "failures": []
+          },
+          "metrics": {
+            "hardware_target_configured": true,
+            "corrected_ingest_status": "pass",
+            "profile_builds_passed": true,
+            "profile_loads_passed": true,
+            "raw_remote_status": "pass",
+            "spinnaker_hostname": "10.11.226.145",
+            "task_status": "pass"
+          },
+          "artifacts": {
+            "report_md": "controlled_test_output/tier4_30e_hw_20260505_hardware_pass_ingested/tier4_30e_hw_report.md",
+            "results_json": "controlled_test_output/tier4_30e_hw_20260505_hardware_pass_ingested/tier4_30e_hw_results.json"
+          }
+        }
+      ],
+      "top_level_metrics": {
+        "hardware_target_configured": true,
+        "corrected_ingest_status": "pass",
+        "profile_builds_passed": true,
+        "profile_loads_passed": true,
+        "raw_remote_status": "pass",
+        "spinnaker_hostname": "10.11.226.145",
+        "task_status": "pass"
+      },
+      "missing_expected_artifacts": []
+    },
+    {
+      "entry_id": "tier4_30f_lifecycle_sham_hardware_subset",
+      "tier_label": "Tier 4.30f - Lifecycle Sham-Control Hardware Subset",
+      "plan_position": "Phase E lifecycle-native sham-control hardware subset before task-benefit bridge",
+      "status": "pass",
+      "source_generated_at_utc": "2026-05-06T02:04:44+00:00",
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_30f_hw_20260505_hardware_pass_ingested",
+      "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_30f_hw_20260505_hardware_pass_ingested/tier4_30f_hw_results.json",
+      "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_30f_hw_20260505_hardware_pass_ingested/tier4_30f_hw_report.md",
+      "summary_csv": null,
+      "harness": "experiments/tier4_30f_lifecycle_sham_hardware_subset.py",
+      "evidence_role": "multi-core lifecycle hardware sham controls",
+      "claim": "The five-profile lifecycle runtime executed the enabled lifecycle path and five predeclared sham-control modes on real SpiNNaker with exact expected summaries, no fallback, and preserved returned build/load/readback artifacts.",
+      "caveat": "Hardware sham-control subset only; not lifecycle task benefit, not autonomous lifecycle-to-learning MCPL, not speedup, not multi-chip scaling, not v2.2 temporal migration, and not a lifecycle baseline freeze.",
+      "backend": null,
+      "selected_tests": null,
+      "test_results": [
+        {
+          "name": "Tier 4.30f - Lifecycle Sham-Control Hardware Subset",
+          "status": "pass",
+          "criteria": {
+            "total": 5,
+            "passed": 5,
+            "failed": 0,
+            "failures": []
+          },
+          "metrics": {
+            "hardware_target_configured": true,
+            "corrected_ingest_status": "pass",
+            "profile_builds_passed": true,
+            "profile_loads_passed": true,
+            "raw_remote_status": "pass",
+            "spinnaker_hostname": "10.11.227.9",
+            "task_status": "pass"
+          },
+          "artifacts": {
+            "report_md": "controlled_test_output/tier4_30f_hw_20260505_hardware_pass_ingested/tier4_30f_hw_report.md",
+            "results_json": "controlled_test_output/tier4_30f_hw_20260505_hardware_pass_ingested/tier4_30f_hw_results.json"
+          }
+        }
+      ],
+      "top_level_metrics": {
+        "hardware_target_configured": true,
+        "corrected_ingest_status": "pass",
+        "profile_builds_passed": true,
+        "profile_loads_passed": true,
+        "raw_remote_status": "pass",
+        "spinnaker_hostname": "10.11.227.9",
+        "task_status": "pass"
+      },
+      "missing_expected_artifacts": []
+    },
+    {
+      "entry_id": "tier4_30g_lifecycle_task_benefit_resource_bridge",
+      "tier_label": "Tier 4.30g - Lifecycle Task-Benefit / Resource Bridge",
+      "plan_position": "Phase E lifecycle-native local task-benefit/resource bridge before hardware package",
+      "status": "pass",
+      "source_generated_at_utc": "2026-05-06T03:09:56+00:00",
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge",
+      "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/tier4_30g_results.json",
+      "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/tier4_30g_report.md",
+      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/tier4_30g_mode_summary.csv",
+      "harness": "experiments/tier4_30g_lifecycle_task_benefit_resource_bridge.py",
+      "evidence_role": "lifecycle task-benefit bridge contract/reference",
+      "claim": "A bounded lifecycle-derived feature bridge locally separates the enabled lifecycle mode from sham controls on a compact delayed task and declares the resource/readback contract required before hardware packaging.",
+      "caveat": "Local contract/reference evidence only; not a hardware task-benefit pass, not autonomous lifecycle-to-learning MCPL, not multi-chip scaling, and not a lifecycle baseline freeze.",
+      "backend": null,
+      "selected_tests": null,
+      "test_results": [
+        {
+          "name": "4.30g",
+          "status": "pass",
+          "criteria": {
+            "total": 9,
+            "passed": 9,
+            "failed": 0,
+            "failures": []
+          },
+          "metrics": {},
+          "artifacts": {
+            "bridge_features_csv": "controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/tier4_30g_bridge_features.csv",
+            "mode_summary_csv": "controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/tier4_30g_mode_summary.csv",
+            "report_md": "controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/tier4_30g_report.md",
+            "resource_accounting_csv": "controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/tier4_30g_resource_accounting.csv",
+            "results_json": "controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/tier4_30g_results.json",
+            "task_trace_csv": "controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/tier4_30g_task_trace.csv"
+          }
+        }
+      ],
+      "top_level_metrics": {},
+      "missing_expected_artifacts": []
+    },
+    {
+      "entry_id": "tier4_30g_lifecycle_task_benefit_hardware_bridge",
+      "tier_label": "Tier 4.30g-hw - Lifecycle Task-Benefit / Resource Bridge Hardware",
+      "plan_position": "Phase E lifecycle-native hardware task-benefit/resource bridge before lifecycle-native baseline freeze",
+      "status": "pass",
+      "source_generated_at_utc": "2026-05-06T03:40:20+00:00",
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_30g_hw_20260505_hardware_pass_ingested",
+      "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_30g_hw_20260505_hardware_pass_ingested/tier4_30g_hw_results.json",
+      "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_30g_hw_20260505_hardware_pass_ingested/tier4_30g_hw_report.md",
+      "summary_csv": null,
+      "harness": "experiments/tier4_30g_lifecycle_task_benefit_resource_bridge.py",
+      "evidence_role": "lifecycle task-benefit/resource bridge hardware pass",
+      "claim": "The five-profile lifecycle runtime connected enabled lifecycle state into a bounded task-bearing path on real SpiNNaker while five predeclared lifecycle controls closed the task gate, with returned resource/readback accounting and zero failed criteria.",
+      "caveat": "Hardware task-benefit/resource bridge only; host ferries the lifecycle gate into the task path. Not autonomous lifecycle-to-learning MCPL, not speedup, not multi-chip scaling, not v2.2 temporal migration, and not full organism autonomy.",
+      "backend": null,
+      "selected_tests": null,
+      "test_results": [
+        {
+          "name": "4.30g-hw",
+          "status": "pass",
+          "criteria": {
+            "total": 5,
+            "passed": 5,
+            "failed": 0,
+            "failures": []
+          },
+          "metrics": {
+            "hardware_target_configured": true,
+            "corrected_ingest_status": "pass",
+            "profile_builds_passed": true,
+            "profile_loads_passed": true,
+            "raw_remote_status": "pass",
+            "spinnaker_hostname": "10.11.242.97",
+            "task_status": "pass"
+          },
+          "artifacts": {
+            "report_md": "controlled_test_output/tier4_30g_hw_20260505_hardware_pass_ingested/tier4_30g_hw_report.md",
+            "results_json": "controlled_test_output/tier4_30g_hw_20260505_hardware_pass_ingested/tier4_30g_hw_results.json"
+          }
+        }
+      ],
+      "top_level_metrics": {
+        "hardware_target_configured": true,
+        "corrected_ingest_status": "pass",
+        "profile_builds_passed": true,
+        "profile_loads_passed": true,
+        "raw_remote_status": "pass",
+        "spinnaker_hostname": "10.11.242.97",
+        "task_status": "pass"
+      },
+      "missing_expected_artifacts": []
+    }
+  ],
+  "next_steps": [
+    "Start Tier 4.31a native temporal-substrate readiness only as a contract/readiness decision for the already-promoted v2.2 fading-memory software mechanism.",
+    "Do not move v2.2 temporal state to hardware without a separately predeclared local reference, source audit, and compact hardware smoke.",
+    "Continue toward lifecycle-to-learning MCPL only through a dedicated gate that removes the host-ferried bridge one interface at a time."
+  ]
+}

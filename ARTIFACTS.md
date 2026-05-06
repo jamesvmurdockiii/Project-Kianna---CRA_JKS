@@ -147,7 +147,7 @@ flag, but the pass is accepted because `hardware_run_attempted=True`, hardware
 was nonzero.
 
 Current registry alignment status:
-41 canonical evidence bundles, 0 missing expected artifacts, and 0 failed
+61 canonical evidence bundles, 0 missing expected artifacts, and 0 failed
 criteria in canonical entries. The v0.1 and v0.2 frozen baselines remain locked at their
 recorded historical counts, v0.3 freezes the post-Tier-5.3 diagnostic baseline,
 v0.4 freezes the post-Tier-5.4 delayed-credit confirmation baseline, v0.5
@@ -2121,3 +2121,6 @@ stale=0, timeouts=0.
 Boundary: Hard noisy switching with host-pre-written oracle regime context.
 Not autonomous regime detection. Single-chip only; not multi-chip, not
 speedup, not v2.1 mechanism transfer.
+
+
+Native lifecycle baseline note: `baselines/CRA_LIFECYCLE_NATIVE_BASELINE_v0.4.md` freezes the Tier 4.30 lifecycle-native hardware baseline after Tier 4.30g-hw passed raw EBRAINS hardware execution and ingest with lifecycle telemetry, sham controls, resource/readback accounting, and one bounded host-ferried task-effect bridge.

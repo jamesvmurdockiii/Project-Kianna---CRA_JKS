@@ -3,7 +3,7 @@
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
 [![Tests](https://img.shields.io/badge/tests-149%20passing-brightgreen.svg)](#validation)
-[![Evidence](https://img.shields.io/badge/canonical%20evidence-60%20bundles-blue.svg)](STUDY_EVIDENCE_INDEX.md)
+[![Evidence](https://img.shields.io/badge/canonical%20evidence-61%20bundles-blue.svg)](STUDY_EVIDENCE_INDEX.md)
 
 Coral Reef Architecture (CRA) is a neuromorphic learning research platform for
 studying local spiking plasticity, delayed credit assignment, population-level
@@ -19,9 +19,9 @@ controlled ablations, baseline comparisons, and explicit claim boundaries.
 | Area | Current state |
 | --- | --- |
 | Software baseline | `v2.2`, frozen after bounded host-side fading-memory temporal-state evidence plus full NEST compact regression. |
-| Native hardware baseline | `CRA_NATIVE_MECHANISM_BRIDGE_v0.3`, frozen after Tier 4.29f audited the 4.29a-e native mechanism hardware passes. |
-| Latest ingested hardware pass | Tier 4.30f lifecycle sham-control hardware subset passed on board `10.11.227.9`: raw remote status `pass`, ingest `pass`, `185/185` hardware criteria, `5/5` ingest criteria, `35` returned artifacts preserved, all five profiles built/loaded, enabled mode remained canonical, and fixed-pool, random replay, active-mask shuffle, no-trophic, and no-dopamine/no-plasticity controls separated on their predeclared fields. |
-| Latest lifecycle task bridge | Tier 4.30g local task-benefit/resource bridge passed `9/9`: enabled lifecycle opened the bounded task gate with tail accuracy `1.0`, all five predeclared controls closed the gate with tail accuracy `0.375`, and resource/readback fields were declared before any EBRAINS package. |
+| Native hardware baseline | `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4`, frozen after Tier 4.30g-hw passed lifecycle telemetry, sham controls, resource accounting, and a bounded hardware task-effect bridge. |
+| Latest ingested hardware pass | Tier 4.30g-hw lifecycle task-benefit/resource bridge passed on board `10.11.242.97`: raw remote status `pass`, ingest `pass`, `285/285` hardware criteria, `5/5` ingest criteria, `36` returned artifacts preserved, enabled lifecycle opened the bounded task gate, all five predeclared controls closed it, and resource/readback accounting returned cleanly. |
+| Latest lifecycle task bridge | Tier 4.30g local contract passed `9/9`, then Tier 4.30g-hw passed on real SpiNNaker: enabled lifecycle bridge gate `1`, controls bridge gate `0`, enabled reference tail accuracy `1.0`, control reference tail accuracy `0.375`, compact lifecycle payload `68`, and zero stale replies/timeouts. |
 | Latest software benchmark diagnostic | Tier 5.19c fading-memory narrowing gate passed and froze v2.2: fading-memory temporal state is promoted, while bounded nonlinear recurrence and universal benchmark superiority remain unproven. |
 | Latest engineering audit | Tier 4.30-readiness passed `16/16`, selecting a static-pool lifecycle-native path layered on `CRA_NATIVE_MECHANISM_BRIDGE_v0.3` with v2.2 as software reference only. |
 | Latest engineering contract | Tier 4.30 passed `14/14`, defining lifecycle init/event/trophic/readback/sham commands, `23` readback fields, event invariants, gates, and failure classes. |
@@ -29,9 +29,9 @@ controlled ablations, baseline comparisons, and explicit claim boundaries.
 | Latest lifecycle runtime source audit | Tier 4.30b passed `13/13`: runtime lifecycle static-pool surface, exact 4.30a checksum parity, lifecycle SDP readback, and existing runtime/profile tests preserved. |
 | Latest multi-core lifecycle split | Tier 4.30c passed `22/22`: five-core lifecycle ownership contract, MCPL/multicast-target message semantics, final active-mask sync, exact canonical/boundary parity, and distributed failure classes. |
 | Latest multi-core lifecycle runtime source audit | Tier 4.30d passed `14/14`: dedicated `lifecycle_core` runtime profile, lifecycle inter-core stubs/counters, active-mask/count/lineage sync bookkeeping, ownership guards, and local C host tests against the 4.30c contract. |
-| Latest prepared EBRAINS package | Tier 4.30g hardware task-benefit/resource bridge prepared: `controlled_test_output/tier4_30g_hw_20260506_prepared/`, upload folder `ebrains_jobs/cra_430g`, prepare status `prepared`, criteria `7/7`. |
-| Active next gate | Run the Tier 4.30g hardware task-benefit/resource bridge on EBRAINS with `cra_430g/experiments/tier4_30g_lifecycle_task_benefit_resource_bridge.py --mode run-hardware --output-dir tier4_30g_hw_job_output`, then ingest returned artifacts before any lifecycle baseline freeze. |
-| Canonical registry | 60 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
+| Latest prepared EBRAINS package | No active EBRAINS package is pending after Tier 4.30g-hw ingest. The next step is a local Tier 4.31a native temporal-substrate readiness contract before any new hardware upload. |
+| Active next gate | Tier 4.31a native temporal-substrate readiness: decide the smallest chip-owned subset for the v2.2 fading-memory mechanism before any native temporal hardware package. |
+| Canonical registry | 61 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
 | Validation suite | 149 pytest tests plus registry, paper-table, and repository-audit generation. |
 
 ## What CRA Implements
@@ -66,7 +66,7 @@ Core implementation areas:
 | 5.1-5.7 | External baselines, learning curves, failure analysis, delayed-credit confirmation, fairness audit, compact regression. | Software evidence; not universal superiority. |
 | 5.10-5.18 | Memory, replay/consolidation, predictive context, composition/routing, working memory diagnostics, temporal coding, neuron-parameter sensitivity, predictive binding, and self-evaluation gates. | Mostly host-side software mechanisms unless explicitly migrated to hardware. |
 | 6.1-6.4 | Lifecycle/self-scaling, lifecycle sham controls, and circuit-motif causality. | Software organism/ecology evidence; not hardware lifecycle. |
-| 4.22-4.30g | Custom SpiNNaker runtime progression from roundtrip/load tests to four-core MCPL tasks, keyed memory, routing/composition, predictive binding, confidence-gated learning, host-scheduled replay/consolidation, lifecycle static-pool metadata, multi-core lifecycle source/runtime gates, five-profile lifecycle hardware smoke, lifecycle sham-control hardware subset, and lifecycle task-benefit/resource bridge preparation. | Native hardware mechanism evidence for the tested capsules only; 4.29f is an audit over hardware passes, 4.30c is local split-contract evidence, 4.30d is local C/source evidence, 4.30e is a hardware smoke only, 4.30f is compact lifecycle sham-control hardware evidence only, and 4.30g has a local contract pass plus a prepared source package pending EBRAINS hardware execution. None of these prove lifecycle task benefit on hardware, speedup, multi-chip scaling, v2.2 temporal migration, or a lifecycle baseline freeze until returned hardware artifacts pass ingest. |
+| 4.22-4.30g | Custom SpiNNaker runtime progression from roundtrip/load tests to four-core MCPL tasks, keyed memory, routing/composition, predictive binding, confidence-gated learning, host-scheduled replay/consolidation, lifecycle static-pool metadata, multi-core lifecycle source/runtime gates, five-profile lifecycle hardware smoke, lifecycle sham-control hardware subset, and lifecycle task-benefit/resource bridge hardware pass. | Native hardware mechanism evidence for tested capsules only. Tier 4.30g-hw proves a bounded host-ferried lifecycle-to-task bridge with resource accounting; it does not prove autonomous lifecycle-to-learning MCPL, speedup, multi-chip scaling, v2.2 temporal migration, or full organism autonomy. |
 | 7.0-7.0d | Standard dynamical benchmarks and failure analysis: Mackey-Glass, Lorenz, NARMA10, aggregate geometric-mean MSE, CRA state/readout probes, bounded online readout repair, and state-specific claim narrowing. | Software diagnostics only; CRA v2.1 underperformed simple continuous-regression sequence baselines. 7.0d showed lag regression explains this benchmark path under the prior interface, so no direct benchmark-superiority claim was made. |
 | 5.19a-5.19c | Continuous temporal-dynamics repair path: local temporal substrate reference, recurrence sham gate, then narrowed fading-memory compact-regression promotion. | v2.2 supports bounded host-side fading-memory temporal state. It does not prove nonlinear recurrence, hardware/on-chip temporal dynamics, universal benchmark superiority, language, planning, AGI, or ASI. |
 

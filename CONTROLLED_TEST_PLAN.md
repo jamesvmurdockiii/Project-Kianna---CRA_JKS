@@ -8659,7 +8659,7 @@ effect, controls, and resource accounting pass.
 
 ### Tier 4.30g - Lifecycle Task-Benefit / Resource Bridge
 
-Status: LOCAL CONTRACT / REFERENCE PASS.
+Status: LOCAL CONTRACT PASS + HARDWARE PASS / INGESTED.
 
 Question:
 
@@ -8715,6 +8715,25 @@ Enabled-control tail margin: 0.625
 Resource/readback fields: declared for every mode
 ```
 
+Hardware result:
+
+```text
+Prepared output: controlled_test_output/tier4_30g_hw_20260506_prepared/
+Ingested output: controlled_test_output/tier4_30g_hw_20260505_hardware_pass_ingested/
+Board: 10.11.242.97
+Raw remote status: pass
+Ingest status: pass
+Hardware criteria: 285/285
+Ingest criteria: 5/5
+Returned artifacts preserved: 36
+Enabled bridge gate: 1
+Control bridge gates: 0
+Enabled reference tail accuracy: 1.0
+Control reference tail accuracy: 0.375
+Compact lifecycle payload length: 68
+Stale replies/timeouts: 0
+```
+
 Pass means:
 
 ```text
@@ -8743,16 +8762,23 @@ claim boundary overstates hardware or lifecycle-baseline evidence
 Boundary:
 
 ```text
-Tier 4.30g currently has local contract/reference evidence plus a prepared
-source-only EBRAINS package. It is not hardware task-benefit evidence, not
-autonomous lifecycle-to-learning MCPL, not speedup, not multi-chip scaling, not
-v2.2 temporal-state migration, and not a lifecycle baseline freeze until
-returned hardware artifacts pass ingest.
+Tier 4.30g-hw is hardware task-benefit/resource bridge evidence for a bounded
+host-ferried lifecycle gate. It is not autonomous lifecycle-to-learning MCPL,
+not speedup, not multi-chip scaling, not dynamic population creation, not v2.2
+temporal-state migration, and not full organism autonomy.
+```
+
+Baseline decision:
+
+```text
+Freeze condition met. `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` is frozen after
+lifecycle telemetry, controls, resource accounting, and one bounded useful
+hardware task effect passed.
 ```
 
 Next:
 
 ```text
-Run the prepared Tier 4.30g hardware task-benefit/resource bridge on EBRAINS,
-then ingest returned artifacts. Command: `cra_430g/experiments/tier4_30g_lifecycle_task_benefit_resource_bridge.py --mode run-hardware --output-dir tier4_30g_hw_job_output`.
+Tier 4.31a native temporal-substrate readiness. Define the smallest chip-owned
+state subset for v2.2 fading memory before any EBRAINS package.
 ```
