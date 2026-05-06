@@ -8917,3 +8917,19 @@ Baseline freeze: not authorized.
 Boundary: local resource/mapping model only; not hardware, speedup, multi-chip
 scaling, benchmark superiority, full organism autonomy, or baseline freeze.
 ```
+
+Result:
+
+```text
+Tier 4.32a single-chip multi-core scale-stress preflight passed locally at
+controlled_test_output/tier4_32a_20260506_single_chip_scale_stress/.
+Runner revision: tier4_32a_single_chip_scale_stress_20260506_0001.
+Criteria: 18/18.
+Scale points: 4-core reference, 5-core lifecycle, 8-core dual shard,
+12-core triple shard, 16-core quad shard.
+Decision: Tier 4.32a-hw EBRAINS single-chip MCPL-first hardware stress is
+authorized next. Tier 4.32b static reef partition, Tier 4.32c-e multi-chip
+work, and CRA_NATIVE_SCALE_BASELINE_v0.5 remain blocked.
+Boundary: local preflight only; not hardware, speedup, multi-chip scaling,
+static reef partition proof, benchmark superiority, or baseline freeze.
+```

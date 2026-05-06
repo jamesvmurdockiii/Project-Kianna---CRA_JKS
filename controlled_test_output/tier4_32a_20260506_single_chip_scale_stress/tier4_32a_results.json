@@ -1,0 +1,654 @@
+{
+  "claim_boundary": "Tier 4.32a is a local scale-stress preflight over the Tier 4.32 resource model. It is not a SpiNNaker hardware run, not a speedup claim, not a multi-chip claim, not a static reef partition proof, not benchmark/superiority evidence, and not a native-scale baseline freeze.",
+  "criteria": [
+    {
+      "name": "Tier 4.32 prerequisite passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "Tier 4.32 authorized 4.32a",
+      "note": "",
+      "passed": true,
+      "rule": "== authorized_next",
+      "value": "authorized_next"
+    },
+    {
+      "name": "no native scale baseline freeze inherited",
+      "note": "",
+      "passed": true,
+      "rule": "== not_authorized",
+      "value": "not_authorized"
+    },
+    {
+      "name": "MCPL-first policy inherited",
+      "note": "",
+      "passed": true,
+      "rule": "contains mcpl_first",
+      "value": "mcpl_first_for_scale_sdp_fallback_control_only"
+    },
+    {
+      "name": "five ordered scale points declared",
+      "note": "",
+      "passed": true,
+      "rule": "== 4/5/8/12/16 core points",
+      "value": [
+        "point_04c_reference",
+        "point_05c_lifecycle",
+        "point_08c_dual_shard",
+        "point_12c_triple_shard",
+        "point_16c_quad_shard"
+      ]
+    },
+    {
+      "name": "scale points remain within conservative single-chip app-core budget",
+      "note": "",
+      "passed": true,
+      "rule": "<= 16",
+      "value": 16
+    },
+    {
+      "name": "scale points are eligible for hardware stress",
+      "note": "",
+      "passed": true,
+      "rule": "all eligible",
+      "value": [
+        "eligible_for_hardware_stress",
+        "eligible_for_hardware_stress",
+        "eligible_for_hardware_stress",
+        "eligible_for_hardware_stress",
+        "eligible_for_hardware_stress"
+      ]
+    },
+    {
+      "name": "schedule pressure within current source limit",
+      "note": "",
+      "passed": true,
+      "rule": "<= 512",
+      "value": 128
+    },
+    {
+      "name": "context slot pressure within current source limit",
+      "note": "",
+      "passed": true,
+      "rule": "<= 128",
+      "value": 128
+    },
+    {
+      "name": "route slot pressure within current source limit",
+      "note": "",
+      "passed": true,
+      "rule": "<= 8",
+      "value": 4
+    },
+    {
+      "name": "memory slot pressure within current source limit",
+      "note": "",
+      "passed": true,
+      "rule": "<= 8",
+      "value": 4
+    },
+    {
+      "name": "lifecycle slot pressure within current source limit",
+      "note": "",
+      "passed": true,
+      "rule": "<= 8",
+      "value": 8
+    },
+    {
+      "name": "pending/reply pressure within lookup reply window",
+      "note": "",
+      "passed": true,
+      "rule": "<= 32",
+      "value": 32
+    },
+    {
+      "name": "MCPL projected bytes cheaper than SDP fallback for every point",
+      "note": "",
+      "passed": true,
+      "rule": "< 1.0 each",
+      "value": [
+        0.296296,
+        0.296296,
+        0.296296,
+        0.296296,
+        0.296296
+      ]
+    },
+    {
+      "name": "profile allocation headroom positive",
+      "note": "",
+      "passed": true,
+      "rule": "all profile allocations positive",
+      "value": 21
+    },
+    {
+      "name": "failure classes cover hardware-only measurements",
+      "note": "",
+      "passed": true,
+      "rule": ">= 8 classes",
+      "value": [
+        "schedule_length_overflow",
+        "context_slot_exhaustion",
+        "route_memory_slot_exhaustion",
+        "pending_horizon_or_lookup_reply_overflow",
+        "mcpl_delivery_integrity_failure",
+        "compact_readback_growth",
+        "profile_itcm_dtcm_exhaustion",
+        "multi_chip_routing_failure"
+      ]
+    },
+    {
+      "name": "next gate is hardware stress, not 4.32b jump",
+      "note": "",
+      "passed": true,
+      "rule": "== Tier 4.32a-hw",
+      "value": "Tier 4.32a-hw"
+    },
+    {
+      "name": "baseline freeze remains blocked",
+      "note": "",
+      "passed": true,
+      "rule": "== not authorized",
+      "value": "not authorized"
+    }
+  ],
+  "criteria_passed": 18,
+  "criteria_total": 18,
+  "failed_criteria": [],
+  "failure_classes": [
+    {
+      "detection_rule": "schedule_entries_per_learning_core <= MAX_SCHEDULE_ENTRIES",
+      "failure_class": "schedule_length_overflow",
+      "hardware_measurement_required": "hardware run must return accepted schedule count and reject overflow cleanly",
+      "next_gate": "Tier 4.32a-hw",
+      "preflight_status": "bounded_by_preflight"
+    },
+    {
+      "detection_rule": "context_slots_per_context_core <= MAX_CONTEXT_SLOTS",
+      "failure_class": "context_slot_exhaustion",
+      "hardware_measurement_required": "hardware run must report context slot high-water mark",
+      "next_gate": "Tier 4.32a-hw",
+      "preflight_status": "bounded_by_preflight"
+    },
+    {
+      "detection_rule": "route/memory slots per core <= source limits",
+      "failure_class": "route_memory_slot_exhaustion",
+      "hardware_measurement_required": "hardware run must report route/memory slot high-water marks",
+      "next_gate": "Tier 4.32a-hw",
+      "preflight_status": "bounded_by_preflight"
+    },
+    {
+      "detection_rule": "max pending and in-flight replies <= min(MAX_PENDING_HORIZONS, MAX_LOOKUP_REPLIES)",
+      "failure_class": "pending_horizon_or_lookup_reply_overflow",
+      "hardware_measurement_required": "hardware run must report pending high-water mark, lookup replies, and overflow counters",
+      "next_gate": "Tier 4.32a-hw",
+      "preflight_status": "bounded_by_preflight"
+    },
+    {
+      "detection_rule": "preflight can only declare MCPL-first message counts",
+      "failure_class": "mcpl_delivery_integrity_failure",
+      "hardware_measurement_required": "hardware run must return request/reply parity, stale, duplicate, timeout, and drop counters",
+      "next_gate": "Tier 4.32a-hw",
+      "preflight_status": "not_measured_by_preflight"
+    },
+    {
+      "detection_rule": "compact_readback_bytes_per_snapshot is projected for each point",
+      "failure_class": "compact_readback_growth",
+      "hardware_measurement_required": "hardware run must return per-core payload lengths and cumulative readback bytes",
+      "next_gate": "Tier 4.32a-hw",
+      "preflight_status": "projected_by_preflight"
+    },
+    {
+      "detection_rule": "all replicated profile copies use profiles with positive per-core headroom",
+      "failure_class": "profile_itcm_dtcm_exhaustion",
+      "hardware_measurement_required": "any new profile build must return size/headroom before promotion",
+      "next_gate": "Tier 4.32a-hw",
+      "preflight_status": "bounded_by_returned_profile_sizes"
+    },
+    {
+      "detection_rule": "single-chip only",
+      "failure_class": "multi_chip_routing_failure",
+      "hardware_measurement_required": "must be handled by a separate inter-chip contract before first multi-chip smoke",
+      "next_gate": "Tier 4.32c",
+      "preflight_status": "out_of_scope"
+    }
+  ],
+  "final_decision": {
+    "claim_boundary": "local single-chip scale-stress preflight only",
+    "native_scale_baseline_freeze": "not_authorized",
+    "status": "pass",
+    "tier4_32a_hw": "authorized_next",
+    "tier4_32b": "blocked_until_4_32a_hw_passes",
+    "tier4_32c": "blocked_until_4_32b_passes",
+    "tier4_32d": "blocked_until_4_32c_passes",
+    "tier4_32e": "blocked_until_4_32d_passes"
+  },
+  "generated_at_utc": "2026-05-06T22:17:01+00:00",
+  "next_gate_plan": [
+    {
+      "claim_boundary": "single-chip hardware stress only; not multi-chip, not speedup, not baseline freeze.",
+      "decision": "authorize if this preflight passes",
+      "fail_boundary": "localize to schedule, slot, MCPL delivery, readback, profile, or EBRAINS environment class before adding more mechanics.",
+      "gate": "Tier 4.32a-hw",
+      "pass_boundary": "zero stale/duplicate/timeout/drop counters, lookup request/reply parity, compact readback returned, profile builds returned, and no schedule/slot overflow.",
+      "prerequisites": "Use the 4.32a preflight scale-point table; no SDP core-to-core fallback unless documented as a control.",
+      "question": "Do the predeclared 4/5/8/12/16-core single-chip stress points execute with MCPL-first integrity and compact readback?"
+    },
+    {
+      "claim_boundary": "static partition smoke only; not one-polyp-per-chip and not organism-scale proof.",
+      "decision": "blocked until 4.32a-hw passes",
+      "fail_boundary": "publish measured single-chip runtime boundary; do not proceed to multi-chip.",
+      "gate": "Tier 4.32b",
+      "pass_boundary": "static partition smoke preserves ownership, compact readback, and measured failure counters.",
+      "prerequisites": "4.32a-hw pass with measured resource envelope.",
+      "question": "Can static reef partitioning map groups/modules/polyps to the measured single-chip runtime envelope?"
+    },
+    {
+      "claim_boundary": "not considered by this preflight.",
+      "decision": "not authorized",
+      "fail_boundary": "keep v0.4 as latest native baseline and publish limits honestly.",
+      "gate": "CRA_NATIVE_SCALE_BASELINE_v0.5",
+      "pass_boundary": "freeze only after single-chip and first multi-chip evidence are clean.",
+      "prerequisites": "4.32a-hw, 4.32b, first inter-chip feasibility, and first multi-chip smoke must pass.",
+      "question": "Is native scaling stable enough to freeze as a paper baseline?"
+    }
+  ],
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_20260506_single_chip_scale_stress",
+  "profile_allocations": [
+    {
+      "allocation_status": "profile_headroom_positive",
+      "copies": 1,
+      "dtcm_estimate_bytes_per_core": 8449,
+      "dtcm_headroom_bytes_per_core": 57087,
+      "itcm_headroom_bytes_per_core": 21336,
+      "note": "Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.",
+      "point_id": "point_04c_reference",
+      "profile": "context_core",
+      "text_bytes_per_core": 11432
+    },
+    {
+      "allocation_status": "profile_headroom_positive",
+      "copies": 1,
+      "dtcm_estimate_bytes_per_core": 8449,
+      "dtcm_headroom_bytes_per_core": 57087,
+      "itcm_headroom_bytes_per_core": 21304,
+      "note": "Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.",
+      "point_id": "point_04c_reference",
+      "profile": "route_core",
+      "text_bytes_per_core": 11464
+    },
+    {
+      "allocation_status": "profile_headroom_positive",
+      "copies": 1,
+      "dtcm_estimate_bytes_per_core": 8449,
+      "dtcm_headroom_bytes_per_core": 57087,
+      "itcm_headroom_bytes_per_core": 21304,
+      "note": "Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.",
+      "point_id": "point_04c_reference",
+      "profile": "memory_core",
+      "text_bytes_per_core": 11464
+    },
+    {
+      "allocation_status": "profile_headroom_positive",
+      "copies": 1,
+      "dtcm_estimate_bytes_per_core": 23597,
+      "dtcm_headroom_bytes_per_core": 41939,
+      "itcm_headroom_bytes_per_core": 19488,
+      "note": "Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.",
+      "point_id": "point_04c_reference",
+      "profile": "learning_core",
+      "text_bytes_per_core": 13280
+    },
+    {
+      "allocation_status": "profile_headroom_positive",
+      "copies": 1,
+      "dtcm_estimate_bytes_per_core": 8449,
+      "dtcm_headroom_bytes_per_core": 57087,
+      "itcm_headroom_bytes_per_core": 21336,
+      "note": "Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.",
+      "point_id": "point_05c_lifecycle",
+      "profile": "context_core",
+      "text_bytes_per_core": 11432
+    },
+    {
+      "allocation_status": "profile_headroom_positive",
+      "copies": 1,
+      "dtcm_estimate_bytes_per_core": 8449,
+      "dtcm_headroom_bytes_per_core": 57087,
+      "itcm_headroom_bytes_per_core": 21304,
+      "note": "Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.",
+      "point_id": "point_05c_lifecycle",
+      "profile": "route_core",
+      "text_bytes_per_core": 11464
+    },
+    {
+      "allocation_status": "profile_headroom_positive",
+      "copies": 1,
+      "dtcm_estimate_bytes_per_core": 8449,
+      "dtcm_headroom_bytes_per_core": 57087,
+      "itcm_headroom_bytes_per_core": 21304,
+      "note": "Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.",
+      "point_id": "point_05c_lifecycle",
+      "profile": "memory_core",
+      "text_bytes_per_core": 11464
+    },
+    {
+      "allocation_status": "profile_headroom_positive",
+      "copies": 1,
+      "dtcm_estimate_bytes_per_core": 23597,
+      "dtcm_headroom_bytes_per_core": 41939,
+      "itcm_headroom_bytes_per_core": 19488,
+      "note": "Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.",
+      "point_id": "point_05c_lifecycle",
+      "profile": "learning_core",
+      "text_bytes_per_core": 13280
+    },
+    {
+      "allocation_status": "profile_headroom_positive",
+      "copies": 1,
+      "dtcm_estimate_bytes_per_core": 22793,
+      "dtcm_headroom_bytes_per_core": 42743,
+      "itcm_headroom_bytes_per_core": 18024,
+      "note": "Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.",
+      "point_id": "point_05c_lifecycle",
+      "profile": "lifecycle_core",
+      "text_bytes_per_core": 14744
+    },
+    {
+      "allocation_status": "profile_headroom_positive",
+      "copies": 2,
+      "dtcm_estimate_bytes_per_core": 8449,
+      "dtcm_headroom_bytes_per_core": 57087,
+      "itcm_headroom_bytes_per_core": 21336,
+      "note": "Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.",
+      "point_id": "point_08c_dual_shard",
+      "profile": "context_core",
+      "text_bytes_per_core": 11432
+    },
+    {
+      "allocation_status": "profile_headroom_positive",
+      "copies": 2,
+      "dtcm_estimate_bytes_per_core": 8449,
+      "dtcm_headroom_bytes_per_core": 57087,
+      "itcm_headroom_bytes_per_core": 21304,
+      "note": "Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.",
+      "point_id": "point_08c_dual_shard",
+      "profile": "route_core",
+      "text_bytes_per_core": 11464
+    },
+    {
+      "allocation_status": "profile_headroom_positive",
+      "copies": 2,
+      "dtcm_estimate_bytes_per_core": 8449,
+      "dtcm_headroom_bytes_per_core": 57087,
+      "itcm_headroom_bytes_per_core": 21304,
+      "note": "Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.",
+      "point_id": "point_08c_dual_shard",
+      "profile": "memory_core",
+      "text_bytes_per_core": 11464
+    },
+    {
+      "allocation_status": "profile_headroom_positive",
+      "copies": 2,
+      "dtcm_estimate_bytes_per_core": 23597,
+      "dtcm_headroom_bytes_per_core": 41939,
+      "itcm_headroom_bytes_per_core": 19488,
+      "note": "Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.",
+      "point_id": "point_08c_dual_shard",
+      "profile": "learning_core",
+      "text_bytes_per_core": 13280
+    },
+    {
+      "allocation_status": "profile_headroom_positive",
+      "copies": 3,
+      "dtcm_estimate_bytes_per_core": 8449,
+      "dtcm_headroom_bytes_per_core": 57087,
+      "itcm_headroom_bytes_per_core": 21336,
+      "note": "Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.",
+      "point_id": "point_12c_triple_shard",
+      "profile": "context_core",
+      "text_bytes_per_core": 11432
+    },
+    {
+      "allocation_status": "profile_headroom_positive",
+      "copies": 3,
+      "dtcm_estimate_bytes_per_core": 8449,
+      "dtcm_headroom_bytes_per_core": 57087,
+      "itcm_headroom_bytes_per_core": 21304,
+      "note": "Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.",
+      "point_id": "point_12c_triple_shard",
+      "profile": "route_core",
+      "text_bytes_per_core": 11464
+    },
+    {
+      "allocation_status": "profile_headroom_positive",
+      "copies": 3,
+      "dtcm_estimate_bytes_per_core": 8449,
+      "dtcm_headroom_bytes_per_core": 57087,
+      "itcm_headroom_bytes_per_core": 21304,
+      "note": "Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.",
+      "point_id": "point_12c_triple_shard",
+      "profile": "memory_core",
+      "text_bytes_per_core": 11464
+    },
+    {
+      "allocation_status": "profile_headroom_positive",
+      "copies": 3,
+      "dtcm_estimate_bytes_per_core": 23597,
+      "dtcm_headroom_bytes_per_core": 41939,
+      "itcm_headroom_bytes_per_core": 19488,
+      "note": "Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.",
+      "point_id": "point_12c_triple_shard",
+      "profile": "learning_core",
+      "text_bytes_per_core": 13280
+    },
+    {
+      "allocation_status": "profile_headroom_positive",
+      "copies": 4,
+      "dtcm_estimate_bytes_per_core": 8449,
+      "dtcm_headroom_bytes_per_core": 57087,
+      "itcm_headroom_bytes_per_core": 21336,
+      "note": "Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.",
+      "point_id": "point_16c_quad_shard",
+      "profile": "context_core",
+      "text_bytes_per_core": 11432
+    },
+    {
+      "allocation_status": "profile_headroom_positive",
+      "copies": 4,
+      "dtcm_estimate_bytes_per_core": 8449,
+      "dtcm_headroom_bytes_per_core": 57087,
+      "itcm_headroom_bytes_per_core": 21304,
+      "note": "Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.",
+      "point_id": "point_16c_quad_shard",
+      "profile": "route_core",
+      "text_bytes_per_core": 11464
+    },
+    {
+      "allocation_status": "profile_headroom_positive",
+      "copies": 4,
+      "dtcm_estimate_bytes_per_core": 8449,
+      "dtcm_headroom_bytes_per_core": 57087,
+      "itcm_headroom_bytes_per_core": 21304,
+      "note": "Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.",
+      "point_id": "point_16c_quad_shard",
+      "profile": "memory_core",
+      "text_bytes_per_core": 11464
+    },
+    {
+      "allocation_status": "profile_headroom_positive",
+      "copies": 4,
+      "dtcm_estimate_bytes_per_core": 23597,
+      "dtcm_headroom_bytes_per_core": 41939,
+      "itcm_headroom_bytes_per_core": 19488,
+      "note": "Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.",
+      "point_id": "point_16c_quad_shard",
+      "profile": "learning_core",
+      "text_bytes_per_core": 13280
+    }
+  ],
+  "recommended_next_step": "Prepare and run Tier 4.32a-hw EBRAINS single-chip MCPL-first scale stress.",
+  "runner_revision": "tier4_32a_single_chip_scale_stress_20260506_0001",
+  "runtime_limits": {
+    "max_context_slots": 128,
+    "max_lifecycle_slots": 8,
+    "max_lookup_replies": 32,
+    "max_memory_slots": 8,
+    "max_pending_horizons": 128,
+    "max_route_slots": 8,
+    "max_schedule_entries": 512
+  },
+  "scale_points": [
+    {
+      "claim_boundary": "preflight projection only; must be measured on EBRAINS before scaling claims",
+      "compact_readback_bytes_per_snapshot": 420,
+      "context_cores": 1,
+      "context_slots_per_context_core": 48,
+      "event_count": 48,
+      "learning_cores": 1,
+      "lifecycle_cores": 0,
+      "lifecycle_slots_per_lifecycle_core": 0,
+      "lookup_replies_in_flight": 10,
+      "lookup_replies_total": 144,
+      "lookup_requests_total": 144,
+      "max_pending_horizons": 10,
+      "mcpl_messages_total": 288,
+      "mcpl_payload_bytes_total": 2304,
+      "memory_cores": 1,
+      "memory_slots_per_memory_core": 4,
+      "point_id": "point_04c_reference",
+      "projected_failure_class": "none_projected_preflight",
+      "purpose": "Measured four-core family reference carried forward from 4.28e.",
+      "route_cores": 1,
+      "route_slots_per_route_core": 4,
+      "schedule_entries_per_learning_core": 48,
+      "sdp_payload_bytes_if_fallback_total": 7776,
+      "shards": 1,
+      "status": "eligible_for_hardware_stress",
+      "temporal_state_enabled": false,
+      "total_cores": 4
+    },
+    {
+      "claim_boundary": "preflight projection only; must be measured on EBRAINS before scaling claims",
+      "compact_readback_bytes_per_snapshot": 593,
+      "context_cores": 1,
+      "context_slots_per_context_core": 96,
+      "event_count": 96,
+      "learning_cores": 1,
+      "lifecycle_cores": 1,
+      "lifecycle_slots_per_lifecycle_core": 8,
+      "lookup_replies_in_flight": 10,
+      "lookup_replies_total": 288,
+      "lookup_requests_total": 288,
+      "max_pending_horizons": 10,
+      "mcpl_messages_total": 576,
+      "mcpl_payload_bytes_total": 4608,
+      "memory_cores": 1,
+      "memory_slots_per_memory_core": 4,
+      "point_id": "point_05c_lifecycle",
+      "projected_failure_class": "none_projected_preflight",
+      "purpose": "Five-profile lifecycle bridge envelope carried forward from 4.30g.",
+      "route_cores": 1,
+      "route_slots_per_route_core": 4,
+      "schedule_entries_per_learning_core": 96,
+      "sdp_payload_bytes_if_fallback_total": 15552,
+      "shards": 1,
+      "status": "eligible_for_hardware_stress",
+      "temporal_state_enabled": false,
+      "total_cores": 5
+    },
+    {
+      "claim_boundary": "preflight projection only; must be measured on EBRAINS before scaling claims",
+      "compact_readback_bytes_per_snapshot": 888,
+      "context_cores": 2,
+      "context_slots_per_context_core": 96,
+      "event_count": 192,
+      "learning_cores": 2,
+      "lifecycle_cores": 0,
+      "lifecycle_slots_per_lifecycle_core": 0,
+      "lookup_replies_in_flight": 20,
+      "lookup_replies_total": 576,
+      "lookup_requests_total": 576,
+      "max_pending_horizons": 20,
+      "mcpl_messages_total": 1152,
+      "mcpl_payload_bytes_total": 9216,
+      "memory_cores": 2,
+      "memory_slots_per_memory_core": 4,
+      "point_id": "point_08c_dual_shard",
+      "projected_failure_class": "none_projected_preflight",
+      "purpose": "First replicated context/route/memory/learning shard stress point.",
+      "route_cores": 2,
+      "route_slots_per_route_core": 4,
+      "schedule_entries_per_learning_core": 96,
+      "sdp_payload_bytes_if_fallback_total": 31104,
+      "shards": 2,
+      "status": "eligible_for_hardware_stress",
+      "temporal_state_enabled": true,
+      "total_cores": 8
+    },
+    {
+      "claim_boundary": "preflight projection only; must be measured on EBRAINS before scaling claims",
+      "compact_readback_bytes_per_snapshot": 1308,
+      "context_cores": 3,
+      "context_slots_per_context_core": 128,
+      "event_count": 384,
+      "learning_cores": 3,
+      "lifecycle_cores": 0,
+      "lifecycle_slots_per_lifecycle_core": 0,
+      "lookup_replies_in_flight": 30,
+      "lookup_replies_total": 1152,
+      "lookup_requests_total": 1152,
+      "max_pending_horizons": 30,
+      "mcpl_messages_total": 2304,
+      "mcpl_payload_bytes_total": 18432,
+      "memory_cores": 3,
+      "memory_slots_per_memory_core": 4,
+      "point_id": "point_12c_triple_shard",
+      "projected_failure_class": "none_projected_preflight",
+      "purpose": "Intermediate replicated shard stress point before full single-chip pressure.",
+      "route_cores": 3,
+      "route_slots_per_route_core": 4,
+      "schedule_entries_per_learning_core": 128,
+      "sdp_payload_bytes_if_fallback_total": 62208,
+      "shards": 3,
+      "status": "eligible_for_hardware_stress",
+      "temporal_state_enabled": true,
+      "total_cores": 12
+    },
+    {
+      "claim_boundary": "preflight projection only; must be measured on EBRAINS before scaling claims",
+      "compact_readback_bytes_per_snapshot": 1728,
+      "context_cores": 4,
+      "context_slots_per_context_core": 128,
+      "event_count": 512,
+      "learning_cores": 4,
+      "lifecycle_cores": 0,
+      "lifecycle_slots_per_lifecycle_core": 0,
+      "lookup_replies_in_flight": 32,
+      "lookup_replies_total": 1536,
+      "lookup_requests_total": 1536,
+      "max_pending_horizons": 32,
+      "mcpl_messages_total": 3072,
+      "mcpl_payload_bytes_total": 24576,
+      "memory_cores": 4,
+      "memory_slots_per_memory_core": 4,
+      "point_id": "point_16c_quad_shard",
+      "projected_failure_class": "none_projected_preflight",
+      "purpose": "Conservative full single-chip application-core pressure point.",
+      "route_cores": 4,
+      "route_slots_per_route_core": 4,
+      "schedule_entries_per_learning_core": 128,
+      "sdp_payload_bytes_if_fallback_total": 82944,
+      "shards": 4,
+      "status": "eligible_for_hardware_stress",
+      "temporal_state_enabled": true,
+      "total_cores": 16
+    }
+  ],
+  "status": "pass",
+  "tier": "Tier 4.32a - Single-Chip Multi-Core Scale-Stress Preflight",
+  "tier4_32_source": "controlled_test_output/tier4_32_20260506_mapping_resource_model/tier4_32_results.json"
+}

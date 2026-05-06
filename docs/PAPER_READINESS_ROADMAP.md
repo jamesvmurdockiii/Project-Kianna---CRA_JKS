@@ -6334,6 +6334,12 @@ Near-term roadmap insertion:
     the scale data plane, profile builds have positive ITCM/DTCM headroom,
     Tier 4.32a single-chip scale stress is authorized next, and no native-scale
     baseline freeze is authorized.
+23. Tier 4.32a single-chip multi-core scale-stress preflight. COMPLETE:
+    local pass 18/18 at
+    `controlled_test_output/tier4_32a_20260506_single_chip_scale_stress/`;
+    4/5/8/12/16-core MCPL-first stress points are predeclared, schedule/slot/
+    pending/readback/profile gates are bounded, Tier 4.32a-hw is authorized
+    next, and Tier 4.32b/multi-chip/native-scale baseline freeze remain blocked.
 ```
 
 Tier 5.19a result:
@@ -6637,8 +6643,8 @@ Tests: test-temporal-state, test-profiles, test, test-lifecycle, test-lifecycle-
 Boundary: local source/runtime host evidence only, not hardware
 ```
 
-Next: Tier 4.32a single-chip multi-core scale stress using the measured Tier
-      4.32 resource envelope.
+Next: Tier 4.32a-hw EBRAINS single-chip multi-core scale stress using the
+      measured Tier 4.32a preflight scale points.
       Reopen native replay-buffer, sleep-like replay, or eligibility-trace
       implementation only if a later measured blocker specifically demands it.
 ```

@@ -157,7 +157,8 @@ Tier 4.31c - Native Temporal-Substrate Runtime Source Audit
     not nonlinear recurrence, not native replay/sleep, and not benchmark
     superiority.
   Next status: Tier 4.31d hardware smoke passed, Tier 4.31e local decision
-    closeout passed, and Tier 4.32 mapping/resource model passed. Tier 4.32a
+    closeout passed, Tier 4.32 mapping/resource model passed, and Tier 4.32a
+    single-chip scale-stress preflight passed. Tier 4.32a-hw EBRAINS
     single-chip multi-core scale stress is current; native replay buffers,
     sleep-like replay, and native macro eligibility remain deferred until
     measured blockers demand them.

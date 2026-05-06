@@ -99,12 +99,11 @@ FROZEN: CRA_LIFECYCLE_NATIVE_BASELINE_v0.4
             temporal migration, not external-baseline superiority, and not
             language/planning/AGI/ASI.
 
-  Next: Tier 4.32a single-chip multi-core scale stress. Tier 4.31d-hw passed as
-        one-board temporal-state smoke evidence, Tier 4.31e deferred native
-        replay/sleep/eligibility until measured blockers exist, and Tier 4.32
-        passed the resource/mapping model that selects MCPL-first scale stress.
-        Do not freeze a new native baseline or claim full v2.2 transfer from
-        these gates.
+  Next: Tier 4.32a-hw EBRAINS single-chip multi-core scale stress. Tier 4.32a
+        passed the local preflight that predeclares 4/5/8/12/16-core MCPL-first
+        stress points and keeps Tier 4.32b/multi-chip/native-scale baseline
+        freeze blocked until real hardware evidence returns. Do not freeze a
+        new native baseline or claim full v2.2 transfer from these gates.
 ```
 
 Current active tier state:
@@ -195,14 +194,28 @@ Tier 4.32 — COMPLETE. Native-runtime mapping/resource model.
   Boundary: local resource/mapping model only; not new hardware, not speedup,
     not multi-chip scaling, not benchmark superiority, and not a baseline freeze.
 
-Tier 4.32a — CURRENT ACTIVE. Single-chip multi-core scale stress.
+Tier 4.32a — COMPLETE. Single-chip multi-core scale-stress preflight.
+  Status: LOCAL PASS, 18/18.
+  Output: controlled_test_output/tier4_32a_20260506_single_chip_scale_stress/
+  Decision: predeclared 4/5/8/12/16-core MCPL-first single-chip stress points
+    are eligible for EBRAINS hardware stress. Schedule/core, context-slot,
+    pending/reply, compact-readback, and profile-headroom gates are bounded.
+    Tier 4.32a-hw is authorized next. Tier 4.32b-e and native-scale baseline
+    freeze remain blocked.
+  Boundary: local preflight only; not hardware, not speedup, not multi-chip,
+    not static reef partition proof, not benchmark superiority, and not a
+    baseline freeze.
+
+Tier 4.32a-hw — CURRENT ACTIVE. EBRAINS single-chip multi-core scale stress.
   Question: How far can the current single-chip MCPL-first native runtime be
     stressed before schedule length, slot pressure, readback volume, lookup
     pressure, or profile headroom breaks?
-  Required coverage: MCPL-first messaging, compact readback cadence, profile
-    size/headroom, schedule-length sweep, context/route/memory/lifecycle slot
-    pressure, pending-horizon pressure, stale/duplicate/timeout counters, and
-    explicit breakpoints before static reef partitioning or multi-chip work.
+  Required coverage: use the Tier 4.32a preflight scale points exactly unless a
+    documented EBRAINS constraint forces a narrower smoke; MCPL-first messaging,
+    compact readback cadence, profile size/headroom, schedule-length sweep,
+    context/route/memory/lifecycle slot pressure, pending-horizon pressure,
+    stale/duplicate/timeout/drop counters, and explicit breakpoints before
+    static reef partitioning or multi-chip work.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware
@@ -687,13 +700,13 @@ Immediate next steps:
 
 1. Keep Tier 4.31d/4.31e boundaries strict: one-board temporal-state smoke plus
    local replay/eligibility decision closeout only, no new freeze.
-2. Tier 4.32 passed and authorized Tier 4.32a. The next native step is a
-   single-chip multi-core scale stress using the measured resource envelope;
-   do not jump directly to static reef partitioning, multi-chip, benchmarks, or
-   a native-scale baseline freeze.
+2. Tier 4.32a passed and authorized Tier 4.32a-hw. The next native step is an
+   EBRAINS single-chip multi-core scale stress using the predeclared 4/5/8/12/16
+   core MCPL-first stress points; do not jump directly to static reef
+   partitioning, multi-chip, benchmarks, or a native-scale baseline freeze.
 3. Keep the 4.31b/4.31c range refinement explicit: selected trace bound is ±2
    in s16.15; the older ±1 sketch saturated and must not silently return.
-5. Keep public repo hygiene green before the next upload or commit: no
+4. Keep public repo hygiene green before the next upload or commit: no
    credentialed remotes, no `ebrains_jobs/` symlinks, no transient root output
    dirs, no generated host binaries, and `make validate` passing.
 

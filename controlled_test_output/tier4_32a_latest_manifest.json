@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-05-06T22:17:20.918728+00:00",
+  "source_generated_at_utc": "2026-05-06T22:17:01+00:00",
+  "registry_entry_id": "tier4_32a_single_chip_scale_stress_preflight",
+  "tier": "Tier 4.32a - Single-Chip Multi-Core Scale-Stress Preflight",
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_20260506_single_chip_scale_stress",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_20260506_single_chip_scale_stress/tier4_32a_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_20260506_single_chip_scale_stress/tier4_32a_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_20260506_single_chip_scale_stress/tier4_32a_scale_points.csv",
+  "canonical": true,
+  "claim": "Tier 4.32a converts the Tier 4.32 resource model into a predeclared 4/5/8/12/16-core single-chip MCPL-first stress envelope, with schedule, slot, pending, readback, profile-headroom, and failure-class gates. It authorizes only Tier 4.32a-hw and keeps 4.32b/multi-chip/native-scale baseline freeze blocked.",
+  "caveat": "Local preflight only; not a SpiNNaker hardware run, not speedup evidence, not multi-chip scaling, not static reef partition proof, not benchmark superiority, and not a baseline freeze."
+}

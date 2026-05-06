@@ -1460,6 +1460,26 @@ SPECS: tuple[EvidenceSpec, ...] = (
             "tier4_32_criteria.csv",
         ),
     ),
+    EvidenceSpec(
+        entry_id="tier4_32a_single_chip_scale_stress_preflight",
+        tier_label="Tier 4.32a - Single-Chip Multi-Core Scale-Stress Preflight",
+        plan_position="Phase G single-chip multi-core scale-stress preflight before EBRAINS hardware stress",
+        canonical_dir="tier4_32a_20260506_single_chip_scale_stress",
+        results_file="tier4_32a_results.json",
+        report_file="tier4_32a_report.md",
+        summary_file="tier4_32a_scale_points.csv",
+        harness="experiments/tier4_32a_single_chip_scale_stress.py",
+        evidence_role="native runtime single-chip scale-stress preflight",
+        claim="Tier 4.32a converts the Tier 4.32 resource model into a predeclared 4/5/8/12/16-core single-chip MCPL-first stress envelope, with schedule, slot, pending, readback, profile-headroom, and failure-class gates. It authorizes only Tier 4.32a-hw and keeps 4.32b/multi-chip/native-scale baseline freeze blocked.",
+        caveat="Local preflight only; not a SpiNNaker hardware run, not speedup evidence, not multi-chip scaling, not static reef partition proof, not benchmark superiority, and not a baseline freeze.",
+        latest_manifest_names=("tier4_32a_latest_manifest.json",),
+        expected_extra_files=(
+            "tier4_32a_profile_allocation.csv",
+            "tier4_32a_failure_classes.csv",
+            "tier4_32a_next_gate_plan.csv",
+            "tier4_32a_criteria.csv",
+        ),
+    ),
 )
 
 

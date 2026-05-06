@@ -275,7 +275,7 @@ did expose a general missing substrate: continuous temporal dynamics. That
 mechanism must be tested before assuming lifecycle alone will evolve the
 ability.
 
-## 6. Next 67-Step Execution Plan
+## 6. Next 72-Step Execution Plan
 
 ### Phase A - Close 4.26 And Decide The Runtime Protocol
 
@@ -797,76 +797,86 @@ ability.
     returned profile ITCM/DTCM headroom. Decision: Tier 4.32a authorized next;
     Tier 4.32b-e remain blocked in order; no native-scale baseline freeze.
 
-54. **CURRENT ACTIVE STEP** - Tier 4.32a single-chip multi-core scale stress: increase cores on one chip
-    in controlled increments, for example 4 -> 8 -> 16 cores if resources allow,
-    using MCPL/multicast for core-to-core event traffic unless a documented
-    hardware constraint forces a temporary exception.
+54. Tier 4.32a single-chip multi-core scale-stress preflight: **COMPLETED**.
+    Local pass `18/18` at
+    `controlled_test_output/tier4_32a_20260506_single_chip_scale_stress/`.
+    It predeclared 4/5/8/12/16-core MCPL-first stress points, bounded
+    schedule/slot/pending/readback/profile gates, authorized Tier 4.32a-hw, and
+    kept 4.32b/multi-chip/native-scale baseline freeze blocked.
 
-55. Tier 4.32b static reef partition smoke: map groups/modules/polyps to cores
+55. **CURRENT ACTIVE STEP** - Tier 4.32a-hw EBRAINS single-chip multi-core scale
+    stress: run the predeclared 4/5/8/12/16-core points from 4.32a if hardware
+    resources allow, using MCPL/multicast for core-to-core event traffic unless
+    a documented hardware constraint forces a temporary exception. Return
+    compact per-core readback, profile/build artifacts, lookup request/reply
+    parity, stale/duplicate/timeout/drop counters, and schedule/slot high-water
+    marks. This is hardware stress only, not a baseline freeze.
+
+56. Tier 4.32b static reef partition smoke: map groups/modules/polyps to cores
     using the measured static-pool strategy. Do not pretend one polyp equals one
     chip unless measured mapping proves that is correct.
 
-56. Tier 4.32c inter-chip feasibility contract: define routing keys, message
+57. Tier 4.32c inter-chip feasibility contract: define routing keys, message
     path, board/chip selection, failure classes, readback, and resource limits
     before attempting multi-chip.
 
-57. Tier 4.32d first multi-chip smoke: smallest possible cross-chip message and
+58. Tier 4.32d first multi-chip smoke: smallest possible cross-chip message and
     state lookup. No learning claim until communication and readback are clean.
 
-58. Tier 4.32e multi-chip learning micro-task: only after cross-chip smoke
+59. Tier 4.32e multi-chip learning micro-task: only after cross-chip smoke
     passes, run a tiny delayed-credit or reentry task with explicit claim
     boundary and resource measurements.
 
-59. Freeze `CRA_NATIVE_SCALE_BASELINE_v0.5` only if single-chip multi-core and
+60. Freeze `CRA_NATIVE_SCALE_BASELINE_v0.5` only if single-chip multi-core and
     first multi-chip evidence are stable enough for the final paper claim. If
     not, publish measured single-chip limits honestly.
 
 ### Phase H - Software Usefulness And Final Baselines
 
-59. Tier 6.2 hard synthetic suite: variable-delay cue, multi-cue delayed reward,
+61. Tier 6.2 hard synthetic suite: variable-delay cue, multi-cue delayed reward,
     hidden regime switching, drifting bandit, concept drift, anomaly stream,
     and small delayed-reward control proxy.
 
-60. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+62. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines.
 
-61. Tier 7.2 held-out task challenge: define held-out families before running;
+63. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout.
 
-62. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+64. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines.
 
-63. Tier 7.4 policy/action selection: state -> action -> delayed consequence,
+65. Tier 7.4 policy/action selection: state -> action -> delayed consequence,
     exploration versus exploitation, uncertainty-gated actions.
 
-64. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
+66. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
     planning/subgoal control: run only after the shorter hard/real-ish tasks are
     stable. Do not claim language, AGI, or broad planning from toy gates.
 
-65. Run expanded external baselines and fairness audit at the phase lock:
+67. Run expanded external baselines and fairness audit at the phase lock:
     random/sign persistence, online perceptron/logistic, reservoir/ESN, small
     GRU, STDP-only SNN, simple evolutionary population, and SNN reviewer-defense
     baselines where practical.
 
-66. Freeze the next software baseline only if new software capability work
+68. Freeze the next software baseline only if new software capability work
     passes ablations, fair baselines, and compact regression. If no new software
     mechanism is promoted, keep v2.2.
 
 ### Phase I - Final Paper Lock
 
-67. Select final paper claim level: strong usefulness paper, bounded architecture
+69. Select final paper claim level: strong usefulness paper, bounded architecture
     study, or narrowed diagnostic report. Let the evidence decide.
 
-68. Run final software matrix and final hardware subset matrix. Include effect
+70. Run final software matrix and final hardware subset matrix. Include effect
     sizes, confidence intervals, worst seed, sample efficiency, runtime, command
     count, resource budgets, and claim-boundary table.
 
-69. Build the independent reproduction capsule: fresh checkout instructions,
+71. Build the independent reproduction capsule: fresh checkout instructions,
     environment lock, validation command, registry/table regeneration, EBRAINS
     ingest instructions, artifact hash manifest, and one local tier rerun.
 
-70. Draft paper/whitepaper only after Step 65 and Step 66 pass. Write
+72. Draft paper/whitepaper only after Step 67 and Step 68 pass. Write
     limitations first, then claims. Preserve failed and parked diagnostics.
 
 71. External dry run: have a clean agent or human follow only the docs. If they
@@ -1028,9 +1038,9 @@ After each completed run or design tier:
 The next concrete action is:
 
 ```text
-Tier 4.32a single-chip multi-core scale stress: use the Tier 4.32 resource
-model to stress MCPL-first single-chip mapping before static reef partitioning
-or multi-chip communication claims.
+Tier 4.32a-hw EBRAINS single-chip multi-core scale stress: use the Tier 4.32a
+preflight to run predeclared 4/5/8/12/16-core MCPL-first stress points before
+static reef partitioning or multi-chip communication claims.
 ```
 
 Current reference state:
@@ -1059,6 +1069,9 @@ replay, and native macro eligibility deferred until measured blockers exist;
 Tier 4.32 authorized next
 Tier 4.32 resource-model status: passed 23/23; MCPL-first scale path selected;
 4.32a authorized next; no native-scale baseline freeze
+Tier 4.32a preflight status: passed 18/18; 4/5/8/12/16-core stress envelope
+predeclared; 4.32a-hw authorized next; 4.32b/multi-chip/native-scale baseline
+freeze remain blocked
 ```
 
 Purpose:
@@ -1069,8 +1082,10 @@ fading-memory temporal-state subset toward chip-native form. Tier 4.31e then
 closed the replay/eligibility decision gate and found no measured blocker that
 justifies immediate native replay buffers, sleep-like replay, or native macro
 eligibility. Tier 4.32 converted measured 4.27-4.31 evidence into an explicit
-resource envelope. The next action is single-chip MCPL-first scale stress, not
-a benchmark, speedup, or multi-chip claim.
+resource envelope. Tier 4.32a then turned that envelope into a concrete local
+preflight with 4/5/8/12/16-core MCPL-first stress points. The next action is the
+EBRAINS Tier 4.32a-hw single-chip hardware stress, not a benchmark, speedup,
+static partition, or multi-chip claim.
 ```
 
 Required coverage:
@@ -1080,10 +1095,9 @@ Use v2.2 as the software reference and `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` as
 the native lifecycle baseline. Keep Tier 4.31d's boundary strict: one-board
 temporal-state hardware smoke only; not nonlinear recurrence, not speedup, not
 multi-chip scaling, not benchmark superiority, and not full organism autonomy.
-The next native work must execute Tier 4.32a single-chip multi-core scale
-stress using the Tier 4.32 model. Only reopen replay buffers, sleep-like
-replay, or native eligibility if a later measured blocker specifically demands
-it.
+The next native work must execute Tier 4.32a-hw using the Tier 4.32a preflight
+scale points. Only reopen replay buffers, sleep-like replay, or native
+eligibility if a later measured blocker specifically demands it.
 ```
 
 

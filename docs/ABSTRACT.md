@@ -18,7 +18,7 @@ is organized through predeclared tiers, generated registries, JSON/CSV/Markdown
 artifacts, frozen baselines, controls, ablations, external baselines, and explicit
 claim boundaries.
 
-As of the current registry, CRA contains 67 canonical evidence bundles with zero
+As of the current registry, CRA contains 68 canonical evidence bundles with zero
 missing expected artifacts and zero failed criteria in canonical entries. The
 software evidence includes negative controls, positive learning controls,
 architecture ablations, external-baseline comparisons, delayed-credit repairs,
@@ -39,8 +39,11 @@ state readback and enabled/zero/frozen/reset controls. Tier 4.31e then closed
 the native replay/eligibility decision gate by deferring native replay buffers,
 sleep-like replay, and native macro eligibility until measured blockers exist,
 and authorizing Tier 4.32 mapping/resource modeling. Tier 4.32 passed that
-local resource model with positive measured profile headroom, MCPL-first scale
-policy, and Tier 4.32a single-chip scale stress authorized next.
+local resource model with positive measured profile headroom and MCPL-first
+scale policy. Tier 4.32a then passed the local single-chip scale-stress
+preflight, predeclaring 4/5/8/12/16-core MCPL-first stress points and
+authorizing Tier 4.32a-hw while keeping static reef partitioning, multi-chip
+work, and native-scale baseline freeze blocked.
 
 The current bounded claim is that CRA is a reproducible neuromorphic research
 platform with demonstrated local learning, mechanism sensitivity, selected

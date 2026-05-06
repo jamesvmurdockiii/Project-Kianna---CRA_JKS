@@ -1,0 +1,22 @@
+point_id,profile,copies,text_bytes_per_core,dtcm_estimate_bytes_per_core,itcm_headroom_bytes_per_core,dtcm_headroom_bytes_per_core,allocation_status,note
+point_04c_reference,context_core,1,11432,8449,21336,57087,profile_headroom_positive,Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.
+point_04c_reference,route_core,1,11464,8449,21304,57087,profile_headroom_positive,Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.
+point_04c_reference,memory_core,1,11464,8449,21304,57087,profile_headroom_positive,Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.
+point_04c_reference,learning_core,1,13280,23597,19488,41939,profile_headroom_positive,Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.
+point_05c_lifecycle,context_core,1,11432,8449,21336,57087,profile_headroom_positive,Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.
+point_05c_lifecycle,route_core,1,11464,8449,21304,57087,profile_headroom_positive,Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.
+point_05c_lifecycle,memory_core,1,11464,8449,21304,57087,profile_headroom_positive,Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.
+point_05c_lifecycle,learning_core,1,13280,23597,19488,41939,profile_headroom_positive,Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.
+point_05c_lifecycle,lifecycle_core,1,14744,22793,18024,42743,profile_headroom_positive,Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.
+point_08c_dual_shard,context_core,2,11432,8449,21336,57087,profile_headroom_positive,Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.
+point_08c_dual_shard,route_core,2,11464,8449,21304,57087,profile_headroom_positive,Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.
+point_08c_dual_shard,memory_core,2,11464,8449,21304,57087,profile_headroom_positive,Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.
+point_08c_dual_shard,learning_core,2,13280,23597,19488,41939,profile_headroom_positive,Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.
+point_12c_triple_shard,context_core,3,11432,8449,21336,57087,profile_headroom_positive,Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.
+point_12c_triple_shard,route_core,3,11464,8449,21304,57087,profile_headroom_positive,Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.
+point_12c_triple_shard,memory_core,3,11464,8449,21304,57087,profile_headroom_positive,Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.
+point_12c_triple_shard,learning_core,3,13280,23597,19488,41939,profile_headroom_positive,Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.
+point_16c_quad_shard,context_core,4,11432,8449,21336,57087,profile_headroom_positive,Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.
+point_16c_quad_shard,route_core,4,11464,8449,21304,57087,profile_headroom_positive,Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.
+point_16c_quad_shard,memory_core,4,11464,8449,21304,57087,profile_headroom_positive,Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.
+point_16c_quad_shard,learning_core,4,13280,23597,19488,41939,profile_headroom_positive,Replicated profiles keep per-core ITCM/DTCM headroom; aggregate chip pressure must be measured in hardware.
