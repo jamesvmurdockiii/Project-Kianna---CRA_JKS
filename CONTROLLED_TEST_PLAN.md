@@ -8967,3 +8967,38 @@ Boundary: local source/documentation audit only; not hardware, speedup,
 multi-chip scaling, static reef partition proof, benchmark superiority, or
 baseline freeze.
 ```
+
+## Tier 4.32a-r1 - Confidence-Bearing Shard-Aware MCPL Lookup Repair
+
+Question: Can the custom runtime repair MCPL lookup so it preserves value,
+confidence, hit/status, lookup type, and shard identity before any MCPL-first
+hardware scale stress?
+
+Hypothesis: A two-packet MCPL reply contract plus shard-aware key layout can
+preserve confidence-gated learning behavior while preventing identical
+seq/type cross-shard replies from cross-talking.
+
+Result:
+
+```text
+Tier 4.32a-r1 MCPL lookup repair passed locally at
+controlled_test_output/tier4_32a_r1_20260506_mcpl_lookup_repair/.
+Runner revision: tier4_32a_r1_mcpl_lookup_repair_20260506_0001.
+Criteria: 14/14.
+Implemented:
+- MCPL key layout includes shard_id
+- MCPL lookup replies use value and confidence/meta packets
+- confidence/hit/status metadata is packed centrally
+- learning-core MCPL receive no longer hardcodes confidence=1.0
+- local C tests cover value/meta ordering, meta-before-value, wrong-shard
+  rejection, and identical seq/type cross-shard separation
+- four-core local behavior tests prove full/zero/half-confidence learning
+  controls pass through MCPL
+Decision: single-shard Tier 4.32a-hw EBRAINS hardware stress is authorized next
+for the eligible 4/5-core points. Replicated 8/12/16-core stress, static reef
+partitioning, multi-chip work, and native-scale baseline freeze remain blocked
+until single-shard hardware stress passes.
+Boundary: local source/runtime evidence only; not hardware, speedup,
+replicated-shard scaling, multi-chip scaling, static reef partition proof,
+benchmark superiority, or baseline freeze.
+```

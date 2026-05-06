@@ -30,37 +30,34 @@ Latest scale-planning lesson:
 
 ```text
 Do not prepare replicated 8/12/16-core shard stress by merely loading multiple
-copies of the context/route/memory/learning profiles. The current MCPL lookup
-key layout is app_id | msg_type | lookup_type | seq_id; it has no shard/group
-field, and the C send helpers currently reserve/ignore dest_core. Multiple
-copies of the same state profile would therefore receive the same lookup
-requests and can generate duplicate/cross-shard replies. Tier 4.32a correctly
-blocks replicated-shard stress until Tier 4.32a-r1 adds shard-aware MCPL routing
-or equivalent directed-routing semantics.
+copies of the context/route/memory/learning profiles. Tier 4.32a-r1 repaired
+the local MCPL lookup contract by adding shard identity plus value/meta reply
+packets, but replicated shard stress is still blocked until the single-shard
+hardware stress passes cleanly.
 
-Do not prepare the MCPL-first Tier 4.32a-hw single-shard package yet either.
-Tier 4.32a-r0 found that confidence-gated lookup traffic still uses
-transitional SDP because MCPL replies do not carry confidence/hit status and
-MCPL receive hardcodes confidence=1.0. A transitional SDP debug run must be
-labelled as SDP debug only, not MCPL-first scale evidence.
+The MCPL-first Tier 4.32a-hw single-shard package is now allowed as the active
+next hardware-facing step. It must use the repaired Tier 4.32a-r1 protocol and
+must be limited to the eligible 4/5-core single-shard stress points. It is not
+replicated-shard evidence, multi-chip evidence, speedup evidence, or a
+native-scale baseline freeze.
 ```
 
 Latest active hardware-facing tier:
 
 ```text
-Tier 4.32a-r1 - Confidence-Bearing Shard-Aware MCPL Lookup Repair
-  Status: CURRENT ACTIVE, local source/runtime repair before EBRAINS package
+Tier 4.32a-hw - Single-Shard MCPL-First EBRAINS Scale Stress
+  Status: CURRENT ACTIVE, hardware package/run after local protocol repair
   Local prerequisite: Tier 4.32a local preflight pass, 19/19
   Corrective prerequisite: Tier 4.32a-r0 protocol truth audit pass, 10/10
-  Local output: controlled_test_output/tier4_32a_r0_20260506_protocol_truth_audit/
-  Required repair now: MCPL lookup must carry value, confidence, hit/status,
-    lookup type, and shard/group identity or equivalent directed-routing
-    semantics.
-  Blocked EBRAINS packages: MCPL-first 4.32a-hw, replicated 8/12/16-core
-    stress, static reef partitioning, multi-chip work, and native-scale
-    baseline freeze.
-  Boundary: source/runtime repair and local C tests first; no hardware package
-    until the repaired protocol passes locally.
+  Protocol repair prerequisite: Tier 4.32a-r1 pass, 14/14
+  Local output: controlled_test_output/tier4_32a_r1_20260506_mcpl_lookup_repair/
+  Required hardware scope now: run only point_04c_reference and
+    point_05c_lifecycle with compact per-core readback, lookup request/reply
+    parity, stale/duplicate/timeout/drop counters, and schedule/slot
+    high-water marks.
+  Still blocked: replicated 8/12/16-core stress, static reef partitioning,
+    multi-chip work, and native-scale baseline freeze.
+  Boundary: single-shard hardware stress only.
 
 Recent passed hardware-facing lifecycle tier:
 
@@ -192,11 +189,12 @@ Tier 4.31c - Native Temporal-Substrate Runtime Source Audit
     not nonlinear recurrence, not native replay/sleep, and not benchmark
     superiority.
   Next status: Tier 4.31d hardware smoke passed, Tier 4.31e local decision
-    closeout passed, Tier 4.32 mapping/resource model passed, and Tier 4.32a
-    single-chip scale-stress preflight passed. Tier 4.32a-r0 then blocked the
-    MCPL-first hardware package until confidence-bearing and shard-aware MCPL
-    lookup is repaired. Native replay buffers, sleep-like replay, and native
-    macro eligibility remain deferred until measured blockers demand them.
+    closeout passed, Tier 4.32 mapping/resource model passed, Tier 4.32a
+    single-chip scale-stress preflight passed, and Tier 4.32a-r1 repaired the
+    confidence-bearing shard-aware MCPL lookup blocker. Tier 4.32a-hw
+    single-shard hardware stress is active next. Native replay buffers,
+    sleep-like replay, and native macro eligibility remain deferred until
+    measured blockers demand them.
 ```
 
 Tier 4.28e Point A passed after ingest at:

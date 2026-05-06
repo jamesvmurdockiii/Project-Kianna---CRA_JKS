@@ -1458,16 +1458,19 @@ void cra_state_lookup_init(void) {
     for (uint32_t i = 0; i < MAX_LOOKUP_REPLIES; i++) {
         g_lookup_entries[i].seq_id = 0;
         g_lookup_entries[i].received = 0;
+        g_lookup_entries[i].value_received = 0;
+        g_lookup_entries[i].meta_received = 0;
     }
 }
 
+#ifndef CRA_USE_MCPL_LOOKUP
 static uint16_t g_learning_chip_addr = 0;
+#endif
 
 static void _send_lookup_request(uint32_t seq_id, uint32_t key, uint8_t type, uint8_t dest_cpu) {
-    // 4.29d: MCPL lookup does not yet transmit confidence; use SDP for
-    // confidence-gated learning until MCPL payload packing is extended.
-    (void)dest_cpu;
-#if 0
+    // SDP stays available as a transitional fallback. CRA_USE_MCPL_LOOKUP
+    // selects the confidence-bearing MCPL path repaired in Tier 4.32a-r1.
+#ifdef CRA_USE_MCPL_LOOKUP
     cra_state_mcpl_lookup_send_request(seq_id, key, type, dest_cpu);
     g_summary.lookup_requests_sent++;
 #else
@@ -1493,18 +1496,29 @@ static void _send_lookup_request(uint32_t seq_id, uint32_t key, uint8_t type, ui
 #endif
 }
 
-int cra_state_lookup_send(uint32_t seq_id, uint32_t key, uint8_t type, uint32_t timestamp) {
+int cra_state_lookup_send_shard(uint32_t seq_id, uint32_t key, uint8_t type, uint8_t shard_id, uint32_t timestamp) {
     for (uint32_t i = 0; i < MAX_LOOKUP_REPLIES; i++) {
         if (g_lookup_entries[i].seq_id == 0) {
             g_lookup_entries[i].seq_id = seq_id;
             g_lookup_entries[i].key = key;
             g_lookup_entries[i].type = type;
+            g_lookup_entries[i].shard_id = shard_id & MCPL_KEY_SHARD_MASK;
             g_lookup_entries[i].received = 0;
+            g_lookup_entries[i].value_received = 0;
+            g_lookup_entries[i].meta_received = 0;
+            g_lookup_entries[i].hit = 0;
+            g_lookup_entries[i].status = 0;
+            g_lookup_entries[i].value = 0;
+            g_lookup_entries[i].confidence = 0;
             g_lookup_entries[i].timestamp = timestamp;
             return 0;
         }
     }
     return -1; /* table full */
+}
+
+int cra_state_lookup_send(uint32_t seq_id, uint32_t key, uint8_t type, uint32_t timestamp) {
+    return cra_state_lookup_send_shard(seq_id, key, type, CRA_MCPL_SHARD_ID, timestamp);
 }
 
 int cra_state_lookup_receive(uint32_t seq_id, int32_t value, int32_t confidence, uint8_t hit) {
@@ -1513,6 +1527,9 @@ int cra_state_lookup_receive(uint32_t seq_id, int32_t value, int32_t confidence,
             g_lookup_entries[i].value = value;
             g_lookup_entries[i].confidence = confidence;
             g_lookup_entries[i].hit = hit;
+            g_lookup_entries[i].status = 0;
+            g_lookup_entries[i].value_received = 1;
+            g_lookup_entries[i].meta_received = 1;
             g_lookup_entries[i].received = 1;
             g_summary.lookup_replies_received++;
             return 0;
@@ -1527,6 +1544,62 @@ int cra_state_lookup_receive(uint32_t seq_id, int32_t value, int32_t confidence,
     }
     g_summary.lookup_stale_replies++;
     return -1; /* stale reply: seq_id not in pending list */
+}
+
+static lookup_entry_t *_lookup_find_shard(uint32_t seq_id, uint8_t type, uint8_t shard_id) {
+    for (uint32_t i = 0; i < MAX_LOOKUP_REPLIES; i++) {
+        if (g_lookup_entries[i].seq_id == seq_id &&
+            g_lookup_entries[i].type == type &&
+            g_lookup_entries[i].shard_id == (shard_id & MCPL_KEY_SHARD_MASK)) {
+            return &g_lookup_entries[i];
+        }
+    }
+    return 0;
+}
+
+static int _lookup_receive_mcpl_value(uint32_t seq_id, uint8_t type, uint8_t shard_id, int32_t value) {
+    lookup_entry_t *entry = _lookup_find_shard(seq_id, type, shard_id);
+    if (entry == 0) {
+        g_summary.lookup_stale_replies++;
+        return -1;
+    }
+    if (entry->received || entry->value_received) {
+        g_summary.lookup_duplicate_replies++;
+        return -1;
+    }
+    entry->value = value;
+    entry->value_received = 1;
+    if (entry->meta_received) {
+        entry->received = 1;
+        g_summary.lookup_replies_received++;
+    }
+    return 0;
+}
+
+static int _lookup_receive_mcpl_meta(uint32_t seq_id, uint8_t type, uint8_t shard_id, int32_t confidence, uint8_t hit, uint8_t status) {
+    lookup_entry_t *entry = _lookup_find_shard(seq_id, type, shard_id);
+    if (entry == 0) {
+        g_summary.lookup_stale_replies++;
+        return -1;
+    }
+    if (entry->received || entry->meta_received) {
+        g_summary.lookup_duplicate_replies++;
+        return -1;
+    }
+    entry->confidence = confidence;
+    entry->hit = hit;
+    entry->status = status;
+    entry->meta_received = 1;
+    if (entry->value_received) {
+        entry->received = 1;
+        g_summary.lookup_replies_received++;
+    }
+    return 0;
+}
+
+uint8_t cra_state_lookup_is_received_shard(uint32_t seq_id, uint8_t type, uint8_t shard_id) {
+    lookup_entry_t *entry = _lookup_find_shard(seq_id, type, shard_id);
+    return entry ? entry->received : 0;
 }
 
 uint8_t cra_state_lookup_is_received(uint32_t seq_id) {
@@ -1562,6 +1635,17 @@ uint32_t cra_state_lookup_check_timeout(uint32_t timestamp, uint32_t *seq_ids_ou
     return count;
 }
 
+int cra_state_lookup_get_result_shard(uint32_t seq_id, uint8_t type, uint8_t shard_id, int32_t *value_out, int32_t *confidence_out, uint8_t *hit_out) {
+    lookup_entry_t *entry = _lookup_find_shard(seq_id, type, shard_id);
+    if (entry != 0 && entry->received) {
+        if (value_out) *value_out = entry->value;
+        if (confidence_out) *confidence_out = entry->confidence;
+        if (hit_out) *hit_out = entry->hit;
+        return 0;
+    }
+    return -1;
+}
+
 int cra_state_lookup_get_result(uint32_t seq_id, int32_t *value_out, int32_t *confidence_out, uint8_t *hit_out) {
     for (uint32_t i = 0; i < MAX_LOOKUP_REPLIES; i++) {
         if (g_lookup_entries[i].seq_id == seq_id && g_lookup_entries[i].received) {
@@ -1579,6 +1663,8 @@ void cra_state_lookup_clear(uint32_t seq_id) {
         if (g_lookup_entries[i].seq_id == seq_id) {
             g_lookup_entries[i].seq_id = 0;
             g_lookup_entries[i].received = 0;
+            g_lookup_entries[i].value_received = 0;
+            g_lookup_entries[i].meta_received = 0;
             return;
         }
     }
@@ -1619,11 +1705,10 @@ void cra_state_capture_chip_addr(uint16_t chip_addr) {
 }
 
 static void _send_lookup_reply(uint32_t seq_id, int32_t value, int32_t confidence, uint8_t hit, uint8_t status) {
-    // 4.29d: MCPL lookup does not yet transmit confidence; use SDP for
-    // confidence-gated learning until MCPL payload packing is extended.
-#if 0
-    (void)status;  // status not transmitted in MCPL reply for 4.27e
-    cra_state_mcpl_lookup_send_reply(seq_id, value, confidence, hit,
+    // SDP stays available as a transitional fallback. CRA_USE_MCPL_LOOKUP
+    // selects the confidence-bearing MCPL path repaired in Tier 4.32a-r1.
+#ifdef CRA_USE_MCPL_LOOKUP
+    cra_state_mcpl_lookup_send_reply_shard(seq_id, value, confidence, hit, status,
         /* lookup_type inferred from profile at compile time */
 #ifdef CRA_RUNTIME_PROFILE_CONTEXT_CORE
         LOOKUP_TYPE_CONTEXT,
@@ -1634,6 +1719,7 @@ static void _send_lookup_reply(uint32_t seq_id, int32_t value, int32_t confidenc
 #else
         0,
 #endif
+        CRA_MCPL_SHARD_ID,
         7);  // dest_core = learning core
 #else
     sdp_msg_t *msg = (sdp_msg_t *) spin1_msg_get();
@@ -1689,45 +1775,63 @@ void cra_state_handle_lookup_request(uint32_t seq_id, uint32_t key, uint8_t type
 #endif
 
 // ------------------------------------------------------------------
-// 4.27d MCPL inter-core lookup feasibility (compile-time only)
+// 4.32a-r1 MCPL inter-core lookup repair
 //
 // These functions use the official spin1_api MCPL symbols.
-// They are NOT yet wired into the full lookup state machine.
-// 4.27d validates: key packing, payload packing, and compile.
+// Tier 4.32a-r1 carries value plus confidence/hit/status over MCPL
+// and includes shard_id in the key to avoid replicated-shard cross-talk.
 // ------------------------------------------------------------------
 
 void cra_state_mcpl_lookup_send_request(uint32_t seq_id, uint32_t key_id, uint8_t lookup_type, uint8_t dest_core) {
-    (void)dest_core;  // reserved for future routing-table-directed sends
-    uint32_t key = MAKE_MCPL_KEY(APP_ID, MCPL_MSG_LOOKUP_REQUEST, lookup_type, seq_id);
+    cra_state_mcpl_lookup_send_request_shard(seq_id, key_id, lookup_type, CRA_MCPL_SHARD_ID, dest_core);
+}
+
+void cra_state_mcpl_lookup_send_request_shard(uint32_t seq_id, uint32_t key_id, uint8_t lookup_type, uint8_t shard_id, uint8_t dest_core) {
+    (void)dest_core;  // routing table decides delivery by key/mask
+    uint32_t key = MAKE_MCPL_KEY_SHARD(APP_ID, MCPL_MSG_LOOKUP_REQUEST, lookup_type, shard_id, seq_id);
     spin1_send_mc_packet(key, key_id, WITH_PAYLOAD);
 }
 
 void cra_state_mcpl_lookup_send_reply(uint32_t seq_id, int32_t value, int32_t confidence, uint8_t hit, uint8_t lookup_type, uint8_t dest_core) {
-    (void)dest_core;  // reserved for future routing-table-directed sends
-    (void)confidence; // reserved for future payload packing
-    (void)hit;        // reserved for future payload packing
-    uint32_t key = MAKE_MCPL_KEY(APP_ID, MCPL_MSG_LOOKUP_REPLY, lookup_type, seq_id);
-    uint32_t payload = (uint32_t)value;
-    spin1_send_mc_packet(key, payload, WITH_PAYLOAD);
+    cra_state_mcpl_lookup_send_reply_shard(seq_id, value, confidence, hit, 0, lookup_type, CRA_MCPL_SHARD_ID, dest_core);
+}
+
+void cra_state_mcpl_lookup_send_reply_shard(uint32_t seq_id, int32_t value, int32_t confidence, uint8_t hit, uint8_t status, uint8_t lookup_type, uint8_t shard_id, uint8_t dest_core) {
+    (void)dest_core;  // routing table decides delivery by key/mask
+    uint32_t value_key = MAKE_MCPL_KEY_SHARD(APP_ID, MCPL_MSG_LOOKUP_REPLY_VALUE, lookup_type, shard_id, seq_id);
+    uint32_t meta_key = MAKE_MCPL_KEY_SHARD(APP_ID, MCPL_MSG_LOOKUP_REPLY_META, lookup_type, shard_id, seq_id);
+    spin1_send_mc_packet(value_key, (uint32_t)value, WITH_PAYLOAD);
+    spin1_send_mc_packet(meta_key, PACK_MCPL_LOOKUP_META(confidence, hit, status), WITH_PAYLOAD);
 }
 
 void cra_state_mcpl_lookup_receive(uint32_t key, uint32_t payload) {
     uint8_t msg_type = EXTRACT_MCPL_MSG_TYPE(key);
     uint32_t seq_id = EXTRACT_MCPL_SEQ_ID(key);
+    uint8_t lookup_type = EXTRACT_MCPL_LOOKUP_TYPE(key);
+    uint8_t shard_id = EXTRACT_MCPL_SHARD_ID(key);
     (void)msg_type;
     (void)seq_id;
+    (void)lookup_type;
+    (void)shard_id;
 
 #ifdef CRA_RUNTIME_PROFILE_LEARNING_CORE
-    if (msg_type == MCPL_MSG_LOOKUP_REPLY) {
+    if (msg_type == MCPL_MSG_LOOKUP_REPLY_VALUE) {
         // Learning core receives reply
         int32_t value = (int32_t)payload;
-        cra_state_lookup_receive(seq_id, value, FP_ONE, 1);
+        (void)_lookup_receive_mcpl_value(seq_id, lookup_type, shard_id, value);
+    } else if (msg_type == MCPL_MSG_LOOKUP_REPLY_META) {
+        int32_t confidence = EXTRACT_MCPL_LOOKUP_META_CONF(payload);
+        uint8_t hit = (uint8_t)EXTRACT_MCPL_LOOKUP_META_HIT(payload);
+        uint8_t status = (uint8_t)EXTRACT_MCPL_LOOKUP_META_STATUS(payload);
+        (void)_lookup_receive_mcpl_meta(seq_id, lookup_type, shard_id, confidence, hit, status);
     }
 #endif
 #if defined(CRA_RUNTIME_PROFILE_CONTEXT_CORE) || defined(CRA_RUNTIME_PROFILE_ROUTE_CORE) || defined(CRA_RUNTIME_PROFILE_MEMORY_CORE)
     if (msg_type == MCPL_MSG_LOOKUP_REQUEST) {
+        if (shard_id != (CRA_MCPL_SHARD_ID & MCPL_KEY_SHARD_MASK)) {
+            return;
+        }
         // State core receives request
-        uint8_t lookup_type = EXTRACT_MCPL_LOOKUP_TYPE(key);
         cra_state_handle_lookup_request(seq_id, payload, lookup_type);
     }
 #endif
@@ -1735,10 +1839,9 @@ void cra_state_mcpl_lookup_receive(uint32_t key, uint32_t payload) {
 
 void cra_state_mcpl_init(uint8_t core_id) {
 #ifdef CRA_USE_MCPL_LOOKUP
+#if defined(CRA_RUNTIME_PROFILE_CONTEXT_CORE) || defined(CRA_RUNTIME_PROFILE_ROUTE_CORE) || defined(CRA_RUNTIME_PROFILE_MEMORY_CORE)
     uint entry = rtr_alloc(1);
     if (entry == 0) return;
-
-#if defined(CRA_RUNTIME_PROFILE_CONTEXT_CORE) || defined(CRA_RUNTIME_PROFILE_ROUTE_CORE) || defined(CRA_RUNTIME_PROFILE_MEMORY_CORE)
     // State core: route REQUEST keys to this core
     uint8_t lookup_type =
 #if defined(CRA_RUNTIME_PROFILE_CONTEXT_CORE)
@@ -1751,18 +1854,30 @@ void cra_state_mcpl_init(uint8_t core_id) {
         0;
 #endif
     uint32_t key = MAKE_MCPL_KEY(APP_ID, MCPL_MSG_LOOKUP_REQUEST, lookup_type, 0);
-    uint32_t mask = 0xFFFF0000;  // ignore seq_id (bits 0-15)
+    uint32_t mask = 0xFFFFF000;  // match app/msg/lookup/shard, ignore seq_id
     uint route = MC_CORE_ROUTE(core_id);
     rtr_mc_set(entry, key, mask, route);
 #elif defined(CRA_RUNTIME_PROFILE_LEARNING_CORE)
-    // Learning core: route REPLY keys to this core
-    // 4.27f: broaden mask to catch replies from context, route, and memory
-    // cores using a single router entry.
-    uint32_t key = MAKE_MCPL_KEY(APP_ID, MCPL_MSG_LOOKUP_REPLY, 0, 0);
-    uint32_t mask = 0xFFF00000;  // ignore lookup_type (bits 16-19) and seq_id (bits 0-15)
+    uint entry_value = rtr_alloc(1);
+    if (entry_value == 0) return;
+    uint entry_meta = rtr_alloc(1);
+    if (entry_meta == 0) {
+        rtr_free(entry_value, 1);
+        return;
+    }
+    // Learning core: route VALUE and META reply keys to this core.
+    // Match app/msg/shard, ignore lookup_type and seq_id.
+    uint32_t key = MAKE_MCPL_KEY(APP_ID, MCPL_MSG_LOOKUP_REPLY_VALUE, 0, 0);
+    uint32_t mask = 0xFFF0F000;
     uint route = MC_CORE_ROUTE(core_id);
-    rtr_mc_set(entry, key, mask, route);
+    rtr_mc_set(entry_value, key, mask, route);
+    key = MAKE_MCPL_KEY(APP_ID, MCPL_MSG_LOOKUP_REPLY_META, 0, 0);
+    rtr_mc_set(entry_meta, key, mask, route);
+#else
+    (void)core_id;
 #endif
+#else
+    (void)core_id;
 #endif  // CRA_USE_MCPL_LOOKUP
 }
 

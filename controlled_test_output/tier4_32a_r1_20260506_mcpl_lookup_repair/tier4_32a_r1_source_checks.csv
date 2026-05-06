@@ -1,0 +1,21 @@
+file,token,present,purpose
+coral_reef_spinnaker/spinnaker_runtime/src/config.h,shard_id (4) | seq_id (12),True,MCPL key has explicit shard identity
+coral_reef_spinnaker/spinnaker_runtime/src/config.h,MCPL_MSG_LOOKUP_REPLY_VALUE,True,value reply packet type exists
+coral_reef_spinnaker/spinnaker_runtime/src/config.h,MCPL_MSG_LOOKUP_REPLY_META,True,confidence/meta reply packet type exists
+coral_reef_spinnaker/spinnaker_runtime/src/config.h,PACK_MCPL_LOOKUP_META,True,hit/status/confidence packing is centralized
+coral_reef_spinnaker/spinnaker_runtime/src/config.h,EXTRACT_MCPL_SHARD_ID,True,receiver can decode shard identity
+coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h,cra_state_lookup_send_shard,True,learning lookup table can track shard-specific pending entries
+coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h,cra_state_lookup_get_result_shard,True,tests can read shard-specific results without ambiguity
+coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c,#ifdef CRA_USE_MCPL_LOOKUP,True,MCPL path is compile-time selectable instead of #if 0 dead code
+coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c,cra_state_mcpl_lookup_send_reply_shard,True,state core can send value/meta replies with shard identity
+coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c,_lookup_receive_mcpl_value,True,learning core accepts value packet
+coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c,_lookup_receive_mcpl_meta,True,learning core accepts confidence/meta packet
+coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c,MCPL_MSG_LOOKUP_REPLY_META,True,learning core decodes meta reply packet
+coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c,CRA_MCPL_SHARD_ID,True,runtime can compile shard-specific images
+coral_reef_spinnaker/spinnaker_runtime/Makefile,MCPL_SHARD_ID ?= 0,True,Makefile exposes MCPL shard id for hardware builds
+coral_reef_spinnaker/spinnaker_runtime/Makefile,test-mcpl-lookup-contract,True,local MCPL protocol contract target exists
+coral_reef_spinnaker/spinnaker_runtime/Makefile,test-four-core-mcpl-local,True,local MCPL behavior target exists
+coral_reef_spinnaker/spinnaker_runtime/tests/test_mcpl_lookup_contract.c,shard_id prevents identical seq/type cross-talk,True,cross-talk regression is tested
+coral_reef_spinnaker/spinnaker_runtime/tests/test_mcpl_lookup_contract.c,wrong-shard packets cannot complete pending lookup,True,wrong-shard negative control is tested
+coral_reef_spinnaker/spinnaker_runtime/tests/test_four_core_mcpl_local.c,MCPL zero-confidence path blocks learning,True,zero-confidence behavior passes through MCPL
+coral_reef_spinnaker/spinnaker_runtime/tests/test_four_core_mcpl_local.c,MCPL half-confidence path scales learning,True,half-confidence behavior passes through MCPL

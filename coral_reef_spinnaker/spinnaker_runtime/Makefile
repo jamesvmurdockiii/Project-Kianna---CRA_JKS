@@ -24,8 +24,9 @@ RUNTIME_PROFILE ?= full
 # 4.27e: Enable MCPL inter-core lookup (multicast payload) instead of SDP.
 # Set USE_MCPL_LOOKUP=1 when building distributed profiles.
 USE_MCPL_LOOKUP ?= 0
+MCPL_SHARD_ID ?= 0
 ifeq ($(USE_MCPL_LOOKUP),1)
-MCPL_CFLAGS := -DCRA_USE_MCPL_LOOKUP=1
+MCPL_CFLAGS := -DCRA_USE_MCPL_LOOKUP=1 -DCRA_MCPL_SHARD_ID=$(MCPL_SHARD_ID)
 else
 MCPL_CFLAGS :=
 endif
@@ -93,7 +94,7 @@ HOST_LDFLAGS ?= -lm
 # Host-side tests
 # ------------------------------------------------------------------------------
 
-.PHONY: test host-test test-profiles test-four-core-local test-four-core-48event test-context-core test-route-core test-memory-core test-learning-core test-lifecycle-core test-mcpl-feasibility test-lifecycle test-lifecycle-split test-temporal-state
+.PHONY: test host-test test-profiles test-four-core-local test-four-core-mcpl-local test-four-core-48event test-context-core test-route-core test-memory-core test-learning-core test-lifecycle-core test-mcpl-feasibility test-mcpl-lookup-contract test-lifecycle test-lifecycle-split test-temporal-state
 test host-test: $(HOST_TEST)
 	./$(HOST_TEST)
 
@@ -127,6 +128,12 @@ test-four-core-local: $(FOUR_CORE_TEST_SOURCES) src/config.h stubs/sark.h stubs/
 	$(HOST_CC) $(HOST_CFLAGS) -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 $(FOUR_CORE_TEST_SOURCES) $(HOST_LDFLAGS) -o tests/test_four_core_local
 	./tests/test_four_core_local
 
+FOUR_CORE_MCPL_TEST_SOURCES := tests/test_four_core_mcpl_local.c stubs/spin1_api.c src/state_manager.c src/host_interface.c
+
+test-four-core-mcpl-local: $(FOUR_CORE_MCPL_TEST_SOURCES) src/config.h stubs/sark.h stubs/spin1_api.h
+	$(HOST_CC) $(HOST_CFLAGS) -DCRA_USE_MCPL_LOOKUP=1 -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 $(FOUR_CORE_MCPL_TEST_SOURCES) $(HOST_LDFLAGS) -o tests/test_four_core_mcpl_local
+	./tests/test_four_core_mcpl_local
+
 FOUR_CORE_48EVENT_TEST_SOURCES := tests/test_four_core_48event.c stubs/spin1_api.c src/state_manager.c src/host_interface.c
 
 test-four-core-48event: $(FOUR_CORE_48EVENT_TEST_SOURCES) tests/test_four_core_48event_data.h src/config.h stubs/sark.h stubs/spin1_api.h
@@ -138,6 +145,12 @@ MCPL_TEST_SOURCES := tests/test_mcpl_feasibility.c stubs/spin1_api.c src/state_m
 test-mcpl-feasibility: $(MCPL_TEST_SOURCES) src/config.h stubs/sark.h stubs/spin1_api.h
 	$(HOST_CC) $(HOST_CFLAGS) -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 $(MCPL_TEST_SOURCES) $(HOST_LDFLAGS) -o tests/test_mcpl_feasibility
 	./tests/test_mcpl_feasibility
+
+MCPL_LOOKUP_CONTRACT_TEST_SOURCES := tests/test_mcpl_lookup_contract.c stubs/spin1_api.c src/state_manager.c
+
+test-mcpl-lookup-contract: $(MCPL_LOOKUP_CONTRACT_TEST_SOURCES) src/config.h src/state_manager.h stubs/sark.h stubs/spin1_api.h
+	$(HOST_CC) $(HOST_CFLAGS) -DCRA_USE_MCPL_LOOKUP=1 -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 $(MCPL_LOOKUP_CONTRACT_TEST_SOURCES) $(HOST_LDFLAGS) -o tests/test_mcpl_lookup_contract
+	./tests/test_mcpl_lookup_contract
 
 LIFECYCLE_TEST_SOURCES := tests/test_lifecycle.c stubs/spin1_api.c src/state_manager.c src/host_interface.c
 
@@ -218,10 +231,10 @@ require-spinnaker:
 
 .PHONY: clean clean-host help
 clean:
-	rm -rf $(BUILD_DIR) $(APP_OUTPUT_DIR)$(APP).aplx $(HOST_TEST) tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_lifecycle_core tests/test_four_core_local tests/test_four_core_48event tests/test_mcpl_feasibility tests/test_lifecycle tests/test_lifecycle_split tests/test_temporal_state
+	rm -rf $(BUILD_DIR) $(APP_OUTPUT_DIR)$(APP).aplx $(HOST_TEST) tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_lifecycle_core tests/test_four_core_local tests/test_four_core_mcpl_local tests/test_four_core_48event tests/test_mcpl_feasibility tests/test_mcpl_lookup_contract tests/test_lifecycle tests/test_lifecycle_split tests/test_temporal_state
 
 clean-host:
-	rm -f $(HOST_TEST) tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_lifecycle_core tests/test_four_core_local tests/test_four_core_48event tests/test_mcpl_feasibility tests/test_lifecycle tests/test_lifecycle_split tests/test_temporal_state
+	rm -f $(HOST_TEST) tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_lifecycle_core tests/test_four_core_local tests/test_four_core_mcpl_local tests/test_four_core_48event tests/test_mcpl_feasibility tests/test_mcpl_lookup_contract tests/test_lifecycle tests/test_lifecycle_split tests/test_temporal_state
 
 help:
 	@printf '%s\n' \
@@ -229,6 +242,8 @@ help:
 		'  make test              Build and run host-side tests (no SPINN_DIRS needed)' \
 		'  make host-test         Alias for make test' \
 		'  make test-profiles     Build and run all four 4.26 profile tests' \
+		'  make test-four-core-mcpl-local Build and run Tier 4.32a-r1 MCPL four-core local tests' \
+		'  make test-mcpl-lookup-contract Build and run Tier 4.32a-r1 MCPL lookup contract tests' \
 		'  make test-lifecycle    Build and run Tier 4.30 lifecycle/static-pool host tests' \
 		'  make test-lifecycle-split Build and run Tier 4.30d lifecycle-core split host tests' \
 		'  make test-temporal-state Build and run Tier 4.31c temporal-state host tests' \

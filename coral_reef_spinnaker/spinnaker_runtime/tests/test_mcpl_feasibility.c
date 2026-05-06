@@ -5,7 +5,7 @@
  * Validates:
  *  1. MCPL lookup key packing (app_id, msg_type, lookup_type, seq_id)
  *  2. MCPL lookup request send produces correct key/payload
- *  3. MCPL lookup reply send produces correct key/payload
+ *  3. MCPL lookup reply send produces value + confidence/meta packets
  *  4. MCPL lookup receive extracts correct fields
  *  5. Official Spin1API symbol MCPL_PACKET_RECEIVED compiles
  *
@@ -74,13 +74,18 @@ int main(void) {
         g_test_last_mc_payload = 0;
         g_test_last_mc_with_payload = 0;
 
-        cra_state_mcpl_lookup_send_reply(99, 32767, 0, 1, LOOKUP_TYPE_MEMORY, 5);
+        g_test_mc_packet_count = 0;
+        cra_state_mcpl_lookup_send_reply(99, 32767, FP_HALF, 1, LOOKUP_TYPE_MEMORY, 5);
 
         check("send_reply produced non-zero key", g_test_last_mc_key != 0);
-        check("send_reply msg_type is REPLY", EXTRACT_MCPL_MSG_TYPE(g_test_last_mc_key) == MCPL_MSG_LOOKUP_REPLY);
+        check("send_reply produced two packets", g_test_mc_packet_count == 2);
+        check("send_reply first msg_type is VALUE", EXTRACT_MCPL_MSG_TYPE(g_test_mc_keys[0]) == MCPL_MSG_LOOKUP_REPLY_VALUE);
+        check("send_reply second msg_type is META", EXTRACT_MCPL_MSG_TYPE(g_test_mc_keys[1]) == MCPL_MSG_LOOKUP_REPLY_META);
         check("send_reply lookup_type is MEMORY", EXTRACT_MCPL_LOOKUP_TYPE(g_test_last_mc_key) == LOOKUP_TYPE_MEMORY);
         check("send_reply seq_id is 99", EXTRACT_MCPL_SEQ_ID(g_test_last_mc_key) == 99);
-        check("send_reply payload is value", g_test_last_mc_payload == 32767);
+        check("send_reply first payload is value", g_test_mc_payloads[0] == 32767);
+        check("send_reply meta confidence preserved", EXTRACT_MCPL_LOOKUP_META_CONF(g_test_mc_payloads[1]) == FP_HALF);
+        check("send_reply meta hit preserved", EXTRACT_MCPL_LOOKUP_META_HIT(g_test_mc_payloads[1]) == 1);
         check("send_reply with_payload flag set", g_test_last_mc_with_payload == WITH_PAYLOAD);
     }
 

@@ -1498,6 +1498,25 @@ SPECS: tuple[EvidenceSpec, ...] = (
             "tier4_32a_r0_final_decision.json",
         ),
     ),
+    EvidenceSpec(
+        entry_id="tier4_32a_r1_mcpl_lookup_repair",
+        tier_label="Tier 4.32a-r1 - Confidence-Bearing Shard-Aware MCPL Lookup Repair",
+        plan_position="Phase G protocol repair before MCPL-first EBRAINS scale stress",
+        canonical_dir="tier4_32a_r1_20260506_mcpl_lookup_repair",
+        results_file="tier4_32a_r1_results.json",
+        report_file="tier4_32a_r1_report.md",
+        summary_file="tier4_32a_r1_criteria.csv",
+        harness="experiments/tier4_32a_r1_mcpl_lookup_repair.py",
+        evidence_role="native runtime MCPL lookup protocol repair",
+        claim="Tier 4.32a-r1 repairs the Tier 4.32a-r0 blocker: MCPL lookup replies now carry value plus confidence/hit/status metadata, MCPL keys carry shard identity, local tests prove identical seq/type lookups do not cross-talk across shards, and MCPL confidence controls preserve full/zero/half-confidence learning behavior.",
+        caveat="Local source/runtime evidence only; not SpiNNaker hardware evidence, not speedup evidence, not replicated-shard scaling, not multi-chip scaling, not static reef partitioning, and not a baseline freeze.",
+        latest_manifest_names=("tier4_32a_r1_latest_manifest.json",),
+        expected_extra_files=(
+            "tier4_32a_r1_source_checks.csv",
+            "tier4_32a_r1_command_log.txt",
+            "tier4_32a_r1_final_decision.json",
+        ),
+    ),
 )
 
 

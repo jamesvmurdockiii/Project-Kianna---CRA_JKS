@@ -196,34 +196,60 @@
 #define LOOKUP_TYPE_MEMORY  2
 
 // ------------------------------------------------------------------
-// 4.27d MCPL inter-core lookup key format (compile-time feasibility)
+// 4.32a-r1 MCPL inter-core lookup key format
 //
-// Bit layout: app_id (8) | msg_type (4) | lookup_type (4) | seq_id (16)
+// Bit layout: app_id (8) | msg_type (4) | lookup_type (4) | shard_id (4) | seq_id (12)
 // Uses official spin1_api symbol MCPL_PACKET_RECEIVED.
 // ------------------------------------------------------------------
 #define MCPL_KEY_APP_SHIFT        24
 #define MCPL_KEY_TYPE_SHIFT       20
 #define MCPL_KEY_LOOKUP_SHIFT     16
-#define MCPL_KEY_SEQ_MASK         0xFFFF
+#define MCPL_KEY_SHARD_SHIFT      12
+#define MCPL_KEY_SEQ_MASK         0x0FFF
+#define MCPL_KEY_SHARD_MASK       0x0F
 
 #define MCPL_MSG_LOOKUP_REQUEST   1
-#define MCPL_MSG_LOOKUP_REPLY     2
+#define MCPL_MSG_LOOKUP_REPLY_VALUE 2
+#define MCPL_MSG_LOOKUP_REPLY     MCPL_MSG_LOOKUP_REPLY_VALUE
 #define MCPL_MSG_LIFECYCLE_EVENT_REQUEST 3
 #define MCPL_MSG_LIFECYCLE_TROPHIC_UPDATE 4
 #define MCPL_MSG_LIFECYCLE_ACTIVE_MASK_SYNC 5
+#define MCPL_MSG_LOOKUP_REPLY_META 6
 
 #define MCPL_LIFECYCLE_SYNC_MASK    0
 #define MCPL_LIFECYCLE_SYNC_LINEAGE 1
 
-#define MAKE_MCPL_KEY(app, msg_type, lookup_type, seq_id) \
+#ifndef CRA_MCPL_SHARD_ID
+#define CRA_MCPL_SHARD_ID 0
+#endif
+
+#define MAKE_MCPL_KEY_SHARD(app, msg_type, lookup_type, shard_id, seq_id) \
     (((app) << MCPL_KEY_APP_SHIFT) | \
      ((msg_type) << MCPL_KEY_TYPE_SHIFT) | \
      ((lookup_type) << MCPL_KEY_LOOKUP_SHIFT) | \
+     (((shard_id) & MCPL_KEY_SHARD_MASK) << MCPL_KEY_SHARD_SHIFT) | \
      ((seq_id) & MCPL_KEY_SEQ_MASK))
+
+#define MAKE_MCPL_KEY(app, msg_type, lookup_type, seq_id) \
+    MAKE_MCPL_KEY_SHARD((app), (msg_type), (lookup_type), CRA_MCPL_SHARD_ID, (seq_id))
 
 #define EXTRACT_MCPL_MSG_TYPE(key)   (((key) >> MCPL_KEY_TYPE_SHIFT) & 0xF)
 #define EXTRACT_MCPL_LOOKUP_TYPE(key) (((key) >> MCPL_KEY_LOOKUP_SHIFT) & 0xF)
+#define EXTRACT_MCPL_SHARD_ID(key)   (((key) >> MCPL_KEY_SHARD_SHIFT) & MCPL_KEY_SHARD_MASK)
 #define EXTRACT_MCPL_SEQ_ID(key)     ((key) & MCPL_KEY_SEQ_MASK)
+
+#define MCPL_LOOKUP_META_HIT_BIT     0x80000000U
+#define MCPL_LOOKUP_META_STATUS_BIT  0x40000000U
+#define MCPL_LOOKUP_META_CONF_MASK   0x3FFFFFFFU
+
+#define PACK_MCPL_LOOKUP_META(confidence, hit, status) \
+    ((((hit) ? 1U : 0U) << 31) | \
+     (((status) ? 1U : 0U) << 30) | \
+     ((uint32_t)(confidence) & MCPL_LOOKUP_META_CONF_MASK))
+
+#define EXTRACT_MCPL_LOOKUP_META_CONF(payload) ((int32_t)((payload) & MCPL_LOOKUP_META_CONF_MASK))
+#define EXTRACT_MCPL_LOOKUP_META_HIT(payload)  (((payload) & MCPL_LOOKUP_META_HIT_BIT) ? 1U : 0U)
+#define EXTRACT_MCPL_LOOKUP_META_STATUS(payload) (((payload) & MCPL_LOOKUP_META_STATUS_BIT) ? 1U : 0U)
 
 // ------------------------------------------------------------------
 // 4.26 runtime profile IDs (packed into byte 72 of CMD_READ_STATE payload)

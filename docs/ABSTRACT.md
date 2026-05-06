@@ -18,7 +18,7 @@ is organized through predeclared tiers, generated registries, JSON/CSV/Markdown
 artifacts, frozen baselines, controls, ablations, external baselines, and explicit
 claim boundaries.
 
-As of the current registry, CRA contains 69 canonical evidence bundles with zero
+As of the current registry, CRA contains 70 canonical evidence bundles with zero
 missing expected artifacts and zero failed criteria in canonical entries. The
 software evidence includes negative controls, positive learning controls,
 architecture ablations, external-baseline comparisons, delayed-credit repairs,
@@ -44,9 +44,13 @@ scale policy. Tier 4.32a then passed the local single-chip scale-stress
 preflight, authorizing only 4/5-core single-shard hardware stress and blocking
 replicated 8/12/16-core stress until shard-aware MCPL routing exists. Tier
 4.32a-r0 then blocked the planned MCPL-first hardware package because the
-promoted confidence-gated lookup path still uses transitional SDP and the MCPL
-helpers do not yet carry confidence/hit status or shard identity. Static reef
-partitioning, multi-chip work, and native-scale baseline freeze remain blocked.
+promoted confidence-gated lookup path still used transitional SDP and the MCPL
+helpers did not yet carry confidence/hit status or shard identity. Tier
+4.32a-r1 repaired that blocker locally with value/meta MCPL reply packets,
+shard-aware keys, cross-shard controls, and full/zero/half-confidence learning
+controls over MCPL. Static reef partitioning, replicated stress, multi-chip
+work, and native-scale baseline freeze remain blocked until single-shard
+hardware stress passes.
 
 The current bounded claim is that CRA is a reproducible neuromorphic research
 platform with demonstrated local learning, mechanism sensitivity, selected
@@ -55,7 +59,7 @@ hardware capsules and native-runtime mechanism bridges. The evidence does not ye
 establish general intelligence, universal superiority over baselines, full
 multi-chip scaling, production readiness, autonomous native hardware lifecycle-
 to-learning MCPL, repeatable/full native v2.2 temporal dynamics beyond the
-one-board seven-EMA smoke, confidence-bearing shard-aware MCPL scale stress,
-native replay/sleep or native macro eligibility, native-scale baseline freeze,
-or fully autonomous on-chip implementations of every promoted software
+one-board seven-EMA smoke, single-shard/repeated confidence-bearing MCPL scale
+stress on hardware, native replay/sleep or native macro eligibility,
+native-scale baseline freeze, or fully autonomous on-chip implementations of every promoted software
 mechanism.

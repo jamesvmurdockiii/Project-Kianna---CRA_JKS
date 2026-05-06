@@ -24,7 +24,9 @@ coral_reef_spinnaker/spinnaker_runtime/build/
 # Host test executables (rebuilt from source)
 coral_reef_spinnaker/spinnaker_runtime/tests/test_runtime
 coral_reef_spinnaker/spinnaker_runtime/tests/test_mcpl_feasibility
+coral_reef_spinnaker/spinnaker_runtime/tests/test_mcpl_lookup_contract
 coral_reef_spinnaker/spinnaker_runtime/tests/test_four_core_local
+coral_reef_spinnaker/spinnaker_runtime/tests/test_four_core_mcpl_local
 coral_reef_spinnaker/spinnaker_runtime/tests/test_four_core_48event
 coral_reef_spinnaker/spinnaker_runtime/tests/test_context_core
 coral_reef_spinnaker/spinnaker_runtime/tests/test_route_core
@@ -33,9 +35,12 @@ coral_reef_spinnaker/spinnaker_runtime/tests/test_learning_core
 coral_reef_spinnaker/spinnaker_runtime/tests/test_lifecycle
 coral_reef_spinnaker/spinnaker_runtime/tests/test_lifecycle_core
 coral_reef_spinnaker/spinnaker_runtime/tests/test_lifecycle_split
+coral_reef_spinnaker/spinnaker_runtime/tests/test_temporal_state
 ebrains_jobs/cra_*/coral_reef_spinnaker/spinnaker_runtime/tests/test_runtime
 ebrains_jobs/cra_*/coral_reef_spinnaker/spinnaker_runtime/tests/test_mcpl_feasibility
+ebrains_jobs/cra_*/coral_reef_spinnaker/spinnaker_runtime/tests/test_mcpl_lookup_contract
 ebrains_jobs/cra_*/coral_reef_spinnaker/spinnaker_runtime/tests/test_four_core_local
+ebrains_jobs/cra_*/coral_reef_spinnaker/spinnaker_runtime/tests/test_four_core_mcpl_local
 ebrains_jobs/cra_*/coral_reef_spinnaker/spinnaker_runtime/tests/test_four_core_48event
 ebrains_jobs/cra_*/coral_reef_spinnaker/spinnaker_runtime/tests/test_context_core
 ebrains_jobs/cra_*/coral_reef_spinnaker/spinnaker_runtime/tests/test_route_core
@@ -44,6 +49,7 @@ ebrains_jobs/cra_*/coral_reef_spinnaker/spinnaker_runtime/tests/test_learning_co
 ebrains_jobs/cra_*/coral_reef_spinnaker/spinnaker_runtime/tests/test_lifecycle
 ebrains_jobs/cra_*/coral_reef_spinnaker/spinnaker_runtime/tests/test_lifecycle_core
 ebrains_jobs/cra_*/coral_reef_spinnaker/spinnaker_runtime/tests/test_lifecycle_split
+ebrains_jobs/cra_*/coral_reef_spinnaker/spinnaker_runtime/tests/test_temporal_state
 
 # OS and editor noise
 .DS_Store

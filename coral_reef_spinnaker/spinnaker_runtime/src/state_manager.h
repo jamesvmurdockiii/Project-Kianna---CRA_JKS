@@ -297,8 +297,12 @@ typedef struct lookup_entry {
     uint32_t seq_id;
     uint32_t key;
     uint8_t  type;       /* LOOKUP_TYPE_CONTEXT / ROUTE / MEMORY */
+    uint8_t  shard_id;   /* MCPL shard/runtime group; SDP defaults to 0 */
     uint8_t  received;   /* 0 = pending, 1 = received */
+    uint8_t  value_received;
+    uint8_t  meta_received;
     uint8_t  hit;        /* 0 = miss, 1 = hit */
+    uint8_t  status;     /* 0 = ok, nonzero = state-core lookup error */
     int32_t  value;
     int32_t  confidence;
     uint32_t timestamp;  /* timestep when sent; for timeout detection */
@@ -306,10 +310,13 @@ typedef struct lookup_entry {
 
 void cra_state_lookup_init(void);
 int cra_state_lookup_send(uint32_t seq_id, uint32_t key, uint8_t type, uint32_t timestamp);
+int cra_state_lookup_send_shard(uint32_t seq_id, uint32_t key, uint8_t type, uint8_t shard_id, uint32_t timestamp);
 int cra_state_lookup_receive(uint32_t seq_id, int32_t value, int32_t confidence, uint8_t hit);
+uint8_t cra_state_lookup_is_received_shard(uint32_t seq_id, uint8_t type, uint8_t shard_id);
 uint8_t cra_state_lookup_is_received(uint32_t seq_id);
 uint8_t cra_state_lookup_is_stale(uint32_t seq_id);
 uint32_t cra_state_lookup_check_timeout(uint32_t timestamp, uint32_t *seq_ids_out, uint32_t max_out);
+int cra_state_lookup_get_result_shard(uint32_t seq_id, uint8_t type, uint8_t shard_id, int32_t *value_out, int32_t *confidence_out, uint8_t *hit_out);
 int cra_state_lookup_get_result(uint32_t seq_id, int32_t *value_out, int32_t *confidence_out, uint8_t *hit_out);
 void cra_state_lookup_clear(uint32_t seq_id);
 uint32_t cra_state_lookup_list_pending(uint32_t *seq_ids_out, uint32_t max_out);
@@ -324,7 +331,9 @@ void cra_state_handle_lookup_request(uint32_t seq_id, uint32_t key, uint8_t type
 // 4.27d MCPL inter-core lookup feasibility (compile-time only)
 // ------------------------------------------------------------------
 void cra_state_mcpl_lookup_send_request(uint32_t seq_id, uint32_t key_id, uint8_t lookup_type, uint8_t dest_core);
+void cra_state_mcpl_lookup_send_request_shard(uint32_t seq_id, uint32_t key_id, uint8_t lookup_type, uint8_t shard_id, uint8_t dest_core);
 void cra_state_mcpl_lookup_send_reply(uint32_t seq_id, int32_t value, int32_t confidence, uint8_t hit, uint8_t lookup_type, uint8_t dest_core);
+void cra_state_mcpl_lookup_send_reply_shard(uint32_t seq_id, int32_t value, int32_t confidence, uint8_t hit, uint8_t status, uint8_t lookup_type, uint8_t shard_id, uint8_t dest_core);
 void cra_state_mcpl_lookup_receive(uint32_t key, uint32_t payload);
 void cra_state_mcpl_init(uint8_t core_id);
 

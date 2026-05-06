@@ -1,0 +1,8 @@
+{
+  "claim_boundary": "Tier 4.32a-r1 is local source/runtime evidence that the custom runtime now has a confidence-bearing, shard-aware MCPL lookup path with behavior-backed confidence controls. It is not EBRAINS hardware evidence, not speedup evidence, not replicated-shard scale proof, not multi-chip proof, not static reef partitioning, and not a baseline freeze.",
+  "native_scale_baseline_freeze": "not_authorized",
+  "replicated_8_12_16_core_stress": "still_blocked_until_single_shard_hardware_stress_passes",
+  "status": "pass",
+  "tier4_32a_hw_mcpl_first": "authorized_next_single_shard_hardware_stress",
+  "tier4_32b_static_reef_partitioning": "still_blocked_until_4_32a_hw_passes"
+}

@@ -5,10 +5,10 @@ ledger is `STUDY_REGISTRY.json`; the compact table is `STUDY_REGISTRY.csv`.
 Older reruns, prepared capsules, debug probes, and baseline-frozen
 mechanism bundles outside the formal registry are preserved for audit.
 
-- Generated: `2026-05-06T22:48:13.571573+00:00`
+- Generated: `2026-05-06T23:17:59.460541+00:00`
 - Registry status: **PASS**
-- Canonical evidence entries: `69`
-- Expanded test-entry count: `69`; see the canonical evidence table below for the exact current tier list.
+- Canonical evidence entries: `70`
+- Expanded test-entry count: `70`; see the canonical evidence table below for the exact current tier list.
 
 ## Evidence Categories
 
@@ -91,6 +91,7 @@ mechanism bundles outside the formal registry are preserved for audit.
 | `tier4_32_native_runtime_mapping_resource_model` | **PASS** | `controlled_test_output/tier4_32_20260506_mapping_resource_model` | Local resource/mapping model only; not a new hardware run, not speedup evidence, not multi-chip scaling, not benchmark superiority, not full organism autonomy, and not a baseline freeze. |
 | `tier4_32a_single_chip_scale_stress_preflight` | **PASS** | `controlled_test_output/tier4_32a_20260506_single_chip_scale_stress` | Local preflight/source-inspection evidence only; not a SpiNNaker hardware run, not speedup evidence, not replicated-shard scaling, not multi-chip scaling, not static reef partition proof, not benchmark superiority, and not a baseline freeze. |
 | `tier4_32a_r0_protocol_truth_audit` | **PASS** | `controlled_test_output/tier4_32a_r0_20260506_protocol_truth_audit` | Local source/documentation audit only; not SpiNNaker hardware evidence, not speedup evidence, not multi-chip scaling, not static reef partition proof, and not a baseline freeze. |
+| `tier4_32a_r1_mcpl_lookup_repair` | **PASS** | `controlled_test_output/tier4_32a_r1_20260506_mcpl_lookup_repair` | Local source/runtime evidence only; not SpiNNaker hardware evidence, not speedup evidence, not replicated-shard scaling, not multi-chip scaling, not static reef partitioning, and not a baseline freeze. |
 
 ## Noncanonical Outputs
 

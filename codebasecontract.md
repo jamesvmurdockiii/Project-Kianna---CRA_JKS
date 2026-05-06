@@ -99,14 +99,15 @@ FROZEN: CRA_LIFECYCLE_NATIVE_BASELINE_v0.4
             temporal migration, not external-baseline superiority, and not
             language/planning/AGI/ASI.
 
-  Next: Tier 4.32a-r1 confidence-bearing shard-aware MCPL lookup repair.
-        Tier 4.32a-r0 passed the protocol truth audit and blocked the planned
-        MCPL-first 4.32a-hw package: confidence-gated learning still uses
-        transitional SDP, MCPL replies drop confidence, MCPL receive hardcodes
-        confidence=1.0, and the MCPL key has no shard/group field. Repair this
-        before any MCPL-first scale-stress package, replicated 8/12/16-core
-        stress, static reef partitioning, multi-chip work, or native-scale
-        baseline freeze.
+  Next: Tier 4.32a-hw single-shard EBRAINS scale stress.
+        Tier 4.32a-r1 passed locally and repaired the protocol blocker found by
+        Tier 4.32a-r0: MCPL lookup replies now carry value plus
+        confidence/hit/status metadata, keys carry shard identity, identical
+        seq/type cross-shard controls pass, and full/zero/half-confidence
+        learning controls pass through MCPL. Prepare/run only the eligible
+        single-shard 4/5-core points next. Replicated 8/12/16-core stress,
+        static reef partitioning, multi-chip work, and native-scale baseline
+        freeze remain blocked until the single-shard hardware stress passes.
 ```
 
 Current active tier state:
@@ -223,23 +224,21 @@ Tier 4.32a-r0 — COMPLETE. Protocol truth audit.
     speedup, not multi-chip scaling, not static reef partitioning, and not a
     baseline freeze.
 
-Tier 4.32a-r1 — CURRENT ACTIVE. Confidence-bearing shard-aware MCPL lookup
-  repair.
+Tier 4.32a-r1 — COMPLETE. Confidence-bearing shard-aware MCPL lookup repair.
+  Status: LOCAL PASS, 14/14.
+  Output: controlled_test_output/tier4_32a_r1_20260506_mcpl_lookup_repair/
   Question: Can the MCPL lookup protocol preserve value, confidence, hit/status,
     lookup type, and shard/group identity without duplicate cross-shard replies?
-  Required coverage:
-    - Define confidence-bearing MCPL reply payload/sequence semantics.
-    - Stop hardcoding MCPL confidence=1.0 in the learning-core receive path.
-    - Preserve 4.29d full/zero/zero-context/half-confidence controls over the
-      repaired path.
-    - Add shard/group key bits or equivalent directed-routing semantics.
-    - Add local C tests proving two independent shards can issue identical
-      lookup types and sequence ranges without cross-talk.
-  No MCPL-first 4.32a-hw package, replicated 8/12/16-core stress, static reef
-    partitioning, multi-chip work, or native-scale baseline freeze can proceed
-    until this passes.
+  Result: MCPL key layout is now app_id/msg_type/lookup_type/shard_id/seq_id;
+    replies use value and confidence/meta packets; learning receive no longer
+    hardcodes confidence=1.0; identical seq/type cross-shard controls and
+    wrong-shard negative controls pass; full/zero/half-confidence four-core
+    local learning controls pass over MCPL.
+  Boundary: local source/runtime evidence only; not SpiNNaker hardware,
+    speedup, replicated-shard scaling, multi-chip scaling, static reef
+    partitioning, or a baseline freeze.
 
-Tier 4.32a-hw — BLOCKED UNTIL 4.32a-r1. EBRAINS single-shard single-chip
+Tier 4.32a-hw — CURRENT ACTIVE. EBRAINS single-shard single-chip
   stress. Once unblocked, run only `point_04c_reference` and
   `point_05c_lifecycle` first; return compact per-core readback,
   profile/build artifacts, lookup request/reply parity,
@@ -730,13 +729,11 @@ Immediate next steps:
 
 1. Keep Tier 4.31d/4.31e boundaries strict: one-board temporal-state smoke plus
    local replay/eligibility decision closeout only, no new freeze.
-2. Tier 4.32a-r0 supersedes the earlier 4.32a-hw packaging order. The next
-   native step is Tier 4.32a-r1 confidence-bearing shard-aware MCPL repair,
-   because the current promoted confidence-gated lookup path still uses SDP and
-   current MCPL lookup helpers lack both confidence payload semantics and
-   shard/group identity.
-   do not jump directly to static reef partitioning, multi-chip, benchmarks, or
-   a native-scale baseline freeze.
+2. Tier 4.32a-r1 supersedes the earlier 4.32a-r0 blocker. The next native step
+   is Tier 4.32a-hw single-shard EBRAINS scale stress using the repaired MCPL
+   lookup protocol. Run only the eligible 4/5-core single-shard points first;
+   do not jump to replicated 8/12/16-core stress, static reef partitioning,
+   multi-chip, benchmarks, or a native-scale baseline freeze.
 3. Keep the 4.31b/4.31c range refinement explicit: selected trace bound is ±2
    in s16.15; the older ±1 sketch saturated and must not silently return.
 4. Keep public repo hygiene green before the next upload or commit: no

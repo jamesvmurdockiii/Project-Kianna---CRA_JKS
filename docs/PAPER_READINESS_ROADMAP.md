@@ -6354,6 +6354,16 @@ Near-term roadmap insertion:
     shard-aware MCPL repair is required before MCPL-first hardware stress,
     replicated stress, static reef partitioning, multi-chip scaling, or native
     scale baseline freeze.
+25. Tier 4.32a-r1 confidence-bearing shard-aware MCPL lookup repair. COMPLETE:
+    local pass 14/14 at
+    `controlled_test_output/tier4_32a_r1_20260506_mcpl_lookup_repair/`;
+    MCPL lookup replies now use value/meta packets, confidence/hit/status are
+    preserved, keys carry shard identity, identical seq/type cross-shard
+    controls pass, and full/zero/half-confidence four-core local learning
+    controls pass through MCPL. Single-shard 4.32a-hw is authorized next.
+    Replicated stress, static reef partitioning, multi-chip scaling, and native
+    scale baseline freeze remain blocked until single-shard hardware stress
+    passes.
 ```
 
 Tier 5.19a result:
@@ -6657,9 +6667,9 @@ Tests: test-temporal-state, test-profiles, test, test-lifecycle, test-lifecycle-
 Boundary: local source/runtime host evidence only, not hardware
 ```
 
-Next: Tier 4.32a-r1 confidence-bearing shard-aware MCPL lookup repair. Only
-      after that passes should a MCPL-first Tier 4.32a-hw single-shard package
-      be prepared from the eligible Tier 4.32a 4/5-core points.
+Next: Tier 4.32a-hw single-shard MCPL-first hardware stress. Prepare and run
+      only the eligible Tier 4.32a 4/5-core points with the repaired Tier
+      4.32a-r1 protocol.
       Reopen native replay-buffer, sleep-like replay, or eligibility-trace
       implementation only if a later measured blocker specifically demands it.
 ```

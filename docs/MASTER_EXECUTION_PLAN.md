@@ -815,15 +815,17 @@ ability.
     audit also preserved the earlier shard blocker: the MCPL key has no
     shard/group field and `dest_core` is reserved/ignored.
 
-56. **CURRENT ACTIVE STEP** - Tier 4.32a-r1 confidence-bearing shard-aware MCPL
-    lookup repair: define MCPL payload/packet semantics that preserve value,
-    confidence, hit/status, and lookup type; stop hardcoding confidence=1.0;
-    add shard/group identity or equivalent directed-routing semantics; and prove
-    locally that 4.29d confidence controls still pass and independent shards do
-    not cross-talk.
+56. Tier 4.32a-r1 confidence-bearing shard-aware MCPL lookup repair:
+    **COMPLETED**. Local pass `14/14` at
+    `controlled_test_output/tier4_32a_r1_20260506_mcpl_lookup_repair/`.
+    MCPL now carries value plus confidence/hit/status metadata through
+    value/meta packets; keys carry shard identity; learning receive no longer
+    hardcodes confidence=1.0; identical seq/type cross-shard controls and
+    wrong-shard negative controls pass; full/zero/half-confidence four-core
+    local learning controls pass over MCPL.
 
-57. Tier 4.32a-hw EBRAINS single-shard single-chip stress: only after
-    4.32a-r1 passes, run `point_04c_reference` and `point_05c_lifecycle` from
+57. **CURRENT ACTIVE STEP** - Tier 4.32a-hw EBRAINS single-shard single-chip
+    stress: run `point_04c_reference` and `point_05c_lifecycle` from
     4.32a. Return compact per-core readback, profile/build artifacts, lookup
     request/reply parity, stale/duplicate/timeout/drop counters, and
     schedule/slot high-water marks. This is hardware stress only, not
@@ -1059,13 +1061,12 @@ After each completed run or design tier:
 The next concrete action is:
 
 ```text
-Tier 4.32a-r1 confidence-bearing shard-aware MCPL lookup repair: Tier 4.32a-r0
-blocked the planned MCPL-first 4.32a-hw package because confidence-gated lookup
-traffic still uses transitional SDP, MCPL replies drop confidence/hit status,
-MCPL receive hardcodes confidence=1.0, and the MCPL key lacks shard/group
-identity. Repair the protocol before any MCPL-first 4.32a hardware package,
-replicated 8/12/16-core stress, static reef partitioning, or multi-chip
-communication claims.
+Tier 4.32a-hw EBRAINS single-shard single-chip stress: Tier 4.32a-r1 passed
+locally and repaired confidence-bearing, shard-aware MCPL lookup. Prepare and
+run only the eligible 4/5-core single-shard stress points first. Replicated
+8/12/16-core stress, static reef partitioning, multi-chip communication claims,
+and a native-scale baseline freeze remain blocked until this hardware stress is
+clean.
 ```
 
 Current reference state:
@@ -1100,6 +1101,9 @@ core stress blocked until shard-aware MCPL; 4.32b/multi-chip/native-scale
 baseline freeze remain blocked
 Tier 4.32a-r0 protocol truth audit: passed 10/10; MCPL-first 4.32a-hw blocked
 until confidence-bearing and shard-aware MCPL lookup repair passes
+Tier 4.32a-r1 MCPL lookup repair: passed 14/14; MCPL value/meta replies,
+shard-aware keys, cross-shard controls, and full/zero/half-confidence local
+learning controls are repaired; single-shard 4.32a-hw is authorized next
 ```
 
 Purpose:
@@ -1115,9 +1119,10 @@ preflight and caught a real scale blocker: replicated shards need shard-aware
 MCPL routing because the current key has no shard/group field and `dest_core` is
 reserved/ignored. Tier 4.32a-r0 then caught the remaining protocol truth
 problem before packaging hardware: the promoted confidence-gated learning path
-still uses SDP because MCPL does not yet transmit confidence/hit status. The
-next action is Tier 4.32a-r1 protocol repair, not an EBRAINS package, benchmark,
-speedup, static partition, or multi-chip claim.
+still used SDP because MCPL did not yet transmit confidence/hit status. Tier
+4.32a-r1 repaired that blocker locally. The next action is now single-shard
+EBRAINS hardware stress, not replicated scaling, static partitioning,
+benchmarks, speedup, or multi-chip claims.
 ```
 
 Required coverage:
@@ -1127,11 +1132,11 @@ Use v2.2 as the software reference and `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` as
 the native lifecycle baseline. Keep Tier 4.31d's boundary strict: one-board
 temporal-state hardware smoke only; not nonlinear recurrence, not speedup, not
 multi-chip scaling, not benchmark superiority, and not full organism autonomy.
-The next native work must repair confidence-bearing and shard-aware MCPL lookup
-first. Only after Tier 4.32a-r1 passes may we prepare a MCPL-first Tier
-4.32a-hw package using the eligible Tier 4.32a single-shard points. Only reopen
-replay buffers, sleep-like replay, or native eligibility if a later measured
-blocker specifically demands it.
+The next native work must run the repaired confidence-bearing and shard-aware
+MCPL path on hardware using only the eligible Tier 4.32a single-shard points.
+Only after Tier 4.32a-hw passes may replicated 8/12/16-core stress reopen. Only
+reopen replay buffers, sleep-like replay, or native eligibility if a later
+measured blocker specifically demands it.
 ```
 
 

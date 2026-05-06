@@ -1,0 +1,16 @@
+{
+  "artifacts": {
+    "command_log_txt": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_r1_20260506_mcpl_lookup_repair/tier4_32a_r1_command_log.txt",
+    "criteria_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_r1_20260506_mcpl_lookup_repair/tier4_32a_r1_criteria.csv",
+    "final_decision_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_r1_20260506_mcpl_lookup_repair/tier4_32a_r1_final_decision.json",
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_r1_20260506_mcpl_lookup_repair/tier4_32a_r1_report.md",
+    "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_r1_20260506_mcpl_lookup_repair/tier4_32a_r1_results.json",
+    "source_checks_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_r1_20260506_mcpl_lookup_repair/tier4_32a_r1_source_checks.csv"
+  },
+  "claim_boundary": "Tier 4.32a-r1 is local source/runtime evidence that the custom runtime now has a confidence-bearing, shard-aware MCPL lookup path with behavior-backed confidence controls. It is not EBRAINS hardware evidence, not speedup evidence, not replicated-shard scale proof, not multi-chip proof, not static reef partitioning, and not a baseline freeze.",
+  "generated_at_utc": "2026-05-06T23:17:55+00:00",
+  "next_step": "Prepare Tier 4.32a-hw as a single-shard MCPL-first EBRAINS hardware stress using the repaired protocol. Do not run replicated 8/12/16-core stress or freeze a native scale baseline until the single-shard hardware stress passes.",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_r1_20260506_mcpl_lookup_repair",
+  "status": "pass",
+  "tier": "4.32a-r1"
+}
