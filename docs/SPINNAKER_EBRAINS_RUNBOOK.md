@@ -29,6 +29,21 @@ CRA_LIFECYCLE_NATIVE_BASELINE_v0.4
 Latest active hardware-facing tier:
 
 ```text
+Tier 4.32a-hw - EBRAINS Single-Chip Multi-Core Scale Stress
+  Status: CURRENT ACTIVE, awaiting EBRAINS package/run
+  Local prerequisite: Tier 4.32a local preflight pass, 18/18
+  Local output: controlled_test_output/tier4_32a_20260506_single_chip_scale_stress/
+  Required stress points: 4-core reference, 5-core lifecycle, 8-core dual shard,
+    12-core triple shard, 16-core quad shard if hardware resources allow.
+  Required evidence: MCPL-first core-to-core traffic, compact per-core readback,
+    profile/build artifacts, schedule/slot/pending high-water marks, lookup
+    request/reply parity, and stale/duplicate/timeout/drop counters.
+  Boundary: single-chip hardware stress only; not speedup, not static reef
+    partition proof, not multi-chip scaling, not benchmark superiority, and not
+    CRA_NATIVE_SCALE_BASELINE_v0.5.
+
+Recent passed hardware-facing lifecycle tier:
+
 Tier 4.30g - Lifecycle Task-Benefit / Resource Bridge
   Status: HARDWARE PASS, INGESTED
   Local output: controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/
