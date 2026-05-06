@@ -1,0 +1,9 @@
+name,mode,purpose,expected_effect,required_before_hardware
+lag_only_online_lms_control,local reference,Preserve the Tier 5.19c requirement that fading memory beat a same-causal-budget lag control on temporal-memory diagnostics.,Lag-only should remain weaker on temporal-memory tasks or the temporal native migration should not be promoted.,True
+zero_temporal_state_ablation,local reference and future hardware,Proves task performance is not carried solely by current input/readout.,Zeroed traces should lose temporal-memory benefit.,True
+frozen_temporal_state_ablation,local reference,Matches the v2.2 sham where temporal state stops updating after the train/reference prefix.,Frozen state should not match the active temporal trace on held-out temporal tasks.,True
+shuffled_temporal_state_sham,local reference,Destroys temporal ordering while preserving marginal state distribution.,Shuffled state should lose temporal-memory benefit.,True
+state_reset_interval_control,local reference and future hardware,Checks whether the claimed memory horizon survives forced resets.,Short reset interval should reduce long-memory performance.,True
+shuffled_target_control,local reference,Detects label/target leakage through the temporal path.,Shuffled targets must fail.,True
+no_plasticity_ablation,local reference and future hardware,Separates temporal state availability from learning/readout adaptation.,No-plasticity path must not pass promoted learning claims.,True
+hidden_recurrence_excluded_control,source audit,Keeps Tier 4.31 aligned with the narrowed v2.2 claim.,First native gate must not include hidden tanh recurrent units or recurrent weight matrices.,True

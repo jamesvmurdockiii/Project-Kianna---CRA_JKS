@@ -5,10 +5,10 @@ ledger is `STUDY_REGISTRY.json`; the compact table is `STUDY_REGISTRY.csv`.
 Older reruns, prepared capsules, debug probes, and baseline-frozen
 mechanism bundles outside the formal registry are preserved for audit.
 
-- Generated: `2026-05-06T03:55:19.939012+00:00`
+- Generated: `2026-05-06T04:17:12.716263+00:00`
 - Registry status: **PASS**
-- Canonical evidence entries: `61`
-- Expanded test-entry count: `61`; see the canonical evidence table below for the exact current tier list.
+- Canonical evidence entries: `62`
+- Expanded test-entry count: `62`; see the canonical evidence table below for the exact current tier list.
 
 ## Evidence Categories
 
@@ -83,6 +83,7 @@ mechanism bundles outside the formal registry are preserved for audit.
 | `tier4_30f_lifecycle_sham_hardware_subset` | **PASS** | `controlled_test_output/tier4_30f_hw_20260505_hardware_pass_ingested` | Hardware sham-control subset only; not lifecycle task benefit, not autonomous lifecycle-to-learning MCPL, not speedup, not multi-chip scaling, not v2.2 temporal migration, and not a lifecycle baseline freeze. |
 | `tier4_30g_lifecycle_task_benefit_resource_bridge` | **PASS** | `controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge` | Local contract/reference evidence only; not a hardware task-benefit pass, not autonomous lifecycle-to-learning MCPL, not multi-chip scaling, and not a lifecycle baseline freeze. |
 | `tier4_30g_lifecycle_task_benefit_hardware_bridge` | **PASS** | `controlled_test_output/tier4_30g_hw_20260505_hardware_pass_ingested` | Hardware task-benefit/resource bridge only; host ferries the lifecycle gate into the task path. Not autonomous lifecycle-to-learning MCPL, not speedup, not multi-chip scaling, not v2.2 temporal migration, and not full organism autonomy. |
+| `tier4_31a_native_temporal_substrate_readiness` | **PASS** | `controlled_test_output/tier4_31a_20260506_native_temporal_substrate_readiness` | Local readiness/contract evidence only; not C runtime implementation, not SpiNNaker hardware evidence, not speedup, not multi-chip scaling, not nonlinear recurrence, not universal benchmark superiority, and not a new baseline freeze. |
 
 ## Noncanonical Outputs
 

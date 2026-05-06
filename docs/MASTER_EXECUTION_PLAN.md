@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-05T22:12-04:00.
+Last updated: 2026-05-06T00:25-04:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -725,15 +725,18 @@ ability.
 
 ### Phase F - Native Temporal / Replay / Eligibility Bridge Decisions
 
-47. **CURRENT ACTIVE STEP** - Tier 4.31a native temporal-substrate readiness:
-    because Tier 5.19c promoted v2.2 for bounded host-side fading-memory temporal
-    state, decide the smallest chip-owned temporal-state subset. This is a local
-    contract/readiness gate only. If the required chip-owned state is too large
-    or cannot preserve controls, keep v2.2 host-side and document the boundary.
+47. ✅ **COMPLETE** - Tier 4.31a native temporal-substrate readiness:
+    local pass, 24/24. The smallest first native v2.2 temporal subset is seven
+    causal fixed-point EMA traces over current input; deltas and novelty are
+    derived, not stored. Persistent state budget is 56 bytes; total initial
+    trace/table budget is 112 bytes. This is contract/readiness only, not C
+    implementation or hardware evidence.
 
-48. Tier 4.31b native temporal-substrate local reference: fixed-point state
-    update, readback schema, resource budget, and parity against the promoted
-    software mechanism. No hardware before local parity and source audit.
+48. **CURRENT ACTIVE STEP** - Tier 4.31b native temporal-substrate local reference:
+    implement the local fixed-point EMA mirror, compare it against the promoted
+    Tier 5.19c fading-memory reference, and run lag-only, zero-state,
+    frozen-state, shuffled-state, reset-interval, shuffled-target, and
+    no-plasticity controls. No hardware before local parity and source audit.
 
 49. Tier 4.31c native temporal-substrate hardware smoke: one board, one seed,
     one minimal temporal-state task, explicit lag-only and shuffled-state
@@ -986,9 +989,9 @@ After each completed run or design tier:
 The next concrete action is:
 
 ```text
-Tier 4.31a native temporal-substrate readiness: define the smallest chip-owned
-subset for the v2.2 fading-memory temporal-state mechanism before any native
-temporal hardware package.
+Tier 4.31b native temporal-substrate local fixed-point reference: mirror the
+seven-EMA fixed-point update declared by Tier 4.31a and prove local parity plus
+controls before any C/runtime implementation or EBRAINS package.
 ```
 
 Current reference state:
@@ -1008,30 +1011,31 @@ Returned artifacts preserved: 36
 Enabled lifecycle bridge gate: open
 Five predeclared lifecycle controls: closed
 Resource/readback accounting: returned for every mode
-Temporal substrate status: fading-memory promoted in software only; nonlinear
-recurrence and native/on-chip temporal dynamics remain unproven
+Temporal substrate status: Tier 4.31a local readiness passed for a seven-EMA
+fixed-point native subset; nonlinear recurrence, C implementation, and hardware
+transfer remain unproven
 ```
 
 Purpose:
 
 ```text
-Tier 4.30g-hw completed the lifecycle-native baseline freeze condition: lifecycle
-telemetry, sham controls, resource accounting, and a bounded hardware task-effect
-bridge passed. The next action is not another lifecycle package. It is a local
-readiness decision for whether the v2.2 fading-memory temporal-state mechanism
-should move onto chip, and if so, what exact state, update rule, readback schema,
-controls, and resource budget are small enough to test without overclaiming.
+Tier 4.31a completed the local readiness decision for moving the v2.2 fading-
+memory temporal-state mechanism toward chip-native form. The next action is not
+an EBRAINS package. It is a local fixed-point reference/parity gate that tests
+whether the declared seven-EMA trace subset preserves the Tier 5.19c fading-
+memory behavior and fails the predeclared destructive controls.
 ```
 
 Required coverage:
 
 ```text
 Use v2.2 as the software reference and `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` as
-the native lifecycle baseline. Do not create an EBRAINS package until Tier 4.31a
-predeclares the temporal-state subset, lag-only/shuffled-state controls, resource
-budget, failure classes, and claim boundary. Keep the 4.30g boundary strict:
-this is still not autonomous lifecycle-to-learning MCPL, not speedup, not
-multi-chip scaling, and not full organism autonomy.
+the native lifecycle baseline. Do not create an EBRAINS package until Tier 4.31b
+passes local fixed-point parity and the lag-only, zero-state, frozen-state,
+shuffled-state, reset-interval, shuffled-target, and no-plasticity controls.
+Keep the 4.31a boundary strict: this is still not C implementation, not hardware
+transfer, not nonlinear recurrence, not speedup, not multi-chip scaling, and not
+full organism autonomy.
 ```
 
 

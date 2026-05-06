@@ -1,0 +1,10 @@
+failure_class,meaning,required_response
+host_hidden_temporal_update,Host updates the temporal state outside the declared chip-owned path.,Fail the native claim and return to local source audit.
+future_target_leakage,Temporal state depends on target/reward before it is causally available.,Fail and add shuffled-target/wrong-horizon diagnostics before retry.
+fixed_point_overflow_or_saturation,Trace values clip or overflow under canonical inputs.,Fail 4.31b; reduce gain/range or widen state before hardware.
+lag_only_explains_effect,Same-budget lag control matches the temporal trace.,Do not promote native temporal migration; narrow claim.
+sham_control_passes,Zero/frozen/shuffled/reset controls reproduce the benefit.,Fail and repair task/control separation.
+readback_schema_drift,"Readback fields are missing, stale, or ambiguous.",Fail ingest; update schema version and parser before rerun.
+resource_budget_exceeded,Initial state/readback exceeds declared compact budget.,Fail readiness; redesign state subset before implementation.
+nonlinear_recurrence_smuggled_in,Hidden recurrent units or recurrence-specific claims enter the first native gate.,Fail contract; separate into a later explicit recurrence tier.
+ebrains_package_prepared_too_early,Hardware upload is prepared before 4.31b local fixed-point parity passes.,Invalidate package and restore local-first sequence.

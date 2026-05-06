@@ -1,0 +1,5 @@
+name,equation_float,equation_fixed_point,clipping_rule,purpose
+ema_trace_update,trace_i[t] = decay_i * trace_i[t-1] + alpha_i * x[t],"trace_i = FP_MUL(decay_i_raw, trace_i) + FP_MUL(alpha_i_raw, input_raw)","clip each trace to [-FP_ONE, FP_ONE] for first native gate",Own the v2.2 fading-memory state on chip using only bounded causal updates.
+trace_delta_feature,delta_i[t] = trace_{i+1}[t] - trace_i[t],delta_i_raw = trace_raw[i + 1] - trace_raw[i],clip only if emitted into a bounded summary/readout payload,"Preserve v2.2 multi-timescale contrast as a derived feature, not persistent state."
+novelty_feature,novelty[t] = x[t] - trace_slowest[t-1],novelty_raw = input_raw - previous_slowest_trace_raw,"clip emitted novelty to [-2 * FP_ONE, 2 * FP_ONE]",Expose causal surprise/novelty without future target leakage.
+temporal_readout_input,"feature[t] = f(x[t], traces[t], deltas[t], novelty[t])","readout consumes fixed-point current, trace, delta, and novelty fields only",no hidden/tanh recurrent state in Tier 4.31b/4.31c,Keep the first native migration aligned with the narrowed v2.2 claim.

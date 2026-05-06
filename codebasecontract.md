@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-06T04:20:00+00:00.
+Last updated: 2026-05-06T04:25:00+00:00.
 
 Current repo root:
 
@@ -99,23 +99,31 @@ FROZEN: CRA_LIFECYCLE_NATIVE_BASELINE_v0.4
             temporal migration, not external-baseline superiority, and not
             language/planning/AGI/ASI.
 
-  Next: Tier 4.31a native temporal-substrate readiness. This is a local
-        contract/readiness decision for the v2.2 fading-memory mechanism only.
-        No EBRAINS package is pending until 4.31a defines the smallest chip-owned
-        state subset, controls, readback schema, fixed-point equations, resource
-        budget, and claim boundary.
+  Next: Tier 4.31b native temporal-substrate local fixed-point reference/parity.
+        Tier 4.31a has defined the smallest chip-owned temporal subset for the
+        v2.2 fading-memory mechanism. No EBRAINS package is pending until 4.31b
+        proves the fixed-point mirror against the Tier 5.19c reference and
+        predeclared controls.
 ```
 
 Current active tier state:
 
 ```text
-Tier 4.31a — CURRENT ACTIVE. Native temporal-substrate readiness.
-  Question: Should the v2.2 bounded fading-memory temporal state move onto chip,
-    and if so, what is the smallest state subset, fixed-point update rule,
-    readback schema, control set, and resource budget that can be defended?
-  Rule: local contract/readiness first. No EBRAINS package until the subset,
-    lag-only/shuffled-state controls, failure classes, and claim boundary are
-    predeclared.
+Tier 4.31a — COMPLETE. Native temporal-substrate readiness.
+  Status: LOCAL PASS, 24/24.
+  Output: controlled_test_output/tier4_31a_20260506_native_temporal_substrate_readiness/
+  Decision: migrate the v2.2 fading-memory substrate first as seven causal
+    fixed-point EMA traces. Deltas and novelty are derived, not stored.
+  Budget: 56 bytes persistent state, 112 bytes total initial trace/table budget.
+  Boundary: local contract/readiness only; not C implementation, not hardware,
+    not speedup, not nonlinear recurrence, and not a baseline freeze.
+
+Tier 4.31b — CURRENT ACTIVE. Native temporal-substrate local fixed-point reference.
+  Question: Does the seven-EMA fixed-point trace subset reproduce the promoted
+    Tier 5.19c fading-memory reference closely enough to justify C/runtime work?
+  Rule: local reference first. Run lag-only, zero-state, frozen-state,
+    shuffled-state, reset-interval, shuffled-target, and no-plasticity controls.
+    No EBRAINS package until local fixed-point parity and controls pass.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware
@@ -598,17 +606,18 @@ Local build capability (established 2026-05-02):
 
 Immediate next steps:
 
-1. Define Tier 4.31a native temporal-substrate readiness locally. Do not prepare
-   or run EBRAINS hardware until 4.31a predeclares the exact chip-owned temporal
-   state subset, fixed-point update equations, readback schema, lag-only and
-   shuffled-state controls, resource budget, and failure classes.
-2. Use v2.2 as the software reference and `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4`
-   as the native lifecycle baseline. Do not imply that v2.2 temporal state is
-   already native merely because lifecycle v0.4 froze.
-3. Keep sham/control commands behavior-backed. A readback flag alone is not
+1. Run Tier 4.31b native temporal-substrate local fixed-point reference/parity.
+   Mirror the seven-EMA update from Tier 4.31a in fixed-point and compare it
+   against the Tier 5.19c fading-memory reference.
+2. Preserve 4.31a's controls: lag-only, zero temporal state, frozen temporal
+   state, shuffled temporal state, reset-interval, shuffled-target, no-plasticity,
+   and hidden-recurrence exclusion. Do not weaken the controls to make parity pass.
+3. Only after 4.31b passes should C/runtime implementation or an EBRAINS package
+   be designed. No temporal hardware upload is pending right now.
+4. Keep sham/control commands behavior-backed. A readback flag alone is not
    reviewer-defensible; local C host tests must prove the control changes the
    intended counters/checksums before a package is uploaded.
-4. Keep public repo hygiene green before the next upload or commit: no
+5. Keep public repo hygiene green before the next upload or commit: no
    credentialed remotes, no `ebrains_jobs/` symlinks, no transient root output
    dirs, no generated host binaries, and `make validate` passing.
 

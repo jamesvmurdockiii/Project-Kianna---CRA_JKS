@@ -10,10 +10,10 @@ Research narrative companions:
 - `docs/WHITEPAPER.md`
 - `docs/CODEBASE_MAP.md`
 
-- Registry generated: `2026-05-06T03:55:19.939012+00:00`
+- Registry generated: `2026-05-06T04:17:12.716263+00:00`
 - Registry status: **PASS**
 - Core validation suite: `12` tests
-- Expanded evidence suite: `61` entries; see the canonical evidence table below for the exact current tier list.
+- Expanded evidence suite: `62` entries; see the canonical evidence table below for the exact current tier list.
 
 ## Canonical Claims
 
@@ -80,6 +80,7 @@ Research narrative companions:
 | `tier4_30f_lifecycle_sham_hardware_subset` | Phase E lifecycle-native sham-control hardware subset before task-benefit bridge | **PASS** | The five-profile lifecycle runtime executed the enabled lifecycle path and five predeclared sham-control modes on real SpiNNaker with exact expected summaries, no fallback, and preserved returned build/load/readback artifacts. | Hardware sham-control subset only; not lifecycle task benefit, not autonomous lifecycle-to-learning MCPL, not speedup, not multi-chip scaling, not v2.2 temporal migration, and not a lifecycle baseline freeze. |
 | `tier4_30g_lifecycle_task_benefit_resource_bridge` | Phase E lifecycle-native local task-benefit/resource bridge before hardware package | **PASS** | A bounded lifecycle-derived feature bridge locally separates the enabled lifecycle mode from sham controls on a compact delayed task and declares the resource/readback contract required before hardware packaging. | Local contract/reference evidence only; not a hardware task-benefit pass, not autonomous lifecycle-to-learning MCPL, not multi-chip scaling, and not a lifecycle baseline freeze. |
 | `tier4_30g_lifecycle_task_benefit_hardware_bridge` | Phase E lifecycle-native hardware task-benefit/resource bridge before lifecycle-native baseline freeze | **PASS** | The five-profile lifecycle runtime connected enabled lifecycle state into a bounded task-bearing path on real SpiNNaker while five predeclared lifecycle controls closed the task gate, with returned resource/readback accounting and zero failed criteria. | Hardware task-benefit/resource bridge only; host ferries the lifecycle gate into the task path. Not autonomous lifecycle-to-learning MCPL, not speedup, not multi-chip scaling, not v2.2 temporal migration, and not full organism autonomy. |
+| `tier4_31a_native_temporal_substrate_readiness` | Phase F native v2.2 temporal-state migration readiness before local fixed-point reference | **PASS** | The smallest defensible chip-owned subset for the v2.2 fading-memory mechanism is predeclared as seven causal fixed-point EMA traces with derived deltas/novelty, compact readback, controls, resource budget, proposed command codes, and failure classes before implementation. | Local readiness/contract evidence only; not C runtime implementation, not SpiNNaker hardware evidence, not speedup, not multi-chip scaling, not nonlinear recurrence, not universal benchmark superiority, and not a new baseline freeze. |
 
 ## Canonical Artifacts
 
@@ -146,6 +147,7 @@ Research narrative companions:
 | `tier4_30f_lifecycle_sham_hardware_subset` | `controlled_test_output/tier4_30f_hw_20260505_hardware_pass_ingested/tier4_30f_hw_results.json` | `controlled_test_output/tier4_30f_hw_20260505_hardware_pass_ingested/tier4_30f_hw_report.md` | `` |
 | `tier4_30g_lifecycle_task_benefit_resource_bridge` | `controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/tier4_30g_results.json` | `controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/tier4_30g_report.md` | `controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/tier4_30g_mode_summary.csv` |
 | `tier4_30g_lifecycle_task_benefit_hardware_bridge` | `controlled_test_output/tier4_30g_hw_20260505_hardware_pass_ingested/tier4_30g_hw_results.json` | `controlled_test_output/tier4_30g_hw_20260505_hardware_pass_ingested/tier4_30g_hw_report.md` | `` |
+| `tier4_31a_native_temporal_substrate_readiness` | `controlled_test_output/tier4_31a_20260506_native_temporal_substrate_readiness/tier4_31a_results.json` | `controlled_test_output/tier4_31a_20260506_native_temporal_substrate_readiness/tier4_31a_report.md` | `` |
 
 ## Selected Noncanonical Diagnostics
 

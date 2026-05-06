@@ -1,0 +1,10 @@
+item,count,bytes_each,total_bytes,location,note
+temporal_trace_raw,7,4,28,DTCM/core-local,Seven s16.15 EMA traces.
+temporal_alpha_raw,7,4,28,compile-time const or init table,Can be compile-time constants after 4.31b.
+temporal_decay_raw,7,4,28,compile-time const or init table,Can be compile-time constants after 4.31b.
+latest_input_raw,1,4,4,summary,Compact causal audit.
+latest_novelty_raw,1,4,4,summary,Compact derived-feature audit.
+temporal_update_count,1,4,4,summary,Telemetry counter.
+temporal_saturation_count,1,4,4,summary,Overflow counter.
+temporal_reset_count,1,4,4,summary,Reset/sham counter.
+temporal_sham_mode/schema/trace_count padding,1,8,8,summary,Packed compact-state fields.

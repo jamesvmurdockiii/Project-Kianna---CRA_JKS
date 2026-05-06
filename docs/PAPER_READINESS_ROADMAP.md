@@ -6303,9 +6303,12 @@ Near-term roadmap insertion:
 16. `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4`. COMPLETE: frozen after lifecycle
     telemetry, controls, resource accounting, and one bounded useful hardware
     task effect passed.
-17. Tier 4.31a native temporal-substrate readiness. NEXT: local contract only;
-    decide the smallest chip-owned subset for v2.2 fading memory before any new
-    EBRAINS package.
+17. Tier 4.31a native temporal-substrate readiness. COMPLETE: local pass 24/24;
+    first native v2.2 temporal subset is seven causal fixed-point EMA traces,
+    with deltas/novelty derived and no hidden recurrent state.
+18. Tier 4.31b native temporal-substrate local fixed-point reference. NEXT:
+    prove the seven-EMA mirror against Tier 5.19c fading-memory reference and
+    destructive controls before C/runtime implementation or EBRAINS packaging.
 ```
 
 Tier 5.19a result:
@@ -6568,8 +6571,21 @@ Boundary: hardware task-benefit/resource bridge only, still host-ferried; not
           scaling, not v2.2 temporal-state migration, and not full organism
           autonomy.
 Baseline: CRA_LIFECYCLE_NATIVE_BASELINE_v0.4 frozen.
-Next: Tier 4.31a native temporal-substrate readiness before any temporal-state
-      hardware package.
+Tier 4.31a result:
+
+```text
+Output: controlled_test_output/tier4_31a_20260506_native_temporal_substrate_readiness/
+Status: pass
+Criteria: 24/24
+Decision: seven causal fixed-point EMA traces for the first native v2.2 temporal
+          migration; deltas and novelty derived, no hidden recurrent state
+Persistent state: 56 bytes
+Total initial trace/table budget: 112 bytes
+Boundary: local readiness only, not C implementation or hardware evidence
+```
+
+Next: Tier 4.31b native temporal-substrate local fixed-point reference before
+      any temporal-state hardware package.
 ```
 
 Detailed Tier 5.19 contract:

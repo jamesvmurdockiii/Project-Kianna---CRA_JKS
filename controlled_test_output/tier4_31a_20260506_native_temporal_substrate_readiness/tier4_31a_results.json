@@ -1,0 +1,688 @@
+{
+  "claim_boundary": "Tier 4.31a is local readiness/contract evidence only. A pass defines the smallest native fading-memory temporal-state subset, fixed-point equations, controls, readback schema, resource budget, command plan, and failure classes before any implementation or EBRAINS package. It does not prove C runtime implementation, SpiNNaker hardware transfer, speedup, multi-chip scaling, nonlinear recurrence, universal benchmark superiority, language, planning, AGI, or ASI.",
+  "command_plan": {
+    "collisions": {},
+    "host_sdp_scope": "setup, sham selection, compact readback only",
+    "implementation_rule": "do not add commands until 4.31b local fixed-point reference passes",
+    "inter_core_scope": "none in 4.31b; later MCPL only if temporal state must be shared across cores",
+    "proposed_codes": {
+      "CMD_TEMPORAL_INIT": 39,
+      "CMD_TEMPORAL_READ_STATE": 41,
+      "CMD_TEMPORAL_SHAM_MODE": 42,
+      "CMD_TEMPORAL_UPDATE": 40
+    }
+  },
+  "controls": [
+    {
+      "expected_effect": "Lag-only should remain weaker on temporal-memory tasks or the temporal native migration should not be promoted.",
+      "mode": "local reference",
+      "name": "lag_only_online_lms_control",
+      "purpose": "Preserve the Tier 5.19c requirement that fading memory beat a same-causal-budget lag control on temporal-memory diagnostics.",
+      "required_before_hardware": true
+    },
+    {
+      "expected_effect": "Zeroed traces should lose temporal-memory benefit.",
+      "mode": "local reference and future hardware",
+      "name": "zero_temporal_state_ablation",
+      "purpose": "Proves task performance is not carried solely by current input/readout.",
+      "required_before_hardware": true
+    },
+    {
+      "expected_effect": "Frozen state should not match the active temporal trace on held-out temporal tasks.",
+      "mode": "local reference",
+      "name": "frozen_temporal_state_ablation",
+      "purpose": "Matches the v2.2 sham where temporal state stops updating after the train/reference prefix.",
+      "required_before_hardware": true
+    },
+    {
+      "expected_effect": "Shuffled state should lose temporal-memory benefit.",
+      "mode": "local reference",
+      "name": "shuffled_temporal_state_sham",
+      "purpose": "Destroys temporal ordering while preserving marginal state distribution.",
+      "required_before_hardware": true
+    },
+    {
+      "expected_effect": "Short reset interval should reduce long-memory performance.",
+      "mode": "local reference and future hardware",
+      "name": "state_reset_interval_control",
+      "purpose": "Checks whether the claimed memory horizon survives forced resets.",
+      "required_before_hardware": true
+    },
+    {
+      "expected_effect": "Shuffled targets must fail.",
+      "mode": "local reference",
+      "name": "shuffled_target_control",
+      "purpose": "Detects label/target leakage through the temporal path.",
+      "required_before_hardware": true
+    },
+    {
+      "expected_effect": "No-plasticity path must not pass promoted learning claims.",
+      "mode": "local reference and future hardware",
+      "name": "no_plasticity_ablation",
+      "purpose": "Separates temporal state availability from learning/readout adaptation.",
+      "required_before_hardware": true
+    },
+    {
+      "expected_effect": "First native gate must not include hidden tanh recurrent units or recurrent weight matrices.",
+      "mode": "source audit",
+      "name": "hidden_recurrence_excluded_control",
+      "purpose": "Keeps Tier 4.31 aligned with the narrowed v2.2 claim.",
+      "required_before_hardware": true
+    }
+  ],
+  "criteria": [
+    {
+      "name": "runner revision current",
+      "note": "",
+      "passed": true,
+      "rule": "expected current source",
+      "value": "tier4_31a_native_temporal_substrate_readiness_20260506_0001"
+    },
+    {
+      "name": "v2.2 baseline exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.2.json"
+    },
+    {
+      "name": "v2.2 baseline frozen",
+      "note": "",
+      "passed": true,
+      "rule": "== frozen",
+      "value": "frozen"
+    },
+    {
+      "name": "Tier 5.19c result exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/tier5_19c_results.json"
+    },
+    {
+      "name": "Tier 5.19c passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "Tier 5.19c freeze authorized",
+      "note": "",
+      "passed": true,
+      "rule": "== true",
+      "value": true
+    },
+    {
+      "name": "nonlinear recurrence excluded",
+      "note": "",
+      "passed": true,
+      "rule": "contains not bounded nonlinear recurrence",
+      "value": [
+        "not bounded nonlinear recurrence",
+        "not hardware evidence",
+        "not native on-chip temporal dynamics",
+        "not universal benchmark superiority",
+        "not language, planning, AGI, or ASI"
+      ]
+    },
+    {
+      "name": "lifecycle native baseline exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/baselines/CRA_LIFECYCLE_NATIVE_BASELINE_v0.4.md"
+    },
+    {
+      "name": "Tier 4.30g hardware pass exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_30g_hw_20260505_hardware_pass_ingested/tier4_30g_hw_results.json"
+    },
+    {
+      "name": "Tier 4.30g hardware status passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "runtime fixed-point helpers present",
+      "note": "",
+      "passed": true,
+      "rule": "present in config.h",
+      "value": "FP_MUL FP_FROM_FLOAT"
+    },
+    {
+      "name": "runtime bounded state constants present",
+      "note": "",
+      "passed": true,
+      "rule": "present",
+      "value": "MAX_MEMORY_SLOTS/MAX_PENDING_HORIZONS"
+    },
+    {
+      "name": "existing lifecycle/native summary surface present",
+      "note": "",
+      "passed": true,
+      "rule": "present",
+      "value": "cra_state_summary_t"
+    },
+    {
+      "name": "smallest temporal subset declared",
+      "note": "",
+      "passed": true,
+      "rule": "EMA traces only",
+      "value": "seven causal EMA traces over the current temporal input; deltas and novelty are derived, not stored"
+    },
+    {
+      "name": "fixed-point table complete",
+      "note": "",
+      "passed": true,
+      "rule": "== 7",
+      "value": 7
+    },
+    {
+      "name": "persistent temporal state budget compact",
+      "note": "",
+      "passed": true,
+      "rule": "<= 128 bytes",
+      "value": 56
+    },
+    {
+      "name": "total initial temporal budget compact",
+      "note": "",
+      "passed": true,
+      "rule": "<= 256 bytes",
+      "value": 112
+    },
+    {
+      "name": "readback schema declared",
+      "note": "",
+      "passed": true,
+      "rule": ">= 10 fields",
+      "value": 12
+    },
+    {
+      "name": "control suite declared",
+      "note": "",
+      "passed": true,
+      "rule": ">= 7 controls",
+      "value": 8
+    },
+    {
+      "name": "required controls include lag/frozen/shuffled/reset/no-plasticity",
+      "note": "",
+      "passed": true,
+      "rule": "contains core controls",
+      "value": [
+        "lag_only_online_lms_control",
+        "zero_temporal_state_ablation",
+        "frozen_temporal_state_ablation",
+        "shuffled_temporal_state_sham",
+        "state_reset_interval_control",
+        "shuffled_target_control",
+        "no_plasticity_ablation",
+        "hidden_recurrence_excluded_control"
+      ]
+    },
+    {
+      "name": "failure classes declared",
+      "note": "",
+      "passed": true,
+      "rule": ">= 8 classes",
+      "value": 9
+    },
+    {
+      "name": "proposed command codes do not collide",
+      "note": "",
+      "passed": true,
+      "rule": "empty",
+      "value": {}
+    },
+    {
+      "name": "no EBRAINS package prepared",
+      "note": "This runner writes only controlled_test_output artifacts.",
+      "passed": true,
+      "rule": "no ebrains_jobs output",
+      "value": "local-readiness only"
+    },
+    {
+      "name": "next step remains local",
+      "note": "",
+      "passed": true,
+      "rule": "Tier 4.31b local before hardware",
+      "value": "Tier 4.31b local fixed-point reference/parity; no EBRAINS package before that passes"
+    }
+  ],
+  "criteria_passed": 24,
+  "criteria_total": 24,
+  "equation_specs": [
+    {
+      "clipping_rule": "clip each trace to [-FP_ONE, FP_ONE] for first native gate",
+      "equation_fixed_point": "trace_i = FP_MUL(decay_i_raw, trace_i) + FP_MUL(alpha_i_raw, input_raw)",
+      "equation_float": "trace_i[t] = decay_i * trace_i[t-1] + alpha_i * x[t]",
+      "name": "ema_trace_update",
+      "purpose": "Own the v2.2 fading-memory state on chip using only bounded causal updates."
+    },
+    {
+      "clipping_rule": "clip only if emitted into a bounded summary/readout payload",
+      "equation_fixed_point": "delta_i_raw = trace_raw[i + 1] - trace_raw[i]",
+      "equation_float": "delta_i[t] = trace_{i+1}[t] - trace_i[t]",
+      "name": "trace_delta_feature",
+      "purpose": "Preserve v2.2 multi-timescale contrast as a derived feature, not persistent state."
+    },
+    {
+      "clipping_rule": "clip emitted novelty to [-2 * FP_ONE, 2 * FP_ONE]",
+      "equation_fixed_point": "novelty_raw = input_raw - previous_slowest_trace_raw",
+      "equation_float": "novelty[t] = x[t] - trace_slowest[t-1]",
+      "name": "novelty_feature",
+      "purpose": "Expose causal surprise/novelty without future target leakage."
+    },
+    {
+      "clipping_rule": "no hidden/tanh recurrent state in Tier 4.31b/4.31c",
+      "equation_fixed_point": "readout consumes fixed-point current, trace, delta, and novelty fields only",
+      "equation_float": "feature[t] = f(x[t], traces[t], deltas[t], novelty[t])",
+      "name": "temporal_readout_input",
+      "purpose": "Keep the first native migration aligned with the narrowed v2.2 claim."
+    }
+  ],
+  "failure_classes": [
+    {
+      "failure_class": "host_hidden_temporal_update",
+      "meaning": "Host updates the temporal state outside the declared chip-owned path.",
+      "required_response": "Fail the native claim and return to local source audit."
+    },
+    {
+      "failure_class": "future_target_leakage",
+      "meaning": "Temporal state depends on target/reward before it is causally available.",
+      "required_response": "Fail and add shuffled-target/wrong-horizon diagnostics before retry."
+    },
+    {
+      "failure_class": "fixed_point_overflow_or_saturation",
+      "meaning": "Trace values clip or overflow under canonical inputs.",
+      "required_response": "Fail 4.31b; reduce gain/range or widen state before hardware."
+    },
+    {
+      "failure_class": "lag_only_explains_effect",
+      "meaning": "Same-budget lag control matches the temporal trace.",
+      "required_response": "Do not promote native temporal migration; narrow claim."
+    },
+    {
+      "failure_class": "sham_control_passes",
+      "meaning": "Zero/frozen/shuffled/reset controls reproduce the benefit.",
+      "required_response": "Fail and repair task/control separation."
+    },
+    {
+      "failure_class": "readback_schema_drift",
+      "meaning": "Readback fields are missing, stale, or ambiguous.",
+      "required_response": "Fail ingest; update schema version and parser before rerun."
+    },
+    {
+      "failure_class": "resource_budget_exceeded",
+      "meaning": "Initial state/readback exceeds declared compact budget.",
+      "required_response": "Fail readiness; redesign state subset before implementation."
+    },
+    {
+      "failure_class": "nonlinear_recurrence_smuggled_in",
+      "meaning": "Hidden recurrent units or recurrence-specific claims enter the first native gate.",
+      "required_response": "Fail contract; separate into a later explicit recurrence tier."
+    },
+    {
+      "failure_class": "ebrains_package_prepared_too_early",
+      "meaning": "Hardware upload is prepared before 4.31b local fixed-point parity passes.",
+      "required_response": "Invalidate package and restore local-first sequence."
+    }
+  ],
+  "failure_reason": "",
+  "fixed_point_table": [
+    {
+      "alpha_float": 0.3934693402873666,
+      "alpha_raw_s16_15": 12893,
+      "decay_float": 0.6065306597126334,
+      "decay_raw_s16_15": 19874,
+      "tau_steps": 2
+    },
+    {
+      "alpha_float": 0.22119921692859512,
+      "alpha_raw_s16_15": 7248,
+      "decay_float": 0.7788007830714049,
+      "decay_raw_s16_15": 25519,
+      "tau_steps": 4
+    },
+    {
+      "alpha_float": 0.11750309741540454,
+      "alpha_raw_s16_15": 3850,
+      "decay_float": 0.8824969025845955,
+      "decay_raw_s16_15": 28917,
+      "tau_steps": 8
+    },
+    {
+      "alpha_float": 0.06058693718652419,
+      "alpha_raw_s16_15": 1985,
+      "decay_float": 0.9394130628134758,
+      "decay_raw_s16_15": 30782,
+      "tau_steps": 16
+    },
+    {
+      "alpha_float": 0.03076676552365587,
+      "alpha_raw_s16_15": 1008,
+      "decay_float": 0.9692332344763441,
+      "decay_raw_s16_15": 31759,
+      "tau_steps": 32
+    },
+    {
+      "alpha_float": 0.015503562994591547,
+      "alpha_raw_s16_15": 508,
+      "decay_float": 0.9844964370054085,
+      "decay_raw_s16_15": 32259,
+      "tau_steps": 64
+    },
+    {
+      "alpha_float": 0.007782061739756485,
+      "alpha_raw_s16_15": 255,
+      "decay_float": 0.9922179382602435,
+      "decay_raw_s16_15": 32512,
+      "tau_steps": 128
+    }
+  ],
+  "generated_at_utc": "2026-05-06T04:17:00+00:00",
+  "next_step": {
+    "required_work": [
+      "mirror the EMA trace update in local Python fixed-point",
+      "compare against the Tier 5.19c fading-memory reference on temporal-memory diagnostics",
+      "run lag-only, zero/frozen/shuffled/reset/no-plasticity/shuffled-target controls",
+      "predeclare fixed-point tolerances and saturation limits",
+      "only then consider C source implementation and EBRAINS packaging"
+    ],
+    "tier": "Tier 4.31b - Native Temporal-Substrate Local Fixed-Point Reference"
+  },
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_31a_20260506_native_temporal_substrate_readiness",
+  "persistent_state_bytes": 56,
+  "prerequisites": {
+    "lifecycle_native_baseline": "/Users/james/JKS:CRA/baselines/CRA_LIFECYCLE_NATIVE_BASELINE_v0.4.md",
+    "tier4_30g_hw_results": "/Users/james/JKS:CRA/controlled_test_output/tier4_30g_hw_20260505_hardware_pass_ingested/tier4_30g_hw_results.json",
+    "tier5_19c_results": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/tier5_19c_results.json",
+    "v2_2_baseline": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.2.json"
+  },
+  "readback_schema": [
+    {
+      "cadence": "every compact state read",
+      "field": "schema_version",
+      "pass_rule": "equals TEMPORAL_SCHEMA_VERSION",
+      "purpose": "parser compatibility",
+      "type": "uint16"
+    },
+    {
+      "cadence": "every compact state read",
+      "field": "trace_count",
+      "pass_rule": "equals 7 for first native gate",
+      "purpose": "state shape accounting",
+      "type": "uint8"
+    },
+    {
+      "cadence": "setup and final read",
+      "field": "timescale_checksum",
+      "pass_rule": "matches local reference checksum",
+      "purpose": "detect wrong tau/alpha table",
+      "type": "uint32"
+    },
+    {
+      "cadence": "every compact state read",
+      "field": "trace_checksum",
+      "pass_rule": "within fixed-point tolerance in 4.31b",
+      "purpose": "compact trace-state parity",
+      "type": "int32"
+    },
+    {
+      "cadence": "every compact state read",
+      "field": "trace_abs_sum_raw",
+      "pass_rule": "finite and below declared bound",
+      "purpose": "collapse/saturation signal",
+      "type": "uint32"
+    },
+    {
+      "cadence": "every compact state read",
+      "field": "latest_input_raw",
+      "pass_rule": "equals last scheduled input in local reference",
+      "purpose": "causal update audit",
+      "type": "int32"
+    },
+    {
+      "cadence": "every compact state read",
+      "field": "latest_novelty_raw",
+      "pass_rule": "matches local fixed-point mirror",
+      "purpose": "derived temporal feature audit",
+      "type": "int32"
+    },
+    {
+      "cadence": "every compact state read",
+      "field": "temporal_update_count",
+      "pass_rule": "equals processed event count",
+      "purpose": "missed/duplicate update audit",
+      "type": "uint32"
+    },
+    {
+      "cadence": "every compact state read",
+      "field": "temporal_saturation_count",
+      "pass_rule": "zero in canonical pass",
+      "purpose": "overflow audit",
+      "type": "uint32"
+    },
+    {
+      "cadence": "every compact state read",
+      "field": "temporal_reset_count",
+      "pass_rule": "matches declared control mode",
+      "purpose": "reset/sham audit",
+      "type": "uint32"
+    },
+    {
+      "cadence": "every compact state read",
+      "field": "temporal_sham_mode",
+      "pass_rule": "matches requested mode",
+      "purpose": "control identity",
+      "type": "uint8"
+    },
+    {
+      "cadence": "every hardware read later",
+      "field": "payload_len",
+      "pass_rule": "equals documented compact schema length",
+      "purpose": "readback accounting",
+      "type": "uint16"
+    }
+  ],
+  "resource_budget": [
+    {
+      "bytes_each": 4,
+      "count": 7,
+      "item": "temporal_trace_raw",
+      "location": "DTCM/core-local",
+      "note": "Seven s16.15 EMA traces.",
+      "total_bytes": 28
+    },
+    {
+      "bytes_each": 4,
+      "count": 7,
+      "item": "temporal_alpha_raw",
+      "location": "compile-time const or init table",
+      "note": "Can be compile-time constants after 4.31b.",
+      "total_bytes": 28
+    },
+    {
+      "bytes_each": 4,
+      "count": 7,
+      "item": "temporal_decay_raw",
+      "location": "compile-time const or init table",
+      "note": "Can be compile-time constants after 4.31b.",
+      "total_bytes": 28
+    },
+    {
+      "bytes_each": 4,
+      "count": 1,
+      "item": "latest_input_raw",
+      "location": "summary",
+      "note": "Compact causal audit.",
+      "total_bytes": 4
+    },
+    {
+      "bytes_each": 4,
+      "count": 1,
+      "item": "latest_novelty_raw",
+      "location": "summary",
+      "note": "Compact derived-feature audit.",
+      "total_bytes": 4
+    },
+    {
+      "bytes_each": 4,
+      "count": 1,
+      "item": "temporal_update_count",
+      "location": "summary",
+      "note": "Telemetry counter.",
+      "total_bytes": 4
+    },
+    {
+      "bytes_each": 4,
+      "count": 1,
+      "item": "temporal_saturation_count",
+      "location": "summary",
+      "note": "Overflow counter.",
+      "total_bytes": 4
+    },
+    {
+      "bytes_each": 4,
+      "count": 1,
+      "item": "temporal_reset_count",
+      "location": "summary",
+      "note": "Reset/sham counter.",
+      "total_bytes": 4
+    },
+    {
+      "bytes_each": 8,
+      "count": 1,
+      "item": "temporal_sham_mode/schema/trace_count padding",
+      "location": "summary",
+      "note": "Packed compact-state fields.",
+      "total_bytes": 8
+    }
+  ],
+  "runner_revision": "tier4_31a_native_temporal_substrate_readiness_20260506_0001",
+  "state_specs": [
+    {
+      "field": "temporal_schema_version",
+      "owner": "learning_core",
+      "rationale": "Version the readback parser and prevent stale report interpretation.",
+      "readback": true,
+      "storage": "core-local static state",
+      "type": "uint16",
+      "update_rule": "set once at init"
+    },
+    {
+      "field": "temporal_trace_raw[7]",
+      "owner": "learning_core",
+      "rationale": "Smallest promoted v2.2 subset: bounded EMA traces only, no hidden recurrent state.",
+      "readback": true,
+      "storage": "core-local static state",
+      "type": "int32 s16.15",
+      "update_rule": "trace_i[t] = decay_i * trace_i[t-1] + alpha_i * input[t]"
+    },
+    {
+      "field": "temporal_alpha_raw[7]",
+      "owner": "compile-time or init payload",
+      "rationale": "Make local 4.31b and C fixed-point equations auditable.",
+      "readback": true,
+      "storage": "constant table",
+      "type": "int32 s16.15",
+      "update_rule": "alpha_i = 1 - exp(-1 / tau_i)"
+    },
+    {
+      "field": "temporal_decay_raw[7]",
+      "owner": "compile-time or init payload",
+      "rationale": "Avoid float-only decay behavior in the native claim path.",
+      "readback": true,
+      "storage": "constant table",
+      "type": "int32 s16.15",
+      "update_rule": "decay_i = exp(-1 / tau_i)"
+    },
+    {
+      "field": "latest_temporal_input_raw",
+      "owner": "learning_core",
+      "rationale": "Proves the trace update used current/past input only.",
+      "readback": true,
+      "storage": "core-local summary field",
+      "type": "int32 s16.15",
+      "update_rule": "last causal input used to update traces"
+    },
+    {
+      "field": "latest_temporal_novelty_raw",
+      "owner": "learning_core",
+      "rationale": "Carries the v2.2 novelty feature without storing an extra unbounded history.",
+      "readback": true,
+      "storage": "derived summary field",
+      "type": "int32 s16.15",
+      "update_rule": "input[t] - trace_slowest[t-1]"
+    },
+    {
+      "field": "temporal_update_count",
+      "owner": "learning_core",
+      "rationale": "Detects missed, duplicate, or host-side hidden updates.",
+      "readback": true,
+      "storage": "core-local summary field",
+      "type": "uint32",
+      "update_rule": "increment once per temporal update"
+    },
+    {
+      "field": "temporal_saturation_count",
+      "owner": "learning_core",
+      "rationale": "Bounds fixed-point overflow/saturation risk.",
+      "readback": true,
+      "storage": "core-local summary field",
+      "type": "uint32",
+      "update_rule": "increment when any trace clips"
+    },
+    {
+      "field": "temporal_reset_count",
+      "owner": "learning_core",
+      "rationale": "Audits reset-control and stop/start behavior.",
+      "readback": true,
+      "storage": "core-local summary field",
+      "type": "uint32",
+      "update_rule": "increment on explicit reset/sham mode reset"
+    },
+    {
+      "field": "temporal_sham_mode",
+      "owner": "learning_core",
+      "rationale": "Prevents post-hoc relabeling of control runs.",
+      "readback": true,
+      "storage": "core-local summary field",
+      "type": "uint8",
+      "update_rule": "selected by local reference or host command in future hardware probes"
+    }
+  ],
+  "status": "pass",
+  "subset_decision": {
+    "decision": "migrate_fading_memory_ema_traces_first",
+    "explicitly_excluded": [
+      "hidden tanh recurrent units",
+      "recurrent weight matrices",
+      "Python-side temporal dictionaries in hardware claims",
+      "future target or reward in temporal state updates",
+      "multi-chip temporal sharing",
+      "speedup or benchmark-superiority claims"
+    ],
+    "next_gate": "Tier 4.31b local fixed-point reference/parity; no EBRAINS package before that passes",
+    "state_subset": "seven causal EMA traces over the current temporal input; deltas and novelty are derived, not stored",
+    "timescale_checksum": 1811900589,
+    "timescales": [
+      2,
+      4,
+      8,
+      16,
+      32,
+      64,
+      128
+    ],
+    "why": "Tier 5.19c promoted fading_memory_only_ablation and explicitly did not promote bounded nonlinear recurrence. The smallest chip-owned subset is therefore the causal EMA trace bank plus compact counters/readback."
+  },
+  "tier": "Tier 4.31a - Native Temporal-Substrate Readiness",
+  "total_initial_temporal_bytes": 112
+}

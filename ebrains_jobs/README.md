@@ -122,7 +122,7 @@ Returned artifacts preserved: 35
 
 Boundary: this is a compact lifecycle sham-control hardware subset, not full
 Tier 6.3 hardware, not lifecycle task-benefit evidence, not speedup evidence,
-not multi-chip scaling, and not a baseline freeze. Tier 4.30g-hw now passes and is ingested; lifecycle-native baseline v0.4 is frozen with a host-ferried bridge boundary.
+not multi-chip scaling, and not a baseline freeze. Tier 4.30g-hw now passes and is ingested; lifecycle-native baseline v0.4 is frozen with a host-ferried bridge boundary. Tier 4.31a local temporal-substrate readiness also passed, but no temporal EBRAINS package is pending yet.
 
 ### `cra_430e`
 

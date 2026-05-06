@@ -1,0 +1,13 @@
+field,type,cadence,purpose,pass_rule
+schema_version,uint16,every compact state read,parser compatibility,equals TEMPORAL_SCHEMA_VERSION
+trace_count,uint8,every compact state read,state shape accounting,equals 7 for first native gate
+timescale_checksum,uint32,setup and final read,detect wrong tau/alpha table,matches local reference checksum
+trace_checksum,int32,every compact state read,compact trace-state parity,within fixed-point tolerance in 4.31b
+trace_abs_sum_raw,uint32,every compact state read,collapse/saturation signal,finite and below declared bound
+latest_input_raw,int32,every compact state read,causal update audit,equals last scheduled input in local reference
+latest_novelty_raw,int32,every compact state read,derived temporal feature audit,matches local fixed-point mirror
+temporal_update_count,uint32,every compact state read,missed/duplicate update audit,equals processed event count
+temporal_saturation_count,uint32,every compact state read,overflow audit,zero in canonical pass
+temporal_reset_count,uint32,every compact state read,reset/sham audit,matches declared control mode
+temporal_sham_mode,uint8,every compact state read,control identity,matches requested mode
+payload_len,uint16,every hardware read later,readback accounting,equals documented compact schema length

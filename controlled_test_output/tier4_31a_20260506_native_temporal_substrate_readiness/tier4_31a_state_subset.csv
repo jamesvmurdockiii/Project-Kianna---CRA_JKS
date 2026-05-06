@@ -1,0 +1,11 @@
+field,type,owner,update_rule,storage,readback,rationale
+temporal_schema_version,uint16,learning_core,set once at init,core-local static state,True,Version the readback parser and prevent stale report interpretation.
+temporal_trace_raw[7],int32 s16.15,learning_core,trace_i[t] = decay_i * trace_i[t-1] + alpha_i * input[t],core-local static state,True,"Smallest promoted v2.2 subset: bounded EMA traces only, no hidden recurrent state."
+temporal_alpha_raw[7],int32 s16.15,compile-time or init payload,alpha_i = 1 - exp(-1 / tau_i),constant table,True,Make local 4.31b and C fixed-point equations auditable.
+temporal_decay_raw[7],int32 s16.15,compile-time or init payload,decay_i = exp(-1 / tau_i),constant table,True,Avoid float-only decay behavior in the native claim path.
+latest_temporal_input_raw,int32 s16.15,learning_core,last causal input used to update traces,core-local summary field,True,Proves the trace update used current/past input only.
+latest_temporal_novelty_raw,int32 s16.15,learning_core,input[t] - trace_slowest[t-1],derived summary field,True,Carries the v2.2 novelty feature without storing an extra unbounded history.
+temporal_update_count,uint32,learning_core,increment once per temporal update,core-local summary field,True,"Detects missed, duplicate, or host-side hidden updates."
+temporal_saturation_count,uint32,learning_core,increment when any trace clips,core-local summary field,True,Bounds fixed-point overflow/saturation risk.
+temporal_reset_count,uint32,learning_core,increment on explicit reset/sham mode reset,core-local summary field,True,Audits reset-control and stop/start behavior.
+temporal_sham_mode,uint8,learning_core,selected by local reference or host command in future hardware probes,core-local summary field,True,Prevents post-hoc relabeling of control runs.

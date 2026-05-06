@@ -132,7 +132,7 @@ runner = experiments/tier4_30g_lifecycle_task_benefit_resource_bridge.py
 Latest prepared EBRAINS upload package:
 
 ```text
-No active EBRAINS package is pending. Next step is local Tier 4.31a readiness.
+No active EBRAINS package is pending. Tier 4.31a local readiness passed; next step is local Tier 4.31b fixed-point reference/parity.
 ```
 
 Tier 4.28e Point A passed after ingest at:
@@ -486,10 +486,11 @@ For the current custom-runtime job, use the generated source-only folder under
 
 ## Current EBRAINS Command
 
-No EBRAINS command is currently pending. Tier 4.30g-hw passed and was ingested.
-The next step is local Tier 4.31a native temporal-substrate readiness. Create a
-new source-only `ebrains_jobs/` package only after that local contract, source
-checks, and claim boundary are defined.
+No EBRAINS command is currently pending. Tier 4.31a local temporal-substrate
+readiness passed and did not create a hardware package. The next step is local
+Tier 4.31b fixed-point reference/parity. Create a new source-only `ebrains_jobs/`
+package only after local parity, controls, source checks, and claim boundary are
+defined.
 
 Last Tier 4.30g command used:
 

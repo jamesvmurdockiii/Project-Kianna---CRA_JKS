@@ -1333,6 +1333,29 @@ SPECS: tuple[EvidenceSpec, ...] = (
             "returned_artifacts/tier4_30g_hw_no_dopamine_or_plasticity_control_lifecycle_events.csv",
         ),
     ),
+    EvidenceSpec(
+        entry_id="tier4_31a_native_temporal_substrate_readiness",
+        tier_label="Tier 4.31a - Native Temporal-Substrate Readiness",
+        plan_position="Phase F native v2.2 temporal-state migration readiness before local fixed-point reference",
+        canonical_dir="tier4_31a_20260506_native_temporal_substrate_readiness",
+        results_file="tier4_31a_results.json",
+        report_file="tier4_31a_report.md",
+        summary_file=None,
+        harness="experiments/tier4_31a_native_temporal_substrate_readiness.py",
+        evidence_role="native temporal-substrate readiness contract",
+        claim="The smallest defensible chip-owned subset for the v2.2 fading-memory mechanism is predeclared as seven causal fixed-point EMA traces with derived deltas/novelty, compact readback, controls, resource budget, proposed command codes, and failure classes before implementation.",
+        caveat="Local readiness/contract evidence only; not C runtime implementation, not SpiNNaker hardware evidence, not speedup, not multi-chip scaling, not nonlinear recurrence, not universal benchmark superiority, and not a new baseline freeze.",
+        latest_manifest_names=("tier4_31a_latest_manifest.json",),
+        expected_extra_files=(
+            "tier4_31a_state_subset.csv",
+            "tier4_31a_equations.csv",
+            "tier4_31a_readback_schema.csv",
+            "tier4_31a_controls.csv",
+            "tier4_31a_resource_budget.csv",
+            "tier4_31a_failure_classes.csv",
+            "tier4_31a_fixed_point_table.csv",
+        ),
+    ),
 )
 
 

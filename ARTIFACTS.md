@@ -147,7 +147,7 @@ flag, but the pass is accepted because `hardware_run_attempted=True`, hardware
 was nonzero.
 
 Current registry alignment status:
-61 canonical evidence bundles, 0 missing expected artifacts, and 0 failed
+62 canonical evidence bundles, 0 missing expected artifacts, and 0 failed
 criteria in canonical entries. The v0.1 and v0.2 frozen baselines remain locked at their
 recorded historical counts, v0.3 freezes the post-Tier-5.3 diagnostic baseline,
 v0.4 freezes the post-Tier-5.4 delayed-credit confirmation baseline, v0.5

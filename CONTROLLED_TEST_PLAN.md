@@ -14,7 +14,7 @@ mechanism promotion, lifecycle/ecology evidence, and native SpiNNaker runtime
 migration. The generated registry is the authority for which results are
 canonical.
 
-The current canonical evidence trail contains **60 registered evidence bundles**
+The current canonical evidence trail contains **62 registered evidence bundles**
 with all expected artifacts present and all criteria passing. The generated
 registry is the source of truth for the full list:
 
@@ -8776,9 +8776,38 @@ lifecycle telemetry, controls, resource accounting, and one bounded useful
 hardware task effect passed.
 ```
 
+Tier 4.31a native temporal-substrate readiness result:
+
+```text
+Output: controlled_test_output/tier4_31a_20260506_native_temporal_substrate_readiness/
+Status: pass
+Criteria: 24/24
+Decision: migrate_fading_memory_ema_traces_first
+State subset: seven causal EMA traces over current temporal input
+Derived features: deltas and novelty; not stored as persistent state
+Persistent state budget: 56 bytes
+Total initial temporal budget: 112 bytes
+Controls: lag-only, zero-state, frozen-state, shuffled-state, reset-interval,
+          shuffled-target, no-plasticity, hidden-recurrence exclusion
+Command plan: CMD_TEMPORAL_INIT=39, CMD_TEMPORAL_UPDATE=40,
+              CMD_TEMPORAL_READ_STATE=41, CMD_TEMPORAL_SHAM_MODE=42
+              with zero command-code collisions
+```
+
+Boundary:
+
+```text
+Tier 4.31a is local readiness/contract evidence only. It does not implement the
+C runtime, does not prove SpiNNaker hardware transfer, does not prove speedup,
+does not prove multi-chip scaling, does not prove nonlinear recurrence, and does
+not freeze a new baseline.
+```
+
 Next:
 
 ```text
-Tier 4.31a native temporal-substrate readiness. Define the smallest chip-owned
-state subset for v2.2 fading memory before any EBRAINS package.
+Tier 4.31b native temporal-substrate local fixed-point reference/parity. Mirror
+the seven-EMA update locally, compare against Tier 5.19c fading-memory evidence,
+and run the predeclared destructive controls before any C/runtime or EBRAINS
+package.
 ```

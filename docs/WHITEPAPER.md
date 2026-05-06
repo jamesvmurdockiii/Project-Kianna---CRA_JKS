@@ -25,7 +25,7 @@ The project contains three integrated layers:
 3. A staged evidence system that records canonical results, failed diagnostics,
    frozen baselines, and claim boundaries.
 
-As of the current registry, CRA has 47 canonical evidence bundles with zero
+As of the current registry, CRA has 62 canonical evidence bundles with zero
 missing expected artifacts and zero failed criteria in canonical entries. The
 software program has validated negative controls, positive learning controls,
 architecture ablations, external-baseline comparisons, delayed-credit repairs,
@@ -38,17 +38,21 @@ fading-memory temporal state.
 The hardware program has progressed from PyNN/SpiNNaker capsule execution to a
 custom native runtime. The native runtime has passed bounded SpiNNaker hardware
 checks for four-core MCPL task execution, keyed memory, routing/composition,
-predictive binding, confidence-gated learning, and host-scheduled
-replay/consolidation. Tier 4.29e passed after `cra_429p` repaired the local
-schedule/reference gate exposed by the noncanonical `cra_429o` hardware diagnostic.
+predictive binding, confidence-gated learning, host-scheduled
+replay/consolidation, and lifecycle static-pool/sham/task-bridge evidence. Tier
+4.30g-hw froze the lifecycle-native baseline v0.4 with a host-ferried bridge
+boundary. Tier 4.31a then passed local readiness for the next v2.2 temporal-state
+migration, defining seven causal fixed-point EMA traces before any C/runtime or
+EBRAINS package.
 
 The current evidence supports a bounded research claim: CRA is a reproducible
 neuromorphic platform with demonstrated local learning, mechanism sensitivity,
 selected software capability upgrades, and repeatable SpiNNaker execution for
 constrained task capsules and native-runtime mechanism bridges. The evidence does
 not establish general intelligence, universal superiority over baselines,
-production readiness, full multi-chip scaling, native hardware lifecycle, or
-fully autonomous on-chip implementations of all promoted software mechanisms.
+production readiness, full multi-chip scaling, autonomous lifecycle-to-learning
+MCPL, native v2.2 temporal dynamics, or fully autonomous on-chip implementations
+of all promoted software mechanisms.
 
 ## Motivation
 
