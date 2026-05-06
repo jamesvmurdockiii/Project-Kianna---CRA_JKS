@@ -134,6 +134,46 @@
 #define CMD_LIFECYCLE_READ_STATE     37
 #define CMD_LIFECYCLE_SHAM_MODE      38
 
+// ------------------------------------------------------------------
+// 4.31 native temporal-substrate protocol opcodes
+//
+// Tier 4.31b refined the selected trace range to +/-2.0 in s16.15 after the
+// earlier +/-1.0 sketch saturated. Keep that range explicit until a later gate
+// proves a different range.
+// ------------------------------------------------------------------
+#define CMD_TEMPORAL_INIT            39
+#define CMD_TEMPORAL_UPDATE          40
+#define CMD_TEMPORAL_READ_STATE      41
+#define CMD_TEMPORAL_SHAM_MODE       42
+
+#define TEMPORAL_SCHEMA_VERSION      1
+#define TEMPORAL_TRACE_COUNT         7
+#define TEMPORAL_TIMESCALE_CHECKSUM  1811900589U
+#define TEMPORAL_TRACE_BOUND         FP_FROM_FLOAT(2.0f)
+#define TEMPORAL_INPUT_BOUND         FP_FROM_FLOAT(3.0f)
+#define TEMPORAL_NOVELTY_BOUND       FP_FROM_FLOAT(5.0f)
+
+#define TEMPORAL_DECAY_RAW_0         19874
+#define TEMPORAL_DECAY_RAW_1         25519
+#define TEMPORAL_DECAY_RAW_2         28917
+#define TEMPORAL_DECAY_RAW_3         30782
+#define TEMPORAL_DECAY_RAW_4         31759
+#define TEMPORAL_DECAY_RAW_5         32259
+#define TEMPORAL_DECAY_RAW_6         32512
+
+#define TEMPORAL_ALPHA_RAW_0         12893
+#define TEMPORAL_ALPHA_RAW_1         7248
+#define TEMPORAL_ALPHA_RAW_2         3850
+#define TEMPORAL_ALPHA_RAW_3         1985
+#define TEMPORAL_ALPHA_RAW_4         1008
+#define TEMPORAL_ALPHA_RAW_5         508
+#define TEMPORAL_ALPHA_RAW_6         255
+
+#define TEMPORAL_SHAM_ENABLED        0
+#define TEMPORAL_SHAM_ZERO_STATE     1
+#define TEMPORAL_SHAM_FROZEN_STATE   2
+#define TEMPORAL_SHAM_RESET_EACH_UPDATE 3
+
 #define LIFECYCLE_SCHEMA_VERSION 1
 
 #define LIFECYCLE_EVENT_NONE          0

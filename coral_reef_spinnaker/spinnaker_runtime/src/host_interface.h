@@ -30,5 +30,6 @@ void sdp_send_reply(sdp_msg_t *req, const uint8_t *payload, uint8_t payload_len)
     Returns payload length, or 0 if max_len is too small. */
 uint8_t host_if_pack_state_summary(uint8_t *payload, uint8_t max_len);
 uint8_t host_if_pack_lifecycle_summary(uint8_t *payload, uint8_t max_len);
+uint8_t host_if_pack_temporal_summary(uint8_t *payload, uint8_t max_len);
 
 #endif // __HOST_INTERFACE_H__

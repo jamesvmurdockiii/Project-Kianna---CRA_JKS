@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-06T04:50:00+00:00.
+Last updated: 2026-05-06T15:45:00+00:00.
 
 Current repo root:
 
@@ -99,10 +99,10 @@ FROZEN: CRA_LIFECYCLE_NATIVE_BASELINE_v0.4
             temporal migration, not external-baseline superiority, and not
             language/planning/AGI/ASI.
 
-  Next: Tier 4.31c native temporal-substrate source/runtime implementation.
-        Tier 4.31b has proven the seven-EMA fixed-point mirror locally. No
-        EBRAINS package is pending until source/runtime state, compact readback,
-        and local C host tests match the 4.31b fixed-point reference.
+  Next: Tier 4.31d native temporal-substrate hardware smoke.
+        Tier 4.31c has proven C-owned seven-EMA temporal state locally. No
+        EBRAINS package is currently pending until the 4.31d package is prepared
+        with the same compact readback/control boundary.
 ```
 
 Current active tier state:
@@ -127,13 +127,23 @@ Tier 4.31b — COMPLETE. Native temporal-substrate local fixed-point reference.
     shuffled-target, and no-plasticity all separated.
   Boundary: local fixed-point reference only; not C runtime or hardware evidence.
 
-Tier 4.31c — CURRENT ACTIVE. Native temporal-substrate source/runtime implementation.
-  Question: Can the C runtime own the 4.31b seven-EMA temporal state with
-    versioned structs/counters/compact readback and local host tests matching
-    the fixed-point reference?
-  Rule: source/runtime and C host tests first. No EBRAINS package until local C
-    tests prove temporal init/update/readback/sham behavior and source audit
-    confirms no hidden host updates or recurrence smuggling.
+Tier 4.31c — COMPLETE. Native temporal-substrate source/runtime implementation.
+  Status: LOCAL PASS, 17/17.
+  Output: controlled_test_output/tier4_31c_20260506_native_temporal_runtime_source_audit/
+  Result: C runtime owns seven EMA traces, fixed-point alpha/decay table,
+    selected ±2 trace range, update/reset/sham counters, compact 48-byte
+    temporal readback, command codes 39-42, and profile ownership guards.
+  Tests: runtime test-temporal-state, test-profiles, test, test-lifecycle, and
+    test-lifecycle-split passed.
+  Boundary: local source/runtime host evidence only; not SpiNNaker hardware,
+    not speedup, not nonlinear recurrence, not replay/sleep, and not a freeze.
+
+Tier 4.31d — CURRENT ACTIVE. Native temporal-substrate hardware smoke.
+  Question: Does the C-owned seven-EMA temporal state execute/read back cleanly
+    on one SpiNNaker board with the same compact state and controls?
+  Rule: prepare/run a one-board, one-seed smoke only. The claim boundary is
+    hardware execution/readback for the temporal state, not speedup, benchmark
+    superiority, multi-chip scaling, or full v2.2 hardware transfer.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware
@@ -616,17 +626,17 @@ Local build capability (established 2026-05-02):
 
 Immediate next steps:
 
-1. Implement Tier 4.31c source/runtime temporal state locally: versioned state
-   struct, seven trace slots, alpha/decay table, update/reset/sham counters,
-   compact readback, and command-code handlers aligned with 4.31a/4.31b.
-2. Add local C host tests that prove temporal init/update/readback, no-saturation
-   canonical behavior, reset/sham behavior, and fixed-point parity against the
-   4.31b mirror. Do not prepare EBRAINS until those tests pass.
-3. Keep the 4.31b range refinement explicit: selected trace bound is ±2 in
-   s16.15; the older ±1 sketch saturated and must not silently return.
-4. Keep sham/control commands behavior-backed. A readback flag alone is not
-   reviewer-defensible; local C host tests must prove the control changes the
-   intended counters/checksums before a package is uploaded.
+1. Prepare Tier 4.31d as a compact temporal-state hardware smoke package. Use
+   the Tier 4.31c C runtime exactly; do not add new temporal mechanics in the
+   hardware runner.
+2. Run one board / one seed first. Required evidence: real SpiNNaker build/load,
+   zero fallback, temporal init/update/readback, compact payload length 48,
+   schema/checksum/update/saturation/reset/sham counters, and explicit enabled
+   versus zero/frozen/reset controls.
+3. Keep the 4.31b/4.31c range refinement explicit: selected trace bound is ±2
+   in s16.15; the older ±1 sketch saturated and must not silently return.
+4. Treat 4.31d as a smoke. Passing it authorizes repeatability/resource gates;
+   it does not freeze a new baseline or prove speedup/benchmark superiority.
 5. Keep public repo hygiene green before the next upload or commit: no
    credentialed remotes, no `ebrains_jobs/` symlinks, no transient root output
    dirs, no generated host binaries, and `make validate` passing.

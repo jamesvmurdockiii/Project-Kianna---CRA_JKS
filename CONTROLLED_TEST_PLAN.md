@@ -8842,3 +8842,38 @@ Tier 4.31c native temporal-substrate source/runtime implementation and local C
 host tests. No EBRAINS package until the C runtime matches the 4.31b fixed-point
 reference and readback/control contract.
 ```
+
+Tier 4.31c native temporal-substrate runtime source audit result:
+
+```text
+Output: controlled_test_output/tier4_31c_20260506_native_temporal_runtime_source_audit/
+Status: pass
+Criteria: 17/17
+Runtime source: C-owned seven-EMA temporal state
+Trace bound: ±2 s16.15
+Compact temporal readback length: 48
+Command codes: CMD_TEMPORAL_INIT=39, CMD_TEMPORAL_UPDATE=40,
+               CMD_TEMPORAL_READ_STATE=41, CMD_TEMPORAL_SHAM_MODE=42
+Owner surface: learning_core plus monolithic/decoupled local surfaces
+Non-owner profiles: context_core, route_core, memory_core, lifecycle_core
+Tests: test-temporal-state, test-profiles, test, test-lifecycle,
+       test-lifecycle-split
+```
+
+Boundary:
+
+```text
+Tier 4.31c is local source/runtime host evidence only. It proves the custom C
+runtime owns the seven-EMA fixed-point temporal subset with compact readback and
+behavior-backed shams. It does not prove SpiNNaker hardware execution, speedup,
+multi-chip scaling, nonlinear recurrence, native replay/sleep, native macro
+eligibility, or benchmark superiority.
+```
+
+Next:
+
+```text
+Tier 4.31d native temporal-substrate hardware smoke. Prepare and run a one-board,
+one-seed compact hardware probe with enabled versus temporal shams, payload_len
+48, zero fallback, and real readback. Treat this as smoke evidence only.
+```

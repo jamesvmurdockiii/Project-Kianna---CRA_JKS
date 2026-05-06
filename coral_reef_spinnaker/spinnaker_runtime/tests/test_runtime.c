@@ -108,6 +108,10 @@ static void test_cmd_values(void) {
     assert(CMD_LIFECYCLE_TROPHIC_UPDATE == 36);
     assert(CMD_LIFECYCLE_READ_STATE == 37);
     assert(CMD_LIFECYCLE_SHAM_MODE == 38);
+    assert(CMD_TEMPORAL_INIT == 39);
+    assert(CMD_TEMPORAL_UPDATE == 40);
+    assert(CMD_TEMPORAL_READ_STATE == 41);
+    assert(CMD_TEMPORAL_SHAM_MODE == 42);
     printf("  PASS: command constants\n");
 }
 

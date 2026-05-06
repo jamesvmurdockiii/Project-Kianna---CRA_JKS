@@ -133,6 +133,21 @@ typedef struct cra_lifecycle_summary {
     uint32_t sham_mode;
 } cra_lifecycle_summary_t;
 
+typedef struct cra_temporal_summary {
+    uint32_t schema_version;
+    uint32_t trace_count;
+    uint32_t timescale_checksum;
+    uint32_t update_count;
+    uint32_t saturation_count;
+    uint32_t reset_count;
+    uint32_t input_clip_count;
+    uint32_t sham_mode;
+    uint32_t trace_checksum;
+    uint32_t trace_abs_sum_raw;
+    int32_t latest_input_raw;
+    int32_t latest_novelty_raw;
+} cra_temporal_summary_t;
+
 extern cra_state_summary_t g_summary;
 
 void cra_state_init(void);
@@ -233,6 +248,16 @@ int cra_lifecycle_apply_trophic_update(
 int cra_lifecycle_set_sham_mode(uint32_t mode);
 void cra_lifecycle_get_summary(cra_lifecycle_summary_t *summary_out);
 int cra_lifecycle_get_slot(uint32_t slot_id, lifecycle_slot_t *slot_out);
+
+// ------------------------------------------------------------------
+// 4.31 native temporal-substrate state
+// ------------------------------------------------------------------
+void cra_temporal_reset(void);
+int cra_temporal_init(void);
+int cra_temporal_update(int32_t input_raw);
+int cra_temporal_set_sham_mode(uint32_t mode);
+void cra_temporal_get_summary(cra_temporal_summary_t *summary_out);
+int cra_temporal_get_trace(uint32_t index, int32_t *trace_out);
 
 // ------------------------------------------------------------------
 // 4.30d multi-core lifecycle split stubs

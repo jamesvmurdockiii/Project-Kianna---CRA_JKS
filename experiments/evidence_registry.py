@@ -1377,6 +1377,24 @@ SPECS: tuple[EvidenceSpec, ...] = (
             "tier4_31b_timeseries.csv",
         ),
     ),
+    EvidenceSpec(
+        entry_id="tier4_31c_native_temporal_runtime_source_audit",
+        tier_label="Tier 4.31c - Native Temporal-Substrate Runtime Source Audit",
+        plan_position="Phase F native v2.2 temporal-state migration source/runtime implementation before hardware smoke",
+        canonical_dir="tier4_31c_20260506_native_temporal_runtime_source_audit",
+        results_file="tier4_31c_results.json",
+        report_file="tier4_31c_report.md",
+        summary_file="tier4_31c_summary.csv",
+        harness="experiments/tier4_31c_native_temporal_runtime_source_audit.py",
+        evidence_role="native temporal-substrate source/runtime host audit",
+        claim="The custom C runtime now owns the seven-EMA fixed-point temporal subset from Tier 4.31b with versioned state, compact readback, behavior-backed sham modes, profile ownership guards, and local C host tests before any EBRAINS upload.",
+        caveat="Local source/runtime host evidence only; not SpiNNaker hardware evidence, not speedup, not multi-chip scaling, not nonlinear recurrence, not native replay/sleep, not native macro eligibility, not universal benchmark superiority, and not a new baseline freeze.",
+        latest_manifest_names=("tier4_31c_latest_manifest.json",),
+        expected_extra_files=(
+            "tier4_31c_command_log.txt",
+            "tier4_31c_source_checks.csv",
+        ),
+    ),
 )
 
 

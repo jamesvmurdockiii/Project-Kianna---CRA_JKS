@@ -24,6 +24,26 @@ static uint32_t g_lifecycle_next_polyp_id = 2000;
 static uint32_t g_lifecycle_next_lineage_id = 100;
 static uint8_t g_lifecycle_have_last_event_index = 0;
 static uint32_t g_lifecycle_last_event_index = 0;
+static int32_t g_temporal_traces[TEMPORAL_TRACE_COUNT];
+static cra_temporal_summary_t g_temporal_summary;
+static const int32_t g_temporal_decay_raw[TEMPORAL_TRACE_COUNT] = {
+    TEMPORAL_DECAY_RAW_0,
+    TEMPORAL_DECAY_RAW_1,
+    TEMPORAL_DECAY_RAW_2,
+    TEMPORAL_DECAY_RAW_3,
+    TEMPORAL_DECAY_RAW_4,
+    TEMPORAL_DECAY_RAW_5,
+    TEMPORAL_DECAY_RAW_6
+};
+static const int32_t g_temporal_alpha_raw[TEMPORAL_TRACE_COUNT] = {
+    TEMPORAL_ALPHA_RAW_0,
+    TEMPORAL_ALPHA_RAW_1,
+    TEMPORAL_ALPHA_RAW_2,
+    TEMPORAL_ALPHA_RAW_3,
+    TEMPORAL_ALPHA_RAW_4,
+    TEMPORAL_ALPHA_RAW_5,
+    TEMPORAL_ALPHA_RAW_6
+};
 
 extern uint32_t g_timestep;
 
@@ -45,6 +65,147 @@ static int32_t _clamp_i32(int32_t value, int32_t min_value, int32_t max_value) {
         return max_value;
     }
     return value;
+}
+
+static int32_t _abs_i32(int32_t value) {
+    return value < 0 ? -value : value;
+}
+
+static int32_t _temporal_clip_trace(int32_t value, uint32_t *clipped_out) {
+    if (value > TEMPORAL_TRACE_BOUND) {
+        if (clipped_out != 0) {
+            *clipped_out = 1;
+        }
+        return TEMPORAL_TRACE_BOUND;
+    }
+    if (value < -TEMPORAL_TRACE_BOUND) {
+        if (clipped_out != 0) {
+            *clipped_out = 1;
+        }
+        return -TEMPORAL_TRACE_BOUND;
+    }
+    return value;
+}
+
+static void _temporal_recompute_abs_sum(void) {
+    uint32_t total = 0;
+    for (uint32_t i = 0; i < TEMPORAL_TRACE_COUNT; i++) {
+        total += (uint32_t)_abs_i32(g_temporal_traces[i]);
+    }
+    g_temporal_summary.trace_abs_sum_raw = total;
+}
+
+static void _temporal_accumulate_checksum(void) {
+    int64_t weighted_sum = 0;
+    for (uint32_t i = 0; i < TEMPORAL_TRACE_COUNT; i++) {
+        weighted_sum += (int64_t)(i + 1) * (int64_t)g_temporal_traces[i];
+    }
+    g_temporal_summary.trace_checksum =
+        (uint32_t)(g_temporal_summary.trace_checksum * 2654435761U + (uint32_t)weighted_sum);
+}
+
+static void _temporal_clear_traces_only(void) {
+    for (uint32_t i = 0; i < TEMPORAL_TRACE_COUNT; i++) {
+        g_temporal_traces[i] = 0;
+    }
+    _temporal_recompute_abs_sum();
+}
+
+static void _temporal_clear(uint32_t reset_count) {
+    _temporal_clear_traces_only();
+    g_temporal_summary.schema_version = TEMPORAL_SCHEMA_VERSION;
+    g_temporal_summary.trace_count = TEMPORAL_TRACE_COUNT;
+    g_temporal_summary.timescale_checksum = TEMPORAL_TIMESCALE_CHECKSUM;
+    g_temporal_summary.update_count = 0;
+    g_temporal_summary.saturation_count = 0;
+    g_temporal_summary.reset_count = reset_count;
+    g_temporal_summary.input_clip_count = 0;
+    g_temporal_summary.sham_mode = TEMPORAL_SHAM_ENABLED;
+    g_temporal_summary.trace_checksum = 0;
+    g_temporal_summary.latest_input_raw = 0;
+    g_temporal_summary.latest_novelty_raw = 0;
+}
+
+void cra_temporal_reset(void) {
+    _temporal_clear(g_temporal_summary.reset_count + 1);
+}
+
+int cra_temporal_init(void) {
+    _temporal_clear(0);
+    return 0;
+}
+
+int cra_temporal_set_sham_mode(uint32_t mode) {
+    if (mode > TEMPORAL_SHAM_RESET_EACH_UPDATE) {
+        return -1;
+    }
+    g_temporal_summary.sham_mode = mode;
+    if (mode == TEMPORAL_SHAM_ZERO_STATE || mode == TEMPORAL_SHAM_RESET_EACH_UPDATE) {
+        _temporal_clear_traces_only();
+        g_temporal_summary.trace_checksum = 0;
+        g_temporal_summary.latest_novelty_raw = 0;
+        g_temporal_summary.reset_count++;
+    }
+    return 0;
+}
+
+int cra_temporal_update(int32_t input_raw) {
+    int32_t x = input_raw;
+    int32_t slowest_before = g_temporal_traces[TEMPORAL_TRACE_COUNT - 1];
+
+    if (x > TEMPORAL_INPUT_BOUND) {
+        x = TEMPORAL_INPUT_BOUND;
+        g_temporal_summary.input_clip_count++;
+    } else if (x < -TEMPORAL_INPUT_BOUND) {
+        x = -TEMPORAL_INPUT_BOUND;
+        g_temporal_summary.input_clip_count++;
+    }
+
+    g_temporal_summary.update_count++;
+    g_temporal_summary.latest_input_raw = x;
+    g_temporal_summary.latest_novelty_raw =
+        _clamp_i32(x - slowest_before, -TEMPORAL_NOVELTY_BOUND, TEMPORAL_NOVELTY_BOUND);
+
+    if (g_temporal_summary.sham_mode == TEMPORAL_SHAM_ZERO_STATE) {
+        _temporal_clear_traces_only();
+        g_temporal_summary.latest_novelty_raw = 0;
+        _temporal_accumulate_checksum();
+        return 0;
+    }
+
+    if (g_temporal_summary.sham_mode == TEMPORAL_SHAM_RESET_EACH_UPDATE) {
+        _temporal_clear_traces_only();
+        g_temporal_summary.reset_count++;
+    }
+
+    if (g_temporal_summary.sham_mode != TEMPORAL_SHAM_FROZEN_STATE) {
+        for (uint32_t i = 0; i < TEMPORAL_TRACE_COUNT; i++) {
+            uint32_t clipped = 0;
+            int32_t candidate = FP_MUL(g_temporal_decay_raw[i], g_temporal_traces[i])
+                + FP_MUL(g_temporal_alpha_raw[i], x);
+            g_temporal_traces[i] = _temporal_clip_trace(candidate, &clipped);
+            g_temporal_summary.saturation_count += clipped;
+        }
+    }
+
+    _temporal_recompute_abs_sum();
+    _temporal_accumulate_checksum();
+    return 0;
+}
+
+void cra_temporal_get_summary(cra_temporal_summary_t *summary_out) {
+    if (summary_out == 0) {
+        return;
+    }
+    *summary_out = g_temporal_summary;
+}
+
+int cra_temporal_get_trace(uint32_t index, int32_t *trace_out) {
+    if (index >= TEMPORAL_TRACE_COUNT || trace_out == 0) {
+        return -1;
+    }
+    *trace_out = g_temporal_traces[index];
+    return 0;
 }
 
 static void _lifecycle_recompute_summary(void) {
@@ -700,6 +861,7 @@ void cra_state_init(void) {
     _clear_pending();
     cra_state_schedule_init();
     cra_lifecycle_reset();
+    (void)cra_temporal_init();
     _clear_summary(0);
 }
 
@@ -711,6 +873,7 @@ void cra_state_reset(void) {
     _clear_pending();
     cra_state_schedule_init();
     cra_lifecycle_reset();
+    cra_temporal_reset();
     g_learning_rate = 0;
     _clear_summary(reset_count);
 }

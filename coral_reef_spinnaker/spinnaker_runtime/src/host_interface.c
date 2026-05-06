@@ -31,6 +31,18 @@ extern int32_t g_dopamine_level;
 #define CRA_RUNTIME_PROFILE_LIFECYCLE_HOST_SURFACE 1
 #endif
 
+// Tier 4.31 temporal state is initially owned by the monolithic/decoupled
+// surface and the learning_core. State/context/route/memory/lifecycle cores
+// must not mutate it directly.
+#if defined(CRA_RUNTIME_PROFILE_LEARNING_CORE) || \
+    (!defined(CRA_RUNTIME_PROFILE_STATE_CORE) && \
+     !defined(CRA_RUNTIME_PROFILE_CONTEXT_CORE) && \
+     !defined(CRA_RUNTIME_PROFILE_ROUTE_CORE) && \
+     !defined(CRA_RUNTIME_PROFILE_MEMORY_CORE) && \
+     !defined(CRA_RUNTIME_PROFILE_LIFECYCLE_CORE))
+#define CRA_RUNTIME_PROFILE_TEMPORAL_HOST_SURFACE 1
+#endif
+
 // ------------------------------------------------------------------
 // Helpers
 // ------------------------------------------------------------------
@@ -272,6 +284,60 @@ static void _handle_lifecycle_sham_mode(sdp_msg_t *msg) {
         return;
     }
     reply[0] = CMD_LIFECYCLE_SHAM_MODE;
+    reply[1] = (rc == 0) ? 0 : 1;
+    sdp_send_reply(msg, reply, len);
+}
+
+static void _handle_temporal_init(sdp_msg_t *msg) {
+    int rc = cra_temporal_init();
+    uint8_t reply[64];
+    uint8_t len = host_if_pack_temporal_summary(reply, sizeof(reply));
+    if (len == 0) {
+        reply[0] = CMD_TEMPORAL_INIT;
+        reply[1] = 1;
+        sdp_send_reply(msg, reply, 2);
+        return;
+    }
+    reply[0] = CMD_TEMPORAL_INIT;
+    reply[1] = (rc == 0) ? 0 : 1;
+    sdp_send_reply(msg, reply, len);
+}
+
+static void _handle_temporal_update(sdp_msg_t *msg) {
+    int32_t input_raw = (int32_t)msg->arg1;
+    int rc = cra_temporal_update(input_raw);
+    uint8_t reply[64];
+    uint8_t len = host_if_pack_temporal_summary(reply, sizeof(reply));
+    if (len == 0) {
+        reply[0] = CMD_TEMPORAL_UPDATE;
+        reply[1] = 1;
+        sdp_send_reply(msg, reply, 2);
+        return;
+    }
+    reply[0] = CMD_TEMPORAL_UPDATE;
+    reply[1] = (rc == 0) ? 0 : 1;
+    sdp_send_reply(msg, reply, len);
+}
+
+static void _handle_temporal_read_state(sdp_msg_t *msg) {
+    uint8_t reply[64];
+    uint8_t len = host_if_pack_temporal_summary(reply, sizeof(reply));
+    if (len == 0) return;
+    sdp_send_reply(msg, reply, len);
+}
+
+static void _handle_temporal_sham_mode(sdp_msg_t *msg) {
+    uint32_t mode = msg->arg1;
+    int rc = cra_temporal_set_sham_mode(mode);
+    uint8_t reply[64];
+    uint8_t len = host_if_pack_temporal_summary(reply, sizeof(reply));
+    if (len == 0) {
+        reply[0] = CMD_TEMPORAL_SHAM_MODE;
+        reply[1] = 1;
+        sdp_send_reply(msg, reply, 2);
+        return;
+    }
+    reply[0] = CMD_TEMPORAL_SHAM_MODE;
     reply[1] = (rc == 0) ? 0 : 1;
     sdp_send_reply(msg, reply, len);
 }
@@ -743,6 +809,16 @@ void sdp_rx_callback(uint mailbox, uint port) {
 #endif
 
 // ------------------------------------------------------------------
+// Tier 4.31 temporal-substrate surface.
+// ------------------------------------------------------------------
+#ifdef CRA_RUNTIME_PROFILE_TEMPORAL_HOST_SURFACE
+        case CMD_TEMPORAL_INIT:       _handle_temporal_init(msg);       break;
+        case CMD_TEMPORAL_UPDATE:     _handle_temporal_update(msg);     break;
+        case CMD_TEMPORAL_READ_STATE: _handle_temporal_read_state(msg); break;
+        case CMD_TEMPORAL_SHAM_MODE:  _handle_temporal_sham_mode(msg);  break;
+#endif
+
+// ------------------------------------------------------------------
 // 4.25B two-core split opcodes (state_core only)
 // ------------------------------------------------------------------
 #ifdef CRA_RUNTIME_PROFILE_STATE_CORE
@@ -894,6 +970,33 @@ uint8_t host_if_pack_state_summary(uint8_t *payload, uint8_t max_len) {
     _write_u32(&payload[93], summary.commands_received);
     _write_u32(&payload[97], cra_state_schedule_entry_count());
     _write_u32(&payload[101], summary.readback_bytes_sent + required_len);
+    g_summary.readback_bytes_sent += required_len;
+    return required_len;
+}
+
+uint8_t host_if_pack_temporal_summary(uint8_t *payload, uint8_t max_len) {
+    cra_temporal_summary_t summary;
+    const uint8_t required_len = 48;
+    if (payload == 0 || max_len < required_len) {
+        return 0;
+    }
+    cra_temporal_get_summary(&summary);
+
+    payload[0] = CMD_TEMPORAL_READ_STATE;
+    payload[1] = 0;
+    _write_u32(&payload[2], summary.schema_version);
+    payload[6] = (uint8_t)(summary.trace_count & 0xFF);
+    payload[7] = (uint8_t)(summary.sham_mode & 0xFF);
+    _write_u32(&payload[8], summary.timescale_checksum);
+    _write_u32(&payload[12], summary.update_count);
+    _write_u32(&payload[16], summary.saturation_count);
+    _write_u32(&payload[20], summary.reset_count);
+    _write_u32(&payload[24], summary.input_clip_count);
+    _write_u32(&payload[28], summary.trace_checksum);
+    _write_u32(&payload[32], summary.trace_abs_sum_raw);
+    _write_s32(&payload[36], summary.latest_input_raw);
+    _write_s32(&payload[40], summary.latest_novelty_raw);
+    _write_u32(&payload[44], g_summary.readback_bytes_sent + required_len);
     g_summary.readback_bytes_sent += required_len;
     return required_len;
 }

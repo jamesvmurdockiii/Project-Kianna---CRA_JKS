@@ -1,0 +1,25 @@
+file,token,present,purpose
+coral_reef_spinnaker/spinnaker_runtime/src/config.h,CMD_TEMPORAL_INIT            39,True,temporal init command code
+coral_reef_spinnaker/spinnaker_runtime/src/config.h,CMD_TEMPORAL_UPDATE          40,True,temporal update command code
+coral_reef_spinnaker/spinnaker_runtime/src/config.h,CMD_TEMPORAL_READ_STATE      41,True,temporal readback command code
+coral_reef_spinnaker/spinnaker_runtime/src/config.h,CMD_TEMPORAL_SHAM_MODE       42,True,temporal sham command code
+coral_reef_spinnaker/spinnaker_runtime/src/config.h,TEMPORAL_TRACE_BOUND         FP_FROM_FLOAT(2.0f),True,Tier 4.31b selected trace range
+coral_reef_spinnaker/spinnaker_runtime/src/config.h,TEMPORAL_TIMESCALE_CHECKSUM  1811900589U,True,tau/alpha checksum
+coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h,cra_temporal_summary_t,True,versioned temporal summary struct
+coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h,cra_temporal_update,True,temporal update API
+coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h,cra_temporal_get_trace,True,local host trace parity API
+coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c,g_temporal_decay_raw,True,decay table owned by C runtime
+coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c,g_temporal_alpha_raw,True,alpha table owned by C runtime
+coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c,"FP_MUL(g_temporal_decay_raw[i], g_temporal_traces[i])",True,fixed-point EMA decay equation
+coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c,"FP_MUL(g_temporal_alpha_raw[i], x)",True,fixed-point EMA input equation
+coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c,TEMPORAL_SHAM_ZERO_STATE,True,zero-state sham behavior
+coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c,TEMPORAL_SHAM_FROZEN_STATE,True,frozen-state sham behavior
+coral_reef_spinnaker/spinnaker_runtime/src/host_interface.h,host_if_pack_temporal_summary,True,compact temporal readback declaration
+coral_reef_spinnaker/spinnaker_runtime/src/host_interface.c,CRA_RUNTIME_PROFILE_TEMPORAL_HOST_SURFACE,True,temporal host-surface ownership guard
+coral_reef_spinnaker/spinnaker_runtime/src/host_interface.c,case CMD_TEMPORAL_READ_STATE,True,temporal readback dispatch
+coral_reef_spinnaker/spinnaker_runtime/src/host_interface.c,const uint8_t required_len = 48;,True,compact temporal payload length
+coral_reef_spinnaker/spinnaker_runtime/Makefile,test-temporal-state,True,local temporal C host test target
+coral_reef_spinnaker/spinnaker_runtime/tests/test_runtime.c,CMD_TEMPORAL_SHAM_MODE == 42,True,full runtime command constant test
+coral_reef_spinnaker/spinnaker_runtime/tests/test_profiles.c,CMD_TEMPORAL_READ_STATE,True,profile ownership guard tests
+coral_reef_spinnaker/spinnaker_runtime/tests/test_temporal_state.c,temporal fixed-point mirror updates,True,4.31c direct fixed-point parity test
+coral_reef_spinnaker/spinnaker_runtime/tests/test_temporal_state.c,temporal compact host readback,True,4.31c compact readback test

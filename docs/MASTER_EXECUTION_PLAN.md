@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-06T00:50-04:00.
+Last updated: 2026-05-06T11:45-04:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -738,14 +738,17 @@ ability.
     feature error 0.004646656591329457; selected saturation count 0; destructive
     controls separated. This authorizes source/runtime work, not hardware.
 
-49. **CURRENT ACTIVE STEP** - Tier 4.31c native temporal-substrate source/runtime implementation:
-    add versioned temporal state structs/counters/readback and local C host tests
-    matching the 4.31b fixed-point mirror. No hardware before source audit and
-    local C tests pass.
+49. ✅ **COMPLETE** - Tier 4.31c native temporal-substrate source/runtime implementation:
+    local pass, 17/17. The C runtime now owns seven EMA traces, the 4.31b ±2
+    fixed-point trace range, alpha/decay constants, update/reset/sham counters,
+    compact 48-byte temporal readback, command codes 39-42, ownership guards,
+    and local C host tests. This authorizes hardware smoke preparation, not a
+    baseline freeze.
 
-50. Tier 4.31d native temporal-substrate hardware smoke: one board, one seed,
-    one minimal temporal-state task, explicit lag-only and shuffled-state
-    controls. Do not claim full benchmark performance from a smoke.
+50. **CURRENT ACTIVE STEP** - Tier 4.31d native temporal-substrate hardware smoke:
+    one board, one seed, one minimal temporal-state task, explicit enabled versus
+    zero/frozen/reset controls, compact payload_len=48, zero fallback, and real
+    readback. Do not claim full benchmark performance or speedup from a smoke.
 
 51. Tier 4.31e native replay-buffer / sleep-like replay decision: only if the
     software replay/consolidation path still needs chip-owned buffers for scale
@@ -994,9 +997,9 @@ After each completed run or design tier:
 The next concrete action is:
 
 ```text
-Tier 4.31c native temporal-substrate source/runtime implementation: add C-owned
-seven-EMA temporal state, compact readback, command handlers, and local C host
-tests matching Tier 4.31b before any EBRAINS package.
+Tier 4.31d native temporal-substrate hardware smoke: prepare and run a compact
+one-board/one-seed EBRAINS probe for the C-owned seven-EMA temporal state from
+Tier 4.31c.
 ```
 
 Current reference state:
@@ -1016,18 +1019,16 @@ Returned artifacts preserved: 36
 Enabled lifecycle bridge gate: open
 Five predeclared lifecycle controls: closed
 Resource/readback accounting: returned for every mode
-Temporal substrate status: Tier 4.31b local fixed-point reference passed for a
-seven-EMA native subset; C implementation and hardware transfer remain unproven
+Temporal substrate status: Tier 4.31c local source/runtime audit passed for a
+C-owned seven-EMA native subset; hardware transfer remains unproven
 ```
 
 Purpose:
 
 ```text
-Tier 4.31b completed the local fixed-point reference/parity gate for moving the
-v2.2 fading-memory temporal-state mechanism toward chip-native form. The next
-action is not an EBRAINS package. It is source/runtime implementation with local
-C host tests proving that the runtime-owned temporal state matches the 4.31b
-fixed-point reference and readback/control contract.
+Tier 4.31c completed the source/runtime implementation gate for moving the v2.2
+fading-memory temporal-state mechanism toward chip-native form. The next action
+is a compact hardware smoke, not a benchmark or speedup claim.
 ```
 
 Required coverage:
@@ -1035,10 +1036,10 @@ Required coverage:
 ```text
 Use v2.2 as the software reference and `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` as
 the native lifecycle baseline. Do not create an EBRAINS package until Tier 4.31c
-passes source/runtime implementation, compact readback, and local C host tests
-against the 4.31b reference. Keep the 4.31b boundary strict: this is still not
-hardware transfer, not nonlinear recurrence, not speedup, not multi-chip scaling,
-and not full organism autonomy.
+passed source/runtime implementation, compact readback, and local C host tests
+against the 4.31b reference. For 4.31d, keep the boundary strict: one-board
+temporal-state hardware smoke only; not nonlinear recurrence, not speedup, not
+multi-chip scaling, not benchmark superiority, and not full organism autonomy.
 ```
 
 

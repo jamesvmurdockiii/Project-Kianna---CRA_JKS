@@ -1,8 +1,8 @@
 # Coral Reef Custom C Runtime — Protocol Specification
 
-**Version:** 0.12
-**Date:** 2026-05-05
-**Status:** EXPERIMENTAL SIDECAR - Tier 4.22i board load/command round-trip passed; Tier 4.22j minimal closed-loop learning smoke passed after raw false-fail correction; Tier 4.22l tiny fixed-point learning parity passed on EBRAINS; Tier 4.22m minimal task micro-loop passed on EBRAINS; Tier 4.22n delayed-cue micro-task passed on EBRAINS; Tier 4.22o noisy-switching micro-task passed on EBRAINS after fixed-point multiply repair; Tier 4.22p A-B-A reentry micro-task passed on EBRAINS; Tier 4.22q integrated host-v2/custom-runtime bridge smoke passed on EBRAINS; Tier 4.22r native keyed-context state smoke passed on EBRAINS; Tier 4.22s native route-state smoke passed on EBRAINS after raw false-fail correction; Tier 4.22t native keyed route-state smoke passed on EBRAINS; Tier 4.22u native memory-route smoke passed on EBRAINS; Tier 4.22v native memory-route reentry/composition smoke passed on EBRAINS; Tier 4.22w native decoupled memory-route composition hardware passed after profiled build repair; Tier 4.30d multi-core lifecycle runtime source audit/local C host test passed
+**Version:** 0.14
+**Date:** 2026-05-06
+**Status:** EXPERIMENTAL SIDECAR - Tier 4.22i board load/command round-trip passed; Tier 4.22j minimal closed-loop learning smoke passed after raw false-fail correction; Tier 4.22l tiny fixed-point learning parity passed on EBRAINS; Tier 4.22m minimal task micro-loop passed on EBRAINS; Tier 4.22n delayed-cue micro-task passed on EBRAINS; Tier 4.22o noisy-switching micro-task passed on EBRAINS after fixed-point multiply repair; Tier 4.22p A-B-A reentry micro-task passed on EBRAINS; Tier 4.22q integrated host-v2/custom-runtime bridge smoke passed on EBRAINS; Tier 4.22r native keyed-context state smoke passed on EBRAINS; Tier 4.22s native route-state smoke passed on EBRAINS after raw false-fail correction; Tier 4.22t native keyed route-state smoke passed on EBRAINS; Tier 4.22u native memory-route smoke passed on EBRAINS; Tier 4.22v native memory-route reentry/composition smoke passed on EBRAINS; Tier 4.22w native decoupled memory-route composition hardware passed after profiled build repair; Tier 4.30d multi-core lifecycle runtime source audit/local C host test passed; Tier 4.31c native temporal-substrate runtime source audit/local C host test passed
 
 ---
 
@@ -164,6 +164,12 @@ sync bookkeeping, and ownership guards that prevent context/route/memory/learnin
 profiles from mutating lifecycle state directly. This tier is local source/runtime
 evidence only; EBRAINS hardware evidence begins with Tier 4.30e.
 
+Tier 4.31c adds the local source/runtime host surface for the v2.2 temporal
+substrate. It introduces a C-owned seven-trace fixed-point EMA state, compact
+temporal readback, and behavior-backed temporal shams. This tier is local
+source/runtime evidence only; Tier 4.31d must prove board execution/readback
+before any hardware temporal-state claim.
+
 It is the **single source of truth** for:
 - SDP command opcodes
 - Multicast key layout
@@ -282,6 +288,10 @@ Defined in `config.h` and `colony_controller.py`.
 | `36` | `LIFECYCLE_TROPHIC_UPDATE` | Host -> lifecycle core | `arg1 = target_slot`, `arg2 = trophic_delta_raw`, `arg3 = reward_raw` | `cmd_rc = cmd/status`, data = lifecycle summary |
 | `37` | `LIFECYCLE_READ_STATE` | Host -> lifecycle core | no args | `cmd_rc = cmd/status`, data = 68-byte lifecycle summary |
 | `38` | `LIFECYCLE_SHAM_MODE` | Host -> lifecycle core | `arg1 = sham_mode` | `cmd_rc = cmd/status`, data = lifecycle summary |
+| `39` | `TEMPORAL_INIT` | Host -> learning core / temporal host surface | no args | `cmd_rc = cmd/status`, data = temporal summary |
+| `40` | `TEMPORAL_UPDATE` | Host -> learning core / temporal host surface | `arg1 = input_raw` (s16.15) | `cmd_rc = cmd/status`, data = temporal summary |
+| `41` | `TEMPORAL_READ_STATE` | Host -> learning core / temporal host surface | no args | `cmd_rc = cmd/status`, data = 48-byte temporal summary |
+| `42` | `TEMPORAL_SHAM_MODE` | Host -> learning core / temporal host surface | `arg1 = sham_mode` | `cmd_rc = cmd/status`, data = temporal summary |
 
 Lifecycle sham modes:
 
@@ -1137,6 +1147,72 @@ counts, active mask, attempted/effective lifecycle events, cleavage/adult birth
 /death/maturity/trophic counters, invalid events, lineage checksum, trophic
 checksum, and cumulative readback bytes.
 
+### 9.4 Temporal Summary Readback
+
+`CMD_TEMPORAL_READ_STATE` returns a compact 48-byte summary. The host must
+check the observed payload length (`payload_len=48`) when validating compact
+readback correctness. Tier 4.31c validates this surface locally only; Tier
+4.31d is the first planned real-board smoke.
+
+Temporal command ownership:
+
+```text
+full / decoupled_memory_route / learning_core = may accept temporal commands
+context_core / route_core / memory_core / lifecycle_core = must reject temporal commands
+```
+
+Temporal constants:
+
+```text
+TEMPORAL_SCHEMA_VERSION = 1
+TEMPORAL_TRACE_COUNT = 7
+TEMPORAL_TIMESCALE_CHECKSUM = 1811900589
+TEMPORAL_TRACE_BOUND = +/-2.0 s16.15
+TEMPORAL_INPUT_BOUND = +/-3.0 s16.15
+TEMPORAL_NOVELTY_BOUND = +/-5.0 s16.15
+```
+
+EMA decay and alpha constants are the s16.15 raw values selected by Tier 4.31b:
+
+```text
+decay = [19874, 25519, 28917, 30782, 31759, 32259, 32512]
+alpha = [12893, 7248, 3850, 1985, 1008, 508, 255]
+```
+
+Temporal sham modes:
+
+```text
+0 = enabled
+1 = zero state: clears traces and returns zero novelty while update_count advances.
+2 = frozen state: leaves traces unchanged while update_count advances.
+3 = reset each update: clears traces before each update and increments reset_count.
+```
+
+Logical 48-byte reply payload before SDP reply stripping:
+
+| Bytes | Field |
+|---|---|
+| `0` | echoed command (`CMD_TEMPORAL_READ_STATE`, or initiating temporal command for init/update/sham replies) |
+| `1` | status |
+| `2-5` | schema_version (`u32 LE`) |
+| `6` | trace_count |
+| `7` | sham_mode |
+| `8-11` | timescale_checksum (`u32 LE`) |
+| `12-15` | update_count (`u32 LE`) |
+| `16-19` | saturation_count (`u32 LE`) |
+| `20-23` | reset_count (`u32 LE`) |
+| `24-27` | input_clip_count (`u32 LE`) |
+| `28-31` | trace_checksum (`u32 LE`) |
+| `32-35` | trace_abs_sum_raw (`u32 LE`) |
+| `36-39` | latest_input_raw (`s32 LE`, s16.15) |
+| `40-43` | latest_novelty_raw (`s32 LE`, s16.15) |
+| `44-47` | cumulative readback bytes including this payload (`u32 LE`) |
+
+Runtime replies copy bytes `2..47` into SDP `data[]`, so host-side SDP parsers
+that inspect `sdp_msg_t.data[]` should treat `data[0..3]` as `schema_version`.
+Direct host-test packers that call `host_if_pack_temporal_summary()` receive
+the full logical payload above.
+
 ## 10. Version History
 
 | Version | Date | Changes |
@@ -1150,3 +1226,4 @@ checksum, and cumulative readback bytes.
 | 0.11 | 2026-05-01 | Promoted Section 8 to implemented. Added `CMD_RUN_CONTINUOUS` (24), `CMD_PAUSE` (25), `CMD_WRITE_SCHEDULE_ENTRY` (26). C runtime host tests 28/28 pass. Python host controller synchronized. |
 | 0.12 | 2026-05-05 | Added Tier 4.30d lifecycle split runtime source surface: `lifecycle_core` profile ID 7, lifecycle MCPL message IDs 3-5, mask/count/lineage sync subtypes, direct lifecycle ownership guards, and compact lifecycle summary validation rule. |
 | 0.13 | 2026-05-05 | Prepared Tier 4.30e five-profile lifecycle hardware smoke and routed direct lifecycle event commands through the duplicate/stale lifecycle request handler so hardware smoke exercises the same guarded lifecycle-core semantics as the split contract. |
+| 0.14 | 2026-05-06 | Added Tier 4.31c temporal substrate runtime source surface: `CMD_TEMPORAL_INIT` (39), `CMD_TEMPORAL_UPDATE` (40), `CMD_TEMPORAL_READ_STATE` (41), `CMD_TEMPORAL_SHAM_MODE` (42), seven fixed-point EMA traces, behavior-backed shams, profile ownership guards, and compact 48-byte temporal readback. |

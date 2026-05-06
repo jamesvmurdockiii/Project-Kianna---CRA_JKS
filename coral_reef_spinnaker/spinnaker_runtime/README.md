@@ -123,6 +123,18 @@ random replay, active-mask shuffle, no-trophic, and no-dopamine modes, and
 predeclared control separation on hardware. This remains sham-control evidence
 only, not lifecycle task-benefit or baseline-freeze evidence.
 
+Tier 4.31c adds the first local runtime source surface for the v2.2 temporal
+substrate. It introduces `CMD_TEMPORAL_INIT`, `CMD_TEMPORAL_UPDATE`,
+`CMD_TEMPORAL_READ_STATE`, and `CMD_TEMPORAL_SHAM_MODE`; seven C-owned
+fixed-point EMA traces; the Tier 4.31b selected `+/-2.0` trace bound; compact
+48-byte temporal readback; zero/frozen/reset sham modes; and ownership guards
+so context/route/memory/lifecycle profiles reject temporal mutation commands.
+The local source/runtime gate passed `17/17` criteria in
+`controlled_test_output/tier4_31c_20260506_native_temporal_runtime_source_audit/`.
+This is source/runtime host evidence only. Tier 4.31d must prove the temporal
+state surface on real SpiNNaker hardware before it can be cited as hardware
+evidence, and it still will not prove benchmark superiority or speedup.
+
 Promotion criteria before this C runtime becomes a near-term backend:
 
 1. Build and load `build/coral_reef.aplx` on real SpiNNaker hardware.

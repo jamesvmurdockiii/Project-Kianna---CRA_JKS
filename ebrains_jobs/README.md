@@ -22,11 +22,12 @@ Public repository hygiene rules live in
 
 ### No pending Tier 4.31 temporal upload
 
-Tier 4.31b passed locally as a fixed-point temporal-substrate reference, but it
-is not an EBRAINS package and should not be uploaded. The next required work is
-Tier 4.31c source/runtime implementation plus local C host tests. Only prepare a
-new temporal upload folder after the C runtime, compact readback, control/sham
-behavior, and source audit match the Tier 4.31b fixed-point reference.
+Tier 4.31c passed locally as a source/runtime audit for C-owned temporal state,
+but it is not an EBRAINS package and should not be uploaded. The next required
+work is Tier 4.31d temporal hardware smoke. Only prepare a new temporal upload
+folder for the one-board/one-seed smoke boundary, preserving the same compact
+readback length (`48`), command codes (`39-42`), enabled/zero/frozen/reset
+controls, and zero-fallback evidence rules.
 
 ### `cra_430g`
 

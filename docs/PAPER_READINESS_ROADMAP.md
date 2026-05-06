@@ -6309,9 +6309,12 @@ Near-term roadmap insertion:
 18. Tier 4.31b native temporal-substrate local fixed-point reference. COMPLETE:
     local pass 16/16; fixed-point seven-EMA mirror matched the float fading-
     memory reference and destructive controls separated.
-19. Tier 4.31c native temporal-substrate source/runtime implementation. NEXT:
-    add runtime-owned temporal state, compact readback, and local C host tests
-    before any EBRAINS package.
+19. Tier 4.31c native temporal-substrate source/runtime implementation. COMPLETE:
+    local pass 17/17; C-owned seven-EMA temporal state, compact 48-byte readback,
+    behavior-backed shams, ownership guards, and local C host tests passed.
+20. Tier 4.31d native temporal-substrate hardware smoke. NEXT:
+    one board / one seed compact hardware probe with enabled versus temporal
+    shams, zero fallback, and real readback.
 ```
 
 Tier 5.19a result:
@@ -6601,8 +6604,22 @@ Control margins: lag 3.94, zero-state 2.74, frozen 1.35, shuffled 4.92,
 Boundary: local fixed-point reference only, not C implementation or hardware
 ```
 
-Next: Tier 4.31c native temporal-substrate source/runtime implementation before
-      any temporal-state hardware package.
+Tier 4.31c result:
+
+```text
+Output: controlled_test_output/tier4_31c_20260506_native_temporal_runtime_source_audit/
+Status: pass
+Criteria: 17/17
+Runtime source: C-owned seven-EMA temporal state
+Trace bound: ±2 s16.15
+Compact temporal readback length: 48
+Command codes: 39-42
+Tests: test-temporal-state, test-profiles, test, test-lifecycle, test-lifecycle-split
+Boundary: local source/runtime host evidence only, not hardware
+```
+
+Next: Tier 4.31d native temporal-substrate hardware smoke before any repeatability
+      or resource-characterization claim.
 ```
 
 Detailed Tier 5.19 contract:
