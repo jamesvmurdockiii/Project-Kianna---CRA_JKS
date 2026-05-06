@@ -4,11 +4,11 @@ This table is generated from `controlled_test_output/STUDY_REGISTRY.json`.
 It is intended as a paper/technical-note citation table, not as a new
 source of claims. If the registry changes, regenerate this file.
 
-- Generated: `2026-05-06T18:51:02.859950+00:00`
-- Registry generated: `2026-05-06T18:51:02.763625+00:00`
+- Generated: `2026-05-06T20:13:11.681517+00:00`
+- Registry generated: `2026-05-06T20:13:11.517845+00:00`
 - Registry status: **PASS**
-- Canonical bundles: `64`
-- Expanded entries: `64`
+- Canonical bundles: `65`
+- Expanded entries: `65`
 
 ## Summary Table
 
@@ -78,6 +78,7 @@ source of claims. If the registry changes, regenerate this file.
 | `tier4_31a_native_temporal_substrate_readiness` | PASS | see manifest | Tier 4.31a - Native Temporal-Substrate Readiness |  | Local readiness/contract evidence only; not C runtime implementation, not SpiNNaker hardware evidence, not speedup, not multi-chip scaling, not nonlinear recurrence, not universal benchmark superiority, and not a new baseline freeze. | results: `controlled_test_output/tier4_31a_20260506_native_temporal_substrate_readiness/tier4_31a_results.json`; report: `controlled_test_output/tier4_31a_20260506_native_temporal_substrate_readiness/tier4_31a_report.md`; summary: `` |
 | `tier4_31b_native_temporal_fixed_point_reference` | PASS | see manifest | Tier 4.31b - Native Temporal-Substrate Local Fixed-Point Reference |  | Local fixed-point reference/parity evidence only; not C runtime implementation, not SpiNNaker hardware evidence, not speedup, not multi-chip scaling, not nonlinear recurrence, not universal benchmark superiority, and not a new baseline freeze. | results: `controlled_test_output/tier4_31b_20260506_native_temporal_fixed_point_reference/tier4_31b_results.json`; report: `controlled_test_output/tier4_31b_20260506_native_temporal_fixed_point_reference/tier4_31b_report.md`; summary: `controlled_test_output/tier4_31b_20260506_native_temporal_fixed_point_reference/tier4_31b_summary.csv` |
 | `tier4_31c_native_temporal_runtime_source_audit` | PASS | see manifest | Tier 4.31c - Native Temporal-Substrate Runtime Source Audit |  | Local source/runtime host evidence only; not SpiNNaker hardware evidence, not speedup, not multi-chip scaling, not nonlinear recurrence, not native replay/sleep, not native macro eligibility, not universal benchmark superiority, and not a new baseline freeze. | results: `controlled_test_output/tier4_31c_20260506_native_temporal_runtime_source_audit/tier4_31c_results.json`; report: `controlled_test_output/tier4_31c_20260506_native_temporal_runtime_source_audit/tier4_31c_report.md`; summary: `controlled_test_output/tier4_31c_20260506_native_temporal_runtime_source_audit/tier4_31c_summary.csv` |
+| `tier4_31d_native_temporal_hardware_smoke` | PASS | see manifest | 4.31d-hw-ingest |  | One-board hardware smoke only; not repeatability, not speedup, not benchmark superiority, not multi-chip scaling, not nonlinear recurrence, not native replay/sleep, not native macro eligibility, not full v2.2 hardware transfer, and not a baseline freeze. | results: `controlled_test_output/tier4_31d_hw_20260506_hardware_pass_ingested/tier4_31d_hw_results.json`; report: `controlled_test_output/tier4_31d_hw_20260506_hardware_pass_ingested/tier4_31d_hw_report.md`; summary: `controlled_test_output/tier4_31d_hw_20260506_hardware_pass_ingested/tier4_31d_hw_summary.csv` |
 
 ## Claim Discipline
 

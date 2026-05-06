@@ -745,11 +745,15 @@ ability.
     and local C host tests. This authorizes hardware smoke preparation, not a
     baseline freeze.
 
-50. **CURRENT ACTIVE STEP** - Tier 4.31d native temporal-substrate hardware smoke:
+50. ✅ **COMPLETE** - Tier 4.31d native temporal-substrate hardware smoke:
     one board, one seed, one minimal temporal-state task, explicit enabled versus
     zero/frozen/reset controls, compact payload_len=48, zero fallback, and real
-    readback. Prepared package: `ebrains_jobs/cra_431d_r1`; JobManager command:
-    `cra_431d_r1/experiments/tier4_31d_native_temporal_hardware_smoke.py --mode run-hardware --output-dir tier4_31d_hw_job_output`.
+    readback. Hardware pass ingested at
+    `controlled_test_output/tier4_31d_hw_20260506_hardware_pass_ingested/`.
+    Board `10.11.216.121`; runner revision
+    `tier4_31d_native_temporal_hardware_smoke_20260506_0003`; remote hardware
+    criteria `59/59`; ingest criteria `5/5`; returned artifacts `28`;
+    enabled/zero/frozen/reset scenarios all pass.
     First EBRAINS return was incomplete: two partial artifacts came back
     (`tier4_31d_test_profiles_stdout.txt`, `coral_reef (26).elf`) but no
     `tier4_31d_hw_results.json`, so it is not hardware evidence. The partial
@@ -758,14 +762,20 @@ ability.
     package revision `tier4_31d_native_temporal_hardware_smoke_20260506_0003`,
     which adds streamed build logs, build timeout, milestone breadcrumbs,
     partial-return ingest preservation, and structured exception finalization.
-    Do not claim full benchmark performance or speedup from a smoke.
+    Boundary: one-board hardware smoke only; not repeatability, speedup,
+    benchmark superiority, multi-chip scaling, nonlinear recurrence, native
+    replay/sleep, native macro eligibility, or full v2.2 hardware transfer.
 
-51. Tier 4.31e native replay-buffer / sleep-like replay decision: only if the
-    software replay/consolidation path still needs chip-owned buffers for scale
-    or if a measured hardware bottleneck requires it. Host-scheduled replay from
-    4.29e remains the current bounded evidence.
+51. **CURRENT ACTIVE STEP** - Tier 4.31e native replay-buffer / sleep-like replay
+    and eligibility decision closeout: decide from measured blockers whether
+    chip-owned replay buffers or native eligibility traces are needed now. Do
+    not implement either by momentum. Host-scheduled replay from 4.29e remains
+    the current bounded evidence unless this gate finds a concrete scale/timing
+    blocker.
 
-52. Tier 4.31f native eligibility-trace decision: revisit macro/native
+52. Tier 4.31f native eligibility-trace implementation gate, only if the 4.31e
+    decision finds a measured blocker. Otherwise mark as deferred and move to
+    Tier 4.32. Revisit macro/native
     eligibility only if a current promoted mechanism exposes a measured credit
     assignment or on-chip timing blocker. Do not revive 5.9 by vibes alone.
 
@@ -1007,9 +1017,9 @@ After each completed run or design tier:
 The next concrete action is:
 
 ```text
-Tier 4.31d native temporal-substrate hardware smoke: run the prepared compact
-one-board/one-seed EBRAINS probe for the C-owned seven-EMA temporal state from
-Tier 4.31c.
+Tier 4.31e native replay/eligibility decision closeout: decide whether current
+hardware evidence exposes a measured need for native replay buffers or native
+eligibility traces now. If not, proceed to Tier 4.32 mapping/resource model.
 ```
 
 Current reference state:
@@ -1029,30 +1039,30 @@ Returned artifacts preserved: 36
 Enabled lifecycle bridge gate: open
 Five predeclared lifecycle controls: closed
 Resource/readback accounting: returned for every mode
-Temporal substrate status: Tier 4.31c local source/runtime audit passed for a
-C-owned seven-EMA native subset; first 4.31d EBRAINS return was incomplete and
-hardware transfer remains unproven
+Temporal substrate status: Tier 4.31d one-board hardware smoke passed and was
+ingested; repeatability, speedup, multi-chip scaling, nonlinear recurrence,
+native replay/sleep, native eligibility, and full v2.2 hardware transfer remain
+unproven
 ```
 
 Purpose:
 
 ```text
-Tier 4.31c completed the source/runtime implementation gate for moving the v2.2
-fading-memory temporal-state mechanism toward chip-native form. The next action
-is a compact hardware smoke, not a benchmark or speedup claim.
+Tier 4.31d completed the first one-board hardware smoke for moving the v2.2
+fading-memory temporal-state subset toward chip-native form. The next action is
+a decision closeout for native replay/eligibility needs, not a benchmark or
+speedup claim.
 ```
 
 Required coverage:
 
 ```text
 Use v2.2 as the software reference and `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` as
-the native lifecycle baseline. Do not create an EBRAINS package until Tier 4.31c
-passed source/runtime implementation, compact readback, and local C host tests
-against the 4.31b reference. For 4.31d, keep the boundary strict: one-board
+the native lifecycle baseline. Keep Tier 4.31d's boundary strict: one-board
 temporal-state hardware smoke only; not nonlinear recurrence, not speedup, not
 multi-chip scaling, not benchmark superiority, and not full organism autonomy.
-The current rerun package is `ebrains_jobs/cra_431d_r1`, runner revision
-`tier4_31d_native_temporal_hardware_smoke_20260506_0003`.
+The next native work must either document a measured replay/eligibility blocker
+or proceed to mapping/resource modeling.
 ```
 
 

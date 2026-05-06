@@ -8870,16 +8870,19 @@ multi-chip scaling, nonlinear recurrence, native replay/sleep, native macro
 eligibility, or benchmark superiority.
 ```
 
-Next:
+Result:
 
 ```text
-Tier 4.31d native temporal-substrate hardware smoke. Prepared source-only
-upload: ebrains_jobs/cra_431d_r1. Run one board, one seed, compact hardware probe
-with enabled versus temporal shams, payload_len 48, zero fallback, and real
-readback. Treat this as smoke evidence only. The first EBRAINS return produced
-only profile-test stdout and an ARM ELF, with no tier results JSON; it is
-preserved as an incomplete infrastructure return at
-controlled_test_output/tier4_31d_hw_20260506_incomplete_return/ and is not
-hardware evidence. Re-run runner revision
-tier4_31d_native_temporal_hardware_smoke_20260506_0003.
+Tier 4.31d native temporal-substrate hardware smoke passed and was ingested at
+controlled_test_output/tier4_31d_hw_20260506_hardware_pass_ingested/.
+Board: 10.11.216.121.
+Runner revision: tier4_31d_native_temporal_hardware_smoke_20260506_0003.
+Remote hardware criteria: 59/59.
+Ingest criteria: 5/5.
+Returned artifacts preserved: 21.
+Scenarios: enabled, zero_state, frozen_state, reset_each_update all passed.
+Payload length: 48.
+Boundary: one-board hardware smoke only; not repeatability, speedup, benchmark
+superiority, multi-chip scaling, nonlinear recurrence, native replay/sleep,
+native eligibility, or full v2.2 hardware transfer.
 ```

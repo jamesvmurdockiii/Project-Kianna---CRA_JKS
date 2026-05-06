@@ -1,0 +1,8 @@
+{
+  "extra": {},
+  "generated_at_utc": "2026-05-06T19:00:23+00:00",
+  "phase": "finalize",
+  "runner_revision": "tier4_31d_native_temporal_hardware_smoke_20260506_0003",
+  "status": "pass",
+  "tier": "4.31d-hw"
+}

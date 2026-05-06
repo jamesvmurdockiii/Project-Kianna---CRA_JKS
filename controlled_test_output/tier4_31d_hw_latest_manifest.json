@@ -1,104 +1,14 @@
 {
-  "artifacts": {
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_prepared/tier4_31d_hw_report.md",
-    "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_prepared/tier4_31d_hw_results.json",
-    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_prepared/tier4_31d_hw_summary.csv"
-  },
-  "bundle_artifacts": {
-    "job_readme": "/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_prepared/ebrains_upload_bundle/cra_431d_r1/README_TIER4_31D_HW_JOB.md",
-    "stable_upload_folder": "/Users/james/JKS:CRA/ebrains_jobs/cra_431d_r1",
-    "upload_bundle": "/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_prepared/ebrains_upload_bundle/cra_431d_r1"
-  },
-  "claim_boundary": "Prepared source bundle only; no hardware evidence until returned run-hardware artifacts pass.",
-  "criteria": [
-    {
-      "name": "Tier 4.31c prerequisite passed",
-      "note": "",
-      "passed": true,
-      "rule": "== pass",
-      "value": "pass"
-    },
-    {
-      "name": "runtime temporal/profile host checks pass",
-      "note": "",
-      "passed": true,
-      "rule": "== pass",
-      "value": "pass"
-    },
-    {
-      "name": "runner py_compile pass",
-      "note": "",
-      "passed": true,
-      "rule": "== 0",
-      "value": 0
-    },
-    {
-      "name": "upload bundle created",
-      "note": "",
-      "passed": true,
-      "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_prepared/ebrains_upload_bundle/cra_431d_r1"
-    },
-    {
-      "name": "stable upload folder created",
-      "note": "",
-      "passed": true,
-      "rule": "exists",
-      "value": "/Users/james/JKS:CRA/ebrains_jobs/cra_431d_r1"
-    },
-    {
-      "name": "run-hardware command emitted",
-      "note": "",
-      "passed": true,
-      "rule": "contains --mode run-hardware",
-      "value": "cra_431d_r1/experiments/tier4_31d_native_temporal_hardware_smoke.py --mode run-hardware --output-dir tier4_31d_hw_job_output"
-    },
-    {
-      "name": "bundle controller includes temporal parser",
-      "note": "",
-      "passed": true,
-      "rule": "present",
-      "value": "parse_temporal_payload"
-    }
-  ],
-  "failure_reason": "",
-  "generated_at_utc": "2026-05-06T18:50:47+00:00",
-  "host_checks": {
-    "status": "pass",
-    "test_profiles": {
-      "command": "make -C coral_reef_spinnaker/spinnaker_runtime test-profiles",
-      "returncode": 0,
-      "status": "pass",
-      "stderr": "",
-      "stdout": "cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_RUNTIME_PROFILE_CONTEXT_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=4 tests/test_profiles.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_context_core\n./tests/test_context_core\nProfile test (RUNTIME_PROFILE_ID=4)\n  PASS: RESET ack\n  PASS: READ_STATE profile_id=4 flags=0\n  PASS: context_core expected commands ack\n  PASS: context_core unexpected commands nak\n  PASS: lookup request/reply format\n  PASS: wrong-type lookup rejected safely\nAll tests passed.\ncc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_RUNTIME_PROFILE_ROUTE_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=5 tests/test_profiles.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_route_core\n./tests/test_route_core\nProfile test (RUNTIME_PROFILE_ID=5)\n  PASS: RESET ack\n  PASS: READ_STATE profile_id=5 flags=0\n  PASS: route_core expected commands ack\n  PASS: route_core unexpected commands nak\n  PASS: lookup request/reply format\n  PASS: wrong-type lookup rejected safely\nAll tests passed.\ncc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_RUNTIME_PROFILE_MEMORY_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=6 tests/test_profiles.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_memory_core\n./tests/test_memory_core\nProfile test (RUNTIME_PROFILE_ID=6)\n  PASS: RESET ack\n  PASS: READ_STATE profile_id=6 flags=0\n  PASS: memory_core expected commands ack\n  PASS: memory_core unexpected commands nak\n  PASS: lookup request/reply format\n  PASS: wrong-type lookup rejected safely\nAll tests passed.\ncc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 tests/test_profiles.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_learning_core\n./tests/test_learning_core\nProfile test (RUNTIME_PROFILE_ID=3)\n  PASS: RESET ack\n  PASS: READ_STATE profile_id=3 flags=0\n  PASS: learning_core expected commands ack\n  PASS: learning_core unexpected commands nak\n  PASS: lookup state machine (3 replies stored)\n  PASS: stale reply detection\n  PASS: timeout detection\nAll tests passed.\ncc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_RUNTIME_PROFILE_LIFECYCLE_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=7 tests/test_profiles.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_lifecycle_core\n./tests/test_lifecycle_core\nProfile test (RUNTIME_PROFILE_ID=7)\n  PASS: RESET ack\n  PASS: READ_STATE profile_id=7 flags=0\n  PASS: lifecycle_core expected commands ack\n  PASS: lifecycle_core unexpected commands nak\nAll tests passed.\n"
-    },
-    "test_temporal_state": {
-      "command": "make -C coral_reef_spinnaker/spinnaker_runtime clean-host test-temporal-state",
-      "returncode": 0,
-      "status": "pass",
-      "stderr": "",
-      "stdout": "rm -f tests/test_runtime tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_lifecycle_core tests/test_four_core_local tests/test_four_core_48event tests/test_mcpl_feasibility tests/test_lifecycle tests/test_lifecycle_split tests/test_temporal_state\ncc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 tests/test_temporal_state.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_temporal_state\n./tests/test_temporal_state\nRunning Tier 4.31c temporal-state tests...\n  PASS: temporal constants\n  PASS: temporal fixed-point mirror updates\n  PASS: temporal bounds and sham behavior\n  PASS: temporal compact host readback\nAll temporal-state tests passed.\n"
-    }
-  },
-  "mode": "prepare",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_prepared",
-  "py_compile": {
-    "command": "/Library/Developer/CommandLineTools/usr/bin/python3 -m py_compile experiments/tier4_31d_native_temporal_hardware_smoke.py",
-    "returncode": 0,
-    "status": "pass",
-    "stderr": "",
-    "stdout": ""
-  },
-  "runner_revision": "tier4_31d_native_temporal_hardware_smoke_20260506_0003",
-  "status": "prepared",
-  "summary": {
-    "claim_boundary": "Prepared source bundle only; no hardware evidence until returned run-hardware artifacts pass.",
-    "job_command": "cra_431d_r1/experiments/tier4_31d_native_temporal_hardware_smoke.py --mode run-hardware --output-dir tier4_31d_hw_job_output",
-    "stable_upload_folder": "/Users/james/JKS:CRA/ebrains_jobs/cra_431d_r1",
-    "upload_bundle": "/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_prepared/ebrains_upload_bundle/cra_431d_r1",
-    "upload_package": "cra_431d_r1",
-    "what_i_need_from_user": "Upload `cra_431d_r1` to EBRAINS/JobManager and run the emitted command."
-  },
-  "tier": "4.31d-hw",
-  "tier_name": "Tier 4.31d - Native Temporal-Substrate Hardware Smoke"
+  "generated_at_utc": "2026-05-06T20:13:10.974040+00:00",
+  "source_generated_at_utc": "2026-05-06T20:10:50+00:00",
+  "registry_entry_id": "tier4_31d_native_temporal_hardware_smoke",
+  "tier": "Tier 4.31d-hw - Native Temporal-Substrate Hardware Smoke",
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_hardware_pass_ingested",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_hardware_pass_ingested/tier4_31d_hw_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_hardware_pass_ingested/tier4_31d_hw_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_hardware_pass_ingested/tier4_31d_hw_summary.csv",
+  "canonical": true,
+  "claim": "The custom C runtime's seven-EMA temporal-state subset built, loaded, executed, and read back on one real SpiNNaker board with compact 48-byte temporal payloads and enabled/zero/frozen/reset sham controls all matching the fixed-point reference.",
+  "caveat": "One-board hardware smoke only; not repeatability, not speedup, not benchmark superiority, not multi-chip scaling, not nonlinear recurrence, not native replay/sleep, not native macro eligibility, not full v2.2 hardware transfer, and not a baseline freeze."
 }

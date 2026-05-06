@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-06T18:49:39+00:00.
+Last updated: 2026-05-06T19:05:21+00:00.
 
 Current repo root:
 
@@ -99,19 +99,11 @@ FROZEN: CRA_LIFECYCLE_NATIVE_BASELINE_v0.4
             temporal migration, not external-baseline superiority, and not
             language/planning/AGI/ASI.
 
-  Next: Tier 4.31d native temporal-substrate hardware smoke.
-        Tier 4.31c has proven C-owned seven-EMA temporal state locally.
-        Tier 4.31d-hw is now prepared as source-only EBRAINS upload folder
-        `ebrains_jobs/cra_431d_r1` with runner revision
-        `tier4_31d_native_temporal_hardware_smoke_20260506_0003` and the same
-        compact readback/control boundary.
-        Run only the emitted command in JobManager; do not upload
-        `controlled_test_output`.
-        The first EBRAINS return was incomplete: it produced only
-        `tier4_31d_test_profiles_stdout.txt` and `coral_reef (26).elf`, with no
-        `tier4_31d_hw_results.json`. That is not hardware evidence. It is
-        preserved at
-        `controlled_test_output/tier4_31d_hw_20260506_incomplete_return/`.
+  Next: Tier 4.31e decision/closeout gate for native replay-buffer and
+        eligibility-trace timing. Tier 4.31d-hw now passed and is ingested at
+        `controlled_test_output/tier4_31d_hw_20260506_hardware_pass_ingested/`.
+        Use this as one-board temporal-state smoke evidence only; do not freeze
+        a new native baseline or claim full v2.2 transfer from it.
 ```
 
 Current active tier state:
@@ -147,7 +139,7 @@ Tier 4.31c — COMPLETE. Native temporal-substrate source/runtime implementation
   Boundary: local source/runtime host evidence only; not SpiNNaker hardware,
     not speedup, not nonlinear recurrence, not replay/sleep, and not a freeze.
 
-Tier 4.31d — CURRENT ACTIVE. Native temporal-substrate hardware smoke.
+Tier 4.31d — COMPLETE. Native temporal-substrate hardware smoke.
   Question: Does the C-owned seven-EMA temporal state execute/read back cleanly
     on one SpiNNaker board with the same compact state and controls?
   Prepared output:
@@ -164,9 +156,27 @@ Tier 4.31d — CURRENT ACTIVE. Native temporal-substrate hardware smoke.
     with streamed build logs, build timeout, `tier4_31d_hw_milestone.json`,
     incomplete-return artifact preservation, and structured exception
     finalization.
-  Rule: prepare/run a one-board, one-seed smoke only. The claim boundary is
-    hardware execution/readback for the temporal state, not speedup, benchmark
-    superiority, multi-chip scaling, or full v2.2 hardware transfer.
+  Hardware pass:
+    controlled_test_output/tier4_31d_hw_20260506_hardware_pass_ingested/
+    Board: 10.11.216.121
+    Runner revision: tier4_31d_native_temporal_hardware_smoke_20260506_0003
+    Remote hardware criteria: 59/59
+    Ingest criteria: 5/5
+    Returned artifacts preserved: 21
+    Scenarios: enabled, zero_state, frozen_state, reset_each_update all pass
+    Compact temporal payload length: 48
+    Synthetic fallback: false
+  Boundary: one-board hardware execution/readback for the temporal state only.
+    Not repeatability, not speedup, not benchmark superiority, not multi-chip
+    scaling, not nonlinear recurrence, not native replay/sleep, not native
+    macro eligibility, and not full v2.2 hardware transfer.
+
+Tier 4.31e — CURRENT ACTIVE. Native replay/eligibility decision closeout.
+  Question: Do current promoted mechanisms expose a measured blocker that
+    requires native replay buffers or native eligibility traces now?
+  Rule: make this a documented decision gate first, not an implementation by
+    momentum. If no measured blocker is present, proceed to Tier 4.32 mapping
+    and resource modeling using the measured 4.27-4.31 hardware data.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware
@@ -649,19 +659,15 @@ Local build capability (established 2026-05-02):
 
 Immediate next steps:
 
-1. Upload the prepared Tier 4.31d compact temporal-state hardware smoke package
-   from `ebrains_jobs/cra_431d_r1`. Use the Tier 4.31c C runtime exactly; do not
-   add new temporal mechanics in the hardware runner.
-2. Run one board / one seed first with this exact JobManager command:
-   `cra_431d_r1/experiments/tier4_31d_native_temporal_hardware_smoke.py --mode run-hardware --output-dir tier4_31d_hw_job_output`.
-   Required evidence: real SpiNNaker build/load,
-   zero fallback, temporal init/update/readback, compact payload length 48,
-   schema/checksum/update/saturation/reset/sham counters, and explicit enabled
-   versus zero/frozen/reset controls.
-3. Keep the 4.31b/4.31c range refinement explicit: selected trace bound is ±2
+1. Close Tier 4.31d as hardware pass ingested and keep its boundary strict:
+   one-board C-owned seven-EMA temporal-state build/load/command/readback only.
+2. Run Tier 4.31e as a decision/closeout gate. Decide whether native replay
+   buffers or native eligibility traces are required now by measured blockers.
+   If no blocker exists, defer those implementations and proceed to Tier 4.32.
+3. Tier 4.32 should update the mapping/resource model with measured 4.27-4.31
+   hardware data before single-chip/multi-core scale stress.
+4. Keep the 4.31b/4.31c range refinement explicit: selected trace bound is ±2
    in s16.15; the older ±1 sketch saturated and must not silently return.
-4. Treat 4.31d as a smoke. Passing it authorizes repeatability/resource gates;
-   it does not freeze a new baseline or prove speedup/benchmark superiority.
 5. Keep public repo hygiene green before the next upload or commit: no
    credentialed remotes, no `ebrains_jobs/` symlinks, no transient root output
    dirs, no generated host binaries, and `make validate` passing.

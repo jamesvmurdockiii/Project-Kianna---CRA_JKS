@@ -1395,6 +1395,33 @@ SPECS: tuple[EvidenceSpec, ...] = (
             "tier4_31c_source_checks.csv",
         ),
     ),
+    EvidenceSpec(
+        entry_id="tier4_31d_native_temporal_hardware_smoke",
+        tier_label="Tier 4.31d-hw - Native Temporal-Substrate Hardware Smoke",
+        plan_position="Phase F native v2.2 temporal-state migration one-board hardware smoke",
+        canonical_dir="tier4_31d_hw_20260506_hardware_pass_ingested",
+        results_file="tier4_31d_hw_results.json",
+        report_file="tier4_31d_hw_report.md",
+        summary_file="tier4_31d_hw_summary.csv",
+        harness="experiments/tier4_31d_native_temporal_hardware_smoke.py",
+        evidence_role="native temporal-substrate one-board hardware smoke",
+        claim="The custom C runtime's seven-EMA temporal-state subset built, loaded, executed, and read back on one real SpiNNaker board with compact 48-byte temporal payloads and enabled/zero/frozen/reset sham controls all matching the fixed-point reference.",
+        caveat="One-board hardware smoke only; not repeatability, not speedup, not benchmark superiority, not multi-chip scaling, not nonlinear recurrence, not native replay/sleep, not native macro eligibility, not full v2.2 hardware transfer, and not a baseline freeze.",
+        latest_manifest_names=("tier4_31d_hw_latest_manifest.json",),
+        expected_extra_files=(
+            "returned_artifacts/tier4_31d_aplx_build_stdout.txt",
+            "returned_artifacts/tier4_31d_aplx_build_stderr.txt",
+            "returned_artifacts/tier4_31d_hw_build.json",
+            "returned_artifacts/tier4_31d_hw_comparisons.csv",
+            "returned_artifacts/tier4_31d_hw_environment.json",
+            "returned_artifacts/tier4_31d_hw_expected.json",
+            "returned_artifacts/tier4_31d_hw_load.json",
+            "returned_artifacts/tier4_31d_hw_milestone.json",
+            "returned_artifacts/tier4_31d_hw_roundtrip.json",
+            "returned_artifacts/tier4_31d_hw_target_acquisition.json",
+            "returned_artifacts/tier4_31d_test_temporal_state_stdout.txt",
+        ),
+    ),
 )
 
 

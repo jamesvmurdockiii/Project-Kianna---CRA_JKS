@@ -29,11 +29,11 @@ controlled ablations, baseline comparisons, and explicit claim boundaries.
 | Latest lifecycle runtime source audit | Tier 4.30b passed `13/13`: runtime lifecycle static-pool surface, exact 4.30a checksum parity, lifecycle SDP readback, and existing runtime/profile tests preserved. |
 | Latest multi-core lifecycle split | Tier 4.30c passed `22/22`: five-core lifecycle ownership contract, MCPL/multicast-target message semantics, final active-mask sync, exact canonical/boundary parity, and distributed failure classes. |
 | Latest multi-core lifecycle runtime source audit | Tier 4.30d passed `14/14`: dedicated `lifecycle_core` runtime profile, lifecycle inter-core stubs/counters, active-mask/count/lineage sync bookkeeping, ownership guards, and local C host tests against the 4.30c contract. |
-| Latest prepared EBRAINS package | Tier 4.31d-hw is prepared as source-only upload folder [`ebrains_jobs/cra_431d_r1`](ebrains_jobs/cra_431d_r1), runner revision `tier4_31d_native_temporal_hardware_smoke_20260506_0003`. Run `cra_431d_r1/experiments/tier4_31d_native_temporal_hardware_smoke.py --mode run-hardware --output-dir tier4_31d_hw_job_output` in EBRAINS/JobManager. |
+| Latest temporal hardware pass | Tier 4.31d-hw passed and was ingested from [`controlled_test_output/tier4_31d_hw_20260506_hardware_pass_ingested`](controlled_test_output/tier4_31d_hw_20260506_hardware_pass_ingested): board `10.11.216.121`, runner revision `tier4_31d_native_temporal_hardware_smoke_20260506_0003`, `59/59` remote hardware criteria, `5/5` ingest criteria, compact temporal payload length `48`, enabled/zero/frozen/reset controls all passed, and `21` structured returned artifacts preserved. |
 | Latest temporal-native readiness | Tier 4.31a passed `24/24`, scoping the first native v2.2 temporal migration to seven causal fixed-point EMA traces. Tier 4.31b passed `16/16` with fixed/float ratio `0.9987474666079806` and zero selected saturations. Tier 4.31c passed `17/17`, adding C-owned temporal state, command codes `39-42`, compact temporal readback length `48`, behavior-backed shams, profile ownership guards, and local C host tests. |
 | Latest temporal hardware return | First Tier 4.31d EBRAINS return was incomplete: only `tier4_31d_test_profiles_stdout.txt` and `coral_reef (26).elf` came back, with no `tier4_31d_hw_results.json`. This is not hardware evidence; it only shows profile host tests passed and an ARM ELF linked before structured finalization. The incomplete return is preserved at [`controlled_test_output/tier4_31d_hw_20260506_incomplete_return`](controlled_test_output/tier4_31d_hw_20260506_incomplete_return). |
-| Active next gate | Re-run Tier 4.31d with the refreshed `cra_431d_r1` package. Revision `0003` adds streamed build logs, a build timeout, `tier4_31d_hw_milestone.json`, incomplete-return artifact preservation, and structured exception finalization. It should prove board execution/readback only, not benchmark superiority or speedup. |
-| Canonical registry | 64 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
+| Active next gate | Tier 4.31e decision/closeout gate: decide whether native replay buffers or native eligibility traces have a measured blocker now; if not, proceed to Tier 4.32 mapping/resource model with measured 4.27-4.31 data. |
+| Canonical registry | 65 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
 | Validation suite | 151 pytest tests plus registry, paper-table, and repository-audit generation. |
 
 ## What CRA Implements
@@ -69,7 +69,7 @@ Core implementation areas:
 | 5.10-5.18 | Memory, replay/consolidation, predictive context, composition/routing, working memory diagnostics, temporal coding, neuron-parameter sensitivity, predictive binding, and self-evaluation gates. | Mostly host-side software mechanisms unless explicitly migrated to hardware. |
 | 6.1-6.4 | Lifecycle/self-scaling, lifecycle sham controls, and circuit-motif causality. | Software organism/ecology evidence; not hardware lifecycle. |
 | 4.22-4.30g | Custom SpiNNaker runtime progression from roundtrip/load tests to four-core MCPL tasks, keyed memory, routing/composition, predictive binding, confidence-gated learning, host-scheduled replay/consolidation, lifecycle static-pool metadata, multi-core lifecycle source/runtime gates, five-profile lifecycle hardware smoke, lifecycle sham-control hardware subset, and lifecycle task-benefit/resource bridge hardware pass. | Native hardware mechanism evidence for tested capsules only. Tier 4.30g-hw proves a bounded host-ferried lifecycle-to-task bridge with resource accounting; it does not prove autonomous lifecycle-to-learning MCPL, speedup, multi-chip scaling, v2.2 temporal migration, or full organism autonomy. |
-| 4.31a-4.31c | Native temporal-substrate readiness, fixed-point reference, and local C runtime source audit. | Local evidence only: defines the seven-EMA fixed-point trace subset, proves local fixed-point parity against the v2.2 fading-memory reference with destructive controls, and implements/tests C-owned temporal state. Not SpiNNaker hardware evidence yet. |
+| 4.31a-4.31d | Native temporal-substrate readiness, fixed-point reference, local C runtime source audit, and one-board SpiNNaker hardware smoke. | Defines the seven-EMA fixed-point trace subset, proves local fixed-point parity against the v2.2 fading-memory reference with destructive controls, implements/tests C-owned temporal state, and shows one-board build/load/command/readback. Not repeatability, speedup, benchmark superiority, multi-chip scaling, nonlinear recurrence, native replay/sleep, or full v2.2 hardware transfer. |
 | 7.0-7.0d | Standard dynamical benchmarks and failure analysis: Mackey-Glass, Lorenz, NARMA10, aggregate geometric-mean MSE, CRA state/readout probes, bounded online readout repair, and state-specific claim narrowing. | Software diagnostics only; CRA v2.1 underperformed simple continuous-regression sequence baselines. 7.0d showed lag regression explains this benchmark path under the prior interface, so no direct benchmark-superiority claim was made. |
 | 5.19a-5.19c | Continuous temporal-dynamics repair path: local temporal substrate reference, recurrence sham gate, then narrowed fading-memory compact-regression promotion. | v2.2 supports bounded host-side fading-memory temporal state. It does not prove nonlinear recurrence, hardware/on-chip temporal dynamics, universal benchmark superiority, language, planning, AGI, or ASI. |
 
@@ -159,8 +159,8 @@ python3 experiments/tier5_external_baselines.py \
 
 `make validate` currently runs:
 
-- 149 pytest unit tests.
-- Evidence registry generation: 64 canonical bundles, 0 failed criteria.
+- 151 pytest unit tests.
+- Evidence registry generation: 65 canonical bundles, 0 failed criteria.
 - Paper results table export.
 - Repository audit.
 
@@ -205,7 +205,7 @@ commit used. A placeholder software citation is:
   author       = {Murdock, James V. and CRA Contributors},
   year         = {2026},
   url          = {https://github.com/jamesvmurdockiii/Project-Kianna---CRA_JKS},
-  note         = {64 canonical evidence bundles; bounded SpiNNaker hardware validation}
+  note         = {65 canonical evidence bundles; bounded SpiNNaker hardware validation}
 }
 ```
 

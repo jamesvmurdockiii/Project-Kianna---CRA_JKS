@@ -129,14 +129,19 @@ status = returned hardware pass after ingest
 runner = experiments/tier4_30g_lifecycle_task_benefit_resource_bridge.py
 ```
 
-Latest prepared EBRAINS upload package:
+Latest passed EBRAINS upload package:
 
 ```text
 Tier 4.31d - Native Temporal-Substrate Hardware Smoke
 upload = ebrains_jobs/cra_431d_r1
-status = prepared locally; first EBRAINS return incomplete; rerun revision 0003
+status = returned hardware pass after ingest
 runner = experiments/tier4_31d_native_temporal_hardware_smoke.py
 runner_revision = tier4_31d_native_temporal_hardware_smoke_20260506_0003
+ingested_output = controlled_test_output/tier4_31d_hw_20260506_hardware_pass_ingested/
+board = 10.11.216.121
+remote_criteria = 59/59
+ingest_criteria = 5/5
+returned_artifacts = 28
 ```
 
 Latest local temporal-native gate:
@@ -151,7 +156,9 @@ Tier 4.31c - Native Temporal-Substrate Runtime Source Audit
   Boundary: local source/runtime host evidence only; not hardware, not speedup,
     not nonlinear recurrence, not native replay/sleep, and not benchmark
     superiority.
-  Next: run prepared Tier 4.31d temporal hardware smoke package `cra_431d_r1`.
+  Next: Tier 4.31e decision closeout for native replay/eligibility needs, then
+    Tier 4.32 mapping/resource model if no measured blocker demands new native
+    replay or eligibility work.
 ```
 
 Tier 4.28e Point A passed after ingest at:
@@ -503,10 +510,10 @@ cra_420b/
 For the current custom-runtime job, use the generated source-only folder under
 `ebrains_jobs/` instead.
 
-## Current EBRAINS Command
+## Latest Tier 4.31d EBRAINS Command
 
-Upload the source-only folder `ebrains_jobs/cra_431d_r1` and run this exact
-JobManager command:
+The successful Tier 4.31d rerun used source-only folder
+`ebrains_jobs/cra_431d_r1` and this exact JobManager command:
 
 ```text
 cra_431d_r1/experiments/tier4_31d_native_temporal_hardware_smoke.py --mode run-hardware --output-dir tier4_31d_hw_job_output
@@ -516,7 +523,23 @@ Do not upload `controlled_test_output`. This is a one-board/one-seed smoke for
 temporal commands `39-42`, compact payload length `48`, and enabled versus
 zero/frozen/reset controls only.
 
-Current Tier 4.31d return status:
+Current Tier 4.31d pass:
+
+```text
+controlled_test_output/tier4_31d_hw_20260506_hardware_pass_ingested/
+status = pass
+board = 10.11.216.121
+target_method = pyNN.spiNNaker_probe
+dest = (0,0,4)
+remote hardware criteria = 59/59
+ingest criteria = 5/5
+returned artifacts preserved = 21
+temporal_payload_len = 48
+scenario_statuses = enabled/pass, zero_state/pass, frozen_state/pass, reset_each_update/pass
+synthetic_fallback_used = false
+```
+
+Earlier incomplete Tier 4.31d return:
 
 ```text
 controlled_test_output/tier4_31d_hw_20260506_incomplete_return/

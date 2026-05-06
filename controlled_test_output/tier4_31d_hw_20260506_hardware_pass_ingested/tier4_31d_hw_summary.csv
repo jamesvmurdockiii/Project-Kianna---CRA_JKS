@@ -1,0 +1,6 @@
+name,value,rule,passed,note
+hardware results json exists,/tmp/tier4_31d_return_20260506_1501_public/tier4_31d_hw_results.json,exists,True,
+hardware mode was run-hardware,run-hardware,== run-hardware,True,
+hardware status pass,pass,== pass,True,
+runner revision current,tier4_31d_native_temporal_hardware_smoke_20260506_0003,== tier4_31d_native_temporal_hardware_smoke_20260506_0003,True,
+returned artifacts preserved,21,> 0,True,

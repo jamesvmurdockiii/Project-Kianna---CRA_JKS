@@ -22,8 +22,10 @@ Public repository hygiene rules live in
 
 ### `cra_431d_r1`
 
-Status: **PREPARED / PENDING RERUN** for Tier 4.31d native temporal-substrate
-hardware smoke. The first EBRAINS return was incomplete and is preserved at
+Status: **HARDWARE PASS / INGESTED** for Tier 4.31d native temporal-substrate
+hardware smoke. The successful return is preserved at
+`controlled_test_output/tier4_31d_hw_20260506_hardware_pass_ingested/`. The
+first incomplete EBRAINS return is preserved separately at
 `controlled_test_output/tier4_31d_hw_20260506_incomplete_return/`.
 
 Purpose: Verify on one real SpiNNaker board that the C-owned seven-EMA temporal
@@ -50,10 +52,24 @@ Runner revision:
 tier4_31d_native_temporal_hardware_smoke_20260506_0003
 ```
 
-Revision `0003` adds streamed build logs, build timeout, milestone breadcrumbs,
-structured exception finalization, and incomplete-return artifact preservation.
-If the rerun fails, download all returned files; `tier4_31d_hw_milestone.json`
-and `tier4_31d_hw_results.json` are the first files to inspect.
+Returned pass summary:
+
+```text
+board = 10.11.216.121
+target_method = pyNN.spiNNaker_probe
+dest = (0,0,4)
+remote hardware criteria = 59/59
+ingest criteria = 5/5
+returned artifacts preserved = 21
+temporal_payload_len = 48
+scenarios = enabled, zero_state, frozen_state, reset_each_update all pass
+```
+
+Revision `0003` added streamed build logs, build timeout, milestone
+breadcrumbs, structured exception finalization, and incomplete-return artifact
+preservation. If this tier is rerun, download all returned files;
+`tier4_31d_hw_milestone.json` and `tier4_31d_hw_results.json` are the first
+files to inspect.
 
 Boundary: one-board hardware execution/readback smoke only. It is not speedup,
 benchmark superiority, multi-chip scaling, nonlinear recurrence, replay/sleep,

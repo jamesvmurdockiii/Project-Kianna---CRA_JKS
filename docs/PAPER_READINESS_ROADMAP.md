@@ -6312,14 +6312,15 @@ Near-term roadmap insertion:
 19. Tier 4.31c native temporal-substrate source/runtime implementation. COMPLETE:
     local pass 17/17; C-owned seven-EMA temporal state, compact 48-byte readback,
     behavior-backed shams, ownership guards, and local C host tests passed.
-20. Tier 4.31d native temporal-substrate hardware smoke. NEXT/PREPARED:
-    source-only upload `ebrains_jobs/cra_431d_r1`; one board / one seed compact
-    hardware probe with enabled versus temporal shams, zero fallback, and real
-    readback. First EBRAINS return was incomplete, returning only profile-test
-    stdout and an ARM ELF with no `tier4_31d_hw_results.json`; preserve it as
-    non-evidence at
-    `controlled_test_output/tier4_31d_hw_20260506_incomplete_return/` and rerun
-    runner revision `tier4_31d_native_temporal_hardware_smoke_20260506_0003`.
+20. Tier 4.31d native temporal-substrate hardware smoke. COMPLETE:
+    hardware pass ingested at
+    `controlled_test_output/tier4_31d_hw_20260506_hardware_pass_ingested/`;
+    board `10.11.216.121`; runner revision
+    `tier4_31d_native_temporal_hardware_smoke_20260506_0003`; remote hardware
+    criteria `59/59`; ingest criteria `5/5`; returned artifacts `21`; enabled,
+    zero-state, frozen-state, and reset-each-update shams all passed. First
+    EBRAINS return was incomplete and remains preserved as non-evidence at
+    `controlled_test_output/tier4_31d_hw_20260506_incomplete_return/`.
 ```
 
 Tier 5.19a result:
@@ -6623,8 +6624,9 @@ Tests: test-temporal-state, test-profiles, test, test-lifecycle, test-lifecycle-
 Boundary: local source/runtime host evidence only, not hardware
 ```
 
-Next: Re-run prepared Tier 4.31d native temporal-substrate hardware smoke
-      revision 0003 before any repeatability or resource-characterization claim.
+Next: Tier 4.31e native replay/eligibility decision closeout, then Tier 4.32
+      mapping/resource model if no measured blocker demands immediate native
+      replay-buffer or eligibility-trace implementation.
 ```
 
 Detailed Tier 5.19 contract:
