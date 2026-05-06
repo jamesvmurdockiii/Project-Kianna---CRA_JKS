@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-05-06T02:51:52.680612+00:00",
+  "source_generated_at_utc": "2026-05-06T02:51:44+00:00",
+  "registry_entry_id": "tier4_30g_lifecycle_task_benefit_resource_bridge",
+  "tier": "Tier 4.30g - Lifecycle Task-Benefit / Resource Bridge",
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/tier4_30g_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/tier4_30g_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/tier4_30g_mode_summary.csv",
+  "canonical": true,
+  "claim": "A bounded lifecycle-derived feature bridge locally separates the enabled lifecycle mode from sham controls on a compact delayed task and declares the resource/readback contract required before hardware packaging.",
+  "caveat": "Local contract/reference evidence only; not a hardware task-benefit pass, not autonomous lifecycle-to-learning MCPL, not multi-chip scaling, and not a lifecycle baseline freeze."
+}

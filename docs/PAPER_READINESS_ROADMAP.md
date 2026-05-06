@@ -6234,11 +6234,13 @@ ridge lag-only beat lag+state probes.
 Tier 5.19 / 7.0e is complete. The narrowed Tier 5.19c gate froze v2.2 for
 bounded host-side fading-memory temporal state only; bounded nonlinear
 recurrence, universal benchmark superiority, and native/on-chip temporal
-dynamics remain unproven. Tier 4.30-readiness through Tier 4.30f then advanced
+dynamics remain unproven. Tier 4.30-readiness through Tier 4.30g then advanced
 the lifecycle-native path on top of `CRA_NATIVE_MECHANISM_BRIDGE_v0.3`, with
-v2.2 retained as a software reference boundary only. The current next hardware
-gate is Tier 4.30g lifecycle task-benefit/resource bridge definition. Do not
-move Tier 7.0 benchmark workloads to hardware under the current interface.
+v2.2 retained as a software reference boundary only. Tier 4.30g is currently a
+local task-benefit/resource bridge contract, not hardware task-benefit evidence.
+The current next hardware gate is the Tier 4.30g hardware task-benefit/resource
+package/run. Do not move Tier 7.0 benchmark workloads to hardware under the
+current interface.
 ```
 
 Paper implication:
@@ -6289,9 +6291,12 @@ Near-term roadmap insertion:
 12. Tier 4.30e multi-core lifecycle hardware smoke. COMPLETE.
 13. Tier 4.30f lifecycle sham-control hardware subset. COMPLETE: hardware pass
     after ingest.
-14. Tier 4.30g lifecycle task-benefit/resource bridge. NEXT: define before any
-    new EBRAINS package; no lifecycle native baseline freeze until a task effect
-    and resource/readback accounting pass.
+14. Tier 4.30g lifecycle task-benefit/resource bridge local contract/reference.
+    COMPLETE: 9/9 local pass with enabled gate open, all controls gated closed,
+    and resource/readback fields declared.
+15. Tier 4.30g hardware task-benefit/resource bridge. NEXT: prepare/run only
+    after hardware runner/source checks; no lifecycle native baseline freeze
+    until hardware task effect and resource/readback accounting pass.
 ```
 
 Tier 5.19a result:
@@ -6489,7 +6494,7 @@ Boundary: not lifecycle task benefit, not sham-control success, not speedup,
           not multi-chip scaling, not v2.2 temporal-state migration, and not a
           lifecycle baseline freeze.
 Next: Tier 4.30f lifecycle sham-control hardware subset (completed; superseded
-by Tier 4.30g task-benefit/resource bridge definition).
+by Tier 4.30g task-benefit/resource bridge local pass and pending hardware bridge).
 ```
 
 Tier 4.30f result:
@@ -6522,10 +6527,31 @@ Boundary: compact lifecycle sham-control hardware subset only, not full Tier 6.3
           hardware, not lifecycle task-benefit evidence, not speedup, not
           multi-chip scaling, not v2.2 temporal-state migration, and not a
           lifecycle baseline freeze.
-Next: Tier 4.30g lifecycle task-benefit/resource bridge. It must connect native
-      lifecycle state to a task-bearing capsule, compare enabled lifecycle
-      against predeclared controls, record resource/readback costs, and either
-      justify a narrow task-effect claim or narrow the organism claim.
+Next: Tier 4.30g lifecycle task-benefit/resource bridge local contract/reference
+      has passed. Prepare/run the hardware task-benefit/resource bridge only
+      after hardware runner/source checks preserve the same enabled/control
+      contract and resource/readback accounting.
+```
+
+Tier 4.30g result:
+
+```text
+Output: controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/
+Runner: experiments/tier4_30g_lifecycle_task_benefit_resource_bridge.py
+Runner revision: tier4_30g_lifecycle_task_benefit_resource_bridge_20260506_0001
+Status: local contract/reference pass
+Criteria: 9/9
+Scope: enabled lifecycle versus fixed-pool, random-replay, active-mask-shuffle,
+       no-trophic, and no-dopamine/no-plasticity controls.
+Result: enabled bridge gate opened with tail accuracy 1.0; all five controls
+        closed the bridge gate with control tail-accuracy ceiling 0.375;
+        enabled-control tail margin 0.625; resource/readback fields declared.
+Boundary: local contract/reference only, not hardware task-benefit evidence,
+          not autonomous lifecycle-to-learning MCPL, not speedup, not
+          multi-chip scaling, not v2.2 temporal-state migration, and not a
+          lifecycle baseline freeze.
+Next: Tier 4.30g hardware task-benefit/resource bridge package/run after
+      hardware runner/source validation.
 ```
 
 Detailed Tier 5.19 contract:

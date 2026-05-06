@@ -14,58 +14,19 @@ mechanism promotion, lifecycle/ecology evidence, and native SpiNNaker runtime
 migration. The generated registry is the authority for which results are
 canonical.
 
-The current canonical evidence trail contains **47 registered evidence bundles**
-with all expected artifacts present and all criteria passing:
+The current canonical evidence trail contains **60 registered evidence bundles**
+with all expected artifacts present and all criteria passing. The generated
+registry is the source of truth for the full list:
 
 ```text
-1. Tier 1 - sanity tests
-2. Tier 2 - learning proof tests
-3. Tier 3 - architecture ablation tests
-4. Tier 4.10 - population scaling
-5. Tier 4.10b - hard population scaling
-6. Tier 4.11 - domain transfer
-7. Tier 4.12 - backend parity
-8. Tier 4.13 - SpiNNaker Hardware Capsule
-9. Tier 4.14 - Hardware Runtime Characterization
-10. Tier 4.15 - SpiNNaker Hardware Multi-Seed Repeat
-11. Tier 5.1 - External Baselines
-12. Tier 5.2 - Learning Curve / Run-Length Sweep
-13. Tier 5.3 - CRA Failure Analysis / Learning Dynamics Debug
-14. Tier 5.4 - Delayed-Credit Confirmation
-15. Tier 4.16a - Repaired Delayed-Cue Hardware Repeat
-16. Tier 4.16b - Repaired Hard-Switch Hardware Repeat
-17. Tier 4.18a - v0.7 Chunked Hardware Runtime Baseline
-18. Tier 4.26 - Four-Core Distributed Smoke
-19. Tier 4.27a - Four-Core Runtime Resource / Timing Characterization
-20. Tier 4.27e - Two-Core MCPL Round-trip Smoke
-21. Tier 4.27f - Three-State-Core MCPL Lookup Smoke
-22. Tier 4.27g - SDP-vs-MCPL Protocol Comparison
-23. Tier 4.28a - Four-Core MCPL Repeatability
-24. Tier 4.28b - Delayed-Cue Four-Core MCPL Hardware Probe
-25. Tier 4.28c - Delayed-Cue Three-Seed Repeatability
-26. Tier 4.28d - Hard Noisy Switching Four-Core MCPL
-27. Tier 4.28e - Native Failure-Envelope Report Point A
-28. Tier 4.28e - Native Failure-Envelope Report Point C
-29. Tier 4.29a - Native Keyed-Memory Overcapacity Gate
-30. Tier 5.5 - Expanded Baseline Suite
-31. Tier 5.6 - Baseline Hyperparameter Fairness Audit
-32. Tier 5.7 - Compact Regression After Promoted Tuning
-33. Tier 5.12a - Predictive Task-Pressure Validation
-34. Tier 5.12c - Predictive Context Sham-Separation Repair
-35. Tier 5.12d - Predictive-Context Compact Regression
-36. Tier 6.1 - Software Lifecycle / Self-Scaling Benchmark
-37. Tier 6.3 - Lifecycle Sham-Control Suite
-38. Tier 6.4 - Circuit Motif Causality
-39. Tier 4.29b - Native Routing/Composition Gate
-40. Tier 4.29c - Native Predictive Binding Bridge
-41. Tier 4.29d - Native Self-Evaluation Bridge
-42. Tier 4.29e - Native Replay/Consolidation Bridge
-43. Tier 4.29f - Compact Native Mechanism Regression
-44. Tier 7.0 - Standard Dynamical Benchmark Suite
-45. Tier 7.0b - Continuous-Regression Failure Analysis
-46. Tier 7.0c - Bounded Continuous Readout / Interface Repair
-47. Tier 7.0d - State-Specific Continuous Interface / Claim-Narrowing
+controlled_test_output/STUDY_REGISTRY.json
+controlled_test_output/STUDY_REGISTRY.csv
+STUDY_EVIDENCE_INDEX.md
 ```
+
+Do not manually curate this section as a second registry. When canonical evidence
+changes, update `experiments/evidence_registry.py` and regenerate the registry
+with `python3 experiments/evidence_registry.py` or `make validate`.
 
 Completed noncanonical diagnostics:
 
@@ -8459,7 +8420,9 @@ Next step:
 ```text
 Tier 4.30e multi-core lifecycle hardware smoke passed and has been ingested.
 Tier 4.30f lifecycle sham-control hardware subset also passed after ingest.
-Next: define Tier 4.30g lifecycle task-benefit/resource bridge.
+Tier 4.30g lifecycle task-benefit/resource bridge local contract/reference also
+passed. Next: prepare/run the Tier 4.30g hardware task-benefit/resource bridge
+after hardware runner/source validation.
 ```
 
 ### Tier 4.30e - Multi-Core Lifecycle Hardware Smoke
@@ -8686,9 +8649,108 @@ no_dopamine_or_plasticity_control separated trophic_checksum from enabled:
 Next:
 
 ```text
-Tier 4.30g should be defined as the compact lifecycle task-benefit/resource
-bridge. It must test whether enabled lifecycle state improves a task-bearing
-hardware capsule versus predeclared controls, while recording resource/readback
-accounting. Do not freeze a lifecycle native baseline until controls, resource
-accounting, and at least one useful task-effect gate pass.
+Tier 4.30g local contract/reference has now passed. The next valid step is the
+Tier 4.30g hardware task-benefit/resource bridge package/run, preserving the
+same enabled/control contract, returned resource/readback accounting, and narrow
+claim boundary. Do not freeze a lifecycle native baseline until hardware task
+effect, controls, and resource accounting pass.
+```
+
+### Tier 4.30g - Lifecycle Task-Benefit / Resource Bridge
+
+Status: LOCAL CONTRACT / REFERENCE PASS.
+
+Question:
+
+```text
+Can native lifecycle state be bridged into a task-bearing path with controls
+and resource accounting before hardware packaging?
+```
+
+Hypothesis:
+
+```text
+The enabled lifecycle mode opens the bounded task bridge while sham controls
+close it, producing a measurable local task separation and a predeclared
+hardware resource contract.
+```
+
+Null hypothesis:
+
+```text
+Lifecycle state does not produce a specific task-path separation, or the
+separation is indistinguishable from sham controls or missing resource fields.
+```
+
+Mechanism under test:
+
+```text
+Lifecycle summary -> bounded bridge gate -> task feature path:
+context_slot * route_slot * lifecycle_gated_memory_slot * cue
+```
+
+Controls:
+
+```text
+enabled
+fixed_static_pool_control
+random_event_replay_control
+active_mask_shuffle_control
+no_trophic_pressure_control
+no_dopamine_or_plasticity_control
+```
+
+Local result:
+
+```text
+Output: controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/
+Runner: experiments/tier4_30g_lifecycle_task_benefit_resource_bridge.py
+Runner revision: tier4_30g_lifecycle_task_benefit_resource_bridge_20260506_0001
+Status: pass
+Criteria: 9/9
+Enabled tail accuracy: 1.0
+Control tail-accuracy ceiling: 0.375
+Enabled-control tail margin: 0.625
+Resource/readback fields: declared for every mode
+```
+
+Pass means:
+
+```text
+Tier 4.30f hardware evidence is present
+canonical sham modes are preserved
+enabled bridge gate opens
+all control bridge gates close
+enabled task tail accuracy >= 0.875
+control tail-accuracy ceiling <= 0.625
+enabled-control tail margin >= 0.25
+resource/write/readback fields are declared
+claim boundary preserves hardware/autonomy/baseline nonclaims
+```
+
+Fail means:
+
+```text
+Tier 4.30f prerequisite is missing
+mode set changes silently
+any control opens the task gate
+enabled task path does not separate from controls
+resource accounting is incomplete
+claim boundary overstates hardware or lifecycle-baseline evidence
+```
+
+Boundary:
+
+```text
+Tier 4.30g is local contract/reference evidence only. It is not hardware
+task-benefit evidence, not autonomous lifecycle-to-learning MCPL, not speedup,
+not multi-chip scaling, not v2.2 temporal-state migration, and not a lifecycle
+baseline freeze.
+```
+
+Next:
+
+```text
+Prepare and run the Tier 4.30g hardware task-benefit/resource bridge only after
+adding and validating the hardware runner/source checks.
 ```

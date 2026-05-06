@@ -677,15 +677,32 @@ ability.
     lifecycle task-benefit, full Tier 6.3 hardware, speedup, multi-chip scaling,
     v2.2 temporal migration, or a lifecycle baseline freeze.
 
-44. **CURRENT ACTIVE STEP** - Tier 4.30g lifecycle task-benefit/resource bridge:
-    define and run a compact native hardware capsule that connects lifecycle
-    state to a task-bearing path and compares enabled lifecycle against the
-    predeclared controls that survived 4.30f. This must include resource and
-    readback accounting, exact claim boundaries, local contract/source checks
-    before EBRAINS upload, and a fail-safe decision to narrow the organism
-    claim if lifecycle does not improve a task metric.
+44. ✅ **COMPLETE** - Tier 4.30g lifecycle task-benefit/resource bridge local
+    contract/reference:
+    defined the bounded bridge from native lifecycle summary state into a
+    task-bearing path before hardware packaging. Enabled lifecycle opened the
+    bridge gate; fixed-pool, random replay, active-mask shuffle, no-trophic,
+    and no-dopamine/no-plasticity controls closed it.
+    Output:
+    `controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/`.
+    Runner: `experiments/tier4_30g_lifecycle_task_benefit_resource_bridge.py`.
+    Criteria: 9/9.
+    Result: enabled tail accuracy `1.0`; control tail-accuracy ceiling `0.375`;
+    enabled-control margin `0.625`; resource/readback fields declared.
+    Boundary: local contract/reference only; not hardware task-benefit
+    evidence, not autonomous lifecycle-to-learning MCPL, not speedup, not
+    multi-chip scaling, not v2.2 temporal migration, and not a lifecycle
+    baseline freeze.
 
-45. Freeze `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` only if lifecycle telemetry,
+45. **CURRENT ACTIVE STEP** - Tier 4.30g hardware task-benefit/resource bridge:
+    implement the hardware runner/source checks and prepare a fresh EBRAINS
+    package only if the package preserves the exact local 4.30g contract:
+    enabled lifecycle versus the same predeclared controls, same bounded
+    task-bearing gate, returned resource/readback accounting, and exact claim
+    boundaries. Hardware pass is required before any lifecycle task-effect
+    claim or lifecycle-native baseline freeze.
+
+46. Freeze `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` only if lifecycle telemetry,
     controls, resource accounting, and at least one useful task effect pass. If
     lifecycle does not help, narrow the organism claim.
 
@@ -950,8 +967,9 @@ After each completed run or design tier:
 The next concrete action is:
 
 ```text
-Define Tier 4.30g lifecycle task-benefit/resource bridge before preparing any
-new EBRAINS upload package.
+Prepare and run the Tier 4.30g hardware task-benefit/resource bridge, but only
+after adding and validating the hardware runner/source checks against the local
+4.30g contract.
 ```
 
 Current reference state:
@@ -996,6 +1014,12 @@ Returned artifacts preserved: 35
 Sham modes: enabled, fixed_static_pool_control, random_event_replay_control,
 active_mask_shuffle_control, no_trophic_pressure_control,
 no_dopamine_or_plasticity_control
+Lifecycle task-benefit/resource bridge: Tier 4.30g LOCAL PASS, 9/9
+Output: controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/
+Runner: experiments/tier4_30g_lifecycle_task_benefit_resource_bridge.py
+Enabled tail accuracy: 1.0
+Control tail-accuracy ceiling: 0.375
+Resource/readback fields: declared
 Temporal substrate status: fading-memory promoted in software only; nonlinear
 recurrence and native/on-chip temporal dynamics remain unproven
 ```
@@ -1004,12 +1028,14 @@ Purpose:
 
 ```text
 The multi-core lifecycle hardware smoke and compact lifecycle sham-control
-hardware subset both passed and have been ingested. The next action is not a
-baseline freeze. Define Tier 4.30g as the smallest hardware task-benefit/resource
-bridge that can test whether lifecycle state helps a task metric beyond the
-predeclared controls. Keep the boundary strict: no speedup claim, no multi-chip
-claim, no v2.2 temporal-migration claim, and no lifecycle baseline freeze until
-the control layer, resource accounting, and task-effect evidence justify it.
+hardware subset both passed and have been ingested. The Tier 4.30g local
+task-benefit/resource bridge also passed. The next action is not a baseline
+freeze. Prepare and run the hardware version of the 4.30g bridge so the same
+enabled/control task contract is tested on real SpiNNaker with returned
+resource/readback accounting. Keep the boundary strict: no speedup claim, no
+multi-chip claim, no v2.2 temporal-migration claim, and no lifecycle baseline
+freeze until the hardware control layer, resource accounting, and task-effect
+evidence justify it.
 ```
 
 Required coverage:

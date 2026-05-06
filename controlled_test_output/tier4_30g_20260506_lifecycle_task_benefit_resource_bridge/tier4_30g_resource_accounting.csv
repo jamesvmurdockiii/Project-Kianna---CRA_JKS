@@ -1,0 +1,7 @@
+mode,lifecycle_event_count,task_event_count,delay_steps,expected_context_writes,expected_route_writes,expected_memory_writes,expected_schedule_uploads,expected_runtime_cores,expected_lifecycle_readbacks,expected_task_readbacks,bridge_gate,bridge_gate_raw,lifecycle_payload_len,lifecycle_readback_bytes,task_feature_energy_raw,task_tail_accuracy,task_tail_mse
+enabled,32,24,2,1,1,1,24,5,1,4,1,32768,68,,786432,1.0,0.0010986328125
+fixed_static_pool_control,32,24,2,1,1,1,24,5,1,4,0,0,68,,0,0.375,1.0482651987113059
+random_event_replay_control,32,24,2,1,1,1,24,5,1,4,0,0,68,,0,0.375,1.0482651987113059
+active_mask_shuffle_control,32,24,2,1,1,1,24,5,1,4,0,0,68,,0,0.375,1.0482651987113059
+no_trophic_pressure_control,32,24,2,1,1,1,24,5,1,4,0,0,68,,0,0.375,1.0482651987113059
+no_dopamine_or_plasticity_control,32,24,2,1,1,1,24,5,1,4,0,0,68,,0,0.375,1.0482651987113059

@@ -27,12 +27,18 @@ Latest active hardware-facing tier:
 
 ```text
 Tier 4.30g - Lifecycle Task-Benefit / Resource Bridge
-  Status: NEXT CONTRACT TO DEFINE; no EBRAINS package prepared yet.
+  Status: LOCAL CONTRACT PASS; hardware package not prepared yet.
+  Output: controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/
+  Runner: experiments/tier4_30g_lifecycle_task_benefit_resource_bridge.py
+  Criteria: 9/9
   Purpose: connect native lifecycle state to a task-bearing capsule and compare
     enabled lifecycle against predeclared controls while recording
     resource/readback accounting.
-  Boundary: future contract only until implemented; no lifecycle baseline
-    freeze unless task effect, controls, and resource evidence pass.
+  Local result: enabled gate open with tail accuracy 1.0; all five controls
+    gate closed with tail accuracy ceiling 0.375; resource fields declared.
+  Boundary: local contract/reference only until hardware package/run returns;
+    no lifecycle baseline freeze unless hardware task effect, controls, and
+    resource evidence pass.
 
 Tier 4.30f - Lifecycle Sham-Control Hardware Subset
   Status: HARDWARE PASS, INGESTED
@@ -114,8 +120,8 @@ runner = experiments/tier4_30f_lifecycle_sham_hardware_subset.py
 Latest prepared EBRAINS upload package:
 
 ```text
-None. Define/pass the Tier 4.30g local contract/source gate before creating the
-next upload package.
+None. Tier 4.30g local contract passed. Create the next upload package only
+after adding and validating the 4.30g hardware runner/source checks.
 ```
 
 Tier 4.28e Point A passed after ingest at:
@@ -469,9 +475,9 @@ For the current custom-runtime job, use the generated source-only folder under
 
 ## Current EBRAINS Command
 
-No EBRAINS package is currently pending after Tier 4.30f ingest. The next upload
-package should not be created until Tier 4.30g is defined and passes local
-contract/source checks.
+No EBRAINS package is currently pending after the Tier 4.30g local contract
+pass. The next upload package should not be created until the 4.30g hardware
+runner/source checks are implemented and validated.
 
 Last Tier 4.30f command used:
 

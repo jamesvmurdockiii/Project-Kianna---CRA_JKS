@@ -1,0 +1,7 @@
+mode,bridge_gate,bridge_gate_raw,structural_ok,trophic_ok,trophic_floor,trophic_gap_from_enabled,feature_reason,context_slot_raw,route_slot_raw,memory_slot_raw,cue_gain_raw
+enabled,1,32768,True,True,461851,0,structural_and_trophic_ready,32768,32768,32768,32768
+fixed_static_pool_control,0,0,False,False,461851,315382,lifecycle_control_blocks_task_feature,32768,32768,0,0
+random_event_replay_control,0,0,False,False,461851,368547,lifecycle_control_blocks_task_feature,32768,32768,0,0
+active_mask_shuffle_control,0,0,False,False,461851,364371,lifecycle_control_blocks_task_feature,32768,32768,0,0
+no_trophic_pressure_control,0,0,True,False,461851,130467,lifecycle_control_blocks_task_feature,32768,32768,0,0
+no_dopamine_or_plasticity_control,0,0,True,False,461851,9001,lifecycle_control_blocks_task_feature,32768,32768,0,0

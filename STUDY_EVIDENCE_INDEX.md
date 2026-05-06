@@ -10,10 +10,10 @@ Research narrative companions:
 - `docs/WHITEPAPER.md`
 - `docs/CODEBASE_MAP.md`
 
-- Registry generated: `2026-05-06T02:13:08.878273+00:00`
+- Registry generated: `2026-05-06T02:51:52.980024+00:00`
 - Registry status: **PASS**
 - Core validation suite: `12` tests
-- Expanded evidence suite: `58` entries; see the canonical evidence table below for the exact current tier list.
+- Expanded evidence suite: `60` entries; see the canonical evidence table below for the exact current tier list.
 
 ## Canonical Claims
 
@@ -77,6 +77,8 @@ Research narrative companions:
 | `tier4_30c_multicore_lifecycle_split` | Phase E lifecycle-native multi-core split contract/reference | **PASS** | Lifecycle state ownership can be split across context, route, memory, learning, and lifecycle roles with explicit MCPL/multicast lifecycle messages, active-mask sync, and reference parity. | Local contract/reference evidence only; not C runtime implementation, not EBRAINS hardware evidence, not lifecycle task benefit, and not a lifecycle baseline freeze. |
 | `tier4_30d_lifecycle_runtime_source_audit` | Phase E lifecycle-native runtime source/local C gate before multi-core hardware smoke | **PASS** | The custom runtime source surface represents the Tier 4.30c five-core lifecycle split with a dedicated lifecycle_core profile, lifecycle MCPL stubs/counters, ownership guards, and local C host tests. | Local source/runtime host evidence only; not EBRAINS hardware evidence, not task benefit, not speedup, not multi-chip scaling, not v2.2 temporal migration, and not a lifecycle baseline freeze. |
 | `tier4_30e_multicore_lifecycle_hardware_smoke` | Phase E lifecycle-native five-profile hardware smoke before sham-control subset | **PASS** | The five-profile lifecycle runtime surface built, loaded, and executed on real SpiNNaker with profile ownership guards, duplicate/stale lifecycle rejection, and exact canonical/boundary lifecycle parity. | Hardware smoke only; not lifecycle task benefit, not lifecycle sham-control success, not speedup, not multi-chip scaling, not v2.2 temporal migration, and not a lifecycle baseline freeze. |
+| `tier4_30f_lifecycle_sham_hardware_subset` | Phase E lifecycle-native sham-control hardware subset before task-benefit bridge | **PASS** | The five-profile lifecycle runtime executed the enabled lifecycle path and five predeclared sham-control modes on real SpiNNaker with exact expected summaries, no fallback, and preserved returned build/load/readback artifacts. | Hardware sham-control subset only; not lifecycle task benefit, not autonomous lifecycle-to-learning MCPL, not speedup, not multi-chip scaling, not v2.2 temporal migration, and not a lifecycle baseline freeze. |
+| `tier4_30g_lifecycle_task_benefit_resource_bridge` | Phase E lifecycle-native local task-benefit/resource bridge before hardware package | **PASS** | A bounded lifecycle-derived feature bridge locally separates the enabled lifecycle mode from sham controls on a compact delayed task and declares the resource/readback contract required before hardware packaging. | Local contract/reference evidence only; not a hardware task-benefit pass, not autonomous lifecycle-to-learning MCPL, not multi-chip scaling, and not a lifecycle baseline freeze. |
 
 ## Canonical Artifacts
 
@@ -140,6 +142,8 @@ Research narrative companions:
 | `tier4_30c_multicore_lifecycle_split` | `controlled_test_output/tier4_30c_20260505_multicore_lifecycle_split/tier4_30c_results.json` | `controlled_test_output/tier4_30c_20260505_multicore_lifecycle_split/tier4_30c_report.md` | `controlled_test_output/tier4_30c_20260505_multicore_lifecycle_split/tier4_30c_scenario_summary.csv` |
 | `tier4_30d_lifecycle_runtime_source_audit` | `controlled_test_output/tier4_30d_20260505_lifecycle_runtime_source_audit/tier4_30d_results.json` | `controlled_test_output/tier4_30d_20260505_lifecycle_runtime_source_audit/tier4_30d_report.md` | `` |
 | `tier4_30e_multicore_lifecycle_hardware_smoke` | `controlled_test_output/tier4_30e_hw_20260505_hardware_pass_ingested/tier4_30e_hw_results.json` | `controlled_test_output/tier4_30e_hw_20260505_hardware_pass_ingested/tier4_30e_hw_report.md` | `` |
+| `tier4_30f_lifecycle_sham_hardware_subset` | `controlled_test_output/tier4_30f_hw_20260505_hardware_pass_ingested/tier4_30f_hw_results.json` | `controlled_test_output/tier4_30f_hw_20260505_hardware_pass_ingested/tier4_30f_hw_report.md` | `` |
+| `tier4_30g_lifecycle_task_benefit_resource_bridge` | `controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/tier4_30g_results.json` | `controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/tier4_30g_report.md` | `controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/tier4_30g_mode_summary.csv` |
 
 ## Selected Noncanonical Diagnostics
 
@@ -248,4 +252,4 @@ Research narrative companions:
 
 - Missing expected artifacts: `0`
 - Failed canonical criteria: `0`
-- Noncanonical output folders preserved: `295`
+- Noncanonical output folders preserved: `294`

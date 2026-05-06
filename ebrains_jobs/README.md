@@ -69,8 +69,9 @@ Returned artifacts preserved: 35
 
 Boundary: this is a compact lifecycle sham-control hardware subset, not full
 Tier 6.3 hardware, not lifecycle task-benefit evidence, not speedup evidence,
-not multi-chip scaling, and not a baseline freeze. No new EBRAINS package is
-pending until Tier 4.30g is defined and passes local contract/source checks.
+not multi-chip scaling, and not a baseline freeze. Tier 4.30g local contract now
+passes; no new EBRAINS package is pending until the 4.30g hardware
+runner/source checks are implemented and validated.
 
 ### `cra_430e`
 
