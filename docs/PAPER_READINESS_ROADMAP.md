@@ -6231,14 +6231,14 @@ value beyond lag regression and classified the benchmark path as
 `lag_regression_explains_benchmark`: the best state-specific online candidate
 did not clear the lag-only margin or sham-separation gates, and train-prefix
 ridge lag-only beat lag+state probes.
-The current next gate is Tier 5.19 / 7.0e continuous temporal dynamics
-substrate contract. Tier 7.0d exposed a general missing substrate: CRA needs a
-bounded fading-memory / nonlinear recurrent temporal-state mechanism and local
-continuous prediction interface before the standard continuous benchmark path
-can be considered for promotion or hardware migration. Do not move Tier 7.0
-benchmark workloads to hardware under the current interface. Do not jump
-directly to lifecycle-native hardware until the temporal-substrate decision is
-made.
+Tier 5.19 / 7.0e is complete. The narrowed Tier 5.19c gate froze v2.2 for
+bounded host-side fading-memory temporal state only; bounded nonlinear
+recurrence, universal benchmark superiority, and native/on-chip temporal
+dynamics remain unproven. Tier 4.30-readiness through Tier 4.30e then advanced
+the lifecycle-native path on top of `CRA_NATIVE_MECHANISM_BRIDGE_v0.3`, with
+v2.2 retained as a software reference boundary only. The current next hardware
+gate is Tier 4.30f lifecycle sham-control hardware subset run/ingest. Do not
+move Tier 7.0 benchmark workloads to hardware under the current interface.
 ```
 
 Paper implication:
@@ -6283,7 +6283,12 @@ Near-term roadmap insertion:
    COMPLETE: runtime lifecycle static-pool surface and local host/schema parity
    passed.
 9. Tier 4.30b-hw single-core lifecycle active-mask/lineage hardware smoke.
-   CURRENT.
+   COMPLETE.
+10. Tier 4.30c multi-core lifecycle split contract/reference. COMPLETE.
+11. Tier 4.30d lifecycle runtime source/local C audit. COMPLETE.
+12. Tier 4.30e multi-core lifecycle hardware smoke. COMPLETE.
+13. Tier 4.30f lifecycle sham-control hardware subset. PREPARED; awaiting
+    EBRAINS run/ingest.
 ```
 
 Tier 5.19a result:
@@ -6480,7 +6485,30 @@ Purpose: five-profile lifecycle hardware smoke over context_core, route_core,
 Boundary: not lifecycle task benefit, not sham-control success, not speedup,
           not multi-chip scaling, not v2.2 temporal-state migration, and not a
           lifecycle baseline freeze.
-Next: Tier 4.30f lifecycle sham-control hardware subset.
+Next: run and ingest the prepared Tier 4.30f lifecycle sham-control hardware
+subset.
+```
+
+Tier 4.30f prepared state:
+
+```text
+Prepared output: controlled_test_output/tier4_30f_hw_20260505_prepared/
+Runner: experiments/tier4_30f_lifecycle_sham_hardware_subset.py
+Runner revision: tier4_30f_lifecycle_sham_hardware_subset_20260505_0001
+Upload folder: ebrains_jobs/cra_430f
+Prepared status: prepared
+Prepared criteria: 8/8
+JobManager command:
+cra_430f/experiments/tier4_30f_lifecycle_sham_hardware_subset.py --mode run-hardware --output-dir tier4_30f_hw_job_output
+Scope: enabled, fixed-pool, random-event replay, active-mask shuffle,
+       no-trophic-pressure, and no-dopamine/no-plasticity controls on the
+       canonical 32-event lifecycle trace.
+Boundary: prepared source bundle only; not hardware evidence until returned
+          artifacts pass ingest. If it passes, it is a compact lifecycle
+          sham-control hardware subset only, not full Tier 6.3 hardware, not
+          lifecycle task-benefit evidence, not speedup, not multi-chip scaling,
+          not v2.2 temporal-state migration, and not a lifecycle baseline
+          freeze.
 ```
 
 Detailed Tier 5.19 contract:

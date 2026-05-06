@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-05T18:52:03-04:00.
+Last updated: 2026-05-05T21:20:00-04:00.
 
 Current repo root:
 
@@ -103,7 +103,18 @@ FROZEN: CRA_NATIVE_MECHANISM_BRIDGE_v0.3
         Boundary: hardware smoke only; not lifecycle task benefit, not
         lifecycle sham-control success, not speedup, not multi-chip scaling,
         not v2.2 temporal migration, and not a lifecycle baseline freeze.
-  Next: Design/prepare Tier 4.30f lifecycle sham-control hardware subset.
+  Next: Run/ingest Tier 4.30f lifecycle sham-control hardware subset.
+        Prepared package: `ebrains_jobs/cra_430f`.
+        Prepared output: `controlled_test_output/tier4_30f_hw_20260505_prepared/`.
+        Prepared criteria: 8/8.
+        JobManager command:
+        `cra_430f/experiments/tier4_30f_lifecycle_sham_hardware_subset.py --mode run-hardware --output-dir tier4_30f_hw_job_output`.
+        Scope: enabled, fixed_static_pool_control, random_event_replay_control,
+        active_mask_shuffle_control, no_trophic_pressure_control, and
+        no_dopamine_or_plasticity_control over the canonical 32-event lifecycle
+        trace.
+        Boundary: prepared source bundle only; not hardware evidence until
+        returned Tier 4.30f artifacts pass ingest.
         Lifecycle hardware layers initially on CRA_NATIVE_MECHANISM_BRIDGE_v0.3,
         with v2.2 as a software reference boundary only. Temporal-state hardware
         migration is not automatic from v2.2; it requires a separately defined
@@ -586,14 +597,17 @@ Local build capability (established 2026-05-02):
 
 Immediate next steps:
 
-1. Design/prepare Tier 4.30f lifecycle sham-control hardware subset. Keep it
-   small, reviewer-defensible, and explicitly scoped to lifecycle control
-   separation after the Tier 4.30e smoke pass. Do not freeze a lifecycle-native
-   baseline yet.
-2. Do not migrate v2.2 temporal fading-memory state to hardware merely because
+1. Run the prepared Tier 4.30f lifecycle sham-control hardware subset on
+   EBRAINS/SpiNNaker, download returned artifacts, and ingest with the
+   tier-specific `--mode ingest` path. Do not claim 4.30f hardware evidence
+   from the prepared package alone.
+2. Keep sham/control commands behavior-backed. A readback flag alone is not
+   reviewer-defensible; local C host tests must prove the control changes the
+   intended counters/checksums before a package is uploaded.
+3. Do not migrate v2.2 temporal fading-memory state to hardware merely because
    v2.2 froze. Native temporal-state migration requires a separate readiness
    tier with fixed-point state equations and local parity.
-3. Keep public repo hygiene green before the next upload or commit: no
+4. Keep public repo hygiene green before the next upload or commit: no
    credentialed remotes, no `ebrains_jobs/` symlinks, no transient root output
    dirs, no generated host binaries, and `make validate` passing.
 

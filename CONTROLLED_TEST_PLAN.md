@@ -8458,7 +8458,8 @@ Next step:
 
 ```text
 Tier 4.30e multi-core lifecycle hardware smoke passed and has been ingested.
-Next: Tier 4.30f lifecycle sham-control hardware subset design/prepare.
+Next: run and ingest the prepared Tier 4.30f lifecycle sham-control hardware
+subset.
 ```
 
 ### Tier 4.30e - Multi-Core Lifecycle Hardware Smoke
@@ -8485,7 +8486,7 @@ Raw remote status: pass
 Ingest status: pass
 Hardware criteria: 75/75
 Ingest criteria: 5/5
-Returned artifacts preserved: 32
+Returned artifacts preserved: 31
 Task runtime: 0.21091535408049822 seconds
 ```
 
@@ -8531,4 +8532,105 @@ Boundary:
 Tier 4.30e is a hardware smoke gate only. It is not lifecycle task-benefit
 evidence, not lifecycle sham-control success, not speedup, not multi-chip
 scaling, not v2.2 temporal-state migration, and not a lifecycle baseline freeze.
+```
+
+### Tier 4.30f - Lifecycle Sham-Control Hardware Subset
+
+Status: PREPARED / AWAITING EBRAINS RUN.
+
+Question:
+
+```text
+Do the compact lifecycle sham controls produce expected behavioral separations
+on the real lifecycle_core hardware path, rather than merely toggling a
+readback flag?
+```
+
+Hypothesis:
+
+```text
+The five-profile lifecycle runtime can run a compact canonical sham-control
+subset on SpiNNaker. Enabled mode remains canonical, fixed-pool suppresses
+active-mask mutation, random replay and active-mask shuffle separate from the
+enabled lineage/mask path, no-trophic suppresses trophic/maturity mutation, and
+no-dopamine removes reward contribution from trophic updates.
+```
+
+Null hypothesis:
+
+```text
+At least one sham mode is cosmetic, does not alter the relevant lifecycle
+summary, diverges from the local fixed-point reference, or breaks the
+five-profile hardware/runtime path.
+```
+
+Mechanism under test:
+
+```text
+CMD_LIFECYCLE_SHAM_MODE plus lifecycle event execution on lifecycle_core.
+Runtime modes tested: enabled, fixed_static_pool_control,
+random_event_replay_control, active_mask_shuffle_control,
+no_trophic_pressure_control, no_dopamine_or_plasticity_control.
+```
+
+Prepared package:
+
+```text
+Runner: experiments/tier4_30f_lifecycle_sham_hardware_subset.py
+Prepared output: controlled_test_output/tier4_30f_hw_20260505_prepared/
+Upload folder: ebrains_jobs/cra_430f
+Prepared criteria: 8/8
+JobManager command:
+cra_430f/experiments/tier4_30f_lifecycle_sham_hardware_subset.py --mode run-hardware --output-dir tier4_30f_hw_job_output
+```
+
+Required controls:
+
+```text
+enabled reference
+fixed-pool sham
+random-event replay sham
+active-mask shuffle sham
+no-trophic-pressure sham
+no-dopamine/no-plasticity sham
+non-lifecycle profile guard
+profile readback guard
+```
+
+Pass means:
+
+```text
+real SpiNNaker target acquired
+all five profile builds pass
+all five profile loads pass
+all profile/readback criteria pass
+enabled mode matches canonical_32 reference
+each sham mode matches its local fixed-point expected summary
+control/event success and failure counts match expected accepted/invalid counts
+fixed-pool active-mask mutation counters remain suppressed
+control summaries separate from enabled on the predeclared field
+compact lifecycle payload length remains 68
+zero synthetic fallback
+returned artifacts ingest cleanly
+```
+
+Fail means:
+
+```text
+any profile fails to build/load
+profile IDs do not match the role map
+non-lifecycle profiles accept lifecycle readback
+enabled reference diverges
+any sham mode fails to match expected counters/checksums
+any control does not separate from enabled on its predeclared field
+target acquisition/readback fails
+```
+
+Boundary:
+
+```text
+Tier 4.30f is a compact lifecycle sham-control hardware subset. It is not full
+Tier 6.3 hardware, not lifecycle task-benefit evidence, not speedup, not
+multi-chip scaling, not v2.2 temporal-state migration, and not a lifecycle
+baseline freeze.
 ```

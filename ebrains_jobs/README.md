@@ -20,6 +20,41 @@ Public repository hygiene rules live in
 
 ## Current Jobs
 
+### `cra_430f`
+
+Status: **PREPARED / AWAITING EBRAINS RUN** for Tier 4.30f lifecycle
+sham-control hardware subset.
+
+Purpose: Verify that the lifecycle sham controls alter lifecycle behavior on
+real SpiNNaker hardware rather than merely toggling a readback flag. The job
+builds and loads the same five runtime profiles as Tier 4.30e, then runs the
+canonical 32-event lifecycle trace through enabled, fixed-pool, random-event
+replay, active-mask shuffle, no-trophic-pressure, and
+no-dopamine/no-plasticity modes.
+
+Upload folder:
+
+```text
+ebrains_jobs/cra_430f
+```
+
+JobManager command:
+
+```text
+cra_430f/experiments/tier4_30f_lifecycle_sham_hardware_subset.py --mode run-hardware --output-dir tier4_30f_hw_job_output
+```
+
+Prepared artifact:
+
+```text
+controlled_test_output/tier4_30f_hw_20260505_prepared/
+```
+
+Boundary: this is prepared source only until returned artifacts pass ingest. If
+it passes, it is a compact lifecycle sham-control hardware subset, not full
+Tier 6.3 hardware, not lifecycle task-benefit evidence, not speedup evidence,
+not multi-chip scaling, and not a baseline freeze.
+
 ### `cra_430e`
 
 Status: **HARDWARE PASS / INGESTED** for Tier 4.30e multi-core lifecycle
@@ -57,7 +92,7 @@ Returned metrics:
 - Ingest status: `pass`
 - Hardware criteria: `75/75`
 - Ingest criteria: `5/5`
-- Returned artifacts preserved: `32`
+- Returned artifacts preserved: `31`
 - Scenario parity: `canonical_32` and `boundary_64` passed
 - Duplicate/stale lifecycle event rejection: passed
 

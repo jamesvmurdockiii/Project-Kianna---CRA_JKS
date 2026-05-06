@@ -5,7 +5,7 @@ ledger is `STUDY_REGISTRY.json`; the compact table is `STUDY_REGISTRY.csv`.
 Older reruns, prepared capsules, debug probes, and baseline-frozen
 mechanism bundles outside the formal registry are preserved for audit.
 
-- Generated: `2026-05-05T22:57:41.706435+00:00`
+- Generated: `2026-05-06T01:28:57.840000+00:00`
 - Registry status: **PASS**
 - Canonical evidence entries: `58`
 - Expanded test-entry count: `58`; see the canonical evidence table below for the exact current tier list.
@@ -269,6 +269,7 @@ cite them as current study results unless promoted in `STUDY_REGISTRY.json`.
 | `controlled_test_output/tier4_29e_20260505_cra_429p_local_repair` | `superseded_rerun` | `unknown` | `None` |
 | `controlled_test_output/tier4_30b_hw_20260505_prepared` | `prepared_capsule` | `prepared` | `2026-05-05T20:39:00+00:00` |
 | `controlled_test_output/tier4_30e_hw_20260505_prepared` | `prepared_capsule` | `prepared` | `2026-05-05T22:20:02+00:00` |
+| `controlled_test_output/tier4_30f_hw_20260505_prepared` | `prepared_capsule` | `prepared` | `2026-05-06T01:27:19+00:00` |
 | `controlled_test_output/tier5_10_20260428_181304` | `superseded_rerun` | `pass` | `2026-04-28T22:13:10+00:00` |
 | `controlled_test_output/tier5_10_20260428_181322` | `superseded_rerun` | `fail` | `2026-04-28T22:45:43+00:00` |
 | `controlled_test_output/tier5_10b_20260428_193205` | `superseded_rerun` | `fail` | `2026-04-28T23:32:05+00:00` |

@@ -26,6 +26,22 @@ Tier 4.29f - Compact Native Mechanism Regression
 Latest active hardware-facing tier:
 
 ```text
+Tier 4.30f - Lifecycle Sham-Control Hardware Subset
+  Status: PREPARED / AWAITING EBRAINS RUN
+  Prepared output: controlled_test_output/tier4_30f_hw_20260505_prepared/
+  Upload folder: ebrains_jobs/cra_430f
+  Runner: experiments/tier4_30f_lifecycle_sham_hardware_subset.py
+  Prepared criteria: 8/8
+  Command:
+    cra_430f/experiments/tier4_30f_lifecycle_sham_hardware_subset.py --mode run-hardware --output-dir tier4_30f_hw_job_output
+  Scope: enabled, fixed-pool, random-event replay, active-mask shuffle,
+    no-trophic, and no-dopamine/no-plasticity controls on the canonical
+    32-event lifecycle trace.
+  Boundary: prepared source bundle only; no hardware claim until returned
+    artifacts pass ingest. Not lifecycle task-benefit evidence, not full
+    Tier 6.3 hardware, not speedup, not multi-chip scaling, and not a baseline
+    freeze.
+
 Tier 4.30e - Multi-Core Lifecycle Hardware Smoke
   Status: HARDWARE PASS, INGESTED
   Source prerequisite: Tier 4.30d local source/runtime host pass, 14/14
@@ -82,9 +98,10 @@ runner = experiments/tier4_30e_multicore_lifecycle_hardware_smoke.py
 Latest prepared EBRAINS upload package:
 
 ```text
-None pending after Tier 4.30e ingest. Prepare the next clean `cra_*` folder only
-after the Tier 4.30f lifecycle sham-control hardware subset is explicitly
-defined.
+Tier 4.30f - Lifecycle Sham-Control Hardware Subset
+upload = ebrains_jobs/cra_430f
+status = prepared, not hardware evidence yet
+runner = experiments/tier4_30f_lifecycle_sham_hardware_subset.py
 ```
 
 Tier 4.28e Point A passed after ingest at:
@@ -438,9 +455,13 @@ For the current custom-runtime job, use the generated source-only folder under
 
 ## Current EBRAINS Command
 
-There is no pending EBRAINS command after Tier 4.30e ingest. The next command
-must be emitted by the Tier 4.30f lifecycle sham-control hardware subset
-prepare step after its contract is checked.
+Tier 4.30f is prepared and awaiting EBRAINS execution. Upload the `cra_430f`
+folder itself and paste this command directly into the JobManager command
+field:
+
+```text
+cra_430f/experiments/tier4_30f_lifecycle_sham_hardware_subset.py --mode run-hardware --output-dir tier4_30f_hw_job_output
+```
 
 Last Tier 4.30e command used:
 
@@ -459,7 +480,7 @@ append:
 --spinnaker-hostname <board-host-or-ip>
 ```
 
-By default Tier 4.30e inherits the Tier 4.22i/4.22j target-acquisition path:
+By default Tier 4.30f inherits the Tier 4.22i/4.22j target-acquisition path:
 
 ```text
 --target-acquisition auto
@@ -500,7 +521,7 @@ Returned metrics:
 - Ingest status: `pass`
 - Hardware criteria: `75/75`
 - Ingest criteria: `5/5`
-- Preserved returned artifacts: `32`
+- Preserved returned artifacts: `31`
 - Task runtime: `0.21091535408049822` seconds
 - Profile loads: context core 4, route core 5, memory core 6, learning core 7,
   lifecycle core 8
@@ -1576,6 +1597,9 @@ planning, AGI, or macro eligibility evidence.
   returned evidence, and add local guards.
 - Do not rely on `#if defined(...)` for enum constants.
 - Keep local SpiNNaker stubs strict enough to catch EBRAINS compile failures.
+- Sham/control commands must be behavior-backed before EBRAINS upload. A
+  readback flag alone is not reviewer-defensible; add local C host tests that
+  prove the control changes the intended counters/checksums before packaging.
 - A visible EBRAINS/SpiNNaker machine config is not always required for pyNN
   bridge evidence, because the detector can be blind in this platform.
 - A raw custom-runtime pass must still prove build, board load, and command

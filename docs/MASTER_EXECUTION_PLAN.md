@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-05T18:52-04:00.
+Last updated: 2026-05-05T21:20-04:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -646,9 +646,23 @@ ability.
     success, not speedup, not multi-chip scaling, not v2.2 temporal migration,
     and not a lifecycle baseline freeze.
 
-43. Tier 4.30f lifecycle sham-control hardware subset: fixed max pool, random
-    event replay, mask shuffle, no trophic pressure, no dopamine/plasticity if
-    applicable. Keep it small but reviewer-defensible.
+43. **PREPARED / AWAITING EBRAINS** - Tier 4.30f lifecycle sham-control
+    hardware subset: fixed max pool, random event replay, mask shuffle, no
+    trophic pressure, and no dopamine/plasticity over the canonical 32-event
+    lifecycle trace. The C runtime now implements behavioral sham semantics:
+    fixed-pool suppresses active-mask mutation, random/mask controls remap
+    lifecycle event slots, no-trophic suppresses trophic/maturity mutation, and
+    no-dopamine removes the reward component from trophic updates. Local host
+    tests include canonical sham-reference parity.
+    Prepared output: `controlled_test_output/tier4_30f_hw_20260505_prepared/`.
+    Upload folder: `ebrains_jobs/cra_430f`.
+    Runner: `experiments/tier4_30f_lifecycle_sham_hardware_subset.py`.
+    JobManager command:
+    `cra_430f/experiments/tier4_30f_lifecycle_sham_hardware_subset.py --mode run-hardware --output-dir tier4_30f_hw_job_output`.
+    Boundary: prepared source bundle only; not hardware evidence until returned
+    artifacts pass Tier 4.30f ingest. This remains a compact sham-control
+    subset, not lifecycle task-benefit, full Tier 6.3 hardware, speedup,
+    multi-chip scaling, v2.2 temporal migration, or a lifecycle baseline freeze.
 
 44. Freeze `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` only if lifecycle telemetry,
     controls, resource accounting, and at least one useful task effect pass. If
@@ -915,7 +929,8 @@ After each completed run or design tier:
 The next concrete action is:
 
 ```text
-Design and prepare Tier 4.30f lifecycle sham-control hardware subset.
+Run Tier 4.30f lifecycle sham-control hardware subset on EBRAINS/SpiNNaker,
+download returned artifacts, and ingest them with the tier-specific ingest mode.
 ```
 
 Current reference state:
@@ -944,6 +959,12 @@ Ingest status: pass
 Board: 10.11.226.145
 Hardware criteria: 75/75
 Ingest criteria: 5/5
+Lifecycle sham-control subset: Tier 4.30f PREPARED
+Prepared output: controlled_test_output/tier4_30f_hw_20260505_prepared/
+Upload folder: ebrains_jobs/cra_430f
+Prepared criteria: 8/8
+JobManager command:
+cra_430f/experiments/tier4_30f_lifecycle_sham_hardware_subset.py --mode run-hardware --output-dir tier4_30f_hw_job_output
 Temporal substrate status: fading-memory promoted in software only; nonlinear
 recurrence and native/on-chip temporal dynamics remain unproven
 ```

@@ -1,0 +1,49 @@
+{
+  "claim_boundary": "Prepared source bundle only. Hardware evidence requires returned run-hardware artifacts from EBRAINS/SpiNNaker.",
+  "core_roles": {
+    "context": {
+      "app_id": 1,
+      "core": 4,
+      "profile": "context_core",
+      "profile_id": 4
+    },
+    "learning": {
+      "app_id": 4,
+      "core": 7,
+      "profile": "learning_core",
+      "profile_id": 3
+    },
+    "lifecycle": {
+      "app_id": 5,
+      "core": 8,
+      "profile": "lifecycle_core",
+      "profile_id": 7
+    },
+    "memory": {
+      "app_id": 3,
+      "core": 6,
+      "profile": "memory_core",
+      "profile_id": 6
+    },
+    "route": {
+      "app_id": 2,
+      "core": 5,
+      "profile": "route_core",
+      "profile_id": 5
+    }
+  },
+  "job_command": "cra_430f/experiments/tier4_30f_lifecycle_sham_hardware_subset.py --mode run-hardware --output-dir tier4_30f_hw_job_output",
+  "prepared_at_utc": "2026-05-06T01:27:19+00:00",
+  "runner": "experiments/tier4_30f_lifecycle_sham_hardware_subset.py",
+  "runner_revision": "tier4_30f_lifecycle_sham_hardware_subset_20260505_0001",
+  "sham_modes": [
+    "enabled",
+    "fixed_static_pool_control",
+    "random_event_replay_control",
+    "active_mask_shuffle_control",
+    "no_trophic_pressure_control",
+    "no_dopamine_or_plasticity_control"
+  ],
+  "tier": "Tier 4.30f - Lifecycle Sham-Control Hardware Subset",
+  "upload_package": "cra_430f"
+}
