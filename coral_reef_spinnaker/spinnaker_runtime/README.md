@@ -115,11 +115,13 @@ ingest at
 criteria, 5/5 ingest criteria, five profile builds/loads/readbacks, exact
 canonical/boundary lifecycle parity, and duplicate/stale lifecycle event
 rejection. This remains hardware-smoke evidence only, not lifecycle task-benefit
-or baseline-freeze evidence. Tier 4.30f prepares the next hardware subset:
-behavior-backed lifecycle shams for fixed-pool, random replay, active-mask
-shuffle, no-trophic, and no-dopamine modes. These are covered by local C host
-tests before EBRAINS upload and remain sham-control evidence only until returned
-hardware artifacts pass ingest.
+or baseline-freeze evidence. Tier 4.30f then passed after EBRAINS ingest at
+`controlled_test_output/tier4_30f_hw_20260505_hardware_pass_ingested/`: board
+`10.11.227.9`, raw remote status `pass`, ingest status `pass`, 185/185 hardware
+criteria, 5/5 ingest criteria, behavior-backed lifecycle shams for fixed-pool,
+random replay, active-mask shuffle, no-trophic, and no-dopamine modes, and
+predeclared control separation on hardware. This remains sham-control evidence
+only, not lifecycle task-benefit or baseline-freeze evidence.
 
 Promotion criteria before this C runtime becomes a near-term backend:
 

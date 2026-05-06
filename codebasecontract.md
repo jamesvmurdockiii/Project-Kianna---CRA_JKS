@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-05T21:20:00-04:00.
+Last updated: 2026-05-05T22:12:00-04:00.
 
 Current repo root:
 
@@ -103,18 +103,37 @@ FROZEN: CRA_NATIVE_MECHANISM_BRIDGE_v0.3
         Boundary: hardware smoke only; not lifecycle task benefit, not
         lifecycle sham-control success, not speedup, not multi-chip scaling,
         not v2.2 temporal migration, and not a lifecycle baseline freeze.
-  Next: Run/ingest Tier 4.30f lifecycle sham-control hardware subset.
+  Current: Tier 4.30f lifecycle sham-control hardware subset PASS after
+        EBRAINS ingest.
         Prepared package: `ebrains_jobs/cra_430f`.
         Prepared output: `controlled_test_output/tier4_30f_hw_20260505_prepared/`.
-        Prepared criteria: 8/8.
+        Ingested output:
+        `controlled_test_output/tier4_30f_hw_20260505_hardware_pass_ingested/`.
+        Raw remote status: `pass`.
+        Ingest status: `pass`.
+        Board: `10.11.227.9`.
+        Hardware criteria: 185/185.
+        Ingest criteria: 5/5.
+        Returned artifacts preserved: 35.
         JobManager command:
         `cra_430f/experiments/tier4_30f_lifecycle_sham_hardware_subset.py --mode run-hardware --output-dir tier4_30f_hw_job_output`.
         Scope: enabled, fixed_static_pool_control, random_event_replay_control,
         active_mask_shuffle_control, no_trophic_pressure_control, and
         no_dopamine_or_plasticity_control over the canonical 32-event lifecycle
         trace.
-        Boundary: prepared source bundle only; not hardware evidence until
-        returned Tier 4.30f artifacts pass ingest.
+        Result: enabled stayed canonical; fixed-pool separated active-mask bits
+        and suppressed mask-mutation counters; random replay separated lineage
+        checksum; active-mask shuffle separated active-mask bits; no-trophic and
+        no-dopamine/no-plasticity separated trophic checksums; compact payload
+        length stayed 68; synthetic fallback stayed zero.
+        Boundary: compact lifecycle sham-control hardware subset only; not
+        lifecycle task-benefit, full Tier 6.3 hardware, speedup, multi-chip
+        scaling, v2.2 temporal migration, or a lifecycle baseline freeze.
+  Next: Define Tier 4.30g lifecycle task-benefit/resource bridge before
+        preparing any new EBRAINS package. The 4.30g contract must connect
+        lifecycle state to a task-bearing path, compare enabled lifecycle
+        against predeclared controls, include resource/readback accounting, and
+        preserve a narrow claim boundary until a task effect is measured.
         Lifecycle hardware layers initially on CRA_NATIVE_MECHANISM_BRIDGE_v0.3,
         with v2.2 as a software reference boundary only. Temporal-state hardware
         migration is not automatic from v2.2; it requires a separately defined
@@ -597,10 +616,10 @@ Local build capability (established 2026-05-02):
 
 Immediate next steps:
 
-1. Run the prepared Tier 4.30f lifecycle sham-control hardware subset on
-   EBRAINS/SpiNNaker, download returned artifacts, and ingest with the
-   tier-specific `--mode ingest` path. Do not claim 4.30f hardware evidence
-   from the prepared package alone.
+1. Define Tier 4.30g lifecycle task-benefit/resource bridge before preparing
+   any new EBRAINS upload. Do not freeze a lifecycle native baseline from
+   4.30f alone; 4.30f is sham-control hardware evidence, not task-benefit
+   evidence.
 2. Keep sham/control commands behavior-backed. A readback flag alone is not
    reviewer-defensible; local C host tests must prove the control changes the
    intended counters/checksums before a package is uploaded.

@@ -6234,10 +6234,10 @@ ridge lag-only beat lag+state probes.
 Tier 5.19 / 7.0e is complete. The narrowed Tier 5.19c gate froze v2.2 for
 bounded host-side fading-memory temporal state only; bounded nonlinear
 recurrence, universal benchmark superiority, and native/on-chip temporal
-dynamics remain unproven. Tier 4.30-readiness through Tier 4.30e then advanced
+dynamics remain unproven. Tier 4.30-readiness through Tier 4.30f then advanced
 the lifecycle-native path on top of `CRA_NATIVE_MECHANISM_BRIDGE_v0.3`, with
 v2.2 retained as a software reference boundary only. The current next hardware
-gate is Tier 4.30f lifecycle sham-control hardware subset run/ingest. Do not
+gate is Tier 4.30g lifecycle task-benefit/resource bridge definition. Do not
 move Tier 7.0 benchmark workloads to hardware under the current interface.
 ```
 
@@ -6287,8 +6287,11 @@ Near-term roadmap insertion:
 10. Tier 4.30c multi-core lifecycle split contract/reference. COMPLETE.
 11. Tier 4.30d lifecycle runtime source/local C audit. COMPLETE.
 12. Tier 4.30e multi-core lifecycle hardware smoke. COMPLETE.
-13. Tier 4.30f lifecycle sham-control hardware subset. PREPARED; awaiting
-    EBRAINS run/ingest.
+13. Tier 4.30f lifecycle sham-control hardware subset. COMPLETE: hardware pass
+    after ingest.
+14. Tier 4.30g lifecycle task-benefit/resource bridge. NEXT: define before any
+    new EBRAINS package; no lifecycle native baseline freeze until a task effect
+    and resource/readback accounting pass.
 ```
 
 Tier 5.19a result:
@@ -6485,30 +6488,44 @@ Purpose: five-profile lifecycle hardware smoke over context_core, route_core,
 Boundary: not lifecycle task benefit, not sham-control success, not speedup,
           not multi-chip scaling, not v2.2 temporal-state migration, and not a
           lifecycle baseline freeze.
-Next: run and ingest the prepared Tier 4.30f lifecycle sham-control hardware
-subset.
+Next: Tier 4.30f lifecycle sham-control hardware subset (completed; superseded
+by Tier 4.30g task-benefit/resource bridge definition).
 ```
 
-Tier 4.30f prepared state:
+Tier 4.30f result:
 
 ```text
 Prepared output: controlled_test_output/tier4_30f_hw_20260505_prepared/
+Ingested output: controlled_test_output/tier4_30f_hw_20260505_hardware_pass_ingested/
 Runner: experiments/tier4_30f_lifecycle_sham_hardware_subset.py
 Runner revision: tier4_30f_lifecycle_sham_hardware_subset_20260505_0001
 Upload folder: ebrains_jobs/cra_430f
-Prepared status: prepared
+Status: hardware pass / ingested
 Prepared criteria: 8/8
+Raw remote status: pass
+Ingest status: pass
+Board: 10.11.227.9
+Hardware criteria: 185/185
+Ingest criteria: 5/5
+Returned artifacts preserved: 35
 JobManager command:
 cra_430f/experiments/tier4_30f_lifecycle_sham_hardware_subset.py --mode run-hardware --output-dir tier4_30f_hw_job_output
 Scope: enabled, fixed-pool, random-event replay, active-mask shuffle,
        no-trophic-pressure, and no-dopamine/no-plasticity controls on the
        canonical 32-event lifecycle trace.
-Boundary: prepared source bundle only; not hardware evidence until returned
-          artifacts pass ingest. If it passes, it is a compact lifecycle
-          sham-control hardware subset only, not full Tier 6.3 hardware, not
-          lifecycle task-benefit evidence, not speedup, not multi-chip scaling,
-          not v2.2 temporal-state migration, and not a lifecycle baseline
-          freeze.
+Result: enabled mode remained canonical; fixed-pool separated active-mask bits
+        and suppressed mask-mutation counters; random replay separated lineage
+        checksum; active-mask shuffle separated active-mask bits; no-trophic and
+        no-dopamine/no-plasticity separated trophic checksums; compact payload
+        length stayed 68; synthetic fallback stayed zero.
+Boundary: compact lifecycle sham-control hardware subset only, not full Tier 6.3
+          hardware, not lifecycle task-benefit evidence, not speedup, not
+          multi-chip scaling, not v2.2 temporal-state migration, and not a
+          lifecycle baseline freeze.
+Next: Tier 4.30g lifecycle task-benefit/resource bridge. It must connect native
+      lifecycle state to a task-bearing capsule, compare enabled lifecycle
+      against predeclared controls, record resource/readback costs, and either
+      justify a narrow task-effect claim or narrow the organism claim.
 ```
 
 Detailed Tier 5.19 contract:

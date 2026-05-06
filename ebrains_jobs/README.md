@@ -22,8 +22,8 @@ Public repository hygiene rules live in
 
 ### `cra_430f`
 
-Status: **PREPARED / AWAITING EBRAINS RUN** for Tier 4.30f lifecycle
-sham-control hardware subset.
+Status: **HARDWARE PASS / INGESTED** for Tier 4.30f lifecycle sham-control
+hardware subset.
 
 Purpose: Verify that the lifecycle sham controls alter lifecycle behavior on
 real SpiNNaker hardware rather than merely toggling a readback flag. The job
@@ -50,10 +50,27 @@ Prepared artifact:
 controlled_test_output/tier4_30f_hw_20260505_prepared/
 ```
 
-Boundary: this is prepared source only until returned artifacts pass ingest. If
-it passes, it is a compact lifecycle sham-control hardware subset, not full
+Ingested artifact:
+
+```text
+controlled_test_output/tier4_30f_hw_20260505_hardware_pass_ingested/
+```
+
+Returned metrics:
+
+```text
+Board: 10.11.227.9
+Raw remote status: pass
+Ingest status: pass
+Hardware criteria: 185/185
+Ingest criteria: 5/5
+Returned artifacts preserved: 35
+```
+
+Boundary: this is a compact lifecycle sham-control hardware subset, not full
 Tier 6.3 hardware, not lifecycle task-benefit evidence, not speedup evidence,
-not multi-chip scaling, and not a baseline freeze.
+not multi-chip scaling, and not a baseline freeze. No new EBRAINS package is
+pending until Tier 4.30g is defined and passes local contract/source checks.
 
 ### `cra_430e`
 

@@ -26,21 +26,37 @@ Tier 4.29f - Compact Native Mechanism Regression
 Latest active hardware-facing tier:
 
 ```text
+Tier 4.30g - Lifecycle Task-Benefit / Resource Bridge
+  Status: NEXT CONTRACT TO DEFINE; no EBRAINS package prepared yet.
+  Purpose: connect native lifecycle state to a task-bearing capsule and compare
+    enabled lifecycle against predeclared controls while recording
+    resource/readback accounting.
+  Boundary: future contract only until implemented; no lifecycle baseline
+    freeze unless task effect, controls, and resource evidence pass.
+
 Tier 4.30f - Lifecycle Sham-Control Hardware Subset
-  Status: PREPARED / AWAITING EBRAINS RUN
+  Status: HARDWARE PASS, INGESTED
   Prepared output: controlled_test_output/tier4_30f_hw_20260505_prepared/
+  Ingested output: controlled_test_output/tier4_30f_hw_20260505_hardware_pass_ingested/
   Upload folder: ebrains_jobs/cra_430f
   Runner: experiments/tier4_30f_lifecycle_sham_hardware_subset.py
-  Prepared criteria: 8/8
+  Board: 10.11.227.9
+  Raw remote status: pass
+  Ingest status: pass
+  Hardware criteria: 185/185
+  Ingest criteria: 5/5
+  Returned artifacts preserved: 35
   Command:
     cra_430f/experiments/tier4_30f_lifecycle_sham_hardware_subset.py --mode run-hardware --output-dir tier4_30f_hw_job_output
   Scope: enabled, fixed-pool, random-event replay, active-mask shuffle,
     no-trophic, and no-dopamine/no-plasticity controls on the canonical
     32-event lifecycle trace.
-  Boundary: prepared source bundle only; no hardware claim until returned
-    artifacts pass ingest. Not lifecycle task-benefit evidence, not full
-    Tier 6.3 hardware, not speedup, not multi-chip scaling, and not a baseline
-    freeze.
+  Result: enabled mode remained canonical; fixed-pool, random replay,
+    active-mask shuffle, no-trophic, and no-dopamine/no-plasticity separated on
+    predeclared fields; compact payload_len remained 68; fallback remained 0.
+  Boundary: compact lifecycle sham-control hardware subset only; not lifecycle
+    task-benefit evidence, not full Tier 6.3 hardware, not speedup, not
+    multi-chip scaling, and not a baseline freeze.
 
 Tier 4.30e - Multi-Core Lifecycle Hardware Smoke
   Status: HARDWARE PASS, INGESTED
@@ -89,19 +105,17 @@ Tier 4.30b-hw - Single-Core Lifecycle Active-Mask/Lineage Hardware Smoke
 Latest passed EBRAINS upload package:
 
 ```text
-Tier 4.30e - Multi-Core Lifecycle Hardware Smoke
-upload = ebrains_jobs/cra_430e
+Tier 4.30f - Lifecycle Sham-Control Hardware Subset
+upload = ebrains_jobs/cra_430f
 status = returned hardware pass after ingest
-runner = experiments/tier4_30e_multicore_lifecycle_hardware_smoke.py
+runner = experiments/tier4_30f_lifecycle_sham_hardware_subset.py
 ```
 
 Latest prepared EBRAINS upload package:
 
 ```text
-Tier 4.30f - Lifecycle Sham-Control Hardware Subset
-upload = ebrains_jobs/cra_430f
-status = prepared, not hardware evidence yet
-runner = experiments/tier4_30f_lifecycle_sham_hardware_subset.py
+None. Define/pass the Tier 4.30g local contract/source gate before creating the
+next upload package.
 ```
 
 Tier 4.28e Point A passed after ingest at:
@@ -455,9 +469,11 @@ For the current custom-runtime job, use the generated source-only folder under
 
 ## Current EBRAINS Command
 
-Tier 4.30f is prepared and awaiting EBRAINS execution. Upload the `cra_430f`
-folder itself and paste this command directly into the JobManager command
-field:
+No EBRAINS package is currently pending after Tier 4.30f ingest. The next upload
+package should not be created until Tier 4.30g is defined and passes local
+contract/source checks.
+
+Last Tier 4.30f command used:
 
 ```text
 cra_430f/experiments/tier4_30f_lifecycle_sham_hardware_subset.py --mode run-hardware --output-dir tier4_30f_hw_job_output
@@ -480,7 +496,8 @@ append:
 --spinnaker-hostname <board-host-or-ip>
 ```
 
-By default Tier 4.30f inherits the Tier 4.22i/4.22j target-acquisition path:
+By default recent custom-runtime hardware jobs inherit the Tier 4.22i/4.22j
+target-acquisition path:
 
 ```text
 --target-acquisition auto
@@ -494,6 +511,58 @@ That means:
 3. reuse SpynnakerDataView's transceiver/IP for custom APLX load and SDP round-trip;
 4. auto-select a free destination CPU when the probe already occupies the requested core.
 ```
+
+### cra_430f (RETURNED / HARDWARE PASS)
+
+Status: **HARDWARE PASS / INGESTED**
+
+Upload folder: `ebrains_jobs/cra_430f`
+
+JobManager command that produced the returned artifacts:
+
+```text
+cra_430f/experiments/tier4_30f_lifecycle_sham_hardware_subset.py --mode run-hardware --output-dir tier4_30f_hw_job_output
+```
+
+Prepared and ingested artifacts:
+
+```text
+controlled_test_output/tier4_30f_hw_20260505_prepared/
+controlled_test_output/tier4_30f_hw_20260505_hardware_pass_ingested/
+controlled_test_output/tier4_30f_hw_latest_manifest.json
+```
+
+Returned metrics:
+- Board: `10.11.227.9`
+- Raw remote status: `pass`
+- Ingest status: `pass`
+- Hardware criteria: `185/185`
+- Ingest criteria: `5/5`
+- Preserved returned artifacts: `35`
+- Task runtime: `0.3725213138386607` seconds
+- Target acquisition: hostname discovery failed, then pyNN/sPyNNaker probe
+  succeeded and acquired `10.11.227.9`.
+- Profile loads: context core 4, route core 5, memory core 6, learning core 7,
+  lifecycle core 8.
+- Sham modes: `enabled`, `fixed_static_pool_control`,
+  `random_event_replay_control`, `active_mask_shuffle_control`,
+  `no_trophic_pressure_control`, and
+  `no_dopamine_or_plasticity_control`.
+
+Result highlights:
+- Enabled mode remained canonical: `active_mask_bits=63`,
+  `lineage_checksum=105428`, `trophic_checksum=466851`.
+- Fixed-pool separated active-mask bits from enabled: `3` vs `63`, and
+  suppressed adult-birth/cleavage/death mask-mutation counters.
+- Random event replay separated lineage checksum: `6170` vs `105428`.
+- Active-mask shuffle separated active-mask bits: `0` vs `63`.
+- No-trophic separated trophic checksum: `336384` vs `466851`.
+- No-dopamine/no-plasticity separated trophic checksum: `457850` vs `466851`.
+- Compact lifecycle payload length stayed `68`; synthetic fallback stayed `0`.
+
+Claim boundary: this is a compact lifecycle sham-control hardware subset only.
+It does not prove lifecycle task benefit, full Tier 6.3 hardware, speedup,
+multi-chip scaling, v2.2 temporal migration, or a lifecycle baseline freeze.
 
 ### cra_430e (RETURNED / HARDWARE PASS)
 

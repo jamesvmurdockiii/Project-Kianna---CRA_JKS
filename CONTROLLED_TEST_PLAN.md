@@ -8458,8 +8458,8 @@ Next step:
 
 ```text
 Tier 4.30e multi-core lifecycle hardware smoke passed and has been ingested.
-Next: run and ingest the prepared Tier 4.30f lifecycle sham-control hardware
-subset.
+Tier 4.30f lifecycle sham-control hardware subset also passed after ingest.
+Next: define Tier 4.30g lifecycle task-benefit/resource bridge.
 ```
 
 ### Tier 4.30e - Multi-Core Lifecycle Hardware Smoke
@@ -8536,7 +8536,7 @@ scaling, not v2.2 temporal-state migration, and not a lifecycle baseline freeze.
 
 ### Tier 4.30f - Lifecycle Sham-Control Hardware Subset
 
-Status: PREPARED / AWAITING EBRAINS RUN.
+Status: HARDWARE PASS / INGESTED.
 
 Question:
 
@@ -8582,6 +8582,24 @@ Upload folder: ebrains_jobs/cra_430f
 Prepared criteria: 8/8
 JobManager command:
 cra_430f/experiments/tier4_30f_lifecycle_sham_hardware_subset.py --mode run-hardware --output-dir tier4_30f_hw_job_output
+```
+
+Returned / ingested result:
+
+```text
+Ingested output: controlled_test_output/tier4_30f_hw_20260505_hardware_pass_ingested/
+Raw remote status: pass
+Ingest status: pass
+Board: 10.11.227.9
+Hardware criteria: 185/185
+Ingest criteria: 5/5
+Returned artifacts preserved: 35
+Task status: pass
+Hardware target configured: true
+Profile builds: all five pass
+Profile loads: all five pass
+Synthetic fallback: 0
+Compact lifecycle payload length: 68
 ```
 
 Required controls:
@@ -8633,4 +8651,44 @@ Tier 4.30f is a compact lifecycle sham-control hardware subset. It is not full
 Tier 6.3 hardware, not lifecycle task-benefit evidence, not speedup, not
 multi-chip scaling, not v2.2 temporal-state migration, and not a lifecycle
 baseline freeze.
+```
+
+Result summary:
+
+```text
+enabled mode remained canonical:
+  active_mask_bits=63
+  lineage_checksum=105428
+  trophic_checksum=466851
+
+fixed_static_pool_control separated active_mask_bits from enabled:
+  control=3
+  enabled=63
+  mask-mutation counters adult_birth/cleavage/death all remained 0
+
+random_event_replay_control separated lineage_checksum from enabled:
+  control=6170
+  enabled=105428
+
+active_mask_shuffle_control separated active_mask_bits from enabled:
+  control=0
+  enabled=63
+
+no_trophic_pressure_control separated trophic_checksum from enabled:
+  control=336384
+  enabled=466851
+
+no_dopamine_or_plasticity_control separated trophic_checksum from enabled:
+  control=457850
+  enabled=466851
+```
+
+Next:
+
+```text
+Tier 4.30g should be defined as the compact lifecycle task-benefit/resource
+bridge. It must test whether enabled lifecycle state improves a task-bearing
+hardware capsule versus predeclared controls, while recording resource/readback
+accounting. Do not freeze a lifecycle native baseline until controls, resource
+accounting, and at least one useful task-effect gate pass.
 ```

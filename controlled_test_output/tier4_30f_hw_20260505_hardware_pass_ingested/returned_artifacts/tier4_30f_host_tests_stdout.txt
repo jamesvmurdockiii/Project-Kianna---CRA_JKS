@@ -1,0 +1,72 @@
+make: Entering directory '/tmp/job17891083546348901208.tmp/cra_430f/coral_reef_spinnaker/spinnaker_runtime'
+rm -f tests/test_runtime tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_lifecycle_core tests/test_four_core_local tests/test_four_core_48event tests/test_mcpl_feasibility tests/test_lifecycle tests/test_lifecycle_split
+cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=1 tests/test_lifecycle.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_lifecycle
+./tests/test_lifecycle
+Running Tier 4.30 lifecycle/static-pool tests...
+  PASS: 4.30a canonical_32 lifecycle parity
+  PASS: 4.30a boundary_64 lifecycle parity
+  PASS: lifecycle SDP readback schema
+  PASS: lifecycle sham mode bounds
+  PASS: fixed-pool sham suppresses lifecycle mask mutation
+  PASS: no-trophic and no-dopamine shams alter trophic bookkeeping
+  PASS: mask-shuffle sham remaps lifecycle event slots
+  PASS: canonical_32 sham-control reference parity
+All lifecycle/static-pool tests passed.
+cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_RUNTIME_PROFILE_LIFECYCLE_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=7 tests/test_lifecycle_split.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_lifecycle_split
+./tests/test_lifecycle_split
+Running Tier 4.30d lifecycle split tests...
+  PASS: lifecycle_core direct host surface is isolated
+  PASS: lifecycle duplicate/stale guards are explicit
+  PASS: active-mask/count/lineage sync send/receive bookkeeping
+  PASS: learning-side lifecycle request stubs
+All lifecycle split tests passed.
+cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_RUNTIME_PROFILE_CONTEXT_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=4 tests/test_profiles.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_context_core
+./tests/test_context_core
+Profile test (RUNTIME_PROFILE_ID=4)
+  PASS: RESET ack
+  PASS: READ_STATE profile_id=4 flags=0
+  PASS: context_core expected commands ack
+  PASS: context_core unexpected commands nak
+  PASS: lookup request/reply format
+  PASS: wrong-type lookup rejected safely
+All tests passed.
+cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_RUNTIME_PROFILE_ROUTE_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=5 tests/test_profiles.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_route_core
+./tests/test_route_core
+Profile test (RUNTIME_PROFILE_ID=5)
+  PASS: RESET ack
+  PASS: READ_STATE profile_id=5 flags=0
+  PASS: route_core expected commands ack
+  PASS: route_core unexpected commands nak
+  PASS: lookup request/reply format
+  PASS: wrong-type lookup rejected safely
+All tests passed.
+cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_RUNTIME_PROFILE_MEMORY_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=6 tests/test_profiles.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_memory_core
+./tests/test_memory_core
+Profile test (RUNTIME_PROFILE_ID=6)
+  PASS: RESET ack
+  PASS: READ_STATE profile_id=6 flags=0
+  PASS: memory_core expected commands ack
+  PASS: memory_core unexpected commands nak
+  PASS: lookup request/reply format
+  PASS: wrong-type lookup rejected safely
+All tests passed.
+cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 tests/test_profiles.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_learning_core
+./tests/test_learning_core
+Profile test (RUNTIME_PROFILE_ID=3)
+  PASS: RESET ack
+  PASS: READ_STATE profile_id=3 flags=0
+  PASS: learning_core expected commands ack
+  PASS: learning_core unexpected commands nak
+  PASS: lookup state machine (3 replies stored)
+  PASS: stale reply detection
+  PASS: timeout detection
+All tests passed.
+cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_RUNTIME_PROFILE_LIFECYCLE_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=7 tests/test_profiles.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_lifecycle_core
+./tests/test_lifecycle_core
+Profile test (RUNTIME_PROFILE_ID=7)
+  PASS: RESET ack
+  PASS: READ_STATE profile_id=7 flags=0
+  PASS: lifecycle_core expected commands ack
+  PASS: lifecycle_core unexpected commands nak
+All tests passed.
+make: Leaving directory '/tmp/job17891083546348901208.tmp/cra_430f/coral_reef_spinnaker/spinnaker_runtime'

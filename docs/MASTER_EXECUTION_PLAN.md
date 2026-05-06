@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-05T21:20-04:00.
+Last updated: 2026-05-05T22:12-04:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -646,48 +646,69 @@ ability.
     success, not speedup, not multi-chip scaling, not v2.2 temporal migration,
     and not a lifecycle baseline freeze.
 
-43. **PREPARED / AWAITING EBRAINS** - Tier 4.30f lifecycle sham-control
-    hardware subset: fixed max pool, random event replay, mask shuffle, no
-    trophic pressure, and no dopamine/plasticity over the canonical 32-event
-    lifecycle trace. The C runtime now implements behavioral sham semantics:
-    fixed-pool suppresses active-mask mutation, random/mask controls remap
-    lifecycle event slots, no-trophic suppresses trophic/maturity mutation, and
-    no-dopamine removes the reward component from trophic updates. Local host
-    tests include canonical sham-reference parity.
+43. ✅ **COMPLETE** - Tier 4.30f lifecycle sham-control hardware subset:
+    fixed max pool, random event replay, mask shuffle, no trophic pressure, and
+    no dopamine/plasticity over the canonical 32-event lifecycle trace. The C
+    runtime implements behavioral sham semantics: fixed-pool suppresses
+    active-mask mutation, random/mask controls remap lifecycle event slots,
+    no-trophic suppresses trophic/maturity mutation, and no-dopamine removes
+    the reward component from trophic updates. Local host tests included
+    canonical sham-reference parity before upload, and the returned EBRAINS
+    artifacts passed ingest.
     Prepared output: `controlled_test_output/tier4_30f_hw_20260505_prepared/`.
+    Ingested output:
+    `controlled_test_output/tier4_30f_hw_20260505_hardware_pass_ingested/`.
     Upload folder: `ebrains_jobs/cra_430f`.
     Runner: `experiments/tier4_30f_lifecycle_sham_hardware_subset.py`.
-    JobManager command:
+    JobManager command used:
     `cra_430f/experiments/tier4_30f_lifecycle_sham_hardware_subset.py --mode run-hardware --output-dir tier4_30f_hw_job_output`.
-    Boundary: prepared source bundle only; not hardware evidence until returned
-    artifacts pass Tier 4.30f ingest. This remains a compact sham-control
-    subset, not lifecycle task-benefit, full Tier 6.3 hardware, speedup,
-    multi-chip scaling, v2.2 temporal migration, or a lifecycle baseline freeze.
+    Board: `10.11.227.9`.
+    Raw remote status: `pass`; ingest status: `pass`.
+    Hardware criteria: 185/185; ingest criteria: 5/5.
+    Returned artifacts preserved: 35.
+    Result: all five profiles built and loaded; hardware target acquisition
+    succeeded through the PyNN/sPyNNaker probe path; enabled mode stayed
+    canonical; fixed-pool separated active-mask bits and suppressed mask
+    mutation counters; random replay separated lineage checksum; active-mask
+    shuffle separated active-mask bits; no-trophic and no-dopamine/no-plasticity
+    separated trophic checksums; compact lifecycle payload length stayed 68;
+    synthetic fallback remained zero.
+    Boundary: compact lifecycle sham-control hardware subset only; not
+    lifecycle task-benefit, full Tier 6.3 hardware, speedup, multi-chip scaling,
+    v2.2 temporal migration, or a lifecycle baseline freeze.
 
-44. Freeze `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` only if lifecycle telemetry,
+44. **CURRENT ACTIVE STEP** - Tier 4.30g lifecycle task-benefit/resource bridge:
+    define and run a compact native hardware capsule that connects lifecycle
+    state to a task-bearing path and compares enabled lifecycle against the
+    predeclared controls that survived 4.30f. This must include resource and
+    readback accounting, exact claim boundaries, local contract/source checks
+    before EBRAINS upload, and a fail-safe decision to narrow the organism
+    claim if lifecycle does not improve a task metric.
+
+45. Freeze `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` only if lifecycle telemetry,
     controls, resource accounting, and at least one useful task effect pass. If
     lifecycle does not help, narrow the organism claim.
 
 ### Phase F - Native Temporal / Replay / Eligibility Bridge Decisions
 
-45. Tier 4.31a native temporal-substrate readiness: only if Tier 5.19 promotes a
+46. Tier 4.31a native temporal-substrate readiness: only if Tier 5.19 promotes a
     software substrate, decide the smallest chip-owned temporal state subset.
     If Tier 5.19 fails, skip this and keep the Tier 7 benchmark limitation.
 
-46. Tier 4.31b native temporal-substrate local reference: fixed-point state
+47. Tier 4.31b native temporal-substrate local reference: fixed-point state
     update, readback schema, resource budget, and parity against the promoted
     software mechanism. No hardware before local parity and source audit.
 
-47. Tier 4.31c native temporal-substrate hardware smoke: one board, one seed,
+48. Tier 4.31c native temporal-substrate hardware smoke: one board, one seed,
     one minimal temporal-state task, explicit lag-only and shuffled-state
     controls. Do not claim full benchmark performance from a smoke.
 
-48. Tier 4.31d native replay-buffer / sleep-like replay decision: only if the
+49. Tier 4.31d native replay-buffer / sleep-like replay decision: only if the
     software replay/consolidation path still needs chip-owned buffers for scale
     or if a measured hardware bottleneck requires it. Host-scheduled replay from
     4.29e remains the current bounded evidence.
 
-49. Tier 4.31e native eligibility-trace decision: revisit macro/native
+50. Tier 4.31e native eligibility-trace decision: revisit macro/native
     eligibility only if a current promoted mechanism exposes a measured credit
     assignment or on-chip timing blocker. Do not revive 5.9 by vibes alone.
 
@@ -929,8 +950,8 @@ After each completed run or design tier:
 The next concrete action is:
 
 ```text
-Run Tier 4.30f lifecycle sham-control hardware subset on EBRAINS/SpiNNaker,
-download returned artifacts, and ingest them with the tier-specific ingest mode.
+Define Tier 4.30g lifecycle task-benefit/resource bridge before preparing any
+new EBRAINS upload package.
 ```
 
 Current reference state:
@@ -959,12 +980,22 @@ Ingest status: pass
 Board: 10.11.226.145
 Hardware criteria: 75/75
 Ingest criteria: 5/5
-Lifecycle sham-control subset: Tier 4.30f PREPARED
+Lifecycle sham-control subset: Tier 4.30f PASS after ingest
 Prepared output: controlled_test_output/tier4_30f_hw_20260505_prepared/
 Upload folder: ebrains_jobs/cra_430f
 Prepared criteria: 8/8
 JobManager command:
 cra_430f/experiments/tier4_30f_lifecycle_sham_hardware_subset.py --mode run-hardware --output-dir tier4_30f_hw_job_output
+Ingested output: controlled_test_output/tier4_30f_hw_20260505_hardware_pass_ingested/
+Raw remote status: pass
+Ingest status: pass
+Board: 10.11.227.9
+Hardware criteria: 185/185
+Ingest criteria: 5/5
+Returned artifacts preserved: 35
+Sham modes: enabled, fixed_static_pool_control, random_event_replay_control,
+active_mask_shuffle_control, no_trophic_pressure_control,
+no_dopamine_or_plasticity_control
 Temporal substrate status: fading-memory promoted in software only; nonlinear
 recurrence and native/on-chip temporal dynamics remain unproven
 ```
@@ -972,11 +1003,13 @@ recurrence and native/on-chip temporal dynamics remain unproven
 Purpose:
 
 ```text
-The multi-core lifecycle hardware smoke passed and has been ingested. The next
-action is a small lifecycle sham-control hardware subset. Keep the boundary
-strict: no lifecycle task-benefit claim, no speedup claim, no multi-chip claim,
-no v2.2 temporal-migration claim, and no lifecycle baseline freeze until the
-control layer and task-effect evidence justify it.
+The multi-core lifecycle hardware smoke and compact lifecycle sham-control
+hardware subset both passed and have been ingested. The next action is not a
+baseline freeze. Define Tier 4.30g as the smallest hardware task-benefit/resource
+bridge that can test whether lifecycle state helps a task metric beyond the
+predeclared controls. Keep the boundary strict: no speedup claim, no multi-chip
+claim, no v2.2 temporal-migration claim, and no lifecycle baseline freeze until
+the control layer, resource accounting, and task-effect evidence justify it.
 ```
 
 Required coverage:
