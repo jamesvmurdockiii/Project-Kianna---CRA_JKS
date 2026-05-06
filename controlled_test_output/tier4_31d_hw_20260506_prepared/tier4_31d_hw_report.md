@@ -1,9 +1,9 @@
 # Tier 4.31d Native Temporal-Substrate Hardware Smoke
 
-- Generated: `2026-05-06T18:03:33+00:00`
+- Generated: `2026-05-06T18:44:01+00:00`
 - Mode: `prepare`
 - Status: **PREPARED**
-- Runner revision: `tier4_31d_native_temporal_hardware_smoke_20260506_0001`
+- Runner revision: `tier4_31d_native_temporal_hardware_smoke_20260506_0003`
 
 ## Claim Boundary
 

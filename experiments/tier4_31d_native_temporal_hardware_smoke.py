@@ -43,7 +43,7 @@ from experiments import tier4_22i_custom_runtime_roundtrip as base  # noqa: E402
 CONTROLLED = ROOT / "controlled_test_output"
 RUNTIME = ROOT / "coral_reef_spinnaker" / "spinnaker_runtime"
 TIER_NAME = "Tier 4.31d - Native Temporal-Substrate Hardware Smoke"
-RUNNER_REVISION = "tier4_31d_native_temporal_hardware_smoke_20260506_0001"
+RUNNER_REVISION = "tier4_31d_native_temporal_hardware_smoke_20260506_0003"
 DEFAULT_OUTPUT_DIR = CONTROLLED / "tier4_31d_hw_20260506_prepared"
 DEFAULT_RUN_OUTPUT = CONTROLLED / f"tier4_31d_hw_{datetime.now(timezone.utc).strftime('%Y%m%d_%H%M%S')}_run_hardware"
 DEFAULT_INGEST_OUTPUT = CONTROLLED / "tier4_31d_hw_ingested"
@@ -132,9 +132,54 @@ def write_csv(path: Path, rows: Iterable[dict[str, Any]], fieldnames: list[str] 
             writer.writerow({key: json_safe(row.get(key, "")) for key in fieldnames})
 
 
-def run_cmd(cmd: list[str], *, env: dict[str, str] | None = None) -> dict[str, Any]:
-    proc = subprocess.run(cmd, cwd=ROOT, env=env, text=True, capture_output=True, check=False)
+def run_cmd(cmd: list[str], *, env: dict[str, str] | None = None, timeout: float | None = None) -> dict[str, Any]:
+    try:
+        proc = subprocess.run(cmd, cwd=ROOT, env=env, text=True, capture_output=True, check=False, timeout=timeout)
+    except subprocess.TimeoutExpired as exc:
+        return {
+            "command": " ".join(cmd),
+            "returncode": None,
+            "stdout": exc.stdout or "",
+            "stderr": exc.stderr or "",
+            "timeout_seconds": timeout,
+            "timed_out": True,
+        }
     return {"command": " ".join(cmd), "returncode": proc.returncode, "stdout": proc.stdout, "stderr": proc.stderr}
+
+
+def run_cmd_to_files(
+    cmd: list[str],
+    *,
+    stdout_path: Path,
+    stderr_path: Path,
+    env: dict[str, str] | None = None,
+    timeout: float | None = None,
+) -> dict[str, Any]:
+    started = time.perf_counter()
+    stdout_path.parent.mkdir(parents=True, exist_ok=True)
+    stderr_path.parent.mkdir(parents=True, exist_ok=True)
+    with stdout_path.open("w", encoding="utf-8") as out, stderr_path.open("w", encoding="utf-8") as err:
+        try:
+            proc = subprocess.run(cmd, cwd=ROOT, env=env, text=True, stdout=out, stderr=err, check=False, timeout=timeout)
+            return {
+                "command": " ".join(cmd),
+                "returncode": proc.returncode,
+                "runtime_seconds": time.perf_counter() - started,
+                "stdout_artifact": str(stdout_path),
+                "stderr_artifact": str(stderr_path),
+                "timed_out": False,
+            }
+        except subprocess.TimeoutExpired:
+            err.write(f"\nTIMEOUT after {timeout} seconds\n")
+            return {
+                "command": " ".join(cmd),
+                "returncode": None,
+                "runtime_seconds": time.perf_counter() - started,
+                "stdout_artifact": str(stdout_path),
+                "stderr_artifact": str(stderr_path),
+                "timeout_seconds": timeout,
+                "timed_out": True,
+            }
 
 
 def criterion(name: str, value: Any, rule: str, passed: bool, note: str = "") -> dict[str, Any]:
@@ -332,7 +377,18 @@ def run_runtime_checks(output_dir: Path) -> dict[str, Any]:
     return results
 
 
-def build_aplx(output_dir: Path) -> dict[str, Any]:
+def write_milestone(output_dir: Path, phase: str, status: str, extra: dict[str, Any] | None = None) -> None:
+    write_json(output_dir / "tier4_31d_hw_milestone.json", {
+        "tier": "4.31d-hw",
+        "runner_revision": RUNNER_REVISION,
+        "generated_at_utc": utc_now(),
+        "phase": phase,
+        "status": status,
+        "extra": extra or {},
+    })
+
+
+def build_aplx(output_dir: Path, args: argparse.Namespace) -> dict[str, Any]:
     env = os.environ.copy()
     tools = base.detect_spinnaker_tools()
     fallback = Path("/tmp/spinnaker_tools")
@@ -349,9 +405,16 @@ def build_aplx(output_dir: Path) -> dict[str, Any]:
     base_aplx = RUNTIME / "build" / "coral_reef.aplx"
     if base_aplx.exists():
         base_aplx.unlink()
-    result = run_cmd(["make", "-C", str(RUNTIME), "clean", "all"], env=env)
-    (output_dir / "tier4_31d_aplx_build_stdout.txt").write_text(result.get("stdout", ""), encoding="utf-8")
-    (output_dir / "tier4_31d_aplx_build_stderr.txt").write_text(result.get("stderr", ""), encoding="utf-8")
+    write_milestone(output_dir, "aplx_build", "started", {"runtime_profile": "learning_core"})
+    stdout_path = output_dir / "tier4_31d_aplx_build_stdout.txt"
+    stderr_path = output_dir / "tier4_31d_aplx_build_stderr.txt"
+    result = run_cmd_to_files(
+        ["make", "-C", str(RUNTIME), "clean", "all"],
+        env=env,
+        stdout_path=stdout_path,
+        stderr_path=stderr_path,
+        timeout=float(args.build_timeout_seconds),
+    )
 
     profile_aplx = output_dir / "coral_reef_learning_core_temporal.aplx"
     if base_aplx.exists():
@@ -363,8 +426,19 @@ def build_aplx(output_dir: Path) -> dict[str, Any]:
         "spinnaker_tools": tools,
         "aplx_artifact": str(profile_aplx),
         "aplx_exists": profile_aplx.exists(),
+        "base_elf_exists": (RUNTIME / "build" / "gnu" / "coral_reef.elf").exists(),
+        "base_aplx_exists": base_aplx.exists(),
     })
-    result["status"] = "pass" if result.get("returncode") == 0 and profile_aplx.exists() else "fail"
+    if result.get("timed_out"):
+        result["status"] = "timeout"
+    else:
+        result["status"] = "pass" if result.get("returncode") == 0 and profile_aplx.exists() else "fail"
+    write_milestone(output_dir, "aplx_build", result["status"], {
+        "returncode": result.get("returncode"),
+        "aplx_exists": profile_aplx.exists(),
+        "base_elf_exists": result.get("base_elf_exists"),
+        "base_aplx_exists": result.get("base_aplx_exists"),
+    })
     return result
 
 
@@ -424,7 +498,9 @@ def prepare_bundle(output_dir: Path) -> tuple[Path, str, dict[str, str]]:
         "```text\n"
         f"{command}\n"
         "```\n\n"
+        f"Runner revision: `{RUNNER_REVISION}`.\n\n"
         "Purpose: build/load the learning_core runtime image and exercise C-owned temporal commands 39-42 on one real SpiNNaker board. The runner sends enabled, zero-state, frozen-state, and reset-each-update temporal-control sequences, then compares compact 48-byte readbacks against the fixed-point reference.\n\n"
+        "Diagnostic artifacts to download on failure include `tier4_31d_hw_milestone.json`, `tier4_31d_hw_results.json`, `tier4_31d_aplx_build_stdout.txt`, and `tier4_31d_aplx_build_stderr.txt` when present. An ELF or profile stdout by itself is not hardware evidence.\n\n"
         "PASS is hardware execution/readback only: real target acquisition, no fallback, successful build/load, payload_len=48, schema/checksum/counter/reference matches, and destructive controls separated. It is not benchmark performance, speedup, multi-chip scaling, nonlinear recurrence, replay/sleep, or full v2.2 hardware transfer.\n",
         encoding="utf-8",
     )
@@ -592,10 +668,13 @@ def mode_prepare(args: argparse.Namespace, output_dir: Path) -> int:
 
 def mode_run_hardware(args: argparse.Namespace, output_dir: Path) -> int:
     output_dir.mkdir(parents=True, exist_ok=True)
+    write_milestone(output_dir, "run_hardware", "started")
     env_report = base.environment_report()
+    write_milestone(output_dir, "host_checks", "started")
     host_checks = run_runtime_checks(output_dir)
+    write_milestone(output_dir, "host_checks", str(host_checks.get("status", "unknown")))
     py_compile = py_compile_runner(output_dir)
-    build = build_aplx(output_dir)
+    build = build_aplx(output_dir, args)
     expected = expected_scenarios(CANONICAL_INPUTS_RAW)
     target: dict[str, Any] = {"status": "not_attempted", "reason": "blocked_before_target_acquisition"}
     target_cleanup: dict[str, Any] = {"status": "not_attempted"}
@@ -606,9 +685,12 @@ def mode_run_hardware(args: argparse.Namespace, output_dir: Path) -> int:
 
     try:
         if build.get("status") == "pass":
+            write_milestone(output_dir, "target_acquisition", "started")
             target = base.acquire_hardware_target(args)
             hostname = str(target.get("hostname") or target.get("target_ipaddress") or "")
+            write_milestone(output_dir, "target_acquisition", str(target.get("status", "unknown")), {"method": target.get("method", ""), "hostname": hostname})
             if target.get("status") == "pass" and hostname and not args.skip_load:
+                write_milestone(output_dir, "load_application", "started")
                 load = base.load_application_spinnman(
                     hostname,
                     Path(build["aplx_artifact"]),
@@ -619,9 +701,12 @@ def mode_run_hardware(args: argparse.Namespace, output_dir: Path) -> int:
                     delay=float(args.startup_delay_seconds),
                     transceiver=target.get("_transceiver"),
                 )
+                write_milestone(output_dir, "load_application", str(load.get("status", "unknown")))
                 args.dest_cpu = int(target.get("dest_cpu") or args.dest_cpu)
             if target.get("status") == "pass" and hostname and (load.get("status") == "pass" or args.skip_load):
+                write_milestone(output_dir, "temporal_roundtrip", "started")
                 roundtrip = temporal_roundtrip(hostname, args)
+                write_milestone(output_dir, "temporal_roundtrip", str(roundtrip.get("status", "unknown")))
                 for scenario_name, scenario_result in roundtrip.get("scenarios", {}).items():
                     final = scenario_result.get("final", {}) if isinstance(scenario_result, dict) else {}
                     rows, criteria = compare_summary(scenario_name, final, expected[scenario_name])
@@ -681,6 +766,7 @@ def mode_run_hardware(args: argparse.Namespace, output_dir: Path) -> int:
         "expected": expected,
         "claim_boundary": CLAIM_BOUNDARY,
     }
+    write_milestone(output_dir, "finalize", status)
     return finalize(output_dir, result)
 
 
@@ -704,6 +790,34 @@ def copy_returned_artifacts(ingest_dir: Path, output_dir: Path, anchor: Path) ->
     return copied
 
 
+def copy_incomplete_returned_artifacts(ingest_dir: Path, output_dir: Path) -> list[str]:
+    """Preserve a compact partial return without copying a whole Downloads tree."""
+    tier_files = [path for path in ingest_dir.glob("tier4_31d*") if path.is_file()]
+    if not tier_files:
+        return []
+    newest = max(path.stat().st_mtime for path in tier_files)
+    window_seconds = 15 * 60
+    candidates: list[Path] = []
+    patterns = ("tier4_31d*", "coral_reef*.elf", "coral_reef*.aplx", "reports*.zip")
+    for pattern in patterns:
+        for path in ingest_dir.glob(pattern):
+            if not path.is_file():
+                continue
+            if pattern == "tier4_31d*" or abs(path.stat().st_mtime - newest) <= window_seconds:
+                candidates.append(path)
+
+    returned_dir = output_dir / "returned_artifacts"
+    if returned_dir.exists():
+        shutil.rmtree(returned_dir)
+    returned_dir.mkdir(parents=True, exist_ok=True)
+    copied: list[str] = []
+    for path in sorted(set(candidates)):
+        dst = returned_dir / path.name
+        shutil.copy2(path, dst)
+        copied.append(str(dst))
+    return copied
+
+
 def mode_ingest(args: argparse.Namespace, output_dir: Path) -> int:
     ingest_dir = args.ingest_dir or Path.home() / "Downloads"
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -713,6 +827,7 @@ def mode_ingest(args: argparse.Namespace, output_dir: Path) -> int:
         candidates = sorted(ingest_dir.rglob("tier4_31d_hw_results.json"), key=lambda p: p.stat().st_mtime, reverse=True)
         candidate = candidates[0] if candidates else None
     if candidate is None or not candidate.exists():
+        returned = copy_incomplete_returned_artifacts(ingest_dir, output_dir)
         result = {
             "tier": "4.31d-hw-ingest",
             "runner_revision": RUNNER_REVISION,
@@ -721,8 +836,12 @@ def mode_ingest(args: argparse.Namespace, output_dir: Path) -> int:
             "status": "fail",
             "failure_reason": "No tier4_31d_hw_results.json found in ingest directory.",
             "output_dir": str(output_dir),
-            "summary": {"ingest_dir": str(ingest_dir)},
-            "criteria": [criterion("hardware results json exists", str(ingest_dir), "contains tier4_31d_hw_results.json", False)],
+            "summary": {"ingest_dir": str(ingest_dir), "returned_artifact_count": len(returned)},
+            "criteria": [
+                criterion("hardware results json exists", str(ingest_dir), "contains tier4_31d_hw_results.json", False),
+                criterion("partial returned artifacts preserved", len(returned), "> 0 when partial artifacts exist", len(returned) > 0),
+            ],
+            "returned_artifacts": returned,
             "claim_boundary": "Ingest only preserves returned artifacts; it cannot create hardware evidence without run-hardware results.",
         }
         return finalize(output_dir, result)
@@ -780,6 +899,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--app-id", type=int, default=31)
     parser.add_argument("--startup-delay-seconds", type=float, default=1.0)
     parser.add_argument("--command-delay-seconds", type=float, default=COMMAND_DELAY_SECONDS)
+    parser.add_argument("--build-timeout-seconds", type=float, default=180.0)
     parser.add_argument("--skip-load", action="store_true", help="Debug only; canonical evidence requires normal load.")
     return parser
 
@@ -794,12 +914,34 @@ def main() -> int:
         else:
             args.output_dir = DEFAULT_INGEST_OUTPUT
     args.output_dir = args.output_dir.resolve()
-    if args.mode == "prepare":
-        return mode_prepare(args, args.output_dir)
-    if args.mode == "run-hardware":
-        return mode_run_hardware(args, args.output_dir)
-    if args.mode == "ingest":
-        return mode_ingest(args, args.output_dir)
+    try:
+        if args.mode == "prepare":
+            return mode_prepare(args, args.output_dir)
+        if args.mode == "run-hardware":
+            return mode_run_hardware(args, args.output_dir)
+        if args.mode == "ingest":
+            return mode_ingest(args, args.output_dir)
+    except Exception as exc:
+        if args.mode == "run-hardware":
+            result = {
+                "tier": "4.31d-hw",
+                "tier_name": TIER_NAME,
+                "runner_revision": RUNNER_REVISION,
+                "generated_at_utc": utc_now(),
+                "mode": "run-hardware",
+                "status": "fail",
+                "failure_reason": f"Unhandled runner exception: {type(exc).__name__}: {exc}",
+                "output_dir": str(args.output_dir),
+                "summary": {"synthetic_fallback_used": False, "claim_boundary": CLAIM_BOUNDARY},
+                "criteria": [criterion("runner reached structured finalization", type(exc).__name__, "no unhandled exception", False, str(exc))],
+                "exception_type": type(exc).__name__,
+                "exception": str(exc),
+                "traceback": traceback.format_exc(),
+                "claim_boundary": CLAIM_BOUNDARY,
+            }
+            write_milestone(args.output_dir, "unhandled_exception", "fail", {"exception_type": type(exc).__name__, "exception": str(exc)})
+            return finalize(args.output_dir, result)
+        raise
     raise AssertionError(args.mode)
 
 

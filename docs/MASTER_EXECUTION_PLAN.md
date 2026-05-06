@@ -750,6 +750,14 @@ ability.
     zero/frozen/reset controls, compact payload_len=48, zero fallback, and real
     readback. Prepared package: `ebrains_jobs/cra_431d`; JobManager command:
     `cra_431d/experiments/tier4_31d_native_temporal_hardware_smoke.py --mode run-hardware --output-dir tier4_31d_hw_job_output`.
+    First EBRAINS return was incomplete: two partial artifacts came back
+    (`tier4_31d_test_profiles_stdout.txt`, `coral_reef (26).elf`) but no
+    `tier4_31d_hw_results.json`, so it is not hardware evidence. The partial
+    return is preserved at
+    `controlled_test_output/tier4_31d_hw_20260506_incomplete_return/`. Re-run
+    package revision `tier4_31d_native_temporal_hardware_smoke_20260506_0003`,
+    which adds streamed build logs, build timeout, milestone breadcrumbs,
+    partial-return ingest preservation, and structured exception finalization.
     Do not claim full benchmark performance or speedup from a smoke.
 
 51. Tier 4.31e native replay-buffer / sleep-like replay decision: only if the
@@ -1022,7 +1030,8 @@ Enabled lifecycle bridge gate: open
 Five predeclared lifecycle controls: closed
 Resource/readback accounting: returned for every mode
 Temporal substrate status: Tier 4.31c local source/runtime audit passed for a
-C-owned seven-EMA native subset; hardware transfer remains unproven
+C-owned seven-EMA native subset; first 4.31d EBRAINS return was incomplete and
+hardware transfer remains unproven
 ```
 
 Purpose:
@@ -1042,6 +1051,8 @@ passed source/runtime implementation, compact readback, and local C host tests
 against the 4.31b reference. For 4.31d, keep the boundary strict: one-board
 temporal-state hardware smoke only; not nonlinear recurrence, not speedup, not
 multi-chip scaling, not benchmark superiority, and not full organism autonomy.
+The current rerun package is `ebrains_jobs/cra_431d`, runner revision
+`tier4_31d_native_temporal_hardware_smoke_20260506_0003`.
 ```
 
 

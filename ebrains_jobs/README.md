@@ -22,8 +22,9 @@ Public repository hygiene rules live in
 
 ### `cra_431d`
 
-Status: **PREPARED / PENDING HARDWARE RUN** for Tier 4.31d native
-temporal-substrate hardware smoke.
+Status: **PREPARED / PENDING RERUN** for Tier 4.31d native temporal-substrate
+hardware smoke. The first EBRAINS return was incomplete and is preserved at
+`controlled_test_output/tier4_31d_hw_20260506_incomplete_return/`.
 
 Purpose: Verify on one real SpiNNaker board that the C-owned seven-EMA temporal
 state from Tier 4.31c builds, loads, updates, and reads back through commands
@@ -42,6 +43,17 @@ JobManager command:
 ```text
 cra_431d/experiments/tier4_31d_native_temporal_hardware_smoke.py --mode run-hardware --output-dir tier4_31d_hw_job_output
 ```
+
+Runner revision:
+
+```text
+tier4_31d_native_temporal_hardware_smoke_20260506_0003
+```
+
+Revision `0003` adds streamed build logs, build timeout, milestone breadcrumbs,
+structured exception finalization, and incomplete-return artifact preservation.
+If the rerun fails, download all returned files; `tier4_31d_hw_milestone.json`
+and `tier4_31d_hw_results.json` are the first files to inspect.
 
 Boundary: one-board hardware execution/readback smoke only. It is not speedup,
 benchmark superiority, multi-chip scaling, nonlinear recurrence, replay/sleep,

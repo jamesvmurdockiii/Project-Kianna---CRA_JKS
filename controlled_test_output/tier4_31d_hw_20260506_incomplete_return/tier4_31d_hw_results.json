@@ -1,0 +1,39 @@
+{
+  "artifacts": {
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_incomplete_return/tier4_31d_hw_report.md",
+    "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_incomplete_return/tier4_31d_hw_results.json",
+    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_incomplete_return/tier4_31d_hw_summary.csv"
+  },
+  "claim_boundary": "Ingest only preserves returned artifacts; it cannot create hardware evidence without run-hardware results.",
+  "criteria": [
+    {
+      "name": "hardware results json exists",
+      "note": "",
+      "passed": false,
+      "rule": "contains tier4_31d_hw_results.json",
+      "value": "/Users/james/Downloads"
+    },
+    {
+      "name": "partial returned artifacts preserved",
+      "note": "",
+      "passed": true,
+      "rule": "> 0 when partial artifacts exist",
+      "value": 2
+    }
+  ],
+  "failure_reason": "No tier4_31d_hw_results.json found in ingest directory.",
+  "generated_at_utc": "2026-05-06T18:39:35+00:00",
+  "mode": "ingest",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_incomplete_return",
+  "returned_artifacts": [
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_incomplete_return/returned_artifacts/coral_reef (26).elf",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_incomplete_return/returned_artifacts/tier4_31d_test_profiles_stdout.txt"
+  ],
+  "runner_revision": "tier4_31d_native_temporal_hardware_smoke_20260506_0003",
+  "status": "fail",
+  "summary": {
+    "ingest_dir": "/Users/james/Downloads",
+    "returned_artifact_count": 2
+  },
+  "tier": "4.31d-hw-ingest"
+}

@@ -6315,7 +6315,11 @@ Near-term roadmap insertion:
 20. Tier 4.31d native temporal-substrate hardware smoke. NEXT/PREPARED:
     source-only upload `ebrains_jobs/cra_431d`; one board / one seed compact
     hardware probe with enabled versus temporal shams, zero fallback, and real
-    readback.
+    readback. First EBRAINS return was incomplete, returning only profile-test
+    stdout and an ARM ELF with no `tier4_31d_hw_results.json`; preserve it as
+    non-evidence at
+    `controlled_test_output/tier4_31d_hw_20260506_incomplete_return/` and rerun
+    runner revision `tier4_31d_native_temporal_hardware_smoke_20260506_0003`.
 ```
 
 Tier 5.19a result:
@@ -6619,8 +6623,8 @@ Tests: test-temporal-state, test-profiles, test, test-lifecycle, test-lifecycle-
 Boundary: local source/runtime host evidence only, not hardware
 ```
 
-Next: Run prepared Tier 4.31d native temporal-substrate hardware smoke before
-      any repeatability or resource-characterization claim.
+Next: Re-run prepared Tier 4.31d native temporal-substrate hardware smoke
+      revision 0003 before any repeatability or resource-characterization claim.
 ```
 
 Detailed Tier 5.19 contract:

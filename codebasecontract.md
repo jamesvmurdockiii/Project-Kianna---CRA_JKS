@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-06T17:56:56+00:00.
+Last updated: 2026-05-06T18:40:53+00:00.
 
 Current repo root:
 
@@ -102,9 +102,16 @@ FROZEN: CRA_LIFECYCLE_NATIVE_BASELINE_v0.4
   Next: Tier 4.31d native temporal-substrate hardware smoke.
         Tier 4.31c has proven C-owned seven-EMA temporal state locally.
         Tier 4.31d-hw is now prepared as source-only EBRAINS upload folder
-        `ebrains_jobs/cra_431d` with the same compact readback/control boundary.
+        `ebrains_jobs/cra_431d` with runner revision
+        `tier4_31d_native_temporal_hardware_smoke_20260506_0003` and the same
+        compact readback/control boundary.
         Run only the emitted command in JobManager; do not upload
         `controlled_test_output`.
+        The first EBRAINS return was incomplete: it produced only
+        `tier4_31d_test_profiles_stdout.txt` and `coral_reef (26).elf`, with no
+        `tier4_31d_hw_results.json`. That is not hardware evidence. It is
+        preserved at
+        `controlled_test_output/tier4_31d_hw_20260506_incomplete_return/`.
 ```
 
 Current active tier state:
@@ -149,6 +156,14 @@ Tier 4.31d — CURRENT ACTIVE. Native temporal-substrate hardware smoke.
     ebrains_jobs/cra_431d
   JobManager command:
     cra_431d/experiments/tier4_31d_native_temporal_hardware_smoke.py --mode run-hardware --output-dir tier4_31d_hw_job_output
+  Runner revision:
+    tier4_31d_native_temporal_hardware_smoke_20260506_0003
+  First EBRAINS return:
+    INCOMPLETE, not hardware evidence. Returned only profile-test stdout and an
+    ARM ELF, with no run-hardware JSON/report. Revision 0003 hardens the runner
+    with streamed build logs, build timeout, `tier4_31d_hw_milestone.json`,
+    incomplete-return artifact preservation, and structured exception
+    finalization.
   Rule: prepare/run a one-board, one-seed smoke only. The claim boundary is
     hardware execution/readback for the temporal state, not speedup, benchmark
     superiority, multi-chip scaling, or full v2.2 hardware transfer.
@@ -2493,41 +2508,45 @@ update it if the current run teaches a new lesson.
 12. If sham controls pass too, the mechanism is not causally isolated.
 13. Do not hand-edit generated evidence outputs to make the repo look clean.
 14. Every platform mistake that cost time belongs in the runbook.
-15. A prepared EBRAINS package is not ready to hand off until report, manifest,
+15. A partial EBRAINS return with host-test stdout and an `.elf` but no
+    tier-specific `*_results.json` is not a pass and not a science failure.
+    Preserve the partial artifacts, harden the runner if it failed before
+    structured finalization, and rerun the clean `ebrains_jobs/cra_*` package.
+16. A prepared EBRAINS package is not ready to hand off until report, manifest,
     stable folder, generated upload bundle, job README filename/title, and
     command all agree.
-16. Similar names are dangerous. `cra_422x` and Tier `4.22x` are not the same
+17. Similar names are dangerous. `cra_422x` and Tier `4.22x` are not the same
     thing unless the prepared report says so.
-17. When a package README filename is copied from a previous tier, fix the runner
+18. When a package README filename is copied from a previous tier, fix the runner
     and regenerate the package before handoff.
-18. After a hardware pass is ingested, perform a stale-status sweep across
+19. After a hardware pass is ingested, perform a stale-status sweep across
     `codebasecontract.md`, `docs/MASTER_EXECUTION_PLAN.md`,
     `docs/PAPER_READINESS_ROADMAP.md`, `CONTROLLED_TEST_PLAN.md`,
     `docs/CODEBASE_MAP.md`, `experiments/README.md`, `README.md`, and
     `STUDY_EVIDENCE_INDEX.md`. The top-level status being correct is not enough.
-19. When documenting criteria counts, distinguish remote runner criteria from
+20. When documenting criteria counts, distinguish remote runner criteria from
     ingest criteria so later reviewers can reconcile reports and JSON exactly.
 
-20. MCPL/multicast is the target inter-core data plane for scalable native
+21. MCPL/multicast is the target inter-core data plane for scalable native
     runtime work. SDP may be used for host control, readback, diagnostics, and
     transitional scaffolds, but do not describe SDP core-to-core traffic as the
     final scaling architecture.
-20. An EBRAINS upload bundle must include **every transitive Python import**,
+22. An EBRAINS upload bundle must include **every transitive Python import**,
     not just the direct runner script. If the runner imports module A, and
     module A imports module B, both A and B must be in the bundle. Verify this
     with a dry-run import from the bundle path before every upload.
-21. Upload package names must match the tier they represent. Tier 4.23 gets
+23. Upload package names must match the tier they represent. Tier 4.23 gets
     `cra_423` (or `cra_423a`, `cra_423b` after failures), not an incremental
     continuation of the 4.22 letter series like `cra_422ai`. Naming discipline
     prevents stale-cache confusion and makes evidence indexing unambiguous.
-22. When a runner inherits hardware acquisition or other base-module logic, the
+24. When a runner inherits hardware acquisition or other base-module logic, the
     argument parser must expose **every argument that the base module reads from
     the Namespace**. A missing parser argument causes `AttributeError` at runtime
     on EBRAINS. The failure is invisible in local testing because local mode does
     not call the hardware path. Before uploading, trace every `args.<name>`
     access in every imported base module and ensure the runner's parser defines
     it.
-23. A timer-driven continuous event loop on SpiNNaker must treat schedule entry
+25. A timer-driven continuous event loop on SpiNNaker must treat schedule entry
     timesteps as **relative to when continuous mode starts**, not as absolute
     chip-boot timesteps. The SpiNNaker timer increments from boot; by the time
     the host finishes reset, state writes, and schedule upload, `g_timestep` may
@@ -2535,7 +2554,7 @@ update it if the current run teaches a new lesson.
     never fire. The runtime must record `g_timestep` at `run_continuous` and
     offset every schedule comparison by that base. Host tests must validate this
     behavior because local test mocks do not experience real timer drift.
-24. Do not run two C-runtime build/test/package commands in parallel. Targets
+26. Do not run two C-runtime build/test/package commands in parallel. Targets
     such as `clean-host`, `test-lifecycle`, `test-profiles`, and EBRAINS
     prepare modes share `spinnaker_runtime/tests/*` binaries and `build/`
     outputs. Parallel execution can delete a freshly built test binary and

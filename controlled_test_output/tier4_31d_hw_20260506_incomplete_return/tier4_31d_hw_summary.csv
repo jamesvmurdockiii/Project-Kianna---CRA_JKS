@@ -1,0 +1,3 @@
+name,value,rule,passed,note
+hardware results json exists,/Users/james/Downloads,contains tier4_31d_hw_results.json,False,
+partial returned artifacts preserved,2,> 0 when partial artifacts exist,True,

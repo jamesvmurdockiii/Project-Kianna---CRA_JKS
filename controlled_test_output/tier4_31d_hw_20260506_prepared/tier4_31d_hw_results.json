@@ -62,7 +62,7 @@
     }
   ],
   "failure_reason": "",
-  "generated_at_utc": "2026-05-06T18:03:33+00:00",
+  "generated_at_utc": "2026-05-06T18:44:01+00:00",
   "host_checks": {
     "status": "pass",
     "test_profiles": {
@@ -89,7 +89,7 @@
     "stderr": "",
     "stdout": ""
   },
-  "runner_revision": "tier4_31d_native_temporal_hardware_smoke_20260506_0001",
+  "runner_revision": "tier4_31d_native_temporal_hardware_smoke_20260506_0003",
   "status": "prepared",
   "summary": {
     "claim_boundary": "Prepared source bundle only; no hardware evidence until returned run-hardware artifacts pass.",

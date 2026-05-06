@@ -134,8 +134,9 @@ Latest prepared EBRAINS upload package:
 ```text
 Tier 4.31d - Native Temporal-Substrate Hardware Smoke
 upload = ebrains_jobs/cra_431d
-status = prepared locally; not hardware evidence yet
+status = prepared locally; first EBRAINS return incomplete; rerun revision 0003
 runner = experiments/tier4_31d_native_temporal_hardware_smoke.py
+runner_revision = tier4_31d_native_temporal_hardware_smoke_20260506_0003
 ```
 
 Latest local temporal-native gate:
@@ -514,6 +515,33 @@ cra_431d/experiments/tier4_31d_native_temporal_hardware_smoke.py --mode run-hard
 Do not upload `controlled_test_output`. This is a one-board/one-seed smoke for
 temporal commands `39-42`, compact payload length `48`, and enabled versus
 zero/frozen/reset controls only.
+
+Current Tier 4.31d return status:
+
+```text
+controlled_test_output/tier4_31d_hw_20260506_incomplete_return/
+status = fail/incomplete ingest
+returned artifacts preserved = 2
+returned files = tier4_31d_test_profiles_stdout.txt, coral_reef (26).elf
+missing = tier4_31d_hw_results.json
+interpretation = not a pass and not a temporal-state science failure
+```
+
+The returned profile stdout shows all local profile host tests passed and the
+returned ELF shows an ARM executable linked, but the runner did not return the
+structured hardware JSON/report. Revision `0003` of the `cra_431d` package adds:
+
+```text
+- streamed APLX build stdout/stderr files
+- build timeout guard
+- tier4_31d_hw_milestone.json phase breadcrumbs
+- structured finalization for unhandled run-hardware exceptions
+- partial-return artifact preservation during ingest
+```
+
+If a future Tier 4.31d run again returns only an ELF/profile stdout without
+`tier4_31d_hw_results.json`, classify it as an incomplete infrastructure return,
+not hardware evidence. Inspect `tier4_31d_hw_milestone.json` first if present.
 
 Last Tier 4.30g command used:
 
