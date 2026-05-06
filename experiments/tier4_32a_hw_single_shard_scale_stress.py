@@ -318,6 +318,19 @@ def finalize(output_dir: Path, result: dict[str, Any]) -> int:
 
 
 def mode_prepare(args: argparse.Namespace, output_dir: Path) -> int:
+    if ROOT.name == UPLOAD_PACKAGE_NAME and (ROOT / "metadata.json").exists():
+        print(
+            json.dumps(
+                {
+                    "status": "blocked",
+                    "mode": "prepare",
+                    "reason": "This is an EBRAINS upload package. Run prepare only from the full repo root; run run-hardware from the upload package.",
+                    "expected_job_command": f"{UPLOAD_PACKAGE_NAME}/experiments/tier4_32a_hw_single_shard_scale_stress.py --mode run-hardware --output-dir tier4_32a_hw_job_output",
+                },
+                indent=2,
+            )
+        )
+        return 1
     output_dir.mkdir(parents=True, exist_ok=True)
     tier4_32a_status = prerequisite_status(TIER4_32A_RESULTS)
     tier4_32a_r1_status = prerequisite_status(TIER4_32A_R1_RESULTS)

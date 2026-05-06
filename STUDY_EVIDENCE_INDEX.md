@@ -10,7 +10,7 @@ Research narrative companions:
 - `docs/WHITEPAPER.md`
 - `docs/CODEBASE_MAP.md`
 
-- Registry generated: `2026-05-06T23:34:24.893309+00:00`
+- Registry generated: `2026-05-06T23:38:20.315811+00:00`
 - Registry status: **PASS**
 - Core validation suite: `12` tests
 - Expanded evidence suite: `70` entries; see the canonical evidence table below for the exact current tier list.
