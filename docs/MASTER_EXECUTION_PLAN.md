@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-06T00:25-04:00.
+Last updated: 2026-05-06T00:50-04:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -732,33 +732,38 @@ ability.
     trace/table budget is 112 bytes. This is contract/readiness only, not C
     implementation or hardware evidence.
 
-48. **CURRENT ACTIVE STEP** - Tier 4.31b native temporal-substrate local reference:
-    implement the local fixed-point EMA mirror, compare it against the promoted
-    Tier 5.19c fading-memory reference, and run lag-only, zero-state,
-    frozen-state, shuffled-state, reset-interval, shuffled-target, and
-    no-plasticity controls. No hardware before local parity and source audit.
+48. ✅ **COMPLETE** - Tier 4.31b native temporal-substrate local fixed-point reference:
+    local pass, 16/16. Fixed-point geomean MSE 0.22723731574965408 vs float
+    reference 0.22752229502159751; fixed/float ratio 0.9987474666079806; max
+    feature error 0.004646656591329457; selected saturation count 0; destructive
+    controls separated. This authorizes source/runtime work, not hardware.
 
-49. Tier 4.31c native temporal-substrate hardware smoke: one board, one seed,
+49. **CURRENT ACTIVE STEP** - Tier 4.31c native temporal-substrate source/runtime implementation:
+    add versioned temporal state structs/counters/readback and local C host tests
+    matching the 4.31b fixed-point mirror. No hardware before source audit and
+    local C tests pass.
+
+50. Tier 4.31d native temporal-substrate hardware smoke: one board, one seed,
     one minimal temporal-state task, explicit lag-only and shuffled-state
     controls. Do not claim full benchmark performance from a smoke.
 
-50. Tier 4.31d native replay-buffer / sleep-like replay decision: only if the
+51. Tier 4.31e native replay-buffer / sleep-like replay decision: only if the
     software replay/consolidation path still needs chip-owned buffers for scale
     or if a measured hardware bottleneck requires it. Host-scheduled replay from
     4.29e remains the current bounded evidence.
 
-51. Tier 4.31e native eligibility-trace decision: revisit macro/native
+52. Tier 4.31f native eligibility-trace decision: revisit macro/native
     eligibility only if a current promoted mechanism exposes a measured credit
     assignment or on-chip timing blocker. Do not revive 5.9 by vibes alone.
 
 ### Phase G - Multi-Core And Multi-Chip Scaling
 
-52. Tier 4.32 update the mapping model with measured 4.27-4.31 data: ITCM,
+53. Tier 4.32 update the mapping model with measured 4.27-4.31 data: ITCM,
     DTCM, schedule length, lookup pressure, message bytes, readback bytes,
     per-core utilization, state-slot limits, lifecycle masks, and any promoted
     temporal-state footprint.
 
-53. Tier 4.32a single-chip multi-core scale stress: increase cores on one chip
+54. Tier 4.32a single-chip multi-core scale stress: increase cores on one chip
     in controlled increments, for example 4 -> 8 -> 16 cores if resources allow,
     using MCPL/multicast for core-to-core event traffic unless a documented
     hardware constraint forces a temporary exception.
@@ -989,9 +994,9 @@ After each completed run or design tier:
 The next concrete action is:
 
 ```text
-Tier 4.31b native temporal-substrate local fixed-point reference: mirror the
-seven-EMA fixed-point update declared by Tier 4.31a and prove local parity plus
-controls before any C/runtime implementation or EBRAINS package.
+Tier 4.31c native temporal-substrate source/runtime implementation: add C-owned
+seven-EMA temporal state, compact readback, command handlers, and local C host
+tests matching Tier 4.31b before any EBRAINS package.
 ```
 
 Current reference state:
@@ -1011,31 +1016,29 @@ Returned artifacts preserved: 36
 Enabled lifecycle bridge gate: open
 Five predeclared lifecycle controls: closed
 Resource/readback accounting: returned for every mode
-Temporal substrate status: Tier 4.31a local readiness passed for a seven-EMA
-fixed-point native subset; nonlinear recurrence, C implementation, and hardware
-transfer remain unproven
+Temporal substrate status: Tier 4.31b local fixed-point reference passed for a
+seven-EMA native subset; C implementation and hardware transfer remain unproven
 ```
 
 Purpose:
 
 ```text
-Tier 4.31a completed the local readiness decision for moving the v2.2 fading-
-memory temporal-state mechanism toward chip-native form. The next action is not
-an EBRAINS package. It is a local fixed-point reference/parity gate that tests
-whether the declared seven-EMA trace subset preserves the Tier 5.19c fading-
-memory behavior and fails the predeclared destructive controls.
+Tier 4.31b completed the local fixed-point reference/parity gate for moving the
+v2.2 fading-memory temporal-state mechanism toward chip-native form. The next
+action is not an EBRAINS package. It is source/runtime implementation with local
+C host tests proving that the runtime-owned temporal state matches the 4.31b
+fixed-point reference and readback/control contract.
 ```
 
 Required coverage:
 
 ```text
 Use v2.2 as the software reference and `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` as
-the native lifecycle baseline. Do not create an EBRAINS package until Tier 4.31b
-passes local fixed-point parity and the lag-only, zero-state, frozen-state,
-shuffled-state, reset-interval, shuffled-target, and no-plasticity controls.
-Keep the 4.31a boundary strict: this is still not C implementation, not hardware
-transfer, not nonlinear recurrence, not speedup, not multi-chip scaling, and not
-full organism autonomy.
+the native lifecycle baseline. Do not create an EBRAINS package until Tier 4.31c
+passes source/runtime implementation, compact readback, and local C host tests
+against the 4.31b reference. Keep the 4.31b boundary strict: this is still not
+hardware transfer, not nonlinear recurrence, not speedup, not multi-chip scaling,
+and not full organism autonomy.
 ```
 
 

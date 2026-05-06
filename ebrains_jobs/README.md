@@ -20,6 +20,14 @@ Public repository hygiene rules live in
 
 ## Current Jobs
 
+### No pending Tier 4.31 temporal upload
+
+Tier 4.31b passed locally as a fixed-point temporal-substrate reference, but it
+is not an EBRAINS package and should not be uploaded. The next required work is
+Tier 4.31c source/runtime implementation plus local C host tests. Only prepare a
+new temporal upload folder after the C runtime, compact readback, control/sham
+behavior, and source audit match the Tier 4.31b fixed-point reference.
+
 ### `cra_430g`
 
 Status: **HARDWARE PASS / INGESTED** for Tier 4.30g lifecycle

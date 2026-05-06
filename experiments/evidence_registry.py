@@ -1356,6 +1356,27 @@ SPECS: tuple[EvidenceSpec, ...] = (
             "tier4_31a_fixed_point_table.csv",
         ),
     ),
+    EvidenceSpec(
+        entry_id="tier4_31b_native_temporal_fixed_point_reference",
+        tier_label="Tier 4.31b - Native Temporal-Substrate Local Fixed-Point Reference",
+        plan_position="Phase F native v2.2 temporal-state migration fixed-point reference before C/runtime implementation",
+        canonical_dir="tier4_31b_20260506_native_temporal_fixed_point_reference",
+        results_file="tier4_31b_results.json",
+        report_file="tier4_31b_report.md",
+        summary_file="tier4_31b_summary.csv",
+        harness="experiments/tier4_31b_native_temporal_fixed_point_reference.py",
+        evidence_role="native temporal-substrate fixed-point local reference",
+        claim="The seven-EMA fixed-point temporal trace mirror matches the Tier 5.19c floating fading-memory reference within tolerance, separates lag/zero/frozen/shuffled/reset/shuffled-target/no-plasticity controls, and documents a no-saturation ±2 trace-bound refinement before C/runtime implementation.",
+        caveat="Local fixed-point reference/parity evidence only; not C runtime implementation, not SpiNNaker hardware evidence, not speedup, not multi-chip scaling, not nonlinear recurrence, not universal benchmark superiority, and not a new baseline freeze.",
+        latest_manifest_names=("tier4_31b_latest_manifest.json",),
+        expected_extra_files=(
+            "tier4_31b_aggregate.csv",
+            "tier4_31b_diagnostics.json",
+            "tier4_31b_trace_errors.csv",
+            "tier4_31b_trace_readback_mirror.csv",
+            "tier4_31b_timeseries.csv",
+        ),
+    ),
 )
 
 

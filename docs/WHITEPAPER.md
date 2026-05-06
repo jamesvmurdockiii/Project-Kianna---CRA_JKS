@@ -25,7 +25,7 @@ The project contains three integrated layers:
 3. A staged evidence system that records canonical results, failed diagnostics,
    frozen baselines, and claim boundaries.
 
-As of the current registry, CRA has 62 canonical evidence bundles with zero
+As of the current registry, CRA has 63 canonical evidence bundles with zero
 missing expected artifacts and zero failed criteria in canonical entries. The
 software program has validated negative controls, positive learning controls,
 architecture ablations, external-baseline comparisons, delayed-credit repairs,
@@ -43,7 +43,9 @@ replay/consolidation, and lifecycle static-pool/sham/task-bridge evidence. Tier
 4.30g-hw froze the lifecycle-native baseline v0.4 with a host-ferried bridge
 boundary. Tier 4.31a then passed local readiness for the next v2.2 temporal-state
 migration, defining seven causal fixed-point EMA traces before any C/runtime or
-EBRAINS package.
+EBRAINS package. Tier 4.31b passed the local fixed-point reference gate for that
+subset, matching the v2.2 fading-memory reference with zero selected saturations
+and separated destructive controls before source/runtime work.
 
 The current evidence supports a bounded research claim: CRA is a reproducible
 neuromorphic platform with demonstrated local learning, mechanism sensitivity,

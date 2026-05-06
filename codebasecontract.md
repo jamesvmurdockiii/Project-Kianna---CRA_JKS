@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-06T04:25:00+00:00.
+Last updated: 2026-05-06T04:50:00+00:00.
 
 Current repo root:
 
@@ -99,11 +99,10 @@ FROZEN: CRA_LIFECYCLE_NATIVE_BASELINE_v0.4
             temporal migration, not external-baseline superiority, and not
             language/planning/AGI/ASI.
 
-  Next: Tier 4.31b native temporal-substrate local fixed-point reference/parity.
-        Tier 4.31a has defined the smallest chip-owned temporal subset for the
-        v2.2 fading-memory mechanism. No EBRAINS package is pending until 4.31b
-        proves the fixed-point mirror against the Tier 5.19c reference and
-        predeclared controls.
+  Next: Tier 4.31c native temporal-substrate source/runtime implementation.
+        Tier 4.31b has proven the seven-EMA fixed-point mirror locally. No
+        EBRAINS package is pending until source/runtime state, compact readback,
+        and local C host tests match the 4.31b fixed-point reference.
 ```
 
 Current active tier state:
@@ -118,12 +117,23 @@ Tier 4.31a — COMPLETE. Native temporal-substrate readiness.
   Boundary: local contract/readiness only; not C implementation, not hardware,
     not speedup, not nonlinear recurrence, and not a baseline freeze.
 
-Tier 4.31b — CURRENT ACTIVE. Native temporal-substrate local fixed-point reference.
-  Question: Does the seven-EMA fixed-point trace subset reproduce the promoted
-    Tier 5.19c fading-memory reference closely enough to justify C/runtime work?
-  Rule: local reference first. Run lag-only, zero-state, frozen-state,
-    shuffled-state, reset-interval, shuffled-target, and no-plasticity controls.
-    No EBRAINS package until local fixed-point parity and controls pass.
+Tier 4.31b — COMPLETE. Native temporal-substrate local fixed-point reference.
+  Status: LOCAL PASS, 16/16.
+  Output: controlled_test_output/tier4_31b_20260506_native_temporal_fixed_point_reference/
+  Result: fixed-point geomean MSE 0.22723731574965408 vs float reference
+    0.22752229502159751; fixed/float ratio 0.9987474666079806; max feature
+    error 0.004646656591329457; selected saturation count 0.
+  Controls: lag-only, zero-state, frozen-state, shuffled-state, reset-interval,
+    shuffled-target, and no-plasticity all separated.
+  Boundary: local fixed-point reference only; not C runtime or hardware evidence.
+
+Tier 4.31c — CURRENT ACTIVE. Native temporal-substrate source/runtime implementation.
+  Question: Can the C runtime own the 4.31b seven-EMA temporal state with
+    versioned structs/counters/compact readback and local host tests matching
+    the fixed-point reference?
+  Rule: source/runtime and C host tests first. No EBRAINS package until local C
+    tests prove temporal init/update/readback/sham behavior and source audit
+    confirms no hidden host updates or recurrence smuggling.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware
@@ -606,14 +616,14 @@ Local build capability (established 2026-05-02):
 
 Immediate next steps:
 
-1. Run Tier 4.31b native temporal-substrate local fixed-point reference/parity.
-   Mirror the seven-EMA update from Tier 4.31a in fixed-point and compare it
-   against the Tier 5.19c fading-memory reference.
-2. Preserve 4.31a's controls: lag-only, zero temporal state, frozen temporal
-   state, shuffled temporal state, reset-interval, shuffled-target, no-plasticity,
-   and hidden-recurrence exclusion. Do not weaken the controls to make parity pass.
-3. Only after 4.31b passes should C/runtime implementation or an EBRAINS package
-   be designed. No temporal hardware upload is pending right now.
+1. Implement Tier 4.31c source/runtime temporal state locally: versioned state
+   struct, seven trace slots, alpha/decay table, update/reset/sham counters,
+   compact readback, and command-code handlers aligned with 4.31a/4.31b.
+2. Add local C host tests that prove temporal init/update/readback, no-saturation
+   canonical behavior, reset/sham behavior, and fixed-point parity against the
+   4.31b mirror. Do not prepare EBRAINS until those tests pass.
+3. Keep the 4.31b range refinement explicit: selected trace bound is ±2 in
+   s16.15; the older ±1 sketch saturated and must not silently return.
 4. Keep sham/control commands behavior-backed. A readback flag alone is not
    reviewer-defensible; local C host tests must prove the control changes the
    intended counters/checksums before a package is uploaded.

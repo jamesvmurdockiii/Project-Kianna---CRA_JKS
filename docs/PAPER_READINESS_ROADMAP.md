@@ -6306,9 +6306,12 @@ Near-term roadmap insertion:
 17. Tier 4.31a native temporal-substrate readiness. COMPLETE: local pass 24/24;
     first native v2.2 temporal subset is seven causal fixed-point EMA traces,
     with deltas/novelty derived and no hidden recurrent state.
-18. Tier 4.31b native temporal-substrate local fixed-point reference. NEXT:
-    prove the seven-EMA mirror against Tier 5.19c fading-memory reference and
-    destructive controls before C/runtime implementation or EBRAINS packaging.
+18. Tier 4.31b native temporal-substrate local fixed-point reference. COMPLETE:
+    local pass 16/16; fixed-point seven-EMA mirror matched the float fading-
+    memory reference and destructive controls separated.
+19. Tier 4.31c native temporal-substrate source/runtime implementation. NEXT:
+    add runtime-owned temporal state, compact readback, and local C host tests
+    before any EBRAINS package.
 ```
 
 Tier 5.19a result:
@@ -6584,7 +6587,21 @@ Total initial trace/table budget: 112 bytes
 Boundary: local readiness only, not C implementation or hardware evidence
 ```
 
-Next: Tier 4.31b native temporal-substrate local fixed-point reference before
+Tier 4.31b result:
+
+```text
+Output: controlled_test_output/tier4_31b_20260506_native_temporal_fixed_point_reference/
+Status: pass
+Criteria: 16/16
+Fixed/float ratio: 0.9987474666079806
+Selected max feature error: 0.004646656591329457
+Selected saturation count: 0
+Control margins: lag 3.94, zero-state 2.74, frozen 1.35, shuffled 4.92,
+                 reset 3.11, shuffled-target 5.14, no-plasticity 9.61
+Boundary: local fixed-point reference only, not C implementation or hardware
+```
+
+Next: Tier 4.31c native temporal-substrate source/runtime implementation before
       any temporal-state hardware package.
 ```
 

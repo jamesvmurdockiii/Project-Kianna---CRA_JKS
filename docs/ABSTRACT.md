@@ -18,7 +18,7 @@ is organized through predeclared tiers, generated registries, JSON/CSV/Markdown
 artifacts, frozen baselines, controls, ablations, external baselines, and explicit
 claim boundaries.
 
-As of the current registry, CRA contains 62 canonical evidence bundles with zero
+As of the current registry, CRA contains 63 canonical evidence bundles with zero
 missing expected artifacts and zero failed criteria in canonical entries. The
 software evidence includes negative controls, positive learning controls,
 architecture ablations, external-baseline comparisons, delayed-credit repairs,
@@ -31,8 +31,9 @@ capsule execution and repeatability, chunked-runtime characterization, a
 custom-runtime progression through four-core MCPL task execution, keyed memory,
 routing/composition, predictive binding, confidence-gated learning, host-
 scheduled replay/consolidation, lifecycle static-pool/sham/task-bridge evidence
-on real SpiNNaker boards, and a local Tier 4.31a readiness contract for the next
-v2.2 temporal-state migration.
+on real SpiNNaker boards, a local Tier 4.31a readiness contract for the next
+v2.2 temporal-state migration, and Tier 4.31b local fixed-point parity for the
+selected seven-EMA temporal subset before C/runtime implementation.
 
 The current bounded claim is that CRA is a reproducible neuromorphic research
 platform with demonstrated local learning, mechanism sensitivity, selected

@@ -8803,11 +8803,42 @@ does not prove multi-chip scaling, does not prove nonlinear recurrence, and does
 not freeze a new baseline.
 ```
 
+Tier 4.31b native temporal-substrate local fixed-point reference result:
+
+```text
+Output: controlled_test_output/tier4_31b_20260506_native_temporal_fixed_point_reference/
+Status: pass
+Criteria: 16/16
+Outcome: fixed_point_temporal_reference_ready_for_source_audit
+Fixed-point geomean MSE: 0.22723731574965408
+Float reference geomean MSE: 0.22752229502159751
+Fixed/float ratio: 0.9987474666079806
+Selected max feature error: 0.004646656591329457
+Selected mean feature error: 0.0009358316819073308
+Selected saturation count: 0
+Conservative ±1 saturation count: 482
+Lag-only margin: 3.9401710002446917
+Zero-state margin: 2.742086949954038
+Frozen-state margin: 1.3498635995401482
+Shuffled-state margin: 4.915732126637618
+Reset-interval margin: 3.112217734650662
+Shuffled-target margin: 5.1409664416259835
+No-plasticity margin: 9.611963859542444
+```
+
+Boundary:
+
+```text
+Tier 4.31b is local fixed-point reference/parity evidence only. It supports
+source/runtime implementation work for the named seven-EMA subset. It does not
+prove C implementation, hardware transfer, speedup, multi-chip scaling,
+nonlinear recurrence, or benchmark superiority.
+```
+
 Next:
 
 ```text
-Tier 4.31b native temporal-substrate local fixed-point reference/parity. Mirror
-the seven-EMA update locally, compare against Tier 5.19c fading-memory evidence,
-and run the predeclared destructive controls before any C/runtime or EBRAINS
-package.
+Tier 4.31c native temporal-substrate source/runtime implementation and local C
+host tests. No EBRAINS package until the C runtime matches the 4.31b fixed-point
+reference and readback/control contract.
 ```

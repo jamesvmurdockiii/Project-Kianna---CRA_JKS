@@ -10,10 +10,10 @@ Research narrative companions:
 - `docs/WHITEPAPER.md`
 - `docs/CODEBASE_MAP.md`
 
-- Registry generated: `2026-05-06T04:17:12.716263+00:00`
+- Registry generated: `2026-05-06T15:22:08.656468+00:00`
 - Registry status: **PASS**
 - Core validation suite: `12` tests
-- Expanded evidence suite: `62` entries; see the canonical evidence table below for the exact current tier list.
+- Expanded evidence suite: `63` entries; see the canonical evidence table below for the exact current tier list.
 
 ## Canonical Claims
 
@@ -81,6 +81,7 @@ Research narrative companions:
 | `tier4_30g_lifecycle_task_benefit_resource_bridge` | Phase E lifecycle-native local task-benefit/resource bridge before hardware package | **PASS** | A bounded lifecycle-derived feature bridge locally separates the enabled lifecycle mode from sham controls on a compact delayed task and declares the resource/readback contract required before hardware packaging. | Local contract/reference evidence only; not a hardware task-benefit pass, not autonomous lifecycle-to-learning MCPL, not multi-chip scaling, and not a lifecycle baseline freeze. |
 | `tier4_30g_lifecycle_task_benefit_hardware_bridge` | Phase E lifecycle-native hardware task-benefit/resource bridge before lifecycle-native baseline freeze | **PASS** | The five-profile lifecycle runtime connected enabled lifecycle state into a bounded task-bearing path on real SpiNNaker while five predeclared lifecycle controls closed the task gate, with returned resource/readback accounting and zero failed criteria. | Hardware task-benefit/resource bridge only; host ferries the lifecycle gate into the task path. Not autonomous lifecycle-to-learning MCPL, not speedup, not multi-chip scaling, not v2.2 temporal migration, and not full organism autonomy. |
 | `tier4_31a_native_temporal_substrate_readiness` | Phase F native v2.2 temporal-state migration readiness before local fixed-point reference | **PASS** | The smallest defensible chip-owned subset for the v2.2 fading-memory mechanism is predeclared as seven causal fixed-point EMA traces with derived deltas/novelty, compact readback, controls, resource budget, proposed command codes, and failure classes before implementation. | Local readiness/contract evidence only; not C runtime implementation, not SpiNNaker hardware evidence, not speedup, not multi-chip scaling, not nonlinear recurrence, not universal benchmark superiority, and not a new baseline freeze. |
+| `tier4_31b_native_temporal_fixed_point_reference` | Phase F native v2.2 temporal-state migration fixed-point reference before C/runtime implementation | **PASS** | The seven-EMA fixed-point temporal trace mirror matches the Tier 5.19c floating fading-memory reference within tolerance, separates lag/zero/frozen/shuffled/reset/shuffled-target/no-plasticity controls, and documents a no-saturation ±2 trace-bound refinement before C/runtime implementation. | Local fixed-point reference/parity evidence only; not C runtime implementation, not SpiNNaker hardware evidence, not speedup, not multi-chip scaling, not nonlinear recurrence, not universal benchmark superiority, and not a new baseline freeze. |
 
 ## Canonical Artifacts
 
@@ -148,6 +149,7 @@ Research narrative companions:
 | `tier4_30g_lifecycle_task_benefit_resource_bridge` | `controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/tier4_30g_results.json` | `controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/tier4_30g_report.md` | `controlled_test_output/tier4_30g_20260506_lifecycle_task_benefit_resource_bridge/tier4_30g_mode_summary.csv` |
 | `tier4_30g_lifecycle_task_benefit_hardware_bridge` | `controlled_test_output/tier4_30g_hw_20260505_hardware_pass_ingested/tier4_30g_hw_results.json` | `controlled_test_output/tier4_30g_hw_20260505_hardware_pass_ingested/tier4_30g_hw_report.md` | `` |
 | `tier4_31a_native_temporal_substrate_readiness` | `controlled_test_output/tier4_31a_20260506_native_temporal_substrate_readiness/tier4_31a_results.json` | `controlled_test_output/tier4_31a_20260506_native_temporal_substrate_readiness/tier4_31a_report.md` | `` |
+| `tier4_31b_native_temporal_fixed_point_reference` | `controlled_test_output/tier4_31b_20260506_native_temporal_fixed_point_reference/tier4_31b_results.json` | `controlled_test_output/tier4_31b_20260506_native_temporal_fixed_point_reference/tier4_31b_report.md` | `controlled_test_output/tier4_31b_20260506_native_temporal_fixed_point_reference/tier4_31b_summary.csv` |
 
 ## Selected Noncanonical Diagnostics
 

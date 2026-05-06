@@ -132,7 +132,21 @@ runner = experiments/tier4_30g_lifecycle_task_benefit_resource_bridge.py
 Latest prepared EBRAINS upload package:
 
 ```text
-No active EBRAINS package is pending. Tier 4.31a local readiness passed; next step is local Tier 4.31b fixed-point reference/parity.
+No active EBRAINS package is pending. Tier 4.31b local fixed-point reference passed; next step is Tier 4.31c source/runtime implementation plus local C host tests.
+```
+
+Latest local temporal-native gate:
+
+```text
+Tier 4.31b - Native Temporal-Substrate Local Fixed-Point Reference
+  Status: LOCAL PASS, 16/16
+  Output: controlled_test_output/tier4_31b_20260506_native_temporal_fixed_point_reference/
+  Result: fixed-point geomean MSE 0.22723731574965408 vs float reference
+    0.22752229502159751, fixed/float ratio 0.9987474666079806, selected max
+    feature error 0.004646656591329457, selected saturation count 0.
+  Boundary: local fixed-point reference only; not C runtime, not hardware, not
+    speedup, not nonlinear recurrence, and not benchmark superiority.
+  Next: Tier 4.31c source/runtime temporal state and local C host tests.
 ```
 
 Tier 4.28e Point A passed after ingest at:
@@ -486,11 +500,11 @@ For the current custom-runtime job, use the generated source-only folder under
 
 ## Current EBRAINS Command
 
-No EBRAINS command is currently pending. Tier 4.31a local temporal-substrate
-readiness passed and did not create a hardware package. The next step is local
-Tier 4.31b fixed-point reference/parity. Create a new source-only `ebrains_jobs/`
-package only after local parity, controls, source checks, and claim boundary are
-defined.
+No EBRAINS command is currently pending. Tier 4.31b local temporal-substrate
+fixed-point reference passed and did not create a hardware package. The next step
+is Tier 4.31c source/runtime implementation plus local C host tests. Create a new
+source-only `ebrains_jobs/` package only after runtime state/readback, controls,
+source checks, and claim boundary are defined.
 
 Last Tier 4.30g command used:
 
