@@ -55,9 +55,10 @@ replay buffers, sleep-like replay, and native macro eligibility until measured
 blockers justify them, and authorizing Tier 4.32 mapping/resource modeling. Tier
 4.32 passed that local resource model: MCPL is the scale data plane and returned
 profile builds have positive ITCM/DTCM headroom. Tier 4.32a then passed the
-local single-chip scale-stress preflight, predeclaring 4/5/8/12/16-core
-MCPL-first stress points and authorizing Tier 4.32a-hw while keeping static
-partitioning, multi-chip work, and native-scale baseline freeze blocked.
+local single-chip scale-stress preflight, authorizing only the 4/5-core
+single-shard hardware stress points and blocking replicated 8/12/16-core stress
+until shard-aware MCPL routing exists. Static partitioning, multi-chip work, and
+native-scale baseline freeze remain blocked.
 
 The current evidence supports a bounded research claim: CRA is a reproducible
 neuromorphic platform with demonstrated local learning, mechanism sensitivity,

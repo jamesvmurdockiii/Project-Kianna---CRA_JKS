@@ -8923,13 +8923,17 @@ Result:
 ```text
 Tier 4.32a single-chip multi-core scale-stress preflight passed locally at
 controlled_test_output/tier4_32a_20260506_single_chip_scale_stress/.
-Runner revision: tier4_32a_single_chip_scale_stress_20260506_0001.
-Criteria: 18/18.
+Runner revision: tier4_32a_single_chip_scale_stress_20260506_0002.
+Criteria: 19/19.
 Scale points: 4-core reference, 5-core lifecycle, 8-core dual shard,
 12-core triple shard, 16-core quad shard.
-Decision: Tier 4.32a-hw EBRAINS single-chip MCPL-first hardware stress is
-authorized next. Tier 4.32b static reef partition, Tier 4.32c-e multi-chip
-work, and CRA_NATIVE_SCALE_BASELINE_v0.5 remain blocked.
-Boundary: local preflight only; not hardware, speedup, multi-chip scaling,
-static reef partition proof, benchmark superiority, or baseline freeze.
+Decision: only the 4-core reference and 5-core lifecycle single-shard points are
+eligible for Tier 4.32a-hw EBRAINS hardware stress. Replicated 8/12/16-core
+stress is blocked until Tier 4.32a-r1 adds shard-aware MCPL routing, because the
+current MCPL key has no shard/group field and dest_core is reserved/ignored.
+Tier 4.32b static reef partition, Tier 4.32c-e multi-chip work, and
+CRA_NATIVE_SCALE_BASELINE_v0.5 remain blocked.
+Boundary: local preflight/source-inspection evidence only; not hardware,
+speedup, replicated-shard scaling, multi-chip scaling, static reef partition
+proof, benchmark superiority, or baseline freeze.
 ```

@@ -1470,8 +1470,8 @@ SPECS: tuple[EvidenceSpec, ...] = (
         summary_file="tier4_32a_scale_points.csv",
         harness="experiments/tier4_32a_single_chip_scale_stress.py",
         evidence_role="native runtime single-chip scale-stress preflight",
-        claim="Tier 4.32a converts the Tier 4.32 resource model into a predeclared 4/5/8/12/16-core single-chip MCPL-first stress envelope, with schedule, slot, pending, readback, profile-headroom, and failure-class gates. It authorizes only Tier 4.32a-hw and keeps 4.32b/multi-chip/native-scale baseline freeze blocked.",
-        caveat="Local preflight only; not a SpiNNaker hardware run, not speedup evidence, not multi-chip scaling, not static reef partition proof, not benchmark superiority, and not a baseline freeze.",
+        claim="Tier 4.32a converts the Tier 4.32 resource model into a predeclared single-chip MCPL-first stress envelope and catches a source-level scale blocker: the current MCPL lookup key has no shard/group field and dest_core is reserved/ignored. It authorizes only single-shard 4/5-core 4.32a-hw stress, requires Tier 4.32a-r1 shard-aware MCPL repair before replicated 8/12/16-core stress, and keeps 4.32b/multi-chip/native-scale baseline freeze blocked.",
+        caveat="Local preflight/source-inspection evidence only; not a SpiNNaker hardware run, not speedup evidence, not replicated-shard scaling, not multi-chip scaling, not static reef partition proof, not benchmark superiority, and not a baseline freeze.",
         latest_manifest_names=("tier4_32a_latest_manifest.json",),
         expected_extra_files=(
             "tier4_32a_profile_allocation.csv",

@@ -6335,11 +6335,15 @@ Near-term roadmap insertion:
     Tier 4.32a single-chip scale stress is authorized next, and no native-scale
     baseline freeze is authorized.
 23. Tier 4.32a single-chip multi-core scale-stress preflight. COMPLETE:
-    local pass 18/18 at
+    local pass 19/19 at
     `controlled_test_output/tier4_32a_20260506_single_chip_scale_stress/`;
-    4/5/8/12/16-core MCPL-first stress points are predeclared, schedule/slot/
-    pending/readback/profile gates are bounded, Tier 4.32a-hw is authorized
-    next, and Tier 4.32b/multi-chip/native-scale baseline freeze remain blocked.
+    4/5/8/12/16-core MCPL-first stress points are predeclared, but only 4/5-core
+    single-shard points are currently eligible. Replicated 8/12/16-core stress
+    is blocked until shard-aware MCPL routing exists because the current key has
+    no shard/group field and dest_core is reserved/ignored. Tier 4.32a-hw is
+    authorized single-shard only, Tier 4.32a-r1 is required before replicated
+    stress, and Tier 4.32b/multi-chip/native-scale baseline freeze remain
+    blocked.
 ```
 
 Tier 5.19a result:
@@ -6643,8 +6647,9 @@ Tests: test-temporal-state, test-profiles, test, test-lifecycle, test-lifecycle-
 Boundary: local source/runtime host evidence only, not hardware
 ```
 
-Next: Tier 4.32a-hw EBRAINS single-chip multi-core scale stress using the
-      measured Tier 4.32a preflight scale points.
+Next: Tier 4.32a-hw EBRAINS single-shard single-chip stress using only the
+      eligible Tier 4.32a 4/5-core points, followed by Tier 4.32a-r1
+      shard-aware MCPL routing repair before replicated 8/12/16-core stress.
       Reopen native replay-buffer, sleep-like replay, or eligibility-trace
       implementation only if a later measured blocker specifically demands it.
 ```

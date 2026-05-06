@@ -26,21 +26,35 @@ CRA_LIFECYCLE_NATIVE_BASELINE_v0.4
     migration, and not full organism autonomy.
 ```
 
+Latest scale-planning lesson:
+
+```text
+Do not prepare replicated 8/12/16-core shard stress by merely loading multiple
+copies of the context/route/memory/learning profiles. The current MCPL lookup
+key layout is app_id | msg_type | lookup_type | seq_id; it has no shard/group
+field, and the C send helpers currently reserve/ignore dest_core. Multiple
+copies of the same state profile would therefore receive the same lookup
+requests and can generate duplicate/cross-shard replies. Tier 4.32a correctly
+blocks replicated-shard stress until Tier 4.32a-r1 adds shard-aware MCPL routing
+or equivalent directed-routing semantics.
+```
+
 Latest active hardware-facing tier:
 
 ```text
-Tier 4.32a-hw - EBRAINS Single-Chip Multi-Core Scale Stress
+Tier 4.32a-hw - EBRAINS Single-Shard Single-Chip Stress
   Status: CURRENT ACTIVE, awaiting EBRAINS package/run
-  Local prerequisite: Tier 4.32a local preflight pass, 18/18
+  Local prerequisite: Tier 4.32a local preflight pass, 19/19
   Local output: controlled_test_output/tier4_32a_20260506_single_chip_scale_stress/
-  Required stress points: 4-core reference, 5-core lifecycle, 8-core dual shard,
-    12-core triple shard, 16-core quad shard if hardware resources allow.
+  Required stress points now: 4-core reference and 5-core lifecycle only.
+  Blocked stress points: 8-core dual shard, 12-core triple shard, 16-core quad
+    shard until Tier 4.32a-r1 adds shard-aware MCPL routing.
   Required evidence: MCPL-first core-to-core traffic, compact per-core readback,
     profile/build artifacts, schedule/slot/pending high-water marks, lookup
     request/reply parity, and stale/duplicate/timeout/drop counters.
-  Boundary: single-chip hardware stress only; not speedup, not static reef
-    partition proof, not multi-chip scaling, not benchmark superiority, and not
-    CRA_NATIVE_SCALE_BASELINE_v0.5.
+  Boundary: single-shard single-chip hardware stress only; not replicated-shard
+    scaling, not speedup, not static reef partition proof, not multi-chip
+    scaling, not benchmark superiority, and not CRA_NATIVE_SCALE_BASELINE_v0.5.
 
 Recent passed hardware-facing lifecycle tier:
 

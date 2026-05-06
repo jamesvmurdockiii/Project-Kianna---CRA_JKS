@@ -24,7 +24,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CONTROLLED = ROOT / "controlled_test_output"
 
 TIER = "Tier 4.32a - Single-Chip Multi-Core Scale-Stress Preflight"
-RUNNER_REVISION = "tier4_32a_single_chip_scale_stress_20260506_0001"
+RUNNER_REVISION = "tier4_32a_single_chip_scale_stress_20260506_0002"
 DEFAULT_OUTPUT_DIR = CONTROLLED / "tier4_32a_20260506_single_chip_scale_stress"
 LATEST_MANIFEST = CONTROLLED / "tier4_32a_latest_manifest.json"
 
@@ -38,6 +38,8 @@ SDP_BYTES_PER_LOOKUP_ROUND_TRIP = 54
 STANDARD_PAYLOAD_BYTES = 105
 LIFECYCLE_PAYLOAD_BYTES = 68
 TEMPORAL_PAYLOAD_BYTES = 48
+MCPL_KEY_SUPPORTS_SHARD_ID = False
+MCPL_DEST_CORE_DIRECTED_SEND = False
 
 
 @dataclass(frozen=True)
@@ -248,12 +250,14 @@ def scale_points(limits: dict[str, int]) -> list[ScalePoint]:
             projected_failure = "context_slot_overflow"
         elif pending > limits["max_lookup_replies"]:
             projected_failure = "lookup_reply_window_overflow"
+        elif shards > 1 and not (MCPL_KEY_SUPPORTS_SHARD_ID and MCPL_DEST_CORE_DIRECTED_SEND):
+            projected_failure = "replicated_shard_mcpl_routing_not_supported"
 
         rows.append(
             ScalePoint(
                 point_id=str(plan["point_id"]),
                 purpose=str(plan["purpose"]),
-                status="eligible_for_hardware_stress" if projected_failure == "none_projected_preflight" else "blocked",
+                status="eligible_for_hardware_stress" if projected_failure == "none_projected_preflight" else "blocked_until_shard_aware_mcpl",
                 total_cores=total_cores,
                 shards=shards,
                 context_cores=context_cores,
@@ -353,6 +357,13 @@ def failure_classes() -> list[FailureClass]:
             "Tier 4.32a-hw",
         ),
         FailureClass(
+            "replicated_shard_mcpl_routing_failure",
+            "blocked_by_source_inspection",
+            "current MCPL key has no shard/group field and dest_core is reserved/ignored in send helpers",
+            "source repair must add shard-aware keying or directed routing before 8/12/16-core replicated stress",
+            "Tier 4.32a-r1",
+        ),
+        FailureClass(
             "compact_readback_growth",
             "projected_by_preflight",
             "compact_readback_bytes_per_snapshot is projected for each point",
@@ -381,17 +392,26 @@ def next_gates() -> list[NextGate]:
         NextGate(
             gate="Tier 4.32a-hw",
             decision="authorize if this preflight passes",
-            question="Do the predeclared 4/5/8/12/16-core single-chip stress points execute with MCPL-first integrity and compact readback?",
-            prerequisites="Use the 4.32a preflight scale-point table; no SDP core-to-core fallback unless documented as a control.",
+            question="Do the currently routable 4-core reference and 5-core lifecycle single-chip points execute with MCPL-first integrity and compact readback?",
+            prerequisites="Run only scale points marked eligible in the 4.32a table; no replicated shard points until shard-aware MCPL exists.",
             pass_boundary="zero stale/duplicate/timeout/drop counters, lookup request/reply parity, compact readback returned, profile builds returned, and no schedule/slot overflow.",
             fail_boundary="localize to schedule, slot, MCPL delivery, readback, profile, or EBRAINS environment class before adding more mechanics.",
-            claim_boundary="single-chip hardware stress only; not multi-chip, not speedup, not baseline freeze.",
+            claim_boundary="single-chip single-shard hardware stress only; not replicated shards, not multi-chip, not speedup, not baseline freeze.",
+        ),
+        NextGate(
+            gate="Tier 4.32a-r1",
+            decision="required before replicated 8/12/16-core stress",
+            question="Can the MCPL lookup protocol address independent replicated shards without duplicate cross-shard replies?",
+            prerequisites="Add shard/group bits or directed-routing semantics to lookup request/reply keys and host/core routing setup.",
+            pass_boundary="local C tests show two independent shards can issue identical lookup types/seq ranges without cross-talk.",
+            fail_boundary="keep scale claim to single-shard single-chip evidence and do not proceed to static reef partitioning.",
+            claim_boundary="source/local routing repair only; not hardware scaling evidence until EBRAINS stress returns.",
         ),
         NextGate(
             gate="Tier 4.32b",
-            decision="blocked until 4.32a-hw passes",
+            decision="blocked until shard-aware 4.32a hardware stress passes",
             question="Can static reef partitioning map groups/modules/polyps to the measured single-chip runtime envelope?",
-            prerequisites="4.32a-hw pass with measured resource envelope.",
+            prerequisites="4.32a-hw single-shard pass plus 4.32a-r1 shard-aware routing repair and replicated-shard hardware stress pass.",
             pass_boundary="static partition smoke preserves ownership, compact readback, and measured failure counters.",
             fail_boundary="publish measured single-chip runtime boundary; do not proceed to multi-chip.",
             claim_boundary="static partition smoke only; not one-polyp-per-chip and not organism-scale proof.",
@@ -400,7 +420,7 @@ def next_gates() -> list[NextGate]:
             gate="CRA_NATIVE_SCALE_BASELINE_v0.5",
             decision="not authorized",
             question="Is native scaling stable enough to freeze as a paper baseline?",
-            prerequisites="4.32a-hw, 4.32b, first inter-chip feasibility, and first multi-chip smoke must pass.",
+            prerequisites="single-shard 4.32a-hw, shard-aware replicated stress, 4.32b, first inter-chip feasibility, and first multi-chip smoke must pass.",
             pass_boundary="freeze only after single-chip and first multi-chip evidence are clean.",
             fail_boundary="keep v0.4 as latest native baseline and publish limits honestly.",
             claim_boundary="not considered by this preflight.",
@@ -417,7 +437,8 @@ def build_results() -> dict[str, Any]:
     failures = failure_classes()
     gates = next_gates()
 
-    all_points_eligible = all(point.status == "eligible_for_hardware_stress" for point in points)
+    eligible_points = [point for point in points if point.status == "eligible_for_hardware_stress"]
+    blocked_points = [point for point in points if point.status != "eligible_for_hardware_stress"]
     all_points_single_chip = all(point.total_cores <= CONSERVATIVE_APP_CORES_PER_CHIP for point in points)
     max_schedule = max(point.schedule_entries_per_learning_core for point in points)
     max_context_slots = max(point.context_slots_per_context_core for point in points)
@@ -433,7 +454,8 @@ def build_results() -> dict[str, Any]:
         criterion("MCPL-first policy inherited", tier4_32["final_decision"].get("mcpl_policy"), "contains mcpl_first", "mcpl_first" in tier4_32["final_decision"].get("mcpl_policy", "")),
         criterion("five ordered scale points declared", point_ids, "== 4/5/8/12/16 core points", point_ids == ["point_04c_reference", "point_05c_lifecycle", "point_08c_dual_shard", "point_12c_triple_shard", "point_16c_quad_shard"]),
         criterion("scale points remain within conservative single-chip app-core budget", max(point.total_cores for point in points), f"<= {CONSERVATIVE_APP_CORES_PER_CHIP}", all_points_single_chip),
-        criterion("scale points are eligible for hardware stress", [point.status for point in points], "all eligible", all_points_eligible),
+        criterion("single-shard scale points are eligible for hardware stress", [point.point_id for point in eligible_points], "contains 4-core and 5-core points", [point.point_id for point in eligible_points] == ["point_04c_reference", "point_05c_lifecycle"]),
+        criterion("replicated shard points are blocked until shard-aware MCPL", {point.point_id: point.projected_failure_class for point in blocked_points}, "8/12/16 core points blocked by replicated_shard_mcpl_routing_not_supported", [point.projected_failure_class for point in blocked_points] == ["replicated_shard_mcpl_routing_not_supported"] * 3),
         criterion("schedule pressure within current source limit", max_schedule, f"<= {limits['max_schedule_entries']}", max_schedule <= limits["max_schedule_entries"]),
         criterion("context slot pressure within current source limit", max_context_slots, f"<= {limits['max_context_slots']}", max_context_slots <= limits["max_context_slots"]),
         criterion("route slot pressure within current source limit", max(point.route_slots_per_route_core for point in points), f"<= {limits['max_route_slots']}", max(point.route_slots_per_route_core for point in points) <= limits["max_route_slots"]),
@@ -443,7 +465,7 @@ def build_results() -> dict[str, Any]:
         criterion("MCPL projected bytes cheaper than SDP fallback for every point", [round(point.mcpl_payload_bytes_total / point.sdp_payload_bytes_if_fallback_total, 6) for point in points], "< 1.0 each", mcpl_smaller_all),
         criterion("profile allocation headroom positive", len(allocations), "all profile allocations positive", profile_ok),
         criterion("failure classes cover hardware-only measurements", [row.failure_class for row in failures], ">= 8 classes", len(failures) >= 8 and any(row.preflight_status == "not_measured_by_preflight" for row in failures)),
-        criterion("next gate is hardware stress, not 4.32b jump", gates[0].gate, "== Tier 4.32a-hw", gates[0].gate == "Tier 4.32a-hw"),
+        criterion("next gate is constrained hardware stress, not 4.32b jump", gates[0].gate, "== Tier 4.32a-hw", gates[0].gate == "Tier 4.32a-hw" and gates[1].gate == "Tier 4.32a-r1"),
         criterion("baseline freeze remains blocked", gates[-1].decision, "== not authorized", gates[-1].decision == "not authorized"),
     ]
     failed = [item for item in criteria if not item.passed]
@@ -451,8 +473,9 @@ def build_results() -> dict[str, Any]:
 
     final_decision = {
         "status": status,
-        "tier4_32a_hw": "authorized_next" if status == "pass" else "blocked_until_4_32a_preflight_repairs",
-        "tier4_32b": "blocked_until_4_32a_hw_passes",
+        "tier4_32a_hw": "authorized_next_single_shard_only" if status == "pass" else "blocked_until_4_32a_preflight_repairs",
+        "tier4_32a_r1": "required_before_replicated_shard_stress" if status == "pass" else "blocked_until_4_32a_preflight_repairs",
+        "tier4_32b": "blocked_until_shard_aware_4_32a_hardware_stress_passes",
         "tier4_32c": "blocked_until_4_32b_passes",
         "tier4_32d": "blocked_until_4_32c_passes",
         "tier4_32e": "blocked_until_4_32d_passes",
@@ -477,15 +500,15 @@ def build_results() -> dict[str, Any]:
         "next_gate_plan": gates,
         "final_decision": final_decision,
         "recommended_next_step": (
-            "Prepare and run Tier 4.32a-hw EBRAINS single-chip MCPL-first scale stress."
+            "Prepare and run Tier 4.32a-hw EBRAINS single-shard MCPL-first hardware stress, then implement Tier 4.32a-r1 shard-aware MCPL before replicated 8/12/16-core stress."
             if status == "pass"
             else "Repair failed Tier 4.32a preflight criteria before hardware stress."
         ),
         "claim_boundary": (
             "Tier 4.32a is a local scale-stress preflight over the Tier 4.32 resource model. "
             "It is not a SpiNNaker hardware run, not a speedup claim, not a multi-chip claim, "
-            "not a static reef partition proof, not benchmark/superiority evidence, and not a "
-            "native-scale baseline freeze."
+            "not replicated-shard scaling evidence, not a static reef partition proof, not "
+            "benchmark/superiority evidence, and not a native-scale baseline freeze."
         ),
     }
 

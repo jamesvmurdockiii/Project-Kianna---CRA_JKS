@@ -99,11 +99,12 @@ FROZEN: CRA_LIFECYCLE_NATIVE_BASELINE_v0.4
             temporal migration, not external-baseline superiority, and not
             language/planning/AGI/ASI.
 
-  Next: Tier 4.32a-hw EBRAINS single-chip multi-core scale stress. Tier 4.32a
-        passed the local preflight that predeclares 4/5/8/12/16-core MCPL-first
-        stress points and keeps Tier 4.32b/multi-chip/native-scale baseline
-        freeze blocked until real hardware evidence returns. Do not freeze a
-        new native baseline or claim full v2.2 transfer from these gates.
+  Next: Tier 4.32a-hw EBRAINS single-shard single-chip stress. Tier 4.32a
+        passed the local preflight but caught a replicated-shard blocker: the
+        current MCPL lookup key has no shard/group field and dest_core is
+        reserved/ignored. Run only the eligible 4/5-core hardware points, then
+        implement Tier 4.32a-r1 shard-aware MCPL before 8/12/16-core stress.
+        Do not freeze a new native baseline or claim full v2.2 transfer.
 ```
 
 Current active tier state:
@@ -195,27 +196,39 @@ Tier 4.32 — COMPLETE. Native-runtime mapping/resource model.
     not multi-chip scaling, not benchmark superiority, and not a baseline freeze.
 
 Tier 4.32a — COMPLETE. Single-chip multi-core scale-stress preflight.
-  Status: LOCAL PASS, 18/18.
+  Status: LOCAL PASS, 19/19.
   Output: controlled_test_output/tier4_32a_20260506_single_chip_scale_stress/
-  Decision: predeclared 4/5/8/12/16-core MCPL-first single-chip stress points
-    are eligible for EBRAINS hardware stress. Schedule/core, context-slot,
-    pending/reply, compact-readback, and profile-headroom gates are bounded.
-    Tier 4.32a-hw is authorized next. Tier 4.32b-e and native-scale baseline
-    freeze remain blocked.
+  Decision: 4/5-core single-shard MCPL-first stress points are eligible for
+    EBRAINS hardware stress. Replicated 8/12/16-core shard points are blocked
+    until shard-aware MCPL routing exists because the current MCPL key has no
+    shard/group field and dest_core is reserved/ignored. Tier 4.32a-hw is
+    authorized as single-shard only. Tier 4.32a-r1 is required before
+    replicated-shard stress. Tier 4.32b-e and native-scale baseline freeze
+    remain blocked.
   Boundary: local preflight only; not hardware, not speedup, not multi-chip,
-    not static reef partition proof, not benchmark superiority, and not a
-    baseline freeze.
+    not replicated-shard scaling, not static reef partition proof, not
+    benchmark superiority, and not a baseline freeze.
 
-Tier 4.32a-hw — CURRENT ACTIVE. EBRAINS single-chip multi-core scale stress.
+Tier 4.32a-hw — CURRENT ACTIVE. EBRAINS single-shard single-chip stress.
   Question: How far can the current single-chip MCPL-first native runtime be
     stressed before schedule length, slot pressure, readback volume, lookup
     pressure, or profile headroom breaks?
-  Required coverage: use the Tier 4.32a preflight scale points exactly unless a
-    documented EBRAINS constraint forces a narrower smoke; MCPL-first messaging,
+  Required coverage: use only the Tier 4.32a scale points marked eligible
+    (`point_04c_reference`, `point_05c_lifecycle`); MCPL-first messaging,
     compact readback cadence, profile size/headroom, schedule-length sweep,
     context/route/memory/lifecycle slot pressure, pending-horizon pressure,
     stale/duplicate/timeout/drop counters, and explicit breakpoints before
-    static reef partitioning or multi-chip work.
+    shard-aware MCPL repair.
+
+Tier 4.32a-r1 — BLOCKED UNTIL 4.32a-hw RETURNS OR IF PREPARING REPLICATED
+  STRESS. Shard-aware MCPL routing repair.
+  Question: Can the MCPL lookup protocol address independent replicated shards
+    without duplicate cross-shard replies?
+  Required coverage: add shard/group key bits or directed-routing semantics,
+    update host/core routing setup, and prove with local C tests that two
+    independent shards can issue identical lookup types/sequence ranges without
+    cross-talk. No static reef partitioning, 8/12/16-core stress, or multi-chip
+    work can proceed until this passes.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware
@@ -700,15 +713,21 @@ Immediate next steps:
 
 1. Keep Tier 4.31d/4.31e boundaries strict: one-board temporal-state smoke plus
    local replay/eligibility decision closeout only, no new freeze.
-2. Tier 4.32a passed and authorized Tier 4.32a-hw. The next native step is an
-   EBRAINS single-chip multi-core scale stress using the predeclared 4/5/8/12/16
-   core MCPL-first stress points; do not jump directly to static reef
-   partitioning, multi-chip, benchmarks, or a native-scale baseline freeze.
+2. Tier 4.32a passed and authorized only single-shard Tier 4.32a-hw. The next
+   native step is an EBRAINS 4/5-core single-chip stress, followed by Tier
+   4.32a-r1 shard-aware MCPL repair before any replicated 8/12/16-core stress;
+   do not jump directly to static reef partitioning, multi-chip, benchmarks, or
+   a native-scale baseline freeze.
 3. Keep the 4.31b/4.31c range refinement explicit: selected trace bound is ±2
    in s16.15; the older ±1 sketch saturated and must not silently return.
 4. Keep public repo hygiene green before the next upload or commit: no
    credentialed remotes, no `ebrains_jobs/` symlinks, no transient root output
    dirs, no generated host binaries, and `make validate` passing.
+5. Before authorizing replicated-core or multi-chip stress, inspect the runtime
+   routing key space and send helpers. Replicating profiles is not enough. The
+   protocol must carry shard/group identity or directed-routing semantics, and
+   local C tests must prove independent shards cannot receive each other's
+   lookup requests or replies.
 
 
 ## 1. North Star

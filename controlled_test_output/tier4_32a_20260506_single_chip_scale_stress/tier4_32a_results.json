@@ -1,5 +1,5 @@
 {
-  "claim_boundary": "Tier 4.32a is a local scale-stress preflight over the Tier 4.32 resource model. It is not a SpiNNaker hardware run, not a speedup claim, not a multi-chip claim, not a static reef partition proof, not benchmark/superiority evidence, and not a native-scale baseline freeze.",
+  "claim_boundary": "Tier 4.32a is a local scale-stress preflight over the Tier 4.32 resource model. It is not a SpiNNaker hardware run, not a speedup claim, not a multi-chip claim, not replicated-shard scaling evidence, not a static reef partition proof, not benchmark/superiority evidence, and not a native-scale baseline freeze.",
   "criteria": [
     {
       "name": "Tier 4.32 prerequisite passed",
@@ -50,17 +50,25 @@
       "value": 16
     },
     {
-      "name": "scale points are eligible for hardware stress",
+      "name": "single-shard scale points are eligible for hardware stress",
       "note": "",
       "passed": true,
-      "rule": "all eligible",
+      "rule": "contains 4-core and 5-core points",
       "value": [
-        "eligible_for_hardware_stress",
-        "eligible_for_hardware_stress",
-        "eligible_for_hardware_stress",
-        "eligible_for_hardware_stress",
-        "eligible_for_hardware_stress"
+        "point_04c_reference",
+        "point_05c_lifecycle"
       ]
+    },
+    {
+      "name": "replicated shard points are blocked until shard-aware MCPL",
+      "note": "",
+      "passed": true,
+      "rule": "8/12/16 core points blocked by replicated_shard_mcpl_routing_not_supported",
+      "value": {
+        "point_08c_dual_shard": "replicated_shard_mcpl_routing_not_supported",
+        "point_12c_triple_shard": "replicated_shard_mcpl_routing_not_supported",
+        "point_16c_quad_shard": "replicated_shard_mcpl_routing_not_supported"
+      }
     },
     {
       "name": "schedule pressure within current source limit",
@@ -135,13 +143,14 @@
         "route_memory_slot_exhaustion",
         "pending_horizon_or_lookup_reply_overflow",
         "mcpl_delivery_integrity_failure",
+        "replicated_shard_mcpl_routing_failure",
         "compact_readback_growth",
         "profile_itcm_dtcm_exhaustion",
         "multi_chip_routing_failure"
       ]
     },
     {
-      "name": "next gate is hardware stress, not 4.32b jump",
+      "name": "next gate is constrained hardware stress, not 4.32b jump",
       "note": "",
       "passed": true,
       "rule": "== Tier 4.32a-hw",
@@ -155,8 +164,8 @@
       "value": "not authorized"
     }
   ],
-  "criteria_passed": 18,
-  "criteria_total": 18,
+  "criteria_passed": 19,
+  "criteria_total": 19,
   "failed_criteria": [],
   "failure_classes": [
     {
@@ -195,6 +204,13 @@
       "preflight_status": "not_measured_by_preflight"
     },
     {
+      "detection_rule": "current MCPL key has no shard/group field and dest_core is reserved/ignored in send helpers",
+      "failure_class": "replicated_shard_mcpl_routing_failure",
+      "hardware_measurement_required": "source repair must add shard-aware keying or directed routing before 8/12/16-core replicated stress",
+      "next_gate": "Tier 4.32a-r1",
+      "preflight_status": "blocked_by_source_inspection"
+    },
+    {
       "detection_rule": "compact_readback_bytes_per_snapshot is projected for each point",
       "failure_class": "compact_readback_growth",
       "hardware_measurement_required": "hardware run must return per-core payload lengths and cumulative readback bytes",
@@ -220,30 +236,40 @@
     "claim_boundary": "local single-chip scale-stress preflight only",
     "native_scale_baseline_freeze": "not_authorized",
     "status": "pass",
-    "tier4_32a_hw": "authorized_next",
-    "tier4_32b": "blocked_until_4_32a_hw_passes",
+    "tier4_32a_hw": "authorized_next_single_shard_only",
+    "tier4_32a_r1": "required_before_replicated_shard_stress",
+    "tier4_32b": "blocked_until_shard_aware_4_32a_hardware_stress_passes",
     "tier4_32c": "blocked_until_4_32b_passes",
     "tier4_32d": "blocked_until_4_32c_passes",
     "tier4_32e": "blocked_until_4_32d_passes"
   },
-  "generated_at_utc": "2026-05-06T22:17:01+00:00",
+  "generated_at_utc": "2026-05-06T22:24:12+00:00",
   "next_gate_plan": [
     {
-      "claim_boundary": "single-chip hardware stress only; not multi-chip, not speedup, not baseline freeze.",
+      "claim_boundary": "single-chip single-shard hardware stress only; not replicated shards, not multi-chip, not speedup, not baseline freeze.",
       "decision": "authorize if this preflight passes",
       "fail_boundary": "localize to schedule, slot, MCPL delivery, readback, profile, or EBRAINS environment class before adding more mechanics.",
       "gate": "Tier 4.32a-hw",
       "pass_boundary": "zero stale/duplicate/timeout/drop counters, lookup request/reply parity, compact readback returned, profile builds returned, and no schedule/slot overflow.",
-      "prerequisites": "Use the 4.32a preflight scale-point table; no SDP core-to-core fallback unless documented as a control.",
-      "question": "Do the predeclared 4/5/8/12/16-core single-chip stress points execute with MCPL-first integrity and compact readback?"
+      "prerequisites": "Run only scale points marked eligible in the 4.32a table; no replicated shard points until shard-aware MCPL exists.",
+      "question": "Do the currently routable 4-core reference and 5-core lifecycle single-chip points execute with MCPL-first integrity and compact readback?"
+    },
+    {
+      "claim_boundary": "source/local routing repair only; not hardware scaling evidence until EBRAINS stress returns.",
+      "decision": "required before replicated 8/12/16-core stress",
+      "fail_boundary": "keep scale claim to single-shard single-chip evidence and do not proceed to static reef partitioning.",
+      "gate": "Tier 4.32a-r1",
+      "pass_boundary": "local C tests show two independent shards can issue identical lookup types/seq ranges without cross-talk.",
+      "prerequisites": "Add shard/group bits or directed-routing semantics to lookup request/reply keys and host/core routing setup.",
+      "question": "Can the MCPL lookup protocol address independent replicated shards without duplicate cross-shard replies?"
     },
     {
       "claim_boundary": "static partition smoke only; not one-polyp-per-chip and not organism-scale proof.",
-      "decision": "blocked until 4.32a-hw passes",
+      "decision": "blocked until shard-aware 4.32a hardware stress passes",
       "fail_boundary": "publish measured single-chip runtime boundary; do not proceed to multi-chip.",
       "gate": "Tier 4.32b",
       "pass_boundary": "static partition smoke preserves ownership, compact readback, and measured failure counters.",
-      "prerequisites": "4.32a-hw pass with measured resource envelope.",
+      "prerequisites": "4.32a-hw single-shard pass plus 4.32a-r1 shard-aware routing repair and replicated-shard hardware stress pass.",
       "question": "Can static reef partitioning map groups/modules/polyps to the measured single-chip runtime envelope?"
     },
     {
@@ -252,7 +278,7 @@
       "fail_boundary": "keep v0.4 as latest native baseline and publish limits honestly.",
       "gate": "CRA_NATIVE_SCALE_BASELINE_v0.5",
       "pass_boundary": "freeze only after single-chip and first multi-chip evidence are clean.",
-      "prerequisites": "4.32a-hw, 4.32b, first inter-chip feasibility, and first multi-chip smoke must pass.",
+      "prerequisites": "single-shard 4.32a-hw, shard-aware replicated stress, 4.32b, first inter-chip feasibility, and first multi-chip smoke must pass.",
       "question": "Is native scaling stable enough to freeze as a paper baseline?"
     }
   ],
@@ -490,8 +516,8 @@
       "text_bytes_per_core": 13280
     }
   ],
-  "recommended_next_step": "Prepare and run Tier 4.32a-hw EBRAINS single-chip MCPL-first scale stress.",
-  "runner_revision": "tier4_32a_single_chip_scale_stress_20260506_0001",
+  "recommended_next_step": "Prepare and run Tier 4.32a-hw EBRAINS single-shard MCPL-first hardware stress, then implement Tier 4.32a-r1 shard-aware MCPL before replicated 8/12/16-core stress.",
+  "runner_revision": "tier4_32a_single_chip_scale_stress_20260506_0002",
   "runtime_limits": {
     "max_context_slots": 128,
     "max_lifecycle_slots": 8,
@@ -578,14 +604,14 @@
       "memory_cores": 2,
       "memory_slots_per_memory_core": 4,
       "point_id": "point_08c_dual_shard",
-      "projected_failure_class": "none_projected_preflight",
+      "projected_failure_class": "replicated_shard_mcpl_routing_not_supported",
       "purpose": "First replicated context/route/memory/learning shard stress point.",
       "route_cores": 2,
       "route_slots_per_route_core": 4,
       "schedule_entries_per_learning_core": 96,
       "sdp_payload_bytes_if_fallback_total": 31104,
       "shards": 2,
-      "status": "eligible_for_hardware_stress",
+      "status": "blocked_until_shard_aware_mcpl",
       "temporal_state_enabled": true,
       "total_cores": 8
     },
@@ -607,14 +633,14 @@
       "memory_cores": 3,
       "memory_slots_per_memory_core": 4,
       "point_id": "point_12c_triple_shard",
-      "projected_failure_class": "none_projected_preflight",
+      "projected_failure_class": "replicated_shard_mcpl_routing_not_supported",
       "purpose": "Intermediate replicated shard stress point before full single-chip pressure.",
       "route_cores": 3,
       "route_slots_per_route_core": 4,
       "schedule_entries_per_learning_core": 128,
       "sdp_payload_bytes_if_fallback_total": 62208,
       "shards": 3,
-      "status": "eligible_for_hardware_stress",
+      "status": "blocked_until_shard_aware_mcpl",
       "temporal_state_enabled": true,
       "total_cores": 12
     },
@@ -636,14 +662,14 @@
       "memory_cores": 4,
       "memory_slots_per_memory_core": 4,
       "point_id": "point_16c_quad_shard",
-      "projected_failure_class": "none_projected_preflight",
+      "projected_failure_class": "replicated_shard_mcpl_routing_not_supported",
       "purpose": "Conservative full single-chip application-core pressure point.",
       "route_cores": 4,
       "route_slots_per_route_core": 4,
       "schedule_entries_per_learning_core": 128,
       "sdp_payload_bytes_if_fallback_total": 82944,
       "shards": 4,
-      "status": "eligible_for_hardware_stress",
+      "status": "blocked_until_shard_aware_mcpl",
       "temporal_state_enabled": true,
       "total_cores": 16
     }
