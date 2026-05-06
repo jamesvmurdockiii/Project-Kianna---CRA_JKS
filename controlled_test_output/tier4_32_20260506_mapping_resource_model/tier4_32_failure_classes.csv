@@ -1,0 +1,9 @@
+failure_class,status,evidence,next_detection_gate
+ITCM overflow,"measured historically, not active in 4.30g profiles",4.22w had an unprofiled overflow; 4.30g returned five profiled builds with positive ITCM headroom.,Tier 4.32a profile-size sweep and any new runtime-profile build.
+DTCM/state-slot exhaustion,not yet stressed to limit,"4.28e used 43/128 context slots and 10/128 pending horizons; 4.30g used 1 active lifecycle bridge slot, not lifecycle-pool stress.",Tier 4.32a single-chip scale stress with slot/schedule sweeps.
+lookup stale/duplicate/timeout,zero observed in measured gates,4.28e and 4.30g returned zero stale replies and zero timeouts under current pressure.,Tier 4.32a and 4.32c must preserve stale/duplicate/timeout counters.
+SDP overhead bottleneck,architecturally deprecated,4.27g model shows MCPL round-trip bytes are 16 vs SDP 54 and avoids monitor involvement.,Tier 4.32a should stay MCPL-first; SDP remains only fallback/control.
+readback/provenance blowup,partially measured,4.28e standard readback reached 5460 learning bytes; 4.30g lifecycle readback reached 2380 bytes per mode; temporal compact payload is 48 bytes.,Tier 4.32a compact-readback cadence sweep.
+multi-chip routing/latency,unmeasured,All current 4.27-4.31 evidence is single-chip/same-board scoped.,Tier 4.32c contract then Tier 4.32d first multi-chip smoke.
+static reef partition correctness,unmeasured,"Current gates split profiles, not reef module/polyps across partitions.",Tier 4.32b static reef partition smoke.
+benchmark/large-task performance,unmeasured by this tier,"4.32 is a resource model, not MackeyGlass/Lorenz/NARMA or external-baseline evidence.",Return to benchmark matrix after native scale gates stabilize.

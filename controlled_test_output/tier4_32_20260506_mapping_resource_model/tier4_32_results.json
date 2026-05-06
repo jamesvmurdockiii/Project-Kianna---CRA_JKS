@@ -1,0 +1,787 @@
+{
+  "claim_boundary": "Tier 4.32 is a local mapping/resource model over measured Tier 4.27-4.31 evidence. It is not a new SpiNNaker run, not a speedup claim, not a multi-chip claim, not a benchmark/superiority claim, not a full organism autonomy claim, and not a baseline freeze.",
+  "criteria": [
+    {
+      "name": "Tier 4.27g protocol model passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "Tier 4.28e Point C hardware pressure passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "Tier 4.29f mechanism regression passed",
+      "note": "",
+      "passed": true,
+      "rule": "== 113/113",
+      "value": "113/113"
+    },
+    {
+      "name": "Tier 4.30g hardware lifecycle bridge passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "Tier 4.31d temporal hardware smoke passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "Tier 4.31e authorized 4.32",
+      "note": "",
+      "passed": true,
+      "rule": "== authorized_next",
+      "value": "authorized_next"
+    },
+    {
+      "name": "runtime constants parsed",
+      "note": "",
+      "passed": true,
+      "rule": "== {'max_context_slots': 128, 'max_route_slots': 8, 'max_memory_slots': 8, 'max_pending_horizons': 128, 'max_lifecycle_slots': 8, 'max_schedule_entries': 512, 'max_lookup_replies': 32}",
+      "value": {
+        "max_context_slots": 128,
+        "max_lifecycle_slots": 8,
+        "max_lookup_replies": 32,
+        "max_memory_slots": 8,
+        "max_pending_horizons": 128,
+        "max_route_slots": 8,
+        "max_schedule_entries": 512
+      }
+    },
+    {
+      "name": "profile build artifacts parsed",
+      "note": "",
+      "passed": true,
+      "rule": "all pass",
+      "value": {
+        "context_core": "pass",
+        "learning_core": "pass",
+        "lifecycle_core": "pass",
+        "memory_core": "pass",
+        "route_core": "pass"
+      }
+    },
+    {
+      "name": "profile ITCM headroom positive",
+      "note": "",
+      "passed": true,
+      "rule": "> 0",
+      "value": 18024
+    },
+    {
+      "name": "profile DTCM estimate headroom positive",
+      "note": "",
+      "passed": true,
+      "rule": "> 0",
+      "value": 41939
+    },
+    {
+      "name": "MCPL is byte-cheaper than SDP",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": "16 < 54"
+    },
+    {
+      "name": "4.28e event pressure recorded",
+      "note": "",
+      "passed": true,
+      "rule": ">= 43",
+      "value": 43
+    },
+    {
+      "name": "4.28e context slot pressure below limit",
+      "note": "",
+      "passed": true,
+      "rule": "< MAX_CONTEXT_SLOTS",
+      "value": 43
+    },
+    {
+      "name": "4.28e pending pressure below limit",
+      "note": "",
+      "passed": true,
+      "rule": "< MAX_PENDING_HORIZONS",
+      "value": 10
+    },
+    {
+      "name": "4.28e lookup request/reply parity",
+      "note": "",
+      "passed": true,
+      "rule": "equal",
+      "value": "129/129"
+    },
+    {
+      "name": "4.28e stale/duplicate/timeouts absent",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "name": "4.30g lifecycle modes all passed",
+      "note": "",
+      "passed": true,
+      "rule": "all pass",
+      "value": [
+        "pass",
+        "pass",
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "name": "4.30g lifecycle lookup parity",
+      "note": "",
+      "passed": true,
+      "rule": "equal",
+      "value": "72/72"
+    },
+    {
+      "name": "4.30g stale/timeouts absent",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "name": "4.31d temporal payload measured",
+      "note": "",
+      "passed": true,
+      "rule": "== 48",
+      "value": 48
+    },
+    {
+      "name": "resource envelope rows cover required categories",
+      "note": "",
+      "passed": true,
+      "rule": "contains protocol/four_core/readback/five_core/temporal/limits/profile",
+      "value": [
+        "five_core_final_reads",
+        "five_core_lifecycle",
+        "four_core_pressure",
+        "limits",
+        "profile_budget",
+        "protocol",
+        "readback",
+        "temporal"
+      ]
+    },
+    {
+      "name": "failure classes declared",
+      "note": "",
+      "passed": true,
+      "rule": ">= 8",
+      "value": 8
+    },
+    {
+      "name": "next gate is 4.32a, not freeze",
+      "note": "",
+      "passed": true,
+      "rule": "== Tier 4.32a",
+      "value": "Tier 4.32a"
+    }
+  ],
+  "criteria_passed": 23,
+  "criteria_total": 23,
+  "evidence_inputs": [
+    {
+      "extracted_signal": "SDP round trip 54 bytes; MCPL round trip 16 bytes; 48-event MCPL total 2304 bytes",
+      "path": "controlled_test_output/tier4_27g_20260502_local_pass/tier4_27g_results.json",
+      "role": "protocol byte/latency model",
+      "source_id": "tier4_27g_mcpl_vs_sdp_model",
+      "status": "pass"
+    },
+    {
+      "extracted_signal": "43 events; context slots 43; max pending 10; learning lookups 129",
+      "path": "controlled_test_output/tier4_28e_pointC_20260503_hardware_pass_ingested/tier4_28e_hardware_results.json",
+      "role": "measured four-core event/slot/lookup pressure",
+      "source_id": "tier4_28e_pointC_four_core_pressure",
+      "status": "pass"
+    },
+    {
+      "extracted_signal": "113/113 criteria complete",
+      "path": "controlled_test_output/tier4_29f_20260505_native_mechanism_regression/tier4_29f_results.json",
+      "role": "canonical mechanism-regression prerequisite",
+      "source_id": "tier4_29f_native_mechanism_regression",
+      "status": "pass"
+    },
+    {
+      "extracted_signal": "task status pass; profiles context,learning,lifecycle,memory,route; runtime 1.8654s",
+      "path": "controlled_test_output/tier4_30g_hw_20260505_hardware_pass_ingested/tier4_30g_hw_results.json",
+      "role": "measured five-core lifecycle bridge",
+      "source_id": "tier4_30g_lifecycle_hardware_bridge",
+      "status": "pass"
+    },
+    {
+      "extracted_signal": "payload 48 bytes; board 10.11.216.121; scenarios {'enabled': 'pass', 'frozen_state': 'pass', 'reset_each_update': 'pass', 'zero_state': 'pass'}",
+      "path": "controlled_test_output/tier4_31d_hw_20260506_hardware_pass_ingested/returned_artifacts/tier4_31d_hw_results.json",
+      "role": "measured temporal compact readback smoke",
+      "source_id": "tier4_31d_native_temporal_hardware_smoke",
+      "status": "pass"
+    },
+    {
+      "extracted_signal": "4.32 decision = authorized_next",
+      "path": "controlled_test_output/tier4_31e_20260506_native_replay_eligibility_decision_closeout/tier4_31e_results.json",
+      "role": "replay/eligibility closeout prerequisite",
+      "source_id": "tier4_31e_decision_closeout",
+      "status": "pass"
+    }
+  ],
+  "failed_criteria": [],
+  "failure_classes": [
+    {
+      "evidence": "4.22w had an unprofiled overflow; 4.30g returned five profiled builds with positive ITCM headroom.",
+      "failure_class": "ITCM overflow",
+      "next_detection_gate": "Tier 4.32a profile-size sweep and any new runtime-profile build.",
+      "status": "measured historically, not active in 4.30g profiles"
+    },
+    {
+      "evidence": "4.28e used 43/128 context slots and 10/128 pending horizons; 4.30g used 1 active lifecycle bridge slot, not lifecycle-pool stress.",
+      "failure_class": "DTCM/state-slot exhaustion",
+      "next_detection_gate": "Tier 4.32a single-chip scale stress with slot/schedule sweeps.",
+      "status": "not yet stressed to limit"
+    },
+    {
+      "evidence": "4.28e and 4.30g returned zero stale replies and zero timeouts under current pressure.",
+      "failure_class": "lookup stale/duplicate/timeout",
+      "next_detection_gate": "Tier 4.32a and 4.32c must preserve stale/duplicate/timeout counters.",
+      "status": "zero observed in measured gates"
+    },
+    {
+      "evidence": "4.27g model shows MCPL round-trip bytes are 16 vs SDP 54 and avoids monitor involvement.",
+      "failure_class": "SDP overhead bottleneck",
+      "next_detection_gate": "Tier 4.32a should stay MCPL-first; SDP remains only fallback/control.",
+      "status": "architecturally deprecated"
+    },
+    {
+      "evidence": "4.28e standard readback reached 5460 learning bytes; 4.30g lifecycle readback reached 2380 bytes per mode; temporal compact payload is 48 bytes.",
+      "failure_class": "readback/provenance blowup",
+      "next_detection_gate": "Tier 4.32a compact-readback cadence sweep.",
+      "status": "partially measured"
+    },
+    {
+      "evidence": "All current 4.27-4.31 evidence is single-chip/same-board scoped.",
+      "failure_class": "multi-chip routing/latency",
+      "next_detection_gate": "Tier 4.32c contract then Tier 4.32d first multi-chip smoke.",
+      "status": "unmeasured"
+    },
+    {
+      "evidence": "Current gates split profiles, not reef module/polyps across partitions.",
+      "failure_class": "static reef partition correctness",
+      "next_detection_gate": "Tier 4.32b static reef partition smoke.",
+      "status": "unmeasured"
+    },
+    {
+      "evidence": "4.32 is a resource model, not MackeyGlass/Lorenz/NARMA or external-baseline evidence.",
+      "failure_class": "benchmark/large-task performance",
+      "next_detection_gate": "Return to benchmark matrix after native scale gates stabilize.",
+      "status": "unmeasured by this tier"
+    }
+  ],
+  "final_decision": {
+    "claim_boundary": "local resource/mapping model over measured evidence only",
+    "mcpl_policy": "mcpl_first_for_scale_sdp_fallback_control_only",
+    "native_scale_baseline_freeze": "not_authorized",
+    "status": "pass",
+    "tier4_32a": "authorized_next",
+    "tier4_32b": "blocked_until_4_32a_passes",
+    "tier4_32c": "blocked_until_4_32b_passes",
+    "tier4_32d": "blocked_until_4_32c_passes",
+    "tier4_32e": "blocked_until_4_32d_passes"
+  },
+  "generated_at_utc": "2026-05-06T21:42:20+00:00",
+  "next_gate_plan": [
+    {
+      "claim_boundary": "Single-chip scale-stress evidence only; no multi-chip, benchmark, or baseline-freeze claim.",
+      "decision": "authorize next",
+      "fail_boundary": "Any overflow/timeout/stale reply/readback failure becomes the blocker to repair before static partitioning.",
+      "gate": "Tier 4.32a",
+      "pass_boundary": "Passes predeclared sweeps with no stale replies, no timeouts, no fallback, positive profile headroom, and documented breakpoints.",
+      "prerequisites": "4.32 model passes; use MCPL-first runtime profiles and compact readback.",
+      "question": "How far can the current single-chip multi-core runtime be stressed before schedule, slot, readback, or lookup pressure breaks?"
+    },
+    {
+      "claim_boundary": "Static mapping smoke only; not dynamic growth or multi-chip scaling.",
+      "decision": "blocked until 4.32a passes",
+      "fail_boundary": "Partition mismatch, owner leakage, or readback ambiguity blocks multi-chip work.",
+      "gate": "Tier 4.32b",
+      "pass_boundary": "Static partition smoke preserves state/readout parity and ownership guards.",
+      "prerequisites": "4.32a pass and a declared partition map.",
+      "question": "Can a static reef partition map modules/polyps to runtime profiles without corrupting state ownership?"
+    },
+    {
+      "claim_boundary": "Contract evidence only; not hardware execution.",
+      "decision": "blocked until 4.32b passes",
+      "fail_boundary": "Ambiguous key ownership or unmeasured route failure class blocks hardware smoke.",
+      "gate": "Tier 4.32c",
+      "pass_boundary": "Contract defines routing keys, masks, failure counters, placement assumptions, and minimal readback.",
+      "prerequisites": "4.32b pass and exact key masks/payloads/cadence declared.",
+      "question": "What is the inter-chip MCPL/multicast contract for state, lifecycle, temporal, and learning messages?"
+    },
+    {
+      "claim_boundary": "First multi-chip smoke only; not learning scale.",
+      "decision": "blocked until 4.32c passes",
+      "fail_boundary": "Any routing/load/message/readback failure becomes a repair tier.",
+      "gate": "Tier 4.32d",
+      "pass_boundary": "One cross-chip message path passes with real board readback and no fallback.",
+      "prerequisites": "4.32c contract and EBRAINS package prepared.",
+      "question": "Can the smallest cross-chip message/readback smoke execute with zero stale replies and correct ownership?"
+    },
+    {
+      "claim_boundary": "Tiny multi-chip learning evidence only.",
+      "decision": "blocked until 4.32d passes",
+      "fail_boundary": "Mismatch or instability blocks larger native benchmarks.",
+      "gate": "Tier 4.32e",
+      "pass_boundary": "Cross-chip learning micro-task matches fixed-point reference within predeclared tolerance.",
+      "prerequisites": "4.32d pass and compact reference trace.",
+      "question": "Can a tiny cross-chip learning micro-task preserve the native learning loop?"
+    },
+    {
+      "claim_boundary": "Would be a native-runtime baseline, separate from software v2.x mechanism baselines.",
+      "decision": "not authorized",
+      "fail_boundary": "Any unresolved scale or routing blocker prevents freeze.",
+      "gate": "native scale baseline freeze",
+      "pass_boundary": "Freeze only after single-chip stress, partition smoke, inter-chip contract, cross-chip smoke, and cross-chip micro-learning are all clean.",
+      "prerequisites": "4.32a-e pass with stable resource model and documented failure envelope.",
+      "question": "Is the native runtime stable enough to freeze as a scale baseline?"
+    }
+  ],
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_32_20260506_mapping_resource_model",
+  "profile_budgets": [
+    {
+      "bss_bytes": 8429,
+      "data_bytes": 20,
+      "dec_bytes": 19881,
+      "dtcm_budget_bytes": 65536,
+      "dtcm_estimate_bytes": 8449,
+      "dtcm_headroom_bytes": 57087,
+      "dtcm_headroom_fraction": 0.8710784912109375,
+      "itcm_budget_bytes": 32768,
+      "itcm_headroom_bytes": 21336,
+      "itcm_headroom_fraction": 0.651123046875,
+      "profile": "context_core",
+      "source_artifact": "controlled_test_output/tier4_30g_hw_20260505_hardware_pass_ingested/returned_artifacts/tier4_30g_hw_context_build.json",
+      "status": "pass",
+      "text_bytes": 11432
+    },
+    {
+      "bss_bytes": 8429,
+      "data_bytes": 20,
+      "dec_bytes": 19913,
+      "dtcm_budget_bytes": 65536,
+      "dtcm_estimate_bytes": 8449,
+      "dtcm_headroom_bytes": 57087,
+      "dtcm_headroom_fraction": 0.8710784912109375,
+      "itcm_budget_bytes": 32768,
+      "itcm_headroom_bytes": 21304,
+      "itcm_headroom_fraction": 0.650146484375,
+      "profile": "route_core",
+      "source_artifact": "controlled_test_output/tier4_30g_hw_20260505_hardware_pass_ingested/returned_artifacts/tier4_30g_hw_route_build.json",
+      "status": "pass",
+      "text_bytes": 11464
+    },
+    {
+      "bss_bytes": 8429,
+      "data_bytes": 20,
+      "dec_bytes": 19913,
+      "dtcm_budget_bytes": 65536,
+      "dtcm_estimate_bytes": 8449,
+      "dtcm_headroom_bytes": 57087,
+      "dtcm_headroom_fraction": 0.8710784912109375,
+      "itcm_budget_bytes": 32768,
+      "itcm_headroom_bytes": 21304,
+      "itcm_headroom_fraction": 0.650146484375,
+      "profile": "memory_core",
+      "source_artifact": "controlled_test_output/tier4_30g_hw_20260505_hardware_pass_ingested/returned_artifacts/tier4_30g_hw_memory_build.json",
+      "status": "pass",
+      "text_bytes": 11464
+    },
+    {
+      "bss_bytes": 23573,
+      "data_bytes": 24,
+      "dec_bytes": 36877,
+      "dtcm_budget_bytes": 65536,
+      "dtcm_estimate_bytes": 23597,
+      "dtcm_headroom_bytes": 41939,
+      "dtcm_headroom_fraction": 0.6399383544921875,
+      "itcm_budget_bytes": 32768,
+      "itcm_headroom_bytes": 19488,
+      "itcm_headroom_fraction": 0.5947265625,
+      "profile": "learning_core",
+      "source_artifact": "controlled_test_output/tier4_30g_hw_20260505_hardware_pass_ingested/returned_artifacts/tier4_30g_hw_learning_build.json",
+      "status": "pass",
+      "text_bytes": 13280
+    },
+    {
+      "bss_bytes": 22773,
+      "data_bytes": 20,
+      "dec_bytes": 37537,
+      "dtcm_budget_bytes": 65536,
+      "dtcm_estimate_bytes": 22793,
+      "dtcm_headroom_bytes": 42743,
+      "dtcm_headroom_fraction": 0.6522064208984375,
+      "itcm_budget_bytes": 32768,
+      "itcm_headroom_bytes": 18024,
+      "itcm_headroom_fraction": 0.550048828125,
+      "profile": "lifecycle_core",
+      "source_artifact": "controlled_test_output/tier4_30g_hw_20260505_hardware_pass_ingested/returned_artifacts/tier4_30g_hw_lifecycle_build.json",
+      "status": "pass",
+      "text_bytes": 14744
+    }
+  ],
+  "recommended_next_step": "Tier 4.32a single-chip multi-core scale stress with MCPL-first messaging and compact readback.",
+  "resource_envelope": [
+    {
+      "category": "protocol",
+      "evidence_source": "tier4_27g",
+      "interpretation": "Transitional SDP lookup round trip byte cost.",
+      "metric": "sdp_round_trip_bytes",
+      "unit": "bytes",
+      "value": 54
+    },
+    {
+      "category": "protocol",
+      "evidence_source": "tier4_27g",
+      "interpretation": "Target MCPL lookup round trip byte cost.",
+      "metric": "mcpl_round_trip_bytes",
+      "unit": "bytes",
+      "value": 16
+    },
+    {
+      "category": "protocol",
+      "evidence_source": "tier4_27g",
+      "interpretation": "MCPL is the scale path; SDP is a transitional/fallback control channel.",
+      "metric": "mcpl_byte_reduction_ratio_vs_sdp",
+      "unit": "ratio",
+      "value": 0.296296
+    },
+    {
+      "category": "protocol",
+      "evidence_source": "tier4_27g",
+      "interpretation": "Three lookup types times request/reply.",
+      "metric": "lookup_messages_per_event",
+      "unit": "messages/event",
+      "value": 6
+    },
+    {
+      "category": "protocol",
+      "evidence_source": "tier4_27g",
+      "interpretation": "Modeled SDP pressure for a 48-event reference.",
+      "metric": "sdp_total_bytes_48event",
+      "unit": "bytes",
+      "value": 8064
+    },
+    {
+      "category": "protocol",
+      "evidence_source": "tier4_27g",
+      "interpretation": "Modeled MCPL pressure for a 48-event reference.",
+      "metric": "mcpl_total_bytes_48event",
+      "unit": "bytes",
+      "value": 2304
+    },
+    {
+      "category": "protocol",
+      "evidence_source": "tier4_27g",
+      "interpretation": "Minimum intra-chip routing entries for context/route/memory request and learning reply paths.",
+      "metric": "mcpl_router_entries_required",
+      "unit": "router entries",
+      "value": 4
+    },
+    {
+      "category": "four_core_pressure",
+      "evidence_source": "tier4_28e_pointC",
+      "interpretation": "Measured four-core pressure event count.",
+      "metric": "tier4_28e_event_count",
+      "unit": "events",
+      "value": 43
+    },
+    {
+      "category": "four_core_pressure",
+      "evidence_source": "tier4_28e_pointC",
+      "interpretation": "One schedule upload per compact event in this run.",
+      "metric": "tier4_28e_schedule_uploads",
+      "unit": "uploads",
+      "value": 43
+    },
+    {
+      "category": "four_core_pressure",
+      "evidence_source": "tier4_28e_pointC",
+      "interpretation": "Measured context-slot pressure.",
+      "metric": "tier4_28e_context_slots_used",
+      "unit": "slots",
+      "value": 43
+    },
+    {
+      "category": "four_core_pressure",
+      "evidence_source": "tier4_28e_pointC",
+      "interpretation": "Measured delayed-credit pending pressure.",
+      "metric": "tier4_28e_max_pending",
+      "unit": "pending horizons",
+      "value": 10
+    },
+    {
+      "category": "four_core_pressure",
+      "evidence_source": "tier4_28e_pointC",
+      "interpretation": "Learning-core lookup requests.",
+      "metric": "tier4_28e_lookup_requests",
+      "unit": "requests",
+      "value": 129
+    },
+    {
+      "category": "four_core_pressure",
+      "evidence_source": "tier4_28e_pointC",
+      "interpretation": "Learning-core lookup replies.",
+      "metric": "tier4_28e_lookup_replies",
+      "unit": "replies",
+      "value": 129
+    },
+    {
+      "category": "four_core_pressure",
+      "evidence_source": "tier4_28e_pointC",
+      "interpretation": "No stale, duplicate, or timeout events were observed.",
+      "metric": "tier4_28e_stale_duplicate_timeout_total",
+      "unit": "events",
+      "value": 0
+    },
+    {
+      "category": "readback",
+      "evidence_source": "tier4_28e_pointC",
+      "interpretation": "Standard compact state payload in the four-core run.",
+      "metric": "standard_payload_len",
+      "unit": "bytes",
+      "value": 105
+    },
+    {
+      "category": "readback",
+      "evidence_source": "tier4_28e_pointC",
+      "interpretation": "Measured cumulative learning readback bytes.",
+      "metric": "tier4_28e_learning_readback_bytes",
+      "unit": "bytes",
+      "value": 5460
+    },
+    {
+      "category": "readback",
+      "evidence_source": "tier4_28e_pointC",
+      "interpretation": "Measured context readback bytes.",
+      "metric": "tier4_28e_context_readback_bytes",
+      "unit": "bytes",
+      "value": 105
+    },
+    {
+      "category": "five_core_lifecycle",
+      "evidence_source": "tier4_30g_hw",
+      "interpretation": "Measured five-profile single-chip task bridge.",
+      "metric": "active_profiles",
+      "unit": "profiles",
+      "value": 5
+    },
+    {
+      "category": "five_core_lifecycle",
+      "evidence_source": "tier4_30g_hw",
+      "interpretation": "Lifecycle enabled task schedule length.",
+      "metric": "enabled_task_schedule_uploads",
+      "unit": "uploads",
+      "value": 24
+    },
+    {
+      "category": "five_core_lifecycle",
+      "evidence_source": "tier4_30g_hw",
+      "interpretation": "Lifecycle enabled task lookup pressure.",
+      "metric": "enabled_learning_lookup_requests",
+      "unit": "requests",
+      "value": 72
+    },
+    {
+      "category": "five_core_lifecycle",
+      "evidence_source": "tier4_30g_hw",
+      "interpretation": "Lifecycle enabled task learning readback bytes.",
+      "metric": "enabled_learning_readback_bytes",
+      "unit": "bytes",
+      "value": 210
+    },
+    {
+      "category": "five_core_lifecycle",
+      "evidence_source": "tier4_30g_hw",
+      "interpretation": "Lifecycle compact payload length.",
+      "metric": "lifecycle_payload_len",
+      "unit": "bytes",
+      "value": 68
+    },
+    {
+      "category": "five_core_lifecycle",
+      "evidence_source": "tier4_30g_hw",
+      "interpretation": "Lifecycle cumulative readback bytes per mode.",
+      "metric": "lifecycle_readback_bytes",
+      "unit": "bytes",
+      "value": 2380
+    },
+    {
+      "category": "five_core_lifecycle",
+      "evidence_source": "tier4_30g_hw",
+      "interpretation": "Measured lifecycle enabled task roundtrip time.",
+      "metric": "enabled_task_runtime_seconds",
+      "unit": "seconds",
+      "value": 0.2652983949519694
+    },
+    {
+      "category": "temporal",
+      "evidence_source": "tier4_31d_hw",
+      "interpretation": "Measured native temporal compact payload length.",
+      "metric": "temporal_payload_len",
+      "unit": "bytes",
+      "value": 48
+    },
+    {
+      "category": "limits",
+      "evidence_source": "config.h",
+      "interpretation": "Compiled context-slot capacity.",
+      "metric": "max_context_slots",
+      "unit": "slots",
+      "value": 128
+    },
+    {
+      "category": "limits",
+      "evidence_source": "config.h",
+      "interpretation": "Compiled route-slot capacity.",
+      "metric": "max_route_slots",
+      "unit": "slots",
+      "value": 8
+    },
+    {
+      "category": "limits",
+      "evidence_source": "config.h",
+      "interpretation": "Compiled memory-slot capacity.",
+      "metric": "max_memory_slots",
+      "unit": "slots",
+      "value": 8
+    },
+    {
+      "category": "limits",
+      "evidence_source": "config.h",
+      "interpretation": "Compiled delayed-credit capacity.",
+      "metric": "max_pending_horizons",
+      "unit": "pending horizons",
+      "value": 128
+    },
+    {
+      "category": "limits",
+      "evidence_source": "config.h",
+      "interpretation": "Compiled lifecycle static-pool capacity.",
+      "metric": "max_lifecycle_slots",
+      "unit": "slots",
+      "value": 8
+    },
+    {
+      "category": "limits",
+      "evidence_source": "config.h",
+      "interpretation": "Compiled host-supplied schedule capacity.",
+      "metric": "max_schedule_entries",
+      "unit": "schedule entries",
+      "value": 512
+    },
+    {
+      "category": "limits",
+      "evidence_source": "state_manager.h",
+      "interpretation": "Compiled lookup reply table capacity.",
+      "metric": "max_lookup_replies",
+      "unit": "entries",
+      "value": 32
+    },
+    {
+      "category": "profile_budget",
+      "evidence_source": "tier4_30g_build_profiles",
+      "interpretation": "Largest measured profile text section.",
+      "metric": "max_profile_text_bytes",
+      "unit": "bytes",
+      "value": 14744
+    },
+    {
+      "category": "profile_budget",
+      "evidence_source": "tier4_30g_build_profiles",
+      "interpretation": "Largest measured data+bss estimate.",
+      "metric": "max_profile_dtcm_estimate_bytes",
+      "unit": "bytes",
+      "value": 23597
+    },
+    {
+      "category": "profile_budget",
+      "evidence_source": "tier4_30g_build_profiles",
+      "interpretation": "Smallest measured ITCM headroom among returned profile builds.",
+      "metric": "min_itcm_headroom_bytes",
+      "unit": "bytes",
+      "value": 18024
+    },
+    {
+      "category": "profile_budget",
+      "evidence_source": "tier4_30g_build_profiles",
+      "interpretation": "Smallest measured DTCM estimate headroom among returned profile builds.",
+      "metric": "min_dtcm_headroom_bytes",
+      "unit": "bytes",
+      "value": 41939
+    },
+    {
+      "category": "five_core_final_reads",
+      "evidence_source": "tier4_30g_hw",
+      "interpretation": "Final compact readback accounting for context.",
+      "metric": "context_readback_bytes",
+      "unit": "bytes",
+      "value": 210
+    },
+    {
+      "category": "five_core_final_reads",
+      "evidence_source": "tier4_30g_hw",
+      "interpretation": "Final compact readback accounting for learning.",
+      "metric": "learning_readback_bytes",
+      "unit": "bytes",
+      "value": 315
+    },
+    {
+      "category": "five_core_final_reads",
+      "evidence_source": "tier4_30g_hw",
+      "interpretation": "Final compact readback accounting for lifecycle.",
+      "metric": "lifecycle_readback_bytes",
+      "unit": "bytes",
+      "value": 2485
+    },
+    {
+      "category": "five_core_final_reads",
+      "evidence_source": "tier4_30g_hw",
+      "interpretation": "Final compact readback accounting for memory.",
+      "metric": "memory_readback_bytes",
+      "unit": "bytes",
+      "value": 210
+    },
+    {
+      "category": "five_core_final_reads",
+      "evidence_source": "tier4_30g_hw",
+      "interpretation": "Final compact readback accounting for route.",
+      "metric": "route_readback_bytes",
+      "unit": "bytes",
+      "value": 210
+    }
+  ],
+  "runner_revision": "tier4_32_mapping_resource_model_20260506_0001",
+  "runtime_limits": {
+    "max_context_slots": 128,
+    "max_lifecycle_slots": 8,
+    "max_lookup_replies": 32,
+    "max_memory_slots": 8,
+    "max_pending_horizons": 128,
+    "max_route_slots": 8,
+    "max_schedule_entries": 512
+  },
+  "status": "pass",
+  "tier": "Tier 4.32 - Native Runtime Mapping/Resource Model"
+}

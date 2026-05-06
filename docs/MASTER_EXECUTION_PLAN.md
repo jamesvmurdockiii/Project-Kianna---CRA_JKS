@@ -784,32 +784,40 @@ ability.
 
 ### Phase G - Multi-Core And Multi-Chip Scaling
 
-53. **CURRENT ACTIVE STEP** - Tier 4.32 update the mapping model with measured 4.27-4.31 data: ITCM,
-    DTCM, schedule length, lookup pressure, message bytes, readback bytes,
-    per-core utilization, state-slot limits, lifecycle masks, and any promoted
-    temporal-state footprint.
+53. ✅ **COMPLETE** - Tier 4.32 native-runtime mapping/resource model:
+    local pass, 23/23. Output:
+    `controlled_test_output/tier4_32_20260506_mapping_resource_model/`.
+    Consolidated measured 4.27-4.31 evidence into the current resource
+    envelope: MCPL round trip `16` bytes vs SDP `54`; 48-event MCPL pressure
+    `2304` bytes vs SDP `8064`; measured four-core pressure `43` events,
+    `43` context slots, `10` max pending, `129/129` lookup request/reply
+    parity, and zero stale/duplicate/timeout events; five-core lifecycle bridge
+    measured `24` schedule uploads, `72/72` lookup request/reply parity,
+    lifecycle compact payload `68`, temporal compact payload `48`, and positive
+    returned profile ITCM/DTCM headroom. Decision: Tier 4.32a authorized next;
+    Tier 4.32b-e remain blocked in order; no native-scale baseline freeze.
 
-54. Tier 4.32a single-chip multi-core scale stress: increase cores on one chip
+54. **CURRENT ACTIVE STEP** - Tier 4.32a single-chip multi-core scale stress: increase cores on one chip
     in controlled increments, for example 4 -> 8 -> 16 cores if resources allow,
     using MCPL/multicast for core-to-core event traffic unless a documented
     hardware constraint forces a temporary exception.
 
-54. Tier 4.32b static reef partition smoke: map groups/modules/polyps to cores
+55. Tier 4.32b static reef partition smoke: map groups/modules/polyps to cores
     using the measured static-pool strategy. Do not pretend one polyp equals one
     chip unless measured mapping proves that is correct.
 
-55. Tier 4.32c inter-chip feasibility contract: define routing keys, message
+56. Tier 4.32c inter-chip feasibility contract: define routing keys, message
     path, board/chip selection, failure classes, readback, and resource limits
     before attempting multi-chip.
 
-56. Tier 4.32d first multi-chip smoke: smallest possible cross-chip message and
+57. Tier 4.32d first multi-chip smoke: smallest possible cross-chip message and
     state lookup. No learning claim until communication and readback are clean.
 
-57. Tier 4.32e multi-chip learning micro-task: only after cross-chip smoke
+58. Tier 4.32e multi-chip learning micro-task: only after cross-chip smoke
     passes, run a tiny delayed-credit or reentry task with explicit claim
     boundary and resource measurements.
 
-58. Freeze `CRA_NATIVE_SCALE_BASELINE_v0.5` only if single-chip multi-core and
+59. Freeze `CRA_NATIVE_SCALE_BASELINE_v0.5` only if single-chip multi-core and
     first multi-chip evidence are stable enough for the final paper claim. If
     not, publish measured single-chip limits honestly.
 
@@ -1020,9 +1028,9 @@ After each completed run or design tier:
 The next concrete action is:
 
 ```text
-Tier 4.32 mapping/resource model: consolidate measured 4.27-4.31 hardware data
-into an explicit resource and scaling envelope before single-chip multi-core
-stress or multi-chip communication claims.
+Tier 4.32a single-chip multi-core scale stress: use the Tier 4.32 resource
+model to stress MCPL-first single-chip mapping before static reef partitioning
+or multi-chip communication claims.
 ```
 
 Current reference state:
@@ -1049,6 +1057,8 @@ unproven
 Tier 4.31e decision status: passed 15/15; native replay buffers, sleep-like
 replay, and native macro eligibility deferred until measured blockers exist;
 Tier 4.32 authorized next
+Tier 4.32 resource-model status: passed 23/23; MCPL-first scale path selected;
+4.32a authorized next; no native-scale baseline freeze
 ```
 
 Purpose:
@@ -1058,8 +1068,9 @@ Tier 4.31d completed the first one-board hardware smoke for moving the v2.2
 fading-memory temporal-state subset toward chip-native form. Tier 4.31e then
 closed the replay/eligibility decision gate and found no measured blocker that
 justifies immediate native replay buffers, sleep-like replay, or native macro
-eligibility. The next action is mapping/resource modeling, not a benchmark or
-speedup claim.
+eligibility. Tier 4.32 converted measured 4.27-4.31 evidence into an explicit
+resource envelope. The next action is single-chip MCPL-first scale stress, not
+a benchmark, speedup, or multi-chip claim.
 ```
 
 Required coverage:
@@ -1069,9 +1080,10 @@ Use v2.2 as the software reference and `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` as
 the native lifecycle baseline. Keep Tier 4.31d's boundary strict: one-board
 temporal-state hardware smoke only; not nonlinear recurrence, not speedup, not
 multi-chip scaling, not benchmark superiority, and not full organism autonomy.
-The next native work must build the Tier 4.32 mapping/resource model over
-measured hardware data. Only reopen replay buffers, sleep-like replay, or
-native eligibility if a later measured blocker specifically demands it.
+The next native work must execute Tier 4.32a single-chip multi-core scale
+stress using the Tier 4.32 model. Only reopen replay buffers, sleep-like
+replay, or native eligibility if a later measured blocker specifically demands
+it.
 ```
 
 

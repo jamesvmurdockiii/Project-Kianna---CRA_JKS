@@ -10,10 +10,10 @@ Research narrative companions:
 - `docs/WHITEPAPER.md`
 - `docs/CODEBASE_MAP.md`
 
-- Registry generated: `2026-05-06T20:36:18.198105+00:00`
+- Registry generated: `2026-05-06T21:52:07.491958+00:00`
 - Registry status: **PASS**
 - Core validation suite: `12` tests
-- Expanded evidence suite: `66` entries; see the canonical evidence table below for the exact current tier list.
+- Expanded evidence suite: `67` entries; see the canonical evidence table below for the exact current tier list.
 
 ## Canonical Claims
 
@@ -85,6 +85,7 @@ Research narrative companions:
 | `tier4_31c_native_temporal_runtime_source_audit` | Phase F native v2.2 temporal-state migration source/runtime implementation before hardware smoke | **PASS** | The custom C runtime now owns the seven-EMA fixed-point temporal subset from Tier 4.31b with versioned state, compact readback, behavior-backed sham modes, profile ownership guards, and local C host tests before any EBRAINS upload. | Local source/runtime host evidence only; not SpiNNaker hardware evidence, not speedup, not multi-chip scaling, not nonlinear recurrence, not native replay/sleep, not native macro eligibility, not universal benchmark superiority, and not a new baseline freeze. |
 | `tier4_31d_native_temporal_hardware_smoke` | Phase F native v2.2 temporal-state migration one-board hardware smoke | **PASS** | The custom C runtime's seven-EMA temporal-state subset built, loaded, executed, and read back on one real SpiNNaker board with compact 48-byte temporal payloads and enabled/zero/frozen/reset sham controls all matching the fixed-point reference. | One-board hardware smoke only; not repeatability, not speedup, not benchmark superiority, not multi-chip scaling, not nonlinear recurrence, not native replay/sleep, not native macro eligibility, not full v2.2 hardware transfer, and not a baseline freeze. |
 | `tier4_31e_native_replay_eligibility_decision_closeout` | Phase F closeout decision after native temporal hardware smoke | **PASS** | Measured evidence does not currently justify immediate native replay buffers, sleep-like replay, or native macro eligibility; Tier 4.31f is deferred and Tier 4.32 mapping/resource modeling is authorized next. | Local documentation/decision evidence only; not a hardware run, not a new mechanism implementation, not speedup, not multi-chip scaling, not native replay/sleep proof, not native eligibility proof, not full v2.2 hardware transfer, and not a baseline freeze. |
+| `tier4_32_native_runtime_mapping_resource_model` | Phase G native-runtime mapping/resource model before single-chip scale stress | **PASS** | Measured 4.27-4.31 evidence is consolidated into a single native-runtime resource envelope: MCPL is the scale path, current single-chip profile builds have positive ITCM/DTCM headroom, 4.32a single-chip scale stress is authorized next, and no native-scale baseline freeze is authorized yet. | Local resource/mapping model only; not a new hardware run, not speedup evidence, not multi-chip scaling, not benchmark superiority, not full organism autonomy, and not a baseline freeze. |
 
 ## Canonical Artifacts
 
@@ -156,6 +157,7 @@ Research narrative companions:
 | `tier4_31c_native_temporal_runtime_source_audit` | `controlled_test_output/tier4_31c_20260506_native_temporal_runtime_source_audit/tier4_31c_results.json` | `controlled_test_output/tier4_31c_20260506_native_temporal_runtime_source_audit/tier4_31c_report.md` | `controlled_test_output/tier4_31c_20260506_native_temporal_runtime_source_audit/tier4_31c_summary.csv` |
 | `tier4_31d_native_temporal_hardware_smoke` | `controlled_test_output/tier4_31d_hw_20260506_hardware_pass_ingested/tier4_31d_hw_results.json` | `controlled_test_output/tier4_31d_hw_20260506_hardware_pass_ingested/tier4_31d_hw_report.md` | `controlled_test_output/tier4_31d_hw_20260506_hardware_pass_ingested/tier4_31d_hw_summary.csv` |
 | `tier4_31e_native_replay_eligibility_decision_closeout` | `controlled_test_output/tier4_31e_20260506_native_replay_eligibility_decision_closeout/tier4_31e_results.json` | `controlled_test_output/tier4_31e_20260506_native_replay_eligibility_decision_closeout/tier4_31e_report.md` | `controlled_test_output/tier4_31e_20260506_native_replay_eligibility_decision_closeout/tier4_31e_summary.csv` |
+| `tier4_32_native_runtime_mapping_resource_model` | `controlled_test_output/tier4_32_20260506_mapping_resource_model/tier4_32_results.json` | `controlled_test_output/tier4_32_20260506_mapping_resource_model/tier4_32_report.md` | `controlled_test_output/tier4_32_20260506_mapping_resource_model/tier4_32_resource_envelope.csv` |
 
 ## Selected Noncanonical Diagnostics
 

@@ -1,0 +1,42 @@
+category,metric,value,unit,evidence_source,interpretation
+protocol,sdp_round_trip_bytes,54,bytes,tier4_27g,Transitional SDP lookup round trip byte cost.
+protocol,mcpl_round_trip_bytes,16,bytes,tier4_27g,Target MCPL lookup round trip byte cost.
+protocol,mcpl_byte_reduction_ratio_vs_sdp,0.296296,ratio,tier4_27g,MCPL is the scale path; SDP is a transitional/fallback control channel.
+protocol,lookup_messages_per_event,6,messages/event,tier4_27g,Three lookup types times request/reply.
+protocol,sdp_total_bytes_48event,8064,bytes,tier4_27g,Modeled SDP pressure for a 48-event reference.
+protocol,mcpl_total_bytes_48event,2304,bytes,tier4_27g,Modeled MCPL pressure for a 48-event reference.
+protocol,mcpl_router_entries_required,4,router entries,tier4_27g,Minimum intra-chip routing entries for context/route/memory request and learning reply paths.
+four_core_pressure,tier4_28e_event_count,43,events,tier4_28e_pointC,Measured four-core pressure event count.
+four_core_pressure,tier4_28e_schedule_uploads,43,uploads,tier4_28e_pointC,One schedule upload per compact event in this run.
+four_core_pressure,tier4_28e_context_slots_used,43,slots,tier4_28e_pointC,Measured context-slot pressure.
+four_core_pressure,tier4_28e_max_pending,10,pending horizons,tier4_28e_pointC,Measured delayed-credit pending pressure.
+four_core_pressure,tier4_28e_lookup_requests,129,requests,tier4_28e_pointC,Learning-core lookup requests.
+four_core_pressure,tier4_28e_lookup_replies,129,replies,tier4_28e_pointC,Learning-core lookup replies.
+four_core_pressure,tier4_28e_stale_duplicate_timeout_total,0,events,tier4_28e_pointC,"No stale, duplicate, or timeout events were observed."
+readback,standard_payload_len,105,bytes,tier4_28e_pointC,Standard compact state payload in the four-core run.
+readback,tier4_28e_learning_readback_bytes,5460,bytes,tier4_28e_pointC,Measured cumulative learning readback bytes.
+readback,tier4_28e_context_readback_bytes,105,bytes,tier4_28e_pointC,Measured context readback bytes.
+five_core_lifecycle,active_profiles,5,profiles,tier4_30g_hw,Measured five-profile single-chip task bridge.
+five_core_lifecycle,enabled_task_schedule_uploads,24,uploads,tier4_30g_hw,Lifecycle enabled task schedule length.
+five_core_lifecycle,enabled_learning_lookup_requests,72,requests,tier4_30g_hw,Lifecycle enabled task lookup pressure.
+five_core_lifecycle,enabled_learning_readback_bytes,210,bytes,tier4_30g_hw,Lifecycle enabled task learning readback bytes.
+five_core_lifecycle,lifecycle_payload_len,68,bytes,tier4_30g_hw,Lifecycle compact payload length.
+five_core_lifecycle,lifecycle_readback_bytes,2380,bytes,tier4_30g_hw,Lifecycle cumulative readback bytes per mode.
+five_core_lifecycle,enabled_task_runtime_seconds,0.2652983949519694,seconds,tier4_30g_hw,Measured lifecycle enabled task roundtrip time.
+temporal,temporal_payload_len,48,bytes,tier4_31d_hw,Measured native temporal compact payload length.
+limits,max_context_slots,128,slots,config.h,Compiled context-slot capacity.
+limits,max_route_slots,8,slots,config.h,Compiled route-slot capacity.
+limits,max_memory_slots,8,slots,config.h,Compiled memory-slot capacity.
+limits,max_pending_horizons,128,pending horizons,config.h,Compiled delayed-credit capacity.
+limits,max_lifecycle_slots,8,slots,config.h,Compiled lifecycle static-pool capacity.
+limits,max_schedule_entries,512,schedule entries,config.h,Compiled host-supplied schedule capacity.
+limits,max_lookup_replies,32,entries,state_manager.h,Compiled lookup reply table capacity.
+profile_budget,max_profile_text_bytes,14744,bytes,tier4_30g_build_profiles,Largest measured profile text section.
+profile_budget,max_profile_dtcm_estimate_bytes,23597,bytes,tier4_30g_build_profiles,Largest measured data+bss estimate.
+profile_budget,min_itcm_headroom_bytes,18024,bytes,tier4_30g_build_profiles,Smallest measured ITCM headroom among returned profile builds.
+profile_budget,min_dtcm_headroom_bytes,41939,bytes,tier4_30g_build_profiles,Smallest measured DTCM estimate headroom among returned profile builds.
+five_core_final_reads,context_readback_bytes,210,bytes,tier4_30g_hw,Final compact readback accounting for context.
+five_core_final_reads,learning_readback_bytes,315,bytes,tier4_30g_hw,Final compact readback accounting for learning.
+five_core_final_reads,lifecycle_readback_bytes,2485,bytes,tier4_30g_hw,Final compact readback accounting for lifecycle.
+five_core_final_reads,memory_readback_bytes,210,bytes,tier4_30g_hw,Final compact readback accounting for memory.
+five_core_final_reads,route_readback_bytes,210,bytes,tier4_30g_hw,Final compact readback accounting for route.

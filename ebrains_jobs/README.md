@@ -34,6 +34,22 @@ mapping/resource modeling is authorized next; no baseline freeze.
 Boundary: local decision evidence only. It is not hardware evidence and should
 not produce or upload an EBRAINS job folder.
 
+### Tier 4.32 native-runtime mapping/resource model
+
+Status: **LOCAL RESOURCE-MODEL PASS**. No EBRAINS upload folder is needed for
+this gate. Tier 4.32 is documented at
+`controlled_test_output/tier4_32_20260506_mapping_resource_model/` and passed
+`23/23`.
+
+Decision: MCPL is the scale data plane; SDP remains host control/readback or
+fallback only. Current returned profile builds have positive ITCM/DTCM
+headroom. Tier 4.32a single-chip multi-core scale stress is the next active
+gate. No native-scale baseline freeze is authorized yet.
+
+Boundary: local mapping/resource evidence only. It is not a new SpiNNaker run,
+not speedup evidence, not multi-chip evidence, and should not produce or upload
+an EBRAINS job folder.
+
 ### `cra_431d_r1`
 
 Status: **HARDWARE PASS / INGESTED** for Tier 4.31d native temporal-substrate

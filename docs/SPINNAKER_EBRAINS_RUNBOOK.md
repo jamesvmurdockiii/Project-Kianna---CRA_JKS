@@ -156,10 +156,11 @@ Tier 4.31c - Native Temporal-Substrate Runtime Source Audit
   Boundary: local source/runtime host evidence only; not hardware, not speedup,
     not nonlinear recurrence, not native replay/sleep, and not benchmark
     superiority.
-  Next status: Tier 4.31d hardware smoke passed and Tier 4.31e local decision
-    closeout passed. Tier 4.32 mapping/resource model is current; native replay
-    buffers, sleep-like replay, and native macro eligibility remain deferred
-    until measured blockers demand them.
+  Next status: Tier 4.31d hardware smoke passed, Tier 4.31e local decision
+    closeout passed, and Tier 4.32 mapping/resource model passed. Tier 4.32a
+    single-chip multi-core scale stress is current; native replay buffers,
+    sleep-like replay, and native macro eligibility remain deferred until
+    measured blockers demand them.
 ```
 
 Tier 4.28e Point A passed after ingest at:

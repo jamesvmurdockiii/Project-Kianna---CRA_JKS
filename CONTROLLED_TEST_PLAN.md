@@ -8903,3 +8903,17 @@ Boundary: local documentation/decision evidence only; not hardware, not
 implementation, not speedup, not multi-chip scaling, not native replay/sleep
 proof, not native eligibility proof, and not full v2.2 hardware transfer.
 ```
+
+Result:
+
+```text
+Tier 4.32 native-runtime mapping/resource model passed locally at
+controlled_test_output/tier4_32_20260506_mapping_resource_model/.
+Runner revision: tier4_32_mapping_resource_model_20260506_0001.
+Criteria: 23/23.
+Decision: MCPL-first scale path selected; Tier 4.32a single-chip multi-core
+scale stress authorized next; Tier 4.32b-e remain blocked in order.
+Baseline freeze: not authorized.
+Boundary: local resource/mapping model only; not hardware, speedup, multi-chip
+scaling, benchmark superiority, full organism autonomy, or baseline freeze.
+```

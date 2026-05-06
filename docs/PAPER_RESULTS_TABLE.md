@@ -4,11 +4,11 @@ This table is generated from `controlled_test_output/STUDY_REGISTRY.json`.
 It is intended as a paper/technical-note citation table, not as a new
 source of claims. If the registry changes, regenerate this file.
 
-- Generated: `2026-05-06T20:36:18.451520+00:00`
-- Registry generated: `2026-05-06T20:36:18.198105+00:00`
+- Generated: `2026-05-06T21:52:07.597159+00:00`
+- Registry generated: `2026-05-06T21:52:07.491958+00:00`
 - Registry status: **PASS**
-- Canonical bundles: `66`
-- Expanded entries: `66`
+- Canonical bundles: `67`
+- Expanded entries: `67`
 
 ## Summary Table
 
@@ -80,6 +80,7 @@ source of claims. If the registry changes, regenerate this file.
 | `tier4_31c_native_temporal_runtime_source_audit` | PASS | see manifest | Tier 4.31c - Native Temporal-Substrate Runtime Source Audit |  | Local source/runtime host evidence only; not SpiNNaker hardware evidence, not speedup, not multi-chip scaling, not nonlinear recurrence, not native replay/sleep, not native macro eligibility, not universal benchmark superiority, and not a new baseline freeze. | results: `controlled_test_output/tier4_31c_20260506_native_temporal_runtime_source_audit/tier4_31c_results.json`; report: `controlled_test_output/tier4_31c_20260506_native_temporal_runtime_source_audit/tier4_31c_report.md`; summary: `controlled_test_output/tier4_31c_20260506_native_temporal_runtime_source_audit/tier4_31c_summary.csv` |
 | `tier4_31d_native_temporal_hardware_smoke` | PASS | see manifest | 4.31d-hw-ingest |  | One-board hardware smoke only; not repeatability, not speedup, not benchmark superiority, not multi-chip scaling, not nonlinear recurrence, not native replay/sleep, not native macro eligibility, not full v2.2 hardware transfer, and not a baseline freeze. | results: `controlled_test_output/tier4_31d_hw_20260506_hardware_pass_ingested/tier4_31d_hw_results.json`; report: `controlled_test_output/tier4_31d_hw_20260506_hardware_pass_ingested/tier4_31d_hw_report.md`; summary: `controlled_test_output/tier4_31d_hw_20260506_hardware_pass_ingested/tier4_31d_hw_summary.csv` |
 | `tier4_31e_native_replay_eligibility_decision_closeout` | PASS | see manifest | Tier 4.31e - Native Replay/Eligibility Decision Closeout |  | Local documentation/decision evidence only; not a hardware run, not a new mechanism implementation, not speedup, not multi-chip scaling, not native replay/sleep proof, not native eligibility proof, not full v2.2 hardware transfer, and not a baseline freeze. | results: `controlled_test_output/tier4_31e_20260506_native_replay_eligibility_decision_closeout/tier4_31e_results.json`; report: `controlled_test_output/tier4_31e_20260506_native_replay_eligibility_decision_closeout/tier4_31e_report.md`; summary: `controlled_test_output/tier4_31e_20260506_native_replay_eligibility_decision_closeout/tier4_31e_summary.csv` |
+| `tier4_32_native_runtime_mapping_resource_model` | PASS | see manifest | Tier 4.32 - Native Runtime Mapping/Resource Model |  | Local resource/mapping model only; not a new hardware run, not speedup evidence, not multi-chip scaling, not benchmark superiority, not full organism autonomy, and not a baseline freeze. | results: `controlled_test_output/tier4_32_20260506_mapping_resource_model/tier4_32_results.json`; report: `controlled_test_output/tier4_32_20260506_mapping_resource_model/tier4_32_report.md`; summary: `controlled_test_output/tier4_32_20260506_mapping_resource_model/tier4_32_resource_envelope.csv` |
 
 ## Claim Discipline
 

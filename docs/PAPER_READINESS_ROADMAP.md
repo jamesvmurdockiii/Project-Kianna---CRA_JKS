@@ -6327,6 +6327,13 @@ Near-term roadmap insertion:
     native replay buffers, sleep-like replay, and native macro eligibility are
     deferred until measured blockers exist; Tier 4.31f is deferred; Tier 4.32
     mapping/resource modeling is authorized next; no baseline freeze.
+22. Tier 4.32 native-runtime mapping/resource model. COMPLETE:
+    local pass 23/23 at
+    `controlled_test_output/tier4_32_20260506_mapping_resource_model/`;
+    measured 4.27-4.31 evidence now has an explicit resource envelope. MCPL is
+    the scale data plane, profile builds have positive ITCM/DTCM headroom,
+    Tier 4.32a single-chip scale stress is authorized next, and no native-scale
+    baseline freeze is authorized.
 ```
 
 Tier 5.19a result:
@@ -6630,7 +6637,8 @@ Tests: test-temporal-state, test-profiles, test, test-lifecycle, test-lifecycle-
 Boundary: local source/runtime host evidence only, not hardware
 ```
 
-Next: Tier 4.32 mapping/resource model over measured 4.27-4.31 hardware data.
+Next: Tier 4.32a single-chip multi-core scale stress using the measured Tier
+      4.32 resource envelope.
       Reopen native replay-buffer, sleep-like replay, or eligibility-trace
       implementation only if a later measured blocker specifically demands it.
 ```

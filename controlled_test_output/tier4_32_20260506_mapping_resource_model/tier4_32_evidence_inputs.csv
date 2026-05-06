@@ -1,0 +1,7 @@
+source_id,path,status,role,extracted_signal
+tier4_27g_mcpl_vs_sdp_model,controlled_test_output/tier4_27g_20260502_local_pass/tier4_27g_results.json,pass,protocol byte/latency model,SDP round trip 54 bytes; MCPL round trip 16 bytes; 48-event MCPL total 2304 bytes
+tier4_28e_pointC_four_core_pressure,controlled_test_output/tier4_28e_pointC_20260503_hardware_pass_ingested/tier4_28e_hardware_results.json,pass,measured four-core event/slot/lookup pressure,43 events; context slots 43; max pending 10; learning lookups 129
+tier4_29f_native_mechanism_regression,controlled_test_output/tier4_29f_20260505_native_mechanism_regression/tier4_29f_results.json,pass,canonical mechanism-regression prerequisite,113/113 criteria complete
+tier4_30g_lifecycle_hardware_bridge,controlled_test_output/tier4_30g_hw_20260505_hardware_pass_ingested/tier4_30g_hw_results.json,pass,measured five-core lifecycle bridge,"task status pass; profiles context,learning,lifecycle,memory,route; runtime 1.8654s"
+tier4_31d_native_temporal_hardware_smoke,controlled_test_output/tier4_31d_hw_20260506_hardware_pass_ingested/returned_artifacts/tier4_31d_hw_results.json,pass,measured temporal compact readback smoke,"payload 48 bytes; board 10.11.216.121; scenarios {'enabled': 'pass', 'frozen_state': 'pass', 'reset_each_update': 'pass', 'zero_state': 'pass'}"
+tier4_31e_decision_closeout,controlled_test_output/tier4_31e_20260506_native_replay_eligibility_decision_closeout/tier4_31e_results.json,pass,replay/eligibility closeout prerequisite,4.32 decision = authorized_next

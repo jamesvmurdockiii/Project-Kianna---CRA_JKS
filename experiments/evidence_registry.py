@@ -1439,6 +1439,27 @@ SPECS: tuple[EvidenceSpec, ...] = (
             "tier4_31e_evidence_inputs.csv",
         ),
     ),
+    EvidenceSpec(
+        entry_id="tier4_32_native_runtime_mapping_resource_model",
+        tier_label="Tier 4.32 - Native Runtime Mapping/Resource Model",
+        plan_position="Phase G native-runtime mapping/resource model before single-chip scale stress",
+        canonical_dir="tier4_32_20260506_mapping_resource_model",
+        results_file="tier4_32_results.json",
+        report_file="tier4_32_report.md",
+        summary_file="tier4_32_resource_envelope.csv",
+        harness="experiments/tier4_32_mapping_resource_model.py",
+        evidence_role="native runtime resource/mapping decision gate",
+        claim="Measured 4.27-4.31 evidence is consolidated into a single native-runtime resource envelope: MCPL is the scale path, current single-chip profile builds have positive ITCM/DTCM headroom, 4.32a single-chip scale stress is authorized next, and no native-scale baseline freeze is authorized yet.",
+        caveat="Local resource/mapping model only; not a new hardware run, not speedup evidence, not multi-chip scaling, not benchmark superiority, not full organism autonomy, and not a baseline freeze.",
+        latest_manifest_names=("tier4_32_latest_manifest.json",),
+        expected_extra_files=(
+            "tier4_32_evidence_inputs.csv",
+            "tier4_32_profile_budget.csv",
+            "tier4_32_failure_classes.csv",
+            "tier4_32_next_gate_plan.csv",
+            "tier4_32_criteria.csv",
+        ),
+    ),
 )
 
 

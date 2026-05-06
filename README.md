@@ -3,7 +3,7 @@
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
 [![Tests](https://img.shields.io/badge/tests-151%20passing-brightgreen.svg)](#validation)
-[![Evidence](https://img.shields.io/badge/canonical%20evidence-64%20bundles-blue.svg)](STUDY_EVIDENCE_INDEX.md)
+[![Evidence](https://img.shields.io/badge/canonical%20evidence-67%20bundles-blue.svg)](STUDY_EVIDENCE_INDEX.md)
 
 Coral Reef Architecture (CRA) is a neuromorphic learning research platform for
 studying local spiking plasticity, delayed credit assignment, population-level
@@ -31,10 +31,11 @@ controlled ablations, baseline comparisons, and explicit claim boundaries.
 | Latest multi-core lifecycle runtime source audit | Tier 4.30d passed `14/14`: dedicated `lifecycle_core` runtime profile, lifecycle inter-core stubs/counters, active-mask/count/lineage sync bookkeeping, ownership guards, and local C host tests against the 4.30c contract. |
 | Latest temporal hardware pass | Tier 4.31d-hw passed and was ingested from [`controlled_test_output/tier4_31d_hw_20260506_hardware_pass_ingested`](controlled_test_output/tier4_31d_hw_20260506_hardware_pass_ingested): board `10.11.216.121`, runner revision `tier4_31d_native_temporal_hardware_smoke_20260506_0003`, `59/59` remote hardware criteria, `5/5` ingest criteria, compact temporal payload length `48`, enabled/zero/frozen/reset controls all passed, and `21` structured returned artifacts preserved. |
 | Latest temporal decision closeout | Tier 4.31e passed `15/15` from [`controlled_test_output/tier4_31e_20260506_native_replay_eligibility_decision_closeout`](controlled_test_output/tier4_31e_20260506_native_replay_eligibility_decision_closeout): native replay buffers, sleep-like replay, and native macro eligibility are deferred until measured blockers exist; Tier 4.31f is deferred; Tier 4.32 mapping/resource modeling is authorized next; no baseline freeze. |
+| Latest native resource model | Tier 4.32 passed `23/23` from [`controlled_test_output/tier4_32_20260506_mapping_resource_model`](controlled_test_output/tier4_32_20260506_mapping_resource_model): MCPL is the scale data plane (`16` bytes round trip vs SDP `54`), measured profile builds retain positive ITCM/DTCM headroom, 4.32a single-chip scale stress is authorized next, and no native-scale baseline freeze is authorized yet. |
 | Latest temporal-native readiness | Tier 4.31a passed `24/24`, scoping the first native v2.2 temporal migration to seven causal fixed-point EMA traces. Tier 4.31b passed `16/16` with fixed/float ratio `0.9987474666079806` and zero selected saturations. Tier 4.31c passed `17/17`, adding C-owned temporal state, command codes `39-42`, compact temporal readback length `48`, behavior-backed shams, profile ownership guards, and local C host tests. |
 | Latest temporal hardware return | First Tier 4.31d EBRAINS return was incomplete: only `tier4_31d_test_profiles_stdout.txt` and `coral_reef (26).elf` came back, with no `tier4_31d_hw_results.json`. This is not hardware evidence; it only shows profile host tests passed and an ARM ELF linked before structured finalization. The incomplete return is preserved at [`controlled_test_output/tier4_31d_hw_20260506_incomplete_return`](controlled_test_output/tier4_31d_hw_20260506_incomplete_return). |
-| Active next gate | Tier 4.32 mapping/resource model over measured 4.27-4.31 data: ITCM/DTCM, schedule length, lookup pressure, message bytes, readback bytes, per-core utilization, state-slot limits, lifecycle masks, temporal footprint, MCPL traffic, and failure classes before scale stress. |
-| Canonical registry | 66 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
+| Active next gate | Tier 4.32a single-chip multi-core scale stress using the 4.32 resource model: MCPL-first messaging, compact readback, schedule/slot/readback sweeps, stale/duplicate/timeout counters, and explicit breakpoints before static reef partitioning or multi-chip work. |
+| Canonical registry | 67 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
 | Validation suite | 151 pytest tests plus registry, paper-table, and repository-audit generation. |
 
 ## What CRA Implements
@@ -161,7 +162,7 @@ python3 experiments/tier5_external_baselines.py \
 `make validate` currently runs:
 
 - 151 pytest unit tests.
-- Evidence registry generation: 66 canonical bundles, 0 failed criteria.
+- Evidence registry generation: 67 canonical bundles, 0 failed criteria.
 - Paper results table export.
 - Repository audit.
 
@@ -206,7 +207,7 @@ commit used. A placeholder software citation is:
   author       = {Murdock, James V. and CRA Contributors},
   year         = {2026},
   url          = {https://github.com/jamesvmurdockiii/Project-Kianna---CRA_JKS},
-  note         = {66 canonical evidence bundles; bounded SpiNNaker hardware validation}
+  note         = {67 canonical evidence bundles; bounded SpiNNaker hardware validation}
 }
 ```
 
