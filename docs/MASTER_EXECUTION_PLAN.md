@@ -825,8 +825,12 @@ ability.
     local learning controls pass over MCPL.
 
 57. **CURRENT ACTIVE STEP** - Tier 4.32a-hw EBRAINS single-shard single-chip
-    stress: run `point_04c_reference` and `point_05c_lifecycle` from
-    4.32a. Return compact per-core readback, profile/build artifacts, lookup
+    stress: PREPARED locally at
+    `controlled_test_output/tier4_32a_hw_20260506_prepared/` with stable upload
+    folder `ebrains_jobs/cra_432a_hw`. Run only `point_04c_reference` and
+    `point_05c_lifecycle` from 4.32a using:
+    `cra_432a_hw/experiments/tier4_32a_hw_single_shard_scale_stress.py --mode run-hardware --output-dir tier4_32a_hw_job_output`.
+    Return compact per-core readback, profile/build artifacts, lookup
     request/reply parity, stale/duplicate/timeout/drop counters, and
     schedule/slot high-water marks. This is hardware stress only, not
     replicated-shard scaling and not a baseline freeze.

@@ -1,0 +1,13 @@
+name,value,rule,passed,note
+Tier 4.32a prerequisite passed,pass,== pass,True,
+Tier 4.32a-r1 protocol repair passed,pass,== pass,True,
+MCPL repair source checks pass,pass,== pass,True,
+runner and dependencies py_compile,pass,== pass,True,
+upload bundle created,/Users/james/JKS:CRA/controlled_test_output/tier4_32a_hw_20260506_prepared/ebrains_upload_bundle/cra_432a_hw,exists,True,
+stable upload folder created,/Users/james/JKS:CRA/ebrains_jobs/cra_432a_hw,exists,True,
+run-hardware command emitted,cra_432a_hw/experiments/tier4_32a_hw_single_shard_scale_stress.py --mode run-hardware --output-dir tier4_32a_hw_job_output,contains --mode run-hardware,True,
+bundle includes shard-aware MCPL key,MCPL_KEY_SHARD_SHIFT,present,True,
+bundle includes value/meta MCPL replies,MCPL_MSG_LOOKUP_REPLY_META,present,True,
+bundle receive no hardcoded confidence shortcut,"cra_state_lookup_receive(seq_id, value, FP_ONE, 1);",absent,True,
+replicated stress remains blocked,single_shard_only,== single_shard_only,True,
+native-scale baseline freeze remains blocked,not_authorized,== not_authorized,True,

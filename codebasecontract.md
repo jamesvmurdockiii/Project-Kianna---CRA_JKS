@@ -104,10 +104,14 @@ FROZEN: CRA_LIFECYCLE_NATIVE_BASELINE_v0.4
         Tier 4.32a-r0: MCPL lookup replies now carry value plus
         confidence/hit/status metadata, keys carry shard identity, identical
         seq/type cross-shard controls pass, and full/zero/half-confidence
-        learning controls pass through MCPL. Prepare/run only the eligible
-        single-shard 4/5-core points next. Replicated 8/12/16-core stress,
-        static reef partitioning, multi-chip work, and native-scale baseline
-        freeze remain blocked until the single-shard hardware stress passes.
+        learning controls pass through MCPL. Tier 4.32a-hw prepare is complete
+        at controlled_test_output/tier4_32a_hw_20260506_prepared/ and the
+        stable upload folder is ebrains_jobs/cra_432a_hw. Upload that folder
+        and run:
+          cra_432a_hw/experiments/tier4_32a_hw_single_shard_scale_stress.py --mode run-hardware --output-dir tier4_32a_hw_job_output
+        Replicated 8/12/16-core stress, static reef partitioning, multi-chip
+        work, and native-scale baseline freeze remain blocked until the
+        single-shard hardware stress passes and is ingested.
 ```
 
 Current active tier state:

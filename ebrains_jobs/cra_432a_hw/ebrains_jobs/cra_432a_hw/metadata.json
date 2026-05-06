@@ -1,0 +1,19 @@
+{
+  "blocked": [
+    "replicated_8_12_16_core_stress",
+    "static_reef_partitioning",
+    "multi_chip",
+    "native_scale_baseline_freeze"
+  ],
+  "claim_boundary": "Prepared source bundle only. Hardware evidence requires returned run-hardware artifacts from EBRAINS/SpiNNaker.",
+  "job_command": "cra_432a_hw/experiments/tier4_32a_hw_single_shard_scale_stress.py --mode run-hardware --output-dir tier4_32a_hw_job_output",
+  "prepared_at_utc": "2026-05-06T23:35:59+00:00",
+  "runner": "experiments/tier4_32a_hw_single_shard_scale_stress.py",
+  "runner_revision": "tier4_32a_hw_single_shard_scale_stress_20260506_0001",
+  "scope": [
+    "point_04c_reference",
+    "point_05c_lifecycle"
+  ],
+  "tier": "Tier 4.32a-hw - Single-Shard MCPL-First EBRAINS Scale Stress",
+  "upload_package": "cra_432a_hw"
+}

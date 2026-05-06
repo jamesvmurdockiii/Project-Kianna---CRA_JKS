@@ -6667,9 +6667,11 @@ Tests: test-temporal-state, test-profiles, test, test-lifecycle, test-lifecycle-
 Boundary: local source/runtime host evidence only, not hardware
 ```
 
-Next: Tier 4.32a-hw single-shard MCPL-first hardware stress. Prepare and run
-      only the eligible Tier 4.32a 4/5-core points with the repaired Tier
-      4.32a-r1 protocol.
+Next: Tier 4.32a-hw single-shard MCPL-first hardware stress. The prepare gate
+      has produced `controlled_test_output/tier4_32a_hw_20260506_prepared/`
+      and upload folder `ebrains_jobs/cra_432a_hw`. Run only the eligible
+      Tier 4.32a 4/5-core points with the repaired Tier 4.32a-r1 protocol,
+      then ingest returned artifacts before reopening replicated stress.
       Reopen native replay-buffer, sleep-like replay, or eligibility-trace
       implementation only if a later measured blocker specifically demands it.
 ```

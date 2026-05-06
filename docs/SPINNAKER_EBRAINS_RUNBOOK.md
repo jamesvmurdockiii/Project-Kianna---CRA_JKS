@@ -46,11 +46,15 @@ Latest active hardware-facing tier:
 
 ```text
 Tier 4.32a-hw - Single-Shard MCPL-First EBRAINS Scale Stress
-  Status: CURRENT ACTIVE, hardware package/run after local protocol repair
+  Status: CURRENT ACTIVE, PREPARED locally; waiting for EBRAINS run/return
   Local prerequisite: Tier 4.32a local preflight pass, 19/19
   Corrective prerequisite: Tier 4.32a-r0 protocol truth audit pass, 10/10
   Protocol repair prerequisite: Tier 4.32a-r1 pass, 14/14
-  Local output: controlled_test_output/tier4_32a_r1_20260506_mcpl_lookup_repair/
+  Protocol repair output: controlled_test_output/tier4_32a_r1_20260506_mcpl_lookup_repair/
+  Prepared output: controlled_test_output/tier4_32a_hw_20260506_prepared/
+  Upload folder: ebrains_jobs/cra_432a_hw
+  JobManager command:
+    cra_432a_hw/experiments/tier4_32a_hw_single_shard_scale_stress.py --mode run-hardware --output-dir tier4_32a_hw_job_output
   Required hardware scope now: run only point_04c_reference and
     point_05c_lifecycle with compact per-core readback, lookup request/reply
     parity, stale/duplicate/timeout/drop counters, and schedule/slot

@@ -20,6 +20,43 @@ Public repository hygiene rules live in
 
 ## Current Jobs
 
+### `cra_432a_hw`
+
+Status: **PREPARED / WAITING FOR EBRAINS RETURN** for Tier 4.32a-hw
+single-shard MCPL-first EBRAINS scale stress.
+
+Purpose: run only the two Tier 4.32a single-shard points authorized after the
+Tier 4.32a-r1 MCPL repair: `point_04c_reference` and
+`point_05c_lifecycle`. This package is not replicated-shard evidence and does
+not authorize a native-scale baseline freeze by itself.
+
+Upload folder:
+
+```text
+ebrains_jobs/cra_432a_hw
+```
+
+JobManager command:
+
+```text
+cra_432a_hw/experiments/tier4_32a_hw_single_shard_scale_stress.py --mode run-hardware --output-dir tier4_32a_hw_job_output
+```
+
+Prepared artifact:
+
+```text
+controlled_test_output/tier4_32a_hw_20260506_prepared/
+```
+
+Pass requires real target acquisition, successful profile builds/loads,
+compact per-core readback, lookup request/reply parity, zero stale/duplicate
+reply counters, zero timeouts, returned point artifacts, and zero synthetic
+fallback.
+
+Boundary: single-shard single-chip hardware stress only. It is not
+replicated-shard stress, not multi-chip evidence, not speedup evidence, not
+static reef partitioning, and not a native-scale baseline freeze.
+
 ### Tier 4.31e
 
 Status: **LOCAL DECISION PASS**. No EBRAINS upload folder is needed for this

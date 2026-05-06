@@ -9002,3 +9002,69 @@ Boundary: local source/runtime evidence only; not hardware, speedup,
 replicated-shard scaling, multi-chip scaling, static reef partition proof,
 benchmark superiority, or baseline freeze.
 ```
+
+## Tier 4.32a-hw - Single-Shard MCPL-First EBRAINS Scale Stress
+
+Question: Does the repaired Tier 4.32a-r1 MCPL protocol survive the two
+predeclared single-shard hardware stress points on a real SpiNNaker board?
+
+Scope:
+
+```text
+point_04c_reference: four-core context/route/memory/learning reference
+point_05c_lifecycle: five-core enabled-lifecycle bridge stress
+```
+
+Prepared output:
+
+```text
+controlled_test_output/tier4_32a_hw_20260506_prepared/
+```
+
+Upload folder:
+
+```text
+ebrains_jobs/cra_432a_hw
+```
+
+JobManager command:
+
+```text
+cra_432a_hw/experiments/tier4_32a_hw_single_shard_scale_stress.py --mode run-hardware --output-dir tier4_32a_hw_job_output
+```
+
+Pass requires:
+
+```text
+real target acquisition
+successful profile builds and loads
+point_04c_reference passes with 48 events and 144 lookup replies
+point_05c_lifecycle passes with 96 events and 288 lookup replies
+zero stale replies
+zero duplicate replies
+zero timeouts
+compact per-core readback returned
+zero synthetic fallback
+returned artifacts ingested
+```
+
+Fail requires classification before rerun:
+
+```text
+target acquisition
+profile build/load
+MCPL delivery
+lookup parity
+timeout/drop/stale/duplicate
+schedule/slot high-water mark
+readback/schema
+runner/environment
+```
+
+Boundary:
+
+```text
+Single-shard single-chip hardware stress only. Not replicated-shard scaling,
+not multi-chip, not speedup, not static reef partitioning, not benchmark
+superiority, and not a native-scale baseline freeze.
+```
