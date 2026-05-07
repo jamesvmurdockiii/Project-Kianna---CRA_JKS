@@ -10,10 +10,10 @@ Research narrative companions:
 - `docs/WHITEPAPER.md`
 - `docs/CODEBASE_MAP.md`
 
-- Registry generated: `2026-05-07T01:26:04.622001+00:00`
+- Registry generated: `2026-05-07T01:50:27.465255+00:00`
 - Registry status: **PASS**
 - Core validation suite: `12` tests
-- Expanded evidence suite: `70` entries; see the canonical evidence table below for the exact current tier list.
+- Expanded evidence suite: `71` entries; see the canonical evidence table below for the exact current tier list.
 
 ## Canonical Claims
 
@@ -89,6 +89,7 @@ Research narrative companions:
 | `tier4_32a_single_chip_scale_stress_preflight` | Phase G single-chip multi-core scale-stress preflight before EBRAINS hardware stress | **PASS** | Tier 4.32a converts the Tier 4.32 resource model into a predeclared single-chip MCPL-first stress envelope and catches a source-level scale blocker: the current MCPL lookup key has no shard/group field and dest_core is reserved/ignored. It authorizes only single-shard 4/5-core 4.32a-hw stress, requires Tier 4.32a-r1 shard-aware MCPL repair before replicated 8/12/16-core stress, and keeps 4.32b/multi-chip/native-scale baseline freeze blocked. | Local preflight/source-inspection evidence only; not a SpiNNaker hardware run, not speedup evidence, not replicated-shard scaling, not multi-chip scaling, not static reef partition proof, not benchmark superiority, and not a baseline freeze. |
 | `tier4_32a_r0_protocol_truth_audit` | Phase G corrective audit before MCPL-first EBRAINS scale stress | **PASS** | Tier 4.32a-r0 prevents a misleading MCPL-first hardware package: source inspection proves confidence-gated lookup still uses transitional SDP, MCPL replies drop confidence, MCPL receive hardcodes confidence=1.0, and the MCPL key lacks shard identity. Tier 4.32a-r1 is required before MCPL-first scale stress. | Local source/documentation audit only; not SpiNNaker hardware evidence, not speedup evidence, not multi-chip scaling, not static reef partition proof, and not a baseline freeze. |
 | `tier4_32a_r1_mcpl_lookup_repair` | Phase G protocol repair before MCPL-first EBRAINS scale stress | **PASS** | Tier 4.32a-r1 repairs the Tier 4.32a-r0 blocker: MCPL lookup replies now carry value plus confidence/hit/status metadata, MCPL keys carry shard identity, local tests prove identical seq/type lookups do not cross-talk across shards, and MCPL confidence controls preserve full/zero/half-confidence learning behavior. | Local source/runtime evidence only; not SpiNNaker hardware evidence, not speedup evidence, not replicated-shard scaling, not multi-chip scaling, not static reef partitioning, and not a baseline freeze. |
+| `tier4_32b_static_reef_partition_smoke` | Phase G static reef partition mapping before inter-chip contract | **PASS** | Tier 4.32b maps CRA reef groups/modules/polyps onto the measured single-chip replicated-shard envelope: four static reef partitions own non-overlapping context/route/memory/learning cores and polyp slots, lookup parity and zero stale/duplicate/timeout counters are inherited from the 4.32a replicated hardware pass, one-polyp-one-chip is explicitly rejected, and Tier 4.32c inter-chip contract work is authorized next. | Local static partition/resource evidence only; not a new SpiNNaker hardware run, not speedup evidence, not one-polyp-one-chip evidence, not multi-chip evidence, not benchmark superiority, and not a native-scale baseline freeze. |
 
 ## Canonical Artifacts
 
@@ -164,6 +165,7 @@ Research narrative companions:
 | `tier4_32a_single_chip_scale_stress_preflight` | `controlled_test_output/tier4_32a_20260506_single_chip_scale_stress/tier4_32a_results.json` | `controlled_test_output/tier4_32a_20260506_single_chip_scale_stress/tier4_32a_report.md` | `controlled_test_output/tier4_32a_20260506_single_chip_scale_stress/tier4_32a_scale_points.csv` |
 | `tier4_32a_r0_protocol_truth_audit` | `controlled_test_output/tier4_32a_r0_20260506_protocol_truth_audit/tier4_32a_r0_results.json` | `controlled_test_output/tier4_32a_r0_20260506_protocol_truth_audit/tier4_32a_r0_report.md` | `controlled_test_output/tier4_32a_r0_20260506_protocol_truth_audit/tier4_32a_r0_criteria.csv` |
 | `tier4_32a_r1_mcpl_lookup_repair` | `controlled_test_output/tier4_32a_r1_20260506_mcpl_lookup_repair/tier4_32a_r1_results.json` | `controlled_test_output/tier4_32a_r1_20260506_mcpl_lookup_repair/tier4_32a_r1_report.md` | `controlled_test_output/tier4_32a_r1_20260506_mcpl_lookup_repair/tier4_32a_r1_criteria.csv` |
+| `tier4_32b_static_reef_partition_smoke` | `controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_results.json` | `controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_report.md` | `controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_partition_map.csv` |
 
 ## Selected Noncanonical Diagnostics
 

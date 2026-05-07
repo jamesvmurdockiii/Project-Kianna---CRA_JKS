@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-07T01:16:24+00:00.
+Last updated: 2026-05-07T01:45:28+00:00.
 
 Current repo root:
 
@@ -99,19 +99,17 @@ FROZEN: CRA_LIFECYCLE_NATIVE_BASELINE_v0.4
             temporal migration, not external-baseline superiority, and not
             language/planning/AGI/ASI.
 
-  Next: Tier 4.32b static reef partition smoke/resource mapping.
-        Tier 4.32a-hw-replicated passed on EBRAINS and was ingested at
-        controlled_test_output/tier4_32a_hw_replicated_20260507_hardware_pass_ingested/.
-        Raw remote status pass, ingest status pass, board 10.11.215.121,
-        185/185 raw hardware criteria, 9/9 ingest criteria, 80 returned
-        artifacts, point08 2 shards / 192 total events / 288 lookup replies per
-        shard, point12 3 shards / 384 total events / 384 lookup replies per
-        shard, point16 4 shards / 512 total events / 384 lookup replies per
-        shard, zero stale replies, zero duplicate replies, zero timeouts, and
-        zero synthetic fallback. Tier 4.32b is now the active native step: map
-        groups/modules/polyps to cores using the measured single-chip replicated
-        envelope. Multi-chip work, speedup claims, and native-scale baseline
-        freeze remain blocked until static partition evidence passes.
+  Next: Tier 4.32c inter-chip feasibility contract.
+        Tier 4.32b static reef partition smoke/resource mapping passed locally
+        at controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/.
+        Result: 25/25 criteria; canonical quad_mechanism_partition_v0 maps four
+        reef partitions to the measured 16-core replicated envelope; static
+        polyp slots 0-7 are assigned two per partition; each partition preserves
+        384/384 lookup request/reply parity; one-polyp-one-chip is explicitly
+        rejected; quad partition plus dedicated lifecycle core is blocked at 17
+        cores on one chip. Tier 4.32c is now active: define board/chip/shard key
+        fields, message paths, compact readback ownership, failure counters, and
+        the smallest cross-chip smoke target before any multi-chip hardware job.
 ```
 
 Current active tier state:
@@ -268,12 +266,26 @@ Tier 4.32a-hw-replicated — COMPLETE. Replicated-shard 8/12/16-core
   Boundary: single-chip replicated-shard hardware stress only; not static reef
     partition proof, not multi-chip, not speedup, and not a baseline freeze.
 
-Tier 4.32b — CURRENT ACTIVE STEP. Static reef partition smoke/resource mapping.
-  Goal: map groups/modules/polyps to cores using the measured single-chip
-    replicated-shard envelope, with explicit ownership/readback/failure classes.
-  Boundary: local contract/source/resource evidence first; not multi-chip,
-    not one-polyp-one-chip evidence, not speedup, and not a native-scale
-    baseline freeze.
+Tier 4.32b — COMPLETE. Static reef partition smoke/resource mapping.
+  Status: LOCAL PASS, 25/25.
+  Output: controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/.
+  Result: canonical quad_mechanism_partition_v0 maps four static reef partitions
+    to the measured point16 16-core replicated envelope: each partition owns one
+    context/route/memory/learning core group, two static polyp slots, 128 events,
+    and 384 lookup requests/replies with zero stale, duplicate, or timeout
+    counters inherited from hardware. One-polyp-one-chip is rejected as an
+    unsupported claim; quad partition plus dedicated lifecycle core is blocked
+    at 17 cores on one conservative single-chip envelope.
+  Boundary: local static partition/resource evidence only; not a new hardware
+    run, not one-polyp-one-chip evidence, not multi-chip, not speedup, and not a
+    native-scale baseline freeze.
+
+Tier 4.32c — CURRENT ACTIVE STEP. Inter-chip feasibility contract.
+  Goal: define board/chip/shard key fields, MCPL/multicast message paths,
+    compact readback ownership, failure counters, and the smallest cross-chip
+    smoke target before any multi-chip hardware job.
+  Boundary: contract evidence first; not hardware execution, not speedup, not
+    multi-chip learning, and not a baseline freeze.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware
@@ -758,12 +770,12 @@ Immediate next steps:
 
 1. Keep Tier 4.31d/4.31e boundaries strict: one-board temporal-state smoke plus
    local replay/eligibility decision closeout only, no new freeze.
-2. Tier 4.32a-hw-replicated has passed and been ingested. The next native
-   step is Tier 4.32b static reef partition smoke/resource mapping: define and
-   test how groups/modules/polyps are assigned to cores using the measured
-   replicated-shard envelope. Do not jump to multi-chip, benchmarks, speedup
-   claims, or a native-scale baseline freeze until static partition evidence is
-   defined, run, ingested where applicable, and clean.
+2. Tier 4.32b static reef partition smoke/resource mapping has passed. The
+   next native step is Tier 4.32c inter-chip feasibility contract: define exact
+   board/chip/shard key fields, message paths, compact readback ownership,
+   failure counters, and the smallest cross-chip smoke target. Do not jump to a
+   multi-chip hardware job, benchmarks, speedup claims, or a native-scale
+   baseline freeze until the 4.32c contract is explicit and passes.
 3. Keep the 4.31b/4.31c range refinement explicit: selected trace bound is ±2
    in s16.15; the older ±1 sketch saturated and must not silently return.
 4. Keep public repo hygiene green before the next upload or commit: no

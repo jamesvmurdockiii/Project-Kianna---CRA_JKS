@@ -6374,6 +6374,16 @@ Near-term roadmap insertion:
     stale replies, duplicate replies, timeouts, or synthetic fallback. Boundary:
     single-chip replicated-shard stress only; not static reef partition proof,
     not multi-chip, not speedup, and not a native-scale baseline freeze.
+27. Tier 4.32b static reef partition smoke/resource mapping. COMPLETE:
+    local pass 25/25 at
+    `controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/`;
+    canonical `quad_mechanism_partition_v0` maps four static reef partitions to
+    the measured 16-core replicated envelope, assigns polyp slots 0-7 two per
+    partition, preserves 384/384 lookup parity per partition, rejects
+    one-polyp-one-chip as unsupported, and blocks quad partition plus dedicated
+    lifecycle core at 17 cores on one conservative chip. Boundary: local mapping
+    evidence only; not a new hardware run, not multi-chip, not speedup, and not
+    a native-scale baseline freeze.
 ```
 
 Tier 5.19a result:
@@ -6677,15 +6687,14 @@ Tests: test-temporal-state, test-profiles, test, test-lifecycle, test-lifecycle-
 Boundary: local source/runtime host evidence only, not hardware
 ```
 
-Next: Tier 4.32b static reef partition smoke/resource mapping. Tier
-      4.32a-hw-replicated has passed and been ingested at
-      `controlled_test_output/tier4_32a_hw_replicated_20260507_hardware_pass_ingested/`
-      with raw remote status pass, ingest status pass, 185/185 raw hardware
-      criteria, 9/9 ingest criteria, and 80 returned artifacts. The next gate
-      must map groups/modules/polyps to cores using the measured single-chip
-      replicated-shard envelope, define ownership/routing/readback/resource
-      limits/failure classes, and keep multi-chip work plus native-scale baseline
-      freeze blocked until static partition evidence passes.
+Next: Tier 4.32c inter-chip feasibility contract. Tier 4.32b has passed at
+      `controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/`
+      with 25/25 criteria. The next gate must define board/chip/shard key
+      fields, message paths, compact readback ownership, failure counters,
+      placement assumptions, and the smallest cross-chip smoke target before any
+      multi-chip hardware job. Multi-chip execution, speedup claims, benchmark
+      claims, and native-scale baseline freeze remain blocked until that
+      contract passes.
       Reopen native replay-buffer, sleep-like replay, or eligibility-trace
       implementation only if a later measured blocker specifically demands it.
 ```

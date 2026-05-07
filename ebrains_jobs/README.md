@@ -104,10 +104,11 @@ Boundary: single-shard single-chip hardware stress only. It is not
 replicated-shard stress, not multi-chip evidence, not speedup evidence, not
 static reef partitioning, and not a native-scale baseline freeze.
 
-Next: Tier 4.32b static reef partition smoke/resource mapping is active. Do not
-prepare a new EBRAINS package, multi-chip job, or native-scale baseline freeze
-until the static partition contract/source/resource evidence is defined and
-passes.
+Next: Tier 4.32c inter-chip feasibility contract is active. Do not prepare a
+new EBRAINS multi-chip package or native-scale baseline freeze until the 4.32c
+contract defines board/chip/shard key fields, message paths, readback ownership,
+failure counters, placement assumptions, and the smallest cross-chip smoke
+scope.
 
 ### Tier 4.31e
 

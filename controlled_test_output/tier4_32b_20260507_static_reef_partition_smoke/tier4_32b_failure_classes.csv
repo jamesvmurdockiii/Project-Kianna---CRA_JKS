@@ -1,0 +1,8 @@
+failure_class,status,detection_rule,required_response,blocks
+static_partition_overlap,bounded_by_4_32b,core ids and polyp slots must be unique across partitions,repair partition map before 4.32c,inter-chip contract
+shard_key_exhaustion,bounded_by_4_32b,max shard id must be <= MCPL_KEY_SHARD_MASK,increase key width or reduce static partitions,inter-chip contract
+lookup_parity_regression,measured_clean_in_4_32a_hw_replicated,per-partition lookup requests must equal replies,do not proceed to 4.32c; repair MCPL routing/readback,multi-chip smoke
+lifecycle_core_budget_overflow,detected_by_candidate_layouts,quad partition plus dedicated lifecycle requires 17 cores,choose distributed lifecycle ownership or move lifecycle owner to another chip,native-scale baseline freeze
+one_polyp_one_chip_overclaim,rejected_by_4_32b,"current evidence maps polyp slots to partition groups, not one polyp to one chip",keep docs/claims at group/module/slot mapping level,paper claim boundary
+static_readback_ambiguity,bounded_by_4_32b,readback must include partition/shard/core role enough to reconstruct ownership,add partition id fields before hardware packaging,inter-chip contract
+multi_chip_route_ambiguity,out_of_scope_until_4_32c,board/chip id is not represented in current single-chip partition map,define board/chip/routing key fields in 4.32c before first multi-chip smoke,4.32d hardware smoke

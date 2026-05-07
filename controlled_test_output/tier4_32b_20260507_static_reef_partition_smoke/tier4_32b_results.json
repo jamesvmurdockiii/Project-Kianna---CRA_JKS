@@ -1,0 +1,721 @@
+{
+  "artifacts": {
+    "candidate_layouts_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_candidate_layouts.csv",
+    "criteria_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_criteria.csv",
+    "failure_classes_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_failure_classes.csv",
+    "next_gate_plan_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_next_gate_plan.csv",
+    "ownership_invariants_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_ownership_invariants.csv",
+    "partition_map_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_partition_map.csv",
+    "replicated_envelope_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_replicated_envelope.csv",
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_report.md",
+    "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_results.json",
+    "source_checks_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_source_checks.csv"
+  },
+  "candidate_layouts": [
+    {
+      "blocker": "dedicated lifecycle core is not included in this exact 16-core envelope",
+      "decision": "canonical_4_32b_static_map",
+      "evidence_basis": "Tier 4.32a-hw-replicated point_16c_quad_shard hardware pass.",
+      "layout_id": "quad_mechanism_partition_v0",
+      "lifecycle_cores": 0,
+      "polyp_slots": 8,
+      "reef_partitions": 4,
+      "status": "eligible_static_mapping_reference",
+      "total_cores": 16
+    },
+    {
+      "blocker": "combined 12-core plus lifecycle layout has not been hardware-smoked as a single package",
+      "decision": "reserve_as_lifecycle_including_single_chip_layout",
+      "evidence_basis": "Tier 4.32a point12 measured replicated shards plus Tier 4.30g lifecycle core evidence, but not yet run as one combined hardware layout.",
+      "layout_id": "triple_partition_plus_lifecycle_v0",
+      "lifecycle_cores": 1,
+      "polyp_slots": 8,
+      "reef_partitions": 3,
+      "status": "eligible_for_future_local_contract",
+      "total_cores": 13
+    },
+    {
+      "blocker": "17 cores exceeds conservative single-chip app-core budget",
+      "decision": "requires multi-chip or distributed lifecycle ownership",
+      "evidence_basis": "16-core replicated shard pass plus lifecycle-core requirement exceeds conservative 16 application-core envelope.",
+      "layout_id": "quad_partition_plus_dedicated_lifecycle_v0",
+      "lifecycle_cores": 1,
+      "polyp_slots": 8,
+      "reef_partitions": 4,
+      "status": "blocked_on_single_chip_budget",
+      "total_cores": 17
+    },
+    {
+      "blocker": "conceptual mapping is unsupported by current runtime/evidence",
+      "decision": "do_not_use_as_claim",
+      "evidence_basis": "No evidence maps one polyp to one chip; current evidence maps groups of polyp slots to shard/core groups.",
+      "layout_id": "one_polyp_one_chip",
+      "lifecycle_cores": 0,
+      "polyp_slots": 8,
+      "reef_partitions": 8,
+      "status": "rejected_claim",
+      "total_cores": 8
+    }
+  ],
+  "claim_boundary": "Tier 4.32b is local static reef partition/resource evidence over the measured single-chip replicated-shard envelope. It is not a new SpiNNaker hardware run, not speedup evidence, not one-polyp-one-chip evidence, not multi-chip evidence, not benchmark superiority, and not a native-scale baseline freeze.",
+  "criteria": [
+    {
+      "name": "Tier 4.32 prerequisite passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "Tier 4.32a preflight passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "Tier 4.32a-r1 MCPL repair passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "Tier 4.32a-hw-replicated ingest passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "raw replicated hardware pass",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "raw final decision authorized 4.32b",
+      "note": "",
+      "passed": true,
+      "rule": "== authorized_next",
+      "value": "authorized_next"
+    },
+    {
+      "name": "replicated stress points all passed",
+      "note": "",
+      "passed": true,
+      "rule": "point08/12/16 all pass",
+      "value": {
+        "point_08c_dual_shard": "pass",
+        "point_12c_triple_shard": "pass",
+        "point_16c_quad_shard": "pass"
+      }
+    },
+    {
+      "name": "canonical point16 criteria all passed",
+      "note": "",
+      "passed": true,
+      "rule": "all pass",
+      "value": "71/71"
+    },
+    {
+      "name": "canonical point has four reef partitions",
+      "note": "",
+      "passed": true,
+      "rule": "== 4",
+      "value": 4
+    },
+    {
+      "name": "canonical point uses conservative 16 app-core envelope",
+      "note": "",
+      "passed": true,
+      "rule": "<= 16",
+      "value": 16
+    },
+    {
+      "name": "partition core ownership unique",
+      "note": "",
+      "passed": true,
+      "rule": "16 unique cores",
+      "value": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "name": "partition polyp slots cover static pool exactly",
+      "note": "",
+      "passed": true,
+      "rule": "== 0..7",
+      "value": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "name": "polyp slots fit lifecycle source limit",
+      "note": "",
+      "passed": true,
+      "rule": "<= MAX_LIFECYCLE_SLOTS",
+      "value": 8
+    },
+    {
+      "name": "shard ids fit MCPL key mask",
+      "note": "",
+      "passed": true,
+      "rule": "<= 15",
+      "value": 3
+    },
+    {
+      "name": "source tokens support shard-aware partitioning",
+      "note": "",
+      "passed": true,
+      "rule": "all present",
+      "value": [
+        {
+          "file": "coral_reef_spinnaker/spinnaker_runtime/src/config.h",
+          "present": true,
+          "purpose": "MCPL keys reserve shard identity bits.",
+          "token": "MCPL_KEY_SHARD_SHIFT"
+        },
+        {
+          "file": "coral_reef_spinnaker/spinnaker_runtime/src/config.h",
+          "present": true,
+          "purpose": "Shard id mask is source-declared.",
+          "token": "MCPL_KEY_SHARD_MASK"
+        },
+        {
+          "file": "coral_reef_spinnaker/spinnaker_runtime/src/config.h",
+          "present": true,
+          "purpose": "Static partitions can map to explicit shard ids.",
+          "token": "MAKE_MCPL_KEY_SHARD"
+        },
+        {
+          "file": "coral_reef_spinnaker/spinnaker_runtime/src/config.h",
+          "present": true,
+          "purpose": "Receivers can decode partition/shard identity.",
+          "token": "EXTRACT_MCPL_SHARD_ID"
+        },
+        {
+          "file": "coral_reef_spinnaker/spinnaker_runtime/src/config.h",
+          "present": true,
+          "purpose": "Static polyp/lifecycle pool limit is source-declared.",
+          "token": "MAX_LIFECYCLE_SLOTS"
+        },
+        {
+          "file": "coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h",
+          "present": true,
+          "purpose": "Lookup table tracks shard-specific pending entries.",
+          "token": "cra_state_lookup_send_shard"
+        },
+        {
+          "file": "coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h",
+          "present": true,
+          "purpose": "Shard-specific lookup readback is testable.",
+          "token": "cra_state_lookup_get_result_shard"
+        },
+        {
+          "file": "coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c",
+          "present": true,
+          "purpose": "Lookup entries store shard identity.",
+          "token": "g_lookup_entries[i].shard_id"
+        },
+        {
+          "file": "coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c",
+          "present": true,
+          "purpose": "Runtime images can be compiled per static shard.",
+          "token": "CRA_MCPL_SHARD_ID"
+        }
+      ]
+    },
+    {
+      "name": "lookup parity holds for every partition",
+      "note": "",
+      "passed": true,
+      "rule": "requests == replies == expected",
+      "value": {
+        "reef_partition_0": "384/384",
+        "reef_partition_1": "384/384",
+        "reef_partition_2": "384/384",
+        "reef_partition_3": "384/384"
+      }
+    },
+    {
+      "name": "no stale/duplicate/timeouts in replicated envelope",
+      "note": "",
+      "passed": true,
+      "rule": "all zero",
+      "value": [
+        [
+          "point_08c_dual_shard",
+          0,
+          0,
+          0
+        ],
+        [
+          "point_12c_triple_shard",
+          0,
+          0,
+          0
+        ],
+        [
+          "point_16c_quad_shard",
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "event schedule per partition within source limit",
+      "note": "",
+      "passed": true,
+      "rule": "<= MAX_SCHEDULE_ENTRIES",
+      "value": 128
+    },
+    {
+      "name": "lookup count per partition matches three lookup types per event",
+      "note": "",
+      "passed": true,
+      "rule": "event_count * 3",
+      "value": {
+        "reef_partition_0": 384,
+        "reef_partition_1": 384,
+        "reef_partition_2": 384,
+        "reef_partition_3": 384
+      }
+    },
+    {
+      "name": "dedicated lifecycle plus quad partition correctly blocked",
+      "note": "",
+      "passed": true,
+      "rule": "> 16",
+      "value": 17
+    },
+    {
+      "name": "one-polyp-one-chip claim rejected",
+      "note": "",
+      "passed": true,
+      "rule": "== rejected_claim",
+      "value": "rejected_claim"
+    },
+    {
+      "name": "ownership invariants cover lifecycle boundary",
+      "note": "",
+      "passed": true,
+      "rule": "contains lifecycle_boundary_explicit",
+      "value": [
+        "single_context_owner",
+        "single_route_owner",
+        "single_memory_owner",
+        "single_learning_owner",
+        "static_polyp_slot_owner",
+        "lifecycle_boundary_explicit"
+      ]
+    },
+    {
+      "name": "failure classes include multi-chip ambiguity",
+      "note": "",
+      "passed": true,
+      "rule": "contains multi_chip_route_ambiguity",
+      "value": [
+        "static_partition_overlap",
+        "shard_key_exhaustion",
+        "lookup_parity_regression",
+        "lifecycle_core_budget_overflow",
+        "one_polyp_one_chip_overclaim",
+        "static_readback_ambiguity",
+        "multi_chip_route_ambiguity"
+      ]
+    },
+    {
+      "name": "next gate is 4.32c contract, not hardware jump",
+      "note": "",
+      "passed": true,
+      "rule": "== Tier 4.32c",
+      "value": "Tier 4.32c"
+    },
+    {
+      "name": "native scale baseline freeze remains blocked",
+      "note": "",
+      "passed": true,
+      "rule": "== not_authorized",
+      "value": "not_authorized"
+    }
+  ],
+  "criteria_passed": 25,
+  "criteria_total": 25,
+  "evidence_inputs": {
+    "tier4_32": "controlled_test_output/tier4_32_20260506_mapping_resource_model/tier4_32_results.json",
+    "tier4_32a": "controlled_test_output/tier4_32a_20260506_single_chip_scale_stress/tier4_32a_results.json",
+    "tier4_32a_hw_replicated_ingest": "controlled_test_output/tier4_32a_hw_replicated_20260507_hardware_pass_ingested/tier4_32a_hw_replicated_results.json",
+    "tier4_32a_hw_replicated_raw": "controlled_test_output/tier4_32a_hw_replicated_20260507_hardware_pass_ingested/returned_artifacts/tier4_32a_hw_replicated_results.json",
+    "tier4_32a_r1": "controlled_test_output/tier4_32a_r1_20260506_mcpl_lookup_repair/tier4_32a_r1_results.json"
+  },
+  "failed_criteria": [],
+  "failure_classes": [
+    {
+      "blocks": "inter-chip contract",
+      "detection_rule": "core ids and polyp slots must be unique across partitions",
+      "failure_class": "static_partition_overlap",
+      "required_response": "repair partition map before 4.32c",
+      "status": "bounded_by_4_32b"
+    },
+    {
+      "blocks": "inter-chip contract",
+      "detection_rule": "max shard id must be <= MCPL_KEY_SHARD_MASK",
+      "failure_class": "shard_key_exhaustion",
+      "required_response": "increase key width or reduce static partitions",
+      "status": "bounded_by_4_32b"
+    },
+    {
+      "blocks": "multi-chip smoke",
+      "detection_rule": "per-partition lookup requests must equal replies",
+      "failure_class": "lookup_parity_regression",
+      "required_response": "do not proceed to 4.32c; repair MCPL routing/readback",
+      "status": "measured_clean_in_4_32a_hw_replicated"
+    },
+    {
+      "blocks": "native-scale baseline freeze",
+      "detection_rule": "quad partition plus dedicated lifecycle requires 17 cores",
+      "failure_class": "lifecycle_core_budget_overflow",
+      "required_response": "choose distributed lifecycle ownership or move lifecycle owner to another chip",
+      "status": "detected_by_candidate_layouts"
+    },
+    {
+      "blocks": "paper claim boundary",
+      "detection_rule": "current evidence maps polyp slots to partition groups, not one polyp to one chip",
+      "failure_class": "one_polyp_one_chip_overclaim",
+      "required_response": "keep docs/claims at group/module/slot mapping level",
+      "status": "rejected_by_4_32b"
+    },
+    {
+      "blocks": "inter-chip contract",
+      "detection_rule": "readback must include partition/shard/core role enough to reconstruct ownership",
+      "failure_class": "static_readback_ambiguity",
+      "required_response": "add partition id fields before hardware packaging",
+      "status": "bounded_by_4_32b"
+    },
+    {
+      "blocks": "4.32d hardware smoke",
+      "detection_rule": "board/chip id is not represented in current single-chip partition map",
+      "failure_class": "multi_chip_route_ambiguity",
+      "required_response": "define board/chip/routing key fields in 4.32c before first multi-chip smoke",
+      "status": "out_of_scope_until_4_32c"
+    }
+  ],
+  "final_decision": {
+    "canonical_static_layout": "quad_mechanism_partition_v0",
+    "claim_boundary": "local static reef partition mapping only",
+    "multi_chip_scaling": "blocked_until_4_32c_contract_and_4_32d_smoke",
+    "native_scale_baseline_freeze": "not_authorized",
+    "speedup_claims": "not_authorized",
+    "status": "pass",
+    "tier4_32c": "authorized_next_contract",
+    "tier4_32d": "blocked_until_4_32c_passes",
+    "tier4_32e": "blocked_until_4_32d_passes"
+  },
+  "generated_at_utc": "2026-05-07T01:44:19+00:00",
+  "next_gate_plan": [
+    {
+      "claim_boundary": "contract evidence only; not hardware execution and not multi-chip learning",
+      "decision": "authorize_next_if_4_32b_passes",
+      "fail_boundary": "If board/chip identity or readback ownership is ambiguous, do not prepare a multi-chip job.",
+      "gate": "Tier 4.32c",
+      "pass_boundary": "Contract declares board/chip/shard key fields, message path, readback fields, failure counters, and smallest cross-chip smoke target.",
+      "prerequisites": "4.32b static partition map, unique shard/core/polyp ownership, and preserved 4.32a-hw-replicated counters.",
+      "question": "What exact inter-chip routing/readback contract carries static reef partitions beyond one chip?"
+    },
+    {
+      "claim_boundary": "first multi-chip smoke only; not speedup and not learning scale",
+      "decision": "blocked_until_4_32c_passes",
+      "fail_boundary": "Classify as target/load/routing/readback/schema/environment before rerun.",
+      "gate": "Tier 4.32d",
+      "pass_boundary": "Real hardware run returns zero stale/duplicate/timeout/drop counters and reconstructable partition ownership.",
+      "prerequisites": "4.32c inter-chip contract and source/package QA.",
+      "question": "Can the smallest cross-chip static-partition message/readback smoke execute cleanly?"
+    },
+    {
+      "claim_boundary": "tiny multi-chip learning evidence only",
+      "decision": "blocked_until_4_32d_passes",
+      "fail_boundary": "Do not run larger tasks or benchmarks until the micro-task is stable.",
+      "gate": "Tier 4.32e",
+      "pass_boundary": "Cross-chip learning micro-task matches fixed-point/local reference within predeclared tolerance.",
+      "prerequisites": "4.32d cross-chip communication smoke.",
+      "question": "Can a tiny cross-chip learning micro-task preserve the native loop?"
+    },
+    {
+      "claim_boundary": "baseline decision is separate from this local mapping tier",
+      "decision": "not_authorized",
+      "fail_boundary": "Keep CRA_LIFECYCLE_NATIVE_BASELINE_v0.4 as latest native baseline and publish limits honestly.",
+      "gate": "native scale baseline freeze",
+      "pass_boundary": "Freeze only after static partition and first multi-chip evidence are clean.",
+      "prerequisites": "4.32b static partition, 4.32c contract, 4.32d smoke, and 4.32e micro-learning all pass.",
+      "question": "Is the native runtime stable enough to freeze as a scale baseline?"
+    }
+  ],
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke",
+  "ownership_invariants": [
+    {
+      "failure_if": "context slot writes or replies are observed from a non-owner shard/core",
+      "forbidden_writers": "route_core,memory_core,learning_core,lifecycle_core,host after setup",
+      "invariant_id": "single_context_owner",
+      "owned_state": "context slots and context lookup replies for that shard id",
+      "owner": "context_core within each reef partition",
+      "proof_source": "point16 per-shard context readback plus shard-aware MCPL key"
+    },
+    {
+      "failure_if": "route lookup replies cross shard or duplicate for one pending lookup",
+      "forbidden_writers": "context_core,memory_core,learning_core,lifecycle_core,host after setup",
+      "invariant_id": "single_route_owner",
+      "owned_state": "route slots and route lookup replies for that shard id",
+      "owner": "route_core within each reef partition",
+      "proof_source": "point16 per-shard route readback plus shard-aware MCPL key"
+    },
+    {
+      "failure_if": "memory lookup replies cross shard or duplicate for one pending lookup",
+      "forbidden_writers": "context_core,route_core,learning_core,lifecycle_core,host after setup",
+      "invariant_id": "single_memory_owner",
+      "owned_state": "memory slots and memory lookup replies for that shard id",
+      "owner": "memory_core within each reef partition",
+      "proof_source": "point16 per-shard memory readback plus shard-aware MCPL key"
+    },
+    {
+      "failure_if": "pending horizon mutates outside the owning learning core",
+      "forbidden_writers": "context_core,route_core,memory_core,lifecycle_core",
+      "invariant_id": "single_learning_owner",
+      "owned_state": "pending horizons, reward maturation, readout update, lookup request accounting",
+      "owner": "learning_core within each reef partition",
+      "proof_source": "point16 learning pending/reply parity and final readout state"
+    },
+    {
+      "failure_if": "one polyp slot appears in more than one partition or no partition",
+      "forbidden_writers": "other reef partitions",
+      "invariant_id": "static_polyp_slot_owner",
+      "owned_state": "two static polyp/lifecycle slots per reef partition",
+      "owner": "reef partition assigned by slot // 2",
+      "proof_source": "4.30 static lifecycle pool size plus 4.32a-hw-replicated shard ids"
+    },
+    {
+      "failure_if": "4.32b is described as autonomous lifecycle-to-learning MCPL",
+      "forbidden_writers": "context,route,memory,learning replicated shard cores",
+      "invariant_id": "lifecycle_boundary_explicit",
+      "owned_state": "birth/death/trophic mutation until a combined lifecycle partition is measured",
+      "owner": "host-ferried or future lifecycle owner",
+      "proof_source": "CRA_LIFECYCLE_NATIVE_BASELINE_v0.4 boundary and 4.32b candidate-layout table"
+    }
+  ],
+  "partition_map": [
+    {
+      "claim_boundary": "static semantic map over measured replicated shard; not dynamic population growth",
+      "context_core": 1,
+      "event_count": 128,
+      "expected_lookup_count": 384,
+      "learning_core": 4,
+      "measured_lookup_replies": 384,
+      "measured_lookup_requests": 384,
+      "memory_core": 3,
+      "module_roles": "context,route,memory,learning",
+      "ownership_status": "single_writer_per_module_family",
+      "partition_id": "reef_partition_0",
+      "payload_bytes_per_core": 105,
+      "polyp_slots": "0,1",
+      "route_core": 2,
+      "semantic_group": "static_reef_quadrant_0",
+      "shard_id": 0
+    },
+    {
+      "claim_boundary": "static semantic map over measured replicated shard; not dynamic population growth",
+      "context_core": 5,
+      "event_count": 128,
+      "expected_lookup_count": 384,
+      "learning_core": 8,
+      "measured_lookup_replies": 384,
+      "measured_lookup_requests": 384,
+      "memory_core": 7,
+      "module_roles": "context,route,memory,learning",
+      "ownership_status": "single_writer_per_module_family",
+      "partition_id": "reef_partition_1",
+      "payload_bytes_per_core": 105,
+      "polyp_slots": "2,3",
+      "route_core": 6,
+      "semantic_group": "static_reef_quadrant_1",
+      "shard_id": 1
+    },
+    {
+      "claim_boundary": "static semantic map over measured replicated shard; not dynamic population growth",
+      "context_core": 9,
+      "event_count": 128,
+      "expected_lookup_count": 384,
+      "learning_core": 12,
+      "measured_lookup_replies": 384,
+      "measured_lookup_requests": 384,
+      "memory_core": 11,
+      "module_roles": "context,route,memory,learning",
+      "ownership_status": "single_writer_per_module_family",
+      "partition_id": "reef_partition_2",
+      "payload_bytes_per_core": 105,
+      "polyp_slots": "4,5",
+      "route_core": 10,
+      "semantic_group": "static_reef_quadrant_2",
+      "shard_id": 2
+    },
+    {
+      "claim_boundary": "static semantic map over measured replicated shard; not dynamic population growth",
+      "context_core": 13,
+      "event_count": 128,
+      "expected_lookup_count": 384,
+      "learning_core": 16,
+      "measured_lookup_replies": 384,
+      "measured_lookup_requests": 384,
+      "memory_core": 15,
+      "module_roles": "context,route,memory,learning",
+      "ownership_status": "single_writer_per_module_family",
+      "partition_id": "reef_partition_3",
+      "payload_bytes_per_core": 105,
+      "polyp_slots": "6,7",
+      "route_core": 14,
+      "semantic_group": "static_reef_quadrant_3",
+      "shard_id": 3
+    }
+  ],
+  "recommended_next_step": "Tier 4.32c inter-chip feasibility contract: define board/chip/shard key fields, readback ownership, and first cross-chip smoke target.",
+  "replicated_envelope": [
+    {
+      "events_per_shard": 96,
+      "expected_lookup_count_per_shard": 288,
+      "interpretation": "Measured single-chip replicated context/route/memory/learning shard envelope.",
+      "max_duplicate_replies": 0,
+      "max_learning_readback_bytes": 210,
+      "max_payload_len": 105,
+      "max_stale_replies": 0,
+      "max_timeouts": 0,
+      "point_id": "point_08c_dual_shard",
+      "shards": 2,
+      "status": "pass",
+      "total_cores": 8,
+      "total_events": 192
+    },
+    {
+      "events_per_shard": 128,
+      "expected_lookup_count_per_shard": 384,
+      "interpretation": "Measured single-chip replicated context/route/memory/learning shard envelope.",
+      "max_duplicate_replies": 0,
+      "max_learning_readback_bytes": 315,
+      "max_payload_len": 105,
+      "max_stale_replies": 0,
+      "max_timeouts": 0,
+      "point_id": "point_12c_triple_shard",
+      "shards": 3,
+      "status": "pass",
+      "total_cores": 12,
+      "total_events": 384
+    },
+    {
+      "events_per_shard": 128,
+      "expected_lookup_count_per_shard": 384,
+      "interpretation": "Measured single-chip replicated context/route/memory/learning shard envelope.",
+      "max_duplicate_replies": 0,
+      "max_learning_readback_bytes": 315,
+      "max_payload_len": 105,
+      "max_stale_replies": 0,
+      "max_timeouts": 0,
+      "point_id": "point_16c_quad_shard",
+      "shards": 4,
+      "status": "pass",
+      "total_cores": 16,
+      "total_events": 512
+    }
+  ],
+  "runner_revision": "tier4_32b_static_reef_partition_smoke_20260507_0001",
+  "runtime_limits": {
+    "max_context_slots": 128,
+    "max_lifecycle_slots": 8,
+    "max_lookup_replies": 32,
+    "max_memory_slots": 8,
+    "max_pending_horizons": 128,
+    "max_route_slots": 8,
+    "max_schedule_entries": 512,
+    "mcpl_key_shard_mask": 15
+  },
+  "source_checks": [
+    {
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/config.h",
+      "present": true,
+      "purpose": "MCPL keys reserve shard identity bits.",
+      "token": "MCPL_KEY_SHARD_SHIFT"
+    },
+    {
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/config.h",
+      "present": true,
+      "purpose": "Shard id mask is source-declared.",
+      "token": "MCPL_KEY_SHARD_MASK"
+    },
+    {
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/config.h",
+      "present": true,
+      "purpose": "Static partitions can map to explicit shard ids.",
+      "token": "MAKE_MCPL_KEY_SHARD"
+    },
+    {
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/config.h",
+      "present": true,
+      "purpose": "Receivers can decode partition/shard identity.",
+      "token": "EXTRACT_MCPL_SHARD_ID"
+    },
+    {
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/config.h",
+      "present": true,
+      "purpose": "Static polyp/lifecycle pool limit is source-declared.",
+      "token": "MAX_LIFECYCLE_SLOTS"
+    },
+    {
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h",
+      "present": true,
+      "purpose": "Lookup table tracks shard-specific pending entries.",
+      "token": "cra_state_lookup_send_shard"
+    },
+    {
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h",
+      "present": true,
+      "purpose": "Shard-specific lookup readback is testable.",
+      "token": "cra_state_lookup_get_result_shard"
+    },
+    {
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c",
+      "present": true,
+      "purpose": "Lookup entries store shard identity.",
+      "token": "g_lookup_entries[i].shard_id"
+    },
+    {
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c",
+      "present": true,
+      "purpose": "Runtime images can be compiled per static shard.",
+      "token": "CRA_MCPL_SHARD_ID"
+    }
+  ],
+  "status": "pass",
+  "tier": "4.32b",
+  "tier_name": "Tier 4.32b - Static Reef Partition Smoke/Resource Mapping"
+}

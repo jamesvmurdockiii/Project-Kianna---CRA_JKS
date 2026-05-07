@@ -1517,6 +1517,29 @@ SPECS: tuple[EvidenceSpec, ...] = (
             "tier4_32a_r1_final_decision.json",
         ),
     ),
+    EvidenceSpec(
+        entry_id="tier4_32b_static_reef_partition_smoke",
+        tier_label="Tier 4.32b - Static Reef Partition Smoke/Resource Mapping",
+        plan_position="Phase G static reef partition mapping before inter-chip contract",
+        canonical_dir="tier4_32b_20260507_static_reef_partition_smoke",
+        results_file="tier4_32b_results.json",
+        report_file="tier4_32b_report.md",
+        summary_file="tier4_32b_partition_map.csv",
+        harness="experiments/tier4_32b_static_reef_partition_smoke.py",
+        evidence_role="native runtime static reef partition mapping",
+        claim="Tier 4.32b maps CRA reef groups/modules/polyps onto the measured single-chip replicated-shard envelope: four static reef partitions own non-overlapping context/route/memory/learning cores and polyp slots, lookup parity and zero stale/duplicate/timeout counters are inherited from the 4.32a replicated hardware pass, one-polyp-one-chip is explicitly rejected, and Tier 4.32c inter-chip contract work is authorized next.",
+        caveat="Local static partition/resource evidence only; not a new SpiNNaker hardware run, not speedup evidence, not one-polyp-one-chip evidence, not multi-chip evidence, not benchmark superiority, and not a native-scale baseline freeze.",
+        latest_manifest_names=("tier4_32b_latest_manifest.json",),
+        expected_extra_files=(
+            "tier4_32b_candidate_layouts.csv",
+            "tier4_32b_criteria.csv",
+            "tier4_32b_failure_classes.csv",
+            "tier4_32b_next_gate_plan.csv",
+            "tier4_32b_ownership_invariants.csv",
+            "tier4_32b_replicated_envelope.csv",
+            "tier4_32b_source_checks.csv",
+        ),
+    ),
 )
 
 

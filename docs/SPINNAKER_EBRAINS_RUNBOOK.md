@@ -29,13 +29,12 @@ CRA_LIFECYCLE_NATIVE_BASELINE_v0.4
 Latest scale-planning lesson:
 
 ```text
-Tier 4.32a-hw-replicated has now passed and been ingested from EBRAINS. The
-8/12/16-core replicated-shard stress preserved the repaired Tier 4.32a-r1 MCPL
-contract on one chip: shard-aware keys, value/meta replies, compact readback,
-and stale/duplicate/timeout counters. It is still not multi-chip evidence,
-speedup evidence, static reef partitioning, or a native-scale baseline freeze.
-Tier 4.32b static reef partition smoke/resource mapping is now the active next
-step.
+Tier 4.32b static reef partition smoke/resource mapping has now passed locally.
+It maps four static reef partitions onto the measured point16 16-core replicated
+single-chip envelope, rejects one-polyp-one-chip as unsupported, and keeps
+multi-chip/speedup/native-scale baseline freeze blocked. Tier 4.32c inter-chip
+feasibility contract is now the active next step before any multi-chip hardware
+job.
 ```
 
 Latest active hardware-facing tier:
@@ -56,13 +55,22 @@ Tier 4.32a-hw-replicated - Replicated-Shard MCPL-First EBRAINS Scale Stress
     native-scale baseline freeze.
 
 Tier 4.32b - Static Reef Partition Smoke / Resource Mapping
+  Status: LOCAL PASS, 25/25
+  Output: controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/
+  Result: canonical quad_mechanism_partition_v0 maps four static reef
+    partitions to the measured 16-core replicated envelope; static polyp slots
+    0-7 are assigned two per partition; each partition preserves 384/384 lookup
+    request/reply parity; one-polyp-one-chip is rejected; quad partition plus a
+    dedicated lifecycle core is blocked at 17 cores on one chip.
+  Boundary: local mapping/resource evidence only, not hardware.
+
+Tier 4.32c - Inter-Chip Feasibility Contract
   Status: CURRENT ACTIVE STEP / NOT YET PACKAGED
-  Scope: local contract/source/resource mapping first. Map CRA groups/modules/
-    polyps to cores using the measured static-pool and replicated-shard
-    envelope. Define ownership, routing keys, compact readback, resource limits,
-    and failure classes before any EBRAINS package or multi-chip attempt.
-  Still blocked: multi-chip work, speedup claims, and native-scale baseline
-    freeze.
+  Scope: define board/chip/shard key fields, message paths, compact readback
+    ownership, failure counters, placement assumptions, and the smallest
+    cross-chip smoke target before any multi-chip hardware job.
+  Still blocked: multi-chip hardware work, speedup claims, and native-scale
+    baseline freeze.
 
 Recent passed hardware-facing lifecycle tier:
 
@@ -198,10 +206,11 @@ Tier 4.31c - Native Temporal-Substrate Runtime Source Audit
     single-chip scale-stress preflight passed, and Tier 4.32a-r1 repaired the
     confidence-bearing shard-aware MCPL lookup blocker. Tier 4.32a-hw
     single-shard hardware stress passed after ingest; Tier 4.32a-hw-replicated
-    replicated-shard hardware stress also passed after ingest. Tier 4.32b static
-    reef partition smoke/resource mapping is now active. Native replay buffers,
-    sleep-like replay, and native macro eligibility remain deferred until
-    measured blockers demand them.
+    replicated-shard hardware stress also passed after ingest; Tier 4.32b static
+    reef partition smoke/resource mapping passed locally. Tier 4.32c inter-chip
+    feasibility contract is now active. Native replay buffers, sleep-like replay,
+    and native macro eligibility remain deferred until measured blockers demand
+    them.
 ```
 
 Tier 4.28e Point A passed after ingest at:

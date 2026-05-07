@@ -1,0 +1,10 @@
+file,token,present,purpose
+coral_reef_spinnaker/spinnaker_runtime/src/config.h,MCPL_KEY_SHARD_SHIFT,True,MCPL keys reserve shard identity bits.
+coral_reef_spinnaker/spinnaker_runtime/src/config.h,MCPL_KEY_SHARD_MASK,True,Shard id mask is source-declared.
+coral_reef_spinnaker/spinnaker_runtime/src/config.h,MAKE_MCPL_KEY_SHARD,True,Static partitions can map to explicit shard ids.
+coral_reef_spinnaker/spinnaker_runtime/src/config.h,EXTRACT_MCPL_SHARD_ID,True,Receivers can decode partition/shard identity.
+coral_reef_spinnaker/spinnaker_runtime/src/config.h,MAX_LIFECYCLE_SLOTS,True,Static polyp/lifecycle pool limit is source-declared.
+coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h,cra_state_lookup_send_shard,True,Lookup table tracks shard-specific pending entries.
+coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h,cra_state_lookup_get_result_shard,True,Shard-specific lookup readback is testable.
+coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c,g_lookup_entries[i].shard_id,True,Lookup entries store shard identity.
+coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c,CRA_MCPL_SHARD_ID,True,Runtime images can be compiled per static shard.

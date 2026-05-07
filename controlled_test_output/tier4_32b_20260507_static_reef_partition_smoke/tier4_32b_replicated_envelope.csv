@@ -1,0 +1,4 @@
+point_id,status,shards,total_cores,total_events,events_per_shard,expected_lookup_count_per_shard,max_stale_replies,max_duplicate_replies,max_timeouts,max_payload_len,max_learning_readback_bytes,interpretation
+point_08c_dual_shard,pass,2,8,192,96,288,0,0,0,105,210,Measured single-chip replicated context/route/memory/learning shard envelope.
+point_12c_triple_shard,pass,3,12,384,128,384,0,0,0,105,315,Measured single-chip replicated context/route/memory/learning shard envelope.
+point_16c_quad_shard,pass,4,16,512,128,384,0,0,0,105,315,Measured single-chip replicated context/route/memory/learning shard envelope.

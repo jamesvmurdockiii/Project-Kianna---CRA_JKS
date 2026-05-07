@@ -4,11 +4,11 @@ This table is generated from `controlled_test_output/STUDY_REGISTRY.json`.
 It is intended as a paper/technical-note citation table, not as a new
 source of claims. If the registry changes, regenerate this file.
 
-- Generated: `2026-05-07T01:26:04.729775+00:00`
-- Registry generated: `2026-05-07T01:26:04.622001+00:00`
+- Generated: `2026-05-07T01:50:27.642470+00:00`
+- Registry generated: `2026-05-07T01:50:27.465255+00:00`
 - Registry status: **PASS**
-- Canonical bundles: `70`
-- Expanded entries: `70`
+- Canonical bundles: `71`
+- Expanded entries: `71`
 
 ## Summary Table
 
@@ -84,6 +84,7 @@ source of claims. If the registry changes, regenerate this file.
 | `tier4_32a_single_chip_scale_stress_preflight` | PASS | see manifest | Tier 4.32a - Single-Chip Multi-Core Scale-Stress Preflight |  | Local preflight/source-inspection evidence only; not a SpiNNaker hardware run, not speedup evidence, not replicated-shard scaling, not multi-chip scaling, not static reef partition proof, not benchmark superiority, and not a baseline freeze. | results: `controlled_test_output/tier4_32a_20260506_single_chip_scale_stress/tier4_32a_results.json`; report: `controlled_test_output/tier4_32a_20260506_single_chip_scale_stress/tier4_32a_report.md`; summary: `controlled_test_output/tier4_32a_20260506_single_chip_scale_stress/tier4_32a_scale_points.csv` |
 | `tier4_32a_r0_protocol_truth_audit` | PASS | see manifest | 4.32a-r0 |  | Local source/documentation audit only; not SpiNNaker hardware evidence, not speedup evidence, not multi-chip scaling, not static reef partition proof, and not a baseline freeze. | results: `controlled_test_output/tier4_32a_r0_20260506_protocol_truth_audit/tier4_32a_r0_results.json`; report: `controlled_test_output/tier4_32a_r0_20260506_protocol_truth_audit/tier4_32a_r0_report.md`; summary: `controlled_test_output/tier4_32a_r0_20260506_protocol_truth_audit/tier4_32a_r0_criteria.csv` |
 | `tier4_32a_r1_mcpl_lookup_repair` | PASS | see manifest | 4.32a-r1 |  | Local source/runtime evidence only; not SpiNNaker hardware evidence, not speedup evidence, not replicated-shard scaling, not multi-chip scaling, not static reef partitioning, and not a baseline freeze. | results: `controlled_test_output/tier4_32a_r1_20260506_mcpl_lookup_repair/tier4_32a_r1_results.json`; report: `controlled_test_output/tier4_32a_r1_20260506_mcpl_lookup_repair/tier4_32a_r1_report.md`; summary: `controlled_test_output/tier4_32a_r1_20260506_mcpl_lookup_repair/tier4_32a_r1_criteria.csv` |
+| `tier4_32b_static_reef_partition_smoke` | PASS | see manifest | 4.32b |  | Local static partition/resource evidence only; not a new SpiNNaker hardware run, not speedup evidence, not one-polyp-one-chip evidence, not multi-chip evidence, not benchmark superiority, and not a native-scale baseline freeze. | results: `controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_results.json`; report: `controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_report.md`; summary: `controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_partition_map.csv` |
 
 ## Claim Discipline
 

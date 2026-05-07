@@ -9093,9 +9093,10 @@ Decision:
 
 ```text
 Tier 4.32a-hw-replicated later passed as single-chip replicated-shard stress.
-Tier 4.32b static reef partition smoke/resource mapping is authorized next.
+Tier 4.32b static reef partition smoke/resource mapping later passed locally.
+Tier 4.32c inter-chip feasibility contract is the next authorized gate.
 Multi-chip work, benchmark superiority, speedup claims, and native-scale
-baseline freeze remain blocked until static partition evidence passes.
+baseline freeze remain blocked until the 4.32c contract passes.
 ```
 
 ## Tier 4.32a-hw-replicated - Replicated-Shard MCPL-First EBRAINS Scale Stress
@@ -9204,7 +9205,50 @@ Synthetic fallback: 0
 Decision:
 
 ```text
-Tier 4.32b static reef partition smoke/resource mapping is now authorized.
+Tier 4.32b static reef partition smoke/resource mapping later passed locally.
+Tier 4.32c inter-chip feasibility contract is the next authorized gate.
 Multi-chip work, speedup claims, benchmark claims, and native-scale baseline
-freeze remain blocked until static partition evidence passes.
+freeze remain blocked until the 4.32c contract passes.
+```
+
+
+## Tier 4.32b - Static Reef Partition Smoke/Resource Mapping
+
+Question: Can static reef partitioning map CRA groups/modules/polyps to the
+measured single-chip replicated-shard runtime envelope without ambiguous state
+ownership?
+
+Result:
+
+```text
+Status: PASS
+Output: controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/
+Criteria: 25/25
+Canonical layout: quad_mechanism_partition_v0
+Partitions: 4
+Cores: 16
+Polyp slots: 0-7, two slots per partition
+Per-partition events: 128
+Per-partition lookup parity: 384/384
+Stale replies: 0
+Duplicate replies: 0
+Timeouts: 0
+One-polyp-one-chip claim: rejected as unsupported
+Quad partition plus dedicated lifecycle core: blocked at 17 cores
+```
+
+Decision:
+
+```text
+Tier 4.32c inter-chip feasibility contract is authorized next.
+Multi-chip hardware execution, speedup claims, benchmark claims, and native-scale
+baseline freeze remain blocked until the 4.32c contract passes.
+```
+
+Boundary:
+
+```text
+Local static partition/resource evidence only. Not a new SpiNNaker hardware run,
+not one-polyp-one-chip evidence, not speedup, not multi-chip, not benchmark
+superiority, and not a native-scale baseline freeze.
 ```

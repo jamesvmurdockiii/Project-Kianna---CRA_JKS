@@ -1,0 +1,5 @@
+partition_id,shard_id,semantic_group,polyp_slots,context_core,route_core,memory_core,learning_core,module_roles,event_count,expected_lookup_count,measured_lookup_requests,measured_lookup_replies,payload_bytes_per_core,ownership_status,claim_boundary
+reef_partition_0,0,static_reef_quadrant_0,"0,1",1,2,3,4,"context,route,memory,learning",128,384,384,384,105,single_writer_per_module_family,static semantic map over measured replicated shard; not dynamic population growth
+reef_partition_1,1,static_reef_quadrant_1,"2,3",5,6,7,8,"context,route,memory,learning",128,384,384,384,105,single_writer_per_module_family,static semantic map over measured replicated shard; not dynamic population growth
+reef_partition_2,2,static_reef_quadrant_2,"4,5",9,10,11,12,"context,route,memory,learning",128,384,384,384,105,single_writer_per_module_family,static semantic map over measured replicated shard; not dynamic population growth
+reef_partition_3,3,static_reef_quadrant_3,"6,7",13,14,15,16,"context,route,memory,learning",128,384,384,384,105,single_writer_per_module_family,static semantic map over measured replicated shard; not dynamic population growth
