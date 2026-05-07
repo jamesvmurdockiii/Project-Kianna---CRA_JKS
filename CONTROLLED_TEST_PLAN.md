@@ -9092,10 +9092,10 @@ Synthetic fallback: 0
 Decision:
 
 ```text
-Tier 4.32a-hw-replicated is authorized next as single-chip replicated-shard
-stress only. Static reef partitioning, multi-chip work, benchmark superiority,
-and native-scale baseline freeze remain blocked until replicated stress passes
-and is ingested.
+Tier 4.32a-hw-replicated later passed as single-chip replicated-shard stress.
+Tier 4.32b static reef partition smoke/resource mapping is authorized next.
+Multi-chip work, benchmark superiority, speedup claims, and native-scale
+baseline freeze remain blocked until static partition evidence passes.
 ```
 
 ## Tier 4.32a-hw-replicated - Replicated-Shard MCPL-First EBRAINS Scale Stress
@@ -9179,4 +9179,32 @@ Boundary:
 Single-chip replicated-shard stress only. Not static reef partitioning, not
 multi-chip, not speedup, not benchmark superiority, and not a native-scale
 baseline freeze.
+```
+
+Hardware result:
+
+```text
+Status: HARDWARE PASS, INGESTED
+Raw output: returned_artifacts/tier4_32a_hw_replicated_results.json
+Ingested output: controlled_test_output/tier4_32a_hw_replicated_20260507_hardware_pass_ingested/
+Board: 10.11.215.121
+Raw criteria: 185/185
+Ingest criteria: 9/9
+Returned artifacts: 80
+Runtime: 96.51446217112243 seconds
+point_08c_dual_shard: pass, 2 shards, 192 total events, 96 events/shard, 288 lookup replies/shard
+point_12c_triple_shard: pass, 3 shards, 384 total events, 128 events/shard, 384 lookup replies/shard
+point_16c_quad_shard: pass, 4 shards, 512 total events, 128 events/shard, 384 lookup replies/shard
+Stale replies: 0
+Duplicate replies: 0
+Timeouts: 0
+Synthetic fallback: 0
+```
+
+Decision:
+
+```text
+Tier 4.32b static reef partition smoke/resource mapping is now authorized.
+Multi-chip work, speedup claims, benchmark claims, and native-scale baseline
+freeze remain blocked until static partition evidence passes.
 ```

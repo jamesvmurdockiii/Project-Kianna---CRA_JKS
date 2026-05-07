@@ -22,7 +22,7 @@ Public repository hygiene rules live in
 
 ### `cra_432a_rep`
 
-Status: **PREPARED / WAITING EBRAINS RUN** for Tier 4.32a-hw-replicated
+Status: **HARDWARE PASS / INGESTED** for Tier 4.32a-hw-replicated
 single-chip replicated-shard MCPL-first scale stress.
 
 Purpose: run the predeclared replicated 8/12/16-core stress points after the
@@ -48,8 +48,19 @@ Prepared artifact:
 controlled_test_output/tier4_32a_hw_replicated_20260507_prepared/
 ```
 
-Prepare result: `14/14` local criteria. The package is source-only, about 1 MB,
-and does not include `controlled_test_output/`.
+Ingested artifact:
+
+```text
+controlled_test_output/tier4_32a_hw_replicated_20260507_hardware_pass_ingested/
+```
+
+Result: board `10.11.215.121`, raw remote status `pass`, ingest status `pass`,
+`185/185` raw hardware criteria, `9/9` ingest criteria, `80` returned artifacts,
+point08 `2` shards / `192` total events / `288` lookup replies per shard,
+point12 `3` shards / `384` total events / `384` lookup replies per shard,
+point16 `4` shards / `512` total events / `384` lookup replies per shard, zero
+stale replies, zero duplicate replies, zero timeouts, and zero synthetic
+fallback.
 
 Boundary: single-chip replicated-shard stress only. It is not static reef
 partitioning, not multi-chip evidence, not speedup evidence, and not a
@@ -93,9 +104,10 @@ Boundary: single-shard single-chip hardware stress only. It is not
 replicated-shard stress, not multi-chip evidence, not speedup evidence, not
 static reef partitioning, and not a native-scale baseline freeze.
 
-Next: Tier 4.32a-hw-replicated is prepared as `cra_432a_rep`. Run that package
-on EBRAINS and ingest the returned artifacts before static reef partitioning,
-multi-chip work, or native-scale baseline freeze can reopen.
+Next: Tier 4.32b static reef partition smoke/resource mapping is active. Do not
+prepare a new EBRAINS package, multi-chip job, or native-scale baseline freeze
+until the static partition contract/source/resource evidence is defined and
+passes.
 
 ### Tier 4.31e
 

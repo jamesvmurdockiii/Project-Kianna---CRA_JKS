@@ -1,0 +1,10 @@
+name,value,rule,passed,note
+hardware results json exists,/tmp/tier4_32a_hw_replicated_return_20260507/tier4_32a_hw_replicated_results.json,exists,True,
+hardware mode was run-hardware,run-hardware,== run-hardware,True,
+raw hardware status pass,pass,== pass,True,
+point08 pass,pass,== pass,True,
+point12 pass,pass,== pass,True,
+point16 pass,pass,== pass,True,
+returned artifacts preserved,80,>= 1,True,
+single-chip replicated-shard only,True,== True,True,
+synthetic fallback zero,False,== False,True,

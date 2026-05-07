@@ -29,47 +29,40 @@ CRA_LIFECYCLE_NATIVE_BASELINE_v0.4
 Latest scale-planning lesson:
 
 ```text
-Tier 4.32a-hw has now passed and been ingested from EBRAINS. Replicated
-8/12/16-core shard stress is reopened, but only as a single-chip
-replicated-shard stress gate using the same repaired Tier 4.32a-r1 MCPL
-contract: shard-aware keys, value/meta replies, compact readback, and
-stale/duplicate/timeout counters. It is still not multi-chip evidence, speedup
-evidence, static reef partitioning, or a native-scale baseline freeze.
+Tier 4.32a-hw-replicated has now passed and been ingested from EBRAINS. The
+8/12/16-core replicated-shard stress preserved the repaired Tier 4.32a-r1 MCPL
+contract on one chip: shard-aware keys, value/meta replies, compact readback,
+and stale/duplicate/timeout counters. It is still not multi-chip evidence,
+speedup evidence, static reef partitioning, or a native-scale baseline freeze.
+Tier 4.32b static reef partition smoke/resource mapping is now the active next
+step.
 ```
 
 Latest active hardware-facing tier:
 
 ```text
-Tier 4.32a-hw - Single-Shard MCPL-First EBRAINS Scale Stress
-  Status: HARDWARE PASS, INGESTED
-  Local prerequisite: Tier 4.32a local preflight pass, 19/19
-  Corrective prerequisite: Tier 4.32a-r0 protocol truth audit pass, 10/10
-  Protocol repair prerequisite: Tier 4.32a-r1 pass, 14/14
-  Protocol repair output: controlled_test_output/tier4_32a_r1_20260506_mcpl_lookup_repair/
-  Prepared output: controlled_test_output/tier4_32a_hw_20260506_prepared/
-  Ingested output: controlled_test_output/tier4_32a_hw_20260507_hardware_pass_ingested/
-  Board: 10.11.215.185
-  Result: raw pass, ingest pass, 31/31 raw hardware criteria, 8/8 ingest
-    criteria, 63 returned artifacts, point04 48 events / 144 lookup replies,
-    point05 96 events / 288 lookup replies, zero stale replies, zero duplicate
-    replies, zero timeouts, and zero synthetic fallback.
-  Boundary: single-shard hardware stress only.
-
 Tier 4.32a-hw-replicated - Replicated-Shard MCPL-First EBRAINS Scale Stress
-  Status: PREPARED / WAITING EBRAINS RUN
-  Prepared output: controlled_test_output/tier4_32a_hw_replicated_20260507_prepared/
-  Upload folder: ebrains_jobs/cra_432a_rep
-  JobManager command:
-    cra_432a_rep/experiments/tier4_32a_hw_replicated_shard_stress.py --mode run-hardware --output-dir tier4_32a_replicated_job_output
-  Prepare result: 14/14 local criteria, source-only upload bundle, package
-    size about 1 MB, 46 files, no controlled_test_output archive.
-  Required scope: 8/12/16-core replicated-shard stress points from Tier 4.32a.
-  Required controls: compact per-core readback, lookup request/reply parity,
-    shard-aware MCPL keys, value/meta replies, stale/duplicate/timeout/drop
-    counters, and schedule/slot high-water marks.
-  Still blocked: static reef partitioning, multi-chip work, and native-scale
-    baseline freeze.
-  Boundary: single-chip replicated-shard stress only.
+  Status: HARDWARE PASS, INGESTED
+  Ingested output: controlled_test_output/tier4_32a_hw_replicated_20260507_hardware_pass_ingested/
+  Board: 10.11.215.121
+  Result: raw pass, ingest pass, 185/185 raw hardware criteria, 9/9 ingest
+    criteria, 80 returned artifacts, point08 2 shards / 192 total events /
+    288 lookup replies per shard, point12 3 shards / 384 total events / 384
+    lookup replies per shard, point16 4 shards / 512 total events / 384 lookup
+    replies per shard, zero stale replies, zero duplicate replies, zero
+    timeouts, and zero synthetic fallback.
+  Boundary: single-chip replicated-shard stress only. It is not static reef
+    partition proof, not multi-chip evidence, not speedup evidence, and not a
+    native-scale baseline freeze.
+
+Tier 4.32b - Static Reef Partition Smoke / Resource Mapping
+  Status: CURRENT ACTIVE STEP / NOT YET PACKAGED
+  Scope: local contract/source/resource mapping first. Map CRA groups/modules/
+    polyps to cores using the measured static-pool and replicated-shard
+    envelope. Define ownership, routing keys, compact readback, resource limits,
+    and failure classes before any EBRAINS package or multi-chip attempt.
+  Still blocked: multi-chip work, speedup claims, and native-scale baseline
+    freeze.
 
 Recent passed hardware-facing lifecycle tier:
 
@@ -205,7 +198,8 @@ Tier 4.31c - Native Temporal-Substrate Runtime Source Audit
     single-chip scale-stress preflight passed, and Tier 4.32a-r1 repaired the
     confidence-bearing shard-aware MCPL lookup blocker. Tier 4.32a-hw
     single-shard hardware stress passed after ingest; Tier 4.32a-hw-replicated
-    prepare passed and `cra_432a_rep` is waiting for EBRAINS execution. Native replay buffers,
+    replicated-shard hardware stress also passed after ingest. Tier 4.32b static
+    reef partition smoke/resource mapping is now active. Native replay buffers,
     sleep-like replay, and native macro eligibility remain deferred until
     measured blockers demand them.
 ```
