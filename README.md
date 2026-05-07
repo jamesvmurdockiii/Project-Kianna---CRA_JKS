@@ -3,7 +3,7 @@
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
 [![Tests](https://img.shields.io/badge/tests-151%20passing-brightgreen.svg)](#validation)
-[![Evidence](https://img.shields.io/badge/canonical%20evidence-70%20bundles-blue.svg)](STUDY_EVIDENCE_INDEX.md)
+[![Evidence](https://img.shields.io/badge/canonical%20evidence-75%20bundles-blue.svg)](STUDY_EVIDENCE_INDEX.md)
 
 Coral Reef Architecture (CRA) is a neuromorphic learning research platform for
 studying local spiking plasticity, delayed credit assignment, population-level
@@ -20,7 +20,7 @@ controlled ablations, baseline comparisons, and explicit claim boundaries.
 | --- | --- |
 | Software baseline | `v2.2`, frozen after bounded host-side fading-memory temporal-state evidence plus full NEST compact regression. |
 | Native hardware baseline | `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4`, frozen after Tier 4.30g-hw passed lifecycle telemetry, sham controls, resource accounting, and a bounded hardware task-effect bridge. |
-| Latest ingested hardware pass | Tier 4.30g-hw lifecycle task-benefit/resource bridge passed on board `10.11.242.97`: raw remote status `pass`, ingest `pass`, `285/285` hardware criteria, `5/5` ingest criteria, `36` returned artifacts preserved, enabled lifecycle opened the bounded task gate, all five predeclared controls closed it, and resource/readback accounting returned cleanly. |
+| Latest ingested hardware pass | Tier 4.32d two-chip split-role MCPL lookup smoke passed on board `10.11.215.169`: raw remote status `pass`, ingest `pass`, source/learning chip `(0,0)`, remote state chip `(1,0)`, `32` events, `96/96` lookup replies, zero stale replies, zero duplicate replies, zero timeouts, compact readback, zero synthetic fallback, and `40` returned artifacts preserved. |
 | Latest lifecycle task bridge | Tier 4.30g local contract passed `9/9`, then Tier 4.30g-hw passed on real SpiNNaker: enabled lifecycle bridge gate `1`, controls bridge gate `0`, enabled reference tail accuracy `1.0`, control reference tail accuracy `0.375`, compact lifecycle payload `68`, and zero stale replies/timeouts. |
 | Latest software benchmark diagnostic | Tier 5.19c fading-memory narrowing gate passed and froze v2.2: fading-memory temporal state is promoted, while bounded nonlinear recurrence and universal benchmark superiority remain unproven. |
 | Latest engineering audit | Tier 4.30-readiness passed `16/16`, selecting a static-pool lifecycle-native path layered on `CRA_NATIVE_MECHANISM_BRIDGE_v0.3` with v2.2 as software reference only. |
@@ -43,8 +43,9 @@ controlled ablations, baseline comparisons, and explicit claim boundaries.
 | Latest inter-chip contract | Tier 4.32c passed `19/19` from [`controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract`](controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract): defines required board/chip/core/role/partition/shard/seq identity fields, remote split-role MCPL lookup paths, compact readback ownership, failure classes, and the exact two-chip split-role single-shard smoke authorized for Tier 4.32d. True two-partition cross-chip learning remains blocked until origin/target shard semantics are defined. |
 | Latest route/source audit | Tier 4.32d-r0 passed `10/10` from [`controlled_test_output/tier4_32d_r0_20260507_interchip_route_source_audit`](controlled_test_output/tier4_32d_r0_20260507_interchip_route_source_audit): it correctly blocked the first 4.32d upload because explicit inter-chip link routing was not yet source-proven. |
 | Latest route repair | Tier 4.32d-r1 passed `14/14` from [`controlled_test_output/tier4_32d_r1_20260507_interchip_route_repair_local_qa`](controlled_test_output/tier4_32d_r1_20260507_interchip_route_repair_local_qa): learning-core builds can install outbound request link routes, state-core builds can install local request delivery plus outbound value/meta reply link routes, and existing MCPL lookup/four-core regressions still pass. |
-| Active next gate | Tier 4.32d two-chip split-role single-shard MCPL lookup hardware smoke is prepared at [`controlled_test_output/tier4_32d_20260507_prepared`](controlled_test_output/tier4_32d_20260507_prepared) with `15/15` criteria. Upload [`ebrains_jobs/cra_432d`](ebrains_jobs/cra_432d) and run `cra_432d/experiments/tier4_32d_interchip_mcpl_smoke.py --mode run-hardware --output-dir tier4_32d_job_output`. Prepared package only; no learning-scale, speedup, benchmark, true two-partition, or baseline-freeze claim. |
-| Canonical registry | 74 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
+| Latest two-chip hardware smoke | Tier 4.32d passed after EBRAINS ingest from [`controlled_test_output/tier4_32d_20260507_hardware_pass_ingested`](controlled_test_output/tier4_32d_20260507_hardware_pass_ingested): `7/7` ingest criteria, `96/96` lookup requests/replies, zero stale replies, zero duplicate replies, zero timeouts, and zero synthetic fallback. This is communication/readback evidence only, not learning-scale, speedup, benchmark, true two-partition, lifecycle scaling, or baseline-freeze evidence. |
+| Active next gate | Tier 4.32e multi-chip learning micro-task: design/package a tiny delayed-credit or reentry learning task over the 4.32d cross-chip path with explicit resource measurements and claim boundaries. |
+| Canonical registry | 75 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
 | Validation suite | 151 pytest tests plus registry, paper-table, and repository-audit generation. |
 
 ## What CRA Implements
@@ -216,7 +217,7 @@ commit used. A placeholder software citation is:
   author       = {Murdock, James V. and CRA Contributors},
   year         = {2026},
   url          = {https://github.com/jamesvmurdockiii/Project-Kianna---CRA_JKS},
-  note         = {74 canonical evidence bundles; bounded SpiNNaker hardware validation}
+  note         = {75 canonical evidence bundles; bounded SpiNNaker hardware validation}
 }
 ```
 

@@ -1607,6 +1607,26 @@ SPECS: tuple[EvidenceSpec, ...] = (
             "tier4_32d_r1_test_command_3.stderr.txt",
         ),
     ),
+    EvidenceSpec(
+        entry_id="tier4_32d_two_chip_mcpl_lookup_hardware_smoke",
+        tier_label="Tier 4.32d - Two-Chip Split-Role Single-Shard MCPL Lookup Smoke",
+        plan_position="Phase G first two-chip split-role MCPL communication/readback hardware smoke",
+        canonical_dir="tier4_32d_20260507_hardware_pass_ingested",
+        results_file="tier4_32d_results.json",
+        report_file="tier4_32d_report.md",
+        summary_file="tier4_32d_summary.csv",
+        harness="experiments/tier4_32d_interchip_mcpl_smoke.py",
+        evidence_role="native runtime first two-chip MCPL communication/readback hardware smoke",
+        claim="Tier 4.32d passed as the first two-chip split-role single-shard MCPL lookup hardware smoke: a learning core on chip (0,0) communicated with context/route/memory state cores on chip (1,0), completed 32 events, received 96/96 lookup replies, and returned zero stale replies, duplicates, timeouts, or synthetic fallback.",
+        caveat="Two-chip communication/readback hardware smoke only; not learning-scale evidence, not speedup evidence, not benchmark superiority, not true two-partition cross-chip learning, not lifecycle scaling, not multi-shard learning, and not a native-scale baseline freeze.",
+        latest_manifest_names=("tier4_32d_latest_manifest.json",),
+        expected_extra_files=(
+            "returned_artifacts/tier4_32d_results.json",
+            "returned_artifacts/tier4_32d_task_result.json",
+            "returned_artifacts/tier4_32d_task_summary.csv",
+            "returned_artifacts/tier4_32d_target_acquisition.json",
+        ),
+    ),
 )
 
 

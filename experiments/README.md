@@ -74,9 +74,13 @@ repair. Tier 4.32d-r1 then passed locally at
 with `14/14` criteria, proving explicit route-link entries and preserving MCPL
 regressions. Tier 4.32d package preparation then passed at
 `controlled_test_output/tier4_32d_20260507_prepared/` with `15/15` criteria and
-refreshed `ebrains_jobs/cra_432d`. Hardware running/ingest is now active;
-learning scale, speedup claims, benchmark claims, true two-partition learning,
-and native-scale baseline freeze remain blocked.
+refreshed `ebrains_jobs/cra_432d`. Tier 4.32d then passed on EBRAINS and was
+ingested at `controlled_test_output/tier4_32d_20260507_hardware_pass_ingested/`:
+source/learning chip `(0,0)`, remote state chip `(1,0)`, `32` events, `96/96`
+lookup replies, zero stale replies, zero duplicate replies, zero timeouts, and
+zero synthetic fallback. Tier 4.32e multi-chip learning micro-task
+design/package is now active; speedup claims, benchmark claims, true
+two-partition learning, and native-scale baseline freeze remain blocked.
 
 Tier 4.12 proves NEST/Brian2 parity plus SpiNNaker
 PyNN readiness prep. Tier 4.13 records a real SpiNNaker hardware-capsule pass

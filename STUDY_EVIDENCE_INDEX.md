@@ -10,10 +10,10 @@ Research narrative companions:
 - `docs/WHITEPAPER.md`
 - `docs/CODEBASE_MAP.md`
 
-- Registry generated: `2026-05-07T03:35:41.440980+00:00`
+- Registry generated: `2026-05-07T08:09:45.069455+00:00`
 - Registry status: **PASS**
 - Core validation suite: `12` tests
-- Expanded evidence suite: `74` entries; see the canonical evidence table below for the exact current tier list.
+- Expanded evidence suite: `75` entries; see the canonical evidence table below for the exact current tier list.
 
 ## Canonical Claims
 
@@ -93,6 +93,7 @@ Research narrative companions:
 | `tier4_32c_interchip_feasibility_contract` | Phase G inter-chip contract before first multi-chip smoke | **PASS** | Tier 4.32c defines the first reviewer-defensible inter-chip contract over the Tier 4.32b static reef partition map: required board/chip/core/role/partition/shard/seq identity fields, remote split-role MCPL lookup paths, compact readback ownership, failure classes, and the exact two-chip split-role single-shard smoke authorized for Tier 4.32d. It also records that true two-partition cross-chip learning is blocked until origin/target shard semantics are defined. | Local contract evidence only; not SpiNNaker hardware evidence, not multi-chip execution evidence, not true two-partition cross-chip learning evidence, not speedup evidence, not learning-scale evidence, not benchmark superiority, and not a native-scale baseline freeze. |
 | `tier4_32d_r0_interchip_route_source_audit` | Phase G route/source/package QA before first inter-chip hardware package | **PASS** | Tier 4.32d-r0 passed as a local route/source/package audit by blocking the first two-chip split-role single-shard EBRAINS package until inter-chip MCPL route entries are repaired or explicitly proven. The source-backed MCPL key/value/meta path exists, but current cra_state_mcpl_init routes request/reply keys to local cores only and does not define explicit inter-chip link routing. | Local audit evidence only; not SpiNNaker hardware evidence, not an EBRAINS package, not multi-chip execution evidence, not speedup evidence, not learning-scale evidence, not benchmark superiority, and not a native-scale baseline freeze. |
 | `tier4_32d_r1_interchip_route_repair_local_qa` | Phase G route repair/local QA before first inter-chip hardware package | **PASS** | Tier 4.32d-r1 passed as local source/runtime QA for the first two-chip split-role single-shard MCPL smoke: learning-core builds can install outbound request link routes, state-core builds can install local request delivery plus outbound value/meta reply link routes, the route-table stub inspects key/mask/route entries, and existing MCPL lookup/four-core regressions still pass. | Local source/runtime QA only; not SpiNNaker hardware evidence, not an EBRAINS package, not multi-chip execution evidence, not learning-scale evidence, not speedup evidence, not benchmark superiority, and not a native-scale baseline freeze. |
+| `tier4_32d_two_chip_mcpl_lookup_hardware_smoke` | Phase G first two-chip split-role MCPL communication/readback hardware smoke | **PASS** | Tier 4.32d passed as the first two-chip split-role single-shard MCPL lookup hardware smoke: a learning core on chip (0,0) communicated with context/route/memory state cores on chip (1,0), completed 32 events, received 96/96 lookup replies, and returned zero stale replies, duplicates, timeouts, or synthetic fallback. | Two-chip communication/readback hardware smoke only; not learning-scale evidence, not speedup evidence, not benchmark superiority, not true two-partition cross-chip learning, not lifecycle scaling, not multi-shard learning, and not a native-scale baseline freeze. |
 
 ## Canonical Artifacts
 
@@ -172,6 +173,7 @@ Research narrative companions:
 | `tier4_32c_interchip_feasibility_contract` | `controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_results.json` | `controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_report.md` | `controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_placement_contract.csv` |
 | `tier4_32d_r0_interchip_route_source_audit` | `controlled_test_output/tier4_32d_r0_20260507_interchip_route_source_audit/tier4_32d_r0_results.json` | `controlled_test_output/tier4_32d_r0_20260507_interchip_route_source_audit/tier4_32d_r0_report.md` | `controlled_test_output/tier4_32d_r0_20260507_interchip_route_source_audit/tier4_32d_r0_source_findings.csv` |
 | `tier4_32d_r1_interchip_route_repair_local_qa` | `controlled_test_output/tier4_32d_r1_20260507_interchip_route_repair_local_qa/tier4_32d_r1_results.json` | `controlled_test_output/tier4_32d_r1_20260507_interchip_route_repair_local_qa/tier4_32d_r1_report.md` | `controlled_test_output/tier4_32d_r1_20260507_interchip_route_repair_local_qa/tier4_32d_r1_source_findings.csv` |
+| `tier4_32d_two_chip_mcpl_lookup_hardware_smoke` | `controlled_test_output/tier4_32d_20260507_hardware_pass_ingested/tier4_32d_results.json` | `controlled_test_output/tier4_32d_20260507_hardware_pass_ingested/tier4_32d_report.md` | `controlled_test_output/tier4_32d_20260507_hardware_pass_ingested/tier4_32d_summary.csv` |
 
 ## Selected Noncanonical Diagnostics
 

@@ -56,6 +56,7 @@ DEFAULT_PREPARE_OUTPUT = CONTROLLED / "tier4_32d_20260507_prepared"
 DEFAULT_RUN_OUTPUT = CONTROLLED / f"tier4_32d_{datetime.now(timezone.utc).strftime('%Y%m%d_%H%M%S')}_run_hardware"
 DEFAULT_INGEST_OUTPUT = CONTROLLED / "tier4_32d_ingested"
 LATEST_MANIFEST = CONTROLLED / "tier4_32d_latest_manifest.json"
+INGEST_ARTIFACT_MTIME_WINDOW_SECONDS = 15 * 60
 UPLOAD_PACKAGE_NAME = "cra_432d"
 STABLE_EBRAINS_UPLOAD = ROOT / "ebrains_jobs" / UPLOAD_PACKAGE_NAME
 
@@ -770,9 +771,14 @@ def copy_returned_artifacts(ingest_dir: Path, output_dir: Path, anchor: Path) ->
     returned_dir.mkdir(parents=True, exist_ok=True)
     copied: list[str] = []
     search_root = anchor.parent if anchor.exists() else ingest_dir
+    anchor_mtime = anchor.stat().st_mtime if anchor.exists() else None
     for path in sorted(search_root.rglob("*")):
         if not path.is_file():
             continue
+        if anchor_mtime is not None:
+            age_delta = abs(path.stat().st_mtime - anchor_mtime)
+            if age_delta > INGEST_ARTIFACT_MTIME_WINDOW_SECONDS:
+                continue
         rel = path.relative_to(search_root)
         dst = returned_dir / rel
         dst.parent.mkdir(parents=True, exist_ok=True)

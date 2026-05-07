@@ -35,10 +35,22 @@ split-role MCPL lookup paths, compact readback ownership, and the exact two-chip
 split-role single-shard smoke target. True two-partition cross-chip learning
 remains blocked until origin/target shard semantics are defined. Tier 4.32d-r0
 then blocked packaging until explicit inter-chip route repair; Tier 4.32d-r1
-passed that repair; Tier 4.32d package preparation now passed at
+passed that repair; Tier 4.32d package preparation passed at
 controlled_test_output/tier4_32d_20260507_prepared/ and refreshed
-ebrains_jobs/cra_432d. Speedup, learning-scale, benchmark, true two-partition,
-and native-scale baseline-freeze claims remain blocked.
+ebrains_jobs/cra_432d; the returned EBRAINS 4.32d run then passed and was
+ingested at controlled_test_output/tier4_32d_20260507_hardware_pass_ingested/.
+Speedup, benchmark, true two-partition, and native-scale baseline-freeze claims
+remain blocked until 4.32e multi-chip learning micro-task passes.
+```
+
+Latest ingest hygiene lesson:
+
+```text
+When returned artifacts are downloaded directly into ~/Downloads alongside old
+JobManager files, ingest must not preserve the whole Downloads directory. Use a
+clean returned-output folder when possible, or a tier-specific ingest filter
+bounded around the returned tier result anchor. Tier 4.32d's ingest preserves
+the 40 returned files from the actual job window, not all historical Downloads.
 ```
 
 Latest active hardware-facing tier:
@@ -96,16 +108,20 @@ Tier 4.32d-r1 - Inter-Chip MCPL Route Repair / Local QA
   Boundary: local route/source QA only, not hardware and not an upload package.
 
 Tier 4.32d - Two-Chip Split-Role Single-Shard MCPL Lookup Smoke
-  Status: PREPARED / EBRAINS RUN NEXT
+  Status: HARDWARE PASS / INGEST PASS
   Prepared output: controlled_test_output/tier4_32d_20260507_prepared/
-  Upload folder: ebrains_jobs/cra_432d
-  Command:
-    cra_432d/experiments/tier4_32d_interchip_mcpl_smoke.py --mode run-hardware --output-dir tier4_32d_job_output
-  Scope: smallest cross-chip communication/readback target: learning on chip
-    (0,0), state cores on chip (1,0), shard 0, 32 events, 96 expected lookup
-    replies.
+  Ingested output: controlled_test_output/tier4_32d_20260507_hardware_pass_ingested/
+  Scope passed: smallest cross-chip communication/readback target: learning on
+    chip (0,0), state cores on chip (1,0), shard 0, 32 events, 96/96 lookup
+    replies, zero stale replies, zero duplicate replies, zero timeouts, compact
+    readback, zero synthetic fallback, 40 returned artifacts preserved.
   Still blocked: learning scale, speedup claims, benchmarks, true two-partition
     learning, and native-scale baseline freeze.
+
+Tier 4.32e - Multi-Chip Learning Micro-Task
+  Status: CURRENT NEXT / DESIGN PACKAGE
+  Goal: smallest learning-bearing cross-chip task over the 4.32d communication
+    path, with resource measurements and explicit claim boundaries.
 
 Recent passed hardware-facing lifecycle tier:
 
@@ -244,7 +260,9 @@ Tier 4.31c - Native Temporal-Substrate Runtime Source Audit
     replicated-shard hardware stress also passed after ingest; Tier 4.32b static
     reef partition smoke/resource mapping passed locally. Tier 4.32c inter-chip
     feasibility contract passed locally; Tier 4.32d-r0 route/source/package audit
-    passed locally and blocked the upload until inter-chip route repair. Native
+    passed locally and blocked the upload until inter-chip route repair. Tier
+    4.32d-r1 repaired the route blocker and Tier 4.32d then passed the
+    two-chip communication/readback hardware smoke after EBRAINS ingest. Native
     replay buffers, sleep-like replay,
     and native macro eligibility remain deferred until measured blockers demand
     them.

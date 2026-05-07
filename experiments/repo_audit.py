@@ -234,11 +234,11 @@ def check_registry() -> tuple[Check, dict[str, Any]]:
     failures: list[str] = []
     if registry.get("registry_status") != "pass":
         failures.append(f"registry_status={registry.get('registry_status')}")
-    if registry.get("evidence_count") != 74:
-        failures.append(f"evidence_count={registry.get('evidence_count')} expected 74")
-    if registry.get("expanded_test_entry_count") != 74:
+    if registry.get("evidence_count") != 75:
+        failures.append(f"evidence_count={registry.get('evidence_count')} expected 75")
+    if registry.get("expanded_test_entry_count") != 75:
         failures.append(
-            f"expanded_test_entry_count={registry.get('expanded_test_entry_count')} expected 74"
+            f"expanded_test_entry_count={registry.get('expanded_test_entry_count')} expected 75"
         )
     integrity = registry.get("integrity") or {}
     if integrity.get("missing_expected_artifacts"):

@@ -9407,6 +9407,28 @@ Events: 32
 Expected lookup replies: 96
 ```
 
+Returned EBRAINS / ingest result:
+
+```text
+Status: PASS
+Raw remote status: pass
+Ingest status: pass
+Output: controlled_test_output/tier4_32d_20260507_hardware_pass_ingested/
+Raw runner output: /Users/james/Downloads/tier4_32d_results.json
+Target acquisition: pyNN.spiNNaker probe, board 10.11.215.169
+Source/learning chip: (0,0), learning core 7
+Remote/state chip: (1,0), context/route/memory cores 4/5/6
+Events: 32
+Expected lookup replies: 96
+Actual lookup requests/replies: 96/96
+Pending created/matured: 32/32
+Active pending after run: 0
+Stale replies / duplicate replies / timeouts: 0 / 0 / 0
+Synthetic fallback: false
+Ingest criteria: 7/7
+Returned artifacts preserved: 40
+```
+
 Pass case after EBRAINS return:
 
 ```text
@@ -9431,15 +9453,15 @@ tier4_32d_results.json
 Decision:
 
 ```text
-Upload and run `ebrains_jobs/cra_432d` next. Tier 4.32e multi-chip learning
-micro-task remains blocked until returned 4.32d artifacts pass ingest.
+Tier 4.32d passed and was ingested. Tier 4.32e multi-chip learning micro-task is
+authorized next.
 ```
 
 Boundary:
 
 ```text
-Prepared package only until EBRAINS artifacts return and are ingested. The
-hardware target is communication/readback smoke only; not learning-scale
+The hardware target is communication/readback smoke only; not learning-scale
 evidence, not speedup, not benchmark superiority, not true two-partition
-learning, not lifecycle scaling, and not baseline freeze.
+learning, not lifecycle scaling, not multi-shard learning, and not baseline
+freeze.
 ```

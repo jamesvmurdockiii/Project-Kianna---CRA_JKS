@@ -6408,13 +6408,19 @@ Near-term roadmap insertion:
     source-backed and tested; existing MCPL lookup/four-core regressions still
     pass. Boundary: local source/runtime QA only; not hardware and not an upload
     package.
-31. Tier 4.32d two-chip split-role MCPL smoke package. PREPARED: local prepare
-    pass 15/15 at `controlled_test_output/tier4_32d_20260507_prepared/`; upload
-    folder `ebrains_jobs/cra_432d`; command
-    `cra_432d/experiments/tier4_32d_interchip_mcpl_smoke.py --mode run-hardware --output-dir tier4_32d_job_output`.
-    Boundary: prepared source bundle only until returned EBRAINS artifacts are
-    ingested; not speedup, not benchmark evidence, not true two-partition
-    learning, not lifecycle scaling, and not baseline freeze.
+31. Tier 4.32d two-chip split-role MCPL smoke. COMPLETE: prepared pass 15/15
+    at `controlled_test_output/tier4_32d_20260507_prepared/`, then returned
+    EBRAINS hardware pass ingested at
+    `controlled_test_output/tier4_32d_20260507_hardware_pass_ingested/`.
+    Board `10.11.215.169`; source/learning chip `(0,0)`; remote state chip
+    `(1,0)`; 32 events; 96/96 lookup replies; zero stale replies, duplicates,
+    timeouts, or synthetic fallback. Boundary: communication/readback hardware
+    smoke only; not speedup, not benchmark evidence, not true two-partition
+    learning, not lifecycle scaling, not multi-shard learning, and not baseline
+    freeze.
+32. Tier 4.32e multi-chip learning micro-task. CURRENT NEXT: design/package a
+    tiny delayed-credit or reentry learning-bearing task over the 4.32d
+    cross-chip path with resource measurements and strict claim boundaries.
 ```
 
 Tier 5.19a result:
@@ -6718,16 +6724,18 @@ Tests: test-temporal-state, test-profiles, test, test-lifecycle, test-lifecycle-
 Boundary: local source/runtime host evidence only, not hardware
 ```
 
-Next: Tier 4.32d two-chip split-role single-shard MCPL lookup hardware smoke.
+Next: Tier 4.32e multi-chip learning micro-task.
       Tier 4.32d-r0 blocked the first package; Tier 4.32d-r1 then passed at
       `controlled_test_output/tier4_32d_r1_20260507_interchip_route_repair_local_qa/`
       with 14/14 criteria and removed the source route blocker. Tier 4.32d
       package preparation then passed at
-      `controlled_test_output/tier4_32d_20260507_prepared/` with upload folder
-      `ebrains_jobs/cra_432d`. Run and ingest that package next. Multi-chip
-      learning, speedup claims, benchmark claims, true two-partition cross-chip
-      learning, and native-scale baseline freeze remain blocked; the baseline
-      freeze still needs 4.32d plus 4.32e. Reopen native replay-buffer,
+      `controlled_test_output/tier4_32d_20260507_prepared/`, and the returned
+      EBRAINS run passed/ingested at
+      `controlled_test_output/tier4_32d_20260507_hardware_pass_ingested/`.
+      Multi-chip learning micro-task design/package is now authorized. Speedup
+      claims, benchmark claims, true two-partition cross-chip learning, and
+      native-scale baseline freeze remain blocked; the baseline freeze still
+      needs 4.32e. Reopen native replay-buffer,
       sleep-like replay, or eligibility-trace implementation only if a later
       measured blocker specifically demands it.
 ```
