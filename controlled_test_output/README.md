@@ -5,10 +5,10 @@ ledger is `STUDY_REGISTRY.json`; the compact table is `STUDY_REGISTRY.csv`.
 Older reruns, prepared capsules, debug probes, and baseline-frozen
 mechanism bundles outside the formal registry are preserved for audit.
 
-- Generated: `2026-05-07T02:59:35.854036+00:00`
+- Generated: `2026-05-07T03:17:32.848262+00:00`
 - Registry status: **PASS**
-- Canonical evidence entries: `73`
-- Expanded test-entry count: `73`; see the canonical evidence table below for the exact current tier list.
+- Canonical evidence entries: `74`
+- Expanded test-entry count: `74`; see the canonical evidence table below for the exact current tier list.
 
 ## Evidence Categories
 
@@ -95,6 +95,7 @@ mechanism bundles outside the formal registry are preserved for audit.
 | `tier4_32b_static_reef_partition_smoke` | **PASS** | `controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke` | Local static partition/resource evidence only; not a new SpiNNaker hardware run, not speedup evidence, not one-polyp-one-chip evidence, not multi-chip evidence, not benchmark superiority, and not a native-scale baseline freeze. |
 | `tier4_32c_interchip_feasibility_contract` | **PASS** | `controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract` | Local contract evidence only; not SpiNNaker hardware evidence, not multi-chip execution evidence, not true two-partition cross-chip learning evidence, not speedup evidence, not learning-scale evidence, not benchmark superiority, and not a native-scale baseline freeze. |
 | `tier4_32d_r0_interchip_route_source_audit` | **PASS** | `controlled_test_output/tier4_32d_r0_20260507_interchip_route_source_audit` | Local audit evidence only; not SpiNNaker hardware evidence, not an EBRAINS package, not multi-chip execution evidence, not speedup evidence, not learning-scale evidence, not benchmark superiority, and not a native-scale baseline freeze. |
+| `tier4_32d_r1_interchip_route_repair_local_qa` | **PASS** | `controlled_test_output/tier4_32d_r1_20260507_interchip_route_repair_local_qa` | Local source/runtime QA only; not SpiNNaker hardware evidence, not an EBRAINS package, not multi-chip execution evidence, not learning-scale evidence, not speedup evidence, not benchmark superiority, and not a native-scale baseline freeze. |
 
 ## Noncanonical Outputs
 

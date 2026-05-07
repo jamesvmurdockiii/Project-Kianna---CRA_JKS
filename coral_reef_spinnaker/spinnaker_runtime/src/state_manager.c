@@ -3,6 +3,7 @@
  * \brief Static persistent state owned by the custom C runtime.
  */
 #include "state_manager.h"
+#include "router.h"
 #include <sark.h>
 #include <spin1_api.h>
 
@@ -1782,6 +1783,22 @@ void cra_state_handle_lookup_request(uint32_t seq_id, uint32_t key, uint8_t type
 // and includes shard_id in the key to avoid replicated-shard cross-talk.
 // ------------------------------------------------------------------
 
+#ifndef CRA_MCPL_INTERCHIP_REQUEST_LINK_ROUTE
+#define CRA_MCPL_INTERCHIP_REQUEST_LINK_ROUTE 0
+#endif
+
+#ifndef CRA_MCPL_INTERCHIP_REPLY_LINK_ROUTE
+#define CRA_MCPL_INTERCHIP_REPLY_LINK_ROUTE 0
+#endif
+
+static void _mcpl_install_route(uint32_t key, uint32_t mask, uint route) {
+    uint entry = rtr_alloc(1);
+    if (entry == 0) {
+        return;
+    }
+    (void)rtr_mc_set(entry, key, mask, route);
+}
+
 void cra_state_mcpl_lookup_send_request(uint32_t seq_id, uint32_t key_id, uint8_t lookup_type, uint8_t dest_core) {
     cra_state_mcpl_lookup_send_request_shard(seq_id, key_id, lookup_type, CRA_MCPL_SHARD_ID, dest_core);
 }
@@ -1840,8 +1857,6 @@ void cra_state_mcpl_lookup_receive(uint32_t key, uint32_t payload) {
 void cra_state_mcpl_init(uint8_t core_id) {
 #ifdef CRA_USE_MCPL_LOOKUP
 #if defined(CRA_RUNTIME_PROFILE_CONTEXT_CORE) || defined(CRA_RUNTIME_PROFILE_ROUTE_CORE) || defined(CRA_RUNTIME_PROFILE_MEMORY_CORE)
-    uint entry = rtr_alloc(1);
-    if (entry == 0) return;
     // State core: route REQUEST keys to this core
     uint8_t lookup_type =
 #if defined(CRA_RUNTIME_PROFILE_CONTEXT_CORE)
@@ -1856,23 +1871,39 @@ void cra_state_mcpl_init(uint8_t core_id) {
     uint32_t key = MAKE_MCPL_KEY(APP_ID, MCPL_MSG_LOOKUP_REQUEST, lookup_type, 0);
     uint32_t mask = 0xFFFFF000;  // match app/msg/lookup/shard, ignore seq_id
     uint route = MC_CORE_ROUTE(core_id);
-    rtr_mc_set(entry, key, mask, route);
+    _mcpl_install_route(key, mask, route);
+#if CRA_MCPL_INTERCHIP_REPLY_LINK_ROUTE
+    // Remote state-chip path: replies are routed back over an explicit chip
+    // link. The route is specific to this state profile's lookup type so
+    // context/route/memory cores do not install duplicate broad reply routes.
+    uint reply_route = CRA_MCPL_INTERCHIP_REPLY_LINK_ROUTE;
+    key = MAKE_MCPL_KEY(APP_ID, MCPL_MSG_LOOKUP_REPLY_VALUE, lookup_type, 0);
+    _mcpl_install_route(key, mask, reply_route);
+    key = MAKE_MCPL_KEY(APP_ID, MCPL_MSG_LOOKUP_REPLY_META, lookup_type, 0);
+    _mcpl_install_route(key, mask, reply_route);
+#endif
 #elif defined(CRA_RUNTIME_PROFILE_LEARNING_CORE)
-    uint entry_value = rtr_alloc(1);
-    if (entry_value == 0) return;
-    uint entry_meta = rtr_alloc(1);
-    if (entry_meta == 0) {
-        rtr_free(entry_value, 1);
-        return;
-    }
     // Learning core: route VALUE and META reply keys to this core.
     // Match app/msg/shard, ignore lookup_type and seq_id.
     uint32_t key = MAKE_MCPL_KEY(APP_ID, MCPL_MSG_LOOKUP_REPLY_VALUE, 0, 0);
     uint32_t mask = 0xFFF0F000;
     uint route = MC_CORE_ROUTE(core_id);
-    rtr_mc_set(entry_value, key, mask, route);
+    _mcpl_install_route(key, mask, route);
     key = MAKE_MCPL_KEY(APP_ID, MCPL_MSG_LOOKUP_REPLY_META, 0, 0);
-    rtr_mc_set(entry_meta, key, mask, route);
+    _mcpl_install_route(key, mask, route);
+#if CRA_MCPL_INTERCHIP_REQUEST_LINK_ROUTE
+    // Source-chip path: lookup requests leave the learning chip over an
+    // explicit chip link. Destination state chips install matching local-core
+    // routes for the same request keys.
+    uint request_route = CRA_MCPL_INTERCHIP_REQUEST_LINK_ROUTE;
+    mask = 0xFFFFF000;  // match app/msg/lookup/shard, ignore seq_id
+    key = MAKE_MCPL_KEY(APP_ID, MCPL_MSG_LOOKUP_REQUEST, LOOKUP_TYPE_CONTEXT, 0);
+    _mcpl_install_route(key, mask, request_route);
+    key = MAKE_MCPL_KEY(APP_ID, MCPL_MSG_LOOKUP_REQUEST, LOOKUP_TYPE_ROUTE, 0);
+    _mcpl_install_route(key, mask, request_route);
+    key = MAKE_MCPL_KEY(APP_ID, MCPL_MSG_LOOKUP_REQUEST, LOOKUP_TYPE_MEMORY, 0);
+    _mcpl_install_route(key, mask, request_route);
+#endif
 #else
     (void)core_id;
 #endif

@@ -85,11 +85,19 @@ Tier 4.32d-r0 - Inter-Chip Route/Source/Package Audit
   Boundary: local audit only, not hardware and not an upload package.
 
 Tier 4.32d-r1 - Inter-Chip MCPL Route Repair / Local QA
-  Status: CURRENT ACTIVE STEP / NOT YET PACKAGED
-  Scope: add or prove explicit cross-chip route entries for the split-role
-    single-shard smoke before any EBRAINS upload.
-  Still blocked: 4.32d hardware package, learning scale, speedup claims,
-    benchmarks, and native-scale baseline freeze.
+  Status: LOCAL PASS, 14/14
+  Output: controlled_test_output/tier4_32d_r1_20260507_interchip_route_repair_local_qa/
+  Result: explicit source-backed inter-chip route-link entries are proven by
+    local route-contract tests. Learning-core outbound request routes and
+    state-core outbound value/meta reply routes pass; existing MCPL lookup and
+    four-core MCPL regressions remain green.
+  Boundary: local route/source QA only, not hardware and not an upload package.
+
+Tier 4.32d - Two-Chip Split-Role Single-Shard MCPL Lookup Smoke
+  Status: CURRENT ACTIVE STEP / PACKAGE NEXT
+  Scope: package and run the smallest cross-chip communication/readback target.
+  Still blocked: learning scale, speedup claims, benchmarks, true two-partition
+    learning, and native-scale baseline freeze.
 
 Recent passed hardware-facing lifecycle tier:
 

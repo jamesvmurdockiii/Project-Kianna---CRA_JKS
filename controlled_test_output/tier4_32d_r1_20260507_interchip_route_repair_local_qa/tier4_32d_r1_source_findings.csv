@@ -1,0 +1,7 @@
+finding_id,file,observed,interpretation,decision
+request_link_macro_present,coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c,True,Learning-core builds can install outbound request routes to an explicit chip link.,keep
+reply_link_macro_present,coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c,True,State-core builds can install outbound reply routes to an explicit chip link.,keep
+learning_request_routes_specific,coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c,LOOKUP_TYPE_CONTEXT/ROUTE/MEMORY request routes installed under request-link macro,Source-chip learning profile can route all three lookup request types off chip.,keep
+state_reply_routes_specific,coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c,VALUE/META reply routes installed per state profile lookup type under reply-link macro,Remote state profiles avoid broad duplicate reply routes while returning value/meta packets.,keep
+route_stub_captures_rtr_mc_set,coral_reef_spinnaker/spinnaker_runtime/stubs/sark.h,True,Host tests can inspect programmed key/mask/route entries instead of trusting comments.,keep
+make_target_present,coral_reef_spinnaker/spinnaker_runtime/Makefile,True,The route contract is callable by CI/local validation.,keep

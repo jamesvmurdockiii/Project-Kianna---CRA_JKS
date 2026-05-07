@@ -1,0 +1,9 @@
+cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_USE_MCPL_LOOKUP=1 -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 tests/test_mcpl_lookup_contract.c stubs/spin1_api.c src/state_manager.c -lm -o tests/test_mcpl_lookup_contract
+./tests/test_mcpl_lookup_contract
+Tier 4.32a-r1 MCPL lookup contract tests
+  PASS: reply sends value plus confidence/meta packets
+  PASS: receive waits for value and meta before completing lookup
+  PASS: meta-before-value ordering is accepted
+  PASS: shard_id prevents identical seq/type cross-talk
+  PASS: wrong-shard packets cannot complete pending lookup
+All Tier 4.32a-r1 MCPL lookup contract tests passed.

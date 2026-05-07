@@ -1109,14 +1109,15 @@ inter-core lifecycle requests.
 MCPL keys use the compile-time layout from `config.h`:
 
 ```text
-app_id (8 bits) | msg_type (4 bits) | lookup_type (4 bits) | seq_id (16 bits)
+app_id (8 bits) | msg_type (4 bits) | lookup_type (4 bits) | shard_id (4 bits) | seq_id (12 bits)
 ```
 
 Message IDs:
 
 ```text
 1 = MCPL_MSG_LOOKUP_REQUEST
-2 = MCPL_MSG_LOOKUP_REPLY
+2 = MCPL_MSG_LOOKUP_REPLY_VALUE
+6 = MCPL_MSG_LOOKUP_REPLY_META
 3 = MCPL_MSG_LIFECYCLE_EVENT_REQUEST
 4 = MCPL_MSG_LIFECYCLE_TROPHIC_UPDATE
 5 = MCPL_MSG_LIFECYCLE_ACTIVE_MASK_SYNC
@@ -1130,6 +1131,27 @@ For `MCPL_MSG_LIFECYCLE_ACTIVE_MASK_SYNC`, lookup type is a sync subtype:
 1 = MCPL_LIFECYCLE_SYNC_LINEAGE
     payload = lineage_checksum
 ```
+
+### 9.3 Inter-Chip MCPL Route-Link Contract
+
+Tier 4.32d-r1 keeps MCPL packet delivery router-table-owned. The `dest_core`
+argument on MCPL send helpers is intentionally not delivery authority. For the
+first two-chip split-role single-shard smoke, route entries are compiled by
+profile:
+
+```text
+learning_core:
+  local VALUE/META reply delivery -> MC_CORE_ROUTE(learning_core)
+  optional outbound REQUEST routes -> CRA_MCPL_INTERCHIP_REQUEST_LINK_ROUTE
+
+context_core / route_core / memory_core:
+  local REQUEST delivery -> MC_CORE_ROUTE(state_core)
+  optional outbound VALUE/META reply routes -> CRA_MCPL_INTERCHIP_REPLY_LINK_ROUTE
+```
+
+The route-link macros are local QA surfaces until Tier 4.32d returns hardware
+evidence. True two-partition cross-chip learning still needs origin/target shard
+semantics beyond the current one-shard key field.
 
 Tier 4.30d currently tests lifecycle MCPL/multicast-target traffic through local
 host stubs and packet-inspection hooks. Tier 4.30e must prove the surface on
@@ -1226,4 +1248,5 @@ the full logical payload above.
 | 0.11 | 2026-05-01 | Promoted Section 8 to implemented. Added `CMD_RUN_CONTINUOUS` (24), `CMD_PAUSE` (25), `CMD_WRITE_SCHEDULE_ENTRY` (26). C runtime host tests 28/28 pass. Python host controller synchronized. |
 | 0.12 | 2026-05-05 | Added Tier 4.30d lifecycle split runtime source surface: `lifecycle_core` profile ID 7, lifecycle MCPL message IDs 3-5, mask/count/lineage sync subtypes, direct lifecycle ownership guards, and compact lifecycle summary validation rule. |
 | 0.13 | 2026-05-05 | Prepared Tier 4.30e five-profile lifecycle hardware smoke and routed direct lifecycle event commands through the duplicate/stale lifecycle request handler so hardware smoke exercises the same guarded lifecycle-core semantics as the split contract. |
+| 0.14 | 2026-05-07 | Added Tier 4.32d-r1 inter-chip MCPL route-link contract: request/reply route-link macros, source/local route tests, and shard-aware value/meta key documentation. |
 | 0.14 | 2026-05-06 | Added Tier 4.31c temporal substrate runtime source surface: `CMD_TEMPORAL_INIT` (39), `CMD_TEMPORAL_UPDATE` (40), `CMD_TEMPORAL_READ_STATE` (41), `CMD_TEMPORAL_SHAM_MODE` (42), seven fixed-point EMA traces, behavior-backed shams, profile ownership guards, and compact 48-byte temporal readback. |

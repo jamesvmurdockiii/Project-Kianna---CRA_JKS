@@ -94,7 +94,7 @@ HOST_LDFLAGS ?= -lm
 # Host-side tests
 # ------------------------------------------------------------------------------
 
-.PHONY: test host-test test-profiles test-four-core-local test-four-core-mcpl-local test-four-core-48event test-context-core test-route-core test-memory-core test-learning-core test-lifecycle-core test-mcpl-feasibility test-mcpl-lookup-contract test-lifecycle test-lifecycle-split test-temporal-state
+.PHONY: test host-test test-profiles test-four-core-local test-four-core-mcpl-local test-four-core-48event test-context-core test-route-core test-memory-core test-learning-core test-lifecycle-core test-mcpl-feasibility test-mcpl-lookup-contract test-mcpl-interchip-route-contract test-lifecycle test-lifecycle-split test-temporal-state
 test host-test: $(HOST_TEST)
 	./$(HOST_TEST)
 
@@ -151,6 +151,14 @@ MCPL_LOOKUP_CONTRACT_TEST_SOURCES := tests/test_mcpl_lookup_contract.c stubs/spi
 test-mcpl-lookup-contract: $(MCPL_LOOKUP_CONTRACT_TEST_SOURCES) src/config.h src/state_manager.h stubs/sark.h stubs/spin1_api.h
 	$(HOST_CC) $(HOST_CFLAGS) -DCRA_USE_MCPL_LOOKUP=1 -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 $(MCPL_LOOKUP_CONTRACT_TEST_SOURCES) $(HOST_LDFLAGS) -o tests/test_mcpl_lookup_contract
 	./tests/test_mcpl_lookup_contract
+
+MCPL_INTERCHIP_ROUTE_TEST_SOURCES := tests/test_mcpl_interchip_route_contract.c stubs/spin1_api.c src/state_manager.c
+
+test-mcpl-interchip-route-contract: $(MCPL_INTERCHIP_ROUTE_TEST_SOURCES) src/config.h src/state_manager.h src/router.h stubs/sark.h stubs/spin1_api.h
+	$(HOST_CC) $(HOST_CFLAGS) -DCRA_USE_MCPL_LOOKUP=1 -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 -DCRA_MCPL_INTERCHIP_REQUEST_LINK_ROUTE=ROUTE_E $(MCPL_INTERCHIP_ROUTE_TEST_SOURCES) $(HOST_LDFLAGS) -o tests/test_mcpl_interchip_route_learning
+	./tests/test_mcpl_interchip_route_learning
+	$(HOST_CC) $(HOST_CFLAGS) -DCRA_USE_MCPL_LOOKUP=1 -DCRA_RUNTIME_PROFILE_CONTEXT_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=4 -DCRA_MCPL_INTERCHIP_REPLY_LINK_ROUTE=ROUTE_W $(MCPL_INTERCHIP_ROUTE_TEST_SOURCES) $(HOST_LDFLAGS) -o tests/test_mcpl_interchip_route_context
+	./tests/test_mcpl_interchip_route_context
 
 LIFECYCLE_TEST_SOURCES := tests/test_lifecycle.c stubs/spin1_api.c src/state_manager.c src/host_interface.c
 
@@ -231,10 +239,10 @@ require-spinnaker:
 
 .PHONY: clean clean-host help
 clean:
-	rm -rf $(BUILD_DIR) $(APP_OUTPUT_DIR)$(APP).aplx $(HOST_TEST) tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_lifecycle_core tests/test_four_core_local tests/test_four_core_mcpl_local tests/test_four_core_48event tests/test_mcpl_feasibility tests/test_mcpl_lookup_contract tests/test_lifecycle tests/test_lifecycle_split tests/test_temporal_state
+	rm -rf $(BUILD_DIR) $(APP_OUTPUT_DIR)$(APP).aplx $(HOST_TEST) tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_lifecycle_core tests/test_four_core_local tests/test_four_core_mcpl_local tests/test_four_core_48event tests/test_mcpl_feasibility tests/test_mcpl_lookup_contract tests/test_mcpl_interchip_route_learning tests/test_mcpl_interchip_route_context tests/test_lifecycle tests/test_lifecycle_split tests/test_temporal_state
 
 clean-host:
-	rm -f $(HOST_TEST) tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_lifecycle_core tests/test_four_core_local tests/test_four_core_mcpl_local tests/test_four_core_48event tests/test_mcpl_feasibility tests/test_mcpl_lookup_contract tests/test_lifecycle tests/test_lifecycle_split tests/test_temporal_state
+	rm -f $(HOST_TEST) tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_lifecycle_core tests/test_four_core_local tests/test_four_core_mcpl_local tests/test_four_core_48event tests/test_mcpl_feasibility tests/test_mcpl_lookup_contract tests/test_mcpl_interchip_route_learning tests/test_mcpl_interchip_route_context tests/test_lifecycle tests/test_lifecycle_split tests/test_temporal_state
 
 help:
 	@printf '%s\n' \
@@ -244,6 +252,7 @@ help:
 		'  make test-profiles     Build and run all four 4.26 profile tests' \
 		'  make test-four-core-mcpl-local Build and run Tier 4.32a-r1 MCPL four-core local tests' \
 		'  make test-mcpl-lookup-contract Build and run Tier 4.32a-r1 MCPL lookup contract tests' \
+		'  make test-mcpl-interchip-route-contract Build and run Tier 4.32d-r1 inter-chip route tests' \
 		'  make test-lifecycle    Build and run Tier 4.30 lifecycle/static-pool host tests' \
 		'  make test-lifecycle-split Build and run Tier 4.30d lifecycle-core split host tests' \
 		'  make test-temporal-state Build and run Tier 4.31c temporal-state host tests' \

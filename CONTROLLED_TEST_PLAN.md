@@ -9098,7 +9098,7 @@ Tier 4.32c inter-chip feasibility contract later passed locally.
 Tier 4.32d-r0 route/source/package audit later passed and blocked the first
 4.32d EBRAINS package until inter-chip route repair. Multi-chip learning,
 benchmark superiority, speedup claims, and native-scale baseline freeze remain
-blocked until 4.32d-r1, 4.32d, and 4.32e pass cleanly.
+blocked until 4.32d and 4.32e pass cleanly.
 ```
 
 ## Tier 4.32a-hw-replicated - Replicated-Shard MCPL-First EBRAINS Scale Stress
@@ -9212,7 +9212,7 @@ Tier 4.32c inter-chip feasibility contract later passed locally.
 Tier 4.32d-r0 route/source/package audit later passed and blocked the first
 4.32d EBRAINS package until inter-chip route repair. Multi-chip learning,
 speedup claims, benchmark claims, and native-scale baseline freeze remain
-blocked until 4.32d-r1, 4.32d, and 4.32e pass cleanly.
+blocked until 4.32d and 4.32e pass cleanly.
 ```
 
 
@@ -9246,9 +9246,10 @@ Decision:
 ```text
 Tier 4.32c inter-chip feasibility contract later passed locally.
 Tier 4.32d-r0 route/source/package audit later passed and blocked the first
-4.32d EBRAINS package until inter-chip route repair. Tier 4.32d-r1 is authorized
-next. Multi-chip learning, speedup claims, benchmark claims, and native-scale
-baseline freeze remain blocked until 4.32d-r1, 4.32d, and 4.32e pass cleanly.
+4.32d EBRAINS package until inter-chip route repair. Tier 4.32d-r1 later passed
+as local route repair/QA. Tier 4.32d hardware smoke is authorized next.
+Multi-chip learning, speedup claims, benchmark claims, and native-scale baseline
+freeze remain blocked until 4.32d and 4.32e pass cleanly.
 ```
 
 Boundary:
@@ -9339,4 +9340,40 @@ Boundary:
 Local route/source/package audit only. Not a SpiNNaker hardware run, not an
 EBRAINS package, not multi-chip execution evidence, not speedup, not
 learning-scale evidence, not benchmark superiority, and not baseline freeze.
+```
+
+## Tier 4.32d-r1 - Inter-Chip MCPL Route Repair Local QA
+
+Question: After Tier 4.32d-r0 blocked the first two-chip package, can the source
+prove explicit inter-chip MCPL route entries locally before EBRAINS upload?
+
+Result:
+
+```text
+Status: PASS
+Output: controlled_test_output/tier4_32d_r1_20260507_interchip_route_repair_local_qa/
+Criteria: 14/14
+Decision: authorize_4_32d_package_next
+Learning-core request link routes: pass
+State-core local request + outbound value/meta reply link routes: pass
+Existing MCPL lookup regression: pass
+Existing four-core MCPL local regression: pass
+```
+
+Decision:
+
+```text
+Tier 4.32d two-chip split-role single-shard MCPL lookup hardware smoke is
+authorized next as a communication/readback smoke only.
+Do not claim learning scale, speedup, benchmark superiority, true two-partition
+cross-chip learning, or CRA_NATIVE_SCALE_BASELINE_v0.5 from 4.32d-r1.
+Tier 4.32e remains blocked until 4.32d hardware smoke returns cleanly.
+```
+
+Boundary:
+
+```text
+Local source/runtime QA only. Not a SpiNNaker hardware run, not an EBRAINS
+package, not multi-chip execution evidence, not learning-scale evidence, not
+speedup, not benchmark superiority, and not baseline freeze.
 ```

@@ -104,13 +104,13 @@ Boundary: single-shard single-chip hardware stress only. It is not
 replicated-shard stress, not multi-chip evidence, not speedup evidence, not
 static reef partitioning, and not a native-scale baseline freeze.
 
-Next: Tier 4.32d-r1 inter-chip MCPL route repair/local QA is active. Tier
-4.32d-r0 passed locally and blocked the first 4.32d upload because the current
-runtime routes MCPL request/reply keys to local cores only and does not yet
-define explicit inter-chip link routing. Do not prepare `cra_432d` or upload a
-4.32d package until 4.32d-r1 passes. Learning scale, benchmarks, speedup claims,
-native-scale baseline-freeze claims, and true two-partition cross-chip learning
-remain blocked.
+Next: Tier 4.32d two-chip split-role single-shard MCPL lookup hardware smoke is
+active. Tier 4.32d-r0 blocked the first upload, then Tier 4.32d-r1 passed local
+route repair/QA with explicit learning-core request link routes, state-core
+local request delivery, state-core value/meta reply link routes, and clean MCPL
+regressions. Prepare `cra_432d` only for this communication/readback smoke.
+Learning scale, benchmarks, speedup claims, native-scale baseline-freeze claims,
+and true two-partition cross-chip learning remain blocked.
 
 ### Tier 4.31e
 

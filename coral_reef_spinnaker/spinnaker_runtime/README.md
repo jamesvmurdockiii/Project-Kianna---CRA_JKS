@@ -247,7 +247,7 @@ for that role, keeping per-core image size under the 32KB ITCM budget.
 As of 2026-05-02:
 - `learning_core` text section = 12,448 bytes (with MCPL feasibility code)
 - MCPL callback `mcpl_lookup_callback` registered via official `MCPL_PACKET_RECEIVED`
-- MCPL key format macros in `config.h` support app_id, msg_type, lookup_type, seq_id
+- MCPL key format macros in `config.h` support app_id, msg_type, lookup_type, shard_id, and seq_id
 
 Host tests:
 ```bash
@@ -255,6 +255,8 @@ make test                  # runtime host tests
 make test-profiles         # all four core profile tests
 make test-four-core-48event  # 48-event distributed integration test
 make test-mcpl-feasibility # Tier 4.27d MCPL compile-time feasibility
+make test-mcpl-lookup-contract # Tier 4.32a-r1 value/meta/shard lookup contract
+make test-mcpl-interchip-route-contract # Tier 4.32d-r1 inter-chip route-link contract
 make test-lifecycle        # Tier 4.30 lifecycle static-pool + sham-control host tests
 make test-lifecycle-split  # Tier 4.30d lifecycle-core split host tests
 ```
@@ -323,3 +325,22 @@ Same as the parent Coral Reef project.
 Tier 4.22u is the next native memory-route command surface. It adds `CMD_WRITE_MEMORY_SLOT`, `CMD_READ_MEMORY_SLOT`, and `CMD_SCHEDULE_MEMORY_ROUTE_CONTEXT_PENDING` so the runtime can own bounded keyed memory/working-state slots in addition to keyed context and keyed route slots. The prepared/local gate computes `feature=context[key]*route[key]*memory[key]*cue` on chip from `key+cue+delay`; this is still a tiny custom-runtime primitive, not full native v2.1 memory/routing or full CRA task learning.
 
 Tier 4.22w extends this surface with independent-key composition through `CMD_SCHEDULE_DECOUPLED_MEMORY_ROUTE_CONTEXT_PENDING`. It passed on real SpiNNaker from `ebrains_jobs/cra_422ag` with `RUNTIME_PROFILE=decoupled_memory_route` and sends `context_key`, `route_key`, `memory_key`, `cue`, and `delay` so the chip computes `feature=context[context_key]*route[route_key]*memory[memory_key]*cue`. This is still a tiny custom-runtime primitive, not full native v2.1 memory/routing or full CRA task learning. Ingested evidence: `controlled_test_output/tier4_22w_20260501_native_decoupled_memory_route_composition_hardware_pass_ingested/`.
+
+
+### Inter-Chip MCPL Route-Link Contract
+
+Tier 4.32d-r1 adds source-backed route-link support for the first two-chip
+split-role single-shard smoke. `dest_core` remains non-authoritative for MCPL
+delivery; the router table decides delivery by key/mask. Compile-time route
+macros provide the explicit chip-link surface:
+
+```text
+CRA_MCPL_INTERCHIP_REQUEST_LINK_ROUTE  # learning-core outbound request link
+CRA_MCPL_INTERCHIP_REPLY_LINK_ROUTE    # state-core outbound value/meta reply link
+```
+
+The local contract target `make test-mcpl-interchip-route-contract` proves that
+learning profiles install request routes to a link, state profiles install local
+request delivery plus reply-link routes, and existing MCPL lookup regressions
+remain separate from the hardware claim. This is source/local QA only; EBRAINS
+execution is still Tier 4.32d.

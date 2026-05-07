@@ -30,6 +30,11 @@ uint32_t g_test_mc_packet_count = 0;
 uint32_t g_test_mc_keys[8];
 uint32_t g_test_mc_payloads[8];
 uint32_t g_test_mc_with_payloads[8];
+uint32_t g_test_rtr_mc_set_count = 0;
+uint32_t g_test_rtr_keys[32];
+uint32_t g_test_rtr_masks[32];
+uint32_t g_test_rtr_routes[32];
+uint32_t g_test_rtr_entries[32];
 
 void spin1_send_mc_packet(uint32_t key, uint32_t data, uint32_t with_payload) {
     g_test_last_mc_key = key;

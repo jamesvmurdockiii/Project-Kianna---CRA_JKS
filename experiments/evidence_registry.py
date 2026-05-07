@@ -1582,6 +1582,31 @@ SPECS: tuple[EvidenceSpec, ...] = (
             "tier4_32d_r0_source_findings.csv",
         ),
     ),
+    EvidenceSpec(
+        entry_id="tier4_32d_r1_interchip_route_repair_local_qa",
+        tier_label="Tier 4.32d-r1 - Inter-Chip MCPL Route Repair Local QA",
+        plan_position="Phase G route repair/local QA before first inter-chip hardware package",
+        canonical_dir="tier4_32d_r1_20260507_interchip_route_repair_local_qa",
+        results_file="tier4_32d_r1_results.json",
+        report_file="tier4_32d_r1_report.md",
+        summary_file="tier4_32d_r1_source_findings.csv",
+        harness="experiments/tier4_32d_r1_interchip_route_repair_local_qa.py",
+        evidence_role="native runtime inter-chip MCPL route repair/local QA",
+        claim="Tier 4.32d-r1 passed as local source/runtime QA for the first two-chip split-role single-shard MCPL smoke: learning-core builds can install outbound request link routes, state-core builds can install local request delivery plus outbound value/meta reply link routes, the route-table stub inspects key/mask/route entries, and existing MCPL lookup/four-core regressions still pass.",
+        caveat="Local source/runtime QA only; not SpiNNaker hardware evidence, not an EBRAINS package, not multi-chip execution evidence, not learning-scale evidence, not speedup evidence, not benchmark superiority, and not a native-scale baseline freeze.",
+        latest_manifest_names=("tier4_32d_r1_latest_manifest.json",),
+        expected_extra_files=(
+            "tier4_32d_r1_criteria.csv",
+            "tier4_32d_r1_source_findings.csv",
+            "tier4_32d_r1_test_commands.csv",
+            "tier4_32d_r1_test_command_1.stdout.txt",
+            "tier4_32d_r1_test_command_1.stderr.txt",
+            "tier4_32d_r1_test_command_2.stdout.txt",
+            "tier4_32d_r1_test_command_2.stderr.txt",
+            "tier4_32d_r1_test_command_3.stdout.txt",
+            "tier4_32d_r1_test_command_3.stderr.txt",
+        ),
+    ),
 )
 
 

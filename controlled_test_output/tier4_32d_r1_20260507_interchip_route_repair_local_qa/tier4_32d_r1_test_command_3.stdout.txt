@@ -1,0 +1,7 @@
+cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_USE_MCPL_LOOKUP=1 -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 tests/test_four_core_mcpl_local.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_four_core_mcpl_local
+./tests/test_four_core_mcpl_local
+Tier 4.32a-r1 four-core MCPL local integration test
+  PASS: MCPL full-confidence path learns like SDP reference
+  PASS: MCPL zero-confidence path blocks learning
+  PASS: MCPL half-confidence path scales learning
+All Tier 4.32a-r1 four-core MCPL local tests passed.

@@ -38,6 +38,12 @@ typedef struct sv {
 
 extern sv_t *sv;
 
+extern uint32_t g_test_rtr_mc_set_count;
+extern uint32_t g_test_rtr_keys[32];
+extern uint32_t g_test_rtr_masks[32];
+extern uint32_t g_test_rtr_routes[32];
+extern uint32_t g_test_rtr_entries[32];
+
 static inline uint32_t sark_core_id(void) { return 1; }
 static inline uint32_t sark_chip_id(void) { return 0; }
 static inline void *sark_alloc(uint32_t n_blocks, uint32_t block_size) { return malloc(n_blocks * block_size); }
@@ -45,10 +51,13 @@ static inline void sark_free(void *ptr) { free(ptr); }
 #define MC_CORE_ROUTE(x) (1U << ((x) + 6U))
 static inline uint rtr_alloc(uint size) { (void)size; return 1; }
 static inline uint rtr_mc_set(uint entry, uint key, uint mask, uint route) {
-    (void)entry;
-    (void)key;
-    (void)mask;
-    (void)route;
+    if (g_test_rtr_mc_set_count < 32) {
+        g_test_rtr_entries[g_test_rtr_mc_set_count] = (uint32_t)entry;
+        g_test_rtr_keys[g_test_rtr_mc_set_count] = (uint32_t)key;
+        g_test_rtr_masks[g_test_rtr_mc_set_count] = (uint32_t)mask;
+        g_test_rtr_routes[g_test_rtr_mc_set_count] = (uint32_t)route;
+    }
+    g_test_rtr_mc_set_count++;
     return 1;
 }
 static inline void rtr_free(uint entry, uint clear) { (void)entry; (void)clear; }

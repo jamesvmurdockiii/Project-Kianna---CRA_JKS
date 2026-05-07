@@ -6400,6 +6400,14 @@ Near-term roadmap insertion:
     blocked because `cra_state_mcpl_init()` routes request/reply keys to local
     cores only and does not define explicit inter-chip link routing. Boundary:
     local audit evidence only; not hardware and not an upload package.
+30. Tier 4.32d-r1 inter-chip MCPL route repair/local QA. COMPLETE: local pass
+    14/14 at
+    `controlled_test_output/tier4_32d_r1_20260507_interchip_route_repair_local_qa/`;
+    learning-core outbound request link routes, state-core local request
+    delivery, and state-core outbound value/meta reply link routes are
+    source-backed and tested; existing MCPL lookup/four-core regressions still
+    pass. Boundary: local source/runtime QA only; not hardware and not an upload
+    package.
 ```
 
 Tier 5.19a result:
@@ -6703,16 +6711,15 @@ Tests: test-temporal-state, test-profiles, test, test-lifecycle, test-lifecycle-
 Boundary: local source/runtime host evidence only, not hardware
 ```
 
-Next: Tier 4.32d-r1 inter-chip MCPL route repair/local QA. Tier 4.32d-r0
-      passed at
-      `controlled_test_output/tier4_32d_r0_20260507_interchip_route_source_audit/`
-      with 10/10 criteria and blocked the first EBRAINS package because explicit
-      inter-chip link routing is not yet source-proven. Tier 4.32d hardware
-      smoke, multi-chip learning, speedup claims, benchmark claims, and
-      native-scale baseline freeze remain blocked; 4.32d hardware needs
-      4.32d-r1 first, and the baseline freeze still needs 4.32d plus 4.32e.
-      Reopen native replay-buffer, sleep-like replay, or eligibility-trace
-      implementation only if a later measured blocker specifically demands it.
+Next: Tier 4.32d two-chip split-role single-shard MCPL lookup hardware smoke.
+      Tier 4.32d-r0 blocked the first package; Tier 4.32d-r1 then passed at
+      `controlled_test_output/tier4_32d_r1_20260507_interchip_route_repair_local_qa/`
+      with 14/14 criteria and removed the source route blocker. Multi-chip
+      learning, speedup claims, benchmark claims, true two-partition cross-chip
+      learning, and native-scale baseline freeze remain blocked; the baseline
+      freeze still needs 4.32d plus 4.32e. Reopen native replay-buffer,
+      sleep-like replay, or eligibility-trace implementation only if a later
+      measured blocker specifically demands it.
 ```
 
 Detailed Tier 5.19 contract:
