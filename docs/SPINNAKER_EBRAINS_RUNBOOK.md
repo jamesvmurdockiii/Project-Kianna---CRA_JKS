@@ -47,11 +47,15 @@ and selected lifecycle traffic with resource counters as the next direction.
 Tier 4.32g-r0 source/route repair audit then passed locally at
 controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/ with
 14/14 criteria, source-proving lifecycle event/trophic/mask-sync inter-chip
-routes and preserving lookup-route plus lifecycle-split regressions. The next
-step is Tier 4.32g two-chip lifecycle traffic/resource hardware smoke. Speedup,
-benchmark, true two-partition, lifecycle-scaling, multi-shard, and native-scale
-baseline-freeze claims remain blocked until the next contract-backed hardware
-evidence gate passes.
+routes and preserving lookup-route plus lifecycle-split regressions. Tier 4.32g
+package preparation then passed at
+controlled_test_output/tier4_32g_20260507_prepared/ with 16/16 criteria,
+refreshed ebrains_jobs/cra_432g, and emitted the exact command
+`cra_432g/experiments/tier4_32g_multichip_lifecycle_traffic_resource_smoke.py --mode run-hardware --output-dir tier4_32g_job_output`.
+The next step is running that prepared Tier 4.32g EBRAINS job and ingesting the
+returned artifacts. Speedup, benchmark, true two-partition, lifecycle-scaling,
+multi-shard, and native-scale baseline-freeze claims remain blocked until the
+next contract-backed hardware evidence gate passes.
 ```
 
 Latest ingest hygiene lesson:
@@ -160,6 +164,17 @@ Tier 4.32g-r0 - Multi-Chip Lifecycle Route/Source Repair Audit
     sync MCPL routes are source-proven for learning/lifecycle profiles; Tier
     4.32g hardware preparation is authorized next.
   Boundary: local source/runtime QA only, not hardware.
+
+Tier 4.32g - Two-Chip Lifecycle Traffic/Resource Hardware Smoke
+  Status: PREPARED; EBRAINS RUN/INGEST REQUIRED
+  Prepared output: controlled_test_output/tier4_32g_20260507_prepared/
+  Upload folder: ebrains_jobs/cra_432g
+  Criteria: 16/16 local prepare criteria
+  Exact JobManager command:
+    cra_432g/experiments/tier4_32g_multichip_lifecycle_traffic_resource_smoke.py --mode run-hardware --output-dir tier4_32g_job_output
+  Boundary: two-chip lifecycle traffic/resource smoke only. Not lifecycle
+    scaling, speedup, benchmarks, true partitioned ecology, multi-shard
+    learning, or a native-scale baseline freeze.
 
 Recent passed hardware-facing lifecycle tier:
 

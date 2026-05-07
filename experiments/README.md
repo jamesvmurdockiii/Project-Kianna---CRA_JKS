@@ -49,10 +49,13 @@ Tier 4.32g-r0 then passed locally at
 `controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/`
 with `14/14` criteria, source-proving lifecycle event/trophic/mask-sync
 inter-chip routes for learning/lifecycle profiles and preserving lookup-route
-plus lifecycle-split regressions. The current next gate is Tier 4.32g two-chip
-lifecycle traffic/resource hardware smoke; learning scale, lifecycle scaling,
-multi-shard learning, speedup, benchmarks, and native-scale baseline freeze
-remain blocked.
+plus lifecycle-split regressions. Tier 4.32g prepare then passed locally at
+`controlled_test_output/tier4_32g_20260507_prepared/` with `16/16` criteria,
+refreshed `ebrains_jobs/cra_432g`, and emitted exact JobManager command
+`cra_432g/experiments/tier4_32g_multichip_lifecycle_traffic_resource_smoke.py --mode run-hardware --output-dir tier4_32g_job_output`.
+The current next gate is the prepared Tier 4.32g EBRAINS run and ingest;
+learning scale, lifecycle scaling, multi-shard learning, speedup, benchmarks,
+and native-scale baseline freeze remain blocked.
 
 Tier 4.32a-hw prepare has also passed locally. The current EBRAINS upload
 folder is `ebrains_jobs/cra_432a_hw`, and the exact JobManager command is

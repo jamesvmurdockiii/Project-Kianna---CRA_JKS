@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-07T00:00-04:00.
+Last updated: 2026-05-07T20:35:00+00:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -936,12 +936,17 @@ ability.
     native-scale baseline freeze blocked.
 
 67. **CURRENT ACTIVE STEP** - Tier 4.32g two-chip lifecycle traffic/resource
-    hardware smoke: package and run the predeclared lifecycle event/trophic/
-    active-mask sync traffic path with compact resource counters on real
-    SpiNNaker. Required outputs: upload folder, exact JobManager command,
-    target acquisition, board/chip/core roles, lifecycle request/sync counters,
-    stale/duplicate/missing-ack counters, compact readback, returned artifacts,
-    ingest bundle, claim boundary, and failure-class diagnosis if blocked.
+    hardware smoke: PREPARED, awaiting EBRAINS return. Local prepare pass at
+    `controlled_test_output/tier4_32g_20260507_prepared/` with `16/16`
+    criteria repaired the missing lifecycle receive/readback contract, added
+    learning-core lifecycle request emission, added compact lifecycle traffic
+    counters to `CMD_READ_STATE`, refreshed upload folder `ebrains_jobs/cra_432g`,
+    and emitted exact JobManager command
+    `cra_432g/experiments/tier4_32g_multichip_lifecycle_traffic_resource_smoke.py --mode run-hardware --output-dir tier4_32g_job_output`.
+    Required returned outputs: target acquisition, board/chip/core roles,
+    lifecycle request/sync counters, stale/duplicate/missing-ack counters,
+    compact readback, returned artifacts, ingest bundle, claim boundary, and
+    failure-class diagnosis if blocked.
 
 68. Freeze `CRA_NATIVE_SCALE_BASELINE_v0.5` only if single-chip multi-core and
     first multi-chip evidence are stable enough for the final paper claim. If
@@ -1224,7 +1229,9 @@ controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/. Tier 4.32f
 then passed locally and selected lifecycle traffic/resource counters while
 blocking immediate hardware until lifecycle inter-chip routes are source-proven.
 Tier 4.32g-r0 then passed locally and authorized Tier 4.32g hardware package
-preparation. The next action is Tier 4.32g two-chip lifecycle traffic/resource
+preparation. Tier 4.32g prepare then passed locally with 16/16 criteria and
+refreshed ebrains_jobs/cra_432g. The next action is the prepared Tier 4.32g
+EBRAINS two-chip lifecycle traffic/resource
 hardware smoke, not benchmarks, speedup, true two-partition learning, lifecycle
 scaling, multi-shard learning, or baseline-freeze claims.
 ```
@@ -1268,8 +1275,9 @@ Use v2.2 as the software reference and `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` as
 the native lifecycle baseline. Keep Tier 4.31d's boundary strict: one-board
 temporal-state hardware smoke only; not nonlinear recurrence, not speedup, not
 multi-chip scaling, not benchmark superiority, and not full organism autonomy.
-The next native work is Tier 4.32g: run the two-chip lifecycle traffic/resource
-hardware smoke now that Tier 4.32g-r0 source-proved the required lifecycle
+The next native work is Tier 4.32g: run the prepared two-chip lifecycle
+traffic/resource hardware smoke from ebrains_jobs/cra_432g now that Tier
+4.32g-r0 source-proved the required lifecycle
 event/trophic/mask-sync routes and regressions.
 It must preserve explicit board/chip/shard identity, message paths, compact
 readback ownership, failure counters, placement assumptions,

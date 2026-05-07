@@ -1,0 +1,181 @@
+{
+  "artifacts": {
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_32g_20260507_prepared/tier4_32g_report.md",
+    "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_32g_20260507_prepared/tier4_32g_results.json",
+    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32g_20260507_prepared/tier4_32g_summary.csv"
+  },
+  "bundle_artifacts": {
+    "job_readme": "/Users/james/JKS:CRA/controlled_test_output/tier4_32g_20260507_prepared/ebrains_upload_bundle/cra_432g/README_TIER4_32G_JOB.md",
+    "stable_upload_folder": "/Users/james/JKS:CRA/ebrains_jobs/cra_432g",
+    "upload_bundle": "/Users/james/JKS:CRA/controlled_test_output/tier4_32g_20260507_prepared/ebrains_upload_bundle/cra_432g"
+  },
+  "claim_boundary": "Prepared source bundle only; no hardware evidence until returned run-hardware artifacts pass.",
+  "criteria": [
+    {
+      "name": "Tier 4.32e hardware prerequisite passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "Tier 4.32f decision prerequisite passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "Tier 4.32g-r0 source prerequisite passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "lifecycle source checks pass",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "runner and dependencies py_compile",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "upload bundle created",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_32g_20260507_prepared/ebrains_upload_bundle/cra_432g"
+    },
+    {
+      "name": "stable upload folder created",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/ebrains_jobs/cra_432g"
+    },
+    {
+      "name": "run-hardware command emitted",
+      "note": "",
+      "passed": true,
+      "rule": "contains --mode run-hardware",
+      "value": "cra_432g/experiments/tier4_32g_multichip_lifecycle_traffic_resource_smoke.py --mode run-hardware --output-dir tier4_32g_job_output"
+    },
+    {
+      "name": "bundle Makefile exposes lifecycle request route",
+      "note": "",
+      "passed": true,
+      "rule": "present",
+      "value": "MCPL_INTERCHIP_LIFECYCLE_REQUEST_LINK_ROUTE"
+    },
+    {
+      "name": "bundle Makefile exposes lifecycle sync route",
+      "note": "",
+      "passed": true,
+      "rule": "present",
+      "value": "MCPL_INTERCHIP_LIFECYCLE_SYNC_LINK_ROUTE"
+    },
+    {
+      "name": "bundle dispatches lifecycle receive packets",
+      "note": "",
+      "passed": true,
+      "rule": "present in receive",
+      "value": "MCPL_MSG_LIFECYCLE_EVENT_REQUEST"
+    },
+    {
+      "name": "bundle learning host emits lifecycle requests",
+      "note": "",
+      "passed": true,
+      "rule": "present",
+      "value": "_handle_lifecycle_event_request_emit"
+    },
+    {
+      "name": "bundle Python host has request helpers",
+      "note": "",
+      "passed": true,
+      "rule": "present",
+      "value": "send_lifecycle_event_request"
+    },
+    {
+      "name": "bundle readback exposes lifecycle counters",
+      "note": "",
+      "passed": true,
+      "rule": "present",
+      "value": "lifecycle_event_requests_sent"
+    },
+    {
+      "name": "lifecycle scaling remains unclaimed",
+      "note": "",
+      "passed": true,
+      "rule": "== not_claimed",
+      "value": "not_claimed"
+    },
+    {
+      "name": "native-scale baseline freeze remains blocked",
+      "note": "",
+      "passed": true,
+      "rule": "== not_authorized",
+      "value": "not_authorized"
+    }
+  ],
+  "failure_reason": "",
+  "generated_at_utc": "2026-05-07T20:34:53+00:00",
+  "mode": "prepare",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_32g_20260507_prepared",
+  "py_compile": {
+    "command": "/Library/Developer/CommandLineTools/usr/bin/python3 -m py_compile experiments/tier4_32g_multichip_lifecycle_traffic_resource_smoke.py experiments/tier4_22i_custom_runtime_roundtrip.py",
+    "returncode": 0,
+    "status": "pass",
+    "stderr": "",
+    "stdout": ""
+  },
+  "runner_revision": "tier4_32g_multichip_lifecycle_traffic_resource_smoke_20260507_0001",
+  "source_checks": {
+    "command": "make -C /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime clean-host test-mcpl-lifecycle-receive-contract test-mcpl-lifecycle-interchip-route-contract test-lifecycle-split test-profiles",
+    "returncode": 0,
+    "status": "pass",
+    "stderr": "",
+    "stdout": "rm -f tests/test_runtime tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_lifecycle_core tests/test_four_core_local tests/test_four_core_mcpl_local tests/test_four_core_48event tests/test_mcpl_feasibility tests/test_mcpl_lookup_contract tests/test_mcpl_interchip_route_learning tests/test_mcpl_interchip_route_context tests/test_mcpl_lifecycle_interchip_route_learning tests/test_mcpl_lifecycle_interchip_route_lifecycle tests/test_mcpl_lifecycle_receive_learning tests/test_mcpl_lifecycle_receive_lifecycle tests/test_lifecycle tests/test_lifecycle_split tests/test_temporal_state\ncc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_USE_MCPL_LOOKUP=1 -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 tests/test_mcpl_lifecycle_receive_contract.c stubs/spin1_api.c src/state_manager.c -lm -o tests/test_mcpl_lifecycle_receive_learning\n./tests/test_mcpl_lifecycle_receive_learning\nRunning Tier 4.32g lifecycle MCPL receive contract tests...\n  PASS: learning_core coalesces mask/lineage sync MCPL packets\nAll lifecycle MCPL receive contract tests passed.\ncc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_USE_MCPL_LOOKUP=1 -DCRA_RUNTIME_PROFILE_LIFECYCLE_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=7 tests/test_mcpl_lifecycle_receive_contract.c stubs/spin1_api.c src/state_manager.c -lm -o tests/test_mcpl_lifecycle_receive_lifecycle\n./tests/test_mcpl_lifecycle_receive_lifecycle\nRunning Tier 4.32g lifecycle MCPL receive contract tests...\n  PASS: lifecycle_core receives trophic/event MCPL requests\nAll lifecycle MCPL receive contract tests passed.\ncc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_USE_MCPL_LOOKUP=1 -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 -DCRA_MCPL_INTERCHIP_LIFECYCLE_REQUEST_LINK_ROUTE=ROUTE_E tests/test_mcpl_lifecycle_interchip_route_contract.c stubs/spin1_api.c src/state_manager.c -lm -o tests/test_mcpl_lifecycle_interchip_route_learning\n./tests/test_mcpl_lifecycle_interchip_route_learning\nTier 4.32g-r0 learning-core lifecycle route contract\n  PASS: learning core installs outbound lifecycle request link routes\ncc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_USE_MCPL_LOOKUP=1 -DCRA_RUNTIME_PROFILE_LIFECYCLE_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=7 -DCRA_MCPL_INTERCHIP_LIFECYCLE_SYNC_LINK_ROUTE=ROUTE_W tests/test_mcpl_lifecycle_interchip_route_contract.c stubs/spin1_api.c src/state_manager.c -lm -o tests/test_mcpl_lifecycle_interchip_route_lifecycle\n./tests/test_mcpl_lifecycle_interchip_route_lifecycle\nTier 4.32g-r0 lifecycle-core inter-chip route contract\n  PASS: lifecycle core installs local request routes plus outbound sync link route\ncc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_RUNTIME_PROFILE_LIFECYCLE_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=7 tests/test_lifecycle_split.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_lifecycle_split\n./tests/test_lifecycle_split\nRunning Tier 4.30d lifecycle split tests...\n  PASS: lifecycle_core direct host surface is isolated\n  PASS: lifecycle duplicate/stale guards are explicit\n  PASS: active-mask/count/lineage sync send/receive bookkeeping\n  PASS: learning-side lifecycle request stubs\nAll lifecycle split tests passed.\ncc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_RUNTIME_PROFILE_CONTEXT_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=4 tests/test_profiles.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_context_core\n./tests/test_context_core\nProfile test (RUNTIME_PROFILE_ID=4)\n  PASS: RESET ack\n  PASS: READ_STATE profile_id=4 flags=0\n  PASS: context_core expected commands ack\n  PASS: context_core unexpected commands nak\n  PASS: lookup request/reply format\n  PASS: wrong-type lookup rejected safely\nAll tests passed.\ncc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_RUNTIME_PROFILE_ROUTE_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=5 tests/test_profiles.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_route_core\n./tests/test_route_core\nProfile test (RUNTIME_PROFILE_ID=5)\n  PASS: RESET ack\n  PASS: READ_STATE profile_id=5 flags=0\n  PASS: route_core expected commands ack\n  PASS: route_core unexpected commands nak\n  PASS: lookup request/reply format\n  PASS: wrong-type lookup rejected safely\nAll tests passed.\ncc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_RUNTIME_PROFILE_MEMORY_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=6 tests/test_profiles.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_memory_core\n./tests/test_memory_core\nProfile test (RUNTIME_PROFILE_ID=6)\n  PASS: RESET ack\n  PASS: READ_STATE profile_id=6 flags=0\n  PASS: memory_core expected commands ack\n  PASS: memory_core unexpected commands nak\n  PASS: lookup request/reply format\n  PASS: wrong-type lookup rejected safely\nAll tests passed.\ncc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 tests/test_profiles.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_learning_core\n./tests/test_learning_core\nProfile test (RUNTIME_PROFILE_ID=3)\n  PASS: RESET ack\n  PASS: READ_STATE profile_id=3 flags=0\n  PASS: learning_core expected commands ack\n  PASS: learning_core unexpected commands nak\n  PASS: lookup state machine (3 replies stored)\n  PASS: stale reply detection\n  PASS: timeout detection\nAll tests passed.\ncc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_RUNTIME_PROFILE_LIFECYCLE_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=7 tests/test_profiles.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_lifecycle_core\n./tests/test_lifecycle_core\nProfile test (RUNTIME_PROFILE_ID=7)\n  PASS: RESET ack\n  PASS: READ_STATE profile_id=7 flags=0\n  PASS: lifecycle_core expected commands ack\n  PASS: lifecycle_core unexpected commands nak\nAll tests passed.\n"
+  },
+  "status": "prepared",
+  "summary": {
+    "claim_boundary": "Prepared source bundle only; no hardware evidence until returned run-hardware artifacts pass.",
+    "core_roles": {
+      "learning": {
+        "app_id": 4,
+        "chip": "source",
+        "core": 7,
+        "link": "request_east",
+        "profile": "learning_core"
+      },
+      "lifecycle": {
+        "app_id": 5,
+        "chip": "remote",
+        "core": 4,
+        "link": "sync_west",
+        "profile": "lifecycle_core"
+      }
+    },
+    "job_command": "cra_432g/experiments/tier4_32g_multichip_lifecycle_traffic_resource_smoke.py --mode run-hardware --output-dir tier4_32g_job_output",
+    "remote_chip": {
+      "x": 1,
+      "y": 0
+    },
+    "source_chip": {
+      "x": 0,
+      "y": 0
+    },
+    "stable_upload_folder": "/Users/james/JKS:CRA/ebrains_jobs/cra_432g",
+    "upload_bundle": "/Users/james/JKS:CRA/controlled_test_output/tier4_32g_20260507_prepared/ebrains_upload_bundle/cra_432g",
+    "upload_package": "cra_432g",
+    "what_i_need_from_user": "Upload the cra_432g folder to EBRAINS/JobManager and run the emitted command."
+  },
+  "tier": "4.32g",
+  "tier_name": "Tier 4.32g - Two-Chip Lifecycle Traffic/Resource Hardware Smoke"
+}

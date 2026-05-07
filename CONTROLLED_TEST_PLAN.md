@@ -9715,3 +9715,89 @@ claim hardware evidence yet and does not authorize speedup, benchmark,
 lifecycle-scaling, true two-partition, multi-shard, or native-scale baseline
 freeze claims.
 ```
+
+## Tier 4.32g - Two-Chip Lifecycle Traffic/Resource Hardware Smoke
+
+Question: after 4.32g-r0 source-proved lifecycle route entries, can the actual
+learning/lifecycle MCPL packet semantics survive a two-chip SpiNNaker hardware
+smoke with compact readback counters?
+
+Current status: PREPARED, awaiting EBRAINS return.
+
+Prepared output:
+
+```text
+controlled_test_output/tier4_32g_20260507_prepared/
+criteria: 16/16
+stable upload folder: ebrains_jobs/cra_432g
+exact JobManager command:
+cra_432g/experiments/tier4_32g_multichip_lifecycle_traffic_resource_smoke.py --mode run-hardware --output-dir tier4_32g_job_output
+```
+
+Mechanism under test:
+
+```text
+source chip (0,0), learning_core p7:
+  emits lifecycle trophic request
+  emits lifecycle death event request
+  receives active-mask/lineage sync
+
+remote chip (1,0), lifecycle_core p4:
+  receives trophic/event MCPL requests
+  mutates lifecycle active mask
+  broadcasts active-mask/lineage sync
+```
+
+Prepare repairs included:
+
+```text
+1. lifecycle MCPL receive dispatch in state_manager.c
+2. learning-core host surface for lifecycle request emission
+3. CMD_READ_STATE lifecycle traffic counters appended to compact schema-v2
+4. Python host helpers for lifecycle request emission
+5. local C receive contract: test-mcpl-lifecycle-receive-contract
+6. refreshed EBRAINS upload folder: ebrains_jobs/cra_432g
+```
+
+Pass requires:
+
+```text
+real target acquisition
+learning/lifecycle profile builds and loads on two chips
+lifecycle init success
+source lifecycle_event_requests_sent == 1
+source lifecycle_trophic_requests_sent == 1
+source lifecycle_mask_syncs_received == 1
+source last_seen_active_mask_bits == 1
+lifecycle_event_acks_received == 2 on lifecycle core
+lifecycle_mask_syncs_sent == 1 on lifecycle core
+death_count == 1
+trophic_update_count == 1
+active_count == 1
+stale/duplicate/missing-ack counters == 0
+payload_len >= 149 for runtime readbacks
+zero synthetic fallback
+returned artifacts preserved and ingested
+```
+
+Fail classes:
+
+```text
+target acquisition failure
+profile build/link/load failure
+source request emission failure
+remote lifecycle request receive failure
+active-mask mutation failure
+sync return-path failure
+compact readback/counter schema failure
+stale/duplicate/missing-ack counter nonzero
+artifact finalization/ingest failure
+```
+
+Claim boundary:
+
+```text
+Tier 4.32g is a two-chip lifecycle traffic/resource smoke only. It is not
+lifecycle scaling, speedup evidence, benchmark evidence, true partitioned
+ecology, multi-shard learning, or a native-scale baseline freeze.
+```
