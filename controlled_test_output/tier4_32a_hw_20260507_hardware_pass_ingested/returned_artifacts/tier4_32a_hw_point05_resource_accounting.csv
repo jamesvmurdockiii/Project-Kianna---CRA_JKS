@@ -1,0 +1,2 @@
+point_id,task_event_count,learning_lookup_requests,learning_lookup_replies,learning_stale_replies,learning_duplicate_replies,learning_timeouts,learning_readback_bytes,lifecycle_readback_bytes
+point_05c_lifecycle,96,288,288,0,0,0,315,2380

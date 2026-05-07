@@ -1,0 +1,1057 @@
+{
+  "criteria": [
+    {
+      "name": "runner revision current",
+      "note": "",
+      "passed": true,
+      "rule": "expected current source",
+      "value": "tier4_28a_four_core_mcpl_repeatability_20260502_0003"
+    },
+    {
+      "name": "custom C host tests pass",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "main.c syntax check pass",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "hardware target acquired",
+      "note": "",
+      "passed": true,
+      "rule": "status == pass",
+      "value": {
+        "attempts": [
+          {
+            "hostname": "",
+            "method": "hostname_discovery",
+            "notes": [
+              "no hostname found in args, common environment variables, or spynnaker.cfg"
+            ],
+            "reason": "no explicit hostname/config/environment target found",
+            "status": "fail"
+          },
+          {
+            "dest_cpu": 4,
+            "dest_x": 0,
+            "dest_y": 0,
+            "hostname": "10.11.216.169",
+            "method": "pyNN.spiNNaker_probe",
+            "notes": [
+              "acquired transceiver/IP via PyNN/sPyNNaker DataView because EBRAINS JobManager may not expose a raw hostname",
+              "requested dest_cpu was free"
+            ],
+            "occupied_cores": [
+              1,
+              2,
+              3
+            ],
+            "probe_population_size": 1,
+            "probe_run_ms": 1.0,
+            "probe_timestep_ms": 1.0,
+            "runtime_seconds": 50.69469164405018,
+            "setup_kwargs": {
+              "timestep": 1.0
+            },
+            "status": "pass",
+            "target_ipaddress": "10.11.216.169"
+          }
+        ],
+        "dest_cpu": 4,
+        "dest_x": 0,
+        "dest_y": 0,
+        "hostname": "10.11.216.169",
+        "method": "pyNN.spiNNaker_probe",
+        "notes": [
+          "acquired transceiver/IP via PyNN/sPyNNaker DataView because EBRAINS JobManager may not expose a raw hostname",
+          "requested dest_cpu was free"
+        ],
+        "occupied_cores": [
+          1,
+          2,
+          3
+        ],
+        "probe_population_size": 1,
+        "probe_run_ms": 1.0,
+        "probe_timestep_ms": 1.0,
+        "runtime_seconds": 50.69469164405018,
+        "setup_kwargs": {
+          "timestep": 1.0
+        },
+        "status": "pass",
+        "target_ipaddress": "10.11.216.169"
+      }
+    },
+    {
+      "name": "context_core .aplx built",
+      "note": "",
+      "passed": true,
+      "rule": "== True",
+      "value": true
+    },
+    {
+      "name": "route_core .aplx built",
+      "note": "",
+      "passed": true,
+      "rule": "== True",
+      "value": true
+    },
+    {
+      "name": "memory_core .aplx built",
+      "note": "",
+      "passed": true,
+      "rule": "== True",
+      "value": true
+    },
+    {
+      "name": "learning_core .aplx built",
+      "note": "",
+      "passed": true,
+      "rule": "== True",
+      "value": true
+    },
+    {
+      "name": "context_core load pass",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "route_core load pass",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "memory_core load pass",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "learning_core load pass",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "all context writes succeeded",
+      "note": "",
+      "passed": true,
+      "rule": "all success",
+      "value": [
+        {
+          "key": "ctx_A",
+          "success": true
+        },
+        {
+          "key": "ctx_B",
+          "success": true
+        },
+        {
+          "key": "ctx_C",
+          "success": true
+        },
+        {
+          "key": "ctx_D",
+          "success": true
+        }
+      ]
+    },
+    {
+      "name": "all route writes succeeded",
+      "note": "",
+      "passed": true,
+      "rule": "all success",
+      "value": [
+        {
+          "key": "route_A",
+          "success": true
+        },
+        {
+          "key": "route_B",
+          "success": true
+        },
+        {
+          "key": "route_C",
+          "success": true
+        },
+        {
+          "key": "route_D",
+          "success": true
+        }
+      ]
+    },
+    {
+      "name": "all memory writes succeeded",
+      "note": "",
+      "passed": true,
+      "rule": "all success",
+      "value": [
+        {
+          "key": "mem_A",
+          "success": true
+        },
+        {
+          "key": "mem_B",
+          "success": true
+        },
+        {
+          "key": "mem_C",
+          "success": true
+        },
+        {
+          "key": "mem_D",
+          "success": true
+        }
+      ]
+    },
+    {
+      "name": "all schedule uploads succeeded",
+      "note": "",
+      "passed": true,
+      "rule": "all success",
+      "value": [
+        {
+          "index": 0,
+          "success": true
+        },
+        {
+          "index": 1,
+          "success": true
+        },
+        {
+          "index": 2,
+          "success": true
+        },
+        {
+          "index": 3,
+          "success": true
+        },
+        {
+          "index": 4,
+          "success": true
+        },
+        {
+          "index": 5,
+          "success": true
+        },
+        {
+          "index": 6,
+          "success": true
+        },
+        {
+          "index": 7,
+          "success": true
+        },
+        {
+          "index": 8,
+          "success": true
+        },
+        {
+          "index": 9,
+          "success": true
+        },
+        {
+          "index": 10,
+          "success": true
+        },
+        {
+          "index": 11,
+          "success": true
+        },
+        {
+          "index": 12,
+          "success": true
+        },
+        {
+          "index": 13,
+          "success": true
+        },
+        {
+          "index": 14,
+          "success": true
+        },
+        {
+          "index": 15,
+          "success": true
+        },
+        {
+          "index": 16,
+          "success": true
+        },
+        {
+          "index": 17,
+          "success": true
+        },
+        {
+          "index": 18,
+          "success": true
+        },
+        {
+          "index": 19,
+          "success": true
+        },
+        {
+          "index": 20,
+          "success": true
+        },
+        {
+          "index": 21,
+          "success": true
+        },
+        {
+          "index": 22,
+          "success": true
+        },
+        {
+          "index": 23,
+          "success": true
+        },
+        {
+          "index": 24,
+          "success": true
+        },
+        {
+          "index": 25,
+          "success": true
+        },
+        {
+          "index": 26,
+          "success": true
+        },
+        {
+          "index": 27,
+          "success": true
+        },
+        {
+          "index": 28,
+          "success": true
+        },
+        {
+          "index": 29,
+          "success": true
+        },
+        {
+          "index": 30,
+          "success": true
+        },
+        {
+          "index": 31,
+          "success": true
+        },
+        {
+          "index": 32,
+          "success": true
+        },
+        {
+          "index": 33,
+          "success": true
+        },
+        {
+          "index": 34,
+          "success": true
+        },
+        {
+          "index": 35,
+          "success": true
+        },
+        {
+          "index": 36,
+          "success": true
+        },
+        {
+          "index": 37,
+          "success": true
+        },
+        {
+          "index": 38,
+          "success": true
+        },
+        {
+          "index": 39,
+          "success": true
+        },
+        {
+          "index": 40,
+          "success": true
+        },
+        {
+          "index": 41,
+          "success": true
+        },
+        {
+          "index": 42,
+          "success": true
+        },
+        {
+          "index": 43,
+          "success": true
+        },
+        {
+          "index": 44,
+          "success": true
+        },
+        {
+          "index": 45,
+          "success": true
+        },
+        {
+          "index": 46,
+          "success": true
+        },
+        {
+          "index": 47,
+          "success": true
+        }
+      ]
+    },
+    {
+      "name": "context_core run_continuous succeeded",
+      "note": "",
+      "passed": true,
+      "rule": "== True",
+      "value": true
+    },
+    {
+      "name": "route_core run_continuous succeeded",
+      "note": "",
+      "passed": true,
+      "rule": "== True",
+      "value": true
+    },
+    {
+      "name": "memory_core run_continuous succeeded",
+      "note": "",
+      "passed": true,
+      "rule": "== True",
+      "value": true
+    },
+    {
+      "name": "learning_core run_continuous succeeded",
+      "note": "",
+      "passed": true,
+      "rule": "== True",
+      "value": true
+    },
+    {
+      "name": "context_core final read succeeded",
+      "note": "",
+      "passed": true,
+      "rule": "== True",
+      "value": true
+    },
+    {
+      "name": "route_core final read succeeded",
+      "note": "",
+      "passed": true,
+      "rule": "== True",
+      "value": true
+    },
+    {
+      "name": "memory_core final read succeeded",
+      "note": "",
+      "passed": true,
+      "rule": "== True",
+      "value": true
+    },
+    {
+      "name": "learning_core final read succeeded",
+      "note": "",
+      "passed": true,
+      "rule": "== True",
+      "value": true
+    },
+    {
+      "name": "learning_core weight near reference",
+      "note": "",
+      "passed": true,
+      "rule": "within +/- 8192 of 32768",
+      "value": 32768
+    },
+    {
+      "name": "learning_core bias near reference",
+      "note": "",
+      "passed": true,
+      "rule": "within +/- 8192 of 0",
+      "value": 0
+    },
+    {
+      "name": "learning_core pending_created matches reference",
+      "note": "",
+      "passed": true,
+      "rule": "== 48",
+      "value": 48
+    },
+    {
+      "name": "learning_core pending_matured matches reference",
+      "note": "",
+      "passed": true,
+      "rule": "== 48",
+      "value": 48
+    },
+    {
+      "name": "learning_core active_pending cleared",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "name": "no unhandled hardware exception",
+      "note": "",
+      "passed": true,
+      "rule": "== True",
+      "value": true
+    },
+    {
+      "name": "learning_core schema_version v2",
+      "note": "",
+      "passed": true,
+      "rule": "== 2",
+      "value": 2
+    },
+    {
+      "name": "learning_core lookup_requests == 144",
+      "note": "",
+      "passed": true,
+      "rule": "== 144",
+      "value": 144
+    },
+    {
+      "name": "learning_core lookup_replies == 144",
+      "note": "",
+      "passed": true,
+      "rule": "== 144",
+      "value": 144
+    },
+    {
+      "name": "learning_core stale_replies == 0",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "name": "learning_core timeouts == 0",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "name": "context_core lookup_replies == 0",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "name": "route_core lookup_replies == 0",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "name": "memory_core lookup_replies == 0",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    }
+  ],
+  "generated_at_utc": "2026-05-07T00:23:40.166435+00:00",
+  "hardware_exception": null,
+  "loads": {
+    "context": {
+      "app_id": 1,
+      "hostname": "10.11.216.169",
+      "method": "spynnaker_dataview_transceiver.execute_flood",
+      "p": 4,
+      "runtime_seconds": 2.1111291209235787,
+      "status": "pass",
+      "x": 0,
+      "y": 0
+    },
+    "learning": {
+      "app_id": 4,
+      "hostname": "10.11.216.169",
+      "method": "spynnaker_dataview_transceiver.execute_flood",
+      "p": 7,
+      "runtime_seconds": 2.140898216981441,
+      "status": "pass",
+      "x": 0,
+      "y": 0
+    },
+    "memory": {
+      "app_id": 3,
+      "hostname": "10.11.216.169",
+      "method": "spynnaker_dataview_transceiver.execute_flood",
+      "p": 6,
+      "runtime_seconds": 2.111911559011787,
+      "status": "pass",
+      "x": 0,
+      "y": 0
+    },
+    "route": {
+      "app_id": 2,
+      "hostname": "10.11.216.169",
+      "method": "spynnaker_dataview_transceiver.execute_flood",
+      "p": 5,
+      "runtime_seconds": 2.1117170518264174,
+      "status": "pass",
+      "x": 0,
+      "y": 0
+    }
+  },
+  "mode": "run-hardware",
+  "output_dir": "/tmp/job12907274730800089724.tmp/tier4_32a_hw_job_output/point_04c_reference",
+  "runner_revision": "tier4_28a_four_core_mcpl_repeatability_20260502_0003",
+  "status": "pass",
+  "task": {
+    "final_state": {
+      "context": {
+        "active_pending": 0,
+        "active_slots": 4,
+        "active_trace_count": 0,
+        "cmd": 8,
+        "commands_received": 7,
+        "decisions": 0,
+        "duplicate_replies": 0,
+        "flags": 0,
+        "lookup_replies": 0,
+        "lookup_requests": 0,
+        "neuron_count": 0,
+        "payload_len": 105,
+        "pending_created": 0,
+        "pending_dropped": 0,
+        "pending_matured": 0,
+        "profile_id": 4,
+        "readback_bytes": 105,
+        "readout_bias": 0.0,
+        "readout_bias_raw": 0,
+        "readout_weight": 0.0,
+        "readout_weight_raw": 0,
+        "reward_events": 0,
+        "schedule_length": 0,
+        "schema_version": 2,
+        "slot_evictions": 0,
+        "slot_hits": 48,
+        "slot_misses": 0,
+        "slot_writes": 4,
+        "stale_replies": 0,
+        "status": 0,
+        "success": true,
+        "synapse_count": 0,
+        "timeouts": 0,
+        "timestep": 9264
+      },
+      "learning": {
+        "active_pending": 0,
+        "active_slots": 0,
+        "active_trace_count": 0,
+        "cmd": 8,
+        "commands_received": 52,
+        "decisions": 48,
+        "duplicate_replies": 0,
+        "flags": 0,
+        "lookup_replies": 144,
+        "lookup_requests": 144,
+        "neuron_count": 0,
+        "payload_len": 105,
+        "pending_created": 48,
+        "pending_dropped": 0,
+        "pending_matured": 48,
+        "profile_id": 3,
+        "readback_bytes": 210,
+        "readout_bias": 0.0,
+        "readout_bias_raw": 0,
+        "readout_weight": 1.0,
+        "readout_weight_raw": 32768,
+        "reward_events": 48,
+        "schedule_length": 48,
+        "schema_version": 2,
+        "slot_evictions": 0,
+        "slot_hits": 0,
+        "slot_misses": 0,
+        "slot_writes": 0,
+        "stale_replies": 0,
+        "status": 0,
+        "success": true,
+        "synapse_count": 0,
+        "timeouts": 0,
+        "timestep": 2928
+      },
+      "memory": {
+        "active_pending": 0,
+        "active_slots": 4,
+        "active_trace_count": 0,
+        "cmd": 8,
+        "commands_received": 7,
+        "decisions": 0,
+        "duplicate_replies": 0,
+        "flags": 0,
+        "lookup_replies": 0,
+        "lookup_requests": 0,
+        "neuron_count": 0,
+        "payload_len": 105,
+        "pending_created": 0,
+        "pending_dropped": 0,
+        "pending_matured": 0,
+        "profile_id": 6,
+        "readback_bytes": 105,
+        "readout_bias": 0.0,
+        "readout_bias_raw": 0,
+        "readout_weight": 0.0,
+        "readout_weight_raw": 0,
+        "reward_events": 0,
+        "schedule_length": 0,
+        "schema_version": 2,
+        "slot_evictions": 0,
+        "slot_hits": 48,
+        "slot_misses": 0,
+        "slot_writes": 4,
+        "stale_replies": 0,
+        "status": 0,
+        "success": true,
+        "synapse_count": 0,
+        "timeouts": 0,
+        "timestep": 5042
+      },
+      "route": {
+        "active_pending": 0,
+        "active_slots": 4,
+        "active_trace_count": 0,
+        "cmd": 8,
+        "commands_received": 7,
+        "decisions": 0,
+        "duplicate_replies": 0,
+        "flags": 0,
+        "lookup_replies": 0,
+        "lookup_requests": 0,
+        "neuron_count": 0,
+        "payload_len": 105,
+        "pending_created": 0,
+        "pending_dropped": 0,
+        "pending_matured": 0,
+        "profile_id": 5,
+        "readback_bytes": 105,
+        "readout_bias": 0.0,
+        "readout_bias_raw": 0,
+        "readout_weight": 0.0,
+        "readout_weight_raw": 0,
+        "reward_events": 0,
+        "schedule_length": 0,
+        "schema_version": 2,
+        "slot_evictions": 0,
+        "slot_hits": 48,
+        "slot_misses": 0,
+        "slot_writes": 4,
+        "stale_replies": 0,
+        "status": 0,
+        "success": true,
+        "synapse_count": 0,
+        "timeouts": 0,
+        "timestep": 7153
+      }
+    },
+    "pause": {
+      "context": {
+        "success": true
+      },
+      "learning": {
+        "success": true
+      },
+      "memory": {
+        "success": true
+      },
+      "route": {
+        "success": true
+      }
+    },
+    "reset": {
+      "context": true,
+      "learning": true,
+      "memory": true,
+      "route": true
+    },
+    "run_continuous": {
+      "context": {
+        "success": true
+      },
+      "learning": {
+        "success": true
+      },
+      "memory": {
+        "success": true
+      },
+      "route": {
+        "success": true
+      }
+    },
+    "schedule_uploads": [
+      {
+        "index": 0,
+        "success": true
+      },
+      {
+        "index": 1,
+        "success": true
+      },
+      {
+        "index": 2,
+        "success": true
+      },
+      {
+        "index": 3,
+        "success": true
+      },
+      {
+        "index": 4,
+        "success": true
+      },
+      {
+        "index": 5,
+        "success": true
+      },
+      {
+        "index": 6,
+        "success": true
+      },
+      {
+        "index": 7,
+        "success": true
+      },
+      {
+        "index": 8,
+        "success": true
+      },
+      {
+        "index": 9,
+        "success": true
+      },
+      {
+        "index": 10,
+        "success": true
+      },
+      {
+        "index": 11,
+        "success": true
+      },
+      {
+        "index": 12,
+        "success": true
+      },
+      {
+        "index": 13,
+        "success": true
+      },
+      {
+        "index": 14,
+        "success": true
+      },
+      {
+        "index": 15,
+        "success": true
+      },
+      {
+        "index": 16,
+        "success": true
+      },
+      {
+        "index": 17,
+        "success": true
+      },
+      {
+        "index": 18,
+        "success": true
+      },
+      {
+        "index": 19,
+        "success": true
+      },
+      {
+        "index": 20,
+        "success": true
+      },
+      {
+        "index": 21,
+        "success": true
+      },
+      {
+        "index": 22,
+        "success": true
+      },
+      {
+        "index": 23,
+        "success": true
+      },
+      {
+        "index": 24,
+        "success": true
+      },
+      {
+        "index": 25,
+        "success": true
+      },
+      {
+        "index": 26,
+        "success": true
+      },
+      {
+        "index": 27,
+        "success": true
+      },
+      {
+        "index": 28,
+        "success": true
+      },
+      {
+        "index": 29,
+        "success": true
+      },
+      {
+        "index": 30,
+        "success": true
+      },
+      {
+        "index": 31,
+        "success": true
+      },
+      {
+        "index": 32,
+        "success": true
+      },
+      {
+        "index": 33,
+        "success": true
+      },
+      {
+        "index": 34,
+        "success": true
+      },
+      {
+        "index": 35,
+        "success": true
+      },
+      {
+        "index": 36,
+        "success": true
+      },
+      {
+        "index": 37,
+        "success": true
+      },
+      {
+        "index": 38,
+        "success": true
+      },
+      {
+        "index": 39,
+        "success": true
+      },
+      {
+        "index": 40,
+        "success": true
+      },
+      {
+        "index": 41,
+        "success": true
+      },
+      {
+        "index": 42,
+        "success": true
+      },
+      {
+        "index": 43,
+        "success": true
+      },
+      {
+        "index": 44,
+        "success": true
+      },
+      {
+        "index": 45,
+        "success": true
+      },
+      {
+        "index": 46,
+        "success": true
+      },
+      {
+        "index": 47,
+        "success": true
+      }
+    ],
+    "state_writes": {
+      "context": [
+        {
+          "key": "ctx_A",
+          "success": true
+        },
+        {
+          "key": "ctx_B",
+          "success": true
+        },
+        {
+          "key": "ctx_C",
+          "success": true
+        },
+        {
+          "key": "ctx_D",
+          "success": true
+        }
+      ],
+      "memory": [
+        {
+          "key": "mem_A",
+          "success": true
+        },
+        {
+          "key": "mem_B",
+          "success": true
+        },
+        {
+          "key": "mem_C",
+          "success": true
+        },
+        {
+          "key": "mem_D",
+          "success": true
+        }
+      ],
+      "route": [
+        {
+          "key": "route_A",
+          "success": true
+        },
+        {
+          "key": "route_B",
+          "success": true
+        },
+        {
+          "key": "route_C",
+          "success": true
+        },
+        {
+          "key": "route_D",
+          "success": true
+        }
+      ]
+    },
+    "status": "completed",
+    "waited_seconds": 0.5
+  },
+  "tier": "Tier 4.28a \u2014 Four-Core MCPL Repeatability"
+}

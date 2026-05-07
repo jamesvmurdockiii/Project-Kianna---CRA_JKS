@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-06T22:46:22+00:00.
+Last updated: 2026-05-07T00:33:40+00:00.
 
 Current repo root:
 
@@ -99,19 +99,19 @@ FROZEN: CRA_LIFECYCLE_NATIVE_BASELINE_v0.4
             temporal migration, not external-baseline superiority, and not
             language/planning/AGI/ASI.
 
-  Next: Tier 4.32a-hw single-shard EBRAINS scale stress.
-        Tier 4.32a-r1 passed locally and repaired the protocol blocker found by
-        Tier 4.32a-r0: MCPL lookup replies now carry value plus
-        confidence/hit/status metadata, keys carry shard identity, identical
-        seq/type cross-shard controls pass, and full/zero/half-confidence
-        learning controls pass through MCPL. Tier 4.32a-hw prepare is complete
-        at controlled_test_output/tier4_32a_hw_20260506_prepared/ and the
-        stable upload folder is ebrains_jobs/cra_432a_hw. Upload that folder
-        and run:
-          cra_432a_hw/experiments/tier4_32a_hw_single_shard_scale_stress.py --mode run-hardware --output-dir tier4_32a_hw_job_output
-        Replicated 8/12/16-core stress, static reef partitioning, multi-chip
-        work, and native-scale baseline freeze remain blocked until the
-        single-shard hardware stress passes and is ingested.
+  Next: Tier 4.32a-hw-replicated.
+        Tier 4.32a-hw passed on EBRAINS and was ingested at
+        controlled_test_output/tier4_32a_hw_20260507_hardware_pass_ingested/.
+        Raw remote status pass, ingest status pass, board 10.11.215.185,
+        31/31 raw hardware criteria, 8/8 ingest criteria, 63 returned
+        artifacts, point04 48 events / 144 lookup replies, point05 96 events /
+        288 lookup replies, zero stale replies, zero duplicate replies, zero
+        timeouts, and zero synthetic fallback. Prepare the 8/12/16-core
+        replicated-shard stress next using the same repaired MCPL value/meta
+        reply path, shard-aware keys, compact readback, and
+        stale/duplicate/timeout counters. Static reef partitioning, multi-chip
+        work, and native-scale baseline freeze remain blocked until replicated
+        stress passes and is ingested.
 ```
 
 Current active tier state:
@@ -242,13 +242,25 @@ Tier 4.32a-r1 — COMPLETE. Confidence-bearing shard-aware MCPL lookup repair.
     speedup, replicated-shard scaling, multi-chip scaling, static reef
     partitioning, or a baseline freeze.
 
-Tier 4.32a-hw — CURRENT ACTIVE. EBRAINS single-shard single-chip
-  stress. Once unblocked, run only `point_04c_reference` and
-  `point_05c_lifecycle` first; return compact per-core readback,
-  profile/build artifacts, lookup request/reply parity,
-  stale/duplicate/timeout/drop counters, and schedule/slot high-water marks.
-  This will be hardware stress only, not replicated-shard scaling and not a
-  baseline freeze.
+Tier 4.32a-hw — COMPLETE. EBRAINS single-shard single-chip stress.
+  Status: HARDWARE PASS, INGESTED.
+  Output: controlled_test_output/tier4_32a_hw_20260507_hardware_pass_ingested/
+  Board: 10.11.215.185.
+  Result: raw remote status pass, ingest status pass, 31/31 raw hardware
+    criteria, 8/8 ingest criteria, 63 returned artifacts, point04 48 events /
+    144 lookup replies, point05 96 events / 288 lookup replies, zero stale
+    replies, zero duplicate replies, zero timeouts, and zero synthetic
+    fallback.
+  Boundary: single-shard hardware stress only; not replicated-shard scaling,
+    not static reef partition proof, not multi-chip, and not a baseline freeze.
+
+Tier 4.32a-hw-replicated — CURRENT ACTIVE. Replicated-shard 8/12/16-core
+  MCPL-first stress. Prepare and run only after the Tier 4.32a-hw ingested
+  pass above; require compact per-core readback, lookup request/reply parity,
+  shard-aware MCPL keys, value/meta replies, stale/duplicate/timeout/drop
+  counters, and schedule/slot high-water marks. This is still single-chip
+  replicated-shard stress, not static reef partitioning, not multi-chip, and
+  not a native-scale baseline freeze.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware

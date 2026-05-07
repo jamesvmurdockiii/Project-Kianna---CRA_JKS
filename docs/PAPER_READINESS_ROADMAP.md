@@ -6360,10 +6360,10 @@ Near-term roadmap insertion:
     MCPL lookup replies now use value/meta packets, confidence/hit/status are
     preserved, keys carry shard identity, identical seq/type cross-shard
     controls pass, and full/zero/half-confidence four-core local learning
-    controls pass through MCPL. Single-shard 4.32a-hw is authorized next.
-    Replicated stress, static reef partitioning, multi-chip scaling, and native
-    scale baseline freeze remain blocked until single-shard hardware stress
-    passes.
+    controls pass through MCPL. Single-shard 4.32a-hw has now passed after
+    EBRAINS ingest, reopening replicated-shard stress. Static reef
+    partitioning, multi-chip scaling, and native scale baseline freeze remain
+    blocked until replicated stress passes.
 ```
 
 Tier 5.19a result:
@@ -6667,11 +6667,14 @@ Tests: test-temporal-state, test-profiles, test, test-lifecycle, test-lifecycle-
 Boundary: local source/runtime host evidence only, not hardware
 ```
 
-Next: Tier 4.32a-hw single-shard MCPL-first hardware stress. The prepare gate
-      has produced `controlled_test_output/tier4_32a_hw_20260506_prepared/`
-      and upload folder `ebrains_jobs/cra_432a_hw`. Run only the eligible
-      Tier 4.32a 4/5-core points with the repaired Tier 4.32a-r1 protocol,
-      then ingest returned artifacts before reopening replicated stress.
+Next: Tier 4.32a-hw-replicated. Tier 4.32a-hw single-shard MCPL-first
+      hardware stress has passed and been ingested at
+      `controlled_test_output/tier4_32a_hw_20260507_hardware_pass_ingested/`.
+      The next gate is the 8/12/16-core replicated-shard stress using the
+      repaired Tier 4.32a-r1 MCPL value/meta reply path, shard-aware keys,
+      compact readback, and stale/duplicate/timeout counters. Static reef
+      partitioning, multi-chip work, and native-scale baseline freeze remain
+      blocked until replicated stress passes and is ingested.
       Reopen native replay-buffer, sleep-like replay, or eligibility-trace
       implementation only if a later measured blocker specifically demands it.
 ```

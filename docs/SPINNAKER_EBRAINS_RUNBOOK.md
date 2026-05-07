@@ -29,39 +29,41 @@ CRA_LIFECYCLE_NATIVE_BASELINE_v0.4
 Latest scale-planning lesson:
 
 ```text
-Do not prepare replicated 8/12/16-core shard stress by merely loading multiple
-copies of the context/route/memory/learning profiles. Tier 4.32a-r1 repaired
-the local MCPL lookup contract by adding shard identity plus value/meta reply
-packets, but replicated shard stress is still blocked until the single-shard
-hardware stress passes cleanly.
-
-The MCPL-first Tier 4.32a-hw single-shard package is now allowed as the active
-next hardware-facing step. It must use the repaired Tier 4.32a-r1 protocol and
-must be limited to the eligible 4/5-core single-shard stress points. It is not
-replicated-shard evidence, multi-chip evidence, speedup evidence, or a
-native-scale baseline freeze.
+Tier 4.32a-hw has now passed and been ingested from EBRAINS. Replicated
+8/12/16-core shard stress is reopened, but only as a single-chip
+replicated-shard stress gate using the same repaired Tier 4.32a-r1 MCPL
+contract: shard-aware keys, value/meta replies, compact readback, and
+stale/duplicate/timeout counters. It is still not multi-chip evidence, speedup
+evidence, static reef partitioning, or a native-scale baseline freeze.
 ```
 
 Latest active hardware-facing tier:
 
 ```text
 Tier 4.32a-hw - Single-Shard MCPL-First EBRAINS Scale Stress
-  Status: CURRENT ACTIVE, PREPARED locally; waiting for EBRAINS run/return
+  Status: HARDWARE PASS, INGESTED
   Local prerequisite: Tier 4.32a local preflight pass, 19/19
   Corrective prerequisite: Tier 4.32a-r0 protocol truth audit pass, 10/10
   Protocol repair prerequisite: Tier 4.32a-r1 pass, 14/14
   Protocol repair output: controlled_test_output/tier4_32a_r1_20260506_mcpl_lookup_repair/
   Prepared output: controlled_test_output/tier4_32a_hw_20260506_prepared/
-  Upload folder: ebrains_jobs/cra_432a_hw
-  JobManager command:
-    cra_432a_hw/experiments/tier4_32a_hw_single_shard_scale_stress.py --mode run-hardware --output-dir tier4_32a_hw_job_output
-  Required hardware scope now: run only point_04c_reference and
-    point_05c_lifecycle with compact per-core readback, lookup request/reply
-    parity, stale/duplicate/timeout/drop counters, and schedule/slot
-    high-water marks.
-  Still blocked: replicated 8/12/16-core stress, static reef partitioning,
-    multi-chip work, and native-scale baseline freeze.
+  Ingested output: controlled_test_output/tier4_32a_hw_20260507_hardware_pass_ingested/
+  Board: 10.11.215.185
+  Result: raw pass, ingest pass, 31/31 raw hardware criteria, 8/8 ingest
+    criteria, 63 returned artifacts, point04 48 events / 144 lookup replies,
+    point05 96 events / 288 lookup replies, zero stale replies, zero duplicate
+    replies, zero timeouts, and zero synthetic fallback.
   Boundary: single-shard hardware stress only.
+
+Tier 4.32a-hw-replicated - Replicated-Shard MCPL-First EBRAINS Scale Stress
+  Status: CURRENT ACTIVE, prepare next
+  Required scope: 8/12/16-core replicated-shard stress points from Tier 4.32a.
+  Required controls: compact per-core readback, lookup request/reply parity,
+    shard-aware MCPL keys, value/meta replies, stale/duplicate/timeout/drop
+    counters, and schedule/slot high-water marks.
+  Still blocked: static reef partitioning, multi-chip work, and native-scale
+    baseline freeze.
+  Boundary: single-chip replicated-shard stress only.
 
 Recent passed hardware-facing lifecycle tier:
 
@@ -196,7 +198,8 @@ Tier 4.31c - Native Temporal-Substrate Runtime Source Audit
     closeout passed, Tier 4.32 mapping/resource model passed, Tier 4.32a
     single-chip scale-stress preflight passed, and Tier 4.32a-r1 repaired the
     confidence-bearing shard-aware MCPL lookup blocker. Tier 4.32a-hw
-    single-shard hardware stress is active next. Native replay buffers,
+    single-shard hardware stress passed after ingest; Tier 4.32a-hw-replicated
+    is active next. Native replay buffers,
     sleep-like replay, and native macro eligibility remain deferred until
     measured blockers demand them.
 ```

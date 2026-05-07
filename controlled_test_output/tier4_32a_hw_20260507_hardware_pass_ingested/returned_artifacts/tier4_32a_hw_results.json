@@ -1,0 +1,3695 @@
+{
+  "artifacts": {
+    "report_md": "/tmp/job12907274730800089724.tmp/tier4_32a_hw_job_output/tier4_32a_hw_report.md",
+    "results_json": "/tmp/job12907274730800089724.tmp/tier4_32a_hw_job_output/tier4_32a_hw_results.json",
+    "summary_csv": "/tmp/job12907274730800089724.tmp/tier4_32a_hw_job_output/tier4_32a_hw_summary.csv"
+  },
+  "claim_boundary": "Tier 4.32a-hw is a single-shard single-chip EBRAINS hardware stress over the repaired Tier 4.32a-r1 MCPL protocol. It is not replicated-shard stress, not multi-chip evidence, not speedup evidence, not static reef partitioning, not benchmark superiority evidence, and not a native-scale baseline freeze.",
+  "criteria": [
+    {
+      "name": "runner revision current",
+      "note": "",
+      "passed": true,
+      "rule": "expected",
+      "value": "tier4_32a_hw_single_shard_scale_stress_20260506_0001"
+    },
+    {
+      "name": "synthetic fallback zero",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "name": "scope limited to single-shard points",
+      "note": "",
+      "passed": true,
+      "rule": "== allowed points only",
+      "value": [
+        "point_04c_reference",
+        "point_05c_lifecycle"
+      ]
+    },
+    {
+      "name": "point04 runner status",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "point04 pending_created",
+      "note": "",
+      "passed": true,
+      "rule": "== 48",
+      "value": 48
+    },
+    {
+      "name": "point04 pending_matured",
+      "note": "",
+      "passed": true,
+      "rule": "== 48",
+      "value": 48
+    },
+    {
+      "name": "point04 active_pending cleared",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "name": "point04 lookup_requests",
+      "note": "",
+      "passed": true,
+      "rule": "== 144",
+      "value": 144
+    },
+    {
+      "name": "point04 lookup_replies",
+      "note": "",
+      "passed": true,
+      "rule": "== 144",
+      "value": 144
+    },
+    {
+      "name": "point04 stale_replies zero",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "name": "point04 duplicate_replies zero",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "name": "point04 timeouts zero",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "name": "point05 host source checks pass",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "point05 main syntax check pass",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "point05 all five profile builds pass",
+      "note": "",
+      "passed": true,
+      "rule": "all == pass",
+      "value": {
+        "context": "pass",
+        "learning": "pass",
+        "lifecycle": "pass",
+        "memory": "pass",
+        "route": "pass"
+      }
+    },
+    {
+      "name": "point05 hardware target acquired",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "point05 all five profile loads pass",
+      "note": "",
+      "passed": true,
+      "rule": "all == pass",
+      "value": {
+        "context": "pass",
+        "learning": "pass",
+        "lifecycle": "pass",
+        "memory": "pass",
+        "route": "pass"
+      }
+    },
+    {
+      "name": "point05 enabled lifecycle bridge pass",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "point05 lifecycle readback compact",
+      "note": "",
+      "passed": true,
+      "rule": ">= 68",
+      "value": 68
+    },
+    {
+      "name": "point05 pending_created",
+      "note": "",
+      "passed": true,
+      "rule": "== 96",
+      "value": 96
+    },
+    {
+      "name": "point05 pending_matured",
+      "note": "",
+      "passed": true,
+      "rule": "== 96",
+      "value": 96
+    },
+    {
+      "name": "point05 active_pending cleared",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "name": "point05 lookup_requests",
+      "note": "",
+      "passed": true,
+      "rule": "== 288",
+      "value": 288
+    },
+    {
+      "name": "point05 lookup_replies",
+      "note": "",
+      "passed": true,
+      "rule": "== 288",
+      "value": 288
+    },
+    {
+      "name": "point05 stale_replies zero",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "name": "point05 duplicate_replies zero",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "name": "point05 timeouts zero",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "name": "point05 no unhandled hardware exception",
+      "note": "",
+      "passed": true,
+      "rule": "== True",
+      "value": true
+    },
+    {
+      "name": "point05 attempted after point04 pass",
+      "note": "",
+      "passed": true,
+      "rule": "attempted and pass",
+      "value": "pass"
+    },
+    {
+      "name": "replicated shard stress not attempted",
+      "note": "",
+      "passed": true,
+      "rule": "== not_attempted",
+      "value": "not_attempted"
+    },
+    {
+      "name": "native-scale baseline freeze not authorized",
+      "note": "",
+      "passed": true,
+      "rule": "== not_authorized",
+      "value": "not_authorized"
+    }
+  ],
+  "failure_reason": "",
+  "final_decision": {
+    "claim_boundary": "Tier 4.32a-hw is a single-shard single-chip EBRAINS hardware stress over the repaired Tier 4.32a-r1 MCPL protocol. It is not replicated-shard stress, not multi-chip evidence, not speedup evidence, not static reef partitioning, not benchmark superiority evidence, and not a native-scale baseline freeze.",
+    "native_scale_baseline_freeze": "not_authorized",
+    "replicated_8_12_16_core_stress": "authorized_next",
+    "status": "pass",
+    "tier4_32b_static_reef_partitioning": "still_blocked_until_replicated_stress_passes"
+  },
+  "generated_at_utc": "2026-05-07T00:24:55+00:00",
+  "mode": "run-hardware",
+  "output_dir": "/tmp/job12907274730800089724.tmp/tier4_32a_hw_job_output",
+  "points": {
+    "point_04c_reference": {
+      "criteria": [
+        {
+          "name": "runner revision current",
+          "note": "",
+          "passed": true,
+          "rule": "expected current source",
+          "value": "tier4_28a_four_core_mcpl_repeatability_20260502_0003"
+        },
+        {
+          "name": "custom C host tests pass",
+          "note": "",
+          "passed": true,
+          "rule": "== pass",
+          "value": "pass"
+        },
+        {
+          "name": "main.c syntax check pass",
+          "note": "",
+          "passed": true,
+          "rule": "== pass",
+          "value": "pass"
+        },
+        {
+          "name": "hardware target acquired",
+          "note": "",
+          "passed": true,
+          "rule": "status == pass",
+          "value": {
+            "attempts": [
+              {
+                "hostname": "",
+                "method": "hostname_discovery",
+                "notes": [
+                  "no hostname found in args, common environment variables, or spynnaker.cfg"
+                ],
+                "reason": "no explicit hostname/config/environment target found",
+                "status": "fail"
+              },
+              {
+                "dest_cpu": 4,
+                "dest_x": 0,
+                "dest_y": 0,
+                "hostname": "10.11.216.169",
+                "method": "pyNN.spiNNaker_probe",
+                "notes": [
+                  "acquired transceiver/IP via PyNN/sPyNNaker DataView because EBRAINS JobManager may not expose a raw hostname",
+                  "requested dest_cpu was free"
+                ],
+                "occupied_cores": [
+                  1,
+                  2,
+                  3
+                ],
+                "probe_population_size": 1,
+                "probe_run_ms": 1.0,
+                "probe_timestep_ms": 1.0,
+                "runtime_seconds": 50.69469164405018,
+                "setup_kwargs": {
+                  "timestep": 1.0
+                },
+                "status": "pass",
+                "target_ipaddress": "10.11.216.169"
+              }
+            ],
+            "dest_cpu": 4,
+            "dest_x": 0,
+            "dest_y": 0,
+            "hostname": "10.11.216.169",
+            "method": "pyNN.spiNNaker_probe",
+            "notes": [
+              "acquired transceiver/IP via PyNN/sPyNNaker DataView because EBRAINS JobManager may not expose a raw hostname",
+              "requested dest_cpu was free"
+            ],
+            "occupied_cores": [
+              1,
+              2,
+              3
+            ],
+            "probe_population_size": 1,
+            "probe_run_ms": 1.0,
+            "probe_timestep_ms": 1.0,
+            "runtime_seconds": 50.69469164405018,
+            "setup_kwargs": {
+              "timestep": 1.0
+            },
+            "status": "pass",
+            "target_ipaddress": "10.11.216.169"
+          }
+        },
+        {
+          "name": "context_core .aplx built",
+          "note": "",
+          "passed": true,
+          "rule": "== True",
+          "value": true
+        },
+        {
+          "name": "route_core .aplx built",
+          "note": "",
+          "passed": true,
+          "rule": "== True",
+          "value": true
+        },
+        {
+          "name": "memory_core .aplx built",
+          "note": "",
+          "passed": true,
+          "rule": "== True",
+          "value": true
+        },
+        {
+          "name": "learning_core .aplx built",
+          "note": "",
+          "passed": true,
+          "rule": "== True",
+          "value": true
+        },
+        {
+          "name": "context_core load pass",
+          "note": "",
+          "passed": true,
+          "rule": "== pass",
+          "value": "pass"
+        },
+        {
+          "name": "route_core load pass",
+          "note": "",
+          "passed": true,
+          "rule": "== pass",
+          "value": "pass"
+        },
+        {
+          "name": "memory_core load pass",
+          "note": "",
+          "passed": true,
+          "rule": "== pass",
+          "value": "pass"
+        },
+        {
+          "name": "learning_core load pass",
+          "note": "",
+          "passed": true,
+          "rule": "== pass",
+          "value": "pass"
+        },
+        {
+          "name": "all context writes succeeded",
+          "note": "",
+          "passed": true,
+          "rule": "all success",
+          "value": [
+            {
+              "key": "ctx_A",
+              "success": true
+            },
+            {
+              "key": "ctx_B",
+              "success": true
+            },
+            {
+              "key": "ctx_C",
+              "success": true
+            },
+            {
+              "key": "ctx_D",
+              "success": true
+            }
+          ]
+        },
+        {
+          "name": "all route writes succeeded",
+          "note": "",
+          "passed": true,
+          "rule": "all success",
+          "value": [
+            {
+              "key": "route_A",
+              "success": true
+            },
+            {
+              "key": "route_B",
+              "success": true
+            },
+            {
+              "key": "route_C",
+              "success": true
+            },
+            {
+              "key": "route_D",
+              "success": true
+            }
+          ]
+        },
+        {
+          "name": "all memory writes succeeded",
+          "note": "",
+          "passed": true,
+          "rule": "all success",
+          "value": [
+            {
+              "key": "mem_A",
+              "success": true
+            },
+            {
+              "key": "mem_B",
+              "success": true
+            },
+            {
+              "key": "mem_C",
+              "success": true
+            },
+            {
+              "key": "mem_D",
+              "success": true
+            }
+          ]
+        },
+        {
+          "name": "all schedule uploads succeeded",
+          "note": "",
+          "passed": true,
+          "rule": "all success",
+          "value": [
+            {
+              "index": 0,
+              "success": true
+            },
+            {
+              "index": 1,
+              "success": true
+            },
+            {
+              "index": 2,
+              "success": true
+            },
+            {
+              "index": 3,
+              "success": true
+            },
+            {
+              "index": 4,
+              "success": true
+            },
+            {
+              "index": 5,
+              "success": true
+            },
+            {
+              "index": 6,
+              "success": true
+            },
+            {
+              "index": 7,
+              "success": true
+            },
+            {
+              "index": 8,
+              "success": true
+            },
+            {
+              "index": 9,
+              "success": true
+            },
+            {
+              "index": 10,
+              "success": true
+            },
+            {
+              "index": 11,
+              "success": true
+            },
+            {
+              "index": 12,
+              "success": true
+            },
+            {
+              "index": 13,
+              "success": true
+            },
+            {
+              "index": 14,
+              "success": true
+            },
+            {
+              "index": 15,
+              "success": true
+            },
+            {
+              "index": 16,
+              "success": true
+            },
+            {
+              "index": 17,
+              "success": true
+            },
+            {
+              "index": 18,
+              "success": true
+            },
+            {
+              "index": 19,
+              "success": true
+            },
+            {
+              "index": 20,
+              "success": true
+            },
+            {
+              "index": 21,
+              "success": true
+            },
+            {
+              "index": 22,
+              "success": true
+            },
+            {
+              "index": 23,
+              "success": true
+            },
+            {
+              "index": 24,
+              "success": true
+            },
+            {
+              "index": 25,
+              "success": true
+            },
+            {
+              "index": 26,
+              "success": true
+            },
+            {
+              "index": 27,
+              "success": true
+            },
+            {
+              "index": 28,
+              "success": true
+            },
+            {
+              "index": 29,
+              "success": true
+            },
+            {
+              "index": 30,
+              "success": true
+            },
+            {
+              "index": 31,
+              "success": true
+            },
+            {
+              "index": 32,
+              "success": true
+            },
+            {
+              "index": 33,
+              "success": true
+            },
+            {
+              "index": 34,
+              "success": true
+            },
+            {
+              "index": 35,
+              "success": true
+            },
+            {
+              "index": 36,
+              "success": true
+            },
+            {
+              "index": 37,
+              "success": true
+            },
+            {
+              "index": 38,
+              "success": true
+            },
+            {
+              "index": 39,
+              "success": true
+            },
+            {
+              "index": 40,
+              "success": true
+            },
+            {
+              "index": 41,
+              "success": true
+            },
+            {
+              "index": 42,
+              "success": true
+            },
+            {
+              "index": 43,
+              "success": true
+            },
+            {
+              "index": 44,
+              "success": true
+            },
+            {
+              "index": 45,
+              "success": true
+            },
+            {
+              "index": 46,
+              "success": true
+            },
+            {
+              "index": 47,
+              "success": true
+            }
+          ]
+        },
+        {
+          "name": "context_core run_continuous succeeded",
+          "note": "",
+          "passed": true,
+          "rule": "== True",
+          "value": true
+        },
+        {
+          "name": "route_core run_continuous succeeded",
+          "note": "",
+          "passed": true,
+          "rule": "== True",
+          "value": true
+        },
+        {
+          "name": "memory_core run_continuous succeeded",
+          "note": "",
+          "passed": true,
+          "rule": "== True",
+          "value": true
+        },
+        {
+          "name": "learning_core run_continuous succeeded",
+          "note": "",
+          "passed": true,
+          "rule": "== True",
+          "value": true
+        },
+        {
+          "name": "context_core final read succeeded",
+          "note": "",
+          "passed": true,
+          "rule": "== True",
+          "value": true
+        },
+        {
+          "name": "route_core final read succeeded",
+          "note": "",
+          "passed": true,
+          "rule": "== True",
+          "value": true
+        },
+        {
+          "name": "memory_core final read succeeded",
+          "note": "",
+          "passed": true,
+          "rule": "== True",
+          "value": true
+        },
+        {
+          "name": "learning_core final read succeeded",
+          "note": "",
+          "passed": true,
+          "rule": "== True",
+          "value": true
+        },
+        {
+          "name": "learning_core weight near reference",
+          "note": "",
+          "passed": true,
+          "rule": "within +/- 8192 of 32768",
+          "value": 32768
+        },
+        {
+          "name": "learning_core bias near reference",
+          "note": "",
+          "passed": true,
+          "rule": "within +/- 8192 of 0",
+          "value": 0
+        },
+        {
+          "name": "learning_core pending_created matches reference",
+          "note": "",
+          "passed": true,
+          "rule": "== 48",
+          "value": 48
+        },
+        {
+          "name": "learning_core pending_matured matches reference",
+          "note": "",
+          "passed": true,
+          "rule": "== 48",
+          "value": 48
+        },
+        {
+          "name": "learning_core active_pending cleared",
+          "note": "",
+          "passed": true,
+          "rule": "== 0",
+          "value": 0
+        },
+        {
+          "name": "no unhandled hardware exception",
+          "note": "",
+          "passed": true,
+          "rule": "== True",
+          "value": true
+        },
+        {
+          "name": "learning_core schema_version v2",
+          "note": "",
+          "passed": true,
+          "rule": "== 2",
+          "value": 2
+        },
+        {
+          "name": "learning_core lookup_requests == 144",
+          "note": "",
+          "passed": true,
+          "rule": "== 144",
+          "value": 144
+        },
+        {
+          "name": "learning_core lookup_replies == 144",
+          "note": "",
+          "passed": true,
+          "rule": "== 144",
+          "value": 144
+        },
+        {
+          "name": "learning_core stale_replies == 0",
+          "note": "",
+          "passed": true,
+          "rule": "== 0",
+          "value": 0
+        },
+        {
+          "name": "learning_core timeouts == 0",
+          "note": "",
+          "passed": true,
+          "rule": "== 0",
+          "value": 0
+        },
+        {
+          "name": "context_core lookup_replies == 0",
+          "note": "",
+          "passed": true,
+          "rule": "== 0",
+          "value": 0
+        },
+        {
+          "name": "route_core lookup_replies == 0",
+          "note": "",
+          "passed": true,
+          "rule": "== 0",
+          "value": 0
+        },
+        {
+          "name": "memory_core lookup_replies == 0",
+          "note": "",
+          "passed": true,
+          "rule": "== 0",
+          "value": 0
+        }
+      ],
+      "generated_at_utc": "2026-05-07T00:23:40.166435+00:00",
+      "hardware_exception": null,
+      "loads": {
+        "context": {
+          "app_id": 1,
+          "hostname": "10.11.216.169",
+          "method": "spynnaker_dataview_transceiver.execute_flood",
+          "p": 4,
+          "runtime_seconds": 2.1111291209235787,
+          "status": "pass",
+          "x": 0,
+          "y": 0
+        },
+        "learning": {
+          "app_id": 4,
+          "hostname": "10.11.216.169",
+          "method": "spynnaker_dataview_transceiver.execute_flood",
+          "p": 7,
+          "runtime_seconds": 2.140898216981441,
+          "status": "pass",
+          "x": 0,
+          "y": 0
+        },
+        "memory": {
+          "app_id": 3,
+          "hostname": "10.11.216.169",
+          "method": "spynnaker_dataview_transceiver.execute_flood",
+          "p": 6,
+          "runtime_seconds": 2.111911559011787,
+          "status": "pass",
+          "x": 0,
+          "y": 0
+        },
+        "route": {
+          "app_id": 2,
+          "hostname": "10.11.216.169",
+          "method": "spynnaker_dataview_transceiver.execute_flood",
+          "p": 5,
+          "runtime_seconds": 2.1117170518264174,
+          "status": "pass",
+          "x": 0,
+          "y": 0
+        }
+      },
+      "mode": "run-hardware",
+      "output_dir": "/tmp/job12907274730800089724.tmp/tier4_32a_hw_job_output/point_04c_reference",
+      "runner_revision": "tier4_28a_four_core_mcpl_repeatability_20260502_0003",
+      "status": "pass",
+      "task": {
+        "final_state": {
+          "context": {
+            "active_pending": 0,
+            "active_slots": 4,
+            "active_trace_count": 0,
+            "cmd": 8,
+            "commands_received": 7,
+            "decisions": 0,
+            "duplicate_replies": 0,
+            "flags": 0,
+            "lookup_replies": 0,
+            "lookup_requests": 0,
+            "neuron_count": 0,
+            "payload_len": 105,
+            "pending_created": 0,
+            "pending_dropped": 0,
+            "pending_matured": 0,
+            "profile_id": 4,
+            "readback_bytes": 105,
+            "readout_bias": 0.0,
+            "readout_bias_raw": 0,
+            "readout_weight": 0.0,
+            "readout_weight_raw": 0,
+            "reward_events": 0,
+            "schedule_length": 0,
+            "schema_version": 2,
+            "slot_evictions": 0,
+            "slot_hits": 48,
+            "slot_misses": 0,
+            "slot_writes": 4,
+            "stale_replies": 0,
+            "status": 0,
+            "success": true,
+            "synapse_count": 0,
+            "timeouts": 0,
+            "timestep": 9264
+          },
+          "learning": {
+            "active_pending": 0,
+            "active_slots": 0,
+            "active_trace_count": 0,
+            "cmd": 8,
+            "commands_received": 52,
+            "decisions": 48,
+            "duplicate_replies": 0,
+            "flags": 0,
+            "lookup_replies": 144,
+            "lookup_requests": 144,
+            "neuron_count": 0,
+            "payload_len": 105,
+            "pending_created": 48,
+            "pending_dropped": 0,
+            "pending_matured": 48,
+            "profile_id": 3,
+            "readback_bytes": 210,
+            "readout_bias": 0.0,
+            "readout_bias_raw": 0,
+            "readout_weight": 1.0,
+            "readout_weight_raw": 32768,
+            "reward_events": 48,
+            "schedule_length": 48,
+            "schema_version": 2,
+            "slot_evictions": 0,
+            "slot_hits": 0,
+            "slot_misses": 0,
+            "slot_writes": 0,
+            "stale_replies": 0,
+            "status": 0,
+            "success": true,
+            "synapse_count": 0,
+            "timeouts": 0,
+            "timestep": 2928
+          },
+          "memory": {
+            "active_pending": 0,
+            "active_slots": 4,
+            "active_trace_count": 0,
+            "cmd": 8,
+            "commands_received": 7,
+            "decisions": 0,
+            "duplicate_replies": 0,
+            "flags": 0,
+            "lookup_replies": 0,
+            "lookup_requests": 0,
+            "neuron_count": 0,
+            "payload_len": 105,
+            "pending_created": 0,
+            "pending_dropped": 0,
+            "pending_matured": 0,
+            "profile_id": 6,
+            "readback_bytes": 105,
+            "readout_bias": 0.0,
+            "readout_bias_raw": 0,
+            "readout_weight": 0.0,
+            "readout_weight_raw": 0,
+            "reward_events": 0,
+            "schedule_length": 0,
+            "schema_version": 2,
+            "slot_evictions": 0,
+            "slot_hits": 48,
+            "slot_misses": 0,
+            "slot_writes": 4,
+            "stale_replies": 0,
+            "status": 0,
+            "success": true,
+            "synapse_count": 0,
+            "timeouts": 0,
+            "timestep": 5042
+          },
+          "route": {
+            "active_pending": 0,
+            "active_slots": 4,
+            "active_trace_count": 0,
+            "cmd": 8,
+            "commands_received": 7,
+            "decisions": 0,
+            "duplicate_replies": 0,
+            "flags": 0,
+            "lookup_replies": 0,
+            "lookup_requests": 0,
+            "neuron_count": 0,
+            "payload_len": 105,
+            "pending_created": 0,
+            "pending_dropped": 0,
+            "pending_matured": 0,
+            "profile_id": 5,
+            "readback_bytes": 105,
+            "readout_bias": 0.0,
+            "readout_bias_raw": 0,
+            "readout_weight": 0.0,
+            "readout_weight_raw": 0,
+            "reward_events": 0,
+            "schedule_length": 0,
+            "schema_version": 2,
+            "slot_evictions": 0,
+            "slot_hits": 48,
+            "slot_misses": 0,
+            "slot_writes": 4,
+            "stale_replies": 0,
+            "status": 0,
+            "success": true,
+            "synapse_count": 0,
+            "timeouts": 0,
+            "timestep": 7153
+          }
+        },
+        "pause": {
+          "context": {
+            "success": true
+          },
+          "learning": {
+            "success": true
+          },
+          "memory": {
+            "success": true
+          },
+          "route": {
+            "success": true
+          }
+        },
+        "reset": {
+          "context": true,
+          "learning": true,
+          "memory": true,
+          "route": true
+        },
+        "run_continuous": {
+          "context": {
+            "success": true
+          },
+          "learning": {
+            "success": true
+          },
+          "memory": {
+            "success": true
+          },
+          "route": {
+            "success": true
+          }
+        },
+        "schedule_uploads": [
+          {
+            "index": 0,
+            "success": true
+          },
+          {
+            "index": 1,
+            "success": true
+          },
+          {
+            "index": 2,
+            "success": true
+          },
+          {
+            "index": 3,
+            "success": true
+          },
+          {
+            "index": 4,
+            "success": true
+          },
+          {
+            "index": 5,
+            "success": true
+          },
+          {
+            "index": 6,
+            "success": true
+          },
+          {
+            "index": 7,
+            "success": true
+          },
+          {
+            "index": 8,
+            "success": true
+          },
+          {
+            "index": 9,
+            "success": true
+          },
+          {
+            "index": 10,
+            "success": true
+          },
+          {
+            "index": 11,
+            "success": true
+          },
+          {
+            "index": 12,
+            "success": true
+          },
+          {
+            "index": 13,
+            "success": true
+          },
+          {
+            "index": 14,
+            "success": true
+          },
+          {
+            "index": 15,
+            "success": true
+          },
+          {
+            "index": 16,
+            "success": true
+          },
+          {
+            "index": 17,
+            "success": true
+          },
+          {
+            "index": 18,
+            "success": true
+          },
+          {
+            "index": 19,
+            "success": true
+          },
+          {
+            "index": 20,
+            "success": true
+          },
+          {
+            "index": 21,
+            "success": true
+          },
+          {
+            "index": 22,
+            "success": true
+          },
+          {
+            "index": 23,
+            "success": true
+          },
+          {
+            "index": 24,
+            "success": true
+          },
+          {
+            "index": 25,
+            "success": true
+          },
+          {
+            "index": 26,
+            "success": true
+          },
+          {
+            "index": 27,
+            "success": true
+          },
+          {
+            "index": 28,
+            "success": true
+          },
+          {
+            "index": 29,
+            "success": true
+          },
+          {
+            "index": 30,
+            "success": true
+          },
+          {
+            "index": 31,
+            "success": true
+          },
+          {
+            "index": 32,
+            "success": true
+          },
+          {
+            "index": 33,
+            "success": true
+          },
+          {
+            "index": 34,
+            "success": true
+          },
+          {
+            "index": 35,
+            "success": true
+          },
+          {
+            "index": 36,
+            "success": true
+          },
+          {
+            "index": 37,
+            "success": true
+          },
+          {
+            "index": 38,
+            "success": true
+          },
+          {
+            "index": 39,
+            "success": true
+          },
+          {
+            "index": 40,
+            "success": true
+          },
+          {
+            "index": 41,
+            "success": true
+          },
+          {
+            "index": 42,
+            "success": true
+          },
+          {
+            "index": 43,
+            "success": true
+          },
+          {
+            "index": 44,
+            "success": true
+          },
+          {
+            "index": 45,
+            "success": true
+          },
+          {
+            "index": 46,
+            "success": true
+          },
+          {
+            "index": 47,
+            "success": true
+          }
+        ],
+        "state_writes": {
+          "context": [
+            {
+              "key": "ctx_A",
+              "success": true
+            },
+            {
+              "key": "ctx_B",
+              "success": true
+            },
+            {
+              "key": "ctx_C",
+              "success": true
+            },
+            {
+              "key": "ctx_D",
+              "success": true
+            }
+          ],
+          "memory": [
+            {
+              "key": "mem_A",
+              "success": true
+            },
+            {
+              "key": "mem_B",
+              "success": true
+            },
+            {
+              "key": "mem_C",
+              "success": true
+            },
+            {
+              "key": "mem_D",
+              "success": true
+            }
+          ],
+          "route": [
+            {
+              "key": "route_A",
+              "success": true
+            },
+            {
+              "key": "route_B",
+              "success": true
+            },
+            {
+              "key": "route_C",
+              "success": true
+            },
+            {
+              "key": "route_D",
+              "success": true
+            }
+          ]
+        },
+        "status": "completed",
+        "waited_seconds": 0.5
+      },
+      "tier": "Tier 4.28a \u2014 Four-Core MCPL Repeatability"
+    },
+    "point_05c_lifecycle": {
+      "claim_boundary": "Five-core enabled-lifecycle scale stress only; not lifecycle sham-control proof and not baseline freeze.",
+      "criteria": [
+        {
+          "name": "point05 host source checks pass",
+          "note": "",
+          "passed": true,
+          "rule": "== pass",
+          "value": "pass"
+        },
+        {
+          "name": "point05 main syntax check pass",
+          "note": "",
+          "passed": true,
+          "rule": "== pass",
+          "value": "pass"
+        },
+        {
+          "name": "point05 all five profile builds pass",
+          "note": "",
+          "passed": true,
+          "rule": "all == pass",
+          "value": {
+            "context": "pass",
+            "learning": "pass",
+            "lifecycle": "pass",
+            "memory": "pass",
+            "route": "pass"
+          }
+        },
+        {
+          "name": "point05 hardware target acquired",
+          "note": "",
+          "passed": true,
+          "rule": "== pass",
+          "value": "pass"
+        },
+        {
+          "name": "point05 all five profile loads pass",
+          "note": "",
+          "passed": true,
+          "rule": "all == pass",
+          "value": {
+            "context": "pass",
+            "learning": "pass",
+            "lifecycle": "pass",
+            "memory": "pass",
+            "route": "pass"
+          }
+        },
+        {
+          "name": "point05 enabled lifecycle bridge pass",
+          "note": "",
+          "passed": true,
+          "rule": "== pass",
+          "value": "pass"
+        },
+        {
+          "name": "point05 lifecycle readback compact",
+          "note": "",
+          "passed": true,
+          "rule": ">= 68",
+          "value": 68
+        },
+        {
+          "name": "point05 pending_created",
+          "note": "",
+          "passed": true,
+          "rule": "== 96",
+          "value": 96
+        },
+        {
+          "name": "point05 pending_matured",
+          "note": "",
+          "passed": true,
+          "rule": "== 96",
+          "value": 96
+        },
+        {
+          "name": "point05 active_pending cleared",
+          "note": "",
+          "passed": true,
+          "rule": "== 0",
+          "value": 0
+        },
+        {
+          "name": "point05 lookup_requests",
+          "note": "",
+          "passed": true,
+          "rule": "== 288",
+          "value": 288
+        },
+        {
+          "name": "point05 lookup_replies",
+          "note": "",
+          "passed": true,
+          "rule": "== 288",
+          "value": 288
+        },
+        {
+          "name": "point05 stale_replies zero",
+          "note": "",
+          "passed": true,
+          "rule": "== 0",
+          "value": 0
+        },
+        {
+          "name": "point05 duplicate_replies zero",
+          "note": "",
+          "passed": true,
+          "rule": "== 0",
+          "value": 0
+        },
+        {
+          "name": "point05 timeouts zero",
+          "note": "",
+          "passed": true,
+          "rule": "== 0",
+          "value": 0
+        },
+        {
+          "name": "point05 no unhandled hardware exception",
+          "note": "",
+          "passed": true,
+          "rule": "== True",
+          "value": true
+        }
+      ],
+      "event_count": 96,
+      "hardware_exception": null,
+      "loads": {
+        "context": {
+          "app_id": 1,
+          "hostname": "10.11.215.185",
+          "method": "spynnaker_dataview_transceiver.execute_flood",
+          "p": 4,
+          "runtime_seconds": 2.1105460091494024,
+          "status": "pass",
+          "x": 0,
+          "y": 0
+        },
+        "learning": {
+          "app_id": 4,
+          "hostname": "10.11.215.185",
+          "method": "spynnaker_dataview_transceiver.execute_flood",
+          "p": 7,
+          "runtime_seconds": 2.140420180745423,
+          "status": "pass",
+          "x": 0,
+          "y": 0
+        },
+        "lifecycle": {
+          "app_id": 5,
+          "hostname": "10.11.215.185",
+          "method": "spynnaker_dataview_transceiver.execute_flood",
+          "p": 8,
+          "runtime_seconds": 2.135234178043902,
+          "status": "pass",
+          "x": 0,
+          "y": 0
+        },
+        "memory": {
+          "app_id": 3,
+          "hostname": "10.11.215.185",
+          "method": "spynnaker_dataview_transceiver.execute_flood",
+          "p": 6,
+          "runtime_seconds": 2.116064087022096,
+          "status": "pass",
+          "x": 0,
+          "y": 0
+        },
+        "route": {
+          "app_id": 2,
+          "hostname": "10.11.215.185",
+          "method": "spynnaker_dataview_transceiver.execute_flood",
+          "p": 5,
+          "runtime_seconds": 2.1110491338185966,
+          "status": "pass",
+          "x": 0,
+          "y": 0
+        }
+      },
+      "lookup_count_expected": 288,
+      "point_id": "point_05c_lifecycle",
+      "status": "pass",
+      "target": {
+        "attempts": [
+          {
+            "hostname": "",
+            "method": "hostname_discovery",
+            "notes": [
+              "no hostname found in args, common environment variables, or spynnaker.cfg"
+            ],
+            "reason": "no explicit hostname/config/environment target found",
+            "status": "fail"
+          },
+          {
+            "dest_cpu": 4,
+            "dest_x": 0,
+            "dest_y": 0,
+            "hostname": "10.11.215.185",
+            "method": "pyNN.spiNNaker_probe",
+            "notes": [
+              "acquired transceiver/IP via PyNN/sPyNNaker DataView because EBRAINS JobManager may not expose a raw hostname",
+              "requested dest_cpu was free"
+            ],
+            "occupied_cores": [
+              1,
+              2,
+              3
+            ],
+            "probe_population_size": 1,
+            "probe_run_ms": 1.0,
+            "probe_timestep_ms": 1.0,
+            "runtime_seconds": 54.71554853115231,
+            "setup_kwargs": {
+              "timestep": 1.0
+            },
+            "status": "pass",
+            "target_ipaddress": "10.11.215.185"
+          }
+        ],
+        "dest_cpu": 4,
+        "dest_x": 0,
+        "dest_y": 0,
+        "hostname": "10.11.215.185",
+        "method": "pyNN.spiNNaker_probe",
+        "notes": [
+          "acquired transceiver/IP via PyNN/sPyNNaker DataView because EBRAINS JobManager may not expose a raw hostname",
+          "requested dest_cpu was free"
+        ],
+        "occupied_cores": [
+          1,
+          2,
+          3
+        ],
+        "probe_population_size": 1,
+        "probe_run_ms": 1.0,
+        "probe_timestep_ms": 1.0,
+        "runtime_seconds": 54.71554853115231,
+        "setup_kwargs": {
+          "timestep": 1.0
+        },
+        "status": "pass",
+        "target_ipaddress": "10.11.215.185"
+      },
+      "task": {
+        "bridge": {
+          "bridge_gate": 1,
+          "bridge_gate_raw": 32768,
+          "context_slot_raw": 32768,
+          "cue_gain_raw": 32768,
+          "feature_reason": "structural_and_trophic_ready",
+          "memory_slot_raw": 32768,
+          "mode": "enabled",
+          "route_slot_raw": 32768,
+          "structural_ok": true,
+          "trophic_floor": 461851,
+          "trophic_gap_from_enabled": 0,
+          "trophic_ok": true
+        },
+        "expected_task": {
+          "accuracy": 0.9791666666666666,
+          "bridge_gate": 1,
+          "delay_steps": 2,
+          "feature_energy": 96.0,
+          "feature_energy_raw": 3145728,
+          "final_bias": -3.0517578125e-05,
+          "final_bias_raw": -1,
+          "final_weight": 0.999969482421875,
+          "final_weight_raw": 32767,
+          "matured_events": 96,
+          "mode": "enabled",
+          "mse": 0.045833334617782384,
+          "readout_lr": 0.25,
+          "tail_accuracy": 1.0,
+          "tail_mse": 1.862645149230957e-09,
+          "task_events": 96
+        },
+        "final_profile_reads": {
+          "context": {
+            "active_pending": 0,
+            "active_slots": 1,
+            "active_trace_count": 0,
+            "cmd": 8,
+            "commands_received": 5,
+            "decisions": 0,
+            "duplicate_replies": 0,
+            "flags": 0,
+            "lookup_replies": 0,
+            "lookup_requests": 0,
+            "neuron_count": 0,
+            "payload_len": 105,
+            "pending_created": 0,
+            "pending_dropped": 0,
+            "pending_matured": 0,
+            "profile_id": 4,
+            "readback_bytes": 210,
+            "readout_bias": 0.0,
+            "readout_bias_raw": 0,
+            "readout_weight": 0.0,
+            "readout_weight_raw": 0,
+            "reward_events": 0,
+            "schedule_length": 0,
+            "schema_version": 2,
+            "slot_evictions": 0,
+            "slot_hits": 96,
+            "slot_misses": 0,
+            "slot_writes": 1,
+            "stale_replies": 0,
+            "status": 0,
+            "success": true,
+            "synapse_count": 0,
+            "timeouts": 0,
+            "timestep": 10995
+          },
+          "learning": {
+            "active_pending": 0,
+            "active_slots": 0,
+            "active_trace_count": 0,
+            "cmd": 8,
+            "commands_received": 102,
+            "decisions": 96,
+            "duplicate_replies": 0,
+            "flags": 0,
+            "lookup_replies": 288,
+            "lookup_requests": 288,
+            "neuron_count": 0,
+            "payload_len": 105,
+            "pending_created": 96,
+            "pending_dropped": 0,
+            "pending_matured": 96,
+            "profile_id": 3,
+            "readback_bytes": 420,
+            "readout_bias": 0.0,
+            "readout_bias_raw": 0,
+            "readout_weight": 1.0,
+            "readout_weight_raw": 32768,
+            "reward_events": 96,
+            "schedule_length": 96,
+            "schema_version": 2,
+            "slot_evictions": 0,
+            "slot_hits": 0,
+            "slot_misses": 0,
+            "slot_writes": 0,
+            "stale_replies": 0,
+            "status": 0,
+            "success": true,
+            "synapse_count": 0,
+            "timeouts": 0,
+            "timestep": 4656
+          },
+          "lifecycle": {
+            "active_pending": 0,
+            "active_slots": 0,
+            "active_trace_count": 0,
+            "cmd": 8,
+            "commands_received": 36,
+            "decisions": 0,
+            "duplicate_replies": 0,
+            "flags": 0,
+            "lookup_replies": 0,
+            "lookup_requests": 0,
+            "neuron_count": 0,
+            "payload_len": 105,
+            "pending_created": 0,
+            "pending_dropped": 0,
+            "pending_matured": 0,
+            "profile_id": 7,
+            "readback_bytes": 2485,
+            "readout_bias": 0.0,
+            "readout_bias_raw": 0,
+            "readout_weight": 0.0,
+            "readout_weight_raw": 0,
+            "reward_events": 0,
+            "schedule_length": 0,
+            "schema_version": 2,
+            "slot_evictions": 0,
+            "slot_hits": 0,
+            "slot_misses": 0,
+            "slot_writes": 0,
+            "stale_replies": 0,
+            "status": 0,
+            "success": true,
+            "synapse_count": 0,
+            "timeouts": 0,
+            "timestep": 2517
+          },
+          "memory": {
+            "active_pending": 0,
+            "active_slots": 1,
+            "active_trace_count": 0,
+            "cmd": 8,
+            "commands_received": 5,
+            "decisions": 0,
+            "duplicate_replies": 0,
+            "flags": 0,
+            "lookup_replies": 0,
+            "lookup_requests": 0,
+            "neuron_count": 0,
+            "payload_len": 105,
+            "pending_created": 0,
+            "pending_dropped": 0,
+            "pending_matured": 0,
+            "profile_id": 6,
+            "readback_bytes": 210,
+            "readout_bias": 0.0,
+            "readout_bias_raw": 0,
+            "readout_weight": 0.0,
+            "readout_weight_raw": 0,
+            "reward_events": 0,
+            "schedule_length": 0,
+            "schema_version": 2,
+            "slot_evictions": 0,
+            "slot_hits": 96,
+            "slot_misses": 0,
+            "slot_writes": 1,
+            "stale_replies": 0,
+            "status": 0,
+            "success": true,
+            "synapse_count": 0,
+            "timeouts": 0,
+            "timestep": 6770
+          },
+          "route": {
+            "active_pending": 0,
+            "active_slots": 1,
+            "active_trace_count": 0,
+            "cmd": 8,
+            "commands_received": 5,
+            "decisions": 0,
+            "duplicate_replies": 0,
+            "flags": 0,
+            "lookup_replies": 0,
+            "lookup_requests": 0,
+            "neuron_count": 0,
+            "payload_len": 105,
+            "pending_created": 0,
+            "pending_dropped": 0,
+            "pending_matured": 0,
+            "profile_id": 5,
+            "readback_bytes": 210,
+            "readout_bias": 0.0,
+            "readout_bias_raw": 0,
+            "readout_weight": 0.0,
+            "readout_weight_raw": 0,
+            "reward_events": 0,
+            "schedule_length": 0,
+            "schema_version": 2,
+            "slot_evictions": 0,
+            "slot_hits": 96,
+            "slot_misses": 0,
+            "slot_writes": 1,
+            "stale_replies": 0,
+            "status": 0,
+            "success": true,
+            "synapse_count": 0,
+            "timeouts": 0,
+            "timestep": 8885
+          }
+        },
+        "lifecycle": {
+          "criteria": [
+            {
+              "name": "enabled lifecycle reset acknowledged",
+              "passed": true,
+              "rule": "== True",
+              "value": true
+            },
+            {
+              "name": "enabled lifecycle init succeeded",
+              "passed": true,
+              "rule": "== True",
+              "value": true
+            },
+            {
+              "name": "enabled sham mode command succeeded",
+              "passed": true,
+              "rule": "== True",
+              "value": true
+            },
+            {
+              "name": "enabled successful event command count",
+              "passed": true,
+              "rule": "== 32",
+              "value": 32
+            },
+            {
+              "name": "enabled failed event command count",
+              "passed": true,
+              "rule": "== 0",
+              "value": 0
+            },
+            {
+              "name": "enabled lifecycle schema_version",
+              "passed": true,
+              "rule": "== 1",
+              "value": 1
+            },
+            {
+              "name": "enabled lifecycle sham_mode",
+              "passed": true,
+              "rule": "== 0",
+              "value": 0
+            },
+            {
+              "name": "enabled lifecycle pool_size",
+              "passed": true,
+              "rule": "== 8",
+              "value": 8
+            },
+            {
+              "name": "enabled lifecycle founder_count",
+              "passed": true,
+              "rule": "== 2",
+              "value": 2
+            },
+            {
+              "name": "enabled lifecycle active_count",
+              "passed": true,
+              "rule": "== 6",
+              "value": 6
+            },
+            {
+              "name": "enabled lifecycle inactive_count",
+              "passed": true,
+              "rule": "== 2",
+              "value": 2
+            },
+            {
+              "name": "enabled lifecycle active_mask_bits",
+              "passed": true,
+              "rule": "== 63",
+              "value": 63
+            },
+            {
+              "name": "enabled lifecycle attempted_event_count",
+              "passed": true,
+              "rule": "== 32",
+              "value": 32
+            },
+            {
+              "name": "enabled lifecycle lifecycle_event_count",
+              "passed": true,
+              "rule": "== 32",
+              "value": 32
+            },
+            {
+              "name": "enabled lifecycle cleavage_count",
+              "passed": true,
+              "rule": "== 4",
+              "value": 4
+            },
+            {
+              "name": "enabled lifecycle adult_birth_count",
+              "passed": true,
+              "rule": "== 4",
+              "value": 4
+            },
+            {
+              "name": "enabled lifecycle death_count",
+              "passed": true,
+              "rule": "== 4",
+              "value": 4
+            },
+            {
+              "name": "enabled lifecycle maturity_count",
+              "passed": true,
+              "rule": "== 4",
+              "value": 4
+            },
+            {
+              "name": "enabled lifecycle trophic_update_count",
+              "passed": true,
+              "rule": "== 16",
+              "value": 16
+            },
+            {
+              "name": "enabled lifecycle invalid_event_count",
+              "passed": true,
+              "rule": "== 0",
+              "value": 0
+            },
+            {
+              "name": "enabled lifecycle lineage_checksum",
+              "passed": true,
+              "rule": "== 105428",
+              "value": 105428
+            },
+            {
+              "name": "enabled lifecycle trophic_checksum",
+              "passed": true,
+              "rule": "== 466851",
+              "value": 466851
+            },
+            {
+              "name": "enabled lifecycle payload_len",
+              "passed": true,
+              "rule": "== 68",
+              "value": 68
+            }
+          ],
+          "events": [
+            {
+              "child_slot": -1,
+              "event_index": 0,
+              "event_name": "trophic_update",
+              "event_type": 1,
+              "observed_active_mask_bits": 3,
+              "observed_event_count": 1,
+              "observed_invalid_event_count": 0,
+              "parent_slot": -1,
+              "reward_raw": 3277,
+              "status": 0,
+              "success": true,
+              "target_slot": 0,
+              "trophic_delta_raw": 6554
+            },
+            {
+              "child_slot": 2,
+              "event_index": 1,
+              "event_name": "cleavage",
+              "event_type": 2,
+              "observed_active_mask_bits": 7,
+              "observed_event_count": 2,
+              "observed_invalid_event_count": 0,
+              "parent_slot": 1,
+              "reward_raw": 0,
+              "status": 0,
+              "success": true,
+              "target_slot": 0,
+              "trophic_delta_raw": 0
+            },
+            {
+              "child_slot": -1,
+              "event_index": 2,
+              "event_name": "trophic_update",
+              "event_type": 1,
+              "observed_active_mask_bits": 7,
+              "observed_event_count": 3,
+              "observed_invalid_event_count": 0,
+              "parent_slot": -1,
+              "reward_raw": -1638,
+              "status": 0,
+              "success": true,
+              "target_slot": 2,
+              "trophic_delta_raw": -3277
+            },
+            {
+              "child_slot": -1,
+              "event_index": 3,
+              "event_name": "maturity_handoff",
+              "event_type": 5,
+              "observed_active_mask_bits": 7,
+              "observed_event_count": 4,
+              "observed_invalid_event_count": 0,
+              "parent_slot": -1,
+              "reward_raw": 0,
+              "status": 0,
+              "success": true,
+              "target_slot": 0,
+              "trophic_delta_raw": 0
+            },
+            {
+              "child_slot": 3,
+              "event_index": 4,
+              "event_name": "adult_birth",
+              "event_type": 3,
+              "observed_active_mask_bits": 15,
+              "observed_event_count": 5,
+              "observed_invalid_event_count": 0,
+              "parent_slot": 2,
+              "reward_raw": 0,
+              "status": 0,
+              "success": true,
+              "target_slot": 0,
+              "trophic_delta_raw": 0
+            },
+            {
+              "child_slot": -1,
+              "event_index": 5,
+              "event_name": "trophic_update",
+              "event_type": 1,
+              "observed_active_mask_bits": 15,
+              "observed_event_count": 6,
+              "observed_invalid_event_count": 0,
+              "parent_slot": -1,
+              "reward_raw": 655,
+              "status": 0,
+              "success": true,
+              "target_slot": 2,
+              "trophic_delta_raw": 2621
+            },
+            {
+              "child_slot": -1,
+              "event_index": 6,
+              "event_name": "death",
+              "event_type": 4,
+              "observed_active_mask_bits": 7,
+              "observed_event_count": 7,
+              "observed_invalid_event_count": 0,
+              "parent_slot": -1,
+              "reward_raw": 0,
+              "status": 0,
+              "success": true,
+              "target_slot": 3,
+              "trophic_delta_raw": 0
+            },
+            {
+              "child_slot": -1,
+              "event_index": 7,
+              "event_name": "trophic_update",
+              "event_type": 1,
+              "observed_active_mask_bits": 7,
+              "observed_event_count": 8,
+              "observed_invalid_event_count": 0,
+              "parent_slot": -1,
+              "reward_raw": 0,
+              "status": 0,
+              "success": true,
+              "target_slot": 2,
+              "trophic_delta_raw": -1311
+            },
+            {
+              "child_slot": -1,
+              "event_index": 8,
+              "event_name": "trophic_update",
+              "event_type": 1,
+              "observed_active_mask_bits": 7,
+              "observed_event_count": 9,
+              "observed_invalid_event_count": 0,
+              "parent_slot": -1,
+              "reward_raw": 3277,
+              "status": 0,
+              "success": true,
+              "target_slot": 1,
+              "trophic_delta_raw": 6554
+            },
+            {
+              "child_slot": 3,
+              "event_index": 9,
+              "event_name": "cleavage",
+              "event_type": 2,
+              "observed_active_mask_bits": 15,
+              "observed_event_count": 10,
+              "observed_invalid_event_count": 0,
+              "parent_slot": 0,
+              "reward_raw": 0,
+              "status": 0,
+              "success": true,
+              "target_slot": 0,
+              "trophic_delta_raw": 0
+            },
+            {
+              "child_slot": -1,
+              "event_index": 10,
+              "event_name": "trophic_update",
+              "event_type": 1,
+              "observed_active_mask_bits": 15,
+              "observed_event_count": 11,
+              "observed_invalid_event_count": 0,
+              "parent_slot": -1,
+              "reward_raw": -1638,
+              "status": 0,
+              "success": true,
+              "target_slot": 3,
+              "trophic_delta_raw": -3277
+            },
+            {
+              "child_slot": -1,
+              "event_index": 11,
+              "event_name": "maturity_handoff",
+              "event_type": 5,
+              "observed_active_mask_bits": 15,
+              "observed_event_count": 12,
+              "observed_invalid_event_count": 0,
+              "parent_slot": -1,
+              "reward_raw": 0,
+              "status": 0,
+              "success": true,
+              "target_slot": 0,
+              "trophic_delta_raw": 0
+            },
+            {
+              "child_slot": 4,
+              "event_index": 12,
+              "event_name": "adult_birth",
+              "event_type": 3,
+              "observed_active_mask_bits": 31,
+              "observed_event_count": 13,
+              "observed_invalid_event_count": 0,
+              "parent_slot": 3,
+              "reward_raw": 0,
+              "status": 0,
+              "success": true,
+              "target_slot": 0,
+              "trophic_delta_raw": 0
+            },
+            {
+              "child_slot": -1,
+              "event_index": 13,
+              "event_name": "trophic_update",
+              "event_type": 1,
+              "observed_active_mask_bits": 31,
+              "observed_event_count": 14,
+              "observed_invalid_event_count": 0,
+              "parent_slot": -1,
+              "reward_raw": 655,
+              "status": 0,
+              "success": true,
+              "target_slot": 4,
+              "trophic_delta_raw": 2621
+            },
+            {
+              "child_slot": -1,
+              "event_index": 14,
+              "event_name": "death",
+              "event_type": 4,
+              "observed_active_mask_bits": 15,
+              "observed_event_count": 15,
+              "observed_invalid_event_count": 0,
+              "parent_slot": -1,
+              "reward_raw": 0,
+              "status": 0,
+              "success": true,
+              "target_slot": 4,
+              "trophic_delta_raw": 0
+            },
+            {
+              "child_slot": -1,
+              "event_index": 15,
+              "event_name": "trophic_update",
+              "event_type": 1,
+              "observed_active_mask_bits": 15,
+              "observed_event_count": 16,
+              "observed_invalid_event_count": 0,
+              "parent_slot": -1,
+              "reward_raw": 0,
+              "status": 0,
+              "success": true,
+              "target_slot": 2,
+              "trophic_delta_raw": -1311
+            },
+            {
+              "child_slot": -1,
+              "event_index": 16,
+              "event_name": "trophic_update",
+              "event_type": 1,
+              "observed_active_mask_bits": 15,
+              "observed_event_count": 17,
+              "observed_invalid_event_count": 0,
+              "parent_slot": -1,
+              "reward_raw": 3277,
+              "status": 0,
+              "success": true,
+              "target_slot": 2,
+              "trophic_delta_raw": 6554
+            },
+            {
+              "child_slot": 4,
+              "event_index": 17,
+              "event_name": "cleavage",
+              "event_type": 2,
+              "observed_active_mask_bits": 31,
+              "observed_event_count": 18,
+              "observed_invalid_event_count": 0,
+              "parent_slot": 3,
+              "reward_raw": 0,
+              "status": 0,
+              "success": true,
+              "target_slot": 0,
+              "trophic_delta_raw": 0
+            },
+            {
+              "child_slot": -1,
+              "event_index": 18,
+              "event_name": "trophic_update",
+              "event_type": 1,
+              "observed_active_mask_bits": 31,
+              "observed_event_count": 19,
+              "observed_invalid_event_count": 0,
+              "parent_slot": -1,
+              "reward_raw": -1638,
+              "status": 0,
+              "success": true,
+              "target_slot": 4,
+              "trophic_delta_raw": -3277
+            },
+            {
+              "child_slot": -1,
+              "event_index": 19,
+              "event_name": "maturity_handoff",
+              "event_type": 5,
+              "observed_active_mask_bits": 31,
+              "observed_event_count": 20,
+              "observed_invalid_event_count": 0,
+              "parent_slot": -1,
+              "reward_raw": 0,
+              "status": 0,
+              "success": true,
+              "target_slot": 0,
+              "trophic_delta_raw": 0
+            },
+            {
+              "child_slot": 5,
+              "event_index": 20,
+              "event_name": "adult_birth",
+              "event_type": 3,
+              "observed_active_mask_bits": 63,
+              "observed_event_count": 21,
+              "observed_invalid_event_count": 0,
+              "parent_slot": 4,
+              "reward_raw": 0,
+              "status": 0,
+              "success": true,
+              "target_slot": 0,
+              "trophic_delta_raw": 0
+            },
+            {
+              "child_slot": -1,
+              "event_index": 21,
+              "event_name": "trophic_update",
+              "event_type": 1,
+              "observed_active_mask_bits": 63,
+              "observed_event_count": 22,
+              "observed_invalid_event_count": 0,
+              "parent_slot": -1,
+              "reward_raw": 655,
+              "status": 0,
+              "success": true,
+              "target_slot": 4,
+              "trophic_delta_raw": 2621
+            },
+            {
+              "child_slot": -1,
+              "event_index": 22,
+              "event_name": "death",
+              "event_type": 4,
+              "observed_active_mask_bits": 31,
+              "observed_event_count": 23,
+              "observed_invalid_event_count": 0,
+              "parent_slot": -1,
+              "reward_raw": 0,
+              "status": 0,
+              "success": true,
+              "target_slot": 5,
+              "trophic_delta_raw": 0
+            },
+            {
+              "child_slot": -1,
+              "event_index": 23,
+              "event_name": "trophic_update",
+              "event_type": 1,
+              "observed_active_mask_bits": 31,
+              "observed_event_count": 24,
+              "observed_invalid_event_count": 0,
+              "parent_slot": -1,
+              "reward_raw": 0,
+              "status": 0,
+              "success": true,
+              "target_slot": 1,
+              "trophic_delta_raw": -1311
+            },
+            {
+              "child_slot": -1,
+              "event_index": 24,
+              "event_name": "trophic_update",
+              "event_type": 1,
+              "observed_active_mask_bits": 31,
+              "observed_event_count": 25,
+              "observed_invalid_event_count": 0,
+              "parent_slot": -1,
+              "reward_raw": 3277,
+              "status": 0,
+              "success": true,
+              "target_slot": 3,
+              "trophic_delta_raw": 6554
+            },
+            {
+              "child_slot": 5,
+              "event_index": 25,
+              "event_name": "cleavage",
+              "event_type": 2,
+              "observed_active_mask_bits": 63,
+              "observed_event_count": 26,
+              "observed_invalid_event_count": 0,
+              "parent_slot": 0,
+              "reward_raw": 0,
+              "status": 0,
+              "success": true,
+              "target_slot": 0,
+              "trophic_delta_raw": 0
+            },
+            {
+              "child_slot": -1,
+              "event_index": 26,
+              "event_name": "trophic_update",
+              "event_type": 1,
+              "observed_active_mask_bits": 63,
+              "observed_event_count": 27,
+              "observed_invalid_event_count": 0,
+              "parent_slot": -1,
+              "reward_raw": -1638,
+              "status": 0,
+              "success": true,
+              "target_slot": 5,
+              "trophic_delta_raw": -3277
+            },
+            {
+              "child_slot": -1,
+              "event_index": 27,
+              "event_name": "maturity_handoff",
+              "event_type": 5,
+              "observed_active_mask_bits": 63,
+              "observed_event_count": 28,
+              "observed_invalid_event_count": 0,
+              "parent_slot": -1,
+              "reward_raw": 0,
+              "status": 0,
+              "success": true,
+              "target_slot": 0,
+              "trophic_delta_raw": 0
+            },
+            {
+              "child_slot": 6,
+              "event_index": 28,
+              "event_name": "adult_birth",
+              "event_type": 3,
+              "observed_active_mask_bits": 127,
+              "observed_event_count": 29,
+              "observed_invalid_event_count": 0,
+              "parent_slot": 5,
+              "reward_raw": 0,
+              "status": 0,
+              "success": true,
+              "target_slot": 0,
+              "trophic_delta_raw": 0
+            },
+            {
+              "child_slot": -1,
+              "event_index": 29,
+              "event_name": "trophic_update",
+              "event_type": 1,
+              "observed_active_mask_bits": 127,
+              "observed_event_count": 30,
+              "observed_invalid_event_count": 0,
+              "parent_slot": -1,
+              "reward_raw": 655,
+              "status": 0,
+              "success": true,
+              "target_slot": 2,
+              "trophic_delta_raw": 2621
+            },
+            {
+              "child_slot": -1,
+              "event_index": 30,
+              "event_name": "death",
+              "event_type": 4,
+              "observed_active_mask_bits": 63,
+              "observed_event_count": 31,
+              "observed_invalid_event_count": 0,
+              "parent_slot": -1,
+              "reward_raw": 0,
+              "status": 0,
+              "success": true,
+              "target_slot": 6,
+              "trophic_delta_raw": 0
+            },
+            {
+              "child_slot": -1,
+              "event_index": 31,
+              "event_name": "trophic_update",
+              "event_type": 1,
+              "observed_active_mask_bits": 63,
+              "observed_event_count": 32,
+              "observed_invalid_event_count": 0,
+              "parent_slot": -1,
+              "reward_raw": 0,
+              "status": 0,
+              "success": true,
+              "target_slot": 2,
+              "trophic_delta_raw": -1311
+            }
+          ],
+          "expected": {
+            "active_count": 6,
+            "active_mask_bits": 63,
+            "adult_birth_count": 4,
+            "attempted_event_count": 32,
+            "cleavage_count": 4,
+            "death_count": 4,
+            "founder_count": 2,
+            "inactive_count": 2,
+            "invalid_event_count": 0,
+            "lifecycle_event_count": 32,
+            "lineage_checksum": 105428,
+            "maturity_count": 4,
+            "payload_len": 68,
+            "pool_size": 8,
+            "schema_version": 1,
+            "sham_mode": 0,
+            "trophic_checksum": 466851,
+            "trophic_update_count": 16
+          },
+          "final": {
+            "active_count": 6,
+            "active_mask_bits": 63,
+            "adult_birth_count": 4,
+            "attempted_event_count": 32,
+            "cleavage_count": 4,
+            "cmd": 37,
+            "death_count": 4,
+            "founder_count": 2,
+            "inactive_count": 2,
+            "invalid_event_count": 0,
+            "lifecycle_event_count": 32,
+            "lineage_checksum": 105428,
+            "maturity_count": 4,
+            "payload_len": 68,
+            "pool_size": 8,
+            "readback_bytes": 2380,
+            "schema_version": 1,
+            "sham_mode": 0,
+            "status": 0,
+            "success": true,
+            "trophic_checksum": 466851,
+            "trophic_update_count": 16
+          },
+          "init": {
+            "active_count": 2,
+            "active_mask_bits": 3,
+            "adult_birth_count": 0,
+            "attempted_event_count": 0,
+            "cleavage_count": 0,
+            "cmd": 34,
+            "death_count": 0,
+            "founder_count": 2,
+            "inactive_count": 6,
+            "invalid_event_count": 0,
+            "lifecycle_event_count": 0,
+            "lineage_checksum": 5722,
+            "maturity_count": 0,
+            "payload_len": 68,
+            "pool_size": 8,
+            "readback_bytes": 68,
+            "schema_version": 1,
+            "sham_mode": 0,
+            "status": 0,
+            "success": true,
+            "trophic_checksum": 98304,
+            "trophic_update_count": 0
+          },
+          "mode": "enabled",
+          "reset": true,
+          "sham": {
+            "active_count": 2,
+            "active_mask_bits": 3,
+            "adult_birth_count": 0,
+            "attempted_event_count": 0,
+            "cleavage_count": 0,
+            "cmd": 38,
+            "death_count": 0,
+            "founder_count": 2,
+            "inactive_count": 6,
+            "invalid_event_count": 0,
+            "lifecycle_event_count": 0,
+            "lineage_checksum": 5722,
+            "maturity_count": 0,
+            "payload_len": 68,
+            "pool_size": 8,
+            "readback_bytes": 136,
+            "schema_version": 1,
+            "sham_mode": 0,
+            "status": 0,
+            "success": true,
+            "trophic_checksum": 98304,
+            "trophic_update_count": 0
+          },
+          "status": "pass"
+        },
+        "mode": "enabled_only_96_event_lifecycle_stress",
+        "profile_reads": {
+          "context": {
+            "active_pending": 0,
+            "active_slots": 0,
+            "active_trace_count": 0,
+            "cmd": 8,
+            "commands_received": 1,
+            "decisions": 0,
+            "duplicate_replies": 0,
+            "flags": 0,
+            "lookup_replies": 0,
+            "lookup_requests": 0,
+            "neuron_count": 0,
+            "payload_len": 105,
+            "pending_created": 0,
+            "pending_dropped": 0,
+            "pending_matured": 0,
+            "profile_id": 4,
+            "readback_bytes": 105,
+            "readout_bias": 0.0,
+            "readout_bias_raw": 0,
+            "readout_weight": 0.0,
+            "readout_weight_raw": 0,
+            "reward_events": 0,
+            "schedule_length": 0,
+            "schema_version": 2,
+            "slot_evictions": 0,
+            "slot_hits": 0,
+            "slot_misses": 0,
+            "slot_writes": 0,
+            "stale_replies": 0,
+            "status": 0,
+            "success": true,
+            "synapse_count": 0,
+            "timeouts": 0,
+            "timestep": 10604
+          },
+          "learning": {
+            "active_pending": 0,
+            "active_slots": 0,
+            "active_trace_count": 0,
+            "cmd": 8,
+            "commands_received": 1,
+            "decisions": 0,
+            "duplicate_replies": 0,
+            "flags": 0,
+            "lookup_replies": 0,
+            "lookup_requests": 0,
+            "neuron_count": 0,
+            "payload_len": 105,
+            "pending_created": 0,
+            "pending_dropped": 0,
+            "pending_matured": 0,
+            "profile_id": 3,
+            "readback_bytes": 105,
+            "readout_bias": 0.0,
+            "readout_bias_raw": 0,
+            "readout_weight": 0.0,
+            "readout_weight_raw": 0,
+            "reward_events": 0,
+            "schedule_length": 0,
+            "schema_version": 2,
+            "slot_evictions": 0,
+            "slot_hits": 0,
+            "slot_misses": 0,
+            "slot_writes": 0,
+            "stale_replies": 0,
+            "status": 0,
+            "success": true,
+            "synapse_count": 0,
+            "timeouts": 0,
+            "timestep": 4265
+          },
+          "lifecycle": {
+            "active_pending": 0,
+            "active_slots": 0,
+            "active_trace_count": 0,
+            "cmd": 8,
+            "commands_received": 1,
+            "decisions": 0,
+            "duplicate_replies": 0,
+            "flags": 0,
+            "lookup_replies": 0,
+            "lookup_requests": 0,
+            "neuron_count": 0,
+            "payload_len": 105,
+            "pending_created": 0,
+            "pending_dropped": 0,
+            "pending_matured": 0,
+            "profile_id": 7,
+            "readback_bytes": 105,
+            "readout_bias": 0.0,
+            "readout_bias_raw": 0,
+            "readout_weight": 0.0,
+            "readout_weight_raw": 0,
+            "reward_events": 0,
+            "schedule_length": 0,
+            "schema_version": 2,
+            "slot_evictions": 0,
+            "slot_hits": 0,
+            "slot_misses": 0,
+            "slot_writes": 0,
+            "stale_replies": 0,
+            "status": 0,
+            "success": true,
+            "synapse_count": 0,
+            "timeouts": 0,
+            "timestep": 2126
+          },
+          "memory": {
+            "active_pending": 0,
+            "active_slots": 0,
+            "active_trace_count": 0,
+            "cmd": 8,
+            "commands_received": 1,
+            "decisions": 0,
+            "duplicate_replies": 0,
+            "flags": 0,
+            "lookup_replies": 0,
+            "lookup_requests": 0,
+            "neuron_count": 0,
+            "payload_len": 105,
+            "pending_created": 0,
+            "pending_dropped": 0,
+            "pending_matured": 0,
+            "profile_id": 6,
+            "readback_bytes": 105,
+            "readout_bias": 0.0,
+            "readout_bias_raw": 0,
+            "readout_weight": 0.0,
+            "readout_weight_raw": 0,
+            "reward_events": 0,
+            "schedule_length": 0,
+            "schema_version": 2,
+            "slot_evictions": 0,
+            "slot_hits": 0,
+            "slot_misses": 0,
+            "slot_writes": 0,
+            "stale_replies": 0,
+            "status": 0,
+            "success": true,
+            "synapse_count": 0,
+            "timeouts": 0,
+            "timestep": 6379
+          },
+          "route": {
+            "active_pending": 0,
+            "active_slots": 0,
+            "active_trace_count": 0,
+            "cmd": 8,
+            "commands_received": 1,
+            "decisions": 0,
+            "duplicate_replies": 0,
+            "flags": 0,
+            "lookup_replies": 0,
+            "lookup_requests": 0,
+            "neuron_count": 0,
+            "payload_len": 105,
+            "pending_created": 0,
+            "pending_dropped": 0,
+            "pending_matured": 0,
+            "profile_id": 5,
+            "readback_bytes": 105,
+            "readout_bias": 0.0,
+            "readout_bias_raw": 0,
+            "readout_weight": 0.0,
+            "readout_weight_raw": 0,
+            "reward_events": 0,
+            "schedule_length": 0,
+            "schema_version": 2,
+            "slot_evictions": 0,
+            "slot_hits": 0,
+            "slot_misses": 0,
+            "slot_writes": 0,
+            "stale_replies": 0,
+            "status": 0,
+            "success": true,
+            "synapse_count": 0,
+            "timeouts": 0,
+            "timestep": 8494
+          }
+        },
+        "resource_accounting": [
+          {
+            "learning_duplicate_replies": 0,
+            "learning_lookup_replies": 288,
+            "learning_lookup_requests": 288,
+            "learning_readback_bytes": 315,
+            "learning_stale_replies": 0,
+            "learning_timeouts": 0,
+            "lifecycle_readback_bytes": 2380,
+            "point_id": "point_05c_lifecycle",
+            "task_event_count": 96
+          }
+        ],
+        "status": "pass",
+        "task": {
+          "criteria": [
+            {
+              "name": "enabled task core resets",
+              "passed": true,
+              "rule": "all True",
+              "value": {
+                "context": true,
+                "learning": true,
+                "memory": true,
+                "route": true
+              }
+            },
+            {
+              "name": "enabled context write",
+              "passed": true,
+              "rule": "== True",
+              "value": true
+            },
+            {
+              "name": "enabled route write",
+              "passed": true,
+              "rule": "== True",
+              "value": true
+            },
+            {
+              "name": "enabled memory bridge write",
+              "passed": true,
+              "rule": "== True",
+              "value": true
+            },
+            {
+              "name": "enabled memory bridge value",
+              "passed": true,
+              "rule": ">= 1",
+              "value": 1
+            },
+            {
+              "name": "enabled schedule uploads",
+              "passed": true,
+              "rule": "== 96",
+              "value": 96
+            },
+            {
+              "name": "enabled run_continuous commands",
+              "passed": true,
+              "rule": "all True",
+              "value": {
+                "context": true,
+                "learning": true,
+                "memory": true,
+                "route": true
+              }
+            },
+            {
+              "name": "enabled pause commands",
+              "passed": true,
+              "rule": "all True",
+              "value": {
+                "context": true,
+                "learning": true,
+                "memory": true,
+                "route": true
+              }
+            },
+            {
+              "name": "enabled final reads",
+              "passed": true,
+              "rule": "all True",
+              "value": {
+                "context": true,
+                "learning": true,
+                "memory": true,
+                "route": true
+              }
+            },
+            {
+              "name": "enabled pending_created",
+              "passed": true,
+              "rule": "== 96",
+              "value": 96
+            },
+            {
+              "name": "enabled pending_matured",
+              "passed": true,
+              "rule": "== 96",
+              "value": 96
+            },
+            {
+              "name": "enabled active_pending cleared",
+              "passed": true,
+              "rule": "== 0",
+              "value": 0
+            },
+            {
+              "name": "enabled readout weight near reference",
+              "passed": true,
+              "rule": "within +/- 8192 of 32767",
+              "value": 32768
+            },
+            {
+              "name": "enabled readout bias near reference",
+              "passed": true,
+              "rule": "within +/- 8192 of -1",
+              "value": 0
+            },
+            {
+              "name": "enabled lookup_requests",
+              "passed": true,
+              "rule": "== 288",
+              "value": 288
+            },
+            {
+              "name": "enabled lookup_replies",
+              "passed": true,
+              "rule": "== 288",
+              "value": 288
+            },
+            {
+              "name": "enabled stale replies zero",
+              "passed": true,
+              "rule": "== 0",
+              "value": 0
+            },
+            {
+              "name": "enabled timeouts zero",
+              "passed": true,
+              "rule": "== 0",
+              "value": 0
+            }
+          ],
+          "expected_task": {
+            "accuracy": 0.9791666666666666,
+            "bridge_gate": 1,
+            "delay_steps": 2,
+            "feature_energy": 96.0,
+            "feature_energy_raw": 3145728,
+            "final_bias": -3.0517578125e-05,
+            "final_bias_raw": -1,
+            "final_weight": 0.999969482421875,
+            "final_weight_raw": 32767,
+            "matured_events": 96,
+            "mode": "enabled",
+            "mse": 0.045833334617782384,
+            "readout_lr": 0.25,
+            "tail_accuracy": 1.0,
+            "tail_mse": 1.862645149230957e-09,
+            "task_events": 96
+          },
+          "final_state": {
+            "context": {
+              "active_pending": 0,
+              "active_slots": 1,
+              "active_trace_count": 0,
+              "cmd": 8,
+              "commands_received": 4,
+              "decisions": 0,
+              "duplicate_replies": 0,
+              "flags": 0,
+              "lookup_replies": 0,
+              "lookup_requests": 0,
+              "neuron_count": 0,
+              "payload_len": 105,
+              "pending_created": 0,
+              "pending_dropped": 0,
+              "pending_matured": 0,
+              "profile_id": 4,
+              "readback_bytes": 105,
+              "readout_bias": 0.0,
+              "readout_bias_raw": 0,
+              "readout_weight": 0.0,
+              "readout_weight_raw": 0,
+              "reward_events": 0,
+              "schedule_length": 0,
+              "schema_version": 2,
+              "slot_evictions": 0,
+              "slot_hits": 96,
+              "slot_misses": 0,
+              "slot_writes": 1,
+              "stale_replies": 0,
+              "status": 0,
+              "success": true,
+              "synapse_count": 0,
+              "timeouts": 0,
+              "timestep": 10994
+            },
+            "learning": {
+              "active_pending": 0,
+              "active_slots": 0,
+              "active_trace_count": 0,
+              "cmd": 8,
+              "commands_received": 101,
+              "decisions": 96,
+              "duplicate_replies": 0,
+              "flags": 0,
+              "lookup_replies": 288,
+              "lookup_requests": 288,
+              "neuron_count": 0,
+              "payload_len": 105,
+              "pending_created": 96,
+              "pending_dropped": 0,
+              "pending_matured": 96,
+              "profile_id": 3,
+              "readback_bytes": 315,
+              "readout_bias": 0.0,
+              "readout_bias_raw": 0,
+              "readout_weight": 1.0,
+              "readout_weight_raw": 32768,
+              "reward_events": 96,
+              "schedule_length": 96,
+              "schema_version": 2,
+              "slot_evictions": 0,
+              "slot_hits": 0,
+              "slot_misses": 0,
+              "slot_writes": 0,
+              "stale_replies": 0,
+              "status": 0,
+              "success": true,
+              "synapse_count": 0,
+              "timeouts": 0,
+              "timestep": 4654
+            },
+            "memory": {
+              "active_pending": 0,
+              "active_slots": 1,
+              "active_trace_count": 0,
+              "cmd": 8,
+              "commands_received": 4,
+              "decisions": 0,
+              "duplicate_replies": 0,
+              "flags": 0,
+              "lookup_replies": 0,
+              "lookup_requests": 0,
+              "neuron_count": 0,
+              "payload_len": 105,
+              "pending_created": 0,
+              "pending_dropped": 0,
+              "pending_matured": 0,
+              "profile_id": 6,
+              "readback_bytes": 105,
+              "readout_bias": 0.0,
+              "readout_bias_raw": 0,
+              "readout_weight": 0.0,
+              "readout_weight_raw": 0,
+              "reward_events": 0,
+              "schedule_length": 0,
+              "schema_version": 2,
+              "slot_evictions": 0,
+              "slot_hits": 96,
+              "slot_misses": 0,
+              "slot_writes": 1,
+              "stale_replies": 0,
+              "status": 0,
+              "success": true,
+              "synapse_count": 0,
+              "timeouts": 0,
+              "timestep": 6769
+            },
+            "route": {
+              "active_pending": 0,
+              "active_slots": 1,
+              "active_trace_count": 0,
+              "cmd": 8,
+              "commands_received": 4,
+              "decisions": 0,
+              "duplicate_replies": 0,
+              "flags": 0,
+              "lookup_replies": 0,
+              "lookup_requests": 0,
+              "neuron_count": 0,
+              "payload_len": 105,
+              "pending_created": 0,
+              "pending_dropped": 0,
+              "pending_matured": 0,
+              "profile_id": 5,
+              "readback_bytes": 105,
+              "readout_bias": 0.0,
+              "readout_bias_raw": 0,
+              "readout_weight": 0.0,
+              "readout_weight_raw": 0,
+              "reward_events": 0,
+              "schedule_length": 0,
+              "schema_version": 2,
+              "slot_evictions": 0,
+              "slot_hits": 96,
+              "slot_misses": 0,
+              "slot_writes": 1,
+              "stale_replies": 0,
+              "status": 0,
+              "success": true,
+              "synapse_count": 0,
+              "timeouts": 0,
+              "timestep": 8883
+            }
+          },
+          "last_learning_poll": {
+            "active_pending": 0,
+            "active_slots": 0,
+            "active_trace_count": 0,
+            "cmd": 8,
+            "commands_received": 99,
+            "decisions": 96,
+            "duplicate_replies": 0,
+            "flags": 0,
+            "lookup_replies": 288,
+            "lookup_requests": 288,
+            "neuron_count": 0,
+            "payload_len": 105,
+            "pending_created": 96,
+            "pending_dropped": 0,
+            "pending_matured": 96,
+            "profile_id": 3,
+            "readback_bytes": 210,
+            "readout_bias": 0.0,
+            "readout_bias_raw": 0,
+            "readout_weight": 1.0,
+            "readout_weight_raw": 32768,
+            "reward_events": 96,
+            "schedule_length": 96,
+            "schema_version": 2,
+            "slot_evictions": 0,
+            "slot_hits": 0,
+            "slot_misses": 0,
+            "slot_writes": 0,
+            "stale_replies": 0,
+            "status": 0,
+            "success": true,
+            "synapse_count": 0,
+            "timeouts": 0,
+            "timestep": 4551
+          },
+          "mode": "enabled",
+          "pause": {
+            "context": {
+              "cmd": 25,
+              "status": 0,
+              "stopped_timestep": 10892,
+              "success": true
+            },
+            "learning": {
+              "cmd": 25,
+              "status": 0,
+              "stopped_timestep": 4553,
+              "success": true
+            },
+            "memory": {
+              "cmd": 25,
+              "status": 0,
+              "stopped_timestep": 6667,
+              "success": true
+            },
+            "route": {
+              "cmd": 25,
+              "status": 0,
+              "stopped_timestep": 8782,
+              "success": true
+            }
+          },
+          "resets": {
+            "context": true,
+            "learning": true,
+            "memory": true,
+            "route": true
+          },
+          "run_continuous": {
+            "context": {
+              "cmd": 24,
+              "status": 0,
+              "success": true
+            },
+            "learning": {
+              "cmd": 24,
+              "status": 0,
+              "success": true
+            },
+            "memory": {
+              "cmd": 24,
+              "status": 0,
+              "success": true
+            },
+            "route": {
+              "cmd": 24,
+              "status": 0,
+              "success": true
+            }
+          },
+          "runtime_seconds": 0.3404347342438996,
+          "schedule_uploads": [
+            {
+              "cmd": 26,
+              "index": 0,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 1,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 2,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 3,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 4,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 5,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 6,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 7,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 8,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 9,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 10,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 11,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 12,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 13,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 14,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 15,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 16,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 17,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 18,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 19,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 20,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 21,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 22,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 23,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 24,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 25,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 26,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 27,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 28,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 29,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 30,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 31,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 32,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 33,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 34,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 35,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 36,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 37,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 38,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 39,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 40,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 41,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 42,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 43,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 44,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 45,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 46,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 47,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 48,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 49,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 50,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 51,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 52,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 53,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 54,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 55,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 56,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 57,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 58,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 59,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 60,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 61,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 62,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 63,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 64,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 65,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 66,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 67,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 68,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 69,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 70,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 71,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 72,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 73,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 74,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 75,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 76,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 77,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 78,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 79,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 80,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 81,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 82,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 83,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 84,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 85,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 86,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 87,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 88,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 89,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 90,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 91,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 92,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 93,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 94,
+              "status": 0,
+              "success": true
+            },
+            {
+              "cmd": 26,
+              "index": 95,
+              "status": 0,
+              "success": true
+            }
+          ],
+          "state_writes": {
+            "context": {
+              "active_slots": 1,
+              "cmd": 11,
+              "slot_writes": 1,
+              "status": 0,
+              "success": true
+            },
+            "memory": {
+              "active_memory_slots": 1,
+              "cmd": 20,
+              "memory_slot_writes": 1,
+              "status": 0,
+              "success": true
+            },
+            "route": {
+              "active_route_slots": 1,
+              "cmd": 17,
+              "route_slot_writes": 1,
+              "status": 0,
+              "success": true
+            }
+          },
+          "status": "pass",
+          "waited_seconds": 0.1
+        }
+      }
+    }
+  },
+  "runner_revision": "tier4_32a_hw_single_shard_scale_stress_20260506_0001",
+  "runtime_seconds": 144.55756055982783,
+  "status": "pass",
+  "summary": {
+    "claim_boundary": "Tier 4.32a-hw is a single-shard single-chip EBRAINS hardware stress over the repaired Tier 4.32a-r1 MCPL protocol. It is not replicated-shard stress, not multi-chip evidence, not speedup evidence, not static reef partitioning, not benchmark superiority evidence, and not a native-scale baseline freeze.",
+    "point04_status": "pass",
+    "point05_status": "pass",
+    "replicated_stress_attempted": false,
+    "single_shard_only": true,
+    "synthetic_fallback_used": false
+  },
+  "tier": "4.32a-hw",
+  "tier_name": "Tier 4.32a-hw - Single-Shard MCPL-First EBRAINS Scale Stress"
+}

@@ -8994,10 +8994,11 @@ Implemented:
   rejection, and identical seq/type cross-shard separation
 - four-core local behavior tests prove full/zero/half-confidence learning
   controls pass through MCPL
-Decision: single-shard Tier 4.32a-hw EBRAINS hardware stress is authorized next
-for the eligible 4/5-core points. Replicated 8/12/16-core stress, static reef
-partitioning, multi-chip work, and native-scale baseline freeze remain blocked
-until single-shard hardware stress passes.
+Decision: single-shard Tier 4.32a-hw EBRAINS hardware stress was authorized
+for the eligible 4/5-core points and has now passed after ingest. Replicated
+8/12/16-core stress is authorized next. Static reef partitioning, multi-chip
+work, and native-scale baseline freeze remain blocked until replicated stress
+passes.
 Boundary: local source/runtime evidence only; not hardware, speedup,
 replicated-shard scaling, multi-chip scaling, static reef partition proof,
 benchmark superiority, or baseline freeze.
@@ -9067,4 +9068,86 @@ Boundary:
 Single-shard single-chip hardware stress only. Not replicated-shard scaling,
 not multi-chip, not speedup, not static reef partitioning, not benchmark
 superiority, and not a native-scale baseline freeze.
+```
+
+Latest result:
+
+```text
+Status: PASS after EBRAINS ingest
+Ingested output: controlled_test_output/tier4_32a_hw_20260507_hardware_pass_ingested/
+Raw generated: 2026-05-07T00:24:55+00:00
+Board: 10.11.215.185
+Raw hardware criteria: 31/31
+Ingest criteria: 8/8
+Returned artifacts: 63
+Runtime seconds: 144.55756055982783
+point_04c_reference: PASS, 48 events, 144 lookup requests/replies
+point_05c_lifecycle: PASS, 96 events, 288 lookup requests/replies
+Stale replies: 0
+Duplicate replies: 0
+Timeouts: 0
+Synthetic fallback: 0
+```
+
+Decision:
+
+```text
+Tier 4.32a-hw-replicated is authorized next as single-chip replicated-shard
+stress only. Static reef partitioning, multi-chip work, benchmark superiority,
+and native-scale baseline freeze remain blocked until replicated stress passes
+and is ingested.
+```
+
+## Tier 4.32a-hw-replicated - Replicated-Shard MCPL-First EBRAINS Scale Stress
+
+Question: Does the repaired MCPL lookup protocol remain stable when the
+single-chip runtime is expanded to the predeclared replicated 8/12/16-core
+stress points?
+
+Scope:
+
+```text
+8-core replicated-shard stress
+12-core replicated-shard stress
+16-core replicated-shard stress
+single chip only
+```
+
+Pass requires:
+
+```text
+real target acquisition
+successful profile builds and loads
+shard-aware MCPL keys preserved
+value/meta reply packets preserve confidence/hit/status
+lookup request/reply parity for every shard
+zero stale replies
+zero duplicate replies
+zero timeouts
+compact per-core readback returned
+schedule/slot high-water marks returned
+zero synthetic fallback
+returned artifacts ingested
+```
+
+Fail requires classification before rerun:
+
+```text
+target acquisition
+profile build/load
+MCPL delivery/routing
+cross-shard key collision
+lookup parity
+timeout/drop/stale/duplicate
+schedule/slot high-water mark
+readback/schema
+runner/environment
+```
+
+Boundary:
+
+```text
+Single-chip replicated-shard stress only. Not static reef partitioning, not
+multi-chip, not speedup, not benchmark superiority, and not a native-scale
+baseline freeze.
 ```

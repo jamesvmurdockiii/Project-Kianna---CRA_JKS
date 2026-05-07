@@ -824,20 +824,23 @@ ability.
     wrong-shard negative controls pass; full/zero/half-confidence four-core
     local learning controls pass over MCPL.
 
-57. **CURRENT ACTIVE STEP** - Tier 4.32a-hw EBRAINS single-shard single-chip
-    stress: PREPARED locally at
-    `controlled_test_output/tier4_32a_hw_20260506_prepared/` with stable upload
-    folder `ebrains_jobs/cra_432a_hw`. Run only `point_04c_reference` and
-    `point_05c_lifecycle` from 4.32a using:
-    `cra_432a_hw/experiments/tier4_32a_hw_single_shard_scale_stress.py --mode run-hardware --output-dir tier4_32a_hw_job_output`.
-    Return compact per-core readback, profile/build artifacts, lookup
-    request/reply parity, stale/duplicate/timeout/drop counters, and
-    schedule/slot high-water marks. This is hardware stress only, not
+57. Tier 4.32a-hw EBRAINS single-shard single-chip stress: COMPLETE. Hardware
+    pass ingested at
+    `controlled_test_output/tier4_32a_hw_20260507_hardware_pass_ingested/`.
+    Board `10.11.215.185`; raw remote status `pass`; ingest status `pass`;
+    `31/31` raw hardware criteria; `8/8` ingest criteria; `63` returned
+    artifacts; point04 `48` events / `144` lookup replies; point05 `96` events
+    / `288` lookup replies; zero stale replies, duplicate replies, timeouts,
+    and synthetic fallback. Boundary: single-shard hardware stress only, not
     replicated-shard scaling and not a baseline freeze.
 
-58. Tier 4.32a-hw-replicated: only after 4.32a-r1 passes and the single-shard
-    hardware stress is clean, run the 8/12/16-core
-    replicated shard stress points with the same readback/counter gates.
+58. **CURRENT ACTIVE STEP** - Tier 4.32a-hw-replicated: prepare the 8/12/16-core
+    replicated shard stress points with the same repaired MCPL value/meta reply
+    path, shard-aware keys, compact per-core readback, lookup request/reply
+    parity, stale/duplicate/timeout/drop counters, and schedule/slot high-water
+    marks. This remains single-chip replicated-shard stress. Static reef
+    partitioning, multi-chip work, and native-scale baseline freeze stay
+    blocked until replicated stress passes and is ingested.
 
 59. Tier 4.32b static reef partition smoke: map groups/modules/polyps to cores
     using the measured static-pool strategy. Do not pretend one polyp equals one
@@ -1065,12 +1068,12 @@ After each completed run or design tier:
 The next concrete action is:
 
 ```text
-Tier 4.32a-hw EBRAINS single-shard single-chip stress: Tier 4.32a-r1 passed
-locally and repaired confidence-bearing, shard-aware MCPL lookup. Prepare and
-run only the eligible 4/5-core single-shard stress points first. Replicated
-8/12/16-core stress, static reef partitioning, multi-chip communication claims,
-and a native-scale baseline freeze remain blocked until this hardware stress is
-clean.
+Tier 4.32a-hw EBRAINS single-shard single-chip stress passed and was
+ingested. Prepare Tier 4.32a-hw-replicated next: the predeclared 8/12/16-core
+replicated-shard stress points with repaired confidence-bearing, shard-aware
+MCPL lookup, compact readback, and stale/duplicate/timeout counters. Static
+reef partitioning, multi-chip communication claims, and a native-scale baseline
+freeze remain blocked until replicated stress is clean.
 ```
 
 Current reference state:
@@ -1107,7 +1110,8 @@ Tier 4.32a-r0 protocol truth audit: passed 10/10; MCPL-first 4.32a-hw blocked
 until confidence-bearing and shard-aware MCPL lookup repair passes
 Tier 4.32a-r1 MCPL lookup repair: passed 14/14; MCPL value/meta replies,
 shard-aware keys, cross-shard controls, and full/zero/half-confidence local
-learning controls are repaired; single-shard 4.32a-hw is authorized next
+learning controls are repaired; single-shard 4.32a-hw passed after ingest;
+Tier 4.32a-hw-replicated is active next
 ```
 
 Purpose:
@@ -1137,8 +1141,9 @@ the native lifecycle baseline. Keep Tier 4.31d's boundary strict: one-board
 temporal-state hardware smoke only; not nonlinear recurrence, not speedup, not
 multi-chip scaling, not benchmark superiority, and not full organism autonomy.
 The next native work must run the repaired confidence-bearing and shard-aware
-MCPL path on hardware using only the eligible Tier 4.32a single-shard points.
-Only after Tier 4.32a-hw passes may replicated 8/12/16-core stress reopen. Only
+MCPL path through the predeclared Tier 4.32a replicated 8/12/16-core stress
+points. Tier 4.32a-hw has already passed and reopened this replicated-shard
+stress gate. Only
 reopen replay buffers, sleep-like replay, or native eligibility if a later
 measured blocker specifically demands it.
 ```
