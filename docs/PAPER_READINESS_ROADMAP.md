@@ -6670,7 +6670,12 @@ Boundary: local source/runtime host evidence only, not hardware
 Next: Tier 4.32a-hw-replicated. Tier 4.32a-hw single-shard MCPL-first
       hardware stress has passed and been ingested at
       `controlled_test_output/tier4_32a_hw_20260507_hardware_pass_ingested/`.
-      The next gate is the 8/12/16-core replicated-shard stress using the
+      Tier 4.32a-hw-replicated prepare has also passed locally at
+      `controlled_test_output/tier4_32a_hw_replicated_20260507_prepared/`
+      with `14/14` criteria. The current upload folder is
+      `ebrains_jobs/cra_432a_rep`, and the exact JobManager command is
+      `cra_432a_rep/experiments/tier4_32a_hw_replicated_shard_stress.py --mode run-hardware --output-dir tier4_32a_replicated_job_output`.
+      The hardware run is the 8/12/16-core replicated-shard stress using the
       repaired Tier 4.32a-r1 MCPL value/meta reply path, shard-aware keys,
       compact readback, and stale/duplicate/timeout counters. Static reef
       partitioning, multi-chip work, and native-scale baseline freeze remain

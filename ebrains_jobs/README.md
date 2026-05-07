@@ -20,6 +20,41 @@ Public repository hygiene rules live in
 
 ## Current Jobs
 
+### `cra_432a_rep`
+
+Status: **PREPARED / WAITING EBRAINS RUN** for Tier 4.32a-hw-replicated
+single-chip replicated-shard MCPL-first scale stress.
+
+Purpose: run the predeclared replicated 8/12/16-core stress points after the
+Tier 4.32a-r1 MCPL repair and the Tier 4.32a-hw single-shard hardware pass.
+The job builds shard-specific context/route/memory/learning images and loads
+independent shard groups onto one chip.
+
+Upload folder:
+
+```text
+ebrains_jobs/cra_432a_rep
+```
+
+Exact JobManager command:
+
+```text
+cra_432a_rep/experiments/tier4_32a_hw_replicated_shard_stress.py --mode run-hardware --output-dir tier4_32a_replicated_job_output
+```
+
+Prepared artifact:
+
+```text
+controlled_test_output/tier4_32a_hw_replicated_20260507_prepared/
+```
+
+Prepare result: `14/14` local criteria. The package is source-only, about 1 MB,
+and does not include `controlled_test_output/`.
+
+Boundary: single-chip replicated-shard stress only. It is not static reef
+partitioning, not multi-chip evidence, not speedup evidence, and not a
+native-scale baseline freeze.
+
 ### `cra_432a_hw`
 
 Status: **HARDWARE PASS / INGESTED** for Tier 4.32a-hw single-shard
@@ -58,10 +93,9 @@ Boundary: single-shard single-chip hardware stress only. It is not
 replicated-shard stress, not multi-chip evidence, not speedup evidence, not
 static reef partitioning, and not a native-scale baseline freeze.
 
-Next: Tier 4.32a-hw-replicated. Prepare the 8/12/16-core replicated-shard
-stress package using the repaired MCPL value/meta reply path, shard-aware keys,
-compact per-core readback, and stale/duplicate/timeout counters. Static reef
-partitioning, multi-chip work, and native-scale baseline freeze remain blocked.
+Next: Tier 4.32a-hw-replicated is prepared as `cra_432a_rep`. Run that package
+on EBRAINS and ingest the returned artifacts before static reef partitioning,
+multi-chip work, or native-scale baseline freeze can reopen.
 
 ### Tier 4.31e
 

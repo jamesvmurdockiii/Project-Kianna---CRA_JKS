@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-07T00:33:40+00:00.
+Last updated: 2026-05-07T00:46:06+00:00.
 
 Current repo root:
 
@@ -106,12 +106,16 @@ FROZEN: CRA_LIFECYCLE_NATIVE_BASELINE_v0.4
         31/31 raw hardware criteria, 8/8 ingest criteria, 63 returned
         artifacts, point04 48 events / 144 lookup replies, point05 96 events /
         288 lookup replies, zero stale replies, zero duplicate replies, zero
-        timeouts, and zero synthetic fallback. Prepare the 8/12/16-core
-        replicated-shard stress next using the same repaired MCPL value/meta
-        reply path, shard-aware keys, compact readback, and
-        stale/duplicate/timeout counters. Static reef partitioning, multi-chip
-        work, and native-scale baseline freeze remain blocked until replicated
-        stress passes and is ingested.
+        timeouts, and zero synthetic fallback. Tier 4.32a-hw-replicated prepare
+        then passed locally at
+        controlled_test_output/tier4_32a_hw_replicated_20260507_prepared/ with
+        14/14 criteria. Stable upload folder: ebrains_jobs/cra_432a_rep. Exact
+        JobManager command:
+        cra_432a_rep/experiments/tier4_32a_hw_replicated_shard_stress.py --mode run-hardware --output-dir tier4_32a_replicated_job_output.
+        Run that prepared package on EBRAINS next and ingest the returned
+        artifacts. Static reef partitioning, multi-chip work, and native-scale
+        baseline freeze remain blocked until replicated stress passes and is
+        ingested.
 ```
 
 Current active tier state:
@@ -254,13 +258,16 @@ Tier 4.32a-hw — COMPLETE. EBRAINS single-shard single-chip stress.
   Boundary: single-shard hardware stress only; not replicated-shard scaling,
     not static reef partition proof, not multi-chip, and not a baseline freeze.
 
-Tier 4.32a-hw-replicated — CURRENT ACTIVE. Replicated-shard 8/12/16-core
-  MCPL-first stress. Prepare and run only after the Tier 4.32a-hw ingested
-  pass above; require compact per-core readback, lookup request/reply parity,
-  shard-aware MCPL keys, value/meta replies, stale/duplicate/timeout/drop
-  counters, and schedule/slot high-water marks. This is still single-chip
-  replicated-shard stress, not static reef partitioning, not multi-chip, and
-  not a native-scale baseline freeze.
+Tier 4.32a-hw-replicated — PREPARED / CURRENT ACTIVE HARDWARE RUN. Replicated-
+  shard 8/12/16-core MCPL-first stress. Prepare passed locally `14/14` at
+  controlled_test_output/tier4_32a_hw_replicated_20260507_prepared/.
+  Stable upload folder: ebrains_jobs/cra_432a_rep. Exact JobManager command:
+  cra_432a_rep/experiments/tier4_32a_hw_replicated_shard_stress.py --mode run-hardware --output-dir tier4_32a_replicated_job_output.
+  PASS requires compact per-core readback, lookup request/reply parity,
+  shard-aware MCPL keys, value/meta replies, zero stale/duplicate/timeout/drop
+  counters, and returned artifacts ingested. This is still single-chip
+  replicated-shard stress, not static reef partitioning, not multi-chip, and not
+  a native-scale baseline freeze.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware
@@ -745,11 +752,13 @@ Immediate next steps:
 
 1. Keep Tier 4.31d/4.31e boundaries strict: one-board temporal-state smoke plus
    local replay/eligibility decision closeout only, no new freeze.
-2. Tier 4.32a-r1 supersedes the earlier 4.32a-r0 blocker. The next native step
-   is Tier 4.32a-hw single-shard EBRAINS scale stress using the repaired MCPL
-   lookup protocol. Run only the eligible 4/5-core single-shard points first;
-   do not jump to replicated 8/12/16-core stress, static reef partitioning,
-   multi-chip, benchmarks, or a native-scale baseline freeze.
+2. Tier 4.32a-hw single-shard EBRAINS scale stress has passed and Tier
+   4.32a-hw-replicated prepare has passed. The next native step is to upload
+   `ebrains_jobs/cra_432a_rep` and run:
+   `cra_432a_rep/experiments/tier4_32a_hw_replicated_shard_stress.py --mode run-hardware --output-dir tier4_32a_replicated_job_output`.
+   Do not jump to static reef partitioning, multi-chip, benchmarks, or a
+   native-scale baseline freeze until the replicated-shard artifacts are
+   returned, ingested, and pass.
 3. Keep the 4.31b/4.31c range refinement explicit: selected trace bound is ±2
    in s16.15; the older ±1 sketch saturated and must not silently return.
 4. Keep public repo hygiene green before the next upload or commit: no

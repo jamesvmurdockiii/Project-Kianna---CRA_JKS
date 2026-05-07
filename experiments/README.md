@@ -57,8 +57,15 @@ Tier 4.32a-hw then passed after EBRAINS ingest at
 criteria, `8/8` ingest criteria, `63` returned artifacts, point04 `48` events /
 `144` lookup replies, point05 `96` events / `288` lookup replies, zero stale
 replies, zero duplicate replies, zero timeouts, and zero synthetic fallback.
-Tier 4.32a-hw-replicated is now the active next gate; static reef partitioning,
-multi-chip work, and native-scale baseline freeze remain blocked.
+Tier 4.32a-hw-replicated prepare then passed locally at
+`controlled_test_output/tier4_32a_hw_replicated_20260507_prepared/` with
+`14/14` criteria. The current EBRAINS upload folder is
+`ebrains_jobs/cra_432a_rep`, and the exact JobManager command is
+`cra_432a_rep/experiments/tier4_32a_hw_replicated_shard_stress.py --mode
+run-hardware --output-dir tier4_32a_replicated_job_output`. This is preparation
+only, not hardware evidence. Static reef partitioning, multi-chip work, and
+native-scale baseline freeze remain blocked until that replicated-shard run is
+returned and ingested.
 
 Tier 4.12 proves NEST/Brian2 parity plus SpiNNaker
 PyNN readiness prep. Tier 4.13 records a real SpiNNaker hardware-capsule pass

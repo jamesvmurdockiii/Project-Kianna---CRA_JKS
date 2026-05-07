@@ -9113,6 +9113,35 @@ Scope:
 single chip only
 ```
 
+Prepared output:
+
+```text
+controlled_test_output/tier4_32a_hw_replicated_20260507_prepared/
+```
+
+Upload folder:
+
+```text
+ebrains_jobs/cra_432a_rep
+```
+
+JobManager command:
+
+```text
+cra_432a_rep/experiments/tier4_32a_hw_replicated_shard_stress.py --mode run-hardware --output-dir tier4_32a_replicated_job_output
+```
+
+Prepare result:
+
+```text
+Status: PREPARED
+Local prepare criteria: 14/14
+Runner revision: tier4_32a_hw_replicated_shard_stress_20260507_0001
+Source-only package: yes
+Package size: about 1 MB
+Package files: 46
+```
+
 Pass requires:
 
 ```text

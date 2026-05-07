@@ -1,0 +1,40 @@
+{
+  "claim_boundary": "Prepared source bundle only. Hardware evidence requires returned run-hardware artifacts from EBRAINS/SpiNNaker.",
+  "core_map": {
+    "shard_0": {
+      "context": 1,
+      "learning": 4,
+      "memory": 3,
+      "route": 2
+    },
+    "shard_1": {
+      "context": 5,
+      "learning": 8,
+      "memory": 7,
+      "route": 6
+    },
+    "shard_2": {
+      "context": 9,
+      "learning": 12,
+      "memory": 11,
+      "route": 10
+    },
+    "shard_3": {
+      "context": 13,
+      "learning": 16,
+      "memory": 15,
+      "route": 14
+    }
+  },
+  "job_command": "cra_432a_rep/experiments/tier4_32a_hw_replicated_shard_stress.py --mode run-hardware --output-dir tier4_32a_replicated_job_output",
+  "prepared_at_utc": "2026-05-07T00:45:04+00:00",
+  "runner": "experiments/tier4_32a_hw_replicated_shard_stress.py",
+  "runner_revision": "tier4_32a_hw_replicated_shard_stress_20260507_0001",
+  "scope": [
+    "point_08c_dual_shard",
+    "point_12c_triple_shard",
+    "point_16c_quad_shard"
+  ],
+  "tier": "Tier 4.32a-hw-replicated - Replicated-Shard MCPL-First EBRAINS Scale Stress",
+  "upload_package": "cra_432a_rep"
+}

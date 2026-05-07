@@ -56,7 +56,13 @@ Tier 4.32a-hw - Single-Shard MCPL-First EBRAINS Scale Stress
   Boundary: single-shard hardware stress only.
 
 Tier 4.32a-hw-replicated - Replicated-Shard MCPL-First EBRAINS Scale Stress
-  Status: CURRENT ACTIVE, prepare next
+  Status: PREPARED / WAITING EBRAINS RUN
+  Prepared output: controlled_test_output/tier4_32a_hw_replicated_20260507_prepared/
+  Upload folder: ebrains_jobs/cra_432a_rep
+  JobManager command:
+    cra_432a_rep/experiments/tier4_32a_hw_replicated_shard_stress.py --mode run-hardware --output-dir tier4_32a_replicated_job_output
+  Prepare result: 14/14 local criteria, source-only upload bundle, package
+    size about 1 MB, 46 files, no controlled_test_output archive.
   Required scope: 8/12/16-core replicated-shard stress points from Tier 4.32a.
   Required controls: compact per-core readback, lookup request/reply parity,
     shard-aware MCPL keys, value/meta replies, stale/duplicate/timeout/drop
@@ -199,7 +205,7 @@ Tier 4.31c - Native Temporal-Substrate Runtime Source Audit
     single-chip scale-stress preflight passed, and Tier 4.32a-r1 repaired the
     confidence-bearing shard-aware MCPL lookup blocker. Tier 4.32a-hw
     single-shard hardware stress passed after ingest; Tier 4.32a-hw-replicated
-    is active next. Native replay buffers,
+    prepare passed and `cra_432a_rep` is waiting for EBRAINS execution. Native replay buffers,
     sleep-like replay, and native macro eligibility remain deferred until
     measured blockers demand them.
 ```
