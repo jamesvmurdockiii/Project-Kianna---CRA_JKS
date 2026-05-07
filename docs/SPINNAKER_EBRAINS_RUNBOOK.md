@@ -44,10 +44,14 @@ ingested at controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/.
 Tier 4.32f multi-chip resource/lifecycle decision then passed locally at
 controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/
 and selected lifecycle traffic with resource counters as the next direction.
-The next step is Tier 4.32g-r0 source/route repair audit before another EBRAINS
-package. Speedup, benchmark, true two-partition, lifecycle-scaling, multi-shard,
-and native-scale baseline-freeze claims remain blocked until the next
-contract-backed evidence gate passes.
+Tier 4.32g-r0 source/route repair audit then passed locally at
+controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/ with
+14/14 criteria, source-proving lifecycle event/trophic/mask-sync inter-chip
+routes and preserving lookup-route plus lifecycle-split regressions. The next
+step is Tier 4.32g two-chip lifecycle traffic/resource hardware smoke. Speedup,
+benchmark, true two-partition, lifecycle-scaling, multi-shard, and native-scale
+baseline-freeze claims remain blocked until the next contract-backed hardware
+evidence gate passes.
 ```
 
 Latest ingest hygiene lesson:
@@ -147,6 +151,15 @@ Tier 4.32f - Multi-Chip Resource/Lifecycle Decision Contract
     direction; immediate 4.32g hardware packaging is blocked until 4.32g-r0
     source-proves lifecycle inter-chip routes and readback counters.
   Boundary: local decision/contract only, not hardware.
+
+Tier 4.32g-r0 - Multi-Chip Lifecycle Route/Source Repair Audit
+  Status: LOCAL PASS
+  Output: controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/
+  Criteria: 14/14
+  Decision: lifecycle event request, trophic update, and active-mask/lineage
+    sync MCPL routes are source-proven for learning/lifecycle profiles; Tier
+    4.32g hardware preparation is authorized next.
+  Boundary: local source/runtime QA only, not hardware.
 
 Recent passed hardware-facing lifecycle tier:
 
@@ -290,10 +303,10 @@ Tier 4.31c - Native Temporal-Substrate Runtime Source Audit
     two-chip communication/readback hardware smoke after EBRAINS ingest. Tier
     4.32e then passed the two-chip learning micro-task after EBRAINS ingest.
     Tier 4.32f then passed locally and authorized Tier 4.32g-r0 source/route
-    repair audit before another hardware package. Native
-    replay buffers, sleep-like replay,
-    and native macro eligibility remain deferred until measured blockers demand
-    them.
+    repair audit before another hardware package. Tier 4.32g-r0 then passed
+    locally and authorized Tier 4.32g two-chip lifecycle traffic/resource
+    hardware smoke. Native replay buffers, sleep-like replay, and native macro
+    eligibility remain deferred until measured blockers demand them.
 ```
 
 Tier 4.28e Point A passed after ingest at:

@@ -1,0 +1,14 @@
+finding_id,file,token,present,purpose
+event_msg_type,coral_reef_spinnaker/spinnaker_runtime/src/config.h,MCPL_MSG_LIFECYCLE_EVENT_REQUEST,True,Lifecycle event request message type exists.
+trophic_msg_type,coral_reef_spinnaker/spinnaker_runtime/src/config.h,MCPL_MSG_LIFECYCLE_TROPHIC_UPDATE,True,Lifecycle trophic update message type exists.
+sync_msg_type,coral_reef_spinnaker/spinnaker_runtime/src/config.h,MCPL_MSG_LIFECYCLE_ACTIVE_MASK_SYNC,True,Lifecycle active-mask/lineage sync message type exists.
+request_route_macro,coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c,CRA_MCPL_INTERCHIP_LIFECYCLE_REQUEST_LINK_ROUTE,True,Learning/source core can install outbound lifecycle request link routes.
+sync_route_macro,coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c,CRA_MCPL_INTERCHIP_LIFECYCLE_SYNC_LINK_ROUTE,True,Lifecycle core can install outbound active-mask sync link routes.
+event_route_install,coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c,"MCPL_MSG_LIFECYCLE_EVENT_REQUEST, 0, 0",True,Route install code references lifecycle event request keys.
+trophic_route_install,coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c,"MCPL_MSG_LIFECYCLE_TROPHIC_UPDATE, 0, 0",True,Route install code references lifecycle trophic update keys.
+sync_route_install,coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c,"MCPL_MSG_LIFECYCLE_ACTIVE_MASK_SYNC, 0, 0",True,Route install code references active-mask sync keys.
+duplicate_counter,coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h,lifecycle_duplicate_events,True,Duplicate lifecycle events are counted.
+stale_counter,coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h,lifecycle_stale_events,True,Stale lifecycle events are counted.
+missing_ack_counter,coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h,lifecycle_missing_acks,True,Missing lifecycle acks are counted.
+route_contract_test,coral_reef_spinnaker/spinnaker_runtime/tests/test_mcpl_lifecycle_interchip_route_contract.c,Tier 4.32g-r0 lifecycle MCPL inter-chip route contract tests,True,Local C route contract test exists.
+make_target,coral_reef_spinnaker/spinnaker_runtime/Makefile,test-mcpl-lifecycle-interchip-route-contract,True,Runtime Makefile exposes the lifecycle route contract test.

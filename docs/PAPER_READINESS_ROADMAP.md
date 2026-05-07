@@ -6436,11 +6436,22 @@ Near-term roadmap insertion:
     as the next direction, classified that lifecycle inter-chip route entries
     are not yet source-proven, authorized Tier 4.32g-r0 source/route repair
     audit next, and blocked immediate 4.32g hardware packaging.
-34. Tier 4.32g-r0 multi-chip lifecycle route/source repair audit. CURRENT NEXT:
-    source-prove lifecycle event request, trophic update, and active-mask/lineage
-    sync routes across chips before any new EBRAINS package. Required outputs:
-    source findings, route contract, local C host tests, counters/readback schema,
-    failure classes, and a clear 4.32g hardware authorization or blocker.
+34. Tier 4.32g-r0 multi-chip lifecycle route/source repair audit. COMPLETE:
+    local pass at
+    `controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/`
+    with `14/14` criteria. It source-proved lifecycle event request, trophic
+    update, and active-mask/lineage sync MCPL routes for learning/lifecycle
+    profiles, passed the new lifecycle inter-chip route C test plus lookup-route
+    and lifecycle-split regressions, authorized Tier 4.32g hardware package
+    preparation, and kept true partition semantics, speedup, benchmarks,
+    multi-shard learning, and native-scale baseline freeze blocked.
+35. Tier 4.32g two-chip lifecycle traffic/resource hardware smoke. CURRENT NEXT:
+    package and run the predeclared lifecycle event/trophic/active-mask sync
+    traffic path with compact resource counters on real SpiNNaker. Required
+    outputs: upload folder, exact JobManager command, target acquisition,
+    board/chip/core roles, lifecycle request/sync counters, stale/duplicate/
+    missing-ack counters, compact readback, returned artifacts, ingest bundle,
+    claim boundary, and failure-class diagnosis if blocked.
 ```
 
 Tier 5.19a result:
@@ -6744,7 +6755,7 @@ Tests: test-temporal-state, test-profiles, test, test-lifecycle, test-lifecycle-
 Boundary: local source/runtime host evidence only, not hardware
 ```
 
-Next: Build Tier 4.32g-r0 multi-chip lifecycle route/source repair audit.
+Next: Build Tier 4.32g two-chip lifecycle traffic/resource hardware smoke.
       Tier 4.32e passed after EBRAINS ingest at
       `controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/`:
       board `10.11.205.161`, two cases, 32 events per case, 96/96 lookup
@@ -6753,10 +6764,13 @@ Next: Build Tier 4.32g-r0 multi-chip lifecycle route/source repair audit.
       and no-learning LR 0.0 readout `0/0`. Tier 4.32f then passed locally at
       `controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/`,
       selected lifecycle traffic/resource counters as the next direction, and
-      blocked immediate hardware because lifecycle inter-chip routes are not
-      source-proven yet. Speedup claims, benchmark claims, true two-partition
-      cross-chip learning, lifecycle scaling, multi-shard learning, and
-      native-scale baseline freeze remain blocked. Reopen native
+      blocked immediate hardware until lifecycle inter-chip routes were
+      source-proven. Tier 4.32g-r0 then passed locally at
+      `controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/`
+      with 14/14 criteria and authorized Tier 4.32g hardware preparation.
+      Speedup claims, benchmark claims, true two-partition cross-chip learning,
+      lifecycle scaling, multi-shard learning, and native-scale baseline freeze
+      remain blocked. Reopen native
       replay-buffer,
       sleep-like replay, or eligibility-trace implementation only if a later
       measured blocker specifically demands it.

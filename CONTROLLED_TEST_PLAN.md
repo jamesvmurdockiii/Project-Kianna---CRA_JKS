@@ -9642,3 +9642,76 @@ evidence, not speedup, not benchmark superiority, not true two-partition
 learning, not lifecycle scaling, not multi-shard learning, and not a
 native-scale baseline freeze.
 ```
+
+## Tier 4.32g-r0 - Multi-Chip Lifecycle Route/Source Repair Audit
+
+Question: Can lifecycle event request, trophic update, and active-mask/lineage
+sync MCPL routes be source-proven before the next two-chip lifecycle hardware
+package?
+
+Result:
+
+```text
+Status: PASS
+Output: controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/
+Criteria: 14/14
+4.32g hardware prepare: authorized_next
+Selected next gate: tier4_32g_two_chip_lifecycle_traffic_resource_hardware_smoke
+True partition semantics: blocked_until_4_32g_hardware_result
+Native scale baseline freeze: not_authorized
+```
+
+Source/route repair covered:
+
+```text
+learning_local_mask_sync_consumer
+learning_outbound_lifecycle_event
+learning_outbound_lifecycle_trophic
+lifecycle_local_event_request
+lifecycle_local_trophic_request
+lifecycle_outbound_mask_sync
+```
+
+Regression tests:
+
+```text
+make -C coral_reef_spinnaker/spinnaker_runtime test-mcpl-lifecycle-interchip-route-contract
+make -C coral_reef_spinnaker/spinnaker_runtime test-mcpl-interchip-route-contract
+make -C coral_reef_spinnaker/spinnaker_runtime test-lifecycle-split
+```
+
+Pass case:
+
+```text
+4.32f prerequisite passed
+4.32e learning prerequisite passed
+lifecycle source findings present
+six required lifecycle route paths covered
+learning profile has outbound event and trophic routes
+learning profile has local active-mask sync consumer route
+lifecycle profile has local event and trophic routes
+lifecycle profile has outbound active-mask sync route
+local lifecycle route contract test passes
+lookup inter-chip route regression still passes
+lifecycle split regression still passes
+4.32g hardware preparation is authorized
+true partition semantics remain blocked until hardware result
+```
+
+Fail case:
+
+```text
+missing route macro, missing route install, missing duplicate/stale/missing-ack
+counter, local C route contract failure, lookup route regression failure,
+lifecycle split regression failure, or premature hardware/speedup/baseline claim
+```
+
+Decision:
+
+```text
+Tier 4.32g-r0 passed as local source/runtime QA. The next authorized action is
+Tier 4.32g two-chip lifecycle traffic/resource hardware smoke. This does not
+claim hardware evidence yet and does not authorize speedup, benchmark,
+lifecycle-scaling, true two-partition, multi-shard, or native-scale baseline
+freeze claims.
+```

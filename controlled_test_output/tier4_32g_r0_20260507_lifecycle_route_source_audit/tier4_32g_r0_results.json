@@ -1,0 +1,376 @@
+{
+  "artifacts": {
+    "criteria_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/tier4_32g_r0_criteria.csv",
+    "next_gates_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/tier4_32g_r0_next_gates.csv",
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/tier4_32g_r0_report.md",
+    "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/tier4_32g_r0_results.json",
+    "route_contract_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/tier4_32g_r0_route_contract.csv",
+    "source_findings_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/tier4_32g_r0_source_findings.csv",
+    "test_commands_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/tier4_32g_r0_test_commands.csv"
+  },
+  "claim_boundary": "Tier 4.32g-r0 is local source/route QA only. It source-proves lifecycle event/trophic/mask-sync inter-chip MCPL route support before a hardware package. It is not SpiNNaker hardware evidence, not lifecycle scaling, not speedup evidence, not benchmark superiority, not true two-partition learning, not multi-shard learning, and not a native-scale baseline freeze.",
+  "criteria": [
+    {
+      "name": "Tier 4.32f prerequisite passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "4.32f authorized 4.32g-r0 next",
+      "note": "",
+      "passed": true,
+      "rule": "== tier4_32g_r0_multichip_lifecycle_route_source_repair_audit",
+      "value": "tier4_32g_r0_multichip_lifecycle_route_source_repair_audit"
+    },
+    {
+      "name": "Tier 4.32e hardware learning prerequisite passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "source lifecycle route findings present",
+      "note": "",
+      "passed": true,
+      "rule": "empty",
+      "value": []
+    },
+    {
+      "name": "route contract covers six required lifecycle paths",
+      "note": "",
+      "passed": true,
+      "rule": "== 6",
+      "value": 6
+    },
+    {
+      "name": "learning core has outbound event route",
+      "note": "",
+      "passed": true,
+      "rule": "contains learning_outbound_lifecycle_event",
+      "value": [
+        "learning_local_mask_sync_consumer",
+        "learning_outbound_lifecycle_event",
+        "learning_outbound_lifecycle_trophic",
+        "lifecycle_local_event_request",
+        "lifecycle_local_trophic_request",
+        "lifecycle_outbound_mask_sync"
+      ]
+    },
+    {
+      "name": "learning core has outbound trophic route",
+      "note": "",
+      "passed": true,
+      "rule": "contains learning_outbound_lifecycle_trophic",
+      "value": [
+        "learning_local_mask_sync_consumer",
+        "learning_outbound_lifecycle_event",
+        "learning_outbound_lifecycle_trophic",
+        "lifecycle_local_event_request",
+        "lifecycle_local_trophic_request",
+        "lifecycle_outbound_mask_sync"
+      ]
+    },
+    {
+      "name": "learning core has local mask-sync consumer route",
+      "note": "",
+      "passed": true,
+      "rule": "contains learning_local_mask_sync_consumer",
+      "value": [
+        "learning_local_mask_sync_consumer",
+        "learning_outbound_lifecycle_event",
+        "learning_outbound_lifecycle_trophic",
+        "lifecycle_local_event_request",
+        "lifecycle_local_trophic_request",
+        "lifecycle_outbound_mask_sync"
+      ]
+    },
+    {
+      "name": "lifecycle core has local event route",
+      "note": "",
+      "passed": true,
+      "rule": "contains lifecycle_local_event_request",
+      "value": [
+        "learning_local_mask_sync_consumer",
+        "learning_outbound_lifecycle_event",
+        "learning_outbound_lifecycle_trophic",
+        "lifecycle_local_event_request",
+        "lifecycle_local_trophic_request",
+        "lifecycle_outbound_mask_sync"
+      ]
+    },
+    {
+      "name": "lifecycle core has local trophic route",
+      "note": "",
+      "passed": true,
+      "rule": "contains lifecycle_local_trophic_request",
+      "value": [
+        "learning_local_mask_sync_consumer",
+        "learning_outbound_lifecycle_event",
+        "learning_outbound_lifecycle_trophic",
+        "lifecycle_local_event_request",
+        "lifecycle_local_trophic_request",
+        "lifecycle_outbound_mask_sync"
+      ]
+    },
+    {
+      "name": "lifecycle core has outbound mask-sync route",
+      "note": "",
+      "passed": true,
+      "rule": "contains lifecycle_outbound_mask_sync",
+      "value": [
+        "learning_local_mask_sync_consumer",
+        "learning_outbound_lifecycle_event",
+        "learning_outbound_lifecycle_trophic",
+        "lifecycle_local_event_request",
+        "lifecycle_local_trophic_request",
+        "lifecycle_outbound_mask_sync"
+      ]
+    },
+    {
+      "name": "local test commands passed",
+      "note": "",
+      "passed": true,
+      "rule": "empty",
+      "value": []
+    },
+    {
+      "name": "4.32g hardware prepare authorized",
+      "note": "",
+      "passed": true,
+      "rule": "== authorized_next_prepare",
+      "value": "authorized_next_prepare"
+    },
+    {
+      "name": "true partition semantics still blocked",
+      "note": "",
+      "passed": true,
+      "rule": "== blocked_until_4_32g_hardware_result",
+      "value": "blocked_until_4_32g_hardware_result"
+    }
+  ],
+  "criteria_passed": 14,
+  "criteria_total": 14,
+  "final_decision": {
+    "benchmark_claims": "not_authorized",
+    "claim_boundary": "Tier 4.32g-r0 is local source/route QA only. It source-proves lifecycle event/trophic/mask-sync inter-chip MCPL route support before a hardware package. It is not SpiNNaker hardware evidence, not lifecycle scaling, not speedup evidence, not benchmark superiority, not true two-partition learning, not multi-shard learning, and not a native-scale baseline freeze.",
+    "native_scale_baseline_freeze": "not_authorized",
+    "speedup_claims": "not_authorized",
+    "status": "pass",
+    "tier4_32g_hardware_prepare": "authorized_next",
+    "tier4_32h_true_partition_semantics": "blocked_until_4_32g_hardware_result"
+  },
+  "generated_at_utc": "2026-05-07T19:40:24+00:00",
+  "next_gates": [
+    {
+      "claim_boundary": "two-chip lifecycle traffic/resource smoke only; not full lifecycle scaling",
+      "decision": "authorized_next_prepare",
+      "fail_case": "Classify as route, key, ack, readback, source/package, allocation, or lifecycle semantic failure before rerun.",
+      "gate": "Tier 4.32g - Two-Chip Lifecycle Traffic/Resource Hardware Smoke",
+      "pass_case": "Canonical lifecycle traffic and at least one control return expected event/sync counters, zero stale/duplicate/missing-ack counters, compact payload, zero fallback, and preserved returned artifacts.",
+      "prerequisites": "4.32g-r0 source/route audit pass, explicit board/chip/core/role placement, compact readback schema, and bounded lifecycle schedule.",
+      "question": "Can lifecycle event/trophic/mask-sync traffic cross the chip boundary with compact resource counters?"
+    },
+    {
+      "claim_boundary": "contract only; no hardware claim",
+      "decision": "blocked_until_4_32g_hardware_result",
+      "fail_case": "Keep claims to single-shard split-role hardware evidence.",
+      "gate": "Tier 4.32h - True Partition Semantics Contract",
+      "pass_case": "Defines origin/target shard identity and authorizes true two-partition local reference/repair work.",
+      "prerequisites": "4.32g hardware lifecycle/resource result or explicit parking decision.",
+      "question": "What origin/target shard semantics are required before true two-partition cross-chip learning?"
+    }
+  ],
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit",
+  "route_contract": [
+    {
+      "key": "MAKE_MCPL_KEY(APP_ID, MCPL_MSG_LIFECYCLE_ACTIVE_MASK_SYNC, 0, 0)",
+      "mask": "0xFFF0F000 (match app/msg/shard; ignore lifecycle subtype and seq)",
+      "profile": "learning_core",
+      "purpose": "learning/consumer core receives lifecycle active-mask and lineage sync packets",
+      "required_for_4_32g": true,
+      "route": "MC_CORE_ROUTE(learning_core)",
+      "route_id": "learning_local_mask_sync_consumer"
+    },
+    {
+      "key": "MAKE_MCPL_KEY(APP_ID, MCPL_MSG_LIFECYCLE_EVENT_REQUEST, 0, 0)",
+      "mask": "0xFFF0F000 (match app/msg/shard; ignore lifecycle subtype and seq)",
+      "profile": "learning_core",
+      "purpose": "event requests leave source chip over explicit link route",
+      "required_for_4_32g": true,
+      "route": "CRA_MCPL_INTERCHIP_LIFECYCLE_REQUEST_LINK_ROUTE",
+      "route_id": "learning_outbound_lifecycle_event"
+    },
+    {
+      "key": "MAKE_MCPL_KEY(APP_ID, MCPL_MSG_LIFECYCLE_TROPHIC_UPDATE, 0, 0)",
+      "mask": "0xFFF0F000 (match app/msg/shard; ignore lifecycle subtype and seq)",
+      "profile": "learning_core",
+      "purpose": "trophic update requests leave source chip over explicit link route",
+      "required_for_4_32g": true,
+      "route": "CRA_MCPL_INTERCHIP_LIFECYCLE_REQUEST_LINK_ROUTE",
+      "route_id": "learning_outbound_lifecycle_trophic"
+    },
+    {
+      "key": "MAKE_MCPL_KEY(APP_ID, MCPL_MSG_LIFECYCLE_EVENT_REQUEST, 0, 0)",
+      "mask": "0xFFF0F000 (match app/msg/shard; ignore lifecycle subtype and seq)",
+      "profile": "lifecycle_core",
+      "purpose": "destination lifecycle core receives event requests locally",
+      "required_for_4_32g": true,
+      "route": "MC_CORE_ROUTE(lifecycle_core)",
+      "route_id": "lifecycle_local_event_request"
+    },
+    {
+      "key": "MAKE_MCPL_KEY(APP_ID, MCPL_MSG_LIFECYCLE_TROPHIC_UPDATE, 0, 0)",
+      "mask": "0xFFF0F000 (match app/msg/shard; ignore lifecycle subtype and seq)",
+      "profile": "lifecycle_core",
+      "purpose": "destination lifecycle core receives trophic requests locally",
+      "required_for_4_32g": true,
+      "route": "MC_CORE_ROUTE(lifecycle_core)",
+      "route_id": "lifecycle_local_trophic_request"
+    },
+    {
+      "key": "MAKE_MCPL_KEY(APP_ID, MCPL_MSG_LIFECYCLE_ACTIVE_MASK_SYNC, 0, 0)",
+      "mask": "0xFFF0F000 (match app/msg/shard; ignore lifecycle subtype and seq)",
+      "profile": "lifecycle_core",
+      "purpose": "active-mask/lineage sync leaves lifecycle chip over explicit link route",
+      "required_for_4_32g": true,
+      "route": "CRA_MCPL_INTERCHIP_LIFECYCLE_SYNC_LINK_ROUTE",
+      "route_id": "lifecycle_outbound_mask_sync"
+    }
+  ],
+  "runner_revision": "tier4_32g_r0_lifecycle_route_source_audit_20260507_0001",
+  "source_findings": [
+    {
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/config.h",
+      "finding_id": "event_msg_type",
+      "present": true,
+      "purpose": "Lifecycle event request message type exists.",
+      "token": "MCPL_MSG_LIFECYCLE_EVENT_REQUEST"
+    },
+    {
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/config.h",
+      "finding_id": "trophic_msg_type",
+      "present": true,
+      "purpose": "Lifecycle trophic update message type exists.",
+      "token": "MCPL_MSG_LIFECYCLE_TROPHIC_UPDATE"
+    },
+    {
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/config.h",
+      "finding_id": "sync_msg_type",
+      "present": true,
+      "purpose": "Lifecycle active-mask/lineage sync message type exists.",
+      "token": "MCPL_MSG_LIFECYCLE_ACTIVE_MASK_SYNC"
+    },
+    {
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c",
+      "finding_id": "request_route_macro",
+      "present": true,
+      "purpose": "Learning/source core can install outbound lifecycle request link routes.",
+      "token": "CRA_MCPL_INTERCHIP_LIFECYCLE_REQUEST_LINK_ROUTE"
+    },
+    {
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c",
+      "finding_id": "sync_route_macro",
+      "present": true,
+      "purpose": "Lifecycle core can install outbound active-mask sync link routes.",
+      "token": "CRA_MCPL_INTERCHIP_LIFECYCLE_SYNC_LINK_ROUTE"
+    },
+    {
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c",
+      "finding_id": "event_route_install",
+      "present": true,
+      "purpose": "Route install code references lifecycle event request keys.",
+      "token": "MCPL_MSG_LIFECYCLE_EVENT_REQUEST, 0, 0"
+    },
+    {
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c",
+      "finding_id": "trophic_route_install",
+      "present": true,
+      "purpose": "Route install code references lifecycle trophic update keys.",
+      "token": "MCPL_MSG_LIFECYCLE_TROPHIC_UPDATE, 0, 0"
+    },
+    {
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c",
+      "finding_id": "sync_route_install",
+      "present": true,
+      "purpose": "Route install code references active-mask sync keys.",
+      "token": "MCPL_MSG_LIFECYCLE_ACTIVE_MASK_SYNC, 0, 0"
+    },
+    {
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h",
+      "finding_id": "duplicate_counter",
+      "present": true,
+      "purpose": "Duplicate lifecycle events are counted.",
+      "token": "lifecycle_duplicate_events"
+    },
+    {
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h",
+      "finding_id": "stale_counter",
+      "present": true,
+      "purpose": "Stale lifecycle events are counted.",
+      "token": "lifecycle_stale_events"
+    },
+    {
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h",
+      "finding_id": "missing_ack_counter",
+      "present": true,
+      "purpose": "Missing lifecycle acks are counted.",
+      "token": "lifecycle_missing_acks"
+    },
+    {
+      "file": "coral_reef_spinnaker/spinnaker_runtime/tests/test_mcpl_lifecycle_interchip_route_contract.c",
+      "finding_id": "route_contract_test",
+      "present": true,
+      "purpose": "Local C route contract test exists.",
+      "token": "Tier 4.32g-r0 lifecycle MCPL inter-chip route contract tests"
+    },
+    {
+      "file": "coral_reef_spinnaker/spinnaker_runtime/Makefile",
+      "finding_id": "make_target",
+      "present": true,
+      "purpose": "Runtime Makefile exposes the lifecycle route contract test.",
+      "token": "test-mcpl-lifecycle-interchip-route-contract"
+    }
+  ],
+  "status": "pass",
+  "summary": {
+    "claim_boundary": "Tier 4.32g-r0 is local source/route QA only. It source-proves lifecycle event/trophic/mask-sync inter-chip MCPL route support before a hardware package. It is not SpiNNaker hardware evidence, not lifecycle scaling, not speedup evidence, not benchmark superiority, not true two-partition learning, not multi-shard learning, and not a native-scale baseline freeze.",
+    "failed_commands": [],
+    "hardware_package_status": "authorized_next_prepare",
+    "route_contract_paths": 6,
+    "selected_next_gate": "tier4_32g_two_chip_lifecycle_traffic_resource_hardware_smoke",
+    "source_findings_missing": []
+  },
+  "test_commands": [
+    {
+      "command": "make -C coral_reef_spinnaker/spinnaker_runtime test-mcpl-lifecycle-interchip-route-contract",
+      "command_id": "lifecycle_interchip_route_contract",
+      "passed": true,
+      "purpose": "Prove learning/lifecycle profile lifecycle inter-chip route entries locally.",
+      "returncode": 0,
+      "stderr_file": "controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/tier4_32g_r0_lifecycle_interchip_route_contract_stderr.txt",
+      "stdout_file": "controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/tier4_32g_r0_lifecycle_interchip_route_contract_stdout.txt"
+    },
+    {
+      "command": "make -C coral_reef_spinnaker/spinnaker_runtime test-mcpl-interchip-route-contract",
+      "command_id": "lookup_interchip_route_regression",
+      "passed": true,
+      "purpose": "Ensure the existing 4.32d-r1 lookup route repair still passes.",
+      "returncode": 0,
+      "stderr_file": "controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/tier4_32g_r0_lookup_interchip_route_regression_stderr.txt",
+      "stdout_file": "controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/tier4_32g_r0_lookup_interchip_route_regression_stdout.txt"
+    },
+    {
+      "command": "make -C coral_reef_spinnaker/spinnaker_runtime test-lifecycle-split",
+      "command_id": "lifecycle_split_regression",
+      "passed": true,
+      "purpose": "Ensure lifecycle duplicate/stale/mask-sync bookkeeping still passes.",
+      "returncode": 0,
+      "stderr_file": "controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/tier4_32g_r0_lifecycle_split_regression_stderr.txt",
+      "stdout_file": "controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/tier4_32g_r0_lifecycle_split_regression_stdout.txt"
+    }
+  ],
+  "tier": "Tier 4.32g-r0 - Multi-Chip Lifecycle Route/Source Repair Audit"
+}

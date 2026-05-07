@@ -1791,6 +1791,14 @@ void cra_state_handle_lookup_request(uint32_t seq_id, uint32_t key, uint8_t type
 #define CRA_MCPL_INTERCHIP_REPLY_LINK_ROUTE 0
 #endif
 
+#ifndef CRA_MCPL_INTERCHIP_LIFECYCLE_REQUEST_LINK_ROUTE
+#define CRA_MCPL_INTERCHIP_LIFECYCLE_REQUEST_LINK_ROUTE 0
+#endif
+
+#ifndef CRA_MCPL_INTERCHIP_LIFECYCLE_SYNC_LINK_ROUTE
+#define CRA_MCPL_INTERCHIP_LIFECYCLE_SYNC_LINK_ROUTE 0
+#endif
+
 static void _mcpl_install_route(uint32_t key, uint32_t mask, uint route) {
     uint entry = rtr_alloc(1);
     if (entry == 0) {
@@ -1903,6 +1911,37 @@ void cra_state_mcpl_init(uint8_t core_id) {
     _mcpl_install_route(key, mask, request_route);
     key = MAKE_MCPL_KEY(APP_ID, MCPL_MSG_LOOKUP_REQUEST, LOOKUP_TYPE_MEMORY, 0);
     _mcpl_install_route(key, mask, request_route);
+#endif
+    // Learning/consumer core: route lifecycle active-mask/lineage sync packets
+    // to this core. Inter-chip lifecycle smoke uses this as the consumer-side
+    // readback proof that a lifecycle core's mask sync crossed the chip link.
+    mask = 0xFFF0F000;  // match app/msg/shard, ignore lifecycle subtype and seq
+    key = MAKE_MCPL_KEY(APP_ID, MCPL_MSG_LIFECYCLE_ACTIVE_MASK_SYNC, 0, 0);
+    _mcpl_install_route(key, mask, route);
+#if CRA_MCPL_INTERCHIP_LIFECYCLE_REQUEST_LINK_ROUTE
+    // Source-chip path for lifecycle traffic: event/trophic requests leave the
+    // learning chip over an explicit chip link. Destination lifecycle cores
+    // install matching local-core routes for the same message types.
+    uint lifecycle_request_route = CRA_MCPL_INTERCHIP_LIFECYCLE_REQUEST_LINK_ROUTE;
+    key = MAKE_MCPL_KEY(APP_ID, MCPL_MSG_LIFECYCLE_EVENT_REQUEST, 0, 0);
+    _mcpl_install_route(key, mask, lifecycle_request_route);
+    key = MAKE_MCPL_KEY(APP_ID, MCPL_MSG_LIFECYCLE_TROPHIC_UPDATE, 0, 0);
+    _mcpl_install_route(key, mask, lifecycle_request_route);
+#endif
+#elif defined(CRA_RUNTIME_PROFILE_LIFECYCLE_CORE)
+    // Lifecycle core: route lifecycle event/trophic requests to this core.
+    uint32_t key = MAKE_MCPL_KEY(APP_ID, MCPL_MSG_LIFECYCLE_EVENT_REQUEST, 0, 0);
+    uint32_t mask = 0xFFF0F000;  // match app/msg/shard, ignore subtype and seq
+    uint route = MC_CORE_ROUTE(core_id);
+    _mcpl_install_route(key, mask, route);
+    key = MAKE_MCPL_KEY(APP_ID, MCPL_MSG_LIFECYCLE_TROPHIC_UPDATE, 0, 0);
+    _mcpl_install_route(key, mask, route);
+#if CRA_MCPL_INTERCHIP_LIFECYCLE_SYNC_LINK_ROUTE
+    // Lifecycle state-chip path: active-mask/lineage sync packets leave the
+    // lifecycle chip over an explicit chip link back to learning/consumer cores.
+    uint sync_route = CRA_MCPL_INTERCHIP_LIFECYCLE_SYNC_LINK_ROUTE;
+    key = MAKE_MCPL_KEY(APP_ID, MCPL_MSG_LIFECYCLE_ACTIVE_MASK_SYNC, 0, 0);
+    _mcpl_install_route(key, mask, sync_route);
 #endif
 #else
     (void)core_id;

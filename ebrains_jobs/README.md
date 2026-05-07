@@ -115,10 +115,14 @@ zero synthetic fallback, enabled LR 0.25 readout `32768/0`, and no-learning LR
 0.0 readout `0/0`. Tier 4.32f then passed locally at
 `controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/`
 and selected lifecycle traffic with resource counters as the next direction.
-The current next step is Tier 4.32g-r0 source/route repair audit before another
-multi-chip hardware package. Benchmarks, speedup claims, native-scale
-baseline-freeze claims, lifecycle scaling, multi-shard learning, and true
-two-partition cross-chip learning remain blocked.
+Tier 4.32g-r0 then passed locally at
+`controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/`
+with 14/14 criteria, source-proving lifecycle event/trophic/mask-sync inter-chip
+routes and preserving lookup-route plus lifecycle-split regressions. The current
+next step is Tier 4.32g two-chip lifecycle traffic/resource hardware smoke.
+Benchmarks, speedup claims, native-scale baseline-freeze claims, lifecycle
+scaling, multi-shard learning, and true two-partition cross-chip learning remain
+blocked.
 
 ### Tier 4.31e
 

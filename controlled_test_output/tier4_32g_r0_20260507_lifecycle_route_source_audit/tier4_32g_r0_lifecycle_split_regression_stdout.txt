@@ -1,0 +1,8 @@
+cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_RUNTIME_PROFILE_LIFECYCLE_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=7 tests/test_lifecycle_split.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_lifecycle_split
+./tests/test_lifecycle_split
+Running Tier 4.30d lifecycle split tests...
+  PASS: lifecycle_core direct host surface is isolated
+  PASS: lifecycle duplicate/stale guards are explicit
+  PASS: active-mask/count/lineage sync send/receive bookkeeping
+  PASS: learning-side lifecycle request stubs
+All lifecycle split tests passed.

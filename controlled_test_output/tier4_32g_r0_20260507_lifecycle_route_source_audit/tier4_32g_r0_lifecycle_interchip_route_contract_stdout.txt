@@ -1,0 +1,8 @@
+cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_USE_MCPL_LOOKUP=1 -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 -DCRA_MCPL_INTERCHIP_LIFECYCLE_REQUEST_LINK_ROUTE=ROUTE_E tests/test_mcpl_lifecycle_interchip_route_contract.c stubs/spin1_api.c src/state_manager.c -lm -o tests/test_mcpl_lifecycle_interchip_route_learning
+./tests/test_mcpl_lifecycle_interchip_route_learning
+Tier 4.32g-r0 learning-core lifecycle route contract
+  PASS: learning core installs outbound lifecycle request link routes
+cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_USE_MCPL_LOOKUP=1 -DCRA_RUNTIME_PROFILE_LIFECYCLE_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=7 -DCRA_MCPL_INTERCHIP_LIFECYCLE_SYNC_LINK_ROUTE=ROUTE_W tests/test_mcpl_lifecycle_interchip_route_contract.c stubs/spin1_api.c src/state_manager.c -lm -o tests/test_mcpl_lifecycle_interchip_route_lifecycle
+./tests/test_mcpl_lifecycle_interchip_route_lifecycle
+Tier 4.32g-r0 lifecycle-core inter-chip route contract
+  PASS: lifecycle core installs local request routes plus outbound sync link route

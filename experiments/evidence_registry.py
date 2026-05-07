@@ -1671,6 +1671,33 @@ SPECS: tuple[EvidenceSpec, ...] = (
             "tier4_32f_next_gates.csv",
         ),
     ),
+    EvidenceSpec(
+        entry_id="tier4_32g_r0_multichip_lifecycle_route_source_audit",
+        tier_label="Tier 4.32g-r0 - Multi-Chip Lifecycle Route/Source Repair Audit",
+        plan_position="Phase G source/route repair audit before multi-chip lifecycle hardware smoke",
+        canonical_dir="tier4_32g_r0_20260507_lifecycle_route_source_audit",
+        results_file="tier4_32g_r0_results.json",
+        report_file="tier4_32g_r0_report.md",
+        summary_file="tier4_32g_r0_route_contract.csv",
+        harness="experiments/tier4_32g_r0_multichip_lifecycle_route_source_audit.py",
+        evidence_role="native runtime lifecycle inter-chip route/source repair audit",
+        claim="Tier 4.32g-r0 passed as local source/runtime QA before the two-chip lifecycle hardware smoke: lifecycle event request, trophic update, and active-mask/lineage sync MCPL routes are source-proven for learning and lifecycle profiles, the dedicated lifecycle inter-chip route C test passes, and existing lookup-route and lifecycle-split regressions remain green.",
+        caveat="Local source/runtime QA only; not SpiNNaker hardware evidence, not lifecycle scaling, not speedup evidence, not benchmark superiority, not true two-partition learning, not multi-shard learning, and not a native-scale baseline freeze.",
+        latest_manifest_names=("tier4_32g_r0_latest_manifest.json",),
+        expected_extra_files=(
+            "tier4_32g_r0_criteria.csv",
+            "tier4_32g_r0_source_findings.csv",
+            "tier4_32g_r0_route_contract.csv",
+            "tier4_32g_r0_test_commands.csv",
+            "tier4_32g_r0_next_gates.csv",
+            "tier4_32g_r0_lifecycle_interchip_route_contract_stdout.txt",
+            "tier4_32g_r0_lifecycle_interchip_route_contract_stderr.txt",
+            "tier4_32g_r0_lookup_interchip_route_regression_stdout.txt",
+            "tier4_32g_r0_lookup_interchip_route_regression_stderr.txt",
+            "tier4_32g_r0_lifecycle_split_regression_stdout.txt",
+            "tier4_32g_r0_lifecycle_split_regression_stderr.txt",
+        ),
+    ),
 )
 
 
