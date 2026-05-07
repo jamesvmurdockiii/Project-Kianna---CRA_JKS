@@ -33,10 +33,12 @@ Tier 4.32c inter-chip feasibility contract has now passed locally. It defines
 required board/chip/core/role/partition/shard/seq identity fields, remote
 split-role MCPL lookup paths, compact readback ownership, and the exact two-chip
 split-role single-shard smoke target. True two-partition cross-chip learning
-remains blocked until origin/target shard semantics are defined. Tier 4.32d is now the active next hardware-facing
-step, but Tier 4.32d-r0 has since blocked packaging until explicit inter-chip
-route repair passes. Speedup, learning-scale, benchmark, and native-scale
-baseline-freeze claims remain blocked.
+remains blocked until origin/target shard semantics are defined. Tier 4.32d-r0
+then blocked packaging until explicit inter-chip route repair; Tier 4.32d-r1
+passed that repair; Tier 4.32d package preparation now passed at
+controlled_test_output/tier4_32d_20260507_prepared/ and refreshed
+ebrains_jobs/cra_432d. Speedup, learning-scale, benchmark, true two-partition,
+and native-scale baseline-freeze claims remain blocked.
 ```
 
 Latest active hardware-facing tier:
@@ -94,8 +96,14 @@ Tier 4.32d-r1 - Inter-Chip MCPL Route Repair / Local QA
   Boundary: local route/source QA only, not hardware and not an upload package.
 
 Tier 4.32d - Two-Chip Split-Role Single-Shard MCPL Lookup Smoke
-  Status: CURRENT ACTIVE STEP / PACKAGE NEXT
-  Scope: package and run the smallest cross-chip communication/readback target.
+  Status: PREPARED / EBRAINS RUN NEXT
+  Prepared output: controlled_test_output/tier4_32d_20260507_prepared/
+  Upload folder: ebrains_jobs/cra_432d
+  Command:
+    cra_432d/experiments/tier4_32d_interchip_mcpl_smoke.py --mode run-hardware --output-dir tier4_32d_job_output
+  Scope: smallest cross-chip communication/readback target: learning on chip
+    (0,0), state cores on chip (1,0), shard 0, 32 events, 96 expected lookup
+    replies.
   Still blocked: learning scale, speedup claims, benchmarks, true two-partition
     learning, and native-scale baseline freeze.
 

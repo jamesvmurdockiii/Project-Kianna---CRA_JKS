@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-07T03:20:00+00:00.
+Last updated: 2026-05-07T03:27:57+00:00.
 
 Current repo root:
 
@@ -100,19 +100,20 @@ FROZEN: CRA_LIFECYCLE_NATIVE_BASELINE_v0.4
             language/planning/AGI/ASI.
 
   Next: Tier 4.32d two-chip split-role single-shard MCPL lookup hardware smoke
-        package/run.
+        run on EBRAINS.
         Tier 4.32d-r0 route/source/package audit passed locally at
         controlled_test_output/tier4_32d_r0_20260507_interchip_route_source_audit/.
         Tier 4.32d-r1 route repair/local QA then passed locally at
         controlled_test_output/tier4_32d_r1_20260507_interchip_route_repair_local_qa/.
-        Result: 14/14 criteria; learning-core builds can install outbound
-        request link routes, state-core builds can install local request delivery
-        plus outbound value/meta reply link routes, and existing MCPL lookup and
-        four-core MCPL regressions still pass. The first 4.32d EBRAINS package is
-        now authorized as a two-chip communication/readback smoke only. Tier
-        4.32e, speedup claims, benchmark claims, and
-        CRA_NATIVE_SCALE_BASELINE_v0.5 remain blocked until 4.32d hardware
-        evidence returns cleanly.
+        Tier 4.32d package preparation then passed locally at
+        controlled_test_output/tier4_32d_20260507_prepared/ with 15/15 criteria.
+        Upload folder: ebrains_jobs/cra_432d.
+        JobManager command: cra_432d/experiments/tier4_32d_interchip_mcpl_smoke.py --mode run-hardware --output-dir tier4_32d_job_output.
+        Scope: two-chip communication/readback smoke only; source/learning chip
+        (0,0), remote state chip (1,0), 32 events, 96 expected lookup replies.
+        Tier 4.32e, speedup claims, benchmark claims, true two-partition
+        learning, and CRA_NATIVE_SCALE_BASELINE_v0.5 remain blocked until
+        returned 4.32d hardware evidence is ingested cleanly.
 ```
 
 Current active tier state:
@@ -312,10 +313,18 @@ Tier 4.32d-r1 — COMPLETE. Inter-chip MCPL route repair/local QA.
     benchmark superiority, or a baseline freeze.
 
 Tier 4.32d — CURRENT ACTIVE STEP. Two-chip split-role single-shard MCPL lookup hardware smoke.
-  Goal: package and run the smallest cross-chip communication/readback target
-    authorized by 4.32c and unblocked by 4.32d-r1.
-  Boundary: hardware communication smoke only; not learning scale, speedup,
-    benchmark superiority, true two-partition learning, or a baseline freeze.
+  Status: PREPARED / EBRAINS RUN NEXT.
+  Prepared output: controlled_test_output/tier4_32d_20260507_prepared/.
+  Upload folder: ebrains_jobs/cra_432d.
+  JobManager command:
+    cra_432d/experiments/tier4_32d_interchip_mcpl_smoke.py --mode run-hardware --output-dir tier4_32d_job_output
+  Goal: run the smallest cross-chip communication/readback target authorized by
+    4.32c and unblocked by 4.32d-r1: learning on chip (0,0), state cores on
+    chip (1,0), shard 0, 32 events, 96 expected lookup replies.
+  Boundary: prepared package only until EBRAINS artifacts return and are
+    ingested. The target is a hardware communication smoke only; not learning
+    scale, speedup, benchmark superiority, true two-partition learning, or a
+    baseline freeze.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware
@@ -802,10 +811,12 @@ Immediate next steps:
    local replay/eligibility decision closeout only, no new freeze.
 2. Tier 4.32d-r0 route/source/package audit passed and blocked the first
    EBRAINS package; Tier 4.32d-r1 route repair/local QA then passed and removed
-   that source blocker. The next native step is the Tier 4.32d two-chip
-   split-role single-shard MCPL lookup hardware smoke. Do not jump to learning
-   scale, benchmarks, speedup claims, true two-partition cross-chip learning, or
-   a native-scale baseline freeze until 4.32d and 4.32e pass cleanly.
+   that source blocker. Tier 4.32d package preparation then passed locally and
+   refreshed `ebrains_jobs/cra_432d`. The next native step is the Tier 4.32d
+   EBRAINS run/ingest for the two-chip split-role single-shard MCPL lookup
+   hardware smoke. Do not jump to learning scale, benchmarks, speedup claims,
+   true two-partition cross-chip learning, or a native-scale baseline freeze
+   until 4.32d and 4.32e pass cleanly.
 3. Keep the 4.31b/4.31c range refinement explicit: selected trace bound is ±2
    in s16.15; the older ±1 sketch saturated and must not silently return.
 4. Keep public repo hygiene green before the next upload or commit: no

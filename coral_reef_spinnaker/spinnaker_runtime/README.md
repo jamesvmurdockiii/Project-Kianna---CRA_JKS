@@ -330,9 +330,12 @@ Tier 4.22w extends this surface with independent-key composition through `CMD_SC
 ### Inter-Chip MCPL Route-Link Contract
 
 Tier 4.32d-r1 adds source-backed route-link support for the first two-chip
-split-role single-shard smoke. `dest_core` remains non-authoritative for MCPL
-delivery; the router table decides delivery by key/mask. Compile-time route
-macros provide the explicit chip-link surface:
+split-role single-shard smoke. Tier 4.32d package preparation later passed at
+`controlled_test_output/tier4_32d_20260507_prepared/` and refreshed
+`ebrains_jobs/cra_432d`; returned EBRAINS artifacts are still required for a
+hardware claim. `dest_core` remains non-authoritative for MCPL delivery; the
+router table decides delivery by key/mask. Compile-time route macros provide the
+explicit chip-link surface:
 
 ```text
 CRA_MCPL_INTERCHIP_REQUEST_LINK_ROUTE  # learning-core outbound request link
@@ -342,5 +345,13 @@ CRA_MCPL_INTERCHIP_REPLY_LINK_ROUTE    # state-core outbound value/meta reply li
 The local contract target `make test-mcpl-interchip-route-contract` proves that
 learning profiles install request routes to a link, state profiles install local
 request delivery plus reply-link routes, and existing MCPL lookup regressions
-remain separate from the hardware claim. This is source/local QA only; EBRAINS
-execution is still Tier 4.32d.
+remain separate from the hardware claim. Hardware builds can set the same route
+surface through Makefile variables:
+
+```text
+MCPL_INTERCHIP_REQUEST_LINK_ROUTE=ROUTE_E
+MCPL_INTERCHIP_REPLY_LINK_ROUTE=ROUTE_W
+```
+
+This remains source/local/package evidence until the prepared Tier 4.32d
+EBRAINS job returns and is ingested.

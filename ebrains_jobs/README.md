@@ -105,10 +105,13 @@ replicated-shard stress, not multi-chip evidence, not speedup evidence, not
 static reef partitioning, and not a native-scale baseline freeze.
 
 Next: Tier 4.32d two-chip split-role single-shard MCPL lookup hardware smoke is
-active. Tier 4.32d-r0 blocked the first upload, then Tier 4.32d-r1 passed local
-route repair/QA with explicit learning-core request link routes, state-core
-local request delivery, state-core value/meta reply link routes, and clean MCPL
-regressions. Prepare `cra_432d` only for this communication/readback smoke.
+prepared and ready for EBRAINS. Tier 4.32d-r0 blocked the first upload, then
+Tier 4.32d-r1 passed local route repair/QA with explicit learning-core request
+link routes, state-core local request delivery, state-core value/meta reply link
+routes, and clean MCPL regressions. The prepared output is
+`controlled_test_output/tier4_32d_20260507_prepared/`; upload folder is
+`ebrains_jobs/cra_432d`; JobManager command is
+`cra_432d/experiments/tier4_32d_interchip_mcpl_smoke.py --mode run-hardware --output-dir tier4_32d_job_output`.
 Learning scale, benchmarks, speedup claims, native-scale baseline-freeze claims,
 and true two-partition cross-chip learning remain blocked.
 

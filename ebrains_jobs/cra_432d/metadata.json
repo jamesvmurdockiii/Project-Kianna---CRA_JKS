@@ -1,0 +1,49 @@
+{
+  "claim_boundary": "Prepared source bundle only. Hardware evidence requires returned run-hardware artifacts from EBRAINS/SpiNNaker.",
+  "core_roles": {
+    "context": {
+      "app_id": 1,
+      "chip": "remote",
+      "core": 4,
+      "link": "reply_west",
+      "profile": "context_core"
+    },
+    "learning": {
+      "app_id": 4,
+      "chip": "source",
+      "core": 7,
+      "link": "request_east",
+      "profile": "learning_core"
+    },
+    "memory": {
+      "app_id": 3,
+      "chip": "remote",
+      "core": 6,
+      "link": "reply_west",
+      "profile": "memory_core"
+    },
+    "route": {
+      "app_id": 2,
+      "chip": "remote",
+      "core": 5,
+      "link": "reply_west",
+      "profile": "route_core"
+    }
+  },
+  "event_count": 32,
+  "expected_lookups": 96,
+  "job_command": "cra_432d/experiments/tier4_32d_interchip_mcpl_smoke.py --mode run-hardware --output-dir tier4_32d_job_output",
+  "prepared_at_utc": "2026-05-07T03:27:14+00:00",
+  "remote_chip": {
+    "x": 1,
+    "y": 0
+  },
+  "runner": "experiments/tier4_32d_interchip_mcpl_smoke.py",
+  "runner_revision": "tier4_32d_interchip_mcpl_smoke_20260507_0001",
+  "source_chip": {
+    "x": 0,
+    "y": 0
+  },
+  "tier": "Tier 4.32d - Two-Chip Split-Role Single-Shard MCPL Lookup Smoke",
+  "upload_package": "cra_432d"
+}

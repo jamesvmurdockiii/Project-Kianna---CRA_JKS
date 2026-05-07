@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-06T22:54-04:00.
+Last updated: 2026-05-06T23:27-04:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -888,9 +888,13 @@ ability.
     local route/source QA only, not hardware and not an upload package.
 
 63. **CURRENT ACTIVE STEP** - Tier 4.32d first two-chip split-role single-shard
-    MCPL lookup hardware smoke: package and run the smallest possible cross-chip
-    communication and state lookup target from 4.32c. No learning claim until
-    communication and readback are clean.
+    MCPL lookup hardware smoke: PREPARED / EBRAINS RUN NEXT. Prepared output:
+    `controlled_test_output/tier4_32d_20260507_prepared/`; upload folder:
+    `ebrains_jobs/cra_432d`; command:
+    `cra_432d/experiments/tier4_32d_interchip_mcpl_smoke.py --mode run-hardware --output-dir tier4_32d_job_output`.
+    The package targets learning on chip `(0,0)`, state cores on chip `(1,0)`,
+    shard `0`, 32 events, and 96 expected lookup replies. No learning-scale
+    claim until communication and readback are clean and ingested.
 
 64. Tier 4.32e multi-chip learning micro-task: only after cross-chip smoke
     passes, run a tiny delayed-credit or reentry task with explicit claim
@@ -1110,11 +1114,13 @@ The next concrete action is:
 Tier 4.32d-r0 inter-chip route/source/package audit passed locally and blocked
 the first EBRAINS package because explicit inter-chip link routing was not yet
 source-proven. Tier 4.32d-r1 route repair/local QA then passed locally with
-clean route-contract and MCPL regression evidence. The next concrete action is
-Tier 4.32d: package and run the first two-chip split-role single-shard MCPL
-lookup hardware smoke. Tier 4.32e learning scale, speedup claims, benchmark
-claims, true two-partition cross-chip learning, and a native-scale baseline
-freeze remain blocked until 4.32d hardware evidence returns cleanly.
+clean route-contract and MCPL regression evidence. Tier 4.32d package preparation
+then passed locally at controlled_test_output/tier4_32d_20260507_prepared/.
+Next action: upload ebrains_jobs/cra_432d and run:
+cra_432d/experiments/tier4_32d_interchip_mcpl_smoke.py --mode run-hardware --output-dir tier4_32d_job_output
+Tier 4.32e learning scale, speedup claims, benchmark claims, true
+two-partition cross-chip learning, and a native-scale baseline freeze remain
+blocked until returned 4.32d hardware evidence is ingested cleanly.
 ```
 
 Current reference state:
@@ -1156,6 +1162,10 @@ Tier 4.32a-hw-replicated both passed after EBRAINS ingest. Tier 4.32b static
 reef partition smoke/resource mapping passed locally. Tier 4.32c inter-chip
 feasibility contract passed locally; Tier 4.32d-r0 route/source/package audit
 then passed locally and blocked package upload until inter-chip route repair.
+Tier 4.32d-r1 passed route repair/local QA; Tier 4.32d package preparation then
+passed at controlled_test_output/tier4_32d_20260507_prepared/ and refreshed
+ebrains_jobs/cra_432d. The next action is the Tier 4.32d EBRAINS hardware smoke
+run/ingest, not learning scale, benchmarks, speedup, or baseline-freeze claims.
 ```
 
 Purpose:
@@ -1191,10 +1201,11 @@ Use v2.2 as the software reference and `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` as
 the native lifecycle baseline. Keep Tier 4.31d's boundary strict: one-board
 temporal-state hardware smoke only; not nonlinear recurrence, not speedup, not
 multi-chip scaling, not benchmark superiority, and not full organism autonomy.
-The next native work is Tier 4.32d over the now-passed 4.32d-r1 route repair:
-package and run the smallest two-chip split-role single-shard MCPL lookup smoke
-with explicit board/chip/shard identity, message paths, compact readback
-ownership, failure counters, and placement assumptions. Do not claim true
+The next native work is the prepared Tier 4.32d package over the now-passed
+4.32d-r1 route repair: run and ingest the smallest two-chip split-role
+single-shard MCPL lookup smoke with explicit board/chip/shard identity, message
+paths, compact readback ownership, failure counters, and placement assumptions.
+Do not claim true
 two-partition cross-chip learning until origin/target shard semantics are
 defined. Only reopen replay buffers, sleep-like replay, or native eligibility if
 a later measured blocker specifically demands it.

@@ -1149,9 +1149,19 @@ context_core / route_core / memory_core:
   optional outbound VALUE/META reply routes -> CRA_MCPL_INTERCHIP_REPLY_LINK_ROUTE
 ```
 
-The route-link macros are local QA surfaces until Tier 4.32d returns hardware
-evidence. True two-partition cross-chip learning still needs origin/target shard
-semantics beyond the current one-shard key field.
+The route-link macros are exposed through Makefile variables for hardware
+builds:
+
+```text
+MCPL_INTERCHIP_REQUEST_LINK_ROUTE=<router link macro>
+MCPL_INTERCHIP_REPLY_LINK_ROUTE=<router link macro>
+```
+
+Tier 4.32d package preparation uses `ROUTE_E` for outbound source-chip requests
+and `ROUTE_W` for remote-chip replies, but these remain package/build evidence
+until returned EBRAINS artifacts pass ingest. True two-partition cross-chip
+learning still needs origin/target shard semantics beyond the current one-shard
+key field.
 
 Tier 4.30d currently tests lifecycle MCPL/multicast-target traffic through local
 host stubs and packet-inspection hooks. Tier 4.30e must prove the surface on
@@ -1249,4 +1259,5 @@ the full logical payload above.
 | 0.12 | 2026-05-05 | Added Tier 4.30d lifecycle split runtime source surface: `lifecycle_core` profile ID 7, lifecycle MCPL message IDs 3-5, mask/count/lineage sync subtypes, direct lifecycle ownership guards, and compact lifecycle summary validation rule. |
 | 0.13 | 2026-05-05 | Prepared Tier 4.30e five-profile lifecycle hardware smoke and routed direct lifecycle event commands through the duplicate/stale lifecycle request handler so hardware smoke exercises the same guarded lifecycle-core semantics as the split contract. |
 | 0.14 | 2026-05-07 | Added Tier 4.32d-r1 inter-chip MCPL route-link contract: request/reply route-link macros, source/local route tests, and shard-aware value/meta key documentation. |
+| 0.15 | 2026-05-07 | Added Tier 4.32d hardware-build route-link variables for source-chip request and remote-chip reply routes; prepared `cra_432d` as package evidence only pending EBRAINS ingest. |
 | 0.14 | 2026-05-06 | Added Tier 4.31c temporal substrate runtime source surface: `CMD_TEMPORAL_INIT` (39), `CMD_TEMPORAL_UPDATE` (40), `CMD_TEMPORAL_READ_STATE` (41), `CMD_TEMPORAL_SHAM_MODE` (42), seven fixed-point EMA traces, behavior-backed shams, profile ownership guards, and compact 48-byte temporal readback. |

@@ -4,8 +4,8 @@ This table is generated from `controlled_test_output/STUDY_REGISTRY.json`.
 It is intended as a paper/technical-note citation table, not as a new
 source of claims. If the registry changes, regenerate this file.
 
-- Generated: `2026-05-07T03:17:32.956795+00:00`
-- Registry generated: `2026-05-07T03:17:32.848262+00:00`
+- Generated: `2026-05-07T03:35:41.547471+00:00`
+- Registry generated: `2026-05-07T03:35:41.440980+00:00`
 - Registry status: **PASS**
 - Canonical bundles: `74`
 - Expanded entries: `74`

@@ -14,7 +14,7 @@ mechanism promotion, lifecycle/ecology evidence, and native SpiNNaker runtime
 migration. The generated registry is the authority for which results are
 canonical.
 
-The current canonical evidence trail contains **62 registered evidence bundles**
+The current canonical evidence trail contains **74 registered evidence bundles**
 with all expected artifacts present and all criteria passing. The generated
 registry is the source of truth for the full list:
 
@@ -9247,9 +9247,12 @@ Decision:
 Tier 4.32c inter-chip feasibility contract later passed locally.
 Tier 4.32d-r0 route/source/package audit later passed and blocked the first
 4.32d EBRAINS package until inter-chip route repair. Tier 4.32d-r1 later passed
-as local route repair/QA. Tier 4.32d hardware smoke is authorized next.
-Multi-chip learning, speedup claims, benchmark claims, and native-scale baseline
-freeze remain blocked until 4.32d and 4.32e pass cleanly.
+as local route repair/QA. Tier 4.32d package preparation later passed at
+`controlled_test_output/tier4_32d_20260507_prepared/` and refreshed
+`ebrains_jobs/cra_432d`; EBRAINS run/ingest is authorized next.
+Multi-chip learning, speedup claims, benchmark claims, true two-partition
+learning, and native-scale baseline freeze remain blocked until 4.32d and
+4.32e pass cleanly.
 ```
 
 Boundary:
@@ -9294,7 +9297,9 @@ Decision:
 ```text
 Tier 4.32d-r0 route/source/package audit was authorized next and later passed.
 That audit blocked the first 4.32d EBRAINS package until inter-chip route repair.
-Tier 4.32d-r1 route repair/local QA is now required before 4.32d hardware.
+Tier 4.32d-r1 route repair/local QA later passed, and Tier 4.32d package
+preparation later passed at `controlled_test_output/tier4_32d_20260507_prepared/`.
+Upload `ebrains_jobs/cra_432d` and run the emitted JobManager command next.
 Tier 4.32e multi-chip learning micro-task remains blocked until 4.32d passes.
 Speedup claims, benchmark claims, and CRA_NATIVE_SCALE_BASELINE_v0.5 remain blocked.
 ```
@@ -9364,10 +9369,13 @@ Decision:
 
 ```text
 Tier 4.32d two-chip split-role single-shard MCPL lookup hardware smoke is
-authorized next as a communication/readback smoke only.
-Do not claim learning scale, speedup, benchmark superiority, true two-partition
-cross-chip learning, or CRA_NATIVE_SCALE_BASELINE_v0.5 from 4.32d-r1.
-Tier 4.32e remains blocked until 4.32d hardware smoke returns cleanly.
+prepared as a communication/readback smoke only at
+`controlled_test_output/tier4_32d_20260507_prepared/` with upload folder
+`ebrains_jobs/cra_432d`. Do not claim learning scale, speedup, benchmark
+superiority, true two-partition learning, or CRA_NATIVE_SCALE_BASELINE_v0.5 from
+package preparation.
+Tier 4.32e remains blocked until returned 4.32d hardware smoke artifacts are
+ingested cleanly.
 ```
 
 Boundary:
@@ -9376,4 +9384,62 @@ Boundary:
 Local source/runtime QA only. Not a SpiNNaker hardware run, not an EBRAINS
 package, not multi-chip execution evidence, not learning-scale evidence, not
 speedup, not benchmark superiority, and not baseline freeze.
+```
+
+## Tier 4.32d - Two-Chip Split-Role Single-Shard MCPL Lookup Smoke
+
+Question: Does the repaired explicit route-link surface package a clean
+two-chip source/remote MCPL lookup smoke before spending EBRAINS hardware time?
+
+Prepared result:
+
+```text
+Status: PREPARED
+Output: controlled_test_output/tier4_32d_20260507_prepared/
+Criteria: 15/15
+Upload folder: ebrains_jobs/cra_432d
+JobManager command:
+  cra_432d/experiments/tier4_32d_interchip_mcpl_smoke.py --mode run-hardware --output-dir tier4_32d_job_output
+Source/learning chip: (0,0), learning core 7
+Remote/state chip: (1,0), context/route/memory cores 4/5/6
+Shard: 0
+Events: 32
+Expected lookup replies: 96
+```
+
+Pass case after EBRAINS return:
+
+```text
+real target acquisition
+four role builds/loads pass
+remote state writes pass
+source schedule upload passes
+learning lookup_requests == lookup_replies == 96
+stale_replies == duplicate_replies == timeouts == 0
+compact readback succeeds
+synthetic fallback == 0
+```
+
+Fail case:
+
+```text
+missing target, failed profile build/load, failed remote writes, lookup parity
+mismatch, stale/duplicate/timeouts, missing compact readback, or missing
+tier4_32d_results.json
+```
+
+Decision:
+
+```text
+Upload and run `ebrains_jobs/cra_432d` next. Tier 4.32e multi-chip learning
+micro-task remains blocked until returned 4.32d artifacts pass ingest.
+```
+
+Boundary:
+
+```text
+Prepared package only until EBRAINS artifacts return and are ingested. The
+hardware target is communication/readback smoke only; not learning-scale
+evidence, not speedup, not benchmark superiority, not true two-partition
+learning, not lifecycle scaling, and not baseline freeze.
 ```
