@@ -9095,9 +9095,9 @@ Decision:
 Tier 4.32a-hw-replicated later passed as single-chip replicated-shard stress.
 Tier 4.32b static reef partition smoke/resource mapping later passed locally.
 Tier 4.32c inter-chip feasibility contract later passed locally.
-Tier 4.32d first two-chip/two-partition MCPL lookup smoke is the next
+Tier 4.32d first two-chip split-role single-shard MCPL lookup smoke is the next
 authorized gate.
-Multi-chip work, benchmark superiority, speedup claims, and native-scale
+Multi-chip learning, benchmark superiority, speedup claims, and native-scale
 baseline freeze remain blocked until 4.32d and 4.32e pass cleanly.
 ```
 
@@ -9209,9 +9209,9 @@ Decision:
 ```text
 Tier 4.32b static reef partition smoke/resource mapping later passed locally.
 Tier 4.32c inter-chip feasibility contract later passed locally.
-Tier 4.32d first two-chip/two-partition MCPL lookup smoke is the next
+Tier 4.32d first two-chip split-role single-shard MCPL lookup smoke is the next
 authorized gate.
-Multi-chip work, speedup claims, benchmark claims, and native-scale baseline
+Multi-chip learning, speedup claims, benchmark claims, and native-scale baseline
 freeze remain blocked until 4.32d and 4.32e pass cleanly.
 ```
 
@@ -9245,8 +9245,8 @@ Decision:
 
 ```text
 Tier 4.32c inter-chip feasibility contract later passed locally.
-Tier 4.32d first two-chip/two-partition MCPL lookup smoke is authorized next.
-Multi-chip hardware execution, speedup claims, benchmark claims, and native-scale
+Tier 4.32d first two-chip split-role single-shard MCPL lookup smoke is authorized next.
+Multi-chip learning, speedup claims, benchmark claims, and native-scale
 baseline freeze remain blocked until 4.32d and 4.32e pass cleanly.
 ```
 
@@ -9269,13 +9269,17 @@ Result:
 Status: PASS
 Output: controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/
 Criteria: 19/19
-First smoke target: point_2chip_2partition_lookup_smoke
+First smoke target: point_2chip_split_partition_lookup_smoke
 Chips: 2
-Static partitions: 2
-Total cores: 8
-Events per partition: 32
-Expected lookups per partition: 96
-Remote paths: 2
+Static partitions: 1
+Total cores: 4
+Events: 32
+Expected lookups: 96
+Remote paths: 3
+Protocol boundary:
+  current one-shard MCPL key supports split-role single-shard cross-chip lookup;
+  true two-partition cross-chip learning needs later origin/target shard
+  semantics
 Required identity fields:
   logical_board_id, chip_x, chip_y, p_core, role, partition_id, shard_id, seq_id
 Required delivery counters:
@@ -9286,7 +9290,7 @@ Required delivery counters:
 Decision:
 
 ```text
-Tier 4.32d first two-chip/two-partition MCPL lookup smoke is authorized next.
+Tier 4.32d first two-chip split-role single-shard MCPL lookup smoke is authorized next.
 Tier 4.32e multi-chip learning micro-task remains blocked until 4.32d passes.
 Speedup claims, benchmark claims, and CRA_NATIVE_SCALE_BASELINE_v0.5 remain
 blocked.

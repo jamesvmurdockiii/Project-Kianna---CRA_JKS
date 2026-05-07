@@ -1,5 +1,5 @@
 file,token,present,purpose
-coral_reef_spinnaker/spinnaker_runtime/src/config.h,MAKE_MCPL_KEY_SHARD,True,MCPL lookup key can carry shard identity.
+coral_reef_spinnaker/spinnaker_runtime/src/config.h,MAKE_MCPL_KEY_SHARD,True,MCPL lookup key can carry one shard identity.
 coral_reef_spinnaker/spinnaker_runtime/src/config.h,EXTRACT_MCPL_SHARD_ID,True,Receivers can decode shard identity from keys.
 coral_reef_spinnaker/spinnaker_runtime/src/config.h,MCPL_MSG_LOOKUP_REQUEST,True,Lookup request message type is source-declared.
 coral_reef_spinnaker/spinnaker_runtime/src/config.h,MCPL_MSG_LOOKUP_REPLY_VALUE,True,Lookup value reply packet is source-declared.
@@ -8,3 +8,4 @@ coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h,cra_state_lookup_send
 coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h,cra_state_lookup_get_result_shard,True,Lookup readback path accepts explicit shard id.
 coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c,g_lookup_entries[i].shard_id,True,Pending lookup entries store shard identity.
 coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c,CRA_MCPL_SHARD_ID,True,Runtime images can be compiled with a static shard id.
+coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c,routing table decides delivery by key/mask,True,"Current MCPL path depends on router-table delivery, so 4.32d must test link routing."

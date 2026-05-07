@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-06T22:32-04:00.
+Last updated: 2026-05-06T22:41-04:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -862,12 +862,14 @@ ability.
 60. Tier 4.32c inter-chip feasibility contract: COMPLETE. Local pass `19/19`
     at `controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/`.
     It defines required board/chip/core/role/partition/shard/seq identity fields,
-    bidirectional remote MCPL lookup paths, compact readback ownership, failure
-    classes, and the exact two-chip/two-partition smoke target. Boundary: local
+    remote split-role MCPL lookup paths, compact readback ownership, failure
+    classes, and the exact two-chip split-role single-shard smoke target. True
+    two-partition cross-chip learning remains blocked until origin/target shard
+    semantics are defined. Boundary: local
     contract evidence only, not hardware, not speedup, not multi-chip learning,
     and not a baseline freeze.
 
-61. **CURRENT ACTIVE STEP** - Tier 4.32d first two-chip/two-partition MCPL lookup
+61. **CURRENT ACTIVE STEP** - Tier 4.32d first two-chip split-role single-shard MCPL lookup
     smoke: package and run the smallest possible cross-chip communication and
     state lookup target from 4.32c. No learning claim until communication and
     readback are clean.
@@ -1088,9 +1090,9 @@ The next concrete action is:
 
 ```text
 Tier 4.32c inter-chip feasibility contract passed locally. The next concrete
-action is Tier 4.32d first two-chip/two-partition MCPL lookup smoke: prepare the
-contract-defined cross-chip communication/readback hardware package after source
-and package QA. Tier 4.32e learning scale, speedup claims, benchmark claims, and
+action is Tier 4.32d first two-chip split-role single-shard MCPL lookup smoke: prepare the
+contract-defined cross-chip communication/readback hardware package after route,
+source, and package QA. Tier 4.32e learning scale, speedup claims, benchmark claims, and
 a native-scale baseline freeze remain blocked until 4.32d returns clean evidence.
 ```
 
@@ -1131,7 +1133,7 @@ shard-aware keys, cross-shard controls, and full/zero/half-confidence local
 learning controls are repaired. Tier 4.32a-hw single-shard and
 Tier 4.32a-hw-replicated both passed after EBRAINS ingest. Tier 4.32b static
 reef partition smoke/resource mapping passed locally. Tier 4.32c inter-chip
-feasibility contract passed locally; Tier 4.32d first two-chip/two-partition
+feasibility contract passed locally; Tier 4.32d first two-chip split-role single-shard
 MCPL lookup smoke is now active.
 ```
 
@@ -1154,7 +1156,7 @@ single-shard hardware stress, and Tier 4.32a-hw-replicated then passed
 8/12/16-core replicated-shard hardware stress. The next action is now Tier
 4.32b static reef partition smoke/resource mapping. Tier 4.32b then passed
 locally, and Tier 4.32c then passed as the inter-chip feasibility contract. The
-next action is now Tier 4.32d first two-chip/two-partition MCPL lookup smoke,
+next action is now Tier 4.32d first two-chip split-role single-shard MCPL lookup smoke,
 not learning scale, benchmarks, speedup, or baseline-freeze claims.
 ```
 
@@ -1166,9 +1168,10 @@ the native lifecycle baseline. Keep Tier 4.31d's boundary strict: one-board
 temporal-state hardware smoke only; not nonlinear recurrence, not speedup, not
 multi-chip scaling, not benchmark superiority, and not full organism autonomy.
 The next native work is Tier 4.32d over the now-passed 4.32c contract: package
-and run only the smallest two-chip/two-partition MCPL lookup smoke with explicit
+and run only the smallest two-chip split-role single-shard MCPL lookup smoke with explicit
 board/chip/shard identity, message paths, compact readback ownership, failure
-counters, and placement assumptions. Only reopen replay buffers, sleep-like
+counters, and placement assumptions. Do not claim true two-partition cross-chip
+learning until origin/target shard semantics are defined. Only reopen replay buffers, sleep-like
 replay, or native eligibility if a later measured blocker specifically demands
 it.
 ```

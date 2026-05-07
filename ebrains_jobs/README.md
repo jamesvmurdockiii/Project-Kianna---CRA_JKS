@@ -104,10 +104,12 @@ Boundary: single-shard single-chip hardware stress only. It is not
 replicated-shard stress, not multi-chip evidence, not speedup evidence, not
 static reef partitioning, and not a native-scale baseline freeze.
 
-Next: Tier 4.32d first two-chip/two-partition MCPL lookup smoke is active
+Next: Tier 4.32d first two-chip split-role single-shard MCPL lookup smoke is active
 after Tier 4.32c passed locally. Prepare only the contract-defined cross-chip
-communication/readback package after source/package QA. Do not add learning
+communication/readback package after route/source/package QA. Do not add learning
 scale, benchmarks, speedup claims, or native-scale baseline-freeze claims.
+True two-partition cross-chip learning remains blocked until origin/target
+shard semantics are defined.
 
 ### Tier 4.31e
 

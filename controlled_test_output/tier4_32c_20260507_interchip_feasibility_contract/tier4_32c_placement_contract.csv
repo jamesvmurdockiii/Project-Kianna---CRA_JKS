@@ -1,3 +1,5 @@
-smoke_target,board_id,chip_x,chip_y,partition_id,shard_id,polyp_slots,context_core,route_core,memory_core,learning_core,expected_events,expected_lookups,ownership_rule
-point_2chip_2partition_lookup_smoke,allocated_board_0,0,0,reef_partition_0,0,"0,1",1,2,3,4,32,96,source partition; local self-lookups plus remote lookup probes to reef_partition_1
-point_2chip_2partition_lookup_smoke,allocated_board_0,1,0,reef_partition_1,1,"2,3",1,2,3,4,32,96,remote partition; must produce distinguishable chip/partition readback
+smoke_target,board_id,chip_x,chip_y,partition_id,shard_id,polyp_slots,role,p_core,expected_events,expected_lookups,ownership_rule
+point_2chip_split_partition_lookup_smoke,allocated_board_0,0,0,reef_partition_0,0,"0,1",learning_core,1,32,96,"source chip owns schedule, pending horizons, and reply collection"
+point_2chip_split_partition_lookup_smoke,allocated_board_0,1,0,reef_partition_0,0,"0,1",context_core,1,32,96,remote chip owns context lookup table for shard 0
+point_2chip_split_partition_lookup_smoke,allocated_board_0,1,0,reef_partition_0,0,"0,1",route_core,2,32,96,remote chip owns route lookup table for shard 0
+point_2chip_split_partition_lookup_smoke,allocated_board_0,1,0,reef_partition_0,0,"0,1",memory_core,3,32,96,remote chip owns memory lookup table for shard 0

@@ -1550,8 +1550,8 @@ SPECS: tuple[EvidenceSpec, ...] = (
         summary_file="tier4_32c_placement_contract.csv",
         harness="experiments/tier4_32c_interchip_feasibility_contract.py",
         evidence_role="native runtime inter-chip feasibility contract",
-        claim="Tier 4.32c defines the first reviewer-defensible inter-chip contract over the Tier 4.32b static reef partition map: required board/chip/core/role/partition/shard/seq identity fields, bidirectional remote MCPL lookup paths, compact readback ownership, failure classes, and the exact two-chip/two-partition smoke authorized for Tier 4.32d.",
-        caveat="Local contract evidence only; not SpiNNaker hardware evidence, not multi-chip execution evidence, not speedup evidence, not learning-scale evidence, not benchmark superiority, and not a native-scale baseline freeze.",
+        claim="Tier 4.32c defines the first reviewer-defensible inter-chip contract over the Tier 4.32b static reef partition map: required board/chip/core/role/partition/shard/seq identity fields, remote split-role MCPL lookup paths, compact readback ownership, failure classes, and the exact two-chip split-role single-shard smoke authorized for Tier 4.32d. It also records that true two-partition cross-chip learning is blocked until origin/target shard semantics are defined.",
+        caveat="Local contract evidence only; not SpiNNaker hardware evidence, not multi-chip execution evidence, not true two-partition cross-chip learning evidence, not speedup evidence, not learning-scale evidence, not benchmark superiority, and not a native-scale baseline freeze.",
         latest_manifest_names=("tier4_32c_latest_manifest.json",),
         expected_extra_files=(
             "tier4_32c_criteria.csv",

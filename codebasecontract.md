@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-07T02:32:00+00:00.
+Last updated: 2026-05-07T02:41:12+00:00.
 
 Current repo root:
 
@@ -99,15 +99,17 @@ FROZEN: CRA_LIFECYCLE_NATIVE_BASELINE_v0.4
             temporal migration, not external-baseline superiority, and not
             language/planning/AGI/ASI.
 
-  Next: Tier 4.32d first two-chip/two-partition MCPL lookup smoke.
+  Next: Tier 4.32d first two-chip split-role single-shard MCPL lookup smoke.
         Tier 4.32c inter-chip feasibility contract passed locally at
         controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/.
         Result: 19/19 criteria; it defines required logical_board_id/chip_x/
         chip_y/p_core/role/partition_id/shard_id/seq_id identity fields,
-        bidirectional remote MCPL lookup paths, compact readback ownership,
-        failure classes, and the exact point_2chip_2partition_lookup_smoke target.
+        remote split-role MCPL lookup paths, compact readback ownership,
+        failure classes, and the exact point_2chip_split_partition_lookup_smoke target.
+        It explicitly blocks true two-partition cross-chip learning until
+        origin/target shard semantics are defined.
         Tier 4.32d is now active as the first hardware smoke package after
-        source/package QA. Tier 4.32e, speedup claims, benchmark claims, and
+        route/source/package QA. Tier 4.32e, speedup claims, benchmark claims, and
         CRA_NATIVE_SCALE_BASELINE_v0.5 remain blocked.
 ```
 
@@ -283,14 +285,16 @@ Tier 4.32c — COMPLETE. Inter-chip feasibility contract.
   Status: LOCAL PASS, 19/19.
   Output: controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/.
   Result: defines required board/chip/core/role/partition/shard/seq identity
-    fields, bidirectional remote MCPL lookup paths, compact readback ownership,
-    failure classes, and the exact two-chip/two-partition smoke target.
+    fields, remote split-role MCPL lookup paths, compact readback ownership,
+    failure classes, and the exact two-chip split-role single-shard smoke target.
+    True two-partition cross-chip learning remains blocked until origin/target
+    shard semantics are defined.
   Boundary: local contract evidence only; not hardware execution, not speedup,
     not multi-chip learning, and not a baseline freeze.
 
-Tier 4.32d — CURRENT ACTIVE STEP. First two-chip/two-partition MCPL lookup smoke.
+Tier 4.32d — CURRENT ACTIVE STEP. First two-chip split-role single-shard MCPL lookup smoke.
   Goal: package and run the smallest cross-chip communication/readback smoke
-    authorized by 4.32c after source/package QA.
+    authorized by 4.32c after route/source/package QA.
   Boundary: first cross-chip smoke only; not learning scale, speedup, benchmark
     superiority, or a baseline freeze.
 
@@ -778,9 +782,9 @@ Immediate next steps:
 1. Keep Tier 4.31d/4.31e boundaries strict: one-board temporal-state smoke plus
    local replay/eligibility decision closeout only, no new freeze.
 2. Tier 4.32c inter-chip feasibility contract has passed. The next native
-   step is Tier 4.32d first two-chip/two-partition MCPL lookup smoke: prepare
-   only the contract-defined communication/readback package after source/package
-   QA. Do not jump to learning scale, benchmarks, speedup claims, or a native-
+   step is Tier 4.32d first two-chip split-role single-shard MCPL lookup smoke: prepare
+   only the contract-defined communication/readback package after route/source/
+   package QA. Do not jump to learning scale, benchmarks, speedup claims, or a native-
    scale baseline freeze until 4.32d and 4.32e pass cleanly.
 3. Keep the 4.31b/4.31c range refinement explicit: selected trace bound is ±2
    in s16.15; the older ±1 sketch saturated and must not silently return.

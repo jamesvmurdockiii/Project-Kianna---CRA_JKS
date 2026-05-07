@@ -6387,8 +6387,10 @@ Near-term roadmap insertion:
 28. Tier 4.32c inter-chip feasibility contract. COMPLETE: local pass 19/19 at
     `controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/`;
     defines required board/chip/core/role/partition/shard/seq identity fields,
-    bidirectional remote MCPL lookup paths, compact readback ownership, failure
-    classes, and the exact two-chip/two-partition smoke target. Boundary: local
+    remote split-role MCPL lookup paths, compact readback ownership, failure
+    classes, and the exact two-chip split-role single-shard smoke target. True
+    two-partition cross-chip learning remains blocked until origin/target shard
+    semantics are defined. Boundary: local
     contract evidence only; not hardware, not multi-chip execution, not speedup,
     not learning-scale evidence, and not a native-scale baseline freeze.
 ```
@@ -6694,11 +6696,11 @@ Tests: test-temporal-state, test-profiles, test, test-lifecycle, test-lifecycle-
 Boundary: local source/runtime host evidence only, not hardware
 ```
 
-Next: Tier 4.32d first two-chip/two-partition MCPL lookup smoke. Tier 4.32c
+Next: Tier 4.32d first two-chip split-role single-shard MCPL lookup smoke. Tier 4.32c
       has passed at
       `controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/`
       with 19/19 criteria. The next gate must package only the contract-defined
-      cross-chip communication/readback smoke after source/package QA. Multi-chip
+      cross-chip communication/readback smoke after route/source/package QA. Multi-chip
       learning, speedup claims, benchmark claims, and native-scale baseline
       freeze remain blocked until 4.32d and 4.32e pass cleanly.
       Reopen native replay-buffer, sleep-like replay, or eligibility-trace
