@@ -6393,6 +6393,13 @@ Near-term roadmap insertion:
     semantics are defined. Boundary: local
     contract evidence only; not hardware, not multi-chip execution, not speedup,
     not learning-scale evidence, and not a native-scale baseline freeze.
+29. Tier 4.32d-r0 inter-chip route/source/package audit. COMPLETE: local pass
+    10/10 at
+    `controlled_test_output/tier4_32d_r0_20260507_interchip_route_source_audit/`;
+    source-backed MCPL key/value/meta path exists, but the EBRAINS package is
+    blocked because `cra_state_mcpl_init()` routes request/reply keys to local
+    cores only and does not define explicit inter-chip link routing. Boundary:
+    local audit evidence only; not hardware and not an upload package.
 ```
 
 Tier 5.19a result:
@@ -6696,13 +6703,14 @@ Tests: test-temporal-state, test-profiles, test, test-lifecycle, test-lifecycle-
 Boundary: local source/runtime host evidence only, not hardware
 ```
 
-Next: Tier 4.32d first two-chip split-role single-shard MCPL lookup smoke. Tier 4.32c
-      has passed at
-      `controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/`
-      with 19/19 criteria. The next gate must package only the contract-defined
-      cross-chip communication/readback smoke after route/source/package QA. Multi-chip
-      learning, speedup claims, benchmark claims, and native-scale baseline
-      freeze remain blocked until 4.32d and 4.32e pass cleanly.
+Next: Tier 4.32d-r1 inter-chip MCPL route repair/local QA. Tier 4.32d-r0
+      passed at
+      `controlled_test_output/tier4_32d_r0_20260507_interchip_route_source_audit/`
+      with 10/10 criteria and blocked the first EBRAINS package because explicit
+      inter-chip link routing is not yet source-proven. Tier 4.32d hardware
+      smoke, multi-chip learning, speedup claims, benchmark claims, and
+      native-scale baseline freeze remain blocked; 4.32d hardware needs
+      4.32d-r1 first, and the baseline freeze still needs 4.32d plus 4.32e.
       Reopen native replay-buffer, sleep-like replay, or eligibility-trace
       implementation only if a later measured blocker specifically demands it.
 ```

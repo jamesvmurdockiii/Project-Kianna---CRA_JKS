@@ -10,10 +10,10 @@ Research narrative companions:
 - `docs/WHITEPAPER.md`
 - `docs/CODEBASE_MAP.md`
 
-- Registry generated: `2026-05-07T02:49:21.680681+00:00`
+- Registry generated: `2026-05-07T02:59:35.854036+00:00`
 - Registry status: **PASS**
 - Core validation suite: `12` tests
-- Expanded evidence suite: `72` entries; see the canonical evidence table below for the exact current tier list.
+- Expanded evidence suite: `73` entries; see the canonical evidence table below for the exact current tier list.
 
 ## Canonical Claims
 
@@ -91,6 +91,7 @@ Research narrative companions:
 | `tier4_32a_r1_mcpl_lookup_repair` | Phase G protocol repair before MCPL-first EBRAINS scale stress | **PASS** | Tier 4.32a-r1 repairs the Tier 4.32a-r0 blocker: MCPL lookup replies now carry value plus confidence/hit/status metadata, MCPL keys carry shard identity, local tests prove identical seq/type lookups do not cross-talk across shards, and MCPL confidence controls preserve full/zero/half-confidence learning behavior. | Local source/runtime evidence only; not SpiNNaker hardware evidence, not speedup evidence, not replicated-shard scaling, not multi-chip scaling, not static reef partitioning, and not a baseline freeze. |
 | `tier4_32b_static_reef_partition_smoke` | Phase G static reef partition mapping before inter-chip contract | **PASS** | Tier 4.32b maps CRA reef groups/modules/polyps onto the measured single-chip replicated-shard envelope: four static reef partitions own non-overlapping context/route/memory/learning cores and polyp slots, lookup parity and zero stale/duplicate/timeout counters are inherited from the 4.32a replicated hardware pass, one-polyp-one-chip is explicitly rejected, and Tier 4.32c inter-chip contract work is authorized next. | Local static partition/resource evidence only; not a new SpiNNaker hardware run, not speedup evidence, not one-polyp-one-chip evidence, not multi-chip evidence, not benchmark superiority, and not a native-scale baseline freeze. |
 | `tier4_32c_interchip_feasibility_contract` | Phase G inter-chip contract before first multi-chip smoke | **PASS** | Tier 4.32c defines the first reviewer-defensible inter-chip contract over the Tier 4.32b static reef partition map: required board/chip/core/role/partition/shard/seq identity fields, remote split-role MCPL lookup paths, compact readback ownership, failure classes, and the exact two-chip split-role single-shard smoke authorized for Tier 4.32d. It also records that true two-partition cross-chip learning is blocked until origin/target shard semantics are defined. | Local contract evidence only; not SpiNNaker hardware evidence, not multi-chip execution evidence, not true two-partition cross-chip learning evidence, not speedup evidence, not learning-scale evidence, not benchmark superiority, and not a native-scale baseline freeze. |
+| `tier4_32d_r0_interchip_route_source_audit` | Phase G route/source/package QA before first inter-chip hardware package | **PASS** | Tier 4.32d-r0 passed as a local route/source/package audit by blocking the first two-chip split-role single-shard EBRAINS package until inter-chip MCPL route entries are repaired or explicitly proven. The source-backed MCPL key/value/meta path exists, but current cra_state_mcpl_init routes request/reply keys to local cores only and does not define explicit inter-chip link routing. | Local audit evidence only; not SpiNNaker hardware evidence, not an EBRAINS package, not multi-chip execution evidence, not speedup evidence, not learning-scale evidence, not benchmark superiority, and not a native-scale baseline freeze. |
 
 ## Canonical Artifacts
 
@@ -168,6 +169,7 @@ Research narrative companions:
 | `tier4_32a_r1_mcpl_lookup_repair` | `controlled_test_output/tier4_32a_r1_20260506_mcpl_lookup_repair/tier4_32a_r1_results.json` | `controlled_test_output/tier4_32a_r1_20260506_mcpl_lookup_repair/tier4_32a_r1_report.md` | `controlled_test_output/tier4_32a_r1_20260506_mcpl_lookup_repair/tier4_32a_r1_criteria.csv` |
 | `tier4_32b_static_reef_partition_smoke` | `controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_results.json` | `controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_report.md` | `controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_partition_map.csv` |
 | `tier4_32c_interchip_feasibility_contract` | `controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_results.json` | `controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_report.md` | `controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_placement_contract.csv` |
+| `tier4_32d_r0_interchip_route_source_audit` | `controlled_test_output/tier4_32d_r0_20260507_interchip_route_source_audit/tier4_32d_r0_results.json` | `controlled_test_output/tier4_32d_r0_20260507_interchip_route_source_audit/tier4_32d_r0_report.md` | `controlled_test_output/tier4_32d_r0_20260507_interchip_route_source_audit/tier4_32d_r0_source_findings.csv` |
 
 ## Selected Noncanonical Diagnostics
 

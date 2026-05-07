@@ -1563,6 +1563,25 @@ SPECS: tuple[EvidenceSpec, ...] = (
             "tier4_32c_source_checks.csv",
         ),
     ),
+    EvidenceSpec(
+        entry_id="tier4_32d_r0_interchip_route_source_audit",
+        tier_label="Tier 4.32d-r0 - Inter-Chip Route/Source/Package Audit",
+        plan_position="Phase G route/source/package QA before first inter-chip hardware package",
+        canonical_dir="tier4_32d_r0_20260507_interchip_route_source_audit",
+        results_file="tier4_32d_r0_results.json",
+        report_file="tier4_32d_r0_report.md",
+        summary_file="tier4_32d_r0_source_findings.csv",
+        harness="experiments/tier4_32d_r0_interchip_route_source_audit.py",
+        evidence_role="native runtime inter-chip route/source/package QA",
+        claim="Tier 4.32d-r0 passed as a local route/source/package audit by blocking the first two-chip split-role single-shard EBRAINS package until inter-chip MCPL route entries are repaired or explicitly proven. The source-backed MCPL key/value/meta path exists, but current cra_state_mcpl_init routes request/reply keys to local cores only and does not define explicit inter-chip link routing.",
+        caveat="Local audit evidence only; not SpiNNaker hardware evidence, not an EBRAINS package, not multi-chip execution evidence, not speedup evidence, not learning-scale evidence, not benchmark superiority, and not a native-scale baseline freeze.",
+        latest_manifest_names=("tier4_32d_r0_latest_manifest.json",),
+        expected_extra_files=(
+            "tier4_32d_r0_criteria.csv",
+            "tier4_32d_r0_failure_classes.csv",
+            "tier4_32d_r0_source_findings.csv",
+        ),
+    ),
 )
 
 

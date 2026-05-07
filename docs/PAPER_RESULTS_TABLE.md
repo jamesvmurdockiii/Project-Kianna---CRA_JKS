@@ -4,11 +4,11 @@ This table is generated from `controlled_test_output/STUDY_REGISTRY.json`.
 It is intended as a paper/technical-note citation table, not as a new
 source of claims. If the registry changes, regenerate this file.
 
-- Generated: `2026-05-07T02:49:21.790391+00:00`
-- Registry generated: `2026-05-07T02:49:21.680681+00:00`
+- Generated: `2026-05-07T02:59:35.962461+00:00`
+- Registry generated: `2026-05-07T02:59:35.854036+00:00`
 - Registry status: **PASS**
-- Canonical bundles: `72`
-- Expanded entries: `72`
+- Canonical bundles: `73`
+- Expanded entries: `73`
 
 ## Summary Table
 
@@ -86,6 +86,7 @@ source of claims. If the registry changes, regenerate this file.
 | `tier4_32a_r1_mcpl_lookup_repair` | PASS | see manifest | 4.32a-r1 |  | Local source/runtime evidence only; not SpiNNaker hardware evidence, not speedup evidence, not replicated-shard scaling, not multi-chip scaling, not static reef partitioning, and not a baseline freeze. | results: `controlled_test_output/tier4_32a_r1_20260506_mcpl_lookup_repair/tier4_32a_r1_results.json`; report: `controlled_test_output/tier4_32a_r1_20260506_mcpl_lookup_repair/tier4_32a_r1_report.md`; summary: `controlled_test_output/tier4_32a_r1_20260506_mcpl_lookup_repair/tier4_32a_r1_criteria.csv` |
 | `tier4_32b_static_reef_partition_smoke` | PASS | see manifest | 4.32b |  | Local static partition/resource evidence only; not a new SpiNNaker hardware run, not speedup evidence, not one-polyp-one-chip evidence, not multi-chip evidence, not benchmark superiority, and not a native-scale baseline freeze. | results: `controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_results.json`; report: `controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_report.md`; summary: `controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_partition_map.csv` |
 | `tier4_32c_interchip_feasibility_contract` | PASS | see manifest | Tier 4.32c - Inter-Chip Feasibility Contract |  | Local contract evidence only; not SpiNNaker hardware evidence, not multi-chip execution evidence, not true two-partition cross-chip learning evidence, not speedup evidence, not learning-scale evidence, not benchmark superiority, and not a native-scale baseline freeze. | results: `controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_results.json`; report: `controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_report.md`; summary: `controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_placement_contract.csv` |
+| `tier4_32d_r0_interchip_route_source_audit` | PASS | see manifest | Tier 4.32d-r0 - Inter-Chip Route/Source/Package Audit |  | Local audit evidence only; not SpiNNaker hardware evidence, not an EBRAINS package, not multi-chip execution evidence, not speedup evidence, not learning-scale evidence, not benchmark superiority, and not a native-scale baseline freeze. | results: `controlled_test_output/tier4_32d_r0_20260507_interchip_route_source_audit/tier4_32d_r0_results.json`; report: `controlled_test_output/tier4_32d_r0_20260507_interchip_route_source_audit/tier4_32d_r0_report.md`; summary: `controlled_test_output/tier4_32d_r0_20260507_interchip_route_source_audit/tier4_32d_r0_source_findings.csv` |
 
 ## Claim Discipline
 

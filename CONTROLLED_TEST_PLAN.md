@@ -9095,10 +9095,10 @@ Decision:
 Tier 4.32a-hw-replicated later passed as single-chip replicated-shard stress.
 Tier 4.32b static reef partition smoke/resource mapping later passed locally.
 Tier 4.32c inter-chip feasibility contract later passed locally.
-Tier 4.32d first two-chip split-role single-shard MCPL lookup smoke is the next
-authorized gate.
-Multi-chip learning, benchmark superiority, speedup claims, and native-scale
-baseline freeze remain blocked until 4.32d and 4.32e pass cleanly.
+Tier 4.32d-r0 route/source/package audit later passed and blocked the first
+4.32d EBRAINS package until inter-chip route repair. Multi-chip learning,
+benchmark superiority, speedup claims, and native-scale baseline freeze remain
+blocked until 4.32d-r1, 4.32d, and 4.32e pass cleanly.
 ```
 
 ## Tier 4.32a-hw-replicated - Replicated-Shard MCPL-First EBRAINS Scale Stress
@@ -9209,10 +9209,10 @@ Decision:
 ```text
 Tier 4.32b static reef partition smoke/resource mapping later passed locally.
 Tier 4.32c inter-chip feasibility contract later passed locally.
-Tier 4.32d first two-chip split-role single-shard MCPL lookup smoke is the next
-authorized gate.
-Multi-chip learning, speedup claims, benchmark claims, and native-scale baseline
-freeze remain blocked until 4.32d and 4.32e pass cleanly.
+Tier 4.32d-r0 route/source/package audit later passed and blocked the first
+4.32d EBRAINS package until inter-chip route repair. Multi-chip learning,
+speedup claims, benchmark claims, and native-scale baseline freeze remain
+blocked until 4.32d-r1, 4.32d, and 4.32e pass cleanly.
 ```
 
 
@@ -9245,9 +9245,10 @@ Decision:
 
 ```text
 Tier 4.32c inter-chip feasibility contract later passed locally.
-Tier 4.32d first two-chip split-role single-shard MCPL lookup smoke is authorized next.
-Multi-chip learning, speedup claims, benchmark claims, and native-scale
-baseline freeze remain blocked until 4.32d and 4.32e pass cleanly.
+Tier 4.32d-r0 route/source/package audit later passed and blocked the first
+4.32d EBRAINS package until inter-chip route repair. Tier 4.32d-r1 is authorized
+next. Multi-chip learning, speedup claims, benchmark claims, and native-scale
+baseline freeze remain blocked until 4.32d-r1, 4.32d, and 4.32e pass cleanly.
 ```
 
 Boundary:
@@ -9290,10 +9291,11 @@ Required delivery counters:
 Decision:
 
 ```text
-Tier 4.32d first two-chip split-role single-shard MCPL lookup smoke is authorized next.
+Tier 4.32d-r0 route/source/package audit was authorized next and later passed.
+That audit blocked the first 4.32d EBRAINS package until inter-chip route repair.
+Tier 4.32d-r1 route repair/local QA is now required before 4.32d hardware.
 Tier 4.32e multi-chip learning micro-task remains blocked until 4.32d passes.
-Speedup claims, benchmark claims, and CRA_NATIVE_SCALE_BASELINE_v0.5 remain
-blocked.
+Speedup claims, benchmark claims, and CRA_NATIVE_SCALE_BASELINE_v0.5 remain blocked.
 ```
 
 Boundary:
@@ -9302,4 +9304,39 @@ Boundary:
 Local inter-chip feasibility contract only. Not a SpiNNaker hardware run, not
 multi-chip execution evidence, not speedup, not learning-scale evidence, not
 benchmark superiority, and not a native-scale baseline freeze.
+```
+
+## Tier 4.32d-r0 - Inter-Chip Route/Source/Package Audit
+
+Question: Can the current source honestly package the first two-chip split-role
+single-shard MCPL lookup smoke, or must route repair happen before EBRAINS?
+
+Result:
+
+```text
+Status: PASS
+Output: controlled_test_output/tier4_32d_r0_20260507_interchip_route_source_audit/
+Criteria: 10/10
+Decision: block_4_32d_package_until_route_repair
+Source-backed MCPL key/value/meta path: present
+Current cra_state_mcpl_init route behavior: local-core routes only
+Explicit inter-chip link route: absent
+Upload folder: not prepared
+```
+
+Decision:
+
+```text
+Tier 4.32d-r1 inter-chip MCPL route repair/local QA is required next.
+Do not prepare or upload the 4.32d EBRAINS package until route repair passes.
+Tier 4.32d hardware smoke, Tier 4.32e learning scale, speedup claims, benchmark
+claims, and CRA_NATIVE_SCALE_BASELINE_v0.5 remain blocked.
+```
+
+Boundary:
+
+```text
+Local route/source/package audit only. Not a SpiNNaker hardware run, not an
+EBRAINS package, not multi-chip execution evidence, not speedup, not
+learning-scale evidence, not benchmark superiority, and not baseline freeze.
 ```

@@ -1,0 +1,4 @@
+failure_class,detection_rule,required_response,blocks
+cross_chip_route_missing,cra_state_mcpl_init has only MC_CORE_ROUTE(core_id) delivery and no explicit link route or placement-provided routing table contract,do not prepare EBRAINS package; implement or prove inter-chip route entries first,Tier 4.32d hardware upload
+single_shard_protocol_limit,attempted true two-partition cross-chip learning with only one shard_id field,add origin/target shard semantics before multi-partition learning,Tier 4.32e+ learning scale
+package_overclaim,"upload folder or command claims learning scale, speedup, or two-partition learning before route smoke passes",delete/rewrite package and preserve audit failure,EBRAINS submission

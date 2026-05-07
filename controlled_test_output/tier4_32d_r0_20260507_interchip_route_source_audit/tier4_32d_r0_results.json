@@ -1,0 +1,149 @@
+{
+  "artifacts": {
+    "criteria_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32d_r0_20260507_interchip_route_source_audit/tier4_32d_r0_criteria.csv",
+    "failure_classes_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32d_r0_20260507_interchip_route_source_audit/tier4_32d_r0_failure_classes.csv",
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_32d_r0_20260507_interchip_route_source_audit/tier4_32d_r0_report.md",
+    "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_32d_r0_20260507_interchip_route_source_audit/tier4_32d_r0_results.json",
+    "source_findings_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32d_r0_20260507_interchip_route_source_audit/tier4_32d_r0_source_findings.csv"
+  },
+  "claim_boundary": "Tier 4.32d-r0 is a local route/source/package audit only. It is not a SpiNNaker hardware run, not an EBRAINS package, not multi-chip execution evidence, not speedup evidence, not learning-scale evidence, not benchmark superiority, and not a native-scale baseline freeze.",
+  "criteria": [
+    {
+      "name": "Tier 4.32c prerequisite passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "4.32c target is split-role single-shard",
+      "note": "",
+      "passed": true,
+      "rule": "== point_2chip_split_partition_lookup_smoke",
+      "value": "point_2chip_split_partition_lookup_smoke"
+    },
+    {
+      "name": "4.32c first smoke uses one partition",
+      "note": "",
+      "passed": true,
+      "rule": "== 1",
+      "value": 1
+    },
+    {
+      "name": "MCPL shard-aware key source exists",
+      "note": "",
+      "passed": true,
+      "rule": "== true",
+      "value": true
+    },
+    {
+      "name": "MCPL send path delegates delivery to router table",
+      "note": "",
+      "passed": true,
+      "rule": "== true",
+      "value": true
+    },
+    {
+      "name": "MCPL init installs local core routes",
+      "note": "",
+      "passed": true,
+      "rule": "== true",
+      "value": true
+    },
+    {
+      "name": "explicit inter-chip link route is absent and classified",
+      "note": "",
+      "passed": true,
+      "rule": "== false",
+      "value": false
+    },
+    {
+      "name": "4.32d upload folder not prepared prematurely",
+      "note": "",
+      "passed": true,
+      "rule": "must not exist",
+      "value": "/Users/james/JKS:CRA/ebrains_jobs/cra_432d"
+    },
+    {
+      "name": "hardware package remains blocked by source audit",
+      "note": "",
+      "passed": true,
+      "rule": "== blocked",
+      "value": "blocked"
+    },
+    {
+      "name": "next gate is route repair",
+      "note": "",
+      "passed": true,
+      "rule": "== Tier 4.32d-r1",
+      "value": "Tier 4.32d-r1"
+    }
+  ],
+  "failure_classes": [
+    {
+      "blocks": "Tier 4.32d hardware upload",
+      "detection_rule": "cra_state_mcpl_init has only MC_CORE_ROUTE(core_id) delivery and no explicit link route or placement-provided routing table contract",
+      "failure_class": "cross_chip_route_missing",
+      "required_response": "do not prepare EBRAINS package; implement or prove inter-chip route entries first"
+    },
+    {
+      "blocks": "Tier 4.32e+ learning scale",
+      "detection_rule": "attempted true two-partition cross-chip learning with only one shard_id field",
+      "failure_class": "single_shard_protocol_limit",
+      "required_response": "add origin/target shard semantics before multi-partition learning"
+    },
+    {
+      "blocks": "EBRAINS submission",
+      "detection_rule": "upload folder or command claims learning scale, speedup, or two-partition learning before route smoke passes",
+      "failure_class": "package_overclaim",
+      "required_response": "delete/rewrite package and preserve audit failure"
+    }
+  ],
+  "generated_at_utc": "2026-05-07T02:59:31+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_32d_r0_20260507_interchip_route_source_audit",
+  "runner_revision": "tier4_32d_r0_interchip_route_source_audit_20260507_0001",
+  "source_findings": [
+    {
+      "decision": "keep",
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c",
+      "finding_id": "mcpl_request_reply_source_backed",
+      "interpretation": "MCPL packet construction is present for the split-role smoke.",
+      "observed": "cra_state_mcpl_lookup_send_request_shard and cra_state_mcpl_lookup_send_reply_shard emit MCPL packets with shard-aware keys"
+    },
+    {
+      "decision": "4.32d must verify router entries, not just command arguments",
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c",
+      "finding_id": "dest_core_not_delivery_authority",
+      "interpretation": "The send path intentionally ignores dest_core; routing table entries are the delivery authority.",
+      "observed": "True"
+    },
+    {
+      "decision": "block package until inter-chip route repair or explicit placement/routing contract exists",
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c",
+      "finding_id": "local_core_routes_only",
+      "interpretation": "cra_state_mcpl_init currently routes matched request/reply keys to the local core only and does not name inter-chip links.",
+      "observed": "MC_CORE_ROUTE(core_id)=True; explicit_link_route=False"
+    },
+    {
+      "decision": "keep blocked for 4.32e+ until repaired",
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/config.h",
+      "finding_id": "true_two_partition_learning_protocol_missing",
+      "interpretation": "The 4.32c boundary remains correct: split-role single-shard smoke is the first honest target; true two-partition learning needs origin/target shard semantics later.",
+      "observed": "one shard_id field in MCPL key"
+    }
+  ],
+  "status": "pass",
+  "summary": {
+    "decision": "block_4_32d_package_until_route_repair",
+    "ebrains_package_authorized": false,
+    "explicit_link_route_present": false,
+    "first_smoke_partitions": 1,
+    "first_smoke_target": "point_2chip_split_partition_lookup_smoke",
+    "local_core_route_only": true,
+    "passed_criteria": 10,
+    "recommended_next_step": "Tier 4.32d-r1 inter-chip MCPL route repair/local QA before any EBRAINS package.",
+    "tier4_32c_status": "pass",
+    "total_criteria": 10
+  },
+  "tier": "Tier 4.32d-r0 - Inter-Chip Route/Source/Package Audit"
+}
