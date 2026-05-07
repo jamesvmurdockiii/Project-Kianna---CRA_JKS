@@ -104,17 +104,18 @@ Boundary: single-shard single-chip hardware stress only. It is not
 replicated-shard stress, not multi-chip evidence, not speedup evidence, not
 static reef partitioning, and not a native-scale baseline freeze.
 
-Tier 4.32d two-chip split-role single-shard MCPL lookup hardware smoke has now
-passed on EBRAINS and was ingested at
-`controlled_test_output/tier4_32d_20260507_hardware_pass_ingested/`. Tier 4.32d
-proved the named `(0,0)` source/learning chip to `(1,0)` remote state-chip
-communication/readback path for shard `0`: `32` events, `96/96` lookup replies,
-zero stale replies, zero duplicate replies, zero timeouts, compact readback, and
-zero synthetic fallback. The current upload folder is `ebrains_jobs/cra_432e`
-for Tier 4.32e multi-chip learning micro-task. Run
-`cra_432e/experiments/tier4_32e_multichip_learning_microtask.py --mode run-hardware --output-dir tier4_32e_job_output`.
-Benchmarks, speedup claims, native-scale baseline-freeze claims, and true
-two-partition cross-chip learning remain blocked until 4.32e passes and is ingested.
+Tier 4.32d two-chip split-role single-shard MCPL lookup hardware smoke passed on
+EBRAINS and was ingested at
+`controlled_test_output/tier4_32d_20260507_hardware_pass_ingested/`. Tier 4.32e
+multi-chip learning micro-task then passed on EBRAINS and was ingested at
+`controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/`: board
+`10.11.205.161`, two cases, 32 events per case, 96/96 lookup replies per case,
+zero stale replies, zero duplicate replies, zero timeouts, compact readback,
+zero synthetic fallback, enabled LR 0.25 readout `32768/0`, and no-learning LR
+0.0 readout `0/0`. The current next step is Tier 4.32f contract/design before
+another multi-chip hardware package. Benchmarks, speedup claims, native-scale
+baseline-freeze claims, lifecycle scaling, multi-shard learning, and true
+two-partition cross-chip learning remain blocked.
 
 ### Tier 4.31e
 
@@ -1268,4 +1269,6 @@ Purpose: test the smallest learning-bearing two-chip MCPL path after the Tier 4.
 
 Prepared reference: enabled learning must finish at `readout_weight_raw=32768`, `readout_bias_raw=0`; the no-learning control must finish at `readout_weight_raw=0`, `readout_bias_raw=0`. Each case expects `96/96` lookup replies, zero stale replies, zero duplicate replies, zero timeouts, compact readback, and zero synthetic fallback.
 
-Claim boundary: prepared source package only until returned EBRAINS artifacts pass and are ingested. Even if it passes, this is a tiny two-chip single-shard learning micro-task, not speedup evidence, benchmark evidence, true two-partition learning, lifecycle scaling, multi-shard learning, or a native-scale baseline freeze.
+Returned result: hardware pass / ingest pass at `controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/`. Board `10.11.205.161`; 42 returned artifacts preserved; enabled learning and no-learning control separated exactly.
+
+Claim boundary: this is a tiny two-chip single-shard learning micro-task, not speedup evidence, benchmark evidence, true two-partition learning, lifecycle scaling, multi-shard learning, or a native-scale baseline freeze.

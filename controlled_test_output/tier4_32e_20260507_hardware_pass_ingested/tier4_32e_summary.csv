@@ -1,0 +1,10 @@
+name,value,rule,passed,note
+hardware results json exists,/Users/james/Downloads/tier4_32e_results.json,exists,True,
+hardware mode was run-hardware,run-hardware,== run-hardware,True,
+raw hardware status pass,pass,== pass,True,
+learning microtask pass,pass,== pass,True,
+enabled case present,True,present,True,
+no-learning case present,True,present,True,
+returned artifacts preserved,42,>= 1,True,
+true two-partition learning not attempted,False,== False,True,
+synthetic fallback zero,False,== False,True,

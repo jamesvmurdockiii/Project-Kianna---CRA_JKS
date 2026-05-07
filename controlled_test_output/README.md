@@ -5,10 +5,10 @@ ledger is `STUDY_REGISTRY.json`; the compact table is `STUDY_REGISTRY.csv`.
 Older reruns, prepared capsules, debug probes, and baseline-frozen
 mechanism bundles outside the formal registry are preserved for audit.
 
-- Generated: `2026-05-07T17:09:23.431523+00:00`
+- Generated: `2026-05-07T18:46:35.950483+00:00`
 - Registry status: **PASS**
-- Canonical evidence entries: `75`
-- Expanded test-entry count: `75`; see the canonical evidence table below for the exact current tier list.
+- Canonical evidence entries: `76`
+- Expanded test-entry count: `76`; see the canonical evidence table below for the exact current tier list.
 
 ## Evidence Categories
 
@@ -97,6 +97,7 @@ mechanism bundles outside the formal registry are preserved for audit.
 | `tier4_32d_r0_interchip_route_source_audit` | **PASS** | `controlled_test_output/tier4_32d_r0_20260507_interchip_route_source_audit` | Local audit evidence only; not SpiNNaker hardware evidence, not an EBRAINS package, not multi-chip execution evidence, not speedup evidence, not learning-scale evidence, not benchmark superiority, and not a native-scale baseline freeze. |
 | `tier4_32d_r1_interchip_route_repair_local_qa` | **PASS** | `controlled_test_output/tier4_32d_r1_20260507_interchip_route_repair_local_qa` | Local source/runtime QA only; not SpiNNaker hardware evidence, not an EBRAINS package, not multi-chip execution evidence, not learning-scale evidence, not speedup evidence, not benchmark superiority, and not a native-scale baseline freeze. |
 | `tier4_32d_two_chip_mcpl_lookup_hardware_smoke` | **PASS** | `controlled_test_output/tier4_32d_20260507_hardware_pass_ingested` | Two-chip communication/readback hardware smoke only; not learning-scale evidence, not speedup evidence, not benchmark superiority, not true two-partition cross-chip learning, not lifecycle scaling, not multi-shard learning, and not a native-scale baseline freeze. |
+| `tier4_32e_multi_chip_learning_microtask` | **PASS** | `controlled_test_output/tier4_32e_20260507_hardware_pass_ingested` | Two-chip single-shard learning micro-task only; not speedup evidence, not benchmark superiority, not true two-partition cross-chip learning, not lifecycle scaling, not multi-shard learning, and not a native-scale baseline freeze. |
 
 ## Noncanonical Outputs
 

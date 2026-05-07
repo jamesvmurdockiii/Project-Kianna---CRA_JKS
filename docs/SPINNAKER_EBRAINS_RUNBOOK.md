@@ -39,11 +39,11 @@ passed that repair; Tier 4.32d package preparation passed at
 controlled_test_output/tier4_32d_20260507_prepared/ and refreshed
 ebrains_jobs/cra_432d; the returned EBRAINS 4.32d run then passed and was
 ingested at controlled_test_output/tier4_32d_20260507_hardware_pass_ingested/.
-Tier 4.32e multi-chip learning micro-task is now prepared at
-controlled_test_output/tier4_32e_20260507_prepared/ with upload folder
-ebrains_jobs/cra_432e. Speedup, benchmark, true two-partition, and native-scale
-baseline-freeze claims remain blocked until 4.32e returns a passing EBRAINS run
-and is ingested.
+Tier 4.32e multi-chip learning micro-task then passed on EBRAINS and was
+ingested at controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/.
+Speedup, benchmark, true two-partition, lifecycle-scaling, multi-shard, and
+native-scale baseline-freeze claims remain blocked until the next contract-
+backed evidence gate passes.
 ```
 
 Latest ingest hygiene lesson:
@@ -122,14 +122,18 @@ Tier 4.32d - Two-Chip Split-Role Single-Shard MCPL Lookup Smoke
     learning, and native-scale baseline freeze.
 
 Tier 4.32e - Multi-Chip Learning Micro-Task
-  Status: PREPARED / AWAITING EBRAINS RUN
+  Status: HARDWARE PASS / INGEST PASS
   Prepared output: controlled_test_output/tier4_32e_20260507_prepared/
-  Upload folder: ebrains_jobs/cra_432e
-  JobManager command:
-    cra_432e/experiments/tier4_32e_multichip_learning_microtask.py --mode run-hardware --output-dir tier4_32e_job_output
-  Goal: smallest learning-bearing cross-chip task over the 4.32d communication
-    path, with enabled-learning vs no-learning separation, resource measurements,
-    and explicit claim boundaries.
+  Ingested output: controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/
+  Board: 10.11.205.161
+  Result: two cases, 32 events per case, 96/96 lookup replies per case, zero
+    stale replies, zero duplicates, zero timeouts, compact readback, zero
+    synthetic fallback, and 42 returned artifacts preserved.
+  Separation: enabled LR 0.25 readout 32768/0; no-learning LR 0.0 readout 0/0.
+  Boundary: smallest learning-bearing cross-chip task over the 4.32d
+    communication path; not speedup, not benchmarks, not true two-partition
+    learning, not lifecycle scaling, not multi-shard learning, and not a
+    native-scale baseline freeze.
 
 Recent passed hardware-facing lifecycle tier:
 
@@ -270,7 +274,10 @@ Tier 4.31c - Native Temporal-Substrate Runtime Source Audit
     feasibility contract passed locally; Tier 4.32d-r0 route/source/package audit
     passed locally and blocked the upload until inter-chip route repair. Tier
     4.32d-r1 repaired the route blocker and Tier 4.32d then passed the
-    two-chip communication/readback hardware smoke after EBRAINS ingest. Native
+    two-chip communication/readback hardware smoke after EBRAINS ingest. Tier
+    4.32e then passed the two-chip learning micro-task after EBRAINS ingest.
+    The next action is Tier 4.32f contract/design before another hardware
+    package. Native
     replay buffers, sleep-like replay,
     and native macro eligibility remain deferred until measured blockers demand
     them.

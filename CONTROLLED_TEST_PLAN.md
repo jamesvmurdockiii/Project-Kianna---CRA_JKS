@@ -9376,7 +9376,8 @@ prepared as a communication/readback smoke only at
 `ebrains_jobs/cra_432d`. Do not claim learning scale, speedup, benchmark
 superiority, true two-partition learning, or CRA_NATIVE_SCALE_BASELINE_v0.5 from
 package preparation.
-Tier 4.32d later passed and was ingested; Tier 4.32e is now prepared and awaiting EBRAINS run/ingest.
+Tier 4.32d later passed and was ingested; Tier 4.32e later passed and was
+ingested as the first two-chip learning-bearing micro-task.
 ```
 
 Boundary:
@@ -9492,6 +9493,47 @@ Cases:
   no_learning_lr_0_00 -> reference readout_weight/readout_bias = 0 / 0
 ```
 
+Returned EBRAINS result:
+
+```text
+Status: HARDWARE PASS / INGEST PASS
+Output: controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/
+Raw runner output: /Users/james/Downloads/tier4_32e_results.json
+Board: 10.11.205.161
+Source/learning chip: (0,0), learning core 7
+Remote/state chip: (1,0), context/route/memory cores 4/5/6
+Shard: 0
+Cases: 2
+Events per case: 32
+Expected lookup replies per case: 96
+Returned artifacts preserved: 42
+Synthetic fallback: false
+```
+
+Observed case results:
+
+```text
+enabled_lr_0_25:
+  decisions: 32
+  reward_events: 32
+  pending_created / pending_matured / active_pending: 32 / 32 / 0
+  lookup_requests / lookup_replies: 96 / 96
+  stale_replies / duplicate_replies / timeouts: 0 / 0 / 0
+  compact payload_len: 105
+  readout_weight_raw / readout_bias_raw: 32768 / 0
+  readout_weight / readout_bias: 1.0 / 0.0
+
+no_learning_lr_0_00:
+  decisions: 32
+  reward_events: 32
+  pending_created / pending_matured / active_pending: 32 / 32 / 0
+  lookup_requests / lookup_replies: 96 / 96
+  stale_replies / duplicate_replies / timeouts: 0 / 0 / 0
+  compact payload_len: 105
+  readout_weight_raw / readout_bias_raw: 0 / 0
+  readout_weight / readout_bias: 0.0 / 0.0
+```
+
 Pass case after EBRAINS return:
 
 ```text
@@ -9517,12 +9559,17 @@ case separation failure, reference mismatch, synthetic fallback, or missing
 tier4_32e_results.json
 ```
 
-Boundary:
+Decision:
 
 ```text
-Prepared package only until returned EBRAINS artifacts pass and are ingested.
-If hardware passes, the claim is limited to a two-chip single-shard learning
-micro-task over the repaired MCPL lookup path. It is not speedup evidence, not
-benchmark evidence, not true two-partition learning, not lifecycle scaling, not
-multi-shard learning, and not a native-scale baseline freeze.
+Tier 4.32e passed and is canonical after ingest. The claim is limited to a
+two-chip single-shard learning micro-task over the repaired MCPL lookup path.
+It is not speedup evidence, not benchmark evidence, not true two-partition
+learning, not lifecycle scaling, not multi-shard learning, and not a
+native-scale baseline freeze.
+
+Next authorized action: Tier 4.32f multi-chip resource/lifecycle decision
+contract. Do not jump directly to another hardware package without defining
+the exact question, hypothesis/null, mechanism, claim boundary, controls,
+metrics, pass/fail criteria, expected artifacts, and docs to update.
 ```

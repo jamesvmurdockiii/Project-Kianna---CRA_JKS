@@ -1,0 +1,5706 @@
+{
+  "artifacts": {
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/tier4_32e_report.md",
+    "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/tier4_32e_results.json",
+    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/tier4_32e_summary.csv"
+  },
+  "claim_boundary": "Ingest confirms returned EBRAINS run-hardware artifacts only; baseline decisions remain separate.",
+  "criteria": [
+    {
+      "name": "hardware results json exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/Downloads/tier4_32e_results.json"
+    },
+    {
+      "name": "hardware mode was run-hardware",
+      "note": "",
+      "passed": true,
+      "rule": "== run-hardware",
+      "value": "run-hardware"
+    },
+    {
+      "name": "raw hardware status pass",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "learning microtask pass",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "enabled case present",
+      "note": "",
+      "passed": true,
+      "rule": "present",
+      "value": true
+    },
+    {
+      "name": "no-learning case present",
+      "note": "",
+      "passed": true,
+      "rule": "present",
+      "value": true
+    },
+    {
+      "name": "returned artifacts preserved",
+      "note": "",
+      "passed": true,
+      "rule": ">= 1",
+      "value": 42
+    },
+    {
+      "name": "true two-partition learning not attempted",
+      "note": "",
+      "passed": true,
+      "rule": "== False",
+      "value": false
+    },
+    {
+      "name": "synthetic fallback zero",
+      "note": "",
+      "passed": true,
+      "rule": "== False",
+      "value": false
+    }
+  ],
+  "failure_reason": "",
+  "generated_at_utc": "2026-05-07T17:31:28+00:00",
+  "hardware_results": {
+    "artifacts": {
+      "report_md": "/tmp/job12343159807614845839.tmp/tier4_32e_job_output/tier4_32e_report.md",
+      "results_json": "/tmp/job12343159807614845839.tmp/tier4_32e_job_output/tier4_32e_results.json",
+      "summary_csv": "/tmp/job12343159807614845839.tmp/tier4_32e_job_output/tier4_32e_summary.csv"
+    },
+    "builds": {
+      "context": {
+        "aplx_artifact": "/tmp/job12343159807614845839.tmp/tier4_32e_job_output/coral_reef_4_32e_context_context_core.aplx",
+        "aplx_exists": true,
+        "command": "make -C /tmp/job12343159807614845839.tmp/cra_432e/coral_reef_spinnaker/spinnaker_runtime clean all",
+        "profile": "context_core",
+        "reply_link_route": "ROUTE_W",
+        "request_link_route": "",
+        "returncode": 0,
+        "role": "context",
+        "runtime_profile": "context_core",
+        "shard_id": 0,
+        "size_stderr": "",
+        "size_stdout": "   text\t   data\t    bss\t    dec\t    hex\tfilename\n  12008\t     20\t   8505\t  20533\t   5035\t/tmp/job12343159807614845839.tmp/cra_432e/coral_reef_spinnaker/spinnaker_runtime/build/gnu/coral_reef.elf\n",
+        "size_text": 12028,
+        "spinnaker_tools": "/home/jovyan/spinnaker/spinnaker_tools",
+        "status": "pass",
+        "stderr": "",
+        "stdout": "make: Entering directory '/tmp/job12343159807614845839.tmp/cra_432e/coral_reef_spinnaker/spinnaker_runtime'\nrm -rf build/gnu/ build/coral_reef.aplx tests/test_runtime tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_lifecycle_core tests/test_four_core_local tests/test_four_core_mcpl_local tests/test_four_core_48event tests/test_mcpl_feasibility tests/test_mcpl_lookup_contract tests/test_mcpl_interchip_route_learning tests/test_mcpl_interchip_route_context tests/test_lifecycle tests/test_lifecycle_split tests/test_temporal_state\nmkdir -p build/gnu/src/\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_CONTEXT_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=4 -DCRA_USE_MCPL_LOOKUP=1 -DCRA_MCPL_SHARD_ID=0 -DCRA_MCPL_INTERCHIP_REPLY_LINK_ROUTE=ROUTE_W -o build/gnu/src/main.o src/main.c\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_CONTEXT_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=4 -DCRA_USE_MCPL_LOOKUP=1 -DCRA_MCPL_SHARD_ID=0 -DCRA_MCPL_INTERCHIP_REPLY_LINK_ROUTE=ROUTE_W -o build/gnu/src/state_manager.o src/state_manager.c\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_CONTEXT_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=4 -DCRA_USE_MCPL_LOOKUP=1 -DCRA_MCPL_SHARD_ID=0 -DCRA_MCPL_INTERCHIP_REPLY_LINK_ROUTE=ROUTE_W -o build/gnu/src/host_interface.o src/host_interface.c\nmkdir -p build/gnu/\n/home/jovyan/spinnaker/spinnaker_tools/tools/mkbuild coral_reef > build/gnu/coral_reef_build.c\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_CONTEXT_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=4 -DCRA_USE_MCPL_LOOKUP=1 -DCRA_MCPL_SHARD_ID=0 -DCRA_MCPL_INTERCHIP_REPLY_LINK_ROUTE=ROUTE_W   -c -o build/gnu/coral_reef_build.o build/gnu/coral_reef_build.c\n# spinnaker_tools.mk elf\narm-none-eabi-gcc -T/home/jovyan/spinnaker/spinnaker_tools/tools/sark.lnk -Wl,-e,cpu_reset -Wl,-static -ffreestanding -fdata-sections -ffunction-sections -Wl,--gc-sections -Wl,--use-blx -nostartfiles -static -L /home/jovyan/spinnaker/spinnaker_tools/lib build/gnu/src/main.o build/gnu/src/state_manager.o build/gnu/src/host_interface.o build/gnu/coral_reef_build.o  /home/jovyan/spinnaker/spinnaker_tools/lib/libspin1_api.a -o build/gnu/coral_reef.elf\narm-none-eabi-objdump -dxt > build/gnu/coral_reef.txt build/gnu/coral_reef.elf\narm-none-eabi-objcopy -O binary -j RO_DATA -j EX_DATA build/gnu/coral_reef.elf build/gnu/RO_DATA.bin\narm-none-eabi-objcopy -O binary -j RW_DATA build/gnu/coral_reef.elf build/gnu/RW_DATA.bin\nls -l build/gnu/RO_DATA.bin\n-rwxr-xr-x 1 jovyan users 12008 May  7 18:22 build/gnu/RO_DATA.bin\n/home/jovyan/spinnaker/spinnaker_tools/tools/mkbin build/gnu/RO_DATA.bin build/gnu/RW_DATA.bin > build/gnu/coral_reef.bin\nrm -f build/gnu/RO_DATA.bin build/gnu/RW_DATA.bin\narm-none-eabi-nm build/gnu/coral_reef.elf > build/gnu/coral_reef.nm\nmkdir -p build/\n/home/jovyan/spinnaker/spinnaker_tools/tools/mkaplx build/gnu/coral_reef.nm | cat - build/gnu/coral_reef.bin > build/coral_reef.aplx\nrm build/gnu/coral_reef.bin build/gnu/coral_reef.nm build/gnu/coral_reef_build.c build/gnu/coral_reef_build.o\nmake: Leaving directory '/tmp/job12343159807614845839.tmp/cra_432e/coral_reef_spinnaker/spinnaker_runtime'\n"
+      },
+      "learning": {
+        "aplx_artifact": "/tmp/job12343159807614845839.tmp/tier4_32e_job_output/coral_reef_4_32e_learning_learning_core.aplx",
+        "aplx_exists": true,
+        "command": "make -C /tmp/job12343159807614845839.tmp/cra_432e/coral_reef_spinnaker/spinnaker_runtime clean all",
+        "profile": "learning_core",
+        "reply_link_route": "",
+        "request_link_route": "ROUTE_E",
+        "returncode": 0,
+        "role": "learning",
+        "runtime_profile": "learning_core",
+        "shard_id": 0,
+        "size_stderr": "",
+        "size_stdout": "   text\t   data\t    bss\t    dec\t    hex\tfilename\n  15216\t     24\t  23777\t  39017\t   9869\t/tmp/job12343159807614845839.tmp/cra_432e/coral_reef_spinnaker/spinnaker_runtime/build/gnu/coral_reef.elf\n",
+        "size_text": 15240,
+        "spinnaker_tools": "/home/jovyan/spinnaker/spinnaker_tools",
+        "status": "pass",
+        "stderr": "",
+        "stdout": "make: Entering directory '/tmp/job12343159807614845839.tmp/cra_432e/coral_reef_spinnaker/spinnaker_runtime'\nrm -rf build/gnu/ build/coral_reef.aplx tests/test_runtime tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_lifecycle_core tests/test_four_core_local tests/test_four_core_mcpl_local tests/test_four_core_48event tests/test_mcpl_feasibility tests/test_mcpl_lookup_contract tests/test_mcpl_interchip_route_learning tests/test_mcpl_interchip_route_context tests/test_lifecycle tests/test_lifecycle_split tests/test_temporal_state\nmkdir -p build/gnu/src/\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 -DCRA_USE_MCPL_LOOKUP=1 -DCRA_MCPL_SHARD_ID=0 -DCRA_MCPL_INTERCHIP_REQUEST_LINK_ROUTE=ROUTE_E -o build/gnu/src/main.o src/main.c\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 -DCRA_USE_MCPL_LOOKUP=1 -DCRA_MCPL_SHARD_ID=0 -DCRA_MCPL_INTERCHIP_REQUEST_LINK_ROUTE=ROUTE_E -o build/gnu/src/state_manager.o src/state_manager.c\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 -DCRA_USE_MCPL_LOOKUP=1 -DCRA_MCPL_SHARD_ID=0 -DCRA_MCPL_INTERCHIP_REQUEST_LINK_ROUTE=ROUTE_E -o build/gnu/src/host_interface.o src/host_interface.c\nmkdir -p build/gnu/\n/home/jovyan/spinnaker/spinnaker_tools/tools/mkbuild coral_reef > build/gnu/coral_reef_build.c\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 -DCRA_USE_MCPL_LOOKUP=1 -DCRA_MCPL_SHARD_ID=0 -DCRA_MCPL_INTERCHIP_REQUEST_LINK_ROUTE=ROUTE_E   -c -o build/gnu/coral_reef_build.o build/gnu/coral_reef_build.c\n# spinnaker_tools.mk elf\narm-none-eabi-gcc -T/home/jovyan/spinnaker/spinnaker_tools/tools/sark.lnk -Wl,-e,cpu_reset -Wl,-static -ffreestanding -fdata-sections -ffunction-sections -Wl,--gc-sections -Wl,--use-blx -nostartfiles -static -L /home/jovyan/spinnaker/spinnaker_tools/lib build/gnu/src/main.o build/gnu/src/state_manager.o build/gnu/src/host_interface.o build/gnu/coral_reef_build.o  /home/jovyan/spinnaker/spinnaker_tools/lib/libspin1_api.a -o build/gnu/coral_reef.elf\narm-none-eabi-objdump -dxt > build/gnu/coral_reef.txt build/gnu/coral_reef.elf\narm-none-eabi-objcopy -O binary -j RO_DATA -j EX_DATA build/gnu/coral_reef.elf build/gnu/RO_DATA.bin\narm-none-eabi-objcopy -O binary -j RW_DATA build/gnu/coral_reef.elf build/gnu/RW_DATA.bin\nls -l build/gnu/RO_DATA.bin\n-rwxr-xr-x 1 jovyan users 15216 May  7 18:22 build/gnu/RO_DATA.bin\n/home/jovyan/spinnaker/spinnaker_tools/tools/mkbin build/gnu/RO_DATA.bin build/gnu/RW_DATA.bin > build/gnu/coral_reef.bin\nrm -f build/gnu/RO_DATA.bin build/gnu/RW_DATA.bin\narm-none-eabi-nm build/gnu/coral_reef.elf > build/gnu/coral_reef.nm\nmkdir -p build/\n/home/jovyan/spinnaker/spinnaker_tools/tools/mkaplx build/gnu/coral_reef.nm | cat - build/gnu/coral_reef.bin > build/coral_reef.aplx\nrm build/gnu/coral_reef.bin build/gnu/coral_reef.nm build/gnu/coral_reef_build.c build/gnu/coral_reef_build.o\nmake: Leaving directory '/tmp/job12343159807614845839.tmp/cra_432e/coral_reef_spinnaker/spinnaker_runtime'\n"
+      },
+      "memory": {
+        "aplx_artifact": "/tmp/job12343159807614845839.tmp/tier4_32e_job_output/coral_reef_4_32e_memory_memory_core.aplx",
+        "aplx_exists": true,
+        "command": "make -C /tmp/job12343159807614845839.tmp/cra_432e/coral_reef_spinnaker/spinnaker_runtime clean all",
+        "profile": "memory_core",
+        "reply_link_route": "ROUTE_W",
+        "request_link_route": "",
+        "returncode": 0,
+        "role": "memory",
+        "runtime_profile": "memory_core",
+        "shard_id": 0,
+        "size_stderr": "",
+        "size_stdout": "   text\t   data\t    bss\t    dec\t    hex\tfilename\n  12048\t     20\t   8505\t  20573\t   505d\t/tmp/job12343159807614845839.tmp/cra_432e/coral_reef_spinnaker/spinnaker_runtime/build/gnu/coral_reef.elf\n",
+        "size_text": 12068,
+        "spinnaker_tools": "/home/jovyan/spinnaker/spinnaker_tools",
+        "status": "pass",
+        "stderr": "",
+        "stdout": "make: Entering directory '/tmp/job12343159807614845839.tmp/cra_432e/coral_reef_spinnaker/spinnaker_runtime'\nrm -rf build/gnu/ build/coral_reef.aplx tests/test_runtime tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_lifecycle_core tests/test_four_core_local tests/test_four_core_mcpl_local tests/test_four_core_48event tests/test_mcpl_feasibility tests/test_mcpl_lookup_contract tests/test_mcpl_interchip_route_learning tests/test_mcpl_interchip_route_context tests/test_lifecycle tests/test_lifecycle_split tests/test_temporal_state\nmkdir -p build/gnu/src/\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_MEMORY_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=6 -DCRA_USE_MCPL_LOOKUP=1 -DCRA_MCPL_SHARD_ID=0 -DCRA_MCPL_INTERCHIP_REPLY_LINK_ROUTE=ROUTE_W -o build/gnu/src/main.o src/main.c\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_MEMORY_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=6 -DCRA_USE_MCPL_LOOKUP=1 -DCRA_MCPL_SHARD_ID=0 -DCRA_MCPL_INTERCHIP_REPLY_LINK_ROUTE=ROUTE_W -o build/gnu/src/state_manager.o src/state_manager.c\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_MEMORY_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=6 -DCRA_USE_MCPL_LOOKUP=1 -DCRA_MCPL_SHARD_ID=0 -DCRA_MCPL_INTERCHIP_REPLY_LINK_ROUTE=ROUTE_W -o build/gnu/src/host_interface.o src/host_interface.c\nmkdir -p build/gnu/\n/home/jovyan/spinnaker/spinnaker_tools/tools/mkbuild coral_reef > build/gnu/coral_reef_build.c\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_MEMORY_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=6 -DCRA_USE_MCPL_LOOKUP=1 -DCRA_MCPL_SHARD_ID=0 -DCRA_MCPL_INTERCHIP_REPLY_LINK_ROUTE=ROUTE_W   -c -o build/gnu/coral_reef_build.o build/gnu/coral_reef_build.c\n# spinnaker_tools.mk elf\narm-none-eabi-gcc -T/home/jovyan/spinnaker/spinnaker_tools/tools/sark.lnk -Wl,-e,cpu_reset -Wl,-static -ffreestanding -fdata-sections -ffunction-sections -Wl,--gc-sections -Wl,--use-blx -nostartfiles -static -L /home/jovyan/spinnaker/spinnaker_tools/lib build/gnu/src/main.o build/gnu/src/state_manager.o build/gnu/src/host_interface.o build/gnu/coral_reef_build.o  /home/jovyan/spinnaker/spinnaker_tools/lib/libspin1_api.a -o build/gnu/coral_reef.elf\narm-none-eabi-objdump -dxt > build/gnu/coral_reef.txt build/gnu/coral_reef.elf\narm-none-eabi-objcopy -O binary -j RO_DATA -j EX_DATA build/gnu/coral_reef.elf build/gnu/RO_DATA.bin\narm-none-eabi-objcopy -O binary -j RW_DATA build/gnu/coral_reef.elf build/gnu/RW_DATA.bin\nls -l build/gnu/RO_DATA.bin\n-rwxr-xr-x 1 jovyan users 12048 May  7 18:22 build/gnu/RO_DATA.bin\n/home/jovyan/spinnaker/spinnaker_tools/tools/mkbin build/gnu/RO_DATA.bin build/gnu/RW_DATA.bin > build/gnu/coral_reef.bin\nrm -f build/gnu/RO_DATA.bin build/gnu/RW_DATA.bin\narm-none-eabi-nm build/gnu/coral_reef.elf > build/gnu/coral_reef.nm\nmkdir -p build/\n/home/jovyan/spinnaker/spinnaker_tools/tools/mkaplx build/gnu/coral_reef.nm | cat - build/gnu/coral_reef.bin > build/coral_reef.aplx\nrm build/gnu/coral_reef.bin build/gnu/coral_reef.nm build/gnu/coral_reef_build.c build/gnu/coral_reef_build.o\nmake: Leaving directory '/tmp/job12343159807614845839.tmp/cra_432e/coral_reef_spinnaker/spinnaker_runtime'\n"
+      },
+      "route": {
+        "aplx_artifact": "/tmp/job12343159807614845839.tmp/tier4_32e_job_output/coral_reef_4_32e_route_route_core.aplx",
+        "aplx_exists": true,
+        "command": "make -C /tmp/job12343159807614845839.tmp/cra_432e/coral_reef_spinnaker/spinnaker_runtime clean all",
+        "profile": "route_core",
+        "reply_link_route": "ROUTE_W",
+        "request_link_route": "",
+        "returncode": 0,
+        "role": "route",
+        "runtime_profile": "route_core",
+        "shard_id": 0,
+        "size_stderr": "",
+        "size_stdout": "   text\t   data\t    bss\t    dec\t    hex\tfilename\n  12048\t     20\t   8505\t  20573\t   505d\t/tmp/job12343159807614845839.tmp/cra_432e/coral_reef_spinnaker/spinnaker_runtime/build/gnu/coral_reef.elf\n",
+        "size_text": 12068,
+        "spinnaker_tools": "/home/jovyan/spinnaker/spinnaker_tools",
+        "status": "pass",
+        "stderr": "",
+        "stdout": "make: Entering directory '/tmp/job12343159807614845839.tmp/cra_432e/coral_reef_spinnaker/spinnaker_runtime'\nrm -rf build/gnu/ build/coral_reef.aplx tests/test_runtime tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_lifecycle_core tests/test_four_core_local tests/test_four_core_mcpl_local tests/test_four_core_48event tests/test_mcpl_feasibility tests/test_mcpl_lookup_contract tests/test_mcpl_interchip_route_learning tests/test_mcpl_interchip_route_context tests/test_lifecycle tests/test_lifecycle_split tests/test_temporal_state\nmkdir -p build/gnu/src/\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_ROUTE_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=5 -DCRA_USE_MCPL_LOOKUP=1 -DCRA_MCPL_SHARD_ID=0 -DCRA_MCPL_INTERCHIP_REPLY_LINK_ROUTE=ROUTE_W -o build/gnu/src/main.o src/main.c\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_ROUTE_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=5 -DCRA_USE_MCPL_LOOKUP=1 -DCRA_MCPL_SHARD_ID=0 -DCRA_MCPL_INTERCHIP_REPLY_LINK_ROUTE=ROUTE_W -o build/gnu/src/state_manager.o src/state_manager.c\n# spinnaker_tools.mk c\nmkdir -p build/gnu/\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_ROUTE_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=5 -DCRA_USE_MCPL_LOOKUP=1 -DCRA_MCPL_SHARD_ID=0 -DCRA_MCPL_INTERCHIP_REPLY_LINK_ROUTE=ROUTE_W -o build/gnu/src/host_interface.o src/host_interface.c\nmkdir -p build/gnu/\n/home/jovyan/spinnaker/spinnaker_tools/tools/mkbuild coral_reef > build/gnu/coral_reef_build.c\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -Os -ffunction-sections -fdata-sections -DCRA_RUNTIME_PROFILE_ROUTE_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=5 -DCRA_USE_MCPL_LOOKUP=1 -DCRA_MCPL_SHARD_ID=0 -DCRA_MCPL_INTERCHIP_REPLY_LINK_ROUTE=ROUTE_W   -c -o build/gnu/coral_reef_build.o build/gnu/coral_reef_build.c\n# spinnaker_tools.mk elf\narm-none-eabi-gcc -T/home/jovyan/spinnaker/spinnaker_tools/tools/sark.lnk -Wl,-e,cpu_reset -Wl,-static -ffreestanding -fdata-sections -ffunction-sections -Wl,--gc-sections -Wl,--use-blx -nostartfiles -static -L /home/jovyan/spinnaker/spinnaker_tools/lib build/gnu/src/main.o build/gnu/src/state_manager.o build/gnu/src/host_interface.o build/gnu/coral_reef_build.o  /home/jovyan/spinnaker/spinnaker_tools/lib/libspin1_api.a -o build/gnu/coral_reef.elf\narm-none-eabi-objdump -dxt > build/gnu/coral_reef.txt build/gnu/coral_reef.elf\narm-none-eabi-objcopy -O binary -j RO_DATA -j EX_DATA build/gnu/coral_reef.elf build/gnu/RO_DATA.bin\narm-none-eabi-objcopy -O binary -j RW_DATA build/gnu/coral_reef.elf build/gnu/RW_DATA.bin\nls -l build/gnu/RO_DATA.bin\n-rwxr-xr-x 1 jovyan users 12048 May  7 18:22 build/gnu/RO_DATA.bin\n/home/jovyan/spinnaker/spinnaker_tools/tools/mkbin build/gnu/RO_DATA.bin build/gnu/RW_DATA.bin > build/gnu/coral_reef.bin\nrm -f build/gnu/RO_DATA.bin build/gnu/RW_DATA.bin\narm-none-eabi-nm build/gnu/coral_reef.elf > build/gnu/coral_reef.nm\nmkdir -p build/\n/home/jovyan/spinnaker/spinnaker_tools/tools/mkaplx build/gnu/coral_reef.nm | cat - build/gnu/coral_reef.bin > build/coral_reef.aplx\nrm build/gnu/coral_reef.bin build/gnu/coral_reef.nm build/gnu/coral_reef_build.c build/gnu/coral_reef_build.o\nmake: Leaving directory '/tmp/job12343159807614845839.tmp/cra_432e/coral_reef_spinnaker/spinnaker_runtime'\n"
+      }
+    },
+    "claim_boundary": "Tier 4.32e is a two-chip split-role single-shard learning micro-task over the MCPL lookup path. It proves only that the named source-chip learning core can retrieve remote context/route/memory state from the remote chip and update its readout on a 32-event deterministic task while a no-learning control stays immobile. It is not speedup evidence, not benchmark evidence, not true two-partition learning, not lifecycle scaling, not multi-shard learning, and not a native-scale baseline freeze.",
+    "criteria": [
+      {
+        "name": "runner revision current",
+        "note": "",
+        "passed": true,
+        "rule": "expected",
+        "value": "tier4_32e_multichip_learning_microtask_20260507_0001"
+      },
+      {
+        "name": "synthetic fallback zero",
+        "note": "",
+        "passed": true,
+        "rule": "== 0",
+        "value": 0
+      },
+      {
+        "name": "source checks pass",
+        "note": "",
+        "passed": true,
+        "rule": "== pass",
+        "value": "pass"
+      },
+      {
+        "name": "main syntax check pass",
+        "note": "",
+        "passed": true,
+        "rule": "== pass",
+        "value": "pass"
+      },
+      {
+        "name": "hardware target acquired",
+        "note": "",
+        "passed": true,
+        "rule": "status == pass",
+        "value": {
+          "attempts": [
+            {
+              "hostname": "",
+              "method": "hostname_discovery",
+              "notes": [
+                "no hostname found in args, common environment variables, or spynnaker.cfg"
+              ],
+              "reason": "no explicit hostname/config/environment target found",
+              "status": "fail"
+            },
+            {
+              "dest_cpu": 7,
+              "dest_x": 0,
+              "dest_y": 0,
+              "hostname": "10.11.205.161",
+              "method": "pyNN.spiNNaker_probe",
+              "notes": [
+                "acquired transceiver/IP via PyNN/sPyNNaker DataView because EBRAINS JobManager may not expose a raw hostname",
+                "requested dest_cpu was free"
+              ],
+              "occupied_cores": [
+                1,
+                2,
+                3
+              ],
+              "probe_population_size": 1,
+              "probe_run_ms": 1.0,
+              "probe_timestep_ms": 1.0,
+              "runtime_seconds": 48.32262054271996,
+              "setup_kwargs": {
+                "timestep": 1.0
+              },
+              "status": "pass",
+              "target_ipaddress": "10.11.205.161"
+            }
+          ],
+          "dest_cpu": 7,
+          "dest_x": 0,
+          "dest_y": 0,
+          "hostname": "10.11.205.161",
+          "method": "pyNN.spiNNaker_probe",
+          "notes": [
+            "acquired transceiver/IP via PyNN/sPyNNaker DataView because EBRAINS JobManager may not expose a raw hostname",
+            "requested dest_cpu was free"
+          ],
+          "occupied_cores": [
+            1,
+            2,
+            3
+          ],
+          "probe_population_size": 1,
+          "probe_run_ms": 1.0,
+          "probe_timestep_ms": 1.0,
+          "runtime_seconds": 48.32262054271996,
+          "setup_kwargs": {
+            "timestep": 1.0
+          },
+          "status": "pass",
+          "target_ipaddress": "10.11.205.161"
+        }
+      },
+      {
+        "name": "all four role builds pass",
+        "note": "",
+        "passed": true,
+        "rule": "all == pass",
+        "value": {
+          "context": "pass",
+          "learning": "pass",
+          "memory": "pass",
+          "route": "pass"
+        }
+      },
+      {
+        "name": "all four role loads pass",
+        "note": "",
+        "passed": true,
+        "rule": "all == pass",
+        "value": {
+          "context": "pass",
+          "learning": "pass",
+          "memory": "pass",
+          "route": "pass"
+        }
+      },
+      {
+        "name": "no top-level hardware exception",
+        "note": "",
+        "passed": true,
+        "rule": "== True",
+        "value": true
+      },
+      {
+        "name": "multi-chip learning micro-task status pass",
+        "note": "",
+        "passed": true,
+        "rule": "== pass",
+        "value": "pass"
+      },
+      {
+        "name": "no top-level hardware exception",
+        "note": "",
+        "passed": true,
+        "rule": "== True",
+        "value": true
+      },
+      {
+        "name": "both learning cases returned",
+        "note": "",
+        "passed": true,
+        "rule": "== 2",
+        "value": 2
+      },
+      {
+        "name": "enabled case present",
+        "note": "",
+        "passed": true,
+        "rule": "present",
+        "value": true
+      },
+      {
+        "name": "no-learning case present",
+        "note": "",
+        "passed": true,
+        "rule": "present",
+        "value": true
+      },
+      {
+        "name": "all cases pass",
+        "note": "",
+        "passed": true,
+        "rule": "all == pass",
+        "value": {
+          "enabled_lr_0_25": "pass",
+          "no_learning_lr_0_00": "pass"
+        }
+      },
+      {
+        "name": "enabled readout exceeds no-learning control",
+        "note": "",
+        "passed": true,
+        "rule": "enabled > no_learning",
+        "value": {
+          "enabled": 32768,
+          "no_learning": 0
+        }
+      },
+      {
+        "name": "both cases used identical lookup budget",
+        "note": "",
+        "passed": true,
+        "rule": "both == 96",
+        "value": {
+          "enabled": 96,
+          "no_learning": 96
+        }
+      },
+      {
+        "name": "true two-partition learning not attempted",
+        "note": "",
+        "passed": true,
+        "rule": "== not_attempted",
+        "value": "not_attempted"
+      },
+      {
+        "name": "native-scale baseline freeze not authorized",
+        "note": "",
+        "passed": true,
+        "rule": "== not_authorized",
+        "value": "not_authorized"
+      },
+      {
+        "name": "enabled_lr_0_25 :: no hardware exception",
+        "note": "",
+        "passed": true,
+        "rule": "== True",
+        "value": true
+      },
+      {
+        "name": "enabled_lr_0_25 :: task completed",
+        "note": "",
+        "passed": true,
+        "rule": "completed/pass",
+        "value": "completed"
+      },
+      {
+        "name": "enabled_lr_0_25 :: case label present",
+        "note": "",
+        "passed": true,
+        "rule": "non-empty",
+        "value": "enabled_lr_0_25"
+      },
+      {
+        "name": "enabled_lr_0_25 :: case kind valid",
+        "note": "",
+        "passed": true,
+        "rule": "enabled|no_learning",
+        "value": "enabled"
+      },
+      {
+        "name": "enabled_lr_0_25 :: reference computed",
+        "note": "",
+        "passed": true,
+        "rule": "contains final readout",
+        "value": {
+          "active_pending": 0,
+          "decisions": 32,
+          "event_count": 32,
+          "final_timestep": 34,
+          "learning_rate": 0.25,
+          "learning_rate_raw": 8192,
+          "pending_created": 32,
+          "pending_matured": 32,
+          "readout_bias": 0.0,
+          "readout_bias_raw": 0,
+          "readout_weight": 1.0,
+          "readout_weight_raw": 32768,
+          "reward_events": 32,
+          "trace_preview": [
+            {
+              "due": 3,
+              "event": 1,
+              "feature_raw": 32768,
+              "prediction_raw": 0,
+              "target_raw": 32768,
+              "timestep": 2
+            },
+            {
+              "due": 4,
+              "event": 2,
+              "feature_raw": -32768,
+              "prediction_raw": 0,
+              "target_raw": -32768,
+              "timestep": 3
+            },
+            {
+              "due": 5,
+              "event": 3,
+              "feature_raw": 32768,
+              "prediction_raw": 16384,
+              "target_raw": 32768,
+              "timestep": 4
+            },
+            {
+              "due": 6,
+              "event": 4,
+              "feature_raw": -32768,
+              "prediction_raw": -16384,
+              "target_raw": -32768,
+              "timestep": 5
+            },
+            {
+              "due": 7,
+              "event": 5,
+              "feature_raw": -32768,
+              "prediction_raw": -16384,
+              "target_raw": -32768,
+              "timestep": 6
+            },
+            {
+              "due": 8,
+              "event": 6,
+              "feature_raw": 32768,
+              "prediction_raw": 24576,
+              "target_raw": 32768,
+              "timestep": 7
+            },
+            {
+              "due": 9,
+              "event": 7,
+              "feature_raw": -32768,
+              "prediction_raw": -32768,
+              "target_raw": -32768,
+              "timestep": 8
+            },
+            {
+              "due": 10,
+              "event": 8,
+              "feature_raw": 32768,
+              "prediction_raw": 28672,
+              "target_raw": 32768,
+              "timestep": 9
+            }
+          ]
+        }
+      },
+      {
+        "name": "enabled_lr_0_25 :: source chip placement",
+        "note": "",
+        "passed": true,
+        "rule": "== {'x': 0, 'y': 0}",
+        "value": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "name": "enabled_lr_0_25 :: remote chip placement",
+        "note": "",
+        "passed": true,
+        "rule": "== {'x': 1, 'y': 0}",
+        "value": {
+          "x": 1,
+          "y": 0
+        }
+      },
+      {
+        "name": "enabled_lr_0_25 :: all resets succeeded",
+        "note": "",
+        "passed": true,
+        "rule": "all success",
+        "value": {
+          "context": true,
+          "learning": true,
+          "memory": true,
+          "route": true
+        }
+      },
+      {
+        "name": "enabled_lr_0_25 :: all state writes succeeded",
+        "note": "",
+        "passed": true,
+        "rule": "all success",
+        "value": {
+          "context": [
+            {
+              "key": "ctx_A",
+              "slot": 101,
+              "success": true
+            },
+            {
+              "key": "ctx_B",
+              "slot": 202,
+              "success": true
+            },
+            {
+              "key": "ctx_C",
+              "slot": 303,
+              "success": true
+            },
+            {
+              "key": "ctx_D",
+              "slot": 404,
+              "success": true
+            }
+          ],
+          "memory": [
+            {
+              "key": "mem_A",
+              "slot": 2101,
+              "success": true
+            },
+            {
+              "key": "mem_B",
+              "slot": 2202,
+              "success": true
+            },
+            {
+              "key": "mem_C",
+              "slot": 2303,
+              "success": true
+            },
+            {
+              "key": "mem_D",
+              "slot": 2404,
+              "success": true
+            }
+          ],
+          "route": [
+            {
+              "key": "route_A",
+              "slot": 1101,
+              "success": true
+            },
+            {
+              "key": "route_B",
+              "slot": 1202,
+              "success": true
+            },
+            {
+              "key": "route_C",
+              "slot": 1303,
+              "success": true
+            },
+            {
+              "key": "route_D",
+              "slot": 1404,
+              "success": true
+            }
+          ]
+        }
+      },
+      {
+        "name": "enabled_lr_0_25 :: all schedule uploads succeeded",
+        "note": "",
+        "passed": true,
+        "rule": "all success",
+        "value": [
+          {
+            "index": 0,
+            "success": true
+          },
+          {
+            "index": 1,
+            "success": true
+          },
+          {
+            "index": 2,
+            "success": true
+          },
+          {
+            "index": 3,
+            "success": true
+          },
+          {
+            "index": 4,
+            "success": true
+          },
+          {
+            "index": 5,
+            "success": true
+          },
+          {
+            "index": 6,
+            "success": true
+          },
+          {
+            "index": 7,
+            "success": true
+          },
+          {
+            "index": 8,
+            "success": true
+          },
+          {
+            "index": 9,
+            "success": true
+          },
+          {
+            "index": 10,
+            "success": true
+          },
+          {
+            "index": 11,
+            "success": true
+          },
+          {
+            "index": 12,
+            "success": true
+          },
+          {
+            "index": 13,
+            "success": true
+          },
+          {
+            "index": 14,
+            "success": true
+          },
+          {
+            "index": 15,
+            "success": true
+          },
+          {
+            "index": 16,
+            "success": true
+          },
+          {
+            "index": 17,
+            "success": true
+          },
+          {
+            "index": 18,
+            "success": true
+          },
+          {
+            "index": 19,
+            "success": true
+          },
+          {
+            "index": 20,
+            "success": true
+          },
+          {
+            "index": 21,
+            "success": true
+          },
+          {
+            "index": 22,
+            "success": true
+          },
+          {
+            "index": 23,
+            "success": true
+          },
+          {
+            "index": 24,
+            "success": true
+          },
+          {
+            "index": 25,
+            "success": true
+          },
+          {
+            "index": 26,
+            "success": true
+          },
+          {
+            "index": 27,
+            "success": true
+          },
+          {
+            "index": 28,
+            "success": true
+          },
+          {
+            "index": 29,
+            "success": true
+          },
+          {
+            "index": 30,
+            "success": true
+          },
+          {
+            "index": 31,
+            "success": true
+          }
+        ]
+      },
+      {
+        "name": "enabled_lr_0_25 :: all run_continuous succeeded",
+        "note": "",
+        "passed": true,
+        "rule": "all success",
+        "value": {
+          "context": {
+            "raw": {
+              "cmd": 24,
+              "status": 0,
+              "success": true
+            },
+            "success": true
+          },
+          "learning": {
+            "raw": {
+              "cmd": 24,
+              "status": 0,
+              "success": true
+            },
+            "success": true
+          },
+          "memory": {
+            "raw": {
+              "cmd": 24,
+              "status": 0,
+              "success": true
+            },
+            "success": true
+          },
+          "route": {
+            "raw": {
+              "cmd": 24,
+              "status": 0,
+              "success": true
+            },
+            "success": true
+          }
+        }
+      },
+      {
+        "name": "enabled_lr_0_25 :: all pause commands succeeded",
+        "note": "",
+        "passed": true,
+        "rule": "all success",
+        "value": {
+          "context": {
+            "raw": {
+              "cmd": 25,
+              "status": 0,
+              "stopped_timestep": 4875,
+              "success": true
+            },
+            "success": true
+          },
+          "learning": {
+            "raw": {
+              "cmd": 25,
+              "status": 0,
+              "stopped_timestep": 1594,
+              "success": true
+            },
+            "success": true
+          },
+          "memory": {
+            "raw": {
+              "cmd": 25,
+              "status": 0,
+              "stopped_timestep": 2675,
+              "success": true
+            },
+            "success": true
+          },
+          "route": {
+            "raw": {
+              "cmd": 25,
+              "status": 0,
+              "stopped_timestep": 3775,
+              "success": true
+            },
+            "success": true
+          }
+        }
+      },
+      {
+        "name": "enabled_lr_0_25 :: context read success",
+        "note": "",
+        "passed": true,
+        "rule": "== True",
+        "value": true
+      },
+      {
+        "name": "enabled_lr_0_25 :: route read success",
+        "note": "",
+        "passed": true,
+        "rule": "== True",
+        "value": true
+      },
+      {
+        "name": "enabled_lr_0_25 :: memory read success",
+        "note": "",
+        "passed": true,
+        "rule": "== True",
+        "value": true
+      },
+      {
+        "name": "enabled_lr_0_25 :: learning read success",
+        "note": "",
+        "passed": true,
+        "rule": "== True",
+        "value": true
+      },
+      {
+        "name": "enabled_lr_0_25 :: decisions",
+        "note": "",
+        "passed": true,
+        "rule": "== 32",
+        "value": 32
+      },
+      {
+        "name": "enabled_lr_0_25 :: reward_events",
+        "note": "",
+        "passed": true,
+        "rule": "== 32",
+        "value": 32
+      },
+      {
+        "name": "enabled_lr_0_25 :: pending_created",
+        "note": "",
+        "passed": true,
+        "rule": "== 32",
+        "value": 32
+      },
+      {
+        "name": "enabled_lr_0_25 :: pending_matured",
+        "note": "",
+        "passed": true,
+        "rule": "== 32",
+        "value": 32
+      },
+      {
+        "name": "enabled_lr_0_25 :: active_pending cleared",
+        "note": "",
+        "passed": true,
+        "rule": "== 0",
+        "value": 0
+      },
+      {
+        "name": "enabled_lr_0_25 :: lookup_requests",
+        "note": "",
+        "passed": true,
+        "rule": "== 96",
+        "value": 96
+      },
+      {
+        "name": "enabled_lr_0_25 :: lookup_replies",
+        "note": "",
+        "passed": true,
+        "rule": "== 96",
+        "value": 96
+      },
+      {
+        "name": "enabled_lr_0_25 :: stale_replies zero",
+        "note": "",
+        "passed": true,
+        "rule": "== 0",
+        "value": 0
+      },
+      {
+        "name": "enabled_lr_0_25 :: duplicate_replies zero",
+        "note": "",
+        "passed": true,
+        "rule": "== 0",
+        "value": 0
+      },
+      {
+        "name": "enabled_lr_0_25 :: timeouts zero",
+        "note": "",
+        "passed": true,
+        "rule": "== 0",
+        "value": 0
+      },
+      {
+        "name": "enabled_lr_0_25 :: readout weight matches reference",
+        "note": "",
+        "passed": true,
+        "rule": "== 32768",
+        "value": 32768
+      },
+      {
+        "name": "enabled_lr_0_25 :: readout bias matches reference",
+        "note": "",
+        "passed": true,
+        "rule": "== 0",
+        "value": 0
+      },
+      {
+        "name": "enabled_lr_0_25 :: enabled learning moves readout",
+        "note": "",
+        "passed": true,
+        "rule": "> 0 when enabled",
+        "value": 32768
+      },
+      {
+        "name": "enabled_lr_0_25 :: no-learning keeps weight zero",
+        "note": "",
+        "passed": true,
+        "rule": "== 0 when no_learning",
+        "value": 32768
+      },
+      {
+        "name": "enabled_lr_0_25 :: no-learning keeps bias zero",
+        "note": "",
+        "passed": true,
+        "rule": "== 0 when no_learning",
+        "value": 0
+      },
+      {
+        "name": "enabled_lr_0_25 :: learning payload compact",
+        "note": "",
+        "passed": true,
+        "rule": ">= 105",
+        "value": 105
+      },
+      {
+        "name": "no_learning_lr_0_00 :: no hardware exception",
+        "note": "",
+        "passed": true,
+        "rule": "== True",
+        "value": true
+      },
+      {
+        "name": "no_learning_lr_0_00 :: task completed",
+        "note": "",
+        "passed": true,
+        "rule": "completed/pass",
+        "value": "completed"
+      },
+      {
+        "name": "no_learning_lr_0_00 :: case label present",
+        "note": "",
+        "passed": true,
+        "rule": "non-empty",
+        "value": "no_learning_lr_0_00"
+      },
+      {
+        "name": "no_learning_lr_0_00 :: case kind valid",
+        "note": "",
+        "passed": true,
+        "rule": "enabled|no_learning",
+        "value": "no_learning"
+      },
+      {
+        "name": "no_learning_lr_0_00 :: reference computed",
+        "note": "",
+        "passed": true,
+        "rule": "contains final readout",
+        "value": {
+          "active_pending": 0,
+          "decisions": 32,
+          "event_count": 32,
+          "final_timestep": 34,
+          "learning_rate": 0.0,
+          "learning_rate_raw": 0,
+          "pending_created": 32,
+          "pending_matured": 32,
+          "readout_bias": 0.0,
+          "readout_bias_raw": 0,
+          "readout_weight": 0.0,
+          "readout_weight_raw": 0,
+          "reward_events": 32,
+          "trace_preview": [
+            {
+              "due": 3,
+              "event": 1,
+              "feature_raw": 32768,
+              "prediction_raw": 0,
+              "target_raw": 32768,
+              "timestep": 2
+            },
+            {
+              "due": 4,
+              "event": 2,
+              "feature_raw": -32768,
+              "prediction_raw": 0,
+              "target_raw": -32768,
+              "timestep": 3
+            },
+            {
+              "due": 5,
+              "event": 3,
+              "feature_raw": 32768,
+              "prediction_raw": 0,
+              "target_raw": 32768,
+              "timestep": 4
+            },
+            {
+              "due": 6,
+              "event": 4,
+              "feature_raw": -32768,
+              "prediction_raw": 0,
+              "target_raw": -32768,
+              "timestep": 5
+            },
+            {
+              "due": 7,
+              "event": 5,
+              "feature_raw": -32768,
+              "prediction_raw": 0,
+              "target_raw": -32768,
+              "timestep": 6
+            },
+            {
+              "due": 8,
+              "event": 6,
+              "feature_raw": 32768,
+              "prediction_raw": 0,
+              "target_raw": 32768,
+              "timestep": 7
+            },
+            {
+              "due": 9,
+              "event": 7,
+              "feature_raw": -32768,
+              "prediction_raw": 0,
+              "target_raw": -32768,
+              "timestep": 8
+            },
+            {
+              "due": 10,
+              "event": 8,
+              "feature_raw": 32768,
+              "prediction_raw": 0,
+              "target_raw": 32768,
+              "timestep": 9
+            }
+          ]
+        }
+      },
+      {
+        "name": "no_learning_lr_0_00 :: source chip placement",
+        "note": "",
+        "passed": true,
+        "rule": "== {'x': 0, 'y': 0}",
+        "value": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "name": "no_learning_lr_0_00 :: remote chip placement",
+        "note": "",
+        "passed": true,
+        "rule": "== {'x': 1, 'y': 0}",
+        "value": {
+          "x": 1,
+          "y": 0
+        }
+      },
+      {
+        "name": "no_learning_lr_0_00 :: all resets succeeded",
+        "note": "",
+        "passed": true,
+        "rule": "all success",
+        "value": {
+          "context": true,
+          "learning": true,
+          "memory": true,
+          "route": true
+        }
+      },
+      {
+        "name": "no_learning_lr_0_00 :: all state writes succeeded",
+        "note": "",
+        "passed": true,
+        "rule": "all success",
+        "value": {
+          "context": [
+            {
+              "key": "ctx_A",
+              "slot": 101,
+              "success": true
+            },
+            {
+              "key": "ctx_B",
+              "slot": 202,
+              "success": true
+            },
+            {
+              "key": "ctx_C",
+              "slot": 303,
+              "success": true
+            },
+            {
+              "key": "ctx_D",
+              "slot": 404,
+              "success": true
+            }
+          ],
+          "memory": [
+            {
+              "key": "mem_A",
+              "slot": 2101,
+              "success": true
+            },
+            {
+              "key": "mem_B",
+              "slot": 2202,
+              "success": true
+            },
+            {
+              "key": "mem_C",
+              "slot": 2303,
+              "success": true
+            },
+            {
+              "key": "mem_D",
+              "slot": 2404,
+              "success": true
+            }
+          ],
+          "route": [
+            {
+              "key": "route_A",
+              "slot": 1101,
+              "success": true
+            },
+            {
+              "key": "route_B",
+              "slot": 1202,
+              "success": true
+            },
+            {
+              "key": "route_C",
+              "slot": 1303,
+              "success": true
+            },
+            {
+              "key": "route_D",
+              "slot": 1404,
+              "success": true
+            }
+          ]
+        }
+      },
+      {
+        "name": "no_learning_lr_0_00 :: all schedule uploads succeeded",
+        "note": "",
+        "passed": true,
+        "rule": "all success",
+        "value": [
+          {
+            "index": 0,
+            "success": true
+          },
+          {
+            "index": 1,
+            "success": true
+          },
+          {
+            "index": 2,
+            "success": true
+          },
+          {
+            "index": 3,
+            "success": true
+          },
+          {
+            "index": 4,
+            "success": true
+          },
+          {
+            "index": 5,
+            "success": true
+          },
+          {
+            "index": 6,
+            "success": true
+          },
+          {
+            "index": 7,
+            "success": true
+          },
+          {
+            "index": 8,
+            "success": true
+          },
+          {
+            "index": 9,
+            "success": true
+          },
+          {
+            "index": 10,
+            "success": true
+          },
+          {
+            "index": 11,
+            "success": true
+          },
+          {
+            "index": 12,
+            "success": true
+          },
+          {
+            "index": 13,
+            "success": true
+          },
+          {
+            "index": 14,
+            "success": true
+          },
+          {
+            "index": 15,
+            "success": true
+          },
+          {
+            "index": 16,
+            "success": true
+          },
+          {
+            "index": 17,
+            "success": true
+          },
+          {
+            "index": 18,
+            "success": true
+          },
+          {
+            "index": 19,
+            "success": true
+          },
+          {
+            "index": 20,
+            "success": true
+          },
+          {
+            "index": 21,
+            "success": true
+          },
+          {
+            "index": 22,
+            "success": true
+          },
+          {
+            "index": 23,
+            "success": true
+          },
+          {
+            "index": 24,
+            "success": true
+          },
+          {
+            "index": 25,
+            "success": true
+          },
+          {
+            "index": 26,
+            "success": true
+          },
+          {
+            "index": 27,
+            "success": true
+          },
+          {
+            "index": 28,
+            "success": true
+          },
+          {
+            "index": 29,
+            "success": true
+          },
+          {
+            "index": 30,
+            "success": true
+          },
+          {
+            "index": 31,
+            "success": true
+          }
+        ]
+      },
+      {
+        "name": "no_learning_lr_0_00 :: all run_continuous succeeded",
+        "note": "",
+        "passed": true,
+        "rule": "all success",
+        "value": {
+          "context": {
+            "raw": {
+              "cmd": 24,
+              "status": 0,
+              "success": true
+            },
+            "success": true
+          },
+          "learning": {
+            "raw": {
+              "cmd": 24,
+              "status": 0,
+              "success": true
+            },
+            "success": true
+          },
+          "memory": {
+            "raw": {
+              "cmd": 24,
+              "status": 0,
+              "success": true
+            },
+            "success": true
+          },
+          "route": {
+            "raw": {
+              "cmd": 24,
+              "status": 0,
+              "success": true
+            },
+            "success": true
+          }
+        }
+      },
+      {
+        "name": "no_learning_lr_0_00 :: all pause commands succeeded",
+        "note": "",
+        "passed": true,
+        "rule": "all success",
+        "value": {
+          "context": {
+            "raw": {
+              "cmd": 25,
+              "status": 0,
+              "stopped_timestep": 5344,
+              "success": true
+            },
+            "success": true
+          },
+          "learning": {
+            "raw": {
+              "cmd": 25,
+              "status": 0,
+              "stopped_timestep": 2067,
+              "success": true
+            },
+            "success": true
+          },
+          "memory": {
+            "raw": {
+              "cmd": 25,
+              "status": 0,
+              "stopped_timestep": 3148,
+              "success": true
+            },
+            "success": true
+          },
+          "route": {
+            "raw": {
+              "cmd": 25,
+              "status": 0,
+              "stopped_timestep": 4248,
+              "success": true
+            },
+            "success": true
+          }
+        }
+      },
+      {
+        "name": "no_learning_lr_0_00 :: context read success",
+        "note": "",
+        "passed": true,
+        "rule": "== True",
+        "value": true
+      },
+      {
+        "name": "no_learning_lr_0_00 :: route read success",
+        "note": "",
+        "passed": true,
+        "rule": "== True",
+        "value": true
+      },
+      {
+        "name": "no_learning_lr_0_00 :: memory read success",
+        "note": "",
+        "passed": true,
+        "rule": "== True",
+        "value": true
+      },
+      {
+        "name": "no_learning_lr_0_00 :: learning read success",
+        "note": "",
+        "passed": true,
+        "rule": "== True",
+        "value": true
+      },
+      {
+        "name": "no_learning_lr_0_00 :: decisions",
+        "note": "",
+        "passed": true,
+        "rule": "== 32",
+        "value": 32
+      },
+      {
+        "name": "no_learning_lr_0_00 :: reward_events",
+        "note": "",
+        "passed": true,
+        "rule": "== 32",
+        "value": 32
+      },
+      {
+        "name": "no_learning_lr_0_00 :: pending_created",
+        "note": "",
+        "passed": true,
+        "rule": "== 32",
+        "value": 32
+      },
+      {
+        "name": "no_learning_lr_0_00 :: pending_matured",
+        "note": "",
+        "passed": true,
+        "rule": "== 32",
+        "value": 32
+      },
+      {
+        "name": "no_learning_lr_0_00 :: active_pending cleared",
+        "note": "",
+        "passed": true,
+        "rule": "== 0",
+        "value": 0
+      },
+      {
+        "name": "no_learning_lr_0_00 :: lookup_requests",
+        "note": "",
+        "passed": true,
+        "rule": "== 96",
+        "value": 96
+      },
+      {
+        "name": "no_learning_lr_0_00 :: lookup_replies",
+        "note": "",
+        "passed": true,
+        "rule": "== 96",
+        "value": 96
+      },
+      {
+        "name": "no_learning_lr_0_00 :: stale_replies zero",
+        "note": "",
+        "passed": true,
+        "rule": "== 0",
+        "value": 0
+      },
+      {
+        "name": "no_learning_lr_0_00 :: duplicate_replies zero",
+        "note": "",
+        "passed": true,
+        "rule": "== 0",
+        "value": 0
+      },
+      {
+        "name": "no_learning_lr_0_00 :: timeouts zero",
+        "note": "",
+        "passed": true,
+        "rule": "== 0",
+        "value": 0
+      },
+      {
+        "name": "no_learning_lr_0_00 :: readout weight matches reference",
+        "note": "",
+        "passed": true,
+        "rule": "== 0",
+        "value": 0
+      },
+      {
+        "name": "no_learning_lr_0_00 :: readout bias matches reference",
+        "note": "",
+        "passed": true,
+        "rule": "== 0",
+        "value": 0
+      },
+      {
+        "name": "no_learning_lr_0_00 :: enabled learning moves readout",
+        "note": "",
+        "passed": true,
+        "rule": "> 0 when enabled",
+        "value": 0
+      },
+      {
+        "name": "no_learning_lr_0_00 :: no-learning keeps weight zero",
+        "note": "",
+        "passed": true,
+        "rule": "== 0 when no_learning",
+        "value": 0
+      },
+      {
+        "name": "no_learning_lr_0_00 :: no-learning keeps bias zero",
+        "note": "",
+        "passed": true,
+        "rule": "== 0 when no_learning",
+        "value": 0
+      },
+      {
+        "name": "no_learning_lr_0_00 :: learning payload compact",
+        "note": "",
+        "passed": true,
+        "rule": ">= 105",
+        "value": 105
+      },
+      {
+        "name": "true two-partition learning not attempted",
+        "note": "",
+        "passed": true,
+        "rule": "== not_attempted",
+        "value": "not_attempted"
+      },
+      {
+        "name": "native-scale baseline freeze not authorized",
+        "note": "",
+        "passed": true,
+        "rule": "== not_authorized",
+        "value": "not_authorized"
+      }
+    ],
+    "environment": {
+      "cwd": "/tmp/job12343159807614845839.tmp",
+      "env": {
+        "SPINNAKER_BOARD": "",
+        "SPINNAKER_HOST": "",
+        "SPINNAKER_HOSTNAME": "",
+        "SPINNAKER_MACHINE": "",
+        "SPINN_DIRS": "/home/jovyan/spinnaker/spinnaker_tools",
+        "SPYNNAKER_MACHINE": ""
+      },
+      "modules": [
+        {
+          "available": true,
+          "name": "spinnman",
+          "path": "/home/jovyan/spinnaker/SpiNNMan/spinnman/__init__.py"
+        },
+        {
+          "available": true,
+          "name": "spinn_machine",
+          "path": "/home/jovyan/spinnaker/SpiNNMachine/spinn_machine/__init__.py"
+        },
+        {
+          "available": true,
+          "name": "spinn_utilities",
+          "path": "/home/jovyan/spinnaker/SpiNNUtils/spinn_utilities/__init__.py"
+        },
+        {
+          "available": true,
+          "name": "pyNN.spiNNaker",
+          "path": "/home/jovyan/spinnaker/lib/python3.13/site-packages/pyNN/__init__.py"
+        },
+        {
+          "available": true,
+          "name": "spynnaker.pyNN",
+          "path": "/home/jovyan/spinnaker/sPyNNaker/spynnaker/__init__.py"
+        },
+        {
+          "available": true,
+          "name": "spinn_front_end_common",
+          "path": "/home/jovyan/spinnaker/SpiNNFrontEndCommon/spinn_front_end_common/__init__.py"
+        },
+        {
+          "available": true,
+          "name": "spalloc_client",
+          "path": "/home/jovyan/spinnaker/spalloc/spalloc_client/__init__.py"
+        }
+      ],
+      "python": "/home/jovyan/spinnaker/bin/python",
+      "python_version": "3.13.9 | packaged by conda-forge | (main, Oct 16 2025, 10:31:39) [GCC 14.3.0]",
+      "spinnaker_tools": "/home/jovyan/spinnaker/spinnaker_tools",
+      "tools": {
+        "cc": "/usr/bin/cc",
+        "make": "/usr/bin/make",
+        "spin1_api": "",
+        "ybug": "/home/jovyan/spinnaker/spinnaker_tools/tools/ybug"
+      }
+    },
+    "failure_reason": "",
+    "final_decision": {
+      "claim_boundary": "Tier 4.32e is a two-chip split-role single-shard learning micro-task over the MCPL lookup path. It proves only that the named source-chip learning core can retrieve remote context/route/memory state from the remote chip and update its readout on a 32-event deterministic task while a no-learning control stays immobile. It is not speedup evidence, not benchmark evidence, not true two-partition learning, not lifecycle scaling, not multi-shard learning, and not a native-scale baseline freeze.",
+      "native_scale_baseline_freeze": "not_authorized",
+      "status": "pass",
+      "tier4_32f_multi_chip_lifecycle_or_resource_gate": "authorized_next"
+    },
+    "generated_at_utc": "2026-05-07T17:23:00+00:00",
+    "hardware_exception": null,
+    "loads": {
+      "context": {
+        "app_id": 1,
+        "hostname": "10.11.205.161",
+        "method": "spynnaker_dataview_transceiver.execute_flood",
+        "p": 4,
+        "runtime_seconds": 1.1200843839906156,
+        "status": "pass",
+        "x": 1,
+        "y": 0
+      },
+      "learning": {
+        "app_id": 4,
+        "hostname": "10.11.205.161",
+        "method": "spynnaker_dataview_transceiver.execute_flood",
+        "p": 7,
+        "runtime_seconds": 1.1501697753556073,
+        "status": "pass",
+        "x": 0,
+        "y": 0
+      },
+      "memory": {
+        "app_id": 3,
+        "hostname": "10.11.205.161",
+        "method": "spynnaker_dataview_transceiver.execute_flood",
+        "p": 6,
+        "runtime_seconds": 1.120577560737729,
+        "status": "pass",
+        "x": 1,
+        "y": 0
+      },
+      "route": {
+        "app_id": 2,
+        "hostname": "10.11.205.161",
+        "method": "spynnaker_dataview_transceiver.execute_flood",
+        "p": 5,
+        "runtime_seconds": 1.1208389410749078,
+        "status": "pass",
+        "x": 1,
+        "y": 0
+      }
+    },
+    "main_syntax": {
+      "normal": {
+        "command": "/usr/bin/cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-int-to-pointer-cast -I /tmp/job12343159807614845839.tmp/cra_432e/coral_reef_spinnaker/spinnaker_runtime/stubs -I /tmp/job12343159807614845839.tmp/cra_432e/coral_reef_spinnaker/spinnaker_runtime/src -c /tmp/job12343159807614845839.tmp/cra_432e/coral_reef_spinnaker/spinnaker_runtime/src/main.c -o /tmp/job12343159807614845839.tmp/tier4_32e_job_output/tier4_22i_main_syntax_normal.o",
+        "object_artifact": "/tmp/job12343159807614845839.tmp/tier4_32e_job_output/tier4_22i_main_syntax_normal.o",
+        "returncode": 0,
+        "status": "pass",
+        "stderr": "",
+        "stderr_artifact": "/tmp/job12343159807614845839.tmp/tier4_32e_job_output/tier4_22i_main_syntax_normal_stderr.txt",
+        "stdout": "",
+        "stdout_artifact": "/tmp/job12343159807614845839.tmp/tier4_32e_job_output/tier4_22i_main_syntax_normal_stdout.txt"
+      },
+      "status": "pass"
+    },
+    "mode": "run-hardware",
+    "output_dir": "/tmp/job12343159807614845839.tmp/tier4_32e_job_output",
+    "runner_revision": "tier4_32e_multichip_learning_microtask_20260507_0001",
+    "runtime_seconds": 64.1806114166975,
+    "source_checks": {
+      "command": "make -C /tmp/job12343159807614845839.tmp/cra_432e/coral_reef_spinnaker/spinnaker_runtime clean-host test-mcpl-interchip-route-contract test-mcpl-lookup-contract test-four-core-mcpl-local test-four-core-48event",
+      "returncode": 0,
+      "status": "pass",
+      "stderr": "",
+      "stdout": "make: Entering directory '/tmp/job12343159807614845839.tmp/cra_432e/coral_reef_spinnaker/spinnaker_runtime'\nrm -f tests/test_runtime tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_lifecycle_core tests/test_four_core_local tests/test_four_core_mcpl_local tests/test_four_core_48event tests/test_mcpl_feasibility tests/test_mcpl_lookup_contract tests/test_mcpl_interchip_route_learning tests/test_mcpl_interchip_route_context tests/test_lifecycle tests/test_lifecycle_split tests/test_temporal_state\ncc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_USE_MCPL_LOOKUP=1 -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 -DCRA_MCPL_INTERCHIP_REQUEST_LINK_ROUTE=ROUTE_E tests/test_mcpl_interchip_route_contract.c stubs/spin1_api.c src/state_manager.c -lm -o tests/test_mcpl_interchip_route_learning\n./tests/test_mcpl_interchip_route_learning\nTier 4.32d-r1 learning-core inter-chip route contract\n  PASS: learning core installs outbound request link routes\ncc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_USE_MCPL_LOOKUP=1 -DCRA_RUNTIME_PROFILE_CONTEXT_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=4 -DCRA_MCPL_INTERCHIP_REPLY_LINK_ROUTE=ROUTE_W tests/test_mcpl_interchip_route_contract.c stubs/spin1_api.c src/state_manager.c -lm -o tests/test_mcpl_interchip_route_context\n./tests/test_mcpl_interchip_route_context\nTier 4.32d-r1 state-core inter-chip route contract\n  PASS: state core installs local request route plus outbound reply link routes\ncc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_USE_MCPL_LOOKUP=1 -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 tests/test_mcpl_lookup_contract.c stubs/spin1_api.c src/state_manager.c -lm -o tests/test_mcpl_lookup_contract\n./tests/test_mcpl_lookup_contract\nTier 4.32a-r1 MCPL lookup contract tests\n  PASS: reply sends value plus confidence/meta packets\n  PASS: receive waits for value and meta before completing lookup\n  PASS: meta-before-value ordering is accepted\n  PASS: shard_id prevents identical seq/type cross-talk\n  PASS: wrong-shard packets cannot complete pending lookup\nAll Tier 4.32a-r1 MCPL lookup contract tests passed.\ncc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_USE_MCPL_LOOKUP=1 -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 tests/test_four_core_mcpl_local.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_four_core_mcpl_local\n./tests/test_four_core_mcpl_local\nTier 4.32a-r1 four-core MCPL local integration test\n  PASS: MCPL full-confidence path learns like SDP reference\n  PASS: MCPL zero-confidence path blocks learning\n  PASS: MCPL half-confidence path scales learning\nAll Tier 4.32a-r1 four-core MCPL local tests passed.\ncc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -I tests -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 tests/test_four_core_48event.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_four_core_48event\n./tests/test_four_core_48event\npending_created=48\npending_matured=48\nactive_pending=0\ndecisions=48\nreward_events=48\nreadout_weight=32768\nreadout_bias=0\nlookup_requests=144\nlookup_replies=144\nstale_replies=0\ntimeouts=0\nfinal_timestep=50\nPASS: All 48-event four-core distributed criteria met.\nmake: Leaving directory '/tmp/job12343159807614845839.tmp/cra_432e/coral_reef_spinnaker/spinnaker_runtime'\n"
+    },
+    "status": "pass",
+    "summary": {
+      "claim_boundary": "Tier 4.32e is a two-chip split-role single-shard learning micro-task over the MCPL lookup path. It proves only that the named source-chip learning core can retrieve remote context/route/memory state from the remote chip and update its readout on a 32-event deterministic task while a no-learning control stays immobile. It is not speedup evidence, not benchmark evidence, not true two-partition learning, not lifecycle scaling, not multi-shard learning, and not a native-scale baseline freeze.",
+      "event_count": 32,
+      "expected_lookups": 96,
+      "learning_cases": [
+        {
+          "kind": "enabled",
+          "label": "enabled_lr_0_25",
+          "learning_rate": 0.25
+        },
+        {
+          "kind": "no_learning",
+          "label": "no_learning_lr_0_00",
+          "learning_rate": 0.0
+        }
+      ],
+      "learning_microtask_status": "pass",
+      "reference_cases": {
+        "enabled_lr_0_25": {
+          "active_pending": 0,
+          "decisions": 32,
+          "event_count": 32,
+          "final_timestep": 34,
+          "learning_rate": 0.25,
+          "learning_rate_raw": 8192,
+          "pending_created": 32,
+          "pending_matured": 32,
+          "readout_bias": 0.0,
+          "readout_bias_raw": 0,
+          "readout_weight": 1.0,
+          "readout_weight_raw": 32768,
+          "reward_events": 32,
+          "trace_preview": [
+            {
+              "due": 3,
+              "event": 1,
+              "feature_raw": 32768,
+              "prediction_raw": 0,
+              "target_raw": 32768,
+              "timestep": 2
+            },
+            {
+              "due": 4,
+              "event": 2,
+              "feature_raw": -32768,
+              "prediction_raw": 0,
+              "target_raw": -32768,
+              "timestep": 3
+            },
+            {
+              "due": 5,
+              "event": 3,
+              "feature_raw": 32768,
+              "prediction_raw": 16384,
+              "target_raw": 32768,
+              "timestep": 4
+            },
+            {
+              "due": 6,
+              "event": 4,
+              "feature_raw": -32768,
+              "prediction_raw": -16384,
+              "target_raw": -32768,
+              "timestep": 5
+            },
+            {
+              "due": 7,
+              "event": 5,
+              "feature_raw": -32768,
+              "prediction_raw": -16384,
+              "target_raw": -32768,
+              "timestep": 6
+            },
+            {
+              "due": 8,
+              "event": 6,
+              "feature_raw": 32768,
+              "prediction_raw": 24576,
+              "target_raw": 32768,
+              "timestep": 7
+            },
+            {
+              "due": 9,
+              "event": 7,
+              "feature_raw": -32768,
+              "prediction_raw": -32768,
+              "target_raw": -32768,
+              "timestep": 8
+            },
+            {
+              "due": 10,
+              "event": 8,
+              "feature_raw": 32768,
+              "prediction_raw": 28672,
+              "target_raw": 32768,
+              "timestep": 9
+            }
+          ]
+        },
+        "no_learning_lr_0_00": {
+          "active_pending": 0,
+          "decisions": 32,
+          "event_count": 32,
+          "final_timestep": 34,
+          "learning_rate": 0.0,
+          "learning_rate_raw": 0,
+          "pending_created": 32,
+          "pending_matured": 32,
+          "readout_bias": 0.0,
+          "readout_bias_raw": 0,
+          "readout_weight": 0.0,
+          "readout_weight_raw": 0,
+          "reward_events": 32,
+          "trace_preview": [
+            {
+              "due": 3,
+              "event": 1,
+              "feature_raw": 32768,
+              "prediction_raw": 0,
+              "target_raw": 32768,
+              "timestep": 2
+            },
+            {
+              "due": 4,
+              "event": 2,
+              "feature_raw": -32768,
+              "prediction_raw": 0,
+              "target_raw": -32768,
+              "timestep": 3
+            },
+            {
+              "due": 5,
+              "event": 3,
+              "feature_raw": 32768,
+              "prediction_raw": 0,
+              "target_raw": 32768,
+              "timestep": 4
+            },
+            {
+              "due": 6,
+              "event": 4,
+              "feature_raw": -32768,
+              "prediction_raw": 0,
+              "target_raw": -32768,
+              "timestep": 5
+            },
+            {
+              "due": 7,
+              "event": 5,
+              "feature_raw": -32768,
+              "prediction_raw": 0,
+              "target_raw": -32768,
+              "timestep": 6
+            },
+            {
+              "due": 8,
+              "event": 6,
+              "feature_raw": 32768,
+              "prediction_raw": 0,
+              "target_raw": 32768,
+              "timestep": 7
+            },
+            {
+              "due": 9,
+              "event": 7,
+              "feature_raw": -32768,
+              "prediction_raw": 0,
+              "target_raw": -32768,
+              "timestep": 8
+            },
+            {
+              "due": 10,
+              "event": 8,
+              "feature_raw": 32768,
+              "prediction_raw": 0,
+              "target_raw": 32768,
+              "timestep": 9
+            }
+          ]
+        }
+      },
+      "remote_chip": {
+        "x": 1,
+        "y": 0
+      },
+      "source_chip": {
+        "x": 0,
+        "y": 0
+      },
+      "synthetic_fallback_used": false,
+      "true_two_partition_learning_attempted": false
+    },
+    "target": {
+      "attempts": [
+        {
+          "hostname": "",
+          "method": "hostname_discovery",
+          "notes": [
+            "no hostname found in args, common environment variables, or spynnaker.cfg"
+          ],
+          "reason": "no explicit hostname/config/environment target found",
+          "status": "fail"
+        },
+        {
+          "dest_cpu": 7,
+          "dest_x": 0,
+          "dest_y": 0,
+          "hostname": "10.11.205.161",
+          "method": "pyNN.spiNNaker_probe",
+          "notes": [
+            "acquired transceiver/IP via PyNN/sPyNNaker DataView because EBRAINS JobManager may not expose a raw hostname",
+            "requested dest_cpu was free"
+          ],
+          "occupied_cores": [
+            1,
+            2,
+            3
+          ],
+          "probe_population_size": 1,
+          "probe_run_ms": 1.0,
+          "probe_timestep_ms": 1.0,
+          "runtime_seconds": 48.32262054271996,
+          "setup_kwargs": {
+            "timestep": 1.0
+          },
+          "status": "pass",
+          "target_ipaddress": "10.11.205.161"
+        }
+      ],
+      "dest_cpu": 7,
+      "dest_x": 0,
+      "dest_y": 0,
+      "hostname": "10.11.205.161",
+      "method": "pyNN.spiNNaker_probe",
+      "notes": [
+        "acquired transceiver/IP via PyNN/sPyNNaker DataView because EBRAINS JobManager may not expose a raw hostname",
+        "requested dest_cpu was free"
+      ],
+      "occupied_cores": [
+        1,
+        2,
+        3
+      ],
+      "probe_population_size": 1,
+      "probe_run_ms": 1.0,
+      "probe_timestep_ms": 1.0,
+      "runtime_seconds": 48.32262054271996,
+      "setup_kwargs": {
+        "timestep": 1.0
+      },
+      "status": "pass",
+      "target_ipaddress": "10.11.205.161"
+    },
+    "target_cleanup": {
+      "action": "pyNN.spiNNaker.end",
+      "method": "pyNN.spiNNaker_probe",
+      "status": "pass"
+    },
+    "task": {
+      "case_count": 2,
+      "cases": [
+        {
+          "case_kind": "enabled",
+          "case_label": "enabled_lr_0_25",
+          "criteria": [
+            {
+              "name": "no hardware exception",
+              "note": "",
+              "passed": true,
+              "rule": "== True",
+              "value": true
+            },
+            {
+              "name": "task completed",
+              "note": "",
+              "passed": true,
+              "rule": "completed/pass",
+              "value": "completed"
+            },
+            {
+              "name": "case label present",
+              "note": "",
+              "passed": true,
+              "rule": "non-empty",
+              "value": "enabled_lr_0_25"
+            },
+            {
+              "name": "case kind valid",
+              "note": "",
+              "passed": true,
+              "rule": "enabled|no_learning",
+              "value": "enabled"
+            },
+            {
+              "name": "reference computed",
+              "note": "",
+              "passed": true,
+              "rule": "contains final readout",
+              "value": {
+                "active_pending": 0,
+                "decisions": 32,
+                "event_count": 32,
+                "final_timestep": 34,
+                "learning_rate": 0.25,
+                "learning_rate_raw": 8192,
+                "pending_created": 32,
+                "pending_matured": 32,
+                "readout_bias": 0.0,
+                "readout_bias_raw": 0,
+                "readout_weight": 1.0,
+                "readout_weight_raw": 32768,
+                "reward_events": 32,
+                "trace_preview": [
+                  {
+                    "due": 3,
+                    "event": 1,
+                    "feature_raw": 32768,
+                    "prediction_raw": 0,
+                    "target_raw": 32768,
+                    "timestep": 2
+                  },
+                  {
+                    "due": 4,
+                    "event": 2,
+                    "feature_raw": -32768,
+                    "prediction_raw": 0,
+                    "target_raw": -32768,
+                    "timestep": 3
+                  },
+                  {
+                    "due": 5,
+                    "event": 3,
+                    "feature_raw": 32768,
+                    "prediction_raw": 16384,
+                    "target_raw": 32768,
+                    "timestep": 4
+                  },
+                  {
+                    "due": 6,
+                    "event": 4,
+                    "feature_raw": -32768,
+                    "prediction_raw": -16384,
+                    "target_raw": -32768,
+                    "timestep": 5
+                  },
+                  {
+                    "due": 7,
+                    "event": 5,
+                    "feature_raw": -32768,
+                    "prediction_raw": -16384,
+                    "target_raw": -32768,
+                    "timestep": 6
+                  },
+                  {
+                    "due": 8,
+                    "event": 6,
+                    "feature_raw": 32768,
+                    "prediction_raw": 24576,
+                    "target_raw": 32768,
+                    "timestep": 7
+                  },
+                  {
+                    "due": 9,
+                    "event": 7,
+                    "feature_raw": -32768,
+                    "prediction_raw": -32768,
+                    "target_raw": -32768,
+                    "timestep": 8
+                  },
+                  {
+                    "due": 10,
+                    "event": 8,
+                    "feature_raw": 32768,
+                    "prediction_raw": 28672,
+                    "target_raw": 32768,
+                    "timestep": 9
+                  }
+                ]
+              }
+            },
+            {
+              "name": "source chip placement",
+              "note": "",
+              "passed": true,
+              "rule": "== {'x': 0, 'y': 0}",
+              "value": {
+                "x": 0,
+                "y": 0
+              }
+            },
+            {
+              "name": "remote chip placement",
+              "note": "",
+              "passed": true,
+              "rule": "== {'x': 1, 'y': 0}",
+              "value": {
+                "x": 1,
+                "y": 0
+              }
+            },
+            {
+              "name": "all resets succeeded",
+              "note": "",
+              "passed": true,
+              "rule": "all success",
+              "value": {
+                "context": true,
+                "learning": true,
+                "memory": true,
+                "route": true
+              }
+            },
+            {
+              "name": "all state writes succeeded",
+              "note": "",
+              "passed": true,
+              "rule": "all success",
+              "value": {
+                "context": [
+                  {
+                    "key": "ctx_A",
+                    "slot": 101,
+                    "success": true
+                  },
+                  {
+                    "key": "ctx_B",
+                    "slot": 202,
+                    "success": true
+                  },
+                  {
+                    "key": "ctx_C",
+                    "slot": 303,
+                    "success": true
+                  },
+                  {
+                    "key": "ctx_D",
+                    "slot": 404,
+                    "success": true
+                  }
+                ],
+                "memory": [
+                  {
+                    "key": "mem_A",
+                    "slot": 2101,
+                    "success": true
+                  },
+                  {
+                    "key": "mem_B",
+                    "slot": 2202,
+                    "success": true
+                  },
+                  {
+                    "key": "mem_C",
+                    "slot": 2303,
+                    "success": true
+                  },
+                  {
+                    "key": "mem_D",
+                    "slot": 2404,
+                    "success": true
+                  }
+                ],
+                "route": [
+                  {
+                    "key": "route_A",
+                    "slot": 1101,
+                    "success": true
+                  },
+                  {
+                    "key": "route_B",
+                    "slot": 1202,
+                    "success": true
+                  },
+                  {
+                    "key": "route_C",
+                    "slot": 1303,
+                    "success": true
+                  },
+                  {
+                    "key": "route_D",
+                    "slot": 1404,
+                    "success": true
+                  }
+                ]
+              }
+            },
+            {
+              "name": "all schedule uploads succeeded",
+              "note": "",
+              "passed": true,
+              "rule": "all success",
+              "value": [
+                {
+                  "index": 0,
+                  "success": true
+                },
+                {
+                  "index": 1,
+                  "success": true
+                },
+                {
+                  "index": 2,
+                  "success": true
+                },
+                {
+                  "index": 3,
+                  "success": true
+                },
+                {
+                  "index": 4,
+                  "success": true
+                },
+                {
+                  "index": 5,
+                  "success": true
+                },
+                {
+                  "index": 6,
+                  "success": true
+                },
+                {
+                  "index": 7,
+                  "success": true
+                },
+                {
+                  "index": 8,
+                  "success": true
+                },
+                {
+                  "index": 9,
+                  "success": true
+                },
+                {
+                  "index": 10,
+                  "success": true
+                },
+                {
+                  "index": 11,
+                  "success": true
+                },
+                {
+                  "index": 12,
+                  "success": true
+                },
+                {
+                  "index": 13,
+                  "success": true
+                },
+                {
+                  "index": 14,
+                  "success": true
+                },
+                {
+                  "index": 15,
+                  "success": true
+                },
+                {
+                  "index": 16,
+                  "success": true
+                },
+                {
+                  "index": 17,
+                  "success": true
+                },
+                {
+                  "index": 18,
+                  "success": true
+                },
+                {
+                  "index": 19,
+                  "success": true
+                },
+                {
+                  "index": 20,
+                  "success": true
+                },
+                {
+                  "index": 21,
+                  "success": true
+                },
+                {
+                  "index": 22,
+                  "success": true
+                },
+                {
+                  "index": 23,
+                  "success": true
+                },
+                {
+                  "index": 24,
+                  "success": true
+                },
+                {
+                  "index": 25,
+                  "success": true
+                },
+                {
+                  "index": 26,
+                  "success": true
+                },
+                {
+                  "index": 27,
+                  "success": true
+                },
+                {
+                  "index": 28,
+                  "success": true
+                },
+                {
+                  "index": 29,
+                  "success": true
+                },
+                {
+                  "index": 30,
+                  "success": true
+                },
+                {
+                  "index": 31,
+                  "success": true
+                }
+              ]
+            },
+            {
+              "name": "all run_continuous succeeded",
+              "note": "",
+              "passed": true,
+              "rule": "all success",
+              "value": {
+                "context": {
+                  "raw": {
+                    "cmd": 24,
+                    "status": 0,
+                    "success": true
+                  },
+                  "success": true
+                },
+                "learning": {
+                  "raw": {
+                    "cmd": 24,
+                    "status": 0,
+                    "success": true
+                  },
+                  "success": true
+                },
+                "memory": {
+                  "raw": {
+                    "cmd": 24,
+                    "status": 0,
+                    "success": true
+                  },
+                  "success": true
+                },
+                "route": {
+                  "raw": {
+                    "cmd": 24,
+                    "status": 0,
+                    "success": true
+                  },
+                  "success": true
+                }
+              }
+            },
+            {
+              "name": "all pause commands succeeded",
+              "note": "",
+              "passed": true,
+              "rule": "all success",
+              "value": {
+                "context": {
+                  "raw": {
+                    "cmd": 25,
+                    "status": 0,
+                    "stopped_timestep": 4875,
+                    "success": true
+                  },
+                  "success": true
+                },
+                "learning": {
+                  "raw": {
+                    "cmd": 25,
+                    "status": 0,
+                    "stopped_timestep": 1594,
+                    "success": true
+                  },
+                  "success": true
+                },
+                "memory": {
+                  "raw": {
+                    "cmd": 25,
+                    "status": 0,
+                    "stopped_timestep": 2675,
+                    "success": true
+                  },
+                  "success": true
+                },
+                "route": {
+                  "raw": {
+                    "cmd": 25,
+                    "status": 0,
+                    "stopped_timestep": 3775,
+                    "success": true
+                  },
+                  "success": true
+                }
+              }
+            },
+            {
+              "name": "context read success",
+              "note": "",
+              "passed": true,
+              "rule": "== True",
+              "value": true
+            },
+            {
+              "name": "route read success",
+              "note": "",
+              "passed": true,
+              "rule": "== True",
+              "value": true
+            },
+            {
+              "name": "memory read success",
+              "note": "",
+              "passed": true,
+              "rule": "== True",
+              "value": true
+            },
+            {
+              "name": "learning read success",
+              "note": "",
+              "passed": true,
+              "rule": "== True",
+              "value": true
+            },
+            {
+              "name": "decisions",
+              "note": "",
+              "passed": true,
+              "rule": "== 32",
+              "value": 32
+            },
+            {
+              "name": "reward_events",
+              "note": "",
+              "passed": true,
+              "rule": "== 32",
+              "value": 32
+            },
+            {
+              "name": "pending_created",
+              "note": "",
+              "passed": true,
+              "rule": "== 32",
+              "value": 32
+            },
+            {
+              "name": "pending_matured",
+              "note": "",
+              "passed": true,
+              "rule": "== 32",
+              "value": 32
+            },
+            {
+              "name": "active_pending cleared",
+              "note": "",
+              "passed": true,
+              "rule": "== 0",
+              "value": 0
+            },
+            {
+              "name": "lookup_requests",
+              "note": "",
+              "passed": true,
+              "rule": "== 96",
+              "value": 96
+            },
+            {
+              "name": "lookup_replies",
+              "note": "",
+              "passed": true,
+              "rule": "== 96",
+              "value": 96
+            },
+            {
+              "name": "stale_replies zero",
+              "note": "",
+              "passed": true,
+              "rule": "== 0",
+              "value": 0
+            },
+            {
+              "name": "duplicate_replies zero",
+              "note": "",
+              "passed": true,
+              "rule": "== 0",
+              "value": 0
+            },
+            {
+              "name": "timeouts zero",
+              "note": "",
+              "passed": true,
+              "rule": "== 0",
+              "value": 0
+            },
+            {
+              "name": "readout weight matches reference",
+              "note": "",
+              "passed": true,
+              "rule": "== 32768",
+              "value": 32768
+            },
+            {
+              "name": "readout bias matches reference",
+              "note": "",
+              "passed": true,
+              "rule": "== 0",
+              "value": 0
+            },
+            {
+              "name": "enabled learning moves readout",
+              "note": "",
+              "passed": true,
+              "rule": "> 0 when enabled",
+              "value": 32768
+            },
+            {
+              "name": "no-learning keeps weight zero",
+              "note": "",
+              "passed": true,
+              "rule": "== 0 when no_learning",
+              "value": 32768
+            },
+            {
+              "name": "no-learning keeps bias zero",
+              "note": "",
+              "passed": true,
+              "rule": "== 0 when no_learning",
+              "value": 0
+            },
+            {
+              "name": "learning payload compact",
+              "note": "",
+              "passed": true,
+              "rule": ">= 105",
+              "value": 105
+            }
+          ],
+          "event_count": 32,
+          "expected_lookup_count": 96,
+          "final_state": {
+            "context": {
+              "active_pending": 0,
+              "active_slots": 4,
+              "active_trace_count": 0,
+              "cmd": 8,
+              "commands_received": 7,
+              "decisions": 0,
+              "duplicate_replies": 0,
+              "flags": 0,
+              "lookup_replies": 0,
+              "lookup_requests": 0,
+              "neuron_count": 0,
+              "payload_len": 105,
+              "pending_created": 0,
+              "pending_dropped": 0,
+              "pending_matured": 0,
+              "profile_id": 4,
+              "readback_bytes": 105,
+              "readout_bias": 0.0,
+              "readout_bias_raw": 0,
+              "readout_weight": 0.0,
+              "readout_weight_raw": 0,
+              "reward_events": 0,
+              "schedule_length": 0,
+              "schema_version": 2,
+              "slot_evictions": 0,
+              "slot_hits": 32,
+              "slot_misses": 0,
+              "slot_writes": 4,
+              "stale_replies": 0,
+              "status": 0,
+              "success": true,
+              "synapse_count": 0,
+              "timeouts": 0,
+              "timestep": 4957
+            },
+            "learning": {
+              "active_pending": 0,
+              "active_slots": 0,
+              "active_trace_count": 0,
+              "cmd": 8,
+              "commands_received": 36,
+              "decisions": 32,
+              "duplicate_replies": 0,
+              "flags": 0,
+              "lookup_replies": 96,
+              "lookup_requests": 96,
+              "neuron_count": 0,
+              "payload_len": 105,
+              "pending_created": 32,
+              "pending_dropped": 0,
+              "pending_matured": 32,
+              "profile_id": 3,
+              "readback_bytes": 210,
+              "readout_bias": 0.0,
+              "readout_bias_raw": 0,
+              "readout_weight": 1.0,
+              "readout_weight_raw": 32768,
+              "reward_events": 32,
+              "schedule_length": 32,
+              "schema_version": 2,
+              "slot_evictions": 0,
+              "slot_hits": 0,
+              "slot_misses": 0,
+              "slot_writes": 0,
+              "stale_replies": 0,
+              "status": 0,
+              "success": true,
+              "synapse_count": 0,
+              "timeouts": 0,
+              "timestep": 1616
+            },
+            "memory": {
+              "active_pending": 0,
+              "active_slots": 4,
+              "active_trace_count": 0,
+              "cmd": 8,
+              "commands_received": 7,
+              "decisions": 0,
+              "duplicate_replies": 0,
+              "flags": 0,
+              "lookup_replies": 0,
+              "lookup_requests": 0,
+              "neuron_count": 0,
+              "payload_len": 105,
+              "pending_created": 0,
+              "pending_dropped": 0,
+              "pending_matured": 0,
+              "profile_id": 6,
+              "readback_bytes": 105,
+              "readout_bias": 0.0,
+              "readout_bias_raw": 0,
+              "readout_weight": 0.0,
+              "readout_weight_raw": 0,
+              "reward_events": 0,
+              "schedule_length": 0,
+              "schema_version": 2,
+              "slot_evictions": 0,
+              "slot_hits": 32,
+              "slot_misses": 0,
+              "slot_writes": 4,
+              "stale_replies": 0,
+              "status": 0,
+              "success": true,
+              "synapse_count": 0,
+              "timeouts": 0,
+              "timestep": 2717
+            },
+            "route": {
+              "active_pending": 0,
+              "active_slots": 4,
+              "active_trace_count": 0,
+              "cmd": 8,
+              "commands_received": 7,
+              "decisions": 0,
+              "duplicate_replies": 0,
+              "flags": 0,
+              "lookup_replies": 0,
+              "lookup_requests": 0,
+              "neuron_count": 0,
+              "payload_len": 105,
+              "pending_created": 0,
+              "pending_dropped": 0,
+              "pending_matured": 0,
+              "profile_id": 5,
+              "readback_bytes": 105,
+              "readout_bias": 0.0,
+              "readout_bias_raw": 0,
+              "readout_weight": 0.0,
+              "readout_weight_raw": 0,
+              "reward_events": 0,
+              "schedule_length": 0,
+              "schema_version": 2,
+              "slot_evictions": 0,
+              "slot_hits": 32,
+              "slot_misses": 0,
+              "slot_writes": 4,
+              "stale_replies": 0,
+              "status": 0,
+              "success": true,
+              "synapse_count": 0,
+              "timeouts": 0,
+              "timestep": 3837
+            }
+          },
+          "hardware_exception": null,
+          "learning_rate": 0.25,
+          "learning_reference": {
+            "active_pending": 0,
+            "decisions": 32,
+            "event_count": 32,
+            "final_timestep": 34,
+            "learning_rate": 0.25,
+            "learning_rate_raw": 8192,
+            "pending_created": 32,
+            "pending_matured": 32,
+            "readout_bias": 0.0,
+            "readout_bias_raw": 0,
+            "readout_weight": 1.0,
+            "readout_weight_raw": 32768,
+            "reward_events": 32,
+            "trace_preview": [
+              {
+                "due": 3,
+                "event": 1,
+                "feature_raw": 32768,
+                "prediction_raw": 0,
+                "target_raw": 32768,
+                "timestep": 2
+              },
+              {
+                "due": 4,
+                "event": 2,
+                "feature_raw": -32768,
+                "prediction_raw": 0,
+                "target_raw": -32768,
+                "timestep": 3
+              },
+              {
+                "due": 5,
+                "event": 3,
+                "feature_raw": 32768,
+                "prediction_raw": 16384,
+                "target_raw": 32768,
+                "timestep": 4
+              },
+              {
+                "due": 6,
+                "event": 4,
+                "feature_raw": -32768,
+                "prediction_raw": -16384,
+                "target_raw": -32768,
+                "timestep": 5
+              },
+              {
+                "due": 7,
+                "event": 5,
+                "feature_raw": -32768,
+                "prediction_raw": -16384,
+                "target_raw": -32768,
+                "timestep": 6
+              },
+              {
+                "due": 8,
+                "event": 6,
+                "feature_raw": 32768,
+                "prediction_raw": 24576,
+                "target_raw": 32768,
+                "timestep": 7
+              },
+              {
+                "due": 9,
+                "event": 7,
+                "feature_raw": -32768,
+                "prediction_raw": -32768,
+                "target_raw": -32768,
+                "timestep": 8
+              },
+              {
+                "due": 10,
+                "event": 8,
+                "feature_raw": 32768,
+                "prediction_raw": 28672,
+                "target_raw": 32768,
+                "timestep": 9
+              }
+            ]
+          },
+          "pause": {
+            "context": {
+              "raw": {
+                "cmd": 25,
+                "status": 0,
+                "stopped_timestep": 4875,
+                "success": true
+              },
+              "success": true
+            },
+            "learning": {
+              "raw": {
+                "cmd": 25,
+                "status": 0,
+                "stopped_timestep": 1594,
+                "success": true
+              },
+              "success": true
+            },
+            "memory": {
+              "raw": {
+                "cmd": 25,
+                "status": 0,
+                "stopped_timestep": 2675,
+                "success": true
+              },
+              "success": true
+            },
+            "route": {
+              "raw": {
+                "cmd": 25,
+                "status": 0,
+                "stopped_timestep": 3775,
+                "success": true
+              },
+              "success": true
+            }
+          },
+          "poll_reads": [
+            {
+              "active_pending": 0,
+              "active_slots": 0,
+              "active_trace_count": 0,
+              "cmd": 8,
+              "commands_received": 34,
+              "decisions": 32,
+              "duplicate_replies": 0,
+              "flags": 0,
+              "lookup_replies": 96,
+              "lookup_requests": 96,
+              "neuron_count": 0,
+              "payload_len": 105,
+              "pending_created": 32,
+              "pending_dropped": 0,
+              "pending_matured": 32,
+              "profile_id": 3,
+              "readback_bytes": 105,
+              "readout_bias": 0.0,
+              "readout_bias_raw": 0,
+              "readout_weight": 1.0,
+              "readout_weight_raw": 32768,
+              "reward_events": 32,
+              "schedule_length": 32,
+              "schema_version": 2,
+              "slot_evictions": 0,
+              "slot_hits": 0,
+              "slot_misses": 0,
+              "slot_writes": 0,
+              "stale_replies": 0,
+              "status": 0,
+              "success": true,
+              "synapse_count": 0,
+              "timeouts": 0,
+              "timestep": 1532
+            }
+          ],
+          "remote_chip": {
+            "x": 1,
+            "y": 0
+          },
+          "reset": {
+            "context": true,
+            "learning": true,
+            "memory": true,
+            "route": true
+          },
+          "run_continuous": {
+            "context": {
+              "raw": {
+                "cmd": 24,
+                "status": 0,
+                "success": true
+              },
+              "success": true
+            },
+            "learning": {
+              "raw": {
+                "cmd": 24,
+                "status": 0,
+                "success": true
+              },
+              "success": true
+            },
+            "memory": {
+              "raw": {
+                "cmd": 24,
+                "status": 0,
+                "success": true
+              },
+              "success": true
+            },
+            "route": {
+              "raw": {
+                "cmd": 24,
+                "status": 0,
+                "success": true
+              },
+              "success": true
+            }
+          },
+          "schedule_uploads": [
+            {
+              "index": 0,
+              "success": true
+            },
+            {
+              "index": 1,
+              "success": true
+            },
+            {
+              "index": 2,
+              "success": true
+            },
+            {
+              "index": 3,
+              "success": true
+            },
+            {
+              "index": 4,
+              "success": true
+            },
+            {
+              "index": 5,
+              "success": true
+            },
+            {
+              "index": 6,
+              "success": true
+            },
+            {
+              "index": 7,
+              "success": true
+            },
+            {
+              "index": 8,
+              "success": true
+            },
+            {
+              "index": 9,
+              "success": true
+            },
+            {
+              "index": 10,
+              "success": true
+            },
+            {
+              "index": 11,
+              "success": true
+            },
+            {
+              "index": 12,
+              "success": true
+            },
+            {
+              "index": 13,
+              "success": true
+            },
+            {
+              "index": 14,
+              "success": true
+            },
+            {
+              "index": 15,
+              "success": true
+            },
+            {
+              "index": 16,
+              "success": true
+            },
+            {
+              "index": 17,
+              "success": true
+            },
+            {
+              "index": 18,
+              "success": true
+            },
+            {
+              "index": 19,
+              "success": true
+            },
+            {
+              "index": 20,
+              "success": true
+            },
+            {
+              "index": 21,
+              "success": true
+            },
+            {
+              "index": 22,
+              "success": true
+            },
+            {
+              "index": 23,
+              "success": true
+            },
+            {
+              "index": 24,
+              "success": true
+            },
+            {
+              "index": 25,
+              "success": true
+            },
+            {
+              "index": 26,
+              "success": true
+            },
+            {
+              "index": 27,
+              "success": true
+            },
+            {
+              "index": 28,
+              "success": true
+            },
+            {
+              "index": 29,
+              "success": true
+            },
+            {
+              "index": 30,
+              "success": true
+            },
+            {
+              "index": 31,
+              "success": true
+            }
+          ],
+          "source_chip": {
+            "x": 0,
+            "y": 0
+          },
+          "state_writes": {
+            "context": [
+              {
+                "key": "ctx_A",
+                "slot": 101,
+                "success": true
+              },
+              {
+                "key": "ctx_B",
+                "slot": 202,
+                "success": true
+              },
+              {
+                "key": "ctx_C",
+                "slot": 303,
+                "success": true
+              },
+              {
+                "key": "ctx_D",
+                "slot": 404,
+                "success": true
+              }
+            ],
+            "memory": [
+              {
+                "key": "mem_A",
+                "slot": 2101,
+                "success": true
+              },
+              {
+                "key": "mem_B",
+                "slot": 2202,
+                "success": true
+              },
+              {
+                "key": "mem_C",
+                "slot": 2303,
+                "success": true
+              },
+              {
+                "key": "mem_D",
+                "slot": 2404,
+                "success": true
+              }
+            ],
+            "route": [
+              {
+                "key": "route_A",
+                "slot": 1101,
+                "success": true
+              },
+              {
+                "key": "route_B",
+                "slot": 1202,
+                "success": true
+              },
+              {
+                "key": "route_C",
+                "slot": 1303,
+                "success": true
+              },
+              {
+                "key": "route_D",
+                "slot": 1404,
+                "success": true
+              }
+            ]
+          },
+          "status": "pass",
+          "waited_seconds": 0.1
+        },
+        {
+          "case_kind": "no_learning",
+          "case_label": "no_learning_lr_0_00",
+          "criteria": [
+            {
+              "name": "no hardware exception",
+              "note": "",
+              "passed": true,
+              "rule": "== True",
+              "value": true
+            },
+            {
+              "name": "task completed",
+              "note": "",
+              "passed": true,
+              "rule": "completed/pass",
+              "value": "completed"
+            },
+            {
+              "name": "case label present",
+              "note": "",
+              "passed": true,
+              "rule": "non-empty",
+              "value": "no_learning_lr_0_00"
+            },
+            {
+              "name": "case kind valid",
+              "note": "",
+              "passed": true,
+              "rule": "enabled|no_learning",
+              "value": "no_learning"
+            },
+            {
+              "name": "reference computed",
+              "note": "",
+              "passed": true,
+              "rule": "contains final readout",
+              "value": {
+                "active_pending": 0,
+                "decisions": 32,
+                "event_count": 32,
+                "final_timestep": 34,
+                "learning_rate": 0.0,
+                "learning_rate_raw": 0,
+                "pending_created": 32,
+                "pending_matured": 32,
+                "readout_bias": 0.0,
+                "readout_bias_raw": 0,
+                "readout_weight": 0.0,
+                "readout_weight_raw": 0,
+                "reward_events": 32,
+                "trace_preview": [
+                  {
+                    "due": 3,
+                    "event": 1,
+                    "feature_raw": 32768,
+                    "prediction_raw": 0,
+                    "target_raw": 32768,
+                    "timestep": 2
+                  },
+                  {
+                    "due": 4,
+                    "event": 2,
+                    "feature_raw": -32768,
+                    "prediction_raw": 0,
+                    "target_raw": -32768,
+                    "timestep": 3
+                  },
+                  {
+                    "due": 5,
+                    "event": 3,
+                    "feature_raw": 32768,
+                    "prediction_raw": 0,
+                    "target_raw": 32768,
+                    "timestep": 4
+                  },
+                  {
+                    "due": 6,
+                    "event": 4,
+                    "feature_raw": -32768,
+                    "prediction_raw": 0,
+                    "target_raw": -32768,
+                    "timestep": 5
+                  },
+                  {
+                    "due": 7,
+                    "event": 5,
+                    "feature_raw": -32768,
+                    "prediction_raw": 0,
+                    "target_raw": -32768,
+                    "timestep": 6
+                  },
+                  {
+                    "due": 8,
+                    "event": 6,
+                    "feature_raw": 32768,
+                    "prediction_raw": 0,
+                    "target_raw": 32768,
+                    "timestep": 7
+                  },
+                  {
+                    "due": 9,
+                    "event": 7,
+                    "feature_raw": -32768,
+                    "prediction_raw": 0,
+                    "target_raw": -32768,
+                    "timestep": 8
+                  },
+                  {
+                    "due": 10,
+                    "event": 8,
+                    "feature_raw": 32768,
+                    "prediction_raw": 0,
+                    "target_raw": 32768,
+                    "timestep": 9
+                  }
+                ]
+              }
+            },
+            {
+              "name": "source chip placement",
+              "note": "",
+              "passed": true,
+              "rule": "== {'x': 0, 'y': 0}",
+              "value": {
+                "x": 0,
+                "y": 0
+              }
+            },
+            {
+              "name": "remote chip placement",
+              "note": "",
+              "passed": true,
+              "rule": "== {'x': 1, 'y': 0}",
+              "value": {
+                "x": 1,
+                "y": 0
+              }
+            },
+            {
+              "name": "all resets succeeded",
+              "note": "",
+              "passed": true,
+              "rule": "all success",
+              "value": {
+                "context": true,
+                "learning": true,
+                "memory": true,
+                "route": true
+              }
+            },
+            {
+              "name": "all state writes succeeded",
+              "note": "",
+              "passed": true,
+              "rule": "all success",
+              "value": {
+                "context": [
+                  {
+                    "key": "ctx_A",
+                    "slot": 101,
+                    "success": true
+                  },
+                  {
+                    "key": "ctx_B",
+                    "slot": 202,
+                    "success": true
+                  },
+                  {
+                    "key": "ctx_C",
+                    "slot": 303,
+                    "success": true
+                  },
+                  {
+                    "key": "ctx_D",
+                    "slot": 404,
+                    "success": true
+                  }
+                ],
+                "memory": [
+                  {
+                    "key": "mem_A",
+                    "slot": 2101,
+                    "success": true
+                  },
+                  {
+                    "key": "mem_B",
+                    "slot": 2202,
+                    "success": true
+                  },
+                  {
+                    "key": "mem_C",
+                    "slot": 2303,
+                    "success": true
+                  },
+                  {
+                    "key": "mem_D",
+                    "slot": 2404,
+                    "success": true
+                  }
+                ],
+                "route": [
+                  {
+                    "key": "route_A",
+                    "slot": 1101,
+                    "success": true
+                  },
+                  {
+                    "key": "route_B",
+                    "slot": 1202,
+                    "success": true
+                  },
+                  {
+                    "key": "route_C",
+                    "slot": 1303,
+                    "success": true
+                  },
+                  {
+                    "key": "route_D",
+                    "slot": 1404,
+                    "success": true
+                  }
+                ]
+              }
+            },
+            {
+              "name": "all schedule uploads succeeded",
+              "note": "",
+              "passed": true,
+              "rule": "all success",
+              "value": [
+                {
+                  "index": 0,
+                  "success": true
+                },
+                {
+                  "index": 1,
+                  "success": true
+                },
+                {
+                  "index": 2,
+                  "success": true
+                },
+                {
+                  "index": 3,
+                  "success": true
+                },
+                {
+                  "index": 4,
+                  "success": true
+                },
+                {
+                  "index": 5,
+                  "success": true
+                },
+                {
+                  "index": 6,
+                  "success": true
+                },
+                {
+                  "index": 7,
+                  "success": true
+                },
+                {
+                  "index": 8,
+                  "success": true
+                },
+                {
+                  "index": 9,
+                  "success": true
+                },
+                {
+                  "index": 10,
+                  "success": true
+                },
+                {
+                  "index": 11,
+                  "success": true
+                },
+                {
+                  "index": 12,
+                  "success": true
+                },
+                {
+                  "index": 13,
+                  "success": true
+                },
+                {
+                  "index": 14,
+                  "success": true
+                },
+                {
+                  "index": 15,
+                  "success": true
+                },
+                {
+                  "index": 16,
+                  "success": true
+                },
+                {
+                  "index": 17,
+                  "success": true
+                },
+                {
+                  "index": 18,
+                  "success": true
+                },
+                {
+                  "index": 19,
+                  "success": true
+                },
+                {
+                  "index": 20,
+                  "success": true
+                },
+                {
+                  "index": 21,
+                  "success": true
+                },
+                {
+                  "index": 22,
+                  "success": true
+                },
+                {
+                  "index": 23,
+                  "success": true
+                },
+                {
+                  "index": 24,
+                  "success": true
+                },
+                {
+                  "index": 25,
+                  "success": true
+                },
+                {
+                  "index": 26,
+                  "success": true
+                },
+                {
+                  "index": 27,
+                  "success": true
+                },
+                {
+                  "index": 28,
+                  "success": true
+                },
+                {
+                  "index": 29,
+                  "success": true
+                },
+                {
+                  "index": 30,
+                  "success": true
+                },
+                {
+                  "index": 31,
+                  "success": true
+                }
+              ]
+            },
+            {
+              "name": "all run_continuous succeeded",
+              "note": "",
+              "passed": true,
+              "rule": "all success",
+              "value": {
+                "context": {
+                  "raw": {
+                    "cmd": 24,
+                    "status": 0,
+                    "success": true
+                  },
+                  "success": true
+                },
+                "learning": {
+                  "raw": {
+                    "cmd": 24,
+                    "status": 0,
+                    "success": true
+                  },
+                  "success": true
+                },
+                "memory": {
+                  "raw": {
+                    "cmd": 24,
+                    "status": 0,
+                    "success": true
+                  },
+                  "success": true
+                },
+                "route": {
+                  "raw": {
+                    "cmd": 24,
+                    "status": 0,
+                    "success": true
+                  },
+                  "success": true
+                }
+              }
+            },
+            {
+              "name": "all pause commands succeeded",
+              "note": "",
+              "passed": true,
+              "rule": "all success",
+              "value": {
+                "context": {
+                  "raw": {
+                    "cmd": 25,
+                    "status": 0,
+                    "stopped_timestep": 5344,
+                    "success": true
+                  },
+                  "success": true
+                },
+                "learning": {
+                  "raw": {
+                    "cmd": 25,
+                    "status": 0,
+                    "stopped_timestep": 2067,
+                    "success": true
+                  },
+                  "success": true
+                },
+                "memory": {
+                  "raw": {
+                    "cmd": 25,
+                    "status": 0,
+                    "stopped_timestep": 3148,
+                    "success": true
+                  },
+                  "success": true
+                },
+                "route": {
+                  "raw": {
+                    "cmd": 25,
+                    "status": 0,
+                    "stopped_timestep": 4248,
+                    "success": true
+                  },
+                  "success": true
+                }
+              }
+            },
+            {
+              "name": "context read success",
+              "note": "",
+              "passed": true,
+              "rule": "== True",
+              "value": true
+            },
+            {
+              "name": "route read success",
+              "note": "",
+              "passed": true,
+              "rule": "== True",
+              "value": true
+            },
+            {
+              "name": "memory read success",
+              "note": "",
+              "passed": true,
+              "rule": "== True",
+              "value": true
+            },
+            {
+              "name": "learning read success",
+              "note": "",
+              "passed": true,
+              "rule": "== True",
+              "value": true
+            },
+            {
+              "name": "decisions",
+              "note": "",
+              "passed": true,
+              "rule": "== 32",
+              "value": 32
+            },
+            {
+              "name": "reward_events",
+              "note": "",
+              "passed": true,
+              "rule": "== 32",
+              "value": 32
+            },
+            {
+              "name": "pending_created",
+              "note": "",
+              "passed": true,
+              "rule": "== 32",
+              "value": 32
+            },
+            {
+              "name": "pending_matured",
+              "note": "",
+              "passed": true,
+              "rule": "== 32",
+              "value": 32
+            },
+            {
+              "name": "active_pending cleared",
+              "note": "",
+              "passed": true,
+              "rule": "== 0",
+              "value": 0
+            },
+            {
+              "name": "lookup_requests",
+              "note": "",
+              "passed": true,
+              "rule": "== 96",
+              "value": 96
+            },
+            {
+              "name": "lookup_replies",
+              "note": "",
+              "passed": true,
+              "rule": "== 96",
+              "value": 96
+            },
+            {
+              "name": "stale_replies zero",
+              "note": "",
+              "passed": true,
+              "rule": "== 0",
+              "value": 0
+            },
+            {
+              "name": "duplicate_replies zero",
+              "note": "",
+              "passed": true,
+              "rule": "== 0",
+              "value": 0
+            },
+            {
+              "name": "timeouts zero",
+              "note": "",
+              "passed": true,
+              "rule": "== 0",
+              "value": 0
+            },
+            {
+              "name": "readout weight matches reference",
+              "note": "",
+              "passed": true,
+              "rule": "== 0",
+              "value": 0
+            },
+            {
+              "name": "readout bias matches reference",
+              "note": "",
+              "passed": true,
+              "rule": "== 0",
+              "value": 0
+            },
+            {
+              "name": "enabled learning moves readout",
+              "note": "",
+              "passed": true,
+              "rule": "> 0 when enabled",
+              "value": 0
+            },
+            {
+              "name": "no-learning keeps weight zero",
+              "note": "",
+              "passed": true,
+              "rule": "== 0 when no_learning",
+              "value": 0
+            },
+            {
+              "name": "no-learning keeps bias zero",
+              "note": "",
+              "passed": true,
+              "rule": "== 0 when no_learning",
+              "value": 0
+            },
+            {
+              "name": "learning payload compact",
+              "note": "",
+              "passed": true,
+              "rule": ">= 105",
+              "value": 105
+            }
+          ],
+          "event_count": 32,
+          "expected_lookup_count": 96,
+          "final_state": {
+            "context": {
+              "active_pending": 0,
+              "active_slots": 4,
+              "active_trace_count": 0,
+              "cmd": 8,
+              "commands_received": 7,
+              "decisions": 0,
+              "duplicate_replies": 0,
+              "flags": 0,
+              "lookup_replies": 0,
+              "lookup_requests": 0,
+              "neuron_count": 0,
+              "payload_len": 105,
+              "pending_created": 0,
+              "pending_dropped": 0,
+              "pending_matured": 0,
+              "profile_id": 4,
+              "readback_bytes": 105,
+              "readout_bias": 0.0,
+              "readout_bias_raw": 0,
+              "readout_weight": 0.0,
+              "readout_weight_raw": 0,
+              "reward_events": 0,
+              "schedule_length": 0,
+              "schema_version": 2,
+              "slot_evictions": 0,
+              "slot_hits": 32,
+              "slot_misses": 0,
+              "slot_writes": 4,
+              "stale_replies": 0,
+              "status": 0,
+              "success": true,
+              "synapse_count": 0,
+              "timeouts": 0,
+              "timestep": 5430
+            },
+            "learning": {
+              "active_pending": 0,
+              "active_slots": 0,
+              "active_trace_count": 0,
+              "cmd": 8,
+              "commands_received": 36,
+              "decisions": 32,
+              "duplicate_replies": 0,
+              "flags": 0,
+              "lookup_replies": 96,
+              "lookup_requests": 96,
+              "neuron_count": 0,
+              "payload_len": 105,
+              "pending_created": 32,
+              "pending_dropped": 0,
+              "pending_matured": 32,
+              "profile_id": 3,
+              "readback_bytes": 210,
+              "readout_bias": 0.0,
+              "readout_bias_raw": 0,
+              "readout_weight": 0.0,
+              "readout_weight_raw": 0,
+              "reward_events": 32,
+              "schedule_length": 32,
+              "schema_version": 2,
+              "slot_evictions": 0,
+              "slot_hits": 0,
+              "slot_misses": 0,
+              "slot_writes": 0,
+              "stale_replies": 0,
+              "status": 0,
+              "success": true,
+              "synapse_count": 0,
+              "timeouts": 0,
+              "timestep": 2089
+            },
+            "memory": {
+              "active_pending": 0,
+              "active_slots": 4,
+              "active_trace_count": 0,
+              "cmd": 8,
+              "commands_received": 7,
+              "decisions": 0,
+              "duplicate_replies": 0,
+              "flags": 0,
+              "lookup_replies": 0,
+              "lookup_requests": 0,
+              "neuron_count": 0,
+              "payload_len": 105,
+              "pending_created": 0,
+              "pending_dropped": 0,
+              "pending_matured": 0,
+              "profile_id": 6,
+              "readback_bytes": 105,
+              "readout_bias": 0.0,
+              "readout_bias_raw": 0,
+              "readout_weight": 0.0,
+              "readout_weight_raw": 0,
+              "reward_events": 0,
+              "schedule_length": 0,
+              "schema_version": 2,
+              "slot_evictions": 0,
+              "slot_hits": 32,
+              "slot_misses": 0,
+              "slot_writes": 4,
+              "stale_replies": 0,
+              "status": 0,
+              "success": true,
+              "synapse_count": 0,
+              "timeouts": 0,
+              "timestep": 3190
+            },
+            "route": {
+              "active_pending": 0,
+              "active_slots": 4,
+              "active_trace_count": 0,
+              "cmd": 8,
+              "commands_received": 7,
+              "decisions": 0,
+              "duplicate_replies": 0,
+              "flags": 0,
+              "lookup_replies": 0,
+              "lookup_requests": 0,
+              "neuron_count": 0,
+              "payload_len": 105,
+              "pending_created": 0,
+              "pending_dropped": 0,
+              "pending_matured": 0,
+              "profile_id": 5,
+              "readback_bytes": 105,
+              "readout_bias": 0.0,
+              "readout_bias_raw": 0,
+              "readout_weight": 0.0,
+              "readout_weight_raw": 0,
+              "reward_events": 0,
+              "schedule_length": 0,
+              "schema_version": 2,
+              "slot_evictions": 0,
+              "slot_hits": 32,
+              "slot_misses": 0,
+              "slot_writes": 4,
+              "stale_replies": 0,
+              "status": 0,
+              "success": true,
+              "synapse_count": 0,
+              "timeouts": 0,
+              "timestep": 4310
+            }
+          },
+          "hardware_exception": null,
+          "learning_rate": 0.0,
+          "learning_reference": {
+            "active_pending": 0,
+            "decisions": 32,
+            "event_count": 32,
+            "final_timestep": 34,
+            "learning_rate": 0.0,
+            "learning_rate_raw": 0,
+            "pending_created": 32,
+            "pending_matured": 32,
+            "readout_bias": 0.0,
+            "readout_bias_raw": 0,
+            "readout_weight": 0.0,
+            "readout_weight_raw": 0,
+            "reward_events": 32,
+            "trace_preview": [
+              {
+                "due": 3,
+                "event": 1,
+                "feature_raw": 32768,
+                "prediction_raw": 0,
+                "target_raw": 32768,
+                "timestep": 2
+              },
+              {
+                "due": 4,
+                "event": 2,
+                "feature_raw": -32768,
+                "prediction_raw": 0,
+                "target_raw": -32768,
+                "timestep": 3
+              },
+              {
+                "due": 5,
+                "event": 3,
+                "feature_raw": 32768,
+                "prediction_raw": 0,
+                "target_raw": 32768,
+                "timestep": 4
+              },
+              {
+                "due": 6,
+                "event": 4,
+                "feature_raw": -32768,
+                "prediction_raw": 0,
+                "target_raw": -32768,
+                "timestep": 5
+              },
+              {
+                "due": 7,
+                "event": 5,
+                "feature_raw": -32768,
+                "prediction_raw": 0,
+                "target_raw": -32768,
+                "timestep": 6
+              },
+              {
+                "due": 8,
+                "event": 6,
+                "feature_raw": 32768,
+                "prediction_raw": 0,
+                "target_raw": 32768,
+                "timestep": 7
+              },
+              {
+                "due": 9,
+                "event": 7,
+                "feature_raw": -32768,
+                "prediction_raw": 0,
+                "target_raw": -32768,
+                "timestep": 8
+              },
+              {
+                "due": 10,
+                "event": 8,
+                "feature_raw": 32768,
+                "prediction_raw": 0,
+                "target_raw": 32768,
+                "timestep": 9
+              }
+            ]
+          },
+          "pause": {
+            "context": {
+              "raw": {
+                "cmd": 25,
+                "status": 0,
+                "stopped_timestep": 5344,
+                "success": true
+              },
+              "success": true
+            },
+            "learning": {
+              "raw": {
+                "cmd": 25,
+                "status": 0,
+                "stopped_timestep": 2067,
+                "success": true
+              },
+              "success": true
+            },
+            "memory": {
+              "raw": {
+                "cmd": 25,
+                "status": 0,
+                "stopped_timestep": 3148,
+                "success": true
+              },
+              "success": true
+            },
+            "route": {
+              "raw": {
+                "cmd": 25,
+                "status": 0,
+                "stopped_timestep": 4248,
+                "success": true
+              },
+              "success": true
+            }
+          },
+          "poll_reads": [
+            {
+              "active_pending": 0,
+              "active_slots": 0,
+              "active_trace_count": 0,
+              "cmd": 8,
+              "commands_received": 34,
+              "decisions": 32,
+              "duplicate_replies": 0,
+              "flags": 0,
+              "lookup_replies": 96,
+              "lookup_requests": 96,
+              "neuron_count": 0,
+              "payload_len": 105,
+              "pending_created": 32,
+              "pending_dropped": 0,
+              "pending_matured": 32,
+              "profile_id": 3,
+              "readback_bytes": 105,
+              "readout_bias": 0.0,
+              "readout_bias_raw": 0,
+              "readout_weight": 0.0,
+              "readout_weight_raw": 0,
+              "reward_events": 32,
+              "schedule_length": 32,
+              "schema_version": 2,
+              "slot_evictions": 0,
+              "slot_hits": 0,
+              "slot_misses": 0,
+              "slot_writes": 0,
+              "stale_replies": 0,
+              "status": 0,
+              "success": true,
+              "synapse_count": 0,
+              "timeouts": 0,
+              "timestep": 2001
+            }
+          ],
+          "remote_chip": {
+            "x": 1,
+            "y": 0
+          },
+          "reset": {
+            "context": true,
+            "learning": true,
+            "memory": true,
+            "route": true
+          },
+          "run_continuous": {
+            "context": {
+              "raw": {
+                "cmd": 24,
+                "status": 0,
+                "success": true
+              },
+              "success": true
+            },
+            "learning": {
+              "raw": {
+                "cmd": 24,
+                "status": 0,
+                "success": true
+              },
+              "success": true
+            },
+            "memory": {
+              "raw": {
+                "cmd": 24,
+                "status": 0,
+                "success": true
+              },
+              "success": true
+            },
+            "route": {
+              "raw": {
+                "cmd": 24,
+                "status": 0,
+                "success": true
+              },
+              "success": true
+            }
+          },
+          "schedule_uploads": [
+            {
+              "index": 0,
+              "success": true
+            },
+            {
+              "index": 1,
+              "success": true
+            },
+            {
+              "index": 2,
+              "success": true
+            },
+            {
+              "index": 3,
+              "success": true
+            },
+            {
+              "index": 4,
+              "success": true
+            },
+            {
+              "index": 5,
+              "success": true
+            },
+            {
+              "index": 6,
+              "success": true
+            },
+            {
+              "index": 7,
+              "success": true
+            },
+            {
+              "index": 8,
+              "success": true
+            },
+            {
+              "index": 9,
+              "success": true
+            },
+            {
+              "index": 10,
+              "success": true
+            },
+            {
+              "index": 11,
+              "success": true
+            },
+            {
+              "index": 12,
+              "success": true
+            },
+            {
+              "index": 13,
+              "success": true
+            },
+            {
+              "index": 14,
+              "success": true
+            },
+            {
+              "index": 15,
+              "success": true
+            },
+            {
+              "index": 16,
+              "success": true
+            },
+            {
+              "index": 17,
+              "success": true
+            },
+            {
+              "index": 18,
+              "success": true
+            },
+            {
+              "index": 19,
+              "success": true
+            },
+            {
+              "index": 20,
+              "success": true
+            },
+            {
+              "index": 21,
+              "success": true
+            },
+            {
+              "index": 22,
+              "success": true
+            },
+            {
+              "index": 23,
+              "success": true
+            },
+            {
+              "index": 24,
+              "success": true
+            },
+            {
+              "index": 25,
+              "success": true
+            },
+            {
+              "index": 26,
+              "success": true
+            },
+            {
+              "index": 27,
+              "success": true
+            },
+            {
+              "index": 28,
+              "success": true
+            },
+            {
+              "index": 29,
+              "success": true
+            },
+            {
+              "index": 30,
+              "success": true
+            },
+            {
+              "index": 31,
+              "success": true
+            }
+          ],
+          "source_chip": {
+            "x": 0,
+            "y": 0
+          },
+          "state_writes": {
+            "context": [
+              {
+                "key": "ctx_A",
+                "slot": 101,
+                "success": true
+              },
+              {
+                "key": "ctx_B",
+                "slot": 202,
+                "success": true
+              },
+              {
+                "key": "ctx_C",
+                "slot": 303,
+                "success": true
+              },
+              {
+                "key": "ctx_D",
+                "slot": 404,
+                "success": true
+              }
+            ],
+            "memory": [
+              {
+                "key": "mem_A",
+                "slot": 2101,
+                "success": true
+              },
+              {
+                "key": "mem_B",
+                "slot": 2202,
+                "success": true
+              },
+              {
+                "key": "mem_C",
+                "slot": 2303,
+                "success": true
+              },
+              {
+                "key": "mem_D",
+                "slot": 2404,
+                "success": true
+              }
+            ],
+            "route": [
+              {
+                "key": "route_A",
+                "slot": 1101,
+                "success": true
+              },
+              {
+                "key": "route_B",
+                "slot": 1202,
+                "success": true
+              },
+              {
+                "key": "route_C",
+                "slot": 1303,
+                "success": true
+              },
+              {
+                "key": "route_D",
+                "slot": 1404,
+                "success": true
+              }
+            ]
+          },
+          "status": "pass",
+          "waited_seconds": 0.1
+        }
+      ],
+      "criteria": [
+        {
+          "name": "no top-level hardware exception",
+          "note": "",
+          "passed": true,
+          "rule": "== True",
+          "value": true
+        },
+        {
+          "name": "both learning cases returned",
+          "note": "",
+          "passed": true,
+          "rule": "== 2",
+          "value": 2
+        },
+        {
+          "name": "enabled case present",
+          "note": "",
+          "passed": true,
+          "rule": "present",
+          "value": true
+        },
+        {
+          "name": "no-learning case present",
+          "note": "",
+          "passed": true,
+          "rule": "present",
+          "value": true
+        },
+        {
+          "name": "all cases pass",
+          "note": "",
+          "passed": true,
+          "rule": "all == pass",
+          "value": {
+            "enabled_lr_0_25": "pass",
+            "no_learning_lr_0_00": "pass"
+          }
+        },
+        {
+          "name": "enabled readout exceeds no-learning control",
+          "note": "",
+          "passed": true,
+          "rule": "enabled > no_learning",
+          "value": {
+            "enabled": 32768,
+            "no_learning": 0
+          }
+        },
+        {
+          "name": "both cases used identical lookup budget",
+          "note": "",
+          "passed": true,
+          "rule": "both == 96",
+          "value": {
+            "enabled": 96,
+            "no_learning": 96
+          }
+        },
+        {
+          "name": "true two-partition learning not attempted",
+          "note": "",
+          "passed": true,
+          "rule": "== not_attempted",
+          "value": "not_attempted"
+        },
+        {
+          "name": "native-scale baseline freeze not authorized",
+          "note": "",
+          "passed": true,
+          "rule": "== not_authorized",
+          "value": "not_authorized"
+        },
+        {
+          "name": "enabled_lr_0_25 :: no hardware exception",
+          "note": "",
+          "passed": true,
+          "rule": "== True",
+          "value": true
+        },
+        {
+          "name": "enabled_lr_0_25 :: task completed",
+          "note": "",
+          "passed": true,
+          "rule": "completed/pass",
+          "value": "completed"
+        },
+        {
+          "name": "enabled_lr_0_25 :: case label present",
+          "note": "",
+          "passed": true,
+          "rule": "non-empty",
+          "value": "enabled_lr_0_25"
+        },
+        {
+          "name": "enabled_lr_0_25 :: case kind valid",
+          "note": "",
+          "passed": true,
+          "rule": "enabled|no_learning",
+          "value": "enabled"
+        },
+        {
+          "name": "enabled_lr_0_25 :: reference computed",
+          "note": "",
+          "passed": true,
+          "rule": "contains final readout",
+          "value": {
+            "active_pending": 0,
+            "decisions": 32,
+            "event_count": 32,
+            "final_timestep": 34,
+            "learning_rate": 0.25,
+            "learning_rate_raw": 8192,
+            "pending_created": 32,
+            "pending_matured": 32,
+            "readout_bias": 0.0,
+            "readout_bias_raw": 0,
+            "readout_weight": 1.0,
+            "readout_weight_raw": 32768,
+            "reward_events": 32,
+            "trace_preview": [
+              {
+                "due": 3,
+                "event": 1,
+                "feature_raw": 32768,
+                "prediction_raw": 0,
+                "target_raw": 32768,
+                "timestep": 2
+              },
+              {
+                "due": 4,
+                "event": 2,
+                "feature_raw": -32768,
+                "prediction_raw": 0,
+                "target_raw": -32768,
+                "timestep": 3
+              },
+              {
+                "due": 5,
+                "event": 3,
+                "feature_raw": 32768,
+                "prediction_raw": 16384,
+                "target_raw": 32768,
+                "timestep": 4
+              },
+              {
+                "due": 6,
+                "event": 4,
+                "feature_raw": -32768,
+                "prediction_raw": -16384,
+                "target_raw": -32768,
+                "timestep": 5
+              },
+              {
+                "due": 7,
+                "event": 5,
+                "feature_raw": -32768,
+                "prediction_raw": -16384,
+                "target_raw": -32768,
+                "timestep": 6
+              },
+              {
+                "due": 8,
+                "event": 6,
+                "feature_raw": 32768,
+                "prediction_raw": 24576,
+                "target_raw": 32768,
+                "timestep": 7
+              },
+              {
+                "due": 9,
+                "event": 7,
+                "feature_raw": -32768,
+                "prediction_raw": -32768,
+                "target_raw": -32768,
+                "timestep": 8
+              },
+              {
+                "due": 10,
+                "event": 8,
+                "feature_raw": 32768,
+                "prediction_raw": 28672,
+                "target_raw": 32768,
+                "timestep": 9
+              }
+            ]
+          }
+        },
+        {
+          "name": "enabled_lr_0_25 :: source chip placement",
+          "note": "",
+          "passed": true,
+          "rule": "== {'x': 0, 'y': 0}",
+          "value": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "name": "enabled_lr_0_25 :: remote chip placement",
+          "note": "",
+          "passed": true,
+          "rule": "== {'x': 1, 'y': 0}",
+          "value": {
+            "x": 1,
+            "y": 0
+          }
+        },
+        {
+          "name": "enabled_lr_0_25 :: all resets succeeded",
+          "note": "",
+          "passed": true,
+          "rule": "all success",
+          "value": {
+            "context": true,
+            "learning": true,
+            "memory": true,
+            "route": true
+          }
+        },
+        {
+          "name": "enabled_lr_0_25 :: all state writes succeeded",
+          "note": "",
+          "passed": true,
+          "rule": "all success",
+          "value": {
+            "context": [
+              {
+                "key": "ctx_A",
+                "slot": 101,
+                "success": true
+              },
+              {
+                "key": "ctx_B",
+                "slot": 202,
+                "success": true
+              },
+              {
+                "key": "ctx_C",
+                "slot": 303,
+                "success": true
+              },
+              {
+                "key": "ctx_D",
+                "slot": 404,
+                "success": true
+              }
+            ],
+            "memory": [
+              {
+                "key": "mem_A",
+                "slot": 2101,
+                "success": true
+              },
+              {
+                "key": "mem_B",
+                "slot": 2202,
+                "success": true
+              },
+              {
+                "key": "mem_C",
+                "slot": 2303,
+                "success": true
+              },
+              {
+                "key": "mem_D",
+                "slot": 2404,
+                "success": true
+              }
+            ],
+            "route": [
+              {
+                "key": "route_A",
+                "slot": 1101,
+                "success": true
+              },
+              {
+                "key": "route_B",
+                "slot": 1202,
+                "success": true
+              },
+              {
+                "key": "route_C",
+                "slot": 1303,
+                "success": true
+              },
+              {
+                "key": "route_D",
+                "slot": 1404,
+                "success": true
+              }
+            ]
+          }
+        },
+        {
+          "name": "enabled_lr_0_25 :: all schedule uploads succeeded",
+          "note": "",
+          "passed": true,
+          "rule": "all success",
+          "value": [
+            {
+              "index": 0,
+              "success": true
+            },
+            {
+              "index": 1,
+              "success": true
+            },
+            {
+              "index": 2,
+              "success": true
+            },
+            {
+              "index": 3,
+              "success": true
+            },
+            {
+              "index": 4,
+              "success": true
+            },
+            {
+              "index": 5,
+              "success": true
+            },
+            {
+              "index": 6,
+              "success": true
+            },
+            {
+              "index": 7,
+              "success": true
+            },
+            {
+              "index": 8,
+              "success": true
+            },
+            {
+              "index": 9,
+              "success": true
+            },
+            {
+              "index": 10,
+              "success": true
+            },
+            {
+              "index": 11,
+              "success": true
+            },
+            {
+              "index": 12,
+              "success": true
+            },
+            {
+              "index": 13,
+              "success": true
+            },
+            {
+              "index": 14,
+              "success": true
+            },
+            {
+              "index": 15,
+              "success": true
+            },
+            {
+              "index": 16,
+              "success": true
+            },
+            {
+              "index": 17,
+              "success": true
+            },
+            {
+              "index": 18,
+              "success": true
+            },
+            {
+              "index": 19,
+              "success": true
+            },
+            {
+              "index": 20,
+              "success": true
+            },
+            {
+              "index": 21,
+              "success": true
+            },
+            {
+              "index": 22,
+              "success": true
+            },
+            {
+              "index": 23,
+              "success": true
+            },
+            {
+              "index": 24,
+              "success": true
+            },
+            {
+              "index": 25,
+              "success": true
+            },
+            {
+              "index": 26,
+              "success": true
+            },
+            {
+              "index": 27,
+              "success": true
+            },
+            {
+              "index": 28,
+              "success": true
+            },
+            {
+              "index": 29,
+              "success": true
+            },
+            {
+              "index": 30,
+              "success": true
+            },
+            {
+              "index": 31,
+              "success": true
+            }
+          ]
+        },
+        {
+          "name": "enabled_lr_0_25 :: all run_continuous succeeded",
+          "note": "",
+          "passed": true,
+          "rule": "all success",
+          "value": {
+            "context": {
+              "raw": {
+                "cmd": 24,
+                "status": 0,
+                "success": true
+              },
+              "success": true
+            },
+            "learning": {
+              "raw": {
+                "cmd": 24,
+                "status": 0,
+                "success": true
+              },
+              "success": true
+            },
+            "memory": {
+              "raw": {
+                "cmd": 24,
+                "status": 0,
+                "success": true
+              },
+              "success": true
+            },
+            "route": {
+              "raw": {
+                "cmd": 24,
+                "status": 0,
+                "success": true
+              },
+              "success": true
+            }
+          }
+        },
+        {
+          "name": "enabled_lr_0_25 :: all pause commands succeeded",
+          "note": "",
+          "passed": true,
+          "rule": "all success",
+          "value": {
+            "context": {
+              "raw": {
+                "cmd": 25,
+                "status": 0,
+                "stopped_timestep": 4875,
+                "success": true
+              },
+              "success": true
+            },
+            "learning": {
+              "raw": {
+                "cmd": 25,
+                "status": 0,
+                "stopped_timestep": 1594,
+                "success": true
+              },
+              "success": true
+            },
+            "memory": {
+              "raw": {
+                "cmd": 25,
+                "status": 0,
+                "stopped_timestep": 2675,
+                "success": true
+              },
+              "success": true
+            },
+            "route": {
+              "raw": {
+                "cmd": 25,
+                "status": 0,
+                "stopped_timestep": 3775,
+                "success": true
+              },
+              "success": true
+            }
+          }
+        },
+        {
+          "name": "enabled_lr_0_25 :: context read success",
+          "note": "",
+          "passed": true,
+          "rule": "== True",
+          "value": true
+        },
+        {
+          "name": "enabled_lr_0_25 :: route read success",
+          "note": "",
+          "passed": true,
+          "rule": "== True",
+          "value": true
+        },
+        {
+          "name": "enabled_lr_0_25 :: memory read success",
+          "note": "",
+          "passed": true,
+          "rule": "== True",
+          "value": true
+        },
+        {
+          "name": "enabled_lr_0_25 :: learning read success",
+          "note": "",
+          "passed": true,
+          "rule": "== True",
+          "value": true
+        },
+        {
+          "name": "enabled_lr_0_25 :: decisions",
+          "note": "",
+          "passed": true,
+          "rule": "== 32",
+          "value": 32
+        },
+        {
+          "name": "enabled_lr_0_25 :: reward_events",
+          "note": "",
+          "passed": true,
+          "rule": "== 32",
+          "value": 32
+        },
+        {
+          "name": "enabled_lr_0_25 :: pending_created",
+          "note": "",
+          "passed": true,
+          "rule": "== 32",
+          "value": 32
+        },
+        {
+          "name": "enabled_lr_0_25 :: pending_matured",
+          "note": "",
+          "passed": true,
+          "rule": "== 32",
+          "value": 32
+        },
+        {
+          "name": "enabled_lr_0_25 :: active_pending cleared",
+          "note": "",
+          "passed": true,
+          "rule": "== 0",
+          "value": 0
+        },
+        {
+          "name": "enabled_lr_0_25 :: lookup_requests",
+          "note": "",
+          "passed": true,
+          "rule": "== 96",
+          "value": 96
+        },
+        {
+          "name": "enabled_lr_0_25 :: lookup_replies",
+          "note": "",
+          "passed": true,
+          "rule": "== 96",
+          "value": 96
+        },
+        {
+          "name": "enabled_lr_0_25 :: stale_replies zero",
+          "note": "",
+          "passed": true,
+          "rule": "== 0",
+          "value": 0
+        },
+        {
+          "name": "enabled_lr_0_25 :: duplicate_replies zero",
+          "note": "",
+          "passed": true,
+          "rule": "== 0",
+          "value": 0
+        },
+        {
+          "name": "enabled_lr_0_25 :: timeouts zero",
+          "note": "",
+          "passed": true,
+          "rule": "== 0",
+          "value": 0
+        },
+        {
+          "name": "enabled_lr_0_25 :: readout weight matches reference",
+          "note": "",
+          "passed": true,
+          "rule": "== 32768",
+          "value": 32768
+        },
+        {
+          "name": "enabled_lr_0_25 :: readout bias matches reference",
+          "note": "",
+          "passed": true,
+          "rule": "== 0",
+          "value": 0
+        },
+        {
+          "name": "enabled_lr_0_25 :: enabled learning moves readout",
+          "note": "",
+          "passed": true,
+          "rule": "> 0 when enabled",
+          "value": 32768
+        },
+        {
+          "name": "enabled_lr_0_25 :: no-learning keeps weight zero",
+          "note": "",
+          "passed": true,
+          "rule": "== 0 when no_learning",
+          "value": 32768
+        },
+        {
+          "name": "enabled_lr_0_25 :: no-learning keeps bias zero",
+          "note": "",
+          "passed": true,
+          "rule": "== 0 when no_learning",
+          "value": 0
+        },
+        {
+          "name": "enabled_lr_0_25 :: learning payload compact",
+          "note": "",
+          "passed": true,
+          "rule": ">= 105",
+          "value": 105
+        },
+        {
+          "name": "no_learning_lr_0_00 :: no hardware exception",
+          "note": "",
+          "passed": true,
+          "rule": "== True",
+          "value": true
+        },
+        {
+          "name": "no_learning_lr_0_00 :: task completed",
+          "note": "",
+          "passed": true,
+          "rule": "completed/pass",
+          "value": "completed"
+        },
+        {
+          "name": "no_learning_lr_0_00 :: case label present",
+          "note": "",
+          "passed": true,
+          "rule": "non-empty",
+          "value": "no_learning_lr_0_00"
+        },
+        {
+          "name": "no_learning_lr_0_00 :: case kind valid",
+          "note": "",
+          "passed": true,
+          "rule": "enabled|no_learning",
+          "value": "no_learning"
+        },
+        {
+          "name": "no_learning_lr_0_00 :: reference computed",
+          "note": "",
+          "passed": true,
+          "rule": "contains final readout",
+          "value": {
+            "active_pending": 0,
+            "decisions": 32,
+            "event_count": 32,
+            "final_timestep": 34,
+            "learning_rate": 0.0,
+            "learning_rate_raw": 0,
+            "pending_created": 32,
+            "pending_matured": 32,
+            "readout_bias": 0.0,
+            "readout_bias_raw": 0,
+            "readout_weight": 0.0,
+            "readout_weight_raw": 0,
+            "reward_events": 32,
+            "trace_preview": [
+              {
+                "due": 3,
+                "event": 1,
+                "feature_raw": 32768,
+                "prediction_raw": 0,
+                "target_raw": 32768,
+                "timestep": 2
+              },
+              {
+                "due": 4,
+                "event": 2,
+                "feature_raw": -32768,
+                "prediction_raw": 0,
+                "target_raw": -32768,
+                "timestep": 3
+              },
+              {
+                "due": 5,
+                "event": 3,
+                "feature_raw": 32768,
+                "prediction_raw": 0,
+                "target_raw": 32768,
+                "timestep": 4
+              },
+              {
+                "due": 6,
+                "event": 4,
+                "feature_raw": -32768,
+                "prediction_raw": 0,
+                "target_raw": -32768,
+                "timestep": 5
+              },
+              {
+                "due": 7,
+                "event": 5,
+                "feature_raw": -32768,
+                "prediction_raw": 0,
+                "target_raw": -32768,
+                "timestep": 6
+              },
+              {
+                "due": 8,
+                "event": 6,
+                "feature_raw": 32768,
+                "prediction_raw": 0,
+                "target_raw": 32768,
+                "timestep": 7
+              },
+              {
+                "due": 9,
+                "event": 7,
+                "feature_raw": -32768,
+                "prediction_raw": 0,
+                "target_raw": -32768,
+                "timestep": 8
+              },
+              {
+                "due": 10,
+                "event": 8,
+                "feature_raw": 32768,
+                "prediction_raw": 0,
+                "target_raw": 32768,
+                "timestep": 9
+              }
+            ]
+          }
+        },
+        {
+          "name": "no_learning_lr_0_00 :: source chip placement",
+          "note": "",
+          "passed": true,
+          "rule": "== {'x': 0, 'y': 0}",
+          "value": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "name": "no_learning_lr_0_00 :: remote chip placement",
+          "note": "",
+          "passed": true,
+          "rule": "== {'x': 1, 'y': 0}",
+          "value": {
+            "x": 1,
+            "y": 0
+          }
+        },
+        {
+          "name": "no_learning_lr_0_00 :: all resets succeeded",
+          "note": "",
+          "passed": true,
+          "rule": "all success",
+          "value": {
+            "context": true,
+            "learning": true,
+            "memory": true,
+            "route": true
+          }
+        },
+        {
+          "name": "no_learning_lr_0_00 :: all state writes succeeded",
+          "note": "",
+          "passed": true,
+          "rule": "all success",
+          "value": {
+            "context": [
+              {
+                "key": "ctx_A",
+                "slot": 101,
+                "success": true
+              },
+              {
+                "key": "ctx_B",
+                "slot": 202,
+                "success": true
+              },
+              {
+                "key": "ctx_C",
+                "slot": 303,
+                "success": true
+              },
+              {
+                "key": "ctx_D",
+                "slot": 404,
+                "success": true
+              }
+            ],
+            "memory": [
+              {
+                "key": "mem_A",
+                "slot": 2101,
+                "success": true
+              },
+              {
+                "key": "mem_B",
+                "slot": 2202,
+                "success": true
+              },
+              {
+                "key": "mem_C",
+                "slot": 2303,
+                "success": true
+              },
+              {
+                "key": "mem_D",
+                "slot": 2404,
+                "success": true
+              }
+            ],
+            "route": [
+              {
+                "key": "route_A",
+                "slot": 1101,
+                "success": true
+              },
+              {
+                "key": "route_B",
+                "slot": 1202,
+                "success": true
+              },
+              {
+                "key": "route_C",
+                "slot": 1303,
+                "success": true
+              },
+              {
+                "key": "route_D",
+                "slot": 1404,
+                "success": true
+              }
+            ]
+          }
+        },
+        {
+          "name": "no_learning_lr_0_00 :: all schedule uploads succeeded",
+          "note": "",
+          "passed": true,
+          "rule": "all success",
+          "value": [
+            {
+              "index": 0,
+              "success": true
+            },
+            {
+              "index": 1,
+              "success": true
+            },
+            {
+              "index": 2,
+              "success": true
+            },
+            {
+              "index": 3,
+              "success": true
+            },
+            {
+              "index": 4,
+              "success": true
+            },
+            {
+              "index": 5,
+              "success": true
+            },
+            {
+              "index": 6,
+              "success": true
+            },
+            {
+              "index": 7,
+              "success": true
+            },
+            {
+              "index": 8,
+              "success": true
+            },
+            {
+              "index": 9,
+              "success": true
+            },
+            {
+              "index": 10,
+              "success": true
+            },
+            {
+              "index": 11,
+              "success": true
+            },
+            {
+              "index": 12,
+              "success": true
+            },
+            {
+              "index": 13,
+              "success": true
+            },
+            {
+              "index": 14,
+              "success": true
+            },
+            {
+              "index": 15,
+              "success": true
+            },
+            {
+              "index": 16,
+              "success": true
+            },
+            {
+              "index": 17,
+              "success": true
+            },
+            {
+              "index": 18,
+              "success": true
+            },
+            {
+              "index": 19,
+              "success": true
+            },
+            {
+              "index": 20,
+              "success": true
+            },
+            {
+              "index": 21,
+              "success": true
+            },
+            {
+              "index": 22,
+              "success": true
+            },
+            {
+              "index": 23,
+              "success": true
+            },
+            {
+              "index": 24,
+              "success": true
+            },
+            {
+              "index": 25,
+              "success": true
+            },
+            {
+              "index": 26,
+              "success": true
+            },
+            {
+              "index": 27,
+              "success": true
+            },
+            {
+              "index": 28,
+              "success": true
+            },
+            {
+              "index": 29,
+              "success": true
+            },
+            {
+              "index": 30,
+              "success": true
+            },
+            {
+              "index": 31,
+              "success": true
+            }
+          ]
+        },
+        {
+          "name": "no_learning_lr_0_00 :: all run_continuous succeeded",
+          "note": "",
+          "passed": true,
+          "rule": "all success",
+          "value": {
+            "context": {
+              "raw": {
+                "cmd": 24,
+                "status": 0,
+                "success": true
+              },
+              "success": true
+            },
+            "learning": {
+              "raw": {
+                "cmd": 24,
+                "status": 0,
+                "success": true
+              },
+              "success": true
+            },
+            "memory": {
+              "raw": {
+                "cmd": 24,
+                "status": 0,
+                "success": true
+              },
+              "success": true
+            },
+            "route": {
+              "raw": {
+                "cmd": 24,
+                "status": 0,
+                "success": true
+              },
+              "success": true
+            }
+          }
+        },
+        {
+          "name": "no_learning_lr_0_00 :: all pause commands succeeded",
+          "note": "",
+          "passed": true,
+          "rule": "all success",
+          "value": {
+            "context": {
+              "raw": {
+                "cmd": 25,
+                "status": 0,
+                "stopped_timestep": 5344,
+                "success": true
+              },
+              "success": true
+            },
+            "learning": {
+              "raw": {
+                "cmd": 25,
+                "status": 0,
+                "stopped_timestep": 2067,
+                "success": true
+              },
+              "success": true
+            },
+            "memory": {
+              "raw": {
+                "cmd": 25,
+                "status": 0,
+                "stopped_timestep": 3148,
+                "success": true
+              },
+              "success": true
+            },
+            "route": {
+              "raw": {
+                "cmd": 25,
+                "status": 0,
+                "stopped_timestep": 4248,
+                "success": true
+              },
+              "success": true
+            }
+          }
+        },
+        {
+          "name": "no_learning_lr_0_00 :: context read success",
+          "note": "",
+          "passed": true,
+          "rule": "== True",
+          "value": true
+        },
+        {
+          "name": "no_learning_lr_0_00 :: route read success",
+          "note": "",
+          "passed": true,
+          "rule": "== True",
+          "value": true
+        },
+        {
+          "name": "no_learning_lr_0_00 :: memory read success",
+          "note": "",
+          "passed": true,
+          "rule": "== True",
+          "value": true
+        },
+        {
+          "name": "no_learning_lr_0_00 :: learning read success",
+          "note": "",
+          "passed": true,
+          "rule": "== True",
+          "value": true
+        },
+        {
+          "name": "no_learning_lr_0_00 :: decisions",
+          "note": "",
+          "passed": true,
+          "rule": "== 32",
+          "value": 32
+        },
+        {
+          "name": "no_learning_lr_0_00 :: reward_events",
+          "note": "",
+          "passed": true,
+          "rule": "== 32",
+          "value": 32
+        },
+        {
+          "name": "no_learning_lr_0_00 :: pending_created",
+          "note": "",
+          "passed": true,
+          "rule": "== 32",
+          "value": 32
+        },
+        {
+          "name": "no_learning_lr_0_00 :: pending_matured",
+          "note": "",
+          "passed": true,
+          "rule": "== 32",
+          "value": 32
+        },
+        {
+          "name": "no_learning_lr_0_00 :: active_pending cleared",
+          "note": "",
+          "passed": true,
+          "rule": "== 0",
+          "value": 0
+        },
+        {
+          "name": "no_learning_lr_0_00 :: lookup_requests",
+          "note": "",
+          "passed": true,
+          "rule": "== 96",
+          "value": 96
+        },
+        {
+          "name": "no_learning_lr_0_00 :: lookup_replies",
+          "note": "",
+          "passed": true,
+          "rule": "== 96",
+          "value": 96
+        },
+        {
+          "name": "no_learning_lr_0_00 :: stale_replies zero",
+          "note": "",
+          "passed": true,
+          "rule": "== 0",
+          "value": 0
+        },
+        {
+          "name": "no_learning_lr_0_00 :: duplicate_replies zero",
+          "note": "",
+          "passed": true,
+          "rule": "== 0",
+          "value": 0
+        },
+        {
+          "name": "no_learning_lr_0_00 :: timeouts zero",
+          "note": "",
+          "passed": true,
+          "rule": "== 0",
+          "value": 0
+        },
+        {
+          "name": "no_learning_lr_0_00 :: readout weight matches reference",
+          "note": "",
+          "passed": true,
+          "rule": "== 0",
+          "value": 0
+        },
+        {
+          "name": "no_learning_lr_0_00 :: readout bias matches reference",
+          "note": "",
+          "passed": true,
+          "rule": "== 0",
+          "value": 0
+        },
+        {
+          "name": "no_learning_lr_0_00 :: enabled learning moves readout",
+          "note": "",
+          "passed": true,
+          "rule": "> 0 when enabled",
+          "value": 0
+        },
+        {
+          "name": "no_learning_lr_0_00 :: no-learning keeps weight zero",
+          "note": "",
+          "passed": true,
+          "rule": "== 0 when no_learning",
+          "value": 0
+        },
+        {
+          "name": "no_learning_lr_0_00 :: no-learning keeps bias zero",
+          "note": "",
+          "passed": true,
+          "rule": "== 0 when no_learning",
+          "value": 0
+        },
+        {
+          "name": "no_learning_lr_0_00 :: learning payload compact",
+          "note": "",
+          "passed": true,
+          "rule": ">= 105",
+          "value": 105
+        }
+      ],
+      "event_count_per_case": 32,
+      "expected_lookup_count_per_case": 96,
+      "hardware_exception": null,
+      "learning_cases": [
+        {
+          "kind": "enabled",
+          "label": "enabled_lr_0_25",
+          "learning_rate": 0.25
+        },
+        {
+          "kind": "no_learning",
+          "label": "no_learning_lr_0_00",
+          "learning_rate": 0.0
+        }
+      ],
+      "reference_cases": {
+        "enabled_lr_0_25": {
+          "active_pending": 0,
+          "decisions": 32,
+          "event_count": 32,
+          "final_timestep": 34,
+          "learning_rate": 0.25,
+          "learning_rate_raw": 8192,
+          "pending_created": 32,
+          "pending_matured": 32,
+          "readout_bias": 0.0,
+          "readout_bias_raw": 0,
+          "readout_weight": 1.0,
+          "readout_weight_raw": 32768,
+          "reward_events": 32,
+          "trace_preview": [
+            {
+              "due": 3,
+              "event": 1,
+              "feature_raw": 32768,
+              "prediction_raw": 0,
+              "target_raw": 32768,
+              "timestep": 2
+            },
+            {
+              "due": 4,
+              "event": 2,
+              "feature_raw": -32768,
+              "prediction_raw": 0,
+              "target_raw": -32768,
+              "timestep": 3
+            },
+            {
+              "due": 5,
+              "event": 3,
+              "feature_raw": 32768,
+              "prediction_raw": 16384,
+              "target_raw": 32768,
+              "timestep": 4
+            },
+            {
+              "due": 6,
+              "event": 4,
+              "feature_raw": -32768,
+              "prediction_raw": -16384,
+              "target_raw": -32768,
+              "timestep": 5
+            },
+            {
+              "due": 7,
+              "event": 5,
+              "feature_raw": -32768,
+              "prediction_raw": -16384,
+              "target_raw": -32768,
+              "timestep": 6
+            },
+            {
+              "due": 8,
+              "event": 6,
+              "feature_raw": 32768,
+              "prediction_raw": 24576,
+              "target_raw": 32768,
+              "timestep": 7
+            },
+            {
+              "due": 9,
+              "event": 7,
+              "feature_raw": -32768,
+              "prediction_raw": -32768,
+              "target_raw": -32768,
+              "timestep": 8
+            },
+            {
+              "due": 10,
+              "event": 8,
+              "feature_raw": 32768,
+              "prediction_raw": 28672,
+              "target_raw": 32768,
+              "timestep": 9
+            }
+          ]
+        },
+        "no_learning_lr_0_00": {
+          "active_pending": 0,
+          "decisions": 32,
+          "event_count": 32,
+          "final_timestep": 34,
+          "learning_rate": 0.0,
+          "learning_rate_raw": 0,
+          "pending_created": 32,
+          "pending_matured": 32,
+          "readout_bias": 0.0,
+          "readout_bias_raw": 0,
+          "readout_weight": 0.0,
+          "readout_weight_raw": 0,
+          "reward_events": 32,
+          "trace_preview": [
+            {
+              "due": 3,
+              "event": 1,
+              "feature_raw": 32768,
+              "prediction_raw": 0,
+              "target_raw": 32768,
+              "timestep": 2
+            },
+            {
+              "due": 4,
+              "event": 2,
+              "feature_raw": -32768,
+              "prediction_raw": 0,
+              "target_raw": -32768,
+              "timestep": 3
+            },
+            {
+              "due": 5,
+              "event": 3,
+              "feature_raw": 32768,
+              "prediction_raw": 0,
+              "target_raw": 32768,
+              "timestep": 4
+            },
+            {
+              "due": 6,
+              "event": 4,
+              "feature_raw": -32768,
+              "prediction_raw": 0,
+              "target_raw": -32768,
+              "timestep": 5
+            },
+            {
+              "due": 7,
+              "event": 5,
+              "feature_raw": -32768,
+              "prediction_raw": 0,
+              "target_raw": -32768,
+              "timestep": 6
+            },
+            {
+              "due": 8,
+              "event": 6,
+              "feature_raw": 32768,
+              "prediction_raw": 0,
+              "target_raw": 32768,
+              "timestep": 7
+            },
+            {
+              "due": 9,
+              "event": 7,
+              "feature_raw": -32768,
+              "prediction_raw": 0,
+              "target_raw": -32768,
+              "timestep": 8
+            },
+            {
+              "due": 10,
+              "event": 8,
+              "feature_raw": 32768,
+              "prediction_raw": 0,
+              "target_raw": 32768,
+              "timestep": 9
+            }
+          ]
+        }
+      },
+      "remote_chip": {
+        "x": 1,
+        "y": 0
+      },
+      "runtime_seconds": 0.9443111303262413,
+      "source_chip": {
+        "x": 0,
+        "y": 0
+      },
+      "status": "pass"
+    },
+    "tier": "4.32e",
+    "tier_name": "Tier 4.32e - Multi-Chip Learning Micro-Task"
+  },
+  "mode": "ingest",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested",
+  "returned_artifacts": [
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/coral_reef (28).aplx",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/coral_reef (30).txt",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/coral_reef (31).elf",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/coral_reef_4_32e_context_context_core.aplx",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/coral_reef_4_32e_learning_learning_core.aplx",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/coral_reef_4_32e_memory_memory_core.aplx",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/coral_reef_4_32e_route_route_core.aplx",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/host_interface (30).o",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/main (30).o",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/reports (27).zip",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/state_manager (30).o",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/tier4_22i_main_syntax_normal (29).o",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/tier4_22i_main_syntax_normal_stderr (29).txt",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/tier4_22i_main_syntax_normal_stdout (29).txt",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/tier4_32e_build_context_context_core_stderr.txt",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/tier4_32e_build_context_context_core_stdout.txt",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/tier4_32e_build_learning_learning_core_stderr.txt",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/tier4_32e_build_learning_learning_core_stdout.txt",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/tier4_32e_build_memory_memory_core_stdout.txt",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/tier4_32e_build_route_route_core_stderr.txt",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/tier4_32e_build_route_route_core_stdout.txt",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/tier4_32e_case_enabled_lr_0_25.json",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/tier4_32e_case_enabled_lr_0_25_summary.csv",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/tier4_32e_case_no_learning_lr_0_00.json",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/tier4_32e_case_no_learning_lr_0_00_summary.csv",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/tier4_32e_context_build.json",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/tier4_32e_context_load.json",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/tier4_32e_environment.json",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/tier4_32e_latest_manifest.json",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/tier4_32e_learning_load.json",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/tier4_32e_memory_build.json",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/tier4_32e_memory_load.json",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/tier4_32e_prepare_source_checks_stderr.txt",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/tier4_32e_prepare_source_checks_stdout.txt",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/tier4_32e_report.md",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/tier4_32e_results.json",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/tier4_32e_route_build.json",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/tier4_32e_route_load.json",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/tier4_32e_summary.csv",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/tier4_32e_target_acquisition.json",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/tier4_32e_task_result.json",
+    "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/returned_artifacts/tier4_32e_task_summary.csv"
+  ],
+  "runner_revision": "tier4_32e_multichip_learning_microtask_20260507_0001",
+  "status": "pass",
+  "summary": {
+    "learning_microtask_status": "pass",
+    "raw_remote_status": "pass",
+    "returned_artifact_count": 42
+  },
+  "tier": "4.32e-ingest",
+  "tier_name": "Tier 4.32e - Multi-Chip Learning Micro-Task"
+}

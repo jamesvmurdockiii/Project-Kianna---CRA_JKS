@@ -901,31 +901,48 @@ ability.
     two-partition learning, not lifecycle scaling, not multi-shard learning,
     and not a native-scale baseline freeze.
 
-64. **CURRENT ACTIVE STEP** - Tier 4.32e multi-chip learning micro-task:
-    prepared at `controlled_test_output/tier4_32e_20260507_prepared/` after the
-    4.32d cross-chip smoke pass. Upload `ebrains_jobs/cra_432e` and run
-    `cra_432e/experiments/tier4_32e_multichip_learning_microtask.py --mode run-hardware --output-dir tier4_32e_job_output`.
-    It tests enabled learning versus a no-learning control over the same
-    two-chip MCPL path with strict claim boundaries.
+64. ✅ **COMPLETE** - Tier 4.32e multi-chip learning micro-task:
+    HARDWARE PASS / INGEST PASS. Prepared output:
+    `controlled_test_output/tier4_32e_20260507_prepared/`; ingested output:
+    `controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/`.
+    Returned EBRAINS run used board `10.11.205.161`, source/learning chip
+    `(0,0)`, remote state chip `(1,0)`, shard `0`, two cases, 32 events per
+    case, and 96 expected lookup replies per case. Result: raw remote status
+    `pass`, ingest status `pass`, 96/96 lookup replies in both cases, zero
+    stale replies, zero duplicate replies, zero timeouts, compact readback,
+    zero synthetic fallback, and 42 returned artifacts preserved. Enabled LR
+    0.25 matched readout `32768/0`; no-learning LR 0.0 stayed `0/0`. Boundary:
+    two-chip single-shard learning micro-task only; not speedup, not benchmark
+    evidence, not true two-partition learning, not lifecycle scaling, not
+    multi-shard learning, and not a native-scale baseline freeze.
 
-65. Freeze `CRA_NATIVE_SCALE_BASELINE_v0.5` only if single-chip multi-core and
+65. **CURRENT ACTIVE STEP** - Tier 4.32f multi-chip resource/lifecycle decision
+    contract: define the exact next multi-chip scale gate before another
+    hardware run. The contract must choose and justify whether the next
+    evidence target is lifecycle traffic, resource/timing characterization,
+    true partition semantics, or a bounded combination. It must predeclare the
+    question, hypothesis/null, mechanism under test, placement assumptions,
+    controls/ablations, seeds or event schedules, metrics, pass/fail criteria,
+    failure classes, expected artifacts, docs to update, and claim boundaries.
+
+66. Freeze `CRA_NATIVE_SCALE_BASELINE_v0.5` only if single-chip multi-core and
     first multi-chip evidence are stable enough for the final paper claim. If
     not, publish measured single-chip limits honestly.
 
 ### Phase H - Software Usefulness And Final Baselines
 
-66. Tier 6.2 hard synthetic suite: variable-delay cue, multi-cue delayed reward,
+67. Tier 6.2 hard synthetic suite: variable-delay cue, multi-cue delayed reward,
     hidden regime switching, drifting bandit, concept drift, anomaly stream,
     and small delayed-reward control proxy.
 
-67. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+68. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines.
 
-68. Tier 7.2 held-out task challenge: define held-out families before running;
+69. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout.
 
-69. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+70. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines.
 
 70. Tier 7.4 policy/action selection: state -> action -> delayed consequence,
@@ -1125,13 +1142,14 @@ source-proven. Tier 4.32d-r1 route repair/local QA then passed locally with
 clean route-contract and MCPL regression evidence. Tier 4.32d package preparation
 then passed locally, and the returned 4.32d EBRAINS run-hardware artifacts passed
 and were ingested at controlled_test_output/tier4_32d_20260507_hardware_pass_ingested/.
-Tier 4.32e multi-chip learning micro-task design/package now passed locally at
+Tier 4.32e multi-chip learning micro-task design/package passed locally at
 controlled_test_output/tier4_32e_20260507_prepared/ and refreshed
-ebrains_jobs/cra_432e.
-Next action: run Tier 4.32e on EBRAINS and ingest returned artifacts.
-Speedup claims, benchmark claims, true two-partition cross-chip learning, and a
-native-scale baseline freeze remain blocked until 4.32e hardware evidence passes
-cleanly.
+ebrains_jobs/cra_432e. Tier 4.32e then passed on EBRAINS and was ingested at
+controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/.
+Next action: define Tier 4.32f multi-chip resource/lifecycle decision contract.
+Speedup claims, benchmark claims, true two-partition cross-chip learning,
+lifecycle scaling, multi-shard learning, and a native-scale baseline freeze
+remain blocked until a contract-backed next gate passes cleanly.
 ```
 
 Current reference state:
@@ -1179,9 +1197,11 @@ ebrains_jobs/cra_432d. Tier 4.32d then passed on EBRAINS and was ingested at
 controlled_test_output/tier4_32d_20260507_hardware_pass_ingested/. Tier 4.32e
 multi-chip learning micro-task design/package now passed locally at
 controlled_test_output/tier4_32e_20260507_prepared/ and refreshed
-ebrains_jobs/cra_432e. The next action is to run Tier 4.32e on EBRAINS and
-ingest returned artifacts, not benchmarks, speedup, true two-partition learning,
-or baseline-freeze claims.
+ebrains_jobs/cra_432e. Tier 4.32e then passed on EBRAINS and was ingested at
+controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/. The next
+action is to define Tier 4.32f as a multi-chip resource/lifecycle decision
+contract, not to jump to benchmarks, speedup, true two-partition learning,
+lifecycle scaling, multi-shard learning, or baseline-freeze claims.
 ```
 
 Purpose:
@@ -1207,9 +1227,11 @@ locally, and Tier 4.32c then passed as the inter-chip feasibility contract. Tier
 because explicit inter-chip link routing was not source-proven before 4.32d-r1.
 Tier 4.32d-r1 then passed as route repair/local QA. Tier 4.32d then passed as
 the first two-chip split-role MCPL lookup hardware smoke after EBRAINS ingest.
-Tier 4.32e is now prepared locally. The next action is to run the prepared
-cra_432e package on EBRAINS and ingest returned artifacts, not benchmarks,
-speedup, true two-partition learning, or baseline-freeze claims.
+Tier 4.32e then passed as the first two-chip learning-bearing hardware
+micro-task after EBRAINS ingest. The next action is to define the Tier 4.32f
+contract before any further multi-chip hardware run, not benchmarks, speedup,
+true two-partition learning, lifecycle scaling, multi-shard learning, or
+baseline-freeze claims.
 ```
 
 Required coverage:
@@ -1219,11 +1241,11 @@ Use v2.2 as the software reference and `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` as
 the native lifecycle baseline. Keep Tier 4.31d's boundary strict: one-board
 temporal-state hardware smoke only; not nonlinear recurrence, not speedup, not
 multi-chip scaling, not benchmark superiority, and not full organism autonomy.
-The next native work is Tier 4.32e: run and ingest the already prepared smallest
-cross-chip learning-bearing micro-task over the now-passed Tier 4.32d
-communication path, with explicit board/chip/shard identity, message paths,
-compact readback ownership, failure counters, placement assumptions, enabled-vs-
-no-learning separation, and resource measurements.
+The next native work is Tier 4.32f: define the multi-chip resource/lifecycle
+decision contract after the passed Tier 4.32e learning micro-task. It must
+preserve explicit board/chip/shard identity, message paths, compact readback
+ownership, failure counters, placement assumptions, enabled-vs-no-learning
+separation, and resource measurements while deciding the next evidence target.
 Do not claim true two-partition cross-chip learning until origin/target shard
 semantics are defined. Only reopen replay buffers, sleep-like replay, or native
 eligibility if a later measured blocker specifically demands it.

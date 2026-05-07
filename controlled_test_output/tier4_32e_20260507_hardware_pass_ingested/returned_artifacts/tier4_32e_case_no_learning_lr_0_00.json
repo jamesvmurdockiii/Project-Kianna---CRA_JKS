@@ -1,0 +1,1142 @@
+{
+  "case_kind": "no_learning",
+  "case_label": "no_learning_lr_0_00",
+  "criteria": [
+    {
+      "name": "no hardware exception",
+      "note": "",
+      "passed": true,
+      "rule": "== True",
+      "value": true
+    },
+    {
+      "name": "task completed",
+      "note": "",
+      "passed": true,
+      "rule": "completed/pass",
+      "value": "completed"
+    },
+    {
+      "name": "case label present",
+      "note": "",
+      "passed": true,
+      "rule": "non-empty",
+      "value": "no_learning_lr_0_00"
+    },
+    {
+      "name": "case kind valid",
+      "note": "",
+      "passed": true,
+      "rule": "enabled|no_learning",
+      "value": "no_learning"
+    },
+    {
+      "name": "reference computed",
+      "note": "",
+      "passed": true,
+      "rule": "contains final readout",
+      "value": {
+        "active_pending": 0,
+        "decisions": 32,
+        "event_count": 32,
+        "final_timestep": 34,
+        "learning_rate": 0.0,
+        "learning_rate_raw": 0,
+        "pending_created": 32,
+        "pending_matured": 32,
+        "readout_bias": 0.0,
+        "readout_bias_raw": 0,
+        "readout_weight": 0.0,
+        "readout_weight_raw": 0,
+        "reward_events": 32,
+        "trace_preview": [
+          {
+            "due": 3,
+            "event": 1,
+            "feature_raw": 32768,
+            "prediction_raw": 0,
+            "target_raw": 32768,
+            "timestep": 2
+          },
+          {
+            "due": 4,
+            "event": 2,
+            "feature_raw": -32768,
+            "prediction_raw": 0,
+            "target_raw": -32768,
+            "timestep": 3
+          },
+          {
+            "due": 5,
+            "event": 3,
+            "feature_raw": 32768,
+            "prediction_raw": 0,
+            "target_raw": 32768,
+            "timestep": 4
+          },
+          {
+            "due": 6,
+            "event": 4,
+            "feature_raw": -32768,
+            "prediction_raw": 0,
+            "target_raw": -32768,
+            "timestep": 5
+          },
+          {
+            "due": 7,
+            "event": 5,
+            "feature_raw": -32768,
+            "prediction_raw": 0,
+            "target_raw": -32768,
+            "timestep": 6
+          },
+          {
+            "due": 8,
+            "event": 6,
+            "feature_raw": 32768,
+            "prediction_raw": 0,
+            "target_raw": 32768,
+            "timestep": 7
+          },
+          {
+            "due": 9,
+            "event": 7,
+            "feature_raw": -32768,
+            "prediction_raw": 0,
+            "target_raw": -32768,
+            "timestep": 8
+          },
+          {
+            "due": 10,
+            "event": 8,
+            "feature_raw": 32768,
+            "prediction_raw": 0,
+            "target_raw": 32768,
+            "timestep": 9
+          }
+        ]
+      }
+    },
+    {
+      "name": "source chip placement",
+      "note": "",
+      "passed": true,
+      "rule": "== {'x': 0, 'y': 0}",
+      "value": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "remote chip placement",
+      "note": "",
+      "passed": true,
+      "rule": "== {'x': 1, 'y': 0}",
+      "value": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "name": "all resets succeeded",
+      "note": "",
+      "passed": true,
+      "rule": "all success",
+      "value": {
+        "context": true,
+        "learning": true,
+        "memory": true,
+        "route": true
+      }
+    },
+    {
+      "name": "all state writes succeeded",
+      "note": "",
+      "passed": true,
+      "rule": "all success",
+      "value": {
+        "context": [
+          {
+            "key": "ctx_A",
+            "slot": 101,
+            "success": true
+          },
+          {
+            "key": "ctx_B",
+            "slot": 202,
+            "success": true
+          },
+          {
+            "key": "ctx_C",
+            "slot": 303,
+            "success": true
+          },
+          {
+            "key": "ctx_D",
+            "slot": 404,
+            "success": true
+          }
+        ],
+        "memory": [
+          {
+            "key": "mem_A",
+            "slot": 2101,
+            "success": true
+          },
+          {
+            "key": "mem_B",
+            "slot": 2202,
+            "success": true
+          },
+          {
+            "key": "mem_C",
+            "slot": 2303,
+            "success": true
+          },
+          {
+            "key": "mem_D",
+            "slot": 2404,
+            "success": true
+          }
+        ],
+        "route": [
+          {
+            "key": "route_A",
+            "slot": 1101,
+            "success": true
+          },
+          {
+            "key": "route_B",
+            "slot": 1202,
+            "success": true
+          },
+          {
+            "key": "route_C",
+            "slot": 1303,
+            "success": true
+          },
+          {
+            "key": "route_D",
+            "slot": 1404,
+            "success": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "all schedule uploads succeeded",
+      "note": "",
+      "passed": true,
+      "rule": "all success",
+      "value": [
+        {
+          "index": 0,
+          "success": true
+        },
+        {
+          "index": 1,
+          "success": true
+        },
+        {
+          "index": 2,
+          "success": true
+        },
+        {
+          "index": 3,
+          "success": true
+        },
+        {
+          "index": 4,
+          "success": true
+        },
+        {
+          "index": 5,
+          "success": true
+        },
+        {
+          "index": 6,
+          "success": true
+        },
+        {
+          "index": 7,
+          "success": true
+        },
+        {
+          "index": 8,
+          "success": true
+        },
+        {
+          "index": 9,
+          "success": true
+        },
+        {
+          "index": 10,
+          "success": true
+        },
+        {
+          "index": 11,
+          "success": true
+        },
+        {
+          "index": 12,
+          "success": true
+        },
+        {
+          "index": 13,
+          "success": true
+        },
+        {
+          "index": 14,
+          "success": true
+        },
+        {
+          "index": 15,
+          "success": true
+        },
+        {
+          "index": 16,
+          "success": true
+        },
+        {
+          "index": 17,
+          "success": true
+        },
+        {
+          "index": 18,
+          "success": true
+        },
+        {
+          "index": 19,
+          "success": true
+        },
+        {
+          "index": 20,
+          "success": true
+        },
+        {
+          "index": 21,
+          "success": true
+        },
+        {
+          "index": 22,
+          "success": true
+        },
+        {
+          "index": 23,
+          "success": true
+        },
+        {
+          "index": 24,
+          "success": true
+        },
+        {
+          "index": 25,
+          "success": true
+        },
+        {
+          "index": 26,
+          "success": true
+        },
+        {
+          "index": 27,
+          "success": true
+        },
+        {
+          "index": 28,
+          "success": true
+        },
+        {
+          "index": 29,
+          "success": true
+        },
+        {
+          "index": 30,
+          "success": true
+        },
+        {
+          "index": 31,
+          "success": true
+        }
+      ]
+    },
+    {
+      "name": "all run_continuous succeeded",
+      "note": "",
+      "passed": true,
+      "rule": "all success",
+      "value": {
+        "context": {
+          "raw": {
+            "cmd": 24,
+            "status": 0,
+            "success": true
+          },
+          "success": true
+        },
+        "learning": {
+          "raw": {
+            "cmd": 24,
+            "status": 0,
+            "success": true
+          },
+          "success": true
+        },
+        "memory": {
+          "raw": {
+            "cmd": 24,
+            "status": 0,
+            "success": true
+          },
+          "success": true
+        },
+        "route": {
+          "raw": {
+            "cmd": 24,
+            "status": 0,
+            "success": true
+          },
+          "success": true
+        }
+      }
+    },
+    {
+      "name": "all pause commands succeeded",
+      "note": "",
+      "passed": true,
+      "rule": "all success",
+      "value": {
+        "context": {
+          "raw": {
+            "cmd": 25,
+            "status": 0,
+            "stopped_timestep": 5344,
+            "success": true
+          },
+          "success": true
+        },
+        "learning": {
+          "raw": {
+            "cmd": 25,
+            "status": 0,
+            "stopped_timestep": 2067,
+            "success": true
+          },
+          "success": true
+        },
+        "memory": {
+          "raw": {
+            "cmd": 25,
+            "status": 0,
+            "stopped_timestep": 3148,
+            "success": true
+          },
+          "success": true
+        },
+        "route": {
+          "raw": {
+            "cmd": 25,
+            "status": 0,
+            "stopped_timestep": 4248,
+            "success": true
+          },
+          "success": true
+        }
+      }
+    },
+    {
+      "name": "context read success",
+      "note": "",
+      "passed": true,
+      "rule": "== True",
+      "value": true
+    },
+    {
+      "name": "route read success",
+      "note": "",
+      "passed": true,
+      "rule": "== True",
+      "value": true
+    },
+    {
+      "name": "memory read success",
+      "note": "",
+      "passed": true,
+      "rule": "== True",
+      "value": true
+    },
+    {
+      "name": "learning read success",
+      "note": "",
+      "passed": true,
+      "rule": "== True",
+      "value": true
+    },
+    {
+      "name": "decisions",
+      "note": "",
+      "passed": true,
+      "rule": "== 32",
+      "value": 32
+    },
+    {
+      "name": "reward_events",
+      "note": "",
+      "passed": true,
+      "rule": "== 32",
+      "value": 32
+    },
+    {
+      "name": "pending_created",
+      "note": "",
+      "passed": true,
+      "rule": "== 32",
+      "value": 32
+    },
+    {
+      "name": "pending_matured",
+      "note": "",
+      "passed": true,
+      "rule": "== 32",
+      "value": 32
+    },
+    {
+      "name": "active_pending cleared",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "name": "lookup_requests",
+      "note": "",
+      "passed": true,
+      "rule": "== 96",
+      "value": 96
+    },
+    {
+      "name": "lookup_replies",
+      "note": "",
+      "passed": true,
+      "rule": "== 96",
+      "value": 96
+    },
+    {
+      "name": "stale_replies zero",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "name": "duplicate_replies zero",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "name": "timeouts zero",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "name": "readout weight matches reference",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "name": "readout bias matches reference",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "name": "enabled learning moves readout",
+      "note": "",
+      "passed": true,
+      "rule": "> 0 when enabled",
+      "value": 0
+    },
+    {
+      "name": "no-learning keeps weight zero",
+      "note": "",
+      "passed": true,
+      "rule": "== 0 when no_learning",
+      "value": 0
+    },
+    {
+      "name": "no-learning keeps bias zero",
+      "note": "",
+      "passed": true,
+      "rule": "== 0 when no_learning",
+      "value": 0
+    },
+    {
+      "name": "learning payload compact",
+      "note": "",
+      "passed": true,
+      "rule": ">= 105",
+      "value": 105
+    }
+  ],
+  "event_count": 32,
+  "expected_lookup_count": 96,
+  "final_state": {
+    "context": {
+      "active_pending": 0,
+      "active_slots": 4,
+      "active_trace_count": 0,
+      "cmd": 8,
+      "commands_received": 7,
+      "decisions": 0,
+      "duplicate_replies": 0,
+      "flags": 0,
+      "lookup_replies": 0,
+      "lookup_requests": 0,
+      "neuron_count": 0,
+      "payload_len": 105,
+      "pending_created": 0,
+      "pending_dropped": 0,
+      "pending_matured": 0,
+      "profile_id": 4,
+      "readback_bytes": 105,
+      "readout_bias": 0.0,
+      "readout_bias_raw": 0,
+      "readout_weight": 0.0,
+      "readout_weight_raw": 0,
+      "reward_events": 0,
+      "schedule_length": 0,
+      "schema_version": 2,
+      "slot_evictions": 0,
+      "slot_hits": 32,
+      "slot_misses": 0,
+      "slot_writes": 4,
+      "stale_replies": 0,
+      "status": 0,
+      "success": true,
+      "synapse_count": 0,
+      "timeouts": 0,
+      "timestep": 5430
+    },
+    "learning": {
+      "active_pending": 0,
+      "active_slots": 0,
+      "active_trace_count": 0,
+      "cmd": 8,
+      "commands_received": 36,
+      "decisions": 32,
+      "duplicate_replies": 0,
+      "flags": 0,
+      "lookup_replies": 96,
+      "lookup_requests": 96,
+      "neuron_count": 0,
+      "payload_len": 105,
+      "pending_created": 32,
+      "pending_dropped": 0,
+      "pending_matured": 32,
+      "profile_id": 3,
+      "readback_bytes": 210,
+      "readout_bias": 0.0,
+      "readout_bias_raw": 0,
+      "readout_weight": 0.0,
+      "readout_weight_raw": 0,
+      "reward_events": 32,
+      "schedule_length": 32,
+      "schema_version": 2,
+      "slot_evictions": 0,
+      "slot_hits": 0,
+      "slot_misses": 0,
+      "slot_writes": 0,
+      "stale_replies": 0,
+      "status": 0,
+      "success": true,
+      "synapse_count": 0,
+      "timeouts": 0,
+      "timestep": 2089
+    },
+    "memory": {
+      "active_pending": 0,
+      "active_slots": 4,
+      "active_trace_count": 0,
+      "cmd": 8,
+      "commands_received": 7,
+      "decisions": 0,
+      "duplicate_replies": 0,
+      "flags": 0,
+      "lookup_replies": 0,
+      "lookup_requests": 0,
+      "neuron_count": 0,
+      "payload_len": 105,
+      "pending_created": 0,
+      "pending_dropped": 0,
+      "pending_matured": 0,
+      "profile_id": 6,
+      "readback_bytes": 105,
+      "readout_bias": 0.0,
+      "readout_bias_raw": 0,
+      "readout_weight": 0.0,
+      "readout_weight_raw": 0,
+      "reward_events": 0,
+      "schedule_length": 0,
+      "schema_version": 2,
+      "slot_evictions": 0,
+      "slot_hits": 32,
+      "slot_misses": 0,
+      "slot_writes": 4,
+      "stale_replies": 0,
+      "status": 0,
+      "success": true,
+      "synapse_count": 0,
+      "timeouts": 0,
+      "timestep": 3190
+    },
+    "route": {
+      "active_pending": 0,
+      "active_slots": 4,
+      "active_trace_count": 0,
+      "cmd": 8,
+      "commands_received": 7,
+      "decisions": 0,
+      "duplicate_replies": 0,
+      "flags": 0,
+      "lookup_replies": 0,
+      "lookup_requests": 0,
+      "neuron_count": 0,
+      "payload_len": 105,
+      "pending_created": 0,
+      "pending_dropped": 0,
+      "pending_matured": 0,
+      "profile_id": 5,
+      "readback_bytes": 105,
+      "readout_bias": 0.0,
+      "readout_bias_raw": 0,
+      "readout_weight": 0.0,
+      "readout_weight_raw": 0,
+      "reward_events": 0,
+      "schedule_length": 0,
+      "schema_version": 2,
+      "slot_evictions": 0,
+      "slot_hits": 32,
+      "slot_misses": 0,
+      "slot_writes": 4,
+      "stale_replies": 0,
+      "status": 0,
+      "success": true,
+      "synapse_count": 0,
+      "timeouts": 0,
+      "timestep": 4310
+    }
+  },
+  "hardware_exception": null,
+  "learning_rate": 0.0,
+  "learning_reference": {
+    "active_pending": 0,
+    "decisions": 32,
+    "event_count": 32,
+    "final_timestep": 34,
+    "learning_rate": 0.0,
+    "learning_rate_raw": 0,
+    "pending_created": 32,
+    "pending_matured": 32,
+    "readout_bias": 0.0,
+    "readout_bias_raw": 0,
+    "readout_weight": 0.0,
+    "readout_weight_raw": 0,
+    "reward_events": 32,
+    "trace_preview": [
+      {
+        "due": 3,
+        "event": 1,
+        "feature_raw": 32768,
+        "prediction_raw": 0,
+        "target_raw": 32768,
+        "timestep": 2
+      },
+      {
+        "due": 4,
+        "event": 2,
+        "feature_raw": -32768,
+        "prediction_raw": 0,
+        "target_raw": -32768,
+        "timestep": 3
+      },
+      {
+        "due": 5,
+        "event": 3,
+        "feature_raw": 32768,
+        "prediction_raw": 0,
+        "target_raw": 32768,
+        "timestep": 4
+      },
+      {
+        "due": 6,
+        "event": 4,
+        "feature_raw": -32768,
+        "prediction_raw": 0,
+        "target_raw": -32768,
+        "timestep": 5
+      },
+      {
+        "due": 7,
+        "event": 5,
+        "feature_raw": -32768,
+        "prediction_raw": 0,
+        "target_raw": -32768,
+        "timestep": 6
+      },
+      {
+        "due": 8,
+        "event": 6,
+        "feature_raw": 32768,
+        "prediction_raw": 0,
+        "target_raw": 32768,
+        "timestep": 7
+      },
+      {
+        "due": 9,
+        "event": 7,
+        "feature_raw": -32768,
+        "prediction_raw": 0,
+        "target_raw": -32768,
+        "timestep": 8
+      },
+      {
+        "due": 10,
+        "event": 8,
+        "feature_raw": 32768,
+        "prediction_raw": 0,
+        "target_raw": 32768,
+        "timestep": 9
+      }
+    ]
+  },
+  "pause": {
+    "context": {
+      "raw": {
+        "cmd": 25,
+        "status": 0,
+        "stopped_timestep": 5344,
+        "success": true
+      },
+      "success": true
+    },
+    "learning": {
+      "raw": {
+        "cmd": 25,
+        "status": 0,
+        "stopped_timestep": 2067,
+        "success": true
+      },
+      "success": true
+    },
+    "memory": {
+      "raw": {
+        "cmd": 25,
+        "status": 0,
+        "stopped_timestep": 3148,
+        "success": true
+      },
+      "success": true
+    },
+    "route": {
+      "raw": {
+        "cmd": 25,
+        "status": 0,
+        "stopped_timestep": 4248,
+        "success": true
+      },
+      "success": true
+    }
+  },
+  "poll_reads": [
+    {
+      "active_pending": 0,
+      "active_slots": 0,
+      "active_trace_count": 0,
+      "cmd": 8,
+      "commands_received": 34,
+      "decisions": 32,
+      "duplicate_replies": 0,
+      "flags": 0,
+      "lookup_replies": 96,
+      "lookup_requests": 96,
+      "neuron_count": 0,
+      "payload_len": 105,
+      "pending_created": 32,
+      "pending_dropped": 0,
+      "pending_matured": 32,
+      "profile_id": 3,
+      "readback_bytes": 105,
+      "readout_bias": 0.0,
+      "readout_bias_raw": 0,
+      "readout_weight": 0.0,
+      "readout_weight_raw": 0,
+      "reward_events": 32,
+      "schedule_length": 32,
+      "schema_version": 2,
+      "slot_evictions": 0,
+      "slot_hits": 0,
+      "slot_misses": 0,
+      "slot_writes": 0,
+      "stale_replies": 0,
+      "status": 0,
+      "success": true,
+      "synapse_count": 0,
+      "timeouts": 0,
+      "timestep": 2001
+    }
+  ],
+  "remote_chip": {
+    "x": 1,
+    "y": 0
+  },
+  "reset": {
+    "context": true,
+    "learning": true,
+    "memory": true,
+    "route": true
+  },
+  "run_continuous": {
+    "context": {
+      "raw": {
+        "cmd": 24,
+        "status": 0,
+        "success": true
+      },
+      "success": true
+    },
+    "learning": {
+      "raw": {
+        "cmd": 24,
+        "status": 0,
+        "success": true
+      },
+      "success": true
+    },
+    "memory": {
+      "raw": {
+        "cmd": 24,
+        "status": 0,
+        "success": true
+      },
+      "success": true
+    },
+    "route": {
+      "raw": {
+        "cmd": 24,
+        "status": 0,
+        "success": true
+      },
+      "success": true
+    }
+  },
+  "schedule_uploads": [
+    {
+      "index": 0,
+      "success": true
+    },
+    {
+      "index": 1,
+      "success": true
+    },
+    {
+      "index": 2,
+      "success": true
+    },
+    {
+      "index": 3,
+      "success": true
+    },
+    {
+      "index": 4,
+      "success": true
+    },
+    {
+      "index": 5,
+      "success": true
+    },
+    {
+      "index": 6,
+      "success": true
+    },
+    {
+      "index": 7,
+      "success": true
+    },
+    {
+      "index": 8,
+      "success": true
+    },
+    {
+      "index": 9,
+      "success": true
+    },
+    {
+      "index": 10,
+      "success": true
+    },
+    {
+      "index": 11,
+      "success": true
+    },
+    {
+      "index": 12,
+      "success": true
+    },
+    {
+      "index": 13,
+      "success": true
+    },
+    {
+      "index": 14,
+      "success": true
+    },
+    {
+      "index": 15,
+      "success": true
+    },
+    {
+      "index": 16,
+      "success": true
+    },
+    {
+      "index": 17,
+      "success": true
+    },
+    {
+      "index": 18,
+      "success": true
+    },
+    {
+      "index": 19,
+      "success": true
+    },
+    {
+      "index": 20,
+      "success": true
+    },
+    {
+      "index": 21,
+      "success": true
+    },
+    {
+      "index": 22,
+      "success": true
+    },
+    {
+      "index": 23,
+      "success": true
+    },
+    {
+      "index": 24,
+      "success": true
+    },
+    {
+      "index": 25,
+      "success": true
+    },
+    {
+      "index": 26,
+      "success": true
+    },
+    {
+      "index": 27,
+      "success": true
+    },
+    {
+      "index": 28,
+      "success": true
+    },
+    {
+      "index": 29,
+      "success": true
+    },
+    {
+      "index": 30,
+      "success": true
+    },
+    {
+      "index": 31,
+      "success": true
+    }
+  ],
+  "source_chip": {
+    "x": 0,
+    "y": 0
+  },
+  "state_writes": {
+    "context": [
+      {
+        "key": "ctx_A",
+        "slot": 101,
+        "success": true
+      },
+      {
+        "key": "ctx_B",
+        "slot": 202,
+        "success": true
+      },
+      {
+        "key": "ctx_C",
+        "slot": 303,
+        "success": true
+      },
+      {
+        "key": "ctx_D",
+        "slot": 404,
+        "success": true
+      }
+    ],
+    "memory": [
+      {
+        "key": "mem_A",
+        "slot": 2101,
+        "success": true
+      },
+      {
+        "key": "mem_B",
+        "slot": 2202,
+        "success": true
+      },
+      {
+        "key": "mem_C",
+        "slot": 2303,
+        "success": true
+      },
+      {
+        "key": "mem_D",
+        "slot": 2404,
+        "success": true
+      }
+    ],
+    "route": [
+      {
+        "key": "route_A",
+        "slot": 1101,
+        "success": true
+      },
+      {
+        "key": "route_B",
+        "slot": 1202,
+        "success": true
+      },
+      {
+        "key": "route_C",
+        "slot": 1303,
+        "success": true
+      },
+      {
+        "key": "route_D",
+        "slot": 1404,
+        "success": true
+      }
+    ]
+  },
+  "status": "pass",
+  "waited_seconds": 0.1
+}

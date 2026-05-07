@@ -1,0 +1,42 @@
+make: Entering directory '/tmp/job12343159807614845839.tmp/cra_432e/coral_reef_spinnaker/spinnaker_runtime'
+rm -f tests/test_runtime tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_lifecycle_core tests/test_four_core_local tests/test_four_core_mcpl_local tests/test_four_core_48event tests/test_mcpl_feasibility tests/test_mcpl_lookup_contract tests/test_mcpl_interchip_route_learning tests/test_mcpl_interchip_route_context tests/test_lifecycle tests/test_lifecycle_split tests/test_temporal_state
+cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_USE_MCPL_LOOKUP=1 -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 -DCRA_MCPL_INTERCHIP_REQUEST_LINK_ROUTE=ROUTE_E tests/test_mcpl_interchip_route_contract.c stubs/spin1_api.c src/state_manager.c -lm -o tests/test_mcpl_interchip_route_learning
+./tests/test_mcpl_interchip_route_learning
+Tier 4.32d-r1 learning-core inter-chip route contract
+  PASS: learning core installs outbound request link routes
+cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_USE_MCPL_LOOKUP=1 -DCRA_RUNTIME_PROFILE_CONTEXT_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=4 -DCRA_MCPL_INTERCHIP_REPLY_LINK_ROUTE=ROUTE_W tests/test_mcpl_interchip_route_contract.c stubs/spin1_api.c src/state_manager.c -lm -o tests/test_mcpl_interchip_route_context
+./tests/test_mcpl_interchip_route_context
+Tier 4.32d-r1 state-core inter-chip route contract
+  PASS: state core installs local request route plus outbound reply link routes
+cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_USE_MCPL_LOOKUP=1 -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 tests/test_mcpl_lookup_contract.c stubs/spin1_api.c src/state_manager.c -lm -o tests/test_mcpl_lookup_contract
+./tests/test_mcpl_lookup_contract
+Tier 4.32a-r1 MCPL lookup contract tests
+  PASS: reply sends value plus confidence/meta packets
+  PASS: receive waits for value and meta before completing lookup
+  PASS: meta-before-value ordering is accepted
+  PASS: shard_id prevents identical seq/type cross-talk
+  PASS: wrong-shard packets cannot complete pending lookup
+All Tier 4.32a-r1 MCPL lookup contract tests passed.
+cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_USE_MCPL_LOOKUP=1 -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 tests/test_four_core_mcpl_local.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_four_core_mcpl_local
+./tests/test_four_core_mcpl_local
+Tier 4.32a-r1 four-core MCPL local integration test
+  PASS: MCPL full-confidence path learns like SDP reference
+  PASS: MCPL zero-confidence path blocks learning
+  PASS: MCPL half-confidence path scales learning
+All Tier 4.32a-r1 four-core MCPL local tests passed.
+cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -I tests -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 tests/test_four_core_48event.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_four_core_48event
+./tests/test_four_core_48event
+pending_created=48
+pending_matured=48
+active_pending=0
+decisions=48
+reward_events=48
+readout_weight=32768
+readout_bias=0
+lookup_requests=144
+lookup_replies=144
+stale_replies=0
+timeouts=0
+final_timestep=50
+PASS: All 48-event four-core distributed criteria met.
+make: Leaving directory '/tmp/job12343159807614845839.tmp/cra_432e/coral_reef_spinnaker/spinnaker_runtime'

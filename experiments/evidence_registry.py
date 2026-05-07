@@ -1627,6 +1627,28 @@ SPECS: tuple[EvidenceSpec, ...] = (
             "returned_artifacts/tier4_32d_target_acquisition.json",
         ),
     ),
+    EvidenceSpec(
+        entry_id="tier4_32e_multi_chip_learning_microtask",
+        tier_label="Tier 4.32e - Multi-Chip Learning Micro-Task",
+        plan_position="Phase G first two-chip split-role learning-bearing hardware micro-task",
+        canonical_dir="tier4_32e_20260507_hardware_pass_ingested",
+        results_file="tier4_32e_results.json",
+        report_file="tier4_32e_report.md",
+        summary_file="tier4_32e_summary.csv",
+        harness="experiments/tier4_32e_multichip_learning_microtask.py",
+        evidence_role="native runtime first two-chip MCPL learning micro-task hardware pass",
+        claim="Tier 4.32e passed as the smallest two-chip single-shard learning-bearing MCPL hardware micro-task: enabled learning at LR 0.25 and a no-learning LR 0.0 control both completed 32 events, received 96/96 lookup replies, returned zero stale replies, duplicates, timeouts, or synthetic fallback, and separated readout state exactly as expected.",
+        caveat="Two-chip single-shard learning micro-task only; not speedup evidence, not benchmark superiority, not true two-partition cross-chip learning, not lifecycle scaling, not multi-shard learning, and not a native-scale baseline freeze.",
+        latest_manifest_names=("tier4_32e_latest_manifest.json",),
+        expected_extra_files=(
+            "returned_artifacts/tier4_32e_results.json",
+            "returned_artifacts/tier4_32e_task_result.json",
+            "returned_artifacts/tier4_32e_task_summary.csv",
+            "returned_artifacts/tier4_32e_target_acquisition.json",
+            "returned_artifacts/tier4_32e_case_enabled_lr_0_25.json",
+            "returned_artifacts/tier4_32e_case_no_learning_lr_0_00.json",
+        ),
+    ),
 )
 
 
