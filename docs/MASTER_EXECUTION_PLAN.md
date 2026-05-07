@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-06T21:45-04:00.
+Last updated: 2026-05-06T22:32-04:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -859,12 +859,18 @@ ability.
     envelope. Boundary: local static partition/resource evidence only, not a
     new hardware run, not speedup, not multi-chip, and not a baseline freeze.
 
-60. **CURRENT ACTIVE STEP** - Tier 4.32c inter-chip feasibility contract: define
-    routing keys, message path, board/chip selection, failure classes, readback,
-    and resource limits before attempting multi-chip.
+60. Tier 4.32c inter-chip feasibility contract: COMPLETE. Local pass `19/19`
+    at `controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/`.
+    It defines required board/chip/core/role/partition/shard/seq identity fields,
+    bidirectional remote MCPL lookup paths, compact readback ownership, failure
+    classes, and the exact two-chip/two-partition smoke target. Boundary: local
+    contract evidence only, not hardware, not speedup, not multi-chip learning,
+    and not a baseline freeze.
 
-61. Tier 4.32d first multi-chip smoke: smallest possible cross-chip message and
-    state lookup. No learning claim until communication and readback are clean.
+61. **CURRENT ACTIVE STEP** - Tier 4.32d first two-chip/two-partition MCPL lookup
+    smoke: package and run the smallest possible cross-chip communication and
+    state lookup target from 4.32c. No learning claim until communication and
+    readback are clean.
 
 62. Tier 4.32e multi-chip learning micro-task: only after cross-chip smoke
     passes, run a tiny delayed-credit or reentry task with explicit claim
@@ -1081,12 +1087,11 @@ After each completed run or design tier:
 The next concrete action is:
 
 ```text
-Tier 4.32b static reef partition smoke/resource mapping passed locally. The
-next concrete action is Tier 4.32c inter-chip feasibility contract: define exact
-board/chip/shard routing keys, message path, compact readback ownership,
-failure counters, placement assumptions, and the smallest cross-chip smoke
-target. Multi-chip hardware execution, speedup claims, and a native-scale
-baseline freeze remain blocked until this contract is explicit and clean.
+Tier 4.32c inter-chip feasibility contract passed locally. The next concrete
+action is Tier 4.32d first two-chip/two-partition MCPL lookup smoke: prepare the
+contract-defined cross-chip communication/readback hardware package after source
+and package QA. Tier 4.32e learning scale, speedup claims, benchmark claims, and
+a native-scale baseline freeze remain blocked until 4.32d returns clean evidence.
 ```
 
 Current reference state:
@@ -1125,8 +1130,9 @@ Tier 4.32a-r1 MCPL lookup repair: passed 14/14; MCPL value/meta replies,
 shard-aware keys, cross-shard controls, and full/zero/half-confidence local
 learning controls are repaired. Tier 4.32a-hw single-shard and
 Tier 4.32a-hw-replicated both passed after EBRAINS ingest. Tier 4.32b static
-reef partition smoke/resource mapping passed locally; Tier 4.32c inter-chip
-feasibility contract is now active.
+reef partition smoke/resource mapping passed locally. Tier 4.32c inter-chip
+feasibility contract passed locally; Tier 4.32d first two-chip/two-partition
+MCPL lookup smoke is now active.
 ```
 
 Purpose:
@@ -1147,8 +1153,9 @@ still used SDP because MCPL did not yet transmit confidence/hit status. Tier
 single-shard hardware stress, and Tier 4.32a-hw-replicated then passed
 8/12/16-core replicated-shard hardware stress. The next action is now Tier
 4.32b static reef partition smoke/resource mapping. Tier 4.32b then passed
-locally, so the next action is now Tier 4.32c inter-chip feasibility contract,
-not a multi-chip hardware job, benchmarks, speedup, or baseline-freeze claims.
+locally, and Tier 4.32c then passed as the inter-chip feasibility contract. The
+next action is now Tier 4.32d first two-chip/two-partition MCPL lookup smoke,
+not learning scale, benchmarks, speedup, or baseline-freeze claims.
 ```
 
 Required coverage:
@@ -1158,12 +1165,12 @@ Use v2.2 as the software reference and `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` as
 the native lifecycle baseline. Keep Tier 4.31d's boundary strict: one-board
 temporal-state hardware smoke only; not nonlinear recurrence, not speedup, not
 multi-chip scaling, not benchmark superiority, and not full organism autonomy.
-The next native work must define Tier 4.32c inter-chip feasibility contract over
-the now-measured static partition map. It must state board/chip/shard identity,
-MCPL/multicast key fields, message paths, compact readback ownership, failure
-counters, placement assumptions, and the smallest cross-chip smoke target before
-any multi-chip hardware package. Only reopen replay buffers, sleep-like replay,
-or native eligibility if a later measured blocker specifically demands it.
+The next native work is Tier 4.32d over the now-passed 4.32c contract: package
+and run only the smallest two-chip/two-partition MCPL lookup smoke with explicit
+board/chip/shard identity, message paths, compact readback ownership, failure
+counters, and placement assumptions. Only reopen replay buffers, sleep-like
+replay, or native eligibility if a later measured blocker specifically demands
+it.
 ```
 
 

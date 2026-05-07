@@ -6384,6 +6384,13 @@ Near-term roadmap insertion:
     lifecycle core at 17 cores on one conservative chip. Boundary: local mapping
     evidence only; not a new hardware run, not multi-chip, not speedup, and not
     a native-scale baseline freeze.
+28. Tier 4.32c inter-chip feasibility contract. COMPLETE: local pass 19/19 at
+    `controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/`;
+    defines required board/chip/core/role/partition/shard/seq identity fields,
+    bidirectional remote MCPL lookup paths, compact readback ownership, failure
+    classes, and the exact two-chip/two-partition smoke target. Boundary: local
+    contract evidence only; not hardware, not multi-chip execution, not speedup,
+    not learning-scale evidence, and not a native-scale baseline freeze.
 ```
 
 Tier 5.19a result:
@@ -6687,14 +6694,13 @@ Tests: test-temporal-state, test-profiles, test, test-lifecycle, test-lifecycle-
 Boundary: local source/runtime host evidence only, not hardware
 ```
 
-Next: Tier 4.32c inter-chip feasibility contract. Tier 4.32b has passed at
-      `controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/`
-      with 25/25 criteria. The next gate must define board/chip/shard key
-      fields, message paths, compact readback ownership, failure counters,
-      placement assumptions, and the smallest cross-chip smoke target before any
-      multi-chip hardware job. Multi-chip execution, speedup claims, benchmark
-      claims, and native-scale baseline freeze remain blocked until that
-      contract passes.
+Next: Tier 4.32d first two-chip/two-partition MCPL lookup smoke. Tier 4.32c
+      has passed at
+      `controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/`
+      with 19/19 criteria. The next gate must package only the contract-defined
+      cross-chip communication/readback smoke after source/package QA. Multi-chip
+      learning, speedup claims, benchmark claims, and native-scale baseline
+      freeze remain blocked until 4.32d and 4.32e pass cleanly.
       Reopen native replay-buffer, sleep-like replay, or eligibility-trace
       implementation only if a later measured blocker specifically demands it.
 ```

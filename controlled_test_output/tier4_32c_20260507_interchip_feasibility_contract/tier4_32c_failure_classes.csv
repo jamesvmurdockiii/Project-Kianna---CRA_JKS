@@ -1,0 +1,9 @@
+failure_class,detection_rule,required_response,blocks
+target_or_machine_allocation,pyNN.spiNNaker target or board/chip placement unavailable,preserve prepared artifacts; do not mark hardware fail,4.32d hardware evidence
+placement_ambiguity,returned artifacts lack board/chip/core/role/partition fields,repair placement/readback before rerun,all multi-chip claims
+router_table_or_multicast_path,local parity passes but remote path parity fails,inspect routing table construction and key masks,4.32d and 4.32e
+cross_chip_key_collision,"wrong shard, wrong partition, stale reply, or duplicate reply appears",repair key/seq/shard contract before rerun,learning scale
+metadata_value_split,value packets return without matching metadata packets,repair value/meta pair handling,confidence-gated learning
+readback_bloat,payload length expands beyond compact readback contract,reduce readback before larger runs,speed/resource claims
+environment_or_runner,command/path/import failure before target execution,repair package/runbook; preserve failure as noncanonical,hardware evidence
+overclaim_boundary,"report claims speedup, benchmark superiority, or baseline freeze",correct docs and rerun audit before commit,paper readiness

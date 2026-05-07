@@ -9094,9 +9094,11 @@ Decision:
 ```text
 Tier 4.32a-hw-replicated later passed as single-chip replicated-shard stress.
 Tier 4.32b static reef partition smoke/resource mapping later passed locally.
-Tier 4.32c inter-chip feasibility contract is the next authorized gate.
+Tier 4.32c inter-chip feasibility contract later passed locally.
+Tier 4.32d first two-chip/two-partition MCPL lookup smoke is the next
+authorized gate.
 Multi-chip work, benchmark superiority, speedup claims, and native-scale
-baseline freeze remain blocked until the 4.32c contract passes.
+baseline freeze remain blocked until 4.32d and 4.32e pass cleanly.
 ```
 
 ## Tier 4.32a-hw-replicated - Replicated-Shard MCPL-First EBRAINS Scale Stress
@@ -9206,9 +9208,11 @@ Decision:
 
 ```text
 Tier 4.32b static reef partition smoke/resource mapping later passed locally.
-Tier 4.32c inter-chip feasibility contract is the next authorized gate.
+Tier 4.32c inter-chip feasibility contract later passed locally.
+Tier 4.32d first two-chip/two-partition MCPL lookup smoke is the next
+authorized gate.
 Multi-chip work, speedup claims, benchmark claims, and native-scale baseline
-freeze remain blocked until the 4.32c contract passes.
+freeze remain blocked until 4.32d and 4.32e pass cleanly.
 ```
 
 
@@ -9240,9 +9244,10 @@ Quad partition plus dedicated lifecycle core: blocked at 17 cores
 Decision:
 
 ```text
-Tier 4.32c inter-chip feasibility contract is authorized next.
+Tier 4.32c inter-chip feasibility contract later passed locally.
+Tier 4.32d first two-chip/two-partition MCPL lookup smoke is authorized next.
 Multi-chip hardware execution, speedup claims, benchmark claims, and native-scale
-baseline freeze remain blocked until the 4.32c contract passes.
+baseline freeze remain blocked until 4.32d and 4.32e pass cleanly.
 ```
 
 Boundary:
@@ -9251,4 +9256,46 @@ Boundary:
 Local static partition/resource evidence only. Not a new SpiNNaker hardware run,
 not one-polyp-one-chip evidence, not speedup, not multi-chip, not benchmark
 superiority, and not a native-scale baseline freeze.
+```
+
+## Tier 4.32c - Inter-Chip Feasibility Contract
+
+Question: Can the measured static reef partition map be converted into a
+reviewer-defensible inter-chip contract before any multi-chip hardware job?
+
+Result:
+
+```text
+Status: PASS
+Output: controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/
+Criteria: 19/19
+First smoke target: point_2chip_2partition_lookup_smoke
+Chips: 2
+Static partitions: 2
+Total cores: 8
+Events per partition: 32
+Expected lookups per partition: 96
+Remote paths: 2
+Required identity fields:
+  logical_board_id, chip_x, chip_y, p_core, role, partition_id, shard_id, seq_id
+Required delivery counters:
+  lookup_requests, reply_value_packets, reply_meta_packets, stale_replies,
+  duplicate_replies, timeouts, route_mismatch_count
+```
+
+Decision:
+
+```text
+Tier 4.32d first two-chip/two-partition MCPL lookup smoke is authorized next.
+Tier 4.32e multi-chip learning micro-task remains blocked until 4.32d passes.
+Speedup claims, benchmark claims, and CRA_NATIVE_SCALE_BASELINE_v0.5 remain
+blocked.
+```
+
+Boundary:
+
+```text
+Local inter-chip feasibility contract only. Not a SpiNNaker hardware run, not
+multi-chip execution evidence, not speedup, not learning-scale evidence, not
+benchmark superiority, and not a native-scale baseline freeze.
 ```

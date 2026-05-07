@@ -29,12 +29,13 @@ CRA_LIFECYCLE_NATIVE_BASELINE_v0.4
 Latest scale-planning lesson:
 
 ```text
-Tier 4.32b static reef partition smoke/resource mapping has now passed locally.
-It maps four static reef partitions onto the measured point16 16-core replicated
-single-chip envelope, rejects one-polyp-one-chip as unsupported, and keeps
-multi-chip/speedup/native-scale baseline freeze blocked. Tier 4.32c inter-chip
-feasibility contract is now the active next step before any multi-chip hardware
-job.
+Tier 4.32c inter-chip feasibility contract has now passed locally. It defines
+required board/chip/core/role/partition/shard/seq identity fields, bidirectional
+remote MCPL lookup paths, compact readback ownership, and the exact two-chip/
+two-partition smoke target. Tier 4.32d is now the active next hardware-facing
+step, but only as first cross-chip communication/readback smoke; speedup,
+learning-scale, benchmark, and native-scale baseline-freeze claims remain
+blocked.
 ```
 
 Latest active hardware-facing tier:
@@ -65,11 +66,18 @@ Tier 4.32b - Static Reef Partition Smoke / Resource Mapping
   Boundary: local mapping/resource evidence only, not hardware.
 
 Tier 4.32c - Inter-Chip Feasibility Contract
+  Status: LOCAL PASS, 19/19
+  Output: controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/
+  Result: defines board/chip/core/role/partition/shard/seq identity fields,
+    bidirectional remote MCPL lookup paths, compact readback ownership, failure
+    classes, and the exact two-chip/two-partition smoke target.
+  Boundary: local contract evidence only, not hardware.
+
+Tier 4.32d - First Two-Chip / Two-Partition MCPL Lookup Smoke
   Status: CURRENT ACTIVE STEP / NOT YET PACKAGED
-  Scope: define board/chip/shard key fields, message paths, compact readback
-    ownership, failure counters, placement assumptions, and the smallest
-    cross-chip smoke target before any multi-chip hardware job.
-  Still blocked: multi-chip hardware work, speedup claims, and native-scale
+  Scope: package and run only the 4.32c-defined cross-chip communication/
+    readback smoke after source/package QA.
+  Still blocked: learning scale, speedup claims, benchmarks, and native-scale
     baseline freeze.
 
 Recent passed hardware-facing lifecycle tier:
@@ -208,7 +216,8 @@ Tier 4.31c - Native Temporal-Substrate Runtime Source Audit
     single-shard hardware stress passed after ingest; Tier 4.32a-hw-replicated
     replicated-shard hardware stress also passed after ingest; Tier 4.32b static
     reef partition smoke/resource mapping passed locally. Tier 4.32c inter-chip
-    feasibility contract is now active. Native replay buffers, sleep-like replay,
+    feasibility contract passed locally; Tier 4.32d first two-chip/two-partition
+    MCPL lookup smoke is now active. Native replay buffers, sleep-like replay,
     and native macro eligibility remain deferred until measured blockers demand
     them.
 ```

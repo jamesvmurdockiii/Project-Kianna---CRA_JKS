@@ -1,0 +1,17 @@
+field,producer,scope,required,expected_rule,why
+runner_revision,host,artifact,True,== tier4_32c_interchip_feasibility_contract_20260507_0001 or later 4.32d runner,bind evidence to runner contract
+board_id,host/placement,per run and per partition,True,non-empty,disambiguate allocation
+chip_x,host/placement/runtime readback,per core,True,matches placement table,prove cross-chip source/destination identity
+chip_y,host/placement/runtime readback,per core,True,matches placement table,prove cross-chip source/destination identity
+p_core,runtime readback,per core,True,matches role map,reconstruct ownership
+role,runtime readback,per core,True,context/route/memory/learning,decode payload safely
+partition_id,host/runtime readback,per core and aggregate,True,reef_partition_0/1 for 4.32d,bind state to reef partition
+shard_id,runtime readback,per lookup and aggregate,True,0 or 1 for 4.32d,prove shard-aware routing
+lookup_requests,learning/runtime,per path,True,== expected_messages,prove request schedule consumed
+reply_value_packets,runtime,per path,True,== expected_messages,prove value packet returned
+reply_meta_packets,runtime,per path,True,== expected_messages,prove confidence/hit/status packet returned
+stale_replies,runtime,per path and aggregate,True,== 0,classify stale lookup failures
+duplicate_replies,runtime,per path and aggregate,True,== 0,classify duplicate lookup failures
+timeouts,runtime,per path and aggregate,True,== 0,classify delivery failure
+route_mismatch_count,runtime or host ingest,per path,True,== 0,catch wrong-chip or wrong-partition replies
+payload_len,runtime readback,per core,True,<= compact readback contract,prevent readback bloat

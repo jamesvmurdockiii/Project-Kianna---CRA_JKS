@@ -1540,6 +1540,29 @@ SPECS: tuple[EvidenceSpec, ...] = (
             "tier4_32b_source_checks.csv",
         ),
     ),
+    EvidenceSpec(
+        entry_id="tier4_32c_interchip_feasibility_contract",
+        tier_label="Tier 4.32c - Inter-Chip Feasibility Contract",
+        plan_position="Phase G inter-chip contract before first multi-chip smoke",
+        canonical_dir="tier4_32c_20260507_interchip_feasibility_contract",
+        results_file="tier4_32c_results.json",
+        report_file="tier4_32c_report.md",
+        summary_file="tier4_32c_placement_contract.csv",
+        harness="experiments/tier4_32c_interchip_feasibility_contract.py",
+        evidence_role="native runtime inter-chip feasibility contract",
+        claim="Tier 4.32c defines the first reviewer-defensible inter-chip contract over the Tier 4.32b static reef partition map: required board/chip/core/role/partition/shard/seq identity fields, bidirectional remote MCPL lookup paths, compact readback ownership, failure classes, and the exact two-chip/two-partition smoke authorized for Tier 4.32d.",
+        caveat="Local contract evidence only; not SpiNNaker hardware evidence, not multi-chip execution evidence, not speedup evidence, not learning-scale evidence, not benchmark superiority, and not a native-scale baseline freeze.",
+        latest_manifest_names=("tier4_32c_latest_manifest.json",),
+        expected_extra_files=(
+            "tier4_32c_criteria.csv",
+            "tier4_32c_failure_classes.csv",
+            "tier4_32c_identity_contract.csv",
+            "tier4_32c_message_paths.csv",
+            "tier4_32c_next_gate_plan.csv",
+            "tier4_32c_readback_contract.csv",
+            "tier4_32c_source_checks.csv",
+        ),
+    ),
 )
 
 

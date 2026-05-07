@@ -1,0 +1,673 @@
+{
+  "artifacts": {
+    "criteria_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_criteria.csv",
+    "failure_classes_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_failure_classes.csv",
+    "identity_contract_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_identity_contract.csv",
+    "message_paths_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_message_paths.csv",
+    "next_gate_plan_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_next_gate_plan.csv",
+    "placement_contract_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_placement_contract.csv",
+    "readback_contract_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_readback_contract.csv",
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_report.md",
+    "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_results.json",
+    "source_checks_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_source_checks.csv"
+  },
+  "claim_boundary": "Tier 4.32c is a local inter-chip feasibility contract over the measured single-chip static partition map. It is not a SpiNNaker hardware run, not multi-chip execution evidence, not speedup evidence, not learning-scale evidence, not benchmark superiority, and not a native-scale baseline freeze.",
+  "criteria": [
+    {
+      "name": "Tier 4.32b prerequisite passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "4.32b canonical layout is quad mechanism map",
+      "note": "",
+      "passed": true,
+      "rule": "== quad_mechanism_partition_v0",
+      "value": "quad_mechanism_partition_v0"
+    },
+    {
+      "name": "4.32b authorized 4.32c",
+      "note": "",
+      "passed": true,
+      "rule": "== authorized_next_contract",
+      "value": "authorized_next_contract"
+    },
+    {
+      "name": "source supports shard-aware MCPL lookup",
+      "note": "",
+      "passed": true,
+      "rule": "empty",
+      "value": []
+    },
+    {
+      "name": "first smoke uses two chips",
+      "note": "",
+      "passed": true,
+      "rule": "== 2",
+      "value": 2
+    },
+    {
+      "name": "first smoke uses two static partitions",
+      "note": "",
+      "passed": true,
+      "rule": "== 2",
+      "value": 2
+    },
+    {
+      "name": "first smoke stays within one-chip-per-partition core envelope",
+      "note": "",
+      "passed": true,
+      "rule": "<= 2 * 16",
+      "value": 8
+    },
+    {
+      "name": "first smoke shard ids fit MCPL mask",
+      "note": "",
+      "passed": true,
+      "rule": "<= 15",
+      "value": 1
+    },
+    {
+      "name": "events per partition fit schedule limit",
+      "note": "",
+      "passed": true,
+      "rule": "<= 512",
+      "value": 32
+    },
+    {
+      "name": "identity fields include board/chip/core/role/partition/shard/seq",
+      "note": "",
+      "passed": true,
+      "rule": "contains required fields",
+      "value": [
+        "logical_board_id",
+        "chip_x",
+        "chip_y",
+        "p_core",
+        "role",
+        "partition_id",
+        "shard_id",
+        "seq_id"
+      ]
+    },
+    {
+      "name": "readback fields include delivery counters",
+      "note": "",
+      "passed": true,
+      "rule": "contains stale/duplicate/timeouts/route_mismatch",
+      "value": [
+        "runner_revision",
+        "board_id",
+        "chip_x",
+        "chip_y",
+        "p_core",
+        "role",
+        "partition_id",
+        "shard_id",
+        "lookup_requests",
+        "reply_value_packets",
+        "reply_meta_packets",
+        "stale_replies",
+        "duplicate_replies",
+        "timeouts",
+        "route_mismatch_count",
+        "payload_len"
+      ]
+    },
+    {
+      "name": "contract includes bidirectional remote paths",
+      "note": "",
+      "passed": true,
+      "rule": ">= 2",
+      "value": 2
+    },
+    {
+      "name": "remote paths use different source and destination chips",
+      "note": "",
+      "passed": true,
+      "rule": "source_chip != destination_chip",
+      "value": [
+        "remote_partition0_to_partition1_lookup_probe",
+        "remote_partition1_to_partition0_lookup_probe"
+      ]
+    },
+    {
+      "name": "message paths preserve value/meta distinction",
+      "note": "",
+      "passed": true,
+      "rule": "all paths",
+      "value": [
+        "local_partition0_self_lookup",
+        "remote_partition0_to_partition1_lookup_probe",
+        "remote_partition1_to_partition0_lookup_probe"
+      ]
+    },
+    {
+      "name": "failure classes include placement ambiguity",
+      "note": "",
+      "passed": true,
+      "rule": "contains placement_ambiguity",
+      "value": [
+        "target_or_machine_allocation",
+        "placement_ambiguity",
+        "router_table_or_multicast_path",
+        "cross_chip_key_collision",
+        "metadata_value_split",
+        "readback_bloat",
+        "environment_or_runner",
+        "overclaim_boundary"
+      ]
+    },
+    {
+      "name": "failure classes include cross-chip key collision",
+      "note": "",
+      "passed": true,
+      "rule": "contains cross_chip_key_collision",
+      "value": [
+        "target_or_machine_allocation",
+        "placement_ambiguity",
+        "router_table_or_multicast_path",
+        "cross_chip_key_collision",
+        "metadata_value_split",
+        "readback_bloat",
+        "environment_or_runner",
+        "overclaim_boundary"
+      ]
+    },
+    {
+      "name": "next gate is 4.32d hardware smoke",
+      "note": "",
+      "passed": true,
+      "rule": "== Tier 4.32d",
+      "value": "Tier 4.32d"
+    },
+    {
+      "name": "4.32e remains blocked",
+      "note": "",
+      "passed": true,
+      "rule": "== blocked_until_4_32d_passes",
+      "value": "blocked_until_4_32d_passes"
+    },
+    {
+      "name": "native scale baseline freeze remains blocked",
+      "note": "",
+      "passed": true,
+      "rule": "== not_authorized",
+      "value": "not_authorized"
+    }
+  ],
+  "criteria_passed": 19,
+  "criteria_total": 19,
+  "failure_classes": [
+    {
+      "blocks": "4.32d hardware evidence",
+      "detection_rule": "pyNN.spiNNaker target or board/chip placement unavailable",
+      "failure_class": "target_or_machine_allocation",
+      "required_response": "preserve prepared artifacts; do not mark hardware fail"
+    },
+    {
+      "blocks": "all multi-chip claims",
+      "detection_rule": "returned artifacts lack board/chip/core/role/partition fields",
+      "failure_class": "placement_ambiguity",
+      "required_response": "repair placement/readback before rerun"
+    },
+    {
+      "blocks": "4.32d and 4.32e",
+      "detection_rule": "local parity passes but remote path parity fails",
+      "failure_class": "router_table_or_multicast_path",
+      "required_response": "inspect routing table construction and key masks"
+    },
+    {
+      "blocks": "learning scale",
+      "detection_rule": "wrong shard, wrong partition, stale reply, or duplicate reply appears",
+      "failure_class": "cross_chip_key_collision",
+      "required_response": "repair key/seq/shard contract before rerun"
+    },
+    {
+      "blocks": "confidence-gated learning",
+      "detection_rule": "value packets return without matching metadata packets",
+      "failure_class": "metadata_value_split",
+      "required_response": "repair value/meta pair handling"
+    },
+    {
+      "blocks": "speed/resource claims",
+      "detection_rule": "payload length expands beyond compact readback contract",
+      "failure_class": "readback_bloat",
+      "required_response": "reduce readback before larger runs"
+    },
+    {
+      "blocks": "hardware evidence",
+      "detection_rule": "command/path/import failure before target execution",
+      "failure_class": "environment_or_runner",
+      "required_response": "repair package/runbook; preserve failure as noncanonical"
+    },
+    {
+      "blocks": "paper readiness",
+      "detection_rule": "report claims speedup, benchmark superiority, or baseline freeze",
+      "failure_class": "overclaim_boundary",
+      "required_response": "correct docs and rerun audit before commit"
+    }
+  ],
+  "generated_at_utc": "2026-05-07T02:27:43+00:00",
+  "identity_contract": [
+    {
+      "failure_if_missing": "returned artifacts cannot prove which board executed each partition",
+      "field": "logical_board_id",
+      "location": "host manifest and returned compact readback",
+      "owner": "host placement manifest",
+      "purpose": "distinguish physical board allocation if EBRAINS exposes more than one board",
+      "required_for_4_32d": true,
+      "type_or_bits": "string/integer metadata; not packed into MCPL key"
+    },
+    {
+      "failure_if_missing": "same-core-id replies from different chips become ambiguous",
+      "field": "chip_x",
+      "location": "host placement manifest and per-core readback",
+      "owner": "host placement manifest plus SpiNNaker placement/readback",
+      "purpose": "identify the source/destination chip for cross-chip routing",
+      "required_for_4_32d": true,
+      "type_or_bits": "integer chip coordinate metadata; not packed into MCPL key"
+    },
+    {
+      "failure_if_missing": "same-core-id replies from different chips become ambiguous",
+      "field": "chip_y",
+      "location": "host placement manifest and per-core readback",
+      "owner": "host placement manifest plus SpiNNaker placement/readback",
+      "purpose": "identify the source/destination chip for cross-chip routing",
+      "required_for_4_32d": true,
+      "type_or_bits": "integer chip coordinate metadata; not packed into MCPL key"
+    },
+    {
+      "failure_if_missing": "role ownership cannot be reconstructed",
+      "field": "p_core",
+      "location": "per-core profile/readback",
+      "owner": "runtime profile and host loader",
+      "purpose": "bind context/route/memory/learning role to a physical core",
+      "required_for_4_32d": true,
+      "type_or_bits": "integer processor id metadata"
+    },
+    {
+      "failure_if_missing": "readback payload cannot be interpreted safely",
+      "field": "role",
+      "location": "profile name and compact readback",
+      "owner": "runtime profile",
+      "purpose": "preserve single-writer state ownership across chips",
+      "required_for_4_32d": true,
+      "type_or_bits": "context|route|memory|learning"
+    },
+    {
+      "failure_if_missing": "cross-chip message cannot be traced to a semantic reef partition",
+      "field": "partition_id",
+      "location": "host manifest, compact readback, and evidence tables",
+      "owner": "Tier 4.32b static map",
+      "purpose": "bind static polyp slots to a mechanism partition",
+      "required_for_4_32d": true,
+      "type_or_bits": "reef_partition_N"
+    },
+    {
+      "failure_if_missing": "identical seq/type messages can cross-talk across partitions",
+      "field": "shard_id",
+      "location": "MCPL key bits plus readback",
+      "owner": "runtime key contract",
+      "purpose": "separate lookup traffic from different static partitions",
+      "required_for_4_32d": true,
+      "type_or_bits": "0..MCPL_KEY_SHARD_MASK"
+    },
+    {
+      "failure_if_missing": "stale/duplicate replies cannot be classified",
+      "field": "seq_id",
+      "location": "MCPL key bits and pending lookup table",
+      "owner": "learning/lookup sender",
+      "purpose": "pair value/meta replies with the correct lookup request",
+      "required_for_4_32d": true,
+      "type_or_bits": "bounded sequence field"
+    }
+  ],
+  "message_paths": [
+    {
+      "ack_or_readback": "request_count == reply_value_count == reply_meta_count == expected",
+      "destination_chip": "(0,0)",
+      "destination_core_role": "context/route/memory cores",
+      "destination_partition": "reef_partition_0",
+      "expected_messages": 96,
+      "failure_if": "local parity regresses before cross-chip comparison",
+      "key_fields": "app_id,msg_type,lookup_type,shard_id=0,seq_id",
+      "metadata_fields": "board_id,chip_x,chip_y,p_core,role,partition_id in readback",
+      "path_id": "local_partition0_self_lookup",
+      "source_chip": "(0,0)",
+      "source_core_role": "learning_core",
+      "source_partition": "reef_partition_0",
+      "transport": "MCPL/multicast lookup request plus value/meta reply"
+    },
+    {
+      "ack_or_readback": "remote request_count == reply_value_count == reply_meta_count == expected",
+      "destination_chip": "(1,0)",
+      "destination_core_role": "context/route/memory cores",
+      "destination_partition": "reef_partition_1",
+      "expected_messages": 96,
+      "failure_if": "remote parity fails, replies are stale/duplicate, or readback cannot prove destination chip",
+      "key_fields": "app_id,msg_type,lookup_type,shard_id=1,seq_id",
+      "metadata_fields": "board_id,source_chip,destination_chip,p_core,role,partition_id in readback",
+      "path_id": "remote_partition0_to_partition1_lookup_probe",
+      "source_chip": "(0,0)",
+      "source_core_role": "learning_core",
+      "source_partition": "reef_partition_0",
+      "transport": "MCPL/multicast lookup request routed across chip boundary plus value/meta reply"
+    },
+    {
+      "ack_or_readback": "remote request_count == reply_value_count == reply_meta_count == expected",
+      "destination_chip": "(0,0)",
+      "destination_core_role": "context/route/memory cores",
+      "destination_partition": "reef_partition_0",
+      "expected_messages": 96,
+      "failure_if": "bidirectional route asymmetry or stale replies",
+      "key_fields": "app_id,msg_type,lookup_type,shard_id=0,seq_id",
+      "metadata_fields": "board_id,source_chip,destination_chip,p_core,role,partition_id in readback",
+      "path_id": "remote_partition1_to_partition0_lookup_probe",
+      "source_chip": "(1,0)",
+      "source_core_role": "learning_core",
+      "source_partition": "reef_partition_1",
+      "transport": "MCPL/multicast lookup request routed across chip boundary plus value/meta reply"
+    }
+  ],
+  "next_gates": [
+    {
+      "claim_boundary": "first cross-chip communication/readback smoke only; not learning scale or speedup",
+      "decision": "authorize_after_4_32c_pass",
+      "fail_boundary": "Classify as allocation, placement, routing, key collision, value/meta split, readback, or environment before rerun.",
+      "gate": "Tier 4.32d",
+      "pass_boundary": "Hardware run returns zero stale/duplicate/timeout/route-mismatch counters and complete board/chip/partition readback for local and remote lookup paths.",
+      "prerequisites": "4.32c contract pass, source package QA, explicit placement table, compact readback schema.",
+      "question": "Can the smallest two-chip, two-partition MCPL lookup smoke execute with reconstructable readback?"
+    },
+    {
+      "claim_boundary": "tiny multi-chip learning evidence only",
+      "decision": "blocked_until_4_32d_passes",
+      "fail_boundary": "Do not run larger tasks or benchmarks; classify cross-chip learning/timing/readback failure.",
+      "gate": "Tier 4.32e",
+      "pass_boundary": "Tiny delayed-credit or reentry micro-task matches local reference within tolerance with zero synthetic fallback.",
+      "prerequisites": "4.32d hardware smoke pass plus local fixed-point learning reference.",
+      "question": "Can a tiny cross-chip native learning micro-task preserve parity after communication is proven?"
+    },
+    {
+      "claim_boundary": "baseline freeze decision is separate from this contract",
+      "decision": "not_authorized",
+      "fail_boundary": "Publish measured single-chip/static partition limits honestly and keep v0.4 as latest native lifecycle baseline.",
+      "gate": "CRA_NATIVE_SCALE_BASELINE_v0.5",
+      "pass_boundary": "Freeze only if static partition, first cross-chip communication, and first cross-chip learning are clean.",
+      "prerequisites": "4.32b, 4.32c, 4.32d, and 4.32e all pass with clean resource/readback accounting.",
+      "question": "Is the native runtime stable enough to freeze as the scale baseline?"
+    }
+  ],
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract",
+  "placement_contract": [
+    {
+      "board_id": "allocated_board_0",
+      "chip_x": 0,
+      "chip_y": 0,
+      "context_core": 1,
+      "expected_events": 32,
+      "expected_lookups": 96,
+      "learning_core": 4,
+      "memory_core": 3,
+      "ownership_rule": "source partition; local self-lookups plus remote lookup probes to reef_partition_1",
+      "partition_id": "reef_partition_0",
+      "polyp_slots": "0,1",
+      "route_core": 2,
+      "shard_id": 0,
+      "smoke_target": "point_2chip_2partition_lookup_smoke"
+    },
+    {
+      "board_id": "allocated_board_0",
+      "chip_x": 1,
+      "chip_y": 0,
+      "context_core": 1,
+      "expected_events": 32,
+      "expected_lookups": 96,
+      "learning_core": 4,
+      "memory_core": 3,
+      "ownership_rule": "remote partition; must produce distinguishable chip/partition readback",
+      "partition_id": "reef_partition_1",
+      "polyp_slots": "2,3",
+      "route_core": 2,
+      "shard_id": 1,
+      "smoke_target": "point_2chip_2partition_lookup_smoke"
+    }
+  ],
+  "readback_contract": [
+    {
+      "expected_rule": "== tier4_32c_interchip_feasibility_contract_20260507_0001 or later 4.32d runner",
+      "field": "runner_revision",
+      "producer": "host",
+      "required": true,
+      "scope": "artifact",
+      "why": "bind evidence to runner contract"
+    },
+    {
+      "expected_rule": "non-empty",
+      "field": "board_id",
+      "producer": "host/placement",
+      "required": true,
+      "scope": "per run and per partition",
+      "why": "disambiguate allocation"
+    },
+    {
+      "expected_rule": "matches placement table",
+      "field": "chip_x",
+      "producer": "host/placement/runtime readback",
+      "required": true,
+      "scope": "per core",
+      "why": "prove cross-chip source/destination identity"
+    },
+    {
+      "expected_rule": "matches placement table",
+      "field": "chip_y",
+      "producer": "host/placement/runtime readback",
+      "required": true,
+      "scope": "per core",
+      "why": "prove cross-chip source/destination identity"
+    },
+    {
+      "expected_rule": "matches role map",
+      "field": "p_core",
+      "producer": "runtime readback",
+      "required": true,
+      "scope": "per core",
+      "why": "reconstruct ownership"
+    },
+    {
+      "expected_rule": "context/route/memory/learning",
+      "field": "role",
+      "producer": "runtime readback",
+      "required": true,
+      "scope": "per core",
+      "why": "decode payload safely"
+    },
+    {
+      "expected_rule": "reef_partition_0/1 for 4.32d",
+      "field": "partition_id",
+      "producer": "host/runtime readback",
+      "required": true,
+      "scope": "per core and aggregate",
+      "why": "bind state to reef partition"
+    },
+    {
+      "expected_rule": "0 or 1 for 4.32d",
+      "field": "shard_id",
+      "producer": "runtime readback",
+      "required": true,
+      "scope": "per lookup and aggregate",
+      "why": "prove shard-aware routing"
+    },
+    {
+      "expected_rule": "== expected_messages",
+      "field": "lookup_requests",
+      "producer": "learning/runtime",
+      "required": true,
+      "scope": "per path",
+      "why": "prove request schedule consumed"
+    },
+    {
+      "expected_rule": "== expected_messages",
+      "field": "reply_value_packets",
+      "producer": "runtime",
+      "required": true,
+      "scope": "per path",
+      "why": "prove value packet returned"
+    },
+    {
+      "expected_rule": "== expected_messages",
+      "field": "reply_meta_packets",
+      "producer": "runtime",
+      "required": true,
+      "scope": "per path",
+      "why": "prove confidence/hit/status packet returned"
+    },
+    {
+      "expected_rule": "== 0",
+      "field": "stale_replies",
+      "producer": "runtime",
+      "required": true,
+      "scope": "per path and aggregate",
+      "why": "classify stale lookup failures"
+    },
+    {
+      "expected_rule": "== 0",
+      "field": "duplicate_replies",
+      "producer": "runtime",
+      "required": true,
+      "scope": "per path and aggregate",
+      "why": "classify duplicate lookup failures"
+    },
+    {
+      "expected_rule": "== 0",
+      "field": "timeouts",
+      "producer": "runtime",
+      "required": true,
+      "scope": "per path and aggregate",
+      "why": "classify delivery failure"
+    },
+    {
+      "expected_rule": "== 0",
+      "field": "route_mismatch_count",
+      "producer": "runtime or host ingest",
+      "required": true,
+      "scope": "per path",
+      "why": "catch wrong-chip or wrong-partition replies"
+    },
+    {
+      "expected_rule": "<= compact readback contract",
+      "field": "payload_len",
+      "producer": "runtime readback",
+      "required": true,
+      "scope": "per core",
+      "why": "prevent readback bloat"
+    }
+  ],
+  "runner_revision": "tier4_32c_interchip_feasibility_contract_20260507_0001",
+  "runtime_limits": {
+    "max_lifecycle_slots": 8,
+    "max_schedule_entries": 512,
+    "mcpl_key_shard_mask": 15
+  },
+  "source_checks": [
+    {
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/config.h",
+      "present": true,
+      "purpose": "MCPL lookup key can carry shard identity.",
+      "token": "MAKE_MCPL_KEY_SHARD"
+    },
+    {
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/config.h",
+      "present": true,
+      "purpose": "Receivers can decode shard identity from keys.",
+      "token": "EXTRACT_MCPL_SHARD_ID"
+    },
+    {
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/config.h",
+      "present": true,
+      "purpose": "Lookup request message type is source-declared.",
+      "token": "MCPL_MSG_LOOKUP_REQUEST"
+    },
+    {
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/config.h",
+      "present": true,
+      "purpose": "Lookup value reply packet is source-declared.",
+      "token": "MCPL_MSG_LOOKUP_REPLY_VALUE"
+    },
+    {
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/config.h",
+      "present": true,
+      "purpose": "Lookup metadata reply packet is source-declared.",
+      "token": "MCPL_MSG_LOOKUP_REPLY_META"
+    },
+    {
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h",
+      "present": true,
+      "purpose": "Lookup send path accepts explicit shard id.",
+      "token": "cra_state_lookup_send_shard"
+    },
+    {
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h",
+      "present": true,
+      "purpose": "Lookup readback path accepts explicit shard id.",
+      "token": "cra_state_lookup_get_result_shard"
+    },
+    {
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c",
+      "present": true,
+      "purpose": "Pending lookup entries store shard identity.",
+      "token": "g_lookup_entries[i].shard_id"
+    },
+    {
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c",
+      "present": true,
+      "purpose": "Runtime images can be compiled with a static shard id.",
+      "token": "CRA_MCPL_SHARD_ID"
+    }
+  ],
+  "status": "pass",
+  "summary": {
+    "canonical_layout": "quad_mechanism_partition_v0",
+    "claim_boundary": "Tier 4.32c is a local inter-chip feasibility contract over the measured single-chip static partition map. It is not a SpiNNaker hardware run, not multi-chip execution evidence, not speedup evidence, not learning-scale evidence, not benchmark superiority, and not a native-scale baseline freeze.",
+    "first_smoke_chips": 2,
+    "first_smoke_events_per_partition": 32,
+    "first_smoke_expected_lookups_per_partition": 96,
+    "first_smoke_partitions": 2,
+    "first_smoke_target": "point_2chip_2partition_lookup_smoke",
+    "first_smoke_total_cores": 8,
+    "recommended_next_step": "Tier 4.32d first two-chip/two-partition MCPL lookup smoke package, only after source/package QA.",
+    "remote_path_count": 2,
+    "required_identity_fields": [
+      "logical_board_id",
+      "chip_x",
+      "chip_y",
+      "p_core",
+      "role",
+      "partition_id",
+      "shard_id",
+      "seq_id"
+    ],
+    "required_readback_fields": [
+      "runner_revision",
+      "board_id",
+      "chip_x",
+      "chip_y",
+      "p_core",
+      "role",
+      "partition_id",
+      "shard_id",
+      "lookup_requests",
+      "reply_value_packets",
+      "reply_meta_packets",
+      "stale_replies",
+      "duplicate_replies",
+      "timeouts",
+      "route_mismatch_count",
+      "payload_len"
+    ]
+  },
+  "tier": "Tier 4.32c - Inter-Chip Feasibility Contract"
+}

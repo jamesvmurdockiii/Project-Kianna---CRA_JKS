@@ -1,0 +1,3 @@
+smoke_target,board_id,chip_x,chip_y,partition_id,shard_id,polyp_slots,context_core,route_core,memory_core,learning_core,expected_events,expected_lookups,ownership_rule
+point_2chip_2partition_lookup_smoke,allocated_board_0,0,0,reef_partition_0,0,"0,1",1,2,3,4,32,96,source partition; local self-lookups plus remote lookup probes to reef_partition_1
+point_2chip_2partition_lookup_smoke,allocated_board_0,1,0,reef_partition_1,1,"2,3",1,2,3,4,32,96,remote partition; must produce distinguishable chip/partition readback

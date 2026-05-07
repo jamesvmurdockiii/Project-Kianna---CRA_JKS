@@ -104,11 +104,10 @@ Boundary: single-shard single-chip hardware stress only. It is not
 replicated-shard stress, not multi-chip evidence, not speedup evidence, not
 static reef partitioning, and not a native-scale baseline freeze.
 
-Next: Tier 4.32c inter-chip feasibility contract is active. Do not prepare a
-new EBRAINS multi-chip package or native-scale baseline freeze until the 4.32c
-contract defines board/chip/shard key fields, message paths, readback ownership,
-failure counters, placement assumptions, and the smallest cross-chip smoke
-scope.
+Next: Tier 4.32d first two-chip/two-partition MCPL lookup smoke is active
+after Tier 4.32c passed locally. Prepare only the contract-defined cross-chip
+communication/readback package after source/package QA. Do not add learning
+scale, benchmarks, speedup claims, or native-scale baseline-freeze claims.
 
 ### Tier 4.31e
 

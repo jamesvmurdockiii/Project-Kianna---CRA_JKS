@@ -1,0 +1,9 @@
+field,location,type_or_bits,owner,purpose,required_for_4_32d,failure_if_missing
+logical_board_id,host manifest and returned compact readback,string/integer metadata; not packed into MCPL key,host placement manifest,distinguish physical board allocation if EBRAINS exposes more than one board,True,returned artifacts cannot prove which board executed each partition
+chip_x,host placement manifest and per-core readback,integer chip coordinate metadata; not packed into MCPL key,host placement manifest plus SpiNNaker placement/readback,identify the source/destination chip for cross-chip routing,True,same-core-id replies from different chips become ambiguous
+chip_y,host placement manifest and per-core readback,integer chip coordinate metadata; not packed into MCPL key,host placement manifest plus SpiNNaker placement/readback,identify the source/destination chip for cross-chip routing,True,same-core-id replies from different chips become ambiguous
+p_core,per-core profile/readback,integer processor id metadata,runtime profile and host loader,bind context/route/memory/learning role to a physical core,True,role ownership cannot be reconstructed
+role,profile name and compact readback,context|route|memory|learning,runtime profile,preserve single-writer state ownership across chips,True,readback payload cannot be interpreted safely
+partition_id,"host manifest, compact readback, and evidence tables",reef_partition_N,Tier 4.32b static map,bind static polyp slots to a mechanism partition,True,cross-chip message cannot be traced to a semantic reef partition
+shard_id,MCPL key bits plus readback,0..MCPL_KEY_SHARD_MASK,runtime key contract,separate lookup traffic from different static partitions,True,identical seq/type messages can cross-talk across partitions
+seq_id,MCPL key bits and pending lookup table,bounded sequence field,learning/lookup sender,pair value/meta replies with the correct lookup request,True,stale/duplicate replies cannot be classified
