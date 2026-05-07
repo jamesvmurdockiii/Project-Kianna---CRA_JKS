@@ -1,0 +1,225 @@
+{
+  "claim_boundary": "Prepared source bundle only. Hardware evidence requires returned run-hardware artifacts from EBRAINS/SpiNNaker.",
+  "core_roles": {
+    "context": {
+      "app_id": 1,
+      "chip": "remote",
+      "core": 4,
+      "link": "reply_west",
+      "profile": "context_core"
+    },
+    "learning": {
+      "app_id": 4,
+      "chip": "source",
+      "core": 7,
+      "link": "request_east",
+      "profile": "learning_core"
+    },
+    "memory": {
+      "app_id": 3,
+      "chip": "remote",
+      "core": 6,
+      "link": "reply_west",
+      "profile": "memory_core"
+    },
+    "route": {
+      "app_id": 2,
+      "chip": "remote",
+      "core": 5,
+      "link": "reply_west",
+      "profile": "route_core"
+    }
+  },
+  "event_count": 32,
+  "expected_lookups": 96,
+  "job_command": "cra_432e/experiments/tier4_32e_multichip_learning_microtask.py --mode run-hardware --output-dir tier4_32e_job_output",
+  "learning_cases": [
+    {
+      "kind": "enabled",
+      "label": "enabled_lr_0_25",
+      "learning_rate": 0.25
+    },
+    {
+      "kind": "no_learning",
+      "label": "no_learning_lr_0_00",
+      "learning_rate": 0.0
+    }
+  ],
+  "prepared_at_utc": "2026-05-07T17:02:16+00:00",
+  "reference_cases": {
+    "enabled_lr_0_25": {
+      "active_pending": 0,
+      "decisions": 32,
+      "event_count": 32,
+      "final_timestep": 34,
+      "learning_rate": 0.25,
+      "learning_rate_raw": 8192,
+      "pending_created": 32,
+      "pending_matured": 32,
+      "readout_bias": 0.0,
+      "readout_bias_raw": 0,
+      "readout_weight": 1.0,
+      "readout_weight_raw": 32768,
+      "reward_events": 32,
+      "trace_preview": [
+        {
+          "due": 3,
+          "event": 1,
+          "feature_raw": 32768,
+          "prediction_raw": 0,
+          "target_raw": 32768,
+          "timestep": 2
+        },
+        {
+          "due": 4,
+          "event": 2,
+          "feature_raw": -32768,
+          "prediction_raw": 0,
+          "target_raw": -32768,
+          "timestep": 3
+        },
+        {
+          "due": 5,
+          "event": 3,
+          "feature_raw": 32768,
+          "prediction_raw": 16384,
+          "target_raw": 32768,
+          "timestep": 4
+        },
+        {
+          "due": 6,
+          "event": 4,
+          "feature_raw": -32768,
+          "prediction_raw": -16384,
+          "target_raw": -32768,
+          "timestep": 5
+        },
+        {
+          "due": 7,
+          "event": 5,
+          "feature_raw": -32768,
+          "prediction_raw": -16384,
+          "target_raw": -32768,
+          "timestep": 6
+        },
+        {
+          "due": 8,
+          "event": 6,
+          "feature_raw": 32768,
+          "prediction_raw": 24576,
+          "target_raw": 32768,
+          "timestep": 7
+        },
+        {
+          "due": 9,
+          "event": 7,
+          "feature_raw": -32768,
+          "prediction_raw": -32768,
+          "target_raw": -32768,
+          "timestep": 8
+        },
+        {
+          "due": 10,
+          "event": 8,
+          "feature_raw": 32768,
+          "prediction_raw": 28672,
+          "target_raw": 32768,
+          "timestep": 9
+        }
+      ]
+    },
+    "no_learning_lr_0_00": {
+      "active_pending": 0,
+      "decisions": 32,
+      "event_count": 32,
+      "final_timestep": 34,
+      "learning_rate": 0.0,
+      "learning_rate_raw": 0,
+      "pending_created": 32,
+      "pending_matured": 32,
+      "readout_bias": 0.0,
+      "readout_bias_raw": 0,
+      "readout_weight": 0.0,
+      "readout_weight_raw": 0,
+      "reward_events": 32,
+      "trace_preview": [
+        {
+          "due": 3,
+          "event": 1,
+          "feature_raw": 32768,
+          "prediction_raw": 0,
+          "target_raw": 32768,
+          "timestep": 2
+        },
+        {
+          "due": 4,
+          "event": 2,
+          "feature_raw": -32768,
+          "prediction_raw": 0,
+          "target_raw": -32768,
+          "timestep": 3
+        },
+        {
+          "due": 5,
+          "event": 3,
+          "feature_raw": 32768,
+          "prediction_raw": 0,
+          "target_raw": 32768,
+          "timestep": 4
+        },
+        {
+          "due": 6,
+          "event": 4,
+          "feature_raw": -32768,
+          "prediction_raw": 0,
+          "target_raw": -32768,
+          "timestep": 5
+        },
+        {
+          "due": 7,
+          "event": 5,
+          "feature_raw": -32768,
+          "prediction_raw": 0,
+          "target_raw": -32768,
+          "timestep": 6
+        },
+        {
+          "due": 8,
+          "event": 6,
+          "feature_raw": 32768,
+          "prediction_raw": 0,
+          "target_raw": 32768,
+          "timestep": 7
+        },
+        {
+          "due": 9,
+          "event": 7,
+          "feature_raw": -32768,
+          "prediction_raw": 0,
+          "target_raw": -32768,
+          "timestep": 8
+        },
+        {
+          "due": 10,
+          "event": 8,
+          "feature_raw": 32768,
+          "prediction_raw": 0,
+          "target_raw": 32768,
+          "timestep": 9
+        }
+      ]
+    }
+  },
+  "remote_chip": {
+    "x": 1,
+    "y": 0
+  },
+  "runner": "experiments/tier4_32e_multichip_learning_microtask.py",
+  "runner_revision": "tier4_32e_multichip_learning_microtask_20260507_0001",
+  "source_chip": {
+    "x": 0,
+    "y": 0
+  },
+  "tier": "Tier 4.32e - Multi-Chip Learning Micro-Task",
+  "upload_package": "cra_432e"
+}

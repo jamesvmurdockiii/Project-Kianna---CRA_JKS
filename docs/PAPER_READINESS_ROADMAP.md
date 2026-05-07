@@ -1,6 +1,6 @@
 # CRA Paper-Readiness Roadmap
 
-Last updated: 2026-05-06
+Last updated: 2026-05-07
 
 This document is the working plan from the current evidence state to a serious
 paper-ready CRA claim. It is deliberately stricter than a speculative roadmap. The goal
@@ -6418,9 +6418,16 @@ Near-term roadmap insertion:
     smoke only; not speedup, not benchmark evidence, not true two-partition
     learning, not lifecycle scaling, not multi-shard learning, and not baseline
     freeze.
-32. Tier 4.32e multi-chip learning micro-task. CURRENT NEXT: design/package a
-    tiny delayed-credit or reentry learning-bearing task over the 4.32d
-    cross-chip path with resource measurements and strict claim boundaries.
+32. Tier 4.32e multi-chip learning micro-task. PREPARED / AWAITING EBRAINS:
+    package prepared at `controlled_test_output/tier4_32e_20260507_prepared/`
+    with upload folder `ebrains_jobs/cra_432e` and command
+    `cra_432e/experiments/tier4_32e_multichip_learning_microtask.py --mode run-hardware --output-dir tier4_32e_job_output`.
+    It runs the smallest cross-chip learning-bearing micro-task over the 4.32d
+    path: enabled learning at LR 0.25 must match reference readout `32768/0`,
+    and the no-learning LR 0.0 control must remain `0/0`. Boundary: prepared
+    package only until returned EBRAINS artifacts are ingested; not speedup,
+    not benchmark evidence, not true two-partition learning, not lifecycle
+    scaling, not multi-shard learning, and not baseline freeze.
 ```
 
 Tier 5.19a result:
@@ -6724,7 +6731,7 @@ Tests: test-temporal-state, test-profiles, test, test-lifecycle, test-lifecycle-
 Boundary: local source/runtime host evidence only, not hardware
 ```
 
-Next: Tier 4.32e multi-chip learning micro-task.
+Next: Run and ingest Tier 4.32e multi-chip learning micro-task.
       Tier 4.32d-r0 blocked the first package; Tier 4.32d-r1 then passed at
       `controlled_test_output/tier4_32d_r1_20260507_interchip_route_repair_local_qa/`
       with 14/14 criteria and removed the source route blocker. Tier 4.32d
@@ -6732,10 +6739,13 @@ Next: Tier 4.32e multi-chip learning micro-task.
       `controlled_test_output/tier4_32d_20260507_prepared/`, and the returned
       EBRAINS run passed/ingested at
       `controlled_test_output/tier4_32d_20260507_hardware_pass_ingested/`.
-      Multi-chip learning micro-task design/package is now authorized. Speedup
-      claims, benchmark claims, true two-partition cross-chip learning, and
-      native-scale baseline freeze remain blocked; the baseline freeze still
-      needs 4.32e. Reopen native replay-buffer,
+      Tier 4.32e is now prepared at
+      `controlled_test_output/tier4_32e_20260507_prepared/` with upload folder
+      `ebrains_jobs/cra_432e`; run it on EBRAINS and ingest returned artifacts
+      before making a multi-chip learning claim. Speedup claims, benchmark
+      claims, true two-partition cross-chip learning, and native-scale baseline
+      freeze remain blocked; the baseline freeze still needs 4.32e hardware
+      evidence. Reopen native replay-buffer,
       sleep-like replay, or eligibility-trace implementation only if a later
       measured blocker specifically demands it.
 ```

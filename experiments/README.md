@@ -78,9 +78,13 @@ refreshed `ebrains_jobs/cra_432d`. Tier 4.32d then passed on EBRAINS and was
 ingested at `controlled_test_output/tier4_32d_20260507_hardware_pass_ingested/`:
 source/learning chip `(0,0)`, remote state chip `(1,0)`, `32` events, `96/96`
 lookup replies, zero stale replies, zero duplicate replies, zero timeouts, and
-zero synthetic fallback. Tier 4.32e multi-chip learning micro-task
-design/package is now active; speedup claims, benchmark claims, true
-two-partition learning, and native-scale baseline freeze remain blocked.
+zero synthetic fallback. Tier 4.32e multi-chip learning micro-task design/package is now complete at
+`controlled_test_output/tier4_32e_20260507_prepared/` with upload folder
+`ebrains_jobs/cra_432e`. The exact command is
+`cra_432e/experiments/tier4_32e_multichip_learning_microtask.py --mode run-hardware --output-dir tier4_32e_job_output`.
+Speedup claims, benchmark claims, true two-partition learning, and native-scale
+baseline freeze remain blocked until returned 4.32e EBRAINS artifacts pass and
+are ingested.
 
 Tier 4.12 proves NEST/Brian2 parity plus SpiNNaker
 PyNN readiness prep. Tier 4.13 records a real SpiNNaker hardware-capsule pass

@@ -39,8 +39,11 @@ passed that repair; Tier 4.32d package preparation passed at
 controlled_test_output/tier4_32d_20260507_prepared/ and refreshed
 ebrains_jobs/cra_432d; the returned EBRAINS 4.32d run then passed and was
 ingested at controlled_test_output/tier4_32d_20260507_hardware_pass_ingested/.
-Speedup, benchmark, true two-partition, and native-scale baseline-freeze claims
-remain blocked until 4.32e multi-chip learning micro-task passes.
+Tier 4.32e multi-chip learning micro-task is now prepared at
+controlled_test_output/tier4_32e_20260507_prepared/ with upload folder
+ebrains_jobs/cra_432e. Speedup, benchmark, true two-partition, and native-scale
+baseline-freeze claims remain blocked until 4.32e returns a passing EBRAINS run
+and is ingested.
 ```
 
 Latest ingest hygiene lesson:
@@ -119,9 +122,14 @@ Tier 4.32d - Two-Chip Split-Role Single-Shard MCPL Lookup Smoke
     learning, and native-scale baseline freeze.
 
 Tier 4.32e - Multi-Chip Learning Micro-Task
-  Status: CURRENT NEXT / DESIGN PACKAGE
+  Status: PREPARED / AWAITING EBRAINS RUN
+  Prepared output: controlled_test_output/tier4_32e_20260507_prepared/
+  Upload folder: ebrains_jobs/cra_432e
+  JobManager command:
+    cra_432e/experiments/tier4_32e_multichip_learning_microtask.py --mode run-hardware --output-dir tier4_32e_job_output
   Goal: smallest learning-bearing cross-chip task over the 4.32d communication
-    path, with resource measurements and explicit claim boundaries.
+    path, with enabled-learning vs no-learning separation, resource measurements,
+    and explicit claim boundaries.
 
 Recent passed hardware-facing lifecycle tier:
 

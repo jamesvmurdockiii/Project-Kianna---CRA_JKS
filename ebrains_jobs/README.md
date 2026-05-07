@@ -110,10 +110,11 @@ passed on EBRAINS and was ingested at
 proved the named `(0,0)` source/learning chip to `(1,0)` remote state-chip
 communication/readback path for shard `0`: `32` events, `96/96` lookup replies,
 zero stale replies, zero duplicate replies, zero timeouts, compact readback, and
-zero synthetic fallback. Next upload folder is not defined yet; the current
-active work is Tier 4.32e multi-chip learning micro-task design/package.
+zero synthetic fallback. The current upload folder is `ebrains_jobs/cra_432e`
+for Tier 4.32e multi-chip learning micro-task. Run
+`cra_432e/experiments/tier4_32e_multichip_learning_microtask.py --mode run-hardware --output-dir tier4_32e_job_output`.
 Benchmarks, speedup claims, native-scale baseline-freeze claims, and true
-two-partition cross-chip learning remain blocked.
+two-partition cross-chip learning remain blocked until 4.32e passes and is ingested.
 
 ### Tier 4.31e
 
@@ -1246,3 +1247,25 @@ Local/prepared metrics: 48 rows, context writes/reads `12/48`, route-slot writes
 Returned Tier 4.22x result: **HARDWARE PASS**. Board `10.11.236.73`, selected core `(0,0,4)` after fallback from requested core 1 (cores 1,2,3 occupied). Target acquisition used `pyNN.spiNNaker` probe fallback because EBRAINS JobManager does not expose a raw hostname. `89/89` criteria passed, all `48` schedule/mature pairs completed, all chip-computed feature/context/route/memory/prediction/weight/bias raw deltas `0`, observed accuracy `0.958333`, tail accuracy `1.0`, active context/route/memory slots `4/4/4`, context writes/reads `12/48`, route-slot writes/reads `12/48`, memory-slot writes/reads `12/48`, final `readout_weight_raw=32768`, final `readout_bias_raw=0`. Probe runtime ~46.8 seconds. Zero synthetic fallback. APLX build pass, app load pass, task micro-loop pass.
 
 Claim boundary: this hardware pass proves only that a bounded host-side v2 state bridge can drive the native decoupled primitive on real SpiNNaker. It is not full native v2.1, not native predictive binding, not native self-evaluation, not full CRA task learning, not continuous no-batching runtime, not speedup evidence, not multi-core scaling, and not final on-chip autonomy.
+
+### Tier 4.32e Multi-Chip Learning Micro-Task Job
+
+Prepared from `controlled_test_output/tier4_32e_20260507_prepared/`.
+
+Upload folder:
+
+```text
+/Users/james/JKS:CRA/ebrains_jobs/cra_432e
+```
+
+JobManager command:
+
+```text
+cra_432e/experiments/tier4_32e_multichip_learning_microtask.py --mode run-hardware --output-dir tier4_32e_job_output
+```
+
+Purpose: test the smallest learning-bearing two-chip MCPL path after the Tier 4.32d communication/readback pass. The source learning core on chip `(0,0)` retrieves context/route/memory state from remote state cores on chip `(1,0)` and runs two cases over the same 32-event schedule: enabled learning at LR `0.25` and a no-learning LR `0.0` control.
+
+Prepared reference: enabled learning must finish at `readout_weight_raw=32768`, `readout_bias_raw=0`; the no-learning control must finish at `readout_weight_raw=0`, `readout_bias_raw=0`. Each case expects `96/96` lookup replies, zero stale replies, zero duplicate replies, zero timeouts, compact readback, and zero synthetic fallback.
+
+Claim boundary: prepared source package only until returned EBRAINS artifacts pass and are ingested. Even if it passes, this is a tiny two-chip single-shard learning micro-task, not speedup evidence, benchmark evidence, true two-partition learning, lifecycle scaling, multi-shard learning, or a native-scale baseline freeze.
