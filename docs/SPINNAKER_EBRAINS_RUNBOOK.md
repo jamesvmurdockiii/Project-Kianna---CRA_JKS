@@ -41,9 +41,13 @@ ebrains_jobs/cra_432d; the returned EBRAINS 4.32d run then passed and was
 ingested at controlled_test_output/tier4_32d_20260507_hardware_pass_ingested/.
 Tier 4.32e multi-chip learning micro-task then passed on EBRAINS and was
 ingested at controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/.
-Speedup, benchmark, true two-partition, lifecycle-scaling, multi-shard, and
-native-scale baseline-freeze claims remain blocked until the next contract-
-backed evidence gate passes.
+Tier 4.32f multi-chip resource/lifecycle decision then passed locally at
+controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/
+and selected lifecycle traffic with resource counters as the next direction.
+The next step is Tier 4.32g-r0 source/route repair audit before another EBRAINS
+package. Speedup, benchmark, true two-partition, lifecycle-scaling, multi-shard,
+and native-scale baseline-freeze claims remain blocked until the next
+contract-backed evidence gate passes.
 ```
 
 Latest ingest hygiene lesson:
@@ -134,6 +138,15 @@ Tier 4.32e - Multi-Chip Learning Micro-Task
     communication path; not speedup, not benchmarks, not true two-partition
     learning, not lifecycle scaling, not multi-shard learning, and not a
     native-scale baseline freeze.
+
+Tier 4.32f - Multi-Chip Resource/Lifecycle Decision Contract
+  Status: LOCAL PASS
+  Output: controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/
+  Criteria: 22/22
+  Decision: lifecycle traffic with resource counters is the next multi-chip
+    direction; immediate 4.32g hardware packaging is blocked until 4.32g-r0
+    source-proves lifecycle inter-chip routes and readback counters.
+  Boundary: local decision/contract only, not hardware.
 
 Recent passed hardware-facing lifecycle tier:
 
@@ -276,8 +289,8 @@ Tier 4.31c - Native Temporal-Substrate Runtime Source Audit
     4.32d-r1 repaired the route blocker and Tier 4.32d then passed the
     two-chip communication/readback hardware smoke after EBRAINS ingest. Tier
     4.32e then passed the two-chip learning micro-task after EBRAINS ingest.
-    The next action is Tier 4.32f contract/design before another hardware
-    package. Native
+    Tier 4.32f then passed locally and authorized Tier 4.32g-r0 source/route
+    repair audit before another hardware package. Native
     replay buffers, sleep-like replay,
     and native macro eligibility remain deferred until measured blockers demand
     them.

@@ -9573,3 +9573,72 @@ contract. Do not jump directly to another hardware package without defining
 the exact question, hypothesis/null, mechanism, claim boundary, controls,
 metrics, pass/fail criteria, expected artifacts, and docs to update.
 ```
+
+## Tier 4.32f - Multi-Chip Resource/Lifecycle Decision Contract
+
+Question: After Tier 4.32e passed the first two-chip learning-bearing
+micro-task, what is the next scientifically defensible multi-chip scale gate?
+
+Result:
+
+```text
+Status: PASS
+Output: controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/
+Criteria: 22/22
+Selected direction: multi_chip_lifecycle_traffic_with_resource_counters
+Selected next gate: tier4_32g_r0_multichip_lifecycle_route_source_repair_audit
+Hardware package status: blocked_until_4_32g_r0_passes
+Lifecycle inter-chip routes source-proven now: false
+```
+
+Decision:
+
+```text
+Tier 4.32f selected lifecycle traffic with resource counters as the next
+multi-chip direction because CRA's organism/self-scaling claim requires native
+lifecycle traffic to move across chips after lookup and learning have passed.
+However, current source proves explicit inter-chip route entries for lookup
+request/reply packets only. Lifecycle event request, trophic update, and
+active-mask sync packets exist, but explicit lifecycle inter-chip route entries
+are not yet source-proven. Therefore immediate hardware packaging is blocked.
+```
+
+Pass case:
+
+```text
+4.32e learning micro-task evidence is clean
+4.30g lifecycle-native evidence exists
+candidate directions are evaluated
+lifecycle/resource is selected as the next direction
+true two-partition learning remains blocked
+benchmarks and speedup remain blocked
+native-scale baseline freeze remains blocked
+4.32g hardware is blocked until 4.32g-r0 passes
+```
+
+Next required gate:
+
+```text
+Tier 4.32g-r0 - Multi-Chip Lifecycle Route/Source Repair Audit
+
+Question:
+  Can lifecycle MCPL event/trophic/mask-sync traffic be made chip/shard
+  explicit enough for a two-chip lifecycle smoke?
+
+Required:
+  source-proven lifecycle event request route entries
+  source-proven lifecycle trophic update route entries
+  source-proven active-mask/lineage sync route entries
+  duplicate/stale/missing-ack counters
+  compact lifecycle readback fields
+  local C host tests before any EBRAINS upload
+```
+
+Boundary:
+
+```text
+Tier 4.32f is local decision/contract evidence only. It is not hardware
+evidence, not speedup, not benchmark superiority, not true two-partition
+learning, not lifecycle scaling, not multi-shard learning, and not a
+native-scale baseline freeze.
+```

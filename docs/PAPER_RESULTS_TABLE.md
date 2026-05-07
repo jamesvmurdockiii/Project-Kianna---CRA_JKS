@@ -4,11 +4,11 @@ This table is generated from `controlled_test_output/STUDY_REGISTRY.json`.
 It is intended as a paper/technical-note citation table, not as a new
 source of claims. If the registry changes, regenerate this file.
 
-- Generated: `2026-05-07T18:46:36.133684+00:00`
-- Registry generated: `2026-05-07T18:46:35.950483+00:00`
+- Generated: `2026-05-07T19:05:09.762820+00:00`
+- Registry generated: `2026-05-07T19:05:09.270202+00:00`
 - Registry status: **PASS**
-- Canonical bundles: `76`
-- Expanded entries: `76`
+- Canonical bundles: `77`
+- Expanded entries: `77`
 
 ## Summary Table
 
@@ -90,6 +90,7 @@ source of claims. If the registry changes, regenerate this file.
 | `tier4_32d_r1_interchip_route_repair_local_qa` | PASS | see manifest | Tier 4.32d-r1 - Inter-Chip MCPL Route Repair Local QA |  | Local source/runtime QA only; not SpiNNaker hardware evidence, not an EBRAINS package, not multi-chip execution evidence, not learning-scale evidence, not speedup evidence, not benchmark superiority, and not a native-scale baseline freeze. | results: `controlled_test_output/tier4_32d_r1_20260507_interchip_route_repair_local_qa/tier4_32d_r1_results.json`; report: `controlled_test_output/tier4_32d_r1_20260507_interchip_route_repair_local_qa/tier4_32d_r1_report.md`; summary: `controlled_test_output/tier4_32d_r1_20260507_interchip_route_repair_local_qa/tier4_32d_r1_source_findings.csv` |
 | `tier4_32d_two_chip_mcpl_lookup_hardware_smoke` | PASS | see manifest | 4.32d-ingest |  | Two-chip communication/readback hardware smoke only; not learning-scale evidence, not speedup evidence, not benchmark superiority, not true two-partition cross-chip learning, not lifecycle scaling, not multi-shard learning, and not a native-scale baseline freeze. | results: `controlled_test_output/tier4_32d_20260507_hardware_pass_ingested/tier4_32d_results.json`; report: `controlled_test_output/tier4_32d_20260507_hardware_pass_ingested/tier4_32d_report.md`; summary: `controlled_test_output/tier4_32d_20260507_hardware_pass_ingested/tier4_32d_summary.csv` |
 | `tier4_32e_multi_chip_learning_microtask` | PASS | see manifest | 4.32e-ingest |  | Two-chip single-shard learning micro-task only; not speedup evidence, not benchmark superiority, not true two-partition cross-chip learning, not lifecycle scaling, not multi-shard learning, and not a native-scale baseline freeze. | results: `controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/tier4_32e_results.json`; report: `controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/tier4_32e_report.md`; summary: `controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/tier4_32e_summary.csv` |
+| `tier4_32f_multichip_resource_lifecycle_decision` | PASS | see manifest | Tier 4.32f - Multi-Chip Resource/Lifecycle Decision Contract |  | Local decision/contract evidence only; not hardware evidence, not lifecycle scaling, not speedup evidence, not benchmark superiority, not true two-partition learning, not multi-shard learning, and not a native-scale baseline freeze. | results: `controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/tier4_32f_results.json`; report: `controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/tier4_32f_report.md`; summary: `controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/tier4_32f_candidate_directions.csv` |
 
 ## Claim Discipline
 

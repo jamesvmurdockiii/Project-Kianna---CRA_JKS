@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-07T18:44:43+00:00.
+Last updated: 2026-05-07T19:04:46+00:00.
 
 Current repo root:
 
@@ -102,16 +102,16 @@ FROZEN: CRA_LIFECYCLE_NATIVE_BASELINE_v0.4
   Latest native scale update: Tier 4.32e multi-chip learning micro-task passed
         on EBRAINS and was ingested at
         controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/.
-        Board: 10.11.205.161.
-        Scope passed: source/learning chip (0,0), remote state chip (1,0),
-        shard 0, two cases, 32 events per case, 96 expected lookup replies per
-        case. Enabled LR 0.25 matched readout 32768/0; no-learning LR 0.0 stayed
-        0/0. Both cases had 96/96 lookup replies, zero stale replies, zero
-        duplicates, zero timeouts, compact readback, zero synthetic fallback,
-        and 42 returned artifacts preserved.
-        Boundary: first two-chip single-shard learning-bearing hardware
-        micro-task only. Speedup claims, benchmark evidence, true two-partition
-        learning, lifecycle scaling, multi-shard learning, and
+        Tier 4.32f multi-chip resource/lifecycle decision contract then passed
+        locally at
+        controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/.
+        4.32f selected lifecycle traffic with resource counters as the next
+        direction, classified that lifecycle inter-chip route entries are not
+        yet source-proven, authorized Tier 4.32g-r0 source/route repair audit
+        next, and blocked immediate 4.32g hardware packaging.
+        Boundary: first two-chip single-shard learning evidence plus local
+        decision contract only. Speedup claims, benchmark evidence, true
+        two-partition learning, lifecycle scaling, multi-shard learning, and
         CRA_NATIVE_SCALE_BASELINE_v0.5 remain blocked until the next
         contract-backed evidence gate passes.
 ```
@@ -338,17 +338,23 @@ Tier 4.32e — COMPLETE. Multi-chip learning micro-task.
     two-partition learning, multi-shard learning, or a native-scale baseline
     freeze.
 
-Tier 4.32f — CURRENT ACTIVE STEP. Multi-chip resource/lifecycle decision contract.
-  Status: CONTRACT/DESIGN REQUIRED BEFORE NEXT HARDWARE RUN.
-  Goal: decide and predeclare the next multi-chip scale evidence target after
-    the passed Tier 4.32e learning micro-task. Candidate directions include
-    lifecycle traffic, resource/timing characterization, true partition
-    semantics, or a bounded combination, but the tier must define exactly one
-    falsifiable gate before packaging.
-  Required contract fields: question, hypothesis/null, mechanism under test,
-    claim boundary/nonclaims, placement assumptions, controls/ablations,
-    seeds or event schedules, metrics, pass/fail criteria, failure classes,
-    expected artifacts, docs to update, and baseline-freeze decision rule.
+Tier 4.32f — COMPLETE. Multi-chip resource/lifecycle decision contract.
+  Status: LOCAL PASS 22/22.
+  Output: controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/.
+  Decision: lifecycle traffic with resource counters is the next multi-chip
+    direction, but 4.32g hardware is blocked until lifecycle inter-chip routes
+    are source-proven.
+  Boundary: local decision/contract only; not hardware, not speedup, not
+    lifecycle scaling, not true two-partition learning, not multi-shard
+    learning, and not a native-scale baseline freeze.
+
+Tier 4.32g-r0 — CURRENT ACTIVE STEP. Multi-chip lifecycle route/source repair audit.
+  Status: SOURCE/ROUTE REPAIR AUDIT REQUIRED BEFORE NEXT HARDWARE PACKAGE.
+  Goal: source-prove lifecycle event request, trophic update, and active-mask/
+    lineage sync routes across chips before any 4.32g EBRAINS package.
+  Required outputs: source findings, route contract, local C host tests,
+    counters/readback schema, failure classes, and a clear 4.32g hardware
+    authorization or blocker.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware
@@ -836,12 +842,13 @@ Immediate next steps:
 2. Tier 4.32d-r0 route/source/package audit passed and blocked the first
    EBRAINS package; Tier 4.32d-r1 route repair/local QA then passed and removed
    that source blocker; Tier 4.32d package preparation and returned EBRAINS
-   hardware smoke passed; and Tier 4.32e multi-chip learning micro-task passed
-   after EBRAINS ingest. The next native step is Tier 4.32f contract/design, not
-   an unscoped hardware package. Do not jump to benchmarks, speedup claims, true
+   hardware smoke passed; Tier 4.32e multi-chip learning micro-task passed
+   after EBRAINS ingest; and Tier 4.32f local decision contract passed. The next
+   native step is Tier 4.32g-r0 route/source repair audit, not an unscoped
+   hardware package. Do not jump to benchmarks, speedup claims, true
    two-partition cross-chip learning, lifecycle scaling, multi-shard learning,
-   or a native-scale baseline freeze until the 4.32f contract and its evidence
-   gate pass cleanly.
+   or a native-scale baseline freeze until the lifecycle route/source audit and
+   its contract-backed evidence gate pass cleanly.
 3. Keep the 4.31b/4.31c range refinement explicit: selected trace bound is ±2
    in s16.15; the older ±1 sketch saturated and must not silently return.
 4. Keep public repo hygiene green before the next upload or commit: no

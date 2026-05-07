@@ -1,0 +1,13 @@
+field,producer,required_for,expected_rule,why
+board_id,host/placement,all later multi-chip tiers,non-empty and preserved in returned artifacts,tie evidence to EBRAINS allocation
+chip_x/chip_y/p_core/role,host/runtime,all role cores,matches placement table,reconstruct ownership
+partition_id/shard_id,host/runtime/MCPL key,all lifecycle and lookup messages,matches selected static reef partition,prevent cross-talk
+lifecycle_event_requests_sent,source/runtime,4.32g-r0 and 4.32g,> 0 for lifecycle smoke,prove event traffic was emitted
+lifecycle_trophic_requests_sent,source/runtime,4.32g-r0 and 4.32g,> 0 when trophic updates are scheduled,prove trophic traffic was emitted
+lifecycle_event_acks_received,source/runtime,4.32g-r0 and 4.32g,== expected lifecycle mutating events,prove event requests were accepted
+lifecycle_mask_syncs_sent,lifecycle core,4.32g-r0 and 4.32g,> 0 after active-mask mutation,prove mask sync broadcast
+lifecycle_mask_syncs_received,learning/consumer core,4.32g-r0 and 4.32g,== expected sync packets,prove consumer saw mask sync
+lifecycle_duplicate_events,lifecycle core,4.32g-r0 and 4.32g,== 0 in canonical case; >0 in duplicate-control if used,classify duplicate failures
+lifecycle_stale_events,lifecycle core,4.32g-r0 and 4.32g,== 0 in canonical case; >0 in stale-control if used,classify stale failures
+lifecycle_missing_acks,source/runtime,4.32g-r0 and 4.32g,== 0,catch lost lifecycle packets
+payload_len,all compact readbacks,all later hardware tiers,within compact schema limit,avoid readback bloat

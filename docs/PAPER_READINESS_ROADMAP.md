@@ -6429,12 +6429,18 @@ Near-term roadmap insertion:
     Boundary: two-chip single-shard learning micro-task only; not speedup, not
     benchmark evidence, not true two-partition learning, not lifecycle scaling,
     not multi-shard learning, and not baseline freeze.
-33. Tier 4.32f multi-chip resource/lifecycle decision contract. CURRENT NEXT:
-    define the exact next multi-chip scale question before another hardware run.
-    The contract must choose and justify whether the next step is lifecycle
-    traffic, resource/timing characterization, true partition semantics, or a
-    bounded combination; predeclare controls, metrics, pass/fail criteria,
-    expected artifacts, placement assumptions, and claim boundaries.
+33. Tier 4.32f multi-chip resource/lifecycle decision contract. COMPLETE:
+    local pass at
+    `controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/`
+    with `22/22` criteria. It selected lifecycle traffic with resource counters
+    as the next direction, classified that lifecycle inter-chip route entries
+    are not yet source-proven, authorized Tier 4.32g-r0 source/route repair
+    audit next, and blocked immediate 4.32g hardware packaging.
+34. Tier 4.32g-r0 multi-chip lifecycle route/source repair audit. CURRENT NEXT:
+    source-prove lifecycle event request, trophic update, and active-mask/lineage
+    sync routes across chips before any new EBRAINS package. Required outputs:
+    source findings, route contract, local C host tests, counters/readback schema,
+    failure classes, and a clear 4.32g hardware authorization or blocker.
 ```
 
 Tier 5.19a result:
@@ -6738,16 +6744,19 @@ Tests: test-temporal-state, test-profiles, test, test-lifecycle, test-lifecycle-
 Boundary: local source/runtime host evidence only, not hardware
 ```
 
-Next: Define Tier 4.32f multi-chip resource/lifecycle decision contract.
+Next: Build Tier 4.32g-r0 multi-chip lifecycle route/source repair audit.
       Tier 4.32e passed after EBRAINS ingest at
       `controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/`:
       board `10.11.205.161`, two cases, 32 events per case, 96/96 lookup
       replies per case, zero stale replies, zero duplicate replies, zero
       timeouts, zero synthetic fallback, enabled LR 0.25 readout `32768/0`,
-      and no-learning LR 0.0 readout `0/0`. Speedup claims, benchmark claims,
-      true two-partition cross-chip learning, lifecycle scaling, multi-shard
-      learning, and native-scale baseline freeze remain blocked. The next step
-      is a contract/design gate, not an unscoped hardware run. Reopen native
+      and no-learning LR 0.0 readout `0/0`. Tier 4.32f then passed locally at
+      `controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/`,
+      selected lifecycle traffic/resource counters as the next direction, and
+      blocked immediate hardware because lifecycle inter-chip routes are not
+      source-proven yet. Speedup claims, benchmark claims, true two-partition
+      cross-chip learning, lifecycle scaling, multi-shard learning, and
+      native-scale baseline freeze remain blocked. Reopen native
       replay-buffer,
       sleep-like replay, or eligibility-trace implementation only if a later
       measured blocker specifically demands it.

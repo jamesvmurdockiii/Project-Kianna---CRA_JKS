@@ -1,0 +1,525 @@
+{
+  "artifacts": {
+    "candidate_directions_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/tier4_32f_candidate_directions.csv",
+    "criteria_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/tier4_32f_criteria.csv",
+    "learning_cases_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/tier4_32f_learning_cases.csv",
+    "next_gates_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/tier4_32f_next_gates.csv",
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/tier4_32f_report.md",
+    "required_readback_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/tier4_32f_required_readback.csv",
+    "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/tier4_32f_results.json",
+    "source_checks_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/tier4_32f_source_checks.csv"
+  },
+  "candidate_directions": [
+    {
+      "claim_boundary": "Lifecycle traffic/resource smoke only; not full lifecycle scaling or autonomous growth.",
+      "decision": "selected_but_requires_4_32g_r0_source_repair",
+      "direction": "multi_chip_lifecycle_traffic",
+      "reason": "The organism/self-scaling claim needs lifecycle traffic to move across chips after lookup/learning already passed.",
+      "required_before_hardware": "Add/prove explicit inter-chip lifecycle route entries and lifecycle readback counters before EBRAINS hardware."
+    },
+    {
+      "claim_boundary": "Engineering measurement only, not speedup.",
+      "decision": "include_inside_lifecycle_smoke_not_standalone_next",
+      "direction": "resource_timing_characterization",
+      "reason": "Resource/timing counters are necessary, but a timing-only run would not advance the organism-scale mechanism path.",
+      "required_before_hardware": "Predeclare payload length, message count, stale/duplicate/timeout counters, wall/runtime fields, and per-role compact readback."
+    },
+    {
+      "claim_boundary": "No true two-partition learning claim.",
+      "decision": "blocked",
+      "direction": "true_two_partition_cross_chip_learning",
+      "reason": "Current evidence still uses one shard field and one source/remote partition; origin/target shard semantics are not defined.",
+      "required_before_hardware": "Define origin shard, target shard, role ownership, and cross-partition credit semantics before attempting this."
+    },
+    {
+      "claim_boundary": "No benchmark or speedup claim from 4.32f.",
+      "decision": "blocked",
+      "direction": "benchmarks_or_speedup",
+      "reason": "Benchmark/speedup claims require stable native scale mechanics and fair software baselines first.",
+      "required_before_hardware": "Complete native scale/lifecycle gates and freeze a justified native-scale baseline."
+    },
+    {
+      "claim_boundary": "No native-scale baseline freeze.",
+      "decision": "not_authorized",
+      "direction": "CRA_NATIVE_SCALE_BASELINE_v0_5",
+      "reason": "4.32e is a major pass but still tiny and single-shard; lifecycle/resource and multi-shard semantics remain open.",
+      "required_before_hardware": "At minimum, pass a contract-backed lifecycle/resource gate and decide true partition semantics."
+    }
+  ],
+  "claim_boundary": "Tier 4.32f is a local decision/contract gate after the first two-chip learning-bearing hardware micro-task. It does not run SpiNNaker hardware, does not claim speedup, does not claim benchmark superiority, does not claim true two-partition learning, does not claim lifecycle scaling, does not claim multi-shard learning, and does not freeze a native-scale baseline.",
+  "criteria": [
+    {
+      "name": "Tier 4.30g lifecycle native baseline evidence passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "Tier 4.32b static partition map passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "Tier 4.32d two-chip lookup smoke passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "Tier 4.32e two-chip learning micro-task passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "Tier 4.32e raw remote status passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "Tier 4.32e preserved returned artifacts",
+      "note": "",
+      "passed": true,
+      "rule": ">= 40",
+      "value": 42
+    },
+    {
+      "name": "Tier 4.32e task result passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "Tier 4.32e contains enabled and no-learning cases",
+      "note": "",
+      "passed": true,
+      "rule": "contains enabled_lr_0_25 and no_learning_lr_0_00",
+      "value": [
+        "enabled_lr_0_25",
+        "no_learning_lr_0_00"
+      ]
+    },
+    {
+      "name": "Tier 4.32e lookup cases clean",
+      "note": "",
+      "passed": true,
+      "rule": "all requests==replies and zero stale/duplicate/timeouts",
+      "value": true
+    },
+    {
+      "name": "enabled learning moved readout",
+      "note": "",
+      "passed": true,
+      "rule": "== 32768",
+      "value": 32768
+    },
+    {
+      "name": "no-learning control stayed zero",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "name": "runtime lifecycle source primitives exist",
+      "note": "",
+      "passed": true,
+      "rule": "empty",
+      "value": []
+    },
+    {
+      "name": "lifecycle inter-chip route gap classified",
+      "note": "Current source lacks explicit lifecycle inter-chip route installs; 4.32g-r0 is required.",
+      "passed": true,
+      "rule": "False is acceptable only if next hardware is blocked",
+      "value": false
+    },
+    {
+      "name": "next direction selects lifecycle traffic",
+      "note": "",
+      "passed": true,
+      "rule": "== multi_chip_lifecycle_traffic",
+      "value": "multi_chip_lifecycle_traffic"
+    },
+    {
+      "name": "next direction blocks immediate lifecycle hardware",
+      "note": "",
+      "passed": true,
+      "rule": "== blocked_until_4_32g_r0_passes",
+      "value": "blocked_until_4_32g_r0_passes"
+    },
+    {
+      "name": "true two-partition learning remains blocked",
+      "note": "",
+      "passed": true,
+      "rule": "== blocked",
+      "value": "blocked"
+    },
+    {
+      "name": "speedup and benchmarks remain blocked",
+      "note": "",
+      "passed": true,
+      "rule": "== blocked",
+      "value": "blocked"
+    },
+    {
+      "name": "native scale baseline freeze not authorized",
+      "note": "",
+      "passed": true,
+      "rule": "== not_authorized",
+      "value": "not_authorized"
+    },
+    {
+      "name": "4.32g-r0 authorized next",
+      "note": "",
+      "passed": true,
+      "rule": "== authorized_next",
+      "value": "authorized_next"
+    },
+    {
+      "name": "lifecycle readback requires duplicate/stale/missing-ack counters",
+      "note": "",
+      "passed": true,
+      "rule": "contains lifecycle_duplicate_events/lifecycle_stale_events/lifecycle_missing_acks",
+      "value": [
+        "board_id",
+        "chip_x/chip_y/p_core/role",
+        "partition_id/shard_id",
+        "lifecycle_event_requests_sent",
+        "lifecycle_trophic_requests_sent",
+        "lifecycle_event_acks_received",
+        "lifecycle_mask_syncs_sent",
+        "lifecycle_mask_syncs_received",
+        "lifecycle_duplicate_events",
+        "lifecycle_stale_events",
+        "lifecycle_missing_acks",
+        "payload_len"
+      ]
+    },
+    {
+      "name": "compact payload remains required",
+      "note": "",
+      "passed": true,
+      "rule": "contains payload_len",
+      "value": [
+        "board_id",
+        "chip_x/chip_y/p_core/role",
+        "partition_id/shard_id",
+        "lifecycle_event_requests_sent",
+        "lifecycle_trophic_requests_sent",
+        "lifecycle_event_acks_received",
+        "lifecycle_mask_syncs_sent",
+        "lifecycle_mask_syncs_received",
+        "lifecycle_duplicate_events",
+        "lifecycle_stale_events",
+        "lifecycle_missing_acks",
+        "payload_len"
+      ]
+    },
+    {
+      "name": "lifecycle pool fits current static native pool",
+      "note": "",
+      "passed": true,
+      "rule": ">= 8",
+      "value": 8
+    }
+  ],
+  "criteria_passed": 22,
+  "criteria_total": 22,
+  "final_decision": {
+    "benchmark_claims": "not_authorized",
+    "claim_boundary": "Tier 4.32f is a local decision/contract gate after the first two-chip learning-bearing hardware micro-task. It does not run SpiNNaker hardware, does not claim speedup, does not claim benchmark superiority, does not claim true two-partition learning, does not claim lifecycle scaling, does not claim multi-shard learning, and does not freeze a native-scale baseline.",
+    "lifecycle_interchip_routes_source_proven": false,
+    "native_scale_baseline_freeze": "not_authorized",
+    "selected_next_gate": "tier4_32g_r0_multichip_lifecycle_route_source_repair_audit",
+    "speedup_claims": "not_authorized",
+    "status": "pass",
+    "tier4_32g_hardware": "blocked_until_4_32g_r0_passes",
+    "true_two_partition_learning": "blocked_until_origin_target_shard_semantics"
+  },
+  "generated_at_utc": "2026-05-07T19:04:46+00:00",
+  "learning_case_summaries": [
+    {
+      "active_pending": 0,
+      "case_kind": "enabled",
+      "case_label": "enabled_lr_0_25",
+      "duplicate_replies": 0,
+      "event_count": 32,
+      "expected_lookup_count": 96,
+      "lookup_replies": 96,
+      "lookup_requests": 96,
+      "payload_len": 105,
+      "pending_created": 32,
+      "pending_matured": 32,
+      "readout_bias_raw": 0,
+      "readout_weight_raw": 32768,
+      "stale_replies": 0,
+      "timeouts": 0
+    },
+    {
+      "active_pending": 0,
+      "case_kind": "no_learning",
+      "case_label": "no_learning_lr_0_00",
+      "duplicate_replies": 0,
+      "event_count": 32,
+      "expected_lookup_count": 96,
+      "lookup_replies": 96,
+      "lookup_requests": 96,
+      "payload_len": 105,
+      "pending_created": 32,
+      "pending_matured": 32,
+      "readout_bias_raw": 0,
+      "readout_weight_raw": 0,
+      "stale_replies": 0,
+      "timeouts": 0
+    }
+  ],
+  "next_gates": [
+    {
+      "claim_boundary": "Local source/route audit only; not hardware lifecycle scaling.",
+      "expected_artifacts": "tier4_32g_r0_results.json, report, criteria CSV, source findings CSV, route contract CSV, test command logs",
+      "fail_case": "Do not package EBRAINS; repair route/key/readback/counter semantics first.",
+      "gate": "Tier 4.32g-r0 - Multi-Chip Lifecycle Route/Source Repair Audit",
+      "hypothesis": "The runtime can source-prove explicit lifecycle routes and counters analogous to the lookup route repair that enabled 4.32d/e.",
+      "mechanism_under_test": "lifecycle MCPL message routing, duplicate/stale/missing-ack counters, active-mask sync, lineage checksum visibility",
+      "null_hypothesis": "Lifecycle packets exist but cannot be routed/read back across chips without ambiguity or missing counters.",
+      "pass_case": "All lifecycle route/source checks pass locally and the 4.32g hardware package is authorized.",
+      "question": "Can lifecycle MCPL event/trophic/mask-sync traffic be made chip/shard explicit enough for a two-chip lifecycle smoke?",
+      "required_work": "Audit/repair source support for explicit inter-chip lifecycle routes for event request, trophic update, active-mask sync, and any ack/readback path. Add local host tests before packaging.",
+      "status": "authorized_next"
+    },
+    {
+      "claim_boundary": "Two-chip lifecycle traffic/resource smoke only; not full lifecycle scaling.",
+      "expected_artifacts": "tier4_32g_results.json, task result JSON, per-case summaries, target acquisition, build/load logs, reports zip",
+      "fail_case": "Classify as route, key, ack, readback, source/package, allocation, or lifecycle semantics failure.",
+      "gate": "Tier 4.32g - Two-Chip Lifecycle Traffic/Resource Hardware Smoke",
+      "hypothesis": "A bounded two-chip single-shard lifecycle traffic smoke preserves event acceptance, active-mask sync, lineage checksum, and zero stale/duplicate/missing-ack counters.",
+      "mechanism_under_test": "native lifecycle MCPL traffic across chips with resource/timing/readback accounting",
+      "null_hypothesis": "Lifecycle traffic fails, cannot be reconstructed, or bloats readback before scale.",
+      "pass_case": "Canonical lifecycle events and at least one control return exact counters, compact payload, and zero fallback.",
+      "question": "Can lifecycle event/trophic/mask-sync traffic cross the chip boundary with compact resource counters?",
+      "required_work": "Only prepare after 4.32g-r0 passes.",
+      "status": "blocked_until_4_32g_r0_passes"
+    },
+    {
+      "claim_boundary": "Contract only; no hardware claim.",
+      "expected_artifacts": "contract results, identity table, message path table, failure class table",
+      "fail_case": "Keep claims to single-shard split-role hardware evidence.",
+      "gate": "Tier 4.32h - True Partition Semantics Contract",
+      "hypothesis": "Origin/target shard identity can be defined without breaking the existing single-shard MCPL path.",
+      "mechanism_under_test": "origin shard, target shard, partition role ownership, cross-partition credit assignment",
+      "null_hypothesis": "The current key/readback contract is insufficient for true two-partition learning.",
+      "pass_case": "Authorizes a true two-partition local reference/repair tier.",
+      "question": "What origin/target shard semantics are required before true two-partition cross-chip learning?",
+      "required_work": "Define after lifecycle/resource traffic is either passed or explicitly parked.",
+      "status": "blocked_until_lifecycle_resource_gate"
+    }
+  ],
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision",
+  "required_readback": [
+    {
+      "expected_rule": "non-empty and preserved in returned artifacts",
+      "field": "board_id",
+      "producer": "host/placement",
+      "required_for": "all later multi-chip tiers",
+      "why": "tie evidence to EBRAINS allocation"
+    },
+    {
+      "expected_rule": "matches placement table",
+      "field": "chip_x/chip_y/p_core/role",
+      "producer": "host/runtime",
+      "required_for": "all role cores",
+      "why": "reconstruct ownership"
+    },
+    {
+      "expected_rule": "matches selected static reef partition",
+      "field": "partition_id/shard_id",
+      "producer": "host/runtime/MCPL key",
+      "required_for": "all lifecycle and lookup messages",
+      "why": "prevent cross-talk"
+    },
+    {
+      "expected_rule": "> 0 for lifecycle smoke",
+      "field": "lifecycle_event_requests_sent",
+      "producer": "source/runtime",
+      "required_for": "4.32g-r0 and 4.32g",
+      "why": "prove event traffic was emitted"
+    },
+    {
+      "expected_rule": "> 0 when trophic updates are scheduled",
+      "field": "lifecycle_trophic_requests_sent",
+      "producer": "source/runtime",
+      "required_for": "4.32g-r0 and 4.32g",
+      "why": "prove trophic traffic was emitted"
+    },
+    {
+      "expected_rule": "== expected lifecycle mutating events",
+      "field": "lifecycle_event_acks_received",
+      "producer": "source/runtime",
+      "required_for": "4.32g-r0 and 4.32g",
+      "why": "prove event requests were accepted"
+    },
+    {
+      "expected_rule": "> 0 after active-mask mutation",
+      "field": "lifecycle_mask_syncs_sent",
+      "producer": "lifecycle core",
+      "required_for": "4.32g-r0 and 4.32g",
+      "why": "prove mask sync broadcast"
+    },
+    {
+      "expected_rule": "== expected sync packets",
+      "field": "lifecycle_mask_syncs_received",
+      "producer": "learning/consumer core",
+      "required_for": "4.32g-r0 and 4.32g",
+      "why": "prove consumer saw mask sync"
+    },
+    {
+      "expected_rule": "== 0 in canonical case; >0 in duplicate-control if used",
+      "field": "lifecycle_duplicate_events",
+      "producer": "lifecycle core",
+      "required_for": "4.32g-r0 and 4.32g",
+      "why": "classify duplicate failures"
+    },
+    {
+      "expected_rule": "== 0 in canonical case; >0 in stale-control if used",
+      "field": "lifecycle_stale_events",
+      "producer": "lifecycle core",
+      "required_for": "4.32g-r0 and 4.32g",
+      "why": "classify stale failures"
+    },
+    {
+      "expected_rule": "== 0",
+      "field": "lifecycle_missing_acks",
+      "producer": "source/runtime",
+      "required_for": "4.32g-r0 and 4.32g",
+      "why": "catch lost lifecycle packets"
+    },
+    {
+      "expected_rule": "within compact schema limit",
+      "field": "payload_len",
+      "producer": "all compact readbacks",
+      "required_for": "all later hardware tiers",
+      "why": "avoid readback bloat"
+    }
+  ],
+  "runner_revision": "tier4_32f_multichip_resource_lifecycle_decision_20260507_0001",
+  "runtime_limits": {
+    "max_lifecycle_slots": 8,
+    "max_schedule_entries": 512,
+    "mcpl_key_shard_mask": 15
+  },
+  "source_checks": [
+    {
+      "check_id": "lifecycle_event_msg_type",
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/config.h",
+      "implication": "Lifecycle event request packet type exists.",
+      "present": true,
+      "token": "MCPL_MSG_LIFECYCLE_EVENT_REQUEST"
+    },
+    {
+      "check_id": "lifecycle_trophic_msg_type",
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/config.h",
+      "implication": "Lifecycle trophic update packet type exists.",
+      "present": true,
+      "token": "MCPL_MSG_LIFECYCLE_TROPHIC_UPDATE"
+    },
+    {
+      "check_id": "lifecycle_mask_sync_msg_type",
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/config.h",
+      "implication": "Lifecycle active-mask sync packet type exists.",
+      "present": true,
+      "token": "MCPL_MSG_LIFECYCLE_ACTIVE_MASK_SYNC"
+    },
+    {
+      "check_id": "lifecycle_event_sender",
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h",
+      "implication": "Lifecycle event request sender is declared.",
+      "present": true,
+      "token": "cra_lifecycle_send_event_request_stub"
+    },
+    {
+      "check_id": "lifecycle_trophic_sender",
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h",
+      "implication": "Lifecycle trophic update sender is declared.",
+      "present": true,
+      "token": "cra_lifecycle_send_trophic_update_stub"
+    },
+    {
+      "check_id": "lifecycle_event_handler",
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h",
+      "implication": "Lifecycle event receiver/handler is declared.",
+      "present": true,
+      "token": "cra_lifecycle_handle_event_request"
+    },
+    {
+      "check_id": "lifecycle_trophic_handler",
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h",
+      "implication": "Lifecycle trophic receiver/handler is declared.",
+      "present": true,
+      "token": "cra_lifecycle_handle_trophic_request"
+    },
+    {
+      "check_id": "lifecycle_mask_receiver",
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h",
+      "implication": "Lifecycle mask-sync receiver is declared.",
+      "present": true,
+      "token": "cra_lifecycle_receive_active_mask_sync"
+    },
+    {
+      "check_id": "lifecycle_duplicate_counter",
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h",
+      "implication": "Duplicate lifecycle events are counted.",
+      "present": true,
+      "token": "lifecycle_duplicate_events"
+    },
+    {
+      "check_id": "lifecycle_stale_counter",
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h",
+      "implication": "Stale lifecycle events are counted.",
+      "present": true,
+      "token": "lifecycle_stale_events"
+    },
+    {
+      "check_id": "lifecycle_missing_ack_counter",
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h",
+      "implication": "Missing lifecycle acks are counted.",
+      "present": true,
+      "token": "lifecycle_missing_acks"
+    },
+    {
+      "check_id": "lookup_interchip_request_route",
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c",
+      "implication": "Lookup route repair has explicit source-chip request-link routing.",
+      "present": true,
+      "token": "CRA_MCPL_INTERCHIP_REQUEST_LINK_ROUTE"
+    },
+    {
+      "check_id": "lookup_interchip_reply_route",
+      "file": "coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c",
+      "implication": "Lookup route repair has explicit state-chip reply-link routing.",
+      "present": true,
+      "token": "CRA_MCPL_INTERCHIP_REPLY_LINK_ROUTE"
+    }
+  ],
+  "status": "pass",
+  "summary": {
+    "hardware_package_status": "blocked_until_4_32g_r0_passes",
+    "lifecycle_interchip_routes_source_proven": false,
+    "selected_direction": "multi_chip_lifecycle_traffic_with_resource_counters",
+    "selected_next_gate": "tier4_32g_r0_multichip_lifecycle_route_source_repair_audit",
+    "tier4_32e_learning_microtask_status": "pass",
+    "tier4_32e_raw_remote_status": "pass",
+    "tier4_32e_returned_artifact_count": 42,
+    "why_not_benchmark_yet": "native scale/lifecycle mechanics are not stable enough for benchmark/speedup claims",
+    "why_not_true_partition_yet": "origin/target shard semantics remain undefined"
+  },
+  "tier": "Tier 4.32f - Multi-Chip Resource/Lifecycle Decision Contract"
+}

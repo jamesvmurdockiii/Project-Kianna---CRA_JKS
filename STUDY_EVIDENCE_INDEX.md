@@ -10,10 +10,10 @@ Research narrative companions:
 - `docs/WHITEPAPER.md`
 - `docs/CODEBASE_MAP.md`
 
-- Registry generated: `2026-05-07T18:46:35.950483+00:00`
+- Registry generated: `2026-05-07T19:05:09.270202+00:00`
 - Registry status: **PASS**
 - Core validation suite: `12` tests
-- Expanded evidence suite: `76` entries; see the canonical evidence table below for the exact current tier list.
+- Expanded evidence suite: `77` entries; see the canonical evidence table below for the exact current tier list.
 
 ## Canonical Claims
 
@@ -95,6 +95,7 @@ Research narrative companions:
 | `tier4_32d_r1_interchip_route_repair_local_qa` | Phase G route repair/local QA before first inter-chip hardware package | **PASS** | Tier 4.32d-r1 passed as local source/runtime QA for the first two-chip split-role single-shard MCPL smoke: learning-core builds can install outbound request link routes, state-core builds can install local request delivery plus outbound value/meta reply link routes, the route-table stub inspects key/mask/route entries, and existing MCPL lookup/four-core regressions still pass. | Local source/runtime QA only; not SpiNNaker hardware evidence, not an EBRAINS package, not multi-chip execution evidence, not learning-scale evidence, not speedup evidence, not benchmark superiority, and not a native-scale baseline freeze. |
 | `tier4_32d_two_chip_mcpl_lookup_hardware_smoke` | Phase G first two-chip split-role MCPL communication/readback hardware smoke | **PASS** | Tier 4.32d passed as the first two-chip split-role single-shard MCPL lookup hardware smoke: a learning core on chip (0,0) communicated with context/route/memory state cores on chip (1,0), completed 32 events, received 96/96 lookup replies, and returned zero stale replies, duplicates, timeouts, or synthetic fallback. | Two-chip communication/readback hardware smoke only; not learning-scale evidence, not speedup evidence, not benchmark superiority, not true two-partition cross-chip learning, not lifecycle scaling, not multi-shard learning, and not a native-scale baseline freeze. |
 | `tier4_32e_multi_chip_learning_microtask` | Phase G first two-chip split-role learning-bearing hardware micro-task | **PASS** | Tier 4.32e passed as the smallest two-chip single-shard learning-bearing MCPL hardware micro-task: enabled learning at LR 0.25 and a no-learning LR 0.0 control both completed 32 events, received 96/96 lookup replies, returned zero stale replies, duplicates, timeouts, or synthetic fallback, and separated readout state exactly as expected. | Two-chip single-shard learning micro-task only; not speedup evidence, not benchmark superiority, not true two-partition cross-chip learning, not lifecycle scaling, not multi-shard learning, and not a native-scale baseline freeze. |
+| `tier4_32f_multichip_resource_lifecycle_decision` | Phase G decision contract after first two-chip learning-bearing hardware micro-task | **PASS** | Tier 4.32f passed as a local decision contract after the 4.32e two-chip learning micro-task: it selected multi-chip lifecycle traffic with resource counters as the next direction, classified the missing lifecycle inter-chip route proof, authorized Tier 4.32g-r0 source/route repair audit next, and blocked immediate lifecycle hardware packaging, speedup, benchmarks, true two-partition learning, multi-shard learning, and native-scale baseline freeze. | Local decision/contract evidence only; not hardware evidence, not lifecycle scaling, not speedup evidence, not benchmark superiority, not true two-partition learning, not multi-shard learning, and not a native-scale baseline freeze. |
 
 ## Canonical Artifacts
 
@@ -176,6 +177,7 @@ Research narrative companions:
 | `tier4_32d_r1_interchip_route_repair_local_qa` | `controlled_test_output/tier4_32d_r1_20260507_interchip_route_repair_local_qa/tier4_32d_r1_results.json` | `controlled_test_output/tier4_32d_r1_20260507_interchip_route_repair_local_qa/tier4_32d_r1_report.md` | `controlled_test_output/tier4_32d_r1_20260507_interchip_route_repair_local_qa/tier4_32d_r1_source_findings.csv` |
 | `tier4_32d_two_chip_mcpl_lookup_hardware_smoke` | `controlled_test_output/tier4_32d_20260507_hardware_pass_ingested/tier4_32d_results.json` | `controlled_test_output/tier4_32d_20260507_hardware_pass_ingested/tier4_32d_report.md` | `controlled_test_output/tier4_32d_20260507_hardware_pass_ingested/tier4_32d_summary.csv` |
 | `tier4_32e_multi_chip_learning_microtask` | `controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/tier4_32e_results.json` | `controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/tier4_32e_report.md` | `controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/tier4_32e_summary.csv` |
+| `tier4_32f_multichip_resource_lifecycle_decision` | `controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/tier4_32f_results.json` | `controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/tier4_32f_report.md` | `controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/tier4_32f_candidate_directions.csv` |
 
 ## Selected Noncanonical Diagnostics
 

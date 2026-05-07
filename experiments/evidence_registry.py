@@ -1649,6 +1649,28 @@ SPECS: tuple[EvidenceSpec, ...] = (
             "returned_artifacts/tier4_32e_case_no_learning_lr_0_00.json",
         ),
     ),
+    EvidenceSpec(
+        entry_id="tier4_32f_multichip_resource_lifecycle_decision",
+        tier_label="Tier 4.32f - Multi-Chip Resource/Lifecycle Decision Contract",
+        plan_position="Phase G decision contract after first two-chip learning-bearing hardware micro-task",
+        canonical_dir="tier4_32f_20260507_multichip_resource_lifecycle_decision",
+        results_file="tier4_32f_results.json",
+        report_file="tier4_32f_report.md",
+        summary_file="tier4_32f_candidate_directions.csv",
+        harness="experiments/tier4_32f_multichip_resource_lifecycle_decision.py",
+        evidence_role="native runtime multi-chip lifecycle/resource decision contract",
+        claim="Tier 4.32f passed as a local decision contract after the 4.32e two-chip learning micro-task: it selected multi-chip lifecycle traffic with resource counters as the next direction, classified the missing lifecycle inter-chip route proof, authorized Tier 4.32g-r0 source/route repair audit next, and blocked immediate lifecycle hardware packaging, speedup, benchmarks, true two-partition learning, multi-shard learning, and native-scale baseline freeze.",
+        caveat="Local decision/contract evidence only; not hardware evidence, not lifecycle scaling, not speedup evidence, not benchmark superiority, not true two-partition learning, not multi-shard learning, and not a native-scale baseline freeze.",
+        latest_manifest_names=("tier4_32f_latest_manifest.json",),
+        expected_extra_files=(
+            "tier4_32f_criteria.csv",
+            "tier4_32f_source_checks.csv",
+            "tier4_32f_learning_cases.csv",
+            "tier4_32f_candidate_directions.csv",
+            "tier4_32f_required_readback.csv",
+            "tier4_32f_next_gates.csv",
+        ),
+    ),
 )
 
 

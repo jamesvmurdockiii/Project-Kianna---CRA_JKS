@@ -112,8 +112,11 @@ multi-chip learning micro-task then passed on EBRAINS and was ingested at
 `10.11.205.161`, two cases, 32 events per case, 96/96 lookup replies per case,
 zero stale replies, zero duplicate replies, zero timeouts, compact readback,
 zero synthetic fallback, enabled LR 0.25 readout `32768/0`, and no-learning LR
-0.0 readout `0/0`. The current next step is Tier 4.32f contract/design before
-another multi-chip hardware package. Benchmarks, speedup claims, native-scale
+0.0 readout `0/0`. Tier 4.32f then passed locally at
+`controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/`
+and selected lifecycle traffic with resource counters as the next direction.
+The current next step is Tier 4.32g-r0 source/route repair audit before another
+multi-chip hardware package. Benchmarks, speedup claims, native-scale
 baseline-freeze claims, lifecycle scaling, multi-shard learning, and true
 two-partition cross-chip learning remain blocked.
 

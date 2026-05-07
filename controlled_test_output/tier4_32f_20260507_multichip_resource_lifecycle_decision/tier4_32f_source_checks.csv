@@ -1,0 +1,14 @@
+check_id,file,token,present,implication
+lifecycle_event_msg_type,coral_reef_spinnaker/spinnaker_runtime/src/config.h,MCPL_MSG_LIFECYCLE_EVENT_REQUEST,True,Lifecycle event request packet type exists.
+lifecycle_trophic_msg_type,coral_reef_spinnaker/spinnaker_runtime/src/config.h,MCPL_MSG_LIFECYCLE_TROPHIC_UPDATE,True,Lifecycle trophic update packet type exists.
+lifecycle_mask_sync_msg_type,coral_reef_spinnaker/spinnaker_runtime/src/config.h,MCPL_MSG_LIFECYCLE_ACTIVE_MASK_SYNC,True,Lifecycle active-mask sync packet type exists.
+lifecycle_event_sender,coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h,cra_lifecycle_send_event_request_stub,True,Lifecycle event request sender is declared.
+lifecycle_trophic_sender,coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h,cra_lifecycle_send_trophic_update_stub,True,Lifecycle trophic update sender is declared.
+lifecycle_event_handler,coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h,cra_lifecycle_handle_event_request,True,Lifecycle event receiver/handler is declared.
+lifecycle_trophic_handler,coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h,cra_lifecycle_handle_trophic_request,True,Lifecycle trophic receiver/handler is declared.
+lifecycle_mask_receiver,coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h,cra_lifecycle_receive_active_mask_sync,True,Lifecycle mask-sync receiver is declared.
+lifecycle_duplicate_counter,coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h,lifecycle_duplicate_events,True,Duplicate lifecycle events are counted.
+lifecycle_stale_counter,coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h,lifecycle_stale_events,True,Stale lifecycle events are counted.
+lifecycle_missing_ack_counter,coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h,lifecycle_missing_acks,True,Missing lifecycle acks are counted.
+lookup_interchip_request_route,coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c,CRA_MCPL_INTERCHIP_REQUEST_LINK_ROUTE,True,Lookup route repair has explicit source-chip request-link routing.
+lookup_interchip_reply_route,coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c,CRA_MCPL_INTERCHIP_REPLY_LINK_ROUTE,True,Lookup route repair has explicit state-chip reply-link routing.
