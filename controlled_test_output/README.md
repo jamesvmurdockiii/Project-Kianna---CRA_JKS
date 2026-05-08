@@ -5,10 +5,10 @@ ledger is `STUDY_REGISTRY.json`; the compact table is `STUDY_REGISTRY.csv`.
 Older reruns, prepared capsules, debug probes, and baseline-frozen
 mechanism bundles outside the formal registry are preserved for audit.
 
-- Generated: `2026-05-08T17:15:07.937268+00:00`
+- Generated: `2026-05-08T17:37:14.436907+00:00`
 - Registry status: **PASS**
-- Canonical evidence entries: `78`
-- Expanded test-entry count: `78`; see the canonical evidence table below for the exact current tier list.
+- Canonical evidence entries: `81`
+- Expanded test-entry count: `81`; see the canonical evidence table below for the exact current tier list.
 
 ## Evidence Categories
 
@@ -92,6 +92,7 @@ mechanism bundles outside the formal registry are preserved for audit.
 | `tier4_32a_single_chip_scale_stress_preflight` | **PASS** | `controlled_test_output/tier4_32a_20260506_single_chip_scale_stress` | Local preflight/source-inspection evidence only; not a SpiNNaker hardware run, not speedup evidence, not replicated-shard scaling, not multi-chip scaling, not static reef partition proof, not benchmark superiority, and not a baseline freeze. |
 | `tier4_32a_r0_protocol_truth_audit` | **PASS** | `controlled_test_output/tier4_32a_r0_20260506_protocol_truth_audit` | Local source/documentation audit only; not SpiNNaker hardware evidence, not speedup evidence, not multi-chip scaling, not static reef partition proof, and not a baseline freeze. |
 | `tier4_32a_r1_mcpl_lookup_repair` | **PASS** | `controlled_test_output/tier4_32a_r1_20260506_mcpl_lookup_repair` | Local source/runtime evidence only; not SpiNNaker hardware evidence, not speedup evidence, not replicated-shard scaling, not multi-chip scaling, not static reef partitioning, and not a baseline freeze. |
+| `tier4_32a_hw_replicated_shard_stress` | **PASS** | `controlled_test_output/tier4_32a_hw_replicated_20260507_hardware_pass_ingested` | Single-chip replicated-shard hardware stress only; not multi-chip evidence, not speedup evidence, not static reef partitioning, not benchmark superiority, and not a native-scale baseline freeze by itself. |
 | `tier4_32b_static_reef_partition_smoke` | **PASS** | `controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke` | Local static partition/resource evidence only; not a new SpiNNaker hardware run, not speedup evidence, not one-polyp-one-chip evidence, not multi-chip evidence, not benchmark superiority, and not a native-scale baseline freeze. |
 | `tier4_32c_interchip_feasibility_contract` | **PASS** | `controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract` | Local contract evidence only; not SpiNNaker hardware evidence, not multi-chip execution evidence, not true two-partition cross-chip learning evidence, not speedup evidence, not learning-scale evidence, not benchmark superiority, and not a native-scale baseline freeze. |
 | `tier4_32d_r0_interchip_route_source_audit` | **PASS** | `controlled_test_output/tier4_32d_r0_20260507_interchip_route_source_audit` | Local audit evidence only; not SpiNNaker hardware evidence, not an EBRAINS package, not multi-chip execution evidence, not speedup evidence, not learning-scale evidence, not benchmark superiority, and not a native-scale baseline freeze. |
@@ -100,6 +101,8 @@ mechanism bundles outside the formal registry are preserved for audit.
 | `tier4_32e_multi_chip_learning_microtask` | **PASS** | `controlled_test_output/tier4_32e_20260507_hardware_pass_ingested` | Two-chip single-shard learning micro-task only; not speedup evidence, not benchmark superiority, not true two-partition cross-chip learning, not lifecycle scaling, not multi-shard learning, and not a native-scale baseline freeze. |
 | `tier4_32f_multichip_resource_lifecycle_decision` | **PASS** | `controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision` | Local decision/contract evidence only; not hardware evidence, not lifecycle scaling, not speedup evidence, not benchmark superiority, not true two-partition learning, not multi-shard learning, and not a native-scale baseline freeze. |
 | `tier4_32g_r0_multichip_lifecycle_route_source_audit` | **PASS** | `controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit` | Local source/runtime QA only; not SpiNNaker hardware evidence, not lifecycle scaling, not speedup evidence, not benchmark superiority, not true two-partition learning, not multi-shard learning, and not a native-scale baseline freeze. |
+| `tier4_32g_two_chip_lifecycle_traffic_resource_smoke` | **PASS** | `controlled_test_output/tier4_32g_20260508_hardware_pass_ingested` | Two-chip lifecycle traffic/resource smoke only; not lifecycle scaling, not speedup evidence, not benchmark superiority, not true partitioned ecology, not multi-shard learning, and not a native-scale baseline freeze by itself. |
+| `tier4_32h_native_scale_evidence_closeout` | **PASS** | `controlled_test_output/tier4_32h_20260508_native_scale_evidence_closeout` | Local evidence closeout only; not a new hardware run, not speedup evidence, not benchmark evidence, not real-task usefulness, not true two-partition learning, not lifecycle scaling, not multi-shard learning, and not AGI/ASI evidence. |
 
 ## Noncanonical Outputs
 
@@ -295,14 +298,12 @@ cite them as current study results unless promoted in `STUDY_REGISTRY.json`.
 | `controlled_test_output/tier4_31d_hw_20260506_prepared` | `prepared_capsule` | `prepared` | `2026-05-06T18:50:47+00:00` |
 | `controlled_test_output/tier4_32a_hw_20260506_prepared` | `prepared_capsule` | `prepared` | `2026-05-06T23:37:49+00:00` |
 | `controlled_test_output/tier4_32a_hw_20260507_hardware_pass_ingested` | `hardware_probe_pass` | `pass` | `2026-05-07T00:28:48+00:00` |
-| `controlled_test_output/tier4_32a_hw_replicated_20260507_hardware_pass_ingested` | `hardware_probe_pass` | `pass` | `2026-05-07T01:14:36+00:00` |
 | `controlled_test_output/tier4_32a_hw_replicated_20260507_prepared` | `prepared_capsule` | `prepared` | `2026-05-07T00:45:04+00:00` |
 | `controlled_test_output/tier4_32d_20260507_prepared` | `prepared_capsule` | `prepared` | `2026-05-07T03:27:14+00:00` |
 | `controlled_test_output/tier4_32e_20260507_prepared` | `prepared_capsule` | `prepared` | `2026-05-07T17:02:16+00:00` |
 | `controlled_test_output/tier4_32g_20260507_hardware_fail_ingested` | `superseded_rerun` | `fail` | `2026-05-08T02:59:39+00:00` |
 | `controlled_test_output/tier4_32g_20260507_prepared` | `prepared_capsule` | `prepared` | `2026-05-07T20:34:53+00:00` |
 | `controlled_test_output/tier4_32g_20260507_r1_prepared` | `prepared_capsule` | `prepared` | `2026-05-08T02:59:50+00:00` |
-| `controlled_test_output/tier4_32g_20260508_hardware_pass_ingested` | `hardware_probe_pass` | `pass` | `2026-05-08T17:09:21+00:00` |
 | `controlled_test_output/tier4_32g_20260508_old_package_return_ingested` | `superseded_rerun` | `fail` | `2026-05-08T03:31:39+00:00` |
 | `controlled_test_output/tier4_32g_20260508_r2_prepared` | `prepared_capsule` | `prepared` | `2026-05-08T03:31:50+00:00` |
 | `controlled_test_output/tier5_10_20260428_181304` | `superseded_rerun` | `pass` | `2026-04-28T22:13:10+00:00` |

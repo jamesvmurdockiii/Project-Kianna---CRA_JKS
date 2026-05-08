@@ -20,6 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CONTROLLED = ROOT / "controlled_test_output"
 DOC_PATH = ROOT / "docs" / "RESEARCH_GRADE_AUDIT.md"
 JSON_PATH = CONTROLLED / "RESEARCH_GRADE_AUDIT.json"
+EXPECTED_CANONICAL_EVIDENCE_COUNT = 81
 
 REQUIRED_SOURCE_DOCS = [
     "README.md",
@@ -30,6 +31,7 @@ REQUIRED_SOURCE_DOCS = [
     "docs/ABSTRACT.md",
     "docs/WHITEPAPER.md",
     "docs/REVIEWER_DEFENSE_PLAN.md",
+    "docs/MECHANISM_STATUS.md",
     "docs/CODEBASE_MAP.md",
     "docs/PAPER_RESULTS_TABLE.md",
     "experiments/README.md",
@@ -113,6 +115,9 @@ REQUIRED_BASELINE_FILES = [
     "baselines/CRA_LIFECYCLE_NATIVE_BASELINE_v0.4.md",
     "baselines/CRA_LIFECYCLE_NATIVE_BASELINE_v0.4.json",
     "baselines/CRA_LIFECYCLE_NATIVE_BASELINE_v0.4_STUDY_REGISTRY.snapshot.json",
+    "baselines/CRA_NATIVE_SCALE_BASELINE_v0.5.md",
+    "baselines/CRA_NATIVE_SCALE_BASELINE_v0.5.json",
+    "baselines/CRA_NATIVE_SCALE_BASELINE_v0.5_STUDY_REGISTRY.snapshot.json",
 ]
 
 FORBIDDEN_GENERATED_NAMES = {".DS_Store", ".pytest_cache", "__pycache__"}
@@ -234,11 +239,15 @@ def check_registry() -> tuple[Check, dict[str, Any]]:
     failures: list[str] = []
     if registry.get("registry_status") != "pass":
         failures.append(f"registry_status={registry.get('registry_status')}")
-    if registry.get("evidence_count") != 78:
-        failures.append(f"evidence_count={registry.get('evidence_count')} expected 78")
-    if registry.get("expanded_test_entry_count") != 78:
+    if registry.get("evidence_count") != EXPECTED_CANONICAL_EVIDENCE_COUNT:
         failures.append(
-            f"expanded_test_entry_count={registry.get('expanded_test_entry_count')} expected 78"
+            f"evidence_count={registry.get('evidence_count')} "
+            f"expected {EXPECTED_CANONICAL_EVIDENCE_COUNT}"
+        )
+    if registry.get("expanded_test_entry_count") != EXPECTED_CANONICAL_EVIDENCE_COUNT:
+        failures.append(
+            f"expanded_test_entry_count={registry.get('expanded_test_entry_count')} "
+            f"expected {EXPECTED_CANONICAL_EVIDENCE_COUNT}"
         )
     integrity = registry.get("integrity") or {}
     if integrity.get("missing_expected_artifacts"):
@@ -569,6 +578,7 @@ def build_report(checks: list[Check], registry: dict[str, Any]) -> str:
             "- Frozen native task baseline: `baselines/CRA_NATIVE_TASK_BASELINE_v0.2.md`",
             "- Frozen native mechanism bridge: `baselines/CRA_NATIVE_MECHANISM_BRIDGE_v0.3.md`",
             "- Frozen lifecycle native baseline: `baselines/CRA_LIFECYCLE_NATIVE_BASELINE_v0.4.md`",
+            "- Frozen native-scale substrate baseline: `baselines/CRA_NATIVE_SCALE_BASELINE_v0.5.md`",
             "- Full narrative: `docs/WHITEPAPER.md`",
             "- Reviewer defense plan: `docs/REVIEWER_DEFENSE_PLAN.md`",
             "- Codebase map: `docs/CODEBASE_MAP.md`",
@@ -624,6 +634,7 @@ def build_report(checks: list[Check], registry: dict[str, Any]) -> str:
             "- Tier 4.30e is multi-core lifecycle hardware smoke evidence; it proves the five-profile lifecycle runtime surface builds/loads/executes on one real SpiNNaker board with ownership guards, duplicate/stale rejection, and canonical/boundary lifecycle parity, but it is not lifecycle task-benefit evidence, lifecycle sham-control success, speedup, multi-chip scaling, v2.2 temporal migration, or a lifecycle baseline freeze.",
             "- Tier 4.30f is lifecycle sham-control hardware subset evidence; it proves enabled and five predeclared lifecycle controls separate on real SpiNNaker, but it is not lifecycle task-benefit evidence, full Tier 6.3 hardware, speedup, multi-chip scaling, v2.2 temporal migration, or a lifecycle baseline freeze by itself.",
             "- Tier 4.30g-hw is lifecycle task-benefit/resource bridge hardware evidence; it proves a bounded host-ferried lifecycle gate opens for enabled mode and closes for five controls with returned resource accounting, but it is not autonomous lifecycle-to-learning MCPL, speedup, multi-chip scaling, dynamic population creation, v2.2 temporal migration, or full organism autonomy.",
+            "- Tier 4.32h is a local native-scale evidence closeout that freezes `CRA_NATIVE_SCALE_BASELINE_v0.5` over 4.32a-replicated, 4.32d, 4.32e, and 4.32g. It is a substrate baseline only, not speedup evidence, benchmark usefulness evidence, true two-partition learning, lifecycle scaling, multi-shard learning, language, planning, AGI, or ASI.",
             "- Tier 4.20a is a passed hardware-transfer readiness audit; it classifies v2.1 mechanisms by chunked-host readiness versus future custom-runtime/on-chip blockers, but it is not SpiNNaker hardware evidence or v2.1 hardware transfer.",
             "- Tier 4.20b is passed one-seed v2.1 chunked-host bridge/transport hardware evidence; it returned real pyNN.spiNNaker execution, zero fallback, zero sim.run/readback failures, and nonzero spike readback, but it is not repeatability evidence or full native/on-chip v2.1 mechanism execution.",
             "- Tier 6.1 is controlled software lifecycle/self-scaling evidence with clean lineage and hard-switch advantage regimes; it is not full adult turnover, sham-control proof, hardware lifecycle, or external-baseline superiority.",

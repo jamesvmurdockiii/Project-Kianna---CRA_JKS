@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-05-08T17:37:13.642134+00:00",
+  "source_generated_at_utc": "2026-05-08T17:35:32+00:00",
+  "registry_entry_id": "tier4_32h_native_scale_evidence_closeout",
+  "tier": "Tier 4.32h - Native-Scale Evidence Closeout / Baseline Decision",
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_32h_20260508_native_scale_evidence_closeout",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_32h_20260508_native_scale_evidence_closeout/tier4_32h_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_32h_20260508_native_scale_evidence_closeout/tier4_32h_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32h_20260508_native_scale_evidence_closeout/tier4_32h_summary.csv",
+  "canonical": true,
+  "claim": "Tier 4.32h passed 64/64 closeout criteria and froze CRA_NATIVE_SCALE_BASELINE_v0.5 as a bounded native-scale substrate baseline over the completed 4.32a/4.32d/4.32e/4.32g hardware evidence bundle.",
+  "caveat": "Local evidence closeout only; not a new hardware run, not speedup evidence, not benchmark evidence, not real-task usefulness, not true two-partition learning, not lifecycle scaling, not multi-shard learning, and not AGI/ASI evidence."
+}

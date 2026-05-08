@@ -1,0 +1,935 @@
+{
+  "baseline_decision": "freeze_authorized",
+  "baseline_files": {
+    "json": "/Users/james/JKS:CRA/baselines/CRA_NATIVE_SCALE_BASELINE_v0.5.json",
+    "markdown": "/Users/james/JKS:CRA/baselines/CRA_NATIVE_SCALE_BASELINE_v0.5.md",
+    "registry_snapshot": "/Users/james/JKS:CRA/baselines/CRA_NATIVE_SCALE_BASELINE_v0.5_STUDY_REGISTRY.snapshot.json"
+  },
+  "baseline_id": "CRA_NATIVE_SCALE_BASELINE_v0.5",
+  "claim_boundary": "Tier 4.32h is a local evidence closeout and baseline decision over already returned native-scale hardware evidence. It is not a new SpiNNaker run, not speedup evidence, not benchmark evidence, not real-task usefulness evidence, not true two-partition learning, not lifecycle scaling, not multi-shard learning, and not AGI/ASI evidence.",
+  "criteria": [
+    {
+      "name": "runner revision current",
+      "note": "",
+      "passed": true,
+      "rule": "expected",
+      "value": "tier4_32h_native_scale_evidence_closeout_20260508_0001"
+    },
+    {
+      "name": "all evidence bundles pass",
+      "note": "",
+      "passed": true,
+      "rule": "all == pass",
+      "value": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "name": "4.32a replicated stress included",
+      "note": "",
+      "passed": true,
+      "rule": "== True",
+      "value": true
+    },
+    {
+      "name": "4.32d two-chip communication included",
+      "note": "",
+      "passed": true,
+      "rule": "== True",
+      "value": true
+    },
+    {
+      "name": "4.32e learning microtask included",
+      "note": "",
+      "passed": true,
+      "rule": "== True",
+      "value": true
+    },
+    {
+      "name": "4.32g lifecycle traffic included",
+      "note": "",
+      "passed": true,
+      "rule": "== True",
+      "value": true
+    },
+    {
+      "name": "native baseline freeze is bounded",
+      "note": "",
+      "passed": true,
+      "rule": "rejects speedup/benchmark/usefulness",
+      "value": "Tier 4.32h is a local evidence closeout and baseline decision over already returned native-scale hardware evidence. It is not a new SpiNNaker run, not speedup evidence, not benchmark evidence, not real-task usefulness evidence, not true two-partition learning, not lifecycle scaling, not multi-shard learning, and not AGI/ASI evidence."
+    },
+    {
+      "name": "software usefulness pivot declared",
+      "note": "",
+      "passed": true,
+      "rule": "Tier 6.2/7.x next",
+      "value": "Run Tier 6.2 hard synthetic usefulness suite in software with strong baselines."
+    },
+    {
+      "name": "tier4_32a_hw_replicated_shard_stress results file exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_hw_replicated_20260507_hardware_pass_ingested/tier4_32a_hw_replicated_results.json"
+    },
+    {
+      "name": "tier4_32a_hw_replicated_shard_stress status pass",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "tier4_32a_hw_replicated_shard_stress runner revision matches",
+      "note": "",
+      "passed": true,
+      "rule": "== tier4_32a_hw_replicated_shard_stress_20260507_0001",
+      "value": "tier4_32a_hw_replicated_shard_stress_20260507_0001"
+    },
+    {
+      "name": "tier4_32a_hw_replicated_shard_stress returned artifacts preserved",
+      "note": "",
+      "passed": true,
+      "rule": ">= 80",
+      "value": 80
+    },
+    {
+      "name": "tier4_32a_hw_replicated_shard_stress summary raw_remote_status",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "tier4_32a_hw_replicated_shard_stress summary point08_status",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "tier4_32a_hw_replicated_shard_stress summary point12_status",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "tier4_32a_hw_replicated_shard_stress summary point16_status",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "tier4_32a_hw_replicated_shard_stress criterion present and passed: hardware mode was run-hardware",
+      "note": "",
+      "passed": true,
+      "rule": "present and passed",
+      "value": "hardware mode was run-hardware"
+    },
+    {
+      "name": "tier4_32a_hw_replicated_shard_stress criterion present and passed: raw hardware status pass",
+      "note": "",
+      "passed": true,
+      "rule": "present and passed",
+      "value": "raw hardware status pass"
+    },
+    {
+      "name": "tier4_32a_hw_replicated_shard_stress criterion present and passed: point08 pass",
+      "note": "",
+      "passed": true,
+      "rule": "present and passed",
+      "value": "point08 pass"
+    },
+    {
+      "name": "tier4_32a_hw_replicated_shard_stress criterion present and passed: point12 pass",
+      "note": "",
+      "passed": true,
+      "rule": "present and passed",
+      "value": "point12 pass"
+    },
+    {
+      "name": "tier4_32a_hw_replicated_shard_stress criterion present and passed: point16 pass",
+      "note": "",
+      "passed": true,
+      "rule": "present and passed",
+      "value": "point16 pass"
+    },
+    {
+      "name": "tier4_32a_hw_replicated_shard_stress criterion present and passed: single-chip replicated-shard only",
+      "note": "",
+      "passed": true,
+      "rule": "present and passed",
+      "value": "single-chip replicated-shard only"
+    },
+    {
+      "name": "tier4_32a_hw_replicated_shard_stress criterion present and passed: synthetic fallback zero",
+      "note": "",
+      "passed": true,
+      "rule": "present and passed",
+      "value": "synthetic fallback zero"
+    },
+    {
+      "name": "tier4_32a_hw_replicated_shard_stress claim boundary rejects speedup/benchmark",
+      "note": "",
+      "passed": true,
+      "rule": "contains not speedup and not benchmark",
+      "value": "Ingest confirms returned EBRAINS run-hardware artifacts only; baseline decisions remain separate. Tier 4.32a-hw-replicated is a single-chip replicated-shard EBRAINS hardware stress over the repaired Tier 4.32a-r1 MCPL value/meta protocol. It is not multi-chip evidence, not speedup evidence, not static reef partitioning, not benchmark superiority evidence, and not a native-scale baseline freeze."
+    },
+    {
+      "name": "tier4_32d_two_chip_mcpl_lookup_hardware_smoke results file exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_32d_20260507_hardware_pass_ingested/tier4_32d_results.json"
+    },
+    {
+      "name": "tier4_32d_two_chip_mcpl_lookup_hardware_smoke status pass",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "tier4_32d_two_chip_mcpl_lookup_hardware_smoke runner revision matches",
+      "note": "",
+      "passed": true,
+      "rule": "== tier4_32d_interchip_mcpl_smoke_20260507_0001",
+      "value": "tier4_32d_interchip_mcpl_smoke_20260507_0001"
+    },
+    {
+      "name": "tier4_32d_two_chip_mcpl_lookup_hardware_smoke returned artifacts preserved",
+      "note": "",
+      "passed": true,
+      "rule": ">= 40",
+      "value": 40
+    },
+    {
+      "name": "tier4_32d_two_chip_mcpl_lookup_hardware_smoke summary raw_remote_status",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "tier4_32d_two_chip_mcpl_lookup_hardware_smoke summary interchip_smoke_status",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "tier4_32d_two_chip_mcpl_lookup_hardware_smoke criterion present and passed: hardware mode was run-hardware",
+      "note": "",
+      "passed": true,
+      "rule": "present and passed",
+      "value": "hardware mode was run-hardware"
+    },
+    {
+      "name": "tier4_32d_two_chip_mcpl_lookup_hardware_smoke criterion present and passed: raw hardware status pass",
+      "note": "",
+      "passed": true,
+      "rule": "present and passed",
+      "value": "raw hardware status pass"
+    },
+    {
+      "name": "tier4_32d_two_chip_mcpl_lookup_hardware_smoke criterion present and passed: interchip smoke pass",
+      "note": "",
+      "passed": true,
+      "rule": "present and passed",
+      "value": "interchip smoke pass"
+    },
+    {
+      "name": "tier4_32d_two_chip_mcpl_lookup_hardware_smoke criterion present and passed: true two-partition learning not attempted",
+      "note": "",
+      "passed": true,
+      "rule": "present and passed",
+      "value": "true two-partition learning not attempted"
+    },
+    {
+      "name": "tier4_32d_two_chip_mcpl_lookup_hardware_smoke criterion present and passed: synthetic fallback zero",
+      "note": "",
+      "passed": true,
+      "rule": "present and passed",
+      "value": "synthetic fallback zero"
+    },
+    {
+      "name": "tier4_32d_two_chip_mcpl_lookup_hardware_smoke claim boundary rejects speedup/benchmark",
+      "note": "",
+      "passed": true,
+      "rule": "contains not speedup and not benchmark",
+      "value": "Ingest confirms returned EBRAINS run-hardware artifacts only; baseline decisions remain separate. Tier 4.32d is a two-chip split-role single-shard MCPL lookup communication/readback smoke. It proves only the named source-chip learning to remote-chip state-core lookup path for shard 0 if hardware artifacts pass. It is not speedup evidence, not benchmark evidence, not true two-partition learning, not lifecycle scaling, not multi-shard learning, and not a native-scale baseline freeze."
+    },
+    {
+      "name": "tier4_32e_multi_chip_learning_microtask results file exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/tier4_32e_results.json"
+    },
+    {
+      "name": "tier4_32e_multi_chip_learning_microtask status pass",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "tier4_32e_multi_chip_learning_microtask runner revision matches",
+      "note": "",
+      "passed": true,
+      "rule": "== tier4_32e_multichip_learning_microtask_20260507_0001",
+      "value": "tier4_32e_multichip_learning_microtask_20260507_0001"
+    },
+    {
+      "name": "tier4_32e_multi_chip_learning_microtask returned artifacts preserved",
+      "note": "",
+      "passed": true,
+      "rule": ">= 42",
+      "value": 42
+    },
+    {
+      "name": "tier4_32e_multi_chip_learning_microtask summary raw_remote_status",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "tier4_32e_multi_chip_learning_microtask summary learning_microtask_status",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "tier4_32e_multi_chip_learning_microtask criterion present and passed: hardware mode was run-hardware",
+      "note": "",
+      "passed": true,
+      "rule": "present and passed",
+      "value": "hardware mode was run-hardware"
+    },
+    {
+      "name": "tier4_32e_multi_chip_learning_microtask criterion present and passed: raw hardware status pass",
+      "note": "",
+      "passed": true,
+      "rule": "present and passed",
+      "value": "raw hardware status pass"
+    },
+    {
+      "name": "tier4_32e_multi_chip_learning_microtask criterion present and passed: learning microtask pass",
+      "note": "",
+      "passed": true,
+      "rule": "present and passed",
+      "value": "learning microtask pass"
+    },
+    {
+      "name": "tier4_32e_multi_chip_learning_microtask criterion present and passed: enabled case present",
+      "note": "",
+      "passed": true,
+      "rule": "present and passed",
+      "value": "enabled case present"
+    },
+    {
+      "name": "tier4_32e_multi_chip_learning_microtask criterion present and passed: no-learning case present",
+      "note": "",
+      "passed": true,
+      "rule": "present and passed",
+      "value": "no-learning case present"
+    },
+    {
+      "name": "tier4_32e_multi_chip_learning_microtask criterion present and passed: true two-partition learning not attempted",
+      "note": "",
+      "passed": true,
+      "rule": "present and passed",
+      "value": "true two-partition learning not attempted"
+    },
+    {
+      "name": "tier4_32e_multi_chip_learning_microtask criterion present and passed: synthetic fallback zero",
+      "note": "",
+      "passed": true,
+      "rule": "present and passed",
+      "value": "synthetic fallback zero"
+    },
+    {
+      "name": "tier4_32e_multi_chip_learning_microtask claim boundary rejects speedup/benchmark",
+      "note": "",
+      "passed": true,
+      "rule": "contains not speedup and not benchmark",
+      "value": "Ingest confirms returned EBRAINS run-hardware artifacts only; baseline decisions remain separate. Tier 4.32e is a two-chip split-role single-shard learning micro-task over the MCPL lookup path. It proves only that the named source-chip learning core can retrieve remote context/route/memory state from the remote chip and update its readout on a 32-event deterministic task while a no-learning control stays immobile. It is not speedup evidence, not benchmark evidence, not true two-partition learning, not lifecycle scaling, not multi-shard learning, and not a native-scale baseline freeze."
+    },
+    {
+      "name": "tier4_32g_two_chip_lifecycle_traffic_resource_smoke results file exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_32g_20260508_hardware_pass_ingested/tier4_32g_results.json"
+    },
+    {
+      "name": "tier4_32g_two_chip_lifecycle_traffic_resource_smoke status pass",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "tier4_32g_two_chip_lifecycle_traffic_resource_smoke runner revision matches",
+      "note": "",
+      "passed": true,
+      "rule": "== tier4_32g_multichip_lifecycle_traffic_resource_smoke_20260508_0003",
+      "value": "tier4_32g_multichip_lifecycle_traffic_resource_smoke_20260508_0003"
+    },
+    {
+      "name": "tier4_32g_two_chip_lifecycle_traffic_resource_smoke returned artifacts preserved",
+      "note": "",
+      "passed": true,
+      "rule": ">= 30",
+      "value": 30
+    },
+    {
+      "name": "tier4_32g_two_chip_lifecycle_traffic_resource_smoke summary raw_remote_status",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "tier4_32g_two_chip_lifecycle_traffic_resource_smoke summary lifecycle_traffic_status",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "tier4_32g_two_chip_lifecycle_traffic_resource_smoke summary traffic_counter_core_pass",
+      "note": "",
+      "passed": true,
+      "rule": "== True",
+      "value": true
+    },
+    {
+      "name": "tier4_32g_two_chip_lifecycle_traffic_resource_smoke summary stale_package_detected",
+      "note": "",
+      "passed": true,
+      "rule": "== False",
+      "value": false
+    },
+    {
+      "name": "tier4_32g_two_chip_lifecycle_traffic_resource_smoke criterion present and passed: hardware mode was run-hardware",
+      "note": "",
+      "passed": true,
+      "rule": "present and passed",
+      "value": "hardware mode was run-hardware"
+    },
+    {
+      "name": "tier4_32g_two_chip_lifecycle_traffic_resource_smoke criterion present and passed: raw hardware status pass",
+      "note": "",
+      "passed": true,
+      "rule": "present and passed",
+      "value": "raw hardware status pass"
+    },
+    {
+      "name": "tier4_32g_two_chip_lifecycle_traffic_resource_smoke criterion present and passed: lifecycle traffic smoke pass",
+      "note": "",
+      "passed": true,
+      "rule": "present and passed",
+      "value": "lifecycle traffic smoke pass"
+    },
+    {
+      "name": "tier4_32g_two_chip_lifecycle_traffic_resource_smoke criterion present and passed: traffic counters internally passed",
+      "note": "",
+      "passed": true,
+      "rule": "present and passed",
+      "value": "traffic counters internally passed"
+    },
+    {
+      "name": "tier4_32g_two_chip_lifecycle_traffic_resource_smoke criterion present and passed: synthetic fallback zero",
+      "note": "",
+      "passed": true,
+      "rule": "present and passed",
+      "value": "synthetic fallback zero"
+    },
+    {
+      "name": "tier4_32g_two_chip_lifecycle_traffic_resource_smoke claim boundary rejects speedup/benchmark",
+      "note": "",
+      "passed": true,
+      "rule": "contains not speedup and not benchmark",
+      "value": "Ingest confirms returned EBRAINS run-hardware artifacts only; baseline decisions remain separate. Tier 4.32g is a two-chip lifecycle traffic/resource smoke. It proves only that the named source-chip learning core can emit lifecycle event/trophic MCPL requests to a remote-chip lifecycle core and receive the resulting active-mask/lineage sync through compact readback counters. It is not lifecycle scaling, not benchmark evidence, not speedup evidence, not multi-shard learning, not true partitioned ecology, and not a native-scale baseline freeze."
+    }
+  ],
+  "criteria_passed": 64,
+  "criteria_total": 64,
+  "evidence_bundles": [
+    {
+      "boundary": "Single-chip replicated-shard stress only; not multi-chip or speedup evidence.",
+      "canonical_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_hw_replicated_20260507_hardware_pass_ingested",
+      "claim": "Single-chip replicated-shard MCPL stress passed at 8/12/16-core stress points with returned artifacts preserved.",
+      "criteria": [
+        {
+          "name": "results file exists",
+          "note": "",
+          "passed": true,
+          "rule": "exists",
+          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_hw_replicated_20260507_hardware_pass_ingested/tier4_32a_hw_replicated_results.json"
+        },
+        {
+          "name": "status pass",
+          "note": "",
+          "passed": true,
+          "rule": "== pass",
+          "value": "pass"
+        },
+        {
+          "name": "runner revision matches",
+          "note": "",
+          "passed": true,
+          "rule": "== tier4_32a_hw_replicated_shard_stress_20260507_0001",
+          "value": "tier4_32a_hw_replicated_shard_stress_20260507_0001"
+        },
+        {
+          "name": "returned artifacts preserved",
+          "note": "",
+          "passed": true,
+          "rule": ">= 80",
+          "value": 80
+        },
+        {
+          "name": "summary raw_remote_status",
+          "note": "",
+          "passed": true,
+          "rule": "== pass",
+          "value": "pass"
+        },
+        {
+          "name": "summary point08_status",
+          "note": "",
+          "passed": true,
+          "rule": "== pass",
+          "value": "pass"
+        },
+        {
+          "name": "summary point12_status",
+          "note": "",
+          "passed": true,
+          "rule": "== pass",
+          "value": "pass"
+        },
+        {
+          "name": "summary point16_status",
+          "note": "",
+          "passed": true,
+          "rule": "== pass",
+          "value": "pass"
+        },
+        {
+          "name": "criterion present and passed: hardware mode was run-hardware",
+          "note": "",
+          "passed": true,
+          "rule": "present and passed",
+          "value": "hardware mode was run-hardware"
+        },
+        {
+          "name": "criterion present and passed: raw hardware status pass",
+          "note": "",
+          "passed": true,
+          "rule": "present and passed",
+          "value": "raw hardware status pass"
+        },
+        {
+          "name": "criterion present and passed: point08 pass",
+          "note": "",
+          "passed": true,
+          "rule": "present and passed",
+          "value": "point08 pass"
+        },
+        {
+          "name": "criterion present and passed: point12 pass",
+          "note": "",
+          "passed": true,
+          "rule": "present and passed",
+          "value": "point12 pass"
+        },
+        {
+          "name": "criterion present and passed: point16 pass",
+          "note": "",
+          "passed": true,
+          "rule": "present and passed",
+          "value": "point16 pass"
+        },
+        {
+          "name": "criterion present and passed: single-chip replicated-shard only",
+          "note": "",
+          "passed": true,
+          "rule": "present and passed",
+          "value": "single-chip replicated-shard only"
+        },
+        {
+          "name": "criterion present and passed: synthetic fallback zero",
+          "note": "",
+          "passed": true,
+          "rule": "present and passed",
+          "value": "synthetic fallback zero"
+        },
+        {
+          "name": "claim boundary rejects speedup/benchmark",
+          "note": "",
+          "passed": true,
+          "rule": "contains not speedup and not benchmark",
+          "value": "Ingest confirms returned EBRAINS run-hardware artifacts only; baseline decisions remain separate. Tier 4.32a-hw-replicated is a single-chip replicated-shard EBRAINS hardware stress over the repaired Tier 4.32a-r1 MCPL value/meta protocol. It is not multi-chip evidence, not speedup evidence, not static reef partitioning, not benchmark superiority evidence, and not a native-scale baseline freeze."
+        }
+      ],
+      "criteria_passed": 16,
+      "criteria_total": 16,
+      "entry_id": "tier4_32a_hw_replicated_shard_stress",
+      "failed_criteria": [],
+      "label": "Tier 4.32a-hw-replicated single-chip replicated-shard stress",
+      "results_file": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_hw_replicated_20260507_hardware_pass_ingested/tier4_32a_hw_replicated_results.json",
+      "returned_artifact_count": 80,
+      "runner_revision": "tier4_32a_hw_replicated_shard_stress_20260507_0001",
+      "status": "pass"
+    },
+    {
+      "boundary": "Two-chip communication/readback smoke only; not learning scale or speedup evidence.",
+      "canonical_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_32d_20260507_hardware_pass_ingested",
+      "claim": "Two-chip MCPL lookup communication/readback passed with zero stale replies, duplicate replies, timeouts, or synthetic fallback.",
+      "criteria": [
+        {
+          "name": "results file exists",
+          "note": "",
+          "passed": true,
+          "rule": "exists",
+          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_32d_20260507_hardware_pass_ingested/tier4_32d_results.json"
+        },
+        {
+          "name": "status pass",
+          "note": "",
+          "passed": true,
+          "rule": "== pass",
+          "value": "pass"
+        },
+        {
+          "name": "runner revision matches",
+          "note": "",
+          "passed": true,
+          "rule": "== tier4_32d_interchip_mcpl_smoke_20260507_0001",
+          "value": "tier4_32d_interchip_mcpl_smoke_20260507_0001"
+        },
+        {
+          "name": "returned artifacts preserved",
+          "note": "",
+          "passed": true,
+          "rule": ">= 40",
+          "value": 40
+        },
+        {
+          "name": "summary raw_remote_status",
+          "note": "",
+          "passed": true,
+          "rule": "== pass",
+          "value": "pass"
+        },
+        {
+          "name": "summary interchip_smoke_status",
+          "note": "",
+          "passed": true,
+          "rule": "== pass",
+          "value": "pass"
+        },
+        {
+          "name": "criterion present and passed: hardware mode was run-hardware",
+          "note": "",
+          "passed": true,
+          "rule": "present and passed",
+          "value": "hardware mode was run-hardware"
+        },
+        {
+          "name": "criterion present and passed: raw hardware status pass",
+          "note": "",
+          "passed": true,
+          "rule": "present and passed",
+          "value": "raw hardware status pass"
+        },
+        {
+          "name": "criterion present and passed: interchip smoke pass",
+          "note": "",
+          "passed": true,
+          "rule": "present and passed",
+          "value": "interchip smoke pass"
+        },
+        {
+          "name": "criterion present and passed: true two-partition learning not attempted",
+          "note": "",
+          "passed": true,
+          "rule": "present and passed",
+          "value": "true two-partition learning not attempted"
+        },
+        {
+          "name": "criterion present and passed: synthetic fallback zero",
+          "note": "",
+          "passed": true,
+          "rule": "present and passed",
+          "value": "synthetic fallback zero"
+        },
+        {
+          "name": "claim boundary rejects speedup/benchmark",
+          "note": "",
+          "passed": true,
+          "rule": "contains not speedup and not benchmark",
+          "value": "Ingest confirms returned EBRAINS run-hardware artifacts only; baseline decisions remain separate. Tier 4.32d is a two-chip split-role single-shard MCPL lookup communication/readback smoke. It proves only the named source-chip learning to remote-chip state-core lookup path for shard 0 if hardware artifacts pass. It is not speedup evidence, not benchmark evidence, not true two-partition learning, not lifecycle scaling, not multi-shard learning, and not a native-scale baseline freeze."
+        }
+      ],
+      "criteria_passed": 12,
+      "criteria_total": 12,
+      "entry_id": "tier4_32d_two_chip_mcpl_lookup_hardware_smoke",
+      "failed_criteria": [],
+      "label": "Tier 4.32d two-chip MCPL communication/readback smoke",
+      "results_file": "/Users/james/JKS:CRA/controlled_test_output/tier4_32d_20260507_hardware_pass_ingested/tier4_32d_results.json",
+      "returned_artifact_count": 40,
+      "runner_revision": "tier4_32d_interchip_mcpl_smoke_20260507_0001",
+      "status": "pass"
+    },
+    {
+      "boundary": "Two-chip learning micro-task only; not true two-partition or benchmark evidence.",
+      "canonical_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested",
+      "claim": "Two-chip single-shard learning-bearing micro-task passed with the enabled-learning case separated from the no-learning control.",
+      "criteria": [
+        {
+          "name": "results file exists",
+          "note": "",
+          "passed": true,
+          "rule": "exists",
+          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/tier4_32e_results.json"
+        },
+        {
+          "name": "status pass",
+          "note": "",
+          "passed": true,
+          "rule": "== pass",
+          "value": "pass"
+        },
+        {
+          "name": "runner revision matches",
+          "note": "",
+          "passed": true,
+          "rule": "== tier4_32e_multichip_learning_microtask_20260507_0001",
+          "value": "tier4_32e_multichip_learning_microtask_20260507_0001"
+        },
+        {
+          "name": "returned artifacts preserved",
+          "note": "",
+          "passed": true,
+          "rule": ">= 42",
+          "value": 42
+        },
+        {
+          "name": "summary raw_remote_status",
+          "note": "",
+          "passed": true,
+          "rule": "== pass",
+          "value": "pass"
+        },
+        {
+          "name": "summary learning_microtask_status",
+          "note": "",
+          "passed": true,
+          "rule": "== pass",
+          "value": "pass"
+        },
+        {
+          "name": "criterion present and passed: hardware mode was run-hardware",
+          "note": "",
+          "passed": true,
+          "rule": "present and passed",
+          "value": "hardware mode was run-hardware"
+        },
+        {
+          "name": "criterion present and passed: raw hardware status pass",
+          "note": "",
+          "passed": true,
+          "rule": "present and passed",
+          "value": "raw hardware status pass"
+        },
+        {
+          "name": "criterion present and passed: learning microtask pass",
+          "note": "",
+          "passed": true,
+          "rule": "present and passed",
+          "value": "learning microtask pass"
+        },
+        {
+          "name": "criterion present and passed: enabled case present",
+          "note": "",
+          "passed": true,
+          "rule": "present and passed",
+          "value": "enabled case present"
+        },
+        {
+          "name": "criterion present and passed: no-learning case present",
+          "note": "",
+          "passed": true,
+          "rule": "present and passed",
+          "value": "no-learning case present"
+        },
+        {
+          "name": "criterion present and passed: true two-partition learning not attempted",
+          "note": "",
+          "passed": true,
+          "rule": "present and passed",
+          "value": "true two-partition learning not attempted"
+        },
+        {
+          "name": "criterion present and passed: synthetic fallback zero",
+          "note": "",
+          "passed": true,
+          "rule": "present and passed",
+          "value": "synthetic fallback zero"
+        },
+        {
+          "name": "claim boundary rejects speedup/benchmark",
+          "note": "",
+          "passed": true,
+          "rule": "contains not speedup and not benchmark",
+          "value": "Ingest confirms returned EBRAINS run-hardware artifacts only; baseline decisions remain separate. Tier 4.32e is a two-chip split-role single-shard learning micro-task over the MCPL lookup path. It proves only that the named source-chip learning core can retrieve remote context/route/memory state from the remote chip and update its readout on a 32-event deterministic task while a no-learning control stays immobile. It is not speedup evidence, not benchmark evidence, not true two-partition learning, not lifecycle scaling, not multi-shard learning, and not a native-scale baseline freeze."
+        }
+      ],
+      "criteria_passed": 14,
+      "criteria_total": 14,
+      "entry_id": "tier4_32e_multi_chip_learning_microtask",
+      "failed_criteria": [],
+      "label": "Tier 4.32e two-chip learning-bearing micro-task",
+      "results_file": "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/tier4_32e_results.json",
+      "returned_artifact_count": 42,
+      "runner_revision": "tier4_32e_multichip_learning_microtask_20260507_0001",
+      "status": "pass"
+    },
+    {
+      "boundary": "Two-chip lifecycle traffic/resource smoke only; not lifecycle scaling evidence.",
+      "canonical_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_32g_20260508_hardware_pass_ingested",
+      "claim": "Two-chip lifecycle traffic/resource smoke passed with source event/trophic requests, remote lifecycle mutation, mask sync, and zero stale/duplicate/missing-ack counters.",
+      "criteria": [
+        {
+          "name": "results file exists",
+          "note": "",
+          "passed": true,
+          "rule": "exists",
+          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_32g_20260508_hardware_pass_ingested/tier4_32g_results.json"
+        },
+        {
+          "name": "status pass",
+          "note": "",
+          "passed": true,
+          "rule": "== pass",
+          "value": "pass"
+        },
+        {
+          "name": "runner revision matches",
+          "note": "",
+          "passed": true,
+          "rule": "== tier4_32g_multichip_lifecycle_traffic_resource_smoke_20260508_0003",
+          "value": "tier4_32g_multichip_lifecycle_traffic_resource_smoke_20260508_0003"
+        },
+        {
+          "name": "returned artifacts preserved",
+          "note": "",
+          "passed": true,
+          "rule": ">= 30",
+          "value": 30
+        },
+        {
+          "name": "summary raw_remote_status",
+          "note": "",
+          "passed": true,
+          "rule": "== pass",
+          "value": "pass"
+        },
+        {
+          "name": "summary lifecycle_traffic_status",
+          "note": "",
+          "passed": true,
+          "rule": "== pass",
+          "value": "pass"
+        },
+        {
+          "name": "summary traffic_counter_core_pass",
+          "note": "",
+          "passed": true,
+          "rule": "== True",
+          "value": true
+        },
+        {
+          "name": "summary stale_package_detected",
+          "note": "",
+          "passed": true,
+          "rule": "== False",
+          "value": false
+        },
+        {
+          "name": "criterion present and passed: hardware mode was run-hardware",
+          "note": "",
+          "passed": true,
+          "rule": "present and passed",
+          "value": "hardware mode was run-hardware"
+        },
+        {
+          "name": "criterion present and passed: raw hardware status pass",
+          "note": "",
+          "passed": true,
+          "rule": "present and passed",
+          "value": "raw hardware status pass"
+        },
+        {
+          "name": "criterion present and passed: lifecycle traffic smoke pass",
+          "note": "",
+          "passed": true,
+          "rule": "present and passed",
+          "value": "lifecycle traffic smoke pass"
+        },
+        {
+          "name": "criterion present and passed: traffic counters internally passed",
+          "note": "",
+          "passed": true,
+          "rule": "present and passed",
+          "value": "traffic counters internally passed"
+        },
+        {
+          "name": "criterion present and passed: synthetic fallback zero",
+          "note": "",
+          "passed": true,
+          "rule": "present and passed",
+          "value": "synthetic fallback zero"
+        },
+        {
+          "name": "claim boundary rejects speedup/benchmark",
+          "note": "",
+          "passed": true,
+          "rule": "contains not speedup and not benchmark",
+          "value": "Ingest confirms returned EBRAINS run-hardware artifacts only; baseline decisions remain separate. Tier 4.32g is a two-chip lifecycle traffic/resource smoke. It proves only that the named source-chip learning core can emit lifecycle event/trophic MCPL requests to a remote-chip lifecycle core and receive the resulting active-mask/lineage sync through compact readback counters. It is not lifecycle scaling, not benchmark evidence, not speedup evidence, not multi-shard learning, not true partitioned ecology, and not a native-scale baseline freeze."
+        }
+      ],
+      "criteria_passed": 14,
+      "criteria_total": 14,
+      "entry_id": "tier4_32g_two_chip_lifecycle_traffic_resource_smoke",
+      "failed_criteria": [],
+      "label": "Tier 4.32g two-chip lifecycle traffic/resource smoke",
+      "results_file": "/Users/james/JKS:CRA/controlled_test_output/tier4_32g_20260508_hardware_pass_ingested/tier4_32g_results.json",
+      "returned_artifact_count": 30,
+      "runner_revision": "tier4_32g_multichip_lifecycle_traffic_resource_smoke_20260508_0003",
+      "status": "pass"
+    }
+  ],
+  "failed_criteria": [],
+  "generated_at_utc": "2026-05-08T17:35:32+00:00",
+  "interpretation": "The native MCPL/substrate path is stable enough to freeze as v0.5, so broad native migration should pause. The next make-or-break question is software usefulness against hard synthetic, real-ish, held-out, and real-data baselines.",
+  "mode": "local-evidence-closeout",
+  "next_gate": "Phase H: Tier 6.2 hard synthetic software usefulness suite, then Tier 7.1 real-ish adapters and external baseline/fairness gates.",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_32h_20260508_native_scale_evidence_closeout",
+  "runner_revision": "tier4_32h_native_scale_evidence_closeout_20260508_0001",
+  "status": "pass",
+  "tier": "4.32h",
+  "tier_name": "Tier 4.32h - Native-Scale Evidence Closeout / Baseline Decision"
+}

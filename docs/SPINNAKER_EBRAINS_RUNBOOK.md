@@ -58,10 +58,12 @@ package was run. Tier 4.32g-r2 then passed on EBRAINS and was ingested at
 controlled_test_output/tier4_32g_20260508_hardware_pass_ingested/ with runner
 revision `tier4_32g_multichip_lifecycle_traffic_resource_smoke_20260508_0003`,
 board target `10.11.205.177`, zero stale/duplicate/missing-ack counters, and
-zero synthetic fallback. The next step is Tier 4.32h native-scale evidence
-closeout / baseline decision. Speedup, benchmark, true two-partition,
-lifecycle-scaling, multi-shard, and native-scale baseline-freeze claims remain
-blocked until that local closeout gate passes.
+zero synthetic fallback. Tier 4.32h native-scale evidence closeout then
+passed locally and froze `CRA_NATIVE_SCALE_BASELINE_v0.5`. The next active
+project step is Tier 6.2 software usefulness/baseline testing, not another broad
+EBRAINS run. Speedup, benchmark, true two-partition, lifecycle-scaling, and multi-shard
+claims remain blocked even after the v0.5 substrate freeze; v0.5 is not
+usefulness or speedup evidence.
 ```
 
 Latest ingest hygiene lesson:

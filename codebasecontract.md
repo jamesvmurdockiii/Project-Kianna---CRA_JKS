@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-08T17:10:08+00:00.
+Last updated: 2026-05-08T17:35:00+00:00.
 
 Current repo root:
 
@@ -45,7 +45,30 @@ v2.2 = post-Tier-5.19c bounded host-side fading-memory temporal-state evidence l
 Current hardware/runtime baseline decision:
 
 ```text
-FROZEN: CRA_LIFECYCLE_NATIVE_BASELINE_v0.4
+FROZEN: CRA_NATIVE_SCALE_BASELINE_v0.5
+  Source: Tier 4.32h native-scale evidence closeout over 4.32a-replicated,
+          4.32d, 4.32e, and 4.32g returned evidence.
+  File: baselines/CRA_NATIVE_SCALE_BASELINE_v0.5.md
+  JSON: baselines/CRA_NATIVE_SCALE_BASELINE_v0.5.json
+  Registry snapshot: baselines/CRA_NATIVE_SCALE_BASELINE_v0.5_STUDY_REGISTRY.snapshot.json
+  Supersedes: CRA_LIFECYCLE_NATIVE_BASELINE_v0.4 for native scale/substrate evidence
+
+  Claim: CRA has a bounded native-scale SpiNNaker substrate baseline: replicated
+         single-chip MCPL stress, two-chip MCPL communication/readback, a
+         two-chip learning-bearing micro-task, and two-chip lifecycle
+         traffic/resource counters have all passed canonical evidence gates
+         with preserved returned artifacts, zero synthetic fallback, and explicit
+         claim boundaries.
+
+  Boundary: not a software capability baseline, not speedup evidence, not
+            benchmark or real-task usefulness evidence, not true two-partition
+            learning, not lifecycle scaling, not multi-shard learning, not proof
+            that every v2.2 software mechanism is fully chip-native, and not
+            language/planning/AGI/ASI. Hardware/native work should pause here
+            except for targeted transfer of mechanisms or task paths that win
+            software usefulness gates.
+
+PREVIOUS FROZEN: CRA_LIFECYCLE_NATIVE_BASELINE_v0.4
   Source: Tiers 4.30-readiness through 4.30g-hw
   File: baselines/CRA_LIFECYCLE_NATIVE_BASELINE_v0.4.md
   JSON: baselines/CRA_LIFECYCLE_NATIVE_BASELINE_v0.4.json
@@ -123,10 +146,10 @@ FROZEN: CRA_LIFECYCLE_NATIVE_BASELINE_v0.4
         >=149, 30 returned artifacts preserved, zero synthetic fallback, and
         stale_package_detected false.
         Boundary: first two-chip single-shard learning evidence plus two-chip
-        lifecycle traffic/resource evidence only. Speedup claims, benchmark
-        evidence, true two-partition learning, lifecycle scaling,
-        multi-shard learning, and CRA_NATIVE_SCALE_BASELINE_v0.5 remain blocked
-        until Tier 4.32h evidence closeout/baseline-decision passes.
+        lifecycle traffic/resource evidence only. Tier 4.32h has now frozen
+        `CRA_NATIVE_SCALE_BASELINE_v0.5` as a substrate baseline only; speedup
+        claims, benchmark evidence, true two-partition learning, lifecycle
+        scaling, and multi-shard learning remain blocked.
 ```
 
 Current active tier state:
@@ -389,18 +412,25 @@ Tier 4.32g — COMPLETE. Two-chip lifecycle traffic/resource hardware smoke.
     scaling, speedup evidence, benchmark evidence, true partitioned ecology,
     multi-shard learning, or a native-scale baseline freeze.
 
-Tier 4.32h — CURRENT ACTIVE STEP. Native-scale evidence closeout / baseline decision.
-  Status: DESIGN AND RUN LOCAL DECISION GATE NEXT.
-  Question: do the Tier 4.32a/4.32d/4.32e/4.32g results form a stable enough
-    native-scale evidence bundle to freeze CRA_NATIVE_SCALE_BASELINE_v0.5, or
-    is another targeted repair/stress tier required before freezing?
-  Required inputs: single-chip replicated stress, two-chip communication smoke,
-    two-chip learning micro-task, two-chip lifecycle traffic/resource smoke,
-    returned artifact preservation, resource/readback accounting, stale/timeout
-    counters, synthetic fallback zeros, and claim boundaries.
-  Boundary: local evidence closeout only until implemented and passed; not a
-    new hardware claim, not a speedup claim, not benchmark evidence, and not a
-    baseline freeze by itself.
+Tier 4.32h — COMPLETE. Native-scale evidence closeout / baseline decision.
+  Status: LOCAL PASS, 64/64, baseline frozen.
+  Output: controlled_test_output/tier4_32h_20260508_native_scale_evidence_closeout/
+  Baseline: baselines/CRA_NATIVE_SCALE_BASELINE_v0.5.md
+  Result: consumed 4.32a replicated single-chip stress, 4.32d two-chip
+    communication smoke, 4.32e two-chip learning micro-task, and 4.32g two-chip
+    lifecycle traffic/resource smoke. All required evidence passed, all returned
+    artifacts were preserved, no synthetic fallback/stale/duplicate/timeout
+    blocker remained, and the claim boundary explicitly rejects speedup,
+    benchmark usefulness, true partitioned learning, lifecycle scaling,
+    multi-shard learning, and AGI/ASI.
+
+Tier 6.2 — CURRENT ACTIVE STEP. Hard synthetic usefulness suite in software.
+  Status: DESIGN/RUN NEXT.
+  Question: does the frozen software stack show useful advantages on harder
+    synthetic tasks against strong fair baselines before any more broad native
+    migration?
+  Boundary: software usefulness/baseline evidence only; not a new hardware
+    claim until a winning task/mechanism is separately transferred.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware
@@ -885,20 +915,14 @@ Immediate next steps:
 
 1. Keep Tier 4.31d/4.31e boundaries strict: one-board temporal-state smoke plus
    local replay/eligibility decision closeout only, no new freeze.
-2. Tier 4.32d-r0 route/source/package audit passed and blocked the first
-   EBRAINS package; Tier 4.32d-r1 route repair/local QA then passed and removed
-   that source blocker; Tier 4.32d package preparation and returned EBRAINS
-   hardware smoke passed; Tier 4.32e multi-chip learning micro-task passed
-   after EBRAINS ingest; Tier 4.32f local decision contract passed; Tier
-   4.32g-r0 route/source repair audit passed; the first Tier 4.32g hardware
-   return proved the lifecycle traffic counters but failed cleanup/control; the
-   second rerun exposed stale package reuse; and Tier 4.32g-r2 passed on
-   EBRAINS at controlled_test_output/tier4_32g_20260508_hardware_pass_ingested/.
-   The next native step is Tier 4.32h native-scale evidence closeout / baseline
-   decision, not an unscoped hardware package. Do not jump to benchmarks,
-   speedup claims, true two-partition cross-chip learning, lifecycle scaling,
-   multi-shard learning, or a native-scale baseline freeze until the closeout
-   gate passes and explicitly authorizes the next state.
+2. Tier 4.32h native-scale evidence closeout passed and froze
+   `CRA_NATIVE_SCALE_BASELINE_v0.5` at
+   controlled_test_output/tier4_32h_20260508_native_scale_evidence_closeout/.
+   This is a native-scale substrate freeze only: do not claim speedup, benchmark
+   usefulness, true two-partition cross-chip learning, lifecycle scaling,
+   multi-shard learning, or AGI/ASI from it. The next active step is Tier 6.2
+   software hard synthetic usefulness testing with strong fair baselines before
+   any broad new native migration.
 3. Keep the 4.31b/4.31c range refinement explicit: selected trace bound is ±2
    in s16.15; the older ±1 sketch saturated and must not silently return.
 4. Keep public repo hygiene green before the next upload or commit: no

@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-08T03:27:22+00:00.
+Last updated: 2026-05-08T17:35:00+00:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -151,6 +151,8 @@ Current frozen lines:
 ```text
 Software baseline: v2.2
 Native mechanism bridge baseline: CRA_NATIVE_MECHANISM_BRIDGE_v0.3
+Lifecycle native baseline: CRA_LIFECYCLE_NATIVE_BASELINE_v0.4
+Native-scale substrate baseline: CRA_NATIVE_SCALE_BASELINE_v0.5
 ```
 
 Reason:
@@ -171,9 +173,11 @@ software baseline. It did not prove nonlinear recurrence, hardware temporal
 dynamics, or universal benchmark superiority.
 Tier 4.30-readiness passed on 2026-05-05 with 16/16 criteria. The lifecycle
 native path layers initially on `CRA_NATIVE_MECHANISM_BRIDGE_v0.3`, using v2.2
-only as a software reference boundary. Do not smuggle v2.2 host-side temporal
-state into lifecycle hardware unless a separate native temporal-readiness tier
-defines and passes that migration.
+only as a software reference boundary. Tier 4.32h then froze
+`CRA_NATIVE_SCALE_BASELINE_v0.5` as a bounded native-scale substrate closeout
+over the completed 4.32a/4.32d/4.32e/4.32g evidence. Do not smuggle v2.2
+host-side temporal state, speedup, benchmark usefulness, true partitioned
+learning, or lifecycle scaling into the v0.5 claim.
 ```
 
 The native runtime and native mechanism bridge lines remain separate from the
@@ -205,9 +209,9 @@ native/on-chip is not claimed until all of these are true for the claimed scope:
 | Runtime resource envelope | Partly measured; four-core timing/message envelope still needs 4.27. |
 | Stable inter-core protocol | SDP works for 4.26 as a transitional scaffold; MCPL/multicast is the scaling target and needs a migration gate. |
 | Promoted v2 mechanisms native | Keyed memory (4.29a), routing/composition (4.29b), predictive binding (4.29c), self-evaluation (4.29d), and host-scheduled replay/consolidation (4.29e) complete. 4.29f froze the cumulative native mechanism bridge evidence baseline. Lifecycle remains. |
-| Lifecycle/self-scaling native | Not started; must use static pools and masks, not dynamic graph creation. |
+| Lifecycle/self-scaling native | Static-pool lifecycle and host-ferried task bridge are frozen in v0.4; two-chip lifecycle traffic/resource smoke is included in v0.5. Lifecycle scaling and autonomous lifecycle-to-learning MCPL are not proven. |
 | Continuous temporal dynamics substrate | v2.2 promotes bounded host-side fading-memory temporal state after Tier 5.19c; native/on-chip temporal dynamics and bounded nonlinear recurrence remain unproven. |
-| Multi-chip scaling | Not started. |
+| Multi-chip scaling | Bounded two-chip communication, learning micro-task, and lifecycle traffic/resource smokes are included in v0.5. True two-partition learning, multi-shard learning, speedup, and useful task scaling remain unproven. |
 | Useful task-level native proof | Not complete beyond tiny micro-tasks. |
 
 ## 5. Core Operating Order
@@ -953,18 +957,19 @@ ability.
     evidence, true partitioned ecology, multi-shard learning, or a
     native-scale baseline freeze.
 
-68. **CURRENT ACTIVE STEP** - Tier 4.32h native-scale evidence closeout /
-    baseline decision. Design and run a local decision gate that consumes the
-    4.32a replicated single-chip stress, 4.32d two-chip communication smoke,
-    4.32e two-chip learning micro-task, and 4.32g two-chip lifecycle
-    traffic/resource pass. It must decide whether to freeze
-    `CRA_NATIVE_SCALE_BASELINE_v0.5` or require another targeted repair/stress
-    gate first. No new hardware run and no native-scale baseline freeze are
-    authorized until this closeout gate passes.
+68. ✅ **COMPLETE** - Tier 4.32h native-scale evidence closeout /
+    baseline decision. Local closeout passed `64/64` criteria at
+    `controlled_test_output/tier4_32h_20260508_native_scale_evidence_closeout/`
+    and froze `CRA_NATIVE_SCALE_BASELINE_v0.5` under `baselines/`. The freeze
+    consumes the 4.32a replicated single-chip stress, 4.32d two-chip
+    communication smoke, 4.32e two-chip learning micro-task, and 4.32g two-chip
+    lifecycle traffic/resource pass. Boundary: substrate baseline only; not
+    speedup, benchmark usefulness, true two-partition learning, lifecycle
+    scaling, multi-shard learning, or AGI/ASI evidence.
 
 ### Phase H - Software Usefulness And Final Baselines
 
-69. Tier 6.2 hard synthetic suite: variable-delay cue, multi-cue delayed reward,
+69. **CURRENT ACTIVE STEP** - Tier 6.2 hard synthetic suite: variable-delay cue, multi-cue delayed reward,
     hidden regime switching, drifting bandit, concept drift, anomaly stream,
     and small delayed-reward control proxy.
 
@@ -1007,7 +1012,7 @@ ability.
     environment lock, validation command, registry/table regeneration, EBRAINS
     ingest instructions, artifact hash manifest, and one local tier rerun.
 
-77. Draft paper/whitepaper only after Step 72 and Step 73 pass. Write
+77. Draft paper/whitepaper only after the Phase H usefulness/baseline gates pass. Write
     limitations first, then claims. Preserve failed and parked diagnostics.
 
 78. External dry run: have a clean agent or human follow only the docs. If they
@@ -1187,11 +1192,12 @@ The first Tier 4.32g hardware return was ingested at
 controlled_test_output/tier4_32g_20260507_hardware_fail_ingested/. It failed the
 strict gate on cleanup/control semantics, while preserving successful lifecycle
 traffic counters. Tier 4.32g-r2 then passed on EBRAINS and was ingested at
-controlled_test_output/tier4_32g_20260508_hardware_pass_ingested/. Next action:
-design and run Tier 4.32h native-scale evidence closeout / baseline decision.
-Speedup claims, benchmark claims, true two-partition cross-chip learning,
-lifecycle scaling, multi-shard learning, and a native-scale baseline freeze
-remain blocked until the closeout gate decides whether v0.5 can freeze.
+controlled_test_output/tier4_32g_20260508_hardware_pass_ingested/. Tier 4.32h
+then passed locally at
+controlled_test_output/tier4_32h_20260508_native_scale_evidence_closeout/ and
+froze `CRA_NATIVE_SCALE_BASELINE_v0.5` as a bounded native-scale substrate
+baseline. Speedup claims, benchmark usefulness, true two-partition cross-chip
+learning, lifecycle scaling, and multi-shard learning remain blocked.
 ```
 
 Current reference state:
@@ -1246,9 +1252,10 @@ blocking immediate hardware until lifecycle inter-chip routes are source-proven.
 Tier 4.32g-r0 then passed locally and authorized Tier 4.32g hardware package
 preparation. Tier 4.32g-r2 then passed on EBRAINS after the stale-package rerun
 was isolated, proving two-chip lifecycle traffic/resource counters over the
-repaired package. The next action is Tier 4.32h native-scale evidence closeout /
-baseline decision, not benchmarks, speedup, true two-partition learning,
-lifecycle scaling, multi-shard learning, or baseline-freeze claims.
+repaired package. Tier 4.32h then passed locally and froze
+`CRA_NATIVE_SCALE_BASELINE_v0.5`. The next action is Tier 6.2 software usefulness
+testing, not benchmarks-as-claims, speedup, true two-partition learning,
+lifecycle scaling, multi-shard learning, or new native migration.
 ```
 
 Purpose:
@@ -1290,10 +1297,9 @@ Use v2.2 as the software reference and `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` as
 the native lifecycle baseline. Keep Tier 4.31d's boundary strict: one-board
 temporal-state hardware smoke only; not nonlinear recurrence, not speedup, not
 multi-chip scaling, not benchmark superiority, and not full organism autonomy.
-The next native work is Tier 4.32g-r2: rerun the prepared two-chip lifecycle
-traffic/resource hardware smoke from ebrains_jobs/cra_432g_r2 now that the first
-Tier 4.32g hardware return proved the lifecycle traffic counters but exposed a
-cleanup/control-surface issue.
+Tier 4.32g-r2 passed and Tier 4.32h froze `CRA_NATIVE_SCALE_BASELINE_v0.5`.
+The next active work is Tier 6.2 software usefulness testing; reopen native work
+only for targeted transfer after a software task/mechanism earns it.
 It must preserve explicit board/chip/shard identity, message paths, compact
 readback ownership, failure counters, placement assumptions,
 enabled-vs-no-learning separation, and resource measurements while adding the

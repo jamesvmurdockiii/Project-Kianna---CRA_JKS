@@ -3,7 +3,7 @@
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
 [![Tests](https://img.shields.io/badge/tests-151%20passing-brightgreen.svg)](#validation)
-[![Evidence](https://img.shields.io/badge/canonical%20evidence-75%20bundles-blue.svg)](STUDY_EVIDENCE_INDEX.md)
+[![Evidence](https://img.shields.io/badge/canonical%20evidence-81%20bundles-blue.svg)](STUDY_EVIDENCE_INDEX.md)
 
 Coral Reef Architecture (CRA) is a neuromorphic learning research platform for
 studying local spiking plasticity, delayed credit assignment, population-level
@@ -19,8 +19,8 @@ controlled ablations, baseline comparisons, and explicit claim boundaries.
 | Area | Current state |
 | --- | --- |
 | Software baseline | `v2.2`, frozen after bounded host-side fading-memory temporal-state evidence plus full NEST compact regression. |
-| Native hardware baseline | `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4`, frozen after Tier 4.30g-hw passed lifecycle telemetry, sham controls, resource accounting, and a bounded hardware task-effect bridge. |
-| Latest ingested hardware pass | Tier 4.32e multi-chip learning micro-task passed on board `10.11.205.161`: raw remote status `pass`, ingest `pass`, source/learning chip `(0,0)`, remote state chip `(1,0)`, `2` cases, `32` events per case, `96/96` lookup replies per case, zero stale replies, zero duplicate replies, zero timeouts, compact readback, zero synthetic fallback, and `42` returned artifacts preserved. Enabled LR `0.25` reached readout `32768/0`; the no-learning LR `0.0` control stayed `0/0`. |
+| Native hardware baseline | `CRA_NATIVE_SCALE_BASELINE_v0.5`, frozen by Tier 4.32h after the 4.32a replicated single-chip stress, 4.32d two-chip communication smoke, 4.32e two-chip learning micro-task, and 4.32g two-chip lifecycle traffic/resource smoke all passed with preserved artifacts and bounded claim boundaries. |
+| Latest native-scale closeout | Tier 4.32h passed locally from [`controlled_test_output/tier4_32h_20260508_native_scale_evidence_closeout`](controlled_test_output/tier4_32h_20260508_native_scale_evidence_closeout): `64/64` freeze criteria passed, `CRA_NATIVE_SCALE_BASELINE_v0.5` files were generated under [`baselines/`](baselines), and the next project phase is explicitly software usefulness/baselines before broad new native migration. |
 | Latest lifecycle task bridge | Tier 4.30g local contract passed `9/9`, then Tier 4.30g-hw passed on real SpiNNaker: enabled lifecycle bridge gate `1`, controls bridge gate `0`, enabled reference tail accuracy `1.0`, control reference tail accuracy `0.375`, compact lifecycle payload `68`, and zero stale replies/timeouts. |
 | Latest software benchmark diagnostic | Tier 5.19c fading-memory narrowing gate passed and froze v2.2: fading-memory temporal state is promoted, while bounded nonlinear recurrence and universal benchmark superiority remain unproven. |
 | Latest engineering audit | Tier 4.30-readiness passed `16/16`, selecting a static-pool lifecycle-native path layered on `CRA_NATIVE_MECHANISM_BRIDGE_v0.3` with v2.2 as software reference only. |
@@ -48,8 +48,8 @@ controlled ablations, baseline comparisons, and explicit claim boundaries.
 | Latest multi-chip lifecycle/resource decision | Tier 4.32f passed locally from [`controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision`](controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision): `22/22` criteria, selected multi-chip lifecycle traffic with resource counters as the next direction, classified that lifecycle inter-chip route entries are not yet source-proven, authorized Tier 4.32g-r0 source/route repair audit next, and blocked immediate hardware packaging. |
 | Latest lifecycle route repair audit | Tier 4.32g-r0 passed locally from [`controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit`](controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit): `14/14` criteria, source-proved lifecycle event request, trophic update, and active-mask/lineage sync MCPL routes for learning/lifecycle profiles, passed the new lifecycle inter-chip route C test plus existing lookup-route and lifecycle-split regressions, and authorized Tier 4.32g hardware package preparation. |
 | Latest 4.32g hardware return | Tier 4.32g-r2 passed after EBRAINS ingest from [`controlled_test_output/tier4_32g_20260508_hardware_pass_ingested`](controlled_test_output/tier4_32g_20260508_hardware_pass_ingested): raw hardware status `pass`, ingest status `pass`, runner revision `tier4_32g_multichip_lifecycle_traffic_resource_smoke_20260508_0003`, board target `10.11.205.177`, source chip `(0,0)` learning core `p7`, remote chip `(1,0)` lifecycle core `p4`, source event/trophic requests `1/1`, source mask sync received `1`, lifecycle accepted trophic+death `2`, lifecycle mask sync sent `1`, active mask/count/death/trophic counters `1`, zero stale/duplicate/missing-ack counters, pause/reset controls passed, payloads `>=149`, `30` returned artifacts preserved, and zero synthetic fallback. Boundary: two-chip lifecycle traffic/resource smoke only; not lifecycle scaling, speedup, benchmark evidence, true partitioned ecology, multi-shard learning, or a native-scale baseline freeze. |
-| Active next gate | Tier 4.32h native-scale evidence closeout / baseline decision is the next local gate. It must decide whether the 4.32a/4.32d/4.32e/4.32g evidence is stable enough to freeze `CRA_NATIVE_SCALE_BASELINE_v0.5`, or whether another repair/stress gate is required first. No new hardware run or baseline freeze is authorized until that decision gate is written and passed. |
-| Canonical registry | 78 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
+| Active next gate | Tier 6.2 hard synthetic usefulness suite in software: variable-delay cue, multi-cue delayed reward, hidden regime switching, drifting bandit, concept drift, anomaly stream, and small delayed-reward control proxy with strong baselines and leakage controls. |
+| Canonical registry | 81 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
 | Validation suite | 151 pytest tests plus registry, paper-table, and repository-audit generation. |
 
 ## What CRA Implements
@@ -85,7 +85,7 @@ Core implementation areas:
 | 5.10-5.18 | Memory, replay/consolidation, predictive context, composition/routing, working memory diagnostics, temporal coding, neuron-parameter sensitivity, predictive binding, and self-evaluation gates. | Mostly host-side software mechanisms unless explicitly migrated to hardware. |
 | 6.1-6.4 | Lifecycle/self-scaling, lifecycle sham controls, and circuit-motif causality. | Software organism/ecology evidence; not hardware lifecycle. |
 | 4.22-4.30g | Custom SpiNNaker runtime progression from roundtrip/load tests to four-core MCPL tasks, keyed memory, routing/composition, predictive binding, confidence-gated learning, host-scheduled replay/consolidation, lifecycle static-pool metadata, multi-core lifecycle source/runtime gates, five-profile lifecycle hardware smoke, lifecycle sham-control hardware subset, and lifecycle task-benefit/resource bridge hardware pass. | Native hardware mechanism evidence for tested capsules only. Tier 4.30g-hw proves a bounded host-ferried lifecycle-to-task bridge with resource accounting; it does not prove autonomous lifecycle-to-learning MCPL, speedup, multi-chip scaling, v2.2 temporal migration, or full organism autonomy. |
-| 4.31a-4.31d | Native temporal-substrate readiness, fixed-point reference, local C runtime source audit, and one-board SpiNNaker hardware smoke. | Defines the seven-EMA fixed-point trace subset, proves local fixed-point parity against the v2.2 fading-memory reference with destructive controls, implements/tests C-owned temporal state, and shows one-board build/load/command/readback. Not repeatability, speedup, benchmark superiority, multi-chip scaling, nonlinear recurrence, native replay/sleep, or full v2.2 hardware transfer. |
+| 4.31a-4.32h | Native temporal-substrate migration, MCPL scaling path, replicated single-chip stress, two-chip communication, two-chip learning micro-task, two-chip lifecycle traffic/resource smoke, and native-scale evidence closeout. | Freezes `CRA_NATIVE_SCALE_BASELINE_v0.5` as a bounded native-scale substrate baseline. Not speedup, benchmark superiority, real-task usefulness, true two-partition learning, lifecycle scaling, multi-shard learning, or AGI/ASI evidence. |
 | 7.0-7.0d | Standard dynamical benchmarks and failure analysis: Mackey-Glass, Lorenz, NARMA10, aggregate geometric-mean MSE, CRA state/readout probes, bounded online readout repair, and state-specific claim narrowing. | Software diagnostics only; CRA v2.1 underperformed simple continuous-regression sequence baselines. 7.0d showed lag regression explains this benchmark path under the prior interface, so no direct benchmark-superiority claim was made. |
 | 5.19a-5.19c | Continuous temporal-dynamics repair path: local temporal substrate reference, recurrence sham gate, then narrowed fading-memory compact-regression promotion. | v2.2 supports bounded host-side fading-memory temporal state. It does not prove nonlinear recurrence, hardware/on-chip temporal dynamics, universal benchmark superiority, language, planning, AGI, or ASI. |
 
@@ -110,10 +110,9 @@ Current evidence does not prove:
   benchmark suite; Tier 5.19c promotes a bounded fading-memory substrate but
   standard-three lag-only remains stronger under the tested metrics.
 - Full organism lifecycle running natively on hardware.
-- Multi-chip scaling.
+- Broad multi-chip learning/lifecycle scaling beyond the bounded v0.5 substrate smokes.
 - Production readiness.
-- Native on-chip replay buffers or fully autonomous on-chip learning for all
-  promoted software mechanisms.
+- Native on-chip replay buffers, dynamic population creation, policy/action selection, curriculum generation, long-horizon planning, or fully autonomous on-chip learning for all promoted software mechanisms.
 
 ## Repository Layout
 
@@ -176,7 +175,7 @@ python3 experiments/tier5_external_baselines.py \
 `make validate` currently runs:
 
 - 151 pytest unit tests.
-- Evidence registry generation: 70 canonical bundles, 0 failed criteria.
+- Evidence registry generation: 81 canonical bundles, 0 failed criteria.
 - Paper results table export.
 - Repository audit.
 

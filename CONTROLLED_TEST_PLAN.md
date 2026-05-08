@@ -14,7 +14,7 @@ mechanism promotion, lifecycle/ecology evidence, and native SpiNNaker runtime
 migration. The generated registry is the authority for which results are
 canonical.
 
-The current canonical evidence trail contains **75 registered evidence bundles**
+The current canonical evidence trail contains **81 registered evidence bundles**
 with all expected artifacts present and all criteria passing. The generated
 registry is the source of truth for the full list:
 
@@ -9904,8 +9904,19 @@ if freeze is rejected, next repair/stress gate is explicitly named
 Boundary:
 
 ```text
-Tier 4.32h is a local evidence closeout and baseline decision gate. It is not a
-new hardware result, not speedup proof, not benchmark evidence, not lifecycle
-scaling, not multi-shard learning, and not a baseline freeze unless the gate
-explicitly generates and validates the baseline files.
+Tier 4.32h passed locally and generated the frozen native-scale substrate
+baseline. It is not a new hardware result, not speedup proof, not benchmark
+evidence, not lifecycle scaling, not multi-shard learning, and not a software
+usefulness baseline.
+```
+
+Result:
+
+```text
+Status: PASS
+Criteria: 64/64
+Output: controlled_test_output/tier4_32h_20260508_native_scale_evidence_closeout/
+Baseline: baselines/CRA_NATIVE_SCALE_BASELINE_v0.5.md
+Registry snapshot: baselines/CRA_NATIVE_SCALE_BASELINE_v0.5_STUDY_REGISTRY.snapshot.json
+Next: Tier 6.2 hard synthetic usefulness suite in software with strong baselines
 ```

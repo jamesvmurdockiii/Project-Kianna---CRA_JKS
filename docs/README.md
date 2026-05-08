@@ -7,6 +7,7 @@ This directory contains the research-facing narrative docs.
 | `../codebasecontract.md` | Root operating contract for agents/humans: evidence discipline, code/update rules, EBRAINS workflow, promotion gates, validation, and anti-patterns. |
 | `ABSTRACT.md` | Short abstract of CRA, current evidence, and claim boundaries. |
 | `PAPER_READINESS_ROADMAP.md` | Strategic roadmap from the current evidence state to paper-ready claims, including pass/fail gates and make-or-break criteria. |
+| `MECHANISM_STATUS.md` | Mechanism ledger separating promoted mechanisms, diagnostics, parked ideas, and future research targets. |
 | `MASTER_EXECUTION_PLAN.md` | Operational step-by-step execution plan from the current state through chip-native migration, remaining capability tiers, final matrices, reproduction, and paper lock. |
 | `REVIEWER_DEFENSE_PLAN.md` | Adversarial reviewer-attack matrix, statistical/fairness safeguards, and additional proof targets before paper release. |
 | `WHITEPAPER.md` | Full technical whitepaper covering architecture, evidence, hardware, limitations, and roadmap. |
@@ -93,6 +94,8 @@ separately: `CRA_NATIVE_RUNTIME_BASELINE_v0.1`, `CRA_NATIVE_TASK_BASELINE_v0.2`,
 `CRA_NATIVE_MECHANISM_BRIDGE_v0.3`, and the current
 `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` lifecycle-native hardware baseline. The
 older software v0.1, v0.2, and v0.3 baselines remain historical locks.
+
+`baselines/CRA_NATIVE_SCALE_BASELINE_v0.5.md` freezes the bounded native-scale substrate closeout over replicated single-chip MCPL stress, two-chip communication, two-chip learning micro-task, and two-chip lifecycle traffic/resource evidence. It is not speedup, benchmark usefulness, true two-partition learning, lifecycle scaling, multi-shard learning, or AGI/ASI evidence.
 
 Tier 5.18 now supplies noncanonical software self-evaluation /
 metacognitive-monitoring diagnostic evidence over v2.0. It is useful

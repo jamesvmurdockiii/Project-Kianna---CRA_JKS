@@ -6461,12 +6461,17 @@ Near-term roadmap insertion:
     remain preserved at
     `controlled_test_output/tier4_32g_20260507_hardware_fail_ingested/` and
     `controlled_test_output/tier4_32g_20260508_old_package_return_ingested/`.
-36. Tier 4.32h native-scale evidence closeout / baseline decision. CURRENT NEXT:
-    local decision gate to determine whether 4.32a/4.32d/4.32e/4.32g evidence
-    is stable enough to freeze `CRA_NATIVE_SCALE_BASELINE_v0.5`, or whether an
-    additional targeted repair/stress gate is required first. This is not a new
-    hardware claim and not a baseline freeze unless the gate explicitly creates
-    and validates the baseline files.
+36. Tier 4.32h native-scale evidence closeout / baseline decision. COMPLETE:
+    local decision gate passed `64/64` at
+    `controlled_test_output/tier4_32h_20260508_native_scale_evidence_closeout/`
+    and froze `CRA_NATIVE_SCALE_BASELINE_v0.5` under `baselines/`. Boundary:
+    native-scale substrate baseline only; not speedup, benchmark usefulness,
+    true two-partition learning, lifecycle scaling, multi-shard learning, or
+    AGI/ASI evidence.
+37. Tier 6.2 hard synthetic usefulness suite. CURRENT NEXT: use the software
+    stack and fair baselines on variable-delay cue, multi-cue delayed reward,
+    hidden regime switching, drifting bandit, concept drift, anomaly stream,
+    and small delayed-reward control proxy before more broad native migration.
 ```
 
 Tier 5.19a result:
@@ -6770,7 +6775,7 @@ Tests: test-temporal-state, test-profiles, test, test-lifecycle, test-lifecycle-
 Boundary: local source/runtime host evidence only, not hardware
 ```
 
-Next: Design and run Tier 4.32h native-scale evidence closeout / baseline decision using the completed 4.32a/4.32d/4.32e/4.32g evidence bundle.
+Next: Design and run Tier 6.2 hard synthetic usefulness suite in software with strong fair baselines, using `CRA_NATIVE_SCALE_BASELINE_v0.5` only as the frozen native substrate reference, not as usefulness evidence.
       Tier 4.32e passed after EBRAINS ingest at
       `controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/`:
       board `10.11.205.161`, two cases, 32 events per case, 96/96 lookup
@@ -6784,9 +6789,8 @@ Next: Design and run Tier 4.32h native-scale evidence closeout / baseline decisi
       `controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/`
       with 14/14 criteria and authorized Tier 4.32g hardware preparation. Tier 4.32g first hardware return then proved the lifecycle traffic counters but failed cleanup/control, a second attempted rerun exposed stale-package reuse, and Tier 4.32g-r2 then passed after EBRAINS ingest at `controlled_test_output/tier4_32g_20260508_hardware_pass_ingested/` with runner revision `tier4_32g_multichip_lifecycle_traffic_resource_smoke_20260508_0003`.
       Speedup claims, benchmark claims, true two-partition cross-chip learning,
-      lifecycle scaling, multi-shard learning, and native-scale baseline freeze
-      remain blocked until Tier 4.32h closeout decides whether v0.5 can freeze. Reopen native
-      replay-buffer,
+      lifecycle scaling, and multi-shard learning remain blocked even after the
+      Tier 4.32h v0.5 substrate freeze. Reopen native replay-buffer,
       sleep-like replay, or eligibility-trace implementation only if a later
       measured blocker specifically demands it.
 ```
