@@ -195,6 +195,12 @@ def temporal_features_variant(
             )
         rows.append(row)
     features = np.vstack(rows)
+
+    def state_norm_mean(slice_: np.ndarray) -> float | None:
+        if slice_.shape[0] == 0:
+            return None
+        return float(np.mean(np.linalg.norm(slice_, axis=1)))
+
     return FeatureBundle(
         features=features,
         temporal_start=2,
@@ -211,8 +217,8 @@ def temporal_features_variant(
             "recurrent_permutation_seed_offset": int(recurrent_seed_offset),
             "permutation_scope": "recurrent weights only" if mode == "permuted_recurrence" else "none",
             "feature_count": int(features.shape[1]),
-            "train_prefix_state_norm_mean": float(np.mean(np.linalg.norm(features[:train_end, 2:], axis=1))),
-            "test_state_norm_mean": float(np.mean(np.linalg.norm(features[train_end:, 2:], axis=1))),
+            "train_prefix_state_norm_mean": state_norm_mean(features[:train_end, 2:]),
+            "test_state_norm_mean": state_norm_mean(features[train_end:, 2:]),
         },
     )
 

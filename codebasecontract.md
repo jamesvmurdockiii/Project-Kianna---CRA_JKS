@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-08T20:55:00+00:00.
+Last updated: 2026-05-08T21:10:00+00:00.
 
 Current repo root:
 
@@ -86,6 +86,21 @@ Tier 7.1b = COMPLETE, PASS, 16/16 criteria
             not a baseline freeze, and not hardware/native transfer evidence.
   Raw data policy: raw C-MAPSS zip/extracted files live under .cra_data_cache/
                    and must remain ignored, not committed.
+```
+
+Latest public adapter scoring gate:
+
+```text
+Tier 7.1c = COMPLETE, PASS, 12/12 criteria
+  Source: controlled_test_output/tier7_1c_20260508_cmapss_fd001_scoring_gate/
+  Runner: experiments/tier7_1c_cmapss_fd001_scoring_gate.py
+  Outcome: v2_3_no_public_adapter_advantage
+  Best model: monotone_age_to_rul_ridge, test RMSE 46.10944999532139
+  v2.3: rank 5, test RMSE 49.4908802462679
+  v2.2: test RMSE 48.739451335025144
+  Boundary: compact scalar-adapter software scoring only; not a full C-MAPSS
+            benchmark, not a public usefulness win, not a baseline freeze, and
+            not hardware/native transfer evidence.
 ```
 
 Current hardware/runtime baseline decision:
@@ -554,10 +569,18 @@ Tier 7.1b — COMPLETE. NASA C-MAPSS source/data preflight.
     prediction-before-update ordering, and label-separated smoke artifacts
     passed. No model scoring, freeze, or hardware transfer.
 
-Tier 7.1c — CURRENT ACTIVE STEP. Compact C-MAPSS FD001 scoring gate.
-  Required first move: score v2.2, v2.3, lag/ridge, online LMS, random
-    reservoir, ESN, and required shams on the same leakage-safe FD001 rows with
-    train-only normalization and prediction-before-update preserved.
+Tier 7.1c — COMPLETE. Compact C-MAPSS FD001 scoring gate.
+  Status: LOCAL SOFTWARE PASS, 12/12 criteria.
+  Output: controlled_test_output/tier7_1c_20260508_cmapss_fd001_scoring_gate/
+  Result: v2.3 showed no public-adapter advantage under compact scalar FD001
+    scoring; it ranked 5th and did not beat v2.2 or the monotone age baseline.
+    No freeze or hardware transfer.
+
+Tier 7.1d — CURRENT ACTIVE STEP. C-MAPSS failure analysis / adapter repair.
+  Required first move: determine whether 7.1c failed because of the scalar PCA1
+    adapter, train-prefix readout, missing multichannel interface, target policy,
+    or a real CRA limitation. Do not add mechanisms or move hardware until the
+    failure mode is localized.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware

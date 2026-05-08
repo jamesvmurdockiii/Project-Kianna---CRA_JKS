@@ -1,0 +1,26 @@
+{
+  "adapter_signal": "train-only PCA1 over operational settings plus sensors",
+  "label_policy": "test RUL labels used only for offline scoring, not readout updates",
+  "models": [
+    "constant_train_mean_rul",
+    "monotone_age_to_rul_ridge",
+    "lag_ridge_window_baseline",
+    "online_lms_linear_readout_baseline",
+    "fixed_random_reservoir_online_control",
+    "fixed_esn_train_prefix_ridge_baseline",
+    "v2_2_fading_memory_reference",
+    "v2_3_generic_bounded_recurrent_state",
+    "v2_3_state_reset_ablation",
+    "v2_3_shuffled_state_sham",
+    "v2_3_shuffled_target_control",
+    "v2_3_no_update_ablation"
+  ],
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "source_preflight": "/Users/james/JKS:CRA/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_results.json",
+  "target_policy": "uncapped RUL for compact first gate",
+  "train_test_policy": "train_FD001 train prefix, test_FD001 held-out test units"
+}

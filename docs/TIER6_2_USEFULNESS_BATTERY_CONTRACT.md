@@ -514,15 +514,47 @@ scoring, not public usefulness evidence, not a baseline freeze, and not
 hardware/native transfer authorization.
 ```
 
+## Tier 7.1c Result
+
+2026-05-08 result:
+
+```text
+Tier 7.1c — compact C-MAPSS FD001 scoring gate
+output: controlled_test_output/tier7_1c_20260508_cmapss_fd001_scoring_gate/
+status: PASS, 12/12 criteria
+outcome: v2_3_no_public_adapter_advantage
+```
+
+Key result:
+
+```text
+best model: monotone_age_to_rul_ridge, RMSE 46.10944999532139
+v2.3: rank 5, RMSE 49.4908802462679
+v2.2: RMSE 48.739451335025144
+v2.3 sham separations: 3
+```
+
+Interpretation:
+
+```text
+Tier 7.1c executed the compact C-MAPSS FD001 scalar-adapter scoring gate under
+the predeclared leakage controls, but it did not show public-adapter advantage
+for v2.3. The monotone age baseline won, and v2.3 did not beat v2.2. This is a
+negative usefulness result for the compact scalar adapter, not a failed runner.
+It authorizes failure analysis / adapter repair only; it does not authorize a
+new baseline freeze, a public usefulness claim, or hardware/native transfer.
+```
+
 ## Immediate Next Action
 
 The current next action is:
 
 ```text
-Tier 7.1c — compact C-MAPSS FD001 scoring gate.
+Tier 7.1d — C-MAPSS failure analysis / adapter repair.
 ```
 
-Score v2.2, v2.3, lag/ridge, online LMS, random reservoir, ESN, and v2.3 shams
-on the same leakage-safe FD001 rows. Do not move to SpiNNaker/native runtime or
-a new baseline freeze until public-adapter software usefulness or a promoted
-mechanism earns a separate transfer/freeze contract.
+Localize the 7.1c gap before adding mechanisms or moving hardware. Specifically
+test whether the compact failure came from scalar PCA1 compression, train-prefix
+readout policy, uncapped RUL target policy, unit reset assumptions, a missing
+multichannel CRA adapter interface, or a real v2.3 limitation on this public
+adapter.

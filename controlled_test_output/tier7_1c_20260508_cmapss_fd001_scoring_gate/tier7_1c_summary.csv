@@ -1,0 +1,13 @@
+criterion,passed,value,rule
+Tier 7.1b preflight exists,True,/Users/james/JKS:CRA/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_results.json,exists
+Tier 7.1b preflight passed,True,pass,== pass
+C-MAPSS ZIP checksum matches preflight,True,74bef434a34db25c7bf72e668ea4cd52afe5f2cf8e44367c55a82bfd91a5a34f,matches Tier 7.1b
+all required models ran,True,"['constant_train_mean_rul', 'fixed_esn_train_prefix_ridge_baseline', 'fixed_random_reservoir_online_control', 'lag_ridge_window_baseline', 'monotone_age_to_rul_ridge', 'online_lms_linear_readout_baseline', 'v2_2_fading_memory_reference', 'v2_3_generic_bounded_recurrent_state', 'v2_3_no_update_ablation', 'v2_3_shuffled_state_sham', 'v2_3_shuffled_target_control', 'v2_3_state_reset_ablation']",contains required models
+metrics finite,True,True,all model RMSE finite
+test units preserved,True,100,== 100
+train-only normalization used,True,True,true
+no test readout updates,True,"[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",all 0 or None
+v2.3 shams present,True,"['v2_3_state_reset_ablation', 'v2_3_shuffled_state_sham', 'v2_3_shuffled_target_control', 'v2_3_no_update_ablation']",present
+classification computed,True,v2_3_no_public_adapter_advantage,non-empty
+no baseline freeze authorized,True,False,== false
+no hardware transfer authorized,True,False,== false

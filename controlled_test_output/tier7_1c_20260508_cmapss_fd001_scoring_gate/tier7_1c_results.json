@@ -1,0 +1,355 @@
+{
+  "claim_boundary": "Tier 7.1c is compact software scoring on NASA C-MAPSS FD001 using a train-only PCA1 scalar stream and train-prefix readouts. It is not a full C-MAPSS benchmark, not a new baseline freeze, not hardware/native transfer, and not AGI/ASI evidence.",
+  "classification": {
+    "best_external_baseline": "monotone_age_to_rul_ridge",
+    "best_external_baseline_test_rmse_mean": 46.10944999532139,
+    "best_model": "monotone_age_to_rul_ridge",
+    "best_model_test_rmse_mean": 46.10944999532139,
+    "freeze_authorized": false,
+    "hardware_transfer_authorized": false,
+    "min_sham_separations": 3,
+    "outcome": "v2_3_no_public_adapter_advantage",
+    "v2_2_test_rmse_mean": 48.739451335025144,
+    "v2_3_beats_v2_2": false,
+    "v2_3_margin_vs_best_external_baseline": 0.9316756898620427,
+    "v2_3_rank": 5,
+    "v2_3_sham_separations": 3,
+    "v2_3_test_rmse_mean": 49.4908802462679
+  },
+  "criteria": [
+    {
+      "name": "Tier 7.1b preflight exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_results.json"
+    },
+    {
+      "name": "Tier 7.1b preflight passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "C-MAPSS ZIP checksum matches preflight",
+      "note": "",
+      "passed": true,
+      "rule": "matches Tier 7.1b",
+      "value": "74bef434a34db25c7bf72e668ea4cd52afe5f2cf8e44367c55a82bfd91a5a34f"
+    },
+    {
+      "name": "all required models ran",
+      "note": "",
+      "passed": true,
+      "rule": "contains required models",
+      "value": [
+        "constant_train_mean_rul",
+        "fixed_esn_train_prefix_ridge_baseline",
+        "fixed_random_reservoir_online_control",
+        "lag_ridge_window_baseline",
+        "monotone_age_to_rul_ridge",
+        "online_lms_linear_readout_baseline",
+        "v2_2_fading_memory_reference",
+        "v2_3_generic_bounded_recurrent_state",
+        "v2_3_no_update_ablation",
+        "v2_3_shuffled_state_sham",
+        "v2_3_shuffled_target_control",
+        "v2_3_state_reset_ablation"
+      ]
+    },
+    {
+      "name": "metrics finite",
+      "note": "",
+      "passed": true,
+      "rule": "all model RMSE finite",
+      "value": true
+    },
+    {
+      "name": "test units preserved",
+      "note": "",
+      "passed": true,
+      "rule": "== 100",
+      "value": 100
+    },
+    {
+      "name": "train-only normalization used",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "name": "no test readout updates",
+      "note": "",
+      "passed": true,
+      "rule": "all 0 or None",
+      "value": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "v2.3 shams present",
+      "note": "",
+      "passed": true,
+      "rule": "present",
+      "value": [
+        "v2_3_state_reset_ablation",
+        "v2_3_shuffled_state_sham",
+        "v2_3_shuffled_target_control",
+        "v2_3_no_update_ablation"
+      ]
+    },
+    {
+      "name": "classification computed",
+      "note": "",
+      "passed": true,
+      "rule": "non-empty",
+      "value": "v2_3_no_public_adapter_advantage"
+    },
+    {
+      "name": "no baseline freeze authorized",
+      "note": "",
+      "passed": true,
+      "rule": "== false",
+      "value": false
+    },
+    {
+      "name": "no hardware transfer authorized",
+      "note": "",
+      "passed": true,
+      "rule": "== false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 12,
+  "criteria_total": 12,
+  "failed_criteria": [],
+  "fd001_profile": {
+    "adapter_signal": "train-only PCA1 over operational settings plus sensors",
+    "column_count": 26,
+    "raw_rul_policy": "uncapped RUL for compact first gate",
+    "rul_labels": 100,
+    "target_mu_train_only": 107.80786195530997,
+    "target_sd_train_only": 68.87932080043385,
+    "test_rows": 13096,
+    "test_units": 100,
+    "train_rows": 20631,
+    "train_units": 100
+  },
+  "generated_at_utc": "2026-05-08T21:15:57+00:00",
+  "model_summary": [
+    {
+      "model": "monotone_age_to_rul_ridge",
+      "rank_by_test_rmse": 1,
+      "runs": 3,
+      "tail_rmse_mean": 39.99129334104524,
+      "test_corr_mean": 0.660469428225959,
+      "test_mae_mean": 35.296468440001554,
+      "test_rmse_mean": 46.10944999532139,
+      "test_rmse_median": 46.10944999532139,
+      "test_rmse_worst_seed": 46.10944999532139,
+      "worst_unit_rmse_mean": 127.15242315694222
+    },
+    {
+      "model": "v2_3_state_reset_ablation",
+      "rank_by_test_rmse": 2,
+      "runs": 3,
+      "tail_rmse_mean": 32.27461264283193,
+      "test_corr_mean": 0.6603900366801443,
+      "test_mae_mean": 36.10556509201597,
+      "test_rmse_mean": 47.986143067480725,
+      "test_rmse_median": 47.25246211754598,
+      "test_rmse_worst_seed": 50.100536752868706,
+      "worst_unit_rmse_mean": 119.07428873283175
+    },
+    {
+      "model": "v2_2_fading_memory_reference",
+      "rank_by_test_rmse": 3,
+      "runs": 3,
+      "tail_rmse_mean": 24.383113236900968,
+      "test_corr_mean": 0.6818741255988737,
+      "test_mae_mean": 36.624639694432496,
+      "test_rmse_mean": 48.739451335025144,
+      "test_rmse_median": 48.739451335025144,
+      "test_rmse_worst_seed": 48.739451335025144,
+      "worst_unit_rmse_mean": 120.26067844935358
+    },
+    {
+      "model": "lag_ridge_window_baseline",
+      "rank_by_test_rmse": 4,
+      "runs": 3,
+      "tail_rmse_mean": 25.13239643173746,
+      "test_corr_mean": 0.5770638679911043,
+      "test_mae_mean": 37.41741572196102,
+      "test_rmse_mean": 48.85055080800267,
+      "test_rmse_median": 48.850550808002666,
+      "test_rmse_worst_seed": 48.850550808002666,
+      "worst_unit_rmse_mean": 120.8126605600731
+    },
+    {
+      "model": "v2_3_generic_bounded_recurrent_state",
+      "rank_by_test_rmse": 5,
+      "runs": 3,
+      "tail_rmse_mean": 32.39607973893706,
+      "test_corr_mean": 0.6451576969129779,
+      "test_mae_mean": 37.95759483159704,
+      "test_rmse_mean": 49.4908802462679,
+      "test_rmse_median": 48.130751885352836,
+      "test_rmse_worst_seed": 53.070489045494995,
+      "worst_unit_rmse_mean": 121.01933483657389
+    },
+    {
+      "model": "fixed_esn_train_prefix_ridge_baseline",
+      "rank_by_test_rmse": 6,
+      "runs": 3,
+      "tail_rmse_mean": 33.052594920805895,
+      "test_corr_mean": 0.4370297495979251,
+      "test_mae_mean": 43.031172027732744,
+      "test_rmse_mean": 55.82752845134265,
+      "test_rmse_median": 55.95935047303157,
+      "test_rmse_worst_seed": 56.61485109996224,
+      "worst_unit_rmse_mean": 143.88371944963941
+    },
+    {
+      "model": "online_lms_linear_readout_baseline",
+      "rank_by_test_rmse": 7,
+      "runs": 3,
+      "tail_rmse_mean": 23.138738923100096,
+      "test_corr_mean": 0.5312848134932113,
+      "test_mae_mean": 46.812022873892055,
+      "test_rmse_mean": 61.586805509843856,
+      "test_rmse_median": 61.586805509843856,
+      "test_rmse_worst_seed": 61.586805509843856,
+      "worst_unit_rmse_mean": 141.70704178810584
+    },
+    {
+      "model": "constant_train_mean_rul",
+      "rank_by_test_rmse": 8,
+      "runs": 3,
+      "tail_rmse_mean": 86.16550270448471,
+      "test_corr_mean": null,
+      "test_mae_mean": 54.12753344785102,
+      "test_rmse_mean": 67.79375906542671,
+      "test_rmse_median": 67.79375906542671,
+      "test_rmse_worst_seed": 67.79375906542671,
+      "worst_unit_rmse_mean": 139.09596382394184
+    },
+    {
+      "model": "v2_3_no_update_ablation",
+      "rank_by_test_rmse": 9,
+      "runs": 3,
+      "tail_rmse_mean": 86.16550270448471,
+      "test_corr_mean": null,
+      "test_mae_mean": 54.12753344785102,
+      "test_rmse_mean": 67.79375906542671,
+      "test_rmse_median": 67.79375906542671,
+      "test_rmse_worst_seed": 67.79375906542671,
+      "worst_unit_rmse_mean": 139.09596382394184
+    },
+    {
+      "model": "v2_3_shuffled_target_control",
+      "rank_by_test_rmse": 10,
+      "runs": 3,
+      "tail_rmse_mean": 86.2478140857392,
+      "test_corr_mean": 0.04043543929329598,
+      "test_mae_mean": 54.58723811872489,
+      "test_rmse_mean": 68.10044250206948,
+      "test_rmse_median": 69.22722745883232,
+      "test_rmse_worst_seed": 70.31722269680925,
+      "worst_unit_rmse_mean": 142.1253590660214
+    },
+    {
+      "model": "fixed_random_reservoir_online_control",
+      "rank_by_test_rmse": 11,
+      "runs": 3,
+      "tail_rmse_mean": 58.28422145289506,
+      "test_corr_mean": 0.15616175031495616,
+      "test_mae_mean": 59.75394248810289,
+      "test_rmse_mean": 75.85030175205259,
+      "test_rmse_median": 75.12494628654254,
+      "test_rmse_worst_seed": 78.53361586747909,
+      "worst_unit_rmse_mean": 166.88721363953545
+    },
+    {
+      "model": "v2_3_shuffled_state_sham",
+      "rank_by_test_rmse": 12,
+      "runs": 3,
+      "tail_rmse_mean": 61.36005828663539,
+      "test_corr_mean": -0.004023458311098959,
+      "test_mae_mean": 70.19180771913626,
+      "test_rmse_mean": 85.5847092485198,
+      "test_rmse_median": 83.38417650695465,
+      "test_rmse_worst_seed": 91.4007870240191,
+      "worst_unit_rmse_mean": 163.8893751914983
+    }
+  ],
+  "next_step": "Run Tier 7.1d C-MAPSS failure analysis / adapter repair before adding mechanisms or moving hardware. Localize whether the compact gap comes from scalar PCA1 compression, train-prefix readout policy, target/reset policy, a missing multichannel CRA adapter interface, or a real v2.3 limitation on this public adapter.",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1c_20260508_cmapss_fd001_scoring_gate",
+  "runner_revision": "tier7_1c_cmapss_fd001_scoring_gate_20260508_0001",
+  "seed_diagnostics": [
+    {
+      "adapter_signal": "train-only PCA1 over operational settings plus sensors",
+      "seed": 42,
+      "test_label_policy": "offline scoring labels only; no test updates in readouts",
+      "train_end": 20631,
+      "unit_boundary_policy": "temporal, lag, reservoir, and ESN state reset per engine unit"
+    },
+    {
+      "adapter_signal": "train-only PCA1 over operational settings plus sensors",
+      "seed": 43,
+      "test_label_policy": "offline scoring labels only; no test updates in readouts",
+      "train_end": 20631,
+      "unit_boundary_policy": "temporal, lag, reservoir, and ESN state reset per engine unit"
+    },
+    {
+      "adapter_signal": "train-only PCA1 over operational settings plus sensors",
+      "seed": 44,
+      "test_label_policy": "offline scoring labels only; no test updates in readouts",
+      "train_end": 20631,
+      "unit_boundary_policy": "temporal, lag, reservoir, and ESN state reset per engine unit"
+    }
+  ],
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "status": "pass",
+  "tier": "Tier 7.1c - Compact C-MAPSS FD001 Scoring Gate"
+}

@@ -10635,3 +10635,69 @@ Tier 7.1c - compact C-MAPSS FD001 scoring gate.
 Score v2.2, v2.3, lag/ridge, online LMS, random reservoir, ESN, and v2.3 shams
 on the same leakage-safe FD001 rows before making any usefulness claim.
 ```
+
+### Tier 7.1c - Compact C-MAPSS FD001 Scoring Gate
+
+Runner:
+
+```text
+experiments/tier7_1c_cmapss_fd001_scoring_gate.py
+```
+
+Output:
+
+```text
+controlled_test_output/tier7_1c_20260508_cmapss_fd001_scoring_gate/
+```
+
+Status:
+
+```text
+PASS
+criteria: 12/12
+outcome: v2_3_no_public_adapter_advantage
+```
+
+Key result:
+
+```text
+best model: monotone_age_to_rul_ridge
+best model test RMSE: 46.10944999532139
+v2.3 rank: 5
+v2.3 test RMSE: 49.4908802462679
+v2.2 test RMSE: 48.739451335025144
+v2.3 sham separations: 3
+```
+
+Leakage and scoring boundary:
+
+```text
+train-only FD001 normalization from Tier 7.1b
+train-only PCA1 scalar stream
+train-prefix readout fitting
+prediction-before-update ordering
+no test readout updates
+unit-held-out test split preserved
+test RUL labels used only for offline scoring
+```
+
+Claim boundary:
+
+```text
+Tier 7.1c is compact scalar-adapter software scoring only. It is not a full
+C-MAPSS benchmark, not a public usefulness win, not a baseline freeze, not
+hardware/native transfer, and not AGI/ASI evidence. The pass means the scoring
+gate executed under the predeclared leakage controls; it does not mean v2.3
+beat the public-adapter baselines.
+```
+
+Next required step:
+
+```text
+Tier 7.1d - C-MAPSS failure analysis / adapter repair.
+Determine whether 7.1c failed because scalar PCA1 compression lost multichannel
+sensor structure, because the train-prefix readout policy is too weak, because
+the RUL target/reset policy is mismatched, because CRA needs a multichannel
+public-adapter interface, or because v2.3 genuinely has no useful signal for
+this adapter.
+```
