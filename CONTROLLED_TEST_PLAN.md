@@ -9918,5 +9918,92 @@ Criteria: 64/64
 Output: controlled_test_output/tier4_32h_20260508_native_scale_evidence_closeout/
 Baseline: baselines/CRA_NATIVE_SCALE_BASELINE_v0.5.md
 Registry snapshot: baselines/CRA_NATIVE_SCALE_BASELINE_v0.5_STUDY_REGISTRY.snapshot.json
-Next: Tier 6.2 hard synthetic usefulness suite in software with strong baselines
+Next: Tier 7.0e standardized Mackey-Glass/Lorenz/NARMA10 rerun in software with
+v2.2 and a run-length/training-budget sweep
+```
+
+## Tier 7.0e - Standard Dynamical Benchmark Rerun With v2.2 And Run-Length Sweep
+
+Question: does the frozen v2.2 fading-memory temporal-state baseline close or
+materially narrow the Tier 7.0 Mackey-Glass/Lorenz/NARMA10 gap, and was the
+earlier v2.1 result partly a short-training-budget artifact?
+
+Hypothesis: v2.2 improves the standardized continuous sequence benchmark path
+versus v2.1, especially as chronological exposure length increases.
+
+Null hypothesis: v2.2 does not materially improve the public scoreboard; the
+remaining gap is not explained by short training duration and must be diagnosed
+as readout/interface, recurrent-state, baseline, or architecture limitation.
+
+Tasks:
+
+```text
+Mackey-Glass future prediction
+Lorenz future prediction
+NARMA10 nonlinear memory/system identification
+aggregate geometric-mean MSE
+```
+
+Run lengths:
+
+```text
+720
+2000
+10000
+50000 if practical
+```
+
+Required comparisons:
+
+```text
+historical v2.1 Tier 7.0 / 7.0d results
+v2.2 fading-memory CRA
+v2.2 relevant ablations or disabled-temporal-state controls
+persistence / naive baseline
+online LMS
+ridge/lag baseline
+echo-state network
+small GRU
+small LSTM if fair and available
+```
+
+Required guardrails:
+
+```text
+chronological train/test split
+normalization fit on train prefix only
+same stream length and split for all models
+predictions emitted before online updates where applicable
+no test-row fitting
+same horizons as Tier 7.0 unless explicitly predeclared
+seed-level results
+runtime by model and length
+```
+
+Pass criteria:
+
+```text
+all predeclared tasks, models, seeds, and feasible lengths run
+leakage guardrails pass
+v2.2 improves versus v2.1 on the public scoreboard or shows a credible
+length-sensitive learning curve
+strong baselines remain fair and not intentionally under-tuned
+```
+
+Fail/narrow criteria:
+
+```text
+v2.2 does not improve the public scoreboard even with longer exposure
+strong sequence baselines still dominate all meaningful metrics
+results depend on leakage, hidden future context, or task-specific hacks
+50k cannot run and no largest-practical length is documented
+```
+
+Next step:
+
+```text
+If 7.0e improves but still loses: run 7.0f failure localization.
+If 7.0e closes the gap: run ablations plus compact regression before freeze.
+If 7.0e does not improve: stop blaming short training length and choose the next
+planned general mechanism only after diagnosis.
 ```

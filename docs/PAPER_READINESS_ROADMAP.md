@@ -3337,49 +3337,134 @@ lineage events corrupt
 performance collapses versus fixed-N
 ```
 
-## Phase 5: Hard Synthetic Benchmarks
+## Phase 5: Standardized Usefulness Benchmarks And Diagnostics
 
-These bridge controlled tasks and real tasks.
+Public/standardized benchmarks are the scoreboard. Custom synthetic tasks are
+diagnostics only: they may explain a failure, test an ablation, or isolate a
+mechanism, but they may not replace public benchmark evidence in the paper.
 
-### Tier 6.2: Hard Synthetic Task Suite
+### Tier 7.0e: Standard Dynamical Benchmark Rerun With v2.2 And Run-Length Sweep
+
+Source-of-truth contract:
+
+```text
+docs/TIER6_2_USEFULNESS_BATTERY_CONTRACT.md
+```
+
+Immediate boundary:
+
+```text
+Mackey-Glass, Lorenz, and NARMA10 were already run in Tier 7.0-7.0d and exposed
+a real limitation under v2.1 at length `720` with a chronological 65% train
+prefix. Since v2.2 promoted fading-memory temporal state, the next honest move
+is to rerun the same standardized scoreboard with v2.2 and a run-length sweep
+before inventing new private tasks or blaming the architecture.
+```
 
 Tasks:
 
 ```text
-delayed noisy cue with variable delay
-multi-cue delayed reward
-nonstationary switch with hidden regimes
-contextual bandit with delayed reward
-multi-armed bandit with drifting arms
-concept drift online classification
-anomaly detection stream
-small delayed-reward navigation/gridworld
+Mackey-Glass future prediction
+Lorenz future prediction
+NARMA10 nonlinear memory/system identification
+aggregate geometric-mean MSE
+```
+
+Run lengths:
+
+```text
+720
+2000
+10000
+50000 if practical
 ```
 
 Comparisons:
 
 ```text
-CRA fixed-N
-CRA self-scaling
-external baselines from Tier 5.5
-ablated CRA variants
+v2.1 Tier 7.0/7.0d historical results
+v2.2 fading-memory CRA
+v2.2 relevant ablations/shams
+lag/ridge baselines
+reservoir / echo-state network
+small GRU
+small LSTM if available/fair
+best prior Tier 7.0 baselines
 ```
 
 Pass:
 
 ```text
-CRA/self-scaling shows robust advantage on at least some hard/adaptive regimes
-negative controls remain negative
-task-specific leakage is ruled out
-results hold across seeds and run lengths
+v2.2 closes or materially narrows the Tier 7.0 standardized benchmark gap
+versus v2.1, or shows a credible improvement curve as training length increases
+
+v2.2 beats or clearly complements the strongest fair baseline on at least one
+standardized sequence metric, or the remaining failure is localized cleanly
+
+negative controls and leakage controls remain negative
+results hold across seeds and tail/worst-seed scoring
 ```
 
 Fail:
 
 ```text
-CRA only wins on tasks designed around CRA internals
-external baselines dominate
-self-scaling does not help
+v2.2 does not improve the public scoreboard even with longer run lengths
+lag/ridge/ESN/GRU/LSTM baselines still dominate all meaningful metrics
+the result vanishes under leakage, tail, worst-seed, or held-out scoring
+```
+
+### Tier 7.0f: Public Benchmark Failure Localization
+
+If Tier 7.0e still fails, localize the public benchmark gap before adding the
+next mechanism. Do not tune blindly and do not replace the public scoreboard
+with custom tasks.
+
+Possible diagnoses:
+
+```text
+continuous-value readout/interface still too weak
+nonlinear recurrent state missing
+causal history still insufficient
+target scaling/interface mismatch
+baseline unfairness or hyperparameter budget issue
+genuine architecture limitation
+```
+
+### Tier 6.2: Diagnostic Hard Task Suite
+
+Tier 6.2 is subordinate to the public benchmark loop. It is authorized only to
+stress or explain a measured public-benchmark failure or a predeclared planned
+mechanism. It cannot by itself make the paper usefulness claim.
+
+Diagnostic families:
+
+```text
+variable-delay multi-cue
+hidden-context reentry
+drifting sparse bandit proxy
+concept drift online classification
+anomaly detection stream
+delayed control proxy
+```
+
+Mechanism layering rule:
+
+```text
+standard benchmark result
+-> failure diagnosis
+-> one planned general mechanism
+-> ablation/sham controls
+-> compact regression
+-> rerun the same public benchmark scoreboard
+```
+
+Hard stop:
+
+```text
+If the full planned general mechanism stack cannot improve Mackey-Glass,
+Lorenz, NARMA10, or any other selected public benchmark family, stop the broad
+usefulness track and narrow the paper to architecture/mechanism/hardware
+substrate evidence.
 ```
 
 ## Phase 6: Real-ish and Real Task Adapters
@@ -6468,10 +6553,12 @@ Near-term roadmap insertion:
     native-scale substrate baseline only; not speedup, benchmark usefulness,
     true two-partition learning, lifecycle scaling, multi-shard learning, or
     AGI/ASI evidence.
-37. Tier 6.2 hard synthetic usefulness suite. CURRENT NEXT: use the software
-    stack and fair baselines on variable-delay cue, multi-cue delayed reward,
-    hidden regime switching, drifting bandit, concept drift, anomaly stream,
-    and small delayed-reward control proxy before more broad native migration.
+37. Tier 7.0e standardized dynamical benchmark rerun. CURRENT NEXT: rerun
+    Mackey-Glass, Lorenz, NARMA10, and aggregate geometric-mean MSE using the
+    v2.2 fading-memory temporal-state baseline with a predeclared run-length
+    sweep (`720`, `2000`, `10000`, `50000` if practical). Tier 6.2 diagnostic
+    hard tasks may explain failures, but they may not replace
+    public/standardized benchmark evidence.
 ```
 
 Tier 5.19a result:
@@ -6775,7 +6862,7 @@ Tests: test-temporal-state, test-profiles, test, test-lifecycle, test-lifecycle-
 Boundary: local source/runtime host evidence only, not hardware
 ```
 
-Next: Design and run Tier 6.2 hard synthetic usefulness suite in software with strong fair baselines, using `CRA_NATIVE_SCALE_BASELINE_v0.5` only as the frozen native substrate reference, not as usefulness evidence.
+Next: Run Tier 7.0e standardized Mackey-Glass/Lorenz/NARMA10 benchmark rerun in software with v2.2 and the run-length/training-budget sweep, using `CRA_NATIVE_SCALE_BASELINE_v0.5` only as the frozen native substrate reference, not as usefulness evidence.
       Tier 4.32e passed after EBRAINS ingest at
       `controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/`:
       board `10.11.205.161`, two cases, 32 events per case, 96/96 lookup

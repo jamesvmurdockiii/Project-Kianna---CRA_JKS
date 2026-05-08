@@ -969,53 +969,83 @@ ability.
 
 ### Phase H - Software Usefulness And Final Baselines
 
-69. **CURRENT ACTIVE STEP** - Tier 6.2 hard synthetic suite: variable-delay cue, multi-cue delayed reward,
-    hidden regime switching, drifting bandit, concept drift, anomaly stream,
-    and small delayed-reward control proxy.
+69. **CURRENT ACTIVE STEP** - Tier 7.0e standardized dynamical benchmark rerun
+    with run-length/training-budget sweep:
+    rerun Mackey-Glass, Lorenz, NARMA10, and aggregate geometric-mean MSE using
+    the frozen v2.2 fading-memory temporal-state software baseline across
+    predeclared lengths `720`, `2000`, `10000`, and `50000` if practical. Use
+    `docs/TIER6_2_USEFULNESS_BATTERY_CONTRACT.md` as the source-of-truth
+    scoreboard rule: public/standard benchmarks first; custom synthetic tasks
+    only diagnose failures. This explicitly tests whether the prior v2.1 result
+    was partly a short-training-budget artifact.
 
-70. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+70. Tier 7.0f failure localization if 7.0e still loses: diagnose whether the
+    remaining gap is continuous readout/interface, nonlinear recurrent state,
+    insufficient causal history, target scaling, baseline unfairness, or a
+    genuine architecture limitation. Do not tune blindly.
+
+71. Tier 6.2a diagnostic hard tasks only if needed: use variable-delay,
+    hidden-context, drift, anomaly, or delayed-control diagnostics to isolate the
+    measured public-benchmark failure class. These tasks cannot be used as the
+    public usefulness proof by themselves.
+
+72. Mechanism iteration loop: add exactly one planned general mechanism at a
+    time, ablate it, run compact regression, then rerun the same standardized
+    benchmark scoreboard. If the full planned mechanism stack still cannot move
+    Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
+    stop the broad usefulness track and narrow the paper.
+
+73. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
-    baselines.
+    baselines. Start only after the standardized scoreboard or failure diagnosis
+    identifies a winning regime, a real failure mode, or a mechanism needing
+    external validation.
 
-71. Tier 7.2 held-out task challenge: define held-out families before running;
-    no tuning on the holdout.
+74. Tier 7.2 held-out task challenge: define held-out families before running;
+    no tuning on the holdout. Include at least one synthetic holdout and one
+    real-ish adapter holdout if Tier 7.1 is active.
 
-72. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
-    licenses, preprocessing, and external baselines.
+75. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+    licenses, preprocessing, and external baselines. Candidate domains include
+    streaming anomaly detection, predictive-maintenance sensor streams, human
+    activity streams, event prediction, ECG/biosignal streams, and finance as
+    one domain only rather than the whole proof.
 
-73. Tier 7.4 policy/action selection: state -> action -> delayed consequence,
-    exploration versus exploitation, uncertainty-gated actions.
+76. Tier 7.4 policy/action selection: state -> action -> delayed consequence,
+    exploration versus exploitation, uncertainty-gated actions. Do not start
+    broad policy claims until prediction/adaptation usefulness is measured.
 
-71. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
+77. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
     planning/subgoal control: run only after the shorter hard/real-ish tasks are
     stable. Do not claim language, AGI, or broad planning from toy gates.
 
-72. Run expanded external baselines and fairness audit at the phase lock:
-    random/sign persistence, online perceptron/logistic, reservoir/ESN, small
-    GRU, STDP-only SNN, simple evolutionary population, and SNN reviewer-defense
-    baselines where practical.
+78. Run expanded external baselines and fairness audit at the phase lock:
+    random/sign persistence, online perceptron/logistic, lag/ridge where
+    relevant, reservoir/ESN, small GRU, STDP-only SNN, simple evolutionary
+    population, simple control baselines, and SNN reviewer-defense baselines
+    where practical.
 
-73. Freeze the next software baseline only if new software capability work
-    passes ablations, fair baselines, and compact regression. If no new software
-    mechanism is promoted, keep v2.2.
+79. Freeze the next software baseline only if new software capability work
+    passes ablations, fair baselines, leakage controls, and compact regression.
+    If no new software mechanism is promoted, keep v2.2.
 
 ### Phase I - Final Paper Lock
 
-74. Select final paper claim level: strong usefulness paper, bounded architecture
+80. Select final paper claim level: strong usefulness paper, bounded architecture
     study, or narrowed diagnostic report. Let the evidence decide.
 
-75. Run final software matrix and final hardware subset matrix. Include effect
+81. Run final software matrix and final hardware subset matrix. Include effect
     sizes, confidence intervals, worst seed, sample efficiency, runtime, command
     count, resource budgets, and claim-boundary table.
 
-76. Build the independent reproduction capsule: fresh checkout instructions,
+82. Build the independent reproduction capsule: fresh checkout instructions,
     environment lock, validation command, registry/table regeneration, EBRAINS
     ingest instructions, artifact hash manifest, and one local tier rerun.
 
-77. Draft paper/whitepaper only after the Phase H usefulness/baseline gates pass. Write
+83. Draft paper/whitepaper only after the Phase H usefulness/baseline gates pass. Write
     limitations first, then claims. Preserve failed and parked diagnostics.
 
-78. External dry run: have a clean agent or human follow only the docs. If they
+84. External dry run: have a clean agent or human follow only the docs. If they
     need hidden chat context, the repo is not ready.
 
 ## 7. Current Tier 4.27 Definition
@@ -1253,9 +1283,13 @@ Tier 4.32g-r0 then passed locally and authorized Tier 4.32g hardware package
 preparation. Tier 4.32g-r2 then passed on EBRAINS after the stale-package rerun
 was isolated, proving two-chip lifecycle traffic/resource counters over the
 repaired package. Tier 4.32h then passed locally and froze
-`CRA_NATIVE_SCALE_BASELINE_v0.5`. The next action is Tier 6.2 software usefulness
-testing, not benchmarks-as-claims, speedup, true two-partition learning,
-lifecycle scaling, multi-shard learning, or new native migration.
+`CRA_NATIVE_SCALE_BASELINE_v0.5`. The next action is Tier 7.0e: rerun the
+standard Mackey-Glass/Lorenz/NARMA10 scoreboard with the v2.2 fading-memory
+baseline and a predeclared run-length/training-budget sweep. Tier 6.2
+diagnostics may explain failures, but they may not replace public/standardized
+benchmark evidence. This is not benchmarks-as-claims, speedup, true
+two-partition learning, lifecycle scaling, multi-shard learning, or new native
+migration.
 ```
 
 Purpose:
@@ -1298,8 +1332,11 @@ the native lifecycle baseline. Keep Tier 4.31d's boundary strict: one-board
 temporal-state hardware smoke only; not nonlinear recurrence, not speedup, not
 multi-chip scaling, not benchmark superiority, and not full organism autonomy.
 Tier 4.32g-r2 passed and Tier 4.32h froze `CRA_NATIVE_SCALE_BASELINE_v0.5`.
-The next active work is Tier 6.2 software usefulness testing; reopen native work
-only for targeted transfer after a software task/mechanism earns it.
+The next active work is Tier 7.0e standardized benchmark rerun with v2.2 plus
+run-length/training-budget sweep, then failure localization/mechanism layering
+only if the public scoreboard still shows a gap. Reopen native work only for
+targeted transfer after a software task/mechanism earns it under the Tier 7/6.2
+gates.
 It must preserve explicit board/chip/shard identity, message paths, compact
 readback ownership, failure counters, placement assumptions,
 enabled-vs-no-learning separation, and resource measurements while adding the

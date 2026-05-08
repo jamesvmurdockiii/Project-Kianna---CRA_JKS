@@ -48,7 +48,7 @@ controlled ablations, baseline comparisons, and explicit claim boundaries.
 | Latest multi-chip lifecycle/resource decision | Tier 4.32f passed locally from [`controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision`](controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision): `22/22` criteria, selected multi-chip lifecycle traffic with resource counters as the next direction, classified that lifecycle inter-chip route entries are not yet source-proven, authorized Tier 4.32g-r0 source/route repair audit next, and blocked immediate hardware packaging. |
 | Latest lifecycle route repair audit | Tier 4.32g-r0 passed locally from [`controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit`](controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit): `14/14` criteria, source-proved lifecycle event request, trophic update, and active-mask/lineage sync MCPL routes for learning/lifecycle profiles, passed the new lifecycle inter-chip route C test plus existing lookup-route and lifecycle-split regressions, and authorized Tier 4.32g hardware package preparation. |
 | Latest 4.32g hardware return | Tier 4.32g-r2 passed after EBRAINS ingest from [`controlled_test_output/tier4_32g_20260508_hardware_pass_ingested`](controlled_test_output/tier4_32g_20260508_hardware_pass_ingested): raw hardware status `pass`, ingest status `pass`, runner revision `tier4_32g_multichip_lifecycle_traffic_resource_smoke_20260508_0003`, board target `10.11.205.177`, source chip `(0,0)` learning core `p7`, remote chip `(1,0)` lifecycle core `p4`, source event/trophic requests `1/1`, source mask sync received `1`, lifecycle accepted trophic+death `2`, lifecycle mask sync sent `1`, active mask/count/death/trophic counters `1`, zero stale/duplicate/missing-ack counters, pause/reset controls passed, payloads `>=149`, `30` returned artifacts preserved, and zero synthetic fallback. Boundary: two-chip lifecycle traffic/resource smoke only; not lifecycle scaling, speedup, benchmark evidence, true partitioned ecology, multi-shard learning, or a native-scale baseline freeze. |
-| Active next gate | Tier 6.2 hard synthetic usefulness suite in software: variable-delay cue, multi-cue delayed reward, hidden regime switching, drifting bandit, concept drift, anomaly stream, and small delayed-reward control proxy with strong baselines and leakage controls. |
+| Active next gate | Tier 7.0e standardized benchmark rerun: Mackey-Glass, Lorenz, and NARMA10 against the v2.2 fading-memory temporal-state baseline, with a run-length/training-budget sweep (`720`, `2000`, `10000`, `50000` if practical). Tier 6.2 diagnostics explain public-benchmark failures; they do not replace them. |
 | Canonical registry | 81 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
 | Validation suite | 151 pytest tests plus registry, paper-table, and repository-audit generation. |
 
@@ -129,6 +129,8 @@ Current execution queue:
 [`docs/MASTER_EXECUTION_PLAN.md`](docs/MASTER_EXECUTION_PLAN.md). The completed
 Tier 5.19 temporal-dynamics contract is preserved at
 [`docs/TIER5_19_CONTINUOUS_TEMPORAL_DYNAMICS_CONTRACT.md`](docs/TIER5_19_CONTINUOUS_TEMPORAL_DYNAMICS_CONTRACT.md).
+The current usefulness-testing contract is
+[`docs/TIER6_2_USEFULNESS_BATTERY_CONTRACT.md`](docs/TIER6_2_USEFULNESS_BATTERY_CONTRACT.md).
 
 ## Quick Start
 

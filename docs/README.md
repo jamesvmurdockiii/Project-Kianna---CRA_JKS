@@ -9,6 +9,7 @@ This directory contains the research-facing narrative docs.
 | `PAPER_READINESS_ROADMAP.md` | Strategic roadmap from the current evidence state to paper-ready claims, including pass/fail gates and make-or-break criteria. |
 | `MECHANISM_STATUS.md` | Mechanism ledger separating promoted mechanisms, diagnostics, parked ideas, and future research targets. |
 | `MASTER_EXECUTION_PLAN.md` | Operational step-by-step execution plan from the current state through chip-native migration, remaining capability tiers, final matrices, reproduction, and paper lock. |
+| `TIER6_2_USEFULNESS_BATTERY_CONTRACT.md` | Current usefulness-testing contract: hard synthetic diagnostics, real-ish/real dataset transition rules, baseline requirements, pass/fail criteria, and hardware-transfer gates. |
 | `REVIEWER_DEFENSE_PLAN.md` | Adversarial reviewer-attack matrix, statistical/fairness safeguards, and additional proof targets before paper release. |
 | `WHITEPAPER.md` | Full technical whitepaper covering architecture, evidence, hardware, limitations, and roadmap. |
 | `PAPER_RESULTS_TABLE.md` | Paper-facing evidence table generated from the canonical registry. |

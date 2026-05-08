@@ -424,13 +424,16 @@ Tier 4.32h — COMPLETE. Native-scale evidence closeout / baseline decision.
     benchmark usefulness, true partitioned learning, lifecycle scaling,
     multi-shard learning, and AGI/ASI.
 
-Tier 6.2 — CURRENT ACTIVE STEP. Hard synthetic usefulness suite in software.
+Tier 7.0e — CURRENT ACTIVE STEP. Standardized dynamical benchmark rerun with
+  v2.2 and run-length/training-budget sweep.
   Status: DESIGN/RUN NEXT.
-  Question: does the frozen software stack show useful advantages on harder
-    synthetic tasks against strong fair baselines before any more broad native
-    migration?
-  Boundary: software usefulness/baseline evidence only; not a new hardware
-    claim until a winning task/mechanism is separately transferred.
+  Question: does the frozen v2.2 fading-memory temporal-state software baseline
+    close or narrow the prior Tier 7.0 Mackey-Glass/Lorenz/NARMA10 gap, and was
+    the earlier v2.1 result partly a short-training-budget artifact?
+  Required lengths: 720, 2000, 10000, and 50000 if practical.
+  Boundary: public/standardized software benchmark evidence only; Tier 6.2
+    custom diagnostics may explain failures, but cannot replace public
+    benchmark evidence or authorize hardware transfer by themselves.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware
@@ -920,9 +923,9 @@ Immediate next steps:
    controlled_test_output/tier4_32h_20260508_native_scale_evidence_closeout/.
    This is a native-scale substrate freeze only: do not claim speedup, benchmark
    usefulness, true two-partition cross-chip learning, lifecycle scaling,
-   multi-shard learning, or AGI/ASI from it. The next active step is Tier 6.2
-   software hard synthetic usefulness testing with strong fair baselines before
-   any broad new native migration.
+   multi-shard learning, or AGI/ASI from it. The next active step is Tier 7.0e
+   standardized Mackey-Glass/Lorenz/NARMA10 rerun with v2.2 and a
+   run-length/training-budget sweep before any broad new native migration.
 3. Keep the 4.31b/4.31c range refinement explicit: selected trace bound is ±2
    in s16.15; the older ±1 sketch saturated and must not silently return.
 4. Keep public repo hygiene green before the next upload or commit: no
