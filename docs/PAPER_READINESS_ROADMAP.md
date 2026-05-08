@@ -3754,8 +3754,10 @@ shams, but did not beat the fixed random-reservoir online residual baseline and
 did not clear bootstrap confirmation. Tier 7.1i then broadened NAB to 20
 streams across 6 categories: v2.3 still beat v2.2 and shams, but rolling
 z-score won the aggregate and the v2.3 signal localized rather than confirming.
-The next step is Tier 7.1j NAB failure/localization analysis; stop tuning
-C-MAPSS for now.
+Tier 7.1j then localized the gap to threshold/false-positive pressure: v2.3 has
+better event-F1/window recall than rolling z-score, but worse false-positive and
+NAB-style scores. The next step is Tier 7.1k NAB adapter/readout false-positive
+repair; stop tuning C-MAPSS for now.
 ```
 
 ### Tier 6.2: Diagnostic Hard Task Suite
@@ -3813,6 +3815,7 @@ Tier 7.1f — next public adapter contract / family selection: COMPLETE, PASS 10
 Tier 7.1g — NAB source/data/scoring preflight: COMPLETE, PASS 24/24
 Tier 7.1h — compact NAB scoring gate: COMPLETE, PASS 16/16
 Tier 7.1i — NAB fairness/statistical confirmation: COMPLETE, PASS 18/18
+Tier 7.1j — NAB failure/localization analysis: COMPLETE, PASS 12/12
 ```
 
 Result:
@@ -3886,6 +3889,17 @@ Bootstrap 95% CI: [-0.13027269733009264, 0.03602365729899069]
 Localized v2.3 category win: realAdExchange
 Localized v2.3 stream wins: realAdExchange/exchange-2_cpm_results.csv; realKnownCause/ambient_temperature_system_failure.csv
 Boundary: broader NAB software confirmation/localization only; no public usefulness proof, no freeze, no hardware/native transfer.
+
+Output: controlled_test_output/tier7_1j_20260508_nab_failure_localization/
+Failure class: threshold_or_fp_penalty_sensitive
+Default best model: rolling_zscore_detector
+Default best primary score: 0.140951459207744
+v2.3 default rank: 3
+v2.3 default primary score: 0.09880252815842962
+v2.3 policy-grid wins: 3/15
+v2.3 beats rolling z-score cells: 5/15
+Component deltas vs rolling z-score: event-F1 +0.021302626282845488; window recall +0.20583333333333342; NAB-style -1.1513368486050855; FP/1000 +8.088190784286144
+Boundary: software failure analysis only; no public usefulness proof, no freeze, no hardware/native transfer.
 ```
 
 Interpretation:
@@ -3908,25 +3922,27 @@ smoke emission. Tier 7.1h produced a partial compact NAB signal: v2.3 beat v2.2
 and all three v2.3 shams, but did not beat the strongest external baseline and
 the paired bootstrap interval crossed zero. Tier 7.1i broadened the subset and
 showed the signal is localized rather than confirmed: v2.3 beat v2.2 and shams,
-but rolling z-score won the aggregate. None of these tiers authorizes a freeze
-or native transfer.
+but rolling z-score won the aggregate. Tier 7.1j explained the aggregate gap as
+threshold/false-positive-policy sensitive: v2.3 catches more anomaly
+events/windows but pays too much false-positive/NAB-style penalty. None of
+these tiers authorizes a freeze or native transfer.
 ```
 
 Current next step:
 
 ```text
-Tier 7.1j — NAB failure/localization analysis
+Tier 7.1k — NAB adapter/readout false-positive repair
 ```
 
-Tier 7.1j must predeclare and then test:
+Tier 7.1k must predeclare and then test:
 
 ```text
-threshold policy variants without label leakage
-score normalization / false-positive penalty sensitivity
-temporal-state readout versus simple z-score residual behavior
-category-mix and stream-family localization
-v2.3 localized wins versus v2.2/sham controls
-failure class deciding whether to tune scoring, narrow claim, or add mechanism
+no-label calibration/readout repair for v2.3 false positives
+event-F1/window-recall preservation versus Tier 7.1j
+comparison against rolling z-score, reservoir, v2.2, and v2.3 shams
+same broad NAB subset and label-separation contract
+confirmation/failure criteria that do not tune on anomaly labels
+decision: public-adapter repair, claim narrowing, or planned mechanism revisit
 ```
 
 Tier 7.1a predeclared these candidate/future adapter families:
@@ -7411,7 +7427,7 @@ Boundary: contract/family-selection only, not NAB data preflight, not scoring,
           hardware/native transfer.
 ```
 
-Tier 7.1h result: compact NAB scoring passed as a harness and produced a partial v2.3 signal, but did not confirm public usefulness. Tier 7.1i then broadened NAB to 20 streams across 6 categories. v2.3 beat v2.2 and all three v2.3 shams, but rolling z-score won the aggregate, v2.3 ranked fourth, and the v2.3 signal localized to realAdExchange plus two streams. Next: implement Tier 7.1j NAB failure/localization analysis before adding mechanisms or moving to native/on-chip transfer. Use `CRA_NATIVE_SCALE_BASELINE_v0.5` only as the frozen native substrate reference, not as usefulness evidence.
+Tier 7.1h result: compact NAB scoring passed as a harness and produced a partial v2.3 signal, but did not confirm public usefulness. Tier 7.1i then broadened NAB to 20 streams across 6 categories. v2.3 beat v2.2 and all three v2.3 shams, but rolling z-score won the aggregate, v2.3 ranked fourth, and the v2.3 signal localized to realAdExchange plus two streams. Tier 7.1j then localized the gap to threshold/false-positive pressure. Next: implement Tier 7.1k NAB adapter/readout false-positive repair before adding mechanisms or moving to native/on-chip transfer. Use `CRA_NATIVE_SCALE_BASELINE_v0.5` only as the frozen native substrate reference, not as usefulness evidence.
 
 Detailed Tier 5.19 contract:
 
@@ -7497,7 +7513,7 @@ for strict promotion gates.
 Next step remains:
 
 ```text
-Tier 7.1j - NAB failure/localization analysis.
+Tier 7.1k - NAB adapter/readout false-positive repair.
 ```
 
 ## Tier 5.20c/5.20d/5.20e Resonant Dose Sweep Closeout

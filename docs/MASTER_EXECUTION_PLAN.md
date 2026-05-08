@@ -1197,30 +1197,41 @@ ability.
     confirmation/localization only; no public usefulness proof, freeze, or
     hardware/native transfer.
 
-91. **CURRENT ACTIVE STEP** - Tier 7.1j NAB failure/localization analysis:
-    explain why rolling z-score dominates the broadened aggregate while v2.3
-    still beats v2.2/shams and wins localized streams. Separate threshold
-    policy, score normalization, temporal-state readout, false-positive penalty,
-    category mix, and stream-family effects before adding any new mechanism or
-    moving anything to hardware.
+91. **COMPLETE** - Tier 7.1j NAB failure/localization analysis:
+    passed 12/12 at
+    `controlled_test_output/tier7_1j_20260508_nab_failure_localization/`.
+    Failure class: `threshold_or_fp_penalty_sensitive`. Under the default
+    policy rolling z-score still wins (`0.140951459207744`), but v2.3 ranks
+    third within the key diagnostic subset (`0.09880252815842962`), wins 3/15
+    policy cells, and beats rolling z-score in 5/15 policy cells. Component
+    deltas show v2.3 has better event-F1 and window recall, but worse
+    false-positive/NAB-style pressure. Boundary: software failure analysis only;
+    no public usefulness proof, freeze, or hardware/native transfer.
 
-92. Mechanism iteration loop: add exactly one planned general mechanism at a
+92. **CURRENT ACTIVE STEP** - Tier 7.1k NAB adapter/readout false-positive
+    repair:
+    reduce v2.3 false positives under a predeclared no-label calibration/readout
+    policy while preserving the event-F1/window-recall benefit from 7.1j.
+    Compare against rolling z-score, reservoir, v2.2, and v2.3 shams before
+    adding mechanisms or moving anything to hardware.
+
+93. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
     stop the broad usefulness track and narrow the paper.
 
-93. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+94. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines. Start only after the standardized scoreboard or failure diagnosis
     identifies a winning regime, a real failure mode, or a mechanism needing
     external validation.
 
-94. Tier 7.2 held-out task challenge: define held-out families before running;
+95. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout. Include at least one synthetic holdout and one
     real-ish adapter holdout if Tier 7.1 is active.
 
-95. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+96. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines. Candidate domains include
     streaming anomaly detection, predictive-maintenance sensor streams, human
     activity streams, event prediction, ECG/biosignal streams, and finance as
@@ -1586,8 +1597,10 @@ all three v2.3 shams, but did not beat the fixed random-reservoir online
 residual baseline and did not clear bootstrap confirmation. Tier 7.1i then
 broadened NAB to 20 streams across 6 categories: v2.3 beat v2.2 and shams, but
 rolling z-score won the aggregate and the v2.3 signal localized rather than
-confirming. The next active public-adapter work is Tier 7.1j NAB failure/
-localization analysis. Reopen
+confirming. Tier 7.1j then localized the gap to threshold/false-positive policy:
+v2.3 has better event-F1/window recall but worse NAB-style/false-positive
+pressure. The next active public-adapter work is Tier 7.1k NAB adapter/readout
+false-positive repair. Reopen
 native work only for targeted transfer after a software task/mechanism earns it
 under the Tier 7/6.2 gates and a separate transfer contract is written.
 It must preserve explicit board/chip/shard identity, message paths, compact

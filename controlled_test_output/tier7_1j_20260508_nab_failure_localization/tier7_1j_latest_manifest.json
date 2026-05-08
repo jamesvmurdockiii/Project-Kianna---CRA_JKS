@@ -1,0 +1,69 @@
+{
+  "artifacts": [
+    {
+      "bytes": 144749,
+      "name": "category_summary_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1j_20260508_nab_failure_localization/tier7_1j_category_summary.csv",
+      "sha256": "f9d0fcec849d69180bec4e361b90e0364b478f896f909ffff2bbcda5724e20aa"
+    },
+    {
+      "bytes": 2030,
+      "name": "contract_json",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1j_20260508_nab_failure_localization/tier7_1j_failure_analysis_contract.json",
+      "sha256": "a5e075d5963871e852270a822e0de12a18f9e66969606746395f8e74b52eb44b"
+    },
+    {
+      "bytes": 928,
+      "name": "diagnosis_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1j_20260508_nab_failure_localization/tier7_1j_diagnosis.csv",
+      "sha256": "e4e11a92e3bc3234defd14f84cb6d73946a38e9d63d1b43a7933be8ee062ee0f"
+    },
+    {
+      "bytes": 632944,
+      "name": "policy_metrics_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1j_20260508_nab_failure_localization/tier7_1j_policy_metrics.csv",
+      "sha256": "622b7e890b6de067e09e57971505a991cacbdcd62b244eadacd132b41e752e45"
+    },
+    {
+      "bytes": 23226,
+      "name": "policy_summary_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1j_20260508_nab_failure_localization/tier7_1j_policy_summary.csv",
+      "sha256": "fe83a1242f06189cc60bc4efd972ff5a0fdc12ba2e509c292bd5b74ac2942b7a"
+    },
+    {
+      "bytes": 1528,
+      "name": "report_md",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1j_20260508_nab_failure_localization/tier7_1j_report.md",
+      "sha256": "d65e4d4aabc87a6866c6e3d8e84572311897edc85ca11fd607e999a465d3050f"
+    },
+    {
+      "bytes": 36139,
+      "name": "results_json",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1j_20260508_nab_failure_localization/tier7_1j_results.json",
+      "sha256": "e125cca0a6c2d2cf90b823bec968cfeae0426011a09f5de1124953ded0bfdc52"
+    },
+    {
+      "bytes": 536769,
+      "name": "stream_summary_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1j_20260508_nab_failure_localization/tier7_1j_stream_summary.csv",
+      "sha256": "aed335bb18e1eb6b9dad09bd6d9cd1f0efeddfb44a5a4669d813d719cbe27857"
+    },
+    {
+      "bytes": 12524,
+      "name": "summary_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1j_20260508_nab_failure_localization/tier7_1j_summary.csv",
+      "sha256": "982fda62f9ee2853cd56b419b642aab60dd1ac918131a9d2b01c6755ab3c29eb"
+    },
+    {
+      "bytes": 250910,
+      "name": "thresholds_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1j_20260508_nab_failure_localization/tier7_1j_thresholds.csv",
+      "sha256": "4ed7f50222f99b460b1e11276b49b705031d7ece5f325d432211b99982b69d77"
+    }
+  ],
+  "generated_at_utc": "2026-05-08T23:30:24+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1j_20260508_nab_failure_localization",
+  "runner_revision": "tier7_1j_nab_failure_localization_20260508_0001",
+  "status": "pass",
+  "tier": "Tier 7.1j - NAB Failure/Localization Analysis"
+}

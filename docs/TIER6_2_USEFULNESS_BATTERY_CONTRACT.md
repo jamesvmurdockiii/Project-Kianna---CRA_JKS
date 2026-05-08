@@ -711,19 +711,46 @@ two streams. This authorizes failure/localization analysis, not freeze,
 hardware/native transfer, or a public usefulness claim.
 ```
 
+## Tier 7.1j Result
+
+```text
+Tier 7.1j — NAB failure/localization analysis
+output: controlled_test_output/tier7_1j_20260508_nab_failure_localization/
+status: PASS, 12/12 criteria
+failure class: threshold_or_fp_penalty_sensitive
+default best model: rolling_zscore_detector
+default best primary score: 0.140951459207744
+v2.3 default rank: 3
+v2.3 default primary score: 0.09880252815842962
+v2.3 policy-grid wins: 3/15
+v2.3 beats rolling z-score cells: 5/15
+event-F1 delta vs rolling z-score: +0.021302626282845488
+window-recall delta vs rolling z-score: +0.20583333333333342
+NAB-style delta vs rolling z-score: -1.1513368486050855
+FP-per-1000 delta vs rolling z-score: +8.088190784286144
+```
+
+Interpretation:
+
+```text
+Tier 7.1j localized the broader NAB gap to threshold/false-positive-policy
+pressure. v2.3 catches more events/windows than rolling z-score but pays too
+much false-positive/NAB-style penalty. This supports adapter/readout repair
+before any new mechanism, freeze, or hardware/native transfer.
+```
+
 ## Immediate Next Action
 
 The current next action is:
 
 ```text
-Tier 7.1j — NAB failure/localization analysis.
+Tier 7.1k — NAB adapter/readout false-positive repair.
 ```
 
-Explain why rolling z-score dominates the broader NAB aggregate while v2.3 still
-beats v2.2/shams and wins localized streams. Separate threshold policy, score
-normalization, temporal-state readout, false-positive penalty, category mix, and
-stream-family effects before adding any new mechanism or transferring anything
-to hardware/native runtime.
+Reduce v2.3 false positives under a predeclared no-label calibration/readout
+policy while preserving the event-F1/window-recall benefit found in Tier 7.1j.
+Compare against rolling z-score, reservoir, v2.2, and v2.3 shams before adding
+any new mechanism or transferring anything to hardware/native runtime.
 
 ## Resonant Branch Follow-Up Diagnostics
 
@@ -759,7 +786,7 @@ Decision:
 
 ```text
 Do not add resonant branches to the canonical CRA mechanism stack. Continue to
-Tier 7.1j NAB failure/localization analysis and use public/standardized
+Tier 7.1k NAB adapter/readout false-positive repair and use public/standardized
 benchmarks to decide the next mechanism, adapter, or claim narrowing step.
 ```
 
@@ -778,6 +805,6 @@ Decision:
 
 ```text
 The resonant branch idea has now been tested across the useful dose range and is
-parked. Return to the public usefulness track: Tier 7.1j NAB failure/
-localization analysis.
+parked. Return to the public usefulness track: Tier 7.1k NAB adapter/readout
+false-positive repair.
 ```

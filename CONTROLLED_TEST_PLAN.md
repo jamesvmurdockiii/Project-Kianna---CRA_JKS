@@ -14,7 +14,7 @@ mechanism promotion, lifecycle/ecology evidence, and native SpiNNaker runtime
 migration. The generated registry is the authority for which results are
 canonical.
 
-The current canonical evidence trail contains **102 registered evidence bundles**
+The current canonical evidence trail contains **103 registered evidence bundles**
 with all expected artifacts present and all criteria passing. The generated
 registry is the source of truth for the full list:
 
@@ -10993,11 +10993,45 @@ Next required step:
 
 ```text
 Tier 7.1j - NAB failure/localization analysis.
-Explain why rolling z-score dominates the broader aggregate while v2.3 still
-beats v2.2/shams and wins localized streams. Separate threshold policy, score
-normalization, temporal-state readout, false-positive penalty, category mix, and
-stream-family effects before adding any mechanism or moving anything to
-hardware.
+```
+
+Tier 7.1j result:
+
+```text
+Output: controlled_test_output/tier7_1j_20260508_nab_failure_localization/
+Status: pass
+Criteria: 12/12
+Failure class: threshold_or_fp_penalty_sensitive
+Default best model: rolling_zscore_detector
+Default best primary score: 0.140951459207744
+v2.3 default rank: 3
+v2.3 default primary score: 0.09880252815842962
+v2.3 policy-grid wins: 3/15
+v2.3 beats rolling z-score cells: 5/15
+v2.3 event-F1 delta vs rolling z-score: +0.021302626282845488
+v2.3 window-recall delta vs rolling z-score: +0.20583333333333342
+v2.3 NAB-style delta vs rolling z-score: -1.1513368486050855
+v2.3 FP-per-1000 delta vs rolling z-score: +8.088190784286144
+```
+
+Interpretation:
+
+```text
+Tier 7.1j explains the 7.1i NAB gap as threshold/false-positive-policy
+sensitive. v2.3 detects more anomaly events/windows than rolling z-score, but
+pays too much false-positive/NAB-style penalty under the default scoring policy.
+This is not public usefulness proof and does not authorize freeze or hardware
+transfer.
+```
+
+Next required step:
+
+```text
+Tier 7.1k - NAB adapter/readout false-positive repair.
+Reduce v2.3 false positives under a predeclared no-label calibration/readout
+policy while preserving event-F1/window-recall benefit. Compare against rolling
+z-score, reservoir, v2.2, and v2.3 shams before adding mechanisms or moving
+anything to hardware.
 ```
 
 ## Tier 5.20a - Resonant Branch Polyp Internal-Model Diagnostic

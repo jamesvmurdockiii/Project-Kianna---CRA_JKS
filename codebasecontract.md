@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-08T23:16:52+00:00.
+Last updated: 2026-05-08T23:32:12+00:00.
 
 Current repo root:
 
@@ -220,6 +220,29 @@ Tier 7.1i = COMPLETE, PASS, 18/18 criteria
   Boundary: broader NAB software confirmation/localization only; not a full
             NAB benchmark claim, not public usefulness proof, not a baseline
             freeze, and not hardware/native transfer evidence.
+```
+
+Latest NAB failure/localization analysis:
+
+```text
+Tier 7.1j = COMPLETE, PASS, 12/12 criteria
+  Source: controlled_test_output/tier7_1j_20260508_nab_failure_localization/
+  Runner: experiments/tier7_1j_nab_failure_localization.py
+  Failure class: threshold_or_fp_penalty_sensitive
+  Default best model: rolling_zscore_detector, primary score 0.140951459207744
+  v2.3 default rank: 3, primary score 0.09880252815842962
+  v2.3 policy-grid wins: 3/15
+  v2.3 beats rolling z-score cells: 5/15
+  v2.3 component deltas vs rolling z-score:
+    event_f1 +0.021302626282845488
+    window_recall +0.20583333333333342
+    NAB-style score -1.1513368486050855
+    false positives per 1000 +8.088190784286144
+  Interpretation: v2.3 detects more anomaly windows/events but pays too much
+                  false-positive/NAB-style penalty under the default policy.
+  Boundary: software failure analysis only; not public usefulness proof, not a
+            promoted mechanism, not a baseline freeze, and not hardware/native
+            transfer evidence.
 ```
 
 Latest optional mechanism diagnostic:
@@ -812,12 +835,19 @@ localization.
     The signal localized to realAdExchange and two streams. No public
     usefulness claim, freeze, or hardware transfer.
 
-Tier 7.1j — CURRENT ACTIVE STEP. NAB failure/localization analysis.
-  Required first move: explain why rolling z-score dominates the broadened NAB
-    aggregate while v2.3 still beats v2.2/shams and wins localized streams.
-    Separate threshold policy, score normalization, temporal-state readout,
-    false-positive penalty, category mix, and stream-family effects before
-    adding any new mechanism or moving anything to hardware.
+Tier 7.1j — COMPLETE. NAB failure/localization analysis.
+  Status: LOCAL SOFTWARE PASS, 12/12 criteria.
+  Output: controlled_test_output/tier7_1j_20260508_nab_failure_localization/
+  Result: the broader NAB gap is threshold/false-positive-policy sensitive.
+    v2.3 has higher event-F1/window recall than rolling z-score but loses on
+    false positives and NAB-style scoring. No public usefulness claim, freeze,
+    or hardware transfer.
+
+Tier 7.1k — CURRENT ACTIVE STEP. NAB adapter/readout false-positive repair.
+  Required first move: reduce v2.3 false positives under a predeclared no-label
+    calibration/readout policy while preserving the event-F1/window-recall
+    benefit found in Tier 7.1j. Compare against rolling z-score, reservoir,
+    v2.2, and v2.3 shams before any mechanism or hardware/native transfer.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware
