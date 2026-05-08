@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-08T17:35:00+00:00.
+Last updated: 2026-05-08T19:20:00+00:00.
 
 Current repo root:
 
@@ -454,14 +454,25 @@ Tier 7.0g — COMPLETE. General mechanism-selection contract.
     bounded_nonlinear_recurrent_continuous_state_interface
   Boundary: contract only, not mechanism proof.
 
-Tier 7.0h — CURRENT ACTIVE STEP. Bounded nonlinear recurrent continuous-state /
-  readout-interface candidate.
-  Required first move: implement and test the selected software mechanism
-    against v2.2, lag-only, reservoir, ESN, and recurrence shams on
-    Mackey-Glass, Lorenz, and NARMA10 at 720, 2000, and valid same-seed 8000.
-    Promotion requires at least 25 percent aggregate improvement versus v2.2 at
-    8000, sham separation, finite-stream/leakage guardrails, and compact
-    regression before any freeze.
+Tier 7.0h — COMPLETE. Bounded nonlinear recurrent continuous-state /
+  readout-interface gate.
+  Key evidence:
+    controlled_test_output/tier7_0h_20260508_bounded_recurrent_interface_gate/
+  Status: PASS, 10/10 criteria. The candidate improved valid 8000-step
+    aggregate geomean MSE versus v2.2 (0.09530752189727928 vs
+    0.19348969000027122), beat lag-only and random-reservoir online controls,
+    and narrowed the ESN gap.
+  Boundary: not promoted. The permuted-recurrence sham stayed too close
+    (1.036590722013174 margin at 8000), so recurrence/topology specificity is
+    unproven. No baseline freeze, hardware transfer, or native migration.
+
+Tier 7.0i — CURRENT ACTIVE STEP. Recurrence/topology specificity repair gate.
+  Required first move: keep the same public suite, lengths, seeds, and baseline
+    comparisons, then add stricter topology/rewiring shams and a structured
+    recurrence variant with a falsifiable topology-specific hypothesis.
+    Promotion remains blocked unless the useful gain separates from
+    permuted/rewired/frozen/reset/shuffled controls and compact regression
+    passes before any freeze.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware
@@ -951,9 +962,10 @@ Immediate next steps:
    controlled_test_output/tier4_32h_20260508_native_scale_evidence_closeout/.
    This is a native-scale substrate freeze only: do not claim speedup, benchmark
    usefulness, true two-partition cross-chip learning, lifecycle scaling,
-   multi-shard learning, or AGI/ASI from it. Tier 7.0g has now selected Tier
-   7.0h: bounded nonlinear recurrent continuous-state/interface repair before
-   any broad new native migration.
+   multi-shard learning, or AGI/ASI from it. Tier 7.0h showed bounded recurrent
+   state improves the public scoreboard versus v2.2, but Tier 7.0i must repair
+   or falsify recurrence/topology specificity before any freeze or broad native
+   migration.
 3. Keep the 4.31b/4.31c range refinement explicit: selected trace bound is ±2
    in s16.15; the older ±1 sketch saturated and must not silently return.
 4. Keep public repo hygiene green before the next upload or commit: no

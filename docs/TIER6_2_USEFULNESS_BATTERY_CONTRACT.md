@@ -219,7 +219,7 @@ Interpretation:
 ```text
 v2.2 has useful signal and ranks second at the largest valid same-seed length,
 but ESN remains far ahead. Longer exposure alone is not sufficient. The next
-step is Tier 7.0g mechanism-selection contract for the measured failure class.
+step is mechanism repair from the measured failure class.
 ```
 
 ## Usefulness Ladder
@@ -231,8 +231,10 @@ CRA must climb the usefulness ladder in this order:
 | 1 | 7.0e | Rerun Mackey-Glass/Lorenz/NARMA10 using v2.2 plus a run-length sweep | v2.2 closes/narrows the known standardized sequence gap or exposes a true training-budget curve. |
 | 2 | 7.0f | If 7.0e still fails, diagnose the public benchmark failure | The next missing general mechanism is identified without making up a win. |
 | 3 | 6.2a | Diagnostic hard tasks only if needed | A failure mode is isolated under controlled conditions. |
-| 4 | 7.0g / mechanism gate | Select and add one planned general mechanism | The mechanism improves a public benchmark or a predeclared diagnostic and passes ablations. |
-| 5 | 7.1 | Public/real-ish adapter suite | CRA works outside private task generators. |
+| 4 | 7.0g | Select one planned general mechanism from the measured public gap | The next mechanism is chosen without inventing a private win. |
+| 5 | 7.0h | Test the bounded recurrent candidate on public tasks | The candidate improves the public scoreboard or is parked. |
+| 6 | 7.0i | Repair/prove recurrence-topology specificity | The useful gain separates from topology shams before promotion. |
+| 7 | 7.1 | Public/real-ish adapter suite | CRA works outside private task generators. |
 | 6 | 7.2 | Held-out challenge | CRA survives a task family that was not tuned. |
 | 7 | 7.3 | Real public datasets | CRA has a useful regime on at least one externally sourced dataset. |
 | 8 | 7.4 | Standard policy/action tasks | CRA can act under delayed consequences, not only predict. |
@@ -438,11 +440,11 @@ Invalid reasons:
 The current next action is:
 
 ```text
-Tier 7.0h — test the bounded nonlinear recurrent continuous-state/interface
-candidate selected by Tier 7.0g.
+Tier 7.0i — repair or falsify recurrence/topology specificity.
 ```
 
-Tier 7.0g passed and selected bounded nonlinear recurrent continuous-state /
-readout-interface repair from the measured continuous-sequence failure class.
-Do not invent custom proof tasks or move to hardware; run the selected software
-mechanism gate against public tasks, baselines, and shams first.
+Tier 7.0h passed as an executed public software gate and showed a material
+scoreboard improvement versus v2.2, but promotion is blocked because the
+permuted-recurrence sham stayed too close. Do not invent custom proof tasks or
+move to hardware; separate the recurrent gain from topology shams on the same
+public suite first.

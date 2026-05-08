@@ -1,0 +1,25 @@
+{
+  "display_name": "Lorenz x(t)",
+  "finite_check": {
+    "observed_finite": true,
+    "observed_nonfinite_count": 0,
+    "target_finite": true,
+    "target_max": 4.1740847597332476,
+    "target_min": -1.9469522795125864,
+    "target_nonfinite_count": 0
+  },
+  "horizon": 8,
+  "length": 2000,
+  "metadata": {
+    "dt": 0.01,
+    "obs_mu": -5.594733915220722,
+    "obs_sd": 5.73908103977956,
+    "target_mu": -5.5880915393940205,
+    "target_sd": 5.740817874139902
+  },
+  "sample_count": 2000,
+  "seed": 42,
+  "task": "lorenz",
+  "test_count": 700,
+  "train_end": 1300
+}

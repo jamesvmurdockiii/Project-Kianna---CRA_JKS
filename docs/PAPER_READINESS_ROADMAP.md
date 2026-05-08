@@ -3550,6 +3550,66 @@ At least 25 percent aggregate geomean MSE improvement versus v2.2 at valid
 NARMA regression without a declared tradeoff.
 ```
 
+2026-05-08 result:
+
+```text
+Status: PASS as an executed software gate, 10/10 criteria
+Outcome: bounded_recurrent_candidate_improves_scoreboard_but_topology_specificity_unproven
+Promotion: blocked
+```
+
+Key 8000-step aggregate geomean MSE:
+
+```text
+ESN:                         0.020109884207162095
+bounded recurrent candidate: 0.09530752189727928
+v2.2 fading memory:          0.19348969000027122
+lag-only LMS:                0.1986311714577415
+random reservoir:            0.2075278737499566
+```
+
+Interpretation:
+
+```text
+Tier 7.0h is the first public-standard benchmark mechanism gate after v2.2 that
+materially improves the valid 8000-step aggregate versus v2.2 while also
+beating lag/reservoir online controls and narrowing the ESN gap.
+
+It is not promotable yet because topology specificity failed: the
+permuted-recurrence sham stayed too close at 8000. This blocks baseline freeze,
+hardware transfer, and any claim that the specific recurrent topology is doing
+causal work.
+```
+
+### Tier 7.0i: Recurrence / Topology Specificity Repair Gate
+
+Purpose:
+
+```text
+Separate the useful Tier 7.0h recurrent-state gain from generic extra bounded
+features or arbitrary recurrent rewiring.
+```
+
+Required work:
+
+```text
+Keep Mackey-Glass, Lorenz, and NARMA10.
+Keep lengths 720, 2000, and valid same-seed 8000.
+Keep v2.2, lag-only, random-reservoir, and ESN comparisons.
+Add stricter recurrence/topology shams and at least one structured recurrence
+variant that has a falsifiable topology-specific hypothesis.
+```
+
+Promotion remains blocked unless:
+
+```text
+the candidate still materially improves over v2.2
+the candidate still beats simple online controls
+the ESN gap remains narrowed
+permuted/rewired/frozen/reset/state-shuffle controls no longer match
+compact regression passes before any freeze
+```
+
 ### Tier 6.2: Diagnostic Hard Task Suite
 
 Tier 6.2 is subordinate to the public benchmark loop. It is authorized only to
@@ -6985,7 +7045,7 @@ Tests: test-temporal-state, test-profiles, test, test-lifecycle, test-lifecycle-
 Boundary: local source/runtime host evidence only, not hardware
 ```
 
-Next: Run Tier 7.0h bounded nonlinear recurrent continuous-state/interface candidate. Tier 7.0g selected this mechanism from the measured public benchmark gap. Use `CRA_NATIVE_SCALE_BASELINE_v0.5` only as the frozen native substrate reference, not as usefulness evidence.
+Next: Run Tier 7.0i recurrence/topology specificity repair gate. Tier 7.0h improved the public benchmark scoreboard versus v2.2, but promotion is blocked because the permuted-recurrence sham stayed too close. Use `CRA_NATIVE_SCALE_BASELINE_v0.5` only as the frozen native substrate reference, not as usefulness evidence.
       Tier 4.32e passed after EBRAINS ingest at
       `controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/`:
       board `10.11.205.161`, two cases, 32 events per case, 96/96 lookup

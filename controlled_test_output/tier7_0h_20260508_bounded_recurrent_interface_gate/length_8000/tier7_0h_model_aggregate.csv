@@ -1,0 +1,13 @@
+model,geomean_mse,geomean_nmse,task_count,role,public_rank,length
+fixed_esn_train_prefix_ridge_baseline,0.020109884207162095,0.019973429034453632,3,public_baseline,1,8000
+fading_memory_only_ablation,0.19348969000027122,0.19226304663561672,3,v2_2_candidate,2,8000
+lag_only_online_lms_control,0.1986311714577415,0.19729128524693254,3,public_baseline,3,8000
+fixed_random_reservoir_online_control,0.2075278737499566,0.205758192253438,3,public_baseline,4,8000
+bounded_nonlinear_recurrent_online_candidate,0.09530752189727928,0.09475958264855942,3,other,,8000
+frozen_state_ablation,0.4621976521206408,0.4593773403181048,3,other,,8000
+no_update_ablation,1.0126097856074938,1.0060327675125094,3,other,,8000
+permuted_recurrence_sham,0.09879489293678713,0.09810368838769852,3,diagnostic_reference,,8000
+recurrent_hidden_only_ablation,0.26508591171877716,0.2632678152330879,3,diagnostic_reference,,8000
+shuffled_state_sham,1.0348171471598215,1.0280216552880068,3,other,,8000
+shuffled_target_control,1.0412864604722056,1.0344667887953702,3,other,,8000
+state_reset_ablation,0.10652078361098447,0.10582131784422648,3,diagnostic_reference,,8000

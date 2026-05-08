@@ -1,0 +1,21 @@
+{
+  "custom_task_policy": "no private synthetic tasks in this runner",
+  "finite_stream_policy": "all generated task streams must be finite; 8000 is the largest original-seed finite length from Tier 7.0f",
+  "hardware_policy": "blocked until software usefulness and compact regression earn transfer",
+  "lengths": [
+    720,
+    2000,
+    8000
+  ],
+  "public_tasks": [
+    "mackey_glass",
+    "lorenz",
+    "narma10"
+  ],
+  "readout_policy": "online normalized LMS prediction-before-update for candidate/v2.2/controls; ESN keeps train-prefix ridge baseline role",
+  "seeds": [
+    42,
+    43,
+    44
+  ]
+}

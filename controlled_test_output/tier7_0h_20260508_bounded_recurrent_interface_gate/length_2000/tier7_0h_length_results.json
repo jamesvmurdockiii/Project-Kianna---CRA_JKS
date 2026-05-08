@@ -1,0 +1,1916 @@
+{
+  "invalid_tasks": [],
+  "length": 2000,
+  "model_aggregate_rows": [
+    {
+      "geomean_mse": 0.06236159958411151,
+      "geomean_nmse": 0.05300029443757523,
+      "length": 2000,
+      "model": "fixed_esn_train_prefix_ridge_baseline",
+      "public_rank": 1,
+      "role": "public_baseline",
+      "task_count": 3
+    },
+    {
+      "geomean_mse": 0.23686626916582287,
+      "geomean_nmse": 0.21394305811931838,
+      "length": 2000,
+      "model": "lag_only_online_lms_control",
+      "public_rank": 2,
+      "role": "public_baseline",
+      "task_count": 3
+    },
+    {
+      "geomean_mse": 0.2514764000158321,
+      "geomean_nmse": 0.22411728818785462,
+      "length": 2000,
+      "model": "fading_memory_only_ablation",
+      "public_rank": 3,
+      "role": "v2_2_candidate",
+      "task_count": 3
+    },
+    {
+      "geomean_mse": 0.3185607766629087,
+      "geomean_nmse": 0.28063822402249816,
+      "length": 2000,
+      "model": "fixed_random_reservoir_online_control",
+      "public_rank": 4,
+      "role": "public_baseline",
+      "task_count": 3
+    },
+    {
+      "geomean_mse": 0.18530506091614488,
+      "geomean_nmse": 0.15928438037627368,
+      "length": 2000,
+      "model": "bounded_nonlinear_recurrent_online_candidate",
+      "public_rank": null,
+      "role": "other",
+      "task_count": 3
+    },
+    {
+      "geomean_mse": 0.528972528848266,
+      "geomean_nmse": 0.47217730847800105,
+      "length": 2000,
+      "model": "frozen_state_ablation",
+      "public_rank": null,
+      "role": "other",
+      "task_count": 3
+    },
+    {
+      "geomean_mse": 1.3391242823450145,
+      "geomean_nmse": 1.1765661117005402,
+      "length": 2000,
+      "model": "no_update_ablation",
+      "public_rank": null,
+      "role": "other",
+      "task_count": 3
+    },
+    {
+      "geomean_mse": 0.19547862342758643,
+      "geomean_nmse": 0.1706687951043712,
+      "length": 2000,
+      "model": "permuted_recurrence_sham",
+      "public_rank": null,
+      "role": "diagnostic_reference",
+      "task_count": 3
+    },
+    {
+      "geomean_mse": 0.4125364071359741,
+      "geomean_nmse": 0.36097990638704813,
+      "length": 2000,
+      "model": "recurrent_hidden_only_ablation",
+      "public_rank": null,
+      "role": "diagnostic_reference",
+      "task_count": 3
+    },
+    {
+      "geomean_mse": 1.0616086020541315,
+      "geomean_nmse": 0.9372120715848362,
+      "length": 2000,
+      "model": "shuffled_state_sham",
+      "public_rank": null,
+      "role": "other",
+      "task_count": 3
+    },
+    {
+      "geomean_mse": 1.1217108974968528,
+      "geomean_nmse": 0.9904979253475009,
+      "length": 2000,
+      "model": "shuffled_target_control",
+      "public_rank": null,
+      "role": "other",
+      "task_count": 3
+    },
+    {
+      "geomean_mse": 0.1961767162635896,
+      "geomean_nmse": 0.1694387199603599,
+      "length": 2000,
+      "model": "state_reset_ablation",
+      "public_rank": null,
+      "role": "diagnostic_reference",
+      "task_count": 3
+    }
+  ],
+  "models": [
+    "bounded_nonlinear_recurrent_online_candidate",
+    "fading_memory_only_ablation",
+    "fixed_esn_train_prefix_ridge_baseline",
+    "fixed_random_reservoir_online_control",
+    "frozen_state_ablation",
+    "lag_only_online_lms_control",
+    "no_update_ablation",
+    "permuted_recurrence_sham",
+    "recurrent_hidden_only_ablation",
+    "shuffled_state_sham",
+    "shuffled_target_control",
+    "state_reset_ablation"
+  ],
+  "runner_revision": "tier7_0h_bounded_recurrent_interface_gate_20260508_0001",
+  "runtime_seconds": 3.408412833,
+  "seed_aggregate_rows": [
+    {
+      "geomean_mse": 0.2187611077504803,
+      "geomean_nmse": 0.17711353906395674,
+      "length": 2000,
+      "model": "bounded_nonlinear_recurrent_online_candidate",
+      "seed": 42,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse": 0.19012375093583095,
+      "geomean_nmse": 0.15587497492161567,
+      "length": 2000,
+      "model": "bounded_nonlinear_recurrent_online_candidate",
+      "seed": 43,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse": 0.11974466586340574,
+      "geomean_nmse": 0.13509323896354175,
+      "length": 2000,
+      "model": "bounded_nonlinear_recurrent_online_candidate",
+      "seed": 44,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse": 0.27148880043014995,
+      "geomean_nmse": 0.21980297482885894,
+      "length": 2000,
+      "model": "fading_memory_only_ablation",
+      "seed": 42,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse": 0.2769972250048714,
+      "geomean_nmse": 0.22709911459491555,
+      "length": 2000,
+      "model": "fading_memory_only_ablation",
+      "seed": 43,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse": 0.19958733621592273,
+      "geomean_nmse": 0.2251699439895831,
+      "length": 2000,
+      "model": "fading_memory_only_ablation",
+      "seed": 44,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse": 0.06228215712150639,
+      "geomean_nmse": 0.05042492873509045,
+      "length": 2000,
+      "model": "fixed_esn_train_prefix_ridge_baseline",
+      "seed": 42,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse": 0.07930907588007138,
+      "geomean_nmse": 0.06502238753976125,
+      "length": 2000,
+      "model": "fixed_esn_train_prefix_ridge_baseline",
+      "seed": 43,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse": 0.028317379454981192,
+      "geomean_nmse": 0.03194703064182285,
+      "length": 2000,
+      "model": "fixed_esn_train_prefix_ridge_baseline",
+      "seed": 44,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse": 0.31181112703174413,
+      "geomean_nmse": 0.2524487684122725,
+      "length": 2000,
+      "model": "fixed_random_reservoir_online_control",
+      "seed": 42,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse": 0.39584843885980464,
+      "geomean_nmse": 0.3245405436002482,
+      "length": 2000,
+      "model": "fixed_random_reservoir_online_control",
+      "seed": 43,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse": 0.2307854875953871,
+      "geomean_nmse": 0.2603669967279025,
+      "length": 2000,
+      "model": "fixed_random_reservoir_online_control",
+      "seed": 44,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse": 0.5716617645085394,
+      "geomean_nmse": 0.4628292446532071,
+      "length": 2000,
+      "model": "frozen_state_ablation",
+      "seed": 42,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse": 0.5708684490716066,
+      "geomean_nmse": 0.46803255639855074,
+      "length": 2000,
+      "model": "frozen_state_ablation",
+      "seed": 43,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse": 0.42992827938439704,
+      "geomean_nmse": 0.48503541569286895,
+      "length": 2000,
+      "model": "frozen_state_ablation",
+      "seed": 44,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse": 0.24815124001958885,
+      "geomean_nmse": 0.20090840092613427,
+      "length": 2000,
+      "model": "lag_only_online_lms_control",
+      "seed": 42,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse": 0.26015192073356475,
+      "geomean_nmse": 0.21328831311476212,
+      "length": 2000,
+      "model": "lag_only_online_lms_control",
+      "seed": 43,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse": 0.1983832441557454,
+      "geomean_nmse": 0.22381151440738184,
+      "length": 2000,
+      "model": "lag_only_online_lms_control",
+      "seed": 44,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse": 1.4697468784335936,
+      "geomean_nmse": 1.189937616628316,
+      "length": 2000,
+      "model": "no_update_ablation",
+      "seed": 42,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse": 1.5140230073118737,
+      "geomean_nmse": 1.241287830341301,
+      "length": 2000,
+      "model": "no_update_ablation",
+      "seed": 43,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse": 0.9559731344058243,
+      "geomean_nmse": 1.0785073903528193,
+      "length": 2000,
+      "model": "no_update_ablation",
+      "seed": 44,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse": 0.21807261815946313,
+      "geomean_nmse": 0.1765561235830805,
+      "length": 2000,
+      "model": "permuted_recurrence_sham",
+      "seed": 42,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse": 0.22008535131082152,
+      "geomean_nmse": 0.18043931096103766,
+      "length": 2000,
+      "model": "permuted_recurrence_sham",
+      "seed": 43,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse": 0.13417411051244113,
+      "geomean_nmse": 0.15137221389764827,
+      "length": 2000,
+      "model": "permuted_recurrence_sham",
+      "seed": 44,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse": 0.49811346353161895,
+      "geomean_nmse": 0.4032830117230767,
+      "length": 2000,
+      "model": "recurrent_hidden_only_ablation",
+      "seed": 42,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse": 0.4232031462674091,
+      "geomean_nmse": 0.3469675907743154,
+      "length": 2000,
+      "model": "recurrent_hidden_only_ablation",
+      "seed": 43,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse": 0.2926652066769241,
+      "geomean_nmse": 0.33017830411770077,
+      "length": 2000,
+      "model": "recurrent_hidden_only_ablation",
+      "seed": 44,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse": 1.1910905371466638,
+      "geomean_nmse": 0.9643316517680764,
+      "length": 2000,
+      "model": "shuffled_state_sham",
+      "seed": 42,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse": 1.1285869404028752,
+      "geomean_nmse": 0.9252839803877831,
+      "length": 2000,
+      "model": "shuffled_state_sham",
+      "seed": 43,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse": 0.8154286028913083,
+      "geomean_nmse": 0.9199482107517186,
+      "length": 2000,
+      "model": "shuffled_state_sham",
+      "seed": 44,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse": 1.2967038271575873,
+      "geomean_nmse": 1.0498383661853319,
+      "length": 2000,
+      "model": "shuffled_target_control",
+      "seed": 42,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse": 1.1626313575360783,
+      "geomean_nmse": 0.9531956570759319,
+      "length": 2000,
+      "model": "shuffled_target_control",
+      "seed": 43,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse": 0.8511601235473496,
+      "geomean_nmse": 0.9602597087521694,
+      "length": 2000,
+      "model": "shuffled_target_control",
+      "seed": 44,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse": 0.22694262368095042,
+      "geomean_nmse": 0.1837374643871294,
+      "length": 2000,
+      "model": "state_reset_ablation",
+      "seed": 42,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse": 0.20749410629848142,
+      "geomean_nmse": 0.17011624511119103,
+      "length": 2000,
+      "model": "state_reset_ablation",
+      "seed": 43,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse": 0.13117638475523016,
+      "geomean_nmse": 0.14799024711736578,
+      "length": 2000,
+      "model": "state_reset_ablation",
+      "seed": 44,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse": 0.2187611077504803,
+      "geomean_nmse": 0.17711353906395674,
+      "length": 2000,
+      "model": "bounded_nonlinear_recurrent_online_candidate",
+      "seed": 42,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse": 0.19012375093583095,
+      "geomean_nmse": 0.15587497492161567,
+      "length": 2000,
+      "model": "bounded_nonlinear_recurrent_online_candidate",
+      "seed": 43,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse": 0.11974466586340574,
+      "geomean_nmse": 0.13509323896354175,
+      "length": 2000,
+      "model": "bounded_nonlinear_recurrent_online_candidate",
+      "seed": 44,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse": 0.27148880043014995,
+      "geomean_nmse": 0.21980297482885894,
+      "length": 2000,
+      "model": "fading_memory_only_ablation",
+      "seed": 42,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse": 0.2769972250048714,
+      "geomean_nmse": 0.22709911459491555,
+      "length": 2000,
+      "model": "fading_memory_only_ablation",
+      "seed": 43,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse": 0.19958733621592273,
+      "geomean_nmse": 0.2251699439895831,
+      "length": 2000,
+      "model": "fading_memory_only_ablation",
+      "seed": 44,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse": 0.06228215712150639,
+      "geomean_nmse": 0.05042492873509045,
+      "length": 2000,
+      "model": "fixed_esn_train_prefix_ridge_baseline",
+      "seed": 42,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse": 0.07930907588007138,
+      "geomean_nmse": 0.06502238753976125,
+      "length": 2000,
+      "model": "fixed_esn_train_prefix_ridge_baseline",
+      "seed": 43,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse": 0.028317379454981192,
+      "geomean_nmse": 0.03194703064182285,
+      "length": 2000,
+      "model": "fixed_esn_train_prefix_ridge_baseline",
+      "seed": 44,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse": 0.31181112703174413,
+      "geomean_nmse": 0.2524487684122725,
+      "length": 2000,
+      "model": "fixed_random_reservoir_online_control",
+      "seed": 42,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse": 0.39584843885980464,
+      "geomean_nmse": 0.3245405436002482,
+      "length": 2000,
+      "model": "fixed_random_reservoir_online_control",
+      "seed": 43,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse": 0.2307854875953871,
+      "geomean_nmse": 0.2603669967279025,
+      "length": 2000,
+      "model": "fixed_random_reservoir_online_control",
+      "seed": 44,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse": 0.5716617645085394,
+      "geomean_nmse": 0.4628292446532071,
+      "length": 2000,
+      "model": "frozen_state_ablation",
+      "seed": 42,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse": 0.5708684490716066,
+      "geomean_nmse": 0.46803255639855074,
+      "length": 2000,
+      "model": "frozen_state_ablation",
+      "seed": 43,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse": 0.42992827938439704,
+      "geomean_nmse": 0.48503541569286895,
+      "length": 2000,
+      "model": "frozen_state_ablation",
+      "seed": 44,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse": 0.24815124001958885,
+      "geomean_nmse": 0.20090840092613427,
+      "length": 2000,
+      "model": "lag_only_online_lms_control",
+      "seed": 42,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse": 0.26015192073356475,
+      "geomean_nmse": 0.21328831311476212,
+      "length": 2000,
+      "model": "lag_only_online_lms_control",
+      "seed": 43,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse": 0.1983832441557454,
+      "geomean_nmse": 0.22381151440738184,
+      "length": 2000,
+      "model": "lag_only_online_lms_control",
+      "seed": 44,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse": 1.4697468784335936,
+      "geomean_nmse": 1.189937616628316,
+      "length": 2000,
+      "model": "no_update_ablation",
+      "seed": 42,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse": 1.5140230073118737,
+      "geomean_nmse": 1.241287830341301,
+      "length": 2000,
+      "model": "no_update_ablation",
+      "seed": 43,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse": 0.9559731344058243,
+      "geomean_nmse": 1.0785073903528193,
+      "length": 2000,
+      "model": "no_update_ablation",
+      "seed": 44,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse": 0.21807261815946313,
+      "geomean_nmse": 0.1765561235830805,
+      "length": 2000,
+      "model": "permuted_recurrence_sham",
+      "seed": 42,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse": 0.22008535131082152,
+      "geomean_nmse": 0.18043931096103766,
+      "length": 2000,
+      "model": "permuted_recurrence_sham",
+      "seed": 43,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse": 0.13417411051244113,
+      "geomean_nmse": 0.15137221389764827,
+      "length": 2000,
+      "model": "permuted_recurrence_sham",
+      "seed": 44,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse": 0.49811346353161895,
+      "geomean_nmse": 0.4032830117230767,
+      "length": 2000,
+      "model": "recurrent_hidden_only_ablation",
+      "seed": 42,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse": 0.4232031462674091,
+      "geomean_nmse": 0.3469675907743154,
+      "length": 2000,
+      "model": "recurrent_hidden_only_ablation",
+      "seed": 43,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse": 0.2926652066769241,
+      "geomean_nmse": 0.33017830411770077,
+      "length": 2000,
+      "model": "recurrent_hidden_only_ablation",
+      "seed": 44,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse": 1.1910905371466638,
+      "geomean_nmse": 0.9643316517680764,
+      "length": 2000,
+      "model": "shuffled_state_sham",
+      "seed": 42,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse": 1.1285869404028752,
+      "geomean_nmse": 0.9252839803877831,
+      "length": 2000,
+      "model": "shuffled_state_sham",
+      "seed": 43,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse": 0.8154286028913083,
+      "geomean_nmse": 0.9199482107517186,
+      "length": 2000,
+      "model": "shuffled_state_sham",
+      "seed": 44,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse": 1.2967038271575873,
+      "geomean_nmse": 1.0498383661853319,
+      "length": 2000,
+      "model": "shuffled_target_control",
+      "seed": 42,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse": 1.1626313575360783,
+      "geomean_nmse": 0.9531956570759319,
+      "length": 2000,
+      "model": "shuffled_target_control",
+      "seed": 43,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse": 0.8511601235473496,
+      "geomean_nmse": 0.9602597087521694,
+      "length": 2000,
+      "model": "shuffled_target_control",
+      "seed": 44,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse": 0.22694262368095042,
+      "geomean_nmse": 0.1837374643871294,
+      "length": 2000,
+      "model": "state_reset_ablation",
+      "seed": 42,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse": 0.20749410629848142,
+      "geomean_nmse": 0.17011624511119103,
+      "length": 2000,
+      "model": "state_reset_ablation",
+      "seed": 43,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse": 0.13117638475523016,
+      "geomean_nmse": 0.14799024711736578,
+      "length": 2000,
+      "model": "state_reset_ablation",
+      "seed": 44,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    }
+  ],
+  "seed_aggregate_summary": [
+    {
+      "geomean_mse_mean": 0.05663620415218632,
+      "geomean_mse_median": 0.06228215712150639,
+      "geomean_mse_worst": 0.07930907588007138,
+      "geomean_nmse_mean": 0.04913144897222485,
+      "length": 2000,
+      "model": "fixed_esn_train_prefix_ridge_baseline",
+      "rank_by_geomean_mse": 1,
+      "seed_count": 3,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse_mean": 0.17620984151657235,
+      "geomean_mse_median": 0.19012375093583095,
+      "geomean_mse_worst": 0.2187611077504803,
+      "geomean_nmse_mean": 0.15602725098303805,
+      "length": 2000,
+      "model": "bounded_nonlinear_recurrent_online_candidate",
+      "rank_by_geomean_mse": 2,
+      "seed_count": 3,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse_mean": 0.188537704911554,
+      "geomean_mse_median": 0.20749410629848142,
+      "geomean_mse_worst": 0.22694262368095042,
+      "geomean_nmse_mean": 0.16728131887189537,
+      "length": 2000,
+      "model": "state_reset_ablation",
+      "rank_by_geomean_mse": 3,
+      "seed_count": 3,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse_mean": 0.19077735999424192,
+      "geomean_mse_median": 0.21807261815946313,
+      "geomean_mse_worst": 0.22008535131082152,
+      "geomean_nmse_mean": 0.16945588281392218,
+      "length": 2000,
+      "model": "permuted_recurrence_sham",
+      "rank_by_geomean_mse": 4,
+      "seed_count": 3,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse_mean": 0.235562134969633,
+      "geomean_mse_median": 0.24815124001958885,
+      "geomean_mse_worst": 0.26015192073356475,
+      "geomean_nmse_mean": 0.2126694094827594,
+      "length": 2000,
+      "model": "lag_only_online_lms_control",
+      "rank_by_geomean_mse": 5,
+      "seed_count": 3,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse_mean": 0.24935778721698135,
+      "geomean_mse_median": 0.27148880043014995,
+      "geomean_mse_worst": 0.2769972250048714,
+      "geomean_nmse_mean": 0.2240240111377859,
+      "length": 2000,
+      "model": "fading_memory_only_ablation",
+      "rank_by_geomean_mse": 6,
+      "seed_count": 3,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse_mean": 0.31281501782897864,
+      "geomean_mse_median": 0.31181112703174413,
+      "geomean_mse_worst": 0.39584843885980464,
+      "geomean_nmse_mean": 0.2791187695801411,
+      "length": 2000,
+      "model": "fixed_random_reservoir_online_control",
+      "rank_by_geomean_mse": 7,
+      "seed_count": 3,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse_mean": 0.40466060549198407,
+      "geomean_mse_median": 0.4232031462674091,
+      "geomean_mse_worst": 0.49811346353161895,
+      "geomean_nmse_mean": 0.36014296887169756,
+      "length": 2000,
+      "model": "recurrent_hidden_only_ablation",
+      "rank_by_geomean_mse": 8,
+      "seed_count": 3,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse_mean": 0.524152830988181,
+      "geomean_mse_median": 0.5708684490716066,
+      "geomean_mse_worst": 0.5716617645085394,
+      "geomean_nmse_mean": 0.47196573891487553,
+      "length": 2000,
+      "model": "frozen_state_ablation",
+      "rank_by_geomean_mse": 9,
+      "seed_count": 3,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse_mean": 1.045035360146949,
+      "geomean_mse_median": 1.1285869404028752,
+      "geomean_mse_worst": 1.1910905371466638,
+      "geomean_nmse_mean": 0.9365212809691927,
+      "length": 2000,
+      "model": "shuffled_state_sham",
+      "rank_by_geomean_mse": 10,
+      "seed_count": 3,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse_mean": 1.1034984360803384,
+      "geomean_mse_median": 1.1626313575360783,
+      "geomean_mse_worst": 1.2967038271575873,
+      "geomean_nmse_mean": 0.9877645773378111,
+      "length": 2000,
+      "model": "shuffled_target_control",
+      "rank_by_geomean_mse": 11,
+      "seed_count": 3,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse_mean": 1.313247673383764,
+      "geomean_mse_median": 1.4697468784335936,
+      "geomean_mse_worst": 1.5140230073118737,
+      "geomean_nmse_mean": 1.1699109457741457,
+      "length": 2000,
+      "model": "no_update_ablation",
+      "rank_by_geomean_mse": 12,
+      "seed_count": 3,
+      "status": "pass",
+      "task": "all_tasks_geomean"
+    },
+    {
+      "geomean_mse_mean": 0.05663620415218632,
+      "geomean_mse_median": 0.06228215712150639,
+      "geomean_mse_worst": 0.07930907588007138,
+      "geomean_nmse_mean": 0.04913144897222485,
+      "length": 2000,
+      "model": "fixed_esn_train_prefix_ridge_baseline",
+      "rank_by_geomean_mse": 1,
+      "seed_count": 3,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse_mean": 0.17620984151657235,
+      "geomean_mse_median": 0.19012375093583095,
+      "geomean_mse_worst": 0.2187611077504803,
+      "geomean_nmse_mean": 0.15602725098303805,
+      "length": 2000,
+      "model": "bounded_nonlinear_recurrent_online_candidate",
+      "rank_by_geomean_mse": 2,
+      "seed_count": 3,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse_mean": 0.188537704911554,
+      "geomean_mse_median": 0.20749410629848142,
+      "geomean_mse_worst": 0.22694262368095042,
+      "geomean_nmse_mean": 0.16728131887189537,
+      "length": 2000,
+      "model": "state_reset_ablation",
+      "rank_by_geomean_mse": 3,
+      "seed_count": 3,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse_mean": 0.19077735999424192,
+      "geomean_mse_median": 0.21807261815946313,
+      "geomean_mse_worst": 0.22008535131082152,
+      "geomean_nmse_mean": 0.16945588281392218,
+      "length": 2000,
+      "model": "permuted_recurrence_sham",
+      "rank_by_geomean_mse": 4,
+      "seed_count": 3,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse_mean": 0.235562134969633,
+      "geomean_mse_median": 0.24815124001958885,
+      "geomean_mse_worst": 0.26015192073356475,
+      "geomean_nmse_mean": 0.2126694094827594,
+      "length": 2000,
+      "model": "lag_only_online_lms_control",
+      "rank_by_geomean_mse": 5,
+      "seed_count": 3,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse_mean": 0.24935778721698135,
+      "geomean_mse_median": 0.27148880043014995,
+      "geomean_mse_worst": 0.2769972250048714,
+      "geomean_nmse_mean": 0.2240240111377859,
+      "length": 2000,
+      "model": "fading_memory_only_ablation",
+      "rank_by_geomean_mse": 6,
+      "seed_count": 3,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse_mean": 0.31281501782897864,
+      "geomean_mse_median": 0.31181112703174413,
+      "geomean_mse_worst": 0.39584843885980464,
+      "geomean_nmse_mean": 0.2791187695801411,
+      "length": 2000,
+      "model": "fixed_random_reservoir_online_control",
+      "rank_by_geomean_mse": 7,
+      "seed_count": 3,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse_mean": 0.40466060549198407,
+      "geomean_mse_median": 0.4232031462674091,
+      "geomean_mse_worst": 0.49811346353161895,
+      "geomean_nmse_mean": 0.36014296887169756,
+      "length": 2000,
+      "model": "recurrent_hidden_only_ablation",
+      "rank_by_geomean_mse": 8,
+      "seed_count": 3,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse_mean": 0.524152830988181,
+      "geomean_mse_median": 0.5708684490716066,
+      "geomean_mse_worst": 0.5716617645085394,
+      "geomean_nmse_mean": 0.47196573891487553,
+      "length": 2000,
+      "model": "frozen_state_ablation",
+      "rank_by_geomean_mse": 9,
+      "seed_count": 3,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse_mean": 1.045035360146949,
+      "geomean_mse_median": 1.1285869404028752,
+      "geomean_mse_worst": 1.1910905371466638,
+      "geomean_nmse_mean": 0.9365212809691927,
+      "length": 2000,
+      "model": "shuffled_state_sham",
+      "rank_by_geomean_mse": 10,
+      "seed_count": 3,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse_mean": 1.1034984360803384,
+      "geomean_mse_median": 1.1626313575360783,
+      "geomean_mse_worst": 1.2967038271575873,
+      "geomean_nmse_mean": 0.9877645773378111,
+      "length": 2000,
+      "model": "shuffled_target_control",
+      "rank_by_geomean_mse": 11,
+      "seed_count": 3,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    },
+    {
+      "geomean_mse_mean": 1.313247673383764,
+      "geomean_mse_median": 1.4697468784335936,
+      "geomean_mse_worst": 1.5140230073118737,
+      "geomean_nmse_mean": 1.1699109457741457,
+      "length": 2000,
+      "model": "no_update_ablation",
+      "rank_by_geomean_mse": 12,
+      "seed_count": 3,
+      "status": "pass",
+      "task": "standard_three_geomean"
+    }
+  ],
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "summary_rows": [
+    {
+      "length": 2000,
+      "model": "bounded_nonlinear_recurrent_online_candidate",
+      "mse_mean": 0.20595353229114163,
+      "mse_median": 0.19453990743109548,
+      "mse_std": 0.022513128694964205,
+      "mse_worst": 0.23188750070765038,
+      "nmse_mean": 0.19794260720957432,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.20478158413794553,
+      "task": "mackey_glass",
+      "test_corr_mean": 0.8977272545084661
+    },
+    {
+      "length": 2000,
+      "model": "fading_memory_only_ablation",
+      "mse_mean": 0.29987458982510606,
+      "mse_median": 0.30551471058812946,
+      "mse_std": 0.012490659927417082,
+      "mse_worst": 0.308550544568683,
+      "nmse_mean": 0.28779848275656356,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.2892915709320774,
+      "task": "mackey_glass",
+      "test_corr_mean": 0.8586879776422744
+    },
+    {
+      "length": 2000,
+      "model": "fixed_esn_train_prefix_ridge_baseline",
+      "mse_mean": 0.052846082869920145,
+      "mse_median": 0.04974912609846314,
+      "mse_std": 0.023630091349075674,
+      "mse_worst": 0.07787195168202389,
+      "nmse_mean": 0.05073597751207973,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.05414556516461938,
+      "task": "mackey_glass",
+      "test_corr_mean": 0.9744806342123701
+    },
+    {
+      "length": 2000,
+      "model": "fixed_random_reservoir_online_control",
+      "mse_mean": 0.37240040049684864,
+      "mse_median": 0.36168999294407983,
+      "mse_std": 0.09791277951049811,
+      "mse_worst": 0.4752280504773353,
+      "nmse_mean": 0.3575531948200907,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.3620021639636513,
+      "task": "mackey_glass",
+      "test_corr_mean": 0.803524870399419
+    },
+    {
+      "length": 2000,
+      "model": "frozen_state_ablation",
+      "mse_mean": 0.8028675819057849,
+      "mse_median": 0.8000031447077576,
+      "mse_std": 0.014193327608422108,
+      "mse_worst": 0.8182746635901356,
+      "nmse_mean": 0.7709653229244958,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.8260188671991154,
+      "task": "mackey_glass",
+      "test_corr_mean": 0.48316651076100703
+    },
+    {
+      "length": 2000,
+      "model": "lag_only_online_lms_control",
+      "mse_mean": 0.41952832933859857,
+      "mse_median": 0.4313076376449187,
+      "mse_std": 0.026042687647849262,
+      "mse_worst": 0.43760025906029826,
+      "nmse_mean": 0.40255016906343793,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.3889920479174451,
+      "task": "mackey_glass",
+      "test_corr_mean": 0.8134107350237573
+    },
+    {
+      "length": 2000,
+      "model": "no_update_ablation",
+      "mse_mean": 1.043035717183779,
+      "mse_median": 1.050095637113762,
+      "mse_std": 0.016017854523785128,
+      "mse_worst": 1.0543108175523968,
+      "nmse_mean": 1.0012760129534348,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 1.0564386760674724,
+      "task": "mackey_glass",
+      "test_corr_mean": 0.0
+    },
+    {
+      "length": 2000,
+      "model": "permuted_recurrence_sham",
+      "mse_mean": 0.21028620452813604,
+      "mse_median": 0.21334867570415636,
+      "mse_std": 0.0057085948870649285,
+      "mse_worst": 0.21381006619998716,
+      "nmse_mean": 0.2019297826664479,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.20313298721587966,
+      "task": "mackey_glass",
+      "test_corr_mean": 0.8948861343893627
+    },
+    {
+      "length": 2000,
+      "model": "recurrent_hidden_only_ablation",
+      "mse_mean": 0.5015763476510888,
+      "mse_median": 0.4982641729022659,
+      "mse_std": 0.05972494520047045,
+      "mse_worst": 0.5628884590551333,
+      "nmse_mean": 0.48107184579977397,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.45325313458795913,
+      "task": "mackey_glass",
+      "test_corr_mean": 0.7219783710140555
+    },
+    {
+      "length": 2000,
+      "model": "shuffled_state_sham",
+      "mse_mean": 1.0911721479100638,
+      "mse_median": 1.097252369068393,
+      "mse_std": 0.02034173166185449,
+      "mse_worst": 1.1077804273413363,
+      "nmse_mean": 1.047464504857463,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 1.1112716414973038,
+      "task": "mackey_glass",
+      "test_corr_mean": -0.009433871797769194
+    },
+    {
+      "length": 2000,
+      "model": "shuffled_target_control",
+      "mse_mean": 1.0582672237024366,
+      "mse_median": 1.0822599471218703,
+      "mse_std": 0.06242585313551043,
+      "mse_worst": 1.1051372280847864,
+      "nmse_mean": 1.0154715353765418,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 1.128440010723635,
+      "task": "mackey_glass",
+      "test_corr_mean": 0.0683122946577157
+    },
+    {
+      "length": 2000,
+      "model": "state_reset_ablation",
+      "mse_mean": 0.225635708054957,
+      "mse_median": 0.2311418210831316,
+      "mse_std": 0.012625505577787162,
+      "mse_worst": 0.23457305061812356,
+      "nmse_mean": 0.21671515175673042,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.23471440802015275,
+      "task": "mackey_glass",
+      "test_corr_mean": 0.8867831513680965
+    },
+    {
+      "length": 2000,
+      "model": "bounded_nonlinear_recurrent_online_candidate",
+      "mse_mean": 0.07891279724788679,
+      "mse_median": 0.07140375065873072,
+      "mse_std": 0.057130114949562466,
+      "mse_worst": 0.1394261145627894,
+      "nmse_mean": 0.05290368536829262,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.06516594418255214,
+      "task": "lorenz",
+      "test_corr_mean": 0.9741209785047841
+    },
+    {
+      "length": 2000,
+      "model": "fading_memory_only_ablation",
+      "mse_mean": 0.12239318026062623,
+      "mse_median": 0.12126385782720775,
+      "mse_std": 0.0357046366446287,
+      "mse_worst": 0.15864908061323543,
+      "nmse_mean": 0.09173563434754554,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.10172929915498163,
+      "task": "lorenz",
+      "test_corr_mean": 0.959418260151561
+    },
+    {
+      "length": 2000,
+      "model": "fixed_esn_train_prefix_ridge_baseline",
+      "mse_mean": 0.006725325813382238,
+      "mse_median": 0.007355802846859627,
+      "mse_std": 0.0055627651847372775,
+      "mse_worst": 0.011945991065064589,
+      "nmse_mean": 0.004344319150925013,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.006715837723985396,
+      "task": "lorenz",
+      "test_corr_mean": 0.9992633531284857
+    },
+    {
+      "length": 2000,
+      "model": "fixed_random_reservoir_online_control",
+      "mse_mean": 0.12295015966976057,
+      "mse_median": 0.13942685828699125,
+      "mse_std": 0.052035924329090454,
+      "mse_worst": 0.164753055577372,
+      "nmse_mean": 0.0890188547290422,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.15616698742656487,
+      "task": "lorenz",
+      "test_corr_mean": 0.9561803658312927
+    },
+    {
+      "length": 2000,
+      "model": "frozen_state_ablation",
+      "mse_mean": 0.28884081898898334,
+      "mse_median": 0.28617583824807596,
+      "mse_std": 0.08297102719018687,
+      "mse_worst": 0.3731122312310931,
+      "nmse_mean": 0.21673593486995704,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.2646666604861798,
+      "task": "lorenz",
+      "test_corr_mean": 0.8851029876583749
+    },
+    {
+      "length": 2000,
+      "model": "lag_only_online_lms_control",
+      "mse_mean": 0.15288747180862236,
+      "mse_median": 0.15020073809553702,
+      "mse_std": 0.0184183054159644,
+      "mse_worst": 0.17250158224231513,
+      "nmse_mean": 0.11962262447398586,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.14711958551690976,
+      "task": "lorenz",
+      "test_corr_mean": 0.9557916553800333
+    },
+    {
+      "length": 2000,
+      "model": "no_update_ablation",
+      "mse_mean": 2.16527060946042,
+      "mse_median": 2.430858442773413,
+      "mse_std": 1.0487941406903987,
+      "mse_worst": 3.0557393553904144,
+      "nmse_mean": 1.5413435073212198,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 2.3498911717211737,
+      "task": "lorenz",
+      "test_corr_mean": 0.0
+    },
+    {
+      "length": 2000,
+      "model": "permuted_recurrence_sham",
+      "mse_mean": 0.0879798564794237,
+      "mse_median": 0.0960718619834606,
+      "mse_std": 0.046829766574916096,
+      "mse_worst": 0.13023630099159536,
+      "nmse_mean": 0.06179782645158241,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.06988378483075681,
+      "task": "lorenz",
+      "test_corr_mean": 0.9703039518626446
+    },
+    {
+      "length": 2000,
+      "model": "recurrent_hidden_only_ablation",
+      "mse_mean": 0.21098070601493565,
+      "mse_median": 0.18015707601865566,
+      "mse_std": 0.11636509504090194,
+      "mse_worst": 0.33965444409081375,
+      "nmse_mean": 0.14902305970775895,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.19819678936905039,
+      "task": "lorenz",
+      "test_corr_mean": 0.9246877460926138
+    },
+    {
+      "length": 2000,
+      "model": "shuffled_state_sham",
+      "mse_mean": 1.0461171926455286,
+      "mse_median": 0.966705605558979,
+      "mse_std": 0.4572919581811231,
+      "mse_worst": 1.5379140001388958,
+      "nmse_mean": 0.7578845428325162,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.9084223548786464,
+      "task": "lorenz",
+      "test_corr_mean": 0.547674223917065
+    },
+    {
+      "length": 2000,
+      "model": "shuffled_target_control",
+      "mse_mean": 1.3524462109353903,
+      "mse_median": 1.0994066266810163,
+      "mse_std": 0.5610124626462306,
+      "mse_worst": 1.9954088458290042,
+      "nmse_mean": 0.9964834059793315,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 1.5202206938060547,
+      "task": "lorenz",
+      "test_corr_mean": 0.1808831320855264
+    },
+    {
+      "length": 2000,
+      "model": "state_reset_ablation",
+      "mse_mean": 0.08173283794990263,
+      "mse_median": 0.07269165459924867,
+      "mse_std": 0.05509626421560684,
+      "mse_worst": 0.1407904911818523,
+      "nmse_mean": 0.05563322179436083,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.06760992699108033,
+      "task": "lorenz",
+      "test_corr_mean": 0.9728286855908328
+    },
+    {
+      "length": 2000,
+      "model": "bounded_nonlinear_recurrent_online_candidate",
+      "mse_mean": 0.39151207284536066,
+      "mse_median": 0.3859735210763574,
+      "mse_std": 0.10859637574415396,
+      "mse_worst": 0.5027717453463003,
+      "nmse_mean": 0.385917398182938,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.4039598070828709,
+      "task": "narma10",
+      "test_corr_mean": 0.7865120099971277
+    },
+    {
+      "length": 2000,
+      "model": "fading_memory_only_ablation",
+      "mse_mean": 0.43330611428688437,
+      "mse_median": 0.41284408788722843,
+      "mse_std": 0.1257442311499473,
+      "mse_worst": 0.5680264474069617,
+      "nmse_mean": 0.4263826340088544,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.41782253676624764,
+      "task": "narma10",
+      "test_corr_mean": 0.7597121754389597
+    },
+    {
+      "length": 2000,
+      "model": "fixed_esn_train_prefix_ridge_baseline",
+      "mse_mean": 0.6823789303566485,
+      "mse_median": 0.6541374388243136,
+      "mse_std": 0.17608558202342983,
+      "mse_worst": 0.8708784185587901,
+      "nmse_mean": 0.6754560436913227,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.7922106370188812,
+      "task": "narma10",
+      "test_corr_mean": 0.6013028534490336
+    },
+    {
+      "length": 2000,
+      "model": "fixed_random_reservoir_online_control",
+      "mse_mean": 0.7060535940748105,
+      "mse_median": 0.6565145367669558,
+      "mse_std": 0.2097460240539064,
+      "mse_worst": 0.9361346079340441,
+      "nmse_mean": 0.6944129390573314,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.7668630656448179,
+      "task": "narma10",
+      "test_corr_mean": 0.5649250405103144
+    },
+    {
+      "length": 2000,
+      "model": "frozen_state_ablation",
+      "mse_mean": 0.6382588789075472,
+      "mse_median": 0.6335374098014352,
+      "mse_std": 0.17204142142073928,
+      "mse_worst": 0.8126124373852612,
+      "nmse_mean": 0.6300130840308793,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.5882005701437456,
+      "task": "narma10",
+      "test_corr_mean": 0.6088996141584762
+    },
+    {
+      "length": 2000,
+      "model": "lag_only_online_lms_control",
+      "mse_mean": 0.20719366239390105,
+      "mse_median": 0.20243178088585137,
+      "mse_std": 0.06234469203475872,
+      "mse_worst": 0.2717827536451588,
+      "nmse_mean": 0.20335799824479475,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.2662443504871854,
+      "task": "narma10",
+      "test_corr_mean": 0.8934595707010846
+    },
+    {
+      "length": 2000,
+      "model": "no_update_ablation",
+      "mse_mean": 1.0632889341082985,
+      "mse_median": 0.9854683240707859,
+      "mse_std": 0.26607057999744305,
+      "mse_worst": 1.3595929415174162,
+      "nmse_mean": 1.0553481584002025,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 1.2114976604812833,
+      "task": "narma10",
+      "test_corr_mean": 0.0
+    },
+    {
+      "length": 2000,
+      "model": "permuted_recurrence_sham",
+      "mse_mean": 0.4037418646730943,
+      "mse_median": 0.3909134424883291,
+      "mse_std": 0.11050428841054087,
+      "mse_worst": 0.5201004773751409,
+      "nmse_mean": 0.3983719845198723,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.3866195212627271,
+      "task": "narma10",
+      "test_corr_mean": 0.7784943645595345
+    },
+    {
+      "length": 2000,
+      "model": "recurrent_hidden_only_ablation",
+      "mse_mean": 0.6634482543456651,
+      "mse_median": 0.646435495951579,
+      "mse_std": 0.1730493198092489,
+      "mse_worst": 0.8443756056583765,
+      "nmse_mean": 0.6561236117832401,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.7055225884590316,
+      "task": "narma10",
+      "test_corr_mean": 0.5916608038274563
+    },
+    {
+      "length": 2000,
+      "model": "shuffled_state_sham",
+      "mse_mean": 1.048140916346827,
+      "mse_median": 1.0013726954876976,
+      "mse_std": 0.27381046053330466,
+      "mse_worst": 1.3423233252121722,
+      "nmse_mean": 1.036982092550917,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 1.1176804694940043,
+      "task": "narma10",
+      "test_corr_mean": 0.09046964703112963
+    },
+    {
+      "length": 2000,
+      "model": "shuffled_target_control",
+      "mse_mean": 0.9861147849226158,
+      "mse_median": 0.9887221777721079,
+      "mse_std": 0.3359937618985911,
+      "mse_worst": 1.3207972625611242,
+      "nmse_mean": 0.9603352834444651,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 1.070037975064753,
+      "task": "narma10",
+      "test_corr_mean": 0.19014221837786824
+    },
+    {
+      "length": 2000,
+      "model": "state_reset_ablation",
+      "mse_mean": 0.40939070046890125,
+      "mse_median": 0.3930944462647531,
+      "mse_std": 0.11501508436412707,
+      "mse_worst": 0.5316847591913033,
+      "nmse_mean": 0.4034730190763656,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.425721470140026,
+      "task": "narma10",
+      "test_corr_mean": 0.7758648030614935
+    }
+  ],
+  "task_descriptors": [
+    {
+      "display_name": "Mackey-Glass",
+      "finite_check": {
+        "observed_finite": true,
+        "observed_nonfinite_count": 0,
+        "target_finite": true,
+        "target_max": 1.7603063201161036,
+        "target_min": -2.395204043453282,
+        "target_nonfinite_count": 0
+      },
+      "horizon": 8,
+      "length": 2000,
+      "metadata": {
+        "obs_mu": 0.9285198969727092,
+        "obs_sd": 0.23170879322604482,
+        "target_mu": 0.9304841425432095,
+        "target_sd": 0.23355699885459721,
+        "tau": 17
+      },
+      "sample_count": 2000,
+      "seed": 42,
+      "task": "mackey_glass",
+      "test_count": 700,
+      "train_end": 1300
+    },
+    {
+      "display_name": "Lorenz x(t)",
+      "finite_check": {
+        "observed_finite": true,
+        "observed_nonfinite_count": 0,
+        "target_finite": true,
+        "target_max": 4.1740847597332476,
+        "target_min": -1.9469522795125864,
+        "target_nonfinite_count": 0
+      },
+      "horizon": 8,
+      "length": 2000,
+      "metadata": {
+        "dt": 0.01,
+        "obs_mu": -5.594733915220722,
+        "obs_sd": 5.73908103977956,
+        "target_mu": -5.5880915393940205,
+        "target_sd": 5.740817874139902
+      },
+      "sample_count": 2000,
+      "seed": 42,
+      "task": "lorenz",
+      "test_count": 700,
+      "train_end": 1300
+    },
+    {
+      "display_name": "NARMA10",
+      "finite_check": {
+        "observed_finite": true,
+        "observed_nonfinite_count": 0,
+        "target_finite": true,
+        "target_max": 4.4171775582778245,
+        "target_min": -1.7686006982905038,
+        "target_nonfinite_count": 0
+      },
+      "horizon": 1,
+      "length": 2000,
+      "metadata": {
+        "obs_mu": 0.2514730955917737,
+        "obs_sd": 0.14367321671430336,
+        "target_mu": 0.3871857269424249,
+        "target_sd": 0.10893179395926111
+      },
+      "sample_count": 2000,
+      "seed": 42,
+      "task": "narma10",
+      "test_count": 700,
+      "train_end": 1300
+    },
+    {
+      "display_name": "Mackey-Glass",
+      "finite_check": {
+        "observed_finite": true,
+        "observed_nonfinite_count": 0,
+        "target_finite": true,
+        "target_max": 1.77306056940022,
+        "target_min": -2.394393328306031,
+        "target_nonfinite_count": 0
+      },
+      "horizon": 8,
+      "length": 2000,
+      "metadata": {
+        "obs_mu": 0.9276280440786175,
+        "obs_sd": 0.2314188302315805,
+        "target_mu": 0.9284465507833853,
+        "target_sd": 0.23183714138335174,
+        "tau": 17
+      },
+      "sample_count": 2000,
+      "seed": 43,
+      "task": "mackey_glass",
+      "test_count": 700,
+      "train_end": 1300
+    },
+    {
+      "display_name": "Lorenz x(t)",
+      "finite_check": {
+        "observed_finite": true,
+        "observed_nonfinite_count": 0,
+        "target_finite": true,
+        "target_max": 3.4465174456469243,
+        "target_min": -1.9170468725868712,
+        "target_nonfinite_count": 0
+      },
+      "horizon": 8,
+      "length": 2000,
+      "metadata": {
+        "dt": 0.01,
+        "obs_mu": -4.694848193148978,
+        "obs_sd": 6.518987735436487,
+        "target_mu": -4.698879903013994,
+        "target_sd": 6.520072568180811
+      },
+      "sample_count": 2000,
+      "seed": 43,
+      "task": "lorenz",
+      "test_count": 700,
+      "train_end": 1300
+    },
+    {
+      "display_name": "NARMA10",
+      "finite_check": {
+        "observed_finite": true,
+        "observed_nonfinite_count": 0,
+        "target_finite": true,
+        "target_max": 4.67885125795153,
+        "target_min": -1.9198402780022459,
+        "target_nonfinite_count": 0
+      },
+      "horizon": 1,
+      "length": 2000,
+      "metadata": {
+        "obs_mu": 0.24805503255098688,
+        "obs_sd": 0.14399018247228987,
+        "target_mu": 0.37877181947519273,
+        "target_sd": 0.10000275922648803
+      },
+      "sample_count": 2000,
+      "seed": 43,
+      "task": "narma10",
+      "test_count": 700,
+      "train_end": 1300
+    },
+    {
+      "display_name": "Mackey-Glass",
+      "finite_check": {
+        "observed_finite": true,
+        "observed_nonfinite_count": 0,
+        "target_finite": true,
+        "target_max": 1.7733379580625959,
+        "target_min": -2.356939826510643,
+        "target_nonfinite_count": 0
+      },
+      "horizon": 8,
+      "length": 2000,
+      "metadata": {
+        "obs_mu": 0.9278069207553424,
+        "obs_sd": 0.2347832702604705,
+        "target_mu": 0.9260645575463895,
+        "target_sd": 0.2356171897107079,
+        "tau": 17
+      },
+      "sample_count": 2000,
+      "seed": 44,
+      "task": "mackey_glass",
+      "test_count": 700,
+      "train_end": 1300
+    },
+    {
+      "display_name": "Lorenz x(t)",
+      "finite_check": {
+        "observed_finite": true,
+        "observed_nonfinite_count": 0,
+        "target_finite": true,
+        "target_max": 2.2242680622919533,
+        "target_min": -2.1964887742262156,
+        "target_nonfinite_count": 0
+      },
+      "horizon": 8,
+      "length": 2000,
+      "metadata": {
+        "dt": 0.01,
+        "obs_mu": -0.7323929486831968,
+        "obs_sd": 7.992668308602299,
+        "target_mu": -0.6846432484150119,
+        "target_sd": 7.992022361258994
+      },
+      "sample_count": 2000,
+      "seed": 44,
+      "task": "lorenz",
+      "test_count": 700,
+      "train_end": 1300
+    },
+    {
+      "display_name": "NARMA10",
+      "finite_check": {
+        "observed_finite": true,
+        "observed_nonfinite_count": 0,
+        "target_finite": true,
+        "target_max": 3.640692180242379,
+        "target_min": -1.862381455447954,
+        "target_nonfinite_count": 0
+      },
+      "horizon": 1,
+      "length": 2000,
+      "metadata": {
+        "obs_mu": 0.2544133539518562,
+        "obs_sd": 0.14368031265812176,
+        "target_mu": 0.40592437929735753,
+        "target_sd": 0.11512864885001531
+      },
+      "sample_count": 2000,
+      "seed": 44,
+      "task": "narma10",
+      "test_count": 700,
+      "train_end": 1300
+    }
+  ],
+  "task_diagnostics": [
+    {
+      "candidate_feature_count": 32,
+      "candidate_state_norm_test_mean": 3.599851317961571,
+      "candidate_state_norm_train_mean": 3.5253433180691887,
+      "lag_feature_count": 13,
+      "length": 2000,
+      "reservoir_feature_count": 34,
+      "seed": 42,
+      "task": "mackey_glass",
+      "v2_2_feature_count": 16
+    },
+    {
+      "candidate_feature_count": 32,
+      "candidate_state_norm_test_mean": 5.263179342520151,
+      "candidate_state_norm_train_mean": 3.7368342872098155,
+      "lag_feature_count": 13,
+      "length": 2000,
+      "reservoir_feature_count": 34,
+      "seed": 42,
+      "task": "lorenz",
+      "v2_2_feature_count": 16
+    },
+    {
+      "candidate_feature_count": 32,
+      "candidate_state_norm_test_mean": 2.804822225598061,
+      "candidate_state_norm_train_mean": 2.8236540243100943,
+      "lag_feature_count": 13,
+      "length": 2000,
+      "reservoir_feature_count": 34,
+      "seed": 42,
+      "task": "narma10",
+      "v2_2_feature_count": 16
+    },
+    {
+      "candidate_feature_count": 32,
+      "candidate_state_norm_test_mean": 3.5443940739439292,
+      "candidate_state_norm_train_mean": 3.5084204762480393,
+      "lag_feature_count": 13,
+      "length": 2000,
+      "reservoir_feature_count": 34,
+      "seed": 43,
+      "task": "mackey_glass",
+      "v2_2_feature_count": 16
+    },
+    {
+      "candidate_feature_count": 32,
+      "candidate_state_norm_test_mean": 5.064955449298025,
+      "candidate_state_norm_train_mean": 3.6817092046009243,
+      "lag_feature_count": 13,
+      "length": 2000,
+      "reservoir_feature_count": 34,
+      "seed": 43,
+      "task": "lorenz",
+      "v2_2_feature_count": 16
+    },
+    {
+      "candidate_feature_count": 32,
+      "candidate_state_norm_test_mean": 2.7785623605739302,
+      "candidate_state_norm_train_mean": 2.7112390481745208,
+      "lag_feature_count": 13,
+      "length": 2000,
+      "reservoir_feature_count": 34,
+      "seed": 43,
+      "task": "narma10",
+      "v2_2_feature_count": 16
+    },
+    {
+      "candidate_feature_count": 32,
+      "candidate_state_norm_test_mean": 3.5104440967155344,
+      "candidate_state_norm_train_mean": 3.472410545670487,
+      "lag_feature_count": 13,
+      "length": 2000,
+      "reservoir_feature_count": 34,
+      "seed": 44,
+      "task": "mackey_glass",
+      "v2_2_feature_count": 16
+    },
+    {
+      "candidate_feature_count": 32,
+      "candidate_state_norm_test_mean": 3.834684425242671,
+      "candidate_state_norm_train_mean": 3.866137794189192,
+      "lag_feature_count": 13,
+      "length": 2000,
+      "reservoir_feature_count": 34,
+      "seed": 44,
+      "task": "lorenz",
+      "v2_2_feature_count": 16
+    },
+    {
+      "candidate_feature_count": 32,
+      "candidate_state_norm_test_mean": 2.7122763084853756,
+      "candidate_state_norm_train_mean": 2.6712121729710283,
+      "lag_feature_count": 13,
+      "length": 2000,
+      "reservoir_feature_count": 34,
+      "seed": 44,
+      "task": "narma10",
+      "v2_2_feature_count": 16
+    }
+  ],
+  "tasks": [
+    "mackey_glass",
+    "lorenz",
+    "narma10"
+  ],
+  "tier": "Tier 7.0h - Bounded Nonlinear Recurrent Continuous-State / Interface Gate",
+  "timeseries_policy": {
+    "captured": false,
+    "timeseries_max_length": 720
+  }
+}

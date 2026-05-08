@@ -10217,3 +10217,65 @@ Next required step:
 Tier 7.0h - bounded nonlinear recurrent continuous-state/interface candidate.
 Software only. No hardware transfer until the mechanism earns usefulness.
 ```
+
+### Tier 7.0h - Bounded Nonlinear Recurrent Continuous-State / Interface Gate
+
+Runner:
+
+```text
+experiments/tier7_0h_bounded_recurrent_interface_gate.py
+```
+
+Output:
+
+```text
+controlled_test_output/tier7_0h_20260508_bounded_recurrent_interface_gate/
+```
+
+Status:
+
+```text
+PASS
+criteria: 10/10
+outcome: bounded_recurrent_candidate_improves_scoreboard_but_topology_specificity_unproven
+promotion recommended: false
+```
+
+Public benchmark results:
+
+```text
+valid same-seed lengths: 720, 2000, 8000
+tasks: Mackey-Glass, Lorenz, NARMA10
+seeds: 42, 43, 44
+invalid streams: 0
+```
+
+Aggregate geomean MSE at 8000:
+
+```text
+ESN:                                0.020109884207162095
+bounded recurrent candidate:        0.09530752189727928
+v2.2 fading memory:                 0.19348969000027122
+lag-only LMS:                       0.1986311714577415
+random reservoir:                   0.2075278737499566
+```
+
+Interpretation:
+
+```text
+The bounded recurrent candidate materially improves versus v2.2 at the largest
+valid same-seed public length, beats lag/reservoir online controls, and narrows
+the ESN gap.
+
+The mechanism is not promoted because recurrence/topology specificity is not
+yet proven: the permuted-recurrence sham stayed too close at 8000 with only
+1.036590722013174 margin versus the candidate.
+```
+
+Next required step:
+
+```text
+Tier 7.0i - recurrence/topology specificity repair gate.
+Do not freeze, move to hardware, or migrate this mechanism native until the
+useful gain is separated from topology shams.
+```
