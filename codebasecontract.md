@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-08T20:20:00+00:00.
+Last updated: 2026-05-08T20:30:00+00:00.
 
 Current repo root:
 
@@ -40,6 +40,21 @@ v2.3 = post-Tier-7.0j generic bounded recurrent-state software evidence lock
        Boundary: not topology-specific recurrence, not ESN superiority, not
                  hardware evidence, not native on-chip recurrence, not
                  language/planning/AGI/ASI.
+```
+
+Latest targeted usefulness diagnostic:
+
+```text
+Tier 6.2a = COMPLETE, PASS, 12/12 criteria
+  Source: controlled_test_output/tier6_2a_20260508_targeted_usefulness_validation/
+  Runner: experiments/tier6_2a_targeted_usefulness_validation.py
+  Outcome: v2_3_partial_regime_signal_next_needs_failure_specific_mechanism_or_7_1_probe
+  Key result: v2.3 was best on variable_delay_multi_cue only; v2.2 won the
+              aggregate hard-task geomean (0.15892013746238234 vs v2.3
+              0.17604715537423876).
+  Boundary: software diagnostic only; custom hard tasks are not public
+            usefulness proof, not a baseline freeze, and not hardware/native
+            transfer evidence.
 ```
 
 Current hardware/runtime baseline decision:
@@ -489,11 +504,17 @@ Tier 7.0j — COMPLETE. Generic bounded recurrent-state promotion /
   Boundary: do not claim topology-specific recurrence, ESN superiority,
     hardware transfer, native migration, language, planning, AGI, or ASI.
 
-Tier 6.2a / 7.1 — CURRENT ACTIVE STEP. Targeted usefulness validation over v2.3.
-  Required first move: use v2.3 as the frozen software baseline, select audited
-    hard/real-ish validation tasks and fair baselines, and decide whether the
-    next evidence should be additional software usefulness validation, another
-    general mechanism, or a separately predeclared native transfer contract.
+Tier 6.2a — COMPLETE. Targeted hard-task validation over v2.3.
+  Status: LOCAL SOFTWARE PASS, 12/12 criteria.
+  Output: controlled_test_output/tier6_2a_20260508_targeted_usefulness_validation/
+  Result: v2.3 showed a narrow variable-delay signal but did not beat v2.2 on
+    the aggregate targeted hard-task geomean. No freeze or hardware transfer.
+
+Tier 7.1a — CURRENT ACTIVE STEP. Real-ish/public adapter contract.
+  Required first move: define the first audited adapter family that can test
+    whether the Tier 6.2a variable-delay signal survives outside private
+    diagnostics. Lock data source, preprocessing, splits, metrics, baselines,
+    leakage controls, and pass/fail rules before running.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware
@@ -984,9 +1005,11 @@ Immediate next steps:
    This is a native-scale substrate freeze only: do not claim speedup, benchmark
    usefulness, true two-partition cross-chip learning, lifecycle scaling,
    multi-shard learning, or AGI/ASI from it. Tier 7.0j froze v2.3 as a narrow
-   generic bounded recurrent-state software baseline. Do not move v2.3
-   native/on-chip until a separate transfer contract is justified; do not claim
-   topology-specific recurrence or ESN superiority from v2.3.
+   generic bounded recurrent-state software baseline. Tier 6.2a then showed
+   v2.3 has only a narrow targeted variable-delay signal and does not beat v2.2
+   on the aggregate diagnostic hard-task geomean. Do not move v2.3 native/on-chip
+   until a separate transfer contract is justified; do not claim topology-specific
+   recurrence, ESN superiority, broad usefulness, or public real-task success.
 3. Keep the 4.31b/4.31c range refinement explicit: selected trace bound is ±2
    in s16.15; the older ±1 sketch saturated and must not silently return.
 4. Keep public repo hygiene green before the next upload or commit: no

@@ -1,0 +1,17 @@
+{
+  "baseline_under_test": "CRA_EVIDENCE_BASELINE_v2.3",
+  "custom_task_policy": "diagnostic-only; cannot replace public benchmarks or justify paper usefulness alone",
+  "excluded_baselines": {
+    "GRU/LSTM": "deferred to Tier 7.1 public/real-ish adapter suite or explicit public benchmark rerun; this tier is a compact diagnostic gate",
+    "task-specific RL": "deferred until Tier 7.4 policy/action selection tasks"
+  },
+  "hardware_policy": "blocked until software usefulness or mechanism evidence earns a separate transfer contract",
+  "normalization_policy": "task streams are z-scored from train prefix only",
+  "prediction_policy": "online normalized LMS predictions are emitted before update for v2.3/v2.2/controls; ESN uses train-prefix ridge readout",
+  "reference_baseline": "CRA_EVIDENCE_BASELINE_v2.2",
+  "seed_policy": [
+    42,
+    43,
+    44
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "display_name": "Hidden-context A-B-A reentry diagnostic",
+  "horizon": 1,
+  "length": 2400,
+  "metadata": {
+    "diagnostic_role": "same signal, different action depending on remembered/reentered context",
+    "obs_mu": -0.0206194317102147,
+    "obs_sd": 0.6522098651029666,
+    "target_mu": -0.047435897435897434,
+    "target_sd": 0.9988742841991934
+  },
+  "observed_finite": true,
+  "seed": 42,
+  "target_finite": true,
+  "task": "hidden_context_reentry",
+  "train_end": 1560
+}

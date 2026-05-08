@@ -1045,50 +1045,63 @@ ability.
     superiority, hardware transfer, native migration, language, planning, AGI,
     or ASI.
 
-76. **CURRENT ACTIVE STEP** - Tier 6.2a targeted hard-task validation over v2.3
-    if needed: use variable-delay,
-    hidden-context, drift, anomaly, or delayed-control diagnostics to isolate the
-    measured public-benchmark failure class and decide whether v2.3 needs
-    another general mechanism before real-ish adapters. These tasks cannot be
-    used as the public usefulness proof by themselves.
+76. **COMPLETE** - Tier 6.2a targeted hard-task validation over v2.3:
+    passed 12/12 at
+    `controlled_test_output/tier6_2a_20260508_targeted_usefulness_validation/`.
+    v2.3 was best only on `variable_delay_multi_cue`, beat v2.2 only on that
+    task, and separated from shams on three tasks. v2.2 won the aggregate
+    targeted hard-task geomean (`0.15892013746238234` vs v2.3
+    `0.17604715537423876`). Classification:
+    `v2_3_partial_regime_signal_next_needs_failure_specific_mechanism_or_7_1_probe`.
+    Boundary: diagnostic hard tasks only; no new baseline freeze, no public
+    usefulness claim, and no hardware/native transfer.
 
-77. Mechanism iteration loop: add exactly one planned general mechanism at a
+77. **CURRENT ACTIVE STEP** - Tier 7.1a real-ish/public adapter contract:
+    define the first audited adapter family to test whether the narrow
+    variable-delay signal from Tier 6.2a survives outside private diagnostics.
+    Lock source/dataset or generator provenance, preprocessing, chronological or
+    held-out split policy, leakage controls, fair baselines, metrics, seed
+    policy, pass/fail thresholds, artifact list, and claim boundaries before
+    running. Do not run hardware/native transfer and do not freeze a new
+    baseline from contract evidence.
+
+78. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
     stop the broad usefulness track and narrow the paper.
 
-78. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+79. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines. Start only after the standardized scoreboard or failure diagnosis
     identifies a winning regime, a real failure mode, or a mechanism needing
     external validation.
 
-79. Tier 7.2 held-out task challenge: define held-out families before running;
+80. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout. Include at least one synthetic holdout and one
     real-ish adapter holdout if Tier 7.1 is active.
 
-80. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+81. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines. Candidate domains include
     streaming anomaly detection, predictive-maintenance sensor streams, human
     activity streams, event prediction, ECG/biosignal streams, and finance as
     one domain only rather than the whole proof.
 
-81. Tier 7.4 policy/action selection: state -> action -> delayed consequence,
+82. Tier 7.4 policy/action selection: state -> action -> delayed consequence,
     exploration versus exploitation, uncertainty-gated actions. Do not start
     broad policy claims until prediction/adaptation usefulness is measured.
 
-82. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
+83. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
     planning/subgoal control: run only after the shorter hard/real-ish tasks are
     stable. Do not claim language, AGI, or broad planning from toy gates.
 
-83. Run expanded external baselines and fairness audit at the phase lock:
+84. Run expanded external baselines and fairness audit at the phase lock:
     random/sign persistence, online perceptron/logistic, lag/ridge where
     relevant, reservoir/ESN, small GRU, STDP-only SNN, simple evolutionary
     population, simple control baselines, and SNN reviewer-defense baselines
     where practical.
 
-84. Freeze the next software baseline only if new software capability work
+85. Freeze the next software baseline only if new software capability work
     passes ablations, fair baselines, leakage controls, and compact regression.
     If no new software mechanism is promoted, keep v2.3.
 
@@ -1408,8 +1421,11 @@ controls. Tier 7.0i then falsified/narrowed the topology-specific recurrence
 claim: generic bounded recurrent state remains useful, but topology shams and
 no-recurrence controls match or beat the structured candidate. Tier 7.0j then
 passed full NEST compact regression and froze v2.3 as the narrow generic
-bounded recurrent-state software baseline. The next active work is Tier 6.2a /
-7.1 targeted usefulness validation over v2.3 before any native transfer. Reopen
+bounded recurrent-state software baseline. Tier 6.2a then passed targeted
+hard-task validation: v2.3 was best only on `variable_delay_multi_cue`, while
+v2.2 won the aggregate diagnostic geomean, so the next active work is Tier 7.1a
+real-ish/public adapter contract over that narrow variable-delay signal before
+any native transfer. Reopen
 native work only for targeted transfer after a software task/mechanism earns it
 under the Tier 7/6.2 gates and a separate transfer contract is written.
 It must preserve explicit board/chip/shard identity, message paths, compact

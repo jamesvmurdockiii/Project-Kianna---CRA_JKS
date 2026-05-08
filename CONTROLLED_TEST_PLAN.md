@@ -10430,8 +10430,78 @@ baselines/CRA_EVIDENCE_BASELINE_v2.3_STUDY_REGISTRY.snapshot.json
 Next required step:
 
 ```text
-Tier 6.2a / 7.1 targeted usefulness validation over v2.3.
-Use audited hard/real-ish tasks and fair baselines to decide whether v2.3
-generalizes, whether another general mechanism is needed, or whether a separate
-native/on-chip transfer contract is justified.
+Tier 6.2a targeted usefulness validation over v2.3.
+Use audited hard/real-ish diagnostic tasks and fair baselines to decide whether
+v2.3 generalizes, whether another general mechanism is needed, or whether a
+separate native/on-chip transfer contract is justified.
+```
+
+### Tier 6.2a - Targeted Hard-Task Validation Over v2.3
+
+Runner:
+
+```text
+experiments/tier6_2a_targeted_usefulness_validation.py
+```
+
+Output:
+
+```text
+controlled_test_output/tier6_2a_20260508_targeted_usefulness_validation/
+```
+
+Status:
+
+```text
+PASS
+criteria: 12/12
+outcome: v2_3_partial_regime_signal_next_needs_failure_specific_mechanism_or_7_1_probe
+```
+
+Tasks:
+
+```text
+variable_delay_multi_cue
+hidden_context_reentry
+concept_drift_stream
+anomaly_detection_stream
+delayed_control_proxy
+```
+
+Aggregate geomean MSE:
+
+```text
+v2.2 fading-memory reference:       0.15892013746238234
+v2.3 generic bounded recurrent:     0.17604715537423876
+lag-only online LMS:                0.2055968384080941
+fixed random reservoir online:      0.22089786655426447
+fixed ESN train-prefix ridge:       0.4224303829071217
+```
+
+Interpretation:
+
+```text
+v2.3 is best only on variable_delay_multi_cue and beats v2.2 only on that task.
+It separates from shams on three tasks, but v2.2 wins the aggregate hard-task
+diagnostic geomean. This is a narrow variable-delay signal plus failure
+localization, not a new baseline or public usefulness proof.
+```
+
+Claim boundary:
+
+```text
+Tier 6.2a is software diagnostic evidence only. These custom hard tasks cannot
+replace public benchmarks, cannot freeze v2.4, cannot authorize native/on-chip
+transfer, and cannot support broad usefulness, topology-specific recurrence,
+ESN superiority, language, planning, AGI, or ASI claims.
+```
+
+Next required step:
+
+```text
+Tier 7.1a - real-ish/public adapter contract.
+Define the first audited adapter family that can test whether the Tier 6.2a
+variable-delay signal survives outside private diagnostics with locked
+preprocessing, splits, baselines, leakage controls, metrics, and pass/fail
+criteria.
 ```

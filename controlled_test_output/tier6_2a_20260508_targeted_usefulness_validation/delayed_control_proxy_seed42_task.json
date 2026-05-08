@@ -1,0 +1,17 @@
+{
+  "display_name": "Delayed-control proxy diagnostic",
+  "horizon": 8,
+  "length": 2400,
+  "metadata": {
+    "diagnostic_role": "state -> action-like target under delayed consequence pressure",
+    "obs_mu": -0.002909310336413043,
+    "obs_sd": 0.36820986651762017,
+    "target_mu": 0.0014138004188542852,
+    "target_sd": 0.42267720313438556
+  },
+  "observed_finite": true,
+  "seed": 42,
+  "target_finite": true,
+  "task": "delayed_control_proxy",
+  "train_end": 1560
+}

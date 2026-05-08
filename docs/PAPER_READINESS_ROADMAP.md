@@ -3711,6 +3711,35 @@ three-benchmark scoreboard, or decide the next general mechanism from a
 measured failure.
 ```
 
+Tier 6.2a result:
+
+```text
+Output: controlled_test_output/tier6_2a_20260508_targeted_usefulness_validation/
+Status: PASS, 12/12 criteria
+Outcome: v2_3_partial_regime_signal_next_needs_failure_specific_mechanism_or_7_1_probe
+```
+
+Key result:
+
+```text
+v2.3 was best only on variable_delay_multi_cue.
+v2.3 beat v2.2 only on variable_delay_multi_cue.
+v2.3 separated from shams on 3/5 tasks.
+v2.2 won the aggregate hard-task diagnostic geomean:
+  v2.2 = 0.15892013746238234
+  v2.3 = 0.17604715537423876
+```
+
+Interpretation:
+
+```text
+Tier 6.2a provides a narrow variable-delay signal and failure localization. It
+does not provide public usefulness evidence, a v2.4 freeze, or hardware/native
+transfer authorization. The next step is a Tier 7.1a real-ish/public adapter
+contract that tests whether the variable-delay signal survives outside private
+diagnostics under fair baselines and leakage controls.
+```
+
 ### Tier 6.2: Diagnostic Hard Task Suite
 
 Tier 6.2 is subordinate to the public benchmark loop. It is authorized only to
@@ -3753,6 +3782,35 @@ substrate evidence.
 The paper should include more than toy tasks if the claim is usefulness.
 
 ### Tier 7.1: Real-ish Benchmark Adapters
+
+Current next step:
+
+```text
+Tier 7.1a — real-ish/public adapter contract
+```
+
+Purpose:
+
+```text
+select one auditable adapter family that can test the Tier 6.2a variable-delay
+signal outside private diagnostics, before running data or claiming usefulness
+```
+
+Required contract fields:
+
+```text
+data/source or generator provenance
+license and reproducibility status
+preprocessing
+chronological or held-out split policy
+metrics
+baselines
+leakage controls
+seed policy
+pass/fail thresholds
+artifact list
+claim boundary and nonclaims
+```
 
 Candidate adapters:
 
@@ -7146,7 +7204,7 @@ Tests: test-temporal-state, test-profiles, test, test-lifecycle, test-lifecycle-
 Boundary: local source/runtime host evidence only, not hardware
 ```
 
-Next: Run Tier 6.2a / 7.1 targeted usefulness validation over frozen software baseline v2.3. Tier 7.0j froze v2.3 as a generic bounded recurrent-state software baseline, while preserving the nonclaims: no topology-specific recurrence, no ESN superiority, no hardware/native transfer, and no AGI/ASI. Use `CRA_NATIVE_SCALE_BASELINE_v0.5` only as the frozen native substrate reference, not as usefulness evidence.
+Next: Define Tier 7.1a real-ish/public adapter contract over frozen software baseline v2.3. Tier 6.2a has already passed as a targeted diagnostic and found only a narrow variable-delay signal: v2.3 was best on `variable_delay_multi_cue`, while v2.2 won the aggregate hard-task diagnostic geomean. Do not claim public usefulness or move to native/on-chip transfer from Tier 6.2a. Use `CRA_NATIVE_SCALE_BASELINE_v0.5` only as the frozen native substrate reference, not as usefulness evidence.
       Tier 4.32e passed after EBRAINS ingest at
       `controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/`:
       board `10.11.205.161`, two cases, 32 events per case, 96/96 lookup

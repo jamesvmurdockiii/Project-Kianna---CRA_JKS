@@ -436,17 +436,51 @@ Invalid reasons:
 "a custom diagnostic produced the only win"
 ```
 
+## Tier 6.2a Result
+
+2026-05-08 result:
+
+```text
+Tier 6.2a — targeted hard-task validation over frozen v2.3
+output: controlled_test_output/tier6_2a_20260508_targeted_usefulness_validation/
+status: PASS, 12/12 criteria
+outcome: v2_3_partial_regime_signal_next_needs_failure_specific_mechanism_or_7_1_probe
+```
+
+Key result:
+
+```text
+v2.3 best task: variable_delay_multi_cue only
+v2.3 beats v2.2 tasks: 1/5
+v2.3 sham-separated tasks: 3/5
+aggregate geomean MSE:
+  v2.2: 0.15892013746238234
+  v2.3: 0.17604715537423876
+  lag-only: 0.2055968384080941
+  reservoir: 0.22089786655426447
+  ESN: 0.4224303829071217
+```
+
+Interpretation:
+
+```text
+v2.3 has a narrow targeted signal on variable-delay pressure, but it does not
+beat v2.2 on the aggregate diagnostic hard-task suite. Tier 6.2a is therefore
+failure localization plus a possible adapter direction, not a new usefulness
+claim, baseline freeze, or hardware-transfer authorization.
+```
+
 ## Immediate Next Action
 
 The current next action is:
 
 ```text
-Tier 6.2a / 7.1 — targeted usefulness validation over frozen v2.3.
+Tier 7.1a — real-ish/public adapter contract.
 ```
 
-Tier 7.0j passed as an executed software promotion gate and froze
-`CRA_EVIDENCE_BASELINE_v2.3`: generic bounded recurrent state improves the
-locked public scoreboard versus v2.2 and passes full NEST compact regression.
-Do not invent private proof tasks or move to hardware yet; validate the v2.3
-regime on audited hard/real-ish tasks with fair baselines, or select the next
-general mechanism from a measured failure.
+Define the first audited adapter family that can test whether the Tier 6.2a
+variable-delay signal survives outside private diagnostics. Lock source,
+preprocessing, split policy, metrics, baselines, leakage controls, pass/fail
+criteria, and claim boundaries before running. Do not move to SpiNNaker/native
+runtime until software usefulness or a promoted mechanism earns a separate
+transfer contract.

@@ -1,0 +1,18 @@
+{
+  "display_name": "Online concept-drift stream diagnostic",
+  "horizon": 1,
+  "length": 2400,
+  "metadata": {
+    "diagnostic_role": "online adaptation under changing mapping",
+    "obs_mu": 0.016121145875107126,
+    "obs_sd": 0.3986087674999551,
+    "switch_period": 360,
+    "target_mu": -0.005711010345906249,
+    "target_sd": 0.41927779498315243
+  },
+  "observed_finite": true,
+  "seed": 42,
+  "target_finite": true,
+  "task": "concept_drift_stream",
+  "train_end": 1560
+}

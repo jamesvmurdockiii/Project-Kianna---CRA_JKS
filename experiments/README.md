@@ -68,9 +68,14 @@ generic bounded recurrent state remains useful, but topology-specific recurrence
 is not supported. Tier 7.0j then passed full NEST compact regression at
 `controlled_test_output/tier7_0j_20260508_generic_recurrent_promotion_gate/`
 and froze `CRA_EVIDENCE_BASELINE_v2.3` as a narrow generic bounded recurrent-
-state software baseline. The next active project step is Tier 6.2a / 7.1
-targeted usefulness validation over v2.3; no hardware transfer or native
-migration is authorized until a separate transfer contract is justified.
+state software baseline. Tier 6.2a then passed targeted hard-task validation at
+`controlled_test_output/tier6_2a_20260508_targeted_usefulness_validation/`:
+v2.3 was best only on `variable_delay_multi_cue`, v2.2 won the aggregate
+hard-task diagnostic geomean, and no baseline freeze or hardware/native
+transfer was authorized. The next active project step is Tier 7.1a real-ish /
+public adapter contract over the narrow variable-delay signal; no hardware
+transfer or native migration is authorized until a separate transfer contract is
+justified.
 
 Tier 4.32a-hw prepare has also passed locally. The current EBRAINS upload
 folder is `ebrains_jobs/cra_432a_hw`, and the exact JobManager command is

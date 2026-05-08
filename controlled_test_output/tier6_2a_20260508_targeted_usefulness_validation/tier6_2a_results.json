@@ -1,0 +1,1316 @@
+{
+  "aggregate_rows": [
+    {
+      "geomean_mse": 0.41280662848549826,
+      "geomean_nmse": 0.4101889009046375,
+      "model": "fixed_esn_train_prefix_ridge_baseline",
+      "seed": 42,
+      "status": "pass",
+      "task": "all_targeted_diagnostics_geomean"
+    },
+    {
+      "geomean_mse": 0.4032956817629748,
+      "geomean_nmse": 0.4332137562378459,
+      "model": "fixed_esn_train_prefix_ridge_baseline",
+      "seed": 43,
+      "status": "pass",
+      "task": "all_targeted_diagnostics_geomean"
+    },
+    {
+      "geomean_mse": 0.4511888384728922,
+      "geomean_nmse": 0.4466892312763867,
+      "model": "fixed_esn_train_prefix_ridge_baseline",
+      "seed": 44,
+      "status": "pass",
+      "task": "all_targeted_diagnostics_geomean"
+    },
+    {
+      "geomean_mse": 0.19021626048458148,
+      "geomean_nmse": 0.18901004353688972,
+      "model": "fixed_random_reservoir_online_control",
+      "seed": 42,
+      "status": "pass",
+      "task": "all_targeted_diagnostics_geomean"
+    },
+    {
+      "geomean_mse": 0.24437200396467706,
+      "geomean_nmse": 0.26250048920465935,
+      "model": "fixed_random_reservoir_online_control",
+      "seed": 43,
+      "status": "pass",
+      "task": "all_targeted_diagnostics_geomean"
+    },
+    {
+      "geomean_mse": 0.22810533521353477,
+      "geomean_nmse": 0.22583049080168702,
+      "model": "fixed_random_reservoir_online_control",
+      "seed": 44,
+      "status": "pass",
+      "task": "all_targeted_diagnostics_geomean"
+    },
+    {
+      "geomean_mse": 0.20013866354996393,
+      "geomean_nmse": 0.1988695257420428,
+      "model": "lag_only_online_lms_control",
+      "seed": 42,
+      "status": "pass",
+      "task": "all_targeted_diagnostics_geomean"
+    },
+    {
+      "geomean_mse": 0.19977976079450385,
+      "geomean_nmse": 0.21460021643611604,
+      "model": "lag_only_online_lms_control",
+      "seed": 43,
+      "status": "pass",
+      "task": "all_targeted_diagnostics_geomean"
+    },
+    {
+      "geomean_mse": 0.21687209087981454,
+      "geomean_nmse": 0.2147092731466745,
+      "model": "lag_only_online_lms_control",
+      "seed": 44,
+      "status": "pass",
+      "task": "all_targeted_diagnostics_geomean"
+    },
+    {
+      "geomean_mse": 0.14656984699358747,
+      "geomean_nmse": 0.14564040472080875,
+      "model": "v2_2_fading_memory_reference",
+      "seed": 42,
+      "status": "pass",
+      "task": "all_targeted_diagnostics_geomean"
+    },
+    {
+      "geomean_mse": 0.16535851958290065,
+      "geomean_nmse": 0.17762547092319106,
+      "model": "v2_2_fading_memory_reference",
+      "seed": 43,
+      "status": "pass",
+      "task": "all_targeted_diagnostics_geomean"
+    },
+    {
+      "geomean_mse": 0.16483204581065886,
+      "geomean_nmse": 0.1631882120180175,
+      "model": "v2_2_fading_memory_reference",
+      "seed": 44,
+      "status": "pass",
+      "task": "all_targeted_diagnostics_geomean"
+    },
+    {
+      "geomean_mse": 0.16048911646852076,
+      "geomean_nmse": 0.15947140803649054,
+      "model": "v2_3_generic_bounded_recurrent_state",
+      "seed": 42,
+      "status": "pass",
+      "task": "all_targeted_diagnostics_geomean"
+    },
+    {
+      "geomean_mse": 0.18885489161996596,
+      "geomean_nmse": 0.20286489710212383,
+      "model": "v2_3_generic_bounded_recurrent_state",
+      "seed": 43,
+      "status": "pass",
+      "task": "all_targeted_diagnostics_geomean"
+    },
+    {
+      "geomean_mse": 0.17879745803422956,
+      "geomean_nmse": 0.1770143502525506,
+      "model": "v2_3_generic_bounded_recurrent_state",
+      "seed": 44,
+      "status": "pass",
+      "task": "all_targeted_diagnostics_geomean"
+    },
+    {
+      "geomean_mse": 1.0102765748155065,
+      "geomean_nmse": 1.0038701155396592,
+      "model": "v2_3_no_update_ablation",
+      "seed": 42,
+      "status": "pass",
+      "task": "all_targeted_diagnostics_geomean"
+    },
+    {
+      "geomean_mse": 0.9422481641671766,
+      "geomean_nmse": 1.0121478730510722,
+      "model": "v2_3_no_update_ablation",
+      "seed": 43,
+      "status": "pass",
+      "task": "all_targeted_diagnostics_geomean"
+    },
+    {
+      "geomean_mse": 1.0174528952166229,
+      "geomean_nmse": 1.0073060609444866,
+      "model": "v2_3_no_update_ablation",
+      "seed": 44,
+      "status": "pass",
+      "task": "all_targeted_diagnostics_geomean"
+    },
+    {
+      "geomean_mse": 0.9716246752820186,
+      "geomean_nmse": 0.9654633190071397,
+      "model": "v2_3_shuffled_state_sham",
+      "seed": 42,
+      "status": "pass",
+      "task": "all_targeted_diagnostics_geomean"
+    },
+    {
+      "geomean_mse": 0.9428299374210812,
+      "geomean_nmse": 1.0127728045541844,
+      "model": "v2_3_shuffled_state_sham",
+      "seed": 43,
+      "status": "pass",
+      "task": "all_targeted_diagnostics_geomean"
+    },
+    {
+      "geomean_mse": 0.9969860025919512,
+      "geomean_nmse": 0.987043280145045,
+      "model": "v2_3_shuffled_state_sham",
+      "seed": 44,
+      "status": "pass",
+      "task": "all_targeted_diagnostics_geomean"
+    },
+    {
+      "geomean_mse": 1.0413638785706028,
+      "geomean_nmse": 1.0347602856083298,
+      "model": "v2_3_shuffled_target_control",
+      "seed": 42,
+      "status": "pass",
+      "task": "all_targeted_diagnostics_geomean"
+    },
+    {
+      "geomean_mse": 0.956996499974467,
+      "geomean_nmse": 1.027990298949122,
+      "model": "v2_3_shuffled_target_control",
+      "seed": 43,
+      "status": "pass",
+      "task": "all_targeted_diagnostics_geomean"
+    },
+    {
+      "geomean_mse": 1.0481035423422875,
+      "geomean_nmse": 1.0376510358978277,
+      "model": "v2_3_shuffled_target_control",
+      "seed": 44,
+      "status": "pass",
+      "task": "all_targeted_diagnostics_geomean"
+    },
+    {
+      "geomean_mse": 0.16004046288409368,
+      "geomean_nmse": 0.15902559949567754,
+      "model": "v2_3_state_reset_ablation",
+      "seed": 42,
+      "status": "pass",
+      "task": "all_targeted_diagnostics_geomean"
+    },
+    {
+      "geomean_mse": 0.1889271158630906,
+      "geomean_nmse": 0.2029424792262831,
+      "model": "v2_3_state_reset_ablation",
+      "seed": 43,
+      "status": "pass",
+      "task": "all_targeted_diagnostics_geomean"
+    },
+    {
+      "geomean_mse": 0.17984151740357884,
+      "geomean_nmse": 0.17804799744710448,
+      "model": "v2_3_state_reset_ablation",
+      "seed": 44,
+      "status": "pass",
+      "task": "all_targeted_diagnostics_geomean"
+    }
+  ],
+  "aggregate_summary": [
+    {
+      "geomean_mse_mean": 0.15892013746238234,
+      "geomean_mse_median": 0.16483204581065886,
+      "geomean_mse_worst": 0.16535851958290065,
+      "geomean_nmse_mean": 0.16215136255400575,
+      "model": "v2_2_fading_memory_reference",
+      "rank_by_geomean_mse": 1,
+      "seed_count": 3,
+      "status": "pass",
+      "task": "all_targeted_diagnostics_geomean"
+    },
+    {
+      "geomean_mse_mean": 0.17604715537423876,
+      "geomean_mse_median": 0.17879745803422956,
+      "geomean_mse_worst": 0.18885489161996596,
+      "geomean_nmse_mean": 0.179783551797055,
+      "model": "v2_3_generic_bounded_recurrent_state",
+      "rank_by_geomean_mse": 2,
+      "seed_count": 3,
+      "status": "pass",
+      "task": "all_targeted_diagnostics_geomean"
+    },
+    {
+      "geomean_mse_mean": 0.17626969871692108,
+      "geomean_mse_median": 0.17984151740357884,
+      "geomean_mse_worst": 0.1889271158630906,
+      "geomean_nmse_mean": 0.1800053587230217,
+      "model": "v2_3_state_reset_ablation",
+      "rank_by_geomean_mse": 3,
+      "seed_count": 3,
+      "status": "pass",
+      "task": "all_targeted_diagnostics_geomean"
+    },
+    {
+      "geomean_mse_mean": 0.2055968384080941,
+      "geomean_mse_median": 0.20013866354996393,
+      "geomean_mse_worst": 0.21687209087981454,
+      "geomean_nmse_mean": 0.20939300510827777,
+      "model": "lag_only_online_lms_control",
+      "rank_by_geomean_mse": 4,
+      "seed_count": 3,
+      "status": "pass",
+      "task": "all_targeted_diagnostics_geomean"
+    },
+    {
+      "geomean_mse_mean": 0.22089786655426447,
+      "geomean_mse_median": 0.22810533521353477,
+      "geomean_mse_worst": 0.24437200396467706,
+      "geomean_nmse_mean": 0.2257803411810787,
+      "model": "fixed_random_reservoir_online_control",
+      "rank_by_geomean_mse": 5,
+      "seed_count": 3,
+      "status": "pass",
+      "task": "all_targeted_diagnostics_geomean"
+    },
+    {
+      "geomean_mse_mean": 0.4224303829071217,
+      "geomean_mse_median": 0.41280662848549826,
+      "geomean_mse_worst": 0.4511888384728922,
+      "geomean_nmse_mean": 0.4300306294729567,
+      "model": "fixed_esn_train_prefix_ridge_baseline",
+      "rank_by_geomean_mse": 6,
+      "seed_count": 3,
+      "status": "pass",
+      "task": "all_targeted_diagnostics_geomean"
+    },
+    {
+      "geomean_mse_mean": 0.9704802050983504,
+      "geomean_mse_median": 0.9716246752820186,
+      "geomean_mse_worst": 0.9969860025919512,
+      "geomean_nmse_mean": 0.9884264679021232,
+      "model": "v2_3_shuffled_state_sham",
+      "rank_by_geomean_mse": 7,
+      "seed_count": 3,
+      "status": "pass",
+      "task": "all_targeted_diagnostics_geomean"
+    },
+    {
+      "geomean_mse_mean": 0.9899925447331018,
+      "geomean_mse_median": 1.0102765748155065,
+      "geomean_mse_worst": 1.0174528952166229,
+      "geomean_nmse_mean": 1.007774683178406,
+      "model": "v2_3_no_update_ablation",
+      "rank_by_geomean_mse": 8,
+      "seed_count": 3,
+      "status": "pass",
+      "task": "all_targeted_diagnostics_geomean"
+    },
+    {
+      "geomean_mse_mean": 1.0154879736291191,
+      "geomean_mse_median": 1.0413638785706028,
+      "geomean_mse_worst": 1.0481035423422875,
+      "geomean_nmse_mean": 1.0334672068184265,
+      "model": "v2_3_shuffled_target_control",
+      "rank_by_geomean_mse": 9,
+      "seed_count": 3,
+      "status": "pass",
+      "task": "all_targeted_diagnostics_geomean"
+    }
+  ],
+  "claim_boundary": "Tier 6.2a is a software-only targeted diagnostic over frozen v2.3. It tests harder controlled regimes to select the next mechanism or real-ish adapter direction. It is not public usefulness proof, not a baseline freeze, not hardware/native transfer, not topology-specific recurrence, and not AGI/ASI evidence.",
+  "classification": {
+    "aggregate_esn_geomean_mse": 0.4224303829071217,
+    "aggregate_esn_over_v2_3_margin": 2.3995297283226455,
+    "aggregate_lag_geomean_mse": 0.2055968384080941,
+    "aggregate_lag_over_v2_3_margin": 1.1678509543141382,
+    "aggregate_reservoir_geomean_mse": 0.22089786655426447,
+    "aggregate_reservoir_over_v2_3_margin": 1.2547653274185695,
+    "aggregate_v2_2_geomean_mse": 0.15892013746238234,
+    "aggregate_v2_2_over_v2_3_margin": 0.9027134640406542,
+    "aggregate_v2_3_geomean_mse": 0.17604715537423876,
+    "aggregate_v2_3_rank": 2,
+    "baseline_freeze_authorized": false,
+    "esn_dominated_task_count": 0,
+    "esn_dominated_tasks": [],
+    "hardware_transfer_authorized": false,
+    "outcome": "v2_3_partial_regime_signal_next_needs_failure_specific_mechanism_or_7_1_probe",
+    "recommendation": "Use the per-task failures to choose one next general mechanism or a narrow Tier 7.1 adapter; keep v2.3 as the frozen baseline.",
+    "task_profiles": [
+      {
+        "beats_simple_online_controls": true,
+        "beats_v2_2": true,
+        "best_model": "v2_3_generic_bounded_recurrent_state",
+        "esn_mse": 0.8130855375554558,
+        "esn_over_v2_3_margin": 1.5972381154852222,
+        "lag_mse": 0.5540991569163743,
+        "lag_over_v2_3_margin": 1.0884811650271147,
+        "reservoir_mse": 0.678562202525463,
+        "reservoir_over_v2_3_margin": 1.332978344270883,
+        "sham_min_over_v2_3_margin": 1.0193455645320633,
+        "sham_separated": true,
+        "task": "variable_delay_multi_cue",
+        "v2_2_mse": 0.5333947903677161,
+        "v2_2_over_v2_3_margin": 1.0478091792629616,
+        "v2_3_mse": 0.5090571841935101,
+        "v2_3_rank": 1
+      },
+      {
+        "beats_simple_online_controls": false,
+        "beats_v2_2": false,
+        "best_model": "fixed_random_reservoir_online_control",
+        "esn_mse": 1.0447536399245718,
+        "esn_over_v2_3_margin": 7.966557140717083,
+        "lag_mse": 0.3232803743785339,
+        "lag_over_v2_3_margin": 2.4651089754948736,
+        "reservoir_mse": 0.05990005769186657,
+        "reservoir_over_v2_3_margin": 0.45675574996700385,
+        "sham_min_over_v2_3_margin": 0.9780025799500737,
+        "sham_separated": false,
+        "task": "hidden_context_reentry",
+        "v2_2_mse": 0.12528064386847013,
+        "v2_2_over_v2_3_margin": 0.9553021591540483,
+        "v2_3_mse": 0.13114242720796349,
+        "v2_3_rank": 4
+      },
+      {
+        "beats_simple_online_controls": false,
+        "beats_v2_2": false,
+        "best_model": "v2_2_fading_memory_reference",
+        "esn_mse": 0.9285194099794133,
+        "esn_over_v2_3_margin": 2.682769532134505,
+        "lag_mse": 0.5323092537280933,
+        "lag_over_v2_3_margin": 1.538000210040463,
+        "reservoir_mse": 0.31034771403733513,
+        "reservoir_over_v2_3_margin": 0.8966871156795898,
+        "sham_min_over_v2_3_margin": 0.9931418365626785,
+        "sham_separated": false,
+        "task": "concept_drift_stream",
+        "v2_2_mse": 0.25802590810737513,
+        "v2_2_over_v2_3_margin": 0.7455138119160603,
+        "v2_3_mse": 0.3461047991105859,
+        "v2_3_rank": 4
+      },
+      {
+        "beats_simple_online_controls": false,
+        "beats_v2_2": false,
+        "best_model": "fixed_random_reservoir_online_control",
+        "esn_mse": 0.5925213369915916,
+        "esn_over_v2_3_margin": 0.8798940249239252,
+        "lag_mse": 0.7970197501964541,
+        "lag_over_v2_3_margin": 1.1835741131364041,
+        "reservoir_mse": 0.5498591265405142,
+        "reservoir_over_v2_3_margin": 0.8165406539608763,
+        "sham_min_over_v2_3_margin": 1.0103979845108382,
+        "sham_separated": true,
+        "task": "anomaly_detection_stream",
+        "v2_2_mse": 0.6539961804739801,
+        "v2_2_over_v2_3_margin": 0.9711841508423017,
+        "v2_3_mse": 0.6734007962411387,
+        "v2_3_rank": 4
+      },
+      {
+        "beats_simple_online_controls": false,
+        "beats_v2_2": false,
+        "best_model": "lag_only_online_lms_control",
+        "esn_mse": 0.029133414628158178,
+        "esn_over_v2_3_margin": 2.6094298114320793,
+        "lag_mse": 0.004896173749945975,
+        "lag_over_v2_3_margin": 0.4385418567692262,
+        "reservoir_mse": 0.08277389091019473,
+        "reservoir_over_v2_3_margin": 7.413914960058495,
+        "sham_min_over_v2_3_margin": 1.0096382903575274,
+        "sham_separated": true,
+        "task": "delayed_control_proxy",
+        "v2_2_mse": 0.009145610173510626,
+        "v2_2_over_v2_3_margin": 0.8191565642095788,
+        "v2_3_mse": 0.01116466689409419,
+        "v2_3_rank": 3
+      }
+    ],
+    "v2_3_beats_simple_online_task_count": 1,
+    "v2_3_beats_simple_online_tasks": [
+      "variable_delay_multi_cue"
+    ],
+    "v2_3_beats_v2_2_task_count": 1,
+    "v2_3_beats_v2_2_tasks": [
+      "variable_delay_multi_cue"
+    ],
+    "v2_3_best_task_count": 1,
+    "v2_3_best_tasks": [
+      "variable_delay_multi_cue"
+    ],
+    "v2_3_sham_separated_task_count": 3,
+    "v2_3_sham_separated_tasks": [
+      "variable_delay_multi_cue",
+      "anomaly_detection_stream",
+      "delayed_control_proxy"
+    ]
+  },
+  "criteria": [
+    {
+      "name": "runner revision current",
+      "note": "",
+      "passed": true,
+      "rule": "expected current source",
+      "value": "tier6_2a_targeted_usefulness_validation_20260508_0001"
+    },
+    {
+      "name": "contract linked",
+      "note": "",
+      "passed": true,
+      "rule": "present",
+      "value": "docs/TIER6_2_USEFULNESS_BATTERY_CONTRACT.md"
+    },
+    {
+      "name": "tasks are predeclared 6.2a diagnostics",
+      "note": "",
+      "passed": true,
+      "rule": "subset of task builders",
+      "value": [
+        "variable_delay_multi_cue",
+        "hidden_context_reentry",
+        "concept_drift_stream",
+        "anomaly_detection_stream",
+        "delayed_control_proxy"
+      ]
+    },
+    {
+      "name": "all generated streams finite",
+      "note": "",
+      "passed": true,
+      "rule": "0 invalid streams",
+      "value": 0
+    },
+    {
+      "name": "all required model/task/seed runs completed",
+      "note": "",
+      "passed": true,
+      "rule": "all pass",
+      "value": "135/135"
+    },
+    {
+      "name": "v2.3 frozen baseline present",
+      "note": "",
+      "passed": true,
+      "rule": "== true",
+      "value": true
+    },
+    {
+      "name": "v2.2 reference present",
+      "note": "",
+      "passed": true,
+      "rule": "== true",
+      "value": true
+    },
+    {
+      "name": "fair baselines present",
+      "note": "",
+      "passed": true,
+      "rule": "all present",
+      "value": [
+        "lag_only_online_lms_control",
+        "fixed_random_reservoir_online_control",
+        "fixed_esn_train_prefix_ridge_baseline"
+      ]
+    },
+    {
+      "name": "v2.3 shams and ablations present",
+      "note": "",
+      "passed": true,
+      "rule": "all present",
+      "value": [
+        "v2_3_state_reset_ablation",
+        "v2_3_shuffled_state_sham",
+        "v2_3_shuffled_target_control",
+        "v2_3_no_update_ablation"
+      ]
+    },
+    {
+      "name": "classification produced",
+      "note": "",
+      "passed": true,
+      "rule": "non-empty",
+      "value": "v2_3_partial_regime_signal_next_needs_failure_specific_mechanism_or_7_1_probe"
+    },
+    {
+      "name": "no new baseline freeze authorized",
+      "note": "",
+      "passed": true,
+      "rule": "== false",
+      "value": false
+    },
+    {
+      "name": "no hardware transfer authorized",
+      "note": "",
+      "passed": true,
+      "rule": "== false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 12,
+  "criteria_total": 12,
+  "failed_criteria": [],
+  "fairness_contract": {
+    "baseline_under_test": "CRA_EVIDENCE_BASELINE_v2.3",
+    "custom_task_policy": "diagnostic-only; cannot replace public benchmarks or justify paper usefulness alone",
+    "excluded_baselines": {
+      "GRU/LSTM": "deferred to Tier 7.1 public/real-ish adapter suite or explicit public benchmark rerun; this tier is a compact diagnostic gate",
+      "task-specific RL": "deferred until Tier 7.4 policy/action selection tasks"
+    },
+    "hardware_policy": "blocked until software usefulness or mechanism evidence earns a separate transfer contract",
+    "normalization_policy": "task streams are z-scored from train prefix only",
+    "prediction_policy": "online normalized LMS predictions are emitted before update for v2.3/v2.2/controls; ESN uses train-prefix ridge readout",
+    "reference_baseline": "CRA_EVIDENCE_BASELINE_v2.2",
+    "seed_policy": [
+      42,
+      43,
+      44
+    ]
+  },
+  "generated_at_utc": "2026-05-08T20:29:19+00:00",
+  "horizon": 8,
+  "invalid_tasks": [],
+  "length": 2400,
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier6_2a_20260508_targeted_usefulness_validation",
+  "runner_revision": "tier6_2a_targeted_usefulness_validation_20260508_0001",
+  "runtime_seconds": 4.6152630420000005,
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "status": "pass",
+  "summary_rows": [
+    {
+      "model": "fixed_esn_train_prefix_ridge_baseline",
+      "mse_mean": 0.8130855375554558,
+      "mse_median": 0.8494946139184325,
+      "mse_std": 0.12401712590616056,
+      "mse_worst": 0.9148227847818088,
+      "nmse_mean": 0.8040158573862443,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.6595292329085455,
+      "task": "variable_delay_multi_cue",
+      "test_corr_mean": 0.4649990584716473
+    },
+    {
+      "model": "fixed_random_reservoir_online_control",
+      "mse_mean": 0.678562202525463,
+      "mse_median": 0.7282913972223541,
+      "mse_std": 0.09157689875369385,
+      "mse_worst": 0.7345158195933438,
+      "nmse_mean": 0.6709622956145832,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.7135003824000994,
+      "task": "variable_delay_multi_cue",
+      "test_corr_mean": 0.5739179214530531
+    },
+    {
+      "model": "lag_only_online_lms_control",
+      "mse_mean": 0.5540991569163743,
+      "mse_median": 0.5558211342116619,
+      "mse_std": 0.03777694473501205,
+      "mse_worst": 0.5909856668501999,
+      "nmse_mean": 0.5483092035451199,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.48453750809556145,
+      "task": "variable_delay_multi_cue",
+      "test_corr_mean": 0.6738517031235314
+    },
+    {
+      "model": "v2_2_fading_memory_reference",
+      "mse_mean": 0.5333947903677161,
+      "mse_median": 0.5587524770301612,
+      "mse_std": 0.06046634849851728,
+      "mse_worst": 0.5770535019718213,
+      "nmse_mean": 0.5275013147607883,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.5304371995507724,
+      "task": "variable_delay_multi_cue",
+      "test_corr_mean": 0.6881566859620117
+    },
+    {
+      "model": "v2_3_generic_bounded_recurrent_state",
+      "mse_mean": 0.5090571841935101,
+      "mse_median": 0.5342370285299298,
+      "mse_std": 0.053990728824023795,
+      "mse_worst": 0.5458583581696917,
+      "nmse_mean": 0.503509462023311,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.5039949117503686,
+      "task": "variable_delay_multi_cue",
+      "test_corr_mean": 0.705272395681801
+    },
+    {
+      "model": "v2_3_no_update_ablation",
+      "mse_mean": 1.0190976285882412,
+      "mse_median": 1.0287044491896247,
+      "mse_std": 0.017895775788596042,
+      "mse_worst": 1.0301384771697228,
+      "nmse_mean": 1.0087120472838886,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 1.0728165638701062,
+      "task": "variable_delay_multi_cue",
+      "test_corr_mean": 0.0
+    },
+    {
+      "model": "v2_3_shuffled_state_sham",
+      "mse_mean": 1.039331078851093,
+      "mse_median": 1.0363827136522474,
+      "mse_std": 0.018754577870940498,
+      "mse_worst": 1.0593852116148152,
+      "nmse_mean": 1.0288075426195018,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 1.0937840581160916,
+      "task": "variable_delay_multi_cue",
+      "test_corr_mean": 0.055100129229068893
+    },
+    {
+      "model": "v2_3_shuffled_target_control",
+      "mse_mean": 1.0497546163332387,
+      "mse_median": 1.0547376294222133,
+      "mse_std": 0.016249490985260944,
+      "mse_worst": 1.0629290965976446,
+      "nmse_mean": 1.0392676906920517,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 1.1303158913368552,
+      "task": "variable_delay_multi_cue",
+      "test_corr_mean": 0.010152136720594845
+    },
+    {
+      "model": "v2_3_state_reset_ablation",
+      "mse_mean": 0.5189051828008361,
+      "mse_median": 0.5425575457185176,
+      "mse_std": 0.05444791570009042,
+      "mse_worst": 0.5575269925843817,
+      "nmse_mean": 0.5132619639306192,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.518425726142484,
+      "task": "variable_delay_multi_cue",
+      "test_corr_mean": 0.6979811417367566
+    },
+    {
+      "model": "fixed_esn_train_prefix_ridge_baseline",
+      "mse_mean": 1.0447536399245718,
+      "mse_median": 1.0403156526153514,
+      "mse_std": 0.051336841405780514,
+      "mse_worst": 1.09816540149619,
+      "nmse_mean": 1.0430867925960545,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.9752817647401854,
+      "task": "hidden_context_reentry",
+      "test_corr_mean": 0.0010154322947282409
+    },
+    {
+      "model": "fixed_random_reservoir_online_control",
+      "mse_mean": 0.05990005769186657,
+      "mse_median": 0.06252394342971371,
+      "mse_std": 0.008292701331671034,
+      "mse_worst": 0.06656340874243839,
+      "nmse_mean": 0.05979194592539059,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.003184904662002735,
+      "task": "hidden_context_reentry",
+      "test_corr_mean": 0.9713395154760479
+    },
+    {
+      "model": "lag_only_online_lms_control",
+      "mse_mean": 0.3232803743785339,
+      "mse_median": 0.3254816345882358,
+      "mse_std": 0.011228973720563145,
+      "mse_worst": 0.3332457142236685,
+      "nmse_mean": 0.32276445390981334,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.06340953062136852,
+      "task": "hidden_context_reentry",
+      "test_corr_mean": 0.8238991932285744
+    },
+    {
+      "model": "v2_2_fading_memory_reference",
+      "mse_mean": 0.12528064386847013,
+      "mse_median": 0.12912672603223813,
+      "mse_std": 0.021268284686440552,
+      "mse_worst": 0.14436345131730827,
+      "nmse_mean": 0.1250594104241462,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.022760421928844737,
+      "task": "hidden_context_reentry",
+      "test_corr_mean": 0.9357090529481509
+    },
+    {
+      "model": "v2_3_generic_bounded_recurrent_state",
+      "mse_mean": 0.13114242720796349,
+      "mse_median": 0.11781850546255142,
+      "mse_std": 0.03307816742764945,
+      "mse_worst": 0.1688047105364636,
+      "nmse_mean": 0.13087953401563876,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.026923076227878342,
+      "task": "hidden_context_reentry",
+      "test_corr_mean": 0.9329268612925011
+    },
+    {
+      "model": "v2_3_no_update_ablation",
+      "mse_mean": 1.005709703395467,
+      "mse_median": 1.0052439218178928,
+      "mse_std": 0.0013464628000458229,
+      "mse_worst": 1.0072272138608125,
+      "nmse_mean": 1.0040623219759819,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.9738780329172411,
+      "task": "hidden_context_reentry",
+      "test_corr_mean": 0.0
+    },
+    {
+      "model": "v2_3_shuffled_state_sham",
+      "mse_mean": 1.0233018331257202,
+      "mse_median": 1.0239478477913733,
+      "mse_std": 0.0020194378715804916,
+      "mse_worst": 1.024919219594676,
+      "nmse_mean": 1.0216255824015934,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.9838509059050046,
+      "task": "hidden_context_reentry",
+      "test_corr_mean": 0.07125267090695996
+    },
+    {
+      "model": "v2_3_shuffled_target_control",
+      "mse_mean": 1.0078807128741756,
+      "mse_median": 0.9967349844261888,
+      "mse_std": 0.02799191883379316,
+      "mse_worst": 1.039728604653254,
+      "nmse_mean": 1.0062238096322464,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.9881854103596451,
+      "task": "hidden_context_reentry",
+      "test_corr_mean": 0.07804872614179316
+    },
+    {
+      "model": "v2_3_state_reset_ablation",
+      "mse_mean": 0.12825763215030303,
+      "mse_median": 0.11138990389436597,
+      "mse_std": 0.03517196548188395,
+      "mse_worst": 0.168686448434381,
+      "nmse_mean": 0.1279939127454003,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.02439300187251972,
+      "task": "hidden_context_reentry",
+      "test_corr_mean": 0.9345485917370556
+    },
+    {
+      "model": "fixed_esn_train_prefix_ridge_baseline",
+      "mse_mean": 0.9285194099794133,
+      "mse_median": 0.9252174831338705,
+      "mse_std": 0.00673883771322575,
+      "mse_worst": 0.9362724134754068,
+      "nmse_mean": 1.0081605217583907,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 1.0008132195338197,
+      "task": "concept_drift_stream",
+      "test_corr_mean": 0.1104592888736697
+    },
+    {
+      "model": "fixed_random_reservoir_online_control",
+      "mse_mean": 0.31034771403733513,
+      "mse_median": 0.3016798235797682,
+      "mse_std": 0.03630023585853815,
+      "mse_worst": 0.35019725977698163,
+      "nmse_mean": 0.3368402686898235,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.3189441230687516,
+      "task": "concept_drift_stream",
+      "test_corr_mean": 0.8221070091287074
+    },
+    {
+      "model": "lag_only_online_lms_control",
+      "mse_mean": 0.5323092537280933,
+      "mse_median": 0.5534563278563136,
+      "mse_std": 0.04019314929428757,
+      "mse_worst": 0.557514064754058,
+      "nmse_mean": 0.5777688339270282,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.43202743056266507,
+      "task": "concept_drift_stream",
+      "test_corr_mean": 0.6668549306501736
+    },
+    {
+      "model": "v2_2_fading_memory_reference",
+      "mse_mean": 0.25802590810737513,
+      "mse_median": 0.2613724219414743,
+      "mse_std": 0.0166092633529004,
+      "mse_worst": 0.2727071081667781,
+      "nmse_mean": 0.28008300651830503,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.19513928069445163,
+      "task": "concept_drift_stream",
+      "test_corr_mean": 0.8530795289609495
+    },
+    {
+      "model": "v2_3_generic_bounded_recurrent_state",
+      "mse_mean": 0.3461047991105859,
+      "mse_median": 0.33241984326092805,
+      "mse_std": 0.04490882931849008,
+      "mse_worst": 0.3962640686790945,
+      "nmse_mean": 0.37564362145755553,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.34393273380683625,
+      "task": "concept_drift_stream",
+      "test_corr_mean": 0.7962406669853473
+    },
+    {
+      "model": "v2_3_no_update_ablation",
+      "mse_mean": 0.921949134924145,
+      "mse_median": 0.9256117972558136,
+      "mse_std": 0.0073689046511039745,
+      "mse_worst": 0.9267690768875841,
+      "nmse_mean": 1.0010068218119168,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 1.0980309589434103,
+      "task": "concept_drift_stream",
+      "test_corr_mean": 0.0
+    },
+    {
+      "model": "v2_3_shuffled_state_sham",
+      "mse_mean": 0.8263476794943235,
+      "mse_median": 0.7932607370080547,
+      "mse_std": 0.05997353882468472,
+      "mse_worst": 0.8955766898999142,
+      "nmse_mean": 0.8971093315846949,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.9200949027154639,
+      "task": "concept_drift_stream",
+      "test_corr_mean": 0.33186261673801926
+    },
+    {
+      "model": "v2_3_shuffled_target_control",
+      "mse_mean": 0.971467246177392,
+      "mse_median": 0.9846347313258265,
+      "mse_std": 0.030592151028388026,
+      "mse_worst": 0.9932708723733342,
+      "nmse_mean": 1.054879632714797,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 1.100879641509726,
+      "task": "concept_drift_stream",
+      "test_corr_mean": -0.038130053296216
+    },
+    {
+      "model": "v2_3_state_reset_ablation",
+      "mse_mean": 0.34373115583184416,
+      "mse_median": 0.33011717149903097,
+      "mse_std": 0.04263469783503955,
+      "mse_worst": 0.39151023645398564,
+      "nmse_mean": 0.37307635261101985,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.3364539539726425,
+      "task": "concept_drift_stream",
+      "test_corr_mean": 0.7973195337999851
+    },
+    {
+      "model": "fixed_esn_train_prefix_ridge_baseline",
+      "mse_mean": 0.5925213369915916,
+      "mse_median": 0.5901965565608618,
+      "mse_std": 0.07970195850319953,
+      "mse_worst": 0.6733602528353209,
+      "nmse_mean": 0.6266153677101108,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.5045192521980176,
+      "task": "anomaly_detection_stream",
+      "test_corr_mean": 0.623467537965424
+    },
+    {
+      "model": "fixed_random_reservoir_online_control",
+      "mse_mean": 0.5498591265405142,
+      "mse_median": 0.5520580589285428,
+      "mse_std": 0.054453700151955005,
+      "mse_worst": 0.6031800515845614,
+      "nmse_mean": 0.5840196024306956,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.44562078380671793,
+      "task": "anomaly_detection_stream",
+      "test_corr_mean": 0.6561743957482427
+    },
+    {
+      "model": "lag_only_online_lms_control",
+      "mse_mean": 0.7970197501964541,
+      "mse_median": 0.745651646616501,
+      "mse_std": 0.14210524368620933,
+      "mse_worst": 0.9576663476576884,
+      "nmse_mean": 0.8381362780706354,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.6737496254567011,
+      "task": "anomaly_detection_stream",
+      "test_corr_mean": 0.4181509431706451
+    },
+    {
+      "model": "v2_2_fading_memory_reference",
+      "mse_mean": 0.6539961804739801,
+      "mse_median": 0.6130043929608112,
+      "mse_std": 0.10779351700428018,
+      "mse_worst": 0.7762722163286598,
+      "nmse_mean": 0.6888690974657606,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.5809672839282154,
+      "task": "anomaly_detection_stream",
+      "test_corr_mean": 0.5628794576101444
+    },
+    {
+      "model": "v2_3_generic_bounded_recurrent_state",
+      "mse_mean": 0.6734007962411387,
+      "mse_median": 0.6158503372269717,
+      "mse_std": 0.11154479557687902,
+      "mse_worst": 0.8019668064883875,
+      "nmse_mean": 0.7095031035635001,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.6009878651143914,
+      "task": "anomaly_detection_stream",
+      "test_corr_mean": 0.5436895133017958
+    },
+    {
+      "model": "v2_3_no_update_ablation",
+      "mse_mean": 0.956932162165773,
+      "mse_median": 0.8879644366390431,
+      "mse_std": 0.18273691671062722,
+      "mse_worst": 1.1641162575742012,
+      "nmse_mean": 1.0047863731294202,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.8584714412829402,
+      "task": "anomaly_detection_stream",
+      "test_corr_mean": 0.0
+    },
+    {
+      "model": "v2_3_shuffled_state_sham",
+      "mse_mean": 0.9857582358316913,
+      "mse_median": 0.9249496050458985,
+      "mse_std": 0.1825405524141033,
+      "mse_worst": 1.1909418008285206,
+      "nmse_mean": 1.0357195661203245,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.896591569207197,
+      "task": "anomaly_detection_stream",
+      "test_corr_mean": 0.053778257156385866
+    },
+    {
+      "model": "v2_3_shuffled_target_control",
+      "mse_mean": 0.9863676034915692,
+      "mse_median": 0.932181821718578,
+      "mse_std": 0.19757521499149094,
+      "mse_worst": 1.2053820704688503,
+      "nmse_mean": 1.0344470627973783,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.8538430337502557,
+      "task": "anomaly_detection_stream",
+      "test_corr_mean": 0.017721732801527956
+    },
+    {
+      "model": "v2_3_state_reset_ablation",
+      "mse_mean": 0.6804028072900401,
+      "mse_median": 0.6403308595075168,
+      "mse_std": 0.10982208137612087,
+      "mse_worst": 0.8046336409799951,
+      "nmse_mean": 0.7169630925034202,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.5870847785662953,
+      "task": "anomaly_detection_stream",
+      "test_corr_mean": 0.5366394118817942
+    },
+    {
+      "model": "fixed_esn_train_prefix_ridge_baseline",
+      "mse_mean": 0.029133414628158178,
+      "mse_median": 0.029618317936450245,
+      "mse_std": 0.002716309599920289,
+      "mse_worst": 0.03157461522958191,
+      "nmse_mean": 0.028177376103346183,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.042459006168478954,
+      "task": "delayed_control_proxy",
+      "test_corr_mean": 0.9859484505156119
+    },
+    {
+      "model": "fixed_random_reservoir_online_control",
+      "mse_mean": 0.08277389091019473,
+      "mse_median": 0.09949514915137986,
+      "mse_std": 0.0380643714341102,
+      "mse_worst": 0.10961547783912956,
+      "nmse_mean": 0.08445683321035032,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.11023516448121139,
+      "task": "delayed_control_proxy",
+      "test_corr_mean": 0.9576729933520642
+    },
+    {
+      "model": "lag_only_online_lms_control",
+      "mse_mean": 0.004896173749945975,
+      "mse_median": 0.004799790065998733,
+      "mse_std": 0.00042317949283274427,
+      "mse_worst": 0.005359231259643195,
+      "nmse_mean": 0.0047806250736517905,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.005921304466654645,
+      "task": "delayed_control_proxy",
+      "test_corr_mean": 0.9976384982096453
+    },
+    {
+      "model": "v2_2_fading_memory_reference",
+      "mse_mean": 0.009145610173510626,
+      "mse_median": 0.009052126756720024,
+      "mse_std": 0.0003203070525550643,
+      "mse_worst": 0.009502258716301974,
+      "nmse_mean": 0.008912719561957622,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.011920434369139645,
+      "task": "delayed_control_proxy",
+      "test_corr_mean": 0.9955490470906637
+    },
+    {
+      "model": "v2_3_generic_bounded_recurrent_state",
+      "mse_mean": 0.01116466689409419,
+      "mse_median": 0.0111599853172361,
+      "mse_std": 0.0002753166342075208,
+      "mse_worst": 0.011442294462445463,
+      "nmse_mean": 0.010864384836424686,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.013522836472173748,
+      "task": "delayed_control_proxy",
+      "test_corr_mean": 0.9946166415589817
+    },
+    {
+      "model": "v2_3_no_update_ablation",
+      "mse_mean": 1.0701994350611723,
+      "mse_median": 0.9901830799222561,
+      "mse_std": 0.17718320233588086,
+      "mse_worst": 1.2732779176303752,
+      "nmse_mean": 1.020560708256548,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 1.1208748098340022,
+      "task": "delayed_control_proxy",
+      "test_corr_mean": 0.0
+    },
+    {
+      "model": "v2_3_shuffled_state_sham",
+      "mse_mean": 1.0087559499894885,
+      "mse_median": 0.9951820622596655,
+      "mse_std": 0.10474297211348853,
+      "mse_worst": 1.1196241236035271,
+      "nmse_mean": 0.9686134598639282,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 1.066668638321439,
+      "task": "delayed_control_proxy",
+      "test_corr_mean": 0.21648768670065097
+    },
+    {
+      "model": "v2_3_shuffled_target_control",
+      "mse_mean": 1.0838274755680086,
+      "mse_median": 1.046442172577432,
+      "mse_std": 0.169943221985412,
+      "mse_worst": 1.2693507388796244,
+      "nmse_mean": 1.0344304975454548,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 1.258931766871789,
+      "task": "delayed_control_proxy",
+      "test_corr_mean": 0.019211765479790237
+    },
+    {
+      "model": "v2_3_state_reset_ablation",
+      "mse_mean": 0.011272275195364544,
+      "mse_median": 0.011266224084544425,
+      "mse_std": 0.0008861977779646717,
+      "mse_worst": 0.012161483034344358,
+      "nmse_mean": 0.011015249733783159,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.014480003776222045,
+      "task": "delayed_control_proxy",
+      "test_corr_mean": 0.9945200482174092
+    }
+  ],
+  "task_diagnostics": [
+    {
+      "diagnostic_role": "temporal retention and variable delayed-credit pressure",
+      "lag_feature_count": 17,
+      "reservoir_feature_count": 34,
+      "seed": 42,
+      "task": "variable_delay_multi_cue",
+      "v2_2_feature_count": 16,
+      "v2_3_feature_count": 32
+    },
+    {
+      "diagnostic_role": "same signal, different action depending on remembered/reentered context",
+      "lag_feature_count": 17,
+      "reservoir_feature_count": 34,
+      "seed": 42,
+      "task": "hidden_context_reentry",
+      "v2_2_feature_count": 16,
+      "v2_3_feature_count": 32
+    },
+    {
+      "diagnostic_role": "online adaptation under changing mapping",
+      "lag_feature_count": 17,
+      "reservoir_feature_count": 34,
+      "seed": 42,
+      "task": "concept_drift_stream",
+      "v2_2_feature_count": 16,
+      "v2_3_feature_count": 32
+    },
+    {
+      "diagnostic_role": "rare-event anticipation and tail stability",
+      "lag_feature_count": 17,
+      "reservoir_feature_count": 34,
+      "seed": 42,
+      "task": "anomaly_detection_stream",
+      "v2_2_feature_count": 16,
+      "v2_3_feature_count": 32
+    },
+    {
+      "diagnostic_role": "state -> action-like target under delayed consequence pressure",
+      "lag_feature_count": 17,
+      "reservoir_feature_count": 34,
+      "seed": 42,
+      "task": "delayed_control_proxy",
+      "v2_2_feature_count": 16,
+      "v2_3_feature_count": 32
+    },
+    {
+      "diagnostic_role": "temporal retention and variable delayed-credit pressure",
+      "lag_feature_count": 17,
+      "reservoir_feature_count": 34,
+      "seed": 43,
+      "task": "variable_delay_multi_cue",
+      "v2_2_feature_count": 16,
+      "v2_3_feature_count": 32
+    },
+    {
+      "diagnostic_role": "same signal, different action depending on remembered/reentered context",
+      "lag_feature_count": 17,
+      "reservoir_feature_count": 34,
+      "seed": 43,
+      "task": "hidden_context_reentry",
+      "v2_2_feature_count": 16,
+      "v2_3_feature_count": 32
+    },
+    {
+      "diagnostic_role": "online adaptation under changing mapping",
+      "lag_feature_count": 17,
+      "reservoir_feature_count": 34,
+      "seed": 43,
+      "task": "concept_drift_stream",
+      "v2_2_feature_count": 16,
+      "v2_3_feature_count": 32
+    },
+    {
+      "diagnostic_role": "rare-event anticipation and tail stability",
+      "lag_feature_count": 17,
+      "reservoir_feature_count": 34,
+      "seed": 43,
+      "task": "anomaly_detection_stream",
+      "v2_2_feature_count": 16,
+      "v2_3_feature_count": 32
+    },
+    {
+      "diagnostic_role": "state -> action-like target under delayed consequence pressure",
+      "lag_feature_count": 17,
+      "reservoir_feature_count": 34,
+      "seed": 43,
+      "task": "delayed_control_proxy",
+      "v2_2_feature_count": 16,
+      "v2_3_feature_count": 32
+    },
+    {
+      "diagnostic_role": "temporal retention and variable delayed-credit pressure",
+      "lag_feature_count": 17,
+      "reservoir_feature_count": 34,
+      "seed": 44,
+      "task": "variable_delay_multi_cue",
+      "v2_2_feature_count": 16,
+      "v2_3_feature_count": 32
+    },
+    {
+      "diagnostic_role": "same signal, different action depending on remembered/reentered context",
+      "lag_feature_count": 17,
+      "reservoir_feature_count": 34,
+      "seed": 44,
+      "task": "hidden_context_reentry",
+      "v2_2_feature_count": 16,
+      "v2_3_feature_count": 32
+    },
+    {
+      "diagnostic_role": "online adaptation under changing mapping",
+      "lag_feature_count": 17,
+      "reservoir_feature_count": 34,
+      "seed": 44,
+      "task": "concept_drift_stream",
+      "v2_2_feature_count": 16,
+      "v2_3_feature_count": 32
+    },
+    {
+      "diagnostic_role": "rare-event anticipation and tail stability",
+      "lag_feature_count": 17,
+      "reservoir_feature_count": 34,
+      "seed": 44,
+      "task": "anomaly_detection_stream",
+      "v2_2_feature_count": 16,
+      "v2_3_feature_count": 32
+    },
+    {
+      "diagnostic_role": "state -> action-like target under delayed consequence pressure",
+      "lag_feature_count": 17,
+      "reservoir_feature_count": 34,
+      "seed": 44,
+      "task": "delayed_control_proxy",
+      "v2_2_feature_count": 16,
+      "v2_3_feature_count": 32
+    }
+  ],
+  "tasks": [
+    "variable_delay_multi_cue",
+    "hidden_context_reentry",
+    "concept_drift_stream",
+    "anomaly_detection_stream",
+    "delayed_control_proxy"
+  ],
+  "tier": "Tier 6.2a - Targeted Hard-Task Validation Over v2.3"
+}
