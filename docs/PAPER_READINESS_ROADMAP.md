@@ -3744,9 +3744,10 @@ scoring but narrowed the claim: v2.3 ranked 5th and did not beat v2.2 or the
 monotone age baseline. Tier 7.1d then localized the gap mostly to target/readout
 policy: capped RUL plus ridge readout repaired scalar scoring, but v2.3 still
 did not win. Tier 7.1e then rejected the tiny v2.2 capped-ridge signal as
-statistically unconfirmed against lag-multichannel ridge. The next step is Tier
-7.1f next public adapter contract / family selection; stop tuning C-MAPSS for
-now and choose the next predeclared public benchmark family before any scoring.
+statistically unconfirmed against lag-multichannel ridge. Tier 7.1f then
+selected Numenta NAB streaming anomaly detection as the next public adapter
+family. The next step is Tier 7.1g NAB source/data/scoring preflight; stop
+tuning C-MAPSS for now.
 ```
 
 ### Tier 6.2: Diagnostic Hard Task Suite
@@ -3800,6 +3801,7 @@ Tier 7.1b — NASA C-MAPSS source/data preflight: COMPLETE, PASS 16/16
 Tier 7.1c — compact C-MAPSS FD001 scoring gate: COMPLETE, PASS 12/12
 Tier 7.1d — C-MAPSS failure analysis / adapter repair: COMPLETE, PASS 14/14
 Tier 7.1e — C-MAPSS capped-RUL/readout fairness confirmation: COMPLETE, PASS 12/12
+Tier 7.1f — next public adapter contract / family selection: COMPLETE, PASS 10/10
 ```
 
 Result:
@@ -3834,6 +3836,11 @@ Primary comparison: scalar_pca1_v2_2_ridge_capped125 vs lag_multichannel_ridge_c
 Mean delta RMSE, positive means candidate better: -0.3690103080637045
 Bootstrap 95% CI: [-1.4191012103865384, 0.6704668696286052]
 Effect size d: -0.06884079972999842
+
+Output: controlled_test_output/tier7_1f_20260508_next_public_adapter_contract/
+Selected adapter: numenta_nab_streaming_anomaly
+Dataset family: Numenta Anomaly Benchmark (NAB)
+Boundary: contract only; no NAB data preflight, no scoring, no freeze, no hardware/native transfer.
 ```
 
 Interpretation:
@@ -3848,26 +3855,28 @@ policy: capped RUL plus ridge readout repaired scalar scoring, but v2.3 still
 did not win and multichannel v2.3 did not beat scalar repair or fair public
 baselines. Tier 7.1e then showed the tiny v2.2 capped-ridge signal was not
 statistically confirmed against lag-multichannel ridge under paired per-unit
-bootstrap analysis. None of these tiers authorizes a freeze or native transfer.
+bootstrap analysis. Tier 7.1f selected Numenta NAB streaming anomaly detection
+as the next public adapter family. None of these tiers authorizes a freeze or
+native transfer.
 ```
 
 Current next step:
 
 ```text
-Tier 7.1f — next public adapter contract / family selection
+Tier 7.1g — NAB source/data/scoring preflight
 ```
 
-Tier 7.1f must stop C-MAPSS tuning for now and select the next predeclared
-public benchmark family. It must include:
+Tier 7.1g must verify:
 
 ```text
-official source and license/source notes
-locked preprocessing and split policy
-leakage controls
-baseline/fairness contract
-metrics and pass/fail criteria
-claim boundary and nonclaims
-no hardware/native transfer until software usefulness is earned
+official NAB source access or reproducible cache
+source commit/release/checksum manifest
+data file parse
+label/window parse
+label-separated online streams
+tiny leakage-safe smoke rows
+scoring-interface feasibility
+no full scoring until preflight passes
 ```
 
 Tier 7.1a predeclared these candidate/future adapter families:
@@ -7339,7 +7348,20 @@ Boundary: statistical/fairness confirmation only, not a full C-MAPSS benchmark,
           baseline freeze, and not hardware/native transfer.
 ```
 
-Next: Implement Tier 7.1f next public adapter contract / family selection. Do not keep tuning C-MAPSS unless a future predeclared contract justifies full FD001-FD004 evaluation with stronger baselines. Do not claim public usefulness or move to native/on-chip transfer unless a later public-adapter gate beats or complements fair baselines under the predeclared boundary with meaningful effect size/statistical support. Use `CRA_NATIVE_SCALE_BASELINE_v0.5` only as the frozen native substrate reference, not as usefulness evidence.
+Tier 7.1f result:
+
+```text
+Output: controlled_test_output/tier7_1f_20260508_next_public_adapter_contract/
+Status: pass
+Criteria: 10/10
+Selected adapter: numenta_nab_streaming_anomaly
+Dataset family: Numenta Anomaly Benchmark (NAB)
+Boundary: contract/family-selection only, not NAB data preflight, not scoring,
+          not public usefulness evidence, not a baseline freeze, and not
+          hardware/native transfer.
+```
+
+Next: Implement Tier 7.1g NAB source/data/scoring preflight. Do not run full NAB scoring until source access, source hash/commit, file/label parsing, label-separated online streams, tiny leakage-safe smoke rows, and scoring-interface feasibility are verified. Do not claim public usefulness or move to native/on-chip transfer unless a later public-adapter gate beats or complements fair baselines under the predeclared boundary with meaningful effect size/statistical support. Use `CRA_NATIVE_SCALE_BASELINE_v0.5` only as the frozen native substrate reference, not as usefulness evidence.
 
 Detailed Tier 5.19 contract:
 

@@ -10829,3 +10829,52 @@ Stop tuning C-MAPSS for now. Select the next predeclared public benchmark family
 with official sources, license/source notes, locked preprocessing, leakage
 controls, baselines, metrics, pass/fail criteria, and nonclaims before scoring.
 ```
+
+### Tier 7.1f - Next Public Adapter Contract / Family Selection
+
+Runner:
+
+```text
+experiments/tier7_1f_next_public_adapter_contract.py
+```
+
+Output:
+
+```text
+controlled_test_output/tier7_1f_20260508_next_public_adapter_contract/
+```
+
+Status:
+
+```text
+PASS
+criteria: 10/10
+selected adapter: numenta_nab_streaming_anomaly
+dataset family: Numenta Anomaly Benchmark (NAB)
+```
+
+Interpretation:
+
+```text
+Tier 7.1f closes the compact C-MAPSS path as non-promoted and selects Numenta
+NAB streaming anomaly detection as the next public adapter family. The choice
+targets online anomaly streams, prediction error, false-positive pressure,
+detection latency, surprise, and nonstationary adaptation.
+```
+
+Claim boundary:
+
+```text
+Tier 7.1f is contract/family-selection only. It is not NAB data preflight, not
+NAB scoring, not public usefulness evidence, not a baseline freeze, not
+hardware/native transfer, and not AGI/ASI evidence.
+```
+
+Next required step:
+
+```text
+Tier 7.1g - NAB source/data/scoring preflight.
+Verify official source access, source hash/commit, data file parsing,
+label/window parsing, label-separated online streams, tiny leakage-safe smoke
+rows, and scoring-interface feasibility before full NAB scoring.
+```

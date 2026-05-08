@@ -1,0 +1,5 @@
+name,url,role,license_or_source_note
+Numenta NAB GitHub repository,https://github.com/numenta/NAB,official code/data/labels repository,"MIT license shown by GitHub repository metadata; repository includes data, labels, scoring tools, and README."
+NAB data directory,https://github.com/numenta/NAB/tree/master/data,public time-series data files,Use files from the official repository only; preserve source commit/hash in preflight.
+NAB labels directory,https://github.com/numenta/NAB/tree/master/labels,anomaly-window labels and label subsets,Labels are scoring-only; no online detector may read labels before emitting anomaly scores.
+Evaluating Real-time Anomaly Detection Algorithms - the Numenta Anomaly Benchmark,https://arxiv.org/abs/1510.03336,original NAB publication / scoring motivation,Use for benchmark/scoring description and citation.

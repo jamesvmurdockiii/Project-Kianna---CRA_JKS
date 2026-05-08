@@ -1,0 +1,33 @@
+{
+  "artifacts": [
+    {
+      "bytes": 1144,
+      "name": "report_md",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1f_20260508_next_public_adapter_contract/tier7_1f_report.md",
+      "sha256": "b4d2be62ffbc0bb2012115edb736dde72ec1dc92671025a4f9a993320b3e58f1"
+    },
+    {
+      "bytes": 7663,
+      "name": "results_json",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1f_20260508_next_public_adapter_contract/tier7_1f_results.json",
+      "sha256": "53490e1c3d4745f965c7d5fa1f03199714a345a8d1b9d3b4e1415a5b6b0dab02"
+    },
+    {
+      "bytes": 847,
+      "name": "source_contract_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1f_20260508_next_public_adapter_contract/tier7_1f_source_contract.csv",
+      "sha256": "76ae01ea735347f0d81125eca37536f0408c03aa1072db00462c9f2c3a9beff7"
+    },
+    {
+      "bytes": 969,
+      "name": "summary_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1f_20260508_next_public_adapter_contract/tier7_1f_summary.csv",
+      "sha256": "344c92ac46bd5a2a4dac162f3e9838f7eb9a991536bbc9e4b004c0f645802c9b"
+    }
+  ],
+  "generated_at_utc": "2026-05-08T21:35:18+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1f_20260508_next_public_adapter_contract",
+  "runner_revision": "tier7_1f_next_public_adapter_contract_20260508_0001",
+  "status": "pass",
+  "tier": "Tier 7.1f - Next Public Adapter Contract / Family Selection"
+}

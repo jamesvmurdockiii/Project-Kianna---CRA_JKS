@@ -576,8 +576,6 @@ baselines. The tiny v2.2 capped-ridge advantage over lag-multichannel ridge is
 not yet a public usefulness claim and needs fairness/statistical confirmation.
 ```
 
-## Immediate Next Action
-
 ## Tier 7.1e Result
 
 2026-05-08 result:
@@ -612,12 +610,35 @@ hardware/native transfer.
 
 ## Immediate Next Action
 
+## Tier 7.1f Result
+
+2026-05-08 result:
+
+```text
+Tier 7.1f — next public adapter contract / family selection
+output: controlled_test_output/tier7_1f_20260508_next_public_adapter_contract/
+status: PASS, 10/10 criteria
+selected adapter: numenta_nab_streaming_anomaly
+dataset family: Numenta Anomaly Benchmark (NAB)
+```
+
+Interpretation:
+
+```text
+Tier 7.1f stops tuning C-MAPSS for now and selects NAB as the next public
+streaming anomaly benchmark family. It is a contract only, not a data preflight,
+not a scored NAB result, not public usefulness evidence, and not hardware/native
+transfer.
+```
+
+## Immediate Next Action
+
 The current next action is:
 
 ```text
-Tier 7.1f — next public adapter contract / family selection.
+Tier 7.1g — NAB source/data/scoring preflight.
 ```
 
-Stop tuning C-MAPSS for now. Select the next predeclared public benchmark family
-with official sources, license/source notes, locked preprocessing, leakage
-controls, baselines, metrics, pass/fail criteria, and nonclaims before scoring.
+Verify official source access, source hash/commit, data file parsing,
+label/window parsing, label-separated online streams, tiny leakage-safe smoke
+rows, and scoring-interface feasibility before full NAB scoring.

@@ -89,10 +89,13 @@ readout repaired scalar scoring, but v2.3 still did not win. Tier 7.1e then
 passed at
 `controlled_test_output/tier7_1e_20260508_cmapss_capped_readout_fairness_confirmation/`,
 showing the tiny v2.2 capped-ridge signal was not statistically confirmed
-against lag-multichannel ridge. The next active project step is Tier 7.1f next
-public adapter contract / family selection; no hardware transfer or native
-migration is authorized until public-adapter software usefulness or a promoted
-mechanism earns a separate evidence contract.
+against lag-multichannel ridge. Tier 7.1f then passed at
+`controlled_test_output/tier7_1f_20260508_next_public_adapter_contract/`,
+selecting Numenta NAB streaming anomaly detection as the next public adapter
+family. The next active project step is Tier 7.1g NAB source/data/scoring
+preflight; no hardware transfer or native migration is authorized until
+public-adapter software usefulness or a promoted mechanism earns a separate
+evidence contract.
 
 Tier 4.32a-hw prepare has also passed locally. The current EBRAINS upload
 folder is `ebrains_jobs/cra_432a_hw`, and the exact JobManager command is

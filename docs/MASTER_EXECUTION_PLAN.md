@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-08T21:30:34+00:00.
+Last updated: 2026-05-08T21:36:31+00:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -1105,29 +1105,36 @@ ability.
     fairness/statistical confirmation only; no public usefulness win, no
     baseline freeze, and no hardware/native transfer.
 
-82. **CURRENT ACTIVE STEP** - Tier 7.1f next public adapter contract / family
-    selection: stop tuning C-MAPSS for now and select the next predeclared
-    public benchmark family with fixed sources, license/source notes,
-    preprocessing, leakage controls, fair baselines, metrics, pass/fail rules,
-    and nonclaims before any scoring.
+82. **COMPLETE** - Tier 7.1f next public adapter contract / family selection:
+    passed 10/10 at
+    `controlled_test_output/tier7_1f_20260508_next_public_adapter_contract/`.
+    It selected `numenta_nab_streaming_anomaly` as the next public adapter
+    family after C-MAPSS non-promotion. Boundary: contract only; no NAB data
+    preflight, no scoring, no public usefulness claim, no baseline freeze, and
+    no hardware/native transfer.
 
-83. Mechanism iteration loop: add exactly one planned general mechanism at a
+83. **CURRENT ACTIVE STEP** - Tier 7.1g NAB source/data/scoring preflight:
+    verify source access, source hash/commit, file and label parsing,
+    label-separated online streams, tiny leakage-safe smoke rows, and scoring
+    interface feasibility before full NAB scoring.
+
+84. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
     stop the broad usefulness track and narrow the paper.
 
-84. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+85. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines. Start only after the standardized scoreboard or failure diagnosis
     identifies a winning regime, a real failure mode, or a mechanism needing
     external validation.
 
-85. Tier 7.2 held-out task challenge: define held-out families before running;
+86. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout. Include at least one synthetic holdout and one
     real-ish adapter holdout if Tier 7.1 is active.
 
-86. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+87. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines. Candidate domains include
     streaming anomaly detection, predictive-maintenance sensor streams, human
     activity streams, event prediction, ECG/biosignal streams, and finance as
@@ -1479,10 +1486,11 @@ v2.2 or the monotone age baseline. Tier 7.1d then localized most of that compact
 failure to target/readout policy: capped RUL plus ridge readout repaired scalar
 scoring, but v2.3 still did not win. Tier 7.1e then rejected the tiny v2.2
 capped-ridge signal as statistically unconfirmed against lag-multichannel ridge.
-The next active work is Tier 7.1f next public adapter contract / family
-selection; stop tuning C-MAPSS for now. Reopen native work only for targeted
-transfer after a software task/mechanism earns it under the Tier 7/6.2 gates and
-a separate transfer contract is written.
+Tier 7.1f then selected Numenta NAB streaming anomaly detection as the next
+public adapter family. The next active work is Tier 7.1g NAB source/data/scoring
+preflight. Reopen native work only for targeted transfer after a software
+task/mechanism earns it under the Tier 7/6.2 gates and a separate transfer
+contract is written.
 It must preserve explicit board/chip/shard identity, message paths, compact
 readback ownership, failure counters, placement assumptions,
 enabled-vs-no-learning separation, and resource measurements while adding the

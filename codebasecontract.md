@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-08T21:30:34+00:00.
+Last updated: 2026-05-08T21:36:31+00:00.
 
 Current repo root:
 
@@ -140,6 +140,23 @@ Tier 7.1e = COMPLETE, PASS, 12/12 criteria
   Boundary: statistical/fairness confirmation over Tier 7.1d per-unit results
             only; not a full C-MAPSS benchmark, not a public usefulness win,
             not a promoted mechanism, not a baseline freeze, and not
+            hardware/native transfer evidence.
+```
+
+Latest next public adapter contract:
+
+```text
+Tier 7.1f = COMPLETE, PASS, 10/10 criteria
+  Source: controlled_test_output/tier7_1f_20260508_next_public_adapter_contract/
+  Runner: experiments/tier7_1f_next_public_adapter_contract.py
+  Selected adapter: numenta_nab_streaming_anomaly
+  Dataset family: Numenta Anomaly Benchmark (NAB)
+  Decision: stop tuning C-MAPSS for now; use NAB as the next public streaming
+            anomaly benchmark family because it directly pressures online
+            prediction error, surprise, adaptation, false positives, and
+            detection latency.
+  Boundary: contract/family-selection only; not NAB data preflight, not scoring,
+            not public usefulness evidence, not a baseline freeze, and not
             hardware/native transfer evidence.
 ```
 
@@ -630,12 +647,16 @@ Tier 7.1e — COMPLETE. C-MAPSS capped-RUL/readout fairness confirmation.
     against lag-multichannel ridge under paired per-unit bootstrap analysis. No
     freeze or hardware transfer.
 
-Tier 7.1f — CURRENT ACTIVE STEP. Next public adapter contract / family
-selection.
-  Required first move: stop tuning C-MAPSS for now and select the next
-    predeclared public benchmark family with fixed official sources, license /
-    source notes, preprocessing, leakage rules, baseline set, metrics, pass/fail
-    criteria, and nonclaims before any scoring.
+Tier 7.1f — COMPLETE. Next public adapter contract / family selection.
+  Status: LOCAL CONTRACT PASS, 10/10 criteria.
+  Output: controlled_test_output/tier7_1f_20260508_next_public_adapter_contract/
+  Result: selected Numenta NAB streaming anomaly detection as the next public
+    adapter family. No data preflight, scoring, freeze, or hardware transfer.
+
+Tier 7.1g — CURRENT ACTIVE STEP. NAB source/data/scoring preflight.
+  Required first move: verify source access, source hash/commit, file and label
+    parsing, label-separated online streams, tiny leakage-safe smoke rows, and
+    scoring-interface feasibility before full NAB scoring.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware
