@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-08T02:53:45+00:00.
+Last updated: 2026-05-08T03:27:22+00:00.
 
 Current repo root:
 
@@ -118,11 +118,15 @@ FROZEN: CRA_LIFECYCLE_NATIVE_BASELINE_v0.4
         mask sync, active-mask/lineage readback, stale/duplicate/missing-ack
         zeros, and synthetic-fallback zero all passed. Failure class:
         lifecycle_core cleanup/control-surface NAK for CMD_PAUSE plus reset
-        criterion evaluator bug. Tier 4.32g-r1 then prepared locally at
-        controlled_test_output/tier4_32g_20260507_r1_prepared/ with 16/16
-        criteria, refreshed ebrains_jobs/cra_432g, and emitted exact JobManager
-        command:
-        cra_432g/experiments/tier4_32g_multichip_lifecycle_traffic_resource_smoke.py --mode run-hardware --output-dir tier4_32g_job_output
+        criterion evaluator bug. A second attempted rerun was ingested at
+        controlled_test_output/tier4_32g_20260508_old_package_return_ingested/
+        and returned runner revision ...0001 again, proving EBRAINS ran the
+        stale cra_432g package rather than the repaired package. Tier 4.32g-r2
+        then prepared locally at
+        controlled_test_output/tier4_32g_20260508_r2_prepared/ with 16/16
+        criteria, refreshed cache-proof ebrains_jobs/cra_432g_r2, and emitted
+        exact JobManager command:
+        cra_432g_r2/experiments/tier4_32g_multichip_lifecycle_traffic_resource_smoke.py --mode run-hardware --output-dir tier4_32g_job_output
         Boundary: first two-chip single-shard learning evidence plus local
         lifecycle route/source QA plus prepared lifecycle traffic package only.
         Speedup claims, benchmark evidence,
@@ -376,15 +380,17 @@ Tier 4.32g-r0 — COMPLETE. Multi-chip lifecycle route/source repair audit.
   Boundary: local source/runtime QA only; not hardware evidence.
 
 Tier 4.32g — CURRENT ACTIVE STEP. Two-chip lifecycle traffic/resource hardware smoke.
-  Status: FIRST HARDWARE RETURN INGESTED AS FAIL; R1 PREPARED; EBRAINS RERUN/INGEST REQUIRED.
+  Status: STALE-PACKAGE RERUN INGESTED AS FAIL; R2 PREPARED; EBRAINS RERUN/INGEST REQUIRED.
   Goal: prove lifecycle event/trophic/mask-sync traffic and compact resource
     counters cross the chip boundary on real SpiNNaker.
   Failed-return ingest: controlled_test_output/tier4_32g_20260507_hardware_fail_ingested/.
+  Stale-package return ingest: controlled_test_output/tier4_32g_20260508_old_package_return_ingested/.
   Failed-return classification: lifecycle traffic succeeded; strict gate failed
-    on lifecycle_core pause/control ACK and reset-criteria evaluation.
-  R1 prepared output: controlled_test_output/tier4_32g_20260507_r1_prepared/.
-  Upload folder: ebrains_jobs/cra_432g.
-  Exact command: cra_432g/experiments/tier4_32g_multichip_lifecycle_traffic_resource_smoke.py --mode run-hardware --output-dir tier4_32g_job_output
+    on lifecycle_core pause/control ACK and reset-criteria evaluation; second
+    attempted rerun used stale runner revision ...0001.
+  R2 prepared output: controlled_test_output/tier4_32g_20260508_r2_prepared/.
+  Upload folder: ebrains_jobs/cra_432g_r2.
+  Exact command: cra_432g_r2/experiments/tier4_32g_multichip_lifecycle_traffic_resource_smoke.py --mode run-hardware --output-dir tier4_32g_job_output
   Required returned outputs: target
     acquisition, board/chip/core roles, lifecycle request/sync counters,
     stale/duplicate/missing-ack counters, compact readback, returned artifacts,
@@ -880,9 +886,9 @@ Immediate next steps:
    after EBRAINS ingest; Tier 4.32f local decision contract passed; and Tier
    4.32g-r0 route/source repair audit passed, Tier 4.32g first hardware return
    proved the lifecycle traffic counters but failed cleanup/control, and
-   Tier 4.32g-r1 prepared at
-   controlled_test_output/tier4_32g_20260507_r1_prepared/ with upload folder
-   ebrains_jobs/cra_432g. The next native step is the prepared Tier 4.32g-r1
+   Tier 4.32g-r2 prepared at
+   controlled_test_output/tier4_32g_20260508_r2_prepared/ with upload folder
+   ebrains_jobs/cra_432g_r2. The next native step is the prepared Tier 4.32g-r2
    two-chip lifecycle traffic/resource EBRAINS rerun and ingest, not an unscoped
    hardware package. Do not jump to benchmarks, speedup claims, true two-partition
    cross-chip learning, lifecycle scaling, multi-shard learning, or a

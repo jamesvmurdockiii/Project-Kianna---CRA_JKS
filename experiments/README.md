@@ -53,11 +53,14 @@ plus lifecycle-split regressions. Tier 4.32g prepare then passed locally, and
 the first hardware return was ingested at
 `controlled_test_output/tier4_32g_20260507_hardware_fail_ingested/`: lifecycle
 traffic counters passed, but the strict gate failed on lifecycle_core pause
-cleanup and reset criteria evaluation. Tier 4.32g-r1 then prepared locally at
-`controlled_test_output/tier4_32g_20260507_r1_prepared/` with `16/16` criteria,
-refreshed `ebrains_jobs/cra_432g`, and emitted exact JobManager command
-`cra_432g/experiments/tier4_32g_multichip_lifecycle_traffic_resource_smoke.py --mode run-hardware --output-dir tier4_32g_job_output`.
-The current next gate is the prepared Tier 4.32g-r1 EBRAINS rerun and ingest;
+cleanup and reset criteria evaluation. A second attempted rerun returned the
+same old runner revision `...0001`, so it was ingested as a stale-package return
+at `controlled_test_output/tier4_32g_20260508_old_package_return_ingested/`.
+Tier 4.32g-r2 then prepared locally at
+`controlled_test_output/tier4_32g_20260508_r2_prepared/` with `16/16` criteria,
+refreshed cache-proof `ebrains_jobs/cra_432g_r2`, and emitted exact JobManager command
+`cra_432g_r2/experiments/tier4_32g_multichip_lifecycle_traffic_resource_smoke.py --mode run-hardware --output-dir tier4_32g_job_output`.
+The current next gate is the prepared Tier 4.32g-r2 EBRAINS rerun and ingest;
 learning scale, lifecycle scaling, multi-shard learning, speedup, benchmarks,
 and native-scale baseline freeze remain blocked.
 

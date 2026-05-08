@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-08T02:53:45+00:00.
+Last updated: 2026-05-08T03:27:22+00:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -935,7 +935,7 @@ ability.
     true partition semantics, speedup, benchmarks, multi-shard learning, and
     native-scale baseline freeze blocked.
 
-67. **CURRENT ACTIVE STEP** - Tier 4.32g-r1 two-chip lifecycle
+67. **CURRENT ACTIVE STEP** - Tier 4.32g-r2 two-chip lifecycle
     traffic/resource hardware smoke: PREPARED, awaiting EBRAINS return. The
     first Tier 4.32g hardware return was ingested at
     `controlled_test_output/tier4_32g_20260507_hardware_fail_ingested/`. It
@@ -945,12 +945,17 @@ ability.
     source mask sync received `1`, expected active mask `1`, lifecycle event
     ACKs `2`, lifecycle mask sync sent `1`, death count `1`, trophic update
     count `1`, zero stale/duplicate/missing-ack counters, and zero synthetic
-    fallback. Tier 4.32g-r1 prepared locally at
-    `controlled_test_output/tier4_32g_20260507_r1_prepared/` with `16/16`
+    fallback. A second attempted rerun was ingested at
+    `controlled_test_output/tier4_32g_20260508_old_package_return_ingested/`
+    and returned runner revision `...0001` again, proving EBRAINS ran the stale
+    `cra_432g` package instead of the repaired upload. Tier 4.32g-r2 prepared
+    locally at
+    `controlled_test_output/tier4_32g_20260508_r2_prepared/` with `16/16`
     criteria, added uniform lifecycle-core run/pause ACKs, fixed the reset
-    criterion, refreshed upload folder `ebrains_jobs/cra_432g`, and emitted
+    criterion, refreshed cache-proof upload folder `ebrains_jobs/cra_432g_r2`,
+    and emitted
     exact JobManager command
-    `cra_432g/experiments/tier4_32g_multichip_lifecycle_traffic_resource_smoke.py --mode run-hardware --output-dir tier4_32g_job_output`.
+    `cra_432g_r2/experiments/tier4_32g_multichip_lifecycle_traffic_resource_smoke.py --mode run-hardware --output-dir tier4_32g_job_output`.
     Required returned outputs: target acquisition, board/chip/core roles,
     lifecycle request/sync counters, stale/duplicate/missing-ack counters,
     compact readback, returned artifacts, ingest bundle, claim boundary, and
@@ -1184,7 +1189,7 @@ controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/.
 The first Tier 4.32g hardware return was ingested at
 controlled_test_output/tier4_32g_20260507_hardware_fail_ingested/. It failed the
 strict gate on cleanup/control semantics, while preserving successful lifecycle
-traffic counters. Next action: rerun the prepared Tier 4.32g-r1 two-chip
+traffic counters. Next action: rerun the prepared Tier 4.32g-r2 two-chip
 lifecycle traffic/resource hardware smoke.
 Speedup claims, benchmark claims, true two-partition cross-chip learning,
 lifecycle scaling, multi-shard learning, and a native-scale baseline freeze
@@ -1242,10 +1247,10 @@ then passed locally and selected lifecycle traffic/resource counters while
 blocking immediate hardware until lifecycle inter-chip routes are source-proven.
 Tier 4.32g-r0 then passed locally and authorized Tier 4.32g hardware package
 preparation. Tier 4.32g prepare then passed locally with 16/16 criteria and
-refreshed ebrains_jobs/cra_432g. The first hardware return showed successful
-lifecycle traffic but failed cleanup/control, so Tier 4.32g-r1 now fixes the
+refreshed ebrains_jobs/cra_432g_r2. The first hardware return showed successful
+lifecycle traffic but failed cleanup/control, so Tier 4.32g-r2 now fixes the
 lifecycle-core pause ACK surface and reset criterion. The next action is the
-prepared Tier 4.32g-r1 EBRAINS two-chip lifecycle traffic/resource
+prepared Tier 4.32g-r2 EBRAINS two-chip lifecycle traffic/resource
 hardware smoke, not benchmarks, speedup, true two-partition learning, lifecycle
 scaling, multi-shard learning, or baseline-freeze claims.
 ```
@@ -1289,8 +1294,8 @@ Use v2.2 as the software reference and `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` as
 the native lifecycle baseline. Keep Tier 4.31d's boundary strict: one-board
 temporal-state hardware smoke only; not nonlinear recurrence, not speedup, not
 multi-chip scaling, not benchmark superiority, and not full organism autonomy.
-The next native work is Tier 4.32g-r1: rerun the prepared two-chip lifecycle
-traffic/resource hardware smoke from ebrains_jobs/cra_432g now that the first
+The next native work is Tier 4.32g-r2: rerun the prepared two-chip lifecycle
+traffic/resource hardware smoke from ebrains_jobs/cra_432g_r2 now that the first
 Tier 4.32g hardware return proved the lifecycle traffic counters but exposed a
 cleanup/control-surface issue.
 It must preserve explicit board/chip/shard identity, message paths, compact

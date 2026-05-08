@@ -9723,16 +9723,18 @@ learning/lifecycle MCPL packet semantics survive a two-chip SpiNNaker hardware
 smoke with compact readback counters?
 
 Current status: 4.32g first EBRAINS return ingested as FAIL with successful
-traffic counters; 4.32g-r1 repaired and prepared for rerun.
+traffic counters; second attempted rerun ingested as stale-package FAIL because
+it returned runner revision ...0001 again; 4.32g-r2 repaired and prepared with
+a cache-proof upload folder.
 
 Prepared output:
 
 ```text
-controlled_test_output/tier4_32g_20260507_r1_prepared/
+controlled_test_output/tier4_32g_20260508_r2_prepared/
 criteria: 16/16
-stable upload folder: ebrains_jobs/cra_432g
+stable upload folder: ebrains_jobs/cra_432g_r2
 exact JobManager command:
-cra_432g/experiments/tier4_32g_multichip_lifecycle_traffic_resource_smoke.py --mode run-hardware --output-dir tier4_32g_job_output
+cra_432g_r2/experiments/tier4_32g_multichip_lifecycle_traffic_resource_smoke.py --mode run-hardware --output-dir tier4_32g_job_output
 ```
 
 First hardware return:
@@ -9742,6 +9744,15 @@ controlled_test_output/tier4_32g_20260507_hardware_fail_ingested/
 raw status: fail
 traffic path: succeeded
 failure class: cleanup/control-surface + criteria evaluator
+```
+
+Stale-package rerun:
+
+```text
+controlled_test_output/tier4_32g_20260508_old_package_return_ingested/
+raw status: fail
+returned runner revision: tier4_32g_multichip_lifecycle_traffic_resource_smoke_20260507_0001
+classification: stale cra_432g package rerun, not repaired r1 evidence
 ```
 
 Observed successful traffic fields in first return:
@@ -9762,14 +9773,14 @@ lifecycle trophic_update_count == 1
 synthetic fallback == 0
 ```
 
-4.32g-r1 repairs:
+4.32g-r2 repairs:
 
 ```text
 1. lifecycle_core now ACKs CMD_RUN_CONTINUOUS and CMD_PAUSE as harmless
    uniform server-core controls.
 2. test_profiles now asserts lifecycle_core control ACK behavior.
 3. smoke criteria now accept both boolean reset ACKs and structured reply ACKs.
-4. runner revision advanced to tier4_32g_multichip_lifecycle_traffic_resource_smoke_20260507_0002.
+4. runner revision advanced to tier4_32g_multichip_lifecycle_traffic_resource_smoke_20260508_0003.
 ```
 
 Mechanism under test:
@@ -9794,7 +9805,7 @@ Prepare repairs included:
 3. CMD_READ_STATE lifecycle traffic counters appended to compact schema-v2
 4. Python host helpers for lifecycle request emission
 5. local C receive contract: test-mcpl-lifecycle-receive-contract
-6. refreshed EBRAINS upload folder: ebrains_jobs/cra_432g
+6. refreshed cache-proof EBRAINS upload folder: ebrains_jobs/cra_432g_r2
 ```
 
 Pass requires:
