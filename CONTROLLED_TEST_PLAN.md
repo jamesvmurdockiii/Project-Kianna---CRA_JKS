@@ -9924,6 +9924,12 @@ v2.2 and a run-length/training-budget sweep
 
 ## Tier 7.0e - Standard Dynamical Benchmark Rerun With v2.2 And Run-Length Sweep
 
+Runner:
+
+```text
+experiments/tier7_0e_standard_dynamical_v2_2_sweep.py
+```
+
 Question: does the frozen v2.2 fading-memory temporal-state baseline close or
 materially narrow the Tier 7.0 Mackey-Glass/Lorenz/NARMA10 gap, and was the
 earlier v2.1 result partly a short-training-budget artifact?

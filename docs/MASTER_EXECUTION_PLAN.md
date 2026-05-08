@@ -974,6 +974,7 @@ ability.
     rerun Mackey-Glass, Lorenz, NARMA10, and aggregate geometric-mean MSE using
     the frozen v2.2 fading-memory temporal-state software baseline across
     predeclared lengths `720`, `2000`, `10000`, and `50000` if practical. Use
+    `experiments/tier7_0e_standard_dynamical_v2_2_sweep.py` as the runner and
     `docs/TIER6_2_USEFULNESS_BATTERY_CONTRACT.md` as the source-of-truth
     scoreboard rule: public/standard benchmarks first; custom synthetic tasks
     only diagnose failures. This explicitly tests whether the prior v2.1 result
