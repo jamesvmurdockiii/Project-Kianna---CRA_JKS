@@ -1,0 +1,2 @@
+status,outcome,largest_original_seed_finite_length,v2_2_improved_over_raw,v2_2_competitive_with_best_baseline,length_alone_supported,next_step
+pass,benchmark_protocol_blocker_confirmed,8000,True,False,False,"repair long benchmark protocol, rerun largest valid public scoreboard, then diagnose readout/interface or add one planned general mechanism"

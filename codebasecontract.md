@@ -436,14 +436,32 @@ Tier 7.0e — COMPLETE / PARTIALLY BLOCKED. Standardized dynamical benchmark
     ESN; the 10k failure is a benchmark-protocol blocker, not a CRA model pass
     or failure.
 
-Tier 7.0f — CURRENT ACTIVE STEP. Benchmark-protocol repair and public failure
-  localization.
-  Required first move: define a finite-stream policy for long NARMA10 and rerun
-    the public scoreboard only after the benchmark stream is valid. Then
-    diagnose whether the remaining gap is readout/interface, nonlinear
-    recurrent state, causal history, target scaling, baseline fairness, or a
-    genuine architecture limitation. Do not add a mechanism, freeze a baseline,
-    or transfer benchmark claims to hardware until this is done.
+Tier 7.0f — COMPLETE. Benchmark-protocol repair and public failure localization.
+  Key evidence:
+    controlled_test_output/tier7_0f_20260508_benchmark_protocol_failure_localization/
+    controlled_test_output/tier7_0e_20260508_length_8000_scoreboard/
+  Status: 7.0f passed 8/8. The valid 8000-step same-seed public rerun passed
+    8/8 with zero invalid streams.
+  Boundary: v2.2 ranks second at 8000 but remains about 9.6x behind ESN on
+    aggregate geomean MSE. Longer exposure alone did not close the public
+    benchmark gap.
+
+Tier 7.0g — COMPLETE. General mechanism-selection contract.
+  Status: COMPLETE, 7/7 criteria.
+  Key evidence:
+    controlled_test_output/tier7_0g_20260508_general_mechanism_selection_contract/
+  Selected mechanism:
+    bounded_nonlinear_recurrent_continuous_state_interface
+  Boundary: contract only, not mechanism proof.
+
+Tier 7.0h — CURRENT ACTIVE STEP. Bounded nonlinear recurrent continuous-state /
+  readout-interface candidate.
+  Required first move: implement and test the selected software mechanism
+    against v2.2, lag-only, reservoir, ESN, and recurrence shams on
+    Mackey-Glass, Lorenz, and NARMA10 at 720, 2000, and valid same-seed 8000.
+    Promotion requires at least 25 percent aggregate improvement versus v2.2 at
+    8000, sham separation, finite-stream/leakage guardrails, and compact
+    regression before any freeze.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware
@@ -933,9 +951,9 @@ Immediate next steps:
    controlled_test_output/tier4_32h_20260508_native_scale_evidence_closeout/.
    This is a native-scale substrate freeze only: do not claim speedup, benchmark
    usefulness, true two-partition cross-chip learning, lifecycle scaling,
-   multi-shard learning, or AGI/ASI from it. Tier 7.0e has now forced Tier
-   7.0f: repair the long standard-benchmark finite-stream protocol and
-   localize the public scoreboard failure before any broad new native migration.
+   multi-shard learning, or AGI/ASI from it. Tier 7.0g has now selected Tier
+   7.0h: bounded nonlinear recurrent continuous-state/interface repair before
+   any broad new native migration.
 3. Keep the 4.31b/4.31c range refinement explicit: selected trace bound is ±2
    in s16.15; the older ±1 sketch saturated and must not silently return.
 4. Keep public repo hygiene green before the next upload or commit: no

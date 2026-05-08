@@ -10067,3 +10067,153 @@ Do not add a new CRA mechanism, freeze a baseline, or migrate benchmark logic
 to hardware until the long NARMA10 finite-stream policy and public-scoreboard
 failure mode are explicitly documented.
 ```
+
+### Tier 7.0f - Benchmark Protocol Repair / Public Failure Localization
+
+Runner:
+
+```text
+experiments/tier7_0f_benchmark_protocol_failure_localization.py
+```
+
+Output:
+
+```text
+controlled_test_output/tier7_0f_20260508_benchmark_protocol_failure_localization/
+```
+
+Status:
+
+```text
+PASS
+criteria: 8/8
+outcome: benchmark_protocol_blocker_confirmed
+```
+
+Findings:
+
+```text
+NARMA10 seed 44 is finite through 8000 steps and invalid at 10000+ steps.
+Largest original-seed finite rerun length: 8000
+Optional 10000 finite-seed sensitivity seeds: 42,43,45
+v2.2 improves over raw v2.1: true
+v2.2 competitive with best public baseline: false
+length-alone support from 720->2000: false
+```
+
+Failure localization:
+
+```text
+Mackey-Glass and Lorenz still favor ESN / offline train-prefix readout.
+NARMA10 favors explicit lag memory over v2.2 fading memory.
+The 10k public aggregate was invalid benchmark evidence, not a model result.
+```
+
+### Tier 7.0e 8000-Step Valid Same-Seed Scoreboard Rerun
+
+Runner:
+
+```text
+experiments/tier7_0e_standard_dynamical_v2_2_sweep.py --matrix-mode scoreboard --lengths 8000
+```
+
+Output:
+
+```text
+controlled_test_output/tier7_0e_20260508_length_8000_scoreboard/
+```
+
+Status:
+
+```text
+PASS
+criteria: 8/8
+invalid streams: 0
+```
+
+Aggregate geomean MSE:
+
+```text
+ESN:                    0.020109884207162095
+v2.2 fading memory:     0.19348969000027122
+lag-only LMS:           0.1986311714577415
+random reservoir:       0.2075278737499566
+```
+
+Interpretation:
+
+```text
+v2.2 ranks second overall and beats lag/reservoir aggregate at 8000 steps, but
+ESN remains about 9.6x better on aggregate geomean MSE. Longer valid exposure
+alone does not close the public benchmark gap.
+```
+
+Next required step:
+
+```text
+Tier 7.0g - general mechanism-selection contract.
+The next mechanism should be selected from the measured public failure class,
+not from intuition. Current evidence points first at nonlinear recurrent /
+continuous-state and readout-interface capability, not sleep/replay or lifecycle
+as the immediate Mackey-Glass/Lorenz/NARMA10 repair.
+```
+
+### Tier 7.0g - General Mechanism-Selection Contract
+
+Runner:
+
+```text
+experiments/tier7_0g_general_mechanism_selection_contract.py
+```
+
+Output:
+
+```text
+controlled_test_output/tier7_0g_20260508_general_mechanism_selection_contract/
+```
+
+Status:
+
+```text
+PASS
+criteria: 7/7
+selected mechanism: bounded_nonlinear_recurrent_continuous_state_interface
+```
+
+Why this mechanism:
+
+```text
+ESN dominates Mackey-Glass/Lorenz, indicating nonlinear recurrent state plus
+train-prefix readout remains stronger than v2.2 fading memory.
+
+NARMA10 favors explicit lag memory, indicating the next mechanism needs stronger
+causal memory/readout rather than only longer exposure.
+
+v2.2 ranks second at 8000 and beats lag/reservoir aggregate, so the path is
+worth repairing rather than abandoning.
+```
+
+Promotion criteria for the next implementation:
+
+```text
+aggregate geomean MSE improves at least 25 percent versus v2.2 at the valid
+8000-step same-seed scoreboard
+
+mechanism beats lag-only aggregate or identifies a task-specific complement
+with predeclared claim boundary
+
+Mackey-Glass/Lorenz ESN gap narrows materially without worsening NARMA10
+
+permuted/frozen/shuffled/no-update controls do not match the promoted mechanism
+
+finite-stream and leakage guardrails pass
+
+compact regression passes before any baseline freeze
+```
+
+Next required step:
+
+```text
+Tier 7.0h - bounded nonlinear recurrent continuous-state/interface candidate.
+Software only. No hardware transfer until the mechanism earns usefulness.
+```

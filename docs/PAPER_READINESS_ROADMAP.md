@@ -3428,6 +3428,14 @@ benchmark-protocol repair: finite-stream validation, a predeclared long-NARMA
 policy, and then public-scoreboard failure localization. No new software
 baseline freeze or hardware transfer is authorized from Tier 7.0e.
 
+Tier 7.0f then passed and selected 8000 as the largest finite same-seed rerun
+length for seeds 42, 43, and 44. The valid 8000-step public scoreboard rerun
+passed with zero invalid streams. v2.2 ranked second overall and beat
+lag/reservoir aggregate, but ESN remained about 9.6x better on aggregate
+geomean MSE. Therefore longer valid exposure alone is not enough; the next
+paper-readiness step is a general mechanism-selection contract for the measured
+failure class.
+
 Possible diagnoses:
 
 ```text
@@ -3437,6 +3445,109 @@ causal history still insufficient
 target scaling/interface mismatch
 baseline unfairness or hyperparameter budget issue
 genuine architecture limitation
+```
+
+### Tier 7.0g: General Mechanism-Selection Contract
+
+Do not add another mechanism just because it exists on the roadmap. Select the
+next mechanism from the public benchmark failure class.
+
+Current measured failure class:
+
+```text
+Mackey-Glass / Lorenz:
+  ESN and offline train-prefix readout remain much stronger than v2.2.
+
+NARMA10:
+  v2.2 has useful nonlinear-memory signal, but explicit lag memory remains
+  stronger.
+
+Aggregate:
+  v2.2 ranks second at 8000 valid steps, but ESN remains about 9.6x better.
+```
+
+Current best next mechanism candidate:
+
+```text
+bounded nonlinear recurrent / continuous-state substrate plus readout-interface
+repair
+```
+
+Why:
+
+```text
+The gap is not currently sleep/replay, lifecycle, or hardware transfer. It is
+continuous sequence modeling: nonlinear state, explicit memory, and leakage-safe
+readout/interface strength.
+```
+
+Tier 7.0g must define:
+
+```text
+hypothesis
+null hypothesis
+mechanism under test
+exact public tasks and lengths
+baselines
+ablation/sham controls
+seed policy
+finite-stream policy
+promotion/fail criteria
+docs to update
+```
+
+2026-05-08 result: Tier 7.0g passed 7/7 and selected
+`bounded_nonlinear_recurrent_continuous_state_interface` as the next mechanism.
+The selected next tier is Tier 7.0h. Boundary: 7.0g is a contract only, not a
+mechanism proof, baseline freeze, or hardware-transfer authorization.
+
+### Tier 7.0h: Bounded Nonlinear Recurrent Continuous-State Interface
+
+Purpose:
+
+```text
+Test whether bounded nonlinear recurrent state and a leakage-safe continuous
+readout/interface can close part of the public benchmark gap left by v2.2.
+```
+
+Required public tasks:
+
+```text
+Mackey-Glass
+Lorenz
+NARMA10
+```
+
+Required lengths:
+
+```text
+720
+2000
+8000
+```
+
+Required comparisons:
+
+```text
+v2.2 fading-memory baseline
+bounded nonlinear recurrent candidate
+lag-only LMS
+random reservoir
+ESN
+no-recurrence ablation
+permuted-recurrence sham
+frozen-state ablation
+state-reset ablation
+shuffled-state/shuffled-target controls
+no-update control
+```
+
+Promotion:
+
+```text
+At least 25 percent aggregate geomean MSE improvement versus v2.2 at valid
+8000-step same-seed scoring, no hidden leakage, no sham match, and no unbounded
+NARMA regression without a declared tradeoff.
 ```
 
 ### Tier 6.2: Diagnostic Hard Task Suite
@@ -6874,7 +6985,7 @@ Tests: test-temporal-state, test-profiles, test, test-lifecycle, test-lifecycle-
 Boundary: local source/runtime host evidence only, not hardware
 ```
 
-Next: Run Tier 7.0f benchmark-protocol repair and public failure localization. Tier 7.0e short/medium calibration passed but did not make v2.2 competitive with ESN, and the 10k public scoreboard is blocked by a non-finite NARMA10 seed-44 stream. Use `CRA_NATIVE_SCALE_BASELINE_v0.5` only as the frozen native substrate reference, not as usefulness evidence.
+Next: Run Tier 7.0h bounded nonlinear recurrent continuous-state/interface candidate. Tier 7.0g selected this mechanism from the measured public benchmark gap. Use `CRA_NATIVE_SCALE_BASELINE_v0.5` only as the frozen native substrate reference, not as usefulness evidence.
       Tier 4.32e passed after EBRAINS ingest at
       `controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/`:
       board `10.11.205.161`, two cases, 32 events per case, 96/96 lookup

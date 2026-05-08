@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-05-08T19:05:53.256608+00:00",
+  "source_generated_at_utc": "2026-05-08T19:00:57+00:00",
+  "registry_entry_id": "tier7_0g_general_mechanism_selection_contract",
+  "tier": "Tier 7.0g - General Mechanism-Selection Contract",
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_0g_20260508_general_mechanism_selection_contract",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_0g_20260508_general_mechanism_selection_contract/tier7_0g_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_0g_20260508_general_mechanism_selection_contract/tier7_0g_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_0g_20260508_general_mechanism_selection_contract/tier7_0g_summary.csv",
+  "canonical": true,
+  "claim": "Tier 7.0g selected bounded nonlinear recurrent continuous-state/interface repair as the next planned mechanism because the measured public benchmark gap is nonlinear recurrent state and readout-interface strength, not sleep/replay, lifecycle, or hardware transfer.",
+  "caveat": "Contract evidence only; not mechanism implementation, not a performance improvement, not a baseline freeze, not hardware evidence, and not public benchmark superiority."
+}

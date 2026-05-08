@@ -1,0 +1,155 @@
+{
+  "claim_boundary": "Tier 7.0g is a mechanism-selection contract only; it does not implement or prove the mechanism.",
+  "contract": {
+    "baselines": [
+      "v2.2 fading_memory_only_ablation",
+      "lag_only_online_lms_control",
+      "fixed_random_reservoir_online_control",
+      "fixed_esn_train_prefix_ridge_baseline"
+    ],
+    "controls_and_ablations": [
+      "no_recurrence_ablation",
+      "permuted_recurrence_sham",
+      "frozen_state_after_train_prefix",
+      "state_reset_ablation",
+      "shuffled_state_rows",
+      "shuffled_target_control",
+      "no_plasticity_or_no_update_control"
+    ],
+    "fail_or_park_criteria": [
+      "no material improvement over v2.2",
+      "shams match the candidate",
+      "improvement appears only on a private diagnostic task",
+      "NARMA10 or any public task regresses without a declared tradeoff",
+      "result requires test-row fitting, future leakage, or task-specific seed hacking"
+    ],
+    "hypothesis": "A bounded nonlinear recurrent continuous-state interface layered on v2.2 will improve standard dynamical benchmark performance by adding reusable causal state beyond fading memory alone, without task-specific labels or leakage.",
+    "mechanism": "bounded_nonlinear_recurrent_continuous_state_interface",
+    "nonclaims": [
+      "not sleep/replay",
+      "not lifecycle/self-scaling",
+      "not hardware transfer",
+      "not a baseline freeze",
+      "not AGI/ASI evidence"
+    ],
+    "null_hypothesis": "Nonlinear recurrent state does not improve over v2.2 fading memory, or any improvement is matched by shuffled/permuted/frozen-state controls.",
+    "optional_sensitivity": {
+      "narma10_10000_finite_seeds": [
+        42,
+        43,
+        45
+      ]
+    },
+    "promotion_criteria": [
+      "aggregate geomean MSE improves at least 25 percent versus v2.2 at the valid 8000-step same-seed scoreboard",
+      "mechanism beats lag-only aggregate or identifies a task-specific complement with predeclared claim boundary",
+      "Mackey-Glass/Lorenz ESN gap narrows materially without worsening NARMA10",
+      "permuted/frozen/shuffled/no-update controls do not match the promoted mechanism",
+      "finite-stream and leakage guardrails pass",
+      "compact regression passes before any baseline freeze"
+    ],
+    "public_tasks": [
+      "mackey_glass",
+      "lorenz",
+      "narma10"
+    ],
+    "required_lengths": [
+      720,
+      2000,
+      8000
+    ],
+    "tier": "Tier 7.0h / mechanism implementation candidate"
+  },
+  "criteria": [
+    {
+      "name": "Tier 7.0f loaded",
+      "note": "",
+      "passed": true,
+      "rule": "pass",
+      "value": "pass"
+    },
+    {
+      "name": "8000 scoreboard loaded",
+      "note": "",
+      "passed": true,
+      "rule": "pass",
+      "value": "pass"
+    },
+    {
+      "name": "v2.2 beats lag/reservoir aggregate at 8000",
+      "note": "",
+      "passed": true,
+      "rule": "beats lag and reservoir",
+      "value": {
+        "esn_geomean_mse": 0.020109884207162095,
+        "lag_geomean_mse": 0.1986311714577415,
+        "reservoir_geomean_mse": 0.2075278737499566,
+        "v2_2_beats_lag": true,
+        "v2_2_beats_reservoir": true,
+        "v2_2_divided_by_esn": 9.621621288667603,
+        "v2_2_geomean_mse": 0.19348969000027122
+      }
+    },
+    {
+      "name": "ESN gap remains material",
+      "note": "",
+      "passed": true,
+      "rule": "> 2.0",
+      "value": 9.621621288667603
+    },
+    {
+      "name": "mechanism selected",
+      "note": "",
+      "passed": true,
+      "rule": "non-empty",
+      "value": "bounded_nonlinear_recurrent_continuous_state_interface"
+    },
+    {
+      "name": "promotion criteria declared",
+      "note": "",
+      "passed": true,
+      "rule": ">= 5",
+      "value": 6
+    },
+    {
+      "name": "nonclaims declared",
+      "note": "",
+      "passed": true,
+      "rule": "includes no hardware/no freeze",
+      "value": [
+        "not sleep/replay",
+        "not lifecycle/self-scaling",
+        "not hardware transfer",
+        "not a baseline freeze",
+        "not AGI/ASI evidence"
+      ]
+    }
+  ],
+  "criteria_passed": 7,
+  "criteria_total": 7,
+  "generated_at_utc": "2026-05-08T19:00:57+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_0g_20260508_general_mechanism_selection_contract",
+  "runner_revision": "tier7_0g_general_mechanism_selection_contract_20260508_0001",
+  "selection": {
+    "score8000": {
+      "esn_geomean_mse": 0.020109884207162095,
+      "lag_geomean_mse": 0.1986311714577415,
+      "reservoir_geomean_mse": 0.2075278737499566,
+      "v2_2_beats_lag": true,
+      "v2_2_beats_reservoir": true,
+      "v2_2_divided_by_esn": 9.621621288667603,
+      "v2_2_geomean_mse": 0.19348969000027122
+    },
+    "selected_mechanism": "bounded_nonlinear_recurrent_continuous_state_interface",
+    "why_not_hardware_now": "Hardware transfer cannot rescue a software benchmark gap; transfer only after software earns a useful regime.",
+    "why_not_lifecycle_now": "Lifecycle helps ecology, but the measured public gap is readout/state capacity on stationary sequence tasks.",
+    "why_not_sleep_replay_now": "The current public failure is continuous sequence modeling, not measured retention decay after reentry.",
+    "why_selected": [
+      "ESN dominates Mackey-Glass/Lorenz, indicating nonlinear recurrent state plus train-prefix readout remains stronger than v2.2 fading memory.",
+      "NARMA10 favors explicit lag memory, indicating the next mechanism needs stronger causal memory/readout rather than only longer exposure.",
+      "v2.2 ranks second at 8000 and beats lag/reservoir aggregate, so the path is worth repairing rather than abandoning."
+    ]
+  },
+  "status": "pass",
+  "tier": "Tier 7.0g - General Mechanism-Selection Contract"
+}

@@ -1,0 +1,384 @@
+{
+  "claim_boundary": "Tier 7.0f is benchmark-protocol and failure-localization evidence only. It does not improve CRA, add a mechanism, freeze a baseline, or authorize hardware transfer.",
+  "classification": {
+    "claim": "benchmark protocol and failure localization evidence",
+    "next_step": "repair long benchmark protocol, rerun largest valid public scoreboard, then diagnose readout/interface or add one planned general mechanism",
+    "nonclaims": [
+      "not a CRA performance improvement",
+      "not a new mechanism",
+      "not a baseline freeze",
+      "not hardware evidence",
+      "not public benchmark superiority",
+      "not AGI/ASI evidence"
+    ],
+    "outcome": "benchmark_protocol_blocker_confirmed"
+  },
+  "criteria": [
+    {
+      "name": "7.0e calibration loaded",
+      "note": "",
+      "passed": true,
+      "rule": "manifest present",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_0e_20260508_length_calibration"
+    },
+    {
+      "name": "7.0e long scoreboard loaded",
+      "note": "",
+      "passed": true,
+      "rule": "manifest present",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_0e_20260508_length_10000_scoreboard"
+    },
+    {
+      "name": "NARMA finite scan completed",
+      "note": "",
+      "passed": true,
+      "rule": ">= lengths * primary seeds",
+      "value": 21
+    },
+    {
+      "name": "10k invalid stream reproduced",
+      "note": "",
+      "passed": true,
+      "rule": "contains length 10000 invalid primary stream",
+      "value": [
+        {
+          "length": 10000,
+          "observed_finite": true,
+          "observed_nonfinite_count": 0,
+          "scan_scope": "primary_seed_set",
+          "seed": 44,
+          "status": "fail",
+          "target_finite": false,
+          "target_max": 8.320612730952877e+159,
+          "target_min": -1.9097172947240295,
+          "target_nonfinite_count": 1688,
+          "task": "narma10"
+        },
+        {
+          "length": 20000,
+          "observed_finite": true,
+          "observed_nonfinite_count": 0,
+          "scan_scope": "primary_seed_set",
+          "seed": 44,
+          "status": "fail",
+          "target_finite": false,
+          "target_max": null,
+          "target_min": null,
+          "target_nonfinite_count": 20000,
+          "task": "narma10"
+        },
+        {
+          "length": 50000,
+          "observed_finite": true,
+          "observed_nonfinite_count": 0,
+          "scan_scope": "primary_seed_set",
+          "seed": 44,
+          "status": "fail",
+          "target_finite": false,
+          "target_max": null,
+          "target_min": null,
+          "target_nonfinite_count": 50000,
+          "task": "narma10"
+        }
+      ]
+    },
+    {
+      "name": "same-seed finite fallback exists",
+      "note": "",
+      "passed": true,
+      "rule": ">= 2000",
+      "value": 8000
+    },
+    {
+      "name": "10k replacement finite seeds exist",
+      "note": "",
+      "passed": true,
+      "rule": ">= 3 seeds",
+      "value": [
+        42,
+        43,
+        45
+      ]
+    },
+    {
+      "name": "gap localization rows produced",
+      "note": "",
+      "passed": true,
+      "rule": ">= 6",
+      "value": 6
+    },
+    {
+      "name": "no baseline freeze authorized",
+      "note": "",
+      "passed": true,
+      "rule": "must remain false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 8,
+  "criteria_total": 8,
+  "gap_diagnosis": {
+    "aggregate_by_length": {
+      "2000": {
+        "best_baseline_model": "fixed_esn_train_prefix_ridge_baseline",
+        "best_baseline_mse": 0.06236159958411151,
+        "candidate_mse": 0.2514764000158321,
+        "competitive_with_best_baseline": false,
+        "margin_vs_best_baseline": 0.24798191631574748,
+        "margin_vs_raw_v2_1": 5.3250495166174945,
+        "raw_v2_1_mse": 1.3391242823450145
+      },
+      "720": {
+        "best_baseline_model": "fixed_esn_train_prefix_ridge_baseline",
+        "best_baseline_mse": 0.02537065477597153,
+        "candidate_mse": 0.19853975759572184,
+        "competitive_with_best_baseline": false,
+        "margin_vs_best_baseline": 0.12778626851974267,
+        "margin_vs_raw_v2_1": 3.774190928552936,
+        "raw_v2_1_mse": 0.7493269520748722
+      }
+    },
+    "best_baseline_improvement_first_to_last": 0.40683136650066726,
+    "candidate_improvement_first_to_last": 0.7894965793339751,
+    "length_alone_supported": false,
+    "localized_failure_class": [
+      "not explained by raw CRA inability: v2.2 improves raw v2.1",
+      "not solved by more exposure at 720->2000: candidate geomean worsened while ESN remains ahead",
+      "Mackey-Glass and Lorenz still favor ESN/offline train-prefix readout",
+      "NARMA10 favors explicit lag memory over v2.2 fading memory",
+      "10k public aggregate blocked by invalid NARMA stream, not interpretable as model evidence"
+    ],
+    "next_protocol": "repair finite NARMA policy, then rerun largest valid same-seed public scoreboard before adding mechanisms",
+    "v2_2_competitive_with_best_baseline": false,
+    "v2_2_improved_over_raw": true
+  },
+  "gap_rows": [
+    {
+      "best_model": "fixed_esn_train_prefix_ridge_baseline",
+      "best_mse": 0.0003506249812987444,
+      "candidate_corr": 0.9325390060552201,
+      "candidate_divided_by_esn": 259.45447398472425,
+      "candidate_divided_by_lag": 1.496978166023566,
+      "candidate_divided_by_reservoir": 1.4129258776984515,
+      "candidate_mse": 0.09097122008876951,
+      "candidate_rank": 4,
+      "esn_corr": 0.9996639466434402,
+      "interpretation": "candidate trails all public baselines",
+      "lag_corr": 0.948390564936243,
+      "length": 720,
+      "raw_divided_by_candidate": 5.584477004035094,
+      "task": "lorenz"
+    },
+    {
+      "best_model": "fixed_esn_train_prefix_ridge_baseline",
+      "best_mse": 0.07139050452934584,
+      "candidate_corr": 0.8817275166325875,
+      "candidate_divided_by_esn": 3.198519761992783,
+      "candidate_divided_by_lag": 0.619840033816115,
+      "candidate_divided_by_reservoir": 0.567839718394567,
+      "candidate_mse": 0.22834393955574797,
+      "candidate_rank": 2,
+      "esn_corr": 0.9602772634897759,
+      "interpretation": "candidate beats simple online controls but ESN/offline train-prefix readout still wins",
+      "lag_corr": 0.8164685317970698,
+      "length": 720,
+      "raw_divided_by_candidate": 4.083368976252155,
+      "task": "mackey_glass"
+    },
+    {
+      "best_model": "lag_only_online_lms_control",
+      "best_mse": 0.16213258402873287,
+      "candidate_corr": 0.7456685109354296,
+      "candidate_divided_by_esn": 0.5774803780690027,
+      "candidate_divided_by_lag": 2.323692458452425,
+      "candidate_divided_by_reservoir": 0.6302276134579352,
+      "candidate_mse": 0.3767462627769706,
+      "candidate_rank": 2,
+      "esn_corr": 0.5614692053705118,
+      "interpretation": "candidate has useful nonlinear-memory signal but explicit lag memory still wins",
+      "lag_corr": 0.9012111951077076,
+      "length": 720,
+      "raw_divided_by_candidate": 2.3576018712996394,
+      "task": "narma10"
+    },
+    {
+      "best_model": "fixed_esn_train_prefix_ridge_baseline",
+      "best_mse": 0.006725325813382238,
+      "candidate_corr": 0.959418260151561,
+      "candidate_divided_by_esn": 18.198847707435217,
+      "candidate_divided_by_lag": 0.8005442094943691,
+      "candidate_divided_by_reservoir": 0.9954698764879171,
+      "candidate_mse": 0.12239318026062623,
+      "candidate_rank": 2,
+      "esn_corr": 0.9992633531284857,
+      "interpretation": "candidate beats simple online controls but ESN/offline train-prefix readout still wins",
+      "lag_corr": 0.9557916553800333,
+      "length": 2000,
+      "raw_divided_by_candidate": 17.69110505054002,
+      "task": "lorenz"
+    },
+    {
+      "best_model": "fixed_esn_train_prefix_ridge_baseline",
+      "best_mse": 0.052846082869920145,
+      "candidate_corr": 0.8586879776422744,
+      "candidate_divided_by_esn": 5.674490398148202,
+      "candidate_divided_by_lag": 0.7147898457724394,
+      "candidate_divided_by_reservoir": 0.8052477640330671,
+      "candidate_mse": 0.29987458982510606,
+      "candidate_rank": 2,
+      "esn_corr": 0.9744806342123701,
+      "interpretation": "candidate beats simple online controls but ESN/offline train-prefix readout still wins",
+      "lag_corr": 0.8134107350237573,
+      "length": 2000,
+      "raw_divided_by_candidate": 3.4782397461288803,
+      "task": "mackey_glass"
+    },
+    {
+      "best_model": "lag_only_online_lms_control",
+      "best_mse": 0.20719366239390105,
+      "candidate_corr": 0.7597121754389597,
+      "candidate_divided_by_esn": 0.6349933959133452,
+      "candidate_divided_by_lag": 2.091309692007448,
+      "candidate_divided_by_reservoir": 0.6137014497527975,
+      "candidate_mse": 0.43330611428688437,
+      "candidate_rank": 2,
+      "esn_corr": 0.6013028534490336,
+      "interpretation": "candidate has useful nonlinear-memory signal but explicit lag memory still wins",
+      "lag_corr": 0.8934595707010846,
+      "length": 2000,
+      "raw_divided_by_candidate": 2.453897831232341,
+      "task": "narma10"
+    }
+  ],
+  "generated_at_utc": "2026-05-08T18:54:20+00:00",
+  "lengths": [
+    720,
+    2000,
+    4000,
+    8000,
+    10000,
+    20000,
+    50000
+  ],
+  "narma_policy": {
+    "invalid_primary_streams": [
+      {
+        "length": 10000,
+        "observed_finite": true,
+        "observed_nonfinite_count": 0,
+        "scan_scope": "primary_seed_set",
+        "seed": 44,
+        "status": "fail",
+        "target_finite": false,
+        "target_max": 8.320612730952877e+159,
+        "target_min": -1.9097172947240295,
+        "target_nonfinite_count": 1688,
+        "task": "narma10"
+      },
+      {
+        "length": 20000,
+        "observed_finite": true,
+        "observed_nonfinite_count": 0,
+        "scan_scope": "primary_seed_set",
+        "seed": 44,
+        "status": "fail",
+        "target_finite": false,
+        "target_max": null,
+        "target_min": null,
+        "target_nonfinite_count": 20000,
+        "task": "narma10"
+      },
+      {
+        "length": 50000,
+        "observed_finite": true,
+        "observed_nonfinite_count": 0,
+        "scan_scope": "primary_seed_set",
+        "seed": 44,
+        "status": "fail",
+        "target_finite": false,
+        "target_max": null,
+        "target_min": null,
+        "target_nonfinite_count": 50000,
+        "task": "narma10"
+      }
+    ],
+    "largest_original_seed_finite_length": 8000,
+    "optional_sensitivity_rerun": {
+      "length": 10000,
+      "policy": "predeclared_finite_seed_replacement",
+      "reason": "keeps standard NARMA formula but replaces invalid streams through a model-independent finite pre-scan",
+      "seeds": [
+        42,
+        43,
+        45
+      ]
+    },
+    "primary_seeds": [
+      42,
+      43,
+      44
+    ],
+    "recommended_immediate_rerun": {
+      "length": 8000,
+      "policy": "same_seed_max_finite_length",
+      "reason": "preserves original seeds while avoiding invalid NARMA streams",
+      "seeds": [
+        42,
+        43,
+        44
+      ]
+    },
+    "replacement_finite_seeds_by_length": {
+      "10000": [
+        42,
+        43,
+        45
+      ],
+      "2000": [
+        42,
+        43,
+        44
+      ],
+      "20000": [
+        42,
+        43,
+        45
+      ],
+      "4000": [
+        42,
+        43,
+        44
+      ],
+      "50000": [
+        42,
+        43,
+        45
+      ],
+      "720": [
+        42,
+        43,
+        44
+      ],
+      "8000": [
+        42,
+        43,
+        44
+      ]
+    },
+    "seed_pool": [
+      42,
+      80
+    ]
+  },
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_0f_20260508_benchmark_protocol_failure_localization",
+  "runner_revision": "tier7_0f_benchmark_protocol_failure_localization_20260508_0001",
+  "runtime_seconds": 1.563536875,
+  "seed_scan": "42:80",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "status": "pass",
+  "tier": "Tier 7.0f - Benchmark Protocol Repair / Public Failure Localization"
+}

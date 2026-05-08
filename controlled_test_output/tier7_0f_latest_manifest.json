@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-05-08T19:05:53.255874+00:00",
+  "source_generated_at_utc": "2026-05-08T18:54:20+00:00",
+  "registry_entry_id": "tier7_0f_benchmark_protocol_failure_localization",
+  "tier": "Tier 7.0f - Benchmark Protocol Repair / Public Failure Localization",
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_0f_20260508_benchmark_protocol_failure_localization",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_0f_20260508_benchmark_protocol_failure_localization/tier7_0f_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_0f_20260508_benchmark_protocol_failure_localization/tier7_0f_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_0f_20260508_benchmark_protocol_failure_localization/tier7_0f_summary.csv",
+  "canonical": true,
+  "claim": "Tier 7.0f confirmed the 10k NARMA10 seed-44 finite-stream blocker, selected 8000 as the largest same-seed finite rerun length, and localized the remaining public benchmark gap to ESN/offline readout dominance on Mackey-Glass/Lorenz and explicit lag-memory dominance on NARMA10.",
+  "caveat": "Diagnostic protocol evidence only; not a CRA performance improvement, not a new mechanism, not a baseline freeze, not hardware evidence, and not public benchmark superiority."
+}

@@ -193,6 +193,35 @@ localization. Do not add a new mechanism, freeze a software baseline, or move
 benchmark claims to hardware from the Tier 7.0e evidence alone.
 ```
 
+Tier 7.0f and valid 8000 rerun result:
+
+```text
+Tier 7.0f:
+  output: controlled_test_output/tier7_0f_20260508_benchmark_protocol_failure_localization/
+  status: pass, 8/8 criteria
+  largest original-seed finite NARMA10 length: 8000
+  optional 10000 finite-seed sensitivity: 42,43,45
+
+Tier 7.0e 8000 same-seed scoreboard:
+  output: controlled_test_output/tier7_0e_20260508_length_8000_scoreboard/
+  status: pass, 8/8 criteria
+  invalid streams: 0
+
+Aggregate geomean MSE:
+  ESN:                0.020109884207162095
+  v2.2 fading memory: 0.19348969000027122
+  lag-only LMS:       0.1986311714577415
+  random reservoir:   0.2075278737499566
+```
+
+Interpretation:
+
+```text
+v2.2 has useful signal and ranks second at the largest valid same-seed length,
+but ESN remains far ahead. Longer exposure alone is not sufficient. The next
+step is Tier 7.0g mechanism-selection contract for the measured failure class.
+```
+
 ## Usefulness Ladder
 
 CRA must climb the usefulness ladder in this order:
@@ -202,7 +231,7 @@ CRA must climb the usefulness ladder in this order:
 | 1 | 7.0e | Rerun Mackey-Glass/Lorenz/NARMA10 using v2.2 plus a run-length sweep | v2.2 closes/narrows the known standardized sequence gap or exposes a true training-budget curve. |
 | 2 | 7.0f | If 7.0e still fails, diagnose the public benchmark failure | The next missing general mechanism is identified without making up a win. |
 | 3 | 6.2a | Diagnostic hard tasks only if needed | A failure mode is isolated under controlled conditions. |
-| 4 | Mechanism gate | Add one planned general mechanism | The mechanism improves a public benchmark or a predeclared diagnostic and passes ablations. |
+| 4 | 7.0g / mechanism gate | Select and add one planned general mechanism | The mechanism improves a public benchmark or a predeclared diagnostic and passes ablations. |
 | 5 | 7.1 | Public/real-ish adapter suite | CRA works outside private task generators. |
 | 6 | 7.2 | Held-out challenge | CRA survives a task family that was not tuned. |
 | 7 | 7.3 | Real public datasets | CRA has a useful regime on at least one externally sourced dataset. |
@@ -409,11 +438,11 @@ Invalid reasons:
 The current next action is:
 
 ```text
-Tier 7.0f — repair the long standard-benchmark protocol and localize the public
-scoreboard failure.
+Tier 7.0h — test the bounded nonlinear recurrent continuous-state/interface
+candidate selected by Tier 7.0g.
 ```
 
-Tier 7.0e showed short/medium v2.2 improvement versus raw v2.1 but no ESN
-competitiveness, and the 10k scoreboard is blocked by invalid NARMA10 seed-44
-targets. Do not invent custom proof tasks; repair the public benchmark protocol
-and diagnose the failure before choosing the next planned general mechanism.
+Tier 7.0g passed and selected bounded nonlinear recurrent continuous-state /
+readout-interface repair from the measured continuous-sequence failure class.
+Do not invent custom proof tasks or move to hardware; run the selected software
+mechanism gate against public tasks, baselines, and shams first.

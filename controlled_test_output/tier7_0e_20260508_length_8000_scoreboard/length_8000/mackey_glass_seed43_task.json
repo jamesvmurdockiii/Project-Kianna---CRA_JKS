@@ -1,0 +1,25 @@
+{
+  "display_name": "Mackey-Glass",
+  "finite_check": {
+    "observed_finite": true,
+    "observed_nonfinite_count": 0,
+    "target_finite": true,
+    "target_max": 1.7769899779483758,
+    "target_min": -2.362282762020606,
+    "target_nonfinite_count": 0
+  },
+  "horizon": 8,
+  "length": 8000,
+  "metadata": {
+    "obs_mu": 0.9254635312976438,
+    "obs_sd": 0.23533583557245805,
+    "target_mu": 0.9257697471378699,
+    "target_sd": 0.23552031762517137,
+    "tau": 17
+  },
+  "sample_count": 8000,
+  "seed": 43,
+  "task": "mackey_glass",
+  "test_count": 2800,
+  "train_end": 5200
+}

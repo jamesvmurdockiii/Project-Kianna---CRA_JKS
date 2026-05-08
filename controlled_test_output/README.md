@@ -5,10 +5,10 @@ ledger is `STUDY_REGISTRY.json`; the compact table is `STUDY_REGISTRY.csv`.
 Older reruns, prepared capsules, debug probes, and baseline-frozen
 mechanism bundles outside the formal registry are preserved for audit.
 
-- Generated: `2026-05-08T18:43:47.205987+00:00`
+- Generated: `2026-05-08T19:05:53.664244+00:00`
 - Registry status: **PASS**
-- Canonical evidence entries: `81`
-- Expanded test-entry count: `81`; see the canonical evidence table below for the exact current tier list.
+- Canonical evidence entries: `84`
+- Expanded test-entry count: `84`; see the canonical evidence table below for the exact current tier list.
 
 ## Evidence Categories
 
@@ -69,9 +69,12 @@ mechanism bundles outside the formal registry are preserved for audit.
 | `tier7_0b_continuous_regression_failure_analysis` | **PASS** | `controlled_test_output/tier7_0b_20260505_continuous_regression_failure_analysis` | Software diagnostic evidence only; not a tuning run, not a promoted mechanism, not hardware evidence, not a new baseline freeze, and not proof that a repaired CRA will beat standard baselines. It authorizes a bounded continuous readout/interface repair tier before hardware migration. |
 | `tier7_0c_continuous_readout_repair` | **PASS** | `controlled_test_output/tier7_0c_20260505_continuous_readout_repair` | Software repair-candidate evidence only; not hardware evidence, not a new baseline freeze, not a promoted CRA mechanism, and not a superiority claim. The correct next move is a stricter state-specific repair or claim narrowing, not hardware migration. |
 | `tier7_0d_state_specific_continuous_interface` | **PASS** | `controlled_test_output/tier7_0d_20260505_state_specific_continuous_interface` | Software diagnostic evidence only; not hardware evidence, not a baseline freeze, not a promoted continuous-readout mechanism, and not a superiority claim. The Tier 7 continuous-regression benchmark path should be narrowed and not migrated to hardware unless a future mechanism changes the failure class. |
+| `tier7_0e_standard_dynamical_v2_2_length_sweep` | **PASS** | `controlled_test_output/tier7_0e_20260508_length_calibration` | Software benchmark evidence only; the 10k public aggregate was separately blocked by a non-finite NARMA10 seed-44 stream and no baseline freeze, hardware transfer, or superiority claim is authorized. |
 | `tier5_19a_temporal_substrate_reference` | **PASS** | `controlled_test_output/tier5_19a_20260505_temporal_substrate_reference` | Software local-reference evidence only; recurrence-specific value, hardware transfer, and benchmark superiority remain unproven. |
 | `tier5_19b_temporal_substrate_gate` | **PASS** | `controlled_test_output/tier5_19b_20260505_temporal_substrate_gate` | Software diagnostic evidence only; does not freeze a baseline or prove native/on-chip temporal dynamics. |
 | `tier5_19c_fading_memory_regression` | **PASS** | `controlled_test_output/tier5_19c_20260505_fading_memory_regression` | Software evidence only; not bounded nonlinear recurrence, native/on-chip temporal dynamics, universal benchmark superiority, language, planning, AGI, or ASI. |
+| `tier7_0f_benchmark_protocol_failure_localization` | **PASS** | `controlled_test_output/tier7_0f_20260508_benchmark_protocol_failure_localization` | Diagnostic protocol evidence only; not a CRA performance improvement, not a new mechanism, not a baseline freeze, not hardware evidence, and not public benchmark superiority. |
+| `tier7_0g_general_mechanism_selection_contract` | **PASS** | `controlled_test_output/tier7_0g_20260508_general_mechanism_selection_contract` | Contract evidence only; not mechanism implementation, not a performance improvement, not a baseline freeze, not hardware evidence, and not public benchmark superiority. |
 | `tier4_30_readiness_lifecycle_native_audit` | **PASS** | `controlled_test_output/tier4_30_readiness_20260505_lifecycle_native_audit` | Engineering audit only; not lifecycle implementation, not hardware evidence, not speedup, not multi-chip scaling, and not native v2.2 temporal migration. |
 | `tier4_30_lifecycle_native_contract` | **PASS** | `controlled_test_output/tier4_30_20260505_lifecycle_native_contract` | Local engineering contract only; not runtime implementation, not hardware evidence, not lifecycle/self-scaling proof, and not v2.2 temporal migration. |
 | `tier4_30a_static_pool_lifecycle_reference` | **PASS** | `controlled_test_output/tier4_30a_20260505_static_pool_lifecycle_reference` | Local deterministic reference only; not runtime C, not hardware evidence, not task benefit, not lifecycle baseline freeze, and not v2.2 temporal-state migration. |
@@ -420,7 +423,7 @@ cite them as current study results unless promoted in `STUDY_REGISTRY.json`.
 | `controlled_test_output/tier6_4_20260428_143252` | `superseded_rerun` | `unknown` | `None` |
 | `controlled_test_output/tier6_4_20260428_160526` | `superseded_rerun` | `pass` | `2026-04-28T20:05:28+00:00` |
 | `controlled_test_output/tier7_0e_20260508_length_10000_scoreboard` | `superseded_rerun` | `fail` | `2026-05-08T18:32:32+00:00` |
-| `controlled_test_output/tier7_0e_20260508_length_calibration` | `superseded_rerun` | `pass` | `2026-05-08T18:40:40+00:00` |
+| `controlled_test_output/tier7_0e_20260508_length_8000_scoreboard` | `superseded_rerun` | `pass` | `2026-05-08T18:55:11+00:00` |
 
 ## Integrity
 

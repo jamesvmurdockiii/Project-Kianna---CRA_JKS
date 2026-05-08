@@ -984,42 +984,69 @@ ability.
     or failure. No v2.3 freeze, usefulness claim, or hardware transfer is
     authorized from Tier 7.0e.
 
-70. **CURRENT ACTIVE STEP** - Tier 7.0f benchmark-protocol repair and public
-    failure localization: define and document a finite-stream policy for long
-    NARMA10 before any 10k/50k standardized claim, then diagnose whether the
-    remaining gap is continuous readout/interface, nonlinear recurrent state,
-    insufficient causal history, target scaling, baseline unfairness, or a
-    genuine architecture limitation. Do not tune blindly and do not replace the
-    public scoreboard with private diagnostic tasks.
+70. **COMPLETE** - Tier 7.0f benchmark-protocol repair and public failure
+    localization: passed 8/8 at
+    `controlled_test_output/tier7_0f_20260508_benchmark_protocol_failure_localization/`.
+    It confirmed the 10k NARMA10 seed-44 finite-stream blocker, selected
+    `8000` as the largest original-seed finite rerun length, and localized the
+    current public benchmark gap: Mackey-Glass/Lorenz favor ESN/offline
+    train-prefix readout, while NARMA10 favors explicit lag memory over v2.2
+    fading memory. This is diagnostic evidence only, not a new mechanism,
+    baseline freeze, hardware evidence, or benchmark-superiority claim.
 
-71. Tier 6.2a diagnostic hard tasks only if needed: use variable-delay,
+71. **COMPLETE** - Tier 7.0e valid same-seed 8000-step scoreboard rerun:
+    `controlled_test_output/tier7_0e_20260508_length_8000_scoreboard/` passed
+    8/8 with zero invalid streams. v2.2 ranked second overall at aggregate
+    geomean MSE `0.19348969000027122`, beating lag-only LMS
+    `0.1986311714577415` and random reservoir `0.2075278737499566`, but ESN
+    remained far ahead at `0.020109884207162095`. This answers the immediate
+    "longer run" question: longer exposure alone did not close the public
+    scoreboard gap.
+
+72. **COMPLETE** - Tier 7.0g general mechanism-selection contract:
+    passed 7/7 at
+    `controlled_test_output/tier7_0g_20260508_general_mechanism_selection_contract/`.
+    It selected `bounded_nonlinear_recurrent_continuous_state_interface` as the
+    next planned mechanism because the measured public gap is nonlinear
+    recurrent state / readout-interface strength, not sleep/replay, lifecycle,
+    or hardware transfer. Boundary: contract only, not mechanism proof.
+
+73. **CURRENT ACTIVE STEP** - Tier 7.0h bounded nonlinear recurrent
+    continuous-state/interface candidate: implement the selected mechanism as a
+    leakage-safe software gate against v2.2, lag-only, reservoir, ESN, and
+    recurrence shams on Mackey-Glass, Lorenz, and NARMA10 at `720`, `2000`, and
+    valid same-seed `8000`. Promotion requires at least 25 percent aggregate
+    improvement over v2.2 at 8000, no NARMA regression without a declared
+    tradeoff, and shams/ablations losing.
+
+74. Tier 6.2a diagnostic hard tasks only if needed: use variable-delay,
     hidden-context, drift, anomaly, or delayed-control diagnostics to isolate the
     measured public-benchmark failure class. These tasks cannot be used as the
     public usefulness proof by themselves.
 
-72. Mechanism iteration loop: add exactly one planned general mechanism at a
+75. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
     stop the broad usefulness track and narrow the paper.
 
-73. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+76. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines. Start only after the standardized scoreboard or failure diagnosis
     identifies a winning regime, a real failure mode, or a mechanism needing
     external validation.
 
-74. Tier 7.2 held-out task challenge: define held-out families before running;
+77. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout. Include at least one synthetic holdout and one
     real-ish adapter holdout if Tier 7.1 is active.
 
-75. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+78. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines. Candidate domains include
     streaming anomaly detection, predictive-maintenance sensor streams, human
     activity streams, event prediction, ECG/biosignal streams, and finance as
     one domain only rather than the whole proof.
 
-76. Tier 7.4 policy/action selection: state -> action -> delayed consequence,
+79. Tier 7.4 policy/action selection: state -> action -> delayed consequence,
     exploration versus exploitation, uncertainty-gated actions. Do not start
     broad policy claims until prediction/adaptation usefulness is measured.
 
@@ -1343,11 +1370,14 @@ multi-chip scaling, not benchmark superiority, and not full organism autonomy.
 Tier 4.32g-r2 passed and Tier 4.32h froze `CRA_NATIVE_SCALE_BASELINE_v0.5`.
 Tier 7.0e short/medium calibration showed v2.2 improves over raw v2.1 but does
 not close the ESN gap; the 10k standardized scoreboard is blocked by a
-non-finite NARMA10 seed-44 target stream. The next active work is Tier 7.0f:
-repair the long-benchmark finite-stream protocol and localize the public
-benchmark failure before any new mechanism layer, baseline freeze, or hardware
-transfer. Reopen native work only for targeted transfer after a software
-task/mechanism earns it under the Tier 7/6.2 gates.
+non-finite NARMA10 seed-44 target stream. Tier 7.0f then repaired the protocol
+boundary, selected 8000 as the largest original-seed finite rerun length, and
+the 8000 rerun showed v2.2 ranks second but remains about 9.6x behind ESN.
+Tier 7.0g selected bounded nonlinear recurrent continuous-state/interface
+repair as the next mechanism. The next active work is Tier 7.0h: test that
+mechanism against v2.2, ESN, lag, reservoir, and recurrence shams before any
+baseline freeze or hardware transfer. Reopen native work only for targeted
+transfer after a software task/mechanism earns it under the Tier 7/6.2 gates.
 It must preserve explicit board/chip/shard identity, message paths, compact
 readback ownership, failure counters, placement assumptions,
 enabled-vs-no-learning separation, and resource measurements while adding the

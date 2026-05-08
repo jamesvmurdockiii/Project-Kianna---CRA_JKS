@@ -1,0 +1,30 @@
+{
+  "custom_task_policy": "custom diagnostics may localize failure but cannot replace the public scoreboard",
+  "finite_stream_policy": "invalid generated observed/target streams cannot be scored as model evidence",
+  "optional_sensitivity": {
+    "length": 10000,
+    "policy": "predeclared_finite_seed_replacement",
+    "reason": "keeps standard NARMA formula but replaces invalid streams through a model-independent finite pre-scan",
+    "seeds": [
+      42,
+      43,
+      45
+    ]
+  },
+  "recommended_rerun": {
+    "length": 8000,
+    "policy": "same_seed_max_finite_length",
+    "reason": "preserves original seeds while avoiding invalid NARMA streams",
+    "seeds": [
+      42,
+      43,
+      44
+    ]
+  },
+  "standard_tasks": [
+    "mackey_glass",
+    "lorenz",
+    "narma10"
+  ],
+  "tier": "Tier 7.0f - Benchmark Protocol Repair / Public Failure Localization"
+}

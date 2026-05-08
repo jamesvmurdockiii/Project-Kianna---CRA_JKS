@@ -1,0 +1,2 @@
+status,selected_mechanism,v2_2_geomean_mse,esn_geomean_mse,v2_2_divided_by_esn,next_tier
+pass,bounded_nonlinear_recurrent_continuous_state_interface,0.19348969000027122,0.020109884207162095,9.621621288667603,Tier 7.0h / mechanism implementation candidate
