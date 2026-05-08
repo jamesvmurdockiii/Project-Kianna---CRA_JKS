@@ -364,6 +364,8 @@ Tier 4.32g extends the lifecycle route surface. `learning_core` can accept
 host lifecycle event/trophic opcodes only to emit MCPL request packets; it does
 not mutate lifecycle state. `lifecycle_core` receives those request packets,
 applies duplicate/stale guards, and broadcasts active-mask/lineage sync packets
-back to the learning side. `CMD_READ_STATE` schema-v2 keeps the first 105 bytes
-compatible and appends lifecycle traffic counters through byte 148, yielding a
-149-byte readback when the extended runtime is built.
+back to the learning side. `lifecycle_core` also ACKs `CMD_RUN_CONTINUOUS` and
+`CMD_PAUSE` as harmless cleanup/control commands so multi-core hardware runs can
+stop all loaded profiles uniformly. `CMD_READ_STATE` schema-v2 keeps the first
+105 bytes compatible and appends lifecycle traffic counters through byte 148,
+yielding a 149-byte readback when the extended runtime is built.

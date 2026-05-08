@@ -289,6 +289,8 @@ static void test_expected_handlers(void) {
     assert(_dispatch(CMD_LIFECYCLE_INIT, MAX_LIFECYCLE_SLOTS, 2, 42) == 0);
     assert(_dispatch(CMD_LIFECYCLE_READ_STATE, 0, 0, 0) == 0);
     assert(_dispatch(CMD_LIFECYCLE_SHAM_MODE, LIFECYCLE_SHAM_FIXED_POOL, 0, 0) == 0);
+    assert(_dispatch(CMD_RUN_CONTINUOUS, 0, 0, 0) == 0);
+    assert(_dispatch(CMD_PAUSE, 0, 0, 0) == 0);
     printf("  PASS: lifecycle_core expected commands ack\n");
 }
 static void test_unexpected_handlers(void) {
@@ -300,8 +302,6 @@ static void test_unexpected_handlers(void) {
     assert(_dispatch(CMD_READ_MEMORY_SLOT, 1, 0, 0) == 0xFF);
     assert(_dispatch(CMD_WRITE_SCHEDULE_ENTRY, 0, 0, 0) == 0xFF);
     assert(_dispatch(CMD_MATURE_PENDING, 0, 0, 0) == 0xFF);
-    assert(_dispatch(CMD_RUN_CONTINUOUS, 0, 0, 0) == 0xFF);
-    assert(_dispatch(CMD_PAUSE, 0, 0, 0) == 0xFF);
     assert(_dispatch(CMD_TEMPORAL_INIT, 0, 0, 0) == 0xFF);
     assert(_dispatch(CMD_TEMPORAL_UPDATE, FP_ONE, 0, 0) == 0xFF);
     assert(_dispatch(CMD_TEMPORAL_READ_STATE, 0, 0, 0) == 0xFF);

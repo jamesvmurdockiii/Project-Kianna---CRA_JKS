@@ -1181,6 +1181,12 @@ active-mask/lineage sync packets over
 `CRA_MCPL_INTERCHIP_LIFECYCLE_SYNC_LINK_ROUTE`. The learning core coalesces the
 mask and lineage packets into one compact sync observation.
 
+For uniform multi-core hardware cleanup, `lifecycle_core` also ACKs
+`CMD_RUN_CONTINUOUS` and `CMD_PAUSE` as harmless server-core control commands.
+Those commands do not mutate lifecycle slots; lifecycle mutation remains limited
+to lifecycle init, lifecycle host-surface commands on lifecycle_core, and MCPL
+lifecycle request packets.
+
 `CMD_READ_STATE` schema-v2 remains backward-compatible for the first 105 bytes.
 Tier 4.32g appends lifecycle traffic counters through byte 148:
 

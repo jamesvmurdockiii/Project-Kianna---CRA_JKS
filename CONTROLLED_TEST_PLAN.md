@@ -9722,16 +9722,54 @@ Question: after 4.32g-r0 source-proved lifecycle route entries, can the actual
 learning/lifecycle MCPL packet semantics survive a two-chip SpiNNaker hardware
 smoke with compact readback counters?
 
-Current status: PREPARED, awaiting EBRAINS return.
+Current status: 4.32g first EBRAINS return ingested as FAIL with successful
+traffic counters; 4.32g-r1 repaired and prepared for rerun.
 
 Prepared output:
 
 ```text
-controlled_test_output/tier4_32g_20260507_prepared/
+controlled_test_output/tier4_32g_20260507_r1_prepared/
 criteria: 16/16
 stable upload folder: ebrains_jobs/cra_432g
 exact JobManager command:
 cra_432g/experiments/tier4_32g_multichip_lifecycle_traffic_resource_smoke.py --mode run-hardware --output-dir tier4_32g_job_output
+```
+
+First hardware return:
+
+```text
+controlled_test_output/tier4_32g_20260507_hardware_fail_ingested/
+raw status: fail
+traffic path: succeeded
+failure class: cleanup/control-surface + criteria evaluator
+```
+
+Observed successful traffic fields in first return:
+
+```text
+source lifecycle_event_requests_sent == 1
+source lifecycle_trophic_requests_sent == 1
+source lifecycle_mask_syncs_received == 1
+source lifecycle_last_seen_active_mask_bits == 1
+source lifecycle_last_seen_event_count == 2
+lifecycle_event_acks_received == 2
+lifecycle_mask_syncs_sent == 1
+lifecycle duplicate/stale/missing-ack counters == 0
+lifecycle active_mask_bits == 1
+lifecycle active_count == 1
+lifecycle death_count == 1
+lifecycle trophic_update_count == 1
+synthetic fallback == 0
+```
+
+4.32g-r1 repairs:
+
+```text
+1. lifecycle_core now ACKs CMD_RUN_CONTINUOUS and CMD_PAUSE as harmless
+   uniform server-core controls.
+2. test_profiles now asserts lifecycle_core control ACK behavior.
+3. smoke criteria now accept both boolean reset ACKs and structured reply ACKs.
+4. runner revision advanced to tier4_32g_multichip_lifecycle_traffic_resource_smoke_20260507_0002.
 ```
 
 Mechanism under test:

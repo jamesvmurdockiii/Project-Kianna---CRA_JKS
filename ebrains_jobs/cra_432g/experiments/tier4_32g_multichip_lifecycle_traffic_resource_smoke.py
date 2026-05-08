@@ -47,8 +47,8 @@ from experiments import tier4_22i_custom_runtime_roundtrip as base  # noqa: E402
 CONTROLLED = ROOT / "controlled_test_output"
 RUNTIME = ROOT / "coral_reef_spinnaker" / "spinnaker_runtime"
 TIER_NAME = "Tier 4.32g - Two-Chip Lifecycle Traffic/Resource Hardware Smoke"
-RUNNER_REVISION = "tier4_32g_multichip_lifecycle_traffic_resource_smoke_20260507_0001"
-DEFAULT_PREPARE_OUTPUT = CONTROLLED / "tier4_32g_20260507_prepared"
+RUNNER_REVISION = "tier4_32g_multichip_lifecycle_traffic_resource_smoke_20260507_0002"
+DEFAULT_PREPARE_OUTPUT = CONTROLLED / "tier4_32g_20260507_r1_prepared"
 DEFAULT_RUN_OUTPUT = CONTROLLED / f"tier4_32g_{datetime.now(timezone.utc).strftime('%Y%m%d_%H%M%S')}_run_hardware"
 DEFAULT_INGEST_OUTPUT = CONTROLLED / "tier4_32g_ingested"
 LATEST_MANIFEST = CONTROLLED / "tier4_32g_latest_manifest.json"
@@ -144,6 +144,15 @@ def read_json(path: Path) -> dict[str, Any]:
 
 def criterion(name: str, value: Any, rule: str, passed: bool, note: str = "") -> dict[str, Any]:
     return asdict(Criterion(name=name, value=value, rule=rule, passed=bool(passed), note=note))
+
+
+def control_ack_success(value: Any) -> bool:
+    """Return True for either legacy bool ACKs or structured reply ACKs."""
+    if isinstance(value, bool):
+        return value is True
+    if isinstance(value, dict):
+        return value.get("success") is True
+    return False
 
 
 def prerequisite_status(path: Path) -> str:
@@ -414,7 +423,7 @@ def smoke_criteria(task: dict[str, Any], hardware_exception: dict[str, Any] | No
         criterion("task completed", task.get("status"), "completed/pass", task.get("status") in {"completed", "pass"}),
         criterion("source chip placement", task.get("source_chip"), f"== {SOURCE_CHIP}", task.get("source_chip") == SOURCE_CHIP),
         criterion("remote chip placement", task.get("remote_chip"), f"== {REMOTE_CHIP}", task.get("remote_chip") == REMOTE_CHIP),
-        criterion("all resets succeeded", resets, "all success", bool(resets) and all(isinstance(v, dict) and v.get("success") is True for v in resets.values())),
+        criterion("all resets succeeded", resets, "all success", bool(resets) and all(control_ack_success(v) for v in resets.values())),
         criterion("lifecycle init succeeded", task.get("lifecycle_init", {}).get("success"), "== True", task.get("lifecycle_init", {}).get("success") is True),
         criterion("trophic request emitted", task.get("trophic_emit", {}).get("success"), "== True", task.get("trophic_emit", {}).get("success") is True),
         criterion("death event emitted", task.get("death_emit", {}).get("success"), "== True", task.get("death_emit", {}).get("success") is True),
@@ -437,7 +446,7 @@ def smoke_criteria(task: dict[str, Any], hardware_exception: dict[str, Any] | No
         criterion("lifecycle death count", lifecycle_summary.get("death_count"), "== 1", lifecycle_summary.get("death_count") == 1),
         criterion("lifecycle trophic update count", lifecycle_summary.get("trophic_update_count"), "== 1", lifecycle_summary.get("trophic_update_count") == 1),
         criterion("lifecycle invalid events zero", lifecycle_summary.get("invalid_event_count"), "== 0", lifecycle_summary.get("invalid_event_count") == 0),
-        criterion("all pause commands succeeded", pauses, "all success", bool(pauses) and all(isinstance(v, dict) and v.get("success") is True for v in pauses.values())),
+        criterion("all pause commands succeeded", pauses, "all success", bool(pauses) and all(control_ack_success(v) for v in pauses.values())),
         criterion("learning payload includes lifecycle counters", learning.get("payload_len"), ">= 149", int(learning.get("payload_len") or 0) >= 149),
         criterion("lifecycle runtime payload includes lifecycle counters", lifecycle_runtime.get("payload_len"), ">= 149", int(lifecycle_runtime.get("payload_len") or 0) >= 149),
     ]
@@ -721,6 +730,46 @@ def copy_returned_artifacts(ingest_dir: Path, output_dir: Path, anchor: Path) ->
     return copied
 
 
+def summarize_hardware_traffic_path(hardware: dict[str, Any]) -> dict[str, Any]:
+    """Expose the mechanism path even when a later cleanup criterion fails."""
+    task = hardware.get("task", {}) if isinstance(hardware, dict) else {}
+    final_state = task.get("final_state", {}) if isinstance(task, dict) else {}
+    learning = final_state.get("learning", {}) if isinstance(final_state, dict) else {}
+    lifecycle_runtime = final_state.get("lifecycle_runtime", {}) if isinstance(final_state, dict) else {}
+    lifecycle_summary = final_state.get("lifecycle_summary", {}) if isinstance(final_state, dict) else {}
+    reset = task.get("reset", {}) if isinstance(task, dict) else {}
+    pause = task.get("pause", {}) if isinstance(task, dict) else {}
+    checks = {
+        "source_event_request_counter": learning.get("lifecycle_event_requests_sent") == 1,
+        "source_trophic_request_counter": learning.get("lifecycle_trophic_requests_sent") == 1,
+        "source_mask_sync_received": learning.get("lifecycle_mask_syncs_received") == 1,
+        "source_expected_active_mask_seen": learning.get("lifecycle_last_seen_active_mask_bits") == EXPECTED_SOURCE_ACTIVE_MASK,
+        "source_lifecycle_event_count_seen": int(learning.get("lifecycle_last_seen_event_count") or 0) >= 2,
+        "lifecycle_accepted_trophic_and_death": lifecycle_runtime.get("lifecycle_event_acks_received") == 2,
+        "lifecycle_sent_mask_sync": lifecycle_runtime.get("lifecycle_mask_syncs_sent") == 1,
+        "lifecycle_duplicate_zero": lifecycle_runtime.get("lifecycle_duplicate_events") == 0,
+        "lifecycle_stale_zero": lifecycle_runtime.get("lifecycle_stale_events") == 0,
+        "lifecycle_missing_ack_zero": lifecycle_runtime.get("lifecycle_missing_acks") == 0,
+        "lifecycle_active_mask_mutated": lifecycle_summary.get("active_mask_bits") == EXPECTED_SOURCE_ACTIVE_MASK,
+        "lifecycle_active_count_expected": lifecycle_summary.get("active_count") == 1,
+        "lifecycle_death_count_expected": lifecycle_summary.get("death_count") == 1,
+        "lifecycle_trophic_update_count_expected": lifecycle_summary.get("trophic_update_count") == 1,
+        "lifecycle_invalid_events_zero": lifecycle_summary.get("invalid_event_count") == 0,
+    }
+    failure_classes: list[str] = []
+    reset_success = isinstance(reset, dict) and bool(reset) and all(control_ack_success(v) for v in reset.values())
+    pause_success = isinstance(pause, dict) and bool(pause) and all(control_ack_success(v) for v in pause.values())
+    if isinstance(reset, dict) and reset and not reset_success:
+        failure_classes.append("reset_control_or_criteria")
+    if isinstance(pause, dict) and pause and not pause_success:
+        failure_classes.append("pause_control_surface")
+    return {
+        "traffic_counter_core_pass": bool(checks) and all(checks.values()),
+        "checks": checks,
+        "failure_classes": failure_classes,
+    }
+
+
 def mode_ingest(args: argparse.Namespace, output_dir: Path) -> int:
     ingest_dir = args.ingest_dir or Path.home() / "Downloads"
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -743,11 +792,13 @@ def mode_ingest(args: argparse.Namespace, output_dir: Path) -> int:
         return finalize(output_dir, result)
     hardware = read_json(candidate)
     returned = copy_returned_artifacts(ingest_dir, output_dir, candidate)
+    traffic_path = summarize_hardware_traffic_path(hardware)
     criteria = [
         criterion("hardware results json exists", str(candidate), "exists", True),
         criterion("hardware mode was run-hardware", hardware.get("mode"), "== run-hardware", hardware.get("mode") == "run-hardware"),
         criterion("raw hardware status pass", hardware.get("status"), "== pass", hardware.get("status") == "pass"),
         criterion("lifecycle traffic smoke pass", hardware.get("summary", {}).get("lifecycle_traffic_status"), "== pass", hardware.get("summary", {}).get("lifecycle_traffic_status") == "pass"),
+        criterion("traffic counters internally passed", traffic_path.get("traffic_counter_core_pass"), "== True", traffic_path.get("traffic_counter_core_pass") is True),
         criterion("returned artifacts preserved", len(returned), ">= 1", len(returned) >= 1),
         criterion("synthetic fallback zero", hardware.get("summary", {}).get("synthetic_fallback_used"), "== False", hardware.get("summary", {}).get("synthetic_fallback_used") is False),
     ]
@@ -767,8 +818,11 @@ def mode_ingest(args: argparse.Namespace, output_dir: Path) -> int:
         "summary": {
             "raw_remote_status": hardware.get("status"),
             "lifecycle_traffic_status": hardware.get("summary", {}).get("lifecycle_traffic_status"),
+            "traffic_counter_core_pass": traffic_path.get("traffic_counter_core_pass"),
+            "traffic_failure_classes": traffic_path.get("failure_classes"),
             "returned_artifact_count": len(returned),
         },
+        "traffic_path_summary": traffic_path,
         "claim_boundary": "Ingest confirms returned EBRAINS run-hardware artifacts only; baseline decisions remain separate.",
     }
     return finalize(output_dir, result)

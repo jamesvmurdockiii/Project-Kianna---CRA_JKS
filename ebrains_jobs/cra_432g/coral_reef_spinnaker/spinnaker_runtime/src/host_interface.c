@@ -922,6 +922,16 @@ void sdp_rx_callback(uint mailbox, uint port) {
         case CMD_PAUSE:          _handle_pause(msg);          break;
 #endif
 
+// ------------------------------------------------------------------
+// lifecycle_core: lifecycle metadata is event-driven, but hardware tests and
+// multi-core cleanup require the same harmless run/pause ACK surface as other
+// server cores. These commands do not mutate lifecycle slots directly.
+// ------------------------------------------------------------------
+#ifdef CRA_RUNTIME_PROFILE_LIFECYCLE_CORE
+        case CMD_RUN_CONTINUOUS: _handle_run_continuous(msg); break;
+        case CMD_PAUSE:          _handle_pause(msg);          break;
+#endif
+
         default:
             // Unknown or unsupported command for this profile — send NAK
             {

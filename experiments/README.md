@@ -49,11 +49,15 @@ Tier 4.32g-r0 then passed locally at
 `controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/`
 with `14/14` criteria, source-proving lifecycle event/trophic/mask-sync
 inter-chip routes for learning/lifecycle profiles and preserving lookup-route
-plus lifecycle-split regressions. Tier 4.32g prepare then passed locally at
-`controlled_test_output/tier4_32g_20260507_prepared/` with `16/16` criteria,
+plus lifecycle-split regressions. Tier 4.32g prepare then passed locally, and
+the first hardware return was ingested at
+`controlled_test_output/tier4_32g_20260507_hardware_fail_ingested/`: lifecycle
+traffic counters passed, but the strict gate failed on lifecycle_core pause
+cleanup and reset criteria evaluation. Tier 4.32g-r1 then prepared locally at
+`controlled_test_output/tier4_32g_20260507_r1_prepared/` with `16/16` criteria,
 refreshed `ebrains_jobs/cra_432g`, and emitted exact JobManager command
 `cra_432g/experiments/tier4_32g_multichip_lifecycle_traffic_resource_smoke.py --mode run-hardware --output-dir tier4_32g_job_output`.
-The current next gate is the prepared Tier 4.32g EBRAINS run and ingest;
+The current next gate is the prepared Tier 4.32g-r1 EBRAINS rerun and ingest;
 learning scale, lifecycle scaling, multi-shard learning, speedup, benchmarks,
 and native-scale baseline freeze remain blocked.
 

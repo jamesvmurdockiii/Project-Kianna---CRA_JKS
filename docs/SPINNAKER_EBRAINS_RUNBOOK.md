@@ -48,12 +48,15 @@ Tier 4.32g-r0 source/route repair audit then passed locally at
 controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/ with
 14/14 criteria, source-proving lifecycle event/trophic/mask-sync inter-chip
 routes and preserving lookup-route plus lifecycle-split regressions. Tier 4.32g
-package preparation then passed at
-controlled_test_output/tier4_32g_20260507_prepared/ with 16/16 criteria,
+package preparation then passed, and the first EBRAINS return was ingested at
+controlled_test_output/tier4_32g_20260507_hardware_fail_ingested/. The traffic
+path succeeded, but the strict gate failed because lifecycle_core NAKed pause
+and the reset criterion misread boolean ACKs. Tier 4.32g-r1 then prepared at
+controlled_test_output/tier4_32g_20260507_r1_prepared/ with 16/16 criteria,
 refreshed ebrains_jobs/cra_432g, and emitted the exact command
 `cra_432g/experiments/tier4_32g_multichip_lifecycle_traffic_resource_smoke.py --mode run-hardware --output-dir tier4_32g_job_output`.
-The next step is running that prepared Tier 4.32g EBRAINS job and ingesting the
-returned artifacts. Speedup, benchmark, true two-partition, lifecycle-scaling,
+The next step is running that prepared Tier 4.32g-r1 EBRAINS job and ingesting
+the returned artifacts. Speedup, benchmark, true two-partition, lifecycle-scaling,
 multi-shard, and native-scale baseline-freeze claims remain blocked until the
 next contract-backed hardware evidence gate passes.
 ```
@@ -166,8 +169,9 @@ Tier 4.32g-r0 - Multi-Chip Lifecycle Route/Source Repair Audit
   Boundary: local source/runtime QA only, not hardware.
 
 Tier 4.32g - Two-Chip Lifecycle Traffic/Resource Hardware Smoke
-  Status: PREPARED; EBRAINS RUN/INGEST REQUIRED
-  Prepared output: controlled_test_output/tier4_32g_20260507_prepared/
+  Status: FIRST HARDWARE RETURN FAILED STRICT GATE; R1 PREPARED; EBRAINS RERUN/INGEST REQUIRED
+  Failed-return ingest: controlled_test_output/tier4_32g_20260507_hardware_fail_ingested/
+  R1 prepared output: controlled_test_output/tier4_32g_20260507_r1_prepared/
   Upload folder: ebrains_jobs/cra_432g
   Criteria: 16/16 local prepare criteria
   Exact JobManager command:
@@ -320,7 +324,9 @@ Tier 4.31c - Native Temporal-Substrate Runtime Source Audit
     Tier 4.32f then passed locally and authorized Tier 4.32g-r0 source/route
     repair audit before another hardware package. Tier 4.32g-r0 then passed
     locally and authorized Tier 4.32g two-chip lifecycle traffic/resource
-    hardware smoke. Native replay buffers, sleep-like replay, and native macro
+    hardware smoke. The first 4.32g hardware return showed successful lifecycle
+    traffic counters but failed cleanup/control, so 4.32g-r1 is the corrected
+    rerun. Native replay buffers, sleep-like replay, and native macro
     eligibility remain deferred until measured blockers demand them.
 ```
 
