@@ -10768,3 +10768,64 @@ tiny FD001/adapter artifact using per-unit paired comparisons, bootstrap or
 confidence intervals, effect sizes, capped-RUL fairness controls, and seed /
 stochastic sensitivity.
 ```
+
+### Tier 7.1e - C-MAPSS Capped-RUL/Readout Fairness Confirmation
+
+Runner:
+
+```text
+experiments/tier7_1e_cmapss_capped_readout_fairness_confirmation.py
+```
+
+Output:
+
+```text
+controlled_test_output/tier7_1e_20260508_cmapss_capped_readout_fairness_confirmation/
+```
+
+Status:
+
+```text
+PASS
+criteria: 12/12
+outcome: v2_2_capped_signal_not_statistically_confirmed
+```
+
+Primary comparison:
+
+```text
+candidate: scalar_pca1_v2_2_ridge_capped125
+primary baseline: lag_multichannel_ridge_capped125
+mean delta RMSE, positive means candidate better: -0.3690103080637045
+bootstrap 95% CI: [-1.4191012103865384, 0.6704668696286052]
+effect size d: -0.06884079972999842
+candidate better/worse units: 50/50
+```
+
+Interpretation:
+
+```text
+Tier 7.1e showed that the tiny Tier 7.1d v2.2 capped-ridge signal is not
+statistically confirmed against the strongest fair capped-RUL baseline. The
+per-unit paired result is centered around no advantage, with the confidence
+interval crossing zero and a 50/50 unit split. This closes the current compact
+C-MAPSS path as non-promoted.
+```
+
+Claim boundary:
+
+```text
+Tier 7.1e is statistical/fairness confirmation over Tier 7.1d per-unit results.
+It is not a full C-MAPSS benchmark, not public usefulness evidence, not a
+promoted mechanism, not a baseline freeze, not hardware/native transfer, and not
+AGI/ASI evidence.
+```
+
+Next required step:
+
+```text
+Tier 7.1f - next public adapter contract / family selection.
+Stop tuning C-MAPSS for now. Select the next predeclared public benchmark family
+with official sources, license/source notes, locked preprocessing, leakage
+controls, baselines, metrics, pass/fail criteria, and nonclaims before scoring.
+```

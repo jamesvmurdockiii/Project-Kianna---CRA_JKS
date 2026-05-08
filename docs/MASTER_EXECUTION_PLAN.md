@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-08T21:23:10+00:00.
+Last updated: 2026-05-08T21:30:34+00:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -1094,30 +1094,40 @@ ability.
     Boundary: failure analysis only; no public usefulness win, no baseline
     freeze, and no hardware/native transfer.
 
-81. **CURRENT ACTIVE STEP** - Tier 7.1e C-MAPSS capped-RUL/readout fairness
-    confirmation: determine whether the v2.2 capped-ridge signal is
-    statistically meaningful or only a tiny FD001/adapter artifact. Require
-    per-unit paired comparisons, bootstrap/confidence intervals, effect sizes,
-    and fair capped-RUL baselines before any public usefulness claim, mechanism
-    promotion, or native transfer.
+81. **COMPLETE** - Tier 7.1e C-MAPSS capped-RUL/readout fairness confirmation:
+    passed 12/12 at
+    `controlled_test_output/tier7_1e_20260508_cmapss_capped_readout_fairness_confirmation/`.
+    Outcome: `v2_2_capped_signal_not_statistically_confirmed`. The primary
+    paired per-unit comparison versus lag-multichannel ridge had mean delta
+    `-0.3690103080637045` RMSE (positive would mean candidate better), bootstrap
+    95% CI `[-1.4191012103865384, 0.6704668696286052]`, effect size
+    `-0.06884079972999842`, and a 50/50 better/worse unit split. Boundary:
+    fairness/statistical confirmation only; no public usefulness win, no
+    baseline freeze, and no hardware/native transfer.
 
-82. Mechanism iteration loop: add exactly one planned general mechanism at a
+82. **CURRENT ACTIVE STEP** - Tier 7.1f next public adapter contract / family
+    selection: stop tuning C-MAPSS for now and select the next predeclared
+    public benchmark family with fixed sources, license/source notes,
+    preprocessing, leakage controls, fair baselines, metrics, pass/fail rules,
+    and nonclaims before any scoring.
+
+83. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
     stop the broad usefulness track and narrow the paper.
 
-83. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+84. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines. Start only after the standardized scoreboard or failure diagnosis
     identifies a winning regime, a real failure mode, or a mechanism needing
     external validation.
 
-84. Tier 7.2 held-out task challenge: define held-out families before running;
+85. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout. Include at least one synthetic holdout and one
     real-ish adapter holdout if Tier 7.1 is active.
 
-85. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+86. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines. Candidate domains include
     streaming anomaly detection, predictive-maintenance sensor streams, human
     activity streams, event prediction, ECG/biosignal streams, and finance as
@@ -1467,11 +1477,12 @@ ordering, and label-separated smoke artifacts. Tier 7.1c then passed compact
 C-MAPSS FD001 scoring but narrowed the claim: v2.3 ranked 5th and did not beat
 v2.2 or the monotone age baseline. Tier 7.1d then localized most of that compact
 failure to target/readout policy: capped RUL plus ridge readout repaired scalar
-scoring, but v2.3 still did not win. The next active work is Tier 7.1e
-capped-RUL/readout fairness confirmation before any public usefulness claim,
-freeze, or native transfer. Reopen native work only for targeted transfer after
-a software task/mechanism earns it under the Tier 7/6.2 gates and a separate
-transfer contract is written.
+scoring, but v2.3 still did not win. Tier 7.1e then rejected the tiny v2.2
+capped-ridge signal as statistically unconfirmed against lag-multichannel ridge.
+The next active work is Tier 7.1f next public adapter contract / family
+selection; stop tuning C-MAPSS for now. Reopen native work only for targeted
+transfer after a software task/mechanism earns it under the Tier 7/6.2 gates and
+a separate transfer contract is written.
 It must preserve explicit board/chip/shard identity, message paths, compact
 readback ownership, failure counters, placement assumptions,
 enabled-vs-no-learning separation, and resource measurements while adding the

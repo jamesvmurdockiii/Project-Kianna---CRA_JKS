@@ -1,0 +1,207 @@
+{
+  "claim_boundary": "Tier 7.1e is a statistical/fairness confirmation over Tier 7.1d per-unit results. It does not rerun or expand C-MAPSS, does not promote a mechanism, does not freeze a baseline, does not authorize hardware/native transfer, and does not prove public usefulness.",
+  "classification": {
+    "candidate_model": "scalar_pca1_v2_2_ridge_capped125",
+    "confirmed": false,
+    "freeze_authorized": false,
+    "hardware_transfer_authorized": false,
+    "min_effect_size": 0.2,
+    "min_mean_delta": 1.0,
+    "outcome": "v2_2_capped_signal_not_statistically_confirmed",
+    "primary_baseline": "lag_multichannel_ridge_capped125",
+    "primary_bootstrap_ci95_high": 0.6704668696286052,
+    "primary_bootstrap_ci95_low": -1.4191012103865384,
+    "primary_candidate_better_units": 50,
+    "primary_candidate_worse_units": 50,
+    "primary_effect_size_d": -0.06884079972999842,
+    "primary_mean_delta_rmse_positive_candidate_better": -0.3690103080637045
+  },
+  "comparisons": [
+    {
+      "baseline_model": "lag_multichannel_ridge_capped125",
+      "baseline_rmse_mean_by_unit": 18.534658957496873,
+      "bootstrap_ci95_high": 0.6704668696286052,
+      "bootstrap_ci95_low": -1.4191012103865384,
+      "candidate_better_units": 50,
+      "candidate_equal_units": 0,
+      "candidate_model": "scalar_pca1_v2_2_ridge_capped125",
+      "candidate_rmse_mean_by_unit": 18.903669265560573,
+      "candidate_worse_units": 50,
+      "mean_delta_rmse_positive_candidate_better": -0.3690103080637045,
+      "median_delta_rmse_positive_candidate_better": 0.03547382445115055,
+      "paired_effect_size_d": -0.06884079972999842,
+      "unit_count": 100
+    },
+    {
+      "baseline_model": "age_ridge_capped125",
+      "baseline_rmse_mean_by_unit": 19.24344171703358,
+      "bootstrap_ci95_high": 2.2277893191887497,
+      "bootstrap_ci95_low": -1.613607382751135,
+      "candidate_better_units": 54,
+      "candidate_equal_units": 0,
+      "candidate_model": "scalar_pca1_v2_2_ridge_capped125",
+      "candidate_rmse_mean_by_unit": 18.903669265560573,
+      "candidate_worse_units": 46,
+      "mean_delta_rmse_positive_candidate_better": 0.3397724514730092,
+      "median_delta_rmse_positive_candidate_better": 0.9031366306478059,
+      "paired_effect_size_d": 0.03463800634570762,
+      "unit_count": 100
+    },
+    {
+      "baseline_model": "raw_multichannel_ridge_capped125",
+      "baseline_rmse_mean_by_unit": 20.795066269270823,
+      "bootstrap_ci95_high": 2.959872810295476,
+      "bootstrap_ci95_low": 0.7474451283290227,
+      "candidate_better_units": 72,
+      "candidate_equal_units": 0,
+      "candidate_model": "scalar_pca1_v2_2_ridge_capped125",
+      "candidate_rmse_mean_by_unit": 18.903669265560573,
+      "candidate_worse_units": 28,
+      "mean_delta_rmse_positive_candidate_better": 1.8913970037102548,
+      "median_delta_rmse_positive_candidate_better": 3.2625129603131553,
+      "paired_effect_size_d": 0.33705382371536385,
+      "unit_count": 100
+    },
+    {
+      "baseline_model": "scalar_pca1_v2_3_ridge_capped125",
+      "baseline_rmse_mean_by_unit": 19.150884023604775,
+      "bootstrap_ci95_high": 0.5246893493744811,
+      "bootstrap_ci95_low": -0.04004148028120747,
+      "candidate_better_units": 59,
+      "candidate_equal_units": 0,
+      "candidate_model": "scalar_pca1_v2_2_ridge_capped125",
+      "candidate_rmse_mean_by_unit": 18.903669265560573,
+      "candidate_worse_units": 41,
+      "mean_delta_rmse_positive_candidate_better": 0.24721475804420082,
+      "median_delta_rmse_positive_candidate_better": 0.32931177196431616,
+      "paired_effect_size_d": 0.16524521709275747,
+      "unit_count": 100
+    },
+    {
+      "baseline_model": "multichannel_v2_3_ridge_capped125",
+      "baseline_rmse_mean_by_unit": 20.276109110527226,
+      "bootstrap_ci95_high": 2.7480626654885723,
+      "bootstrap_ci95_low": 0.07464827737075999,
+      "candidate_better_units": 58,
+      "candidate_equal_units": 0,
+      "candidate_model": "scalar_pca1_v2_2_ridge_capped125",
+      "candidate_rmse_mean_by_unit": 18.903669265560573,
+      "candidate_worse_units": 42,
+      "mean_delta_rmse_positive_candidate_better": 1.3724398449666553,
+      "median_delta_rmse_positive_candidate_better": 1.2698632482534142,
+      "paired_effect_size_d": 0.19972598158987845,
+      "unit_count": 100
+    }
+  ],
+  "criteria": [
+    {
+      "name": "Tier 7.1d results exist",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/tier7_1d_results.json"
+    },
+    {
+      "name": "Tier 7.1d passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "Tier 7.1d localized target/readout policy",
+      "note": "",
+      "passed": true,
+      "rule": "== compact_failure_partly_readout_or_target_policy",
+      "value": "compact_failure_partly_readout_or_target_policy"
+    },
+    {
+      "name": "candidate present",
+      "note": "",
+      "passed": true,
+      "rule": "in Tier 7.1d per-unit rows",
+      "value": "scalar_pca1_v2_2_ridge_capped125"
+    },
+    {
+      "name": "primary baseline present",
+      "note": "",
+      "passed": true,
+      "rule": "in Tier 7.1d per-unit rows",
+      "value": "lag_multichannel_ridge_capped125"
+    },
+    {
+      "name": "candidate unit count",
+      "note": "",
+      "passed": true,
+      "rule": "== 100",
+      "value": 100
+    },
+    {
+      "name": "summary models present",
+      "note": "",
+      "passed": true,
+      "rule": "contains candidate and primary baseline",
+      "value": [
+        "age_ridge_capped125",
+        "age_ridge_uncapped",
+        "lag_multichannel_ridge_capped125",
+        "multichannel_v2_3_lms_capped125",
+        "multichannel_v2_3_no_update_capped125",
+        "multichannel_v2_3_ridge_capped125",
+        "multichannel_v2_3_shuffled_state_capped125",
+        "raw_multichannel_ridge_capped125",
+        "scalar_pca1_v2_2_ridge_capped125",
+        "scalar_pca1_v2_3_lms_capped125",
+        "scalar_pca1_v2_3_lms_uncapped",
+        "scalar_pca1_v2_3_no_unit_reset_probe_capped125",
+        "scalar_pca1_v2_3_ridge_capped125",
+        "scalar_pca1_v2_3_ridge_uncapped"
+      ]
+    },
+    {
+      "name": "bootstrap count",
+      "note": "",
+      "passed": true,
+      "rule": ">= 1000",
+      "value": 5000
+    },
+    {
+      "name": "primary comparison computed",
+      "note": "",
+      "passed": true,
+      "rule": "== lag_multichannel_ridge_capped125",
+      "value": "lag_multichannel_ridge_capped125"
+    },
+    {
+      "name": "classification computed",
+      "note": "",
+      "passed": true,
+      "rule": "non-empty",
+      "value": "v2_2_capped_signal_not_statistically_confirmed"
+    },
+    {
+      "name": "no baseline freeze authorized",
+      "note": "",
+      "passed": true,
+      "rule": "== false",
+      "value": false
+    },
+    {
+      "name": "no hardware transfer authorized",
+      "note": "",
+      "passed": true,
+      "rule": "== false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 12,
+  "criteria_total": 12,
+  "failed_criteria": [],
+  "generated_at_utc": "2026-05-08T21:28:37+00:00",
+  "next_step": "If the candidate is not confirmed, do not keep tuning C-MAPSS. Move to the next predeclared public benchmark family or a planned general mechanism with its own evidence contract. If confirmed in a later expanded gate, require full C-MAPSS FD001-FD004 and stronger external baselines before any paper usefulness claim.",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1e_20260508_cmapss_capped_readout_fairness_confirmation",
+  "runner_revision": "tier7_1e_cmapss_capped_readout_fairness_confirmation_20260508_0001",
+  "source_tier7_1d": "/Users/james/JKS:CRA/controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/tier7_1d_results.json",
+  "status": "pass",
+  "tier": "Tier 7.1e - C-MAPSS Capped-RUL/Readout Fairness Confirmation"
+}

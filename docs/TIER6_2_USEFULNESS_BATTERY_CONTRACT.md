@@ -578,14 +578,46 @@ not yet a public usefulness claim and needs fairness/statistical confirmation.
 
 ## Immediate Next Action
 
+## Tier 7.1e Result
+
+2026-05-08 result:
+
+```text
+Tier 7.1e — C-MAPSS capped-RUL/readout fairness confirmation
+output: controlled_test_output/tier7_1e_20260508_cmapss_capped_readout_fairness_confirmation/
+status: PASS, 12/12 criteria
+outcome: v2_2_capped_signal_not_statistically_confirmed
+```
+
+Key result:
+
+```text
+candidate: scalar_pca1_v2_2_ridge_capped125
+primary baseline: lag_multichannel_ridge_capped125
+mean delta RMSE, positive means candidate better: -0.3690103080637045
+bootstrap 95% CI: [-1.4191012103865384, 0.6704668696286052]
+effect size d: -0.06884079972999842
+candidate better/worse units: 50/50
+```
+
+Interpretation:
+
+```text
+Tier 7.1e did not confirm the tiny v2.2 capped-ridge C-MAPSS signal. The paired
+per-unit analysis against lag-multichannel ridge crossed zero and split units
+evenly. The current compact C-MAPSS path is therefore non-promoted: no public
+usefulness claim, no mechanism promotion, no baseline freeze, and no
+hardware/native transfer.
+```
+
+## Immediate Next Action
+
 The current next action is:
 
 ```text
-Tier 7.1e — C-MAPSS capped-RUL/readout fairness confirmation.
+Tier 7.1f — next public adapter contract / family selection.
 ```
 
-Determine whether the v2.2 capped-ridge signal is statistically meaningful or
-only a tiny FD001/adapter artifact. Require per-unit paired comparisons,
-bootstrap/confidence intervals, effect sizes, capped-RUL fairness controls, and
-seed/stochastic sensitivity before any public usefulness claim, mechanism
-promotion, or hardware/native transfer.
+Stop tuning C-MAPSS for now. Select the next predeclared public benchmark family
+with official sources, license/source notes, locked preprocessing, leakage
+controls, baselines, metrics, pass/fail criteria, and nonclaims before scoring.

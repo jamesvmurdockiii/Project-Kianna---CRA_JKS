@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-08T21:23:10+00:00.
+Last updated: 2026-05-08T21:30:34+00:00.
 
 Current repo root:
 
@@ -122,6 +122,25 @@ Tier 7.1d = COMPLETE, PASS, 14/14 criteria
   Boundary: software failure analysis only; not a full C-MAPSS benchmark, not a
             public usefulness win, not a promoted mechanism, not a baseline
             freeze, and not hardware/native transfer evidence.
+```
+
+Latest public adapter fairness confirmation:
+
+```text
+Tier 7.1e = COMPLETE, PASS, 12/12 criteria
+  Source: controlled_test_output/tier7_1e_20260508_cmapss_capped_readout_fairness_confirmation/
+  Runner: experiments/tier7_1e_cmapss_capped_readout_fairness_confirmation.py
+  Outcome: v2_2_capped_signal_not_statistically_confirmed
+  Candidate: scalar_pca1_v2_2_ridge_capped125
+  Primary baseline: lag_multichannel_ridge_capped125
+  Primary per-unit mean delta RMSE, positive means candidate better:
+    -0.3690103080637045
+  Bootstrap 95% CI: [-1.4191012103865384, 0.6704668696286052]
+  Effect size d: -0.06884079972999842
+  Boundary: statistical/fairness confirmation over Tier 7.1d per-unit results
+            only; not a full C-MAPSS benchmark, not a public usefulness win,
+            not a promoted mechanism, not a baseline freeze, and not
+            hardware/native transfer evidence.
 ```
 
 Current hardware/runtime baseline decision:
@@ -604,13 +623,19 @@ Tier 7.1d — COMPLETE. C-MAPSS failure analysis / adapter repair.
     v2.2 ridge capped narrowly beat lag-multichannel ridge, while v2.3 still did
     not win. No freeze or hardware transfer.
 
-Tier 7.1e — CURRENT ACTIVE STEP. C-MAPSS capped-RUL/readout fairness
-confirmation.
-  Required first move: decide whether the v2.2 capped-ridge signal is
-    statistically meaningful or just a tiny FD001/adapter artifact. Use
-    per-unit paired comparisons, bootstrap/confidence intervals, effect sizes,
-    and fair capped-RUL baselines before any public usefulness claim, mechanism
-    promotion, or native transfer.
+Tier 7.1e — COMPLETE. C-MAPSS capped-RUL/readout fairness confirmation.
+  Status: LOCAL SOFTWARE PASS, 12/12 criteria.
+  Output: controlled_test_output/tier7_1e_20260508_cmapss_capped_readout_fairness_confirmation/
+  Result: the tiny v2.2 capped-ridge signal was not statistically confirmed
+    against lag-multichannel ridge under paired per-unit bootstrap analysis. No
+    freeze or hardware transfer.
+
+Tier 7.1f — CURRENT ACTIVE STEP. Next public adapter contract / family
+selection.
+  Required first move: stop tuning C-MAPSS for now and select the next
+    predeclared public benchmark family with fixed official sources, license /
+    source notes, preprocessing, leakage rules, baseline set, metrics, pass/fail
+    criteria, and nonclaims before any scoring.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware

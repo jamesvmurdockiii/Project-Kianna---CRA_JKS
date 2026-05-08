@@ -1,0 +1,13 @@
+criterion,passed,value,rule
+Tier 7.1d results exist,True,/Users/james/JKS:CRA/controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/tier7_1d_results.json,exists
+Tier 7.1d passed,True,pass,== pass
+Tier 7.1d localized target/readout policy,True,compact_failure_partly_readout_or_target_policy,== compact_failure_partly_readout_or_target_policy
+candidate present,True,scalar_pca1_v2_2_ridge_capped125,in Tier 7.1d per-unit rows
+primary baseline present,True,lag_multichannel_ridge_capped125,in Tier 7.1d per-unit rows
+candidate unit count,True,100,== 100
+summary models present,True,"['age_ridge_capped125', 'age_ridge_uncapped', 'lag_multichannel_ridge_capped125', 'multichannel_v2_3_lms_capped125', 'multichannel_v2_3_no_update_capped125', 'multichannel_v2_3_ridge_capped125', 'multichannel_v2_3_shuffled_state_capped125', 'raw_multichannel_ridge_capped125', 'scalar_pca1_v2_2_ridge_capped125', 'scalar_pca1_v2_3_lms_capped125', 'scalar_pca1_v2_3_lms_uncapped', 'scalar_pca1_v2_3_no_unit_reset_probe_capped125', 'scalar_pca1_v2_3_ridge_capped125', 'scalar_pca1_v2_3_ridge_uncapped']",contains candidate and primary baseline
+bootstrap count,True,5000,>= 1000
+primary comparison computed,True,lag_multichannel_ridge_capped125,== lag_multichannel_ridge_capped125
+classification computed,True,v2_2_capped_signal_not_statistically_confirmed,non-empty
+no baseline freeze authorized,True,False,== false
+no hardware transfer authorized,True,False,== false
