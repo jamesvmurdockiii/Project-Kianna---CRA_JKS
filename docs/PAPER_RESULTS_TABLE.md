@@ -4,11 +4,11 @@ This table is generated from `controlled_test_output/STUDY_REGISTRY.json`.
 It is intended as a paper/technical-note citation table, not as a new
 source of claims. If the registry changes, regenerate this file.
 
-- Generated: `2026-05-08T21:16:28.519011+00:00`
-- Registry generated: `2026-05-08T21:16:28.309493+00:00`
+- Generated: `2026-05-08T21:26:18.469150+00:00`
+- Registry generated: `2026-05-08T21:26:18.354313+00:00`
 - Registry status: **PASS**
-- Canonical bundles: `91`
-- Expanded entries: `91`
+- Canonical bundles: `92`
+- Expanded entries: `92`
 
 ## Summary Table
 
@@ -74,6 +74,7 @@ source of claims. If the registry changes, regenerate this file.
 | `tier7_1a_realish_adapter_contract` | PASS | see manifest | Tier 7.1a - Real-ish/Public Adapter Contract |  | Contract evidence only; not a dataset run, not public usefulness evidence, not a baseline freeze, not hardware/native transfer, and not AGI/ASI evidence. | results: `controlled_test_output/tier7_1a_20260508_realish_adapter_contract/tier7_1a_results.json`; report: `controlled_test_output/tier7_1a_20260508_realish_adapter_contract/tier7_1a_report.md`; summary: `controlled_test_output/tier7_1a_20260508_realish_adapter_contract/tier7_1a_summary.csv` |
 | `tier7_1b_cmapss_source_data_preflight` | PASS | see manifest | Tier 7.1b - NASA C-MAPSS Source/Data Preflight |  | Preflight evidence only; not C-MAPSS scoring, not public usefulness evidence, not a baseline freeze, not hardware/native transfer, and not AGI/ASI evidence. | results: `controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_results.json`; report: `controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_report.md`; summary: `controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_summary.csv` |
 | `tier7_1c_cmapss_fd001_scoring_gate` | PASS | see manifest | Tier 7.1c - Compact C-MAPSS FD001 Scoring Gate |  | Compact scalar-adapter software evidence only; not a full C-MAPSS benchmark, not a public usefulness win, not a baseline freeze, not hardware/native transfer, and not AGI/ASI evidence. | results: `controlled_test_output/tier7_1c_20260508_cmapss_fd001_scoring_gate/tier7_1c_results.json`; report: `controlled_test_output/tier7_1c_20260508_cmapss_fd001_scoring_gate/tier7_1c_report.md`; summary: `controlled_test_output/tier7_1c_20260508_cmapss_fd001_scoring_gate/tier7_1c_summary.csv` |
+| `tier7_1d_cmapss_failure_analysis_adapter_repair` | PASS | see manifest | Tier 7.1d - C-MAPSS Failure Analysis / Adapter Repair |  | Software failure-analysis evidence only; not a full C-MAPSS benchmark, not a public usefulness win, not a promoted mechanism, not a baseline freeze, not hardware/native transfer, and not AGI/ASI evidence. | results: `controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/tier7_1d_results.json`; report: `controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/tier7_1d_report.md`; summary: `controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/tier7_1d_summary.csv` |
 | `tier4_30_readiness_lifecycle_native_audit` | PASS | see manifest | Tier 4.30-readiness - Lifecycle-Native Preflight / Layering Audit |  | Engineering audit only; not lifecycle implementation, not hardware evidence, not speedup, not multi-chip scaling, and not native v2.2 temporal migration. | results: `controlled_test_output/tier4_30_readiness_20260505_lifecycle_native_audit/tier4_30_readiness_results.json`; report: `controlled_test_output/tier4_30_readiness_20260505_lifecycle_native_audit/tier4_30_readiness_report.md`; summary: `` |
 | `tier4_30_lifecycle_native_contract` | PASS | see manifest | Tier 4.30 - Lifecycle-Native Static-Pool Contract |  | Local engineering contract only; not runtime implementation, not hardware evidence, not lifecycle/self-scaling proof, and not v2.2 temporal migration. | results: `controlled_test_output/tier4_30_20260505_lifecycle_native_contract/tier4_30_contract_results.json`; report: `controlled_test_output/tier4_30_20260505_lifecycle_native_contract/tier4_30_contract_report.md`; summary: `` |
 | `tier4_30a_static_pool_lifecycle_reference` | PASS | see manifest | Tier 4.30a - Local Static-Pool Lifecycle Reference |  | Local deterministic reference only; not runtime C, not hardware evidence, not task benefit, not lifecycle baseline freeze, and not v2.2 temporal-state migration. | results: `controlled_test_output/tier4_30a_20260505_static_pool_lifecycle_reference/tier4_30a_results.json`; report: `controlled_test_output/tier4_30a_20260505_static_pool_lifecycle_reference/tier4_30a_report.md`; summary: `controlled_test_output/tier4_30a_20260505_static_pool_lifecycle_reference/tier4_30a_control_summary.csv` |

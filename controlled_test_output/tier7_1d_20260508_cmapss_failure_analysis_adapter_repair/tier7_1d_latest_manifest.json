@@ -1,0 +1,57 @@
+{
+  "artifacts": [
+    {
+      "bytes": 370,
+      "name": "factor_analysis_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/tier7_1d_factor_analysis.csv",
+      "sha256": "d11ab36239bbe9bb40b1ca2a1abfe92cb5a1f6cc91a37f81c1c5cebae15b5fde"
+    },
+    {
+      "bytes": 199785,
+      "name": "model_metrics_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/tier7_1d_model_metrics.csv",
+      "sha256": "f7fa8718cf97b490450473aa18ec7def982813c96243dd7311eaf8b7c94a4074"
+    },
+    {
+      "bytes": 2467,
+      "name": "model_summary_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/tier7_1d_model_summary.csv",
+      "sha256": "0414a37475ecd43de8e10160dec1bd71cbe113b30733a915f11107360865a5ee"
+    },
+    {
+      "bytes": 333128,
+      "name": "per_unit_metrics_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/tier7_1d_per_unit_metrics.csv",
+      "sha256": "b5828ea579264403b08cee2a0a2801bc239a333903096504349da045b0316068"
+    },
+    {
+      "bytes": 1436,
+      "name": "report_md",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/tier7_1d_report.md",
+      "sha256": "c6a8de8a83e029972b57cdeb2a6f492acae7e368b23ecb26b1d3cbd962cde05d"
+    },
+    {
+      "bytes": 16145,
+      "name": "results_json",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/tier7_1d_results.json",
+      "sha256": "90bff9891e2d3ad95995392761828fdf72209dbc4cc6610cf16e2ccfa1e13196"
+    },
+    {
+      "bytes": 587,
+      "name": "selected_channels_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/tier7_1d_selected_channels.csv",
+      "sha256": "c48cb01611c17152e273ae297d184ff28f668bcb914eb58d37becbbd2b1564c7"
+    },
+    {
+      "bytes": 1855,
+      "name": "summary_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/tier7_1d_summary.csv",
+      "sha256": "27372ccb56e7db1910252292ca4e89f28eb3163b4667629b6d7f77fcea3c34a4"
+    }
+  ],
+  "generated_at_utc": "2026-05-08T21:20:55+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair",
+  "runner_revision": "tier7_1c_cmapss_fd001_scoring_gate_20260508_0001",
+  "status": "pass",
+  "tier": "Tier 7.1c - Compact C-MAPSS FD001 Scoring Gate"
+}

@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-08T21:10:00+00:00.
+Last updated: 2026-05-08T21:23:10+00:00.
 
 Current repo root:
 
@@ -101,6 +101,27 @@ Tier 7.1c = COMPLETE, PASS, 12/12 criteria
   Boundary: compact scalar-adapter software scoring only; not a full C-MAPSS
             benchmark, not a public usefulness win, not a baseline freeze, and
             not hardware/native transfer evidence.
+```
+
+Latest public adapter failure analysis:
+
+```text
+Tier 7.1d = COMPLETE, PASS, 14/14 criteria
+  Source: controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/
+  Runner: experiments/tier7_1d_cmapss_failure_analysis_adapter_repair.py
+  Outcome: compact_failure_partly_readout_or_target_policy
+  Best promotable model: scalar_pca1_v2_2_ridge_capped125,
+                         test RMSE 20.271418942340336
+  Best public baseline: lag_multichannel_ridge_capped125,
+                        test RMSE 20.305268771358435
+  v2.3 scalar ridge capped: test RMSE 20.688665138670245
+  multichannel v2.3 ridge capped: test RMSE 22.697166948526846
+  Interpretation: the compact 7.1c failure was mostly target/readout-policy
+                  related. Multichannel v2.3 was sham-separated but did not
+                  beat the scalar repair or fair public baselines.
+  Boundary: software failure analysis only; not a full C-MAPSS benchmark, not a
+            public usefulness win, not a promoted mechanism, not a baseline
+            freeze, and not hardware/native transfer evidence.
 ```
 
 Current hardware/runtime baseline decision:
@@ -576,11 +597,20 @@ Tier 7.1c — COMPLETE. Compact C-MAPSS FD001 scoring gate.
     scoring; it ranked 5th and did not beat v2.2 or the monotone age baseline.
     No freeze or hardware transfer.
 
-Tier 7.1d — CURRENT ACTIVE STEP. C-MAPSS failure analysis / adapter repair.
-  Required first move: determine whether 7.1c failed because of the scalar PCA1
-    adapter, train-prefix readout, missing multichannel interface, target policy,
-    or a real CRA limitation. Do not add mechanisms or move hardware until the
-    failure mode is localized.
+Tier 7.1d — COMPLETE. C-MAPSS failure analysis / adapter repair.
+  Status: LOCAL SOFTWARE PASS, 14/14 criteria.
+  Output: controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/
+  Result: capped RUL plus ridge readout repaired the compact scalar failure;
+    v2.2 ridge capped narrowly beat lag-multichannel ridge, while v2.3 still did
+    not win. No freeze or hardware transfer.
+
+Tier 7.1e — CURRENT ACTIVE STEP. C-MAPSS capped-RUL/readout fairness
+confirmation.
+  Required first move: decide whether the v2.2 capped-ridge signal is
+    statistically meaningful or just a tiny FD001/adapter artifact. Use
+    per-unit paired comparisons, bootstrap/confidence intervals, effect sizes,
+    and fair capped-RUL baselines before any public usefulness claim, mechanism
+    promotion, or native transfer.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware

@@ -82,10 +82,13 @@ normalization, prediction-before-update stream ordering, and label-separated
 smoke artifacts. Tier 7.1c then passed at
 `controlled_test_output/tier7_1c_20260508_cmapss_fd001_scoring_gate/`, but it
 narrowed the claim: v2.3 ranked fifth under the compact scalar FD001 adapter
-and did not beat v2.2 or the monotone age baseline. The next active project
-step is Tier 7.1d C-MAPSS failure analysis / adapter repair; no hardware
-transfer or native migration is authorized until public-adapter software
-usefulness or a promoted mechanism earns a separate evidence contract.
+and did not beat v2.2 or the monotone age baseline. Tier 7.1d then passed at
+`controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/`,
+localizing the gap mostly to target/readout policy: capped RUL plus ridge
+readout repaired scalar scoring, but v2.3 still did not win. The next active
+project step is Tier 7.1e C-MAPSS capped-RUL/readout fairness confirmation; no
+hardware transfer or native migration is authorized until public-adapter
+software usefulness or a promoted mechanism earns a separate evidence contract.
 
 Tier 4.32a-hw prepare has also passed locally. The current EBRAINS upload
 folder is `ebrains_jobs/cra_432a_hw`, and the exact JobManager command is

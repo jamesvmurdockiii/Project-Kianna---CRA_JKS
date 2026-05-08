@@ -3741,8 +3741,10 @@ source/data preflight, verifying official access, checksums, schema,
 train-only normalization, prediction-before-update ordering, and
 label-separated smoke artifacts. Tier 7.1c then passed compact C-MAPSS FD001
 scoring but narrowed the claim: v2.3 ranked 5th and did not beat v2.2 or the
-monotone age baseline. The next step is Tier 7.1d failure analysis / adapter
-repair before any public usefulness claim or native transfer.
+monotone age baseline. Tier 7.1d then localized the gap mostly to target/readout
+policy: capped RUL plus ridge readout repaired scalar scoring, but v2.3 still
+did not win. The next step is Tier 7.1e capped-RUL/readout fairness
+confirmation before any public usefulness claim or native transfer.
 ```
 
 ### Tier 6.2: Diagnostic Hard Task Suite
@@ -3794,6 +3796,7 @@ Current status:
 Tier 7.1a — real-ish/public adapter contract: COMPLETE, PASS 12/12
 Tier 7.1b — NASA C-MAPSS source/data preflight: COMPLETE, PASS 16/16
 Tier 7.1c — compact C-MAPSS FD001 scoring gate: COMPLETE, PASS 12/12
+Tier 7.1d — C-MAPSS failure analysis / adapter repair: COMPLETE, PASS 14/14
 ```
 
 Result:
@@ -3814,6 +3817,13 @@ Outcome: v2_3_no_public_adapter_advantage
 Best model: monotone_age_to_rul_ridge, RMSE 46.10944999532139
 v2.3: rank 5, RMSE 49.4908802462679
 v2.2: RMSE 48.739451335025144
+
+Output: controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/
+Outcome: compact_failure_partly_readout_or_target_policy
+Best promotable: scalar_pca1_v2_2_ridge_capped125, RMSE 20.271418942340336
+Best public baseline: lag_multichannel_ridge_capped125, RMSE 20.305268771358435
+v2.3 scalar ridge capped: RMSE 20.688665138670245
+v2.3 multichannel ridge capped: RMSE 22.697166948526846
 ```
 
 Interpretation:
@@ -3823,24 +3833,28 @@ Tier 7.1a predeclared the first public/real-ish adapter family for testing the
 Tier 6.2a variable-delay signal outside private diagnostics. Tier 7.1b proved
 the source/data preflight is reproducible enough to run compact scoring. Tier
 7.1c did not show v2.3 public-adapter advantage under the compact scalar PCA1
-FD001 setup. None of these tiers authorizes a freeze or native transfer.
+FD001 setup. Tier 7.1d localized most of that compact failure to target/readout
+policy: capped RUL plus ridge readout repaired scalar scoring, but v2.3 still
+did not win and multichannel v2.3 did not beat scalar repair or fair public
+baselines. None of these tiers authorizes a freeze or native transfer.
 ```
 
 Current next step:
 
 ```text
-Tier 7.1d — C-MAPSS failure analysis / adapter repair
+Tier 7.1e — C-MAPSS capped-RUL/readout fairness confirmation
 ```
 
-Tier 7.1d must determine whether the failure came from:
+Tier 7.1e must determine whether the v2.2 capped-ridge signal is statistically
+meaningful or only a tiny FD001/adapter artifact. It must include:
 
 ```text
-scalar PCA1 adapter losing multichannel sensor structure
-train-prefix readout being too weak for RUL
-uncapped RUL target policy
-unit-boundary reset policy
-missing multichannel CRA interface
-actual v2.3 limitation on this public adapter
+per-unit paired comparisons
+bootstrap/confidence intervals
+effect sizes versus lag-multichannel and age baselines
+capped-RUL fairness controls
+seed/stochastic sensitivity
+explicit no-freeze/no-hardware boundary unless the effect survives
 ```
 
 Tier 7.1a predeclared these candidate/future adapter families:
@@ -7280,7 +7294,23 @@ Boundary: compact scalar-adapter software scoring only, not a full C-MAPSS
           and not hardware/native transfer.
 ```
 
-Next: Implement Tier 7.1d C-MAPSS failure analysis / adapter repair. Determine whether 7.1c failed because of scalar PCA1 compression, train-prefix readout policy, uncapped target policy, unit-boundary reset assumptions, missing multichannel CRA interface, or a real v2.3 limitation. Do not claim public usefulness or move to native/on-chip transfer unless a later public-adapter gate beats or complements fair baselines under the predeclared boundary. Use `CRA_NATIVE_SCALE_BASELINE_v0.5` only as the frozen native substrate reference, not as usefulness evidence.
+Tier 7.1d result:
+
+```text
+Output: controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/
+Status: pass
+Criteria: 14/14
+Outcome: compact_failure_partly_readout_or_target_policy
+Best promotable model: scalar_pca1_v2_2_ridge_capped125, RMSE 20.271418942340336
+Best public baseline: lag_multichannel_ridge_capped125, RMSE 20.305268771358435
+v2.3 scalar ridge capped: RMSE 20.688665138670245
+v2.3 multichannel ridge capped: RMSE 22.697166948526846
+Boundary: software failure analysis only, not a full C-MAPSS benchmark, not a
+          public usefulness win, not a promoted mechanism, not a baseline
+          freeze, and not hardware/native transfer.
+```
+
+Next: Implement Tier 7.1e C-MAPSS capped-RUL/readout fairness confirmation. Do not claim public usefulness or move to native/on-chip transfer unless a later public-adapter gate beats or complements fair baselines under the predeclared boundary with meaningful effect size/statistical support. Use `CRA_NATIVE_SCALE_BASELINE_v0.5` only as the frozen native substrate reference, not as usefulness evidence.
 
 Detailed Tier 5.19 contract:
 

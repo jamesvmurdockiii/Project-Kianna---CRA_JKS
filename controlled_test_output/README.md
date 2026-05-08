@@ -5,10 +5,10 @@ ledger is `STUDY_REGISTRY.json`; the compact table is `STUDY_REGISTRY.csv`.
 Older reruns, prepared capsules, debug probes, and baseline-frozen
 mechanism bundles outside the formal registry are preserved for audit.
 
-- Generated: `2026-05-08T21:16:28.309493+00:00`
+- Generated: `2026-05-08T21:26:18.354313+00:00`
 - Registry status: **PASS**
-- Canonical evidence entries: `91`
-- Expanded test-entry count: `91`; see the canonical evidence table below for the exact current tier list.
+- Canonical evidence entries: `92`
+- Expanded test-entry count: `92`; see the canonical evidence table below for the exact current tier list.
 
 ## Evidence Categories
 
@@ -82,6 +82,7 @@ mechanism bundles outside the formal registry are preserved for audit.
 | `tier7_1a_realish_adapter_contract` | **PASS** | `controlled_test_output/tier7_1a_20260508_realish_adapter_contract` | Contract evidence only; not a dataset run, not public usefulness evidence, not a baseline freeze, not hardware/native transfer, and not AGI/ASI evidence. |
 | `tier7_1b_cmapss_source_data_preflight` | **PASS** | `controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight` | Preflight evidence only; not C-MAPSS scoring, not public usefulness evidence, not a baseline freeze, not hardware/native transfer, and not AGI/ASI evidence. |
 | `tier7_1c_cmapss_fd001_scoring_gate` | **PASS** | `controlled_test_output/tier7_1c_20260508_cmapss_fd001_scoring_gate` | Compact scalar-adapter software evidence only; not a full C-MAPSS benchmark, not a public usefulness win, not a baseline freeze, not hardware/native transfer, and not AGI/ASI evidence. |
+| `tier7_1d_cmapss_failure_analysis_adapter_repair` | **PASS** | `controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair` | Software failure-analysis evidence only; not a full C-MAPSS benchmark, not a public usefulness win, not a promoted mechanism, not a baseline freeze, not hardware/native transfer, and not AGI/ASI evidence. |
 | `tier4_30_readiness_lifecycle_native_audit` | **PASS** | `controlled_test_output/tier4_30_readiness_20260505_lifecycle_native_audit` | Engineering audit only; not lifecycle implementation, not hardware evidence, not speedup, not multi-chip scaling, and not native v2.2 temporal migration. |
 | `tier4_30_lifecycle_native_contract` | **PASS** | `controlled_test_output/tier4_30_20260505_lifecycle_native_contract` | Local engineering contract only; not runtime implementation, not hardware evidence, not lifecycle/self-scaling proof, and not v2.2 temporal migration. |
 | `tier4_30a_static_pool_lifecycle_reference` | **PASS** | `controlled_test_output/tier4_30a_20260505_static_pool_lifecycle_reference` | Local deterministic reference only; not runtime C, not hardware evidence, not task benefit, not lifecycle baseline freeze, and not v2.2 temporal-state migration. |

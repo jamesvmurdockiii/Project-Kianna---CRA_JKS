@@ -10701,3 +10701,70 @@ the RUL target/reset policy is mismatched, because CRA needs a multichannel
 public-adapter interface, or because v2.3 genuinely has no useful signal for
 this adapter.
 ```
+
+### Tier 7.1d - C-MAPSS Failure Analysis / Adapter Repair
+
+Runner:
+
+```text
+experiments/tier7_1d_cmapss_failure_analysis_adapter_repair.py
+```
+
+Output:
+
+```text
+controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/
+```
+
+Status:
+
+```text
+PASS
+criteria: 14/14
+outcome: compact_failure_partly_readout_or_target_policy
+```
+
+Key result:
+
+```text
+best promotable model: scalar_pca1_v2_2_ridge_capped125
+best promotable test RMSE: 20.271418942340336
+best public baseline: lag_multichannel_ridge_capped125
+best public baseline test RMSE: 20.305268771358435
+scalar v2.3 LMS uncapped RMSE: 49.4908802462679
+scalar v2.3 ridge uncapped RMSE: 43.435416241039015
+scalar v2.3 LMS capped RMSE: 26.32185603140849
+scalar v2.3 ridge capped RMSE: 20.688665138670245
+multichannel v2.3 ridge capped RMSE: 22.697166948526846
+multichannel state sham separation delta RMSE: 12.995250110072181
+```
+
+Interpretation:
+
+```text
+Tier 7.1d localized the compact Tier 7.1c gap mostly to target/readout policy.
+Capped RUL plus ridge readout repaired scalar scoring substantially. However,
+v2.3 still did not win, and multichannel v2.3 did not beat scalar repair or fair
+public baselines. The v2.2 capped-ridge signal is narrow and tiny relative to
+lag-multichannel ridge, so it requires a separate fairness/statistical
+confirmation gate before any usefulness claim.
+```
+
+Claim boundary:
+
+```text
+Tier 7.1d is software failure analysis only. It is not a full C-MAPSS benchmark,
+not a public usefulness win, not a promoted mechanism, not a baseline freeze,
+not hardware/native transfer, and not AGI/ASI evidence. Continuous no-reset
+probes are diagnostic only and not promotable C-MAPSS claims.
+```
+
+Next required step:
+
+```text
+Tier 7.1e - C-MAPSS capped-RUL/readout fairness confirmation.
+Determine whether the v2.2 capped-ridge signal is statistically meaningful or a
+tiny FD001/adapter artifact using per-unit paired comparisons, bootstrap or
+confidence intervals, effect sizes, capped-RUL fairness controls, and seed /
+stochastic sensitivity.
+```

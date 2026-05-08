@@ -1,0 +1,544 @@
+{
+  "claim_boundary": "Tier 7.1d is software failure analysis / adapter repair only. It is not a full C-MAPSS benchmark, not a new CRA mechanism, not a baseline freeze, not hardware/native transfer, and not AGI/ASI evidence. Continuous no-reset probes are diagnostic only and are not promotable C-MAPSS claims.",
+  "classification": {
+    "best_promotable_model": "scalar_pca1_v2_2_ridge_capped125",
+    "best_promotable_rmse": 20.271418942340336,
+    "best_public_baseline": "lag_multichannel_ridge_capped125",
+    "best_public_baseline_rmse": 20.305268771358435,
+    "freeze_authorized": false,
+    "hardware_transfer_authorized": false,
+    "multichannel_beats_best_public_baseline": false,
+    "multichannel_beats_scalar": false,
+    "multichannel_sham_separated": true,
+    "multichannel_sham_separation_delta_rmse": 12.995250110072181,
+    "multichannel_v2_3_ridge_capped_rmse": 22.697166948526846,
+    "multichannel_v2_3_shuffled_capped_rmse": 35.69241705859903,
+    "outcome": "compact_failure_partly_readout_or_target_policy",
+    "readout_repair_delta_rmse": 6.055464005228885,
+    "scalar_to_multichannel_delta_rmse": -2.0085018098566003,
+    "scalar_v2_3_lms_capped_rmse": 26.32185603140849,
+    "scalar_v2_3_lms_uncapped_rmse": 49.4908802462679,
+    "scalar_v2_3_ridge_capped_rmse": 20.688665138670245,
+    "scalar_v2_3_ridge_uncapped_rmse": 43.435416241039015,
+    "target_policy_delta_rmse": 23.16902421485941
+  },
+  "criteria": [
+    {
+      "name": "Tier 7.1b preflight exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_results.json"
+    },
+    {
+      "name": "Tier 7.1b preflight passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "Tier 7.1c scoring exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_1c_20260508_cmapss_fd001_scoring_gate/tier7_1c_results.json"
+    },
+    {
+      "name": "Tier 7.1c outcome was negative",
+      "note": "",
+      "passed": true,
+      "rule": "== v2_3_no_public_adapter_advantage",
+      "value": "v2_3_no_public_adapter_advantage"
+    },
+    {
+      "name": "all diagnostic models ran",
+      "note": "",
+      "passed": true,
+      "rule": "contains required models",
+      "value": [
+        "age_ridge_capped125",
+        "age_ridge_uncapped",
+        "lag_multichannel_ridge_capped125",
+        "multichannel_v2_3_lms_capped125",
+        "multichannel_v2_3_no_update_capped125",
+        "multichannel_v2_3_ridge_capped125",
+        "multichannel_v2_3_shuffled_state_capped125",
+        "raw_multichannel_ridge_capped125",
+        "scalar_pca1_v2_2_ridge_capped125",
+        "scalar_pca1_v2_3_lms_capped125",
+        "scalar_pca1_v2_3_lms_uncapped",
+        "scalar_pca1_v2_3_no_unit_reset_probe_capped125",
+        "scalar_pca1_v2_3_ridge_capped125",
+        "scalar_pca1_v2_3_ridge_uncapped"
+      ]
+    },
+    {
+      "name": "metrics finite",
+      "note": "",
+      "passed": true,
+      "rule": "all model RMSE finite",
+      "value": true
+    },
+    {
+      "name": "selected channels bounded",
+      "note": "",
+      "passed": true,
+      "rule": "1..12",
+      "value": 12
+    },
+    {
+      "name": "no test readout updates",
+      "note": "",
+      "passed": true,
+      "rule": "all 0 or None",
+      "value": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "target policy probe present",
+      "note": "",
+      "passed": true,
+      "rule": "present",
+      "value": [
+        "age_ridge_uncapped",
+        "age_ridge_capped125",
+        "scalar_pca1_v2_3_lms_capped125"
+      ]
+    },
+    {
+      "name": "readout policy probe present",
+      "note": "",
+      "passed": true,
+      "rule": "present",
+      "value": [
+        "scalar_pca1_v2_3_lms_uncapped",
+        "scalar_pca1_v2_3_ridge_uncapped"
+      ]
+    },
+    {
+      "name": "multichannel probe and sham present",
+      "note": "",
+      "passed": true,
+      "rule": "present",
+      "value": [
+        "multichannel_v2_3_ridge_capped125",
+        "multichannel_v2_3_shuffled_state_capped125"
+      ]
+    },
+    {
+      "name": "classification computed",
+      "note": "",
+      "passed": true,
+      "rule": "non-empty",
+      "value": "compact_failure_partly_readout_or_target_policy"
+    },
+    {
+      "name": "no baseline freeze authorized",
+      "note": "",
+      "passed": true,
+      "rule": "== false",
+      "value": false
+    },
+    {
+      "name": "no hardware transfer authorized",
+      "note": "",
+      "passed": true,
+      "rule": "== false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 14,
+  "criteria_total": 14,
+  "factor_analysis": [
+    {
+      "delta_rmse_positive_is_better": 6.055464005228885,
+      "factor": "readout_policy",
+      "interpretation": "ridge readout improves scalar v2.3 uncapped"
+    },
+    {
+      "delta_rmse_positive_is_better": 23.16902421485941,
+      "factor": "target_policy",
+      "interpretation": "capped RUL improves scalar v2.3 LMS"
+    },
+    {
+      "delta_rmse_positive_is_better": -2.0085018098566003,
+      "factor": "multichannel_adapter",
+      "interpretation": "multichannel adapter did not clear scalar repair threshold"
+    },
+    {
+      "delta_rmse_positive_is_better": 12.995250110072181,
+      "factor": "sham_specificity",
+      "interpretation": "multichannel state is sham-separated"
+    }
+  ],
+  "failed_criteria": [],
+  "fd001_profile": {
+    "adapter_signal": "train-only PCA1 over operational settings plus sensors",
+    "column_count": 26,
+    "raw_rul_policy": "RUL capped at 125 for failure-analysis target-policy probe",
+    "rul_labels": 100,
+    "target_mu_train_only": 86.82928602588338,
+    "target_sd_train_only": 41.67268886461814,
+    "test_rows": 13096,
+    "test_units": 100,
+    "train_rows": 20631,
+    "train_units": 100
+  },
+  "generated_at_utc": "2026-05-08T21:20:55+00:00",
+  "model_summary": [
+    {
+      "model": "scalar_pca1_v2_2_ridge_capped125",
+      "rank_by_test_rmse": 1,
+      "runs": 3,
+      "tail_rmse_mean": 15.701496054905617,
+      "test_corr_mean": 0.7316094104358317,
+      "test_mae_mean": 16.944739746909608,
+      "test_rmse_mean": 20.271418942340336,
+      "test_rmse_median": 20.271418942340336,
+      "test_rmse_worst_seed": 20.271418942340336,
+      "worst_unit_rmse_mean": 37.041624266027995
+    },
+    {
+      "model": "lag_multichannel_ridge_capped125",
+      "rank_by_test_rmse": 2,
+      "runs": 3,
+      "tail_rmse_mean": 25.457398418716064,
+      "test_corr_mean": 0.6986396888897907,
+      "test_mae_mean": 16.340529135059676,
+      "test_rmse_mean": 20.305268771358435,
+      "test_rmse_median": 20.305268771358435,
+      "test_rmse_worst_seed": 20.305268771358435,
+      "worst_unit_rmse_mean": 46.454083658516986
+    },
+    {
+      "model": "scalar_pca1_v2_3_ridge_capped125",
+      "rank_by_test_rmse": 3,
+      "runs": 3,
+      "tail_rmse_mean": 16.316177261130967,
+      "test_corr_mean": 0.7231589537264947,
+      "test_mae_mean": 17.198187104278706,
+      "test_rmse_mean": 20.688665138670245,
+      "test_rmse_median": 20.61000454510918,
+      "test_rmse_worst_seed": 21.171756292314814,
+      "worst_unit_rmse_mean": 40.43959144343949
+    },
+    {
+      "model": "multichannel_v2_3_lms_capped125",
+      "rank_by_test_rmse": 4,
+      "runs": 3,
+      "tail_rmse_mean": 20.90463698090311,
+      "test_corr_mean": 0.7094283179977928,
+      "test_mae_mean": 17.92197871622732,
+      "test_rmse_mean": 21.352105885832696,
+      "test_rmse_median": 21.434099596419284,
+      "test_rmse_worst_seed": 21.567041574676733,
+      "worst_unit_rmse_mean": 33.55058855175964
+    },
+    {
+      "model": "raw_multichannel_ridge_capped125",
+      "rank_by_test_rmse": 5,
+      "runs": 3,
+      "tail_rmse_mean": 26.657348082546594,
+      "test_corr_mean": 0.633269742654877,
+      "test_mae_mean": 18.205854353895877,
+      "test_rmse_mean": 22.58392406473882,
+      "test_rmse_median": 22.58392406473882,
+      "test_rmse_worst_seed": 22.58392406473882,
+      "worst_unit_rmse_mean": 43.914937328487355
+    },
+    {
+      "model": "multichannel_v2_3_ridge_capped125",
+      "rank_by_test_rmse": 6,
+      "runs": 3,
+      "tail_rmse_mean": 20.84482310974952,
+      "test_corr_mean": 0.6937050740645944,
+      "test_mae_mean": 18.139302857129973,
+      "test_rmse_mean": 22.697166948526846,
+      "test_rmse_median": 22.656201493702394,
+      "test_rmse_worst_seed": 22.916347990763494,
+      "worst_unit_rmse_mean": 46.38284036565344
+    },
+    {
+      "model": "age_ridge_capped125",
+      "rank_by_test_rmse": 7,
+      "runs": 3,
+      "tail_rmse_mean": 38.93573491776769,
+      "test_corr_mean": 0.6239850014067491,
+      "test_mae_mean": 18.603256402651503,
+      "test_rmse_mean": 24.428220490413413,
+      "test_rmse_median": 24.428220490413413,
+      "test_rmse_worst_seed": 24.428220490413413,
+      "worst_unit_rmse_mean": 49.95852345072876
+    },
+    {
+      "model": "scalar_pca1_v2_3_no_unit_reset_probe_capped125",
+      "rank_by_test_rmse": 8,
+      "runs": 3,
+      "tail_rmse_mean": 18.053307758394,
+      "test_corr_mean": 0.646449728905254,
+      "test_mae_mean": 20.08123042467082,
+      "test_rmse_mean": 25.204720409283627,
+      "test_rmse_median": 25.503636539953266,
+      "test_rmse_worst_seed": 26.71356113635702,
+      "worst_unit_rmse_mean": 62.03897316138799
+    },
+    {
+      "model": "scalar_pca1_v2_3_lms_capped125",
+      "rank_by_test_rmse": 9,
+      "runs": 3,
+      "tail_rmse_mean": 20.30531132243314,
+      "test_corr_mean": 0.6631651525144662,
+      "test_mae_mean": 21.502968795769945,
+      "test_rmse_mean": 26.32185603140849,
+      "test_rmse_median": 26.424235507262047,
+      "test_rmse_worst_seed": 26.61462164377052,
+      "worst_unit_rmse_mean": 60.53071945409747
+    },
+    {
+      "model": "multichannel_v2_3_no_update_capped125",
+      "rank_by_test_rmse": 10,
+      "runs": 3,
+      "tail_rmse_mean": 65.25545889315448,
+      "test_corr_mean": null,
+      "test_mae_mean": 33.1666789398035,
+      "test_rmse_mean": 35.33559616418475,
+      "test_rmse_median": 35.33559616418475,
+      "test_rmse_worst_seed": 35.33559616418475,
+      "worst_unit_rmse_mean": 39.356744381689104
+    },
+    {
+      "model": "multichannel_v2_3_shuffled_state_capped125",
+      "rank_by_test_rmse": 11,
+      "runs": 3,
+      "tail_rmse_mean": 65.92399263103975,
+      "test_corr_mean": -0.0066793010559385016,
+      "test_mae_mean": 33.20297253466048,
+      "test_rmse_mean": 35.69241705859903,
+      "test_rmse_median": 35.634900690215225,
+      "test_rmse_worst_seed": 36.10470813735925,
+      "worst_unit_rmse_mean": 40.12148897678409
+    },
+    {
+      "model": "scalar_pca1_v2_3_ridge_uncapped",
+      "rank_by_test_rmse": 12,
+      "runs": 3,
+      "tail_rmse_mean": 18.696472060661222,
+      "test_corr_mean": 0.6880317073358508,
+      "test_mae_mean": 32.65081656488923,
+      "test_rmse_mean": 43.435416241039015,
+      "test_rmse_median": 43.79663974896347,
+      "test_rmse_worst_seed": 44.69479557095878,
+      "worst_unit_rmse_mean": 114.26764521869443
+    },
+    {
+      "model": "age_ridge_uncapped",
+      "rank_by_test_rmse": 13,
+      "runs": 3,
+      "tail_rmse_mean": 39.99129334104524,
+      "test_corr_mean": 0.660469428225959,
+      "test_mae_mean": 35.296468440001554,
+      "test_rmse_mean": 46.10944999532139,
+      "test_rmse_median": 46.10944999532139,
+      "test_rmse_worst_seed": 46.10944999532139,
+      "worst_unit_rmse_mean": 127.15242315694222
+    },
+    {
+      "model": "scalar_pca1_v2_3_lms_uncapped",
+      "rank_by_test_rmse": 14,
+      "runs": 3,
+      "tail_rmse_mean": 32.39607973893706,
+      "test_corr_mean": 0.6451576969129779,
+      "test_mae_mean": 37.95759483159704,
+      "test_rmse_mean": 49.4908802462679,
+      "test_rmse_median": 48.130751885352836,
+      "test_rmse_worst_seed": 53.070489045494995,
+      "worst_unit_rmse_mean": 121.01933483657389
+    }
+  ],
+  "next_step": "Use the localized factor result to define the next locked gate. If multichannel CRA state is sham-separated but still loses to fair baselines, design a stricter multichannel adapter/fairness gate. If no adapter factor repairs the gap, stop C-MAPSS promotion and move to the next predeclared public benchmark family or planned general mechanism without native transfer.",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair",
+  "runner_revision": "tier7_1d_cmapss_failure_analysis_adapter_repair_20260508_0001",
+  "seed_diagnostics": [
+    {
+      "diagnostic_boundary": "failure localization only; not a promoted mechanism",
+      "seed": 42,
+      "selected_channel_count": 12,
+      "selected_channels": [
+        13,
+        6,
+        14,
+        9,
+        17,
+        23,
+        22,
+        19,
+        4,
+        5,
+        10,
+        15
+      ]
+    },
+    {
+      "diagnostic_boundary": "failure localization only; not a promoted mechanism",
+      "seed": 43,
+      "selected_channel_count": 12,
+      "selected_channels": [
+        13,
+        6,
+        14,
+        9,
+        17,
+        23,
+        22,
+        19,
+        4,
+        5,
+        10,
+        15
+      ]
+    },
+    {
+      "diagnostic_boundary": "failure localization only; not a promoted mechanism",
+      "seed": 44,
+      "selected_channel_count": 12,
+      "selected_channels": [
+        13,
+        6,
+        14,
+        9,
+        17,
+        23,
+        22,
+        19,
+        4,
+        5,
+        10,
+        15
+      ]
+    }
+  ],
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "selected_channels": [
+    {
+      "abs_corr": 0.7752298218711857,
+      "channel_index": 13,
+      "feature_column": 16,
+      "train_corr_to_target_norm": -0.7752298218711857
+    },
+    {
+      "abs_corr": 0.7571567446044661,
+      "channel_index": 6,
+      "feature_column": 9,
+      "train_corr_to_target_norm": -0.7571567446044661
+    },
+    {
+      "abs_corr": 0.7488698691356842,
+      "channel_index": 14,
+      "feature_column": 17,
+      "train_corr_to_target_norm": 0.7488698691356842
+    },
+    {
+      "abs_corr": 0.7330210310751444,
+      "channel_index": 9,
+      "feature_column": 12,
+      "train_corr_to_target_norm": 0.7330210310751444
+    },
+    {
+      "abs_corr": 0.720858482852774,
+      "channel_index": 17,
+      "feature_column": 20,
+      "train_corr_to_target_norm": -0.720858482852774
+    },
+    {
+      "abs_corr": 0.7073341478068398,
+      "channel_index": 23,
+      "feature_column": 26,
+      "train_corr_to_target_norm": 0.7073341478068398
+    },
+    {
+      "abs_corr": 0.7046255559265668,
+      "channel_index": 22,
+      "feature_column": 25,
+      "train_corr_to_target_norm": 0.7046255559265668
+    },
+    {
+      "abs_corr": 0.6808294987192735,
+      "channel_index": 19,
+      "feature_column": 22,
+      "train_corr_to_target_norm": -0.6808294987192735
+    },
+    {
+      "abs_corr": 0.678458284413673,
+      "channel_index": 4,
+      "feature_column": 7,
+      "train_corr_to_target_norm": -0.678458284413673
+    },
+    {
+      "abs_corr": 0.6550303884869657,
+      "channel_index": 5,
+      "feature_column": 8,
+      "train_corr_to_target_norm": -0.6550303884869657
+    },
+    {
+      "abs_corr": 0.6245680273985942,
+      "channel_index": 10,
+      "feature_column": 13,
+      "train_corr_to_target_norm": -0.6245680273985942
+    },
+    {
+      "abs_corr": 0.624034331256669,
+      "channel_index": 15,
+      "feature_column": 18,
+      "train_corr_to_target_norm": -0.624034331256669
+    }
+  ],
+  "status": "pass",
+  "tier": "Tier 7.1d - C-MAPSS Failure Analysis / Adapter Repair"
+}

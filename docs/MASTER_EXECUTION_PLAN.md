@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-08T20:20:00+00:00.
+Last updated: 2026-05-08T21:23:10+00:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -1084,30 +1084,40 @@ ability.
     compact scalar-adapter software scoring only; no public usefulness win, no
     baseline freeze, and no hardware/native transfer.
 
-80. **CURRENT ACTIVE STEP** - Tier 7.1d C-MAPSS failure analysis / adapter
-    repair: determine whether Tier 7.1c failed because the compact scalar PCA1
-    adapter lost multichannel structure, because the train-prefix readout is too
-    weak, because the uncapped RUL target policy is wrong, or because CRA v2.3
-    genuinely lacks useful structure for this adapter. Do not add mechanisms or
-    move hardware until the failure mode is localized.
+80. **COMPLETE** - Tier 7.1d C-MAPSS failure analysis / adapter repair:
+    passed 14/14 at
+    `controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/`.
+    Outcome: `compact_failure_partly_readout_or_target_policy`. Capped RUL and
+    ridge readout repaired most of the compact scalar failure; v2.2 ridge capped
+    was the best promotable model with RMSE `20.271418942340336`, narrowly ahead
+    of lag-multichannel ridge RMSE `20.305268771358435`. v2.3 still did not win.
+    Boundary: failure analysis only; no public usefulness win, no baseline
+    freeze, and no hardware/native transfer.
 
-81. Mechanism iteration loop: add exactly one planned general mechanism at a
+81. **CURRENT ACTIVE STEP** - Tier 7.1e C-MAPSS capped-RUL/readout fairness
+    confirmation: determine whether the v2.2 capped-ridge signal is
+    statistically meaningful or only a tiny FD001/adapter artifact. Require
+    per-unit paired comparisons, bootstrap/confidence intervals, effect sizes,
+    and fair capped-RUL baselines before any public usefulness claim, mechanism
+    promotion, or native transfer.
+
+82. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
     stop the broad usefulness track and narrow the paper.
 
-82. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+83. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines. Start only after the standardized scoreboard or failure diagnosis
     identifies a winning regime, a real failure mode, or a mechanism needing
     external validation.
 
-83. Tier 7.2 held-out task challenge: define held-out families before running;
+84. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout. Include at least one synthetic holdout and one
     real-ish adapter holdout if Tier 7.1 is active.
 
-84. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+85. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines. Candidate domains include
     streaming anomaly detection, predictive-maintenance sensor streams, human
     activity streams, event prediction, ECG/biosignal streams, and finance as
@@ -1455,10 +1465,13 @@ streaming. Tier 7.1b then passed source/data preflight, verified FD001 access,
 checksums, schema, train-only normalization, prediction-before-update stream
 ordering, and label-separated smoke artifacts. Tier 7.1c then passed compact
 C-MAPSS FD001 scoring but narrowed the claim: v2.3 ranked 5th and did not beat
-v2.2 or the monotone age baseline. The next active work is Tier 7.1d failure
-analysis / adapter repair before any freeze or native transfer. Reopen
-native work only for targeted transfer after a software task/mechanism earns it
-under the Tier 7/6.2 gates and a separate transfer contract is written.
+v2.2 or the monotone age baseline. Tier 7.1d then localized most of that compact
+failure to target/readout policy: capped RUL plus ridge readout repaired scalar
+scoring, but v2.3 still did not win. The next active work is Tier 7.1e
+capped-RUL/readout fairness confirmation before any public usefulness claim,
+freeze, or native transfer. Reopen native work only for targeted transfer after
+a software task/mechanism earns it under the Tier 7/6.2 gates and a separate
+transfer contract is written.
 It must preserve explicit board/chip/shard identity, message paths, compact
 readback ownership, failure counters, placement assumptions,
 enabled-vs-no-learning separation, and resource measurements while adding the

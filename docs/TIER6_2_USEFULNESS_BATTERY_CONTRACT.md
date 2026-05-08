@@ -545,16 +545,47 @@ It authorizes failure analysis / adapter repair only; it does not authorize a
 new baseline freeze, a public usefulness claim, or hardware/native transfer.
 ```
 
+## Tier 7.1d Result
+
+2026-05-08 result:
+
+```text
+Tier 7.1d — C-MAPSS failure analysis / adapter repair
+output: controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/
+status: PASS, 14/14 criteria
+outcome: compact_failure_partly_readout_or_target_policy
+```
+
+Key result:
+
+```text
+best promotable: scalar_pca1_v2_2_ridge_capped125, RMSE 20.271418942340336
+best public baseline: lag_multichannel_ridge_capped125, RMSE 20.305268771358435
+v2.3 scalar ridge capped: RMSE 20.688665138670245
+v2.3 multichannel ridge capped: RMSE 22.697166948526846
+multichannel sham separation delta RMSE: 12.995250110072181
+```
+
+Interpretation:
+
+```text
+Tier 7.1d localized most of the compact C-MAPSS gap to target/readout policy:
+capped RUL plus ridge readout substantially repaired scalar scoring. v2.3 still
+did not win, and multichannel v2.3 did not beat scalar repair or fair public
+baselines. The tiny v2.2 capped-ridge advantage over lag-multichannel ridge is
+not yet a public usefulness claim and needs fairness/statistical confirmation.
+```
+
 ## Immediate Next Action
 
 The current next action is:
 
 ```text
-Tier 7.1d — C-MAPSS failure analysis / adapter repair.
+Tier 7.1e — C-MAPSS capped-RUL/readout fairness confirmation.
 ```
 
-Localize the 7.1c gap before adding mechanisms or moving hardware. Specifically
-test whether the compact failure came from scalar PCA1 compression, train-prefix
-readout policy, uncapped RUL target policy, unit reset assumptions, a missing
-multichannel CRA adapter interface, or a real v2.3 limitation on this public
-adapter.
+Determine whether the v2.2 capped-ridge signal is statistically meaningful or
+only a tiny FD001/adapter artifact. Require per-unit paired comparisons,
+bootstrap/confidence intervals, effect sizes, capped-RUL fairness controls, and
+seed/stochastic sensitivity before any public usefulness claim, mechanism
+promotion, or hardware/native transfer.

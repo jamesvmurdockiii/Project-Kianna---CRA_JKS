@@ -1,0 +1,5 @@
+factor,delta_rmse_positive_is_better,interpretation
+readout_policy,6.055464005228885,ridge readout improves scalar v2.3 uncapped
+target_policy,23.16902421485941,capped RUL improves scalar v2.3 LMS
+multichannel_adapter,-2.0085018098566003,multichannel adapter did not clear scalar repair threshold
+sham_specificity,12.995250110072181,multichannel state is sham-separated
