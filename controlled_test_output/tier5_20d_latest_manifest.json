@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-05-08T22:28:07.283347+00:00",
+  "source_generated_at_utc": "2026-05-08T22:22:18+00:00",
+  "registry_entry_id": "tier5_20d_resonant_heavy_polyp_diagnostic",
+  "tier": "Tier 5.20d - Resonant-Heavy Hybrid LIF Polyp Diagnostic",
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_20d_20260508_resonant_heavy_polyp_diagnostic",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_20d_20260508_resonant_heavy_polyp_diagnostic/tier5_20d_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_20d_20260508_resonant_heavy_polyp_diagnostic/tier5_20d_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_20d_20260508_resonant_heavy_polyp_diagnostic/tier5_20d_summary.csv",
+  "canonical": true,
+  "claim": "Tier 5.20d tested the reverse 12/4 split: a same-budget 4 LIF / 12 resonant hybrid polyp proxy. The harness passed and showed localized task value, but the candidate was not promoted because material regressions and aggregate loss versus v2.3 remained.",
+  "caveat": "Software resonant-heavy diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence."
+}

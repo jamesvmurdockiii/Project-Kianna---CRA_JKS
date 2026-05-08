@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-08T22:20:00+00:00.
+Last updated: 2026-05-08T22:35:00+00:00.
 
 Current repo root:
 
@@ -200,6 +200,36 @@ Tier 5.20b = COMPLETE, PASS harness, NOT PROMOTED
   Boundary: software diagnostic only; not a core polyp replacement, not hardware
             evidence, not a promoted mechanism, not a baseline freeze, and not
             AGI/ASI evidence.
+```
+
+Latest resonant-branch dose sweep closeout:
+
+```text
+Tier 5.20c = COMPLETE, PASS harness, NOT PROMOTED
+  Variant: 14 standard LIF/recurrent excitatory units + 2 resonant branches
+  Source: controlled_test_output/tier5_20c_20260508_minimal_resonant_polyp_diagnostic/
+  Outcome: minimal_resonant_not_promoted
+  Key result: 0 wins versus v2.3, 1 material regression, 0 sham-separated tasks.
+
+Tier 5.20d = COMPLETE, PASS harness, NOT PROMOTED
+  Variant: 4 standard LIF/recurrent excitatory units + 12 resonant branches
+  Source: controlled_test_output/tier5_20d_20260508_resonant_heavy_polyp_diagnostic/
+  Outcome: resonant_heavy_not_promoted
+  Key result: 3 wins versus v2.3 and 2 sham-separated tasks, but 2 material
+              regressions and worse all-task aggregate than v2.3.
+
+Tier 5.20e = COMPLETE, PASS harness, NOT PROMOTED
+  Variant: 2 standard LIF/recurrent excitatory units + 14 resonant branches
+  Source: controlled_test_output/tier5_20e_20260508_near_full_resonant_polyp_diagnostic/
+  Outcome: near_full_resonant_not_promoted
+  Key result: 3 wins versus v2.3 and 2 sham-separated tasks, but 3 material
+              regressions and worse all-task aggregate than v2.3.
+
+Resonant branch decision:
+  The current dose sweep covers 16/0 (v2.3), 14/2, 12/4, 8/8, 4/12, 2/14,
+  and 0/16. No resonant variant is promoted. Do not integrate resonant branches
+  into the canonical organism unless a future, separately justified task or
+  hardware constraint reopens the mechanism with a new contract.
 ```
 
 Current hardware/runtime baseline decision:

@@ -1,0 +1,15 @@
+{
+  "display_name": "Lorenz x(t)",
+  "horizon": 5,
+  "length": 2400,
+  "metadata": {
+    "dt": 0.01,
+    "obs_mu": -0.1987645827963241,
+    "obs_sd": 7.948816483854941,
+    "target_mu": -0.1563725699429177,
+    "target_sd": 7.959821992031482
+  },
+  "seed": 44,
+  "task": "lorenz",
+  "train_end": 1560
+}

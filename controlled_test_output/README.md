@@ -5,10 +5,10 @@ ledger is `STUDY_REGISTRY.json`; the compact table is `STUDY_REGISTRY.csv`.
 Older reruns, prepared capsules, debug probes, and baseline-frozen
 mechanism bundles outside the formal registry are preserved for audit.
 
-- Generated: `2026-05-08T22:16:59.497880+00:00`
+- Generated: `2026-05-08T22:28:07.627298+00:00`
 - Registry status: **PASS**
-- Canonical evidence entries: `96`
-- Expanded test-entry count: `96`; see the canonical evidence table below for the exact current tier list.
+- Canonical evidence entries: `99`
+- Expanded test-entry count: `99`; see the canonical evidence table below for the exact current tier list.
 
 ## Evidence Categories
 
@@ -87,6 +87,9 @@ mechanism bundles outside the formal registry are preserved for audit.
 | `tier7_1f_next_public_adapter_contract` | **PASS** | `controlled_test_output/tier7_1f_20260508_next_public_adapter_contract` | Contract/family-selection evidence only; not a NAB data preflight, not scoring, not public usefulness evidence, not a baseline freeze, not hardware/native transfer, and not AGI/ASI evidence. |
 | `tier5_20a_resonant_branch_polyp_diagnostic` | **PASS** | `controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic` | Software diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence. |
 | `tier5_20b_hybrid_resonant_polyp_diagnostic` | **PASS** | `controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic` | Software repair diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence. |
+| `tier5_20c_minimal_resonant_polyp_diagnostic` | **PASS** | `controlled_test_output/tier5_20c_20260508_minimal_resonant_polyp_diagnostic` | Software minimal-dose diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence. |
+| `tier5_20d_resonant_heavy_polyp_diagnostic` | **PASS** | `controlled_test_output/tier5_20d_20260508_resonant_heavy_polyp_diagnostic` | Software resonant-heavy diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence. |
+| `tier5_20e_near_full_resonant_polyp_diagnostic` | **PASS** | `controlled_test_output/tier5_20e_20260508_near_full_resonant_polyp_diagnostic` | Software near-full resonant diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence. |
 | `tier4_30_readiness_lifecycle_native_audit` | **PASS** | `controlled_test_output/tier4_30_readiness_20260505_lifecycle_native_audit` | Engineering audit only; not lifecycle implementation, not hardware evidence, not speedup, not multi-chip scaling, and not native v2.2 temporal migration. |
 | `tier4_30_lifecycle_native_contract` | **PASS** | `controlled_test_output/tier4_30_20260505_lifecycle_native_contract` | Local engineering contract only; not runtime implementation, not hardware evidence, not lifecycle/self-scaling proof, and not v2.2 temporal migration. |
 | `tier4_30a_static_pool_lifecycle_reference` | **PASS** | `controlled_test_output/tier4_30a_20260505_static_pool_lifecycle_reference` | Local deterministic reference only; not runtime C, not hardware evidence, not task benefit, not lifecycle baseline freeze, and not v2.2 temporal-state migration. |

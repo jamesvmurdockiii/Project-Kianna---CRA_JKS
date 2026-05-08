@@ -11007,3 +11007,143 @@ Software repair diagnostic only; not a core polyp replacement, not hardware
 evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI
 evidence.
 ```
+
+## Tier 5.20c - Minimal Hybrid Resonant/LIF Polyp Diagnostic
+
+Status: `COMPLETE / PASS HARNESS / NOT PROMOTED`
+
+Runner:
+
+```text
+experiments/tier5_20c_minimal_resonant_polyp_diagnostic.py
+```
+
+Canonical output:
+
+```text
+controlled_test_output/tier5_20c_20260508_minimal_resonant_polyp_diagnostic/
+```
+
+Question:
+
+```text
+Can the smallest resonant specialist allocation, 14 standard LIF/recurrent
+excitatory units plus 2 resonant branches, preserve v2.3 while retaining useful
+variable-delay/anomaly signal?
+```
+
+Result:
+
+```text
+status = pass
+criteria = 10/10
+outcome = minimal_resonant_not_promoted
+all_task_geomean_mse = 0.2777975100580056
+v2_3_all_task_geomean_mse = 0.2610804850928049
+wins_vs_v2_3 = 0
+material_regressions_vs_v2_3 = 1
+sham_separated_tasks = 0
+```
+
+Decision:
+
+```text
+Do not integrate the 14/2 resonant variant into the core organism.
+```
+
+## Tier 5.20d - Resonant-Heavy Hybrid LIF Polyp Diagnostic
+
+Status: `COMPLETE / PASS HARNESS / NOT PROMOTED`
+
+Runner:
+
+```text
+experiments/tier5_20d_resonant_heavy_polyp_diagnostic.py
+```
+
+Canonical output:
+
+```text
+controlled_test_output/tier5_20d_20260508_resonant_heavy_polyp_diagnostic/
+```
+
+Question:
+
+```text
+Does the reverse split, 4 standard LIF/recurrent excitatory units plus 12
+resonant branches, recover enough timing value to justify a resonant-heavy
+polyp proxy?
+```
+
+Result:
+
+```text
+status = pass
+criteria = 10/10
+outcome = resonant_heavy_not_promoted
+all_task_geomean_mse = 0.29289224348599796
+v2_3_all_task_geomean_mse = 0.2610804850928049
+wins_vs_v2_3 = 3
+material_regressions_vs_v2_3 = 2
+sham_separated_tasks = 2
+```
+
+Decision:
+
+```text
+Record the localized timing signal, but do not integrate the 4/12 resonant
+variant because aggregate performance and material regressions remain worse than
+v2.3.
+```
+
+## Tier 5.20e - Near-Full Resonant Hybrid LIF Polyp Diagnostic
+
+Status: `COMPLETE / PASS HARNESS / NOT PROMOTED`
+
+Runner:
+
+```text
+experiments/tier5_20e_near_full_resonant_polyp_diagnostic.py
+```
+
+Canonical output:
+
+```text
+controlled_test_output/tier5_20e_20260508_near_full_resonant_polyp_diagnostic/
+```
+
+Question:
+
+```text
+Does the near-full resonant split, 2 standard LIF/recurrent excitatory units plus
+14 resonant branches, outperform the previous resonant-heavy dose while staying
+safe versus v2.3?
+```
+
+Result:
+
+```text
+status = pass
+criteria = 10/10
+outcome = near_full_resonant_not_promoted
+all_task_geomean_mse = 0.30374770797663714
+v2_3_all_task_geomean_mse = 0.2610804850928049
+wins_vs_v2_3 = 3
+material_regressions_vs_v2_3 = 3
+sham_separated_tasks = 2
+```
+
+Decision:
+
+```text
+Do not integrate the 2/14 resonant variant. The current dose sweep is sufficient
+to park resonant branches unless a future task-specific contract reopens them.
+```
+
+Dose-sweep closeout:
+
+```text
+Covered: 16/0 v2.3, 14/2, 12/4, 8/8, 4/12, 2/14, 0/16.
+Promoted: none.
+Current decision: resonant branches are tested, documented, and parked.
+```

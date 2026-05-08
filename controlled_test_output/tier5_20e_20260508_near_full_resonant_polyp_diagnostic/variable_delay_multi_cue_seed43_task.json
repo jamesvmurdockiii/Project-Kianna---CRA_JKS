@@ -1,0 +1,19 @@
+{
+  "display_name": "Variable-delay multi-cue diagnostic",
+  "horizon": 1,
+  "length": 2400,
+  "metadata": {
+    "delay_bands": [
+      8,
+      28
+    ],
+    "diagnostic_role": "temporal retention and variable delayed-credit pressure",
+    "obs_mu": 0.12172823383918488,
+    "obs_sd": 0.652450461012955,
+    "target_mu": 0.18461538461538463,
+    "target_sd": 0.9828108463805808
+  },
+  "seed": 43,
+  "task": "variable_delay_multi_cue",
+  "train_end": 1560
+}

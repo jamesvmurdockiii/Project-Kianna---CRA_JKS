@@ -19,7 +19,7 @@
       "severity": "error"
     },
     {
-      "details": "96 canonical bundles, 0 missing artifacts, 0 failed criteria",
+      "details": "99 canonical bundles, 0 missing artifacts, 0 failed criteria",
       "name": "canonical registry exists and passes",
       "passed": true,
       "severity": "error"
@@ -49,10 +49,10 @@
       "severity": "error"
     }
   ],
-  "generated_at_utc": "2026-05-08T22:17:01.389424+00:00",
+  "generated_at_utc": "2026-05-08T22:28:09.494554+00:00",
   "registry_summary": {
-    "evidence_count": 96,
-    "expanded_test_entry_count": 96,
+    "evidence_count": 99,
+    "expanded_test_entry_count": 99,
     "registry_status": "pass"
   },
   "status": "pass"

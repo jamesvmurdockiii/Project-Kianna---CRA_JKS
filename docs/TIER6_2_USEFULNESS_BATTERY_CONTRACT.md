@@ -680,3 +680,21 @@ Do not add resonant branches to the canonical CRA mechanism stack. Continue to
 Tier 7.1g NAB preflight and use public/standardized benchmarks to decide the
 next mechanism, adapter, or claim narrowing step.
 ```
+
+## Resonant Dose Sweep Closeout
+
+Tiers 5.20c, 5.20d, and 5.20e completed the additional requested resonant/LIF
+splits after the 5.20a/5.20b non-promotions.
+
+```text
+14/2: pass harness, not promoted, 0 wins vs v2.3, 0 sham-separated tasks.
+4/12: pass harness, not promoted, 3 wins vs v2.3, 2 material regressions.
+2/14: pass harness, not promoted, 3 wins vs v2.3, 3 material regressions.
+```
+
+Decision:
+
+```text
+The resonant branch idea has now been tested across the useful dose range and is
+parked. Return to the public usefulness track: Tier 7.1g NAB preflight.
+```

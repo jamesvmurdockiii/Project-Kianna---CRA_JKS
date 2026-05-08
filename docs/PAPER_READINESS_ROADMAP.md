@@ -7449,3 +7449,50 @@ Next step remains:
 ```text
 Tier 7.1g - NAB source/data/scoring preflight.
 ```
+
+## Tier 5.20c/5.20d/5.20e Resonant Dose Sweep Closeout
+
+Status: `COMPLETE / PASS HARNESSES / NOT PROMOTED`
+
+Outputs:
+
+```text
+controlled_test_output/tier5_20c_20260508_minimal_resonant_polyp_diagnostic/
+controlled_test_output/tier5_20d_20260508_resonant_heavy_polyp_diagnostic/
+controlled_test_output/tier5_20e_20260508_near_full_resonant_polyp_diagnostic/
+```
+
+Dose sweep covered:
+
+```text
+16/0 = v2.3 baseline
+14/2 = Tier 5.20c
+12/4 = Tier 5.20b
+8/8  = Tier 5.20b
+4/12 = Tier 5.20d
+2/14 = Tier 5.20e
+0/16 = Tier 5.20a
+```
+
+Result:
+
+```text
+No resonant branch dose earned promotion.
+```
+
+Interpretation:
+
+```text
+The resonant-heavy variants showed localized timing value on NARMA10,
+variable-delay, and anomaly-style diagnostics, but every promising dose still
+introduced material regressions and worse aggregate behavior versus v2.3. The
+minimal 14/2 dose was safest but showed no task wins or sham separation.
+```
+
+Decision:
+
+```text
+Park resonant branches. Do not integrate them into the canonical organism and do
+not move them to hardware/native paths unless a future task-specific contract
+reopens the mechanism with a new hypothesis and stricter controls.
+```

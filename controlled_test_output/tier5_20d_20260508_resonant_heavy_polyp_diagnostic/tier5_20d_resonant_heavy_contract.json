@@ -1,0 +1,16 @@
+{
+  "mechanism": "resonant_heavy_hybrid_lif_branches",
+  "nonclaims": [
+    "not a core polyp replacement",
+    "not hardware evidence",
+    "not a v2.x baseline freeze",
+    "not a custom SpiNNaker neuron model",
+    "not AGI/ASI evidence"
+  ],
+  "repair_target": "test whether the resonant-heavy specialist dose preserves v2.3 while retaining any variable-delay/anomaly value",
+  "tested_layout": {
+    "resonant_branch_units": 12,
+    "standard_lif_excitatory_units": 4,
+    "total_excitatory_budget": 16
+  }
+}

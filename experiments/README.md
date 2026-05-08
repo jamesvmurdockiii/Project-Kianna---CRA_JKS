@@ -99,7 +99,11 @@ variable-delay/anomaly value came with broad-task regressions. Tier 5.20b then
 passed as a harness at
 `controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic/`,
 but neither the 8 LIF / 8 resonant nor 12 LIF / 4 resonant hybrid proxy earned
-promotion. The next active project step is Tier 7.1g NAB source/data/scoring
+promotion. Tier 5.20c, 5.20d, and 5.20e then checked 14/2, 4/12, and 2/14
+resonant/LIF splits. Those harnesses also passed, but none earned promotion.
+The current resonant dose sweep covers 16/0, 14/2, 12/4, 8/8, 4/12, 2/14, and
+0/16; resonant branches are documented and parked. The next active project step
+is Tier 7.1g NAB source/data/scoring
 preflight; no hardware transfer or native migration is authorized until
 public-adapter software usefulness or a promoted mechanism earns a separate
 evidence contract.

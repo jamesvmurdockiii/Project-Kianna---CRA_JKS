@@ -1133,68 +1133,91 @@ ability.
     had fewer regressions but weaker wins. Boundary: optional software repair
     diagnostic only; do not integrate into the core organism yet.
 
-85. **CURRENT ACTIVE STEP** - Tier 7.1g NAB source/data/scoring preflight:
+85. **COMPLETE** - Tier 5.20c minimal hybrid resonant/LIF polyp diagnostic:
+    passed 10/10 as a harness at
+    `controlled_test_output/tier5_20c_20260508_minimal_resonant_polyp_diagnostic/`,
+    but the 14 LIF / 2 resonant variant was not promoted. It had all-task
+    geomean MSE `0.2777975100580056` versus v2.3 `0.2610804850928049`, zero
+    task wins, one material regression, and zero sham-separated tasks.
+
+86. **COMPLETE** - Tier 5.20d resonant-heavy hybrid LIF polyp diagnostic:
+    passed 10/10 as a harness at
+    `controlled_test_output/tier5_20d_20260508_resonant_heavy_polyp_diagnostic/`,
+    but the 4 LIF / 12 resonant variant was not promoted. It had all-task
+    geomean MSE `0.29289224348599796` versus v2.3 `0.2610804850928049`, three
+    task wins, two material regressions, and two sham-separated tasks.
+
+87. **COMPLETE** - Tier 5.20e near-full resonant hybrid LIF polyp diagnostic:
+    passed 10/10 as a harness at
+    `controlled_test_output/tier5_20e_20260508_near_full_resonant_polyp_diagnostic/`,
+    but the 2 LIF / 14 resonant variant was not promoted. It had all-task
+    geomean MSE `0.30374770797663714` versus v2.3 `0.2610804850928049`, three
+    task wins, three material regressions, and two sham-separated tasks.
+    Decision: the current resonant dose sweep covers 16/0, 14/2, 12/4, 8/8,
+    4/12, 2/14, and 0/16; no resonant variant is promoted.
+
+88. **CURRENT ACTIVE STEP** - Tier 7.1g NAB source/data/scoring preflight:
     verify source access, source hash/commit, file and label parsing,
     label-separated online streams, tiny leakage-safe smoke rows, and scoring
     interface feasibility before full NAB scoring.
 
-86. Mechanism iteration loop: add exactly one planned general mechanism at a
+89. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
     stop the broad usefulness track and narrow the paper.
 
-87. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+90. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines. Start only after the standardized scoreboard or failure diagnosis
     identifies a winning regime, a real failure mode, or a mechanism needing
     external validation.
 
-88. Tier 7.2 held-out task challenge: define held-out families before running;
+91. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout. Include at least one synthetic holdout and one
     real-ish adapter holdout if Tier 7.1 is active.
 
-87. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+92. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines. Candidate domains include
     streaming anomaly detection, predictive-maintenance sensor streams, human
     activity streams, event prediction, ECG/biosignal streams, and finance as
     one domain only rather than the whole proof.
 
-85. Tier 7.4 policy/action selection: state -> action -> delayed consequence,
+93. Tier 7.4 policy/action selection: state -> action -> delayed consequence,
     exploration versus exploitation, uncertainty-gated actions. Do not start
     broad policy claims until prediction/adaptation usefulness is measured.
 
-86. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
+94. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
     planning/subgoal control: run only after the shorter hard/real-ish tasks are
     stable. Do not claim language, AGI, or broad planning from toy gates.
 
-87. Run expanded external baselines and fairness audit at the phase lock:
+95. Run expanded external baselines and fairness audit at the phase lock:
     random/sign persistence, online perceptron/logistic, lag/ridge where
     relevant, reservoir/ESN, small GRU, STDP-only SNN, simple evolutionary
     population, simple control baselines, and SNN reviewer-defense baselines
     where practical.
 
-88. Freeze the next software baseline only if new software capability work
+96. Freeze the next software baseline only if new software capability work
     passes ablations, fair baselines, leakage controls, and compact regression.
     If no new software mechanism is promoted, keep v2.3.
 
 ### Phase I - Final Paper Lock
 
-89. Select final paper claim level: strong usefulness paper, bounded architecture
+97. Select final paper claim level: strong usefulness paper, bounded architecture
     study, or narrowed diagnostic report. Let the evidence decide.
 
-90. Run final software matrix and final hardware subset matrix. Include effect
+98. Run final software matrix and final hardware subset matrix. Include effect
     sizes, confidence intervals, worst seed, sample efficiency, runtime, command
     count, resource budgets, and claim-boundary table.
 
-91. Build the independent reproduction capsule: fresh checkout instructions,
+99. Build the independent reproduction capsule: fresh checkout instructions,
     environment lock, validation command, registry/table regeneration, EBRAINS
     ingest instructions, artifact hash manifest, and one local tier rerun.
 
-92. Draft paper/whitepaper only after the Phase H usefulness/baseline gates pass. Write
+100. Draft paper/whitepaper only after the Phase H usefulness/baseline gates pass. Write
     limitations first, then claims. Preserve failed and parked diagnostics.
 
-93. External dry run: have a clean agent or human follow only the docs. If they
+101. External dry run: have a clean agent or human follow only the docs. If they
     need hidden chat context, the repo is not ready.
 
 ## 7. Current Tier 4.27 Definition
@@ -1507,14 +1530,14 @@ failure to target/readout policy: capped RUL plus ridge readout repaired scalar
 scoring, but v2.3 still did not win. Tier 7.1e then rejected the tiny v2.2
 capped-ridge signal as statistically unconfirmed against lag-multichannel ridge.
 Tier 7.1f then selected Numenta NAB streaming anomaly detection as the next
-public adapter family. Tier 5.20a then tested a same-budget full resonant-branch
-polyp proxy as a mechanism-side diagnostic, and Tier 5.20b tested 8/8 and 12/4
-hybrid LIF/resonant variants. Both harnesses passed, but none of the resonant
-variants earned promotion because the localized variable-delay/anomaly value
-did not survive broad-task regression and sham-separation gates. The next active
-public-adapter work remains Tier 7.1g NAB source/data/scoring preflight. Reopen
-native work only for targeted transfer after a software task/mechanism earns it
-under the Tier 7/6.2 gates and a separate transfer contract is written.
+public adapter family. Tier 5.20a-e then tested the resonant branch idea across
+a same-budget dose sweep: 16/0 (v2.3), 14/2, 12/4, 8/8, 4/12, 2/14, and 0/16.
+All harnesses passed, but no resonant variant earned promotion because localized
+variable-delay/anomaly/NARMA value did not survive broad-task regression,
+aggregate, and sham-separation gates. The next active public-adapter work
+remains Tier 7.1g NAB source/data/scoring preflight. Reopen native work only for
+targeted transfer after a software task/mechanism earns it under the Tier 7/6.2
+gates and a separate transfer contract is written.
 It must preserve explicit board/chip/shard identity, message paths, compact
 readback ownership, failure counters, placement assumptions,
 enabled-vs-no-learning separation, and resource measurements while adding the

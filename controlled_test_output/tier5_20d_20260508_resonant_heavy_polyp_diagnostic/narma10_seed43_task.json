@@ -1,0 +1,14 @@
+{
+  "display_name": "NARMA10",
+  "horizon": 1,
+  "length": 2400,
+  "metadata": {
+    "obs_mu": 0.2494219284578351,
+    "obs_sd": 0.1450852976179185,
+    "target_mu": 0.3825778785724532,
+    "target_sd": 0.10178548641155925
+  },
+  "seed": 43,
+  "task": "narma10",
+  "train_end": 1560
+}
