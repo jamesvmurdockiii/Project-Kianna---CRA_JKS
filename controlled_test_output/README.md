@@ -5,7 +5,7 @@ ledger is `STUDY_REGISTRY.json`; the compact table is `STUDY_REGISTRY.csv`.
 Older reruns, prepared capsules, debug probes, and baseline-frozen
 mechanism bundles outside the formal registry are preserved for audit.
 
-- Generated: `2026-05-08T17:37:14.436907+00:00`
+- Generated: `2026-05-08T18:43:47.205987+00:00`
 - Registry status: **PASS**
 - Canonical evidence entries: `81`
 - Expanded test-entry count: `81`; see the canonical evidence table below for the exact current tier list.
@@ -419,6 +419,8 @@ cite them as current study results unless promoted in `STUDY_REGISTRY.json`.
 | `controlled_test_output/tier6_4_20260428_132009` | `superseded_rerun` | `fail` | `2026-04-28T18:31:46+00:00` |
 | `controlled_test_output/tier6_4_20260428_143252` | `superseded_rerun` | `unknown` | `None` |
 | `controlled_test_output/tier6_4_20260428_160526` | `superseded_rerun` | `pass` | `2026-04-28T20:05:28+00:00` |
+| `controlled_test_output/tier7_0e_20260508_length_10000_scoreboard` | `superseded_rerun` | `fail` | `2026-05-08T18:32:32+00:00` |
+| `controlled_test_output/tier7_0e_20260508_length_calibration` | `superseded_rerun` | `pass` | `2026-05-08T18:40:40+00:00` |
 
 ## Integrity
 

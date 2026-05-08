@@ -1,0 +1,14 @@
+{
+  "custom_task_policy": "no custom synthetic tasks in this runner",
+  "hardware_policy": "software-only; hardware transfer blocked until benchmark/mechanism earns it",
+  "lengths": [
+    10000
+  ],
+  "long_run_policy": "scoreboard mode omits raw CRA trace collection and destructive shams so 10k/50k public benchmark sweeps remain practical; use full_diagnostic mode for shorter mechanism-causality audits.",
+  "matrix_mode": "scoreboard",
+  "normalization": "train-prefix only inside imported task builders and online readouts",
+  "prediction": "online readouts predict before update; train-prefix baselines fit only train rows",
+  "scoreboard": "Mackey-Glass / Lorenz / NARMA10 standard dynamical suite",
+  "split": "chronological",
+  "tier": "Tier 7.0e - Standard Dynamical Benchmark Rerun With v2.2 And Run-Length Sweep"
+}

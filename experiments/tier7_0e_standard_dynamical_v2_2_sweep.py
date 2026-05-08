@@ -23,6 +23,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+import numpy as np
+
 os.environ.setdefault("KMP_DUPLICATE_LIB_OK", "TRUE")
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -34,18 +36,25 @@ if str(Path(__file__).resolve().parent) not in sys.path:
 
 from tier4_scaling import mean, stdev  # noqa: E402
 from tier5_19a_temporal_substrate_reference import (  # noqa: E402
+    append_timeseries,
     criterion,
     json_safe,
+    parse_timescales,
+    random_reservoir_features,
+    run_online_model,
+    run_train_prefix_esn,
     summarize,
     write_csv,
     write_json,
 )
-from tier5_19c_fading_memory_regression import build_task, run_task  # noqa: E402
+from tier5_19b_temporal_substrate_gate import temporal_features_variant  # noqa: E402
+from tier5_19c_fading_memory_regression import build_task, run_task as run_full_diagnostic_task  # noqa: E402
+from tier7_0b_continuous_regression_failure_analysis import lag_matrix  # noqa: E402
 from tier7_0_standard_dynamical_benchmarks import parse_csv, parse_seeds  # noqa: E402
 
 
 TIER = "Tier 7.0e - Standard Dynamical Benchmark Rerun With v2.2 And Run-Length Sweep"
-RUNNER_REVISION = "tier7_0e_standard_dynamical_v2_2_sweep_20260508_0001"
+RUNNER_REVISION = "tier7_0e_standard_dynamical_v2_2_sweep_20260508_0002"
 DEFAULT_OUTPUT_DIR = CONTROLLED / "tier7_0e_20260508_standard_dynamical_v2_2_sweep"
 DEFAULT_TASKS = "mackey_glass,lorenz,narma10"
 DEFAULT_LENGTHS = "720,2000,10000,50000"
@@ -84,8 +93,10 @@ def parse_lengths(raw: str) -> list[int]:
 
 
 def geomean(values: list[float]) -> float:
+    if not values:
+        return math.inf
     valid = [float(value) for value in values if value is not None and math.isfinite(float(value)) and float(value) > 0.0]
-    if not valid:
+    if len(valid) != len(values):
         return math.inf
     return float(math.exp(sum(math.log(value) for value in valid) / len(valid)))
 
@@ -118,7 +129,7 @@ def write_rows(path: Path, rows: list[dict[str, Any]]) -> None:
 
 def metric(summary_rows: list[dict[str, Any]], task: str, model: str, key: str = "mse_mean") -> float:
     row = next((item for item in summary_rows if item.get("task") == task and item.get("model") == model), None)
-    if not row or row.get(key) is None:
+    if not row or row.get("status") != "pass" or row.get(key) is None:
         return math.inf
     value = float(row[key])
     return value if math.isfinite(value) else math.inf
@@ -150,11 +161,98 @@ def aggregate_by_model(summary_rows: list[dict[str, Any]], tasks: list[str]) -> 
             }
         )
     public = [row for row in rows if row["role"] in {"public_baseline", "raw_v2_1", "v2_2_candidate"}]
-    ranked = sorted(public, key=lambda row: float(row["geomean_mse"]))
+    ranked = sorted(
+        [row for row in public if math.isfinite(float(row["geomean_mse"]))],
+        key=lambda row: float(row["geomean_mse"]),
+    )
     rank_by_model = {row["model"]: idx + 1 for idx, row in enumerate(ranked)}
     for row in rows:
         row["public_rank"] = rank_by_model.get(row["model"])
     return sorted(rows, key=lambda row: (row["public_rank"] or 10_000, row["model"]))
+
+
+def run_scoreboard_task(
+    task: Any,
+    *,
+    seed: int,
+    args: argparse.Namespace,
+    capture_timeseries: bool,
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]], dict[str, Any]]:
+    """Run only the public-scoreboard models needed for long exposure sweeps.
+
+    The full Tier 5.19c diagnostic matrix includes raw CRA trace collection and
+    many destructive shams. That is the right tool for mechanism causality, but
+    it is intentionally too heavy for 10k/50k public benchmark sweeps. This lean
+    lane keeps the same leakage-safe chronological protocol while limiting the
+    comparison to the v2.2 candidate and public baseline families.
+    """
+    rows: list[dict[str, Any]] = []
+    timeseries: list[dict[str, Any]] = []
+    timescales = parse_timescales(args.temporal_timescales)
+    fading = temporal_features_variant(
+        task.observed,
+        seed=seed,
+        train_end=task.train_end,
+        timescales=timescales,
+        hidden_units=args.temporal_hidden_units,
+        recurrent_scale=args.temporal_recurrent_scale,
+        input_scale=args.temporal_input_scale,
+        hidden_decay=args.temporal_hidden_decay,
+        mode="fading_only",
+    )
+    lag = lag_matrix(task.observed, args.history)
+    reservoir = random_reservoir_features(
+        task.observed,
+        seed=seed,
+        units=args.reservoir_units,
+        spectral_radius=args.reservoir_spectral_radius,
+        input_scale=args.reservoir_input_scale,
+    )
+    specs: list[tuple[str, np.ndarray, dict[str, Any]]] = [
+        ("lag_only_online_lms_control", lag, {"role": "same causal lag budget", "history": int(args.history)}),
+        ("fixed_random_reservoir_online_control", reservoir.features, reservoir.diagnostics),
+        (V22_CANDIDATE, fading.features, fading.diagnostics),
+    ]
+    for model, features, diagnostics in specs:
+        row, pred = run_online_model(
+            task=task,
+            seed=seed,
+            model=model,
+            features=features,
+            args=args,
+            update_enabled=True,
+            diagnostics={**diagnostics, "matrix_mode": "scoreboard"},
+        )
+        rows.append(row)
+        if capture_timeseries:
+            append_timeseries(timeseries, task=task, seed=seed, model=model, prediction=pred)
+    esn_row, esn_pred = run_train_prefix_esn(task, seed=seed, args=args)
+    rows.append(esn_row)
+    if capture_timeseries:
+        append_timeseries(timeseries, task=task, seed=seed, model="fixed_esn_train_prefix_ridge_baseline", prediction=esn_pred)
+    diagnostics = {
+        "task": task.name,
+        "seed": int(seed),
+        "matrix_mode": "scoreboard",
+        "raw_cra_v2_1_policy": "omitted from long-run scoreboard mode; use full_diagnostic mode for raw trace/sham matrix",
+        "fading_only_feature_count": int(fading.features.shape[1]),
+        "lag_feature_count": int(lag.shape[1]),
+        "reservoir_feature_count": int(reservoir.features.shape[1]),
+    }
+    return rows, timeseries, diagnostics
+
+
+def finite_task_descriptor(task: Any) -> dict[str, Any]:
+    observed = np.asarray(task.observed, dtype=float)
+    target = np.asarray(task.target, dtype=float)
+    return {
+        "observed_finite": bool(np.isfinite(observed).all()),
+        "target_finite": bool(np.isfinite(target).all()),
+        "observed_nonfinite_count": int(np.size(observed) - np.count_nonzero(np.isfinite(observed))),
+        "target_nonfinite_count": int(np.size(target) - np.count_nonzero(np.isfinite(target))),
+        "target_min": None if not np.isfinite(target).any() else float(np.nanmin(target[np.isfinite(target)])),
+        "target_max": None if not np.isfinite(target).any() else float(np.nanmax(target[np.isfinite(target)])),
+    }
 
 
 def run_one_length(length: int, args: argparse.Namespace, output_dir: Path) -> dict[str, Any]:
@@ -164,20 +262,15 @@ def run_one_length(length: int, args: argparse.Namespace, output_dir: Path) -> d
     length_dir.mkdir(parents=True, exist_ok=True)
     all_rows: list[dict[str, Any]] = []
     all_timeseries: list[dict[str, Any]] = []
+    capture_timeseries = int(length) <= int(args.timeseries_max_length)
     task_diagnostics: list[dict[str, Any]] = []
     task_descriptors: list[dict[str, Any]] = []
+    invalid_tasks: list[dict[str, Any]] = []
     started = time.perf_counter()
     for seed in seeds:
         for task_name in tasks:
             task = build_task(task_name, length, seed, args.horizon)
-            rows, timeseries, diagnostics = run_task(task, seed=seed, args=args)
-            for row in rows:
-                row["length"] = int(length)
-            for row in timeseries:
-                row["length"] = int(length)
-            all_rows.extend(rows)
-            all_timeseries.extend(timeseries)
-            task_diagnostics.append({"length": int(length), **diagnostics})
+            finite_descriptor = finite_task_descriptor(task)
             descriptor = {
                 "length": int(length),
                 "task": task.name,
@@ -188,9 +281,42 @@ def run_one_length(length: int, args: argparse.Namespace, output_dir: Path) -> d
                 "test_count": int(len(task.target) - task.train_end),
                 "horizon": int(task.horizon),
                 "metadata": task.metadata,
+                "finite_check": finite_descriptor,
             }
             task_descriptors.append(descriptor)
             write_json(length_dir / f"{task.name}_seed{seed}_task.json", descriptor)
+            if not (finite_descriptor["observed_finite"] and finite_descriptor["target_finite"]):
+                invalid_tasks.append(descriptor)
+                task_diagnostics.append(
+                    {
+                        "length": int(length),
+                        "task": task.name,
+                        "seed": int(seed),
+                        "status": "invalid_task_stream",
+                        "finite_check": finite_descriptor,
+                        "reason": "generated observed/target stream contains non-finite values; model scoring skipped",
+                    }
+                )
+                continue
+            if args.matrix_mode == "full_diagnostic":
+                rows, timeseries, diagnostics = run_full_diagnostic_task(task, seed=seed, args=args)
+            else:
+                rows, timeseries, diagnostics = run_scoreboard_task(
+                    task,
+                    seed=seed,
+                    args=args,
+                    capture_timeseries=capture_timeseries,
+                )
+            for row in rows:
+                row["length"] = int(length)
+                row["matrix_mode"] = str(args.matrix_mode)
+            for row in timeseries:
+                row["length"] = int(length)
+                row["matrix_mode"] = str(args.matrix_mode)
+            all_rows.extend(rows)
+            if capture_timeseries:
+                all_timeseries.extend(timeseries)
+            task_diagnostics.append({"length": int(length), **diagnostics})
     models = sorted({str(row["model"]) for row in all_rows})
     summary_rows, seed_aggregate_rows, seed_aggregate_summary = summarize(all_rows, tasks, models, seeds)
     for row in summary_rows:
@@ -206,7 +332,8 @@ def run_one_length(length: int, args: argparse.Namespace, output_dir: Path) -> d
     write_rows(length_dir / "tier7_0e_summary.csv", summary_rows)
     write_rows(length_dir / "tier7_0e_seed_aggregate.csv", seed_aggregate_rows)
     write_rows(length_dir / "tier7_0e_model_aggregate.csv", model_aggregate_rows)
-    write_rows(length_dir / "tier7_0e_timeseries.csv", all_timeseries)
+    if capture_timeseries:
+        write_rows(length_dir / "tier7_0e_timeseries.csv", all_timeseries)
     write_json(
         length_dir / "tier7_0e_length_results.json",
         {
@@ -221,13 +348,20 @@ def run_one_length(length: int, args: argparse.Namespace, output_dir: Path) -> d
             "seed_aggregate_summary": seed_aggregate_summary,
             "model_aggregate_rows": model_aggregate_rows,
             "task_descriptors": task_descriptors,
+            "invalid_tasks": invalid_tasks,
             "task_diagnostics": task_diagnostics,
+            "timeseries_policy": {
+                "captured": bool(capture_timeseries),
+                "timeseries_max_length": int(args.timeseries_max_length),
+                "reason": "captured for short audit trace" if capture_timeseries else "omitted to avoid large long-run artifacts",
+            },
             "runtime_seconds": runtime_seconds,
         },
     )
     return {
         "length": int(length),
         "runtime_seconds": runtime_seconds,
+        "timeseries_captured": bool(capture_timeseries),
         "tasks": tasks,
         "seeds": seeds,
         "models": models,
@@ -235,6 +369,7 @@ def run_one_length(length: int, args: argparse.Namespace, output_dir: Path) -> d
         "seed_aggregate_rows": seed_aggregate_rows,
         "seed_aggregate_summary": seed_aggregate_summary,
         "model_aggregate_rows": model_aggregate_rows,
+        "invalid_tasks": invalid_tasks,
     }
 
 
@@ -339,6 +474,7 @@ def write_report(output_dir: Path, payload: dict[str, Any]) -> None:
         "",
         f"- Generated: `{payload['generated_at_utc']}`",
         f"- Status: **{payload['status'].upper()}**",
+        f"- Matrix mode: `{payload['matrix_mode']}`",
         f"- Criteria: `{payload['criteria_passed']}/{payload['criteria_total']}`",
         f"- Outcome: `{c['outcome']}`",
         f"- Recommendation: {c['recommendation']}",
@@ -367,9 +503,31 @@ def write_report(output_dir: Path, payload: dict[str, Any]) -> None:
             f"{margin_best} | "
             f"{values['margin_vs_raw_v2_1']} |"
         )
+    invalid_tasks = [
+        item
+        for result in payload.get("length_results", [])
+        for item in result.get("invalid_tasks", [])
+    ]
     lines.extend(
         [
             "",
+            "## Benchmark Stream Validity",
+            "",
+            f"- Invalid generated task streams: `{len(invalid_tasks)}`",
+        ]
+    )
+    for item in invalid_tasks:
+        finite_check = item.get("finite_check", {})
+        lines.append(
+            f"- `{item.get('task')}` seed `{item.get('seed')}` length `{item.get('length')}` "
+            f"target_nonfinite_count=`{finite_check.get('target_nonfinite_count')}`"
+        )
+    if invalid_tasks:
+        lines.append("")
+    else:
+        lines.append("")
+    lines.extend(
+        [
             "## Interpretation",
             "",
             f"- Candidate improvement first-to-last: `{c['candidate_improvement_first_to_last']}`",
@@ -394,6 +552,15 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--seed-count", type=int, default=None)
     parser.add_argument("--base-seed", type=int, default=42)
     parser.add_argument("--lengths", default=DEFAULT_LENGTHS)
+    parser.add_argument(
+        "--matrix-mode",
+        choices=["scoreboard", "full_diagnostic"],
+        default="scoreboard",
+        help=(
+            "scoreboard runs only the v2.2 candidate plus public baselines for long exposure; "
+            "full_diagnostic preserves the raw CRA/sham matrix for shorter mechanism audits."
+        ),
+    )
     parser.add_argument("--horizon", type=int, default=8)
     parser.add_argument("--history", type=int, default=12)
     parser.add_argument("--backend", default="mock")
@@ -419,6 +586,12 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--esn-input-scale", type=float, default=0.5)
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
     parser.add_argument("--smoke", action="store_true", help="Run one small length/task/seed for local validation only.")
+    parser.add_argument(
+        "--timeseries-max-length",
+        type=int,
+        default=2000,
+        help="Write per-step timeseries only for lengths at or below this value; long runs keep summary/aggregate artifacts.",
+    )
     return parser
 
 
@@ -436,8 +609,21 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     classification = classify(length_results, lengths)
     criteria = [
         criterion("standard task subset only", sorted(tasks), "subset of standard three", set(tasks).issubset(STANDARD_THREE)),
+        criterion("matrix mode declared", args.matrix_mode, "scoreboard or full_diagnostic", args.matrix_mode in {"scoreboard", "full_diagnostic"}),
+        criterion(
+            "generated benchmark streams finite",
+            sum(len(result["invalid_tasks"]) for result in length_results),
+            "0 invalid task streams",
+            all(not result["invalid_tasks"] for result in length_results),
+        ),
         criterion("v2.2 candidate present", V22_CANDIDATE, "present for every length", all(any(row["model"] == V22_CANDIDATE for row in result["model_aggregate_rows"]) for result in length_results)),
-        criterion("raw v2.1 reference present", RAW_V21, "present for every length", all(any(row["model"] == RAW_V21 for row in result["model_aggregate_rows"]) for result in length_results)),
+        criterion(
+            "raw v2.1 reference policy",
+            args.matrix_mode,
+            "required in full_diagnostic; historical-only in scoreboard",
+            args.matrix_mode == "scoreboard"
+            or all(any(row["model"] == RAW_V21 for row in result["model_aggregate_rows"]) for result in length_results),
+        ),
         criterion("public baselines present", sorted(PUBLIC_BASELINES), "at least two per length", all(sum(1 for row in result["model_aggregate_rows"] if row["model"] in PUBLIC_BASELINES) >= 2 for result in length_results)),
         criterion("length sweep completed", classification["completed_lengths"], "== requested lengths", bool(classification["all_requested_lengths_completed"])),
         criterion("classification produced", classification["outcome"], "non-empty", bool(classification["outcome"])),
@@ -453,6 +639,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         "runner_revision": RUNNER_REVISION,
         "generated_at_utc": utc_now(),
         "status": status,
+        "matrix_mode": args.matrix_mode,
         "criteria": criteria,
         "criteria_passed": sum(1 for item in criteria if item["passed"]),
         "criteria_total": len(criteria),
@@ -468,6 +655,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                 "length": result["length"],
                 "runtime_seconds": result["runtime_seconds"],
                 "models": result["models"],
+                "invalid_tasks": result["invalid_tasks"],
             }
             for result in length_results
         ],
@@ -480,6 +668,12 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             "lengths": lengths,
             "prediction": "online readouts predict before update; train-prefix baselines fit only train rows",
             "custom_task_policy": "no custom synthetic tasks in this runner",
+            "matrix_mode": args.matrix_mode,
+            "long_run_policy": (
+                "scoreboard mode omits raw CRA trace collection and destructive shams so 10k/50k "
+                "public benchmark sweeps remain practical; use full_diagnostic mode for shorter "
+                "mechanism-causality audits."
+            ),
             "hardware_policy": "software-only; hardware transfer blocked until benchmark/mechanism earns it",
         },
         "claim_boundary": (
@@ -515,6 +709,7 @@ def main() -> None:
             {
                 "tier": TIER,
                 "status": result["status"],
+                "matrix_mode": result["matrix_mode"],
                 "criteria": f"{result['criteria_passed']}/{result['criteria_total']}",
                 "outcome": result["classification"]["outcome"],
                 "output_dir": result["output_dir"],

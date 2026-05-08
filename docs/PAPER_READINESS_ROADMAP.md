@@ -3419,6 +3419,15 @@ If Tier 7.0e still fails, localize the public benchmark gap before adding the
 next mechanism. Do not tune blindly and do not replace the public scoreboard
 with custom tasks.
 
+2026-05-08 execution update: Tier 7.0e is complete enough to force Tier 7.0f.
+The 720/2000 calibration passed and showed v2.2 is materially better than raw
+v2.1 but still behind the ESN public baseline. The 10k scoreboard attempt is
+blocked, not interpretable as a model result, because the standard NARMA10 seed
+44 stream generated non-finite targets. Tier 7.0f must therefore begin with
+benchmark-protocol repair: finite-stream validation, a predeclared long-NARMA
+policy, and then public-scoreboard failure localization. No new software
+baseline freeze or hardware transfer is authorized from Tier 7.0e.
+
 Possible diagnoses:
 
 ```text
@@ -6553,12 +6562,15 @@ Near-term roadmap insertion:
     native-scale substrate baseline only; not speedup, benchmark usefulness,
     true two-partition learning, lifecycle scaling, multi-shard learning, or
     AGI/ASI evidence.
-37. Tier 7.0e standardized dynamical benchmark rerun. CURRENT NEXT: rerun
-    Mackey-Glass, Lorenz, NARMA10, and aggregate geometric-mean MSE using the
-    v2.2 fading-memory temporal-state baseline with a predeclared run-length
-    sweep (`720`, `2000`, `10000`, `50000` if practical). Tier 6.2 diagnostic
-    hard tasks may explain failures, but they may not replace
-    public/standardized benchmark evidence.
+37. Tier 7.0e standardized dynamical benchmark rerun. COMPLETE / PARTIALLY
+    BLOCKED: short/medium calibration passed and showed v2.2 improves over raw
+    v2.1 but remains behind ESN; the 10k public scoreboard is invalid until the
+    non-finite NARMA10 seed-44 stream is handled by a predeclared finite-stream
+    policy.
+38. Tier 7.0f benchmark-protocol repair and public failure localization.
+    CURRENT NEXT: repair the long public-benchmark stream policy, then diagnose
+    whether the remaining gap is readout/interface, nonlinear recurrent state,
+    causal history, target scaling, baseline fairness, or architecture limits.
 ```
 
 Tier 5.19a result:
@@ -6862,7 +6874,7 @@ Tests: test-temporal-state, test-profiles, test, test-lifecycle, test-lifecycle-
 Boundary: local source/runtime host evidence only, not hardware
 ```
 
-Next: Run Tier 7.0e standardized Mackey-Glass/Lorenz/NARMA10 benchmark rerun in software with v2.2 and the run-length/training-budget sweep, using `CRA_NATIVE_SCALE_BASELINE_v0.5` only as the frozen native substrate reference, not as usefulness evidence.
+Next: Run Tier 7.0f benchmark-protocol repair and public failure localization. Tier 7.0e short/medium calibration passed but did not make v2.2 competitive with ESN, and the 10k public scoreboard is blocked by a non-finite NARMA10 seed-44 stream. Use `CRA_NATIVE_SCALE_BASELINE_v0.5` only as the frozen native substrate reference, not as usefulness evidence.
       Tier 4.32e passed after EBRAINS ingest at
       `controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/`:
       board `10.11.205.161`, two cases, 32 events per case, 96/96 lookup

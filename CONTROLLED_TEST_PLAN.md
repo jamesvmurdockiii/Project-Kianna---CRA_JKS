@@ -9918,8 +9918,8 @@ Criteria: 64/64
 Output: controlled_test_output/tier4_32h_20260508_native_scale_evidence_closeout/
 Baseline: baselines/CRA_NATIVE_SCALE_BASELINE_v0.5.md
 Registry snapshot: baselines/CRA_NATIVE_SCALE_BASELINE_v0.5_STUDY_REGISTRY.snapshot.json
-Next: Tier 7.0e standardized Mackey-Glass/Lorenz/NARMA10 rerun in software with
-v2.2 and a run-length/training-budget sweep
+Next: Tier 7.0f benchmark-protocol repair and public failure localization after
+Tier 7.0e short/medium calibration plus the 10k NARMA10 finite-stream blocker
 ```
 
 ## Tier 7.0e - Standard Dynamical Benchmark Rerun With v2.2 And Run-Length Sweep
@@ -10012,4 +10012,58 @@ If 7.0e improves but still loses: run 7.0f failure localization.
 If 7.0e closes the gap: run ablations plus compact regression before freeze.
 If 7.0e does not improve: stop blaming short training length and choose the next
 planned general mechanism only after diagnosis.
+```
+
+Execution update 2026-05-08:
+
+```text
+Short/medium calibration:
+  output: controlled_test_output/tier7_0e_20260508_length_calibration/
+  status: pass, 8/8 criteria
+  lengths: 720, 2000
+  outcome: v2.2 improves versus raw v2.1 but is not length-competitive
+           with the strongest public baseline.
+  720 geomean MSE:
+    v2.2 fading-memory candidate: 0.19853975759572184
+    raw v2.1 reference: 0.7493269520748722
+    best baseline: fixed_esn_train_prefix_ridge_baseline
+    best baseline MSE: 0.02537065477597153
+  2000 geomean MSE:
+    v2.2 fading-memory candidate: 0.2514764000158321
+    raw v2.1 reference: 1.3391242823450145
+    best baseline: fixed_esn_train_prefix_ridge_baseline
+    best baseline MSE: 0.06236159958411151
+
+Long scoreboard attempt:
+  output: controlled_test_output/tier7_0e_20260508_length_10000_scoreboard/
+  status: fail, 7/8 criteria
+  matrix_mode: scoreboard
+  blocker: NARMA10 seed 44 at length 10000 generated 1,688 non-finite
+           target values.
+  interpretation: the 10k three-task/three-seed public scoreboard is blocked
+                  by benchmark-stream validity and cannot be used as model
+                  evidence.
+```
+
+Runner repair completed:
+
+```text
+experiments/tier7_0e_standard_dynamical_v2_2_sweep.py now separates:
+  scoreboard mode:
+    v2.2 candidate + public baselines, no raw CRA trace/sham burden, suitable
+    for long exposure sweeps.
+  full_diagnostic mode:
+    raw CRA/sham/ablation matrix for shorter mechanism-causality audits.
+
+The runner now validates generated benchmark streams for finite observed and
+target values and fails cleanly instead of silently scoring invalid sequences.
+```
+
+Next required step:
+
+```text
+Tier 7.0f - benchmark-protocol repair and public failure localization.
+Do not add a new CRA mechanism, freeze a baseline, or migrate benchmark logic
+to hardware until the long NARMA10 finite-stream policy and public-scoreboard
+failure mode are explicitly documented.
 ```

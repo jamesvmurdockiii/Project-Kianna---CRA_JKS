@@ -1,0 +1,392 @@
+{
+  "claim_boundary": "Tier 7.0e is software benchmark evidence only. It reruns the public standard dynamical scoreboard with v2.2 and a length sweep. It is not hardware evidence, not a custom synthetic usefulness claim, not a new baseline freeze, and not AGI/ASI evidence.",
+  "classification": {
+    "all_requested_lengths_completed": true,
+    "any_competitive_with_best_baseline": false,
+    "any_improves_vs_raw_v2_1": false,
+    "best_baseline_improvement_first_to_last": null,
+    "by_length": {
+      "10000": {
+        "best_baseline_model": "fixed_esn_train_prefix_ridge_baseline",
+        "best_baseline_mse": null,
+        "candidate_mse": null,
+        "competitive_with_best_baseline": false,
+        "margin_vs_best_baseline": null,
+        "margin_vs_raw_v2_1": null,
+        "raw_v2_1_mse": null
+      }
+    },
+    "candidate_improvement_first_to_last": null,
+    "claim": "no public benchmark improvement from this tier",
+    "completed_lengths": [
+      10000
+    ],
+    "longest_length": 10000,
+    "longest_length_best_baseline_model": "fixed_esn_train_prefix_ridge_baseline",
+    "longest_length_best_baseline_mse": null,
+    "longest_length_candidate_mse": null,
+    "longest_length_margin_vs_best_baseline": null,
+    "nonclaims": [
+      "not hardware evidence",
+      "not custom synthetic usefulness proof",
+      "not universal benchmark superiority",
+      "not a new baseline freeze",
+      "not language, planning, AGI, or ASI"
+    ],
+    "outcome": "v2_2_does_not_move_standard_scoreboard",
+    "recommendation": "Stop blaming training duration; run failure localization or narrow claim.",
+    "requested_lengths": [
+      10000
+    ]
+  },
+  "criteria": [
+    {
+      "name": "standard task subset only",
+      "note": "",
+      "passed": true,
+      "rule": "subset of standard three",
+      "value": [
+        "lorenz",
+        "mackey_glass",
+        "narma10"
+      ]
+    },
+    {
+      "name": "matrix mode declared",
+      "note": "",
+      "passed": true,
+      "rule": "scoreboard or full_diagnostic",
+      "value": "scoreboard"
+    },
+    {
+      "name": "generated benchmark streams finite",
+      "note": "",
+      "passed": false,
+      "rule": "0 invalid task streams",
+      "value": 1
+    },
+    {
+      "name": "v2.2 candidate present",
+      "note": "",
+      "passed": true,
+      "rule": "present for every length",
+      "value": "fading_memory_only_ablation"
+    },
+    {
+      "name": "raw v2.1 reference policy",
+      "note": "",
+      "passed": true,
+      "rule": "required in full_diagnostic; historical-only in scoreboard",
+      "value": "scoreboard"
+    },
+    {
+      "name": "public baselines present",
+      "note": "",
+      "passed": true,
+      "rule": "at least two per length",
+      "value": [
+        "fixed_esn_train_prefix_ridge_baseline",
+        "fixed_random_reservoir_online_control",
+        "lag_only_online_lms_control"
+      ]
+    },
+    {
+      "name": "length sweep completed",
+      "note": "",
+      "passed": true,
+      "rule": "== requested lengths",
+      "value": [
+        10000
+      ]
+    },
+    {
+      "name": "classification produced",
+      "note": "",
+      "passed": true,
+      "rule": "non-empty",
+      "value": "v2_2_does_not_move_standard_scoreboard"
+    }
+  ],
+  "criteria_passed": 7,
+  "criteria_total": 8,
+  "fairness_contract": {
+    "custom_task_policy": "no custom synthetic tasks in this runner",
+    "hardware_policy": "software-only; hardware transfer blocked until benchmark/mechanism earns it",
+    "lengths": [
+      10000
+    ],
+    "long_run_policy": "scoreboard mode omits raw CRA trace collection and destructive shams so 10k/50k public benchmark sweeps remain practical; use full_diagnostic mode for shorter mechanism-causality audits.",
+    "matrix_mode": "scoreboard",
+    "normalization": "train-prefix only inside imported task builders and online readouts",
+    "prediction": "online readouts predict before update; train-prefix baselines fit only train rows",
+    "scoreboard": "Mackey-Glass / Lorenz / NARMA10 standard dynamical suite",
+    "split": "chronological",
+    "tier": "Tier 7.0e - Standard Dynamical Benchmark Rerun With v2.2 And Run-Length Sweep"
+  },
+  "generated_at_utc": "2026-05-08T18:32:32+00:00",
+  "length_results": [
+    {
+      "invalid_tasks": [
+        {
+          "display_name": "NARMA10",
+          "finite_check": {
+            "observed_finite": true,
+            "observed_nonfinite_count": 0,
+            "target_finite": false,
+            "target_max": 8.320612730952877e+159,
+            "target_min": -1.9097172947240295,
+            "target_nonfinite_count": 1688
+          },
+          "horizon": 1,
+          "length": 10000,
+          "metadata": {
+            "obs_mu": 0.24931711792971178,
+            "obs_sd": 0.14250719948692295,
+            "target_mu": 0.3888177914987527,
+            "target_sd": 0.10771242492247772
+          },
+          "sample_count": 10000,
+          "seed": 44,
+          "task": "narma10",
+          "test_count": 3500,
+          "train_end": 6500
+        }
+      ],
+      "length": 10000,
+      "models": [
+        "fading_memory_only_ablation",
+        "fixed_esn_train_prefix_ridge_baseline",
+        "fixed_random_reservoir_online_control",
+        "lag_only_online_lms_control"
+      ],
+      "runtime_seconds": 4.8922683750000004
+    }
+  ],
+  "lengths": [
+    10000
+  ],
+  "matrix_mode": "scoreboard",
+  "model_aggregate_rows": [
+    {
+      "geomean_mse": null,
+      "geomean_nmse": null,
+      "length": 10000,
+      "model": "fading_memory_only_ablation",
+      "public_rank": null,
+      "role": "v2_2_candidate",
+      "task_count": 3
+    },
+    {
+      "geomean_mse": null,
+      "geomean_nmse": null,
+      "length": 10000,
+      "model": "fixed_esn_train_prefix_ridge_baseline",
+      "public_rank": null,
+      "role": "public_baseline",
+      "task_count": 3
+    },
+    {
+      "geomean_mse": null,
+      "geomean_nmse": null,
+      "length": 10000,
+      "model": "fixed_random_reservoir_online_control",
+      "public_rank": null,
+      "role": "public_baseline",
+      "task_count": 3
+    },
+    {
+      "geomean_mse": null,
+      "geomean_nmse": null,
+      "length": 10000,
+      "model": "lag_only_online_lms_control",
+      "public_rank": null,
+      "role": "public_baseline",
+      "task_count": 3
+    }
+  ],
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_0e_20260508_length_10000_scoreboard",
+  "runner_revision": "tier7_0e_standard_dynamical_v2_2_sweep_20260508_0002",
+  "runtime_seconds": 4.895779417,
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "status": "fail",
+  "summary_rows": [
+    {
+      "length": 10000,
+      "model": "fading_memory_only_ablation",
+      "mse_mean": 0.257511298549065,
+      "mse_median": 0.25618493720691277,
+      "mse_std": 0.013790203332943236,
+      "mse_worst": 0.2719167600408947,
+      "nmse_mean": 0.257867316716839,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.26346287491321846,
+      "task": "mackey_glass",
+      "test_corr_mean": 0.8720640834634045
+    },
+    {
+      "length": 10000,
+      "model": "fixed_esn_train_prefix_ridge_baseline",
+      "mse_mean": 0.034287745797200286,
+      "mse_median": 0.03403291839272803,
+      "mse_std": 0.011772414232004761,
+      "mse_worst": 0.04618550503792234,
+      "nmse_mean": 0.034264515506275996,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.034749744385466665,
+      "task": "mackey_glass",
+      "test_corr_mean": 0.982799331567667
+    },
+    {
+      "length": 10000,
+      "model": "fixed_random_reservoir_online_control",
+      "mse_mean": 0.2715640810315457,
+      "mse_median": 0.25795301765060463,
+      "mse_std": 0.06255153454893361,
+      "mse_worst": 0.3398004574960908,
+      "nmse_mean": 0.2715983314372004,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.2707946549922054,
+      "task": "mackey_glass",
+      "test_corr_mean": 0.8534134269035194
+    },
+    {
+      "length": 10000,
+      "model": "lag_only_online_lms_control",
+      "mse_mean": 0.301544461780659,
+      "mse_median": 0.2976244778253678,
+      "mse_std": 0.017825699489801176,
+      "mse_worst": 0.32100390679671104,
+      "nmse_mean": 0.30194983254747965,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.3047215445968748,
+      "task": "mackey_glass",
+      "test_corr_mean": 0.8590803392635671
+    },
+    {
+      "length": 10000,
+      "model": "fading_memory_only_ablation",
+      "mse_mean": 0.06829792595838953,
+      "mse_median": 0.06778495266232581,
+      "mse_std": 0.0014018670291559199,
+      "mse_worst": 0.06988402719929356,
+      "nmse_mean": 0.07044867932912528,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.060770587298669444,
+      "task": "lorenz",
+      "test_corr_mean": 0.9709306965622447
+    },
+    {
+      "length": 10000,
+      "model": "fixed_esn_train_prefix_ridge_baseline",
+      "mse_mean": 0.000567019689131485,
+      "mse_median": 0.0005867277700760457,
+      "mse_std": 0.00033137706036093895,
+      "mse_worst": 0.0008881028780435237,
+      "nmse_mean": 0.0005894820105916379,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.0011301069557915577,
+      "task": "lorenz",
+      "test_corr_mean": 0.9997569433214242
+    },
+    {
+      "length": 10000,
+      "model": "fixed_random_reservoir_online_control",
+      "mse_mean": 0.040180932654900366,
+      "mse_median": 0.04193953663236349,
+      "mse_std": 0.018958355712136367,
+      "mse_worst": 0.058198713386677065,
+      "nmse_mean": 0.04141763771722741,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.03436322760926434,
+      "task": "lorenz",
+      "test_corr_mean": 0.9797454416752425
+    },
+    {
+      "length": 10000,
+      "model": "lag_only_online_lms_control",
+      "mse_mean": 0.10474145880922962,
+      "mse_median": 0.1055707601063959,
+      "mse_std": 0.002087509520810974,
+      "mse_worst": 0.10628688227107325,
+      "nmse_mean": 0.10805364267363494,
+      "seed_count": 3,
+      "status": "pass",
+      "tail_mse_mean": 0.0938380685350601,
+      "task": "lorenz",
+      "test_corr_mean": 0.9659336304516555
+    },
+    {
+      "length": 10000,
+      "model": "fading_memory_only_ablation",
+      "mse_mean": 0.36003618284326566,
+      "mse_median": 0.36003618284326566,
+      "mse_std": 0.02033634235027536,
+      "mse_worst": 0.37441614842367654,
+      "nmse_mean": 0.37879670842893703,
+      "seed_count": 2,
+      "status": "fail",
+      "tail_mse_mean": 0.33560332457224634,
+      "task": "narma10",
+      "test_corr_mean": 0.7884955228391066
+    },
+    {
+      "length": 10000,
+      "model": "fixed_esn_train_prefix_ridge_baseline",
+      "mse_mean": 0.578218869579795,
+      "mse_median": 0.578218869579795,
+      "mse_std": 0.010283049296653666,
+      "mse_worst": 0.5854900834687343,
+      "nmse_mean": 0.6088747647956112,
+      "seed_count": 2,
+      "status": "fail",
+      "tail_mse_mean": 0.5843013695264757,
+      "task": "narma10",
+      "test_corr_mean": 0.628797938909886
+    },
+    {
+      "length": 10000,
+      "model": "fixed_random_reservoir_online_control",
+      "mse_mean": 0.6131856871421636,
+      "mse_median": 0.6131856871421636,
+      "mse_std": 0.05274707850678088,
+      "mse_worst": 0.6504835040420875,
+      "nmse_mean": 0.6447110550599355,
+      "seed_count": 2,
+      "status": "fail",
+      "tail_mse_mean": 0.593354160539959,
+      "task": "narma10",
+      "test_corr_mean": 0.5968441638954594
+    },
+    {
+      "length": 10000,
+      "model": "lag_only_online_lms_control",
+      "mse_mean": 0.19711669828083273,
+      "mse_median": 0.19711669828083273,
+      "mse_std": 0.0031984346027158794,
+      "mse_worst": 0.1993783330775948,
+      "nmse_mean": 0.2077251122265647,
+      "seed_count": 2,
+      "status": "fail",
+      "tail_mse_mean": 0.1939287862202002,
+      "task": "narma10",
+      "test_corr_mean": 0.8901746666865878
+    }
+  ],
+  "tasks": [
+    "mackey_glass",
+    "lorenz",
+    "narma10"
+  ],
+  "tier": "Tier 7.0e - Standard Dynamical Benchmark Rerun With v2.2 And Run-Length Sweep"
+}

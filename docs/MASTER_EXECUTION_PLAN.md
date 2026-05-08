@@ -969,21 +969,28 @@ ability.
 
 ### Phase H - Software Usefulness And Final Baselines
 
-69. **CURRENT ACTIVE STEP** - Tier 7.0e standardized dynamical benchmark rerun
-    with run-length/training-budget sweep:
-    rerun Mackey-Glass, Lorenz, NARMA10, and aggregate geometric-mean MSE using
-    the frozen v2.2 fading-memory temporal-state software baseline across
-    predeclared lengths `720`, `2000`, `10000`, and `50000` if practical. Use
-    `experiments/tier7_0e_standard_dynamical_v2_2_sweep.py` as the runner and
-    `docs/TIER6_2_USEFULNESS_BATTERY_CONTRACT.md` as the source-of-truth
-    scoreboard rule: public/standard benchmarks first; custom synthetic tasks
-    only diagnose failures. This explicitly tests whether the prior v2.1 result
-    was partly a short-training-budget artifact.
+69. **COMPLETE / PARTIALLY BLOCKED** - Tier 7.0e standardized dynamical
+    benchmark rerun with run-length/training-budget sweep:
+    the runner `experiments/tier7_0e_standard_dynamical_v2_2_sweep.py` now has
+    two modes: `scoreboard` for long public-benchmark exposure and
+    `full_diagnostic` for shorter raw-CRA/sham audits. The 720/2000
+    calibration at
+    `controlled_test_output/tier7_0e_20260508_length_calibration/` passed
+    8/8 criteria and showed v2.2 improved strongly versus raw v2.1 but remained
+    noncompetitive with the ESN baseline. The 10k scoreboard attempt at
+    `controlled_test_output/tier7_0e_20260508_length_10000_scoreboard/` failed
+    7/8 criteria because NARMA10 seed 44 generated 1,688 non-finite target
+    values. This is a benchmark-stream validity blocker, not a CRA model pass
+    or failure. No v2.3 freeze, usefulness claim, or hardware transfer is
+    authorized from Tier 7.0e.
 
-70. Tier 7.0f failure localization if 7.0e still loses: diagnose whether the
+70. **CURRENT ACTIVE STEP** - Tier 7.0f benchmark-protocol repair and public
+    failure localization: define and document a finite-stream policy for long
+    NARMA10 before any 10k/50k standardized claim, then diagnose whether the
     remaining gap is continuous readout/interface, nonlinear recurrent state,
     insufficient causal history, target scaling, baseline unfairness, or a
-    genuine architecture limitation. Do not tune blindly.
+    genuine architecture limitation. Do not tune blindly and do not replace the
+    public scoreboard with private diagnostic tasks.
 
 71. Tier 6.2a diagnostic hard tasks only if needed: use variable-delay,
     hidden-context, drift, anomaly, or delayed-control diagnostics to isolate the
@@ -1284,13 +1291,14 @@ Tier 4.32g-r0 then passed locally and authorized Tier 4.32g hardware package
 preparation. Tier 4.32g-r2 then passed on EBRAINS after the stale-package rerun
 was isolated, proving two-chip lifecycle traffic/resource counters over the
 repaired package. Tier 4.32h then passed locally and froze
-`CRA_NATIVE_SCALE_BASELINE_v0.5`. The next action is Tier 7.0e: rerun the
-standard Mackey-Glass/Lorenz/NARMA10 scoreboard with the v2.2 fading-memory
-baseline and a predeclared run-length/training-budget sweep. Tier 6.2
-diagnostics may explain failures, but they may not replace public/standardized
-benchmark evidence. This is not benchmarks-as-claims, speedup, true
-two-partition learning, lifecycle scaling, multi-shard learning, or new native
-migration.
+`CRA_NATIVE_SCALE_BASELINE_v0.5`. Tier 7.0e has now run: short/medium
+calibration improved over raw v2.1 but stayed behind ESN, and the 10k scoreboard
+is blocked by a non-finite NARMA10 seed-44 stream. The next action is Tier 7.0f:
+repair the long public-benchmark finite-stream protocol and localize the
+standard-scoreboard failure. Tier 6.2 diagnostics may explain failures, but they
+may not replace public/standardized benchmark evidence. This is not
+benchmarks-as-claims, speedup, true two-partition learning, lifecycle scaling,
+multi-shard learning, or new native migration.
 ```
 
 Purpose:
@@ -1333,11 +1341,13 @@ the native lifecycle baseline. Keep Tier 4.31d's boundary strict: one-board
 temporal-state hardware smoke only; not nonlinear recurrence, not speedup, not
 multi-chip scaling, not benchmark superiority, and not full organism autonomy.
 Tier 4.32g-r2 passed and Tier 4.32h froze `CRA_NATIVE_SCALE_BASELINE_v0.5`.
-The next active work is Tier 7.0e standardized benchmark rerun with v2.2 plus
-run-length/training-budget sweep, then failure localization/mechanism layering
-only if the public scoreboard still shows a gap. Reopen native work only for
-targeted transfer after a software task/mechanism earns it under the Tier 7/6.2
-gates.
+Tier 7.0e short/medium calibration showed v2.2 improves over raw v2.1 but does
+not close the ESN gap; the 10k standardized scoreboard is blocked by a
+non-finite NARMA10 seed-44 target stream. The next active work is Tier 7.0f:
+repair the long-benchmark finite-stream protocol and localize the public
+benchmark failure before any new mechanism layer, baseline freeze, or hardware
+transfer. Reopen native work only for targeted transfer after a software
+task/mechanism earns it under the Tier 7/6.2 gates.
 It must preserve explicit board/chip/shard identity, message paths, compact
 readback ownership, failure counters, placement assumptions,
 enabled-vs-no-learning separation, and resource measurements while adding the

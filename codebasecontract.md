@@ -424,16 +424,26 @@ Tier 4.32h — COMPLETE. Native-scale evidence closeout / baseline decision.
     benchmark usefulness, true partitioned learning, lifecycle scaling,
     multi-shard learning, and AGI/ASI.
 
-Tier 7.0e — CURRENT ACTIVE STEP. Standardized dynamical benchmark rerun with
-  v2.2 and run-length/training-budget sweep.
-  Status: DESIGN/RUN NEXT.
-  Question: does the frozen v2.2 fading-memory temporal-state software baseline
-    close or narrow the prior Tier 7.0 Mackey-Glass/Lorenz/NARMA10 gap, and was
-    the earlier v2.1 result partly a short-training-budget artifact?
-  Required lengths: 720, 2000, 10000, and 50000 if practical.
-  Boundary: public/standardized software benchmark evidence only; Tier 6.2
-    custom diagnostics may explain failures, but cannot replace public
-    benchmark evidence or authorize hardware transfer by themselves.
+Tier 7.0e — COMPLETE / PARTIALLY BLOCKED. Standardized dynamical benchmark
+  rerun with v2.2 and run-length/training-budget sweep.
+  Status: 720/2000 calibration passed; 10k scoreboard failed benchmark-stream
+    validity because NARMA10 seed 44 generated non-finite target values.
+  Key evidence:
+    controlled_test_output/tier7_0e_20260508_length_calibration/
+    controlled_test_output/tier7_0e_20260508_length_10000_scoreboard/
+  Boundary: this is public/standardized software benchmark evidence only. It
+    shows v2.2 improves over raw v2.1 at short/medium lengths but remains behind
+    ESN; the 10k failure is a benchmark-protocol blocker, not a CRA model pass
+    or failure.
+
+Tier 7.0f — CURRENT ACTIVE STEP. Benchmark-protocol repair and public failure
+  localization.
+  Required first move: define a finite-stream policy for long NARMA10 and rerun
+    the public scoreboard only after the benchmark stream is valid. Then
+    diagnose whether the remaining gap is readout/interface, nonlinear
+    recurrent state, causal history, target scaling, baseline fairness, or a
+    genuine architecture limitation. Do not add a mechanism, freeze a baseline,
+    or transfer benchmark claims to hardware until this is done.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware
@@ -923,9 +933,9 @@ Immediate next steps:
    controlled_test_output/tier4_32h_20260508_native_scale_evidence_closeout/.
    This is a native-scale substrate freeze only: do not claim speedup, benchmark
    usefulness, true two-partition cross-chip learning, lifecycle scaling,
-   multi-shard learning, or AGI/ASI from it. The next active step is Tier 7.0e
-   standardized Mackey-Glass/Lorenz/NARMA10 rerun with v2.2 and a
-   run-length/training-budget sweep before any broad new native migration.
+   multi-shard learning, or AGI/ASI from it. Tier 7.0e has now forced Tier
+   7.0f: repair the long standard-benchmark finite-stream protocol and
+   localize the public scoreboard failure before any broad new native migration.
 3. Keep the 4.31b/4.31c range refinement explicit: selected trace bound is ±2
    in s16.15; the older ±1 sketch saturated and must not silently return.
 4. Keep public repo hygiene green before the next upload or commit: no

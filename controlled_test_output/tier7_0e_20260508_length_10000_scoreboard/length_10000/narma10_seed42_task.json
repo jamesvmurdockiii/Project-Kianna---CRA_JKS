@@ -1,0 +1,24 @@
+{
+  "display_name": "NARMA10",
+  "finite_check": {
+    "observed_finite": true,
+    "observed_nonfinite_count": 0,
+    "target_finite": true,
+    "target_max": 4.33883265801668,
+    "target_min": -2.0008891179019312,
+    "target_nonfinite_count": 0
+  },
+  "horizon": 1,
+  "length": 10000,
+  "metadata": {
+    "obs_mu": 0.25450343290843824,
+    "obs_sd": 0.143260702687792,
+    "target_mu": 0.3993906771022945,
+    "target_sd": 0.10808578308117815
+  },
+  "sample_count": 10000,
+  "seed": 42,
+  "task": "narma10",
+  "test_count": 3500,
+  "train_end": 6500
+}

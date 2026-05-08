@@ -1,0 +1,8 @@
+{
+  "generated_at_utc": "2026-05-08T18:40:40+00:00",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_0e_20260508_length_calibration/tier7_0e_results.json",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_0e_20260508_length_calibration",
+  "runner_revision": "tier7_0e_standard_dynamical_v2_2_sweep_20260508_0002",
+  "status": "pass",
+  "tier": "Tier 7.0e - Standard Dynamical Benchmark Rerun With v2.2 And Run-Length Sweep"
+}

@@ -160,6 +160,39 @@ If CRA does not improve with length, stop blaming training duration and move to
 mechanism diagnosis or claim narrowing.
 ```
 
+2026-05-08 result:
+
+```text
+Tier 7.0e short/medium calibration completed at:
+  controlled_test_output/tier7_0e_20260508_length_calibration/
+
+Status:
+  pass, 8/8 criteria
+
+Interpretation:
+  v2.2 substantially improved versus raw v2.1 at 720 and 2000 steps, but did
+  not become competitive with the strongest ESN public baseline.
+
+Tier 7.0e 10k scoreboard attempt completed at:
+  controlled_test_output/tier7_0e_20260508_length_10000_scoreboard/
+
+Status:
+  fail, 7/8 criteria
+
+Blocker:
+  NARMA10 seed 44 at length 10000 generated 1,688 non-finite target values.
+  The 10k three-task/three-seed public scoreboard is therefore invalid as model
+  evidence until a finite-stream policy is predeclared and rerun.
+```
+
+Immediate consequence:
+
+```text
+Tier 7.0f must start with benchmark-protocol repair and public failure
+localization. Do not add a new mechanism, freeze a software baseline, or move
+benchmark claims to hardware from the Tier 7.0e evidence alone.
+```
+
 ## Usefulness Ladder
 
 CRA must climb the usefulness ladder in this order:
@@ -376,12 +409,11 @@ Invalid reasons:
 The current next action is:
 
 ```text
-Tier 7.0e — rerun the standard Mackey-Glass / Lorenz / NARMA10 benchmark suite
-with the v2.2 fading-memory temporal-state baseline and a predeclared
-run-length/training-budget sweep.
+Tier 7.0f — repair the long standard-benchmark protocol and localize the public
+scoreboard failure.
 ```
 
-If 7.0e improves but still loses, run 7.0f failure localization. If 7.0e closes
-the gap, run ablations and compact regression before any new freeze. If 7.0e
-does not improve, do not invent custom proof tasks; choose the next planned
-general mechanism only after diagnosis.
+Tier 7.0e showed short/medium v2.2 improvement versus raw v2.1 but no ESN
+competitiveness, and the 10k scoreboard is blocked by invalid NARMA10 seed-44
+targets. Do not invent custom proof tasks; repair the public benchmark protocol
+and diagnose the failure before choosing the next planned general mechanism.

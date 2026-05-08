@@ -1,0 +1,5 @@
+model,geomean_mse,geomean_nmse,task_count,role,public_rank,length
+fading_memory_only_ablation,inf,inf,3,v2_2_candidate,,10000
+fixed_esn_train_prefix_ridge_baseline,inf,inf,3,public_baseline,,10000
+fixed_random_reservoir_online_control,inf,inf,3,public_baseline,,10000
+lag_only_online_lms_control,inf,inf,3,public_baseline,,10000

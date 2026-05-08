@@ -1,0 +1,15 @@
+model,geomean_mse,geomean_nmse,task_count,role,public_rank,length
+fixed_esn_train_prefix_ridge_baseline,0.02537065477597153,0.036694910601872806,3,public_baseline,1,720
+lag_only_online_lms_control,0.15368196619186625,0.22835354692815849,3,public_baseline,2,720
+fading_memory_only_ablation,0.19853975759572184,0.29736209246186973,3,v2_2_candidate,3,720
+fixed_random_reservoir_online_control,0.24921066803689862,0.36895851322016004,3,public_baseline,4,720
+raw_cra_v2_1_online,0.7493269520748722,1.128018562132158,3,raw_v2_1,5,720
+frozen_temporal_state_ablation,0.4509359893060995,0.6728723084740177,3,diagnostic_reference,,720
+permuted_recurrence_sham,0.15505822256282026,0.22976015507338657,3,diagnostic_reference,,720
+recurrent_hidden_only_ablation,0.2541360531562975,0.36320942880058493,3,diagnostic_reference,,720
+shuffled_temporal_state_sham,0.7549206927779458,1.125481667734027,3,diagnostic_reference,,720
+state_reset_ablation,0.15427720570797318,0.23275205270364077,3,diagnostic_reference,,720
+temporal_full_candidate,0.15026721016608235,0.22750207432654418,3,diagnostic_reference,,720
+temporal_no_plasticity_ablation,0.7493269520748722,1.128018562132158,3,diagnostic_reference,,720
+temporal_plus_lag_reference,0.11133460174736272,0.16769786052849345,3,diagnostic_reference,,720
+temporal_shuffled_target_control,0.6919873748652854,1.0315242341219637,3,diagnostic_reference,,720
