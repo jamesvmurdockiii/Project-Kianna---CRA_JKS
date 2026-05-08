@@ -92,7 +92,11 @@ showing the tiny v2.2 capped-ridge signal was not statistically confirmed
 against lag-multichannel ridge. Tier 7.1f then passed at
 `controlled_test_output/tier7_1f_20260508_next_public_adapter_contract/`,
 selecting Numenta NAB streaming anomaly detection as the next public adapter
-family. Tier 5.20a then passed as a harness at
+family. Tier 7.1g then passed at
+`controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/`,
+pinning the official NAB source commit, parsing selected streams/windows,
+emitting label-separated chronological smoke rows, and documenting
+scoring-interface feasibility. Tier 5.20a then passed as a harness at
 `controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic/`,
 but the full resonant-branch polyp proxy was not promoted because localized
 variable-delay/anomaly value came with broad-task regressions. Tier 5.20b then
@@ -103,10 +107,9 @@ promotion. Tier 5.20c, 5.20d, and 5.20e then checked 14/2, 4/12, and 2/14
 resonant/LIF splits. Those harnesses also passed, but none earned promotion.
 The current resonant dose sweep covers 16/0, 14/2, 12/4, 8/8, 4/12, 2/14, and
 0/16; resonant branches are documented and parked. The next active project step
-is Tier 7.1g NAB source/data/scoring
-preflight; no hardware transfer or native migration is authorized until
-public-adapter software usefulness or a promoted mechanism earns a separate
-evidence contract.
+is Tier 7.1h compact NAB scoring; no hardware transfer or native migration is
+authorized until public-adapter software usefulness or a promoted mechanism
+earns a separate evidence contract.
 
 Tier 4.32a-hw prepare has also passed locally. The current EBRAINS upload
 folder is `ebrains_jobs/cra_432a_hw`, and the exact JobManager command is

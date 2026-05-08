@@ -3746,8 +3746,10 @@ policy: capped RUL plus ridge readout repaired scalar scoring, but v2.3 still
 did not win. Tier 7.1e then rejected the tiny v2.2 capped-ridge signal as
 statistically unconfirmed against lag-multichannel ridge. Tier 7.1f then
 selected Numenta NAB streaming anomaly detection as the next public adapter
-family. The next step is Tier 7.1g NAB source/data/scoring preflight; stop
-tuning C-MAPSS for now.
+family. Tier 7.1g then passed NAB source/data/scoring preflight by pinning the
+official NAB commit, parsing selected streams/windows, keeping labels separate
+from online rows, and documenting scoring-interface feasibility. The next step
+is Tier 7.1h compact NAB scoring; stop tuning C-MAPSS for now.
 ```
 
 ### Tier 6.2: Diagnostic Hard Task Suite
@@ -3802,6 +3804,7 @@ Tier 7.1c — compact C-MAPSS FD001 scoring gate: COMPLETE, PASS 12/12
 Tier 7.1d — C-MAPSS failure analysis / adapter repair: COMPLETE, PASS 14/14
 Tier 7.1e — C-MAPSS capped-RUL/readout fairness confirmation: COMPLETE, PASS 12/12
 Tier 7.1f — next public adapter contract / family selection: COMPLETE, PASS 10/10
+Tier 7.1g — NAB source/data/scoring preflight: COMPLETE, PASS 24/24
 ```
 
 Result:
@@ -3841,6 +3844,13 @@ Output: controlled_test_output/tier7_1f_20260508_next_public_adapter_contract/
 Selected adapter: numenta_nab_streaming_anomaly
 Dataset family: Numenta Anomaly Benchmark (NAB)
 Boundary: contract only; no NAB data preflight, no scoring, no freeze, no hardware/native transfer.
+
+Output: controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/
+Pinned NAB commit: ea702d75cc2258d9d7dd35ca8e5e2539d71f3140
+Selected streams: 5
+Label-window rows: 12
+Smoke stream rows: 400
+Boundary: preflight only; no NAB scoring, no public usefulness evidence, no freeze, no hardware/native transfer.
 ```
 
 Interpretation:
@@ -3856,27 +3866,29 @@ did not win and multichannel v2.3 did not beat scalar repair or fair public
 baselines. Tier 7.1e then showed the tiny v2.2 capped-ridge signal was not
 statistically confirmed against lag-multichannel ridge under paired per-unit
 bootstrap analysis. Tier 7.1f selected Numenta NAB streaming anomaly detection
-as the next public adapter family. None of these tiers authorizes a freeze or
-native transfer.
+as the next public adapter family. Tier 7.1g verified the official source/data/
+label/scoring preflight and documented one raw chronology irregularity in an
+official file that the adapter resolves by chronological sorting before online
+smoke emission. None of these tiers authorizes a freeze or native transfer.
 ```
 
 Current next step:
 
 ```text
-Tier 7.1g — NAB source/data/scoring preflight
+Tier 7.1h — compact NAB scoring gate
 ```
 
-Tier 7.1g must verify:
+Tier 7.1h must predeclare and then score:
 
 ```text
-official NAB source access or reproducible cache
-source commit/release/checksum manifest
-data file parse
-label/window parse
-label-separated online streams
-tiny leakage-safe smoke rows
-scoring-interface feasibility
-no full scoring until preflight passes
+compact NAB subset from the pinned Tier 7.1g source commit
+online anomaly baselines
+CRA v2.2/v2.3 detector variants
+sham controls
+threshold policy and scoring profiles
+event-window and NAB-style metrics
+bootstrap/statistical support
+strict label-separation / no future-window access
 ```
 
 Tier 7.1a predeclared these candidate/future adapter families:
@@ -7361,7 +7373,7 @@ Boundary: contract/family-selection only, not NAB data preflight, not scoring,
           hardware/native transfer.
 ```
 
-Next: Implement Tier 7.1g NAB source/data/scoring preflight. Do not run full NAB scoring until source access, source hash/commit, file/label parsing, label-separated online streams, tiny leakage-safe smoke rows, and scoring-interface feasibility are verified. Do not claim public usefulness or move to native/on-chip transfer unless a later public-adapter gate beats or complements fair baselines under the predeclared boundary with meaningful effect size/statistical support. Use `CRA_NATIVE_SCALE_BASELINE_v0.5` only as the frozen native substrate reference, not as usefulness evidence.
+Next: Implement Tier 7.1h compact NAB scoring gate. Tier 7.1g has already verified source access, source commit, file/label parsing, label-separated online streams, tiny leakage-safe smoke rows, and scoring-interface feasibility. Do not claim public usefulness or move to native/on-chip transfer unless a later public-adapter gate beats or complements fair baselines under the predeclared boundary with meaningful effect size/statistical support. Use `CRA_NATIVE_SCALE_BASELINE_v0.5` only as the frozen native substrate reference, not as usefulness evidence.
 
 Detailed Tier 5.19 contract:
 
@@ -7447,7 +7459,7 @@ for strict promotion gates.
 Next step remains:
 
 ```text
-Tier 7.1g - NAB source/data/scoring preflight.
+Tier 7.1h - compact NAB scoring gate.
 ```
 
 ## Tier 5.20c/5.20d/5.20e Resonant Dose Sweep Closeout

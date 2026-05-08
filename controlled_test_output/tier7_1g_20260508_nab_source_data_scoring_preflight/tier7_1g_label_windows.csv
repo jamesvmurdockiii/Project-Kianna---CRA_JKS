@@ -1,0 +1,13 @@
+file,category,window_index,window_start,window_end,source,online_detector_access
+artificialWithAnomaly/art_daily_flatmiddle.csv,artificialWithAnomaly,0,2014-04-10 07:15:00.000000,2014-04-11 16:45:00.000000,labels/combined_windows.json,False
+realKnownCause/ambient_temperature_system_failure.csv,realKnownCause,0,2013-12-15 07:00:00.000000,2013-12-30 09:00:00.000000,labels/combined_windows.json,False
+realKnownCause/ambient_temperature_system_failure.csv,realKnownCause,1,2014-03-29 15:00:00.000000,2014-04-20 22:00:00.000000,labels/combined_windows.json,False
+realKnownCause/machine_temperature_system_failure.csv,realKnownCause,0,2013-12-10 06:25:00.000000,2013-12-12 05:35:00.000000,labels/combined_windows.json,False
+realKnownCause/machine_temperature_system_failure.csv,realKnownCause,1,2013-12-15 17:50:00.000000,2013-12-17 17:00:00.000000,labels/combined_windows.json,False
+realKnownCause/machine_temperature_system_failure.csv,realKnownCause,2,2014-01-27 14:20:00.000000,2014-01-29 13:30:00.000000,labels/combined_windows.json,False
+realKnownCause/machine_temperature_system_failure.csv,realKnownCause,3,2014-02-07 14:55:00.000000,2014-02-09 14:05:00.000000,labels/combined_windows.json,False
+realAWSCloudwatch/ec2_cpu_utilization_24ae8d.csv,realAWSCloudwatch,0,2014-02-26 13:45:00.000000,2014-02-27 06:25:00.000000,labels/combined_windows.json,False
+realAWSCloudwatch/ec2_cpu_utilization_24ae8d.csv,realAWSCloudwatch,1,2014-02-27 08:55:00.000000,2014-02-28 01:35:00.000000,labels/combined_windows.json,False
+realTraffic/TravelTime_387.csv,realTraffic,0,2015-07-27 10:56:00.000000,2015-07-31 18:01:00.000000,labels/combined_windows.json,False
+realTraffic/TravelTime_387.csv,realTraffic,1,2015-08-17 11:51:00.000000,2015-08-20 01:54:00.000000,labels/combined_windows.json,False
+realTraffic/TravelTime_387.csv,realTraffic,2,2015-08-31 15:44:00.000000,2015-09-01 13:06:00.000000,labels/combined_windows.json,False

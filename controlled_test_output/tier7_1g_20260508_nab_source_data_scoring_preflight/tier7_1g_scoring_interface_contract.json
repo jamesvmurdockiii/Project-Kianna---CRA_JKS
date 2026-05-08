@@ -1,0 +1,42 @@
+{
+  "benchmark": "Numenta Anomaly Benchmark (NAB)",
+  "label_access_policy": "Online detector rows may not contain anomaly labels or anomaly-window membership. Labels/windows are scoring-only and must be joined after scores are emitted.",
+  "next_scoring_tier": "Tier 7.1h - Compact NAB Scoring Gate",
+  "nonclaims": [
+    "not a scored NAB result",
+    "not a public usefulness claim",
+    "not a baseline freeze",
+    "not hardware/native transfer evidence",
+    "not AGI/ASI evidence"
+  ],
+  "official_repository": "https://github.com/numenta/NAB",
+  "official_scorer_interface_detected": {
+    "Sweeper": true,
+    "profiles_config": [
+      "reward_low_FN_rate",
+      "reward_low_FP_rate",
+      "standard"
+    ],
+    "scoreCorpus": true,
+    "threshold_detector_count": 16
+  },
+  "official_scorer_path": "nab/scorer.py",
+  "official_scorer_sha256": "35bb1413e34c141ae414eca94ec0a0d4e3b1a9583c63449a3a38e39159f945a9",
+  "offline_scoring_inputs": [
+    "labels/combined_windows.json",
+    "config/profiles.json",
+    "config/thresholds.json"
+  ],
+  "online_detector_output_schema": [
+    "timestamp",
+    "value",
+    "anomaly_score",
+    "prediction_before_update"
+  ],
+  "primary_profiles": [
+    "reward_low_FN_rate",
+    "reward_low_FP_rate",
+    "standard"
+  ],
+  "source_commit": "ea702d75cc2258d9d7dd35ca8e5e2539d71f3140"
+}

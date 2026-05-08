@@ -1,0 +1,6 @@
+file,category,row_count,source_start_timestamp,source_end_timestamp,adapter_start_timestamp,adapter_end_timestamp,raw_chronological,adapter_chronological,min_value,max_value,mean_value
+artificialWithAnomaly/art_daily_flatmiddle.csv,artificialWithAnomaly,4032,2014-04-01 00:00:00,2014-04-14 23:55:00,2014-04-01 00:00:00,2014-04-14 23:55:00,True,True,-21.998788838600007,87.9583481277,18.981142066457476
+realKnownCause/ambient_temperature_system_failure.csv,realKnownCause,7267,2013-07-04 00:00:00,2014-05-28 15:00:00,2013-07-04 00:00:00,2014-05-28 15:00:00,True,True,57.45840559,86.22321261,71.2424327082882
+realKnownCause/machine_temperature_system_failure.csv,realKnownCause,22695,2013-12-02 21:15:00,2014-02-19 15:25:00,2013-12-02 21:15:00,2014-02-19 15:25:00,False,True,2.0847212059999998,108.51054280000001,85.92649821067992
+realAWSCloudwatch/ec2_cpu_utilization_24ae8d.csv,realAWSCloudwatch,4032,2014-02-14 14:30:00,2014-02-28 14:25:00,2014-02-14 14:30:00,2014-02-28 14:25:00,True,True,0.066,2.344,0.1263030753968258
+realTraffic/TravelTime_387.csv,realTraffic,2500,2015-07-10 14:24:00,2015-09-17 17:10:00,2015-07-10 14:24:00,2015-09-17 17:10:00,True,True,9.0,5059.0,325.0936

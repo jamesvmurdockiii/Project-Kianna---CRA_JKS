@@ -10879,6 +10879,60 @@ label/window parsing, label-separated online streams, tiny leakage-safe smoke
 rows, and scoring-interface feasibility before full NAB scoring.
 ```
 
+### Tier 7.1g - NAB Source/Data/Scoring Preflight
+
+Runner:
+
+```text
+experiments/tier7_1g_nab_source_data_scoring_preflight.py
+```
+
+Output:
+
+```text
+controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/
+```
+
+Status:
+
+```text
+PASS
+criteria: 24/24
+pinned NAB commit: ea702d75cc2258d9d7dd35ca8e5e2539d71f3140
+selected streams: 5
+label-window rows: 12
+smoke stream rows: 400
+```
+
+Interpretation:
+
+```text
+Tier 7.1g verifies that the public NAB adapter can be reproduced from a pinned
+official source commit before scoring. It caches only official source/data/label
+files under ignored .cra_data_cache/, parses selected data and anomaly windows,
+documents raw chronology irregularities in the official files, emits
+adapter-sorted chronological online smoke rows, and keeps anomaly windows in a
+separate offline scoring artifact.
+```
+
+Claim boundary:
+
+```text
+Tier 7.1g is preflight only. It is not NAB scoring, not public usefulness
+evidence, not a baseline freeze, not hardware/native transfer, and not AGI/ASI
+evidence.
+```
+
+Next required step:
+
+```text
+Tier 7.1h - compact NAB scoring gate.
+Predeclare the compact NAB subset, threshold policy, online anomaly baselines,
+CRA v2.2/v2.3 detectors, sham controls, primary metrics, bootstrap/statistical
+support, and leakage controls. Score only after labels/windows remain separated
+from online detector rows.
+```
+
 ## Tier 5.20a - Resonant Branch Polyp Internal-Model Diagnostic
 
 Status: `COMPLETE / PASS HARNESS / NOT PROMOTED`

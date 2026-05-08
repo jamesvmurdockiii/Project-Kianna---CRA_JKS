@@ -608,8 +608,6 @@ usefulness claim, no mechanism promotion, no baseline freeze, and no
 hardware/native transfer.
 ```
 
-## Immediate Next Action
-
 ## Tier 7.1f Result
 
 2026-05-08 result:
@@ -633,15 +631,40 @@ transfer.
 
 ## Immediate Next Action
 
+## Tier 7.1g Result
+
+```text
+Tier 7.1g — NAB source/data/scoring preflight
+output: controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/
+status: PASS, 24/24 criteria
+pinned NAB commit: ea702d75cc2258d9d7dd35ca8e5e2539d71f3140
+selected streams: 5
+label-window rows: 12
+smoke stream rows: 400
+```
+
+Interpretation:
+
+```text
+Tier 7.1g completed the NAB preflight. It verified the pinned official source,
+cached official files under ignored .cra_data_cache/, parsed selected streams
+and label windows, emitted adapter-sorted chronological online smoke rows, and
+kept anomaly windows in a separate offline scoring artifact. It is not a scored
+NAB result, not public usefulness evidence, and not hardware/native transfer.
+```
+
+## Immediate Next Action
+
 The current next action is:
 
 ```text
-Tier 7.1g — NAB source/data/scoring preflight.
+Tier 7.1h — compact NAB scoring gate.
 ```
 
-Verify official source access, source hash/commit, data file parsing,
-label/window parsing, label-separated online streams, tiny leakage-safe smoke
-rows, and scoring-interface feasibility before full NAB scoring.
+Predeclare and score the compact NAB subset from Tier 7.1g with fair online
+anomaly baselines, CRA v2.2/v2.3 detectors, sham controls, threshold policy,
+NAB-style/event-window metrics, bootstrap/statistical support, and strict
+label-separation.
 
 ## Resonant Branch Follow-Up Diagnostics
 
@@ -677,8 +700,8 @@ Decision:
 
 ```text
 Do not add resonant branches to the canonical CRA mechanism stack. Continue to
-Tier 7.1g NAB preflight and use public/standardized benchmarks to decide the
-next mechanism, adapter, or claim narrowing step.
+Tier 7.1h compact NAB scoring and use public/standardized benchmarks to decide
+the next mechanism, adapter, or claim narrowing step.
 ```
 
 ## Resonant Dose Sweep Closeout
@@ -696,5 +719,5 @@ Decision:
 
 ```text
 The resonant branch idea has now been tested across the useful dose range and is
-parked. Return to the public usefulness track: Tier 7.1g NAB preflight.
+parked. Return to the public usefulness track: Tier 7.1h compact NAB scoring.
 ```

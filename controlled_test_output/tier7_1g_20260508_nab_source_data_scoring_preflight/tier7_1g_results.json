@@ -1,0 +1,478 @@
+{
+  "claim_boundary": "Tier 7.1g verifies official NAB source pinning/cache, selected data/label parsing, label-separated online stream smoke rows, and scoring-interface feasibility. It is not NAB scoring, not public usefulness evidence, not a baseline freeze, and not hardware/native transfer evidence.",
+  "criteria": [
+    {
+      "name": "Tier 7.1f contract exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_1f_20260508_next_public_adapter_contract/tier7_1f_results.json"
+    },
+    {
+      "name": "Tier 7.1f selected NAB",
+      "note": "",
+      "passed": true,
+      "rule": "== numenta_nab_streaming_anomaly",
+      "value": "numenta_nab_streaming_anomaly"
+    },
+    {
+      "name": "NAB source commit pinned",
+      "note": "",
+      "passed": true,
+      "rule": "40 hex chars",
+      "value": "ea702d75cc2258d9d7dd35ca8e5e2539d71f3140"
+    },
+    {
+      "name": "official remote reachable or pinned cache usable",
+      "note": "",
+      "passed": true,
+      "rule": "remote observed or cache non-empty",
+      "value": {
+        "remote_head": "ea702d75cc2258d9d7dd35ca8e5e2539d71f3140",
+        "source_paths_ok": true
+      }
+    },
+    {
+      "name": "required NAB source files cached",
+      "note": "",
+      "passed": true,
+      "rule": "== 13",
+      "value": 13
+    },
+    {
+      "name": "license source cached",
+      "note": "",
+      "passed": true,
+      "rule": "LICENSE.txt non-empty",
+      "value": true
+    },
+    {
+      "name": "combined windows parsed",
+      "note": "",
+      "passed": true,
+      "rule": ">= 50 streams",
+      "value": 58
+    },
+    {
+      "name": "combined labels parsed",
+      "note": "",
+      "passed": true,
+      "rule": ">= 50 streams",
+      "value": 58
+    },
+    {
+      "name": "tiny windows parsed",
+      "note": "",
+      "passed": true,
+      "rule": ">= 1 stream",
+      "value": 2
+    },
+    {
+      "name": "selected NAB files predeclared",
+      "note": "",
+      "passed": true,
+      "rule": ">= 5 files",
+      "value": [
+        "artificialWithAnomaly/art_daily_flatmiddle.csv",
+        "realKnownCause/ambient_temperature_system_failure.csv",
+        "realKnownCause/machine_temperature_system_failure.csv",
+        "realAWSCloudwatch/ec2_cpu_utilization_24ae8d.csv",
+        "realTraffic/TravelTime_387.csv"
+      ]
+    },
+    {
+      "name": "selected data files parsed",
+      "note": "",
+      "passed": true,
+      "rule": "all > 0 rows",
+      "value": {
+        "artificialWithAnomaly/art_daily_flatmiddle.csv": 4032,
+        "realAWSCloudwatch/ec2_cpu_utilization_24ae8d.csv": 4032,
+        "realKnownCause/ambient_temperature_system_failure.csv": 7267,
+        "realKnownCause/machine_temperature_system_failure.csv": 22695,
+        "realTraffic/TravelTime_387.csv": 2500
+      }
+    },
+    {
+      "name": "selected raw chronology irregularities documented",
+      "note": "",
+      "passed": true,
+      "rule": "documented list allowed",
+      "value": [
+        "realKnownCause/machine_temperature_system_failure.csv"
+      ]
+    },
+    {
+      "name": "selected adapter streams chronological",
+      "note": "",
+      "passed": true,
+      "rule": "all true after adapter sort",
+      "value": true
+    },
+    {
+      "name": "selected label keys present",
+      "note": "",
+      "passed": true,
+      "rule": "empty",
+      "value": []
+    },
+    {
+      "name": "label-window rows generated",
+      "note": "",
+      "passed": true,
+      "rule": "> 0",
+      "value": 12
+    },
+    {
+      "name": "smoke stream generated",
+      "note": "",
+      "passed": true,
+      "rule": "> 0",
+      "value": 400
+    },
+    {
+      "name": "smoke stream labels separated",
+      "note": "",
+      "passed": true,
+      "rule": "no label columns and all flags false",
+      "value": {
+        "has_label_columns": false,
+        "label_flags": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      }
+    },
+    {
+      "name": "prediction-before-update declared",
+      "note": "",
+      "passed": true,
+      "rule": "all true",
+      "value": true
+    },
+    {
+      "name": "scoring profiles present",
+      "note": "",
+      "passed": true,
+      "rule": "contains ['reward_low_FN_rate', 'reward_low_FP_rate', 'standard']",
+      "value": [
+        "reward_low_FN_rate",
+        "reward_low_FP_rate",
+        "standard"
+      ]
+    },
+    {
+      "name": "thresholds parse with standard profile",
+      "note": "",
+      "passed": true,
+      "rule": "detectors > 0 and null standard present",
+      "value": {
+        "detectors": 16,
+        "null_standard": true
+      }
+    },
+    {
+      "name": "official scorer interface detectable",
+      "note": "",
+      "passed": true,
+      "rule": "scoreCorpus and Sweeper found",
+      "value": {
+        "Sweeper": true,
+        "profiles_config": [
+          "reward_low_FN_rate",
+          "reward_low_FP_rate",
+          "standard"
+        ],
+        "scoreCorpus": true,
+        "threshold_detector_count": 16
+      }
+    },
+    {
+      "name": "smoke anomaly-score schema generated",
+      "note": "",
+      "passed": true,
+      "rule": "same row count as stream",
+      "value": 400
+    },
+    {
+      "name": "no CRA/baseline scoring performed",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": "preflight only"
+    },
+    {
+      "name": "no baseline freeze or hardware transfer authorized",
+      "note": "",
+      "passed": true,
+      "rule": "both false",
+      "value": {
+        "baseline_freeze_authorized": false,
+        "hardware_transfer_authorized": false
+      }
+    }
+  ],
+  "criteria_passed": 24,
+  "criteria_total": 24,
+  "failed_criteria": [],
+  "generated_at_utc": "2026-05-08T22:39:03+00:00",
+  "label_window_rows": 12,
+  "next_step": "Tier 7.1h may run a compact NAB scoring gate only after this preflight passes. Tier 7.1h must compare CRA v2.2/v2.3 against fair online anomaly baselines, sham controls, and predeclared thresholds/metrics without label leakage.",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight",
+  "runner_revision": "tier7_1g_nab_source_data_scoring_preflight_20260508_0001",
+  "scoring_contract": {
+    "benchmark": "Numenta Anomaly Benchmark (NAB)",
+    "label_access_policy": "Online detector rows may not contain anomaly labels or anomaly-window membership. Labels/windows are scoring-only and must be joined after scores are emitted.",
+    "next_scoring_tier": "Tier 7.1h - Compact NAB Scoring Gate",
+    "nonclaims": [
+      "not a scored NAB result",
+      "not a public usefulness claim",
+      "not a baseline freeze",
+      "not hardware/native transfer evidence",
+      "not AGI/ASI evidence"
+    ],
+    "official_repository": "https://github.com/numenta/NAB",
+    "official_scorer_interface_detected": {
+      "Sweeper": true,
+      "profiles_config": [
+        "reward_low_FN_rate",
+        "reward_low_FP_rate",
+        "standard"
+      ],
+      "scoreCorpus": true,
+      "threshold_detector_count": 16
+    },
+    "official_scorer_path": "nab/scorer.py",
+    "official_scorer_sha256": "35bb1413e34c141ae414eca94ec0a0d4e3b1a9583c63449a3a38e39159f945a9",
+    "offline_scoring_inputs": [
+      "labels/combined_windows.json",
+      "config/profiles.json",
+      "config/thresholds.json"
+    ],
+    "online_detector_output_schema": [
+      "timestamp",
+      "value",
+      "anomaly_score",
+      "prediction_before_update"
+    ],
+    "primary_profiles": [
+      "reward_low_FN_rate",
+      "reward_low_FP_rate",
+      "standard"
+    ],
+    "source_commit": "ea702d75cc2258d9d7dd35ca8e5e2539d71f3140"
+  },
+  "selected_data_files": [
+    "artificialWithAnomaly/art_daily_flatmiddle.csv",
+    "realKnownCause/ambient_temperature_system_failure.csv",
+    "realKnownCause/machine_temperature_system_failure.csv",
+    "realAWSCloudwatch/ec2_cpu_utilization_24ae8d.csv",
+    "realTraffic/TravelTime_387.csv"
+  ],
+  "selected_data_profile": [
+    {
+      "adapter_chronological": true,
+      "adapter_end_timestamp": "2014-04-14 23:55:00",
+      "adapter_start_timestamp": "2014-04-01 00:00:00",
+      "category": "artificialWithAnomaly",
+      "file": "artificialWithAnomaly/art_daily_flatmiddle.csv",
+      "max_value": 87.9583481277,
+      "mean_value": 18.981142066457476,
+      "min_value": -21.998788838600007,
+      "raw_chronological": true,
+      "row_count": 4032,
+      "source_end_timestamp": "2014-04-14 23:55:00",
+      "source_start_timestamp": "2014-04-01 00:00:00"
+    },
+    {
+      "adapter_chronological": true,
+      "adapter_end_timestamp": "2014-05-28 15:00:00",
+      "adapter_start_timestamp": "2013-07-04 00:00:00",
+      "category": "realKnownCause",
+      "file": "realKnownCause/ambient_temperature_system_failure.csv",
+      "max_value": 86.22321261,
+      "mean_value": 71.2424327082882,
+      "min_value": 57.45840559,
+      "raw_chronological": true,
+      "row_count": 7267,
+      "source_end_timestamp": "2014-05-28 15:00:00",
+      "source_start_timestamp": "2013-07-04 00:00:00"
+    },
+    {
+      "adapter_chronological": true,
+      "adapter_end_timestamp": "2014-02-19 15:25:00",
+      "adapter_start_timestamp": "2013-12-02 21:15:00",
+      "category": "realKnownCause",
+      "file": "realKnownCause/machine_temperature_system_failure.csv",
+      "max_value": 108.51054280000001,
+      "mean_value": 85.92649821067992,
+      "min_value": 2.0847212059999998,
+      "raw_chronological": false,
+      "row_count": 22695,
+      "source_end_timestamp": "2014-02-19 15:25:00",
+      "source_start_timestamp": "2013-12-02 21:15:00"
+    },
+    {
+      "adapter_chronological": true,
+      "adapter_end_timestamp": "2014-02-28 14:25:00",
+      "adapter_start_timestamp": "2014-02-14 14:30:00",
+      "category": "realAWSCloudwatch",
+      "file": "realAWSCloudwatch/ec2_cpu_utilization_24ae8d.csv",
+      "max_value": 2.344,
+      "mean_value": 0.1263030753968258,
+      "min_value": 0.066,
+      "raw_chronological": true,
+      "row_count": 4032,
+      "source_end_timestamp": "2014-02-28 14:25:00",
+      "source_start_timestamp": "2014-02-14 14:30:00"
+    },
+    {
+      "adapter_chronological": true,
+      "adapter_end_timestamp": "2015-09-17 17:10:00",
+      "adapter_start_timestamp": "2015-07-10 14:24:00",
+      "category": "realTraffic",
+      "file": "realTraffic/TravelTime_387.csv",
+      "max_value": 5059.0,
+      "mean_value": 325.0936,
+      "min_value": 9.0,
+      "raw_chronological": true,
+      "row_count": 2500,
+      "source_end_timestamp": "2015-09-17 17:10:00",
+      "source_start_timestamp": "2015-07-10 14:24:00"
+    }
+  ],
+  "smoke_score_rows": 400,
+  "smoke_stream_rows": 400,
+  "source": {
+    "data_cache_local_ignored": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab",
+    "official_git_url": "https://github.com/numenta/NAB.git",
+    "official_repository": "https://github.com/numenta/NAB",
+    "raw_data_git_policy": "raw NAB cache is local-only and ignored by .gitignore",
+    "remote_head_observed": "ea702d75cc2258d9d7dd35ca8e5e2539d71f3140",
+    "selected_commit": "ea702d75cc2258d9d7dd35ca8e5e2539d71f3140",
+    "source_manifest": [
+      {
+        "bytes": 12995,
+        "downloaded": false,
+        "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/README.md",
+        "repo_path": "README.md",
+        "role": "source documentation",
+        "sha256": "418b7afb70dc4550a0a671fd904d1f451ba5aade0ea4de5723645bcb567414cb",
+        "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/README.md"
+      },
+      {
+        "bytes": 1056,
+        "downloaded": false,
+        "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/LICENSE.txt",
+        "repo_path": "LICENSE.txt",
+        "role": "license",
+        "sha256": "0a0b4d0b10cb1f7ed9ab2993ef93defc03447e6eba9daca1315dd32dae4877e3",
+        "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/LICENSE.txt"
+      },
+      {
+        "bytes": 5481,
+        "downloaded": false,
+        "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/nab/scorer.py",
+        "repo_path": "nab/scorer.py",
+        "role": "official scoring code",
+        "sha256": "35bb1413e34c141ae414eca94ec0a0d4e3b1a9583c63449a3a38e39159f945a9",
+        "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/nab/scorer.py"
+      },
+      {
+        "bytes": 404,
+        "downloaded": false,
+        "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/config/profiles.json",
+        "repo_path": "config/profiles.json",
+        "role": "official scoring configuration",
+        "sha256": "fc018b9a29ae900ab22de167baf06c36f2be528a5a3a1406d6775e238aeb9565",
+        "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/config/profiles.json"
+      },
+      {
+        "bytes": 5985,
+        "downloaded": false,
+        "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/config/thresholds.json",
+        "repo_path": "config/thresholds.json",
+        "role": "official scoring configuration",
+        "sha256": "b0bd47854e33fede1a774b2c30d8e41c27e3f6cf1fc1f35a95b92beead315e69",
+        "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/config/thresholds.json"
+      },
+      {
+        "bytes": 15359,
+        "downloaded": false,
+        "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/labels/combined_windows.json",
+        "repo_path": "labels/combined_windows.json",
+        "role": "offline anomaly labels/windows",
+        "sha256": "1e1fbc4601321aad8d0f8b3784c8134299379f68f6c1f7777565f8ffd57ab6b1",
+        "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/labels/combined_windows.json"
+      },
+      {
+        "bytes": 7015,
+        "downloaded": false,
+        "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/labels/combined_labels.json",
+        "repo_path": "labels/combined_labels.json",
+        "role": "offline anomaly labels/windows",
+        "sha256": "98724014c162fcfd4be605683517f194051a54e98756c53667bd33ddbc644d9b",
+        "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/labels/combined_labels.json"
+      },
+      {
+        "bytes": 828,
+        "downloaded": false,
+        "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/labels/combined_windows_tiny.json",
+        "repo_path": "labels/combined_windows_tiny.json",
+        "role": "offline anomaly labels/windows",
+        "sha256": "bc7fecdd0d46f56ca046c66dae37145dde1c5603ed0ccc6a2a996a4d3793725d",
+        "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/labels/combined_windows_tiny.json"
+      },
+      {
+        "bytes": 140292,
+        "downloaded": false,
+        "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/artificialWithAnomaly/art_daily_flatmiddle.csv",
+        "repo_path": "data/artificialWithAnomaly/art_daily_flatmiddle.csv",
+        "role": "public time-series data",
+        "sha256": "ea5df125947e9ee2b977ac3d341f3c2a029588862af97cae4a654fc56e838702",
+        "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/artificialWithAnomaly/art_daily_flatmiddle.csv"
+      },
+      {
+        "bytes": 233321,
+        "downloaded": false,
+        "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realKnownCause/ambient_temperature_system_failure.csv",
+        "repo_path": "data/realKnownCause/ambient_temperature_system_failure.csv",
+        "role": "public time-series data",
+        "sha256": "230b68ccca20f59d562afd5d24ad52939c9b784386bed0054018358bf9120581",
+        "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realKnownCause/ambient_temperature_system_failure.csv"
+      },
+      {
+        "bytes": 732223,
+        "downloaded": false,
+        "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realKnownCause/machine_temperature_system_failure.csv",
+        "repo_path": "data/realKnownCause/machine_temperature_system_failure.csv",
+        "role": "public time-series data",
+        "sha256": "92bf5b87fc7f9bba8ca0b7ec63ccaac8cb4a1371a258e8c29a10ae9c018d82a4",
+        "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realKnownCause/machine_temperature_system_failure.csv"
+      },
+      {
+        "bytes": 105367,
+        "downloaded": false,
+        "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realAWSCloudwatch/ec2_cpu_utilization_24ae8d.csv",
+        "repo_path": "data/realAWSCloudwatch/ec2_cpu_utilization_24ae8d.csv",
+        "role": "public time-series data",
+        "sha256": "ab446fbd8b9f37507eb2fdb06315826d8daeef02e241133ce06e0ee571ba53d9",
+        "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realAWSCloudwatch/ec2_cpu_utilization_24ae8d.csv"
+      },
+      {
+        "bytes": 59846,
+        "downloaded": false,
+        "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realTraffic/TravelTime_387.csv",
+        "repo_path": "data/realTraffic/TravelTime_387.csv",
+        "role": "public time-series data",
+        "sha256": "38e70e9ead8227fd023bff6e93247d5bc01ee008f781b921a156962419b399bb",
+        "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realTraffic/TravelTime_387.csv"
+      }
+    ]
+  },
+  "status": "pass",
+  "tier": "Tier 7.1g - NAB Source/Data/Scoring Preflight"
+}

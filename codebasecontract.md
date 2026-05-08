@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-08T22:35:00+00:00.
+Last updated: 2026-05-08T22:40:46+00:00.
 
 Current repo root:
 
@@ -158,6 +158,25 @@ Tier 7.1f = COMPLETE, PASS, 10/10 criteria
   Boundary: contract/family-selection only; not NAB data preflight, not scoring,
             not public usefulness evidence, not a baseline freeze, and not
             hardware/native transfer evidence.
+```
+
+Latest NAB source/data/scoring preflight:
+
+```text
+Tier 7.1g = COMPLETE, PASS, 24/24 criteria
+  Source: controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/
+  Runner: experiments/tier7_1g_nab_source_data_scoring_preflight.py
+  Dataset family: Numenta Anomaly Benchmark (NAB)
+  Pinned commit: ea702d75cc2258d9d7dd35ca8e5e2539d71f3140
+  Result: cached official source/data/label/scoring files under ignored
+          .cra_data_cache/, parsed 5 selected streams, documented one raw-order
+          chronology irregularity, emitted adapter-sorted chronological smoke
+          rows, separated 12 anomaly windows into an offline label artifact, and
+          documented the NAB scoring-interface contract.
+  Boundary: preflight only; not NAB scoring, not public usefulness evidence,
+            not a baseline freeze, and not hardware/native transfer evidence.
+  Raw data policy: raw NAB cache lives under .cra_data_cache/ and must remain
+                   ignored, not committed.
 ```
 
 Latest optional mechanism diagnostic:
@@ -725,10 +744,19 @@ Tier 7.1f — COMPLETE. Next public adapter contract / family selection.
   Result: selected Numenta NAB streaming anomaly detection as the next public
     adapter family. No data preflight, scoring, freeze, or hardware transfer.
 
-Tier 7.1g — CURRENT ACTIVE STEP. NAB source/data/scoring preflight.
-  Required first move: verify source access, source hash/commit, file and label
-    parsing, label-separated online streams, tiny leakage-safe smoke rows, and
-    scoring-interface feasibility before full NAB scoring.
+Tier 7.1g — COMPLETE. NAB source/data/scoring preflight.
+  Status: LOCAL PREFLIGHT PASS, 24/24 criteria.
+  Output: controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/
+  Result: pinned official NAB source commit, cached official source/data/label
+    files in ignored .cra_data_cache/, parsed selected files/windows, emitted
+    label-separated chronological smoke rows, and documented scoring-interface
+    feasibility. No NAB scoring, freeze, or hardware transfer.
+
+Tier 7.1h — CURRENT ACTIVE STEP. Compact NAB scoring gate.
+  Required first move: predeclare the compact NAB subset, thresholds, online
+    anomaly baselines, CRA v2.2/v2.3 detectors, shams, primary metrics, and
+    leakage controls. Then score only after labels remain separated from online
+    detector rows.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware

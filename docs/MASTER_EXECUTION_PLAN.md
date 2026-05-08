@@ -1156,68 +1156,81 @@ ability.
     Decision: the current resonant dose sweep covers 16/0, 14/2, 12/4, 8/8,
     4/12, 2/14, and 0/16; no resonant variant is promoted.
 
-88. **CURRENT ACTIVE STEP** - Tier 7.1g NAB source/data/scoring preflight:
-    verify source access, source hash/commit, file and label parsing,
-    label-separated online streams, tiny leakage-safe smoke rows, and scoring
-    interface feasibility before full NAB scoring.
+88. **COMPLETE** - Tier 7.1g NAB source/data/scoring preflight:
+    passed 24/24 at
+    `controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/`.
+    It pinned official NAB commit
+    `ea702d75cc2258d9d7dd35ca8e5e2539d71f3140`, cached official source/data/
+    label/scoring files under ignored `.cra_data_cache/`, parsed five selected
+    streams, documented one raw-order chronology irregularity, emitted
+    adapter-sorted chronological smoke rows, separated 12 anomaly windows into
+    offline scoring artifacts, and documented scoring-interface feasibility.
+    Boundary: preflight only; no NAB scoring, usefulness claim, freeze, or
+    hardware transfer.
 
-89. Mechanism iteration loop: add exactly one planned general mechanism at a
+89. **CURRENT ACTIVE STEP** - Tier 7.1h compact NAB scoring gate:
+    predeclare the compact NAB subset, detector threshold policy, online
+    anomaly baselines, CRA v2.2/v2.3 detectors, shams, primary metrics,
+    bootstrap/statistical support, and leakage controls. Only then score the
+    pinned NAB subset from Tier 7.1g.
+
+90. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
     stop the broad usefulness track and narrow the paper.
 
-90. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+91. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines. Start only after the standardized scoreboard or failure diagnosis
     identifies a winning regime, a real failure mode, or a mechanism needing
     external validation.
 
-91. Tier 7.2 held-out task challenge: define held-out families before running;
+92. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout. Include at least one synthetic holdout and one
     real-ish adapter holdout if Tier 7.1 is active.
 
-92. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+93. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines. Candidate domains include
     streaming anomaly detection, predictive-maintenance sensor streams, human
     activity streams, event prediction, ECG/biosignal streams, and finance as
     one domain only rather than the whole proof.
 
-93. Tier 7.4 policy/action selection: state -> action -> delayed consequence,
+94. Tier 7.4 policy/action selection: state -> action -> delayed consequence,
     exploration versus exploitation, uncertainty-gated actions. Do not start
     broad policy claims until prediction/adaptation usefulness is measured.
 
-94. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
+95. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
     planning/subgoal control: run only after the shorter hard/real-ish tasks are
     stable. Do not claim language, AGI, or broad planning from toy gates.
 
-95. Run expanded external baselines and fairness audit at the phase lock:
+96. Run expanded external baselines and fairness audit at the phase lock:
     random/sign persistence, online perceptron/logistic, lag/ridge where
     relevant, reservoir/ESN, small GRU, STDP-only SNN, simple evolutionary
     population, simple control baselines, and SNN reviewer-defense baselines
     where practical.
 
-96. Freeze the next software baseline only if new software capability work
+97. Freeze the next software baseline only if new software capability work
     passes ablations, fair baselines, leakage controls, and compact regression.
     If no new software mechanism is promoted, keep v2.3.
 
 ### Phase I - Final Paper Lock
 
-97. Select final paper claim level: strong usefulness paper, bounded architecture
+98. Select final paper claim level: strong usefulness paper, bounded architecture
     study, or narrowed diagnostic report. Let the evidence decide.
 
-98. Run final software matrix and final hardware subset matrix. Include effect
+99. Run final software matrix and final hardware subset matrix. Include effect
     sizes, confidence intervals, worst seed, sample efficiency, runtime, command
     count, resource budgets, and claim-boundary table.
 
-99. Build the independent reproduction capsule: fresh checkout instructions,
+100. Build the independent reproduction capsule: fresh checkout instructions,
     environment lock, validation command, registry/table regeneration, EBRAINS
     ingest instructions, artifact hash manifest, and one local tier rerun.
 
-100. Draft paper/whitepaper only after the Phase H usefulness/baseline gates pass. Write
+101. Draft paper/whitepaper only after the Phase H usefulness/baseline gates pass. Write
     limitations first, then claims. Preserve failed and parked diagnostics.
 
-101. External dry run: have a clean agent or human follow only the docs. If they
+102. External dry run: have a clean agent or human follow only the docs. If they
     need hidden chat context, the repo is not ready.
 
 ## 7. Current Tier 4.27 Definition
@@ -1534,10 +1547,13 @@ public adapter family. Tier 5.20a-e then tested the resonant branch idea across
 a same-budget dose sweep: 16/0 (v2.3), 14/2, 12/4, 8/8, 4/12, 2/14, and 0/16.
 All harnesses passed, but no resonant variant earned promotion because localized
 variable-delay/anomaly/NARMA value did not survive broad-task regression,
-aggregate, and sham-separation gates. The next active public-adapter work
-remains Tier 7.1g NAB source/data/scoring preflight. Reopen native work only for
-targeted transfer after a software task/mechanism earns it under the Tier 7/6.2
-gates and a separate transfer contract is written.
+aggregate, and sham-separation gates. Tier 7.1g then passed NAB source/data/
+scoring preflight: the official source commit is pinned, selected streams and
+labels parse, label windows are separated from online rows, chronological smoke
+streams are adapter-sorted, and scoring-interface feasibility is documented.
+The next active public-adapter work is Tier 7.1h compact NAB scoring. Reopen
+native work only for targeted transfer after a software task/mechanism earns it
+under the Tier 7/6.2 gates and a separate transfer contract is written.
 It must preserve explicit board/chip/shard identity, message paths, compact
 readback ownership, failure counters, placement assumptions,
 enabled-vs-no-learning separation, and resource measurements while adding the

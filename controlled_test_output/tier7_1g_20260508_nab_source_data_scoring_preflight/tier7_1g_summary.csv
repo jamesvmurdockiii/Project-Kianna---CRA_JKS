@@ -1,0 +1,25 @@
+criterion,passed,value,rule
+Tier 7.1f contract exists,True,/Users/james/JKS:CRA/controlled_test_output/tier7_1f_20260508_next_public_adapter_contract/tier7_1f_results.json,exists
+Tier 7.1f selected NAB,True,numenta_nab_streaming_anomaly,== numenta_nab_streaming_anomaly
+NAB source commit pinned,True,ea702d75cc2258d9d7dd35ca8e5e2539d71f3140,40 hex chars
+official remote reachable or pinned cache usable,True,"{'remote_head': 'ea702d75cc2258d9d7dd35ca8e5e2539d71f3140', 'source_paths_ok': True}",remote observed or cache non-empty
+required NAB source files cached,True,13,== 13
+license source cached,True,True,LICENSE.txt non-empty
+combined windows parsed,True,58,>= 50 streams
+combined labels parsed,True,58,>= 50 streams
+tiny windows parsed,True,2,>= 1 stream
+selected NAB files predeclared,True,"['artificialWithAnomaly/art_daily_flatmiddle.csv', 'realKnownCause/ambient_temperature_system_failure.csv', 'realKnownCause/machine_temperature_system_failure.csv', 'realAWSCloudwatch/ec2_cpu_utilization_24ae8d.csv', 'realTraffic/TravelTime_387.csv']",>= 5 files
+selected data files parsed,True,"{'artificialWithAnomaly/art_daily_flatmiddle.csv': 4032, 'realKnownCause/ambient_temperature_system_failure.csv': 7267, 'realKnownCause/machine_temperature_system_failure.csv': 22695, 'realAWSCloudwatch/ec2_cpu_utilization_24ae8d.csv': 4032, 'realTraffic/TravelTime_387.csv': 2500}",all > 0 rows
+selected raw chronology irregularities documented,True,['realKnownCause/machine_temperature_system_failure.csv'],documented list allowed
+selected adapter streams chronological,True,True,all true after adapter sort
+selected label keys present,True,[],empty
+label-window rows generated,True,12,> 0
+smoke stream generated,True,400,> 0
+smoke stream labels separated,True,"{'has_label_columns': False, 'label_flags': [False, False, False, False, False]}",no label columns and all flags false
+prediction-before-update declared,True,True,all true
+scoring profiles present,True,"['reward_low_FN_rate', 'reward_low_FP_rate', 'standard']","contains ['reward_low_FN_rate', 'reward_low_FP_rate', 'standard']"
+thresholds parse with standard profile,True,"{'detectors': 16, 'null_standard': True}",detectors > 0 and null standard present
+official scorer interface detectable,True,"{'scoreCorpus': True, 'Sweeper': True, 'profiles_config': ['reward_low_FN_rate', 'reward_low_FP_rate', 'standard'], 'threshold_detector_count': 16}",scoreCorpus and Sweeper found
+smoke anomaly-score schema generated,True,400,same row count as stream
+no CRA/baseline scoring performed,True,preflight only,true
+no baseline freeze or hardware transfer authorized,True,"{'baseline_freeze_authorized': False, 'hardware_transfer_authorized': False}",both false
