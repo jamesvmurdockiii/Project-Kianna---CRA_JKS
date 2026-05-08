@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-08T20:45:00+00:00.
+Last updated: 2026-05-08T20:55:00+00:00.
 
 Current repo root:
 
@@ -69,6 +69,23 @@ Tier 7.1a = COMPLETE, PASS, 12/12 criteria
             variable-delay signal outside private diagnostics.
   Boundary: contract only; not a data run, not a usefulness claim, not a
             baseline freeze, and not hardware/native transfer evidence.
+```
+
+Latest public source/data preflight:
+
+```text
+Tier 7.1b = COMPLETE, PASS, 16/16 criteria
+  Source: controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/
+  Runner: experiments/tier7_1b_cmapss_source_data_preflight.py
+  Dataset: NASA C-MAPSS FD001 from https://data.nasa.gov/docs/legacy/CMAPSSData.zip
+  ZIP SHA256: 74bef434a34db25c7bf72e668ea4cd52afe5f2cf8e44367c55a82bfd91a5a34f
+  Result: source access, checksums, schema, train/test/RUL parse, train-only
+          normalization, prediction-before-update stream ordering, and
+          label-separated smoke artifacts are verified.
+  Boundary: preflight only; not C-MAPSS scoring, not public usefulness proof,
+            not a baseline freeze, and not hardware/native transfer evidence.
+  Raw data policy: raw C-MAPSS zip/extracted files live under .cra_data_cache/
+                   and must remain ignored, not committed.
 ```
 
 Current hardware/runtime baseline decision:
@@ -530,10 +547,17 @@ Tier 7.1a — COMPLETE. Real-ish/public adapter contract.
   Result: selected NASA C-MAPSS RUL streaming as the first public/real-ish
     adapter family; no dataset scoring, freeze, or hardware transfer.
 
-Tier 7.1b — CURRENT ACTIVE STEP. NASA C-MAPSS source/data preflight.
-  Required first move: verify reproducible data access, license/source notes,
-    checksums, adapter row schema, train/test split semantics, train-only
-    normalization, and a tiny leakage-safe smoke before any full scoring.
+Tier 7.1b — COMPLETE. NASA C-MAPSS source/data preflight.
+  Status: LOCAL PREFLIGHT PASS, 16/16 criteria.
+  Output: controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/
+  Result: official source access, checksums, schema, train-only normalization,
+    prediction-before-update ordering, and label-separated smoke artifacts
+    passed. No model scoring, freeze, or hardware transfer.
+
+Tier 7.1c — CURRENT ACTIVE STEP. Compact C-MAPSS FD001 scoring gate.
+  Required first move: score v2.2, v2.3, lag/ridge, online LMS, random
+    reservoir, ESN, and required shams on the same leakage-safe FD001 rows with
+    train-only normalization and prediction-before-update preserved.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware

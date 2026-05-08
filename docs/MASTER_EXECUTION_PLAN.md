@@ -1065,70 +1065,81 @@ ability.
     Boundary: contract only; no C-MAPSS score, no public usefulness claim, no
     baseline freeze, and no hardware/native transfer.
 
-78. **CURRENT ACTIVE STEP** - Tier 7.1b NASA C-MAPSS source/data preflight:
-    verify reproducible source access, license/source notes, checksums, row
-    schema, train/test split semantics, train-only normalization,
-    prediction-before-update ordering, and a tiny leakage-safe adapter smoke.
-    Do not run full scoring, claim usefulness, freeze a baseline, or reopen
-    SpiNNaker/native transfer from preflight evidence alone.
+78. **COMPLETE** - Tier 7.1b NASA C-MAPSS source/data preflight:
+    passed 16/16 at
+    `controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/`.
+    It verified the official NASA C-MAPSS zip, SHA256
+    `74bef434a34db25c7bf72e668ea4cd52afe5f2cf8e44367c55a82bfd91a5a34f`,
+    FD001 schema and row counts, train-only normalization, prediction-before-
+    update stream rows, and label-separated smoke artifacts. Boundary:
+    preflight only; no C-MAPSS scoring, public usefulness claim, baseline
+    freeze, or hardware/native transfer.
 
-79. Mechanism iteration loop: add exactly one planned general mechanism at a
+79. **CURRENT ACTIVE STEP** - Tier 7.1c compact C-MAPSS FD001 scoring gate:
+    score v2.2, v2.3, lag/ridge, online LMS, random reservoir, ESN, and required
+    v2.3 shams on the same leakage-safe FD001 rows. Preserve train-only
+    normalization, prediction-before-update ordering, held-out-unit scoring,
+    source checksums, and claim boundaries. Do not freeze or transfer to
+    hardware from a compact scoring result unless it beats/complements fair
+    baselines and passes the predeclared gate.
+
+80. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
     stop the broad usefulness track and narrow the paper.
 
-80. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+81. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines. Start only after the standardized scoreboard or failure diagnosis
     identifies a winning regime, a real failure mode, or a mechanism needing
     external validation.
 
-81. Tier 7.2 held-out task challenge: define held-out families before running;
+82. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout. Include at least one synthetic holdout and one
     real-ish adapter holdout if Tier 7.1 is active.
 
-82. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+83. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines. Candidate domains include
     streaming anomaly detection, predictive-maintenance sensor streams, human
     activity streams, event prediction, ECG/biosignal streams, and finance as
     one domain only rather than the whole proof.
 
-83. Tier 7.4 policy/action selection: state -> action -> delayed consequence,
+84. Tier 7.4 policy/action selection: state -> action -> delayed consequence,
     exploration versus exploitation, uncertainty-gated actions. Do not start
     broad policy claims until prediction/adaptation usefulness is measured.
 
-84. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
+85. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
     planning/subgoal control: run only after the shorter hard/real-ish tasks are
     stable. Do not claim language, AGI, or broad planning from toy gates.
 
-85. Run expanded external baselines and fairness audit at the phase lock:
+86. Run expanded external baselines and fairness audit at the phase lock:
     random/sign persistence, online perceptron/logistic, lag/ridge where
     relevant, reservoir/ESN, small GRU, STDP-only SNN, simple evolutionary
     population, simple control baselines, and SNN reviewer-defense baselines
     where practical.
 
-86. Freeze the next software baseline only if new software capability work
+87. Freeze the next software baseline only if new software capability work
     passes ablations, fair baselines, leakage controls, and compact regression.
     If no new software mechanism is promoted, keep v2.3.
 
 ### Phase I - Final Paper Lock
 
-87. Select final paper claim level: strong usefulness paper, bounded architecture
+88. Select final paper claim level: strong usefulness paper, bounded architecture
     study, or narrowed diagnostic report. Let the evidence decide.
 
-88. Run final software matrix and final hardware subset matrix. Include effect
+89. Run final software matrix and final hardware subset matrix. Include effect
     sizes, confidence intervals, worst seed, sample efficiency, runtime, command
     count, resource budgets, and claim-boundary table.
 
-89. Build the independent reproduction capsule: fresh checkout instructions,
+90. Build the independent reproduction capsule: fresh checkout instructions,
     environment lock, validation command, registry/table regeneration, EBRAINS
     ingest instructions, artifact hash manifest, and one local tier rerun.
 
-90. Draft paper/whitepaper only after the Phase H usefulness/baseline gates pass. Write
+91. Draft paper/whitepaper only after the Phase H usefulness/baseline gates pass. Write
     limitations first, then claims. Preserve failed and parked diagnostics.
 
-91. External dry run: have a clean agent or human follow only the docs. If they
+92. External dry run: have a clean agent or human follow only the docs. If they
     need hidden chat context, the repo is not ready.
 
 ## 7. Current Tier 4.27 Definition
@@ -1432,8 +1443,10 @@ bounded recurrent-state software baseline. Tier 6.2a then passed targeted
 hard-task validation: v2.3 was best only on `variable_delay_multi_cue`, while
 v2.2 won the aggregate diagnostic geomean. Tier 7.1a then passed as a
 contract-only real-ish/public adapter selection and chose NASA C-MAPSS RUL
-streaming. The next active work is Tier 7.1b source/data preflight before any
-full scoring or native transfer. Reopen
+streaming. Tier 7.1b then passed source/data preflight, verified FD001 access,
+checksums, schema, train-only normalization, prediction-before-update stream
+ordering, and label-separated smoke artifacts. The next active work is Tier
+7.1c compact C-MAPSS FD001 scoring before any freeze or native transfer. Reopen
 native work only for targeted transfer after a software task/mechanism earns it
 under the Tier 7/6.2 gates and a separate transfer contract is written.
 It must preserve explicit board/chip/shard identity, message paths, compact

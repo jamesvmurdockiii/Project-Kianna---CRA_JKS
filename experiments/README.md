@@ -75,9 +75,13 @@ hard-task diagnostic geomean, and no baseline freeze or hardware/native
 transfer was authorized. Tier 7.1a then passed at
 `controlled_test_output/tier7_1a_20260508_realish_adapter_contract/`, selecting
 NASA C-MAPSS RUL streaming as the first public/real-ish adapter contract over
-the narrow variable-delay signal. The next active project step is Tier 7.1b
-NASA C-MAPSS source/data preflight; no full scoring, hardware transfer, or
-native migration is authorized until a separate evidence contract is justified.
+the narrow variable-delay signal. Tier 7.1b then passed at
+`controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/`,
+verifying official source access, checksums, FD001 schema/rows, train-only
+normalization, prediction-before-update stream ordering, and label-separated
+smoke artifacts. The next active project step is Tier 7.1c compact C-MAPSS
+FD001 scoring; no hardware transfer or native migration is authorized until a
+separate evidence contract is justified.
 
 Tier 4.32a-hw prepare has also passed locally. The current EBRAINS upload
 folder is `ebrains_jobs/cra_432a_hw`, and the exact JobManager command is

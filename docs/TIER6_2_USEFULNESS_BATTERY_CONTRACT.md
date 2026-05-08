@@ -491,16 +491,38 @@ C-MAPSS scoring, not a public usefulness result, not a baseline freeze, and not
 hardware/native transfer authorization.
 ```
 
+## Tier 7.1b Result
+
+2026-05-08 result:
+
+```text
+Tier 7.1b — NASA C-MAPSS source/data preflight
+output: controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/
+status: PASS, 16/16 criteria
+ZIP SHA256: 74bef434a34db25c7bf72e668ea4cd52afe5f2cf8e44367c55a82bfd91a5a34f
+FD001 profile: 20631 train rows, 13096 test rows, 100 train units,
+               100 test units, 100 RUL labels, 26 columns
+```
+
+Interpretation:
+
+```text
+Tier 7.1b verified reproducible source access, checksums, schema,
+train-only normalization, prediction-before-update stream ordering, and
+label-separated smoke artifacts. It is still preflight only, not C-MAPSS
+scoring, not public usefulness evidence, not a baseline freeze, and not
+hardware/native transfer authorization.
+```
+
 ## Immediate Next Action
 
 The current next action is:
 
 ```text
-Tier 7.1b — NASA C-MAPSS source/data preflight.
+Tier 7.1c — compact C-MAPSS FD001 scoring gate.
 ```
 
-Verify reproducible source access, license/source notes, checksums, adapter row
-schema, train/test split semantics, train-only normalization,
-prediction-before-update ordering, and a tiny leakage-safe adapter smoke. Do not
-move to full scoring, SpiNNaker/native runtime, or a new baseline freeze until
-software usefulness or a promoted mechanism earns a separate contract.
+Score v2.2, v2.3, lag/ridge, online LMS, random reservoir, ESN, and v2.3 shams
+on the same leakage-safe FD001 rows. Do not move to SpiNNaker/native runtime or
+a new baseline freeze until public-adapter software usefulness or a promoted
+mechanism earns a separate transfer/freeze contract.

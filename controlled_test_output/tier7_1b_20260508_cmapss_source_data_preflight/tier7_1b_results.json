@@ -1,0 +1,280 @@
+{
+  "claim_boundary": "Tier 7.1b verifies source access, checksums, schema, split/normalization policy, and a tiny leakage-safe stream smoke. It is not C-MAPSS scoring, not a public usefulness claim, not a baseline freeze, and not hardware/native transfer evidence.",
+  "criteria": [
+    {
+      "name": "Tier 7.1a contract exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_1a_20260508_realish_adapter_contract/tier7_1a_results.json"
+    },
+    {
+      "name": "Tier 7.1a selected C-MAPSS",
+      "note": "",
+      "passed": true,
+      "rule": "== nasa_cmapss_rul_streaming",
+      "value": "nasa_cmapss_rul_streaming"
+    },
+    {
+      "name": "official download URL reachable",
+      "note": "",
+      "passed": true,
+      "rule": "downloaded or cached non-empty ZIP",
+      "value": "https://data.nasa.gov/docs/legacy/CMAPSSData.zip"
+    },
+    {
+      "name": "ZIP checksum computed",
+      "note": "",
+      "passed": true,
+      "rule": "64 hex chars",
+      "value": "74bef434a34db25c7bf72e668ea4cd52afe5f2cf8e44367c55a82bfd91a5a34f"
+    },
+    {
+      "name": "required FD001 files present",
+      "note": "",
+      "passed": true,
+      "rule": "train/test/RUL exist",
+      "value": {
+        "RUL_FD001.txt": "/Users/james/JKS:CRA/.cra_data_cache/nasa_cmapss/extracted/RUL_FD001.txt",
+        "test_FD001.txt": "/Users/james/JKS:CRA/.cra_data_cache/nasa_cmapss/extracted/test_FD001.txt",
+        "train_FD001.txt": "/Users/james/JKS:CRA/.cra_data_cache/nasa_cmapss/extracted/train_FD001.txt"
+      }
+    },
+    {
+      "name": "README/source notes present",
+      "note": "",
+      "passed": true,
+      "rule": "README found",
+      "value": "/Users/james/JKS:CRA/.cra_data_cache/nasa_cmapss/extracted/readme.txt"
+    },
+    {
+      "name": "train/test row parse succeeded",
+      "note": "",
+      "passed": true,
+      "rule": "> 0 rows",
+      "value": {
+        "test": 13096,
+        "train": 20631
+      }
+    },
+    {
+      "name": "FD001 column count valid",
+      "note": "",
+      "passed": true,
+      "rule": "== 26",
+      "value": 26
+    },
+    {
+      "name": "RUL labels match test units",
+      "note": "",
+      "passed": true,
+      "rule": "equal",
+      "value": {
+        "labels": 100,
+        "test_units": 100
+      }
+    },
+    {
+      "name": "train-only normalization stats generated",
+      "note": "",
+      "passed": true,
+      "rule": "24 feature columns",
+      "value": 24
+    },
+    {
+      "name": "smoke stream generated",
+      "note": "",
+      "passed": true,
+      "rule": "> 0",
+      "value": 20
+    },
+    {
+      "name": "smoke labels separated from stream",
+      "note": "",
+      "passed": true,
+      "rule": "all false",
+      "value": true
+    },
+    {
+      "name": "prediction-before-update declared",
+      "note": "",
+      "passed": true,
+      "rule": "all true",
+      "value": true
+    },
+    {
+      "name": "source manifest includes checksums",
+      "note": "",
+      "passed": true,
+      "rule": ">= required files",
+      "value": 14
+    },
+    {
+      "name": "no scoring performed",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": "preflight only"
+    },
+    {
+      "name": "no baseline freeze or hardware transfer authorized",
+      "note": "",
+      "passed": true,
+      "rule": "both false",
+      "value": {
+        "baseline_freeze_authorized": false,
+        "hardware_transfer_authorized": false
+      }
+    }
+  ],
+  "criteria_passed": 16,
+  "criteria_total": 16,
+  "data_cache_local_ignored": "/Users/james/JKS:CRA/.cra_data_cache/nasa_cmapss",
+  "download_url": "https://data.nasa.gov/docs/legacy/CMAPSSData.zip",
+  "failed_criteria": [],
+  "fd001_profile": {
+    "column_count": 26,
+    "expected_columns": [
+      "unit",
+      "cycle",
+      "operational_setting_1",
+      "operational_setting_2",
+      "operational_setting_3",
+      "sensor_1",
+      "sensor_2",
+      "sensor_3",
+      "sensor_4",
+      "sensor_5",
+      "sensor_6",
+      "sensor_7",
+      "sensor_8",
+      "sensor_9",
+      "sensor_10",
+      "sensor_11",
+      "sensor_12",
+      "sensor_13",
+      "sensor_14",
+      "sensor_15",
+      "sensor_16",
+      "sensor_17",
+      "sensor_18",
+      "sensor_19",
+      "sensor_20",
+      "sensor_21"
+    ],
+    "rul_labels": 100,
+    "smoke_label_rows": 20,
+    "smoke_stream_rows": 20,
+    "test_rows": 13096,
+    "test_unit_max_max_cycle": 303,
+    "test_unit_min_max_cycle": 31,
+    "test_units": 100,
+    "train_rows": 20631,
+    "train_unit_max_max_cycle": 362,
+    "train_unit_min_max_cycle": 128,
+    "train_units": 100
+  },
+  "generated_at_utc": "2026-05-08T20:59:45+00:00",
+  "next_step": "Tier 7.1c may run the first compact C-MAPSS FD001 scoring gate only after this preflight passes. Tier 7.1c must score v2.2/v2.3 and fair baselines on the same rows with leakage controls preserved.",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight",
+  "runner_revision": "tier7_1b_cmapss_source_data_preflight_20260508_0001",
+  "source_manifest": {
+    "download_url": "https://data.nasa.gov/docs/legacy/CMAPSSData.zip",
+    "downloaded": false,
+    "extracted_files": [
+      {
+        "bytes": 434158,
+        "relative_path": "Damage Propagation Modeling.pdf",
+        "sha256": "e7aaef80c177333f400a4c1099fe76e67d244569b9397c937ec4cd3ed5b44a27"
+      },
+      {
+        "bytes": 429,
+        "relative_path": "RUL_FD001.txt",
+        "sha256": "a19c8ec94931949d0485bdc35118206e9c81c4547b422efb9cf86f4ceddbceca"
+      },
+      {
+        "bytes": 1110,
+        "relative_path": "RUL_FD002.txt",
+        "sha256": "c851dd96a6ea6998d3c4a8f834d3c8013aa90e93a6ed950dc826ad0655b2906b"
+      },
+      {
+        "bytes": 428,
+        "relative_path": "RUL_FD003.txt",
+        "sha256": "df1e0566306b174a2de41c67a3e7a51877889598b78643fc3e5685259091b7cb"
+      },
+      {
+        "bytes": 1084,
+        "relative_path": "RUL_FD004.txt",
+        "sha256": "196b836b85a95ac7fdbbf29c5fdf1657382eafa445644d114ffaaf50dc2975e1"
+      },
+      {
+        "bytes": 2442,
+        "relative_path": "readme.txt",
+        "sha256": "4f5270554b775c67e73aff383c5436fd329d6e4cc3d3a116913276fae511269b"
+      },
+      {
+        "bytes": 2228855,
+        "relative_path": "test_FD001.txt",
+        "sha256": "3cda7109ce17bafb5443f2ac926cfcf88154b941b8c4cf95eb55d1ddd6f52851"
+      },
+      {
+        "bytes": 5734587,
+        "relative_path": "test_FD002.txt",
+        "sha256": "de7b5bf7e998a985c378488480528b7c02cff1406a46740def362dda8d9b4e02"
+      },
+      {
+        "bytes": 2826651,
+        "relative_path": "test_FD003.txt",
+        "sha256": "299babd63c8d987cef079c4a425429f33b3a34797d803bbe2ad48c29dbd0d790"
+      },
+      {
+        "bytes": 6957759,
+        "relative_path": "test_FD004.txt",
+        "sha256": "1dc675fff0624bac10786927c6715b37d1297657137400d2b1a3138d777a3ba5"
+      },
+      {
+        "bytes": 3515356,
+        "relative_path": "train_FD001.txt",
+        "sha256": "963b5e22825b34d8b21c69e1aeb4af3e647050eb672ee8834ba4b5d91d2de0f8"
+      },
+      {
+        "bytes": 9082480,
+        "relative_path": "train_FD002.txt",
+        "sha256": "dac6c4dbc4e7c1bdeb5747da3d313d05c395bb99801b44a002b26a2ba13d788f"
+      },
+      {
+        "bytes": 4213862,
+        "relative_path": "train_FD003.txt",
+        "sha256": "2abbe9968cc5e8eb091980f51b20f62bb4127336d3482cb52071d53bf23329e2"
+      },
+      {
+        "bytes": 10350705,
+        "relative_path": "train_FD004.txt",
+        "sha256": "27ef6160b6a1dcb2613a88de9c239f763b223f02cdc41dc5cdedc5dc189b6218"
+      }
+    ],
+    "license_note": "NASA Open Data metadata marks accessLevel public; resource page reports 'License not specified'. Treat license as source-note required and do not redistribute raw data in this repository.",
+    "raw_data_git_policy": "raw dataset cache is local-only and ignored by .gitignore",
+    "source_pages": [
+      {
+        "name": "NASA Open Data Portal CMAPSS dataset",
+        "url": "https://data.nasa.gov/dataset/cmapss-jet-engine-simulated-data"
+      },
+      {
+        "name": "NASA PCoE Data Set Repository",
+        "url": "https://www.nasa.gov/intelligent-systems-division/discovery-and-systems-health/pcoe/pcoe-data-set-repository/"
+      },
+      {
+        "name": "NASA DASHlink C-MAPSS landing page",
+        "url": "https://c3.ndc.nasa.gov/dashlink/resources/139/"
+      }
+    ],
+    "zip_bytes": 12425978,
+    "zip_path_local_ignored": "/Users/james/JKS:CRA/.cra_data_cache/nasa_cmapss/CMAPSSData.zip",
+    "zip_sha256": "74bef434a34db25c7bf72e668ea4cd52afe5f2cf8e44367c55a82bfd91a5a34f"
+  },
+  "status": "pass",
+  "tier": "Tier 7.1b - NASA C-MAPSS Source/Data Preflight",
+  "zip_bytes": 12425978,
+  "zip_sha256": "74bef434a34db25c7bf72e668ea4cd52afe5f2cf8e44367c55a82bfd91a5a34f"
+}

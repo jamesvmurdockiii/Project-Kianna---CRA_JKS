@@ -10582,3 +10582,56 @@ Verify reproducible source access, license/source notes, checksums, row schema,
 train/test split semantics, train-only normalization, prediction-before-update
 ordering, and a tiny leakage-safe adapter smoke before any full scoring.
 ```
+
+### Tier 7.1b - NASA C-MAPSS Source/Data Preflight
+
+Runner:
+
+```text
+experiments/tier7_1b_cmapss_source_data_preflight.py
+```
+
+Output:
+
+```text
+controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/
+```
+
+Status:
+
+```text
+PASS
+criteria: 16/16
+ZIP SHA256: 74bef434a34db25c7bf72e668ea4cd52afe5f2cf8e44367c55a82bfd91a5a34f
+FD001 train rows: 20631
+FD001 test rows: 13096
+FD001 train/test units: 100/100
+RUL labels: 100
+```
+
+Leakage-safe smoke:
+
+```text
+normalization stats computed from train_FD001 only
+smoke stream rows contain no target/RUL labels
+offline scoring labels written separately
+prediction-before-update marked true for every smoke event
+raw NASA data cached under .cra_data_cache/ and ignored by git
+```
+
+Claim boundary:
+
+```text
+Tier 7.1b is source/data preflight only. It verifies reproducible access,
+checksums, schema, split/normalization policy, and label-separated smoke rows.
+It is not C-MAPSS scoring, not public usefulness evidence, not a baseline
+freeze, and not hardware/native transfer.
+```
+
+Next required step:
+
+```text
+Tier 7.1c - compact C-MAPSS FD001 scoring gate.
+Score v2.2, v2.3, lag/ridge, online LMS, random reservoir, ESN, and v2.3 shams
+on the same leakage-safe FD001 rows before making any usefulness claim.
+```

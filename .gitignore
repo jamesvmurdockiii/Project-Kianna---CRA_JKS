@@ -80,6 +80,10 @@ tier4_*_syntax_test/
 tier4_*_local_output*
 tier4_*_prepare_output/
 cra_422b/
+.cra_data_cache/
+data/raw/
+data/external/
+data/cache/
 
 # Note: controlled_test_output/ is INTENTIONALLY NOT IGNORED.
 # It contains the reproducible evidence trail and is part of the
