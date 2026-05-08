@@ -10505,3 +10505,80 @@ variable-delay signal survives outside private diagnostics with locked
 preprocessing, splits, baselines, leakage controls, metrics, and pass/fail
 criteria.
 ```
+
+### Tier 7.1a - Real-ish/Public Adapter Contract
+
+Runner:
+
+```text
+experiments/tier7_1a_realish_adapter_contract.py
+```
+
+Output:
+
+```text
+controlled_test_output/tier7_1a_20260508_realish_adapter_contract/
+```
+
+Status:
+
+```text
+PASS
+criteria: 12/12
+selected adapter: nasa_cmapss_rul_streaming
+dataset family: NASA C-MAPSS / turbofan engine degradation
+```
+
+Purpose:
+
+```text
+Tier 7.1a predeclares the first public/real-ish adapter family after Tier 6.2a.
+It tests only whether the adapter plan is auditable and safe to implement; it
+does not run the dataset or score CRA.
+```
+
+Required baselines:
+
+```text
+constant/mean-RUL
+monotone age-to-RUL
+lag/ridge window
+online LMS / linear readout
+random reservoir
+fixed ESN train-prefix ridge
+small GRU/LSTM if practical
+tree/boosting window if practical
+CRA v2.2 fading-memory reference
+CRA v2.3 generic bounded recurrent-state baseline
+v2.3 state-reset/shuffled/no-update controls
+```
+
+Leakage controls:
+
+```text
+train-unit statistics only for normalization
+no test-unit future RUL labels during online prediction
+chronological prediction within engine unit
+unit-held-out evaluation
+predeclared channel selection before scoring
+prediction-before-update for online models
+download/checksum manifest preserved
+all transforms logged before scoring
+```
+
+Claim boundary:
+
+```text
+Tier 7.1a is a contract only. It is not C-MAPSS evidence, not a public
+usefulness claim, not a baseline freeze, not hardware/native transfer, and not
+evidence that the Tier 6.2a variable-delay signal generalizes.
+```
+
+Next required step:
+
+```text
+Tier 7.1b - NASA C-MAPSS source/data preflight.
+Verify reproducible source access, license/source notes, checksums, row schema,
+train/test split semantics, train-only normalization, prediction-before-update
+ordering, and a tiny leakage-safe adapter smoke before any full scoring.
+```

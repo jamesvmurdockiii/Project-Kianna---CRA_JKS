@@ -1,0 +1,226 @@
+{
+  "claim_boundary": "Tier 7.1a is a contract only. It selects and predeclares the first real-ish/public adapter family after Tier 6.2a. It is not dataset evidence, not a usefulness claim, not a baseline freeze, and not hardware/native transfer.",
+  "contract": {
+    "baselines": [
+      "constant/mean-RUL baseline",
+      "monotone age-to-RUL baseline",
+      "lag/ridge window baseline",
+      "online LMS / linear readout baseline",
+      "random reservoir online baseline",
+      "fixed ESN train-prefix ridge baseline",
+      "small GRU/LSTM if dependency/runtime budget is practical",
+      "tree/boosting window baseline if scikit-learn is available",
+      "CRA v2.2 fading-memory reference",
+      "CRA v2.3 generic bounded recurrent-state baseline",
+      "v2.3 state-reset/shuffled/no-update controls"
+    ],
+    "leakage_controls": [
+      "train-unit statistics only for normalization",
+      "no test-unit future RUL labels during online prediction",
+      "chronological prediction within each engine unit",
+      "unit-held-out evaluation",
+      "predeclared sensor/channel selection before scoring",
+      "prediction-before-update for online models",
+      "data download/checksum manifest preserved",
+      "all task transforms logged to JSON before model scoring"
+    ],
+    "metrics": [
+      "RUL RMSE on held-out units",
+      "MAE on held-out units",
+      "tail-window RMSE near failure",
+      "NASA asymmetric prognostics score if implemented cleanly",
+      "sample efficiency by prefix length",
+      "worst-unit error",
+      "runtime per model"
+    ],
+    "next_step": "Tier 7.1b should implement a source/data preflight for NASA C-MAPSS, download or locate the data reproducibly, write checksums and license notes, then emit a tiny adapter smoke before full scoring.",
+    "nonclaims": [
+      "not a C-MAPSS result",
+      "not a public usefulness claim",
+      "not a baseline freeze",
+      "not hardware or native transfer",
+      "not evidence that variable-delay private diagnostics generalize",
+      "not language, planning, AGI, or ASI evidence"
+    ],
+    "pass_fail": {
+      "contract_pass_means": "the adapter is fully predeclared and safe to implement; it does not mean CRA is useful on C-MAPSS",
+      "fail_or_narrow_if": [
+        "simple age/lag/ESN/GRU baselines dominate all metrics",
+        "CRA wins only through private preprocessing choices",
+        "wins vanish on held-out units or tail-window scoring",
+        "mechanism shams match the claimed mechanism",
+        "dataset licensing/download cannot be made reproducible"
+      ],
+      "tier7_1b_pass_would_require": [
+        "source/download/license/checksum preflight passes",
+        "adapter emits leakage-safe chronological streams",
+        "at least v2.2, v2.3, lag, reservoir, and ESN baselines run on the same rows",
+        "no future-label leakage",
+        "no baseline freeze or hardware transfer from smoke evidence alone"
+      ],
+      "tier7_1c_or_later_usefulness_gate_would_require": [
+        "v2.3 or a later promoted mechanism beats or complements strongest fair baselines",
+        "seed/unit-level stability and worst-unit behavior are reported",
+        "v2.3 shams/ablations separate if v2.3 is part of the claim",
+        "metrics include effect size or confidence intervals where practical",
+        "same public adapter can be reproduced from a fresh checkout"
+      ]
+    },
+    "selected_adapter": {
+      "adapter_id": "nasa_cmapss_rul_streaming",
+      "dataset_family": "NASA C-MAPSS / turbofan engine degradation",
+      "first_executable_scope": "local source/data preflight plus one compact FD001-style smoke if the data license/download path is clean",
+      "first_executable_tier": "Tier 7.1b",
+      "reason": "Tier 6.2a found a narrow variable-delay signal. C-MAPSS is the first real-ish public stream family to test delayed sensor history -> future degradation/RUL structure without relying on private task generators."
+    },
+    "source_audit": [
+      {
+        "name": "NASA Prognostics Center of Excellence Data Set Repository",
+        "role": "primary official source for C-MAPSS / turbofan degradation data access",
+        "source_id": "nasa_pcoe_repository",
+        "url": "https://www.nasa.gov/intelligent-systems-division/discovery-and-systems-health/pcoe/pcoe-data-set-repository/",
+        "verification_status": "source page checked 2026-05-08"
+      },
+      {
+        "name": "DASHlink Turbofan Engine Degradation Simulation Data Set",
+        "role": "official NASA DASHlink landing page for the classic C-MAPSS turbofan data resource",
+        "source_id": "nasa_dashlink_cmapss",
+        "url": "https://c3.ndc.nasa.gov/dashlink/resources/139/",
+        "verification_status": "source page checked 2026-05-08"
+      },
+      {
+        "name": "Numenta Anomaly Benchmark",
+        "role": "secondary candidate for streaming anomaly adapter after C-MAPSS contract execution",
+        "source_id": "numenta_nab",
+        "url": "https://github.com/numenta/NAB",
+        "verification_status": "source page checked 2026-05-08"
+      },
+      {
+        "name": "UCR/UEA Time Series Classification Archive",
+        "role": "future held-out time-series classification adapter source",
+        "source_id": "ucr_uea_archive",
+        "url": "https://www.timeseriesclassification.com/",
+        "verification_status": "source page checked 2026-05-08"
+      },
+      {
+        "name": "PhysioNet databases",
+        "role": "future biosignal/event-stream adapter source after license/split audit",
+        "source_id": "physionet",
+        "url": "https://www.physionet.org/about/database/",
+        "verification_status": "source page checked 2026-05-08"
+      }
+    ]
+  },
+  "criteria": [
+    {
+      "name": "Tier 6.2a source exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier6_2a_20260508_targeted_usefulness_validation/tier6_2a_results.json"
+    },
+    {
+      "name": "Tier 6.2a passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "v2.3 baseline lock exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.3.json"
+    },
+    {
+      "name": "usefulness contract doc exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/docs/TIER6_2_USEFULNESS_BATTERY_CONTRACT.md"
+    },
+    {
+      "name": "selected adapter declared",
+      "note": "",
+      "passed": true,
+      "rule": "non-empty",
+      "value": "nasa_cmapss_rul_streaming"
+    },
+    {
+      "name": "official/public source URLs declared",
+      "note": "",
+      "passed": true,
+      "rule": "all source rows have https URL",
+      "value": true
+    },
+    {
+      "name": "required baselines declared",
+      "note": "",
+      "passed": true,
+      "rule": "includes v2.2/v2.3/lag/reservoir/ESN",
+      "value": [
+        "constant/mean-RUL baseline",
+        "monotone age-to-RUL baseline",
+        "lag/ridge window baseline",
+        "online LMS / linear readout baseline",
+        "random reservoir online baseline",
+        "fixed ESN train-prefix ridge baseline",
+        "small GRU/LSTM if dependency/runtime budget is practical",
+        "tree/boosting window baseline if scikit-learn is available",
+        "CRA v2.2 fading-memory reference",
+        "CRA v2.3 generic bounded recurrent-state baseline",
+        "v2.3 state-reset/shuffled/no-update controls"
+      ]
+    },
+    {
+      "name": "leakage controls declared",
+      "note": "",
+      "passed": true,
+      "rule": ">= 6",
+      "value": 8
+    },
+    {
+      "name": "pass/fail rules declared",
+      "note": "",
+      "passed": true,
+      "rule": "contains contract/pass/fail rules",
+      "value": [
+        "contract_pass_means",
+        "fail_or_narrow_if",
+        "tier7_1b_pass_would_require",
+        "tier7_1c_or_later_usefulness_gate_would_require"
+      ]
+    },
+    {
+      "name": "contract only, no dataset scoring",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": "no model run"
+    },
+    {
+      "name": "no baseline freeze authorized",
+      "note": "",
+      "passed": true,
+      "rule": "== false",
+      "value": false
+    },
+    {
+      "name": "no hardware transfer authorized",
+      "note": "",
+      "passed": true,
+      "rule": "== false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 12,
+  "criteria_total": 12,
+  "failed_criteria": [],
+  "generated_at_utc": "2026-05-08T20:39:34+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1a_20260508_realish_adapter_contract",
+  "runner_revision": "tier7_1a_realish_adapter_contract_20260508_0001",
+  "source_tier6_2a_results": "/Users/james/JKS:CRA/controlled_test_output/tier6_2a_20260508_targeted_usefulness_validation/tier6_2a_results.json",
+  "status": "pass",
+  "tier": "Tier 7.1a - Real-ish/Public Adapter Contract"
+}

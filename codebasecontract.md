@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-08T20:30:00+00:00.
+Last updated: 2026-05-08T20:45:00+00:00.
 
 Current repo root:
 
@@ -55,6 +55,20 @@ Tier 6.2a = COMPLETE, PASS, 12/12 criteria
   Boundary: software diagnostic only; custom hard tasks are not public
             usefulness proof, not a baseline freeze, and not hardware/native
             transfer evidence.
+```
+
+Latest real-ish/public adapter contract:
+
+```text
+Tier 7.1a = COMPLETE, PASS, 12/12 criteria
+  Source: controlled_test_output/tier7_1a_20260508_realish_adapter_contract/
+  Runner: experiments/tier7_1a_realish_adapter_contract.py
+  Selected adapter: nasa_cmapss_rul_streaming
+  Decision: use NASA C-MAPSS / turbofan remaining-useful-life streaming as the
+            first real-ish/public adapter family to test the Tier 6.2a
+            variable-delay signal outside private diagnostics.
+  Boundary: contract only; not a data run, not a usefulness claim, not a
+            baseline freeze, and not hardware/native transfer evidence.
 ```
 
 Current hardware/runtime baseline decision:
@@ -510,11 +524,16 @@ Tier 6.2a — COMPLETE. Targeted hard-task validation over v2.3.
   Result: v2.3 showed a narrow variable-delay signal but did not beat v2.2 on
     the aggregate targeted hard-task geomean. No freeze or hardware transfer.
 
-Tier 7.1a — CURRENT ACTIVE STEP. Real-ish/public adapter contract.
-  Required first move: define the first audited adapter family that can test
-    whether the Tier 6.2a variable-delay signal survives outside private
-    diagnostics. Lock data source, preprocessing, splits, metrics, baselines,
-    leakage controls, and pass/fail rules before running.
+Tier 7.1a — COMPLETE. Real-ish/public adapter contract.
+  Status: LOCAL CONTRACT PASS, 12/12 criteria.
+  Output: controlled_test_output/tier7_1a_20260508_realish_adapter_contract/
+  Result: selected NASA C-MAPSS RUL streaming as the first public/real-ish
+    adapter family; no dataset scoring, freeze, or hardware transfer.
+
+Tier 7.1b — CURRENT ACTIVE STEP. NASA C-MAPSS source/data preflight.
+  Required first move: verify reproducible data access, license/source notes,
+    checksums, adapter row schema, train/test split semantics, train-only
+    normalization, and a tiny leakage-safe smoke before any full scoring.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware

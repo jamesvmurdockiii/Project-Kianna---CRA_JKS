@@ -3735,9 +3735,10 @@ Interpretation:
 ```text
 Tier 6.2a provides a narrow variable-delay signal and failure localization. It
 does not provide public usefulness evidence, a v2.4 freeze, or hardware/native
-transfer authorization. The next step is a Tier 7.1a real-ish/public adapter
-contract that tests whether the variable-delay signal survives outside private
-diagnostics under fair baselines and leakage controls.
+transfer authorization. Tier 7.1a then passed as a contract-only adapter
+selection and chose NASA C-MAPSS RUL streaming. The next step is Tier 7.1b
+source/data preflight before any full scoring, public usefulness claim, or
+native transfer.
 ```
 
 ### Tier 6.2: Diagnostic Hard Task Suite
@@ -3783,38 +3784,51 @@ The paper should include more than toy tasks if the claim is usefulness.
 
 ### Tier 7.1: Real-ish Benchmark Adapters
 
+Current status:
+
+```text
+Tier 7.1a — real-ish/public adapter contract: COMPLETE, PASS 12/12
+```
+
+Result:
+
+```text
+Output: controlled_test_output/tier7_1a_20260508_realish_adapter_contract/
+Selected adapter: nasa_cmapss_rul_streaming
+Dataset family: NASA C-MAPSS / turbofan engine degradation
+```
+
+Interpretation:
+
+```text
+Tier 7.1a predeclared the first public/real-ish adapter family for testing the
+Tier 6.2a variable-delay signal outside private diagnostics. It is a contract
+gate only, not dataset evidence and not a public usefulness claim.
+```
+
 Current next step:
 
 ```text
-Tier 7.1a — real-ish/public adapter contract
+Tier 7.1b — NASA C-MAPSS source/data preflight
 ```
 
-Purpose:
+Tier 7.1b must verify:
 
 ```text
-select one auditable adapter family that can test the Tier 6.2a variable-delay
-signal outside private diagnostics, before running data or claiming usefulness
+official source/download or local data path
+license/source notes
+checksums and file manifest
+adapter row schema
+train/test split semantics
+train-only normalization
+prediction-before-update ordering
+tiny leakage-safe adapter smoke
 ```
 
-Required contract fields:
+Tier 7.1a predeclared these candidate/future adapter families:
 
 ```text
-data/source or generator provenance
-license and reproducibility status
-preprocessing
-chronological or held-out split policy
-metrics
-baselines
-leakage controls
-seed policy
-pass/fail thresholds
-artifact list
-claim boundary and nonclaims
-```
-
-Candidate adapters:
-
-```text
+NASA C-MAPSS / turbofan RUL streaming
 streaming sensor prediction
 anomaly detection
 online concept-drift classification
@@ -3838,6 +3852,7 @@ Fail:
 adapter requires task-specific CRA hacks
 CRA cannot beat or complement simple online baselines
 results are not repeatable
+dataset licensing/download cannot be reproduced
 ```
 
 ### Tier 7.2: Holdout Task Challenge
@@ -7163,6 +7178,8 @@ Boundary: hardware task-benefit/resource bridge only, still host-ferried; not
           scaling, not v2.2 temporal-state migration, and not full organism
           autonomy.
 Baseline: CRA_LIFECYCLE_NATIVE_BASELINE_v0.4 frozen.
+```
+
 Tier 4.31a result:
 
 ```text
@@ -7204,25 +7221,19 @@ Tests: test-temporal-state, test-profiles, test, test-lifecycle, test-lifecycle-
 Boundary: local source/runtime host evidence only, not hardware
 ```
 
-Next: Define Tier 7.1a real-ish/public adapter contract over frozen software baseline v2.3. Tier 6.2a has already passed as a targeted diagnostic and found only a narrow variable-delay signal: v2.3 was best on `variable_delay_multi_cue`, while v2.2 won the aggregate hard-task diagnostic geomean. Do not claim public usefulness or move to native/on-chip transfer from Tier 6.2a. Use `CRA_NATIVE_SCALE_BASELINE_v0.5` only as the frozen native substrate reference, not as usefulness evidence.
-      Tier 4.32e passed after EBRAINS ingest at
-      `controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/`:
-      board `10.11.205.161`, two cases, 32 events per case, 96/96 lookup
-      replies per case, zero stale replies, zero duplicate replies, zero
-      timeouts, zero synthetic fallback, enabled LR 0.25 readout `32768/0`,
-      and no-learning LR 0.0 readout `0/0`. Tier 4.32f then passed locally at
-      `controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/`,
-      selected lifecycle traffic/resource counters as the next direction, and
-      blocked immediate hardware until lifecycle inter-chip routes were
-      source-proven. Tier 4.32g-r0 then passed locally at
-      `controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/`
-      with 14/14 criteria and authorized Tier 4.32g hardware preparation. Tier 4.32g first hardware return then proved the lifecycle traffic counters but failed cleanup/control, a second attempted rerun exposed stale-package reuse, and Tier 4.32g-r2 then passed after EBRAINS ingest at `controlled_test_output/tier4_32g_20260508_hardware_pass_ingested/` with runner revision `tier4_32g_multichip_lifecycle_traffic_resource_smoke_20260508_0003`.
-      Speedup claims, benchmark claims, true two-partition cross-chip learning,
-      lifecycle scaling, and multi-shard learning remain blocked even after the
-      Tier 4.32h v0.5 substrate freeze. Reopen native replay-buffer,
-      sleep-like replay, or eligibility-trace implementation only if a later
-      measured blocker specifically demands it.
+Tier 7.1a result:
+
+```text
+Output: controlled_test_output/tier7_1a_20260508_realish_adapter_contract/
+Status: pass
+Criteria: 12/12
+Selected adapter: nasa_cmapss_rul_streaming
+Dataset family: NASA C-MAPSS / turbofan engine degradation
+Boundary: contract only, not C-MAPSS scoring, not public usefulness evidence,
+          not a baseline freeze, and not hardware/native transfer.
 ```
+
+Next: Implement Tier 7.1b NASA C-MAPSS source/data preflight over frozen software baseline v2.3. Verify reproducible source access, license/source notes, checksums, row schema, train/test split semantics, train-only normalization, prediction-before-update ordering, and a tiny leakage-safe adapter smoke before any full scoring. Do not claim public usefulness or move to native/on-chip transfer from Tier 7.1a/7.1b evidence. Use `CRA_NATIVE_SCALE_BASELINE_v0.5` only as the frozen native substrate reference, not as usefulness evidence.
 
 Detailed Tier 5.19 contract:
 

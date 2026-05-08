@@ -1,0 +1,2 @@
+adapter_id,dataset_family,reason,first_executable_tier,first_executable_scope,status,criteria_passed,criteria_total
+nasa_cmapss_rul_streaming,NASA C-MAPSS / turbofan engine degradation,Tier 6.2a found a narrow variable-delay signal. C-MAPSS is the first real-ish public stream family to test delayed sensor history -> future degradation/RUL structure without relying on private task generators.,Tier 7.1b,local source/data preflight plus one compact FD001-style smoke if the data license/download path is clean,pass,12,12

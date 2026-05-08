@@ -1,0 +1,9 @@
+{
+  "generated_at_utc": "2026-05-08T20:39:34+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1a_20260508_realish_adapter_contract",
+  "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier7_1a_20260508_realish_adapter_contract/tier7_1a_report.md",
+  "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier7_1a_20260508_realish_adapter_contract/tier7_1a_results.json",
+  "status": "pass",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_1a_20260508_realish_adapter_contract/tier7_1a_summary.csv",
+  "tier": "Tier 7.1a - Real-ish/Public Adapter Contract"
+}

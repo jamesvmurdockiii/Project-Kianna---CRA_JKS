@@ -470,17 +470,37 @@ failure localization plus a possible adapter direction, not a new usefulness
 claim, baseline freeze, or hardware-transfer authorization.
 ```
 
+## Tier 7.1a Result
+
+2026-05-08 result:
+
+```text
+Tier 7.1a — real-ish/public adapter contract
+output: controlled_test_output/tier7_1a_20260508_realish_adapter_contract/
+status: PASS, 12/12 criteria
+selected adapter: nasa_cmapss_rul_streaming
+dataset family: NASA C-MAPSS / turbofan engine degradation
+```
+
+Interpretation:
+
+```text
+Tier 7.1a selected and predeclared the first public/real-ish adapter family for
+testing the narrow Tier 6.2a variable-delay signal. It is a contract only, not
+C-MAPSS scoring, not a public usefulness result, not a baseline freeze, and not
+hardware/native transfer authorization.
+```
+
 ## Immediate Next Action
 
 The current next action is:
 
 ```text
-Tier 7.1a — real-ish/public adapter contract.
+Tier 7.1b — NASA C-MAPSS source/data preflight.
 ```
 
-Define the first audited adapter family that can test whether the Tier 6.2a
-variable-delay signal survives outside private diagnostics. Lock source,
-preprocessing, split policy, metrics, baselines, leakage controls, pass/fail
-criteria, and claim boundaries before running. Do not move to SpiNNaker/native
-runtime until software usefulness or a promoted mechanism earns a separate
-transfer contract.
+Verify reproducible source access, license/source notes, checksums, adapter row
+schema, train/test split semantics, train-only normalization,
+prediction-before-update ordering, and a tiny leakage-safe adapter smoke. Do not
+move to full scoring, SpiNNaker/native runtime, or a new baseline freeze until
+software usefulness or a promoted mechanism earns a separate contract.

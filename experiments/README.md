@@ -72,10 +72,12 @@ state software baseline. Tier 6.2a then passed targeted hard-task validation at
 `controlled_test_output/tier6_2a_20260508_targeted_usefulness_validation/`:
 v2.3 was best only on `variable_delay_multi_cue`, v2.2 won the aggregate
 hard-task diagnostic geomean, and no baseline freeze or hardware/native
-transfer was authorized. The next active project step is Tier 7.1a real-ish /
-public adapter contract over the narrow variable-delay signal; no hardware
-transfer or native migration is authorized until a separate transfer contract is
-justified.
+transfer was authorized. Tier 7.1a then passed at
+`controlled_test_output/tier7_1a_20260508_realish_adapter_contract/`, selecting
+NASA C-MAPSS RUL streaming as the first public/real-ish adapter contract over
+the narrow variable-delay signal. The next active project step is Tier 7.1b
+NASA C-MAPSS source/data preflight; no full scoring, hardware transfer, or
+native migration is authorized until a separate evidence contract is justified.
 
 Tier 4.32a-hw prepare has also passed locally. The current EBRAINS upload
 folder is `ebrains_jobs/cra_432a_hw`, and the exact JobManager command is

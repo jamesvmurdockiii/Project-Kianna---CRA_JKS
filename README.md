@@ -3,7 +3,7 @@
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
 [![Tests](https://img.shields.io/badge/tests-151%20passing-brightgreen.svg)](#validation)
-[![Evidence](https://img.shields.io/badge/canonical%20evidence-88%20bundles-blue.svg)](STUDY_EVIDENCE_INDEX.md)
+[![Evidence](https://img.shields.io/badge/canonical%20evidence-89%20bundles-blue.svg)](STUDY_EVIDENCE_INDEX.md)
 
 Coral Reef Architecture (CRA) is a neuromorphic learning research platform for
 studying local spiking plasticity, delayed credit assignment, population-level
@@ -50,8 +50,9 @@ controlled ablations, baseline comparisons, and explicit claim boundaries.
 | Latest 4.32g hardware return | Tier 4.32g-r2 passed after EBRAINS ingest from [`controlled_test_output/tier4_32g_20260508_hardware_pass_ingested`](controlled_test_output/tier4_32g_20260508_hardware_pass_ingested): raw hardware status `pass`, ingest status `pass`, runner revision `tier4_32g_multichip_lifecycle_traffic_resource_smoke_20260508_0003`, board target `10.11.205.177`, source chip `(0,0)` learning core `p7`, remote chip `(1,0)` lifecycle core `p4`, source event/trophic requests `1/1`, source mask sync received `1`, lifecycle accepted trophic+death `2`, lifecycle mask sync sent `1`, active mask/count/death/trophic counters `1`, zero stale/duplicate/missing-ack counters, pause/reset controls passed, payloads `>=149`, `30` returned artifacts preserved, and zero synthetic fallback. Boundary: two-chip lifecycle traffic/resource smoke only; not lifecycle scaling, speedup, benchmark evidence, true partitioned ecology, multi-shard learning, or a native-scale baseline freeze. |
 | Latest public benchmark promotion gate | Tier 7.0j passed from [`controlled_test_output/tier7_0j_20260508_generic_recurrent_promotion_gate`](controlled_test_output/tier7_0j_20260508_generic_recurrent_promotion_gate): generic bounded recurrent state improved the locked 8000-step public aggregate geomean MSE versus v2.2 (`0.09530752189727928` vs `0.19348969000027122`), beat lag-only and random-reservoir online controls, narrowed the ESN gap, preserved the Tier 7.0i topology nonclaim, and passed full NEST compact regression. `CRA_EVIDENCE_BASELINE_v2.3` is frozen under [`baselines/`](baselines). |
 | Latest targeted usefulness diagnostic | Tier 6.2a passed from [`controlled_test_output/tier6_2a_20260508_targeted_usefulness_validation`](controlled_test_output/tier6_2a_20260508_targeted_usefulness_validation): v2.3 was best only on `variable_delay_multi_cue`, v2.2 won the aggregate hard-task geomean (`0.15892013746238234` vs v2.3 `0.17604715537423876`), and no baseline freeze or hardware transfer was authorized. |
-| Active next gate | Tier 7.1a real-ish/public adapter contract: test whether the narrow variable-delay signal survives outside private diagnostics with fixed preprocessing, fair baselines, leakage controls, and no native/on-chip transfer until the software evidence earns it. |
-| Canonical registry | 88 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
+| Latest real-ish/public adapter contract | Tier 7.1a passed from [`controlled_test_output/tier7_1a_20260508_realish_adapter_contract`](controlled_test_output/tier7_1a_20260508_realish_adapter_contract): selected NASA C-MAPSS RUL streaming as the first public adapter family, with source audit, preprocessing/split/baseline/leakage contract, and no dataset score or usefulness claim yet. |
+| Active next gate | Tier 7.1b NASA C-MAPSS source/data preflight: verify reproducible data access, license/source notes, checksums, adapter row schema, and a tiny leakage-safe smoke before full scoring. |
+| Canonical registry | 89 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
 | Validation suite | 151 pytest tests plus registry, paper-table, and repository-audit generation. |
 
 ## What CRA Implements
