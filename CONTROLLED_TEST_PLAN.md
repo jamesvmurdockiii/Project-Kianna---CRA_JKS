@@ -9722,10 +9722,11 @@ Question: after 4.32g-r0 source-proved lifecycle route entries, can the actual
 learning/lifecycle MCPL packet semantics survive a two-chip SpiNNaker hardware
 smoke with compact readback counters?
 
-Current status: 4.32g first EBRAINS return ingested as FAIL with successful
-traffic counters; second attempted rerun ingested as stale-package FAIL because
-it returned runner revision ...0001 again; 4.32g-r2 repaired and prepared with
-a cache-proof upload folder.
+Current status: 4.32g-r2 passed on EBRAINS and was ingested as hardware
+evidence. The first 4.32g EBRAINS return remains preserved as a strict-gate
+fail with successful traffic counters, and the second attempted rerun remains
+preserved as a stale-package fail because it returned runner revision ...0001.
+The cache-proof r2 run returned the expected runner revision ...0003 and passed.
 
 Prepared output:
 
@@ -9737,25 +9738,36 @@ exact JobManager command:
 cra_432g_r2/experiments/tier4_32g_multichip_lifecycle_traffic_resource_smoke.py --mode run-hardware --output-dir tier4_32g_job_output
 ```
 
-First hardware return:
+Successful hardware return:
+
+```text
+controlled_test_output/tier4_32g_20260508_hardware_pass_ingested/
+raw status: pass
+ingest status: pass
+runner revision: tier4_32g_multichip_lifecycle_traffic_resource_smoke_20260508_0003
+board target: 10.11.205.177
+source chip/core: (0,0,p7) learning
+remote chip/core: (1,0,p4) lifecycle
+returned artifacts: 30
+synthetic fallback: 0
+stale package detected: false
+```
+
+Earlier failed/stale returns:
 
 ```text
 controlled_test_output/tier4_32g_20260507_hardware_fail_ingested/
 raw status: fail
 traffic path: succeeded
 failure class: cleanup/control-surface + criteria evaluator
-```
 
-Stale-package rerun:
-
-```text
 controlled_test_output/tier4_32g_20260508_old_package_return_ingested/
 raw status: fail
 returned runner revision: tier4_32g_multichip_lifecycle_traffic_resource_smoke_20260507_0001
-classification: stale cra_432g package rerun, not repaired r1 evidence
+classification: stale cra_432g package rerun, not repaired r2 evidence
 ```
 
-Observed successful traffic fields in first return:
+Observed successful traffic fields in the passing r2 return:
 
 ```text
 source lifecycle_event_requests_sent == 1
@@ -9770,17 +9782,20 @@ lifecycle active_mask_bits == 1
 lifecycle active_count == 1
 lifecycle death_count == 1
 lifecycle trophic_update_count == 1
+reset/pause controls passed
+runtime payload_len >= 149
 synthetic fallback == 0
 ```
 
-4.32g-r2 repairs:
+4.32g-r2 repairs proven by the pass:
 
 ```text
-1. lifecycle_core now ACKs CMD_RUN_CONTINUOUS and CMD_PAUSE as harmless
-   uniform server-core controls.
-2. test_profiles now asserts lifecycle_core control ACK behavior.
-3. smoke criteria now accept both boolean reset ACKs and structured reply ACKs.
+1. lifecycle_core ACKs CMD_RUN_CONTINUOUS and CMD_PAUSE as harmless uniform
+   server-core controls.
+2. test_profiles asserts lifecycle_core control ACK behavior.
+3. smoke criteria accept both boolean reset ACKs and structured reply ACKs.
 4. runner revision advanced to tier4_32g_multichip_lifecycle_traffic_resource_smoke_20260508_0003.
+5. stale-package detection reports false on the passing run.
 ```
 
 Mechanism under test:
@@ -9849,4 +9864,48 @@ Claim boundary:
 Tier 4.32g is a two-chip lifecycle traffic/resource smoke only. It is not
 lifecycle scaling, speedup evidence, benchmark evidence, true partitioned
 ecology, multi-shard learning, or a native-scale baseline freeze.
+```
+
+## Tier 4.32h - Native-Scale Evidence Closeout / Baseline Decision
+
+Question: do the completed Tier 4.32a, 4.32d, 4.32e, and 4.32g gates form a
+stable native-scale evidence bundle that justifies freezing
+`CRA_NATIVE_SCALE_BASELINE_v0.5`, or is another targeted repair/stress gate
+required before freezing?
+
+Inputs:
+
+```text
+Tier 4.32a / 4.32a-replicated single-chip replicated stress
+Tier 4.32d two-chip MCPL communication/readback smoke
+Tier 4.32e two-chip learning-bearing micro-task
+Tier 4.32g two-chip lifecycle traffic/resource smoke
+all returned-artifact preservation records
+all resource/readback accounting fields
+all stale/duplicate/timeout/missing-ack counters
+all synthetic-fallback flags
+all claim-boundary statements
+```
+
+Pass requires:
+
+```text
+all required evidence bundles exist and validate
+single-chip multi-core and first multi-chip evidence are internally consistent
+no unresolved stale-package or runner-revision ambiguity remains
+no unresolved synthetic fallback exists
+no unresolved timeout/stale/duplicate/missing-ack pattern exists
+claim boundary for v0.5 is explicitly narrower than lifecycle scaling,
+benchmark evidence, speedup evidence, true two-partition learning, and AGI/ASI
+if freeze is recommended, baseline files and registry snapshot are generated
+if freeze is rejected, next repair/stress gate is explicitly named
+```
+
+Boundary:
+
+```text
+Tier 4.32h is a local evidence closeout and baseline decision gate. It is not a
+new hardware result, not speedup proof, not benchmark evidence, not lifecycle
+scaling, not multi-shard learning, and not a baseline freeze unless the gate
+explicitly generates and validates the baseline files.
 ```

@@ -1,0 +1,436 @@
+{
+  "core_roles": {
+    "learning": {
+      "app_id": 4,
+      "chip": "source",
+      "core": 7,
+      "link": "request_east",
+      "profile": "learning_core"
+    },
+    "lifecycle": {
+      "app_id": 5,
+      "chip": "remote",
+      "core": 4,
+      "link": "sync_west",
+      "profile": "lifecycle_core"
+    }
+  },
+  "criteria": [
+    {
+      "name": "no hardware exception",
+      "note": "",
+      "passed": true,
+      "rule": "== True",
+      "value": true
+    },
+    {
+      "name": "task completed",
+      "note": "",
+      "passed": true,
+      "rule": "completed/pass",
+      "value": "completed"
+    },
+    {
+      "name": "source chip placement",
+      "note": "",
+      "passed": true,
+      "rule": "== {'x': 0, 'y': 0}",
+      "value": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "remote chip placement",
+      "note": "",
+      "passed": true,
+      "rule": "== {'x': 1, 'y': 0}",
+      "value": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "name": "all resets succeeded",
+      "note": "",
+      "passed": true,
+      "rule": "all success",
+      "value": {
+        "learning": true,
+        "lifecycle": true
+      }
+    },
+    {
+      "name": "lifecycle init succeeded",
+      "note": "",
+      "passed": true,
+      "rule": "== True",
+      "value": true
+    },
+    {
+      "name": "trophic request emitted",
+      "note": "",
+      "passed": true,
+      "rule": "== True",
+      "value": true
+    },
+    {
+      "name": "death event emitted",
+      "note": "",
+      "passed": true,
+      "rule": "== True",
+      "value": true
+    },
+    {
+      "name": "learning read success",
+      "note": "",
+      "passed": true,
+      "rule": "== True",
+      "value": true
+    },
+    {
+      "name": "lifecycle runtime read success",
+      "note": "",
+      "passed": true,
+      "rule": "== True",
+      "value": true
+    },
+    {
+      "name": "lifecycle summary read success",
+      "note": "",
+      "passed": true,
+      "rule": "== True",
+      "value": true
+    },
+    {
+      "name": "source event request counter",
+      "note": "",
+      "passed": true,
+      "rule": "== 1",
+      "value": 1
+    },
+    {
+      "name": "source trophic request counter",
+      "note": "",
+      "passed": true,
+      "rule": "== 1",
+      "value": 1
+    },
+    {
+      "name": "source received one mask sync",
+      "note": "",
+      "passed": true,
+      "rule": "== 1",
+      "value": 1
+    },
+    {
+      "name": "source saw expected active mask",
+      "note": "",
+      "passed": true,
+      "rule": "== 1",
+      "value": 1
+    },
+    {
+      "name": "source saw lifecycle event count",
+      "note": "",
+      "passed": true,
+      "rule": ">= 2",
+      "value": 2
+    },
+    {
+      "name": "source lineage checksum present",
+      "note": "",
+      "passed": true,
+      "rule": "> 0",
+      "value": 6026
+    },
+    {
+      "name": "lifecycle accepted trophic+death",
+      "note": "",
+      "passed": true,
+      "rule": "== 2",
+      "value": 2
+    },
+    {
+      "name": "lifecycle sent one mask sync",
+      "note": "",
+      "passed": true,
+      "rule": "== 1",
+      "value": 1
+    },
+    {
+      "name": "lifecycle duplicate events zero",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "name": "lifecycle stale events zero",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "name": "lifecycle missing acks zero",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "name": "lifecycle active mask mutated",
+      "note": "",
+      "passed": true,
+      "rule": "== 1",
+      "value": 1
+    },
+    {
+      "name": "lifecycle active count",
+      "note": "",
+      "passed": true,
+      "rule": "== 1",
+      "value": 1
+    },
+    {
+      "name": "lifecycle death count",
+      "note": "",
+      "passed": true,
+      "rule": "== 1",
+      "value": 1
+    },
+    {
+      "name": "lifecycle trophic update count",
+      "note": "",
+      "passed": true,
+      "rule": "== 1",
+      "value": 1
+    },
+    {
+      "name": "lifecycle invalid events zero",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "name": "all pause commands succeeded",
+      "note": "",
+      "passed": true,
+      "rule": "all success",
+      "value": {
+        "learning": {
+          "cmd": 25,
+          "status": 0,
+          "stopped_timestep": 2863,
+          "success": true
+        },
+        "lifecycle": {
+          "cmd": 25,
+          "status": 0,
+          "stopped_timestep": 1665,
+          "success": true
+        }
+      }
+    },
+    {
+      "name": "learning payload includes lifecycle counters",
+      "note": "",
+      "passed": true,
+      "rule": ">= 149",
+      "value": 149
+    },
+    {
+      "name": "lifecycle runtime payload includes lifecycle counters",
+      "note": "",
+      "passed": true,
+      "rule": ">= 149",
+      "value": 149
+    }
+  ],
+  "death_emit": {
+    "cmd": 35,
+    "payload_len": 0,
+    "status": 0,
+    "success": true
+  },
+  "final_state": {
+    "learning": {
+      "active_pending": 0,
+      "active_slots": 0,
+      "active_trace_count": 0,
+      "cmd": 8,
+      "commands_received": 3,
+      "decisions": 0,
+      "duplicate_replies": 0,
+      "flags": 0,
+      "lifecycle_duplicate_events": 0,
+      "lifecycle_event_acks_received": 0,
+      "lifecycle_event_requests_sent": 1,
+      "lifecycle_last_seen_active_mask_bits": 1,
+      "lifecycle_last_seen_event_count": 2,
+      "lifecycle_last_seen_lineage_checksum": 6026,
+      "lifecycle_mask_syncs_received": 1,
+      "lifecycle_mask_syncs_sent": 0,
+      "lifecycle_missing_acks": 0,
+      "lifecycle_stale_events": 0,
+      "lifecycle_trophic_requests_sent": 1,
+      "lookup_replies": 0,
+      "lookup_requests": 0,
+      "neuron_count": 0,
+      "payload_len": 149,
+      "pending_created": 0,
+      "pending_dropped": 0,
+      "pending_matured": 0,
+      "profile_id": 3,
+      "readback_bytes": 149,
+      "readout_bias": 0.0,
+      "readout_bias_raw": 0,
+      "readout_weight": 0.0,
+      "readout_weight_raw": 0,
+      "reward_events": 0,
+      "schedule_length": 0,
+      "schema_version": 2,
+      "slot_evictions": 0,
+      "slot_hits": 0,
+      "slot_misses": 0,
+      "slot_writes": 0,
+      "stale_replies": 0,
+      "status": 0,
+      "success": true,
+      "synapse_count": 0,
+      "timeouts": 0,
+      "timestep": 2862
+    },
+    "lifecycle_runtime": {
+      "active_pending": 0,
+      "active_slots": 0,
+      "active_trace_count": 0,
+      "cmd": 8,
+      "commands_received": 2,
+      "decisions": 0,
+      "duplicate_replies": 0,
+      "flags": 0,
+      "lifecycle_duplicate_events": 0,
+      "lifecycle_event_acks_received": 2,
+      "lifecycle_event_requests_sent": 0,
+      "lifecycle_last_seen_active_mask_bits": 0,
+      "lifecycle_last_seen_event_count": 0,
+      "lifecycle_last_seen_lineage_checksum": 0,
+      "lifecycle_mask_syncs_received": 0,
+      "lifecycle_mask_syncs_sent": 1,
+      "lifecycle_missing_acks": 0,
+      "lifecycle_stale_events": 0,
+      "lifecycle_trophic_requests_sent": 0,
+      "lookup_replies": 0,
+      "lookup_requests": 0,
+      "neuron_count": 0,
+      "payload_len": 149,
+      "pending_created": 0,
+      "pending_dropped": 0,
+      "pending_matured": 0,
+      "profile_id": 7,
+      "readback_bytes": 217,
+      "readout_bias": 0.0,
+      "readout_bias_raw": 0,
+      "readout_weight": 0.0,
+      "readout_weight_raw": 0,
+      "reward_events": 0,
+      "schedule_length": 0,
+      "schema_version": 2,
+      "slot_evictions": 0,
+      "slot_hits": 0,
+      "slot_misses": 0,
+      "slot_writes": 0,
+      "stale_replies": 0,
+      "status": 0,
+      "success": true,
+      "synapse_count": 0,
+      "timeouts": 0,
+      "timestep": 1664
+    },
+    "lifecycle_summary": {
+      "active_count": 1,
+      "active_mask_bits": 1,
+      "adult_birth_count": 0,
+      "attempted_event_count": 2,
+      "cleavage_count": 0,
+      "cmd": 37,
+      "death_count": 1,
+      "founder_count": 2,
+      "inactive_count": 7,
+      "invalid_event_count": 0,
+      "lifecycle_event_count": 2,
+      "lineage_checksum": 6026,
+      "maturity_count": 0,
+      "payload_len": 68,
+      "pool_size": 8,
+      "readback_bytes": 285,
+      "schema_version": 1,
+      "sham_mode": 0,
+      "status": 0,
+      "success": true,
+      "trophic_checksum": 104448,
+      "trophic_update_count": 1
+    }
+  },
+  "hardware_exception": null,
+  "lifecycle_init": {
+    "active_count": 2,
+    "active_mask_bits": 3,
+    "adult_birth_count": 0,
+    "attempted_event_count": 0,
+    "cleavage_count": 0,
+    "cmd": 34,
+    "death_count": 0,
+    "founder_count": 2,
+    "inactive_count": 6,
+    "invalid_event_count": 0,
+    "lifecycle_event_count": 0,
+    "lineage_checksum": 5722,
+    "maturity_count": 0,
+    "payload_len": 68,
+    "pool_size": 8,
+    "readback_bytes": 68,
+    "schema_version": 1,
+    "sham_mode": 0,
+    "status": 0,
+    "success": true,
+    "trophic_checksum": 98304,
+    "trophic_update_count": 0
+  },
+  "pause": {
+    "learning": {
+      "cmd": 25,
+      "status": 0,
+      "stopped_timestep": 2863,
+      "success": true
+    },
+    "lifecycle": {
+      "cmd": 25,
+      "status": 0,
+      "stopped_timestep": 1665,
+      "success": true
+    }
+  },
+  "remote_chip": {
+    "x": 1,
+    "y": 0
+  },
+  "reset": {
+    "learning": true,
+    "lifecycle": true
+  },
+  "source_chip": {
+    "x": 0,
+    "y": 0
+  },
+  "status": "pass",
+  "trophic_emit": {
+    "cmd": 36,
+    "payload_len": 0,
+    "status": 0,
+    "success": true
+  }
+}

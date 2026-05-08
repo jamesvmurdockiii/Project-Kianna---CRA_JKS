@@ -49,20 +49,20 @@ Tier 4.32g-r0 then passed locally at
 `controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/`
 with `14/14` criteria, source-proving lifecycle event/trophic/mask-sync
 inter-chip routes for learning/lifecycle profiles and preserving lookup-route
-plus lifecycle-split regressions. Tier 4.32g prepare then passed locally, and
-the first hardware return was ingested at
-`controlled_test_output/tier4_32g_20260507_hardware_fail_ingested/`: lifecycle
-traffic counters passed, but the strict gate failed on lifecycle_core pause
-cleanup and reset criteria evaluation. A second attempted rerun returned the
-same old runner revision `...0001`, so it was ingested as a stale-package return
-at `controlled_test_output/tier4_32g_20260508_old_package_return_ingested/`.
-Tier 4.32g-r2 then prepared locally at
-`controlled_test_output/tier4_32g_20260508_r2_prepared/` with `16/16` criteria,
-refreshed cache-proof `ebrains_jobs/cra_432g_r2`, and emitted exact JobManager command
-`cra_432g_r2/experiments/tier4_32g_multichip_lifecycle_traffic_resource_smoke.py --mode run-hardware --output-dir tier4_32g_job_output`.
-The current next gate is the prepared Tier 4.32g-r2 EBRAINS rerun and ingest;
-learning scale, lifecycle scaling, multi-shard learning, speedup, benchmarks,
-and native-scale baseline freeze remain blocked.
+plus lifecycle-split regressions. Tier 4.32g prepare then passed locally, the
+first hardware return was ingested as a strict-gate fail with successful traffic
+counters, and a second attempted rerun was ingested as a stale-package return.
+Tier 4.32g-r2 then passed on EBRAINS and was ingested at
+`controlled_test_output/tier4_32g_20260508_hardware_pass_ingested/`: runner
+revision `tier4_32g_multichip_lifecycle_traffic_resource_smoke_20260508_0003`,
+board target `10.11.205.177`, source learning core `(0,0,p7)`, remote lifecycle
+core `(1,0,p4)`, source event/trophic requests `1/1`, source mask sync received
+`1`, lifecycle accepted trophic+death `2`, lifecycle mask sync sent `1`, zero
+stale/duplicate/missing-ack counters, reset/pause controls passed, `30`
+returned artifacts preserved, and zero synthetic fallback. The current next
+gate is Tier 4.32h native-scale evidence closeout / baseline decision; learning
+scale, lifecycle scaling, multi-shard learning, speedup, benchmarks, and
+native-scale baseline freeze remain blocked until that gate passes.
 
 Tier 4.32a-hw prepare has also passed locally. The current EBRAINS upload
 folder is `ebrains_jobs/cra_432a_hw`, and the exact JobManager command is

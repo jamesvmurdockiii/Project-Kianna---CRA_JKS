@@ -1,0 +1,8 @@
+name,value,rule,passed,note
+hardware results json exists,/Users/james/Downloads/tier4_32g_results (2).json,exists,True,
+hardware mode was run-hardware,run-hardware,== run-hardware,True,
+raw hardware status pass,pass,== pass,True,
+lifecycle traffic smoke pass,pass,== pass,True,
+traffic counters internally passed,True,== True,True,
+returned artifacts preserved,30,>= 1,True,
+synthetic fallback zero,False,== False,True,

@@ -935,35 +935,32 @@ ability.
     true partition semantics, speedup, benchmarks, multi-shard learning, and
     native-scale baseline freeze blocked.
 
-67. **CURRENT ACTIVE STEP** - Tier 4.32g-r2 two-chip lifecycle
-    traffic/resource hardware smoke: PREPARED, awaiting EBRAINS return. The
-    first Tier 4.32g hardware return was ingested at
-    `controlled_test_output/tier4_32g_20260507_hardware_fail_ingested/`. It
-    failed the strict gate because `lifecycle_core` NAKed `CMD_PAUSE` and the
-    reset criterion misread boolean reset ACKs, but the lifecycle traffic path
-    itself succeeded: source event request `1`, source trophic request `1`,
-    source mask sync received `1`, expected active mask `1`, lifecycle event
-    ACKs `2`, lifecycle mask sync sent `1`, death count `1`, trophic update
-    count `1`, zero stale/duplicate/missing-ack counters, and zero synthetic
-    fallback. A second attempted rerun was ingested at
-    `controlled_test_output/tier4_32g_20260508_old_package_return_ingested/`
-    and returned runner revision `...0001` again, proving EBRAINS ran the stale
-    `cra_432g` package instead of the repaired upload. Tier 4.32g-r2 prepared
-    locally at
-    `controlled_test_output/tier4_32g_20260508_r2_prepared/` with `16/16`
-    criteria, added uniform lifecycle-core run/pause ACKs, fixed the reset
-    criterion, refreshed cache-proof upload folder `ebrains_jobs/cra_432g_r2`,
-    and emitted
-    exact JobManager command
-    `cra_432g_r2/experiments/tier4_32g_multichip_lifecycle_traffic_resource_smoke.py --mode run-hardware --output-dir tier4_32g_job_output`.
-    Required returned outputs: target acquisition, board/chip/core roles,
-    lifecycle request/sync counters, stale/duplicate/missing-ack counters,
-    compact readback, returned artifacts, ingest bundle, claim boundary, and
-    failure-class diagnosis if blocked.
+67. ✅ **COMPLETE** - Tier 4.32g-r2 two-chip lifecycle traffic/resource
+    hardware smoke: HARDWARE PASS / INGEST PASS. Ingested output:
+    `controlled_test_output/tier4_32g_20260508_hardware_pass_ingested/`.
+    Returned runner revision
+    `tier4_32g_multichip_lifecycle_traffic_resource_smoke_20260508_0003`,
+    proving EBRAINS ran the cache-proof repaired package rather than the stale
+    `cra_432g` package. Board target `10.11.205.177`; source learning core
+    `(0,0,p7)`; remote lifecycle core `(1,0,p4)`. Result: raw hardware status
+    `pass`, ingest status `pass`, source event/trophic requests `1/1`, source
+    active-mask sync received `1`, lifecycle accepted trophic+death events `2`,
+    lifecycle mask sync sent `1`, active mask/count/death/trophic counters `1`,
+    reset/pause controls passed, payload lengths `>=149`, zero stale replies,
+    zero duplicate replies, zero missing ACKs, zero synthetic fallback, and
+    `30` returned artifacts preserved. Boundary: two-chip lifecycle
+    traffic/resource smoke only; not lifecycle scaling, speedup, benchmark
+    evidence, true partitioned ecology, multi-shard learning, or a
+    native-scale baseline freeze.
 
-68. Freeze `CRA_NATIVE_SCALE_BASELINE_v0.5` only if single-chip multi-core and
-    first multi-chip evidence are stable enough for the final paper claim. If
-    not, publish measured single-chip limits honestly.
+68. **CURRENT ACTIVE STEP** - Tier 4.32h native-scale evidence closeout /
+    baseline decision. Design and run a local decision gate that consumes the
+    4.32a replicated single-chip stress, 4.32d two-chip communication smoke,
+    4.32e two-chip learning micro-task, and 4.32g two-chip lifecycle
+    traffic/resource pass. It must decide whether to freeze
+    `CRA_NATIVE_SCALE_BASELINE_v0.5` or require another targeted repair/stress
+    gate first. No new hardware run and no native-scale baseline freeze are
+    authorized until this closeout gate passes.
 
 ### Phase H - Software Usefulness And Final Baselines
 
@@ -1189,11 +1186,12 @@ controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/.
 The first Tier 4.32g hardware return was ingested at
 controlled_test_output/tier4_32g_20260507_hardware_fail_ingested/. It failed the
 strict gate on cleanup/control semantics, while preserving successful lifecycle
-traffic counters. Next action: rerun the prepared Tier 4.32g-r2 two-chip
-lifecycle traffic/resource hardware smoke.
+traffic counters. Tier 4.32g-r2 then passed on EBRAINS and was ingested at
+controlled_test_output/tier4_32g_20260508_hardware_pass_ingested/. Next action:
+design and run Tier 4.32h native-scale evidence closeout / baseline decision.
 Speedup claims, benchmark claims, true two-partition cross-chip learning,
 lifecycle scaling, multi-shard learning, and a native-scale baseline freeze
-remain blocked until the contract-backed hardware evidence gate passes cleanly.
+remain blocked until the closeout gate decides whether v0.5 can freeze.
 ```
 
 Current reference state:
@@ -1246,13 +1244,11 @@ controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/. Tier 4.32f
 then passed locally and selected lifecycle traffic/resource counters while
 blocking immediate hardware until lifecycle inter-chip routes are source-proven.
 Tier 4.32g-r0 then passed locally and authorized Tier 4.32g hardware package
-preparation. Tier 4.32g prepare then passed locally with 16/16 criteria and
-refreshed ebrains_jobs/cra_432g_r2. The first hardware return showed successful
-lifecycle traffic but failed cleanup/control, so Tier 4.32g-r2 now fixes the
-lifecycle-core pause ACK surface and reset criterion. The next action is the
-prepared Tier 4.32g-r2 EBRAINS two-chip lifecycle traffic/resource
-hardware smoke, not benchmarks, speedup, true two-partition learning, lifecycle
-scaling, multi-shard learning, or baseline-freeze claims.
+preparation. Tier 4.32g-r2 then passed on EBRAINS after the stale-package rerun
+was isolated, proving two-chip lifecycle traffic/resource counters over the
+repaired package. The next action is Tier 4.32h native-scale evidence closeout /
+baseline decision, not benchmarks, speedup, true two-partition learning,
+lifecycle scaling, multi-shard learning, or baseline-freeze claims.
 ```
 
 Purpose:

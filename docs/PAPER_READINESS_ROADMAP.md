@@ -6445,24 +6445,28 @@ Near-term roadmap insertion:
     and lifecycle-split regressions, authorized Tier 4.32g hardware package
     preparation, and kept true partition semantics, speedup, benchmarks,
     multi-shard learning, and native-scale baseline freeze blocked.
-35. Tier 4.32g two-chip lifecycle traffic/resource hardware smoke. CURRENT NEXT:
-    first EBRAINS return ingested at
-    `controlled_test_output/tier4_32g_20260507_hardware_fail_ingested/` as a
-    strict-gate fail, while the lifecycle traffic counters succeeded. Failure
-    class: lifecycle_core pause/control cleanup plus reset criteria evaluator.
-    A second attempted rerun was ingested at
-    `controlled_test_output/tier4_32g_20260508_old_package_return_ingested/`
-    and returned runner revision `...0001`, so it was a stale-package rerun
-    rather than a test of the repair.
-    Tier 4.32g-r2 prepared locally at
-    `controlled_test_output/tier4_32g_20260508_r2_prepared/` with `16/16`
-    criteria and cache-proof upload folder `ebrains_jobs/cra_432g_r2`.
-    Exact JobManager command:
-    `cra_432g_r2/experiments/tier4_32g_multichip_lifecycle_traffic_resource_smoke.py --mode run-hardware --output-dir tier4_32g_job_output`.
-    Required returned outputs: target acquisition, board/chip/core roles,
-    lifecycle request/sync counters, stale/duplicate/missing-ack counters,
-    compact readback, returned artifacts, ingest bundle, claim boundary, and
-    failure-class diagnosis if blocked.
+35. Tier 4.32g two-chip lifecycle traffic/resource hardware smoke. COMPLETE:
+    hardware pass ingested at
+    `controlled_test_output/tier4_32g_20260508_hardware_pass_ingested/`.
+    Returned runner revision
+    `tier4_32g_multichip_lifecycle_traffic_resource_smoke_20260508_0003`,
+    proving the cache-proof r2 package ran. Board target `10.11.205.177`,
+    source learning core `(0,0,p7)`, remote lifecycle core `(1,0,p4)`, raw
+    status `pass`, ingest status `pass`, source event/trophic requests `1/1`,
+    source mask sync received `1`, lifecycle accepted trophic+death `2`,
+    lifecycle mask sync sent `1`, active mask/count/death/trophic counters `1`,
+    zero stale/duplicate/missing-ack counters, reset/pause controls passed,
+    payload lengths `>=149`, `30` returned artifacts preserved, zero synthetic
+    fallback, and stale-package detection false. Earlier failed/stale returns
+    remain preserved at
+    `controlled_test_output/tier4_32g_20260507_hardware_fail_ingested/` and
+    `controlled_test_output/tier4_32g_20260508_old_package_return_ingested/`.
+36. Tier 4.32h native-scale evidence closeout / baseline decision. CURRENT NEXT:
+    local decision gate to determine whether 4.32a/4.32d/4.32e/4.32g evidence
+    is stable enough to freeze `CRA_NATIVE_SCALE_BASELINE_v0.5`, or whether an
+    additional targeted repair/stress gate is required first. This is not a new
+    hardware claim and not a baseline freeze unless the gate explicitly creates
+    and validates the baseline files.
 ```
 
 Tier 5.19a result:
@@ -6766,7 +6770,7 @@ Tests: test-temporal-state, test-profiles, test, test-lifecycle, test-lifecycle-
 Boundary: local source/runtime host evidence only, not hardware
 ```
 
-Next: Run the prepared Tier 4.32g-r2 two-chip lifecycle traffic/resource hardware smoke from `ebrains_jobs/cra_432g_r2` and ingest returned artifacts.
+Next: Design and run Tier 4.32h native-scale evidence closeout / baseline decision using the completed 4.32a/4.32d/4.32e/4.32g evidence bundle.
       Tier 4.32e passed after EBRAINS ingest at
       `controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/`:
       board `10.11.205.161`, two cases, 32 events per case, 96/96 lookup
@@ -6778,10 +6782,10 @@ Next: Run the prepared Tier 4.32g-r2 two-chip lifecycle traffic/resource hardwar
       blocked immediate hardware until lifecycle inter-chip routes were
       source-proven. Tier 4.32g-r0 then passed locally at
       `controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/`
-      with 14/14 criteria and authorized Tier 4.32g hardware preparation. Tier 4.32g first hardware return then proved the lifecycle traffic counters but failed cleanup/control, and Tier 4.32g-r2 prepared at `controlled_test_output/tier4_32g_20260508_r2_prepared/` with 16/16 criteria and emitted the cache-proof `cra_432g_r2` EBRAINS upload package.
+      with 14/14 criteria and authorized Tier 4.32g hardware preparation. Tier 4.32g first hardware return then proved the lifecycle traffic counters but failed cleanup/control, a second attempted rerun exposed stale-package reuse, and Tier 4.32g-r2 then passed after EBRAINS ingest at `controlled_test_output/tier4_32g_20260508_hardware_pass_ingested/` with runner revision `tier4_32g_multichip_lifecycle_traffic_resource_smoke_20260508_0003`.
       Speedup claims, benchmark claims, true two-partition cross-chip learning,
       lifecycle scaling, multi-shard learning, and native-scale baseline freeze
-      remain blocked. Reopen native
+      remain blocked until Tier 4.32h closeout decides whether v0.5 can freeze. Reopen native
       replay-buffer,
       sleep-like replay, or eligibility-trace implementation only if a later
       measured blocker specifically demands it.

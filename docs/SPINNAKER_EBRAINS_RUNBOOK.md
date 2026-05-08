@@ -54,14 +54,14 @@ path succeeded, but the strict gate failed because lifecycle_core NAKed pause
 and the reset criterion misread boolean ACKs. A second attempted rerun was
 ingested at controlled_test_output/tier4_32g_20260508_old_package_return_ingested/
 and returned runner revision ...0001 again, proving the stale `cra_432g`
-package was run. Tier 4.32g-r2 then prepared at
-controlled_test_output/tier4_32g_20260508_r2_prepared/ with 16/16 criteria,
-refreshed cache-proof ebrains_jobs/cra_432g_r2, and emitted the exact command
-`cra_432g_r2/experiments/tier4_32g_multichip_lifecycle_traffic_resource_smoke.py --mode run-hardware --output-dir tier4_32g_job_output`.
-The next step is running that prepared Tier 4.32g-r2 EBRAINS job and ingesting
-the returned artifacts. Speedup, benchmark, true two-partition, lifecycle-scaling,
-multi-shard, and native-scale baseline-freeze claims remain blocked until the
-next contract-backed hardware evidence gate passes.
+package was run. Tier 4.32g-r2 then passed on EBRAINS and was ingested at
+controlled_test_output/tier4_32g_20260508_hardware_pass_ingested/ with runner
+revision `tier4_32g_multichip_lifecycle_traffic_resource_smoke_20260508_0003`,
+board target `10.11.205.177`, zero stale/duplicate/missing-ack counters, and
+zero synthetic fallback. The next step is Tier 4.32h native-scale evidence
+closeout / baseline decision. Speedup, benchmark, true two-partition,
+lifecycle-scaling, multi-shard, and native-scale baseline-freeze claims remain
+blocked until that local closeout gate passes.
 ```
 
 Latest ingest hygiene lesson:
@@ -172,14 +172,20 @@ Tier 4.32g-r0 - Multi-Chip Lifecycle Route/Source Repair Audit
   Boundary: local source/runtime QA only, not hardware.
 
 Tier 4.32g - Two-Chip Lifecycle Traffic/Resource Hardware Smoke
-  Status: STALE-PACKAGE RERUN FAILED STRICT GATE; R2 PREPARED; EBRAINS RERUN/INGEST REQUIRED
-  Failed-return ingest: controlled_test_output/tier4_32g_20260507_hardware_fail_ingested/
-  Stale-package return ingest: controlled_test_output/tier4_32g_20260508_old_package_return_ingested/
-  R2 prepared output: controlled_test_output/tier4_32g_20260508_r2_prepared/
-  Upload folder: ebrains_jobs/cra_432g_r2
-  Criteria: 16/16 local prepare criteria
-  Exact JobManager command:
-    cra_432g_r2/experiments/tier4_32g_multichip_lifecycle_traffic_resource_smoke.py --mode run-hardware --output-dir tier4_32g_job_output
+  Status: HARDWARE PASS, INGESTED
+  Pass ingest: controlled_test_output/tier4_32g_20260508_hardware_pass_ingested/
+  Runner revision: tier4_32g_multichip_lifecycle_traffic_resource_smoke_20260508_0003
+  Board target: 10.11.205.177
+  Source chip/core: (0,0,p7) learning
+  Remote chip/core: (1,0,p4) lifecycle
+  Result: raw pass, ingest pass, 30 returned artifacts, source event/trophic
+    requests 1/1, source mask sync received 1, lifecycle accepted
+    trophic+death 2, lifecycle mask sync sent 1, active/death/trophic counters
+    1, zero stale/duplicate/missing-ack counters, reset/pause controls pass,
+    zero synthetic fallback, stale_package_detected false.
+  Prior failed/stale ingests preserved:
+    controlled_test_output/tier4_32g_20260507_hardware_fail_ingested/
+    controlled_test_output/tier4_32g_20260508_old_package_return_ingested/
   Boundary: two-chip lifecycle traffic/resource smoke only. Not lifecycle
     scaling, speedup, benchmarks, true partitioned ecology, multi-shard
     learning, or a native-scale baseline freeze.
@@ -329,9 +335,12 @@ Tier 4.31c - Native Temporal-Substrate Runtime Source Audit
     repair audit before another hardware package. Tier 4.32g-r0 then passed
     locally and authorized Tier 4.32g two-chip lifecycle traffic/resource
     hardware smoke. The first 4.32g hardware return showed successful lifecycle
-    traffic counters but failed cleanup/control, so 4.32g-r2 is the corrected
-    rerun. Native replay buffers, sleep-like replay, and native macro
-    eligibility remain deferred until measured blockers demand them.
+    traffic counters but failed cleanup/control, the second reran a stale
+    package, and the cache-proof 4.32g-r2 run then passed on EBRAINS and was
+    ingested. Next native action is Tier 4.32h evidence closeout / baseline
+    decision, not another ad hoc hardware run. Native replay buffers,
+    sleep-like replay, and native macro eligibility remain deferred until
+    measured blockers demand them.
 ```
 
 Tier 4.28e Point A passed after ingest at:
