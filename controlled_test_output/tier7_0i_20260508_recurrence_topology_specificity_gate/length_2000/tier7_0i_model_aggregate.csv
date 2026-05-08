@@ -1,0 +1,15 @@
+model,geomean_mse,geomean_nmse,task_count,role,public_rank,length
+fixed_esn_train_prefix_ridge_baseline,0.06236159958411151,0.05300029443757523,3,public_baseline,1,2000
+lag_only_online_lms_control,0.23686626916582287,0.21394305811931838,3,public_baseline,2,2000
+fading_memory_only_ablation,0.2514764000158321,0.22411728818785462,3,v2_2_candidate,3,2000
+fixed_random_reservoir_online_control,0.3185607766629087,0.28063822402249816,3,public_baseline,4,2000
+generic_bounded_recurrent_reference_7_0h,0.18530506091614488,0.15928438037627368,3,other,,2000
+structured_cascade_recurrent_candidate,0.2016689501519892,0.17392549736304813,3,other,,2000
+structured_frozen_state_ablation,0.5277814967853455,0.470974357920308,3,other,,2000
+structured_no_recurrence_ablation,0.1978173883583631,0.17020153763554965,3,other,,2000
+structured_no_update_ablation,1.3391242823450145,1.1765661117005402,3,other,,2000
+structured_random_rewire_sham,0.2049953687651537,0.17673333954111503,3,other,,2000
+structured_reversed_cascade_sham,0.2016689501519892,0.17392549736304821,3,other,,2000
+structured_shuffled_state_sham,1.0532178744341036,0.9314884005097982,3,other,,2000
+structured_shuffled_target_control,1.129676255100664,0.99505443912936,3,other,,2000
+structured_topology_shuffle_sham,0.2033028698645557,0.1758002965528868,3,other,,2000

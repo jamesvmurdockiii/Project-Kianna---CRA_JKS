@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-08T19:20:00+00:00.
+Last updated: 2026-05-08T19:45:00+00:00.
 
 Current repo root:
 
@@ -466,13 +466,27 @@ Tier 7.0h — COMPLETE. Bounded nonlinear recurrent continuous-state /
     (1.036590722013174 margin at 8000), so recurrence/topology specificity is
     unproven. No baseline freeze, hardware transfer, or native migration.
 
-Tier 7.0i — CURRENT ACTIVE STEP. Recurrence/topology specificity repair gate.
-  Required first move: keep the same public suite, lengths, seeds, and baseline
-    comparisons, then add stricter topology/rewiring shams and a structured
-    recurrence variant with a falsifiable topology-specific hypothesis.
-    Promotion remains blocked unless the useful gain separates from
-    permuted/rewired/frozen/reset/shuffled controls and compact regression
-    passes before any freeze.
+Tier 7.0i — COMPLETE. Recurrence/topology specificity repair gate.
+  Key evidence:
+    controlled_test_output/tier7_0i_20260508_recurrence_topology_specificity_gate/
+  Status: PASS, 11/11 criteria. Structured bounded recurrence improved valid
+    8000-step aggregate geomean MSE versus v2.2 (0.09964414908204765 vs
+    0.19348969000027122), but did not beat the generic 7.0h recurrent reference
+    (0.09530752189727928). Destructive controls separated; topology controls
+    did not separate.
+  Boundary: topology-specific recurrence is falsified/not supported on this
+    public suite. No baseline freeze, hardware transfer, native migration, ESN
+    superiority, or topology-specific claim is authorized from 7.0i.
+
+Tier 7.0j — CURRENT ACTIVE STEP. Generic bounded recurrent-state promotion /
+  compact regression gate.
+  Required first move: decide whether the narrower generic bounded recurrent
+    continuous-state interface from 7.0h earns promotion as software baseline
+    v2.3 after compact regression. The only candidate claim is generic bounded
+    recurrent state improves public benchmark performance versus v2.2 under the
+    locked 8000-step same-seed protocol. Do not claim topology-specific
+    recurrence, ESN superiority, hardware transfer, native migration, language,
+    planning, AGI, or ASI.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware
@@ -962,10 +976,10 @@ Immediate next steps:
    controlled_test_output/tier4_32h_20260508_native_scale_evidence_closeout/.
    This is a native-scale substrate freeze only: do not claim speedup, benchmark
    usefulness, true two-partition cross-chip learning, lifecycle scaling,
-   multi-shard learning, or AGI/ASI from it. Tier 7.0h showed bounded recurrent
-   state improves the public scoreboard versus v2.2, but Tier 7.0i must repair
-   or falsify recurrence/topology specificity before any freeze or broad native
-   migration.
+   multi-shard learning, or AGI/ASI from it. Tier 7.0i falsified/narrowed the
+   topology-specific recurrence claim; Tier 7.0j must decide whether the
+   narrower generic bounded recurrent-state interface earns v2.3 through compact
+   regression before any freeze or broad native migration.
 3. Keep the 4.31b/4.31c range refinement explicit: selected trace bound is ±2
    in s16.15; the older ±1 sketch saturated and must not silently return.
 4. Keep public repo hygiene green before the next upload or commit: no

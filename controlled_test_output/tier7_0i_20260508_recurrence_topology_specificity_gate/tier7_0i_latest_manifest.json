@@ -1,0 +1,10 @@
+{
+  "generated_at_utc": "2026-05-08T19:30:54+00:00",
+  "model_aggregate_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_0i_20260508_recurrence_topology_specificity_gate/tier7_0i_model_aggregate.csv",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_0i_20260508_recurrence_topology_specificity_gate",
+  "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier7_0i_20260508_recurrence_topology_specificity_gate/tier7_0i_report.md",
+  "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier7_0i_20260508_recurrence_topology_specificity_gate/tier7_0i_results.json",
+  "status": "pass",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_0i_20260508_recurrence_topology_specificity_gate/tier7_0i_summary.csv",
+  "tier": "Tier 7.0i - Recurrence / Topology Specificity Repair Gate"
+}

@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-08T17:35:00+00:00.
+Last updated: 2026-05-08T19:45:00+00:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -1022,77 +1022,88 @@ ability.
     `1.036590722013174` margin at 8000. No baseline freeze, hardware transfer,
     native migration, or ESN-superiority claim is authorized.
 
-74. **CURRENT ACTIVE STEP** - Tier 7.0i recurrence/topology specificity repair
-    gate: determine whether the 7.0h gain comes from a causally specific
-    recurrent mechanism or from generic extra bounded recurrent features.
-    Compare the 7.0h candidate to stricter topology controls, structured
-    recurrence variants, frozen/permuted/rewired state shams, lag/reservoir/ESN
-    public baselines, and v2.2 at `720`, `2000`, and valid same-seed `8000`.
-    Promotion remains blocked unless the useful gain survives and topology
-    shams no longer match.
+74. **COMPLETE** - Tier 7.0i recurrence/topology specificity repair gate:
+    passed 11/11 at
+    `controlled_test_output/tier7_0i_20260508_recurrence_topology_specificity_gate/`.
+    Structured bounded recurrence improved valid 8000-step aggregate geomean
+    MSE versus v2.2 (`0.09964414908204765` vs `0.19348969000027122`), but did
+    not beat the generic 7.0h recurrent reference (`0.09530752189727928`).
+    Destructive controls separated; topology controls did not separate.
+    Boundary: topology-specific recurrence is not supported on this public
+    suite. No baseline freeze, hardware transfer, native migration, ESN
+    superiority, or topology-specific claim is authorized.
 
-75. Tier 6.2a diagnostic hard tasks only if needed: use variable-delay,
+75. **CURRENT ACTIVE STEP** - Tier 7.0j generic bounded recurrent-state
+    promotion / compact regression gate: decide whether the narrower generic
+    bounded recurrent continuous-state interface from 7.0h earns software
+    baseline `v2.3`. Required work: carry forward the locked 8000-step
+    same-seed public scoreboard, preserve the 7.0i topology nonclaim, run
+    compact regression, update the registry/docs/baselines only if promotion is
+    earned, and explicitly reject ESN-superiority, topology-specific recurrence,
+    hardware transfer, native migration, language, planning, AGI, or ASI claims.
+
+76. Tier 6.2a diagnostic hard tasks only if needed: use variable-delay,
     hidden-context, drift, anomaly, or delayed-control diagnostics to isolate the
     measured public-benchmark failure class. These tasks cannot be used as the
     public usefulness proof by themselves.
 
-76. Mechanism iteration loop: add exactly one planned general mechanism at a
+77. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
     stop the broad usefulness track and narrow the paper.
 
-77. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+78. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines. Start only after the standardized scoreboard or failure diagnosis
     identifies a winning regime, a real failure mode, or a mechanism needing
     external validation.
 
-78. Tier 7.2 held-out task challenge: define held-out families before running;
+79. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout. Include at least one synthetic holdout and one
     real-ish adapter holdout if Tier 7.1 is active.
 
-79. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+80. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines. Candidate domains include
     streaming anomaly detection, predictive-maintenance sensor streams, human
     activity streams, event prediction, ECG/biosignal streams, and finance as
     one domain only rather than the whole proof.
 
-80. Tier 7.4 policy/action selection: state -> action -> delayed consequence,
+81. Tier 7.4 policy/action selection: state -> action -> delayed consequence,
     exploration versus exploitation, uncertainty-gated actions. Do not start
     broad policy claims until prediction/adaptation usefulness is measured.
 
-77. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
+82. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
     planning/subgoal control: run only after the shorter hard/real-ish tasks are
     stable. Do not claim language, AGI, or broad planning from toy gates.
 
-78. Run expanded external baselines and fairness audit at the phase lock:
+83. Run expanded external baselines and fairness audit at the phase lock:
     random/sign persistence, online perceptron/logistic, lag/ridge where
     relevant, reservoir/ESN, small GRU, STDP-only SNN, simple evolutionary
     population, simple control baselines, and SNN reviewer-defense baselines
     where practical.
 
-79. Freeze the next software baseline only if new software capability work
+84. Freeze the next software baseline only if new software capability work
     passes ablations, fair baselines, leakage controls, and compact regression.
     If no new software mechanism is promoted, keep v2.2.
 
 ### Phase I - Final Paper Lock
 
-80. Select final paper claim level: strong usefulness paper, bounded architecture
+85. Select final paper claim level: strong usefulness paper, bounded architecture
     study, or narrowed diagnostic report. Let the evidence decide.
 
-81. Run final software matrix and final hardware subset matrix. Include effect
+86. Run final software matrix and final hardware subset matrix. Include effect
     sizes, confidence intervals, worst seed, sample efficiency, runtime, command
     count, resource budgets, and claim-boundary table.
 
-82. Build the independent reproduction capsule: fresh checkout instructions,
+87. Build the independent reproduction capsule: fresh checkout instructions,
     environment lock, validation command, registry/table regeneration, EBRAINS
     ingest instructions, artifact hash manifest, and one local tier rerun.
 
-83. Draft paper/whitepaper only after the Phase H usefulness/baseline gates pass. Write
+88. Draft paper/whitepaper only after the Phase H usefulness/baseline gates pass. Write
     limitations first, then claims. Preserve failed and parked diagnostics.
 
-84. External dry run: have a clean agent or human follow only the docs. If they
+89. External dry run: have a clean agent or human follow only the docs. If they
     need hidden chat context, the repo is not ready.
 
 ## 7. Current Tier 4.27 Definition
@@ -1388,11 +1399,13 @@ the 8000 rerun showed v2.2 ranks second but remains about 9.6x behind ESN.
 Tier 7.0g selected bounded nonlinear recurrent continuous-state/interface
 repair as the next mechanism. Tier 7.0h then showed that the bounded recurrent
 candidate improves the public scoreboard versus v2.2 and beats simple online
-controls, but promotion is blocked because the permuted-recurrence sham stayed
-too close. The next active work is Tier 7.0i: repair or falsify
-recurrence/topology specificity before any baseline freeze, hardware transfer,
-or native migration. Reopen native work only for targeted transfer after a
-software task/mechanism earns it under the Tier 7/6.2 gates.
+controls. Tier 7.0i then falsified/narrowed the topology-specific recurrence
+claim: generic bounded recurrent state remains useful, but topology shams and
+no-recurrence controls match or beat the structured candidate. The next active
+work is Tier 7.0j: decide whether the narrower generic bounded recurrent-state
+interface earns a v2.3 software baseline through compact regression. Reopen
+native work only for targeted transfer after a software task/mechanism earns it
+under the Tier 7/6.2 gates.
 It must preserve explicit board/chip/shard identity, message paths, compact
 readback ownership, failure counters, placement assumptions,
 enabled-vs-no-learning separation, and resource measurements while adding the

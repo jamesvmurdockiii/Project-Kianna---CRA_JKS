@@ -62,8 +62,12 @@ stale/duplicate/missing-ack counters, reset/pause controls passed, `30`
 returned artifacts preserved, and zero synthetic fallback. Tier 4.32h native-scale evidence closeout passed and froze
 `CRA_NATIVE_SCALE_BASELINE_v0.5`. Learning scale beyond the micro-task,
 lifecycle scaling, multi-shard learning, speedup, and benchmarks remain blocked.
-The next active project step is Tier 6.2 software usefulness testing with strong
-baselines.
+Tier 7.0i then passed as the public benchmark recurrence/topology specificity
+gate at `controlled_test_output/tier7_0i_20260508_recurrence_topology_specificity_gate/`:
+generic bounded recurrent state remains useful, but topology-specific recurrence
+is not supported. The next active project step is Tier 7.0j generic bounded
+recurrent-state promotion / compact regression; no hardware transfer or native
+migration is authorized until that narrower software mechanism earns promotion.
 
 Tier 4.32a-hw prepare has also passed locally. The current EBRAINS upload
 folder is `ebrains_jobs/cra_432a_hw`, and the exact JobManager command is

@@ -3610,6 +3610,74 @@ permuted/rewired/frozen/reset/state-shuffle controls no longer match
 compact regression passes before any freeze
 ```
 
+2026-05-08 result:
+
+```text
+Status: PASS as an executed software topology-specificity gate, 11/11 criteria
+Outcome: generic_bounded_recurrent_state_supported_topology_specificity_not_supported
+Promotion: blocked
+```
+
+Key 8000-step aggregate geomean MSE:
+
+```text
+ESN:                              0.020109884207162095
+generic 7.0h recurrent reference: 0.09530752189727928
+structured recurrence candidate:  0.09964414908204765
+v2.2 fading memory:               0.19348969000027122
+lag-only LMS:                     0.1986311714577415
+random reservoir:                 0.2075278737499566
+```
+
+Interpretation:
+
+```text
+The useful public-scoreboard gain survives as a generic bounded recurrent-state
+interface, but the topology-specific recurrence hypothesis is not supported.
+Topology shams and no-recurrence controls matched or beat the structured
+candidate, so the paper must not claim topology-specific recurrence from this
+benchmark path.
+```
+
+### Tier 7.0j: Generic Bounded Recurrent-State Promotion / Compact Regression
+
+Purpose:
+
+```text
+Decide whether the narrower generic bounded recurrent continuous-state
+interface earns software baseline v2.3 after compact regression, while
+preserving the Tier 7.0i topology nonclaim.
+```
+
+Required work:
+
+```text
+Use the locked 8000-step same-seed public scoreboard.
+Carry forward v2.2, ESN, lag-only, and random-reservoir comparisons.
+Carry forward the 7.0i result as a nonclaim boundary for topology specificity.
+Run compact regression before any baseline freeze.
+Create v2.3 baseline artifacts only if the promotion gate passes.
+```
+
+Promotion claim if it passes:
+
+```text
+Generic bounded recurrent continuous-state interface improves public benchmark
+performance versus v2.2 on the locked Mackey-Glass/Lorenz/NARMA10 protocol.
+```
+
+Nonclaims:
+
+```text
+not topology-specific recurrence
+not ESN superiority
+not hardware evidence
+not native/on-chip recurrence
+not language
+not planning
+not AGI or ASI
+```
+
 ### Tier 6.2: Diagnostic Hard Task Suite
 
 Tier 6.2 is subordinate to the public benchmark loop. It is authorized only to
@@ -7045,7 +7113,7 @@ Tests: test-temporal-state, test-profiles, test, test-lifecycle, test-lifecycle-
 Boundary: local source/runtime host evidence only, not hardware
 ```
 
-Next: Run Tier 7.0i recurrence/topology specificity repair gate. Tier 7.0h improved the public benchmark scoreboard versus v2.2, but promotion is blocked because the permuted-recurrence sham stayed too close. Use `CRA_NATIVE_SCALE_BASELINE_v0.5` only as the frozen native substrate reference, not as usefulness evidence.
+Next: Run Tier 7.0j generic bounded recurrent-state promotion / compact regression gate. Tier 7.0i narrowed the Tier 7.0h result: generic bounded recurrent state remains useful, but topology-specific recurrence is not supported. Use `CRA_NATIVE_SCALE_BASELINE_v0.5` only as the frozen native substrate reference, not as usefulness evidence.
       Tier 4.32e passed after EBRAINS ingest at
       `controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/`:
       board `10.11.205.161`, two cases, 32 events per case, 96/96 lookup

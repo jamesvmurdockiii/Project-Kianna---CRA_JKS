@@ -10279,3 +10279,86 @@ Tier 7.0i - recurrence/topology specificity repair gate.
 Do not freeze, move to hardware, or migrate this mechanism native until the
 useful gain is separated from topology shams.
 ```
+
+### Tier 7.0i - Recurrence / Topology Specificity Repair Gate
+
+Runner:
+
+```text
+experiments/tier7_0i_recurrence_topology_specificity_gate.py
+```
+
+Output:
+
+```text
+controlled_test_output/tier7_0i_20260508_recurrence_topology_specificity_gate/
+```
+
+Status:
+
+```text
+PASS
+criteria: 11/11
+outcome: generic_bounded_recurrent_state_supported_topology_specificity_not_supported
+promotion recommended: false
+```
+
+Public benchmark results:
+
+```text
+valid same-seed lengths: 720, 2000, 8000
+tasks: Mackey-Glass, Lorenz, NARMA10
+seeds: 42, 43, 44
+invalid streams: 0
+```
+
+Aggregate geomean MSE at 8000:
+
+```text
+ESN:                                0.020109884207162095
+generic 7.0h recurrent reference:   0.09530752189727928
+structured recurrence candidate:    0.09964414908204765
+v2.2 fading memory:                 0.19348969000027122
+lag-only LMS:                       0.1986311714577415
+random reservoir:                   0.2075278737499566
+```
+
+Control interpretation at 8000:
+
+```text
+structured vs v2.2 improvement margin: 1.9418068374586703
+generic 7.0h vs v2.2 improvement margin: 2.0301617978149813
+structured vs generic margin: 0.9564788577681811
+topology shuffle sham margin: 1.0072740096344246
+reversed cascade sham margin: 1.0
+random rewire sham margin: 0.994286546101554
+no-recurrence ablation margin: 0.9647896490983386
+```
+
+Interpretation:
+
+```text
+The useful public-scoreboard gain is real enough to keep investigating as a
+generic bounded recurrent-state interface, but the topology-specific recurrence
+hypothesis did not survive stricter shams. Topology shams and no-recurrence
+controls matched or beat the structured candidate, so the project must narrow
+the claim rather than force a reef-topology story onto this benchmark.
+```
+
+Claim boundary:
+
+```text
+Tier 7.0i is software public-benchmark topology-specificity evidence only. It
+does not authorize a baseline freeze, hardware transfer, native migration,
+ESN-superiority claim, topology-specific recurrence claim, language/planning
+claim, or AGI/ASI claim.
+```
+
+Next required step:
+
+```text
+Tier 7.0j - generic bounded recurrent-state promotion / compact regression gate.
+Decide whether the narrower generic bounded recurrent continuous-state
+interface earns a v2.3 software baseline. Any promotion must preserve the 7.0i
+topology nonclaim and pass compact regression before freeze.
+```

@@ -233,13 +233,14 @@ CRA must climb the usefulness ladder in this order:
 | 3 | 6.2a | Diagnostic hard tasks only if needed | A failure mode is isolated under controlled conditions. |
 | 4 | 7.0g | Select one planned general mechanism from the measured public gap | The next mechanism is chosen without inventing a private win. |
 | 5 | 7.0h | Test the bounded recurrent candidate on public tasks | The candidate improves the public scoreboard or is parked. |
-| 6 | 7.0i | Repair/prove recurrence-topology specificity | The useful gain separates from topology shams before promotion. |
-| 7 | 7.1 | Public/real-ish adapter suite | CRA works outside private task generators. |
-| 6 | 7.2 | Held-out challenge | CRA survives a task family that was not tuned. |
-| 7 | 7.3 | Real public datasets | CRA has a useful regime on at least one externally sourced dataset. |
-| 8 | 7.4 | Standard policy/action tasks | CRA can act under delayed consequences, not only predict. |
-| 9 | 7.5-7.6 | Curriculum and long-horizon planning | CRA begins testing generated task families and subgoal control. |
-| 10 | Final matrix | Paper lock | The final claim level is selected by evidence, not ambition. |
+| 6 | 7.0i | Repair/prove recurrence-topology specificity | Topology-specific recurrence is either separated from shams or explicitly narrowed. |
+| 7 | 7.0j | Generic bounded recurrent-state promotion/regression | A narrower generic recurrent-state interface is promoted only if compact regression passes. |
+| 8 | 7.1 | Public/real-ish adapter suite | CRA works outside private task generators. |
+| 9 | 7.2 | Held-out challenge | CRA survives a task family that was not tuned. |
+| 10 | 7.3 | Real public datasets | CRA has a useful regime on at least one externally sourced dataset. |
+| 11 | 7.4 | Standard policy/action tasks | CRA can act under delayed consequences, not only predict. |
+| 12 | 7.5-7.6 | Curriculum and long-horizon planning | CRA begins testing generated task families and subgoal control. |
+| 13 | Final matrix | Paper lock | The final claim level is selected by evidence, not ambition. |
 
 ## Primary Standard/Public Benchmark Families
 
@@ -440,11 +441,12 @@ Invalid reasons:
 The current next action is:
 
 ```text
-Tier 7.0i — repair or falsify recurrence/topology specificity.
+Tier 7.0j — generic bounded recurrent-state promotion / compact regression.
 ```
 
-Tier 7.0h passed as an executed public software gate and showed a material
-scoreboard improvement versus v2.2, but promotion is blocked because the
-permuted-recurrence sham stayed too close. Do not invent custom proof tasks or
-move to hardware; separate the recurrent gain from topology shams on the same
-public suite first.
+Tier 7.0i passed as an executed public software gate and narrowed the claim:
+generic bounded recurrent state remains useful, but topology-specific recurrence
+is not supported because topology shams and no-recurrence controls matched or
+beat the structured candidate. Do not invent custom proof tasks or move to
+hardware; decide whether the narrower generic interface earns promotion through
+compact regression first.
