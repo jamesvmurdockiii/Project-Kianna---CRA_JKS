@@ -3756,8 +3756,10 @@ streams across 6 categories: v2.3 still beat v2.2 and shams, but rolling
 z-score won the aggregate and the v2.3 signal localized rather than confirming.
 Tier 7.1j then localized the gap to threshold/false-positive pressure: v2.3 has
 better event-F1/window recall than rolling z-score, but worse false-positive and
-NAB-style scores. The next step is Tier 7.1k NAB adapter/readout false-positive
-repair; stop tuning C-MAPSS for now.
+NAB-style scores. Tier 7.1k found a same-subset `persist3` false-positive
+repair candidate, but it must be confirmed without policy re-selection. The
+next step is Tier 7.1l NAB locked-policy holdout confirmation; stop tuning
+C-MAPSS for now.
 ```
 
 ### Tier 6.2: Diagnostic Hard Task Suite
@@ -3924,25 +3926,28 @@ the paired bootstrap interval crossed zero. Tier 7.1i broadened the subset and
 showed the signal is localized rather than confirmed: v2.3 beat v2.2 and shams,
 but rolling z-score won the aggregate. Tier 7.1j explained the aggregate gap as
 threshold/false-positive-policy sensitive: v2.3 catches more anomaly
-events/windows but pays too much false-positive/NAB-style penalty. None of
-these tiers authorizes a freeze or native transfer.
+events/windows but pays too much false-positive/NAB-style penalty. Tier 7.1k
+found a same-subset no-label `persist3` false-positive repair candidate that
+made v2.3 rank first on the broad diagnostic subset and separated all three
+shams, but the policy was selected on that same subset and reduced window
+recall. None of these tiers authorizes a freeze or native transfer.
 ```
 
 Current next step:
 
 ```text
-Tier 7.1k — NAB adapter/readout false-positive repair
+Tier 7.1l — NAB locked-policy holdout confirmation
 ```
 
-Tier 7.1k must predeclare and then test:
+Tier 7.1l must predeclare and then test:
 
 ```text
-no-label calibration/readout repair for v2.3 false positives
-event-F1/window-recall preservation versus Tier 7.1j
+locked 7.1k persist3 policy with no re-selection
+held-out NAB streams/categories not used to choose the policy
 comparison against rolling z-score, reservoir, v2.2, and v2.3 shams
-same broad NAB subset and label-separation contract
-confirmation/failure criteria that do not tune on anomaly labels
-decision: public-adapter repair, claim narrowing, or planned mechanism revisit
+event-F1/window-recall and FP/1000 tradeoff versus raw v2.3
+same label-separation and no-test-label-update contract
+decision: confirm public-adapter repair, narrow the NAB claim, or revisit planned mechanisms
 ```
 
 Tier 7.1a predeclared these candidate/future adapter families:
@@ -7427,7 +7432,7 @@ Boundary: contract/family-selection only, not NAB data preflight, not scoring,
           hardware/native transfer.
 ```
 
-Tier 7.1h result: compact NAB scoring passed as a harness and produced a partial v2.3 signal, but did not confirm public usefulness. Tier 7.1i then broadened NAB to 20 streams across 6 categories. v2.3 beat v2.2 and all three v2.3 shams, but rolling z-score won the aggregate, v2.3 ranked fourth, and the v2.3 signal localized to realAdExchange plus two streams. Tier 7.1j then localized the gap to threshold/false-positive pressure. Next: implement Tier 7.1k NAB adapter/readout false-positive repair before adding mechanisms or moving to native/on-chip transfer. Use `CRA_NATIVE_SCALE_BASELINE_v0.5` only as the frozen native substrate reference, not as usefulness evidence.
+Tier 7.1h result: compact NAB scoring passed as a harness and produced a partial v2.3 signal, but did not confirm public usefulness. Tier 7.1i then broadened NAB to 20 streams across 6 categories. v2.3 beat v2.2 and all three v2.3 shams, but rolling z-score won the aggregate, v2.3 ranked fourth, and the v2.3 signal localized to realAdExchange plus two streams. Tier 7.1j then localized the gap to threshold/false-positive pressure. Tier 7.1k then found a same-subset `persist3` false-positive repair candidate: v2.3 ranked first under the policy, reduced FP/1000, beat rolling z-score and v2.2, and separated shams, but the policy must be confirmed on held-out streams because it was selected on the broad diagnostic subset and traded off window recall. Next: Tier 7.1l NAB locked-policy holdout confirmation before adding mechanisms or moving to native/on-chip transfer. Use `CRA_NATIVE_SCALE_BASELINE_v0.5` only as the frozen native substrate reference, not as usefulness evidence.
 
 Detailed Tier 5.19 contract:
 
@@ -7510,10 +7515,10 @@ all, list them as a tested non-promoted scaffold that helped clarify the need
 for strict promotion gates.
 ```
 
-Next step remains:
+Next step after Tier 7.1k:
 
 ```text
-Tier 7.1k - NAB adapter/readout false-positive repair.
+Tier 7.1l - NAB locked-policy holdout confirmation.
 ```
 
 ## Tier 5.20c/5.20d/5.20e Resonant Dose Sweep Closeout

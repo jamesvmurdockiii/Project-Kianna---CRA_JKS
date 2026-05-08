@@ -1,0 +1,52 @@
+{
+  "alarm_policies": [
+    "raw",
+    "persist2",
+    "persist3",
+    "persist2_cooldown12",
+    "hysteresis_995_990"
+  ],
+  "key_models": [
+    "rolling_zscore_detector",
+    "fixed_random_reservoir_online_residual",
+    "ewma_residual_detector",
+    "rolling_mad_detector",
+    "v2_2_fading_memory_prediction_error",
+    "v2_3_generic_recurrent_prediction_error",
+    "v2_3_shuffled_state_sham",
+    "v2_3_shuffled_target_control",
+    "v2_3_no_update_ablation"
+  ],
+  "nonclaims": [
+    "not a new CRA mechanism",
+    "not public usefulness proof by itself",
+    "not a baseline freeze",
+    "not hardware/native transfer",
+    "not AGI/ASI evidence"
+  ],
+  "prior_gate": "/Users/james/JKS:CRA/controlled_test_output/tier7_1j_20260508_nab_failure_localization/tier7_1j_results.json",
+  "question": "Can no-label alarm/readout policies reduce v2.3 false positives while preserving recall enough to beat rolling z-score?",
+  "selected_files": [
+    "artificialWithAnomaly/art_daily_flatmiddle.csv",
+    "artificialWithAnomaly/art_daily_jumpsdown.csv",
+    "artificialWithAnomaly/art_daily_jumpsup.csv",
+    "artificialWithAnomaly/art_load_balancer_spikes.csv",
+    "realAWSCloudwatch/ec2_cpu_utilization_24ae8d.csv",
+    "realAWSCloudwatch/ec2_cpu_utilization_5f5533.csv",
+    "realAWSCloudwatch/ec2_disk_write_bytes_c0d644.csv",
+    "realAWSCloudwatch/grok_asg_anomaly.csv",
+    "realAWSCloudwatch/rds_cpu_utilization_e47b3b.csv",
+    "realAdExchange/exchange-2_cpm_results.csv",
+    "realAdExchange/exchange-4_cpm_results.csv",
+    "realKnownCause/ambient_temperature_system_failure.csv",
+    "realKnownCause/cpu_utilization_asg_misconfiguration.csv",
+    "realKnownCause/ec2_request_latency_system_failure.csv",
+    "realKnownCause/machine_temperature_system_failure.csv",
+    "realKnownCause/nyc_taxi.csv",
+    "realTraffic/TravelTime_387.csv",
+    "realTraffic/speed_7578.csv",
+    "realTweets/Twitter_volume_AAPL.csv",
+    "realTweets/Twitter_volume_GOOG.csv"
+  ],
+  "source_commit": "ea702d75cc2258d9d7dd35ca8e5e2539d71f3140"
+}

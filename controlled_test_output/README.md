@@ -5,10 +5,10 @@ ledger is `STUDY_REGISTRY.json`; the compact table is `STUDY_REGISTRY.csv`.
 Older reruns, prepared capsules, debug probes, and baseline-frozen
 mechanism bundles outside the formal registry are preserved for audit.
 
-- Generated: `2026-05-08T23:36:05.719388+00:00`
+- Generated: `2026-05-08T23:50:26.650970+00:00`
 - Registry status: **PASS**
-- Canonical evidence entries: `103`
-- Expanded test-entry count: `103`; see the canonical evidence table below for the exact current tier list.
+- Canonical evidence entries: `104`
+- Expanded test-entry count: `104`; see the canonical evidence table below for the exact current tier list.
 
 ## Evidence Categories
 
@@ -89,6 +89,7 @@ mechanism bundles outside the formal registry are preserved for audit.
 | `tier7_1h_compact_nab_scoring_gate` | **PASS** | `controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate` | Compact software scoring only; not a full NAB benchmark, not public usefulness proof by itself, not a baseline freeze, not hardware/native transfer, and not AGI/ASI evidence. |
 | `tier7_1i_nab_fairness_confirmation` | **PASS** | `controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation` | Broader NAB software confirmation/localization only; not a full NAB benchmark claim by itself, not public usefulness proof, not a baseline freeze, not hardware/native transfer, and not AGI/ASI evidence. |
 | `tier7_1j_nab_failure_localization` | **PASS** | `controlled_test_output/tier7_1j_20260508_nab_failure_localization` | Software failure analysis only; not public usefulness proof, not a promoted mechanism, not a baseline freeze, not hardware/native transfer, and not AGI/ASI evidence. |
+| `tier7_1k_nab_false_positive_repair` | **PASS** | `controlled_test_output/tier7_1k_20260508_nab_false_positive_repair` | Software repair-candidate evidence only; policy was selected on the same broad diagnostic subset, window recall dropped versus raw v2.3, and this is not public usefulness proof, not a promoted mechanism, not a baseline freeze, not hardware/native transfer, and not AGI/ASI evidence. |
 | `tier5_20a_resonant_branch_polyp_diagnostic` | **PASS** | `controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic` | Software diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence. |
 | `tier5_20b_hybrid_resonant_polyp_diagnostic` | **PASS** | `controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic` | Software repair diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence. |
 | `tier5_20c_minimal_resonant_polyp_diagnostic` | **PASS** | `controlled_test_output/tier5_20c_20260508_minimal_resonant_polyp_diagnostic` | Software minimal-dose diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence. |

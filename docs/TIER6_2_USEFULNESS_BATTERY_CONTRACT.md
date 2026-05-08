@@ -741,16 +741,33 @@ before any new mechanism, freeze, or hardware/native transfer.
 
 ## Immediate Next Action
 
+Tier 7.1k has now completed as a same-subset false-positive repair candidate:
+
+```text
+Tier 7.1k — NAB adapter/readout false-positive repair
+Status: COMPLETE / PASS, 9/9 criteria
+Output: controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/
+Outcome: v2_3_nab_false_positive_repair_candidate
+Best v2.3 policy: persist3
+Best v2.3 primary score: 0.44632600314828624
+Best v2.3 rank: 1
+Raw v2.3 primary score: 0.09880252815842962
+Raw rolling z-score primary score: 0.140951459207744
+v2.3 FP/1000 reduction vs raw: 13.968920433128034
+Boundary: same-subset repair candidate only; policy selected on the broad
+diagnostic subset and window recall dropped versus raw v2.3.
+```
+
 The current next action is:
 
 ```text
-Tier 7.1k — NAB adapter/readout false-positive repair.
+Tier 7.1l — NAB locked-policy holdout confirmation.
 ```
 
-Reduce v2.3 false positives under a predeclared no-label calibration/readout
-policy while preserving the event-F1/window-recall benefit found in Tier 7.1j.
-Compare against rolling z-score, reservoir, v2.2, and v2.3 shams before adding
-any new mechanism or transferring anything to hardware/native runtime.
+Freeze the 7.1k `persist3` policy without re-selection, evaluate it on held-out
+NAB streams/categories, preserve sham separation, and quantify the recall/
+false-positive tradeoff before adding any new mechanism or transferring
+anything to hardware/native runtime.
 
 ## Resonant Branch Follow-Up Diagnostics
 
@@ -785,9 +802,10 @@ separation remained.
 Decision:
 
 ```text
-Do not add resonant branches to the canonical CRA mechanism stack. Continue to
-Tier 7.1k NAB adapter/readout false-positive repair and use public/standardized
-benchmarks to decide the next mechanism, adapter, or claim narrowing step.
+Do not add resonant branches to the canonical CRA mechanism stack. Continue
+from the Tier 7.1k same-subset repair candidate into Tier 7.1l locked-policy
+holdout confirmation, and use public/standardized benchmarks to decide the next
+mechanism, adapter, or claim narrowing step.
 ```
 
 ## Resonant Dose Sweep Closeout
@@ -805,6 +823,6 @@ Decision:
 
 ```text
 The resonant branch idea has now been tested across the useful dose range and is
-parked. Return to the public usefulness track: Tier 7.1k NAB adapter/readout
-false-positive repair.
+parked. Return to the public usefulness track: Tier 7.1l NAB locked-policy
+holdout confirmation.
 ```

@@ -14,7 +14,7 @@ mechanism promotion, lifecycle/ecology evidence, and native SpiNNaker runtime
 migration. The generated registry is the authority for which results are
 canonical.
 
-The current canonical evidence trail contains **103 registered evidence bundles**
+The current canonical evidence trail contains **104 registered evidence bundles**
 with all expected artifacts present and all criteria passing. The generated
 registry is the source of truth for the full list:
 
@@ -11024,14 +11024,41 @@ This is not public usefulness proof and does not authorize freeze or hardware
 transfer.
 ```
 
-Next required step:
+Tier 7.1k result:
 
 ```text
 Tier 7.1k - NAB adapter/readout false-positive repair.
-Reduce v2.3 false positives under a predeclared no-label calibration/readout
-policy while preserving event-F1/window-recall benefit. Compare against rolling
-z-score, reservoir, v2.2, and v2.3 shams before adding mechanisms or moving
-anything to hardware.
+Status: COMPLETE / PASS, 9/9 criteria.
+Output: controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/
+Outcome: v2_3_nab_false_positive_repair_candidate
+Best v2.3 policy: persist3
+Best v2.3 primary score: 0.44632600314828624
+Best v2.3 rank: 1
+Rolling z-score under best v2.3 policy: 0.11987424686769142
+Raw v2.3 primary score: 0.09880252815842962
+Raw rolling z-score primary score: 0.140951459207744
+v2.3 FP/1000 reduction vs raw: 13.968920433128034
+v2.3 sham separations under best policy: 3/3
+Category wins: realAWSCloudwatch, realAdExchange
+Stream wins:
+  realAWSCloudwatch/ec2_cpu_utilization_24ae8d.csv
+  realAWSCloudwatch/ec2_cpu_utilization_5f5533.csv
+  realAdExchange/exchange-4_cpm_results.csv
+  realKnownCause/cpu_utilization_asg_misconfiguration.csv
+  realTweets/Twitter_volume_GOOG.csv
+Boundary: same-subset software repair candidate only. Policy was selected on
+the broad diagnostic subset, and window recall dropped versus raw v2.3, so this
+does not authorize public usefulness proof, freeze, or hardware/native transfer.
+```
+
+Next required step:
+
+```text
+Tier 7.1l - NAB locked-policy holdout confirmation.
+Freeze the Tier 7.1k `persist3` policy without re-selection, evaluate it on
+held-out NAB streams/categories, preserve sham separation, and quantify the
+recall/false-positive tradeoff before any usefulness claim, freeze, or
+hardware/native transfer.
 ```
 
 ## Tier 5.20a - Resonant Branch Polyp Internal-Model Diagnostic

@@ -117,10 +117,17 @@ three shams, but rolling z-score won the aggregate and v2.3 ranked fourth. The
 signal localized to realAdExchange and two streams. Tier 7.1j then passed at
 `controlled_test_output/tier7_1j_20260508_nab_failure_localization/`,
 classifying the gap as threshold/false-positive-policy sensitive: v2.3 has
-better event-F1/window recall but worse false-positive/NAB-style pressure. The
-next active project step is Tier 7.1k NAB adapter/readout false-positive repair;
-no hardware transfer or native migration is authorized until public-adapter
-software usefulness or a promoted mechanism earns a separate evidence contract.
+better event-F1/window recall but worse false-positive/NAB-style pressure. Tier
+7.1k then passed at
+`controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/`,
+finding a same-subset `persist3` false-positive repair candidate: v2.3 ranked
+first under the locked no-label policy, reduced FP/1000 from
+`16.537437704270094` to `2.5685172711420603`, beat rolling z-score and v2.2
+under that policy, and separated all three shams. Because the policy was
+selected on the same diagnostic subset and window recall dropped versus raw
+v2.3, the next active project step is Tier 7.1l NAB locked-policy holdout
+confirmation; no usefulness claim, hardware transfer, or native migration is
+authorized until that separate confirmation gate passes.
 
 Tier 4.32a-hw prepare has also passed locally. The current EBRAINS upload
 folder is `ebrains_jobs/cra_432a_hw`, and the exact JobManager command is

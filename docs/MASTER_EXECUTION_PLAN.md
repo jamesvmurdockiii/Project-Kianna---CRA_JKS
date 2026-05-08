@@ -1208,20 +1208,33 @@ ability.
     false-positive/NAB-style pressure. Boundary: software failure analysis only;
     no public usefulness proof, freeze, or hardware/native transfer.
 
-92. **CURRENT ACTIVE STEP** - Tier 7.1k NAB adapter/readout false-positive
-    repair:
-    reduce v2.3 false positives under a predeclared no-label calibration/readout
-    policy while preserving the event-F1/window-recall benefit from 7.1j.
-    Compare against rolling z-score, reservoir, v2.2, and v2.3 shams before
-    adding mechanisms or moving anything to hardware.
+92. **COMPLETE** - Tier 7.1k NAB adapter/readout false-positive repair:
+    passed 9/9 at
+    `controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/`.
+    Outcome: `v2_3_nab_false_positive_repair_candidate`. The same-subset
+    `persist3` no-label alarm policy made v2.3 rank first on the broad NAB
+    diagnostic subset (`0.44632600314828624` primary score), reduced FP/1000
+    from `16.537437704270094` to `2.5685172711420603`, beat rolling z-score
+    and v2.2 under that policy, and separated all three shams. Boundary:
+    policy was selected on the same broad subset and window recall dropped
+    versus raw v2.3, so no public usefulness proof, freeze, or hardware/native
+    transfer is authorized.
 
-93. Mechanism iteration loop: add exactly one planned general mechanism at a
+93. **CURRENT ACTIVE STEP** - Tier 7.1l NAB locked-policy holdout
+    confirmation:
+    freeze the 7.1k `persist3` policy without re-selection, evaluate it on
+    held-out NAB streams/categories, preserve sham separation, quantify the
+    recall/false-positive tradeoff, and compare against rolling z-score,
+    reservoir, v2.2, and v2.3 shams before adding mechanisms or moving anything
+    to hardware.
+
+94. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
     stop the broad usefulness track and narrow the paper.
 
-94. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+95. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines. Start only after the standardized scoreboard or failure diagnosis
     identifies a winning regime, a real failure mode, or a mechanism needing
@@ -1599,8 +1612,11 @@ broadened NAB to 20 streams across 6 categories: v2.3 beat v2.2 and shams, but
 rolling z-score won the aggregate and the v2.3 signal localized rather than
 confirming. Tier 7.1j then localized the gap to threshold/false-positive policy:
 v2.3 has better event-F1/window recall but worse NAB-style/false-positive
-pressure. The next active public-adapter work is Tier 7.1k NAB adapter/readout
-false-positive repair. Reopen
+pressure. Tier 7.1k found a same-subset no-label `persist3` false-positive
+repair candidate, but it must be confirmed on held-out NAB streams/categories
+because the policy was selected on the broad diagnostic subset and traded off
+window recall. The next active public-adapter work is Tier 7.1l NAB
+locked-policy holdout confirmation. Reopen
 native work only for targeted transfer after a software task/mechanism earns it
 under the Tier 7/6.2 gates and a separate transfer contract is written.
 It must preserve explicit board/chip/shard identity, message paths, compact

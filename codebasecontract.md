@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-08T23:32:12+00:00.
+Last updated: 2026-05-08T23:54:00+00:00.
 
 Current repo root:
 
@@ -243,6 +243,32 @@ Tier 7.1j = COMPLETE, PASS, 12/12 criteria
   Boundary: software failure analysis only; not public usefulness proof, not a
             promoted mechanism, not a baseline freeze, and not hardware/native
             transfer evidence.
+```
+
+Latest NAB false-positive repair candidate:
+
+```text
+Tier 7.1k = COMPLETE, PASS, 9/9 criteria
+  Source: controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/
+  Runner: experiments/tier7_1k_nab_false_positive_repair.py
+  Outcome: v2_3_nab_false_positive_repair_candidate
+  Best v2.3 policy: persist3
+  Best v2.3 primary score: 0.44632600314828624
+  Best v2.3 rank: 1
+  Rolling z-score under best v2.3 policy: 0.11987424686769142
+  Raw v2.3 primary score: 0.09880252815842962
+  Raw rolling z-score primary score: 0.140951459207744
+  v2.3 false positives per 1000:
+    raw: 16.537437704270094
+    persist3: 2.5685172711420603
+    reduction: 13.968920433128034
+  Tradeoff: event-F1 improved versus raw v2.3, but window recall dropped by
+            0.39916666666666667, so this is not yet a confirmed public
+            usefulness result.
+  Boundary: same-subset software repair candidate only; policy was selected on
+            the broad diagnostic subset. Not a promoted mechanism, not a
+            baseline freeze, not hardware/native transfer, and not AGI/ASI
+            evidence.
 ```
 
 Latest optional mechanism diagnostic:
@@ -843,11 +869,22 @@ Tier 7.1j — COMPLETE. NAB failure/localization analysis.
     false positives and NAB-style scoring. No public usefulness claim, freeze,
     or hardware transfer.
 
-Tier 7.1k — CURRENT ACTIVE STEP. NAB adapter/readout false-positive repair.
-  Required first move: reduce v2.3 false positives under a predeclared no-label
-    calibration/readout policy while preserving the event-F1/window-recall
-    benefit found in Tier 7.1j. Compare against rolling z-score, reservoir,
-    v2.2, and v2.3 shams before any mechanism or hardware/native transfer.
+Tier 7.1k — COMPLETE. NAB adapter/readout false-positive repair.
+  Status: LOCAL SOFTWARE PASS, 9/9 criteria.
+  Output: controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/
+  Result: a same-subset no-label `persist3` repair candidate made v2.3 rank
+    first on the broad NAB diagnostic subset, beat rolling z-score and v2.2
+    under that policy, reduced FP/1000 substantially, and separated all three
+    shams. Window recall dropped versus raw v2.3, and the policy was selected
+    on the same broad subset, so no public usefulness claim, freeze, or
+    hardware transfer is authorized.
+
+Tier 7.1l — CURRENT ACTIVE STEP. NAB locked-policy holdout confirmation.
+  Required first move: freeze the 7.1k `persist3` policy without re-selection,
+    evaluate it on held-out NAB streams/categories, preserve sham separation,
+    quantify recall/false-positive tradeoffs, and compare against rolling
+    z-score, reservoir, v2.2, and v2.3 shams. Only a held-out pass can promote
+    the repair from candidate to confirmed public-adapter evidence.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware

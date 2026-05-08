@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-05-08T23:50:26.174658+00:00",
+  "source_generated_at_utc": "2026-05-08T23:40:54+00:00",
+  "registry_entry_id": "tier7_1k_nab_false_positive_repair",
+  "tier": "Tier 7.1k - NAB Adapter/Readout False-Positive Repair",
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/tier7_1k_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/tier7_1k_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/tier7_1k_summary.csv",
+  "canonical": true,
+  "claim": "Tier 7.1k found a same-subset NAB false-positive repair candidate: a locked no-label persist3 alarm policy made v2.3 rank first on the broad NAB diagnostic subset, beat rolling z-score and v2.2 under that policy, separated all three v2.3 shams, and reduced false positives per 1000 from 16.5374 to 2.5685.",
+  "caveat": "Software repair-candidate evidence only; policy was selected on the same broad diagnostic subset, window recall dropped versus raw v2.3, and this is not public usefulness proof, not a promoted mechanism, not a baseline freeze, not hardware/native transfer, and not AGI/ASI evidence."
+}
