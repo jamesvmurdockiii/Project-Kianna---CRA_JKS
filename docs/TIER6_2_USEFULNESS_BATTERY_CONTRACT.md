@@ -642,3 +642,41 @@ Tier 7.1g — NAB source/data/scoring preflight.
 Verify official source access, source hash/commit, data file parsing,
 label/window parsing, label-separated online streams, tiny leakage-safe smoke
 rows, and scoring-interface feasibility before full NAB scoring.
+
+## Resonant Branch Follow-Up Diagnostics
+
+After Tier 7.1f selected NAB as the next public adapter family, two optional
+polyp-internal resonant branch diagnostics were run because the proposed
+mechanism might plausibly help streaming anomaly/temporal tasks.
+
+### Tier 5.20a
+
+```text
+output: controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic/
+status: pass harness
+outcome: resonant_branch_not_promoted
+```
+
+The full 16-resonant-branch proxy helped selected temporal diagnostics but
+regressed broad tasks versus v2.3.
+
+### Tier 5.20b
+
+```text
+output: controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic/
+status: pass harness
+outcome: hybrid_resonant_not_promoted
+best_candidate: hybrid_8_lif_8_resonant
+```
+
+The 8/8 and 12/4 hybrid variants were more plausible than full replacement, but
+neither cleared the promotion rule because broad-task regression and weak sham
+separation remained.
+
+Decision:
+
+```text
+Do not add resonant branches to the canonical CRA mechanism stack. Continue to
+Tier 7.1g NAB preflight and use public/standardized benchmarks to decide the
+next mechanism, adapter, or claim narrowing step.
+```

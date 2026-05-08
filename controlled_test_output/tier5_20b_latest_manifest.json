@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-05-08T22:16:59.153625+00:00",
+  "source_generated_at_utc": "2026-05-08T22:13:29+00:00",
+  "registry_entry_id": "tier5_20b_hybrid_resonant_polyp_diagnostic",
+  "tier": "Tier 5.20b - Hybrid Resonant/LIF Polyp Diagnostic",
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic/tier5_20b_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic/tier5_20b_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic/tier5_20b_summary.csv",
+  "canonical": true,
+  "claim": "Tier 5.20b tested same-budget 8 LIF / 8 resonant and 12 LIF / 4 resonant hybrid polyp proxies. The harness passed, but neither hybrid was promoted because both retained material regressions versus v2.3 and did not separate sufficiently from shams.",
+  "caveat": "Software repair diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence."
+}

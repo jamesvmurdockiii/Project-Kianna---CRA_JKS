@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-08T21:36:31+00:00.
+Last updated: 2026-05-08T22:20:00+00:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -1113,24 +1113,44 @@ ability.
     preflight, no scoring, no public usefulness claim, no baseline freeze, and
     no hardware/native transfer.
 
-83. **CURRENT ACTIVE STEP** - Tier 7.1g NAB source/data/scoring preflight:
+83. **COMPLETE** - Tier 5.20a resonant branch polyp internal-model diagnostic:
+    passed 11/11 as a harness at
+    `controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic/`,
+    but the full 16-resonant-branch proxy was not promoted. It helped
+    `variable_delay_multi_cue` and slightly helped `anomaly_detection_stream`,
+    but materially regressed Mackey-Glass, Lorenz, NARMA10, and
+    hidden-context reentry versus v2.3. Boundary: optional software diagnostic
+    only; no core polyp replacement, no baseline freeze, and no hardware/native
+    transfer.
+
+84. **COMPLETE** - Tier 5.20b hybrid resonant/LIF polyp diagnostic:
+    passed 12/12 as a harness at
+    `controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic/`,
+    but neither same-budget hybrid earned promotion. The best candidate,
+    `hybrid_8_lif_8_resonant`, had all-task geomean MSE
+    `0.2852846857844163` versus v2.3 `0.2610804850928049`, two task wins, two
+    material regressions, and only one sham-separated task. The 12/4 hybrid
+    had fewer regressions but weaker wins. Boundary: optional software repair
+    diagnostic only; do not integrate into the core organism yet.
+
+85. **CURRENT ACTIVE STEP** - Tier 7.1g NAB source/data/scoring preflight:
     verify source access, source hash/commit, file and label parsing,
     label-separated online streams, tiny leakage-safe smoke rows, and scoring
     interface feasibility before full NAB scoring.
 
-84. Mechanism iteration loop: add exactly one planned general mechanism at a
+86. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
     stop the broad usefulness track and narrow the paper.
 
-85. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+87. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines. Start only after the standardized scoreboard or failure diagnosis
     identifies a winning regime, a real failure mode, or a mechanism needing
     external validation.
 
-86. Tier 7.2 held-out task challenge: define held-out families before running;
+88. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout. Include at least one synthetic holdout and one
     real-ish adapter holdout if Tier 7.1 is active.
 
@@ -1487,10 +1507,14 @@ failure to target/readout policy: capped RUL plus ridge readout repaired scalar
 scoring, but v2.3 still did not win. Tier 7.1e then rejected the tiny v2.2
 capped-ridge signal as statistically unconfirmed against lag-multichannel ridge.
 Tier 7.1f then selected Numenta NAB streaming anomaly detection as the next
-public adapter family. The next active work is Tier 7.1g NAB source/data/scoring
-preflight. Reopen native work only for targeted transfer after a software
-task/mechanism earns it under the Tier 7/6.2 gates and a separate transfer
-contract is written.
+public adapter family. Tier 5.20a then tested a same-budget full resonant-branch
+polyp proxy as a mechanism-side diagnostic, and Tier 5.20b tested 8/8 and 12/4
+hybrid LIF/resonant variants. Both harnesses passed, but none of the resonant
+variants earned promotion because the localized variable-delay/anomaly value
+did not survive broad-task regression and sham-separation gates. The next active
+public-adapter work remains Tier 7.1g NAB source/data/scoring preflight. Reopen
+native work only for targeted transfer after a software task/mechanism earns it
+under the Tier 7/6.2 gates and a separate transfer contract is written.
 It must preserve explicit board/chip/shard identity, message paths, compact
 readback ownership, failure counters, placement assumptions,
 enabled-vs-no-learning separation, and resource measurements while adding the

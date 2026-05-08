@@ -1,0 +1,21 @@
+{
+  "candidate": "resonant_branch_polyp_candidate",
+  "first_test_policy": "software diagnostic proxy before touching canonical organism classes",
+  "implementation_hint": "structured LIF subcircuits with delays/time constants; no custom neuron model required for first PyNN/SpiNNaker-safe version",
+  "mechanism": "resonant_lif_branches",
+  "nonclaims": [
+    "not a core polyp replacement",
+    "not hardware evidence",
+    "not a v2.x baseline freeze",
+    "not proof of custom resonate-and-fire neurons",
+    "not language/planning/AGI/ASI evidence"
+  ],
+  "polyp_budget": {
+    "current_polyp_neurons": 32,
+    "excitatory_branch_budget": 16,
+    "inhibitory": 4,
+    "input": 8,
+    "readout": 4
+  },
+  "promotion_rule": "promote only to integration gate if benefit or mechanistic sham-separated value appears with no material regression"
+}

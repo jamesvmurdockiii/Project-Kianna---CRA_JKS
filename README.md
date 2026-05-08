@@ -3,7 +3,7 @@
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
 [![Tests](https://img.shields.io/badge/tests-151%20passing-brightgreen.svg)](#validation)
-[![Evidence](https://img.shields.io/badge/canonical%20evidence-89%20bundles-blue.svg)](STUDY_EVIDENCE_INDEX.md)
+[![Evidence](https://img.shields.io/badge/canonical%20evidence-96%20bundles-blue.svg)](STUDY_EVIDENCE_INDEX.md)
 
 Coral Reef Architecture (CRA) is a neuromorphic learning research platform for
 studying local spiking plasticity, delayed credit assignment, population-level
@@ -56,8 +56,10 @@ controlled ablations, baseline comparisons, and explicit claim boundaries.
 | Latest public adapter failure analysis | Tier 7.1d passed from [`controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair`](controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair): localized the 7.1c gap mostly to target/readout policy. Capped-RUL plus ridge repaired scalar scoring; best promotable result was v2.2 ridge capped RMSE `20.271418942340336`, narrowly ahead of lag-multichannel ridge RMSE `20.305268771358435`. v2.3 still did not win. No freeze or hardware transfer. |
 | Latest public adapter fairness confirmation | Tier 7.1e passed from [`controlled_test_output/tier7_1e_20260508_cmapss_capped_readout_fairness_confirmation`](controlled_test_output/tier7_1e_20260508_cmapss_capped_readout_fairness_confirmation): the tiny v2.2 capped-ridge C-MAPSS signal was not statistically confirmed against lag-multichannel ridge. Primary per-unit mean delta was `-0.3690103080637045` RMSE with bootstrap 95% CI `[-1.4191012103865384, 0.6704668696286052]`; no freeze or hardware transfer. |
 | Latest next-adapter contract | Tier 7.1f passed from [`controlled_test_output/tier7_1f_20260508_next_public_adapter_contract`](controlled_test_output/tier7_1f_20260508_next_public_adapter_contract): selected Numenta NAB streaming anomaly detection as the next public adapter family after C-MAPSS non-promotion, with official sources, leakage rules, baselines, metrics, pass/fail criteria, and nonclaims. No data preflight or scoring yet. |
+| Latest optional mechanism diagnostic | Tier 5.20a passed as a harness from [`controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic`](controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic), but the full 16-resonant-branch polyp proxy was **not promoted**: it helped `variable_delay_multi_cue` and slightly helped `anomaly_detection_stream`, but regressed the standard three and hidden-context task versus v2.3. |
+| Latest optional mechanism repair | Tier 5.20b passed as a harness from [`controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic`](controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic), but neither 8 LIF / 8 resonant nor 12 LIF / 4 resonant earned promotion. Best candidate was `hybrid_8_lif_8_resonant`, with all-task geomean MSE `0.2852846857844163` versus v2.3 `0.2610804850928049`, two wins, two material regressions, and only one sham-separated task. No core polyp replacement, freeze, or hardware transfer. |
 | Active next gate | Tier 7.1g NAB source/data/scoring preflight: verify source access, source hash/commit, file/label parsing, label-separated streams, tiny leakage-safe smoke rows, and scoring-interface feasibility before full NAB scoring. |
-| Canonical registry | 94 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
+| Canonical registry | 96 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
 | Validation suite | 151 pytest tests plus registry, paper-table, and repository-audit generation. |
 
 ## What CRA Implements

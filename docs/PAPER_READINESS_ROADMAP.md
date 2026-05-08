@@ -7400,3 +7400,52 @@ interfaces, and native runtime primitives. Each future mechanism must declare
 whether it is per-polyp, population-level, readout/interface-level,
 lifecycle-level, or runtime-substrate-level.
 ```
+
+## Tier 5.20a/5.20b Resonant Branch Polyp Diagnostics
+
+Status: `COMPLETE / PASS HARNESS / NOT PROMOTED`
+
+Outputs:
+
+```text
+controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic/
+controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic/
+```
+
+Question:
+
+```text
+Do resonant LIF-style branch filters improve CRA as a polyp-internal temporal
+specialist substrate without damaging the current v2.3 baseline behavior?
+```
+
+Result:
+
+```text
+Tier 5.20a full 16-resonant replacement: not promoted.
+Tier 5.20b hybrid 8/8 and 12/4 variants: not promoted.
+```
+
+Interpretation:
+
+```text
+The idea produced localized signal on variable-delay/anomaly diagnostics, which
+is consistent with the intuition that resonant branches may encode useful timing
+structure. However, the signal did not survive the promotion gate: broad-task
+regressions versus v2.3 and weak sham separation make it unsafe to integrate
+into the canonical organism.
+```
+
+Paper implication:
+
+```text
+Do not claim resonant dendrites/branches as a CRA mechanism. If mentioned at
+all, list them as a tested non-promoted scaffold that helped clarify the need
+for strict promotion gates.
+```
+
+Next step remains:
+
+```text
+Tier 7.1g - NAB source/data/scoring preflight.
+```

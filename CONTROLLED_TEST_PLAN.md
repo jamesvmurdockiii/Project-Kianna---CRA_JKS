@@ -10878,3 +10878,132 @@ Verify official source access, source hash/commit, data file parsing,
 label/window parsing, label-separated online streams, tiny leakage-safe smoke
 rows, and scoring-interface feasibility before full NAB scoring.
 ```
+
+## Tier 5.20a - Resonant Branch Polyp Internal-Model Diagnostic
+
+Status: `COMPLETE / PASS HARNESS / NOT PROMOTED`
+
+Runner:
+
+```text
+experiments/tier5_20a_resonant_branch_polyp_diagnostic.py
+```
+
+Canonical output:
+
+```text
+controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic/
+```
+
+Question:
+
+```text
+Can a same-budget resonant LIF-style branch proxy replace the current 16
+excitatory neurons inside each 32-neuron polyp without hurting broad task
+performance, while adding useful timing sensitivity?
+```
+
+Result:
+
+```text
+status = pass
+criteria = 11/11
+outcome = resonant_branch_not_promoted
+```
+
+Summary:
+
+```text
+The full 16-resonant-branch proxy helped variable_delay_multi_cue and slightly
+helped anomaly_detection_stream, but materially regressed Mackey-Glass, Lorenz,
+NARMA10, and hidden_context_reentry versus v2.3. Sham separation was incomplete.
+```
+
+Decision:
+
+```text
+Do not integrate the full resonant branch proxy into the core organism.
+Document it as diagnostic/scaffold evidence only.
+```
+
+Claim boundary:
+
+```text
+Software diagnostic only; not a core polyp replacement, not hardware evidence,
+not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence.
+```
+
+## Tier 5.20b - Hybrid Resonant/LIF Polyp Diagnostic
+
+Status: `COMPLETE / PASS HARNESS / NOT PROMOTED`
+
+Runner:
+
+```text
+experiments/tier5_20b_hybrid_resonant_polyp_diagnostic.py
+```
+
+Canonical output:
+
+```text
+controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic/
+```
+
+Question:
+
+```text
+Can resonant branches work better as a partial specialist pool rather than a
+full excitatory replacement?
+```
+
+Variants:
+
+```text
+8 standard LIF/recurrent excitatory units + 8 resonant branches
+12 standard LIF/recurrent excitatory units + 4 resonant branches
+```
+
+Result:
+
+```text
+status = pass
+criteria = 12/12
+outcome = hybrid_resonant_not_promoted
+best_candidate = hybrid_8_lif_8_resonant
+```
+
+Summary:
+
+```text
+hybrid_8_lif_8_resonant:
+  all_task_geomean_mse = 0.2852846857844163
+  v2_3_all_task_geomean_mse = 0.2610804850928049
+  margin_vs_v2_3 = 0.9151577287611505
+  wins_vs_v2_3 = 2
+  material_regressions_vs_v2_3 = 2
+  sham_separated_tasks = 1
+
+hybrid_12_lif_4_resonant:
+  all_task_geomean_mse = 0.270891573191636
+  v2_3_all_task_geomean_mse = 0.2610804850928049
+  margin_vs_v2_3 = 0.963782232192618
+  wins_vs_v2_3 = 1
+  material_regressions_vs_v2_3 = 1
+  sham_separated_tasks = 1
+```
+
+Decision:
+
+```text
+Do not integrate either hybrid resonant variant into the core organism. The
+localized variable-delay/anomaly signal is not enough to justify broad-task
+regressions or weak sham separation.
+```
+
+Claim boundary:
+
+```text
+Software repair diagnostic only; not a core polyp replacement, not hardware
+evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI
+evidence.
+```

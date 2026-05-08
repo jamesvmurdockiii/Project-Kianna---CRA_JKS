@@ -1,0 +1,23 @@
+{
+  "mechanism": "hybrid_resonant_lif_branches",
+  "nonclaims": [
+    "not a core polyp replacement",
+    "not hardware evidence",
+    "not a v2.x baseline freeze",
+    "not a custom SpiNNaker neuron model",
+    "not AGI/ASI evidence"
+  ],
+  "repair_target": "preserve v2.3 broad-task performance while keeping 5.20a's variable-delay/anomaly value",
+  "tested_layouts": [
+    {
+      "resonant_branch_units": 8,
+      "standard_lif_excitatory_units": 8,
+      "total_excitatory_budget": 16
+    },
+    {
+      "resonant_branch_units": 4,
+      "standard_lif_excitatory_units": 12,
+      "total_excitatory_budget": 16
+    }
+  ]
+}

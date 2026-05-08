@@ -1,0 +1,15 @@
+{
+  "display_name": "Near-future anomaly stream diagnostic",
+  "horizon": 5,
+  "length": 2400,
+  "metadata": {
+    "diagnostic_role": "rare-event anticipation and tail stability",
+    "obs_mu": 0.0378178913682514,
+    "obs_sd": 0.4238789237865682,
+    "target_mu": -0.8384615384615385,
+    "target_sd": 0.5449607770479543
+  },
+  "seed": 44,
+  "task": "anomaly_detection_stream",
+  "train_end": 1560
+}

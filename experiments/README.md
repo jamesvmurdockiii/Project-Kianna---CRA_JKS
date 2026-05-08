@@ -92,7 +92,14 @@ showing the tiny v2.2 capped-ridge signal was not statistically confirmed
 against lag-multichannel ridge. Tier 7.1f then passed at
 `controlled_test_output/tier7_1f_20260508_next_public_adapter_contract/`,
 selecting Numenta NAB streaming anomaly detection as the next public adapter
-family. The next active project step is Tier 7.1g NAB source/data/scoring
+family. Tier 5.20a then passed as a harness at
+`controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic/`,
+but the full resonant-branch polyp proxy was not promoted because localized
+variable-delay/anomaly value came with broad-task regressions. Tier 5.20b then
+passed as a harness at
+`controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic/`,
+but neither the 8 LIF / 8 resonant nor 12 LIF / 4 resonant hybrid proxy earned
+promotion. The next active project step is Tier 7.1g NAB source/data/scoring
 preflight; no hardware transfer or native migration is authorized until
 public-adapter software usefulness or a promoted mechanism earns a separate
 evidence contract.

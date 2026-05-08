@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-05-08T21:43:00.056122+00:00",
+  "generated_at_utc": "2026-05-08T22:16:59.497880+00:00",
   "registry_status": "pass",
   "study_name": "CRA controlled learning and SpiNNaker hardware evidence",
-  "evidence_count": 94,
+  "evidence_count": 96,
   "core_test_count": 12,
-  "expanded_test_entry_count": 94,
+  "expanded_test_entry_count": 96,
   "entries": [
     {
       "entry_id": "tier1_sanity",
@@ -7544,6 +7544,112 @@
       "missing_expected_artifacts": []
     },
     {
+      "entry_id": "tier5_20a_resonant_branch_polyp_diagnostic",
+      "tier_label": "Tier 5.20a - Resonant Branch Polyp Internal-Model Diagnostic",
+      "plan_position": "Mechanism-side diagnostic after Tier 7.1f and before any core polyp replacement",
+      "status": "pass",
+      "source_generated_at_utc": "2026-05-08T21:49:59+00:00",
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic",
+      "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic/tier5_20a_results.json",
+      "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic/tier5_20a_report.md",
+      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic/tier5_20a_summary.csv",
+      "harness": "experiments/tier5_20a_resonant_branch_polyp_diagnostic.py",
+      "evidence_role": "optional polyp internal-model diagnostic",
+      "claim": "Tier 5.20a tested a same-budget resonant LIF-branch proxy for the 16 excitatory neurons inside each polyp. The harness passed, but the candidate was not promoted because it regressed several tasks versus v2.3 despite localized value on variable-delay and anomaly diagnostics.",
+      "caveat": "Software diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence.",
+      "backend": null,
+      "selected_tests": null,
+      "test_results": [
+        {
+          "name": "Tier 5.20a - Resonant Branch Polyp Internal-Model Diagnostic",
+          "status": "pass",
+          "criteria": {
+            "total": 11,
+            "passed": 11,
+            "failed": 0,
+            "failures": []
+          },
+          "metrics": {
+            "all_tasks_resonant_geomean_mse": 0.4152508773763422,
+            "all_tasks_resonant_vs_v2_3_margin": 0.6287295206752507,
+            "all_tasks_v2_2_geomean_mse": 0.2935812280607324,
+            "all_tasks_v2_3_geomean_mse": 0.2610804850928049,
+            "material_regression_count_vs_v2_3": 4,
+            "no_material_regression_vs_v2_3": false,
+            "outcome": "resonant_branch_not_promoted",
+            "recommendation": "Do not integrate into the core organism; either park it or redesign the branch objective/tasks.",
+            "sham_separation_count": 2,
+            "standard_three_resonant_geomean_mse": 0.2599703160388472,
+            "standard_three_resonant_vs_v2_3_margin": 0.5049647692429305,
+            "standard_three_v2_3_geomean_mse": 0.1312758506485682,
+            "useful_signal": true,
+            "wins_vs_v2_2_count": 1,
+            "wins_vs_v2_3_count": 2
+          },
+          "artifacts": {}
+        }
+      ],
+      "top_level_metrics": {
+        "all_tasks_resonant_geomean_mse": 0.4152508773763422,
+        "all_tasks_resonant_vs_v2_3_margin": 0.6287295206752507,
+        "all_tasks_v2_2_geomean_mse": 0.2935812280607324,
+        "all_tasks_v2_3_geomean_mse": 0.2610804850928049,
+        "material_regression_count_vs_v2_3": 4,
+        "no_material_regression_vs_v2_3": false,
+        "outcome": "resonant_branch_not_promoted",
+        "recommendation": "Do not integrate into the core organism; either park it or redesign the branch objective/tasks.",
+        "sham_separation_count": 2,
+        "standard_three_resonant_geomean_mse": 0.2599703160388472,
+        "standard_three_resonant_vs_v2_3_margin": 0.5049647692429305,
+        "standard_three_v2_3_geomean_mse": 0.1312758506485682,
+        "useful_signal": true,
+        "wins_vs_v2_2_count": 1,
+        "wins_vs_v2_3_count": 2
+      },
+      "missing_expected_artifacts": []
+    },
+    {
+      "entry_id": "tier5_20b_hybrid_resonant_polyp_diagnostic",
+      "tier_label": "Tier 5.20b - Hybrid Resonant/LIF Polyp Diagnostic",
+      "plan_position": "Mechanism-side repair diagnostic after the Tier 5.20a full-resonant non-promotion",
+      "status": "pass",
+      "source_generated_at_utc": "2026-05-08T22:13:29+00:00",
+      "canonical_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic",
+      "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic/tier5_20b_results.json",
+      "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic/tier5_20b_report.md",
+      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic/tier5_20b_summary.csv",
+      "harness": "experiments/tier5_20b_hybrid_resonant_polyp_diagnostic.py",
+      "evidence_role": "optional hybrid polyp internal-model diagnostic",
+      "claim": "Tier 5.20b tested same-budget 8 LIF / 8 resonant and 12 LIF / 4 resonant hybrid polyp proxies. The harness passed, but neither hybrid was promoted because both retained material regressions versus v2.3 and did not separate sufficiently from shams.",
+      "caveat": "Software repair diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence.",
+      "backend": null,
+      "selected_tests": null,
+      "test_results": [
+        {
+          "name": "Tier 5.20b - Hybrid Resonant/LIF Polyp Diagnostic",
+          "status": "pass",
+          "criteria": {
+            "total": 12,
+            "passed": 12,
+            "failed": 0,
+            "failures": []
+          },
+          "metrics": {
+            "best_candidate": "hybrid_8_lif_8_resonant",
+            "outcome": "hybrid_resonant_not_promoted",
+            "recommendation": "Do not integrate the hybrid resonant branch variants into the core organism."
+          },
+          "artifacts": {}
+        }
+      ],
+      "top_level_metrics": {
+        "best_candidate": "hybrid_8_lif_8_resonant",
+        "outcome": "hybrid_resonant_not_promoted",
+        "recommendation": "Do not integrate the hybrid resonant branch variants into the core organism."
+      },
+      "missing_expected_artifacts": []
+    },
+    {
       "entry_id": "tier4_30_readiness_lifecycle_native_audit",
       "tier_label": "Tier 4.30-readiness - Lifecycle-Native Preflight / Layering Audit",
       "plan_position": "Phase E lifecycle-native path selection before implementation",
@@ -11983,7 +12089,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier1_latest_manifest.json",
         "registry_entry_id": "tier1_sanity",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.128383+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.426446+00:00",
           "source_generated_at_utc": "2026-04-26T19:58:14+00:00",
           "registry_entry_id": "tier1_sanity",
           "tier": "Tier 1 - sanity tests",
@@ -11997,7 +12103,7 @@
           "caveat": "Passing Tier 1 rules out obvious fake learning; it does not prove positive learning."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.335142+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.071386+00:00",
           "source_generated_at_utc": "2026-04-26T19:58:14+00:00",
           "registry_entry_id": "tier1_sanity",
           "tier": "Tier 1 - sanity tests",
@@ -12015,7 +12121,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier2_latest_manifest.json",
         "registry_entry_id": "tier2_learning",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.130574+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.429117+00:00",
           "source_generated_at_utc": "2026-04-26T19:58:35+00:00",
           "registry_entry_id": "tier2_learning",
           "tier": "Tier 2 - learning proof tests",
@@ -12029,7 +12135,7 @@
           "caveat": "Positive-control learning evidence depends on the controlled synthetic task definitions."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.337178+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.072447+00:00",
           "source_generated_at_utc": "2026-04-26T19:58:35+00:00",
           "registry_entry_id": "tier2_learning",
           "tier": "Tier 2 - learning proof tests",
@@ -12047,7 +12153,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier3_latest_manifest.json",
         "registry_entry_id": "tier3_architecture",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.132858+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.431902+00:00",
           "source_generated_at_utc": "2026-04-26T20:01:09+00:00",
           "registry_entry_id": "tier3_architecture",
           "tier": "Tier 3 - architecture ablation tests",
@@ -12064,7 +12170,7 @@
           "latest_summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier3_20260426_155852/tier3_summary.csv"
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.339063+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.074224+00:00",
           "source_generated_at_utc": "2026-04-26T20:01:09+00:00",
           "registry_entry_id": "tier3_architecture",
           "tier": "Tier 3 - architecture ablation tests",
@@ -12085,7 +12191,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_latest_manifest.json",
         "registry_entry_id": "tier4_10_population_scaling",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.133844+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.432855+00:00",
           "source_generated_at_utc": "2026-04-26T19:57:00+00:00",
           "registry_entry_id": "tier4_10_population_scaling",
           "tier": "Tier 4.10 - population scaling",
@@ -12099,7 +12205,7 @@
           "caveat": "This baseline scaling task saturated; the honest claim is stability, not strong scaling advantage."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.340702+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.075274+00:00",
           "source_generated_at_utc": "2026-04-26T19:57:00+00:00",
           "registry_entry_id": "tier4_10_population_scaling",
           "tier": "Tier 4.10 - population scaling",
@@ -12117,7 +12223,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_10_latest_manifest.json",
         "registry_entry_id": "tier4_10_population_scaling",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.133844+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.432855+00:00",
           "source_generated_at_utc": "2026-04-26T19:57:00+00:00",
           "registry_entry_id": "tier4_10_population_scaling",
           "tier": "Tier 4.10 - population scaling",
@@ -12131,7 +12237,7 @@
           "caveat": "This baseline scaling task saturated; the honest claim is stability, not strong scaling advantage."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.340702+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.075274+00:00",
           "source_generated_at_utc": "2026-04-26T19:57:00+00:00",
           "registry_entry_id": "tier4_10_population_scaling",
           "tier": "Tier 4.10 - population scaling",
@@ -12149,7 +12255,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_10b_latest_manifest.json",
         "registry_entry_id": "tier4_10b_hard_population_scaling",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.134919+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.434347+00:00",
           "source_generated_at_utc": "2026-04-26T20:18:39+00:00",
           "registry_entry_id": "tier4_10b_hard_population_scaling",
           "tier": "Tier 4.10b - hard population scaling",
@@ -12163,7 +12269,7 @@
           "caveat": "Hard-scaling accuracy is near baseline; the pass is based on stability plus non-accuracy scaling signals."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.341635+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.076093+00:00",
           "source_generated_at_utc": "2026-04-26T20:18:39+00:00",
           "registry_entry_id": "tier4_10b_hard_population_scaling",
           "tier": "Tier 4.10b - hard population scaling",
@@ -12181,7 +12287,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_11_latest_manifest.json",
         "registry_entry_id": "tier4_11_domain_transfer",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.136534+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.436474+00:00",
           "source_generated_at_utc": "2026-04-26T20:49:35+00:00",
           "registry_entry_id": "tier4_11_domain_transfer",
           "tier": "Tier 4.11 - domain transfer",
@@ -12195,7 +12301,7 @@
           "caveat": "Domain transfer is proven for the controlled adapters here, not arbitrary domains."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.343178+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.077557+00:00",
           "source_generated_at_utc": "2026-04-26T20:49:35+00:00",
           "registry_entry_id": "tier4_11_domain_transfer",
           "tier": "Tier 4.11 - domain transfer",
@@ -12213,7 +12319,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_12_latest_manifest.json",
         "registry_entry_id": "tier4_12_backend_parity",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.137903+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.437980+00:00",
           "source_generated_at_utc": "2026-04-26T21:09:05+00:00",
           "registry_entry_id": "tier4_12_backend_parity",
           "tier": "Tier 4.12 - backend parity",
@@ -12227,7 +12333,7 @@
           "caveat": "The SpiNNaker item in Tier 4.12 is readiness prep, not a hardware learning result."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.344094+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.078512+00:00",
           "source_generated_at_utc": "2026-04-26T21:09:05+00:00",
           "registry_entry_id": "tier4_12_backend_parity",
           "tier": "Tier 4.12 - backend parity",
@@ -12245,7 +12351,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_13_latest_manifest.json",
         "registry_entry_id": "tier4_13_spinnaker_hardware_capsule",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.138690+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.439176+00:00",
           "source_generated_at_utc": "2026-04-27T00:33:33+00:00",
           "registry_entry_id": "tier4_13_spinnaker_hardware_capsule",
           "tier": "Tier 4.13 - SpiNNaker Hardware Capsule",
@@ -12266,7 +12372,7 @@
           ]
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.344655+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.079122+00:00",
           "source_generated_at_utc": "2026-04-27T00:33:33+00:00",
           "registry_entry_id": "tier4_13_spinnaker_hardware_capsule",
           "tier": "Tier 4.13 - SpiNNaker Hardware Capsule",
@@ -12291,7 +12397,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_14_latest_manifest.json",
         "registry_entry_id": "tier4_14_hardware_runtime_characterization",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.139747+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.440544+00:00",
           "source_generated_at_utc": "2026-04-27T01:34:30+00:00",
           "registry_entry_id": "tier4_14_hardware_runtime_characterization",
           "tier": "Tier 4.14 - Hardware Runtime Characterization",
@@ -12305,7 +12411,7 @@
           "caveat": "Derived from the single-seed N=8 Tier 4.13 hardware pass unless rerun in run-hardware mode; not hardware repeatability or scaling evidence."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.345416+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.079920+00:00",
           "source_generated_at_utc": "2026-04-27T01:34:30+00:00",
           "registry_entry_id": "tier4_14_hardware_runtime_characterization",
           "tier": "Tier 4.14 - Hardware Runtime Characterization",
@@ -12323,7 +12429,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_15_latest_manifest.json",
         "registry_entry_id": "tier4_15_spinnaker_hardware_multiseed_repeat",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.142881+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.442485+00:00",
           "source_generated_at_utc": "2026-04-27T02:48:50+00:00",
           "registry_entry_id": "tier4_15_spinnaker_hardware_multiseed_repeat",
           "tier": "Tier 4.15 - SpiNNaker Hardware Multi-Seed Repeat",
@@ -12349,7 +12455,7 @@
           ]
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.346165+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.080737+00:00",
           "source_generated_at_utc": "2026-04-27T02:48:50+00:00",
           "registry_entry_id": "tier4_15_spinnaker_hardware_multiseed_repeat",
           "tier": "Tier 4.15 - SpiNNaker Hardware Multi-Seed Repeat",
@@ -12379,7 +12485,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier5_1_latest_manifest.json",
         "registry_entry_id": "tier5_1_external_baselines",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.145610+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.445199+00:00",
           "source_generated_at_utc": "2026-04-27T03:27:05+00:00",
           "registry_entry_id": "tier5_1_external_baselines",
           "tier": "Tier 5.1 - External Baselines",
@@ -12399,7 +12505,7 @@
           ]
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.347234+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.081883+00:00",
           "source_generated_at_utc": "2026-04-27T03:27:05+00:00",
           "registry_entry_id": "tier5_1_external_baselines",
           "tier": "Tier 5.1 - External Baselines",
@@ -12423,7 +12529,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier5_2_latest_manifest.json",
         "registry_entry_id": "tier5_2_learning_curve_sweep",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.149326+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.449662+00:00",
           "source_generated_at_utc": "2026-04-27T04:01:13+00:00",
           "registry_entry_id": "tier5_2_learning_curve_sweep",
           "tier": "Tier 5.2 - Learning Curve / Run-Length Sweep",
@@ -12444,7 +12550,7 @@
           ]
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.350325+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.084694+00:00",
           "source_generated_at_utc": "2026-04-27T04:01:13+00:00",
           "registry_entry_id": "tier5_2_learning_curve_sweep",
           "tier": "Tier 5.2 - Learning Curve / Run-Length Sweep",
@@ -12469,7 +12575,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier5_3_latest_manifest.json",
         "registry_entry_id": "tier5_3_cra_failure_analysis",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.151418+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.451966+00:00",
           "source_generated_at_utc": "2026-04-27T10:38:14+00:00",
           "registry_entry_id": "tier5_3_cra_failure_analysis",
           "tier": "Tier 5.3 - CRA Failure Analysis / Learning Dynamics Debug",
@@ -12490,7 +12596,7 @@
           ]
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.353269+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.086337+00:00",
           "source_generated_at_utc": "2026-04-27T10:38:14+00:00",
           "registry_entry_id": "tier5_3_cra_failure_analysis",
           "tier": "Tier 5.3 - CRA Failure Analysis / Learning Dynamics Debug",
@@ -12515,7 +12621,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier5_4_latest_manifest.json",
         "registry_entry_id": "tier5_4_delayed_credit_confirmation",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.153481+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.454222+00:00",
           "source_generated_at_utc": "2026-04-27T11:11:14+00:00",
           "registry_entry_id": "tier5_4_delayed_credit_confirmation",
           "tier": "Tier 5.4 - Delayed-Credit Confirmation",
@@ -12536,7 +12642,7 @@
           ]
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.355093+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.087773+00:00",
           "source_generated_at_utc": "2026-04-27T11:11:14+00:00",
           "registry_entry_id": "tier5_4_delayed_credit_confirmation",
           "tier": "Tier 5.4 - Delayed-Credit Confirmation",
@@ -12561,7 +12667,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_16a_latest_manifest.json",
         "registry_entry_id": "tier4_16a_delayed_cue_hardware_repeat",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.155627+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.455675+00:00",
           "source_generated_at_utc": "2026-04-27T18:24:07+00:00",
           "registry_entry_id": "tier4_16a_delayed_cue_hardware_repeat",
           "tier": "Tier 4.16a - Repaired Delayed-Cue Hardware Repeat",
@@ -12582,7 +12688,7 @@
           ]
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.357011+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.088532+00:00",
           "source_generated_at_utc": "2026-04-27T18:24:07+00:00",
           "registry_entry_id": "tier4_16a_delayed_cue_hardware_repeat",
           "tier": "Tier 4.16a - Repaired Delayed-Cue Hardware Repeat",
@@ -12607,7 +12713,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_16b_latest_manifest.json",
         "registry_entry_id": "tier4_16b_hard_switch_hardware_repeat",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.159471+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.457390+00:00",
           "source_generated_at_utc": "2026-04-27T23:03:52+00:00",
           "registry_entry_id": "tier4_16b_hard_switch_hardware_repeat",
           "tier": "Tier 4.16b - Repaired Hard-Switch Hardware Repeat",
@@ -12630,7 +12736,7 @@
           ]
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.359077+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.089257+00:00",
           "source_generated_at_utc": "2026-04-27T23:03:52+00:00",
           "registry_entry_id": "tier4_16b_hard_switch_hardware_repeat",
           "tier": "Tier 4.16b - Repaired Hard-Switch Hardware Repeat",
@@ -12657,7 +12763,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_18a_latest_manifest.json",
         "registry_entry_id": "tier4_18a_chunked_runtime_baseline",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.160783+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.459479+00:00",
           "source_generated_at_utc": "2026-04-28T01:28:22+00:00",
           "registry_entry_id": "tier4_18a_chunked_runtime_baseline",
           "tier": "Tier 4.18a - v0.7 Chunked Hardware Runtime Baseline",
@@ -12679,7 +12785,7 @@
           ]
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.360278+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.090113+00:00",
           "source_generated_at_utc": "2026-04-28T01:28:22+00:00",
           "registry_entry_id": "tier4_18a_chunked_runtime_baseline",
           "tier": "Tier 4.18a - v0.7 Chunked Hardware Runtime Baseline",
@@ -12705,7 +12811,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_26_latest_manifest.json",
         "registry_entry_id": "tier4_26_four_core_distributed_smoke",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.161710+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.461121+00:00",
           "source_generated_at_utc": "2026-05-02T20:32:02.269581+00:00",
           "registry_entry_id": "tier4_26_four_core_distributed_smoke",
           "tier": "Tier 4.26 - Four-Core Distributed Smoke",
@@ -12719,7 +12825,7 @@
           "caveat": "Single-seed seed-42 smoke on one chip only; not speedup evidence, not multi-chip scaling, not a general multi-core framework, and not full native v2.1 autonomy."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.361064+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.090816+00:00",
           "source_generated_at_utc": "2026-05-02T20:32:02.269581+00:00",
           "registry_entry_id": "tier4_26_four_core_distributed_smoke",
           "tier": "Tier 4.26 - Four-Core Distributed Smoke",
@@ -12737,7 +12843,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_27a_latest_manifest.json",
         "registry_entry_id": "tier4_27a_four_core_characterization",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.163033+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.462520+00:00",
           "source_generated_at_utc": "2026-05-02T23:17:43.847818+00:00",
           "registry_entry_id": "tier4_27a_four_core_characterization",
           "tier": "Tier 4.27a - Four-Core Runtime Resource / Timing Characterization",
@@ -12751,7 +12857,7 @@
           "caveat": "Single-seed seed-42 smoke on one chip only; not speedup evidence, not multi-chip scaling, not a general multi-core framework, not full native v2.1 autonomy, and not MCPL/multicast. SDP remains transitional."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.361871+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.091550+00:00",
           "source_generated_at_utc": "2026-05-02T23:17:43.847818+00:00",
           "registry_entry_id": "tier4_27a_four_core_characterization",
           "tier": "Tier 4.27a - Four-Core Runtime Resource / Timing Characterization",
@@ -12769,7 +12875,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_27e_latest_manifest.json",
         "registry_entry_id": "tier4_27e_two_core_mcpl_smoke",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.163771+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.463647+00:00",
           "source_generated_at_utc": "2026-05-03T03:17:07.952056+00:00",
           "registry_entry_id": "tier4_27e_two_core_mcpl_smoke",
           "tier": "Tier 4.27e - Two-Core MCPL Round-trip Smoke",
@@ -12783,7 +12889,7 @@
           "caveat": "Local build and wiring validation only. NOT hardware evidence. Router table behavior on actual SpiNNaker chip not yet validated. Multi-state-core (context+route+memory) MCPL routing not yet tested."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.362360+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.092154+00:00",
           "source_generated_at_utc": "2026-05-03T03:17:07.952056+00:00",
           "registry_entry_id": "tier4_27e_two_core_mcpl_smoke",
           "tier": "Tier 4.27e - Two-Core MCPL Round-trip Smoke",
@@ -12801,7 +12907,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_27f_latest_manifest.json",
         "registry_entry_id": "tier4_27f_three_core_mcpl_smoke",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.164428+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.464771+00:00",
           "source_generated_at_utc": "2026-05-03T03:17:09.468741+00:00",
           "registry_entry_id": "tier4_27f_three_core_mcpl_smoke",
           "tier": "Tier 4.27f - Three-State-Core MCPL Lookup Smoke",
@@ -12815,7 +12921,7 @@
           "caveat": "Local build and wiring validation only. NOT hardware evidence. Actual router table behavior with multiple state cores on a single chip not yet validated. SDP-vs-MCPL comparison not yet performed."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.362910+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.092969+00:00",
           "source_generated_at_utc": "2026-05-03T03:17:09.468741+00:00",
           "registry_entry_id": "tier4_27f_three_core_mcpl_smoke",
           "tier": "Tier 4.27f - Three-State-Core MCPL Lookup Smoke",
@@ -12833,7 +12939,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_27g_latest_manifest.json",
         "registry_entry_id": "tier4_27g_sdp_vs_mcpl_comparison",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.165205+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.465448+00:00",
           "source_generated_at_utc": "2026-05-03T03:11:25.363560+00:00",
           "registry_entry_id": "tier4_27g_sdp_vs_mcpl_comparison",
           "tier": "Tier 4.27g - SDP-vs-MCPL Protocol Comparison",
@@ -12847,7 +12953,7 @@
           "caveat": "Source-code analysis only. NOT hardware timing measurements. NOT router-table hardware validation. NOT multi-chip scaling evidence."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.363327+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.093461+00:00",
           "source_generated_at_utc": "2026-05-03T03:11:25.363560+00:00",
           "registry_entry_id": "tier4_27g_sdp_vs_mcpl_comparison",
           "tier": "Tier 4.27g - SDP-vs-MCPL Protocol Comparison",
@@ -12865,7 +12971,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_28a_latest_manifest.json",
         "registry_entry_id": "tier4_28a_four_core_mcpl_repeatability",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.165729+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.466088+00:00",
           "source_generated_at_utc": "2026-05-03T02:47:37.888887+00:00",
           "registry_entry_id": "tier4_28a_four_core_mcpl_repeatability",
           "tier": "Tier 4.28a - Four-Core MCPL Repeatability",
@@ -12879,7 +12985,7 @@
           "caveat": "Single-chip four-core only; not multi-chip scaling, not speedup evidence, not full v2.1 mechanism transfer, not continuous host-free operation. Host still required for setup and readback. SDP fallback code remains in source but is not the active data plane for v0.1 baseline."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.366574+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.093958+00:00",
           "source_generated_at_utc": "2026-05-03T02:47:37.888887+00:00",
           "registry_entry_id": "tier4_28a_four_core_mcpl_repeatability",
           "tier": "Tier 4.28a - Four-Core MCPL Repeatability",
@@ -12897,7 +13003,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_28b_latest_manifest.json",
         "registry_entry_id": "tier4_28b_delayed_cue_four_core_mcpl",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.166235+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.466787+00:00",
           "source_generated_at_utc": "2026-05-03T03:56:10.392153+00:00",
           "registry_entry_id": "tier4_28b_delayed_cue_four_core_mcpl",
           "tier": "Tier 4.28b - Delayed-Cue Four-Core MCPL Hardware Probe",
@@ -12911,7 +13017,7 @@
           "caveat": "Single-seed probe (seed 42) on one chip only. Not three-seed repeatability, not multi-chip scaling, not speedup evidence, not full v2.1 mechanism transfer. Host still required for setup and readback."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.367979+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.094444+00:00",
           "source_generated_at_utc": "2026-05-03T03:56:10.392153+00:00",
           "registry_entry_id": "tier4_28b_delayed_cue_four_core_mcpl",
           "tier": "Tier 4.28b - Delayed-Cue Four-Core MCPL Hardware Probe",
@@ -12929,7 +13035,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_28c_latest_manifest.json",
         "registry_entry_id": "tier4_28c_delayed_cue_repeatability",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.166796+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.467903+00:00",
           "source_generated_at_utc": "2026-05-03T04:23:29.866090+00:00",
           "registry_entry_id": "tier4_28c_delayed_cue_repeatability",
           "tier": "Tier 4.28c - Delayed-Cue Three-Seed Repeatability",
@@ -12943,7 +13049,7 @@
           "caveat": "Single-chip four-core only. Not multi-chip scaling, not speedup evidence, not full v2.1 mechanism transfer. Host still required for setup and readback."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.368616+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.094906+00:00",
           "source_generated_at_utc": "2026-05-03T04:23:29.866090+00:00",
           "registry_entry_id": "tier4_28c_delayed_cue_repeatability",
           "tier": "Tier 4.28c - Delayed-Cue Three-Seed Repeatability",
@@ -12961,7 +13067,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_28d_latest_manifest.json",
         "registry_entry_id": "tier4_28d_hard_noisy_switching",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.167582+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.468948+00:00",
           "source_generated_at_utc": "2026-05-03T05:43:31.844874+00:00",
           "registry_entry_id": "tier4_28d_hard_noisy_switching",
           "tier": "Tier 4.28d - Hard Noisy Switching Four-Core MCPL",
@@ -12975,7 +13081,7 @@
           "caveat": "Single-chip four-core only. Host-pre-written regime context; not autonomous regime detection. Not multi-chip scaling, not speedup evidence, not full v2.1 mechanism transfer. Host still required for setup and readback."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.369389+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.095695+00:00",
           "source_generated_at_utc": "2026-05-03T05:43:31.844874+00:00",
           "registry_entry_id": "tier4_28d_hard_noisy_switching",
           "tier": "Tier 4.28d - Hard Noisy Switching Four-Core MCPL",
@@ -12993,7 +13099,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_28e_pointA_latest_manifest.json",
         "registry_entry_id": "tier4_28e_failure_envelope_pointA",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.168242+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.470044+00:00",
           "source_generated_at_utc": "2026-05-03T19:26:37.047378+00:00",
           "registry_entry_id": "tier4_28e_failure_envelope_pointA",
           "tier": "Tier 4.28e - Native Failure-Envelope Report Point A",
@@ -13007,7 +13113,7 @@
           "caveat": "Single-chip four-core only. Host-pre-written regime context. Not multi-chip scaling, not speedup evidence, not full v2.1 mechanism transfer. Point A is one of three probe points (A/B/C) in the failure-envelope report."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.370098+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.096230+00:00",
           "source_generated_at_utc": "2026-05-03T19:26:37.047378+00:00",
           "registry_entry_id": "tier4_28e_failure_envelope_pointA",
           "tier": "Tier 4.28e - Native Failure-Envelope Report Point A",
@@ -13025,7 +13131,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_28e_pointC_latest_manifest.json",
         "registry_entry_id": "tier4_28e_failure_envelope_pointC",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.168972+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.471284+00:00",
           "source_generated_at_utc": "2026-05-03T19:38:45.782720+00:00",
           "registry_entry_id": "tier4_28e_failure_envelope_pointC",
           "tier": "Tier 4.28e - Native Failure-Envelope Report Point C",
@@ -13039,7 +13145,7 @@
           "caveat": "Single-chip four-core only. Host-pre-written regime context. Not multi-chip scaling, not speedup evidence, not full v2.1 mechanism transfer. Point C is one of three probe points (A/B/C) in the failure-envelope report."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.371054+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.096710+00:00",
           "source_generated_at_utc": "2026-05-03T19:38:45.782720+00:00",
           "registry_entry_id": "tier4_28e_failure_envelope_pointC",
           "tier": "Tier 4.28e - Native Failure-Envelope Report Point C",
@@ -13057,7 +13163,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_29a_latest_manifest.json",
         "registry_entry_id": "tier4_29a_native_keyed_memory_overcapacity",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.170089+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.472593+00:00",
           "source_generated_at_utc": "2026-05-03T21:46:26.118253+00:00",
           "registry_entry_id": "tier4_29a_native_keyed_memory_overcapacity",
           "tier": "Tier 4.29a - Native Keyed-Memory Overcapacity Gate",
@@ -13071,7 +13177,7 @@
           "caveat": "Single-chip four-core only. Host-pre-written keyed context slots. Schedule-driven (not true continuous generation). Not multi-chip scaling, not speedup evidence, not full v2.1 mechanism transfer. MAX_SCHEDULE_ENTRIES=512 allows longer task streams but still uses pre-loaded static schedule."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.371787+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.097150+00:00",
           "source_generated_at_utc": "2026-05-03T21:46:26.118253+00:00",
           "registry_entry_id": "tier4_29a_native_keyed_memory_overcapacity",
           "tier": "Tier 4.29a - Native Keyed-Memory Overcapacity Gate",
@@ -13089,7 +13195,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier5_5_latest_manifest.json",
         "registry_entry_id": "tier5_5_expanded_baselines",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.187601+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.483373+00:00",
           "source_generated_at_utc": "2026-04-28T03:35:32+00:00",
           "registry_entry_id": "tier5_5_expanded_baselines",
           "tier": "Tier 5.5 - Expanded Baseline Suite",
@@ -13111,7 +13217,7 @@
           ]
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.384807+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.105908+00:00",
           "source_generated_at_utc": "2026-04-28T03:35:32+00:00",
           "registry_entry_id": "tier5_5_expanded_baselines",
           "tier": "Tier 5.5 - Expanded Baseline Suite",
@@ -13137,7 +13243,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier5_6_latest_manifest.json",
         "registry_entry_id": "tier5_6_baseline_hyperparameter_fairness_audit",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.214011+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.495444+00:00",
           "source_generated_at_utc": "2026-04-28T04:38:50+00:00",
           "registry_entry_id": "tier5_6_baseline_hyperparameter_fairness_audit",
           "tier": "Tier 5.6 - Baseline Hyperparameter Fairness Audit",
@@ -13159,7 +13265,7 @@
           ]
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.399915+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.115959+00:00",
           "source_generated_at_utc": "2026-04-28T04:38:50+00:00",
           "registry_entry_id": "tier5_6_baseline_hyperparameter_fairness_audit",
           "tier": "Tier 5.6 - Baseline Hyperparameter Fairness Audit",
@@ -13185,7 +13291,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_latest_manifest.json",
         "registry_entry_id": "tier5_7_compact_regression",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.215800+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.497517+00:00",
           "source_generated_at_utc": "2026-04-28T05:00:02+00:00",
           "registry_entry_id": "tier5_7_compact_regression",
           "tier": "Tier 5.7 - Compact Regression After Promoted Tuning",
@@ -13206,7 +13312,7 @@
           ]
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.400922+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.117041+00:00",
           "source_generated_at_utc": "2026-04-28T05:00:02+00:00",
           "registry_entry_id": "tier5_7_compact_regression",
           "tier": "Tier 5.7 - Compact Regression After Promoted Tuning",
@@ -13231,7 +13337,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier5_12a_latest_manifest.json",
         "registry_entry_id": "tier5_12a_predictive_task_pressure",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.217747+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.499479+00:00",
           "source_generated_at_utc": "2026-04-29T09:40:56+00:00",
           "registry_entry_id": "tier5_12a_predictive_task_pressure",
           "tier": "Tier 5.12a - Predictive Task-Pressure Validation",
@@ -13250,7 +13356,7 @@
           ]
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.402630+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.118479+00:00",
           "source_generated_at_utc": "2026-04-29T09:40:56+00:00",
           "registry_entry_id": "tier5_12a_predictive_task_pressure",
           "tier": "Tier 5.12a - Predictive Task-Pressure Validation",
@@ -13273,7 +13379,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier5_12c_latest_manifest.json",
         "registry_entry_id": "tier5_12c_predictive_context_sham_repair",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.220823+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.502176+00:00",
           "source_generated_at_utc": null,
           "registry_entry_id": "tier5_12c_predictive_context_sham_repair",
           "tier": "Tier 5.12c - Predictive Context Sham-Separation Repair",
@@ -13294,7 +13400,7 @@
           ]
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.405359+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.120552+00:00",
           "source_generated_at_utc": null,
           "registry_entry_id": "tier5_12c_predictive_context_sham_repair",
           "tier": "Tier 5.12c - Predictive Context Sham-Separation Repair",
@@ -13319,7 +13425,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_latest_manifest.json",
         "registry_entry_id": "tier5_12d_predictive_context_compact_regression",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.222168+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.503349+00:00",
           "source_generated_at_utc": "2026-04-29T11:11:35+00:00",
           "registry_entry_id": "tier5_12d_predictive_context_compact_regression",
           "tier": "Tier 5.12d - Predictive-Context Compact Regression",
@@ -13340,7 +13446,7 @@
           ]
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.406549+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.121204+00:00",
           "source_generated_at_utc": "2026-04-29T11:11:35+00:00",
           "registry_entry_id": "tier5_12d_predictive_context_compact_regression",
           "tier": "Tier 5.12d - Predictive-Context Compact Regression",
@@ -13365,7 +13471,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier6_1_latest_manifest.json",
         "registry_entry_id": "tier6_1_lifecycle_self_scaling",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.227606+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.505275+00:00",
           "source_generated_at_utc": "2026-04-28T05:59:44+00:00",
           "registry_entry_id": "tier6_1_lifecycle_self_scaling",
           "tier": "Tier 6.1 - Software Lifecycle / Self-Scaling Benchmark",
@@ -13387,7 +13493,7 @@
           ]
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.407909+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.122165+00:00",
           "source_generated_at_utc": "2026-04-28T05:59:44+00:00",
           "registry_entry_id": "tier6_1_lifecycle_self_scaling",
           "tier": "Tier 6.1 - Software Lifecycle / Self-Scaling Benchmark",
@@ -13413,7 +13519,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier6_3_latest_manifest.json",
         "registry_entry_id": "tier6_3_lifecycle_sham_controls",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.231134+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.509021+00:00",
           "source_generated_at_utc": "2026-04-28T16:50:41+00:00",
           "registry_entry_id": "tier6_3_lifecycle_sham_controls",
           "tier": "Tier 6.3 - Lifecycle Sham-Control Suite",
@@ -13435,7 +13541,7 @@
           ]
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.409397+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.123441+00:00",
           "source_generated_at_utc": "2026-04-28T16:50:41+00:00",
           "registry_entry_id": "tier6_3_lifecycle_sham_controls",
           "tier": "Tier 6.3 - Lifecycle Sham-Control Suite",
@@ -13461,7 +13567,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier6_4_latest_manifest.json",
         "registry_entry_id": "tier6_4_circuit_motif_causality",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.234281+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.511960+00:00",
           "source_generated_at_utc": "2026-04-28T19:54:16+00:00",
           "registry_entry_id": "tier6_4_circuit_motif_causality",
           "tier": "Tier 6.4 - Circuit Motif Causality",
@@ -13483,7 +13589,7 @@
           ]
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.411008+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.125310+00:00",
           "source_generated_at_utc": "2026-04-28T19:54:16+00:00",
           "registry_entry_id": "tier6_4_circuit_motif_causality",
           "tier": "Tier 6.4 - Circuit Motif Causality",
@@ -13509,7 +13615,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_29b_latest_manifest.json",
         "registry_entry_id": "tier4_29b_native_routing_composition_gate",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.238050+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.513264+00:00",
           "source_generated_at_utc": "2026-05-03T22:51:44.776711+00:00",
           "registry_entry_id": "tier4_29b_native_routing_composition_gate",
           "tier": "Tier 4.29b - Native Routing/Composition Gate",
@@ -13523,7 +13629,7 @@
           "caveat": "Native routing/composition hardware evidence only; not speedup evidence, not multi-chip scaling, not a general multi-core framework, not full native v2.1 autonomy, and not true continuous generation."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.411638+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.126309+00:00",
           "source_generated_at_utc": "2026-05-03T22:51:44.776711+00:00",
           "registry_entry_id": "tier4_29b_native_routing_composition_gate",
           "tier": "Tier 4.29b - Native Routing/Composition Gate",
@@ -13541,7 +13647,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_29c_latest_manifest.json",
         "registry_entry_id": "tier4_29c_native_predictive_binding",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.242818+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.514374+00:00",
           "source_generated_at_utc": null,
           "registry_entry_id": "tier4_29c_native_predictive_binding",
           "tier": "Tier 4.29c - Native Predictive Binding Bridge",
@@ -13555,7 +13661,7 @@
           "caveat": "Native predictive binding hardware evidence only; not speedup evidence, not multi-chip scaling, not full native v2.1 autonomy, not continuous generation, and not general task learning."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.412087+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.126787+00:00",
           "source_generated_at_utc": null,
           "registry_entry_id": "tier4_29c_native_predictive_binding",
           "tier": "Tier 4.29c - Native Predictive Binding Bridge",
@@ -13573,7 +13679,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_29d_latest_manifest.json",
         "registry_entry_id": "tier4_29d_native_self_evaluation",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.245378+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.515472+00:00",
           "source_generated_at_utc": null,
           "registry_entry_id": "tier4_29d_native_self_evaluation",
           "tier": "Tier 4.29d - Native Self-Evaluation Bridge",
@@ -13587,7 +13693,7 @@
           "caveat": "Native confidence-gated learning hardware evidence only; not speedup evidence, not multi-chip scaling, not full native v2.1 autonomy, not continuous generation, not dynamic lifecycle, and not external-baseline superiority."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.412508+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.127272+00:00",
           "source_generated_at_utc": null,
           "registry_entry_id": "tier4_29d_native_self_evaluation",
           "tier": "Tier 4.29d - Native Self-Evaluation Bridge",
@@ -13605,7 +13711,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_29e_latest_manifest.json",
         "registry_entry_id": "tier4_29e_native_replay_consolidation",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.246642+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.516117+00:00",
           "source_generated_at_utc": null,
           "registry_entry_id": "tier4_29e_native_replay_consolidation",
           "tier": "Tier 4.29e - Native Replay/Consolidation Bridge",
@@ -13619,7 +13725,7 @@
           "caveat": "Native host-scheduled replay/consolidation bridge evidence only; not native on-chip replay buffers, not biological sleep, not speedup evidence, not multi-chip scaling, not full native autonomy, and not external-baseline superiority."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.412932+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.127740+00:00",
           "source_generated_at_utc": null,
           "registry_entry_id": "tier4_29e_native_replay_consolidation",
           "tier": "Tier 4.29e - Native Replay/Consolidation Bridge",
@@ -13637,7 +13743,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_29f_latest_manifest.json",
         "registry_entry_id": "tier4_29f_compact_native_mechanism_regression",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.251807+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.517273+00:00",
           "source_generated_at_utc": "2026-05-05T13:20:42.804040+00:00",
           "registry_entry_id": "tier4_29f_compact_native_mechanism_regression",
           "tier": "Tier 4.29f - Compact Native Mechanism Regression",
@@ -13651,7 +13757,7 @@
           "caveat": "Evidence-regression gate over already-ingested real hardware passes; not a new hardware execution, not a single monolithic all-mechanism task, not lifecycle/self-scaling evidence, not multi-chip scaling, and not speedup evidence."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.413555+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.128356+00:00",
           "source_generated_at_utc": "2026-05-05T13:20:42.804040+00:00",
           "registry_entry_id": "tier4_29f_compact_native_mechanism_regression",
           "tier": "Tier 4.29f - Compact Native Mechanism Regression",
@@ -13669,7 +13775,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_0_latest_manifest.json",
         "registry_entry_id": "tier7_0_standard_dynamical_benchmarks",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.256722+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.518312+00:00",
           "source_generated_at_utc": "2026-05-05T13:47:31+00:00",
           "registry_entry_id": "tier7_0_standard_dynamical_benchmarks",
           "tier": "Tier 7.0 - Standard Dynamical Benchmark Suite",
@@ -13683,7 +13789,7 @@
           "caveat": "Software diagnostic evidence only; not hardware evidence, not a superiority claim, not a tuning run, not a new baseline freeze, and not evidence that CRA is generally weak outside these continuous-regression benchmarks. It triggers Tier 7.0b failure analysis before mechanism changes or hardware migration."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.414381+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.129159+00:00",
           "source_generated_at_utc": "2026-05-05T13:47:31+00:00",
           "registry_entry_id": "tier7_0_standard_dynamical_benchmarks",
           "tier": "Tier 7.0 - Standard Dynamical Benchmark Suite",
@@ -13701,7 +13807,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_0b_latest_manifest.json",
         "registry_entry_id": "tier7_0b_continuous_regression_failure_analysis",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.258411+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.519398+00:00",
           "source_generated_at_utc": "2026-05-05T13:57:35+00:00",
           "registry_entry_id": "tier7_0b_continuous_regression_failure_analysis",
           "tier": "Tier 7.0b - Continuous-Regression Failure Analysis",
@@ -13715,7 +13821,7 @@
           "caveat": "Software diagnostic evidence only; not a tuning run, not a promoted mechanism, not hardware evidence, not a new baseline freeze, and not proof that a repaired CRA will beat standard baselines. It authorizes a bounded continuous readout/interface repair tier before hardware migration."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.415181+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.129922+00:00",
           "source_generated_at_utc": "2026-05-05T13:57:35+00:00",
           "registry_entry_id": "tier7_0b_continuous_regression_failure_analysis",
           "tier": "Tier 7.0b - Continuous-Regression Failure Analysis",
@@ -13733,7 +13839,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_0c_latest_manifest.json",
         "registry_entry_id": "tier7_0c_continuous_readout_repair",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.261117+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.520905+00:00",
           "source_generated_at_utc": "2026-05-05T14:09:26+00:00",
           "registry_entry_id": "tier7_0c_continuous_readout_repair",
           "tier": "Tier 7.0c - Bounded Continuous Readout / Interface Repair",
@@ -13747,7 +13853,7 @@
           "caveat": "Software repair-candidate evidence only; not hardware evidence, not a new baseline freeze, not a promoted CRA mechanism, and not a superiority claim. The correct next move is a stricter state-specific repair or claim narrowing, not hardware migration."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.416434+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.131035+00:00",
           "source_generated_at_utc": "2026-05-05T14:09:26+00:00",
           "registry_entry_id": "tier7_0c_continuous_readout_repair",
           "tier": "Tier 7.0c - Bounded Continuous Readout / Interface Repair",
@@ -13765,7 +13871,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_0d_latest_manifest.json",
         "registry_entry_id": "tier7_0d_state_specific_continuous_interface",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.264919+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.523078+00:00",
           "source_generated_at_utc": "2026-05-05T16:42:42+00:00",
           "registry_entry_id": "tier7_0d_state_specific_continuous_interface",
           "tier": "Tier 7.0d - State-Specific Continuous Interface / Claim-Narrowing",
@@ -13779,7 +13885,7 @@
           "caveat": "Software diagnostic evidence only; not hardware evidence, not a baseline freeze, not a promoted continuous-readout mechanism, and not a superiority claim. The Tier 7 continuous-regression benchmark path should be narrowed and not migrated to hardware unless a future mechanism changes the failure class."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.418823+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.132799+00:00",
           "source_generated_at_utc": "2026-05-05T16:42:42+00:00",
           "registry_entry_id": "tier7_0d_state_specific_continuous_interface",
           "tier": "Tier 7.0d - State-Specific Continuous Interface / Claim-Narrowing",
@@ -13797,7 +13903,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_0e_latest_manifest.json",
         "registry_entry_id": "tier7_0e_standard_dynamical_v2_2_length_sweep",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.267544+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.524425+00:00",
           "source_generated_at_utc": "2026-05-08T18:40:40+00:00",
           "registry_entry_id": "tier7_0e_standard_dynamical_v2_2_length_sweep",
           "tier": "Tier 7.0e - Standard Dynamical Benchmark Rerun With v2.2 And Run-Length Sweep",
@@ -13811,7 +13917,7 @@
           "caveat": "Software benchmark evidence only; the 10k public aggregate was separately blocked by a non-finite NARMA10 seed-44 stream and no baseline freeze, hardware transfer, or superiority claim is authorized."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.438814+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.133592+00:00",
           "source_generated_at_utc": "2026-05-08T18:40:40+00:00",
           "registry_entry_id": "tier7_0e_standard_dynamical_v2_2_length_sweep",
           "tier": "Tier 7.0e - Standard Dynamical Benchmark Rerun With v2.2 And Run-Length Sweep",
@@ -13829,7 +13935,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier5_19a_latest_manifest.json",
         "registry_entry_id": "tier5_19a_temporal_substrate_reference",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.275345+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.526570+00:00",
           "source_generated_at_utc": "2026-05-05T17:38:02+00:00",
           "registry_entry_id": "tier5_19a_temporal_substrate_reference",
           "tier": "Tier 5.19a - Local Temporal-Substrate Reference",
@@ -13843,7 +13949,7 @@
           "caveat": "Software local-reference evidence only; recurrence-specific value, hardware transfer, and benchmark superiority remain unproven."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.442328+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.135231+00:00",
           "source_generated_at_utc": "2026-05-05T17:38:02+00:00",
           "registry_entry_id": "tier5_19a_temporal_substrate_reference",
           "tier": "Tier 5.19a - Local Temporal-Substrate Reference",
@@ -13861,7 +13967,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier5_19b_latest_manifest.json",
         "registry_entry_id": "tier5_19b_temporal_substrate_gate",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.281731+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.529415+00:00",
           "source_generated_at_utc": "2026-05-05T17:56:17+00:00",
           "registry_entry_id": "tier5_19b_temporal_substrate_gate",
           "tier": "Tier 5.19b - Temporal-Substrate Benchmark/Sham Gate",
@@ -13875,7 +13981,7 @@
           "caveat": "Software diagnostic evidence only; does not freeze a baseline or prove native/on-chip temporal dynamics."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.445265+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.137569+00:00",
           "source_generated_at_utc": "2026-05-05T17:56:17+00:00",
           "registry_entry_id": "tier5_19b_temporal_substrate_gate",
           "tier": "Tier 5.19b - Temporal-Substrate Benchmark/Sham Gate",
@@ -13893,7 +13999,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_latest_manifest.json",
         "registry_entry_id": "tier5_19c_fading_memory_regression",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.293527+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.530905+00:00",
           "source_generated_at_utc": "2026-05-05T19:01:36+00:00",
           "registry_entry_id": "tier5_19c_fading_memory_regression",
           "tier": "Tier 5.19c - Fading-Memory Narrowing / Compact Regression",
@@ -13907,7 +14013,7 @@
           "caveat": "Software evidence only; not bounded nonlinear recurrence, native/on-chip temporal dynamics, universal benchmark superiority, language, planning, AGI, or ASI."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.446615+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.138596+00:00",
           "source_generated_at_utc": "2026-05-05T19:01:36+00:00",
           "registry_entry_id": "tier5_19c_fading_memory_regression",
           "tier": "Tier 5.19c - Fading-Memory Narrowing / Compact Regression",
@@ -13925,7 +14031,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_0f_latest_manifest.json",
         "registry_entry_id": "tier7_0f_benchmark_protocol_failure_localization",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.299895+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.532111+00:00",
           "source_generated_at_utc": "2026-05-08T18:54:20+00:00",
           "registry_entry_id": "tier7_0f_benchmark_protocol_failure_localization",
           "tier": "Tier 7.0f - Benchmark Protocol Repair / Public Failure Localization",
@@ -13939,7 +14045,7 @@
           "caveat": "Diagnostic protocol evidence only; not a CRA performance improvement, not a new mechanism, not a baseline freeze, not hardware evidence, and not public benchmark superiority."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.447260+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.139118+00:00",
           "source_generated_at_utc": "2026-05-08T18:54:20+00:00",
           "registry_entry_id": "tier7_0f_benchmark_protocol_failure_localization",
           "tier": "Tier 7.0f - Benchmark Protocol Repair / Public Failure Localization",
@@ -13957,7 +14063,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_0g_latest_manifest.json",
         "registry_entry_id": "tier7_0g_general_mechanism_selection_contract",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.333096+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.533066+00:00",
           "source_generated_at_utc": "2026-05-08T19:00:57+00:00",
           "registry_entry_id": "tier7_0g_general_mechanism_selection_contract",
           "tier": "Tier 7.0g - General Mechanism-Selection Contract",
@@ -13971,7 +14077,7 @@
           "caveat": "Contract evidence only; not mechanism implementation, not a performance improvement, not a baseline freeze, not hardware evidence, and not public benchmark superiority."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.447775+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.139568+00:00",
           "source_generated_at_utc": "2026-05-08T19:00:57+00:00",
           "registry_entry_id": "tier7_0g_general_mechanism_selection_contract",
           "tier": "Tier 7.0g - General Mechanism-Selection Contract",
@@ -13989,7 +14095,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_0h_latest_manifest.json",
         "registry_entry_id": "tier7_0h_bounded_recurrent_interface_gate",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.377917+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.534980+00:00",
           "source_generated_at_utc": "2026-05-08T19:12:11+00:00",
           "registry_entry_id": "tier7_0h_bounded_recurrent_interface_gate",
           "tier": "Tier 7.0h - Bounded Nonlinear Recurrent Continuous-State / Interface Gate",
@@ -14003,7 +14109,7 @@
           "caveat": "Software evidence only; not a baseline freeze, not hardware evidence, not ESN superiority, not native on-chip recurrence, and not public benchmark superiority."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.453342+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.140866+00:00",
           "source_generated_at_utc": "2026-05-08T19:12:11+00:00",
           "registry_entry_id": "tier7_0h_bounded_recurrent_interface_gate",
           "tier": "Tier 7.0h - Bounded Nonlinear Recurrent Continuous-State / Interface Gate",
@@ -14021,7 +14127,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_0i_latest_manifest.json",
         "registry_entry_id": "tier7_0i_recurrence_topology_specificity_gate",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.392314+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.537803+00:00",
           "source_generated_at_utc": "2026-05-08T19:30:54+00:00",
           "registry_entry_id": "tier7_0i_recurrence_topology_specificity_gate",
           "tier": "Tier 7.0i - Recurrence / Topology Specificity Repair Gate",
@@ -14035,7 +14141,7 @@
           "caveat": "Software evidence only; not a baseline freeze, not hardware evidence, not ESN superiority, not native on-chip recurrence, and not a topology-specific recurrence claim."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.458514+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.142637+00:00",
           "source_generated_at_utc": "2026-05-08T19:30:54+00:00",
           "registry_entry_id": "tier7_0i_recurrence_topology_specificity_gate",
           "tier": "Tier 7.0i - Recurrence / Topology Specificity Repair Gate",
@@ -14053,7 +14159,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_0j_latest_manifest.json",
         "registry_entry_id": "tier7_0j_generic_recurrent_promotion_gate",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.395194+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.538962+00:00",
           "source_generated_at_utc": "2026-05-08T20:10:52+00:00",
           "registry_entry_id": "tier7_0j_generic_recurrent_promotion_gate",
           "tier": "Tier 7.0j - Generic Bounded Recurrent-State Promotion / Compact Regression",
@@ -14067,7 +14173,7 @@
           "caveat": "Software evidence only; not topology-specific recurrence, not ESN superiority, not hardware evidence, not native/on-chip recurrence, not language, planning, AGI, or ASI."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.459255+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.143611+00:00",
           "source_generated_at_utc": "2026-05-08T20:10:52+00:00",
           "registry_entry_id": "tier7_0j_generic_recurrent_promotion_gate",
           "tier": "Tier 7.0j - Generic Bounded Recurrent-State Promotion / Compact Regression",
@@ -14085,7 +14191,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier6_2a_latest_manifest.json",
         "registry_entry_id": "tier6_2a_targeted_usefulness_validation",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.398664+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.540097+00:00",
           "source_generated_at_utc": "2026-05-08T20:29:19+00:00",
           "registry_entry_id": "tier6_2a_targeted_usefulness_validation",
           "tier": "Tier 6.2a - Targeted Hard-Task Validation Over v2.3",
@@ -14099,7 +14205,7 @@
           "caveat": "Software diagnostic evidence only; custom hard tasks cannot make the public usefulness claim, and the result is not a baseline freeze, hardware evidence, native transfer, ESN superiority, or AGI/ASI evidence."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.460257+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.144485+00:00",
           "source_generated_at_utc": "2026-05-08T20:29:19+00:00",
           "registry_entry_id": "tier6_2a_targeted_usefulness_validation",
           "tier": "Tier 6.2a - Targeted Hard-Task Validation Over v2.3",
@@ -14117,7 +14223,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1a_latest_manifest.json",
         "registry_entry_id": "tier7_1a_realish_adapter_contract",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.399694+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.540994+00:00",
           "source_generated_at_utc": "2026-05-08T20:39:34+00:00",
           "registry_entry_id": "tier7_1a_realish_adapter_contract",
           "tier": "Tier 7.1a - Real-ish/Public Adapter Contract",
@@ -14131,7 +14237,7 @@
           "caveat": "Contract evidence only; not a dataset run, not public usefulness evidence, not a baseline freeze, not hardware/native transfer, and not AGI/ASI evidence."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.460963+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.145086+00:00",
           "source_generated_at_utc": "2026-05-08T20:39:34+00:00",
           "registry_entry_id": "tier7_1a_realish_adapter_contract",
           "tier": "Tier 7.1a - Real-ish/Public Adapter Contract",
@@ -14149,7 +14255,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1b_latest_manifest.json",
         "registry_entry_id": "tier7_1b_cmapss_source_data_preflight",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.400523+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.541813+00:00",
           "source_generated_at_utc": "2026-05-08T20:59:45+00:00",
           "registry_entry_id": "tier7_1b_cmapss_source_data_preflight",
           "tier": "Tier 7.1b - NASA C-MAPSS Source/Data Preflight",
@@ -14163,7 +14269,7 @@
           "caveat": "Preflight evidence only; not C-MAPSS scoring, not public usefulness evidence, not a baseline freeze, not hardware/native transfer, and not AGI/ASI evidence."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.461530+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.145605+00:00",
           "source_generated_at_utc": "2026-05-08T20:59:45+00:00",
           "registry_entry_id": "tier7_1b_cmapss_source_data_preflight",
           "tier": "Tier 7.1b - NASA C-MAPSS Source/Data Preflight",
@@ -14181,7 +14287,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1c_latest_manifest.json",
         "registry_entry_id": "tier7_1c_cmapss_fd001_scoring_gate",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.401204+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.543301+00:00",
           "source_generated_at_utc": "2026-05-08T21:15:57+00:00",
           "registry_entry_id": "tier7_1c_cmapss_fd001_scoring_gate",
           "tier": "Tier 7.1c - Compact C-MAPSS FD001 Scoring Gate",
@@ -14195,7 +14301,7 @@
           "caveat": "Compact scalar-adapter software evidence only; not a full C-MAPSS benchmark, not a public usefulness win, not a baseline freeze, not hardware/native transfer, and not AGI/ASI evidence."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.462091+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.146111+00:00",
           "source_generated_at_utc": "2026-05-08T21:15:57+00:00",
           "registry_entry_id": "tier7_1c_cmapss_fd001_scoring_gate",
           "tier": "Tier 7.1c - Compact C-MAPSS FD001 Scoring Gate",
@@ -14213,7 +14319,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1d_latest_manifest.json",
         "registry_entry_id": "tier7_1d_cmapss_failure_analysis_adapter_repair",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.402028+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.544238+00:00",
           "source_generated_at_utc": "2026-05-08T21:20:55+00:00",
           "registry_entry_id": "tier7_1d_cmapss_failure_analysis_adapter_repair",
           "tier": "Tier 7.1d - C-MAPSS Failure Analysis / Adapter Repair",
@@ -14227,7 +14333,7 @@
           "caveat": "Software failure-analysis evidence only; not a full C-MAPSS benchmark, not a public usefulness win, not a promoted mechanism, not a baseline freeze, not hardware/native transfer, and not AGI/ASI evidence."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.462759+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.146649+00:00",
           "source_generated_at_utc": "2026-05-08T21:20:55+00:00",
           "registry_entry_id": "tier7_1d_cmapss_failure_analysis_adapter_repair",
           "tier": "Tier 7.1d - C-MAPSS Failure Analysis / Adapter Repair",
@@ -14245,7 +14351,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1e_latest_manifest.json",
         "registry_entry_id": "tier7_1e_cmapss_capped_readout_fairness_confirmation",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.402647+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.545253+00:00",
           "source_generated_at_utc": "2026-05-08T21:28:37+00:00",
           "registry_entry_id": "tier7_1e_cmapss_capped_readout_fairness_confirmation",
           "tier": "Tier 7.1e - C-MAPSS Capped-RUL/Readout Fairness Confirmation",
@@ -14259,7 +14365,7 @@
           "caveat": "Statistical/fairness confirmation over Tier 7.1d per-unit results only; not a full C-MAPSS benchmark, not a public usefulness win, not a promoted mechanism, not a baseline freeze, not hardware/native transfer, and not AGI/ASI evidence."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.463274+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.147098+00:00",
           "source_generated_at_utc": "2026-05-08T21:28:37+00:00",
           "registry_entry_id": "tier7_1e_cmapss_capped_readout_fairness_confirmation",
           "tier": "Tier 7.1e - C-MAPSS Capped-RUL/Readout Fairness Confirmation",
@@ -14277,7 +14383,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1f_latest_manifest.json",
         "registry_entry_id": "tier7_1f_next_public_adapter_contract",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.403422+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.546065+00:00",
           "source_generated_at_utc": "2026-05-08T21:35:18+00:00",
           "registry_entry_id": "tier7_1f_next_public_adapter_contract",
           "tier": "Tier 7.1f - Next Public Adapter Contract / Family Selection",
@@ -14291,7 +14397,7 @@
           "caveat": "Contract/family-selection evidence only; not a NAB data preflight, not scoring, not public usefulness evidence, not a baseline freeze, not hardware/native transfer, and not AGI/ASI evidence."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.463711+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.147522+00:00",
           "source_generated_at_utc": "2026-05-08T21:35:18+00:00",
           "registry_entry_id": "tier7_1f_next_public_adapter_contract",
           "tier": "Tier 7.1f - Next Public Adapter Contract / Family Selection",
@@ -14306,10 +14412,74 @@
         }
       },
       {
+        "path": "/Users/james/JKS:CRA/controlled_test_output/tier5_20a_latest_manifest.json",
+        "registry_entry_id": "tier5_20a_resonant_branch_polyp_diagnostic",
+        "previous_manifest": {
+          "generated_at_utc": "2026-05-08T22:16:53.548674+00:00",
+          "source_generated_at_utc": "2026-05-08T21:49:59+00:00",
+          "registry_entry_id": "tier5_20a_resonant_branch_polyp_diagnostic",
+          "tier": "Tier 5.20a - Resonant Branch Polyp Internal-Model Diagnostic",
+          "status": "pass",
+          "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic",
+          "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic/tier5_20a_results.json",
+          "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic/tier5_20a_report.md",
+          "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic/tier5_20a_summary.csv",
+          "canonical": true,
+          "claim": "Tier 5.20a tested a same-budget resonant LIF-branch proxy for the 16 excitatory neurons inside each polyp. The harness passed, but the candidate was not promoted because it regressed several tasks versus v2.3 despite localized value on variable-delay and anomaly diagnostics.",
+          "caveat": "Software diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence."
+        },
+        "new_manifest": {
+          "generated_at_utc": "2026-05-08T22:16:59.149817+00:00",
+          "source_generated_at_utc": "2026-05-08T21:49:59+00:00",
+          "registry_entry_id": "tier5_20a_resonant_branch_polyp_diagnostic",
+          "tier": "Tier 5.20a - Resonant Branch Polyp Internal-Model Diagnostic",
+          "status": "pass",
+          "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic",
+          "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic/tier5_20a_results.json",
+          "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic/tier5_20a_report.md",
+          "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic/tier5_20a_summary.csv",
+          "canonical": true,
+          "claim": "Tier 5.20a tested a same-budget resonant LIF-branch proxy for the 16 excitatory neurons inside each polyp. The harness passed, but the candidate was not promoted because it regressed several tasks versus v2.3 despite localized value on variable-delay and anomaly diagnostics.",
+          "caveat": "Software diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence."
+        }
+      },
+      {
+        "path": "/Users/james/JKS:CRA/controlled_test_output/tier5_20b_latest_manifest.json",
+        "registry_entry_id": "tier5_20b_hybrid_resonant_polyp_diagnostic",
+        "previous_manifest": {
+          "generated_at_utc": "2026-05-08T22:16:53.552849+00:00",
+          "source_generated_at_utc": "2026-05-08T22:13:29+00:00",
+          "registry_entry_id": "tier5_20b_hybrid_resonant_polyp_diagnostic",
+          "tier": "Tier 5.20b - Hybrid Resonant/LIF Polyp Diagnostic",
+          "status": "pass",
+          "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic",
+          "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic/tier5_20b_results.json",
+          "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic/tier5_20b_report.md",
+          "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic/tier5_20b_summary.csv",
+          "canonical": true,
+          "claim": "Tier 5.20b tested same-budget 8 LIF / 8 resonant and 12 LIF / 4 resonant hybrid polyp proxies. The harness passed, but neither hybrid was promoted because both retained material regressions versus v2.3 and did not separate sufficiently from shams.",
+          "caveat": "Software repair diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence."
+        },
+        "new_manifest": {
+          "generated_at_utc": "2026-05-08T22:16:59.153625+00:00",
+          "source_generated_at_utc": "2026-05-08T22:13:29+00:00",
+          "registry_entry_id": "tier5_20b_hybrid_resonant_polyp_diagnostic",
+          "tier": "Tier 5.20b - Hybrid Resonant/LIF Polyp Diagnostic",
+          "status": "pass",
+          "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic",
+          "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic/tier5_20b_results.json",
+          "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic/tier5_20b_report.md",
+          "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic/tier5_20b_summary.csv",
+          "canonical": true,
+          "claim": "Tier 5.20b tested same-budget 8 LIF / 8 resonant and 12 LIF / 4 resonant hybrid polyp proxies. The harness passed, but neither hybrid was promoted because both retained material regressions versus v2.3 and did not separate sufficiently from shams.",
+          "caveat": "Software repair diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence."
+        }
+      },
+      {
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_30_readiness_latest_manifest.json",
         "registry_entry_id": "tier4_30_readiness_lifecycle_native_audit",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.404589+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.553833+00:00",
           "source_generated_at_utc": "2026-05-05T19:31:07+00:00",
           "registry_entry_id": "tier4_30_readiness_lifecycle_native_audit",
           "tier": "Tier 4.30-readiness - Lifecycle-Native Preflight / Layering Audit",
@@ -14323,7 +14493,7 @@
           "caveat": "Engineering audit only; not lifecycle implementation, not hardware evidence, not speedup, not multi-chip scaling, and not native v2.2 temporal migration."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.464174+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.154394+00:00",
           "source_generated_at_utc": "2026-05-05T19:31:07+00:00",
           "registry_entry_id": "tier4_30_readiness_lifecycle_native_audit",
           "tier": "Tier 4.30-readiness - Lifecycle-Native Preflight / Layering Audit",
@@ -14341,7 +14511,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_30_latest_manifest.json",
         "registry_entry_id": "tier4_30_lifecycle_native_contract",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.406690+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.554812+00:00",
           "source_generated_at_utc": "2026-05-05T19:41:04+00:00",
           "registry_entry_id": "tier4_30_lifecycle_native_contract",
           "tier": "Tier 4.30 - Lifecycle-Native Static-Pool Contract",
@@ -14355,7 +14525,7 @@
           "caveat": "Local engineering contract only; not runtime implementation, not hardware evidence, not lifecycle/self-scaling proof, and not v2.2 temporal migration."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.464809+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.155010+00:00",
           "source_generated_at_utc": "2026-05-05T19:41:04+00:00",
           "registry_entry_id": "tier4_30_lifecycle_native_contract",
           "tier": "Tier 4.30 - Lifecycle-Native Static-Pool Contract",
@@ -14373,7 +14543,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_30a_latest_manifest.json",
         "registry_entry_id": "tier4_30a_static_pool_lifecycle_reference",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.407941+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.555700+00:00",
           "source_generated_at_utc": "2026-05-05T19:56:20+00:00",
           "registry_entry_id": "tier4_30a_static_pool_lifecycle_reference",
           "tier": "Tier 4.30a - Local Static-Pool Lifecycle Reference",
@@ -14387,7 +14557,7 @@
           "caveat": "Local deterministic reference only; not runtime C, not hardware evidence, not task benefit, not lifecycle baseline freeze, and not v2.2 temporal-state migration."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.465398+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.155554+00:00",
           "source_generated_at_utc": "2026-05-05T19:56:20+00:00",
           "registry_entry_id": "tier4_30a_static_pool_lifecycle_reference",
           "tier": "Tier 4.30a - Local Static-Pool Lifecycle Reference",
@@ -14405,7 +14575,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_30b_latest_manifest.json",
         "registry_entry_id": "tier4_30b_lifecycle_runtime_source_audit",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.408987+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.556436+00:00",
           "source_generated_at_utc": "2026-05-05T20:20:10+00:00",
           "registry_entry_id": "tier4_30b_lifecycle_runtime_source_audit",
           "tier": "Tier 4.30b - Lifecycle Runtime Source Audit",
@@ -14419,7 +14589,7 @@
           "caveat": "Local source/runtime host evidence only; not hardware evidence, not task-effect evidence, not multi-core lifecycle migration, and not a baseline freeze."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.465855+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.156026+00:00",
           "source_generated_at_utc": "2026-05-05T20:20:10+00:00",
           "registry_entry_id": "tier4_30b_lifecycle_runtime_source_audit",
           "tier": "Tier 4.30b - Lifecycle Runtime Source Audit",
@@ -14437,7 +14607,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_30b_hw_latest_manifest.json",
         "registry_entry_id": "tier4_30b_hw_lifecycle_smoke",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.410698+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.557544+00:00",
           "source_generated_at_utc": "2026-05-05T21:01:28+00:00",
           "registry_entry_id": "tier4_30b_hw_lifecycle_smoke",
           "tier": "Tier 4.30b-hw - Single-Core Lifecycle Active-Mask/Lineage Hardware Smoke",
@@ -14451,7 +14621,7 @@
           "caveat": "Hardware smoke only; not lifecycle task benefit, not multi-core lifecycle migration, not speedup, not multi-chip scaling, and not a lifecycle baseline freeze."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.472314+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.156837+00:00",
           "source_generated_at_utc": "2026-05-05T21:01:28+00:00",
           "registry_entry_id": "tier4_30b_hw_lifecycle_smoke",
           "tier": "Tier 4.30b-hw - Single-Core Lifecycle Active-Mask/Lineage Hardware Smoke",
@@ -14469,7 +14639,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_30c_latest_manifest.json",
         "registry_entry_id": "tier4_30c_multicore_lifecycle_split",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.411599+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.558549+00:00",
           "source_generated_at_utc": "2026-05-05T21:23:33+00:00",
           "registry_entry_id": "tier4_30c_multicore_lifecycle_split",
           "tier": "Tier 4.30c - Multi-Core Lifecycle State Split",
@@ -14483,7 +14653,7 @@
           "caveat": "Local contract/reference evidence only; not C runtime implementation, not EBRAINS hardware evidence, not lifecycle task benefit, and not a lifecycle baseline freeze."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.477587+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.157356+00:00",
           "source_generated_at_utc": "2026-05-05T21:23:33+00:00",
           "registry_entry_id": "tier4_30c_multicore_lifecycle_split",
           "tier": "Tier 4.30c - Multi-Core Lifecycle State Split",
@@ -14501,7 +14671,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_30d_latest_manifest.json",
         "registry_entry_id": "tier4_30d_lifecycle_runtime_source_audit",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.412383+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.559622+00:00",
           "source_generated_at_utc": "2026-05-05T22:11:32+00:00",
           "registry_entry_id": "tier4_30d_lifecycle_runtime_source_audit",
           "tier": "Tier 4.30d - Multi-Core Lifecycle Runtime Source Audit",
@@ -14515,7 +14685,7 @@
           "caveat": "Local source/runtime host evidence only; not EBRAINS hardware evidence, not task benefit, not speedup, not multi-chip scaling, not v2.2 temporal migration, and not a lifecycle baseline freeze."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.478150+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.157861+00:00",
           "source_generated_at_utc": "2026-05-05T22:11:32+00:00",
           "registry_entry_id": "tier4_30d_lifecycle_runtime_source_audit",
           "tier": "Tier 4.30d - Multi-Core Lifecycle Runtime Source Audit",
@@ -14533,7 +14703,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_30e_hw_latest_manifest.json",
         "registry_entry_id": "tier4_30e_multicore_lifecycle_hardware_smoke",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.413653+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.560800+00:00",
           "source_generated_at_utc": "2026-05-05T22:57:26+00:00",
           "registry_entry_id": "tier4_30e_multicore_lifecycle_hardware_smoke",
           "tier": "Tier 4.30e - Multi-Core Lifecycle Hardware Smoke",
@@ -14547,7 +14717,7 @@
           "caveat": "Hardware smoke only; not lifecycle task benefit, not lifecycle sham-control success, not speedup, not multi-chip scaling, not v2.2 temporal migration, and not a lifecycle baseline freeze."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.487795+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.159264+00:00",
           "source_generated_at_utc": "2026-05-05T22:57:26+00:00",
           "registry_entry_id": "tier4_30e_multicore_lifecycle_hardware_smoke",
           "tier": "Tier 4.30e - Multi-Core Lifecycle Hardware Smoke",
@@ -14565,7 +14735,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_30f_hw_latest_manifest.json",
         "registry_entry_id": "tier4_30f_lifecycle_sham_hardware_subset",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.415701+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.562773+00:00",
           "source_generated_at_utc": "2026-05-06T02:04:44+00:00",
           "registry_entry_id": "tier4_30f_lifecycle_sham_hardware_subset",
           "tier": "Tier 4.30f - Lifecycle Sham-Control Hardware Subset",
@@ -14579,7 +14749,7 @@
           "caveat": "Hardware sham-control subset only; not lifecycle task benefit, not autonomous lifecycle-to-learning MCPL, not speedup, not multi-chip scaling, not v2.2 temporal migration, and not a lifecycle baseline freeze."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.504325+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.161257+00:00",
           "source_generated_at_utc": "2026-05-06T02:04:44+00:00",
           "registry_entry_id": "tier4_30f_lifecycle_sham_hardware_subset",
           "tier": "Tier 4.30f - Lifecycle Sham-Control Hardware Subset",
@@ -14597,7 +14767,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_30g_latest_manifest.json",
         "registry_entry_id": "tier4_30g_lifecycle_task_benefit_resource_bridge",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.416596+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.563845+00:00",
           "source_generated_at_utc": "2026-05-06T03:09:56+00:00",
           "registry_entry_id": "tier4_30g_lifecycle_task_benefit_resource_bridge",
           "tier": "Tier 4.30g - Lifecycle Task-Benefit / Resource Bridge",
@@ -14611,7 +14781,7 @@
           "caveat": "Local contract/reference evidence only; not a hardware task-benefit pass, not autonomous lifecycle-to-learning MCPL, not multi-chip scaling, and not a lifecycle baseline freeze."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.505140+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.162076+00:00",
           "source_generated_at_utc": "2026-05-06T03:09:56+00:00",
           "registry_entry_id": "tier4_30g_lifecycle_task_benefit_resource_bridge",
           "tier": "Tier 4.30g - Lifecycle Task-Benefit / Resource Bridge",
@@ -14629,7 +14799,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_30g_hw_latest_manifest.json",
         "registry_entry_id": "tier4_30g_lifecycle_task_benefit_hardware_bridge",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.419256+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.566530+00:00",
           "source_generated_at_utc": "2026-05-06T03:40:20+00:00",
           "registry_entry_id": "tier4_30g_lifecycle_task_benefit_hardware_bridge",
           "tier": "Tier 4.30g-hw - Lifecycle Task-Benefit / Resource Bridge Hardware",
@@ -14643,7 +14813,7 @@
           "caveat": "Hardware task-benefit/resource bridge only; host ferries the lifecycle gate into the task path. Not autonomous lifecycle-to-learning MCPL, not speedup, not multi-chip scaling, not v2.2 temporal migration, and not full organism autonomy."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.513250+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.164552+00:00",
           "source_generated_at_utc": "2026-05-06T03:40:20+00:00",
           "registry_entry_id": "tier4_30g_lifecycle_task_benefit_hardware_bridge",
           "tier": "Tier 4.30g-hw - Lifecycle Task-Benefit / Resource Bridge Hardware",
@@ -14661,7 +14831,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_31a_latest_manifest.json",
         "registry_entry_id": "tier4_31a_native_temporal_substrate_readiness",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.420258+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.567960+00:00",
           "source_generated_at_utc": "2026-05-06T04:17:00+00:00",
           "registry_entry_id": "tier4_31a_native_temporal_substrate_readiness",
           "tier": "Tier 4.31a - Native Temporal-Substrate Readiness",
@@ -14675,7 +14845,7 @@
           "caveat": "Local readiness/contract evidence only; not C runtime implementation, not SpiNNaker hardware evidence, not speedup, not multi-chip scaling, not nonlinear recurrence, not universal benchmark superiority, and not a new baseline freeze."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.514269+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.165312+00:00",
           "source_generated_at_utc": "2026-05-06T04:17:00+00:00",
           "registry_entry_id": "tier4_31a_native_temporal_substrate_readiness",
           "tier": "Tier 4.31a - Native Temporal-Substrate Readiness",
@@ -14693,7 +14863,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_31b_latest_manifest.json",
         "registry_entry_id": "tier4_31b_native_temporal_fixed_point_reference",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.421360+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.569159+00:00",
           "source_generated_at_utc": "2026-05-06T15:21:52+00:00",
           "registry_entry_id": "tier4_31b_native_temporal_fixed_point_reference",
           "tier": "Tier 4.31b - Native Temporal-Substrate Local Fixed-Point Reference",
@@ -14707,7 +14877,7 @@
           "caveat": "Local fixed-point reference/parity evidence only; not C runtime implementation, not SpiNNaker hardware evidence, not speedup, not multi-chip scaling, not nonlinear recurrence, not universal benchmark superiority, and not a new baseline freeze."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.522273+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.166128+00:00",
           "source_generated_at_utc": "2026-05-06T15:21:52+00:00",
           "registry_entry_id": "tier4_31b_native_temporal_fixed_point_reference",
           "tier": "Tier 4.31b - Native Temporal-Substrate Local Fixed-Point Reference",
@@ -14725,7 +14895,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_31c_latest_manifest.json",
         "registry_entry_id": "tier4_31c_native_temporal_runtime_source_audit",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.423060+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.570298+00:00",
           "source_generated_at_utc": "2026-05-06T15:44:12+00:00",
           "registry_entry_id": "tier4_31c_native_temporal_runtime_source_audit",
           "tier": "Tier 4.31c - Native Temporal-Substrate Runtime Source Audit",
@@ -14739,7 +14909,7 @@
           "caveat": "Local source/runtime host evidence only; not SpiNNaker hardware evidence, not speedup, not multi-chip scaling, not nonlinear recurrence, not native replay/sleep, not native macro eligibility, not universal benchmark superiority, and not a new baseline freeze."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.526903+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.166703+00:00",
           "source_generated_at_utc": "2026-05-06T15:44:12+00:00",
           "registry_entry_id": "tier4_31c_native_temporal_runtime_source_audit",
           "tier": "Tier 4.31c - Native Temporal-Substrate Runtime Source Audit",
@@ -14757,7 +14927,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_latest_manifest.json",
         "registry_entry_id": "tier4_31d_native_temporal_hardware_smoke",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.425409+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.571552+00:00",
           "source_generated_at_utc": "2026-05-06T20:10:50+00:00",
           "registry_entry_id": "tier4_31d_native_temporal_hardware_smoke",
           "tier": "Tier 4.31d-hw - Native Temporal-Substrate Hardware Smoke",
@@ -14771,7 +14941,7 @@
           "caveat": "One-board hardware smoke only; not repeatability, not speedup, not benchmark superiority, not multi-chip scaling, not nonlinear recurrence, not native replay/sleep, not native macro eligibility, not full v2.2 hardware transfer, and not a baseline freeze."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.528010+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.167675+00:00",
           "source_generated_at_utc": "2026-05-06T20:10:50+00:00",
           "registry_entry_id": "tier4_31d_native_temporal_hardware_smoke",
           "tier": "Tier 4.31d-hw - Native Temporal-Substrate Hardware Smoke",
@@ -14789,7 +14959,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_31e_latest_manifest.json",
         "registry_entry_id": "tier4_31e_native_replay_eligibility_decision_closeout",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.426768+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.572501+00:00",
           "source_generated_at_utc": "2026-05-06T20:30:08+00:00",
           "registry_entry_id": "tier4_31e_native_replay_eligibility_decision_closeout",
           "tier": "Tier 4.31e - Native Replay/Eligibility Decision Closeout",
@@ -14803,7 +14973,7 @@
           "caveat": "Local documentation/decision evidence only; not a hardware run, not a new mechanism implementation, not speedup, not multi-chip scaling, not native replay/sleep proof, not native eligibility proof, not full v2.2 hardware transfer, and not a baseline freeze."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.528515+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.168161+00:00",
           "source_generated_at_utc": "2026-05-06T20:30:08+00:00",
           "registry_entry_id": "tier4_31e_native_replay_eligibility_decision_closeout",
           "tier": "Tier 4.31e - Native Replay/Eligibility Decision Closeout",
@@ -14821,7 +14991,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_32_latest_manifest.json",
         "registry_entry_id": "tier4_32_native_runtime_mapping_resource_model",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.427733+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.573391+00:00",
           "source_generated_at_utc": "2026-05-06T21:42:20+00:00",
           "registry_entry_id": "tier4_32_native_runtime_mapping_resource_model",
           "tier": "Tier 4.32 - Native Runtime Mapping/Resource Model",
@@ -14835,7 +15005,7 @@
           "caveat": "Local resource/mapping model only; not a new hardware run, not speedup evidence, not multi-chip scaling, not benchmark superiority, not full organism autonomy, and not a baseline freeze."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.529142+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.168736+00:00",
           "source_generated_at_utc": "2026-05-06T21:42:20+00:00",
           "registry_entry_id": "tier4_32_native_runtime_mapping_resource_model",
           "tier": "Tier 4.32 - Native Runtime Mapping/Resource Model",
@@ -14853,7 +15023,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_latest_manifest.json",
         "registry_entry_id": "tier4_32a_single_chip_scale_stress_preflight",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.428539+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.574191+00:00",
           "source_generated_at_utc": "2026-05-06T22:24:12+00:00",
           "registry_entry_id": "tier4_32a_single_chip_scale_stress_preflight",
           "tier": "Tier 4.32a - Single-Chip Multi-Core Scale-Stress Preflight",
@@ -14867,7 +15037,7 @@
           "caveat": "Local preflight/source-inspection evidence only; not a SpiNNaker hardware run, not speedup evidence, not replicated-shard scaling, not multi-chip scaling, not static reef partition proof, not benchmark superiority, and not a baseline freeze."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.529756+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.169299+00:00",
           "source_generated_at_utc": "2026-05-06T22:24:12+00:00",
           "registry_entry_id": "tier4_32a_single_chip_scale_stress_preflight",
           "tier": "Tier 4.32a - Single-Chip Multi-Core Scale-Stress Preflight",
@@ -14885,7 +15055,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_r0_latest_manifest.json",
         "registry_entry_id": "tier4_32a_r0_protocol_truth_audit",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.429225+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.574942+00:00",
           "source_generated_at_utc": "2026-05-06T22:39:38+00:00",
           "registry_entry_id": "tier4_32a_r0_protocol_truth_audit",
           "tier": "Tier 4.32a-r0 - Protocol Truth Audit",
@@ -14899,7 +15069,7 @@
           "caveat": "Local source/documentation audit only; not SpiNNaker hardware evidence, not speedup evidence, not multi-chip scaling, not static reef partition proof, and not a baseline freeze."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.530205+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.169718+00:00",
           "source_generated_at_utc": "2026-05-06T22:39:38+00:00",
           "registry_entry_id": "tier4_32a_r0_protocol_truth_audit",
           "tier": "Tier 4.32a-r0 - Protocol Truth Audit",
@@ -14917,7 +15087,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_r1_latest_manifest.json",
         "registry_entry_id": "tier4_32a_r1_mcpl_lookup_repair",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.429886+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.576150+00:00",
           "source_generated_at_utc": "2026-05-06T23:17:55+00:00",
           "registry_entry_id": "tier4_32a_r1_mcpl_lookup_repair",
           "tier": "Tier 4.32a-r1 - Confidence-Bearing Shard-Aware MCPL Lookup Repair",
@@ -14931,7 +15101,7 @@
           "caveat": "Local source/runtime evidence only; not SpiNNaker hardware evidence, not speedup evidence, not replicated-shard scaling, not multi-chip scaling, not static reef partitioning, and not a baseline freeze."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.530737+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.170271+00:00",
           "source_generated_at_utc": "2026-05-06T23:17:55+00:00",
           "registry_entry_id": "tier4_32a_r1_mcpl_lookup_repair",
           "tier": "Tier 4.32a-r1 - Confidence-Bearing Shard-Aware MCPL Lookup Repair",
@@ -14949,7 +15119,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_hw_replicated_latest_manifest.json",
         "registry_entry_id": "tier4_32a_hw_replicated_shard_stress",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.433463+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.579867+00:00",
           "source_generated_at_utc": "2026-05-07T01:14:36+00:00",
           "registry_entry_id": "tier4_32a_hw_replicated_shard_stress",
           "tier": "Tier 4.32a-hw-replicated - Replicated-Shard MCPL-First Scale Stress",
@@ -14963,7 +15133,7 @@
           "caveat": "Single-chip replicated-shard hardware stress only; not multi-chip evidence, not speedup evidence, not static reef partitioning, not benchmark superiority, and not a native-scale baseline freeze by itself."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.534200+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.173352+00:00",
           "source_generated_at_utc": "2026-05-07T01:14:36+00:00",
           "registry_entry_id": "tier4_32a_hw_replicated_shard_stress",
           "tier": "Tier 4.32a-hw-replicated - Replicated-Shard MCPL-First Scale Stress",
@@ -14981,7 +15151,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_32b_latest_manifest.json",
         "registry_entry_id": "tier4_32b_static_reef_partition_smoke",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.435037+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.581278+00:00",
           "source_generated_at_utc": "2026-05-07T01:44:19+00:00",
           "registry_entry_id": "tier4_32b_static_reef_partition_smoke",
           "tier": "Tier 4.32b - Static Reef Partition Smoke/Resource Mapping",
@@ -14995,7 +15165,7 @@
           "caveat": "Local static partition/resource evidence only; not a new SpiNNaker hardware run, not speedup evidence, not one-polyp-one-chip evidence, not multi-chip evidence, not benchmark superiority, and not a native-scale baseline freeze."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.535162+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.174179+00:00",
           "source_generated_at_utc": "2026-05-07T01:44:19+00:00",
           "registry_entry_id": "tier4_32b_static_reef_partition_smoke",
           "tier": "Tier 4.32b - Static Reef Partition Smoke/Resource Mapping",
@@ -15013,7 +15183,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_32c_latest_manifest.json",
         "registry_entry_id": "tier4_32c_interchip_feasibility_contract",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.436116+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.582319+00:00",
           "source_generated_at_utc": "2026-05-07T02:49:17+00:00",
           "registry_entry_id": "tier4_32c_interchip_feasibility_contract",
           "tier": "Tier 4.32c - Inter-Chip Feasibility Contract",
@@ -15027,7 +15197,7 @@
           "caveat": "Local contract evidence only; not SpiNNaker hardware evidence, not multi-chip execution evidence, not true two-partition cross-chip learning evidence, not speedup evidence, not learning-scale evidence, not benchmark superiority, and not a native-scale baseline freeze."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.535979+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.174817+00:00",
           "source_generated_at_utc": "2026-05-07T02:49:17+00:00",
           "registry_entry_id": "tier4_32c_interchip_feasibility_contract",
           "tier": "Tier 4.32c - Inter-Chip Feasibility Contract",
@@ -15045,7 +15215,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_32d_r0_latest_manifest.json",
         "registry_entry_id": "tier4_32d_r0_interchip_route_source_audit",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.438104+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.583220+00:00",
           "source_generated_at_utc": "2026-05-07T02:59:31+00:00",
           "registry_entry_id": "tier4_32d_r0_interchip_route_source_audit",
           "tier": "Tier 4.32d-r0 - Inter-Chip Route/Source/Package Audit",
@@ -15059,7 +15229,7 @@
           "caveat": "Local audit evidence only; not SpiNNaker hardware evidence, not an EBRAINS package, not multi-chip execution evidence, not speedup evidence, not learning-scale evidence, not benchmark superiority, and not a native-scale baseline freeze."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.536548+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.175305+00:00",
           "source_generated_at_utc": "2026-05-07T02:59:31+00:00",
           "registry_entry_id": "tier4_32d_r0_interchip_route_source_audit",
           "tier": "Tier 4.32d-r0 - Inter-Chip Route/Source/Package Audit",
@@ -15077,7 +15247,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_32d_r1_latest_manifest.json",
         "registry_entry_id": "tier4_32d_r1_interchip_route_repair_local_qa",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.439084+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.584041+00:00",
           "source_generated_at_utc": "2026-05-07T03:09:28+00:00",
           "registry_entry_id": "tier4_32d_r1_interchip_route_repair_local_qa",
           "tier": "Tier 4.32d-r1 - Inter-Chip MCPL Route Repair Local QA",
@@ -15091,7 +15261,7 @@
           "caveat": "Local source/runtime QA only; not SpiNNaker hardware evidence, not an EBRAINS package, not multi-chip execution evidence, not learning-scale evidence, not speedup evidence, not benchmark superiority, and not a native-scale baseline freeze."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.537080+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.176289+00:00",
           "source_generated_at_utc": "2026-05-07T03:09:28+00:00",
           "registry_entry_id": "tier4_32d_r1_interchip_route_repair_local_qa",
           "tier": "Tier 4.32d-r1 - Inter-Chip MCPL Route Repair Local QA",
@@ -15109,7 +15279,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_32d_latest_manifest.json",
         "registry_entry_id": "tier4_32d_two_chip_mcpl_lookup_hardware_smoke",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.440934+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.585313+00:00",
           "source_generated_at_utc": "2026-05-07T08:03:40+00:00",
           "registry_entry_id": "tier4_32d_two_chip_mcpl_lookup_hardware_smoke",
           "tier": "Tier 4.32d - Two-Chip Split-Role Single-Shard MCPL Lookup Smoke",
@@ -15123,7 +15293,7 @@
           "caveat": "Two-chip communication/readback hardware smoke only; not learning-scale evidence, not speedup evidence, not benchmark superiority, not true two-partition cross-chip learning, not lifecycle scaling, not multi-shard learning, and not a native-scale baseline freeze."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.537977+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.177194+00:00",
           "source_generated_at_utc": "2026-05-07T08:03:40+00:00",
           "registry_entry_id": "tier4_32d_two_chip_mcpl_lookup_hardware_smoke",
           "tier": "Tier 4.32d - Two-Chip Split-Role Single-Shard MCPL Lookup Smoke",
@@ -15141,7 +15311,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_latest_manifest.json",
         "registry_entry_id": "tier4_32e_multi_chip_learning_microtask",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.443083+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.587117+00:00",
           "source_generated_at_utc": "2026-05-07T17:31:28+00:00",
           "registry_entry_id": "tier4_32e_multi_chip_learning_microtask",
           "tier": "Tier 4.32e - Multi-Chip Learning Micro-Task",
@@ -15155,7 +15325,7 @@
           "caveat": "Two-chip single-shard learning micro-task only; not speedup evidence, not benchmark superiority, not true two-partition cross-chip learning, not lifecycle scaling, not multi-shard learning, and not a native-scale baseline freeze."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.540342+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.178578+00:00",
           "source_generated_at_utc": "2026-05-07T17:31:28+00:00",
           "registry_entry_id": "tier4_32e_multi_chip_learning_microtask",
           "tier": "Tier 4.32e - Multi-Chip Learning Micro-Task",
@@ -15173,7 +15343,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_32f_latest_manifest.json",
         "registry_entry_id": "tier4_32f_multichip_resource_lifecycle_decision",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.444083+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.588617+00:00",
           "source_generated_at_utc": "2026-05-07T19:04:46+00:00",
           "registry_entry_id": "tier4_32f_multichip_resource_lifecycle_decision",
           "tier": "Tier 4.32f - Multi-Chip Resource/Lifecycle Decision Contract",
@@ -15187,7 +15357,7 @@
           "caveat": "Local decision/contract evidence only; not hardware evidence, not lifecycle scaling, not speedup evidence, not benchmark superiority, not true two-partition learning, not multi-shard learning, and not a native-scale baseline freeze."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.542541+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.179258+00:00",
           "source_generated_at_utc": "2026-05-07T19:04:46+00:00",
           "registry_entry_id": "tier4_32f_multichip_resource_lifecycle_decision",
           "tier": "Tier 4.32f - Multi-Chip Resource/Lifecycle Decision Contract",
@@ -15205,7 +15375,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_32g_r0_latest_manifest.json",
         "registry_entry_id": "tier4_32g_r0_multichip_lifecycle_route_source_audit",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.444883+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.589820+00:00",
           "source_generated_at_utc": "2026-05-07T19:40:24+00:00",
           "registry_entry_id": "tier4_32g_r0_multichip_lifecycle_route_source_audit",
           "tier": "Tier 4.32g-r0 - Multi-Chip Lifecycle Route/Source Repair Audit",
@@ -15219,7 +15389,7 @@
           "caveat": "Local source/runtime QA only; not SpiNNaker hardware evidence, not lifecycle scaling, not speedup evidence, not benchmark superiority, not true two-partition learning, not multi-shard learning, and not a native-scale baseline freeze."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.543285+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.179806+00:00",
           "source_generated_at_utc": "2026-05-07T19:40:24+00:00",
           "registry_entry_id": "tier4_32g_r0_multichip_lifecycle_route_source_audit",
           "tier": "Tier 4.32g-r0 - Multi-Chip Lifecycle Route/Source Repair Audit",
@@ -15237,7 +15407,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_32g_latest_manifest.json",
         "registry_entry_id": "tier4_32g_two_chip_lifecycle_traffic_resource_smoke",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.446060+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.590918+00:00",
           "source_generated_at_utc": "2026-05-08T17:09:21+00:00",
           "registry_entry_id": "tier4_32g_two_chip_lifecycle_traffic_resource_smoke",
           "tier": "Tier 4.32g - Two-Chip Lifecycle Traffic/Resource Hardware Smoke",
@@ -15251,7 +15421,7 @@
           "caveat": "Two-chip lifecycle traffic/resource smoke only; not lifecycle scaling, not speedup evidence, not benchmark superiority, not true partitioned ecology, not multi-shard learning, and not a native-scale baseline freeze by itself."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.544819+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.180486+00:00",
           "source_generated_at_utc": "2026-05-08T17:09:21+00:00",
           "registry_entry_id": "tier4_32g_two_chip_lifecycle_traffic_resource_smoke",
           "tier": "Tier 4.32g - Two-Chip Lifecycle Traffic/Resource Hardware Smoke",
@@ -15269,7 +15439,7 @@
         "path": "/Users/james/JKS:CRA/controlled_test_output/tier4_32h_latest_manifest.json",
         "registry_entry_id": "tier4_32h_native_scale_evidence_closeout",
         "previous_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:49.446962+00:00",
+          "generated_at_utc": "2026-05-08T22:16:53.592084+00:00",
           "source_generated_at_utc": "2026-05-08T17:35:32+00:00",
           "registry_entry_id": "tier4_32h_native_scale_evidence_closeout",
           "tier": "Tier 4.32h - Native-Scale Evidence Closeout / Baseline Decision",
@@ -15283,7 +15453,7 @@
           "caveat": "Local evidence closeout only; not a new hardware run, not speedup evidence, not benchmark evidence, not real-task usefulness, not true two-partition learning, not lifecycle scaling, not multi-shard learning, and not AGI/ASI evidence."
         },
         "new_manifest": {
-          "generated_at_utc": "2026-05-08T21:42:59.545527+00:00",
+          "generated_at_utc": "2026-05-08T22:16:59.181050+00:00",
           "source_generated_at_utc": "2026-05-08T17:35:32+00:00",
           "registry_entry_id": "tier4_32h_native_scale_evidence_closeout",
           "tier": "Tier 4.32h - Native-Scale Evidence Closeout / Baseline Decision",

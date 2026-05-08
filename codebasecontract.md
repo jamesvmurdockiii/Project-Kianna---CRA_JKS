@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-08T21:36:31+00:00.
+Last updated: 2026-05-08T22:20:00+00:00.
 
 Current repo root:
 
@@ -158,6 +158,48 @@ Tier 7.1f = COMPLETE, PASS, 10/10 criteria
   Boundary: contract/family-selection only; not NAB data preflight, not scoring,
             not public usefulness evidence, not a baseline freeze, and not
             hardware/native transfer evidence.
+```
+
+Latest optional mechanism diagnostic:
+
+```text
+Tier 5.20a = COMPLETE, PASS harness, NOT PROMOTED
+  Source: controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic/
+  Runner: experiments/tier5_20a_resonant_branch_polyp_diagnostic.py
+  Outcome: resonant_branch_not_promoted
+  Mechanism tested: same-budget resonant LIF-style branch proxy replacing the
+                    current 16 excitatory neurons inside each 32-neuron polyp.
+  Key result: helped variable_delay_multi_cue and slightly helped
+              anomaly_detection_stream, but materially regressed Mackey-Glass,
+              Lorenz, NARMA10, and hidden_context_reentry versus v2.3.
+  Decision: do not integrate into the core organism and do not freeze a new
+            baseline. Keep as documented diagnostic/scaffold evidence only.
+  Boundary: software diagnostic only; not a core polyp replacement, not hardware
+            evidence, not a promoted mechanism, not a baseline freeze, and not
+            AGI/ASI evidence.
+```
+
+Latest optional mechanism repair:
+
+```text
+Tier 5.20b = COMPLETE, PASS harness, NOT PROMOTED
+  Source: controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic/
+  Runner: experiments/tier5_20b_hybrid_resonant_polyp_diagnostic.py
+  Outcome: hybrid_resonant_not_promoted
+  Variants tested:
+    - 8 standard LIF/recurrent excitatory units + 8 resonant branches
+    - 12 standard LIF/recurrent excitatory units + 4 resonant branches
+  Best candidate: hybrid_8_lif_8_resonant
+  Key result: the 8/8 hybrid won two tasks but still had two material
+              regressions versus v2.3 and only one sham-separated task; the
+              12/4 hybrid had fewer regressions but weaker task wins. Neither
+              variant cleared the promotion rule.
+  Decision: do not integrate hybrid resonant branches into the core organism.
+            Resonant branches remain a documented idea/scaffold, not a
+            canonical CRA mechanism.
+  Boundary: software diagnostic only; not a core polyp replacement, not hardware
+            evidence, not a promoted mechanism, not a baseline freeze, and not
+            AGI/ASI evidence.
 ```
 
 Current hardware/runtime baseline decision:
