@@ -1,0 +1,63 @@
+{
+  "artifacts": [
+    {
+      "bytes": 296,
+      "name": "bootstrap_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate/tier7_1h_bootstrap.csv",
+      "sha256": "7463f966f7bb69cd137286563fcd8c0059f5e6101c8e4dabbdf1c5a90465c869"
+    },
+    {
+      "bytes": 227418,
+      "name": "model_metrics_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate/tier7_1h_model_metrics.csv",
+      "sha256": "4fc60ec14b8f322a4f839fdc1fca9e7d654a2c88b28341cc8a2bc4ef7a320dbc"
+    },
+    {
+      "bytes": 3258,
+      "name": "model_summary_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate/tier7_1h_model_summary.csv",
+      "sha256": "4df148ddef994e91a4e5c798723ef030701b9efd73ee4a3393874757335b17a8"
+    },
+    {
+      "bytes": 1089,
+      "name": "report_md",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate/tier7_1h_report.md",
+      "sha256": "e385bc63487bb3aa355570441e4dd40c6f181b47bfee7c91ee85f7ade80b33af"
+    },
+    {
+      "bytes": 19027,
+      "name": "results_json",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate/tier7_1h_results.json",
+      "sha256": "e52352c5aae997ac9b1aed5cf45b32da51a8f0c00f99e07f0640d9a109883d78"
+    },
+    {
+      "bytes": 725488,
+      "name": "score_preview_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate/tier7_1h_score_preview.csv",
+      "sha256": "f1eb563a22c2c949a19d21ff0e481f49843f565a66a69ed87a30c0fa6b482fef"
+    },
+    {
+      "bytes": 2135,
+      "name": "scoring_contract_json",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate/tier7_1h_scoring_contract.json",
+      "sha256": "670dff7ed2c32da44620254e2e98a0822bb5bc365067b2eac602dc1580d98ddd"
+    },
+    {
+      "bytes": 3161,
+      "name": "summary_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate/tier7_1h_summary.csv",
+      "sha256": "3ce14c78322aa8ba0bc9a4bea5a1723e4f3e7ff3c19465a59ba5b06bf74d4cde"
+    },
+    {
+      "bytes": 40163,
+      "name": "thresholds_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate/tier7_1h_thresholds.csv",
+      "sha256": "425f2d86cbc2c99989c4de1b623f5be40e10a7401eba822df4b97d335d52b2db"
+    }
+  ],
+  "generated_at_utc": "2026-05-08T23:07:55+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate",
+  "runner_revision": "tier7_1h_compact_nab_scoring_gate_20260508_0001",
+  "status": "pass",
+  "tier": "Tier 7.1h - Compact NAB Scoring Gate"
+}

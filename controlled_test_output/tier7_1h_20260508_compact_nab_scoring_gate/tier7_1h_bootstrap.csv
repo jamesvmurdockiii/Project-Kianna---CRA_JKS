@@ -1,0 +1,2 @@
+candidate,baseline,paired_units,mean_delta,ci_low,ci_high,positive_fraction,metric
+v2_3_generic_recurrent_prediction_error,fixed_random_reservoir_online_residual,15,-0.007884258504292247,-0.03766786485787427,0.015726447281909233,0.3085,paired primary-score delta; positive means candidate better

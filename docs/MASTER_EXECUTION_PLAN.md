@@ -1168,29 +1168,46 @@ ability.
     Boundary: preflight only; no NAB scoring, usefulness claim, freeze, or
     hardware transfer.
 
-89. **CURRENT ACTIVE STEP** - Tier 7.1h compact NAB scoring gate:
-    predeclare the compact NAB subset, detector threshold policy, online
-    anomaly baselines, CRA v2.2/v2.3 detectors, shams, primary metrics,
-    bootstrap/statistical support, and leakage controls. Only then score the
-    pinned NAB subset from Tier 7.1g.
+89. **COMPLETE** - Tier 7.1h compact NAB scoring gate:
+    passed 16/16 at
+    `controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate/`.
+    It scored the pinned compact NAB subset with label-separated online anomaly
+    scores, fair online baselines, CRA v2.2/v2.3 detectors, v2.3 shams, and
+    bootstrap support. Outcome:
+    `v2_3_partial_nab_signal_requires_confirmation`. v2.3 ranked second,
+    beating v2.2 (`0.22649365525011686` versus `0.19995024953915835`) and all
+    three v2.3 shams, but it did not beat the fixed random-reservoir online
+    residual baseline (`0.23437791375440906`), and the paired bootstrap CI
+    against that baseline crossed zero (`[-0.03766786485787427,
+    0.015726447281909233]`). Boundary: compact software scoring only; no full
+    NAB benchmark claim, public usefulness proof, freeze, or hardware/native
+    transfer.
 
-90. Mechanism iteration loop: add exactly one planned general mechanism at a
+90. **CURRENT ACTIVE STEP** - Tier 7.1i NAB fairness/statistical confirmation
+    or failure localization:
+    broaden the predeclared NAB subset beyond the five-file compact gate,
+    preserve the Tier 7.1g label-separation and online detector contracts, rerun
+    v2.3 against the strongest reservoir/online baselines and shams, and decide
+    whether the 7.1h partial signal survives, collapses, or localizes to a
+    stream family/threshold/readout failure.
+
+91. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
     stop the broad usefulness track and narrow the paper.
 
-91. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+92. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines. Start only after the standardized scoreboard or failure diagnosis
     identifies a winning regime, a real failure mode, or a mechanism needing
     external validation.
 
-92. Tier 7.2 held-out task challenge: define held-out families before running;
+93. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout. Include at least one synthetic holdout and one
     real-ish adapter holdout if Tier 7.1 is active.
 
-93. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+94. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines. Candidate domains include
     streaming anomaly detection, predictive-maintenance sensor streams, human
     activity streams, event prediction, ECG/biosignal streams, and finance as
@@ -1551,7 +1568,11 @@ aggregate, and sham-separation gates. Tier 7.1g then passed NAB source/data/
 scoring preflight: the official source commit is pinned, selected streams and
 labels parse, label windows are separated from online rows, chronological smoke
 streams are adapter-sorted, and scoring-interface feasibility is documented.
-The next active public-adapter work is Tier 7.1h compact NAB scoring. Reopen
+Tier 7.1h then passed compact NAB scoring: v2.3 ranked second, beat v2.2 and
+all three v2.3 shams, but did not beat the fixed random-reservoir online
+residual baseline and did not clear bootstrap confirmation. The next active
+public-adapter work is Tier 7.1i NAB fairness/statistical confirmation or
+failure localization over a broader predeclared subset. Reopen
 native work only for targeted transfer after a software task/mechanism earns it
 under the Tier 7/6.2 gates and a separate transfer contract is written.
 It must preserve explicit board/chip/shard identity, message paths, compact

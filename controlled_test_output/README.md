@@ -5,10 +5,10 @@ ledger is `STUDY_REGISTRY.json`; the compact table is `STUDY_REGISTRY.csv`.
 Older reruns, prepared capsules, debug probes, and baseline-frozen
 mechanism bundles outside the formal registry are preserved for audit.
 
-- Generated: `2026-05-08T22:46:38.533056+00:00`
+- Generated: `2026-05-08T23:08:53.723127+00:00`
 - Registry status: **PASS**
-- Canonical evidence entries: `100`
-- Expanded test-entry count: `100`; see the canonical evidence table below for the exact current tier list.
+- Canonical evidence entries: `101`
+- Expanded test-entry count: `101`; see the canonical evidence table below for the exact current tier list.
 
 ## Evidence Categories
 
@@ -86,6 +86,7 @@ mechanism bundles outside the formal registry are preserved for audit.
 | `tier7_1e_cmapss_capped_readout_fairness_confirmation` | **PASS** | `controlled_test_output/tier7_1e_20260508_cmapss_capped_readout_fairness_confirmation` | Statistical/fairness confirmation over Tier 7.1d per-unit results only; not a full C-MAPSS benchmark, not a public usefulness win, not a promoted mechanism, not a baseline freeze, not hardware/native transfer, and not AGI/ASI evidence. |
 | `tier7_1f_next_public_adapter_contract` | **PASS** | `controlled_test_output/tier7_1f_20260508_next_public_adapter_contract` | Contract/family-selection evidence only; not a NAB data preflight, not scoring, not public usefulness evidence, not a baseline freeze, not hardware/native transfer, and not AGI/ASI evidence. |
 | `tier7_1g_nab_source_data_scoring_preflight` | **PASS** | `controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight` | Preflight evidence only; not NAB scoring, not public usefulness evidence, not a baseline freeze, not hardware/native transfer, and not AGI/ASI evidence. |
+| `tier7_1h_compact_nab_scoring_gate` | **PASS** | `controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate` | Compact software scoring only; not a full NAB benchmark, not public usefulness proof by itself, not a baseline freeze, not hardware/native transfer, and not AGI/ASI evidence. |
 | `tier5_20a_resonant_branch_polyp_diagnostic` | **PASS** | `controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic` | Software diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence. |
 | `tier5_20b_hybrid_resonant_polyp_diagnostic` | **PASS** | `controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic` | Software repair diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence. |
 | `tier5_20c_minimal_resonant_polyp_diagnostic` | **PASS** | `controlled_test_output/tier5_20c_20260508_minimal_resonant_polyp_diagnostic` | Software minimal-dose diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence. |

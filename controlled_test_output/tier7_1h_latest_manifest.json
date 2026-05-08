@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-05-08T23:08:53.262205+00:00",
+  "source_generated_at_utc": "2026-05-08T23:07:55+00:00",
+  "registry_entry_id": "tier7_1h_compact_nab_scoring_gate",
+  "tier": "Tier 7.1h - Compact NAB Scoring Gate",
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate/tier7_1h_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate/tier7_1h_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate/tier7_1h_summary.csv",
+  "canonical": true,
+  "claim": "Tier 7.1h scored CRA v2.2/v2.3, fair online anomaly baselines, and v2.3 shams on the pinned compact NAB subset. v2.3 ranked second, beat v2.2 and shams, but did not beat the fixed random-reservoir online residual baseline, so the result is a partial signal requiring broader confirmation.",
+  "caveat": "Compact software scoring only; not a full NAB benchmark, not public usefulness proof by itself, not a baseline freeze, not hardware/native transfer, and not AGI/ASI evidence."
+}

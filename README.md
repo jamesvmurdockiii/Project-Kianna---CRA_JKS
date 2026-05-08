@@ -3,7 +3,7 @@
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
 [![Tests](https://img.shields.io/badge/tests-151%20passing-brightgreen.svg)](#validation)
-[![Evidence](https://img.shields.io/badge/canonical%20evidence-100%20bundles-blue.svg)](STUDY_EVIDENCE_INDEX.md)
+[![Evidence](https://img.shields.io/badge/canonical%20evidence-101%20bundles-blue.svg)](STUDY_EVIDENCE_INDEX.md)
 
 Coral Reef Architecture (CRA) is a neuromorphic learning research platform for
 studying local spiking plasticity, delayed credit assignment, population-level
@@ -57,13 +57,14 @@ controlled ablations, baseline comparisons, and explicit claim boundaries.
 | Latest public adapter fairness confirmation | Tier 7.1e passed from [`controlled_test_output/tier7_1e_20260508_cmapss_capped_readout_fairness_confirmation`](controlled_test_output/tier7_1e_20260508_cmapss_capped_readout_fairness_confirmation): the tiny v2.2 capped-ridge C-MAPSS signal was not statistically confirmed against lag-multichannel ridge. Primary per-unit mean delta was `-0.3690103080637045` RMSE with bootstrap 95% CI `[-1.4191012103865384, 0.6704668696286052]`; no freeze or hardware transfer. |
 | Latest next-adapter contract | Tier 7.1f passed from [`controlled_test_output/tier7_1f_20260508_next_public_adapter_contract`](controlled_test_output/tier7_1f_20260508_next_public_adapter_contract): selected Numenta NAB streaming anomaly detection as the next public adapter family after C-MAPSS non-promotion, with official sources, leakage rules, baselines, metrics, pass/fail criteria, and nonclaims. No data preflight or scoring yet. |
 | Latest NAB source/data preflight | Tier 7.1g passed from [`controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight`](controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight): pinned official NAB commit `ea702d75cc2258d9d7dd35ca8e5e2539d71f3140`, cached source/data/label/scoring files under ignored `.cra_data_cache/`, parsed 5 selected streams and `12` anomaly windows, produced `400` label-separated chronological smoke rows, and documented the scoring-interface contract. No NAB scoring, usefulness claim, freeze, or hardware transfer. |
+| Latest NAB compact scoring gate | Tier 7.1h passed from [`controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate`](controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate): v2.3 ranked `2` behind `fixed_random_reservoir_online_residual`, beat v2.2 (`0.22649365525011686` vs `0.19995024953915835` primary score), separated all three v2.3 shams, but did not beat the best external baseline and bootstrap CI crossed zero. Outcome: `v2_3_partial_nab_signal_requires_confirmation`; no usefulness claim, freeze, or hardware transfer. |
 | Latest optional mechanism diagnostic | Tier 5.20a passed as a harness from [`controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic`](controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic), but the full 16-resonant-branch polyp proxy was **not promoted**: it helped `variable_delay_multi_cue` and slightly helped `anomaly_detection_stream`, but regressed the standard three and hidden-context task versus v2.3. |
 | Latest optional mechanism repair | Tier 5.20b passed as a harness from [`controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic`](controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic), but neither 8 LIF / 8 resonant nor 12 LIF / 4 resonant earned promotion. Best candidate was `hybrid_8_lif_8_resonant`, with all-task geomean MSE `0.2852846857844163` versus v2.3 `0.2610804850928049`, two wins, two material regressions, and only one sham-separated task. No core polyp replacement, freeze, or hardware transfer. |
 | Latest minimal-dose mechanism check | Tier 5.20c passed as a harness from [`controlled_test_output/tier5_20c_20260508_minimal_resonant_polyp_diagnostic`](controlled_test_output/tier5_20c_20260508_minimal_resonant_polyp_diagnostic), but 14 LIF / 2 resonant was **not promoted**: all-task geomean MSE `0.2777975100580056` versus v2.3 `0.2610804850928049`, zero task wins, one material regression, and zero sham-separated tasks. |
 | Latest resonant-heavy mechanism check | Tier 5.20d passed as a harness from [`controlled_test_output/tier5_20d_20260508_resonant_heavy_polyp_diagnostic`](controlled_test_output/tier5_20d_20260508_resonant_heavy_polyp_diagnostic), but 4 LIF / 12 resonant was **not promoted**: all-task geomean MSE `0.29289224348599796` versus v2.3 `0.2610804850928049`, three task wins, two material regressions, and two sham-separated tasks. The signal is real enough to record, but not safe enough to integrate. |
 | Latest near-full resonant check | Tier 5.20e passed as a harness from [`controlled_test_output/tier5_20e_20260508_near_full_resonant_polyp_diagnostic`](controlled_test_output/tier5_20e_20260508_near_full_resonant_polyp_diagnostic), but 2 LIF / 14 resonant was **not promoted**: all-task geomean MSE `0.30374770797663714` versus v2.3 `0.2610804850928049`, three task wins, three material regressions, and two sham-separated tasks. This closes the current resonant branch dose sweep; resonant branches remain parked. |
-| Active next gate | Tier 7.1h compact NAB scoring gate: compare CRA v2.2/v2.3 against fair online anomaly baselines and shams on the predeclared NAB subset with label leakage blocked. |
-| Canonical registry | 100 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
+| Active next gate | Tier 7.1i NAB fairness/statistical confirmation or failure localization: broaden the predeclared NAB subset and test whether the compact v2.3 signal survives against the reservoir baseline. |
+| Canonical registry | 101 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
 | Validation suite | 151 pytest tests plus registry, paper-table, and repository-audit generation. |
 
 ## What CRA Implements
@@ -236,7 +237,7 @@ commit used. A placeholder software citation is:
   author       = {Murdock, James V. and CRA Contributors},
   year         = {2026},
   url          = {https://github.com/jamesvmurdockiii/Project-Kianna---CRA_JKS},
-  note         = {75 canonical evidence bundles; bounded SpiNNaker hardware validation}
+  note         = {101 canonical evidence bundles; bounded SpiNNaker hardware validation}
 }
 ```
 

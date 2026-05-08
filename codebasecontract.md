@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-08T22:40:46+00:00.
+Last updated: 2026-05-08T23:08:37+00:00.
 
 Current repo root:
 
@@ -177,6 +177,26 @@ Tier 7.1g = COMPLETE, PASS, 24/24 criteria
             not a baseline freeze, and not hardware/native transfer evidence.
   Raw data policy: raw NAB cache lives under .cra_data_cache/ and must remain
                    ignored, not committed.
+```
+
+Latest NAB compact scoring gate:
+
+```text
+Tier 7.1h = COMPLETE, PASS, 16/16 criteria
+  Source: controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate/
+  Runner: experiments/tier7_1h_compact_nab_scoring_gate.py
+  Outcome: v2_3_partial_nab_signal_requires_confirmation
+  Best model: fixed_random_reservoir_online_residual, primary score
+              0.23437791375440906
+  v2.3: rank 2, primary score 0.22649365525011686
+  v2.2: primary score 0.19995024953915835
+  Sham separation: v2.3 separated 3/3 v2.3 shams
+  Bootstrap vs best external baseline: mean delta -0.007884258504292247,
+                                      95% CI [-0.03766786485787427,
+                                      0.015726447281909233]
+  Boundary: compact software scoring only; not a full NAB benchmark, not public
+            usefulness proof by itself, not a baseline freeze, and not
+            hardware/native transfer evidence.
 ```
 
 Latest optional mechanism diagnostic:
@@ -752,11 +772,21 @@ Tier 7.1g — COMPLETE. NAB source/data/scoring preflight.
     label-separated chronological smoke rows, and documented scoring-interface
     feasibility. No NAB scoring, freeze, or hardware transfer.
 
-Tier 7.1h — CURRENT ACTIVE STEP. Compact NAB scoring gate.
-  Required first move: predeclare the compact NAB subset, thresholds, online
-    anomaly baselines, CRA v2.2/v2.3 detectors, shams, primary metrics, and
-    leakage controls. Then score only after labels remain separated from online
-    detector rows.
+Tier 7.1h — COMPLETE. Compact NAB scoring gate.
+  Status: LOCAL SOFTWARE PASS, 16/16 criteria.
+  Output: controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate/
+  Result: v2.3 produced a partial compact NAB signal by beating v2.2 and all
+    v2.3 shams, but the fixed random-reservoir online residual baseline ranked
+    first and the paired bootstrap interval against it crossed zero. No freeze
+    or hardware transfer.
+
+Tier 7.1i — CURRENT ACTIVE STEP. NAB fairness/statistical confirmation or
+failure localization.
+  Required first move: broaden the predeclared NAB subset beyond the five-file
+    compact gate, preserve the Tier 7.1g label-separation contract, rerun v2.3
+    versus the strongest reservoir/online baselines and shams, and decide
+    whether the 7.1h partial signal survives, collapses, or localizes to a
+    specific stream/category/threshold policy.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware

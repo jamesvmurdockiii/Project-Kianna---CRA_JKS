@@ -106,10 +106,14 @@ but neither the 8 LIF / 8 resonant nor 12 LIF / 4 resonant hybrid proxy earned
 promotion. Tier 5.20c, 5.20d, and 5.20e then checked 14/2, 4/12, and 2/14
 resonant/LIF splits. Those harnesses also passed, but none earned promotion.
 The current resonant dose sweep covers 16/0, 14/2, 12/4, 8/8, 4/12, 2/14, and
-0/16; resonant branches are documented and parked. The next active project step
-is Tier 7.1h compact NAB scoring; no hardware transfer or native migration is
-authorized until public-adapter software usefulness or a promoted mechanism
-earns a separate evidence contract.
+0/16; resonant branches are documented and parked. Tier 7.1h then passed at
+`controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate/`.
+It produced a partial compact NAB signal: v2.3 ranked second, beat v2.2 and all
+three v2.3 shams, but did not beat the fixed random-reservoir online residual
+baseline and did not clear bootstrap confirmation. The next active project step
+is Tier 7.1i NAB fairness/statistical confirmation or failure localization; no
+hardware transfer or native migration is authorized until public-adapter
+software usefulness or a promoted mechanism earns a separate evidence contract.
 
 Tier 4.32a-hw prepare has also passed locally. The current EBRAINS upload
 folder is `ebrains_jobs/cra_432a_hw`, and the exact JobManager command is

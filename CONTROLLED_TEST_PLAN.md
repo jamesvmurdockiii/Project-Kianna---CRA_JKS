@@ -14,7 +14,7 @@ mechanism promotion, lifecycle/ecology evidence, and native SpiNNaker runtime
 migration. The generated registry is the authority for which results are
 canonical.
 
-The current canonical evidence trail contains **81 registered evidence bundles**
+The current canonical evidence trail contains **101 registered evidence bundles**
 with all expected artifacts present and all criteria passing. The generated
 registry is the source of truth for the full list:
 
@@ -10923,14 +10923,43 @@ evidence, not a baseline freeze, not hardware/native transfer, and not AGI/ASI
 evidence.
 ```
 
+Tier 7.1h result:
+
+```text
+Output: controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate/
+Status: pass
+Criteria: 16/16
+Outcome: v2_3_partial_nab_signal_requires_confirmation
+Best model: fixed_random_reservoir_online_residual
+Best model primary score: 0.23437791375440906
+v2.3 primary score: 0.22649365525011686
+v2.2 primary score: 0.19995024953915835
+v2.3 rank: 2
+v2.3 sham separations: 3
+Bootstrap v2.3 vs best external mean delta: -0.007884258504292247
+Bootstrap 95% CI: [-0.03766786485787427, 0.015726447281909233]
+```
+
+Interpretation:
+
+```text
+Tier 7.1h produced a compact NAB signal but did not earn a public usefulness
+claim. v2.3 beat v2.2 and separated all three v2.3 shams, but the fixed
+random-reservoir online residual baseline remained best and the paired
+bootstrap interval crossed zero. This authorizes only broader confirmation or
+failure localization, not freeze, hardware/native transfer, or claims of public
+benchmark superiority.
+```
+
 Next required step:
 
 ```text
-Tier 7.1h - compact NAB scoring gate.
-Predeclare the compact NAB subset, threshold policy, online anomaly baselines,
-CRA v2.2/v2.3 detectors, sham controls, primary metrics, bootstrap/statistical
-support, and leakage controls. Score only after labels/windows remain separated
-from online detector rows.
+Tier 7.1i - NAB fairness/statistical confirmation or failure localization.
+Broaden the predeclared NAB subset beyond the five-file compact gate, preserve
+label separation and online detector causality, rerun v2.3 against the strongest
+reservoir/online baselines and shams, and decide whether the 7.1h partial signal
+survives, collapses, or localizes to a stream family, threshold policy, or
+readout/scoring failure.
 ```
 
 ## Tier 5.20a - Resonant Branch Polyp Internal-Model Diagnostic

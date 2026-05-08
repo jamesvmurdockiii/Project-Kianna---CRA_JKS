@@ -1,0 +1,17 @@
+criterion,passed,value,rule
+Tier 7.1g preflight exists,True,/Users/james/JKS:CRA/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_results.json,exists
+Tier 7.1g preflight passed,True,pass,== pass
+NAB source commit matches preflight,True,ea702d75cc2258d9d7dd35ca8e5e2539d71f3140,matches Tier 7.1g
+selected streams loaded,True,5,== 5
+selected streams have anomaly windows,True,"[1, 2, 4, 2, 3]",all > 0
+all required models ran,True,"['ewma_residual_detector', 'fixed_esn_prefix_ridge_residual', 'fixed_random_reservoir_online_residual', 'null_no_alarm_detector', 'online_ar_lms_residual_detector', 'random_calibrated_detector', 'rolling_mad_detector', 'rolling_zscore_detector', 'v2_2_fading_memory_prediction_error', 'v2_3_generic_recurrent_prediction_error', 'v2_3_no_update_ablation', 'v2_3_shuffled_state_sham', 'v2_3_shuffled_target_control']",contains required models
+external baselines present,True,"['ewma_residual_detector', 'fixed_esn_prefix_ridge_residual', 'fixed_random_reservoir_online_residual', 'null_no_alarm_detector', 'online_ar_lms_residual_detector', 'random_calibrated_detector', 'rolling_mad_detector', 'rolling_zscore_detector']",all present
+v2.3 shams present,True,"['v2_3_shuffled_state_sham', 'v2_3_shuffled_target_control', 'v2_3_no_update_ablation']",all present
+metrics finite,True,True,all primary/event metrics finite
+thresholds label-free,True,"[False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False]",all false
+score preview label-free,True,False,== false
+prediction-before-update policy used,True,all detectors emit score before update,true
+bootstrap comparison computed,True,15,>= 5 paired units
+classification computed,True,v2_3_partial_nab_signal_requires_confirmation,non-empty
+no baseline freeze authorized,True,False,== false
+no hardware transfer authorized,True,False,== false

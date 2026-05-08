@@ -653,18 +653,46 @@ kept anomaly windows in a separate offline scoring artifact. It is not a scored
 NAB result, not public usefulness evidence, and not hardware/native transfer.
 ```
 
+## Tier 7.1h Result
+
+```text
+Tier 7.1h — compact NAB scoring gate
+output: controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate/
+status: PASS, 16/16 criteria
+outcome: v2_3_partial_nab_signal_requires_confirmation
+best model: fixed_random_reservoir_online_residual
+best primary score: 0.23437791375440906
+v2.3 primary score: 0.22649365525011686
+v2.2 primary score: 0.19995024953915835
+v2.3 rank: 2
+v2.3 sham separations: 3
+bootstrap v2.3-vs-best-external mean delta: -0.007884258504292247
+bootstrap 95% CI: [-0.03766786485787427, 0.015726447281909233]
+```
+
+Interpretation:
+
+```text
+Tier 7.1h produced a partial compact NAB signal. v2.3 beat v2.2 and separated
+all three v2.3 shams, but it did not beat the fixed random-reservoir online
+residual baseline and bootstrap support was not decisive. This is compact
+software scoring evidence only; it is not full NAB evidence, not public
+usefulness proof, and not authorization for freeze or hardware/native transfer.
+```
+
 ## Immediate Next Action
 
 The current next action is:
 
 ```text
-Tier 7.1h — compact NAB scoring gate.
+Tier 7.1i — NAB fairness/statistical confirmation or failure localization.
 ```
 
-Predeclare and score the compact NAB subset from Tier 7.1g with fair online
-anomaly baselines, CRA v2.2/v2.3 detectors, sham controls, threshold policy,
-NAB-style/event-window metrics, bootstrap/statistical support, and strict
-label-separation.
+Broaden the predeclared NAB subset beyond the five-file compact gate, preserve
+the Tier 7.1g label-separation and online detector contracts, rerun v2.3 against
+the strongest reservoir/online baselines and shams, and decide whether the 7.1h
+partial signal survives, collapses, or localizes to a stream family, threshold
+policy, or readout/scoring failure.
 
 ## Resonant Branch Follow-Up Diagnostics
 
@@ -700,8 +728,9 @@ Decision:
 
 ```text
 Do not add resonant branches to the canonical CRA mechanism stack. Continue to
-Tier 7.1h compact NAB scoring and use public/standardized benchmarks to decide
-the next mechanism, adapter, or claim narrowing step.
+Tier 7.1i NAB fairness/statistical confirmation or failure localization and use
+public/standardized benchmarks to decide the next mechanism, adapter, or claim
+narrowing step.
 ```
 
 ## Resonant Dose Sweep Closeout
@@ -719,5 +748,6 @@ Decision:
 
 ```text
 The resonant branch idea has now been tested across the useful dose range and is
-parked. Return to the public usefulness track: Tier 7.1h compact NAB scoring.
+parked. Return to the public usefulness track: Tier 7.1i NAB fairness/
+statistical confirmation or failure localization.
 ```
