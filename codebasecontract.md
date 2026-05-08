@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-08T23:08:37+00:00.
+Last updated: 2026-05-08T23:16:52+00:00.
 
 Current repo root:
 
@@ -197,6 +197,29 @@ Tier 7.1h = COMPLETE, PASS, 16/16 criteria
   Boundary: compact software scoring only; not a full NAB benchmark, not public
             usefulness proof by itself, not a baseline freeze, and not
             hardware/native transfer evidence.
+```
+
+Latest NAB broader confirmation/localization gate:
+
+```text
+Tier 7.1i = COMPLETE, PASS, 18/18 criteria
+  Source: controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation/
+  Runner: experiments/tier7_1i_nab_fairness_confirmation.py
+  Outcome: v2_3_nab_signal_localized_not_confirmed
+  Broadened subset: 20 NAB streams across 6 categories
+  Best model: rolling_zscore_detector, primary score 0.140951459207744
+  v2.3: rank 4, primary score 0.09880252815842962
+  v2.2: primary score 0.08150013601217254
+  Sham separation: v2.3 separated 3/3 v2.3 shams
+  Bootstrap vs best external baseline: mean delta -0.0421489310493144,
+                                      95% CI [-0.13027269733009264,
+                                      0.03602365729899069]
+  Localized wins: v2.3 won realAdExchange category and the streams
+                  realAdExchange/exchange-2_cpm_results.csv and
+                  realKnownCause/ambient_temperature_system_failure.csv.
+  Boundary: broader NAB software confirmation/localization only; not a full
+            NAB benchmark claim, not public usefulness proof, not a baseline
+            freeze, and not hardware/native transfer evidence.
 ```
 
 Latest optional mechanism diagnostic:
@@ -780,13 +803,21 @@ Tier 7.1h — COMPLETE. Compact NAB scoring gate.
     first and the paired bootstrap interval against it crossed zero. No freeze
     or hardware transfer.
 
-Tier 7.1i — CURRENT ACTIVE STEP. NAB fairness/statistical confirmation or
-failure localization.
-  Required first move: broaden the predeclared NAB subset beyond the five-file
-    compact gate, preserve the Tier 7.1g label-separation contract, rerun v2.3
-    versus the strongest reservoir/online baselines and shams, and decide
-    whether the 7.1h partial signal survives, collapses, or localizes to a
-    specific stream/category/threshold policy.
+Tier 7.1i — COMPLETE. NAB fairness/statistical confirmation or failure
+localization.
+  Status: LOCAL SOFTWARE PASS, 18/18 criteria.
+  Output: controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation/
+  Result: v2.3 broadened the compact signal only partially. It beat v2.2 and
+    all v2.3 shams, but rolling z-score was best overall and v2.3 ranked 4th.
+    The signal localized to realAdExchange and two streams. No public
+    usefulness claim, freeze, or hardware transfer.
+
+Tier 7.1j — CURRENT ACTIVE STEP. NAB failure/localization analysis.
+  Required first move: explain why rolling z-score dominates the broadened NAB
+    aggregate while v2.3 still beats v2.2/shams and wins localized streams.
+    Separate threshold policy, score normalization, temporal-state readout,
+    false-positive penalty, category mix, and stream-family effects before
+    adding any new mechanism or moving anything to hardware.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware

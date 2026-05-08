@@ -14,7 +14,7 @@ mechanism promotion, lifecycle/ecology evidence, and native SpiNNaker runtime
 migration. The generated registry is the authority for which results are
 canonical.
 
-The current canonical evidence trail contains **101 registered evidence bundles**
+The current canonical evidence trail contains **102 registered evidence bundles**
 with all expected artifacts present and all criteria passing. The generated
 registry is the source of truth for the full list:
 
@@ -10955,11 +10955,49 @@ Next required step:
 
 ```text
 Tier 7.1i - NAB fairness/statistical confirmation or failure localization.
-Broaden the predeclared NAB subset beyond the five-file compact gate, preserve
-label separation and online detector causality, rerun v2.3 against the strongest
-reservoir/online baselines and shams, and decide whether the 7.1h partial signal
-survives, collapses, or localizes to a stream family, threshold policy, or
-readout/scoring failure.
+```
+
+Tier 7.1i result:
+
+```text
+Output: controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation/
+Status: pass
+Criteria: 18/18
+Outcome: v2_3_nab_signal_localized_not_confirmed
+Broadened subset: 20 NAB streams across 6 categories
+Best model: rolling_zscore_detector
+Best primary score: 0.140951459207744
+v2.3 primary score: 0.09880252815842962
+v2.2 primary score: 0.08150013601217254
+v2.3 rank: 4
+v2.3 sham separations: 3
+Bootstrap v2.3 vs best external mean delta: -0.0421489310493144
+Bootstrap 95% CI: [-0.13027269733009264, 0.03602365729899069]
+Localized v2.3 category win: realAdExchange
+Localized v2.3 stream wins: realAdExchange/exchange-2_cpm_results.csv;
+                               realKnownCause/ambient_temperature_system_failure.csv
+```
+
+Interpretation:
+
+```text
+Tier 7.1i did not confirm public NAB usefulness. v2.3 still beat v2.2 and all
+three v2.3 shams on the broader subset, but a simple rolling z-score baseline
+won the aggregate and the bootstrap interval versus that baseline crossed zero.
+The useful signal is localized rather than broad. This authorizes failure/
+localization analysis, not mechanism promotion, freeze, hardware transfer, or
+public usefulness claims.
+```
+
+Next required step:
+
+```text
+Tier 7.1j - NAB failure/localization analysis.
+Explain why rolling z-score dominates the broader aggregate while v2.3 still
+beats v2.2/shams and wins localized streams. Separate threshold policy, score
+normalization, temporal-state readout, false-positive penalty, category mix, and
+stream-family effects before adding any mechanism or moving anything to
+hardware.
 ```
 
 ## Tier 5.20a - Resonant Branch Polyp Internal-Model Diagnostic

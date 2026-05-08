@@ -1,0 +1,2 @@
+candidate,baseline,paired_units,mean_delta,ci_low,ci_high,positive_fraction,metric
+v2_3_generic_recurrent_prediction_error,rolling_zscore_detector,60,-0.0421489310493144,-0.13027269733009264,0.03602365729899069,0.159,paired primary-score delta; positive means candidate better

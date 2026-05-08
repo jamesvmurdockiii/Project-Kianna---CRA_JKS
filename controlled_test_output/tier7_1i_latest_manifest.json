@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-05-08T23:23:45.155618+00:00",
+  "source_generated_at_utc": "2026-05-08T23:23:32+00:00",
+  "registry_entry_id": "tier7_1i_nab_fairness_confirmation",
+  "tier": "Tier 7.1i - NAB Fairness/Statistical Confirmation",
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation/tier7_1i_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation/tier7_1i_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation/tier7_1i_summary.csv",
+  "canonical": true,
+  "claim": "Tier 7.1i broadened the pinned NAB software scoring subset to 20 streams across 6 categories. v2.3 beat v2.2 and shams, but the broader signal was localized rather than statistically confirmed: rolling z-score was best overall and v2.3 ranked fourth.",
+  "caveat": "Broader NAB software confirmation/localization only; not a full NAB benchmark claim by itself, not public usefulness proof, not a baseline freeze, not hardware/native transfer, and not AGI/ASI evidence."
+}

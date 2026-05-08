@@ -1,0 +1,71 @@
+{
+  "compact_prior": "/Users/james/JKS:CRA/controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate/tier7_1h_results.json",
+  "confirmation_rule": "v2.3 must be best overall, sham-separated, and bootstrap CI low > 0 versus best external baseline",
+  "cra_models": [
+    "v2_2_fading_memory_prediction_error",
+    "v2_3_generic_recurrent_prediction_error",
+    "v2_3_shuffled_state_sham",
+    "v2_3_shuffled_target_control",
+    "v2_3_no_update_ablation"
+  ],
+  "external_baselines": [
+    "null_no_alarm_detector",
+    "random_calibrated_detector",
+    "rolling_zscore_detector",
+    "ewma_residual_detector",
+    "rolling_mad_detector",
+    "online_ar_lms_residual_detector",
+    "fixed_random_reservoir_online_residual",
+    "fixed_esn_prefix_ridge_residual"
+  ],
+  "label_policy": "labels/windows are offline scoring only and are not present in score preview rows",
+  "localization_rule": "if not confirmed, report category/stream wins and v2.2 separations without claiming public usefulness",
+  "models": [
+    "null_no_alarm_detector",
+    "random_calibrated_detector",
+    "rolling_zscore_detector",
+    "ewma_residual_detector",
+    "rolling_mad_detector",
+    "online_ar_lms_residual_detector",
+    "fixed_random_reservoir_online_residual",
+    "fixed_esn_prefix_ridge_residual",
+    "v2_2_fading_memory_prediction_error",
+    "v2_3_generic_recurrent_prediction_error",
+    "v2_3_shuffled_state_sham",
+    "v2_3_shuffled_target_control",
+    "v2_3_no_update_ablation"
+  ],
+  "nonclaims": [
+    "not a full NAB benchmark claim by itself",
+    "not public usefulness proof unless statistical confirmation passes",
+    "not a baseline freeze",
+    "not hardware/native transfer",
+    "not AGI/ASI evidence"
+  ],
+  "primary_metric": "primary_score_mean = event_f1 + 0.05*window_recall + 0.05*nab_style_score - 0.002*fp_per_1000",
+  "selected_files": [
+    "artificialWithAnomaly/art_daily_flatmiddle.csv",
+    "artificialWithAnomaly/art_daily_jumpsdown.csv",
+    "artificialWithAnomaly/art_daily_jumpsup.csv",
+    "artificialWithAnomaly/art_load_balancer_spikes.csv",
+    "realAWSCloudwatch/ec2_cpu_utilization_24ae8d.csv",
+    "realAWSCloudwatch/ec2_cpu_utilization_5f5533.csv",
+    "realAWSCloudwatch/ec2_disk_write_bytes_c0d644.csv",
+    "realAWSCloudwatch/grok_asg_anomaly.csv",
+    "realAWSCloudwatch/rds_cpu_utilization_e47b3b.csv",
+    "realAdExchange/exchange-2_cpm_results.csv",
+    "realAdExchange/exchange-4_cpm_results.csv",
+    "realKnownCause/ambient_temperature_system_failure.csv",
+    "realKnownCause/cpu_utilization_asg_misconfiguration.csv",
+    "realKnownCause/ec2_request_latency_system_failure.csv",
+    "realKnownCause/machine_temperature_system_failure.csv",
+    "realKnownCause/nyc_taxi.csv",
+    "realTraffic/TravelTime_387.csv",
+    "realTraffic/speed_7578.csv",
+    "realTweets/Twitter_volume_AAPL.csv",
+    "realTweets/Twitter_volume_GOOG.csv"
+  ],
+  "source_commit": "ea702d75cc2258d9d7dd35ca8e5e2539d71f3140",
+  "source_preflight": "/Users/james/JKS:CRA/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_results.json",
+  "threshold_policy": "per-stream calibration-prefix quantile, no labels"
+}

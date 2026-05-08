@@ -1183,31 +1183,44 @@ ability.
     NAB benchmark claim, public usefulness proof, freeze, or hardware/native
     transfer.
 
-90. **CURRENT ACTIVE STEP** - Tier 7.1i NAB fairness/statistical confirmation
-    or failure localization:
-    broaden the predeclared NAB subset beyond the five-file compact gate,
-    preserve the Tier 7.1g label-separation and online detector contracts, rerun
-    v2.3 against the strongest reservoir/online baselines and shams, and decide
-    whether the 7.1h partial signal survives, collapses, or localizes to a
-    stream family/threshold/readout failure.
+90. **COMPLETE** - Tier 7.1i NAB fairness/statistical confirmation or failure
+    localization:
+    passed 18/18 at
+    `controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation/`.
+    It broadened NAB scoring to 20 streams across 6 categories. Outcome:
+    `v2_3_nab_signal_localized_not_confirmed`. v2.3 beat v2.2
+    (`0.09880252815842962` versus `0.08150013601217254`) and all three shams,
+    but rolling z-score ranked first (`0.140951459207744`) and v2.3 ranked
+    fourth. Bootstrap versus the best external baseline crossed zero
+    (`[-0.13027269733009264, 0.03602365729899069]`). The signal localized to
+    realAdExchange and two streams. Boundary: broader NAB software
+    confirmation/localization only; no public usefulness proof, freeze, or
+    hardware/native transfer.
 
-91. Mechanism iteration loop: add exactly one planned general mechanism at a
+91. **CURRENT ACTIVE STEP** - Tier 7.1j NAB failure/localization analysis:
+    explain why rolling z-score dominates the broadened aggregate while v2.3
+    still beats v2.2/shams and wins localized streams. Separate threshold
+    policy, score normalization, temporal-state readout, false-positive penalty,
+    category mix, and stream-family effects before adding any new mechanism or
+    moving anything to hardware.
+
+92. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
     stop the broad usefulness track and narrow the paper.
 
-92. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+93. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines. Start only after the standardized scoreboard or failure diagnosis
     identifies a winning regime, a real failure mode, or a mechanism needing
     external validation.
 
-93. Tier 7.2 held-out task challenge: define held-out families before running;
+94. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout. Include at least one synthetic holdout and one
     real-ish adapter holdout if Tier 7.1 is active.
 
-94. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+95. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines. Candidate domains include
     streaming anomaly detection, predictive-maintenance sensor streams, human
     activity streams, event prediction, ECG/biosignal streams, and finance as
@@ -1570,9 +1583,11 @@ labels parse, label windows are separated from online rows, chronological smoke
 streams are adapter-sorted, and scoring-interface feasibility is documented.
 Tier 7.1h then passed compact NAB scoring: v2.3 ranked second, beat v2.2 and
 all three v2.3 shams, but did not beat the fixed random-reservoir online
-residual baseline and did not clear bootstrap confirmation. The next active
-public-adapter work is Tier 7.1i NAB fairness/statistical confirmation or
-failure localization over a broader predeclared subset. Reopen
+residual baseline and did not clear bootstrap confirmation. Tier 7.1i then
+broadened NAB to 20 streams across 6 categories: v2.3 beat v2.2 and shams, but
+rolling z-score won the aggregate and the v2.3 signal localized rather than
+confirming. The next active public-adapter work is Tier 7.1j NAB failure/
+localization analysis. Reopen
 native work only for targeted transfer after a software task/mechanism earns it
 under the Tier 7/6.2 gates and a separate transfer contract is written.
 It must preserve explicit board/chip/shard identity, message paths, compact

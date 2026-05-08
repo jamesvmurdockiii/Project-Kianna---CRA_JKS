@@ -1,0 +1,81 @@
+{
+  "artifacts": [
+    {
+      "bytes": 277,
+      "name": "bootstrap_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation/tier7_1i_bootstrap.csv",
+      "sha256": "92caec7bf3f5f49c6942de47d61eb20fef4e57146c694a79ea7b56e026b4bcaa"
+    },
+    {
+      "bytes": 19356,
+      "name": "category_summary_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation/tier7_1i_category_summary.csv",
+      "sha256": "88803273d27e6f5a6c06211a3881b6ca130063a71f0895b4f7b4bd11cd3f908d"
+    },
+    {
+      "bytes": 915817,
+      "name": "model_metrics_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation/tier7_1i_model_metrics.csv",
+      "sha256": "ce01e82e950cec147772cd849a48b443fb403d26934dad7f92880e8cd28ea45c"
+    },
+    {
+      "bytes": 3343,
+      "name": "model_summary_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation/tier7_1i_model_summary.csv",
+      "sha256": "076b4bc6fe87b83a2915d816818d949ba957b65c981dede6d49a702e1c22ca56"
+    },
+    {
+      "bytes": 1482,
+      "name": "report_md",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation/tier7_1i_report.md",
+      "sha256": "f745cf96b91e1249ca3e3a1638515c8f3851ec360c17988fcd1fbe7441c1fc49"
+    },
+    {
+      "bytes": 276916,
+      "name": "results_json",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation/tier7_1i_results.json",
+      "sha256": "964aee50669c49f4ee7bfd780b7dcb8251005ec88b31262add6d5bbd2f5d2423"
+    },
+    {
+      "bytes": 1414659,
+      "name": "score_preview_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation/tier7_1i_score_preview.csv",
+      "sha256": "0bfed0ab0e2b8ff656ce2aef4dea7e57c39f6791ed86cb5d5ba3fe7e448e1de6"
+    },
+    {
+      "bytes": 3173,
+      "name": "scoring_contract_json",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation/tier7_1i_scoring_contract.json",
+      "sha256": "dbd9984259f63f23c02ee7cc5970146a10577eccdbca4c9bb5dbedddbeb490bb"
+    },
+    {
+      "bytes": 8104,
+      "name": "source_manifest_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation/tier7_1i_source_manifest.csv",
+      "sha256": "71b11f3be8d1a46305b7d95888dce3eb81a442cde0abf7449194e378ffd99cfd"
+    },
+    {
+      "bytes": 68804,
+      "name": "stream_summary_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation/tier7_1i_stream_summary.csv",
+      "sha256": "723efa9b1d91d1b8d7355fbd7881c8f4492e81541c47532d553da99a436f23d1"
+    },
+    {
+      "bytes": 7611,
+      "name": "summary_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation/tier7_1i_summary.csv",
+      "sha256": "31d34a760729d3275741caf7fc394f295f0a262eabafa15678b15e673f065664"
+    },
+    {
+      "bytes": 157476,
+      "name": "thresholds_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation/tier7_1i_thresholds.csv",
+      "sha256": "36ffc70400989c7511b6531f3de34a781f18a18dc24a7013ec1675e7a4130018"
+    }
+  ],
+  "generated_at_utc": "2026-05-08T23:23:33+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation",
+  "runner_revision": "tier7_1i_nab_fairness_confirmation_20260508_0001",
+  "status": "pass",
+  "tier": "Tier 7.1i - NAB Fairness/Statistical Confirmation"
+}

@@ -680,19 +680,50 @@ software scoring evidence only; it is not full NAB evidence, not public
 usefulness proof, and not authorization for freeze or hardware/native transfer.
 ```
 
+## Tier 7.1i Result
+
+```text
+Tier 7.1i — NAB fairness/statistical confirmation or failure localization
+output: controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation/
+status: PASS, 18/18 criteria
+outcome: v2_3_nab_signal_localized_not_confirmed
+broadened subset: 20 NAB streams across 6 categories
+best model: rolling_zscore_detector
+best primary score: 0.140951459207744
+v2.3 primary score: 0.09880252815842962
+v2.2 primary score: 0.08150013601217254
+v2.3 rank: 4
+v2.3 sham separations: 3
+bootstrap v2.3-vs-best-external mean delta: -0.0421489310493144
+bootstrap 95% CI: [-0.13027269733009264, 0.03602365729899069]
+localized v2.3 category win: realAdExchange
+localized v2.3 stream wins: realAdExchange/exchange-2_cpm_results.csv;
+                               realKnownCause/ambient_temperature_system_failure.csv
+```
+
+Interpretation:
+
+```text
+Tier 7.1i did not confirm public NAB usefulness. v2.3 still beat v2.2 and
+separated all three shams, but rolling z-score won the broader aggregate and
+the bootstrap interval crossed zero. The signal localized to realAdExchange and
+two streams. This authorizes failure/localization analysis, not freeze,
+hardware/native transfer, or a public usefulness claim.
+```
+
 ## Immediate Next Action
 
 The current next action is:
 
 ```text
-Tier 7.1i — NAB fairness/statistical confirmation or failure localization.
+Tier 7.1j — NAB failure/localization analysis.
 ```
 
-Broaden the predeclared NAB subset beyond the five-file compact gate, preserve
-the Tier 7.1g label-separation and online detector contracts, rerun v2.3 against
-the strongest reservoir/online baselines and shams, and decide whether the 7.1h
-partial signal survives, collapses, or localizes to a stream family, threshold
-policy, or readout/scoring failure.
+Explain why rolling z-score dominates the broader NAB aggregate while v2.3 still
+beats v2.2/shams and wins localized streams. Separate threshold policy, score
+normalization, temporal-state readout, false-positive penalty, category mix, and
+stream-family effects before adding any new mechanism or transferring anything
+to hardware/native runtime.
 
 ## Resonant Branch Follow-Up Diagnostics
 
@@ -728,9 +759,8 @@ Decision:
 
 ```text
 Do not add resonant branches to the canonical CRA mechanism stack. Continue to
-Tier 7.1i NAB fairness/statistical confirmation or failure localization and use
-public/standardized benchmarks to decide the next mechanism, adapter, or claim
-narrowing step.
+Tier 7.1j NAB failure/localization analysis and use public/standardized
+benchmarks to decide the next mechanism, adapter, or claim narrowing step.
 ```
 
 ## Resonant Dose Sweep Closeout
@@ -748,6 +778,6 @@ Decision:
 
 ```text
 The resonant branch idea has now been tested across the useful dose range and is
-parked. Return to the public usefulness track: Tier 7.1i NAB fairness/
-statistical confirmation or failure localization.
+parked. Return to the public usefulness track: Tier 7.1j NAB failure/
+localization analysis.
 ```

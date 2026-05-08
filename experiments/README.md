@@ -110,10 +110,14 @@ The current resonant dose sweep covers 16/0, 14/2, 12/4, 8/8, 4/12, 2/14, and
 `controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate/`.
 It produced a partial compact NAB signal: v2.3 ranked second, beat v2.2 and all
 three v2.3 shams, but did not beat the fixed random-reservoir online residual
-baseline and did not clear bootstrap confirmation. The next active project step
-is Tier 7.1i NAB fairness/statistical confirmation or failure localization; no
-hardware transfer or native migration is authorized until public-adapter
-software usefulness or a promoted mechanism earns a separate evidence contract.
+baseline and did not clear bootstrap confirmation. Tier 7.1i then passed at
+`controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation/`.
+It broadened NAB to 20 streams across 6 categories: v2.3 beat v2.2 and all
+three shams, but rolling z-score won the aggregate and v2.3 ranked fourth. The
+signal localized to realAdExchange and two streams. The next active project step
+is Tier 7.1j NAB failure/localization analysis; no hardware transfer or native
+migration is authorized until public-adapter software usefulness or a promoted
+mechanism earns a separate evidence contract.
 
 Tier 4.32a-hw prepare has also passed locally. The current EBRAINS upload
 folder is `ebrains_jobs/cra_432a_hw`, and the exact JobManager command is
