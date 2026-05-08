@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CONTROLLED = ROOT / "controlled_test_output"
 DOC_PATH = ROOT / "docs" / "RESEARCH_GRADE_AUDIT.md"
 JSON_PATH = CONTROLLED / "RESEARCH_GRADE_AUDIT.json"
-EXPECTED_CANONICAL_EVIDENCE_COUNT = 86
+EXPECTED_CANONICAL_EVIDENCE_COUNT = 87
 
 REQUIRED_SOURCE_DOCS = [
     "README.md",
@@ -106,6 +106,9 @@ REQUIRED_BASELINE_FILES = [
     "baselines/CRA_EVIDENCE_BASELINE_v2.2.md",
     "baselines/CRA_EVIDENCE_BASELINE_v2.2.json",
     "baselines/CRA_EVIDENCE_BASELINE_v2.2_STUDY_REGISTRY.snapshot.json",
+    "baselines/CRA_EVIDENCE_BASELINE_v2.3.md",
+    "baselines/CRA_EVIDENCE_BASELINE_v2.3.json",
+    "baselines/CRA_EVIDENCE_BASELINE_v2.3_STUDY_REGISTRY.snapshot.json",
     "baselines/CRA_NATIVE_RUNTIME_BASELINE_v0.1.md",
     "baselines/CRA_NATIVE_TASK_BASELINE_v0.2.md",
     "baselines/CRA_NATIVE_TASK_BASELINE_v0.2_STUDY_REGISTRY.snapshot.json",

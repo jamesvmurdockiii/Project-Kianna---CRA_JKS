@@ -441,12 +441,12 @@ Invalid reasons:
 The current next action is:
 
 ```text
-Tier 7.0j — generic bounded recurrent-state promotion / compact regression.
+Tier 6.2a / 7.1 — targeted usefulness validation over frozen v2.3.
 ```
 
-Tier 7.0i passed as an executed public software gate and narrowed the claim:
-generic bounded recurrent state remains useful, but topology-specific recurrence
-is not supported because topology shams and no-recurrence controls matched or
-beat the structured candidate. Do not invent custom proof tasks or move to
-hardware; decide whether the narrower generic interface earns promotion through
-compact regression first.
+Tier 7.0j passed as an executed software promotion gate and froze
+`CRA_EVIDENCE_BASELINE_v2.3`: generic bounded recurrent state improves the
+locked public scoreboard versus v2.2 and passes full NEST compact regression.
+Do not invent private proof tasks or move to hardware yet; validate the v2.3
+regime on audited hard/real-ish tasks with fair baselines, or select the next
+general mechanism from a measured failure.

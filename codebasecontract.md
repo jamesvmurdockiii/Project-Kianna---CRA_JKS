@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-08T19:45:00+00:00.
+Last updated: 2026-05-08T20:20:00+00:00.
 
 Current repo root:
 
@@ -29,17 +29,17 @@ Current repo root:
 Current frozen software baseline:
 
 ```text
-v2.2 = post-Tier-5.19c bounded host-side fading-memory temporal-state evidence lock
-       Source: controlled_test_output/tier5_19c_20260505_fading_memory_regression/
-       Runner: experiments/tier5_19c_fading_memory_regression.py
-       Criteria: 11/11
+v2.3 = post-Tier-7.0j generic bounded recurrent-state software evidence lock
+       Source: controlled_test_output/tier7_0j_20260508_generic_recurrent_promotion_gate/
+       Runner: experiments/tier7_0j_generic_recurrent_promotion_gate.py
+       Criteria: 14/14
        Compact gate: full NEST compact regression passed
-       Claim: multi-timescale fading-memory temporal state is useful on the
-              tested temporal-memory diagnostics while preserving existing CRA
-              guardrails.
-       Boundary: not bounded nonlinear recurrence, not hardware evidence, not
-                 native on-chip temporal dynamics, not universal benchmark
-                 superiority, not language/planning/AGI/ASI.
+       Claim: generic bounded recurrent continuous-state improves the locked
+              8000-step Mackey-Glass/Lorenz/NARMA10 public scoreboard versus
+              v2.2 while preserving existing CRA guardrails.
+       Boundary: not topology-specific recurrence, not ESN superiority, not
+                 hardware evidence, not native on-chip recurrence, not
+                 language/planning/AGI/ASI.
 ```
 
 Current hardware/runtime baseline decision:
@@ -478,15 +478,22 @@ Tier 7.0i — COMPLETE. Recurrence/topology specificity repair gate.
     public suite. No baseline freeze, hardware transfer, native migration, ESN
     superiority, or topology-specific claim is authorized from 7.0i.
 
-Tier 7.0j — CURRENT ACTIVE STEP. Generic bounded recurrent-state promotion /
+Tier 7.0j — COMPLETE. Generic bounded recurrent-state promotion /
   compact regression gate.
-  Required first move: decide whether the narrower generic bounded recurrent
-    continuous-state interface from 7.0h earns promotion as software baseline
-    v2.3 after compact regression. The only candidate claim is generic bounded
-    recurrent state improves public benchmark performance versus v2.2 under the
-    locked 8000-step same-seed protocol. Do not claim topology-specific
-    recurrence, ESN superiority, hardware transfer, native migration, language,
-    planning, AGI, or ASI.
+  Status: COMPLETE, PASS, 14/14 criteria. Full NEST compact regression passed.
+  Key evidence:
+    controlled_test_output/tier7_0j_20260508_generic_recurrent_promotion_gate/
+  Baseline: CRA_EVIDENCE_BASELINE_v2.3 frozen.
+  Claim: generic bounded recurrent continuous-state interface improves the
+    locked 8000-step Mackey-Glass/Lorenz/NARMA10 public scoreboard versus v2.2.
+  Boundary: do not claim topology-specific recurrence, ESN superiority,
+    hardware transfer, native migration, language, planning, AGI, or ASI.
+
+Tier 6.2a / 7.1 — CURRENT ACTIVE STEP. Targeted usefulness validation over v2.3.
+  Required first move: use v2.3 as the frozen software baseline, select audited
+    hard/real-ish validation tasks and fair baselines, and decide whether the
+    next evidence should be additional software usefulness validation, another
+    general mechanism, or a separately predeclared native transfer contract.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware
@@ -976,10 +983,10 @@ Immediate next steps:
    controlled_test_output/tier4_32h_20260508_native_scale_evidence_closeout/.
    This is a native-scale substrate freeze only: do not claim speedup, benchmark
    usefulness, true two-partition cross-chip learning, lifecycle scaling,
-   multi-shard learning, or AGI/ASI from it. Tier 7.0i falsified/narrowed the
-   topology-specific recurrence claim; Tier 7.0j must decide whether the
-   narrower generic bounded recurrent-state interface earns v2.3 through compact
-   regression before any freeze or broad native migration.
+   multi-shard learning, or AGI/ASI from it. Tier 7.0j froze v2.3 as a narrow
+   generic bounded recurrent-state software baseline. Do not move v2.3
+   native/on-chip until a separate transfer contract is justified; do not claim
+   topology-specific recurrence or ESN superiority from v2.3.
 3. Keep the 4.31b/4.31c range refinement explicit: selected trace bound is ±2
    in s16.15; the older ±1 sketch saturated and must not silently return.
 4. Keep public repo hygiene green before the next upload or commit: no

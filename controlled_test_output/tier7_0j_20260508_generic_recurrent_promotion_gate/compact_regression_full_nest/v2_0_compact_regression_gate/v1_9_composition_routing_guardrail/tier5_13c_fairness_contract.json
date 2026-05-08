@@ -1,0 +1,51 @@
+{
+  "candidate": "internal_composition_routing",
+  "claim_boundary": "Tier 5.13c is software evidence for an internal host-side composition/routing mechanism only.",
+  "composition_tasks": "heldout_skill_pair,order_sensitive_chain,distractor_skill_chain",
+  "fairness_rules": [
+    "All models see the same scalar stream, target stream, evaluation mask, and feedback_due_step arrays per seed.",
+    "The internal mechanism can update current visible cues before a decision, but module/router learning occurs only after feedback for that decision is scored.",
+    "Held-out composition and routing metrics are scored before held-out-specific feedback can update the mechanism.",
+    "Reset, no-write, skill-shuffle, order-shuffle, context-shuffle, random-router, and always-on shams must lose before promotion.",
+    "External scaffold upper bounds are reported but are not native/internal CRA evidence."
+  ],
+  "frozen_comparator": "v1_8_raw_cra",
+  "generated_at_utc": "2026-05-08T19:59:13+00:00",
+  "internal_ablation_controls": [
+    "internal_no_write_ablation",
+    "internal_reset_ablation",
+    "internal_shuffle_ablation",
+    "internal_order_shuffle_ablation",
+    "internal_router_reset_ablation",
+    "internal_context_shuffle_ablation",
+    "internal_random_router_ablation",
+    "internal_always_on_ablation"
+  ],
+  "leakage_rules": [
+    "feedback_due_step must never precede the scored decision step",
+    "routed/composed feature telemetry must be selected before feedback update counters advance for the same step"
+  ],
+  "routing_tasks": "heldout_context_routing,distractor_router_chain,context_reentry_routing",
+  "scaffold_upper_bounds": [
+    "module_composition_scaffold",
+    "contextual_router_scaffold"
+  ],
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "selected_external_baselines": [
+    "sign_persistence",
+    "online_perceptron",
+    "online_logistic_regression",
+    "echo_state_network",
+    "small_gru",
+    "stdp_only_snn"
+  ],
+  "steps": {
+    "composition": 720,
+    "routing": 960
+  },
+  "tier": "Tier 5.13c - Internal Composition / Routing Promotion Gate"
+}

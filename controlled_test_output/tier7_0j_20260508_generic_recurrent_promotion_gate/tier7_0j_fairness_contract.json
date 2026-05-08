@@ -1,0 +1,18 @@
+{
+  "compact_regression": {
+    "backend": "nest",
+    "mode": "full"
+  },
+  "locked_length": 8000,
+  "promotion_rule": "narrow generic recurrent-state claim only; topology-specific recurrence remains a nonclaim",
+  "public_tasks": [
+    "mackey_glass",
+    "lorenz",
+    "narma10"
+  ],
+  "seeds": [
+    42,
+    43,
+    44
+  ]
+}

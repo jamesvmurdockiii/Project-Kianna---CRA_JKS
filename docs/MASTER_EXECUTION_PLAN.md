@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-08T19:45:00+00:00.
+Last updated: 2026-05-08T20:20:00+00:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -23,10 +23,10 @@ Every broad claim must be earned. If a gate fails, the claim narrows.
 Current software baseline:
 
 ```text
-v2.2 = post-Tier-5.19c bounded host-side fading-memory temporal-state evidence lock
-Tier 5.19c = SOFTWARE PASS / full NEST compact regression / v2.2 freeze
-              no bounded nonlinear recurrence claim and no hardware/on-chip
-              temporal-dynamics claim
+v2.3 = post-Tier-7.0j generic bounded recurrent-state software evidence lock
+Tier 7.0j = SOFTWARE PASS / full NEST compact regression / v2.3 freeze
+              no topology-specific recurrence claim, no ESN superiority claim,
+              and no hardware/on-chip recurrence claim
 ```
 
 Current hardware/custom-runtime state:
@@ -149,7 +149,7 @@ Do not freeze a new software baseline from Tier 7.0d or from the next Tier
 Current frozen lines:
 
 ```text
-Software baseline: v2.2
+Software baseline: v2.3
 Native mechanism bridge baseline: CRA_NATIVE_MECHANISM_BRIDGE_v0.3
 Lifecycle native baseline: CRA_LIFECYCLE_NATIVE_BASELINE_v0.4
 Native-scale substrate baseline: CRA_NATIVE_SCALE_BASELINE_v0.5
@@ -169,15 +169,18 @@ Baseline decision rule:
 
 ```text
 Tier 5.19c passed and froze v2.2 as a bounded fading-memory temporal-state
-software baseline. It did not prove nonlinear recurrence, hardware temporal
-dynamics, or universal benchmark superiority.
+software baseline. Tier 7.0j passed and froze v2.3 as a generic bounded
+recurrent-state software baseline after the locked public scoreboard and full
+NEST compact regression passed. v2.3 does not prove topology-specific
+recurrence, ESN superiority, hardware/native transfer, language, planning, AGI,
+or ASI.
 Tier 4.30-readiness passed on 2026-05-05 with 16/16 criteria. The lifecycle
 native path layers initially on `CRA_NATIVE_MECHANISM_BRIDGE_v0.3`, using v2.2
 only as a software reference boundary. Tier 4.32h then froze
 `CRA_NATIVE_SCALE_BASELINE_v0.5` as a bounded native-scale substrate closeout
 over the completed 4.32a/4.32d/4.32e/4.32g evidence. Do not smuggle v2.2
-host-side temporal state, speedup, benchmark usefulness, true partitioned
-learning, or lifecycle scaling into the v0.5 claim.
+or v2.3 host-side temporal/recurrent state, speedup, benchmark usefulness, true
+partitioned learning, or lifecycle scaling into the v0.5 claim.
 ```
 
 The native runtime and native mechanism bridge lines remain separate from the
@@ -1033,19 +1036,21 @@ ability.
     suite. No baseline freeze, hardware transfer, native migration, ESN
     superiority, or topology-specific claim is authorized.
 
-75. **CURRENT ACTIVE STEP** - Tier 7.0j generic bounded recurrent-state
-    promotion / compact regression gate: decide whether the narrower generic
-    bounded recurrent continuous-state interface from 7.0h earns software
-    baseline `v2.3`. Required work: carry forward the locked 8000-step
-    same-seed public scoreboard, preserve the 7.0i topology nonclaim, run
-    compact regression, update the registry/docs/baselines only if promotion is
-    earned, and explicitly reject ESN-superiority, topology-specific recurrence,
-    hardware transfer, native migration, language, planning, AGI, or ASI claims.
+75. **COMPLETE** - Tier 7.0j generic bounded recurrent-state promotion /
+    compact regression gate: passed 14/14 at
+    `controlled_test_output/tier7_0j_20260508_generic_recurrent_promotion_gate/`.
+    Full NEST compact regression passed. The narrow generic bounded recurrent
+    continuous-state interface is frozen as software baseline `v2.3`.
+    Boundary: v2.3 does not claim topology-specific recurrence, ESN
+    superiority, hardware transfer, native migration, language, planning, AGI,
+    or ASI.
 
-76. Tier 6.2a diagnostic hard tasks only if needed: use variable-delay,
+76. **CURRENT ACTIVE STEP** - Tier 6.2a targeted hard-task validation over v2.3
+    if needed: use variable-delay,
     hidden-context, drift, anomaly, or delayed-control diagnostics to isolate the
-    measured public-benchmark failure class. These tasks cannot be used as the
-    public usefulness proof by themselves.
+    measured public-benchmark failure class and decide whether v2.3 needs
+    another general mechanism before real-ish adapters. These tasks cannot be
+    used as the public usefulness proof by themselves.
 
 77. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
@@ -1085,7 +1090,7 @@ ability.
 
 84. Freeze the next software baseline only if new software capability work
     passes ablations, fair baselines, leakage controls, and compact regression.
-    If no new software mechanism is promoted, keep v2.2.
+    If no new software mechanism is promoted, keep v2.3.
 
 ### Phase I - Final Paper Lock
 
@@ -1291,7 +1296,7 @@ learning, lifecycle scaling, and multi-shard learning remain blocked.
 Current reference state:
 
 ```text
-Software baseline: v2.2 (`baselines/CRA_EVIDENCE_BASELINE_v2.2.md`)
+Software baseline: v2.3 (`baselines/CRA_EVIDENCE_BASELINE_v2.3.md`)
 Native lifecycle baseline: CRA_LIFECYCLE_NATIVE_BASELINE_v0.4
 Baseline file: baselines/CRA_LIFECYCLE_NATIVE_BASELINE_v0.4.md
 Registry snapshot: baselines/CRA_LIFECYCLE_NATIVE_BASELINE_v0.4_STUDY_REGISTRY.snapshot.json
@@ -1386,7 +1391,7 @@ scaling, multi-shard learning, or baseline-freeze claims.
 Required coverage:
 
 ```text
-Use v2.2 as the software reference and `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` as
+Use v2.3 as the software reference and `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` as
 the native lifecycle baseline. Keep Tier 4.31d's boundary strict: one-board
 temporal-state hardware smoke only; not nonlinear recurrence, not speedup, not
 multi-chip scaling, not benchmark superiority, and not full organism autonomy.
@@ -1401,11 +1406,12 @@ repair as the next mechanism. Tier 7.0h then showed that the bounded recurrent
 candidate improves the public scoreboard versus v2.2 and beats simple online
 controls. Tier 7.0i then falsified/narrowed the topology-specific recurrence
 claim: generic bounded recurrent state remains useful, but topology shams and
-no-recurrence controls match or beat the structured candidate. The next active
-work is Tier 7.0j: decide whether the narrower generic bounded recurrent-state
-interface earns a v2.3 software baseline through compact regression. Reopen
+no-recurrence controls match or beat the structured candidate. Tier 7.0j then
+passed full NEST compact regression and froze v2.3 as the narrow generic
+bounded recurrent-state software baseline. The next active work is Tier 6.2a /
+7.1 targeted usefulness validation over v2.3 before any native transfer. Reopen
 native work only for targeted transfer after a software task/mechanism earns it
-under the Tier 7/6.2 gates.
+under the Tier 7/6.2 gates and a separate transfer contract is written.
 It must preserve explicit board/chip/shard identity, message paths, compact
 readback ownership, failure counters, placement assumptions,
 enabled-vs-no-learning separation, and resource measurements while adding the

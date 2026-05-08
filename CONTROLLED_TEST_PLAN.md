@@ -80,6 +80,7 @@ They remain part of the peer-review audit trail:
 5.19a local continuous temporal substrate reference = completed; fading memory helped held-out long-memory task, recurrence-specific value not yet separated
 5.19b temporal-substrate benchmark/sham gate = completed; fading memory supported, bounded nonlinear recurrence unproven
 5.19c fading-memory narrowing compact-regression gate = passed and froze bounded v2.2
+7.0j generic bounded recurrent-state promotion gate = passed and froze bounded v2.3
 4.30-readiness lifecycle-native preflight/layering audit = passed; static-pool lifecycle-native path layers on native mechanism bridge v0.3 with v2.2 as software reference only
 4.30 lifecycle-native static-pool contract = passed; command/readback/event/gate/failure schema defined before local reference or hardware work
 4.30a local static-pool lifecycle reference = passed; canonical and boundary deterministic traces plus lifecycle shams precomputed
@@ -103,7 +104,7 @@ This repo uses five evidence labels so paper claims stay clean:
 - **Failed/parked diagnostic evidence**: clean negative evidence retained to prevent p-hacking and explain why a mechanism was not promoted.
 - **Hardware prepare/probe evidence**: prepared capsules and one-off probes; these are not hardware claims until returned artifacts are reviewed and explicitly promoted.
 
-In short: `noncanonical` does not mean the result has no value. It means "not a formal registry/paper-table claim by itself." A frozen baseline such as v1.6, v1.7, v1.9, v2.0, v2.1, or v2.2 is stronger than an ordinary diagnostic even when its source bundle remains outside the canonical registry.
+In short: `noncanonical` does not mean the result has no value. It means "not a formal registry/paper-table claim by itself." A frozen baseline such as v1.6, v1.7, v1.9, v2.0, v2.1, v2.2, or v2.3 is stronger than an ordinary diagnostic even when its source bundle remains outside the canonical registry.
 
 ## Paper-Grade Safeguards
 
@@ -10361,4 +10362,76 @@ Tier 7.0j - generic bounded recurrent-state promotion / compact regression gate.
 Decide whether the narrower generic bounded recurrent continuous-state
 interface earns a v2.3 software baseline. Any promotion must preserve the 7.0i
 topology nonclaim and pass compact regression before freeze.
+```
+
+### Tier 7.0j - Generic Bounded Recurrent-State Promotion / Compact Regression
+
+Runner:
+
+```text
+experiments/tier7_0j_generic_recurrent_promotion_gate.py
+```
+
+Output:
+
+```text
+controlled_test_output/tier7_0j_20260508_generic_recurrent_promotion_gate/
+```
+
+Status:
+
+```text
+PASS
+criteria: 14/14
+outcome: generic_bounded_recurrent_state_ready_for_v2_3_freeze
+freeze authorized: true
+compact regression: full NEST pass
+```
+
+Locked 8000-step aggregate geomean MSE:
+
+```text
+ESN:                              0.020109884207162095
+generic bounded recurrent state:  0.09530752189727928
+structured recurrence candidate:  0.09964414908204765
+v2.2 fading memory:               0.19348969000027122
+lag-only LMS:                     0.1986311714577415
+random reservoir:                 0.2075278737499566
+```
+
+Promotion metrics:
+
+```text
+generic margin vs v2.2:       2.0301617978149813
+generic margin vs lag-only:   2.0841080274002146
+generic margin vs reservoir:  2.177455353142288
+v2.2 / ESN ratio:             9.621621288667603
+generic / ESN ratio:          4.739337179442122
+topology nonclaim preserved:  true
+```
+
+Interpretation:
+
+```text
+Tier 7.0j promotes a narrow v2.3 software baseline: generic bounded recurrent
+continuous-state improves the locked public benchmark scoreboard versus v2.2 and
+passes full compact regression. It does not prove topology-specific recurrence
+and does not beat ESN.
+```
+
+Baseline frozen:
+
+```text
+baselines/CRA_EVIDENCE_BASELINE_v2.3.json
+baselines/CRA_EVIDENCE_BASELINE_v2.3.md
+baselines/CRA_EVIDENCE_BASELINE_v2.3_STUDY_REGISTRY.snapshot.json
+```
+
+Next required step:
+
+```text
+Tier 6.2a / 7.1 targeted usefulness validation over v2.3.
+Use audited hard/real-ish tasks and fair baselines to decide whether v2.3
+generalizes, whether another general mechanism is needed, or whether a separate
+native/on-chip transfer contract is justified.
 ```

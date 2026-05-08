@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-05-08T20:17:52.778309+00:00",
+  "source_generated_at_utc": "2026-05-08T20:10:52+00:00",
+  "registry_entry_id": "tier7_0j_generic_recurrent_promotion_gate",
+  "tier": "Tier 7.0j - Generic Bounded Recurrent-State Promotion / Compact Regression",
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_0j_20260508_generic_recurrent_promotion_gate",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_0j_20260508_generic_recurrent_promotion_gate/tier7_0j_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_0j_20260508_generic_recurrent_promotion_gate/tier7_0j_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_0j_20260508_generic_recurrent_promotion_gate/tier7_0j_summary.csv",
+  "canonical": true,
+  "claim": "Tier 7.0j promoted the narrowed generic bounded recurrent continuous-state interface as software baseline v2.3 after the locked 8000-step public scoreboard and full NEST compact regression passed.",
+  "caveat": "Software evidence only; not topology-specific recurrence, not ESN superiority, not hardware evidence, not native/on-chip recurrence, not language, planning, AGI, or ASI."
+}

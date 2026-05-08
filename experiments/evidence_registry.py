@@ -1199,6 +1199,23 @@ SPECS: tuple[EvidenceSpec, ...] = (
         ),
     ),
     EvidenceSpec(
+        entry_id="tier7_0j_generic_recurrent_promotion_gate",
+        tier_label="Tier 7.0j - Generic Bounded Recurrent-State Promotion / Compact Regression",
+        plan_position="Phase H software usefulness: v2.3 generic recurrent-state promotion gate",
+        canonical_dir="tier7_0j_20260508_generic_recurrent_promotion_gate",
+        results_file="tier7_0j_results.json",
+        report_file="tier7_0j_report.md",
+        summary_file="tier7_0j_summary.csv",
+        harness="experiments/tier7_0j_generic_recurrent_promotion_gate.py",
+        evidence_role="software baseline promotion/regression gate",
+        claim="Tier 7.0j promoted the narrowed generic bounded recurrent continuous-state interface as software baseline v2.3 after the locked 8000-step public scoreboard and full NEST compact regression passed.",
+        caveat="Software evidence only; not topology-specific recurrence, not ESN superiority, not hardware evidence, not native/on-chip recurrence, not language, planning, AGI, or ASI.",
+        latest_manifest_names=("tier7_0j_latest_manifest.json",),
+        expected_extra_files=(
+            "tier7_0j_fairness_contract.json",
+        ),
+    ),
+    EvidenceSpec(
         entry_id="tier4_30_readiness_lifecycle_native_audit",
         tier_label="Tier 4.30-readiness - Lifecycle-Native Preflight / Layering Audit",
         plan_position="Phase E lifecycle-native path selection before implementation",

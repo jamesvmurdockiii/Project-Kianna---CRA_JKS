@@ -3678,6 +3678,39 @@ not planning
 not AGI or ASI
 ```
 
+2026-05-08 result:
+
+```text
+Status: PASS, 14/14 criteria
+Outcome: generic_bounded_recurrent_state_ready_for_v2_3_freeze
+Baseline: CRA_EVIDENCE_BASELINE_v2.3 frozen
+Compact regression: full NEST pass
+```
+
+Key result:
+
+```text
+generic bounded recurrent candidate MSE: 0.09530752189727928
+v2.2 fading-memory MSE:                0.19348969000027122
+lag-only LMS MSE:                      0.1986311714577415
+random reservoir MSE:                  0.2075278737499566
+ESN MSE:                               0.020109884207162095
+generic/v2.2 margin:                   2.0301617978149813
+generic/lag margin:                    2.0841080274002146
+generic/reservoir margin:              2.177455353142288
+generic/ESN ratio:                     4.739337179442122
+```
+
+Interpretation:
+
+```text
+v2.3 is a real software baseline upgrade over v2.2 on the locked public
+benchmark protocol, but it is not ESN-superior and not topology-specific.
+The next evidence should validate where v2.3 is useful beyond the standard
+three-benchmark scoreboard, or decide the next general mechanism from a
+measured failure.
+```
+
 ### Tier 6.2: Diagnostic Hard Task Suite
 
 Tier 6.2 is subordinate to the public benchmark loop. It is authorized only to
@@ -7113,7 +7146,7 @@ Tests: test-temporal-state, test-profiles, test, test-lifecycle, test-lifecycle-
 Boundary: local source/runtime host evidence only, not hardware
 ```
 
-Next: Run Tier 7.0j generic bounded recurrent-state promotion / compact regression gate. Tier 7.0i narrowed the Tier 7.0h result: generic bounded recurrent state remains useful, but topology-specific recurrence is not supported. Use `CRA_NATIVE_SCALE_BASELINE_v0.5` only as the frozen native substrate reference, not as usefulness evidence.
+Next: Run Tier 6.2a / 7.1 targeted usefulness validation over frozen software baseline v2.3. Tier 7.0j froze v2.3 as a generic bounded recurrent-state software baseline, while preserving the nonclaims: no topology-specific recurrence, no ESN superiority, no hardware/native transfer, and no AGI/ASI. Use `CRA_NATIVE_SCALE_BASELINE_v0.5` only as the frozen native substrate reference, not as usefulness evidence.
       Tier 4.32e passed after EBRAINS ingest at
       `controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/`:
       board `10.11.205.161`, two cases, 32 events per case, 96/96 lookup

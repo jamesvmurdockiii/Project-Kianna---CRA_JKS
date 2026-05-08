@@ -1,0 +1,204 @@
+{
+  "claim_boundary": "Tier 7.0j is a software-only promotion/regression gate for a narrow generic bounded recurrent-state interface. It cannot claim topology-specific recurrence, ESN superiority, hardware transfer, native/on-chip recurrence, language, planning, AGI, or ASI.",
+  "classification": {
+    "compact_backend": "nest",
+    "compact_freeze_backend": true,
+    "compact_full": true,
+    "compact_pass": true,
+    "freeze_authorized": true,
+    "generic_public_support": true,
+    "nonclaims": [
+      "not topology-specific recurrence",
+      "not ESN superiority",
+      "not hardware evidence",
+      "not native on-chip recurrence",
+      "not language",
+      "not planning",
+      "not AGI",
+      "not ASI"
+    ],
+    "outcome": "generic_bounded_recurrent_state_ready_for_v2_3_freeze",
+    "promotable_claim": "Generic bounded recurrent continuous-state interface improves the locked 8000-step Mackey-Glass/Lorenz/NARMA10 public scoreboard versus v2.2.",
+    "recommendation": "Freeze v2.3 as a generic bounded recurrent-state software baseline; preserve topology and ESN nonclaims.",
+    "topology_nonclaim_preserved": true
+  },
+  "compact_child": {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "experiments/tier5_self_evaluation_compact_regression.py",
+      "--backend",
+      "nest",
+      "--stop-on-fail",
+      "--output-dir",
+      "/Users/james/JKS:CRA/controlled_test_output/tier7_0j_20260508_generic_recurrent_promotion_gate/compact_regression_full_nest"
+    ],
+    "failure_reason": "",
+    "manifest_path": "/Users/james/JKS:CRA/controlled_test_output/tier7_0j_20260508_generic_recurrent_promotion_gate/compact_regression_full_nest/tier5_18c_results.json",
+    "name": "compact_regression_full_nest",
+    "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_0j_20260508_generic_recurrent_promotion_gate/compact_regression_full_nest",
+    "purpose": "rerun the promoted software compact regression stack before any v2.3 freeze",
+    "return_code": 0,
+    "runtime_seconds": 1684.4580694580002,
+    "status": "pass",
+    "stderr_path": "/Users/james/JKS:CRA/controlled_test_output/tier7_0j_20260508_generic_recurrent_promotion_gate/compact_regression_full_nest/compact_regression_full_nest_stderr.log",
+    "stdout_path": "/Users/james/JKS:CRA/controlled_test_output/tier7_0j_20260508_generic_recurrent_promotion_gate/compact_regression_full_nest/compact_regression_full_nest_stdout.log"
+  },
+  "compact_mode": "full",
+  "criteria": [
+    {
+      "name": "runner revision current",
+      "note": "",
+      "passed": true,
+      "rule": "expected current source",
+      "value": "tier7_0j_generic_recurrent_promotion_gate_20260508_0001"
+    },
+    {
+      "name": "v2.2 baseline artifact exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.2.json"
+    },
+    {
+      "name": "Tier 7.0h source result pass",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "Tier 7.0i source result pass",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "locked public length",
+      "note": "",
+      "passed": true,
+      "rule": "== 8000",
+      "value": 8000
+    },
+    {
+      "name": "generic improves v2.2",
+      "note": "",
+      "passed": true,
+      "rule": ">= 1.25",
+      "value": 2.0301617978149813
+    },
+    {
+      "name": "generic beats lag-only online control",
+      "note": "",
+      "passed": true,
+      "rule": "> 1.0",
+      "value": 2.0841080274002146
+    },
+    {
+      "name": "generic beats random reservoir online control",
+      "note": "",
+      "passed": true,
+      "rule": "> 1.0",
+      "value": 2.177455353142288
+    },
+    {
+      "name": "generic narrows ESN gap",
+      "note": "",
+      "passed": true,
+      "rule": "< v2.2/ESN",
+      "value": 4.739337179442122
+    },
+    {
+      "name": "destructive controls separated",
+      "note": "",
+      "passed": true,
+      "rule": "both true",
+      "value": [
+        true,
+        true
+      ]
+    },
+    {
+      "name": "topology nonclaim preserved",
+      "note": "",
+      "passed": true,
+      "rule": "== true",
+      "value": true
+    },
+    {
+      "name": "compact regression guardrail pass",
+      "note": "",
+      "passed": true,
+      "rule": "== true unless compact-mode skip",
+      "value": true
+    },
+    {
+      "name": "full compact regression for freeze",
+      "note": "",
+      "passed": true,
+      "rule": "== true for freeze authorization",
+      "value": true
+    },
+    {
+      "name": "freeze compact backend is non-mock",
+      "note": "",
+      "passed": true,
+      "rule": "nest or brian2 required for freeze",
+      "value": true
+    }
+  ],
+  "criteria_passed": 14,
+  "criteria_total": 14,
+  "failure_reason": "",
+  "fairness_contract": {
+    "compact_regression": {
+      "backend": "nest",
+      "mode": "full"
+    },
+    "locked_length": 8000,
+    "promotion_rule": "narrow generic recurrent-state claim only; topology-specific recurrence remains a nonclaim",
+    "public_tasks": [
+      "mackey_glass",
+      "lorenz",
+      "narma10"
+    ],
+    "seeds": [
+      42,
+      43,
+      44
+    ]
+  },
+  "generated_at_utc": "2026-05-08T20:10:52+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_0j_20260508_generic_recurrent_promotion_gate",
+  "runner_revision": "tier7_0j_generic_recurrent_promotion_gate_20260508_0001",
+  "runtime_seconds": 1684.4754914589998,
+  "source_results": {
+    "tier7_0h": "/Users/james/JKS:CRA/controlled_test_output/tier7_0h_20260508_bounded_recurrent_interface_gate/tier7_0h_results.json",
+    "tier7_0i": "/Users/james/JKS:CRA/controlled_test_output/tier7_0i_20260508_recurrence_topology_specificity_gate/tier7_0i_results.json",
+    "v2_2_baseline": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.2.json"
+  },
+  "status": "pass",
+  "support": {
+    "esn_mse": 0.020109884207162095,
+    "generic_candidate_mse": 0.09530752189727928,
+    "generic_divided_by_esn": 4.739337179442122,
+    "generic_margin_vs_lag": 2.0841080274002146,
+    "generic_margin_vs_reservoir": 2.177455353142288,
+    "generic_margin_vs_v2_2": 2.0301617978149813,
+    "lag_mse": 0.1986311714577415,
+    "locked_length": 8000,
+    "reservoir_mse": 0.2075278737499566,
+    "structured_candidate_mse": 0.09964414908204765,
+    "structured_margin_vs_generic": 0.9564788577681811,
+    "tier7_0h_destructive_controls_separated": true,
+    "tier7_0h_recurrence_controls_separated": false,
+    "tier7_0h_status": "pass",
+    "tier7_0i_destructive_controls_separated": true,
+    "tier7_0i_promotion_recommended": false,
+    "tier7_0i_status": "pass",
+    "tier7_0i_topology_controls_separated": false,
+    "v2_2_divided_by_esn": 9.621621288667603,
+    "v2_2_mse": 0.19348969000027122
+  },
+  "tier": "Tier 7.0j - Generic Bounded Recurrent-State Promotion / Compact Regression"
+}
