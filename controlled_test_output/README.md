@@ -5,10 +5,10 @@ ledger is `STUDY_REGISTRY.json`; the compact table is `STUDY_REGISTRY.csv`.
 Older reruns, prepared capsules, debug probes, and baseline-frozen
 mechanism bundles outside the formal registry are preserved for audit.
 
-- Generated: `2026-05-09T01:21:36.005067+00:00`
+- Generated: `2026-05-09T02:05:53.076994+00:00`
 - Registry status: **PASS**
-- Canonical evidence entries: `108`
-- Expanded test-entry count: `108`; see the canonical evidence table below for the exact current tier list.
+- Canonical evidence entries: `109`
+- Expanded test-entry count: `109`; see the canonical evidence table below for the exact current tier list.
 
 ## Evidence Categories
 
@@ -94,6 +94,7 @@ mechanism bundles outside the formal registry are preserved for audit.
 | `tier7_1m_nab_closeout_mechanism_return_decision` | **PASS** | `controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision` | Evidence synthesis and decision gate only; not a new benchmark score, not public usefulness proof, not a promoted mechanism, not a baseline freeze, not hardware/native transfer, and not AGI/ASI evidence. |
 | `tier7_4a_cost_aware_policy_action_contract` | **PASS** | `controlled_test_output/tier7_4a_20260509_cost_aware_policy_action_contract` | Contract-only evidence; not a scoring run, not a promoted mechanism, not public usefulness proof, not a baseline freeze, not hardware/native transfer, and not AGI/ASI evidence. |
 | `tier7_4b_cost_aware_policy_action_local_diagnostic` | **PASS** | `controlled_test_output/tier7_4b_20260509_cost_aware_policy_action_local_diagnostic` | Local software diagnostic only; candidate mechanism evidence, not a promoted mechanism, not public usefulness proof, not a baseline freeze, not hardware/native transfer, and not AGI/ASI evidence. The next gate is compact promotion/regression before any freeze. |
+| `tier7_4c_cost_aware_policy_action_promotion_gate` | **PASS** | `controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate` | Software promotion/regression evidence only; not public usefulness proof, not broad anomaly benchmark superiority, not hardware/native transfer, not planning, and not AGI/ASI evidence. |
 | `tier5_20a_resonant_branch_polyp_diagnostic` | **PASS** | `controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic` | Software diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence. |
 | `tier5_20b_hybrid_resonant_polyp_diagnostic` | **PASS** | `controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic` | Software repair diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence. |
 | `tier5_20c_minimal_resonant_polyp_diagnostic` | **PASS** | `controlled_test_output/tier5_20c_20260508_minimal_resonant_polyp_diagnostic` | Software minimal-dose diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence. |

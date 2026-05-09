@@ -14,7 +14,7 @@ mechanism promotion, lifecycle/ecology evidence, and native SpiNNaker runtime
 migration. The generated registry is the authority for which results are
 canonical.
 
-The current canonical evidence trail contains **108 registered evidence bundles**
+The current canonical evidence trail contains **109 registered evidence bundles**
 with all expected artifacts present and all criteria passing. The generated
 registry is the source of truth for the full list:
 
@@ -72,6 +72,8 @@ They remain part of the peer-review audit trail:
 4.21a keyed context-memory hardware bridge = passed one-seed EBRAINS hardware bridge probe
 6.5 adult-turnover stressor if the final organism claim requires it
 7.4 delayed-reward policy / action selection
+7.4c cost-aware policy/action promotion + compact regression = passed; freezes bounded v2.4 software policy/action baseline
+7.4d cost-aware policy/action held-out/public usefulness contract = current next gate
 7.5 curriculum / environment generator
 7.6 long-horizon planning / subgoal control
 4.19 hardware lifecycle feasibility
@@ -81,6 +83,7 @@ They remain part of the peer-review audit trail:
 5.19b temporal-substrate benchmark/sham gate = completed; fading memory supported, bounded nonlinear recurrence unproven
 5.19c fading-memory narrowing compact-regression gate = passed and froze bounded v2.2
 7.0j generic bounded recurrent-state promotion gate = passed and froze bounded v2.3
+7.4c cost-aware policy/action promotion gate = passed and froze bounded v2.4
 4.30-readiness lifecycle-native preflight/layering audit = passed; static-pool lifecycle-native path layers on native mechanism bridge v0.3 with v2.2 as software reference only
 4.30 lifecycle-native static-pool contract = passed; command/readback/event/gate/failure schema defined before local reference or hardware work
 4.30a local static-pool lifecycle reference = passed; canonical and boundary deterministic traces plus lifecycle shams precomputed
@@ -10491,7 +10494,7 @@ Claim boundary:
 
 ```text
 Tier 6.2a is software diagnostic evidence only. These custom hard tasks cannot
-replace public benchmarks, cannot freeze v2.4, cannot authorize native/on-chip
+replace public benchmarks, cannot freeze a new baseline, cannot authorize native/on-chip
 transfer, and cannot support broad usefulness, topology-specific recurrence,
 ESN superiority, language, planning, AGI, or ASI claims.
 ```
@@ -11144,13 +11147,29 @@ Boundary: local software diagnostic only; not a promoted mechanism, not a
 baseline freeze, not public usefulness proof, and not hardware/native transfer.
 ```
 
-Next required step:
+Tier 7.4c result:
 
 ```text
 Tier 7.4c - Cost-aware policy/action promotion + compact regression gate.
-Lock the 7.4b candidate policy, rerun the compact v2.3 guardrails, preserve
-the 7.4b shams/ablations, and freeze/promote only if utility, no-action,
-leakage, and regression criteria all stay green.
+Status: COMPLETE / PASS, 16/16 criteria.
+Output: controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/
+Outcome: cost_aware_policy_ready_for_v2_4_freeze.
+Result: locked 7.4b candidate preserved expected-utility advantage,
+sham/ablation separation, no-action guard, and leakage boundary, then passed
+full NEST compact regression.
+Baseline frozen: CRA_EVIDENCE_BASELINE_v2.4.
+Boundary: host-side software policy/action baseline only; not public usefulness
+proof, hardware/native transfer, planning, language, AGI, or ASI.
+```
+
+Next required step:
+
+```text
+Tier 7.4d - Cost-aware policy/action held-out/public usefulness contract.
+Predeclare external or held-out action-cost tasks, cost functions, action set,
+splits, baselines, shams, statistics, failure classes, and artifacts before any
+v2.4 scoring. Do not tune on held-out streams or infer hardware transfer from
+the v2.4 software freeze.
 ```
 
 ## Tier 5.20a - Resonant Branch Polyp Internal-Model Diagnostic

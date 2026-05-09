@@ -1,0 +1,22 @@
+{
+  "compact_backend": "nest",
+  "compact_freeze_backend": true,
+  "compact_full": true,
+  "compact_pass": true,
+  "freeze_authorized": true,
+  "hardware_transfer_authorized": false,
+  "nonclaims": [
+    "not public usefulness proof",
+    "not broad anomaly benchmark superiority",
+    "not reinforcement learning solved",
+    "not long-horizon planning",
+    "not hardware/native transfer",
+    "not language",
+    "not AGI",
+    "not ASI"
+  ],
+  "outcome": "cost_aware_policy_ready_for_v2_4_freeze",
+  "policy_support": true,
+  "promotable_claim": "Cost-aware policy/action selection improves local expected utility under asymmetric action costs while preserving sham/ablation separation.",
+  "recommendation": "Freeze v2.4 as a software cost-aware policy/action baseline; do not authorize hardware transfer without a separate transfer contract."
+}

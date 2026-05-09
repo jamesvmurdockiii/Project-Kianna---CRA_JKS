@@ -7,7 +7,7 @@
       "severity": "error"
     },
     {
-      "details": "81 files present",
+      "details": "84 files present",
       "name": "required baseline files exist",
       "passed": true,
       "severity": "error"
@@ -19,7 +19,7 @@
       "severity": "error"
     },
     {
-      "details": "108 canonical bundles, 0 missing artifacts, 0 failed criteria",
+      "details": "109 canonical bundles, 0 missing artifacts, 0 failed criteria",
       "name": "canonical registry exists and passes",
       "passed": true,
       "severity": "error"
@@ -37,7 +37,7 @@
       "severity": "error"
     },
     {
-      "details": "v0.1 through v2.2 baselines remain frozen at their recorded counts",
+      "details": "v0.1 through v2.4 baselines remain frozen at their recorded counts",
       "name": "frozen evidence baselines are intact",
       "passed": true,
       "severity": "error"
@@ -49,10 +49,10 @@
       "severity": "error"
     }
   ],
-  "generated_at_utc": "2026-05-09T01:21:38.022152+00:00",
+  "generated_at_utc": "2026-05-09T02:05:55.334796+00:00",
   "registry_summary": {
-    "evidence_count": 108,
-    "expanded_test_entry_count": 108,
+    "evidence_count": 109,
+    "expanded_test_entry_count": 109,
     "registry_status": "pass"
   },
   "status": "pass"

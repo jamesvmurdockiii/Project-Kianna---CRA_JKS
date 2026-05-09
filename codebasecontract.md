@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-09T00:10:00+00:00.
+Last updated: 2026-05-09T02:00:10+00:00.
 
 Current repo root:
 
@@ -29,17 +29,19 @@ Current repo root:
 Current frozen software baseline:
 
 ```text
-v2.3 = post-Tier-7.0j generic bounded recurrent-state software evidence lock
-       Source: controlled_test_output/tier7_0j_20260508_generic_recurrent_promotion_gate/
-       Runner: experiments/tier7_0j_generic_recurrent_promotion_gate.py
-       Criteria: 14/14
+v2.4 = post-Tier-7.4c cost-aware policy/action software evidence lock
+       Source: controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/
+       Runner: experiments/tier7_4c_cost_aware_policy_action_promotion_gate.py
+       Criteria: 16/16
        Compact gate: full NEST compact regression passed
-       Claim: generic bounded recurrent continuous-state improves the locked
-              8000-step Mackey-Glass/Lorenz/NARMA10 public scoreboard versus
-              v2.2 while preserving existing CRA guardrails.
-       Boundary: not topology-specific recurrence, not ESN superiority, not
-                 hardware evidence, not native on-chip recurrence, not
-                 language/planning/AGI/ASI.
+       Claim: the locked Tier 7.4b cost-aware policy/action candidate improves
+              local expected utility under asymmetric action costs, separates
+              shams/ablations, avoids no-action collapse, and preserves CRA
+              guardrails.
+       Boundary: host-side software policy/action evidence only; not public
+                 usefulness proof, not broad anomaly benchmark superiority, not
+                 hardware/native transfer, not long-horizon planning, not
+                 language/AGI/ASI.
 ```
 
 Latest targeted usefulness diagnostic:
@@ -343,6 +345,23 @@ Tier 7.4b = COMPLETE, PASS, 15/15 criteria
   Next gate: Tier 7.4c - Cost-Aware Policy/Action Promotion + Compact Regression Gate.
   Boundary: candidate local software evidence only; no promoted mechanism, no
             freeze, no public usefulness claim, and no hardware/native transfer.
+```
+
+Latest cost-aware policy/action promotion gate:
+
+```text
+Tier 7.4c = COMPLETE, PASS, 16/16 criteria
+  Source: controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/
+  Runner: experiments/tier7_4c_cost_aware_policy_action_promotion_gate.py
+  Outcome: cost_aware_policy_ready_for_v2_4_freeze
+  Compact gate: full non-mock NEST compact regression passed in 1615.01088625s.
+  Result: the locked Tier 7.4b candidate preserved expected-utility advantage,
+          sham/ablation separation, no-action guard, and leakage boundary.
+  Baseline frozen: CRA_EVIDENCE_BASELINE_v2.4.
+  Next gate: Tier 7.4d - Cost-Aware Policy/Action Held-Out/Public Usefulness Contract.
+  Boundary: promoted host-side software mechanism evidence only; not public
+            usefulness proof, not hardware/native transfer, not long-horizon
+            planning, and not language/AGI/ASI.
 ```
 
 Latest optional mechanism diagnostic:
@@ -979,12 +998,20 @@ Tier 7.4b — COMPLETE. Cost-aware policy/action local diagnostic.
   Output: controlled_test_output/tier7_4b_20260509_cost_aware_policy_action_local_diagnostic/
   Result: candidate policy/action mechanism evidence; no freeze or hardware transfer.
 
-Tier 7.4c — CURRENT ACTIVE STEP. Cost-aware policy/action promotion + compact
-  regression gate.
-  Required first move: lock the 7.4b candidate, rerun compact v2.3 guardrails,
-    preserve sham/ablation separation, block no-action collapse, verify no
-    leakage/test-label threshold tuning, and promote/freeze only if every
-    predeclared gate stays green.
+Tier 7.4c — COMPLETE. Cost-aware policy/action promotion + compact regression
+  gate.
+  Status: LOCAL SOFTWARE PASS, 16/16 criteria. Full NEST compact regression
+    passed. `CRA_EVIDENCE_BASELINE_v2.4` is frozen as a host-side software
+    policy/action baseline. No hardware/native transfer or public usefulness
+    claim is authorized.
+
+Tier 7.4d — CURRENT ACTIVE STEP. Cost-aware policy/action held-out/public
+  usefulness contract.
+  Required first move: define the exact external or held-out action-cost tasks,
+    train/evaluation split, cost functions, action set, leakage rules,
+    baselines, shams, statistical tests, and failure classes before scoring
+    v2.4. This is a contract gate first; do not tune on the same held-out
+    streams and do not authorize native transfer from 7.4c alone.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware

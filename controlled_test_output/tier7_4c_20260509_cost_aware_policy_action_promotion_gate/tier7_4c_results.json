@@ -1,0 +1,196 @@
+{
+  "claim_boundary": "Tier 7.4c is a software-only promotion/regression gate for the cost-aware policy/action candidate. It may authorize a v2.4 software freeze, but it is not public usefulness proof, not hardware/native transfer, not planning, and not AGI/ASI evidence.",
+  "classification": {
+    "compact_backend": "nest",
+    "compact_freeze_backend": true,
+    "compact_full": true,
+    "compact_pass": true,
+    "freeze_authorized": true,
+    "hardware_transfer_authorized": false,
+    "nonclaims": [
+      "not public usefulness proof",
+      "not broad anomaly benchmark superiority",
+      "not reinforcement learning solved",
+      "not long-horizon planning",
+      "not hardware/native transfer",
+      "not language",
+      "not AGI",
+      "not ASI"
+    ],
+    "outcome": "cost_aware_policy_ready_for_v2_4_freeze",
+    "policy_support": true,
+    "promotable_claim": "Cost-aware policy/action selection improves local expected utility under asymmetric action costs while preserving sham/ablation separation.",
+    "recommendation": "Freeze v2.4 as a software cost-aware policy/action baseline; do not authorize hardware transfer without a separate transfer contract."
+  },
+  "compact_child": {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "experiments/tier5_self_evaluation_compact_regression.py",
+      "--backend",
+      "nest",
+      "--stop-on-fail",
+      "--output-dir",
+      "/Users/james/JKS:CRA/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/compact_regression_full_nest"
+    ],
+    "failure_reason": "",
+    "manifest_path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/compact_regression_full_nest/tier5_18c_results.json",
+    "name": "compact_regression_full_nest",
+    "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/compact_regression_full_nest",
+    "purpose": "rerun compact v2.x guardrails before any cost-aware policy/action freeze",
+    "return_code": 0,
+    "runtime_seconds": 1615.01088625,
+    "status": "pass",
+    "stderr_path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/compact_regression_full_nest/compact_regression_full_nest_stderr.log",
+    "stdout_path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/compact_regression_full_nest/compact_regression_full_nest_stdout.log"
+  },
+  "compact_mode": "full",
+  "criteria": [
+    {
+      "name": "runner revision current",
+      "note": "",
+      "passed": true,
+      "rule": "expected current source",
+      "value": "tier7_4c_cost_aware_policy_action_promotion_gate_20260509_0001"
+    },
+    {
+      "name": "Tier 7.4b exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_4b_20260509_cost_aware_policy_action_local_diagnostic/tier7_4b_results.json"
+    },
+    {
+      "name": "v2.3 baseline exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.3.json"
+    },
+    {
+      "name": "Tier 7.4b passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "Tier 7.4b candidate outcome",
+      "note": "",
+      "passed": true,
+      "rule": "== cost_aware_policy_candidate_requires_regression",
+      "value": "cost_aware_policy_candidate_requires_regression"
+    },
+    {
+      "name": "v2.3 policy best non-oracle",
+      "note": "",
+      "passed": true,
+      "rule": "== v2_3_cost_aware_policy",
+      "value": "v2_3_cost_aware_policy"
+    },
+    {
+      "name": "utility margin vs external positive",
+      "note": "",
+      "passed": true,
+      "rule": "> 0",
+      "value": 12.121913580246913
+    },
+    {
+      "name": "utility margin vs sham positive",
+      "note": "",
+      "passed": true,
+      "rule": "> 0",
+      "value": 2.9435185185185144
+    },
+    {
+      "name": "task-family wins vs external",
+      "note": "",
+      "passed": true,
+      "rule": ">= 2",
+      "value": 2
+    },
+    {
+      "name": "no-action collapse blocked",
+      "note": "",
+      "passed": true,
+      "rule": "0.01 <= action_rate <= 0.35 and recall >= 0.65",
+      "value": {
+        "action_rate": 0.0837962962962963,
+        "window_recall": 0.9865196078431373
+      }
+    },
+    {
+      "name": "source gate did not already freeze",
+      "note": "",
+      "passed": true,
+      "rule": "== false",
+      "value": false
+    },
+    {
+      "name": "source gate did not authorize hardware transfer",
+      "note": "",
+      "passed": true,
+      "rule": "== false",
+      "value": false
+    },
+    {
+      "name": "compact regression guardrail pass",
+      "note": "",
+      "passed": true,
+      "rule": "== true",
+      "value": true
+    },
+    {
+      "name": "full compact regression for freeze",
+      "note": "",
+      "passed": true,
+      "rule": "== true for freeze authorization",
+      "value": true
+    },
+    {
+      "name": "freeze compact backend is non-mock",
+      "note": "",
+      "passed": true,
+      "rule": "nest or brian2 required for freeze",
+      "value": true
+    },
+    {
+      "name": "hardware transfer remains blocked",
+      "note": "",
+      "passed": true,
+      "rule": "== false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 16,
+  "criteria_total": 16,
+  "failed_criteria": [],
+  "failure_reason": "",
+  "generated_at_utc": "2026-05-09T01:52:33+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate",
+  "runner_revision": "tier7_4c_cost_aware_policy_action_promotion_gate_20260509_0001",
+  "runtime_seconds": 1615.014759042,
+  "source_results": {
+    "tier7_4b": "/Users/james/JKS:CRA/controlled_test_output/tier7_4b_20260509_cost_aware_policy_action_local_diagnostic/tier7_4b_results.json",
+    "v2_3_baseline": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.3.json"
+  },
+  "status": "pass",
+  "support": {
+    "action_rate_mean": 0.0837962962962963,
+    "best_external_baseline": "fixed_train_only_threshold",
+    "best_external_expected_utility_mean": 5.924382716049381,
+    "best_non_oracle_model": "v2_3_cost_aware_policy",
+    "best_sham_expected_utility_mean": 15.10277777777778,
+    "best_sham_or_ablation": "random_confidence_ablation",
+    "false_positive_cost_per_1000_mean": 3.489715986424665,
+    "freeze_authorized_by_7_4b": false,
+    "hardware_transfer_authorized_by_7_4b": false,
+    "task_family_wins_vs_external": 2,
+    "tier7_4b_outcome": "cost_aware_policy_candidate_requires_regression",
+    "tier7_4b_status": "pass",
+    "utility_margin_vs_external": 12.121913580246913,
+    "utility_margin_vs_sham": 2.9435185185185144,
+    "v2_3_expected_utility_mean": 18.046296296296294,
+    "window_recall_mean": 0.9865196078431373
+  },
+  "tier": "Tier 7.4c - Cost-Aware Policy/Action Promotion + Compact Regression"
+}

@@ -3,7 +3,7 @@
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
 [![Tests](https://img.shields.io/badge/tests-151%20passing-brightgreen.svg)](#validation)
-[![Evidence](https://img.shields.io/badge/canonical%20evidence-108%20bundles-blue.svg)](STUDY_EVIDENCE_INDEX.md)
+[![Evidence](https://img.shields.io/badge/canonical%20evidence-109%20bundles-blue.svg)](STUDY_EVIDENCE_INDEX.md)
 
 Coral Reef Architecture (CRA) is a neuromorphic learning research platform for
 studying local spiking plasticity, delayed credit assignment, population-level
@@ -18,7 +18,7 @@ controlled ablations, baseline comparisons, and explicit claim boundaries.
 
 | Area | Current state |
 | --- | --- |
-| Software baseline | `v2.3`, frozen after generic bounded recurrent-state public-scoreboard improvement plus full NEST compact regression. |
+| Software baseline | `v2.4`, frozen after cost-aware policy/action selection passed the local expected-utility diagnostic and full NEST compact regression. |
 | Native hardware baseline | `CRA_NATIVE_SCALE_BASELINE_v0.5`, frozen by Tier 4.32h after the 4.32a replicated single-chip stress, 4.32d two-chip communication smoke, 4.32e two-chip learning micro-task, and 4.32g two-chip lifecycle traffic/resource smoke all passed with preserved artifacts and bounded claim boundaries. |
 | Latest native-scale closeout | Tier 4.32h passed locally from [`controlled_test_output/tier4_32h_20260508_native_scale_evidence_closeout`](controlled_test_output/tier4_32h_20260508_native_scale_evidence_closeout): `64/64` freeze criteria passed, `CRA_NATIVE_SCALE_BASELINE_v0.5` files were generated under [`baselines/`](baselines), and the next project phase is explicitly software usefulness/baselines before broad new native migration. |
 | Latest lifecycle task bridge | Tier 4.30g local contract passed `9/9`, then Tier 4.30g-hw passed on real SpiNNaker: enabled lifecycle bridge gate `1`, controls bridge gate `0`, enabled reference tail accuracy `1.0`, control reference tail accuracy `0.375`, compact lifecycle payload `68`, and zero stale replies/timeouts. |
@@ -65,13 +65,14 @@ controlled ablations, baseline comparisons, and explicit claim boundaries.
 | Latest NAB closeout | Tier 7.1m passed from [`controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision`](controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision): the NAB chain is narrowed to partial/local signal only, adapter-policy tuning is stopped, no public usefulness claim/freeze/hardware transfer is authorized, and the selected next gate is Tier 7.4a cost-aware policy/action selection. |
 | Latest policy/action contract | Tier 7.4a passed from [`controlled_test_output/tier7_4a_20260509_cost_aware_policy_action_contract`](controlled_test_output/tier7_4a_20260509_cost_aware_policy_action_contract): predeclared the general cost-aware policy/action gate with asymmetric costs, abstain/act/wait actions, delayed consequences, fair baselines, shams, ablations, metrics, pass/fail criteria, and compact-regression requirements. Contract only; no scoring, promotion, freeze, or hardware transfer. |
 | Latest policy/action diagnostic | Tier 7.4b passed from [`controlled_test_output/tier7_4b_20260509_cost_aware_policy_action_local_diagnostic`](controlled_test_output/tier7_4b_20260509_cost_aware_policy_action_local_diagnostic): the local v2.3 cost-aware policy ranked first among non-oracle models, beat fixed/trivial/online baselines by expected utility, separated shams and ablations, avoided no-action collapse, and preserved the boundary that this is candidate evidence only. |
+| Latest policy/action promotion gate | Tier 7.4c passed from [`controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate`](controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate): the locked 7.4b candidate preserved its expected-utility advantage, sham/ablation separation, no-action guard, and leakage boundary, then passed full NEST compact regression. `CRA_EVIDENCE_BASELINE_v2.4` is frozen under [`baselines/`](baselines). Boundary: host-side software policy/action evidence only; not public usefulness proof and not hardware/native transfer. |
 | Latest optional mechanism diagnostic | Tier 5.20a passed as a harness from [`controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic`](controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic), but the full 16-resonant-branch polyp proxy was **not promoted**: it helped `variable_delay_multi_cue` and slightly helped `anomaly_detection_stream`, but regressed the standard three and hidden-context task versus v2.3. |
 | Latest optional mechanism repair | Tier 5.20b passed as a harness from [`controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic`](controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic), but neither 8 LIF / 8 resonant nor 12 LIF / 4 resonant earned promotion. Best candidate was `hybrid_8_lif_8_resonant`, with all-task geomean MSE `0.2852846857844163` versus v2.3 `0.2610804850928049`, two wins, two material regressions, and only one sham-separated task. No core polyp replacement, freeze, or hardware transfer. |
 | Latest minimal-dose mechanism check | Tier 5.20c passed as a harness from [`controlled_test_output/tier5_20c_20260508_minimal_resonant_polyp_diagnostic`](controlled_test_output/tier5_20c_20260508_minimal_resonant_polyp_diagnostic), but 14 LIF / 2 resonant was **not promoted**: all-task geomean MSE `0.2777975100580056` versus v2.3 `0.2610804850928049`, zero task wins, one material regression, and zero sham-separated tasks. |
 | Latest resonant-heavy mechanism check | Tier 5.20d passed as a harness from [`controlled_test_output/tier5_20d_20260508_resonant_heavy_polyp_diagnostic`](controlled_test_output/tier5_20d_20260508_resonant_heavy_polyp_diagnostic), but 4 LIF / 12 resonant was **not promoted**: all-task geomean MSE `0.29289224348599796` versus v2.3 `0.2610804850928049`, three task wins, two material regressions, and two sham-separated tasks. The signal is real enough to record, but not safe enough to integrate. |
 | Latest near-full resonant check | Tier 5.20e passed as a harness from [`controlled_test_output/tier5_20e_20260508_near_full_resonant_polyp_diagnostic`](controlled_test_output/tier5_20e_20260508_near_full_resonant_polyp_diagnostic), but 2 LIF / 14 resonant was **not promoted**: all-task geomean MSE `0.30374770797663714` versus v2.3 `0.2610804850928049`, three task wins, three material regressions, and two sham-separated tasks. This closes the current resonant branch dose sweep; resonant branches remain parked. |
-| Active next gate | Tier 7.4c cost-aware policy/action promotion plus compact regression: prove the 7.4b candidate survives regression before any baseline freeze or hardware/native transfer. |
-| Canonical registry | 108 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
+| Active next gate | Tier 7.4d cost-aware policy/action held-out/public usefulness contract: predeclare external or held-out action-cost tasks, cost functions, baselines, leakage rules, statistics, and failure classes before any scoring against v2.4. |
+| Canonical registry | 109 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
 | Validation suite | 151 pytest tests plus registry, paper-table, and repository-audit generation. |
 
 ## What CRA Implements
@@ -134,7 +135,7 @@ Current evidence does not prove:
 - Full organism lifecycle running natively on hardware.
 - Broad multi-chip learning/lifecycle scaling beyond the bounded v0.5 substrate smokes.
 - Production readiness.
-- Native on-chip replay buffers, dynamic population creation, policy/action selection, curriculum generation, long-horizon planning, or fully autonomous on-chip learning for all promoted software mechanisms.
+- Native on-chip replay buffers, dynamic population creation, native policy/action transfer, curriculum generation, long-horizon planning, or fully autonomous on-chip learning for all promoted software mechanisms.
 
 ## Repository Layout
 
@@ -199,7 +200,7 @@ python3 experiments/tier5_external_baselines.py \
 `make validate` currently runs:
 
 - 151 pytest unit tests.
-- Evidence registry generation: 108 canonical bundles, 0 failed criteria.
+- Evidence registry generation: 109 canonical bundles, 0 failed criteria.
 - Paper results table export.
 - Repository audit.
 
@@ -244,7 +245,7 @@ commit used. A placeholder software citation is:
   author       = {Murdock, James V. and CRA Contributors},
   year         = {2026},
   url          = {https://github.com/jamesvmurdockiii/Project-Kianna---CRA_JKS},
-  note         = {108 canonical evidence bundles; bounded SpiNNaker hardware validation}
+  note         = {109 canonical evidence bundles; bounded SpiNNaker hardware validation}
 }
 ```
 

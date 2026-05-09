@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CONTROLLED = ROOT / "controlled_test_output"
 DOC_PATH = ROOT / "docs" / "RESEARCH_GRADE_AUDIT.md"
 JSON_PATH = CONTROLLED / "RESEARCH_GRADE_AUDIT.json"
-EXPECTED_CANONICAL_EVIDENCE_COUNT = 108
+EXPECTED_CANONICAL_EVIDENCE_COUNT = 109
 
 REQUIRED_SOURCE_DOCS = [
     "README.md",
@@ -109,6 +109,9 @@ REQUIRED_BASELINE_FILES = [
     "baselines/CRA_EVIDENCE_BASELINE_v2.3.md",
     "baselines/CRA_EVIDENCE_BASELINE_v2.3.json",
     "baselines/CRA_EVIDENCE_BASELINE_v2.3_STUDY_REGISTRY.snapshot.json",
+    "baselines/CRA_EVIDENCE_BASELINE_v2.4.md",
+    "baselines/CRA_EVIDENCE_BASELINE_v2.4.json",
+    "baselines/CRA_EVIDENCE_BASELINE_v2.4_STUDY_REGISTRY.snapshot.json",
     "baselines/CRA_NATIVE_RUNTIME_BASELINE_v0.1.md",
     "baselines/CRA_NATIVE_TASK_BASELINE_v0.2.md",
     "baselines/CRA_NATIVE_TASK_BASELINE_v0.2_STUDY_REGISTRY.snapshot.json",
@@ -459,6 +462,22 @@ def check_frozen_baselines() -> Check:
             "expanded_test_entry_count": 47,
             "noncanonical_output_count": 294,
         },
+        "v2.3": {
+            "status": "frozen",
+            "registry_status": "pass",
+            "evidence_count": 87,
+            "core_test_count": 12,
+            "expanded_test_entry_count": 87,
+            "noncanonical_output_count": 309,
+        },
+        "v2.4": {
+            "status": "frozen",
+            "registry_status": "pass",
+            "evidence_count": 109,
+            "core_test_count": 12,
+            "expanded_test_entry_count": 109,
+            "noncanonical_output_count": 309,
+        },
     }
     failures: list[str] = []
     for version, expected in expectations.items():
@@ -476,7 +495,7 @@ def check_frozen_baselines() -> Check:
     return Check(
         name="frozen evidence baselines are intact",
         passed=not failures,
-        details="; ".join(failures) if failures else "v0.1 through v2.2 baselines remain frozen at their recorded counts",
+        details="; ".join(failures) if failures else "v0.1 through v2.4 baselines remain frozen at their recorded counts",
     )
 
 
@@ -577,6 +596,8 @@ def build_report(checks: list[Check], registry: dict[str, Any]) -> str:
             "- Frozen v2.0 baseline: `baselines/CRA_EVIDENCE_BASELINE_v2.0.md`",
             "- Frozen v2.1 baseline: `baselines/CRA_EVIDENCE_BASELINE_v2.1.md`",
             "- Frozen v2.2 baseline: `baselines/CRA_EVIDENCE_BASELINE_v2.2.md`",
+            "- Frozen v2.3 baseline: `baselines/CRA_EVIDENCE_BASELINE_v2.3.md`",
+            "- Frozen v2.4 baseline: `baselines/CRA_EVIDENCE_BASELINE_v2.4.md`",
             "- Frozen native runtime baseline: `baselines/CRA_NATIVE_RUNTIME_BASELINE_v0.1.md`",
             "- Frozen native task baseline: `baselines/CRA_NATIVE_TASK_BASELINE_v0.2.md`",
             "- Frozen native mechanism bridge: `baselines/CRA_NATIVE_MECHANISM_BRIDGE_v0.3.md`",
@@ -627,6 +648,8 @@ def build_report(checks: list[Check], registry: dict[str, Any]) -> str:
             "- Tier 5.18c is baseline-frozen host-side self-evaluation compact-regression evidence; it freezes v2.1 only after the full v2.0 compact gate and Tier 5.18 guardrail both pass, and it is not consciousness, self-awareness, hardware evidence, AGI, language, planning, or external-baseline superiority.",
             "- Tier 5.9c is failed noncanonical macro-eligibility recheck evidence; the v2.1 guardrail stayed green but the macro residual still failed trace-ablation specificity, so macro eligibility remains parked and is not hardware/custom-C ready.",
             "- Tier 5.19c is baseline-frozen host-side software fading-memory temporal-state evidence; it freezes v2.2 only after a full NEST compact regression gate and destructive temporal shams pass, and it is not bounded nonlinear recurrence, hardware evidence, native on-chip temporal dynamics, universal benchmark superiority, language, planning, AGI, or ASI.",
+            "- Tier 7.0j is baseline-frozen host-side software generic bounded recurrent-state evidence; it freezes v2.3 after the locked public dynamical-scoreboard gate and full NEST compact regression, but it is not topology-specific recurrence, ESN superiority, hardware/native recurrence, language, planning, AGI, or ASI.",
+            "- Tier 7.4c is baseline-frozen host-side software cost-aware policy/action evidence; it freezes v2.4 after the local utility diagnostic and full NEST compact regression, but it is not public usefulness proof, broad anomaly benchmark superiority, hardware/native policy transfer, long-horizon planning, language, AGI, or ASI.",
             "- Tier 4.30-readiness is a lifecycle-native engineering audit; it selects a static-pool path layered on the native mechanism bridge, not a lifecycle implementation or hardware claim.",
             "- Tier 4.30 is a lifecycle-native static-pool contract; it defines commands, readback, event semantics, gates, and failure classes, but it is not runtime implementation or hardware evidence.",
             "- Tier 4.30a is a deterministic local lifecycle reference with active-mask, lineage, event-count, checksum, and sham-control outputs; it is not runtime C or hardware evidence.",
