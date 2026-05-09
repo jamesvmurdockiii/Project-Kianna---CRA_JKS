@@ -4315,13 +4315,29 @@ Boundary: contract/pre-registration only; no score, mechanism promotion,
 baseline freeze, public usefulness claim, hardware/native transfer, or AGI/ASI.
 ```
 
-Current next step:
+Latest scoring result:
 
 ```text
 Tier 7.7h — Lorenz capacity / NARMA memory-depth scoring gate
-Question: under the locked capacity matrix, are the remaining Lorenz/NARMA gaps
-capacity-limited, capacity-helpful-but-baseline-limited, architecture-limited,
-overfit/sham-blocked, or Mackey-regressing?
+Status: COMPLETE / PASS, 19/19 criteria
+Outcome: overfit_or_sham_blocked
+Output: controlled_test_output/tier7_7h_20260509_lorenz_capacity_narma_memory_scoring_gate/
+Result: capacity improved Mackey-Glass and Lorenz materially, but Lorenz did
+not separate from a best-capacity permuted-recurrence sham; repaired NARMA
+improved only weakly.
+Boundary: no baseline freeze, mechanism promotion, public usefulness claim,
+external-baseline superiority, hardware/native transfer, language, AGI, or ASI.
+```
+
+Current next step:
+
+```text
+Tier 7.7i — Capacity sham-separation / state-specificity contract
+Question: are the high-capacity gains in 7.7h candidate-specific state geometry,
+or generic high-dimensional/permuted recurrent features? Required measurements
+include effective-dimensionality participation ratio, rank-95 variance count,
+top-PC dominance, state-kernel similarity, seed stability, and readout weight
+concentration.
 ```
 
 Tier 7.1a predeclared these candidate/future adapter families:

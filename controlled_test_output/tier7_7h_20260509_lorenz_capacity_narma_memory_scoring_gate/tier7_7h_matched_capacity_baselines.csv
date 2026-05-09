@@ -1,0 +1,46 @@
+task,capacity_units,family,model,geomean_mse
+mackey_glass,16,CRA candidate,cra_v2_5_temporal_state_16,0.06907697478413959
+mackey_glass,16,matched ESN,esn_train_prefix_ridge_16,0.17995093556500166
+mackey_glass,16,matched random reservoir,random_reservoir_online_16,0.310772486892399
+mackey_glass,32,CRA candidate,cra_v2_5_temporal_state_32,0.055931198021512606
+mackey_glass,32,matched ESN,esn_train_prefix_ridge_32,0.0864454262765458
+mackey_glass,32,matched random reservoir,random_reservoir_online_32,0.25616998733763846
+mackey_glass,64,CRA candidate,cra_v2_5_temporal_state_64,0.041688763691647625
+mackey_glass,64,matched ESN,esn_train_prefix_ridge_64,0.031655764162647114
+mackey_glass,64,matched random reservoir,random_reservoir_online_64,0.22625560594945948
+mackey_glass,128,CRA candidate,cra_v2_5_temporal_state_128,0.03600192012261899
+mackey_glass,128,matched ESN,esn_train_prefix_ridge_128,0.009547329316296137
+mackey_glass,128,matched random reservoir,random_reservoir_online_128,0.2000889886684337
+mackey_glass,0,simple reference,lag_only_online_lms_reference,0.29393185531396177
+mackey_glass,0,simple reference,lag_ridge_reference,0.13419954524814937
+mackey_glass,0,simple reference,online_lms_reference,0.10887825916548655
+lorenz,16,CRA candidate,cra_v2_5_temporal_state_16,0.011602822346465395
+lorenz,16,matched ESN,esn_train_prefix_ridge_16,0.0019963691306187316
+lorenz,16,matched random reservoir,random_reservoir_online_16,0.04590252020103854
+lorenz,32,CRA candidate,cra_v2_5_temporal_state_32,0.008382829777829304
+lorenz,32,matched ESN,esn_train_prefix_ridge_32,0.0009607212720901286
+lorenz,32,matched random reservoir,random_reservoir_online_32,0.029033381352154424
+lorenz,64,CRA candidate,cra_v2_5_temporal_state_64,0.0065535794846363045
+lorenz,64,matched ESN,esn_train_prefix_ridge_64,0.0002643723790936414
+lorenz,64,matched random reservoir,random_reservoir_online_64,0.03357186254359065
+lorenz,128,CRA candidate,cra_v2_5_temporal_state_128,0.005320174559587754
+lorenz,128,matched ESN,esn_train_prefix_ridge_128,3.3737069162138967e-05
+lorenz,128,matched random reservoir,random_reservoir_online_128,0.01910523083675127
+lorenz,0,simple reference,lag_only_online_lms_reference,0.08745951799097854
+lorenz,0,simple reference,lag_ridge_reference,0.002445700342572723
+lorenz,0,simple reference,online_lms_reference,0.001118510655196326
+narma10,16,CRA candidate,cra_v2_5_temporal_state_16,0.4334486084343755
+narma10,16,matched ESN,esn_train_prefix_ridge_16,0.5772990343833477
+narma10,16,matched random reservoir,random_reservoir_online_16,0.6048750950456616
+narma10,32,CRA candidate,cra_v2_5_temporal_state_32,0.4248612078872279
+narma10,32,matched ESN,esn_train_prefix_ridge_32,0.5715094567730267
+narma10,32,matched random reservoir,random_reservoir_online_32,0.5924555075278286
+narma10,64,CRA candidate,cra_v2_5_temporal_state_64,0.4108150639725018
+narma10,64,matched ESN,esn_train_prefix_ridge_64,0.5434164741063657
+narma10,64,matched random reservoir,random_reservoir_online_64,0.5802498600265503
+narma10,128,CRA candidate,cra_v2_5_temporal_state_128,0.40239030687405786
+narma10,128,matched ESN,esn_train_prefix_ridge_128,0.4221464040386606
+narma10,128,matched random reservoir,random_reservoir_online_128,0.5746717165136392
+narma10,0,simple reference,lag_only_online_lms_reference,0.1492729202306991
+narma10,0,simple reference,lag_ridge_reference,0.14523247005375495
+narma10,0,simple reference,online_lms_reference,0.20081184081512185

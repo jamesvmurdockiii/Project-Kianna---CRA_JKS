@@ -1,0 +1,1 @@
+Tier 7.7h scores the pre-registered 7.7g Lorenz/NARMA capacity matrix. It may classify whether the remaining gap is capacity-limited, capacity-helpful but baseline-gap limited, architecture-limited flat, sham-blocked, or Mackey-regressing. It does not freeze a baseline, promote a mechanism, authorize hardware/native transfer, or claim broad public usefulness.

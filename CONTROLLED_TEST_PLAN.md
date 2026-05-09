@@ -11446,12 +11446,31 @@ Boundary: contract/pre-registration only; no score, no mechanism promotion, no
 freeze, no public usefulness claim, and no hardware/native transfer.
 ```
 
-Next required step:
+Latest scored gate:
 
 ```text
 Tier 7.7h - Lorenz capacity / NARMA memory-depth scoring gate.
-Run the locked 7.7g capacity matrix and classify capacity/state-interface
-limits versus structural architecture limits.
+Status: COMPLETE / PASS, 19/19 criteria.
+Output: controlled_test_output/tier7_7h_20260509_lorenz_capacity_narma_memory_scoring_gate/
+Outcome: overfit_or_sham_blocked.
+Result: capacity improved Mackey-Glass and Lorenz materially, but the Lorenz
+best-capacity result failed sham separation because permuted recurrence beat
+the candidate. Repaired NARMA improved only weakly.
+Boundary: scoring evidence only; no freeze, no mechanism promotion, no broad
+usefulness claim, no external-baseline superiority, and no hardware/native
+transfer.
+```
+
+Next required step:
+
+```text
+Tier 7.7i - Capacity sham-separation / state-specificity contract.
+Predeclare a diagnostic that separates candidate-specific state geometry from
+generic high-dimensional/permuted recurrent feature effects before adding
+mechanisms or tuning benchmarks. It must measure hidden-state participation
+ratio, rank-95 variance count, top-PC dominance, state-kernel similarity,
+candidate/sham seed stability, and readout weight concentration across the same
+capacity levels.
 ```
 
 Latest standardized benchmark contract:

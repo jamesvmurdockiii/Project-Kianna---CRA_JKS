@@ -1,0 +1,749 @@
+[
+  {
+    "display_name": "Mackey-Glass",
+    "finite_check": {
+      "metadata": {
+        "obs_mu": 0.9258261150461927,
+        "obs_sd": 0.23488193266153912,
+        "target_mu": 0.9262011081592917,
+        "target_sd": 0.2351752422391416,
+        "tau": 17
+      },
+      "observed_finite": true,
+      "observed_max": 1.7758665973986985,
+      "observed_min": -2.3780594083179234,
+      "sample_count": 8000,
+      "target_finite": true,
+      "target_max": 1.7720572176947358,
+      "target_min": -2.3766880288972083,
+      "train_end": 5200
+    },
+    "horizon": 8,
+    "length": 8000,
+    "seed": 42,
+    "task": "mackey_glass"
+  },
+  {
+    "display_name": "Lorenz x(t)",
+    "finite_check": {
+      "metadata": {
+        "dt": 0.01,
+        "obs_mu": -0.5754320250731597,
+        "obs_sd": 7.931362092783251,
+        "target_mu": -0.5790426404751298,
+        "target_sd": 7.933967223792902
+      },
+      "observed_finite": true,
+      "observed_max": 2.389249243805592,
+      "observed_min": -2.190562974720674,
+      "sample_count": 8000,
+      "target_finite": true,
+      "target_max": 2.3889198131665275,
+      "target_min": -2.1893886165877,
+      "train_end": 5200
+    },
+    "horizon": 8,
+    "length": 8000,
+    "seed": 42,
+    "task": "lorenz"
+  },
+  {
+    "display_name": "NARMA10 repaired U(0,0.2)",
+    "finite_check": {
+      "metadata": {
+        "equation_coefficients": {
+          "alpha": 0.3,
+          "beta": 0.05,
+          "delta": 0.1,
+          "gamma": 1.5,
+          "order": 10
+        },
+        "generator_id": "narma10_reduced_input_u02",
+        "input_distribution": "Uniform(0,0.2)",
+        "labeling_rule": "Do not silently mix with prior U(0,0.5) NARMA scores.",
+        "obs_mu": 0.10159115206719627,
+        "obs_sd": 0.05707825553356317,
+        "repaired_stream": true,
+        "source_gate": "Tier 7.7e finite-stream repair/preflight",
+        "target_mu": 0.19112294383645778,
+        "target_sd": 0.014810772268873604
+      },
+      "observed_finite": true,
+      "observed_max": 1.723703366568877,
+      "observed_min": -1.7796399569260812,
+      "sample_count": 8000,
+      "target_finite": true,
+      "target_max": 3.983546847841563,
+      "target_min": -1.8312433815946365,
+      "train_end": 5200
+    },
+    "horizon": 1,
+    "length": 8000,
+    "seed": 42,
+    "task": "narma10"
+  },
+  {
+    "display_name": "Mackey-Glass",
+    "finite_check": {
+      "metadata": {
+        "obs_mu": 0.9254635312976438,
+        "obs_sd": 0.23533583557245805,
+        "target_mu": 0.9257697471378699,
+        "target_sd": 0.23552031762517137,
+        "tau": 17
+      },
+      "observed_finite": true,
+      "observed_max": 1.7796841643117345,
+      "observed_min": -2.3628333918576883,
+      "sample_count": 8000,
+      "target_finite": true,
+      "target_max": 1.7769899779483758,
+      "target_min": -2.362282762020606,
+      "train_end": 5200
+    },
+    "horizon": 8,
+    "length": 8000,
+    "seed": 43,
+    "task": "mackey_glass"
+  },
+  {
+    "display_name": "Lorenz x(t)",
+    "finite_check": {
+      "metadata": {
+        "dt": 0.01,
+        "obs_mu": -1.2949217863949325,
+        "obs_sd": 7.81481029014446,
+        "target_mu": -1.2883274808291063,
+        "target_sd": 7.8137734186402055
+      },
+      "observed_finite": true,
+      "observed_max": 2.439929445318317,
+      "observed_min": -2.0350132955301152,
+      "sample_count": 8000,
+      "target_finite": true,
+      "target_max": 2.439409285334936,
+      "target_min": -2.036127271121214,
+      "train_end": 5200
+    },
+    "horizon": 8,
+    "length": 8000,
+    "seed": 43,
+    "task": "lorenz"
+  },
+  {
+    "display_name": "NARMA10 repaired U(0,0.2)",
+    "finite_check": {
+      "metadata": {
+        "equation_coefficients": {
+          "alpha": 0.3,
+          "beta": 0.05,
+          "delta": 0.1,
+          "gamma": 1.5,
+          "order": 10
+        },
+        "generator_id": "narma10_reduced_input_u02",
+        "input_distribution": "Uniform(0,0.2)",
+        "labeling_rule": "Do not silently mix with prior U(0,0.5) NARMA scores.",
+        "obs_mu": 0.10065457800753275,
+        "obs_sd": 0.058233032123864326,
+        "repaired_stream": true,
+        "source_gate": "Tier 7.7e finite-stream repair/preflight",
+        "target_mu": 0.19052783746934102,
+        "target_sd": 0.014905647518240464
+      },
+      "observed_finite": true,
+      "observed_max": 1.7059277113122098,
+      "observed_min": -1.7282566757945226,
+      "sample_count": 8000,
+      "target_finite": true,
+      "target_max": 3.94501835324424,
+      "target_min": -1.7392108437799834,
+      "train_end": 5200
+    },
+    "horizon": 1,
+    "length": 8000,
+    "seed": 43,
+    "task": "narma10"
+  },
+  {
+    "display_name": "Mackey-Glass",
+    "finite_check": {
+      "metadata": {
+        "obs_mu": 0.9255283492794454,
+        "obs_sd": 0.2350347754544459,
+        "target_mu": 0.9256690425045828,
+        "target_sd": 0.23507274854379945,
+        "tau": 17
+      },
+      "observed_finite": true,
+      "observed_max": 1.783645960793101,
+      "observed_min": -2.3642028998577302,
+      "sample_count": 8000,
+      "target_finite": true,
+      "target_max": 1.7827593255966656,
+      "target_min": -2.3644195014735563,
+      "train_end": 5200
+    },
+    "horizon": 8,
+    "length": 8000,
+    "seed": 44,
+    "task": "mackey_glass"
+  },
+  {
+    "display_name": "Lorenz x(t)",
+    "finite_check": {
+      "metadata": {
+        "dt": 0.01,
+        "obs_mu": 0.9565096660268274,
+        "obs_sd": 7.870380570569499,
+        "target_mu": 0.9856726578639309,
+        "target_sd": 7.88449095060647
+      },
+      "observed_finite": true,
+      "observed_max": 2.065525832163391,
+      "observed_min": -2.4389596083945313,
+      "sample_count": 8000,
+      "target_finite": true,
+      "target_max": 2.058130510554122,
+      "target_min": -2.4382935343048953,
+      "train_end": 5200
+    },
+    "horizon": 8,
+    "length": 8000,
+    "seed": 44,
+    "task": "lorenz"
+  },
+  {
+    "display_name": "NARMA10 repaired U(0,0.2)",
+    "finite_check": {
+      "metadata": {
+        "equation_coefficients": {
+          "alpha": 0.3,
+          "beta": 0.05,
+          "delta": 0.1,
+          "gamma": 1.5,
+          "order": 10
+        },
+        "generator_id": "narma10_reduced_input_u02",
+        "input_distribution": "Uniform(0,0.2)",
+        "labeling_rule": "Do not silently mix with prior U(0,0.5) NARMA scores.",
+        "obs_mu": 0.0997345590373714,
+        "obs_sd": 0.056968073823201106,
+        "repaired_stream": true,
+        "source_gate": "Tier 7.7e finite-stream repair/preflight",
+        "target_mu": 0.19035175634247492,
+        "target_sd": 0.014828170975333906
+      },
+      "observed_finite": true,
+      "observed_max": 1.7594825074893008,
+      "observed_min": -1.7505177392303755,
+      "sample_count": 8000,
+      "target_finite": true,
+      "target_max": 3.852178123511366,
+      "target_min": -1.7575606606979584,
+      "train_end": 5200
+    },
+    "horizon": 1,
+    "length": 8000,
+    "seed": 44,
+    "task": "narma10"
+  },
+  {
+    "display_name": "Mackey-Glass",
+    "finite_check": {
+      "metadata": {
+        "obs_mu": 0.9254960019176798,
+        "obs_sd": 0.23511088936521168,
+        "target_mu": 0.9256435333627667,
+        "target_sd": 0.23520953090723143,
+        "tau": 17
+      },
+      "observed_finite": true,
+      "observed_max": 1.7790431349997495,
+      "observed_min": -2.3743395220372823,
+      "sample_count": 16000,
+      "target_finite": true,
+      "target_max": 1.7776698105345503,
+      "target_min": -2.3739710120270336,
+      "train_end": 10400
+    },
+    "horizon": 8,
+    "length": 16000,
+    "seed": 42,
+    "task": "mackey_glass"
+  },
+  {
+    "display_name": "Lorenz x(t)",
+    "finite_check": {
+      "metadata": {
+        "dt": 0.01,
+        "obs_mu": -0.5020020281254914,
+        "obs_sd": 7.900891286321817,
+        "target_mu": -0.5020083217881905,
+        "target_sd": 7.900903245556562
+      },
+      "observed_finite": true,
+      "observed_max": 2.38916980395143,
+      "observed_min": -2.208305051191799,
+      "sample_count": 16000,
+      "target_finite": true,
+      "target_max": 2.389166984149802,
+      "target_min": -2.2083009120066732,
+      "train_end": 10400
+    },
+    "horizon": 8,
+    "length": 16000,
+    "seed": 42,
+    "task": "lorenz"
+  },
+  {
+    "display_name": "NARMA10 repaired U(0,0.2)",
+    "finite_check": {
+      "metadata": {
+        "equation_coefficients": {
+          "alpha": 0.3,
+          "beta": 0.05,
+          "delta": 0.1,
+          "gamma": 1.5,
+          "order": 10
+        },
+        "generator_id": "narma10_reduced_input_u02",
+        "input_distribution": "Uniform(0,0.2)",
+        "labeling_rule": "Do not silently mix with prior U(0,0.5) NARMA scores.",
+        "obs_mu": 0.10104155213509608,
+        "obs_sd": 0.0574996053316103,
+        "repaired_stream": true,
+        "source_gate": "Tier 7.7e finite-stream repair/preflight",
+        "target_mu": 0.1907769333856761,
+        "target_sd": 0.014737452751143638
+      },
+      "observed_finite": true,
+      "observed_max": 1.7209727132435764,
+      "observed_min": -1.7570406562690866,
+      "sample_count": 16000,
+      "target_finite": true,
+      "target_max": 4.383400619877102,
+      "target_min": -1.8168755954668385,
+      "train_end": 10400
+    },
+    "horizon": 1,
+    "length": 16000,
+    "seed": 42,
+    "task": "narma10"
+  },
+  {
+    "display_name": "Mackey-Glass",
+    "finite_check": {
+      "metadata": {
+        "obs_mu": 0.9253632216947799,
+        "obs_sd": 0.23627658604177967,
+        "target_mu": 0.9254661203134273,
+        "target_sd": 0.23632860086968974,
+        "tau": 17
+      },
+      "observed_finite": true,
+      "observed_max": 1.7782983083891624,
+      "observed_min": -2.357452200240807,
+      "sample_count": 16000,
+      "target_finite": true,
+      "target_max": 1.7774715083386734,
+      "target_min": -2.3573687408043202,
+      "train_end": 10400
+    },
+    "horizon": 8,
+    "length": 16000,
+    "seed": 43,
+    "task": "mackey_glass"
+  },
+  {
+    "display_name": "Lorenz x(t)",
+    "finite_check": {
+      "metadata": {
+        "dt": 0.01,
+        "obs_mu": -0.28087318371995174,
+        "obs_sd": 7.911596192062664,
+        "target_mu": -0.27250336365262123,
+        "target_sd": 7.9126805914837774
+      },
+      "observed_finite": true,
+      "observed_max": 2.3581634743384847,
+      "observed_min": -2.331349255136247,
+      "sample_count": 16000,
+      "target_finite": true,
+      "target_max": 2.356782524981632,
+      "target_min": -2.332087526600273,
+      "train_end": 10400
+    },
+    "horizon": 8,
+    "length": 16000,
+    "seed": 43,
+    "task": "lorenz"
+  },
+  {
+    "display_name": "NARMA10 repaired U(0,0.2)",
+    "finite_check": {
+      "metadata": {
+        "equation_coefficients": {
+          "alpha": 0.3,
+          "beta": 0.05,
+          "delta": 0.1,
+          "gamma": 1.5,
+          "order": 10
+        },
+        "generator_id": "narma10_reduced_input_u02",
+        "input_distribution": "Uniform(0,0.2)",
+        "labeling_rule": "Do not silently mix with prior U(0,0.5) NARMA scores.",
+        "obs_mu": 0.10036337338872366,
+        "obs_sd": 0.058378123046635255,
+        "repaired_stream": true,
+        "source_gate": "Tier 7.7e finite-stream repair/preflight",
+        "target_mu": 0.19043846862492242,
+        "target_sd": 0.014903338398817582
+      },
+      "observed_finite": true,
+      "observed_max": 1.7066761079840143,
+      "observed_min": -1.718973078679689,
+      "sample_count": 16000,
+      "target_finite": true,
+      "target_max": 3.951626158843656,
+      "target_min": -1.74774584324022,
+      "train_end": 10400
+    },
+    "horizon": 1,
+    "length": 16000,
+    "seed": 43,
+    "task": "narma10"
+  },
+  {
+    "display_name": "Mackey-Glass",
+    "finite_check": {
+      "metadata": {
+        "obs_mu": 0.9256231037143033,
+        "obs_sd": 0.2347188271205306,
+        "target_mu": 0.9257407804544403,
+        "target_sd": 0.23476865228010058,
+        "tau": 17
+      },
+      "observed_finite": true,
+      "observed_max": 1.7906984778252553,
+      "observed_min": -2.37974501667636,
+      "sample_count": 16000,
+      "target_finite": true,
+      "target_max": 1.7898171907559344,
+      "target_min": -2.3797412068190984,
+      "train_end": 10400
+    },
+    "horizon": 8,
+    "length": 16000,
+    "seed": 44,
+    "task": "mackey_glass"
+  },
+  {
+    "display_name": "Lorenz x(t)",
+    "finite_check": {
+      "metadata": {
+        "dt": 0.01,
+        "obs_mu": -0.40694125008744114,
+        "obs_sd": 7.904262636508785,
+        "target_mu": -0.4121764293071016,
+        "target_sd": 7.909476100618122
+      },
+      "observed_finite": true,
+      "observed_max": 2.4723885708201587,
+      "observed_min": -2.2560092216361443,
+      "sample_count": 16000,
+      "target_finite": true,
+      "target_max": 2.4714208038326526,
+      "target_min": -2.2538603053096047,
+      "train_end": 10400
+    },
+    "horizon": 8,
+    "length": 16000,
+    "seed": 44,
+    "task": "lorenz"
+  },
+  {
+    "display_name": "NARMA10 repaired U(0,0.2)",
+    "finite_check": {
+      "metadata": {
+        "equation_coefficients": {
+          "alpha": 0.3,
+          "beta": 0.05,
+          "delta": 0.1,
+          "gamma": 1.5,
+          "order": 10
+        },
+        "generator_id": "narma10_reduced_input_u02",
+        "input_distribution": "Uniform(0,0.2)",
+        "labeling_rule": "Do not silently mix with prior U(0,0.5) NARMA scores.",
+        "obs_mu": 0.1001552993769379,
+        "obs_sd": 0.05732916109749605,
+        "repaired_stream": true,
+        "source_gate": "Tier 7.7e finite-stream repair/preflight",
+        "target_mu": 0.19050147389875893,
+        "target_sd": 0.01493807421225719
+      },
+      "observed_finite": true,
+      "observed_max": 1.741242565671254,
+      "observed_min": -1.747004443311999,
+      "sample_count": 16000,
+      "target_finite": true,
+      "target_max": 3.8195303261025026,
+      "target_min": -1.7828021234893272,
+      "train_end": 10400
+    },
+    "horizon": 1,
+    "length": 16000,
+    "seed": 44,
+    "task": "narma10"
+  },
+  {
+    "display_name": "Mackey-Glass",
+    "finite_check": {
+      "metadata": {
+        "obs_mu": 0.925602680265462,
+        "obs_sd": 0.23511814064302497,
+        "target_mu": 0.9254492813632179,
+        "target_sd": 0.2352119517299428,
+        "tau": 17
+      },
+      "observed_finite": true,
+      "observed_max": 1.7897261842754748,
+      "observed_min": -2.379144303293237,
+      "sample_count": 32000,
+      "target_finite": true,
+      "target_max": 1.789664549412614,
+      "target_min": -2.3775432408791013,
+      "train_end": 20800
+    },
+    "horizon": 8,
+    "length": 32000,
+    "seed": 42,
+    "task": "mackey_glass"
+  },
+  {
+    "display_name": "Lorenz x(t)",
+    "finite_check": {
+      "metadata": {
+        "dt": 0.01,
+        "obs_mu": 0.11215310418850749,
+        "obs_sd": 7.91751802622659,
+        "target_mu": 0.11871914128038571,
+        "target_sd": 7.920614199473776
+      },
+      "observed_finite": true,
+      "observed_max": 2.3065834132331924,
+      "observed_min": -2.2927446602887334,
+      "sample_count": 32000,
+      "target_finite": true,
+      "target_max": 2.304852787475755,
+      "target_min": -2.292677405707899,
+      "train_end": 20800
+    },
+    "horizon": 8,
+    "length": 32000,
+    "seed": 42,
+    "task": "lorenz"
+  },
+  {
+    "display_name": "NARMA10 repaired U(0,0.2)",
+    "finite_check": {
+      "metadata": {
+        "equation_coefficients": {
+          "alpha": 0.3,
+          "beta": 0.05,
+          "delta": 0.1,
+          "gamma": 1.5,
+          "order": 10
+        },
+        "generator_id": "narma10_reduced_input_u02",
+        "input_distribution": "Uniform(0,0.2)",
+        "labeling_rule": "Do not silently mix with prior U(0,0.5) NARMA scores.",
+        "obs_mu": 0.10074416435719417,
+        "obs_sd": 0.057642460325426415,
+        "repaired_stream": true,
+        "source_gate": "Tier 7.7e finite-stream repair/preflight",
+        "target_mu": 0.1905921401269656,
+        "target_sd": 0.01482601281347747
+      },
+      "observed_finite": true,
+      "observed_max": 1.7218954417988308,
+      "observed_min": -1.7475270129080658,
+      "sample_count": 32000,
+      "target_finite": true,
+      "target_max": 4.369681424029984,
+      "target_min": -1.7935587483113022,
+      "train_end": 20800
+    },
+    "horizon": 1,
+    "length": 32000,
+    "seed": 42,
+    "task": "narma10"
+  },
+  {
+    "display_name": "Mackey-Glass",
+    "finite_check": {
+      "metadata": {
+        "obs_mu": 0.9255548757052252,
+        "obs_sd": 0.236029532490035,
+        "target_mu": 0.9255688843918174,
+        "target_sd": 0.23604290260134125,
+        "tau": 17
+      },
+      "observed_finite": true,
+      "observed_max": 1.7794274136440513,
+      "observed_min": -2.364722052879064,
+      "sample_count": 32000,
+      "target_finite": true,
+      "target_max": 1.7792672739882625,
+      "target_min": -2.3646474566498656,
+      "train_end": 20800
+    },
+    "horizon": 8,
+    "length": 32000,
+    "seed": 43,
+    "task": "mackey_glass"
+  },
+  {
+    "display_name": "Lorenz x(t)",
+    "finite_check": {
+      "metadata": {
+        "dt": 0.01,
+        "obs_mu": -0.6009094726139104,
+        "obs_sd": 7.909868504157448,
+        "target_mu": -0.5950973465457196,
+        "target_sd": 7.912463481039007
+      },
+      "observed_finite": true,
+      "observed_max": 2.404992652406382,
+      "observed_min": -2.2913980922544708,
+      "sample_count": 32000,
+      "target_finite": true,
+      "target_max": 2.403469356099184,
+      "target_min": -2.291381157072655,
+      "train_end": 20800
+    },
+    "horizon": 8,
+    "length": 32000,
+    "seed": 43,
+    "task": "lorenz"
+  },
+  {
+    "display_name": "NARMA10 repaired U(0,0.2)",
+    "finite_check": {
+      "metadata": {
+        "equation_coefficients": {
+          "alpha": 0.3,
+          "beta": 0.05,
+          "delta": 0.1,
+          "gamma": 1.5,
+          "order": 10
+        },
+        "generator_id": "narma10_reduced_input_u02",
+        "input_distribution": "Uniform(0,0.2)",
+        "labeling_rule": "Do not silently mix with prior U(0,0.5) NARMA scores.",
+        "obs_mu": 0.10022147521213977,
+        "obs_sd": 0.05803138583641867,
+        "repaired_stream": true,
+        "source_gate": "Tier 7.7e finite-stream repair/preflight",
+        "target_mu": 0.19039035744721147,
+        "target_sd": 0.014891877816414168
+      },
+      "observed_finite": true,
+      "observed_max": 1.7193186854175027,
+      "observed_min": -1.7269387555197306,
+      "sample_count": 32000,
+      "target_finite": true,
+      "target_max": 3.9578979746672394,
+      "target_min": -1.7458601849773436,
+      "train_end": 20800
+    },
+    "horizon": 1,
+    "length": 32000,
+    "seed": 43,
+    "task": "narma10"
+  },
+  {
+    "display_name": "Mackey-Glass",
+    "finite_check": {
+      "metadata": {
+        "obs_mu": 0.9254279641603951,
+        "obs_sd": 0.23504105598486716,
+        "target_mu": 0.925435671043999,
+        "target_sd": 0.23504073974997067,
+        "tau": 17
+      },
+      "observed_finite": true,
+      "observed_max": 1.796253940862795,
+      "observed_min": -2.3762888551239243,
+      "sample_count": 32000,
+      "target_finite": true,
+      "target_max": 1.7962235680626053,
+      "target_min": -2.3763248418599816,
+      "train_end": 20800
+    },
+    "horizon": 8,
+    "length": 32000,
+    "seed": 44,
+    "task": "mackey_glass"
+  },
+  {
+    "display_name": "Lorenz x(t)",
+    "finite_check": {
+      "metadata": {
+        "dt": 0.01,
+        "obs_mu": -0.7973429524256543,
+        "obs_sd": 7.893619823812077,
+        "target_mu": -0.7965858864516615,
+        "target_sd": 7.893349072071642
+      },
+      "observed_finite": true,
+      "observed_max": 2.525179923851104,
+      "observed_min": -2.282193738971767,
+      "sample_count": 32000,
+      "target_finite": true,
+      "target_max": 2.525170628795985,
+      "target_min": -2.2823679329530893,
+      "train_end": 20800
+    },
+    "horizon": 8,
+    "length": 32000,
+    "seed": 44,
+    "task": "lorenz"
+  },
+  {
+    "display_name": "NARMA10 repaired U(0,0.2)",
+    "finite_check": {
+      "metadata": {
+        "equation_coefficients": {
+          "alpha": 0.3,
+          "beta": 0.05,
+          "delta": 0.1,
+          "gamma": 1.5,
+          "order": 10
+        },
+        "generator_id": "narma10_reduced_input_u02",
+        "input_distribution": "Uniform(0,0.2)",
+        "labeling_rule": "Do not silently mix with prior U(0,0.5) NARMA scores.",
+        "obs_mu": 0.1001860112339963,
+        "obs_sd": 0.05764087405293572,
+        "repaired_stream": true,
+        "source_gate": "Tier 7.7e finite-stream repair/preflight",
+        "target_mu": 0.19037337045749908,
+        "target_sd": 0.014970141464957945
+      },
+      "observed_finite": true,
+      "observed_max": 1.7314128707650072,
+      "observed_min": -1.7380897266361082,
+      "sample_count": 32000,
+      "target_finite": true,
+      "target_max": 3.996912905147961,
+      "target_min": -1.7704259540387637,
+      "train_end": 20800
+    },
+    "horizon": 1,
+    "length": 32000,
+    "seed": 44,
+    "task": "narma10"
+  }
+]

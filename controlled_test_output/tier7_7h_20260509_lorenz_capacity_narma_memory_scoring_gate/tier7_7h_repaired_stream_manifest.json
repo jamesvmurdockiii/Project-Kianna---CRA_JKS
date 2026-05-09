@@ -1,0 +1,14 @@
+{
+  "equation_coefficients": {
+    "alpha": 0.3,
+    "beta": 0.05,
+    "delta": 0.1,
+    "gamma": 1.5,
+    "order": 10
+  },
+  "input_distribution": "Uniform(0,0.2)",
+  "labeling_rule": "Repaired NARMA10 U(0,0.2); do not silently mix with prior U(0,0.5) NARMA scores.",
+  "output_wrapper": "none",
+  "selected_generator": "narma10_reduced_input_u02",
+  "source_gate": "/Users/james/JKS:CRA/controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight/tier7_7e_results.json"
+}

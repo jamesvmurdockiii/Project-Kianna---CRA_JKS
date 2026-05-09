@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-09T12:06:10+00:00.
+Last updated: 2026-05-09T15:00:32+00:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -1476,29 +1476,43 @@ ability.
     NARMA stream use, Mackey anchor, shams, metrics, and fail/pass classes
     before scoring.
 
-119. **CURRENT ACTIVE STEP** - Tier 7.7h Lorenz capacity / NARMA memory-depth
+119. **COMPLETE** - Tier 7.7h Lorenz capacity / NARMA memory-depth
     scoring gate:
-    run the locked 7.7g capacity matrix and classify the remaining gap as
-    capacity-limited, capacity-helpful-but-baseline-limited,
-    architecture-limited-flat, overfit/sham-blocked, or Mackey-regressing.
+    passed 19/19 at
+    `controlled_test_output/tier7_7h_20260509_lorenz_capacity_narma_memory_scoring_gate/`.
+    Outcome `overfit_or_sham_blocked`: capacity improved Mackey-Glass and
+    Lorenz materially, but Lorenz was blocked because the best-capacity
+    permuted-recurrence sham beat the candidate. Repaired NARMA improved only
+    weakly. No freeze, mechanism promotion, broad usefulness claim,
+    external-baseline superiority, or hardware/native transfer is authorized.
 
-120. Mechanism iteration loop: add exactly one planned general mechanism at a
+120. **CURRENT ACTIVE STEP** - Tier 7.7i capacity sham-separation /
+    state-specificity contract:
+    predeclare the next diagnostic to decide whether the 7.7h capacity gains
+    are candidate-specific state geometry or generic high-dimensional/permuted
+    recurrent features. The contract must include effective-dimensionality
+    diagnostics such as hidden-state participation ratio, rank-95 variance
+    count, top-PC dominance, state-kernel alignment, and readout weight
+    concentration for candidate versus permuted/state-reset shams. This must
+    happen before adding mechanics or tuning the scoreboard.
+
+121. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
     stop the broad usefulness track and narrow the paper.
 
-121. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+122. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines. Start only after the standardized scoreboard or failure diagnosis
     identifies a winning regime, a real failure mode, or a mechanism needing
     external validation.
 
-122. Tier 7.2 held-out task challenge: define held-out families before running;
+123. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout. Include at least one synthetic holdout and one
     real-ish adapter holdout if Tier 7.1 is active.
 
-123. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+124. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines. Candidate domains include
     streaming anomaly detection, predictive-maintenance sensor streams, human
     activity streams, event prediction, ECG/biosignal streams, and finance as
@@ -1710,14 +1724,31 @@ baseline freeze, hardware/native transfer, public usefulness claim, language,
 AGI, or ASI.
 ```
 
-The next concrete action is now:
+Latest scoring result:
 
 ```text
 Tier 7.7h - Lorenz Capacity / NARMA Memory-Depth Scoring Gate
+Status: COMPLETE / PASS, 19/19 criteria.
+Output: controlled_test_output/tier7_7h_20260509_lorenz_capacity_narma_memory_scoring_gate/
+Outcome: overfit_or_sham_blocked.
+Result: capacity materially improved Mackey-Glass and Lorenz, but Lorenz did
+not separate from the best-capacity permuted-recurrence sham. Repaired NARMA
+improved only weakly.
+Boundary: scoring evidence only; no baseline freeze, mechanism promotion,
+public usefulness claim, external-baseline superiority, hardware/native
+transfer, language, AGI, or ASI.
+```
 
-Run the locked 7.7g capacity matrix and classify whether the Lorenz/NARMA gap
-is capacity-limited, capacity-helpful-but-baseline-limited,
-architecture-limited-flat, overfit/sham-blocked, or Mackey-regressing.
+The next concrete action is now:
+
+```text
+Tier 7.7i - Capacity Sham-Separation / State-Specificity Contract
+
+Predeclare whether the 7.7h high-capacity gains are candidate-specific state
+geometry or generic high-dimensional/permuted recurrent features before adding
+mechanics or tuning the standardized benchmark scoreboard. Required diagnostics
+include participation ratio, rank-95, top-PC fraction, state-kernel similarity,
+candidate/sham seed stability, and readout weight concentration.
 ```
 
 Recent closeout:

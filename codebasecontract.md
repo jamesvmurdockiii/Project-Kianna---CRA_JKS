@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-09T14:39:51+00:00.
+Last updated: 2026-05-09T15:00:32+00:00.
 
 Current repo root:
 
@@ -1335,10 +1335,22 @@ Tier 7.7g — COMPLETE. Lorenz state-capacity / NARMA memory-depth diagnostic
   capacity 16/32/64/128, matched-capacity ESN/reservoir references, repaired
   NARMA stream policy, Mackey anchor, shams, metrics, and pass/fail classes.
 
-Tier 7.7h — CURRENT ACTIVE STEP. Lorenz capacity / NARMA memory-depth scoring
-  gate. Run the locked 7.7g capacity matrix and classify whether the remaining
-  gap is capacity-limited, capacity-helpful-but-baseline-limited,
-  architecture-limited-flat, overfit/sham-blocked, or Mackey-regressing.
+Tier 7.7h — COMPLETE. Lorenz capacity / NARMA memory-depth scoring gate.
+  Status: PASS, 19/19 criteria. Output:
+  `controlled_test_output/tier7_7h_20260509_lorenz_capacity_narma_memory_scoring_gate/`.
+  Outcome `overfit_or_sham_blocked`: capacity improved Mackey-Glass and Lorenz
+  materially, but Lorenz failed sham separation because the best-capacity
+  permuted-recurrence sham beat the candidate. Repaired NARMA improved only
+  weakly. No freeze, mechanism promotion, broad usefulness claim,
+  external-baseline superiority, or hardware/native transfer is authorized.
+
+Tier 7.7i — CURRENT ACTIVE STEP. Capacity sham-separation / state-specificity
+  contract. Predeclare whether the 7.7h high-capacity gains are
+  candidate-specific state geometry or generic high-dimensional/permuted
+  recurrent features before adding mechanics or tuning benchmarks. Required
+  diagnostics include participation ratio, rank-95 variance count, top-PC
+  dominance, state-kernel similarity, candidate/sham seed stability, and readout
+  weight concentration.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware
