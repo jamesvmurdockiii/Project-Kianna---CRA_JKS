@@ -1,0 +1,10 @@
+{
+  "classification_outcome": "lorenz_capacity_narma_memory_contract_locked",
+  "generated_at_utc": "2026-05-09T14:39:06+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7g_20260509_lorenz_capacity_narma_memory_contract",
+  "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier7_7g_20260509_lorenz_capacity_narma_memory_contract/tier7_7g_report.md",
+  "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier7_7g_20260509_lorenz_capacity_narma_memory_contract/tier7_7g_results.json",
+  "status": "pass",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7g_20260509_lorenz_capacity_narma_memory_contract/tier7_7g_summary.csv",
+  "tier": "Tier 7.7g - Lorenz State-Capacity / NARMA Memory-Depth Diagnostic Contract"
+}

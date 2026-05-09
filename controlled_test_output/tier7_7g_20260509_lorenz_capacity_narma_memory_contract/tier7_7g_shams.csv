@@ -1,0 +1,8 @@
+sham,purpose
+state_reset_by_capacity,reset temporal state periodically to verify state persistence matters
+permuted_recurrence_by_capacity,preserve input projection but scramble recurrent wiring
+target_shuffle_by_capacity,break input-target relation
+time_shuffle_by_capacity,destroy temporal order
+prediction_disabled_meta,remove predictive v2.5 meta columns
+memory_disabled_meta,remove slow-memory bridge columns
+same_feature_budget_audit,record feature counts so capacity claims are not hidden parameter-budget claims

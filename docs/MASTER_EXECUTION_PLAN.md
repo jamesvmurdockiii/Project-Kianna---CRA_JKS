@@ -1467,73 +1467,80 @@ ability.
     usefulness claim, external-baseline superiority, or hardware/native transfer
     is authorized.
 
-118. **CURRENT ACTIVE STEP** - Tier 7.7g Lorenz state-capacity / NARMA
-    memory-depth diagnostic contract:
-    determine whether the remaining standardized gap is capacity/state-interface
-    limited or structurally architectural before adding more mechanisms.
-    Predeclare temporal hidden/state capacity sweeps, matched-capacity
-    ESN/reservoir references, repaired NARMA stream use, Lorenz reconstruction
-    metrics, and fail/pass classes before scoring.
+118. **COMPLETE** - Tier 7.7g Lorenz state-capacity / NARMA memory-depth
+    diagnostic contract:
+    passed 15/15 at
+    `controlled_test_output/tier7_7g_20260509_lorenz_capacity_narma_memory_contract/`.
+    Outcome `lorenz_capacity_narma_memory_contract_locked`: locks temporal-state
+    capacity 16/32/64/128, matched-capacity ESN/reservoir references, repaired
+    NARMA stream use, Mackey anchor, shams, metrics, and fail/pass classes
+    before scoring.
 
-119. Mechanism iteration loop: add exactly one planned general mechanism at a
+119. **CURRENT ACTIVE STEP** - Tier 7.7h Lorenz capacity / NARMA memory-depth
+    scoring gate:
+    run the locked 7.7g capacity matrix and classify the remaining gap as
+    capacity-limited, capacity-helpful-but-baseline-limited,
+    architecture-limited-flat, overfit/sham-blocked, or Mackey-regressing.
+
+120. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
     stop the broad usefulness track and narrow the paper.
 
-120. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+121. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines. Start only after the standardized scoreboard or failure diagnosis
     identifies a winning regime, a real failure mode, or a mechanism needing
     external validation.
 
-121. Tier 7.2 held-out task challenge: define held-out families before running;
+122. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout. Include at least one synthetic holdout and one
     real-ish adapter holdout if Tier 7.1 is active.
 
-122. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+123. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines. Candidate domains include
     streaming anomaly detection, predictive-maintenance sensor streams, human
     activity streams, event prediction, ECG/biosignal streams, and finance as
     one domain only rather than the whole proof.
 
-123. Tier 7.4 policy/action selection held-out scoring: the current held-out
+124. Tier 7.4 policy/action selection held-out scoring: the current held-out
     chain is complete through 7.4h. No further NAB/C-MAPSS policy tuning is
     authorized from this chain; only the narrow C-MAPSS action-cost signal is
     preserved, with no broad action/policy claim, freeze, or hardware/native
     transfer.
 
-124. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
+125. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
     planning/subgoal control: run only after the shorter hard/real-ish tasks are
     stable. Do not claim language, AGI, or broad planning from toy gates.
 
-125. Run expanded external baselines and fairness audit at the phase lock:
+126. Run expanded external baselines and fairness audit at the phase lock:
     random/sign persistence, online perceptron/logistic, lag/ridge where
     relevant, reservoir/ESN, small GRU, STDP-only SNN, simple evolutionary
     population, simple control baselines, and SNN reviewer-defense baselines
     where practical.
 
-126. Freeze the next software baseline only if new software capability work
+127. Freeze the next software baseline only if new software capability work
     passes ablations, fair baselines, leakage controls, and compact regression.
     If no new software mechanism is promoted, keep v2.4.
 
 ### Phase I - Final Paper Lock
 
-127. Select final paper claim level: strong usefulness paper, bounded architecture
+128. Select final paper claim level: strong usefulness paper, bounded architecture
     study, or narrowed diagnostic report. Let the evidence decide.
 
-128. Run final software matrix and final hardware subset matrix. Include effect
+129. Run final software matrix and final hardware subset matrix. Include effect
     sizes, confidence intervals, worst seed, sample efficiency, runtime, command
     count, resource budgets, and claim-boundary table.
 
-129. Build the independent reproduction capsule: fresh checkout instructions,
+130. Build the independent reproduction capsule: fresh checkout instructions,
     environment lock, validation command, registry/table regeneration, EBRAINS
     ingest instructions, artifact hash manifest, and one local tier rerun.
 
-130. Draft paper/whitepaper only after the Phase H usefulness/baseline gates pass. Write
+131. Draft paper/whitepaper only after the Phase H usefulness/baseline gates pass. Write
     limitations first, then claims. Preserve failed and parked diagnostics.
 
-131. External dry run: have a clean agent or human follow only the docs. If they
+132. External dry run: have a clean agent or human follow only the docs. If they
     need hidden chat context, the repo is not ready.
 
 ## 7. Current Tier 4.27 Definition
@@ -1692,26 +1699,25 @@ After each completed run or design tier:
 Most recent completed gate:
 
 ```text
-Tier 7.7f = COMPLETE / PASS, 16/16 criteria.
-Output: controlled_test_output/tier7_7f_20260509_repaired_finite_stream_long_run_scoreboard/
-Outcome: mackey_only_localized.
-Result: repaired NARMA10 U(0,0.2) removed the finite-stream blocker. Mackey-
-Glass persisted across 8000/16000/32000, repaired NARMA10 stayed near-flat,
-Lorenz stayed flat/weak, and ESN remained the best external baseline.
-Boundary: scoring evidence only; no baseline freeze, broad public usefulness
-claim, external-baseline superiority, hardware/native transfer, language, AGI,
-or ASI.
+Tier 7.7g = COMPLETE / PASS, 15/15 criteria.
+Output: controlled_test_output/tier7_7g_20260509_lorenz_capacity_narma_memory_contract/
+Outcome: lorenz_capacity_narma_memory_contract_locked.
+Result: locks temporal-state capacity 16/32/64/128, matched-capacity ESN and
+random-reservoir references, repaired NARMA U(0,0.2), Mackey positive-control
+anchor, shams, metrics, and decision classes before scoring.
+Boundary: contract/pre-registration only; no score, mechanism promotion,
+baseline freeze, hardware/native transfer, public usefulness claim, language,
+AGI, or ASI.
 ```
 
 The next concrete action is now:
 
 ```text
-Tier 7.7g - Lorenz State-Capacity / NARMA Memory-Depth Diagnostic Contract
+Tier 7.7h - Lorenz Capacity / NARMA Memory-Depth Scoring Gate
 
-Predeclare the capacity/state-interface diagnostic needed after 7.7f: temporal
-hidden/state capacity sweeps, matched-capacity ESN/reservoir references, repaired
-NARMA stream use, Lorenz reconstruction metrics, and decision classes for
-capacity-limited versus architecture-limited failure.
+Run the locked 7.7g capacity matrix and classify whether the Lorenz/NARMA gap
+is capacity-limited, capacity-helpful-but-baseline-limited,
+architecture-limited-flat, overfit/sham-blocked, or Mackey-regressing.
 ```
 
 Recent closeout:

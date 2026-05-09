@@ -1,0 +1,15 @@
+variant,family,temporal_hidden_units,meta_features,readout_rule,required
+cra_v2_5_temporal_state_16,CRA temporal-state capacity sweep,16,locked v2.5 causal meta-state adapter,locked online readout from 7.7b/7.7f; no retune,True
+esn_train_prefix_ridge_16,matched-capacity ESN reference,16,none,train-prefix ridge baseline,True
+random_reservoir_online_16,matched-capacity random reservoir control,16,none,locked online readout/control,True
+cra_v2_5_temporal_state_32,CRA temporal-state capacity sweep,32,locked v2.5 causal meta-state adapter,locked online readout from 7.7b/7.7f; no retune,True
+esn_train_prefix_ridge_32,matched-capacity ESN reference,32,none,train-prefix ridge baseline,True
+random_reservoir_online_32,matched-capacity random reservoir control,32,none,locked online readout/control,True
+cra_v2_5_temporal_state_64,CRA temporal-state capacity sweep,64,locked v2.5 causal meta-state adapter,locked online readout from 7.7b/7.7f; no retune,True
+esn_train_prefix_ridge_64,matched-capacity ESN reference,64,none,train-prefix ridge baseline,True
+random_reservoir_online_64,matched-capacity random reservoir control,64,none,locked online readout/control,True
+cra_v2_5_temporal_state_128,CRA temporal-state capacity sweep,128,locked v2.5 causal meta-state adapter,locked online readout from 7.7b/7.7f; no retune,True
+esn_train_prefix_ridge_128,matched-capacity ESN reference,128,none,train-prefix ridge baseline,True
+random_reservoir_online_128,matched-capacity random reservoir control,128,none,locked online readout/control,True
+lag_ridge_reference,simple lag/readout baseline,0,none,train-prefix ridge,True
+online_lms_reference,simple online linear baseline,0,none,online LMS,True

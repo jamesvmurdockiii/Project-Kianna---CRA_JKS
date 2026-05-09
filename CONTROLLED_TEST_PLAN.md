@@ -11436,8 +11436,22 @@ Next required step:
 
 ```text
 Tier 7.7g - Lorenz state-capacity / NARMA memory-depth diagnostic contract.
-Predeclare whether the next diagnostic tests capacity/state-interface limits
-versus structural architecture limits before adding more mechanisms.
+Status: COMPLETE / PASS, 15/15 criteria.
+Output: controlled_test_output/tier7_7g_20260509_lorenz_capacity_narma_memory_contract/
+Outcome: lorenz_capacity_narma_memory_contract_locked.
+Result: locks temporal-state capacity 16/32/64/128, matched-capacity ESN and
+random-reservoir references, repaired NARMA U(0,0.2), Mackey positive-control
+anchor, shams, metrics, and decision classes before scoring.
+Boundary: contract/pre-registration only; no score, no mechanism promotion, no
+freeze, no public usefulness claim, and no hardware/native transfer.
+```
+
+Next required step:
+
+```text
+Tier 7.7h - Lorenz capacity / NARMA memory-depth scoring gate.
+Run the locked 7.7g capacity matrix and classify capacity/state-interface
+limits versus structural architecture limits.
 ```
 
 Latest standardized benchmark contract:

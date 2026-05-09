@@ -4305,10 +4305,23 @@ no external-baseline superiority, no hardware/native transfer, and no AGI/ASI.
 Current next step:
 
 ```text
-Tier 7.7g — Lorenz state-capacity / NARMA memory-depth diagnostic contract
-Question: are the remaining Lorenz/NARMA gaps capacity/state-interface limited,
-or do they remain flat under matched-capacity sweeps, implying a deeper
-architectural gap?
+Tier 7.7g — COMPLETE / PASS, 15/15 criteria
+Outcome: lorenz_capacity_narma_memory_contract_locked
+Output: controlled_test_output/tier7_7g_20260509_lorenz_capacity_narma_memory_contract/
+Result: locks temporal-state capacity 16/32/64/128, matched-capacity ESN and
+random-reservoir references, repaired NARMA U(0,0.2), Mackey positive-control
+anchor, shams, metrics, and decision classes before scoring.
+Boundary: contract/pre-registration only; no score, mechanism promotion,
+baseline freeze, public usefulness claim, hardware/native transfer, or AGI/ASI.
+```
+
+Current next step:
+
+```text
+Tier 7.7h — Lorenz capacity / NARMA memory-depth scoring gate
+Question: under the locked capacity matrix, are the remaining Lorenz/NARMA gaps
+capacity-limited, capacity-helpful-but-baseline-limited, architecture-limited,
+overfit/sham-blocked, or Mackey-regressing?
 ```
 
 Tier 7.1a predeclared these candidate/future adapter families:

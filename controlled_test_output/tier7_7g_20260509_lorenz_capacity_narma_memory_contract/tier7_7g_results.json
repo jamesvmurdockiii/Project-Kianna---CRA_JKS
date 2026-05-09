@@ -1,0 +1,533 @@
+{
+  "claim_boundary": "Tier 7.7g is a contract/pre-registration gate only. It performs no scoring, promotes no mechanism, freezes no baseline, claims no public usefulness, and authorizes no hardware/native transfer.",
+  "classification": {
+    "baseline_freeze_authorized": false,
+    "hardware_transfer_authorized": false,
+    "mechanism_promotion_authorized": false,
+    "next_gate": "Tier 7.7h - Lorenz Capacity / NARMA Memory-Depth Scoring Gate",
+    "outcome": "lorenz_capacity_narma_memory_contract_locked",
+    "scoring_authorized": true
+  },
+  "contract": {
+    "capacity_matrix": [
+      {
+        "family": "CRA temporal-state capacity sweep",
+        "meta_features": "locked v2.5 causal meta-state adapter",
+        "readout_rule": "locked online readout from 7.7b/7.7f; no retune",
+        "required": true,
+        "temporal_hidden_units": 16,
+        "variant": "cra_v2_5_temporal_state_16"
+      },
+      {
+        "family": "matched-capacity ESN reference",
+        "meta_features": "none",
+        "readout_rule": "train-prefix ridge baseline",
+        "required": true,
+        "temporal_hidden_units": 16,
+        "variant": "esn_train_prefix_ridge_16"
+      },
+      {
+        "family": "matched-capacity random reservoir control",
+        "meta_features": "none",
+        "readout_rule": "locked online readout/control",
+        "required": true,
+        "temporal_hidden_units": 16,
+        "variant": "random_reservoir_online_16"
+      },
+      {
+        "family": "CRA temporal-state capacity sweep",
+        "meta_features": "locked v2.5 causal meta-state adapter",
+        "readout_rule": "locked online readout from 7.7b/7.7f; no retune",
+        "required": true,
+        "temporal_hidden_units": 32,
+        "variant": "cra_v2_5_temporal_state_32"
+      },
+      {
+        "family": "matched-capacity ESN reference",
+        "meta_features": "none",
+        "readout_rule": "train-prefix ridge baseline",
+        "required": true,
+        "temporal_hidden_units": 32,
+        "variant": "esn_train_prefix_ridge_32"
+      },
+      {
+        "family": "matched-capacity random reservoir control",
+        "meta_features": "none",
+        "readout_rule": "locked online readout/control",
+        "required": true,
+        "temporal_hidden_units": 32,
+        "variant": "random_reservoir_online_32"
+      },
+      {
+        "family": "CRA temporal-state capacity sweep",
+        "meta_features": "locked v2.5 causal meta-state adapter",
+        "readout_rule": "locked online readout from 7.7b/7.7f; no retune",
+        "required": true,
+        "temporal_hidden_units": 64,
+        "variant": "cra_v2_5_temporal_state_64"
+      },
+      {
+        "family": "matched-capacity ESN reference",
+        "meta_features": "none",
+        "readout_rule": "train-prefix ridge baseline",
+        "required": true,
+        "temporal_hidden_units": 64,
+        "variant": "esn_train_prefix_ridge_64"
+      },
+      {
+        "family": "matched-capacity random reservoir control",
+        "meta_features": "none",
+        "readout_rule": "locked online readout/control",
+        "required": true,
+        "temporal_hidden_units": 64,
+        "variant": "random_reservoir_online_64"
+      },
+      {
+        "family": "CRA temporal-state capacity sweep",
+        "meta_features": "locked v2.5 causal meta-state adapter",
+        "readout_rule": "locked online readout from 7.7b/7.7f; no retune",
+        "required": true,
+        "temporal_hidden_units": 128,
+        "variant": "cra_v2_5_temporal_state_128"
+      },
+      {
+        "family": "matched-capacity ESN reference",
+        "meta_features": "none",
+        "readout_rule": "train-prefix ridge baseline",
+        "required": true,
+        "temporal_hidden_units": 128,
+        "variant": "esn_train_prefix_ridge_128"
+      },
+      {
+        "family": "matched-capacity random reservoir control",
+        "meta_features": "none",
+        "readout_rule": "locked online readout/control",
+        "required": true,
+        "temporal_hidden_units": 128,
+        "variant": "random_reservoir_online_128"
+      },
+      {
+        "family": "simple lag/readout baseline",
+        "meta_features": "none",
+        "readout_rule": "train-prefix ridge",
+        "required": true,
+        "temporal_hidden_units": 0,
+        "variant": "lag_ridge_reference"
+      },
+      {
+        "family": "simple online linear baseline",
+        "meta_features": "none",
+        "readout_rule": "online LMS",
+        "required": true,
+        "temporal_hidden_units": 0,
+        "variant": "online_lms_reference"
+      }
+    ],
+    "diagnostic_questions": [
+      {
+        "evidence_required": "capacity curve over 16/32/64/128 units, paired seeds, tail MSE, and ESN-gap closure",
+        "question": "Does increasing CRA temporal-state capacity materially close the Lorenz gap toward matched-capacity ESN/reservoir references?",
+        "question_id": "lorenz_capacity_closure"
+      },
+      {
+        "evidence_required": "capacity curve, repaired-stream manifest, lag/depth controls, and tail stability",
+        "question": "Does increasing CRA temporal-state capacity improve repaired NARMA10 memory-depth performance beyond v2.5-16?",
+        "question_id": "narma_memory_depth_closure"
+      },
+      {
+        "evidence_required": "flat CRA curve despite matched-capacity sweep and separated shams",
+        "question": "If capacity increases do not help, does the result justify a structural mechanism rather than more units?",
+        "question_id": "capacity_vs_architecture"
+      },
+      {
+        "evidence_required": "matched-capacity baseline table with disclosed units and feature counts",
+        "question": "Do ESN/reservoir baselines remain stronger at comparable state counts, or is the comparison unfairly capacity-skewed?",
+        "question_id": "external_capacity_fairness"
+      },
+      {
+        "evidence_required": "Mackey ratios and shams across capacity levels",
+        "question": "Does any higher-capacity variant preserve the Mackey signal, or does capacity damage the only confirmed standardized gain?",
+        "question_id": "mackey_anchor_regression"
+      }
+    ],
+    "expected_artifacts": [
+      {
+        "artifact": "tier7_7h_results.json",
+        "purpose": "capacity diagnostic scoring result and classification"
+      },
+      {
+        "artifact": "tier7_7h_report.md",
+        "purpose": "human-readable result"
+      },
+      {
+        "artifact": "tier7_7h_summary.csv",
+        "purpose": "criteria summary"
+      },
+      {
+        "artifact": "tier7_7h_capacity_scoreboard.csv",
+        "purpose": "per-task/per-capacity/per-model metrics"
+      },
+      {
+        "artifact": "tier7_7h_capacity_curves.csv",
+        "purpose": "capacity scaling curves and gap closure"
+      },
+      {
+        "artifact": "tier7_7h_matched_capacity_baselines.csv",
+        "purpose": "matched ESN/reservoir/reference table"
+      },
+      {
+        "artifact": "tier7_7h_sham_controls.csv",
+        "purpose": "capacity-specific shams/ablations"
+      },
+      {
+        "artifact": "tier7_7h_repaired_stream_manifest.json",
+        "purpose": "NARMA repaired-stream proof"
+      },
+      {
+        "artifact": "tier7_7h_claim_boundary.md",
+        "purpose": "allowed claims and nonclaims"
+      }
+    ],
+    "hypothesis": "If the 7.7f failure is mainly capacity/state-interface limited, increasing CRA temporal-state capacity toward ESN parity should materially improve Lorenz and/or repaired NARMA while preserving the Mackey anchor and separating shams.",
+    "leakage_rules": [
+      "use repaired NARMA U(0,0.2) stream from Tier 7.7e only",
+      "same seeds/tasks/splits across candidate, shams, and baselines",
+      "disclose feature counts and hidden units for every capacity variant",
+      "do not tune readout learning rates inside this gate",
+      "do not add mechanisms inside this gate",
+      "prediction emitted before online update for online models",
+      "normalization fit on train prefix only"
+    ],
+    "lengths": [
+      8000,
+      16000,
+      32000
+    ],
+    "mechanism_under_test": "capacity/state-interface diagnostic only; no new CRA mechanism, no baseline freeze, no hardware/native transfer",
+    "metrics": [
+      "test_mse",
+      "test_nmse",
+      "tail_mse",
+      "test_corr",
+      "capacity_curve_slope",
+      "best_capacity_vs_v2_5_16_ratio",
+      "gap_closure_to_matched_esn",
+      "feature_count",
+      "train_test_gap",
+      "paired_seed_delta"
+    ],
+    "next_gate": "Tier 7.7h - Lorenz Capacity / NARMA Memory-Depth Scoring Gate",
+    "nonclaims": [
+      "not a new baseline freeze",
+      "not a mechanism promotion",
+      "not broad public usefulness",
+      "not hardware/native transfer",
+      "not evidence of external-baseline superiority unless the scoring gate shows it",
+      "not language, broad reasoning, AGI, or ASI evidence"
+    ],
+    "null_hypothesis": "Increasing CRA temporal-state capacity does not materially improve Lorenz or repaired NARMA, or apparent gains are explained by shams/overfit rather than usable state geometry or memory depth.",
+    "pass_fail_criteria": [
+      {
+        "claim_allowed": "capacity/state-interface limitation is supported; next step may tune capacity or design larger state interface before adding mechanisms",
+        "kind": "capacity_limited_closing",
+        "rule": "Higher-capacity CRA improves Lorenz or repaired NARMA by >=25% versus 16-unit v2.5 and closes >=30% of the gap to matched-capacity ESN/reservoir with shams separated."
+      },
+      {
+        "claim_allowed": "capacity matters, but broad usefulness remains blocked; design targeted state-interface repair or mechanism only after this evidence",
+        "kind": "capacity_helps_but_baseline_gap_persists",
+        "rule": "Higher-capacity CRA improves materially versus 16-unit v2.5 but ESN/reservoir remains substantially better."
+      },
+      {
+        "claim_allowed": "more capacity alone is unlikely to solve Lorenz/NARMA; move to a predeclared structural mechanism gate",
+        "kind": "architecture_limited_flat",
+        "rule": "CRA remains flat across 16/32/64/128 while matched-capacity ESN/reservoir remains much stronger."
+      },
+      {
+        "claim_allowed": "no capacity or mechanism promotion; repair leakage/overfit/task design first",
+        "kind": "overfit_or_sham_blocked",
+        "rule": "Train metrics improve while test/tail fails, or shams match candidate performance."
+      },
+      {
+        "claim_allowed": "do not promote larger capacity; preserve v2.5 localized claim only",
+        "kind": "mackey_regression",
+        "rule": "Capacity variants damage the confirmed Mackey signal without improving Lorenz/NARMA."
+      }
+    ],
+    "question": "Are the remaining Lorenz and repaired-NARMA gaps capacity/state-interface limited, or do they remain flat under matched-capacity sweeps?",
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "shams": [
+      {
+        "purpose": "reset temporal state periodically to verify state persistence matters",
+        "sham": "state_reset_by_capacity"
+      },
+      {
+        "purpose": "preserve input projection but scramble recurrent wiring",
+        "sham": "permuted_recurrence_by_capacity"
+      },
+      {
+        "purpose": "break input-target relation",
+        "sham": "target_shuffle_by_capacity"
+      },
+      {
+        "purpose": "destroy temporal order",
+        "sham": "time_shuffle_by_capacity"
+      },
+      {
+        "purpose": "remove predictive v2.5 meta columns",
+        "sham": "prediction_disabled_meta"
+      },
+      {
+        "purpose": "remove slow-memory bridge columns",
+        "sham": "memory_disabled_meta"
+      },
+      {
+        "purpose": "record feature counts so capacity claims are not hidden parameter-budget claims",
+        "sham": "same_feature_budget_audit"
+      }
+    ],
+    "tasks": [
+      {
+        "lengths": "8000,16000,32000",
+        "primary_metric": "test_mse and ESN-gap closure by capacity",
+        "role": "primary state-geometry reconstruction diagnostic",
+        "task": "lorenz",
+        "why": "7.7f showed Lorenz is flat/weak while ESN dominates."
+      },
+      {
+        "lengths": "8000,16000,32000",
+        "primary_metric": "test_mse, tail_mse, and memory-depth improvement by capacity",
+        "role": "primary nonlinear memory-depth diagnostic",
+        "stream_policy": "repaired_narma10_reduced_input_u02 from 7.7e",
+        "task": "narma10",
+        "why": "7.7f repaired finite streams but NARMA stayed near-flat."
+      },
+      {
+        "lengths": "8000,16000,32000",
+        "primary_metric": "ensure Mackey signal does not collapse under capacity sweep",
+        "role": "positive-control / no-regression anchor",
+        "task": "mackey_glass",
+        "why": "Mackey is the localized positive signal from 7.7b/7.7f."
+      }
+    ]
+  },
+  "criteria": [
+    {
+      "criterion": "Tier 7.7f prerequisite exists",
+      "details": "",
+      "name": "Tier 7.7f prerequisite exists",
+      "note": "",
+      "operator": "exists and pass",
+      "pass": true,
+      "passed": true,
+      "rule": "exists and pass",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_7f_20260509_repaired_finite_stream_long_run_scoreboard/tier7_7f_results.json"
+    },
+    {
+      "criterion": "Tier 7.7f outcome requires capacity diagnostic",
+      "details": "",
+      "name": "Tier 7.7f outcome requires capacity diagnostic",
+      "note": "",
+      "operator": "== mackey_only_localized",
+      "pass": true,
+      "passed": true,
+      "rule": "== mackey_only_localized",
+      "value": "mackey_only_localized"
+    },
+    {
+      "criterion": "Tier 7.7e repaired stream prerequisite exists",
+      "details": "",
+      "name": "Tier 7.7e repaired stream prerequisite exists",
+      "note": "",
+      "operator": "exists and pass",
+      "pass": true,
+      "passed": true,
+      "rule": "exists and pass",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight/tier7_7e_results.json"
+    },
+    {
+      "criterion": "repaired NARMA stream locked",
+      "details": "",
+      "name": "repaired NARMA stream locked",
+      "note": "",
+      "operator": "== narma10_reduced_input_u02",
+      "pass": true,
+      "passed": true,
+      "rule": "== narma10_reduced_input_u02",
+      "value": "narma10_reduced_input_u02"
+    },
+    {
+      "criterion": "capacity sweep includes 16/32/64/128",
+      "details": "",
+      "name": "capacity sweep includes 16/32/64/128",
+      "note": "",
+      "operator": "== [16,32,64,128]",
+      "pass": true,
+      "passed": true,
+      "rule": "== [16,32,64,128]",
+      "value": [
+        16,
+        32,
+        64,
+        128
+      ]
+    },
+    {
+      "criterion": "tasks include Lorenz/NARMA/Mackey",
+      "details": "",
+      "name": "tasks include Lorenz/NARMA/Mackey",
+      "note": "",
+      "operator": "contains lorenz,narma10,mackey",
+      "pass": true,
+      "passed": true,
+      "rule": "contains lorenz,narma10,mackey",
+      "value": [
+        "lorenz",
+        "narma10",
+        "mackey_glass"
+      ]
+    },
+    {
+      "criterion": "lengths locked",
+      "details": "",
+      "name": "lengths locked",
+      "note": "",
+      "operator": "== [8000,16000,32000]",
+      "pass": true,
+      "passed": true,
+      "rule": "== [8000,16000,32000]",
+      "value": [
+        8000,
+        16000,
+        32000
+      ]
+    },
+    {
+      "criterion": "seeds locked",
+      "details": "",
+      "name": "seeds locked",
+      "note": "",
+      "operator": "== [42,43,44]",
+      "pass": true,
+      "passed": true,
+      "rule": "== [42,43,44]",
+      "value": [
+        42,
+        43,
+        44
+      ]
+    },
+    {
+      "criterion": "matched-capacity baselines included",
+      "details": "",
+      "name": "matched-capacity baselines included",
+      "note": "",
+      "operator": "contains ESN and reservoir at every capacity",
+      "pass": true,
+      "passed": true,
+      "rule": "contains ESN and reservoir at every capacity",
+      "value": [
+        "cra_v2_5_temporal_state_16",
+        "esn_train_prefix_ridge_16",
+        "random_reservoir_online_16",
+        "cra_v2_5_temporal_state_32",
+        "esn_train_prefix_ridge_32",
+        "random_reservoir_online_32",
+        "cra_v2_5_temporal_state_64",
+        "esn_train_prefix_ridge_64",
+        "random_reservoir_online_64",
+        "cra_v2_5_temporal_state_128",
+        "esn_train_prefix_ridge_128",
+        "random_reservoir_online_128",
+        "lag_ridge_reference",
+        "online_lms_reference"
+      ]
+    },
+    {
+      "criterion": "shams locked",
+      "details": "",
+      "name": "shams locked",
+      "note": "",
+      "operator": ">= 6",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 6",
+      "value": 7
+    },
+    {
+      "criterion": "pass/fail classes locked",
+      "details": "",
+      "name": "pass/fail classes locked",
+      "note": "",
+      "operator": ">= 5",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 5",
+      "value": 5
+    },
+    {
+      "criterion": "expected artifacts locked",
+      "details": "",
+      "name": "expected artifacts locked",
+      "note": "",
+      "operator": ">= 8",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 8",
+      "value": 9
+    },
+    {
+      "criterion": "contract does not score",
+      "details": "",
+      "name": "contract does not score",
+      "note": "",
+      "operator": "must remain false",
+      "pass": true,
+      "passed": true,
+      "rule": "must remain false",
+      "value": false
+    },
+    {
+      "criterion": "no mechanism promotion",
+      "details": "",
+      "name": "no mechanism promotion",
+      "note": "",
+      "operator": "must remain false",
+      "pass": true,
+      "passed": true,
+      "rule": "must remain false",
+      "value": false
+    },
+    {
+      "criterion": "hardware/native transfer blocked",
+      "details": "",
+      "name": "hardware/native transfer blocked",
+      "note": "",
+      "operator": "must remain false",
+      "pass": true,
+      "passed": true,
+      "rule": "must remain false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 15,
+  "criteria_total": 15,
+  "generated_at_utc": "2026-05-09T14:39:06+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7g_20260509_lorenz_capacity_narma_memory_contract",
+  "prerequisites": {
+    "tier7_7e_results": "/Users/james/JKS:CRA/controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight/tier7_7e_results.json",
+    "tier7_7e_selected_generator": "narma10_reduced_input_u02",
+    "tier7_7e_sha256": "bae66059ac748e0f34c0c99d7abd5c16a341b5fabc1314e7fa1c67027b9b6788",
+    "tier7_7e_status": "pass",
+    "tier7_7f_outcome": "mackey_only_localized",
+    "tier7_7f_results": "/Users/james/JKS:CRA/controlled_test_output/tier7_7f_20260509_repaired_finite_stream_long_run_scoreboard/tier7_7f_results.json",
+    "tier7_7f_sha256": "592ee6b649a9c31b0685cf056db6afcdfc5170bfc61b6e311b83d2a4bd97dff3",
+    "tier7_7f_status": "pass"
+  },
+  "runner_revision": "tier7_7g_lorenz_capacity_narma_memory_contract_20260509_0001",
+  "status": "pass",
+  "tier": "Tier 7.7g - Lorenz State-Capacity / NARMA Memory-Depth Diagnostic Contract"
+}

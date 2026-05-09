@@ -1,0 +1,6 @@
+question_id,question,evidence_required
+lorenz_capacity_closure,Does increasing CRA temporal-state capacity materially close the Lorenz gap toward matched-capacity ESN/reservoir references?,"capacity curve over 16/32/64/128 units, paired seeds, tail MSE, and ESN-gap closure"
+narma_memory_depth_closure,Does increasing CRA temporal-state capacity improve repaired NARMA10 memory-depth performance beyond v2.5-16?,"capacity curve, repaired-stream manifest, lag/depth controls, and tail stability"
+capacity_vs_architecture,"If capacity increases do not help, does the result justify a structural mechanism rather than more units?",flat CRA curve despite matched-capacity sweep and separated shams
+external_capacity_fairness,"Do ESN/reservoir baselines remain stronger at comparable state counts, or is the comparison unfairly capacity-skewed?",matched-capacity baseline table with disclosed units and feature counts
+mackey_anchor_regression,"Does any higher-capacity variant preserve the Mackey signal, or does capacity damage the only confirmed standardized gain?",Mackey ratios and shams across capacity levels

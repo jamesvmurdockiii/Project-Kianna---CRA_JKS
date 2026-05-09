@@ -1,0 +1,6 @@
+kind,rule,claim_allowed
+capacity_limited_closing,Higher-capacity CRA improves Lorenz or repaired NARMA by >=25% versus 16-unit v2.5 and closes >=30% of the gap to matched-capacity ESN/reservoir with shams separated.,capacity/state-interface limitation is supported; next step may tune capacity or design larger state interface before adding mechanisms
+capacity_helps_but_baseline_gap_persists,Higher-capacity CRA improves materially versus 16-unit v2.5 but ESN/reservoir remains substantially better.,"capacity matters, but broad usefulness remains blocked; design targeted state-interface repair or mechanism only after this evidence"
+architecture_limited_flat,CRA remains flat across 16/32/64/128 while matched-capacity ESN/reservoir remains much stronger.,more capacity alone is unlikely to solve Lorenz/NARMA; move to a predeclared structural mechanism gate
+overfit_or_sham_blocked,"Train metrics improve while test/tail fails, or shams match candidate performance.",no capacity or mechanism promotion; repair leakage/overfit/task design first
+mackey_regression,Capacity variants damage the confirmed Mackey signal without improving Lorenz/NARMA.,do not promote larger capacity; preserve v2.5 localized claim only

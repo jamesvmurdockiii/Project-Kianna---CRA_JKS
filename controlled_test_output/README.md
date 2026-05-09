@@ -5,10 +5,10 @@ ledger is `STUDY_REGISTRY.json`; the compact table is `STUDY_REGISTRY.csv`.
 Older reruns, prepared capsules, debug probes, and baseline-frozen
 mechanism bundles outside the formal registry are preserved for audit.
 
-- Generated: `2026-05-09T14:33:37.702466+00:00`
+- Generated: `2026-05-09T14:42:18.355006+00:00`
 - Registry status: **PASS**
-- Canonical evidence entries: `129`
-- Expanded test-entry count: `129`; see the canonical evidence table below for the exact current tier list.
+- Canonical evidence entries: `130`
+- Expanded test-entry count: `130`; see the canonical evidence table below for the exact current tier list.
 
 ## Evidence Categories
 
@@ -115,6 +115,7 @@ mechanism bundles outside the formal registry are preserved for audit.
 | `tier7_7d_standardized_long_run_failure_scoring_gate` | **PASS** | `controlled_test_output/tier7_7d_20260509_standardized_long_run_failure_scoring_gate` | Scoring-blocker evidence only; not a complete long-run scoreboard, not public usefulness proof, not a baseline freeze, not hardware/native transfer, and not language, broad planning, AGI, or ASI evidence. NARMA10 long-run generation must be repaired/preflighted before citable long-run standardized scoring. |
 | `tier7_7e_finite_stream_repair_preflight` | **PASS** | `controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight` | Benchmark repair/preflight evidence only; not a CRA score, not public usefulness proof, not a baseline freeze, not hardware/native transfer, and not permission to silently merge repaired U(0,0.2) NARMA results with prior U(0,0.5) NARMA scores. |
 | `tier7_7f_repaired_finite_stream_long_run_scoreboard` | **PASS** | `controlled_test_output/tier7_7f_20260509_repaired_finite_stream_long_run_scoreboard` | Scoring evidence only; not a baseline freeze, not hardware/native evidence, not broad public usefulness, not external-baseline superiority, and not permission to mix repaired U(0,0.2) NARMA scores with prior U(0,0.5) NARMA scores. |
+| `tier7_7g_lorenz_capacity_narma_memory_contract` | **PASS** | `controlled_test_output/tier7_7g_20260509_lorenz_capacity_narma_memory_contract` | Contract/pre-registration evidence only; not a score, not a mechanism promotion, not a baseline freeze, not hardware/native transfer, and not broad public usefulness evidence. |
 | `tier5_20a_resonant_branch_polyp_diagnostic` | **PASS** | `controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic` | Software diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence. |
 | `tier5_20b_hybrid_resonant_polyp_diagnostic` | **PASS** | `controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic` | Software repair diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence. |
 | `tier5_20c_minimal_resonant_polyp_diagnostic` | **PASS** | `controlled_test_output/tier5_20c_20260508_minimal_resonant_polyp_diagnostic` | Software minimal-dose diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence. |

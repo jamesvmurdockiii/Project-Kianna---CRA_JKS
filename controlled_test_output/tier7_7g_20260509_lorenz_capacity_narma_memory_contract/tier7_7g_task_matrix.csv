@@ -1,0 +1,4 @@
+task,role,lengths,primary_metric,why,stream_policy
+lorenz,primary state-geometry reconstruction diagnostic,"8000,16000,32000",test_mse and ESN-gap closure by capacity,7.7f showed Lorenz is flat/weak while ESN dominates.,
+narma10,primary nonlinear memory-depth diagnostic,"8000,16000,32000","test_mse, tail_mse, and memory-depth improvement by capacity",7.7f repaired finite streams but NARMA stayed near-flat.,repaired_narma10_reduced_input_u02 from 7.7e
+mackey_glass,positive-control / no-regression anchor,"8000,16000,32000",ensure Mackey signal does not collapse under capacity sweep,Mackey is the localized positive signal from 7.7b/7.7f.,

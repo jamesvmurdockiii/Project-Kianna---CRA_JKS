@@ -1,0 +1,10 @@
+artifact,purpose
+tier7_7h_results.json,capacity diagnostic scoring result and classification
+tier7_7h_report.md,human-readable result
+tier7_7h_summary.csv,criteria summary
+tier7_7h_capacity_scoreboard.csv,per-task/per-capacity/per-model metrics
+tier7_7h_capacity_curves.csv,capacity scaling curves and gap closure
+tier7_7h_matched_capacity_baselines.csv,matched ESN/reservoir/reference table
+tier7_7h_sham_controls.csv,capacity-specific shams/ablations
+tier7_7h_repaired_stream_manifest.json,NARMA repaired-stream proof
+tier7_7h_claim_boundary.md,allowed claims and nonclaims

@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-09T14:31:35+00:00.
+Last updated: 2026-05-09T14:39:51+00:00.
 
 Current repo root:
 
@@ -1328,12 +1328,17 @@ Tier 7.7f — COMPLETE. Repaired finite-stream long-run scoreboard.
   broad usefulness claim, external-baseline superiority, or hardware/native
   transfer is authorized.
 
-Tier 7.7g — CURRENT ACTIVE STEP. Lorenz state-capacity / NARMA memory-depth
-  diagnostic contract. Determine whether the remaining standardized gap is
-  capacity/state-interface limited or structurally architectural before adding
-  more mechanisms. The diagnostic should compare temporal hidden/state capacity
-  and matched-capacity ESN/reservoir references under the same repaired finite
-  stream policy.
+Tier 7.7g — COMPLETE. Lorenz state-capacity / NARMA memory-depth diagnostic
+  contract. Status: PASS, 15/15 criteria. Output:
+  `controlled_test_output/tier7_7g_20260509_lorenz_capacity_narma_memory_contract/`.
+  Outcome `lorenz_capacity_narma_memory_contract_locked`: locked temporal-state
+  capacity 16/32/64/128, matched-capacity ESN/reservoir references, repaired
+  NARMA stream policy, Mackey anchor, shams, metrics, and pass/fail classes.
+
+Tier 7.7h — CURRENT ACTIVE STEP. Lorenz capacity / NARMA memory-depth scoring
+  gate. Run the locked 7.7g capacity matrix and classify whether the remaining
+  gap is capacity-limited, capacity-helpful-but-baseline-limited,
+  architecture-limited-flat, overfit/sham-blocked, or Mackey-regressing.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware
