@@ -4278,9 +4278,24 @@ freeze, not public usefulness, not hardware/native transfer, and not AGI/ASI.
 Current next step:
 
 ```text
-Tier 7.7e — finite-stream repair/preflight contract
-Question: can the long-run NARMA10 stream be made finite under a predeclared
-standardized rule before rerunning any long-run scoreboard?
+Tier 7.7e — COMPLETE / PASS, 16/16 criteria
+Outcome: finite_stream_repair_preflight_passed
+Output: controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight/
+Result: original narma10_standard_u05 reproduced 2/9 non-finite required cells;
+selected narma10_reduced_input_u02 passed 9/9 required cells at
+8000/16000/32000 across seeds 42/43/44.
+Boundary: benchmark repair/preflight evidence only; no CRA score, no freeze, no
+public usefulness claim, no hardware/native transfer, and no silent mixing of
+prior U(0,0.5) NARMA scores with repaired U(0,0.2) NARMA scores.
+```
+
+Current next step:
+
+```text
+Tier 7.7f — repaired finite-stream long-run scoreboard
+Question: after repairing/preflighting NARMA10, does the long-run standardized
+scoreboard classify as long-run confirmed, Mackey-only localized, baseline-gap
+persisting, signal-collapse, or stop/narrow?
 ```
 
 Tier 7.1a predeclared these candidate/future adapter families:

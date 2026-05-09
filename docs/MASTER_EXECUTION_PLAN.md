@@ -1447,70 +1447,83 @@ ability.
     remained blockers, and required NARMA10 became non-finite at 16000 and
     32000. This blocks any complete long-run scoreboard claim.
 
-116. **CURRENT ACTIVE STEP** - Tier 7.7e finite-stream repair/preflight
-    contract:
-    repair or replace the non-finite long-run NARMA10 generation path under a
-    predeclared standardization rule before rerunning any long-run scoreboard.
+116. **COMPLETE** - Tier 7.7e finite-stream repair/preflight contract:
+    passed 16/16 at
+    `controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight/`.
+    Outcome `finite_stream_repair_preflight_passed`: the original
+    `narma10_standard_u05` generator reproduced 2/9 non-finite required cells,
+    while selected `narma10_reduced_input_u02` passed 9/9 required cells at
+    8000/16000/32000 across seeds 42/43/44. This authorizes a repaired-stream
+    long-run rerun only; it does not score CRA, freeze a baseline, or authorize
+    hardware/native transfer.
 
-117. Mechanism iteration loop: add exactly one planned general mechanism at a
+117. **CURRENT ACTIVE STEP** - Tier 7.7f repaired finite-stream long-run
+    scoreboard:
+    rerun the locked 7.7c long-run matrix using the preflighted
+    `narma10_reduced_input_u02` repaired NARMA stream. All candidate, reference,
+    sham, and external baseline models must be rerun on the same repaired
+    stream; prior `U(0,0.5)` NARMA scores cannot be silently mixed with repaired
+    `U(0,0.2)` NARMA scores.
+
+118. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
     stop the broad usefulness track and narrow the paper.
 
-118. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+119. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines. Start only after the standardized scoreboard or failure diagnosis
     identifies a winning regime, a real failure mode, or a mechanism needing
     external validation.
 
-119. Tier 7.2 held-out task challenge: define held-out families before running;
+120. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout. Include at least one synthetic holdout and one
     real-ish adapter holdout if Tier 7.1 is active.
 
-120. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+121. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines. Candidate domains include
     streaming anomaly detection, predictive-maintenance sensor streams, human
     activity streams, event prediction, ECG/biosignal streams, and finance as
     one domain only rather than the whole proof.
 
-121. Tier 7.4 policy/action selection held-out scoring: the current held-out
+122. Tier 7.4 policy/action selection held-out scoring: the current held-out
     chain is complete through 7.4h. No further NAB/C-MAPSS policy tuning is
     authorized from this chain; only the narrow C-MAPSS action-cost signal is
     preserved, with no broad action/policy claim, freeze, or hardware/native
     transfer.
 
-120. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
+123. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
     planning/subgoal control: run only after the shorter hard/real-ish tasks are
     stable. Do not claim language, AGI, or broad planning from toy gates.
 
-121. Run expanded external baselines and fairness audit at the phase lock:
+124. Run expanded external baselines and fairness audit at the phase lock:
     random/sign persistence, online perceptron/logistic, lag/ridge where
     relevant, reservoir/ESN, small GRU, STDP-only SNN, simple evolutionary
     population, simple control baselines, and SNN reviewer-defense baselines
     where practical.
 
-122. Freeze the next software baseline only if new software capability work
+125. Freeze the next software baseline only if new software capability work
     passes ablations, fair baselines, leakage controls, and compact regression.
     If no new software mechanism is promoted, keep v2.4.
 
 ### Phase I - Final Paper Lock
 
-123. Select final paper claim level: strong usefulness paper, bounded architecture
+126. Select final paper claim level: strong usefulness paper, bounded architecture
     study, or narrowed diagnostic report. Let the evidence decide.
 
-124. Run final software matrix and final hardware subset matrix. Include effect
+127. Run final software matrix and final hardware subset matrix. Include effect
     sizes, confidence intervals, worst seed, sample efficiency, runtime, command
     count, resource budgets, and claim-boundary table.
 
-125. Build the independent reproduction capsule: fresh checkout instructions,
+128. Build the independent reproduction capsule: fresh checkout instructions,
     environment lock, validation command, registry/table regeneration, EBRAINS
     ingest instructions, artifact hash manifest, and one local tier rerun.
 
-126. Draft paper/whitepaper only after the Phase H usefulness/baseline gates pass. Write
+129. Draft paper/whitepaper only after the Phase H usefulness/baseline gates pass. Write
     limitations first, then claims. Preserve failed and parked diagnostics.
 
-127. External dry run: have a clean agent or human follow only the docs. If they
+130. External dry run: have a clean agent or human follow only the docs. If they
     need hidden chat context, the repo is not ready.
 
 ## 7. Current Tier 4.27 Definition
@@ -1669,33 +1682,26 @@ After each completed run or design tier:
 Most recent completed gate:
 
 ```text
-Tier 7.7a = COMPLETE / PASS, 20/20 criteria.
-Output: controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract/
-Outcome: v2_5_standardized_scoreboard_contract_locked.
-Result: primary scoreboard locked as Mackey-Glass, Lorenz, and NARMA10 at
-8000 steps, horizon 8, seeds 42/43/44, chronological 65/35 split. C-MAPSS
-FD001 and NAB are secondary public/real-ish confirmation tracks only.
-Boundary: contract/pre-registration only; no benchmark score, public usefulness
+Tier 7.7e = COMPLETE / PASS, 16/16 criteria.
+Output: controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight/
+Outcome: finite_stream_repair_preflight_passed.
+Result: original narma10_standard_u05 reproduced 2/9 non-finite required cells;
+selected narma10_reduced_input_u02 passed 9/9 required cells at
+8000/16000/32000 across seeds 42/43/44.
+Boundary: benchmark repair/preflight only; no CRA score, public usefulness
 claim, new freeze, hardware/native transfer, language, broad planning, AGI, or
-ASI.
+ASI. Repaired NARMA scores must be labeled separately from prior U(0,0.5)
+NARMA scores.
 ```
 
 The next concrete action is now:
 
 ```text
-Tier 7.7e - Finite-Stream Repair / Preflight Contract
+Tier 7.7f - Repaired Finite-Stream Long-Run Scoreboard
 
-Question: Can the long-run NARMA10 stream be made finite under a predeclared
-standardized rule before rerunning any long-run scoreboard?
-
-First move: define the finite-stream repair/preflight contract, including the
-allowed generator repair, finite checks at 8000/16000/32000, same-seed fairness,
-and a rule that the repaired benchmark cannot be used to inflate prior 7.7b
-claims.
-
-Boundary: contract/preflight evidence only. No new scoring, no baseline freeze,
-no hardware/native transfer, and no broad usefulness claim until a repaired
-long-run scoring gate passes.
+Rerun the 7.7c length/seed/model/sham matrix using the repaired
+`narma10_reduced_input_u02` stream. Every model must be rerun on the same
+repaired stream before any long-run classification can be cited.
 ```
 
 Recent closeout:

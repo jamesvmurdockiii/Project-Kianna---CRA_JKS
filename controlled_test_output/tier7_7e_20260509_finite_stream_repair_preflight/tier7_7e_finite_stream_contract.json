@@ -1,0 +1,110 @@
+{
+  "expected_next_artifacts": [
+    "tier7_7f_results.json",
+    "tier7_7f_report.md",
+    "tier7_7f_length_scoreboard.csv",
+    "tier7_7f_length_aggregate.csv",
+    "tier7_7f_repaired_stream_manifest.json",
+    "tier7_7f_claim_boundary.md"
+  ],
+  "external_reference_notes": [
+    {
+      "note": "The standard recurrence commonly uses u in [0, 0.5] with coefficients 0.3, 0.05, 1.5, 0.1.",
+      "topic": "standard NARMA10",
+      "url": "https://www.nature.com/articles/srep22381"
+    },
+    {
+      "note": "A reservoir-computing tutorial explicitly notes that even standard NARMA10 can occasionally diverge and cites reduced input range u in [0, 0.2] as one documented approach.",
+      "topic": "NARMA divergence and repair variants",
+      "url": "https://link.springer.com/article/10.1007/s11047-024-09997-y"
+    }
+  ],
+  "hypothesis": "A documented finite-stream NARMA10 repair can preserve the nonlinear-memory benchmark role while eliminating long-run non-finite targets across locked lengths and seeds.",
+  "lengths": [
+    8000,
+    16000,
+    32000
+  ],
+  "mechanism_under_test": "benchmark stream generator policy only; no CRA mechanism, model score, readout retune, baseline freeze, or hardware/native transfer is tested here",
+  "next_gate": "Tier 7.7f - Repaired Finite-Stream Long-Run Scoreboard",
+  "nonclaims": [
+    "not a CRA score",
+    "not a public-usefulness result",
+    "not a baseline freeze",
+    "not evidence that CRA beats ESN/ridge/online baselines",
+    "not hardware/native transfer",
+    "not a mechanism implementation",
+    "not language, broad reasoning, AGI, or ASI evidence"
+  ],
+  "null_hypothesis": "The NARMA10 repair is not finite across locked lengths/seeds, silently changes the benchmark without labeling it, or would allow post-hoc score inflation.",
+  "optional_lengths": [
+    50000
+  ],
+  "pass_fail_criteria": [
+    {
+      "criterion": "selected generator finite at all required length/seed cells",
+      "pass_rule": "observed, target, and train-prefix normalized arrays are all finite for 8000/16000/32000 x seeds 42/43/44"
+    },
+    {
+      "criterion": "original failure preserved",
+      "pass_rule": "the original standard_u05 generator is retained as an audit row and reproduces at least one non-finite long-run cell"
+    },
+    {
+      "criterion": "no hidden score inflation",
+      "pass_rule": "the repaired stream must be scored in a new gate, with all models rerun on the same repaired stream and no direct recycling of prior NARMA scores"
+    },
+    {
+      "criterion": "no mechanism tuning",
+      "pass_rule": "the repair changes only the benchmark generator policy, not CRA mechanisms, baselines, readout hyperparameters, or splits"
+    }
+  ],
+  "question": "Can the long-run NARMA10 stream be made finite under a predeclared standardized rule before rerunning any long-run scoreboard?",
+  "repair_options": [
+    {
+      "bounded_output": false,
+      "generator_id": "narma10_standard_u05",
+      "input_max": 0.5,
+      "literature_status": "standard Atiya/Parlos-style NARMA10 input range used broadly in reservoir-computing benchmarks",
+      "rationale": "Preserve as the original standard-equation audit row; 7.7d showed it can diverge at long length.",
+      "role": "current locked 7.7b/7.7d generator",
+      "selected": false
+    },
+    {
+      "bounded_output": false,
+      "generator_id": "narma10_reduced_input_u02",
+      "input_max": 0.2,
+      "literature_status": "documented NARMA-family divergence-control option; changes target scale and therefore requires a fresh repaired-scoreboard rerun",
+      "rationale": "Keep the same NARMA10 recurrence coefficients and seed policy, but reduce the input range using a documented divergence-control variant. Future scoring must label this as repaired NARMA10 and may not merge it silently with prior u05 scores.",
+      "role": "selected finite-stream repair for the next long-run rerun",
+      "selected": true
+    },
+    {
+      "bounded_output": true,
+      "generator_id": "narma10_tanh_bounded_u05",
+      "input_max": 0.5,
+      "literature_status": "bounded-output wrappers appear in NARMA-family variants but are not selected for this repair",
+      "rationale": "Finite by construction but changes the target nonlinearity more strongly than reduced input range, so it remains a fallback only.",
+      "role": "alternative not selected",
+      "selected": false
+    }
+  ],
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "selected_generator": "narma10_reduced_input_u02",
+  "selected_generator_rule": {
+    "equation_coefficients": {
+      "alpha": 0.3,
+      "beta": 0.05,
+      "delta": 0.1,
+      "gamma": 1.5,
+      "order": 10
+    },
+    "input_distribution": "u_t ~ Uniform(0, 0.2)",
+    "labeling_rule": "future scoreboards must label NARMA as repaired_narma10_reduced_input_u02 and must not merge these scores silently with prior u05 NARMA scores",
+    "output_wrapper": "none",
+    "seed_policy": "same locked seeds 42/43/44 with the existing seed+3003 random stream"
+  }
+}

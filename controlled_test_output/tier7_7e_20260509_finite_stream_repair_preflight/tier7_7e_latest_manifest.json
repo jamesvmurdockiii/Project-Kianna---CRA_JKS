@@ -1,0 +1,11 @@
+{
+  "classification_outcome": "finite_stream_repair_preflight_passed",
+  "generated_at_utc": "2026-05-09T14:24:47+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight",
+  "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight/tier7_7e_report.md",
+  "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight/tier7_7e_results.json",
+  "selected_generator": "narma10_reduced_input_u02",
+  "status": "pass",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight/tier7_7e_summary.csv",
+  "tier": "Tier 7.7e - Finite-Stream Repair / Preflight Contract"
+}

@@ -11402,12 +11402,28 @@ Boundary: scoring-blocker evidence only; no complete long-run scoreboard, no
 freeze, no public usefulness claim, no hardware/native transfer, and no AGI/ASI.
 ```
 
-Next required step:
+Latest finite-stream repair/preflight:
 
 ```text
 Tier 7.7e - finite-stream repair/preflight contract.
-Repair or replace the non-finite long-run NARMA10 generation path under a
-predeclared standardization rule before rerunning any long-run scoreboard.
+Status: COMPLETE / PASS, 16/16 criteria.
+Output: controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight/
+Outcome: finite_stream_repair_preflight_passed.
+Result: original narma10_standard_u05 reproduced 2/9 non-finite required cells;
+selected narma10_reduced_input_u02 passed 9/9 required cells at
+8000/16000/32000 across seeds 42/43/44.
+Boundary: benchmark repair/preflight evidence only; no CRA score, no freeze, no
+public usefulness claim, no hardware/native transfer, and no silent mixing of
+prior U(0,0.5) NARMA scores with repaired U(0,0.2) NARMA scores.
+```
+
+Next required step:
+
+```text
+Tier 7.7f - repaired finite-stream long-run scoreboard.
+Rerun the locked 7.7c length/seed/model/sham matrix using the preflighted
+narma10_reduced_input_u02 stream before any complete long-run scoreboard
+classification is cited.
 ```
 
 Latest standardized benchmark contract:

@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-09T12:06:10+00:00.
+Last updated: 2026-05-09T14:25:22+00:00.
 
 Current repo root:
 
@@ -1311,9 +1311,19 @@ Tier 7.7d — COMPLETE. Standardized long-run/failure-localization
   32000 under the existing generator, so no complete long-run scoreboard is
   citable.
 
-Tier 7.7e — CURRENT ACTIVE STEP. Finite-stream repair/preflight contract.
-  Repair or replace the non-finite long-run NARMA10 generation path under a
-  predeclared standardization rule before rerunning any long-run scoreboard.
+Tier 7.7e — COMPLETE. Finite-stream repair/preflight contract.
+  Status: PASS, 16/16 criteria. Output:
+  `controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight/`.
+  Outcome `finite_stream_repair_preflight_passed`: original
+  `narma10_standard_u05` reproduced 2/9 non-finite required cells; selected
+  `narma10_reduced_input_u02` passed 9/9 required cells at 8000/16000/32000
+  across seeds 42/43/44. This is benchmark repair/preflight evidence only.
+
+Tier 7.7f — CURRENT ACTIVE STEP. Repaired finite-stream long-run scoreboard.
+  Rerun the locked 7.7c long-run matrix using the repaired
+  `narma10_reduced_input_u02` stream. All models and shams must be rerun on the
+  same repaired stream; prior `U(0,0.5)` NARMA scores cannot be silently mixed
+  with repaired `U(0,0.2)` NARMA scores.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware

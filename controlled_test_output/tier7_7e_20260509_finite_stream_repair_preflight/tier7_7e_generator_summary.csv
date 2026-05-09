@@ -1,0 +1,4 @@
+generator_id,selected,required_cells,required_passed_cells,required_nonfinite_cells,all_required_finite,role,rationale
+narma10_standard_u05,False,9,7,2,False,current locked 7.7b/7.7d generator,Preserve as the original standard-equation audit row; 7.7d showed it can diverge at long length.
+narma10_reduced_input_u02,True,9,9,0,True,selected finite-stream repair for the next long-run rerun,"Keep the same NARMA10 recurrence coefficients and seed policy, but reduce the input range using a documented divergence-control variant. Future scoring must label this as repaired NARMA10 and may not merge it silently with prior u05 scores."
+narma10_tanh_bounded_u05,False,9,9,0,True,alternative not selected,"Finite by construction but changes the target nonlinearity more strongly than reduced input range, so it remains a fallback only."
