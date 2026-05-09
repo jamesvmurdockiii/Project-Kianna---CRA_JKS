@@ -1,0 +1,10 @@
+{
+  "classification_outcome": "generic_projection_explains_gain",
+  "generated_at_utc": "2026-05-09T16:56:24+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7n_20260509_partitioned_driver_attribution_scoring_gate",
+  "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier7_7n_20260509_partitioned_driver_attribution_scoring_gate/tier7_7n_report.md",
+  "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier7_7n_20260509_partitioned_driver_attribution_scoring_gate/tier7_7n_results.json",
+  "status": "pass",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7n_20260509_partitioned_driver_attribution_scoring_gate/tier7_7n_summary.csv",
+  "tier": "Tier 7.7n - Partitioned-Driver Attribution Scoring Gate"
+}

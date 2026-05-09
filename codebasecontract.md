@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-09T16:31:54+00:00.
+Last updated: 2026-05-09T16:56:24+00:00.
 
 Current repo root:
 
@@ -1394,15 +1394,24 @@ Tier 7.7m — COMPLETE. Partitioned-driver attribution contract.
   mechanism promotion, baseline freeze, broad usefulness claim,
   external-baseline superiority, or hardware/native transfer is authorized.
 
-Tier 7.7n — CURRENT ACTIVE STEP. Partitioned-driver attribution scoring gate.
-  Implement and score the locked 7.7m variants exactly as pre-registered:
-  `partitioned_driver_full`, partition-shuffled, merged/unpartitioned,
-  nonlinear-lag unpartitioned same-budget, linear-lag partitioned,
-  diversity-disabled repeat, same-feature random projection,
-  readout-budget-matched single pool, generic/permuted controls, target shuffle,
-  and time shuffle. Report attribution margins, driver-group ablation deltas,
-  feature/readout-budget audit, state geometry, shams, regression guards, and
-  compact regression before any promotion or architecture change.
+Tier 7.7n — COMPLETE. Partitioned-driver attribution scoring gate.
+  Status: PASS, 15/15 criteria. Output:
+  `controlled_test_output/tier7_7n_20260509_partitioned_driver_attribution_scoring_gate/`.
+  Outcome `generic_projection_explains_gain`: the full partitioned driver
+  reproduced the useful Lorenz gain versus single-pool (`0.0034485307` vs
+  `0.0065086836`), but same-feature random projection (`0.0016704454`) and
+  nonlinear/lag unpartitioned control (`0.0019527710`) exceeded it. The 7.7l
+  gain is therefore not attributable to a CRA-specific partitioned-driver
+  mechanism. Diagnostic only; no mechanism promotion, freeze, broad usefulness
+  claim, external-baseline superiority, or hardware/native transfer is
+  authorized.
+
+Tier 7.7o — CURRENT ACTIVE STEP. Generic temporal-interface reframing contract.
+  Decide whether the 7.7n random-projection/nonlinear-lag gains should be
+  treated as external baselines to beat, an optional benchmark adapter, or a new
+  CRA-internal mechanism candidate. Pre-register fairness rules, no-leakage
+  controls, baseline comparisons, and promotion boundaries before implementing
+  or tuning anything.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware

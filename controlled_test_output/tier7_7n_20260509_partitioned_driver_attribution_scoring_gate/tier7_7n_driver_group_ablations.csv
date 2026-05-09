@@ -1,0 +1,5 @@
+ablation,margin_divided_by_full
+remove_fast_trace_drivers,1.1922368140266182
+remove_lag_drivers,1.0
+remove_nonlinear_drivers,1.1698991260266132
+remove_slow_trace_drivers,1.0166629237434104

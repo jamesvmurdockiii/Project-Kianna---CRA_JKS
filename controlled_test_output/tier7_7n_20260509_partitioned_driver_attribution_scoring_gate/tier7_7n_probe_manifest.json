@@ -1,0 +1,29 @@
+{
+  "candidate": "partitioned_driver_full",
+  "capacities": [
+    16,
+    32,
+    64,
+    128
+  ],
+  "lengths": [
+    8000,
+    16000,
+    32000
+  ],
+  "permuted_offsets": [
+    71,
+    101,
+    131
+  ],
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "tasks": [
+    "mackey_glass",
+    "lorenz",
+    "narma10"
+  ]
+}

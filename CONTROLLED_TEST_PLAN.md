@@ -11546,13 +11546,26 @@ Next required step:
 
 ```text
 Tier 7.7n - Partitioned-driver attribution scoring gate.
-Score the locked 7.7m variants and driver-group ablations: full partitioned
-driver, partition-shuffled, merged/unpartitioned, nonlinear-lag unpartitioned,
-linear-lag partitioned, diversity-disabled repeat, same-feature random
-projection, readout-budget-matched single-pool, generic/permuted controls,
-target shuffle, and time shuffle. Report attribution margins, driver-group
-ablation deltas, budget audit, state geometry, shams, regression guards, and
-compact regression before any promotion.
+Status: COMPLETE / PASS, 15/15 criteria.
+Output: controlled_test_output/tier7_7n_20260509_partitioned_driver_attribution_scoring_gate/
+Outcome: generic_projection_explains_gain.
+Result: the full partitioned driver stayed useful versus single-pool, but
+same-feature random projection and nonlinear/lag unpartitioned controls
+exceeded it. The 7.7l gain is not attributable to a CRA-specific
+partitioned-driver mechanism.
+Boundary: diagnostic scoring only; no mechanism promotion, baseline freeze,
+public usefulness claim, external-baseline superiority, or hardware/native
+transfer.
+```
+
+Next required step:
+
+```text
+Tier 7.7o - Generic temporal-interface reframing contract.
+Pre-register whether the 7.7n random-projection/nonlinear-lag gains are
+external baselines, optional benchmark adapters, or a new CRA-internal mechanism
+candidate. Lock fairness rules, no-leakage controls, baseline comparisons, and
+promotion boundaries before any implementation or tuning.
 ```
 
 Latest standardized benchmark contract:

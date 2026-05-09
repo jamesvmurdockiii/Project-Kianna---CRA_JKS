@@ -1,0 +1,5 @@
+{
+  "compact_regression_inside_gate": false,
+  "reason": "Tier 7.7n is an attribution scoring gate. If attribution passes, route to separate promotion plus compact-regression gate before freeze.",
+  "required_before_promotion": true
+}

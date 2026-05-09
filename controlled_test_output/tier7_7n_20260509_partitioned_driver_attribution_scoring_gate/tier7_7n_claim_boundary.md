@@ -1,0 +1,1 @@
+Tier 7.7n scores the locked 7.7m partitioned-driver attribution contract. It may support or block attribution diagnostically, but it does not freeze a baseline, promote a mechanism, authorize hardware/native transfer, or claim broad public usefulness.

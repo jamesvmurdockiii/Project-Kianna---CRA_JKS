@@ -1,0 +1,15 @@
+metric,value
+full_lorenz_128_geomean_mse,0.003448530743487121
+single_pool_divided_by_full,1.8873787359635685
+partition_control_min_divided_by_full,1.0827644152836355
+nonlinear_lag_divided_by_full,0.5662617402463584
+linear_lag_divided_by_full,1.4750456367555094
+diversity_disabled_divided_by_full,1.0165316573469856
+random_projection_divided_by_full,0.48439336335716815
+permuted_divided_by_full,1.8539208493552346
+target_shuffle_divided_by_full,292.34720210742137
+time_shuffle_divided_by_full,285.3999658693415
+full_useful,True
+partition_sep,True
+generic_sep,False
+coherent_ablation_loss,True

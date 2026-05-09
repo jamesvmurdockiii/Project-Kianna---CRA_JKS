@@ -4409,11 +4409,26 @@ Current next step:
 
 ```text
 Tier 7.7n — Partitioned-driver attribution scoring gate
+Status: COMPLETE / PASS, 15/15 criteria
+Outcome: generic_projection_explains_gain
+Output: controlled_test_output/tier7_7n_20260509_partitioned_driver_attribution_scoring_gate/
 Question: does the full partitioned-driver candidate separate from the locked
 partition, feature, readout/interface, generic-basis, target-shuffle, and
 time-shuffle controls while preserving Mackey/NARMA regression guards?
-Boundary: no promotion, freeze, hardware/native transfer, or broad usefulness
-claim unless the predeclared attribution and compact-regression gates pass.
+Result: no. The full partitioned driver reproduced the useful task gain, but
+same-feature random projection and nonlinear/lag unpartitioned controls
+explained or exceeded it.
+Boundary: no partitioned-driver promotion, freeze, hardware/native transfer, or
+broad usefulness claim.
+```
+
+Current next step:
+
+```text
+Tier 7.7o — Generic temporal-interface reframing contract
+Question: should the random-projection/nonlinear-lag result be treated as an
+external baseline, an optional benchmark adapter, or a new CRA-internal
+mechanism candidate? Lock this before tuning or implementation.
 ```
 
 Tier 7.1a predeclared these candidate/future adapter families:
