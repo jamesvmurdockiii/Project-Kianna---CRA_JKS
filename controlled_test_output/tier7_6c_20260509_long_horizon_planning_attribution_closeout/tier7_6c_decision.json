@@ -1,0 +1,13 @@
+{
+  "broad_planning_claim_authorized": false,
+  "feature_alignment_risk": "high",
+  "freeze_authorized": false,
+  "hardware_transfer_authorized": false,
+  "local_scaffold_signal_authorized": true,
+  "next_gate": "Tier 7.6d - Reduced-Feature Planning Generalization / Task Repair",
+  "outcome": "planning_scaffold_signal_preserved_no_promotion",
+  "promotion_authorized": false,
+  "status": "PASS",
+  "strict_all_family_support": false,
+  "tier": "Tier 7.6c - Long-Horizon Planning / Subgoal-Control Attribution + Promotion Decision"
+}

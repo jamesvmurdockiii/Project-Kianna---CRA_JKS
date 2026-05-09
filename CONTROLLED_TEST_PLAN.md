@@ -11314,13 +11314,26 @@ broad planning, not public usefulness, not a freeze, and not hardware/native
 transfer.
 ```
 
-Next required step:
+Latest planning attribution closeout:
 
 ```text
 Tier 7.6c - Long-horizon planning / subgoal-control attribution + promotion decision.
-Reconcile the 7.6b scaffold signal with route/key/feature attribution,
-reduced-feature ablations, held-out composition variants, leakage guards, and
-compact-regression requirements before any promotion or freeze.
+Status: COMPLETE / PASS, 17/17 criteria.
+Output: controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout/
+Outcome: planning_scaffold_signal_preserved_no_promotion.
+Result: 7.6b scaffold signal preserved as diagnostic evidence, but promotion,
+freeze, and hardware transfer remain blocked by high feature-alignment risk,
+strict support of only 3/5 families, and missing reduced-feature generalization.
+Boundary: attribution/decision only; not new scoring, not a promoted planning
+mechanism, not public usefulness, not a freeze, and not hardware/native transfer.
+```
+
+Next required step:
+
+```text
+Tier 7.6d - Reduced-feature planning generalization / task repair.
+Rerun planning pressure with reduced feature access, held-out composition
+variants, and stricter route/key attribution before promotion/regression reopens.
 ```
 
 ## Tier 5.20a - Resonant Branch Polyp Internal-Model Diagnostic

@@ -1,0 +1,325 @@
+{
+  "attribution_checks": [
+    {
+      "check": "local_signal_preserved",
+      "details": "key_door_goal_sequence,resource_budget_route_plan,two_stage_delayed_goal_chain",
+      "passed": true,
+      "rule": ">= 3 supported families",
+      "value": 3
+    },
+    {
+      "check": "strict_all_family_support",
+      "details": "unsupported=blocked_subgoal_recovery,hierarchical_composition_holdout",
+      "passed": false,
+      "rule": "== 5 for promotion-ready planning",
+      "value": 3
+    },
+    {
+      "check": "aggregate_best_baseline_ci",
+      "details": "baseline=dyna_q_model_based_baseline",
+      "passed": true,
+      "rule": "> 0",
+      "value": "0.6648148148148149"
+    },
+    {
+      "check": "aggregate_best_sham_ci",
+      "details": "baseline=self_evaluation_disabled",
+      "passed": true,
+      "rule": "> 0",
+      "value": "1.5518518518518518"
+    },
+    {
+      "check": "critical_controls_observed",
+      "details": "",
+      "passed": true,
+      "rule": "all critical controls present",
+      "value": 7
+    },
+    {
+      "check": "critical_controls_directionally_separated",
+      "details": "",
+      "passed": true,
+      "rule": "all critical controls below candidate aggregate return",
+      "value": 7
+    },
+    {
+      "check": "feature_alignment_risk",
+      "details": "candidate scaffold consumes synthetic context/route/memory/predictive/confidence fields that define the generated planning grammar",
+      "passed": true,
+      "rule": "must be documented",
+      "value": "high"
+    },
+    {
+      "check": "promotion_readiness",
+      "details": "blocked because strict support is 3/5 and reduced-feature generalization has not run",
+      "passed": false,
+      "rule": "requires all-family support and reduced-feature/held-out generalization",
+      "value": "not_ready"
+    }
+  ],
+  "claim_boundary_text": "# Tier 7.6c Claim Boundary\n\n- Outcome: `planning_scaffold_signal_preserved_no_promotion`\n- Local scaffold signal authorized: `True`\n- Promotion authorized: `False`\n- Freeze authorized: `False`\n- Hardware transfer authorized: `False`\n- Feature-alignment risk: `high`\n\n## Authorized Claim\n\nTier 7.6b's bounded local subgoal-control scaffold signal is preserved as a diagnostic result.\n\n## Nonclaims\n\n- Not a promoted planning mechanism.\n- Not a v2.5 baseline freeze.\n- Not public usefulness evidence.\n- Not hardware/native transfer evidence.\n- Not general planning, language reasoning, open-ended agency, AGI, or ASI.\n\n## Required Next Work\n\nRun Tier 7.6d reduced-feature planning generalization / task repair before any promotion decision can reopen.\n",
+  "criteria": [
+    {
+      "criterion": "tier7_6b_results_exist",
+      "details": "",
+      "name": "tier7_6b_results_exist",
+      "note": "",
+      "operator": "exists",
+      "pass": true,
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_6b_20260509_long_horizon_planning_local_diagnostic/tier7_6b_results.json"
+    },
+    {
+      "criterion": "tier7_6b_passed",
+      "details": "",
+      "name": "tier7_6b_passed",
+      "note": "",
+      "operator": "== PASS",
+      "pass": true,
+      "passed": true,
+      "rule": "== PASS",
+      "value": "PASS"
+    },
+    {
+      "criterion": "tier7_6b_local_signal_authorized",
+      "details": "",
+      "name": "tier7_6b_local_signal_authorized",
+      "note": "",
+      "operator": "must be true",
+      "pass": true,
+      "passed": true,
+      "rule": "must be true",
+      "value": true
+    },
+    {
+      "criterion": "family_decisions_present",
+      "details": "",
+      "name": "family_decisions_present",
+      "note": "",
+      "operator": "== 5",
+      "pass": true,
+      "passed": true,
+      "rule": "== 5",
+      "value": 5
+    },
+    {
+      "criterion": "sham_rows_present",
+      "details": "",
+      "name": "sham_rows_present",
+      "note": "",
+      "operator": ">= 45",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 45",
+      "value": 50
+    },
+    {
+      "criterion": "statistical_support_present",
+      "details": "",
+      "name": "statistical_support_present",
+      "note": "",
+      "operator": ">= 10",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 10",
+      "value": 12
+    },
+    {
+      "criterion": "local_signal_preserved",
+      "details": "",
+      "name": "local_signal_preserved",
+      "note": "",
+      "operator": "must be true",
+      "pass": true,
+      "passed": true,
+      "rule": "must be true",
+      "value": true
+    },
+    {
+      "criterion": "aggregate_best_baseline_ci_positive",
+      "details": "",
+      "name": "aggregate_best_baseline_ci_positive",
+      "note": "",
+      "operator": "> 0",
+      "pass": true,
+      "passed": true,
+      "rule": "> 0",
+      "value": "0.6648148148148149"
+    },
+    {
+      "criterion": "aggregate_best_sham_ci_positive",
+      "details": "",
+      "name": "aggregate_best_sham_ci_positive",
+      "note": "",
+      "operator": "> 0",
+      "pass": true,
+      "passed": true,
+      "rule": "> 0",
+      "value": "1.5518518518518518"
+    },
+    {
+      "criterion": "critical_controls_observed",
+      "details": "",
+      "name": "critical_controls_observed",
+      "note": "",
+      "operator": "all present",
+      "pass": true,
+      "passed": true,
+      "rule": "all present",
+      "value": 7
+    },
+    {
+      "criterion": "feature_alignment_risk_documented",
+      "details": "",
+      "name": "feature_alignment_risk_documented",
+      "note": "",
+      "operator": "== high and documented",
+      "pass": true,
+      "passed": true,
+      "rule": "== high and documented",
+      "value": "high"
+    },
+    {
+      "criterion": "promotion_blockers_documented",
+      "details": "strict_all_family_support,promotion_readiness",
+      "name": "promotion_blockers_documented",
+      "note": "strict_all_family_support,promotion_readiness",
+      "operator": ">= 1",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 1",
+      "value": 2
+    },
+    {
+      "criterion": "promotion_not_authorized",
+      "details": "",
+      "name": "promotion_not_authorized",
+      "note": "",
+      "operator": "must be false",
+      "pass": true,
+      "passed": true,
+      "rule": "must be false",
+      "value": false
+    },
+    {
+      "criterion": "freeze_not_authorized",
+      "details": "",
+      "name": "freeze_not_authorized",
+      "note": "",
+      "operator": "must be false",
+      "pass": true,
+      "passed": true,
+      "rule": "must be false",
+      "value": false
+    },
+    {
+      "criterion": "hardware_transfer_not_authorized",
+      "details": "",
+      "name": "hardware_transfer_not_authorized",
+      "note": "",
+      "operator": "must be false",
+      "pass": true,
+      "passed": true,
+      "rule": "must be false",
+      "value": false
+    },
+    {
+      "criterion": "broad_planning_not_authorized",
+      "details": "",
+      "name": "broad_planning_not_authorized",
+      "note": "",
+      "operator": "must be false",
+      "pass": true,
+      "passed": true,
+      "rule": "must be false",
+      "value": false
+    },
+    {
+      "criterion": "next_gate_selected",
+      "details": "",
+      "name": "next_gate_selected",
+      "note": "",
+      "operator": "== Tier 7.6d - Reduced-Feature Planning Generalization / Task Repair",
+      "pass": true,
+      "passed": true,
+      "rule": "== Tier 7.6d - Reduced-Feature Planning Generalization / Task Repair",
+      "value": "Tier 7.6d - Reduced-Feature Planning Generalization / Task Repair"
+    }
+  ],
+  "criteria_passed": 17,
+  "criteria_total": 17,
+  "decision": {
+    "broad_planning_claim_authorized": false,
+    "feature_alignment_risk": "high",
+    "freeze_authorized": false,
+    "hardware_transfer_authorized": false,
+    "local_scaffold_signal_authorized": true,
+    "next_gate": "Tier 7.6d - Reduced-Feature Planning Generalization / Task Repair",
+    "outcome": "planning_scaffold_signal_preserved_no_promotion",
+    "promotion_authorized": false,
+    "status": "PASS",
+    "strict_all_family_support": false,
+    "tier": "Tier 7.6c - Long-Horizon Planning / Subgoal-Control Attribution + Promotion Decision"
+  },
+  "failed_criteria": [],
+  "generated_at_utc": "2026-05-09T04:23:50+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout",
+  "prereq_results": "/Users/james/JKS:CRA/controlled_test_output/tier7_6b_20260509_long_horizon_planning_local_diagnostic/tier7_6b_results.json",
+  "promotion_decisions": [
+    {
+      "authorized": true,
+      "decision": "local_scaffold_signal",
+      "reason": "7.6b aggregate support and sham separation are preserved"
+    },
+    {
+      "authorized": false,
+      "decision": "promote_planning_mechanism",
+      "reason": "blocked unless all-family support and reduced-feature generalization pass"
+    },
+    {
+      "authorized": false,
+      "decision": "freeze_v2_5",
+      "reason": "7.6c is attribution closeout, not compact regression"
+    },
+    {
+      "authorized": false,
+      "decision": "hardware_transfer",
+      "reason": "planning mechanism is not promoted or native-mapped"
+    },
+    {
+      "authorized": false,
+      "decision": "broad_planning_claim",
+      "reason": "bounded synthetic scaffold only"
+    }
+  ],
+  "risk_register": [
+    {
+      "mitigation": "Tier 7.6d reduced-feature and held-out-composition generalization before promotion",
+      "risk": "synthetic_feature_alignment",
+      "severity": "high",
+      "status": "open"
+    },
+    {
+      "mitigation": "unsupported=blocked_subgoal_recovery,hierarchical_composition_holdout",
+      "risk": "partial_family_support",
+      "severity": "medium",
+      "status": "open"
+    },
+    {
+      "mitigation": "Do not freeze v2.5 until the mechanism is internalized and compact regression passes",
+      "risk": "scaffold_not_internalized",
+      "severity": "high",
+      "status": "open"
+    },
+    {
+      "mitigation": "No native/hardware transfer until software attribution and promotion pass",
+      "risk": "hardware_transfer_premature",
+      "severity": "high",
+      "status": "blocked"
+    }
+  ],
+  "runner_revision": "tier7_6c_long_horizon_planning_attribution_closeout_20260509_0001",
+  "status": "PASS",
+  "tier": "Tier 7.6c - Long-Horizon Planning / Subgoal-Control Attribution + Promotion Decision"
+}

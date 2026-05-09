@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-09T04:17:18+00:00.
+Last updated: 2026-05-09T04:24:21+00:00.
 
 Current repo root:
 
@@ -470,11 +470,22 @@ Tier 7.6b = COMPLETE, PASS, 19/19 criteria
           baseline aggregate with positive paired support, beats v2.4 reactive
           references on at least three families, and separates destructive
           shams. Strict per-family support is 3/5, so attribution is mandatory.
-  Next gate: Tier 7.6c - Long-Horizon Planning / Subgoal-Control Attribution +
-             Promotion Decision.
   Boundary: local software diagnostic scaffold only; not a promoted CRA
             planning mechanism, not broad planning, not public usefulness, not a
             freeze, and not hardware/native transfer.
+
+Tier 7.6c = COMPLETE, PASS, 17/17 criteria
+  Source: controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout/
+  Runner: experiments/tier7_6c_long_horizon_planning_attribution_closeout.py
+  Outcome: planning_scaffold_signal_preserved_no_promotion
+  Result: 7.6b local scaffold signal is preserved as diagnostic evidence, but
+          promotion/freeze/hardware transfer are blocked because feature-
+          alignment risk is high, strict all-family support is not met, and
+          reduced-feature generalization has not run.
+  Next gate: Tier 7.6d - Reduced-Feature Planning Generalization / Task Repair.
+  Boundary: attribution/decision evidence only; not new scoring, not a promoted
+            planning mechanism, not public usefulness, not a freeze, and not
+            hardware/native transfer.
 ```
 
 Latest optional mechanism diagnostic:
@@ -1190,12 +1201,19 @@ Tier 7.6b — COMPLETE. Long-horizon planning / subgoal-control local diagnostic
   Result: local scaffold signal supported with aggregate best-baseline support,
     3/5 strict family signals, sham separation, and no freeze/hardware transfer.
 
-Tier 7.6c — CURRENT ACTIVE STEP. Long-horizon planning / subgoal-control
-attribution + promotion decision.
-  Required first move: reconcile 7.6b before promotion. Test whether the signal
-    survives route/key shams, reduced feature access, held-out composition
-    variants, and leakage audits. Do not freeze or transfer unless attribution
-    and compact regression earn it.
+Tier 7.6c — COMPLETE. Long-horizon planning / subgoal-control attribution +
+promotion decision.
+  Status: PASS, 17/17 criteria.
+  Output: controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout/
+  Result: local scaffold signal preserved, but promotion/freeze/hardware
+    transfer blocked by high feature-alignment risk and missing reduced-feature
+    generalization.
+
+Tier 7.6d — CURRENT ACTIVE STEP. Reduced-feature planning generalization / task
+repair.
+  Required first move: rerun the planning pressure with reduced feature access,
+    held-out composition variants, and stricter route/key attribution. Only if
+    this survives should promotion/regression reopen.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware

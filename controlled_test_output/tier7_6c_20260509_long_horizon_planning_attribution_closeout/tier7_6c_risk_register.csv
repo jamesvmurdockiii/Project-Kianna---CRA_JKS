@@ -1,0 +1,5 @@
+risk,severity,status,mitigation
+synthetic_feature_alignment,high,open,Tier 7.6d reduced-feature and held-out-composition generalization before promotion
+partial_family_support,medium,open,"unsupported=blocked_subgoal_recovery,hierarchical_composition_holdout"
+scaffold_not_internalized,high,open,Do not freeze v2.5 until the mechanism is internalized and compact regression passes
+hardware_transfer_premature,high,blocked,No native/hardware transfer until software attribution and promotion pass

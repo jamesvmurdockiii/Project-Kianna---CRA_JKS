@@ -1,0 +1,18 @@
+criterion,value,rule,pass,details
+tier7_6b_results_exist,/Users/james/JKS:CRA/controlled_test_output/tier7_6b_20260509_long_horizon_planning_local_diagnostic/tier7_6b_results.json,exists,True,
+tier7_6b_passed,PASS,== PASS,True,
+tier7_6b_local_signal_authorized,True,must be true,True,
+family_decisions_present,5,== 5,True,
+sham_rows_present,50,>= 45,True,
+statistical_support_present,12,>= 10,True,
+local_signal_preserved,True,must be true,True,
+aggregate_best_baseline_ci_positive,0.6648148148148149,> 0,True,
+aggregate_best_sham_ci_positive,1.5518518518518518,> 0,True,
+critical_controls_observed,7,all present,True,
+feature_alignment_risk_documented,high,== high and documented,True,
+promotion_blockers_documented,2,>= 1,True,"strict_all_family_support,promotion_readiness"
+promotion_not_authorized,False,must be false,True,
+freeze_not_authorized,False,must be false,True,
+hardware_transfer_not_authorized,False,must be false,True,
+broad_planning_not_authorized,False,must be false,True,
+next_gate_selected,Tier 7.6d - Reduced-Feature Planning Generalization / Task Repair,== Tier 7.6d - Reduced-Feature Planning Generalization / Task Repair,True,

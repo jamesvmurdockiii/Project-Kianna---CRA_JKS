@@ -1,0 +1,9 @@
+check,value,rule,passed,details
+local_signal_preserved,3,>= 3 supported families,True,"key_door_goal_sequence,resource_budget_route_plan,two_stage_delayed_goal_chain"
+strict_all_family_support,3,== 5 for promotion-ready planning,False,"unsupported=blocked_subgoal_recovery,hierarchical_composition_holdout"
+aggregate_best_baseline_ci,0.6648148148148149,> 0,True,baseline=dyna_q_model_based_baseline
+aggregate_best_sham_ci,1.5518518518518518,> 0,True,baseline=self_evaluation_disabled
+critical_controls_observed,7,all critical controls present,True,
+critical_controls_directionally_separated,7,all critical controls below candidate aggregate return,True,
+feature_alignment_risk,high,must be documented,True,candidate scaffold consumes synthetic context/route/memory/predictive/confidence fields that define the generated planning grammar
+promotion_readiness,not_ready,requires all-family support and reduced-feature/held-out generalization,False,blocked because strict support is 3/5 and reduced-feature generalization has not run

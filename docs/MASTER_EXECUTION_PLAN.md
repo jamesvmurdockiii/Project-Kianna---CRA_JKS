@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-09T04:17:18+00:00.
+Last updated: 2026-05-09T04:24:21+00:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -1379,72 +1379,80 @@ ability.
     references on at least three families, and separates destructive shams. The
     strict per-family signal is 3/5, so attribution/promotion is mandatory.
 
-109. **CURRENT ACTIVE STEP** - Tier 7.6c long-horizon planning /
-    subgoal-control attribution + promotion decision:
-    reconcile the 7.6b scaffold signal before promotion. Test route/key/feature
-    attribution, reduced-feature access, held-out composition variants, leakage
-    guards, and compact-regression requirements. No freeze or hardware/native
-    transfer is authorized unless this later gate earns it.
+109. **COMPLETE** - Tier 7.6c long-horizon planning / subgoal-control
+    attribution + promotion decision:
+    passed 17/17 at
+    `controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout/`.
+    Outcome `planning_scaffold_signal_preserved_no_promotion`: the 7.6b local
+    scaffold signal is preserved as diagnostic evidence, but promotion/freeze/
+    hardware transfer are blocked by high feature-alignment risk, strict support
+    of only 3/5 families, and missing reduced-feature generalization.
 
-110. Mechanism iteration loop: add exactly one planned general mechanism at a
+110. **CURRENT ACTIVE STEP** - Tier 7.6d reduced-feature planning
+    generalization / task repair:
+    rerun planning pressure with reduced feature access, held-out composition
+    variants, and stricter route/key attribution before reopening any promotion
+    or compact-regression decision.
+
+111. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
     stop the broad usefulness track and narrow the paper.
 
-111. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+112. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines. Start only after the standardized scoreboard or failure diagnosis
     identifies a winning regime, a real failure mode, or a mechanism needing
     external validation.
 
-112. Tier 7.2 held-out task challenge: define held-out families before running;
+113. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout. Include at least one synthetic holdout and one
     real-ish adapter holdout if Tier 7.1 is active.
 
-113. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+114. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines. Candidate domains include
     streaming anomaly detection, predictive-maintenance sensor streams, human
     activity streams, event prediction, ECG/biosignal streams, and finance as
     one domain only rather than the whole proof.
 
-114. Tier 7.4 policy/action selection held-out scoring: the current held-out
+115. Tier 7.4 policy/action selection held-out scoring: the current held-out
     chain is complete through 7.4h. No further NAB/C-MAPSS policy tuning is
     authorized from this chain; only the narrow C-MAPSS action-cost signal is
     preserved, with no broad action/policy claim, freeze, or hardware/native
     transfer.
 
-115. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
+116. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
     planning/subgoal control: run only after the shorter hard/real-ish tasks are
     stable. Do not claim language, AGI, or broad planning from toy gates.
 
-116. Run expanded external baselines and fairness audit at the phase lock:
+117. Run expanded external baselines and fairness audit at the phase lock:
     random/sign persistence, online perceptron/logistic, lag/ridge where
     relevant, reservoir/ESN, small GRU, STDP-only SNN, simple evolutionary
     population, simple control baselines, and SNN reviewer-defense baselines
     where practical.
 
-117. Freeze the next software baseline only if new software capability work
+118. Freeze the next software baseline only if new software capability work
     passes ablations, fair baselines, leakage controls, and compact regression.
     If no new software mechanism is promoted, keep v2.4.
 
 ### Phase I - Final Paper Lock
 
-118. Select final paper claim level: strong usefulness paper, bounded architecture
+119. Select final paper claim level: strong usefulness paper, bounded architecture
     study, or narrowed diagnostic report. Let the evidence decide.
 
-119. Run final software matrix and final hardware subset matrix. Include effect
+120. Run final software matrix and final hardware subset matrix. Include effect
     sizes, confidence intervals, worst seed, sample efficiency, runtime, command
     count, resource budgets, and claim-boundary table.
 
-120. Build the independent reproduction capsule: fresh checkout instructions,
+121. Build the independent reproduction capsule: fresh checkout instructions,
     environment lock, validation command, registry/table regeneration, EBRAINS
     ingest instructions, artifact hash manifest, and one local tier rerun.
 
-121. Draft paper/whitepaper only after the Phase H usefulness/baseline gates pass. Write
+122. Draft paper/whitepaper only after the Phase H usefulness/baseline gates pass. Write
     limitations first, then claims. Preserve failed and parked diagnostics.
 
-122. External dry run: have a clean agent or human follow only the docs. If they
+123. External dry run: have a clean agent or human follow only the docs. If they
     need hidden chat context, the repo is not ready.
 
 ## 7. Current Tier 4.27 Definition
@@ -1603,30 +1611,29 @@ After each completed run or design tier:
 Most recent completed gate:
 
 ```text
-Tier 7.6b = COMPLETE / PASS, 19/19 criteria.
-Output: controlled_test_output/tier7_6b_20260509_long_horizon_planning_local_diagnostic/
-Outcome: subgoal_control_local_diagnostic_candidate_supported_requires_attribution.
-Candidate claim return mean: 11.258148148148148.
-Best non-oracle baseline: dyna_q_model_based_baseline, return mean 8.232592592592592.
-Strict supported families: 3/5.
-Boundary: local diagnostic scaffold only; no promoted planning mechanism, no
-public usefulness claim, no freeze, and no hardware/native transfer.
+Tier 7.6c = COMPLETE / PASS, 17/17 criteria.
+Output: controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout/
+Outcome: planning_scaffold_signal_preserved_no_promotion.
+Result: 7.6b scaffold signal preserved as diagnostic evidence, but promotion,
+freeze, and hardware transfer remain blocked by high feature-alignment risk,
+strict support of only 3/5 families, and missing reduced-feature generalization.
+Boundary: attribution/decision only; no new scoring, no promoted planning
+mechanism, no public usefulness claim, no freeze, and no hardware/native transfer.
 ```
 
 The next concrete action is now:
 
 ```text
-Tier 7.6c - Long-Horizon Planning / Subgoal-Control Attribution + Promotion Decision
+Tier 7.6d - Reduced-Feature Planning Generalization / Task Repair
 
-Question: Does the 7.6b local subgoal-control signal survive attribution checks
-well enough to justify promotion/regression, or is it explained by synthetic
-feature alignment and scaffold shortcuts?
+Question: Does the planning/subgoal-control signal survive when direct synthetic
+feature alignment is reduced and held-out composition variants are harder?
 
-First move: reconcile route/key/feature attribution, reduced-feature ablations,
-held-out composition variants, leakage guards, and compact-regression criteria.
+First move: define and run reduced-feature, held-out-composition, stricter
+route/key-attribution planning diagnostics against the same baselines and shams.
 
-Boundary: attribution/promotion decision only unless it passes the compact
-regression gate; no hardware/native transfer from 7.6c alone.
+Boundary: repair/generalization diagnostic only; no freeze or hardware/native
+transfer unless a later promotion/regression gate earns it.
 ```
 
 Recent closeout:

@@ -575,3 +575,6 @@ tier7-6a:
 
 tier7-6b:
 	python3 experiments/tier7_6b_long_horizon_planning_local_diagnostic.py
+
+tier7-6c:
+	python3 experiments/tier7_6c_long_horizon_planning_attribution_closeout.py
