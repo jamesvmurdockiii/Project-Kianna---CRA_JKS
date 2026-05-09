@@ -41,8 +41,9 @@ compositional mechanism path while explicitly documenting high generator-feature
 alignment risk and again blocking public-usefulness, freeze, and hardware/native
 transfer claims. Tier 7.6a then locked the bounded long-horizon planning /
 subgoal-control contract without scoring, Tier 7.6b passed a bounded local
-scaffold diagnostic, and Tier 7.6c preserved that signal while blocking
-promotion/freeze/hardware transfer pending reduced-feature generalization.
+scaffold diagnostic, Tier 7.6c preserved that signal while blocking promotion,
+and Tier 7.6d passed reduced-feature generalization as a prerequisite for
+promotion/regression.
 
 The hardware program has progressed from PyNN/SpiNNaker capsule execution to a
 custom native runtime. The native runtime has passed bounded SpiNNaker hardware

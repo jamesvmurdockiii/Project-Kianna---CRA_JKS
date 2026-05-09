@@ -1,0 +1,93 @@
+{
+  "artifacts": [
+    {
+      "bytes": 678,
+      "name": "claim_boundary_md",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization/tier7_6d_claim_boundary.md",
+      "sha256": "a4252193c59c079427e2e89e67ac353216f0d7f9e7af394d4b6b7c631df03ba3"
+    },
+    {
+      "bytes": 1835,
+      "name": "decision_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization/tier7_6d_decision.csv",
+      "sha256": "b5ad0e1895dee74740541d49926cc68a40dc118aec8d1ed818b9d2d2a8a7fa6f"
+    },
+    {
+      "bytes": 2078,
+      "name": "decision_json",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization/tier7_6d_decision.json",
+      "sha256": "87f1c1771b6a94c24663815868fadd4ee1ed0a745163e105342e75577067ccf1"
+    },
+    {
+      "bytes": 2020825,
+      "name": "episode_score_rows_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization/tier7_6d_episode_score_rows.csv",
+      "sha256": "4df752adc2cba4e66fd84d77240b3ac59b1565c4ad75cdfd33dfb70a5de3732b"
+    },
+    {
+      "bytes": 1347,
+      "name": "family_decisions_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization/tier7_6d_family_decisions.csv",
+      "sha256": "83287f9f54d58929f8921a6669cdf15433bcc0186851514b29638d4765eb7caa"
+    },
+    {
+      "bytes": 75268,
+      "name": "family_model_summary_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization/tier7_6d_family_model_summary.csv",
+      "sha256": "af101ba2e0c1053d65b4d2b9b59e661190992b5b30b56e839359b1f888856dcb"
+    },
+    {
+      "bytes": 15936,
+      "name": "model_summary_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization/tier7_6d_model_summary.csv",
+      "sha256": "b2ab83bf1f1bebaedea3d16358276ba9d25ab8cfe8ac20ba96d34772705d1649"
+    },
+    {
+      "bytes": 868,
+      "name": "reduced_feature_contract_json",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization/tier7_6d_reduced_feature_contract.json",
+      "sha256": "8a9bf6c1e061db3b8938ea6ca7eeefec13ccdff8aa1b9d4467e0d7b103e84ca5"
+    },
+    {
+      "bytes": 4777,
+      "name": "report_md",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization/tier7_6d_report.md",
+      "sha256": "4ff8cd0127feb83f097bdb76db60123d2fadd387ed93e4a55e04eaa7be707841"
+    },
+    {
+      "bytes": 21629,
+      "name": "results_json",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization/tier7_6d_results.json",
+      "sha256": "74e37336f013c9156f30b10a27d31ee84ec659ef89bd8b162c0aeae3d6664a58"
+    },
+    {
+      "bytes": 20839,
+      "name": "sham_controls_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization/tier7_6d_sham_controls.csv",
+      "sha256": "e4cfadde4e2387bef7f2f3482390c7be7cbdfeee8ab52377adc3ce21b7c94a9a"
+    },
+    {
+      "bytes": 2686,
+      "name": "statistical_support_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization/tier7_6d_statistical_support.csv",
+      "sha256": "8c3f8ec652285fc5c92cb63bd0c13488cc3089ef6725102b7eab7e0d03d36ae1"
+    },
+    {
+      "bytes": 4013682,
+      "name": "subgoal_trace_rows_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization/tier7_6d_subgoal_trace_rows.csv",
+      "sha256": "6e26bf686355410f347c04a8216145eea55fdd50cfe46ca50148d6659611c6b5"
+    },
+    {
+      "bytes": 3436,
+      "name": "summary_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization/tier7_6d_summary.csv",
+      "sha256": "29f0d6f3298e5c28e205fe080e55bda33593e8c18f875cd227abab7b3abdda95"
+    }
+  ],
+  "generated_at_utc": "2026-05-09T04:40:13+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization",
+  "runner_revision": "tier7_6d_reduced_feature_planning_generalization_20260509_0001",
+  "status": "PASS",
+  "tier": "Tier 7.6d - Reduced-Feature Planning Generalization / Task Repair"
+}

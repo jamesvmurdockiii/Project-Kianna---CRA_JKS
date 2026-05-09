@@ -1,0 +1,51 @@
+{
+  "best_non_oracle_model": "dyna_q_model_based_baseline",
+  "best_non_oracle_return_mean": 6.97,
+  "best_sham_or_ablation": "self_evaluation_disabled",
+  "best_sham_return_mean": 7.473939393939394,
+  "broad_planning_claim_authorized": false,
+  "candidate_return_mean": 11.460606060606061,
+  "candidate_success_rate": 0.806060606060606,
+  "freeze_authorized": false,
+  "hardware_transfer_authorized": false,
+  "next_gate": "Tier 7.6e - Planning/Subgoal-Control Promotion + Compact Regression Gate",
+  "outcome": "reduced_feature_planning_signal_supported_requires_promotion_gate",
+  "promotion_gate_authorized": true,
+  "reduced_feature_signal_authorized": true,
+  "repaired_prior_weak_families_supported": true,
+  "status": "PASS",
+  "support_vs_best_non_oracle": {
+    "baseline": "dyna_q_model_based_baseline",
+    "candidate": "cra_reduced_feature_subgoal_controller",
+    "mean_completion_delta": 0.1196969696969697,
+    "mean_return_delta": 4.49060606060606,
+    "mean_success_delta": 0.41818181818181815,
+    "median_return_delta": 7.45,
+    "paired_episodes": 165,
+    "positive_return_fraction": 0.5454545454545454,
+    "return_delta_ci_high": 5.587575757575758,
+    "return_delta_ci_low": 3.354848484848485,
+    "return_effect_size": 0.5988598586869635
+  },
+  "support_vs_best_sham": {
+    "baseline": "self_evaluation_disabled",
+    "candidate": "cra_reduced_feature_subgoal_controller",
+    "mean_completion_delta": 0.11212121212121212,
+    "mean_return_delta": 3.986666666666667,
+    "mean_success_delta": 0.3515151515151515,
+    "median_return_delta": 0.0,
+    "paired_episodes": 165,
+    "positive_return_fraction": 0.4727272727272727,
+    "return_delta_ci_high": 5.073030303030303,
+    "return_delta_ci_low": 2.860909090909091,
+    "return_effect_size": 0.5380848323955474
+  },
+  "supported_families": [
+    "two_stage_delayed_goal_chain",
+    "resource_budget_route_plan",
+    "blocked_subgoal_recovery",
+    "hierarchical_composition_holdout"
+  ],
+  "supported_family_count": 4,
+  "tier": "Tier 7.6d - Reduced-Feature Planning Generalization / Task Repair"
+}

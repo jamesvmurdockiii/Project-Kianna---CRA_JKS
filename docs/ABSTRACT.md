@@ -32,8 +32,9 @@ signal and a follow-up attribution closeout that supported keyed/compositional
 mechanism attribution while documenting generator-feature alignment risk and
 blocking public-usefulness, freeze, and hardware-transfer claims.
 Tier 7.6a then locked the long-horizon planning/subgoal-control contract without
-scoring. Tier 7.6b passed a bounded local scaffold diagnostic, and Tier 7.6c preserved
-that signal while blocking promotion until reduced-feature generalization passes.
+scoring. Tier 7.6b passed a bounded local scaffold diagnostic, Tier 7.6c preserved
+that signal while blocking promotion, and Tier 7.6d passed reduced-feature
+generalization as a prerequisite for promotion/regression.
 The hardware evidence includes PyNN/SpiNNaker
 capsule execution and repeatability, chunked-runtime characterization, a
 custom-runtime progression through four-core MCPL task execution, keyed memory,

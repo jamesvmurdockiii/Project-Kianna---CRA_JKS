@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-09T04:24:21+00:00.
+Last updated: 2026-05-09T04:36:06+00:00.
 
 Current repo root:
 
@@ -482,9 +482,22 @@ Tier 7.6c = COMPLETE, PASS, 17/17 criteria
           promotion/freeze/hardware transfer are blocked because feature-
           alignment risk is high, strict all-family support is not met, and
           reduced-feature generalization has not run.
-  Next gate: Tier 7.6d - Reduced-Feature Planning Generalization / Task Repair.
   Boundary: attribution/decision evidence only; not new scoring, not a promoted
             planning mechanism, not public usefulness, not a freeze, and not
+            hardware/native transfer.
+
+Tier 7.6d = COMPLETE, PASS, 18/18 criteria
+  Source: controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization/
+  Runner: experiments/tier7_6d_reduced_feature_planning_generalization.py
+  Outcome: reduced_feature_planning_signal_supported_requires_promotion_gate
+  Result: reduced-feature planning signal survives with raw keys hidden and
+          aliased/coarse features only. Supported families: 4/5, including both
+          prior weak families blocked_subgoal_recovery and
+          hierarchical_composition_holdout.
+  Next gate: Tier 7.6e - Planning/Subgoal-Control Promotion + Compact
+             Regression Gate.
+  Boundary: reduced-feature local diagnostic only; not a promoted planning
+            mechanism, not public usefulness, not a freeze, and not
             hardware/native transfer.
 ```
 
@@ -1209,11 +1222,18 @@ promotion decision.
     transfer blocked by high feature-alignment risk and missing reduced-feature
     generalization.
 
-Tier 7.6d — CURRENT ACTIVE STEP. Reduced-feature planning generalization / task
-repair.
-  Required first move: rerun the planning pressure with reduced feature access,
-    held-out composition variants, and stricter route/key attribution. Only if
-    this survives should promotion/regression reopen.
+Tier 7.6d — COMPLETE. Reduced-feature planning generalization / task repair.
+  Status: PASS, 18/18 criteria.
+  Output: controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization/
+  Result: reduced-feature signal supported on 4/5 families, including both
+    prior weak families; promotion gate authorized but no freeze/hardware
+    transfer.
+
+Tier 7.6e — CURRENT ACTIVE STEP. Planning/subgoal-control promotion + compact
+regression gate.
+  Required first move: decide whether the reduced-feature planning mechanism can
+    be promoted into the software baseline line. Must include compact regression,
+    shams/ablations, claim-boundary enforcement, and no hardware transfer.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware

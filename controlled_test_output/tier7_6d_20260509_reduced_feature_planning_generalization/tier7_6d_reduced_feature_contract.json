@@ -1,0 +1,30 @@
+{
+  "claim_splits": [
+    "planning_hidden_holdout",
+    "planning_ood_holdout"
+  ],
+  "direct_raw_key_access": false,
+  "families": [
+    "two_stage_delayed_goal_chain",
+    "key_door_goal_sequence",
+    "resource_budget_route_plan",
+    "blocked_subgoal_recovery",
+    "hierarchical_composition_holdout"
+  ],
+  "next_gate": "Tier 7.6e - Planning/Subgoal-Control Promotion + Compact Regression Gate",
+  "prerequisite": "/Users/james/JKS:CRA/controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout/tier7_6c_results.json",
+  "splits": {
+    "planning_hidden_holdout": 6,
+    "planning_ood_holdout": 5,
+    "planning_train": 4,
+    "planning_validation": 3
+  },
+  "visible_features": [
+    "context_class",
+    "coarse_route_class",
+    "memory_parity",
+    "composition_class",
+    "predictive_block_risk",
+    "self_eval_reliability"
+  ]
+}

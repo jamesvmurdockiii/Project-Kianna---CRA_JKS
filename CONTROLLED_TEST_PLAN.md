@@ -11328,12 +11328,26 @@ Boundary: attribution/decision only; not new scoring, not a promoted planning
 mechanism, not public usefulness, not a freeze, and not hardware/native transfer.
 ```
 
-Next required step:
+Latest reduced-feature planning repair:
 
 ```text
 Tier 7.6d - Reduced-feature planning generalization / task repair.
-Rerun planning pressure with reduced feature access, held-out composition
-variants, and stricter route/key attribution before promotion/regression reopens.
+Status: COMPLETE / PASS, 18/18 criteria.
+Output: controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization/
+Outcome: reduced_feature_planning_signal_supported_requires_promotion_gate.
+Result: direct raw keys were hidden, only aliased/coarse features were available,
+aggregate support remained positive, both prior weak families were repaired, and
+4/5 families supported the reduced-feature signal.
+Boundary: reduced-feature local diagnostic only; not a promoted planning
+mechanism, not public usefulness, not a freeze, and not hardware/native transfer.
+```
+
+Next required step:
+
+```text
+Tier 7.6e - Planning/subgoal-control promotion + compact regression gate.
+Decide whether the reduced-feature planning mechanism can be promoted after
+compact regression, shams/ablations, and claim-boundary enforcement.
 ```
 
 ## Tier 5.20a - Resonant Branch Polyp Internal-Model Diagnostic

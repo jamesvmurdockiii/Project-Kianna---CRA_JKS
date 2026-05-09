@@ -578,3 +578,6 @@ tier7-6b:
 
 tier7-6c:
 	python3 experiments/tier7_6c_long_horizon_planning_attribution_closeout.py
+
+tier7-6d:
+	python3 experiments/tier7_6d_reduced_feature_planning_generalization.py
