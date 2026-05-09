@@ -557,3 +557,6 @@ tier7-4g:
 
 tier7-4h:
 	python3 experiments/tier7_4h_policy_action_attribution_closeout.py
+
+tier7-5a:
+	python3 experiments/tier7_5a_curriculum_environment_contract.py

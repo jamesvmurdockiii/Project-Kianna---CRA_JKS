@@ -1,0 +1,6 @@
+level,name,purpose,knob_policy,promotion_use
+0,sanity_easy,verify generator and scoring are wired,"short delays, low noise, single context/regime, no heldout claim",debug only
+1,baseline_competitive,simple baselines should remain viable,moderate noise/delay and low ambiguity,required fairness check
+2,memory_or_adaptation_pressure,"force use of context, recurrence, or adaptation","longer gaps, recurring regimes, distractors, slot pressure",primary generated-task scoring starts here
+3,composition_or_policy_pressure,"test reuse, routing, and cost-aware action","heldout compositions, asymmetric costs, delayed consequences",mechanism comparison tier
+4,ood_generalization,anti-overfitting and held-out family test,withheld generator modes and unseen combinations,claim-boundary gate

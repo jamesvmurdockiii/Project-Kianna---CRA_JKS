@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-09T03:13:00+00:00.
+Last updated: 2026-05-09T03:22:00+00:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -1327,65 +1327,72 @@ ability.
     and incremental v2.4-over-v2.2 claims are blocked, freeze/hardware transfer
     are blocked, and Tier 7.5a is selected next.
 
-103. **CURRENT ACTIVE STEP** - Tier 7.5a curriculum / environment generator
-    contract:
-    predeclare generated task families, difficulty scheduling, novelty
-    detection, anti-overfitting controls, held-out task families, baselines,
-    metrics, pass/fail criteria, and claim boundaries before implementing or
-    scoring curriculum-generated tasks.
+103. **COMPLETE** - Tier 7.5a curriculum / environment generator contract:
+    passed 16/16 at
+    `controlled_test_output/tier7_5a_20260509_curriculum_environment_contract/`.
+    Outcome `curriculum_environment_contract_locked_no_scoring`: generated task
+    families, difficulty schedule, hidden holdout splits, baselines, leakage
+    guards, metrics, pass/fail gates, and future artifacts are locked before
+    implementation/scoring.
 
-104. Mechanism iteration loop: add exactly one planned general mechanism at a
+104. **CURRENT ACTIVE STEP** - Tier 7.5b curriculum / environment generator
+    implementation preflight:
+    materialize deterministic train/validation/hidden-holdout stream manifests,
+    source schemas, dry-run baseline compatibility, and leakage checks under the
+    7.5a contract. Do not score CRA or expose held-out labels.
+
+105. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
     stop the broad usefulness track and narrow the paper.
 
-105. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+106. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines. Start only after the standardized scoreboard or failure diagnosis
     identifies a winning regime, a real failure mode, or a mechanism needing
     external validation.
 
-106. Tier 7.2 held-out task challenge: define held-out families before running;
+107. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout. Include at least one synthetic holdout and one
     real-ish adapter holdout if Tier 7.1 is active.
 
-107. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+108. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines. Candidate domains include
     streaming anomaly detection, predictive-maintenance sensor streams, human
     activity streams, event prediction, ECG/biosignal streams, and finance as
     one domain only rather than the whole proof.
 
-108. Tier 7.4 policy/action selection held-out scoring: the current held-out
+109. Tier 7.4 policy/action selection held-out scoring: the current held-out
     chain is complete through 7.4h. No further NAB/C-MAPSS policy tuning is
     authorized from this chain; only the narrow C-MAPSS action-cost signal is
     preserved, with no broad action/policy claim, freeze, or hardware/native
     transfer.
 
-109. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
+110. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
     planning/subgoal control: run only after the shorter hard/real-ish tasks are
     stable. Do not claim language, AGI, or broad planning from toy gates.
 
-110. Run expanded external baselines and fairness audit at the phase lock:
+111. Run expanded external baselines and fairness audit at the phase lock:
     random/sign persistence, online perceptron/logistic, lag/ridge where
     relevant, reservoir/ESN, small GRU, STDP-only SNN, simple evolutionary
     population, simple control baselines, and SNN reviewer-defense baselines
     where practical.
 
-111. Freeze the next software baseline only if new software capability work
+112. Freeze the next software baseline only if new software capability work
     passes ablations, fair baselines, leakage controls, and compact regression.
     If no new software mechanism is promoted, keep v2.4.
 
 ### Phase I - Final Paper Lock
 
-112. Select final paper claim level: strong usefulness paper, bounded architecture
+113. Select final paper claim level: strong usefulness paper, bounded architecture
     study, or narrowed diagnostic report. Let the evidence decide.
 
-113. Run final software matrix and final hardware subset matrix. Include effect
+114. Run final software matrix and final hardware subset matrix. Include effect
     sizes, confidence intervals, worst seed, sample efficiency, runtime, command
     count, resource budgets, and claim-boundary table.
 
-114. Build the independent reproduction capsule: fresh checkout instructions,
+115. Build the independent reproduction capsule: fresh checkout instructions,
     environment lock, validation command, registry/table regeneration, EBRAINS
     ingest instructions, artifact hash manifest, and one local tier rerun.
 
@@ -1551,19 +1558,19 @@ After each completed run or design tier:
 The next concrete action is:
 
 ```text
-Tier 7.5a - Curriculum / Environment Generator Contract
+Tier 7.5b - Curriculum / Environment Generator Implementation Preflight
 
-Question: Can CRA's next general capability branch be evaluated through a
-predeclared curriculum/environment generator without hand-tuning tasks after
-seeing performance?
+Question: Can the predeclared Tier 7.5a generator contract be materialized into
+reproducible source/split manifests and baseline-compatible streams without
+leakage before any CRA scoring?
 
-First move: define the task-family generator contract, difficulty schedule,
-novelty and anti-overfitting controls, held-out generated families, baselines,
-metrics, pass/fail criteria, failure classes, and expected artifacts before any
-curriculum implementation or scoring.
+First move: implement deterministic generator dry-run outputs for the
+predeclared families, train/validation/hidden-holdout split manifests, source
+schemas, baseline input contracts, and leakage checks. Do not score CRA or
+expose held-out labels.
 
-Boundary: contract only; no new capability claim, no public usefulness claim,
-no freeze, and no hardware/native transfer.
+Boundary: implementation preflight only; no performance score, no public
+usefulness claim, no freeze, and no hardware/native transfer.
 ```
 
 Recent closeout:
@@ -1731,7 +1738,7 @@ selection as the next general mechanism contract. Tier 7.4a then passed the
 contract gate, Tier 7.4b passed the local diagnostic as candidate evidence,
 Tier 7.4c froze bounded software baseline v2.4, Tier 7.4d locked the
 held-out/public action-cost scoring contract, and Tier 7.4e verified the
-scoring preflight. Tier 7.4f then produced a qualified C-MAPSS-only action-cost signal while NAB remained unconfirmed; Tier 7.4g confirmed only the narrow C-MAPSS external/sham signal and preserved the non-separation from v2.2. Tier 7.4h closed the policy/action chain without claim inflation and selected Tier 7.5a curriculum/environment-generator contract as the next active software work.
+scoring preflight. Tier 7.4f then produced a qualified C-MAPSS-only action-cost signal while NAB remained unconfirmed; Tier 7.4g confirmed only the narrow C-MAPSS external/sham signal and preserved the non-separation from v2.2. Tier 7.4h closed the policy/action chain without claim inflation. Tier 7.5a locked the curriculum/environment-generator contract; Tier 7.5b implementation preflight is the next active software work.
 Reopen native work only for targeted transfer after a software task/mechanism
 earns it under the Tier 7/6.2 gates and a separate transfer contract is written.
 It must preserve explicit board/chip/shard identity, message paths, compact

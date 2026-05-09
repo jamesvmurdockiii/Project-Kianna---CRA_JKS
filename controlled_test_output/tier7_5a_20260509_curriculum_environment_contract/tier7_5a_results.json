@@ -1,0 +1,482 @@
+{
+  "baseline_inventory": [
+    {
+      "baseline": "current_cra_v2_4",
+      "fairness_rule": "locked current frozen software baseline",
+      "role": "candidate_reference"
+    },
+    {
+      "baseline": "v2_2_reference",
+      "fairness_rule": "same streams and scoring",
+      "role": "prior_cra_reference"
+    },
+    {
+      "baseline": "lag_ridge_or_ar",
+      "fairness_rule": "causal train-prefix fitting only",
+      "role": "strong_simple_public_baseline"
+    },
+    {
+      "baseline": "online_logistic_or_perceptron",
+      "fairness_rule": "same causal feature stream",
+      "role": "online_linear_baseline"
+    },
+    {
+      "baseline": "reservoir_esn",
+      "fairness_rule": "predeclared reservoir size/tuning budget",
+      "role": "recurrent_baseline"
+    },
+    {
+      "baseline": "small_gru",
+      "fairness_rule": "bounded parameter budget and train-prefix only",
+      "role": "neural_sequence_baseline"
+    },
+    {
+      "baseline": "bandit_or_simple_rl",
+      "fairness_rule": "only for action-cost families",
+      "role": "policy_action_baseline"
+    },
+    {
+      "baseline": "stpd_only_snn",
+      "fairness_rule": "same encoding where practical",
+      "role": "snn_reviewer_defense"
+    },
+    {
+      "baseline": "oracle_upper_bound",
+      "fairness_rule": "reported but never used as candidate baseline",
+      "role": "upper_bound"
+    }
+  ],
+  "criteria": [
+    {
+      "criterion": "tier7_4h_prerequisite_exists",
+      "details": "/Users/james/JKS:CRA/controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout/tier7_4h_results.json",
+      "name": "tier7_4h_prerequisite_exists",
+      "note": "/Users/james/JKS:CRA/controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout/tier7_4h_results.json",
+      "operator": "must exist",
+      "pass": true,
+      "passed": true,
+      "rule": "must exist",
+      "value": true
+    },
+    {
+      "criterion": "tier7_4h_prerequisite_passed",
+      "details": "",
+      "name": "tier7_4h_prerequisite_passed",
+      "note": "",
+      "operator": "case-insensitive == PASS",
+      "pass": true,
+      "passed": true,
+      "rule": "case-insensitive == PASS",
+      "value": "PASS"
+    },
+    {
+      "criterion": "task_family_count",
+      "details": "",
+      "name": "task_family_count",
+      "note": "",
+      "operator": ">= 5",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 5",
+      "value": 6
+    },
+    {
+      "criterion": "difficulty_levels_defined",
+      "details": "",
+      "name": "difficulty_levels_defined",
+      "note": "",
+      "operator": ">= 4",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 4",
+      "value": 5
+    },
+    {
+      "criterion": "split_contract_defined",
+      "details": "",
+      "name": "split_contract_defined",
+      "note": "",
+      "operator": ">= 4",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 4",
+      "value": 4
+    },
+    {
+      "criterion": "heldout_split_hidden",
+      "details": "",
+      "name": "heldout_split_hidden",
+      "note": "",
+      "operator": "must be true",
+      "pass": true,
+      "passed": true,
+      "rule": "must be true",
+      "value": true
+    },
+    {
+      "criterion": "baseline_inventory_defined",
+      "details": "",
+      "name": "baseline_inventory_defined",
+      "note": "",
+      "operator": ">= 8",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 8",
+      "value": 9
+    },
+    {
+      "criterion": "leakage_guards_defined",
+      "details": "",
+      "name": "leakage_guards_defined",
+      "note": "",
+      "operator": ">= 5",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 5",
+      "value": 6
+    },
+    {
+      "criterion": "metrics_defined",
+      "details": "",
+      "name": "metrics_defined",
+      "note": "",
+      "operator": ">= 8",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 8",
+      "value": 8
+    },
+    {
+      "criterion": "pass_fail_gates_defined",
+      "details": "",
+      "name": "pass_fail_gates_defined",
+      "note": "",
+      "operator": ">= 4",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 4",
+      "value": 4
+    },
+    {
+      "criterion": "expected_artifacts_defined",
+      "details": "",
+      "name": "expected_artifacts_defined",
+      "note": "",
+      "operator": ">= 5",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 5",
+      "value": 6
+    },
+    {
+      "criterion": "contract_only_no_scoring",
+      "details": "",
+      "name": "contract_only_no_scoring",
+      "note": "",
+      "operator": "must be False",
+      "pass": true,
+      "passed": true,
+      "rule": "must be False",
+      "value": false
+    },
+    {
+      "criterion": "freeze_blocked",
+      "details": "",
+      "name": "freeze_blocked",
+      "note": "",
+      "operator": "must be False",
+      "pass": true,
+      "passed": true,
+      "rule": "must be False",
+      "value": false
+    },
+    {
+      "criterion": "hardware_transfer_blocked",
+      "details": "",
+      "name": "hardware_transfer_blocked",
+      "note": "",
+      "operator": "must be False",
+      "pass": true,
+      "passed": true,
+      "rule": "must be False",
+      "value": false
+    },
+    {
+      "criterion": "broad_claim_blocked",
+      "details": "",
+      "name": "broad_claim_blocked",
+      "note": "",
+      "operator": "must be False",
+      "pass": true,
+      "passed": true,
+      "rule": "must be False",
+      "value": false
+    },
+    {
+      "criterion": "next_gate_selected",
+      "details": "",
+      "name": "next_gate_selected",
+      "note": "",
+      "operator": "non-empty",
+      "pass": true,
+      "passed": true,
+      "rule": "non-empty",
+      "value": "Tier 7.5b - Curriculum / Environment Generator Implementation Preflight"
+    }
+  ],
+  "decision": {
+    "broad_public_usefulness_authorized": false,
+    "claim_boundary": "Contract only; no curriculum capability claim until implementation and held-out scoring pass.",
+    "contract_only": true,
+    "freeze_authorized": false,
+    "hardware_transfer_authorized": false,
+    "next_gate": "Tier 7.5b - Curriculum / Environment Generator Implementation Preflight",
+    "outcome": "curriculum_environment_contract_locked_no_scoring",
+    "scoring_performed": false,
+    "status": "PASS",
+    "tier": "Tier 7.5a - Curriculum / Environment Generator Contract"
+  },
+  "difficulty_schedule": [
+    {
+      "knob_policy": "short delays, low noise, single context/regime, no heldout claim",
+      "level": 0,
+      "name": "sanity_easy",
+      "promotion_use": "debug only",
+      "purpose": "verify generator and scoring are wired"
+    },
+    {
+      "knob_policy": "moderate noise/delay and low ambiguity",
+      "level": 1,
+      "name": "baseline_competitive",
+      "promotion_use": "required fairness check",
+      "purpose": "simple baselines should remain viable"
+    },
+    {
+      "knob_policy": "longer gaps, recurring regimes, distractors, slot pressure",
+      "level": 2,
+      "name": "memory_or_adaptation_pressure",
+      "promotion_use": "primary generated-task scoring starts here",
+      "purpose": "force use of context, recurrence, or adaptation"
+    },
+    {
+      "knob_policy": "heldout compositions, asymmetric costs, delayed consequences",
+      "level": 3,
+      "name": "composition_or_policy_pressure",
+      "promotion_use": "mechanism comparison tier",
+      "purpose": "test reuse, routing, and cost-aware action"
+    },
+    {
+      "knob_policy": "withheld generator modes and unseen combinations",
+      "level": 4,
+      "name": "ood_generalization",
+      "promotion_use": "claim-boundary gate",
+      "purpose": "anti-overfitting and held-out family test"
+    }
+  ],
+  "expected_artifacts": [
+    {
+      "artifact": "tier7_5b_generator_manifest.json",
+      "producer": "future Tier 7.5b",
+      "purpose": "materialized generator source/split manifest"
+    },
+    {
+      "artifact": "tier7_5b_task_family_streams.csv",
+      "producer": "future Tier 7.5b",
+      "purpose": "dry-run stream inventory without labels visible online"
+    },
+    {
+      "artifact": "tier7_5c_score_rows.csv",
+      "producer": "future scoring gate",
+      "purpose": "per-family/model/seed scoring rows"
+    },
+    {
+      "artifact": "tier7_5c_baseline_summary.csv",
+      "producer": "future scoring gate",
+      "purpose": "baseline comparison table"
+    },
+    {
+      "artifact": "tier7_5c_sham_controls.csv",
+      "producer": "future scoring gate",
+      "purpose": "shuffle/oracle/leakage controls"
+    },
+    {
+      "artifact": "tier7_5c_claim_boundary.md",
+      "producer": "future scoring gate",
+      "purpose": "earned claims and nonclaims"
+    }
+  ],
+  "generated_at_utc": "2026-05-09T03:11:54+00:00",
+  "leakage_guards": [
+    {
+      "guard": "future_target_block",
+      "rule": "no future reward/label/target visible before action or prediction"
+    },
+    {
+      "guard": "heldout_family_block",
+      "rule": "held-out family IDs and knob ranges cannot be used during implementation/tuning"
+    },
+    {
+      "guard": "same_stream_fairness",
+      "rule": "CRA and baselines receive identical causal streams"
+    },
+    {
+      "guard": "shuffle_controls",
+      "rule": "target-shuffle, state-shuffle, route-shuffle, and wrong-key controls where applicable"
+    },
+    {
+      "guard": "oracle_separation",
+      "rule": "oracle baselines are upper bounds only and cannot leak into candidate state"
+    },
+    {
+      "guard": "difficulty_no_peeking",
+      "rule": "difficulty schedule is fixed before scoring and cannot be adjusted after seeing holdout"
+    }
+  ],
+  "metrics": [
+    {
+      "metric": "primary_task_score",
+      "required": true,
+      "use": "family-specific main score such as MSE, accuracy, utility, or regret"
+    },
+    {
+      "metric": "tail_or_holdout_score",
+      "required": true,
+      "use": "late-window or held-out-family score"
+    },
+    {
+      "metric": "sample_efficiency",
+      "required": true,
+      "use": "steps/events to threshold"
+    },
+    {
+      "metric": "recovery_after_switch",
+      "required": true,
+      "use": "adaptation after nonstationary changes"
+    },
+    {
+      "metric": "forgetting_or_reacquisition",
+      "required": true,
+      "use": "old-regime retention and reentry speed"
+    },
+    {
+      "metric": "variance_worst_seed",
+      "required": true,
+      "use": "seed robustness and collapse risk"
+    },
+    {
+      "metric": "effect_size_and_ci",
+      "required": true,
+      "use": "paired effect sizes and bootstrap/confidence intervals"
+    },
+    {
+      "metric": "runtime_and_resource",
+      "required": true,
+      "use": "wall time, memory/state size, and hardware-transfer relevance"
+    }
+  ],
+  "pass_fail_gates": [
+    {
+      "fail_rule": "missing family/split/baseline/leakage/metric definitions",
+      "gate": "contract_pass",
+      "pass_rule": "all contract artifacts exist and no scoring/tuning is performed"
+    },
+    {
+      "fail_rule": "non-determinism, hidden split exposure, or incompatible baseline inputs",
+      "gate": "future_implementation_pass",
+      "pass_rule": "generator materializes deterministic train/validation/holdout streams and dry-run baselines without leakage"
+    },
+    {
+      "fail_rule": "wins vanish on heldout/OOD families or are explained by leakage/shams",
+      "gate": "future_scoring_pass",
+      "pass_rule": "candidate improves over current CRA and strongest fair baselines on at least one held-out generated family with shams separated"
+    },
+    {
+      "fail_rule": "single-family success inflated into broad usefulness, planning, language, AGI, or ASI",
+      "gate": "claim_boundary",
+      "pass_rule": "claim is restricted to families and metrics that pass"
+    }
+  ],
+  "runner_revision": "tier7_5a_curriculum_environment_contract_20260509_0001",
+  "split_contract": [
+    {
+      "claim_allowed": false,
+      "purpose": "implementation debugging and predeclared candidate development",
+      "seed_policy": "fixed development seeds only",
+      "split": "generator_train",
+      "visible_to_development": true
+    },
+    {
+      "claim_allowed": false,
+      "purpose": "choose from predeclared mechanism variants only",
+      "seed_policy": "fixed validation seeds, no hidden-family access",
+      "split": "generator_validation",
+      "visible_to_development": true
+    },
+    {
+      "claim_allowed": true,
+      "purpose": "final family-level pass/fail and effect-size estimate",
+      "seed_policy": "precommitted hidden seeds/families materialized only at scoring",
+      "split": "generated_holdout",
+      "visible_to_development": false
+    },
+    {
+      "claim_allowed": true,
+      "purpose": "test withheld task families and generator modes",
+      "seed_policy": "separate hidden family IDs and held-out knob ranges",
+      "split": "generator_ood_holdout",
+      "visible_to_development": false
+    }
+  ],
+  "status": "PASS",
+  "task_families": [
+    {
+      "baseline_classes": "lag_ridge,online_logistic,reservoir,small_gru,stpd_only,current_cra",
+      "capability_pressure": "delayed credit and causal reward timing",
+      "family_id": "generated_delayed_credit",
+      "generator_knobs": "delay_steps, reward_sparsity, distractor_rate, cue_noise",
+      "heldout_rule": "withhold delay/noise combinations and seeds before scoring",
+      "primary_metrics": "tail_accuracy,recovery_steps,credit_assignment_error"
+    },
+    {
+      "baseline_classes": "explicit_lag_memory,reservoir,small_gru,current_cra,memory_ablation",
+      "capability_pressure": "working memory, keyed context, reentry",
+      "family_id": "generated_hidden_context_reentry",
+      "generator_knobs": "context_count,key_overlap,distractor_gap,reentry_gap,slot_pressure",
+      "heldout_rule": "withhold context-key mappings and recurrence schedules",
+      "primary_metrics": "reentry_accuracy,forgetting_delta,reacquisition_steps"
+    },
+    {
+      "baseline_classes": "ewma,online_logistic,reservoir,small_gru,current_cra,sham_controls",
+      "capability_pressure": "adaptation, recovery, uncertainty, lifecycle hooks",
+      "family_id": "generated_nonstationary_switching",
+      "generator_knobs": "switch_interval,regime_count,noise,drift_rate,return_probability",
+      "heldout_rule": "withhold switch schedules and regime-return patterns",
+      "primary_metrics": "post_switch_recovery,tail_accuracy,variance,collapse_rate"
+    },
+    {
+      "baseline_classes": "monolithic_cra,route_shuffle,small_gru,reservoir,oracle_router",
+      "capability_pressure": "module routing, composition, skill reuse",
+      "family_id": "generated_compositional_reuse",
+      "generator_knobs": "primitive_count,composition_depth,route_ambiguity,heldout_combinations",
+      "heldout_rule": "withhold compositions while exposing primitives",
+      "primary_metrics": "heldout_composition_success,module_reuse_score,route_error"
+    },
+    {
+      "baseline_classes": "bandit,threshold_policy,online_logistic,reservoir,small_gru,current_cra",
+      "capability_pressure": "action choice, asymmetric cost, delayed consequence",
+      "family_id": "generated_policy_action_cost",
+      "generator_knobs": "action_count,cost_asymmetry,event_rate,latency_penalty,confidence_noise",
+      "heldout_rule": "withhold cost/action regimes and event schedules",
+      "primary_metrics": "expected_utility,regret,action_rate,false_positive_cost,missed_event_cost"
+    },
+    {
+      "baseline_classes": "auto_regressive_ridge,reservoir,small_gru,random_projection,current_cra",
+      "capability_pressure": "pre-reward representation, predictive binding, anomaly anticipation",
+      "family_id": "generated_predictive_binding",
+      "generator_knobs": "masked_channels,cross_modal_lag,anomaly_rate,latent_factor_count",
+      "heldout_rule": "withhold latent-factor combinations and anomaly timing",
+      "primary_metrics": "masked_recovery,next_state_mse,downstream_sample_efficiency"
+    }
+  ],
+  "tier": "Tier 7.5a - Curriculum / Environment Generator Contract"
+}

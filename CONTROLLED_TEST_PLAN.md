@@ -11234,13 +11234,26 @@ Boundary: decision/attribution evidence only; not new scoring, not a mechanism
 promotion, not broad usefulness, not a freeze, and not hardware/native transfer.
 ```
 
+```text
+Tier 7.5a - Curriculum / environment generator contract.
+Status: COMPLETE / PASS, 16/16 criteria.
+Output: controlled_test_output/tier7_5a_20260509_curriculum_environment_contract/
+Outcome: curriculum_environment_contract_locked_no_scoring.
+Result: generated task families, difficulty schedule, split/holdout contract,
+baselines, leakage guards, metrics, pass/fail gates, and future artifacts are
+locked before implementation/scoring.
+Boundary: contract only; not curriculum implementation, not scoring, not a
+mechanism promotion, not broad usefulness, not a freeze, and not
+hardware/native transfer.
+```
+
 Next required step:
 
 ```text
-Tier 7.5a - Curriculum / environment generator contract.
-Predeclare generated task families, difficulty scheduling, novelty detection,
-anti-overfitting controls, held-out task families, baselines, metrics, and
-pass/fail criteria before implementing/scoring curriculum-generated tasks.
+Tier 7.5b - Curriculum / environment generator implementation preflight.
+Materialize deterministic train/validation/hidden-holdout stream manifests,
+source schemas, dry-run baseline compatibility, and leakage checks under the
+7.5a contract. Do not score CRA or expose held-out labels.
 ```
 
 ## Tier 5.20a - Resonant Branch Polyp Internal-Model Diagnostic

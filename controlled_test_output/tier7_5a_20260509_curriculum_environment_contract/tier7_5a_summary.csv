@@ -1,0 +1,17 @@
+criterion,value,rule,pass,details
+tier7_4h_prerequisite_exists,True,must exist,True,/Users/james/JKS:CRA/controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout/tier7_4h_results.json
+tier7_4h_prerequisite_passed,PASS,case-insensitive == PASS,True,
+task_family_count,6,>= 5,True,
+difficulty_levels_defined,5,>= 4,True,
+split_contract_defined,4,>= 4,True,
+heldout_split_hidden,True,must be true,True,
+baseline_inventory_defined,9,>= 8,True,
+leakage_guards_defined,6,>= 5,True,
+metrics_defined,8,>= 8,True,
+pass_fail_gates_defined,4,>= 4,True,
+expected_artifacts_defined,6,>= 5,True,
+contract_only_no_scoring,False,must be False,True,
+freeze_blocked,False,must be False,True,
+hardware_transfer_blocked,False,must be False,True,
+broad_claim_blocked,False,must be False,True,
+next_gate_selected,Tier 7.5b - Curriculum / Environment Generator Implementation Preflight,non-empty,True,

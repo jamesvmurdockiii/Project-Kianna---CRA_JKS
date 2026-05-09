@@ -1,0 +1,5 @@
+split,visible_to_development,purpose,seed_policy,claim_allowed
+generator_train,True,implementation debugging and predeclared candidate development,fixed development seeds only,False
+generator_validation,True,choose from predeclared mechanism variants only,"fixed validation seeds, no hidden-family access",False
+generated_holdout,False,final family-level pass/fail and effect-size estimate,precommitted hidden seeds/families materialized only at scoring,True
+generator_ood_holdout,False,test withheld task families and generator modes,separate hidden family IDs and held-out knob ranges,True

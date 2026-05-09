@@ -1,0 +1,7 @@
+artifact,producer,purpose
+tier7_5b_generator_manifest.json,future Tier 7.5b,materialized generator source/split manifest
+tier7_5b_task_family_streams.csv,future Tier 7.5b,dry-run stream inventory without labels visible online
+tier7_5c_score_rows.csv,future scoring gate,per-family/model/seed scoring rows
+tier7_5c_baseline_summary.csv,future scoring gate,baseline comparison table
+tier7_5c_sham_controls.csv,future scoring gate,shuffle/oracle/leakage controls
+tier7_5c_claim_boundary.md,future scoring gate,earned claims and nonclaims

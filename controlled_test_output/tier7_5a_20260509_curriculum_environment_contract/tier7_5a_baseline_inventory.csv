@@ -1,0 +1,10 @@
+baseline,role,fairness_rule
+current_cra_v2_4,candidate_reference,locked current frozen software baseline
+v2_2_reference,prior_cra_reference,same streams and scoring
+lag_ridge_or_ar,strong_simple_public_baseline,causal train-prefix fitting only
+online_logistic_or_perceptron,online_linear_baseline,same causal feature stream
+reservoir_esn,recurrent_baseline,predeclared reservoir size/tuning budget
+small_gru,neural_sequence_baseline,bounded parameter budget and train-prefix only
+bandit_or_simple_rl,policy_action_baseline,only for action-cost families
+stpd_only_snn,snn_reviewer_defense,same encoding where practical
+oracle_upper_bound,upper_bound,reported but never used as candidate baseline

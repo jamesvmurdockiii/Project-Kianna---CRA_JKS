@@ -1,0 +1,9 @@
+metric,use,required
+primary_task_score,"family-specific main score such as MSE, accuracy, utility, or regret",True
+tail_or_holdout_score,late-window or held-out-family score,True
+sample_efficiency,steps/events to threshold,True
+recovery_after_switch,adaptation after nonstationary changes,True
+forgetting_or_reacquisition,old-regime retention and reentry speed,True
+variance_worst_seed,seed robustness and collapse risk,True
+effect_size_and_ci,paired effect sizes and bootstrap/confidence intervals,True
+runtime_and_resource,"wall time, memory/state size, and hardware-transfer relevance",True

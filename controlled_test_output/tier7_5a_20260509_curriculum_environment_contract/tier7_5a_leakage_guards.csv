@@ -1,0 +1,7 @@
+guard,rule
+future_target_block,no future reward/label/target visible before action or prediction
+heldout_family_block,held-out family IDs and knob ranges cannot be used during implementation/tuning
+same_stream_fairness,CRA and baselines receive identical causal streams
+shuffle_controls,"target-shuffle, state-shuffle, route-shuffle, and wrong-key controls where applicable"
+oracle_separation,oracle baselines are upper bounds only and cannot leak into candidate state
+difficulty_no_peeking,difficulty schedule is fixed before scoring and cannot be adjusted after seeing holdout

@@ -1,0 +1,87 @@
+{
+  "artifacts": [
+    {
+      "bytes": 705,
+      "name": "baseline_inventory_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5a_20260509_curriculum_environment_contract/tier7_5a_baseline_inventory.csv",
+      "sha256": "00b537157e3d72af233a47fc3f43acd2fe4c2230d6ee8d96f666800e78a39a1b"
+    },
+    {
+      "bytes": 467,
+      "name": "decision_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5a_20260509_curriculum_environment_contract/tier7_5a_decision.csv",
+      "sha256": "9aeb0467d943a21ed9a1a57598b9f95547971b7e1006b6aae25f7c903124f050"
+    },
+    {
+      "bytes": 538,
+      "name": "decision_json",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5a_20260509_curriculum_environment_contract/tier7_5a_decision.json",
+      "sha256": "9c0f13743b3dcd02ebe56643a18d9c987f58c62272d88cb4982eb20ea8d70eb7"
+    },
+    {
+      "bytes": 791,
+      "name": "difficulty_schedule_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5a_20260509_curriculum_environment_contract/tier7_5a_difficulty_schedule.csv",
+      "sha256": "feae5d516a005fdcd6c908e046eb2b5c177438cf867aeb240b85cbc1cc927c29"
+    },
+    {
+      "bytes": 542,
+      "name": "expected_artifacts_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5a_20260509_curriculum_environment_contract/tier7_5a_expected_artifacts.csv",
+      "sha256": "3201e412ed8902ba39081366fdee51772b15e7ff9f8adf8d5a852a4010ddfef2"
+    },
+    {
+      "bytes": 586,
+      "name": "leakage_guards_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5a_20260509_curriculum_environment_contract/tier7_5a_leakage_guards.csv",
+      "sha256": "7d0fc7bc114d6d7ec291e0a4f7911f24b44790b23911b9d0e31f3c92d183fda4"
+    },
+    {
+      "bytes": 603,
+      "name": "metrics_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5a_20260509_curriculum_environment_contract/tier7_5a_metrics.csv",
+      "sha256": "4d095e3a5811475e86f551414930186953e1ce06292132545ee352e15840eb68"
+    },
+    {
+      "bytes": 749,
+      "name": "pass_fail_gates_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5a_20260509_curriculum_environment_contract/tier7_5a_pass_fail_gates.csv",
+      "sha256": "c42920310362016cc474602cd72f2635c3e1de127654f6b1e6e59db92bfdc091"
+    },
+    {
+      "bytes": 2092,
+      "name": "report_md",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5a_20260509_curriculum_environment_contract/tier7_5a_report.md",
+      "sha256": "6c18ff67602650ea9b9c20048111c34032c18329d9256ad577db3f2f81ab9c99"
+    },
+    {
+      "bytes": 16044,
+      "name": "results_json",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5a_20260509_curriculum_environment_contract/tier7_5a_results.json",
+      "sha256": "6533ccddd08971f76ab169a0dc84a1bfee83290dcc5322bde5d1e18690c12124"
+    },
+    {
+      "bytes": 597,
+      "name": "split_contract_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5a_20260509_curriculum_environment_contract/tier7_5a_split_contract.csv",
+      "sha256": "7ed441df0ada2cf418af85c1187fcc777809dd74a4a9f2396673e787440ed823"
+    },
+    {
+      "bytes": 915,
+      "name": "summary_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5a_20260509_curriculum_environment_contract/tier7_5a_summary.csv",
+      "sha256": "65e3549d6a7cf2f99f312e04933cb75716e927ba80c755630f5b81f161ec12bc"
+    },
+    {
+      "bytes": 2100,
+      "name": "task_families_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5a_20260509_curriculum_environment_contract/tier7_5a_task_families.csv",
+      "sha256": "7fa4e676047f58c0fc2997999d2e6b1e9c882bea38eefaf5f0ab17a395639e69"
+    }
+  ],
+  "generated_at_utc": "2026-05-09T03:11:54+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_5a_20260509_curriculum_environment_contract",
+  "runner_revision": "tier7_5a_curriculum_environment_contract_20260509_0001",
+  "status": "PASS",
+  "tier": "Tier 7.5a - Curriculum / Environment Generator Contract"
+}

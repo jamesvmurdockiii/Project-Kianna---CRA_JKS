@@ -1,0 +1,5 @@
+gate,pass_rule,fail_rule
+contract_pass,all contract artifacts exist and no scoring/tuning is performed,missing family/split/baseline/leakage/metric definitions
+future_implementation_pass,generator materializes deterministic train/validation/holdout streams and dry-run baselines without leakage,"non-determinism, hidden split exposure, or incompatible baseline inputs"
+future_scoring_pass,candidate improves over current CRA and strongest fair baselines on at least one held-out generated family with shams separated,wins vanish on heldout/OOD families or are explained by leakage/shams
+claim_boundary,claim is restricted to families and metrics that pass,"single-family success inflated into broad usefulness, planning, language, AGI, or ASI"
