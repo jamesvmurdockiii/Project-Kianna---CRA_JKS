@@ -1,0 +1,11 @@
+{
+  "classification_outcome": "mackey_only_localized",
+  "generated_at_utc": "2026-05-09T14:30:32+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7f_20260509_repaired_finite_stream_long_run_scoreboard",
+  "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier7_7f_20260509_repaired_finite_stream_long_run_scoreboard/tier7_7f_report.md",
+  "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier7_7f_20260509_repaired_finite_stream_long_run_scoreboard/tier7_7f_results.json",
+  "selected_generator": "narma10_reduced_input_u02",
+  "status": "pass",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7f_20260509_repaired_finite_stream_long_run_scoreboard/tier7_7f_summary.csv",
+  "tier": "Tier 7.7f - Repaired Finite-Stream Long-Run Scoreboard"
+}

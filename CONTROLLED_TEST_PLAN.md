@@ -11421,9 +11421,23 @@ Next required step:
 
 ```text
 Tier 7.7f - repaired finite-stream long-run scoreboard.
-Rerun the locked 7.7c length/seed/model/sham matrix using the preflighted
-narma10_reduced_input_u02 stream before any complete long-run scoreboard
-classification is cited.
+Status: COMPLETE / PASS, 16/16 criteria.
+Output: controlled_test_output/tier7_7f_20260509_repaired_finite_stream_long_run_scoreboard/
+Outcome: mackey_only_localized.
+Result: repaired NARMA10 removed the finite-stream blocker; Mackey-Glass
+persisted, repaired NARMA10 stayed near-flat, Lorenz stayed flat/weak, and ESN
+remained the best external baseline.
+Boundary: scoring evidence only; no freeze, no broad usefulness claim, no
+external-baseline superiority, no hardware/native transfer, and no silent
+mixing of repaired U(0,0.2) NARMA scores with prior U(0,0.5) scores.
+```
+
+Next required step:
+
+```text
+Tier 7.7g - Lorenz state-capacity / NARMA memory-depth diagnostic contract.
+Predeclare whether the next diagnostic tests capacity/state-interface limits
+versus structural architecture limits before adding more mechanisms.
 ```
 
 Latest standardized benchmark contract:

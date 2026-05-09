@@ -1,0 +1,777 @@
+{
+  "claim_boundary": "Tier 7.7f reruns the locked long-run scoreboard after the Tier 7.7e repaired NARMA stream preflight. It may classify whether the v2.5 signal is long-run confirmed, Mackey-only localized, baseline-gap limited, collapsed, or stop/narrow, but it does not freeze a baseline, does not authorize hardware/native transfer, and does not permit repaired U(0,0.2) NARMA results to be silently mixed with prior U(0,0.5) NARMA scores.",
+  "classification": {
+    "aggregate_material_long_lengths": true,
+    "aggregate_persists": true,
+    "claim_allowed": {
+      "baseline_freeze": false,
+      "hardware_or_native_transfer": false,
+      "localized_signal": true,
+      "long_run_confirmed": false,
+      "public_usefulness_upgrade": false
+    },
+    "external_gap_persists": true,
+    "invalid_task_count": 0,
+    "lorenz_improves_any_length": false,
+    "mackey_persists": true,
+    "narma10_improves_any_length": false,
+    "nonclaims": [
+      "not a new baseline freeze",
+      "not hardware/native evidence",
+      "not public-usefulness superiority over ESN/ridge/online baselines unless the table shows it",
+      "not a complete long-run scoreboard if any required benchmark stream is non-finite",
+      "not a license to tune benchmarks after seeing long-run results",
+      "not language, AGI, or ASI evidence"
+    ],
+    "outcome": "mackey_only_localized",
+    "recommendation": "The signal remains localized to Mackey-Glass; prioritize failure-specific diagnostics before adding mechanisms.",
+    "required_aggregate_ratios": [
+      1.2953442788748264,
+      1.2781334938110767,
+      1.3281533210485936
+    ],
+    "required_lorenz_ratios": [
+      0.9757367616924804,
+      0.9374655074272541,
+      1.045581301598168
+    ],
+    "required_mackey_ratios": [
+      2.174136418713504,
+      2.1789436619366334,
+      2.2014559852150453
+    ],
+    "required_narma10_ratios": [
+      1.0037286721080247,
+      1.005431889410481,
+      1.0060811257251472
+    ],
+    "sham_specific": true
+  },
+  "contract_results": "/Users/james/JKS:CRA/controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract/tier7_7c_results.json",
+  "criteria": [
+    {
+      "name": "Tier 7.7e prerequisite exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists and status pass",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight/tier7_7e_results.json"
+    },
+    {
+      "name": "Tier 7.7e selected repaired generator",
+      "note": "",
+      "passed": true,
+      "rule": "== narma10_reduced_input_u02",
+      "value": "narma10_reduced_input_u02"
+    },
+    {
+      "name": "Tier 7.7e authorizes repaired scoring",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "name": "Tier 7.7c contract exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists and status pass",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract/tier7_7c_results.json"
+    },
+    {
+      "name": "required lengths present",
+      "note": "",
+      "passed": true,
+      "rule": "contains 8000/16000/32000",
+      "value": [
+        8000,
+        16000,
+        32000
+      ]
+    },
+    {
+      "name": "locked tasks",
+      "note": "",
+      "passed": true,
+      "rule": "Mackey/Lorenz/NARMA",
+      "value": "mackey_glass,lorenz,narma10"
+    },
+    {
+      "name": "locked seeds",
+      "note": "",
+      "passed": true,
+      "rule": "42,43,44",
+      "value": "42,43,44"
+    },
+    {
+      "name": "locked horizon",
+      "note": "",
+      "passed": true,
+      "rule": "8",
+      "value": 8
+    },
+    {
+      "name": "all length scoreboards produced",
+      "note": "",
+      "passed": true,
+      "rule": "== requested length count",
+      "value": 3
+    },
+    {
+      "name": "finite-stream audits pass",
+      "note": "",
+      "passed": true,
+      "rule": "all pass",
+      "value": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "name": "no invalid repaired-stream tasks",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "name": "failure decomposition produced",
+      "note": "",
+      "passed": true,
+      "rule": ">= 5",
+      "value": 5
+    },
+    {
+      "name": "classification produced",
+      "note": "",
+      "passed": true,
+      "rule": "non-empty",
+      "value": "mackey_only_localized"
+    },
+    {
+      "name": "repaired stream manifest produced",
+      "note": "",
+      "passed": true,
+      "rule": "== narma10_reduced_input_u02",
+      "value": "narma10_reduced_input_u02"
+    },
+    {
+      "name": "no automatic baseline freeze",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "name": "hardware/native transfer blocked",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 16,
+  "criteria_total": 16,
+  "failure_decomposition": [
+    {
+      "answer": "persists",
+      "evidence": "8000:2.174136418713504;16000:2.1789436619366334;32000:2.2014559852150453",
+      "interpretation": "Mackey-Glass is the scalar delayed-recurrence signal first seen in 7.7b.",
+      "question_id": "mackey_signal_persistence"
+    },
+    {
+      "answer": "flat_or_negative",
+      "evidence": "8000:0.9757367616924804;16000:0.9374655074272541;32000:1.045581301598168",
+      "interpretation": "Flat Lorenz ratios indicate the current scalar interface/state reconstruction remains insufficient.",
+      "question_id": "lorenz_state_reconstruction_gap"
+    },
+    {
+      "answer": "flat_or_negative",
+      "evidence": "8000:1.0037286721080247;16000:1.005431889410481;32000:1.0060811257251472",
+      "interpretation": "Missing NARMA10 ratios at required lengths are benchmark-generator failures, not CRA scores.",
+      "question_id": "narma_memory_depth_gap"
+    },
+    {
+      "answer": "persists",
+      "evidence": "8000:fixed_esn_train_prefix_ridge_baseline=0.01854979357974845;16000:fixed_esn_train_prefix_ridge_baseline=0.016937159264644727;32000:fixed_esn_train_prefix_ridge_baseline=0.013594601360987484",
+      "interpretation": "If ESN/ridge/online baselines still win, broad usefulness remains blocked.",
+      "question_id": "external_baseline_gap"
+    },
+    {
+      "answer": "separated",
+      "evidence": "8000:target=13.051573831446873,time=13.103437902681176;16000:target=15.232871472258834,time=14.619404456137536;32000:target=16.312294506439212,time=15.962588986319375",
+      "interpretation": "Shams must remain worse than v2.5 for any positive long-run claim.",
+      "question_id": "sham_specificity"
+    }
+  ],
+  "fairness_contract": {
+    "baseline_freeze_authorized_by_runner": false,
+    "candidate": "cra_v2_5_scoreboard_candidate",
+    "contract_source": "/Users/james/JKS:CRA/controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract/tier7_7a_scoreboard_contract.json",
+    "external_baselines": [
+      "persistence",
+      "online_lms",
+      "ridge_lag",
+      "lag_only_online_lms_control",
+      "fixed_random_reservoir_online_control",
+      "fixed_esn_train_prefix_ridge_baseline"
+    ],
+    "hardware_transfer_authorized": false,
+    "horizon": 8,
+    "length": 8000,
+    "length_rule": "7.7f may score only lengths locked by Tier 7.7c unless optional diagnostics are explicitly requested.",
+    "lengths": [
+      8000,
+      16000,
+      32000
+    ],
+    "no_test_tuning": true,
+    "omitted_contract_baselines": [
+      {
+        "baseline": "small_gru",
+        "reason": "optional in 7.7a if runtime/dependency budget allows; no locked implementation exists in prior standard-scoreboard harness"
+      }
+    ],
+    "primary_scoreboard": "Mackey-Glass + Lorenz + NARMA10",
+    "reference": "cra_v2_3_generic_recurrent_reference",
+    "repaired_stream_manifest": {
+      "equation_coefficients": {
+        "alpha": 0.3,
+        "beta": 0.05,
+        "delta": 0.1,
+        "gamma": 1.5,
+        "order": 10
+      },
+      "input_distribution": "Uniform(0,0.2)",
+      "labeling_rule": "Repaired NARMA10 U(0,0.2); do not silently mix with prior U(0,0.5) scores.",
+      "output_wrapper": "none",
+      "seed_policy": "same locked seeds 42/43/44 using seed+3003 random stream",
+      "selected_generator": "narma10_reduced_input_u02",
+      "source_gate": "/Users/james/JKS:CRA/controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight/tier7_7e_results.json"
+    },
+    "secondary_public_confirmation": {
+      "cmapss_source": "/Users/james/JKS:CRA/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_results.json",
+      "nab_source": "/Users/james/JKS:CRA/controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision/tier7_1m_results.json",
+      "rule": "secondary rows are reported only; they cannot rescue failed standardized core"
+    },
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "shams": [
+      "target_shuffle_control",
+      "time_shuffle_control",
+      "lag_only_online_lms_control",
+      "state_disabled",
+      "memory_disabled",
+      "replay_disabled_not_applicable_standardized_core",
+      "prediction_disabled",
+      "self_evaluation_disabled",
+      "composition_routing_disabled",
+      "policy_action_disabled",
+      "planning_disabled_v2_3_equivalent",
+      "future_label_leak_guard"
+    ],
+    "split": "chronological train 65%, test 35%",
+    "tasks": [
+      "mackey_glass",
+      "lorenz",
+      "narma10"
+    ]
+  },
+  "generated_at_utc": "2026-05-09T14:30:32+00:00",
+  "leakage_audit": {
+    "by_length": [
+      {
+        "guards": [
+          {
+            "guard": "finite_stream_precheck",
+            "passed": true
+          },
+          {
+            "guard": "chronological_65_35_split",
+            "passed": true
+          },
+          {
+            "guard": "train_prefix_normalization",
+            "passed": true
+          },
+          {
+            "guard": "prediction_before_online_update",
+            "passed": true
+          },
+          {
+            "guard": "candidate_meta_features_use_only_observed_history",
+            "passed": true
+          },
+          {
+            "guard": "target_shuffle_control_present",
+            "passed": true
+          },
+          {
+            "guard": "time_shuffle_control_present",
+            "passed": true
+          },
+          {
+            "guard": "secondary_adapters_cannot_rescue_core_failure",
+            "passed": true
+          },
+          {
+            "guard": "small_gru_omitted_with_budget_note",
+            "passed": true
+          }
+        ],
+        "horizon": 8,
+        "invalid_task_count": 0,
+        "length": 8000,
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "small_gru_status": "omitted: no locked local dependency/runtime budget in prior Tier 7.0 scorer; ESN/ridge/lag/persistence/online LMS retained",
+        "status": "pass",
+        "tasks": [
+          "mackey_glass",
+          "lorenz",
+          "narma10"
+        ]
+      },
+      {
+        "guards": [
+          {
+            "guard": "finite_stream_precheck",
+            "passed": true
+          },
+          {
+            "guard": "chronological_65_35_split",
+            "passed": true
+          },
+          {
+            "guard": "train_prefix_normalization",
+            "passed": true
+          },
+          {
+            "guard": "prediction_before_online_update",
+            "passed": true
+          },
+          {
+            "guard": "candidate_meta_features_use_only_observed_history",
+            "passed": true
+          },
+          {
+            "guard": "target_shuffle_control_present",
+            "passed": true
+          },
+          {
+            "guard": "time_shuffle_control_present",
+            "passed": true
+          },
+          {
+            "guard": "secondary_adapters_cannot_rescue_core_failure",
+            "passed": true
+          },
+          {
+            "guard": "small_gru_omitted_with_budget_note",
+            "passed": true
+          }
+        ],
+        "horizon": 8,
+        "invalid_task_count": 0,
+        "length": 16000,
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "small_gru_status": "omitted: no locked local dependency/runtime budget in prior Tier 7.0 scorer; ESN/ridge/lag/persistence/online LMS retained",
+        "status": "pass",
+        "tasks": [
+          "mackey_glass",
+          "lorenz",
+          "narma10"
+        ]
+      },
+      {
+        "guards": [
+          {
+            "guard": "finite_stream_precheck",
+            "passed": true
+          },
+          {
+            "guard": "chronological_65_35_split",
+            "passed": true
+          },
+          {
+            "guard": "train_prefix_normalization",
+            "passed": true
+          },
+          {
+            "guard": "prediction_before_online_update",
+            "passed": true
+          },
+          {
+            "guard": "candidate_meta_features_use_only_observed_history",
+            "passed": true
+          },
+          {
+            "guard": "target_shuffle_control_present",
+            "passed": true
+          },
+          {
+            "guard": "time_shuffle_control_present",
+            "passed": true
+          },
+          {
+            "guard": "secondary_adapters_cannot_rescue_core_failure",
+            "passed": true
+          },
+          {
+            "guard": "small_gru_omitted_with_budget_note",
+            "passed": true
+          }
+        ],
+        "horizon": 8,
+        "invalid_task_count": 0,
+        "length": 32000,
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "small_gru_status": "omitted: no locked local dependency/runtime budget in prior Tier 7.0 scorer; ESN/ridge/lag/persistence/online LMS retained",
+        "status": "pass",
+        "tasks": [
+          "mackey_glass",
+          "lorenz",
+          "narma10"
+        ]
+      }
+    ],
+    "status": "pass"
+  },
+  "length_summary": [
+    {
+      "best_external_geomean_mse": 0.01854979357974845,
+      "best_external_model": "fixed_esn_train_prefix_ridge_baseline",
+      "leakage_status": "pass",
+      "length": 8000,
+      "lorenz_v2_3_divided_by_v2_5": 0.9757367616924804,
+      "mackey_v2_3_divided_by_v2_5": 2.174136418713504,
+      "narma10_v2_3_divided_by_v2_5": 1.0037286721080247,
+      "outcome": "standardized_progress_pass",
+      "paired_ci_high": 0.026484935697600534,
+      "paired_ci_low": 0.02138872594773923,
+      "runtime_seconds": 13.110229042,
+      "shams_block_promotion": false,
+      "status": "pass",
+      "target_shuffle_margin": 13.051573831446873,
+      "task_wins_vs_v2_3": 2,
+      "time_shuffle_margin": 13.103437902681176,
+      "v2_3_divided_by_v2_5": 1.2953442788748264,
+      "v2_3_geomean_mse": 0.10212220538862919,
+      "v2_5_beats_best_external": false,
+      "v2_5_geomean_mse": 0.07883788661755275
+    },
+    {
+      "best_external_geomean_mse": 0.016937159264644727,
+      "best_external_model": "fixed_esn_train_prefix_ridge_baseline",
+      "leakage_status": "pass",
+      "length": 16000,
+      "lorenz_v2_3_divided_by_v2_5": 0.9374655074272541,
+      "mackey_v2_3_divided_by_v2_5": 2.1789436619366334,
+      "narma10_v2_3_divided_by_v2_5": 1.005431889410481,
+      "outcome": "standardized_progress_pass",
+      "paired_ci_high": 0.025247533034930214,
+      "paired_ci_low": 0.012295243967271344,
+      "runtime_seconds": 27.2797675,
+      "shams_block_promotion": false,
+      "status": "pass",
+      "target_shuffle_margin": 15.232871472258834,
+      "task_wins_vs_v2_3": 2,
+      "time_shuffle_margin": 14.619404456137536,
+      "v2_3_divided_by_v2_5": 1.2781334938110767,
+      "v2_3_geomean_mse": 0.08617445900899577,
+      "v2_5_beats_best_external": false,
+      "v2_5_geomean_mse": 0.06742211156054204
+    },
+    {
+      "best_external_geomean_mse": 0.013594601360987484,
+      "best_external_model": "fixed_esn_train_prefix_ridge_baseline",
+      "leakage_status": "pass",
+      "length": 32000,
+      "lorenz_v2_3_divided_by_v2_5": 1.045581301598168,
+      "mackey_v2_3_divided_by_v2_5": 2.2014559852150453,
+      "narma10_v2_3_divided_by_v2_5": 1.0060811257251472,
+      "outcome": "standardized_progress_pass",
+      "paired_ci_high": 0.0238451900483308,
+      "paired_ci_low": 0.01685206980744037,
+      "runtime_seconds": 53.975456208000004,
+      "shams_block_promotion": false,
+      "status": "pass",
+      "target_shuffle_margin": 16.312294506439212,
+      "task_wins_vs_v2_3": 3,
+      "time_shuffle_margin": 15.962588986319375,
+      "v2_3_divided_by_v2_5": 1.3281533210485936,
+      "v2_3_geomean_mse": 0.0843176664528898,
+      "v2_5_beats_best_external": false,
+      "v2_5_geomean_mse": 0.06348488921920546
+    }
+  ],
+  "lengths": [
+    8000,
+    16000,
+    32000
+  ],
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7f_20260509_repaired_finite_stream_long_run_scoreboard",
+  "preflight_results": "/Users/james/JKS:CRA/controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight/tier7_7e_results.json",
+  "preflight_status": "pass",
+  "repaired_stream_manifest": {
+    "equation_coefficients": {
+      "alpha": 0.3,
+      "beta": 0.05,
+      "delta": 0.1,
+      "gamma": 1.5,
+      "order": 10
+    },
+    "input_distribution": "Uniform(0,0.2)",
+    "labeling_rule": "Repaired NARMA10 U(0,0.2); do not silently mix with prior U(0,0.5) scores.",
+    "output_wrapper": "none",
+    "seed_policy": "same locked seeds 42/43/44 using seed+3003 random stream",
+    "selected_generator": "narma10_reduced_input_u02",
+    "source_gate": "/Users/james/JKS:CRA/controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight/tier7_7e_results.json"
+  },
+  "runner_revision": "tier7_7f_repaired_finite_stream_long_run_scoreboard_20260509_0001",
+  "runtime_seconds": 94.632412084,
+  "secondary_confirmation": [
+    {
+      "family": "cmapss_fd001_maintenance_utility",
+      "note": "Secondary support only; cannot rescue failed Mackey/Lorenz/NARMA core.",
+      "source": "/Users/james/JKS:CRA/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_results.json",
+      "status": "supportive_prior_v2_4_policy_evidence",
+      "supports_strong_pass_secondary_clause": true
+    },
+    {
+      "family": "nab_heldout_alarm_action_cost",
+      "note": "Prior NAB closeout is preserved; no same-subset retuning in 7.7b.",
+      "source": "/Users/james/JKS:CRA/controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision/tier7_1m_results.json",
+      "status": "nab_claim_narrowed_return_to_general_mechanisms",
+      "supports_strong_pass_secondary_clause": false
+    }
+  ],
+  "sham_controls": [
+    {
+      "candidate_separates": true,
+      "geomean_mse": 0.10212220538862919,
+      "length": 8000,
+      "margin_sham_divided_by_v2_5": 1.2953442788748264,
+      "model": "planning_disabled_v2_3_equivalent"
+    },
+    {
+      "candidate_separates": false,
+      "geomean_mse": 0.07845277249713761,
+      "length": 8000,
+      "margin_sham_divided_by_v2_5": 0.9951151135965459,
+      "model": "policy_action_disabled"
+    },
+    {
+      "candidate_separates": true,
+      "geomean_mse": 0.25509102456010124,
+      "length": 8000,
+      "margin_sham_divided_by_v2_5": 3.235640064751645,
+      "model": "state_disabled"
+    },
+    {
+      "candidate_separates": false,
+      "geomean_mse": 0.0781480886386386,
+      "length": 8000,
+      "margin_sham_divided_by_v2_5": 0.9912504252903125,
+      "model": "memory_disabled"
+    },
+    {
+      "candidate_separates": false,
+      "geomean_mse": 0.07855399425255964,
+      "length": 8000,
+      "margin_sham_divided_by_v2_5": 0.9963990363368023,
+      "model": "replay_disabled_not_applicable_standardized_core"
+    },
+    {
+      "candidate_separates": false,
+      "geomean_mse": 0.07763695054221226,
+      "length": 8000,
+      "margin_sham_divided_by_v2_5": 0.9847670184112581,
+      "model": "prediction_disabled"
+    },
+    {
+      "candidate_separates": true,
+      "geomean_mse": 0.08575013982405957,
+      "length": 8000,
+      "margin_sham_divided_by_v2_5": 1.0876767947882542,
+      "model": "self_evaluation_disabled"
+    },
+    {
+      "candidate_separates": true,
+      "geomean_mse": 0.08394862191755026,
+      "length": 8000,
+      "margin_sham_divided_by_v2_5": 1.0648258790191825,
+      "model": "composition_routing_disabled"
+    },
+    {
+      "candidate_separates": true,
+      "geomean_mse": 1.0289584979042272,
+      "length": 8000,
+      "margin_sham_divided_by_v2_5": 13.051573831446873,
+      "model": "target_shuffle_control"
+    },
+    {
+      "candidate_separates": true,
+      "geomean_mse": 1.0330473516717218,
+      "length": 8000,
+      "margin_sham_divided_by_v2_5": 13.103437902681176,
+      "model": "time_shuffle_control"
+    },
+    {
+      "candidate_separates": true,
+      "geomean_mse": 0.08617445900899577,
+      "length": 16000,
+      "margin_sham_divided_by_v2_5": 1.2781334938110767,
+      "model": "planning_disabled_v2_3_equivalent"
+    },
+    {
+      "candidate_separates": false,
+      "geomean_mse": 0.06722061046706583,
+      "length": 16000,
+      "margin_sham_divided_by_v2_5": 0.9970113500035479,
+      "model": "policy_action_disabled"
+    },
+    {
+      "candidate_separates": true,
+      "geomean_mse": 0.22031269611500232,
+      "length": 16000,
+      "margin_sham_divided_by_v2_5": 3.267662359064079,
+      "model": "state_disabled"
+    },
+    {
+      "candidate_separates": false,
+      "geomean_mse": 0.06694280001752594,
+      "length": 16000,
+      "margin_sham_divided_by_v2_5": 0.9928908850238887,
+      "model": "memory_disabled"
+    },
+    {
+      "candidate_separates": false,
+      "geomean_mse": 0.06716725768446867,
+      "length": 16000,
+      "margin_sham_divided_by_v2_5": 0.9962200252977168,
+      "model": "replay_disabled_not_applicable_standardized_core"
+    },
+    {
+      "candidate_separates": false,
+      "geomean_mse": 0.06685309709389527,
+      "length": 16000,
+      "margin_sham_divided_by_v2_5": 0.9915604175918487,
+      "model": "prediction_disabled"
+    },
+    {
+      "candidate_separates": true,
+      "geomean_mse": 0.07098159225332414,
+      "length": 16000,
+      "margin_sham_divided_by_v2_5": 1.0527939664064934,
+      "model": "self_evaluation_disabled"
+    },
+    {
+      "candidate_separates": true,
+      "geomean_mse": 0.0715098755367978,
+      "length": 16000,
+      "margin_sham_divided_by_v2_5": 1.0606294267806362,
+      "model": "composition_routing_disabled"
+    },
+    {
+      "candidate_separates": true,
+      "geomean_mse": 1.0270323597900333,
+      "length": 16000,
+      "margin_sham_divided_by_v2_5": 15.232871472258834,
+      "model": "target_shuffle_control"
+    },
+    {
+      "candidate_separates": true,
+      "geomean_mse": 0.9856711181903903,
+      "length": 16000,
+      "margin_sham_divided_by_v2_5": 14.619404456137536,
+      "model": "time_shuffle_control"
+    },
+    {
+      "candidate_separates": true,
+      "geomean_mse": 0.0843176664528898,
+      "length": 32000,
+      "margin_sham_divided_by_v2_5": 1.3281533210485936,
+      "model": "planning_disabled_v2_3_equivalent"
+    },
+    {
+      "candidate_separates": false,
+      "geomean_mse": 0.06322193563859753,
+      "length": 32000,
+      "margin_sham_divided_by_v2_5": 0.995858013082452,
+      "model": "policy_action_disabled"
+    },
+    {
+      "candidate_separates": true,
+      "geomean_mse": 0.2113835517806721,
+      "length": 32000,
+      "margin_sham_divided_by_v2_5": 3.329667175613883,
+      "model": "state_disabled"
+    },
+    {
+      "candidate_separates": false,
+      "geomean_mse": 0.06318161817448484,
+      "length": 32000,
+      "margin_sham_divided_by_v2_5": 0.9952229412628655,
+      "model": "memory_disabled"
+    },
+    {
+      "candidate_separates": false,
+      "geomean_mse": 0.0632725492643358,
+      "length": 32000,
+      "margin_sham_divided_by_v2_5": 0.9966552677734621,
+      "model": "replay_disabled_not_applicable_standardized_core"
+    },
+    {
+      "candidate_separates": false,
+      "geomean_mse": 0.06309316888475174,
+      "length": 32000,
+      "margin_sham_divided_by_v2_5": 0.9938297075214045,
+      "model": "prediction_disabled"
+    },
+    {
+      "candidate_separates": true,
+      "geomean_mse": 0.0682605278601971,
+      "length": 32000,
+      "margin_sham_divided_by_v2_5": 1.0752248086076348,
+      "model": "self_evaluation_disabled"
+    },
+    {
+      "candidate_separates": true,
+      "geomean_mse": 0.06762036715079671,
+      "length": 32000,
+      "margin_sham_divided_by_v2_5": 1.065141138032264,
+      "model": "composition_routing_disabled"
+    },
+    {
+      "candidate_separates": true,
+      "geomean_mse": 1.0355842096523473,
+      "length": 32000,
+      "margin_sham_divided_by_v2_5": 16.312294506439212,
+      "model": "target_shuffle_control"
+    },
+    {
+      "candidate_separates": true,
+      "geomean_mse": 1.0133831934481947,
+      "length": 32000,
+      "margin_sham_divided_by_v2_5": 15.962588986319375,
+      "model": "time_shuffle_control"
+    }
+  ],
+  "status": "pass",
+  "tier": "Tier 7.7f - Repaired Finite-Stream Long-Run Scoreboard"
+}

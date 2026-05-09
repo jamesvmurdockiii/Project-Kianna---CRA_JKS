@@ -1,0 +1,36 @@
+{
+  "display_name": "NARMA10 repaired U(0,0.2)",
+  "finite_check": {
+    "observed_finite": true,
+    "observed_nonfinite_count": 0,
+    "target_finite": true,
+    "target_max": 3.996912905147961,
+    "target_min": -1.7704259540387637,
+    "target_nonfinite_count": 0
+  },
+  "horizon": 1,
+  "length": 32000,
+  "metadata": {
+    "equation_coefficients": {
+      "alpha": 0.3,
+      "beta": 0.05,
+      "delta": 0.1,
+      "gamma": 1.5,
+      "order": 10
+    },
+    "generator_id": "narma10_reduced_input_u02",
+    "input_distribution": "Uniform(0,0.2)",
+    "labeling_rule": "Do not silently mix with prior U(0,0.5) NARMA scores.",
+    "obs_mu": 0.1001860112339963,
+    "obs_sd": 0.05764087405293572,
+    "repaired_stream": true,
+    "source_gate": "Tier 7.7e finite-stream repair/preflight",
+    "target_mu": 0.19037337045749908,
+    "target_sd": 0.014970141464957945
+  },
+  "sample_count": 32000,
+  "seed": 44,
+  "task": "narma10",
+  "test_count": 11200,
+  "train_end": 20800
+}

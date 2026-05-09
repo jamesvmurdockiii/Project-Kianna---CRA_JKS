@@ -4292,10 +4292,23 @@ prior U(0,0.5) NARMA scores with repaired U(0,0.2) NARMA scores.
 Current next step:
 
 ```text
-Tier 7.7f — repaired finite-stream long-run scoreboard
-Question: after repairing/preflighting NARMA10, does the long-run standardized
-scoreboard classify as long-run confirmed, Mackey-only localized, baseline-gap
-persisting, signal-collapse, or stop/narrow?
+Tier 7.7f — COMPLETE / PASS, 16/16 criteria
+Outcome: mackey_only_localized
+Output: controlled_test_output/tier7_7f_20260509_repaired_finite_stream_long_run_scoreboard/
+Result: repaired NARMA10 U(0,0.2) removed the finite-stream blocker. Mackey-
+Glass persisted across 8000/16000/32000, repaired NARMA10 stayed near-flat,
+Lorenz stayed flat/weak, and ESN remained the best external baseline.
+Boundary: scoring evidence only; no freeze, no broad public usefulness claim,
+no external-baseline superiority, no hardware/native transfer, and no AGI/ASI.
+```
+
+Current next step:
+
+```text
+Tier 7.7g — Lorenz state-capacity / NARMA memory-depth diagnostic contract
+Question: are the remaining Lorenz/NARMA gaps capacity/state-interface limited,
+or do they remain flat under matched-capacity sweeps, implying a deeper
+architectural gap?
 ```
 
 Tier 7.1a predeclared these candidate/future adapter families:

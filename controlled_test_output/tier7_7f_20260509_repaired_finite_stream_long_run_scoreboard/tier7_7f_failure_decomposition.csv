@@ -1,0 +1,6 @@
+question_id,answer,evidence,interpretation
+mackey_signal_persistence,persists,8000:2.174136418713504;16000:2.1789436619366334;32000:2.2014559852150453,Mackey-Glass is the scalar delayed-recurrence signal first seen in 7.7b.
+lorenz_state_reconstruction_gap,flat_or_negative,8000:0.9757367616924804;16000:0.9374655074272541;32000:1.045581301598168,Flat Lorenz ratios indicate the current scalar interface/state reconstruction remains insufficient.
+narma_memory_depth_gap,flat_or_negative,8000:1.0037286721080247;16000:1.005431889410481;32000:1.0060811257251472,"Missing NARMA10 ratios at required lengths are benchmark-generator failures, not CRA scores."
+external_baseline_gap,persists,8000:fixed_esn_train_prefix_ridge_baseline=0.01854979357974845;16000:fixed_esn_train_prefix_ridge_baseline=0.016937159264644727;32000:fixed_esn_train_prefix_ridge_baseline=0.013594601360987484,"If ESN/ridge/online baselines still win, broad usefulness remains blocked."
+sham_specificity,separated,"8000:target=13.051573831446873,time=13.103437902681176;16000:target=15.232871472258834,time=14.619404456137536;32000:target=16.312294506439212,time=15.962588986319375",Shams must remain worse than v2.5 for any positive long-run claim.

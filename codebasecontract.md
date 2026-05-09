@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-09T14:25:22+00:00.
+Last updated: 2026-05-09T14:31:35+00:00.
 
 Current repo root:
 
@@ -1319,11 +1319,21 @@ Tier 7.7e — COMPLETE. Finite-stream repair/preflight contract.
   `narma10_reduced_input_u02` passed 9/9 required cells at 8000/16000/32000
   across seeds 42/43/44. This is benchmark repair/preflight evidence only.
 
-Tier 7.7f — CURRENT ACTIVE STEP. Repaired finite-stream long-run scoreboard.
-  Rerun the locked 7.7c long-run matrix using the repaired
-  `narma10_reduced_input_u02` stream. All models and shams must be rerun on the
-  same repaired stream; prior `U(0,0.5)` NARMA scores cannot be silently mixed
-  with repaired `U(0,0.2)` NARMA scores.
+Tier 7.7f — COMPLETE. Repaired finite-stream long-run scoreboard.
+  Status: PASS, 16/16 criteria. Output:
+  `controlled_test_output/tier7_7f_20260509_repaired_finite_stream_long_run_scoreboard/`.
+  Outcome `mackey_only_localized`: Mackey-Glass persisted across required
+  lengths, repaired NARMA10 stayed near-flat, Lorenz stayed flat/weak, shams
+  separated, and ESN remained the best external baseline. No baseline freeze,
+  broad usefulness claim, external-baseline superiority, or hardware/native
+  transfer is authorized.
+
+Tier 7.7g — CURRENT ACTIVE STEP. Lorenz state-capacity / NARMA memory-depth
+  diagnostic contract. Determine whether the remaining standardized gap is
+  capacity/state-interface limited or structurally architectural before adding
+  more mechanisms. The diagnostic should compare temporal hidden/state capacity
+  and matched-capacity ESN/reservoir references under the same repaired finite
+  stream policy.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware
