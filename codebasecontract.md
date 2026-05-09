@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-09T03:58:44+00:00.
+Last updated: 2026-05-09T04:05:49+00:00.
 
 Current repo root:
 
@@ -446,6 +446,22 @@ Tier 7.5d = COMPLETE, PASS, 18/18 criteria
   Boundary: attribution/decision evidence only; not new scoring, not public
             real-world usefulness proof, not a freeze, and not hardware/native
             transfer.
+```
+
+Latest planning/subgoal-control contract:
+
+```text
+Tier 7.6a = COMPLETE, PASS, 19/19 criteria
+  Source: controlled_test_output/tier7_6a_20260509_long_horizon_planning_contract/
+  Runner: experiments/tier7_6a_long_horizon_planning_contract.py
+  Outcome: long_horizon_planning_contract_locked_no_scoring
+  Result: 5 long-horizon/subgoal task families, 4 splits, 9 baselines, 9 shams,
+          9 metrics, 6 leakage guards, pass/fail gates, nonclaims, and expected
+          artifacts are predeclared before implementation/scoring.
+  Next gate: Tier 7.6b - Long-Horizon Planning / Subgoal-Control Local
+             Diagnostic.
+  Boundary: contract only; not planning performance, not public usefulness, not
+            a freeze, and not hardware/native transfer.
 ```
 
 Latest optional mechanism diagnostic:
@@ -1149,11 +1165,19 @@ promotion decision.
   Result: synthetic mechanism attribution supported, generator-alignment risk
     documented, and public usefulness/freeze/hardware transfer blocked.
 
-Tier 7.6a — CURRENT ACTIVE STEP. Long-horizon planning / subgoal-control
+Tier 7.6a — COMPLETE. Long-horizon planning / subgoal-control
 contract.
-  Required first move: define the exact planning/subgoal question, hypotheses,
-    nulls, tasks, baselines, shams, metrics, leakage guards, pass/fail criteria,
-    nonclaims, and expected artifacts before any scoring or implementation.
+  Status: PASS, 19/19 criteria.
+  Output: controlled_test_output/tier7_6a_20260509_long_horizon_planning_contract/
+  Result: planning/subgoal-control contract locked with no scoring.
+
+Tier 7.6b — CURRENT ACTIVE STEP. Long-horizon planning / subgoal-control local
+diagnostic.
+  Required first move: implement and score the locked 7.6a local diagnostic
+    against reactive v2.4, no-planning ablations, simple planning/RL baselines,
+    sequence baselines, shams, leakage guards, and predeclared pass/fail
+    metrics. Do not freeze or transfer unless this and a later promotion gate
+    earn it.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware

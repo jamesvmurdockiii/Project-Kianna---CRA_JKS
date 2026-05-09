@@ -1,0 +1,5 @@
+split,visible_to_development,claim_allowed,purpose
+planning_train,True,False,debug implementation and train candidates under causal online boundaries
+planning_validation,True,False,choose only among predeclared candidates and hyperparameters
+planning_hidden_holdout,False,True,final hidden pass/fail for task families and effect-size support
+planning_ood_holdout,False,True,"withheld compositions, resource schedules, and blocked-subgoal regimes"

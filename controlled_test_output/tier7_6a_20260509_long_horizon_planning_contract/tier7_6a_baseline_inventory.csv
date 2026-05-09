@@ -1,0 +1,10 @@
+baseline,role,fairness_rule
+v2_4_reactive_policy_reference,current_cra_reference,same causal observations/actions; no subgoal state
+v2_4_no_planning_ablation,candidate_ablation,same CRA mechanisms with planner/subgoal state disabled
+online_logistic_policy,external_baseline,"train-prefix only, same causal features"
+tabular_q_learning_or_sarsa,simple_rl_baseline,"same action space, same episode budget"
+dyna_q_model_based_baseline,planning_baseline,"same transition/reward samples, bounded planning updates"
+reservoir_policy_readout,sequence_baseline,predeclared size/tuning budget
+small_recurrent_tanh_policy,sequence_baseline,"bounded recurrent hidden size, no future labels"
+random_policy,negative_control,same action set and episode count
+oracle_planner_upper_bound,upper_bound_nonclaim,reported only; never used as a candidate baseline

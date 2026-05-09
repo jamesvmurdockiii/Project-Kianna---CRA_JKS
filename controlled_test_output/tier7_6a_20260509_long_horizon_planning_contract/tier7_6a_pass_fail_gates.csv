@@ -1,0 +1,10 @@
+kind,rule
+pass,candidate beats strongest non-oracle baseline on hidden success/return with positive paired support
+pass,candidate beats v2.4 reactive/no-planning references on at least three planning families
+pass,subgoal shams and planner-state ablations lose on the families they target
+pass,"benefit is not explained by action spam, always-first-subgoal, or future-goal leakage"
+pass,compact regression stays green before any promotion or baseline freeze
+fail,simple tabular/model-based baseline wins all hidden planning families
+fail,candidate wins only by seeing terminal/subgoal labels early
+fail,shuffled subgoal or no-planning ablations match the intact candidate
+fail,performance collapses into a degenerate always-act or always-first-subgoal policy

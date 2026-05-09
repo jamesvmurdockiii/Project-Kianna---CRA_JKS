@@ -14,7 +14,7 @@ mechanism promotion, lifecycle/ecology evidence, and native SpiNNaker runtime
 migration. The generated registry is the authority for which results are
 canonical.
 
-The current canonical evidence trail contains **118 registered evidence bundles**
+The current canonical evidence trail contains **119 registered evidence bundles**
 with all expected artifacts present and all criteria passing. The generated
 registry is the source of truth for the full list:
 
@@ -11289,13 +11289,27 @@ Boundary: attribution/decision evidence only; not public real-world usefulness,
 not a freeze, and not hardware/native transfer.
 ```
 
-Next required step:
+Latest planning/subgoal-control contract:
 
 ```text
 Tier 7.6a - Long-horizon planning / subgoal-control contract.
-Define the bounded planning/subgoal-control question, hypotheses, nulls, tasks,
-baselines, shams, leakage guards, metrics, pass/fail criteria, nonclaims, and
-expected artifacts before any scoring or implementation.
+Status: COMPLETE / PASS, 19/19 criteria.
+Output: controlled_test_output/tier7_6a_20260509_long_horizon_planning_contract/
+Outcome: long_horizon_planning_contract_locked_no_scoring.
+Result: 5 planning task families, 4 splits, 9 baselines, 9 shams, metrics,
+leakage guards, pass/fail gates, nonclaims, and expected artifacts are
+predeclared before implementation/scoring.
+Boundary: contract only; not planning performance, not public usefulness, not a
+freeze, and not hardware/native transfer.
+```
+
+Next required step:
+
+```text
+Tier 7.6b - Long-horizon planning / subgoal-control local diagnostic.
+Implement and score the locked 7.6a contract locally against reactive CRA,
+no-planning ablations, simple planning/RL baselines, sequence baselines, shams,
+leakage guards, and predeclared pass/fail metrics.
 ```
 
 ## Tier 5.20a - Resonant Branch Polyp Internal-Model Diagnostic

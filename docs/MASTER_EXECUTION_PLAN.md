@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-09T03:58:44+00:00.
+Last updated: 2026-05-09T04:05:49+00:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -1362,68 +1362,76 @@ ability.
     families, near-oracle generator-feature alignment risk is documented on 6/6,
     and public-usefulness/freeze/hardware-transfer claims are blocked.
 
-107. **CURRENT ACTIVE STEP** - Tier 7.6a long-horizon planning / subgoal-control
-    contract:
-    predeclare the exact planning/subgoal-control evidence contract before any
-    implementation or scoring. Include tasks, baselines, shams, leakage guards,
-    metrics, pass/fail criteria, nonclaims, artifacts, and stop rules.
+107. **COMPLETE** - Tier 7.6a long-horizon planning / subgoal-control contract:
+    passed 19/19 at
+    `controlled_test_output/tier7_6a_20260509_long_horizon_planning_contract/`.
+    Outcome `long_horizon_planning_contract_locked_no_scoring`: 5 task
+    families, 4 splits, 9 baselines, 9 shams, metrics, leakage guards, pass/fail
+    gates, nonclaims, and expected artifacts are locked before implementation.
 
-108. Mechanism iteration loop: add exactly one planned general mechanism at a
+108. **CURRENT ACTIVE STEP** - Tier 7.6b long-horizon planning /
+    subgoal-control local diagnostic:
+    implement and score the locked 7.6a diagnostic locally against reactive
+    v2.4, no-planning ablations, simple planning/RL baselines, sequence
+    baselines, and shams. No freeze or hardware/native transfer is authorized
+    from 7.6b alone.
+
+109. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
     stop the broad usefulness track and narrow the paper.
 
-109. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+110. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines. Start only after the standardized scoreboard or failure diagnosis
     identifies a winning regime, a real failure mode, or a mechanism needing
     external validation.
 
-110. Tier 7.2 held-out task challenge: define held-out families before running;
+111. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout. Include at least one synthetic holdout and one
     real-ish adapter holdout if Tier 7.1 is active.
 
-111. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+112. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines. Candidate domains include
     streaming anomaly detection, predictive-maintenance sensor streams, human
     activity streams, event prediction, ECG/biosignal streams, and finance as
     one domain only rather than the whole proof.
 
-112. Tier 7.4 policy/action selection held-out scoring: the current held-out
+113. Tier 7.4 policy/action selection held-out scoring: the current held-out
     chain is complete through 7.4h. No further NAB/C-MAPSS policy tuning is
     authorized from this chain; only the narrow C-MAPSS action-cost signal is
     preserved, with no broad action/policy claim, freeze, or hardware/native
     transfer.
 
-113. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
+114. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
     planning/subgoal control: run only after the shorter hard/real-ish tasks are
     stable. Do not claim language, AGI, or broad planning from toy gates.
 
-114. Run expanded external baselines and fairness audit at the phase lock:
+115. Run expanded external baselines and fairness audit at the phase lock:
     random/sign persistence, online perceptron/logistic, lag/ridge where
     relevant, reservoir/ESN, small GRU, STDP-only SNN, simple evolutionary
     population, simple control baselines, and SNN reviewer-defense baselines
     where practical.
 
-115. Freeze the next software baseline only if new software capability work
+116. Freeze the next software baseline only if new software capability work
     passes ablations, fair baselines, leakage controls, and compact regression.
     If no new software mechanism is promoted, keep v2.4.
 
 ### Phase I - Final Paper Lock
 
-116. Select final paper claim level: strong usefulness paper, bounded architecture
+117. Select final paper claim level: strong usefulness paper, bounded architecture
     study, or narrowed diagnostic report. Let the evidence decide.
 
-117. Run final software matrix and final hardware subset matrix. Include effect
+118. Run final software matrix and final hardware subset matrix. Include effect
     sizes, confidence intervals, worst seed, sample efficiency, runtime, command
     count, resource budgets, and claim-boundary table.
 
-118. Build the independent reproduction capsule: fresh checkout instructions,
+119. Build the independent reproduction capsule: fresh checkout instructions,
     environment lock, validation command, registry/table regeneration, EBRAINS
     ingest instructions, artifact hash manifest, and one local tier rerun.
 
-119. Draft paper/whitepaper only after the Phase H usefulness/baseline gates pass. Write
+120. Draft paper/whitepaper only after the Phase H usefulness/baseline gates pass. Write
     limitations first, then claims. Preserve failed and parked diagnostics.
 
 113. External dry run: have a clean agent or human follow only the docs. If they
@@ -1585,30 +1593,31 @@ After each completed run or design tier:
 Most recent completed gate:
 
 ```text
-Tier 7.5d = COMPLETE / PASS, 18/18 criteria.
-Output: controlled_test_output/tier7_5d_20260509_curriculum_environment_attribution_closeout/
-Outcome: synthetic_mechanism_attribution_supported_no_freeze.
-Attribution supported: 6/6 generated families.
-Risk: near-oracle generator-feature alignment documented on 6/6 generated
-families.
-Boundary: attribution/decision evidence only; no broad public usefulness claim,
-no freeze, and no hardware/native transfer.
+Tier 7.6a = COMPLETE / PASS, 19/19 criteria.
+Output: controlled_test_output/tier7_6a_20260509_long_horizon_planning_contract/
+Outcome: long_horizon_planning_contract_locked_no_scoring.
+Task families: 5.
+Baselines: 9.
+Shams: 9.
+Boundary: contract only; no planning score, no public usefulness claim, no
+freeze, and no hardware/native transfer.
 ```
 
 The next concrete action is now:
 
 ```text
-Tier 7.6a - Long-Horizon Planning / Subgoal Control Contract
+Tier 7.6b - Long-Horizon Planning / Subgoal-Control Local Diagnostic
 
-Question: What is the exact bounded planning/subgoal-control capability CRA must
-prove next, and what would falsify it?
+Question: Does the locked 7.6a subgoal-control path improve bounded multi-step
+goal completion versus reactive CRA, no-planning ablations, and fair planning/RL
+baselines?
 
-First move: define the contract only. Predeclare tasks, train/eval/hidden
-splits, baselines, shams, leakage guards, metrics, pass/fail criteria, expected
-artifacts, and nonclaims before any scoring or implementation.
+First move: implement the local diagnostic under the locked 7.6a contract.
+Export episode score rows, subgoal traces, model summaries, sham controls,
+statistical support, leakage checks, decision JSON/CSV, and claim boundaries.
 
-Boundary: contract only; no planning score, no public usefulness claim, no
-freeze, and no hardware/native transfer.
+Boundary: local diagnostic only; no baseline freeze, public usefulness claim, or
+hardware/native transfer unless later promotion/regression gates earn it.
 ```
 
 Recent closeout:

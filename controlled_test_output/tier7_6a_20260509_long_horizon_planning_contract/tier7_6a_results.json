@@ -1,0 +1,235 @@
+{
+  "contract": {
+    "claim_boundary": "Contract only. No planning score, no public usefulness claim, no new baseline freeze, no hardware/native transfer, and no language, AGI, or ASI claim.",
+    "hypothesis": "A bounded subgoal-control layer that uses context memory, routing, predictive state, and self-evaluation can improve multi-step goal completion, recovery after blocked subgoals, and regret versus reactive CRA references under causal observations.",
+    "next_gate_if_accepted": "Tier 7.6b - Long-Horizon Planning / Subgoal-Control Local Diagnostic",
+    "null_hypothesis": "CRA's proposed subgoal-control path does not outperform reactive v2.4, no-planning ablations, or simple planning/RL baselines under identical action budgets and hidden holdout schedules.",
+    "question": "Can CRA use bounded internal state to select and maintain subgoals over multi-step horizons, improving delayed sparse-return tasks beyond reactive policy/action selection and fair planning/RL baselines?"
+  },
+  "criteria": [
+    {
+      "criterion": "tier7_5d_prerequisite_exists",
+      "details": "/Users/james/JKS:CRA/controlled_test_output/tier7_5d_20260509_curriculum_environment_attribution_closeout/tier7_5d_results.json",
+      "name": "tier7_5d_prerequisite_exists",
+      "note": "/Users/james/JKS:CRA/controlled_test_output/tier7_5d_20260509_curriculum_environment_attribution_closeout/tier7_5d_results.json",
+      "operator": "must exist",
+      "pass": true,
+      "passed": true,
+      "rule": "must exist",
+      "value": true
+    },
+    {
+      "criterion": "tier7_5d_prerequisite_passed",
+      "details": "",
+      "name": "tier7_5d_prerequisite_passed",
+      "note": "",
+      "operator": "case-insensitive == PASS",
+      "pass": true,
+      "passed": true,
+      "rule": "case-insensitive == PASS",
+      "value": "PASS"
+    },
+    {
+      "criterion": "contract_question_defined",
+      "details": "",
+      "name": "contract_question_defined",
+      "note": "",
+      "operator": "non-empty",
+      "pass": true,
+      "passed": true,
+      "rule": "non-empty",
+      "value": true
+    },
+    {
+      "criterion": "hypothesis_defined",
+      "details": "",
+      "name": "hypothesis_defined",
+      "note": "",
+      "operator": "non-empty",
+      "pass": true,
+      "passed": true,
+      "rule": "non-empty",
+      "value": true
+    },
+    {
+      "criterion": "null_hypothesis_defined",
+      "details": "",
+      "name": "null_hypothesis_defined",
+      "note": "",
+      "operator": "non-empty",
+      "pass": true,
+      "passed": true,
+      "rule": "non-empty",
+      "value": true
+    },
+    {
+      "criterion": "task_families_declared",
+      "details": "",
+      "name": "task_families_declared",
+      "note": "",
+      "operator": ">= 5",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 5",
+      "value": 5
+    },
+    {
+      "criterion": "splits_declared",
+      "details": "",
+      "name": "splits_declared",
+      "note": "",
+      "operator": ">= 4",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 4",
+      "value": 4
+    },
+    {
+      "criterion": "baselines_declared",
+      "details": "",
+      "name": "baselines_declared",
+      "note": "",
+      "operator": ">= 8",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 8",
+      "value": 9
+    },
+    {
+      "criterion": "planning_rl_baselines_included",
+      "details": "",
+      "name": "planning_rl_baselines_included",
+      "note": "",
+      "operator": "must include simple planning/RL baselines",
+      "pass": true,
+      "passed": true,
+      "rule": "must include simple planning/RL baselines",
+      "value": true
+    },
+    {
+      "criterion": "shams_declared",
+      "details": "",
+      "name": "shams_declared",
+      "note": "",
+      "operator": ">= 8",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 8",
+      "value": 9
+    },
+    {
+      "criterion": "metrics_declared",
+      "details": "",
+      "name": "metrics_declared",
+      "note": "",
+      "operator": ">= 8",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 8",
+      "value": 9
+    },
+    {
+      "criterion": "leakage_guards_declared",
+      "details": "",
+      "name": "leakage_guards_declared",
+      "note": "",
+      "operator": ">= 6",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 6",
+      "value": 6
+    },
+    {
+      "criterion": "pass_fail_rules_declared",
+      "details": "",
+      "name": "pass_fail_rules_declared",
+      "note": "",
+      "operator": ">= 8",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 8",
+      "value": 9
+    },
+    {
+      "criterion": "nonclaims_declared",
+      "details": "",
+      "name": "nonclaims_declared",
+      "note": "",
+      "operator": ">= 6",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 6",
+      "value": 6
+    },
+    {
+      "criterion": "expected_artifacts_declared",
+      "details": "",
+      "name": "expected_artifacts_declared",
+      "note": "",
+      "operator": ">= 8",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 8",
+      "value": 8
+    },
+    {
+      "criterion": "contract_no_scoring",
+      "details": "",
+      "name": "contract_no_scoring",
+      "note": "",
+      "operator": "must be False",
+      "pass": true,
+      "passed": true,
+      "rule": "must be False",
+      "value": false
+    },
+    {
+      "criterion": "contract_no_freeze",
+      "details": "",
+      "name": "contract_no_freeze",
+      "note": "",
+      "operator": "must be False",
+      "pass": true,
+      "passed": true,
+      "rule": "must be False",
+      "value": false
+    },
+    {
+      "criterion": "contract_no_hardware_transfer",
+      "details": "",
+      "name": "contract_no_hardware_transfer",
+      "note": "",
+      "operator": "must be False",
+      "pass": true,
+      "passed": true,
+      "rule": "must be False",
+      "value": false
+    },
+    {
+      "criterion": "next_gate_selected",
+      "details": "",
+      "name": "next_gate_selected",
+      "note": "",
+      "operator": "== Tier 7.6b - Long-Horizon Planning / Subgoal-Control Local Diagnostic",
+      "pass": true,
+      "passed": true,
+      "rule": "== Tier 7.6b - Long-Horizon Planning / Subgoal-Control Local Diagnostic",
+      "value": "Tier 7.6b - Long-Horizon Planning / Subgoal-Control Local Diagnostic"
+    }
+  ],
+  "decision": {
+    "broad_planning_claim_authorized": false,
+    "freeze_authorized": false,
+    "hardware_transfer_authorized": false,
+    "implementation_performed": false,
+    "next_gate": "Tier 7.6b - Long-Horizon Planning / Subgoal-Control Local Diagnostic",
+    "outcome": "long_horizon_planning_contract_locked_no_scoring",
+    "scoring_performed": false,
+    "status": "PASS",
+    "tier": "Tier 7.6a - Long-Horizon Planning / Subgoal Control Contract"
+  },
+  "generated_at_utc": "2026-05-09T04:08:38+00:00",
+  "runner_revision": "tier7_6a_long_horizon_planning_contract_20260509_0001",
+  "status": "PASS",
+  "tier": "Tier 7.6a - Long-Horizon Planning / Subgoal Control Contract"
+}

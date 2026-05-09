@@ -1,0 +1,93 @@
+{
+  "artifacts": [
+    {
+      "bytes": 852,
+      "name": "baselines_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6a_20260509_long_horizon_planning_contract/tier7_6a_baseline_inventory.csv",
+      "sha256": "905fbac659bef1490311f1ffb712120aed351942a0e926526d5202e670e82354"
+    },
+    {
+      "bytes": 368,
+      "name": "decision_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6a_20260509_long_horizon_planning_contract/tier7_6a_decision.csv",
+      "sha256": "c4f4cab1e30d644ae743baec56db8e39ca02bcf38c64fdd16b3bf140e2e4a800"
+    },
+    {
+      "bytes": 431,
+      "name": "decision_json",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6a_20260509_long_horizon_planning_contract/tier7_6a_decision.json",
+      "sha256": "25a5251be0df1992f44f315f5281ed06140a4c499bdbcf6e2a8e506acb719d2c"
+    },
+    {
+      "bytes": 388,
+      "name": "expected_artifacts_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6a_20260509_long_horizon_planning_contract/tier7_6a_expected_artifacts.csv",
+      "sha256": "0a800936d0d75ca855843e21f743142b7f313fa50eca94a9b2f2283581e54b3f"
+    },
+    {
+      "bytes": 659,
+      "name": "leakage_guards_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6a_20260509_long_horizon_planning_contract/tier7_6a_leakage_guards.csv",
+      "sha256": "25563e3ffee736057385867b6ab72feb0607c913c280ec7950575eda6f2860a0"
+    },
+    {
+      "bytes": 594,
+      "name": "metrics_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6a_20260509_long_horizon_planning_contract/tier7_6a_metrics.csv",
+      "sha256": "1d2858930542af069199b94818eb8e04c80e93135b24e198d931301970fb4cb2"
+    },
+    {
+      "bytes": 497,
+      "name": "nonclaims_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6a_20260509_long_horizon_planning_contract/tier7_6a_nonclaims.csv",
+      "sha256": "6fe4954a0207a8a2e7b243275ab22dde47856d6b95ba66829907feda417901f0"
+    },
+    {
+      "bytes": 769,
+      "name": "pass_fail_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6a_20260509_long_horizon_planning_contract/tier7_6a_pass_fail_gates.csv",
+      "sha256": "b0c623cba9dd57ee91824d9d4c31dafd72e52f0ffc4a13cc83899eec1fe1c1eb"
+    },
+    {
+      "bytes": 2683,
+      "name": "report_md",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6a_20260509_long_horizon_planning_contract/tier7_6a_report.md",
+      "sha256": "653e1231eb54c7d6c7258cc6f2a23a58519db584267c72334441928f9e35dc6d"
+    },
+    {
+      "bytes": 7037,
+      "name": "results_json",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6a_20260509_long_horizon_planning_contract/tier7_6a_results.json",
+      "sha256": "fa390200eee32cf3ba64d12612225f8d4483e8bfcdda744a82c5921c167b875d"
+    },
+    {
+      "bytes": 750,
+      "name": "shams_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6a_20260509_long_horizon_planning_contract/tier7_6a_sham_controls.csv",
+      "sha256": "20b048844190f0e5f729fbe22af627428d8a6076e04f25ab67ca88fc1cda6648"
+    },
+    {
+      "bytes": 452,
+      "name": "splits_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6a_20260509_long_horizon_planning_contract/tier7_6a_split_contract.csv",
+      "sha256": "0670072f4eca68bea4cae3ed247df7b4f67c2d40d5ff0d6c03dddf538d986c61"
+    },
+    {
+      "bytes": 1129,
+      "name": "summary_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6a_20260509_long_horizon_planning_contract/tier7_6a_summary.csv",
+      "sha256": "d85b9db8fd45a549eb3d5968642aafae9fe571f36fc6ba0342635e5b08e310e2"
+    },
+    {
+      "bytes": 1434,
+      "name": "task_families_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6a_20260509_long_horizon_planning_contract/tier7_6a_task_families.csv",
+      "sha256": "9e6d69320e0411c30211fb471f278e9e5e4a5cd53beb33bcbbdd8b93c8dc16d2"
+    }
+  ],
+  "generated_at_utc": "2026-05-09T04:08:38+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_6a_20260509_long_horizon_planning_contract",
+  "runner_revision": "tier7_6a_long_horizon_planning_contract_20260509_0001",
+  "status": "PASS",
+  "tier": "Tier 7.6a - Long-Horizon Planning / Subgoal Control Contract"
+}

@@ -1,0 +1,10 @@
+metric,purpose
+episode_success_rate,final goal completion
+subgoal_completion_rate,intermediate milestone completion
+discounted_return,reward/cost performance over horizon
+regret_vs_oracle,distance from upper-bound planner without using it as baseline
+path_or_action_efficiency,avoid brute-force action spam
+recovery_steps_after_block,measure replanning rather than collapse
+wrong_order_penalty,detect reflexive actions in invalid sequence order
+seed_variance_and_worst_case,prevent mean-only claims
+paired_effect_size_and_ci,require statistical support versus best baseline and shams

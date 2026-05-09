@@ -1,0 +1,11 @@
+{
+  "broad_planning_claim_authorized": false,
+  "freeze_authorized": false,
+  "hardware_transfer_authorized": false,
+  "implementation_performed": false,
+  "next_gate": "Tier 7.6b - Long-Horizon Planning / Subgoal-Control Local Diagnostic",
+  "outcome": "long_horizon_planning_contract_locked_no_scoring",
+  "scoring_performed": false,
+  "status": "PASS",
+  "tier": "Tier 7.6a - Long-Horizon Planning / Subgoal Control Contract"
+}

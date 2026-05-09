@@ -1,0 +1,9 @@
+artifact,required_for
+tier7_6b_task_contract.json,local diagnostic
+tier7_6b_episode_score_rows.csv,scoring
+tier7_6b_model_summary.csv,scoring
+tier7_6b_subgoal_trace_rows.csv,mechanism attribution
+tier7_6b_sham_controls.csv,reviewer defense
+tier7_6b_statistical_support.csv,effect size / CI
+tier7_6b_claim_boundary.md,paper discipline
+tier7_6b_decision.json,route/freeze decision

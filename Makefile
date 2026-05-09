@@ -569,3 +569,6 @@ tier7-5c:
 
 tier7-5d:
 	python3 experiments/tier7_5d_curriculum_environment_attribution_closeout.py
+
+tier7-6a:
+	python3 experiments/tier7_6a_long_horizon_planning_contract.py

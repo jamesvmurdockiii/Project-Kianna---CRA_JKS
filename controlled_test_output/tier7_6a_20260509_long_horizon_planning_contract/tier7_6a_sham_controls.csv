@@ -1,0 +1,10 @@
+sham,purpose
+subgoal_label_shuffle,break subgoal identity while preserving event/action counts
+action_reward_shuffle,break action-to-outcome credit while preserving marginal reward
+future_goal_leak_guard,detect any use of terminal labels before causal availability
+planner_state_reset,remove long-horizon state at episode boundaries or distractor gaps
+memory_disabled,test whether context memory is required for planning benefit
+self_evaluation_disabled,test whether reliability/uncertainty contributes to replanning
+predictive_state_disabled,test whether predictive/context modeling contributes to planning
+route_shuffle,break module-routing support for hierarchical composition
+always_first_subgoal,detect degenerate fixed-subgoal policy

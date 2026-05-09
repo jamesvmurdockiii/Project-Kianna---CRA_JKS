@@ -1,0 +1,2 @@
+tier,status,outcome,scoring_performed,implementation_performed,freeze_authorized,hardware_transfer_authorized,broad_planning_claim_authorized,next_gate
+Tier 7.6a - Long-Horizon Planning / Subgoal Control Contract,PASS,long_horizon_planning_contract_locked_no_scoring,False,False,False,False,False,Tier 7.6b - Long-Horizon Planning / Subgoal-Control Local Diagnostic

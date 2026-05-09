@@ -176,7 +176,11 @@ and not hardware/native transfer. Tier 7.5d then passed at
 supporting synthetic keyed/compositional mechanism attribution while documenting
 high generator-feature alignment risk and again blocking public usefulness,
 freeze, and hardware/native transfer. Tier 7.6a long-horizon planning /
-subgoal-control contract is selected next.
+subgoal-control contract then passed at
+`controlled_test_output/tier7_6a_20260509_long_horizon_planning_contract/`,
+locking 5 task families, 9 baselines, 9 shams, leakage guards, metrics, pass/fail
+gates, nonclaims, and expected artifacts before scoring. Tier 7.6b local
+diagnostic is selected next.
 
 Tier 4.32a-hw prepare has also passed locally. The current EBRAINS upload
 folder is `ebrains_jobs/cra_432a_hw`, and the exact JobManager command is

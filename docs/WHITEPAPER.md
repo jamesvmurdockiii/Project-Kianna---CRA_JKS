@@ -25,7 +25,7 @@ The project contains three integrated layers:
 3. A staged evidence system that records canonical results, failed diagnostics,
    frozen baselines, and claim boundaries.
 
-As of the current registry, CRA has 118 canonical evidence bundles with zero
+As of the current registry, CRA has 119 canonical evidence bundles with zero
 missing expected artifacts and zero failed criteria in canonical entries. The
 software program has validated negative controls, positive learning controls,
 architecture ablations, external-baseline comparisons, delayed-credit repairs,
@@ -39,7 +39,9 @@ that this is not public usefulness, not a new freeze, and not hardware/native
 transfer. Tier 7.5d then attributed that synthetic signal to the keyed/
 compositional mechanism path while explicitly documenting high generator-feature
 alignment risk and again blocking public-usefulness, freeze, and hardware/native
-transfer claims.
+transfer claims. Tier 7.6a then locked the bounded long-horizon planning /
+subgoal-control contract without scoring; planning performance remains unproven
+until Tier 7.6b or later gates pass.
 
 The hardware program has progressed from PyNN/SpiNNaker capsule execution to a
 custom native runtime. The native runtime has passed bounded SpiNNaker hardware

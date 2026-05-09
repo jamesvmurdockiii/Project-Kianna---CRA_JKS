@@ -1,0 +1,7 @@
+guard,rule
+no_future_terminal_reward,terminal success/reward cannot be visible before the decision that earns it
+causal_observation_order,observations/actions/rewards must be logged in prediction-before-update order
+hidden_mapping_block,"hidden key-door, route, and composition mappings cannot be used during development"
+same_episode_budget,"CRA and baselines receive the same episode counts, action budgets, and train/eval windows"
+oracle_is_upper_bound_only,oracle planner cannot be used for tuning or candidate comparison claims
+subgoal_label_audit,subgoal labels used for scoring cannot be visible to online policy unless declared as observations
