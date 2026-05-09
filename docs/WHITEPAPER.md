@@ -40,8 +40,9 @@ transfer. Tier 7.5d then attributed that synthetic signal to the keyed/
 compositional mechanism path while explicitly documenting high generator-feature
 alignment risk and again blocking public-usefulness, freeze, and hardware/native
 transfer claims. Tier 7.6a then locked the bounded long-horizon planning /
-subgoal-control contract without scoring; planning performance remains unproven
-until Tier 7.6b or later gates pass.
+subgoal-control contract without scoring, and Tier 7.6b passed a bounded local
+scaffold diagnostic that supports a subgoal-control signal while preserving the
+requirement for attribution/promotion before any freeze or hardware transfer.
 
 The hardware program has progressed from PyNN/SpiNNaker capsule execution to a
 custom native runtime. The native runtime has passed bounded SpiNNaker hardware

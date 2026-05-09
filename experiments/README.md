@@ -179,8 +179,11 @@ freeze, and hardware/native transfer. Tier 7.6a long-horizon planning /
 subgoal-control contract then passed at
 `controlled_test_output/tier7_6a_20260509_long_horizon_planning_contract/`,
 locking 5 task families, 9 baselines, 9 shams, leakage guards, metrics, pass/fail
-gates, nonclaims, and expected artifacts before scoring. Tier 7.6b local
-diagnostic is selected next.
+gates, nonclaims, and expected artifacts before scoring. Tier 7.6b then passed
+at `controlled_test_output/tier7_6b_20260509_long_horizon_planning_local_diagnostic/`,
+supporting a bounded local scaffold signal while preserving the boundary that
+this is not broad planning, not a freeze, and not hardware/native transfer.
+Tier 7.6c attribution/promotion is selected next.
 
 Tier 4.32a-hw prepare has also passed locally. The current EBRAINS upload
 folder is `ebrains_jobs/cra_432a_hw`, and the exact JobManager command is

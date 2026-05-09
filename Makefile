@@ -572,3 +572,6 @@ tier7-5d:
 
 tier7-6a:
 	python3 experiments/tier7_6a_long_horizon_planning_contract.py
+
+tier7-6b:
+	python3 experiments/tier7_6b_long_horizon_planning_local_diagnostic.py

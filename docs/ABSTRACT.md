@@ -32,7 +32,8 @@ signal and a follow-up attribution closeout that supported keyed/compositional
 mechanism attribution while documenting generator-feature alignment risk and
 blocking public-usefulness, freeze, and hardware-transfer claims.
 Tier 7.6a then locked the long-horizon planning/subgoal-control contract without
-scoring, preserving the boundary that planning performance remains unproven.
+scoring. Tier 7.6b passed a bounded local scaffold diagnostic that supports a
+subgoal-control signal while requiring attribution before promotion.
 The hardware evidence includes PyNN/SpiNNaker
 capsule execution and repeatability, chunked-runtime characterization, a
 custom-runtime progression through four-core MCPL task execution, keyed memory,

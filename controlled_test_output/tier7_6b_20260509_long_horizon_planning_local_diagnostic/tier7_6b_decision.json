@@ -1,0 +1,49 @@
+{
+  "best_non_oracle_model": "dyna_q_model_based_baseline",
+  "best_non_oracle_return_mean": 8.232592592592592,
+  "best_sham_or_ablation": "self_evaluation_disabled",
+  "best_sham_return_mean": 7.916666666666667,
+  "broad_planning_claim_authorized": false,
+  "candidate_model": "cra_subgoal_controller_local_scaffold",
+  "candidate_return_mean": 11.258148148148148,
+  "candidate_success_rate": 0.8222222222222222,
+  "freeze_authorized": false,
+  "hardware_transfer_authorized": false,
+  "local_subgoal_signal_authorized": true,
+  "next_gate": "Tier 7.6c - Long-Horizon Planning / Subgoal-Control Attribution + Promotion Decision",
+  "outcome": "subgoal_control_local_diagnostic_candidate_supported_requires_attribution",
+  "status": "PASS",
+  "support_vs_best_non_oracle": {
+    "baseline": "dyna_q_model_based_baseline",
+    "candidate": "cra_subgoal_controller_local_scaffold",
+    "mean_completion_delta": 0.0734567901234568,
+    "mean_return_delta": 3.0255555555555556,
+    "mean_success_delta": 0.3037037037037037,
+    "median_return_delta": 0.0,
+    "paired_episodes": 135,
+    "positive_return_fraction": 0.4222222222222222,
+    "return_delta_ci_high": 4.395925925925926,
+    "return_delta_ci_low": 1.5796296296296297,
+    "return_effect_size": 0.36499480490704084
+  },
+  "support_vs_best_sham": {
+    "baseline": "self_evaluation_disabled",
+    "candidate": "cra_subgoal_controller_local_scaffold",
+    "mean_completion_delta": 0.08456790123456791,
+    "mean_return_delta": 3.3414814814814813,
+    "mean_success_delta": 0.32592592592592595,
+    "median_return_delta": 0.0,
+    "paired_episodes": 135,
+    "positive_return_fraction": 0.42962962962962964,
+    "return_delta_ci_high": 4.727777777777778,
+    "return_delta_ci_low": 1.9507407407407407,
+    "return_effect_size": 0.39814037804491315
+  },
+  "supported_families": [
+    "two_stage_delayed_goal_chain",
+    "key_door_goal_sequence",
+    "resource_budget_route_plan"
+  ],
+  "supported_family_count": 3,
+  "tier": "Tier 7.6b - Long-Horizon Planning / Subgoal-Control Local Diagnostic"
+}

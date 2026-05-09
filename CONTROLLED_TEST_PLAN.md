@@ -11289,7 +11289,7 @@ Boundary: attribution/decision evidence only; not public real-world usefulness,
 not a freeze, and not hardware/native transfer.
 ```
 
-Latest planning/subgoal-control contract:
+Latest planning/subgoal-control contract and local diagnostic:
 
 ```text
 Tier 7.6a - Long-horizon planning / subgoal-control contract.
@@ -11301,15 +11301,26 @@ leakage guards, pass/fail gates, nonclaims, and expected artifacts are
 predeclared before implementation/scoring.
 Boundary: contract only; not planning performance, not public usefulness, not a
 freeze, and not hardware/native transfer.
+
+Tier 7.6b - Long-horizon planning / subgoal-control local diagnostic.
+Status: COMPLETE / PASS, 19/19 criteria.
+Output: controlled_test_output/tier7_6b_20260509_long_horizon_planning_local_diagnostic/
+Outcome: subgoal_control_local_diagnostic_candidate_supported_requires_attribution.
+Result: local scaffold signal beats the strongest non-oracle baseline aggregate
+with positive paired support, beats v2.4 reactive references on at least three
+families, and separates destructive shams. Strict per-family support is 3/5.
+Boundary: local software scaffold only; not a promoted planning mechanism, not
+broad planning, not public usefulness, not a freeze, and not hardware/native
+transfer.
 ```
 
 Next required step:
 
 ```text
-Tier 7.6b - Long-horizon planning / subgoal-control local diagnostic.
-Implement and score the locked 7.6a contract locally against reactive CRA,
-no-planning ablations, simple planning/RL baselines, sequence baselines, shams,
-leakage guards, and predeclared pass/fail metrics.
+Tier 7.6c - Long-horizon planning / subgoal-control attribution + promotion decision.
+Reconcile the 7.6b scaffold signal with route/key/feature attribution,
+reduced-feature ablations, held-out composition variants, leakage guards, and
+compact-regression requirements before any promotion or freeze.
 ```
 
 ## Tier 5.20a - Resonant Branch Polyp Internal-Model Diagnostic

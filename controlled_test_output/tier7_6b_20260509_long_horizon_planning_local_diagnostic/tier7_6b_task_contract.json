@@ -1,0 +1,47 @@
+{
+  "claim_splits": [
+    "planning_hidden_holdout",
+    "planning_ood_holdout"
+  ],
+  "families": [
+    "two_stage_delayed_goal_chain",
+    "key_door_goal_sequence",
+    "resource_budget_route_plan",
+    "blocked_subgoal_recovery",
+    "hierarchical_composition_holdout"
+  ],
+  "method_boundary": "Local synthetic diagnostic scaffold. The candidate is a bounded subgoal controller over causal context/route/memory/predictive/confidence fields. It is not promoted CRA planning.",
+  "models": [
+    "cra_subgoal_controller_local_scaffold",
+    "v2_4_reactive_policy_reference",
+    "v2_4_no_planning_ablation",
+    "online_logistic_policy",
+    "tabular_q_learning_or_sarsa",
+    "dyna_q_model_based_baseline",
+    "reservoir_policy_readout",
+    "small_recurrent_tanh_policy",
+    "random_policy",
+    "oracle_planner_upper_bound",
+    "subgoal_label_shuffle",
+    "action_reward_shuffle",
+    "future_goal_leak_guard",
+    "planner_state_reset",
+    "memory_disabled",
+    "self_evaluation_disabled",
+    "predictive_state_disabled",
+    "route_shuffle",
+    "always_first_subgoal"
+  ],
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "source_contract": "/Users/james/JKS:CRA/controlled_test_output/tier7_6a_20260509_long_horizon_planning_contract/tier7_6a_results.json",
+  "splits": {
+    "planning_hidden_holdout": 5,
+    "planning_ood_holdout": 4,
+    "planning_train": 5,
+    "planning_validation": 3
+  }
+}
