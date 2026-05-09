@@ -11482,9 +11482,27 @@ Next required step:
 
 ```text
 Tier 7.7j - Capacity sham-separation / state-specificity scoring gate.
-Score the locked 7.7i probe families and classify the high-capacity signal as
-candidate-specific, generic-basis explained, low-rank collapsed,
-readout-limited, observability-limited, or inconclusive.
+Status: COMPLETE / PASS, 15/15 criteria.
+Output: controlled_test_output/tier7_7j_20260509_capacity_sham_separation_scoring_gate/
+Outcome: low_rank_collapse_confirmed.
+Result: candidate and probe-family recurrent states stayed effectively
+low-dimensional under Lorenz pressure despite larger nominal capacity.
+Candidate PR at 128 was 2.1911, max probe PR at 128 was 2.2214, target/time
+shuffle guards separated strongly, and readout concentration did not explain
+the failure.
+Boundary: diagnostic scoring only; no repair, mechanism promotion, baseline
+freeze, public usefulness claim, external-baseline superiority, or
+hardware/native transfer.
+```
+
+Next required step:
+
+```text
+Tier 7.7k - Effective-state-dimensionality repair contract.
+Pre-register a repair that targets effective recurrent state dimensionality,
+not merely nominal hidden-unit capacity. The contract must define the
+mechanism, null hypothesis, sham families, ablations, compact regression
+requirements, expected artifacts, and decision classes before implementation.
 ```
 
 Latest standardized benchmark contract:

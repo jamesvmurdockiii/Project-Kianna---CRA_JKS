@@ -4347,9 +4347,25 @@ Current next step:
 
 ```text
 Tier 7.7j — Capacity sham-separation / state-specificity scoring gate
-Question: do the locked 7.7i probes classify the 7.7h signal as
-candidate-specific, generic-basis explained, low-rank collapsed,
-readout-limited, observability-limited, or inconclusive?
+Status: COMPLETE / PASS, 15/15 criteria
+Outcome: low_rank_collapse_confirmed
+Output: controlled_test_output/tier7_7j_20260509_capacity_sham_separation_scoring_gate/
+Result: the locked state-specificity probes classified the Lorenz high-capacity
+signal as dynamic but effectively low-rank. Candidate PR stayed near 2 at 64
+and 128 units, max probe PR stayed low, target/time-shuffle guards separated,
+and readout concentration did not explain the failure.
+Boundary: no repair, no mechanism promotion, no baseline freeze, no public
+usefulness claim, no external-baseline superiority, and no hardware/native
+transfer.
+```
+
+Current next step:
+
+```text
+Tier 7.7k — Effective-state-dimensionality repair contract
+Question: what repair can raise effective recurrent state dimensionality under
+Lorenz/NARMA pressure while still separating from generic bases and shams?
+This must be locked before implementation or benchmark tuning.
 ```
 
 Tier 7.1a predeclared these candidate/future adapter families:

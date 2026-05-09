@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-09T15:22:28+00:00.
+Last updated: 2026-05-09T15:45:39+00:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -23,17 +23,17 @@ Every broad claim must be earned. If a gate fails, the claim narrows.
 Current software baseline:
 
 ```text
-v2.4 = post-Tier-7.4c cost-aware policy/action software evidence lock
-Tier 7.4c = SOFTWARE PASS / full NEST compact regression / v2.4 freeze
-              local expected-utility policy/action claim only; no public
-              usefulness claim, no hardware/native transfer claim, no
-              long-horizon planning claim, and no AGI/ASI claim
-Tier 7.4d = CONTRACT PASS / held-out-public action-cost scoring pre-registration
-              no scoring claim, no public usefulness claim, no new freeze, and
-              no hardware/native transfer claim
-Tier 7.4e = PREFLIGHT PASS / held-out-public action-cost scoring schema/source check
-              no performance scoring, no public usefulness claim, no new
-              freeze, and no hardware/native transfer claim
+v2.5 = post-Tier-7.6e reduced-feature long-horizon planning software evidence
+       lock
+Tier 7.6e = SOFTWARE PASS / full NEST compact regression / v2.5 freeze
+              bounded reduced-feature subgoal-control/planning evidence only;
+              no public usefulness claim, no hardware/native transfer claim,
+              no language claim, and no AGI/ASI claim
+Tier 7.7a-j = standardized benchmark and failure-diagnosis chain after v2.5.
+              Current latest scored diagnostic is Tier 7.7j:
+              low_rank_collapse_confirmed. No new freeze, mechanism promotion,
+              external-baseline superiority, broad usefulness claim, or
+              hardware/native transfer is authorized from 7.7j.
 ```
 
 Current hardware/custom-runtime state:
@@ -150,13 +150,13 @@ boundary = hardware smoke only; not lifecycle task benefit, not sham-control
 
 ## 2. Immediate Baseline Decision
 
-Do not freeze a new software baseline from Tier 7.0d or from the next Tier
-5.19 / 7.0e contract alone.
+Do not freeze a new software baseline from Tier 7.7j or the next Tier 7.7k
+contract alone.
 
 Current frozen lines:
 
 ```text
-Software baseline: v2.4
+Software baseline: v2.5
 Native mechanism bridge baseline: CRA_NATIVE_MECHANISM_BRIDGE_v0.3
 Lifecycle native baseline: CRA_LIFECYCLE_NATIVE_BASELINE_v0.4
 Native-scale substrate baseline: CRA_NATIVE_SCALE_BASELINE_v0.5
@@ -166,10 +166,10 @@ Reason:
 
 ```text
 v2.x software baselines are for promoted CRA mechanisms plus regression.
-Tier 7.0d narrowed a benchmark claim and exposed a missing temporal substrate;
-it did not promote a mechanism. Tier 5.19 / 7.0e is a design contract; it cannot
-freeze anything until implementation, shams, baselines, and compact regression
-pass.
+Tier 7.7j narrowed the standardized-benchmark failure diagnosis to low-rank
+state collapse; it did not promote a mechanism. Tier 7.7k is a contract step;
+it cannot freeze anything until implementation, shams, baselines, and compact
+regression pass.
 ```
 
 Baseline decision rule:
@@ -1500,35 +1500,50 @@ ability.
     repair, mechanism promotion, freeze, public usefulness claim, or
     hardware/native transfer is authorized.
 
-121. **CURRENT ACTIVE STEP** - Tier 7.7j capacity sham-separation /
+121. **COMPLETE** - Tier 7.7j capacity sham-separation /
     state-specificity scoring gate:
-    score the locked 7.7i probes and classify the 7.7h high-capacity signal as
-    candidate-specific, generic-basis explained, low-rank collapsed,
-    readout-limited, observability-limited, or inconclusive.
+    passed 15/15 at
+    `controlled_test_output/tier7_7j_20260509_capacity_sham_separation_scoring_gate/`.
+    Outcome `low_rank_collapse_confirmed`: Lorenz target/time shuffles separated
+    strongly and readout concentration did not explain the failure, but the
+    candidate state stayed near participation ratio 2 (`2.1911` at 128) and the
+    max probe PR also stayed low (`2.2214`). The best generic family remained
+    permuted recurrence. No repair, mechanism promotion, freeze, broad
+    usefulness claim, external-baseline superiority, or hardware/native transfer
+    is authorized.
 
-122. Mechanism iteration loop: add exactly one planned general mechanism at a
+122. **CURRENT ACTIVE STEP** - Tier 7.7k effective-state-dimensionality repair
+    contract:
+    pre-register the next repair before implementation. The contract must state
+    how the candidate will increase effective recurrent state dimensionality
+    under Lorenz/NARMA pressure, what shams/ablations will distinguish it from
+    generic high-dimensional bases, and what compact regressions must remain
+    green. This is a contract step only; do not implement or tune against the
+    benchmark before it is locked.
+
+123. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
     stop the broad usefulness track and narrow the paper.
 
-123. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+124. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines. Start only after the standardized scoreboard or failure diagnosis
     identifies a winning regime, a real failure mode, or a mechanism needing
     external validation.
 
-124. Tier 7.2 held-out task challenge: define held-out families before running;
+125. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout. Include at least one synthetic holdout and one
     real-ish adapter holdout if Tier 7.1 is active.
 
-125. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+126. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines. Candidate domains include
     streaming anomaly detection, predictive-maintenance sensor streams, human
     activity streams, event prediction, ECG/biosignal streams, and finance as
     one domain only rather than the whole proof.
 
-124. Tier 7.4 policy/action selection held-out scoring: the current held-out
+127. Tier 7.4 policy/action selection held-out scoring: the current held-out
     chain is complete through 7.4h. No further NAB/C-MAPSS policy tuning is
     authorized from this chain; only the narrow C-MAPSS action-cost signal is
     preserved, with no broad action/policy claim, freeze, or hardware/native
@@ -1749,7 +1764,7 @@ public usefulness claim, external-baseline superiority, hardware/native
 transfer, language, AGI, or ASI.
 ```
 
-The next concrete action is now:
+Recent contract:
 
 ```text
 Tier 7.7i - Capacity Sham-Separation / State-Specificity Contract
@@ -1764,14 +1779,30 @@ include participation ratio, rank-95, top-PC fraction, state-kernel similarity,
 candidate/sham seed stability, and readout weight concentration.
 ```
 
-The next concrete action is now:
+Latest scored gate:
 
 ```text
 Tier 7.7j - Capacity Sham-Separation / State-Specificity Scoring Gate
+Status: COMPLETE / PASS, 15/15 criteria.
+Output: controlled_test_output/tier7_7j_20260509_capacity_sham_separation_scoring_gate/
+Outcome: low_rank_collapse_confirmed.
 
-Score the locked 7.7i probes and classify whether the 7.7h high-capacity signal
-is candidate-specific, generic-basis explained, low-rank collapsed,
-readout-limited, observability-limited, or inconclusive.
+Result: the locked probe matrix found dynamic but effectively low-dimensional
+state behavior. Lorenz candidate PR stayed near 2 at high capacity, target/time
+shuffles separated strongly, the readout was not the dominant bottleneck, and
+the best generic family remained permuted recurrence. This blocks nominal-
+capacity-only repair and points to effective-state-dimensionality repair.
+```
+
+The next concrete action is now:
+
+```text
+Tier 7.7k - Effective-State-Dimensionality Repair Contract
+
+Pre-register the next repair before implementation. The contract must define
+the mechanism, null hypothesis, sham families, ablations, compact regression
+requirements, expected artifacts, and decision classes for raising effective
+state dimensionality without post-hoc benchmark tuning.
 ```
 
 Recent closeout:
@@ -1788,7 +1819,7 @@ remains blocked pending a separate transfer contract.
 Current reference state:
 
 ```text
-Software baseline: v2.4 (`baselines/CRA_EVIDENCE_BASELINE_v2.4.md`)
+Software baseline: v2.5 (`baselines/CRA_EVIDENCE_BASELINE_v2.5.md`)
 Native lifecycle baseline: CRA_LIFECYCLE_NATIVE_BASELINE_v0.4
 Baseline file: baselines/CRA_LIFECYCLE_NATIVE_BASELINE_v0.4.md
 Registry snapshot: baselines/CRA_LIFECYCLE_NATIVE_BASELINE_v0.4_STUDY_REGISTRY.snapshot.json

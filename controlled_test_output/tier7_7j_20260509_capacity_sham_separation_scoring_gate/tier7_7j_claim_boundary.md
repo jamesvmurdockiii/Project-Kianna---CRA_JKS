@@ -1,0 +1,1 @@
+Tier 7.7j scores the locked 7.7i state-specificity diagnostic. It may classify the capacity signal as candidate-specific, generic-basis explained, low-rank collapsed, readout-limited, observability-limited, or inconclusive, but it does not freeze a baseline, promote a mechanism, authorize hardware/native transfer, or claim broad public usefulness.

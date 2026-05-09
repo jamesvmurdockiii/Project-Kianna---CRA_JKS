@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-09T15:22:28+00:00.
+Last updated: 2026-05-09T15:45:39+00:00.
 
 Current repo root:
 
@@ -1353,10 +1353,21 @@ Tier 7.7i — COMPLETE. Capacity sham-separation / state-specificity contract.
   dominance, state-kernel similarity, candidate/sham seed stability, and readout
   weight concentration.
 
-Tier 7.7j — CURRENT ACTIVE STEP. Capacity sham-separation / state-specificity
-  scoring gate. Score the locked 7.7i probes and classify the 7.7h
-  high-capacity signal as candidate-specific, generic-basis explained,
-  low-rank collapsed, readout-limited, observability-limited, or inconclusive.
+Tier 7.7j — COMPLETE. Capacity sham-separation / state-specificity scoring
+  gate. Status: PASS, 15/15 criteria. Output:
+  `controlled_test_output/tier7_7j_20260509_capacity_sham_separation_scoring_gate/`.
+  Outcome `low_rank_collapse_confirmed`: Lorenz target/time shuffles separated
+  strongly and readout concentration did not explain the failure, but candidate
+  PR stayed near 2 at high capacity (`2.1911` at 128), max probe PR stayed low
+  (`2.2214`), and the best generic family remained permuted recurrence. No
+  repair, mechanism promotion, freeze, usefulness claim, external-baseline
+  superiority, or hardware/native transfer is authorized.
+
+Tier 7.7k — CURRENT ACTIVE STEP. Effective-state-dimensionality repair
+  contract. Pre-register the repair before implementation. The contract must
+  define the mechanism, null hypothesis, sham families, ablations, compact
+  regression requirements, expected artifacts, and decision classes for raising
+  effective recurrent state dimensionality without post-hoc benchmark tuning.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware
