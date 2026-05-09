@@ -1,0 +1,19 @@
+family_id,split_group,model,role,rows,mse,mae,sign_accuracy,expected_utility_per_1000,selected_as_best_sham,sham_control_purpose
+generated_compositional_reuse,hidden,key_shuffle_sham,sham_or_ablation,24,3.2688766119969523,1.4824781054401388,0.4166666666666667,-3166.6666666666665,False,break context/route/memory binding
+generated_compositional_reuse,hidden,no_key_ablation,sham_or_ablation,24,0.995672382918088,0.944032961448569,0.5416666666666666,-1750.0,True,remove keyed composition features
+generated_compositional_reuse,hidden,target_shuffle_sham,sham_or_ablation,24,2.205433774697728,1.2125768747363277,0.5,-3625.0,False,break target association
+generated_delayed_credit,hidden,key_shuffle_sham,sham_or_ablation,24,5.533627804798779,1.79365497740811,0.5416666666666666,-4416.666666666667,False,break context/route/memory binding
+generated_delayed_credit,hidden,no_key_ablation,sham_or_ablation,24,3.9622025086320765,1.4658821459954257,0.5833333333333334,-2916.6666666666665,False,remove keyed composition features
+generated_delayed_credit,hidden,target_shuffle_sham,sham_or_ablation,24,3.633602188436202,1.668584021811144,0.4583333333333333,-4125.0,True,break target association
+generated_hidden_context_reentry,hidden,key_shuffle_sham,sham_or_ablation,24,2.6822101446914584,1.269520419096634,0.625,-1458.3333333333333,True,break context/route/memory binding
+generated_hidden_context_reentry,hidden,no_key_ablation,sham_or_ablation,24,2.7536133754331615,1.3442812903701142,0.5833333333333334,-541.6666666666666,False,remove keyed composition features
+generated_hidden_context_reentry,hidden,target_shuffle_sham,sham_or_ablation,24,8.591676623407633,2.401312562862996,0.5,-2833.3333333333335,False,break target association
+generated_nonstationary_switching,hidden,key_shuffle_sham,sham_or_ablation,24,1.7156429955347954,1.0472418972607582,0.5,-1416.6666666666667,False,break context/route/memory binding
+generated_nonstationary_switching,hidden,no_key_ablation,sham_or_ablation,24,1.3012653043156435,1.021601141293446,0.5416666666666666,-333.3333333333333,True,remove keyed composition features
+generated_nonstationary_switching,hidden,target_shuffle_sham,sham_or_ablation,24,3.661434206977755,1.7564199223332242,0.2916666666666667,-3875.0,False,break target association
+generated_policy_action_cost,hidden,key_shuffle_sham,sham_or_ablation,24,2.522324136415426,1.2319742672231762,0.625,875.0,False,break context/route/memory binding
+generated_policy_action_cost,hidden,no_key_ablation,sham_or_ablation,24,1.0081263175608837,0.9631092451926161,0.625,500.0,True,remove keyed composition features
+generated_policy_action_cost,hidden,target_shuffle_sham,sham_or_ablation,24,3.0909799799243634,1.42018977893236,0.4583333333333333,-3791.6666666666665,False,break target association
+generated_predictive_binding,hidden,key_shuffle_sham,sham_or_ablation,24,3.775053691374827,1.5917113950452566,0.4166666666666667,-2416.6666666666665,False,break context/route/memory binding
+generated_predictive_binding,hidden,no_key_ablation,sham_or_ablation,24,1.2326965325884607,0.982923921373361,0.4166666666666667,-875.0,True,remove keyed composition features
+generated_predictive_binding,hidden,target_shuffle_sham,sham_or_ablation,24,11.114137317691394,2.884072833216334,0.5833333333333334,-666.6666666666666,False,break target association

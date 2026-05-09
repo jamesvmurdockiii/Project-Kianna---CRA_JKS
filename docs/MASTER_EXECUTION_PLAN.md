@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-09T03:33:00+00:00.
+Last updated: 2026-05-09T03:48:58+00:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -1344,68 +1344,79 @@ ability.
     schema contracts, baseline compatibility rows, and leakage checks are
     materialized without scoring CRA or exposing hidden holdout labels.
 
-105. **CURRENT ACTIVE STEP** - Tier 7.5c curriculum / environment generator
-    scoring gate:
-    score CRA and fair baselines on the locked generated families/splits. Hidden
-    holdout labels may be opened only inside offline scoring. Preserve leakage,
-    sham, baseline, effect-size, and claim-boundary controls.
+105. **COMPLETE** - Tier 7.5c curriculum / environment generator scoring gate:
+    passed 17/17 at
+    `controlled_test_output/tier7_5c_20260509_curriculum_environment_scoring_gate/`.
+    Outcome `generated_family_signal_confirmed_requires_attribution_gate`:
+    current CRA v2.4 confirmed generated-family software signal on 6/6 locked
+    synthetic curriculum families against fair external baselines, the v2.2
+    reference, and shams/ablations. Boundary: generated synthetic diagnostic
+    only; no public usefulness claim, no freeze, and no hardware/native transfer.
 
-106. Mechanism iteration loop: add exactly one planned general mechanism at a
+106. **CURRENT ACTIVE STEP** - Tier 7.5d curriculum / environment score
+    attribution and promotion decision:
+    separate real mechanism value from generator-feature alignment before any
+    promotion, freeze, public-usefulness claim, or hardware/native transfer.
+    Required controls include feature ablations, key/permutation shams,
+    reference separation, oracle-bound comparison, compact-regression decision,
+    and a strict claim boundary.
+
+107. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
     stop the broad usefulness track and narrow the paper.
 
-107. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+108. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines. Start only after the standardized scoreboard or failure diagnosis
     identifies a winning regime, a real failure mode, or a mechanism needing
     external validation.
 
-108. Tier 7.2 held-out task challenge: define held-out families before running;
+109. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout. Include at least one synthetic holdout and one
     real-ish adapter holdout if Tier 7.1 is active.
 
-109. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+110. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines. Candidate domains include
     streaming anomaly detection, predictive-maintenance sensor streams, human
     activity streams, event prediction, ECG/biosignal streams, and finance as
     one domain only rather than the whole proof.
 
-110. Tier 7.4 policy/action selection held-out scoring: the current held-out
+111. Tier 7.4 policy/action selection held-out scoring: the current held-out
     chain is complete through 7.4h. No further NAB/C-MAPSS policy tuning is
     authorized from this chain; only the narrow C-MAPSS action-cost signal is
     preserved, with no broad action/policy claim, freeze, or hardware/native
     transfer.
 
-111. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
+112. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
     planning/subgoal control: run only after the shorter hard/real-ish tasks are
     stable. Do not claim language, AGI, or broad planning from toy gates.
 
-112. Run expanded external baselines and fairness audit at the phase lock:
+113. Run expanded external baselines and fairness audit at the phase lock:
     random/sign persistence, online perceptron/logistic, lag/ridge where
     relevant, reservoir/ESN, small GRU, STDP-only SNN, simple evolutionary
     population, simple control baselines, and SNN reviewer-defense baselines
     where practical.
 
-113. Freeze the next software baseline only if new software capability work
+114. Freeze the next software baseline only if new software capability work
     passes ablations, fair baselines, leakage controls, and compact regression.
     If no new software mechanism is promoted, keep v2.4.
 
 ### Phase I - Final Paper Lock
 
-114. Select final paper claim level: strong usefulness paper, bounded architecture
+115. Select final paper claim level: strong usefulness paper, bounded architecture
     study, or narrowed diagnostic report. Let the evidence decide.
 
-115. Run final software matrix and final hardware subset matrix. Include effect
+116. Run final software matrix and final hardware subset matrix. Include effect
     sizes, confidence intervals, worst seed, sample efficiency, runtime, command
     count, resource budgets, and claim-boundary table.
 
-116. Build the independent reproduction capsule: fresh checkout instructions,
+117. Build the independent reproduction capsule: fresh checkout instructions,
     environment lock, validation command, registry/table regeneration, EBRAINS
     ingest instructions, artifact hash manifest, and one local tier rerun.
 
-112. Draft paper/whitepaper only after the Phase H usefulness/baseline gates pass. Write
+118. Draft paper/whitepaper only after the Phase H usefulness/baseline gates pass. Write
     limitations first, then claims. Preserve failed and parked diagnostics.
 
 113. External dry run: have a clean agent or human follow only the docs. If they
@@ -1564,7 +1575,7 @@ After each completed run or design tier:
 
 ## 12. Current Immediate Next Action
 
-The next concrete action is:
+Most recent completed gate:
 
 ```text
 Tier 7.5c - Curriculum / Environment Generator Scoring Gate
@@ -1580,6 +1591,35 @@ boundaries.
 
 Boundary: software generated-task scoring only; no freeze or hardware/native
 transfer unless a later promotion/compact-regression gate earns it.
+```
+
+Current result:
+
+```text
+Tier 7.5c = COMPLETE / PASS, 17/17 criteria.
+Output: controlled_test_output/tier7_5c_20260509_curriculum_environment_scoring_gate/
+Outcome: generated_family_signal_confirmed_requires_attribution_gate.
+Confirmed generated families: 6/6.
+Boundary: generated synthetic diagnostic only; no broad public usefulness claim,
+no freeze, and no hardware/native transfer.
+```
+
+The next concrete action is now:
+
+```text
+Tier 7.5d - Curriculum / Environment Score Attribution + Promotion Decision
+
+Question: Is the 7.5c signal attributable to CRA mechanisms rather than to
+generator-feature alignment or a feature-map shortcut?
+
+First move: run attribution checks over the locked 7.5c artifacts. Required
+checks include candidate-vs-v2.2 reference separation, key/composition feature
+ablation, key/label permutation shams, oracle-bound comparison, hidden split
+support, compact-regression decision, and explicit claim boundary.
+
+Boundary: attribution/promotion decision only; no freeze, public usefulness
+claim, or hardware/native transfer unless this gate and a compact regression
+authorize it.
 ```
 
 Recent closeout:

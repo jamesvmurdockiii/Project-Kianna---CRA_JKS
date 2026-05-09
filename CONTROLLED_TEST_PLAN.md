@@ -14,7 +14,7 @@ mechanism promotion, lifecycle/ecology evidence, and native SpiNNaker runtime
 migration. The generated registry is the authority for which results are
 canonical.
 
-The current canonical evidence trail contains **109 registered evidence bundles**
+The current canonical evidence trail contains **117 registered evidence bundles**
 with all expected artifacts present and all criteria passing. The generated
 registry is the source of truth for the full list:
 
@@ -11260,13 +11260,29 @@ mechanism promotion, not broad usefulness, not a freeze, and not
 hardware/native transfer.
 ```
 
-Next required step:
+Latest result:
 
 ```text
 Tier 7.5c - Curriculum / environment generator scoring gate.
-Score CRA and fair baselines on the locked generated families/splits. Hidden
-holdout labels may be opened only inside offline scoring. Preserve leakage,
-sham, baseline, effect-size, and claim-boundary controls.
+Status: COMPLETE / PASS, 17/17 criteria.
+Output: controlled_test_output/tier7_5c_20260509_curriculum_environment_scoring_gate/
+Outcome: generated_family_signal_confirmed_requires_attribution_gate.
+Result: current CRA v2.4 confirmed generated-family software signal on 6/6
+locked synthetic curriculum families versus fair external baselines, v2.2
+reference, and shams/ablations.
+Boundary: generated synthetic diagnostic only; not public real-world usefulness
+proof, not a mechanism promotion by itself, not broad usefulness, not a freeze,
+and not hardware/native transfer.
+```
+
+Next required step:
+
+```text
+Tier 7.5d - Curriculum / environment score attribution + promotion decision.
+Determine whether the 7.5c signal is attributable to CRA mechanisms rather than
+generator-feature alignment. Require feature ablations, key/label permutation
+shams, reference separation, oracle-bound comparison, hidden split support, and
+a compact-regression decision before any promotion or freeze.
 ```
 
 ## Tier 5.20a - Resonant Branch Polyp Internal-Model Diagnostic

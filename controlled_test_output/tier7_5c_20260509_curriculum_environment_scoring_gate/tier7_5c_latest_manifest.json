@@ -1,0 +1,81 @@
+{
+  "artifacts": [
+    {
+      "bytes": 768,
+      "name": "claim_boundary_md",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5c_20260509_curriculum_environment_scoring_gate/tier7_5c_claim_boundary.md",
+      "sha256": "5a3e384eb6a2dde2d8ab81379cba503c245c981191b06737837a8fa47b10c6da"
+    },
+    {
+      "bytes": 459,
+      "name": "decision_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5c_20260509_curriculum_environment_scoring_gate/tier7_5c_decision.csv",
+      "sha256": "7f1112d566498c8805942f8d055266d5c61372eac87219393cdfcab7171e2426"
+    },
+    {
+      "bytes": 528,
+      "name": "decision_json",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5c_20260509_curriculum_environment_scoring_gate/tier7_5c_decision.json",
+      "sha256": "8053a7f9983101d4b1e730d2c6b0bcc383cba71ee0d66edf10502a6694721052"
+    },
+    {
+      "bytes": 1703,
+      "name": "family_decisions_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5c_20260509_curriculum_environment_scoring_gate/tier7_5c_family_decisions.csv",
+      "sha256": "6eabcbead782df68723a9a57acda5789c3c56dc5fe1e8c4646271c41d6debf4a"
+    },
+    {
+      "bytes": 18043,
+      "name": "model_summary_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5c_20260509_curriculum_environment_scoring_gate/tier7_5c_model_summary.csv",
+      "sha256": "014572b3878ed79601d4690884f7f17dea23d72a9c71ca9499f3c63dbae3e664"
+    },
+    {
+      "bytes": 3039,
+      "name": "report_md",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5c_20260509_curriculum_environment_scoring_gate/tier7_5c_report.md",
+      "sha256": "2f57feb0ed7c992f2a38325758434c75f471529cc4ed2b827621f569d9718604"
+    },
+    {
+      "bytes": 10517,
+      "name": "results_json",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5c_20260509_curriculum_environment_scoring_gate/tier7_5c_results.json",
+      "sha256": "becbc45a3ce4907b29b655bff0fbba8d51b66ba2a21f1706bfa3aec23cc85ad4"
+    },
+    {
+      "bytes": 8721,
+      "name": "sample_efficiency_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5c_20260509_curriculum_environment_scoring_gate/tier7_5c_sample_efficiency.csv",
+      "sha256": "279a95ae43a64630a42e4342cd1e634f3c459373b2aa8b23ee92183097339159"
+    },
+    {
+      "bytes": 646246,
+      "name": "score_rows_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5c_20260509_curriculum_environment_scoring_gate/tier7_5c_score_rows.csv",
+      "sha256": "2579c7c9c059478b94cc8f09cc054d09bacff71dd74a0071dd2b02ad588d6049"
+    },
+    {
+      "bytes": 3348,
+      "name": "sham_controls_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5c_20260509_curriculum_environment_scoring_gate/tier7_5c_sham_controls.csv",
+      "sha256": "fbdccbbcfa10079e69334d4f7031b9fdf4ca769047948b006ed9cc6981fb3087"
+    },
+    {
+      "bytes": 3138,
+      "name": "statistical_support_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5c_20260509_curriculum_environment_scoring_gate/tier7_5c_statistical_support.csv",
+      "sha256": "5f83afdc4bc41dad661df6713a666f7481b29d7b68a5f4e3f50c2aa6a66bb537"
+    },
+    {
+      "bytes": 951,
+      "name": "summary_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5c_20260509_curriculum_environment_scoring_gate/tier7_5c_summary.csv",
+      "sha256": "a54a909068878b5a05bd930f82561507bf8bd73ea2db7df6859b7d1deac35f5a"
+    }
+  ],
+  "generated_at_utc": "2026-05-09T03:48:19+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_5c_20260509_curriculum_environment_scoring_gate",
+  "runner_revision": "tier7_5c_curriculum_environment_scoring_gate_20260509_0001",
+  "status": "PASS",
+  "tier": "Tier 7.5c - Curriculum / Environment Generator Scoring Gate"
+}

@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-09T03:33:00+00:00.
+Last updated: 2026-05-09T03:48:58+00:00.
 
 Current repo root:
 
@@ -406,10 +406,30 @@ Tier 7.5b = COMPLETE, PASS, 16/16 criteria
   Result: deterministic generated streams, split manifests, hidden-label hashes,
           schema contracts, baseline compatibility rows, and leakage checks are
           materialized without scoring CRA or exposing hidden holdout labels.
-  Next gate: Tier 7.5c - Curriculum / Environment Generator Scoring Gate.
+  Former next gate: Tier 7.5c - Curriculum / Environment Generator Scoring Gate.
   Boundary: implementation preflight only; not scoring, not a mechanism
             promotion, not broad usefulness, not a freeze, and not
             hardware/native transfer.
+```
+
+Latest curriculum scoring gate:
+
+```text
+Tier 7.5c = COMPLETE, PASS, 17/17 criteria
+  Source: controlled_test_output/tier7_5c_20260509_curriculum_environment_scoring_gate/
+  Runner: experiments/tier7_5c_curriculum_environment_scoring_gate.py
+  Outcome: generated_family_signal_confirmed_requires_attribution_gate
+  Result: current CRA v2.4 confirmed generated-family software signal on 6/6
+          locked synthetic curriculum families against fair external baselines,
+          the v2.2 reference, and shams/ablations.
+  Next gate: Tier 7.5d - Curriculum / Environment Score Attribution +
+             Promotion Decision.
+  Boundary: generated synthetic software diagnostic only; not public real-world
+            usefulness proof, not a mechanism promotion by itself, not broad
+            usefulness, not a freeze, and not hardware/native transfer. Because
+            the generator grammar is aligned with keyed/compositional features,
+            attribution must verify this is mechanism value rather than
+            generator-feature encoding.
 ```
 
 Latest optional mechanism diagnostic:
@@ -1099,10 +1119,20 @@ Tier 7.5b — COMPLETE. Curriculum / environment generator implementation prefli
   Result: deterministic stream/split/schema/baseline/leakage artifacts are
     materialized without scoring CRA or exposing hidden holdout labels.
 
-Tier 7.5c — CURRENT ACTIVE STEP. Curriculum / environment generator scoring gate.
-  Required first move: score CRA and fair baselines on the locked generated
-    families/splits, open hidden labels only inside offline scoring, and preserve
-    leakage, sham, effect-size, and claim-boundary controls.
+Tier 7.5c — COMPLETE. Curriculum / environment generator scoring gate.
+  Status: PASS, 17/17 criteria.
+  Output: controlled_test_output/tier7_5c_20260509_curriculum_environment_scoring_gate/
+  Result: generated-family software signal confirmed on 6/6 locked synthetic
+    families, with broad public usefulness, freeze, and hardware/native transfer
+    blocked.
+
+Tier 7.5d — CURRENT ACTIVE STEP. Curriculum / environment score attribution and
+promotion decision.
+  Required first move: determine whether the 7.5c signal is genuine mechanism
+    value or generator-feature alignment. Preserve external/reference/sham
+    comparisons, add feature-ablation/permutation/oracle-bound checks, and do
+    not freeze or transfer to hardware unless attribution and compact regression
+    justify it.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware

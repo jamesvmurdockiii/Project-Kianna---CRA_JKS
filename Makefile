@@ -563,3 +563,6 @@ tier7-5a:
 
 tier7-5b:
 	python3 experiments/tier7_5b_curriculum_environment_preflight.py
+
+tier7-5c:
+	python3 experiments/tier7_5c_curriculum_environment_scoring_gate.py

@@ -1,0 +1,12 @@
+{
+  "broad_public_usefulness_authorized": false,
+  "confirmed_generated_family_count": 6,
+  "freeze_authorized": false,
+  "generated_family_signal_authorized": true,
+  "hardware_transfer_authorized": false,
+  "hidden_labels_opened_only_for_offline_scoring": true,
+  "next_gate": "Tier 7.5d - Curriculum / Environment Score Attribution + Promotion Decision",
+  "outcome": "generated_family_signal_confirmed_requires_attribution_gate",
+  "status": "PASS",
+  "tier": "Tier 7.5c - Curriculum / Environment Generator Scoring Gate"
+}

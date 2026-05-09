@@ -1,0 +1,18 @@
+criterion,value,rule,pass,details
+tier7_5b_prerequisite_exists,True,must exist,True,/Users/james/JKS:CRA/controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight/tier7_5b_results.json
+tier7_5b_prerequisite_passed,PASS,case-insensitive == PASS,True,
+stream_rows_loaded,384,== 384,True,
+split_manifest_loaded,24,>= 24,True,
+baseline_compatibility_loaded,54,>= 50,True,
+offline_hashes_match_preflight,384,== stream rows,True,
+score_rows_written,2720,> 0,True,
+summary_rows_written,136,> 0,True,
+family_decisions_written,6,== 6,True,
+statistical_support_written,18,>= 18,True,
+sample_efficiency_written,120,> 0,True,
+sham_controls_written,18,>= 18,True,
+hidden_label_opening_offline_only,1632,> 0,True,
+generated_family_signal_count,6,>= 1 for generated-family signal,True,
+broad_public_claim_blocked,False,must be False,True,
+freeze_blocked,False,must be False,True,
+hardware_transfer_blocked,False,must be False,True,

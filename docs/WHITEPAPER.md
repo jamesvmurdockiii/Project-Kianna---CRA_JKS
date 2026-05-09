@@ -25,7 +25,7 @@ The project contains three integrated layers:
 3. A staged evidence system that records canonical results, failed diagnostics,
    frozen baselines, and claim boundaries.
 
-As of the current registry, CRA has 116 canonical evidence bundles with zero
+As of the current registry, CRA has 117 canonical evidence bundles with zero
 missing expected artifacts and zero failed criteria in canonical entries. The
 software program has validated negative controls, positive learning controls,
 architecture ablations, external-baseline comparisons, delayed-credit repairs,
@@ -33,7 +33,10 @@ lifecycle/self-scaling, lifecycle sham controls, circuit-motif causality, and
 bounded host-side mechanisms for memory, replay/consolidation, predictive
 context, composition/routing, working-memory diagnostics, temporal spike coding,
 neuron-parameter sensitivity, predictive binding, self-evaluation, and
-fading-memory temporal state.
+fading-memory temporal state. Tier 7.5c confirmed a generated-family synthetic
+software signal on 6/6 locked curriculum families while preserving the boundary
+that this is not public usefulness, not a new freeze, and not hardware/native
+transfer.
 
 The hardware program has progressed from PyNN/SpiNNaker capsule execution to a
 custom native runtime. The native runtime has passed bounded SpiNNaker hardware

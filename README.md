@@ -3,7 +3,7 @@
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
 [![Tests](https://img.shields.io/badge/tests-151%20passing-brightgreen.svg)](#validation)
-[![Evidence](https://img.shields.io/badge/canonical%20evidence-109%20bundles-blue.svg)](STUDY_EVIDENCE_INDEX.md)
+[![Evidence](https://img.shields.io/badge/canonical%20evidence-117%20bundles-blue.svg)](STUDY_EVIDENCE_INDEX.md)
 
 Coral Reef Architecture (CRA) is a neuromorphic learning research platform for
 studying local spiking plasticity, delayed credit assignment, population-level
@@ -73,13 +73,14 @@ controlled ablations, baseline comparisons, and explicit claim boundaries.
 | Latest policy/action closeout | Tier 7.4h passed from [`controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout`](controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout): outcome `policy_action_track_closed_narrow_cmapss_signal_return_to_mechanism_benchmark_loop`. The closeout preserves only the narrow C-MAPSS action-cost signal, blocks broad public usefulness and incremental v2.4-over-v2.2 claims, blocks freeze/hardware transfer, and routes the project to Tier 7.5a curriculum/environment contract. |
 | Latest curriculum contract | Tier 7.5a passed from [`controlled_test_output/tier7_5a_20260509_curriculum_environment_contract`](controlled_test_output/tier7_5a_20260509_curriculum_environment_contract): outcome `curriculum_environment_contract_locked_no_scoring`. The contract predeclares generated task families, difficulty schedule, hidden holdout splits, baselines, leakage guards, metrics, pass/fail gates, and expected artifacts before implementation/scoring. Contract only; no usefulness claim, freeze, or hardware transfer. |
 | Latest curriculum preflight | Tier 7.5b passed from [`controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight`](controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight): outcome `curriculum_generator_preflight_materialized_no_scoring`. Deterministic generated streams, split manifests, hidden-label hashes, schema contracts, baseline compatibility rows, and leakage checks are materialized without scoring CRA or exposing hidden holdout labels. Preflight only; no usefulness claim, freeze, or hardware transfer. |
+| Latest curriculum scoring gate | Tier 7.5c passed from [`controlled_test_output/tier7_5c_20260509_curriculum_environment_scoring_gate`](controlled_test_output/tier7_5c_20260509_curriculum_environment_scoring_gate): outcome `generated_family_signal_confirmed_requires_attribution_gate`. Current CRA v2.4 confirmed generated-family software signal on `6/6` locked synthetic families against external baselines, v2.2 reference, and shams/ablations. Boundary: generated synthetic diagnostic only; no public usefulness claim, no freeze, and no hardware/native transfer. |
 | Latest optional mechanism diagnostic | Tier 5.20a passed as a harness from [`controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic`](controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic), but the full 16-resonant-branch polyp proxy was **not promoted**: it helped `variable_delay_multi_cue` and slightly helped `anomaly_detection_stream`, but regressed the standard three and hidden-context task versus v2.3. |
 | Latest optional mechanism repair | Tier 5.20b passed as a harness from [`controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic`](controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic), but neither 8 LIF / 8 resonant nor 12 LIF / 4 resonant earned promotion. Best candidate was `hybrid_8_lif_8_resonant`, with all-task geomean MSE `0.2852846857844163` versus v2.3 `0.2610804850928049`, two wins, two material regressions, and only one sham-separated task. No core polyp replacement, freeze, or hardware transfer. |
 | Latest minimal-dose mechanism check | Tier 5.20c passed as a harness from [`controlled_test_output/tier5_20c_20260508_minimal_resonant_polyp_diagnostic`](controlled_test_output/tier5_20c_20260508_minimal_resonant_polyp_diagnostic), but 14 LIF / 2 resonant was **not promoted**: all-task geomean MSE `0.2777975100580056` versus v2.3 `0.2610804850928049`, zero task wins, one material regression, and zero sham-separated tasks. |
 | Latest resonant-heavy mechanism check | Tier 5.20d passed as a harness from [`controlled_test_output/tier5_20d_20260508_resonant_heavy_polyp_diagnostic`](controlled_test_output/tier5_20d_20260508_resonant_heavy_polyp_diagnostic), but 4 LIF / 12 resonant was **not promoted**: all-task geomean MSE `0.29289224348599796` versus v2.3 `0.2610804850928049`, three task wins, two material regressions, and two sham-separated tasks. The signal is real enough to record, but not safe enough to integrate. |
 | Latest near-full resonant check | Tier 5.20e passed as a harness from [`controlled_test_output/tier5_20e_20260508_near_full_resonant_polyp_diagnostic`](controlled_test_output/tier5_20e_20260508_near_full_resonant_polyp_diagnostic), but 2 LIF / 14 resonant was **not promoted**: all-task geomean MSE `0.30374770797663714` versus v2.3 `0.2610804850928049`, three task wins, three material regressions, and two sham-separated tasks. This closes the current resonant branch dose sweep; resonant branches remain parked. |
-| Active next gate | Tier 7.5c curriculum/environment generator scoring gate: score CRA and fair baselines on the locked generated families/splits, with hidden holdout labels revealed only inside offline scoring and all leakage/sham controls preserved. |
-| Canonical registry | 116 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
+| Active next gate | Tier 7.5d curriculum/environment score attribution and promotion decision: separate true mechanism value from generator-feature alignment before any promotion, freeze, public-usefulness claim, or hardware/native transfer. |
+| Canonical registry | 117 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
 | Validation suite | 151 pytest tests plus registry, paper-table, and repository-audit generation. |
 
 ## What CRA Implements
@@ -207,7 +208,7 @@ python3 experiments/tier5_external_baselines.py \
 `make validate` currently runs:
 
 - 151 pytest unit tests.
-- Evidence registry generation: 116 canonical bundles, 0 failed criteria.
+- Evidence registry generation: 117 canonical bundles, 0 failed criteria.
 - Paper results table export.
 - Repository audit.
 
@@ -252,7 +253,7 @@ commit used. A placeholder software citation is:
   author       = {Murdock, James V. and CRA Contributors},
   year         = {2026},
   url          = {https://github.com/jamesvmurdockiii/Project-Kianna---CRA_JKS},
-  note         = {116 canonical evidence bundles; bounded SpiNNaker hardware validation}
+  note         = {117 canonical evidence bundles; bounded SpiNNaker hardware validation}
 }
 ```
 
