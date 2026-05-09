@@ -329,6 +329,22 @@ Tier 7.4a = COMPLETE, PASS, 13/13 criteria
             hardware/native transfer.
 ```
 
+Latest cost-aware policy/action local diagnostic:
+
+```text
+Tier 7.4b = COMPLETE, PASS, 15/15 criteria
+  Source: controlled_test_output/tier7_4b_20260509_cost_aware_policy_action_local_diagnostic/
+  Runner: experiments/tier7_4b_cost_aware_policy_action_local_diagnostic.py
+  Outcome: cost_aware_policy_candidate_requires_regression
+  Result: v2.3 cost-aware policy ranked first among non-oracle models, beat
+          the best external baseline by expected utility, won 2/3 task families
+          versus external baselines, separated shams/ablations, and avoided
+          no-action collapse.
+  Next gate: Tier 7.4c - Cost-Aware Policy/Action Promotion + Compact Regression Gate.
+  Boundary: candidate local software evidence only; no promoted mechanism, no
+            freeze, no public usefulness claim, and no hardware/native transfer.
+```
+
 Latest optional mechanism diagnostic:
 
 ```text
@@ -958,12 +974,17 @@ Tier 7.4a — COMPLETE. Cost-aware policy/action selection contract.
     tasks, actions, asymmetric costs, metrics, baselines, shams, ablations,
     pass/fail criteria, and nonclaims.
 
-Tier 7.4b — CURRENT ACTIVE STEP. Cost-aware policy/action local diagnostic.
-  Required first move: implement the smallest local software diagnostic from the
-    7.4a contract. Compare intact CRA policy/action selection against fixed
-    thresholds, always-act/always-abstain, online policy baselines, shams, and
-    ablations. Do not promote unless expected utility improves without
-    degenerating into no-action or threshold tuning.
+Tier 7.4b — COMPLETE. Cost-aware policy/action local diagnostic.
+  Status: LOCAL SOFTWARE PASS, 15/15 criteria.
+  Output: controlled_test_output/tier7_4b_20260509_cost_aware_policy_action_local_diagnostic/
+  Result: candidate policy/action mechanism evidence; no freeze or hardware transfer.
+
+Tier 7.4c — CURRENT ACTIVE STEP. Cost-aware policy/action promotion + compact
+  regression gate.
+  Required first move: lock the 7.4b candidate, rerun compact v2.3 guardrails,
+    preserve sham/ablation separation, block no-action collapse, verify no
+    leakage/test-label threshold tuning, and promote/freeze only if every
+    predeclared gate stays green.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware

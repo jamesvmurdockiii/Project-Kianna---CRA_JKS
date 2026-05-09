@@ -136,8 +136,13 @@ tuning, and selecting Tier 7.4a cost-aware policy/action selection as the next
 general mechanism gate. No usefulness claim, hardware transfer, or native
 migration is authorized from the NAB adapter chain. Tier 7.4a then passed at
 `controlled_test_output/tier7_4a_20260509_cost_aware_policy_action_contract/`,
-predeclaring the policy/action contract. The next active step is Tier 7.4b
-cost-aware policy/action local diagnostic.
+predeclaring the policy/action contract. Tier 7.4b then passed at
+`controlled_test_output/tier7_4b_20260509_cost_aware_policy_action_local_diagnostic/`:
+the v2.3 cost-aware policy ranked first among non-oracle models, beat the best
+external baseline by expected utility, separated shams/ablations, and avoided
+no-action collapse. This is candidate local software evidence only. The next
+active step is Tier 7.4c cost-aware policy/action promotion plus compact
+regression.
 
 Tier 4.32a-hw prepare has also passed locally. The current EBRAINS upload
 folder is `ebrains_jobs/cra_432a_hw`, and the exact JobManager command is

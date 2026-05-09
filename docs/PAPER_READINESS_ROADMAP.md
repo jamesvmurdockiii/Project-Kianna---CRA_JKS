@@ -3762,7 +3762,9 @@ v2.3 reduced false positives but did not beat rolling z-score or v2.2 and
 separated only two of three shams. Tier 7.1m closed the NAB adapter loop,
 narrowed the claim to partial/local signal only, and selected cost-aware
 policy/action selection as the next general mechanism gate. Tier 7.4a then
-passed the contract, so the next step is Tier 7.4b; stop tuning C-MAPSS for now.
+passed the contract, and Tier 7.4b passed the local diagnostic as candidate
+evidence. The next step is Tier 7.4c promotion plus compact regression; stop
+tuning C-MAPSS/NAB adapter policies for now.
 ```
 
 ### Tier 6.2: Diagnostic Hard Task Suite
@@ -3939,22 +3941,37 @@ v2.2, and separated only two of three shams. None of these tiers authorizes a
 freeze or native transfer.
 ```
 
-Current next step:
+Tier 7.4b result:
 
 ```text
 Tier 7.4b — Cost-aware policy/action local diagnostic
+Status: COMPLETE / PASS, 15/15 criteria.
+Output: controlled_test_output/tier7_4b_20260509_cost_aware_policy_action_local_diagnostic/
+Outcome: cost_aware_policy_candidate_requires_regression.
+v2.3 policy expected utility mean: 18.046296296296294.
+Best external baseline: fixed_train_only_threshold at 5.924382716049381.
+Best sham/ablation: random_confidence_ablation at 15.10277777777778.
+Task-family wins versus best external baseline: 2/3.
+Boundary: local software diagnostic only; not a promoted mechanism, not a
+baseline freeze, not public usefulness proof, and not hardware/native transfer.
 ```
 
-Tier 7.4b must implement the 7.4a contract in the smallest local diagnostic:
+Current next step:
 
 ```text
-state -> action -> delayed consequence task family
-expected-utility scoring with explicit FP/miss/latency/abstain costs
-comparison against fixed thresholds, always-act, always-abstain, online policy baselines
-shams/ablations for confidence, memory, recurrent state, and policy learning
-leakage guard: no test-label threshold tuning
-promotion only if utility improves without no-action collapse
-boundary: local software diagnostic, not hardware/native transfer
+Tier 7.4c — Cost-aware policy/action promotion + compact regression gate
+```
+
+Tier 7.4c must lock the 7.4b candidate and verify:
+
+```text
+compact v2.3 guardrails stay green
+7.4b expected-utility advantage survives
+shams/ablations remain separated
+no-action collapse remains blocked
+no leakage/test-label threshold tuning
+no baseline freeze unless the promotion gate passes
+no hardware/native transfer before promotion
 ```
 
 Tier 7.1a predeclared these candidate/future adapter families:
@@ -7439,7 +7456,7 @@ Boundary: contract/family-selection only, not NAB data preflight, not scoring,
           hardware/native transfer.
 ```
 
-Tier 7.1h result: compact NAB scoring passed as a harness and produced a partial v2.3 signal, but did not confirm public usefulness. Tier 7.1i then broadened NAB to 20 streams across 6 categories. v2.3 beat v2.2 and all three v2.3 shams, but rolling z-score won the aggregate, v2.3 ranked fourth, and the v2.3 signal localized to realAdExchange plus two streams. Tier 7.1j then localized the gap to threshold/false-positive pressure. Tier 7.1k then found a same-subset `persist3` false-positive repair candidate: v2.3 ranked first under the policy, reduced FP/1000, beat rolling z-score and v2.2, and separated shams, but Tier 7.1l did not confirm that policy on held-out NAB streams. v2.3 reduced false positives but ranked fifth, did not beat rolling z-score or v2.2, and separated only two of three shams. Tier 7.1m closed the NAB loop: partial/local signal only, no usefulness claim, no freeze, no hardware transfer, and no more adapter-policy tuning on this chain. Tier 7.4a then passed the cost-aware policy/action contract. Next: Tier 7.4b cost-aware policy/action local diagnostic. Use `CRA_NATIVE_SCALE_BASELINE_v0.5` only as the frozen native substrate reference, not as usefulness evidence.
+Tier 7.1h result: compact NAB scoring passed as a harness and produced a partial v2.3 signal, but did not confirm public usefulness. Tier 7.1i then broadened NAB to 20 streams across 6 categories. v2.3 beat v2.2 and all three v2.3 shams, but rolling z-score won the aggregate, v2.3 ranked fourth, and the v2.3 signal localized to realAdExchange plus two streams. Tier 7.1j then localized the gap to threshold/false-positive pressure. Tier 7.1k then found a same-subset `persist3` false-positive repair candidate: v2.3 ranked first under the policy, reduced FP/1000, beat rolling z-score and v2.2, and separated shams, but Tier 7.1l did not confirm that policy on held-out NAB streams. v2.3 reduced false positives but ranked fifth, did not beat rolling z-score or v2.2, and separated only two of three shams. Tier 7.1m closed the NAB loop: partial/local signal only, no usefulness claim, no freeze, no hardware transfer, and no more adapter-policy tuning on this chain. Tier 7.4a then passed the cost-aware policy/action contract, and Tier 7.4b passed the local diagnostic as candidate evidence. Next: Tier 7.4c cost-aware policy/action promotion plus compact regression. Use `CRA_NATIVE_SCALE_BASELINE_v0.5` only as the frozen native substrate reference, not as usefulness evidence.
 
 Detailed Tier 5.19 contract:
 
@@ -7522,10 +7539,10 @@ all, list them as a tested non-promoted scaffold that helped clarify the need
 for strict promotion gates.
 ```
 
-Next step after Tier 7.4a:
+Next step after Tier 7.4b:
 
 ```text
-Tier 7.4b - Cost-aware policy/action local diagnostic.
+Tier 7.4c - Cost-aware policy/action promotion + compact regression gate.
 ```
 
 ## Tier 5.20c/5.20d/5.20e Resonant Dose Sweep Closeout

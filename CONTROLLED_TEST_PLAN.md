@@ -14,7 +14,7 @@ mechanism promotion, lifecycle/ecology evidence, and native SpiNNaker runtime
 migration. The generated registry is the authority for which results are
 canonical.
 
-The current canonical evidence trail contains **107 registered evidence bundles**
+The current canonical evidence trail contains **108 registered evidence bundles**
 with all expected artifacts present and all criteria passing. The generated
 registry is the source of truth for the full list:
 
@@ -11127,6 +11127,30 @@ Implement the minimal local diagnostic from the 7.4a contract. Compare against
 fixed thresholds, always-act/always-abstain, online policy baselines, shams, and
 ablations. Promotion requires expected-utility improvement without collapse into
 no-action, threshold tuning, or leakage.
+```
+
+Tier 7.4b result:
+
+```text
+Tier 7.4b - Cost-aware policy/action local diagnostic.
+Status: COMPLETE / PASS, 15/15 criteria.
+Output: controlled_test_output/tier7_4b_20260509_cost_aware_policy_action_local_diagnostic/
+Outcome: cost_aware_policy_candidate_requires_regression.
+v2.3 expected utility mean: 18.046296296296294.
+Best external baseline: fixed_train_only_threshold at 5.924382716049381.
+Best sham/ablation: random_confidence_ablation at 15.10277777777778.
+Task-family wins versus best external baseline: 2/3.
+Boundary: local software diagnostic only; not a promoted mechanism, not a
+baseline freeze, not public usefulness proof, and not hardware/native transfer.
+```
+
+Next required step:
+
+```text
+Tier 7.4c - Cost-aware policy/action promotion + compact regression gate.
+Lock the 7.4b candidate policy, rerun the compact v2.3 guardrails, preserve
+the 7.4b shams/ablations, and freeze/promote only if utility, no-action,
+leakage, and regression criteria all stay green.
 ```
 
 ## Tier 5.20a - Resonant Branch Polyp Internal-Model Diagnostic

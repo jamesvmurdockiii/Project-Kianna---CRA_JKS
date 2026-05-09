@@ -1247,40 +1247,49 @@ ability.
     policy baselines, shams, ablations, metrics, pass/fail criteria, and
     compact-regression requirements.
 
-96. **CURRENT ACTIVE STEP** - Tier 7.4b cost-aware policy/action local
-    diagnostic:
-    implement the minimal local diagnostic from the 7.4a contract. Compare
-    against fixed thresholds, always-act/always-abstain, online policy
-    baselines, shams, and ablations. Promotion requires expected-utility
-    improvement without collapse into no-action, threshold tuning, or leakage.
+96. **COMPLETE** - Tier 7.4b cost-aware policy/action local diagnostic:
+    passed 15/15 at
+    `controlled_test_output/tier7_4b_20260509_cost_aware_policy_action_local_diagnostic/`.
+    The local v2.3 cost-aware policy ranked first among non-oracle models,
+    beat the best external baseline by expected utility (`18.046296296296294`
+    versus `5.924382716049381`), won 2/3 task families versus the best
+    external baseline, separated shams/ablations, and avoided no-action
+    collapse. Boundary: candidate software evidence only; no freeze and no
+    hardware/native transfer.
 
-97. Mechanism iteration loop: add exactly one planned general mechanism at a
+97. **CURRENT ACTIVE STEP** - Tier 7.4c cost-aware policy/action promotion +
+    compact regression gate:
+    lock the 7.4b candidate policy and prove it survives compact v2.3
+    regression, sham/ablation separation, no-action checks, and leakage guards
+    before any baseline freeze or hardware/native transfer is considered.
+
+98. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
     stop the broad usefulness track and narrow the paper.
 
-98. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+99. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines. Start only after the standardized scoreboard or failure diagnosis
     identifies a winning regime, a real failure mode, or a mechanism needing
     external validation.
 
-99. Tier 7.2 held-out task challenge: define held-out families before running;
+100. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout. Include at least one synthetic holdout and one
     real-ish adapter holdout if Tier 7.1 is active.
 
-100. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+101. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines. Candidate domains include
     streaming anomaly detection, predictive-maintenance sensor streams, human
     activity streams, event prediction, ECG/biosignal streams, and finance as
     one domain only rather than the whole proof.
 
-101. Tier 7.4 policy/action selection implementation: state -> action -> delayed consequence,
+102. Tier 7.4 policy/action selection implementation: state -> action -> delayed consequence,
     exploration versus exploitation, uncertainty-gated actions. Do not start
     broad policy claims until prediction/adaptation usefulness is measured.
 
-102. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
+103. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
     planning/subgoal control: run only after the shorter hard/real-ish tasks are
     stable. Do not claim language, AGI, or broad planning from toy gates.
 
@@ -1646,7 +1655,8 @@ it reduced false positives but did not beat rolling z-score or v2.2, ranked
 fifth, and separated only two of three shams. Tier 7.1m closed the adapter loop
 by narrowing the NAB claim and selecting Tier 7.4a cost-aware policy/action
 selection as the next general mechanism contract. Tier 7.4a then passed the
-contract gate, so the next active software work is Tier 7.4b local diagnostic.
+contract gate, and Tier 7.4b passed the local diagnostic as candidate evidence.
+The next active software work is Tier 7.4c promotion plus compact regression.
 Reopen native work only for targeted transfer after a software task/mechanism
 earns it under the Tier 7/6.2 gates and a separate transfer contract is written.
 It must preserve explicit board/chip/shard identity, message paths, compact

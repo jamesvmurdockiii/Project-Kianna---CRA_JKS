@@ -1,0 +1,63 @@
+{
+  "artifacts": [
+    {
+      "bytes": 534,
+      "name": "decision_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4b_20260509_cost_aware_policy_action_local_diagnostic/tier7_4b_decision.csv",
+      "sha256": "e56cbf0bdf5fb8bb772547d0a45ba2b0049fc6f201b3944b664c9ecef33b444b"
+    },
+    {
+      "bytes": 613,
+      "name": "decision_json",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4b_20260509_cost_aware_policy_action_local_diagnostic/tier7_4b_decision.json",
+      "sha256": "f1ec418865e07daef03e3522ed34bd179f03a002346e6355cd86a908ef429d54"
+    },
+    {
+      "bytes": 9147,
+      "name": "model_summary_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4b_20260509_cost_aware_policy_action_local_diagnostic/tier7_4b_model_summary.csv",
+      "sha256": "c21fd88c1b4ef53ce27618d97b99de3082f42da9d967d5ef3fe691102fa5daa6"
+    },
+    {
+      "bytes": 44097,
+      "name": "policy_metrics_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4b_20260509_cost_aware_policy_action_local_diagnostic/tier7_4b_policy_metrics.csv",
+      "sha256": "d4973fa6bf3b5d6200e8f84e1261afdd0f607d70af83af68f10e3834afae492b"
+    },
+    {
+      "bytes": 3956,
+      "name": "report_md",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4b_20260509_cost_aware_policy_action_local_diagnostic/tier7_4b_report.md",
+      "sha256": "930d490c4bd54637756bce305284b78154a0ec7d66e07c6b645380b2a2b2de9c"
+    },
+    {
+      "bytes": 259288,
+      "name": "results_json",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4b_20260509_cost_aware_policy_action_local_diagnostic/tier7_4b_results.json",
+      "sha256": "a88d252b44a326fd8ef05bb55452753aceaacaf1e52868c6fe5a90112aaa87e4"
+    },
+    {
+      "bytes": 2243,
+      "name": "summary_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4b_20260509_cost_aware_policy_action_local_diagnostic/tier7_4b_summary.csv",
+      "sha256": "93126c77d7e01ce88ab91a6f8aba32c8bd0926327066af3b42902abf926eefb3"
+    },
+    {
+      "bytes": 26639,
+      "name": "task_model_summary_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4b_20260509_cost_aware_policy_action_local_diagnostic/tier7_4b_task_model_summary.csv",
+      "sha256": "f5cb6f2f5aa66f7d0254ef792867459d91115747607c2414f72a188ce01c09a4"
+    },
+    {
+      "bytes": 2130,
+      "name": "task_summary_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4b_20260509_cost_aware_policy_action_local_diagnostic/tier7_4b_task_summary.csv",
+      "sha256": "99e05af3df99d6bedaa640fc32dec30b0e39077c42c365136d3533c7cdb4020c"
+    }
+  ],
+  "generated_at_utc": "2026-05-09T01:21:32+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_4b_20260509_cost_aware_policy_action_local_diagnostic",
+  "runner_revision": "tier7_4b_cost_aware_policy_action_local_diagnostic_20260509_0001",
+  "status": "pass",
+  "tier": "Tier 7.4b - Cost-Aware Policy/Action Local Diagnostic"
+}
