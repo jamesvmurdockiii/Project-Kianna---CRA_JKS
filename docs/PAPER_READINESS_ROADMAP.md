@@ -4394,9 +4394,26 @@ Current next step:
 
 ```text
 Tier 7.7m — Partitioned-driver attribution contract
+Status: COMPLETE / PASS, 22/22 criteria
+Output: controlled_test_output/tier7_7m_20260509_partitioned_driver_attribution_contract/
 Question: what caused the 7.7l task gain if not the predeclared state-
-dimensionality repair? Lock driver-partition, nonlinear/lag-feature,
-readout/interface, diversity-pressure, and confound controls before scoring.
+dimensionality repair? The contract locks driver-partition, nonlinear/lag-
+feature, readout/interface, diversity-pressure, generic-basis, leakage, and
+non-reproducibility controls before scoring.
+Boundary: contract only; no attribution implementation, model score, mechanism
+promotion, baseline freeze, public usefulness claim, external-baseline
+superiority, or hardware/native transfer.
+```
+
+Current next step:
+
+```text
+Tier 7.7n — Partitioned-driver attribution scoring gate
+Question: does the full partitioned-driver candidate separate from the locked
+partition, feature, readout/interface, generic-basis, target-shuffle, and
+time-shuffle controls while preserving Mackey/NARMA regression guards?
+Boundary: no promotion, freeze, hardware/native transfer, or broad usefulness
+claim unless the predeclared attribution and compact-regression gates pass.
 ```
 
 Tier 7.1a predeclared these candidate/future adapter families:

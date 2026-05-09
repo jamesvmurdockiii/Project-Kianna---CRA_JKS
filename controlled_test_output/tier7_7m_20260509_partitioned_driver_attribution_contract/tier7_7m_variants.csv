@@ -1,0 +1,12 @@
+variant,role,description,promotable
+partitioned_driver_full,candidate under attribution,The Tier 7.7l repair candidate: partitioned causal drivers with lag/nonlinear channels and deterministic diversity pressure.,True
+partition_labels_shuffled,partition-causality sham,Keep feature budget and nonlinear/lag drivers but shuffle partition assignment so driver-to-state grouping should no longer be coherent.,False
+partition_merged_unpartitioned,partition-ablation control,Use the same causal drivers without fixed partitions to test whether partitioning itself matters.,False
+nonlinear_lag_unpartitioned_same_budget,feature-enrichment control,"Retain lag/nonlinear driver features at the same budget, but remove partition-specific recurrence/state grouping.",False
+linear_lag_partitioned,nonlinear-feature ablation,Keep partitions and lagged drivers but remove nonlinear transforms to test whether nonlinear enrichment is necessary.,False
+diversity_pressure_disabled_repeat,diversity attribution repeat,Repeat the 7.7l diversity-disabled ablation under the attribution matrix.,False
+same_feature_count_random_projection,interface-budget sham,Match feature count/readout budget with causal random projections but no CRA-specific partitioned driver structure.,False
+readout_budget_matched_single_pool,baseline reference,Locked single-pool same-capacity reference with matched readout and training budget.,False
+permuted_recurrence_ensemble,generic-basis sham,Preserve the prior generic recurrence sham family to test basis luck.,False
+target_shuffle,leakage guard,Wrong target alignment guard.,False
+time_shuffle,temporal-order guard,Wrong temporal order guard.,False

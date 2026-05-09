@@ -1,0 +1,6 @@
+ablation,purpose,expected_if_causal
+remove_fast_trace_drivers,Measure whether short-timescale causal drivers carry the 7.7l gain.,Loss on Lorenz and/or NARMA relative to full candidate.
+remove_slow_trace_drivers,Measure whether slow-timescale memory drivers carry the gain.,Loss on Mackey/NARMA or long-run Lorenz stability.
+remove_lag_drivers,Measure whether explicit causal lag channels explain the improvement.,Loss on Mackey and NARMA plus possible Lorenz degradation.
+remove_nonlinear_drivers,Measure whether nonlinear basis enrichment explains the improvement.,Loss on Lorenz and NARMA relative to linear partitioned control.
+drop_one_partition_family,Check whether one partition family dominates the result rather than a distributed mechanism.,"Specific, interpretable degradation without total collapse."

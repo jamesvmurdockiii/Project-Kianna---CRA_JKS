@@ -11530,10 +11530,29 @@ Next required step:
 
 ```text
 Tier 7.7m - Partitioned-driver attribution contract.
-Pre-register whether the 7.7l gain comes from causal driver partitioning,
-nonlinear/lag features, readout/interface effects, diversity pressure, or
-another confound. Keep polyp morphology/template variability as a separate
-future contract.
+Status: COMPLETE / PASS, 22/22 criteria.
+Output: controlled_test_output/tier7_7m_20260509_partitioned_driver_attribution_contract/
+Result: the contract locks the next scoring gate to distinguish causal driver
+partitioning from nonlinear/lag feature enrichment, readout/interface budget,
+diversity pressure, generic basis effects, leakage, and non-reproducible
+scoring noise. Keep polyp morphology/template variability as a separate future
+contract.
+Boundary: contract only; no attribution implementation, model score, mechanism
+promotion, baseline freeze, public usefulness claim, external-baseline
+superiority, or hardware/native transfer.
+```
+
+Next required step:
+
+```text
+Tier 7.7n - Partitioned-driver attribution scoring gate.
+Score the locked 7.7m variants and driver-group ablations: full partitioned
+driver, partition-shuffled, merged/unpartitioned, nonlinear-lag unpartitioned,
+linear-lag partitioned, diversity-disabled repeat, same-feature random
+projection, readout-budget-matched single-pool, generic/permuted controls,
+target shuffle, and time shuffle. Report attribution margins, driver-group
+ablation deltas, budget audit, state geometry, shams, regression guards, and
+compact regression before any promotion.
 ```
 
 Latest standardized benchmark contract:

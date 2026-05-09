@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-09T16:19:33+00:00.
+Last updated: 2026-05-09T16:31:54+00:00.
 
 Current repo root:
 
@@ -1384,12 +1384,25 @@ Tier 7.7l — COMPLETE. Effective-state-dimensionality repair scoring gate.
   only; no mechanism promotion, freeze, broad usefulness claim,
   external-baseline superiority, or hardware/native transfer is authorized.
 
-Tier 7.7m — CURRENT ACTIVE STEP. Partitioned-driver attribution contract.
-  Pre-register whether the 7.7l gain comes from causal driver partitioning,
-  nonlinear/lag features, readout/interface effects, diversity pressure, or
-  another confound before any promotion or architecture change. Keep polyp
-  morphology/template variability separate as a future contract; do not layer it
-  into this attribution gate.
+Tier 7.7m — COMPLETE. Partitioned-driver attribution contract.
+  Status: PASS, 22/22 criteria. Output:
+  `controlled_test_output/tier7_7m_20260509_partitioned_driver_attribution_contract/`.
+  The contract locks the next scoring gate to distinguish causal driver
+  partitioning from nonlinear/lag feature enrichment, readout/interface budget,
+  diversity pressure, generic basis effects, leakage, and non-reproducible
+  scoring noise. Contract only; no attribution implementation, model score,
+  mechanism promotion, baseline freeze, broad usefulness claim,
+  external-baseline superiority, or hardware/native transfer is authorized.
+
+Tier 7.7n — CURRENT ACTIVE STEP. Partitioned-driver attribution scoring gate.
+  Implement and score the locked 7.7m variants exactly as pre-registered:
+  `partitioned_driver_full`, partition-shuffled, merged/unpartitioned,
+  nonlinear-lag unpartitioned same-budget, linear-lag partitioned,
+  diversity-disabled repeat, same-feature random projection,
+  readout-budget-matched single pool, generic/permuted controls, target shuffle,
+  and time shuffle. Report attribution margins, driver-group ablation deltas,
+  feature/readout-budget audit, state geometry, shams, regression guards, and
+  compact regression before any promotion or architecture change.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware

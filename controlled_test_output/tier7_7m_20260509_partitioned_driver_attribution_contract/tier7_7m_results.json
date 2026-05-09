@@ -1,0 +1,760 @@
+{
+  "attribution_hypotheses": [
+    {
+      "hypothesis": "driver_partitioning_causes_gain",
+      "rationale": "Tier 7.7l partitioned causal drivers improved Lorenz, Mackey-Glass, and repaired NARMA versus the matched single-pool reference.",
+      "required_probe": "partition labels shuffled or merged should lose while full partitioned driver retains the gain.",
+      "status": "candidate_primary"
+    },
+    {
+      "hypothesis": "nonlinear_lag_feature_enrichment_causes_gain",
+      "rationale": "The 7.7l candidate changed the causal driver basis; gains may come from lag/nonlinear features rather than partitioned recurrence.",
+      "required_probe": "unpartitioned nonlinear/lag same-feature-budget control must be compared to the full candidate.",
+      "status": "candidate_primary"
+    },
+    {
+      "hypothesis": "readout_or_feature_budget_causes_gain",
+      "rationale": "A larger or more useful interface can improve forecasting even if CRA-specific recurrence is not causal.",
+      "required_probe": "same-feature-count random projection and readout-budget-matched controls must be included.",
+      "status": "confound_to_rule_out"
+    },
+    {
+      "hypothesis": "diversity_pressure_causes_gain",
+      "rationale": "Tier 7.7l diversity-disabled was only 1.0165x worse than the full candidate, so diversity pressure is not yet a clean explanation.",
+      "required_probe": "repeat diversity-disabled and include stronger no-partition/no-diversity controls before attributing to diversity.",
+      "status": "weakened_by_7_7l"
+    },
+    {
+      "hypothesis": "generic_basis_or_basis_luck_causes_gain",
+      "rationale": "Prior Lorenz gates showed generic/permuted bases can be competitive; attribution requires separating candidate-specific structure from generic projections.",
+      "required_probe": "permuted recurrence, orthogonal basis, block basis, and same-feature random projection controls must remain locked.",
+      "status": "confound_to_rule_out"
+    },
+    {
+      "hypothesis": "leakage_or_temporal_artifact_causes_gain",
+      "rationale": "Tier 7.7l target/time shuffles separated strongly, but all scoring gates must preserve these guards.",
+      "required_probe": "target-shuffle and time-shuffle controls must fail strongly or the gate is blocked.",
+      "status": "guard"
+    }
+  ],
+  "claim_boundary": "Tier 7.7m is a pre-registration contract for attributing the Tier 7.7l partitioned-driver task gain. It does not implement the attribution gate, score a new model, promote a mechanism, freeze a baseline, claim public usefulness, or transfer anything to hardware/native runtime.",
+  "contract": {
+    "decision_boundary": "This contract authorizes only the Tier 7.7n attribution scoring gate. It does not authorize mechanism promotion, baseline freeze, hardware/native transfer, external-baseline superiority, broad public usefulness, language, AGI, or ASI claims.",
+    "hypothesis": "If causal driver partitioning is responsible, the full candidate should beat partition-shuffled, merged/unpartitioned, same-feature random projection, and generic-basis controls while coherent driver-group ablations produce interpretable losses.",
+    "mechanism_under_test": "partitioned_driver_full_attribution",
+    "null_hypothesis": "The 7.7l gain is explained by lag/nonlinear features alone, readout/interface budget, generic random basis effects, leakage, or non-reproducible scoring noise rather than CRA-specific partitioned drivers.",
+    "primary_reference": "Tier 7.7l partitioned_driver_diverse_recurrent_state versus single_pool_same_capacity",
+    "prior_diagnostic": {
+      "diversity_disabled_divided_by_repair": 1.0165316573469856,
+      "lorenz_repair_128_geomean_mse": 0.003448530743487121,
+      "lorenz_single_pool_128_geomean_mse": 0.0065086835955742274,
+      "outcome": "task_gain_without_dimension",
+      "repair_pr_128": 2.6645333760420375,
+      "status": "pass",
+      "tier": "7.7l"
+    },
+    "question": "What caused the Tier 7.7l partitioned-driver performance gain: causal driver partitioning, lag/nonlinear feature enrichment, readout/interface budget, diversity pressure, or a generic basis confound?"
+  },
+  "criteria": [
+    {
+      "criterion": "Tier 7.7l prerequisite exists",
+      "details": "",
+      "name": "Tier 7.7l prerequisite exists",
+      "note": "",
+      "operator": "exists",
+      "pass": true,
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_7l_20260509_effective_state_dimensionality_repair_scoring_gate/tier7_7l_results.json"
+    },
+    {
+      "criterion": "Tier 7.7l prerequisite passed",
+      "details": "",
+      "name": "Tier 7.7l prerequisite passed",
+      "note": "",
+      "operator": "== pass",
+      "pass": true,
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "criterion": "Tier 7.7l outcome requires attribution",
+      "details": "",
+      "name": "Tier 7.7l outcome requires attribution",
+      "note": "",
+      "operator": "== task_gain_without_dimension",
+      "pass": true,
+      "passed": true,
+      "rule": "== task_gain_without_dimension",
+      "value": "task_gain_without_dimension"
+    },
+    {
+      "criterion": "question locked",
+      "details": "",
+      "name": "question locked",
+      "note": "",
+      "operator": "non-empty",
+      "pass": true,
+      "passed": true,
+      "rule": "non-empty",
+      "value": "What caused the Tier 7.7l partitioned-driver performance gain: causal driver partitioning, lag/nonlinear feature enrichment, readout/interface budget, diversity pressure, or a generic basis confound?"
+    },
+    {
+      "criterion": "hypothesis locked",
+      "details": "",
+      "name": "hypothesis locked",
+      "note": "",
+      "operator": "non-empty",
+      "pass": true,
+      "passed": true,
+      "rule": "non-empty",
+      "value": "If causal driver partitioning is responsible, the full candidate should beat partition-shuffled, merged/unpartitioned, same-feature random projection, and generic-basis controls while coherent driver-group ablations produce interpretable losses."
+    },
+    {
+      "criterion": "null hypothesis locked",
+      "details": "",
+      "name": "null hypothesis locked",
+      "note": "",
+      "operator": "non-empty",
+      "pass": true,
+      "passed": true,
+      "rule": "non-empty",
+      "value": "The 7.7l gain is explained by lag/nonlinear features alone, readout/interface budget, generic random basis effects, leakage, or non-reproducible scoring noise rather than CRA-specific partitioned drivers."
+    },
+    {
+      "criterion": "primary mechanism named",
+      "details": "",
+      "name": "primary mechanism named",
+      "note": "",
+      "operator": "== partitioned_driver_full_attribution",
+      "pass": true,
+      "passed": true,
+      "rule": "== partitioned_driver_full_attribution",
+      "value": "partitioned_driver_full_attribution"
+    },
+    {
+      "criterion": "attribution hypotheses locked",
+      "details": "",
+      "name": "attribution hypotheses locked",
+      "note": "",
+      "operator": "includes primary and confounds",
+      "pass": true,
+      "passed": true,
+      "rule": "includes primary and confounds",
+      "value": [
+        "driver_partitioning_causes_gain",
+        "nonlinear_lag_feature_enrichment_causes_gain",
+        "readout_or_feature_budget_causes_gain",
+        "diversity_pressure_causes_gain",
+        "generic_basis_or_basis_luck_causes_gain",
+        "leakage_or_temporal_artifact_causes_gain"
+      ]
+    },
+    {
+      "criterion": "variants include partition controls",
+      "details": "",
+      "name": "variants include partition controls",
+      "note": "",
+      "operator": "partition shuffled and merged",
+      "pass": true,
+      "passed": true,
+      "rule": "partition shuffled and merged",
+      "value": [
+        "partitioned_driver_full",
+        "partition_labels_shuffled",
+        "partition_merged_unpartitioned",
+        "nonlinear_lag_unpartitioned_same_budget",
+        "linear_lag_partitioned",
+        "diversity_pressure_disabled_repeat",
+        "same_feature_count_random_projection",
+        "readout_budget_matched_single_pool",
+        "permuted_recurrence_ensemble",
+        "target_shuffle",
+        "time_shuffle"
+      ]
+    },
+    {
+      "criterion": "variants include feature controls",
+      "details": "",
+      "name": "variants include feature controls",
+      "note": "",
+      "operator": "nonlinear/lag and linear controls",
+      "pass": true,
+      "passed": true,
+      "rule": "nonlinear/lag and linear controls",
+      "value": [
+        "partitioned_driver_full",
+        "partition_labels_shuffled",
+        "partition_merged_unpartitioned",
+        "nonlinear_lag_unpartitioned_same_budget",
+        "linear_lag_partitioned",
+        "diversity_pressure_disabled_repeat",
+        "same_feature_count_random_projection",
+        "readout_budget_matched_single_pool",
+        "permuted_recurrence_ensemble",
+        "target_shuffle",
+        "time_shuffle"
+      ]
+    },
+    {
+      "criterion": "variants include interface controls",
+      "details": "",
+      "name": "variants include interface controls",
+      "note": "",
+      "operator": "random projection and budget matched",
+      "pass": true,
+      "passed": true,
+      "rule": "random projection and budget matched",
+      "value": [
+        "partitioned_driver_full",
+        "partition_labels_shuffled",
+        "partition_merged_unpartitioned",
+        "nonlinear_lag_unpartitioned_same_budget",
+        "linear_lag_partitioned",
+        "diversity_pressure_disabled_repeat",
+        "same_feature_count_random_projection",
+        "readout_budget_matched_single_pool",
+        "permuted_recurrence_ensemble",
+        "target_shuffle",
+        "time_shuffle"
+      ]
+    },
+    {
+      "criterion": "driver-group ablations locked",
+      "details": "",
+      "name": "driver-group ablations locked",
+      "note": "",
+      "operator": ">= 4 ablations",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 4 ablations",
+      "value": [
+        "remove_fast_trace_drivers",
+        "remove_slow_trace_drivers",
+        "remove_lag_drivers",
+        "remove_nonlinear_drivers",
+        "drop_one_partition_family"
+      ]
+    },
+    {
+      "criterion": "tasks locked",
+      "details": "",
+      "name": "tasks locked",
+      "note": "",
+      "operator": "Lorenz/Mackey/repaired NARMA",
+      "pass": true,
+      "passed": true,
+      "rule": "Lorenz/Mackey/repaired NARMA",
+      "value": [
+        "lorenz",
+        "mackey_glass",
+        "narma10_repaired_u02"
+      ]
+    },
+    {
+      "criterion": "metrics include attribution margin",
+      "details": "",
+      "name": "metrics include attribution margin",
+      "note": "",
+      "operator": "includes candidate_vs_control_mse_ratio",
+      "pass": true,
+      "passed": true,
+      "rule": "includes candidate_vs_control_mse_ratio",
+      "value": [
+        "geomean_mse",
+        "tail_mse",
+        "test_corr",
+        "candidate_vs_control_mse_ratio",
+        "driver_group_ablation_delta",
+        "participation_ratio",
+        "rank95_variance_count",
+        "top_pc_fraction",
+        "state_kernel_alignment",
+        "readout_weight_pr",
+        "feature_count",
+        "readout_parameter_count",
+        "target_shuffle_guard",
+        "time_shuffle_guard",
+        "compact_regression_status"
+      ]
+    },
+    {
+      "criterion": "metrics include driver ablation delta",
+      "details": "",
+      "name": "metrics include driver ablation delta",
+      "note": "",
+      "operator": "includes driver_group_ablation_delta",
+      "pass": true,
+      "passed": true,
+      "rule": "includes driver_group_ablation_delta",
+      "value": [
+        "geomean_mse",
+        "tail_mse",
+        "test_corr",
+        "candidate_vs_control_mse_ratio",
+        "driver_group_ablation_delta",
+        "participation_ratio",
+        "rank95_variance_count",
+        "top_pc_fraction",
+        "state_kernel_alignment",
+        "readout_weight_pr",
+        "feature_count",
+        "readout_parameter_count",
+        "target_shuffle_guard",
+        "time_shuffle_guard",
+        "compact_regression_status"
+      ]
+    },
+    {
+      "criterion": "metrics include budget audit",
+      "details": "",
+      "name": "metrics include budget audit",
+      "note": "",
+      "operator": "feature/readout budget",
+      "pass": true,
+      "passed": true,
+      "rule": "feature/readout budget",
+      "value": [
+        "geomean_mse",
+        "tail_mse",
+        "test_corr",
+        "candidate_vs_control_mse_ratio",
+        "driver_group_ablation_delta",
+        "participation_ratio",
+        "rank95_variance_count",
+        "top_pc_fraction",
+        "state_kernel_alignment",
+        "readout_weight_pr",
+        "feature_count",
+        "readout_parameter_count",
+        "target_shuffle_guard",
+        "time_shuffle_guard",
+        "compact_regression_status"
+      ]
+    },
+    {
+      "criterion": "leakage guards locked",
+      "details": "",
+      "name": "leakage guards locked",
+      "note": "",
+      "operator": "target/time shuffles",
+      "pass": true,
+      "passed": true,
+      "rule": "target/time shuffles",
+      "value": [
+        "partitioned_driver_full",
+        "partition_labels_shuffled",
+        "partition_merged_unpartitioned",
+        "nonlinear_lag_unpartitioned_same_budget",
+        "linear_lag_partitioned",
+        "diversity_pressure_disabled_repeat",
+        "same_feature_count_random_projection",
+        "readout_budget_matched_single_pool",
+        "permuted_recurrence_ensemble",
+        "target_shuffle",
+        "time_shuffle"
+      ]
+    },
+    {
+      "criterion": "decision classes locked",
+      "details": "",
+      "name": "decision classes locked",
+      "note": "",
+      "operator": ">= 7 classes",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 7 classes",
+      "value": [
+        "driver_partition_attribution_confirmed",
+        "nonlinear_lag_features_explain_gain",
+        "readout_or_feature_budget_explains_gain",
+        "diversity_pressure_attribution_confirmed",
+        "generic_projection_explains_gain",
+        "task_gain_but_attribution_inconclusive",
+        "regression_or_leakage_blocked",
+        "negative_result"
+      ]
+    },
+    {
+      "criterion": "expected artifacts locked",
+      "details": "",
+      "name": "expected artifacts locked",
+      "note": "",
+      "operator": ">= 12 artifacts",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 12 artifacts",
+      "value": [
+        "tier7_7n_results.json",
+        "tier7_7n_summary.csv",
+        "tier7_7n_scoreboard.csv",
+        "tier7_7n_score_summary.csv",
+        "tier7_7n_attribution_margins.csv",
+        "tier7_7n_driver_group_ablations.csv",
+        "tier7_7n_state_geometry.csv",
+        "tier7_7n_state_geometry_summary.csv",
+        "tier7_7n_state_kernel_alignment.csv",
+        "tier7_7n_readout_budget_audit.csv",
+        "tier7_7n_sham_controls.csv",
+        "tier7_7n_regression_summary.json",
+        "tier7_7n_claim_boundary.md",
+        "tier7_7n_report.md"
+      ]
+    },
+    {
+      "criterion": "polyp morphology excluded",
+      "details": "",
+      "name": "polyp morphology excluded",
+      "note": "",
+      "operator": "not part of Tier 7.7m",
+      "pass": true,
+      "passed": true,
+      "rule": "not part of Tier 7.7m",
+      "value": "separate future contract"
+    },
+    {
+      "criterion": "no baseline freeze authorized",
+      "details": "",
+      "name": "no baseline freeze authorized",
+      "note": "",
+      "operator": "false",
+      "pass": true,
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "criterion": "no hardware/native transfer authorized",
+      "details": "",
+      "name": "no hardware/native transfer authorized",
+      "note": "",
+      "operator": "false",
+      "pass": true,
+      "passed": true,
+      "rule": "false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 22,
+  "criteria_total": 22,
+  "driver_group_ablations": [
+    {
+      "ablation": "remove_fast_trace_drivers",
+      "expected_if_causal": "Loss on Lorenz and/or NARMA relative to full candidate.",
+      "purpose": "Measure whether short-timescale causal drivers carry the 7.7l gain."
+    },
+    {
+      "ablation": "remove_slow_trace_drivers",
+      "expected_if_causal": "Loss on Mackey/NARMA or long-run Lorenz stability.",
+      "purpose": "Measure whether slow-timescale memory drivers carry the gain."
+    },
+    {
+      "ablation": "remove_lag_drivers",
+      "expected_if_causal": "Loss on Mackey and NARMA plus possible Lorenz degradation.",
+      "purpose": "Measure whether explicit causal lag channels explain the improvement."
+    },
+    {
+      "ablation": "remove_nonlinear_drivers",
+      "expected_if_causal": "Loss on Lorenz and NARMA relative to linear partitioned control.",
+      "purpose": "Measure whether nonlinear basis enrichment explains the improvement."
+    },
+    {
+      "ablation": "drop_one_partition_family",
+      "expected_if_causal": "Specific, interpretable degradation without total collapse.",
+      "purpose": "Check whether one partition family dominates the result rather than a distributed mechanism."
+    }
+  ],
+  "expected_artifacts": [
+    {
+      "artifact": "tier7_7n_results.json",
+      "required_for_scoring_gate": true
+    },
+    {
+      "artifact": "tier7_7n_summary.csv",
+      "required_for_scoring_gate": true
+    },
+    {
+      "artifact": "tier7_7n_scoreboard.csv",
+      "required_for_scoring_gate": true
+    },
+    {
+      "artifact": "tier7_7n_score_summary.csv",
+      "required_for_scoring_gate": true
+    },
+    {
+      "artifact": "tier7_7n_attribution_margins.csv",
+      "required_for_scoring_gate": true
+    },
+    {
+      "artifact": "tier7_7n_driver_group_ablations.csv",
+      "required_for_scoring_gate": true
+    },
+    {
+      "artifact": "tier7_7n_state_geometry.csv",
+      "required_for_scoring_gate": true
+    },
+    {
+      "artifact": "tier7_7n_state_geometry_summary.csv",
+      "required_for_scoring_gate": true
+    },
+    {
+      "artifact": "tier7_7n_state_kernel_alignment.csv",
+      "required_for_scoring_gate": true
+    },
+    {
+      "artifact": "tier7_7n_readout_budget_audit.csv",
+      "required_for_scoring_gate": true
+    },
+    {
+      "artifact": "tier7_7n_sham_controls.csv",
+      "required_for_scoring_gate": true
+    },
+    {
+      "artifact": "tier7_7n_regression_summary.json",
+      "required_for_scoring_gate": true
+    },
+    {
+      "artifact": "tier7_7n_claim_boundary.md",
+      "required_for_scoring_gate": true
+    },
+    {
+      "artifact": "tier7_7n_report.md",
+      "required_for_scoring_gate": true
+    }
+  ],
+  "generated_at_utc": "2026-05-09T16:31:54+00:00",
+  "metrics": [
+    {
+      "metric": "geomean_mse",
+      "required": true,
+      "role": "primary standardized task score"
+    },
+    {
+      "metric": "tail_mse",
+      "required": true,
+      "role": "tail stability"
+    },
+    {
+      "metric": "test_corr",
+      "required": true,
+      "role": "prediction shape"
+    },
+    {
+      "metric": "candidate_vs_control_mse_ratio",
+      "required": true,
+      "role": "attribution margin"
+    },
+    {
+      "metric": "driver_group_ablation_delta",
+      "required": true,
+      "role": "causal driver attribution"
+    },
+    {
+      "metric": "participation_ratio",
+      "required": true,
+      "role": "state-geometry audit"
+    },
+    {
+      "metric": "rank95_variance_count",
+      "required": true,
+      "role": "state-rank audit"
+    },
+    {
+      "metric": "top_pc_fraction",
+      "required": true,
+      "role": "low-rank collapse audit"
+    },
+    {
+      "metric": "state_kernel_alignment",
+      "required": true,
+      "role": "candidate/control state similarity"
+    },
+    {
+      "metric": "readout_weight_pr",
+      "required": true,
+      "role": "readout concentration guard"
+    },
+    {
+      "metric": "feature_count",
+      "required": true,
+      "role": "interface-budget audit"
+    },
+    {
+      "metric": "readout_parameter_count",
+      "required": true,
+      "role": "fairness audit"
+    },
+    {
+      "metric": "target_shuffle_guard",
+      "required": true,
+      "role": "leakage guard"
+    },
+    {
+      "metric": "time_shuffle_guard",
+      "required": true,
+      "role": "temporal guard"
+    },
+    {
+      "metric": "compact_regression_status",
+      "required": true,
+      "role": "promotion guard if attribution passes"
+    }
+  ],
+  "next_gate": "Tier 7.7n - Partitioned-Driver Attribution Scoring Gate",
+  "nonclaims": [
+    "not an attribution implementation",
+    "not a model score",
+    "not a mechanism promotion",
+    "not a baseline freeze",
+    "not a public usefulness claim",
+    "not external-baseline superiority",
+    "not hardware/native transfer",
+    "not language, AGI, or ASI evidence"
+  ],
+  "outcome_classes": [
+    {
+      "allowed_claim": "The 7.7l performance gain is attributable to causal driver partitioning under controlled software benchmark conditions.",
+      "outcome": "driver_partition_attribution_confirmed",
+      "rule": "Full partitioned driver beats partition-shuffled, merged/unpartitioned, same-feature random projection, and best generic sham by at least 5% on Lorenz; at least one coherent driver-group ablation hurts as predicted; Mackey/NARMA regressions stay within 10%; shuffle guards and compact regression pass."
+    },
+    {
+      "allowed_claim": "The gain is useful but explained by causal lag/nonlinear feature enrichment, not partitioned CRA recurrence; no mechanism promotion until reframed.",
+      "outcome": "nonlinear_lag_features_explain_gain",
+      "rule": "Unpartitioned nonlinear/lag same-budget control matches full candidate, while removing lag/nonlinear drivers hurts."
+    },
+    {
+      "allowed_claim": "The gain is an interface/readout-budget effect, not a CRA-specific mechanism; do not promote.",
+      "outcome": "readout_or_feature_budget_explains_gain",
+      "rule": "Same-feature-count random projection or widened-interface control matches or beats the full candidate."
+    },
+    {
+      "allowed_claim": "Diversity pressure contributes causally to the observed performance improvement, subject to compact regression.",
+      "outcome": "diversity_pressure_attribution_confirmed",
+      "rule": "Full candidate materially beats diversity-disabled repeat and the difference is not explained by partition/feature/readout controls."
+    },
+    {
+      "allowed_claim": "The observed improvement remains generic-basis explainable; no promotion.",
+      "outcome": "generic_projection_explains_gain",
+      "rule": "Permuted, orthogonal, block, or random projection shams match or beat the candidate."
+    },
+    {
+      "allowed_claim": "Keep as a diagnostic candidate; no promotion, freeze, hardware transfer, or broad usefulness claim.",
+      "outcome": "task_gain_but_attribution_inconclusive",
+      "rule": "Full candidate remains useful versus single-pool, but attribution controls disagree or margins are too small."
+    },
+    {
+      "allowed_claim": "No attribution claim and no mechanism promotion.",
+      "outcome": "regression_or_leakage_blocked",
+      "rule": "Mackey/NARMA regress materially, target/time shuffles do not fail, or compact regression fails."
+    },
+    {
+      "allowed_claim": "The 7.7l gain did not reproduce under attribution pressure; park the repair.",
+      "outcome": "negative_result",
+      "rule": "Full candidate no longer improves over single-pool/reference under the attribution matrix."
+    }
+  ],
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7m_20260509_partitioned_driver_attribution_contract",
+  "prerequisite": {
+    "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_7l_20260509_effective_state_dimensionality_repair_scoring_gate/tier7_7l_results.json",
+    "sha256": "4027880a874b042f6631542f93dfb10e2d2684741d415dd3a15ded32ba4e2784",
+    "status": "pass"
+  },
+  "runner_revision": "tier7_7m_partitioned_driver_attribution_contract_20260509_0001",
+  "status": "pass",
+  "tasks": [
+    {
+      "lengths": "8000,16000,32000",
+      "required": true,
+      "role": "primary attribution target",
+      "seeds": "42,43,44",
+      "task": "lorenz",
+      "why": "7.7l produced the clearest repair signal here but did not prove the causal source."
+    },
+    {
+      "lengths": "8000,16000,32000",
+      "required": true,
+      "role": "positive-control regression and attribution guard",
+      "seeds": "42,43,44",
+      "task": "mackey_glass",
+      "why": "7.7l improved Mackey versus single-pool; attribution should not destroy the established Mackey signal."
+    },
+    {
+      "lengths": "8000,16000,32000",
+      "required": true,
+      "role": "nonlinear-memory regression and attribution guard",
+      "seeds": "42,43,44",
+      "task": "narma10_repaired_u02",
+      "why": "7.7l improved repaired NARMA versus single-pool; attribution must track whether lag/nonlinear drivers explain it."
+    }
+  ],
+  "tier": "Tier 7.7m - Partitioned-Driver Attribution Contract",
+  "variants": [
+    {
+      "description": "The Tier 7.7l repair candidate: partitioned causal drivers with lag/nonlinear channels and deterministic diversity pressure.",
+      "promotable": true,
+      "role": "candidate under attribution",
+      "variant": "partitioned_driver_full"
+    },
+    {
+      "description": "Keep feature budget and nonlinear/lag drivers but shuffle partition assignment so driver-to-state grouping should no longer be coherent.",
+      "promotable": false,
+      "role": "partition-causality sham",
+      "variant": "partition_labels_shuffled"
+    },
+    {
+      "description": "Use the same causal drivers without fixed partitions to test whether partitioning itself matters.",
+      "promotable": false,
+      "role": "partition-ablation control",
+      "variant": "partition_merged_unpartitioned"
+    },
+    {
+      "description": "Retain lag/nonlinear driver features at the same budget, but remove partition-specific recurrence/state grouping.",
+      "promotable": false,
+      "role": "feature-enrichment control",
+      "variant": "nonlinear_lag_unpartitioned_same_budget"
+    },
+    {
+      "description": "Keep partitions and lagged drivers but remove nonlinear transforms to test whether nonlinear enrichment is necessary.",
+      "promotable": false,
+      "role": "nonlinear-feature ablation",
+      "variant": "linear_lag_partitioned"
+    },
+    {
+      "description": "Repeat the 7.7l diversity-disabled ablation under the attribution matrix.",
+      "promotable": false,
+      "role": "diversity attribution repeat",
+      "variant": "diversity_pressure_disabled_repeat"
+    },
+    {
+      "description": "Match feature count/readout budget with causal random projections but no CRA-specific partitioned driver structure.",
+      "promotable": false,
+      "role": "interface-budget sham",
+      "variant": "same_feature_count_random_projection"
+    },
+    {
+      "description": "Locked single-pool same-capacity reference with matched readout and training budget.",
+      "promotable": false,
+      "role": "baseline reference",
+      "variant": "readout_budget_matched_single_pool"
+    },
+    {
+      "description": "Preserve the prior generic recurrence sham family to test basis luck.",
+      "promotable": false,
+      "role": "generic-basis sham",
+      "variant": "permuted_recurrence_ensemble"
+    },
+    {
+      "description": "Wrong target alignment guard.",
+      "promotable": false,
+      "role": "leakage guard",
+      "variant": "target_shuffle"
+    },
+    {
+      "description": "Wrong temporal order guard.",
+      "promotable": false,
+      "role": "temporal-order guard",
+      "variant": "time_shuffle"
+    }
+  ]
+}

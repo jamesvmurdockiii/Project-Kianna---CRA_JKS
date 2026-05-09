@@ -1,0 +1,15 @@
+artifact,required_for_scoring_gate
+tier7_7n_results.json,True
+tier7_7n_summary.csv,True
+tier7_7n_scoreboard.csv,True
+tier7_7n_score_summary.csv,True
+tier7_7n_attribution_margins.csv,True
+tier7_7n_driver_group_ablations.csv,True
+tier7_7n_state_geometry.csv,True
+tier7_7n_state_geometry_summary.csv,True
+tier7_7n_state_kernel_alignment.csv,True
+tier7_7n_readout_budget_audit.csv,True
+tier7_7n_sham_controls.csv,True
+tier7_7n_regression_summary.json,True
+tier7_7n_claim_boundary.md,True
+tier7_7n_report.md,True

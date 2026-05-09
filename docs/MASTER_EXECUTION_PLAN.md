@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-09T16:19:33+00:00.
+Last updated: 2026-05-09T16:31:54+00:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -1537,38 +1537,52 @@ ability.
     gate did not pass. No mechanism promotion, freeze, broad usefulness claim,
     external-baseline superiority, or hardware/native transfer is authorized.
 
-124. **CURRENT ACTIVE STEP** - Tier 7.7m partitioned-driver attribution
+124. **COMPLETE** - Tier 7.7m partitioned-driver attribution
     contract:
-    pre-register the next attribution diagnostic before implementation. The
-    contract must decide whether the 7.7l gain comes from causal driver
-    partitioning, nonlinear/lag driver features, readout/interface effects,
-    diversity pressure, or another confound. Polyp morphology/template
-    variability is a separate future contract and must not be layered into this
-    gate.
+    passed 22/22 at
+    `controlled_test_output/tier7_7m_20260509_partitioned_driver_attribution_contract/`.
+    It locks the next gate to distinguish causal driver partitioning from
+    nonlinear/lag feature enrichment, readout/interface budget, diversity
+    pressure, generic basis effects, leakage, and non-reproducible scoring
+    noise. Contract only: no attribution implementation, model score, mechanism
+    promotion, freeze, broad usefulness claim, external-baseline superiority, or
+    hardware/native transfer is authorized.
 
-125. Mechanism iteration loop: add exactly one planned general mechanism at a
+125. **CURRENT ACTIVE STEP** - Tier 7.7n partitioned-driver attribution scoring
+    gate:
+    implement and score the locked 7.7m variants exactly as pre-registered:
+    full partitioned driver, partition-shuffled, merged/unpartitioned,
+    nonlinear-lag unpartitioned same-budget, linear-lag partitioned,
+    diversity-disabled repeat, same-feature random projection,
+    readout-budget-matched single pool, generic/permuted controls, target
+    shuffle, and time shuffle. Report attribution margins, driver-group
+    ablation deltas, feature/readout-budget audit, state geometry, shams,
+    regression guards, and compact regression before any promotion or
+    architecture change.
+
+126. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
     stop the broad usefulness track and narrow the paper.
 
-126. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+127. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines. Start only after the standardized scoreboard or failure diagnosis
     identifies a winning regime, a real failure mode, or a mechanism needing
     external validation.
 
-127. Tier 7.2 held-out task challenge: define held-out families before running;
+128. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout. Include at least one synthetic holdout and one
     real-ish adapter holdout if Tier 7.1 is active.
 
-128. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+129. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines. Candidate domains include
     streaming anomaly detection, predictive-maintenance sensor streams, human
     activity streams, event prediction, ECG/biosignal streams, and finance as
     one domain only rather than the whole proof.
 
-129. Tier 7.4 policy/action selection held-out scoring: the current held-out
+130. Tier 7.4 policy/action selection held-out scoring: the current held-out
     chain is complete through 7.4h. No further NAB/C-MAPSS policy tuning is
     authorized from this chain; only the narrow C-MAPSS action-cost signal is
     preserved, with no broad action/policy claim, freeze, or hardware/native
@@ -1850,10 +1864,23 @@ The next concrete action is now:
 
 ```text
 Tier 7.7m - Partitioned-Driver Attribution Contract
+Status: COMPLETE / PASS, 22/22 criteria.
+Output: controlled_test_output/tier7_7m_20260509_partitioned_driver_attribution_contract/
 
 Pre-register whether the 7.7l gain is caused by driver partitioning,
 nonlinear/lag features, readout/interface changes, diversity pressure, or
 another confound before promotion or architecture changes.
+```
+
+The next concrete action is now:
+
+```text
+Tier 7.7n - Partitioned-Driver Attribution Scoring Gate
+
+Score the locked 7.7m variants and driver-group ablations. Promote nothing
+unless the full candidate separates from partition, feature, readout/interface,
+generic-basis, target-shuffle, and time-shuffle controls while preserving
+Mackey/NARMA regression guards and compact regression.
 ```
 
 Recent closeout:

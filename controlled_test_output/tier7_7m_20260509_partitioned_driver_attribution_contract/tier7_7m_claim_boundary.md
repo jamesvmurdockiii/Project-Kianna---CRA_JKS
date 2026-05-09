@@ -1,0 +1,1 @@
+Tier 7.7m is a pre-registration contract for attributing the Tier 7.7l partitioned-driver task gain. It does not implement the attribution gate, score a new model, promote a mechanism, freeze a baseline, claim public usefulness, or transfer anything to hardware/native runtime.

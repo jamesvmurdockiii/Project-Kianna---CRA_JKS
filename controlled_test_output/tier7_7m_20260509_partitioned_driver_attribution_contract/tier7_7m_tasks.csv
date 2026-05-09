@@ -1,0 +1,4 @@
+task,role,why,lengths,seeds,required
+lorenz,primary attribution target,7.7l produced the clearest repair signal here but did not prove the causal source.,"8000,16000,32000","42,43,44",True
+mackey_glass,positive-control regression and attribution guard,7.7l improved Mackey versus single-pool; attribution should not destroy the established Mackey signal.,"8000,16000,32000","42,43,44",True
+narma10_repaired_u02,nonlinear-memory regression and attribution guard,7.7l improved repaired NARMA versus single-pool; attribution must track whether lag/nonlinear drivers explain it.,"8000,16000,32000","42,43,44",True

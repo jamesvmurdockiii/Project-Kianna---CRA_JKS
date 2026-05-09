@@ -1,0 +1,17 @@
+{
+  "decision_boundary": "This contract authorizes only the Tier 7.7n attribution scoring gate. It does not authorize mechanism promotion, baseline freeze, hardware/native transfer, external-baseline superiority, broad public usefulness, language, AGI, or ASI claims.",
+  "hypothesis": "If causal driver partitioning is responsible, the full candidate should beat partition-shuffled, merged/unpartitioned, same-feature random projection, and generic-basis controls while coherent driver-group ablations produce interpretable losses.",
+  "mechanism_under_test": "partitioned_driver_full_attribution",
+  "null_hypothesis": "The 7.7l gain is explained by lag/nonlinear features alone, readout/interface budget, generic random basis effects, leakage, or non-reproducible scoring noise rather than CRA-specific partitioned drivers.",
+  "primary_reference": "Tier 7.7l partitioned_driver_diverse_recurrent_state versus single_pool_same_capacity",
+  "prior_diagnostic": {
+    "diversity_disabled_divided_by_repair": 1.0165316573469856,
+    "lorenz_repair_128_geomean_mse": 0.003448530743487121,
+    "lorenz_single_pool_128_geomean_mse": 0.0065086835955742274,
+    "outcome": "task_gain_without_dimension",
+    "repair_pr_128": 2.6645333760420375,
+    "status": "pass",
+    "tier": "7.7l"
+  },
+  "question": "What caused the Tier 7.7l partitioned-driver performance gain: causal driver partitioning, lag/nonlinear feature enrichment, readout/interface budget, diversity pressure, or a generic basis confound?"
+}

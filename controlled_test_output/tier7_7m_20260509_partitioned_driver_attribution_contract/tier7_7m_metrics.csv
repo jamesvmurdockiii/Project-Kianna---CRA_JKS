@@ -1,0 +1,16 @@
+metric,role,required
+geomean_mse,primary standardized task score,True
+tail_mse,tail stability,True
+test_corr,prediction shape,True
+candidate_vs_control_mse_ratio,attribution margin,True
+driver_group_ablation_delta,causal driver attribution,True
+participation_ratio,state-geometry audit,True
+rank95_variance_count,state-rank audit,True
+top_pc_fraction,low-rank collapse audit,True
+state_kernel_alignment,candidate/control state similarity,True
+readout_weight_pr,readout concentration guard,True
+feature_count,interface-budget audit,True
+readout_parameter_count,fairness audit,True
+target_shuffle_guard,leakage guard,True
+time_shuffle_guard,temporal guard,True
+compact_regression_status,promotion guard if attribution passes,True
