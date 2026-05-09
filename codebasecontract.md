@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-09T16:56:24+00:00.
+Last updated: 2026-05-09T17:03:26+00:00.
 
 Current repo root:
 
@@ -1406,12 +1406,23 @@ Tier 7.7n — COMPLETE. Partitioned-driver attribution scoring gate.
   claim, external-baseline superiority, or hardware/native transfer is
   authorized.
 
-Tier 7.7o — CURRENT ACTIVE STEP. Generic temporal-interface reframing contract.
-  Decide whether the 7.7n random-projection/nonlinear-lag gains should be
-  treated as external baselines to beat, an optional benchmark adapter, or a new
-  CRA-internal mechanism candidate. Pre-register fairness rules, no-leakage
-  controls, baseline comparisons, and promotion boundaries before implementing
-  or tuning anything.
+Tier 7.7o — COMPLETE. Generic temporal-interface reframing contract.
+  Status: PASS, 14/14 criteria. Output:
+  `controlled_test_output/tier7_7o_20260509_generic_temporal_interface_reframing_contract/`.
+  The contract closes the partitioned-driver repair path as non-promoted, makes
+  random-projection/nonlinear-lag controls mandatory for future temporal gates,
+  and authorizes a separate CRA-native temporal-interface internalization
+  contract. Contract only; no mechanism implementation, model score, mechanism
+  promotion, baseline freeze, broad usefulness claim, external-baseline
+  superiority, or hardware/native transfer is authorized.
+
+Tier 7.7p — CURRENT ACTIVE STEP. CRA-native temporal-interface
+  internalization contract. Define how to internalize the useful causal
+  temporal-basis capability as organism-native dynamics, such as sparse
+  temporal expansion microcircuits, polyp-local delay/trace branches, or
+  recurrent sensory-basis units. The contract must preserve random projection
+  and nonlinear/lag controls as strict shams, require compact regression before
+  freeze, and forbid host-side adapter promotion.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware

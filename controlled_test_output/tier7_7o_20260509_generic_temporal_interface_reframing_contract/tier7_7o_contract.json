@@ -1,0 +1,15 @@
+{
+  "decision": "park_partitioned_driver_and_authorize_cra_native_temporal_interface_internalization",
+  "decision_boundary": "This contract closes the partitioned-driver repair path as non-promoted, makes random-projection/nonlinear-lag signals mandatory controls, and authorizes a new CRA-native temporal-interface internalization contract. It does not implement a new mechanism, score a model, freeze a baseline, claim external-baseline superiority, or transfer anything to hardware/native runtime.",
+  "hypothesis": "The safe interpretation is to treat random projection and nonlinear/lag interfaces as stronger controls/baselines while authorizing a separate contract to internalize the useful causal temporal-basis capability as CRA-native dynamics.",
+  "null_hypothesis": "The generic-interface result can be promoted directly as a CRA mechanism without further controls, internalization, or regression.",
+  "prior_diagnostic": {
+    "full_lorenz_128_geomean_mse": 0.003448530743487121,
+    "nonlinear_lag_lorenz_128_geomean_mse": 0.0019527710201000855,
+    "outcome": "generic_projection_explains_gain",
+    "random_projection_lorenz_128_geomean_mse": 0.0016704454054783221,
+    "status": "pass",
+    "tier": "7.7n"
+  },
+  "question": "How should CRA handle the Tier 7.7n finding that random projection and nonlinear/lag controls explain or exceed the partitioned-driver gain?"
+}

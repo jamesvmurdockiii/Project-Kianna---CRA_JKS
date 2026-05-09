@@ -4426,9 +4426,25 @@ Current next step:
 
 ```text
 Tier 7.7o — Generic temporal-interface reframing contract
+Status: COMPLETE / PASS, 14/14 criteria
+Output: controlled_test_output/tier7_7o_20260509_generic_temporal_interface_reframing_contract/
 Question: should the random-projection/nonlinear-lag result be treated as an
 external baseline, an optional benchmark adapter, or a new CRA-internal
 mechanism candidate? Lock this before tuning or implementation.
+Result: partitioned driver remains parked; random-projection/nonlinear-lag
+controls become mandatory; CRA-native temporal-interface internalization is
+authorized as a separate contract.
+```
+
+Current next step:
+
+```text
+Tier 7.7p — CRA-native temporal-interface internalization contract
+Question: how can CRA internalize the useful causal temporal-basis capability
+as organism-native dynamics while still beating random projection and
+nonlinear/lag controls?
+Boundary: contract only; no score, promotion, freeze, or hardware/native
+transfer until the mechanism is implemented, ablated, and regression-tested.
 ```
 
 Tier 7.1a predeclared these candidate/future adapter families:

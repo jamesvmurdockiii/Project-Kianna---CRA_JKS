@@ -1,0 +1,7 @@
+rule,requirement
+causal_inputs_only,"No future targets, future observations beyond the forecast horizon, test labels, or post-hoc task hints."
+same_train_test_splits,Use the locked chronological splits and seeds from the standardized scoreboard unless a new contract says otherwise.
+budget_accounting,"Report feature count, hidden/state count, readout parameters, and training update budget for every candidate and control."
+baseline_fairness,"Compare against ESN, online linear/perceptron/logistic where applicable, random projection, nonlinear-lag, and current CRA baseline."
+no_adapter_rescue,An adapter cannot rescue a failed CRA mechanism claim unless it is separately internalized and ablated.
+compact_regression_before_freeze,Any promoted interface/internal mechanism must pass compact regression before a baseline freeze.

@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-09T16:56:24+00:00.
+Last updated: 2026-05-09T17:03:26+00:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -1558,37 +1558,50 @@ ability.
     CRA-specific partitioned-driver promotion, freeze, broad usefulness claim,
     external-baseline superiority, and hardware/native transfer.
 
-126. **CURRENT ACTIVE STEP** - Tier 7.7o generic temporal-interface reframing
+126. **COMPLETE** - Tier 7.7o generic temporal-interface reframing
     contract:
-    decide whether the 7.7n random-projection/nonlinear-lag gains should be
-    treated as external baselines to beat, an optional benchmark adapter, or a
-    new CRA-internal mechanism candidate. Pre-register fairness rules, no-
-    leakage controls, baseline comparisons, and promotion boundaries before any
-    implementation or tuning.
+    passed 14/14 at
+    `controlled_test_output/tier7_7o_20260509_generic_temporal_interface_reframing_contract/`.
+    It parks the partitioned-driver repair, makes random-projection/nonlinear-
+    lag controls mandatory, and authorizes a separate CRA-native temporal-
+    interface internalization contract. No mechanism implementation, score,
+    promotion, freeze, external-baseline superiority, broad usefulness claim, or
+    hardware/native transfer is authorized.
 
-127. Mechanism iteration loop: add exactly one planned general mechanism at a
+127. **CURRENT ACTIVE STEP** - Tier 7.7p CRA-native temporal-interface
+    internalization contract:
+    define how to internalize the useful causal temporal-basis capability as
+    organism-native dynamics rather than as a host-side adapter. Candidate
+    design space includes sparse temporal expansion microcircuits, polyp-local
+    delay/trace branches, recurrent sensory-basis units, or another PyNN/
+    SpiNNaker-compatible native mechanism. The contract must keep random
+    projection and nonlinear/lag controls as strict shams, require
+    feature/readout-budget accounting, preserve leakage guards, and require
+    compact regression before freeze.
+
+128. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
     stop the broad usefulness track and narrow the paper.
 
-128. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+129. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines. Start only after the standardized scoreboard or failure diagnosis
     identifies a winning regime, a real failure mode, or a mechanism needing
     external validation.
 
-129. Tier 7.2 held-out task challenge: define held-out families before running;
+130. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout. Include at least one synthetic holdout and one
     real-ish adapter holdout if Tier 7.1 is active.
 
-130. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+131. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines. Candidate domains include
     streaming anomaly detection, predictive-maintenance sensor streams, human
     activity streams, event prediction, ECG/biosignal streams, and finance as
     one domain only rather than the whole proof.
 
-131. Tier 7.4 policy/action selection held-out scoring: the current held-out
+132. Tier 7.4 policy/action selection held-out scoring: the current held-out
     chain is complete through 7.4h. No further NAB/C-MAPSS policy tuning is
     authorized from this chain; only the narrow C-MAPSS action-cost signal is
     preserved, with no broad action/policy claim, freeze, or hardware/native
@@ -1896,11 +1909,24 @@ The next concrete action is now:
 
 ```text
 Tier 7.7o - Generic Temporal-Interface Reframing Contract
+Status: COMPLETE / PASS, 14/14 criteria.
+Output: controlled_test_output/tier7_7o_20260509_generic_temporal_interface_reframing_contract/
 
 The 7.7n random-projection and nonlinear/lag controls beat the full
 partitioned-driver candidate. Lock whether this becomes an external baseline,
 an optional adapter, or a new CRA-internal mechanism candidate before any
 implementation, tuning, promotion, or freeze.
+```
+
+The next concrete action is now:
+
+```text
+Tier 7.7p - CRA-Native Temporal Interface Internalization Contract
+
+Internalize the useful temporal-basis capability as organism-native dynamics,
+not as a host-side adapter. Preserve random-projection and nonlinear/lag
+controls as strict shams, require no-leakage and budget accounting, and require
+a promotion/regression gate before any new baseline freeze.
 ```
 
 Recent closeout:

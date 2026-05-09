@@ -1,0 +1,385 @@
+{
+  "claim_boundary": "This contract closes the partitioned-driver repair path as non-promoted, makes random-projection/nonlinear-lag signals mandatory controls, and authorizes a new CRA-native temporal-interface internalization contract. It does not implement a new mechanism, score a model, freeze a baseline, claim external-baseline superiority, or transfer anything to hardware/native runtime.",
+  "contract": {
+    "decision": "park_partitioned_driver_and_authorize_cra_native_temporal_interface_internalization",
+    "decision_boundary": "This contract closes the partitioned-driver repair path as non-promoted, makes random-projection/nonlinear-lag signals mandatory controls, and authorizes a new CRA-native temporal-interface internalization contract. It does not implement a new mechanism, score a model, freeze a baseline, claim external-baseline superiority, or transfer anything to hardware/native runtime.",
+    "hypothesis": "The safe interpretation is to treat random projection and nonlinear/lag interfaces as stronger controls/baselines while authorizing a separate contract to internalize the useful causal temporal-basis capability as CRA-native dynamics.",
+    "null_hypothesis": "The generic-interface result can be promoted directly as a CRA mechanism without further controls, internalization, or regression.",
+    "prior_diagnostic": {
+      "full_lorenz_128_geomean_mse": 0.003448530743487121,
+      "nonlinear_lag_lorenz_128_geomean_mse": 0.0019527710201000855,
+      "outcome": "generic_projection_explains_gain",
+      "random_projection_lorenz_128_geomean_mse": 0.0016704454054783221,
+      "status": "pass",
+      "tier": "7.7n"
+    },
+    "question": "How should CRA handle the Tier 7.7n finding that random projection and nonlinear/lag controls explain or exceed the partitioned-driver gain?"
+  },
+  "criteria": [
+    {
+      "criterion": "Tier 7.7n prerequisite exists",
+      "details": "",
+      "name": "Tier 7.7n prerequisite exists",
+      "note": "",
+      "operator": "exists",
+      "pass": true,
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_7n_20260509_partitioned_driver_attribution_scoring_gate/tier7_7n_results.json"
+    },
+    {
+      "criterion": "Tier 7.7n prerequisite passed",
+      "details": "",
+      "name": "Tier 7.7n prerequisite passed",
+      "note": "",
+      "operator": "== pass",
+      "pass": true,
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "criterion": "Tier 7.7n generic-interface outcome",
+      "details": "",
+      "name": "Tier 7.7n generic-interface outcome",
+      "note": "",
+      "operator": "== generic_projection_explains_gain",
+      "pass": true,
+      "passed": true,
+      "rule": "== generic_projection_explains_gain",
+      "value": "generic_projection_explains_gain"
+    },
+    {
+      "criterion": "question locked",
+      "details": "",
+      "name": "question locked",
+      "note": "",
+      "operator": "non-empty",
+      "pass": true,
+      "passed": true,
+      "rule": "non-empty",
+      "value": "How should CRA handle the Tier 7.7n finding that random projection and nonlinear/lag controls explain or exceed the partitioned-driver gain?"
+    },
+    {
+      "criterion": "decision locked",
+      "details": "",
+      "name": "decision locked",
+      "note": "",
+      "operator": "park and authorize internalization",
+      "pass": true,
+      "passed": true,
+      "rule": "park and authorize internalization",
+      "value": "park_partitioned_driver_and_authorize_cra_native_temporal_interface_internalization"
+    },
+    {
+      "criterion": "partitioned driver parked",
+      "details": "",
+      "name": "partitioned driver parked",
+      "note": "",
+      "operator": "includes partitioned_driver_not_promoted",
+      "pass": true,
+      "passed": true,
+      "rule": "includes partitioned_driver_not_promoted",
+      "value": [
+        "partitioned_driver_not_promoted",
+        "random_projection_is_strong_control",
+        "nonlinear_lag_interface_is_strong_control",
+        "driver_group_ablations_were_informative"
+      ]
+    },
+    {
+      "criterion": "random projection route locked",
+      "details": "",
+      "name": "random projection route locked",
+      "note": "",
+      "operator": "includes external baseline/control",
+      "pass": true,
+      "passed": true,
+      "rule": "includes external baseline/control",
+      "value": [
+        "external_baseline_or_control",
+        "cra_native_temporal_interface_internalization",
+        "optional_benchmark_adapter",
+        "cra_internal_mechanism_candidate",
+        "partitioned_driver_repair"
+      ]
+    },
+    {
+      "criterion": "CRA-native internalization authorized",
+      "details": "",
+      "name": "CRA-native internalization authorized",
+      "note": "",
+      "operator": "next contract",
+      "pass": true,
+      "passed": true,
+      "rule": "next contract",
+      "value": [
+        "external_baseline_or_control",
+        "cra_native_temporal_interface_internalization",
+        "optional_benchmark_adapter",
+        "cra_internal_mechanism_candidate",
+        "partitioned_driver_repair"
+      ]
+    },
+    {
+      "criterion": "fairness rules locked",
+      "details": "",
+      "name": "fairness rules locked",
+      "note": "",
+      "operator": "includes budget and baseline fairness",
+      "pass": true,
+      "passed": true,
+      "rule": "includes budget and baseline fairness",
+      "value": [
+        "causal_inputs_only",
+        "same_train_test_splits",
+        "budget_accounting",
+        "baseline_fairness",
+        "no_adapter_rescue",
+        "compact_regression_before_freeze"
+      ]
+    },
+    {
+      "criterion": "outcome classes locked",
+      "details": "",
+      "name": "outcome classes locked",
+      "note": "",
+      "operator": ">= 4 classes",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 4 classes",
+      "value": [
+        "generic_interface_reframed_as_baseline",
+        "cra_native_internalization_authorized",
+        "adapter_candidate_authorized",
+        "internal_mechanism_candidate_authorized",
+        "partitioned_driver_remains_parked"
+      ]
+    },
+    {
+      "criterion": "expected artifacts locked",
+      "details": "",
+      "name": "expected artifacts locked",
+      "note": "",
+      "operator": ">= 8 artifacts",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 8 artifacts",
+      "value": [
+        "tier7_7o_results.json",
+        "tier7_7o_contract.json",
+        "tier7_7o_summary.csv",
+        "tier7_7o_findings.csv",
+        "tier7_7o_routes.csv",
+        "tier7_7o_fairness_rules.csv",
+        "tier7_7o_outcome_classes.csv",
+        "tier7_7o_claim_boundary.md",
+        "tier7_7o_report.md"
+      ]
+    },
+    {
+      "criterion": "no baseline freeze authorized",
+      "details": "",
+      "name": "no baseline freeze authorized",
+      "note": "",
+      "operator": "false",
+      "pass": true,
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "criterion": "no mechanism promotion authorized",
+      "details": "",
+      "name": "no mechanism promotion authorized",
+      "note": "",
+      "operator": "false",
+      "pass": true,
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "criterion": "no hardware/native transfer authorized",
+      "details": "",
+      "name": "no hardware/native transfer authorized",
+      "note": "",
+      "operator": "false",
+      "pass": true,
+      "passed": true,
+      "rule": "false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 14,
+  "criteria_total": 14,
+  "expected_artifacts": [
+    {
+      "artifact": "tier7_7o_results.json",
+      "required_for_contract": true
+    },
+    {
+      "artifact": "tier7_7o_contract.json",
+      "required_for_contract": true
+    },
+    {
+      "artifact": "tier7_7o_summary.csv",
+      "required_for_contract": true
+    },
+    {
+      "artifact": "tier7_7o_findings.csv",
+      "required_for_contract": true
+    },
+    {
+      "artifact": "tier7_7o_routes.csv",
+      "required_for_contract": true
+    },
+    {
+      "artifact": "tier7_7o_fairness_rules.csv",
+      "required_for_contract": true
+    },
+    {
+      "artifact": "tier7_7o_outcome_classes.csv",
+      "required_for_contract": true
+    },
+    {
+      "artifact": "tier7_7o_claim_boundary.md",
+      "required_for_contract": true
+    },
+    {
+      "artifact": "tier7_7o_report.md",
+      "required_for_contract": true
+    }
+  ],
+  "fairness_rules": [
+    {
+      "requirement": "No future targets, future observations beyond the forecast horizon, test labels, or post-hoc task hints.",
+      "rule": "causal_inputs_only"
+    },
+    {
+      "requirement": "Use the locked chronological splits and seeds from the standardized scoreboard unless a new contract says otherwise.",
+      "rule": "same_train_test_splits"
+    },
+    {
+      "requirement": "Report feature count, hidden/state count, readout parameters, and training update budget for every candidate and control.",
+      "rule": "budget_accounting"
+    },
+    {
+      "requirement": "Compare against ESN, online linear/perceptron/logistic where applicable, random projection, nonlinear-lag, and current CRA baseline.",
+      "rule": "baseline_fairness"
+    },
+    {
+      "requirement": "An adapter cannot rescue a failed CRA mechanism claim unless it is separately internalized and ablated.",
+      "rule": "no_adapter_rescue"
+    },
+    {
+      "requirement": "Any promoted interface/internal mechanism must pass compact regression before a baseline freeze.",
+      "rule": "compact_regression_before_freeze"
+    }
+  ],
+  "findings": [
+    {
+      "action": "Do not freeze, promote, or transfer the partitioned-driver repair.",
+      "finding": "partitioned_driver_not_promoted",
+      "reason": "Tier 7.7n classified the signal as generic_projection_explains_gain.",
+      "status": "locked"
+    },
+    {
+      "action": "Treat as a stricter generic-basis control/baseline and as a design target for a separately contracted CRA-native temporal expansion mechanism.",
+      "finding": "random_projection_is_strong_control",
+      "reason": "Same-feature random projection beat the full partitioned driver on Lorenz at 128 units.",
+      "status": "locked"
+    },
+    {
+      "action": "Treat as a feature-interface control and design target; do not call it a CRA mechanism until internalized, ablated, and regression-tested.",
+      "finding": "nonlinear_lag_interface_is_strong_control",
+      "reason": "Unpartitioned nonlinear/lag same-budget control beat the full partitioned driver on Lorenz at 128 units.",
+      "status": "locked"
+    },
+    {
+      "action": "Carry driver-group ablation style forward for future mechanism gates.",
+      "finding": "driver_group_ablations_were_informative",
+      "reason": "Removing fast-trace and nonlinear driver groups hurt the full candidate, but this did not overcome the generic-interface explanation.",
+      "status": "locked"
+    }
+  ],
+  "generated_at_utc": "2026-05-09T17:09:29+00:00",
+  "next_gate": "Tier 7.7p - CRA-Native Temporal Interface Internalization Contract",
+  "nonclaims": [
+    "not a mechanism implementation",
+    "not a model score",
+    "not a mechanism promotion",
+    "not a baseline freeze",
+    "not external-baseline superiority",
+    "not hardware/native transfer",
+    "not language, AGI, or ASI evidence"
+  ],
+  "outcome_classes": [
+    {
+      "allowed_claim": "The current Lorenz gain identified a stronger temporal-interface baseline/control, not a promoted CRA mechanism.",
+      "outcome": "generic_interface_reframed_as_baseline",
+      "rule": "Random projection/nonlinear-lag remain external controls or baselines; no CRA promotion."
+    },
+    {
+      "allowed_claim": "The generic-interface result justifies a new internalization candidate, not a promotion of the existing external control.",
+      "outcome": "cra_native_internalization_authorized",
+      "rule": "A new contract may internalize the useful causal temporal-interface capability as CRA-native dynamics while preserving random-projection and nonlinear-lag as controls."
+    },
+    {
+      "allowed_claim": "Adapter evidence only; no CRA-internal mechanism claim unless internalized later.",
+      "outcome": "adapter_candidate_authorized",
+      "rule": "A future contract explicitly tests a causal adapter against all controls and baselines."
+    },
+    {
+      "allowed_claim": "Possible internal mechanism candidate, not yet promoted.",
+      "outcome": "internal_mechanism_candidate_authorized",
+      "rule": "A future contract expresses the interface as CRA-native dynamics with shams, ablations, and compact regression."
+    },
+    {
+      "allowed_claim": "Partitioned driver is parked as diagnostic evidence.",
+      "outcome": "partitioned_driver_remains_parked",
+      "rule": "7.7n generic-interface explanation remains the current result."
+    }
+  ],
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7o_20260509_generic_temporal_interface_reframing_contract",
+  "prerequisite": {
+    "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_7n_20260509_partitioned_driver_attribution_scoring_gate/tier7_7n_results.json",
+    "sha256": "2f9c2006b9d74883dcab51cf7f57aff3b4a485bf1ef48eda4299e94448f47217",
+    "status": "pass"
+  },
+  "routes": [
+    {
+      "decision": "required",
+      "description": "Random projection and nonlinear/lag interface controls must be included as stronger baselines in future standardized temporal gates.",
+      "promotion_allowed": false,
+      "route": "external_baseline_or_control"
+    },
+    {
+      "decision": "next_contract",
+      "description": "Internalize the useful causal temporal-basis capability as organism-native dynamics, such as sparse temporal expansion microcircuits, polyp-local delay/trace branches, or recurrent sensory-basis units.",
+      "promotion_allowed": "only after separate scoring, sham separation, compact regression, and benchmark rerun",
+      "route": "cra_native_temporal_interface_internalization"
+    },
+    {
+      "decision": "noncanonical_unless_explicit",
+      "description": "A host-side causal temporal-interface adapter may be tested for diagnosis, but it cannot be promoted as CRA unless converted into organism-native dynamics.",
+      "promotion_allowed": false,
+      "route": "optional_benchmark_adapter"
+    },
+    {
+      "decision": "covered_by_next_contract",
+      "description": "Any internalized version must be expressed as CRA dynamics, ablated, compared to random projection/nonlinear-lag controls, and pass compact regression before promotion.",
+      "promotion_allowed": "only after separate scoring and compact regression",
+      "route": "cra_internal_mechanism_candidate"
+    },
+    {
+      "decision": "parked",
+      "description": "The 7.7l/7.7n partitioned-driver repair is not promoted because its gain is generic-interface explainable.",
+      "promotion_allowed": false,
+      "route": "partitioned_driver_repair"
+    }
+  ],
+  "runner_revision": "tier7_7o_generic_temporal_interface_reframing_contract_20260509_0001",
+  "status": "pass",
+  "tier": "Tier 7.7o - Generic Temporal-Interface Reframing Contract"
+}

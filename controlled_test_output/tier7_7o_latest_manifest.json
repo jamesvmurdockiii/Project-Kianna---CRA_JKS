@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-05-09T17:09:51.426149+00:00",
+  "source_generated_at_utc": "2026-05-09T17:09:29+00:00",
+  "registry_entry_id": "tier7_7o_generic_temporal_interface_reframing_contract",
+  "tier": "Tier 7.7o - Generic Temporal-Interface Reframing Contract",
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7o_20260509_generic_temporal_interface_reframing_contract",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_7o_20260509_generic_temporal_interface_reframing_contract/tier7_7o_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_7o_20260509_generic_temporal_interface_reframing_contract/tier7_7o_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7o_20260509_generic_temporal_interface_reframing_contract/tier7_7o_summary.csv",
+  "canonical": true,
+  "claim": "Tier 7.7o closes the partitioned-driver repair path as non-promoted, makes random-projection/nonlinear-lag controls mandatory, and authorizes a separate CRA-native temporal-interface internalization contract.",
+  "caveat": "Contract evidence only; not a mechanism implementation, not a model score, not a mechanism promotion, not a baseline freeze, not hardware/native transfer, not external-baseline superiority, and not broad public usefulness evidence."
+}

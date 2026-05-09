@@ -1,0 +1,1 @@
+This contract closes the partitioned-driver repair path as non-promoted, makes random-projection/nonlinear-lag signals mandatory controls, and authorizes a new CRA-native temporal-interface internalization contract. It does not implement a new mechanism, score a model, freeze a baseline, claim external-baseline superiority, or transfer anything to hardware/native runtime.

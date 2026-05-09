@@ -1,0 +1,6 @@
+outcome,rule,allowed_claim
+generic_interface_reframed_as_baseline,Random projection/nonlinear-lag remain external controls or baselines; no CRA promotion.,"The current Lorenz gain identified a stronger temporal-interface baseline/control, not a promoted CRA mechanism."
+cra_native_internalization_authorized,A new contract may internalize the useful causal temporal-interface capability as CRA-native dynamics while preserving random-projection and nonlinear-lag as controls.,"The generic-interface result justifies a new internalization candidate, not a promotion of the existing external control."
+adapter_candidate_authorized,A future contract explicitly tests a causal adapter against all controls and baselines.,Adapter evidence only; no CRA-internal mechanism claim unless internalized later.
+internal_mechanism_candidate_authorized,"A future contract expresses the interface as CRA-native dynamics with shams, ablations, and compact regression.","Possible internal mechanism candidate, not yet promoted."
+partitioned_driver_remains_parked,7.7n generic-interface explanation remains the current result.,Partitioned driver is parked as diagnostic evidence.

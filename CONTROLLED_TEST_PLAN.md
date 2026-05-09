@@ -11562,10 +11562,24 @@ Next required step:
 
 ```text
 Tier 7.7o - Generic temporal-interface reframing contract.
-Pre-register whether the 7.7n random-projection/nonlinear-lag gains are
-external baselines, optional benchmark adapters, or a new CRA-internal mechanism
-candidate. Lock fairness rules, no-leakage controls, baseline comparisons, and
-promotion boundaries before any implementation or tuning.
+Status: COMPLETE / PASS, 14/14 criteria.
+Output: controlled_test_output/tier7_7o_20260509_generic_temporal_interface_reframing_contract/
+Result: the partitioned-driver repair is parked; random-projection/nonlinear-
+lag controls become mandatory; and a separate CRA-native temporal-interface
+internalization contract is authorized.
+Boundary: contract only; no mechanism implementation, model score, mechanism
+promotion, baseline freeze, public usefulness claim, external-baseline
+superiority, or hardware/native transfer.
+```
+
+Next required step:
+
+```text
+Tier 7.7p - CRA-native temporal-interface internalization contract.
+Define how to internalize the useful temporal-basis capability as organism-
+native dynamics. Preserve random projection and nonlinear/lag controls as strict
+shams; lock budget accounting, no-leakage controls, external baseline
+comparisons, compact regression, and freeze boundaries before any scoring.
 ```
 
 Latest standardized benchmark contract:

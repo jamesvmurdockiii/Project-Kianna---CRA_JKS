@@ -1,0 +1,5 @@
+finding,status,reason,action
+partitioned_driver_not_promoted,locked,Tier 7.7n classified the signal as generic_projection_explains_gain.,"Do not freeze, promote, or transfer the partitioned-driver repair."
+random_projection_is_strong_control,locked,Same-feature random projection beat the full partitioned driver on Lorenz at 128 units.,Treat as a stricter generic-basis control/baseline and as a design target for a separately contracted CRA-native temporal expansion mechanism.
+nonlinear_lag_interface_is_strong_control,locked,Unpartitioned nonlinear/lag same-budget control beat the full partitioned driver on Lorenz at 128 units.,"Treat as a feature-interface control and design target; do not call it a CRA mechanism until internalized, ablated, and regression-tested."
+driver_group_ablations_were_informative,locked,"Removing fast-trace and nonlinear driver groups hurt the full candidate, but this did not overcome the generic-interface explanation.",Carry driver-group ablation style forward for future mechanism gates.
