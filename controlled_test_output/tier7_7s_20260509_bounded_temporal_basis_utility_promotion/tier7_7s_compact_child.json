@@ -1,0 +1,20 @@
+{
+  "command": [
+    "/Library/Developer/CommandLineTools/usr/bin/python3",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "coral_reef_spinnaker/tests"
+  ],
+  "failure_reason": "",
+  "manifest_path": "/Users/james/JKS:CRA/controlled_test_output/tier7_7s_20260509_bounded_temporal_basis_utility_promotion/compact_regression_pytest/__returncode__",
+  "name": "compact_regression_pytest",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7s_20260509_bounded_temporal_basis_utility_promotion/compact_regression_pytest",
+  "purpose": "repository pytest regression guard before bounded temporal-interface utility promotion",
+  "return_code": 0,
+  "runtime_seconds": 5.002777375,
+  "status": "pass",
+  "stderr_path": "/Users/james/JKS:CRA/controlled_test_output/tier7_7s_20260509_bounded_temporal_basis_utility_promotion/compact_regression_pytest/compact_regression_pytest_stderr.log",
+  "stdout_path": "/Users/james/JKS:CRA/controlled_test_output/tier7_7s_20260509_bounded_temporal_basis_utility_promotion/compact_regression_pytest/compact_regression_pytest_stdout.log"
+}

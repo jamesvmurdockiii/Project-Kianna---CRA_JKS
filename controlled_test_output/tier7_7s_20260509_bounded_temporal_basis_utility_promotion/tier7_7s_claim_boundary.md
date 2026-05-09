@@ -1,0 +1,1 @@
+Tier 7.7s may promote the temporal-basis interface only as bounded engineering utility. It does not promote a CRA-specific mechanism, freeze a new core baseline, claim external-baseline superiority, authorize hardware/native transfer, or support broad public usefulness.

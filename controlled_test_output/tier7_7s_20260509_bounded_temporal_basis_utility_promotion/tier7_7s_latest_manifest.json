@@ -1,0 +1,10 @@
+{
+  "generated_at_utc": "2026-05-09T18:09:51+00:00",
+  "outcome": "utility_promoted_mechanism_not_promoted",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7s_20260509_bounded_temporal_basis_utility_promotion",
+  "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier7_7s_20260509_bounded_temporal_basis_utility_promotion/tier7_7s_report.md",
+  "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier7_7s_20260509_bounded_temporal_basis_utility_promotion/tier7_7s_results.json",
+  "status": "pass",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7s_20260509_bounded_temporal_basis_utility_promotion/tier7_7s_summary.csv",
+  "tier": "Tier 7.7s - Bounded Temporal-Basis Utility Promotion/Regression Gate"
+}

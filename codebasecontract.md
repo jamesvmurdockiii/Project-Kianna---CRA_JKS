@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-09T17:52:42+00:00.
+Last updated: 2026-05-09T18:11:09+00:00.
 
 Current repo root:
 
@@ -1446,12 +1446,20 @@ Tier 7.7r — COMPLETE. Native temporal-basis repair/reframing contract. Status:
   broad usefulness claim, external-baseline superiority, or hardware/native
   transfer is authorized.
 
-Tier 7.7s — CURRENT ACTIVE STEP. Bounded temporal-basis utility
-  promotion/regression gate. Consume the 7.7q evidence and run compact
-  regression/guard checks to decide whether the temporal-basis interface can be
-  promoted as bounded engineering utility. Do not label it a CRA-specific
-  mechanism unless a separate later gate beats or separates from random-
-  projection and nonlinear-lag controls.
+Tier 7.7s — COMPLETE. Bounded temporal-basis utility promotion/regression gate.
+  Status: PASS, 13/13 criteria. Output:
+  `controlled_test_output/tier7_7s_20260509_bounded_temporal_basis_utility_promotion/`.
+  Outcome: `utility_promoted_mechanism_not_promoted`. The temporal-basis
+  interface is carried forward as bounded engineering utility after repo pytest
+  regression passed. It is not a CRA-specific mechanism, core baseline freeze,
+  broad usefulness claim, external-baseline superiority, or hardware/native
+  transfer.
+
+Tier 7.8 — CURRENT ACTIVE STEP. Polyp morphology/template variability contract.
+  Design a separate mechanism contract for varying polyp internal templates,
+  timescales, and excitatory/inhibitory ratios to test whether population-level
+  state diversity increases without letting generic random projection explain
+  the gain.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware
@@ -3848,14 +3856,20 @@ update it if the current run teaches a new lesson.
     never fire. The runtime must record `g_timestep` at `run_continuous` and
     offset every schedule comparison by that base. Host tests must validate this
     behavior because local test mocks do not experience real timer drift.
-26. Do not run two C-runtime build/test/package commands in parallel. Targets
+26. Legacy compact-regression wrappers can stall silently when they launch older
+    nested child runners under local process pressure. Do not use an unattended
+    legacy compact wrapper as a promotion dependency unless it has explicit
+    timeout/finalization behavior. For bounded utility gates, prefer a narrow
+    gate-specific regression guard and the standard `make validate` chain, and
+    document the reduced claim boundary.
+27. Do not run two C-runtime build/test/package commands in parallel. Targets
     such as `clean-host`, `test-lifecycle`, `test-profiles`, and EBRAINS
     prepare modes share `spinnaker_runtime/tests/*` binaries and `build/`
     outputs. Parallel execution can delete a freshly built test binary and
     create a false infrastructure failure. Run Python validation in parallel
     with read-only checks if useful, but serialize all commands that invoke
     `make -C coral_reef_spinnaker/spinnaker_runtime ...`.
-27. Ingesting returned JobManager artifacts from `Downloads` must not copy the
+28. Ingesting returned JobManager artifacts from `Downloads` must not copy the
     whole Downloads directory. Use the tier-specific ingest path and preserve
     only the returned job artifact set, either from a clean returned-output
     folder or from a bounded artifact-selection rule around the tier result

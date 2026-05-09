@@ -1,0 +1,233 @@
+{
+  "claim_boundary": "Tier 7.7s may promote the temporal-basis interface only as bounded engineering utility. It does not promote a CRA-specific mechanism, freeze a new core baseline, claim external-baseline superiority, authorize hardware/native transfer, or support broad public usefulness.",
+  "compact_child": {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-m",
+      "pytest",
+      "-p",
+      "no:cacheprovider",
+      "coral_reef_spinnaker/tests"
+    ],
+    "failure_reason": "",
+    "manifest_path": "/Users/james/JKS:CRA/controlled_test_output/tier7_7s_20260509_bounded_temporal_basis_utility_promotion/compact_regression_pytest/__returncode__",
+    "name": "compact_regression_pytest",
+    "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7s_20260509_bounded_temporal_basis_utility_promotion/compact_regression_pytest",
+    "purpose": "repository pytest regression guard before bounded temporal-interface utility promotion",
+    "return_code": 0,
+    "runtime_seconds": 5.002777375,
+    "status": "pass",
+    "stderr_path": "/Users/james/JKS:CRA/controlled_test_output/tier7_7s_20260509_bounded_temporal_basis_utility_promotion/compact_regression_pytest/compact_regression_pytest_stderr.log",
+    "stdout_path": "/Users/james/JKS:CRA/controlled_test_output/tier7_7s_20260509_bounded_temporal_basis_utility_promotion/compact_regression_pytest/compact_regression_pytest_stdout.log"
+  },
+  "criteria": [
+    {
+      "criterion": "Tier 7.7q exists",
+      "details": "",
+      "name": "Tier 7.7q exists",
+      "note": "",
+      "operator": "exists",
+      "pass": true,
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_7q_20260509_cra_native_temporal_interface_internalization_scoring_gate/tier7_7q_results.json"
+    },
+    {
+      "criterion": "Tier 7.7q passed",
+      "details": "",
+      "name": "Tier 7.7q passed",
+      "note": "",
+      "operator": "== pass",
+      "pass": true,
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "criterion": "Tier 7.7r exists",
+      "details": "",
+      "name": "Tier 7.7r exists",
+      "note": "",
+      "operator": "exists",
+      "pass": true,
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_7r_20260509_native_temporal_basis_reframing_contract/tier7_7r_results.json"
+    },
+    {
+      "criterion": "Tier 7.7r passed",
+      "details": "",
+      "name": "Tier 7.7r passed",
+      "note": "",
+      "operator": "== pass",
+      "pass": true,
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "criterion": "utility signal present",
+      "details": "",
+      "name": "utility signal present",
+      "note": "",
+      "operator": "true",
+      "pass": true,
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "mechanism promotion blocked",
+      "details": "",
+      "name": "mechanism promotion blocked",
+      "note": "",
+      "operator": "true",
+      "pass": true,
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "compact regression ran",
+      "details": "",
+      "name": "compact regression ran",
+      "note": "",
+      "operator": "true",
+      "pass": true,
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "compact regression passed",
+      "details": "",
+      "name": "compact regression passed",
+      "note": "",
+      "operator": "true",
+      "pass": true,
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "compact regression full",
+      "details": "",
+      "name": "compact regression full",
+      "note": "",
+      "operator": "true",
+      "pass": true,
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "bounded utility promoted",
+      "details": "",
+      "name": "bounded utility promoted",
+      "note": "",
+      "operator": "true",
+      "pass": true,
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "mechanism not promoted",
+      "details": "",
+      "name": "mechanism not promoted",
+      "note": "",
+      "operator": "false",
+      "pass": true,
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "criterion": "baseline freeze not authorized",
+      "details": "",
+      "name": "baseline freeze not authorized",
+      "note": "",
+      "operator": "false",
+      "pass": true,
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "criterion": "hardware transfer not authorized",
+      "details": "",
+      "name": "hardware transfer not authorized",
+      "note": "",
+      "operator": "false",
+      "pass": true,
+      "passed": true,
+      "rule": "false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 13,
+  "criteria_total": 13,
+  "decision": {
+    "baseline_freeze_authorized": false,
+    "broad_usefulness_claim_authorized": false,
+    "compact_backend": "repo_pytest",
+    "compact_full": true,
+    "compact_pass": true,
+    "hardware_transfer_authorized": false,
+    "key_diagnostics": {
+      "current_divided_by_native_lorenz": 2.884068002870802,
+      "nonlinear_lag_divided_by_native_lorenz": 0.865293931300275,
+      "random_projection_divided_by_native_lorenz": 0.7401924020025331,
+      "target_shuffle_divided_by_native": 447.07332395817457,
+      "time_shuffle_divided_by_native": 434.9311263486088
+    },
+    "mechanism_blocked": true,
+    "mechanism_promoted": false,
+    "outcome": "utility_promoted_mechanism_not_promoted",
+    "recommendation": "Carry the temporal-basis interface forward as bounded engineering utility; do not call it a CRA-specific mechanism.",
+    "task_ratios": [
+      {
+        "capacity_units": 128,
+        "current_divided_by_native": 2.884068002870802,
+        "current_geomean_mse": 0.0065086835955742274,
+        "native_geomean_mse": 0.002256771889253472,
+        "native_material_regression": false,
+        "native_materially_better": true,
+        "task": "lorenz"
+      },
+      {
+        "capacity_units": 128,
+        "current_divided_by_native": 6.445321476488301,
+        "current_geomean_mse": 0.10180482163056125,
+        "native_geomean_mse": 0.015795150327556517,
+        "native_material_regression": false,
+        "native_materially_better": true,
+        "task": "mackey_glass"
+      },
+      {
+        "capacity_units": 128,
+        "current_divided_by_native": 2.1407752176805133,
+        "current_geomean_mse": 0.40358548557269114,
+        "native_geomean_mse": 0.18852305568539227,
+        "native_material_regression": false,
+        "native_materially_better": true,
+        "task": "narma10"
+      }
+    ],
+    "utility_promoted": true,
+    "utility_signal": true
+  },
+  "generated_at_utc": "2026-05-09T18:09:51+00:00",
+  "nonclaims": [
+    "not a CRA-specific mechanism promotion",
+    "not a core baseline freeze",
+    "not hardware/native transfer",
+    "not external-baseline superiority",
+    "not broad public usefulness",
+    "not language, AGI, or ASI evidence"
+  ],
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7s_20260509_bounded_temporal_basis_utility_promotion",
+  "runner_revision": "tier7_7s_bounded_temporal_basis_utility_promotion_20260509_0001",
+  "status": "pass",
+  "tier": "Tier 7.7s - Bounded Temporal-Basis Utility Promotion/Regression Gate"
+}

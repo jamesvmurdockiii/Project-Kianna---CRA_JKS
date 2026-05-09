@@ -4476,15 +4476,28 @@ Boundary: contract only; no new score, mechanism promotion, freeze, public
 usefulness claim, external-baseline superiority, or hardware/native transfer.
 ```
 
-Current next step:
+Completed utility promotion/regression gate:
 
 ```text
 Tier 7.7s — bounded temporal-basis utility promotion/regression gate
-Question: can the temporal-basis interface be promoted as bounded engineering
-utility using the 7.7q evidence plus compact regression/guard checks?
-Boundary: promotion/regression gate only; no CRA-specific mechanism claim,
-external-baseline superiority, hardware/native transfer, or broad public
-usefulness claim.
+Status: COMPLETE / PASS, 13/13 criteria
+Output: controlled_test_output/tier7_7s_20260509_bounded_temporal_basis_utility_promotion/
+Outcome: utility_promoted_mechanism_not_promoted
+Boundary: bounded engineering utility only; no CRA-specific mechanism claim,
+core baseline freeze, external-baseline superiority, hardware/native transfer,
+or broad public usefulness claim.
+```
+
+Current next step:
+
+```text
+Tier 7.8 — polyp morphology / template variability contract
+Question: can variable polyp internal templates, timescales, excitatory/
+inhibitory ratios, and sparse connectivity increase population-level state
+diversity and benchmark usefulness without being explained by generic random
+projection?
+Boundary: contract only; no score, promotion, freeze, public usefulness claim,
+or hardware/native transfer.
 ```
 
 Tier 7.1a predeclared these candidate/future adapter families:

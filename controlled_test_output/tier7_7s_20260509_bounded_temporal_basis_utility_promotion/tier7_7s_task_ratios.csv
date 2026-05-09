@@ -1,0 +1,4 @@
+task,capacity_units,native_geomean_mse,current_geomean_mse,current_divided_by_native,native_materially_better,native_material_regression
+lorenz,128,0.002256771889253472,0.0065086835955742274,2.884068002870802,True,False
+mackey_glass,128,0.015795150327556517,0.10180482163056125,6.445321476488301,True,False
+narma10,128,0.18852305568539227,0.40358548557269114,2.1407752176805133,True,False
