@@ -1,0 +1,624 @@
+{
+  "baseline_inventory": [
+    "always_abstain_or_wait",
+    "always_act_or_alert",
+    "fixed_train_only_threshold",
+    "rolling_zscore_policy",
+    "ewma_mad_residual_policy",
+    "lag_ridge_policy",
+    "online_logistic_policy",
+    "online_perceptron_policy",
+    "reservoir_or_esn_policy_readout",
+    "small_gru_sequence_policy_if_budget_allows",
+    "random_policy",
+    "oracle_policy_upper_bound_nonclaim"
+  ],
+  "claim_boundary": "Preflight/schema evidence only; no performance scoring, no public usefulness claim, no new baseline freeze, and no hardware/native transfer.",
+  "cost_model": {
+    "correct_abstain_under_low_confidence": 0.25,
+    "correct_event_action": 10.0,
+    "early_but_useful_action": 4.0,
+    "failure_without_maintenance": -20.0,
+    "false_positive_action": -3.0,
+    "late_action_per_step": -0.5,
+    "missed_event": -15.0,
+    "premature_maintenance": -6.0,
+    "unnecessary_maintenance": -4.0,
+    "wait_or_abstain_cost_per_step": -0.05
+  },
+  "criteria": [
+    {
+      "name": "Tier 7.4d exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_4d_20260509_cost_aware_policy_action_heldout_contract/tier7_4d_results.json"
+    },
+    {
+      "name": "Tier 7.4d passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "v2.4 baseline frozen",
+      "note": "",
+      "passed": true,
+      "rule": "== frozen",
+      "value": "frozen"
+    },
+    {
+      "name": "NAB source preflight passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "C-MAPSS source preflight passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "NAB holdout evidence available",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "NAB heldout split is locked and disjoint",
+      "note": "",
+      "passed": true,
+      "rule": ">=12 files and disjoint",
+      "value": {
+        "calibration_rule": "per-stream calibration rows only; no held-out label tuning",
+        "commit": "ea702d75cc2258d9d7dd35ca8e5e2539d71f3140",
+        "disjoint_from_policy_selection": true,
+        "family": "nab_heldout_alarm_action_cost",
+        "heldout_categories": [
+          "artificialWithAnomaly",
+          "realAWSCloudwatch",
+          "realAdExchange",
+          "realKnownCause",
+          "realTraffic",
+          "realTweets"
+        ],
+        "heldout_file_count": 12,
+        "heldout_files": [
+          "artificialWithAnomaly/art_daily_nojump.csv",
+          "artificialWithAnomaly/art_increase_spike_density.csv",
+          "realAWSCloudwatch/ec2_cpu_utilization_53ea38.csv",
+          "realAWSCloudwatch/ec2_network_in_5abac7.csv",
+          "realAdExchange/exchange-3_cpc_results.csv",
+          "realAdExchange/exchange-4_cpc_results.csv",
+          "realKnownCause/rogue_agent_key_hold.csv",
+          "realKnownCause/rogue_agent_key_updown.csv",
+          "realTraffic/TravelTime_451.csv",
+          "realTraffic/speed_t4013.csv",
+          "realTweets/Twitter_volume_AMZN.csv",
+          "realTweets/Twitter_volume_UPS.csv"
+        ],
+        "label_visibility": "offline scoring only",
+        "source": "Numenta NAB",
+        "test_rule": "score actions on held-out rows/windows after online action emission"
+      }
+    },
+    {
+      "name": "C-MAPSS train/test split is locked",
+      "note": "",
+      "passed": true,
+      "rule": "100 train/test units",
+      "value": {
+        "calibration_rule": "train units only; train-only normalization from Tier 7.1b",
+        "download_url": "https://data.nasa.gov/docs/legacy/CMAPSSData.zip",
+        "family": "cmapss_maintenance_action_cost",
+        "label_visibility": "offline RUL labels only",
+        "source": "NASA C-MAPSS FD001",
+        "test_rows": 13096,
+        "test_rule": "emit maintenance action before RUL feedback for each test cycle",
+        "test_units": 100,
+        "train_rows": 20631,
+        "train_units": 100,
+        "zip_sha256": "74bef434a34db25c7bf72e668ea4cd52afe5f2cf8e44367c55a82bfd91a5a34f"
+      }
+    },
+    {
+      "name": "raw public data cache is ignored",
+      "note": "",
+      "passed": true,
+      "rule": "present in .gitignore",
+      "value": ".cra_data_cache/"
+    },
+    {
+      "name": "online and offline artifacts exist",
+      "note": "",
+      "passed": true,
+      "rule": "all exist",
+      "value": [
+        {
+          "artifact": "tier7_1g_results",
+          "exists": true,
+          "family": "nab",
+          "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_results.json"
+        },
+        {
+          "artifact": "tier7_1l_results",
+          "exists": true,
+          "family": "nab",
+          "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation/tier7_1l_results.json"
+        },
+        {
+          "artifact": "online_smoke_stream",
+          "exists": true,
+          "family": "nab",
+          "header": "stream_id,category,adapter_order_index,source_row_index,timestamp,value,prediction_before_update,label_available_in_stream,anomaly_window_available_in_stream,scoring_labels_file",
+          "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_smoke_stream.csv",
+          "rows": 400
+        },
+        {
+          "artifact": "offline_label_windows",
+          "exists": true,
+          "family": "nab",
+          "header": "file,category,window_index,window_start,window_end,source,online_detector_access",
+          "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_label_windows.csv",
+          "rows": 12
+        },
+        {
+          "artifact": "tier7_1b_results",
+          "exists": true,
+          "family": "cmapss",
+          "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_results.json"
+        },
+        {
+          "artifact": "online_smoke_stream",
+          "exists": true,
+          "family": "cmapss",
+          "header": "event_id,split,unit,cycle,prediction_before_update,feature_count,feature_l2,target_available_in_stream",
+          "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_smoke_stream_preview.csv",
+          "rows": 20
+        },
+        {
+          "artifact": "offline_labels",
+          "exists": true,
+          "family": "cmapss",
+          "header": "event_id,split,unit,cycle,offline_rul_label",
+          "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_smoke_scoring_labels.csv",
+          "rows": 20
+        }
+      ]
+    },
+    {
+      "name": "online streams separate labels",
+      "note": "",
+      "passed": true,
+      "rule": "only visibility flags, no offline labels/outcomes",
+      "value": [
+        [
+          "stream_id",
+          "category",
+          "adapter_order_index",
+          "source_row_index",
+          "timestamp",
+          "value",
+          "prediction_before_update",
+          "label_available_in_stream",
+          "anomaly_window_available_in_stream",
+          "scoring_labels_file"
+        ],
+        [
+          "event_id",
+          "split",
+          "unit",
+          "cycle",
+          "prediction_before_update",
+          "feature_count",
+          "feature_l2",
+          "target_available_in_stream"
+        ]
+      ]
+    },
+    {
+      "name": "offline labels exist separately",
+      "note": "",
+      "passed": true,
+      "rule": ">0 label rows",
+      "value": [
+        12,
+        20
+      ]
+    },
+    {
+      "name": "cost model is numeric and complete",
+      "note": "",
+      "passed": true,
+      "rule": ">=8 numeric costs",
+      "value": {
+        "correct_abstain_under_low_confidence": 0.25,
+        "correct_event_action": 10.0,
+        "early_but_useful_action": 4.0,
+        "failure_without_maintenance": -20.0,
+        "false_positive_action": -3.0,
+        "late_action_per_step": -0.5,
+        "missed_event": -15.0,
+        "premature_maintenance": -6.0,
+        "unnecessary_maintenance": -4.0,
+        "wait_or_abstain_cost_per_step": -0.05
+      }
+    },
+    {
+      "name": "baseline inventory complete",
+      "note": "",
+      "passed": true,
+      "rule": ">=10 baselines",
+      "value": [
+        "always_abstain_or_wait",
+        "always_act_or_alert",
+        "fixed_train_only_threshold",
+        "rolling_zscore_policy",
+        "ewma_mad_residual_policy",
+        "lag_ridge_policy",
+        "online_logistic_policy",
+        "online_perceptron_policy",
+        "reservoir_or_esn_policy_readout",
+        "small_gru_sequence_policy_if_budget_allows",
+        "random_policy",
+        "oracle_policy_upper_bound_nonclaim"
+      ]
+    },
+    {
+      "name": "sham inventory complete",
+      "note": "",
+      "passed": true,
+      "rule": ">=8 shams/ablations",
+      "value": [
+        "shuffled_cost_or_reward",
+        "key_label_permuted_cost",
+        "random_confidence",
+        "confidence_disabled",
+        "memory_disabled",
+        "recurrent_state_disabled",
+        "policy_learning_disabled",
+        "wrong_context_key",
+        "no_action_cost_ablation",
+        "always_action_collapse_guard",
+        "test_label_leakage_guard"
+      ]
+    },
+    {
+      "name": "scoring schema includes no hidden labels online",
+      "note": "",
+      "passed": true,
+      "rule": "feedback/cost/label visibility fields present",
+      "value": [
+        "family",
+        "stream_or_unit",
+        "event_id",
+        "time_index",
+        "model",
+        "action",
+        "confidence",
+        "prediction",
+        "feedback_visible",
+        "cost_visible",
+        "label_visible"
+      ]
+    },
+    {
+      "name": "scoring schema includes utility and regret offline",
+      "note": "",
+      "passed": true,
+      "rule": "utility/regret fields present",
+      "value": [
+        "family",
+        "stream_or_unit",
+        "event_id",
+        "model",
+        "action",
+        "label_or_outcome",
+        "utility",
+        "false_positive",
+        "missed_event",
+        "latency",
+        "regret_vs_oracle"
+      ]
+    },
+    {
+      "name": "statistics schema includes confidence support",
+      "note": "",
+      "passed": true,
+      "rule": "CI/effect fields present",
+      "value": [
+        "family",
+        "candidate",
+        "baseline",
+        "metric",
+        "mean_delta",
+        "ci_low",
+        "ci_high",
+        "effect_size",
+        "paired_units"
+      ]
+    },
+    {
+      "name": "preflight emits no heldout performance scores",
+      "note": "schemas only; model score rows are not populated in this tier",
+      "passed": true,
+      "rule": "no expected_utility values computed",
+      "value": [
+        "model",
+        "regret_vs_oracle",
+        "event_id",
+        "action_rate_and_no_action_collapse_rate",
+        "task_family_win_loss_table",
+        "event_f1_or_window_recall",
+        "prediction",
+        "worst_case_seed_or_stream_behavior",
+        "cost_visible",
+        "candidate",
+        "cost_normalized_score",
+        "expected_utility",
+        "stream_or_unit",
+        "missed_event_cost",
+        "feedback_visible",
+        "utility",
+        "false_positive",
+        "per-stream_or_per-unit_table",
+        "label_or_outcome",
+        "false_positive_cost_per_1000",
+        "baseline",
+        "paired_effect_size_where_units_match",
+        "label_visible",
+        "latency",
+        "effect_size",
+        "calibration_error",
+        "ci_high",
+        "bootstrap_95_ci_for_delta_vs_best_baseline",
+        "action_rate",
+        "metric",
+        "action",
+        "action_latency",
+        "ci_low",
+        "mean_median_std_min_max",
+        "time_index",
+        "paired_units",
+        "maintenance_failure_cost",
+        "mean_delta",
+        "confidence",
+        "missed_event",
+        "family"
+      ]
+    },
+    {
+      "name": "next gate is scoring gate not freeze",
+      "note": "",
+      "passed": true,
+      "rule": "scoring gate",
+      "value": "Tier 7.4f - Cost-Aware Policy/Action Held-Out Scoring Gate"
+    }
+  ],
+  "criteria_passed": 20,
+  "criteria_total": 20,
+  "decision": {
+    "freeze_authorized": false,
+    "hardware_transfer_authorized": false,
+    "next_gate": "Tier 7.4f - Cost-Aware Policy/Action Held-Out Scoring Gate",
+    "outcome": "heldout_scoring_preflight_ready",
+    "scoring_gate_authorized": true
+  },
+  "generated_at_utc": "2026-05-09T02:20:52+00:00",
+  "runner_revision": "tier7_4e_cost_aware_policy_action_heldout_preflight_20260509_0001",
+  "scoring_schema": {
+    "model_score_row": [
+      "family",
+      "model",
+      "expected_utility",
+      "cost_normalized_score",
+      "regret_vs_oracle",
+      "false_positive_cost_per_1000",
+      "missed_event_cost",
+      "action_latency",
+      "calibration_error",
+      "action_rate"
+    ],
+    "offline_scoring_row": [
+      "family",
+      "stream_or_unit",
+      "event_id",
+      "model",
+      "action",
+      "label_or_outcome",
+      "utility",
+      "false_positive",
+      "missed_event",
+      "latency",
+      "regret_vs_oracle"
+    ],
+    "online_action_row": [
+      "family",
+      "stream_or_unit",
+      "event_id",
+      "time_index",
+      "model",
+      "action",
+      "confidence",
+      "prediction",
+      "feedback_visible",
+      "cost_visible",
+      "label_visible"
+    ],
+    "required_metrics": [
+      "expected_utility",
+      "cost_normalized_score",
+      "regret_vs_oracle",
+      "event_f1_or_window_recall",
+      "false_positive_cost_per_1000",
+      "missed_event_cost",
+      "action_latency",
+      "maintenance_failure_cost",
+      "calibration_error",
+      "action_rate_and_no_action_collapse_rate"
+    ],
+    "required_statistics": [
+      "per-stream_or_per-unit_table",
+      "mean_median_std_min_max",
+      "bootstrap_95_ci_for_delta_vs_best_baseline",
+      "paired_effect_size_where_units_match",
+      "task_family_win_loss_table",
+      "worst_case_seed_or_stream_behavior"
+    ],
+    "statistical_support_row": [
+      "family",
+      "candidate",
+      "baseline",
+      "metric",
+      "mean_delta",
+      "ci_low",
+      "ci_high",
+      "effect_size",
+      "paired_units"
+    ]
+  },
+  "sham_ablation_inventory": [
+    "shuffled_cost_or_reward",
+    "key_label_permuted_cost",
+    "random_confidence",
+    "confidence_disabled",
+    "memory_disabled",
+    "recurrent_state_disabled",
+    "policy_learning_disabled",
+    "wrong_context_key",
+    "no_action_cost_ablation",
+    "always_action_collapse_guard",
+    "test_label_leakage_guard"
+  ],
+  "source_artifacts": [
+    {
+      "artifact": "tier7_1g_results",
+      "exists": true,
+      "family": "nab",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_results.json"
+    },
+    {
+      "artifact": "tier7_1l_results",
+      "exists": true,
+      "family": "nab",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation/tier7_1l_results.json"
+    },
+    {
+      "artifact": "online_smoke_stream",
+      "exists": true,
+      "family": "nab",
+      "header": "stream_id,category,adapter_order_index,source_row_index,timestamp,value,prediction_before_update,label_available_in_stream,anomaly_window_available_in_stream,scoring_labels_file",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_smoke_stream.csv",
+      "rows": 400
+    },
+    {
+      "artifact": "offline_label_windows",
+      "exists": true,
+      "family": "nab",
+      "header": "file,category,window_index,window_start,window_end,source,online_detector_access",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_label_windows.csv",
+      "rows": 12
+    },
+    {
+      "artifact": "tier7_1b_results",
+      "exists": true,
+      "family": "cmapss",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_results.json"
+    },
+    {
+      "artifact": "online_smoke_stream",
+      "exists": true,
+      "family": "cmapss",
+      "header": "event_id,split,unit,cycle,prediction_before_update,feature_count,feature_l2,target_available_in_stream",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_smoke_stream_preview.csv",
+      "rows": 20
+    },
+    {
+      "artifact": "offline_labels",
+      "exists": true,
+      "family": "cmapss",
+      "header": "event_id,split,unit,cycle,offline_rul_label",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_smoke_scoring_labels.csv",
+      "rows": 20
+    }
+  ],
+  "split_manifest": {
+    "families": [
+      {
+        "calibration_rule": "per-stream calibration rows only; no held-out label tuning",
+        "commit": "ea702d75cc2258d9d7dd35ca8e5e2539d71f3140",
+        "disjoint_from_policy_selection": true,
+        "family": "nab_heldout_alarm_action_cost",
+        "heldout_categories": [
+          "artificialWithAnomaly",
+          "realAWSCloudwatch",
+          "realAdExchange",
+          "realKnownCause",
+          "realTraffic",
+          "realTweets"
+        ],
+        "heldout_file_count": 12,
+        "heldout_files": [
+          "artificialWithAnomaly/art_daily_nojump.csv",
+          "artificialWithAnomaly/art_increase_spike_density.csv",
+          "realAWSCloudwatch/ec2_cpu_utilization_53ea38.csv",
+          "realAWSCloudwatch/ec2_network_in_5abac7.csv",
+          "realAdExchange/exchange-3_cpc_results.csv",
+          "realAdExchange/exchange-4_cpc_results.csv",
+          "realKnownCause/rogue_agent_key_hold.csv",
+          "realKnownCause/rogue_agent_key_updown.csv",
+          "realTraffic/TravelTime_451.csv",
+          "realTraffic/speed_t4013.csv",
+          "realTweets/Twitter_volume_AMZN.csv",
+          "realTweets/Twitter_volume_UPS.csv"
+        ],
+        "label_visibility": "offline scoring only",
+        "source": "Numenta NAB",
+        "test_rule": "score actions on held-out rows/windows after online action emission"
+      },
+      {
+        "calibration_rule": "train units only; train-only normalization from Tier 7.1b",
+        "download_url": "https://data.nasa.gov/docs/legacy/CMAPSSData.zip",
+        "family": "cmapss_maintenance_action_cost",
+        "label_visibility": "offline RUL labels only",
+        "source": "NASA C-MAPSS FD001",
+        "test_rows": 13096,
+        "test_rule": "emit maintenance action before RUL feedback for each test cycle",
+        "test_units": 100,
+        "train_rows": 20631,
+        "train_units": 100,
+        "zip_sha256": "74bef434a34db25c7bf72e668ea4cd52afe5f2cf8e44367c55a82bfd91a5a34f"
+      },
+      {
+        "claim_role": "secondary diagnostic, not public usefulness alone",
+        "family": "standard_dynamical_action_cost",
+        "source": "locked Tier 7.0 Mackey-Glass/Lorenz/NARMA10 generator",
+        "split_rule": "reuse locked train/calibration/test windows; no tuning on test windows"
+      },
+      {
+        "claim_role": "mechanism localization only",
+        "family": "heldout_synthetic_policy_stress",
+        "source": "locked local mechanism stressors",
+        "split_rule": "fixed seeds and task parameters before scoring"
+      }
+    ],
+    "global_leakage_rules": [
+      "All thresholds, policy temperatures, abstain costs, and calibration transforms are selected on train/calibration splits only.",
+      "No test-label threshold tuning is allowed for any model, baseline, policy, cost, or abstention rule.",
+      "No same-subset policy selection: if a policy is selected on a diagnostic subset, confirmation must use disjoint held-out streams/units/windows.",
+      "Each action is emitted before the feedback, anomaly label, RUL label, or outcome update for that row/window is visible.",
+      "Labels and event windows stay in separate artifacts from online input rows until offline scoring.",
+      "Public-source checksums, selected streams/units, split ids, and ignored raw-data-cache paths must be recorded.",
+      "Any repair after a failed held-out score returns to a new contract or diagnostic; it cannot overwrite the held-out result."
+    ],
+    "locked_by": "Tier 7.4d",
+    "scoring_gate": "Tier 7.4f - Cost-Aware Policy/Action Held-Out Scoring Gate"
+  },
+  "status": "pass",
+  "tier": "Tier 7.4e - Cost-Aware Policy/Action Held-Out Scoring Preflight"
+}

@@ -1,0 +1,71 @@
+{
+  "model_score_row": [
+    "family",
+    "model",
+    "expected_utility",
+    "cost_normalized_score",
+    "regret_vs_oracle",
+    "false_positive_cost_per_1000",
+    "missed_event_cost",
+    "action_latency",
+    "calibration_error",
+    "action_rate"
+  ],
+  "offline_scoring_row": [
+    "family",
+    "stream_or_unit",
+    "event_id",
+    "model",
+    "action",
+    "label_or_outcome",
+    "utility",
+    "false_positive",
+    "missed_event",
+    "latency",
+    "regret_vs_oracle"
+  ],
+  "online_action_row": [
+    "family",
+    "stream_or_unit",
+    "event_id",
+    "time_index",
+    "model",
+    "action",
+    "confidence",
+    "prediction",
+    "feedback_visible",
+    "cost_visible",
+    "label_visible"
+  ],
+  "required_metrics": [
+    "expected_utility",
+    "cost_normalized_score",
+    "regret_vs_oracle",
+    "event_f1_or_window_recall",
+    "false_positive_cost_per_1000",
+    "missed_event_cost",
+    "action_latency",
+    "maintenance_failure_cost",
+    "calibration_error",
+    "action_rate_and_no_action_collapse_rate"
+  ],
+  "required_statistics": [
+    "per-stream_or_per-unit_table",
+    "mean_median_std_min_max",
+    "bootstrap_95_ci_for_delta_vs_best_baseline",
+    "paired_effect_size_where_units_match",
+    "task_family_win_loss_table",
+    "worst_case_seed_or_stream_behavior"
+  ],
+  "statistical_support_row": [
+    "family",
+    "candidate",
+    "baseline",
+    "metric",
+    "mean_delta",
+    "ci_low",
+    "ci_high",
+    "effect_size",
+    "paired_units"
+  ]
+}

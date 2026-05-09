@@ -1,0 +1,2 @@
+outcome,scoring_gate_authorized,freeze_authorized,hardware_transfer_authorized,next_gate
+heldout_scoring_preflight_ready,True,False,False,Tier 7.4f - Cost-Aware Policy/Action Held-Out Scoring Gate

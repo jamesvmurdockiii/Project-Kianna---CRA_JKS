@@ -1,0 +1,2 @@
+tier,status,criteria_passed,criteria_total,outcome,scoring_gate_authorized,freeze_authorized,hardware_transfer_authorized,next_gate
+Tier 7.4e - Cost-Aware Policy/Action Held-Out Scoring Preflight,pass,20,20,heldout_scoring_preflight_ready,True,False,False,Tier 7.4f - Cost-Aware Policy/Action Held-Out Scoring Gate

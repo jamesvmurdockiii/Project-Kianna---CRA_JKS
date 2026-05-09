@@ -1,0 +1,72 @@
+{
+  "families": [
+    {
+      "calibration_rule": "per-stream calibration rows only; no held-out label tuning",
+      "commit": "ea702d75cc2258d9d7dd35ca8e5e2539d71f3140",
+      "disjoint_from_policy_selection": true,
+      "family": "nab_heldout_alarm_action_cost",
+      "heldout_categories": [
+        "artificialWithAnomaly",
+        "realAWSCloudwatch",
+        "realAdExchange",
+        "realKnownCause",
+        "realTraffic",
+        "realTweets"
+      ],
+      "heldout_file_count": 12,
+      "heldout_files": [
+        "artificialWithAnomaly/art_daily_nojump.csv",
+        "artificialWithAnomaly/art_increase_spike_density.csv",
+        "realAWSCloudwatch/ec2_cpu_utilization_53ea38.csv",
+        "realAWSCloudwatch/ec2_network_in_5abac7.csv",
+        "realAdExchange/exchange-3_cpc_results.csv",
+        "realAdExchange/exchange-4_cpc_results.csv",
+        "realKnownCause/rogue_agent_key_hold.csv",
+        "realKnownCause/rogue_agent_key_updown.csv",
+        "realTraffic/TravelTime_451.csv",
+        "realTraffic/speed_t4013.csv",
+        "realTweets/Twitter_volume_AMZN.csv",
+        "realTweets/Twitter_volume_UPS.csv"
+      ],
+      "label_visibility": "offline scoring only",
+      "source": "Numenta NAB",
+      "test_rule": "score actions on held-out rows/windows after online action emission"
+    },
+    {
+      "calibration_rule": "train units only; train-only normalization from Tier 7.1b",
+      "download_url": "https://data.nasa.gov/docs/legacy/CMAPSSData.zip",
+      "family": "cmapss_maintenance_action_cost",
+      "label_visibility": "offline RUL labels only",
+      "source": "NASA C-MAPSS FD001",
+      "test_rows": 13096,
+      "test_rule": "emit maintenance action before RUL feedback for each test cycle",
+      "test_units": 100,
+      "train_rows": 20631,
+      "train_units": 100,
+      "zip_sha256": "74bef434a34db25c7bf72e668ea4cd52afe5f2cf8e44367c55a82bfd91a5a34f"
+    },
+    {
+      "claim_role": "secondary diagnostic, not public usefulness alone",
+      "family": "standard_dynamical_action_cost",
+      "source": "locked Tier 7.0 Mackey-Glass/Lorenz/NARMA10 generator",
+      "split_rule": "reuse locked train/calibration/test windows; no tuning on test windows"
+    },
+    {
+      "claim_role": "mechanism localization only",
+      "family": "heldout_synthetic_policy_stress",
+      "source": "locked local mechanism stressors",
+      "split_rule": "fixed seeds and task parameters before scoring"
+    }
+  ],
+  "global_leakage_rules": [
+    "All thresholds, policy temperatures, abstain costs, and calibration transforms are selected on train/calibration splits only.",
+    "No test-label threshold tuning is allowed for any model, baseline, policy, cost, or abstention rule.",
+    "No same-subset policy selection: if a policy is selected on a diagnostic subset, confirmation must use disjoint held-out streams/units/windows.",
+    "Each action is emitted before the feedback, anomaly label, RUL label, or outcome update for that row/window is visible.",
+    "Labels and event windows stay in separate artifacts from online input rows until offline scoring.",
+    "Public-source checksums, selected streams/units, split ids, and ignored raw-data-cache paths must be recorded.",
+    "Any repair after a failed held-out score returns to a new contract or diagnostic; it cannot overwrite the held-out result."
+  ],
+  "locked_by": "Tier 7.4d",
+  "scoring_gate": "Tier 7.4f - Cost-Aware Policy/Action Held-Out Scoring Gate"
+}

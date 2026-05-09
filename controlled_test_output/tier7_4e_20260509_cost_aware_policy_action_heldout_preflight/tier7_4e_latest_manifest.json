@@ -1,0 +1,87 @@
+{
+  "artifacts": [
+    {
+      "bytes": 315,
+      "name": "baseline_inventory_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4e_20260509_cost_aware_policy_action_heldout_preflight/tier7_4e_baseline_inventory.csv",
+      "sha256": "e4c4aafb04658c4acba0e99713a4ab86f2b92a673ed76e5905dd7d57a84dcd84"
+    },
+    {
+      "bytes": 310,
+      "name": "cost_model_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4e_20260509_cost_aware_policy_action_heldout_preflight/tier7_4e_cost_model.csv",
+      "sha256": "8e2723ea5b27774e7eb97f9c8b3a7fc043f69740ccae6745883dd98dc97b40f2"
+    },
+    {
+      "bytes": 357,
+      "name": "cost_model_json",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4e_20260509_cost_aware_policy_action_heldout_preflight/tier7_4e_cost_model.json",
+      "sha256": "c6125260855d5e3d8ca44e8d0e7073e5e8157af629ad3590d508f4317be4a547"
+    },
+    {
+      "bytes": 197,
+      "name": "decision_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4e_20260509_cost_aware_policy_action_heldout_preflight/tier7_4e_decision.csv",
+      "sha256": "0ba5f44e93eaba1b768cc397924218aaf2c3261ebc07548d03c1fc51e0e02dac"
+    },
+    {
+      "bytes": 234,
+      "name": "decision_json",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4e_20260509_cost_aware_policy_action_heldout_preflight/tier7_4e_decision.json",
+      "sha256": "d3145dee0b0a29e43ea89a65859057b218a55929eee3c5bcef640805d888fe8d"
+    },
+    {
+      "bytes": 1057,
+      "name": "report_md",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4e_20260509_cost_aware_policy_action_heldout_preflight/tier7_4e_report.md",
+      "sha256": "4b7fcece703a918e967f610e7cefee648611691826879b819428416f12f138e9"
+    },
+    {
+      "bytes": 20916,
+      "name": "results_json",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4e_20260509_cost_aware_policy_action_heldout_preflight/tier7_4e_results.json",
+      "sha256": "d60f1bad9fbe6377619687c6d06f8f3417d83625f7c709cc48cbdfa1f467dccc"
+    },
+    {
+      "bytes": 1493,
+      "name": "scoring_schema_json",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4e_20260509_cost_aware_policy_action_heldout_preflight/tier7_4e_scoring_schema.json",
+      "sha256": "5332ad04d9c57cd90f815784b70d554cc9cddad0dd2137a416c352fa05070dad"
+    },
+    {
+      "bytes": 265,
+      "name": "sham_inventory_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4e_20260509_cost_aware_policy_action_heldout_preflight/tier7_4e_sham_inventory.csv",
+      "sha256": "e8085b18eeb1137f75805edf5a2e7a2206bfd1980b2ac8522b9c0fdb192848ad"
+    },
+    {
+      "bytes": 1522,
+      "name": "source_artifacts_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4e_20260509_cost_aware_policy_action_heldout_preflight/tier7_4e_source_artifacts.csv",
+      "sha256": "40363026039d686316b17a2b11bb6da1fb2b734792d443826ff519548ec983c6"
+    },
+    {
+      "bytes": 1870,
+      "name": "split_manifest_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4e_20260509_cost_aware_policy_action_heldout_preflight/tier7_4e_split_manifest.csv",
+      "sha256": "55dbad2c20fed3a4afe4e3ea26584b99664ba36de23dbf3eb780fb665b9a3a1e"
+    },
+    {
+      "bytes": 3468,
+      "name": "split_manifest_json",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4e_20260509_cost_aware_policy_action_heldout_preflight/tier7_4e_split_manifest.json",
+      "sha256": "4c518e87d530436935de92a219456862faf85a0d94b3b3fa80e0880d762e0da1"
+    },
+    {
+      "bytes": 315,
+      "name": "summary_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4e_20260509_cost_aware_policy_action_heldout_preflight/tier7_4e_summary.csv",
+      "sha256": "b2d711a95ba35e1057ac8d9ed0bedd5f6fa135c7f5d0867dd53b9cbbd79ac5f0"
+    }
+  ],
+  "generated_at_utc": "2026-05-09T02:20:52+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_4e_20260509_cost_aware_policy_action_heldout_preflight",
+  "runner_revision": "tier7_4e_cost_aware_policy_action_heldout_preflight_20260509_0001",
+  "status": "pass",
+  "tier": "Tier 7.4e - Cost-Aware Policy/Action Held-Out Scoring Preflight"
+}

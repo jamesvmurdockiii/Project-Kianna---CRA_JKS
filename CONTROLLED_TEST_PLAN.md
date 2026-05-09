@@ -74,7 +74,8 @@ They remain part of the peer-review audit trail:
 7.4 delayed-reward policy / action selection
 7.4c cost-aware policy/action promotion + compact regression = passed; freezes bounded v2.4 software policy/action baseline
 7.4d cost-aware policy/action held-out/public usefulness contract = passed contract gate
-7.4e cost-aware policy/action held-out scoring preflight = current next gate
+7.4e cost-aware policy/action held-out scoring preflight = passed preflight gate
+7.4f cost-aware policy/action held-out scoring gate = current next gate
 7.5 curriculum / environment generator
 7.6 long-horizon planning / subgoal control
 4.19 hardware lifecycle feasibility
@@ -11177,13 +11178,28 @@ Boundary: contract only; no scoring, no public usefulness proof, no new
 baseline freeze, and no hardware/native transfer.
 ```
 
-Next required step:
+Latest preflight:
 
 ```text
 Tier 7.4e - Cost-aware policy/action held-out scoring preflight.
-Build the source/split/cost/schema dry-run harness from the locked 7.4d
-contract before scoring v2.4. Do not tune on held-out streams or infer hardware
-transfer from the v2.4 software freeze.
+Status: COMPLETE / PASS, 20/20 criteria.
+Output: controlled_test_output/tier7_4e_20260509_cost_aware_policy_action_heldout_preflight/
+Outcome: heldout_scoring_preflight_ready.
+Result: source/split/cost/schema readiness is verified before held-out v2.4
+scoring. NAB and C-MAPSS source/preflight artifacts, disjoint held-out splits,
+fixed costs, baseline/sham inventories, online/offline label separation, and
+statistical schemas are materialized.
+Boundary: preflight only; no performance score, no public usefulness proof, no
+new baseline freeze, and no hardware/native transfer.
+```
+
+Next required step:
+
+```text
+Tier 7.4f - Cost-aware policy/action held-out scoring gate.
+Score v2.4 on the locked public/real-ish action-cost families against fair
+baselines and shams. Do not tune on held-out streams or infer hardware transfer
+from the v2.4 software freeze.
 ```
 
 ## Tier 5.20a - Resonant Branch Polyp Internal-Model Diagnostic

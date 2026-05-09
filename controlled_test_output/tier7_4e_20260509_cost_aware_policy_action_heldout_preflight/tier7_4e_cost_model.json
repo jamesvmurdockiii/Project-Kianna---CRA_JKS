@@ -1,0 +1,12 @@
+{
+  "correct_abstain_under_low_confidence": 0.25,
+  "correct_event_action": 10.0,
+  "early_but_useful_action": 4.0,
+  "failure_without_maintenance": -20.0,
+  "false_positive_action": -3.0,
+  "late_action_per_step": -0.5,
+  "missed_event": -15.0,
+  "premature_maintenance": -6.0,
+  "unnecessary_maintenance": -4.0,
+  "wait_or_abstain_cost_per_step": -0.05
+}

@@ -1,0 +1,12 @@
+sham_or_ablation
+shuffled_cost_or_reward
+key_label_permuted_cost
+random_confidence
+confidence_disabled
+memory_disabled
+recurrent_state_disabled
+policy_learning_disabled
+wrong_context_key
+no_action_cost_ablation
+always_action_collapse_guard
+test_label_leakage_guard

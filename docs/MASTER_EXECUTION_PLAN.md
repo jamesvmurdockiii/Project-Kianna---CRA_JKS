@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-09T02:12:39+00:00.
+Last updated: 2026-05-09T02:24:30+00:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -31,6 +31,9 @@ Tier 7.4c = SOFTWARE PASS / full NEST compact regression / v2.4 freeze
 Tier 7.4d = CONTRACT PASS / held-out-public action-cost scoring pre-registration
               no scoring claim, no public usefulness claim, no new freeze, and
               no hardware/native transfer claim
+Tier 7.4e = PREFLIGHT PASS / held-out-public action-cost scoring schema/source check
+              no performance scoring, no public usefulness claim, no new
+              freeze, and no hardware/native transfer claim
 ```
 
 Current hardware/custom-runtime state:
@@ -1283,73 +1286,82 @@ ability.
     contract only; no scoring, no public usefulness proof, no new freeze, and
     no hardware/native transfer.
 
-99. **CURRENT ACTIVE STEP** - Tier 7.4e cost-aware policy/action held-out
+99. **COMPLETE** - Tier 7.4e cost-aware policy/action held-out
     scoring preflight:
-    build the source/split/cost/schema dry-run harness from the locked 7.4d
-    contract before any v2.4 scoring. Verify public-source artifacts, held-out
-    splits, fixed costs, baseline/sham inventory, metric tables, and failure
-    classes. Do not tune on held-out streams or move the mechanism native from
-    v2.4 alone.
+    passed 20/20 at
+    `controlled_test_output/tier7_4e_20260509_cost_aware_policy_action_heldout_preflight/`.
+    The gate verifies source/split/cost/schema readiness before scoring:
+    public NAB/C-MAPSS source preflights, disjoint held-out splits, fixed cost
+    model, online/offline label separation, baseline/sham inventories, scoring
+    schemas, and expected next-gate artifacts. Boundary: no performance score,
+    no public usefulness proof, no new freeze, and no hardware/native transfer.
 
-100. Mechanism iteration loop: add exactly one planned general mechanism at a
+100. **CURRENT ACTIVE STEP** - Tier 7.4f cost-aware policy/action held-out
+    scoring gate:
+    score v2.4 against the locked 7.4d/7.4e public/real-ish action-cost
+    families with fixed costs, no same-subset threshold tuning, fair baselines,
+    shams, and confidence/action-cost traces. Preserve failures and narrow the
+    usefulness claim if v2.4 does not beat or complement the strongest baseline.
+
+101. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
     stop the broad usefulness track and narrow the paper.
 
-101. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+102. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines. Start only after the standardized scoreboard or failure diagnosis
     identifies a winning regime, a real failure mode, or a mechanism needing
     external validation.
 
-102. Tier 7.2 held-out task challenge: define held-out families before running;
+103. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout. Include at least one synthetic holdout and one
     real-ish adapter holdout if Tier 7.1 is active.
 
-103. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+104. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines. Candidate domains include
     streaming anomaly detection, predictive-maintenance sensor streams, human
     activity streams, event prediction, ECG/biosignal streams, and finance as
     one domain only rather than the whole proof.
 
-104. Tier 7.4 policy/action selection held-out scoring: after 7.4d locks the
+105. Tier 7.4 policy/action selection held-out scoring: after 7.4d locks the
     contract, run v2.4 on predeclared held-out/external action-cost tasks with
     fixed costs, no same-subset threshold tuning, fair baselines, shams, and
     confidence/action-cost traces. Do not start broad policy claims until
     held-out utility and statistics pass.
 
-105. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
+106. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
     planning/subgoal control: run only after the shorter hard/real-ish tasks are
     stable. Do not claim language, AGI, or broad planning from toy gates.
 
-106. Run expanded external baselines and fairness audit at the phase lock:
+107. Run expanded external baselines and fairness audit at the phase lock:
     random/sign persistence, online perceptron/logistic, lag/ridge where
     relevant, reservoir/ESN, small GRU, STDP-only SNN, simple evolutionary
     population, simple control baselines, and SNN reviewer-defense baselines
     where practical.
 
-107. Freeze the next software baseline only if new software capability work
+108. Freeze the next software baseline only if new software capability work
     passes ablations, fair baselines, leakage controls, and compact regression.
     If no new software mechanism is promoted, keep v2.4.
 
 ### Phase I - Final Paper Lock
 
-108. Select final paper claim level: strong usefulness paper, bounded architecture
+109. Select final paper claim level: strong usefulness paper, bounded architecture
     study, or narrowed diagnostic report. Let the evidence decide.
 
-109. Run final software matrix and final hardware subset matrix. Include effect
+110. Run final software matrix and final hardware subset matrix. Include effect
     sizes, confidence intervals, worst seed, sample efficiency, runtime, command
     count, resource budgets, and claim-boundary table.
 
-110. Build the independent reproduction capsule: fresh checkout instructions,
+111. Build the independent reproduction capsule: fresh checkout instructions,
     environment lock, validation command, registry/table regeneration, EBRAINS
     ingest instructions, artifact hash manifest, and one local tier rerun.
 
-111. Draft paper/whitepaper only after the Phase H usefulness/baseline gates pass. Write
+112. Draft paper/whitepaper only after the Phase H usefulness/baseline gates pass. Write
     limitations first, then claims. Preserve failed and parked diagnostics.
 
-112. External dry run: have a clean agent or human follow only the docs. If they
+113. External dry run: have a clean agent or human follow only the docs. If they
     need hidden chat context, the repo is not ready.
 
 ## 7. Current Tier 4.27 Definition
@@ -1508,31 +1520,33 @@ After each completed run or design tier:
 The next concrete action is:
 
 ```text
-Tier 7.4e - Cost-Aware Policy/Action Held-Out Scoring Preflight
+Tier 7.4f - Cost-Aware Policy/Action Held-Out Scoring Gate
 
-Question: Can the repository build a locked source/split/cost/schema preflight
-for the Tier 7.4d held-out/public action-cost contract before scoring v2.4?
+Question: Does v2.4 preserve a measurable utility advantage on the locked
+held-out/public action-cost families after the 7.4d contract and 7.4e
+preflight?
 
-First move: implement the dry-run harness that verifies public-source
-artifacts, held-out stream/unit/window splits, locked cost files, baseline and
-sham inventories, online row schema, label separation, and expected scoring
-artifacts before any held-out score is produced.
+First move: score the locked NAB alarm-action and C-MAPSS maintenance-action
+families with v2.4, v2.3/v2.2 references, fair thresholds/rolling/lag/online
+learner/reservoir baselines, random/trivial policies, oracle upper-bound
+nonclaim, and the predeclared shams. Do not tune costs, thresholds, or policies
+on held-out streams.
 
-Boundary: v2.4 is a host-side software mechanism baseline. Tier 7.4e must not
-claim public usefulness, hardware/native transfer, planning, language, AGI, or
-ASI until a scoring gate and later transfer gates earn those claims.
+Boundary: v2.4 is a host-side software mechanism baseline. Tier 7.4f may claim
+only the exact held-out scoring result it earns. It must not claim
+hardware/native transfer, broad planning, language, AGI, or ASI, and any public
+usefulness claim must be narrowed to the families and statistics that pass.
 ```
 
 Recent closeout:
 
 ```text
-Tier 7.4d passed at
-controlled_test_output/tier7_4d_20260509_cost_aware_policy_action_heldout_contract/.
-It locked the held-out/public action-cost contract for v2.4, including public
-NAB and C-MAPSS action families, standardized secondary diagnostics, fixed
-costs, actions, split/leakage rules, baselines, shams/ablations, statistics,
-failure classes, expected artifacts, and nonclaims. Hardware/native policy
-transfer remains blocked pending a separate transfer contract.
+Tier 7.4e passed at
+controlled_test_output/tier7_4e_20260509_cost_aware_policy_action_heldout_preflight/.
+It verified the public source/preflight artifacts, disjoint held-out splits,
+fixed costs, baseline/sham inventories, online/offline label separation, and
+scoring schemas before held-out v2.4 scoring. Hardware/native policy transfer
+remains blocked pending a separate transfer contract.
 ```
 
 Current reference state:
@@ -1687,9 +1701,10 @@ fifth, and separated only two of three shams. Tier 7.1m closed the adapter loop
 by narrowing the NAB claim and selecting Tier 7.4a cost-aware policy/action
 selection as the next general mechanism contract. Tier 7.4a then passed the
 contract gate, Tier 7.4b passed the local diagnostic as candidate evidence,
-Tier 7.4c froze bounded software baseline v2.4, and Tier 7.4d locked the
-held-out/public action-cost scoring contract. The next active software work is
-Tier 7.4e held-out scoring preflight.
+Tier 7.4c froze bounded software baseline v2.4, Tier 7.4d locked the
+held-out/public action-cost scoring contract, and Tier 7.4e verified the
+scoring preflight. The next active software work is Tier 7.4f held-out scoring
+gate.
 Reopen native work only for targeted transfer after a software task/mechanism
 earns it under the Tier 7/6.2 gates and a separate transfer contract is written.
 It must preserve explicit board/chip/shard identity, message paths, compact

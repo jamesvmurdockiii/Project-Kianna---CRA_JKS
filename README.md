@@ -67,13 +67,14 @@ controlled ablations, baseline comparisons, and explicit claim boundaries.
 | Latest policy/action diagnostic | Tier 7.4b passed from [`controlled_test_output/tier7_4b_20260509_cost_aware_policy_action_local_diagnostic`](controlled_test_output/tier7_4b_20260509_cost_aware_policy_action_local_diagnostic): the local v2.3 cost-aware policy ranked first among non-oracle models, beat fixed/trivial/online baselines by expected utility, separated shams and ablations, avoided no-action collapse, and preserved the boundary that this is candidate evidence only. |
 | Latest policy/action promotion gate | Tier 7.4c passed from [`controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate`](controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate): the locked 7.4b candidate preserved its expected-utility advantage, sham/ablation separation, no-action guard, and leakage boundary, then passed full NEST compact regression. `CRA_EVIDENCE_BASELINE_v2.4` is frozen under [`baselines/`](baselines). Boundary: host-side software policy/action evidence only; not public usefulness proof and not hardware/native transfer. |
 | Latest policy/action held-out contract | Tier 7.4d passed from [`controlled_test_output/tier7_4d_20260509_cost_aware_policy_action_heldout_contract`](controlled_test_output/tier7_4d_20260509_cost_aware_policy_action_heldout_contract): locked the held-out/public action-cost scoring contract for v2.4 before any scoring, including NAB alarm actions, C-MAPSS maintenance actions, standardized dynamical action-cost diagnostics, fixed costs, splits, leakage rules, baselines, shams, statistics, and artifacts. Contract only; no public usefulness claim, freeze, or hardware transfer. |
+| Latest policy/action scoring preflight | Tier 7.4e passed from [`controlled_test_output/tier7_4e_20260509_cost_aware_policy_action_heldout_preflight`](controlled_test_output/tier7_4e_20260509_cost_aware_policy_action_heldout_preflight): verified NAB and C-MAPSS source/preflight artifacts, disjoint held-out splits, fixed costs, online/offline label separation, baseline and sham inventories, and scoring schemas before any v2.4 performance score. Preflight only; no public usefulness claim, freeze, or hardware transfer. |
 | Latest optional mechanism diagnostic | Tier 5.20a passed as a harness from [`controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic`](controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic), but the full 16-resonant-branch polyp proxy was **not promoted**: it helped `variable_delay_multi_cue` and slightly helped `anomaly_detection_stream`, but regressed the standard three and hidden-context task versus v2.3. |
 | Latest optional mechanism repair | Tier 5.20b passed as a harness from [`controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic`](controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic), but neither 8 LIF / 8 resonant nor 12 LIF / 4 resonant earned promotion. Best candidate was `hybrid_8_lif_8_resonant`, with all-task geomean MSE `0.2852846857844163` versus v2.3 `0.2610804850928049`, two wins, two material regressions, and only one sham-separated task. No core polyp replacement, freeze, or hardware transfer. |
 | Latest minimal-dose mechanism check | Tier 5.20c passed as a harness from [`controlled_test_output/tier5_20c_20260508_minimal_resonant_polyp_diagnostic`](controlled_test_output/tier5_20c_20260508_minimal_resonant_polyp_diagnostic), but 14 LIF / 2 resonant was **not promoted**: all-task geomean MSE `0.2777975100580056` versus v2.3 `0.2610804850928049`, zero task wins, one material regression, and zero sham-separated tasks. |
 | Latest resonant-heavy mechanism check | Tier 5.20d passed as a harness from [`controlled_test_output/tier5_20d_20260508_resonant_heavy_polyp_diagnostic`](controlled_test_output/tier5_20d_20260508_resonant_heavy_polyp_diagnostic), but 4 LIF / 12 resonant was **not promoted**: all-task geomean MSE `0.29289224348599796` versus v2.3 `0.2610804850928049`, three task wins, two material regressions, and two sham-separated tasks. The signal is real enough to record, but not safe enough to integrate. |
 | Latest near-full resonant check | Tier 5.20e passed as a harness from [`controlled_test_output/tier5_20e_20260508_near_full_resonant_polyp_diagnostic`](controlled_test_output/tier5_20e_20260508_near_full_resonant_polyp_diagnostic), but 2 LIF / 14 resonant was **not promoted**: all-task geomean MSE `0.30374770797663714` versus v2.3 `0.2610804850928049`, three task wins, three material regressions, and two sham-separated tasks. This closes the current resonant branch dose sweep; resonant branches remain parked. |
-| Active next gate | Tier 7.4e cost-aware policy/action held-out scoring preflight: build the source/split/cost/schema dry-run harness from the locked 7.4d contract before any v2.4 scoring. |
-| Canonical registry | 110 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
+| Active next gate | Tier 7.4f cost-aware policy/action held-out scoring gate: score v2.4 against the locked public/real-ish action-cost families and fair baselines without tuning on held-out streams. |
+| Canonical registry | 111 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
 | Validation suite | 151 pytest tests plus registry, paper-table, and repository-audit generation. |
 
 ## What CRA Implements
@@ -201,7 +202,7 @@ python3 experiments/tier5_external_baselines.py \
 `make validate` currently runs:
 
 - 151 pytest unit tests.
-- Evidence registry generation: 110 canonical bundles, 0 failed criteria.
+- Evidence registry generation: 111 canonical bundles, 0 failed criteria.
 - Paper results table export.
 - Repository audit.
 
@@ -246,7 +247,7 @@ commit used. A placeholder software citation is:
   author       = {Murdock, James V. and CRA Contributors},
   year         = {2026},
   url          = {https://github.com/jamesvmurdockiii/Project-Kianna---CRA_JKS},
-  note         = {110 canonical evidence bundles; bounded SpiNNaker hardware validation}
+  note         = {111 canonical evidence bundles; bounded SpiNNaker hardware validation}
 }
 ```
 

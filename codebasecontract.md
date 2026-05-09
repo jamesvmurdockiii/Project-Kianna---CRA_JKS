@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-09T02:12:39+00:00.
+Last updated: 2026-05-09T02:24:30+00:00.
 
 Current repo root:
 
@@ -378,6 +378,23 @@ Tier 7.4d = COMPLETE, PASS, 20/20 criteria
   Next gate: Tier 7.4e - Cost-Aware Policy/Action Held-Out Scoring Preflight.
   Boundary: contract only; not a scoring run, not public usefulness proof, not
             a new baseline freeze, and not hardware/native transfer.
+```
+
+Latest cost-aware policy/action held-out scoring preflight:
+
+```text
+Tier 7.4e = COMPLETE, PASS, 20/20 criteria
+  Source: controlled_test_output/tier7_4e_20260509_cost_aware_policy_action_heldout_preflight/
+  Runner: experiments/tier7_4e_cost_aware_policy_action_heldout_preflight.py
+  Outcome: heldout_scoring_preflight_ready
+  Result: verified the locked 7.4d scoring harness surface before scoring:
+          NAB and C-MAPSS public-source/preflight artifacts, disjoint held-out
+          splits, fixed costs, label-separated online/offline schemas,
+          baseline/sham inventories, and statistical support schemas.
+  Next gate: Tier 7.4f - Cost-Aware Policy/Action Held-Out Scoring Gate.
+  Boundary: preflight/schema evidence only; not performance scoring, not public
+            usefulness proof, not a new baseline freeze, and not
+            hardware/native transfer.
 ```
 
 Latest optional mechanism diagnostic:
@@ -1029,12 +1046,19 @@ Tier 7.4d — COMPLETE. Cost-aware policy/action held-out/public
     public/real-ish action-cost families, costs, actions, splits, baselines,
     shams, statistics, failure classes, artifacts, and nonclaims.
 
-Tier 7.4e — CURRENT ACTIVE STEP. Cost-aware policy/action held-out scoring
+Tier 7.4e — COMPLETE. Cost-aware policy/action held-out scoring
   preflight.
-  Required first move: build the scoring-preflight harness against the locked
-    7.4d contract, verify source/split/cost artifacts, and emit dry-run schema
-    outputs before scoring v2.4. Do not tune on held-out streams and do not
-    authorize native transfer from the v2.4 software freeze alone.
+  Status: PREFLIGHT PASS, 20/20 criteria.
+  Output: controlled_test_output/tier7_4e_20260509_cost_aware_policy_action_heldout_preflight/
+  Result: verified source/split/cost artifacts and dry-run scoring schemas
+    before held-out v2.4 scoring.
+
+Tier 7.4f — CURRENT ACTIVE STEP. Cost-aware policy/action held-out scoring gate.
+  Required first move: score v2.4, v2.3/v2.2 references, fixed thresholds,
+    rolling policies, lag/ridge, online learners, reservoir/ESN, random/trivial
+    policies, and the locked shams against the 7.4d/7.4e public/real-ish
+    action-cost families. Do not tune thresholds, costs, or policies on held-out
+    streams; preserve failures if public usefulness is not confirmed.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware
