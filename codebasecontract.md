@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-08T23:59:00+00:00.
+Last updated: 2026-05-09T00:05:00+00:00.
 
 Current repo root:
 
@@ -294,6 +294,22 @@ Tier 7.1l = COMPLETE, PASS, 13/13 criteria
                   claim.
   Boundary: software holdout confirmation only; no public usefulness proof, no
             baseline freeze, no hardware/native transfer, and no AGI/ASI claim.
+```
+
+Latest NAB closeout / mechanism-return decision:
+
+```text
+Tier 7.1m = COMPLETE, PASS, 13/13 criteria
+  Source: controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision/
+  Runner: experiments/tier7_1m_nab_closeout_mechanism_return_decision.py
+  Outcome: nab_claim_narrowed_return_to_general_mechanisms
+  Decision: Tier 7.1h-7.1l supports only a partial/local NAB anomaly signal,
+            not public usefulness proof.
+  Stop rule: do not tune more NAB adapter policies on the same evidence chain.
+  No freeze/hardware transfer: true.
+  Selected next gate: Tier 7.4a - Cost-Aware Policy/Action Selection Contract.
+  Rationale: the remaining failure is a general action-cost problem, not a
+             reason to keep threshold-tuning the NAB adapter.
 ```
 
 Latest optional mechanism diagnostic:
@@ -911,11 +927,20 @@ Tier 7.1l — COMPLETE. NAB locked-policy holdout confirmation.
     NAB streams but did not confirm public usefulness. v2.3 ranked fifth, did
     not beat rolling z-score or v2.2, and separated only two of three shams.
 
-Tier 7.1m — CURRENT ACTIVE STEP. NAB closeout / mechanism-return decision.
-  Required first move: synthesize the full Tier 7.1h-7.1l NAB evidence chain,
-    explicitly narrow the NAB claim, stop adapter-policy tuning unless a new
-    predeclared mechanism changes the hypothesis, and select the next planned
-    general mechanism or standardized benchmark gate from the roadmap.
+Tier 7.1m — COMPLETE. NAB closeout / mechanism-return decision.
+  Status: LOCAL SOFTWARE PASS, 13/13 criteria.
+  Output: controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision/
+  Result: the NAB chain is narrowed to partial/local signal only. Adapter-policy
+    tuning is stopped, no public usefulness proof/freeze/hardware transfer is
+    authorized, and the project returns to general mechanism work.
+
+Tier 7.4a — CURRENT ACTIVE STEP. Cost-aware policy/action selection contract.
+  Required first move: define a general state -> action -> delayed consequence
+    gate where false positives, missed detections, delayed rewards, and
+    uncertainty-gated actions are explicit costs. This must not be a
+    NAB-specific threshold repair; it must have external baselines, shams,
+    ablations, leakage controls, and compact regression criteria before code
+    changes.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware

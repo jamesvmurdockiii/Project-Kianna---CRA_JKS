@@ -14,7 +14,7 @@ mechanism promotion, lifecycle/ecology evidence, and native SpiNNaker runtime
 migration. The generated registry is the authority for which results are
 canonical.
 
-The current canonical evidence trail contains **105 registered evidence bundles**
+The current canonical evidence trail contains **106 registered evidence bundles**
 with all expected artifacts present and all criteria passing. The generated
 registry is the source of truth for the full list:
 
@@ -10060,7 +10060,7 @@ The runner now validates generated benchmark streams for finite observed and
 target values and fails cleanly instead of silently scoring invalid sequences.
 ```
 
-Next required step:
+Tier 7.1m planned step:
 
 ```text
 Tier 7.0f - benchmark-protocol repair and public failure localization.
@@ -11080,6 +11080,32 @@ Tier 7.1m - NAB closeout / mechanism-return decision.
 Synthesize the Tier 7.1h-7.1l public NAB evidence chain, narrow the NAB claim,
 stop adapter-policy tuning unless a new mechanism changes the hypothesis, and
 choose the next planned general mechanism or standardized benchmark gate.
+```
+
+Tier 7.1m result:
+
+```text
+Tier 7.1m - NAB closeout / mechanism-return decision.
+Status: COMPLETE / PASS, 13/13 criteria.
+Output: controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision/
+Outcome: nab_claim_narrowed_return_to_general_mechanisms
+Decision: Tier 7.1h-7.1l supports partial/local NAB signal only, not public
+usefulness proof.
+Stop rule: do not continue tuning NAB adapter policies on this same evidence
+chain.
+Selected next gate: Tier 7.4a - Cost-Aware Policy/Action Selection Contract.
+Boundary: evidence synthesis / decision only; not a new score, not a promoted
+mechanism, not a baseline freeze, and not hardware/native transfer.
+```
+
+Next required step:
+
+```text
+Tier 7.4a - Cost-aware policy/action selection contract.
+Define the general policy/action mechanism gate for asymmetric action costs,
+false positives, missed detections, delayed reward, and uncertainty-gated
+actions. Do not implement until controls, shams, external baselines, metrics,
+and compact-regression requirements are predeclared.
 ```
 
 ## Tier 5.20a - Resonant Branch Polyp Internal-Model Diagnostic

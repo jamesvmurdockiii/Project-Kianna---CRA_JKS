@@ -1,0 +1,182 @@
+{
+  "claim_boundary": "Tier 7.1m is a synthesis/decision gate over Tier 7.1h-7.1l. It is not a new benchmark score, not a promoted mechanism, not a baseline freeze, and not hardware/native transfer.",
+  "closeout": {
+    "adapter_policy_tuning_authorized": false,
+    "failure_modes_carried_forward": [
+      "false-positive versus recall tradeoff under event/anomaly scoring",
+      "adapter/readout policy can improve a same subset without holding out",
+      "no-update or other sham controls can remain competitive under aggressive alarm filtering",
+      "standard rolling z-score remains a strong baseline on held-out NAB streams"
+    ],
+    "freeze_authorized": false,
+    "hardware_transfer_authorized": false,
+    "nab_claim_boundary": "CRA v2.3 showed a partial/localized NAB anomaly signal and a same-subset false-positive repair candidate, but held-out locked-policy confirmation did not prove public NAB usefulness.",
+    "outcome": "nab_claim_narrowed_return_to_general_mechanisms",
+    "public_usefulness_confirmed": false,
+    "selected_next_gate": "Tier 7.4a - Cost-Aware Policy/Action Selection Contract",
+    "selected_next_gate_rationale": "The held-out NAB failure is an action-cost problem: anomaly alarms are actions with asymmetric false-positive and missed-event costs. The next work should test a general policy/action-selection mechanism, not another NAB-specific threshold repair.",
+    "stop_rules": [
+      "Do not tune additional NAB alarm policies on the same heldout set.",
+      "Do not claim public NAB usefulness from Tier 7.1h-7.1l.",
+      "Do not transfer the NAB adapter path to hardware without a new promoted general mechanism."
+    ],
+    "tier7_1h_summary": {
+      "best_external_primary_score": 0.23437791375440906,
+      "outcome": "v2_3_partial_nab_signal_requires_confirmation",
+      "v2_3_primary_score": 0.22649365525011686,
+      "v2_3_rank": 2
+    },
+    "tier7_1i_summary": {
+      "best_model": "rolling_zscore_detector",
+      "localized_category_wins": [
+        "realAdExchange"
+      ],
+      "outcome": "v2_3_nab_signal_localized_not_confirmed",
+      "v2_3_primary_score": 0.09880252815842962,
+      "v2_3_rank": 4
+    },
+    "tier7_1j_summary": {
+      "failure_class": "threshold_or_fp_penalty_sensitive",
+      "v2_3_beats_rolling_zscore_cells": null,
+      "v2_3_policy_wins": null
+    },
+    "tier7_1k_summary": {
+      "best_policy": "persist3",
+      "best_v2_3_rank": 1,
+      "fp_reduction_vs_raw": 13.968920433128034,
+      "outcome": "v2_3_nab_false_positive_repair_candidate",
+      "window_recall_loss_vs_raw": 0.39916666666666667
+    },
+    "tier7_1l_summary": {
+      "fp_reduction_vs_raw": 11.441444397652205,
+      "locked_policy": "persist3",
+      "locked_v2_3_rank": 5,
+      "outcome": "v2_3_locked_policy_reduced_fp_but_not_confirmed",
+      "sham_separations": 2,
+      "v2_3_beats_rolling_zscore": false,
+      "v2_3_beats_v2_2": false,
+      "window_recall_loss_vs_raw": 0.4652777777777778
+    }
+  },
+  "criteria": [
+    {
+      "name": "Tier 7.1h exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate/tier7_1h_results.json"
+    },
+    {
+      "name": "Tier 7.1i exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation/tier7_1i_results.json"
+    },
+    {
+      "name": "Tier 7.1j exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_1j_20260508_nab_failure_localization/tier7_1j_results.json"
+    },
+    {
+      "name": "Tier 7.1k exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/tier7_1k_results.json"
+    },
+    {
+      "name": "Tier 7.1l exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation/tier7_1l_results.json"
+    },
+    {
+      "name": "all prior gates passed as harnesses",
+      "note": "",
+      "passed": true,
+      "rule": "all pass",
+      "value": [
+        "pass",
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "name": "7.1h partial signal only",
+      "note": "",
+      "passed": true,
+      "rule": "partial / requires confirmation",
+      "value": "v2_3_partial_nab_signal_requires_confirmation"
+    },
+    {
+      "name": "7.1i not confirmed",
+      "note": "",
+      "passed": true,
+      "rule": "contains not_confirmed",
+      "value": "v2_3_nab_signal_localized_not_confirmed"
+    },
+    {
+      "name": "7.1j localized false-positive pressure",
+      "note": "",
+      "passed": true,
+      "rule": "threshold_or_fp_penalty_sensitive",
+      "value": "threshold_or_fp_penalty_sensitive"
+    },
+    {
+      "name": "7.1k repair candidate only",
+      "note": "",
+      "passed": true,
+      "rule": "contains candidate",
+      "value": "v2_3_nab_false_positive_repair_candidate"
+    },
+    {
+      "name": "7.1l not confirmed",
+      "note": "",
+      "passed": true,
+      "rule": "contains not_confirmed",
+      "value": "v2_3_locked_policy_reduced_fp_but_not_confirmed"
+    },
+    {
+      "name": "no freeze authorized",
+      "note": "",
+      "passed": true,
+      "rule": "== false",
+      "value": false
+    },
+    {
+      "name": "no hardware transfer authorized",
+      "note": "",
+      "passed": true,
+      "rule": "== false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 13,
+  "criteria_total": 13,
+  "failed_criteria": [],
+  "generated_at_utc": "2026-05-09T00:05:48+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision",
+  "prior_outcomes": {
+    "tier7_1h": "v2_3_partial_nab_signal_requires_confirmation",
+    "tier7_1i": "v2_3_nab_signal_localized_not_confirmed",
+    "tier7_1j": "threshold_or_fp_penalty_sensitive",
+    "tier7_1k": "v2_3_nab_false_positive_repair_candidate",
+    "tier7_1l": "v2_3_locked_policy_reduced_fp_but_not_confirmed"
+  },
+  "prior_results": {
+    "tier7_1h": "/Users/james/JKS:CRA/controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate/tier7_1h_results.json",
+    "tier7_1i": "/Users/james/JKS:CRA/controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation/tier7_1i_results.json",
+    "tier7_1j": "/Users/james/JKS:CRA/controlled_test_output/tier7_1j_20260508_nab_failure_localization/tier7_1j_results.json",
+    "tier7_1k": "/Users/james/JKS:CRA/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/tier7_1k_results.json",
+    "tier7_1l": "/Users/james/JKS:CRA/controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation/tier7_1l_results.json"
+  },
+  "runner_revision": "tier7_1m_nab_closeout_mechanism_return_decision_20260508_0001",
+  "status": "pass",
+  "tier": "Tier 7.1m - NAB Closeout / Mechanism-Return Decision"
+}

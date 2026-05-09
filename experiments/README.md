@@ -129,8 +129,11 @@ v2.3, Tier 7.1l then passed as a harness at
 `controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation/`.
 The locked `persist3` policy reduced false positives on 12 held-out NAB streams,
 but v2.3 ranked fifth, did not beat rolling z-score or v2.2, and separated only
-two of three shams. The next active project step is Tier 7.1m NAB closeout /
-mechanism-return decision; no usefulness claim, hardware transfer, or native
+two of three shams. Tier 7.1m then passed at
+`controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision/`,
+narrowing the NAB chain to partial/local signal only, stopping adapter-policy
+tuning, and selecting Tier 7.4a cost-aware policy/action selection as the next
+general mechanism gate. No usefulness claim, hardware transfer, or native
 migration is authorized from the NAB adapter chain.
 
 Tier 4.32a-hw prepare has also passed locally. The current EBRAINS upload

@@ -3,7 +3,7 @@
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
 [![Tests](https://img.shields.io/badge/tests-151%20passing-brightgreen.svg)](#validation)
-[![Evidence](https://img.shields.io/badge/canonical%20evidence-105%20bundles-blue.svg)](STUDY_EVIDENCE_INDEX.md)
+[![Evidence](https://img.shields.io/badge/canonical%20evidence-106%20bundles-blue.svg)](STUDY_EVIDENCE_INDEX.md)
 
 Coral Reef Architecture (CRA) is a neuromorphic learning research platform for
 studying local spiking plasticity, delayed credit assignment, population-level
@@ -62,13 +62,14 @@ controlled ablations, baseline comparisons, and explicit claim boundaries.
 | Latest NAB failure localization | Tier 7.1j passed from [`controlled_test_output/tier7_1j_20260508_nab_failure_localization`](controlled_test_output/tier7_1j_20260508_nab_failure_localization): failure class `threshold_or_fp_penalty_sensitive`. v2.3 beat rolling z-score in `5/15` policy cells and won `3/15` policy cells, with better event-F1/window recall but worse NAB-style/false-positive pressure. No mechanism promotion, usefulness claim, freeze, or hardware transfer. |
 | Latest NAB false-positive repair | Tier 7.1k passed from [`controlled_test_output/tier7_1k_20260508_nab_false_positive_repair`](controlled_test_output/tier7_1k_20260508_nab_false_positive_repair): same-subset repair candidate `persist3` made v2.3 rank `1` with primary score `0.44632600314828624`, reduced FP/1000 from `16.537437704270094` to `2.5685172711420603`, beat rolling z-score and v2.2 under that policy, and separated all three shams. Boundary: policy selected on the same broad diagnostic subset and window recall dropped versus raw v2.3, so no usefulness claim, freeze, or hardware transfer. |
 | Latest NAB holdout confirmation | Tier 7.1l passed as a harness from [`controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation`](controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation), but the locked `persist3` policy did **not** confirm public usefulness on held-out NAB streams: v2.3 ranked `5`, scored `0.11180074060709926`, did not beat rolling z-score (`0.13854698668870535`) or v2.2, and separated only `2/3` shams. It reduced FP/1000 versus raw v2.3 but lost substantial window recall. No freeze or hardware transfer. |
+| Latest NAB closeout | Tier 7.1m passed from [`controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision`](controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision): the NAB chain is narrowed to partial/local signal only, adapter-policy tuning is stopped, no public usefulness claim/freeze/hardware transfer is authorized, and the selected next gate is Tier 7.4a cost-aware policy/action selection. |
 | Latest optional mechanism diagnostic | Tier 5.20a passed as a harness from [`controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic`](controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic), but the full 16-resonant-branch polyp proxy was **not promoted**: it helped `variable_delay_multi_cue` and slightly helped `anomaly_detection_stream`, but regressed the standard three and hidden-context task versus v2.3. |
 | Latest optional mechanism repair | Tier 5.20b passed as a harness from [`controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic`](controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic), but neither 8 LIF / 8 resonant nor 12 LIF / 4 resonant earned promotion. Best candidate was `hybrid_8_lif_8_resonant`, with all-task geomean MSE `0.2852846857844163` versus v2.3 `0.2610804850928049`, two wins, two material regressions, and only one sham-separated task. No core polyp replacement, freeze, or hardware transfer. |
 | Latest minimal-dose mechanism check | Tier 5.20c passed as a harness from [`controlled_test_output/tier5_20c_20260508_minimal_resonant_polyp_diagnostic`](controlled_test_output/tier5_20c_20260508_minimal_resonant_polyp_diagnostic), but 14 LIF / 2 resonant was **not promoted**: all-task geomean MSE `0.2777975100580056` versus v2.3 `0.2610804850928049`, zero task wins, one material regression, and zero sham-separated tasks. |
 | Latest resonant-heavy mechanism check | Tier 5.20d passed as a harness from [`controlled_test_output/tier5_20d_20260508_resonant_heavy_polyp_diagnostic`](controlled_test_output/tier5_20d_20260508_resonant_heavy_polyp_diagnostic), but 4 LIF / 12 resonant was **not promoted**: all-task geomean MSE `0.29289224348599796` versus v2.3 `0.2610804850928049`, three task wins, two material regressions, and two sham-separated tasks. The signal is real enough to record, but not safe enough to integrate. |
 | Latest near-full resonant check | Tier 5.20e passed as a harness from [`controlled_test_output/tier5_20e_20260508_near_full_resonant_polyp_diagnostic`](controlled_test_output/tier5_20e_20260508_near_full_resonant_polyp_diagnostic), but 2 LIF / 14 resonant was **not promoted**: all-task geomean MSE `0.30374770797663714` versus v2.3 `0.2610804850928049`, three task wins, three material regressions, and two sham-separated tasks. This closes the current resonant branch dose sweep; resonant branches remain parked. |
-| Active next gate | Tier 7.1m NAB closeout / mechanism-return decision: record the 7.1h-7.1l public-adapter outcome, narrow the NAB claim, and choose the next planned general mechanism or standardized benchmark without tuning the same adapter further. |
-| Canonical registry | 105 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
+| Active next gate | Tier 7.4a cost-aware policy/action selection contract: treat alarms/actions as decisions with asymmetric costs, define controls and baselines, and test a general mechanism rather than another NAB-specific threshold repair. |
+| Canonical registry | 106 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
 | Validation suite | 151 pytest tests plus registry, paper-table, and repository-audit generation. |
 
 ## What CRA Implements
@@ -241,7 +242,7 @@ commit used. A placeholder software citation is:
   author       = {Murdock, James V. and CRA Contributors},
   year         = {2026},
   url          = {https://github.com/jamesvmurdockiii/Project-Kianna---CRA_JKS},
-  note         = {105 canonical evidence bundles; bounded SpiNNaker hardware validation}
+  note         = {106 canonical evidence bundles; bounded SpiNNaker hardware validation}
 }
 ```
 

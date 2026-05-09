@@ -1,0 +1,58 @@
+{
+  "adapter_policy_tuning_authorized": false,
+  "failure_modes_carried_forward": [
+    "false-positive versus recall tradeoff under event/anomaly scoring",
+    "adapter/readout policy can improve a same subset without holding out",
+    "no-update or other sham controls can remain competitive under aggressive alarm filtering",
+    "standard rolling z-score remains a strong baseline on held-out NAB streams"
+  ],
+  "freeze_authorized": false,
+  "hardware_transfer_authorized": false,
+  "nab_claim_boundary": "CRA v2.3 showed a partial/localized NAB anomaly signal and a same-subset false-positive repair candidate, but held-out locked-policy confirmation did not prove public NAB usefulness.",
+  "outcome": "nab_claim_narrowed_return_to_general_mechanisms",
+  "public_usefulness_confirmed": false,
+  "selected_next_gate": "Tier 7.4a - Cost-Aware Policy/Action Selection Contract",
+  "selected_next_gate_rationale": "The held-out NAB failure is an action-cost problem: anomaly alarms are actions with asymmetric false-positive and missed-event costs. The next work should test a general policy/action-selection mechanism, not another NAB-specific threshold repair.",
+  "stop_rules": [
+    "Do not tune additional NAB alarm policies on the same heldout set.",
+    "Do not claim public NAB usefulness from Tier 7.1h-7.1l.",
+    "Do not transfer the NAB adapter path to hardware without a new promoted general mechanism."
+  ],
+  "tier7_1h_summary": {
+    "best_external_primary_score": 0.23437791375440906,
+    "outcome": "v2_3_partial_nab_signal_requires_confirmation",
+    "v2_3_primary_score": 0.22649365525011686,
+    "v2_3_rank": 2
+  },
+  "tier7_1i_summary": {
+    "best_model": "rolling_zscore_detector",
+    "localized_category_wins": [
+      "realAdExchange"
+    ],
+    "outcome": "v2_3_nab_signal_localized_not_confirmed",
+    "v2_3_primary_score": 0.09880252815842962,
+    "v2_3_rank": 4
+  },
+  "tier7_1j_summary": {
+    "failure_class": "threshold_or_fp_penalty_sensitive",
+    "v2_3_beats_rolling_zscore_cells": null,
+    "v2_3_policy_wins": null
+  },
+  "tier7_1k_summary": {
+    "best_policy": "persist3",
+    "best_v2_3_rank": 1,
+    "fp_reduction_vs_raw": 13.968920433128034,
+    "outcome": "v2_3_nab_false_positive_repair_candidate",
+    "window_recall_loss_vs_raw": 0.39916666666666667
+  },
+  "tier7_1l_summary": {
+    "fp_reduction_vs_raw": 11.441444397652205,
+    "locked_policy": "persist3",
+    "locked_v2_3_rank": 5,
+    "outcome": "v2_3_locked_policy_reduced_fp_but_not_confirmed",
+    "sham_separations": 2,
+    "v2_3_beats_rolling_zscore": false,
+    "v2_3_beats_v2_2": false,
+    "window_recall_loss_vs_raw": 0.4652777777777778
+  }
+}

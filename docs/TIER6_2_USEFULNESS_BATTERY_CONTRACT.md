@@ -775,15 +775,27 @@ Boundary: held-out software confirmation only; no usefulness claim, freeze, or
 hardware/native transfer.
 ```
 
+Tier 7.1m has now completed as the NAB closeout / mechanism-return decision:
+
+```text
+Tier 7.1m — NAB closeout / mechanism-return decision
+Status: COMPLETE / PASS, 13/13 criteria
+Output: controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision/
+Outcome: nab_claim_narrowed_return_to_general_mechanisms
+Decision: partial/local NAB signal only; no public usefulness proof, no freeze,
+and no hardware/native transfer.
+Selected next gate: Tier 7.4a - Cost-Aware Policy/Action Selection Contract.
+```
+
 The current next action is:
 
 ```text
-Tier 7.1m — NAB closeout / mechanism-return decision.
+Tier 7.4a — Cost-aware policy/action selection contract.
 ```
 
-Synthesize the Tier 7.1h-7.1l chain, narrow the NAB claim, stop adapter-policy
-tuning unless a new mechanism changes the hypothesis, and pick the next planned
-general mechanism or standardized benchmark gate.
+Define a general policy/action mechanism gate for asymmetric costs, false
+positives, missed detections, delayed reward, and uncertainty-gated actions.
+This is not a NAB-specific threshold repair.
 
 ## Resonant Branch Follow-Up Diagnostics
 
@@ -818,10 +830,9 @@ separation remained.
 Decision:
 
 ```text
-Do not add resonant branches to the canonical CRA mechanism stack. Continue
-from the Tier 7.1l holdout non-confirmation into Tier 7.1m closeout, and use
-public/standardized benchmarks to decide the next mechanism, adapter, or claim
-narrowing step.
+Do not add resonant branches to the canonical CRA mechanism stack. Tier 7.1m
+has closed the NAB adapter loop; continue to Tier 7.4a cost-aware policy/action
+selection.
 ```
 
 ## Resonant Dose Sweep Closeout
@@ -839,6 +850,6 @@ Decision:
 
 ```text
 The resonant branch idea has now been tested across the useful dose range and is
-parked. Return to the public usefulness track: Tier 7.1m NAB closeout /
-mechanism-return decision.
+parked. Return to the general-mechanism track: Tier 7.4a cost-aware
+policy/action selection.
 ```

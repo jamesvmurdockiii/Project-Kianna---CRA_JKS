@@ -1,0 +1,39 @@
+{
+  "artifacts": [
+    {
+      "bytes": 236,
+      "name": "decision_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision/tier7_1m_decision.csv",
+      "sha256": "3136cfa2948c42a29cb45808745811276d415f7bc9bf5a57c27897b074f7a1e4"
+    },
+    {
+      "bytes": 2658,
+      "name": "decision_json",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision/tier7_1m_decision.json",
+      "sha256": "80cc19d12db5918a5e41504335a5017b93778f83d61fde2caec5f3bfbbbebdb4"
+    },
+    {
+      "bytes": 1578,
+      "name": "report_md",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision/tier7_1m_report.md",
+      "sha256": "f05e7ea0a73f366e46c4c9175b64fef6bec126573cc5e9e2d05038b8826184c5"
+    },
+    {
+      "bytes": 7150,
+      "name": "results_json",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision/tier7_1m_results.json",
+      "sha256": "a692cdf7e1e6ab072e3281dc53e1d932493d588120b563a4a94c4399275ab299"
+    },
+    {
+      "bytes": 1414,
+      "name": "summary_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision/tier7_1m_summary.csv",
+      "sha256": "e0f7279d9f3bc2e3480f959f79ff212e8bdbb0eea1b7f9633bfe508245e8c5ea"
+    }
+  ],
+  "generated_at_utc": "2026-05-09T00:05:48+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision",
+  "runner_revision": "tier7_1m_nab_closeout_mechanism_return_decision_20260508_0001",
+  "status": "pass",
+  "tier": "Tier 7.1m - NAB Closeout / Mechanism-Return Decision"
+}
