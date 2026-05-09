@@ -1,0 +1,11 @@
+artifact,purpose
+tier7_7d_results.json,long-run scoring result and classification
+tier7_7d_summary.csv,criteria summary
+tier7_7d_report.md,human-readable result
+tier7_7d_length_scoreboard.csv,per-length/per-task/per-model metrics
+tier7_7d_length_aggregate.csv,aggregate geomean/rank table by length
+tier7_7d_failure_decomposition.csv,diagnostic answer table
+tier7_7d_sham_controls.csv,long-run sham/ablation separation
+tier7_7d_leakage_audit.json,finite-stream and causal-order audit
+tier7_7d_claim_boundary.md,allowed claims and nonclaims
+tier7_7d_latest_manifest.json,registry pointer if promoted canonical

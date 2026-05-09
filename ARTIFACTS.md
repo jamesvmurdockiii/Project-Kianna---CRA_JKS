@@ -147,7 +147,7 @@ flag, but the pass is accepted because `hardware_run_attempted=True`, hardware
 was nonzero.
 
 Current registry alignment status:
-125 canonical evidence bundles, 0 missing expected artifacts, and 0 failed
+126 canonical evidence bundles, 0 missing expected artifacts, and 0 failed
 criteria in canonical entries. The v0.1 and v0.2 frozen baselines remain locked at their
 recorded historical counts, v0.3 freezes the post-Tier-5.3 diagnostic baseline,
 v0.4 freezes the post-Tier-5.4 delayed-credit confirmation baseline, v0.5
@@ -1410,6 +1410,27 @@ but the improvement is Mackey-Glass-driven; Lorenz/NARMA10 were flat/slightly
 worse, and ESN/online-linear/ridge baselines still beat v2.5 on aggregate. This
 is not a new freeze, not broad public usefulness, not external-baseline
 superiority, not hardware/native transfer, and not AGI/ASI evidence.
+
+Latest Tier 7.7c standardized long-run/failure-localization contract artifacts:
+
+- `controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract/`
+- `tier7_7c_results.json`
+- `tier7_7c_report.md`
+- `tier7_7c_summary.csv`
+- `tier7_7c_long_run_contract.json`
+- `tier7_7c_length_matrix.csv`
+- `tier7_7c_diagnostic_questions.csv`
+- `tier7_7c_models.csv`
+- `tier7_7c_shams.csv`
+- `tier7_7c_pass_fail_criteria.csv`
+- `tier7_7c_expected_artifacts.csv`
+- `tier7_7c_claim_boundary.md`
+
+Boundary: contract/pre-registration evidence only. It locks the required
+8000/16000/32000-step standardized streams, optional 50000-step diagnostic,
+same tasks/seeds/splits, model matrix, shams, expected artifacts, and failure
+classes before Tier 7.7d scoring. It is not a long-run score, not a freeze, not
+public usefulness proof, not hardware/native transfer, and not AGI/ASI evidence.
 
 Latest Tier 5.9c macro-eligibility v2.1 recheck:
 

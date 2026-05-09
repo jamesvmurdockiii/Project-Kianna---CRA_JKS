@@ -1,0 +1,10 @@
+sham,purpose
+target_shuffle_control,break input-target relation
+time_shuffle_control,destroy temporal order
+planning_disabled_v2_3_equivalent,remove v2.5 planning/subgoal meta-state
+state_disabled,remove recurrent/fading state
+memory_disabled,remove slow-memory bridge columns
+prediction_disabled,remove predictive extrapolation columns
+self_evaluation_disabled,remove reliability/uncertainty columns
+composition_routing_disabled,remove route/composition interactions
+future_label_leak_guard,audit causal ordering and future-label absence

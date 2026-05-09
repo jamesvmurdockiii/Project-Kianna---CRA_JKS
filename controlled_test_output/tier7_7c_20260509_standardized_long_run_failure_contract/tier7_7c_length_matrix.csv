@@ -1,0 +1,5 @@
+length,role,claim_use,required
+8000,anchor,reproduce Tier 7.7b locked score inside the long-run scoring output,True
+16000,long_run_primary,test whether v2.5 signal persists after twice the locked 7.7b exposure,True
+32000,long_run_primary,"test whether v2.5 signal grows, plateaus, or collapses over longer exposure",True
+50000,optional_runtime_diagnostic,optional stress only if finite/runtime budget permits; cannot replace required lengths,False

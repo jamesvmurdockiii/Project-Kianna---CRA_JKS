@@ -1,0 +1,263 @@
+{
+  "diagnostic_questions": [
+    {
+      "failure_interpretation": "short-run delayed scalar recurrence benefit only",
+      "primary_metrics": "per-seed test_mse, tail_mse, v2.3/v2.5 ratio by length",
+      "question": "Does the Mackey-Glass improvement persist or grow as the stream length increases?",
+      "question_id": "mackey_signal_persistence"
+    },
+    {
+      "failure_interpretation": "requires richer state reconstruction or multichannel/state-space interface before mechanism layering",
+      "primary_metrics": "Lorenz v2.5-vs-v2.3 delta, ESN gap, state-disabled and prediction-disabled controls",
+      "question": "Is Lorenz flat because the current one-dimensional causal interface lacks enough state reconstruction?",
+      "question_id": "lorenz_state_reconstruction_gap"
+    },
+    {
+      "failure_interpretation": "requires targeted memory-depth/readout repair rather than more high-level planning mechanics",
+      "primary_metrics": "NARMA10 v2.5-vs-v2.3 delta, lag-depth diagnostics, memory/prediction-disabled controls",
+      "question": "Is NARMA10 flat because the current memory/readout path lacks sufficient nonlinear memory depth?",
+      "question_id": "narma_memory_depth_gap"
+    },
+    {
+      "failure_interpretation": "CRA remains below standard sequence baselines on this suite; broad usefulness claim stays blocked",
+      "primary_metrics": "rank, geomean_mse, train_mse/test_mse gap, tail_mse, parameter/disclosed feature budget",
+      "question": "Do ESN/online-linear/ridge baselines win because of richer state, stronger readout, or simple linear fit advantages?",
+      "question_id": "external_baseline_gap"
+    },
+    {
+      "failure_interpretation": "apparent long-run improvement is not causally specific enough for promotion",
+      "primary_metrics": "target-shuffle margin, time-shuffle margin, planning-disabled margin, state-disabled margin",
+      "question": "Do target/time/state/planning shams stay separated at longer lengths?",
+      "question_id": "sham_specificity"
+    }
+  ],
+  "expected_artifacts": [
+    {
+      "artifact": "tier7_7d_results.json",
+      "purpose": "long-run scoring result and classification"
+    },
+    {
+      "artifact": "tier7_7d_summary.csv",
+      "purpose": "criteria summary"
+    },
+    {
+      "artifact": "tier7_7d_report.md",
+      "purpose": "human-readable result"
+    },
+    {
+      "artifact": "tier7_7d_length_scoreboard.csv",
+      "purpose": "per-length/per-task/per-model metrics"
+    },
+    {
+      "artifact": "tier7_7d_length_aggregate.csv",
+      "purpose": "aggregate geomean/rank table by length"
+    },
+    {
+      "artifact": "tier7_7d_failure_decomposition.csv",
+      "purpose": "diagnostic answer table"
+    },
+    {
+      "artifact": "tier7_7d_sham_controls.csv",
+      "purpose": "long-run sham/ablation separation"
+    },
+    {
+      "artifact": "tier7_7d_leakage_audit.json",
+      "purpose": "finite-stream and causal-order audit"
+    },
+    {
+      "artifact": "tier7_7d_claim_boundary.md",
+      "purpose": "allowed claims and nonclaims"
+    },
+    {
+      "artifact": "tier7_7d_latest_manifest.json",
+      "purpose": "registry pointer if promoted canonical"
+    }
+  ],
+  "horizon": 8,
+  "hypothesis": "If v2.5 captures useful general temporal structure, its aggregate advantage versus v2.3 should persist or grow at 16000 and 32000 steps without sham matching, and failure decomposition should show which mechanisms help which task family.",
+  "leakage_rules": [
+    "same causal observed stream only; no future target or test-label access",
+    "prediction emitted before online update",
+    "normalization fit on train prefix only",
+    "same seeds/tasks/splits for candidate and baselines",
+    "optional 50000-step run cannot replace required 8000/16000/32000 lengths",
+    "do not add or tune mechanisms inside the scoring gate"
+  ],
+  "length_matrix": [
+    {
+      "claim_use": "reproduce Tier 7.7b locked score inside the long-run scoring output",
+      "length": 8000,
+      "required": true,
+      "role": "anchor"
+    },
+    {
+      "claim_use": "test whether v2.5 signal persists after twice the locked 7.7b exposure",
+      "length": 16000,
+      "required": true,
+      "role": "long_run_primary"
+    },
+    {
+      "claim_use": "test whether v2.5 signal grows, plateaus, or collapses over longer exposure",
+      "length": 32000,
+      "required": true,
+      "role": "long_run_primary"
+    },
+    {
+      "claim_use": "optional stress only if finite/runtime budget permits; cannot replace required lengths",
+      "length": 50000,
+      "required": false,
+      "role": "optional_runtime_diagnostic"
+    }
+  ],
+  "metrics": [
+    "test_mse",
+    "test_nmse",
+    "tail_mse",
+    "test_corr",
+    "all_three_geomean_mse",
+    "paired_seed_delta",
+    "bootstrap_or_paired_ci",
+    "rank_vs_external_baselines",
+    "train_mse_vs_test_mse_gap",
+    "runtime_seconds"
+  ],
+  "models": [
+    {
+      "model": "cra_v2_5_scoreboard_candidate",
+      "required": true,
+      "role": "candidate"
+    },
+    {
+      "model": "cra_v2_3_generic_recurrent_reference",
+      "required": true,
+      "role": "previous CRA reference"
+    },
+    {
+      "model": "cra_v2_4_policy_reference_no_planning",
+      "required": true,
+      "role": "policy/action previous reference"
+    },
+    {
+      "model": "persistence",
+      "required": true,
+      "role": "simple causal baseline"
+    },
+    {
+      "model": "online_lms",
+      "required": true,
+      "role": "online linear baseline"
+    },
+    {
+      "model": "ridge_lag",
+      "required": true,
+      "role": "train-prefix linear lag baseline"
+    },
+    {
+      "model": "lag_only_online_lms_control",
+      "required": true,
+      "role": "same causal lag budget control"
+    },
+    {
+      "model": "fixed_random_reservoir_online_control",
+      "required": true,
+      "role": "random reservoir control"
+    },
+    {
+      "model": "fixed_esn_train_prefix_ridge_baseline",
+      "required": true,
+      "role": "strong reservoir baseline"
+    },
+    {
+      "model": "small_gru",
+      "required": false,
+      "role": "optional reviewer-defense baseline if dependency/runtime budget is locked"
+    }
+  ],
+  "next_gate": "Tier 7.7d - Standardized Long-Run / Failure-Localization Scoring Gate",
+  "nonclaims": [
+    "not a new score by itself",
+    "not a new baseline freeze",
+    "not hardware/native evidence",
+    "not a mechanism implementation",
+    "not external-baseline superiority unless 7.7d shows it",
+    "not language, broad reasoning, AGI, or ASI evidence"
+  ],
+  "null_hypothesis": "The 7.7b gain is a Mackey-Glass-local short-run effect; Lorenz/NARMA10 and strong standard baselines remain better, or shams explain the apparent gain.",
+  "pass_fail_criteria": [
+    {
+      "claim_allowed": "long-run standardized progress versus v2.3; still not external-baseline superiority unless baselines are beaten",
+      "kind": "long_run_confirmed",
+      "rule": "v2.5 improves v2.3 aggregate by >=10% at both 16000 and 32000 with paired support, while at least 2/3 tasks or tail metrics improve and shams stay separated"
+    },
+    {
+      "claim_allowed": "localized delayed scalar recurrence signal only",
+      "kind": "mackey_only_localized",
+      "rule": "Mackey-Glass remains improved but Lorenz/NARMA10 stay flat or worse"
+    },
+    {
+      "claim_allowed": "progress versus older CRA only; no broad usefulness or baseline-competitive claim",
+      "kind": "baseline_gap_persists",
+      "rule": "v2.5 improves v2.3 but ESN/online-linear/ridge remain materially better on aggregate"
+    },
+    {
+      "claim_allowed": "no long-run usefulness upgrade; route to measured failure repair",
+      "kind": "signal_collapses",
+      "rule": "7.7b aggregate improvement disappears at 16000 or 32000, or shams match the candidate"
+    },
+    {
+      "claim_allowed": "narrow paper to architecture/evidence/hardware substrate unless a future predeclared mechanism changes the scoreboard",
+      "kind": "stop_or_narrow",
+      "rule": "v2.5 fails to improve v2.3 at longer lengths and standard baselines dominate all required lengths"
+    }
+  ],
+  "question": "Does the Tier 7.7b v2.5 standardized progress signal persist under longer streams, and what explains the Lorenz/NARMA10 plus external-baseline gap?",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "shams": [
+    {
+      "purpose": "break input-target relation",
+      "sham": "target_shuffle_control"
+    },
+    {
+      "purpose": "destroy temporal order",
+      "sham": "time_shuffle_control"
+    },
+    {
+      "purpose": "remove v2.5 planning/subgoal meta-state",
+      "sham": "planning_disabled_v2_3_equivalent"
+    },
+    {
+      "purpose": "remove recurrent/fading state",
+      "sham": "state_disabled"
+    },
+    {
+      "purpose": "remove slow-memory bridge columns",
+      "sham": "memory_disabled"
+    },
+    {
+      "purpose": "remove predictive extrapolation columns",
+      "sham": "prediction_disabled"
+    },
+    {
+      "purpose": "remove reliability/uncertainty columns",
+      "sham": "self_evaluation_disabled"
+    },
+    {
+      "purpose": "remove route/composition interactions",
+      "sham": "composition_routing_disabled"
+    },
+    {
+      "purpose": "audit causal ordering and future-label absence",
+      "sham": "future_label_leak_guard"
+    }
+  ],
+  "split": "chronological train 65%, test 35%, tail = final quartile of test suffix",
+  "tasks": [
+    "mackey_glass",
+    "lorenz",
+    "narma10"
+  ]
+}

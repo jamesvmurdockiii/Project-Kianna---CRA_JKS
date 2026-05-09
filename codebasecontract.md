@@ -540,6 +540,20 @@ Tier 7.7b = COMPLETE, PASS, 15/15 criteria
   Boundary: scoring evidence only; no new freeze, no broad public usefulness
             claim, no external-baseline superiority, no hardware/native
             transfer, and no language/broad-planning/AGI/ASI claim.
+
+Tier 7.7c = COMPLETE, PASS, 15/15 criteria
+  Source: controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract/
+  Runner: experiments/tier7_7c_standardized_long_run_failure_contract.py
+  Outcome: standardized_long_run_failure_contract_locked
+  Result: required lengths 8000/16000/32000, optional diagnostic length 50000,
+          Mackey-Glass/Lorenz/NARMA10 tasks, seeds 42/43/44, chronological
+          split, model matrix, shams, expected artifacts, and failure classes
+          are locked before long-run scoring.
+  Next gate: Tier 7.7d - Standardized Long-Run / Failure Localization Scoring
+             Gate.
+  Boundary: contract/pre-registration only; no long-run score, no new freeze,
+            no public usefulness claim, no hardware/native transfer, and no
+            language/broad-planning/AGI/ASI claim.
 ```
 
 Latest optional mechanism diagnostic:
@@ -1285,11 +1299,15 @@ Tier 7.7b — COMPLETE. v2.5 standardized benchmark/usefulness scoreboard
   but the signal was Mackey-Glass-driven, Lorenz/NARMA10 were flat/slightly
   worse, and strong external baselines still beat v2.5 on aggregate.
 
-Tier 7.7c — CURRENT ACTIVE STEP. Standardized long-run/failure-localization
-  gate. Keep the locked standardized task family and same-seed fairness, then
-  test whether the 7.7b signal grows, persists, or disappears under longer
-  streams and localize the external-baseline/Lorenz/NARMA10 gap before adding
-  any new mechanism.
+Tier 7.7c — COMPLETE. Standardized long-run/failure-localization
+  contract. Status: PASS, 15/15 criteria. Locked required lengths
+  8000/16000/32000, optional 50000, same seeds/tasks/splits, explicit shams,
+  expected artifacts, and failure classes before long-run scoring.
+
+Tier 7.7d — CURRENT ACTIVE STEP. Standardized long-run/failure-localization
+  scoring gate. Run the 7.7c contract without adding mechanisms or retuning,
+  then determine whether the Mackey-Glass-driven 7.7b signal grows, persists,
+  or collapses and why Lorenz/NARMA10 plus external baselines remain blockers.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware

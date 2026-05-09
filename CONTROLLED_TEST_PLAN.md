@@ -11373,14 +11373,29 @@ claim, no external-baseline superiority, no hardware/native transfer, and no
 language/broad-planning/AGI/ASI claim.
 ```
 
+Latest standardized long-run/failure-localization contract:
+
+```text
+Tier 7.7c - standardized long-run / failure-localization contract.
+Status: COMPLETE / PASS, 15/15 criteria.
+Output: controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract/
+Outcome: standardized_long_run_failure_contract_locked.
+Result: locks required lengths 8000/16000/32000, optional diagnostic length
+50000, same tasks/seeds/splits, model matrix, shams, expected artifacts, and
+failure classes before long-run scoring.
+Boundary: contract/pre-registration only; no long-run score, no freeze, no
+public usefulness claim, no hardware/native transfer, and no language/AGI/ASI
+claim.
+```
+
 Next required step:
 
 ```text
-Tier 7.7c - standardized long-run / failure-localization gate.
-Keep the locked standardized task family and same-seed fairness, then test
-whether the 7.7b aggregate signal grows, persists, or disappears under longer
-streams and localize why Lorenz/NARMA10 plus strong ESN/online-linear/ridge
-baselines still block a broad usefulness claim.
+Tier 7.7d - standardized long-run / failure-localization scoring gate.
+Run the locked 7.7c length sweep without adding mechanisms or retuning, then
+determine whether the 7.7b Mackey-driven signal grows, persists, or collapses
+and why Lorenz/NARMA10 plus strong ESN/online-linear/ridge baselines still
+block a broad usefulness claim.
 ```
 
 Latest standardized benchmark contract:

@@ -1,0 +1,11 @@
+model,role,required
+cra_v2_5_scoreboard_candidate,candidate,True
+cra_v2_3_generic_recurrent_reference,previous CRA reference,True
+cra_v2_4_policy_reference_no_planning,policy/action previous reference,True
+persistence,simple causal baseline,True
+online_lms,online linear baseline,True
+ridge_lag,train-prefix linear lag baseline,True
+lag_only_online_lms_control,same causal lag budget control,True
+fixed_random_reservoir_online_control,random reservoir control,True
+fixed_esn_train_prefix_ridge_baseline,strong reservoir baseline,True
+small_gru,optional reviewer-defense baseline if dependency/runtime budget is locked,False

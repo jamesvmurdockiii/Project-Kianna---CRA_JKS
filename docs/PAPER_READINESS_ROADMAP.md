@@ -4247,13 +4247,27 @@ usefulness proof, not a freeze, not hardware/native transfer, and not
 language/broad-planning/AGI/ASI evidence.
 ```
 
+Latest standardized long-run/failure-localization contract:
+
+```text
+Tier 7.7c — COMPLETE / PASS, 15/15 criteria
+Outcome: standardized_long_run_failure_contract_locked
+Output: controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract/
+Result: required lengths 8000/16000/32000, optional diagnostic length 50000,
+same Mackey-Glass/Lorenz/NARMA10 tasks, seeds 42/43/44, chronological split,
+model matrix, shams, expected artifacts, and failure classes are locked before
+scoring.
+Boundary: contract/pre-registration evidence only; not a long-run score, not a
+freeze, not public usefulness, not hardware/native transfer, and not AGI/ASI.
+```
+
 Current next step:
 
 ```text
-Tier 7.7c — standardized long-run / failure-localization gate
-Question: does the 7.7b signal grow, persist, or disappear under longer
-standardized streams, and why do Lorenz/NARMA10 plus ESN/online-linear/ridge
-baselines still block a broad usefulness claim?
+Tier 7.7d — standardized long-run / failure-localization scoring gate
+Question: does the 7.7b Mackey-driven signal grow, persist, or disappear under
+the locked longer standardized streams, and why do Lorenz/NARMA10 plus ESN/
+online-linear/ridge baselines still block a broad usefulness claim?
 ```
 
 Tier 7.1a predeclared these candidate/future adapter families:

@@ -1428,36 +1428,46 @@ ability.
     were flat/slightly worse, and ESN/online-linear/ridge baselines still beat
     v2.5 on aggregate. No freeze or hardware/native transfer is authorized.
 
-114. **CURRENT ACTIVE STEP** - Tier 7.7c standardized long-run/failure
-    localization gate:
-    determine whether the Tier 7.7b signal grows, persists, or disappears under
-    longer standardized streams and identify why v2.5 did not beat external
-    baselines or improve Lorenz/NARMA10. Keep the locked tasks/seeds/splits and
-    add only a predeclared length sweep/failure-localization matrix.
+114. **COMPLETE** - Tier 7.7c standardized long-run/failure localization
+    contract:
+    passed 15/15 at
+    `controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract/`.
+    It locks required stream lengths 8000/16000/32000, optional diagnostic
+    length 50000, same tasks/seeds/splits, explicit shams, expected artifacts,
+    and failure classes before scoring. This is contract/pre-registration
+    evidence only: no score, freeze, public-usefulness claim, or hardware/native
+    transfer.
 
-115. Mechanism iteration loop: add exactly one planned general mechanism at a
+115. **CURRENT ACTIVE STEP** - Tier 7.7d standardized long-run/failure
+    localization scoring gate:
+    run the locked 7.7c length sweep and diagnostics without adding mechanisms
+    or retuning, then determine whether the Tier 7.7b Mackey-Glass-driven signal
+    grows, persists, or collapses and why Lorenz/NARMA10 plus strong external
+    baselines remain blockers.
+
+116. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
     stop the broad usefulness track and narrow the paper.
 
-116. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+117. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines. Start only after the standardized scoreboard or failure diagnosis
     identifies a winning regime, a real failure mode, or a mechanism needing
     external validation.
 
-117. Tier 7.2 held-out task challenge: define held-out families before running;
+118. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout. Include at least one synthetic holdout and one
     real-ish adapter holdout if Tier 7.1 is active.
 
-118. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+119. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines. Candidate domains include
     streaming anomaly detection, predictive-maintenance sensor streams, human
     activity streams, event prediction, ECG/biosignal streams, and finance as
     one domain only rather than the whole proof.
 
-119. Tier 7.4 policy/action selection held-out scoring: the current held-out
+120. Tier 7.4 policy/action selection held-out scoring: the current held-out
     chain is complete through 7.4h. No further NAB/C-MAPSS policy tuning is
     authorized from this chain; only the narrow C-MAPSS action-cost signal is
     preserved, with no broad action/policy claim, freeze, or hardware/native
@@ -1666,17 +1676,19 @@ ASI.
 The next concrete action is now:
 
 ```text
-Tier 7.7b - v2.5 Standardized Benchmark / Usefulness Scoreboard Scoring Gate
+Tier 7.7d - Standardized Long-Run / Failure-Localization Scoring Gate
 
-Question: Does frozen v2.5 improve the locked public/standardized usefulness
-scoreboard beyond v2.3/v2.4 references and fair external baselines?
+Question: Does the Tier 7.7b Mackey-Glass-driven signal grow, persist, or
+collapse under the locked longer standardized streams, and why do Lorenz,
+NARMA10, and strong ESN/online-linear/ridge baselines still block broad
+usefulness?
 
-First move: implement/run the scoring gate against the frozen Tier 7.7a
-contract without changing tasks, baselines, splits, shams, leakage rules,
-pass/fail criteria, or claim boundaries.
+First move: implement/run the scoring gate against the frozen Tier 7.7c
+contract without changing tasks, lengths, baselines, splits, shams, leakage
+rules, pass/fail criteria, or claim boundaries.
 
 Boundary: scoring evidence only; claim strength is determined by the locked
-7.7a pass/fail classes. No hardware/native transfer or new baseline freeze
+7.7c pass/fail classes. No hardware/native transfer or new baseline freeze
 unless a later promotion/regression gate earns it.
 ```
 

@@ -1,0 +1,6 @@
+kind,rule,claim_allowed
+long_run_confirmed,"v2.5 improves v2.3 aggregate by >=10% at both 16000 and 32000 with paired support, while at least 2/3 tasks or tail metrics improve and shams stay separated",long-run standardized progress versus v2.3; still not external-baseline superiority unless baselines are beaten
+mackey_only_localized,Mackey-Glass remains improved but Lorenz/NARMA10 stay flat or worse,localized delayed scalar recurrence signal only
+baseline_gap_persists,v2.5 improves v2.3 but ESN/online-linear/ridge remain materially better on aggregate,progress versus older CRA only; no broad usefulness or baseline-competitive claim
+signal_collapses,"7.7b aggregate improvement disappears at 16000 or 32000, or shams match the candidate",no long-run usefulness upgrade; route to measured failure repair
+stop_or_narrow,v2.5 fails to improve v2.3 at longer lengths and standard baselines dominate all required lengths,narrow paper to architecture/evidence/hardware substrate unless a future predeclared mechanism changes the scoreboard
