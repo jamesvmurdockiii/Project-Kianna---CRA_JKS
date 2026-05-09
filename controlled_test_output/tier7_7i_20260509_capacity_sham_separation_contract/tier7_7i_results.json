@@ -1,0 +1,654 @@
+{
+  "claim_boundary": "Tier 7.7i is a contract/pre-registration gate only. It performs no scoring, promotes no mechanism, freezes no baseline, claims no public usefulness, and authorizes no hardware/native transfer.",
+  "classification": {
+    "baseline_freeze_authorized": false,
+    "hardware_transfer_authorized": false,
+    "mechanism_promotion_authorized": false,
+    "next_gate": "Tier 7.7j - Capacity Sham-Separation / State-Specificity Scoring Gate",
+    "outcome": "capacity_sham_separation_contract_locked",
+    "scoring_authorized": true
+  },
+  "contract": {
+    "capacities": [
+      16,
+      32,
+      64,
+      128
+    ],
+    "expected_artifacts": [
+      {
+        "artifact": "tier7_7j_results.json",
+        "purpose": "scored state-specificity result and classification"
+      },
+      {
+        "artifact": "tier7_7j_report.md",
+        "purpose": "human-readable summary"
+      },
+      {
+        "artifact": "tier7_7j_summary.csv",
+        "purpose": "criteria summary"
+      },
+      {
+        "artifact": "tier7_7j_state_geometry.csv",
+        "purpose": "PR/rank/top-PC/norm/delta metrics"
+      },
+      {
+        "artifact": "tier7_7j_state_kernel_alignment.csv",
+        "purpose": "candidate/sham state-kernel alignment"
+      },
+      {
+        "artifact": "tier7_7j_readout_concentration.csv",
+        "purpose": "readout weight PR and concentration"
+      },
+      {
+        "artifact": "tier7_7j_scoreboard.csv",
+        "purpose": "performance table"
+      },
+      {
+        "artifact": "tier7_7j_sham_separation.csv",
+        "purpose": "candidate versus sham margins"
+      },
+      {
+        "artifact": "tier7_7j_probe_manifest.json",
+        "purpose": "locked probes, seeds, capacities, and stream policies"
+      },
+      {
+        "artifact": "tier7_7j_claim_boundary.md",
+        "purpose": "allowed claims and nonclaims"
+      }
+    ],
+    "hypothesis": "If CRA's candidate recurrence is doing causal work, it should separate from permuted/orthogonal/block/state-reset probes on Lorenz while showing stable effective-dimensionality and readout-use signatures.",
+    "leakage_rules": [
+      "same repaired NARMA U(0,0.2) stream policy from 7.7e/7.7f/7.7h",
+      "same chronological train/test split",
+      "normalization fit on train prefix only",
+      "prediction before online update for online models",
+      "target/time shuffle controls retained",
+      "feature counts and capacity budgets disclosed",
+      "no tuning or mechanism promotion inside the diagnostic"
+    ],
+    "lengths": [
+      8000,
+      16000,
+      32000
+    ],
+    "mechanism_under_test": "diagnostic state-specificity only; no repair, mechanism promotion, baseline freeze, hardware transfer, or benchmark tuning",
+    "metrics": [
+      {
+        "metric": "test_mse",
+        "required": true,
+        "scope": "performance"
+      },
+      {
+        "metric": "tail_mse",
+        "required": true,
+        "scope": "performance"
+      },
+      {
+        "metric": "test_corr",
+        "required": true,
+        "scope": "performance"
+      },
+      {
+        "metric": "participation_ratio",
+        "required": true,
+        "scope": "state_geometry"
+      },
+      {
+        "metric": "participation_ratio_per_unit",
+        "required": true,
+        "scope": "state_geometry"
+      },
+      {
+        "metric": "rank95_variance_count",
+        "required": true,
+        "scope": "state_geometry"
+      },
+      {
+        "metric": "top_pc_fraction",
+        "required": true,
+        "scope": "state_geometry"
+      },
+      {
+        "metric": "state_norm_mean_std",
+        "required": true,
+        "scope": "state_dynamics"
+      },
+      {
+        "metric": "step_delta_mean_std",
+        "required": true,
+        "scope": "state_dynamics"
+      },
+      {
+        "metric": "total_state_variance",
+        "required": true,
+        "scope": "state_dynamics"
+      },
+      {
+        "metric": "state_kernel_alignment",
+        "required": true,
+        "scope": "state_geometry"
+      },
+      {
+        "metric": "candidate_vs_sham_cka",
+        "required": true,
+        "scope": "state_geometry"
+      },
+      {
+        "metric": "readout_weight_pr",
+        "required": true,
+        "scope": "readout"
+      },
+      {
+        "metric": "top_weight_fraction",
+        "required": true,
+        "scope": "readout"
+      },
+      {
+        "metric": "seed_stability_mean_std",
+        "required": true,
+        "scope": "repeatability"
+      },
+      {
+        "metric": "feature_count_budget",
+        "required": true,
+        "scope": "fairness"
+      }
+    ],
+    "next_gate": "Tier 7.7j - Capacity Sham-Separation / State-Specificity Scoring Gate",
+    "nonclaims": [
+      "not a new mechanism",
+      "not a repair tier",
+      "not a baseline freeze",
+      "not hardware/native transfer",
+      "not public usefulness evidence",
+      "not external-baseline superiority",
+      "not language, AGI, or ASI evidence"
+    ],
+    "null_hypothesis": "The high-capacity gain is explained by generic bases, basis luck, readout concentration, low-rank collapse, or single-channel observability rather than candidate-specific CRA recurrence.",
+    "outcome_classes": [
+      {
+        "allowed_claim": "CRA candidate state geometry is causally implicated in the high-capacity Lorenz gain.",
+        "outcome": "candidate_specific_state_confirmed",
+        "rule": "Candidate improves Lorenz, separates from permuted/orthogonal/block/state-reset probes, and has higher or more stable state-specific geometry than shams."
+      },
+      {
+        "allowed_claim": "Capacity gain is real but not CRA-specific; route to state-interface/connectivity redesign before mechanism promotion.",
+        "outcome": "generic_basis_explains_gain",
+        "rule": "Permuted, orthogonal, block, or generic random bases match/beat candidate while showing comparable or better geometry."
+      },
+      {
+        "allowed_claim": "Current temporal-state interface expands amplitude more than independent state dimensions.",
+        "outcome": "low_rank_collapse_confirmed",
+        "rule": "Candidate and probe families remain at participation ratio <= 3 or rank95 <= 8 across 64/128 while Lorenz remains weak."
+      },
+      {
+        "allowed_claim": "Repair readout/state interface before changing recurrence.",
+        "outcome": "readout_bottleneck",
+        "rule": "State PR/rank rises materially but readout weight PR/top-weight concentration stays low and performance does not follow."
+      },
+      {
+        "allowed_claim": "Single-scalar Lorenz interface is a major bottleneck; task/interface must be disclosed before architecture claims.",
+        "outcome": "observability_bottleneck",
+        "rule": "Causal delay embeddings improve Lorenz for all families while recurrence-specific probes remain non-separated."
+      },
+      {
+        "allowed_claim": "No promotion; repair diagnostic design.",
+        "outcome": "inconclusive_or_sham_blocked",
+        "rule": "Missing data, inconsistent seeds, target/time shams fail, or no stable separation class is produced."
+      }
+    ],
+    "probe_families": [
+      {
+        "capacity_units": "16,32,64,128",
+        "probe": "candidate_full_recurrence",
+        "promotable": false,
+        "purpose": "locked CRA v2.5 temporal-state candidate from Tier 7.7h"
+      },
+      {
+        "capacity_units": "16,32,64,128",
+        "probe": "permuted_recurrence_ensemble",
+        "promotable": false,
+        "purpose": "test whether the 7.7h permuted win was basis luck or a robust generic-basis effect",
+        "recurrence_seed_offsets": "11,23,37,71,101"
+      },
+      {
+        "capacity_units": "16,32,64,128",
+        "probe": "state_reset_by_capacity",
+        "promotable": false,
+        "purpose": "test whether temporal persistence, not only capacity, is necessary"
+      },
+      {
+        "capacity_units": "16,32,64,128",
+        "probe": "orthogonal_random_basis_reference",
+        "promotable": false,
+        "purpose": "compare candidate against a high-dimensional but non-CRA orthogonal basis"
+      },
+      {
+        "capacity_units": "16,32,64,128",
+        "probe": "block_structured_basis_reference",
+        "promotable": false,
+        "purpose": "test whether partitioned timescale/state groups raise effective dimensionality without claiming a CRA repair"
+      },
+      {
+        "capacity_units": "0",
+        "probe": "causal_delay_embedding_reference",
+        "promotable": false,
+        "purpose": "test whether Lorenz weakness is partly single-channel observability rather than recurrence alone"
+      },
+      {
+        "capacity_units": "16,32,64,128",
+        "probe": "readout_concentration_audit",
+        "promotable": false,
+        "purpose": "measure whether the state is rich but readout uses only one/two directions, or whether the state itself is low-rank"
+      }
+    ],
+    "question": "Are the Tier 7.7h high-capacity gains candidate-specific state geometry, or generic high-dimensional/permuted recurrent feature effects?",
+    "required_negative_result_handling": [
+      "If effective dimensionality remains <= 3, document low-rank collapse and do not add mechanisms blindly.",
+      "If generic bases explain the gain, route to a state-interface/connectivity contract rather than claiming CRA-specific recurrence.",
+      "If readout concentration explains the gap, repair the readout/state interface before changing recurrence.",
+      "If observability is the bottleneck, disclose the benchmark interface limitation before making architecture claims."
+    ],
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "tasks": [
+      {
+        "lengths": "8000,16000,32000",
+        "required": true,
+        "role": "primary blocked state-geometry task",
+        "task": "lorenz",
+        "why": "Tier 7.7h showed material capacity gain but failed permuted-recurrence sham separation."
+      },
+      {
+        "lengths": "8000,16000,32000",
+        "required": true,
+        "role": "positive-control anchor",
+        "task": "mackey_glass",
+        "why": "Tier 7.7h showed capacity gain with cleaner state-reset/permuted separation at high capacity."
+      },
+      {
+        "lengths": "8000,16000,32000",
+        "required": true,
+        "role": "repaired nonlinear-memory sanity check",
+        "stream_policy": "repaired_narma10_reduced_input_u02",
+        "task": "narma10",
+        "why": "Tier 7.7h showed only weak capacity response on repaired U(0,0.2) NARMA."
+      }
+    ]
+  },
+  "criteria": [
+    {
+      "criterion": "Tier 7.7h prerequisite exists",
+      "details": "",
+      "name": "Tier 7.7h prerequisite exists",
+      "note": "",
+      "operator": "exists and pass",
+      "pass": true,
+      "passed": true,
+      "rule": "exists and pass",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_7h_20260509_lorenz_capacity_narma_memory_scoring_gate/tier7_7h_results.json"
+    },
+    {
+      "criterion": "Tier 7.7h outcome requires sham-separation contract",
+      "details": "",
+      "name": "Tier 7.7h outcome requires sham-separation contract",
+      "note": "",
+      "operator": "== overfit_or_sham_blocked",
+      "pass": true,
+      "passed": true,
+      "rule": "== overfit_or_sham_blocked",
+      "value": "overfit_or_sham_blocked"
+    },
+    {
+      "criterion": "Tier 7.7g contract prerequisite exists",
+      "details": "",
+      "name": "Tier 7.7g contract prerequisite exists",
+      "note": "",
+      "operator": "exists and pass",
+      "pass": true,
+      "passed": true,
+      "rule": "exists and pass",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_7g_20260509_lorenz_capacity_narma_memory_contract/tier7_7g_results.json"
+    },
+    {
+      "criterion": "tasks locked",
+      "details": "",
+      "name": "tasks locked",
+      "note": "",
+      "operator": "Mackey/Lorenz/NARMA",
+      "pass": true,
+      "passed": true,
+      "rule": "Mackey/Lorenz/NARMA",
+      "value": [
+        "lorenz",
+        "mackey_glass",
+        "narma10"
+      ]
+    },
+    {
+      "criterion": "lengths locked",
+      "details": "",
+      "name": "lengths locked",
+      "note": "",
+      "operator": "== [8000,16000,32000]",
+      "pass": true,
+      "passed": true,
+      "rule": "== [8000,16000,32000]",
+      "value": [
+        8000,
+        16000,
+        32000
+      ]
+    },
+    {
+      "criterion": "seeds locked",
+      "details": "",
+      "name": "seeds locked",
+      "note": "",
+      "operator": "== [42,43,44]",
+      "pass": true,
+      "passed": true,
+      "rule": "== [42,43,44]",
+      "value": [
+        42,
+        43,
+        44
+      ]
+    },
+    {
+      "criterion": "capacities locked",
+      "details": "",
+      "name": "capacities locked",
+      "note": "",
+      "operator": "== [16,32,64,128]",
+      "pass": true,
+      "passed": true,
+      "rule": "== [16,32,64,128]",
+      "value": [
+        16,
+        32,
+        64,
+        128
+      ]
+    },
+    {
+      "criterion": "candidate and permuted probes included",
+      "details": "",
+      "name": "candidate and permuted probes included",
+      "note": "",
+      "operator": "contains candidate and permuted ensemble",
+      "pass": true,
+      "passed": true,
+      "rule": "contains candidate and permuted ensemble",
+      "value": [
+        "block_structured_basis_reference",
+        "candidate_full_recurrence",
+        "causal_delay_embedding_reference",
+        "orthogonal_random_basis_reference",
+        "permuted_recurrence_ensemble",
+        "readout_concentration_audit",
+        "state_reset_by_capacity"
+      ]
+    },
+    {
+      "criterion": "orthogonal/block references included",
+      "details": "",
+      "name": "orthogonal/block references included",
+      "note": "",
+      "operator": "contains orthogonal and block references",
+      "pass": true,
+      "passed": true,
+      "rule": "contains orthogonal and block references",
+      "value": [
+        "block_structured_basis_reference",
+        "candidate_full_recurrence",
+        "causal_delay_embedding_reference",
+        "orthogonal_random_basis_reference",
+        "permuted_recurrence_ensemble",
+        "readout_concentration_audit",
+        "state_reset_by_capacity"
+      ]
+    },
+    {
+      "criterion": "observability/readout probes included",
+      "details": "",
+      "name": "observability/readout probes included",
+      "note": "",
+      "operator": "contains delay embedding and readout audit",
+      "pass": true,
+      "passed": true,
+      "rule": "contains delay embedding and readout audit",
+      "value": [
+        "block_structured_basis_reference",
+        "candidate_full_recurrence",
+        "causal_delay_embedding_reference",
+        "orthogonal_random_basis_reference",
+        "permuted_recurrence_ensemble",
+        "readout_concentration_audit",
+        "state_reset_by_capacity"
+      ]
+    },
+    {
+      "criterion": "participation ratio metric included",
+      "details": "",
+      "name": "participation ratio metric included",
+      "note": "",
+      "operator": "contains participation_ratio",
+      "pass": true,
+      "passed": true,
+      "rule": "contains participation_ratio",
+      "value": [
+        "candidate_vs_sham_cka",
+        "feature_count_budget",
+        "participation_ratio",
+        "participation_ratio_per_unit",
+        "rank95_variance_count",
+        "readout_weight_pr",
+        "seed_stability_mean_std",
+        "state_kernel_alignment",
+        "state_norm_mean_std",
+        "step_delta_mean_std",
+        "tail_mse",
+        "test_corr",
+        "test_mse",
+        "top_pc_fraction",
+        "top_weight_fraction",
+        "total_state_variance"
+      ]
+    },
+    {
+      "criterion": "rank/top-PC metrics included",
+      "details": "",
+      "name": "rank/top-PC metrics included",
+      "note": "",
+      "operator": "contains rank95 and top_pc",
+      "pass": true,
+      "passed": true,
+      "rule": "contains rank95 and top_pc",
+      "value": [
+        "candidate_vs_sham_cka",
+        "feature_count_budget",
+        "participation_ratio",
+        "participation_ratio_per_unit",
+        "rank95_variance_count",
+        "readout_weight_pr",
+        "seed_stability_mean_std",
+        "state_kernel_alignment",
+        "state_norm_mean_std",
+        "step_delta_mean_std",
+        "tail_mse",
+        "test_corr",
+        "test_mse",
+        "top_pc_fraction",
+        "top_weight_fraction",
+        "total_state_variance"
+      ]
+    },
+    {
+      "criterion": "state dynamics metrics included",
+      "details": "",
+      "name": "state dynamics metrics included",
+      "note": "",
+      "operator": "contains norm/delta/variance",
+      "pass": true,
+      "passed": true,
+      "rule": "contains norm/delta/variance",
+      "value": [
+        "candidate_vs_sham_cka",
+        "feature_count_budget",
+        "participation_ratio",
+        "participation_ratio_per_unit",
+        "rank95_variance_count",
+        "readout_weight_pr",
+        "seed_stability_mean_std",
+        "state_kernel_alignment",
+        "state_norm_mean_std",
+        "step_delta_mean_std",
+        "tail_mse",
+        "test_corr",
+        "test_mse",
+        "top_pc_fraction",
+        "top_weight_fraction",
+        "total_state_variance"
+      ]
+    },
+    {
+      "criterion": "readout concentration metrics included",
+      "details": "",
+      "name": "readout concentration metrics included",
+      "note": "",
+      "operator": "contains readout weight metrics",
+      "pass": true,
+      "passed": true,
+      "rule": "contains readout weight metrics",
+      "value": [
+        "candidate_vs_sham_cka",
+        "feature_count_budget",
+        "participation_ratio",
+        "participation_ratio_per_unit",
+        "rank95_variance_count",
+        "readout_weight_pr",
+        "seed_stability_mean_std",
+        "state_kernel_alignment",
+        "state_norm_mean_std",
+        "step_delta_mean_std",
+        "tail_mse",
+        "test_corr",
+        "test_mse",
+        "top_pc_fraction",
+        "top_weight_fraction",
+        "total_state_variance"
+      ]
+    },
+    {
+      "criterion": "negative outcome classes included",
+      "details": "",
+      "name": "negative outcome classes included",
+      "note": "",
+      "operator": "contains low-rank/generic/readout/observability outcomes",
+      "pass": true,
+      "passed": true,
+      "rule": "contains low-rank/generic/readout/observability outcomes",
+      "value": [
+        "candidate_specific_state_confirmed",
+        "generic_basis_explains_gain",
+        "inconclusive_or_sham_blocked",
+        "low_rank_collapse_confirmed",
+        "observability_bottleneck",
+        "readout_bottleneck"
+      ]
+    },
+    {
+      "criterion": "expected artifacts locked",
+      "details": "",
+      "name": "expected artifacts locked",
+      "note": "",
+      "operator": ">= 10",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 10",
+      "value": 10
+    },
+    {
+      "criterion": "no scoring in contract",
+      "details": "",
+      "name": "no scoring in contract",
+      "note": "",
+      "operator": "must remain false",
+      "pass": true,
+      "passed": true,
+      "rule": "must remain false",
+      "value": false
+    },
+    {
+      "criterion": "no mechanism promotion",
+      "details": "",
+      "name": "no mechanism promotion",
+      "note": "",
+      "operator": "must remain false",
+      "pass": true,
+      "passed": true,
+      "rule": "must remain false",
+      "value": false
+    },
+    {
+      "criterion": "hardware/native transfer blocked",
+      "details": "",
+      "name": "hardware/native transfer blocked",
+      "note": "",
+      "operator": "must remain false",
+      "pass": true,
+      "passed": true,
+      "rule": "must remain false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 19,
+  "criteria_total": 19,
+  "generated_at_utc": "2026-05-09T15:19:38+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7i_20260509_capacity_sham_separation_contract",
+  "prerequisites": {
+    "tier7_7g_results": "/Users/james/JKS:CRA/controlled_test_output/tier7_7g_20260509_lorenz_capacity_narma_memory_contract/tier7_7g_results.json",
+    "tier7_7g_sha256": "87d2d6c2c5d9f6fdb22e010e311f65232c2a7e3fb11696310b9852f4f496d2a4",
+    "tier7_7g_status": "pass",
+    "tier7_7h_outcome": "overfit_or_sham_blocked",
+    "tier7_7h_results": "/Users/james/JKS:CRA/controlled_test_output/tier7_7h_20260509_lorenz_capacity_narma_memory_scoring_gate/tier7_7h_results.json",
+    "tier7_7h_sha256": "4305a2df6030795889c05853382b85ea57b4a46a9f83ccf381d48ac6679bee69",
+    "tier7_7h_status": "pass"
+  },
+  "runner_revision": "tier7_7i_capacity_sham_separation_contract_20260509_0001",
+  "status": "pass",
+  "tier": "Tier 7.7i - Capacity Sham-Separation / State-Specificity Contract",
+  "tier7_7h_summary": {
+    "outcome": "overfit_or_sham_blocked",
+    "recommendation": "Do not promote capacity or a mechanism; repair sham separation before using this diagnostic as evidence.",
+    "status": "pass",
+    "task_diagnostics": [
+      {
+        "base16_divided_by_best_capacity": 1.9187025177787802,
+        "best_capacity_units": 128,
+        "gap_closure_to_matched_esn": 0.5556064445132128,
+        "sham_blocked": false,
+        "task": "mackey_glass"
+      },
+      {
+        "base16_divided_by_best_capacity": 2.1809100841541684,
+        "best_capacity_units": 128,
+        "gap_closure_to_matched_esn": 0.5430548428235046,
+        "sham_blocked": true,
+        "task": "lorenz"
+      },
+      {
+        "base16_divided_by_best_capacity": 1.0771845171957346,
+        "best_capacity_units": 128,
+        "gap_closure_to_matched_esn": 2.747986186844494,
+        "sham_blocked": true,
+        "task": "narma10"
+      }
+    ]
+  }
+}

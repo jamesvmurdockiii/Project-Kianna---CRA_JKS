@@ -1,0 +1,7 @@
+outcome,rule,allowed_claim
+candidate_specific_state_confirmed,"Candidate improves Lorenz, separates from permuted/orthogonal/block/state-reset probes, and has higher or more stable state-specific geometry than shams.",CRA candidate state geometry is causally implicated in the high-capacity Lorenz gain.
+generic_basis_explains_gain,"Permuted, orthogonal, block, or generic random bases match/beat candidate while showing comparable or better geometry.",Capacity gain is real but not CRA-specific; route to state-interface/connectivity redesign before mechanism promotion.
+low_rank_collapse_confirmed,Candidate and probe families remain at participation ratio <= 3 or rank95 <= 8 across 64/128 while Lorenz remains weak.,Current temporal-state interface expands amplitude more than independent state dimensions.
+readout_bottleneck,State PR/rank rises materially but readout weight PR/top-weight concentration stays low and performance does not follow.,Repair readout/state interface before changing recurrence.
+observability_bottleneck,Causal delay embeddings improve Lorenz for all families while recurrence-specific probes remain non-separated.,Single-scalar Lorenz interface is a major bottleneck; task/interface must be disclosed before architecture claims.
+inconclusive_or_sham_blocked,"Missing data, inconsistent seeds, target/time shams fail, or no stable separation class is produced.",No promotion; repair diagnostic design.

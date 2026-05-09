@@ -1,0 +1,4 @@
+task,role,why,lengths,required,stream_policy
+lorenz,primary blocked state-geometry task,Tier 7.7h showed material capacity gain but failed permuted-recurrence sham separation.,"8000,16000,32000",True,
+mackey_glass,positive-control anchor,Tier 7.7h showed capacity gain with cleaner state-reset/permuted separation at high capacity.,"8000,16000,32000",True,
+narma10,repaired nonlinear-memory sanity check,"Tier 7.7h showed only weak capacity response on repaired U(0,0.2) NARMA.","8000,16000,32000",True,repaired_narma10_reduced_input_u02

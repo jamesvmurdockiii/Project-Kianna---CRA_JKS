@@ -1,0 +1,11 @@
+artifact,purpose
+tier7_7j_results.json,scored state-specificity result and classification
+tier7_7j_report.md,human-readable summary
+tier7_7j_summary.csv,criteria summary
+tier7_7j_state_geometry.csv,PR/rank/top-PC/norm/delta metrics
+tier7_7j_state_kernel_alignment.csv,candidate/sham state-kernel alignment
+tier7_7j_readout_concentration.csv,readout weight PR and concentration
+tier7_7j_scoreboard.csv,performance table
+tier7_7j_sham_separation.csv,candidate versus sham margins
+tier7_7j_probe_manifest.json,"locked probes, seeds, capacities, and stream policies"
+tier7_7j_claim_boundary.md,allowed claims and nonclaims

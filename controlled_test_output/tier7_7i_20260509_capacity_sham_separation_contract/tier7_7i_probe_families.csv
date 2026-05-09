@@ -1,0 +1,8 @@
+probe,purpose,capacity_units,promotable,recurrence_seed_offsets
+candidate_full_recurrence,locked CRA v2.5 temporal-state candidate from Tier 7.7h,"16,32,64,128",False,
+permuted_recurrence_ensemble,test whether the 7.7h permuted win was basis luck or a robust generic-basis effect,"16,32,64,128",False,"11,23,37,71,101"
+state_reset_by_capacity,"test whether temporal persistence, not only capacity, is necessary","16,32,64,128",False,
+orthogonal_random_basis_reference,compare candidate against a high-dimensional but non-CRA orthogonal basis,"16,32,64,128",False,
+block_structured_basis_reference,test whether partitioned timescale/state groups raise effective dimensionality without claiming a CRA repair,"16,32,64,128",False,
+causal_delay_embedding_reference,test whether Lorenz weakness is partly single-channel observability rather than recurrence alone,0,False,
+readout_concentration_audit,"measure whether the state is rich but readout uses only one/two directions, or whether the state itself is low-rank","16,32,64,128",False,

@@ -11465,12 +11465,26 @@ Next required step:
 
 ```text
 Tier 7.7i - Capacity sham-separation / state-specificity contract.
-Predeclare a diagnostic that separates candidate-specific state geometry from
-generic high-dimensional/permuted recurrent feature effects before adding
-mechanisms or tuning benchmarks. It must measure hidden-state participation
-ratio, rank-95 variance count, top-PC dominance, state-kernel similarity,
-candidate/sham seed stability, and readout weight concentration across the same
-capacity levels.
+Status: COMPLETE / PASS, 19/19 criteria.
+Output: controlled_test_output/tier7_7i_20260509_capacity_sham_separation_contract/
+Outcome: capacity_sham_separation_contract_locked.
+Result: predeclares a diagnostic that separates candidate-specific state
+geometry from generic high-dimensional/permuted recurrent feature effects
+before adding mechanisms or tuning benchmarks. It must measure hidden-state
+participation ratio, rank-95 variance count, top-PC dominance,
+state-kernel similarity, candidate/sham seed stability, and readout weight
+concentration across the same capacity levels.
+Boundary: contract/pre-registration only; no score, repair, mechanism
+promotion, baseline freeze, usefulness claim, or hardware/native transfer.
+```
+
+Next required step:
+
+```text
+Tier 7.7j - Capacity sham-separation / state-specificity scoring gate.
+Score the locked 7.7i probe families and classify the high-capacity signal as
+candidate-specific, generic-basis explained, low-rank collapsed,
+readout-limited, observability-limited, or inconclusive.
 ```
 
 Latest standardized benchmark contract:

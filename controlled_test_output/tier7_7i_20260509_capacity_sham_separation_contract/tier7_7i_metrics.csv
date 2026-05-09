@@ -1,0 +1,17 @@
+metric,scope,required
+test_mse,performance,True
+tail_mse,performance,True
+test_corr,performance,True
+participation_ratio,state_geometry,True
+participation_ratio_per_unit,state_geometry,True
+rank95_variance_count,state_geometry,True
+top_pc_fraction,state_geometry,True
+state_norm_mean_std,state_dynamics,True
+step_delta_mean_std,state_dynamics,True
+total_state_variance,state_dynamics,True
+state_kernel_alignment,state_geometry,True
+candidate_vs_sham_cka,state_geometry,True
+readout_weight_pr,readout,True
+top_weight_fraction,readout,True
+seed_stability_mean_std,repeatability,True
+feature_count_budget,fairness,True

@@ -1,0 +1,10 @@
+{
+  "classification_outcome": "capacity_sham_separation_contract_locked",
+  "generated_at_utc": "2026-05-09T15:19:38+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7i_20260509_capacity_sham_separation_contract",
+  "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier7_7i_20260509_capacity_sham_separation_contract/tier7_7i_report.md",
+  "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier7_7i_20260509_capacity_sham_separation_contract/tier7_7i_results.json",
+  "status": "pass",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7i_20260509_capacity_sham_separation_contract/tier7_7i_summary.csv",
+  "tier": "Tier 7.7i - Capacity Sham-Separation / State-Specificity Contract"
+}

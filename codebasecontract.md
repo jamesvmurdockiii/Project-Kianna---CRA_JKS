@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-09T15:00:32+00:00.
+Last updated: 2026-05-09T15:22:28+00:00.
 
 Current repo root:
 
@@ -29,19 +29,17 @@ Current repo root:
 Current frozen software baseline:
 
 ```text
-v2.4 = post-Tier-7.4c cost-aware policy/action software evidence lock
-       Source: controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/
-       Runner: experiments/tier7_4c_cost_aware_policy_action_promotion_gate.py
-       Criteria: 16/16
+v2.5 = post-Tier-7.6e reduced-feature long-horizon planning software evidence
+       lock
+       Source: controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/
+       Runner: experiments/tier7_6e_planning_promotion_compact_regression.py
+       Criteria: 20/20
        Compact gate: full NEST compact regression passed
-       Claim: the locked Tier 7.4b cost-aware policy/action candidate improves
-              local expected utility under asymmetric action costs, separates
-              shams/ablations, avoids no-action collapse, and preserves CRA
-              guardrails.
-       Boundary: host-side software policy/action evidence only; not public
-                 usefulness proof, not broad anomaly benchmark superiority, not
-                 hardware/native transfer, not long-horizon planning, not
-                 language/AGI/ASI.
+       Claim: bounded reduced-feature subgoal-control/planning evidence is
+              promoted as the current software baseline.
+       Boundary: host-side software evidence only; not public usefulness proof,
+                 not external-baseline superiority, not hardware/native
+                 transfer, not language/AGI/ASI.
 ```
 
 Latest targeted usefulness diagnostic:
@@ -1344,13 +1342,21 @@ Tier 7.7h — COMPLETE. Lorenz capacity / NARMA memory-depth scoring gate.
   weakly. No freeze, mechanism promotion, broad usefulness claim,
   external-baseline superiority, or hardware/native transfer is authorized.
 
-Tier 7.7i — CURRENT ACTIVE STEP. Capacity sham-separation / state-specificity
-  contract. Predeclare whether the 7.7h high-capacity gains are
+Tier 7.7i — COMPLETE. Capacity sham-separation / state-specificity contract.
+  Status: PASS, 19/19 criteria. Output:
+  `controlled_test_output/tier7_7i_20260509_capacity_sham_separation_contract/`.
+  Outcome `capacity_sham_separation_contract_locked`: predeclares whether the
+  7.7h high-capacity gains are
   candidate-specific state geometry or generic high-dimensional/permuted
   recurrent features before adding mechanics or tuning benchmarks. Required
   diagnostics include participation ratio, rank-95 variance count, top-PC
   dominance, state-kernel similarity, candidate/sham seed stability, and readout
   weight concentration.
+
+Tier 7.7j — CURRENT ACTIVE STEP. Capacity sham-separation / state-specificity
+  scoring gate. Score the locked 7.7i probes and classify the 7.7h
+  high-capacity signal as candidate-specific, generic-basis explained,
+  low-rank collapsed, readout-limited, observability-limited, or inconclusive.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware

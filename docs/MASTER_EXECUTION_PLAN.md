@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-09T15:00:32+00:00.
+Last updated: 2026-05-09T15:22:28+00:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -1486,33 +1486,43 @@ ability.
     weakly. No freeze, mechanism promotion, broad usefulness claim,
     external-baseline superiority, or hardware/native transfer is authorized.
 
-120. **CURRENT ACTIVE STEP** - Tier 7.7i capacity sham-separation /
+120. **COMPLETE** - Tier 7.7i capacity sham-separation /
     state-specificity contract:
-    predeclare the next diagnostic to decide whether the 7.7h capacity gains
+    passed 19/19 at
+    `controlled_test_output/tier7_7i_20260509_capacity_sham_separation_contract/`.
+    Outcome `capacity_sham_separation_contract_locked`: predeclares the next
+    diagnostic to decide whether the 7.7h capacity gains
     are candidate-specific state geometry or generic high-dimensional/permuted
     recurrent features. The contract must include effective-dimensionality
     diagnostics such as hidden-state participation ratio, rank-95 variance
     count, top-PC dominance, state-kernel alignment, and readout weight
-    concentration for candidate versus permuted/state-reset shams. This must
-    happen before adding mechanics or tuning the scoreboard.
+    concentration for candidate versus permuted/state-reset shams. No score,
+    repair, mechanism promotion, freeze, public usefulness claim, or
+    hardware/native transfer is authorized.
 
-121. Mechanism iteration loop: add exactly one planned general mechanism at a
+121. **CURRENT ACTIVE STEP** - Tier 7.7j capacity sham-separation /
+    state-specificity scoring gate:
+    score the locked 7.7i probes and classify the 7.7h high-capacity signal as
+    candidate-specific, generic-basis explained, low-rank collapsed,
+    readout-limited, observability-limited, or inconclusive.
+
+122. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
     stop the broad usefulness track and narrow the paper.
 
-122. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+123. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines. Start only after the standardized scoreboard or failure diagnosis
     identifies a winning regime, a real failure mode, or a mechanism needing
     external validation.
 
-123. Tier 7.2 held-out task challenge: define held-out families before running;
+124. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout. Include at least one synthetic holdout and one
     real-ish adapter holdout if Tier 7.1 is active.
 
-124. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+125. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines. Candidate domains include
     streaming anomaly detection, predictive-maintenance sensor streams, human
     activity streams, event prediction, ECG/biosignal streams, and finance as
@@ -1743,12 +1753,25 @@ The next concrete action is now:
 
 ```text
 Tier 7.7i - Capacity Sham-Separation / State-Specificity Contract
+Status: COMPLETE / PASS, 19/19 criteria.
+Output: controlled_test_output/tier7_7i_20260509_capacity_sham_separation_contract/
+Outcome: capacity_sham_separation_contract_locked.
 
 Predeclare whether the 7.7h high-capacity gains are candidate-specific state
 geometry or generic high-dimensional/permuted recurrent features before adding
 mechanics or tuning the standardized benchmark scoreboard. Required diagnostics
 include participation ratio, rank-95, top-PC fraction, state-kernel similarity,
 candidate/sham seed stability, and readout weight concentration.
+```
+
+The next concrete action is now:
+
+```text
+Tier 7.7j - Capacity Sham-Separation / State-Specificity Scoring Gate
+
+Score the locked 7.7i probes and classify whether the 7.7h high-capacity signal
+is candidate-specific, generic-basis explained, low-rank collapsed,
+readout-limited, observability-limited, or inconclusive.
 ```
 
 Recent closeout:

@@ -4333,11 +4333,23 @@ Current next step:
 
 ```text
 Tier 7.7i — Capacity sham-separation / state-specificity contract
-Question: are the high-capacity gains in 7.7h candidate-specific state geometry,
-or generic high-dimensional/permuted recurrent features? Required measurements
-include effective-dimensionality participation ratio, rank-95 variance count,
-top-PC dominance, state-kernel similarity, seed stability, and readout weight
-concentration.
+Status: COMPLETE / PASS, 19/19 criteria
+Outcome: capacity_sham_separation_contract_locked
+Output: controlled_test_output/tier7_7i_20260509_capacity_sham_separation_contract/
+Question: are the high-capacity gains in 7.7h candidate-specific state
+geometry, or generic high-dimensional/permuted recurrent features? Required
+measurements include effective-dimensionality participation ratio, rank-95
+variance count, top-PC dominance, state-kernel similarity, seed stability, and
+readout weight concentration.
+```
+
+Current next step:
+
+```text
+Tier 7.7j — Capacity sham-separation / state-specificity scoring gate
+Question: do the locked 7.7i probes classify the 7.7h signal as
+candidate-specific, generic-basis explained, low-rank collapsed,
+readout-limited, observability-limited, or inconclusive?
 ```
 
 Tier 7.1a predeclared these candidate/future adapter families:

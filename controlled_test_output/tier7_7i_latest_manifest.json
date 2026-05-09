@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-05-09T15:23:47.127351+00:00",
+  "source_generated_at_utc": "2026-05-09T15:19:38+00:00",
+  "registry_entry_id": "tier7_7i_capacity_sham_separation_contract",
+  "tier": "Tier 7.7i - Capacity Sham-Separation / State-Specificity Contract",
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7i_20260509_capacity_sham_separation_contract",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_7i_20260509_capacity_sham_separation_contract/tier7_7i_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_7i_20260509_capacity_sham_separation_contract/tier7_7i_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7i_20260509_capacity_sham_separation_contract/tier7_7i_summary.csv",
+  "canonical": true,
+  "claim": "Tier 7.7i locks the capacity sham-separation/state-specificity diagnostic before scoring: candidate recurrence, permuted-recurrence ensemble, state reset, orthogonal/block references, delay embedding, readout concentration, participation ratio, rank-95, top-PC dominance, state-kernel alignment, and negative outcome classes.",
+  "caveat": "Contract/pre-registration evidence only; not a score, not a repair, not a mechanism promotion, not a baseline freeze, not hardware/native transfer, and not public usefulness evidence."
+}
