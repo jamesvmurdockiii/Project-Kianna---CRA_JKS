@@ -1,0 +1,2 @@
+tier,status,criteria_passed,criteria_total,outcome,next_gate,freeze_authorized,hardware_transfer_authorized
+Tier 7.4d - Cost-Aware Policy/Action Held-Out/Public Usefulness Contract,pass,20,20,heldout_public_usefulness_contract_locked,Tier 7.4e - Cost-Aware Policy/Action Held-Out Scoring Preflight,False,False

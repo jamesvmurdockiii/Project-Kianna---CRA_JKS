@@ -1,0 +1,13 @@
+baseline
+always_abstain_or_wait
+always_act_or_alert
+fixed_train_only_threshold
+rolling_zscore_policy
+ewma_mad_residual_policy
+lag_ridge_policy
+online_logistic_policy
+online_perceptron_policy
+reservoir_or_esn_policy_readout
+small_gru_sequence_policy_if_budget_allows
+random_policy
+oracle_policy_upper_bound_nonclaim

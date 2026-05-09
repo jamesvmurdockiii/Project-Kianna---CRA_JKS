@@ -1,0 +1,444 @@
+{
+  "contract": {
+    "action_set": [
+      "abstain",
+      "wait",
+      "act_or_alert",
+      "monitor",
+      "maintain",
+      "route_or_escalate"
+    ],
+    "baselines": [
+      "always_abstain_or_wait",
+      "always_act_or_alert",
+      "fixed_train_only_threshold",
+      "rolling_zscore_policy",
+      "ewma_mad_residual_policy",
+      "lag_ridge_policy",
+      "online_logistic_policy",
+      "online_perceptron_policy",
+      "reservoir_or_esn_policy_readout",
+      "small_gru_sequence_policy_if_budget_allows",
+      "random_policy",
+      "oracle_policy_upper_bound_nonclaim"
+    ],
+    "claim_boundary": "Tier 7.4d is a pre-registration contract. It authorizes a later held-out scoring preflight/gate, but it does not score v2.4, freeze a new baseline, claim public usefulness, or authorize hardware/native policy transfer.",
+    "expected_artifacts_next_gate": [
+      "tier7_4e_results.json",
+      "tier7_4e_report.md",
+      "tier7_4e_summary.csv",
+      "tier7_4e_task_family_scores.csv",
+      "tier7_4e_model_scores.csv",
+      "tier7_4e_per_stream_or_unit_scores.csv",
+      "tier7_4e_sham_ablation_scores.csv",
+      "tier7_4e_split_manifest.json",
+      "tier7_4e_cost_model.json",
+      "tier7_4e_decision.json"
+    ],
+    "fail_criteria": [
+      "A simple fixed threshold, rolling z-score, lag/ridge, or reservoir/ESN policy wins the held-out public family.",
+      "v2.4 wins only on private/synthetic diagnostics and not on any public/real-ish held-out family.",
+      "Any sham or ablation matches the intact v2.4 result on the claimed family.",
+      "The policy collapses into abstain/wait or always-act behavior while gaming utility.",
+      "The score requires threshold or cost tuning on the held-out/test subset.",
+      "Public data, split, or label-separation artifacts are missing or unverifiable."
+    ],
+    "hypothesis": "If v2.4 learned a general cost-aware policy/action mechanism rather than a private-task trick, it should improve expected utility or regret on at least one held-out public/real-ish action-cost family while separating confidence, memory, recurrent-state, and shuffled-cost shams.",
+    "locked_cost_model": {
+      "correct_abstain_under_low_confidence": 0.25,
+      "correct_event_action": 10.0,
+      "early_but_useful_action": 4.0,
+      "failure_without_maintenance": -20.0,
+      "false_positive_action": -3.0,
+      "late_action_per_step": -0.5,
+      "missed_event": -15.0,
+      "premature_maintenance": -6.0,
+      "unnecessary_maintenance": -4.0,
+      "wait_or_abstain_cost_per_step": -0.05
+    },
+    "next_gate_if_accepted": "Tier 7.4e - Cost-Aware Policy/Action Held-Out Scoring Preflight",
+    "nonclaims": [
+      "not a scoring run",
+      "not public usefulness proof",
+      "not broad anomaly or predictive-maintenance superiority",
+      "not a baseline freeze",
+      "not hardware/native transfer",
+      "not long-horizon planning",
+      "not language",
+      "not AGI/ASI evidence"
+    ],
+    "null_hypothesis": "v2.4 does not beat fixed train-only thresholds, rolling policies, online learners, reservoir/ESN policy baselines, or trivial act/abstain controls on held-out action-cost tasks under locked costs and splits.",
+    "pass_criteria": [
+      "v2.4 beats or complements the strongest reproduced baseline on the primary utility metric for at least one public/real-ish held-out family.",
+      "The result is not explained by fixed train-only thresholds, rolling z-score, reservoir/ESN policy, always-act, or always-abstain controls.",
+      "Shuffled cost, random confidence, confidence-disabled, memory-disabled, and recurrent-state-disabled controls lose on the claimed family.",
+      "No-action and always-action collapse are explicitly ruled out by action-rate and recall/precision guards.",
+      "Bootstrap confidence intervals or paired effect sizes support the claimed utility delta on the held-out family.",
+      "No leakage, same-subset policy selection, or test-label threshold tuning is detected."
+    ],
+    "primary_metrics": [
+      "expected_utility",
+      "cost_normalized_score",
+      "regret_vs_oracle",
+      "event_f1_or_window_recall",
+      "false_positive_cost_per_1000",
+      "missed_event_cost",
+      "action_latency",
+      "maintenance_failure_cost",
+      "calibration_error",
+      "action_rate_and_no_action_collapse_rate"
+    ],
+    "question": "Does the frozen v2.4 cost-aware policy/action layer preserve a measurable utility advantage on external or held-out action-cost tasks without threshold tuning, leakage, or same-subset policy selection?",
+    "shams_and_ablations": [
+      "shuffled_cost_or_reward",
+      "key_label_permuted_cost",
+      "random_confidence",
+      "confidence_disabled",
+      "memory_disabled",
+      "recurrent_state_disabled",
+      "policy_learning_disabled",
+      "wrong_context_key",
+      "no_action_cost_ablation",
+      "always_action_collapse_guard",
+      "test_label_leakage_guard"
+    ],
+    "split_and_leakage_rules": [
+      "All thresholds, policy temperatures, abstain costs, and calibration transforms are selected on train/calibration splits only.",
+      "No test-label threshold tuning is allowed for any model, baseline, policy, cost, or abstention rule.",
+      "No same-subset policy selection: if a policy is selected on a diagnostic subset, confirmation must use disjoint held-out streams/units/windows.",
+      "Each action is emitted before the feedback, anomaly label, RUL label, or outcome update for that row/window is visible.",
+      "Labels and event windows stay in separate artifacts from online input rows until offline scoring.",
+      "Public-source checksums, selected streams/units, split ids, and ignored raw-data-cache paths must be recorded.",
+      "Any repair after a failed held-out score returns to a new contract or diagnostic; it cannot overwrite the held-out result."
+    ],
+    "statistics": [
+      "per-stream_or_per-unit_table",
+      "mean_median_std_min_max",
+      "bootstrap_95_ci_for_delta_vs_best_baseline",
+      "paired_effect_size_where_units_match",
+      "task_family_win_loss_table",
+      "worst_case_seed_or_stream_behavior"
+    ],
+    "task_families": [
+      {
+        "actions": [
+          "abstain",
+          "wait",
+          "alert"
+        ],
+        "claim_role": "public streaming alarm/action usefulness candidate",
+        "heldout_rule": "use streams/categories not used to choose same-subset NAB policies",
+        "kind": "public_realish_primary",
+        "name": "nab_heldout_alarm_action_cost",
+        "primary_metric": "expected_utility_with_false_positive_missed_event_latency_costs",
+        "source": "Numenta Anomaly Benchmark pinned by Tier 7.1g"
+      },
+      {
+        "actions": [
+          "wait",
+          "monitor",
+          "maintain"
+        ],
+        "claim_role": "public predictive-maintenance action usefulness candidate",
+        "heldout_rule": "train/calibrate on train units only; test actions emitted before RUL feedback",
+        "kind": "public_realish_primary",
+        "name": "cmapss_maintenance_action_cost",
+        "primary_metric": "maintenance_utility_and_regret_vs_oracle",
+        "source": "NASA C-MAPSS FD001 source audited by Tier 7.1b"
+      },
+      {
+        "actions": [
+          "abstain",
+          "wait",
+          "act"
+        ],
+        "claim_role": "standardized regression-to-action diagnostic, not public usefulness alone",
+        "heldout_rule": "use locked train/calibration/test windows; no retuning on test windows",
+        "kind": "standardized_secondary",
+        "name": "standard_dynamical_action_cost",
+        "primary_metric": "geomean_cost_normalized_mse_or_utility",
+        "source": "locked Mackey-Glass, Lorenz, and NARMA10 streams from the Tier 7.0 scoreboard"
+      },
+      {
+        "actions": [
+          "abstain",
+          "wait",
+          "act",
+          "route"
+        ],
+        "claim_role": "mechanism localization only; cannot support public usefulness by itself",
+        "heldout_rule": "locked seeds and task parameters before scoring",
+        "kind": "diagnostic_only",
+        "name": "heldout_synthetic_policy_stress",
+        "primary_metric": "expected_utility_and_sham_separation",
+        "source": "predeclared hidden-context/delayed-action local stressors"
+      }
+    ]
+  },
+  "criteria": [
+    {
+      "name": "Tier 7.4c exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/tier7_4c_results.json"
+    },
+    {
+      "name": "Tier 7.4c passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "v2.4 baseline exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.4.json"
+    },
+    {
+      "name": "v2.4 baseline frozen",
+      "note": "",
+      "passed": true,
+      "rule": "== frozen",
+      "value": "frozen"
+    },
+    {
+      "name": "C-MAPSS source preflight passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "NAB source preflight passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "question/hypothesis/null defined",
+      "note": "",
+      "passed": true,
+      "rule": "all non-empty",
+      "value": [
+        "Does the frozen v2.4 cost-aware policy/action layer preserve a measurable utility advantage on external or held-out action-cost tasks without threshold tuning, leakage, or same-subset policy selection?",
+        "If v2.4 learned a general cost-aware policy/action mechanism rather than a private-task trick, it should improve expected utility or regret on at least one held-out public/real-ish action-cost family while separating confidence, memory, recurrent-state, and shuffled-cost shams.",
+        "v2.4 does not beat fixed train-only thresholds, rolling policies, online learners, reservoir/ESN policy baselines, or trivial act/abstain controls on held-out action-cost tasks under locked costs and splits."
+      ]
+    },
+    {
+      "name": "task families include public held-out families",
+      "note": "",
+      "passed": true,
+      "rule": ">= 2 public/real-ish",
+      "value": [
+        "nab_heldout_alarm_action_cost",
+        "cmapss_maintenance_action_cost"
+      ]
+    },
+    {
+      "name": "synthetic tasks are diagnostic only",
+      "note": "",
+      "passed": true,
+      "rule": ">=1 diagnostic-only family",
+      "value": [
+        "heldout_synthetic_policy_stress"
+      ]
+    },
+    {
+      "name": "actions include abstain wait and act",
+      "note": "",
+      "passed": true,
+      "rule": "contains abstain/wait/act",
+      "value": [
+        "abstain",
+        "wait",
+        "act_or_alert",
+        "monitor",
+        "maintain",
+        "route_or_escalate"
+      ]
+    },
+    {
+      "name": "cost model locks FP miss latency and maintenance",
+      "note": "",
+      "passed": true,
+      "rule": "contains required costs",
+      "value": [
+        "correct_abstain_under_low_confidence",
+        "correct_event_action",
+        "early_but_useful_action",
+        "failure_without_maintenance",
+        "false_positive_action",
+        "late_action_per_step",
+        "missed_event",
+        "premature_maintenance",
+        "unnecessary_maintenance",
+        "wait_or_abstain_cost_per_step"
+      ]
+    },
+    {
+      "name": "split rules block test tuning/leakage",
+      "note": "",
+      "passed": true,
+      "rule": "contains no same-subset/test-label leakage rules",
+      "value": [
+        "All thresholds, policy temperatures, abstain costs, and calibration transforms are selected on train/calibration splits only.",
+        "No test-label threshold tuning is allowed for any model, baseline, policy, cost, or abstention rule.",
+        "No same-subset policy selection: if a policy is selected on a diagnostic subset, confirmation must use disjoint held-out streams/units/windows.",
+        "Each action is emitted before the feedback, anomaly label, RUL label, or outcome update for that row/window is visible.",
+        "Labels and event windows stay in separate artifacts from online input rows until offline scoring.",
+        "Public-source checksums, selected streams/units, split ids, and ignored raw-data-cache paths must be recorded.",
+        "Any repair after a failed held-out score returns to a new contract or diagnostic; it cannot overwrite the held-out result."
+      ]
+    },
+    {
+      "name": "baselines include threshold zscore reservoir online",
+      "note": "",
+      "passed": true,
+      "rule": ">=10 and required families",
+      "value": [
+        "always_abstain_or_wait",
+        "always_act_or_alert",
+        "fixed_train_only_threshold",
+        "rolling_zscore_policy",
+        "ewma_mad_residual_policy",
+        "lag_ridge_policy",
+        "online_logistic_policy",
+        "online_perceptron_policy",
+        "reservoir_or_esn_policy_readout",
+        "small_gru_sequence_policy_if_budget_allows",
+        "random_policy",
+        "oracle_policy_upper_bound_nonclaim"
+      ]
+    },
+    {
+      "name": "shams and ablations include confidence memory recurrent cost",
+      "note": "",
+      "passed": true,
+      "rule": ">=8 and required controls",
+      "value": [
+        "shuffled_cost_or_reward",
+        "key_label_permuted_cost",
+        "random_confidence",
+        "confidence_disabled",
+        "memory_disabled",
+        "recurrent_state_disabled",
+        "policy_learning_disabled",
+        "wrong_context_key",
+        "no_action_cost_ablation",
+        "always_action_collapse_guard",
+        "test_label_leakage_guard"
+      ]
+    },
+    {
+      "name": "metrics include utility regret latency calibration",
+      "note": "",
+      "passed": true,
+      "rule": "contains required metrics",
+      "value": [
+        "expected_utility",
+        "cost_normalized_score",
+        "regret_vs_oracle",
+        "event_f1_or_window_recall",
+        "false_positive_cost_per_1000",
+        "missed_event_cost",
+        "action_latency",
+        "maintenance_failure_cost",
+        "calibration_error",
+        "action_rate_and_no_action_collapse_rate"
+      ]
+    },
+    {
+      "name": "statistics include CI effect size and per-unit table",
+      "note": "",
+      "passed": true,
+      "rule": "contains paper-grade statistics",
+      "value": [
+        "per-stream_or_per-unit_table",
+        "mean_median_std_min_max",
+        "bootstrap_95_ci_for_delta_vs_best_baseline",
+        "paired_effect_size_where_units_match",
+        "task_family_win_loss_table",
+        "worst_case_seed_or_stream_behavior"
+      ]
+    },
+    {
+      "name": "pass/fail criteria are explicit",
+      "note": "",
+      "passed": true,
+      "rule": ">=6 each",
+      "value": [
+        6,
+        6
+      ]
+    },
+    {
+      "name": "nonclaims block scoring freeze hardware AGI",
+      "note": "",
+      "passed": true,
+      "rule": "contains required nonclaims",
+      "value": [
+        "not a scoring run",
+        "not public usefulness proof",
+        "not broad anomaly or predictive-maintenance superiority",
+        "not a baseline freeze",
+        "not hardware/native transfer",
+        "not long-horizon planning",
+        "not language",
+        "not AGI/ASI evidence"
+      ]
+    },
+    {
+      "name": "next gate is preflight not immediate promotion",
+      "note": "",
+      "passed": true,
+      "rule": "contains Held-Out Scoring Preflight",
+      "value": "Tier 7.4e - Cost-Aware Policy/Action Held-Out Scoring Preflight"
+    },
+    {
+      "name": "expected artifacts declared",
+      "note": "",
+      "passed": true,
+      "rule": ">=8 artifacts",
+      "value": [
+        "tier7_4e_results.json",
+        "tier7_4e_report.md",
+        "tier7_4e_summary.csv",
+        "tier7_4e_task_family_scores.csv",
+        "tier7_4e_model_scores.csv",
+        "tier7_4e_per_stream_or_unit_scores.csv",
+        "tier7_4e_sham_ablation_scores.csv",
+        "tier7_4e_split_manifest.json",
+        "tier7_4e_cost_model.json",
+        "tier7_4e_decision.json"
+      ]
+    }
+  ],
+  "criteria_passed": 20,
+  "criteria_total": 20,
+  "decision": {
+    "freeze_authorized": false,
+    "hardware_transfer_authorized": false,
+    "next_gate": "Tier 7.4e - Cost-Aware Policy/Action Held-Out Scoring Preflight",
+    "outcome": "heldout_public_usefulness_contract_locked",
+    "scoring_authorized": true
+  },
+  "generated_at_utc": "2026-05-09T02:11:26+00:00",
+  "prior_evidence": {
+    "cmapss_preflight": "/Users/james/JKS:CRA/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_results.json",
+    "cmapss_preflight_status": "pass",
+    "nab_preflight": "/Users/james/JKS:CRA/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_results.json",
+    "nab_preflight_status": "pass",
+    "tier7_4c_results": "/Users/james/JKS:CRA/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/tier7_4c_results.json",
+    "tier7_4c_status": "pass",
+    "v2_4_baseline": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.4.json",
+    "v2_4_status": "frozen"
+  },
+  "runner_revision": "tier7_4d_cost_aware_policy_action_heldout_contract_20260509_0001",
+  "status": "pass",
+  "tier": "Tier 7.4d - Cost-Aware Policy/Action Held-Out/Public Usefulness Contract"
+}

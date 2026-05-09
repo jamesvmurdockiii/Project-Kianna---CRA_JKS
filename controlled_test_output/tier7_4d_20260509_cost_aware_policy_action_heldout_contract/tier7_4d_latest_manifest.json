@@ -1,0 +1,69 @@
+{
+  "artifacts": [
+    {
+      "bytes": 315,
+      "name": "baselines_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4d_20260509_cost_aware_policy_action_heldout_contract/tier7_4d_baselines.csv",
+      "sha256": "e4c4aafb04658c4acba0e99713a4ab86f2b92a673ed76e5905dd7d57a84dcd84"
+    },
+    {
+      "bytes": 7971,
+      "name": "contract_json",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4d_20260509_cost_aware_policy_action_heldout_contract/tier7_4d_contract.json",
+      "sha256": "0deeb0fe84498d7a9da73d0023eb9fa16ae428765eeb10979915703782363a29"
+    },
+    {
+      "bytes": 310,
+      "name": "cost_model_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4d_20260509_cost_aware_policy_action_heldout_contract/tier7_4d_cost_model.csv",
+      "sha256": "e709e5d8c3a7972d31f4db72c8c003e18024468fa9d2f35ca54403475e54026e"
+    },
+    {
+      "bytes": 207,
+      "name": "decision_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4d_20260509_cost_aware_policy_action_heldout_contract/tier7_4d_decision.csv",
+      "sha256": "d1c2d9d9210176672cea93378f748b12389d1568ecbb04a7aa91ced8a50522f2"
+    },
+    {
+      "bytes": 244,
+      "name": "decision_json",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4d_20260509_cost_aware_policy_action_heldout_contract/tier7_4d_decision.json",
+      "sha256": "0cc931c1b70dfda12dc87ab0421d64c022a59348996e9b758b87460049f43616"
+    },
+    {
+      "bytes": 4168,
+      "name": "report_md",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4d_20260509_cost_aware_policy_action_heldout_contract/tier7_4d_report.md",
+      "sha256": "1f5e55aa7139fb56e3130018cea0ff2cbb27cc10fc053a1366a5a6c14464f078"
+    },
+    {
+      "bytes": 17536,
+      "name": "results_json",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4d_20260509_cost_aware_policy_action_heldout_contract/tier7_4d_results.json",
+      "sha256": "9291e33c677e1cc9c558d8c6f6b2c19e208c489619d2b492c9864e54e21ba35c"
+    },
+    {
+      "bytes": 265,
+      "name": "shams_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4d_20260509_cost_aware_policy_action_heldout_contract/tier7_4d_shams_ablations.csv",
+      "sha256": "e8085b18eeb1137f75805edf5a2e7a2206bfd1980b2ac8522b9c0fdb192848ad"
+    },
+    {
+      "bytes": 310,
+      "name": "summary_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4d_20260509_cost_aware_policy_action_heldout_contract/tier7_4d_summary.csv",
+      "sha256": "a95ae50c8bf4d57226572d2e8a1d3bebd7eaffb4871fece586670fa9352b723c"
+    },
+    {
+      "bytes": 1338,
+      "name": "task_families_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4d_20260509_cost_aware_policy_action_heldout_contract/tier7_4d_task_families.csv",
+      "sha256": "f91046d4bb086b0bd68dd3b6e9ee027ad1738fcdbe0420161a888e464ae2b963"
+    }
+  ],
+  "generated_at_utc": "2026-05-09T02:11:26+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_4d_20260509_cost_aware_policy_action_heldout_contract",
+  "runner_revision": "tier7_4d_cost_aware_policy_action_heldout_contract_20260509_0001",
+  "status": "pass",
+  "tier": "Tier 7.4d - Cost-Aware Policy/Action Held-Out/Public Usefulness Contract"
+}

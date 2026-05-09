@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-09T02:00:10+00:00.
+Last updated: 2026-05-09T02:12:39+00:00.
 
 Current repo root:
 
@@ -362,6 +362,22 @@ Tier 7.4c = COMPLETE, PASS, 16/16 criteria
   Boundary: promoted host-side software mechanism evidence only; not public
             usefulness proof, not hardware/native transfer, not long-horizon
             planning, and not language/AGI/ASI.
+```
+
+Latest cost-aware policy/action held-out/public usefulness contract:
+
+```text
+Tier 7.4d = COMPLETE, PASS, 20/20 criteria
+  Source: controlled_test_output/tier7_4d_20260509_cost_aware_policy_action_heldout_contract/
+  Runner: experiments/tier7_4d_cost_aware_policy_action_heldout_contract.py
+  Outcome: heldout_public_usefulness_contract_locked
+  Result: predeclared public/real-ish action-cost families, locked costs,
+          action set, split/leakage rules, baselines, shams/ablations,
+          statistics, pass/fail criteria, and artifacts before v2.4 held-out
+          scoring.
+  Next gate: Tier 7.4e - Cost-Aware Policy/Action Held-Out Scoring Preflight.
+  Boundary: contract only; not a scoring run, not public usefulness proof, not
+            a new baseline freeze, and not hardware/native transfer.
 ```
 
 Latest optional mechanism diagnostic:
@@ -1005,13 +1021,20 @@ Tier 7.4c — COMPLETE. Cost-aware policy/action promotion + compact regression
     policy/action baseline. No hardware/native transfer or public usefulness
     claim is authorized.
 
-Tier 7.4d — CURRENT ACTIVE STEP. Cost-aware policy/action held-out/public
+Tier 7.4d — COMPLETE. Cost-aware policy/action held-out/public
   usefulness contract.
-  Required first move: define the exact external or held-out action-cost tasks,
-    train/evaluation split, cost functions, action set, leakage rules,
-    baselines, shams, statistical tests, and failure classes before scoring
-    v2.4. This is a contract gate first; do not tune on the same held-out
-    streams and do not authorize native transfer from 7.4c alone.
+  Status: CONTRACT PASS, 20/20 criteria.
+  Output: controlled_test_output/tier7_4d_20260509_cost_aware_policy_action_heldout_contract/
+  Result: locked the held-out/public scoring contract for v2.4, including
+    public/real-ish action-cost families, costs, actions, splits, baselines,
+    shams, statistics, failure classes, artifacts, and nonclaims.
+
+Tier 7.4e — CURRENT ACTIVE STEP. Cost-aware policy/action held-out scoring
+  preflight.
+  Required first move: build the scoring-preflight harness against the locked
+    7.4d contract, verify source/split/cost artifacts, and emit dry-run schema
+    outputs before scoring v2.4. Do not tune on held-out streams and do not
+    authorize native transfer from the v2.4 software freeze alone.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware

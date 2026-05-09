@@ -73,7 +73,8 @@ They remain part of the peer-review audit trail:
 6.5 adult-turnover stressor if the final organism claim requires it
 7.4 delayed-reward policy / action selection
 7.4c cost-aware policy/action promotion + compact regression = passed; freezes bounded v2.4 software policy/action baseline
-7.4d cost-aware policy/action held-out/public usefulness contract = current next gate
+7.4d cost-aware policy/action held-out/public usefulness contract = passed contract gate
+7.4e cost-aware policy/action held-out scoring preflight = current next gate
 7.5 curriculum / environment generator
 7.6 long-horizon planning / subgoal control
 4.19 hardware lifecycle feasibility
@@ -11166,10 +11167,23 @@ Next required step:
 
 ```text
 Tier 7.4d - Cost-aware policy/action held-out/public usefulness contract.
-Predeclare external or held-out action-cost tasks, cost functions, action set,
-splits, baselines, shams, statistics, failure classes, and artifacts before any
-v2.4 scoring. Do not tune on held-out streams or infer hardware transfer from
-the v2.4 software freeze.
+Status: COMPLETE / PASS, 20/20 criteria.
+Output: controlled_test_output/tier7_4d_20260509_cost_aware_policy_action_heldout_contract/
+Outcome: heldout_public_usefulness_contract_locked.
+Result: public/real-ish action-cost task families, fixed cost model, action
+set, split/leakage rules, baselines, shams/ablations, statistics, pass/fail
+criteria, and artifacts are now predeclared before any v2.4 held-out scoring.
+Boundary: contract only; no scoring, no public usefulness proof, no new
+baseline freeze, and no hardware/native transfer.
+```
+
+Next required step:
+
+```text
+Tier 7.4e - Cost-aware policy/action held-out scoring preflight.
+Build the source/split/cost/schema dry-run harness from the locked 7.4d
+contract before scoring v2.4. Do not tune on held-out streams or infer hardware
+transfer from the v2.4 software freeze.
 ```
 
 ## Tier 5.20a - Resonant Branch Polyp Internal-Model Diagnostic

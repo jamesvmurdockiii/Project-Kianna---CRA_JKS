@@ -1,0 +1,7 @@
+{
+  "freeze_authorized": false,
+  "hardware_transfer_authorized": false,
+  "next_gate": "Tier 7.4e - Cost-Aware Policy/Action Held-Out Scoring Preflight",
+  "outcome": "heldout_public_usefulness_contract_locked",
+  "scoring_authorized": true
+}
