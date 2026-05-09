@@ -155,8 +155,11 @@ paired CI. Tier 7.4g then passed at
 `controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/`:
 the narrow C-MAPSS external/sham action-cost signal was confirmed, v2.4 still
 did not separate from v2.2 with a positive paired CI, and NAB remained an
-event-coverage non-confirmation. The current active step is Tier 7.4h
-policy/action attribution closeout / mechanism return decision.
+event-coverage non-confirmation. Tier 7.4h then passed at
+`controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout/`:
+the policy/action track is closed without claim inflation, the narrow C-MAPSS
+signal is preserved, broad/incremental/freeze/hardware claims are blocked, and
+Tier 7.5a curriculum/environment-generator contract is selected next.
 
 Tier 4.32a-hw prepare has also passed locally. The current EBRAINS upload
 folder is `ebrains_jobs/cra_432a_hw`, and the exact JobManager command is

@@ -1,0 +1,6 @@
+claim,authorized,basis,boundary
+Narrow C-MAPSS action-cost signal versus external/sham controls,True,Tier 7.4g positive paired CI versus strongest external baseline and sham.,C-MAPSS maintenance-action utility only; software held-out scoring only.
+Broad public usefulness across public/real-ish tasks,False,NAB did not confirm; only one family has a narrow positive signal.,Not authorized.
+Incremental v2.4 superiority over prior v2.2 CRA reference,False,C-MAPSS v2.4-v2.2 paired CI crosses zero; NAB is also not separated.,Not authorized.
+New software baseline freeze,False,Tier 7.4h is attribution closeout only.,Keep CRA_EVIDENCE_BASELINE_v2.4 as current frozen host-side policy/action baseline.
+Hardware/native transfer of the policy/action result,False,Held-out software signal is too narrow and not v2.4-specific.,Native substrate work remains separate engineering evidence.

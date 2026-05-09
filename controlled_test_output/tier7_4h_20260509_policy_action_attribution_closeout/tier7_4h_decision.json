@@ -1,0 +1,14 @@
+{
+  "broad_public_usefulness_authorized": false,
+  "current_frozen_software_baseline": "CRA_EVIDENCE_BASELINE_v2.4",
+  "freeze_authorized": false,
+  "hardware_transfer_authorized": false,
+  "incremental_v2_4_over_v2_2_claim_authorized": false,
+  "narrow_cmapss_action_cost_claim_authorized": true,
+  "next_gate": "Tier 7.5a - Curriculum / Environment Generator Contract",
+  "outcome": "policy_action_track_closed_narrow_cmapss_signal_return_to_mechanism_benchmark_loop",
+  "rationale": "Tier 7.4g confirms only the narrow C-MAPSS external/sham signal. Reference separation and NAB confirmation both fail, so the action-policy track closes without a new freeze or hardware transfer.",
+  "retroactive_heldout_tuning_authorized": false,
+  "status": "PASS",
+  "tier": "Tier 7.4h - Policy/Action Attribution Closeout / Mechanism Return Decision"
+}

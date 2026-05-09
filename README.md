@@ -70,13 +70,14 @@ controlled ablations, baseline comparisons, and explicit claim boundaries.
 | Latest policy/action scoring preflight | Tier 7.4e passed from [`controlled_test_output/tier7_4e_20260509_cost_aware_policy_action_heldout_preflight`](controlled_test_output/tier7_4e_20260509_cost_aware_policy_action_heldout_preflight): verified NAB and C-MAPSS source/preflight artifacts, disjoint held-out splits, fixed costs, online/offline label separation, baseline and sham inventories, and scoring schemas before any v2.4 performance score. Preflight only; no public usefulness claim, freeze, or hardware transfer. |
 | Latest policy/action held-out scoring gate | Tier 7.4f passed from [`controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate`](controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate): outcome `v2_4_heldout_public_action_usefulness_qualified_cmapss_only`. v2.4 ranked first on C-MAPSS maintenance utility and beat the strongest external baseline, but NAB did not confirm and C-MAPSS did not separate from v2.2 with a positive paired CI. Qualified public-action signal only; no broad usefulness claim, no incremental v2.4 superiority claim, no freeze, and no hardware transfer. |
 | Latest policy/action confirmation gate | Tier 7.4g passed from [`controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation`](controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation): outcome `cmapss_external_signal_confirmed_reference_not_separated_nab_failed`. The narrow C-MAPSS external/sham action-cost signal was confirmed (`CI low` vs best external `56.89735573832698`, vs sham `373.38894337405304`), but v2.4 still did not separate from v2.2 (`CI low` `-12.387676684452819`) and NAB remained an event-coverage non-confirmation. No broad usefulness claim, no incremental v2.4 superiority claim, no freeze, and no hardware transfer. |
+| Latest policy/action closeout | Tier 7.4h passed from [`controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout`](controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout): outcome `policy_action_track_closed_narrow_cmapss_signal_return_to_mechanism_benchmark_loop`. The closeout preserves only the narrow C-MAPSS action-cost signal, blocks broad public usefulness and incremental v2.4-over-v2.2 claims, blocks freeze/hardware transfer, and routes the project to Tier 7.5a curriculum/environment contract. |
 | Latest optional mechanism diagnostic | Tier 5.20a passed as a harness from [`controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic`](controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic), but the full 16-resonant-branch polyp proxy was **not promoted**: it helped `variable_delay_multi_cue` and slightly helped `anomaly_detection_stream`, but regressed the standard three and hidden-context task versus v2.3. |
 | Latest optional mechanism repair | Tier 5.20b passed as a harness from [`controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic`](controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic), but neither 8 LIF / 8 resonant nor 12 LIF / 4 resonant earned promotion. Best candidate was `hybrid_8_lif_8_resonant`, with all-task geomean MSE `0.2852846857844163` versus v2.3 `0.2610804850928049`, two wins, two material regressions, and only one sham-separated task. No core polyp replacement, freeze, or hardware transfer. |
 | Latest minimal-dose mechanism check | Tier 5.20c passed as a harness from [`controlled_test_output/tier5_20c_20260508_minimal_resonant_polyp_diagnostic`](controlled_test_output/tier5_20c_20260508_minimal_resonant_polyp_diagnostic), but 14 LIF / 2 resonant was **not promoted**: all-task geomean MSE `0.2777975100580056` versus v2.3 `0.2610804850928049`, zero task wins, one material regression, and zero sham-separated tasks. |
 | Latest resonant-heavy mechanism check | Tier 5.20d passed as a harness from [`controlled_test_output/tier5_20d_20260508_resonant_heavy_polyp_diagnostic`](controlled_test_output/tier5_20d_20260508_resonant_heavy_polyp_diagnostic), but 4 LIF / 12 resonant was **not promoted**: all-task geomean MSE `0.29289224348599796` versus v2.3 `0.2610804850928049`, three task wins, two material regressions, and two sham-separated tasks. The signal is real enough to record, but not safe enough to integrate. |
 | Latest near-full resonant check | Tier 5.20e passed as a harness from [`controlled_test_output/tier5_20e_20260508_near_full_resonant_polyp_diagnostic`](controlled_test_output/tier5_20e_20260508_near_full_resonant_polyp_diagnostic), but 2 LIF / 14 resonant was **not promoted**: all-task geomean MSE `0.30374770797663714` versus v2.3 `0.2610804850928049`, three task wins, three material regressions, and two sham-separated tasks. This closes the current resonant branch dose sweep; resonant branches remain parked. |
-| Active next gate | Tier 7.4h policy/action attribution closeout / mechanism return decision: synthesize 7.4f/7.4g, preserve the narrow C-MAPSS-only signal, reject unsupported v2.4-over-v2.2 and broad usefulness claims, and decide whether to return to the mechanism/benchmark loop. |
-| Canonical registry | 113 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
+| Active next gate | Tier 7.5a curriculum/environment generator contract: predeclare generated task families, difficulty scheduling, novelty/anti-overfitting controls, held-out families, baselines, and pass/fail criteria before any curriculum mechanism is scored. |
+| Canonical registry | 114 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
 | Validation suite | 151 pytest tests plus registry, paper-table, and repository-audit generation. |
 
 ## What CRA Implements
@@ -204,7 +205,7 @@ python3 experiments/tier5_external_baselines.py \
 `make validate` currently runs:
 
 - 151 pytest unit tests.
-- Evidence registry generation: 113 canonical bundles, 0 failed criteria.
+- Evidence registry generation: 114 canonical bundles, 0 failed criteria.
 - Paper results table export.
 - Repository audit.
 
@@ -249,7 +250,7 @@ commit used. A placeholder software citation is:
   author       = {Murdock, James V. and CRA Contributors},
   year         = {2026},
   url          = {https://github.com/jamesvmurdockiii/Project-Kianna---CRA_JKS},
-  note         = {113 canonical evidence bundles; bounded SpiNNaker hardware validation}
+  note         = {114 canonical evidence bundles; bounded SpiNNaker hardware validation}
 }
 ```
 

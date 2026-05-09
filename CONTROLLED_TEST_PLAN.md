@@ -11221,14 +11221,26 @@ usefulness claim, no incremental v2.4 superiority claim, no freeze, and no
 hardware/native transfer.
 ```
 
+```text
+Tier 7.4h - Policy/action attribution closeout / mechanism return decision.
+Status: COMPLETE / PASS, 16/16 criteria.
+Output: controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout/
+Outcome: policy_action_track_closed_narrow_cmapss_signal_return_to_mechanism_benchmark_loop.
+Result: the policy/action track is closed without claim inflation. The narrow
+C-MAPSS action-cost signal is preserved, broad public usefulness and incremental
+v2.4-over-v2.2 claims are blocked, freeze/hardware transfer are blocked, and
+Tier 7.5a is selected next.
+Boundary: decision/attribution evidence only; not new scoring, not a mechanism
+promotion, not broad usefulness, not a freeze, and not hardware/native transfer.
+```
+
 Next required step:
 
 ```text
-Tier 7.4h - Policy/action attribution closeout / mechanism return decision.
-Synthesize Tier 7.4f/7.4g, preserve the narrow C-MAPSS-only action-cost signal,
-reject unsupported v2.4-over-v2.2 and broad usefulness claims, and decide
-whether the next move is mechanism iteration, benchmark repair, or a narrowed
-paper claim. Do not tune held-out scores retroactively.
+Tier 7.5a - Curriculum / environment generator contract.
+Predeclare generated task families, difficulty scheduling, novelty detection,
+anti-overfitting controls, held-out task families, baselines, metrics, and
+pass/fail criteria before implementing/scoring curriculum-generated tasks.
 ```
 
 ## Tier 5.20a - Resonant Branch Polyp Internal-Model Diagnostic

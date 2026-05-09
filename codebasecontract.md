@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-09T03:05:00+00:00.
+Last updated: 2026-05-09T03:13:00+00:00.
 
 Current repo root:
 
@@ -396,20 +396,20 @@ Tier 7.4e = COMPLETE, PASS, 20/20 criteria
             hardware/native transfer.
 ```
 
-Latest cost-aware policy/action held-out confirmation gate:
+Latest cost-aware policy/action closeout gate:
 
 ```text
-Tier 7.4g = COMPLETE, PASS, 20/20 criteria
-  Source: controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/
-  Runner: experiments/tier7_4g_policy_action_confirmation_reference_separation.py
-  Outcome: cmapss_external_signal_confirmed_reference_not_separated_nab_failed
-  Result: the narrow C-MAPSS external/sham action-cost signal was confirmed;
-          v2.4 still did not separate from v2.2 with a positive paired CI; NAB
-          remained an event-coverage non-confirmation.
-  Next gate: Tier 7.4h - Policy/Action Attribution Closeout / Mechanism Return Decision.
-  Boundary: narrow C-MAPSS-only action-cost confirmation; no broad public
-            usefulness claim, no incremental v2.4 superiority claim, no new
-            freeze, and no hardware/native transfer.
+Tier 7.4h = COMPLETE, PASS, 16/16 criteria
+  Source: controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout/
+  Runner: experiments/tier7_4h_policy_action_attribution_closeout.py
+  Outcome: policy_action_track_closed_narrow_cmapss_signal_return_to_mechanism_benchmark_loop
+  Result: the narrow C-MAPSS action-cost signal is preserved, broad public
+          usefulness and incremental v2.4-over-v2.2 claims are blocked, freeze
+          and hardware transfer are blocked, and Tier 7.5a is selected next.
+  Next gate: Tier 7.5a - Curriculum / Environment Generator Contract.
+  Boundary: decision/attribution evidence only; not new scoring, not a
+            mechanism promotion, not broad usefulness, not a freeze, and not
+            hardware/native transfer.
 ```
 
 Latest optional mechanism diagnostic:
@@ -1081,11 +1081,17 @@ Tier 7.4g — COMPLETE. Held-out policy/action confirmation + reference separati
     not separate from v2.2 with positive paired CI; NAB remained an
     event-coverage non-confirmation.
 
-Tier 7.4h — CURRENT ACTIVE STEP. Policy/action attribution closeout / mechanism return decision.
-  Required first move: synthesize Tier 7.4f/7.4g, preserve the narrow C-MAPSS
-    signal, reject unsupported v2.4-over-v2.2 and broad usefulness claims, and
-    route the project back to mechanism iteration, benchmark repair, or a
-    narrowed paper claim without retroactive held-out tuning.
+Tier 7.4h — COMPLETE. Policy/action attribution closeout / mechanism return decision.
+  Status: PASS, 16/16 criteria.
+  Output: controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout/
+  Result: policy/action track closed; narrow C-MAPSS signal preserved; broad
+    usefulness, incremental v2.4, freeze, and hardware transfer blocked.
+
+Tier 7.5a — CURRENT ACTIVE STEP. Curriculum / environment generator contract.
+  Required first move: predeclare generated task families, difficulty schedule,
+    novelty/anti-overfitting controls, held-out task families, baselines,
+    metrics, pass/fail criteria, and claim boundaries before any curriculum
+    implementation/scoring.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware

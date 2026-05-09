@@ -1,0 +1,17 @@
+criterion,value,rule,pass,details
+tier7_4f_results_exist,True,must exist,True,/Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_results.json
+tier7_4f_status_pass,pass,case-insensitive == PASS,True,
+tier7_4g_results_exist,True,must exist,True,/Users/james/JKS:CRA/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_results.json
+tier7_4g_status_pass,PASS,case-insensitive == PASS,True,
+narrow_cmapss_signal_preserved,True,must be True,True,
+cmapss_external_ci_positive,56.89735573832698,> 0,True,
+cmapss_sham_ci_positive,373.38894337405304,> 0,True,
+reference_nonseparation_preserved,-12.387676684452819,<= 0,True,
+nab_nonconfirmation_preserved,-0.4077008431630544,<= 0 and CI not positive,True,
+nab_failure_class_preserved,event_coverage_gap_vs_ewma,non-empty,True,
+broad_claim_blocked,False,must be False,True,
+incremental_v2_4_claim_blocked,False,must be False,True,
+freeze_blocked,False,must be False,True,
+hardware_transfer_blocked,False,must be False,True,
+retroactive_tuning_blocked,False,must be False,True,
+next_gate_selected,Tier 7.5a - Curriculum / Environment Generator Contract,non-empty,True,

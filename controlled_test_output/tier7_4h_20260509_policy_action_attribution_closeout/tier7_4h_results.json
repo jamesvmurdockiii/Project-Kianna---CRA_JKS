@@ -1,0 +1,265 @@
+{
+  "claim_rows": [
+    {
+      "authorized": true,
+      "basis": "Tier 7.4g positive paired CI versus strongest external baseline and sham.",
+      "boundary": "C-MAPSS maintenance-action utility only; software held-out scoring only.",
+      "claim": "Narrow C-MAPSS action-cost signal versus external/sham controls"
+    },
+    {
+      "authorized": false,
+      "basis": "NAB did not confirm; only one family has a narrow positive signal.",
+      "boundary": "Not authorized.",
+      "claim": "Broad public usefulness across public/real-ish tasks"
+    },
+    {
+      "authorized": false,
+      "basis": "C-MAPSS v2.4-v2.2 paired CI crosses zero; NAB is also not separated.",
+      "boundary": "Not authorized.",
+      "claim": "Incremental v2.4 superiority over prior v2.2 CRA reference"
+    },
+    {
+      "authorized": false,
+      "basis": "Tier 7.4h is attribution closeout only.",
+      "boundary": "Keep CRA_EVIDENCE_BASELINE_v2.4 as current frozen host-side policy/action baseline.",
+      "claim": "New software baseline freeze"
+    },
+    {
+      "authorized": false,
+      "basis": "Held-out software signal is too narrow and not v2.4-specific.",
+      "boundary": "Native substrate work remains separate engineering evidence.",
+      "claim": "Hardware/native transfer of the policy/action result"
+    }
+  ],
+  "criteria": [
+    {
+      "criterion": "tier7_4f_results_exist",
+      "details": "/Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_results.json",
+      "name": "tier7_4f_results_exist",
+      "note": "/Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_results.json",
+      "operator": "must exist",
+      "pass": true,
+      "passed": true,
+      "rule": "must exist",
+      "value": true
+    },
+    {
+      "criterion": "tier7_4f_status_pass",
+      "details": "",
+      "name": "tier7_4f_status_pass",
+      "note": "",
+      "operator": "case-insensitive == PASS",
+      "pass": true,
+      "passed": true,
+      "rule": "case-insensitive == PASS",
+      "value": "pass"
+    },
+    {
+      "criterion": "tier7_4g_results_exist",
+      "details": "/Users/james/JKS:CRA/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_results.json",
+      "name": "tier7_4g_results_exist",
+      "note": "/Users/james/JKS:CRA/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_results.json",
+      "operator": "must exist",
+      "pass": true,
+      "passed": true,
+      "rule": "must exist",
+      "value": true
+    },
+    {
+      "criterion": "tier7_4g_status_pass",
+      "details": "",
+      "name": "tier7_4g_status_pass",
+      "note": "",
+      "operator": "case-insensitive == PASS",
+      "pass": true,
+      "passed": true,
+      "rule": "case-insensitive == PASS",
+      "value": "PASS"
+    },
+    {
+      "criterion": "narrow_cmapss_signal_preserved",
+      "details": "",
+      "name": "narrow_cmapss_signal_preserved",
+      "note": "",
+      "operator": "must be True",
+      "pass": true,
+      "passed": true,
+      "rule": "must be True",
+      "value": true
+    },
+    {
+      "criterion": "cmapss_external_ci_positive",
+      "details": "",
+      "name": "cmapss_external_ci_positive",
+      "note": "",
+      "operator": "> 0",
+      "pass": true,
+      "passed": true,
+      "rule": "> 0",
+      "value": "56.89735573832698"
+    },
+    {
+      "criterion": "cmapss_sham_ci_positive",
+      "details": "",
+      "name": "cmapss_sham_ci_positive",
+      "note": "",
+      "operator": "> 0",
+      "pass": true,
+      "passed": true,
+      "rule": "> 0",
+      "value": "373.38894337405304"
+    },
+    {
+      "criterion": "reference_nonseparation_preserved",
+      "details": "",
+      "name": "reference_nonseparation_preserved",
+      "note": "",
+      "operator": "<= 0",
+      "pass": true,
+      "passed": true,
+      "rule": "<= 0",
+      "value": "-12.387676684452819"
+    },
+    {
+      "criterion": "nab_nonconfirmation_preserved",
+      "details": "",
+      "name": "nab_nonconfirmation_preserved",
+      "note": "",
+      "operator": "<= 0 and CI not positive",
+      "pass": true,
+      "passed": true,
+      "rule": "<= 0 and CI not positive",
+      "value": "-0.4077008431630544"
+    },
+    {
+      "criterion": "nab_failure_class_preserved",
+      "details": "",
+      "name": "nab_failure_class_preserved",
+      "note": "",
+      "operator": "non-empty",
+      "pass": true,
+      "passed": true,
+      "rule": "non-empty",
+      "value": "event_coverage_gap_vs_ewma"
+    },
+    {
+      "criterion": "broad_claim_blocked",
+      "details": "",
+      "name": "broad_claim_blocked",
+      "note": "",
+      "operator": "must be False",
+      "pass": true,
+      "passed": true,
+      "rule": "must be False",
+      "value": false
+    },
+    {
+      "criterion": "incremental_v2_4_claim_blocked",
+      "details": "",
+      "name": "incremental_v2_4_claim_blocked",
+      "note": "",
+      "operator": "must be False",
+      "pass": true,
+      "passed": true,
+      "rule": "must be False",
+      "value": false
+    },
+    {
+      "criterion": "freeze_blocked",
+      "details": "",
+      "name": "freeze_blocked",
+      "note": "",
+      "operator": "must be False",
+      "pass": true,
+      "passed": true,
+      "rule": "must be False",
+      "value": false
+    },
+    {
+      "criterion": "hardware_transfer_blocked",
+      "details": "",
+      "name": "hardware_transfer_blocked",
+      "note": "",
+      "operator": "must be False",
+      "pass": true,
+      "passed": true,
+      "rule": "must be False",
+      "value": false
+    },
+    {
+      "criterion": "retroactive_tuning_blocked",
+      "details": "",
+      "name": "retroactive_tuning_blocked",
+      "note": "",
+      "operator": "must be False",
+      "pass": true,
+      "passed": true,
+      "rule": "must be False",
+      "value": false
+    },
+    {
+      "criterion": "next_gate_selected",
+      "details": "",
+      "name": "next_gate_selected",
+      "note": "",
+      "operator": "non-empty",
+      "pass": true,
+      "passed": true,
+      "rule": "non-empty",
+      "value": "Tier 7.5a - Curriculum / Environment Generator Contract"
+    }
+  ],
+  "decision": {
+    "broad_public_usefulness_authorized": false,
+    "current_frozen_software_baseline": "CRA_EVIDENCE_BASELINE_v2.4",
+    "freeze_authorized": false,
+    "hardware_transfer_authorized": false,
+    "incremental_v2_4_over_v2_2_claim_authorized": false,
+    "narrow_cmapss_action_cost_claim_authorized": true,
+    "next_gate": "Tier 7.5a - Curriculum / Environment Generator Contract",
+    "outcome": "policy_action_track_closed_narrow_cmapss_signal_return_to_mechanism_benchmark_loop",
+    "rationale": "Tier 7.4g confirms only the narrow C-MAPSS external/sham signal. Reference separation and NAB confirmation both fail, so the action-policy track closes without a new freeze or hardware transfer.",
+    "retroactive_heldout_tuning_authorized": false,
+    "status": "PASS",
+    "tier": "Tier 7.4h - Policy/Action Attribution Closeout / Mechanism Return Decision"
+  },
+  "generated_at_utc": "2026-05-09T03:06:35+00:00",
+  "route_rows": [
+    {
+      "reason": "The NAB chain already had diagnostic/repair/holdout/closeout gates; retroactive tuning would contaminate held-out evidence.",
+      "route": "stop_policy_action_heldout_tuning",
+      "selected": true
+    },
+    {
+      "reason": "v2.4 remains the frozen host-side policy/action baseline, but 7.4g did not justify v2.5 or hardware transfer.",
+      "route": "keep_v2_4_baseline_without_new_freeze",
+      "selected": true
+    },
+    {
+      "reason": "The next evidence question is not more NAB/C-MAPSS policy tuning; it is whether a general mechanism improves public/real-ish tasks under locked controls.",
+      "route": "return_to_general_mechanism_benchmark_loop",
+      "selected": true
+    },
+    {
+      "reason": "The roadmap's next unclosed general capability branch is curriculum/environment generation before longer-horizon planning.",
+      "route": "start_tier_7_5a_curriculum_environment_contract",
+      "selected": true
+    },
+    {
+      "reason": "No broad or incremental held-out policy/action claim is authorized.",
+      "route": "hardware_transfer_policy_action_result",
+      "selected": false
+    }
+  ],
+  "runner_revision": "tier7_4h_policy_action_attribution_closeout_20260509_0001",
+  "source_artifacts": {
+    "tier7_4f_decision": "/Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_decision.json",
+    "tier7_4f_results": "/Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_results.json",
+    "tier7_4g_confirmation": "/Users/james/JKS:CRA/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_confirmation_checks.csv",
+    "tier7_4g_decision": "/Users/james/JKS:CRA/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_decision.json",
+    "tier7_4g_nab_failure": "/Users/james/JKS:CRA/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_nab_failure_analysis.csv",
+    "tier7_4g_results": "/Users/james/JKS:CRA/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_results.json"
+  },
+  "status": "PASS",
+  "tier": "Tier 7.4h - Policy/Action Attribution Closeout / Mechanism Return Decision"
+}

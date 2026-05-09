@@ -1,0 +1,6 @@
+route,selected,reason
+stop_policy_action_heldout_tuning,True,The NAB chain already had diagnostic/repair/holdout/closeout gates; retroactive tuning would contaminate held-out evidence.
+keep_v2_4_baseline_without_new_freeze,True,"v2.4 remains the frozen host-side policy/action baseline, but 7.4g did not justify v2.5 or hardware transfer."
+return_to_general_mechanism_benchmark_loop,True,The next evidence question is not more NAB/C-MAPSS policy tuning; it is whether a general mechanism improves public/real-ish tasks under locked controls.
+start_tier_7_5a_curriculum_environment_contract,True,The roadmap's next unclosed general capability branch is curriculum/environment generation before longer-horizon planning.
+hardware_transfer_policy_action_result,False,No broad or incremental held-out policy/action claim is authorized.
