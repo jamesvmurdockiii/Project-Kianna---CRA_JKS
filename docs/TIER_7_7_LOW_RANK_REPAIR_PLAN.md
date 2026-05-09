@@ -4,6 +4,41 @@ Status: current active execution plan.
 
 Last updated: 2026-05-09T18:35:00+00:00.
 
+## Agent Handoff Summary
+
+If another maintainer or AI agent starts here, the next action is not to tune,
+not to run baselines, and not to jump to Tier 7.8.
+
+The next action is:
+
+```text
+create experiments/tier7_7t_low_rank_state_repair_campaign_contract.py
+add make target tier7-7t
+run the contract
+register the evidence
+update docs
+run make validate
+commit
+```
+
+Tier 7.7t must be a contract/campaign lock only. It should not implement a
+repair and should not score a new candidate.
+
+The contract must answer:
+
+```text
+What exactly is the low-rank failure?
+What causes are being tested first?
+What repair families are allowed?
+What metrics define fixed versus not fixed?
+When do we run compact scoring?
+When do we run expanded baselines?
+When, and only when, do we route to 7.8 morphology?
+```
+
+Do not proceed to Tier 7.7u until Tier 7.7t is canonical evidence and validation
+passes.
+
 ## Purpose
 
 Tier 7.7 remains active until CRA's low-effective-dimensionality state bottleneck
@@ -109,6 +144,18 @@ no baseline freeze until promotion/regression
 If a candidate helps a little and does not hurt, preserve it as bounded utility
 or diagnostic evidence. Do not promote it as a CRA mechanism unless it fixes the
 predeclared failure class and survives controls.
+
+Partial wins must be classified, not hidden:
+
+```text
+score_gain_without_dimension = task score improves but PR/rank remain collapsed
+dimension_gain_without_score = PR/rank improve but benchmark usefulness does not
+generic_control_explains_gain = random projection/nonlinear-lag still explains it
+bounded_utility_only = useful and safe, but not CRA-specific mechanism evidence
+mechanism_candidate = geometry, usefulness, and attribution all pass
+```
+
+This is how we keep hammering 7.7 without turning it into p-hacking.
 
 ## Suspected Failure Modes To Test
 
@@ -394,6 +441,130 @@ Use the ladder:
 post-freeze public confirmation:
   C-MAPSS/NAB/other real-ish adapters only after a new baseline exists
 ```
+
+## Exact Artifact And Documentation Requirements
+
+Every Tier 7.7 follow-on must emit enough evidence that a reviewer can reproduce
+the decision without reading the code.
+
+Required for Tier 7.7t:
+
+```text
+controlled_test_output/tier7_7t_*/tier7_7t_results.json
+controlled_test_output/tier7_7t_*/tier7_7t_contract.json
+controlled_test_output/tier7_7t_*/tier7_7t_summary.csv
+controlled_test_output/tier7_7t_*/tier7_7t_failure_modes.csv
+controlled_test_output/tier7_7t_*/tier7_7t_candidate_repair_queue.csv
+controlled_test_output/tier7_7t_*/tier7_7t_controls.csv
+controlled_test_output/tier7_7t_*/tier7_7t_metrics.csv
+controlled_test_output/tier7_7t_*/tier7_7t_outcome_classes.csv
+controlled_test_output/tier7_7t_*/tier7_7t_baseline_escalation.csv
+controlled_test_output/tier7_7t_*/tier7_7t_expected_artifacts.csv
+controlled_test_output/tier7_7t_*/tier7_7t_claim_boundary.md
+controlled_test_output/tier7_7t_*/tier7_7t_report.md
+controlled_test_output/tier7_7t_latest_manifest.json
+```
+
+Required source updates after Tier 7.7t passes:
+
+```text
+experiments/evidence_registry.py
+experiments/repo_audit.py
+Makefile
+README.md
+CONTROLLED_TEST_PLAN.md
+docs/PAPER_READINESS_ROADMAP.md
+docs/MASTER_EXECUTION_PLAN.md
+docs/MECHANISM_STATUS.md
+codebasecontract.md
+```
+
+Required validation:
+
+```text
+make tier7-7t
+make validate
+git diff --check
+git status --short
+```
+
+If `make validate` regenerates only registry timestamps/latest manifests, commit
+that generated refresh with the tier evidence. Do not leave the tree dirty.
+
+## Exact Tier 7.7t Definition Of Done
+
+Tier 7.7t is complete only if all of these are true:
+
+```text
+contract runner exists
+make target exists
+output bundle exists under controlled_test_output/
+criteria pass
+claim boundary explicitly says contract only
+failure modes are enumerated
+repair queue is ordered or declares how 7.7u will choose the order
+controls include random projection and nonlinear-lag
+metrics include state geometry and usefulness
+baseline escalation prevents full public baselines before compact repair
+Tier 7.8 and Tier 7.9 are explicitly queued, not active
+evidence registry includes the new bundle
+repo audit expected count is updated
+README and source-of-truth docs agree on next step
+make validate passes
+commit created
+```
+
+Anything less is not done.
+
+## Do-Not-Do Rules For Future Agents
+
+Do not:
+
+```text
+start with a repair implementation before 7.7t contract passes
+run 7.8 morphology as active before 7.7 routes there
+run lifecycle/evolution before state repair or morphology route decision
+use public adapters to rescue a failed standardized core gate
+claim mechanism promotion from score gain alone
+claim state repair from PR gain alone
+drop random-projection or nonlinear-lag controls
+freeze a baseline from a contract or compact score
+port to hardware/native C before software usefulness survives controls
+tune thresholds after seeing results
+hide negative or generic-control-explained outcomes
+```
+
+## Stopping / Narrowing Rules
+
+Tier 7.7 can run for multiple repair cycles, but each cycle must close cleanly.
+
+Stop or narrow if:
+
+```text
+three distinct repair families fail to increase state dimensionality and
+usefulness under the locked controls
+
+or
+
+every useful score gain remains explained by random projection/nonlinear-lag
+controls
+
+or
+
+state geometry improves only by adding capacity that matched controls can
+reproduce
+```
+
+If that happens, write a 7.7 closeout contract. The honest claim becomes:
+
+```text
+CRA has bounded temporal utility and strong Mackey-style signal, but the current
+architecture has an unresolved low-rank state bottleneck on Lorenz-style
+attractor reconstruction.
+```
+
+Then either route to Tier 7.8 morphology as the next hypothesis or narrow the
+paper claim.
 
 ## When To Move To Tier 7.8
 
