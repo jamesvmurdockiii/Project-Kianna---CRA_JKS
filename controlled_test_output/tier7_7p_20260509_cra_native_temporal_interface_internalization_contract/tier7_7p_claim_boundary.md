@@ -1,0 +1,1 @@
+This contract authorizes only the Tier 7.7q software scoring gate. It does not implement the mechanism, promote it, freeze a baseline, claim external-baseline superiority, or transfer anything to hardware/native runtime.

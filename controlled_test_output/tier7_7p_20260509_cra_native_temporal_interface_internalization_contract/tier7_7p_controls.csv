@@ -1,0 +1,8 @@
+control,purpose,pass_requirement
+same_feature_random_projection,The 7.7n strongest generic control; candidate must beat or match it with CRA-native attribution.,Candidate must beat this control by at least 5% on Lorenz or show equal performance with stronger CRA-specific ablation separation.
+nonlinear_lag_unpartitioned,The 7.7n strong causal feature-interface control.,Candidate must beat or match while preserving internal-mechanism ablation losses.
+current_cra_baseline,Show internalization improves current CRA rather than merely matching it.,Candidate improves Lorenz and does not materially regress Mackey/NARMA.
+no_nonlinearity,Test nonlinear branch causality.,"If nonlinear branches are claimed, disabling them should hurt."
+no_delay_trace,Test temporal trace/delay causality.,"If temporal traces are claimed, removing them should hurt."
+target_shuffle,Leakage guard.,Target shuffle must fail strongly.
+time_shuffle,Temporal-order guard.,Time shuffle must fail strongly.

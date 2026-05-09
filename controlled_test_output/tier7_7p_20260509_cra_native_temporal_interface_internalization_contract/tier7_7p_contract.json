@@ -1,0 +1,12 @@
+{
+  "decision_boundary": "This contract authorizes only the Tier 7.7q software scoring gate. It does not implement the mechanism, promote it, freeze a baseline, claim external-baseline superiority, or transfer anything to hardware/native runtime.",
+  "hypothesis": "A CRA-native sparse temporal expansion mechanism with causal delay/trace branches and thresholded nonlinear branch units can recover the useful temporal-interface signal while separating from random projection, nonlinear-lag controls, and internal ablations.",
+  "mechanism_under_test": "cra_native_sparse_temporal_expansion",
+  "null_hypothesis": "The useful signal remains an external feature/interface effect; native CRA internalization does not beat or causally separate from random projection/nonlinear-lag controls.",
+  "prior_diagnostic": {
+    "decision": "park_partitioned_driver_and_authorize_cra_native_temporal_interface_internalization",
+    "status": "pass",
+    "tier": "7.7o"
+  },
+  "question": "Can CRA internalize the temporal-basis capability exposed by random-projection/nonlinear-lag controls as organism-native dynamics rather than a host-side adapter?"
+}

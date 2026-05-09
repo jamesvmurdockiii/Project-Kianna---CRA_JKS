@@ -1,0 +1,7 @@
+outcome,rule,allowed_claim
+native_temporal_interface_promotable_candidate,"Candidate beats or cleanly matches random-projection/nonlinear-lag controls, ablations hurt as predicted, shuffles fail, regressions are bounded, and compact regression passes in a later promotion gate.","CRA has a software-supported native temporal-interface candidate eligible for promotion/regression, not yet frozen."
+external_controls_still_win,Random projection or nonlinear-lag controls still beat the native candidate.,Internalization failed to beat the stronger controls; do not promote.
+adapter_only_signal,A host/adapter form works but the CRA-native representation does not separate from controls.,Adapter diagnostic only; no CRA mechanism claim.
+ablation_not_causal,Candidate scores well but no internal ablation hurts.,Performance is not causally attributed to the proposed mechanism.
+regression_or_leakage_blocked,"Mackey/NARMA regress, target/time shuffles pass, or compact regression fails.",No promotion; blocked by controls.
+inconclusive,Margins conflict or confidence is insufficient.,Diagnostic only.

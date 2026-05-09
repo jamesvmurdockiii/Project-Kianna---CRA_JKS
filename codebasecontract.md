@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-09T17:03:26+00:00.
+Last updated: 2026-05-09T17:13:53+00:00.
 
 Current repo root:
 
@@ -1416,13 +1416,21 @@ Tier 7.7o — COMPLETE. Generic temporal-interface reframing contract.
   promotion, baseline freeze, broad usefulness claim, external-baseline
   superiority, or hardware/native transfer is authorized.
 
-Tier 7.7p — CURRENT ACTIVE STEP. CRA-native temporal-interface
-  internalization contract. Define how to internalize the useful causal
-  temporal-basis capability as organism-native dynamics, such as sparse
-  temporal expansion microcircuits, polyp-local delay/trace branches, or
-  recurrent sensory-basis units. The contract must preserve random projection
-  and nonlinear/lag controls as strict shams, require compact regression before
-  freeze, and forbid host-side adapter promotion.
+Tier 7.7p — COMPLETE. CRA-native temporal-interface internalization contract.
+  Status: PASS, 17/17 criteria. Output:
+  `controlled_test_output/tier7_7p_20260509_cra_native_temporal_interface_internalization_contract/`.
+  The contract locks `cra_native_sparse_temporal_expansion` as the next
+  candidate: causal temporal expansion with delay/trace and nonlinear branch
+  units must beat or cleanly separate from random-projection and nonlinear-lag
+  controls before any promotion. Contract only; no implementation, model score,
+  mechanism promotion, baseline freeze, broad usefulness claim,
+  external-baseline superiority, or hardware/native transfer is authorized.
+
+Tier 7.7q — CURRENT ACTIVE STEP. CRA-native temporal-interface internalization
+  scoring gate. Implement and score the locked native temporal expansion
+  candidate against current CRA, random-projection, nonlinear-lag, no-delay,
+  no-nonlinearity, target-shuffle, and time-shuffle controls. If it passes, do
+  not freeze immediately; route to compact promotion/regression first.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware

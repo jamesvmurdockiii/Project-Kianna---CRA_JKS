@@ -1,0 +1,7 @@
+mechanism,role,description,native_requirement,promotable
+cra_native_sparse_temporal_expansion,primary candidate,"A CRA-native sensory/temporal expansion stage implemented as causal polyp-local or reef-local temporal basis units: sparse fixed/slow-plastic sensory projections, multiple delay/trace constants, thresholded nonlinear branch units, and recurrent sensory-basis units feeding the existing CRA learning/readout path.",Must be represented as organism state/features that could map to PyNN/SpiNNaker LIF subcircuits or native runtime state; not a host-only preprocessing adapter.,True
+temporal_expansion_no_nonlinearity,nonlinearity ablation,Same temporal expansion budget with nonlinear/threshold branch transforms disabled.,,False
+temporal_expansion_no_delays,delay/trace ablation,Same expansion budget without explicit causal delay/trace branches.,,False
+temporal_expansion_frozen_random,generic-basis sham,Same feature count with frozen random causal projection; carried forward from the 7.7n winning control.,,False
+nonlinear_lag_external_control,strong external/control baseline,"The 7.7n nonlinear/lag unpartitioned same-budget control; must remain a control, not a CRA claim.",,False
+current_cra_baseline,baseline reference,Current frozen CRA software baseline before temporal-interface internalization.,,False

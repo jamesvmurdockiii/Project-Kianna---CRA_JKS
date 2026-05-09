@@ -1,0 +1,11 @@
+metric,role,required
+geomean_mse,primary standardized score,True
+tail_mse,tail stability,True
+test_corr,prediction shape,True
+candidate_vs_random_projection_ratio,strong-control separation,True
+candidate_vs_nonlinear_lag_ratio,strong-control separation,True
+ablation_delta,mechanism causality,True
+feature_count,budget accounting,True
+readout_parameter_count,budget accounting,True
+state_participation_ratio,state geometry audit,True
+compact_regression_status,promotion/freeze guard,True

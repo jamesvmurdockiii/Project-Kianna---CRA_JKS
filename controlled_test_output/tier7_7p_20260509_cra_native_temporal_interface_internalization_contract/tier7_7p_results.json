@@ -1,0 +1,548 @@
+{
+  "claim_boundary": "This contract authorizes only the Tier 7.7q software scoring gate. It does not implement the mechanism, promote it, freeze a baseline, claim external-baseline superiority, or transfer anything to hardware/native runtime.",
+  "contract": {
+    "decision_boundary": "This contract authorizes only the Tier 7.7q software scoring gate. It does not implement the mechanism, promote it, freeze a baseline, claim external-baseline superiority, or transfer anything to hardware/native runtime.",
+    "hypothesis": "A CRA-native sparse temporal expansion mechanism with causal delay/trace branches and thresholded nonlinear branch units can recover the useful temporal-interface signal while separating from random projection, nonlinear-lag controls, and internal ablations.",
+    "mechanism_under_test": "cra_native_sparse_temporal_expansion",
+    "null_hypothesis": "The useful signal remains an external feature/interface effect; native CRA internalization does not beat or causally separate from random projection/nonlinear-lag controls.",
+    "prior_diagnostic": {
+      "decision": "park_partitioned_driver_and_authorize_cra_native_temporal_interface_internalization",
+      "status": "pass",
+      "tier": "7.7o"
+    },
+    "question": "Can CRA internalize the temporal-basis capability exposed by random-projection/nonlinear-lag controls as organism-native dynamics rather than a host-side adapter?"
+  },
+  "controls": [
+    {
+      "control": "same_feature_random_projection",
+      "pass_requirement": "Candidate must beat this control by at least 5% on Lorenz or show equal performance with stronger CRA-specific ablation separation.",
+      "purpose": "The 7.7n strongest generic control; candidate must beat or match it with CRA-native attribution."
+    },
+    {
+      "control": "nonlinear_lag_unpartitioned",
+      "pass_requirement": "Candidate must beat or match while preserving internal-mechanism ablation losses.",
+      "purpose": "The 7.7n strong causal feature-interface control."
+    },
+    {
+      "control": "current_cra_baseline",
+      "pass_requirement": "Candidate improves Lorenz and does not materially regress Mackey/NARMA.",
+      "purpose": "Show internalization improves current CRA rather than merely matching it."
+    },
+    {
+      "control": "no_nonlinearity",
+      "pass_requirement": "If nonlinear branches are claimed, disabling them should hurt.",
+      "purpose": "Test nonlinear branch causality."
+    },
+    {
+      "control": "no_delay_trace",
+      "pass_requirement": "If temporal traces are claimed, removing them should hurt.",
+      "purpose": "Test temporal trace/delay causality."
+    },
+    {
+      "control": "target_shuffle",
+      "pass_requirement": "Target shuffle must fail strongly.",
+      "purpose": "Leakage guard."
+    },
+    {
+      "control": "time_shuffle",
+      "pass_requirement": "Time shuffle must fail strongly.",
+      "purpose": "Temporal-order guard."
+    }
+  ],
+  "criteria": [
+    {
+      "criterion": "Tier 7.7o prerequisite exists",
+      "details": "",
+      "name": "Tier 7.7o prerequisite exists",
+      "note": "",
+      "operator": "exists",
+      "pass": true,
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_7o_20260509_generic_temporal_interface_reframing_contract/tier7_7o_results.json"
+    },
+    {
+      "criterion": "Tier 7.7o prerequisite passed",
+      "details": "",
+      "name": "Tier 7.7o prerequisite passed",
+      "note": "",
+      "operator": "== pass",
+      "pass": true,
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "criterion": "Tier 7.7o authorized internalization",
+      "details": "",
+      "name": "Tier 7.7o authorized internalization",
+      "note": "",
+      "operator": "authorizes internalization",
+      "pass": true,
+      "passed": true,
+      "rule": "authorizes internalization",
+      "value": "park_partitioned_driver_and_authorize_cra_native_temporal_interface_internalization"
+    },
+    {
+      "criterion": "question locked",
+      "details": "",
+      "name": "question locked",
+      "note": "",
+      "operator": "non-empty",
+      "pass": true,
+      "passed": true,
+      "rule": "non-empty",
+      "value": "Can CRA internalize the temporal-basis capability exposed by random-projection/nonlinear-lag controls as organism-native dynamics rather than a host-side adapter?"
+    },
+    {
+      "criterion": "hypothesis locked",
+      "details": "",
+      "name": "hypothesis locked",
+      "note": "",
+      "operator": "non-empty",
+      "pass": true,
+      "passed": true,
+      "rule": "non-empty",
+      "value": "A CRA-native sparse temporal expansion mechanism with causal delay/trace branches and thresholded nonlinear branch units can recover the useful temporal-interface signal while separating from random projection, nonlinear-lag controls, and internal ablations."
+    },
+    {
+      "criterion": "null hypothesis locked",
+      "details": "",
+      "name": "null hypothesis locked",
+      "note": "",
+      "operator": "non-empty",
+      "pass": true,
+      "passed": true,
+      "rule": "non-empty",
+      "value": "The useful signal remains an external feature/interface effect; native CRA internalization does not beat or causally separate from random projection/nonlinear-lag controls."
+    },
+    {
+      "criterion": "primary mechanism named",
+      "details": "",
+      "name": "primary mechanism named",
+      "note": "",
+      "operator": "== cra_native_sparse_temporal_expansion",
+      "pass": true,
+      "passed": true,
+      "rule": "== cra_native_sparse_temporal_expansion",
+      "value": "cra_native_sparse_temporal_expansion"
+    },
+    {
+      "criterion": "native mechanism present",
+      "details": "",
+      "name": "native mechanism present",
+      "note": "",
+      "operator": "includes primary candidate",
+      "pass": true,
+      "passed": true,
+      "rule": "includes primary candidate",
+      "value": [
+        "cra_native_sparse_temporal_expansion",
+        "temporal_expansion_no_nonlinearity",
+        "temporal_expansion_no_delays",
+        "temporal_expansion_frozen_random",
+        "nonlinear_lag_external_control",
+        "current_cra_baseline"
+      ]
+    },
+    {
+      "criterion": "strong controls retained",
+      "details": "",
+      "name": "strong controls retained",
+      "note": "",
+      "operator": "random projection and nonlinear lag",
+      "pass": true,
+      "passed": true,
+      "rule": "random projection and nonlinear lag",
+      "value": [
+        "same_feature_random_projection",
+        "nonlinear_lag_unpartitioned",
+        "current_cra_baseline",
+        "no_nonlinearity",
+        "no_delay_trace",
+        "target_shuffle",
+        "time_shuffle"
+      ]
+    },
+    {
+      "criterion": "ablation controls locked",
+      "details": "",
+      "name": "ablation controls locked",
+      "note": "",
+      "operator": "no nonlinearity and no delay",
+      "pass": true,
+      "passed": true,
+      "rule": "no nonlinearity and no delay",
+      "value": [
+        "same_feature_random_projection",
+        "nonlinear_lag_unpartitioned",
+        "current_cra_baseline",
+        "no_nonlinearity",
+        "no_delay_trace",
+        "target_shuffle",
+        "time_shuffle"
+      ]
+    },
+    {
+      "criterion": "tasks locked",
+      "details": "",
+      "name": "tasks locked",
+      "note": "",
+      "operator": "Lorenz/Mackey/repaired NARMA",
+      "pass": true,
+      "passed": true,
+      "rule": "Lorenz/Mackey/repaired NARMA",
+      "value": [
+        "lorenz",
+        "mackey_glass",
+        "narma10_repaired_u02"
+      ]
+    },
+    {
+      "criterion": "budget constraints locked",
+      "details": "",
+      "name": "budget constraints locked",
+      "note": "",
+      "operator": "budget matched and organism native",
+      "pass": true,
+      "passed": true,
+      "rule": "budget matched and organism native",
+      "value": [
+        "causal_only",
+        "organism_native",
+        "budget_matched",
+        "one_mechanism",
+        "hardware_path_awareness",
+        "no_freeze_without_regression"
+      ]
+    },
+    {
+      "criterion": "metrics include strong-control ratios",
+      "details": "",
+      "name": "metrics include strong-control ratios",
+      "note": "",
+      "operator": "includes control ratios",
+      "pass": true,
+      "passed": true,
+      "rule": "includes control ratios",
+      "value": [
+        "geomean_mse",
+        "tail_mse",
+        "test_corr",
+        "candidate_vs_random_projection_ratio",
+        "candidate_vs_nonlinear_lag_ratio",
+        "ablation_delta",
+        "feature_count",
+        "readout_parameter_count",
+        "state_participation_ratio",
+        "compact_regression_status"
+      ]
+    },
+    {
+      "criterion": "outcome classes locked",
+      "details": "",
+      "name": "outcome classes locked",
+      "note": "",
+      "operator": ">= 6 classes",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 6 classes",
+      "value": [
+        "native_temporal_interface_promotable_candidate",
+        "external_controls_still_win",
+        "adapter_only_signal",
+        "ablation_not_causal",
+        "regression_or_leakage_blocked",
+        "inconclusive"
+      ]
+    },
+    {
+      "criterion": "expected artifacts locked",
+      "details": "",
+      "name": "expected artifacts locked",
+      "note": "",
+      "operator": ">= 10 artifacts",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 10 artifacts",
+      "value": [
+        "tier7_7q_results.json",
+        "tier7_7q_summary.csv",
+        "tier7_7q_scoreboard.csv",
+        "tier7_7q_score_summary.csv",
+        "tier7_7q_mechanism_ablations.csv",
+        "tier7_7q_budget_audit.csv",
+        "tier7_7q_state_geometry.csv",
+        "tier7_7q_strong_controls.csv",
+        "tier7_7q_regression_summary.json",
+        "tier7_7q_claim_boundary.md",
+        "tier7_7q_report.md"
+      ]
+    },
+    {
+      "criterion": "no baseline freeze authorized",
+      "details": "",
+      "name": "no baseline freeze authorized",
+      "note": "",
+      "operator": "false",
+      "pass": true,
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "criterion": "no hardware/native transfer authorized",
+      "details": "",
+      "name": "no hardware/native transfer authorized",
+      "note": "",
+      "operator": "false",
+      "pass": true,
+      "passed": true,
+      "rule": "false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 17,
+  "criteria_total": 17,
+  "expected_artifacts": [
+    {
+      "artifact": "tier7_7q_results.json",
+      "required_for_scoring_gate": true
+    },
+    {
+      "artifact": "tier7_7q_summary.csv",
+      "required_for_scoring_gate": true
+    },
+    {
+      "artifact": "tier7_7q_scoreboard.csv",
+      "required_for_scoring_gate": true
+    },
+    {
+      "artifact": "tier7_7q_score_summary.csv",
+      "required_for_scoring_gate": true
+    },
+    {
+      "artifact": "tier7_7q_mechanism_ablations.csv",
+      "required_for_scoring_gate": true
+    },
+    {
+      "artifact": "tier7_7q_budget_audit.csv",
+      "required_for_scoring_gate": true
+    },
+    {
+      "artifact": "tier7_7q_state_geometry.csv",
+      "required_for_scoring_gate": true
+    },
+    {
+      "artifact": "tier7_7q_strong_controls.csv",
+      "required_for_scoring_gate": true
+    },
+    {
+      "artifact": "tier7_7q_regression_summary.json",
+      "required_for_scoring_gate": true
+    },
+    {
+      "artifact": "tier7_7q_claim_boundary.md",
+      "required_for_scoring_gate": true
+    },
+    {
+      "artifact": "tier7_7q_report.md",
+      "required_for_scoring_gate": true
+    }
+  ],
+  "generated_at_utc": "2026-05-09T17:17:28+00:00",
+  "implementation_constraints": [
+    {
+      "constraint": "causal_only",
+      "requirement": "No future observations, labels, targets, or test outcomes may enter the temporal interface."
+    },
+    {
+      "constraint": "organism_native",
+      "requirement": "The mechanism must be represented as CRA internal state or PyNN/SpiNNaker-compatible microcircuit/state variables, not as an unclaimed host-side adapter."
+    },
+    {
+      "constraint": "budget_matched",
+      "requirement": "Report and match feature count, hidden/state count, readout parameters, and update budget against all strong controls."
+    },
+    {
+      "constraint": "one_mechanism",
+      "requirement": "Do not combine morphology variability, lifecycle changes, replay changes, or hardware/native changes into this gate."
+    },
+    {
+      "constraint": "hardware_path_awareness",
+      "requirement": "The design must be compatible with later PyNN/SpiNNaker or custom-runtime mapping, but this tier remains software evidence only."
+    },
+    {
+      "constraint": "no_freeze_without_regression",
+      "requirement": "Even a scoring pass must route to promotion/compact regression before baseline freeze."
+    }
+  ],
+  "mechanisms": [
+    {
+      "description": "A CRA-native sensory/temporal expansion stage implemented as causal polyp-local or reef-local temporal basis units: sparse fixed/slow-plastic sensory projections, multiple delay/trace constants, thresholded nonlinear branch units, and recurrent sensory-basis units feeding the existing CRA learning/readout path.",
+      "mechanism": "cra_native_sparse_temporal_expansion",
+      "native_requirement": "Must be represented as organism state/features that could map to PyNN/SpiNNaker LIF subcircuits or native runtime state; not a host-only preprocessing adapter.",
+      "promotable": true,
+      "role": "primary candidate"
+    },
+    {
+      "description": "Same temporal expansion budget with nonlinear/threshold branch transforms disabled.",
+      "mechanism": "temporal_expansion_no_nonlinearity",
+      "promotable": false,
+      "role": "nonlinearity ablation"
+    },
+    {
+      "description": "Same expansion budget without explicit causal delay/trace branches.",
+      "mechanism": "temporal_expansion_no_delays",
+      "promotable": false,
+      "role": "delay/trace ablation"
+    },
+    {
+      "description": "Same feature count with frozen random causal projection; carried forward from the 7.7n winning control.",
+      "mechanism": "temporal_expansion_frozen_random",
+      "promotable": false,
+      "role": "generic-basis sham"
+    },
+    {
+      "description": "The 7.7n nonlinear/lag unpartitioned same-budget control; must remain a control, not a CRA claim.",
+      "mechanism": "nonlinear_lag_external_control",
+      "promotable": false,
+      "role": "strong external/control baseline"
+    },
+    {
+      "description": "Current frozen CRA software baseline before temporal-interface internalization.",
+      "mechanism": "current_cra_baseline",
+      "promotable": false,
+      "role": "baseline reference"
+    }
+  ],
+  "metrics": [
+    {
+      "metric": "geomean_mse",
+      "required": true,
+      "role": "primary standardized score"
+    },
+    {
+      "metric": "tail_mse",
+      "required": true,
+      "role": "tail stability"
+    },
+    {
+      "metric": "test_corr",
+      "required": true,
+      "role": "prediction shape"
+    },
+    {
+      "metric": "candidate_vs_random_projection_ratio",
+      "required": true,
+      "role": "strong-control separation"
+    },
+    {
+      "metric": "candidate_vs_nonlinear_lag_ratio",
+      "required": true,
+      "role": "strong-control separation"
+    },
+    {
+      "metric": "ablation_delta",
+      "required": true,
+      "role": "mechanism causality"
+    },
+    {
+      "metric": "feature_count",
+      "required": true,
+      "role": "budget accounting"
+    },
+    {
+      "metric": "readout_parameter_count",
+      "required": true,
+      "role": "budget accounting"
+    },
+    {
+      "metric": "state_participation_ratio",
+      "required": true,
+      "role": "state geometry audit"
+    },
+    {
+      "metric": "compact_regression_status",
+      "required": true,
+      "role": "promotion/freeze guard"
+    }
+  ],
+  "next_gate": "Tier 7.7q - CRA-Native Temporal-Interface Internalization Scoring Gate",
+  "nonclaims": [
+    "not a mechanism implementation",
+    "not a model score",
+    "not a mechanism promotion",
+    "not a baseline freeze",
+    "not external-baseline superiority",
+    "not hardware/native transfer",
+    "not language, AGI, or ASI evidence"
+  ],
+  "outcome_classes": [
+    {
+      "allowed_claim": "CRA has a software-supported native temporal-interface candidate eligible for promotion/regression, not yet frozen.",
+      "outcome": "native_temporal_interface_promotable_candidate",
+      "rule": "Candidate beats or cleanly matches random-projection/nonlinear-lag controls, ablations hurt as predicted, shuffles fail, regressions are bounded, and compact regression passes in a later promotion gate."
+    },
+    {
+      "allowed_claim": "Internalization failed to beat the stronger controls; do not promote.",
+      "outcome": "external_controls_still_win",
+      "rule": "Random projection or nonlinear-lag controls still beat the native candidate."
+    },
+    {
+      "allowed_claim": "Adapter diagnostic only; no CRA mechanism claim.",
+      "outcome": "adapter_only_signal",
+      "rule": "A host/adapter form works but the CRA-native representation does not separate from controls."
+    },
+    {
+      "allowed_claim": "Performance is not causally attributed to the proposed mechanism.",
+      "outcome": "ablation_not_causal",
+      "rule": "Candidate scores well but no internal ablation hurts."
+    },
+    {
+      "allowed_claim": "No promotion; blocked by controls.",
+      "outcome": "regression_or_leakage_blocked",
+      "rule": "Mackey/NARMA regress, target/time shuffles pass, or compact regression fails."
+    },
+    {
+      "allowed_claim": "Diagnostic only.",
+      "outcome": "inconclusive",
+      "rule": "Margins conflict or confidence is insufficient."
+    }
+  ],
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7p_20260509_cra_native_temporal_interface_internalization_contract",
+  "prerequisite": {
+    "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_7o_20260509_generic_temporal_interface_reframing_contract/tier7_7o_results.json",
+    "sha256": "9a331724c1d461d88dd4465823b9013530a3c8cdef5a70a28d0230524a5ea837",
+    "status": "pass"
+  },
+  "runner_revision": "tier7_7p_cra_native_temporal_interface_internalization_contract_20260509_0001",
+  "status": "pass",
+  "tasks": [
+    {
+      "lengths": "8000,16000,32000",
+      "required": true,
+      "role": "primary target",
+      "seeds": "42,43,44",
+      "task": "lorenz",
+      "why": "7.7n showed the strongest generic-interface gain here."
+    },
+    {
+      "lengths": "8000,16000,32000",
+      "required": true,
+      "role": "positive-control regression guard",
+      "seeds": "42,43,44",
+      "task": "mackey_glass",
+      "why": "CRA already has a localized Mackey signal; internalization must not break it."
+    },
+    {
+      "lengths": "8000,16000,32000",
+      "required": true,
+      "role": "nonlinear-memory regression guard",
+      "seeds": "42,43,44",
+      "task": "narma10_repaired_u02",
+      "why": "The finite repaired NARMA stream remains the locked memory benchmark."
+    }
+  ],
+  "tier": "Tier 7.7p - CRA-Native Temporal-Interface Internalization Contract"
+}

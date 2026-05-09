@@ -1,0 +1,4 @@
+task,role,why,lengths,seeds,required
+lorenz,primary target,7.7n showed the strongest generic-interface gain here.,"8000,16000,32000","42,43,44",True
+mackey_glass,positive-control regression guard,CRA already has a localized Mackey signal; internalization must not break it.,"8000,16000,32000","42,43,44",True
+narma10_repaired_u02,nonlinear-memory regression guard,The finite repaired NARMA stream remains the locked memory benchmark.,"8000,16000,32000","42,43,44",True

@@ -1,0 +1,7 @@
+constraint,requirement
+causal_only,"No future observations, labels, targets, or test outcomes may enter the temporal interface."
+organism_native,"The mechanism must be represented as CRA internal state or PyNN/SpiNNaker-compatible microcircuit/state variables, not as an unclaimed host-side adapter."
+budget_matched,"Report and match feature count, hidden/state count, readout parameters, and update budget against all strong controls."
+one_mechanism,"Do not combine morphology variability, lifecycle changes, replay changes, or hardware/native changes into this gate."
+hardware_path_awareness,"The design must be compatible with later PyNN/SpiNNaker or custom-runtime mapping, but this tier remains software evidence only."
+no_freeze_without_regression,Even a scoring pass must route to promotion/compact regression before baseline freeze.

@@ -4440,11 +4440,23 @@ Current next step:
 
 ```text
 Tier 7.7p — CRA-native temporal-interface internalization contract
+Status: COMPLETE / PASS, 17/17 criteria
+Output: controlled_test_output/tier7_7p_20260509_cra_native_temporal_interface_internalization_contract/
 Question: how can CRA internalize the useful causal temporal-basis capability
 as organism-native dynamics while still beating random projection and
 nonlinear/lag controls?
 Boundary: contract only; no score, promotion, freeze, or hardware/native
 transfer until the mechanism is implemented, ablated, and regression-tested.
+```
+
+Current next step:
+
+```text
+Tier 7.7q — CRA-native temporal-interface internalization scoring gate
+Question: does `cra_native_sparse_temporal_expansion` beat or cleanly separate
+from random-projection and nonlinear-lag controls while preserving compact CRA
+regression?
+Boundary: scoring only; no freeze until a later promotion/regression gate.
 ```
 
 Tier 7.1a predeclared these candidate/future adapter families:

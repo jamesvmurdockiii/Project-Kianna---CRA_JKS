@@ -11576,10 +11576,26 @@ Next required step:
 
 ```text
 Tier 7.7p - CRA-native temporal-interface internalization contract.
-Define how to internalize the useful temporal-basis capability as organism-
-native dynamics. Preserve random projection and nonlinear/lag controls as strict
-shams; lock budget accounting, no-leakage controls, external baseline
-comparisons, compact regression, and freeze boundaries before any scoring.
+Status: COMPLETE / PASS, 17/17 criteria.
+Output: controlled_test_output/tier7_7p_20260509_cra_native_temporal_interface_internalization_contract/
+Result: `cra_native_sparse_temporal_expansion` is locked as the next candidate.
+It must beat or cleanly separate from random-projection and nonlinear-lag
+controls before any promotion.
+Boundary: contract only; no implementation, model score, mechanism promotion,
+baseline freeze, public usefulness claim, external-baseline superiority, or
+hardware/native transfer.
+```
+
+Next required step:
+
+```text
+Tier 7.7q - CRA-native temporal-interface internalization scoring gate.
+Implement and score the locked native temporal expansion candidate against
+current CRA, random-projection, nonlinear-lag, no-delay, no-nonlinearity,
+target-shuffle, and time-shuffle controls. Report standardized benchmark
+scores, strong-control margins, ablation deltas, budget accounting, state
+geometry, and regression status. If it passes, route to compact
+promotion/regression before freeze.
 ```
 
 Latest standardized benchmark contract:
