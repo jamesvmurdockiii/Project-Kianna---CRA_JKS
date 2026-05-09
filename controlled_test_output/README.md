@@ -5,10 +5,10 @@ ledger is `STUDY_REGISTRY.json`; the compact table is `STUDY_REGISTRY.csv`.
 Older reruns, prepared capsules, debug probes, and baseline-frozen
 mechanism bundles outside the formal registry are preserved for audit.
 
-- Generated: `2026-05-09T17:17:47.151749+00:00`
+- Generated: `2026-05-09T17:46:57.376719+00:00`
 - Registry status: **PASS**
-- Canonical evidence entries: `139`
-- Expanded test-entry count: `139`; see the canonical evidence table below for the exact current tier list.
+- Canonical evidence entries: `140`
+- Expanded test-entry count: `140`; see the canonical evidence table below for the exact current tier list.
 
 ## Evidence Categories
 
@@ -125,6 +125,7 @@ mechanism bundles outside the formal registry are preserved for audit.
 | `tier7_7n_partitioned_driver_attribution_scoring_gate` | **PASS** | `controlled_test_output/tier7_7n_20260509_partitioned_driver_attribution_scoring_gate` | Diagnostic scoring evidence only; not a mechanism promotion, not a baseline freeze, not hardware/native transfer, not external-baseline superiority, and not broad public usefulness evidence. |
 | `tier7_7o_generic_temporal_interface_reframing_contract` | **PASS** | `controlled_test_output/tier7_7o_20260509_generic_temporal_interface_reframing_contract` | Contract evidence only; not a mechanism implementation, not a model score, not a mechanism promotion, not a baseline freeze, not hardware/native transfer, not external-baseline superiority, and not broad public usefulness evidence. |
 | `tier7_7p_cra_native_temporal_interface_internalization_contract` | **PASS** | `controlled_test_output/tier7_7p_20260509_cra_native_temporal_interface_internalization_contract` | Contract evidence only; not a mechanism implementation, not a model score, not a mechanism promotion, not a baseline freeze, not hardware/native transfer, not external-baseline superiority, and not broad public usefulness evidence. |
+| `tier7_7q_cra_native_temporal_interface_internalization_scoring_gate` | **PASS** | `controlled_test_output/tier7_7q_20260509_cra_native_temporal_interface_internalization_scoring_gate` | Diagnostic scoring evidence only; not a mechanism promotion, not a baseline freeze, not hardware/native transfer, not external-baseline superiority, and not broad public usefulness evidence. |
 | `tier5_20a_resonant_branch_polyp_diagnostic` | **PASS** | `controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic` | Software diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence. |
 | `tier5_20b_hybrid_resonant_polyp_diagnostic` | **PASS** | `controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic` | Software repair diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence. |
 | `tier5_20c_minimal_resonant_polyp_diagnostic` | **PASS** | `controlled_test_output/tier5_20c_20260508_minimal_resonant_polyp_diagnostic` | Software minimal-dose diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence. |
@@ -479,6 +480,7 @@ cite them as current study results unless promoted in `STUDY_REGISTRY.json`.
 | `controlled_test_output/tier6_4_20260428_160526` | `superseded_rerun` | `pass` | `2026-04-28T20:05:28+00:00` |
 | `controlled_test_output/tier7_0e_20260508_length_10000_scoreboard` | `superseded_rerun` | `fail` | `2026-05-08T18:32:32+00:00` |
 | `controlled_test_output/tier7_0e_20260508_length_8000_scoreboard` | `superseded_rerun` | `pass` | `2026-05-08T18:55:11+00:00` |
+| `controlled_test_output/tier7_7q_smoke` | `superseded_rerun` | `pass` | `2026-05-09T17:23:51+00:00` |
 
 ## Integrity
 

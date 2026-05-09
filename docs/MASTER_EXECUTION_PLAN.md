@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-09T17:13:53+00:00.
+Last updated: 2026-05-09T17:35:45+00:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -1578,28 +1578,43 @@ ability.
     no implementation, score, promotion, freeze, external-baseline superiority,
     broad usefulness claim, or hardware/native transfer is authorized.
 
-128. **CURRENT ACTIVE STEP** - Tier 7.7q CRA-native temporal-interface
-    internalization scoring gate:
-    implement and score the locked native temporal expansion candidate against
-    current CRA, random-projection, nonlinear-lag, no-delay, no-nonlinearity,
-    target-shuffle, and time-shuffle controls. Report standardized benchmark
-    scores, strong-control margins, ablation deltas, budget accounting, state
-    geometry, and regression status. If it passes, route to compact
-    promotion/regression before freeze.
+128. **COMPLETE** - Tier 7.7q CRA-native temporal-interface internalization
+    scoring gate:
+    passed 14/14 at
+    `controlled_test_output/tier7_7q_20260509_cra_native_temporal_interface_internalization_scoring_gate/`.
+    Outcome: `external_controls_still_win`. The native sparse temporal
+    expansion candidate improved over current CRA on Lorenz (`2.88x`),
+    Mackey-Glass, and NARMA10 with strong target/time-shuffle separation, but
+    same-feature random projection and nonlinear-lag controls still beat the
+    native candidate on the key Lorenz claim. Diagnostic only: no mechanism
+    promotion, freeze, external-baseline superiority, broad usefulness claim, or
+    hardware/native transfer is authorized.
 
-129. Mechanism iteration loop: add exactly one planned general mechanism at a
+129. **CURRENT ACTIVE STEP** - Tier 7.7r native temporal-basis repair/reframing
+    contract:
+    preserve the 7.7q positive signal without overclaiming it. Split the next
+    decision into bounded engineering/interface promotion if fixed sparse
+    temporal bases reliably help without regressions, versus stricter
+    CRA-specific mechanism promotion only if the candidate beats or cleanly
+    separates from random-projection and nonlinear-lag controls. If neither
+    path is justified, park temporal-interface repair and move to the next
+    planned architecture hypothesis, such as polyp morphology/template
+    variability. This is a contract/pre-registration step only; no new score,
+    promotion, or freeze is allowed until the next scoring gate is locked.
+
+130. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
     stop the broad usefulness track and narrow the paper.
 
-130. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+131. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines. Start only after the standardized scoreboard or failure diagnosis
     identifies a winning regime, a real failure mode, or a mechanism needing
     external validation.
 
-131. Tier 7.2 held-out task challenge: define held-out families before running;
+132. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout. Include at least one synthetic holdout and one
     real-ish adapter holdout if Tier 7.1 is active.
 
@@ -1929,25 +1944,14 @@ implementation, tuning, promotion, or freeze.
 The next concrete action is now:
 
 ```text
-Tier 7.7p - CRA-Native Temporal Interface Internalization Contract
-Status: COMPLETE / PASS, 17/17 criteria.
-Output: controlled_test_output/tier7_7p_20260509_cra_native_temporal_interface_internalization_contract/
+Tier 7.7r - Native Temporal Basis Repair/Reframing Contract
 
-Internalize the useful temporal-basis capability as organism-native dynamics,
-not as a host-side adapter. Preserve random-projection and nonlinear/lag
-controls as strict shams, require no-leakage and budget accounting, and require
-a promotion/regression gate before any new baseline freeze.
-```
-
-The next concrete action is now:
-
-```text
-Tier 7.7q - CRA-Native Temporal Interface Internalization Scoring Gate
-
-Implement and score `cra_native_sparse_temporal_expansion` against current CRA,
-random-projection, nonlinear-lag, no-delay, no-nonlinearity, target-shuffle, and
-time-shuffle controls. Do not freeze even if it passes; route to compact
-promotion/regression first.
+Tier 7.7q passed structurally but classified `external_controls_still_win`.
+The next action is not a mechanism promotion. Lock a new contract that separates
+bounded engineering/interface promotion from stricter CRA-specific mechanism
+promotion, then decides whether to score a repaired internal temporal-basis
+interface or park this temporal-interface path and move to the next planned
+mechanism hypothesis.
 ```
 
 Recent closeout:

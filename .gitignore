@@ -84,6 +84,7 @@ cra_422b/
 data/raw/
 data/external/
 data/cache/
+controlled_test_output/*_smoke/
 
 # Note: controlled_test_output/ is INTENTIONALLY NOT IGNORED.
 # It contains the reproducible evidence trail and is part of the

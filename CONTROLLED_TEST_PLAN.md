@@ -11586,16 +11586,33 @@ baseline freeze, public usefulness claim, external-baseline superiority, or
 hardware/native transfer.
 ```
 
-Next required step:
+Completed scoring gate:
 
 ```text
 Tier 7.7q - CRA-native temporal-interface internalization scoring gate.
-Implement and score the locked native temporal expansion candidate against
-current CRA, random-projection, nonlinear-lag, no-delay, no-nonlinearity,
-target-shuffle, and time-shuffle controls. Report standardized benchmark
-scores, strong-control margins, ablation deltas, budget accounting, state
-geometry, and regression status. If it passes, route to compact
-promotion/regression before freeze.
+Status: COMPLETE / PASS, 14/14 criteria.
+Output: controlled_test_output/tier7_7q_20260509_cra_native_temporal_interface_internalization_scoring_gate/
+Outcome: external_controls_still_win.
+Result: the native sparse temporal expansion candidate improved over current
+CRA on Lorenz, Mackey-Glass, and NARMA10, and target/time shuffles separated
+strongly. It is blocked because same-feature random projection and nonlinear-
+lag controls still beat the key Lorenz claim.
+Boundary: diagnostic scoring only; no mechanism promotion, baseline freeze,
+public usefulness claim, external-baseline superiority, or hardware/native
+transfer.
+```
+
+Next required step:
+
+```text
+Tier 7.7r - native temporal-basis repair/reframing contract.
+Question: should the 7.7q positive signal become a bounded engineering
+temporal-interface utility, should a repaired candidate attempt stricter
+CRA-specific mechanism promotion against random-projection/nonlinear-lag
+controls, or should the temporal-interface path be parked before moving to the
+next planned mechanism hypothesis?
+Boundary: contract only; no implementation score, promotion, freeze, public
+usefulness claim, or hardware/native transfer.
 ```
 
 Latest standardized benchmark contract:

@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-09T17:13:53+00:00.
+Last updated: 2026-05-09T17:35:45+00:00.
 
 Current repo root:
 
@@ -1426,11 +1426,26 @@ Tier 7.7p — COMPLETE. CRA-native temporal-interface internalization contract.
   mechanism promotion, baseline freeze, broad usefulness claim,
   external-baseline superiority, or hardware/native transfer is authorized.
 
-Tier 7.7q — CURRENT ACTIVE STEP. CRA-native temporal-interface internalization
-  scoring gate. Implement and score the locked native temporal expansion
-  candidate against current CRA, random-projection, nonlinear-lag, no-delay,
-  no-nonlinearity, target-shuffle, and time-shuffle controls. If it passes, do
-  not freeze immediately; route to compact promotion/regression first.
+Tier 7.7q — COMPLETE. CRA-native temporal-interface internalization scoring
+  gate. Status: PASS, 14/14 criteria. Output:
+  `controlled_test_output/tier7_7q_20260509_cra_native_temporal_interface_internalization_scoring_gate/`.
+  Outcome: `external_controls_still_win`. The native sparse temporal expansion
+  candidate improved over current CRA on Lorenz (`2.88x`), Mackey-Glass, and
+  NARMA10, and target/time shuffles separated strongly. It is still blocked
+  because same-feature random projection and nonlinear-lag controls beat the
+  key Lorenz score. No mechanism promotion, baseline freeze, broad usefulness
+  claim, external-baseline superiority, or hardware/native transfer is
+  authorized.
+
+Tier 7.7r — CURRENT ACTIVE STEP. Native temporal-basis repair/reframing
+  contract. Preserve the 7.7q positive signal without overclaiming it. The
+  contract must split two possible paths: bounded engineering/interface
+  promotion if fixed sparse temporal bases reliably help without regressions,
+  versus stricter CRA-specific mechanism promotion only if the candidate beats
+  or cleanly separates from random-projection and nonlinear-lag controls. If
+  neither path is justified, park temporal-interface repair and move to the next
+  planned architecture hypothesis such as polyp morphology/template
+  variability.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware

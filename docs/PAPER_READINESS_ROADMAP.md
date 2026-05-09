@@ -4449,14 +4449,31 @@ Boundary: contract only; no score, promotion, freeze, or hardware/native
 transfer until the mechanism is implemented, ablated, and regression-tested.
 ```
 
-Current next step:
+Completed scoring gate:
 
 ```text
 Tier 7.7q — CRA-native temporal-interface internalization scoring gate
-Question: does `cra_native_sparse_temporal_expansion` beat or cleanly separate
-from random-projection and nonlinear-lag controls while preserving compact CRA
-regression?
-Boundary: scoring only; no freeze until a later promotion/regression gate.
+Status: COMPLETE / PASS, 14/14 criteria
+Output: controlled_test_output/tier7_7q_20260509_cra_native_temporal_interface_internalization_scoring_gate/
+Outcome: external_controls_still_win
+Finding: the native sparse temporal expansion candidate improved over current
+CRA but did not beat the same-feature random-projection or nonlinear-lag
+controls on the key Lorenz claim.
+Boundary: diagnostic scoring only; no mechanism promotion, freeze, usefulness
+claim, external-baseline superiority, or hardware/native transfer.
+```
+
+Current next step:
+
+```text
+Tier 7.7r — native temporal-basis repair/reframing contract
+Question: should the 7.7q positive signal be carried forward as a bounded
+engineering temporal-interface utility, should a repaired native candidate
+attempt stricter CRA-specific mechanism promotion against random-projection and
+nonlinear-lag controls, or should the temporal-interface path be parked before
+moving to the next planned architecture hypothesis?
+Boundary: contract/pre-registration only; no score, promotion, freeze, or
+hardware/native transfer.
 ```
 
 Tier 7.1a predeclared these candidate/future adapter families:

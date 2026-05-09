@@ -1,0 +1,5 @@
+{
+  "compact_regression_inside_gate": false,
+  "reason": "Tier 7.7q is a scoring gate. Passing routes to separate compact promotion/regression before freeze.",
+  "required_before_promotion": true
+}

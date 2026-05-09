@@ -1,0 +1,1 @@
+Tier 7.7q scores the locked 7.7p CRA-native temporal-interface internalization candidate. It may support or block the candidate diagnostically, but it does not freeze a baseline, promote a mechanism, authorize hardware/native transfer, or claim broad public usefulness.
