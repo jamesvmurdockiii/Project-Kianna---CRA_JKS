@@ -134,7 +134,10 @@ two of three shams. Tier 7.1m then passed at
 narrowing the NAB chain to partial/local signal only, stopping adapter-policy
 tuning, and selecting Tier 7.4a cost-aware policy/action selection as the next
 general mechanism gate. No usefulness claim, hardware transfer, or native
-migration is authorized from the NAB adapter chain.
+migration is authorized from the NAB adapter chain. Tier 7.4a then passed at
+`controlled_test_output/tier7_4a_20260509_cost_aware_policy_action_contract/`,
+predeclaring the policy/action contract. The next active step is Tier 7.4b
+cost-aware policy/action local diagnostic.
 
 Tier 4.32a-hw prepare has also passed locally. The current EBRAINS upload
 folder is `ebrains_jobs/cra_432a_hw`, and the exact JobManager command is

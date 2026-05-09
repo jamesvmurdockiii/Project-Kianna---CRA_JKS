@@ -1239,70 +1239,78 @@ ability.
     tuning is stopped, and the selected next gate is Tier 7.4a cost-aware
     policy/action selection.
 
-95. **CURRENT ACTIVE STEP** - Tier 7.4a cost-aware policy/action selection
-    contract:
-    define the general state -> action -> delayed consequence mechanism gate for
-    asymmetric action costs, false positives, missed detections, uncertainty-
-    gated actions, shams, external baselines, leakage controls, and compact
-    regression. This must not be another NAB-specific threshold repair.
+95. **COMPLETE** - Tier 7.4a cost-aware policy/action selection contract:
+    passed 13/13 at
+    `controlled_test_output/tier7_4a_20260509_cost_aware_policy_action_contract/`.
+    Contract defined state -> action -> delayed consequence tasks, asymmetric
+    false-positive/missed-event/latency costs, abstain/act/wait actions, fair
+    policy baselines, shams, ablations, metrics, pass/fail criteria, and
+    compact-regression requirements.
 
-96. Mechanism iteration loop: add exactly one planned general mechanism at a
+96. **CURRENT ACTIVE STEP** - Tier 7.4b cost-aware policy/action local
+    diagnostic:
+    implement the minimal local diagnostic from the 7.4a contract. Compare
+    against fixed thresholds, always-act/always-abstain, online policy
+    baselines, shams, and ablations. Promotion requires expected-utility
+    improvement without collapse into no-action, threshold tuning, or leakage.
+
+97. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
     stop the broad usefulness track and narrow the paper.
 
-97. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+98. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines. Start only after the standardized scoreboard or failure diagnosis
     identifies a winning regime, a real failure mode, or a mechanism needing
     external validation.
 
-98. Tier 7.2 held-out task challenge: define held-out families before running;
+99. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout. Include at least one synthetic holdout and one
     real-ish adapter holdout if Tier 7.1 is active.
 
-99. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+100. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines. Candidate domains include
     streaming anomaly detection, predictive-maintenance sensor streams, human
     activity streams, event prediction, ECG/biosignal streams, and finance as
     one domain only rather than the whole proof.
 
-100. Tier 7.4 policy/action selection implementation: state -> action -> delayed consequence,
+101. Tier 7.4 policy/action selection implementation: state -> action -> delayed consequence,
     exploration versus exploitation, uncertainty-gated actions. Do not start
     broad policy claims until prediction/adaptation usefulness is measured.
 
-101. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
+102. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
     planning/subgoal control: run only after the shorter hard/real-ish tasks are
     stable. Do not claim language, AGI, or broad planning from toy gates.
 
-102. Run expanded external baselines and fairness audit at the phase lock:
+103. Run expanded external baselines and fairness audit at the phase lock:
     random/sign persistence, online perceptron/logistic, lag/ridge where
     relevant, reservoir/ESN, small GRU, STDP-only SNN, simple evolutionary
     population, simple control baselines, and SNN reviewer-defense baselines
     where practical.
 
-103. Freeze the next software baseline only if new software capability work
+104. Freeze the next software baseline only if new software capability work
     passes ablations, fair baselines, leakage controls, and compact regression.
     If no new software mechanism is promoted, keep v2.3.
 
 ### Phase I - Final Paper Lock
 
-104. Select final paper claim level: strong usefulness paper, bounded architecture
+105. Select final paper claim level: strong usefulness paper, bounded architecture
     study, or narrowed diagnostic report. Let the evidence decide.
 
-105. Run final software matrix and final hardware subset matrix. Include effect
+106. Run final software matrix and final hardware subset matrix. Include effect
     sizes, confidence intervals, worst seed, sample efficiency, runtime, command
     count, resource budgets, and claim-boundary table.
 
-106. Build the independent reproduction capsule: fresh checkout instructions,
+107. Build the independent reproduction capsule: fresh checkout instructions,
     environment lock, validation command, registry/table regeneration, EBRAINS
     ingest instructions, artifact hash manifest, and one local tier rerun.
 
-107. Draft paper/whitepaper only after the Phase H usefulness/baseline gates pass. Write
+108. Draft paper/whitepaper only after the Phase H usefulness/baseline gates pass. Write
     limitations first, then claims. Preserve failed and parked diagnostics.
 
-108. External dry run: have a clean agent or human follow only the docs. If they
+109. External dry run: have a clean agent or human follow only the docs. If they
     need hidden chat context, the repo is not ready.
 
 ## 7. Current Tier 4.27 Definition
@@ -1635,13 +1643,12 @@ repair candidate, but it must be confirmed on held-out NAB streams/categories
 because the policy was selected on the broad diagnostic subset and traded off
 window recall. Tier 7.1l tested that locked policy on 12 held-out NAB streams:
 it reduced false positives but did not beat rolling z-score or v2.2, ranked
-fifth, and separated only two of three shams. The next active public-adapter
-work is Tier 7.1m NAB closeout / mechanism-return decision. Reopen
-Tier 7.1m closed the adapter loop by narrowing the NAB claim and selecting
-Tier 7.4a cost-aware policy/action selection as the next general mechanism
-contract. Reopen native work only for targeted transfer after a software
-task/mechanism earns it
-under the Tier 7/6.2 gates and a separate transfer contract is written.
+fifth, and separated only two of three shams. Tier 7.1m closed the adapter loop
+by narrowing the NAB claim and selecting Tier 7.4a cost-aware policy/action
+selection as the next general mechanism contract. Tier 7.4a then passed the
+contract gate, so the next active software work is Tier 7.4b local diagnostic.
+Reopen native work only for targeted transfer after a software task/mechanism
+earns it under the Tier 7/6.2 gates and a separate transfer contract is written.
 It must preserve explicit board/chip/shard identity, message paths, compact
 readback ownership, failure counters, placement assumptions,
 enabled-vs-no-learning separation, and resource measurements while adding the

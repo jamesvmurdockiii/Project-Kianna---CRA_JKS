@@ -14,7 +14,7 @@ mechanism promotion, lifecycle/ecology evidence, and native SpiNNaker runtime
 migration. The generated registry is the authority for which results are
 canonical.
 
-The current canonical evidence trail contains **106 registered evidence bundles**
+The current canonical evidence trail contains **107 registered evidence bundles**
 with all expected artifacts present and all criteria passing. The generated
 registry is the source of truth for the full list:
 
@@ -10149,7 +10149,7 @@ ESN remains about 9.6x better on aggregate geomean MSE. Longer valid exposure
 alone does not close the public benchmark gap.
 ```
 
-Next required step:
+Tier 7.4a planned step:
 
 ```text
 Tier 7.0g - general mechanism-selection contract.
@@ -10212,7 +10212,7 @@ finite-stream and leakage guardrails pass
 compact regression passes before any baseline freeze
 ```
 
-Next required step:
+Tier 7.1m planned step:
 
 ```text
 Tier 7.0h - bounded nonlinear recurrent continuous-state/interface candidate.
@@ -10273,7 +10273,7 @@ yet proven: the permuted-recurrence sham stayed too close at 8000 with only
 1.036590722013174 margin versus the candidate.
 ```
 
-Next required step:
+Tier 7.4a planned step:
 
 ```text
 Tier 7.0i - recurrence/topology specificity repair gate.
@@ -11106,6 +11106,27 @@ Define the general policy/action mechanism gate for asymmetric action costs,
 false positives, missed detections, delayed reward, and uncertainty-gated
 actions. Do not implement until controls, shams, external baselines, metrics,
 and compact-regression requirements are predeclared.
+```
+
+Tier 7.4a result:
+
+```text
+Tier 7.4a - Cost-aware policy/action selection contract.
+Status: COMPLETE / PASS, 13/13 criteria.
+Output: controlled_test_output/tier7_4a_20260509_cost_aware_policy_action_contract/
+Next gate: Tier 7.4b - Cost-Aware Policy/Action Local Diagnostic.
+Boundary: contract-only evidence; not a scoring run, not a promoted mechanism,
+not a baseline freeze, and not hardware/native transfer.
+```
+
+Next required step:
+
+```text
+Tier 7.4b - Cost-aware policy/action local diagnostic.
+Implement the minimal local diagnostic from the 7.4a contract. Compare against
+fixed thresholds, always-act/always-abstain, online policy baselines, shams, and
+ablations. Promotion requires expected-utility improvement without collapse into
+no-action, threshold tuning, or leakage.
 ```
 
 ## Tier 5.20a - Resonant Branch Polyp Internal-Model Diagnostic

@@ -790,12 +790,15 @@ Selected next gate: Tier 7.4a - Cost-Aware Policy/Action Selection Contract.
 The current next action is:
 
 ```text
-Tier 7.4a — Cost-aware policy/action selection contract.
+Tier 7.4b — Cost-aware policy/action local diagnostic.
 ```
 
-Define a general policy/action mechanism gate for asymmetric costs, false
-positives, missed detections, delayed reward, and uncertainty-gated actions.
-This is not a NAB-specific threshold repair.
+Tier 7.4a has passed as a contract at
+`controlled_test_output/tier7_4a_20260509_cost_aware_policy_action_contract/`.
+Tier 7.4b should now implement the minimal local diagnostic from that contract:
+expected-utility scoring with explicit false-positive/missed-event/latency/
+abstain costs, fixed/trivial policy baselines, online policy baselines, shams,
+ablations, and leakage controls. This is not a NAB-specific threshold repair.
 
 ## Resonant Branch Follow-Up Diagnostics
 

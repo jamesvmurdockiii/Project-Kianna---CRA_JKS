@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-09T00:05:00+00:00.
+Last updated: 2026-05-09T00:10:00+00:00.
 
 Current repo root:
 
@@ -310,6 +310,23 @@ Tier 7.1m = COMPLETE, PASS, 13/13 criteria
   Selected next gate: Tier 7.4a - Cost-Aware Policy/Action Selection Contract.
   Rationale: the remaining failure is a general action-cost problem, not a
              reason to keep threshold-tuning the NAB adapter.
+```
+
+Latest cost-aware policy/action contract:
+
+```text
+Tier 7.4a = COMPLETE, PASS, 13/13 criteria
+  Source: controlled_test_output/tier7_4a_20260509_cost_aware_policy_action_contract/
+  Runner: experiments/tier7_4a_cost_aware_policy_action_contract.py
+  Status: contract-only evidence.
+  Question: can CRA learn a general policy/action layer that converts internal
+            state, confidence, memory, and prediction error into actions under
+            asymmetric costs?
+  Includes: action set, cost model, metrics, external baselines, shams,
+            ablations, pass/fail criteria, and nonclaims.
+  Next gate: Tier 7.4b - Cost-Aware Policy/Action Local Diagnostic.
+  Boundary: no scoring run, no mechanism promotion, no freeze, and no
+            hardware/native transfer.
 ```
 
 Latest optional mechanism diagnostic:
@@ -934,13 +951,19 @@ Tier 7.1m — COMPLETE. NAB closeout / mechanism-return decision.
     tuning is stopped, no public usefulness proof/freeze/hardware transfer is
     authorized, and the project returns to general mechanism work.
 
-Tier 7.4a — CURRENT ACTIVE STEP. Cost-aware policy/action selection contract.
-  Required first move: define a general state -> action -> delayed consequence
-    gate where false positives, missed detections, delayed rewards, and
-    uncertainty-gated actions are explicit costs. This must not be a
-    NAB-specific threshold repair; it must have external baselines, shams,
-    ablations, leakage controls, and compact regression criteria before code
-    changes.
+Tier 7.4a — COMPLETE. Cost-aware policy/action selection contract.
+  Status: LOCAL SOFTWARE PASS, 13/13 criteria.
+  Output: controlled_test_output/tier7_4a_20260509_cost_aware_policy_action_contract/
+  Result: predeclared the general policy/action mechanism gate, including
+    tasks, actions, asymmetric costs, metrics, baselines, shams, ablations,
+    pass/fail criteria, and nonclaims.
+
+Tier 7.4b — CURRENT ACTIVE STEP. Cost-aware policy/action local diagnostic.
+  Required first move: implement the smallest local software diagnostic from the
+    7.4a contract. Compare intact CRA policy/action selection against fixed
+    thresholds, always-act/always-abstain, online policy baselines, shams, and
+    ablations. Do not promote unless expected utility improves without
+    degenerating into no-action or threshold tuning.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware
