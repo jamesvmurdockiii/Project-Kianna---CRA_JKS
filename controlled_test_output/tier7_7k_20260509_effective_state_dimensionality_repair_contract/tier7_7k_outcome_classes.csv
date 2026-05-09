@@ -1,0 +1,7 @@
+outcome,rule,allowed_claim
+effective_dimension_repair_confirmed,"Candidate Lorenz PR at 128 >= 6 or >= 2x Tier 7.7j candidate PR, Lorenz MSE improves at least 10% versus 7.7j candidate, candidate beats best generic/permuted/block sham by at least 5%, Mackey and NARMA regressions stay within 10%, target/time shuffles fail, and compact regression passes.",The state-dimensionality repair increases effective recurrent state geometry and improves the locked Lorenz diagnostic under controlled software conditions.
+dimension_rises_but_no_task_gain,PR/rank rises but Lorenz MSE does not improve or does not beat shams.,The repair changes state geometry but has not yet produced useful benchmark improvement.
+generic_basis_still_explains,Generic/permuted/orthogonal/block probes match or beat candidate.,Capacity/state gains remain non-specific; do not promote mechanism.
+task_gain_without_dimension,Lorenz improves but PR/rank does not materially rise.,Treat as a performance diagnostic requiring attribution repair before promotion.
+regression_or_leakage_blocked,"Mackey/NARMA regress materially, shuffles do not fail, or compact regression fails.",No mechanism promotion; repair is blocked.
+inconclusive,Metrics conflict or confidence is insufficient.,No claim beyond inconclusive diagnostic.

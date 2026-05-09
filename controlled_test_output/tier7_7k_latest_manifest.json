@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-05-09T15:59:03.963490+00:00",
+  "source_generated_at_utc": "2026-05-09T15:56:28+00:00",
+  "registry_entry_id": "tier7_7k_effective_state_dimensionality_repair_contract",
+  "tier": "Tier 7.7k - Effective-State-Dimensionality Repair Contract",
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7k_20260509_effective_state_dimensionality_repair_contract",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_7k_20260509_effective_state_dimensionality_repair_contract/tier7_7k_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_7k_20260509_effective_state_dimensionality_repair_contract/tier7_7k_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7k_20260509_effective_state_dimensionality_repair_contract/tier7_7k_summary.csv",
+  "canonical": true,
+  "claim": "Tier 7.7k locks the next repair before implementation: partitioned causal drivers plus diverse recurrent state should reduce shared-driver synchronization, raise effective state dimensionality under Lorenz pressure, and separate from generic/permuted/block shams while preserving Mackey and repaired NARMA guards.",
+  "caveat": "Contract/pre-registration evidence only; not a repair implementation, not a score, not a mechanism promotion, not a baseline freeze, not hardware/native transfer, not external-baseline superiority, and not broad public usefulness evidence."
+}

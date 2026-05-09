@@ -1,0 +1,7 @@
+mechanism,role,description,allowed_inputs,forbidden_inputs,promotable
+partitioned_driver_diverse_recurrent_state,primary repair candidate,Split causal input/state drivers and recurrent state into fixed partitions with distinct timescale bands plus deterministic diversity pressure so hidden units occupy more than the two dominant principal directions seen in Tier 7.7j.,observed stream and causal internal state only,"future targets, labels, test labels, task-specific post-hoc tuning",True
+diversity_pressure_disabled,mechanism ablation,Same partitioned budget with diversity pressure disabled.,,,False
+single_pool_same_capacity,baseline reference,Locked Tier 7.7h/7.7j full-recurrence candidate at matched capacity.,,,False
+permuted_recurrence_ensemble,generic-basis sham,Multiple deterministic recurrence permutations at the same capacity and readout budget.,,,False
+orthogonal_random_basis_reference,generic high-dimensional reference,Random orthogonal recurrent basis with no CRA-specific state-diversity mechanism.,,,False
+block_structured_basis_reference,partition-structure sham,"Block structure without CRA state-diversity pressure, used to separate partitioning from the repair itself.",,,False

@@ -1,0 +1,4 @@
+task,role,why,lengths,seeds,required
+lorenz,primary repair target,Tier 7.7j found low effective dimensionality under Lorenz pressure despite larger nominal recurrent capacity.,"8000,16000,32000","42,43,44",True
+mackey_glass,positive-control regression guard,CRA v2.5 already has a localized Mackey signal; repair must not break it.,"8000,16000,32000","42,43,44",True
+narma10_repaired_u02,nonlinear-memory regression guard,Repaired finite NARMA stream remains the locked memory benchmark stream after Tier 7.7e/f.,"8000,16000,32000","42,43,44",True

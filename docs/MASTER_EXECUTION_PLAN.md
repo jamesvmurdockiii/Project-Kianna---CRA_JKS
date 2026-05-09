@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-09T15:45:39+00:00.
+Last updated: 2026-05-09T15:56:49+00:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -1512,38 +1512,50 @@ ability.
     usefulness claim, external-baseline superiority, or hardware/native transfer
     is authorized.
 
-122. **CURRENT ACTIVE STEP** - Tier 7.7k effective-state-dimensionality repair
+122. **COMPLETE** - Tier 7.7k effective-state-dimensionality repair
     contract:
-    pre-register the next repair before implementation. The contract must state
-    how the candidate will increase effective recurrent state dimensionality
-    under Lorenz/NARMA pressure, what shams/ablations will distinguish it from
-    generic high-dimensional bases, and what compact regressions must remain
-    green. This is a contract step only; do not implement or tune against the
-    benchmark before it is locked.
+    passed 18/18 at
+    `controlled_test_output/tier7_7k_20260509_effective_state_dimensionality_repair_contract/`.
+    The contract locks `partitioned_driver_diverse_recurrent_state` as the next
+    repair candidate, names shared-driver synchronization and input-state
+    bottleneck as the primary suspects, and requires sham separation,
+    target/time-shuffle guards, Mackey/NARMA regression guards, state geometry
+    metrics, readout concentration metrics, and compact regression before any
+    promotion. Contract only: no implementation, score, freeze, public
+    usefulness claim, external-baseline superiority, or hardware/native
+    transfer.
 
-123. Mechanism iteration loop: add exactly one planned general mechanism at a
+123. **CURRENT ACTIVE STEP** - Tier 7.7l effective-state-dimensionality repair
+    scoring gate:
+    implement and score the locked 7.7k repair exactly as pre-registered. Do
+    not tune the standardized benchmark scoreboard post hoc. The candidate must
+    be compared against diversity-disabled, same-capacity single-pool,
+    permuted-recurrence ensemble, orthogonal, block, target-shuffle, and
+    time-shuffle controls.
+
+124. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
     stop the broad usefulness track and narrow the paper.
 
-124. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+125. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines. Start only after the standardized scoreboard or failure diagnosis
     identifies a winning regime, a real failure mode, or a mechanism needing
     external validation.
 
-125. Tier 7.2 held-out task challenge: define held-out families before running;
+126. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout. Include at least one synthetic holdout and one
     real-ish adapter holdout if Tier 7.1 is active.
 
-126. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+127. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines. Candidate domains include
     streaming anomaly detection, predictive-maintenance sensor streams, human
     activity streams, event prediction, ECG/biosignal streams, and finance as
     one domain only rather than the whole proof.
 
-127. Tier 7.4 policy/action selection held-out scoring: the current held-out
+128. Tier 7.4 policy/action selection held-out scoring: the current held-out
     chain is complete through 7.4h. No further NAB/C-MAPSS policy tuning is
     authorized from this chain; only the narrow C-MAPSS action-cost signal is
     preserved, with no broad action/policy claim, freeze, or hardware/native
@@ -1798,11 +1810,25 @@ The next concrete action is now:
 
 ```text
 Tier 7.7k - Effective-State-Dimensionality Repair Contract
+Status: COMPLETE / PASS, 18/18 criteria.
+Output: controlled_test_output/tier7_7k_20260509_effective_state_dimensionality_repair_contract/
 
-Pre-register the next repair before implementation. The contract must define
-the mechanism, null hypothesis, sham families, ablations, compact regression
-requirements, expected artifacts, and decision classes for raising effective
-state dimensionality without post-hoc benchmark tuning.
+Result: the contract locks partitioned causal drivers plus diverse recurrent
+state as the repair candidate. Primary suspected failure modes are shared-driver
+synchronization and input-state bottleneck. Required controls include
+diversity-disabled, same-capacity single-pool, permuted recurrence, orthogonal,
+block, target-shuffle, and time-shuffle probes.
+```
+
+The next concrete action is now:
+
+```text
+Tier 7.7l - Effective-State-Dimensionality Repair Scoring Gate
+
+Implement and score the locked 7.7k repair. The gate must decide whether
+effective state dimensionality rises and whether that rise produces Lorenz
+benefit without generic-basis explanation, leakage, readout concentration, or
+Mackey/NARMA regression.
 ```
 
 Recent closeout:

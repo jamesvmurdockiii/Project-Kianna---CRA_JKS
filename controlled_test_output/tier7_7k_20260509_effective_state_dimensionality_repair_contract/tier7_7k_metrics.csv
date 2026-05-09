@@ -1,0 +1,14 @@
+metric,role,required
+geomean_mse,primary task score,True
+tail_mse,tail stability,True
+test_corr,prediction shape,True
+participation_ratio,effective state dimensionality,True
+rank95_variance_count,variance dimensionality,True
+top_pc_fraction,collapse detector,True
+state_norm_mean_std,amplitude guard,True
+step_delta_mean_std,dynamic-state guard,True
+state_kernel_alignment,candidate/sham geometry similarity,True
+readout_weight_pr,readout concentration guard,True
+target_shuffle_guard,leakage guard,True
+time_shuffle_guard,temporal guard,True
+compact_regression_status,promotion guard if repair passes,True

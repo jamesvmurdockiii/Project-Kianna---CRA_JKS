@@ -1,0 +1,15 @@
+{
+  "decision_boundary": "This contract authorizes only a scored diagnostic implementation in Tier 7.7l. It does not authorize a repair claim, software baseline freeze, public usefulness claim, hardware/native transfer, language, AGI, or ASI claim.",
+  "hypothesis": "Partitioned causal drivers plus diverse recurrent state should reduce shared-driver synchronization, raise effective participation ratio/rank under Lorenz pressure, and improve Lorenz MSE while preserving Mackey and repaired NARMA guards.",
+  "mechanism_under_test": "partitioned_driver_diverse_recurrent_state",
+  "null_hypothesis": "Any improvement is explained by nominal capacity, generic basis luck, readout budget, leakage, or task-specific post-hoc tuning; or state dimensionality does not increase.",
+  "primary_reference": "Tier 7.7j candidate_full_recurrence at capacity 128",
+  "prior_diagnostic": {
+    "candidate_pr_128": 2.1911215967837574,
+    "max_probe_pr_128": 2.2213536019921336,
+    "outcome": "low_rank_collapse_confirmed",
+    "status": "pass",
+    "tier": "7.7j"
+  },
+  "question": "Can a predeclared state-diversity repair increase effective recurrent state dimensionality and improve Lorenz without relying on generic high-dimensional bases, leakage, or readout concentration?"
+}

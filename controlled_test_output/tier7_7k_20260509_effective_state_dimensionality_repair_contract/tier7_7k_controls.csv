@@ -1,0 +1,7 @@
+control,purpose,pass_requirement
+target_shuffle,Prove performance does not survive wrong causal targets.,Target-shuffle MSE at least 5x worse than candidate on Lorenz or the gate is invalid.
+time_shuffle,Prove temporal order matters.,Time-shuffle MSE at least 5x worse than candidate on Lorenz or the gate is invalid.
+diversity_disabled,"Attribute gains to the repair, not only partition count.",Candidate must beat disabled-diversity ablation on Lorenz while preserving guards.
+permuted_recurrence_ensemble,Prevent generic random/permuted basis effects from being called CRA-specific.,Candidate must beat best permuted ensemble by at least 5% MSE on Lorenz.
+block_structured_basis_reference,Separate partition structure from state-diversity pressure.,Candidate must beat block reference or disclose generic partition explanation.
+readout_budget_match,Prevent wins from widened readout or unfair feature count.,Feature/readout budget must match the locked capacity matrix within declared bounds.

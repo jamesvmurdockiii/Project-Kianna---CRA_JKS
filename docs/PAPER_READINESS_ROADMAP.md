@@ -4363,9 +4363,25 @@ Current next step:
 
 ```text
 Tier 7.7k — Effective-state-dimensionality repair contract
-Question: what repair can raise effective recurrent state dimensionality under
-Lorenz/NARMA pressure while still separating from generic bases and shams?
-This must be locked before implementation or benchmark tuning.
+Status: COMPLETE / PASS, 18/18 criteria
+Output: controlled_test_output/tier7_7k_20260509_effective_state_dimensionality_repair_contract/
+Result: the contract locks partitioned causal drivers plus diverse recurrent
+state as the repair candidate, with shared-driver synchronization and
+input-state bottleneck as primary suspected failure modes. It predeclares
+ablation/sham controls, state-geometry metrics, regression guards, compact
+regression requirements, and negative outcome classes.
+Boundary: no implementation, score, mechanism promotion, baseline freeze,
+public usefulness claim, external-baseline superiority, or hardware/native
+transfer.
+```
+
+Current next step:
+
+```text
+Tier 7.7l — Effective-state-dimensionality repair scoring gate
+Question: does the locked repair raise effective recurrent state dimensionality
+and improve Lorenz while separating from generic bases/shams and preserving
+Mackey/NARMA guards?
 ```
 
 Tier 7.1a predeclared these candidate/future adapter families:

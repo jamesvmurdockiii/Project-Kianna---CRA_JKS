@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-09T15:45:39+00:00.
+Last updated: 2026-05-09T15:56:49+00:00.
 
 Current repo root:
 
@@ -1363,11 +1363,23 @@ Tier 7.7j — COMPLETE. Capacity sham-separation / state-specificity scoring
   repair, mechanism promotion, freeze, usefulness claim, external-baseline
   superiority, or hardware/native transfer is authorized.
 
-Tier 7.7k — CURRENT ACTIVE STEP. Effective-state-dimensionality repair
-  contract. Pre-register the repair before implementation. The contract must
-  define the mechanism, null hypothesis, sham families, ablations, compact
-  regression requirements, expected artifacts, and decision classes for raising
-  effective recurrent state dimensionality without post-hoc benchmark tuning.
+Tier 7.7k — COMPLETE. Effective-state-dimensionality repair contract.
+  Status: PASS, 18/18 criteria. Output:
+  `controlled_test_output/tier7_7k_20260509_effective_state_dimensionality_repair_contract/`.
+  Contract: `partitioned_driver_diverse_recurrent_state` is the next candidate
+  repair; shared-driver synchronization and input-state bottleneck are primary
+  suspects; readout collapse, leakage, and pure observability are not the first
+  repair targets based on Tier 7.7j. No implementation, score, mechanism
+  promotion, baseline freeze, public usefulness claim, external-baseline
+  superiority, or hardware/native transfer is authorized.
+
+Tier 7.7l — CURRENT ACTIVE STEP. Effective-state-dimensionality repair scoring
+  gate. Implement and score the locked 7.7k repair exactly as pre-registered.
+  The gate must compare candidate, diversity-disabled ablation, single-pool
+  same-capacity reference, permuted-recurrence ensemble, orthogonal reference,
+  block reference, target shuffle, and time shuffle; it must report PR/rank,
+  MSE/tail/correlation, readout concentration, sham margins, Mackey/NARMA
+  regression guards, and compact regression before any promotion.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware

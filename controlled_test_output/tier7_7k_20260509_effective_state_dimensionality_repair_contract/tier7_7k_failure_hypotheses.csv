@@ -1,0 +1,7 @@
+hypothesis,status,rationale,repair_implication
+shared_driver_synchronization,primary_suspect,"Candidate, permuted, orthogonal, and block probes all stayed near PR 2, suggesting nominally separate units are being driven into the same few causal directions.",Partition causal drivers and add state-diversity pressure before increasing capacity further.
+input_state_bottleneck,primary_suspect,Lorenz receives a compact observed stream; larger hidden state may amplify the same low-dimensional input instead of building independent latent coordinates.,"Use causal multi-timescale/novelty/channelized drivers, but no future labels or test leakage."
+inhibitory_or_normalization_compression,alternate_suspect,"If state normalization or inhibition forces global co-movement, partitions may still collapse unless diversity pressure is explicit.",Include diversity-disabled and block-only ablations to separate partitioning from anti-synchronization.
+readout_concentration,weakened_by_7_7j,Tier 7.7j readout PR was not collapsed and top-weight concentration was not extreme at 128 units.,"Keep readout metrics as guards, but do not make readout the first repair target."
+leakage_or_metric_artifact,weakened_by_7_7j,Target and time shuffles separated strongly in Tier 7.7j.,Preserve shuffle guards for the repair gate.
+single_channel_observability_only,not_primary_from_7_7j,The delay-embedding reference did not explain the Lorenz result in Tier 7.7j.,"Track observability, but do not use it to excuse a non-separated repair."

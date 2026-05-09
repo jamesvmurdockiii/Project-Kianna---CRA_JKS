@@ -1,0 +1,11 @@
+artifact,required_for_scoring_gate
+tier7_7l_results.json,True
+tier7_7l_summary.csv,True
+tier7_7l_scoreboard.csv,True
+tier7_7l_score_summary.csv,True
+tier7_7l_state_geometry.csv,True
+tier7_7l_state_geometry_summary.csv,True
+tier7_7l_sham_controls.csv,True
+tier7_7l_regression_summary.json,True
+tier7_7l_claim_boundary.md,True
+tier7_7l_report.md,True

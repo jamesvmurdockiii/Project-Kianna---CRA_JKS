@@ -11499,10 +11499,26 @@ Next required step:
 
 ```text
 Tier 7.7k - Effective-state-dimensionality repair contract.
-Pre-register a repair that targets effective recurrent state dimensionality,
-not merely nominal hidden-unit capacity. The contract must define the
-mechanism, null hypothesis, sham families, ablations, compact regression
-requirements, expected artifacts, and decision classes before implementation.
+Status: COMPLETE / PASS, 18/18 criteria.
+Output: controlled_test_output/tier7_7k_20260509_effective_state_dimensionality_repair_contract/
+Result: locks `partitioned_driver_diverse_recurrent_state` as the next repair
+candidate. The contract records shared-driver synchronization and input-state
+bottleneck as the primary suspected causes of the Tier 7.7j low-rank collapse,
+and it locks shams, ablations, guards, metrics, artifacts, and outcome classes.
+Boundary: contract/pre-registration only; no implementation, score, promotion,
+freeze, usefulness claim, external-baseline superiority, or hardware/native
+transfer.
+```
+
+Next required step:
+
+```text
+Tier 7.7l - Effective-state-dimensionality repair scoring gate.
+Implement and score the locked 7.7k repair against diversity-disabled,
+same-capacity single-pool, permuted, orthogonal, block, target-shuffle, and
+time-shuffle controls. Report state PR/rank, MSE/tail/correlation, readout
+concentration, sham margins, Mackey/NARMA regression guards, and compact
+regression before any promotion.
 ```
 
 Latest standardized benchmark contract:

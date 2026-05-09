@@ -1,0 +1,595 @@
+{
+  "claim_boundary": "Tier 7.7k is a pre-registration contract for an effective-state-dimensionality repair after Tier 7.7j classified the standardized Lorenz failure as low-rank collapse. It does not implement the repair, score CRA, freeze a baseline, promote a mechanism, claim public usefulness, or transfer anything to hardware/native runtime.",
+  "contract": {
+    "decision_boundary": "This contract authorizes only a scored diagnostic implementation in Tier 7.7l. It does not authorize a repair claim, software baseline freeze, public usefulness claim, hardware/native transfer, language, AGI, or ASI claim.",
+    "hypothesis": "Partitioned causal drivers plus diverse recurrent state should reduce shared-driver synchronization, raise effective participation ratio/rank under Lorenz pressure, and improve Lorenz MSE while preserving Mackey and repaired NARMA guards.",
+    "mechanism_under_test": "partitioned_driver_diverse_recurrent_state",
+    "null_hypothesis": "Any improvement is explained by nominal capacity, generic basis luck, readout budget, leakage, or task-specific post-hoc tuning; or state dimensionality does not increase.",
+    "primary_reference": "Tier 7.7j candidate_full_recurrence at capacity 128",
+    "prior_diagnostic": {
+      "candidate_pr_128": 2.1911215967837574,
+      "max_probe_pr_128": 2.2213536019921336,
+      "outcome": "low_rank_collapse_confirmed",
+      "status": "pass",
+      "tier": "7.7j"
+    },
+    "question": "Can a predeclared state-diversity repair increase effective recurrent state dimensionality and improve Lorenz without relying on generic high-dimensional bases, leakage, or readout concentration?"
+  },
+  "controls": [
+    {
+      "control": "target_shuffle",
+      "pass_requirement": "Target-shuffle MSE at least 5x worse than candidate on Lorenz or the gate is invalid.",
+      "purpose": "Prove performance does not survive wrong causal targets."
+    },
+    {
+      "control": "time_shuffle",
+      "pass_requirement": "Time-shuffle MSE at least 5x worse than candidate on Lorenz or the gate is invalid.",
+      "purpose": "Prove temporal order matters."
+    },
+    {
+      "control": "diversity_disabled",
+      "pass_requirement": "Candidate must beat disabled-diversity ablation on Lorenz while preserving guards.",
+      "purpose": "Attribute gains to the repair, not only partition count."
+    },
+    {
+      "control": "permuted_recurrence_ensemble",
+      "pass_requirement": "Candidate must beat best permuted ensemble by at least 5% MSE on Lorenz.",
+      "purpose": "Prevent generic random/permuted basis effects from being called CRA-specific."
+    },
+    {
+      "control": "block_structured_basis_reference",
+      "pass_requirement": "Candidate must beat block reference or disclose generic partition explanation.",
+      "purpose": "Separate partition structure from state-diversity pressure."
+    },
+    {
+      "control": "readout_budget_match",
+      "pass_requirement": "Feature/readout budget must match the locked capacity matrix within declared bounds.",
+      "purpose": "Prevent wins from widened readout or unfair feature count."
+    }
+  ],
+  "criteria": [
+    {
+      "criterion": "Tier 7.7j prerequisite exists",
+      "details": "",
+      "name": "Tier 7.7j prerequisite exists",
+      "note": "",
+      "operator": "exists",
+      "pass": true,
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_7j_20260509_capacity_sham_separation_scoring_gate/tier7_7j_results.json"
+    },
+    {
+      "criterion": "Tier 7.7j prerequisite passed",
+      "details": "",
+      "name": "Tier 7.7j prerequisite passed",
+      "note": "",
+      "operator": "== pass",
+      "pass": true,
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "criterion": "Tier 7.7j low-rank outcome",
+      "details": "",
+      "name": "Tier 7.7j low-rank outcome",
+      "note": "",
+      "operator": "== low_rank_collapse_confirmed",
+      "pass": true,
+      "passed": true,
+      "rule": "== low_rank_collapse_confirmed",
+      "value": "low_rank_collapse_confirmed"
+    },
+    {
+      "criterion": "question locked",
+      "details": "",
+      "name": "question locked",
+      "note": "",
+      "operator": "non-empty",
+      "pass": true,
+      "passed": true,
+      "rule": "non-empty",
+      "value": "Can a predeclared state-diversity repair increase effective recurrent state dimensionality and improve Lorenz without relying on generic high-dimensional bases, leakage, or readout concentration?"
+    },
+    {
+      "criterion": "hypothesis locked",
+      "details": "",
+      "name": "hypothesis locked",
+      "note": "",
+      "operator": "non-empty",
+      "pass": true,
+      "passed": true,
+      "rule": "non-empty",
+      "value": "Partitioned causal drivers plus diverse recurrent state should reduce shared-driver synchronization, raise effective participation ratio/rank under Lorenz pressure, and improve Lorenz MSE while preserving Mackey and repaired NARMA guards."
+    },
+    {
+      "criterion": "null hypothesis locked",
+      "details": "",
+      "name": "null hypothesis locked",
+      "note": "",
+      "operator": "non-empty",
+      "pass": true,
+      "passed": true,
+      "rule": "non-empty",
+      "value": "Any improvement is explained by nominal capacity, generic basis luck, readout budget, leakage, or task-specific post-hoc tuning; or state dimensionality does not increase."
+    },
+    {
+      "criterion": "primary mechanism named",
+      "details": "",
+      "name": "primary mechanism named",
+      "note": "",
+      "operator": "== partitioned_driver_diverse_recurrent_state",
+      "pass": true,
+      "passed": true,
+      "rule": "== partitioned_driver_diverse_recurrent_state",
+      "value": "partitioned_driver_diverse_recurrent_state"
+    },
+    {
+      "criterion": "failure hypotheses locked",
+      "details": "",
+      "name": "failure hypotheses locked",
+      "note": "",
+      "operator": "includes shared driver and input bottleneck",
+      "pass": true,
+      "passed": true,
+      "rule": "includes shared driver and input bottleneck",
+      "value": [
+        "shared_driver_synchronization",
+        "input_state_bottleneck",
+        "inhibitory_or_normalization_compression",
+        "readout_concentration",
+        "leakage_or_metric_artifact",
+        "single_channel_observability_only"
+      ]
+    },
+    {
+      "criterion": "tasks locked",
+      "details": "",
+      "name": "tasks locked",
+      "note": "",
+      "operator": "Lorenz/Mackey/repaired NARMA",
+      "pass": true,
+      "passed": true,
+      "rule": "Lorenz/Mackey/repaired NARMA",
+      "value": [
+        "lorenz",
+        "mackey_glass",
+        "narma10_repaired_u02"
+      ]
+    },
+    {
+      "criterion": "mechanism ablations present",
+      "details": "",
+      "name": "mechanism ablations present",
+      "note": "",
+      "operator": "includes diversity disabled",
+      "pass": true,
+      "passed": true,
+      "rule": "includes diversity disabled",
+      "value": [
+        "partitioned_driver_diverse_recurrent_state",
+        "diversity_pressure_disabled",
+        "single_pool_same_capacity",
+        "permuted_recurrence_ensemble",
+        "orthogonal_random_basis_reference",
+        "block_structured_basis_reference"
+      ]
+    },
+    {
+      "criterion": "generic shams present",
+      "details": "",
+      "name": "generic shams present",
+      "note": "",
+      "operator": "permuted/orthogonal/block references",
+      "pass": true,
+      "passed": true,
+      "rule": "permuted/orthogonal/block references",
+      "value": [
+        "partitioned_driver_diverse_recurrent_state",
+        "diversity_pressure_disabled",
+        "single_pool_same_capacity",
+        "permuted_recurrence_ensemble",
+        "orthogonal_random_basis_reference",
+        "block_structured_basis_reference"
+      ]
+    },
+    {
+      "criterion": "metrics include PR",
+      "details": "",
+      "name": "metrics include PR",
+      "note": "",
+      "operator": "includes participation_ratio",
+      "pass": true,
+      "passed": true,
+      "rule": "includes participation_ratio",
+      "value": [
+        "geomean_mse",
+        "tail_mse",
+        "test_corr",
+        "participation_ratio",
+        "rank95_variance_count",
+        "top_pc_fraction",
+        "state_norm_mean_std",
+        "step_delta_mean_std",
+        "state_kernel_alignment",
+        "readout_weight_pr",
+        "target_shuffle_guard",
+        "time_shuffle_guard",
+        "compact_regression_status"
+      ]
+    },
+    {
+      "criterion": "metrics include rank95",
+      "details": "",
+      "name": "metrics include rank95",
+      "note": "",
+      "operator": "includes rank95",
+      "pass": true,
+      "passed": true,
+      "rule": "includes rank95",
+      "value": [
+        "geomean_mse",
+        "tail_mse",
+        "test_corr",
+        "participation_ratio",
+        "rank95_variance_count",
+        "top_pc_fraction",
+        "state_norm_mean_std",
+        "step_delta_mean_std",
+        "state_kernel_alignment",
+        "readout_weight_pr",
+        "target_shuffle_guard",
+        "time_shuffle_guard",
+        "compact_regression_status"
+      ]
+    },
+    {
+      "criterion": "leakage controls locked",
+      "details": "",
+      "name": "leakage controls locked",
+      "note": "",
+      "operator": "target/time shuffles",
+      "pass": true,
+      "passed": true,
+      "rule": "target/time shuffles",
+      "value": [
+        "target_shuffle",
+        "time_shuffle",
+        "diversity_disabled",
+        "permuted_recurrence_ensemble",
+        "block_structured_basis_reference",
+        "readout_budget_match"
+      ]
+    },
+    {
+      "criterion": "decision classes locked",
+      "details": "",
+      "name": "decision classes locked",
+      "note": "",
+      "operator": ">= 5 classes",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 5 classes",
+      "value": [
+        "effective_dimension_repair_confirmed",
+        "dimension_rises_but_no_task_gain",
+        "generic_basis_still_explains",
+        "task_gain_without_dimension",
+        "regression_or_leakage_blocked",
+        "inconclusive"
+      ]
+    },
+    {
+      "criterion": "expected artifacts locked",
+      "details": "",
+      "name": "expected artifacts locked",
+      "note": "",
+      "operator": ">= 8 artifacts",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 8 artifacts",
+      "value": [
+        "tier7_7l_results.json",
+        "tier7_7l_summary.csv",
+        "tier7_7l_scoreboard.csv",
+        "tier7_7l_score_summary.csv",
+        "tier7_7l_state_geometry.csv",
+        "tier7_7l_state_geometry_summary.csv",
+        "tier7_7l_sham_controls.csv",
+        "tier7_7l_regression_summary.json",
+        "tier7_7l_claim_boundary.md",
+        "tier7_7l_report.md"
+      ]
+    },
+    {
+      "criterion": "no baseline freeze authorized",
+      "details": "",
+      "name": "no baseline freeze authorized",
+      "note": "",
+      "operator": "false",
+      "pass": true,
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "criterion": "no hardware/native transfer authorized",
+      "details": "",
+      "name": "no hardware/native transfer authorized",
+      "note": "",
+      "operator": "false",
+      "pass": true,
+      "passed": true,
+      "rule": "false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 18,
+  "criteria_total": 18,
+  "expected_artifacts": [
+    {
+      "artifact": "tier7_7l_results.json",
+      "required_for_scoring_gate": true
+    },
+    {
+      "artifact": "tier7_7l_summary.csv",
+      "required_for_scoring_gate": true
+    },
+    {
+      "artifact": "tier7_7l_scoreboard.csv",
+      "required_for_scoring_gate": true
+    },
+    {
+      "artifact": "tier7_7l_score_summary.csv",
+      "required_for_scoring_gate": true
+    },
+    {
+      "artifact": "tier7_7l_state_geometry.csv",
+      "required_for_scoring_gate": true
+    },
+    {
+      "artifact": "tier7_7l_state_geometry_summary.csv",
+      "required_for_scoring_gate": true
+    },
+    {
+      "artifact": "tier7_7l_sham_controls.csv",
+      "required_for_scoring_gate": true
+    },
+    {
+      "artifact": "tier7_7l_regression_summary.json",
+      "required_for_scoring_gate": true
+    },
+    {
+      "artifact": "tier7_7l_claim_boundary.md",
+      "required_for_scoring_gate": true
+    },
+    {
+      "artifact": "tier7_7l_report.md",
+      "required_for_scoring_gate": true
+    }
+  ],
+  "failure_hypotheses": [
+    {
+      "hypothesis": "shared_driver_synchronization",
+      "rationale": "Candidate, permuted, orthogonal, and block probes all stayed near PR 2, suggesting nominally separate units are being driven into the same few causal directions.",
+      "repair_implication": "Partition causal drivers and add state-diversity pressure before increasing capacity further.",
+      "status": "primary_suspect"
+    },
+    {
+      "hypothesis": "input_state_bottleneck",
+      "rationale": "Lorenz receives a compact observed stream; larger hidden state may amplify the same low-dimensional input instead of building independent latent coordinates.",
+      "repair_implication": "Use causal multi-timescale/novelty/channelized drivers, but no future labels or test leakage.",
+      "status": "primary_suspect"
+    },
+    {
+      "hypothesis": "inhibitory_or_normalization_compression",
+      "rationale": "If state normalization or inhibition forces global co-movement, partitions may still collapse unless diversity pressure is explicit.",
+      "repair_implication": "Include diversity-disabled and block-only ablations to separate partitioning from anti-synchronization.",
+      "status": "alternate_suspect"
+    },
+    {
+      "hypothesis": "readout_concentration",
+      "rationale": "Tier 7.7j readout PR was not collapsed and top-weight concentration was not extreme at 128 units.",
+      "repair_implication": "Keep readout metrics as guards, but do not make readout the first repair target.",
+      "status": "weakened_by_7_7j"
+    },
+    {
+      "hypothesis": "leakage_or_metric_artifact",
+      "rationale": "Target and time shuffles separated strongly in Tier 7.7j.",
+      "repair_implication": "Preserve shuffle guards for the repair gate.",
+      "status": "weakened_by_7_7j"
+    },
+    {
+      "hypothesis": "single_channel_observability_only",
+      "rationale": "The delay-embedding reference did not explain the Lorenz result in Tier 7.7j.",
+      "repair_implication": "Track observability, but do not use it to excuse a non-separated repair.",
+      "status": "not_primary_from_7_7j"
+    }
+  ],
+  "generated_at_utc": "2026-05-09T15:56:28+00:00",
+  "mechanisms": [
+    {
+      "allowed_inputs": "observed stream and causal internal state only",
+      "description": "Split causal input/state drivers and recurrent state into fixed partitions with distinct timescale bands plus deterministic diversity pressure so hidden units occupy more than the two dominant principal directions seen in Tier 7.7j.",
+      "forbidden_inputs": "future targets, labels, test labels, task-specific post-hoc tuning",
+      "mechanism": "partitioned_driver_diverse_recurrent_state",
+      "promotable": true,
+      "role": "primary repair candidate"
+    },
+    {
+      "description": "Same partitioned budget with diversity pressure disabled.",
+      "mechanism": "diversity_pressure_disabled",
+      "promotable": false,
+      "role": "mechanism ablation"
+    },
+    {
+      "description": "Locked Tier 7.7h/7.7j full-recurrence candidate at matched capacity.",
+      "mechanism": "single_pool_same_capacity",
+      "promotable": false,
+      "role": "baseline reference"
+    },
+    {
+      "description": "Multiple deterministic recurrence permutations at the same capacity and readout budget.",
+      "mechanism": "permuted_recurrence_ensemble",
+      "promotable": false,
+      "role": "generic-basis sham"
+    },
+    {
+      "description": "Random orthogonal recurrent basis with no CRA-specific state-diversity mechanism.",
+      "mechanism": "orthogonal_random_basis_reference",
+      "promotable": false,
+      "role": "generic high-dimensional reference"
+    },
+    {
+      "description": "Block structure without CRA state-diversity pressure, used to separate partitioning from the repair itself.",
+      "mechanism": "block_structured_basis_reference",
+      "promotable": false,
+      "role": "partition-structure sham"
+    }
+  ],
+  "metrics": [
+    {
+      "metric": "geomean_mse",
+      "required": true,
+      "role": "primary task score"
+    },
+    {
+      "metric": "tail_mse",
+      "required": true,
+      "role": "tail stability"
+    },
+    {
+      "metric": "test_corr",
+      "required": true,
+      "role": "prediction shape"
+    },
+    {
+      "metric": "participation_ratio",
+      "required": true,
+      "role": "effective state dimensionality"
+    },
+    {
+      "metric": "rank95_variance_count",
+      "required": true,
+      "role": "variance dimensionality"
+    },
+    {
+      "metric": "top_pc_fraction",
+      "required": true,
+      "role": "collapse detector"
+    },
+    {
+      "metric": "state_norm_mean_std",
+      "required": true,
+      "role": "amplitude guard"
+    },
+    {
+      "metric": "step_delta_mean_std",
+      "required": true,
+      "role": "dynamic-state guard"
+    },
+    {
+      "metric": "state_kernel_alignment",
+      "required": true,
+      "role": "candidate/sham geometry similarity"
+    },
+    {
+      "metric": "readout_weight_pr",
+      "required": true,
+      "role": "readout concentration guard"
+    },
+    {
+      "metric": "target_shuffle_guard",
+      "required": true,
+      "role": "leakage guard"
+    },
+    {
+      "metric": "time_shuffle_guard",
+      "required": true,
+      "role": "temporal guard"
+    },
+    {
+      "metric": "compact_regression_status",
+      "required": true,
+      "role": "promotion guard if repair passes"
+    }
+  ],
+  "next_gate": "Tier 7.7l - Effective-State-Dimensionality Repair Scoring Gate",
+  "nonclaims": [
+    "not a repair implementation",
+    "not a mechanism promotion",
+    "not a baseline freeze",
+    "not a public usefulness claim",
+    "not external-baseline superiority",
+    "not hardware/native transfer",
+    "not language, AGI, or ASI evidence"
+  ],
+  "outcome_classes": [
+    {
+      "allowed_claim": "The state-dimensionality repair increases effective recurrent state geometry and improves the locked Lorenz diagnostic under controlled software conditions.",
+      "outcome": "effective_dimension_repair_confirmed",
+      "rule": "Candidate Lorenz PR at 128 >= 6 or >= 2x Tier 7.7j candidate PR, Lorenz MSE improves at least 10% versus 7.7j candidate, candidate beats best generic/permuted/block sham by at least 5%, Mackey and NARMA regressions stay within 10%, target/time shuffles fail, and compact regression passes."
+    },
+    {
+      "allowed_claim": "The repair changes state geometry but has not yet produced useful benchmark improvement.",
+      "outcome": "dimension_rises_but_no_task_gain",
+      "rule": "PR/rank rises but Lorenz MSE does not improve or does not beat shams."
+    },
+    {
+      "allowed_claim": "Capacity/state gains remain non-specific; do not promote mechanism.",
+      "outcome": "generic_basis_still_explains",
+      "rule": "Generic/permuted/orthogonal/block probes match or beat candidate."
+    },
+    {
+      "allowed_claim": "Treat as a performance diagnostic requiring attribution repair before promotion.",
+      "outcome": "task_gain_without_dimension",
+      "rule": "Lorenz improves but PR/rank does not materially rise."
+    },
+    {
+      "allowed_claim": "No mechanism promotion; repair is blocked.",
+      "outcome": "regression_or_leakage_blocked",
+      "rule": "Mackey/NARMA regress materially, shuffles do not fail, or compact regression fails."
+    },
+    {
+      "allowed_claim": "No claim beyond inconclusive diagnostic.",
+      "outcome": "inconclusive",
+      "rule": "Metrics conflict or confidence is insufficient."
+    }
+  ],
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7k_20260509_effective_state_dimensionality_repair_contract",
+  "prerequisite": {
+    "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_7j_20260509_capacity_sham_separation_scoring_gate/tier7_7j_results.json",
+    "sha256": "ec3c0a337e6e9965b87630e65ebc98d439867bbcac6d511bf1e765189cd6bb70",
+    "status": "pass"
+  },
+  "runner_revision": "tier7_7k_effective_state_dimensionality_repair_contract_20260509_0001",
+  "status": "pass",
+  "tasks": [
+    {
+      "lengths": "8000,16000,32000",
+      "required": true,
+      "role": "primary repair target",
+      "seeds": "42,43,44",
+      "task": "lorenz",
+      "why": "Tier 7.7j found low effective dimensionality under Lorenz pressure despite larger nominal recurrent capacity."
+    },
+    {
+      "lengths": "8000,16000,32000",
+      "required": true,
+      "role": "positive-control regression guard",
+      "seeds": "42,43,44",
+      "task": "mackey_glass",
+      "why": "CRA v2.5 already has a localized Mackey signal; repair must not break it."
+    },
+    {
+      "lengths": "8000,16000,32000",
+      "required": true,
+      "role": "nonlinear-memory regression guard",
+      "seeds": "42,43,44",
+      "task": "narma10_repaired_u02",
+      "why": "Repaired finite NARMA stream remains the locked memory benchmark stream after Tier 7.7e/f."
+    }
+  ],
+  "tier": "Tier 7.7k - Effective-State-Dimensionality Repair Contract"
+}
