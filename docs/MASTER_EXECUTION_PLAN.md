@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-09T17:35:45+00:00.
+Last updated: 2026-05-09T17:52:42+00:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -1590,31 +1590,38 @@ ability.
     promotion, freeze, external-baseline superiority, broad usefulness claim, or
     hardware/native transfer is authorized.
 
-129. **CURRENT ACTIVE STEP** - Tier 7.7r native temporal-basis repair/reframing
+129. **COMPLETE** - Tier 7.7r native temporal-basis repair/reframing
     contract:
-    preserve the 7.7q positive signal without overclaiming it. Split the next
-    decision into bounded engineering/interface promotion if fixed sparse
-    temporal bases reliably help without regressions, versus stricter
-    CRA-specific mechanism promotion only if the candidate beats or cleanly
-    separates from random-projection and nonlinear-lag controls. If neither
-    path is justified, park temporal-interface repair and move to the next
-    planned architecture hypothesis, such as polyp morphology/template
-    variability. This is a contract/pre-registration step only; no new score,
-    promotion, or freeze is allowed until the next scoring gate is locked.
+    passed 15/15 at
+    `controlled_test_output/tier7_7r_20260509_native_temporal_basis_reframing_contract/`.
+    It preserves the 7.7q positive signal without overclaiming it by splitting
+    bounded engineering/interface utility from stricter CRA-specific mechanism
+    promotion. Contract only: no new score, mechanism promotion, freeze,
+    external-baseline superiority, broad usefulness claim, or hardware/native
+    transfer is authorized.
 
-130. Mechanism iteration loop: add exactly one planned general mechanism at a
+130. **CURRENT ACTIVE STEP** - Tier 7.7s bounded temporal-basis utility
+    promotion/regression gate:
+    consume the 7.7q evidence and run compact regression/guard checks to decide
+    whether the temporal-basis interface can be promoted as bounded engineering
+    utility. It must remain explicitly non-mechanism unless a later gate beats
+    or cleanly separates from random-projection and nonlinear-lag controls. If
+    utility promotion fails, park the path and move to the next planned
+    architecture hypothesis such as polyp morphology/template variability.
+
+131. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
     stop the broad usefulness track and narrow the paper.
 
-131. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+132. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines. Start only after the standardized scoreboard or failure diagnosis
     identifies a winning regime, a real failure mode, or a mechanism needing
     external validation.
 
-132. Tier 7.2 held-out task challenge: define held-out families before running;
+133. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout. Include at least one synthetic holdout and one
     real-ish adapter holdout if Tier 7.1 is active.
 
@@ -1944,14 +1951,13 @@ implementation, tuning, promotion, or freeze.
 The next concrete action is now:
 
 ```text
-Tier 7.7r - Native Temporal Basis Repair/Reframing Contract
+Tier 7.7s - Bounded Temporal-Basis Utility Promotion/Regression Gate
 
-Tier 7.7q passed structurally but classified `external_controls_still_win`.
-The next action is not a mechanism promotion. Lock a new contract that separates
-bounded engineering/interface promotion from stricter CRA-specific mechanism
-promotion, then decides whether to score a repaired internal temporal-basis
-interface or park this temporal-interface path and move to the next planned
-mechanism hypothesis.
+Tier 7.7r passed structurally and split the decision paths. The next action is
+to consume the 7.7q evidence, run compact regression/guard checks, and decide
+whether the temporal-basis interface can be promoted as bounded engineering
+utility. Do not call it a CRA-specific mechanism unless a later gate beats or
+cleanly separates from random-projection and nonlinear-lag controls.
 ```
 
 Recent closeout:

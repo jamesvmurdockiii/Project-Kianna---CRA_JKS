@@ -1,0 +1,8 @@
+control,role,required
+current_cra_baseline,utility baseline,True
+same_feature_random_projection,strong generic-basis control,True
+nonlinear_lag_unpartitioned,strong causal feature-interface control,True
+no_delay_trace,temporal ablation,True
+no_nonlinearity,branch nonlinearity ablation,True
+target_shuffle,leakage guard,True
+time_shuffle,temporal-order guard,True

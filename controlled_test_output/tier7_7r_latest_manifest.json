@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-05-09T17:55:29.559201+00:00",
+  "source_generated_at_utc": "2026-05-09T17:52:20+00:00",
+  "registry_entry_id": "tier7_7r_native_temporal_basis_reframing_contract",
+  "tier": "Tier 7.7r - Native Temporal-Basis Repair/Reframing Contract",
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7r_20260509_native_temporal_basis_reframing_contract",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_7r_20260509_native_temporal_basis_reframing_contract/tier7_7r_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_7r_20260509_native_temporal_basis_reframing_contract/tier7_7r_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7r_20260509_native_temporal_basis_reframing_contract/tier7_7r_summary.csv",
+  "canonical": true,
+  "claim": "Tier 7.7r preserves the positive Tier 7.7q utility signal while splitting bounded engineering/interface promotion from stricter CRA-specific mechanism promotion; the next gate is a bounded temporal-basis utility promotion/regression gate.",
+  "caveat": "Contract evidence only; not a new score, not a mechanism promotion, not a baseline freeze, not hardware/native transfer, not external-baseline superiority, and not broad public usefulness evidence."
+}

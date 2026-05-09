@@ -1,0 +1,19 @@
+{
+  "decision": "split_utility_promotion_from_mechanism_promotion",
+  "decision_boundary": "Tier 7.7r is a contract only. It preserves the Tier 7.7q positive utility signal, splits utility promotion from CRA-specific mechanism promotion, and authorizes a bounded utility promotion/regression gate. It does not promote a mechanism, freeze a baseline, claim external-baseline superiority, or transfer anything to hardware/native runtime.",
+  "hypothesis": "The result should be preserved as a possible bounded engineering/interface utility while withholding CRA-specific mechanism promotion unless a later candidate beats or separates from random-projection and nonlinear-lag controls.",
+  "next_gate": "Tier 7.7s - Bounded Temporal-Basis Utility Promotion/Regression Gate",
+  "null_hypothesis": "Any improvement over current CRA is sufficient for full mechanism promotion even if generic controls do better.",
+  "prior_diagnostic": {
+    "current_divided_by_native": 2.884068002870802,
+    "mechanism_blocked": true,
+    "native_lorenz_128_geomean_mse": 0.002256771889253472,
+    "nonlinear_lag_divided_by_native": 0.865293931300275,
+    "outcome": "external_controls_still_win",
+    "random_projection_divided_by_native": 0.7401924020025331,
+    "status": "pass",
+    "tier": "7.7q",
+    "utility_signal": true
+  },
+  "question": "How should CRA handle a temporal-basis candidate that helps current CRA but does not beat strong generic temporal controls?"
+}

@@ -4463,17 +4463,28 @@ Boundary: diagnostic scoring only; no mechanism promotion, freeze, usefulness
 claim, external-baseline superiority, or hardware/native transfer.
 ```
 
-Current next step:
+Completed reframing contract:
 
 ```text
 Tier 7.7r — native temporal-basis repair/reframing contract
-Question: should the 7.7q positive signal be carried forward as a bounded
-engineering temporal-interface utility, should a repaired native candidate
-attempt stricter CRA-specific mechanism promotion against random-projection and
-nonlinear-lag controls, or should the temporal-interface path be parked before
-moving to the next planned architecture hypothesis?
-Boundary: contract/pre-registration only; no score, promotion, freeze, or
-hardware/native transfer.
+Status: COMPLETE / PASS, 15/15 criteria
+Output: controlled_test_output/tier7_7r_20260509_native_temporal_basis_reframing_contract/
+Finding: the 7.7q positive signal is preserved by splitting bounded
+engineering/interface utility promotion from stricter CRA-specific mechanism
+promotion.
+Boundary: contract only; no new score, mechanism promotion, freeze, public
+usefulness claim, external-baseline superiority, or hardware/native transfer.
+```
+
+Current next step:
+
+```text
+Tier 7.7s — bounded temporal-basis utility promotion/regression gate
+Question: can the temporal-basis interface be promoted as bounded engineering
+utility using the 7.7q evidence plus compact regression/guard checks?
+Boundary: promotion/regression gate only; no CRA-specific mechanism claim,
+external-baseline superiority, hardware/native transfer, or broad public
+usefulness claim.
 ```
 
 Tier 7.1a predeclared these candidate/future adapter families:

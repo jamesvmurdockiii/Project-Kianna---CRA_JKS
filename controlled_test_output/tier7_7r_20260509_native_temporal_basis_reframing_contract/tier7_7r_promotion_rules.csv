@@ -1,0 +1,4 @@
+promotion_type,required_rule,requires_beating_random_projection,requires_compact_regression,allows_baseline_freeze
+bounded_engineering_interface_utility,"native or selected temporal-basis utility beats current CRA by >=10% on aggregate or on the locked target task, with no material regression >10% on Mackey/NARMA and clean shuffle guards",False,True,only after separate promotion/regression gate
+cra_specific_mechanism,"candidate beats or cleanly separates from random-projection and nonlinear-lag controls, internal ablations hurt, shuffle guards fail, and compact regression passes",True,True,only after separate promotion/regression gate
+none,"if utility fails, regressions appear, or controls show leakage, do not promote; park or redesign through a new contract",False,False,never

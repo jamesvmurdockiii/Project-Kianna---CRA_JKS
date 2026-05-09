@@ -1,0 +1,480 @@
+{
+  "claim_boundary": "Tier 7.7r is a contract only. It preserves the Tier 7.7q positive utility signal, splits utility promotion from CRA-specific mechanism promotion, and authorizes a bounded utility promotion/regression gate. It does not promote a mechanism, freeze a baseline, claim external-baseline superiority, or transfer anything to hardware/native runtime.",
+  "contract": {
+    "decision": "split_utility_promotion_from_mechanism_promotion",
+    "decision_boundary": "Tier 7.7r is a contract only. It preserves the Tier 7.7q positive utility signal, splits utility promotion from CRA-specific mechanism promotion, and authorizes a bounded utility promotion/regression gate. It does not promote a mechanism, freeze a baseline, claim external-baseline superiority, or transfer anything to hardware/native runtime.",
+    "hypothesis": "The result should be preserved as a possible bounded engineering/interface utility while withholding CRA-specific mechanism promotion unless a later candidate beats or separates from random-projection and nonlinear-lag controls.",
+    "next_gate": "Tier 7.7s - Bounded Temporal-Basis Utility Promotion/Regression Gate",
+    "null_hypothesis": "Any improvement over current CRA is sufficient for full mechanism promotion even if generic controls do better.",
+    "prior_diagnostic": {
+      "current_divided_by_native": 2.884068002870802,
+      "mechanism_blocked": true,
+      "native_lorenz_128_geomean_mse": 0.002256771889253472,
+      "nonlinear_lag_divided_by_native": 0.865293931300275,
+      "outcome": "external_controls_still_win",
+      "random_projection_divided_by_native": 0.7401924020025331,
+      "status": "pass",
+      "tier": "7.7q",
+      "utility_signal": true
+    },
+    "question": "How should CRA handle a temporal-basis candidate that helps current CRA but does not beat strong generic temporal controls?"
+  },
+  "controls": [
+    {
+      "control": "current_cra_baseline",
+      "required": true,
+      "role": "utility baseline"
+    },
+    {
+      "control": "same_feature_random_projection",
+      "required": true,
+      "role": "strong generic-basis control"
+    },
+    {
+      "control": "nonlinear_lag_unpartitioned",
+      "required": true,
+      "role": "strong causal feature-interface control"
+    },
+    {
+      "control": "no_delay_trace",
+      "required": true,
+      "role": "temporal ablation"
+    },
+    {
+      "control": "no_nonlinearity",
+      "required": true,
+      "role": "branch nonlinearity ablation"
+    },
+    {
+      "control": "target_shuffle",
+      "required": true,
+      "role": "leakage guard"
+    },
+    {
+      "control": "time_shuffle",
+      "required": true,
+      "role": "temporal-order guard"
+    }
+  ],
+  "criteria": [
+    {
+      "criterion": "Tier 7.7q prerequisite exists",
+      "details": "",
+      "name": "Tier 7.7q prerequisite exists",
+      "note": "",
+      "operator": "exists",
+      "pass": true,
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_7q_20260509_cra_native_temporal_interface_internalization_scoring_gate/tier7_7q_results.json"
+    },
+    {
+      "criterion": "Tier 7.7q prerequisite passed",
+      "details": "",
+      "name": "Tier 7.7q prerequisite passed",
+      "note": "",
+      "operator": "== pass",
+      "pass": true,
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "criterion": "Tier 7.7q outcome locked",
+      "details": "",
+      "name": "Tier 7.7q outcome locked",
+      "note": "",
+      "operator": "== external_controls_still_win",
+      "pass": true,
+      "passed": true,
+      "rule": "== external_controls_still_win",
+      "value": "external_controls_still_win"
+    },
+    {
+      "criterion": "utility signal preserved",
+      "details": "",
+      "name": "utility signal preserved",
+      "note": "",
+      "operator": "true",
+      "pass": true,
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "mechanism promotion blocked",
+      "details": "",
+      "name": "mechanism promotion blocked",
+      "note": "",
+      "operator": "true",
+      "pass": true,
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "decision splits utility from mechanism",
+      "details": "",
+      "name": "decision splits utility from mechanism",
+      "note": "",
+      "operator": "split paths",
+      "pass": true,
+      "passed": true,
+      "rule": "split paths",
+      "value": "split_utility_promotion_from_mechanism_promotion"
+    },
+    {
+      "criterion": "bounded utility path locked",
+      "details": "",
+      "name": "bounded utility path locked",
+      "note": "",
+      "operator": "includes utility path",
+      "pass": true,
+      "passed": true,
+      "rule": "includes utility path",
+      "value": [
+        "bounded_engineering_interface_utility",
+        "cra_specific_mechanism_promotion",
+        "park_temporal_interface_path"
+      ]
+    },
+    {
+      "criterion": "CRA-specific mechanism path locked",
+      "details": "",
+      "name": "CRA-specific mechanism path locked",
+      "note": "",
+      "operator": "includes mechanism path",
+      "pass": true,
+      "passed": true,
+      "rule": "includes mechanism path",
+      "value": [
+        "bounded_engineering_interface_utility",
+        "cra_specific_mechanism_promotion",
+        "park_temporal_interface_path"
+      ]
+    },
+    {
+      "criterion": "promotion rules locked",
+      "details": "",
+      "name": "promotion rules locked",
+      "note": "",
+      "operator": "utility/mechanism/none",
+      "pass": true,
+      "passed": true,
+      "rule": "utility/mechanism/none",
+      "value": [
+        "bounded_engineering_interface_utility",
+        "cra_specific_mechanism",
+        "none"
+      ]
+    },
+    {
+      "criterion": "strong controls retained",
+      "details": "",
+      "name": "strong controls retained",
+      "note": "",
+      "operator": "random projection and nonlinear lag",
+      "pass": true,
+      "passed": true,
+      "rule": "random projection and nonlinear lag",
+      "value": [
+        "current_cra_baseline",
+        "same_feature_random_projection",
+        "nonlinear_lag_unpartitioned",
+        "no_delay_trace",
+        "no_nonlinearity",
+        "target_shuffle",
+        "time_shuffle"
+      ]
+    },
+    {
+      "criterion": "metrics locked",
+      "details": "",
+      "name": "metrics locked",
+      "note": "",
+      "operator": "utility and control ratios",
+      "pass": true,
+      "passed": true,
+      "rule": "utility and control ratios",
+      "value": [
+        "geomean_mse",
+        "utility_vs_current_ratio",
+        "strong_control_ratio",
+        "task_regression_ratio",
+        "ablation_delta",
+        "target_shuffle_ratio",
+        "time_shuffle_ratio",
+        "compact_regression_status"
+      ]
+    },
+    {
+      "criterion": "outcome classes locked",
+      "details": "",
+      "name": "outcome classes locked",
+      "note": "",
+      "operator": ">= 4 classes",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 4 classes",
+      "value": [
+        "utility_promotion_candidate_only",
+        "mechanism_promotion_candidate",
+        "park_temporal_interface",
+        "inconclusive"
+      ]
+    },
+    {
+      "criterion": "expected artifacts locked",
+      "details": "",
+      "name": "expected artifacts locked",
+      "note": "",
+      "operator": ">= 10 artifacts",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 10 artifacts",
+      "value": [
+        "tier7_7r_results.json",
+        "tier7_7r_contract.json",
+        "tier7_7r_summary.csv",
+        "tier7_7r_findings.csv",
+        "tier7_7r_decision_paths.csv",
+        "tier7_7r_promotion_rules.csv",
+        "tier7_7r_controls.csv",
+        "tier7_7r_metrics.csv",
+        "tier7_7r_outcome_classes.csv",
+        "tier7_7r_expected_artifacts.csv",
+        "tier7_7r_claim_boundary.md",
+        "tier7_7r_report.md"
+      ]
+    },
+    {
+      "criterion": "no baseline freeze authorized",
+      "details": "",
+      "name": "no baseline freeze authorized",
+      "note": "",
+      "operator": "false",
+      "pass": true,
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "criterion": "no hardware/native transfer authorized",
+      "details": "",
+      "name": "no hardware/native transfer authorized",
+      "note": "",
+      "operator": "false",
+      "pass": true,
+      "passed": true,
+      "rule": "false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 15,
+  "criteria_total": 15,
+  "decision_paths": [
+    {
+      "claim_if_passes": "A bounded causal temporal-basis interface improves the current CRA benchmark path under tested conditions.",
+      "decision": "authorized_for_next_gate",
+      "nonclaim": "Not a CRA-specific mechanism proof; not evidence that random projection/nonlinear-lag are biologically meaningful.",
+      "path": "bounded_engineering_interface_utility",
+      "promotion_name_if_passes": "CRA_TEMPORAL_INTERFACE_UTILITY_v0.1",
+      "question": "Does the temporal-basis interface reliably improve CRA without material regressions?"
+    },
+    {
+      "claim_if_passes": "CRA-specific temporal-interface dynamics add value beyond generic temporal bases.",
+      "decision": "not_authorized_from_7_7q",
+      "nonclaim": "7.7q did not satisfy this path.",
+      "path": "cra_specific_mechanism_promotion",
+      "promotion_name_if_passes": "future only",
+      "question": "Does a native CRA mechanism beat or causally separate from random-projection and nonlinear-lag controls?"
+    },
+    {
+      "claim_if_passes": "Temporal-interface repair is not currently worth promoting.",
+      "decision": "fallback_if_utility_or_repair_fails",
+      "nonclaim": "Does not invalidate prior CRA mechanisms or hardware evidence.",
+      "path": "park_temporal_interface_path",
+      "promotion_name_if_passes": "none",
+      "question": "Should temporal-interface repair stop and the mechanism loop move to polyp morphology/template variability?"
+    }
+  ],
+  "expected_artifacts": [
+    {
+      "artifact": "tier7_7r_results.json",
+      "required_for_contract": true
+    },
+    {
+      "artifact": "tier7_7r_contract.json",
+      "required_for_contract": true
+    },
+    {
+      "artifact": "tier7_7r_summary.csv",
+      "required_for_contract": true
+    },
+    {
+      "artifact": "tier7_7r_findings.csv",
+      "required_for_contract": true
+    },
+    {
+      "artifact": "tier7_7r_decision_paths.csv",
+      "required_for_contract": true
+    },
+    {
+      "artifact": "tier7_7r_promotion_rules.csv",
+      "required_for_contract": true
+    },
+    {
+      "artifact": "tier7_7r_controls.csv",
+      "required_for_contract": true
+    },
+    {
+      "artifact": "tier7_7r_metrics.csv",
+      "required_for_contract": true
+    },
+    {
+      "artifact": "tier7_7r_outcome_classes.csv",
+      "required_for_contract": true
+    },
+    {
+      "artifact": "tier7_7r_expected_artifacts.csv",
+      "required_for_contract": true
+    },
+    {
+      "artifact": "tier7_7r_claim_boundary.md",
+      "required_for_contract": true
+    },
+    {
+      "artifact": "tier7_7r_report.md",
+      "required_for_contract": true
+    }
+  ],
+  "findings": [
+    {
+      "action": "Preserve as positive utility evidence; do not discard merely because strong controls beat it.",
+      "evidence": "current/native Lorenz ratio = 2.884068002870802",
+      "finding": "native_candidate_is_useful_vs_current",
+      "status": "locked"
+    },
+    {
+      "action": "Do not claim CRA-specific mechanism promotion from Tier 7.7q.",
+      "evidence": "random_projection and nonlinear_lag controls beat the key Lorenz score",
+      "finding": "native_candidate_not_mechanism_promoted",
+      "status": "locked"
+    },
+    {
+      "action": "Carry ablation evidence forward as supporting, not sufficient, mechanism evidence.",
+      "evidence": "ablations_hurt = True",
+      "finding": "ablation_signal_exists",
+      "status": "locked"
+    },
+    {
+      "action": "Leakage and temporal-order guards support continued testing.",
+      "evidence": "target/native = 447.07332395817457; time/native = 434.9311263486088",
+      "finding": "shuffle_guards_clean",
+      "status": "locked"
+    }
+  ],
+  "generated_at_utc": "2026-05-09T17:52:20+00:00",
+  "input_hashes": {
+    "tier7_7q_results_sha256": "5ccc50a3c2f0316ee83d2639d9d7624fd16f282ec4684f3610a31184ab5a50c6"
+  },
+  "metrics": [
+    {
+      "metric": "geomean_mse",
+      "required": true,
+      "role": "primary score"
+    },
+    {
+      "metric": "utility_vs_current_ratio",
+      "required": true,
+      "role": "bounded utility decision"
+    },
+    {
+      "metric": "strong_control_ratio",
+      "required": true,
+      "role": "mechanism attribution decision"
+    },
+    {
+      "metric": "task_regression_ratio",
+      "required": true,
+      "role": "no-harm guard"
+    },
+    {
+      "metric": "ablation_delta",
+      "required": true,
+      "role": "causal support"
+    },
+    {
+      "metric": "target_shuffle_ratio",
+      "required": true,
+      "role": "leakage guard"
+    },
+    {
+      "metric": "time_shuffle_ratio",
+      "required": true,
+      "role": "temporal-order guard"
+    },
+    {
+      "metric": "compact_regression_status",
+      "required": true,
+      "role": "freeze guard"
+    }
+  ],
+  "nonclaims": [
+    "not a mechanism promotion",
+    "not a baseline freeze",
+    "not hardware/native transfer",
+    "not external-baseline superiority",
+    "not broad public usefulness",
+    "not language, AGI, or ASI evidence"
+  ],
+  "outcome_classes": [
+    {
+      "allowed_claim": "Bounded engineering/interface utility candidate; not a CRA-specific mechanism.",
+      "outcome": "utility_promotion_candidate_only",
+      "rule": "Temporal basis reliably helps versus current CRA without regressions, but strong controls still win."
+    },
+    {
+      "allowed_claim": "CRA-specific mechanism candidate eligible for separate freeze decision.",
+      "outcome": "mechanism_promotion_candidate",
+      "rule": "Candidate beats strong controls, ablations hurt, no regressions, shuffles fail, compact regression passes later."
+    },
+    {
+      "allowed_claim": "Temporal-interface repair is parked.",
+      "outcome": "park_temporal_interface",
+      "rule": "Utility is weak, regressions appear, or leakage/controls fail."
+    },
+    {
+      "allowed_claim": "Diagnostic only.",
+      "outcome": "inconclusive",
+      "rule": "Margins conflict or artifacts are insufficient."
+    }
+  ],
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7r_20260509_native_temporal_basis_reframing_contract",
+  "promotion_rules": [
+    {
+      "allows_baseline_freeze": "only after separate promotion/regression gate",
+      "promotion_type": "bounded_engineering_interface_utility",
+      "required_rule": "native or selected temporal-basis utility beats current CRA by >=10% on aggregate or on the locked target task, with no material regression >10% on Mackey/NARMA and clean shuffle guards",
+      "requires_beating_random_projection": false,
+      "requires_compact_regression": true
+    },
+    {
+      "allows_baseline_freeze": "only after separate promotion/regression gate",
+      "promotion_type": "cra_specific_mechanism",
+      "required_rule": "candidate beats or cleanly separates from random-projection and nonlinear-lag controls, internal ablations hurt, shuffle guards fail, and compact regression passes",
+      "requires_beating_random_projection": true,
+      "requires_compact_regression": true
+    },
+    {
+      "allows_baseline_freeze": "never",
+      "promotion_type": "none",
+      "required_rule": "if utility fails, regressions appear, or controls show leakage, do not promote; park or redesign through a new contract",
+      "requires_beating_random_projection": false,
+      "requires_compact_regression": false
+    }
+  ],
+  "runner_revision": "tier7_7r_native_temporal_basis_reframing_contract_20260509_0001",
+  "status": "pass",
+  "tier": "Tier 7.7r - Native Temporal-Basis Repair/Reframing Contract"
+}

@@ -1,0 +1,1 @@
+Tier 7.7r is a contract only. It preserves the Tier 7.7q positive utility signal, splits utility promotion from CRA-specific mechanism promotion, and authorizes a bounded utility promotion/regression gate. It does not promote a mechanism, freeze a baseline, claim external-baseline superiority, or transfer anything to hardware/native runtime.

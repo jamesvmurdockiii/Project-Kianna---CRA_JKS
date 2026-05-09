@@ -1,0 +1,5 @@
+finding,status,evidence,action
+native_candidate_is_useful_vs_current,locked,current/native Lorenz ratio = 2.884068002870802,Preserve as positive utility evidence; do not discard merely because strong controls beat it.
+native_candidate_not_mechanism_promoted,locked,random_projection and nonlinear_lag controls beat the key Lorenz score,Do not claim CRA-specific mechanism promotion from Tier 7.7q.
+ablation_signal_exists,locked,ablations_hurt = True,"Carry ablation evidence forward as supporting, not sufficient, mechanism evidence."
+shuffle_guards_clean,locked,target/native = 447.07332395817457; time/native = 434.9311263486088,Leakage and temporal-order guards support continued testing.

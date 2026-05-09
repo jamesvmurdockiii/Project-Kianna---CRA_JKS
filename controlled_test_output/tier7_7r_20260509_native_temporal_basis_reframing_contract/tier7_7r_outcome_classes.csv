@@ -1,0 +1,5 @@
+outcome,rule,allowed_claim
+utility_promotion_candidate_only,"Temporal basis reliably helps versus current CRA without regressions, but strong controls still win.",Bounded engineering/interface utility candidate; not a CRA-specific mechanism.
+mechanism_promotion_candidate,"Candidate beats strong controls, ablations hurt, no regressions, shuffles fail, compact regression passes later.",CRA-specific mechanism candidate eligible for separate freeze decision.
+park_temporal_interface,"Utility is weak, regressions appear, or leakage/controls fail.",Temporal-interface repair is parked.
+inconclusive,Margins conflict or artifacts are insufficient.,Diagnostic only.

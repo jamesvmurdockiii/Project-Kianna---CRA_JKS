@@ -11602,17 +11602,27 @@ public usefulness claim, external-baseline superiority, or hardware/native
 transfer.
 ```
 
-Next required step:
+Completed reframing contract:
 
 ```text
 Tier 7.7r - native temporal-basis repair/reframing contract.
-Question: should the 7.7q positive signal become a bounded engineering
-temporal-interface utility, should a repaired candidate attempt stricter
-CRA-specific mechanism promotion against random-projection/nonlinear-lag
-controls, or should the temporal-interface path be parked before moving to the
-next planned mechanism hypothesis?
-Boundary: contract only; no implementation score, promotion, freeze, public
-usefulness claim, or hardware/native transfer.
+Status: COMPLETE / PASS, 15/15 criteria.
+Output: controlled_test_output/tier7_7r_20260509_native_temporal_basis_reframing_contract/
+Result: split bounded engineering/interface utility promotion from stricter
+CRA-specific mechanism promotion.
+Boundary: contract only; no new score, mechanism promotion, freeze, public
+usefulness claim, external-baseline superiority, or hardware/native transfer.
+```
+
+Next required step:
+
+```text
+Tier 7.7s - bounded temporal-basis utility promotion/regression gate.
+Question: can the temporal-basis interface be promoted as bounded engineering
+utility using the 7.7q evidence plus compact regression/guard checks?
+Boundary: promotion/regression gate only; no CRA-specific mechanism claim,
+external-baseline superiority, hardware/native transfer, or broad public
+usefulness claim.
 ```
 
 Latest standardized benchmark contract:

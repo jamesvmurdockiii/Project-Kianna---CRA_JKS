@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-09T17:35:45+00:00.
+Last updated: 2026-05-09T17:52:42+00:00.
 
 Current repo root:
 
@@ -1437,15 +1437,21 @@ Tier 7.7q — COMPLETE. CRA-native temporal-interface internalization scoring
   claim, external-baseline superiority, or hardware/native transfer is
   authorized.
 
-Tier 7.7r — CURRENT ACTIVE STEP. Native temporal-basis repair/reframing
-  contract. Preserve the 7.7q positive signal without overclaiming it. The
-  contract must split two possible paths: bounded engineering/interface
-  promotion if fixed sparse temporal bases reliably help without regressions,
-  versus stricter CRA-specific mechanism promotion only if the candidate beats
-  or cleanly separates from random-projection and nonlinear-lag controls. If
-  neither path is justified, park temporal-interface repair and move to the next
-  planned architecture hypothesis such as polyp morphology/template
-  variability.
+Tier 7.7r — COMPLETE. Native temporal-basis repair/reframing contract. Status:
+  PASS, 15/15 criteria. Output:
+  `controlled_test_output/tier7_7r_20260509_native_temporal_basis_reframing_contract/`.
+  It preserves the 7.7q positive utility signal while splitting bounded
+  engineering/interface promotion from stricter CRA-specific mechanism
+  promotion. Contract only; no new score, mechanism promotion, baseline freeze,
+  broad usefulness claim, external-baseline superiority, or hardware/native
+  transfer is authorized.
+
+Tier 7.7s — CURRENT ACTIVE STEP. Bounded temporal-basis utility
+  promotion/regression gate. Consume the 7.7q evidence and run compact
+  regression/guard checks to decide whether the temporal-basis interface can be
+  promoted as bounded engineering utility. Do not label it a CRA-specific
+  mechanism unless a separate later gate beats or separates from random-
+  projection and nonlinear-lag controls.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware

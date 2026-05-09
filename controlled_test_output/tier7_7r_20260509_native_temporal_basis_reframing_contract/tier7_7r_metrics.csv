@@ -1,0 +1,9 @@
+metric,role,required
+geomean_mse,primary score,True
+utility_vs_current_ratio,bounded utility decision,True
+strong_control_ratio,mechanism attribution decision,True
+task_regression_ratio,no-harm guard,True
+ablation_delta,causal support,True
+target_shuffle_ratio,leakage guard,True
+time_shuffle_ratio,temporal-order guard,True
+compact_regression_status,freeze guard,True
