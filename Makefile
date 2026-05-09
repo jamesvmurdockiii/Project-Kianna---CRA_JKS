@@ -560,3 +560,6 @@ tier7-4h:
 
 tier7-5a:
 	python3 experiments/tier7_5a_curriculum_environment_contract.py
+
+tier7-5b:
+	python3 experiments/tier7_5b_curriculum_environment_preflight.py

@@ -1,0 +1,17 @@
+field,type,online_visible,required
+row_id,string,True,True
+family_id,string,True,True
+split,string,True,True
+difficulty_level,int,True,True
+cue,float_or_int,True,True
+context_key,float_or_int,True,True
+route_key,float_or_int,True,True
+memory_key,float_or_int,True,True
+noise,float_or_int,True,True
+lag_1,float_or_int,True,True
+lag_2,float_or_int,True,True
+cost_hint,float_or_int,True,True
+target_visible_online,bool,True,True
+target_value,float_or_blank,False,False
+action_label,string_or_blank,False,False
+hidden_label_hash,sha256,True,True

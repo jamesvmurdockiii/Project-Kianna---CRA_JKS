@@ -1,0 +1,6 @@
+check,value,expected,pass
+hidden_holdout_targets_blank,144,144,True
+hidden_label_hashes_present,144,144,True
+online_target_visibility_false,384,384,True
+hidden_hash_manifest_matches_stream,384,384,True
+baseline_schema_compatibility_nonempty,50,>= families * 6,True

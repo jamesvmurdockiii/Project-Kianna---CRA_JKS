@@ -1,0 +1,2 @@
+tier,status,outcome,next_gate,scoring_performed,cra_scored,freeze_authorized,hardware_transfer_authorized,broad_public_usefulness_authorized
+Tier 7.5b - Curriculum / Environment Generator Implementation Preflight,PASS,curriculum_generator_preflight_materialized_no_scoring,Tier 7.5c - Curriculum / Environment Generator Scoring Gate,False,False,False,False,False

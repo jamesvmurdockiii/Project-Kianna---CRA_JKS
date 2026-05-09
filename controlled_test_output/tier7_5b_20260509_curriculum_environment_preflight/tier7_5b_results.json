@@ -1,0 +1,260 @@
+{
+  "criteria": [
+    {
+      "criterion": "tier7_5a_prerequisite_exists",
+      "details": "/Users/james/JKS:CRA/controlled_test_output/tier7_5a_20260509_curriculum_environment_contract/tier7_5a_results.json",
+      "name": "tier7_5a_prerequisite_exists",
+      "note": "/Users/james/JKS:CRA/controlled_test_output/tier7_5a_20260509_curriculum_environment_contract/tier7_5a_results.json",
+      "operator": "must exist",
+      "pass": true,
+      "passed": true,
+      "rule": "must exist",
+      "value": true
+    },
+    {
+      "criterion": "tier7_5a_prerequisite_passed",
+      "details": "",
+      "name": "tier7_5a_prerequisite_passed",
+      "note": "",
+      "operator": "case-insensitive == PASS",
+      "pass": true,
+      "passed": true,
+      "rule": "case-insensitive == PASS",
+      "value": "PASS"
+    },
+    {
+      "criterion": "family_count",
+      "details": "",
+      "name": "family_count",
+      "note": "",
+      "operator": "== 6",
+      "pass": true,
+      "passed": true,
+      "rule": "== 6",
+      "value": 6
+    },
+    {
+      "criterion": "split_count",
+      "details": "",
+      "name": "split_count",
+      "note": "",
+      "operator": "== 4",
+      "pass": true,
+      "passed": true,
+      "rule": "== 4",
+      "value": 4
+    },
+    {
+      "criterion": "stream_rows_materialized",
+      "details": "",
+      "name": "stream_rows_materialized",
+      "note": "",
+      "operator": ">= 300",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 300",
+      "value": 384
+    },
+    {
+      "criterion": "hidden_rows_materialized",
+      "details": "",
+      "name": "hidden_rows_materialized",
+      "note": "",
+      "operator": ">= 100",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 100",
+      "value": 144
+    },
+    {
+      "criterion": "schema_fields_defined",
+      "details": "",
+      "name": "schema_fields_defined",
+      "note": "",
+      "operator": ">= 12",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 12",
+      "value": 16
+    },
+    {
+      "criterion": "baseline_compatibility_rows",
+      "details": "",
+      "name": "baseline_compatibility_rows",
+      "note": "",
+      "operator": "== families * baselines",
+      "pass": true,
+      "passed": true,
+      "rule": "== families * baselines",
+      "value": 54
+    },
+    {
+      "criterion": "leakage_checks_defined",
+      "details": "",
+      "name": "leakage_checks_defined",
+      "note": "",
+      "operator": ">= 5",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 5",
+      "value": 5
+    },
+    {
+      "criterion": "leakage_checks_pass",
+      "details": "",
+      "name": "leakage_checks_pass",
+      "note": "",
+      "operator": "all pass",
+      "pass": true,
+      "passed": true,
+      "rule": "all pass",
+      "value": 5
+    },
+    {
+      "criterion": "stream_hash_present",
+      "details": "",
+      "name": "stream_hash_present",
+      "note": "",
+      "operator": "sha256 non-empty",
+      "pass": true,
+      "passed": true,
+      "rule": "sha256 non-empty",
+      "value": "ee1c9d5e1dbafff09de536d393b7ed6e108d38dc36b1c0c5bd622bbf04d9fbb1"
+    },
+    {
+      "criterion": "scoring_not_performed",
+      "details": "",
+      "name": "scoring_not_performed",
+      "note": "",
+      "operator": "must be False",
+      "pass": true,
+      "passed": true,
+      "rule": "must be False",
+      "value": false
+    },
+    {
+      "criterion": "cra_not_scored",
+      "details": "",
+      "name": "cra_not_scored",
+      "note": "",
+      "operator": "must be False",
+      "pass": true,
+      "passed": true,
+      "rule": "must be False",
+      "value": false
+    },
+    {
+      "criterion": "freeze_blocked",
+      "details": "",
+      "name": "freeze_blocked",
+      "note": "",
+      "operator": "must be False",
+      "pass": true,
+      "passed": true,
+      "rule": "must be False",
+      "value": false
+    },
+    {
+      "criterion": "hardware_transfer_blocked",
+      "details": "",
+      "name": "hardware_transfer_blocked",
+      "note": "",
+      "operator": "must be False",
+      "pass": true,
+      "passed": true,
+      "rule": "must be False",
+      "value": false
+    },
+    {
+      "criterion": "next_gate_selected",
+      "details": "",
+      "name": "next_gate_selected",
+      "note": "",
+      "operator": "non-empty",
+      "pass": true,
+      "passed": true,
+      "rule": "non-empty",
+      "value": "Tier 7.5c - Curriculum / Environment Generator Scoring Gate"
+    }
+  ],
+  "decision": {
+    "broad_public_usefulness_authorized": false,
+    "cra_scored": false,
+    "freeze_authorized": false,
+    "hardware_transfer_authorized": false,
+    "next_gate": "Tier 7.5c - Curriculum / Environment Generator Scoring Gate",
+    "outcome": "curriculum_generator_preflight_materialized_no_scoring",
+    "scoring_performed": false,
+    "status": "PASS",
+    "tier": "Tier 7.5b - Curriculum / Environment Generator Implementation Preflight"
+  },
+  "generated_at_utc": "2026-05-09T03:15:57+00:00",
+  "leakage_checks": [
+    {
+      "check": "hidden_holdout_targets_blank",
+      "expected": 144,
+      "pass": true,
+      "value": 144
+    },
+    {
+      "check": "hidden_label_hashes_present",
+      "expected": 144,
+      "pass": true,
+      "value": 144
+    },
+    {
+      "check": "online_target_visibility_false",
+      "expected": 384,
+      "pass": true,
+      "value": 384
+    },
+    {
+      "check": "hidden_hash_manifest_matches_stream",
+      "expected": 384,
+      "pass": true,
+      "value": 384
+    },
+    {
+      "check": "baseline_schema_compatibility_nonempty",
+      "expected": ">= families * 6",
+      "pass": true,
+      "value": 50
+    }
+  ],
+  "manifest": {
+    "contract_source": "/Users/james/JKS:CRA/controlled_test_output/tier7_5a_20260509_curriculum_environment_contract/tier7_5a_results.json",
+    "families": [
+      "generated_delayed_credit",
+      "generated_hidden_context_reentry",
+      "generated_nonstationary_switching",
+      "generated_compositional_reuse",
+      "generated_policy_action_cost",
+      "generated_predictive_binding"
+    ],
+    "features": [
+      "cue",
+      "context_key",
+      "route_key",
+      "memory_key",
+      "noise",
+      "lag_1",
+      "lag_2",
+      "cost_hint"
+    ],
+    "hidden_rows": 144,
+    "rows": 384,
+    "runner_revision": "tier7_5b_curriculum_environment_preflight_20260509_0001",
+    "scoring_performed": false,
+    "splits": [
+      "generator_train",
+      "generator_validation",
+      "generated_holdout",
+      "generator_ood_holdout"
+    ],
+    "stream_hash": "ee1c9d5e1dbafff09de536d393b7ed6e108d38dc36b1c0c5bd622bbf04d9fbb1",
+    "tier": "Tier 7.5b - Curriculum / Environment Generator Implementation Preflight"
+  },
+  "runner_revision": "tier7_5b_curriculum_environment_preflight_20260509_0001",
+  "status": "PASS",
+  "tier": "Tier 7.5b - Curriculum / Environment Generator Implementation Preflight"
+}

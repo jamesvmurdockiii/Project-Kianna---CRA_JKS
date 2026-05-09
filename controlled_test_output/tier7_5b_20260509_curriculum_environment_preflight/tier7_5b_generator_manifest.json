@@ -1,0 +1,33 @@
+{
+  "contract_source": "/Users/james/JKS:CRA/controlled_test_output/tier7_5a_20260509_curriculum_environment_contract/tier7_5a_results.json",
+  "families": [
+    "generated_delayed_credit",
+    "generated_hidden_context_reentry",
+    "generated_nonstationary_switching",
+    "generated_compositional_reuse",
+    "generated_policy_action_cost",
+    "generated_predictive_binding"
+  ],
+  "features": [
+    "cue",
+    "context_key",
+    "route_key",
+    "memory_key",
+    "noise",
+    "lag_1",
+    "lag_2",
+    "cost_hint"
+  ],
+  "hidden_rows": 144,
+  "rows": 384,
+  "runner_revision": "tier7_5b_curriculum_environment_preflight_20260509_0001",
+  "scoring_performed": false,
+  "splits": [
+    "generator_train",
+    "generator_validation",
+    "generated_holdout",
+    "generator_ood_holdout"
+  ],
+  "stream_hash": "ee1c9d5e1dbafff09de536d393b7ed6e108d38dc36b1c0c5bd622bbf04d9fbb1",
+  "tier": "Tier 7.5b - Curriculum / Environment Generator Implementation Preflight"
+}

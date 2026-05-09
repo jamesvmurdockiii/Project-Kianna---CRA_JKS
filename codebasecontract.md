@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-09T03:22:00+00:00.
+Last updated: 2026-05-09T03:33:00+00:00.
 
 Current repo root:
 
@@ -396,18 +396,18 @@ Tier 7.4e = COMPLETE, PASS, 20/20 criteria
             hardware/native transfer.
 ```
 
-Latest curriculum/environment-generator contract gate:
+Latest curriculum/environment-generator preflight gate:
 
 ```text
-Tier 7.5a = COMPLETE, PASS, 16/16 criteria
-  Source: controlled_test_output/tier7_5a_20260509_curriculum_environment_contract/
-  Runner: experiments/tier7_5a_curriculum_environment_contract.py
-  Outcome: curriculum_environment_contract_locked_no_scoring
-  Result: generated task families, difficulty schedule, hidden holdout splits,
-          baselines, leakage guards, metrics, pass/fail gates, and future
-          artifacts are locked before implementation/scoring.
-  Next gate: Tier 7.5b - Curriculum / Environment Generator Implementation Preflight.
-  Boundary: contract only; not implementation, not scoring, not a mechanism
+Tier 7.5b = COMPLETE, PASS, 16/16 criteria
+  Source: controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight/
+  Runner: experiments/tier7_5b_curriculum_environment_preflight.py
+  Outcome: curriculum_generator_preflight_materialized_no_scoring
+  Result: deterministic generated streams, split manifests, hidden-label hashes,
+          schema contracts, baseline compatibility rows, and leakage checks are
+          materialized without scoring CRA or exposing hidden holdout labels.
+  Next gate: Tier 7.5c - Curriculum / Environment Generator Scoring Gate.
+  Boundary: implementation preflight only; not scoring, not a mechanism
             promotion, not broad usefulness, not a freeze, and not
             hardware/native transfer.
 ```
@@ -1093,11 +1093,16 @@ Tier 7.5a — COMPLETE. Curriculum / environment generator contract.
   Result: generator families/splits/baselines/leakage/metrics/pass-fail gates
     locked before implementation.
 
-Tier 7.5b — CURRENT ACTIVE STEP. Curriculum / environment generator implementation preflight.
-  Required first move: materialize deterministic train/validation/hidden-holdout
-    stream manifests, source schemas, dry-run baseline compatibility, and
-    leakage checks under the 7.5a contract. Do not score CRA or expose held-out
-    labels.
+Tier 7.5b — COMPLETE. Curriculum / environment generator implementation preflight.
+  Status: PASS, 16/16 criteria.
+  Output: controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight/
+  Result: deterministic stream/split/schema/baseline/leakage artifacts are
+    materialized without scoring CRA or exposing hidden holdout labels.
+
+Tier 7.5c — CURRENT ACTIVE STEP. Curriculum / environment generator scoring gate.
+  Required first move: score CRA and fair baselines on the locked generated
+    families/splits, open hidden labels only inside offline scoring, and preserve
+    leakage, sham, effect-size, and claim-boundary controls.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware

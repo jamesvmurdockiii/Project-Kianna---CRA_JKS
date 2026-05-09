@@ -11247,13 +11247,26 @@ mechanism promotion, not broad usefulness, not a freeze, and not
 hardware/native transfer.
 ```
 
+```text
+Tier 7.5b - Curriculum / environment generator implementation preflight.
+Status: COMPLETE / PASS, 16/16 criteria.
+Output: controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight/
+Outcome: curriculum_generator_preflight_materialized_no_scoring.
+Result: deterministic generated streams, split manifests, hidden-label hashes,
+schema contracts, baseline compatibility rows, and leakage checks are
+materialized without scoring CRA or exposing hidden holdout labels.
+Boundary: implementation preflight only; not generated-task scoring, not a
+mechanism promotion, not broad usefulness, not a freeze, and not
+hardware/native transfer.
+```
+
 Next required step:
 
 ```text
-Tier 7.5b - Curriculum / environment generator implementation preflight.
-Materialize deterministic train/validation/hidden-holdout stream manifests,
-source schemas, dry-run baseline compatibility, and leakage checks under the
-7.5a contract. Do not score CRA or expose held-out labels.
+Tier 7.5c - Curriculum / environment generator scoring gate.
+Score CRA and fair baselines on the locked generated families/splits. Hidden
+holdout labels may be opened only inside offline scoring. Preserve leakage,
+sham, baseline, effect-size, and claim-boundary controls.
 ```
 
 ## Tier 5.20a - Resonant Branch Polyp Internal-Model Diagnostic

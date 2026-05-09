@@ -18,7 +18,7 @@ is organized through predeclared tiers, generated registries, JSON/CSV/Markdown
 artifacts, frozen baselines, controls, ablations, external baselines, and explicit
 claim boundaries.
 
-As of the current registry, CRA contains 115 canonical evidence bundles with zero
+As of the current registry, CRA contains 116 canonical evidence bundles with zero
 missing expected artifacts and zero failed criteria in canonical entries. The
 software evidence includes negative controls, positive learning controls,
 architecture ablations, external-baseline comparisons, delayed-credit repairs,

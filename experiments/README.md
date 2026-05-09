@@ -163,7 +163,11 @@ Tier 7.5a curriculum/environment-generator contract then passed at
 `controlled_test_output/tier7_5a_20260509_curriculum_environment_contract/`,
 locking generated task families, difficulty schedule, hidden holdouts,
 baselines, leakage guards, metrics, and future artifacts before any scoring.
-Tier 7.5b implementation preflight is selected next.
+Tier 7.5b implementation preflight then passed at
+`controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight/`,
+materializing deterministic generated streams, hidden-label hashes, schemas,
+baseline compatibility rows, and leakage checks without scoring CRA. Tier 7.5c
+generated-family scoring is selected next.
 
 Tier 4.32a-hw prepare has also passed locally. The current EBRAINS upload
 folder is `ebrains_jobs/cra_432a_hw`, and the exact JobManager command is

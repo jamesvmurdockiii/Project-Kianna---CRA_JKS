@@ -1,0 +1,17 @@
+criterion,value,rule,pass,details
+tier7_5a_prerequisite_exists,True,must exist,True,/Users/james/JKS:CRA/controlled_test_output/tier7_5a_20260509_curriculum_environment_contract/tier7_5a_results.json
+tier7_5a_prerequisite_passed,PASS,case-insensitive == PASS,True,
+family_count,6,== 6,True,
+split_count,4,== 4,True,
+stream_rows_materialized,384,>= 300,True,
+hidden_rows_materialized,144,>= 100,True,
+schema_fields_defined,16,>= 12,True,
+baseline_compatibility_rows,54,== families * baselines,True,
+leakage_checks_defined,5,>= 5,True,
+leakage_checks_pass,5,all pass,True,
+stream_hash_present,ee1c9d5e1dbafff09de536d393b7ed6e108d38dc36b1c0c5bd622bbf04d9fbb1,sha256 non-empty,True,
+scoring_not_performed,False,must be False,True,
+cra_not_scored,False,must be False,True,
+freeze_blocked,False,must be False,True,
+hardware_transfer_blocked,False,must be False,True,
+next_gate_selected,Tier 7.5c - Curriculum / Environment Generator Scoring Gate,non-empty,True,
