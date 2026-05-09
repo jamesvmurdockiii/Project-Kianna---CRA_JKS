@@ -1,0 +1,12 @@
+{
+  "broad_public_usefulness_authorized": false,
+  "family_confirmed_count": 1,
+  "freeze_authorized": false,
+  "hardware_transfer_authorized": false,
+  "incremental_family_confirmed_count": 0,
+  "incremental_v2_4_advantage_authorized": false,
+  "interpretation": "The frozen v2.4 policy/action stack beat the strongest fair external baseline and separated shams on at least one primary public/real-ish action-cost family. The result is qualified: NAB did not confirm, and C-MAPSS did not separate from the prior v2.2 CRA reference with a positive paired CI, so this is not an incremental v2.4-specific advantage claim yet.",
+  "next_gate": "Tier 7.4g - Held-Out Policy/Action Confirmation + Reference Separation",
+  "outcome": "v2_4_heldout_public_action_usefulness_qualified_cmapss_only",
+  "public_usefulness_authorized": true
+}

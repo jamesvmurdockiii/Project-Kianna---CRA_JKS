@@ -391,10 +391,25 @@ Tier 7.4e = COMPLETE, PASS, 20/20 criteria
           NAB and C-MAPSS public-source/preflight artifacts, disjoint held-out
           splits, fixed costs, label-separated online/offline schemas,
           baseline/sham inventories, and statistical support schemas.
-  Next gate: Tier 7.4f - Cost-Aware Policy/Action Held-Out Scoring Gate.
   Boundary: preflight/schema evidence only; not performance scoring, not public
             usefulness proof, not a new baseline freeze, and not
             hardware/native transfer.
+```
+
+Latest cost-aware policy/action held-out scoring gate:
+
+```text
+Tier 7.4f = COMPLETE, PASS, 20/20 criteria
+  Source: controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/
+  Runner: experiments/tier7_4f_cost_aware_policy_action_heldout_scoring_gate.py
+  Outcome: v2_4_heldout_public_action_usefulness_qualified_cmapss_only
+  Result: v2.4 ranked first on C-MAPSS maintenance utility and beat the
+          strongest external baseline, but NAB did not confirm and C-MAPSS did
+          not separate from v2.2 with a positive paired CI.
+  Next gate: Tier 7.4g - Held-Out Policy/Action Confirmation + Reference Separation.
+  Boundary: qualified C-MAPSS-only public-action signal; no broad public
+            usefulness claim, no incremental v2.4 superiority claim, no new
+            freeze, and no hardware/native transfer.
 ```
 
 Latest optional mechanism diagnostic:
@@ -1053,12 +1068,16 @@ Tier 7.4e — COMPLETE. Cost-aware policy/action held-out scoring
   Result: verified source/split/cost artifacts and dry-run scoring schemas
     before held-out v2.4 scoring.
 
-Tier 7.4f — CURRENT ACTIVE STEP. Cost-aware policy/action held-out scoring gate.
-  Required first move: score v2.4, v2.3/v2.2 references, fixed thresholds,
-    rolling policies, lag/ridge, online learners, reservoir/ESN, random/trivial
-    policies, and the locked shams against the 7.4d/7.4e public/real-ish
-    action-cost families. Do not tune thresholds, costs, or policies on held-out
-    streams; preserve failures if public usefulness is not confirmed.
+Tier 7.4f — COMPLETE. Cost-aware policy/action held-out scoring gate.
+  Status: PASS, 20/20 criteria.
+  Output: controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/
+  Result: qualified C-MAPSS-only public-action signal. NAB did not confirm;
+    C-MAPSS did not separate from v2.2 with positive paired CI.
+
+Tier 7.4g — CURRENT ACTIVE STEP. Held-out policy/action confirmation + reference separation.
+  Required first move: confirm the C-MAPSS action-cost result, explicitly test
+    separation from v2.2, and analyze NAB non-confirmation. Do not tune costs,
+    thresholds, or policies on held-out streams.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware
@@ -1402,6 +1421,8 @@ Tier 4.30e — HARDWARE PASS / INGESTED. Multi-core lifecycle hardware smoke.
     success, not speedup, not multi-chip scaling, not v2.2 temporal migration,
     and not a lifecycle baseline freeze.
 
+
+```
 
 Current status summary:
 

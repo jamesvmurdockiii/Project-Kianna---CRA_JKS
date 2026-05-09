@@ -1,0 +1,2 @@
+tier,status,criteria_passed,criteria_total,outcome,public_usefulness_authorized,freeze_authorized,hardware_transfer_authorized,next_gate
+Tier 7.4f - Cost-Aware Policy/Action Held-Out Scoring Gate,pass,20,20,v2_4_heldout_public_action_usefulness_qualified_cmapss_only,True,False,False,Tier 7.4g - Held-Out Policy/Action Confirmation + Reference Separation

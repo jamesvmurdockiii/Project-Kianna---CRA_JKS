@@ -1296,14 +1296,24 @@ ability.
     schemas, and expected next-gate artifacts. Boundary: no performance score,
     no public usefulness proof, no new freeze, and no hardware/native transfer.
 
-100. **CURRENT ACTIVE STEP** - Tier 7.4f cost-aware policy/action held-out
+100. **COMPLETE** - Tier 7.4f cost-aware policy/action held-out
     scoring gate:
-    score v2.4 against the locked 7.4d/7.4e public/real-ish action-cost
-    families with fixed costs, no same-subset threshold tuning, fair baselines,
-    shams, and confidence/action-cost traces. Preserve failures and narrow the
-    usefulness claim if v2.4 does not beat or complement the strongest baseline.
+    passed 20/20 at
+    `controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/`.
+    Outcome `v2_4_heldout_public_action_usefulness_qualified_cmapss_only`: v2.4
+    ranked first on C-MAPSS maintenance utility and beat the strongest external
+    baseline, but NAB did not confirm and C-MAPSS did not separate from v2.2
+    with a positive paired CI. Boundary: qualified C-MAPSS-only public-action
+    signal; no broad public usefulness claim, no incremental v2.4 superiority
+    claim, no freeze, and no hardware/native transfer.
 
-101. Mechanism iteration loop: add exactly one planned general mechanism at a
+101. **CURRENT ACTIVE STEP** - Tier 7.4g held-out policy/action confirmation +
+    reference separation:
+    confirm the C-MAPSS action-cost signal, explicitly test separation from the
+    prior v2.2 CRA reference, and analyze the NAB non-confirmation without
+    tuning costs, thresholds, or policies on held-out streams.
+
+102. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
@@ -1520,22 +1530,21 @@ After each completed run or design tier:
 The next concrete action is:
 
 ```text
-Tier 7.4f - Cost-Aware Policy/Action Held-Out Scoring Gate
+Tier 7.4g - Held-Out Policy/Action Confirmation + Reference Separation
 
-Question: Does v2.4 preserve a measurable utility advantage on the locked
-held-out/public action-cost families after the 7.4d contract and 7.4e
-preflight?
+Question: Does the Tier 7.4f C-MAPSS action-cost signal survive a confirmation
+gate and separate from the prior v2.2 CRA reference, and why did NAB fail to
+confirm?
 
-First move: score the locked NAB alarm-action and C-MAPSS maintenance-action
-families with v2.4, v2.3/v2.2 references, fair thresholds/rolling/lag/online
-learner/reservoir baselines, random/trivial policies, oracle upper-bound
-nonclaim, and the predeclared shams. Do not tune costs, thresholds, or policies
-on held-out streams.
+First move: rerun/confirm the C-MAPSS maintenance-action result with the same
+locked cost model, paired reference comparisons, and sham controls; then run a
+NAB non-confirmation failure analysis without changing held-out costs,
+thresholds, or policy choices.
 
-Boundary: v2.4 is a host-side software mechanism baseline. Tier 7.4f may claim
-only the exact held-out scoring result it earns. It must not claim
-hardware/native transfer, broad planning, language, AGI, or ASI, and any public
-usefulness claim must be narrowed to the families and statistics that pass.
+Boundary: no new freeze and no hardware/native transfer. This gate may confirm
+a narrow C-MAPSS action-cost claim, reject it, or route back to mechanism
+iteration. It must not inflate the 7.4f qualified result into broad public
+usefulness, planning, language, AGI, or ASI.
 ```
 
 Recent closeout:
@@ -1703,8 +1712,7 @@ selection as the next general mechanism contract. Tier 7.4a then passed the
 contract gate, Tier 7.4b passed the local diagnostic as candidate evidence,
 Tier 7.4c froze bounded software baseline v2.4, Tier 7.4d locked the
 held-out/public action-cost scoring contract, and Tier 7.4e verified the
-scoring preflight. The next active software work is Tier 7.4f held-out scoring
-gate.
+scoring preflight. Tier 7.4f then produced a qualified C-MAPSS-only action-cost signal while NAB remained unconfirmed; the next active software work is Tier 7.4g confirmation/reference separation.
 Reopen native work only for targeted transfer after a software task/mechanism
 earns it under the Tier 7/6.2 gates and a separate transfer contract is written.
 It must preserve explicit board/chip/shard identity, message paths, compact

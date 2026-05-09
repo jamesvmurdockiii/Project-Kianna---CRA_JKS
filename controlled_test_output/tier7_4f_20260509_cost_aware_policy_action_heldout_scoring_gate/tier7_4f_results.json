@@ -1,0 +1,691 @@
+{
+  "action_sample_row_count": 156,
+  "claim_boundary": "Software held-out/public action-cost scoring only. This gate can preserve a positive or negative outcome. It is not a baseline freeze, not hardware/native transfer, not a public usefulness claim unless the decision explicitly authorizes that, and not AGI/ASI evidence.",
+  "cost_model": {
+    "correct_abstain_under_low_confidence": 0.25,
+    "correct_event_action": 10.0,
+    "early_but_useful_action": 4.0,
+    "failure_without_maintenance": -20.0,
+    "false_positive_action": -3.0,
+    "late_action_per_step": -0.5,
+    "missed_event": -15.0,
+    "premature_maintenance": -6.0,
+    "unnecessary_maintenance": -4.0,
+    "wait_or_abstain_cost_per_step": -0.05
+  },
+  "criteria": [
+    {
+      "name": "Tier 7.4d contract exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_4d_20260509_cost_aware_policy_action_heldout_contract/tier7_4d_results.json"
+    },
+    {
+      "name": "Tier 7.4d passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "Tier 7.4e preflight exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_4e_20260509_cost_aware_policy_action_heldout_preflight/tier7_4e_results.json"
+    },
+    {
+      "name": "Tier 7.4e passed",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "v2.4 baseline is frozen",
+      "note": "",
+      "passed": true,
+      "rule": "== frozen",
+      "value": "frozen"
+    },
+    {
+      "name": "locked cost model complete",
+      "note": "",
+      "passed": true,
+      "rule": "contains required costs",
+      "value": [
+        "correct_abstain_under_low_confidence",
+        "correct_event_action",
+        "early_but_useful_action",
+        "failure_without_maintenance",
+        "false_positive_action",
+        "late_action_per_step",
+        "missed_event",
+        "premature_maintenance",
+        "unnecessary_maintenance",
+        "wait_or_abstain_cost_per_step"
+      ]
+    },
+    {
+      "name": "NAB policy metrics exist",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation/tier7_1l_policy_metrics.csv"
+    },
+    {
+      "name": "C-MAPSS repair/scoring source exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/tier7_1d_results.json"
+    },
+    {
+      "name": "C-MAPSS source was prior public negative/repair evidence",
+      "note": "",
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "name": "two primary public/real-ish families scored",
+      "note": "",
+      "passed": true,
+      "rule": ">=2",
+      "value": 2
+    },
+    {
+      "name": "candidate scored on both primary families",
+      "note": "",
+      "passed": true,
+      "rule": "contains NAB and C-MAPSS",
+      "value": [
+        "cmapss_maintenance_action_cost",
+        "nab_heldout_alarm_action_cost"
+      ]
+    },
+    {
+      "name": "external baselines scored on both families",
+      "note": "",
+      "passed": true,
+      "rule": "contains NAB and C-MAPSS",
+      "value": [
+        "cmapss_maintenance_action_cost",
+        "nab_heldout_alarm_action_cost"
+      ]
+    },
+    {
+      "name": "shams/ablations scored on both families",
+      "note": "",
+      "passed": true,
+      "rule": "contains NAB and C-MAPSS",
+      "value": [
+        "cmapss_maintenance_action_cost",
+        "nab_heldout_alarm_action_cost"
+      ]
+    },
+    {
+      "name": "finite model utilities",
+      "note": "",
+      "passed": true,
+      "rule": "all utility metrics finite",
+      "value": 3360
+    },
+    {
+      "name": "paired statistics emitted",
+      "note": "",
+      "passed": true,
+      "rule": ">=6 paired comparisons",
+      "value": 6
+    },
+    {
+      "name": "no test-label action tuning",
+      "note": "",
+      "passed": true,
+      "rule": "static persist3 and fixed RUL thresholds",
+      "value": "locked policies"
+    },
+    {
+      "name": "decision preserves outcome without tuning",
+      "note": "",
+      "passed": true,
+      "rule": "confirmed, qualified, or not_confirmed recorded",
+      "value": "v2_4_heldout_public_action_usefulness_qualified_cmapss_only"
+    },
+    {
+      "name": "no freeze authorized by this gate",
+      "note": "",
+      "passed": true,
+      "rule": "== false",
+      "value": false
+    },
+    {
+      "name": "no hardware transfer authorized by this gate",
+      "note": "",
+      "passed": true,
+      "rule": "== false",
+      "value": false
+    },
+    {
+      "name": "next gate selected",
+      "note": "",
+      "passed": true,
+      "rule": "non-empty",
+      "value": "Tier 7.4g - Held-Out Policy/Action Confirmation + Reference Separation"
+    }
+  ],
+  "criteria_passed": 20,
+  "criteria_total": 20,
+  "decision": {
+    "broad_public_usefulness_authorized": false,
+    "family_confirmed_count": 1,
+    "freeze_authorized": false,
+    "hardware_transfer_authorized": false,
+    "incremental_family_confirmed_count": 0,
+    "incremental_v2_4_advantage_authorized": false,
+    "interpretation": "The frozen v2.4 policy/action stack beat the strongest fair external baseline and separated shams on at least one primary public/real-ish action-cost family. The result is qualified: NAB did not confirm, and C-MAPSS did not separate from the prior v2.2 CRA reference with a positive paired CI, so this is not an incremental v2.4-specific advantage claim yet.",
+    "next_gate": "Tier 7.4g - Held-Out Policy/Action Confirmation + Reference Separation",
+    "outcome": "v2_4_heldout_public_action_usefulness_qualified_cmapss_only",
+    "public_usefulness_authorized": true
+  },
+  "failed_criteria": [],
+  "family_decisions": [
+    {
+      "best_external_baseline": "lag_multichannel_ridge_policy",
+      "best_external_expected_utility_per_1000_mean": 211.75278814283183,
+      "best_reference": "v2_2_reference_policy",
+      "best_reference_expected_utility_per_1000_mean": 316.5285988802314,
+      "best_sham_expected_utility_per_1000_mean": -160.9694557273911,
+      "best_sham_or_ablation": "shuffled_state_sham",
+      "candidate_beats_best_external": true,
+      "candidate_beats_best_reference": true,
+      "candidate_expected_utility_per_1000_mean": 318.998500352854,
+      "candidate_model": "v2_4_cost_aware_policy",
+      "candidate_rank": 1,
+      "candidate_separates_best_sham": true,
+      "family": "cmapss_maintenance_action_cost",
+      "incremental_v2_4_family_confirmed": false,
+      "public_usefulness_family_confirmed": true,
+      "reference_delta_ci_high": 16.132348824930187,
+      "reference_delta_ci_low": -12.744203194556462,
+      "reference_separation_confirmed": false
+    },
+    {
+      "best_external_baseline": "ewma_residual_policy",
+      "best_external_expected_utility_per_1000_mean": -8.075090461834561,
+      "best_reference": "v2_2_reference_policy",
+      "best_reference_expected_utility_per_1000_mean": -8.461739616400449,
+      "best_sham_expected_utility_per_1000_mean": -11.252452864967719,
+      "best_sham_or_ablation": "policy_learning_disabled_ablation",
+      "candidate_beats_best_external": false,
+      "candidate_beats_best_reference": false,
+      "candidate_expected_utility_per_1000_mean": -8.482791304997617,
+      "candidate_model": "v2_4_cost_aware_policy",
+      "candidate_rank": 3,
+      "candidate_separates_best_sham": true,
+      "family": "nab_heldout_alarm_action_cost",
+      "incremental_v2_4_family_confirmed": false,
+      "public_usefulness_family_confirmed": false,
+      "reference_delta_ci_high": 1.4676643314616906,
+      "reference_delta_ci_low": -1.6290185101116423,
+      "reference_separation_confirmed": false
+    }
+  ],
+  "generated_at_utc": "2026-05-09T02:41:35+00:00",
+  "model_summary": [
+    {
+      "action_rate_mean": 0.0396616751223058,
+      "cost_normalized_score_mean": 0.17243299487019903,
+      "event_recall_mean": 0.9646491623253132,
+      "expected_utility_per_1000_mean": 318.998500352854,
+      "expected_utility_per_1000_median": 250.0,
+      "expected_utility_per_1000_std": 308.98150190803204,
+      "false_positive_cost_per_1000_mean": 1.600458864922923,
+      "family": "cmapss_maintenance_action_cost",
+      "model": "v2_4_cost_aware_policy",
+      "rank_by_expected_utility": 1,
+      "regret_vs_oracle_per_1000_mean": 328.83458654542244,
+      "role": "candidate",
+      "units": 300
+    },
+    {
+      "action_rate_mean": 0.03846000978530731,
+      "cost_normalized_score_mean": 0.1709248579473776,
+      "event_recall_mean": 0.9474288966574772,
+      "expected_utility_per_1000_mean": 316.5285988802314,
+      "expected_utility_per_1000_median": 250.0,
+      "expected_utility_per_1000_std": 278.08443284406513,
+      "false_positive_cost_per_1000_mean": 0.09900990099009901,
+      "family": "cmapss_maintenance_action_cost",
+      "model": "v2_2_reference_policy",
+      "rank_by_expected_utility": 2,
+      "regret_vs_oracle_per_1000_mean": 331.304488018045,
+      "role": "reference",
+      "units": 300
+    },
+    {
+      "action_rate_mean": 0.05069862745468914,
+      "cost_normalized_score_mean": 0.054725402832321086,
+      "event_recall_mean": 0.8441946006536799,
+      "expected_utility_per_1000_mean": 255.38606005594235,
+      "expected_utility_per_1000_median": 250.0,
+      "expected_utility_per_1000_std": 431.7101425125768,
+      "false_positive_cost_per_1000_mean": 33.95601793344339,
+      "family": "cmapss_maintenance_action_cost",
+      "model": "multichannel_v2_3_policy",
+      "rank_by_expected_utility": 3,
+      "regret_vs_oracle_per_1000_mean": 392.4470268423341,
+      "role": "reference",
+      "units": 300
+    },
+    {
+      "action_rate_mean": 0.031592709164349655,
+      "cost_normalized_score_mean": 0.1350494518291197,
+      "event_recall_mean": 0.674316739739374,
+      "expected_utility_per_1000_mean": 211.75278814283183,
+      "expected_utility_per_1000_median": 250.0,
+      "expected_utility_per_1000_std": 422.20449380214467,
+      "false_positive_cost_per_1000_mean": 4.767724228761732,
+      "family": "cmapss_maintenance_action_cost",
+      "model": "lag_multichannel_ridge_policy",
+      "rank_by_expected_utility": 4,
+      "regret_vs_oracle_per_1000_mean": 436.0802987554446,
+      "role": "external_baseline",
+      "units": 300
+    },
+    {
+      "action_rate_mean": 0.032722950775771927,
+      "cost_normalized_score_mean": 0.1044051848310784,
+      "event_recall_mean": 0.6314857342146345,
+      "expected_utility_per_1000_mean": 178.09890290007976,
+      "expected_utility_per_1000_median": 250.0,
+      "expected_utility_per_1000_std": 365.64531412347395,
+      "false_positive_cost_per_1000_mean": 12.09152772613423,
+      "family": "cmapss_maintenance_action_cost",
+      "model": "raw_multichannel_ridge_policy",
+      "rank_by_expected_utility": 5,
+      "regret_vs_oracle_per_1000_mean": 469.73418399819667,
+      "role": "external_baseline",
+      "units": 300
+    },
+    {
+      "action_rate_mean": 0.03991547208976492,
+      "cost_normalized_score_mean": -0.0316719180150988,
+      "event_recall_mean": 0.7140823451910409,
+      "expected_utility_per_1000_mean": -30.19428824888412,
+      "expected_utility_per_1000_median": 250.0,
+      "expected_utility_per_1000_std": 656.4974998952418,
+      "false_positive_cost_per_1000_mean": 55.853691082898635,
+      "family": "cmapss_maintenance_action_cost",
+      "model": "age_ridge_policy",
+      "rank_by_expected_utility": 6,
+      "regret_vs_oracle_per_1000_mean": 678.0273751471606,
+      "role": "external_baseline",
+      "units": 300
+    },
+    {
+      "action_rate_mean": 0.0,
+      "cost_normalized_score_mean": 0.0,
+      "event_recall_mean": 0.0,
+      "expected_utility_per_1000_mean": -160.9694557273911,
+      "expected_utility_per_1000_median": 250.0,
+      "expected_utility_per_1000_std": 816.6845272520064,
+      "false_positive_cost_per_1000_mean": 0.0,
+      "family": "cmapss_maintenance_action_cost",
+      "model": "always_wait_policy",
+      "rank_by_expected_utility": 7,
+      "regret_vs_oracle_per_1000_mean": 808.8025426256676,
+      "role": "trivial_baseline",
+      "units": 300
+    },
+    {
+      "action_rate_mean": 0.0,
+      "cost_normalized_score_mean": 0.0,
+      "event_recall_mean": 0.0,
+      "expected_utility_per_1000_mean": -160.9694557273911,
+      "expected_utility_per_1000_median": 250.0,
+      "expected_utility_per_1000_std": 816.6845272520064,
+      "false_positive_cost_per_1000_mean": 0.0,
+      "family": "cmapss_maintenance_action_cost",
+      "model": "shuffled_state_sham",
+      "rank_by_expected_utility": 8,
+      "regret_vs_oracle_per_1000_mean": 808.8025426256676,
+      "role": "sham_or_ablation",
+      "units": 300
+    },
+    {
+      "action_rate_mean": 0.31919121556385843,
+      "cost_normalized_score_mean": -1.2128831737823698,
+      "event_recall_mean": 0.5497527437041504,
+      "expected_utility_per_1000_mean": -1248.651874530941,
+      "expected_utility_per_1000_median": -1091.5335764587526,
+      "expected_utility_per_1000_std": 476.5096796160111,
+      "false_positive_cost_per_1000_mean": 613.5814526553163,
+      "family": "cmapss_maintenance_action_cost",
+      "model": "random_policy",
+      "rank_by_expected_utility": 9,
+      "regret_vs_oracle_per_1000_mean": 1896.4849614292175,
+      "role": "trivial_baseline",
+      "units": 300
+    },
+    {
+      "action_rate_mean": 1.0,
+      "cost_normalized_score_mean": -6.264218081665499,
+      "event_recall_mean": 0.25,
+      "expected_utility_per_1000_mean": -5688.429124786417,
+      "expected_utility_per_1000_median": -6000.0,
+      "expected_utility_per_1000_std": 630.1864417451147,
+      "false_positive_cost_per_1000_mean": 0.0,
+      "family": "cmapss_maintenance_action_cost",
+      "model": "always_maintain_policy",
+      "rank_by_expected_utility": 10,
+      "regret_vs_oracle_per_1000_mean": 6336.262211684693,
+      "role": "trivial_baseline",
+      "units": 300
+    },
+    {
+      "action_rate_mean": 0.08801677804672854,
+      "cost_normalized_score_mean": 0.041333333333333305,
+      "event_recall_mean": 0.4375,
+      "expected_utility_per_1000_mean": -8.075090461834561,
+      "expected_utility_per_1000_median": -5.700226419256683,
+      "expected_utility_per_1000_std": 9.62308261475595,
+      "false_positive_cost_per_1000_mean": 4.671908661974797,
+      "family": "nab_heldout_alarm_action_cost",
+      "model": "ewma_residual_policy",
+      "rank_by_expected_utility": 1,
+      "regret_vs_oracle_per_1000_mean": 15.127047625357443,
+      "role": "external_baseline",
+      "units": 36
+    },
+    {
+      "action_rate_mean": 0.08922288132643763,
+      "cost_normalized_score_mean": 0.03372222222222223,
+      "event_recall_mean": 0.4513888888888889,
+      "expected_utility_per_1000_mean": -8.461739616400449,
+      "expected_utility_per_1000_median": -5.32912922338223,
+      "expected_utility_per_1000_std": 9.054606706492086,
+      "false_positive_cost_per_1000_mean": 5.924553080810307,
+      "family": "nab_heldout_alarm_action_cost",
+      "model": "v2_2_reference_policy",
+      "rank_by_expected_utility": 2,
+      "regret_vs_oracle_per_1000_mean": 15.513696779923329,
+      "role": "reference",
+      "units": 36
+    },
+    {
+      "action_rate_mean": 0.08616151566805534,
+      "cost_normalized_score_mean": 0.030009259259259256,
+      "event_recall_mean": 0.3819444444444444,
+      "expected_utility_per_1000_mean": -8.482791304997617,
+      "expected_utility_per_1000_median": -7.1892482710012775,
+      "expected_utility_per_1000_std": 7.12730953250128,
+      "false_positive_cost_per_1000_mean": 4.4754985334755,
+      "family": "nab_heldout_alarm_action_cost",
+      "model": "v2_4_cost_aware_policy",
+      "rank_by_expected_utility": 3,
+      "regret_vs_oracle_per_1000_mean": 15.534748468520498,
+      "role": "candidate",
+      "units": 36
+    },
+    {
+      "action_rate_mean": 0.0004157016281756945,
+      "cost_normalized_score_mean": 0.06492361111111111,
+      "event_recall_mean": 0.17083333333333334,
+      "expected_utility_per_1000_mean": -9.58166851147179,
+      "expected_utility_per_1000_median": -5.217259932935512,
+      "expected_utility_per_1000_std": 9.159958913218606,
+      "false_positive_cost_per_1000_mean": 0.594313492446304,
+      "family": "nab_heldout_alarm_action_cost",
+      "model": "rolling_zscore_policy",
+      "rank_by_expected_utility": 4,
+      "regret_vs_oracle_per_1000_mean": 16.63362567499467,
+      "role": "external_baseline",
+      "units": 36
+    },
+    {
+      "action_rate_mean": 0.0,
+      "cost_normalized_score_mean": 0.0,
+      "event_recall_mean": 0.0,
+      "expected_utility_per_1000_mean": -10.577935745284321,
+      "expected_utility_per_1000_median": -6.640257533057051,
+      "expected_utility_per_1000_std": 8.793667059030925,
+      "false_positive_cost_per_1000_mean": 0.0,
+      "family": "nab_heldout_alarm_action_cost",
+      "model": "always_abstain_policy",
+      "rank_by_expected_utility": 5,
+      "regret_vs_oracle_per_1000_mean": 17.629892908807204,
+      "role": "trivial_baseline",
+      "units": 36
+    },
+    {
+      "action_rate_mean": 0.00862246590161389,
+      "cost_normalized_score_mean": -0.18709722222222222,
+      "event_recall_mean": 0.3888888888888889,
+      "expected_utility_per_1000_mean": -11.252452864967719,
+      "expected_utility_per_1000_median": -7.389099807373561,
+      "expected_utility_per_1000_std": 11.72620973678353,
+      "false_positive_cost_per_1000_mean": 5.876013688853262,
+      "family": "nab_heldout_alarm_action_cost",
+      "model": "policy_learning_disabled_ablation",
+      "rank_by_expected_utility": 6,
+      "regret_vs_oracle_per_1000_mean": 18.304410028490597,
+      "role": "sham_or_ablation",
+      "units": 36
+    },
+    {
+      "action_rate_mean": 0.09533510267383853,
+      "cost_normalized_score_mean": -0.3089166666666667,
+      "event_recall_mean": 0.5277777777777778,
+      "expected_utility_per_1000_mean": -11.518822343299211,
+      "expected_utility_per_1000_median": -6.938020351526364,
+      "expected_utility_per_1000_std": 13.456795768094336,
+      "false_positive_cost_per_1000_mean": 8.685984920566042,
+      "family": "nab_heldout_alarm_action_cost",
+      "model": "shuffled_target_control",
+      "rank_by_expected_utility": 7,
+      "regret_vs_oracle_per_1000_mean": 18.57077950682209,
+      "role": "sham_or_ablation",
+      "units": 36
+    },
+    {
+      "action_rate_mean": 0.0852044347000508,
+      "cost_normalized_score_mean": -0.26105092592592594,
+      "event_recall_mean": 0.4351851851851852,
+      "expected_utility_per_1000_mean": -11.92182803951933,
+      "expected_utility_per_1000_median": -7.44047619047619,
+      "expected_utility_per_1000_std": 12.717791878447914,
+      "false_positive_cost_per_1000_mean": 7.944424913732848,
+      "family": "nab_heldout_alarm_action_cost",
+      "model": "shuffled_state_sham",
+      "rank_by_expected_utility": 8,
+      "regret_vs_oracle_per_1000_mean": 18.973785203042212,
+      "role": "sham_or_ablation",
+      "units": 36
+    },
+    {
+      "action_rate_mean": 0.007060815294404063,
+      "cost_normalized_score_mean": -0.24412499999999998,
+      "event_recall_mean": 0.3125,
+      "expected_utility_per_1000_mean": -12.406117752916161,
+      "expected_utility_per_1000_median": -7.1892482710012775,
+      "expected_utility_per_1000_std": 12.511898831016394,
+      "false_positive_cost_per_1000_mean": 4.885742712229026,
+      "family": "nab_heldout_alarm_action_cost",
+      "model": "rolling_mad_policy",
+      "rank_by_expected_utility": 9,
+      "regret_vs_oracle_per_1000_mean": 19.458074916439042,
+      "role": "external_baseline",
+      "units": 36
+    },
+    {
+      "action_rate_mean": 0.05017457875990149,
+      "cost_normalized_score_mean": -1.0168055555555555,
+      "event_recall_mean": 0.3449074074074074,
+      "expected_utility_per_1000_mean": -20.664538002283543,
+      "expected_utility_per_1000_median": -8.517980334184472,
+      "expected_utility_per_1000_std": 35.470578345234344,
+      "false_positive_cost_per_1000_mean": 15.228740651993567,
+      "family": "nab_heldout_alarm_action_cost",
+      "model": "reservoir_policy",
+      "rank_by_expected_utility": 10,
+      "regret_vs_oracle_per_1000_mean": 27.71649516580642,
+      "role": "external_baseline",
+      "units": 36
+    }
+  ],
+  "runner_revision": "tier7_4f_cost_aware_policy_action_heldout_scoring_gate_20260509_0001",
+  "score_row_count": 3360,
+  "selected_cmapss_channels": [
+    {
+      "abs_corr": 0.7752298218711857,
+      "channel_index": 13,
+      "feature_column": 16,
+      "train_corr_to_target_norm": -0.7752298218711857
+    },
+    {
+      "abs_corr": 0.7571567446044661,
+      "channel_index": 6,
+      "feature_column": 9,
+      "train_corr_to_target_norm": -0.7571567446044661
+    },
+    {
+      "abs_corr": 0.7488698691356842,
+      "channel_index": 14,
+      "feature_column": 17,
+      "train_corr_to_target_norm": 0.7488698691356842
+    },
+    {
+      "abs_corr": 0.7330210310751444,
+      "channel_index": 9,
+      "feature_column": 12,
+      "train_corr_to_target_norm": 0.7330210310751444
+    },
+    {
+      "abs_corr": 0.720858482852774,
+      "channel_index": 17,
+      "feature_column": 20,
+      "train_corr_to_target_norm": -0.720858482852774
+    },
+    {
+      "abs_corr": 0.7073341478068398,
+      "channel_index": 23,
+      "feature_column": 26,
+      "train_corr_to_target_norm": 0.7073341478068398
+    },
+    {
+      "abs_corr": 0.7046255559265668,
+      "channel_index": 22,
+      "feature_column": 25,
+      "train_corr_to_target_norm": 0.7046255559265668
+    },
+    {
+      "abs_corr": 0.6808294987192735,
+      "channel_index": 19,
+      "feature_column": 22,
+      "train_corr_to_target_norm": -0.6808294987192735
+    },
+    {
+      "abs_corr": 0.678458284413673,
+      "channel_index": 4,
+      "feature_column": 7,
+      "train_corr_to_target_norm": -0.678458284413673
+    },
+    {
+      "abs_corr": 0.6550303884869657,
+      "channel_index": 5,
+      "feature_column": 8,
+      "train_corr_to_target_norm": -0.6550303884869657
+    },
+    {
+      "abs_corr": 0.6245680273985942,
+      "channel_index": 10,
+      "feature_column": 13,
+      "train_corr_to_target_norm": -0.6245680273985942
+    },
+    {
+      "abs_corr": 0.624034331256669,
+      "channel_index": 15,
+      "feature_column": 18,
+      "train_corr_to_target_norm": -0.624034331256669
+    }
+  ],
+  "source_artifacts": {
+    "cmapss_repair_results": "/Users/james/JKS:CRA/controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/tier7_1d_results.json",
+    "nab_policy_metrics": "/Users/james/JKS:CRA/controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation/tier7_1l_policy_metrics.csv",
+    "tier7_4d_results": "/Users/james/JKS:CRA/controlled_test_output/tier7_4d_20260509_cost_aware_policy_action_heldout_contract/tier7_4d_results.json",
+    "tier7_4e_results": "/Users/james/JKS:CRA/controlled_test_output/tier7_4e_20260509_cost_aware_policy_action_heldout_preflight/tier7_4e_results.json",
+    "v2_4_baseline": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.4.json"
+  },
+  "statistical_support": [
+    {
+      "baseline": "lag_multichannel_ridge_policy",
+      "candidate": "v2_4_cost_aware_policy",
+      "ci_high": 159.52641055304787,
+      "ci_low": 58.12916433100738,
+      "effect_size": 0.23798830283033948,
+      "family": "cmapss_maintenance_action_cost",
+      "mean_delta": 107.24571221002218,
+      "metric": "expected_utility_per_1000",
+      "paired_units": 300
+    },
+    {
+      "baseline": "v2_2_reference_policy",
+      "candidate": "v2_4_cost_aware_policy",
+      "ci_high": 16.132348824930187,
+      "ci_low": -12.744203194556462,
+      "effect_size": 0.01895969549645718,
+      "family": "cmapss_maintenance_action_cost",
+      "mean_delta": 2.46990147262258,
+      "metric": "expected_utility_per_1000",
+      "paired_units": 300
+    },
+    {
+      "baseline": "shuffled_state_sham",
+      "candidate": "v2_4_cost_aware_policy",
+      "ci_high": 596.0774344007247,
+      "ci_low": 371.58940253714326,
+      "effect_size": 0.4896474260359776,
+      "family": "cmapss_maintenance_action_cost",
+      "mean_delta": 479.96795608024513,
+      "metric": "expected_utility_per_1000",
+      "paired_units": 300
+    },
+    {
+      "baseline": "ewma_residual_policy",
+      "candidate": "v2_4_cost_aware_policy",
+      "ci_high": 1.540399028598419,
+      "ci_low": -2.6159993590882404,
+      "effect_size": -0.0626472273197994,
+      "family": "nab_heldout_alarm_action_cost",
+      "mean_delta": -0.4077008431630544,
+      "metric": "expected_utility_per_1000",
+      "paired_units": 36
+    },
+    {
+      "baseline": "v2_2_reference_policy",
+      "candidate": "v2_4_cost_aware_policy",
+      "ci_high": 1.4676643314616906,
+      "ci_low": -1.6290185101116423,
+      "effect_size": -0.004308446106429087,
+      "family": "nab_heldout_alarm_action_cost",
+      "mean_delta": -0.021051688597168067,
+      "metric": "expected_utility_per_1000",
+      "paired_units": 36
+    },
+    {
+      "baseline": "policy_learning_disabled_ablation",
+      "candidate": "v2_4_cost_aware_policy",
+      "ci_high": 7.290957411584767,
+      "ci_low": -0.8019545893601956,
+      "effect_size": 0.21675992281541567,
+      "family": "nab_heldout_alarm_action_cost",
+      "mean_delta": 2.769661559970102,
+      "metric": "expected_utility_per_1000",
+      "paired_units": 36
+    }
+  ],
+  "status": "pass",
+  "tier": "Tier 7.4f - Cost-Aware Policy/Action Held-Out Scoring Gate"
+}

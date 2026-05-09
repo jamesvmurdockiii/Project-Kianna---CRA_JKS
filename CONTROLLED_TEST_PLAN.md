@@ -75,7 +75,8 @@ They remain part of the peer-review audit trail:
 7.4c cost-aware policy/action promotion + compact regression = passed; freezes bounded v2.4 software policy/action baseline
 7.4d cost-aware policy/action held-out/public usefulness contract = passed contract gate
 7.4e cost-aware policy/action held-out scoring preflight = passed preflight gate
-7.4f cost-aware policy/action held-out scoring gate = current next gate
+7.4f cost-aware policy/action held-out scoring gate = passed; qualified C-MAPSS-only public-action signal, no broad/incremental claim
+7.4g held-out policy/action confirmation + reference separation = current next gate
 7.5 curriculum / environment generator
 7.6 long-horizon planning / subgoal control
 4.19 hardware lifecycle feasibility
@@ -11193,13 +11194,26 @@ Boundary: preflight only; no performance score, no public usefulness proof, no
 new baseline freeze, and no hardware/native transfer.
 ```
 
+```text
+Tier 7.4f - Cost-aware policy/action held-out scoring gate.
+Status: COMPLETE / PASS, 20/20 criteria.
+Output: controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/
+Outcome: v2_4_heldout_public_action_usefulness_qualified_cmapss_only.
+Result: v2.4 ranked first on C-MAPSS maintenance utility and beat the strongest
+external baseline with positive paired support, but NAB did not confirm and
+C-MAPSS did not separate from v2.2 with a positive paired CI.
+Boundary: qualified C-MAPSS-only public-action signal; no broad public
+usefulness claim, no incremental v2.4 superiority claim, no freeze, and no
+hardware/native transfer.
+```
+
 Next required step:
 
 ```text
-Tier 7.4f - Cost-aware policy/action held-out scoring gate.
-Score v2.4 on the locked public/real-ish action-cost families against fair
-baselines and shams. Do not tune on held-out streams or infer hardware transfer
-from the v2.4 software freeze.
+Tier 7.4g - Held-out policy/action confirmation + reference separation.
+Confirm the C-MAPSS action-cost signal, explicitly test separation from v2.2,
+and analyze the NAB non-confirmation without tuning costs, thresholds, or
+policies on held-out streams.
 ```
 
 ## Tier 5.20a - Resonant Branch Polyp Internal-Model Diagnostic
