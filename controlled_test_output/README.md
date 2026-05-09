@@ -5,10 +5,10 @@ ledger is `STUDY_REGISTRY.json`; the compact table is `STUDY_REGISTRY.csv`.
 Older reruns, prepared capsules, debug probes, and baseline-frozen
 mechanism bundles outside the formal registry are preserved for audit.
 
-- Generated: `2026-05-09T12:13:25.071193+00:00`
+- Generated: `2026-05-09T13:40:24.173109+00:00`
 - Registry status: **PASS**
-- Canonical evidence entries: `124`
-- Expanded test-entry count: `124`; see the canonical evidence table below for the exact current tier list.
+- Canonical evidence entries: `125`
+- Expanded test-entry count: `125`; see the canonical evidence table below for the exact current tier list.
 
 ## Evidence Categories
 
@@ -110,6 +110,7 @@ mechanism bundles outside the formal registry are preserved for audit.
 | `tier7_6d_reduced_feature_planning_generalization` | **PASS** | `controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization` | Reduced-feature local diagnostic only; not a promoted planning mechanism, not public usefulness proof, not a new baseline freeze, not hardware/native transfer, and not AGI/ASI evidence. |
 | `tier7_6e_planning_promotion_compact_regression` | **PASS** | `controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression` | Software promotion/regression evidence only; not public usefulness proof, not broad planning or reasoning, not hardware/native transfer, not autonomous on-chip planning, and not AGI/ASI evidence. |
 | `tier7_7a_v2_5_standardized_scoreboard_contract` | **PASS** | `controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract` | Contract/pre-registration evidence only; not a benchmark score, not public usefulness proof, not a new baseline freeze, not hardware/native transfer, and not language, broad planning, AGI, or ASI evidence. |
+| `tier7_7b_v2_5_standardized_scoreboard_scoring_gate` | **PASS** | `controlled_test_output/tier7_7b_20260509_v2_5_standardized_scoreboard_scoring_gate` | Scoring evidence only; not a new baseline freeze, not hardware/native evidence, not broad public usefulness, not external-baseline superiority, and not language, broad planning, AGI, or ASI evidence. ESN, online LMS, and ridge/lag baselines still beat v2.5 on aggregate. |
 | `tier5_20a_resonant_branch_polyp_diagnostic` | **PASS** | `controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic` | Software diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence. |
 | `tier5_20b_hybrid_resonant_polyp_diagnostic` | **PASS** | `controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic` | Software repair diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence. |
 | `tier5_20c_minimal_resonant_polyp_diagnostic` | **PASS** | `controlled_test_output/tier5_20c_20260508_minimal_resonant_polyp_diagnostic` | Software minimal-dose diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence. |

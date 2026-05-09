@@ -11355,13 +11355,32 @@ Boundary: not public usefulness, not broad planning/reasoning, not language,
 not hardware/native transfer, not autonomous on-chip planning, and not AGI/ASI.
 ```
 
-Next required step:
+Latest standardized benchmark scoring result:
 
 ```text
 Tier 7.7b - v2.5 standardized benchmark/usefulness scoreboard scoring gate.
-Score frozen v2.5 on the locked Tier 7.7a public/standardized matrix without
-changing tasks, baselines, splits, metrics, shams, leakage rules, pass/fail
-criteria, artifacts, or claim boundaries.
+Status: COMPLETE / PASS, 15/15 criteria.
+Output: controlled_test_output/tier7_7b_20260509_v2_5_standardized_scoreboard_scoring_gate/
+Outcome: standardized_progress_pass.
+Result: frozen v2.5 improved the locked 8000-step Mackey-Glass/Lorenz/NARMA10
+aggregate versus v2.3: geomean MSE `0.0735414741` versus `0.0951071342`,
+ratio `1.2932448715`, paired delta CI `0.0197948122` to `0.0244083440`.
+The signal is one-task-driven: Mackey-Glass improved strongly, while Lorenz
+and NARMA10 were flat/slightly worse. ESN, online LMS, and ridge/lag baselines
+still beat v2.5 on aggregate.
+Boundary: scoring evidence only; no new freeze, no broad public usefulness
+claim, no external-baseline superiority, no hardware/native transfer, and no
+language/broad-planning/AGI/ASI claim.
+```
+
+Next required step:
+
+```text
+Tier 7.7c - standardized long-run / failure-localization gate.
+Keep the locked standardized task family and same-seed fairness, then test
+whether the 7.7b aggregate signal grows, persists, or disappears under longer
+streams and localize why Lorenz/NARMA10 plus strong ESN/online-linear/ridge
+baselines still block a broad usefulness claim.
 ```
 
 Latest standardized benchmark contract:

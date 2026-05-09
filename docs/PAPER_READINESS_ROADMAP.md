@@ -4216,13 +4216,21 @@ Boundary: not public usefulness, not broad planning/reasoning, not language,
 not hardware/native transfer, not autonomous on-chip planning, and not AGI/ASI.
 ```
 
-Current next step:
+Latest standardized benchmark scoring:
 
 ```text
-Tier 7.7b — v2.5 standardized benchmark/usefulness scoreboard scoring gate
-Question: score frozen v2.5 on the locked 7.7a public/standardized matrix
-without changing tasks, baselines, splits, metrics, shams, leakage rules,
-pass/fail criteria, or claim boundaries.
+Tier 7.7b — COMPLETE / PASS, 15/15 criteria
+Outcome: standardized_progress_pass
+Output: controlled_test_output/tier7_7b_20260509_v2_5_standardized_scoreboard_scoring_gate/
+Result: v2.5 improved the locked 8000-step Mackey-Glass/Lorenz/NARMA10
+aggregate versus v2.3: geomean MSE `0.0735414741` versus `0.0951071342`,
+ratio `1.2932448715`, paired delta CI `0.0197948122` to `0.0244083440`.
+The signal is one-task-driven: Mackey-Glass improved, while Lorenz and NARMA10
+were flat/slightly worse. ESN, online LMS, and ridge/lag baselines still beat
+v2.5 on aggregate.
+Boundary: scoring evidence only; not a freeze, not broad public usefulness,
+not external-baseline superiority, not hardware/native transfer, and not
+language/broad-planning/AGI/ASI evidence.
 ```
 
 Latest standardized benchmark contract:
@@ -4237,6 +4245,15 @@ Secondary confirmation: C-MAPSS FD001 and NAB held-out action-cost tracks only.
 Boundary: contract/pre-registration only; not a benchmark score, not public
 usefulness proof, not a freeze, not hardware/native transfer, and not
 language/broad-planning/AGI/ASI evidence.
+```
+
+Current next step:
+
+```text
+Tier 7.7c — standardized long-run / failure-localization gate
+Question: does the 7.7b signal grow, persist, or disappear under longer
+standardized streams, and why do Lorenz/NARMA10 plus ESN/online-linear/ridge
+baselines still block a broad usefulness claim?
 ```
 
 Tier 7.1a predeclared these candidate/future adapter families:

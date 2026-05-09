@@ -1,0 +1,3 @@
+family,source,status,supports_strong_pass_secondary_clause,note
+cmapss_fd001_maintenance_utility,/Users/james/JKS:CRA/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_results.json,supportive_prior_v2_4_policy_evidence,True,Secondary support only; cannot rescue failed Mackey/Lorenz/NARMA core.
+nab_heldout_alarm_action_cost,/Users/james/JKS:CRA/controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision/tier7_1m_results.json,nab_claim_narrowed_return_to_general_mechanisms,False,Prior NAB closeout is preserved; no same-subset retuning in 7.7b.

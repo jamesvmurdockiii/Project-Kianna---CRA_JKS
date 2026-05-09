@@ -18,7 +18,7 @@ is organized through predeclared tiers, generated registries, JSON/CSV/Markdown
 artifacts, frozen baselines, controls, ablations, external baselines, and explicit
 claim boundaries.
 
-As of the current registry, CRA contains 124 canonical evidence bundles with zero
+As of the current registry, CRA contains 125 canonical evidence bundles with zero
 missing expected artifacts and zero failed criteria in canonical entries. The
 software evidence includes negative controls, positive learning controls,
 architecture ablations, external-baseline comparisons, delayed-credit repairs,
@@ -37,8 +37,10 @@ that signal while blocking promotion, Tier 7.6d passed reduced-feature
 generalization, and Tier 7.6e froze bounded host-side v2.5
 planning/subgoal-control evidence after full compact regression. Tier 7.7a then
 locked the v2.5 standardized benchmark/usefulness scoreboard contract before
-scoring: Mackey-Glass, Lorenz, and NARMA10 at 8000 steps form the primary
-scoreboard, while C-MAPSS FD001 and NAB are secondary confirmation tracks.
+scoring. Tier 7.7b passed the locked scoring gate with standardized progress
+versus v2.3 on the 8000-step Mackey-Glass/Lorenz/NARMA10 aggregate, driven
+primarily by Mackey-Glass, while Lorenz/NARMA10 and strong ESN/online-linear/
+ridge baselines still block a broad usefulness or external-superiority claim.
 The hardware evidence includes PyNN/SpiNNaker
 capsule execution and repeatability, chunked-runtime characterization, a
 custom-runtime progression through four-core MCPL task execution, keyed memory,

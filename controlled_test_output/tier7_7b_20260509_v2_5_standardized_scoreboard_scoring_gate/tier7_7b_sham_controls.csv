@@ -1,0 +1,11 @@
+model,geomean_mse,margin_sham_divided_by_v2_5,candidate_separates
+planning_disabled_v2_3_equivalent,0.09510713419835835,1.293244871484538,True
+policy_action_disabled,0.07317257418238983,0.994983784258857,False
+state_disabled,0.26391825952054204,3.5886996122101396,True
+memory_disabled,0.07292609252948286,0.9916321836010961,False
+replay_disabled_not_applicable_standardized_core,0.0732949646270343,0.9966480212920649,False
+prediction_disabled,0.07240066028452198,0.9844874771409997,False
+self_evaluation_disabled,0.07996408321785266,1.087333157455561,True
+composition_routing_disabled,0.07824816615974135,1.0640005131276702,True
+target_shuffle_control,1.0403036321918144,14.145808812963091,True
+time_shuffle_control,1.0447372129207653,14.206095620975516,True

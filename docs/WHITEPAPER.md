@@ -25,7 +25,7 @@ The project contains three integrated layers:
 3. A staged evidence system that records canonical results, failed diagnostics,
    frozen baselines, and claim boundaries.
 
-As of the current registry, CRA has 124 canonical evidence bundles with zero
+As of the current registry, CRA has 125 canonical evidence bundles with zero
 missing expected artifacts and zero failed criteria in canonical entries. The
 software program has validated negative controls, positive learning controls,
 architecture ablations, external-baseline comparisons, delayed-credit repairs,
@@ -47,7 +47,11 @@ host-side v2.5 planning/subgoal-control evidence after full compact regression.
 Tier 7.7a then locked the v2.5 standardized benchmark/usefulness scoreboard
 contract before scoring: Mackey-Glass, Lorenz, and NARMA10 at 8000 steps are the
 primary standardized scoreboard, while C-MAPSS FD001 and NAB are secondary
-public/real-ish confirmation tracks only.
+public/real-ish confirmation tracks only. Tier 7.7b then passed that locked
+scoring gate with a standardized-progress result: v2.5 improved the aggregate
+geomean MSE versus v2.3, but the gain was driven by Mackey-Glass, Lorenz and
+NARMA10 remained flat/slightly worse, and ESN/online-linear/ridge baselines still
+beat v2.5 on aggregate.
 
 The hardware program has progressed from PyNN/SpiNNaker capsule execution to a
 custom native runtime. The native runtime has passed bounded SpiNNaker hardware

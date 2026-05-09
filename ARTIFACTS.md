@@ -147,7 +147,7 @@ flag, but the pass is accepted because `hardware_run_attempted=True`, hardware
 was nonzero.
 
 Current registry alignment status:
-64 canonical evidence bundles, 0 missing expected artifacts, and 0 failed
+125 canonical evidence bundles, 0 missing expected artifacts, and 0 failed
 criteria in canonical entries. The v0.1 and v0.2 frozen baselines remain locked at their
 recorded historical counts, v0.3 freezes the post-Tier-5.3 diagnostic baseline,
 v0.4 freezes the post-Tier-5.4 delayed-credit confirmation baseline, v0.5
@@ -1389,6 +1389,27 @@ Mackey-Glass/Lorenz/NARMA10 primary scoreboard and secondary C-MAPSS/NAB
 confirmation tracks before v2.5 scoring. It is not a benchmark score, public
 usefulness proof, new freeze, hardware/native transfer, broad planning,
 language, AGI, or ASI evidence.
+
+Latest Tier 7.7b v2.5 standardized benchmark/usefulness scoreboard scoring artifacts:
+
+- `controlled_test_output/tier7_7b_20260509_v2_5_standardized_scoreboard_scoring_gate/`
+- `tier7_7b_results.json`
+- `tier7_7b_report.md`
+- `tier7_7b_summary.csv`
+- `tier7_7b_scoreboard_rows.csv`
+- `tier7_7b_aggregate_scoreboard.csv`
+- `tier7_7b_sham_controls.csv`
+- `tier7_7b_leakage_audit.json`
+- `tier7_7b_fairness_contract.json`
+- `tier7_7b_claim_boundary.md`
+- `tier7_7b_secondary_confirmation.csv`
+
+Boundary: scoring evidence only. The gate found standardized progress versus
+v2.3 on the locked aggregate (`0.0735414741` versus `0.0951071342` geomean MSE),
+but the improvement is Mackey-Glass-driven; Lorenz/NARMA10 were flat/slightly
+worse, and ESN/online-linear/ridge baselines still beat v2.5 on aggregate. This
+is not a new freeze, not broad public usefulness, not external-baseline
+superiority, not hardware/native transfer, and not AGI/ASI evidence.
 
 Latest Tier 5.9c macro-eligibility v2.1 recheck:
 

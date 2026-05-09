@@ -1,0 +1,55 @@
+{
+  "guards": [
+    {
+      "guard": "finite_stream_precheck",
+      "passed": true
+    },
+    {
+      "guard": "chronological_65_35_split",
+      "passed": true
+    },
+    {
+      "guard": "train_prefix_normalization",
+      "passed": true
+    },
+    {
+      "guard": "prediction_before_online_update",
+      "passed": true
+    },
+    {
+      "guard": "candidate_meta_features_use_only_observed_history",
+      "passed": true
+    },
+    {
+      "guard": "target_shuffle_control_present",
+      "passed": true
+    },
+    {
+      "guard": "time_shuffle_control_present",
+      "passed": true
+    },
+    {
+      "guard": "secondary_adapters_cannot_rescue_core_failure",
+      "passed": true
+    },
+    {
+      "guard": "small_gru_omitted_with_budget_note",
+      "passed": true
+    }
+  ],
+  "horizon": 8,
+  "invalid_task_count": 0,
+  "length": 8000,
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "small_gru_status": "omitted: no locked local dependency/runtime budget in prior Tier 7.0 scorer; ESN/ridge/lag/persistence/online LMS retained",
+  "status": "pass",
+  "tasks": [
+    "mackey_glass",
+    "lorenz",
+    "narma10"
+  ]
+}

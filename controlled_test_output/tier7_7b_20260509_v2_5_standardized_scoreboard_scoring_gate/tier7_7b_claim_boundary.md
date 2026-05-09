@@ -1,0 +1,1 @@
+Tier 7.7b scores frozen v2.5 on the pre-registered Tier 7.7a standardized scoreboard. It may support standardized progress or localized usefulness, but it does not freeze a new baseline, does not authorize hardware/native transfer, does not tune benchmarks after seeing results, and does not claim language, broad reasoning, AGI, or ASI.

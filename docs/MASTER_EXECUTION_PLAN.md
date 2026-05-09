@@ -1416,72 +1416,84 @@ ability.
     is contract/pre-registration evidence only, not a benchmark score, public
     usefulness claim, new freeze, or hardware/native transfer.
 
-113. **CURRENT ACTIVE STEP** - Tier 7.7b v2.5 standardized benchmark/usefulness
+113. **COMPLETE** - Tier 7.7b v2.5 standardized benchmark/usefulness
     scoreboard scoring gate:
-    score frozen v2.5 on the locked Tier 7.7a matrix without changing tasks,
-    splits, baselines, shams, leakage rules, pass/fail criteria, or claim
-    boundaries. If it fails, route to failure localization instead of moving
-    goalposts.
+    passed 15/15 at
+    `controlled_test_output/tier7_7b_20260509_v2_5_standardized_scoreboard_scoring_gate/`.
+    Outcome `standardized_progress_pass`: frozen v2.5 improved the locked
+    8000-step Mackey-Glass/Lorenz/NARMA10 aggregate versus v2.3
+    (`0.0735414741` geomean MSE versus `0.0951071342`, ratio `1.2932448715`,
+    paired delta CI `0.0197948122` to `0.0244083440`). The signal is
+    one-task-driven: Mackey-Glass improved strongly, while Lorenz and NARMA10
+    were flat/slightly worse, and ESN/online-linear/ridge baselines still beat
+    v2.5 on aggregate. No freeze or hardware/native transfer is authorized.
 
-114. Mechanism iteration loop: add exactly one planned general mechanism at a
+114. **CURRENT ACTIVE STEP** - Tier 7.7c standardized long-run/failure
+    localization gate:
+    determine whether the Tier 7.7b signal grows, persists, or disappears under
+    longer standardized streams and identify why v2.5 did not beat external
+    baselines or improve Lorenz/NARMA10. Keep the locked tasks/seeds/splits and
+    add only a predeclared length sweep/failure-localization matrix.
+
+115. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
     stop the broad usefulness track and narrow the paper.
 
-115. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+116. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines. Start only after the standardized scoreboard or failure diagnosis
     identifies a winning regime, a real failure mode, or a mechanism needing
     external validation.
 
-116. Tier 7.2 held-out task challenge: define held-out families before running;
+117. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout. Include at least one synthetic holdout and one
     real-ish adapter holdout if Tier 7.1 is active.
 
-117. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+118. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines. Candidate domains include
     streaming anomaly detection, predictive-maintenance sensor streams, human
     activity streams, event prediction, ECG/biosignal streams, and finance as
     one domain only rather than the whole proof.
 
-118. Tier 7.4 policy/action selection held-out scoring: the current held-out
+119. Tier 7.4 policy/action selection held-out scoring: the current held-out
     chain is complete through 7.4h. No further NAB/C-MAPSS policy tuning is
     authorized from this chain; only the narrow C-MAPSS action-cost signal is
     preserved, with no broad action/policy claim, freeze, or hardware/native
     transfer.
 
-119. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
+120. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
     planning/subgoal control: run only after the shorter hard/real-ish tasks are
     stable. Do not claim language, AGI, or broad planning from toy gates.
 
-120. Run expanded external baselines and fairness audit at the phase lock:
+121. Run expanded external baselines and fairness audit at the phase lock:
     random/sign persistence, online perceptron/logistic, lag/ridge where
     relevant, reservoir/ESN, small GRU, STDP-only SNN, simple evolutionary
     population, simple control baselines, and SNN reviewer-defense baselines
     where practical.
 
-121. Freeze the next software baseline only if new software capability work
+122. Freeze the next software baseline only if new software capability work
     passes ablations, fair baselines, leakage controls, and compact regression.
     If no new software mechanism is promoted, keep v2.4.
 
 ### Phase I - Final Paper Lock
 
-122. Select final paper claim level: strong usefulness paper, bounded architecture
+123. Select final paper claim level: strong usefulness paper, bounded architecture
     study, or narrowed diagnostic report. Let the evidence decide.
 
-123. Run final software matrix and final hardware subset matrix. Include effect
+124. Run final software matrix and final hardware subset matrix. Include effect
     sizes, confidence intervals, worst seed, sample efficiency, runtime, command
     count, resource budgets, and claim-boundary table.
 
-124. Build the independent reproduction capsule: fresh checkout instructions,
+125. Build the independent reproduction capsule: fresh checkout instructions,
     environment lock, validation command, registry/table regeneration, EBRAINS
     ingest instructions, artifact hash manifest, and one local tier rerun.
 
-125. Draft paper/whitepaper only after the Phase H usefulness/baseline gates pass. Write
+126. Draft paper/whitepaper only after the Phase H usefulness/baseline gates pass. Write
     limitations first, then claims. Preserve failed and parked diagnostics.
 
-126. External dry run: have a clean agent or human follow only the docs. If they
+127. External dry run: have a clean agent or human follow only the docs. If they
     need hidden chat context, the repo is not ready.
 
 ## 7. Current Tier 4.27 Definition

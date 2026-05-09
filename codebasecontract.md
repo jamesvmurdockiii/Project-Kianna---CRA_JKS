@@ -524,6 +524,22 @@ Tier 7.7a = COMPLETE, PASS, 20/20 criteria
   Boundary: contract/pre-registration only; no benchmark score, no public
             usefulness claim, no new baseline freeze, no hardware/native
             transfer, and no language/broad-planning/AGI/ASI claim.
+
+Tier 7.7b = COMPLETE, PASS, 15/15 criteria
+  Source: controlled_test_output/tier7_7b_20260509_v2_5_standardized_scoreboard_scoring_gate/
+  Runner: experiments/tier7_7b_v2_5_standardized_scoreboard_scoring_gate.py
+  Outcome: standardized_progress_pass
+  Result: v2.5 improved the locked 8000-step Mackey-Glass/Lorenz/NARMA10
+          aggregate versus v2.3 (`0.0735414741` geomean MSE versus
+          `0.0951071342`, ratio `1.2932448715`, paired delta CI
+          `0.0197948122` to `0.0244083440`). The signal is one-task-driven:
+          Mackey-Glass improved, while Lorenz and NARMA10 were flat/slightly
+          worse. ESN, online LMS, and ridge/lag baselines still beat v2.5 on
+          aggregate.
+  Next gate: Tier 7.7c - Standardized Long-Run / Failure Localization Gate.
+  Boundary: scoring evidence only; no new freeze, no broad public usefulness
+            claim, no external-baseline superiority, no hardware/native
+            transfer, and no language/broad-planning/AGI/ASI claim.
 ```
 
 Latest optional mechanism diagnostic:
@@ -1263,10 +1279,17 @@ Tier 7.7a — COMPLETE. v2.5 standardized benchmark/usefulness scoreboard
   Mackey-Glass/Lorenz/NARMA10 primary scoreboard plus secondary C-MAPSS/NAB
   confirmation tracks before scoring v2.5.
 
-Tier 7.7b — CURRENT ACTIVE STEP. v2.5 standardized benchmark/usefulness
-  scoreboard scoring gate. Score frozen v2.5 on the locked 7.7a contract
-  without changing tasks, splits, baselines, shams, leakage rules, or pass/fail
-  criteria.
+Tier 7.7b — COMPLETE. v2.5 standardized benchmark/usefulness scoreboard
+  scoring gate. Status: PASS, 15/15 criteria. Outcome
+  `standardized_progress_pass`: v2.5 improved the locked aggregate versus v2.3
+  but the signal was Mackey-Glass-driven, Lorenz/NARMA10 were flat/slightly
+  worse, and strong external baselines still beat v2.5 on aggregate.
+
+Tier 7.7c — CURRENT ACTIVE STEP. Standardized long-run/failure-localization
+  gate. Keep the locked standardized task family and same-seed fairness, then
+  test whether the 7.7b signal grows, persists, or disappears under longer
+  streams and localize the external-baseline/Lorenz/NARMA10 gap before adding
+  any new mechanism.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware

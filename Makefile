@@ -587,3 +587,9 @@ tier7-6e:
 
 tier7-7a:
 	python3 experiments/tier7_7a_v2_5_standardized_scoreboard_contract.py
+
+tier7-7b:
+	python3 experiments/tier7_7b_v2_5_standardized_scoreboard_scoring_gate.py
+
+tier7-7b-smoke:
+	python3 experiments/tier7_7b_v2_5_standardized_scoreboard_scoring_gate.py --smoke --output-dir controlled_test_output/tier7_7b_smoke
