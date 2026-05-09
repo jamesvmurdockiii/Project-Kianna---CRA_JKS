@@ -1,0 +1,1 @@
+Tier 7.7d scores the Tier 7.7c locked long-run/failure-localization contract. It may localize whether the 7.7b signal persists, grows, or collapses, but it does not freeze a new baseline, does not authorize hardware/native transfer, does not retune benchmarks after seeing results, and does not claim language, broad reasoning, AGI, or ASI.

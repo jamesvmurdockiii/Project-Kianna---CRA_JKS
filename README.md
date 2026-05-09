@@ -83,13 +83,14 @@ controlled ablations, baseline comparisons, and explicit claim boundaries.
 | Latest standardized benchmark contract | Tier 7.7a passed from [`controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract`](controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract): outcome `v2_5_standardized_scoreboard_contract_locked`; `20/20` criteria passed. The primary scoreboard is locked as Mackey-Glass, Lorenz, and NARMA10 at 8000 steps, horizon 8, seeds 42/43/44, chronological 65/35 split. C-MAPSS FD001 and NAB are secondary public/real-ish confirmation tracks only. The 7.7a contract itself performs no scoring and authorizes no public usefulness claim, freeze, or hardware/native transfer. |
 | Latest standardized benchmark score | Tier 7.7b passed from [`controlled_test_output/tier7_7b_20260509_v2_5_standardized_scoreboard_scoring_gate`](controlled_test_output/tier7_7b_20260509_v2_5_standardized_scoreboard_scoring_gate): outcome `standardized_progress_pass`; `15/15` criteria passed. v2.5 improved the locked 8000-step standardized aggregate versus v2.3 (`0.0735414741` vs `0.0951071342` geomean MSE; ratio `1.2932448715`; paired delta CI `0.0197948122` to `0.0244083440`), but the gain was driven by Mackey-Glass only and ESN/online-linear/ridge baselines still beat v2.5 on aggregate. No freeze, broad usefulness claim, or hardware/native transfer. |
 | Latest long-run failure contract | Tier 7.7c passed from [`controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract`](controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract): outcome `standardized_long_run_failure_contract_locked`; `15/15` criteria passed. It locks Mackey-Glass/Lorenz/NARMA10 at required lengths `8000`, `16000`, and `32000` with optional `50000`, seeds 42/43/44, explicit shams, and failure classes before the next scoring run. Contract only: no score, freeze, usefulness claim, or hardware/native transfer. |
+| Latest long-run scoring blocker | Tier 7.7d passed as a blocker-classification harness from [`controlled_test_output/tier7_7d_20260509_standardized_long_run_failure_scoring_gate`](controlled_test_output/tier7_7d_20260509_standardized_long_run_failure_scoring_gate): outcome `benchmark_stream_invalid`; `12/12` criteria passed. Mackey-Glass persisted, Lorenz stayed weak, external baselines remained blockers, and NARMA10 became non-finite at `16000` and `32000`, so no complete long-run scoreboard can be cited until the benchmark stream is repaired/preflighted. |
 | Latest optional mechanism diagnostic | Tier 5.20a passed as a harness from [`controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic`](controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic), but the full 16-resonant-branch polyp proxy was **not promoted**: it helped `variable_delay_multi_cue` and slightly helped `anomaly_detection_stream`, but regressed the standard three and hidden-context task versus v2.3. |
 | Latest optional mechanism repair | Tier 5.20b passed as a harness from [`controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic`](controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic), but neither 8 LIF / 8 resonant nor 12 LIF / 4 resonant earned promotion. Best candidate was `hybrid_8_lif_8_resonant`, with all-task geomean MSE `0.2852846857844163` versus v2.3 `0.2610804850928049`, two wins, two material regressions, and only one sham-separated task. No core polyp replacement, freeze, or hardware transfer. |
 | Latest minimal-dose mechanism check | Tier 5.20c passed as a harness from [`controlled_test_output/tier5_20c_20260508_minimal_resonant_polyp_diagnostic`](controlled_test_output/tier5_20c_20260508_minimal_resonant_polyp_diagnostic), but 14 LIF / 2 resonant was **not promoted**: all-task geomean MSE `0.2777975100580056` versus v2.3 `0.2610804850928049`, zero task wins, one material regression, and zero sham-separated tasks. |
 | Latest resonant-heavy mechanism check | Tier 5.20d passed as a harness from [`controlled_test_output/tier5_20d_20260508_resonant_heavy_polyp_diagnostic`](controlled_test_output/tier5_20d_20260508_resonant_heavy_polyp_diagnostic), but 4 LIF / 12 resonant was **not promoted**: all-task geomean MSE `0.29289224348599796` versus v2.3 `0.2610804850928049`, three task wins, two material regressions, and two sham-separated tasks. The signal is real enough to record, but not safe enough to integrate. |
 | Latest near-full resonant check | Tier 5.20e passed as a harness from [`controlled_test_output/tier5_20e_20260508_near_full_resonant_polyp_diagnostic`](controlled_test_output/tier5_20e_20260508_near_full_resonant_polyp_diagnostic), but 2 LIF / 14 resonant was **not promoted**: all-task geomean MSE `0.30374770797663714` versus v2.3 `0.2610804850928049`, three task wins, three material regressions, and two sham-separated tasks. This closes the current resonant branch dose sweep; resonant branches remain parked. |
-| Active next gate | Tier 7.7d standardized long-run/failure-localization scoring gate: run the locked 7.7c length sweep and diagnostics to determine whether the 7.7b Mackey-driven signal grows, persists, or collapses and why Lorenz/NARMA10 plus strong ESN/online-linear/ridge baselines still block a broad usefulness claim. |
-| Canonical registry | 126 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
+| Active next gate | Tier 7.7e finite-stream repair/preflight contract: repair or replace the non-finite long-run NARMA10 generator under a predeclared standardization rule before rerunning any long-run scoreboard. |
+| Canonical registry | 127 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
 | Validation suite | 151 pytest tests plus registry, paper-table, and repository-audit generation. |
 
 ## What CRA Implements
@@ -217,7 +218,7 @@ python3 experiments/tier5_external_baselines.py \
 `make validate` currently runs:
 
 - 151 pytest unit tests.
-- Evidence registry generation: 126 canonical bundles, 0 failed criteria.
+- Evidence registry generation: 127 canonical bundles, 0 failed criteria.
 - Paper results table export.
 - Repository audit.
 
@@ -262,7 +263,7 @@ commit used. A placeholder software citation is:
   author       = {Murdock, James V. and CRA Contributors},
   year         = {2026},
   url          = {https://github.com/jamesvmurdockiii/Project-Kianna---CRA_JKS},
-  note         = {126 canonical evidence bundles; bounded SpiNNaker hardware validation}
+  note         = {127 canonical evidence bundles; bounded SpiNNaker hardware validation}
 }
 ```
 

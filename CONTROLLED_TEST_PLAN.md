@@ -11388,14 +11388,26 @@ public usefulness claim, no hardware/native transfer, and no language/AGI/ASI
 claim.
 ```
 
-Next required step:
+Latest long-run/failure-localization scoring result:
 
 ```text
 Tier 7.7d - standardized long-run / failure-localization scoring gate.
-Run the locked 7.7c length sweep without adding mechanisms or retuning, then
-determine whether the 7.7b Mackey-driven signal grows, persists, or collapses
-and why Lorenz/NARMA10 plus strong ESN/online-linear/ridge baselines still
-block a broad usefulness claim.
+Status: COMPLETE / PASS HARNESS, 12/12 criteria.
+Output: controlled_test_output/tier7_7d_20260509_standardized_long_run_failure_scoring_gate/
+Outcome: benchmark_stream_invalid.
+Result: Mackey-Glass improvement persisted across 8000/16000/32000, Lorenz did
+not materially improve, external baselines remained blockers, and required
+NARMA10 became non-finite at 16000 and 32000 under the existing generator.
+Boundary: scoring-blocker evidence only; no complete long-run scoreboard, no
+freeze, no public usefulness claim, no hardware/native transfer, and no AGI/ASI.
+```
+
+Next required step:
+
+```text
+Tier 7.7e - finite-stream repair/preflight contract.
+Repair or replace the non-finite long-run NARMA10 generation path under a
+predeclared standardization rule before rerunning any long-run scoreboard.
 ```
 
 Latest standardized benchmark contract:

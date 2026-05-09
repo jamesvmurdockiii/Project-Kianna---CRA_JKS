@@ -4261,13 +4261,26 @@ Boundary: contract/pre-registration evidence only; not a long-run score, not a
 freeze, not public usefulness, not hardware/native transfer, and not AGI/ASI.
 ```
 
+Latest long-run/failure-localization scoring result:
+
+```text
+Tier 7.7d — COMPLETE / PASS HARNESS, 12/12 criteria
+Outcome: benchmark_stream_invalid
+Output: controlled_test_output/tier7_7d_20260509_standardized_long_run_failure_scoring_gate/
+Result: Mackey-Glass ratios persisted across 8000/16000/32000, Lorenz did not
+materially improve, external baselines still blocked broad usefulness, and the
+required NARMA10 stream became non-finite at 16000 and 32000 with the existing
+generator.
+Boundary: scoring-blocker evidence only; not a complete long-run score, not a
+freeze, not public usefulness, not hardware/native transfer, and not AGI/ASI.
+```
+
 Current next step:
 
 ```text
-Tier 7.7d — standardized long-run / failure-localization scoring gate
-Question: does the 7.7b Mackey-driven signal grow, persist, or disappear under
-the locked longer standardized streams, and why do Lorenz/NARMA10 plus ESN/
-online-linear/ridge baselines still block a broad usefulness claim?
+Tier 7.7e — finite-stream repair/preflight contract
+Question: can the long-run NARMA10 stream be made finite under a predeclared
+standardized rule before rerunning any long-run scoreboard?
 ```
 
 Tier 7.1a predeclared these candidate/future adapter families:

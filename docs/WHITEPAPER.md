@@ -25,7 +25,7 @@ The project contains three integrated layers:
 3. A staged evidence system that records canonical results, failed diagnostics,
    frozen baselines, and claim boundaries.
 
-As of the current registry, CRA has 126 canonical evidence bundles with zero
+As of the current registry, CRA has 127 canonical evidence bundles with zero
 missing expected artifacts and zero failed criteria in canonical entries. The
 software program has validated negative controls, positive learning controls,
 architecture ablations, external-baseline comparisons, delayed-credit repairs,
@@ -54,7 +54,11 @@ NARMA10 remained flat/slightly worse, and ESN/online-linear/ridge baselines stil
 beat v2.5 on aggregate. Tier 7.7c then passed as a contract-only
 long-run/failure-localization gate, locking required 8000/16000/32000-step
 standardized streams, optional 50000-step diagnostics, shams, artifacts, and
-failure classes before any longer scoring.
+failure classes before any longer scoring. Tier 7.7d then ran the scoring
+harness and produced a blocker classification: Mackey-Glass persisted, Lorenz
+remained weak, external baselines remained blockers, and the required long-run
+NARMA10 stream became non-finite at 16000 and 32000 under the existing
+generator.
 
 The hardware program has progressed from PyNN/SpiNNaker capsule execution to a
 custom native runtime. The native runtime has passed bounded SpiNNaker hardware

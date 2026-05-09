@@ -1304,10 +1304,16 @@ Tier 7.7c — COMPLETE. Standardized long-run/failure-localization
   8000/16000/32000, optional 50000, same seeds/tasks/splits, explicit shams,
   expected artifacts, and failure classes before long-run scoring.
 
-Tier 7.7d — CURRENT ACTIVE STEP. Standardized long-run/failure-localization
-  scoring gate. Run the 7.7c contract without adding mechanisms or retuning,
-  then determine whether the Mackey-Glass-driven 7.7b signal grows, persists,
-  or collapses and why Lorenz/NARMA10 plus external baselines remain blockers.
+Tier 7.7d — COMPLETE. Standardized long-run/failure-localization
+  scoring gate. Status: PASS, 12/12 criteria. Outcome
+  `benchmark_stream_invalid`: Mackey-Glass persisted and Lorenz stayed weak,
+  but the required NARMA10 long-run stream became non-finite at 16000 and
+  32000 under the existing generator, so no complete long-run scoreboard is
+  citable.
+
+Tier 7.7e — CURRENT ACTIVE STEP. Finite-stream repair/preflight contract.
+  Repair or replace the non-finite long-run NARMA10 generation path under a
+  predeclared standardization rule before rerunning any long-run scoreboard.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware

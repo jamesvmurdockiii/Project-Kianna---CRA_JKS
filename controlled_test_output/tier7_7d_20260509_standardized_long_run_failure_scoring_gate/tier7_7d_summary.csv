@@ -1,0 +1,13 @@
+name,value,rule,passed,note
+Tier 7.7c contract exists,/Users/james/JKS:CRA/controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract/tier7_7c_results.json,exists and status pass,True,
+Tier 7.7c scoring authorization,True,true,True,
+required lengths present,"[8000, 16000, 32000]",contains 8000/16000/32000,True,
+locked tasks,"mackey_glass,lorenz,narma10",Mackey/Lorenz/NARMA,True,
+locked seeds,"42,43,44","42,43,44",True,
+locked horizon,8,8,True,
+all length scoreboards produced,3,>= required length count,True,
+finite-stream audits captured,"['pass', 'fail', 'fail']",all pass or benchmark_stream_invalid,True,
+failure decomposition produced,5,>= 5,True,
+classification produced,benchmark_stream_invalid,non-empty,True,
+no automatic baseline freeze,False,false,True,
+hardware/native transfer blocked,False,false,True,

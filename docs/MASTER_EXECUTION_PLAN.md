@@ -1438,36 +1438,43 @@ ability.
     evidence only: no score, freeze, public-usefulness claim, or hardware/native
     transfer.
 
-115. **CURRENT ACTIVE STEP** - Tier 7.7d standardized long-run/failure
-    localization scoring gate:
-    run the locked 7.7c length sweep and diagnostics without adding mechanisms
-    or retuning, then determine whether the Tier 7.7b Mackey-Glass-driven signal
-    grows, persists, or collapses and why Lorenz/NARMA10 plus strong external
-    baselines remain blockers.
+115. **COMPLETE** - Tier 7.7d standardized long-run/failure localization
+    scoring gate:
+    passed 12/12 at
+    `controlled_test_output/tier7_7d_20260509_standardized_long_run_failure_scoring_gate/`.
+    Outcome `benchmark_stream_invalid`: Mackey-Glass ratios persisted across
+    8000/16000/32000, Lorenz did not materially improve, external baselines
+    remained blockers, and required NARMA10 became non-finite at 16000 and
+    32000. This blocks any complete long-run scoreboard claim.
 
-116. Mechanism iteration loop: add exactly one planned general mechanism at a
+116. **CURRENT ACTIVE STEP** - Tier 7.7e finite-stream repair/preflight
+    contract:
+    repair or replace the non-finite long-run NARMA10 generation path under a
+    predeclared standardization rule before rerunning any long-run scoreboard.
+
+117. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
     stop the broad usefulness track and narrow the paper.
 
-117. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+118. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines. Start only after the standardized scoreboard or failure diagnosis
     identifies a winning regime, a real failure mode, or a mechanism needing
     external validation.
 
-118. Tier 7.2 held-out task challenge: define held-out families before running;
+119. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout. Include at least one synthetic holdout and one
     real-ish adapter holdout if Tier 7.1 is active.
 
-119. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+120. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines. Candidate domains include
     streaming anomaly detection, predictive-maintenance sensor streams, human
     activity streams, event prediction, ECG/biosignal streams, and finance as
     one domain only rather than the whole proof.
 
-120. Tier 7.4 policy/action selection held-out scoring: the current held-out
+121. Tier 7.4 policy/action selection held-out scoring: the current held-out
     chain is complete through 7.4h. No further NAB/C-MAPSS policy tuning is
     authorized from this chain; only the narrow C-MAPSS action-cost signal is
     preserved, with no broad action/policy claim, freeze, or hardware/native
@@ -1676,20 +1683,19 @@ ASI.
 The next concrete action is now:
 
 ```text
-Tier 7.7d - Standardized Long-Run / Failure-Localization Scoring Gate
+Tier 7.7e - Finite-Stream Repair / Preflight Contract
 
-Question: Does the Tier 7.7b Mackey-Glass-driven signal grow, persist, or
-collapse under the locked longer standardized streams, and why do Lorenz,
-NARMA10, and strong ESN/online-linear/ridge baselines still block broad
-usefulness?
+Question: Can the long-run NARMA10 stream be made finite under a predeclared
+standardized rule before rerunning any long-run scoreboard?
 
-First move: implement/run the scoring gate against the frozen Tier 7.7c
-contract without changing tasks, lengths, baselines, splits, shams, leakage
-rules, pass/fail criteria, or claim boundaries.
+First move: define the finite-stream repair/preflight contract, including the
+allowed generator repair, finite checks at 8000/16000/32000, same-seed fairness,
+and a rule that the repaired benchmark cannot be used to inflate prior 7.7b
+claims.
 
-Boundary: scoring evidence only; claim strength is determined by the locked
-7.7c pass/fail classes. No hardware/native transfer or new baseline freeze
-unless a later promotion/regression gate earns it.
+Boundary: contract/preflight evidence only. No new scoring, no baseline freeze,
+no hardware/native transfer, and no broad usefulness claim until a repaired
+long-run scoring gate passes.
 ```
 
 Recent closeout:

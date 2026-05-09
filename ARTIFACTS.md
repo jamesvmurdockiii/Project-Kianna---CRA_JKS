@@ -147,7 +147,7 @@ flag, but the pass is accepted because `hardware_run_attempted=True`, hardware
 was nonzero.
 
 Current registry alignment status:
-126 canonical evidence bundles, 0 missing expected artifacts, and 0 failed
+127 canonical evidence bundles, 0 missing expected artifacts, and 0 failed
 criteria in canonical entries. The v0.1 and v0.2 frozen baselines remain locked at their
 recorded historical counts, v0.3 freezes the post-Tier-5.3 diagnostic baseline,
 v0.4 freezes the post-Tier-5.4 delayed-credit confirmation baseline, v0.5
@@ -1431,6 +1431,26 @@ Boundary: contract/pre-registration evidence only. It locks the required
 same tasks/seeds/splits, model matrix, shams, expected artifacts, and failure
 classes before Tier 7.7d scoring. It is not a long-run score, not a freeze, not
 public usefulness proof, not hardware/native transfer, and not AGI/ASI evidence.
+
+Latest Tier 7.7d standardized long-run/failure-localization scoring artifacts:
+
+- `controlled_test_output/tier7_7d_20260509_standardized_long_run_failure_scoring_gate/`
+- `tier7_7d_results.json`
+- `tier7_7d_report.md`
+- `tier7_7d_summary.csv`
+- `tier7_7d_length_scoreboard.csv`
+- `tier7_7d_length_aggregate.csv`
+- `tier7_7d_failure_decomposition.csv`
+- `tier7_7d_sham_controls.csv`
+- `tier7_7d_leakage_audit.json`
+- `tier7_7d_claim_boundary.md`
+
+Boundary: scoring-blocker evidence only. The harness classified the result as
+`benchmark_stream_invalid`: Mackey-Glass persisted across 8000/16000/32000,
+Lorenz remained weak, external baselines remained blockers, and NARMA10 became
+non-finite at 16000 and 32000 under the existing generator. This is not a
+complete long-run score, not a baseline freeze, not public usefulness proof, not
+hardware/native transfer, and not AGI/ASI evidence.
 
 Latest Tier 5.9c macro-eligibility v2.1 recheck:
 

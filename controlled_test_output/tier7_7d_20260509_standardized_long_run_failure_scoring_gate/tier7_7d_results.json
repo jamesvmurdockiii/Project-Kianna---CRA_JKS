@@ -1,0 +1,983 @@
+{
+  "claim_boundary": "Tier 7.7d scores the Tier 7.7c locked long-run/failure-localization contract. It may localize whether the 7.7b signal persists, grows, or collapses, but it does not freeze a new baseline, does not authorize hardware/native transfer, does not retune benchmarks after seeing results, and does not claim language, broad reasoning, AGI, or ASI.",
+  "classification": {
+    "aggregate_material_long_lengths": true,
+    "aggregate_persists": true,
+    "claim_allowed": {
+      "baseline_freeze": false,
+      "hardware_or_native_transfer": false,
+      "localized_signal": false,
+      "long_run_confirmed": false,
+      "public_usefulness_upgrade": false
+    },
+    "external_gap_persists": true,
+    "invalid_task_count": 2,
+    "lorenz_improves_any_length": false,
+    "mackey_persists": true,
+    "narma10_improves_any_length": false,
+    "nonclaims": [
+      "not a new baseline freeze",
+      "not hardware/native evidence",
+      "not public-usefulness superiority over ESN/ridge/online baselines unless the table shows it",
+      "not a complete long-run scoreboard if any required benchmark stream is non-finite",
+      "not a license to tune benchmarks after seeing long-run results",
+      "not language, AGI, or ASI evidence"
+    ],
+    "outcome": "benchmark_stream_invalid",
+    "recommendation": "Do not cite a long-run scoreboard; repair/preflight the finite NARMA10 long-run stream before scoring.",
+    "required_aggregate_ratios": [
+      1.293244871484538,
+      1.286567342150935,
+      1.3173835064398884
+    ],
+    "required_lorenz_ratios": [
+      0.9757367616924804,
+      0.9374655074272541,
+      1.045581301598168
+    ],
+    "required_mackey_ratios": [
+      2.174136418713504,
+      2.1789436619366334,
+      2.2014559852150453
+    ],
+    "required_narma10_ratios": [
+      0.9988366153400716,
+      null,
+      null
+    ],
+    "sham_specific": true
+  },
+  "contract": {
+    "diagnostic_questions": [
+      {
+        "failure_interpretation": "short-run delayed scalar recurrence benefit only",
+        "primary_metrics": "per-seed test_mse, tail_mse, v2.3/v2.5 ratio by length",
+        "question": "Does the Mackey-Glass improvement persist or grow as the stream length increases?",
+        "question_id": "mackey_signal_persistence"
+      },
+      {
+        "failure_interpretation": "requires richer state reconstruction or multichannel/state-space interface before mechanism layering",
+        "primary_metrics": "Lorenz v2.5-vs-v2.3 delta, ESN gap, state-disabled and prediction-disabled controls",
+        "question": "Is Lorenz flat because the current one-dimensional causal interface lacks enough state reconstruction?",
+        "question_id": "lorenz_state_reconstruction_gap"
+      },
+      {
+        "failure_interpretation": "requires targeted memory-depth/readout repair rather than more high-level planning mechanics",
+        "primary_metrics": "NARMA10 v2.5-vs-v2.3 delta, lag-depth diagnostics, memory/prediction-disabled controls",
+        "question": "Is NARMA10 flat because the current memory/readout path lacks sufficient nonlinear memory depth?",
+        "question_id": "narma_memory_depth_gap"
+      },
+      {
+        "failure_interpretation": "CRA remains below standard sequence baselines on this suite; broad usefulness claim stays blocked",
+        "primary_metrics": "rank, geomean_mse, train_mse/test_mse gap, tail_mse, parameter/disclosed feature budget",
+        "question": "Do ESN/online-linear/ridge baselines win because of richer state, stronger readout, or simple linear fit advantages?",
+        "question_id": "external_baseline_gap"
+      },
+      {
+        "failure_interpretation": "apparent long-run improvement is not causally specific enough for promotion",
+        "primary_metrics": "target-shuffle margin, time-shuffle margin, planning-disabled margin, state-disabled margin",
+        "question": "Do target/time/state/planning shams stay separated at longer lengths?",
+        "question_id": "sham_specificity"
+      }
+    ],
+    "expected_artifacts": [
+      {
+        "artifact": "tier7_7d_results.json",
+        "purpose": "long-run scoring result and classification"
+      },
+      {
+        "artifact": "tier7_7d_summary.csv",
+        "purpose": "criteria summary"
+      },
+      {
+        "artifact": "tier7_7d_report.md",
+        "purpose": "human-readable result"
+      },
+      {
+        "artifact": "tier7_7d_length_scoreboard.csv",
+        "purpose": "per-length/per-task/per-model metrics"
+      },
+      {
+        "artifact": "tier7_7d_length_aggregate.csv",
+        "purpose": "aggregate geomean/rank table by length"
+      },
+      {
+        "artifact": "tier7_7d_failure_decomposition.csv",
+        "purpose": "diagnostic answer table"
+      },
+      {
+        "artifact": "tier7_7d_sham_controls.csv",
+        "purpose": "long-run sham/ablation separation"
+      },
+      {
+        "artifact": "tier7_7d_leakage_audit.json",
+        "purpose": "finite-stream and causal-order audit"
+      },
+      {
+        "artifact": "tier7_7d_claim_boundary.md",
+        "purpose": "allowed claims and nonclaims"
+      },
+      {
+        "artifact": "tier7_7d_latest_manifest.json",
+        "purpose": "registry pointer if promoted canonical"
+      }
+    ],
+    "horizon": 8,
+    "hypothesis": "If v2.5 captures useful general temporal structure, its aggregate advantage versus v2.3 should persist or grow at 16000 and 32000 steps without sham matching, and failure decomposition should show which mechanisms help which task family.",
+    "leakage_rules": [
+      "same causal observed stream only; no future target or test-label access",
+      "prediction emitted before online update",
+      "normalization fit on train prefix only",
+      "same seeds/tasks/splits for candidate and baselines",
+      "optional 50000-step run cannot replace required 8000/16000/32000 lengths",
+      "do not add or tune mechanisms inside the scoring gate"
+    ],
+    "length_matrix": [
+      {
+        "claim_use": "reproduce Tier 7.7b locked score inside the long-run scoring output",
+        "length": 8000,
+        "required": true,
+        "role": "anchor"
+      },
+      {
+        "claim_use": "test whether v2.5 signal persists after twice the locked 7.7b exposure",
+        "length": 16000,
+        "required": true,
+        "role": "long_run_primary"
+      },
+      {
+        "claim_use": "test whether v2.5 signal grows, plateaus, or collapses over longer exposure",
+        "length": 32000,
+        "required": true,
+        "role": "long_run_primary"
+      },
+      {
+        "claim_use": "optional stress only if finite/runtime budget permits; cannot replace required lengths",
+        "length": 50000,
+        "required": false,
+        "role": "optional_runtime_diagnostic"
+      }
+    ],
+    "metrics": [
+      "test_mse",
+      "test_nmse",
+      "tail_mse",
+      "test_corr",
+      "all_three_geomean_mse",
+      "paired_seed_delta",
+      "bootstrap_or_paired_ci",
+      "rank_vs_external_baselines",
+      "train_mse_vs_test_mse_gap",
+      "runtime_seconds"
+    ],
+    "models": [
+      {
+        "model": "cra_v2_5_scoreboard_candidate",
+        "required": true,
+        "role": "candidate"
+      },
+      {
+        "model": "cra_v2_3_generic_recurrent_reference",
+        "required": true,
+        "role": "previous CRA reference"
+      },
+      {
+        "model": "cra_v2_4_policy_reference_no_planning",
+        "required": true,
+        "role": "policy/action previous reference"
+      },
+      {
+        "model": "persistence",
+        "required": true,
+        "role": "simple causal baseline"
+      },
+      {
+        "model": "online_lms",
+        "required": true,
+        "role": "online linear baseline"
+      },
+      {
+        "model": "ridge_lag",
+        "required": true,
+        "role": "train-prefix linear lag baseline"
+      },
+      {
+        "model": "lag_only_online_lms_control",
+        "required": true,
+        "role": "same causal lag budget control"
+      },
+      {
+        "model": "fixed_random_reservoir_online_control",
+        "required": true,
+        "role": "random reservoir control"
+      },
+      {
+        "model": "fixed_esn_train_prefix_ridge_baseline",
+        "required": true,
+        "role": "strong reservoir baseline"
+      },
+      {
+        "model": "small_gru",
+        "required": false,
+        "role": "optional reviewer-defense baseline if dependency/runtime budget is locked"
+      }
+    ],
+    "next_gate": "Tier 7.7d - Standardized Long-Run / Failure-Localization Scoring Gate",
+    "nonclaims": [
+      "not a new score by itself",
+      "not a new baseline freeze",
+      "not hardware/native evidence",
+      "not a mechanism implementation",
+      "not external-baseline superiority unless 7.7d shows it",
+      "not language, broad reasoning, AGI, or ASI evidence"
+    ],
+    "null_hypothesis": "The 7.7b gain is a Mackey-Glass-local short-run effect; Lorenz/NARMA10 and strong standard baselines remain better, or shams explain the apparent gain.",
+    "pass_fail_criteria": [
+      {
+        "claim_allowed": "long-run standardized progress versus v2.3; still not external-baseline superiority unless baselines are beaten",
+        "kind": "long_run_confirmed",
+        "rule": "v2.5 improves v2.3 aggregate by >=10% at both 16000 and 32000 with paired support, while at least 2/3 tasks or tail metrics improve and shams stay separated"
+      },
+      {
+        "claim_allowed": "localized delayed scalar recurrence signal only",
+        "kind": "mackey_only_localized",
+        "rule": "Mackey-Glass remains improved but Lorenz/NARMA10 stay flat or worse"
+      },
+      {
+        "claim_allowed": "progress versus older CRA only; no broad usefulness or baseline-competitive claim",
+        "kind": "baseline_gap_persists",
+        "rule": "v2.5 improves v2.3 but ESN/online-linear/ridge remain materially better on aggregate"
+      },
+      {
+        "claim_allowed": "no long-run usefulness upgrade; route to measured failure repair",
+        "kind": "signal_collapses",
+        "rule": "7.7b aggregate improvement disappears at 16000 or 32000, or shams match the candidate"
+      },
+      {
+        "claim_allowed": "narrow paper to architecture/evidence/hardware substrate unless a future predeclared mechanism changes the scoreboard",
+        "kind": "stop_or_narrow",
+        "rule": "v2.5 fails to improve v2.3 at longer lengths and standard baselines dominate all required lengths"
+      }
+    ],
+    "question": "Does the Tier 7.7b v2.5 standardized progress signal persist under longer streams, and what explains the Lorenz/NARMA10 plus external-baseline gap?",
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "shams": [
+      {
+        "purpose": "break input-target relation",
+        "sham": "target_shuffle_control"
+      },
+      {
+        "purpose": "destroy temporal order",
+        "sham": "time_shuffle_control"
+      },
+      {
+        "purpose": "remove v2.5 planning/subgoal meta-state",
+        "sham": "planning_disabled_v2_3_equivalent"
+      },
+      {
+        "purpose": "remove recurrent/fading state",
+        "sham": "state_disabled"
+      },
+      {
+        "purpose": "remove slow-memory bridge columns",
+        "sham": "memory_disabled"
+      },
+      {
+        "purpose": "remove predictive extrapolation columns",
+        "sham": "prediction_disabled"
+      },
+      {
+        "purpose": "remove reliability/uncertainty columns",
+        "sham": "self_evaluation_disabled"
+      },
+      {
+        "purpose": "remove route/composition interactions",
+        "sham": "composition_routing_disabled"
+      },
+      {
+        "purpose": "audit causal ordering and future-label absence",
+        "sham": "future_label_leak_guard"
+      }
+    ],
+    "split": "chronological train 65%, test 35%, tail = final quartile of test suffix",
+    "tasks": [
+      "mackey_glass",
+      "lorenz",
+      "narma10"
+    ]
+  },
+  "contract_results": "/Users/james/JKS:CRA/controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract/tier7_7c_results.json",
+  "contract_revision": "tier7_7c_standardized_long_run_failure_contract_20260509_0001",
+  "contract_status": "pass",
+  "criteria": [
+    {
+      "name": "Tier 7.7c contract exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists and status pass",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract/tier7_7c_results.json"
+    },
+    {
+      "name": "Tier 7.7c scoring authorization",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "name": "required lengths present",
+      "note": "",
+      "passed": true,
+      "rule": "contains 8000/16000/32000",
+      "value": [
+        8000,
+        16000,
+        32000
+      ]
+    },
+    {
+      "name": "locked tasks",
+      "note": "",
+      "passed": true,
+      "rule": "Mackey/Lorenz/NARMA",
+      "value": "mackey_glass,lorenz,narma10"
+    },
+    {
+      "name": "locked seeds",
+      "note": "",
+      "passed": true,
+      "rule": "42,43,44",
+      "value": "42,43,44"
+    },
+    {
+      "name": "locked horizon",
+      "note": "",
+      "passed": true,
+      "rule": "8",
+      "value": 8
+    },
+    {
+      "name": "all length scoreboards produced",
+      "note": "",
+      "passed": true,
+      "rule": ">= required length count",
+      "value": 3
+    },
+    {
+      "name": "finite-stream audits captured",
+      "note": "",
+      "passed": true,
+      "rule": "all pass or benchmark_stream_invalid",
+      "value": [
+        "pass",
+        "fail",
+        "fail"
+      ]
+    },
+    {
+      "name": "failure decomposition produced",
+      "note": "",
+      "passed": true,
+      "rule": ">= 5",
+      "value": 5
+    },
+    {
+      "name": "classification produced",
+      "note": "",
+      "passed": true,
+      "rule": "non-empty",
+      "value": "benchmark_stream_invalid"
+    },
+    {
+      "name": "no automatic baseline freeze",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "name": "hardware/native transfer blocked",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 12,
+  "criteria_total": 12,
+  "failure_decomposition": [
+    {
+      "answer": "persists",
+      "evidence": "8000:2.174136418713504;16000:2.1789436619366334;32000:2.2014559852150453",
+      "interpretation": "Mackey-Glass is the scalar delayed-recurrence signal first seen in 7.7b.",
+      "question_id": "mackey_signal_persistence"
+    },
+    {
+      "answer": "flat_or_negative",
+      "evidence": "8000:0.9757367616924804;16000:0.9374655074272541;32000:1.045581301598168",
+      "interpretation": "Flat Lorenz ratios indicate the current scalar interface/state reconstruction remains insufficient.",
+      "question_id": "lorenz_state_reconstruction_gap"
+    },
+    {
+      "answer": "invalid_nonfinite_stream",
+      "evidence": "8000:0.9988366153400716;16000:None;32000:None",
+      "interpretation": "Missing NARMA10 ratios at required lengths are benchmark-generator failures, not CRA scores.",
+      "question_id": "narma_memory_depth_gap"
+    },
+    {
+      "answer": "persists",
+      "evidence": "8000:fixed_esn_train_prefix_ridge_baseline=0.01956749387082184;16000:fixed_esn_train_prefix_ridge_baseline=0.01698223410990479;32000:fixed_esn_train_prefix_ridge_baseline=0.014061445583241032",
+      "interpretation": "If ESN/ridge/online baselines still win, broad usefulness remains blocked.",
+      "question_id": "external_baseline_gap"
+    },
+    {
+      "answer": "separated",
+      "evidence": "8000:target=14.145808812963091,time=14.206095620975516;16000:target=17.675414851130338,time=17.031595919037027;32000:target=18.322812430276535,time=17.967710931067813",
+      "interpretation": "Shams must remain worse than v2.5 for any positive long-run claim.",
+      "question_id": "sham_specificity"
+    }
+  ],
+  "fairness_contract": {
+    "baseline_freeze_authorized_by_runner": false,
+    "candidate": "cra_v2_5_scoreboard_candidate",
+    "contract_source": "/Users/james/JKS:CRA/controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract/tier7_7c_long_run_contract.json",
+    "external_baselines": [
+      "persistence",
+      "online_lms",
+      "ridge_lag",
+      "lag_only_online_lms_control",
+      "fixed_random_reservoir_online_control",
+      "fixed_esn_train_prefix_ridge_baseline"
+    ],
+    "hardware_transfer_authorized": false,
+    "horizon": 8,
+    "length": 8000,
+    "length_rule": "7.7d may score only lengths locked by Tier 7.7c.",
+    "lengths": [
+      8000,
+      16000,
+      32000
+    ],
+    "long_run_contract": "/Users/james/JKS:CRA/controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract/tier7_7c_results.json",
+    "no_test_tuning": true,
+    "omitted_contract_baselines": [
+      {
+        "baseline": "small_gru",
+        "reason": "optional in 7.7a if runtime/dependency budget allows; no locked implementation exists in prior standard-scoreboard harness"
+      }
+    ],
+    "primary_scoreboard": "Mackey-Glass + Lorenz + NARMA10",
+    "reference": "cra_v2_3_generic_recurrent_reference",
+    "secondary_public_confirmation": {
+      "cmapss_source": "/Users/james/JKS:CRA/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_results.json",
+      "nab_source": "/Users/james/JKS:CRA/controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision/tier7_1m_results.json",
+      "rule": "secondary rows are reported only; they cannot rescue failed standardized core"
+    },
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "shams": [
+      "target_shuffle_control",
+      "time_shuffle_control",
+      "lag_only_online_lms_control",
+      "state_disabled",
+      "memory_disabled",
+      "replay_disabled_not_applicable_standardized_core",
+      "prediction_disabled",
+      "self_evaluation_disabled",
+      "composition_routing_disabled",
+      "policy_action_disabled",
+      "planning_disabled_v2_3_equivalent",
+      "future_label_leak_guard"
+    ],
+    "split": "chronological train 65%, test 35%",
+    "tasks": [
+      "mackey_glass",
+      "lorenz",
+      "narma10"
+    ]
+  },
+  "generated_at_utc": "2026-05-09T14:02:25+00:00",
+  "leakage_audit": {
+    "by_length": [
+      {
+        "guards": [
+          {
+            "guard": "finite_stream_precheck",
+            "passed": true
+          },
+          {
+            "guard": "chronological_65_35_split",
+            "passed": true
+          },
+          {
+            "guard": "train_prefix_normalization",
+            "passed": true
+          },
+          {
+            "guard": "prediction_before_online_update",
+            "passed": true
+          },
+          {
+            "guard": "candidate_meta_features_use_only_observed_history",
+            "passed": true
+          },
+          {
+            "guard": "target_shuffle_control_present",
+            "passed": true
+          },
+          {
+            "guard": "time_shuffle_control_present",
+            "passed": true
+          },
+          {
+            "guard": "secondary_adapters_cannot_rescue_core_failure",
+            "passed": true
+          },
+          {
+            "guard": "small_gru_omitted_with_budget_note",
+            "passed": true
+          }
+        ],
+        "horizon": 8,
+        "invalid_task_count": 0,
+        "length": 8000,
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "small_gru_status": "omitted: no locked local dependency/runtime budget in prior Tier 7.0 scorer; ESN/ridge/lag/persistence/online LMS retained",
+        "status": "pass",
+        "tasks": [
+          "mackey_glass",
+          "lorenz",
+          "narma10"
+        ]
+      },
+      {
+        "guards": [
+          {
+            "guard": "finite_stream_precheck",
+            "passed": false
+          },
+          {
+            "guard": "chronological_65_35_split",
+            "passed": true
+          },
+          {
+            "guard": "train_prefix_normalization",
+            "passed": true
+          },
+          {
+            "guard": "prediction_before_online_update",
+            "passed": true
+          },
+          {
+            "guard": "candidate_meta_features_use_only_observed_history",
+            "passed": true
+          },
+          {
+            "guard": "target_shuffle_control_present",
+            "passed": true
+          },
+          {
+            "guard": "time_shuffle_control_present",
+            "passed": true
+          },
+          {
+            "guard": "secondary_adapters_cannot_rescue_core_failure",
+            "passed": true
+          },
+          {
+            "guard": "small_gru_omitted_with_budget_note",
+            "passed": true
+          }
+        ],
+        "horizon": 8,
+        "invalid_task_count": 1,
+        "length": 16000,
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "small_gru_status": "omitted: no locked local dependency/runtime budget in prior Tier 7.0 scorer; ESN/ridge/lag/persistence/online LMS retained",
+        "status": "fail",
+        "tasks": [
+          "mackey_glass",
+          "lorenz",
+          "narma10"
+        ]
+      },
+      {
+        "guards": [
+          {
+            "guard": "finite_stream_precheck",
+            "passed": false
+          },
+          {
+            "guard": "chronological_65_35_split",
+            "passed": true
+          },
+          {
+            "guard": "train_prefix_normalization",
+            "passed": true
+          },
+          {
+            "guard": "prediction_before_online_update",
+            "passed": true
+          },
+          {
+            "guard": "candidate_meta_features_use_only_observed_history",
+            "passed": true
+          },
+          {
+            "guard": "target_shuffle_control_present",
+            "passed": true
+          },
+          {
+            "guard": "time_shuffle_control_present",
+            "passed": true
+          },
+          {
+            "guard": "secondary_adapters_cannot_rescue_core_failure",
+            "passed": true
+          },
+          {
+            "guard": "small_gru_omitted_with_budget_note",
+            "passed": true
+          }
+        ],
+        "horizon": 8,
+        "invalid_task_count": 1,
+        "length": 32000,
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "small_gru_status": "omitted: no locked local dependency/runtime budget in prior Tier 7.0 scorer; ESN/ridge/lag/persistence/online LMS retained",
+        "status": "fail",
+        "tasks": [
+          "mackey_glass",
+          "lorenz",
+          "narma10"
+        ]
+      }
+    ],
+    "status": "fail"
+  },
+  "length_summary": [
+    {
+      "best_external_geomean_mse": 0.01956749387082184,
+      "best_external_model": "fixed_esn_train_prefix_ridge_baseline",
+      "leakage_status": "pass",
+      "length": 8000,
+      "lorenz_v2_3_divided_by_v2_5": 0.9757367616924804,
+      "mackey_v2_3_divided_by_v2_5": 2.174136418713504,
+      "narma10_v2_3_divided_by_v2_5": 0.9988366153400716,
+      "outcome": "standardized_progress_pass",
+      "paired_ci_high": 0.024408343990874895,
+      "paired_ci_low": 0.01979481221807447,
+      "runtime_seconds": 12.827898667,
+      "shams_block_promotion": false,
+      "status": "pass",
+      "target_shuffle_margin": 14.145808812963091,
+      "task_wins_vs_v2_3": 1,
+      "time_shuffle_margin": 14.206095620975516,
+      "v2_3_divided_by_v2_5": 1.293244871484538,
+      "v2_3_geomean_mse": 0.09510713419835835,
+      "v2_5_beats_best_external": false,
+      "v2_5_geomean_mse": 0.07354147408230836
+    },
+    {
+      "best_external_geomean_mse": 0.01698223410990479,
+      "best_external_model": "fixed_esn_train_prefix_ridge_baseline",
+      "leakage_status": "fail",
+      "length": 16000,
+      "lorenz_v2_3_divided_by_v2_5": 0.9374655074272541,
+      "mackey_v2_3_divided_by_v2_5": 2.1789436619366334,
+      "narma10_v2_3_divided_by_v2_5": null,
+      "outcome": "standardized_progress_pass",
+      "paired_ci_high": 0.023822726484508637,
+      "paired_ci_low": 0.011373506446657584,
+      "runtime_seconds": 25.091460541000004,
+      "shams_block_promotion": false,
+      "status": "pass",
+      "target_shuffle_margin": 17.675414851130338,
+      "task_wins_vs_v2_3": 1,
+      "time_shuffle_margin": 17.031595919037027,
+      "v2_3_divided_by_v2_5": 1.286567342150935,
+      "v2_3_geomean_mse": 0.07755622154747024,
+      "v2_5_beats_best_external": false,
+      "v2_5_geomean_mse": 0.0602815095693387
+    },
+    {
+      "best_external_geomean_mse": 0.014061445583241032,
+      "best_external_model": "fixed_esn_train_prefix_ridge_baseline",
+      "leakage_status": "fail",
+      "length": 32000,
+      "lorenz_v2_3_divided_by_v2_5": 1.045581301598168,
+      "mackey_v2_3_divided_by_v2_5": 2.2014559852150453,
+      "narma10_v2_3_divided_by_v2_5": null,
+      "outcome": "standardized_progress_pass",
+      "paired_ci_high": 0.02022922935768344,
+      "paired_ci_low": 0.015257609329588466,
+      "runtime_seconds": 47.651687540999994,
+      "shams_block_promotion": false,
+      "status": "pass",
+      "target_shuffle_margin": 18.322812430276535,
+      "task_wins_vs_v2_3": 2,
+      "time_shuffle_margin": 17.967710931067813,
+      "v2_3_divided_by_v2_5": 1.3173835064398884,
+      "v2_3_geomean_mse": 0.07346274285537276,
+      "v2_5_beats_best_external": false,
+      "v2_5_geomean_mse": 0.05576412828630235
+    }
+  ],
+  "lengths": [
+    8000,
+    16000,
+    32000
+  ],
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7d_20260509_standardized_long_run_failure_scoring_gate",
+  "runner_revision": "tier7_7d_standardized_long_run_failure_scoring_gate_20260509_0001",
+  "runtime_seconds": 85.846695833,
+  "secondary_confirmation": [
+    {
+      "family": "cmapss_fd001_maintenance_utility",
+      "note": "Secondary support only; cannot rescue failed Mackey/Lorenz/NARMA core.",
+      "source": "/Users/james/JKS:CRA/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_results.json",
+      "status": "supportive_prior_v2_4_policy_evidence",
+      "supports_strong_pass_secondary_clause": true
+    },
+    {
+      "family": "nab_heldout_alarm_action_cost",
+      "note": "Prior NAB closeout is preserved; no same-subset retuning in 7.7b.",
+      "source": "/Users/james/JKS:CRA/controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision/tier7_1m_results.json",
+      "status": "nab_claim_narrowed_return_to_general_mechanisms",
+      "supports_strong_pass_secondary_clause": false
+    }
+  ],
+  "sham_controls": [
+    {
+      "candidate_separates": true,
+      "geomean_mse": 0.09510713419835835,
+      "length": 8000,
+      "margin_sham_divided_by_v2_5": 1.293244871484538,
+      "model": "planning_disabled_v2_3_equivalent"
+    },
+    {
+      "candidate_separates": false,
+      "geomean_mse": 0.07317257418238983,
+      "length": 8000,
+      "margin_sham_divided_by_v2_5": 0.994983784258857,
+      "model": "policy_action_disabled"
+    },
+    {
+      "candidate_separates": true,
+      "geomean_mse": 0.26391825952054204,
+      "length": 8000,
+      "margin_sham_divided_by_v2_5": 3.5886996122101396,
+      "model": "state_disabled"
+    },
+    {
+      "candidate_separates": false,
+      "geomean_mse": 0.07292609252948286,
+      "length": 8000,
+      "margin_sham_divided_by_v2_5": 0.9916321836010961,
+      "model": "memory_disabled"
+    },
+    {
+      "candidate_separates": false,
+      "geomean_mse": 0.0732949646270343,
+      "length": 8000,
+      "margin_sham_divided_by_v2_5": 0.9966480212920649,
+      "model": "replay_disabled_not_applicable_standardized_core"
+    },
+    {
+      "candidate_separates": false,
+      "geomean_mse": 0.07240066028452198,
+      "length": 8000,
+      "margin_sham_divided_by_v2_5": 0.9844874771409997,
+      "model": "prediction_disabled"
+    },
+    {
+      "candidate_separates": true,
+      "geomean_mse": 0.07996408321785266,
+      "length": 8000,
+      "margin_sham_divided_by_v2_5": 1.087333157455561,
+      "model": "self_evaluation_disabled"
+    },
+    {
+      "candidate_separates": true,
+      "geomean_mse": 0.07824816615974135,
+      "length": 8000,
+      "margin_sham_divided_by_v2_5": 1.0640005131276702,
+      "model": "composition_routing_disabled"
+    },
+    {
+      "candidate_separates": true,
+      "geomean_mse": 1.0403036321918144,
+      "length": 8000,
+      "margin_sham_divided_by_v2_5": 14.145808812963091,
+      "model": "target_shuffle_control"
+    },
+    {
+      "candidate_separates": true,
+      "geomean_mse": 1.0447372129207653,
+      "length": 8000,
+      "margin_sham_divided_by_v2_5": 14.206095620975516,
+      "model": "time_shuffle_control"
+    },
+    {
+      "candidate_separates": true,
+      "geomean_mse": 0.07755622154747024,
+      "length": 16000,
+      "margin_sham_divided_by_v2_5": 1.286567342150935,
+      "model": "planning_disabled_v2_3_equivalent"
+    },
+    {
+      "candidate_separates": false,
+      "geomean_mse": 0.06005627193336102,
+      "length": 16000,
+      "margin_sham_divided_by_v2_5": 0.9962635700799994,
+      "model": "policy_action_disabled"
+    },
+    {
+      "candidate_separates": true,
+      "geomean_mse": 0.24358360114819963,
+      "length": 16000,
+      "margin_sham_divided_by_v2_5": 4.040768104322571,
+      "model": "state_disabled"
+    },
+    {
+      "candidate_separates": false,
+      "geomean_mse": 0.05980848060246212,
+      "length": 16000,
+      "margin_sham_divided_by_v2_5": 0.9921530006422206,
+      "model": "memory_disabled"
+    },
+    {
+      "candidate_separates": false,
+      "geomean_mse": 0.06007230337025851,
+      "length": 16000,
+      "margin_sham_divided_by_v2_5": 0.9965295129373039,
+      "model": "replay_disabled_not_applicable_standardized_core"
+    },
+    {
+      "candidate_separates": false,
+      "geomean_mse": 0.059768109746946865,
+      "length": 16000,
+      "margin_sham_divided_by_v2_5": 0.9914832951918482,
+      "model": "prediction_disabled"
+    },
+    {
+      "candidate_separates": true,
+      "geomean_mse": 0.06329602111649969,
+      "length": 16000,
+      "margin_sham_divided_by_v2_5": 1.0500072338715,
+      "model": "self_evaluation_disabled"
+    },
+    {
+      "candidate_separates": true,
+      "geomean_mse": 0.06419703175144902,
+      "length": 16000,
+      "margin_sham_divided_by_v2_5": 1.0649539503918113,
+      "model": "composition_routing_disabled"
+    },
+    {
+      "candidate_separates": true,
+      "geomean_mse": 1.0655006894904449,
+      "length": 16000,
+      "margin_sham_divided_by_v2_5": 17.675414851130338,
+      "model": "target_shuffle_control"
+    },
+    {
+      "candidate_separates": true,
+      "geomean_mse": 1.0266903123745406,
+      "length": 16000,
+      "margin_sham_divided_by_v2_5": 17.031595919037027,
+      "model": "time_shuffle_control"
+    },
+    {
+      "candidate_separates": true,
+      "geomean_mse": 0.07346274285537276,
+      "length": 32000,
+      "margin_sham_divided_by_v2_5": 1.3173835064398884,
+      "model": "planning_disabled_v2_3_equivalent"
+    },
+    {
+      "candidate_separates": false,
+      "geomean_mse": 0.055688776539142025,
+      "length": 32000,
+      "margin_sham_divided_by_v2_5": 0.9986487415929205,
+      "model": "policy_action_disabled"
+    },
+    {
+      "candidate_separates": true,
+      "geomean_mse": 0.2289679233091931,
+      "length": 32000,
+      "margin_sham_divided_by_v2_5": 4.10600739840554,
+      "model": "state_disabled"
+    },
+    {
+      "candidate_separates": false,
+      "geomean_mse": 0.05544744778430229,
+      "length": 32000,
+      "margin_sham_divided_by_v2_5": 0.9943210714175577,
+      "model": "memory_disabled"
+    },
+    {
+      "candidate_separates": false,
+      "geomean_mse": 0.055606476482098065,
+      "length": 32000,
+      "margin_sham_divided_by_v2_5": 0.9971728814015548,
+      "model": "replay_disabled_not_applicable_standardized_core"
+    },
+    {
+      "candidate_separates": false,
+      "geomean_mse": 0.05546857130412496,
+      "length": 32000,
+      "margin_sham_divided_by_v2_5": 0.9946998726374785,
+      "model": "prediction_disabled"
+    },
+    {
+      "candidate_separates": true,
+      "geomean_mse": 0.05956274104287008,
+      "length": 32000,
+      "margin_sham_divided_by_v2_5": 1.068119288748943,
+      "model": "self_evaluation_disabled"
+    },
+    {
+      "candidate_separates": true,
+      "geomean_mse": 0.05893021435886249,
+      "length": 32000,
+      "margin_sham_divided_by_v2_5": 1.0567763931734917,
+      "model": "composition_routing_disabled"
+    },
+    {
+      "candidate_separates": true,
+      "geomean_mse": 1.0217556629277962,
+      "length": 32000,
+      "margin_sham_divided_by_v2_5": 18.322812430276535,
+      "model": "target_shuffle_control"
+    },
+    {
+      "candidate_separates": true,
+      "geomean_mse": 1.0019537373712626,
+      "length": 32000,
+      "margin_sham_divided_by_v2_5": 17.967710931067813,
+      "model": "time_shuffle_control"
+    }
+  ],
+  "status": "pass",
+  "tier": "Tier 7.7d - Standardized Long-Run / Failure-Localization Scoring Gate"
+}
