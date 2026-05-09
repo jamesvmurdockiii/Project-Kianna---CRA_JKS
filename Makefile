@@ -551,3 +551,6 @@ tier7-4e:
 
 tier7-4f:
 	python3 experiments/tier7_4f_cost_aware_policy_action_heldout_scoring_gate.py
+
+tier7-4g:
+	python3 experiments/tier7_4g_policy_action_confirmation_reference_separation.py

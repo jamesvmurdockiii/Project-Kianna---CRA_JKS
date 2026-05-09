@@ -1,0 +1,4 @@
+comparison,family,candidate,baseline,paired_units,mean_delta,median_delta,ci_low,ci_high,effect_size,positive_fraction,positive_ci_confirmed
+cmapss_candidate_vs_best_external,cmapss_maintenance_action_cost,v2_4_cost_aware_policy,lag_multichannel_ridge_policy,300,107.24571221002218,0.0,56.89735573832698,159.83190533971052,0.23798830283033948,0.23333333333333334,True
+cmapss_candidate_vs_v2_2_reference,cmapss_maintenance_action_cost,v2_4_cost_aware_policy,v2_2_reference_policy,300,2.46990147262258,0.0,-12.387676684452819,16.42514109274918,0.018959695496457183,0.13666666666666666,False
+cmapss_candidate_vs_best_sham,cmapss_maintenance_action_cost,v2_4_cost_aware_policy,shuffled_state_sham,300,479.96795608024513,0.0,373.38894337405304,593.2954387836684,0.4896474260359776,0.30666666666666664,True

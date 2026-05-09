@@ -5,10 +5,10 @@ ledger is `STUDY_REGISTRY.json`; the compact table is `STUDY_REGISTRY.csv`.
 Older reruns, prepared capsules, debug probes, and baseline-frozen
 mechanism bundles outside the formal registry are preserved for audit.
 
-- Generated: `2026-05-09T02:51:14.293854+00:00`
+- Generated: `2026-05-09T03:03:44.461851+00:00`
 - Registry status: **PASS**
-- Canonical evidence entries: `112`
-- Expanded test-entry count: `112`; see the canonical evidence table below for the exact current tier list.
+- Canonical evidence entries: `113`
+- Expanded test-entry count: `113`; see the canonical evidence table below for the exact current tier list.
 
 ## Evidence Categories
 
@@ -98,6 +98,7 @@ mechanism bundles outside the formal registry are preserved for audit.
 | `tier7_4d_cost_aware_policy_action_heldout_contract` | **PASS** | `controlled_test_output/tier7_4d_20260509_cost_aware_policy_action_heldout_contract` | Contract-only evidence; not a scoring run, not public usefulness proof, not broad anomaly or predictive-maintenance superiority, not a new baseline freeze, not hardware/native transfer, and not AGI/ASI evidence. |
 | `tier7_4e_cost_aware_policy_action_heldout_preflight` | **PASS** | `controlled_test_output/tier7_4e_20260509_cost_aware_policy_action_heldout_preflight` | Preflight/schema evidence only; not a scoring run, not public usefulness proof, not a new baseline freeze, not hardware/native transfer, and not AGI/ASI evidence. |
 | `tier7_4f_cost_aware_policy_action_heldout_scoring_gate` | **PASS** | `controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate` | Software held-out scoring only; qualified public-action signal, not broad public usefulness, not incremental v2.4 superiority over prior CRA references, not a new baseline freeze, not hardware/native transfer, and not AGI/ASI evidence. |
+| `tier7_4g_policy_action_confirmation_reference_separation` | **PASS** | `controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation` | Software held-out confirmation only; narrow C-MAPSS action-cost signal, not broad public usefulness, not incremental v2.4 superiority over v2.2, not a new baseline freeze, not hardware/native transfer, and not AGI/ASI evidence. |
 | `tier5_20a_resonant_branch_polyp_diagnostic` | **PASS** | `controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic` | Software diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence. |
 | `tier5_20b_hybrid_resonant_polyp_diagnostic` | **PASS** | `controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic` | Software repair diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence. |
 | `tier5_20c_minimal_resonant_polyp_diagnostic` | **PASS** | `controlled_test_output/tier5_20c_20260508_minimal_resonant_polyp_diagnostic` | Software minimal-dose diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence. |

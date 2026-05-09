@@ -11207,13 +11207,28 @@ usefulness claim, no incremental v2.4 superiority claim, no freeze, and no
 hardware/native transfer.
 ```
 
+```text
+Tier 7.4g - Held-out policy/action confirmation + reference separation.
+Status: COMPLETE / PASS, 20/20 criteria.
+Output: controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/
+Outcome: cmapss_external_signal_confirmed_reference_not_separated_nab_failed.
+Result: the narrow C-MAPSS external/sham action-cost signal was confirmed under
+locked Tier 7.4f scores. C-MAPSS still did not separate from v2.2 with a
+positive paired CI, and NAB remained a non-confirmation classified as an
+event-coverage gap versus EWMA and v2.2.
+Boundary: narrow C-MAPSS action-cost confirmation only; no broad public
+usefulness claim, no incremental v2.4 superiority claim, no freeze, and no
+hardware/native transfer.
+```
+
 Next required step:
 
 ```text
-Tier 7.4g - Held-out policy/action confirmation + reference separation.
-Confirm the C-MAPSS action-cost signal, explicitly test separation from v2.2,
-and analyze the NAB non-confirmation without tuning costs, thresholds, or
-policies on held-out streams.
+Tier 7.4h - Policy/action attribution closeout / mechanism return decision.
+Synthesize Tier 7.4f/7.4g, preserve the narrow C-MAPSS-only action-cost signal,
+reject unsupported v2.4-over-v2.2 and broad usefulness claims, and decide
+whether the next move is mechanism iteration, benchmark repair, or a narrowed
+paper claim. Do not tune held-out scores retroactively.
 ```
 
 ## Tier 5.20a - Resonant Branch Polyp Internal-Model Diagnostic

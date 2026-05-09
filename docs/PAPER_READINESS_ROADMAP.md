@@ -1,6 +1,6 @@
 # CRA Paper-Readiness Roadmap
 
-Last updated: 2026-05-07
+Last updated: 2026-05-09
 
 This document is the working plan from the current evidence state to a serious
 paper-ready CRA claim. It is deliberately stricter than a speculative roadmap. The goal
@@ -4056,10 +4056,29 @@ CI, so this is not an incremental v2.4-specific advantage claim.
 No freeze and no hardware/native transfer.
 ```
 
-Current next step:
+Tier 7.4g result:
 
 ```text
 Tier 7.4g — Held-out policy/action confirmation + reference separation
+Status: COMPLETE / PASS, 20/20 criteria
+Outcome: cmapss_external_signal_confirmed_reference_not_separated_nab_failed
+Output: controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/
+```
+
+Interpretation:
+
+```text
+C-MAPSS external/sham action-cost signal: confirmed under locked Tier 7.4f rows.
+Reference separation: not confirmed; v2.4 does not separate from v2.2 with a
+positive paired CI.
+NAB: not confirmed; classified as event-coverage gap versus EWMA and v2.2.
+No freeze and no hardware/native transfer.
+```
+
+Current next step:
+
+```text
+Tier 7.4h — Policy/action attribution closeout / mechanism return decision
 ```
 
 Tier 7.1a predeclared these candidate/future adapter families:
@@ -7544,7 +7563,7 @@ Boundary: contract/family-selection only, not NAB data preflight, not scoring,
           hardware/native transfer.
 ```
 
-Tier 7.1h result: compact NAB scoring passed as a harness and produced a partial v2.3 signal, but did not confirm public usefulness. Tier 7.1i then broadened NAB to 20 streams across 6 categories. v2.3 beat v2.2 and all three v2.3 shams, but rolling z-score won the aggregate, v2.3 ranked fourth, and the v2.3 signal localized to realAdExchange plus two streams. Tier 7.1j then localized the gap to threshold/false-positive pressure. Tier 7.1k then found a same-subset `persist3` false-positive repair candidate: v2.3 ranked first under the policy, reduced FP/1000, beat rolling z-score and v2.2, and separated shams, but Tier 7.1l did not confirm that policy on held-out NAB streams. v2.3 reduced false positives but ranked fifth, did not beat rolling z-score or v2.2, and separated only two of three shams. Tier 7.1m closed the NAB loop: partial/local signal only, no usefulness claim, no freeze, no hardware transfer, and no more adapter-policy tuning on this chain. Tier 7.4a then passed the cost-aware policy/action contract, Tier 7.4b passed the local diagnostic as candidate evidence, Tier 7.4c passed the promotion/compact-regression gate to freeze bounded host-side software baseline v2.4, Tier 7.4d passed the held-out/public action-cost scoring contract, Tier 7.4e passed the held-out scoring preflight, and Tier 7.4f passed with a qualified C-MAPSS-only public-action signal while NAB did not confirm and v2.4 did not separate from v2.2 with a positive paired CI. Next: Tier 7.4g held-out policy/action confirmation + reference separation. Use `CRA_NATIVE_SCALE_BASELINE_v0.5` only as the frozen native substrate reference, not as usefulness evidence.
+Tier 7.1h result: compact NAB scoring passed as a harness and produced a partial v2.3 signal, but did not confirm public usefulness. Tier 7.1i then broadened NAB to 20 streams across 6 categories. v2.3 beat v2.2 and all three v2.3 shams, but rolling z-score won the aggregate, v2.3 ranked fourth, and the v2.3 signal localized to realAdExchange plus two streams. Tier 7.1j then localized the gap to threshold/false-positive pressure. Tier 7.1k then found a same-subset `persist3` false-positive repair candidate: v2.3 ranked first under the policy, reduced FP/1000, beat rolling z-score and v2.2, and separated shams, but Tier 7.1l did not confirm that policy on held-out NAB streams. v2.3 reduced false positives but ranked fifth, did not beat rolling z-score or v2.2, and separated only two of three shams. Tier 7.1m closed the NAB loop: partial/local signal only, no usefulness claim, no freeze, no hardware transfer, and no more adapter-policy tuning on this chain. Tier 7.4a then passed the cost-aware policy/action contract, Tier 7.4b passed the local diagnostic as candidate evidence, Tier 7.4c passed the promotion/compact-regression gate to freeze bounded host-side software baseline v2.4, Tier 7.4d passed the held-out/public action-cost scoring contract, Tier 7.4e passed the held-out scoring preflight, Tier 7.4f passed with a qualified C-MAPSS-only public-action signal, and Tier 7.4g confirmed only the narrow C-MAPSS external/sham signal while preserving the non-separation from v2.2 and NAB non-confirmation. Next: Tier 7.4h policy/action attribution closeout / mechanism return decision. Use `CRA_NATIVE_SCALE_BASELINE_v0.5` only as the frozen native substrate reference, not as usefulness evidence.
 
 Detailed Tier 5.19 contract:
 

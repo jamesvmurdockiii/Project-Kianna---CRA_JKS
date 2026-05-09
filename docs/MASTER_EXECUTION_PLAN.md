@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-09T02:24:30+00:00.
+Last updated: 2026-05-09T03:05:00+00:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -1307,64 +1307,75 @@ ability.
     signal; no broad public usefulness claim, no incremental v2.4 superiority
     claim, no freeze, and no hardware/native transfer.
 
-101. **CURRENT ACTIVE STEP** - Tier 7.4g held-out policy/action confirmation +
+101. **COMPLETE** - Tier 7.4g held-out policy/action confirmation +
     reference separation:
-    confirm the C-MAPSS action-cost signal, explicitly test separation from the
-    prior v2.2 CRA reference, and analyze the NAB non-confirmation without
-    tuning costs, thresholds, or policies on held-out streams.
+    passed 20/20 at
+    `controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/`.
+    Outcome `cmapss_external_signal_confirmed_reference_not_separated_nab_failed`:
+    the narrow C-MAPSS external/sham action-cost signal was confirmed, v2.4
+    still did not separate from v2.2 with a positive paired CI, and NAB remained
+    an event-coverage non-confirmation. Boundary: no broad public usefulness
+    claim, no incremental v2.4 superiority claim, no freeze, and no
+    hardware/native transfer.
 
-102. Mechanism iteration loop: add exactly one planned general mechanism at a
+102. **CURRENT ACTIVE STEP** - Tier 7.4h policy/action attribution closeout /
+    mechanism return decision:
+    synthesize the Tier 7.4f/7.4g evidence, preserve the narrow C-MAPSS-only
+    action-cost signal, reject unsupported v2.4-over-v2.2 and broad usefulness
+    claims, and decide whether the next move is mechanism iteration, benchmark
+    repair, or a narrowed paper claim. Do not tune held-out scores
+    retroactively.
+
+103. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
     stop the broad usefulness track and narrow the paper.
 
-102. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+104. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines. Start only after the standardized scoreboard or failure diagnosis
     identifies a winning regime, a real failure mode, or a mechanism needing
     external validation.
 
-103. Tier 7.2 held-out task challenge: define held-out families before running;
+105. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout. Include at least one synthetic holdout and one
     real-ish adapter holdout if Tier 7.1 is active.
 
-104. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+106. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines. Candidate domains include
     streaming anomaly detection, predictive-maintenance sensor streams, human
     activity streams, event prediction, ECG/biosignal streams, and finance as
     one domain only rather than the whole proof.
 
-105. Tier 7.4 policy/action selection held-out scoring: after 7.4d locks the
-    contract, run v2.4 on predeclared held-out/external action-cost tasks with
-    fixed costs, no same-subset threshold tuning, fair baselines, shams, and
-    confidence/action-cost traces. Do not start broad policy claims until
-    held-out utility and statistics pass.
+107. Tier 7.4 policy/action selection held-out scoring: the current held-out
+    chain is complete through 7.4g. Tier 7.4h must close attribution before any
+    broad action/policy claim, freeze, or hardware/native transfer is considered.
 
-106. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
+108. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
     planning/subgoal control: run only after the shorter hard/real-ish tasks are
     stable. Do not claim language, AGI, or broad planning from toy gates.
 
-107. Run expanded external baselines and fairness audit at the phase lock:
+109. Run expanded external baselines and fairness audit at the phase lock:
     random/sign persistence, online perceptron/logistic, lag/ridge where
     relevant, reservoir/ESN, small GRU, STDP-only SNN, simple evolutionary
     population, simple control baselines, and SNN reviewer-defense baselines
     where practical.
 
-108. Freeze the next software baseline only if new software capability work
+110. Freeze the next software baseline only if new software capability work
     passes ablations, fair baselines, leakage controls, and compact regression.
     If no new software mechanism is promoted, keep v2.4.
 
 ### Phase I - Final Paper Lock
 
-109. Select final paper claim level: strong usefulness paper, bounded architecture
+111. Select final paper claim level: strong usefulness paper, bounded architecture
     study, or narrowed diagnostic report. Let the evidence decide.
 
-110. Run final software matrix and final hardware subset matrix. Include effect
+112. Run final software matrix and final hardware subset matrix. Include effect
     sizes, confidence intervals, worst seed, sample efficiency, runtime, command
     count, resource budgets, and claim-boundary table.
 
-111. Build the independent reproduction capsule: fresh checkout instructions,
+113. Build the independent reproduction capsule: fresh checkout instructions,
     environment lock, validation command, registry/table regeneration, EBRAINS
     ingest instructions, artifact hash manifest, and one local tier rerun.
 
@@ -1530,21 +1541,21 @@ After each completed run or design tier:
 The next concrete action is:
 
 ```text
-Tier 7.4g - Held-Out Policy/Action Confirmation + Reference Separation
+Tier 7.4h - Policy/Action Attribution Closeout / Mechanism Return Decision
 
-Question: Does the Tier 7.4f C-MAPSS action-cost signal survive a confirmation
-gate and separate from the prior v2.2 CRA reference, and why did NAB fail to
-confirm?
+Question: Given Tier 7.4f/7.4g, what action/policy claim is actually earned,
+and should the project return to mechanism iteration, benchmark repair, or a
+narrowed paper claim?
 
-First move: rerun/confirm the C-MAPSS maintenance-action result with the same
-locked cost model, paired reference comparisons, and sham controls; then run a
-NAB non-confirmation failure analysis without changing held-out costs,
-thresholds, or policy choices.
+First move: synthesize the C-MAPSS confirmation, v2.2 non-separation, and NAB
+event-coverage non-confirmation into a closeout decision. Preserve the narrow
+C-MAPSS-only signal, explicitly reject broad usefulness and incremental v2.4
+claims, and select the next execution branch without retroactive held-out
+tuning.
 
-Boundary: no new freeze and no hardware/native transfer. This gate may confirm
-a narrow C-MAPSS action-cost claim, reject it, or route back to mechanism
-iteration. It must not inflate the 7.4f qualified result into broad public
-usefulness, planning, language, AGI, or ASI.
+Boundary: no new freeze and no hardware/native transfer. This gate is an
+attribution/decision gate, not a new performance scoring run and not a mechanism
+promotion.
 ```
 
 Recent closeout:
@@ -1712,7 +1723,7 @@ selection as the next general mechanism contract. Tier 7.4a then passed the
 contract gate, Tier 7.4b passed the local diagnostic as candidate evidence,
 Tier 7.4c froze bounded software baseline v2.4, Tier 7.4d locked the
 held-out/public action-cost scoring contract, and Tier 7.4e verified the
-scoring preflight. Tier 7.4f then produced a qualified C-MAPSS-only action-cost signal while NAB remained unconfirmed; the next active software work is Tier 7.4g confirmation/reference separation.
+scoring preflight. Tier 7.4f then produced a qualified C-MAPSS-only action-cost signal while NAB remained unconfirmed; Tier 7.4g confirmed only the narrow C-MAPSS external/sham signal and preserved the non-separation from v2.2. The next active software work is Tier 7.4h attribution closeout / mechanism return decision.
 Reopen native work only for targeted transfer after a software task/mechanism
 earns it under the Tier 7/6.2 gates and a separate transfer contract is written.
 It must preserve explicit board/chip/shard identity, message paths, compact

@@ -1,0 +1,17 @@
+family,candidate,baseline,partition_type,partition,paired_units,mean_delta,median_delta,positive_fraction,candidate_wins_partition
+cmapss_maintenance_action_cost,v2_4_cost_aware_policy,lag_multichannel_ridge_policy,seed,42,100,119.50113513779662,0.0,0.22,True
+cmapss_maintenance_action_cost,v2_4_cost_aware_policy,lag_multichannel_ridge_policy,seed,43,100,100.63698045603894,0.0,0.23,True
+cmapss_maintenance_action_cost,v2_4_cost_aware_policy,lag_multichannel_ridge_policy,seed,44,100,101.59902103623095,0.0,0.25,True
+cmapss_maintenance_action_cost,v2_4_cost_aware_policy,lag_multichannel_ridge_policy,unit_parity,even_unit,150,125.35549320146329,0.0,0.3,True
+cmapss_maintenance_action_cost,v2_4_cost_aware_policy,lag_multichannel_ridge_policy,unit_parity,odd_unit,150,89.13593121858105,0.0,0.16666666666666666,True
+cmapss_maintenance_action_cost,v2_4_cost_aware_policy,lag_multichannel_ridge_policy,unit_third,unit_001_033,99,28.93274162912581,0.0,0.1111111111111111,True
+cmapss_maintenance_action_cost,v2_4_cost_aware_policy,lag_multichannel_ridge_policy,unit_third,unit_034_066,99,201.32415148639265,0.0,0.3333333333333333,True
+cmapss_maintenance_action_cost,v2_4_cost_aware_policy,lag_multichannel_ridge_policy,unit_third,unit_067_100,102,91.9439337702973,0.0,0.2549019607843137,True
+cmapss_maintenance_action_cost,v2_4_cost_aware_policy,v2_2_reference_policy,seed,42,100,14.725324400397028,0.0,0.15,True
+cmapss_maintenance_action_cost,v2_4_cost_aware_policy,v2_2_reference_policy,seed,43,100,-4.13883028136065,0.0,0.14,False
+cmapss_maintenance_action_cost,v2_4_cost_aware_policy,v2_2_reference_policy,seed,44,100,-3.1767897011686386,0.0,0.12,False
+cmapss_maintenance_action_cost,v2_4_cost_aware_policy,v2_2_reference_policy,unit_parity,even_unit,150,-1.3335671810965428,0.0,0.19333333333333333,False
+cmapss_maintenance_action_cost,v2_4_cost_aware_policy,v2_2_reference_policy,unit_parity,odd_unit,150,6.273370126341703,0.0,0.08,True
+cmapss_maintenance_action_cost,v2_4_cost_aware_policy,v2_2_reference_policy,unit_third,unit_001_033,99,-1.9663062537824783,0.0,0.06060606060606061,False
+cmapss_maintenance_action_cost,v2_4_cost_aware_policy,v2_2_reference_policy,unit_third,unit_034_066,99,2.725468151453181,0.0,0.21212121212121213,True
+cmapss_maintenance_action_cost,v2_4_cost_aware_policy,v2_2_reference_policy,unit_third,unit_067_100,102,6.527582489386024,0.0,0.13725490196078433,True

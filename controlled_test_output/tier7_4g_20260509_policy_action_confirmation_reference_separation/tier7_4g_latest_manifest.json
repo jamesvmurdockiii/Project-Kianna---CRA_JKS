@@ -1,0 +1,69 @@
+{
+  "artifacts": [
+    {
+      "bytes": 1245,
+      "name": "confirmation_checks_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_confirmation_checks.csv",
+      "sha256": "28dd3244b15886b308defd03a12519177632ab98cbcb07f79d2395f4038c66cf"
+    },
+    {
+      "bytes": 713,
+      "name": "decision_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_decision.csv",
+      "sha256": "387a07314c51d6c2c4695909b413e3c21c45a56f925c73d80586e5910a8419f8"
+    },
+    {
+      "bytes": 790,
+      "name": "decision_json",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_decision.json",
+      "sha256": "cc5695d4af4f5d00192857736ea335a82964b5070a921c3abaf7f59b7c645c80"
+    },
+    {
+      "bytes": 1758,
+      "name": "nab_category_analysis_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_nab_category_analysis.csv",
+      "sha256": "96e2490b80268427adbd8894c92fd7669503db1597593d9e90588f15fb39a517"
+    },
+    {
+      "bytes": 813,
+      "name": "nab_failure_analysis_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_nab_failure_analysis.csv",
+      "sha256": "00fc3c553543605e2f817a76a5bac7ca9009a09d16424b969933803bdc976b41"
+    },
+    {
+      "bytes": 2409,
+      "name": "partition_checks_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_partition_checks.csv",
+      "sha256": "1f8ccb15465151a0c6db9c1d73442199d9b2bd166fe8e3135709c29019745568"
+    },
+    {
+      "bytes": 805,
+      "name": "reference_separation_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_reference_separation.csv",
+      "sha256": "3ef76e187c4db20125651e3389336f9e35da21c7700ded03efd22afd79ebab2b"
+    },
+    {
+      "bytes": 4713,
+      "name": "report_md",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_report.md",
+      "sha256": "63087e8235908ed7f4ceccb2852f3c13f8896c7d1ca05b3688a6a852d30e00b6"
+    },
+    {
+      "bytes": 18641,
+      "name": "results_json",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_results.json",
+      "sha256": "9623dce25cd816873522313b57a26b7ffd6baa2f96ade09d044bb577f11eb5de"
+    },
+    {
+      "bytes": 1818,
+      "name": "summary_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_summary.csv",
+      "sha256": "f8caa6fac7716bd5844d1514713162e21a39ee06192cfd73e1b61c89383d0c81"
+    }
+  ],
+  "generated_at_utc": "2026-05-09T03:03:34+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation",
+  "runner_revision": "tier7_4g_policy_action_confirmation_reference_separation_20260509_0001",
+  "status": "PASS",
+  "tier": "Tier 7.4g - Held-Out Policy/Action Confirmation + Reference Separation"
+}

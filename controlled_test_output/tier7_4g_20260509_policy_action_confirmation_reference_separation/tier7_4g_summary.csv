@@ -1,0 +1,21 @@
+criterion,value,rule,pass,details
+tier7_4f_results_exist,True,must exist,True,/Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_results.json
+tier7_4f_status_pass,pass,case-insensitive == PASS,True,
+score_rows_present,3360,> 0,True,/Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_score_rows.csv
+model_summary_present,20,> 0,True,/Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_model_summary.csv
+family_decisions_present,2,>= 2,True,/Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_family_decisions.csv
+locked_cost_model_present,10,> 0,True,/Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_cost_model.csv
+heldout_tuning_performed,False,must remain False,True,7.4g only reuses locked 7.4f scores.
+cmapss_candidate_rank_first,1,== 1,True,
+cmapss_family_previously_confirmed,True,== True,True,
+cmapss_external_positive_ci,56.89735573832698,> 0,True,
+cmapss_sham_positive_ci,373.38894337405304,> 0,True,
+cmapss_reference_separation_evaluated,300,> 0,True,
+cmapss_reference_overclaim_blocked,False,must be False for no incremental claim,True,
+cmapss_partition_checks_written,16,> 0,True,
+nab_family_nonconfirmation_preserved,False,== False,True,
+nab_external_failure_confirmed_or_preserved,-0.4077008431630544,<= 0 or CI not positive,True,
+nab_failure_classified,event_coverage_gap_vs_ewma,non-empty,True,
+nab_category_analysis_written,6,> 0,True,
+freeze_not_authorized,False,must remain False,True,
+hardware_transfer_not_authorized,False,must remain False,True,

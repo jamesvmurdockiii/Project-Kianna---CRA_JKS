@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-09T02:24:30+00:00.
+Last updated: 2026-05-09T03:05:00+00:00.
 
 Current repo root:
 
@@ -396,18 +396,18 @@ Tier 7.4e = COMPLETE, PASS, 20/20 criteria
             hardware/native transfer.
 ```
 
-Latest cost-aware policy/action held-out scoring gate:
+Latest cost-aware policy/action held-out confirmation gate:
 
 ```text
-Tier 7.4f = COMPLETE, PASS, 20/20 criteria
-  Source: controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/
-  Runner: experiments/tier7_4f_cost_aware_policy_action_heldout_scoring_gate.py
-  Outcome: v2_4_heldout_public_action_usefulness_qualified_cmapss_only
-  Result: v2.4 ranked first on C-MAPSS maintenance utility and beat the
-          strongest external baseline, but NAB did not confirm and C-MAPSS did
-          not separate from v2.2 with a positive paired CI.
-  Next gate: Tier 7.4g - Held-Out Policy/Action Confirmation + Reference Separation.
-  Boundary: qualified C-MAPSS-only public-action signal; no broad public
+Tier 7.4g = COMPLETE, PASS, 20/20 criteria
+  Source: controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/
+  Runner: experiments/tier7_4g_policy_action_confirmation_reference_separation.py
+  Outcome: cmapss_external_signal_confirmed_reference_not_separated_nab_failed
+  Result: the narrow C-MAPSS external/sham action-cost signal was confirmed;
+          v2.4 still did not separate from v2.2 with a positive paired CI; NAB
+          remained an event-coverage non-confirmation.
+  Next gate: Tier 7.4h - Policy/Action Attribution Closeout / Mechanism Return Decision.
+  Boundary: narrow C-MAPSS-only action-cost confirmation; no broad public
             usefulness claim, no incremental v2.4 superiority claim, no new
             freeze, and no hardware/native transfer.
 ```
@@ -1074,10 +1074,18 @@ Tier 7.4f — COMPLETE. Cost-aware policy/action held-out scoring gate.
   Result: qualified C-MAPSS-only public-action signal. NAB did not confirm;
     C-MAPSS did not separate from v2.2 with positive paired CI.
 
-Tier 7.4g — CURRENT ACTIVE STEP. Held-out policy/action confirmation + reference separation.
-  Required first move: confirm the C-MAPSS action-cost result, explicitly test
-    separation from v2.2, and analyze NAB non-confirmation. Do not tune costs,
-    thresholds, or policies on held-out streams.
+Tier 7.4g — COMPLETE. Held-out policy/action confirmation + reference separation.
+  Status: PASS, 20/20 criteria.
+  Output: controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/
+  Result: narrow C-MAPSS external/sham action-cost signal confirmed; v2.4 did
+    not separate from v2.2 with positive paired CI; NAB remained an
+    event-coverage non-confirmation.
+
+Tier 7.4h — CURRENT ACTIVE STEP. Policy/action attribution closeout / mechanism return decision.
+  Required first move: synthesize Tier 7.4f/7.4g, preserve the narrow C-MAPSS
+    signal, reject unsupported v2.4-over-v2.2 and broad usefulness claims, and
+    route the project back to mechanism iteration, benchmark repair, or a
+    narrowed paper claim without retroactive held-out tuning.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware
