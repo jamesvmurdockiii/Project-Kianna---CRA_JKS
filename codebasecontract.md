@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-09T18:11:09+00:00.
+Last updated: 2026-05-09T18:35:00+00:00.
 
 Current repo root:
 
@@ -1455,11 +1455,77 @@ Tier 7.7s — COMPLETE. Bounded temporal-basis utility promotion/regression gate
   broad usefulness claim, external-baseline superiority, or hardware/native
   transfer.
 
-Tier 7.8 — CURRENT ACTIVE STEP. Polyp morphology/template variability contract.
-  Design a separate mechanism contract for varying polyp internal templates,
-  timescales, and excitatory/inhibitory ratios to test whether population-level
-  state diversity increases without letting generic random projection explain
-  the gain.
+Tier 7.7t — CURRENT ACTIVE STEP. Low-rank state repair campaign contract.
+  Planning document:
+  `docs/TIER_7_7_LOW_RANK_REPAIR_PLAN.md`.
+  The current blocker is dynamic but low-effective-dimensionality state collapse
+  with participation ratio near ~2 despite increased nominal capacity. Continue
+  Tier 7.7 until this state-geometry bottleneck is repaired, bounded as a
+  current-architecture limitation, or formally routed to the next mechanism
+  family. Do not treat Tier 7.8 as active until a 7.7 closeout/route decision
+  authorizes it.
+
+Tier 7.7 repair discipline:
+  1. Write and run the Tier 7.7t contract/campaign lock first.
+  2. Run Tier 7.7u causal localization before major architecture repair.
+  3. Test one repair family at a time: diversity-preserving state dynamics,
+     independent causal subspace drivers, recurrent topology/spectrum repair,
+     plasticity anti-homogenization, or explicit morphology routing.
+  4. Score compactly first on Mackey-Glass, Lorenz, and repaired NARMA10 at
+     8000 steps, seeds 42/43/44.
+  5. Run expanded standardized baselines only after a compact repair candidate
+     improves geometry and usefulness while surviving controls.
+  6. Freeze a new baseline only after expanded confirmation and compact
+     regression. A single Lorenz improvement, state-geometry improvement alone,
+     or useful-but-generic result is not enough.
+
+Tier 7.8 — QUEUED, NOT CURRENT ACTIVE. Polyp morphology/template variability
+  contract.
+  Planning document:
+  `docs/TIER_7_8_POLYP_MORPHOLOGY_PLAN.md`.
+  Activate only if Tier 7.7 localizes the low-rank bottleneck to lack of
+  intrinsic unit/template diversity, if repair families before morphology fail
+  cleanly, or if a 7.7 closeout contract routes the repair campaign there. It
+  remains a contract/planning step only until activated: no score, no mechanism
+  promotion, no baseline freeze, no public usefulness claim, and no
+  hardware/native transfer.
+
+Tier 7.8 execution discipline:
+  1. Write and run only the Tier 7.8 contract runner first.
+  2. Do not implement morphology scoring until the contract locks candidates,
+     controls, metrics, outcome classes, baseline escalation, and artifacts.
+  3. In Tier 7.8a, start compact: Mackey-Glass, Lorenz, repaired NARMA10 at
+     8000 steps, seeds 42/43/44, current CRA, temporal-utility reference,
+     same-capacity fixed-template control, morphology shams, random projection,
+     nonlinear-lag, target shuffle, and time shuffle.
+  4. Run expanded standardized baselines only after compact scoring passes or
+     produces a bounded utility signal. Do not use public adapters to rescue a
+     failed standardized core gate.
+  5. Freeze a new software baseline only after a later promotion/regression
+     gate passes. A useful-but-generic result may be carried only as bounded
+     utility, not as a CRA-specific morphology mechanism.
+
+Tier 7.9 — PLANNED FOLLOW-ON, NOT PART OF 7.8. Morphology-aware lifecycle /
+  evolution contract.
+  Do not fold full lifecycle/evolution into Tier 7.8. Tier 7.8 tests whether
+  static heterogeneous morphology creates useful variation. Tier 7.9 tests
+  whether lifecycle selection over that variation adds value. Combining them in
+  one gate destroys attribution and invites reviewer attack.
+
+Tier 7.9 planning discipline:
+  1. Use the predeclared Tier 7.8 template bank or the documented 7.8 outcome
+     as the substrate.
+  2. Compare fixed homogeneous CRA, fixed heterogeneous CRA, lifecycle-enabled
+     morphology CRA, random matched birth/death, template-label shuffle,
+     lineage-ID shuffle, no trophic pressure, and oracle template selector.
+  3. Measure adaptation/recovery, template survival distribution, lineage
+     integrity, active-population efficiency, seed variance, collapse/recovery,
+     and resource/runtime overhead.
+  4. Run standardized tasks first for continuity, then add explicit adaptive
+     pressure such as hard noisy switching or hidden-regime recurrence.
+  5. Do not use dynamic allocation; use static pools and active masks.
+  6. Do not freeze or port to hardware until lifecycle benefit survives shams,
+     capacity controls, leakage controls, and compact regression.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware

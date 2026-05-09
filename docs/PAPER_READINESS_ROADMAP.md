@@ -4491,7 +4491,195 @@ or broad public usefulness claim.
 Current next step:
 
 ```text
+Tier 7.7t — low-rank state repair campaign contract
+
+Status: current active planning tier.
+
+Canonical execution plan:
+
+```text
+docs/TIER_7_7_LOW_RANK_REPAIR_PLAN.md
+```
+
+Purpose:
+
+```text
+keep Tier 7.7 active until CRA's dynamic but low-effective-dimensionality state
+collapse is repaired, bounded as a current limitation, or formally routed to
+the next mechanism family
+```
+
+Why this remains active:
+
+```text
+Tier 7.7j confirmed participation ratio near ~2 despite increased nominal
+capacity.
+Tier 7.7l improved task score but did not repair dimensionality enough.
+Tier 7.7n showed generic random projection / nonlinear-lag controls explain the
+partitioned-driver gain.
+Tier 7.7q helped current CRA but did not beat strong generic controls.
+Tier 7.7s promoted temporal-basis only as bounded utility, not as a CRA-specific
+low-rank repair.
+```
+
+Next sequence:
+
+```text
+7.7t = contract/campaign lock
+7.7u = causal localization of the low-rank collapse
+7.7v+ = one repair family at a time
+7.7w = expanded standardized baselines only after compact repair passes
+7.7x = promotion/regression and freeze decision only after expanded confirmation
+```
+
+Repair families to consider, in the order determined by localization:
+
+```text
+diversity-preserving state dynamics
+independent causal subspace drivers
+recurrent topology / spectrum repair
+plasticity anti-homogenization
+morphology/template variability route
+```
+
+Definition of fixed:
+
+```text
+state dimensionality improves
+Lorenz and aggregate usefulness improve
+Mackey-Glass and repaired NARMA10 do not materially regress
+random projection and nonlinear-lag do not explain the claimed mechanism
+target/time shuffles fail strongly
+compact regression passes before any freeze
+```
+
+Baseline escalation:
+
+```text
+no full benchmark matrix at contract/localization stage
+compact standardized score first
+expanded Mackey-Glass/Lorenz/repaired-NARMA10 plus ESN/ridge/GRU/SNN references
+only after compact repair passes
+public adapters only after a new baseline exists or a repair needs external
+validation
+```
+
 Tier 7.8 — polyp morphology / template variability contract
+
+Status: queued behind Tier 7.7 low-rank repair campaign.
+
+Tier 7.8 is not canceled, but it is not the current active gate. It becomes
+active only if Tier 7.7 localizes the low-rank bottleneck to lack of intrinsic
+template diversity, if earlier repair families fail cleanly, or if a Tier 7.7
+closeout contract routes the repair campaign to morphology.
+
+Canonical execution plan:
+
+```text
+docs/TIER_7_8_POLYP_MORPHOLOGY_PLAN.md
+```
+
+Purpose:
+
+```text
+test whether heterogeneous polyp internal templates can increase usable
+population-level state geometry and benchmark usefulness without the result
+being explained by generic random projection, nonlinear-lag features, extra
+capacity, or leakage
+```
+
+Why this tier exists:
+
+```text
+Tier 7.7j confirmed dynamic but low-rank state collapse.
+Tier 7.7l improved task score without enough dimensionality repair.
+Tier 7.7n showed generic random projection / nonlinear-lag controls explain the
+partitioned-driver gain.
+Tier 7.7q showed a CRA-native temporal interface helps current CRA but still
+loses to strong generic controls.
+Tier 7.7s preserved that signal only as bounded engineering utility.
+```
+
+Initial candidate family:
+
+```text
+same-budget heterogeneous polyp template bank
+fixed total state/readout budget first
+varied E/I ratios, timescales, sparse internal connectivity, recurrent density,
+inhibitory gating, and input-channel specialization
+```
+
+Secondary candidate, only after same-budget testing:
+
+```text
+limited same-reef-budget polyp size variability
+static pool only
+no dynamic population creation
+capacity-matched fixed-template control required
+```
+
+Mandatory controls:
+
+```text
+current CRA v2.5
+current CRA plus bounded temporal-basis utility reference
+same-capacity fixed-template control
+same E/I histogram with shuffled template assignment
+morphology-label shuffle
+same-budget random-template control
+same-feature random projection
+nonlinear-lag control
+no-heterogeneity ablation
+target shuffle
+time shuffle
+state reset / state scramble where applicable
+```
+
+First scoring gate:
+
+```text
+Tier 7.8a compact scoring only
+tasks = Mackey-Glass, Lorenz, repaired NARMA10
+length = 8000
+horizon = 8
+seeds = 42,43,44
+```
+
+Do not start with the full long-run matrix. Do not use public adapters to rescue
+a failed standardized core gate.
+
+Baseline escalation:
+
+```text
+7.8 contract = no scoring, no expanded baselines
+7.8a compact score = mechanism controls plus small external context baselines
+7.8b expanded standardized confirmation = only if 7.8a passes or shows bounded utility
+7.8c promotion/regression = only if expanded confirmation survives controls
+post-freeze public adapters = only after a new baseline exists
+```
+
+Pass interpretation:
+
+```text
+Strong result = score improves, state dimensionality improves, morphology shams
+lose, random projection/nonlinear-lag do not explain the gain, guard tasks stay
+stable, and shuffle guards fail strongly.
+
+Bounded utility result = score improves without regressions but generic controls
+still win. Carry as utility only; no CRA-specific mechanism claim.
+
+Blocked result = task gain without state diversity, state diversity without task
+gain, capacity confound, generic-control explanation, leakage, or guard-task
+regression.
+```
+
+Freeze rule:
+
+```text
+No baseline freeze from the contract or compact score alone. A v2.6-style
+software baseline is eligible only after a later promotion/regression gate
+passes ablations, fair baselines, leakage controls, and compact regression.
+```
 Question: can variable polyp internal templates, timescales, excitatory/
 inhibitory ratios, and sparse connectivity increase population-level state
 diversity and benchmark usefulness without being explained by generic random

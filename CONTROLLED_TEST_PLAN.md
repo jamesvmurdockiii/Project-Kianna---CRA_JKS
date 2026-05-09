@@ -11626,7 +11626,41 @@ core baseline freeze, external-baseline superiority, hardware/native transfer,
 or broad public usefulness claim.
 ```
 
-Next required step:
+Current required step:
+
+```text
+Tier 7.7t - low-rank state repair campaign contract.
+Question: what is the controlled plan to repair, bound, or formally route the
+dynamic low-effective-dimensionality state collapse confirmed by the Tier 7.7
+chain?
+Boundary: contract only; no implementation score, promotion, freeze, public
+usefulness claim, or hardware/native transfer.
+```
+
+Canonical Tier 7.7 planning document:
+
+```text
+docs/TIER_7_7_LOW_RANK_REPAIR_PLAN.md
+```
+
+Required Tier 7.7t contract elements:
+
+```text
+1. lock the ~2D effective-state-collapse failure class
+2. define 7.7u causal-localization probes for shared-driver synchronization,
+   plasticity homogenization, inhibition/normalization compression,
+   input-encoder bottleneck, recurrent topology, trophic pressure, readout
+   exposure, and numerical saturation
+3. predeclare repair families: diversity-preserving state dynamics,
+   independent causal subspace drivers, recurrent topology/spectrum repair,
+   plasticity anti-homogenization, and morphology-routing only if warranted
+4. require state-geometry metrics plus task metrics
+5. keep random projection and nonlinear-lag controls mandatory
+6. compact score before expanded baselines
+7. no baseline freeze until promotion/regression
+```
+
+Queued, not current:
 
 ```text
 Tier 7.8 - polyp morphology / template variability contract.
@@ -11636,6 +11670,61 @@ benchmark usefulness without being explained by generic random projection?
 Boundary: contract only; no implementation score, promotion, freeze, public
 usefulness claim, or hardware/native transfer.
 ```
+
+Tier 7.8 activates only after Tier 7.7 localizes the bottleneck to intrinsic
+template diversity, earlier 7.7 repair families fail cleanly, or a 7.7 closeout
+routes the repair campaign to morphology.
+
+Canonical Tier 7.8 planning document:
+
+```text
+docs/TIER_7_8_POLYP_MORPHOLOGY_PLAN.md
+```
+
+Required contract elements:
+
+```text
+1. exact question, hypothesis, and null hypotheses
+2. same-budget heterogeneous template candidates
+3. secondary same-reef-budget polyp-size variability path
+4. strong controls: current CRA v2.5, temporal-basis utility reference,
+   same-capacity fixed template, morphology shuffles, same-feature random
+   projection, nonlinear-lag, target shuffle, and time shuffle
+5. tasks: Mackey-Glass, Lorenz, repaired NARMA10 first
+6. metrics: geomean MSE, participation ratio, rank-95/rank-99, top-PC
+   dominance, covariance spectrum, per-template activity, readout
+   concentration, task regressions, seed variance, and runtime/resource budget
+7. outcome classes separating mechanism candidate, bounded utility only,
+   generic-control explanation, capacity confound, leakage/regression, and
+   inconclusive evidence
+8. baseline escalation rule: compact 7.8a before expanded baselines
+```
+
+Tier 7.8a compact scoring, if the contract passes:
+
+```text
+tasks = Mackey-Glass, Lorenz, repaired NARMA10
+length = 8000
+horizon = 8
+seeds = 42,43,44
+models/variants = current CRA, current CRA plus temporal-basis utility,
+same-budget morphology candidate, same-capacity fixed-template control,
+morphology shams, random projection, nonlinear-lag, target shuffle, time shuffle
+```
+
+Run more baselines only after the compact gate justifies it:
+
+```text
+Tier 7.8b = expanded standardized confirmation across longer lengths, seeds,
+and stronger external references such as ESN/reservoir, online lag/ridge, small
+GRU if available, and supported SNN reviewer-defense baselines.
+
+Tier 7.8c = promotion/regression gate only if 7.8b survives controls.
+```
+
+No baseline freeze is allowed from Tier 7.8 or Tier 7.8a alone. If morphology
+helps only weakly, or if generic controls still win, record bounded utility or
+diagnostic evidence instead of promoting a CRA-specific morphology mechanism.
 
 Latest standardized benchmark contract:
 

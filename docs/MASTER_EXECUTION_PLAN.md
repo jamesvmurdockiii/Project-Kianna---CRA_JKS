@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-09T18:11:09+00:00.
+Last updated: 2026-05-09T18:35:00+00:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -1610,55 +1610,123 @@ ability.
     gate beats or cleanly separates from random-projection and nonlinear-lag
     controls.
 
-131. **CURRENT ACTIVE STEP** - Tier 7.8 polyp morphology/template variability
+131. **CURRENT ACTIVE STEP** - Tier 7.7t low-rank state repair campaign
     contract:
-    pre-register a separate mechanism test for varying polyp internal
-    templates, timescales, excitatory/inhibitory ratios, and sparse internal
-    connectivity. The contract must test whether morphology diversity increases
-    population-level state diversity and benchmark usefulness without letting a
-    generic random projection explain the gain.
+    keep Tier 7.7 active until the dynamic low-effective-dimensionality state
+    collapse is repaired, bounded, or explicitly routed to a next mechanism
+    family. Canonical planning details live in
+    `docs/TIER_7_7_LOW_RANK_REPAIR_PLAN.md`.
 
-132. Mechanism iteration loop: add exactly one planned general mechanism at a
+132. Tier 7.7u causal localization:
+    determine whether the ~2D effective-state collapse enters through shared
+    input drive, plasticity homogenization, inhibition/normalization,
+    input-encoder bottleneck, recurrent topology, trophic/energy pressure,
+    readout exposure, or numerical clipping/saturation. Do this before another
+    broad architecture repair.
+
+133. Tier 7.7v+ repair queue:
+    test one repair family at a time. Candidate families are
+    diversity-preserving state dynamics, independent causal subspace drivers,
+    recurrent topology/spectrum repair, plasticity anti-homogenization, and
+    morphology/template variability routing. Each candidate needs ablations,
+    random-projection and nonlinear-lag controls, target/time shuffle guards,
+    and compact task scoring before expanded baselines.
+
+134. Tier 7.7w expanded standardized confirmation, only after a compact repair
+    candidate survives:
+    rerun Mackey-Glass, Lorenz, and repaired NARMA10 across longer lengths and
+    stronger external baselines. Include ESN/reservoir and online lag/ridge
+    references where already supported. Do not run the full public adapter
+    suite until a new baseline exists or a repair candidate needs external
+    validation.
+
+135. Tier 7.7x promotion/regression gate, only after expanded confirmation:
+    run compact regression, mechanism ablations, leakage guards, and a freeze
+    decision. A single Lorenz score gain, PR gain without task gain, or
+    useful-but-generic feature improvement is not enough for a new software
+    baseline.
+
+136. Tier 7.8 polyp morphology/template variability contract - queued, not
+    current active:
+    activate only if Tier 7.7 localizes the bottleneck to lack of intrinsic
+    unit/template diversity, if earlier repair families fail cleanly, or if a
+    7.7 closeout explicitly routes there. Canonical queued details live in
+    `docs/TIER_7_8_POLYP_MORPHOLOGY_PLAN.md`.
+
+137. Tier 7.8a compact scoring gate, only after the Tier 7.8 contract passes:
+    score same-budget heterogeneous polyp templates against current CRA,
+    temporal-basis utility reference, same-capacity fixed-template control,
+    morphology shams, random projection, nonlinear-lag, target shuffle, and
+    time shuffle on Mackey-Glass, Lorenz, and repaired NARMA10 at 8000 steps
+    and seeds 42/43/44. Do not start with the full long-run matrix.
+
+138. Tier 7.8b expanded standardized confirmation, only if Tier 7.8a passes
+    or produces a bounded utility signal:
+    rerun the standardized benchmark family across longer lengths and stronger
+    external baselines. Include ESN/reservoir and online lag/ridge references
+    where already supported, plus any repo-supported GRU/SNN reviewer-defense
+    baseline. If random projection or nonlinear-lag still explains the gain,
+    preserve only a bounded utility/control result.
+
+139. Tier 7.8c promotion/regression gate, only if Tier 7.8b survives:
+    run compact regression, mechanism ablations, leakage guards, and baseline
+    freeze review. A new software baseline is eligible only if morphology
+    improves usefulness, increases state diversity, separates from shams and
+    strong controls, and preserves prior guard tasks.
+
+140. Tier 7.8d hardware/native transfer decision, only after promotion or a
+    clearly useful bounded utility result:
+    write a separate transfer contract before any C/PyNN/SpiNNaker work. Do
+    not port morphology variability to hardware merely because it is on the
+    roadmap.
+
+141. Tier 7.9 morphology-aware lifecycle/evolution contract - queued after
+    Tier 7.8:
+    do not fold full lifecycle/evolution into Tier 7.8. Lifecycle tests whether
+    selection over variation adds value; morphology tests whether useful
+    variation exists. Use static pools and active masks, not dynamic allocation.
+
+142. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
     stop the broad usefulness track and narrow the paper.
 
-133. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+143. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines. Start only after the standardized scoreboard or failure diagnosis
     identifies a winning regime, a real failure mode, or a mechanism needing
     external validation.
 
-134. Tier 7.2 held-out task challenge: define held-out families before running;
+144. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout. Include at least one synthetic holdout and one
     real-ish adapter holdout if Tier 7.1 is active.
 
-132. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+145. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines. Candidate domains include
     streaming anomaly detection, predictive-maintenance sensor streams, human
     activity streams, event prediction, ECG/biosignal streams, and finance as
     one domain only rather than the whole proof.
 
-133. Tier 7.4 policy/action selection held-out scoring: the current held-out
+146. Tier 7.4 policy/action selection held-out scoring: the current held-out
     chain is complete through 7.4h. No further NAB/C-MAPSS policy tuning is
     authorized from this chain; only the narrow C-MAPSS action-cost signal is
     preserved, with no broad action/policy claim, freeze, or hardware/native
     transfer.
 
-125. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
+147. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
     planning/subgoal control: run only after the shorter hard/real-ish tasks are
     stable. Do not claim language, AGI, or broad planning from toy gates.
 
-126. Run expanded external baselines and fairness audit at the phase lock:
+148. Run expanded external baselines and fairness audit at the phase lock:
     random/sign persistence, online perceptron/logistic, lag/ridge where
     relevant, reservoir/ESN, small GRU, STDP-only SNN, simple evolutionary
     population, simple control baselines, and SNN reviewer-defense baselines
     where practical.
 
-127. Freeze the next software baseline only if new software capability work
+149. Freeze the next software baseline only if new software capability work
     passes ablations, fair baselines, leakage controls, and compact regression.
-    If no new software mechanism is promoted, keep v2.4.
+    If no new software mechanism is promoted, keep v2.5.
 
 ### Phase I - Final Paper Lock
 
@@ -1960,12 +2028,83 @@ implementation, tuning, promotion, or freeze.
 The next concrete action is now:
 
 ```text
-Tier 7.8 - Polyp Morphology / Template Variability Contract
+Tier 7.7t - Low-Rank State Repair Campaign Contract
+
+Tier 7.7 remains the active standardized-benchmark repair chain. The low-rank
+state bottleneck is not closed merely because Tier 7.7s promoted a bounded
+temporal-basis utility.
+
+Canonical planning reference:
+
+```text
+docs/TIER_7_7_LOW_RANK_REPAIR_PLAN.md
+```
+
+The next concrete action is:
+
+```text
+Tier 7.7t - Low-Rank State Repair Campaign Contract
+```
+
+Contract requirements:
+
+```text
+lock the ~2D effective-state collapse as the active failure class
+predeclare the causal-localization gate (7.7u)
+predeclare repair families and their controls
+define what counts as fixed: state geometry plus usefulness plus attribution
+define compact scoring before expanded baselines
+define conditions for routing to Tier 7.8 morphology
+```
+
+Claim boundary:
+
+```text
+contract only; no scoring, no mechanism promotion, no baseline freeze, no
+public usefulness claim, no hardware/native transfer
+```
+
+Tier 7.8 - Polyp Morphology / Template Variability Contract (Queued)
 
 Tier 7.7s promoted the temporal-basis interface only as bounded engineering
-utility. The next mechanism question is whether variable polyp morphology can
-increase population-level state diversity and usefulness while surviving the
-same strong-control discipline that blocked prior mechanism overclaims.
+utility. Tier 7.8 is now explicitly queued behind the Tier 7.7 low-rank repair
+campaign. It should activate only if Tier 7.7 localizes the bottleneck to lack
+of intrinsic template diversity, if earlier repair families fail cleanly, or if
+a 7.7 closeout contract routes the repair campaign there.
+
+Canonical planning reference:
+
+```text
+docs/TIER_7_8_POLYP_MORPHOLOGY_PLAN.md
+```
+
+Required contract contents:
+
+```text
+question / hypothesis / null hypotheses
+same-budget heterogeneous template candidates
+secondary same-budget polyp-size variability path
+controls: current CRA, temporal-utility reference, same-capacity fixed template,
+          morphology shuffles, same-feature random projection, nonlinear-lag,
+          target shuffle, time shuffle
+tasks: Mackey-Glass, Lorenz, repaired NARMA10 first
+metrics: geomean MSE, PR, rank-95/rank-99, top-PC fraction, covariance spectrum,
+         per-template activity, readout concentration, seed variance, runtime
+outcome classes: morphology mechanism candidate, bounded utility only,
+                 state-diversity-without-task-gain, task-gain-without-state-
+                 diversity, generic-projection-explains-gain, capacity-
+                 confounded, regression-or-leakage-blocked, inconclusive
+baseline escalation: compact 7.8a first, expanded baselines only if warranted
+```
+
+Interpretation rule:
+
+```text
+If morphology helps a little and does not hurt, that is useful evidence, but it
+is not automatically promotable. It becomes a CRA-specific mechanism only if it
+separates from shams and strong generic controls. Otherwise carry it as bounded
+utility or archive it as diagnostic evidence.
+```
 ```
 
 Recent closeout:
