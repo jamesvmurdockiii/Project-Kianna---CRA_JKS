@@ -125,9 +125,13 @@ first under the locked no-label policy, reduced FP/1000 from
 `16.537437704270094` to `2.5685172711420603`, beat rolling z-score and v2.2
 under that policy, and separated all three shams. Because the policy was
 selected on the same diagnostic subset and window recall dropped versus raw
-v2.3, the next active project step is Tier 7.1l NAB locked-policy holdout
-confirmation; no usefulness claim, hardware transfer, or native migration is
-authorized until that separate confirmation gate passes.
+v2.3, Tier 7.1l then passed as a harness at
+`controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation/`.
+The locked `persist3` policy reduced false positives on 12 held-out NAB streams,
+but v2.3 ranked fifth, did not beat rolling z-score or v2.2, and separated only
+two of three shams. The next active project step is Tier 7.1m NAB closeout /
+mechanism-return decision; no usefulness claim, hardware transfer, or native
+migration is authorized from the NAB adapter chain.
 
 Tier 4.32a-hw prepare has also passed locally. The current EBRAINS upload
 folder is `ebrains_jobs/cra_432a_hw`, and the exact JobManager command is

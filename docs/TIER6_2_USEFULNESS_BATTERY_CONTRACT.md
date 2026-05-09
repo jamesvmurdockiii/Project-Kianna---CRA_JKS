@@ -758,16 +758,32 @@ Boundary: same-subset repair candidate only; policy selected on the broad
 diagnostic subset and window recall dropped versus raw v2.3.
 ```
 
+Tier 7.1l has now completed as the locked-policy holdout confirmation:
+
+```text
+Tier 7.1l — NAB locked-policy holdout confirmation
+Status: COMPLETE / PASS, 13/13 criteria
+Output: controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation/
+Outcome: v2_3_locked_policy_reduced_fp_but_not_confirmed
+Locked policy: persist3
+Locked v2.3 primary score/rank: 0.11180074060709926 / 5
+Rolling z-score under locked policy: 0.13854698668870535
+v2.3 sham separations under locked policy: 2/3
+v2.3 FP/1000 reduction vs raw: 11.441444397652205
+v2.3 window-recall loss vs raw: 0.4652777777777778
+Boundary: held-out software confirmation only; no usefulness claim, freeze, or
+hardware/native transfer.
+```
+
 The current next action is:
 
 ```text
-Tier 7.1l — NAB locked-policy holdout confirmation.
+Tier 7.1m — NAB closeout / mechanism-return decision.
 ```
 
-Freeze the 7.1k `persist3` policy without re-selection, evaluate it on held-out
-NAB streams/categories, preserve sham separation, and quantify the recall/
-false-positive tradeoff before adding any new mechanism or transferring
-anything to hardware/native runtime.
+Synthesize the Tier 7.1h-7.1l chain, narrow the NAB claim, stop adapter-policy
+tuning unless a new mechanism changes the hypothesis, and pick the next planned
+general mechanism or standardized benchmark gate.
 
 ## Resonant Branch Follow-Up Diagnostics
 
@@ -803,9 +819,9 @@ Decision:
 
 ```text
 Do not add resonant branches to the canonical CRA mechanism stack. Continue
-from the Tier 7.1k same-subset repair candidate into Tier 7.1l locked-policy
-holdout confirmation, and use public/standardized benchmarks to decide the next
-mechanism, adapter, or claim narrowing step.
+from the Tier 7.1l holdout non-confirmation into Tier 7.1m closeout, and use
+public/standardized benchmarks to decide the next mechanism, adapter, or claim
+narrowing step.
 ```
 
 ## Resonant Dose Sweep Closeout
@@ -823,6 +839,6 @@ Decision:
 
 ```text
 The resonant branch idea has now been tested across the useful dose range and is
-parked. Return to the public usefulness track: Tier 7.1l NAB locked-policy
-holdout confirmation.
+parked. Return to the public usefulness track: Tier 7.1m NAB closeout /
+mechanism-return decision.
 ```

@@ -1220,71 +1220,80 @@ ability.
     versus raw v2.3, so no public usefulness proof, freeze, or hardware/native
     transfer is authorized.
 
-93. **CURRENT ACTIVE STEP** - Tier 7.1l NAB locked-policy holdout
-    confirmation:
-    freeze the 7.1k `persist3` policy without re-selection, evaluate it on
-    held-out NAB streams/categories, preserve sham separation, quantify the
-    recall/false-positive tradeoff, and compare against rolling z-score,
-    reservoir, v2.2, and v2.3 shams before adding mechanisms or moving anything
-    to hardware.
+93. **COMPLETE** - Tier 7.1l NAB locked-policy holdout confirmation:
+    passed 13/13 at
+    `controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation/`.
+    Outcome: `v2_3_locked_policy_reduced_fp_but_not_confirmed`. The locked
+    `persist3` policy reduced v2.3 FP/1000 versus raw v2.3 on held-out streams,
+    but v2.3 ranked fifth, did not beat rolling z-score or v2.2, and separated
+    only two of three shams. Boundary: this narrows the NAB claim and blocks any
+    public usefulness proof, freeze, or hardware/native transfer from the 7.1k
+    same-subset repair.
 
-94. Mechanism iteration loop: add exactly one planned general mechanism at a
+94. **CURRENT ACTIVE STEP** - Tier 7.1m NAB closeout / mechanism-return
+    decision:
+    synthesize the Tier 7.1h-7.1l NAB chain, explicitly narrow the NAB claim,
+    stop adapter-policy tuning unless a new predeclared mechanism changes the
+    hypothesis, and select the next planned general mechanism or standardized
+    benchmark gate from the roadmap.
+
+95. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
     stop the broad usefulness track and narrow the paper.
 
-95. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+96. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines. Start only after the standardized scoreboard or failure diagnosis
     identifies a winning regime, a real failure mode, or a mechanism needing
     external validation.
 
-95. Tier 7.2 held-out task challenge: define held-out families before running;
+97. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout. Include at least one synthetic holdout and one
     real-ish adapter holdout if Tier 7.1 is active.
 
-96. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+98. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines. Candidate domains include
     streaming anomaly detection, predictive-maintenance sensor streams, human
     activity streams, event prediction, ECG/biosignal streams, and finance as
     one domain only rather than the whole proof.
 
-94. Tier 7.4 policy/action selection: state -> action -> delayed consequence,
+99. Tier 7.4 policy/action selection: state -> action -> delayed consequence,
     exploration versus exploitation, uncertainty-gated actions. Do not start
     broad policy claims until prediction/adaptation usefulness is measured.
 
-95. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
+100. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
     planning/subgoal control: run only after the shorter hard/real-ish tasks are
     stable. Do not claim language, AGI, or broad planning from toy gates.
 
-96. Run expanded external baselines and fairness audit at the phase lock:
+101. Run expanded external baselines and fairness audit at the phase lock:
     random/sign persistence, online perceptron/logistic, lag/ridge where
     relevant, reservoir/ESN, small GRU, STDP-only SNN, simple evolutionary
     population, simple control baselines, and SNN reviewer-defense baselines
     where practical.
 
-97. Freeze the next software baseline only if new software capability work
+102. Freeze the next software baseline only if new software capability work
     passes ablations, fair baselines, leakage controls, and compact regression.
     If no new software mechanism is promoted, keep v2.3.
 
 ### Phase I - Final Paper Lock
 
-98. Select final paper claim level: strong usefulness paper, bounded architecture
+103. Select final paper claim level: strong usefulness paper, bounded architecture
     study, or narrowed diagnostic report. Let the evidence decide.
 
-99. Run final software matrix and final hardware subset matrix. Include effect
+104. Run final software matrix and final hardware subset matrix. Include effect
     sizes, confidence intervals, worst seed, sample efficiency, runtime, command
     count, resource budgets, and claim-boundary table.
 
-100. Build the independent reproduction capsule: fresh checkout instructions,
+105. Build the independent reproduction capsule: fresh checkout instructions,
     environment lock, validation command, registry/table regeneration, EBRAINS
     ingest instructions, artifact hash manifest, and one local tier rerun.
 
-101. Draft paper/whitepaper only after the Phase H usefulness/baseline gates pass. Write
+106. Draft paper/whitepaper only after the Phase H usefulness/baseline gates pass. Write
     limitations first, then claims. Preserve failed and parked diagnostics.
 
-102. External dry run: have a clean agent or human follow only the docs. If they
+107. External dry run: have a clean agent or human follow only the docs. If they
     need hidden chat context, the repo is not ready.
 
 ## 7. Current Tier 4.27 Definition
@@ -1615,8 +1624,10 @@ v2.3 has better event-F1/window recall but worse NAB-style/false-positive
 pressure. Tier 7.1k found a same-subset no-label `persist3` false-positive
 repair candidate, but it must be confirmed on held-out NAB streams/categories
 because the policy was selected on the broad diagnostic subset and traded off
-window recall. The next active public-adapter work is Tier 7.1l NAB
-locked-policy holdout confirmation. Reopen
+window recall. Tier 7.1l tested that locked policy on 12 held-out NAB streams:
+it reduced false positives but did not beat rolling z-score or v2.2, ranked
+fifth, and separated only two of three shams. The next active public-adapter
+work is Tier 7.1m NAB closeout / mechanism-return decision. Reopen
 native work only for targeted transfer after a software task/mechanism earns it
 under the Tier 7/6.2 gates and a separate transfer contract is written.
 It must preserve explicit board/chip/shard identity, message paths, compact

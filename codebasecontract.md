@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-08T23:54:00+00:00.
+Last updated: 2026-05-08T23:59:00+00:00.
 
 Current repo root:
 
@@ -269,6 +269,31 @@ Tier 7.1k = COMPLETE, PASS, 9/9 criteria
             the broad diagnostic subset. Not a promoted mechanism, not a
             baseline freeze, not hardware/native transfer, and not AGI/ASI
             evidence.
+```
+
+Latest NAB locked-policy holdout confirmation:
+
+```text
+Tier 7.1l = COMPLETE, PASS, 13/13 criteria
+  Source: controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation/
+  Runner: experiments/tier7_1l_nab_locked_policy_holdout_confirmation.py
+  Outcome: v2_3_locked_policy_reduced_fp_but_not_confirmed
+  Locked policy: persist3
+  Heldout subset: 12 NAB streams across 6 categories, disjoint from the Tier
+                  7.1i/7.1k broad subset.
+  Locked v2.3 primary score/rank: 0.11180074060709926 / 5
+  Rolling z-score under locked policy: 0.13854698668870535
+  v2.3 beats rolling z-score under locked policy: false
+  v2.3 beats v2.2 under locked policy: false
+  v2.3 sham separations under locked policy: 2/3
+  v2.3 false-positive reduction vs raw: 11.441444397652205 FP/1000
+  Tradeoff: event-F1 improved slightly versus raw v2.3, but window recall
+            dropped by 0.4652777777777778.
+  Interpretation: 7.1k was a real same-subset false-positive repair candidate,
+                  but it did not generalize enough for a public NAB usefulness
+                  claim.
+  Boundary: software holdout confirmation only; no public usefulness proof, no
+            baseline freeze, no hardware/native transfer, and no AGI/ASI claim.
 ```
 
 Latest optional mechanism diagnostic:
@@ -879,12 +904,18 @@ Tier 7.1k — COMPLETE. NAB adapter/readout false-positive repair.
     on the same broad subset, so no public usefulness claim, freeze, or
     hardware transfer is authorized.
 
-Tier 7.1l — CURRENT ACTIVE STEP. NAB locked-policy holdout confirmation.
-  Required first move: freeze the 7.1k `persist3` policy without re-selection,
-    evaluate it on held-out NAB streams/categories, preserve sham separation,
-    quantify recall/false-positive tradeoffs, and compare against rolling
-    z-score, reservoir, v2.2, and v2.3 shams. Only a held-out pass can promote
-    the repair from candidate to confirmed public-adapter evidence.
+Tier 7.1l — COMPLETE. NAB locked-policy holdout confirmation.
+  Status: LOCAL SOFTWARE PASS, 13/13 criteria.
+  Output: controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation/
+  Result: the locked 7.1k `persist3` policy reduced false positives on heldout
+    NAB streams but did not confirm public usefulness. v2.3 ranked fifth, did
+    not beat rolling z-score or v2.2, and separated only two of three shams.
+
+Tier 7.1m — CURRENT ACTIVE STEP. NAB closeout / mechanism-return decision.
+  Required first move: synthesize the full Tier 7.1h-7.1l NAB evidence chain,
+    explicitly narrow the NAB claim, stop adapter-policy tuning unless a new
+    predeclared mechanism changes the hypothesis, and select the next planned
+    general mechanism or standardized benchmark gate from the roadmap.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware

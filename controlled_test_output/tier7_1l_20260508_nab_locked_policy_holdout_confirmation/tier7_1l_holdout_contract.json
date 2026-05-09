@@ -1,0 +1,63 @@
+{
+  "alarm_policies": [
+    "raw",
+    "persist3"
+  ],
+  "excluded_broad_files": [
+    "artificialWithAnomaly/art_daily_flatmiddle.csv",
+    "artificialWithAnomaly/art_daily_jumpsdown.csv",
+    "artificialWithAnomaly/art_daily_jumpsup.csv",
+    "artificialWithAnomaly/art_load_balancer_spikes.csv",
+    "realAWSCloudwatch/ec2_cpu_utilization_24ae8d.csv",
+    "realAWSCloudwatch/ec2_cpu_utilization_5f5533.csv",
+    "realAWSCloudwatch/ec2_disk_write_bytes_c0d644.csv",
+    "realAWSCloudwatch/grok_asg_anomaly.csv",
+    "realAWSCloudwatch/rds_cpu_utilization_e47b3b.csv",
+    "realAdExchange/exchange-2_cpm_results.csv",
+    "realAdExchange/exchange-4_cpm_results.csv",
+    "realKnownCause/ambient_temperature_system_failure.csv",
+    "realKnownCause/cpu_utilization_asg_misconfiguration.csv",
+    "realKnownCause/ec2_request_latency_system_failure.csv",
+    "realKnownCause/machine_temperature_system_failure.csv",
+    "realKnownCause/nyc_taxi.csv",
+    "realTraffic/TravelTime_387.csv",
+    "realTraffic/speed_7578.csv",
+    "realTweets/Twitter_volume_AAPL.csv",
+    "realTweets/Twitter_volume_GOOG.csv"
+  ],
+  "heldout_files": [
+    "artificialWithAnomaly/art_daily_nojump.csv",
+    "artificialWithAnomaly/art_increase_spike_density.csv",
+    "realAWSCloudwatch/ec2_cpu_utilization_53ea38.csv",
+    "realAWSCloudwatch/ec2_network_in_5abac7.csv",
+    "realAdExchange/exchange-3_cpc_results.csv",
+    "realAdExchange/exchange-4_cpc_results.csv",
+    "realKnownCause/rogue_agent_key_hold.csv",
+    "realKnownCause/rogue_agent_key_updown.csv",
+    "realTraffic/TravelTime_451.csv",
+    "realTraffic/speed_t4013.csv",
+    "realTweets/Twitter_volume_AMZN.csv",
+    "realTweets/Twitter_volume_UPS.csv"
+  ],
+  "key_models": [
+    "rolling_zscore_detector",
+    "fixed_random_reservoir_online_residual",
+    "ewma_residual_detector",
+    "rolling_mad_detector",
+    "v2_2_fading_memory_prediction_error",
+    "v2_3_generic_recurrent_prediction_error",
+    "v2_3_shuffled_state_sham",
+    "v2_3_shuffled_target_control",
+    "v2_3_no_update_ablation"
+  ],
+  "locked_policy": "persist3",
+  "nonclaims": [
+    "not a new CRA mechanism",
+    "not a baseline freeze",
+    "not hardware/native transfer",
+    "not AGI/ASI evidence"
+  ],
+  "prior_gate": "/Users/james/JKS:CRA/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/tier7_1k_results.json",
+  "question": "Does the Tier 7.1k persist3 false-positive repair survive held-out NAB streams without policy re-selection?",
+  "source_commit": "ea702d75cc2258d9d7dd35ca8e5e2539d71f3140"
+}

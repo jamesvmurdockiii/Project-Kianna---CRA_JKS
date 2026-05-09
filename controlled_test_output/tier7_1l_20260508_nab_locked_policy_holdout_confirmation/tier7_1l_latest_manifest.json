@@ -1,0 +1,75 @@
+{
+  "artifacts": [
+    {
+      "bytes": 15090,
+      "name": "category_summary_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation/tier7_1l_category_summary.csv",
+      "sha256": "3d3e7e948bf5e4d9b1bb105545ead5867a8154dde322fb481670f7ae6e512918"
+    },
+    {
+      "bytes": 757,
+      "name": "classification_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation/tier7_1l_classification.csv",
+      "sha256": "8102dafb0e2c55fac264fd443a40675b43a64d8d00d8b5566440e6717f4ed824"
+    },
+    {
+      "bytes": 2541,
+      "name": "contract_json",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation/tier7_1l_holdout_contract.json",
+      "sha256": "4157ed32bd686ee4236c6d44b67bf58a4e044df269233b5d0dc9d9f610d84db6"
+    },
+    {
+      "bytes": 189916,
+      "name": "policy_metrics_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation/tier7_1l_policy_metrics.csv",
+      "sha256": "9dc70e5bdd61009a3f06c5dbcb13ba9cb470d259278d62318e423eaab6b6da78"
+    },
+    {
+      "bytes": 2780,
+      "name": "policy_summary_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation/tier7_1l_policy_summary.csv",
+      "sha256": "15ec1b77fadba0df8514777a168724899c47bfe9e29cc43c034ac74c34c90862"
+    },
+    {
+      "bytes": 1188,
+      "name": "report_md",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation/tier7_1l_report.md",
+      "sha256": "0d130c832e3a33d6cbc41b711d595f340ea45e64c8ac8ff26ebba29621e1e891"
+    },
+    {
+      "bytes": 20483,
+      "name": "results_json",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation/tier7_1l_results.json",
+      "sha256": "1047f2120a1ee6f351a5fc2572f7bc3608c2246ad89725924c2fb8eb5fea0c22"
+    },
+    {
+      "bytes": 4733,
+      "name": "source_manifest_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation/tier7_1l_source_manifest.csv",
+      "sha256": "8d0e58b609f5093efdc3cce5e7e898e83d7d321315645b062c21b8be0f856214"
+    },
+    {
+      "bytes": 32954,
+      "name": "stream_summary_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation/tier7_1l_stream_summary.csv",
+      "sha256": "9f966884d7732dc3fd6a8d1ef3933e411ccbc9a8d4791e6a422cc82139ea4ea7"
+    },
+    {
+      "bytes": 3378,
+      "name": "summary_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation/tier7_1l_summary.csv",
+      "sha256": "373a20479276bb128595797e5ce9d9119e48f949df26b236a6505c46bfd6ebfc"
+    },
+    {
+      "bytes": 39322,
+      "name": "thresholds_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation/tier7_1l_thresholds.csv",
+      "sha256": "25d68af951f785af26579a7f5dd1088cf4a3808a295e8b9d04af2c17852590dc"
+    }
+  ],
+  "generated_at_utc": "2026-05-08T23:55:19+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation",
+  "runner_revision": "tier7_1l_nab_locked_policy_holdout_confirmation_20260508_0001",
+  "status": "pass",
+  "tier": "Tier 7.1l - NAB Locked-Policy Holdout Confirmation"
+}

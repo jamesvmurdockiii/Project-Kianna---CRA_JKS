@@ -14,7 +14,7 @@ mechanism promotion, lifecycle/ecology evidence, and native SpiNNaker runtime
 migration. The generated registry is the authority for which results are
 canonical.
 
-The current canonical evidence trail contains **104 registered evidence bundles**
+The current canonical evidence trail contains **105 registered evidence bundles**
 with all expected artifacts present and all criteria passing. The generated
 registry is the source of truth for the full list:
 
@@ -11051,14 +11051,35 @@ the broad diagnostic subset, and window recall dropped versus raw v2.3, so this
 does not authorize public usefulness proof, freeze, or hardware/native transfer.
 ```
 
-Next required step:
+Tier 7.1l result:
 
 ```text
 Tier 7.1l - NAB locked-policy holdout confirmation.
-Freeze the Tier 7.1k `persist3` policy without re-selection, evaluate it on
-held-out NAB streams/categories, preserve sham separation, and quantify the
-recall/false-positive tradeoff before any usefulness claim, freeze, or
-hardware/native transfer.
+Status: COMPLETE / PASS, 13/13 criteria.
+Output: controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation/
+Outcome: v2_3_locked_policy_reduced_fp_but_not_confirmed
+Heldout subset: 12 NAB streams across 6 categories, disjoint from the 7.1k
+broad diagnostic subset.
+Locked policy: persist3
+Locked v2.3 primary score/rank: 0.11180074060709926 / 5
+Rolling z-score under locked policy: 0.13854698668870535
+v2.3 beats rolling z-score under locked policy: false
+v2.3 beats v2.2 under locked policy: false
+v2.3 sham separations under locked policy: 2/3
+v2.3 FP/1000 reduction vs raw: 11.441444397652205
+v2.3 window-recall loss vs raw: 0.4652777777777778
+Boundary: software holdout confirmation only. The same-subset repair reduced
+false positives but did not generalize into public NAB usefulness proof, so no
+freeze or hardware/native transfer is authorized.
+```
+
+Next required step:
+
+```text
+Tier 7.1m - NAB closeout / mechanism-return decision.
+Synthesize the Tier 7.1h-7.1l public NAB evidence chain, narrow the NAB claim,
+stop adapter-policy tuning unless a new mechanism changes the hypothesis, and
+choose the next planned general mechanism or standardized benchmark gate.
 ```
 
 ## Tier 5.20a - Resonant Branch Polyp Internal-Model Diagnostic
