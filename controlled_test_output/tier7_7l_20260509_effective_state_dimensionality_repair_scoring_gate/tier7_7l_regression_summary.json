@@ -1,0 +1,5 @@
+{
+  "compact_regression_inside_gate": false,
+  "reason": "Tier 7.7l is a scoring/diagnostic gate. If diagnostically supported, route to a separate promotion plus compact-regression gate before freeze.",
+  "required_before_promotion": true
+}

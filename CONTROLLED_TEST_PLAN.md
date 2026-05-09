@@ -11514,11 +11514,26 @@ Next required step:
 
 ```text
 Tier 7.7l - Effective-state-dimensionality repair scoring gate.
-Implement and score the locked 7.7k repair against diversity-disabled,
-same-capacity single-pool, permuted, orthogonal, block, target-shuffle, and
-time-shuffle controls. Report state PR/rank, MSE/tail/correlation, readout
-concentration, sham margins, Mackey/NARMA regression guards, and compact
-regression before any promotion.
+Status: COMPLETE / PASS, 15/15 criteria.
+Output: controlled_test_output/tier7_7l_20260509_effective_state_dimensionality_repair_scoring_gate/
+Outcome: task_gain_without_dimension.
+Result: partitioned causal drivers improved Lorenz versus the prior/single-pool
+reference, and also improved Mackey/NARMA versus single-pool. But PR rose only
+to 2.6645, diversity-disabled was too close, and the predeclared
+state-dimensionality/attribution gate did not pass.
+Boundary: diagnostic scoring only; no mechanism promotion, baseline freeze,
+public usefulness claim, external-baseline superiority, or hardware/native
+transfer.
+```
+
+Next required step:
+
+```text
+Tier 7.7m - Partitioned-driver attribution contract.
+Pre-register whether the 7.7l gain comes from causal driver partitioning,
+nonlinear/lag features, readout/interface effects, diversity pressure, or
+another confound. Keep polyp morphology/template variability as a separate
+future contract.
 ```
 
 Latest standardized benchmark contract:

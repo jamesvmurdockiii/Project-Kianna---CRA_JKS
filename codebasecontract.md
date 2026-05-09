@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-09T15:56:49+00:00.
+Last updated: 2026-05-09T16:19:33+00:00.
 
 Current repo root:
 
@@ -1373,13 +1373,23 @@ Tier 7.7k — COMPLETE. Effective-state-dimensionality repair contract.
   promotion, baseline freeze, public usefulness claim, external-baseline
   superiority, or hardware/native transfer is authorized.
 
-Tier 7.7l — CURRENT ACTIVE STEP. Effective-state-dimensionality repair scoring
-  gate. Implement and score the locked 7.7k repair exactly as pre-registered.
-  The gate must compare candidate, diversity-disabled ablation, single-pool
-  same-capacity reference, permuted-recurrence ensemble, orthogonal reference,
-  block reference, target shuffle, and time shuffle; it must report PR/rank,
-  MSE/tail/correlation, readout concentration, sham margins, Mackey/NARMA
-  regression guards, and compact regression before any promotion.
+Tier 7.7l — COMPLETE. Effective-state-dimensionality repair scoring gate.
+  Status: PASS, 15/15 criteria. Output:
+  `controlled_test_output/tier7_7l_20260509_effective_state_dimensionality_repair_scoring_gate/`.
+  Outcome `task_gain_without_dimension`: the partitioned-driver candidate
+  improved Lorenz substantially (`0.0034485307` vs prior/single-pool
+  `0.0065086836`) and improved Mackey/NARMA versus single-pool, but PR rose only
+  to `2.6645`, diversity-disabled was too close (`1.0165x`), and the
+  predeclared effective-dimensionality/attribution gate did not pass. Diagnostic
+  only; no mechanism promotion, freeze, broad usefulness claim,
+  external-baseline superiority, or hardware/native transfer is authorized.
+
+Tier 7.7m — CURRENT ACTIVE STEP. Partitioned-driver attribution contract.
+  Pre-register whether the 7.7l gain comes from causal driver partitioning,
+  nonlinear/lag features, readout/interface effects, diversity pressure, or
+  another confound before any promotion or architecture change. Keep polyp
+  morphology/template variability separate as a future contract; do not layer it
+  into this attribution gate.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware

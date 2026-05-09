@@ -4379,9 +4379,24 @@ Current next step:
 
 ```text
 Tier 7.7l — Effective-state-dimensionality repair scoring gate
-Question: does the locked repair raise effective recurrent state dimensionality
-and improve Lorenz while separating from generic bases/shams and preserving
-Mackey/NARMA guards?
+Status: COMPLETE / PASS, 15/15 criteria
+Outcome: task_gain_without_dimension
+Output: controlled_test_output/tier7_7l_20260509_effective_state_dimensionality_repair_scoring_gate/
+Result: the repair improved standardized task scores, including Lorenz, but did
+not satisfy the predeclared effective-dimensionality or diversity-pressure
+attribution threshold. This is a useful diagnostic signal, not a promoted
+mechanism.
+Boundary: no mechanism promotion, no baseline freeze, no public usefulness
+claim, no external-baseline superiority, and no hardware/native transfer.
+```
+
+Current next step:
+
+```text
+Tier 7.7m — Partitioned-driver attribution contract
+Question: what caused the 7.7l task gain if not the predeclared state-
+dimensionality repair? Lock driver-partition, nonlinear/lag-feature,
+readout/interface, diversity-pressure, and confound controls before scoring.
 ```
 
 Tier 7.1a predeclared these candidate/future adapter families:

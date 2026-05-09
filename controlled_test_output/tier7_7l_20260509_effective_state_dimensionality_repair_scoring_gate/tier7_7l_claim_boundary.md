@@ -1,0 +1,1 @@
+Tier 7.7l scores the locked 7.7k effective-state-dimensionality repair. It may support or block the repair diagnostically, but it does not freeze a baseline, promote a mechanism, authorize hardware/native transfer, or claim broad public usefulness.

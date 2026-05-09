@@ -5,10 +5,10 @@ ledger is `STUDY_REGISTRY.json`; the compact table is `STUDY_REGISTRY.csv`.
 Older reruns, prepared capsules, debug probes, and baseline-frozen
 mechanism bundles outside the formal registry are preserved for audit.
 
-- Generated: `2026-05-09T15:59:04.512629+00:00`
+- Generated: `2026-05-09T16:22:13.752762+00:00`
 - Registry status: **PASS**
-- Canonical evidence entries: `134`
-- Expanded test-entry count: `134`; see the canonical evidence table below for the exact current tier list.
+- Canonical evidence entries: `135`
+- Expanded test-entry count: `135`; see the canonical evidence table below for the exact current tier list.
 
 ## Evidence Categories
 
@@ -120,6 +120,7 @@ mechanism bundles outside the formal registry are preserved for audit.
 | `tier7_7i_capacity_sham_separation_contract` | **PASS** | `controlled_test_output/tier7_7i_20260509_capacity_sham_separation_contract` | Contract/pre-registration evidence only; not a score, not a repair, not a mechanism promotion, not a baseline freeze, not hardware/native transfer, and not public usefulness evidence. |
 | `tier7_7j_capacity_sham_separation_scoring_gate` | **PASS** | `controlled_test_output/tier7_7j_20260509_capacity_sham_separation_scoring_gate` | Diagnostic scoring evidence only; not a repair, not a mechanism promotion, not a baseline freeze, not hardware/native transfer, not external-baseline superiority, and not broad public usefulness evidence. |
 | `tier7_7k_effective_state_dimensionality_repair_contract` | **PASS** | `controlled_test_output/tier7_7k_20260509_effective_state_dimensionality_repair_contract` | Contract/pre-registration evidence only; not a repair implementation, not a score, not a mechanism promotion, not a baseline freeze, not hardware/native transfer, not external-baseline superiority, and not broad public usefulness evidence. |
+| `tier7_7l_effective_state_dimensionality_repair_scoring_gate` | **PASS** | `controlled_test_output/tier7_7l_20260509_effective_state_dimensionality_repair_scoring_gate` | Diagnostic scoring evidence only; not a mechanism promotion, not a baseline freeze, not hardware/native transfer, not external-baseline superiority, and not broad public usefulness evidence. |
 | `tier5_20a_resonant_branch_polyp_diagnostic` | **PASS** | `controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic` | Software diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence. |
 | `tier5_20b_hybrid_resonant_polyp_diagnostic` | **PASS** | `controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic` | Software repair diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence. |
 | `tier5_20c_minimal_resonant_polyp_diagnostic` | **PASS** | `controlled_test_output/tier5_20c_20260508_minimal_resonant_polyp_diagnostic` | Software minimal-dose diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence. |
