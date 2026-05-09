@@ -1,0 +1,6 @@
+split_id,visible_to_development,claim_allowed,rule
+standard_train_prefix,True,False,first 65% of each standardized stream; normalization and readouts fit here only
+standard_test_suffix,False,True,"last 35% of each standardized stream; no model, threshold, or hyperparameter changes after viewing"
+standard_tail_test,False,True,final quartile of the test suffix; used for late-run stability and forgetting diagnostics
+public_adapter_train_calibration,True,False,"public training units/streams only; used for thresholds, costs, and candidate selection"
+public_adapter_heldout,False,True,held-out units/streams/windows not used for same-subset policy selection

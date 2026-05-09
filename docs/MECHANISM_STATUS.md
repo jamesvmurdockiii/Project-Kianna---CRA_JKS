@@ -58,7 +58,7 @@ until a software/usefulness gate creates a measured need.
 | 7 | Autonomous lifecycle-to-learning MCPL | Not yet proven; current lifecycle bridges are bounded/static or traffic/resource smokes. | Implement after lifecycle helps on useful tasks and host-ferrying becomes the blocker. |
 | 8 | Dynamic population creation | Not supported in the PyNN/SpiNNaker path; static pools and active masks are the supported route. | Only revisit with a custom runtime design that predeclares allocation/resource semantics. |
 | 9 | Curriculum public/usefulness transfer | Tier 7.5 produced synthetic generated-family evidence but no public-usefulness claim. | Re-enter through a locked standardized benchmark/usefulness scoreboard, not through more generator tuning. |
-| 10 | Long-horizon planning public/usefulness transfer | Tier 7.6 froze bounded v2.5 software evidence. | Next step is a standardized benchmark/usefulness contract before claiming real planning value. |
+| 10 | Long-horizon planning public/usefulness transfer | Tier 7.6 froze bounded v2.5 software evidence; Tier 7.7a locked the public/standardized scoreboard contract. | Next step is Tier 7.7b scoring. Use the locked Mackey-Glass/Lorenz/NARMA10 8000-step primary scoreboard plus secondary C-MAPSS/NAB confirmation tracks before claiming real planning value. |
 | 12 | Language/multimodal grounding | Future research direction, not current paper scope. | Requires separate task families, baselines, and safety boundaries. |
 
 ## Current strategic rule

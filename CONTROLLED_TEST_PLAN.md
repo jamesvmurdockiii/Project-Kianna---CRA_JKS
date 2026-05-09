@@ -11358,10 +11358,26 @@ not hardware/native transfer, not autonomous on-chip planning, and not AGI/ASI.
 Next required step:
 
 ```text
+Tier 7.7b - v2.5 standardized benchmark/usefulness scoreboard scoring gate.
+Score frozen v2.5 on the locked Tier 7.7a public/standardized matrix without
+changing tasks, baselines, splits, metrics, shams, leakage rules, pass/fail
+criteria, artifacts, or claim boundaries.
+```
+
+Latest standardized benchmark contract:
+
+```text
 Tier 7.7a - v2.5 standardized benchmark/usefulness scoreboard contract.
-Predeclare the locked public/standardized benchmark matrix, baselines, splits,
-metrics, shams, leakage rules, pass/fail criteria, artifacts, and claim
-boundaries before scoring v2.5.
+Status: COMPLETE / PASS, 20/20 criteria.
+Output: controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract/
+Outcome: v2_5_standardized_scoreboard_contract_locked.
+Primary scoreboard: Mackey-Glass, Lorenz, and NARMA10 at 8000 steps,
+horizon 8, seeds 42/43/44, chronological 65/35 split.
+Secondary confirmation: C-MAPSS FD001 and NAB held-out action-cost tracks only;
+they cannot rescue a failed standardized core.
+Boundary: contract/pre-registration only; no benchmark score, no public
+usefulness claim, no new freeze, no hardware/native transfer, and no
+language/broad-planning/AGI/ASI claim.
 ```
 
 ## Tier 5.20a - Resonant Branch Polyp Internal-Model Diagnostic

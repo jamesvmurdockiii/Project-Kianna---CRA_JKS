@@ -1,0 +1,22 @@
+{
+  "artifacts": {
+    "baselines_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract/tier7_7a_baselines.csv",
+    "claim_boundary_md": "/Users/james/JKS:CRA/controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract/tier7_7a_claim_boundary.md",
+    "contract_json": "/Users/james/JKS:CRA/controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract/tier7_7a_scoreboard_contract.json",
+    "expected_artifacts_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract/tier7_7a_expected_artifacts.csv",
+    "leakage_rules_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract/tier7_7a_leakage_rules.csv",
+    "metrics_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract/tier7_7a_metrics.csv",
+    "pass_fail_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract/tier7_7a_pass_fail_criteria.csv",
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract/tier7_7a_report.md",
+    "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract/tier7_7a_results.json",
+    "shams_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract/tier7_7a_shams.csv",
+    "splits_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract/tier7_7a_splits.csv",
+    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract/tier7_7a_summary.csv",
+    "task_matrix_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract/tier7_7a_task_matrix.csv"
+  },
+  "generated_at_utc": "2026-05-09T12:13:13+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract",
+  "runner_revision": "tier7_7a_v2_5_standardized_scoreboard_contract_20260509_0001",
+  "status": "pass",
+  "tier": "Tier 7.7a - v2.5 Standardized Benchmark / Usefulness Scoreboard Contract"
+}

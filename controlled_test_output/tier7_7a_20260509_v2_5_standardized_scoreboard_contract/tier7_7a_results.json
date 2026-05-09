@@ -1,0 +1,745 @@
+{
+  "classification": {
+    "baseline_freeze_authorized": false,
+    "hardware_transfer_authorized": false,
+    "next_gate": "Tier 7.7b - v2.5 Standardized Benchmark / Usefulness Scoreboard Scoring Gate",
+    "outcome": "v2_5_standardized_scoreboard_contract_locked",
+    "public_usefulness_authorized": false,
+    "scoring_authorized": true
+  },
+  "contract": {
+    "baselines": [
+      {
+        "applies_to": "all primary standardized tasks; secondary public adapters where implemented",
+        "baseline_id": "cra_v2_5_host_side_candidate",
+        "class": "CRA_candidate",
+        "fairness_rule": "same causal inputs, same train/calibration/test split, no test-label tuning"
+      },
+      {
+        "applies_to": "standardized dynamical core",
+        "baseline_id": "cra_v2_3_generic_recurrent_reference",
+        "class": "CRA_previous_reference",
+        "fairness_rule": "same locked 8000-step protocol used for v2.3 freeze comparison"
+      },
+      {
+        "applies_to": "action-cost secondary tracks and any standardized action-cost transform",
+        "baseline_id": "cra_v2_4_cost_aware_policy_reference",
+        "class": "CRA_previous_reference",
+        "fairness_rule": "same locked costs and no same-subset policy selection"
+      },
+      {
+        "applies_to": "standardized dynamical core",
+        "baseline_id": "persistence",
+        "class": "simple_sequence_baseline",
+        "fairness_rule": "prediction uses only causal prior values"
+      },
+      {
+        "applies_to": "standardized dynamical core",
+        "baseline_id": "online_lms",
+        "class": "online_linear_baseline",
+        "fairness_rule": "prequential prediction before online update"
+      },
+      {
+        "applies_to": "standardized dynamical core",
+        "baseline_id": "ridge_lag",
+        "class": "train_prefix_linear_baseline",
+        "fairness_rule": "fit on train prefix only with same lag budget"
+      },
+      {
+        "applies_to": "standardized dynamical core and secondary adapters where feasible",
+        "baseline_id": "echo_state_network",
+        "class": "reservoir_baseline",
+        "fairness_rule": "predeclared reservoir size and train-prefix readout only"
+      },
+      {
+        "applies_to": "standardized dynamical core if runtime budget allows",
+        "baseline_id": "small_gru",
+        "class": "gradient_recurrent_reviewer_defense",
+        "fairness_rule": "predeclared hidden size, epochs, early stopping on validation only"
+      },
+      {
+        "applies_to": "NAB and C-MAPSS action-cost tracks",
+        "baseline_id": "rolling_or_ewma_threshold_policy",
+        "class": "public_adapter_baseline",
+        "fairness_rule": "thresholds selected on train/calibration streams only"
+      },
+      {
+        "applies_to": "secondary public adapters",
+        "baseline_id": "online_logistic_or_perceptron_policy",
+        "class": "public_adapter_online_baseline",
+        "fairness_rule": "same causal features and feedback timing"
+      },
+      {
+        "applies_to": "secondary public adapters",
+        "baseline_id": "always_wait_or_abstain",
+        "class": "negative_policy_control",
+        "fairness_rule": "reported to expose action-cost imbalance"
+      },
+      {
+        "applies_to": "all tasks where an oracle is definable",
+        "baseline_id": "oracle_upper_bound",
+        "class": "upper_bound_nonclaim",
+        "fairness_rule": "reported only; not a baseline CRA must beat and never used for tuning"
+      }
+    ],
+    "claim_boundary": "Tier 7.7a is a contract/pre-registration gate only. It performs no scoring, freezes no new baseline, claims no public usefulness, and authorizes no hardware/native transfer.",
+    "expected_artifacts": [
+      {
+        "artifact": "tier7_7b_results.json",
+        "purpose": "scoring result and classification"
+      },
+      {
+        "artifact": "tier7_7b_summary.csv",
+        "purpose": "criteria summary"
+      },
+      {
+        "artifact": "tier7_7b_report.md",
+        "purpose": "human-readable result and boundaries"
+      },
+      {
+        "artifact": "tier7_7b_scoreboard_rows.csv",
+        "purpose": "per task/model/seed metrics"
+      },
+      {
+        "artifact": "tier7_7b_aggregate_scoreboard.csv",
+        "purpose": "aggregate geomean/rank/effect-size table"
+      },
+      {
+        "artifact": "tier7_7b_sham_controls.csv",
+        "purpose": "sham/ablation separation"
+      },
+      {
+        "artifact": "tier7_7b_leakage_audit.json",
+        "purpose": "finite-stream and causal-order audit"
+      },
+      {
+        "artifact": "tier7_7b_fairness_contract.json",
+        "purpose": "exact scoring contract used by runner"
+      },
+      {
+        "artifact": "tier7_7b_claim_boundary.md",
+        "purpose": "allowed claims and nonclaims"
+      },
+      {
+        "artifact": "tier7_7b_latest_manifest.json",
+        "purpose": "registry pointer"
+      }
+    ],
+    "hypothesis": "If the v2.5 planning/subgoal-control stack adds general value, it should improve the locked 8000-step Mackey-Glass/Lorenz/NARMA10 standardized scoreboard versus the v2.3 software reference without matching shams or relying on future-label leakage. Real-ish adapters may support a stronger usefulness posture, but cannot rescue a failed standardized core by themselves.",
+    "leakage_rules": [
+      {
+        "guard": "train_only_normalization",
+        "rule": "normalization statistics fit only on train prefix or train units"
+      },
+      {
+        "guard": "prediction_before_update",
+        "rule": "online rows must emit prediction/action before target/reward update"
+      },
+      {
+        "guard": "target_shift_before_split",
+        "rule": "future targets are shifted before chronological splitting"
+      },
+      {
+        "guard": "finite_stream_precheck",
+        "rule": "all standardized streams must be finite before scoring; non-finite rows block the run"
+      },
+      {
+        "guard": "no_test_threshold_tuning",
+        "rule": "all thresholds, policy costs, lags, reservoirs, and hyperparameters locked before test scoring"
+      },
+      {
+        "guard": "same_seed_pairing",
+        "rule": "candidate and baselines are compared on the same seeds and streams"
+      },
+      {
+        "guard": "same_feature_budget_or_disclosed",
+        "rule": "baselines receive equivalent causal features or any advantage is explicitly labeled"
+      },
+      {
+        "guard": "oracle_nonclaim",
+        "rule": "oracle is reported as upper bound only and never treated as a beatable baseline"
+      },
+      {
+        "guard": "secondary_adapters_cannot_rescue_core_failure",
+        "rule": "C-MAPSS/NAB signals cannot erase a failed standardized core scoreboard"
+      }
+    ],
+    "metrics": [
+      {
+        "metric": "test_mse",
+        "purpose": "primary per-task regression error",
+        "scope": "standardized"
+      },
+      {
+        "metric": "test_nmse",
+        "purpose": "scale-normalized per-task regression error",
+        "scope": "standardized"
+      },
+      {
+        "metric": "tail_mse",
+        "purpose": "late-run stability and forgetting pressure",
+        "scope": "standardized"
+      },
+      {
+        "metric": "all_three_geomean_mse",
+        "purpose": "primary aggregate across Mackey-Glass, Lorenz, and NARMA10",
+        "scope": "standardized"
+      },
+      {
+        "metric": "rank_vs_baselines",
+        "purpose": "prevent single-number cherry picking",
+        "scope": "standardized_and_public"
+      },
+      {
+        "metric": "paired_seed_delta",
+        "purpose": "same-seed comparison versus v2.3/v2.4 and best non-oracle baseline",
+        "scope": "standardized_and_public"
+      },
+      {
+        "metric": "bootstrap_or_paired_ci",
+        "purpose": "confidence interval around effect size",
+        "scope": "standardized_and_public"
+      },
+      {
+        "metric": "worst_seed_score",
+        "purpose": "prevent mean-only claims hiding collapse",
+        "scope": "standardized_and_public"
+      },
+      {
+        "metric": "sample_efficiency_curve",
+        "purpose": "check whether longer exposure helps rather than only final score",
+        "scope": "optional_diagnostic"
+      },
+      {
+        "metric": "expected_utility",
+        "purpose": "action-cost usefulness where applicable",
+        "scope": "public_adapter_secondary"
+      },
+      {
+        "metric": "regret_vs_oracle",
+        "purpose": "distance from unattainable upper bound without using it as a claim baseline",
+        "scope": "public_adapter_secondary"
+      },
+      {
+        "metric": "false_positive_or_missed_event_cost",
+        "purpose": "ensure utility does not hide dangerous collapse modes",
+        "scope": "public_adapter_secondary"
+      },
+      {
+        "metric": "runtime_and_wall_clock",
+        "purpose": "resource accounting and reproducibility",
+        "scope": "all"
+      }
+    ],
+    "next_gate": "Tier 7.7b - v2.5 Standardized Benchmark / Usefulness Scoreboard Scoring Gate",
+    "nonclaims": [
+      "not a benchmark score",
+      "not a public usefulness claim",
+      "not proof of ESN/ridge/GRU superiority",
+      "not a new baseline freeze",
+      "not hardware or native-on-chip evidence",
+      "not language, broad planning, AGI, or ASI evidence"
+    ],
+    "null_hypothesis": "v2.5 does not improve the locked standardized scoreboard versus v2.3 or simpler non-oracle sequence baselines, or the apparent improvement is explained by lag-only controls, shams, test leakage, same-subset policy selection, or a single lucky seed/task.",
+    "pass_fail_criteria": [
+      {
+        "claim_allowed": "bounded usefulness candidate; still not AGI, language, hardware/native transfer, or universal superiority",
+        "kind": "strong_pass",
+        "rule": "v2.5 improves all-three 8000-step geomean MSE versus v2.3 by >= 10% and paired CI excludes zero, while at least one public/real-ish secondary family also supports v2.5 or v2.4+v2.5 utility without sham match"
+      },
+      {
+        "claim_allowed": "software mechanism progress on standardized dynamical benchmarks only",
+        "kind": "standardized_progress_pass",
+        "rule": "v2.5 improves all-three 8000-step geomean MSE versus v2.3 by >= 10% with paired support, but does not beat ESN/ridge or lacks public/real-ish confirmation"
+      },
+      {
+        "claim_allowed": "localized task-family signal only; no broad usefulness claim",
+        "kind": "localized_pass",
+        "rule": "v2.5 improves one or two standardized tasks or a secondary public adapter, but not the all-three aggregate"
+      },
+      {
+        "claim_allowed": "no usefulness upgrade; route to failure localization before further mechanism layering",
+        "kind": "no_promotion",
+        "rule": "v2.5 fails to improve v2.3 on the all-three aggregate or matches shams/lag-only controls"
+      },
+      {
+        "claim_allowed": "stop broad usefulness track and narrow the paper to architecture/evidence/hardware substrate",
+        "kind": "stop_or_narrow",
+        "rule": "full planned mechanism stack still fails standardized/public scoreboards after fair tests"
+      }
+    ],
+    "primary_scoreboard": "Mackey-Glass + Lorenz + NARMA10, length=8000, horizon=8, seeds=42,43,44, chronological 65/35 split",
+    "question": "Does frozen v2.5 improve CRA's public/standardized usefulness posture beyond bounded synthetic planning diagnostics?",
+    "secondary_public_confirmation": "C-MAPSS FD001 and NAB held-out action-cost tracks are included as secondary confirmation only, not as replacements for the standardized core.",
+    "shams": [
+      {
+        "purpose": "break input-target relation while preserving marginal target distribution",
+        "sham": "target_shuffle"
+      },
+      {
+        "purpose": "destroy temporal structure while preserving value distribution",
+        "sham": "time_shuffle"
+      },
+      {
+        "purpose": "determine whether CRA state adds beyond explicit lag memory",
+        "sham": "lag_only_control"
+      },
+      {
+        "purpose": "remove v2.3 recurrent state",
+        "sham": "state_disabled"
+      },
+      {
+        "purpose": "remove keyed context memory contribution",
+        "sham": "memory_disabled"
+      },
+      {
+        "purpose": "remove v1.7 replay/consolidation contribution",
+        "sham": "replay_disabled"
+      },
+      {
+        "purpose": "remove predictive/context modeling contribution",
+        "sham": "prediction_disabled"
+      },
+      {
+        "purpose": "remove reliability/confidence gating contribution",
+        "sham": "self_evaluation_disabled"
+      },
+      {
+        "purpose": "remove module routing and compositional reuse contribution",
+        "sham": "composition_routing_disabled"
+      },
+      {
+        "purpose": "remove v2.4 cost-aware action layer where relevant",
+        "sham": "policy_action_disabled"
+      },
+      {
+        "purpose": "remove v2.5 reduced-feature planning/subgoal state",
+        "sham": "planning_disabled"
+      },
+      {
+        "purpose": "detect any access to future targets, labels, or event windows before prediction/action",
+        "sham": "future_label_leak_guard"
+      }
+    ],
+    "splits": [
+      {
+        "claim_allowed": false,
+        "rule": "first 65% of each standardized stream; normalization and readouts fit here only",
+        "split_id": "standard_train_prefix",
+        "visible_to_development": true
+      },
+      {
+        "claim_allowed": true,
+        "rule": "last 35% of each standardized stream; no model, threshold, or hyperparameter changes after viewing",
+        "split_id": "standard_test_suffix",
+        "visible_to_development": false
+      },
+      {
+        "claim_allowed": true,
+        "rule": "final quartile of the test suffix; used for late-run stability and forgetting diagnostics",
+        "split_id": "standard_tail_test",
+        "visible_to_development": false
+      },
+      {
+        "claim_allowed": false,
+        "rule": "public training units/streams only; used for thresholds, costs, and candidate selection",
+        "split_id": "public_adapter_train_calibration",
+        "visible_to_development": true
+      },
+      {
+        "claim_allowed": true,
+        "rule": "held-out units/streams/windows not used for same-subset policy selection",
+        "split_id": "public_adapter_heldout",
+        "visible_to_development": false
+      }
+    ],
+    "task_matrix": [
+      {
+        "aggregate_role": "all_three_geomean_mse",
+        "claim_role": "standardized future-prediction component",
+        "family": "standard_dynamical_core",
+        "horizon": 8,
+        "length": 8000,
+        "primary_metric": "test_mse",
+        "required_for_primary_scoreboard": true,
+        "seeds": "42,43,44",
+        "source": "standard generated Mackey-Glass delay-differential series",
+        "split": "chronological train 65%, test 35%",
+        "task_id": "mackey_glass_future_prediction"
+      },
+      {
+        "aggregate_role": "all_three_geomean_mse",
+        "claim_role": "standardized chaotic future-prediction component",
+        "family": "standard_dynamical_core",
+        "horizon": 8,
+        "length": 8000,
+        "primary_metric": "test_mse",
+        "required_for_primary_scoreboard": true,
+        "seeds": "42,43,44",
+        "source": "standard generated Lorenz chaotic attractor series",
+        "split": "chronological train 65%, test 35%",
+        "task_id": "lorenz_future_prediction"
+      },
+      {
+        "aggregate_role": "all_three_geomean_mse",
+        "claim_role": "standardized nonlinear memory component",
+        "family": "standard_dynamical_core",
+        "horizon": 8,
+        "length": 8000,
+        "primary_metric": "test_mse",
+        "required_for_primary_scoreboard": true,
+        "seeds": "42,43,44",
+        "source": "standard NARMA10 nonlinear memory/system-identification stream",
+        "split": "chronological train 65%, test 35%",
+        "task_id": "narma10_memory_system_identification"
+      },
+      {
+        "aggregate_role": "primary_standardized_scoreboard",
+        "claim_role": "primary standardized usefulness diagnostic, not public usefulness alone",
+        "family": "standard_dynamical_core_aggregate",
+        "horizon": 8,
+        "length": 8000,
+        "primary_metric": "geomean_test_mse",
+        "required_for_primary_scoreboard": true,
+        "seeds": "42,43,44",
+        "source": "Mackey-Glass + Lorenz + NARMA10 locked 8000-step same-seed scoreboard",
+        "split": "aggregate only after all three tasks pass finite-stream checks",
+        "task_id": "standard_three_geomean"
+      },
+      {
+        "aggregate_role": "diagnostic_not_claim",
+        "claim_role": "debug over/under-exposure without replacing 8000-step scoreboard",
+        "family": "diagnostic_only",
+        "horizon": 8,
+        "length": "720,2000",
+        "primary_metric": "calibration_delta_only",
+        "required_for_primary_scoreboard": false,
+        "seeds": "42,43,44",
+        "source": "same standard generators at 720 and 2000 steps",
+        "split": "chronological train 65%, test 35%",
+        "task_id": "short_medium_calibration_sweeps"
+      },
+      {
+        "aggregate_role": "secondary_public_action_confirmation",
+        "claim_role": "real-ish confirmation only; cannot rescue failed standard scoreboard alone",
+        "family": "public_realish_secondary",
+        "horizon": "RUL/action window defined by held-out policy contract",
+        "length": "dataset-defined",
+        "primary_metric": "maintenance_utility_and_regret_vs_oracle",
+        "required_for_primary_scoreboard": false,
+        "seeds": "dataset split ids, plus deterministic model seeds",
+        "source": "NASA C-MAPSS FD001 source already audited in Tier 7.1b",
+        "split": "train units for calibration, held-out test units for scoring",
+        "task_id": "cmapss_fd001_maintenance_utility"
+      },
+      {
+        "aggregate_role": "secondary_public_action_confirmation",
+        "claim_role": "real-ish confirmation only; preserve prior NAB non-confirmation unless newly passed",
+        "family": "public_realish_secondary",
+        "horizon": "event window / alert latency scoring",
+        "length": "stream-defined",
+        "primary_metric": "expected_utility_false_positive_and_missed_event_cost",
+        "required_for_primary_scoreboard": false,
+        "seeds": "stream ids plus deterministic model seeds",
+        "source": "Numenta Anomaly Benchmark streams audited in Tier 7.1g-7.1m",
+        "split": "no same-subset policy selection; held-out streams only",
+        "task_id": "nab_heldout_alarm_action_cost"
+      }
+    ]
+  },
+  "criteria": [
+    {
+      "criterion": "v2.5 baseline exists",
+      "details": "",
+      "name": "v2.5 baseline exists",
+      "note": "",
+      "operator": "exists",
+      "pass": true,
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.5.json"
+    },
+    {
+      "criterion": "Tier 7.6e prerequisite passed",
+      "details": "",
+      "name": "Tier 7.6e prerequisite passed",
+      "note": "",
+      "operator": "== pass",
+      "pass": true,
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "criterion": "Tier 7.0j reference passed",
+      "details": "",
+      "name": "Tier 7.0j reference passed",
+      "note": "",
+      "operator": "== pass",
+      "pass": true,
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "criterion": "primary standardized tasks locked",
+      "details": "",
+      "name": "primary standardized tasks locked",
+      "note": "",
+      "operator": ">= 4 including aggregate",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 4 including aggregate",
+      "value": 4
+    },
+    {
+      "criterion": "Mackey/Lorenz/NARMA included",
+      "details": "",
+      "name": "Mackey/Lorenz/NARMA included",
+      "note": "",
+      "operator": "contains all three",
+      "pass": true,
+      "passed": true,
+      "rule": "contains all three",
+      "value": "mackey_glass_future_prediction,lorenz_future_prediction,narma10_memory_system_identification,standard_three_geomean,short_medium_calibration_sweeps,cmapss_fd001_maintenance_utility,nab_heldout_alarm_action_cost"
+    },
+    {
+      "criterion": "8000-step finite protocol locked",
+      "details": "",
+      "name": "8000-step finite protocol locked",
+      "note": "",
+      "operator": "== 8000",
+      "pass": true,
+      "passed": true,
+      "rule": "== 8000",
+      "value": [
+        "8000"
+      ]
+    },
+    {
+      "criterion": "three same seeds locked",
+      "details": "",
+      "name": "three same seeds locked",
+      "note": "",
+      "operator": "contains 42,43,44",
+      "pass": true,
+      "passed": true,
+      "rule": "contains 42,43,44",
+      "value": [
+        "42,43,44"
+      ]
+    },
+    {
+      "criterion": "chronological split locked",
+      "details": "",
+      "name": "chronological split locked",
+      "note": "",
+      "operator": "train 65%, test 35%",
+      "pass": true,
+      "passed": true,
+      "rule": "train 65%, test 35%",
+      "value": "chronological train 65%, test 35%,chronological train 65%, test 35%,chronological train 65%, test 35%"
+    },
+    {
+      "criterion": "v2.5 candidate baseline included",
+      "details": "",
+      "name": "v2.5 candidate baseline included",
+      "note": "",
+      "operator": "contains cra_v2_5",
+      "pass": true,
+      "passed": true,
+      "rule": "contains cra_v2_5",
+      "value": [
+        "cra_v2_5_host_side_candidate",
+        "cra_v2_3_generic_recurrent_reference",
+        "cra_v2_4_cost_aware_policy_reference",
+        "persistence",
+        "online_lms",
+        "ridge_lag",
+        "echo_state_network",
+        "small_gru",
+        "rolling_or_ewma_threshold_policy",
+        "online_logistic_or_perceptron_policy",
+        "always_wait_or_abstain",
+        "oracle_upper_bound"
+      ]
+    },
+    {
+      "criterion": "prior CRA references included",
+      "details": "",
+      "name": "prior CRA references included",
+      "note": "",
+      "operator": "contains v2.3 and v2.4",
+      "pass": true,
+      "passed": true,
+      "rule": "contains v2.3 and v2.4",
+      "value": [
+        "cra_v2_5_host_side_candidate",
+        "cra_v2_3_generic_recurrent_reference",
+        "cra_v2_4_cost_aware_policy_reference",
+        "persistence",
+        "online_lms",
+        "ridge_lag",
+        "echo_state_network",
+        "small_gru",
+        "rolling_or_ewma_threshold_policy",
+        "online_logistic_or_perceptron_policy",
+        "always_wait_or_abstain",
+        "oracle_upper_bound"
+      ]
+    },
+    {
+      "criterion": "external baseline coverage",
+      "details": "",
+      "name": "external baseline coverage",
+      "note": "",
+      "operator": ">= 6 non-CRA non-oracle baselines",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 6 non-CRA non-oracle baselines",
+      "value": 8
+    },
+    {
+      "criterion": "ESN and lag/ridge included",
+      "details": "",
+      "name": "ESN and lag/ridge included",
+      "note": "",
+      "operator": "contains echo_state_network and ridge_lag",
+      "pass": true,
+      "passed": true,
+      "rule": "contains echo_state_network and ridge_lag",
+      "value": [
+        "cra_v2_5_host_side_candidate",
+        "cra_v2_3_generic_recurrent_reference",
+        "cra_v2_4_cost_aware_policy_reference",
+        "persistence",
+        "online_lms",
+        "ridge_lag",
+        "echo_state_network",
+        "small_gru",
+        "rolling_or_ewma_threshold_policy",
+        "online_logistic_or_perceptron_policy",
+        "always_wait_or_abstain",
+        "oracle_upper_bound"
+      ]
+    },
+    {
+      "criterion": "mandatory shams included",
+      "details": "",
+      "name": "mandatory shams included",
+      "note": "",
+      "operator": "contains target/time/future/planning shams",
+      "pass": true,
+      "passed": true,
+      "rule": "contains target/time/future/planning shams",
+      "value": [
+        "target_shuffle",
+        "time_shuffle",
+        "lag_only_control",
+        "state_disabled",
+        "memory_disabled",
+        "replay_disabled",
+        "prediction_disabled",
+        "self_evaluation_disabled",
+        "composition_routing_disabled",
+        "policy_action_disabled",
+        "planning_disabled",
+        "future_label_leak_guard"
+      ]
+    },
+    {
+      "criterion": "real-ish adapter decision explicit",
+      "details": "",
+      "name": "real-ish adapter decision explicit",
+      "note": "",
+      "operator": ">= 2 secondary public tracks",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 2 secondary public tracks",
+      "value": [
+        "cmapss_fd001_maintenance_utility",
+        "nab_heldout_alarm_action_cost"
+      ]
+    },
+    {
+      "criterion": "pass/fail criteria locked",
+      "details": "",
+      "name": "pass/fail criteria locked",
+      "note": "",
+      "operator": ">= 5 outcome classes",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 5 outcome classes",
+      "value": 5
+    },
+    {
+      "criterion": "expected scoring artifacts locked",
+      "details": "",
+      "name": "expected scoring artifacts locked",
+      "note": "",
+      "operator": ">= 8 artifacts",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 8 artifacts",
+      "value": 10
+    },
+    {
+      "criterion": "contract does not score benchmark",
+      "details": "",
+      "name": "contract does not score benchmark",
+      "note": "",
+      "operator": "must remain false",
+      "pass": true,
+      "passed": true,
+      "rule": "must remain false",
+      "value": false
+    },
+    {
+      "criterion": "claim boundary blocks public usefulness",
+      "details": "",
+      "name": "claim boundary blocks public usefulness",
+      "note": "",
+      "operator": "contains no public usefulness",
+      "pass": true,
+      "passed": true,
+      "rule": "contains no public usefulness",
+      "value": "Tier 7.7a is a contract/pre-registration gate only. It performs no scoring, freezes no new baseline, claims no public usefulness, and authorizes no hardware/native transfer."
+    },
+    {
+      "criterion": "hardware/native transfer blocked",
+      "details": "",
+      "name": "hardware/native transfer blocked",
+      "note": "",
+      "operator": "contains no hardware/native transfer",
+      "pass": true,
+      "passed": true,
+      "rule": "contains no hardware/native transfer",
+      "value": "Tier 7.7a is a contract/pre-registration gate only. It performs no scoring, freezes no new baseline, claims no public usefulness, and authorizes no hardware/native transfer."
+    },
+    {
+      "criterion": "next scoring gate named",
+      "details": "",
+      "name": "next scoring gate named",
+      "note": "",
+      "operator": "starts with Tier 7.7b",
+      "pass": true,
+      "passed": true,
+      "rule": "starts with Tier 7.7b",
+      "value": "Tier 7.7b - v2.5 Standardized Benchmark / Usefulness Scoreboard Scoring Gate"
+    }
+  ],
+  "generated_at_utc": "2026-05-09T12:13:13+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract",
+  "prerequisites": {
+    "tier7_0j_results": "/Users/james/JKS:CRA/controlled_test_output/tier7_0j_20260508_generic_recurrent_promotion_gate/tier7_0j_results.json",
+    "tier7_0j_sha256": "94b77b7e02501d96390913f4ee12a967e5df0b0512f2f80b45f163cb8eac93e4",
+    "tier7_6e_results": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/tier7_6e_results.json",
+    "tier7_6e_sha256": "f33004cab68980d0afe62b0ea7e53f3bdf7dad3c1ca269ad0b7bfa71f131ade6",
+    "v2_5_baseline": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.5.json",
+    "v2_5_baseline_claim": "",
+    "v2_5_baseline_sha256": "df62ac3b0f76ed6a64f88a9f2a70e31e4fbe409096e2622877e6c6f77db7fb89"
+  },
+  "runner_revision": "tier7_7a_v2_5_standardized_scoreboard_contract_20260509_0001",
+  "status": "pass",
+  "tier": "Tier 7.7a - v2.5 Standardized Benchmark / Usefulness Scoreboard Contract"
+}

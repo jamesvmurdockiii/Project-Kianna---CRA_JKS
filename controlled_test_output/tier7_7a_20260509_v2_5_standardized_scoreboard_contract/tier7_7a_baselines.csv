@@ -1,0 +1,13 @@
+baseline_id,class,applies_to,fairness_rule
+cra_v2_5_host_side_candidate,CRA_candidate,all primary standardized tasks; secondary public adapters where implemented,"same causal inputs, same train/calibration/test split, no test-label tuning"
+cra_v2_3_generic_recurrent_reference,CRA_previous_reference,standardized dynamical core,same locked 8000-step protocol used for v2.3 freeze comparison
+cra_v2_4_cost_aware_policy_reference,CRA_previous_reference,action-cost secondary tracks and any standardized action-cost transform,same locked costs and no same-subset policy selection
+persistence,simple_sequence_baseline,standardized dynamical core,prediction uses only causal prior values
+online_lms,online_linear_baseline,standardized dynamical core,prequential prediction before online update
+ridge_lag,train_prefix_linear_baseline,standardized dynamical core,fit on train prefix only with same lag budget
+echo_state_network,reservoir_baseline,standardized dynamical core and secondary adapters where feasible,predeclared reservoir size and train-prefix readout only
+small_gru,gradient_recurrent_reviewer_defense,standardized dynamical core if runtime budget allows,"predeclared hidden size, epochs, early stopping on validation only"
+rolling_or_ewma_threshold_policy,public_adapter_baseline,NAB and C-MAPSS action-cost tracks,thresholds selected on train/calibration streams only
+online_logistic_or_perceptron_policy,public_adapter_online_baseline,secondary public adapters,same causal features and feedback timing
+always_wait_or_abstain,negative_policy_control,secondary public adapters,reported to expose action-cost imbalance
+oracle_upper_bound,upper_bound_nonclaim,all tasks where an oracle is definable,reported only; not a baseline CRA must beat and never used for tuning

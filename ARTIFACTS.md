@@ -1367,6 +1367,29 @@ Latest Tier 7.6e planning/subgoal-control compact-regression / v2.5 freeze gate 
 - `baselines/CRA_EVIDENCE_BASELINE_v2.5.json`
 - `baselines/CRA_EVIDENCE_BASELINE_v2.5_STUDY_REGISTRY.snapshot.json`
 
+Latest Tier 7.7a v2.5 standardized benchmark/usefulness scoreboard contract artifacts:
+
+- `controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract/`
+- `tier7_7a_results.json`
+- `tier7_7a_report.md`
+- `tier7_7a_summary.csv`
+- `tier7_7a_scoreboard_contract.json`
+- `tier7_7a_task_matrix.csv`
+- `tier7_7a_baselines.csv`
+- `tier7_7a_splits.csv`
+- `tier7_7a_metrics.csv`
+- `tier7_7a_shams.csv`
+- `tier7_7a_leakage_rules.csv`
+- `tier7_7a_pass_fail_criteria.csv`
+- `tier7_7a_expected_artifacts.csv`
+- `tier7_7a_claim_boundary.md`
+
+Boundary: contract/pre-registration only. This locks the 8000-step
+Mackey-Glass/Lorenz/NARMA10 primary scoreboard and secondary C-MAPSS/NAB
+confirmation tracks before v2.5 scoring. It is not a benchmark score, public
+usefulness proof, new freeze, hardware/native transfer, broad planning,
+language, AGI, or ASI evidence.
+
 Latest Tier 5.9c macro-eligibility v2.1 recheck:
 
 - `controlled_test_output/tier5_9c_20260429_190503/`

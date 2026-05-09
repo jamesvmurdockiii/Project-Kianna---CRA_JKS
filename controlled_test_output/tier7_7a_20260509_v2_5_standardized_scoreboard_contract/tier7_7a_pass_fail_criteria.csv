@@ -1,0 +1,6 @@
+kind,rule,claim_allowed
+strong_pass,"v2.5 improves all-three 8000-step geomean MSE versus v2.3 by >= 10% and paired CI excludes zero, while at least one public/real-ish secondary family also supports v2.5 or v2.4+v2.5 utility without sham match","bounded usefulness candidate; still not AGI, language, hardware/native transfer, or universal superiority"
+standardized_progress_pass,"v2.5 improves all-three 8000-step geomean MSE versus v2.3 by >= 10% with paired support, but does not beat ESN/ridge or lacks public/real-ish confirmation",software mechanism progress on standardized dynamical benchmarks only
+localized_pass,"v2.5 improves one or two standardized tasks or a secondary public adapter, but not the all-three aggregate",localized task-family signal only; no broad usefulness claim
+no_promotion,v2.5 fails to improve v2.3 on the all-three aggregate or matches shams/lag-only controls,no usefulness upgrade; route to failure localization before further mechanism layering
+stop_or_narrow,full planned mechanism stack still fails standardized/public scoreboards after fair tests,stop broad usefulness track and narrow the paper to architecture/evidence/hardware substrate

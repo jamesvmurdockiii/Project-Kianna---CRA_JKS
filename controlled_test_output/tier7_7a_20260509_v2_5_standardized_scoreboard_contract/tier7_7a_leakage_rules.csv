@@ -1,0 +1,10 @@
+guard,rule
+train_only_normalization,normalization statistics fit only on train prefix or train units
+prediction_before_update,online rows must emit prediction/action before target/reward update
+target_shift_before_split,future targets are shifted before chronological splitting
+finite_stream_precheck,all standardized streams must be finite before scoring; non-finite rows block the run
+no_test_threshold_tuning,"all thresholds, policy costs, lags, reservoirs, and hyperparameters locked before test scoring"
+same_seed_pairing,candidate and baselines are compared on the same seeds and streams
+same_feature_budget_or_disclosed,baselines receive equivalent causal features or any advantage is explicitly labeled
+oracle_nonclaim,oracle is reported as upper bound only and never treated as a beatable baseline
+secondary_adapters_cannot_rescue_core_failure,C-MAPSS/NAB signals cannot erase a failed standardized core scoreboard

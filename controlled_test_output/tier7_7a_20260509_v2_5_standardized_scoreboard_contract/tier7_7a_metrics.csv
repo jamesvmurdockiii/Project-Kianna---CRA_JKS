@@ -1,0 +1,14 @@
+metric,scope,purpose
+test_mse,standardized,primary per-task regression error
+test_nmse,standardized,scale-normalized per-task regression error
+tail_mse,standardized,late-run stability and forgetting pressure
+all_three_geomean_mse,standardized,"primary aggregate across Mackey-Glass, Lorenz, and NARMA10"
+rank_vs_baselines,standardized_and_public,prevent single-number cherry picking
+paired_seed_delta,standardized_and_public,same-seed comparison versus v2.3/v2.4 and best non-oracle baseline
+bootstrap_or_paired_ci,standardized_and_public,confidence interval around effect size
+worst_seed_score,standardized_and_public,prevent mean-only claims hiding collapse
+sample_efficiency_curve,optional_diagnostic,check whether longer exposure helps rather than only final score
+expected_utility,public_adapter_secondary,action-cost usefulness where applicable
+regret_vs_oracle,public_adapter_secondary,distance from unattainable upper bound without using it as a claim baseline
+false_positive_or_missed_event_cost,public_adapter_secondary,ensure utility does not hide dangerous collapse modes
+runtime_and_wall_clock,all,resource accounting and reproducibility

@@ -8,8 +8,10 @@ backends.
 The current evidence trail is controlled and staged. The latest host-side
 software baseline is `CRA_EVIDENCE_BASELINE_v2.5`, frozen by Tier 7.6e after
 the reduced-feature planning/subgoal-control signal survived full NEST compact
-regression. The current next step is Tier 7.7a: lock the v2.5 standardized
-benchmark/usefulness scoreboard contract before scoring.
+regression. Tier 7.7a has now locked the v2.5 standardized benchmark/usefulness
+scoreboard contract. The current next step is Tier 7.7b: score frozen v2.5 on
+that locked contract without changing tasks, baselines, splits, shams, leakage
+rules, pass/fail criteria, or claim boundaries.
 
 Current native lifecycle update: Tier 4.30g-hw passed on real SpiNNaker after
 EBRAINS ingest (board `10.11.242.97`, raw `pass`, ingest `pass`, 285/285

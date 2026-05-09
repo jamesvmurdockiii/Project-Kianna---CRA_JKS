@@ -1,0 +1,11 @@
+artifact,purpose
+tier7_7b_results.json,scoring result and classification
+tier7_7b_summary.csv,criteria summary
+tier7_7b_report.md,human-readable result and boundaries
+tier7_7b_scoreboard_rows.csv,per task/model/seed metrics
+tier7_7b_aggregate_scoreboard.csv,aggregate geomean/rank/effect-size table
+tier7_7b_sham_controls.csv,sham/ablation separation
+tier7_7b_leakage_audit.json,finite-stream and causal-order audit
+tier7_7b_fairness_contract.json,exact scoring contract used by runner
+tier7_7b_claim_boundary.md,allowed claims and nonclaims
+tier7_7b_latest_manifest.json,registry pointer

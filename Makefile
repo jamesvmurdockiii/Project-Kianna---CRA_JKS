@@ -584,3 +584,6 @@ tier7-6d:
 
 tier7-6e:
 	python3 experiments/tier7_6e_planning_promotion_compact_regression.py
+
+tier7-7a:
+	python3 experiments/tier7_7a_v2_5_standardized_scoreboard_contract.py

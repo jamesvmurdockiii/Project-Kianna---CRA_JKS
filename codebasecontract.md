@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-09T05:25:00+00:00.
+Last updated: 2026-05-09T12:06:10+00:00.
 
 Current repo root:
 
@@ -510,6 +510,20 @@ Tier 7.6e = COMPLETE, PASS, 20/20 criteria
   Boundary: not public usefulness, not broad planning/reasoning, not language,
             not hardware/native transfer, not autonomous on-chip planning, and
             not AGI/ASI.
+
+Tier 7.7a = COMPLETE, PASS, 20/20 criteria
+  Source: controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract/
+  Runner: experiments/tier7_7a_v2_5_standardized_scoreboard_contract.py
+  Outcome: v2_5_standardized_scoreboard_contract_locked
+  Result: primary v2.5 scoreboard locked as Mackey-Glass, Lorenz, and NARMA10
+          at 8000 steps, horizon 8, seeds 42/43/44, chronological 65/35 split.
+          C-MAPSS FD001 and NAB are secondary public/real-ish confirmation
+          tracks only and cannot rescue a failed standardized core.
+  Next gate: Tier 7.7b - v2.5 Standardized Benchmark / Usefulness Scoreboard
+             Scoring Gate.
+  Boundary: contract/pre-registration only; no benchmark score, no public
+            usefulness claim, no new baseline freeze, no hardware/native
+            transfer, and no language/broad-planning/AGI/ASI claim.
 ```
 
 Latest optional mechanism diagnostic:
@@ -1244,10 +1258,15 @@ Tier 7.6e — COMPLETE. Planning/subgoal-control promotion + compact regression
   gate. Status: PASS, 20/20 criteria. `CRA_EVIDENCE_BASELINE_v2.5` is frozen
   as bounded host-side software planning/subgoal-control evidence.
 
-Tier 7.7a — CURRENT ACTIVE STEP. v2.5 standardized benchmark/usefulness
-  scoreboard contract. Lock tasks, baselines, splits, scoring, shams, leakage
-  rules, and pass/fail criteria before scoring v2.5 on public/standardized
-  benchmarks.
+Tier 7.7a — COMPLETE. v2.5 standardized benchmark/usefulness scoreboard
+  contract. Status: PASS, 20/20 criteria. Locked the 8000-step
+  Mackey-Glass/Lorenz/NARMA10 primary scoreboard plus secondary C-MAPSS/NAB
+  confirmation tracks before scoring v2.5.
+
+Tier 7.7b — CURRENT ACTIVE STEP. v2.5 standardized benchmark/usefulness
+  scoreboard scoring gate. Score frozen v2.5 on the locked 7.7a contract
+  without changing tasks, splits, baselines, shams, leakage rules, or pass/fail
+  criteria.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware

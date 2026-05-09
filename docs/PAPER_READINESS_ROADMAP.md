@@ -4219,9 +4219,24 @@ not hardware/native transfer, not autonomous on-chip planning, and not AGI/ASI.
 Current next step:
 
 ```text
-Tier 7.7a — v2.5 standardized benchmark/usefulness scoreboard contract
-Question: lock the benchmark matrix before scoring whether v2.5 moves public or
-standardized usefulness beyond the existing v2.3/v2.4 boundaries.
+Tier 7.7b — v2.5 standardized benchmark/usefulness scoreboard scoring gate
+Question: score frozen v2.5 on the locked 7.7a public/standardized matrix
+without changing tasks, baselines, splits, metrics, shams, leakage rules,
+pass/fail criteria, or claim boundaries.
+```
+
+Latest standardized benchmark contract:
+
+```text
+Tier 7.7a — COMPLETE / PASS, 20/20 criteria
+Outcome: v2_5_standardized_scoreboard_contract_locked
+Output: controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract/
+Primary scoreboard: Mackey-Glass, Lorenz, and NARMA10 at 8000 steps,
+horizon 8, seeds 42/43/44, chronological 65/35 split.
+Secondary confirmation: C-MAPSS FD001 and NAB held-out action-cost tracks only.
+Boundary: contract/pre-registration only; not a benchmark score, not public
+usefulness proof, not a freeze, not hardware/native transfer, and not
+language/broad-planning/AGI/ASI evidence.
 ```
 
 Tier 7.1a predeclared these candidate/future adapter families:
@@ -7706,7 +7721,7 @@ Boundary: contract/family-selection only, not NAB data preflight, not scoring,
           hardware/native transfer.
 ```
 
-Tier 7.1h result: compact NAB scoring passed as a harness and produced a partial v2.3 signal, but did not confirm public usefulness. Tier 7.1i then broadened NAB to 20 streams across 6 categories. v2.3 beat v2.2 and all three v2.3 shams, but rolling z-score won the aggregate, v2.3 ranked fourth, and the v2.3 signal localized to realAdExchange plus two streams. Tier 7.1j then localized the gap to threshold/false-positive pressure. Tier 7.1k then found a same-subset `persist3` false-positive repair candidate: v2.3 ranked first under the policy, reduced FP/1000, beat rolling z-score and v2.2, and separated shams, but Tier 7.1l did not confirm that policy on held-out NAB streams. v2.3 reduced false positives but ranked fifth, did not beat rolling z-score or v2.2, and separated only two of three shams. Tier 7.1m closed the NAB loop: partial/local signal only, no usefulness claim, no freeze, no hardware transfer, and no more adapter-policy tuning on this chain. Tier 7.4a then passed the cost-aware policy/action contract, Tier 7.4b passed the local diagnostic as candidate evidence, Tier 7.4c passed the promotion/compact-regression gate to freeze bounded host-side software baseline v2.4, Tier 7.4d passed the held-out/public action-cost scoring contract, Tier 7.4e passed the held-out scoring preflight, Tier 7.4f passed with a qualified C-MAPSS-only public-action signal, and Tier 7.4g confirmed only the narrow C-MAPSS external/sham signal while preserving the non-separation from v2.2 and NAB non-confirmation. Tier 7.4h then closed the policy/action chain without claim inflation. Tier 7.5a locked the curriculum/environment-generator contract, Tier 7.5b materialized deterministic preflight artifacts without scoring CRA, Tier 7.5c confirmed a generated-family synthetic software signal on 6/6 locked families while blocking public-usefulness/freeze/hardware-transfer claims, Tier 7.5d attributed that signal to keyed/compositional mechanisms while documenting high generator-feature alignment risk and again blocking public-usefulness/freeze/hardware-transfer claims, Tier 7.6a then locked the long-horizon planning/subgoal-control contract without scoring, Tier 7.6b passed a bounded local scaffold diagnostic, Tier 7.6c preserved that signal while blocking promotion/freeze/hardware transfer, and Tier 7.6d passed a reduced-feature repair and Tier 7.6e froze `CRA_EVIDENCE_BASELINE_v2.5` after full NEST compact regression. Use `CRA_NATIVE_SCALE_BASELINE_v0.5` only as the frozen native substrate reference, not as usefulness evidence.
+Tier 7.1h result: compact NAB scoring passed as a harness and produced a partial v2.3 signal, but did not confirm public usefulness. Tier 7.1i then broadened NAB to 20 streams across 6 categories. v2.3 beat v2.2 and all three v2.3 shams, but rolling z-score won the aggregate, v2.3 ranked fourth, and the v2.3 signal localized to realAdExchange plus two streams. Tier 7.1j then localized the gap to threshold/false-positive pressure. Tier 7.1k then found a same-subset `persist3` false-positive repair candidate: v2.3 ranked first under the policy, reduced FP/1000, beat rolling z-score and v2.2, and separated shams, but Tier 7.1l did not confirm that policy on held-out NAB streams. v2.3 reduced false positives but ranked fifth, did not beat rolling z-score or v2.2, and separated only two of three shams. Tier 7.1m closed the NAB loop: partial/local signal only, no usefulness claim, no freeze, no hardware transfer, and no more adapter-policy tuning on this chain. Tier 7.4a then passed the cost-aware policy/action contract, Tier 7.4b passed the local diagnostic as candidate evidence, Tier 7.4c passed the promotion/compact-regression gate to freeze bounded host-side software baseline v2.4, Tier 7.4d passed the held-out/public action-cost scoring contract, Tier 7.4e passed the held-out scoring preflight, Tier 7.4f passed with a qualified C-MAPSS-only public-action signal, and Tier 7.4g confirmed only the narrow C-MAPSS external/sham signal while preserving the non-separation from v2.2 and NAB non-confirmation. Tier 7.4h then closed the policy/action chain without claim inflation. Tier 7.5a locked the curriculum/environment-generator contract, Tier 7.5b materialized deterministic preflight artifacts without scoring CRA, Tier 7.5c confirmed a generated-family synthetic software signal on 6/6 locked families while blocking public-usefulness/freeze/hardware-transfer claims, Tier 7.5d attributed that signal to keyed/compositional mechanisms while documenting high generator-feature alignment risk and again blocking public-usefulness/freeze/hardware-transfer claims, Tier 7.6a then locked the long-horizon planning/subgoal-control contract without scoring, Tier 7.6b passed a bounded local scaffold diagnostic, Tier 7.6c preserved that signal while blocking promotion/freeze/hardware transfer, Tier 7.6d passed a reduced-feature repair, Tier 7.6e froze `CRA_EVIDENCE_BASELINE_v2.5` after full NEST compact regression, and Tier 7.7a locked the v2.5 standardized benchmark/usefulness scoreboard before scoring. Use `CRA_NATIVE_SCALE_BASELINE_v0.5` only as the frozen native substrate reference, not as usefulness evidence.
 
 Detailed Tier 5.19 contract:
 

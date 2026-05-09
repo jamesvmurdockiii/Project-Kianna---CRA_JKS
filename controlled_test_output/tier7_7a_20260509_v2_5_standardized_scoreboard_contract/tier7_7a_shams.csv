@@ -1,0 +1,13 @@
+sham,purpose
+target_shuffle,break input-target relation while preserving marginal target distribution
+time_shuffle,destroy temporal structure while preserving value distribution
+lag_only_control,determine whether CRA state adds beyond explicit lag memory
+state_disabled,remove v2.3 recurrent state
+memory_disabled,remove keyed context memory contribution
+replay_disabled,remove v1.7 replay/consolidation contribution
+prediction_disabled,remove predictive/context modeling contribution
+self_evaluation_disabled,remove reliability/confidence gating contribution
+composition_routing_disabled,remove module routing and compositional reuse contribution
+policy_action_disabled,remove v2.4 cost-aware action layer where relevant
+planning_disabled,remove v2.5 reduced-feature planning/subgoal state
+future_label_leak_guard,"detect any access to future targets, labels, or event windows before prediction/action"
