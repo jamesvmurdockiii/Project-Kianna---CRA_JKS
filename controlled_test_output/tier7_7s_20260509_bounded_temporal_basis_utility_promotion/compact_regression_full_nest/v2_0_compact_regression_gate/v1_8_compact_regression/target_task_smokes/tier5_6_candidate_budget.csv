@@ -1,5 +1,0 @@
-base_model,candidate_id,model_family,overrides_json,description
-online_perceptron,online_perceptron__perceptron_lr_0p02_perceptron_margin_0,linear,"{""perceptron_lr"": 0.02, ""perceptron_margin"": 0.0}",predeclared Tier 5.6 tuned profile
-online_perceptron,online_perceptron__perceptron_lr_0p05_perceptron_margin_0,linear,"{""perceptron_lr"": 0.05, ""perceptron_margin"": 0.0}",predeclared Tier 5.6 tuned profile
-online_logistic_regression,online_logistic_regression__logistic_l2_0_logistic_lr_0p02,linear,"{""logistic_l2"": 0.0, ""logistic_lr"": 0.02}",predeclared Tier 5.6 tuned profile
-online_logistic_regression,online_logistic_regression__logistic_l2_0_logistic_lr_0p05,linear,"{""logistic_l2"": 0.0, ""logistic_lr"": 0.05}",predeclared Tier 5.6 tuned profile
