@@ -1,0 +1,12 @@
+{
+  "broad_public_usefulness_authorized": false,
+  "feature_alignment_risk_high": true,
+  "freeze_authorized": false,
+  "generated_family_signal_preserved": true,
+  "generated_synthetic_mechanism_attribution_authorized": true,
+  "hardware_transfer_authorized": false,
+  "next_gate": "Tier 7.6a - Long-Horizon Planning / Subgoal Control Contract",
+  "outcome": "synthetic_mechanism_attribution_supported_no_freeze",
+  "status": "PASS",
+  "tier": "Tier 7.5d - Curriculum / Environment Score Attribution + Promotion Decision"
+}

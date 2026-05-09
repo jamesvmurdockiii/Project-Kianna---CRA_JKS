@@ -1,0 +1,4 @@
+risk,level,evidence,mitigation
+generator_feature_alignment,high,6/6 families have candidate hidden MSE <= 1e-6.,Do not freeze or claim public usefulness; require public/real-ish confirmation or a harder hidden generator before stronger claims.
+synthetic_holdout_is_not_public_benchmark,high,Tier 7.5b generator and hash recipe are part of the repository.,Use this only as mechanism-pressure evidence; route public claims through real-ish adapters and standardized benchmarks.
+mechanism_shortcut_overclaim,medium,The candidate feature path can express the synthetic generator grammar.,Carry claim as keyed/compositional attribution only; require future black-box/held-out task families before promotion.

@@ -5,10 +5,10 @@ ledger is `STUDY_REGISTRY.json`; the compact table is `STUDY_REGISTRY.csv`.
 Older reruns, prepared capsules, debug probes, and baseline-frozen
 mechanism bundles outside the formal registry are preserved for audit.
 
-- Generated: `2026-05-09T03:52:41.878986+00:00`
+- Generated: `2026-05-09T04:02:07.792649+00:00`
 - Registry status: **PASS**
-- Canonical evidence entries: `117`
-- Expanded test-entry count: `117`; see the canonical evidence table below for the exact current tier list.
+- Canonical evidence entries: `118`
+- Expanded test-entry count: `118`; see the canonical evidence table below for the exact current tier list.
 
 ## Evidence Categories
 
@@ -103,6 +103,7 @@ mechanism bundles outside the formal registry are preserved for audit.
 | `tier7_5a_curriculum_environment_contract` | **PASS** | `controlled_test_output/tier7_5a_20260509_curriculum_environment_contract` | Contract evidence only; not curriculum implementation, not scoring, not a mechanism promotion, not broad public usefulness, not a new baseline freeze, not hardware/native transfer, and not AGI/ASI evidence. |
 | `tier7_5b_curriculum_environment_preflight` | **PASS** | `controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight` | Implementation preflight only; not generated-task scoring, not a mechanism promotion, not broad public usefulness, not a new baseline freeze, not hardware/native transfer, and not AGI/ASI evidence. |
 | `tier7_5c_curriculum_environment_scoring_gate` | **PASS** | `controlled_test_output/tier7_5c_20260509_curriculum_environment_scoring_gate` | Synthetic generated-family scoring only; not public real-world usefulness proof, not a mechanism promotion by itself, not a new baseline freeze, not hardware/native transfer, and not AGI/ASI evidence. Because the generator grammar is aligned with keyed/compositional features, Tier 7.5d attribution/promotion is required before any stronger claim. |
+| `tier7_5d_curriculum_environment_attribution_closeout` | **PASS** | `controlled_test_output/tier7_5d_20260509_curriculum_environment_attribution_closeout` | Attribution/decision evidence only; not new performance scoring, not public real-world usefulness proof, not a new software baseline freeze, not hardware/native transfer, and not AGI/ASI evidence. |
 | `tier5_20a_resonant_branch_polyp_diagnostic` | **PASS** | `controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic` | Software diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence. |
 | `tier5_20b_hybrid_resonant_polyp_diagnostic` | **PASS** | `controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic` | Software repair diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence. |
 | `tier5_20c_minimal_resonant_polyp_diagnostic` | **PASS** | `controlled_test_output/tier5_20c_20260508_minimal_resonant_polyp_diagnostic` | Software minimal-dose diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence. |

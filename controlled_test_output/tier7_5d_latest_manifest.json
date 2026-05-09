@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-05-09T04:02:07.326482+00:00",
+  "source_generated_at_utc": "2026-05-09T04:01:53+00:00",
+  "registry_entry_id": "tier7_5d_curriculum_environment_attribution_closeout",
+  "tier": "Tier 7.5d - Curriculum / Environment Score Attribution + Promotion Decision",
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_5d_20260509_curriculum_environment_attribution_closeout",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_5d_20260509_curriculum_environment_attribution_closeout/tier7_5d_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_5d_20260509_curriculum_environment_attribution_closeout/tier7_5d_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_5d_20260509_curriculum_environment_attribution_closeout/tier7_5d_summary.csv",
+  "canonical": true,
+  "claim": "Tier 7.5d reconciles the Tier 7.5c generated-family scoring result: synthetic keyed/compositional mechanism attribution is supported across all locked generated families, while near-oracle generator-feature alignment risk is documented and public-usefulness, freeze, and hardware-transfer claims are blocked.",
+  "caveat": "Attribution/decision evidence only; not new performance scoring, not public real-world usefulness proof, not a new software baseline freeze, not hardware/native transfer, and not AGI/ASI evidence."
+}

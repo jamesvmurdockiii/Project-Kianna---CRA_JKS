@@ -1,0 +1,6 @@
+route,selected,reason
+preserve_generated_family_signal,True,"The 7.5c signal separates from external baselines, v2.2 reference, and shams on locked synthetic families."
+do_not_freeze_v2_5,True,No new mechanism was introduced; v2.4 remains the current frozen software baseline.
+do_not_transfer_7_5c_to_hardware,True,"The gate is synthetic software attribution, not a native mechanism migration target."
+start_tier_7_6a_long_horizon_planning_contract,True,"After curriculum/environment generation, the roadmap's next unclosed capability is long-horizon planning/subgoal control."
+return_to_generator_tuning,False,Changing generated tasks after scoring would contaminate the locked 7.5a/7.5b evidence chain.

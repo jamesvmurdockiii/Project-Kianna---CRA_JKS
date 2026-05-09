@@ -1,0 +1,2 @@
+tier,status,outcome,generated_synthetic_mechanism_attribution_authorized,generated_family_signal_preserved,broad_public_usefulness_authorized,freeze_authorized,hardware_transfer_authorized,feature_alignment_risk_high,next_gate
+Tier 7.5d - Curriculum / Environment Score Attribution + Promotion Decision,PASS,synthetic_mechanism_attribution_supported_no_freeze,True,True,False,False,False,True,Tier 7.6a - Long-Horizon Planning / Subgoal Control Contract

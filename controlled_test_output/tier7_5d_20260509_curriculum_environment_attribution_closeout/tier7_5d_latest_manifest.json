@@ -1,0 +1,69 @@
+{
+  "artifacts": [
+    {
+      "bytes": 2002,
+      "name": "attribution_checks_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5d_20260509_curriculum_environment_attribution_closeout/tier7_5d_attribution_checks.csv",
+      "sha256": "8ea2e2b79ca5aa6f7b6c335f1903a4ff3482cd3a15f5912fdc6b96dc30c14a17"
+    },
+    {
+      "bytes": 1161,
+      "name": "claim_boundary_md",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5d_20260509_curriculum_environment_attribution_closeout/tier7_5d_claim_boundary.md",
+      "sha256": "771351027a066c2e500058d29f30219cf51215d628fb26aa46516d0af2f58cc4"
+    },
+    {
+      "bytes": 991,
+      "name": "claim_decisions_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5d_20260509_curriculum_environment_attribution_closeout/tier7_5d_claim_decisions.csv",
+      "sha256": "882e16a798431e0d34adb59ec034cbfe8f895f23fa19e7c34731016dae1e390c"
+    },
+    {
+      "bytes": 456,
+      "name": "decision_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5d_20260509_curriculum_environment_attribution_closeout/tier7_5d_decision.csv",
+      "sha256": "aba8d21ff91cc4e8a1e0b6dc0e8a0a62bfaeabeb412a97ca0017b6d99f66cf87"
+    },
+    {
+      "bytes": 525,
+      "name": "decision_json",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5d_20260509_curriculum_environment_attribution_closeout/tier7_5d_decision.json",
+      "sha256": "320dce3798fa4536862f37653054dbd2d7d24e6c1b8665f2236d4594313e04e0"
+    },
+    {
+      "bytes": 4742,
+      "name": "report_md",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5d_20260509_curriculum_environment_attribution_closeout/tier7_5d_report.md",
+      "sha256": "4ab7a6b0a128f38bdbe475e4c3e264a0337a0b5a7b41b3e9f1eb95a7397e73c6"
+    },
+    {
+      "bytes": 12477,
+      "name": "results_json",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5d_20260509_curriculum_environment_attribution_closeout/tier7_5d_results.json",
+      "sha256": "116d7fdc3fcee28c7b38e090876f43f4636ab60d8ff27c1318aef3b367cf5052"
+    },
+    {
+      "bytes": 707,
+      "name": "risk_register_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5d_20260509_curriculum_environment_attribution_closeout/tier7_5d_risk_register.csv",
+      "sha256": "4b24da046e0cde2a35b571314a50dca4fb24442cf877dbd1a1b8d406d11eb36b"
+    },
+    {
+      "bytes": 711,
+      "name": "route_decisions_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5d_20260509_curriculum_environment_attribution_closeout/tier7_5d_route_decisions.csv",
+      "sha256": "89ac3064d03a772a20fd69f7d296aa1e30c0c17f0b4580cecae6194acc038f0e"
+    },
+    {
+      "bytes": 1081,
+      "name": "summary_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5d_20260509_curriculum_environment_attribution_closeout/tier7_5d_summary.csv",
+      "sha256": "3064df6b1468cf2a479cc662dde42d407b0aa62bd2a708c2728e4489d51cdff0"
+    }
+  ],
+  "generated_at_utc": "2026-05-09T04:01:53+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_5d_20260509_curriculum_environment_attribution_closeout",
+  "runner_revision": "tier7_5d_curriculum_environment_attribution_closeout_20260509_0001",
+  "status": "PASS",
+  "tier": "Tier 7.5d - Curriculum / Environment Score Attribution + Promotion Decision"
+}

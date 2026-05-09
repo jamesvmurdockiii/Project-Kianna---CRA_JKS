@@ -18,7 +18,7 @@ is organized through predeclared tiers, generated registries, JSON/CSV/Markdown
 artifacts, frozen baselines, controls, ablations, external baselines, and explicit
 claim boundaries.
 
-As of the current registry, CRA contains 117 canonical evidence bundles with zero
+As of the current registry, CRA contains 118 canonical evidence bundles with zero
 missing expected artifacts and zero failed criteria in canonical entries. The
 software evidence includes negative controls, positive learning controls,
 architecture ablations, external-baseline comparisons, delayed-credit repairs,
@@ -28,7 +28,9 @@ replay/consolidation, predictive context, composition/routing, working-memory
 diagnostics, temporal spike coding, neuron-parameter sensitivity, predictive
 binding, self-evaluation, bounded fading-memory temporal state, and a generated
 curriculum/environment scoring gate that confirmed a synthetic generated-family
-signal while blocking public-usefulness, freeze, and hardware-transfer claims.
+signal and a follow-up attribution closeout that supported keyed/compositional
+mechanism attribution while documenting generator-feature alignment risk and
+blocking public-usefulness, freeze, and hardware-transfer claims.
 The hardware evidence includes PyNN/SpiNNaker
 capsule execution and repeatability, chunked-runtime characterization, a
 custom-runtime progression through four-core MCPL task execution, keyed memory,

@@ -14,7 +14,7 @@ mechanism promotion, lifecycle/ecology evidence, and native SpiNNaker runtime
 migration. The generated registry is the authority for which results are
 canonical.
 
-The current canonical evidence trail contains **117 registered evidence bundles**
+The current canonical evidence trail contains **118 registered evidence bundles**
 with all expected artifacts present and all criteria passing. The generated
 registry is the source of truth for the full list:
 
@@ -11275,14 +11275,27 @@ proof, not a mechanism promotion by itself, not broad usefulness, not a freeze,
 and not hardware/native transfer.
 ```
 
-Next required step:
+Latest attribution result:
 
 ```text
 Tier 7.5d - Curriculum / environment score attribution + promotion decision.
-Determine whether the 7.5c signal is attributable to CRA mechanisms rather than
-generator-feature alignment. Require feature ablations, key/label permutation
-shams, reference separation, oracle-bound comparison, hidden split support, and
-a compact-regression decision before any promotion or freeze.
+Status: COMPLETE / PASS, 18/18 criteria.
+Output: controlled_test_output/tier7_5d_20260509_curriculum_environment_attribution_closeout/
+Outcome: synthetic_mechanism_attribution_supported_no_freeze.
+Result: synthetic keyed/compositional mechanism attribution is supported on 6/6
+generated families, with high near-oracle generator-feature alignment risk
+documented on 6/6.
+Boundary: attribution/decision evidence only; not public real-world usefulness,
+not a freeze, and not hardware/native transfer.
+```
+
+Next required step:
+
+```text
+Tier 7.6a - Long-horizon planning / subgoal-control contract.
+Define the bounded planning/subgoal-control question, hypotheses, nulls, tasks,
+baselines, shams, leakage guards, metrics, pass/fail criteria, nonclaims, and
+expected artifacts before any scoring or implementation.
 ```
 
 ## Tier 5.20a - Resonant Branch Polyp Internal-Model Diagnostic

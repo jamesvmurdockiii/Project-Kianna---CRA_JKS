@@ -171,8 +171,12 @@ then passed at
 `controlled_test_output/tier7_5c_20260509_curriculum_environment_scoring_gate/`,
 confirming a generated-family synthetic software signal on 6/6 locked families
 while preserving the boundary that this is not public usefulness, not a freeze,
-and not hardware/native transfer. Tier 7.5d attribution/promotion is selected
-next to separate mechanism value from generator-feature alignment.
+and not hardware/native transfer. Tier 7.5d then passed at
+`controlled_test_output/tier7_5d_20260509_curriculum_environment_attribution_closeout/`,
+supporting synthetic keyed/compositional mechanism attribution while documenting
+high generator-feature alignment risk and again blocking public usefulness,
+freeze, and hardware/native transfer. Tier 7.6a long-horizon planning /
+subgoal-control contract is selected next.
 
 Tier 4.32a-hw prepare has also passed locally. The current EBRAINS upload
 folder is `ebrains_jobs/cra_432a_hw`, and the exact JobManager command is

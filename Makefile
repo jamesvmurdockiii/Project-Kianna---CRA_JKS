@@ -566,3 +566,6 @@ tier7-5b:
 
 tier7-5c:
 	python3 experiments/tier7_5c_curriculum_environment_scoring_gate.py
+
+tier7-5d:
+	python3 experiments/tier7_5d_curriculum_environment_attribution_closeout.py

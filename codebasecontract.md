@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-09T03:48:58+00:00.
+Last updated: 2026-05-09T03:58:44+00:00.
 
 Current repo root:
 
@@ -430,6 +430,22 @@ Tier 7.5c = COMPLETE, PASS, 17/17 criteria
             the generator grammar is aligned with keyed/compositional features,
             attribution must verify this is mechanism value rather than
             generator-feature encoding.
+```
+
+Latest curriculum attribution closeout:
+
+```text
+Tier 7.5d = COMPLETE, PASS, 18/18 criteria
+  Source: controlled_test_output/tier7_5d_20260509_curriculum_environment_attribution_closeout/
+  Runner: experiments/tier7_5d_curriculum_environment_attribution_closeout.py
+  Outcome: synthetic_mechanism_attribution_supported_no_freeze
+  Result: synthetic keyed/compositional mechanism attribution is supported on
+          6/6 generated families, but near-oracle generator-feature alignment
+          risk is also high on 6/6 families.
+  Next gate: Tier 7.6a - Long-Horizon Planning / Subgoal Control Contract.
+  Boundary: attribution/decision evidence only; not new scoring, not public
+            real-world usefulness proof, not a freeze, and not hardware/native
+            transfer.
 ```
 
 Latest optional mechanism diagnostic:
@@ -1126,13 +1142,18 @@ Tier 7.5c — COMPLETE. Curriculum / environment generator scoring gate.
     families, with broad public usefulness, freeze, and hardware/native transfer
     blocked.
 
-Tier 7.5d — CURRENT ACTIVE STEP. Curriculum / environment score attribution and
+Tier 7.5d — COMPLETE. Curriculum / environment score attribution and
 promotion decision.
-  Required first move: determine whether the 7.5c signal is genuine mechanism
-    value or generator-feature alignment. Preserve external/reference/sham
-    comparisons, add feature-ablation/permutation/oracle-bound checks, and do
-    not freeze or transfer to hardware unless attribution and compact regression
-    justify it.
+  Status: PASS, 18/18 criteria.
+  Output: controlled_test_output/tier7_5d_20260509_curriculum_environment_attribution_closeout/
+  Result: synthetic mechanism attribution supported, generator-alignment risk
+    documented, and public usefulness/freeze/hardware transfer blocked.
+
+Tier 7.6a — CURRENT ACTIVE STEP. Long-horizon planning / subgoal-control
+contract.
+  Required first move: define the exact planning/subgoal question, hypotheses,
+    nulls, tasks, baselines, shams, metrics, leakage guards, pass/fail criteria,
+    nonclaims, and expected artifacts before any scoring or implementation.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware
