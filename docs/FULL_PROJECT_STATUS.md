@@ -5,15 +5,19 @@ biologically inspired learning system built around polyp populations, trophic
 energy, dopamine-modulated plasticity, lifecycle pressure, and neuromorphic
 backends.
 
-The current evidence trail is controlled and staged.
+The current evidence trail is controlled and staged. The latest host-side
+software baseline is `CRA_EVIDENCE_BASELINE_v2.5`, frozen by Tier 7.6e after
+the reduced-feature planning/subgoal-control signal survived full NEST compact
+regression. The current next step is Tier 7.7a: lock the v2.5 standardized
+benchmark/usefulness scoreboard contract before scoring.
+
 Current native lifecycle update: Tier 4.30g-hw passed on real SpiNNaker after
 EBRAINS ingest (board `10.11.242.97`, raw `pass`, ingest `pass`, 285/285
 hardware criteria, 5/5 ingest criteria, 36 returned artifacts preserved).
 `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` is frozen with a strict boundary: bounded
 static-pool lifecycle-native hardware evidence with a host-ferried lifecycle
 task bridge, not autonomous lifecycle-to-learning MCPL, speedup, multi-chip
-scaling, v2.2 temporal migration, or full organism autonomy. The current next
-step is Tier 4.31a native temporal-substrate readiness.
+scaling, v2.2 temporal migration, or full organism autonomy.
  The latest registry says
 all canonical evidence entries pass, including the Tier 4.13 minimal SpiNNaker
 hardware capsule, Tier 4.14 hardware runtime characterization, Tier 4.15

@@ -11342,12 +11342,26 @@ Boundary: reduced-feature local diagnostic only; not a promoted planning
 mechanism, not public usefulness, not a freeze, and not hardware/native transfer.
 ```
 
-Next required step:
+Latest planning promotion result:
 
 ```text
 Tier 7.6e - Planning/subgoal-control promotion + compact regression gate.
-Decide whether the reduced-feature planning mechanism can be promoted after
-compact regression, shams/ablations, and claim-boundary enforcement.
+Status: COMPLETE / PASS, 20/20 criteria.
+Output: controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/
+Outcome: reduced_feature_planning_ready_for_v2_5_freeze.
+Result: full NEST compact regression passed; `CRA_EVIDENCE_BASELINE_v2.5` is
+frozen as bounded host-side software planning/subgoal-control evidence.
+Boundary: not public usefulness, not broad planning/reasoning, not language,
+not hardware/native transfer, not autonomous on-chip planning, and not AGI/ASI.
+```
+
+Next required step:
+
+```text
+Tier 7.7a - v2.5 standardized benchmark/usefulness scoreboard contract.
+Predeclare the locked public/standardized benchmark matrix, baselines, splits,
+metrics, shams, leakage rules, pass/fail criteria, artifacts, and claim
+boundaries before scoring v2.5.
 ```
 
 ## Tier 5.20a - Resonant Branch Polyp Internal-Model Diagnostic

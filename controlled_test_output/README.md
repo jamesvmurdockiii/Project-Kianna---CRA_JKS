@@ -5,10 +5,10 @@ ledger is `STUDY_REGISTRY.json`; the compact table is `STUDY_REGISTRY.csv`.
 Older reruns, prepared capsules, debug probes, and baseline-frozen
 mechanism bundles outside the formal registry are preserved for audit.
 
-- Generated: `2026-05-09T04:40:22.233240+00:00`
+- Generated: `2026-05-09T05:23:04.976628+00:00`
 - Registry status: **PASS**
-- Canonical evidence entries: `122`
-- Expanded test-entry count: `122`; see the canonical evidence table below for the exact current tier list.
+- Canonical evidence entries: `123`
+- Expanded test-entry count: `123`; see the canonical evidence table below for the exact current tier list.
 
 ## Evidence Categories
 
@@ -108,6 +108,7 @@ mechanism bundles outside the formal registry are preserved for audit.
 | `tier7_6b_long_horizon_planning_local_diagnostic` | **PASS** | `controlled_test_output/tier7_6b_20260509_long_horizon_planning_local_diagnostic` | Local software diagnostic scaffold only; not a promoted CRA mechanism, not broad planning, not public usefulness proof, not a new baseline freeze, not hardware/native transfer, and not AGI/ASI evidence. |
 | `tier7_6c_long_horizon_planning_attribution_closeout` | **PASS** | `controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout` | Attribution/decision evidence only; not new performance scoring, not a promoted planning mechanism, not public usefulness proof, not a new baseline freeze, not hardware/native transfer, and not AGI/ASI evidence. |
 | `tier7_6d_reduced_feature_planning_generalization` | **PASS** | `controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization` | Reduced-feature local diagnostic only; not a promoted planning mechanism, not public usefulness proof, not a new baseline freeze, not hardware/native transfer, and not AGI/ASI evidence. |
+| `tier7_6e_planning_promotion_compact_regression` | **PASS** | `controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression` | Software promotion/regression evidence only; not public usefulness proof, not broad planning or reasoning, not hardware/native transfer, not autonomous on-chip planning, and not AGI/ASI evidence. |
 | `tier5_20a_resonant_branch_polyp_diagnostic` | **PASS** | `controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic` | Software diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence. |
 | `tier5_20b_hybrid_resonant_polyp_diagnostic` | **PASS** | `controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic` | Software repair diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence. |
 | `tier5_20c_minimal_resonant_polyp_diagnostic` | **PASS** | `controlled_test_output/tier5_20c_20260508_minimal_resonant_polyp_diagnostic` | Software minimal-dose diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence. |

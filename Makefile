@@ -581,3 +581,6 @@ tier7-6c:
 
 tier7-6d:
 	python3 experiments/tier7_6d_reduced_feature_planning_generalization.py
+
+tier7-6e:
+	python3 experiments/tier7_6e_planning_promotion_compact_regression.py

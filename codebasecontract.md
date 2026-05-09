@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-09T04:36:06+00:00.
+Last updated: 2026-05-09T05:25:00+00:00.
 
 Current repo root:
 
@@ -494,11 +494,22 @@ Tier 7.6d = COMPLETE, PASS, 18/18 criteria
           aliased/coarse features only. Supported families: 4/5, including both
           prior weak families blocked_subgoal_recovery and
           hierarchical_composition_holdout.
-  Next gate: Tier 7.6e - Planning/Subgoal-Control Promotion + Compact
-             Regression Gate.
   Boundary: reduced-feature local diagnostic only; not a promoted planning
             mechanism, not public usefulness, not a freeze, and not
             hardware/native transfer.
+
+Tier 7.6e = COMPLETE, PASS, 20/20 criteria
+  Source: controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/
+  Runner: experiments/tier7_6e_planning_promotion_compact_regression.py
+  Outcome: reduced_feature_planning_ready_for_v2_5_freeze
+  Result: full NEST compact regression passed; reduced-feature planning is
+          promoted as bounded host-side software evidence.
+  Baseline frozen: CRA_EVIDENCE_BASELINE_v2.5.
+  Next gate: Tier 7.7a - v2.5 Standardized Benchmark / Usefulness Scoreboard
+             Contract.
+  Boundary: not public usefulness, not broad planning/reasoning, not language,
+            not hardware/native transfer, not autonomous on-chip planning, and
+            not AGI/ASI.
 ```
 
 Latest optional mechanism diagnostic:
@@ -1229,11 +1240,14 @@ Tier 7.6d — COMPLETE. Reduced-feature planning generalization / task repair.
     prior weak families; promotion gate authorized but no freeze/hardware
     transfer.
 
-Tier 7.6e — CURRENT ACTIVE STEP. Planning/subgoal-control promotion + compact
-regression gate.
-  Required first move: decide whether the reduced-feature planning mechanism can
-    be promoted into the software baseline line. Must include compact regression,
-    shams/ablations, claim-boundary enforcement, and no hardware transfer.
+Tier 7.6e — COMPLETE. Planning/subgoal-control promotion + compact regression
+  gate. Status: PASS, 20/20 criteria. `CRA_EVIDENCE_BASELINE_v2.5` is frozen
+  as bounded host-side software planning/subgoal-control evidence.
+
+Tier 7.7a — CURRENT ACTIVE STEP. v2.5 standardized benchmark/usefulness
+  scoreboard contract. Lock tasks, baselines, splits, scoring, shams, leakage
+  rules, and pass/fail criteria before scoring v2.5 on public/standardized
+  benchmarks.
 
 Tier 4.30g-hw — COMPLETE. Lifecycle task-benefit/resource bridge.
   Status: HARDWARE PASS, INGESTED. Board 10.11.242.97, 285/285 hardware

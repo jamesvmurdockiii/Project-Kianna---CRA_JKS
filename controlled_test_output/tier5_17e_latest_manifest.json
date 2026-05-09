@@ -1,10 +1,10 @@
 {
   "canonical": false,
   "claim": "Latest Tier 5.17e predictive-binding compact regression; passing authorizes bounded v2.0 baseline freeze after review.",
-  "generated_at_utc": "2026-05-09T01:52:27+00:00",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/compact_regression_full_nest/v2_0_compact_regression_gate/tier5_17e_results.json",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/compact_regression_full_nest/v2_0_compact_regression_gate",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/compact_regression_full_nest/v2_0_compact_regression_gate/tier5_17e_report.md",
+  "generated_at_utc": "2026-05-09T05:12:18+00:00",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/tier5_17e_results.json",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/tier5_17e_report.md",
   "status": "pass",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/compact_regression_full_nest/v2_0_compact_regression_gate/tier5_17e_summary.csv"
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/tier5_17e_summary.csv"
 }

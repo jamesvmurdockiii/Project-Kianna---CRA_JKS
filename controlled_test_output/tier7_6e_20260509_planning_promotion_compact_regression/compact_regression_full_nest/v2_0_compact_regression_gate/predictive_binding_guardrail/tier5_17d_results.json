@@ -1,0 +1,175 @@
+{
+  "artifacts": {
+    "comparisons_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_comparisons.csv",
+    "control_edges_png": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_control_edges.png",
+    "fairness_contract_json": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_fairness_contract.json",
+    "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_results.json",
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_report.md",
+    "representation_matrix_png": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_representation_matrix.png",
+    "run_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_runs.csv",
+    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_summary.csv"
+  },
+  "canonical": false,
+  "claim_boundary": "Noncanonical software diagnostic: predictive binding preexposure under zero-label/zero-reward exposure; not hardware/on-chip representation learning or a v2.0 freeze.",
+  "criteria": [
+    {
+      "name": "task/variant/seed matrix completed",
+      "note": "",
+      "operator": "==",
+      "passed": true,
+      "threshold": 60,
+      "value": 60
+    },
+    {
+      "name": "non-oracle exposure has no hidden-label leakage",
+      "note": "",
+      "operator": "==",
+      "passed": true,
+      "threshold": 0,
+      "value": 0
+    },
+    {
+      "name": "exposure has no reward visibility",
+      "note": "",
+      "operator": "==",
+      "passed": true,
+      "threshold": 0,
+      "value": 0
+    },
+    {
+      "name": "pre-reward raw dopamine remains zero",
+      "note": "",
+      "operator": "<=",
+      "passed": true,
+      "threshold": 1e-12,
+      "value": 0.0
+    },
+    {
+      "name": "held-out ambiguous probe rows available",
+      "note": "",
+      "operator": ">=",
+      "passed": true,
+      "threshold": 70,
+      "value": 176.0
+    },
+    {
+      "name": "candidate reaches minimum ridge-probe accuracy",
+      "note": "",
+      "operator": ">=",
+      "passed": true,
+      "threshold": 0.76,
+      "value": 0.7857142857142857
+    },
+    {
+      "name": "candidate reaches minimum kNN-probe accuracy",
+      "note": "",
+      "operator": ">=",
+      "passed": true,
+      "threshold": 0.64,
+      "value": 0.7738095238095238
+    },
+    {
+      "name": "candidate beats no-preexposure control",
+      "note": "",
+      "operator": ">=",
+      "passed": true,
+      "threshold": 0.1,
+      "value": 0.5114382834793891
+    },
+    {
+      "name": "target-shuffled binding loses",
+      "note": "",
+      "operator": ">=",
+      "passed": true,
+      "threshold": 0.08,
+      "value": 0.4437329148526881
+    },
+    {
+      "name": "wrong-domain binding loses",
+      "note": "",
+      "operator": ">=",
+      "passed": true,
+      "threshold": 0.08,
+      "value": 0.48482726423902894
+    },
+    {
+      "name": "fixed-history baseline does not explain result",
+      "note": "",
+      "operator": ">=",
+      "passed": true,
+      "threshold": 0.05,
+      "value": 0.5099595393713041
+    },
+    {
+      "name": "reservoir baseline does not explain result",
+      "note": "",
+      "operator": ">=",
+      "passed": true,
+      "threshold": 0.05,
+      "value": 0.5424795353214914
+    },
+    {
+      "name": "STDP-only baseline does not explain result",
+      "note": "",
+      "operator": ">=",
+      "passed": true,
+      "threshold": 0.04,
+      "value": 0.14204545454545447
+    },
+    {
+      "name": "candidate beats best non-oracle control",
+      "note": "",
+      "operator": ">=",
+      "passed": true,
+      "threshold": 0.03,
+      "value": 0.14204545454545447
+    },
+    {
+      "name": "downstream sample-efficiency improves",
+      "note": "",
+      "operator": ">=",
+      "passed": true,
+      "threshold": 2,
+      "value": 2
+    }
+  ],
+  "failure_reason": "",
+  "generated_at_utc": "2026-05-09T05:12:18+00:00",
+  "name": "Tier 5.17d - Predictive Preexposure Binding/Sham Repair",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/predictive_binding_guardrail",
+  "status": "pass",
+  "summary": {
+    "candidate_min_knn_probe_accuracy": 0.7738095238095238,
+    "candidate_min_ridge_probe_accuracy": 0.7857142857142857,
+    "claim_boundary": "Noncanonical software diagnostic: predictive binding preexposure under zero-label/zero-reward exposure; not hardware/on-chip representation learning or a v2.0 freeze.",
+    "expected_runs": 60,
+    "max_abs_raw_dopamine_non_oracle": 0.0,
+    "min_candidate_probe_rows": 176.0,
+    "non_oracle_label_leakage_runs": 0,
+    "observed_runs": 60,
+    "reward_leakage_runs": 0,
+    "runtime_seconds": 1.9571551660000006,
+    "sample_efficiency_wins": 2,
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "tasks": [
+      "cross_modal_binding",
+      "reentry_binding"
+    ],
+    "variants": [
+      "predictive_binding_preexposure",
+      "no_preexposure",
+      "target_shuffled_binding",
+      "wrong_domain_binding",
+      "current_input_only",
+      "fixed_history_baseline",
+      "random_projection_history",
+      "reservoir_baseline",
+      "stdp_only_unsupervised",
+      "oracle_latent_upper_bound"
+    ]
+  }
+}

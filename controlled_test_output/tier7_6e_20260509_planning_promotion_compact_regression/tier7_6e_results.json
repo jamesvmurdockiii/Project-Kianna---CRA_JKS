@@ -1,0 +1,232 @@
+{
+  "claim_boundary": "# Tier 7.6e Claim Boundary\n\n- Outcome: `reduced_feature_planning_ready_for_v2_5_freeze`\n- Freeze authorized: `True`\n- Hardware/native transfer authorized: `False`\n- Broad planning claim authorized: `False`\n\n## Authorized Claim\n\nReduced-feature planning/subgoal-control improves bounded local planning diagnostics under aliased context/route/memory features and survives compact regression.\n\n## Nonclaims\n\n- not public usefulness proof\n- not broad planning or reasoning\n- not language\n- not hardware/native transfer\n- not autonomous on-chip planning\n- not AGI\n- not ASI\n",
+  "classification": {
+    "broad_planning_claim_authorized": false,
+    "compact_backend": "nest",
+    "compact_freeze_backend": true,
+    "compact_full": true,
+    "compact_pass": true,
+    "freeze_authorized": true,
+    "hardware_transfer_authorized": false,
+    "nonclaims": [
+      "not public usefulness proof",
+      "not broad planning or reasoning",
+      "not language",
+      "not hardware/native transfer",
+      "not autonomous on-chip planning",
+      "not AGI",
+      "not ASI"
+    ],
+    "outcome": "reduced_feature_planning_ready_for_v2_5_freeze",
+    "planning_support": true,
+    "promotable_claim": "Reduced-feature planning/subgoal-control improves bounded local planning diagnostics under aliased context/route/memory features and survives compact regression.",
+    "recommendation": "Freeze v2.5 as a bounded host-side software planning/subgoal-control baseline; keep hardware/native transfer blocked."
+  },
+  "compact_child": {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "experiments/tier5_self_evaluation_compact_regression.py",
+      "--backend",
+      "nest",
+      "--stop-on-fail",
+      "--output-dir",
+      "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest"
+    ],
+    "failure_reason": "",
+    "manifest_path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/tier5_18c_results.json",
+    "name": "compact_regression_full_nest",
+    "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest",
+    "purpose": "rerun the promoted software compact regression stack before any v2.5 planning freeze",
+    "return_code": 0,
+    "runtime_seconds": 1635.2336707919999,
+    "status": "pass",
+    "stderr_path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/compact_regression_full_nest_stderr.log",
+    "stdout_path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/compact_regression_full_nest_stdout.log"
+  },
+  "compact_mode": "full",
+  "criteria": [
+    {
+      "name": "runner revision current",
+      "note": "",
+      "passed": true,
+      "rule": "expected current source",
+      "value": "tier7_6e_planning_promotion_compact_regression_20260509_0001"
+    },
+    {
+      "name": "Tier 7.6d exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization/tier7_6d_results.json"
+    },
+    {
+      "name": "v2.4 baseline exists",
+      "note": "",
+      "passed": true,
+      "rule": "exists",
+      "value": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.4.json"
+    },
+    {
+      "name": "Tier 7.6d passed",
+      "note": "",
+      "passed": true,
+      "rule": "== PASS",
+      "value": "PASS"
+    },
+    {
+      "name": "Tier 7.6d candidate outcome",
+      "note": "",
+      "passed": true,
+      "rule": "== reduced_feature_planning_signal_supported_requires_promotion_gate",
+      "value": "reduced_feature_planning_signal_supported_requires_promotion_gate"
+    },
+    {
+      "name": "Tier 7.6d reduced-feature signal authorized",
+      "note": "",
+      "passed": true,
+      "rule": "== true",
+      "value": true
+    },
+    {
+      "name": "supported family count",
+      "note": "",
+      "passed": true,
+      "rule": ">= 4",
+      "value": 4
+    },
+    {
+      "name": "prior weak families repaired",
+      "note": "",
+      "passed": true,
+      "rule": "== true",
+      "value": true
+    },
+    {
+      "name": "return margin vs best non-oracle",
+      "note": "",
+      "passed": true,
+      "rule": "> 0",
+      "value": 4.490606060606061
+    },
+    {
+      "name": "return CI low vs best non-oracle",
+      "note": "",
+      "passed": true,
+      "rule": "> 0",
+      "value": 3.354848484848485
+    },
+    {
+      "name": "return margin vs best sham",
+      "note": "",
+      "passed": true,
+      "rule": "> 0",
+      "value": 3.9866666666666672
+    },
+    {
+      "name": "return CI low vs best sham",
+      "note": "",
+      "passed": true,
+      "rule": "> 0",
+      "value": 2.860909090909091
+    },
+    {
+      "name": "source gate did not already freeze",
+      "note": "",
+      "passed": true,
+      "rule": "== false",
+      "value": false
+    },
+    {
+      "name": "source gate did not authorize hardware",
+      "note": "",
+      "passed": true,
+      "rule": "== false",
+      "value": false
+    },
+    {
+      "name": "source gate did not authorize broad planning",
+      "note": "",
+      "passed": true,
+      "rule": "== false",
+      "value": false
+    },
+    {
+      "name": "compact regression guardrail pass",
+      "note": "",
+      "passed": true,
+      "rule": "== true",
+      "value": true
+    },
+    {
+      "name": "full compact regression for freeze",
+      "note": "",
+      "passed": true,
+      "rule": "== true for freeze authorization",
+      "value": true
+    },
+    {
+      "name": "freeze compact backend is non-mock",
+      "note": "",
+      "passed": true,
+      "rule": "nest or brian2 required for freeze",
+      "value": true
+    },
+    {
+      "name": "hardware transfer remains blocked",
+      "note": "",
+      "passed": true,
+      "rule": "== false",
+      "value": false
+    },
+    {
+      "name": "broad planning claim remains blocked",
+      "note": "",
+      "passed": true,
+      "rule": "== false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 20,
+  "criteria_total": 20,
+  "failed_criteria": [],
+  "failure_reason": "",
+  "generated_at_utc": "2026-05-09T05:12:22+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression",
+  "runner_revision": "tier7_6e_planning_promotion_compact_regression_20260509_0001",
+  "runtime_seconds": 1635.236244375,
+  "source_results": {
+    "tier7_6d": "/Users/james/JKS:CRA/controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization/tier7_6d_results.json",
+    "v2_4_baseline": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.4.json"
+  },
+  "status": "pass",
+  "support": {
+    "best_non_oracle_model": "dyna_q_model_based_baseline",
+    "best_non_oracle_return_mean": 6.97,
+    "best_sham_or_ablation": "self_evaluation_disabled",
+    "best_sham_return_mean": 7.473939393939394,
+    "broad_planning_claim_authorized_by_7_6d": false,
+    "candidate_return_mean": 11.460606060606061,
+    "candidate_success_rate": 0.806060606060606,
+    "ci_low_vs_best_non_oracle": 3.354848484848485,
+    "ci_low_vs_best_sham": 2.860909090909091,
+    "effect_size_vs_best_non_oracle": 0.5988598586869635,
+    "effect_size_vs_best_sham": 0.5380848323955474,
+    "freeze_authorized_by_7_6d": false,
+    "hardware_transfer_authorized_by_7_6d": false,
+    "promotion_gate_authorized_by_7_6d": true,
+    "reduced_feature_signal_authorized": true,
+    "repaired_prior_weak_families_supported": true,
+    "return_margin_vs_best_non_oracle": 4.490606060606061,
+    "return_margin_vs_best_sham": 3.9866666666666672,
+    "supported_families": [
+      "two_stage_delayed_goal_chain",
+      "resource_budget_route_plan",
+      "blocked_subgoal_recovery",
+      "hierarchical_composition_holdout"
+    ],
+    "supported_family_count": 4,
+    "tier7_6d_outcome": "reduced_feature_planning_signal_supported_requires_promotion_gate",
+    "tier7_6d_status": "PASS"
+  },
+  "tier": "Tier 7.6e - Planning/Subgoal-Control Promotion + Compact Regression"
+}

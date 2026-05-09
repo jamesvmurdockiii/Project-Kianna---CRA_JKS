@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-09T04:36:06+00:00.
+Last updated: 2026-05-09T05:25:00+00:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -1397,71 +1397,82 @@ ability.
     support remained positive, both prior weak families were repaired, and 4/5
     families supported the signal. No freeze or hardware/native transfer.
 
-111. **CURRENT ACTIVE STEP** - Tier 7.6e planning/subgoal-control promotion +
+111. **COMPLETE** - Tier 7.6e planning/subgoal-control promotion +
     compact regression gate:
-    decide whether to promote the reduced-feature planning mechanism into the
-    software baseline line. Must include compact regression, shams/ablations,
-    claim-boundary enforcement, and no hardware transfer from this gate alone.
+    passed 20/20 at
+    `controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/`.
+    Outcome `reduced_feature_planning_ready_for_v2_5_freeze`: locked Tier 7.6d
+    support survived full NEST compact regression, `CRA_EVIDENCE_BASELINE_v2.5`
+    is frozen as bounded host-side software planning/subgoal-control evidence,
+    and hardware/native transfer plus broad planning claims remain blocked.
 
-112. Mechanism iteration loop: add exactly one planned general mechanism at a
+112. **CURRENT ACTIVE STEP** - Tier 7.7a v2.5 standardized benchmark/usefulness
+    scoreboard contract:
+    lock the public/standardized benchmark matrix before scoring v2.5. Must
+    predeclare tasks, baselines, splits, scoring metrics, shams, leakage rules,
+    pass/fail criteria, expected artifacts, and claim boundaries. Start with the
+    locked Mackey-Glass/Lorenz/NARMA10 8000-step scoreboard and explicitly decide
+    whether to add held-out real-ish adapter families.
+
+113. Mechanism iteration loop: add exactly one planned general mechanism at a
     time, ablate it, run compact regression, then rerun the same standardized
     benchmark scoreboard. If the full planned mechanism stack still cannot move
     Mackey-Glass/Lorenz/NARMA10 or any other selected public benchmark family,
     stop the broad usefulness track and narrow the paper.
 
-113. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
+114. Tier 7.1 real-ish adapter suite: audited sensor/anomaly/concept-drift/event-
     stream/control adapters with fixed preprocessing, no leakage, and fair
     baselines. Start only after the standardized scoreboard or failure diagnosis
     identifies a winning regime, a real failure mode, or a mechanism needing
     external validation.
 
-114. Tier 7.2 held-out task challenge: define held-out families before running;
+115. Tier 7.2 held-out task challenge: define held-out families before running;
     no tuning on the holdout. Include at least one synthetic holdout and one
     real-ish adapter holdout if Tier 7.1 is active.
 
-115. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
+116. Tier 7.3 real data tasks: small reproducible datasets, locked splits,
     licenses, preprocessing, and external baselines. Candidate domains include
     streaming anomaly detection, predictive-maintenance sensor streams, human
     activity streams, event prediction, ECG/biosignal streams, and finance as
     one domain only rather than the whole proof.
 
-116. Tier 7.4 policy/action selection held-out scoring: the current held-out
+117. Tier 7.4 policy/action selection held-out scoring: the current held-out
     chain is complete through 7.4h. No further NAB/C-MAPSS policy tuning is
     authorized from this chain; only the narrow C-MAPSS action-cost signal is
     preserved, with no broad action/policy claim, freeze, or hardware/native
     transfer.
 
-117. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
+118. Tier 7.5 curriculum/environment generator and Tier 7.6 long-horizon
     planning/subgoal control: run only after the shorter hard/real-ish tasks are
     stable. Do not claim language, AGI, or broad planning from toy gates.
 
-118. Run expanded external baselines and fairness audit at the phase lock:
+119. Run expanded external baselines and fairness audit at the phase lock:
     random/sign persistence, online perceptron/logistic, lag/ridge where
     relevant, reservoir/ESN, small GRU, STDP-only SNN, simple evolutionary
     population, simple control baselines, and SNN reviewer-defense baselines
     where practical.
 
-119. Freeze the next software baseline only if new software capability work
+120. Freeze the next software baseline only if new software capability work
     passes ablations, fair baselines, leakage controls, and compact regression.
     If no new software mechanism is promoted, keep v2.4.
 
 ### Phase I - Final Paper Lock
 
-120. Select final paper claim level: strong usefulness paper, bounded architecture
+121. Select final paper claim level: strong usefulness paper, bounded architecture
     study, or narrowed diagnostic report. Let the evidence decide.
 
-121. Run final software matrix and final hardware subset matrix. Include effect
+122. Run final software matrix and final hardware subset matrix. Include effect
     sizes, confidence intervals, worst seed, sample efficiency, runtime, command
     count, resource budgets, and claim-boundary table.
 
-122. Build the independent reproduction capsule: fresh checkout instructions,
+123. Build the independent reproduction capsule: fresh checkout instructions,
     environment lock, validation command, registry/table regeneration, EBRAINS
     ingest instructions, artifact hash manifest, and one local tier rerun.
 
-123. Draft paper/whitepaper only after the Phase H usefulness/baseline gates pass. Write
+124. Draft paper/whitepaper only after the Phase H usefulness/baseline gates pass. Write
     limitations first, then claims. Preserve failed and parked diagnostics.
 
-124. External dry run: have a clean agent or human follow only the docs. If they
+125. External dry run: have a clean agent or human follow only the docs. If they
     need hidden chat context, the repo is not ready.
 
 ## 7. Current Tier 4.27 Definition
@@ -1620,30 +1631,30 @@ After each completed run or design tier:
 Most recent completed gate:
 
 ```text
-Tier 7.6d = COMPLETE / PASS, 18/18 criteria.
-Output: controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization/
-Outcome: reduced_feature_planning_signal_supported_requires_promotion_gate.
-Result: direct raw keys were hidden, only aliased/coarse features were available,
-aggregate support remained positive, both prior weak families were repaired, and
-4/5 families supported the reduced-feature signal.
-Boundary: reduced-feature local diagnostic only; no promoted planning mechanism,
-no public usefulness claim, no freeze, and no hardware/native transfer.
+Tier 7.6e = COMPLETE / PASS, 20/20 criteria.
+Output: controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/
+Outcome: reduced_feature_planning_ready_for_v2_5_freeze.
+Result: locked Tier 7.6d support survived full NEST compact regression,
+CRA_EVIDENCE_BASELINE_v2.5 is frozen, and hardware/native transfer plus broad
+planning claims remain blocked.
+Boundary: host-side software promotion/regression only; not public usefulness,
+not broad planning/reasoning, not hardware/native transfer, and not AGI/ASI.
 ```
 
 The next concrete action is now:
 
 ```text
-Tier 7.6e - Planning/Subgoal-Control Promotion + Compact Regression Gate
+Tier 7.7a - v2.5 Standardized Benchmark / Usefulness Scoreboard Contract
 
-Question: Does the reduced-feature planning mechanism deserve promotion into the
-software baseline line without breaking compact regression guardrails?
+Question: What locked public/standardized benchmark matrix will test whether
+v2.5 moves beyond bounded synthetic planning diagnostics?
 
-First move: run promotion/compact regression over the reduced-feature planning
-mechanism with shams/ablations, evidence-boundary enforcement, and explicit
-freeze/no-freeze decision.
+First move: predeclare tasks, baselines, splits, scoring metrics, shams,
+leakage rules, pass/fail criteria, expected artifacts, and claim boundaries
+before scoring v2.5.
 
-Boundary: software promotion gate only; no hardware/native transfer from this
-gate alone.
+Boundary: contract/preflight first; no scoring, no usefulness claim, and no
+hardware/native transfer until the contract is locked.
 ```
 
 Recent closeout:

@@ -1,6 +1,6 @@
 # CRA Mechanism Status
 
-Last updated: 2026-05-08.
+Last updated: 2026-05-09.
 
 This document separates three things that can otherwise get blurred:
 
@@ -29,6 +29,9 @@ appropriate, and a compact regression or freeze gate.
 | 11 | Self-evaluation / confidence-gated adaptation | Tier 5.18/5.18c froze bounded v2.1 evidence; Tier 4.29d transferred native bridge. | Operational confidence monitoring, not consciousness/self-awareness. |
 | 12 | Fading-memory temporal state | Tier 5.19c froze bounded v2.2 evidence; Tier 4.31a-d moved the seven-EMA temporal substrate through native readiness/source/hardware smoke. | Fading memory only; bounded nonlinear recurrence remains unproven. |
 | 13 | Native MCPL/multi-core/multi-chip substrate | CRA_NATIVE_SCALE_BASELINE_v0.5 freezes 4.32a/4.32d/4.32e/4.32g evidence. | Substrate transfer/scaling path only; not usefulness, speedup, or benchmark superiority. |
+| 14 | Generic bounded recurrent interface | Tier 7.0j froze bounded host-side v2.3 evidence after the locked public scoreboard and compact regression. | Generic interface evidence only; topology-specific recurrence and ESN superiority remain nonclaims. |
+| 15 | Cost-aware policy/action selection | Tier 7.4c froze bounded host-side v2.4 evidence after full compact regression. | Local policy/action evidence only; not broad public usefulness or reinforcement learning solved. |
+| 16 | Reduced-feature planning/subgoal control | Tier 7.6e froze bounded host-side v2.5 evidence after Tier 7.6d repair and full compact regression. | Bounded software planning diagnostics only; not broad planning/reasoning, language, autonomous on-chip planning, or AGI/ASI. |
 
 ## Diagnostic coverage that is not a promoted mechanism by itself
 
@@ -54,9 +57,8 @@ until a software/usefulness gate creates a measured need.
 | 6 | Multi-shard learning and lifecycle scaling | Not implemented as a claim. | Requires v0.5 substrate plus a usefulness-selected task and explicit scaling criteria. |
 | 7 | Autonomous lifecycle-to-learning MCPL | Not yet proven; current lifecycle bridges are bounded/static or traffic/resource smokes. | Implement after lifecycle helps on useful tasks and host-ferrying becomes the blocker. |
 | 8 | Dynamic population creation | Not supported in the PyNN/SpiNNaker path; static pools and active masks are the supported route. | Only revisit with a custom runtime design that predeclares allocation/resource semantics. |
-| 9 | Policy/action-selection layer | Planned Tier 7.4. | Start after hard synthetic and real-ish adapters define action/consequence tasks. |
-| 10 | Curriculum/environment generator | Planned Tier 7.5. | Start after core usefulness benchmarks are stable enough to need generated task families. |
-| 11 | Long-horizon planning / subgoal control | Planned Tier 7.6. | Start only after policy/action tests work; do not claim planning from short toy gates. |
+| 9 | Curriculum public/usefulness transfer | Tier 7.5 produced synthetic generated-family evidence but no public-usefulness claim. | Re-enter through a locked standardized benchmark/usefulness scoreboard, not through more generator tuning. |
+| 10 | Long-horizon planning public/usefulness transfer | Tier 7.6 froze bounded v2.5 software evidence. | Next step is a standardized benchmark/usefulness contract before claiming real planning value. |
 | 12 | Language/multimodal grounding | Future research direction, not current paper scope. | Requires separate task families, baselines, and safety boundaries. |
 
 ## Current strategic rule

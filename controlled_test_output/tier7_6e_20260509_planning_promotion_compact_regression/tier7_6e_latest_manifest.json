@@ -1,0 +1,51 @@
+{
+  "artifacts": [
+    {
+      "bytes": 569,
+      "name": "claim_boundary_md",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/tier7_6e_claim_boundary.md",
+      "sha256": "97d6a700d1cec62931c399cb10fec18abbfceb1a2d337a4046531938d50b068c"
+    },
+    {
+      "bytes": 1299,
+      "name": "compact_child_json",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/tier7_6e_compact_child.json",
+      "sha256": "0106334d6915557916ee149279985eb345a5ab669bb4568e3cd1175dea704faa"
+    },
+    {
+      "bytes": 754,
+      "name": "promotion_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/tier7_6e_promotion.csv",
+      "sha256": "8035973b906410a9c8a5bd3ae00a47a6203b39bca11b59e16fd4bf2bbcf59e7d"
+    },
+    {
+      "bytes": 867,
+      "name": "promotion_json",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/tier7_6e_promotion.json",
+      "sha256": "0241778bdca08913a239cbfe0d62b5cda11a1ad5b85b0c3458404a12d20d0406"
+    },
+    {
+      "bytes": 3343,
+      "name": "report_md",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/tier7_6e_report.md",
+      "sha256": "ae393ff90382fc4d0e63a2f5d2edc4ae051dea3a7f815f57173d1428203e0ca0"
+    },
+    {
+      "bytes": 8363,
+      "name": "results_json",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/tier7_6e_results.json",
+      "sha256": "f33004cab68980d0afe62b0ea7e53f3bdf7dad3c1ca269ad0b7bfa71f131ade6"
+    },
+    {
+      "bytes": 1811,
+      "name": "summary_csv",
+      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/tier7_6e_summary.csv",
+      "sha256": "c12008ca40398aef5db5bdb4e34ae44f42e907edfda06bb7d08973a0214f9c82"
+    }
+  ],
+  "generated_at_utc": "2026-05-09T05:12:22+00:00",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression",
+  "runner_revision": "tier7_6e_planning_promotion_compact_regression_20260509_0001",
+  "status": "pass",
+  "tier": "Tier 7.6e - Planning/Subgoal-Control Promotion + Compact Regression"
+}

@@ -10,7 +10,7 @@ answers them.
 
 ## Current Position
 
-The current strongest claim after the v2.0 freeze is:
+The current strongest claim after the v2.5 freeze is:
 
 ```text
 CRA is a validated neuromorphic research system with strict controls,
@@ -56,7 +56,7 @@ time-shuffle and rate-only controls. Tier 5.17d repairs the narrower
 predictive-binding failure mode after broad reward-free representation failed,
 and Tier 5.17e freezes v2.0 after v1.8 compact regression, v1.9
 composition/routing, Tier 5.14 working-memory/context binding, and Tier 5.17d
-predictive-binding guardrails all pass. This does not prove priority weighting,
+predictive-binding guardrails all pass. Tier 5.18c then froze bounded v2.1 self-evaluation evidence, Tier 5.19c froze bounded v2.2 fading-memory temporal-state evidence, Tier 7.0j froze bounded v2.3 generic recurrent-interface evidence, Tier 7.4c froze bounded v2.4 cost-aware policy/action evidence, and Tier 7.6e froze bounded v2.5 reduced-feature planning/subgoal-control evidence after Tier 7.6d repaired the feature-alignment blocker and full NEST compact regression passed. This does not prove priority weighting,
 hidden-regime inference, broad unsupervised concept learning, full world
 modeling, language, planning, hardware prediction, hardware scaling, native
 on-chip learning, hardware/on-chip composition, routing, temporal coding,

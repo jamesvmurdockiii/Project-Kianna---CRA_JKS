@@ -207,6 +207,15 @@ baselines/CRA_EVIDENCE_BASELINE_v2.1.json
 baselines/CRA_EVIDENCE_BASELINE_v2.1_STUDY_REGISTRY.snapshot.json
 ```
 
+
+The current bounded host-side software planning/subgoal-control v2.5 evidence lock lives in:
+
+```text
+baselines/CRA_EVIDENCE_BASELINE_v2.5.md
+baselines/CRA_EVIDENCE_BASELINE_v2.5.json
+baselines/CRA_EVIDENCE_BASELINE_v2.5_STUDY_REGISTRY.snapshot.json
+```
+
 Treat these as historical claim locks. New tiers extend the current registry but
 do not rewrite what a frozen baseline claimed.
 
@@ -218,7 +227,7 @@ do not rewrite what a frozen baseline claimed.
 - **Failed/parked diagnostic evidence** is retained deliberately to show what did not earn promotion.
 - **Hardware prepare/probe evidence** is a package or one-off probe until returned artifacts are reviewed and promoted.
 
-Use this taxonomy when writing reports: v1.6, v1.7, v1.9, v2.0, and v2.1 are baseline-frozen mechanism evidence. Tier 5.14, Tier 5.15, and Tier 5.16 are still diagnostic coverage unless explicitly included in a later promotion gate.
+Use this taxonomy when writing reports: v1.6, v1.7, v1.9, v2.0, v2.1, v2.2, v2.3, v2.4, and v2.5 are baseline-frozen mechanism evidence. Tier 5.14, Tier 5.15, and Tier 5.16 are still diagnostic coverage unless explicitly included in a later promotion gate.
 
 ## Research Narrative Workflow
 

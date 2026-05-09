@@ -1,0 +1,63 @@
+[tier5.12c] task=masked_input_prediction variant=v1_7_reactive seed=42
+
+             -- N E S T --
+
+ Copyright (C) 2004 The NEST Initiative
+
+ Version: 3.10.0-rc.1
+ Built  : Apr 21 2026 08:22:09
+
+ This program is provided AS IS and comes with NO WARRANTY.
+ See the file LICENSE for details.
+
+ Problems or suggestions?
+   Visit https://www.nest-simulator.org
+
+ Type 'nest.help()' to find out more about NEST.
+
+[tier5.12c] task=masked_input_prediction variant=external_predictive_scaffold seed=42
+[tier5.12c] task=masked_input_prediction variant=internal_predictive_context seed=42
+[tier5.12c] task=masked_input_prediction variant=wrong_predictive_context seed=42
+[tier5.12c] task=masked_input_prediction variant=shuffled_predictive_context seed=42
+[tier5.12c] task=masked_input_prediction variant=permuted_predictive_context seed=42
+[tier5.12c] task=masked_input_prediction variant=no_write_predictive_context seed=42
+[tier5.12c] task=masked_input_prediction model=sign_persistence seed=42
+[tier5.12c] task=masked_input_prediction model=online_perceptron seed=42
+[tier5.12c] task=masked_input_prediction model=current_reflex seed=42
+[tier5.12c] task=masked_input_prediction model=sign_persistence_control seed=42
+[tier5.12c] task=masked_input_prediction model=rolling_majority seed=42
+[tier5.12c] task=masked_input_prediction model=predictive_memory seed=42
+[tier5.12c] task=masked_input_prediction model=wrong_horizon_control seed=42
+[tier5.12c] task=masked_input_prediction model=shuffled_target_control seed=42
+[tier5.12c] task=event_stream_prediction variant=v1_7_reactive seed=42
+[tier5.12c] task=event_stream_prediction variant=external_predictive_scaffold seed=42
+[tier5.12c] task=event_stream_prediction variant=internal_predictive_context seed=42
+[tier5.12c] task=event_stream_prediction variant=wrong_predictive_context seed=42
+[tier5.12c] task=event_stream_prediction variant=shuffled_predictive_context seed=42
+[tier5.12c] task=event_stream_prediction variant=permuted_predictive_context seed=42
+[tier5.12c] task=event_stream_prediction variant=no_write_predictive_context seed=42
+[tier5.12c] task=event_stream_prediction model=sign_persistence seed=42
+[tier5.12c] task=event_stream_prediction model=online_perceptron seed=42
+[tier5.12c] task=event_stream_prediction model=current_reflex seed=42
+[tier5.12c] task=event_stream_prediction model=sign_persistence_control seed=42
+[tier5.12c] task=event_stream_prediction model=rolling_majority seed=42
+[tier5.12c] task=event_stream_prediction model=predictive_memory seed=42
+[tier5.12c] task=event_stream_prediction model=wrong_horizon_control seed=42
+[tier5.12c] task=event_stream_prediction model=shuffled_target_control seed=42
+[tier5.12c] task=sensor_anomaly_prediction variant=v1_7_reactive seed=42
+[tier5.12c] task=sensor_anomaly_prediction variant=external_predictive_scaffold seed=42
+[tier5.12c] task=sensor_anomaly_prediction variant=internal_predictive_context seed=42
+[tier5.12c] task=sensor_anomaly_prediction variant=wrong_predictive_context seed=42
+[tier5.12c] task=sensor_anomaly_prediction variant=shuffled_predictive_context seed=42
+[tier5.12c] task=sensor_anomaly_prediction variant=permuted_predictive_context seed=42
+[tier5.12c] task=sensor_anomaly_prediction variant=no_write_predictive_context seed=42
+[tier5.12c] task=sensor_anomaly_prediction model=sign_persistence seed=42
+[tier5.12c] task=sensor_anomaly_prediction model=online_perceptron seed=42
+[tier5.12c] task=sensor_anomaly_prediction model=current_reflex seed=42
+[tier5.12c] task=sensor_anomaly_prediction model=sign_persistence_control seed=42
+[tier5.12c] task=sensor_anomaly_prediction model=rolling_majority seed=42
+[tier5.12c] task=sensor_anomaly_prediction model=predictive_memory seed=42
+[tier5.12c] task=sensor_anomaly_prediction model=wrong_horizon_control seed=42
+[tier5.12c] task=sensor_anomaly_prediction model=shuffled_target_control seed=42
+Tier 5.12c status: pass
+Report: /Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/v1_8_compact_regression/predictive_context_guardrail/tier5_12c_report.md

@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-05-09T05:23:04.491813+00:00",
+  "source_generated_at_utc": "2026-05-09T05:12:22+00:00",
+  "registry_entry_id": "tier7_6e_planning_promotion_compact_regression",
+  "tier": "Tier 7.6e - Planning/Subgoal-Control Promotion + Compact Regression",
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/tier7_6e_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/tier7_6e_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/tier7_6e_summary.csv",
+  "canonical": true,
+  "claim": "Tier 7.6e promotes the reduced-feature planning/subgoal-control mechanism into the bounded host-side software baseline line after the locked Tier 7.6d signal and full NEST compact regression both pass. It authorizes the v2.5 software baseline freeze.",
+  "caveat": "Software promotion/regression evidence only; not public usefulness proof, not broad planning or reasoning, not hardware/native transfer, not autonomous on-chip planning, and not AGI/ASI evidence."
+}

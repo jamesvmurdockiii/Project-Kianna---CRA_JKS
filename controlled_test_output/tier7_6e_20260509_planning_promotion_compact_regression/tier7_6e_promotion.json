@@ -1,0 +1,22 @@
+{
+  "broad_planning_claim_authorized": false,
+  "compact_backend": "nest",
+  "compact_freeze_backend": true,
+  "compact_full": true,
+  "compact_pass": true,
+  "freeze_authorized": true,
+  "hardware_transfer_authorized": false,
+  "nonclaims": [
+    "not public usefulness proof",
+    "not broad planning or reasoning",
+    "not language",
+    "not hardware/native transfer",
+    "not autonomous on-chip planning",
+    "not AGI",
+    "not ASI"
+  ],
+  "outcome": "reduced_feature_planning_ready_for_v2_5_freeze",
+  "planning_support": true,
+  "promotable_claim": "Reduced-feature planning/subgoal-control improves bounded local planning diagnostics under aliased context/route/memory features and survives compact regression.",
+  "recommendation": "Freeze v2.5 as a bounded host-side software planning/subgoal-control baseline; keep hardware/native transfer blocked."
+}

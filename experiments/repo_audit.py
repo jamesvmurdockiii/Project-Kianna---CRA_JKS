@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CONTROLLED = ROOT / "controlled_test_output"
 DOC_PATH = ROOT / "docs" / "RESEARCH_GRADE_AUDIT.md"
 JSON_PATH = CONTROLLED / "RESEARCH_GRADE_AUDIT.json"
-EXPECTED_CANONICAL_EVIDENCE_COUNT = 122
+EXPECTED_CANONICAL_EVIDENCE_COUNT = 123
 
 REQUIRED_SOURCE_DOCS = [
     "README.md",
@@ -112,6 +112,9 @@ REQUIRED_BASELINE_FILES = [
     "baselines/CRA_EVIDENCE_BASELINE_v2.4.md",
     "baselines/CRA_EVIDENCE_BASELINE_v2.4.json",
     "baselines/CRA_EVIDENCE_BASELINE_v2.4_STUDY_REGISTRY.snapshot.json",
+    "baselines/CRA_EVIDENCE_BASELINE_v2.5.md",
+    "baselines/CRA_EVIDENCE_BASELINE_v2.5.json",
+    "baselines/CRA_EVIDENCE_BASELINE_v2.5_STUDY_REGISTRY.snapshot.json",
     "baselines/CRA_NATIVE_RUNTIME_BASELINE_v0.1.md",
     "baselines/CRA_NATIVE_TASK_BASELINE_v0.2.md",
     "baselines/CRA_NATIVE_TASK_BASELINE_v0.2_STUDY_REGISTRY.snapshot.json",
@@ -598,6 +601,7 @@ def build_report(checks: list[Check], registry: dict[str, Any]) -> str:
             "- Frozen v2.2 baseline: `baselines/CRA_EVIDENCE_BASELINE_v2.2.md`",
             "- Frozen v2.3 baseline: `baselines/CRA_EVIDENCE_BASELINE_v2.3.md`",
             "- Frozen v2.4 baseline: `baselines/CRA_EVIDENCE_BASELINE_v2.4.md`",
+            "- Frozen v2.5 baseline: `baselines/CRA_EVIDENCE_BASELINE_v2.5.md`",
             "- Frozen native runtime baseline: `baselines/CRA_NATIVE_RUNTIME_BASELINE_v0.1.md`",
             "- Frozen native task baseline: `baselines/CRA_NATIVE_TASK_BASELINE_v0.2.md`",
             "- Frozen native mechanism bridge: `baselines/CRA_NATIVE_MECHANISM_BRIDGE_v0.3.md`",

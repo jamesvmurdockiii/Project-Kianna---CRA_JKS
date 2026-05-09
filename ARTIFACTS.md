@@ -1361,6 +1361,12 @@ passed. The freeze artifacts are:
 - `baselines/CRA_EVIDENCE_BASELINE_v2.1.json`
 - `baselines/CRA_EVIDENCE_BASELINE_v2.1_STUDY_REGISTRY.snapshot.json`
 
+Latest Tier 7.6e planning/subgoal-control compact-regression / v2.5 freeze gate artifacts:
+
+- `baselines/CRA_EVIDENCE_BASELINE_v2.5.md`
+- `baselines/CRA_EVIDENCE_BASELINE_v2.5.json`
+- `baselines/CRA_EVIDENCE_BASELINE_v2.5_STUDY_REGISTRY.snapshot.json`
+
 Latest Tier 5.9c macro-eligibility v2.1 recheck:
 
 - `controlled_test_output/tier5_9c_20260429_190503/`

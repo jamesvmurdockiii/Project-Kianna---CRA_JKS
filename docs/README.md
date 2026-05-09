@@ -90,7 +90,11 @@ internal host-side composition/routing evidence, and
 predictive-binding evidence. `baselines/CRA_EVIDENCE_BASELINE_v2.1.md` freezes
 bounded host-side self-evaluation / reliability-monitoring evidence, and
 `baselines/CRA_EVIDENCE_BASELINE_v2.2.md` freezes bounded host-side
-fading-memory temporal-state evidence. Native runtime locks are tracked
+fading-memory temporal-state evidence. `baselines/CRA_EVIDENCE_BASELINE_v2.3.md`
+freezes generic bounded recurrent-state evidence,
+`baselines/CRA_EVIDENCE_BASELINE_v2.4.md` freezes bounded cost-aware
+policy/action evidence, and `baselines/CRA_EVIDENCE_BASELINE_v2.5.md` freezes
+bounded reduced-feature planning/subgoal-control evidence. Native runtime locks are tracked
 separately: `CRA_NATIVE_RUNTIME_BASELINE_v0.1`, `CRA_NATIVE_TASK_BASELINE_v0.2`,
 `CRA_NATIVE_MECHANISM_BRIDGE_v0.3`, and the current
 `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` lifecycle-native hardware baseline. The

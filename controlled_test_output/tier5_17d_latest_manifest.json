@@ -1,10 +1,10 @@
 {
   "canonical": false,
-  "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/compact_regression_full_nest/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_results.json",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/compact_regression_full_nest/v2_0_compact_regression_gate/predictive_binding_guardrail",
-  "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/compact_regression_full_nest/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_report.md",
+  "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_results.json",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/predictive_binding_guardrail",
+  "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_report.md",
   "status": "pass",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/compact_regression_full_nest/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_summary.csv",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_summary.csv",
   "tier": "Tier 5.17d - Predictive Preexposure Binding/Sham Repair",
-  "updated_at_utc": "2026-05-09T01:52:27+00:00"
+  "updated_at_utc": "2026-05-09T05:12:18+00:00"
 }

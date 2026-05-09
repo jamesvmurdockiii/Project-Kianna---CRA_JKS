@@ -1,0 +1,4 @@
+subsuite,task,candidate_first_accuracy,candidate_heldout_accuracy,candidate_router_accuracy,candidate_feature_active_steps,candidate_module_updates,candidate_router_updates,candidate_pre_feedback_select_steps,raw_first_accuracy,scaffold_first_accuracy,best_ablation_model,best_ablation_first_accuracy,best_standard_model,best_standard_first_accuracy,candidate_first_delta_vs_raw,candidate_first_delta_vs_best_ablation,candidate_first_delta_vs_best_standard
+routing,context_reentry_routing,1.0,1.0,1.0,111.0,32.0,24.0,111.0,0.0,1.0,internal_random_router_ablation,0.5,sign_persistence,0.5,1.0,0.5,0.5
+routing,distractor_router_chain,1.0,1.0,1.0,63.0,32.0,32.0,63.0,0.0,1.0,internal_random_router_ablation,0.5,stdp_only_snn,0.5,1.0,0.5,0.5
+routing,heldout_context_routing,1.0,1.0,1.0,102.0,32.0,32.0,102.0,0.0,1.0,internal_random_router_ablation,0.5,stdp_only_snn,0.5,1.0,0.5,0.5
