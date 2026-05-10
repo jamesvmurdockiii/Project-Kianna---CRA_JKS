@@ -1,0 +1,122 @@
+{
+  "ablation": {
+    "mse_geomean": 0.01768967897296344,
+    "n": 9,
+    "pr_mean": 1.9493133857589382,
+    "pr_stdev": 0.21183051105154205
+  },
+  "candidate": {
+    "mse_geomean": 0.04743191055570711,
+    "n": 9,
+    "pr_mean": 6.900848352154037,
+    "pr_stdev": 1.7353884180223866
+  },
+  "claim_boundary": "Promotion gate for edge-of-chaos recurrent dynamics. Not a baseline freeze (requires compact regression). Not public usefulness proof. Not hardware/native transfer.",
+  "criteria": [
+    {
+      "name": "candidate scored (all tasks/seeds/lengths)",
+      "note": "n=9",
+      "passed": true,
+      "rule": ">= 6",
+      "value": 9
+    },
+    {
+      "name": "sham (no-antisymmetry) scored",
+      "note": "",
+      "passed": true,
+      "rule": ">= 3",
+      "value": 9
+    },
+    {
+      "name": "ablation (baseline) scored",
+      "note": "",
+      "passed": true,
+      "rule": ">= 3",
+      "value": 9
+    },
+    {
+      "name": "ESN baseline scored",
+      "note": "",
+      "passed": true,
+      "rule": ">= 1",
+      "value": 9
+    },
+    {
+      "name": "PR > baseline (ablation)",
+      "note": "cand=6.9 abla=1.9",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "name": "sham separated (|\u0394PR| > 2.0)",
+      "note": "cand=6.9 sham=2.5",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "name": "ablation removes benefit",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "name": "PR > ESN baseline",
+      "note": "cand=6.9 esn=5.8",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "name": "MSE < baseline (ablation)",
+      "note": "cand_mse=0.047432 abla_mse=0.017690",
+      "passed": false,
+      "rule": "true",
+      "value": false
+    },
+    {
+      "name": "outcome classified",
+      "note": "classification=mechanism_candidate_baselines_partial",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "name": "no baseline freeze authorized",
+      "note": "Freeze requires compact regression gate",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    }
+  ],
+  "criteria_passed": 10,
+  "criteria_total": 11,
+  "esn": {
+    "mse_geomean": null,
+    "n": 9,
+    "pr_mean": 5.789887796337599,
+    "pr_stdev": 1.5332699584030556
+  },
+  "generated_at_utc": "2026-05-10T01:20:37+00:00",
+  "next_gate": "7.7z compact regression + baseline freeze (if promotion supported)",
+  "nonclaims": [
+    "not a connectivity-specific topology claim",
+    "not a new input encoding mechanism",
+    "not hardware/native transfer",
+    "not public usefulness proof",
+    "not a baseline freeze"
+  ],
+  "outcome": "mechanism_candidate_baselines_partial",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7y_20260509_edge_of_chaos_promotion",
+  "runner_revision": "tier7_7y_edge_of_chaos_promotion_20260509_0001",
+  "sham": {
+    "mse_geomean": 0.009900949781958662,
+    "n": 9,
+    "pr_mean": 2.505855971460028,
+    "pr_stdev": 1.0418518706798423
+  },
+  "status": "fail",
+  "tier": "Tier 7.7y - Edge-of-Chaos Recurrent Dynamics Promotion Gate"
+}

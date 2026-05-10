@@ -1,0 +1,234 @@
+{
+  "claim_boundary": "NEST organism per-neuron state dimensionality diagnostic only. Not mechanism promotion, not a baseline freeze, not public usefulness proof, not hardware/native transfer, and not a claim about the standalone or C runtime performance.",
+  "contract": {
+    "claim_boundary": "NEST organism per-neuron state dimensionality diagnostic only. Not mechanism promotion, not a baseline freeze, not public usefulness proof, not hardware/native transfer, and not a claim about the standalone or C runtime performance.",
+    "controls": [
+      {
+        "description": "Per-polyp activity_rate PR \u2014 the current measurement method.",
+        "name": "current_per_polyp_aggregate",
+        "role": "baseline"
+      },
+      {
+        "description": "Per-neuron spikes with per_polyp_input_diversity=False. Tests whether input diversity is necessary for per-neuron PR gain.",
+        "name": "no_input_diversity",
+        "role": "ablation"
+      }
+    ],
+    "decision": "contract_locked_authorize_scoring_gate",
+    "hypothesis": "Reading 512 per-neuron spike channels (16 polyps x 32 neurons) captures state diversity that per-polyp aggregation collapses. With per-polyp input diversity enabled, different neurons within each polyp respond to different input gains, creating independent spike patterns that achieve PR comparable to standalone.",
+    "measurement": {
+      "polyp_aggregate": "Per-step per-polyp activity_rate (current per-polyp aggregation)",
+      "pr_computation": "Standard PR on test split covariance via geometry_metrics from tier7_7j",
+      "state_vector": "Per-step per-neuron spike counts (total spikes per neuron per sim.run() window)"
+    },
+    "mechanism": "Per-neuron spike readout via get_per_neuron_spike_vector()",
+    "null_hypothesis": "Per-neuron spike channels are highly correlated because all neurons within a polyp receive similar input drive regardless of input gain diversity. PR stays below 2.0 even with per-neuron readout, confirming the gap to standalone is fundamental.",
+    "outcome_classes": [
+      {
+        "action": "Document that spiking state dimensionality matches standalone when measured at per-neuron resolution.",
+        "condition": "primary pass AND sham separated AND ablation confirms",
+        "outcome": "per_neuron_pr_confirmed"
+      },
+      {
+        "action": "Document partial signal with remaining gap explained.",
+        "condition": "PR improves but does not reach 4.0 or 2x ratio",
+        "outcome": "per_neuron_pr_partial"
+      },
+      {
+        "action": "The gap to standalone is fundamental to spiking LIF architecture at current configuration.",
+        "condition": "No meaningful PR improvement over per-polyp aggregate",
+        "outcome": "per_neuron_pr_not_supported"
+      },
+      {
+        "action": "PR gain is from raw channel count, not organized structure.",
+        "condition": "Shuffled assignment matches or exceeds candidate",
+        "outcome": "generic_control_explains"
+      }
+    ],
+    "pass_criteria": [
+      {
+        "description": "16-polyp per-neuron PR > 4.0 AND per-neuron PR > 2x per-polyp aggregate PR",
+        "name": "primary_pass",
+        "thresholds": {
+          "pr_min": 4.0,
+          "pr_ratio_min": 2.0
+        }
+      },
+      {
+        "description": "Shuffled neuron assignment PR < candidate PR - 2.0",
+        "name": "sham_separation",
+        "thresholds": {
+          "pr_delta_min": 2.0
+        }
+      },
+      {
+        "description": "No-input-diversity per-neuron PR < candidate PR",
+        "name": "ablation_confirm"
+      }
+    ],
+    "population_sizes": {
+      "diagnostic": [
+        {
+          "channels": 128,
+          "polyps": 4,
+          "role": "diagnostic context"
+        },
+        {
+          "channels": 256,
+          "polyps": 8,
+          "role": "diagnostic context"
+        }
+      ],
+      "primary": {
+        "channels": 512,
+        "polyps": 16,
+        "role": "primary pass criterion"
+      }
+    },
+    "question": "Does the NEST organism's per-neuron spike state measured via get_per_neuron_spike_vector() achieve state dimensionality (PR > 4.0) comparable to the standalone edge-of-chaos reference (PR=7.0), and exceed 2x the per-polyp aggregate PR, or is the gap fundamental to spiking LIF architecture?",
+    "shams": [
+      {
+        "description": "Same per-step neuron spike counts, but each neuron randomly reassigned to a different polyp. Tests whether organized input diversity structure is causal or any 512 random spike channels give the same PR.",
+        "name": "shuffled_neuron_assignment",
+        "passes_if": "Shuffled assignment PR < candidate PR - 2.0, confirming polyp structure matters.",
+        "role": "primary"
+      },
+      {
+        "description": "Same neuron spike counts, same polyp assignment, but spike times shuffled within each neuron's spike train. Tests whether temporal spike structure matters or only total spike counts.",
+        "name": "permuted_spike_temporal",
+        "passes_if": "Temporal permutation PR < candidate PR, confirming temporal structure matters.",
+        "role": "secondary_diagnostic"
+      }
+    ]
+  },
+  "criteria": [
+    {
+      "criterion": "prereq v2.6 baseline exists",
+      "name": "prereq v2.6 baseline exists",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "question locked",
+      "name": "question locked",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "null hypothesis locked",
+      "name": "null hypothesis locked",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "primary pop: 16 polyps (512 channels)",
+      "name": "primary pop: 16 polyps (512 channels)",
+      "note": "",
+      "passed": true,
+      "rule": "== 512",
+      "value": 512
+    },
+    {
+      "criterion": "diagnostic pops: 4 and 8",
+      "name": "diagnostic pops: 4 and 8",
+      "note": "",
+      "passed": true,
+      "rule": "== 2",
+      "value": 2
+    },
+    {
+      "criterion": "primary sham: shuffled neuron assignment",
+      "name": "primary sham: shuffled neuron assignment",
+      "note": "",
+      "passed": true,
+      "rule": "== shuffled_neuron_assignment",
+      "value": "shuffled_neuron_assignment"
+    },
+    {
+      "criterion": "secondary sham: permuted temporal order",
+      "name": "secondary sham: permuted temporal order",
+      "note": "",
+      "passed": true,
+      "rule": "== permuted_spike_temporal",
+      "value": "permuted_spike_temporal"
+    },
+    {
+      "criterion": "primary pass: PR > 4.0 AND 2x aggregate",
+      "name": "primary pass: PR > 4.0 AND 2x aggregate",
+      "note": "",
+      "passed": true,
+      "rule": "== 4.0",
+      "value": 4.0
+    },
+    {
+      "criterion": "sham separation: PR delta > 2.0",
+      "name": "sham separation: PR delta > 2.0",
+      "note": "",
+      "passed": true,
+      "rule": "== 2.0",
+      "value": 2.0
+    },
+    {
+      "criterion": "4 outcome classes defined",
+      "name": "4 outcome classes defined",
+      "note": "",
+      "passed": true,
+      "rule": "== 4",
+      "value": 4
+    },
+    {
+      "criterion": "method validated (get_per_neuron_spike_vector)",
+      "name": "method validated (get_per_neuron_spike_vector)",
+      "note": "Per-neuron method tested: returns 128+ channels with non-zero spikes",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "no baseline freeze authorized",
+      "name": "no baseline freeze authorized",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "criterion": "no mechanism promotion authorized",
+      "name": "no mechanism promotion authorized",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "criterion": "no hardware/native transfer authorized",
+      "name": "no hardware/native transfer authorized",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 14,
+  "criteria_total": 14,
+  "generated_at_utc": "2026-05-10T18:02:16+00:00",
+  "next_gate": "Tier 5.21a - NEST Per-Neuron Dimensionality Scoring Gate",
+  "nonclaims": [
+    "not scoring",
+    "not mechanism promotion",
+    "not a baseline freeze",
+    "not public usefulness proof",
+    "not hardware/native transfer"
+  ],
+  "outcome": "nest_per_neuron_dimensionality_contract_locked",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_21_20260510_nest_per_neuron_dimensionality_contract",
+  "runner_revision": "tier5_21_nest_per_neuron_dimensionality_contract_20260510_0001",
+  "status": "pass",
+  "tier": "Tier 5.21 - NEST Per-Neuron State Dimensionality Diagnostic Contract"
+}

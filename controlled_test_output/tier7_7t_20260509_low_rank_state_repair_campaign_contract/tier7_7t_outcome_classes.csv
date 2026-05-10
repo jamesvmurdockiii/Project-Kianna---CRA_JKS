@@ -1,0 +1,14 @@
+outcome,action,description
+input_bottleneck_confirmed,Route to Repair Family B (independent causal subspace drivers) in 7.7v.,
+plasticity_homogenization_confirmed,Route to Repair Family D (plasticity anti-homogenization) in 7.7v.,
+inhibition_compression_confirmed,Route to Repair Family A (diversity-preserving state dynamics) in 7.7v.,
+recurrent_topology_bottleneck_confirmed,Route to Repair Family C (recurrent topology/spectrum repair) in 7.7v.,
+trophic_selection_compression_confirmed,Route to Repair Family A or D depending on whether the compression is activity-based or plasticity-based.,
+readout_exposure_bottleneck_confirmed,"Implement a richer readout diagnostic; if confirmable as the primary cause, route to 7.7v as a separate readout-observability repair.",
+numeric_saturation_confirmed,Fix activation bounds/normalization; rerun 7.7u diagnostics before committing a repair family.,
+mixed_or_inconclusive,"Prioritize the failure mode with the largest PR-sensitivity to intervention; if still inconclusive, try Family A (broadest applicability).",
+score_gain_without_dimension,Preserve as bounded utility evidence; do not promote as a state repair.,Task score improves but PR/rank remain collapsed.
+dimension_gain_without_score,Preserve as geometric evidence; do not promote until usefulness gate passes.,PR/rank improve but benchmark usefulness does not.
+generic_control_explains_gain,Repair candidate is not CRA-specific; return to 7.7 to localize a different failure mode.,Random projection or nonlinear-lag still explains the improvement.
+bounded_utility_only,Preserve as utility evidence; no mechanism promotion or baseline freeze.,"Useful and safe, but not CRA-specific mechanism evidence."
+mechanism_candidate,Route to 7.7x promotion/regression gate.,"Geometry, usefulness, and attribution all pass."

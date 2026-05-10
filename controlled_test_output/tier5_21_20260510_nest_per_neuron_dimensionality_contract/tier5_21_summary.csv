@@ -1,0 +1,15 @@
+name,criterion,value,rule,passed,note
+prereq v2.6 baseline exists,prereq v2.6 baseline exists,True,true,True,
+question locked,question locked,True,true,True,
+null hypothesis locked,null hypothesis locked,True,true,True,
+primary pop: 16 polyps (512 channels),primary pop: 16 polyps (512 channels),512,== 512,True,
+diagnostic pops: 4 and 8,diagnostic pops: 4 and 8,2,== 2,True,
+primary sham: shuffled neuron assignment,primary sham: shuffled neuron assignment,shuffled_neuron_assignment,== shuffled_neuron_assignment,True,
+secondary sham: permuted temporal order,secondary sham: permuted temporal order,permuted_spike_temporal,== permuted_spike_temporal,True,
+primary pass: PR > 4.0 AND 2x aggregate,primary pass: PR > 4.0 AND 2x aggregate,4.0,== 4.0,True,
+sham separation: PR delta > 2.0,sham separation: PR delta > 2.0,2.0,== 2.0,True,
+4 outcome classes defined,4 outcome classes defined,4,== 4,True,
+method validated (get_per_neuron_spike_vector),method validated (get_per_neuron_spike_vector),True,true,True,Per-neuron method tested: returns 128+ channels with non-zero spikes
+no baseline freeze authorized,no baseline freeze authorized,False,false,True,
+no mechanism promotion authorized,no mechanism promotion authorized,False,false,True,
+no hardware/native transfer authorized,no hardware/native transfer authorized,False,false,True,

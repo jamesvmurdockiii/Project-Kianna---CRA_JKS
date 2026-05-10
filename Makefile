@@ -1,4 +1,4 @@
-.PHONY: test registry paper-table clean-transients audit validate tier1 tier2 tier3 tier4 tier4-10b tier4-11 tier4-12 tier4-13-prepare tier4-14 tier4-14-prepare tier4-15-prepare tier4-16-prepare tier4-16a-chunked-prepare tier4-16a-chunked-full-prepare tier4-16b-chunked-prepare tier4-16b-repaired-probe-prepare tier4-16a-debug tier4-16a-fix tier4-16b-debug tier4-17 tier4-17b tier4-18a-prepare tier4-20a tier4-20a-smoke tier4-20b-prepare tier4-20b-preflight tier4-20b-smoke tier4-20c-prepare tier4-20c-smoke tier4-21a-prepare tier4-21a-local tier4-21a-smoke tier4-22a tier4-22a0 tier4-22b tier4-22b-prepare tier4-22c tier4-22d tier4-22e tier4-22f0 tier4-22g tier4-22h tier4-22i-prepare tier4-22j-prepare tier4-22k-prepare tier4-22l-local tier4-22l-prepare tier4-22m-local tier4-22m-prepare tier4-22n-local tier4-22n-prepare tier4-22o-local tier4-22o-prepare tier4-22p-local tier4-22p-prepare tier4-22q-local tier4-22q-prepare tier4-30-readiness tier4-30-contract tier4-30a tier4-30b tier4-30b-hw-prepare tier4-30c tier4-30d tier4-30e-prepare tier4-31a tier4-31b tier4-31c tier4-31d-prepare tier4-31d-ingest tier4-32 tier4-32a tier4-32f tier4-32g-r0 tier5-1 tier5-2 tier5-3 tier5-4 tier5-5 tier5-5-smoke tier5-6 tier5-6-smoke tier5-7 tier5-7-smoke tier5-9a tier5-9a-smoke tier5-9b tier5-9b-smoke tier5-9c tier5-9c-smoke tier5-10 tier5-10-smoke tier5-10b tier5-10b-smoke tier5-10c tier5-10c-smoke tier5-10d tier5-10d-smoke tier5-10e tier5-10e-smoke tier5-10f tier5-10f-smoke tier5-10g tier5-10g-smoke tier5-11a tier5-11a-smoke tier5-11b tier5-11b-smoke tier5-11c tier5-11c-smoke tier5-11d tier5-11d-smoke tier5-12a tier5-12a-smoke tier5-12b tier5-12b-smoke tier5-12c tier5-12c-smoke tier5-13 tier5-13-smoke tier5-13b tier5-13b-smoke tier5-13c tier5-14 tier5-14-smoke tier5-15 tier5-15-smoke tier5-16 tier5-16-smoke tier5-17 tier5-17-smoke tier5-17b tier5-17b-smoke tier5-17c tier5-17c-smoke tier5-17d tier5-17d-smoke tier5-17e tier5-17e-smoke tier5-18 tier5-18-smoke tier5-18c tier5-18c-smoke tier5-20a tier5-20b tier5-20c tier5-20d tier5-20e tier6-1 tier6-1-smoke tier6-2a tier6-2a-smoke tier6-3 tier6-3-smoke tier6-4 tier6-4-smoke tier7-1a tier7-1b tier7-1c tier7-1d tier7-1e tier7-1f tier7-1g tier7-1h tier7-1i tier7-1j tier7-1k tier7-1l tier7-1m tier7-4a tier7-4b tier7-4c tier7-4d tier7-4e tier7-4f tier7-5a tier7-5b tier7-5c tier7-5d tier7-6a tier7-6b tier7-6c tier7-6d tier7-6e tier7-7a tier7-7b tier7-7b-smoke tier7-7c tier7-7d tier7-7d-smoke tier7-7e tier7-7f tier7-7g tier7-7h tier7-7h-smoke tier7-7i tier7-7j tier7-7j-smoke tier7-7k tier7-7l tier7-7l-smoke tier7-7m tier7-7n tier7-7n-smoke tier7-7o tier7-7p tier7-7q tier7-7q-smoke tier7-7r tier7-7s
+.PHONY: test registry paper-table clean-transients audit validate tier1 tier2 tier3 tier4 tier4-10b tier4-11 tier4-12 tier4-13-prepare tier4-14 tier4-14-prepare tier4-15-prepare tier4-16-prepare tier4-16a-chunked-prepare tier4-16a-chunked-full-prepare tier4-16b-chunked-prepare tier4-16b-repaired-probe-prepare tier4-16a-debug tier4-16a-fix tier4-16b-debug tier4-17 tier4-17b tier4-18a-prepare tier4-20a tier4-20a-smoke tier4-20b-prepare tier4-20b-preflight tier4-20b-smoke tier4-20c-prepare tier4-20c-smoke tier4-21a-prepare tier4-21a-local tier4-21a-smoke tier4-22a tier4-22a0 tier4-22b tier4-22b-prepare tier4-22c tier4-22d tier4-22e tier4-22f0 tier4-22g tier4-22h tier4-22i-prepare tier4-22j-prepare tier4-22k-prepare tier4-22l-local tier4-22l-prepare tier4-22m-local tier4-22m-prepare tier4-22n-local tier4-22n-prepare tier4-22o-local tier4-22o-prepare tier4-22p-local tier4-22p-prepare tier4-22q-local tier4-22q-prepare tier4-30-readiness tier4-30-contract tier4-30a tier4-30b tier4-30b-hw-prepare tier4-30c tier4-30d tier4-30e-prepare tier4-31a tier4-31b tier4-31c tier4-31d-prepare tier4-31d-ingest tier4-32 tier4-32a tier4-32f tier4-32g-r0 tier5-1 tier5-2 tier5-3 tier5-4 tier5-5 tier5-5-smoke tier5-6 tier5-6-smoke tier5-7 tier5-7-smoke tier5-9a tier5-9a-smoke tier5-9b tier5-9b-smoke tier5-9c tier5-9c-smoke tier5-10 tier5-10-smoke tier5-10b tier5-10b-smoke tier5-10c tier5-10c-smoke tier5-10d tier5-10d-smoke tier5-10e tier5-10e-smoke tier5-10f tier5-10f-smoke tier5-10g tier5-10g-smoke tier5-11a tier5-11a-smoke tier5-11b tier5-11b-smoke tier5-11c tier5-11c-smoke tier5-11d tier5-11d-smoke tier5-12a tier5-12a-smoke tier5-12b tier5-12b-smoke tier5-12c tier5-12c-smoke tier5-13 tier5-13-smoke tier5-13b tier5-13b-smoke tier5-13c tier5-14 tier5-14-smoke tier5-15 tier5-15-smoke tier5-16 tier5-16-smoke tier5-17 tier5-17-smoke tier5-17b tier5-17b-smoke tier5-17c tier5-17c-smoke tier5-17d tier5-17d-smoke tier5-17e tier5-17e-smoke tier5-18 tier5-18-smoke tier5-18c tier5-18c-smoke tier5-20a tier5-20b tier5-20c tier5-20d tier5-20e tier6-1 tier6-1-smoke tier6-2a tier6-2a-smoke tier6-3 tier6-3-smoke tier6-4 tier6-4-smoke tier7-1a tier7-1b tier7-1c tier7-1d tier7-1e tier7-1f tier7-1g tier7-1h tier7-1i tier7-1j tier7-1k tier7-1l tier7-1m tier7-4a tier7-4b tier7-4c tier7-4d tier7-4e tier7-4f tier7-5a tier7-5b tier7-5c tier7-5d tier7-6a tier7-6b tier7-6c tier7-6d tier7-6e tier7-7a tier7-7b tier7-7b-smoke tier7-7c tier7-7d tier7-7d-smoke tier7-7e tier7-7f tier7-7g tier7-7h tier7-7h-smoke tier7-7i tier7-7j tier7-7j-smoke tier7-7k tier7-7l tier7-7l-smoke tier7-7m tier7-7n tier7-7n-smoke tier7-7o tier7-7p tier7-7q tier7-7q-smoke tier7-7r tier7-7s tier7-7t tier7-7u tier7-7v-r0 tier7-7v tier7-7w tier7-7v-input-diversity tier7-7y tier7-7z tier7-7z-r0 tier7-7z-r1 tier7-7z-r3 tier7-8 tier7-8a tier4-33 tier4-33a tier5-21 tier5-22 tier4-33c tier7-7v
 
 test:
 	python3 -m pytest -p no:cacheprovider coral_reef_spinnaker/tests
@@ -662,3 +662,51 @@ tier7-7r:
 
 tier7-7s:
 	python3 experiments/tier7_7s_bounded_temporal_basis_utility_promotion.py
+
+tier7-7t:
+	python3 experiments/tier7_7t_low_rank_state_repair_campaign_contract.py
+
+tier7-7u:
+	python3 experiments/tier7_7u_state_collapse_causal_localization.py
+
+tier7-7v-r0:
+	python3 experiments/tier7_7v_r0_diagnostic_model_variants.py
+
+tier7-7v:
+	python3 experiments/tier7_7v_repair_candidate_compact_score.py
+
+tier7-7w:
+	python3 experiments/tier7_7w_expanded_confirmation.py
+
+tier7-7v-input-diversity:
+	python3 experiments/tier7_7v_input_diversity_test.py
+
+tier7-7y:
+	python3 experiments/tier7_7y_edge_of_chaos_promotion.py
+
+tier7-7z:
+	python3 experiments/tier7_7z_edge_of_chaos_ridge_promotion.py
+
+tier7-8:
+	python3 experiments/tier7_8_polyp_morphology_contract.py
+
+tier7-7z-r0:
+	python3 experiments/tier7_7z_r0_compact_regression.py
+
+tier7-7z-r1:
+	python3 experiments/tier7_7z_r1_standardized_benchmark.py
+
+tier7-8a:
+	python3 experiments/tier7_8a_morphology_compact_score.py
+
+tier4-33:
+	python3 experiments/tier4_33_eoc_native_transfer_contract.py
+
+tier7-7z-r3:
+	python3 experiments/tier7_7z_r3_nab_adapter.py
+
+tier5-21:
+	python3 experiments/tier5_21_nest_per_neuron_dimensionality_contract.py
+
+tier5-22:
+	python3 experiments/tier5_22_within_polyp_per_neuron_diversity_contract.py

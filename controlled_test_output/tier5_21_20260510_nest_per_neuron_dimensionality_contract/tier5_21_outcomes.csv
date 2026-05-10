@@ -1,0 +1,5 @@
+outcome,condition,action
+per_neuron_pr_confirmed,primary pass AND sham separated AND ablation confirms,Document that spiking state dimensionality matches standalone when measured at per-neuron resolution.
+per_neuron_pr_partial,PR improves but does not reach 4.0 or 2x ratio,Document partial signal with remaining gap explained.
+per_neuron_pr_not_supported,No meaningful PR improvement over per-polyp aggregate,The gap to standalone is fundamental to spiking LIF architecture at current configuration.
+generic_control_explains,Shuffled assignment matches or exceeds candidate,"PR gain is from raw channel count, not organized structure."

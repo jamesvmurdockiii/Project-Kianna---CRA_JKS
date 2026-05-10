@@ -1,0 +1,11 @@
+name,value,rule,passed,note
+prereq 7.7v exists,True,true,True,
+block_diverse candidate scored,9,>= 1,True,
+winnerless candidate scored,9,>= 1,True,
+orthogonal baseline scored,0,>= 1,False,
+shuffled control scored,0,>= 1,False,
+outcome classified,False,true,False,classification=family_c_not_confirmed
+PR did not improve,,true,True,"best_cand PR=5.0084153898410255, base PR=None"
+PR beats shuffled: None,True,true,True,"best_cand PR=5.0084153898410255, shuffled PR=None"
+no baseline freeze authorized,False,false,True,
+no mechanism promotion authorized,False,false,True,

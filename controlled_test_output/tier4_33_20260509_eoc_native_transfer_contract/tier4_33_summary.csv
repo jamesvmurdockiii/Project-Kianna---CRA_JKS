@@ -1,0 +1,12 @@
+name,criterion,value,operator,rule,passed,pass,details,note
+contract question locked,contract question locked,True,true,true,True,True,,
+6 migration stages defined,6 migration stages defined,6,== 6,== 6,True,True,,
+state budget defined (DTCM),state budget defined (DTCM),~568 bytes DTCM,non-empty,non-empty,True,True,,
+compute budget assessed,compute budget assessed,O(n^2 + n * input_dim) ~ 18k multiply-adds per tick at n=128,non-empty,non-empty,True,True,,
+resource risk documented (w_rec 64KB),resource risk documented (w_rec 64KB),w_rec at 64KB is near DTCM limit; consider n=64 for first smoke (16KB w_rec),non-empty,non-empty,True,True,,
+5 failure classes defined,5 failure classes defined,5,== 5,== 5,True,True,,
+DTCM overflow has repair,DTCM overflow has repair,True,true,true,True,True,,
+fixed-point overflow has repair,fixed-point overflow has repair,True,true,true,True,True,,
+software baseline referenced,software baseline referenced,CRA_NATIVE_SCALE_BASELINE_v0.5,non-empty,non-empty,True,True,,
+no baseline freeze authorized,no baseline freeze authorized,False,false,false,True,True,,
+no hardware evidence claimed,no hardware evidence claimed,False,false,false,True,True,,

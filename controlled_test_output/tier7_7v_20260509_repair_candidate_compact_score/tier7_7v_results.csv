@@ -1,0 +1,13 @@
+task,seed,hidden_units,participation_ratio,rank_95,rank_99,top_pc_dominance,pr_ok,variant,mode
+mackey_glass,42,128,5.9353,,,,True,family_b_orthogonalized_input,
+mackey_glass,42,128,1.7049,,,,True,orthogonal,orthogonal
+mackey_glass,42,128,3.4511,,,,True,shuffled_input,shuffled_input
+mackey_glass,42,128,1.6519,,,,True,random_recurrent,random_recurrent
+lorenz,42,128,5.5325,,,,True,family_b_orthogonalized_input,
+lorenz,42,128,1.932,,,,True,orthogonal,orthogonal
+lorenz,42,128,3.4451,,,,True,shuffled_input,shuffled_input
+lorenz,42,128,2.0482,,,,True,random_recurrent,random_recurrent
+narma10,42,128,4.9913,,,,True,family_b_orthogonalized_input,
+narma10,42,128,2.3884,,,,True,orthogonal,orthogonal
+narma10,42,128,6.8007,,,,True,shuffled_input,shuffled_input
+narma10,42,128,2.313,,,,True,random_recurrent,random_recurrent

@@ -575,12 +575,39 @@ class PolypPopulation:
                 exc_conns.append((input_idx(i_in), inh_idx(t), 0.10, 1.0))
 
         # excitatory -> excitatory (sparse recurrent, no self)
+        # When within_polyp_antisymmetric_recurrence is set, add push-pull
+        # reciprocal inhibitory connections for each excitatory connection
+        # to create within-polyp antisymmetry (spiking analog of w_anti).
+        ee_fanout = getattr(self.config, "exc_to_exc_fanout", 4) if hasattr(self, "config") else 4
+        ee_mean = getattr(self.config, "exc_to_exc_mean", 0.1) if hasattr(self, "config") else 0.1
+        ee_sigma = getattr(self.config, "exc_to_exc_sigma", 0.5) if hasattr(self, "config") else 0.5
+        use_antisym = getattr(self.config, "within_polyp_antisymmetric_recurrence", False) if hasattr(self, "config") else False
+        antisym_factor = getattr(self.config, "within_polyp_antisym_factor", 0.7) if hasattr(self, "config") else 0.7
+
+        # First pass: generate base E->E excitatory connections (all positive)
+        ee_weights = {}  # (i_pre, t_post) -> weight map for antisymmetry pass
         for i_exc in range(self.n_exc):
-            targets = rng.choice(self.n_exc, size=min(4, self.n_exc - 1), replace=False)
+            targets = rng.choice(self.n_exc,
+                                 size=min(ee_fanout, self.n_exc - 1),
+                                 replace=False)
             for t in targets:
                 if t != i_exc:
-                    w = float(rng.lognormal(mean=np.log(0.1), sigma=0.5))
+                    w = float(rng.lognormal(mean=np.log(ee_mean),
+                                            sigma=ee_sigma))
                     exc_conns.append((exc_idx(i_exc), exc_idx(t), w, 1.0))
+                    ee_weights[(i_exc, t)] = w
+
+        if use_antisym:
+            # Second pass: for every (i->j) excitatory connection, add a
+            # reciprocal (j->i) INHIBITORY connection with weight
+            # -factor * w to create push-pull antisymmetric pairs.
+            for (i_pre, t_post), w_fwd in ee_weights.items():
+                # Only add reciprocal inhibition if the reverse direction
+                # does NOT already have an excitatory connection (avoids
+                # double-connecting which mutes the antisymmetry).
+                if (t_post, i_pre) not in ee_weights:
+                    w_rev = -antisym_factor * w_fwd
+                    inh_conns.append((exc_idx(t_post), exc_idx(i_pre), w_rev, 1.0))
 
         # excitatory -> inhibitory
         for i_exc in range(self.n_exc):
@@ -1207,22 +1234,32 @@ class PolypPopulation:
             base_i_offset = self.neuron_type.drive_to_current_offset(base_drive)
 
             n_neurons = state.block_end - state.block_start
-            neuron_indices = np.arange(n_neurons, dtype=float)
-            # Deterministic pseudo-random biases [-0.02, +0.02] nA
-            biases = np.sin(neuron_indices * 2.39996) * 0.02
+            # Tier 5.22: per-neuron input diversity replaces ±0.02 nA sine
+            # with per-polyp random biases at 15% of sensory ceiling.
+            bias_amplitude = max(1.5, abs(state.sensory_drive) * 0.15)
+            rng_bias = np.random.default_rng(int(self.internal_conn_seed + state.polyp_id * 717))
+            biases = rng_bias.uniform(-bias_amplitude, bias_amplitude, size=n_neurons)
 
-            # Start with base + bias for all neurons
             i_offsets = np.clip(base_i_offset + biases, 0.0, None)
 
-            # Input neurons: strong baseline (1.0 drive unit) + raw sensory
-            input_drive = base_drive + 1.0 + state.sensory_drive
-            input_i_offset = self.neuron_type.drive_to_current_offset(
-                max(0.0, input_drive)
-            )
-            for idx in range(state.input_slice.start, state.input_slice.stop):
-                i_offsets[idx - state.block_start] = max(
-                    0.0, input_i_offset + biases[idx - state.block_start]
-                )
+            # Tier 5.22: each input neuron gets a different temporal lag
+            # of the sensory signal, creating genuinely diverse input views.
+            sensory_lags = getattr(state, '_sensory_lags', None)
+            if sensory_lags is not None and len(sensory_lags) > 0:
+                for idx in range(state.input_slice.start, state.input_slice.stop):
+                    rel_idx = idx - state.input_slice.start
+                    lag_val = float(sensory_lags[min(rel_idx, len(sensory_lags)-1)])
+                    input_drive = base_drive + 1.0 + lag_val
+                    input_i_offset = self.neuron_type.drive_to_current_offset(max(0.0, input_drive))
+                    i_offsets[idx - state.block_start] = max(0.0, input_i_offset + biases[idx - state.block_start])
+            else:
+                input_gains = 0.3 + np.arange(state.input_slice.stop - state.input_slice.start) * 0.15
+                for idx in range(state.input_slice.start, state.input_slice.stop):
+                    rel_idx = idx - state.input_slice.start
+                    gain = input_gains[min(rel_idx, len(input_gains)-1)]
+                    input_drive = base_drive + 1.0 + state.sensory_drive * float(gain)
+                    input_i_offset = self.neuron_type.drive_to_current_offset(max(0.0, input_drive))
+                    i_offsets[idx - state.block_start] = max(0.0, input_i_offset + biases[idx - state.block_start])
 
             # Weak differential drive on readout 0 (+) and 1 (-)
             r0 = state.readout_slice.start

@@ -1,0 +1,5 @@
+outcome,condition,action
+antisymmetric_projections_confirmed,primary pass AND both shams separated,Inter-polyp antisymmetric projections are the missing recurrence component for NEST organism.
+projections_help_but_not_specific,PR improves but random projections also improve,Any inter-polyp connectivity helps; antisymmetric structure is not the causal factor.
+projections_dont_help,No PR improvement over baseline,Inter-polyp PyNN projections on NEST do not increase state dimensionality at this scale.
+projections_break_organism,Organism fails to run or produces NaN/infinite values,The backend factory fails to create inter-polyp projections on NEST.

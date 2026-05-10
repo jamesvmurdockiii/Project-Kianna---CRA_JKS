@@ -1,0 +1,8 @@
+name,value,rule,passed,note
+prereq 4.33 exists,True,true,True,
+all tasks/seeds scored,9,>= 3,True,
+fixed-point PR computed,9,>= 3,True,
+mean PR ratio (fp/float),1.0111,"in [0.8, 1.2]",True,mean=1.0111 stdev=0.0389
+within 10% tolerance,9,>= 6,True,9/9
+no baseline freeze,False,false,True,
+no hardware evidence claimed,False,false,True,

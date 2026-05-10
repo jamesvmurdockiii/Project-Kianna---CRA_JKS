@@ -1,0 +1,3 @@
+name,role,description,passes_if
+shuffled_antirecurrent_weights,primary,"Same number of E->E connections with same weight magnitudes, but randomly permuted across the connection matrix. This destroys antisymmetric structure while preserving the weight distribution and connection count.",Shuffled weight PR < antisymmetric weight PR by margin > 0.5
+no_recurrence,ablation,E->E connections disabled entirely (current baseline).,No-recurrence PR < antisymmetric PR

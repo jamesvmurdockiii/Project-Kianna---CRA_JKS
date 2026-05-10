@@ -1,0 +1,6 @@
+class,symptom,repair
+itcm_overflow,.aplx link fails with RO_DATA will not fit,"Reduce hidden units, move w_rec to DTCM, use int16 packing"
+dtcm_overflow,Runtime data exceeds DTCM,Reduce hidden units from 128 to 64 for first smoke
+fixed_point_overflow,FP_MUL produces non-finite values,"Clamp antisymmetric component, verify tanh input range"
+state_readback_mismatch,Compact readback differs from float reference,"Audit FP_MUL rounding, verify EMA trace update order"
+timing_overrun,Timer callback takes >1ms,"Reduce hidden units, profile matmul, consider sparse antisym"

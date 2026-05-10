@@ -1,0 +1,7 @@
+stage,description
+4.33_contract,"Lock transfer contract. Define mechanism, state budget, fixed-point constraints, failure classes. No implementation."
+4.33a_local_ref,Fixed-point local reference: verify edge-of-chaos with s16.15 arithmetic produces same PR and MSE as float reference within tolerance.
+4.33b_source_audit,"C runtime source audit: verify new opcodes, state layout, READ_STATE fields, profile ownership, and host tests pass."
+4.33c_prepare,"Prepare EBRAINS package: build .aplx with EOC profile, source-only upload, verify binary size fits ITCM/DTCM."
+4.33d_smoke,"Single-core hardware smoke: build/load/readback on one SpiNNaker board, verify compact state matches fixed-point reference."
+4.33e_multiseed,"Three-seed repeatability: Mackey-Glass/Lorenz at 8000 steps, seeds 42/43/44, 3 boards."

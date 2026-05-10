@@ -1,0 +1,12 @@
+name,value,rule,passed,note
+prereq 7.7z exists,True,true,True,
+candidate scored,27,>= 3,True,
+shuffled target scored,27,>= 3,True,
+no-learning scored,27,>= 3,True,
+ablation scored,27,>= 3,True,
+Tier 1: shuffled target hurts MSE,True,true,True,cand=0.000002 shuffled=1.015505
+Tier 2: no-learning hurts MSE,True,true,True,cand=0.000002 no_learning=1.289790
+Tier 3: ablation loses PR,True,true,True,cand PR=7.0 abla PR=2.0
+candidate PR > abla PR,True,true,True,
+compact regression outcome,compact_regression_pass,== compact_regression_pass,True,compact_regression_pass
+baseline freeze authorized,True,true,True,CRA_EVIDENCE_BASELINE_v2.6 ready

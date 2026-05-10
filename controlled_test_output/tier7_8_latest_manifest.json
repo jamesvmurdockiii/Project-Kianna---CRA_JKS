@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-05-10T23:12:48.956781+00:00",
+  "source_generated_at_utc": "2026-05-10T01:56:21+00:00",
+  "registry_entry_id": "tier7_8_polyp_morphology_contract",
+  "tier": "Tier 7.8 - Polyp Morphology / Template Variability Contract",
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_8_20260509_polyp_morphology_contract",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_8_20260509_polyp_morphology_contract/tier7_8_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_8_20260509_polyp_morphology_contract/tier7_8_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_8_20260509_polyp_morphology_contract/tier7_8_summary.csv",
+  "canonical": true,
+  "claim": "Tier 7.8 locks the polyp morphology testing protocol: 6 template candidates (diverse timescales, variable recurrence, E/I ratios, sparse connectivity, input selectivity, template size), 7 controls (homogeneous baseline, same-budget fixed-template, shuffled assignment, random projection, nonlinear-lag, target/time shuffle), 8 metrics (5 state geometry, 3 task), 6 outcome classes, 3 task families, 4-stage escalation. Contract only; no implementation or scoring.",
+  "caveat": "Contract only; not a template implementation, not model scoring, not mechanism promotion, not a baseline freeze, and not hardware/native transfer."
+}

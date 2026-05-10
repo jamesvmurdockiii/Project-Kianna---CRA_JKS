@@ -1,0 +1,6 @@
+config,role,pr_neuron,pr_polyp,ratio,sham_delta
+16polyp_diverse,candidate,1.0070142963940678,1.3317639533596952,0.76,
+16polyp_shuffled,primary_sham,16.35059413912063,,,-15.34
+16polyp_no_diversity,ablation,1.0064048471028542,,,
+4polyp_diverse,diagnostic,1.0066663261158704,1.338106590470421,0.75,
+8polyp_diverse,diagnostic,1.0065969771461107,1.211909059680351,0.83,

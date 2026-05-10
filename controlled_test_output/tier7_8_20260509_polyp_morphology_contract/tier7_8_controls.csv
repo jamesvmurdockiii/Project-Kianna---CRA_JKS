@@ -1,0 +1,8 @@
+control,role,description
+homogeneous_baseline,baseline,"Current v2.5 reference: all polyps identical template, all-to-all recurrence."
+same_budget_fixed_template,capacity_control,Same total neuron count but all polyps identical. Tests whether benefit is from extra capacity.
+shuffled_assignment,sham,Template parameters randomly shuffled across polyps. Tests whether specific assignment matters.
+random_projection_same_dim,generic_control,Random projection with same feature dimensionality. Tests generic vs mechanism-specific benefit.
+nonlinear_lag,generic_control,Nonlinear/lag features with same budget. Standard generic control from 7.7 chain.
+target_shuffle,leakage,Shuffle targets to break causal structure.
+time_shuffle,leakage,Shuffle time ordering.

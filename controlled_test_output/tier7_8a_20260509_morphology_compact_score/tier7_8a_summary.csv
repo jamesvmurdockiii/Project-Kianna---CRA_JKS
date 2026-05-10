@@ -1,0 +1,8 @@
+name,value,rule,passed,note
+prereq 7.8 exists,True,true,True,
+v2.6 baseline scored,9,>= 3,True,
+variable_recurrence scored,9,>= 3,True,
+diverse_timescales scored,0,>= 3,False,
+input_selectivity scored,9,>= 3,True,
+best template PR > baseline,False,true,False,best=variable_recurrence PR=5.0 base=6.9
+no baseline freeze authorized,False,false,True,

@@ -1,0 +1,11 @@
+probe,metric,phase,description
+state_pr_before_learning,participation_ratio,pre,State PR on first 500 rows before weight updates.
+state_pr_during_learning,participation_ratio,train,State PR across training split.
+state_pr_after_learning,participation_ratio,post,State PR on test split after training.
+rank_95,rank_95,post,PCA components for 95% variance on test split.
+rank_99,rank_99,post,PCA components for 99% variance on test split.
+top_pc_dominance,top_pc_dominance,post,Variance fraction in first PC on test split.
+per_neuron_variance,per_neuron_var_cv,post,Coefficient of variation of per-neuron activity variance.
+pairwise_correlation,corr_mean,post,Mean absolute pairwise neuron correlation on test split.
+saturation_rate,saturation_rate,post,Fraction of neurons at clipping bounds.
+covariance_spectrum,covariance_eigenvalues,post,Eigenvalue distribution of state covariance matrix.

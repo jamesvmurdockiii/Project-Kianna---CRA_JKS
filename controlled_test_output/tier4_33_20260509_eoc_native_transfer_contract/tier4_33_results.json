@@ -1,0 +1,232 @@
+{
+  "claim_boundary": "This contract locks the edge-of-chaos native mechanism transfer protocol without implementing C code or executing hardware. Not hardware evidence. Not a baseline freeze.",
+  "contract": {
+    "claim_boundary": "This contract locks the edge-of-chaos native mechanism transfer protocol without implementing C code or executing hardware. Not hardware evidence. Not a baseline freeze.",
+    "decision": "contract_locked_authorize_fixed_point_reference",
+    "hypothesis": "Yes. The mechanism uses only multiply-add, tanh, and EMA updates \u2014 all expressible in s16.15 with existing FP_MUL/FP_TANH primitives in the C runtime. The antisymmetric component is precomputed and static, requiring no online learning.",
+    "null_hypothesis": "Fixed-point rounding, DTCM budget constraints, or timing overruns prevent faithful reproduction of the software mechanism on hardware.",
+    "question": "Can the v2.6 edge-of-chaos recurrent dynamics mechanism be migrated to the SpiNNaker custom C runtime with s16.15 fixed-point arithmetic while preserving the mechanism's stated benefits (PR restoration, sham separation)?",
+    "software_reference": "CRA_EVIDENCE_BASELINE_v2.6",
+    "starting_baseline": "CRA_NATIVE_SCALE_BASELINE_v0.5"
+  },
+  "criteria": [
+    {
+      "criterion": "contract question locked",
+      "details": "",
+      "name": "contract question locked",
+      "note": "",
+      "operator": "true",
+      "pass": true,
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "6 migration stages defined",
+      "details": "",
+      "name": "6 migration stages defined",
+      "note": "",
+      "operator": "== 6",
+      "pass": true,
+      "passed": true,
+      "rule": "== 6",
+      "value": 6
+    },
+    {
+      "criterion": "state budget defined (DTCM)",
+      "details": "",
+      "name": "state budget defined (DTCM)",
+      "note": "",
+      "operator": "non-empty",
+      "pass": true,
+      "passed": true,
+      "rule": "non-empty",
+      "value": "~568 bytes DTCM"
+    },
+    {
+      "criterion": "compute budget assessed",
+      "details": "",
+      "name": "compute budget assessed",
+      "note": "",
+      "operator": "non-empty",
+      "pass": true,
+      "passed": true,
+      "rule": "non-empty",
+      "value": "O(n^2 + n * input_dim) ~ 18k multiply-adds per tick at n=128"
+    },
+    {
+      "criterion": "resource risk documented (w_rec 64KB)",
+      "details": "",
+      "name": "resource risk documented (w_rec 64KB)",
+      "note": "",
+      "operator": "non-empty",
+      "pass": true,
+      "passed": true,
+      "rule": "non-empty",
+      "value": "w_rec at 64KB is near DTCM limit; consider n=64 for first smoke (16KB w_rec)"
+    },
+    {
+      "criterion": "5 failure classes defined",
+      "details": "",
+      "name": "5 failure classes defined",
+      "note": "",
+      "operator": "== 5",
+      "pass": true,
+      "passed": true,
+      "rule": "== 5",
+      "value": 5
+    },
+    {
+      "criterion": "DTCM overflow has repair",
+      "details": "",
+      "name": "DTCM overflow has repair",
+      "note": "",
+      "operator": "true",
+      "pass": true,
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "fixed-point overflow has repair",
+      "details": "",
+      "name": "fixed-point overflow has repair",
+      "note": "",
+      "operator": "true",
+      "pass": true,
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "software baseline referenced",
+      "details": "",
+      "name": "software baseline referenced",
+      "note": "",
+      "operator": "non-empty",
+      "pass": true,
+      "passed": true,
+      "rule": "non-empty",
+      "value": "CRA_NATIVE_SCALE_BASELINE_v0.5"
+    },
+    {
+      "criterion": "no baseline freeze authorized",
+      "details": "",
+      "name": "no baseline freeze authorized",
+      "note": "",
+      "operator": "false",
+      "pass": true,
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "criterion": "no hardware evidence claimed",
+      "details": "",
+      "name": "no hardware evidence claimed",
+      "note": "",
+      "operator": "false",
+      "pass": true,
+      "passed": true,
+      "rule": "false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 11,
+  "criteria_total": 11,
+  "failure_classes": [
+    {
+      "class": "itcm_overflow",
+      "repair": "Reduce hidden units, move w_rec to DTCM, use int16 packing",
+      "symptom": ".aplx link fails with RO_DATA will not fit"
+    },
+    {
+      "class": "dtcm_overflow",
+      "repair": "Reduce hidden units from 128 to 64 for first smoke",
+      "symptom": "Runtime data exceeds DTCM"
+    },
+    {
+      "class": "fixed_point_overflow",
+      "repair": "Clamp antisymmetric component, verify tanh input range",
+      "symptom": "FP_MUL produces non-finite values"
+    },
+    {
+      "class": "state_readback_mismatch",
+      "repair": "Audit FP_MUL rounding, verify EMA trace update order",
+      "symptom": "Compact readback differs from float reference"
+    },
+    {
+      "class": "timing_overrun",
+      "repair": "Reduce hidden units, profile matmul, consider sparse antisym",
+      "symptom": "Timer callback takes >1ms"
+    }
+  ],
+  "generated_at_utc": "2026-05-10T03:39:46+00:00",
+  "mechanism_spec": {
+    "antisym_fraction": 0.3,
+    "compute_per_tick": {
+      "antisym_contribution": "precomputed static matrix, O(n^2) multiply-adds per tick",
+      "driver_construction": "concatenation, no computation",
+      "ema_updates": "7 multiply-adds",
+      "recurrent_step": "128 x 128 matmul + 128 x input_dim matmul + 128 tanh calls",
+      "total_ops": "O(n^2 + n * input_dim) ~ 18k multiply-adds per tick at n=128"
+    },
+    "decay": 0.0,
+    "input_encoding": "7 EMA traces (unchanged from v2.5)",
+    "name": "edge_of_chaos_recurrent_dynamics",
+    "readout": "ridge regression (alpha=1.0, host-side)",
+    "resource_assessment": {
+      "dtcm_budget": "CRA_NATIVE_SCALE_BASELINE_v0.5 measured DTCM budget ~80KB available",
+      "fits_itcm": "w_in fits ITCM; w_rec requires DTCM (64KB)",
+      "risk": "w_rec at 64KB is near DTCM limit; consider n=64 for first smoke (16KB w_rec)",
+      "w_in_storage": "128*16*4 = 8KB for input projection",
+      "w_rec_storage": "128*128*4 = 64KB for recurrent matrix"
+    },
+    "software_baseline": "v2.6",
+    "spectral_radius": 1.0,
+    "state_dimensions": {
+      "ema_traces": "7 * 4 bytes = 28 bytes",
+      "hidden_units": "128 * 4 bytes = 512 bytes",
+      "novelty": "4 bytes",
+      "total_state": "~568 bytes DTCM",
+      "trace_deltas": "6 * 4 bytes = 24 bytes"
+    }
+  },
+  "migration_stages": [
+    {
+      "description": "Lock transfer contract. Define mechanism, state budget, fixed-point constraints, failure classes. No implementation.",
+      "stage": "4.33_contract"
+    },
+    {
+      "description": "Fixed-point local reference: verify edge-of-chaos with s16.15 arithmetic produces same PR and MSE as float reference within tolerance.",
+      "stage": "4.33a_local_ref"
+    },
+    {
+      "description": "C runtime source audit: verify new opcodes, state layout, READ_STATE fields, profile ownership, and host tests pass.",
+      "stage": "4.33b_source_audit"
+    },
+    {
+      "description": "Prepare EBRAINS package: build .aplx with EOC profile, source-only upload, verify binary size fits ITCM/DTCM.",
+      "stage": "4.33c_prepare"
+    },
+    {
+      "description": "Single-core hardware smoke: build/load/readback on one SpiNNaker board, verify compact state matches fixed-point reference.",
+      "stage": "4.33d_smoke"
+    },
+    {
+      "description": "Three-seed repeatability: Mackey-Glass/Lorenz at 8000 steps, seeds 42/43/44, 3 boards.",
+      "stage": "4.33e_multiseed"
+    }
+  ],
+  "next_gate": "Tier 4.33a - Edge-of-Chaos Fixed-Point Local Reference",
+  "nonclaims": [
+    "not C implementation",
+    "not hardware evidence",
+    "not a baseline freeze"
+  ],
+  "outcome": "eoc_native_transfer_contract_locked",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_33_20260509_eoc_native_transfer_contract",
+  "runner_revision": "tier4_33_eoc_native_transfer_contract_20260509_0001",
+  "status": "pass",
+  "tier": "Tier 4.33 - Edge-of-Chaos Native Mechanism Transfer Contract"
+}

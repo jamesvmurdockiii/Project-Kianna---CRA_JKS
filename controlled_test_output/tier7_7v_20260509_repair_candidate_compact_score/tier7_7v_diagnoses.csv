@@ -1,0 +1,3 @@
+finding,detail
+baseline_confirm_low_PR,orthogonal baseline mean PR=2.0084
+candidate_improves_PR,candidate PR=5.4864 vs baseline PR=2.0084

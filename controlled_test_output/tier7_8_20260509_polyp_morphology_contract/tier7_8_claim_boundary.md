@@ -1,0 +1,1 @@
+This contract locks the Tier 7.8 morphology/template variability testing protocol without implementing or scoring any candidate. Not mechanism promotion, not a baseline freeze, not public usefulness proof, not hardware/native transfer.

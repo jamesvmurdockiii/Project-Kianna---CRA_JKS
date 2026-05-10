@@ -1,0 +1,208 @@
+{
+  "claim_boundary": "NEST organism within-polyp E/I recurrence diagnostic only. Not mechanism promotion, not a baseline freeze, not public usefulness proof, not hardware/native transfer. If confirmed, the organism's E->E recurrence is the spiking analog of standalone antisymmetric w_rec and explains the dimensional gap.",
+  "contract": {
+    "claim_boundary": "NEST organism within-polyp E/I recurrence diagnostic only. Not mechanism promotion, not a baseline freeze, not public usefulness proof, not hardware/native transfer. If confirmed, the organism's E->E recurrence is the spiking analog of standalone antisymmetric w_rec and explains the dimensional gap.",
+    "code_change": {
+      "config_antisym_factor": "spinnaker.within_polyp_antisym_factor (float, default 0.7)",
+      "config_flag": "spinnaker.within_polyp_antisymmetric_recurrence (bool, default False)",
+      "description": "In polyp_population.py instantiate_internal_template(), replace the current lognormal random E->E weights with antisymmetric push-pull pairs. For each pair (i,j): weight_ij = +w (exc_conns), weight_ji = -w * antisym_factor (inh_conns via a separate inhibitory projection onto the same E population). The antisym_factor controls the strength of antisymmetric relative to symmetric (default 0.7). The population uses a config flag for enabling/disabling without code changes.",
+      "file": "coral_reef_spinnaker/polyp_population.py",
+      "location": "lines 577-583, replace lognormal E->E weight logic with antisymmetric logic"
+    },
+    "decision": "contract_locked_authorize_scoring_gate",
+    "diagnosis": "The standalone tanh reference achieves PR=7.0 through antisymmetric recurrence (w_rec = W - W^T, sr=1.0). The NEST organism's polyp_population.py already has E->E recurrence at lines 577-583, but with lognormal random weights that are all positive and have no push-pull antisymmetric structure. This is the primary architectural difference between standalone recurrence and spiking polyp recurrence: the standalone's diversity comes from structured antisymmetry, not just raw recurrence.",
+    "hypothesis": "Modifying the E->E recurrent weights within each polyp to include an antisymmetric component (W_combined = W_base + alpha * (W_base - W_base^T)) will create push-pull excitatory/inhibitory pairs that generate oscillatory sequential activity patterns. This is the spiking analog of the standalone's w_anti mechanism and should increase state dimensionality by creating genuinely different activity patterns across neurons within each polyp.",
+    "measurement": {
+      "n_input_per_polyp": 8,
+      "population_sizes": {
+        "diagnostic": [
+          8
+        ],
+        "primary": 16
+      },
+      "pr_computation": "Standard PR on test split covariance of per-neuron spike vectors",
+      "state_vector": "Per-step per-neuron spike vector (512 channels for 16 polyps)",
+      "tasks": [
+        {
+          "name": "sine_wave",
+          "signal": "sin(0..25)",
+          "steps": 120
+        },
+        {
+          "name": "Mackey-Glass",
+          "signal": "chaotic MG",
+          "steps": 500
+        }
+      ]
+    },
+    "null_hypothesis": "Within-polyp antisymmetric recurrence does not increase state dimensionality because: (1) spike-based recurrence with LIF neurons operates in the event domain and does not produce the continuous oscillatory modes that tanh recurrence achieves, or (2) antisymmetry within the small 16-neuron excitatory population is insufficient to create measurable diversity at the per-polyp or per-neuron level.",
+    "outcome_classes": [
+      {
+        "action": "Within-polyp antisymmetric recurrence is the spiking analog of standalone w_anti and closes the dimensional gap.",
+        "condition": "primary pass AND both shams separated",
+        "outcome": "antisymmetric_recurrence_confirmed"
+      },
+      {
+        "action": "Any E->E recurrence helps; antisymmetric structure is not the causal factor.",
+        "condition": "PR improves but shuffled weights also improve",
+        "outcome": "recurrence_helps_but_not_specific"
+      },
+      {
+        "action": "Within-polyp E->E recurrence (even with antisymmetry) does not increase state dimensionality at this scale.",
+        "condition": "No PR improvement over baseline",
+        "outcome": "recurrence_does_not_help"
+      },
+      {
+        "action": "The antisymmetric E->E recurrence with LIF neurons creates unstable dynamics at tested parameters.",
+        "condition": "Organism fails to run, explodes, or produces NaN values",
+        "outcome": "recurrence_breaks_organism"
+      }
+    ],
+    "pass_criteria": {
+      "primary": "16-polyp per-neuron PR > 2.5 with antisymmetric recurrence AND greater than both sham conditions by margin"
+    },
+    "question": "Does adding antisymmetric weight structure (W_anti = W - W^T) to the existing within-polyp E->E recurrent projections increase NEST organism state dimensionality beyond the current PR~1.9 ceiling, by creating push-pull oscillatory dynamics analogous to the standalone's skew-symmetric w_rec?",
+    "shams": [
+      {
+        "description": "Same number of E->E connections with same weight magnitudes, but randomly permuted across the connection matrix. This destroys antisymmetric structure while preserving the weight distribution and connection count.",
+        "name": "shuffled_antirecurrent_weights",
+        "passes_if": "Shuffled weight PR < antisymmetric weight PR by margin > 0.5",
+        "role": "primary"
+      },
+      {
+        "description": "E->E connections disabled entirely (current baseline).",
+        "name": "no_recurrence",
+        "passes_if": "No-recurrence PR < antisymmetric PR",
+        "role": "ablation"
+      }
+    ]
+  },
+  "criteria": [
+    {
+      "criterion": "question locked",
+      "name": "question locked",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "diagnosis documented",
+      "name": "diagnosis documented",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "null hypothesis locked",
+      "name": "null hypothesis locked",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "code change specified",
+      "name": "code change specified",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "config flag specified",
+      "name": "config flag specified",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "antisym factor param specified",
+      "name": "antisym factor param specified",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "primary sham: shuffled weights",
+      "name": "primary sham: shuffled weights",
+      "note": "",
+      "passed": true,
+      "rule": "== shuffled_antirecurrent_weights",
+      "value": "shuffled_antirecurrent_weights"
+    },
+    {
+      "criterion": "ablation: no recurrence",
+      "name": "ablation: no recurrence",
+      "note": "",
+      "passed": true,
+      "rule": "== no_recurrence",
+      "value": "no_recurrence"
+    },
+    {
+      "criterion": "primary pass: PR > 2.5 + shams",
+      "name": "primary pass: PR > 2.5 + shams",
+      "note": "",
+      "passed": true,
+      "rule": "non-empty",
+      "value": "16-polyp per-neuron PR > 2.5 with antisymmetric recurrence AND greater than both sham conditions by margin"
+    },
+    {
+      "criterion": "4 outcome classes defined",
+      "name": "4 outcome classes defined",
+      "note": "",
+      "passed": true,
+      "rule": "== 4",
+      "value": 4
+    },
+    {
+      "criterion": "no baseline freeze authorized",
+      "name": "no baseline freeze authorized",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "criterion": "no mechanism promotion authorized",
+      "name": "no mechanism promotion authorized",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "criterion": "no hardware/native transfer authorized",
+      "name": "no hardware/native transfer authorized",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "criterion": "source file exists",
+      "name": "source file exists",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    }
+  ],
+  "criteria_passed": 14,
+  "criteria_total": 14,
+  "generated_at_utc": "2026-05-10T23:17:28+00:00",
+  "next_gate": "Tier 5.24a - Within-Polyp Antisymmetric Recurrence Scoring Gate",
+  "nonclaims": [
+    "not scoring",
+    "not mechanism promotion",
+    "not a baseline freeze"
+  ],
+  "outcome": "within_polyp_ei_recurrence_contract_locked",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_24_20260510_within_polyp_ei_recurrence_contract",
+  "runner_revision": "tier5_24_within_polyp_ei_recurrence_contract_20260510_0001",
+  "status": "pass",
+  "tier": "Tier 5.24 - Within-Polyp E/I Antisymmetric Recurrence Diagnostic Contract"
+}

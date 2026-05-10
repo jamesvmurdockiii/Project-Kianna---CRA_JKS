@@ -1175,6 +1175,22 @@ class SpiNNakerConfig:
     exc_to_readout_fanout: int = 2
     """[ENGINEERING] Number of readout targets per excitatory neuron."""
 
+    # --- Within-polyp antisymmetric recurrence ---------------------------------
+    within_polyp_antisymmetric_recurrence: bool = False
+    """[EXPERIMENTAL] Enable antisymmetric E->E weight structure within each
+    polyp.  For each pair of excitatory neurons (i, j), this adds push-pull
+    connections weight_ij = +w (excitatory) and weight_ji = -w * factor
+    (inhibitory self-projection onto the E population).  Config flag only;
+    no task benefit claim without a dedicated evidence bundle.
+    """
+
+    within_polyp_antisym_factor: float = 0.7
+    """[EXPERIMENTAL] Scaling factor for the antisymmetric component relative
+    to the symmetric base.  0.0 = symmetric only, 1.0 = fully antisymmetric.
+    """
+
+    # --------------------------------------------------------------------------
+
     max_delay: float = 144.0
     """[ENGINEERING] Maximum synaptic delay in ms (SpiNNaker DTCM limit)."""
 

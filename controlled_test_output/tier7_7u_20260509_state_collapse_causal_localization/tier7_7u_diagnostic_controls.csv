@@ -1,0 +1,8 @@
+control,available,evidence,description,reason
+target_shuffle,True,Tier 7.7j confirms target/time-shuffle separation.,Shuffle targets to break causal structure; PR should drop if state encodes task-relevant signal.,
+time_shuffle,True,Tier 7.7j confirms target/time-shuffle separation.,Shuffle time ordering; PR may increase if temporal structure constrains state.,
+no_plasticity,False,,Compare PR trajectory with and without weight updates.,Requires model variant.
+no_inhibition,False,,Compare PR with inhibition disabled.,Requires model variant.
+frozen_recurrent,False,,Compare PR with frozen vs learned recurrent weights.,Requires model variant.
+state_reset,False,,Compare PR resilience to state resets.,Requires model variant.
+input_channel_shuffle,False,,Compare PR with shuffled input channels.,Requires model variant.

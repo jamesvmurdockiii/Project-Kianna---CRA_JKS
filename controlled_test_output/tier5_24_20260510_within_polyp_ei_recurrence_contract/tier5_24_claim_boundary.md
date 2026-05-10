@@ -1,0 +1,1 @@
+NEST organism within-polyp E/I recurrence diagnostic only. Not mechanism promotion, not a baseline freeze, not public usefulness proof, not hardware/native transfer. If confirmed, the organism's E->E recurrence is the spiking analog of standalone antisymmetric w_rec and explains the dimensional gap.

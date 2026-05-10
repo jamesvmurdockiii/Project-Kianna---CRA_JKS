@@ -1,0 +1,7 @@
+name,criterion,value,operator,rule,passed,pass,details,note
+5 NAB streams loaded,5 NAB streams loaded,5,== 5,== 5,True,True,,
+all streams scored,all streams scored,15,== 15,== 15,True,True,5 streams x 3 seeds = 15 results,5 streams x 3 seeds = 15 results
+"streams with signal (>1.3x, 2+ seeds)","streams with signal (>1.3x, 2+ seeds)",1,>= 1,>= 1,True,True,mean ratio=1.094,mean ratio=1.094
+NAB outcome classified,NAB outcome classified,nab_partial_signal,!= nab_no_signal,!= nab_no_signal,True,True,,
+no baseline freeze,no baseline freeze,False,false,false,True,True,,
+no public usefulness claim,no public usefulness claim,False,false,false,True,True,,

@@ -1,0 +1,12 @@
+name,value,rule,passed,note
+candidate scored (all tasks/seeds/lengths),9,>= 6,True,n=9
+sham (no-antisymmetry) scored,9,>= 3,True,
+ablation (baseline) scored,9,>= 3,True,
+ESN baseline scored,9,>= 1,True,
+PR > baseline (ablation),True,true,True,cand=6.9 abla=1.9
+sham separated (|ΔPR| > 2.0),True,true,True,cand=6.9 sham=2.5
+ablation removes benefit,True,true,True,
+PR > ESN baseline,True,true,True,cand=6.9 esn=5.8
+MSE < baseline (ablation),False,true,False,cand_mse=0.047432 abla_mse=0.017690
+outcome classified,True,true,True,classification=mechanism_candidate_baselines_partial
+no baseline freeze authorized,True,true,True,Freeze requires compact regression gate

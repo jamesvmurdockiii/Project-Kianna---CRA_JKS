@@ -1,0 +1,7 @@
+variant,mode,participation_ratio,n_hidden,n_features,verify
+orthogonal_baseline,orthogonal,1.4708,32,44,ok
+block_recurrent,block,2.0702,32,44,ok
+frozen_recurrent,random_recurrent,1.7012,32,44,ok
+shuffled_input,shuffled_input,2.2756,32,44,ok
+no_plasticity,orthogonal,1.4708,32,44,ok
+state_reset,state_reset,1.7384,32,44,ok

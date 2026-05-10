@@ -94,3 +94,4 @@ controlled_test_output/*_probe/
 # Note: ebrains_jobs/ is INTENTIONALLY NOT IGNORED.
 # It contains self-contained EBRAINS upload packages that document
 # exactly what source was sent to hardware. See docs/SPINNAKER_EBRAINS_RUNBOOK.md.
+.pytest_cache/

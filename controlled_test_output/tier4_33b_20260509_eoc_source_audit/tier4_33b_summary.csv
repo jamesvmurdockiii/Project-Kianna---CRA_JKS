@@ -1,0 +1,15 @@
+name,criterion,value,rule,passed,note
+prereq 4.33a exists,prereq 4.33a exists,True,true,True,
+config.h: PROFILE_EOC_RECURRENT,config.h: PROFILE_EOC_RECURRENT,True,true,True,
+config.h: EOC opcodes,config.h: EOC opcodes,True,true,True,
+state_manager.h: EOC declarations,state_manager.h: EOC declarations,True,true,True,
+state_manager.c: EOC init,state_manager.c: EOC init,True,true,True,
+state_manager.c: EOC update,state_manager.c: EOC update,True,true,True,
+state_manager.c: EOC summary,state_manager.c: EOC summary,True,true,True,
+state_manager.c: g_eoc_hidden,state_manager.c: g_eoc_hidden,True,true,True,
+state_manager.c: profile guard,state_manager.c: profile guard,True,true,True,
+Makefile: eoc_recurrent profile,Makefile: eoc_recurrent profile,True,true,True,
+host tests pass,host tests pass,True,true,True,
+DTCM budget (n=64): 16KB w_rec + 1KB w_in + 256B hidden,DTCM budget (n=64): 16KB w_rec + 1KB w_in + 256B hidden,20736,<= 80000,True,"20736 bytes, 20KB"
+no baseline freeze,no baseline freeze,False,false,True,
+no hardware evidence claimed,no hardware evidence claimed,False,false,True,

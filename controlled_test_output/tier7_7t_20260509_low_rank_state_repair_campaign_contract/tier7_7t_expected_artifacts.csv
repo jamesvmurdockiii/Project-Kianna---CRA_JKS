@@ -1,0 +1,13 @@
+artifact,required_for_contract
+tier7_7t_results.json,True
+tier7_7t_contract.json,True
+tier7_7t_summary.csv,True
+tier7_7t_failure_modes.csv,True
+tier7_7t_candidate_repair_queue.csv,True
+tier7_7t_controls.csv,True
+tier7_7t_metrics.csv,True
+tier7_7t_outcome_classes.csv,True
+tier7_7t_baseline_escalation.csv,True
+tier7_7t_expected_artifacts.csv,True
+tier7_7t_claim_boundary.md,True
+tier7_7t_report.md,True

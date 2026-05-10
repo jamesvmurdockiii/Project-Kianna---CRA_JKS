@@ -1,0 +1,190 @@
+{
+  "claim_boundary": "NEST organism inter-polyp recurrence diagnostic only. Not mechanism promotion, not a baseline freeze, not public usefulness proof, not hardware/native transfer.",
+  "contract": {
+    "claim_boundary": "NEST organism inter-polyp recurrence diagnostic only. Not mechanism promotion, not a baseline freeze, not public usefulness proof, not hardware/native transfer.",
+    "code_change": {
+      "description": "Remove the backend_name=='sPyNNaker' gate from sync_to_spinnaker() call at organism.py line 264, so NEST also materializes inter-polyp edges as PyNN projections.",
+      "file": "coral_reef_spinnaker/organism.py",
+      "location": "line 264, remove 'self._backend_factory.backend_name == \"sPyNNaker\"' condition"
+    },
+    "decision": "contract_locked_authorize_scoring_gate",
+    "diagnosis": "The NEST organism's inter-polyp edges are stored as host-level ReefNetwork objects but never materialized as PyNN projections because sync_to_spinnaker() at organism.py:264 is gated behind backend_name == 'sPyNNaker'. With reproduce=False, the organism has zero inter-polyp synaptic connections \u2014 each polyp is synaptically isolated. The antisymmetric_inter_polyp_edges config flag creates host-level edges that never reach the NEST simulation.",
+    "hypothesis": "Calling sync_to_spinnaker() for the NEST backend after the antisymmetric inter-polyp edges are created will materialize them as PyNN projections (Projection with StaticSynapse on NEST). These projections create the structured E/I recurrence that the standalone achieves via skew-symmetric w_rec. This will increase organism state dimensionality because polyps now communicate through synaptic connections with push-pull E/I dynamics.",
+    "measurement": {
+      "population_sizes": {
+        "diagnostic": [
+          4,
+          16
+        ],
+        "primary": 8
+      },
+      "pr_computation": "Standard PR on test split covariance",
+      "state_vector": "Per-step per-polyp activity_rate",
+      "tasks": [
+        "sine_wave",
+        "mackey_glass_500step"
+      ]
+    },
+    "null_hypothesis": "Inter-polyp PyNN projections do not increase state dimensionality because: (1) the projections exist but spike-based communication does not create continuous oscillatory modes like tanh recurrence, or (2) the NEST backend factory's create_inter_polyp_projection fails or produces no-op projections on NEST.",
+    "outcome_classes": [
+      {
+        "action": "Inter-polyp antisymmetric projections are the missing recurrence component for NEST organism.",
+        "condition": "primary pass AND both shams separated",
+        "outcome": "antisymmetric_projections_confirmed"
+      },
+      {
+        "action": "Any inter-polyp connectivity helps; antisymmetric structure is not the causal factor.",
+        "condition": "PR improves but random projections also improve",
+        "outcome": "projections_help_but_not_specific"
+      },
+      {
+        "action": "Inter-polyp PyNN projections on NEST do not increase state dimensionality at this scale.",
+        "condition": "No PR improvement over baseline",
+        "outcome": "projections_dont_help"
+      },
+      {
+        "action": "The backend factory fails to create inter-polyp projections on NEST.",
+        "condition": "Organism fails to run or produces NaN/infinite values",
+        "outcome": "projections_break_organism"
+      }
+    ],
+    "pass_criteria": {
+      "primary": "8-polyp per-polyp PR > 2.5 with antisymmetric projections AND greater than both sham conditions"
+    },
+    "question": "Does enabling inter-polyp PyNN projections with antisymmetric E/I weights on the NEST backend increase organism state dimensionality beyond the current PR\u22481.9 ceiling, by creating genuine synaptic recurrence analogous to the standalone's skew-symmetric w_rec?",
+    "shams": [
+      {
+        "description": "Same number of inter-polyp projections but with random weights (no antisymmetric structure). Tests whether antisymmetric E/I pairing is causal or any inter-polyp connectivity helps.",
+        "name": "random_symmetric_projections",
+        "passes_if": "Random projection PR < antisymmetric projection PR - 1.0",
+        "role": "primary"
+      },
+      {
+        "description": "Default benchmark mode: zero inter-polyp projections (current state).",
+        "name": "no_projections",
+        "passes_if": "No-projection PR < antisymmetric projection PR",
+        "role": "ablation"
+      }
+    ]
+  },
+  "criteria": [
+    {
+      "criterion": "prereq 5.22 exists",
+      "name": "prereq 5.22 exists",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "question locked",
+      "name": "question locked",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "diagnosis documented",
+      "name": "diagnosis documented",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "null hypothesis locked",
+      "name": "null hypothesis locked",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "code change specified",
+      "name": "code change specified",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "primary sham: random symmetric",
+      "name": "primary sham: random symmetric",
+      "note": "",
+      "passed": true,
+      "rule": "== random_symmetric_projections",
+      "value": "random_symmetric_projections"
+    },
+    {
+      "criterion": "ablation: no projections",
+      "name": "ablation: no projections",
+      "note": "",
+      "passed": true,
+      "rule": "== no_projections",
+      "value": "no_projections"
+    },
+    {
+      "criterion": "primary pass: PR > 2.5 + shams",
+      "name": "primary pass: PR > 2.5 + shams",
+      "note": "",
+      "passed": true,
+      "rule": "non-empty",
+      "value": "8-polyp per-polyp PR > 2.5 with antisymmetric projections AND greater than both sham conditions"
+    },
+    {
+      "criterion": "4 outcome classes defined",
+      "name": "4 outcome classes defined",
+      "note": "",
+      "passed": true,
+      "rule": "== 4",
+      "value": 4
+    },
+    {
+      "criterion": "backend gate confirmed in source",
+      "name": "backend gate confirmed in source",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "no baseline freeze authorized",
+      "name": "no baseline freeze authorized",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "criterion": "no mechanism promotion authorized",
+      "name": "no mechanism promotion authorized",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "criterion": "no hardware/native transfer authorized",
+      "name": "no hardware/native transfer authorized",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 13,
+  "criteria_total": 13,
+  "generated_at_utc": "2026-05-10T20:29:27+00:00",
+  "next_gate": "Tier 5.23a - Inter-Polyp Antisymmetric Projections Scoring Gate",
+  "nonclaims": [
+    "not scoring",
+    "not mechanism promotion",
+    "not a baseline freeze"
+  ],
+  "outcome": "inter_polyp_antisymmetric_projections_contract_locked",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_23_20260510_inter_polyp_antisymmetric_projections_contract",
+  "runner_revision": "tier5_23_inter_polyp_antisymmetric_projections_contract_20260510_0001",
+  "status": "pass",
+  "tier": "Tier 5.23 - Inter-Polyp Antisymmetric PyNN Projections Diagnostic Contract"
+}

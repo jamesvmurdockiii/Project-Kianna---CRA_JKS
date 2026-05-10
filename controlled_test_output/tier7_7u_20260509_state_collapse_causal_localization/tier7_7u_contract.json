@@ -1,0 +1,21 @@
+{
+  "contract_77t_outcome": "lock_campaign_and_authorize_localization",
+  "controls_count": 7,
+  "decision": "localization_protocol_locked_awaits_model_variants",
+  "decision_boundary": "Localization protocol locked. Seven diagnostic model variants must be implemented as CRA configuration options before full causal localization can score. Do not proceed to Tier 7.7v repair implementation without verifying that at least the top-4 priority variants exist and can be instantiated with the current CRA v2.5 baseline. Not a repair, not mechanism promotion, not a baseline freeze, not public usefulness proof, not hardware/native transfer.",
+  "hypothesis": "The ~2D collapse enters through one or two primary mechanisms that can be isolated by comparing candidate PR trajectories against diagnostic controls.",
+  "null_hypothesis": "All diagnostic controls produce similar PR collapse (the effect is irreducible at current capacity).",
+  "outcome_rules_count": 9,
+  "probe_definitions_count": 10,
+  "question": "Where does the low-rank collapse enter: input encoding, recurrent dynamics, plasticity, inhibition, trophic pressure, readout exposure, or numerical saturation?",
+  "required_variants_count": 7,
+  "variant_implementation_priority": [
+    "no_plasticity",
+    "no_inhibition",
+    "frozen_recurrent",
+    "input_channel_shuffle",
+    "state_reset",
+    "per_partition_probe",
+    "trophic_probe"
+  ]
+}

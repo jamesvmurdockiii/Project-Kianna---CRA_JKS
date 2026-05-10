@@ -1,0 +1,11 @@
+key,value
+name,edge_of_chaos_recurrent_dynamics
+software_baseline,v2.6
+decay,0.0
+spectral_radius,1.0
+antisym_fraction,0.3
+input_encoding,7 EMA traces (unchanged from v2.5)
+readout,"ridge regression (alpha=1.0, host-side)"
+state_dimensions,"{'ema_traces': '7 * 4 bytes = 28 bytes', 'hidden_units': '128 * 4 bytes = 512 bytes', 'trace_deltas': '6 * 4 bytes = 24 bytes', 'novelty': '4 bytes', 'total_state': '~568 bytes DTCM'}"
+compute_per_tick,"{'ema_updates': '7 multiply-adds', 'driver_construction': 'concatenation, no computation', 'recurrent_step': '128 x 128 matmul + 128 x input_dim matmul + 128 tanh calls', 'antisym_contribution': 'precomputed static matrix, O(n^2) multiply-adds per tick', 'total_ops': 'O(n^2 + n * input_dim) ~ 18k multiply-adds per tick at n=128'}"
+resource_assessment,"{'w_rec_storage': '128*128*4 = 64KB for recurrent matrix', 'w_in_storage': '128*16*4 = 8KB for input projection', 'fits_itcm': 'w_in fits ITCM; w_rec requires DTCM (64KB)', 'dtcm_budget': 'CRA_NATIVE_SCALE_BASELINE_v0.5 measured DTCM budget ~80KB available', 'risk': 'w_rec at 64KB is near DTCM limit; consider n=64 for first smoke (16KB w_rec)'}"

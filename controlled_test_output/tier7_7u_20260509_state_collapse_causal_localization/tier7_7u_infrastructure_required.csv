@@ -1,0 +1,8 @@
+hypothesis,required_for,status,action
+,plasticity_homogenization,not_implemented,Add no-plasticity model variant to CRA config: freeze or zero learning rate while preserving recurrence.
+,inhibition_compression,not_implemented,Add no-inhibition model variant: disable WTA/inhibitory normalization within polyp populations.
+,recurrent_topology_bottleneck,not_implemented,Add frozen-recurrent model variant: initialize random recurrent weights and freeze them.
+,numeric_saturation,not_implemented,Add state-reset model variant: periodically reset hidden state to zero/varied initialization.
+,input_encoder_bottleneck,not_implemented,Add input-shuffle model variant: permute input channels before feature encoding.
+,shared_driver_synchronization,not_implemented,Add per-partition state readout to expose partition-specific PR and activity.
+,trophic_selection_compression,not_implemented,Instrument trophic counters to measure selection pressure on state diversity.

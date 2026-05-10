@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-05-10T23:12:48.954871+00:00",
+  "source_generated_at_utc": "2026-05-09T20:03:13+00:00",
+  "registry_entry_id": "tier7_7v_repair_candidate_compact_score",
+  "tier": "Tier 7.7v - Repair Candidate Compact Score (Family B)",
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7v_20260509_repair_candidate_compact_score",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_7v_20260509_repair_candidate_compact_score/tier7_7v_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_7v_20260509_repair_candidate_compact_score/tier7_7v_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7v_20260509_repair_candidate_compact_score/tier7_7v_variant_summary.csv",
+  "canonical": true,
+  "claim": "Tier 7.7v scores the Repair Family B candidate (orthogonalized input projections + block-structured recurrence) on Mackey-Glass/Lorenz/repaired-NARMA10 at 8000 steps, seed 42. The candidate achieves PR=5.49 vs orthogonal baseline PR=2.01, beats the shuffled_input control (PR=4.57), and confirms the input-encoder bottleneck as the primary low-rank collapse mechanism.",
+  "caveat": "Compact repair scoring on one seed only; not expanded confirmation at longer lengths/more seeds, not mechanism promotion, not a baseline freeze, not public usefulness proof, and not hardware/native transfer."
+}

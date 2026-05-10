@@ -1,0 +1,101 @@
+{
+  "ablation_mse": 4.276500959282869e-06,
+  "ablation_pr": 1.951255667803357,
+  "baseline_frozen": true,
+  "baseline_version": "CRA_EVIDENCE_BASELINE_v2.6",
+  "candidate_mse": 1.8993084020764896e-06,
+  "candidate_pr": 6.9977422015463855,
+  "claim_boundary": "Edge-of-chaos compact regression + baseline freeze decision. Baseline CRA_EVIDENCE_BASELINE_v2.6 frozen.",
+  "criteria": [
+    {
+      "name": "prereq 7.7z exists",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "name": "candidate scored",
+      "note": "",
+      "passed": true,
+      "rule": ">= 3",
+      "value": 27
+    },
+    {
+      "name": "shuffled target scored",
+      "note": "",
+      "passed": true,
+      "rule": ">= 3",
+      "value": 27
+    },
+    {
+      "name": "no-learning scored",
+      "note": "",
+      "passed": true,
+      "rule": ">= 3",
+      "value": 27
+    },
+    {
+      "name": "ablation scored",
+      "note": "",
+      "passed": true,
+      "rule": ">= 3",
+      "value": 27
+    },
+    {
+      "name": "Tier 1: shuffled target hurts MSE",
+      "note": "cand=0.000002 shuffled=1.015505",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "name": "Tier 2: no-learning hurts MSE",
+      "note": "cand=0.000002 no_learning=1.289790",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "name": "Tier 3: ablation loses PR",
+      "note": "cand PR=7.0 abla PR=2.0",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "name": "candidate PR > abla PR",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "name": "compact regression outcome",
+      "note": "compact_regression_pass",
+      "passed": true,
+      "rule": "== compact_regression_pass",
+      "value": "compact_regression_pass"
+    },
+    {
+      "name": "baseline freeze authorized",
+      "note": "CRA_EVIDENCE_BASELINE_v2.6 ready",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    }
+  ],
+  "criteria_passed": 11,
+  "criteria_total": 11,
+  "generated_at_utc": "2026-05-10T02:09:53+00:00",
+  "next_gate": "Tier 7.7z-r1 baseline freeze manifest + registry snapshot",
+  "no_learning_mse": 1.2897900908590538,
+  "no_learning_pr": 6.9977422015463855,
+  "outcome": "compact_regression_pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7z_r0_20260509_compact_regression",
+  "runner_revision": "tier7_7z_r0_compact_regression_20260509_0001",
+  "shuffled_mse": 1.015505397885184,
+  "shuffled_pr": 6.9977422015463855,
+  "status": "pass",
+  "tier": "Tier 7.7z-r0 - Edge-of-Chaos Compact Regression Gate"
+}

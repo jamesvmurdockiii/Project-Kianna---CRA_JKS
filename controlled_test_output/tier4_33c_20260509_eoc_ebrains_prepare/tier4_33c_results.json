@@ -1,0 +1,87 @@
+{
+  "bundle": "/Users/james/JKS:CRA/controlled_test_output/tier4_33c_20260509_eoc_ebrains_prepare/cra_433_eoc",
+  "criteria": [
+    {
+      "criterion": "prereq 4.33b exists",
+      "name": "prereq 4.33b exists",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "all runtime source files present",
+      "name": "all runtime source files present",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "bundle created",
+      "name": "bundle created",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "runner copied",
+      "name": "runner copied",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "metadata.json written",
+      "name": "metadata.json written",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "JobManager command defined",
+      "name": "JobManager command defined",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "expected artifacts declared",
+      "name": "expected artifacts declared",
+      "note": "",
+      "passed": true,
+      "rule": ">= 3",
+      "value": 6
+    },
+    {
+      "criterion": "no hardware evidence claimed",
+      "name": "no hardware evidence claimed",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "criterion": "no baseline freeze",
+      "name": "no baseline freeze",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 9,
+  "criteria_total": 9,
+  "generated_at_utc": "2026-05-10T05:23:11+00:00",
+  "jobmanager_command": "cra_433_eoc/experiments/tier4_33c_eoc_ebrains_prepare.py --mode run-hardware --seed 42 --task mackey_glass --length 2000 --output-dir tier4_33c_hw_output",
+  "next_gate": "Tier 4.33d hardware smoke (upload to EBRAINS JobManager)",
+  "outcome": "ebrains_package_prepared",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_33c_20260509_eoc_ebrains_prepare",
+  "runner_revision": "tier4_33c_eoc_ebrains_prepare_20260509_0001",
+  "status": "pass",
+  "tier": "Tier 4.33c - EOC EBRAINS Package Preparation"
+}

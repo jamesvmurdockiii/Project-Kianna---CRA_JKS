@@ -1,0 +1,111 @@
+{
+  "baseline_orthogonal": {
+    "mse_geomean": null,
+    "n": 0,
+    "pr_mean": null
+  },
+  "block_reference": {
+    "mse_geomean": null,
+    "n": 0,
+    "pr_mean": null
+  },
+  "candidate_block_diverse": {
+    "mse_geomean": 0.1935882497792091,
+    "n": 9,
+    "pr_mean": 2.9111026553312898
+  },
+  "candidate_winnerless": {
+    "mse_geomean": 0.19086897782944018,
+    "n": 9,
+    "pr_mean": 5.0084153898410255
+  },
+  "claim_boundary": "Compact repair candidate scoring (Family C) only. Not expanded confirmation, not mechanism promotion, not a baseline freeze, not public usefulness proof.",
+  "criteria": [
+    {
+      "name": "prereq 7.7v exists",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "name": "block_diverse candidate scored",
+      "note": "",
+      "passed": true,
+      "rule": ">= 1",
+      "value": 9
+    },
+    {
+      "name": "winnerless candidate scored",
+      "note": "",
+      "passed": true,
+      "rule": ">= 1",
+      "value": 9
+    },
+    {
+      "name": "orthogonal baseline scored",
+      "note": "",
+      "passed": false,
+      "rule": ">= 1",
+      "value": 0
+    },
+    {
+      "name": "shuffled control scored",
+      "note": "",
+      "passed": false,
+      "rule": ">= 1",
+      "value": 0
+    },
+    {
+      "name": "outcome classified",
+      "note": "classification=family_c_not_confirmed",
+      "passed": false,
+      "rule": "true",
+      "value": false
+    },
+    {
+      "name": "PR did not improve",
+      "note": "best_cand PR=5.0084153898410255, base PR=None",
+      "passed": true,
+      "rule": "true",
+      "value": null
+    },
+    {
+      "name": "PR beats shuffled: None",
+      "note": "best_cand PR=5.0084153898410255, shuffled PR=None",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "name": "no baseline freeze authorized",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "name": "no mechanism promotion authorized",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 7,
+  "criteria_total": 10,
+  "generated_at_utc": "2026-05-09T20:53:55+00:00",
+  "next_gate": "Tier 7.7x closeout or next repair family per 7.7t contract",
+  "outcome": "family_c_not_confirmed",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7v_family_c_20260509_compact_score",
+  "repair_family": "C",
+  "repair_name": "recurrent_topology_spectrum_repair",
+  "runner_revision": "tier7_7v_family_c_compact_score_20260509_0001",
+  "shuffled_input": {
+    "mse_geomean": null,
+    "n": 0,
+    "pr_mean": null
+  },
+  "status": "fail",
+  "tier": "Tier 7.7v-FamilyC - Recurrent Topology/Spectrum Repair Compact Score"
+}

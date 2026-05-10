@@ -1,0 +1,9 @@
+failure_mode,description,candidate_probe,priority
+shared_driver_synchronization,Common input drive forces units into the same principal modes.,Compare state PR when each polyp partition receives independent input channels vs a single shared driver.,1
+plasticity_homogenization,Learning dynamics make many units converge to similar filters over time.,Track per-neuron weight/filter similarity over training; compare fixed-random-weight vs learned-weight PR and pairwise correlations.,2
+inhibition_normalization_compression,WTA or inhibition collapses state into a small number of dominant modes.,Measure PR with and without inhibition; compare reduced-inhibition and no-inhibition diagnostic variants.,3
+input_encoder_bottleneck,State never receives enough independent causal channels.,Measure state PR vs input channel count; compare per-input-channel contribution to state variance.,4
+recurrent_topology_bottleneck,Eigen spectrum / sparse graph structure supports only a few useful modes.,"Compare block-sparse, small-world, and all-to-all recurrent graph PR; measure recurrent weight eigen spectrum.",5
+trophic_energy_selection_compression,Survival/selection pressure suppresses diverse but initially weak states.,Compare state PR with trophic pressure enabled vs disabled; measure per-polyp activity variance distribution vs trophic counter.,6
+readout_interface_bottleneck,Recurrent state may be richer internally than the readout exposes.,Measure state PR vs readout-budgeted PR; compare linear readout vs richer readout observability.,7
+clipping_saturation_quantization,Activity is dynamic but constrained to a narrow manifold by numerical bounds.,Count per-neuron saturation/clipping events; measure state norm distribution; compare with/without activation clipping.,8

@@ -1,0 +1,938 @@
+{
+  "baseline_escalation": [
+    {
+      "authorized": false,
+      "baselines": [],
+      "description": "Contract only; no scoring.",
+      "length": null,
+      "seeds": [],
+      "stage": "7.7t_contract",
+      "tasks": []
+    },
+    {
+      "authorized": true,
+      "baselines": [
+        "current CRA v2.5",
+        "temporal-basis utility reference"
+      ],
+      "description": "Minimal task scoring for state-geometry measurement only; diagnose, do not benchmark.",
+      "length": 8000,
+      "seeds": [
+        42
+      ],
+      "stage": "7.7u_localization",
+      "tasks": [
+        "Mackey-Glass",
+        "Lorenz",
+        "repaired NARMA10"
+      ]
+    },
+    {
+      "authorized": false,
+      "baselines": [
+        "current CRA v2.5",
+        "temporal-basis utility reference",
+        "random projection",
+        "nonlinear-lag",
+        "target shuffle",
+        "time shuffle",
+        "repair candidate",
+        "repair-family-specific ablations",
+        "ESN / ridge if cheap"
+      ],
+      "description": "Compact repair scoring with repair-family-specific controls.",
+      "length": 8000,
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "stage": "7.7v_compact_repair_score",
+      "tasks": [
+        "Mackey-Glass",
+        "Lorenz",
+        "repaired NARMA10"
+      ]
+    },
+    {
+      "authorized": false,
+      "baselines": [
+        "compact repair baselines",
+        "ESN/reservoir",
+        "online lag/ridge",
+        "small GRU if available"
+      ],
+      "description": "Longer lengths, more baselines. Only if compact repair passes.",
+      "length": "8000/16000/32000",
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "stage": "7.7w_expanded_confirmation",
+      "tasks": [
+        "Mackey-Glass",
+        "Lorenz",
+        "repaired NARMA10"
+      ]
+    },
+    {
+      "authorized": false,
+      "baselines": [
+        "all prior confirmed baselines plus mechanism ablations and leakage guards"
+      ],
+      "description": "Compact regression, mechanism ablations, leakage guards, freeze decision.",
+      "length": "as per regression spec",
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "stage": "7.7x_promotion_regression",
+      "tasks": [
+        "all compact regression suite"
+      ]
+    }
+  ],
+  "claim_boundary": "This contract locks the Tier 7.7 low-rank state repair campaign without implementing or scoring any repair candidate. It predeclares failure modes, repair families, controls, metrics, outcome classes, and baseline-escalation rules. Tier 7.8 and Tier 7.9 are explicitly queued behind the 7.7 repair campaign and must not activate until 7.7 routes there. No mechanism promotion, baseline freeze, public usefulness claim, or hardware/native transfer is authorized from this contract.",
+  "contract": {
+    "controls_count": 13,
+    "decision": "lock_campaign_and_authorize_localization",
+    "decision_boundary": "This contract locks the Tier 7.7 low-rank state repair campaign without implementing or scoring any repair candidate. It predeclares failure modes, repair families, controls, metrics, outcome classes, and baseline-escalation rules. Tier 7.8 and Tier 7.9 are explicitly queued behind the 7.7 repair campaign and must not activate until 7.7 routes there. No mechanism promotion, baseline freeze, public usefulness claim, or hardware/native transfer is authorized from this contract.",
+    "escalation_stages_count": 5,
+    "failure_class_locked": "low_effective_dimensionality_with_pr_near_2",
+    "failure_modes_count": 8,
+    "hypothesis": "The low-rank state collapse (PR near 2) is caused by one or more specific architectural pressures. A controlled localization gate can identify the primary cause, enabling a targeted repair instead of blind tuning.",
+    "metrics_count": 16,
+    "null_hypothesis": "The low-rank collapse is an irreducible property of the current architecture at its current capacity and cannot be materially improved without adding more neurons, external random projection, or nonlinear-lag features that generic controls can match.",
+    "outcome_classes_count": 13,
+    "prior_evidence": {
+      "77j": "low_rank_collapse_confirmed; PR stayed around 2 and readout collapse did not explain it",
+      "77l": "partitioned-driver repair improved task score but did not sufficiently increase dimensionality",
+      "77n": "generic random projection / nonlinear-lag controls explained the partitioned-driver gain",
+      "77q": "CRA-native temporal interface helped current CRA but still lost to strong generic controls",
+      "77s": "temporal-basis interface promoted only as bounded engineering utility, not a CRA-specific mechanism"
+    },
+    "question": "Which measured failure mode should the next repair target, and what would count as a real state-dimensionality repair rather than another generic feature win?",
+    "repair_families_count": 5
+  },
+  "controls": [
+    {
+      "class": "baseline",
+      "control": "current_cra_v2_5",
+      "mandatory_for_compact_score": true,
+      "mandatory_for_expanded_score": true
+    },
+    {
+      "class": "baseline",
+      "control": "current_cra_plus_temporal_basis_utility",
+      "mandatory_for_compact_score": true,
+      "mandatory_for_expanded_score": true
+    },
+    {
+      "class": "strong_generic_control",
+      "control": "random_projection",
+      "mandatory_for_compact_score": true,
+      "mandatory_for_expanded_score": true
+    },
+    {
+      "class": "strong_generic_control",
+      "control": "nonlinear_lag",
+      "mandatory_for_compact_score": true,
+      "mandatory_for_expanded_score": true
+    },
+    {
+      "class": "leakage_control",
+      "control": "target_shuffle",
+      "mandatory_for_compact_score": true,
+      "mandatory_for_expanded_score": true
+    },
+    {
+      "class": "leakage_control",
+      "control": "time_shuffle",
+      "mandatory_for_compact_score": true,
+      "mandatory_for_expanded_score": true
+    },
+    {
+      "class": "ablation",
+      "control": "no_plasticity",
+      "mandatory_for_compact_score": false,
+      "mandatory_for_expanded_score": false
+    },
+    {
+      "class": "ablation",
+      "control": "frozen_random_state",
+      "mandatory_for_compact_score": false,
+      "mandatory_for_expanded_score": false
+    },
+    {
+      "class": "ablation",
+      "control": "state_scramble",
+      "mandatory_for_compact_score": false,
+      "mandatory_for_expanded_score": false
+    },
+    {
+      "class": "ablation",
+      "control": "no_inhibition_diagnostic",
+      "mandatory_for_compact_score": false,
+      "mandatory_for_expanded_score": false
+    },
+    {
+      "class": "leakage_control",
+      "control": "input_channel_shuffle",
+      "mandatory_for_compact_score": false,
+      "mandatory_for_expanded_score": false
+    },
+    {
+      "class": "external_baseline",
+      "control": "ESN",
+      "mandatory_for_compact_score": false,
+      "mandatory_for_expanded_score": true
+    },
+    {
+      "class": "external_baseline",
+      "control": "online_LMS_ridge",
+      "mandatory_for_compact_score": false,
+      "mandatory_for_expanded_score": true
+    }
+  ],
+  "criteria": [
+    {
+      "criterion": "Tier 7.7s prerequisite referenced",
+      "details": "",
+      "name": "Tier 7.7s prerequisite referenced",
+      "note": "",
+      "operator": "contract self-consistent",
+      "pass": true,
+      "passed": true,
+      "rule": "contract self-consistent",
+      "value": true
+    },
+    {
+      "criterion": "failure class locked: low PR",
+      "details": "",
+      "name": "failure class locked: low PR",
+      "note": "",
+      "operator": "contract self-consistent",
+      "pass": true,
+      "passed": true,
+      "rule": "contract self-consistent",
+      "value": true
+    },
+    {
+      "criterion": "failure modes enumerated",
+      "details": "",
+      "name": "failure modes enumerated",
+      "note": "",
+      "operator": "== 8",
+      "pass": true,
+      "passed": true,
+      "rule": "== 8",
+      "value": 8
+    },
+    {
+      "criterion": "repair families predeclared",
+      "details": "",
+      "name": "repair families predeclared",
+      "note": "",
+      "operator": "== 5",
+      "pass": true,
+      "passed": true,
+      "rule": "== 5",
+      "value": 5
+    },
+    {
+      "criterion": "family A diversity-preserving locked",
+      "details": "",
+      "name": "family A diversity-preserving locked",
+      "note": "",
+      "operator": "== diversity_preserving_state_dynamics",
+      "pass": true,
+      "passed": true,
+      "rule": "== diversity_preserving_state_dynamics",
+      "value": "diversity_preserving_state_dynamics"
+    },
+    {
+      "criterion": "family B independent subspace locked",
+      "details": "",
+      "name": "family B independent subspace locked",
+      "note": "",
+      "operator": "== independent_causal_subspace_drivers",
+      "pass": true,
+      "passed": true,
+      "rule": "== independent_causal_subspace_drivers",
+      "value": "independent_causal_subspace_drivers"
+    },
+    {
+      "criterion": "family C topology/spectrum locked",
+      "details": "",
+      "name": "family C topology/spectrum locked",
+      "note": "",
+      "operator": "== recurrent_topology_spectrum_repair",
+      "pass": true,
+      "passed": true,
+      "rule": "== recurrent_topology_spectrum_repair",
+      "value": "recurrent_topology_spectrum_repair"
+    },
+    {
+      "criterion": "family D anti-homogenization locked",
+      "details": "",
+      "name": "family D anti-homogenization locked",
+      "note": "",
+      "operator": "== plasticity_anti_homogenization",
+      "pass": true,
+      "passed": true,
+      "rule": "== plasticity_anti_homogenization",
+      "value": "plasticity_anti_homogenization"
+    },
+    {
+      "criterion": "family E morphology-routing locked",
+      "details": "",
+      "name": "family E morphology-routing locked",
+      "note": "",
+      "operator": "== morphology_template_variability_route",
+      "pass": true,
+      "passed": true,
+      "rule": "== morphology_template_variability_route",
+      "value": "morphology_template_variability_route"
+    },
+    {
+      "criterion": "controls include random projection",
+      "details": "",
+      "name": "controls include random projection",
+      "note": "",
+      "operator": "true",
+      "pass": true,
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "controls include nonlinear-lag",
+      "details": "",
+      "name": "controls include nonlinear-lag",
+      "note": "",
+      "operator": "true",
+      "pass": true,
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "state-geometry metrics locked",
+      "details": "",
+      "name": "state-geometry metrics locked",
+      "note": "",
+      "operator": ">= 5",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 5",
+      "value": 11
+    },
+    {
+      "criterion": "task metrics locked",
+      "details": "",
+      "name": "task metrics locked",
+      "note": "",
+      "operator": ">= 4",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 4",
+      "value": 5
+    },
+    {
+      "criterion": "outcome classes locked",
+      "details": "",
+      "name": "outcome classes locked",
+      "note": "",
+      "operator": ">= 8",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 8",
+      "value": 13
+    },
+    {
+      "criterion": "baseline escalation locked",
+      "details": "",
+      "name": "baseline escalation locked",
+      "note": "",
+      "operator": "== 5",
+      "pass": true,
+      "passed": true,
+      "rule": "== 5",
+      "value": 5
+    },
+    {
+      "criterion": "compact score before expanded baselines",
+      "details": "",
+      "name": "compact score before expanded baselines",
+      "note": "",
+      "operator": "== 7.7v_compact_repair_score",
+      "pass": true,
+      "passed": true,
+      "rule": "== 7.7v_compact_repair_score",
+      "value": "7.7v_compact_repair_score"
+    },
+    {
+      "criterion": "stopping rules locked",
+      "details": "",
+      "name": "stopping rules locked",
+      "note": "",
+      "operator": "== 3",
+      "pass": true,
+      "passed": true,
+      "rule": "== 3",
+      "value": 3
+    },
+    {
+      "criterion": "route conditions to 7.8 locked",
+      "details": "",
+      "name": "route conditions to 7.8 locked",
+      "note": "",
+      "operator": ">= 3",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 3",
+      "value": 4
+    },
+    {
+      "criterion": "do-not rules locked",
+      "details": "",
+      "name": "do-not rules locked",
+      "note": "",
+      "operator": ">= 8",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 8",
+      "value": 11
+    },
+    {
+      "criterion": "expected artifacts locked",
+      "details": "",
+      "name": "expected artifacts locked",
+      "note": "",
+      "operator": ">= 10",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 10",
+      "value": 12
+    },
+    {
+      "criterion": "no baseline freeze authorized",
+      "details": "",
+      "name": "no baseline freeze authorized",
+      "note": "",
+      "operator": "false",
+      "pass": true,
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "criterion": "no mechanism promotion authorized",
+      "details": "",
+      "name": "no mechanism promotion authorized",
+      "note": "",
+      "operator": "false",
+      "pass": true,
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "criterion": "no hardware/native transfer authorized",
+      "details": "",
+      "name": "no hardware/native transfer authorized",
+      "note": "",
+      "operator": "false",
+      "pass": true,
+      "passed": true,
+      "rule": "false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 23,
+  "criteria_total": 23,
+  "do_not_rules": [
+    "start with a repair implementation before 7.7t contract passes",
+    "run 7.8 morphology as active before 7.7 routes there",
+    "run lifecycle/evolution before state repair or morphology route decision",
+    "use public adapters to rescue a failed standardized core gate",
+    "claim mechanism promotion from score gain alone",
+    "claim state repair from PR gain alone",
+    "drop random-projection or nonlinear-lag controls",
+    "freeze a baseline from a contract or compact score",
+    "port to hardware/native C before software usefulness survives controls",
+    "tune thresholds after seeing results",
+    "hide negative or generic-control-explained outcomes"
+  ],
+  "expected_artifacts": [
+    {
+      "artifact": "tier7_7t_results.json",
+      "required_for_contract": true
+    },
+    {
+      "artifact": "tier7_7t_contract.json",
+      "required_for_contract": true
+    },
+    {
+      "artifact": "tier7_7t_summary.csv",
+      "required_for_contract": true
+    },
+    {
+      "artifact": "tier7_7t_failure_modes.csv",
+      "required_for_contract": true
+    },
+    {
+      "artifact": "tier7_7t_candidate_repair_queue.csv",
+      "required_for_contract": true
+    },
+    {
+      "artifact": "tier7_7t_controls.csv",
+      "required_for_contract": true
+    },
+    {
+      "artifact": "tier7_7t_metrics.csv",
+      "required_for_contract": true
+    },
+    {
+      "artifact": "tier7_7t_outcome_classes.csv",
+      "required_for_contract": true
+    },
+    {
+      "artifact": "tier7_7t_baseline_escalation.csv",
+      "required_for_contract": true
+    },
+    {
+      "artifact": "tier7_7t_expected_artifacts.csv",
+      "required_for_contract": true
+    },
+    {
+      "artifact": "tier7_7t_claim_boundary.md",
+      "required_for_contract": true
+    },
+    {
+      "artifact": "tier7_7t_report.md",
+      "required_for_contract": true
+    }
+  ],
+  "failure_modes": [
+    {
+      "candidate_probe": "Compare state PR when each polyp partition receives independent input channels vs a single shared driver.",
+      "description": "Common input drive forces units into the same principal modes.",
+      "failure_mode": "shared_driver_synchronization",
+      "priority": 1
+    },
+    {
+      "candidate_probe": "Track per-neuron weight/filter similarity over training; compare fixed-random-weight vs learned-weight PR and pairwise correlations.",
+      "description": "Learning dynamics make many units converge to similar filters over time.",
+      "failure_mode": "plasticity_homogenization",
+      "priority": 2
+    },
+    {
+      "candidate_probe": "Measure PR with and without inhibition; compare reduced-inhibition and no-inhibition diagnostic variants.",
+      "description": "WTA or inhibition collapses state into a small number of dominant modes.",
+      "failure_mode": "inhibition_normalization_compression",
+      "priority": 3
+    },
+    {
+      "candidate_probe": "Measure state PR vs input channel count; compare per-input-channel contribution to state variance.",
+      "description": "State never receives enough independent causal channels.",
+      "failure_mode": "input_encoder_bottleneck",
+      "priority": 4
+    },
+    {
+      "candidate_probe": "Compare block-sparse, small-world, and all-to-all recurrent graph PR; measure recurrent weight eigen spectrum.",
+      "description": "Eigen spectrum / sparse graph structure supports only a few useful modes.",
+      "failure_mode": "recurrent_topology_bottleneck",
+      "priority": 5
+    },
+    {
+      "candidate_probe": "Compare state PR with trophic pressure enabled vs disabled; measure per-polyp activity variance distribution vs trophic counter.",
+      "description": "Survival/selection pressure suppresses diverse but initially weak states.",
+      "failure_mode": "trophic_energy_selection_compression",
+      "priority": 6
+    },
+    {
+      "candidate_probe": "Measure state PR vs readout-budgeted PR; compare linear readout vs richer readout observability.",
+      "description": "Recurrent state may be richer internally than the readout exposes.",
+      "failure_mode": "readout_interface_bottleneck",
+      "priority": 7
+    },
+    {
+      "candidate_probe": "Count per-neuron saturation/clipping events; measure state norm distribution; compare with/without activation clipping.",
+      "description": "Activity is dynamic but constrained to a narrow manifold by numerical bounds.",
+      "failure_mode": "clipping_saturation_quantization",
+      "priority": 8
+    }
+  ],
+  "generated_at_utc": "2026-05-09T19:07:31+00:00",
+  "metrics": [
+    {
+      "description": "Effective state dimensionality; target PR >= 4.0 or >= 2x current baseline.",
+      "domain": "state_geometry",
+      "mandatory": true,
+      "metric": "participation_ratio",
+      "threshold_at_128_state": "PR >= 4.0 for strong repair candidate; PR >= 2.5 for diagnostic progress"
+    },
+    {
+      "description": "Number of PCA components needed for 95% variance.",
+      "domain": "state_geometry",
+      "mandatory": true,
+      "metric": "rank_95",
+      "threshold_at_128_state": "> 2 (current is near 2)"
+    },
+    {
+      "description": "Number of PCA components needed for 99% variance.",
+      "domain": "state_geometry",
+      "mandatory": true,
+      "metric": "rank_99",
+      "threshold_at_128_state": "> rank_95"
+    },
+    {
+      "description": "Fraction of variance in the first principal component.",
+      "domain": "state_geometry",
+      "mandatory": true,
+      "metric": "top_pc_dominance",
+      "threshold_at_128_state": "decrease vs current baseline"
+    },
+    {
+      "description": "Eigenvalue distribution of state covariance matrix.",
+      "domain": "state_geometry",
+      "mandatory": true,
+      "metric": "covariance_spectrum",
+      "threshold_at_128_state": "broadened vs current baseline"
+    },
+    {
+      "description": "Geomean MSE on the locked Lorenz task.",
+      "domain": "task",
+      "mandatory": true,
+      "metric": "lorenz_geomean_mse",
+      "threshold_at_128_state": ">= 10% improvement vs current CRA and temporal-utility reference"
+    },
+    {
+      "description": "Geomean MSE on the locked Mackey-Glass task.",
+      "domain": "task",
+      "mandatory": true,
+      "metric": "mackey_glass_geomean_mse",
+      "threshold_at_128_state": "no > 10% material regression vs current baseline"
+    },
+    {
+      "description": "Geomean MSE on the repaired NARMA10 task.",
+      "domain": "task",
+      "mandatory": true,
+      "metric": "narma10_geomean_mse",
+      "threshold_at_128_state": "no > 10% material regression vs current baseline"
+    },
+    {
+      "description": "Geomean MSE across Mackey-Glass, Lorenz, and repaired NARMA10.",
+      "domain": "task",
+      "mandatory": true,
+      "metric": "aggregate_geomean_mse",
+      "threshold_at_128_state": "improve or stable vs current baseline"
+    },
+    {
+      "description": "Distribution of per-neuron activity variance.",
+      "domain": "state_geometry",
+      "mandatory": false,
+      "metric": "per_neuron_activity_variance"
+    },
+    {
+      "description": "Pairwise correlation matrix of state dimensions.",
+      "domain": "state_geometry",
+      "mandatory": false,
+      "metric": "pairwise_state_correlation"
+    },
+    {
+      "description": "Cosine similarity of learned weight vectors over time.",
+      "domain": "state_geometry",
+      "mandatory": false,
+      "metric": "weight_filter_similarity"
+    },
+    {
+      "description": "Variance contribution per input channel.",
+      "domain": "state_geometry",
+      "mandatory": false,
+      "metric": "per_input_channel_contribution"
+    },
+    {
+      "description": "Readout weight concentration / effective readout degrees of freedom.",
+      "domain": "state_geometry",
+      "mandatory": false,
+      "metric": "readout_concentration"
+    },
+    {
+      "description": "Fraction of neurons at saturation bounds.",
+      "domain": "state_geometry",
+      "mandatory": false,
+      "metric": "clipping_saturation_rate"
+    },
+    {
+      "description": "Variance across seeds 42/43/44.",
+      "domain": "task",
+      "mandatory": true,
+      "metric": "seed_variance"
+    }
+  ],
+  "next_gate": "Tier 7.7u - State-Collapse Causal Localization",
+  "nonclaims": [
+    "not a repair implementation",
+    "not a model score",
+    "not a mechanism promotion",
+    "not a baseline freeze",
+    "not public usefulness proof",
+    "not hardware/native transfer",
+    "not a curriculum/environment claim",
+    "not language, AGI, or ASI evidence"
+  ],
+  "outcome_classes": [
+    {
+      "action": "Route to Repair Family B (independent causal subspace drivers) in 7.7v.",
+      "outcome": "input_bottleneck_confirmed"
+    },
+    {
+      "action": "Route to Repair Family D (plasticity anti-homogenization) in 7.7v.",
+      "outcome": "plasticity_homogenization_confirmed"
+    },
+    {
+      "action": "Route to Repair Family A (diversity-preserving state dynamics) in 7.7v.",
+      "outcome": "inhibition_compression_confirmed"
+    },
+    {
+      "action": "Route to Repair Family C (recurrent topology/spectrum repair) in 7.7v.",
+      "outcome": "recurrent_topology_bottleneck_confirmed"
+    },
+    {
+      "action": "Route to Repair Family A or D depending on whether the compression is activity-based or plasticity-based.",
+      "outcome": "trophic_selection_compression_confirmed"
+    },
+    {
+      "action": "Implement a richer readout diagnostic; if confirmable as the primary cause, route to 7.7v as a separate readout-observability repair.",
+      "outcome": "readout_exposure_bottleneck_confirmed"
+    },
+    {
+      "action": "Fix activation bounds/normalization; rerun 7.7u diagnostics before committing a repair family.",
+      "outcome": "numeric_saturation_confirmed"
+    },
+    {
+      "action": "Prioritize the failure mode with the largest PR-sensitivity to intervention; if still inconclusive, try Family A (broadest applicability).",
+      "outcome": "mixed_or_inconclusive"
+    },
+    {
+      "action": "Preserve as bounded utility evidence; do not promote as a state repair.",
+      "description": "Task score improves but PR/rank remain collapsed.",
+      "outcome": "score_gain_without_dimension"
+    },
+    {
+      "action": "Preserve as geometric evidence; do not promote until usefulness gate passes.",
+      "description": "PR/rank improve but benchmark usefulness does not.",
+      "outcome": "dimension_gain_without_score"
+    },
+    {
+      "action": "Repair candidate is not CRA-specific; return to 7.7 to localize a different failure mode.",
+      "description": "Random projection or nonlinear-lag still explains the improvement.",
+      "outcome": "generic_control_explains_gain"
+    },
+    {
+      "action": "Preserve as utility evidence; no mechanism promotion or baseline freeze.",
+      "description": "Useful and safe, but not CRA-specific mechanism evidence.",
+      "outcome": "bounded_utility_only"
+    },
+    {
+      "action": "Route to 7.7x promotion/regression gate.",
+      "description": "Geometry, usefulness, and attribution all pass.",
+      "outcome": "mechanism_candidate"
+    }
+  ],
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7t_20260509_low_rank_state_repair_campaign_contract",
+  "planning_document": "/Users/james/JKS:CRA/docs/TIER_7_7_LOW_RANK_REPAIR_PLAN.md",
+  "prerequisite": {
+    "description": "Tier 7.7s promoted temporal-basis interface as bounded engineering utility; Tier 7.7t follows as the next contract.",
+    "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_7s_20260509_bounded_temporal_basis_utility_promotion/tier7_7s_results.json",
+    "sha256": "6141abee645d1797c74c3751bdeb92d52b79c9b4cb060cf060261534c5918f3b",
+    "tier": "7.7s"
+  },
+  "repair_families": [
+    {
+      "family": "A",
+      "goal": "Prevent units from collapsing into the same dominant modes.",
+      "mechanism_candidates": [
+        "activity decorrelation pressure",
+        "homeostatic target-rate diversity",
+        "anti-synchrony penalty or local inhibitory balancing",
+        "per-partition activity quotas"
+      ],
+      "name": "diversity_preserving_state_dynamics",
+      "required_controls": [
+        "no-diversity-pressure ablation",
+        "shuffled-diversity-pressure sham",
+        "global-whitening oracle upper bound",
+        "random projection",
+        "nonlinear-lag"
+      ],
+      "route_after_contract": "Tier 7.7v repair candidate compact score"
+    },
+    {
+      "family": "B",
+      "goal": "Give recurrent units independent causal views without relying on external random projection.",
+      "mechanism_candidates": [
+        "orthogonalized input projections",
+        "channel-specialized polyp partitions",
+        "multi-timescale causal trace banks",
+        "delay-line diversity with same feature budget",
+        "input dropout / channel masking during training to force specialization"
+      ],
+      "name": "independent_causal_subspace_drivers",
+      "required_controls": [
+        "same-feature random projection",
+        "nonlinear-lag",
+        "channel-shuffle",
+        "no-delay-line ablation",
+        "single-driver ablation"
+      ],
+      "route_after_contract": "Tier 7.7v repair candidate compact score"
+    },
+    {
+      "family": "C",
+      "goal": "Make the recurrent graph support more useful independent temporal modes.",
+      "mechanism_candidates": [
+        "spectral-radius-controlled recurrent initialization",
+        "block-sparse recurrent modules with weak cross-links",
+        "winnerless competition / balanced ring motifs",
+        "diverse recurrent time constants"
+      ],
+      "name": "recurrent_topology_spectrum_repair",
+      "required_controls": [
+        "permuted recurrence",
+        "orthogonal recurrence",
+        "block recurrence",
+        "state reset",
+        "same-edge-count random graph"
+      ],
+      "route_after_contract": "Tier 7.7v repair candidate compact score"
+    },
+    {
+      "family": "D",
+      "goal": "Keep learning from making every unit converge to the same filter.",
+      "mechanism_candidates": [
+        "novelty-preserving plasticity gates",
+        "weight/filter similarity penalty diagnostic",
+        "specialist protection / anti-collapse trophic pressure",
+        "slower plasticity for minority modes",
+        "diversity-aware consolidation"
+      ],
+      "name": "plasticity_anti_homogenization",
+      "required_controls": [
+        "no-plasticity",
+        "no-diversity-gate ablation",
+        "shuffled-specialist-protection sham",
+        "same-budget fixed plasticity"
+      ],
+      "route_after_contract": "Tier 7.7v repair candidate compact score"
+    },
+    {
+      "family": "E",
+      "goal": "Create state diversity through heterogeneous polyp templates.",
+      "mechanism_candidates": [
+        "variable polyp internal templates",
+        "diverse timescales",
+        "variable excitatory/inhibitory ratios",
+        "structured sparse connectivity"
+      ],
+      "name": "morphology_template_variability_route",
+      "required_controls": [
+        "same-capacity fixed template",
+        "morphology shuffle",
+        "same-feature random projection",
+        "nonlinear-lag",
+        "target shuffle",
+        "time shuffle"
+      ],
+      "route_after_contract": "Tier 7.8 contract only if 7.7u localizes bottleneck to template diversity or families A-D fail cleanly"
+    }
+  ],
+  "repair_queue": [
+    {
+      "activation_condition": "Failure mode localized to this family's target mechanism.",
+      "family": "A",
+      "goal": "Prevent units from collapsing into the same dominant modes.",
+      "name": "diversity_preserving_state_dynamics",
+      "next_tier": "Tier 7.7v repair candidate compact score",
+      "order_rule": "7.7u localization determines activation order"
+    },
+    {
+      "activation_condition": "Failure mode localized to this family's target mechanism.",
+      "family": "B",
+      "goal": "Give recurrent units independent causal views without relying on external random projection.",
+      "name": "independent_causal_subspace_drivers",
+      "next_tier": "Tier 7.7v repair candidate compact score",
+      "order_rule": "7.7u localization determines activation order"
+    },
+    {
+      "activation_condition": "Failure mode localized to this family's target mechanism.",
+      "family": "C",
+      "goal": "Make the recurrent graph support more useful independent temporal modes.",
+      "name": "recurrent_topology_spectrum_repair",
+      "next_tier": "Tier 7.7v repair candidate compact score",
+      "order_rule": "7.7u localization determines activation order"
+    },
+    {
+      "activation_condition": "Failure mode localized to this family's target mechanism.",
+      "family": "D",
+      "goal": "Keep learning from making every unit converge to the same filter.",
+      "name": "plasticity_anti_homogenization",
+      "next_tier": "Tier 7.7v repair candidate compact score",
+      "order_rule": "7.7u localization determines activation order"
+    },
+    {
+      "activation_condition": "Failure mode localized to this family's target mechanism.",
+      "family": "E",
+      "goal": "Create state diversity through heterogeneous polyp templates.",
+      "name": "morphology_template_variability_route",
+      "next_tier": "Tier 7.8 contract only if 7.7u localizes bottleneck to template diversity or families A-D fail cleanly",
+      "order_rule": "7.7u localization determines activation order"
+    }
+  ],
+  "route_conditions": [
+    {
+      "condition": "7.7u localizes bottleneck to lack of intrinsic unit/template diversity.",
+      "requirement": "Tier 7.7u must explicitly confirm this failure mode before 7.8 activates.",
+      "route": "Tier 7.8 morphology"
+    },
+    {
+      "condition": "Repair families A-D fail cleanly and morphology is the next best hypothesis.",
+      "requirement": "A 7.7 closeout contract must explicitly route to morphology.",
+      "route": "Tier 7.8 morphology"
+    },
+    {
+      "condition": "A 7.7 closeout contract explicitly routes the low-rank repair campaign to morphology.",
+      "requirement": "Requires formal closeout evidence.",
+      "route": "Tier 7.8 morphology"
+    },
+    {
+      "condition": "7.7 low-rank repair is fixed or formally bounded, AND 7.8 static morphology is tested or bypassed.",
+      "requirement": "Lifecycle must not activate until state repair and morphology decisions are resolved.",
+      "route": "Tier 7.9 lifecycle"
+    }
+  ],
+  "runner_revision": "tier7_7t_low_rank_state_repair_campaign_contract_20260509_0001",
+  "status": "pass",
+  "stopping_rules": [
+    {
+      "action": "Execute 7.7 closeout contract; narrow claim to bounded temporal utility plus strong Mackey signal with unresolved Lorenz bottleneck.",
+      "condition": "three_families_fail",
+      "rule": "Three distinct repair families fail to increase state dimensionality and usefulness under locked controls."
+    },
+    {
+      "action": "Execute 7.7 closeout contract; the architecture has an unresolved state bottleneck that generic controls can match.",
+      "condition": "generic_control_explains_all",
+      "rule": "Every useful score gain remains explained by random projection or nonlinear-lag controls."
+    },
+    {
+      "action": "Execute 7.7 closeout contract; the benefit is a capacity confound, not a mechanism repair.",
+      "condition": "capacity_only",
+      "rule": "State geometry improves only by adding capacity that matched controls can reproduce."
+    }
+  ],
+  "tier": "Tier 7.7t - Low-Rank State Repair Campaign Contract"
+}

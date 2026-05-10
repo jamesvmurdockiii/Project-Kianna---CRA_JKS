@@ -1,0 +1,17 @@
+metric,domain,description,threshold_at_128_state,mandatory
+participation_ratio,state_geometry,Effective state dimensionality; target PR >= 4.0 or >= 2x current baseline.,PR >= 4.0 for strong repair candidate; PR >= 2.5 for diagnostic progress,True
+rank_95,state_geometry,Number of PCA components needed for 95% variance.,> 2 (current is near 2),True
+rank_99,state_geometry,Number of PCA components needed for 99% variance.,> rank_95,True
+top_pc_dominance,state_geometry,Fraction of variance in the first principal component.,decrease vs current baseline,True
+covariance_spectrum,state_geometry,Eigenvalue distribution of state covariance matrix.,broadened vs current baseline,True
+lorenz_geomean_mse,task,Geomean MSE on the locked Lorenz task.,>= 10% improvement vs current CRA and temporal-utility reference,True
+mackey_glass_geomean_mse,task,Geomean MSE on the locked Mackey-Glass task.,no > 10% material regression vs current baseline,True
+narma10_geomean_mse,task,Geomean MSE on the repaired NARMA10 task.,no > 10% material regression vs current baseline,True
+aggregate_geomean_mse,task,"Geomean MSE across Mackey-Glass, Lorenz, and repaired NARMA10.",improve or stable vs current baseline,True
+per_neuron_activity_variance,state_geometry,Distribution of per-neuron activity variance.,,False
+pairwise_state_correlation,state_geometry,Pairwise correlation matrix of state dimensions.,,False
+weight_filter_similarity,state_geometry,Cosine similarity of learned weight vectors over time.,,False
+per_input_channel_contribution,state_geometry,Variance contribution per input channel.,,False
+readout_concentration,state_geometry,Readout weight concentration / effective readout degrees of freedom.,,False
+clipping_saturation_rate,state_geometry,Fraction of neurons at saturation bounds.,,False
+seed_variance,task,Variance across seeds 42/43/44.,,True

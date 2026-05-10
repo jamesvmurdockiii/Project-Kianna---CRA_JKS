@@ -1,0 +1,5 @@
+outcome,condition,action
+antisymmetric_recurrence_confirmed,primary pass AND both shams separated,Within-polyp antisymmetric recurrence is the spiking analog of standalone w_anti and closes the dimensional gap.
+recurrence_helps_but_not_specific,PR improves but shuffled weights also improve,Any E->E recurrence helps; antisymmetric structure is not the causal factor.
+recurrence_does_not_help,No PR improvement over baseline,Within-polyp E->E recurrence (even with antisymmetry) does not increase state dimensionality at this scale.
+recurrence_breaks_organism,"Organism fails to run, explodes, or produces NaN values",The antisymmetric E->E recurrence with LIF neurons creates unstable dynamics at tested parameters.

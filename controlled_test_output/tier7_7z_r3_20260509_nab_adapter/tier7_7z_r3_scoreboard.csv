@@ -1,0 +1,16 @@
+file,file_id,seed,n_points,n_anomaly,n_windows,baseline_error,anomaly_error,ratio,signal
+art_daily_flatmiddle.csv,artificialWithAnomaly/art_daily_flatmiddle.csv,42,4032,403,1,5.5794,6.6338,1.189,False
+art_daily_flatmiddle.csv,artificialWithAnomaly/art_daily_flatmiddle.csv,43,4032,403,1,5.5414,6.5961,1.1903,False
+art_daily_flatmiddle.csv,artificialWithAnomaly/art_daily_flatmiddle.csv,44,4032,403,1,5.5573,6.6112,1.1896,False
+ambient_temperature_system_failure.csv,realKnownCause/ambient_temperature_system_failure.csv,42,7267,726,2,1.6625,0.7725,0.4646,False
+ambient_temperature_system_failure.csv,realKnownCause/ambient_temperature_system_failure.csv,43,7267,726,2,1.6629,0.7727,0.4647,False
+ambient_temperature_system_failure.csv,realKnownCause/ambient_temperature_system_failure.csv,44,7267,726,2,1.6612,0.771,0.4641,False
+machine_temperature_system_failure.csv,realKnownCause/machine_temperature_system_failure.csv,42,22695,2268,4,1.2942,1.5205,1.1748,False
+machine_temperature_system_failure.csv,realKnownCause/machine_temperature_system_failure.csv,43,22695,2268,4,1.2942,1.5207,1.175,False
+machine_temperature_system_failure.csv,realKnownCause/machine_temperature_system_failure.csv,44,22695,2268,4,1.2938,1.5209,1.1756,False
+ec2_cpu_utilization_24ae8d.csv,realAWSCloudwatch/ec2_cpu_utilization_24ae8d.csv,42,4032,402,2,0.0622,0.0658,1.0577,False
+ec2_cpu_utilization_24ae8d.csv,realAWSCloudwatch/ec2_cpu_utilization_24ae8d.csv,43,4032,402,2,0.0609,0.0644,1.0571,False
+ec2_cpu_utilization_24ae8d.csv,realAWSCloudwatch/ec2_cpu_utilization_24ae8d.csv,44,4032,402,2,0.0629,0.0707,1.1242,False
+TravelTime_387.csv,realTraffic/TravelTime_387.csv,42,2500,249,3,96.0188,150.1197,1.5634,True
+TravelTime_387.csv,realTraffic/TravelTime_387.csv,43,2500,249,3,96.0175,150.1182,1.5634,True
+TravelTime_387.csv,realTraffic/TravelTime_387.csv,44,2500,249,3,96.0183,150.1182,1.5634,True

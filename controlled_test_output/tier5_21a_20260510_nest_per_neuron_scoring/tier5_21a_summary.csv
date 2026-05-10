@@ -1,0 +1,11 @@
+name,criterion,value,rule,passed,note
+prereq 5.21 exists,prereq 5.21 exists,True,true,True,
+16-polyp per-neuron PR computed,16-polyp per-neuron PR computed,True,true,True,PR=1.0
+16-polyp per-polyp PR computed,16-polyp per-polyp PR computed,True,true,True,PR=1.3
+primary: per-neuron PR > 4.0,primary: per-neuron PR > 4.0,False,true,False,PR=1.0
+primary: per-neuron > 2x per-polyp,primary: per-neuron > 2x per-polyp,False,true,False,ratio=0.8x
+sham: shuffled delta > 2.0,sham: shuffled delta > 2.0,False,true,False,delta=-15.3
+ablation: diversity needed,ablation: diversity needed,True,true,True,no_diversity PR=1.0 vs candidate=1.0
+outcome classified,outcome classified,False,true,False,per_neuron_pr_not_supported
+no baseline freeze,no baseline freeze,False,false,True,
+no mechanism promotion,no mechanism promotion,False,false,True,

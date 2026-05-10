@@ -1,0 +1,4 @@
+model,seed,test_rmse
+v26_eoc_ridge,42,52.72599902991802
+v26_eoc_ridge,43,51.854593511320324
+v26_eoc_ridge,44,52.50509673031159

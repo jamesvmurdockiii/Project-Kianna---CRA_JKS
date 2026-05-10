@@ -1,0 +1,10 @@
+name,criterion,value,rule,passed,note
+prereq 4.33b exists,prereq 4.33b exists,True,true,True,
+all runtime source files present,all runtime source files present,True,true,True,
+bundle created,bundle created,True,true,True,
+runner copied,runner copied,True,true,True,
+metadata.json written,metadata.json written,True,true,True,
+JobManager command defined,JobManager command defined,True,true,True,
+expected artifacts declared,expected artifacts declared,6,>= 3,True,
+no hardware evidence claimed,no hardware evidence claimed,False,false,True,
+no baseline freeze,no baseline freeze,False,false,True,

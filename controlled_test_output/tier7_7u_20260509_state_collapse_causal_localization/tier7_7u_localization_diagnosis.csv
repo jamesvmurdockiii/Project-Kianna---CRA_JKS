@@ -1,0 +1,8 @@
+hypothesis,evidence,support,pr_pre,pr_post,pr_drop,status,action
+,,,,,,not_implemented,Add no-plasticity model variant to CRA config: freeze or zero learning rate while preserving recurrence.
+,,,,,,not_implemented,Add no-inhibition model variant: disable WTA/inhibitory normalization within polyp populations.
+,,,,,,not_implemented,Add frozen-recurrent model variant: initialize random recurrent weights and freeze them.
+,,,,,,not_implemented,Add state-reset model variant: periodically reset hidden state to zero/varied initialization.
+,,,,,,not_implemented,Add input-shuffle model variant: permute input channels before feature encoding.
+,,,,,,not_implemented,Add per-partition state readout to expose partition-specific PR and activity.
+,,,,,,not_implemented,Instrument trophic counters to measure selection pressure on state diversity.

@@ -1,0 +1,50 @@
+{
+  "claim_boundary": "NEST organism within-polyp diversity diagnostic only. Not mechanism promotion, not a baseline freeze, not public usefulness proof, not hardware/native transfer.",
+  "code_change": {
+    "changes": [
+      "Replace sin(idx * 2.4) * 0.02 bias with per-polyp random biases at amplitude 0.15 * sensory_drive",
+      "Assign each input neuron a unique gain (0.3 + index * 0.15) on sensory_drive"
+    ],
+    "file": "coral_reef_spinnaker/polyp_population.py",
+    "method": "update_current_injections"
+  },
+  "decision": "contract_locked_authorize_scoring_gate",
+  "hypothesis": "The current organism has all 8 input neurons per polyp receiving identical sensory drive, with per-neuron biases at \u00b10.02 nA (negligible vs ~30 nA signal). Different input gains and meaningful biases will cause input neurons to fire at different rates, which propagates through the within-polyp E/I structure to create diverse excitatory neuron firing patterns.",
+  "measurement": {
+    "population_sizes": {
+      "diagnostic": [
+        8
+      ],
+      "primary": 16
+    },
+    "pr_computation": "Standard PR on test split covariance",
+    "state_vector": "Per-step per-polyp activity_rate (one scalar per polyp)"
+  },
+  "null_hypothesis": "Per-neuron input diversity does not materially increase state dimensionality because the within-polyp connectivity is all-to-all from input to exc/inh, and the inhibitory feedback loop homogenizes any input-level diversity.",
+  "outcome_classes": [
+    {
+      "action": "Document that within-polyp input diversity increases state dimensionality. Promote as organism configuration change.",
+      "condition": "primary pass AND sham separated",
+      "outcome": "per_neuron_diversity_confirmed"
+    },
+    {
+      "action": "Document partial signal with remaining gap.",
+      "condition": "PR improves but does not reach 2.5 or 1.5x",
+      "outcome": "per_neuron_diversity_partial"
+    },
+    {
+      "action": "Within-polyp input diversity alone does not break synchrony.",
+      "condition": "No meaningful PR improvement over baseline",
+      "outcome": "per_neuron_diversity_not_supported"
+    }
+  ],
+  "pass_criteria": {
+    "primary": "16-polyp per-polyp PR > 2.5 AND PR > 1.5x baseline (no per-neuron diversity)"
+  },
+  "question": "Does per-neuron input gain diversity within each polyp's 8 input neurons (0.3x-1.5x gain range on sensory signal, plus amplified per-neuron biases at 15% of sensory ceiling) increase NEST organism state dimensionality beyond the current PR\u22481.3 ceiling?",
+  "sham": {
+    "description": "Same per-input-neuron gain values but randomly shuffled across neurons within each polyp. Tests whether specific gain-to-position mapping matters or any 8 different gains produce the same diversity.",
+    "name": "shuffled_input_neuron_gains",
+    "passes_if": "Shuffled gain PR < candidate PR - 0.5, confirming structured gain assignment is causal."
+  }
+}

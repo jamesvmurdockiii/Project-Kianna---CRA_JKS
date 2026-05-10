@@ -1,0 +1,150 @@
+{
+  "claim_boundary": "Compact repair candidate scoring (Family B) only. Not expanded confirmation, not mechanism promotion, not a baseline freeze, not public usefulness proof, not hardware/native transfer.",
+  "criteria": [
+    {
+      "name": "prereq 7.7v-r0 exists",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "name": "localization routed to Family B",
+      "note": "shuffled_input gap drives Family B selection",
+      "passed": true,
+      "rule": "== B",
+      "value": "B"
+    },
+    {
+      "name": "tasks configured",
+      "note": "",
+      "passed": true,
+      "rule": ">= 1",
+      "value": 3
+    },
+    {
+      "name": "seeds configured",
+      "note": "",
+      "passed": true,
+      "rule": ">= 1",
+      "value": 1
+    },
+    {
+      "name": "candidate probe executed",
+      "note": "",
+      "passed": true,
+      "rule": ">= 1",
+      "value": 3
+    },
+    {
+      "name": "baselines executed",
+      "note": "",
+      "passed": true,
+      "rule": ">= 1",
+      "value": 9
+    },
+    {
+      "name": "variant PR summary produced",
+      "note": "",
+      "passed": true,
+      "rule": ">= 2",
+      "value": 4
+    },
+    {
+      "name": "outcome classified",
+      "note": "classification=mechanism_candidate_requires_expanded_confirmation",
+      "passed": true,
+      "rule": "not mechanism_candidate_requires_expanded_confirmation",
+      "value": "mechanism_candidate_requires_expanded_confirmation"
+    },
+    {
+      "name": "no baseline freeze authorized",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "name": "no mechanism promotion authorized",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "name": "no hardware/native transfer",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 11,
+  "criteria_total": 11,
+  "diagnoses": [
+    {
+      "detail": "orthogonal baseline mean PR=2.0084",
+      "finding": "baseline_confirm_low_PR"
+    },
+    {
+      "detail": "candidate PR=5.4864 vs baseline PR=2.0084",
+      "finding": "candidate_improves_PR"
+    }
+  ],
+  "generated_at_utc": "2026-05-09T20:03:13+00:00",
+  "hidden": 128,
+  "length": 8000,
+  "next_gate": "Tier 7.7w expanded confirmation (if candidate beats shuffled_input)",
+  "nonclaims": [
+    "not a mechanism promotion",
+    "not a baseline freeze",
+    "not public usefulness proof",
+    "not hardware/native transfer"
+  ],
+  "outcome": "mechanism_candidate_requires_expanded_confirmation",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7v_20260509_repair_candidate_compact_score",
+  "repair_family": "B",
+  "repair_name": "independent_causal_subspace_drivers",
+  "results_count": 12,
+  "runner_revision": "tier7_7v_repair_candidate_compact_score_20260509_0001",
+  "seeds": [
+    42
+  ],
+  "status": "pass",
+  "tasks": [
+    "mackey_glass",
+    "lorenz",
+    "narma10"
+  ],
+  "tier": "Tier 7.7v - Repair Candidate Compact Score (Family B)",
+  "variant_summary": {
+    "family_b_orthogonalized_input": {
+      "max_pr": 5.9353,
+      "mean_pr": 5.4864,
+      "min_pr": 4.9913,
+      "n": 3,
+      "stdev_pr": 0.3868
+    },
+    "orthogonal": {
+      "max_pr": 2.3884,
+      "mean_pr": 2.0084,
+      "min_pr": 1.7049,
+      "n": 3,
+      "stdev_pr": 0.2842
+    },
+    "random_recurrent": {
+      "max_pr": 2.313,
+      "mean_pr": 2.0044,
+      "min_pr": 1.6519,
+      "n": 3,
+      "stdev_pr": 0.2717
+    },
+    "shuffled_input": {
+      "max_pr": 6.8007,
+      "mean_pr": 4.5656,
+      "min_pr": 3.4451,
+      "n": 3,
+      "stdev_pr": 1.5804
+    }
+  }
+}

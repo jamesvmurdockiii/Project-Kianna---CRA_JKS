@@ -218,6 +218,9 @@ class Organism:
             backend_factory=self._backend_factory,
         )
 
+        # Set experimental config flags on the population before polyps are added
+        self.polyp_population.config = cfg_spin
+
         # 2. Founders
         initial_pop = int(getattr(self.config.lifecycle, "initial_population", 1))
         if initial_pop < 1:
@@ -258,16 +261,29 @@ class Organism:
             backend_factory=self._backend_factory,
         )
 
-        # For sPyNNaker pre-allocation mode, create the full static projection
-        # matrix now so it exists before the first sim.run().
-        if (
-            self._backend_factory.backend_name == "sPyNNaker"
-            and getattr(self._backend_factory, "_preallocate", False)
-        ):
+        # 3b. Antisymmetric inter-polyp edges: create a fully-connected graph
+        # with skew-symmetric weights for edge-of-chaos recurrent dynamics.
+        use_antisym = getattr(self.config.spinnaker, "antisymmetric_inter_polyp_edges", False)
+        if use_antisym:
+            polyp_ids = [st.polyp_id for st in founder_states if st.is_alive]
+            n = len(polyp_ids)
+            for i in range(n):
+                for j in range(n):
+                    if i == j:
+                        continue
+                    src_id = polyp_ids[i]
+                    dst_id = polyp_ids[j]
+                    weight = 0.3 if i < j else -0.3
+                    if not self.network.has_edge(src_id, dst_id):
+                        self.network.add_edge(src_id, dst_id, weight=weight)
+
+        # For sPyNNaker pre-allocation or NEST inter-polyp projections,
+        # sync the network graph to create actual synaptic connections.
+        if getattr(self.config.spinnaker, "sync_network_at_init", True):
             try:
                 self.network.sync_to_spinnaker()
             except Exception as exc:
-                logger.warning("Pre-allocation sync during init failed: %s", exc)
+                logger.warning("Network sync during init failed: %s", exc)
 
         # 4. Subsystems
         self.energy_manager = EnergyManager(
@@ -460,6 +476,11 @@ class Organism:
         n_channels = int(getattr(self.config.spinnaker, "n_input_per_polyp", 1))
         encoded = np.asarray(adapter.encode(observation, n_channels), dtype=float).reshape(-1)
         sensory_value = float(encoded[0]) if encoded.size else 0.0
+        # Store full encoded vector for per-input-neuron routing in _execute_task_step
+        if encoded.size > 1:
+            self._last_encoded = np.asarray(encoded, dtype=float)
+        else:
+            self._last_encoded = None
 
         def outcome_factory(
             polyp_states: list,
@@ -526,9 +547,27 @@ class Organism:
         #    task-relevant input to learn from. update_current_injections adds
         #    the baseline internally.
         if self.polyp_population is not None:
-            for state in self.polyp_population.states:
+            use_diverse = getattr(self.config.spinnaker, "per_polyp_input_diversity", False)
+            if use_diverse and not hasattr(self, '_polyp_gains'):
+                rng_ = np.random.default_rng(self.config.seed + 99999)
+                n = len(self.polyp_population.states)
+                self._polyp_gains = rng_.uniform(0.3, 1.7, size=n)
+
+            for i, state in enumerate(self.polyp_population.states):
                 if state.is_alive:
-                    state.sensory_drive = sensory_value * 30.0
+                    gain = self._polyp_gains[i] if (use_diverse and hasattr(self, '_polyp_gains') and i < len(self._polyp_gains)) else 1.0
+                    state.sensory_drive = sensory_value * 30.0 * gain
+                    # Route encoded channels to per-input-neuron values
+                    n_input = state.input_slice.stop - state.input_slice.start
+                    channel_vals = np.zeros(n_input, dtype=float)
+                    encoded = getattr(self, '_last_encoded', None)
+                    if encoded is not None and encoded.size > 1:
+                        for j in range(min(n_input, encoded.size)):
+                            channel_vals[j] = float(encoded[j]) * 30.0 * gain
+                    else:
+                        for j in range(n_input):
+                            channel_vals[j] = sensory_value * 30.0 * gain * (0.5 + 0.5 * j / max(1, n_input-1))
+                    state._sensory_lags = channel_vals
             self.polyp_population.update_current_injections()
 
         # 1. SpiNNaker execution
@@ -1735,6 +1774,14 @@ class Organism:
 
         if self.polyp_population is not None:
             try:
+                # Capture per-neuron spikes before get_polyp_summaries clears buffer
+                self._last_per_neuron_spikes = None
+                try:
+                    data = self.polyp_population.population.get_data("spikes", clear=False)
+                    self._last_per_neuron_spikes = [len(train) for train in data.segments[0].spiketrains]
+                except Exception:
+                    self._last_per_neuron_spikes = None
+
                 summaries = self.polyp_population.get_polyp_summaries(runtime_ms)
                 self._last_polyp_summaries = summaries
                 # Copy predictions from summaries back to polyp states
@@ -1770,6 +1817,10 @@ class Organism:
                 logger.warning("get_polyp_summaries() failed (%s); falling back to synthetic", exc)
                 return self._synthetic_spike_fallback(runtime_ms)
         return {}
+
+    def get_per_neuron_spike_vector(self) -> list[int]:
+        """Return per-neuron spike counts from the most recent step."""
+        return list(self._last_per_neuron_spikes) if self._last_per_neuron_spikes else []
 
     def _synthetic_spike_fallback(self, runtime_ms: float) -> dict[int, int]:
         self._synthetic_fallback_count += 1

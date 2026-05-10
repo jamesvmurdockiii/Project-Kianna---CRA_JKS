@@ -1610,27 +1610,46 @@ ability.
     gate beats or cleanly separates from random-projection and nonlinear-lag
     controls.
 
-131. **CURRENT ACTIVE STEP** - Tier 7.7t low-rank state repair campaign
-    contract:
-    keep Tier 7.7 active until the dynamic low-effective-dimensionality state
-    collapse is repaired, bounded, or explicitly routed to a next mechanism
-    family. Canonical planning details live in
-    `docs/TIER_7_7_LOW_RANK_REPAIR_PLAN.md`.
+131. **COMPLETE** - Tier 7.7t low-rank state repair campaign contract:
+    passed 23/23 at
+    `controlled_test_output/tier7_7t_20260509_low_rank_state_repair_campaign_contract/`.
+    Outcome: `campaign_contract_locked`. Eight failure modes, five repair families
+    (A-E), mandatory controls, state-geometry and task metrics, thirteen outcome
+    classes, five-stage baseline escalation, three stopping rules, four route
+    conditions to Tier 7.8/7.9, and explicit do-not-rules are locked before
+    Tier 7.7u causal localization. Contract only; no repair implementation, no
+    scoring, no mechanism promotion, no baseline freeze.
 
-132. Tier 7.7u causal localization:
-    determine whether the ~2D effective-state collapse enters through shared
-    input drive, plasticity homogenization, inhibition/normalization,
-    input-encoder bottleneck, recurrent topology, trophic/energy pressure,
-    readout exposure, or numerical clipping/saturation. Do this before another
-    broad architecture repair.
+132. **COMPLETE** - Tier 7.7u state-collapse causal localization:
+    passed 13/13 at
+    `controlled_test_output/tier7_7u_20260509_state_collapse_causal_localization/`.
+    Outcome: `localization_protocol_locked_awaits_model_variants`. Ten probe
+    definitions, seven required diagnostic model variants, seven diagnostic
+    controls, and nine outcome classification rules are locked. Probe
+    infrastructure is importable. Full causal scoring awaits CRA config-layer
+    model-variant implementation. Tier 7.7v repair candidate compact score is
+    the next gate but requires at least the top-4 priority model variants
+    (no_plasticity, no_inhibition, frozen_recurrent, input_channel_shuffle).
 
-133. Tier 7.7v+ repair queue:
-    test one repair family at a time. Candidate families are
-    diversity-preserving state dynamics, independent causal subspace drivers,
-    recurrent topology/spectrum repair, plasticity anti-homogenization, and
-    morphology/template variability routing. Each candidate needs ablations,
-    random-projection and nonlinear-lag controls, target/time shuffle guards,
-    and compact task scoring before expanded baselines.
+133. **COMPLETE** - Tier 7.7v-r0 diagnostic model variant implementation:
+    passed 13/13 at
+    `controlled_test_output/tier7_7v_r0_20260509_diagnostic_model_variants/`.
+    Outcome: `diagnostic_variants_implemented_and_verified`. Six model variants
+    registered and verified with distinct participation ratios. Extended
+    tier7_7j.basis_features with random_recurrent and shuffled_input modes.
+
+134. **COMPLETE** - Tier 7.7v repair candidate compact score (Family B):
+    passed 11/11 at
+    `controlled_test_output/tier7_7v_20260509_repair_candidate_compact_score/`.
+    Outcome: `mechanism_candidate_requires_expanded_confirmation`. Family B
+    candidate (orthogonalized input + block-structured recurrence) achieves
+    PR=5.49 vs baseline PR=2.01, beats shuffled_input (PR=4.57).
+
+135. **CURRENT ACTIVE STEP** - Tier 7.7w expanded standardized confirmation:
+    required lengths 8000/16000/32000, seeds 42/43/44, Mackey-Glass/Lorenz/
+    repaired-NARMA10, plus ESN/reservoir, online lag/ridge, and small GRU
+    baselines. Run only if compact repair passes at 8000. If expanded
+    confirmation survives, route to 7.7x promotion/regression.
 
 134. Tier 7.7w expanded standardized confirmation, only after a compact repair
     candidate survives:

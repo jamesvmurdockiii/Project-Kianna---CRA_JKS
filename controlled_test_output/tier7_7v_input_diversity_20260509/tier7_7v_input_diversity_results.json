@@ -1,0 +1,77 @@
+{
+  "baseline_pr_known": 2.01,
+  "claim_boundary": "Input diversity hypothesis test. Not mechanism promotion, not a baseline freeze.",
+  "criteria": [
+    {
+      "name": "multi_band candidate scored",
+      "note": "",
+      "passed": true,
+      "rule": ">= 1",
+      "value": 9
+    },
+    {
+      "name": "diff_embedding candidate scored",
+      "note": "",
+      "passed": true,
+      "rule": ">= 1",
+      "value": 9
+    },
+    {
+      "name": "multi_band PR > baseline (~2.0)",
+      "note": "multi_band PR=2.8016855843902815",
+      "passed": true,
+      "rule": ">= 2.5",
+      "value": 2.8016855843902815
+    },
+    {
+      "name": "diff_embed PR > baseline (~2.0)",
+      "note": "diff_embed PR=4.758843133618434",
+      "passed": true,
+      "rule": ">= 2.5",
+      "value": 4.758843133618434
+    },
+    {
+      "name": "best candidate PR >= 3.5",
+      "note": "multi_band=2.8017, diff_embed=4.7588",
+      "passed": true,
+      "rule": ">= 3.5",
+      "value": 4.758843133618434
+    },
+    {
+      "name": "outcome classified",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "name": "no baseline freeze authorized",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 7,
+  "criteria_total": 7,
+  "diff_embedding": {
+    "mse_geomean": 0.2126611573058602,
+    "n": 9,
+    "pr_max": 5.9623160663734955,
+    "pr_mean": 4.758843133618434
+  },
+  "generated_at_utc": "2026-05-09T21:10:36+00:00",
+  "multi_band": {
+    "mse_geomean": 0.20529292493576,
+    "n": 9,
+    "pr_max": 3.2730104308756562,
+    "pr_mean": 2.8016855843902815
+  },
+  "next_gate": "7.7 closeout or morphology routing per 7.7t contract",
+  "outcome": "input_diversity_hypothesis_confirmed",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7v_input_diversity_20260509",
+  "pr_ratio": 2.3675836485663853,
+  "runner_revision": "tier7_7v_input_diversity_20260509_0001",
+  "status": "pass",
+  "tier": "Tier 7.7v-InputDiversity - Multi-Band Decomposition Hypothesis Test"
+}

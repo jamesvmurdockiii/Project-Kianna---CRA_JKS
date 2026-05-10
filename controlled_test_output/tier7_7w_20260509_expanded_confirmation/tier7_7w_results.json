@@ -1,0 +1,114 @@
+{
+  "baseline_agg_mse": 1.9839872132798724,
+  "baseline_mse_by_task_length": {
+    "('lorenz', 42)": 1.083301,
+    "('mackey_glass', 42)": 7.66643,
+    "('narma10', 42)": 0.940317
+  },
+  "baseline_pr_mean": 1.5560847500767583,
+  "baseline_tasks": 3,
+  "candidate_agg_mse": 2.0848820852709067,
+  "candidate_pr_mean": 1.471314823205077,
+  "candidate_tasks": 3,
+  "claim_boundary": "Expanded standardized confirmation for Family B repair candidate. Not mechanism promotion, not a baseline freeze, not public usefulness proof, not hardware/native transfer.",
+  "criteria": [
+    {
+      "name": "prereq 7.7v exists",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "name": "candidate scored",
+      "note": "",
+      "passed": true,
+      "rule": ">= 3",
+      "value": 3
+    },
+    {
+      "name": "orthogonal baseline scored",
+      "note": "",
+      "passed": true,
+      "rule": ">= 3",
+      "value": 3
+    },
+    {
+      "name": "shuffled control scored",
+      "note": "",
+      "passed": true,
+      "rule": ">= 1",
+      "value": 3
+    },
+    {
+      "name": "multiple lengths scored",
+      "note": "lengths={42}",
+      "passed": true,
+      "rule": ">= 1",
+      "value": 1
+    },
+    {
+      "name": "multiple seeds scored",
+      "note": "seeds={42}",
+      "passed": true,
+      "rule": ">= 1",
+      "value": 1
+    },
+    {
+      "name": "PR improved vs baseline",
+      "note": "candidate PR=1.471314823205077, baseline PR=1.5560847500767583",
+      "passed": false,
+      "rule": "true",
+      "value": false
+    },
+    {
+      "name": "outcome classified",
+      "note": "classification=expanded_not_confirmed",
+      "passed": false,
+      "rule": "true",
+      "value": false
+    },
+    {
+      "name": "no baseline freeze authorized",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "name": "no mechanism promotion authorized",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "name": "no hardware/native transfer",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 9,
+  "criteria_total": 11,
+  "generated_at_utc": "2026-05-09T20:16:40+00:00",
+  "mse_by_task_length": {
+    "('lorenz', 42)": 1.236794,
+    "('mackey_glass', 42)": 7.119029,
+    "('narma10', 42)": 1.029263
+  },
+  "mse_ratio": 0.9516064372638493,
+  "next_gate": "Tier 7.7x promotion/regression (if expanded confirmation survives)",
+  "nonclaims": [
+    "not mechanism promotion",
+    "not baseline freeze",
+    "not public usefulness proof",
+    "not hardware/native transfer"
+  ],
+  "outcome": "expanded_not_confirmed",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7w_20260509_expanded_confirmation",
+  "runner_revision": "tier7_7w_expanded_confirmation_20260509_0001",
+  "status": "fail",
+  "tier": "Tier 7.7w - Expanded Standardized Confirmation (Family B)"
+}

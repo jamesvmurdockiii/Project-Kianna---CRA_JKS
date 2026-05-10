@@ -1,0 +1,6 @@
+stage,tasks,length,seeds,baselines,authorized,description
+7.7t_contract,[],,[],[],False,Contract only; no scoring.
+7.7u_localization,"['Mackey-Glass', 'Lorenz', 'repaired NARMA10']",8000,[42],"['current CRA v2.5', 'temporal-basis utility reference']",True,"Minimal task scoring for state-geometry measurement only; diagnose, do not benchmark."
+7.7v_compact_repair_score,"['Mackey-Glass', 'Lorenz', 'repaired NARMA10']",8000,"[42, 43, 44]","['current CRA v2.5', 'temporal-basis utility reference', 'random projection', 'nonlinear-lag', 'target shuffle', 'time shuffle', 'repair candidate', 'repair-family-specific ablations', 'ESN / ridge if cheap']",False,Compact repair scoring with repair-family-specific controls.
+7.7w_expanded_confirmation,"['Mackey-Glass', 'Lorenz', 'repaired NARMA10']",8000/16000/32000,"[42, 43, 44]","['compact repair baselines', 'ESN/reservoir', 'online lag/ridge', 'small GRU if available']",False,"Longer lengths, more baselines. Only if compact repair passes."
+7.7x_promotion_regression,['all compact regression suite'],as per regression spec,"[42, 43, 44]",['all prior confirmed baselines plus mechanism ablations and leakage guards'],False,"Compact regression, mechanism ablations, leakage guards, freeze decision."

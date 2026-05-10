@@ -1,0 +1,10 @@
+observation,classification,route
+no_plasticity PR >> candidate PR (less collapse without learning),plasticity_homogenization_confirmed,Repair Family D (plasticity anti-homogenization)
+no_inhibition PR >> candidate PR (less collapse without WTA),inhibition_compression_confirmed,Repair Family A (diversity-preserving dynamics)
+frozen_recurrent PR ~ candidate PR (learned topology not compressing),recurrent_topology_bottleneck_confirmed,Repair Family C (topology/spectrum repair)
+input_channel_shuffle PR >> candidate PR (ordered input is compressing),input_bottleneck_confirmed,Repair Family B (independent causal subspace drivers)
+state_reset PR ~ candidate PR (state is not saturating),numeric_saturation_confirmed_diagnostic_only,Lower priority; numeric fix before architecture repair.
+per_partition PR varies widely between partitions,shared_driver_synchronization_confirmed,Repair Family B (fix partition-level input sharing).
+trophic_counters correlate with per-neuron PR loss,trophic_selection_compression_confirmed,Repair Family A or D (protect minority modes).
+readout budget explains gap vs candidate state PR,readout_exposure_bottleneck_confirmed,Assess readout observability before architecture repair.
+multiple controls improve PR similarly,mixed_or_inconclusive,Broadest-applicability repair family first (Family A).

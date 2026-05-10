@@ -1,0 +1,7 @@
+variant,mode,targets,description
+orthogonal_baseline,orthogonal,baseline,Orthogonal recurrent weights; current CRA reference baseline.
+block_recurrent,block,baseline,Block-structured recurrent weights with varied time constants.
+frozen_recurrent,random_recurrent,recurrent_topology_bottleneck,Random recurrent weights (no orthogonalization). Tests whether learned/structured topology matters for PR.
+shuffled_input,shuffled_input,input_encoder_bottleneck,Shuffled EMA trace and hidden channels after bias+observed. Tests whether causal input structure matters.
+no_plasticity,orthogonal,plasticity_homogenization,Same features as orthogonal_baseline but readout update_enabled=False. Implemented at readout level.
+state_reset,state_reset,numeric_saturation,Periodic state reset via reset_interval in tier5_19b.temporal_features_variant.

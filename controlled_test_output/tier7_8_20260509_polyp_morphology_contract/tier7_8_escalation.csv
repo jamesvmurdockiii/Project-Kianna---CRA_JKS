@@ -1,0 +1,5 @@
+stage,action
+7.8_contract,"Lock candidates, controls, metrics, outcome classes. No scoring."
+7.8a_compact,"Test top 2-3 template candidates on Mackey-Glass/Lorenz/repaired-NARMA10 at 8000 steps, seeds 42/43/44."
+7.8b_expanded,Take best 7.8a candidate to 16000/32000 with ESN/ridge baselines. Only if compact survives controls.
+7.8c_promotion,Compact regression + baseline freeze. Only if expanded confirmation passes.

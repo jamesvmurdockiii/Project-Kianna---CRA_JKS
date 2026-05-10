@@ -1,0 +1,104 @@
+{
+  "ablation": {
+    "mse_geomean": 4.276500959282869e-06,
+    "n": 27,
+    "pr_mean": 1.951255667803357,
+    "pr_stdev": 0.2116799742458596
+  },
+  "candidate": {
+    "mse_geomean": 1.8993084020764896e-06,
+    "n": 27,
+    "pr_mean": 6.9977422015463855,
+    "pr_stdev": 1.560636644514196
+  },
+  "claim_boundary": "Bounded mechanism evidence for edge-of-chaos recurrent dynamics with ridge readout. Not a baseline freeze (requires compact regression). Not public usefulness proof. Not hardware/native transfer.",
+  "criteria": [
+    {
+      "name": "candidate scored",
+      "note": "n=27",
+      "passed": true,
+      "rule": ">= 6",
+      "value": 27
+    },
+    {
+      "name": "sham (no-antisymmetry) scored",
+      "note": "",
+      "passed": true,
+      "rule": ">= 3",
+      "value": 27
+    },
+    {
+      "name": "ablation (baseline) scored",
+      "note": "",
+      "passed": true,
+      "rule": ">= 3",
+      "value": 27
+    },
+    {
+      "name": "PR > ablation (+2.0)",
+      "note": "cand=7.0 abla=2.0 ratio=3.6x",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "name": "sham separated (|\u0394PR|>2.0)",
+      "note": "cand=7.0 sham=2.5 \u0394=4.5",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "name": "ablation confirms benefit",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "name": "MSE < ablation (ridge readout)",
+      "note": "cand=0.000002 abla=0.000004 ratio=0.4441",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "name": "sham MSE > candidate MSE",
+      "note": "sham_mse=3.554936781548805e-06",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "name": "outcome classified",
+      "note": "classification=promotion_supported_requires_compact_regression",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "name": "no baseline freeze authorized yet",
+      "note": "Freeze requires compact regression gate",
+      "passed": false,
+      "rule": "true",
+      "value": false
+    }
+  ],
+  "criteria_passed": 9,
+  "criteria_total": 10,
+  "generated_at_utc": "2026-05-10T01:31:34+00:00",
+  "mse_ratio": 0.4441,
+  "next_gate": "7.7z-r0 compact regression + baseline freeze",
+  "outcome": "promotion_supported_requires_compact_regression",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7z_20260509_edge_of_chaos_ridge_promotion",
+  "pr_ratio": 3.59,
+  "runner_revision": "tier7_7z_edge_of_chaos_ridge_promotion_20260509_0001",
+  "sham": {
+    "mse_geomean": 3.554936781548805e-06,
+    "n": 27,
+    "pr_mean": 2.507256371616982,
+    "pr_stdev": 1.0454556818217655
+  },
+  "status": "fail",
+  "tier": "Tier 7.7z - Edge-of-Chaos Promotion (Ridge Readout)"
+}

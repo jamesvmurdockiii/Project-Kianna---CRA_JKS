@@ -1,0 +1,411 @@
+{
+  "claim_boundary": "This contract locks the Tier 7.8 morphology/template variability testing protocol without implementing or scoring any candidate. Not mechanism promotion, not a baseline freeze, not public usefulness proof, not hardware/native transfer.",
+  "contract": {
+    "claim_boundary": "This contract locks the Tier 7.8 morphology/template variability testing protocol without implementing or scoring any candidate. Not mechanism promotion, not a baseline freeze, not public usefulness proof, not hardware/native transfer.",
+    "decision": "contract_locked_authorize_7_8a_compact_scoring",
+    "hypothesis": "Heterogeneous polyp templates create functional specialization through structural diversity, increasing state dimensionality because different polyps respond to different aspects of the input signal rather than all collapsing into the same dominant modes.",
+    "mechanism_under_test": "polyp template variability (intrinsic heterogeneity)",
+    "null_hypothesis": "Template variability is equivalent to extra capacity; a same-budget homogeneous control with more neurons matches any template-diversity benefit.",
+    "prior_evidence": {
+      "5.20_series": "Resonant branch polyps (a form of template variability) showed task-specific benefits but material regressions. Template variability needs controlled testing.",
+      "7.7_campaign": "Edge-of-chaos dynamics fix PR 2=7 but await organism integration. Primary bottleneck is contractive recurrent regime, not input encoding.",
+      "7.7j": "Low-rank collapse confirmed: PR near 2 even at 128 hidden units with homogeneous architecture."
+    },
+    "question": "Can variable polyp internal templates (diverse timescales, recurrence parameters, E/I ratios, sparse connectivity, input selectivity, polyp size) increase state diversity and benchmark usefulness beyond the current homogeneous architecture, without being explained by generic random projection or nonlinear-lag controls?"
+  },
+  "controls": [
+    {
+      "control": "homogeneous_baseline",
+      "description": "Current v2.5 reference: all polyps identical template, all-to-all recurrence.",
+      "role": "baseline"
+    },
+    {
+      "control": "same_budget_fixed_template",
+      "description": "Same total neuron count but all polyps identical. Tests whether benefit is from extra capacity.",
+      "role": "capacity_control"
+    },
+    {
+      "control": "shuffled_assignment",
+      "description": "Template parameters randomly shuffled across polyps. Tests whether specific assignment matters.",
+      "role": "sham"
+    },
+    {
+      "control": "random_projection_same_dim",
+      "description": "Random projection with same feature dimensionality. Tests generic vs mechanism-specific benefit.",
+      "role": "generic_control"
+    },
+    {
+      "control": "nonlinear_lag",
+      "description": "Nonlinear/lag features with same budget. Standard generic control from 7.7 chain.",
+      "role": "generic_control"
+    },
+    {
+      "control": "target_shuffle",
+      "description": "Shuffle targets to break causal structure.",
+      "role": "leakage"
+    },
+    {
+      "control": "time_shuffle",
+      "description": "Shuffle time ordering.",
+      "role": "leakage"
+    }
+  ],
+  "criteria": [
+    {
+      "criterion": "question locked",
+      "details": "",
+      "name": "question locked",
+      "note": "",
+      "operator": "true",
+      "pass": true,
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "6 template candidates declared",
+      "details": "",
+      "name": "6 template candidates declared",
+      "note": "",
+      "operator": "== 6",
+      "pass": true,
+      "passed": true,
+      "rule": "== 6",
+      "value": 6
+    },
+    {
+      "criterion": "homogeneous baseline in controls",
+      "details": "",
+      "name": "homogeneous baseline in controls",
+      "note": "",
+      "operator": "true",
+      "pass": true,
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "shuffled assignment sham in controls",
+      "details": "",
+      "name": "shuffled assignment sham in controls",
+      "note": "",
+      "operator": "true",
+      "pass": true,
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "random projection control locked",
+      "details": "",
+      "name": "random projection control locked",
+      "note": "",
+      "operator": "true",
+      "pass": true,
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "nonlinear-lag control locked",
+      "details": "",
+      "name": "nonlinear-lag control locked",
+      "note": "",
+      "operator": "true",
+      "pass": true,
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "state geometry metrics locked",
+      "details": "",
+      "name": "state geometry metrics locked",
+      "note": "",
+      "operator": ">= 4",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 4",
+      "value": 5
+    },
+    {
+      "criterion": "task metrics locked",
+      "details": "",
+      "name": "task metrics locked",
+      "note": "",
+      "operator": ">= 2",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 2",
+      "value": 3
+    },
+    {
+      "criterion": "6 outcome classes locked",
+      "details": "",
+      "name": "6 outcome classes locked",
+      "note": "",
+      "operator": "== 6",
+      "pass": true,
+      "passed": true,
+      "rule": "== 6",
+      "value": 6
+    },
+    {
+      "criterion": "3 task families locked",
+      "details": "",
+      "name": "3 task families locked",
+      "note": "",
+      "operator": "== 3",
+      "pass": true,
+      "passed": true,
+      "rule": "== 3",
+      "value": 3
+    },
+    {
+      "criterion": "escalation rules locked",
+      "details": "",
+      "name": "escalation rules locked",
+      "note": "",
+      "operator": "== 4",
+      "pass": true,
+      "passed": true,
+      "rule": "== 4",
+      "value": 4
+    },
+    {
+      "criterion": "compact before expanded",
+      "details": "",
+      "name": "compact before expanded",
+      "note": "",
+      "operator": "== 7.8a_compact",
+      "pass": true,
+      "passed": true,
+      "rule": "== 7.8a_compact",
+      "value": "7.8a_compact"
+    },
+    {
+      "criterion": "no baseline freeze authorized",
+      "details": "",
+      "name": "no baseline freeze authorized",
+      "note": "",
+      "operator": "false",
+      "pass": true,
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "criterion": "no mechanism promotion authorized",
+      "details": "",
+      "name": "no mechanism promotion authorized",
+      "note": "",
+      "operator": "false",
+      "pass": true,
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "criterion": "no hardware/native transfer authorized",
+      "details": "",
+      "name": "no hardware/native transfer authorized",
+      "note": "",
+      "operator": "false",
+      "pass": true,
+      "passed": true,
+      "rule": "false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 15,
+  "criteria_total": 15,
+  "escalation_rules": [
+    {
+      "action": "Lock candidates, controls, metrics, outcome classes. No scoring.",
+      "stage": "7.8_contract"
+    },
+    {
+      "action": "Test top 2-3 template candidates on Mackey-Glass/Lorenz/repaired-NARMA10 at 8000 steps, seeds 42/43/44.",
+      "stage": "7.8a_compact"
+    },
+    {
+      "action": "Take best 7.8a candidate to 16000/32000 with ESN/ridge baselines. Only if compact survives controls.",
+      "stage": "7.8b_expanded"
+    },
+    {
+      "action": "Compact regression + baseline freeze. Only if expanded confirmation passes.",
+      "stage": "7.8c_promotion"
+    }
+  ],
+  "generated_at_utc": "2026-05-10T01:56:21+00:00",
+  "metrics": [
+    {
+      "description": "Effective state dimensionality at 128 total hidden units.",
+      "domain": "state_geometry",
+      "metric": "participation_ratio"
+    },
+    {
+      "description": "PCA components for 95% variance.",
+      "domain": "state_geometry",
+      "metric": "rank_95"
+    },
+    {
+      "description": "Fraction of variance in first PC.",
+      "domain": "state_geometry",
+      "metric": "top_pc_dominance"
+    },
+    {
+      "description": "Activity variance per polyp template group.",
+      "domain": "state_geometry",
+      "metric": "per_template_activity_variance"
+    },
+    {
+      "description": "PR within each template group separately.",
+      "domain": "state_geometry",
+      "metric": "template_pairwise_pr"
+    },
+    {
+      "description": "Geomean MSE across Mackey-Glass/Lorenz/repaired-NARMA10 with ridge readout.",
+      "domain": "task",
+      "metric": "geomean_mse_ridge"
+    },
+    {
+      "description": "Geomean MSE with online LMS readout.",
+      "domain": "task",
+      "metric": "geomean_mse_lms"
+    },
+    {
+      "description": "Variance across seeds 42/43/44.",
+      "domain": "task",
+      "metric": "seed_variance"
+    }
+  ],
+  "next_gate": "Tier 7.8a - Morphology Candidate Compact Scoring Gate",
+  "nonclaims": [
+    "not a template implementation",
+    "not model scoring",
+    "not mechanism promotion",
+    "not a baseline freeze",
+    "not public usefulness proof",
+    "not hardware/native transfer"
+  ],
+  "outcome": "morphology_contract_locked",
+  "outcome_classes": [
+    {
+      "description": "Template variability improves PR AND task MSE, beats generic controls, sham-separated.",
+      "outcome": "morphology_candidate"
+    },
+    {
+      "description": "PR improves but task MSE does not (same pattern as 7.7z before ridge readout).",
+      "outcome": "morphology_geometry_only"
+    },
+    {
+      "description": "Same-feature random projection or nonlinear-lag matches or exceeds the morphology benefit.",
+      "outcome": "generic_control_explains_gain"
+    },
+    {
+      "description": "Same-budget fixed-template control matches the morphology candidate.",
+      "outcome": "capacity_confound"
+    },
+    {
+      "description": "No template variant improves PR or task MSE over homogeneous baseline.",
+      "outcome": "morphology_not_supported"
+    },
+    {
+      "description": "Some templates help specific tasks but no aggregate benefit.",
+      "outcome": "partial_template_signal"
+    }
+  ],
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_8_20260509_polyp_morphology_contract",
+  "runner_revision": "tier7_8_polyp_morphology_contract_20260509_0001",
+  "status": "pass",
+  "tasks": [
+    {
+      "horizon": 8,
+      "lengths": [
+        8000,
+        16000,
+        32000
+      ],
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "task": "mackey_glass"
+    },
+    {
+      "horizon": 8,
+      "lengths": [
+        8000,
+        16000,
+        32000
+      ],
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "task": "lorenz"
+    },
+    {
+      "horizon": 8,
+      "lengths": [
+        8000,
+        16000,
+        32000
+      ],
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "task": "repaired_narma10"
+    }
+  ],
+  "template_candidates": [
+    {
+      "candidate": "diverse_timescales",
+      "description": "Polyps assigned to fast/medium/slow regimes with different EMA alpha values per polyp group.",
+      "hypothesis": "Multiple inherent timescales force state to span fast transients and slow baselines simultaneously.",
+      "same_budget": true,
+      "sham": "shuffled_timescale_assignment"
+    },
+    {
+      "candidate": "variable_recurrence",
+      "description": "Polyps differ in spectral radius (0.3-1.0) and antisymmetry (0.0-0.5), creating diverse dynamical regimes across the population.",
+      "hypothesis": "Heterogeneous recurrent dynamics create genuinely diverse state trajectories that don't collapse to the same attractor.",
+      "same_budget": true,
+      "sham": "shuffled_recurrence_assignment"
+    },
+    {
+      "candidate": "excitatory_inhibitory_ratio_variability",
+      "description": "Polyps vary in E/I ratio (70:30 to 30:70), creating different baseline activity levels and sensitivity patterns.",
+      "hypothesis": "E/I diversity creates functional specialization across polyps without explicit task decomposition.",
+      "same_budget": true,
+      "sham": "shuffled_ei_assignment"
+    },
+    {
+      "candidate": "sparse_structured_connectivity",
+      "description": "Polyps use small-world or modular connectivity instead of all-to-all, with different sparsity patterns per polyp.",
+      "hypothesis": "Structured sparse connectivity creates independent dynamical modules that don't collapse through shared recurrence.",
+      "same_budget": true,
+      "sham": "same_sparsity_random_graph"
+    },
+    {
+      "candidate": "input_selectivity",
+      "description": "Polyp groups attend to different input feature subsets (some to raw x, some to EMAs, some to deltas).",
+      "hypothesis": "Input selectivity forces specialization by limiting what each polyp can observe.",
+      "same_budget": true,
+      "sham": "shuffled_input_assignment"
+    },
+    {
+      "candidate": "template_size_variability",
+      "description": "Polyps vary in size (hidden units per polyp: 16/32/64/128) with the same total neuron budget.",
+      "hypothesis": "Different capacity polyps capture features at different granularity levels.",
+      "same_budget": true,
+      "sham": "shuffled_size_assignment"
+    }
+  ],
+  "tier": "Tier 7.8 - Polyp Morphology / Template Variability Contract"
+}

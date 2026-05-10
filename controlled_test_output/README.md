@@ -5,10 +5,10 @@ ledger is `STUDY_REGISTRY.json`; the compact table is `STUDY_REGISTRY.csv`.
 Older reruns, prepared capsules, debug probes, and baseline-frozen
 mechanism bundles outside the formal registry are preserved for audit.
 
-- Generated: `2026-05-09T18:57:12.862356+00:00`
+- Generated: `2026-05-10T23:12:49.615590+00:00`
 - Registry status: **PASS**
-- Canonical evidence entries: `142`
-- Expanded test-entry count: `142`; see the canonical evidence table below for the exact current tier list.
+- Canonical evidence entries: `156`
+- Expanded test-entry count: `156`; see the canonical evidence table below for the exact current tier list.
 
 ## Evidence Categories
 
@@ -128,6 +128,20 @@ mechanism bundles outside the formal registry are preserved for audit.
 | `tier7_7q_cra_native_temporal_interface_internalization_scoring_gate` | **PASS** | `controlled_test_output/tier7_7q_20260509_cra_native_temporal_interface_internalization_scoring_gate` | Diagnostic scoring evidence only; not a mechanism promotion, not a baseline freeze, not hardware/native transfer, not external-baseline superiority, and not broad public usefulness evidence. |
 | `tier7_7r_native_temporal_basis_reframing_contract` | **PASS** | `controlled_test_output/tier7_7r_20260509_native_temporal_basis_reframing_contract` | Contract evidence only; not a new score, not a mechanism promotion, not a baseline freeze, not hardware/native transfer, not external-baseline superiority, and not broad public usefulness evidence. |
 | `tier7_7s_bounded_temporal_basis_utility_promotion` | **PASS** | `controlled_test_output/tier7_7s_20260509_bounded_temporal_basis_utility_promotion` | Bounded engineering utility evidence only; not a CRA-specific mechanism promotion, not a core baseline freeze, not hardware/native transfer, not external-baseline superiority, and not broad public usefulness evidence. |
+| `tier7_7t_low_rank_state_repair_campaign_contract` | **PASS** | `controlled_test_output/tier7_7t_20260509_low_rank_state_repair_campaign_contract` | Contract only; not a repair implementation, not model scoring, not mechanism promotion, not a baseline freeze, not public usefulness proof, not hardware/native transfer, and not language/AGI/ASI evidence. |
+| `tier7_7u_state_collapse_causal_localization` | **PASS** | `controlled_test_output/tier7_7u_20260509_state_collapse_causal_localization` | Protocol lock only; not full localization scoring, not repair implementation, not mechanism promotion, not a baseline freeze, not public usefulness proof, and not hardware/native transfer. |
+| `tier7_7v_r0_diagnostic_model_variants` | **PASS** | `controlled_test_output/tier7_7v_r0_20260509_diagnostic_model_variants` | Model variant implementation and verification only; not a repair, not mechanism promotion, not a baseline freeze, not public usefulness proof, and not hardware/native transfer. |
+| `tier7_7v_repair_candidate_compact_score` | **PASS** | `controlled_test_output/tier7_7v_20260509_repair_candidate_compact_score` | Compact repair scoring on one seed only; not expanded confirmation at longer lengths/more seeds, not mechanism promotion, not a baseline freeze, not public usefulness proof, and not hardware/native transfer. |
+| `tier7_7v_input_diversity_test` | **PASS** | `controlled_test_output/tier7_7v_input_diversity_20260509` | Input diversity hypothesis test only. Not a promoted mechanism, not a baseline freeze, not public usefulness proof, and not hardware/native transfer. Expanded confirmation at longer lengths needed before promotion. |
+| `tier7_8_polyp_morphology_contract` | **PASS** | `controlled_test_output/tier7_8_20260509_polyp_morphology_contract` | Contract only; not a template implementation, not model scoring, not mechanism promotion, not a baseline freeze, and not hardware/native transfer. |
+| `tier7_7z_r0_compact_regression` | **PASS** | `controlled_test_output/tier7_7z_r0_20260509_compact_regression` | Compact regression on standalone reference implementation. Not full NEST organism regression. Not public usefulness proof. Not hardware/native transfer. |
+| `tier7_7z_r1_standardized_benchmark` | **PASS** | `controlled_test_output/tier7_7z_r1_20260509_standardized_benchmark` | Benchmark scoring with ridge readout. v2.5 comparison uses different readout (online LMS) so ratio is not directly comparable. Not public usefulness proof. Not hardware/native transfer. |
+| `tier4_33_eoc_native_transfer_contract` | **PASS** | `controlled_test_output/tier4_33_20260509_eoc_native_transfer_contract` | Contract only; not C implementation, not hardware evidence, not a baseline freeze. DTCM budget risk at n=128 may require n=64 for first hardware smoke. |
+| `tier7_7z_r3_nab_adapter` | **PASS** | `controlled_test_output/tier7_7z_r3_20260509_nab_adapter` | NAB adapter scoring only. Not a full NAB benchmark. Not public usefulness proof. Not a baseline freeze. |
+| `tier4_33a_eoc_fixed_point_reference` | **PASS** | `controlled_test_output/tier4_33a_20260509_eoc_fixed_point_reference` | Fixed-point reference only; not C runtime implementation, not hardware evidence, not a baseline freeze. |
+| `tier4_33b_eoc_source_audit` | **PASS** | `controlled_test_output/tier4_33b_20260509_eoc_source_audit` | Source audit only; not hardware build (spinnaker_tools not available locally), not EBRAINS execution, not a baseline freeze. |
+| `tier5_21_nest_per_neuron_dimensionality_contract` | **PASS** | `controlled_test_output/tier5_21_20260510_nest_per_neuron_dimensionality_contract` | Contract only; not scoring, not mechanism promotion, not a baseline freeze, not public usefulness proof, not hardware/native transfer. |
+| `tier5_22_within_polyp_per_neuron_diversity_contract` | **PASS** | `controlled_test_output/tier5_22_20260510_within_polyp_per_neuron_diversity_contract` | Contract only; not code implementation, not scoring, not mechanism promotion, not a baseline freeze. |
 | `tier5_20a_resonant_branch_polyp_diagnostic` | **PASS** | `controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic` | Software diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence. |
 | `tier5_20b_hybrid_resonant_polyp_diagnostic` | **PASS** | `controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic` | Software repair diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence. |
 | `tier5_20c_minimal_resonant_polyp_diagnostic` | **PASS** | `controlled_test_output/tier5_20c_20260508_minimal_resonant_polyp_diagnostic` | Software minimal-dose diagnostic only; not a core polyp replacement, not hardware evidence, not a promoted mechanism, not a baseline freeze, and not AGI/ASI evidence. |
@@ -367,6 +381,7 @@ cite them as current study results unless promoted in `STUDY_REGISTRY.json`.
 | `controlled_test_output/tier4_32g_20260507_r1_prepared` | `prepared_capsule` | `prepared` | `2026-05-08T02:59:50+00:00` |
 | `controlled_test_output/tier4_32g_20260508_old_package_return_ingested` | `superseded_rerun` | `fail` | `2026-05-08T03:31:39+00:00` |
 | `controlled_test_output/tier4_32g_20260508_r2_prepared` | `prepared_capsule` | `prepared` | `2026-05-08T03:31:50+00:00` |
+| `controlled_test_output/tier4_33c_20260509_eoc_ebrains_prepare` | `superseded_rerun` | `pass` | `2026-05-10T05:23:11+00:00` |
 | `controlled_test_output/tier5_10_20260428_181304` | `superseded_rerun` | `pass` | `2026-04-28T22:13:10+00:00` |
 | `controlled_test_output/tier5_10_20260428_181322` | `superseded_rerun` | `fail` | `2026-04-28T22:45:43+00:00` |
 | `controlled_test_output/tier5_10b_20260428_193205` | `superseded_rerun` | `fail` | `2026-04-28T23:32:05+00:00` |
@@ -454,6 +469,8 @@ cite them as current study results unless promoted in `STUDY_REGISTRY.json`.
 | `controlled_test_output/tier5_18_20260429_213002` | `self_evaluation_metacognition_diagnostic` | `pass` | `2026-04-29T21:30:04+00:00` |
 | `controlled_test_output/tier5_18c_20260429_220841` | `self_evaluation_compact_regression_gate` | `pass` | `2026-04-29T22:10:32+00:00` |
 | `controlled_test_output/tier5_18c_20260429_221045` | `self_evaluation_compact_regression_gate` | `pass` | `2026-04-29T22:36:19+00:00` |
+| `controlled_test_output/tier5_21a_20260510_nest_per_neuron_scoring` | `superseded_rerun` | `fail` | `2026-05-10T18:30:11+00:00` |
+| `controlled_test_output/tier5_23_20260510_inter_polyp_antisymmetric_projections_contract` | `superseded_rerun` | `pass` | `2026-05-10T20:29:27+00:00` |
 | `controlled_test_output/tier5_5_20260427_222527` | `superseded_rerun` | `pass` | `2026-04-28T02:25:28+00:00` |
 | `controlled_test_output/tier5_6_20260428_001803` | `superseded_rerun` | `pass` | `2026-04-28T04:18:03+00:00` |
 | `controlled_test_output/tier5_7_20260428_005610` | `superseded_rerun` | `fail` | `2026-04-28T04:56:21+00:00` |
@@ -485,6 +502,13 @@ cite them as current study results unless promoted in `STUDY_REGISTRY.json`.
 | `controlled_test_output/tier7_7q_smoke` | `superseded_rerun` | `pass` | `2026-05-09T17:23:51+00:00` |
 | `controlled_test_output/tier7_7s_mock_probe` | `superseded_rerun` | `unknown` | `None` |
 | `controlled_test_output/tier7_7s_smoke_probe` | `superseded_rerun` | `unknown` | `None` |
+| `controlled_test_output/tier7_7v_family_c_20260509_compact_score` | `superseded_rerun` | `fail` | `2026-05-09T20:53:55+00:00` |
+| `controlled_test_output/tier7_7w_20260509_expanded_confirmation` | `superseded_rerun` | `fail` | `2026-05-09T20:16:40+00:00` |
+| `controlled_test_output/tier7_7x_20260509_diff_embedding_promotion` | `superseded_rerun` | `fail` | `2026-05-09T21:21:13+00:00` |
+| `controlled_test_output/tier7_7y_20260509_edge_of_chaos_promotion` | `superseded_rerun` | `fail` | `2026-05-10T01:20:37+00:00` |
+| `controlled_test_output/tier7_7z_20260509_edge_of_chaos_ridge_promotion` | `superseded_rerun` | `fail` | `2026-05-10T01:31:34+00:00` |
+| `controlled_test_output/tier7_7z_r2_20260509_cmapss_adapter` | `superseded_rerun` | `fail` | `2026-05-10T03:04:44+00:00` |
+| `controlled_test_output/tier7_8a_20260509_morphology_compact_score` | `superseded_rerun` | `fail` | `2026-05-10T02:41:14+00:00` |
 
 ## Integrity
 

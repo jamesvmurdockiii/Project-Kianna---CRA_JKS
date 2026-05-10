@@ -1,0 +1,123 @@
+{
+  "ablation": {
+    "mse_geomean": 0.27629959896158396,
+    "n": 9,
+    "pr_mean": 3.3297059596010836
+  },
+  "baseline": {
+    "mse_geomean": 0.19648417625473708,
+    "n": 9,
+    "pr_mean": 1.956224672075063
+  },
+  "candidate": {
+    "mse_geomean": 0.2126611573058602,
+    "n": 9,
+    "pr_mean": 4.758843133618434
+  },
+  "claim_boundary": "Promotion gate for diff-embedding input encoding. Not a baseline freeze, not public usefulness proof.",
+  "criteria": [
+    {
+      "name": "prereq input-diversity exists",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "name": "candidate scored",
+      "note": "",
+      "passed": true,
+      "rule": ">= 3",
+      "value": 9
+    },
+    {
+      "name": "baseline scored",
+      "note": "",
+      "passed": true,
+      "rule": ">= 3",
+      "value": 9
+    },
+    {
+      "name": "sham scored",
+      "note": "",
+      "passed": true,
+      "rule": ">= 3",
+      "value": 9
+    },
+    {
+      "name": "ablation scored",
+      "note": "",
+      "passed": true,
+      "rule": ">= 3",
+      "value": 9
+    },
+    {
+      "name": "random-proj control scored",
+      "note": "",
+      "passed": true,
+      "rule": ">= 3",
+      "value": 9
+    },
+    {
+      "name": "PR > baseline",
+      "note": "cand=4.76 base=1.96",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "name": "sham separated (|diff|>0.5)",
+      "note": "cand=4.76 sham=4.91",
+      "passed": false,
+      "rule": "true",
+      "value": false
+    },
+    {
+      "name": "ablation removes benefit",
+      "note": "cand=4.76 single_lag=3.33",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "name": "beats random projection",
+      "note": "cand=4.76 random=12.93",
+      "passed": false,
+      "rule": "true",
+      "value": false
+    },
+    {
+      "name": "no baseline freeze authorized",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "name": "no mechanism promotion authorized",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    }
+  ],
+  "criteria_passed": 10,
+  "criteria_total": 12,
+  "generated_at_utc": "2026-05-09T21:21:13+00:00",
+  "next_gate": "Diagnose and narrow claim",
+  "outcome": "candidate_improves_but_sham_not_separated",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7x_20260509_diff_embedding_promotion",
+  "random_proj": {
+    "mse_geomean": 0.44766418952260295,
+    "n": 9,
+    "pr_mean": 12.926636199735889
+  },
+  "runner_revision": "tier7_7x_diff_embedding_promotion_20260509_0001",
+  "sham": {
+    "mse_geomean": 0.20155865224412672,
+    "n": 9,
+    "pr_mean": 4.914494997331343
+  },
+  "status": "fail",
+  "tier": "Tier 7.7x - Diff-Embedding Promotion Gate"
+}

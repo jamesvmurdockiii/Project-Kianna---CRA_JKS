@@ -1,0 +1,7 @@
+outcome,description
+morphology_candidate,"Template variability improves PR AND task MSE, beats generic controls, sham-separated."
+morphology_geometry_only,PR improves but task MSE does not (same pattern as 7.7z before ridge readout).
+generic_control_explains_gain,Same-feature random projection or nonlinear-lag matches or exceeds the morphology benefit.
+capacity_confound,Same-budget fixed-template control matches the morphology candidate.
+morphology_not_supported,No template variant improves PR or task MSE over homogeneous baseline.
+partial_template_signal,Some templates help specific tasks but no aggregate benefit.

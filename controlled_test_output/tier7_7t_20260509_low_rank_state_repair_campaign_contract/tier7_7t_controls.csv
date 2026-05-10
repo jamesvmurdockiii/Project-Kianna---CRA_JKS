@@ -1,0 +1,14 @@
+control,class,mandatory_for_compact_score,mandatory_for_expanded_score
+current_cra_v2_5,baseline,True,True
+current_cra_plus_temporal_basis_utility,baseline,True,True
+random_projection,strong_generic_control,True,True
+nonlinear_lag,strong_generic_control,True,True
+target_shuffle,leakage_control,True,True
+time_shuffle,leakage_control,True,True
+no_plasticity,ablation,False,False
+frozen_random_state,ablation,False,False
+state_scramble,ablation,False,False
+no_inhibition_diagnostic,ablation,False,False
+input_channel_shuffle,leakage_control,False,False
+ESN,external_baseline,False,True
+online_LMS_ridge,external_baseline,False,True

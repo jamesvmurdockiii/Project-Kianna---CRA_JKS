@@ -1,0 +1,66 @@
+{
+  "criteria": [
+    {
+      "name": "prereq 4.33 exists",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "name": "all tasks/seeds scored",
+      "note": "",
+      "passed": true,
+      "rule": ">= 3",
+      "value": 9
+    },
+    {
+      "name": "fixed-point PR computed",
+      "note": "",
+      "passed": true,
+      "rule": ">= 3",
+      "value": 9
+    },
+    {
+      "name": "mean PR ratio (fp/float)",
+      "note": "mean=1.0111 stdev=0.0389",
+      "passed": true,
+      "rule": "in [0.8, 1.2]",
+      "value": 1.0111
+    },
+    {
+      "name": "within 10% tolerance",
+      "note": "9/9",
+      "passed": true,
+      "rule": ">= 6",
+      "value": 9
+    },
+    {
+      "name": "no baseline freeze",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "name": "no hardware evidence claimed",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 7,
+  "criteria_total": 7,
+  "generated_at_utc": "2026-05-10T04:45:52+00:00",
+  "mean_ratio": 1.0111,
+  "n_total": 9,
+  "next_gate": "Tier 4.33b C runtime source audit",
+  "outcome": "fixed_point_reference_pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_33a_20260509_eoc_fixed_point_reference",
+  "runner_revision": "tier4_33a_eoc_fixed_point_reference_20260509_0001",
+  "status": "pass",
+  "stdev_ratio": 0.0389,
+  "tier": "Tier 4.33a - Edge-of-Chaos Fixed-Point Local Reference",
+  "within_10": 9
+}

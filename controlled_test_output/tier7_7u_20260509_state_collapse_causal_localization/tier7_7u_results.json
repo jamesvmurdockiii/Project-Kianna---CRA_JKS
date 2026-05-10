@@ -1,0 +1,382 @@
+{
+  "claim_boundary": "Localization protocol locked. Seven diagnostic model variants must be implemented as CRA configuration options before full causal localization can score. Do not proceed to Tier 7.7v repair implementation without verifying that at least the top-4 priority variants exist and can be instantiated with the current CRA v2.5 baseline. Not a repair, not mechanism promotion, not a baseline freeze, not public usefulness proof, not hardware/native transfer.",
+  "contract": {
+    "contract_77t_outcome": "lock_campaign_and_authorize_localization",
+    "controls_count": 7,
+    "decision": "localization_protocol_locked_awaits_model_variants",
+    "decision_boundary": "Localization protocol locked. Seven diagnostic model variants must be implemented as CRA configuration options before full causal localization can score. Do not proceed to Tier 7.7v repair implementation without verifying that at least the top-4 priority variants exist and can be instantiated with the current CRA v2.5 baseline. Not a repair, not mechanism promotion, not a baseline freeze, not public usefulness proof, not hardware/native transfer.",
+    "hypothesis": "The ~2D collapse enters through one or two primary mechanisms that can be isolated by comparing candidate PR trajectories against diagnostic controls.",
+    "null_hypothesis": "All diagnostic controls produce similar PR collapse (the effect is irreducible at current capacity).",
+    "outcome_rules_count": 9,
+    "probe_definitions_count": 10,
+    "question": "Where does the low-rank collapse enter: input encoding, recurrent dynamics, plasticity, inhibition, trophic pressure, readout exposure, or numerical saturation?",
+    "required_variants_count": 7,
+    "variant_implementation_priority": [
+      "no_plasticity",
+      "no_inhibition",
+      "frozen_recurrent",
+      "input_channel_shuffle",
+      "state_reset",
+      "per_partition_probe",
+      "trophic_probe"
+    ]
+  },
+  "criteria": [
+    {
+      "criterion": "contract 7.7t exists",
+      "details": "",
+      "name": "contract 7.7t exists",
+      "note": "",
+      "operator": "true",
+      "pass": true,
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "contract 7.7t passed",
+      "details": "",
+      "name": "contract 7.7t passed",
+      "note": "",
+      "operator": "== pass",
+      "pass": true,
+      "passed": true,
+      "rule": "== pass",
+      "value": "pass"
+    },
+    {
+      "criterion": "probe infrastructure importable",
+      "details": "",
+      "name": "probe infrastructure importable",
+      "note": "",
+      "operator": "true",
+      "pass": true,
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "probe definitions locked",
+      "details": "",
+      "name": "probe definitions locked",
+      "note": "",
+      "operator": "== 10",
+      "pass": true,
+      "passed": true,
+      "rule": "== 10",
+      "value": 10
+    },
+    {
+      "criterion": "required model variants declared",
+      "details": "",
+      "name": "required model variants declared",
+      "note": "",
+      "operator": "== 7",
+      "pass": true,
+      "passed": true,
+      "rule": "== 7",
+      "value": 7
+    },
+    {
+      "criterion": "no_plasticity variant declared",
+      "details": "",
+      "name": "no_plasticity variant declared",
+      "note": "",
+      "operator": "true",
+      "pass": true,
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "no_inhibition variant declared",
+      "details": "",
+      "name": "no_inhibition variant declared",
+      "note": "",
+      "operator": "true",
+      "pass": true,
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "frozen_recurrent variant declared",
+      "details": "",
+      "name": "frozen_recurrent variant declared",
+      "note": "",
+      "operator": "true",
+      "pass": true,
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "diagnostic controls enumerated",
+      "details": "",
+      "name": "diagnostic controls enumerated",
+      "note": "",
+      "operator": "== 7",
+      "pass": true,
+      "passed": true,
+      "rule": "== 7",
+      "value": 7
+    },
+    {
+      "criterion": "outcome classification rules locked",
+      "details": "",
+      "name": "outcome classification rules locked",
+      "note": "",
+      "operator": ">= 8",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 8",
+      "value": 9
+    },
+    {
+      "criterion": "no baseline freeze authorized",
+      "details": "",
+      "name": "no baseline freeze authorized",
+      "note": "",
+      "operator": "false",
+      "pass": true,
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "criterion": "no mechanism promotion authorized",
+      "details": "",
+      "name": "no mechanism promotion authorized",
+      "note": "",
+      "operator": "false",
+      "pass": true,
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "criterion": "no hardware/native transfer authorized",
+      "details": "",
+      "name": "no hardware/native transfer authorized",
+      "note": "",
+      "operator": "false",
+      "pass": true,
+      "passed": true,
+      "rule": "false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 13,
+  "criteria_total": 13,
+  "diagnostic_controls": [
+    {
+      "available": true,
+      "control": "target_shuffle",
+      "description": "Shuffle targets to break causal structure; PR should drop if state encodes task-relevant signal.",
+      "evidence": "Tier 7.7j confirms target/time-shuffle separation."
+    },
+    {
+      "available": true,
+      "control": "time_shuffle",
+      "description": "Shuffle time ordering; PR may increase if temporal structure constrains state.",
+      "evidence": "Tier 7.7j confirms target/time-shuffle separation."
+    },
+    {
+      "available": false,
+      "control": "no_plasticity",
+      "description": "Compare PR trajectory with and without weight updates.",
+      "reason": "Requires model variant."
+    },
+    {
+      "available": false,
+      "control": "no_inhibition",
+      "description": "Compare PR with inhibition disabled.",
+      "reason": "Requires model variant."
+    },
+    {
+      "available": false,
+      "control": "frozen_recurrent",
+      "description": "Compare PR with frozen vs learned recurrent weights.",
+      "reason": "Requires model variant."
+    },
+    {
+      "available": false,
+      "control": "state_reset",
+      "description": "Compare PR resilience to state resets.",
+      "reason": "Requires model variant."
+    },
+    {
+      "available": false,
+      "control": "input_channel_shuffle",
+      "description": "Compare PR with shuffled input channels.",
+      "reason": "Requires model variant."
+    }
+  ],
+  "generated_at_utc": "2026-05-09T19:30:33+00:00",
+  "infrastructure_importable": true,
+  "next_gate": "Tier 7.7v - Repair Candidate Compact Score (requires model variants before scoring)",
+  "nonclaims": [
+    "not a repair implementation",
+    "not full localization scoring",
+    "not a mechanism promotion",
+    "not a baseline freeze",
+    "not public usefulness proof",
+    "not hardware/native transfer"
+  ],
+  "outcome": "localization_protocol_locked_awaits_model_variants",
+  "outcome_rules": [
+    {
+      "classification": "plasticity_homogenization_confirmed",
+      "observation": "no_plasticity PR >> candidate PR (less collapse without learning)",
+      "route": "Repair Family D (plasticity anti-homogenization)"
+    },
+    {
+      "classification": "inhibition_compression_confirmed",
+      "observation": "no_inhibition PR >> candidate PR (less collapse without WTA)",
+      "route": "Repair Family A (diversity-preserving dynamics)"
+    },
+    {
+      "classification": "recurrent_topology_bottleneck_confirmed",
+      "observation": "frozen_recurrent PR ~ candidate PR (learned topology not compressing)",
+      "route": "Repair Family C (topology/spectrum repair)"
+    },
+    {
+      "classification": "input_bottleneck_confirmed",
+      "observation": "input_channel_shuffle PR >> candidate PR (ordered input is compressing)",
+      "route": "Repair Family B (independent causal subspace drivers)"
+    },
+    {
+      "classification": "numeric_saturation_confirmed_diagnostic_only",
+      "observation": "state_reset PR ~ candidate PR (state is not saturating)",
+      "route": "Lower priority; numeric fix before architecture repair."
+    },
+    {
+      "classification": "shared_driver_synchronization_confirmed",
+      "observation": "per_partition PR varies widely between partitions",
+      "route": "Repair Family B (fix partition-level input sharing)."
+    },
+    {
+      "classification": "trophic_selection_compression_confirmed",
+      "observation": "trophic_counters correlate with per-neuron PR loss",
+      "route": "Repair Family A or D (protect minority modes)."
+    },
+    {
+      "classification": "readout_exposure_bottleneck_confirmed",
+      "observation": "readout budget explains gap vs candidate state PR",
+      "route": "Assess readout observability before architecture repair."
+    },
+    {
+      "classification": "mixed_or_inconclusive",
+      "observation": "multiple controls improve PR similarly",
+      "route": "Broadest-applicability repair family first (Family A)."
+    }
+  ],
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7u_20260509_state_collapse_causal_localization",
+  "prerequisite": {
+    "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_7t_20260509_low_rank_state_repair_campaign_contract/tier7_7t_results.json",
+    "sha256": "ad006d11df4884d761b8a932529ec52482fec86c87aaa48de10c39f45678f477",
+    "status": "pass"
+  },
+  "probe_definitions": [
+    {
+      "description": "State PR on first 500 rows before weight updates.",
+      "metric": "participation_ratio",
+      "phase": "pre",
+      "probe": "state_pr_before_learning"
+    },
+    {
+      "description": "State PR across training split.",
+      "metric": "participation_ratio",
+      "phase": "train",
+      "probe": "state_pr_during_learning"
+    },
+    {
+      "description": "State PR on test split after training.",
+      "metric": "participation_ratio",
+      "phase": "post",
+      "probe": "state_pr_after_learning"
+    },
+    {
+      "description": "PCA components for 95% variance on test split.",
+      "metric": "rank_95",
+      "phase": "post",
+      "probe": "rank_95"
+    },
+    {
+      "description": "PCA components for 99% variance on test split.",
+      "metric": "rank_99",
+      "phase": "post",
+      "probe": "rank_99"
+    },
+    {
+      "description": "Variance fraction in first PC on test split.",
+      "metric": "top_pc_dominance",
+      "phase": "post",
+      "probe": "top_pc_dominance"
+    },
+    {
+      "description": "Coefficient of variation of per-neuron activity variance.",
+      "metric": "per_neuron_var_cv",
+      "phase": "post",
+      "probe": "per_neuron_variance"
+    },
+    {
+      "description": "Mean absolute pairwise neuron correlation on test split.",
+      "metric": "corr_mean",
+      "phase": "post",
+      "probe": "pairwise_correlation"
+    },
+    {
+      "description": "Fraction of neurons at clipping bounds.",
+      "metric": "saturation_rate",
+      "phase": "post",
+      "probe": "saturation_rate"
+    },
+    {
+      "description": "Eigenvalue distribution of state covariance matrix.",
+      "metric": "covariance_eigenvalues",
+      "phase": "post",
+      "probe": "covariance_spectrum"
+    }
+  ],
+  "required_model_variants": [
+    {
+      "implementation": "Freeze or zero learning rate while preserving recurrence. Add config key `plasticity_enabled=False`.",
+      "targets": "plasticity_homogenization",
+      "variant": "no_plasticity"
+    },
+    {
+      "implementation": "Disable WTA/inhibitory normalization within polyp populations. Add config key `inhibition_enabled=False`.",
+      "targets": "inhibition_compression",
+      "variant": "no_inhibition"
+    },
+    {
+      "implementation": "Initialize random recurrent weights once and freeze them. Compares to learned topology.",
+      "targets": "recurrent_topology_bottleneck",
+      "variant": "frozen_recurrent"
+    },
+    {
+      "implementation": "Periodically reset or reinitialize hidden state during training.",
+      "targets": "numeric_saturation",
+      "variant": "state_reset"
+    },
+    {
+      "implementation": "Permute input channels before encoding to break causal structure.",
+      "targets": "input_encoder_bottleneck",
+      "variant": "input_channel_shuffle"
+    },
+    {
+      "implementation": "Expose per-polyp-partition state readout for partition-specific PR.",
+      "targets": "shared_driver_synchronization",
+      "variant": "per_partition_probe"
+    },
+    {
+      "implementation": "Instrument trophic energy counters alongside state geometry.",
+      "targets": "trophic_selection_compression",
+      "variant": "trophic_probe"
+    }
+  ],
+  "runner_revision": "tier7_7u_state_collapse_causal_localization_20260509_0001",
+  "status": "pass",
+  "tier": "Tier 7.7u - State-Collapse Causal Localization"
+}

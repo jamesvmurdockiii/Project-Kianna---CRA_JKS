@@ -1,0 +1,19 @@
+{
+  "build_command": "make -C coral_reef_spinnaker/spinnaker_runtime RUNTIME_PROFILE=eoc_recurrent clean all",
+  "dtcm_budget_kb": 20.25,
+  "expected_artifacts": [
+    "tier4_33c_hw_results.json",
+    "tier4_33c_build_eoc_recurrent_stdout.txt",
+    "tier4_33c_build_eoc_recurrent_stderr.txt",
+    "tier4_33c_target_acquisition.json",
+    "tier4_33c_eoc_load.json",
+    "tier4_33c_environment.json"
+  ],
+  "hidden_units": 64,
+  "jobmanager_command": "cra_433_eoc/experiments/tier4_33c_eoc_ebrains_prepare.py --mode run-hardware --seed 42 --task mackey_glass --length 2000 --output-dir tier4_33c_hw_output",
+  "package": "cra_433_eoc",
+  "prepared_at": "2026-05-10T05:23:11+00:00",
+  "profile": "eoc_recurrent",
+  "runner_revision": "tier4_33c_eoc_ebrains_prepare_20260509_0001",
+  "tier": "Tier 4.33c - EOC EBRAINS Package Preparation"
+}

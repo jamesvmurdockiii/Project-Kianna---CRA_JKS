@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-05-10T23:12:48.961315+00:00",
+  "source_generated_at_utc": "2026-05-10T04:45:52+00:00",
+  "registry_entry_id": "tier4_33a_eoc_fixed_point_reference",
+  "tier": "Tier 4.33a - Edge-of-Chaos Fixed-Point Local Reference",
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_33a_20260509_eoc_fixed_point_reference",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_33a_20260509_eoc_fixed_point_reference/tier4_33a_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_33a_20260509_eoc_fixed_point_reference/tier4_33a_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_33a_20260509_eoc_fixed_point_reference/tier4_33a_summary.csv",
+  "canonical": true,
+  "claim": "Tier 4.33a verifies the edge-of-chaos mechanism in s16.15 fixed-point using FP_MUL (int64 intermediate, >>15) arithmetic matching the C runtime macro. FP_MUL arithmetic is correct (mean ratio 1.0111, 9/9 within 10%). Key finding: ARM float tanh is accurate enough; the C runtime can use standard math.h tanh rather than a fixed-point approximation. Ready for C runtime implementation.",
+  "caveat": "Fixed-point reference only; not C runtime implementation, not hardware evidence, not a baseline freeze."
+}

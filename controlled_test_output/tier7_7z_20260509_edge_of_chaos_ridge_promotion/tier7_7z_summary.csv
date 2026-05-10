@@ -1,0 +1,11 @@
+name,value,rule,passed,note
+candidate scored,27,>= 6,True,n=27
+sham (no-antisymmetry) scored,27,>= 3,True,
+ablation (baseline) scored,27,>= 3,True,
+PR > ablation (+2.0),True,true,True,cand=7.0 abla=2.0 ratio=3.6x
+sham separated (|ΔPR|>2.0),True,true,True,cand=7.0 sham=2.5 Δ=4.5
+ablation confirms benefit,True,true,True,
+MSE < ablation (ridge readout),True,true,True,cand=0.000002 abla=0.000004 ratio=0.4441
+sham MSE > candidate MSE,True,true,True,sham_mse=3.554936781548805e-06
+outcome classified,True,true,True,classification=promotion_supported_requires_compact_regression
+no baseline freeze authorized yet,False,true,False,Freeze requires compact regression gate

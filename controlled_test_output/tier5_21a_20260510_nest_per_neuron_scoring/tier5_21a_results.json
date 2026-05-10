@@ -1,0 +1,105 @@
+{
+  "ablation": {
+    "pr_no_diversity": 1.0064048471028542
+  },
+  "criteria": [
+    {
+      "criterion": "prereq 5.21 exists",
+      "name": "prereq 5.21 exists",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "16-polyp per-neuron PR computed",
+      "name": "16-polyp per-neuron PR computed",
+      "note": "PR=1.0",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "16-polyp per-polyp PR computed",
+      "name": "16-polyp per-polyp PR computed",
+      "note": "PR=1.3",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "primary: per-neuron PR > 4.0",
+      "name": "primary: per-neuron PR > 4.0",
+      "note": "PR=1.0",
+      "passed": false,
+      "rule": "true",
+      "value": false
+    },
+    {
+      "criterion": "primary: per-neuron > 2x per-polyp",
+      "name": "primary: per-neuron > 2x per-polyp",
+      "note": "ratio=0.8x",
+      "passed": false,
+      "rule": "true",
+      "value": false
+    },
+    {
+      "criterion": "sham: shuffled delta > 2.0",
+      "name": "sham: shuffled delta > 2.0",
+      "note": "delta=-15.3",
+      "passed": false,
+      "rule": "true",
+      "value": false
+    },
+    {
+      "criterion": "ablation: diversity needed",
+      "name": "ablation: diversity needed",
+      "note": "no_diversity PR=1.0 vs candidate=1.0",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "outcome classified",
+      "name": "outcome classified",
+      "note": "per_neuron_pr_not_supported",
+      "passed": false,
+      "rule": "true",
+      "value": false
+    },
+    {
+      "criterion": "no baseline freeze",
+      "name": "no baseline freeze",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "criterion": "no mechanism promotion",
+      "name": "no mechanism promotion",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 6,
+  "criteria_total": 10,
+  "generated_at_utc": "2026-05-10T18:30:11+00:00",
+  "next_gate": "Diagnose and narrow",
+  "outcome": "per_neuron_pr_not_supported",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_21a_20260510_nest_per_neuron_scoring",
+  "primary": {
+    "pr_neuron": 1.0070142963940678,
+    "pr_polyp": 1.3317639533596952,
+    "ratio": 0.7561507381646964
+  },
+  "runner_revision": "tier5_21a_nest_per_neuron_scoring_20260510_0001",
+  "sham": {
+    "delta": -15.343579842726562,
+    "pr_shuffled": 16.35059413912063
+  },
+  "status": "fail",
+  "tier": "Tier 5.21a - NEST Per-Neuron Dimensionality Scoring Gate"
+}

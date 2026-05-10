@@ -1,0 +1,5 @@
+variant,mean_pr,stdev_pr,min_pr,max_pr,n
+family_b_orthogonalized_input,5.4864,0.3868,4.9913,5.9353,3
+orthogonal,2.0084,0.2842,1.7049,2.3884,3
+shuffled_input,4.5656,1.5804,3.4451,6.8007,3
+random_recurrent,2.0044,0.2717,1.6519,2.313,3

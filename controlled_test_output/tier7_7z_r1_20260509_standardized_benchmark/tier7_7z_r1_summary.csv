@@ -1,0 +1,11 @@
+name,value,rule,passed,note
+v2.6 scored,27,>= 6,True,
+ESN scored,27,>= 1,True,
+lag-ridge scored,27,>= 1,True,
+v2.6 aggregate MSE,1.9e-06,< 1.0,True,
+v2.6 vs v2.5,True,true,True,v2.6=0.00000190 v2.5=0.07354147 ratio=38720.1331
+v2.6 vs ESN,True,true,True,v2.6=0.00000190 esn=0.00000530 beats=True
+v2.6 vs lag-ridge,True,true,True,v2.6=0.00000190 lag=0.00000048 beats=False
+outcome classified,v26_beats_v25_and_esn,!= v26_does_not_beat_v25,True,
+no new baseline freeze,False,false,True,
+no hardware/native transfer,False,false,True,

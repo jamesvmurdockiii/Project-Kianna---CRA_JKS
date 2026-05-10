@@ -1,0 +1,4 @@
+outcome,condition,action
+per_neuron_diversity_confirmed,primary pass AND sham separated,Document that within-polyp input diversity increases state dimensionality. Promote as organism configuration change.
+per_neuron_diversity_partial,PR improves but does not reach 2.5 or 1.5x,Document partial signal with remaining gap.
+per_neuron_diversity_not_supported,No meaningful PR improvement over baseline,Within-polyp input diversity alone does not break synchrony.

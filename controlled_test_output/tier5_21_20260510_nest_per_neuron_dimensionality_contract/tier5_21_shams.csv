@@ -1,0 +1,3 @@
+name,role,description,passes_if
+shuffled_neuron_assignment,primary,"Same per-step neuron spike counts, but each neuron randomly reassigned to a different polyp. Tests whether organized input diversity structure is causal or any 512 random spike channels give the same PR.","Shuffled assignment PR < candidate PR - 2.0, confirming polyp structure matters."
+permuted_spike_temporal,secondary_diagnostic,"Same neuron spike counts, same polyp assignment, but spike times shuffled within each neuron's spike train. Tests whether temporal spike structure matters or only total spike counts.","Temporal permutation PR < candidate PR, confirming temporal structure matters."

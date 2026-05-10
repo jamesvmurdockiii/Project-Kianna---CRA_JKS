@@ -1,0 +1,12 @@
+name,criterion,value,rule,passed,note
+prereq 5.21 exists,prereq 5.21 exists,True,true,True,
+question locked,question locked,True,true,True,
+null hypothesis locked,null hypothesis locked,True,true,True,
+code change specified,code change specified,True,true,True,
+sham: shuffled input neuron gains,sham: shuffled input neuron gains,shuffled_input_neuron_gains,== shuffled_input_neuron_gains,True,
+primary pass: PR > 2.5 AND > 1.5x baseline,primary pass: PR > 2.5 AND > 1.5x baseline,True,true,True,
+3 outcome classes defined,3 outcome classes defined,3,== 3,True,
+current source has per-neuron biases,current source has per-neuron biases,True,true,True,sin(idx*2.4)*0.02 pattern found in update_current_injections
+no baseline freeze authorized,no baseline freeze authorized,False,false,True,
+no mechanism promotion authorized,no mechanism promotion authorized,False,false,True,
+no hardware/native transfer authorized,no hardware/native transfer authorized,False,false,True,

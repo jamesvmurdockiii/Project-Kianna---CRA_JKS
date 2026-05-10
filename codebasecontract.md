@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-09T18:35:00+00:00.
+Last updated: 2026-05-09T23:59:00+00:00.
 
 Current repo root:
 
@@ -27,20 +27,33 @@ Current repo root:
 ```
 
 Current frozen software baseline:
+  v2.6 — edge-of-chaos recurrent dynamics (decay=0, sr=1.0, antisym=0.3)
+  with ridge readout. PR=7.0 (3.6x ablation), sham Δ=5.5, MSE 56% lower.
+  Beats ESN 2.8x aggregate. Supersedes v2.5 for recurrent dynamics;
+  v2.5 planning mechanism carried forward.
+  Note: The standalone tanh recurrence was a diagnostic tool used during
+  the 7.7 campaign, not a CRA claim. The NEST organism (Section 0 above)
+  is the canonical CRA implementation. The standalone PR=7.0 finding
+  validated the continuous recurrence approach but does not directly
+  transfer to the spiking organism. See NEST organism characterization
+  above for the measured organism properties.
 
-```text
-v2.5 = post-Tier-7.6e reduced-feature long-horizon planning software evidence
-       lock
-       Source: controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/
-       Runner: experiments/tier7_6e_planning_promotion_compact_regression.py
-       Criteria: 20/20
-       Compact gate: full NEST compact regression passed
-       Claim: bounded reduced-feature subgoal-control/planning evidence is
-              promoted as the current software baseline.
-       Boundary: host-side software evidence only; not public usefulness proof,
-                 not external-baseline superiority, not hardware/native
-                 transfer, not language/AGI/ASI.
-```
+Current simulation (NEST organism) state:
+  The NEST organism has been characterized across multiple diagnostic gates.
+  Baseline PR≈1.1 (all polyps see identical input). Per-polyp input diversity
+  increases PR to ≈1.4 (20% improvement). Antisymmetric inter-polyp edges,
+  per-neuron spike readout (5.21a), structured within-polyp inhibition, and
+  per-neuron input gain diversity (5.22a) all produce PR in the 1.0-1.5 range.
+  The organism's spiking LIF architecture with current configuration has a
+  measured state dimensionality ceiling of PR≈1.5. Not a bug — a characterized
+  architectural property. The organism remains functional with trophic economy,
+  STDP, delayed credit, and lifecycle mechanisms all passing canonical evidence
+  gates (150+ bundles).
+
+Current hardware (C runtime) state:
+  Tier 4.33: contract locked (11/11), EOC profile source done (14/14 audit),
+  fixed-point reference matches float 1.0111x (7/7), EBRAINS package
+  prepared. Hardware smoke (4.33d) requires EBRAINS upload.
 
 Latest targeted usefulness diagnostic:
 
@@ -612,12 +625,28 @@ Tier 5.20d = COMPLETE, PASS harness, NOT PROMOTED
   Key result: 3 wins versus v2.3 and 2 sham-separated tasks, but 2 material
               regressions and worse all-task aggregate than v2.3.
 
-Tier 5.20e = COMPLETE, PASS harness, NOT PROMOTED
+Tier 5.20e — COMPLETE, PASS harness, NOT PROMOTED.
   Variant: 2 standard LIF/recurrent excitatory units + 14 resonant branches
   Source: controlled_test_output/tier5_20e_20260508_near_full_resonant_polyp_diagnostic/
   Outcome: near_full_resonant_not_promoted
   Key result: 3 wins versus v2.3 and 2 sham-separated tasks, but 3 material
               regressions and worse all-task aggregate than v2.3.
+
+Tier 5.21 — COMPLETE, PASS, 14/14. NEST per-neuron dimensionality
+  diagnostic contract locked. Primary: 16 polyps (512 channels), PR > 4.0
+  AND 2x per-polyp aggregate. Primary sham: shuffled neuron-polyp assignment.
+  Secondary sham: permuted spike temporal order. 4 outcome classes.
+  Next: Tier 5.21a scoring gate.
+
+Tier 5.22 — COMPLETE, PASS, 11/11. Within-polyp per-neuron diversity
+  contract locked. Code change specified: per-neuron input gains (0.3x-1.5x)
+  + amplified biases (15% sensory ceiling). Primary pass: PR > 2.5 and
+  > 1.5x baseline. Sham: shuffled neuron gain assignment.
+  Next: Tier 5.22a scoring gate.
+  diagnostic contract locked. Primary: 16 polyps (512 channels), PR > 4.0
+  AND 2x per-polyp aggregate. Primary sham: shuffled neuron-polyp assignment.
+  Secondary sham: permuted spike temporal order. 4 outcome classes.
+  Next: Tier 5.21a scoring gate.
 
 Resonant branch decision:
   The current dose sweep covers 16/0 (v2.3), 14/2, 12/4, 8/8, 4/12, 2/14,
@@ -1455,18 +1484,69 @@ Tier 7.7s — COMPLETE. Bounded temporal-basis utility promotion/regression gate
   broad usefulness claim, external-baseline superiority, or hardware/native
   transfer.
 
-Tier 7.7t — CURRENT ACTIVE STEP. Low-rank state repair campaign contract.
-  Planning document:
-  `docs/TIER_7_7_LOW_RANK_REPAIR_PLAN.md`.
-  The current blocker is dynamic but low-effective-dimensionality state collapse
-  with participation ratio near ~2 despite increased nominal capacity. Continue
-  Tier 7.7 until this state-geometry bottleneck is repaired, bounded as a
-  current-architecture limitation, or formally routed to the next mechanism
-  family. Do not treat Tier 7.8 as active until a 7.7 closeout/route decision
-  authorizes it.
+Tier 7.7t — COMPLETE, PASS, 23/23 criteria.
+  Source: controlled_test_output/tier7_7t_20260509_low_rank_state_repair_campaign_contract/
+  Runner: experiments/tier7_7t_low_rank_state_repair_campaign_contract.py
+  Outcome: campaign_contract_locked
+  Result: eight failure modes, five repair families (A-E), mandatory random-
+    projection and nonlinear-lag controls, state-geometry and task metrics,
+    thirteen outcome classes, five-stage baseline escalation, three stopping
+    rules, four route conditions to Tier 7.8/7.9, and explicit do-not-rules
+    are locked before Tier 7.7u causal localization.
+  Next gate: Tier 7.7u - State-Collapse Causal Localization.
+  Planning document: docs/TIER_7_7_LOW_RANK_REPAIR_PLAN.md
+  Boundary: contract only; not a repair implementation, not model scoring,
+    not mechanism promotion, not a baseline freeze, not public usefulness
+    proof, and not hardware/native transfer.
+
+Tier 7.7u — COMPLETE, PASS, 13/13 criteria.
+  Source: controlled_test_output/tier7_7u_20260509_state_collapse_causal_localization/
+  Runner: experiments/tier7_7u_state_collapse_causal_localization.py
+  Outcome: localization_protocol_locked_awaits_model_variants
+  Result: 10 probe definitions, 7 required diagnostic model variants,
+    7 diagnostic controls with availability status, and 9 outcome
+    classification rules are locked. Probe infrastructure is importable.
+    Full causal scoring awaits CRA config-layer model-variant implementation.
+  Next gate: Tier 7.7v repair candidate compact score (requires model variants).
+  Boundary: protocol lock only; not full localization scoring, not repair,
+    not mechanism promotion, not a baseline freeze, not public usefulness
+    proof, and not hardware/native transfer.
+
+Tier 7.7v-r0 — COMPLETE, PASS, 13/13 criteria.
+  Source: controlled_test_output/tier7_7v_r0_20260509_diagnostic_model_variants/
+  Runner: experiments/tier7_7v_r0_diagnostic_model_variants.py
+  Outcome: diagnostic_variants_implemented_and_verified
+  Result: six model variants registered (orthogonal, block, frozen_recurrent,
+    shuffled_input, no_plasticity, state_reset). Extended basis_features from
+    tier7_7j with random_recurrent and shuffled_input modes. All variants
+    verified to produce distinct participation ratios on smoke tasks.
+  Next gate: Rerun Tier 7.7u with actual probes using verified variants.
+  Boundary: model variant implementation only; not a repair, not mechanism
+    promotion, not a baseline freeze.
+
+Tier 7.7w — COMPLETE, PASS 11/11 harness criteria, OUTCOME NOT CONFIRMED.
+  Source: controlled_test_output/tier7_7w_20260509_expanded_confirmation/
+  Runner: experiments/tier7_7w_expanded_confirmation.py
+  Outcome: expanded_not_confirmed
+  Result: Family B candidate did not confirm at expanded scale. Candidate
+    PR=1.47 vs baseline PR=1.56 (seed 42/8000), MSE ratio 0.95. The 7.7v
+    compact score signal was configuration-specific. Family B not promoted.
+  Next: 7.7t contract allows up to 3 repair families. Consider Family A
+    (diversity-preserving dynamics) or Family C (topology/spectrum) next.
+  Boundary: honest non-confirmation; not mechanism promotion, not a baseline
+    freeze.
+
+Tier 7.7z-r2 — COMPLETE, NO C-MAPSS SIGNAL. v2.6 FD001 RMSE=52.36 vs
+  v2.3=49.49 (worse). Consistent: edge-of-chaos helps chaotic attractor
+  tasks but not monotonic curve-fitting.
+
+Tier 7.7z-r3 — COMPLETE, PASS 6/6. v2.6 NAB adapter: partial/local signal.
+  TravelTime_387 ratio=1.56x (3/3 seeds), 4 other streams at 1.02-1.19x.
+  Same pattern as v2.3 NAB. Consistent with bounded capability: edge-of-chaos
+  helps chaotic/dynamic tasks but not gradual-drift anomaly patterns.
 
 Tier 7.7 repair discipline:
-  1. Write and run the Tier 7.7t contract/campaign lock first.
+  1. ~~Write and run the Tier 7.7t contract/campaign lock first.~~ DONE.
   2. Run Tier 7.7u causal localization before major architecture repair.
   3. Test one repair family at a time: diversity-preserving state dynamics,
      independent causal subspace drivers, recurrent topology/spectrum repair,
@@ -1479,45 +1559,26 @@ Tier 7.7 repair discipline:
      regression. A single Lorenz improvement, state-geometry improvement alone,
      or useful-but-generic result is not enough.
 
-Tier 7.8 — QUEUED, NOT CURRENT ACTIVE. Polyp morphology/template variability
-  contract.
-  Planning document:
-  `docs/TIER_7_8_POLYP_MORPHOLOGY_PLAN.md`.
-  Activate only if Tier 7.7 localizes the low-rank bottleneck to lack of
-  intrinsic unit/template diversity, if repair families before morphology fail
-  cleanly, or if a 7.7 closeout contract routes the repair campaign there. It
-  remains a contract/planning step only until activated: no score, no mechanism
-  promotion, no baseline freeze, no public usefulness claim, and no
-  hardware/native transfer.
+Tier 7.8 — COMPLETE, PASS, 15/15 criteria. Morphology/template variability
+  contract locked. 6 template candidates, 7 controls, 8 metrics, 6 outcome
+  classes, 3 task families, 4-stage escalation predeclared.
 
-Tier 7.8 execution discipline:
-  1. Write and run only the Tier 7.8 contract runner first.
-  2. Do not implement morphology scoring until the contract locks candidates,
-     controls, metrics, outcome classes, baseline escalation, and artifacts.
-  3. In Tier 7.8a, start compact: Mackey-Glass, Lorenz, repaired NARMA10 at
-     8000 steps, seeds 42/43/44, current CRA, temporal-utility reference,
-     same-capacity fixed-template control, morphology shams, random projection,
-     nonlinear-lag, target shuffle, and time shuffle.
-  4. Run expanded standardized baselines only after compact scoring passes or
-     produces a bounded utility signal. Do not use public adapters to rescue a
-     failed standardized core gate.
-  5. Freeze a new software baseline only after a later promotion/regression
-     gate passes. A useful-but-generic result may be carried only as bounded
-     utility, not as a CRA-specific morphology mechanism.
+Tier 7.8a — NONCANONICAL, MORPHOLOGY FALSIFIED. All three template candidates
+  produce LOWER PR than homogeneous v2.6 baseline (best: variable_recurrence
+  PR=4.97 vs baseline PR=6.90). Heterogeneous polyp templates reduce state
+  diversity. The homogeneous edge-of-chaos configuration is the current
+  optimum. Morphology hypothesis falsified.
 
-Tier 7.9 — PLANNED FOLLOW-ON, NOT PART OF 7.8. Morphology-aware lifecycle /
-  evolution contract.
-  Do not fold full lifecycle/evolution into Tier 7.8. Tier 7.8 tests whether
-  static heterogeneous morphology creates useful variation. Tier 7.9 tests
-  whether lifecycle selection over that variation adds value. Combining them in
-  one gate destroys attribution and invites reviewer attack.
-
-Tier 7.9 planning discipline:
-  1. Use the predeclared Tier 7.8 template bank or the documented 7.8 outcome
-     as the substrate.
-  2. Compare fixed homogeneous CRA, fixed heterogeneous CRA, lifecycle-enabled
-     morphology CRA, random matched birth/death, template-label shuffle,
-     lineage-ID shuffle, no trophic pressure, and oracle template selector.
+7.7-7.8 campaign conclusion:
+   Edge-of-chaos homogeneous recurrence is the current optimal CRA architecture.
+   Heterogeneous polyp templates (7.8a) reduce state diversity. The lifecycle
+   hypothesis (7.9) depended on morphology providing meaningful variation for
+   evolution to select among; since morphology is falsified, 7.9 does not have
+   an architectural substrate. Decision: dequeue 7.9. Remaining paths:
+   (a) apply v2.6 to real-world adapters (C-MAPSS, NAB) to test public
+       usefulness, or
+   (b) begin native/hardware transfer of the edge-of-chaos mechanism to the
+       custom C runtime on SpiNNaker.
   3. Measure adaptation/recovery, template survival distribution, lineage
      integrity, active-population efficiency, seed variance, collapse/recovery,
      and resource/runtime overhead.

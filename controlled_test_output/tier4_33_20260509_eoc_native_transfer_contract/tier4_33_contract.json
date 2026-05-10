@@ -1,0 +1,9 @@
+{
+  "claim_boundary": "This contract locks the edge-of-chaos native mechanism transfer protocol without implementing C code or executing hardware. Not hardware evidence. Not a baseline freeze.",
+  "decision": "contract_locked_authorize_fixed_point_reference",
+  "hypothesis": "Yes. The mechanism uses only multiply-add, tanh, and EMA updates \u2014 all expressible in s16.15 with existing FP_MUL/FP_TANH primitives in the C runtime. The antisymmetric component is precomputed and static, requiring no online learning.",
+  "null_hypothesis": "Fixed-point rounding, DTCM budget constraints, or timing overruns prevent faithful reproduction of the software mechanism on hardware.",
+  "question": "Can the v2.6 edge-of-chaos recurrent dynamics mechanism be migrated to the SpiNNaker custom C runtime with s16.15 fixed-point arithmetic while preserving the mechanism's stated benefits (PR restoration, sham separation)?",
+  "software_reference": "CRA_EVIDENCE_BASELINE_v2.6",
+  "starting_baseline": "CRA_NATIVE_SCALE_BASELINE_v0.5"
+}

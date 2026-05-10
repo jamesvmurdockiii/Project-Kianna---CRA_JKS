@@ -1,0 +1,3 @@
+name,role,description,passes_if
+random_symmetric_projections,primary,Same number of inter-polyp projections but with random weights (no antisymmetric structure). Tests whether antisymmetric E/I pairing is causal or any inter-polyp connectivity helps.,Random projection PR < antisymmetric projection PR - 1.0
+no_projections,ablation,Default benchmark mode: zero inter-polyp projections (current state).,No-projection PR < antisymmetric projection PR

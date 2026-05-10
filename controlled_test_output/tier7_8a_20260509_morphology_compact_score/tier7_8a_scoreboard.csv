@@ -1,0 +1,37 @@
+model,task,seed,pr,mse,status,role,error
+v26_homogeneous,mackey_glass,42,8.434002226565742,3.263793888576738e-06,ok,,
+variable_recurrence,mackey_glass,42,3.543051919309373,6.019569874477007e-06,ok,template,
+diverse_timescales,mackey_glass,42,,,error,template,name 'traces' is not defined
+input_selectivity,mackey_glass,42,2.330860727315094,8.555725713185059e-06,ok,template,
+v26_homogeneous,mackey_glass,43,6.253822931397822,3.5221866860010682e-06,ok,,
+variable_recurrence,mackey_glass,43,4.78367704078881,7.24762424764196e-06,ok,template,
+diverse_timescales,mackey_glass,43,,,error,template,name 'traces' is not defined
+input_selectivity,mackey_glass,43,2.1151359713696705,5.6201735285882895e-06,ok,template,
+v26_homogeneous,mackey_glass,44,5.730907928977163,3.9998479154899345e-06,ok,,
+variable_recurrence,mackey_glass,44,3.863401408794491,8.520382945271969e-06,ok,template,
+diverse_timescales,mackey_glass,44,,,error,template,name 'traces' is not defined
+input_selectivity,mackey_glass,44,2.3989210848106466,7.813559057050412e-06,ok,template,
+v26_homogeneous,lorenz,42,9.850231187931035,7.449237331527553e-06,ok,,
+variable_recurrence,lorenz,42,3.7801522612495173,1.0434339080621097e-05,ok,template,
+diverse_timescales,lorenz,42,,,error,template,name 'traces' is not defined
+input_selectivity,lorenz,42,2.028317096686772,1.3444080805677581e-05,ok,template,
+v26_homogeneous,lorenz,43,5.990937748820515,7.451849134215079e-06,ok,,
+variable_recurrence,lorenz,43,4.416110566605659,8.668707749027788e-06,ok,template,
+diverse_timescales,lorenz,43,,,error,template,name 'traces' is not defined
+input_selectivity,lorenz,43,2.157425164415046,8.848880722794577e-06,ok,template,
+v26_homogeneous,lorenz,44,5.957539156320226,9.477521481623406e-06,ok,,
+variable_recurrence,lorenz,44,3.507826290172183,1.0501947847695709e-05,ok,template,
+diverse_timescales,lorenz,44,,,error,template,name 'traces' is not defined
+input_selectivity,lorenz,44,2.1846587308986094,1.1541380049142927e-05,ok,template,
+v26_homogeneous,narma10,42,9.2333784821881,4.4769815097287755e-06,ok,,
+variable_recurrence,narma10,42,6.559681132463183,1.0988477561079085e-05,ok,template,
+diverse_timescales,narma10,42,,,error,template,name 'traces' is not defined
+input_selectivity,narma10,42,4.920489210040977,1.0220250424788208e-05,ok,template,
+v26_homogeneous,narma10,43,4.288280591981943,9.30900418874602e-06,ok,,
+variable_recurrence,narma10,43,7.322127178360387,1.5654232782338276e-05,ok,template,
+diverse_timescales,narma10,43,,,error,template,name 'traces' is not defined
+input_selectivity,narma10,43,4.556657429901215,1.44534631876913e-05,ok,template,
+v26_homogeneous,narma10,44,6.368534915203786,2.6895220500145e-06,ok,,
+variable_recurrence,narma10,44,6.912598608143228,1.044413813849329e-05,ok,template,
+diverse_timescales,narma10,44,,,error,template,name 'traces' is not defined
+input_selectivity,narma10,44,4.1226122164572905,6.697145520599625e-06,ok,template,

@@ -1,0 +1,1 @@
+NEST organism per-neuron state dimensionality diagnostic only. Not mechanism promotion, not a baseline freeze, not public usefulness proof, not hardware/native transfer, and not a claim about the standalone or C runtime performance.

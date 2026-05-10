@@ -1,0 +1,21 @@
+{
+  "controls_count": 13,
+  "decision": "lock_campaign_and_authorize_localization",
+  "decision_boundary": "This contract locks the Tier 7.7 low-rank state repair campaign without implementing or scoring any repair candidate. It predeclares failure modes, repair families, controls, metrics, outcome classes, and baseline-escalation rules. Tier 7.8 and Tier 7.9 are explicitly queued behind the 7.7 repair campaign and must not activate until 7.7 routes there. No mechanism promotion, baseline freeze, public usefulness claim, or hardware/native transfer is authorized from this contract.",
+  "escalation_stages_count": 5,
+  "failure_class_locked": "low_effective_dimensionality_with_pr_near_2",
+  "failure_modes_count": 8,
+  "hypothesis": "The low-rank state collapse (PR near 2) is caused by one or more specific architectural pressures. A controlled localization gate can identify the primary cause, enabling a targeted repair instead of blind tuning.",
+  "metrics_count": 16,
+  "null_hypothesis": "The low-rank collapse is an irreducible property of the current architecture at its current capacity and cannot be materially improved without adding more neurons, external random projection, or nonlinear-lag features that generic controls can match.",
+  "outcome_classes_count": 13,
+  "prior_evidence": {
+    "77j": "low_rank_collapse_confirmed; PR stayed around 2 and readout collapse did not explain it",
+    "77l": "partitioned-driver repair improved task score but did not sufficiently increase dimensionality",
+    "77n": "generic random projection / nonlinear-lag controls explained the partitioned-driver gain",
+    "77q": "CRA-native temporal interface helped current CRA but still lost to strong generic controls",
+    "77s": "temporal-basis interface promoted only as bounded engineering utility, not a CRA-specific mechanism"
+  },
+  "question": "Which measured failure mode should the next repair target, and what would count as a real state-dimensionality repair rather than another generic feature win?",
+  "repair_families_count": 5
+}

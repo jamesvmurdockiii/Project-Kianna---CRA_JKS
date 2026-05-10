@@ -1,0 +1,4 @@
+name,description,thresholds
+primary_pass,16-polyp per-neuron PR > 4.0 AND per-neuron PR > 2x per-polyp aggregate PR,"{'pr_min': 4.0, 'pr_ratio_min': 2.0}"
+sham_separation,Shuffled neuron assignment PR < candidate PR - 2.0,{'pr_delta_min': 2.0}
+ablation_confirm,No-input-diversity per-neuron PR < candidate PR,

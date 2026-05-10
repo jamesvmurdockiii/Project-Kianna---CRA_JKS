@@ -1,0 +1,84 @@
+{
+  "beats_best": false,
+  "beats_v23": false,
+  "best_model": 46.11,
+  "criteria": [
+    {
+      "criterion": "C-MAPSS data loaded",
+      "details": "",
+      "name": "C-MAPSS data loaded",
+      "note": "",
+      "operator": "true",
+      "pass": true,
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "v2.6 scored (3 seeds)",
+      "details": "RMSEs=[52.73, 51.85, 52.51]",
+      "name": "v2.6 scored (3 seeds)",
+      "note": "RMSEs=[52.73, 51.85, 52.51]",
+      "operator": "== 3",
+      "pass": true,
+      "passed": true,
+      "rule": "== 3",
+      "value": 3
+    },
+    {
+      "criterion": "v2.6 RMSE < v2.3 baseline (49.49)",
+      "details": "v2.6=52.36 v2.3=49.49",
+      "name": "v2.6 RMSE < v2.3 baseline (49.49)",
+      "note": "v2.6=52.36 v2.3=49.49",
+      "operator": "< 49.49",
+      "pass": false,
+      "passed": false,
+      "rule": "< 49.49",
+      "value": 52.36
+    },
+    {
+      "criterion": "v2.6 RMSE < best public (46.11)",
+      "details": "v2.6=52.36 best=46.11",
+      "name": "v2.6 RMSE < best public (46.11)",
+      "note": "v2.6=52.36 best=46.11",
+      "operator": "< 46.11",
+      "pass": false,
+      "passed": false,
+      "rule": "< 46.11",
+      "value": 52.36
+    },
+    {
+      "criterion": "no baseline freeze",
+      "details": "",
+      "name": "no baseline freeze",
+      "note": "",
+      "operator": "false",
+      "pass": true,
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "criterion": "no public usefulness claim",
+      "details": "",
+      "name": "no public usefulness claim",
+      "note": "",
+      "operator": "false",
+      "pass": true,
+      "passed": true,
+      "rule": "false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 4,
+  "criteria_total": 6,
+  "generated_at_utc": "2026-05-10T03:04:44+00:00",
+  "outcome": "v26_no_adapter_signal",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7z_r2_20260509_cmapss_adapter",
+  "runner_revision": "tier7_7z_r2_cmapss_adapter_20260509_0001",
+  "status": "fail",
+  "tier": "Tier 7.7z-r2 - v2.6 C-MAPSS FD001 Adapter Rerun",
+  "v23_baseline": 49.49,
+  "v26_rmse_mean": 52.36,
+  "v26_rmse_median": 52.51
+}

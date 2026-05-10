@@ -1,0 +1,113 @@
+{
+  "criteria": [
+    {
+      "criterion": "5 NAB streams loaded",
+      "details": "",
+      "name": "5 NAB streams loaded",
+      "note": "",
+      "operator": "== 5",
+      "pass": true,
+      "passed": true,
+      "rule": "== 5",
+      "value": 5
+    },
+    {
+      "criterion": "all streams scored",
+      "details": "5 streams x 3 seeds = 15 results",
+      "name": "all streams scored",
+      "note": "5 streams x 3 seeds = 15 results",
+      "operator": "== 15",
+      "pass": true,
+      "passed": true,
+      "rule": "== 15",
+      "value": 15
+    },
+    {
+      "criterion": "streams with signal (>1.3x, 2+ seeds)",
+      "details": "mean ratio=1.094",
+      "name": "streams with signal (>1.3x, 2+ seeds)",
+      "note": "mean ratio=1.094",
+      "operator": ">= 1",
+      "pass": true,
+      "passed": true,
+      "rule": ">= 1",
+      "value": 1
+    },
+    {
+      "criterion": "NAB outcome classified",
+      "details": "",
+      "name": "NAB outcome classified",
+      "note": "",
+      "operator": "!= nab_no_signal",
+      "pass": true,
+      "passed": true,
+      "rule": "!= nab_no_signal",
+      "value": "nab_partial_signal"
+    },
+    {
+      "criterion": "no baseline freeze",
+      "details": "",
+      "name": "no baseline freeze",
+      "note": "",
+      "operator": "false",
+      "pass": true,
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "criterion": "no public usefulness claim",
+      "details": "",
+      "name": "no public usefulness claim",
+      "note": "",
+      "operator": "false",
+      "pass": true,
+      "passed": true,
+      "rule": "false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 6,
+  "criteria_total": 6,
+  "generated_at_utc": "2026-05-10T04:36:04+00:00",
+  "mean_ratio": 1.0945,
+  "next_gate": "Tier 4 hardware transfer",
+  "outcome": "nab_partial_signal",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7z_r3_20260509_nab_adapter",
+  "runner_revision": "tier7_7z_r3_nab_adapter_20260509_0001",
+  "status": "pass",
+  "stream_summary": {
+    "TravelTime_387.csv": {
+      "n_seeds": 3,
+      "ratio_geomean": 1.5634,
+      "ratio_mean": 1.5634,
+      "signal_seeds": 3
+    },
+    "ambient_temperature_system_failure.csv": {
+      "n_seeds": 3,
+      "ratio_geomean": 0.4645,
+      "ratio_mean": 0.4645,
+      "signal_seeds": 0
+    },
+    "art_daily_flatmiddle.csv": {
+      "n_seeds": 3,
+      "ratio_geomean": 1.1896,
+      "ratio_mean": 1.1896,
+      "signal_seeds": 0
+    },
+    "ec2_cpu_utilization_24ae8d.csv": {
+      "n_seeds": 3,
+      "ratio_geomean": 1.0792,
+      "ratio_mean": 1.0797,
+      "signal_seeds": 0
+    },
+    "machine_temperature_system_failure.csv": {
+      "n_seeds": 3,
+      "ratio_geomean": 1.1751,
+      "ratio_mean": 1.1751,
+      "signal_seeds": 0
+    }
+  },
+  "streams_with_signal": 1,
+  "tier": "Tier 7.7z-r3 - v2.6 NAB Streaming Anomaly Adapter"
+}

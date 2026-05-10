@@ -1,0 +1,85 @@
+{
+  "base_pr": 6.900848352154037,
+  "baseline": {
+    "mse_geomean": 5.1856288284517344e-06,
+    "n": 9,
+    "pr_mean": 6.900848352154037
+  },
+  "best_pr": 4.965402933987425,
+  "best_template": "variable_recurrence",
+  "criteria": [
+    {
+      "name": "prereq 7.8 exists",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "name": "v2.6 baseline scored",
+      "note": "",
+      "passed": true,
+      "rule": ">= 3",
+      "value": 9
+    },
+    {
+      "name": "variable_recurrence scored",
+      "note": "",
+      "passed": true,
+      "rule": ">= 3",
+      "value": 9
+    },
+    {
+      "name": "diverse_timescales scored",
+      "note": "",
+      "passed": false,
+      "rule": ">= 3",
+      "value": 0
+    },
+    {
+      "name": "input_selectivity scored",
+      "note": "",
+      "passed": true,
+      "rule": ">= 3",
+      "value": 9
+    },
+    {
+      "name": "best template PR > baseline",
+      "note": "best=variable_recurrence PR=5.0 base=6.9",
+      "passed": false,
+      "rule": "true",
+      "value": false
+    },
+    {
+      "name": "no baseline freeze authorized",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 5,
+  "criteria_total": 7,
+  "diverse_timescales": {
+    "mse_geomean": null,
+    "n": 0,
+    "pr_mean": null
+  },
+  "generated_at_utc": "2026-05-10T02:41:14+00:00",
+  "input_selectivity": {
+    "mse_geomean": 9.279819756849228e-06,
+    "n": 9,
+    "pr_mean": 2.979453070210591
+  },
+  "next_gate": "7.8b expanded confirmation (if candidate beats homogeneous baseline)",
+  "outcome": "morphology_compact_scored",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_8a_20260509_morphology_compact_score",
+  "runner_revision": "tier7_8a_morphology_compact_score_20260509_0001",
+  "status": "fail",
+  "tier": "Tier 7.8a - Morphology Candidate Compact Scoring Gate",
+  "variable_recurrence": {
+    "mse_geomean": 9.506902426092845e-06,
+    "n": 9,
+    "pr_mean": 4.965402933987425
+  }
+}

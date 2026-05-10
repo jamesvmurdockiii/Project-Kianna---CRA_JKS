@@ -1,0 +1,13 @@
+{
+  "claim_boundary": "This contract locks the Tier 7.8 morphology/template variability testing protocol without implementing or scoring any candidate. Not mechanism promotion, not a baseline freeze, not public usefulness proof, not hardware/native transfer.",
+  "decision": "contract_locked_authorize_7_8a_compact_scoring",
+  "hypothesis": "Heterogeneous polyp templates create functional specialization through structural diversity, increasing state dimensionality because different polyps respond to different aspects of the input signal rather than all collapsing into the same dominant modes.",
+  "mechanism_under_test": "polyp template variability (intrinsic heterogeneity)",
+  "null_hypothesis": "Template variability is equivalent to extra capacity; a same-budget homogeneous control with more neurons matches any template-diversity benefit.",
+  "prior_evidence": {
+    "5.20_series": "Resonant branch polyps (a form of template variability) showed task-specific benefits but material regressions. Template variability needs controlled testing.",
+    "7.7_campaign": "Edge-of-chaos dynamics fix PR 2=7 but await organism integration. Primary bottleneck is contractive recurrent regime, not input encoding.",
+    "7.7j": "Low-rank collapse confirmed: PR near 2 even at 128 hidden units with homogeneous architecture."
+  },
+  "question": "Can variable polyp internal templates (diverse timescales, recurrence parameters, E/I ratios, sparse connectivity, input selectivity, polyp size) increase state diversity and benchmark usefulness beyond the current homogeneous architecture, without being explained by generic random projection or nonlinear-lag controls?"
+}

@@ -1,0 +1,253 @@
+{
+  "claim_boundary": "Diagnostic model variant implementation and verification only. Extends tier7_7j.basis_features with random_recurrent and shuffled_input modes. Not a repair, not mechanism promotion, not a baseline freeze, not hardware/native transfer.",
+  "criteria": [
+    {
+      "criterion": "prereq 7.7u exists",
+      "details": "",
+      "name": "prereq 7.7u exists",
+      "note": "",
+      "operator": "true",
+      "pass": true,
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "variants declared",
+      "details": "",
+      "name": "variants declared",
+      "note": "",
+      "operator": "== 6",
+      "pass": true,
+      "passed": true,
+      "rule": "== 6",
+      "value": 6
+    },
+    {
+      "criterion": "frozen_recurrent declared",
+      "details": "",
+      "name": "frozen_recurrent declared",
+      "note": "",
+      "operator": "true",
+      "pass": true,
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "shuffled_input declared",
+      "details": "",
+      "name": "shuffled_input declared",
+      "note": "",
+      "operator": "true",
+      "pass": true,
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "no_plasticity declared",
+      "details": "",
+      "name": "no_plasticity declared",
+      "note": "",
+      "operator": "true",
+      "pass": true,
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "state_reset declared",
+      "details": "",
+      "name": "state_reset declared",
+      "note": "",
+      "operator": "true",
+      "pass": true,
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "all variants verify ok",
+      "details": "",
+      "name": "all variants verify ok",
+      "note": "",
+      "operator": "true",
+      "pass": true,
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "variants produce distinct PR",
+      "details": "",
+      "name": "variants produce distinct PR",
+      "note": "",
+      "operator": "true",
+      "pass": true,
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "frozen_recurrent PR differs from orthogonal",
+      "details": "",
+      "name": "frozen_recurrent PR differs from orthogonal",
+      "note": "",
+      "operator": "true",
+      "pass": true,
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "shuffled_input PR differs from orthogonal",
+      "details": "",
+      "name": "shuffled_input PR differs from orthogonal",
+      "note": "",
+      "operator": "true",
+      "pass": true,
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "extended_basis_features importable",
+      "details": "",
+      "name": "extended_basis_features importable",
+      "note": "",
+      "operator": "true",
+      "pass": true,
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "no baseline freeze",
+      "details": "",
+      "name": "no baseline freeze",
+      "note": "",
+      "operator": "false",
+      "pass": true,
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "criterion": "no mechanism promotion",
+      "details": "",
+      "name": "no mechanism promotion",
+      "note": "",
+      "operator": "false",
+      "pass": true,
+      "passed": true,
+      "rule": "false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 13,
+  "criteria_total": 13,
+  "generated_at_utc": "2026-05-09T19:46:58+00:00",
+  "next_gate": "Rerun Tier 7.7u with actual probe execution using verified variants",
+  "nonclaims": [
+    "not a repair",
+    "not a mechanism promotion",
+    "not a baseline freeze",
+    "not public usefulness proof",
+    "not hardware/native transfer"
+  ],
+  "outcome": "diagnostic_variants_implemented_and_verified",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7v_r0_20260509_diagnostic_model_variants",
+  "runner_revision": "tier7_7v_r0_diagnostic_model_variants_20260509_0001",
+  "status": "pass",
+  "tier": "Tier 7.7v-r0 - Diagnostic Model Variant Implementation",
+  "variants": [
+    {
+      "description": "Orthogonal recurrent weights; current CRA reference baseline.",
+      "mode": "orthogonal",
+      "targets": "baseline",
+      "variant": "orthogonal_baseline"
+    },
+    {
+      "description": "Block-structured recurrent weights with varied time constants.",
+      "mode": "block",
+      "targets": "baseline",
+      "variant": "block_recurrent"
+    },
+    {
+      "description": "Random recurrent weights (no orthogonalization). Tests whether learned/structured topology matters for PR.",
+      "mode": "random_recurrent",
+      "targets": "recurrent_topology_bottleneck",
+      "variant": "frozen_recurrent"
+    },
+    {
+      "description": "Shuffled EMA trace and hidden channels after bias+observed. Tests whether causal input structure matters.",
+      "mode": "shuffled_input",
+      "targets": "input_encoder_bottleneck",
+      "variant": "shuffled_input"
+    },
+    {
+      "description": "Same features as orthogonal_baseline but readout update_enabled=False. Implemented at readout level.",
+      "mode": "orthogonal",
+      "targets": "plasticity_homogenization",
+      "variant": "no_plasticity"
+    },
+    {
+      "description": "Periodic state reset via reset_interval in tier5_19b.temporal_features_variant.",
+      "mode": "state_reset",
+      "targets": "numeric_saturation",
+      "variant": "state_reset"
+    }
+  ],
+  "variants_ready": true,
+  "verification": [
+    {
+      "mode": "orthogonal",
+      "n_features": 44,
+      "n_hidden": 32,
+      "participation_ratio": 1.4708,
+      "variant": "orthogonal_baseline",
+      "verify": "ok"
+    },
+    {
+      "mode": "block",
+      "n_features": 44,
+      "n_hidden": 32,
+      "participation_ratio": 2.0702,
+      "variant": "block_recurrent",
+      "verify": "ok"
+    },
+    {
+      "mode": "random_recurrent",
+      "n_features": 44,
+      "n_hidden": 32,
+      "participation_ratio": 1.7012,
+      "variant": "frozen_recurrent",
+      "verify": "ok"
+    },
+    {
+      "mode": "shuffled_input",
+      "n_features": 44,
+      "n_hidden": 32,
+      "participation_ratio": 2.2756,
+      "variant": "shuffled_input",
+      "verify": "ok"
+    },
+    {
+      "mode": "orthogonal",
+      "n_features": 44,
+      "n_hidden": 32,
+      "participation_ratio": 1.4708,
+      "variant": "no_plasticity",
+      "verify": "ok"
+    },
+    {
+      "mode": "state_reset",
+      "n_features": 44,
+      "n_hidden": 32,
+      "participation_ratio": 1.7384,
+      "variant": "state_reset",
+      "verify": "ok"
+    }
+  ]
+}

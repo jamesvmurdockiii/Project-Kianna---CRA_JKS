@@ -1,0 +1,103 @@
+{
+  "criteria": [
+    {
+      "name": "v2.6 scored",
+      "note": "",
+      "passed": true,
+      "rule": ">= 6",
+      "value": 27
+    },
+    {
+      "name": "ESN scored",
+      "note": "",
+      "passed": true,
+      "rule": ">= 1",
+      "value": 27
+    },
+    {
+      "name": "lag-ridge scored",
+      "note": "",
+      "passed": true,
+      "rule": ">= 1",
+      "value": 27
+    },
+    {
+      "name": "v2.6 aggregate MSE",
+      "note": "",
+      "passed": true,
+      "rule": "< 1.0",
+      "value": 1.9e-06
+    },
+    {
+      "name": "v2.6 vs v2.5",
+      "note": "v2.6=0.00000190 v2.5=0.07354147 ratio=38720.1331",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "name": "v2.6 vs ESN",
+      "note": "v2.6=0.00000190 esn=0.00000530 beats=True",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "name": "v2.6 vs lag-ridge",
+      "note": "v2.6=0.00000190 lag=0.00000048 beats=False",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "name": "outcome classified",
+      "note": "",
+      "passed": true,
+      "rule": "!= v26_does_not_beat_v25",
+      "value": "v26_beats_v25_and_esn"
+    },
+    {
+      "name": "no new baseline freeze",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "name": "no hardware/native transfer",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 10,
+  "criteria_total": 10,
+  "esn": {
+    "geomean_mse": 5.299613228327956e-06,
+    "max_mse": 3.128295930171221e-05,
+    "min_mse": 3.5983097608555256e-07,
+    "n": 27
+  },
+  "generated_at_utc": "2026-05-10T02:20:24+00:00",
+  "lag": {
+    "geomean_mse": 4.80857587522284e-07,
+    "max_mse": 8.171934302564272e-06,
+    "min_mse": 2.2854960508157833e-09,
+    "n": 27
+  },
+  "next_gate": "Post-freeze public adapter rerun (C-MAPSS/NAB) if aggregate improves",
+  "outcome": "v26_beats_v25_and_esn",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7z_r1_20260509_standardized_benchmark",
+  "runner_revision": "tier7_7z_r1_standardized_benchmark_20260509_0001",
+  "status": "pass",
+  "tier": "Tier 7.7z-r1 \u2014 v2.6 Standardized Benchmark Rerun",
+  "v25_reference_mse": 0.0735414741,
+  "v26": {
+    "geomean_mse": 1.8993084020764896e-06,
+    "max_mse": 9.477521481623406e-06,
+    "min_mse": 3.311158351633188e-07,
+    "n": 27
+  },
+  "v26_v25_ratio": 38720.1331
+}

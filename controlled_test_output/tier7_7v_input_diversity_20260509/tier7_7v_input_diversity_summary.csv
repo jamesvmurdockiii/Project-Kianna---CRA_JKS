@@ -1,0 +1,8 @@
+name,value,rule,passed,note
+multi_band candidate scored,9,>= 1,True,
+diff_embedding candidate scored,9,>= 1,True,
+multi_band PR > baseline (~2.0),2.8016855843902815,>= 2.5,True,multi_band PR=2.8016855843902815
+diff_embed PR > baseline (~2.0),4.758843133618434,>= 2.5,True,diff_embed PR=4.758843133618434
+best candidate PR >= 3.5,4.758843133618434,>= 3.5,True,"multi_band=2.8017, diff_embed=4.7588"
+outcome classified,True,true,True,
+no baseline freeze authorized,False,false,True,

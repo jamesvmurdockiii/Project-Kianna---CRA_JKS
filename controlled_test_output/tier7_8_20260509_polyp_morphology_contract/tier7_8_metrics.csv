@@ -1,0 +1,9 @@
+metric,domain,description
+participation_ratio,state_geometry,Effective state dimensionality at 128 total hidden units.
+rank_95,state_geometry,PCA components for 95% variance.
+top_pc_dominance,state_geometry,Fraction of variance in first PC.
+per_template_activity_variance,state_geometry,Activity variance per polyp template group.
+template_pairwise_pr,state_geometry,PR within each template group separately.
+geomean_mse_ridge,task,Geomean MSE across Mackey-Glass/Lorenz/repaired-NARMA10 with ridge readout.
+geomean_mse_lms,task,Geomean MSE with online LMS readout.
+seed_variance,task,Variance across seeds 42/43/44.

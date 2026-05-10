@@ -1,0 +1,8 @@
+variant,targets,implementation
+no_plasticity,plasticity_homogenization,Freeze or zero learning rate while preserving recurrence. Add config key `plasticity_enabled=False`.
+no_inhibition,inhibition_compression,Disable WTA/inhibitory normalization within polyp populations. Add config key `inhibition_enabled=False`.
+frozen_recurrent,recurrent_topology_bottleneck,Initialize random recurrent weights once and freeze them. Compares to learned topology.
+state_reset,numeric_saturation,Periodically reset or reinitialize hidden state during training.
+input_channel_shuffle,input_encoder_bottleneck,Permute input channels before encoding to break causal structure.
+per_partition_probe,shared_driver_synchronization,Expose per-polyp-partition state readout for partition-specific PR.
+trophic_probe,trophic_selection_compression,Instrument trophic energy counters alongside state geometry.

@@ -1,0 +1,12 @@
+name,value,rule,passed,note
+prereq 7.7v exists,True,true,True,
+candidate scored,3,>= 3,True,
+orthogonal baseline scored,3,>= 3,True,
+shuffled control scored,3,>= 1,True,
+multiple lengths scored,1,>= 1,True,lengths={42}
+multiple seeds scored,1,>= 1,True,seeds={42}
+PR improved vs baseline,False,true,False,"candidate PR=1.471314823205077, baseline PR=1.5560847500767583"
+outcome classified,False,true,False,classification=expanded_not_confirmed
+no baseline freeze authorized,False,false,True,
+no mechanism promotion authorized,False,false,True,
+no hardware/native transfer,False,false,True,
