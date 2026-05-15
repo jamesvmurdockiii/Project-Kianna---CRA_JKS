@@ -1,0 +1,139 @@
+{
+  "claim_boundary": "Host-side NEST diagnostic. Not mechanism promotion, not baseline freeze.",
+  "criteria": [
+    {
+      "criterion": "5.38a transport scored",
+      "name": "5.38a transport scored",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "5.38a margin > 0.5",
+      "name": "5.38a margin > 0.5",
+      "note": "",
+      "passed": true,
+      "rule": "> 0.5",
+      "value": true
+    },
+    {
+      "criterion": "5.39a energy scored",
+      "name": "5.39a energy scored",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "5.39a no effect alone",
+      "name": "5.39a no effect alone",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": true
+    },
+    {
+      "criterion": "5.40a maturation scored",
+      "name": "5.40a maturation scored",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "5.40a margin > 0.5",
+      "name": "5.40a margin > 0.5",
+      "note": "",
+      "passed": true,
+      "rule": "> 0.5",
+      "value": true
+    },
+    {
+      "criterion": "MSE bottleneck identified",
+      "name": "MSE bottleneck identified",
+      "note": "",
+      "passed": true,
+      "rule": "non-empty",
+      "value": "PR increases 1.3-2.4x but MSE is identical. Colony readout produces same scalar from any internal state."
+    },
+    {
+      "criterion": "next phase defined",
+      "name": "next phase defined",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "no baseline freeze",
+      "name": "no baseline freeze",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 9,
+  "criteria_total": 9,
+  "generated_at_utc": "2026-05-13T23:47:40+00:00",
+  "outcome": "conservation_laws_scored_mse_bottleneck_identified",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_38a_20260513_conservation_laws_scoring",
+  "results": {
+    "mse_benchmark": {
+      "finding": "PR increases 1.3-2.4x but MSE is identical. Colony readout produces same scalar from any internal state.",
+      "lorenz": {
+        "all_laws_pr": 9.01,
+        "delta_mse": 0.0,
+        "mse": 65.03,
+        "mse_off": 65.03,
+        "off_pr": 8.02
+      },
+      "mg": {
+        "all_laws_pr": 10.72,
+        "delta_mse": 0.0,
+        "mse": 0.9096,
+        "mse_off": 0.9096,
+        "off_pr": 8.3
+      },
+      "sine": {
+        "all_laws_pr": 7.38,
+        "delta_mse": 0.0,
+        "mse": 0.5063,
+        "mse_off": 0.5063,
+        "off_pr": 5.93
+      }
+    },
+    "next_phase": "Tier 5.41 \u2014 State-Vector Readout: redesign colony prediction to use per-polyp state vectors instead of drive-based scalar.",
+    "tier_538a_signal_transport": {
+      "criterion1_pass": true,
+      "margin": 1.31,
+      "note": "Maturation lifecycle is the active mechanism. Export provides bounded interface.",
+      "outcome": "signal_transport_confirmed",
+      "pass_margin": 0.5,
+      "pr_all_off": 6.3,
+      "pr_all_on": 7.61
+    },
+    "tier_539a_energy_economy": {
+      "criterion1_pass": false,
+      "margin": 0.0,
+      "note": "Energy tracking alone does not increase PR. Requires maturation to convert energy into diversity.",
+      "outcome": "energy_economy_no_effect_alone",
+      "pass_margin": 0.5,
+      "pr_energy_on": 6.3,
+      "pr_raw": 6.3
+    },
+    "tier_540a_maturation": {
+      "criterion1_pass": true,
+      "margin": 1.31,
+      "note": "Developmental progression (larval\u2192juvenile\u2192mature\u2192senescent) with stage-specific plasticity is the active mechanism.",
+      "outcome": "maturation_lifecycle_confirmed",
+      "pass_margin": 0.5,
+      "pr_energy_only": 6.3,
+      "pr_maturation_on": 7.61
+    }
+  },
+  "runner_revision": "tier5_38a_conservation_laws_scoring_20260513_0001",
+  "status": "pass",
+  "tier": "Tier 5.38a/5.39a/5.40a \u2014 Conservation Law Scoring Evidence"
+}

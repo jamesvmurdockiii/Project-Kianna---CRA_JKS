@@ -1,0 +1,12 @@
+name,criterion,value,rule,passed,note
+prereq contract exists,prereq contract exists,True,true,True,
+baseline scored,baseline scored,True,true,True,PR=2.92
+antisym 0.7 scored,antisym 0.7 scored,True,true,True,PR=2.91
+antisym 1.5 scored,antisym 1.5 scored,True,true,True,PR=2.90
+primary pass: PR > 2.5,primary pass: PR > 2.5,True,> 2.5,True,best PR=2.91
+sham separation: PR > 1.5x baseline,sham separation: PR > 1.5x baseline,False,> 1.5x,False,delta=-0.0098
+organism ran cleanly all conditions,organism ran cleanly all conditions,True,true,True,
+no NaN/infinite values,no NaN/infinite values,True,true,True,
+no baseline freeze authorized,no baseline freeze authorized,False,false,True,
+no mechanism promotion authorized,no mechanism promotion authorized,False,false,True,
+no hardware/native transfer authorized,no hardware/native transfer authorized,False,false,True,

@@ -292,6 +292,93 @@ class PolypState:
     bdnf_release_rate: float = DEFAULT_BDNF_RELEASE_RATE
     bdnf_uptake_efficiency: float = DEFAULT_BDNF_UPTAKE_EFFICIENCY
 
+    # Neural device parameters (heritable via lifecycle)
+    # These scale the base config LIF parameters per-polyp, allowing
+    # evolution to produce genuinely different computational properties.
+    tau_m_factor: float = 1.0
+    """Multiplier for membrane time constant tau_m (lower = faster integration)."""
+    v_thresh_factor: float = 1.0
+    """Multiplier for firing threshold v_thresh (lower = more excitable)."""
+    cm_factor: float = 1.0
+    """Multiplier for membrane capacitance cm (higher = slower, more stable)."""
+
+    # Stream specialization (heritable via lifecycle)
+    stream_mask_coverage: float = 1.0
+    """Heritable fraction of input channels the polyp attends to (0.2-1.0)."""
+    stream_attention_mask: Set[int] = field(default_factory=lambda: set(range(8)))
+    """Computed from coverage: which specific input channel indices the
+    polyp's input neurons receive.  Different polyps attend to different
+    channels, creating orthogonal response subspaces."""
+
+    # Variable neuron allocation (heritable via lifecycle)
+    n_input_alloc: int = 8
+    """Number of input neurons in this polyp's 32-neuron block."""
+    n_exc_alloc: int = 16
+    """Number of excitatory neurons in this polyp's 32-neuron block."""
+    n_inh_alloc: int = 4
+    """Number of inhibitory neurons in this polyp's 32-neuron block."""
+    n_readout_alloc: int = 4
+    """Number of readout neurons (always 32 - sum of others, must be >= 1)."""
+
+    # Heritable allocation ratios (the fractional source of n_*_alloc)
+    input_allocation_ratio: float = 0.25
+    """Heritable fraction of 32 neurons allocated to input."""
+    exc_allocation_ratio: float = 0.5
+    """Heritable fraction of 32 neurons allocated to excitatory."""
+    inh_allocation_ratio: float = 0.125
+    """Heritable fraction of 32 neurons allocated to inhibitory."""
+
+    # Temporal specialization (heritable via lifecycle)
+    temporal_lag: int = 0
+    """Heritable temporal lag index for per-polyp sensory history reading.
+    Polyp reads sensory_history[-(lag+1)] instead of current value."""
+
+    # Operator diversity — per-polyp dynamical regime (heritable)
+    spectral_radius: float = 1.0
+    """Heritable E->E recurrent weight spectral radius. <1 = contractive,
+    =1 = critical, >1 = expansive/chaotic edge."""
+    ei_ratio: float = 1.0
+    """Heritable I->E inhibitory strength multiplier. >1 = stable/damped,
+    <1 = excitable/oscillatory."""
+
+    # Functional caste (heritable via lifecycle)
+    caste_type: int = 0
+    """Heritable functional caste: 0=filter, 1=memory, 2=rotor, 3=chaotic, 4=stabilizer.
+    Determines initial spectral_radius and ei_ratio ranges."""
+
+    # Signal export interface — bounded, compressive transport
+    export_activity: float = 0.0
+    """Bounded export: activity_rate → sigmoid (0,1)."""
+    export_prediction: float = 0.0
+    """Bounded export: current_prediction → tanh (-1,1)."""
+    export_uncertainty: float = 0.0
+    """Bounded export: 1-accuracy → sigmoid (0,1)."""
+    export_energy: float = 0.0
+    """Bounded export: trophic_health/20 → sigmoid (0,1)."""
+    export_novelty: float = 0.0
+    """Bounded export: abs(last_raw_rpe) → tanh (-1,1)."""
+
+    # Energy economy — explicit per-polyp energy variable
+    energy_reserve: float = 0.5
+    """Per-polyp energy reserve [0,1]. Gains from prediction usefulness,
+    loses from metabolic cost and complexity. Drives survival decisions."""
+
+    # Developmental maturation stages (replaces "freezing")
+    maturation_stage: int = 0
+    """Developmental stage: 0=larval(exploratory,high plasticity),
+    1=juvenile(stabilizing), 2=mature(calcified,reliable),
+    3=senescent(recycling). Energy determines progression."""
+
+    # Learned synaptic weights (snapshotted before rebuild, inheritable)
+    _learned_exc_weights: Optional[Dict[Tuple[int, int], float]] = None
+    """Snapshot of excitatory projection weights (local_pre, local_post)->weight."""
+    _learned_inh_weights: Optional[Dict[Tuple[int, int], float]] = None
+    """Snapshot of inhibitory projection weights (local_pre, local_post)->weight."""
+    _init_exc_conns: Optional[List[Tuple[int, int, float, float]]] = None
+    """Stored excitatory connection list for rebuild/inheritance."""
+    _init_inh_conns: Optional[List[Tuple[int, int, float, float]]] = None
+    """Stored inhibitory connection list for rebuild/inheritance."""
+
     # Spatial position (3D)
     xyz: np.ndarray = field(default_factory=lambda: np.zeros(3, dtype=float))
 

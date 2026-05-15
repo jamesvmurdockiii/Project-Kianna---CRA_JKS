@@ -1,0 +1,12 @@
+name,criterion,value,rule,passed,note
+prereq contract exists,prereq contract exists,True,true,True,
+heritable condition completed,heritable condition completed,True,true,True,
+clone sham completed,clone sham completed,True,true,True,
+static ablation completed,static ablation completed,True,true,True,
+C1: heritable > clone by >0.3,C1: heritable > clone by >0.3,0.1211,> 0.3,False,
+C2: heritable > static by >0.5,C2: heritable > static by >0.5,1.3237,> 0.5,True,
+C3: tau_m std >= 2.0x,C3: tau_m std >= 2.0x,5.08,>= 2.0,True,
+C3: v_thresh std >= 2x,C3: v_thresh std >= 2x,2.08,>= 2.0,True,
+no NaN/infinite values,no NaN/infinite values,True,true,True,
+no baseline freeze authorized,no baseline freeze authorized,False,false,True,
+no mechanism promotion authorized,no mechanism promotion authorized,False,false,True,

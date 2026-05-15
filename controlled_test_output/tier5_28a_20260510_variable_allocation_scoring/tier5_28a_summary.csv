@@ -1,0 +1,9 @@
+name,criterion,value,rule,passed,note
+2 conditions completed,2 conditions completed,True,true,True,
+C1: margin >0.5,C1: margin >0.5,1.3132,>0.5,False,
+C2: margin >1.0,C2: margin >1.0,1.3132,>1.0,True,
+C3: unique_alloc >= 3,C3: unique_alloc >= 3,20,>=3,True,
+allocations diverged,allocations diverged,True,true,True,
+no NaN/inf,no NaN/inf,True,true,True,
+no baseline freeze authorized,no baseline freeze authorized,False,false,True,
+no mechanism promotion authorized,no mechanism promotion authorized,False,false,True,

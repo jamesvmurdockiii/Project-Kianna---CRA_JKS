@@ -1,0 +1,13 @@
+name,criterion,value,rule,passed,note
+question locked,question locked,True,true,True,
+diagnosis references 5.25a sham,diagnosis references 5.25a sham,True,true,True,
+null hypothesis locked,null hypothesis locked,True,true,True,
+3 neural params specified,3 neural params specified,3,== 3,True,
+code change specifies 3 files,code change specifies 3 files,3,== 3,True,
+primary sham: neural clones,primary sham: neural clones,neural_clones_only,== neural_clones_only,True,
+secondary sham: random assign,secondary sham: random assign,random_neural_assign,== random_neural_assign,True,
+primary pass clear,primary pass clear,"heritable PR > clone PR by margin > 0.3 at final timepoint, AND heritable PR > static PR by margin > 0.5, AND neural_factor variance (std across polyps) increases over generations",non-empty,True,
+4 outcome classes,4 outcome classes,4,== 4,True,
+no baseline freeze authorized,no baseline freeze authorized,False,false,True,
+no mechanism promotion authorized,no mechanism promotion authorized,False,false,True,
+no hardware/native transfer authorized,no hardware/native transfer authorized,False,false,True,

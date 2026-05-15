@@ -1,0 +1,51 @@
+{
+  "results": [
+    {
+      "step": 500,
+      "pr": 1.116,
+      "pop": 16,
+      "n_alloc": 9,
+      "tau_std": 0.3003,
+      "sim_fails": 0,
+      "t": 134.5
+    },
+    {
+      "step": 1000,
+      "pr": 1.0338,
+      "pop": 16,
+      "n_alloc": 9,
+      "tau_std": 0.3003,
+      "sim_fails": 0,
+      "t": 278.2
+    },
+    {
+      "step": 2000,
+      "pr": 1.5796,
+      "pop": 15,
+      "n_alloc": 9,
+      "tau_std": 0.3098,
+      "sim_fails": 0,
+      "t": 534.3
+    },
+    {
+      "step": 4000,
+      "pr": 1.0432,
+      "pop": 15,
+      "n_alloc": 9,
+      "tau_std": 0.3098,
+      "sim_fails": 0,
+      "t": 1083.1
+    },
+    {
+      "step": 6000,
+      "pr": 1.0322,
+      "pop": 15,
+      "n_alloc": 9,
+      "tau_std": 0.3098,
+      "sim_fails": 1506,
+      "t": 1238.7
+    }
+  ],
+  "elapsed_s": 1272.2,
+  "steps": 8000
+}

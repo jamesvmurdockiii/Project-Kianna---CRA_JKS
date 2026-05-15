@@ -1,0 +1,13 @@
+name,criterion,value,rule,passed,note
+question locked,question locked,True,true,True,
+diagnosis references all-polyp same input,diagnosis references all-polyp same input,True,true,True,
+null hypothesis locked,null hypothesis locked,True,true,True,
+stream mask mechanism specified,stream mask mechanism specified,True,true,True,
+3 code files specified,3 code files specified,3,== 3,True,
+primary sham: full mask clones,primary sham: full mask clones,full_mask_clones,== full_mask_clones,True,
+secondary sham: random per step,secondary sham: random per step,random_mask_per_step,== random_mask_per_step,True,
+primary pass: PR > clone by 0.5 + static by 1.0,primary pass: PR > clone by 0.5 + static by 1.0,"specialized PR > full-mask clone PR by margin > 0.5 at final timepoint, AND specialized > static by > 1.0, AND mask diversity (unique masks / population) > 0.3",non-empty,True,
+4 outcome classes,4 outcome classes,4,== 4,True,
+layers on 5.26 neural heritability,layers on 5.26 neural heritability,True,true,True,
+no baseline freeze authorized,no baseline freeze authorized,False,false,True,
+no mechanism promotion authorized,no mechanism promotion authorized,False,false,True,

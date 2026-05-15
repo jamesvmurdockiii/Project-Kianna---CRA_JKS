@@ -1,0 +1,5 @@
+outcome,condition,action
+neural_heritability_confirmed,primary pass AND neurally-heritable beats clone by > 0.3,Neural parameter heritability creates genuine computational diversity through evolution.
+neural_heritability_partial,PR improves but margin < 0.3 vs clone,Neural heritability helps but effect is small; consider stronger mutation.
+neural_heritability_no_effect,No PR difference between heritable and clone,Neural parameter variation at this scale is too small to affect LIF dynamics.
+neural_heritability_unstable,"Parameter variation destabilizes the network (NaN, extinction, silence)",Parameter bounds need tightening or different neural params.

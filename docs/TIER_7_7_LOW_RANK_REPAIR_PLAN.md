@@ -4,7 +4,7 @@ Status: current active execution plan.
 
 Last updated: 2026-05-09T18:35:00+00:00.
 
-## Agent Handoff Summary
+## Maintainer Handoff Summary
 
 If another maintainer or AI agent starts here, the next action is not to tune,
 not to run baselines, and not to jump to Tier 7.8.

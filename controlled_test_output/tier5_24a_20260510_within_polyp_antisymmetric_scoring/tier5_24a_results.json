@@ -1,0 +1,129 @@
+{
+  "antisym_07": {
+    "label": "antisym=True_factor=0.7",
+    "n_active": 374,
+    "n_channels": 512,
+    "pr": 2.9141,
+    "steps": 120
+  },
+  "antisym_15": {
+    "label": "antisym=True_factor=1.5",
+    "n_active": 373,
+    "n_channels": 512,
+    "pr": 2.9019,
+    "steps": 120
+  },
+  "baseline": {
+    "label": "antisym=False_factor=0.7",
+    "n_active": 376,
+    "n_channels": 512,
+    "pr": 2.9239,
+    "steps": 120
+  },
+  "claim_boundary": "Within-polyp antisymmetric E->E recurrence does not increase NEST organism state dimensionality beyond the current PR~1.9 (per-polyp) / PR~2.9 (per-neuron) ceiling. The standalone's antisymmetric recurrence mechanism (w_anti = W - W^T) does not transfer to spiking LIF dynamics at this scale. Not mechanism promotion, not a baseline freeze.",
+  "criteria": [
+    {
+      "criterion": "prereq contract exists",
+      "name": "prereq contract exists",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "baseline scored",
+      "name": "baseline scored",
+      "note": "PR=2.92",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "antisym 0.7 scored",
+      "name": "antisym 0.7 scored",
+      "note": "PR=2.91",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "antisym 1.5 scored",
+      "name": "antisym 1.5 scored",
+      "note": "PR=2.90",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "primary pass: PR > 2.5",
+      "name": "primary pass: PR > 2.5",
+      "note": "best PR=2.91",
+      "passed": true,
+      "rule": "> 2.5",
+      "value": true
+    },
+    {
+      "criterion": "sham separation: PR > 1.5x baseline",
+      "name": "sham separation: PR > 1.5x baseline",
+      "note": "delta=-0.0098",
+      "passed": false,
+      "rule": "> 1.5x",
+      "value": false
+    },
+    {
+      "criterion": "organism ran cleanly all conditions",
+      "name": "organism ran cleanly all conditions",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "no NaN/infinite values",
+      "name": "no NaN/infinite values",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "no baseline freeze authorized",
+      "name": "no baseline freeze authorized",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "criterion": "no mechanism promotion authorized",
+      "name": "no mechanism promotion authorized",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "criterion": "no hardware/native transfer authorized",
+      "name": "no hardware/native transfer authorized",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 10,
+  "criteria_total": 11,
+  "generated_at_utc": "2026-05-10T23:42:44+00:00",
+  "nonclaims": [
+    "not mechanism promotion",
+    "not a baseline freeze",
+    "not public usefulness proof",
+    "not hardware/native transfer"
+  ],
+  "outcome": "recurrence_does_not_help",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_24a_20260510_within_polyp_antisymmetric_scoring",
+  "pr_delta": -0.0098,
+  "runner_revision": "tier5_24a_within_polyp_antisymmetric_scoring_20260510_0001",
+  "status": "pass",
+  "tier": "Tier 5.24a - Within-Polyp Antisymmetric Recurrence Scoring Gate"
+}

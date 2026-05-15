@@ -1,6 +1,16 @@
 # CRA Paper-Readiness Roadmap
 
-Last updated: 2026-05-09
+Last updated: 2026-05-14
+
+## Active Remediation Note
+
+Repo-alignment remediation is currently active. See
+`docs/REPO_ALIGNMENT_REMEDIATION_PLAN.md`.
+
+Until that plan is closed, do not start new science runs or claim a new paper
+baseline. The current predictive benchmark baseline remains `v2.6`; `v2.7` is a
+diagnostic NEST organism-development snapshot only and does not supersede `v2.6`
+for predictive usefulness.
 
 This document is the working plan from the current evidence state to a serious
 paper-ready CRA claim. It is deliberately stricter than a speculative roadmap. The goal

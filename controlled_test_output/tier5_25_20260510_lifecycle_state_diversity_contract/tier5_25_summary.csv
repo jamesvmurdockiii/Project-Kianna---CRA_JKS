@@ -1,0 +1,17 @@
+name,criterion,value,rule,passed,note
+question locked,question locked,True,true,True,
+diagnosis documented,diagnosis documented,True,true,True,
+7.9 dequeue reversal reasoned,7.9 dequeue reversal reasoned,True,true,True,
+null hypothesis locked,null hypothesis locked,True,true,True,
+heritable traits specified,heritable traits specified,5,>= 3,True,
+two primary conditions,two primary conditions,2,== 2,True,"lifecycle_on, lifecycle_off"
+primary sham: no-mutation,primary sham: no-mutation,reproduction_no_mutation,== reproduction_no_mutation,True,
+ablation: no-selection,ablation: no-selection,no_selection_pressure,== no_selection_pressure,True,
+sham: shuffled fitness,sham: shuffled fitness,shuffled_fitness,== shuffled_fitness,True,
+primary pass: PR 1.5x + trajectory,primary pass: PR 1.5x + trajectory,"PR at lifecycle-on final timepoint > 1.5x PR at lifecycle-off same timepoint, AND PR trajectory increases with lifecycle steps (positive Kendall tau between step and PR), AND at least one sham/ablation separated by margin > 0.5 PR.",non-empty,True,
+4 outcome classes defined,4 outcome classes defined,4,== 4,True,
+source file exists,source file exists,True,true,True,
+no baseline freeze authorized,no baseline freeze authorized,False,false,True,
+no mechanism promotion authorized,no mechanism promotion authorized,False,false,True,
+no hardware/native transfer authorized,no hardware/native transfer authorized,False,false,True,
+engineered diversity documented as dead-end,engineered diversity documented as dead-end,True,true,True,

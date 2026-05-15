@@ -1,0 +1,148 @@
+{
+  "contract": {
+    "claim_boundary": "Host-side NEST diagnostic. Not mechanism promotion, not baseline freeze, not hardware evidence, not public usefulness proof.",
+    "conditions": {
+      "scalar_readout": "Current single-scalar output (sham baseline)",
+      "vector_readout": "Caste-separated 4-vector output"
+    },
+    "decision": "contract_locked_authorize_implementation",
+    "diagnosis": "The current readout collapses per-polyp state into a single scalar via `tanh(weight * sensory_drive + bias)`.  PR increases 1.3-2.4x with maturation but MSE is identical \u2014 the readout produces the same output from any internal state.\n\nThe organism's functional castes (filter, memory, rotor, chaotic, stabilizer) create different dynamical operators per polyp.  The readout should USE this structure: filters capture trends, memory polyps retain history, rotors detect oscillations, chaotic polyps flag anomalies.\n\nThe colony output becomes a 4-vector [trend, memory, oscillation, anomaly].  Each component is a weighted aggregation of state vectors from the corresponding caste.  Per-task, a learned linear combination maps the 4-vector to the required scalar prediction.",
+    "hypothesis": "Caste-separated structured readout will reduce prediction MSE compared to scalar readout because (1) each component captures a different signal aspect, (2) the caste structure provides pre-organization for the learned combination, (3) the output vector has 4x the dimensionality of the scalar, and (4) per-task weighting selects the relevant components automatically.",
+    "layers_on": "v2.7 baseline + conservation laws (5.38-5.40)",
+    "measurement": {
+      "metrics": [
+        "MSE",
+        "MAE",
+        "PR"
+      ],
+      "population": {
+        "initial": 4,
+        "max": 12
+      },
+      "steps": 2000,
+      "tasks": [
+        "sine",
+        "Mackey-Glass"
+      ],
+      "train_frac": 0.6
+    },
+    "mechanism_under_test": {
+      "caste_to_component": {
+        "0": "trend",
+        "1": "memory",
+        "2": "oscillation",
+        "3": "anomaly",
+        "4": "baseline"
+      },
+      "name": "structured_vector_readout",
+      "output_vector": "[trend, memory, oscillation, anomaly]",
+      "per_task_weighting": "Learned linear combination of 4 components via online LMS",
+      "type": "readout architecture"
+    },
+    "null_hypothesis": "Structured vector readout does not improve MSE because (1) the caste structure is too noisy at 2000 steps, (2) the components are correlated (collapsed to 1-2 effective), or (3) the online LMS learning rate is too slow.",
+    "outcome_classes": [
+      {
+        "action": "Structured vector readout converts diversity into prediction. Promote.",
+        "condition": "primary pass on both MG and sine",
+        "outcome": "vector_readout_confirmed"
+      },
+      {
+        "action": "Vector readout helps on specific signal types.",
+        "condition": "primary pass on one task only",
+        "outcome": "vector_readout_partial"
+      },
+      {
+        "action": "Caste structure not yet coherent enough for readout to leverage.",
+        "condition": "No MSE improvement over scalar",
+        "outcome": "vector_readout_no_effect"
+      }
+    ],
+    "pass_criteria": {
+      "primary": "vector_readout MSE < scalar_readout MSE by >0.05 on at least one task, AND output vector rank >= 2 (not collapsed)"
+    },
+    "question": "Does a caste-separated structured vector readout \u2014 where filter polyps contribute to trend, memory polyps to memory, rotors to oscillation, and chaotic to anomaly \u2014 convert organism state diversity into improved prediction performance (lower MSE) compared to the scalar readout?"
+  },
+  "criteria": [
+    {
+      "criterion": "question locked",
+      "name": "question locked",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "Option B specified",
+      "name": "Option B specified",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "5 castes to components",
+      "name": "5 castes to components",
+      "note": "",
+      "passed": true,
+      "rule": "== 5",
+      "value": 5
+    },
+    {
+      "criterion": "4 output components",
+      "name": "4 output components",
+      "note": "",
+      "passed": true,
+      "rule": ">= 3",
+      "value": 4
+    },
+    {
+      "criterion": "primary pass: MSE margin",
+      "name": "primary pass: MSE margin",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "3 outcome classes",
+      "name": "3 outcome classes",
+      "note": "",
+      "passed": true,
+      "rule": "== 3",
+      "value": 3
+    },
+    {
+      "criterion": "layers on v2.7",
+      "name": "layers on v2.7",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "no baseline freeze",
+      "name": "no baseline freeze",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "criterion": "no mechanism promotion",
+      "name": "no mechanism promotion",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 9,
+  "criteria_total": 9,
+  "generated_at_utc": "2026-05-13T23:53:39+00:00",
+  "next_gate": "Tier 5.41a \u2014 Vector Readout Scoring Gate",
+  "outcome": "vector_readout_contract_locked",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_41_20260513_vector_readout_contract",
+  "runner_revision": "tier5_41_vector_readout_contract_20260513_0001",
+  "status": "pass",
+  "tier": "Tier 5.41 \u2014 Structured Vector Readout Contract"
+}

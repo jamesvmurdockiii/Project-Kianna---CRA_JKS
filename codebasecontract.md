@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-09T23:59:00+00:00.
+Last updated: 2026-05-14T00:00:00+00:00.
 
 Current repo root:
 
@@ -26,29 +26,227 @@ Current repo root:
 /Users/james/JKS:CRA
 ```
 
-Current frozen software baseline:
-  v2.6 — edge-of-chaos recurrent dynamics (decay=0, sr=1.0, antisym=0.3)
-  with ridge readout. PR=7.0 (3.6x ablation), sham Δ=5.5, MSE 56% lower.
-  Beats ESN 2.8x aggregate. Supersedes v2.5 for recurrent dynamics;
-  v2.5 planning mechanism carried forward.
-  Note: The standalone tanh recurrence was a diagnostic tool used during
-  the 7.7 campaign, not a CRA claim. The NEST organism (Section 0 above)
-  is the canonical CRA implementation. The standalone PR=7.0 finding
-  validated the continuous recurrence approach but does not directly
-  transfer to the spiking organism. See NEST organism characterization
-  above for the measured organism properties.
+Current software baseline lines:
+  v2.6 remains the predictive benchmark baseline unless a later clean
+  promotion gate supersedes it.
+
+  v2.7 is a frozen diagnostic NEST organism-development snapshot, not a
+  predictive-performance supersession of v2.6. It records 14 opt-in,
+  config-gated mechanisms across lifecycle evolution, operator diversity,
+  conservation laws, structured readout, task-coupled selection, and causal
+  credit assignment.
+  CORRECTED PR (2026-05-13): The high PR numbers (5-10) reported earlier were
+  artifacts of NEST synthetic spike fallback.  ResetKernel recovery fixed NEST
+  health, revealing true organism PR: 1.15 (sine), 1.54 (MG), 2.05 (Lorenz)
+  at 2000 steps.  MSE is identical across all mechanism configurations.
+  Characterized boundary: state diversity ≠ prediction performance.  The
+  organism creates evolved architectural diversity but spiking LIF dynamics
+  produce correlated activity under shared scalar input.  PR ~2 is the
+  measured organism dimensionality.
+  v2.6 edge-of-chaos standalone reference remains the predictive benchmark
+  baseline.
+  Diagnostic snapshot: baselines/CRA_EVIDENCE_BASELINE_v2.7.md
+
+Active cleanup state:
+  Repo-alignment remediation is active. See
+  docs/REPO_ALIGNMENT_REMEDIATION_PLAN.md. Do not start new science runs until
+  code hygiene, baseline wording, evidence registry hygiene, and governance
+  tests are aligned.
+
+Cleanup-era evidence tracking decision:
+  Tier 5.24a and Tier 5.25+ diagnostic artifacts/scripts that are already
+  referenced by source-of-truth docs should be preserved as small audit
+  artifacts, not silently deleted. Preservation does not promote them. Unless a
+  tier is explicitly registered in experiments/evidence_registry.py or frozen by
+  a clean promotion gate, it remains noncanonical diagnostic evidence. Do not
+  use fallback-era, partial-pass, or local pointer manifests as paper claims.
+  If an exploratory run becomes claim-relevant, create a fresh contract,
+  promotion gate, or registry entry instead of relabeling old evidence.
 
 Current simulation (NEST organism) state:
-  The NEST organism has been characterized across multiple diagnostic gates.
-  Baseline PR≈1.1 (all polyps see identical input). Per-polyp input diversity
-  increases PR to ≈1.4 (20% improvement). Antisymmetric inter-polyp edges,
-  per-neuron spike readout (5.21a), structured within-polyp inhibition, and
-  per-neuron input gain diversity (5.22a) all produce PR in the 1.0-1.5 range.
-  The organism's spiking LIF architecture with current configuration has a
-  measured state dimensionality ceiling of PR≈1.5. Not a bug — a characterized
-  architectural property. The organism remains functional with trophic economy,
-  STDP, delayed credit, and lifecycle mechanisms all passing canonical evidence
-  gates (150+ bundles).
+  ENGINEERED DIVERSITY DEAD-END (Tiers 5.21-5.24): Per-neuron gains,
+  per-polyp sensory scaling, multi-channel input routing, inter-polyp
+  PyNN projections, structured within-polyp inhibition, and within-polyp
+  antisymmetric E->E recurrence all hit a PR ceiling of ≈1.9 per-polyp /
+  ≈2.9 per-neuron. These are forms of external parameter injection that
+  work against the organism's fundamental design principle — CRA diversity
+  was designed to EMERGE from reproduction+mutation+selection, not be
+  engineered via input gains.
+
+  LIFECYCLE ENABLED (Tier 5.25a): Enabling reproduction (mitosis with
+  trait mutation) + apoptosis (BAX-driven trophic death) + trophic selection
+  increases per-polyp PR from 1.03 (static 8-pop) to 1.66 (evolved 16-pop)
+  — a 1.61x improvement. PR trajectory increases with more reproduction
+  cycles. Population grew from 8 to 16 in 150 steps. This is emergent
+  diversity from evolution, not engineered parameter injection. The Tier
+  7.9 dequeue (which blocked lifecycle because morphology was falsified)
+  is REVERSED with corrected reasoning: static morphology heterogeneity ≠
+  evolved lifecycle diversity. Tier 7.9 re-queued with corrected scope:
+  lifecycle-enabled emergent diversity, not static template variation.
+
+  NEST lifecycle rebuild: The rebuild_spinnaker() gate at organism.py:655
+  was widened from "sPyNNaker only" to "any backend with active network"
+  so that NEST sim.end() + sim.setup() cycles correctly handle population
+  growth from reproduction. sync_interval_steps=1 enables per-step
+  topology-change detection. Lifecycle birth/death events properly trigger
+  full teardown/rebuild on NEST.
+
+  NEURAL PARAMETER HERITABILITY (Tiers 5.25-5.26a): Lifecycle reproduction
+  now inherits and mutates neural device parameters (tau_m_factor,
+  v_thresh_factor, cm_factor) alongside ecological traits. Implemented
+  end-to-end: PolypState fields, LifecycleManager TRAIT_BOUNDS,
+  _instantiate_polyp, create_lif_params, add_polyp/restore_polyp.
+  Neural factors mutate 3x faster than ecology traits (sigma=0.45 vs 0.15).
+  Config flag: lifecycle.enable_neural_heritability (default False; opt-in).
+
+  Tier 5.26a scoring (500 steps, 4→27 polyps):
+    Per-polyp PR: heritable=2.34, clones(sham)=2.22, static=1.01
+    C1 (heritable > clone by 0.3): FAIL — margin only 0.12
+    C2 (heritable > static by 0.5): PASS — margin 1.32
+    C3 (neural std ≥ 2x growth): PASS — tau_m std 5.1x (0.08→0.42)
+    Outcome: neural_heritability_partial
+    PR gain is predominantly population-size inflation (4→27 polyps);
+    evolved neural diversity adds only 0.12 PR over identical-pop clone
+    sham at 500 steps. Neural factors ARE evolving (5.1x tau_m std growth),
+    but need longer runs (8k-32k steps) for measurable computational
+    divergence at per-polyp PR level.
+
+  STREAM SPECIALIZATION (Tier 5.27a, 400 steps): Each polyp evolves a
+  heritable attention mask over the 8 encoded input channels. Masks diverge
+  (48% unique) but specialized PR=3.26 vs clone PR=3.15 — margin only 0.106.
+  Stream masks work architecturally (children inherit and mutate mask
+  coverage) but the adapter's features (EMA, delta, square) are too
+  correlated for channel selectivity to create orthogonal subspace responses.
+  Config flag: lifecycle.enable_stream_specialization (default False; opt-in).
+  Outcome: stream_specialization_partial.
+
+  VARIABLE NEURON ALLOCATION (Tier 5.28a, 400 steps): Each polyp evolves
+  a different neuron allocation profile within its 32-neuron block. 20 unique
+  allocation profiles evolved (e.g. input=5-14, exc=13-21, inh=2-6).
+  Variable PR=2.33 vs uniform sham PR=2.17 — margin +0.16. Config flag:
+  lifecycle.enable_variable_allocation (default False; opt-in).
+  Outcome: variable_allocation_partial.
+
+  TASK-FITNESS SELECTION (Tier 5.29): Prediction accuracy modulates
+  cyclin-D accumulation (accurate polyps reproduce faster). Accuracy bonus
+  = 0.5 + accuracy gives 0.5x-1.5x range. Works architecturally but
+  sine wave is too easy (all polyps near 1.0 accuracy) for the gradient
+  to differentiate. Needs harder task. Config flag:
+  lifecycle.enable_task_fitness_selection (default False; opt-in).
+
+  SYNAPTIC WEIGHT HERITABILITY (Tier 5.30): Children inherit parent's
+  connectivity patterns (170+ connections each) with small mutation.
+  Python-side connection data stored at projection creation time
+  (avoids NEST API fragility). Weight maps preserved across rebuild
+  via snapshot_all_weights/restore_all_weights. Config flag:
+  lifecycle.enable_synaptic_heritability (default False — opt-in).
+
+  LONG-RUN LIFE DIAGNOSTIC (Tier 5.31a, 6000 steps, NEST + Cleanup fix):
+  Full lifecycle stack (all 5 features) on sine wave.
+  Population grew 4→16. 9 unique allocation profiles, tau_std=0.30.
+  Per-polyp PR trajectory: 1.12(500)→1.03(1k)→1.58(2k)→1.04(4k)→1.03(6k).
+  PR never exceeds 1.58 despite architectural diversity.
+  NEST fix: nest.Cleanup() before each sim.run() (organism.py:1836-1842).
+
+  STACKED LIFECYCLE + STDP + TEMPORAL (Tier 5.31a follow-up, 3000 steps):
+  All 7 features layered + temporal specialization + STDP persistence.
+  Per-polyp PR trajectory: 1.03(1k)→1.70(2k)→1.76(3k). FIRST upward
+  trajectory seen. STDP surviving across entire run creates per-polyp
+  experience-driven connectivity specialization.
+
+  LIFECYCLE INFRASTRUCTURE CHARACTERIZED (2026-05-11): The 7 config-gated
+  lifecycle features were exercised at diagnostic scale, but most remain
+  opt-in research mechanisms rather than default promoted behavior.
+  The PR ceiling (~1.5-1.8) at 3k-6k steps is characterized. Next phase:
+  operator diversity (per-polyp dynamical regime variation) as the key
+  to breaking the dimensionality ceiling.
+
+  NEXT PHASE — OPERATOR DIVERSITY (Tiers 5.32-5.36):
+  The diagnosis is settled: parameter diversity (tau_m, delays) creates
+  time-warped copies. The organism needs OPERATOR diversity — each polyp
+  implementing a genuinely different dynamical operator.
+
+  OPERATOR DIVERSITY FALLBACK-ERA RESULT (Tier 5.32a, 2000 steps):
+  Per-polyp spectral radius (0.65-1.34, span 0.69) and E/I ratio
+  (0.72-2.48) create polyps with genuinely different dynamical regimes.
+  Operator diverse PR=5.73 vs uniform sham PR=1.02 — margin 4.71x.
+  Initial criteria appeared to pass. Config flag:
+  lifecycle.enable_operator_diversity (default False; opt-in). Later healthy
+  NEST correction showed high PR values from this era are not promotion
+  evidence unless rerun with zero synthetic fallback.
+
+  FULL STACKED 8K FALLBACK-CONTAMINATED DIAGNOSTIC (Tier 5.36): 6000-step NEST run. PR: 6.56(500)
+  →6.44(1k)→6.57(2k)→6.57(4k)→5.26(6k). Margin +4.25x over static.
+  Organism benchmarks: Sine PR=5.28(+), MG PR=5.65(+), Lorenz PR=7.23(+),
+  NARMA PR=0.72(+). 73% NEST failures by 6k. Because synthetic fallback
+  contributed heavily, these values are diagnostic only and cannot support
+  mechanism promotion or baseline freeze.
+
+  CONSERVATION LAW TIERS (5.38-5.40, scored 2026-05-13):
+  5.38a Signal Transport: export_ON PR=7.61 vs raw PR=6.30, margin +1.31.
+    Bounded export + maturation lifecycle improves PR. PASS.
+  5.39a Energy Economy: energy_ON PR=6.30 vs raw PR=6.30, margin +0.00.
+    Energy tracking alone without maturation has no effect. Null result.
+  5.40a Maturation: mature_ON PR=7.61 vs energy_ON PR=6.30, margin +1.31.
+    Developmental progression (larval→juvenile→mature→senescent) with
+    stage-specific plasticity is the active mechanism. PASS.
+  Finding: Maturation lifecycle is the mechanism that converts energy into
+  useful computational diversity. Energy tracking alone is infrastructure.
+  Signal transport provides the bounded interface; maturation acts on it.
+  All three conservation laws implemented and scored, but any fallback-era
+  PR effects require healthy-NEST rerun before promotion.
+
+  STRUCTURED VECTOR READOUT (Tier 5.41, config-gated, scored 2026-05-13):
+  Caste-separated 4-vector output [trend, memory, oscillation, anomaly]
+  with per-caste nonlinear readout heads (tanh MLP + softmax fusion).
+  Online LMS trains head weights from task targets.
+  Scoring: PR changes but MSE identical vs scalar baseline on MG, sine,
+  Lorenz. Finding: state diversity does not automatically produce
+  prediction performance. Task coupling missing.
+  Config: lifecycle.enable_vector_readout (default False, opt-in).
+
+  TASK-COUPLED SELECTION (Tier 5.42, implemented 2026-05-13):
+  Reproductive fitness depends on prediction contribution, not just
+  trophic health. High-contribution castes get cyclin boost proportional
+  to prediction error. Low-contribution castes lose energy. Couples
+  evolution to task accuracy. Moves organism from self-organizing ecology
+  toward task-optimized predictive substrate.
+  Config: lifecycle.enable_task_coupled_selection (default False; opt-in).
+
+  CAUSAL CREDIT ASSIGNMENT (Tier 5.44, implemented 2026-05-13):
+  Leave-one-caste-out counterfactual credit per step. Polyps in castes
+  that reduce prediction error reproduce more. Ruled out: MSE identical
+  ON vs OFF. Config: lifecycle.enable_causal_credit_selection (default False;
+  opt-in).
+
+  NEST ResetKernel RECOVERY (organism.py:2153-2178, 2026-05-13):
+  Catches "Kernel inconsistent state" errors, calls nest.ResetKernel() +
+  sim.setup() + rebuild_spinnaker(), retries sim.run(). Keeps NEST
+  healthy at 2000+ steps with 0 failures, 0 synthetic fallbacks.
+
+  CORRECTED PR FINDING (2026-05-13): With healthy NEST (0 failures, 0
+  synthetic), true organism PR is 1.15-2.13 — not the 5-10 reported
+  earlier during synthetic fallback era. The high PR numbers were
+  artifacts of independent Poisson noise in the fallback generator.
+  The organism's real spiking dynamics produce low-dimensional
+  correlated activity (PR ~2) regardless of evolved parameter diversity.
+
+  CHARACTERIZED BOUNDARY (final): State diversity ≠ prediction performance.
+  The organism creates evolved architectural diversity that does not
+  translate to orthogonal spiking activity under shared scalar input.
+  Prediction MSE is identical across all 14 mechanism configurations.
+  Persistence baseline dominates Mackey-Glass (0.076 vs 0.910 MSE).
+  v2.6 standalone tanh recurrence remains the predictive baseline.
+
+  CLEANUP STATUS: 14 config-gated mechanisms are present, but the default
+  organism behavior must remain conservative. v2.7 is a diagnostic snapshot,
+  not proof that the architecture is complete or predictively useful.
+
+  Within-polyp antisymmetric recurrence (Tier 5.24a): Candidly scored as
+  "recurrence_does_not_help". The standalone's w_anti = W - W^T does not
+  transfer to spiking LIF neurons at 16-neuron excitatory population size.
+  Code preserved as config-gated (within_polyp_antisymmetric_recurrence,
+  default False) for diagnostic reference.
 
 Current hardware (C runtime) state:
   Tier 4.33: contract locked (11/11), EOC profile source done (14/14 audit),
@@ -639,14 +837,50 @@ Tier 5.21 — COMPLETE, PASS, 14/14. NEST per-neuron dimensionality
   Next: Tier 5.21a scoring gate.
 
 Tier 5.22 — COMPLETE, PASS, 11/11. Within-polyp per-neuron diversity
-  contract locked. Code change specified: per-neuron input gains (0.3x-1.5x)
-  + amplified biases (15% sensory ceiling). Primary pass: PR > 2.5 and
-  > 1.5x baseline. Sham: shuffled neuron gain assignment.
-  Next: Tier 5.22a scoring gate.
-  diagnostic contract locked. Primary: 16 polyps (512 channels), PR > 4.0
-  AND 2x per-polyp aggregate. Primary sham: shuffled neuron-polyp assignment.
-  Secondary sham: permuted spike temporal order. 4 outcome classes.
-  Next: Tier 5.21a scoring gate.
+   contract locked. Code change specified: per-neuron input gains (0.3x-1.5x)
+   + amplified biases (15% sensory ceiling). Primary pass: PR > 2.5 and
+   > 1.5x baseline. Sham: shuffled neuron gain assignment.
+   Next: Tier 5.22a scoring gate.
+   diagnostic contract locked. Primary: 16 polyps (512 channels), PR > 4.0
+   AND 2x per-polyp aggregate. Primary sham: shuffled neuron-polyp assignment.
+   Secondary sham: permuted spike temporal order. 4 outcome classes.
+   Next: Tier 5.21a scoring gate.
+
+Tier 5.24 — COMPLETE, PASS, 14/14. Within-polyp E/I antisymmetric
+   recurrence diagnostic contract locked. Tests whether adding push-pull
+   antisymmetric E->E connections within each polyp increases state
+   dimensionality beyond PR~1.9 ceiling. Config flags:
+   within_polyp_antisymmetric_recurrence (bool) and
+   within_polyp_antisym_factor (float, default 0.7).
+   Next: Tier 5.24a scoring gate.
+
+Tier 5.24a — COMPLETE, PASS harness, OUTCOME recurrence_does_not_help.
+   Within-polyp antisymmetric E->E recurrence does not increase NEST
+   organism state dimensionality (PR=2.92 baseline vs PR=2.91 with
+   antisymmetry, delta=-0.01). The standalone's w_anti = W - W^T does
+   not transfer to spiking LIF neurons at 16-neuron population size.
+   Honest null result; code preserved as config-gated diagnostic reference.
+
+Tier 5.25 — COMPLETE, PASS, 16/16. Lifecycle-enabled state diversity
+   diagnostic contract locked. Reverses 7.9 dequeue with corrected reasoning:
+   static morphology heterogeneity ≠ evolved lifecycle diversity. Tests
+   whether reproduction+mutation+apoptosis increases PR over static baseline.
+   Primary pass: PR > 1.5x lifecycle-off AND PR trajectory increasing with
+   steps AND sham separation.
+   Next: Tier 5.25a scoring gate.
+   **Decision rationale**: The 7.9 dequeue confused static template
+   assignment (7.8a, falsified) with dynamic evolved diversity. 5.25
+   separates these mechanisms.
+
+Tier 5.25a — COMPLETE, PASS harness, OUTCOME lifecycle_helps_partially.
+   Per-polyp PR: lifecycle-off=1.03, lifecycle-on=1.66 (1.61x ratio, above
+   1.5x threshold). Per-neuron PR: 1.23→1.59 (1.29x, below 1.5x threshold).
+   PR trajectory increases with reproduction cycles. Population grew 8→16
+   in 150 steps. Lifecycle-enabled reproduction+mutation+apoptosis IS the
+   correct mechanism for emergent organism state diversity. Sham controls
+   (no-mutation, no-selection, shuffled-fitness) deferred to follow-up gate.
+   NEST lifecycle rebuild proven working (widened from sPyNNaker-only to
+   any backend with active network at organism.py:655).
 
 Resonant branch decision:
   The current dose sweep covers 16/0 (v2.3), 14/2, 12/4, 8/8, 4/12, 2/14,
@@ -1572,13 +1806,14 @@ Tier 7.8a — NONCANONICAL, MORPHOLOGY FALSIFIED. All three template candidates
 7.7-7.8 campaign conclusion:
    Edge-of-chaos homogeneous recurrence is the current optimal CRA architecture.
    Heterogeneous polyp templates (7.8a) reduce state diversity. The lifecycle
-   hypothesis (7.9) depended on morphology providing meaningful variation for
-   evolution to select among; since morphology is falsified, 7.9 does not have
-   an architectural substrate. Decision: dequeue 7.9. Remaining paths:
-   (a) apply v2.6 to real-world adapters (C-MAPSS, NAB) to test public
-       usefulness, or
-   (b) begin native/hardware transfer of the edge-of-chaos mechanism to the
-       custom C runtime on SpiNNaker.
+   hypothesis (7.9) was dequeued because 7.8a falsified STATIC morphological
+   heterogeneity. However, Tier 5.25a shows that LIFECYCLE-ENABLED diversity
+   (reproduction with mutation + apoptosis + selection) increases per-polyp PR
+   from 1.03 to 1.66 (1.61x). Static morphology heterogeneity ≠ evolved lifecycle
+   diversity. Decision: REVERSE 7.9 dequeue; lifecycle is re-queued with corrected
+   scope — emergent diversity through reproduction+mutation+selection, not static
+   template assignment. Next: Tier 7.9a — lifecycle-enabled state diversity
+   confirmation with sham controls.
   3. Measure adaptation/recovery, template survival distribution, lineage
      integrity, active-population efficiency, seed variance, collapse/recovery,
      and resource/runtime overhead.

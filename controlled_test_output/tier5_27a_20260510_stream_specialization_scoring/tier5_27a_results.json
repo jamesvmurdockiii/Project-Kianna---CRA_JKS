@@ -1,0 +1,332 @@
+{
+  "claim_boundary": "Host-side NEST diagnostic of heritable stream specialization only.",
+  "clone": {
+    "label": "clones",
+    "timepoints": [
+      {
+        "cov_mean": 1.0,
+        "cov_std": 0.0,
+        "mask_ratio": 0.125,
+        "n_alive": 8,
+        "n_polyps": 32,
+        "n_unique_masks": 1,
+        "pr_polyp": 1.5449,
+        "step": 50
+      },
+      {
+        "cov_mean": 1.0,
+        "cov_std": 0.0,
+        "mask_ratio": 0.1,
+        "n_alive": 10,
+        "n_polyps": 32,
+        "n_unique_masks": 1,
+        "pr_polyp": 1.5605,
+        "step": 100
+      },
+      {
+        "cov_mean": 1.0,
+        "cov_std": 0.0,
+        "mask_ratio": 0.08333333333333333,
+        "n_alive": 12,
+        "n_polyps": 32,
+        "n_unique_masks": 1,
+        "pr_polyp": 1.4749,
+        "step": 150
+      },
+      {
+        "cov_mean": 1.0,
+        "cov_std": 0.0,
+        "mask_ratio": 0.07692307692307693,
+        "n_alive": 13,
+        "n_polyps": 32,
+        "n_unique_masks": 1,
+        "pr_polyp": 2.6713,
+        "step": 200
+      },
+      {
+        "cov_mean": 1.0,
+        "cov_std": 0.0,
+        "mask_ratio": 0.06666666666666667,
+        "n_alive": 15,
+        "n_polyps": 32,
+        "n_unique_masks": 1,
+        "pr_polyp": 2.5303,
+        "step": 250
+      },
+      {
+        "cov_mean": 1.0,
+        "cov_std": 0.0,
+        "mask_ratio": 0.05555555555555555,
+        "n_alive": 18,
+        "n_polyps": 32,
+        "n_unique_masks": 1,
+        "pr_polyp": 3.2823,
+        "step": 300
+      },
+      {
+        "cov_mean": 1.0,
+        "cov_std": 0.0,
+        "mask_ratio": 0.047619047619047616,
+        "n_alive": 21,
+        "n_polyps": 32,
+        "n_unique_masks": 1,
+        "pr_polyp": 2.914,
+        "step": 350
+      },
+      {
+        "cov_mean": 1.0,
+        "cov_std": 0.0,
+        "mask_ratio": 0.043478260869565216,
+        "n_alive": 23,
+        "n_polyps": 32,
+        "n_unique_masks": 1,
+        "pr_polyp": 3.1501,
+        "step": 399
+      }
+    ]
+  },
+  "criteria": [
+    {
+      "criterion": "prereq exists",
+      "name": "prereq exists",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "3 conditions completed",
+      "name": "3 conditions completed",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "C1: margin > 0.5",
+      "name": "C1: margin > 0.5",
+      "note": "",
+      "passed": false,
+      "rule": ">0.5",
+      "value": 0.106
+    },
+    {
+      "criterion": "C2: margin > 1.0",
+      "name": "C2: margin > 1.0",
+      "note": "",
+      "passed": true,
+      "rule": ">1.0",
+      "value": 2.1092
+    },
+    {
+      "criterion": "C3: mask_ratio > 0.3",
+      "name": "C3: mask_ratio > 0.3",
+      "note": "",
+      "passed": true,
+      "rule": ">0.3",
+      "value": 0.4783
+    },
+    {
+      "criterion": "no NaN/inf",
+      "name": "no NaN/inf",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "no baseline freeze authorized",
+      "name": "no baseline freeze authorized",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "criterion": "no mechanism promotion authorized",
+      "name": "no mechanism promotion authorized",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 7,
+  "criteria_total": 8,
+  "generated_at_utc": "2026-05-11T03:28:46+00:00",
+  "outcome": "stream_specialization_partial",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_27a_20260510_stream_specialization_scoring",
+  "runner_revision": "tier5_27a_stream_specialization_scoring_20260510_0001",
+  "specialized": {
+    "label": "specialized",
+    "timepoints": [
+      {
+        "cov_mean": 0.936,
+        "cov_std": 0.1007,
+        "mask_ratio": 0.375,
+        "n_alive": 8,
+        "n_polyps": 32,
+        "n_unique_masks": 3,
+        "pr_polyp": 1.5166,
+        "step": 50
+      },
+      {
+        "cov_mean": 0.934,
+        "cov_std": 0.093,
+        "mask_ratio": 0.4,
+        "n_alive": 10,
+        "n_polyps": 32,
+        "n_unique_masks": 4,
+        "pr_polyp": 1.551,
+        "step": 100
+      },
+      {
+        "cov_mean": 0.932,
+        "cov_std": 0.085,
+        "mask_ratio": 0.4166666666666667,
+        "n_alive": 12,
+        "n_polyps": 32,
+        "n_unique_masks": 5,
+        "pr_polyp": 1.4765,
+        "step": 150
+      },
+      {
+        "cov_mean": 0.934,
+        "cov_std": 0.082,
+        "mask_ratio": 0.38461538461538464,
+        "n_alive": 13,
+        "n_polyps": 32,
+        "n_unique_masks": 5,
+        "pr_polyp": 2.7059,
+        "step": 200
+      },
+      {
+        "cov_mean": 0.926,
+        "cov_std": 0.0806,
+        "mask_ratio": 0.4,
+        "n_alive": 15,
+        "n_polyps": 32,
+        "n_unique_masks": 6,
+        "pr_polyp": 2.5274,
+        "step": 250
+      },
+      {
+        "cov_mean": 0.895,
+        "cov_std": 0.1145,
+        "mask_ratio": 0.4444444444444444,
+        "n_alive": 18,
+        "n_polyps": 32,
+        "n_unique_masks": 8,
+        "pr_polyp": 3.3641,
+        "step": 300
+      },
+      {
+        "cov_mean": 0.888,
+        "cov_std": 0.1103,
+        "mask_ratio": 0.5238095238095238,
+        "n_alive": 21,
+        "n_polyps": 32,
+        "n_unique_masks": 11,
+        "pr_polyp": 3.0301,
+        "step": 350
+      },
+      {
+        "cov_mean": 0.893,
+        "cov_std": 0.1069,
+        "mask_ratio": 0.4782608695652174,
+        "n_alive": 23,
+        "n_polyps": 32,
+        "n_unique_masks": 11,
+        "pr_polyp": 3.2561,
+        "step": 399
+      }
+    ]
+  },
+  "static": {
+    "label": "static",
+    "timepoints": [
+      {
+        "cov_mean": 1.0,
+        "cov_std": 0.0,
+        "mask_ratio": 0.25,
+        "n_alive": 4,
+        "n_polyps": 32,
+        "n_unique_masks": 1,
+        "pr_polyp": 1.162,
+        "step": 50
+      },
+      {
+        "cov_mean": 1.0,
+        "cov_std": 0.0,
+        "mask_ratio": 0.25,
+        "n_alive": 4,
+        "n_polyps": 32,
+        "n_unique_masks": 1,
+        "pr_polyp": 1.0595,
+        "step": 100
+      },
+      {
+        "cov_mean": 1.0,
+        "cov_std": 0.0,
+        "mask_ratio": 0.25,
+        "n_alive": 4,
+        "n_polyps": 32,
+        "n_unique_masks": 1,
+        "pr_polyp": 1.1605,
+        "step": 150
+      },
+      {
+        "cov_mean": 1.0,
+        "cov_std": 0.0,
+        "mask_ratio": 0.25,
+        "n_alive": 4,
+        "n_polyps": 32,
+        "n_unique_masks": 1,
+        "pr_polyp": 1.1623,
+        "step": 200
+      },
+      {
+        "cov_mean": 1.0,
+        "cov_std": 0.0,
+        "mask_ratio": 0.25,
+        "n_alive": 4,
+        "n_polyps": 32,
+        "n_unique_masks": 1,
+        "pr_polyp": 1.2073,
+        "step": 250
+      },
+      {
+        "cov_mean": 1.0,
+        "cov_std": 0.0,
+        "mask_ratio": 0.25,
+        "n_alive": 4,
+        "n_polyps": 32,
+        "n_unique_masks": 1,
+        "pr_polyp": 1.1529,
+        "step": 300
+      },
+      {
+        "cov_mean": 1.0,
+        "cov_std": 0.0,
+        "mask_ratio": 0.25,
+        "n_alive": 4,
+        "n_polyps": 32,
+        "n_unique_masks": 1,
+        "pr_polyp": 1.154,
+        "step": 350
+      },
+      {
+        "cov_mean": 1.0,
+        "cov_std": 0.0,
+        "mask_ratio": 0.25,
+        "n_alive": 4,
+        "n_polyps": 32,
+        "n_unique_masks": 1,
+        "pr_polyp": 1.1469,
+        "step": 399
+      }
+    ]
+  },
+  "status": "pass",
+  "tier": "Tier 5.27a \u2014 Stream Specialization Scoring Gate"
+}

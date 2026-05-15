@@ -1,0 +1,113 @@
+{
+  "claim_boundary": "Host-side NEST diagnostic of heritable neural parameter diversity only. Not mechanism promotion, not a baseline freeze, not hardware/Spynnaker evidence, not public usefulness proof.",
+  "code_change": {
+    "description": "1. Add neural_factor attributes (tau_m_factor, v_thresh_factor, cm_factor) to PolypState in polyp_neuron.py\n2. In lifecycle.py inherit_traits(), also inherit and mutate neural parameter factors using the same bounded log-space mutation\n3. In create_lif_params() (polyp_population.py PolypNeuronType), apply the polyp's neural factors to scale base params\n4. In add_polyp/restore_polyp, use the polyp's neural factors instead of per-slot Gaussian noise\n5. Config flag: lifecycle.enable_neural_heritability (bool, default True)",
+    "files": [
+      "coral_reef_spinnaker/polyp_neuron.py",
+      "coral_reef_spinnaker/lifecycle.py",
+      "coral_reef_spinnaker/polyp_population.py"
+    ]
+  },
+  "conditions": [
+    {
+      "description": "Lifecycle ON + neural parameter heritability",
+      "name": "neural_heritable"
+    },
+    {
+      "description": "Lifecycle ON but neural factors are clones (no mutation) \u2014 ecological traits still evolve",
+      "name": "clone_no_heritability"
+    },
+    {
+      "description": "Lifecycle OFF \u2014 static population",
+      "name": "static_no_lifecycle"
+    }
+  ],
+  "decision": "contract_locked_authorize_implementation_and_scoring",
+  "diagnosis": "Tier 5.25a sham: lifecycle with mutation (PR=2.29) == lifecycle with CLONES/no-mutation (PR=2.29). The PR increase is mathematical inflation from larger population (more channels), not from trait evolution. ALL polyps have IDENTICAL neural computations regardless of their evolved ecological traits.\n\nRoot cause: the 11 heritable ecology traits (metabolic_decay, apoptosis_threshold, cyclin_accumulation_rate, etc.) affect WHEN polyps reproduce and die, but have ZERO effect on HOW they compute. tau_m, v_thresh, cm are set from global config defaults with per-slot Gaussian noise (fixed, not heritable).\n\nThe fix: map ecological traits to neural parameter scalings via a simple nonlinear mapping. When a polyp reproduces, the child inherits the parent's neural scalings with small mutations. push_all_parameters() already exists for applying changed parameters after mutation.",
+  "hypothesis": "Adding heritable neural parameter scalings (tau_m_factor, v_thresh_factor, cm_factor) derived from ecological traits and subject to mutation during reproduction will create polyps with genuinely different computational properties. A population with divergent neural parameters will have higher state dimensionality (PR) than a clone population, because different neurons respond to the same input with genuinely different dynamics.",
+  "measurement": {
+    "population": {
+      "initial": 8,
+      "max": 32
+    },
+    "pr_computation": "Standard PR on test-split covariance",
+    "state_vector": "Per-neuron spike vector",
+    "task": "sine_wave (sin(0..40), 300 steps)"
+  },
+  "mechanism_under_test": {
+    "description": "Each polyp carries heritable neural scaling factors that multiply the base config values for tau_m, v_thresh, and cm. These factors are inherited from parents with bounded log-space mutation during reproduction. ",
+    "heritable_neural_params": {
+      "cm_factor": {
+        "bounds": [
+          0.5,
+          2.0
+        ],
+        "default": 1.0,
+        "description": "Growth rate affects membrane capacitance",
+        "eco_derive_from": "cyclin_accumulation_rate",
+        "mutation_sigma": 0.05
+      },
+      "tau_m_factor": {
+        "bounds": [
+          0.5,
+          3.0
+        ],
+        "default": 1.0,
+        "description": "Faster metabolism = shorter membrane time constant",
+        "eco_derive_from": "metabolic_decay",
+        "mutation_sigma": 0.08
+      },
+      "v_thresh_factor": {
+        "bounds": [
+          0.7,
+          1.5
+        ],
+        "default": 1.0,
+        "description": "Better neurotrophin = lower firing threshold",
+        "eco_derive_from": "bdnf_uptake_efficiency",
+        "mutation_sigma": 0.05
+      }
+    },
+    "name": "neural_parameter_heritability",
+    "type": "lifecycle/neural mechanism"
+  },
+  "null_hypothesis": "Heritable neural parameters do not increase state dimensionality because: (1) the mutation range is too small to create measurable differences, (2) LIF dynamics are insensitive to parameter variation at this scale, or (3) the I/E balance normalizes away individual parameter differences.",
+  "outcome_classes": [
+    {
+      "action": "Neural parameter heritability creates genuine computational diversity through evolution.",
+      "condition": "primary pass AND neurally-heritable beats clone by > 0.3",
+      "outcome": "neural_heritability_confirmed"
+    },
+    {
+      "action": "Neural heritability helps but effect is small; consider stronger mutation.",
+      "condition": "PR improves but margin < 0.3 vs clone",
+      "outcome": "neural_heritability_partial"
+    },
+    {
+      "action": "Neural parameter variation at this scale is too small to affect LIF dynamics.",
+      "condition": "No PR difference between heritable and clone",
+      "outcome": "neural_heritability_no_effect"
+    },
+    {
+      "action": "Parameter bounds need tightening or different neural params.",
+      "condition": "Parameter variation destabilizes the network (NaN, extinction, silence)",
+      "outcome": "neural_heritability_unstable"
+    }
+  ],
+  "pass_criteria": {
+    "primary": "heritable PR > clone PR by margin > 0.3 at final timepoint, AND heritable PR > static PR by margin > 0.5, AND neural_factor variance (std across polyps) increases over generations"
+  },
+  "question": "Does making neural parameters (tau_m, v_thresh, cm) heritable and mutable through lifecycle reproduction create genuine computational diversity \u2014 polyps evolving genuinely different neural dynamics \u2014 beyond the current ecological-only trait heritability?",
+  "shams": [
+    {
+      "description": "Reproduction ON, ecology traits evolve, but neural_factor mutation is disabled (children inherit exact parent factors). Tests whether neural parameter heritability specifically increases PR beyond ecological trait diversity alone.",
+      "name": "neural_clones_only",
+      "role": "primary"
+    },
+    {
+      "description": "Each polyp gets random neural factors at birth (same variance as mutation) but factor NOT inherited from parent. Tests whether heritability (lineage-specific accumulation) is better than random variation.",
+      "name": "random_neural_assign",
+      "role": "secondary"
+    }
+  ]
+}

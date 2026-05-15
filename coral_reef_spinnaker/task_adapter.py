@@ -47,7 +47,7 @@ class TaskAdapter(Protocol):
 
 
 class DummyAdapter:
-    """Minimal dummy adapter for smoke testing."""
+    """Minimal placeholder adapter for smoke testing."""
 
     def encode(self, observation: Observation, n_channels: int) -> np.ndarray:
         out = np.zeros(n_channels, dtype=float)

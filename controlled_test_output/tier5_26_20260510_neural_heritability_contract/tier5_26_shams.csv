@@ -1,0 +1,3 @@
+name,role,description
+neural_clones_only,primary,"Reproduction ON, ecology traits evolve, but neural_factor mutation is disabled (children inherit exact parent factors). Tests whether neural parameter heritability specifically increases PR beyond ecological trait diversity alone."
+random_neural_assign,secondary,Each polyp gets random neural factors at birth (same variance as mutation) but factor NOT inherited from parent. Tests whether heritability (lineage-specific accumulation) is better than random variation.

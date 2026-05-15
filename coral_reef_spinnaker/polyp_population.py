@@ -154,6 +154,11 @@ class PolypNeuronType:
         to ``sim.Population(..., cellclass=sim.IF_curr_exp, ... )`` or
         set via ``population.set(i_offset=...)``.
 
+        Neural device parameters (tau_m_factor, v_thresh_factor, cm_factor)
+        from the polyp's heritable lifecycle traits scale the base config
+        values, allowing evolution to produce genuinely different
+        computational properties across polyps.
+
         Parameters
         ----------
         state : PolypState
@@ -170,6 +175,20 @@ class PolypNeuronType:
         i_offset = self.drive_to_current_offset(drive)
         params = self.base_params
         params["i_offset"] = float(i_offset)
+        # Apply heritable neural parameter scaling if present on the state
+        tau_m_factor = float(getattr(state, "tau_m_factor", 1.0) or 1.0)
+        v_thresh_factor = float(getattr(state, "v_thresh_factor", 1.0) or 1.0)
+        cm_factor = float(getattr(state, "cm_factor", 1.0) or 1.0)
+        params["tau_m"] = float(params.get("tau_m", 20.0)) * tau_m_factor
+        # v_thresh_factor scales the gap between reset and threshold so
+        # the invariant v_reset < v_thresh is always preserved.
+        v_rest = float(params.get("v_rest", -65.0))
+        v_reset = float(params.get("v_reset", -65.0))
+        v_thresh_base = float(params.get("v_thresh", -55.0))
+        gap = v_thresh_base - v_reset  # normally ~10mV
+        scaled_gap = gap * v_thresh_factor
+        params["v_thresh"] = v_reset + scaled_gap
+        params["cm"] = float(params.get("cm", 1.0)) * cm_factor
         return params
 
     def create_lif_param_list(
@@ -527,6 +546,7 @@ class PolypPopulation:
         self,
         slot_index: int,
         seed: int = 42,
+        polyp_state=None,
     ) -> Tuple[List[Tuple[int, int, float, float]], List[Tuple[int, int, float, float]]]:
         """Generate internal synapse list for a polyp microcircuit.
 
@@ -544,6 +564,11 @@ class PolypPopulation:
             Polyp slot index (determines base neuron index).
         seed : int
             Random seed offset for deterministic wiring.
+        polyp_state : PolypState or None
+            If provided, uses this polyp's per-polyp neuron allocation
+            (n_input_alloc, n_exc_alloc, n_inh_alloc) instead of the
+            population-level defaults.  Enables heritable neuron counts
+            per polyp through lifecycle evolution.
 
         Returns
         -------
@@ -554,23 +579,34 @@ class PolypPopulation:
         rng = np.random.RandomState(seed + slot_index)
         base = slot_index * self.neurons_per_polyp
 
+        # Use per-polyp allocation if available, else class-level defaults
+        n_in = (int(polyp_state.n_input_alloc) if polyp_state is not None
+                and getattr(polyp_state, "n_input_alloc", None) is not None
+                else self.n_input)
+        n_ex = (int(polyp_state.n_exc_alloc) if polyp_state is not None
+                and getattr(polyp_state, "n_exc_alloc", None) is not None
+                else self.n_exc)
+        n_ih = (int(polyp_state.n_inh_alloc) if polyp_state is not None
+                and getattr(polyp_state, "n_inh_alloc", None) is not None
+                else self.n_inh)
+
         def input_idx(i):   return base + i
-        def exc_idx(i):     return base + self.n_input + i
-        def inh_idx(i):     return base + self.n_input + self.n_exc + i
-        def readout_idx(i): return base + self.n_input + self.n_exc + self.n_inh + i
+        def exc_idx(i):     return base + n_in + i
+        def inh_idx(i):     return base + n_in + n_ex + i
+        def readout_idx(i): return base + n_in + n_ex + n_ih + i
 
         exc_conns: List[Tuple[int, int, float, float]] = []
         inh_conns: List[Tuple[int, int, float, float]] = []
 
         # input -> excitatory
-        for i_in in range(self.n_input):
-            targets = rng.choice(self.n_exc, size=min(4, self.n_exc), replace=False)
+        for i_in in range(n_in):
+            targets = rng.choice(n_ex, size=min(4, n_ex), replace=False)
             for t in targets:
                 exc_conns.append((input_idx(i_in), exc_idx(t), 0.15, 1.0))
 
         # input -> inhibitory
-        for i_in in range(self.n_input):
-            targets = rng.choice(self.n_inh, size=min(2, self.n_inh), replace=False)
+        for i_in in range(n_in):
+            targets = rng.choice(n_ih, size=min(2, n_ih), replace=False)
             for t in targets:
                 exc_conns.append((input_idx(i_in), inh_idx(t), 0.10, 1.0))
 
@@ -586,9 +622,9 @@ class PolypPopulation:
 
         # First pass: generate base E->E excitatory connections (all positive)
         ee_weights = {}  # (i_pre, t_post) -> weight map for antisymmetry pass
-        for i_exc in range(self.n_exc):
-            targets = rng.choice(self.n_exc,
-                                 size=min(ee_fanout, self.n_exc - 1),
+        for i_exc in range(n_ex):
+            targets = rng.choice(n_ex,
+                                 size=min(ee_fanout, n_ex - 1),
                                  replace=False)
             for t in targets:
                 if t != i_exc:
@@ -610,22 +646,55 @@ class PolypPopulation:
                     inh_conns.append((exc_idx(t_post), exc_idx(i_pre), w_rev, 1.0))
 
         # excitatory -> inhibitory
-        for i_exc in range(self.n_exc):
-            targets = rng.choice(self.n_inh, size=min(2, self.n_inh), replace=False)
+        for i_exc in range(n_ex):
+            targets = rng.choice(n_ih, size=min(2, n_ih), replace=False)
             for t in targets:
                 exc_conns.append((exc_idx(i_exc), inh_idx(t), 0.20, 1.0))
 
         # inhibitory -> excitatory (all-to-all)
-        for i_inh in range(self.n_inh):
-            for t in range(self.n_exc):
+        for i_inh in range(n_ih):
+            for t in range(n_ex):
                 inh_conns.append((inh_idx(i_inh), exc_idx(t), -0.40, 1.0))
 
         # excitatory -> readout
-        for i_exc in range(self.n_exc):
-            targets = rng.choice(self.n_readout, size=min(2, self.n_readout), replace=False)
+        n_ro = self.n_readout
+        for i_exc in range(n_ex):
+            targets = rng.choice(n_ro, size=min(2, n_ro), replace=False)
             for t in targets:
                 w = float(rng.lognormal(mean=np.log(0.1), sigma=0.5))
                 exc_conns.append((exc_idx(i_exc), readout_idx(t), w, 1.0))
+
+        # Apply per-polyp operator diversity: spectral radius and E/I ratio
+        if polyp_state is not None:
+            sr = float(getattr(polyp_state, "spectral_radius", 1.0) or 1.0)
+            eir = float(getattr(polyp_state, "ei_ratio", 1.0) or 1.0)
+
+            # Scale E->E weights to target spectral radius
+            if sr != 1.0 and n_ex > 1:
+                W_ee = np.zeros((n_ex, n_ex))
+                for (pre, post, weight, _) in exc_conns:
+                    local_pre = pre - exc_idx(0)
+                    local_post = post - exc_idx(0)
+                    if 0 <= local_pre < n_ex and 0 <= local_post < n_ex:
+                        W_ee[local_pre, local_post] = weight
+                current_sr = max(np.abs(np.linalg.eigvals(W_ee))) if W_ee.any() else 1.0
+                if current_sr > 1e-9:
+                    scale = sr / current_sr
+                    for i, (pre, post, weight, delay) in enumerate(exc_conns):
+                        local_pre = pre - exc_idx(0)
+                        local_post = post - exc_idx(0)
+                        if 0 <= local_pre < n_ex and 0 <= local_post < n_ex:
+                            exc_conns[i] = (pre, post, weight * scale, delay)
+
+            # Scale I->E weights by E/I ratio. Inhibitory projections originate
+            # from the inhibitory slice and target the excitatory slice, so use
+            # the correct local coordinate systems for each endpoint.
+            if eir != 1.0:
+                for i, (pre, post, weight, delay) in enumerate(inh_conns):
+                    local_pre = pre - inh_idx(0)
+                    local_post = post - exc_idx(0)
+                    if 0 <= local_pre < n_ih and 0 <= local_post < n_ex:
+                        inh_conns[i] = (pre, post, weight * eir, delay)
 
         return exc_conns, inh_conns
 
@@ -697,17 +766,31 @@ class PolypPopulation:
             self.next_polyp_id += 1
             self.lineage_counter += 1
 
-        # Assign block layout
+        # Assign block layout using per-polyp heritable allocation
         state.is_alive = True
         state.slot_index = slot_idx
         state.base_index = slot_idx * self.neurons_per_polyp
         state.n_neurons_per_polyp = self.neurons_per_polyp
         state.block_start = state.base_index
         state.block_end = state.base_index + self.neurons_per_polyp
-        state.input_slice = self.input_slice(slot_idx)
-        state.exc_slice = self.exc_slice(slot_idx)
-        state.inh_slice = self.inh_slice(slot_idx)
-        state.readout_slice = self.readout_slice(slot_idx)
+        # Per-polyp heritable allocation with readout filling remainder
+        n_in = int(getattr(state, 'n_input_alloc', self.n_input) or self.n_input)
+        n_ex = int(getattr(state, 'n_exc_alloc', self.n_exc) or self.n_exc)
+        n_ih = int(getattr(state, 'n_inh_alloc', self.n_inh) or self.n_inh)
+        n_ro = self.neurons_per_polyp - n_in - n_ex - n_ih
+        n_ro = max(1, n_ro)  # at least one readout neuron
+        # Adjust excitatory to absorb any overflow from readout clamping
+        n_ex = self.neurons_per_polyp - n_in - n_ih - n_ro
+        state.n_input_alloc = n_in
+        state.n_exc_alloc = n_ex
+        state.n_inh_alloc = n_ih
+        state.n_readout_alloc = n_ro
+        state.input_slice = slice(state.base_index, state.base_index + n_in)
+        state.exc_slice = slice(state.base_index + n_in, state.base_index + n_in + n_ex)
+        state.inh_slice = slice(state.base_index + n_in + n_ex,
+                                state.base_index + n_in + n_ex + n_ih)
+        state.readout_slice = slice(state.base_index + n_in + n_ex + n_ih,
+                                     state.block_end)
         # Store state
         self.states[slot_idx] = state
 
@@ -726,15 +809,17 @@ class PolypPopulation:
             "i_offset": [base_params["i_offset"]] * n,
         }
         # Heterogeneous membrane properties (~10% CV, biologically observed)
+        # Use the polyp's heritable neural factor-scaled base params as
+        # the Gaussian mean so that inherited parameter differences persist.
         rng = np.random.RandomState(state.polyp_id + 42)
         param_lists["tau_m"] = rng.normal(
-            self.neuron_type._base_params["tau_m"], 2.0, n
+            base_params["tau_m"], 2.0, n
         ).tolist()
         param_lists["v_thresh"] = rng.normal(
-            self.neuron_type._base_params["v_thresh"], 1.0, n
+            base_params["v_thresh"], 1.0, n
         ).tolist()
         param_lists["cm"] = rng.normal(
-            self.neuron_type._base_params["cm"], 0.02, n
+            base_params["cm"], 0.02, n
         ).tolist()
         for pname, pval in param_lists.items():
             self.population[state.block_start : state.block_end].set(
@@ -746,6 +831,7 @@ class PolypPopulation:
             exc_conns, inh_conns = self.instantiate_internal_template(
                 slot_index=slot_idx,
                 seed=self.internal_conn_seed,
+                polyp_state=state,
             )
             if exc_conns:
                 state._internal_proj_exc = self.sim.Projection(
@@ -756,6 +842,7 @@ class PolypPopulation:
                     receptor_type="excitatory",
                     label=f"polyp_{state.polyp_id}_exc",
                 )
+                state._init_exc_conns = list(exc_conns)
             if inh_conns:
                 state._internal_proj_inh = self.sim.Projection(
                     self.population,
@@ -765,6 +852,7 @@ class PolypPopulation:
                     receptor_type="inhibitory",
                     label=f"polyp_{state.polyp_id}_inh",
                 )
+                state._init_inh_conns = list(inh_conns)
 
         return slot_idx
 
@@ -814,10 +902,22 @@ class PolypPopulation:
         state.n_neurons_per_polyp = self.neurons_per_polyp
         state.block_start = state.base_index
         state.block_end = state.base_index + self.neurons_per_polyp
-        state.input_slice = self.input_slice(slot_index)
-        state.exc_slice = self.exc_slice(slot_index)
-        state.inh_slice = self.inh_slice(slot_index)
-        state.readout_slice = self.readout_slice(slot_index)
+        # Per-polyp heritable allocation
+        n_in = int(getattr(state, 'n_input_alloc', self.n_input) or self.n_input)
+        n_ex = int(getattr(state, 'n_exc_alloc', self.n_exc) or self.n_exc)
+        n_ih = int(getattr(state, 'n_inh_alloc', self.n_inh) or self.n_inh)
+        n_ro = max(1, self.neurons_per_polyp - n_in - n_ex - n_ih)
+        n_ex = self.neurons_per_polyp - n_in - n_ih - n_ro
+        state.n_input_alloc = n_in
+        state.n_exc_alloc = n_ex
+        state.n_inh_alloc = n_ih
+        state.n_readout_alloc = n_ro
+        state.input_slice = slice(state.base_index, state.base_index + n_in)
+        state.exc_slice = slice(state.base_index + n_in, state.base_index + n_in + n_ex)
+        state.inh_slice = slice(state.base_index + n_in + n_ex,
+                                state.base_index + n_in + n_ex + n_ih)
+        state.readout_slice = slice(state.base_index + n_in + n_ex + n_ih,
+                                     state.block_end)
         state.is_alive = True
 
         self.states[slot_index] = state
@@ -835,13 +935,13 @@ class PolypPopulation:
         }
         rng = np.random.RandomState(state.polyp_id + 42)
         param_lists["tau_m"] = rng.normal(
-            self.neuron_type._base_params["tau_m"], 2.0, n
+            base_params["tau_m"], 2.0, n
         ).tolist()
         param_lists["v_thresh"] = rng.normal(
-            self.neuron_type._base_params["v_thresh"], 1.0, n
+            base_params["v_thresh"], 1.0, n
         ).tolist()
         param_lists["cm"] = rng.normal(
-            self.neuron_type._base_params["cm"], 0.02, n
+            base_params["cm"], 0.02, n
         ).tolist()
         for pname, pval in param_lists.items():
             self.population[state.block_start : state.block_end].set(
@@ -1295,6 +1395,69 @@ class PolypPopulation:
                 continue
             params = self.neuron_type.create_lif_params(state)
             self.population[state.block_start : state.block_end].set(**params)
+
+    def snapshot_all_weights(self) -> None:
+        """Store current connection lists as learned weight snapshots.
+
+        Uses the Python-side connection lists stored at projection creation
+        time (or from prior restores).  These represent the polyp's
+        connectivity pattern for inheritance by children.
+        """
+        for state in self.states:
+            if not state.is_alive:
+                continue
+            # Convert connection lists to weight maps keyed by (local_pre, local_post)
+            exc_conns = getattr(state, "_init_exc_conns", None)
+            if exc_conns:
+                ew = {}
+                for (pre, post, weight, delay) in exc_conns:
+                    ew[(pre - state.block_start, post - state.block_start)] = float(weight)
+                state._learned_exc_weights = ew if ew else None
+
+            inh_conns = getattr(state, "_init_inh_conns", None)
+            if inh_conns:
+                iw = {}
+                for (pre, post, weight, delay) in inh_conns:
+                    iw[(pre - state.block_start, post - state.block_start)] = float(weight)
+                state._learned_inh_weights = iw if iw else None
+
+    def restore_all_weights(self) -> None:
+        """Apply stored synaptic weight maps to each alive polyp's connections.
+
+        Converts local-index weight maps back to global connection lists
+        and updates the PyNN projections for the current population.
+        """
+        for state in self.states:
+            if not state.is_alive:
+                continue
+            block_start = state.block_start
+            block_end = state.block_end
+
+            exc_map = getattr(state, "_learned_exc_weights", None)
+            if exc_map:
+                new_exc = []
+                for (local_pre, local_post), weight in exc_map.items():
+                    if 0 <= local_pre < (block_end - block_start) and 0 <= local_post < (block_end - block_start):
+                        new_exc.append((block_start + local_pre, block_start + local_post, weight, 1.0))
+                if new_exc and hasattr(state, "_internal_proj_exc") and state._internal_proj_exc is not None:
+                    try:
+                        state._internal_proj_exc.set(weight=[w[2] for w in new_exc])
+                    except Exception:
+                        pass
+                state._init_exc_conns = new_exc
+
+            inh_map = getattr(state, "_learned_inh_weights", None)
+            if inh_map:
+                new_inh = []
+                for (local_pre, local_post), weight in inh_map.items():
+                    if 0 <= local_pre < (block_end - block_start) and 0 <= local_post < (block_end - block_start):
+                        new_inh.append((block_start + local_pre, block_start + local_post, weight, 1.0))
+                if new_inh and hasattr(state, "_internal_proj_inh") and state._internal_proj_inh is not None:
+                    try:
+                        state._internal_proj_inh.set(weight=[w[2] for w in new_inh])
+                    except Exception:
+                        pass
+                state._init_inh_conns = new_inh
 
     # ------------------------------------------------------------------
     # Competitive readout (winner-take-all)

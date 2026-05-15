@@ -1,0 +1,5 @@
+outcome,condition,action
+lifecycle_diversity_confirmed,primary pass AND all shams separated AND secondary criteria met,Lifecycle-enabled emergent diversity is the correct mechanism for organism state dimensionality. Promote to full investigation. Dequeue reversed successfully.
+lifecycle_helps_partially,"PR improves but not 1.5x, or shams not fully separated","Lifecycle direction is correct but current parameters (mutation rate, selection pressure) need tuning."
+lifecycle_no_effect,No PR improvement over static population,Lifecycle reproduction + mutation does not create measurable trait diversity at these run lengths/parameters.
+lifecycle_unstable,Population crashes (extinction) or explodes beyond max,Lifecycle parameter tuning needed before diversity measurement.

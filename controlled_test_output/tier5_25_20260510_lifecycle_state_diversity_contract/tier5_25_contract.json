@@ -1,0 +1,98 @@
+{
+  "claim_boundary": "Host-side software diagnostic of lifecycle-enabled state diversity only. Not mechanism promotion, not a baseline freeze, not hardware/Spynnaker lifecycle evidence, not full ecology scaling, not public usefulness proof.",
+  "conditions": [
+    {
+      "description": "Reproduction + mutation + apoptosis enabled. Polyps reproduce when trophic health > threshold, offspring inherit parent traits with small mutations. Low-fitness polyps die via apoptosis.",
+      "name": "lifecycle_on"
+    },
+    {
+      "description": "Static population: no reproduction, no apoptosis. Same initial polyps survive the entire run. This is the current benchmark configuration.",
+      "name": "lifecycle_off"
+    }
+  ],
+  "decision": "contract_locked_authorize_scoring_gate",
+  "diagnosis": "Every NEST organism mechanism tested (Tiers 5.21-5.24, 5.23a) has hit a PR ceiling of \u22481.9 per-polyp / \u22482.9 per-neuron. All of these are forms of ENGINEERED diversity: setting per-neuron gains, per-polyp sensory scaling, multi-channel feature routing, inter-polyp projections, or within-polyp antisymmetric recurrence. The organism was designed to achieve diversity through LIFECYCLE: reproduction with heritable trait mutation, apoptosis of low-fitness polyps, and trophic selection. Engineered diversity works against the organism's fundamental design principle.",
+  "hypothesis": "Enabling reproduction with heritable trait mutation and apoptosis with trophic selection will cause the polyp population to diverge over generations, producing genuinely different neuronal properties (tau_m, connectivity parameters, input sensitivity) across polyps. This emergent diversity will increase state dimensionality (PR) compared to a static population without lifecycle.",
+  "measurement": {
+    "population": {
+      "initial": 4,
+      "max": 32
+    },
+    "pr_computation": "Standard PR on test-split covariance",
+    "state_vector": "Per-neuron spike vector (512 channels for initial 8 polyps)",
+    "task": "sine_wave (sin(0..25), 300 steps)",
+    "timepoints": [
+      0,
+      50,
+      100,
+      150,
+      200,
+      300
+    ]
+  },
+  "mechanism_under_test": {
+    "description": "Reproduction (mitosis with trait mutation), apoptosis (death of low-fitness/poor-trophic polyps), and trophic economy create a selection pressure that drives trait diversification over generations.",
+    "heritable_traits": [
+      "tau_m (membrane time constant, \u00b15% per generation)",
+      "v_thresh (firing threshold, \u00b12% per generation)",
+      "input_sensitivity (via tau_syn_E modulation, \u00b15%)",
+      "connectivity_pattern (via internal_conn_seed offset, \u00b110%)",
+      "reproduction_threshold (cyclin accumulation rate, \u00b13%)"
+    ],
+    "name": "lifecycle_emergent_diversity",
+    "type": "population/lifecycle mechanism"
+  },
+  "null_hypothesis": "Enabling lifecycle does not increase state dimensionality because: (1) mutation rates are too small to create meaningful trait divergence within typical simulation lengths, (2) selection pressure is too weak to preserve beneficial variations, or (3) the polyp trait space doesn't contain parameters that affect state diversity.",
+  "outcome_classes": [
+    {
+      "action": "Lifecycle-enabled emergent diversity is the correct mechanism for organism state dimensionality. Promote to full investigation. Dequeue reversed successfully.",
+      "condition": "primary pass AND all shams separated AND secondary criteria met",
+      "outcome": "lifecycle_diversity_confirmed"
+    },
+    {
+      "action": "Lifecycle direction is correct but current parameters (mutation rate, selection pressure) need tuning.",
+      "condition": "PR improves but not 1.5x, or shams not fully separated",
+      "outcome": "lifecycle_helps_partially"
+    },
+    {
+      "action": "Lifecycle reproduction + mutation does not create measurable trait diversity at these run lengths/parameters.",
+      "condition": "No PR improvement over static population",
+      "outcome": "lifecycle_no_effect"
+    },
+    {
+      "action": "Lifecycle parameter tuning needed before diversity measurement.",
+      "condition": "Population crashes (extinction) or explodes beyond max",
+      "outcome": "lifecycle_unstable"
+    }
+  ],
+  "pass_criteria": {
+    "primary": "PR at lifecycle-on final timepoint > 1.5x PR at lifecycle-off same timepoint, AND PR trajectory increases with lifecycle steps (positive Kendall tau between step and PR), AND at least one sham/ablation separated by margin > 0.5 PR.",
+    "secondary": [
+      "Population size remains stable (no extinction or unbounded growth)",
+      "At least 2 generations of reproduction occur",
+      "Trait variance (std of tau_m across polyps) increases over time"
+    ]
+  },
+  "question": "Does enabling organism lifecycle (reproduction with mutation + apoptosis + trophic selection) increase state dimensionality beyond the current PR\u22481.9 ceiling, by generating emergent population diversity through inheritance, variation, and selection rather than through engineered parameter injection?",
+  "reversal_of_79_dequeue": "The Tier 7.8a morphology test falsified STATIC heterogeneity \u2014 assigning different templates at initialisation. This correctly showed that heterogeneous initial templates do not improve PR. But lifecycle diversity is NOT static heterogeneity: it is EMERGENT diversity evolving over generations through reproduction + mutation + selection. The 7.9 dequeue decision conflated these two mechanisms. Tier 7.9 is re-queued with corrected scope: lifecycle-enabled emergent diversity, not static template variation.",
+  "shams": [
+    {
+      "description": "Reproduction enabled but mutation disabled. Offspring are exact clones of parents. Tests whether population growth alone (not trait diversification) affects PR.",
+      "name": "reproduction_no_mutation",
+      "passes_if": "no-mutation PR < lifecycle-on PR",
+      "role": "ablation/control"
+    },
+    {
+      "description": "Reproduction + mutation enabled but apoptosis disabled (no death, polyps never culled). Tests whether selection is causal or just reproduction.",
+      "name": "no_selection_pressure",
+      "passes_if": "no-selection PR < lifecycle-on PR",
+      "role": "ablation/control"
+    },
+    {
+      "description": "Reproduction + mutation enabled but fitness scores are randomly shuffled before selection. Tests whether directed selection produces better diversity than random drift.",
+      "name": "shuffled_fitness",
+      "passes_if": "shuffled-fitness PR < lifecycle-on PR",
+      "role": "sham"
+    }
+  ]
+}

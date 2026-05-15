@@ -199,7 +199,7 @@ VARIANTS: tuple[ReplayVariant, ...] = (
         runner="internal",
         feature_mode="keyed",
         replay_mode="priority_only",
-        hypothesis="Prioritized examples are selected and written with matched counts, but into non-task dummy keys so priority alone cannot restore context binding.",
+        hypothesis="Prioritized examples are selected and written with matched counts, but into non-task placeholder keys so priority alone cannot restore context binding.",
         overrides={
             "learning.delayed_readout_learning_rate": 0.20,
             "learning.macro_eligibility_enabled": False,

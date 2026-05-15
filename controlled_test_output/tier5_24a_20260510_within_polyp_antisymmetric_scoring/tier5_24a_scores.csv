@@ -1,0 +1,4 @@
+condition,label,pr,n_channels,n_active,steps
+baseline,antisym=False_factor=0.7,2.9239,512,376,120
+antisym_07,antisym=True_factor=0.7,2.9141,512,374,120
+antisym_15,antisym=True_factor=1.5,2.9019,512,373,120

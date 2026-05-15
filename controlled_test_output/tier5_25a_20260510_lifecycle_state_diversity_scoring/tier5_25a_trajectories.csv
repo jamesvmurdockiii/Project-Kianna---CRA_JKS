@@ -1,0 +1,17 @@
+condition,metric,step,pr,n_channels,n_active,n_polyps
+off,per_neuron_pr,20,1.191,1024,192,
+off,per_neuron_pr,50,1.21,1024,193,
+off,per_neuron_pr,100,1.228,1024,193,
+off,per_neuron_pr,149,1.232,1024,193,
+on,per_neuron_pr,20,1.42,1024,259,
+on,per_neuron_pr,50,1.391,1024,327,
+on,per_neuron_pr,100,1.41,1024,354,
+on,per_neuron_pr,149,1.589,1024,426,
+off,per_polyp_pr,20,1.013,,8,32
+off,per_polyp_pr,50,1.025,,8,32
+off,per_polyp_pr,100,1.026,,8,32
+off,per_polyp_pr,149,1.026,,8,32
+on,per_polyp_pr,20,1.337,,10,32
+on,per_polyp_pr,50,1.366,,13,32
+on,per_polyp_pr,100,1.329,,14,32
+on,per_polyp_pr,149,1.661,,16,32

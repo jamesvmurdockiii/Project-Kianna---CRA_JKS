@@ -1,0 +1,3 @@
+name,role,description
+full_mask_clones,primary,All polyps receive full channel mask (equivalent to current behavior). Tests whether stream specialization specifically creates diversity.
+random_mask_per_step,secondary,Each polyp gets a random mask each step (not inherited). Tests whether mask heritability (lineage-specific accumulation) matters.

@@ -1,0 +1,199 @@
+{
+  "claim_boundary": "Host-side NEST diagnostic of heritable variable neuron allocation only.",
+  "criteria": [
+    {
+      "criterion": "2 conditions completed",
+      "name": "2 conditions completed",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "C1: margin >0.5",
+      "name": "C1: margin >0.5",
+      "note": "",
+      "passed": false,
+      "rule": ">0.5",
+      "value": 1.3132
+    },
+    {
+      "criterion": "C2: margin >1.0",
+      "name": "C2: margin >1.0",
+      "note": "",
+      "passed": true,
+      "rule": ">1.0",
+      "value": 1.3132
+    },
+    {
+      "criterion": "C3: unique_alloc >= 3",
+      "name": "C3: unique_alloc >= 3",
+      "note": "",
+      "passed": true,
+      "rule": ">=3",
+      "value": 20
+    },
+    {
+      "criterion": "allocations diverged",
+      "name": "allocations diverged",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "no NaN/inf",
+      "name": "no NaN/inf",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "no baseline freeze authorized",
+      "name": "no baseline freeze authorized",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "criterion": "no mechanism promotion authorized",
+      "name": "no mechanism promotion authorized",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 7,
+  "criteria_total": 8,
+  "generated_at_utc": "2026-05-11T04:31:18+00:00",
+  "outcome": "variable_allocation_partial",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_28a_20260510_variable_allocation_scoring",
+  "runner_revision": "tier5_28a_variable_allocation_scoring_20260510_0001",
+  "static": {
+    "label": "static",
+    "timepoints": [
+      {
+        "n_alive": 4,
+        "n_polyps": 32,
+        "n_unique_alloc": 1,
+        "pr_polyp": 1.0466,
+        "step": 50
+      },
+      {
+        "n_alive": 4,
+        "n_polyps": 32,
+        "n_unique_alloc": 1,
+        "pr_polyp": 1.0075,
+        "step": 100
+      },
+      {
+        "n_alive": 4,
+        "n_polyps": 32,
+        "n_unique_alloc": 1,
+        "pr_polyp": 1.013,
+        "step": 150
+      },
+      {
+        "n_alive": 4,
+        "n_polyps": 32,
+        "n_unique_alloc": 1,
+        "pr_polyp": 1.0126,
+        "step": 200
+      },
+      {
+        "n_alive": 4,
+        "n_polyps": 32,
+        "n_unique_alloc": 1,
+        "pr_polyp": 1.0152,
+        "step": 250
+      },
+      {
+        "n_alive": 4,
+        "n_polyps": 32,
+        "n_unique_alloc": 1,
+        "pr_polyp": 1.0126,
+        "step": 300
+      },
+      {
+        "n_alive": 4,
+        "n_polyps": 32,
+        "n_unique_alloc": 1,
+        "pr_polyp": 1.013,
+        "step": 350
+      },
+      {
+        "n_alive": 4,
+        "n_polyps": 32,
+        "n_unique_alloc": 1,
+        "pr_polyp": 1.0119,
+        "step": 399
+      }
+    ]
+  },
+  "status": "pass",
+  "tier": "Tier 5.28a \u2014 Variable Neuron Allocation Scoring Gate",
+  "variable": {
+    "label": "variable",
+    "timepoints": [
+      {
+        "n_alive": 8,
+        "n_polyps": 32,
+        "n_unique_alloc": 5,
+        "pr_polyp": 1.5379,
+        "step": 50
+      },
+      {
+        "n_alive": 10,
+        "n_polyps": 32,
+        "n_unique_alloc": 7,
+        "pr_polyp": 1.7803,
+        "step": 100
+      },
+      {
+        "n_alive": 12,
+        "n_polyps": 32,
+        "n_unique_alloc": 9,
+        "pr_polyp": 1.2964,
+        "step": 150
+      },
+      {
+        "n_alive": 13,
+        "n_polyps": 32,
+        "n_unique_alloc": 10,
+        "pr_polyp": 1.5987,
+        "step": 200
+      },
+      {
+        "n_alive": 15,
+        "n_polyps": 32,
+        "n_unique_alloc": 12,
+        "pr_polyp": 1.8216,
+        "step": 250
+      },
+      {
+        "n_alive": 18,
+        "n_polyps": 32,
+        "n_unique_alloc": 15,
+        "pr_polyp": 2.4727,
+        "step": 300
+      },
+      {
+        "n_alive": 21,
+        "n_polyps": 32,
+        "n_unique_alloc": 18,
+        "pr_polyp": 2.2975,
+        "step": 350
+      },
+      {
+        "n_alive": 23,
+        "n_polyps": 32,
+        "n_unique_alloc": 20,
+        "pr_polyp": 2.3251,
+        "step": 399
+      }
+    ]
+  }
+}

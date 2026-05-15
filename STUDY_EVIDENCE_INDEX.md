@@ -10,7 +10,7 @@ Research narrative companions:
 - `docs/WHITEPAPER.md`
 - `docs/CODEBASE_MAP.md`
 
-- Registry generated: `2026-05-10T23:12:49.615590+00:00`
+- Registry generated: `2026-05-15T01:09:31.055793+00:00`
 - Registry status: **PASS**
 - Core validation suite: `12` tests
 - Expanded evidence suite: `156` entries; see the canonical evidence table below for the exact current tier list.
@@ -444,4 +444,4 @@ Research narrative companions:
 
 - Missing expected artifacts: `0`
 - Failed canonical criteria: `0`
-- Noncanonical output folders preserved: `322`
+- Noncanonical output folders preserved: `338`

@@ -1,0 +1,166 @@
+{
+  "contract": {
+    "claim_boundary": "Host-side NEST diagnostic of per-polyp operator diversity only. Not mechanism promotion, not a baseline freeze, not hardware evidence, not public usefulness proof.",
+    "conditions": {
+      "operator_diverse": "Lifecycle ON + spectral radius + E/I ratio heritable",
+      "static": "Lifecycle OFF \u2014 static uniform population",
+      "uniform_sham": "Lifecycle ON + spectral radius clamped to 1.0 + E/I ratio clamped to 1.0 (all polyps identical operator)"
+    },
+    "decision": "contract_locked_authorize_scoring",
+    "diagnosis": "The PR ceiling (~1.5) persists across 7 lifecycle diversity features because all polyps implement the SAME dynamical operator.  Parameter variation (tau_m, delays, gains, streams) creates time-warped copies \u2014 not orthogonal dynamics.  Each polyp computes h_{t+1} = F(W_rec * h_t + W_in * x_t) with the same F (same spectral radius, same E/I balance).  The standalone tanh reference achieves PR=7.0 through each unit having a different w_rec operator.\n\nBiological reality: Cortical columns have different dynamical regimes \u2014 some are contractive (sensory filters), others near-critical (memory), others oscillatory (rhythmic generators). This operator diversity is what creates orthogonal cortical response subspaces.\n\nImplementation: Two heritable traits control the polyp's dynamical regime \u2014 spectral_radius (E\u2192E weight scaling, 0.4-2.0) and ei_ratio (I\u2192E inhibitory strength, 0.3-3.0). These are applied in instantiate_internal_template to scale the per-polyp recurrent weight matrix and inhibitory projections.",
+    "hypothesis": "Per-polyp spectral radius variation (0.4-2.0) will create polyps with contractive (sr<1), critical (sr\u22481), and expansive (sr>1) dynamics.  Combined with E/I ratio variation, each polyp becomes a genuinely different dynamical operator. This operator diversity will produce orthogonal spike patterns and increase per-polyp PR significantly beyond the current ~1.5 ceiling.",
+    "layers_on": "Lifecycle infrastructure (Tiers 5.26-5.31) + temporal specialization + NEST Cleanup fix",
+    "measurement": {
+      "population": {
+        "initial": 4,
+        "max": 8
+      },
+      "pr_computation": "Standard PR on test-split (last 40%) covariance",
+      "state_vector": "Per-polyp activity_rate (sum of per-neuron spikes / polyp)",
+      "task": "sine_wave (sin(0..80))"
+    },
+    "mechanism_under_test": {
+      "applied_in": "polyp_population.instantiate_internal_template()",
+      "heritable_traits": {
+        "ei_ratio": {
+          "default": 1.0,
+          "effect": "Multiplies I\u2192E inhibitory weights. >1=stable, <1=excitable/oscillatory",
+          "range": [
+            0.3,
+            3.0
+          ]
+        },
+        "spectral_radius": {
+          "default": 1.0,
+          "effect": "Scales E\u2192E weights to target spectral radius. <1=contractive, =1=critical, >1=expansive",
+          "range": [
+            0.4,
+            2.0
+          ]
+        }
+      },
+      "heritable_via": "LifecycleManager TRAIT_BOUNDS + _instantiate_polyp",
+      "name": "operator_diversity",
+      "stored_on": "PolypState (spectral_radius, ei_ratio)",
+      "type": "neural/lifecycle mechanism"
+    },
+    "null_hypothesis": "Operator diversity does not increase PR because: (1) spectral radius variation at this range destabilizes some polyps (silence or explosion), (2) E/I ratio variation is normalized away by the shared input, or (3) the per-polyp weight scaling is too small relative to the shared input drive.",
+    "outcome_classes": [
+      {
+        "action": "Operator diversity breaks PR ceiling. Layer on all prior features.",
+        "condition": "primary pass",
+        "outcome": "operator_diversity_confirmed"
+      },
+      {
+        "action": "Operator diversity helps but needs stronger effect.",
+        "condition": "PR improves but margin < threshold wrt uniform sham",
+        "outcome": "operator_diversity_partial"
+      },
+      {
+        "action": "Spectral radius/EI ratio at this range doesn't create operator diversity.",
+        "condition": "No PR difference between diverse and uniform",
+        "outcome": "operator_diversity_no_effect"
+      },
+      {
+        "action": "Spectral radius/EI ratio bounds too wide. Tighten.",
+        "condition": "Population crashes, NaN, or silence from extreme sr/eir values",
+        "outcome": "operator_diversity_unstable"
+      }
+    ],
+    "pass_criteria": {
+      "primary": "operator_diverse PR > uniform_sham PR by >1.0 AND > static PR by >2.0 AND spectral_radius range spans >=0.3 across polyps"
+    },
+    "question": "Does per-polyp operator diversity (heritable spectral radius and E/I ratio variation) break the PR ceiling of ~1.5 by creating polyps that implement genuinely different dynamical operators rather than time-warped copies of the same operator?"
+  },
+  "criteria": [
+    {
+      "criterion": "question locked",
+      "name": "question locked",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "diagnosis explains operator diversity",
+      "name": "diagnosis explains operator diversity",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "null hypothesis locked",
+      "name": "null hypothesis locked",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "two heritable traits specified",
+      "name": "two heritable traits specified",
+      "note": "",
+      "passed": true,
+      "rule": "== 2",
+      "value": 2
+    },
+    {
+      "criterion": "sr range specified",
+      "name": "sr range specified",
+      "note": "",
+      "passed": true,
+      "rule": "non-empty",
+      "value": "(0.4, 2.0)"
+    },
+    {
+      "criterion": "primary pass: margin >1.0 vs sham, >2.0 vs static",
+      "name": "primary pass: margin >1.0 vs sham, >2.0 vs static",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "4 outcome classes",
+      "name": "4 outcome classes",
+      "note": "",
+      "passed": true,
+      "rule": "== 4",
+      "value": 4
+    },
+    {
+      "criterion": "layers on prior infrastructure",
+      "name": "layers on prior infrastructure",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "no baseline freeze authorized",
+      "name": "no baseline freeze authorized",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "criterion": "no mechanism promotion authorized",
+      "name": "no mechanism promotion authorized",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 10,
+  "criteria_total": 10,
+  "generated_at_utc": "2026-05-13T02:24:49+00:00",
+  "next_gate": "Tier 5.32a \u2014 Operator Diversity Scoring Gate",
+  "outcome": "operator_diversity_contract_locked",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_32_20260511_operator_diversity_contract",
+  "runner_revision": "tier5_32_operator_diversity_contract_20260511_0001",
+  "status": "pass",
+  "tier": "Tier 5.32 \u2014 Per-Polyp Operator Diversity Contract"
+}

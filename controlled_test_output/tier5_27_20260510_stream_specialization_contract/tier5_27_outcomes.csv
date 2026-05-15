@@ -1,0 +1,5 @@
+outcome,condition,action
+stream_specialization_confirmed,primary pass AND sham separated,Stream specialization is the mechanism that breaks PR ceiling.
+stream_specialization_partial,PR improves but margin < 0.5 vs clone,Stream specialization helps but needs longer evolution or stronger mutation.
+stream_specialization_no_effect,No PR difference between specialized and clone,Channel selection alone does not create diversity at this scale.
+stream_specialization_reduces_pr,Specialized PR < clone PR,Reducing information per polyp hurts more than specialization helps.

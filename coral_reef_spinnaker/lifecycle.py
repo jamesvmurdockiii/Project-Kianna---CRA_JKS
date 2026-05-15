@@ -225,6 +225,23 @@ class LifecycleManager:
         "cyclin_degradation_rate": (0.1, 5.0),
         "bdnf_release_rate": (0.001, 0.5),
         "bdnf_uptake_efficiency": (0.01, 1.0),
+        # Neural device parameters — heritable per-polyp computational properties
+        "tau_m_factor": (0.4, 3.0),
+        "v_thresh_factor": (0.5, 2.0),
+        "cm_factor": (0.3, 3.0),
+        # Stream specialization — which input channels the polyp attends to
+        "stream_mask_coverage": (0.1, 1.0),
+        # Variable neuron allocation — how the 32-neuron block is distributed
+        "input_allocation_ratio": (0.05, 0.5),
+        "exc_allocation_ratio": (0.2, 0.85),
+        "inh_allocation_ratio": (0.03, 0.25),
+        # Temporal specialization — which lag each polyp reads from history
+        "temporal_lag": (0, 15),
+        # Operator diversity — per-polyp dynamical regime
+        "spectral_radius": (0.4, 2.0),
+        "ei_ratio": (0.3, 3.0),
+        # Functional caste — determines initial dynamical regime
+        "caste_type": (0, 4),
     }
 
     def __init__(
@@ -493,6 +510,133 @@ class LifecycleManager:
             "bdnf_uptake_efficiency", self.BDNF_UPTAKE_EFFICIENCY_DEFAULT
         )
 
+        # Heritable neural device parameters — scale LIF membrane properties
+        if getattr(self.config, "enable_neural_heritability", False):
+            polyp.tau_m_factor = traits.get("tau_m_factor", 1.0)
+            polyp.v_thresh_factor = traits.get("v_thresh_factor", 1.0)
+            polyp.cm_factor = traits.get("cm_factor", 1.0)
+        else:
+            # Clone sham: all polyps get baseline neural factors
+            polyp.tau_m_factor = 1.0
+            polyp.v_thresh_factor = 1.0
+            polyp.cm_factor = 1.0
+
+        # Use higher mutation sigma for neural parameters so that
+        # computational diversity emerges faster through evolution.
+        self._neural_trait_names = {"tau_m_factor", "v_thresh_factor", "cm_factor",
+                                     "input_allocation_ratio", "exc_allocation_ratio",
+                                     "inh_allocation_ratio", "stream_mask_coverage",
+                                     "spectral_radius", "ei_ratio"}
+
+        # Heritable stream specialization — which channels the polyp attends to.
+        # Coverage fraction determines how many of the 8 channels are active.
+        # Founders get full coverage (8/8 channels).  Children inherit with
+        # mutation, producing different feature selectivity.
+        if getattr(self.config, "enable_stream_specialization", False):
+            stream_mask_coverage = traits.get("stream_mask_coverage", 1.0)
+            polyp.stream_mask_coverage = float(stream_mask_coverage)
+            n_input_channels = getattr(self.config, "n_input_per_polyp", 8) or 8
+            n_active = max(1, min(n_input_channels, int(round(stream_mask_coverage * n_input_channels))))
+            all_channels = list(range(n_input_channels))
+            rng = np.random.RandomState(polyp_id + 777)
+            rng.shuffle(all_channels)
+            polyp.stream_attention_mask = set(all_channels[:n_active])
+        else:
+            polyp.stream_mask_coverage = 1.0
+            n_input_channels = getattr(self.config, "n_input_per_polyp", 8) or 8
+            polyp.stream_attention_mask = set(range(n_input_channels))
+
+        # Heritable variable neuron allocation — how many neurons of each
+        # type go into the 32-neuron block.  Ratios are interpreted as
+        # fractions of the 32-neuron total.  Readout gets the remainder.
+        if getattr(self.config, "enable_variable_allocation", False):
+            total_neurons = 32
+            in_ratio = traits.get("input_allocation_ratio", 8.0 / total_neurons)
+            ex_ratio = traits.get("exc_allocation_ratio", 16.0 / total_neurons)
+            ih_ratio = traits.get("inh_allocation_ratio", 4.0 / total_neurons)
+            ratios = np.array([in_ratio, ex_ratio, ih_ratio])
+            total = ratios.sum()
+            if total < 0.3:
+                ratios = ratios / max(total, 0.01) * 0.3
+                total = 0.3
+            if total > 0.95:
+                ratios = ratios / total * 0.95
+            n_in = max(1, int(round(ratios[0] * total_neurons)))
+            n_ex = max(2, int(round(ratios[1] * total_neurons)))
+            n_ih = max(1, int(round(ratios[2] * total_neurons)))
+            n_ro = max(1, total_neurons - n_in - n_ex - n_ih)
+            n_ex = total_neurons - n_in - n_ih - n_ro
+            polyp.n_input_alloc = n_in
+            polyp.n_exc_alloc = n_ex
+            polyp.n_inh_alloc = n_ih
+            polyp.n_readout_alloc = n_ro
+            polyp.input_allocation_ratio = float(ratios[0])
+            polyp.exc_allocation_ratio = float(ratios[1])
+            polyp.inh_allocation_ratio = float(ratios[2])
+        else:
+            polyp.n_input_alloc = 8
+            polyp.n_exc_alloc = 16
+            polyp.n_inh_alloc = 4
+            polyp.n_readout_alloc = 4
+            polyp.input_allocation_ratio = 0.25
+            polyp.exc_allocation_ratio = 0.5
+            polyp.inh_allocation_ratio = 0.125
+
+        # Heritable temporal lag — which history index the polyp reads from.
+        # Founders get lags 0..3. Children inherit with ±1 mutation per generation.
+        raw_lag = traits.get("temporal_lag", float(polyp_id % 16))
+        polyp.temporal_lag = max(0, min(15, int(round(float(raw_lag)))))
+        if not is_founder and parent is not None:
+            parent_lag = int(getattr(parent, "temporal_lag", 0))
+            # Mutate: ±1 per generation with probability 0.5
+            if random.random() < 0.5:
+                polyp.temporal_lag = max(0, min(15, parent_lag + random.choice([-1, 1])))
+            else:
+                polyp.temporal_lag = parent_lag
+
+        # Heritable operator diversity — dynamical regime parameters.
+        # When operator_diversity is enabled, castes determine initial
+        # spectral_radius and ei_ratio ranges.  Children inherit their
+        # parent's caste with possible mutation (type change 10% chance).
+        # Mutation within a caste tweaks sr/eir within the caste's range.
+        if getattr(self.config, "enable_operator_diversity", False):
+            if is_founder:
+                polyp.caste_type = int(polyp_id) % 5
+                # Randomize founder's sr/eir slightly within caste bounds
+                sr_noise = random.gauss(0.0, 0.1)
+                eir_noise = random.gauss(0.0, 0.15)
+            else:
+                parent_caste = int(getattr(parent, "caste_type", 0)) if parent is not None else 0
+                # 10% chance of caste mutation
+                if random.random() < 0.1:
+                    polyp.caste_type = random.randint(0, 4)
+                else:
+                    polyp.caste_type = parent_caste
+                # Inherit with mutation from parent
+                parent_sr = float(getattr(parent, "spectral_radius", 1.0))
+                parent_eir = float(getattr(parent, "ei_ratio", 1.0))
+                sr_noise = random.gauss(0.0, 0.08)
+                eir_noise = random.gauss(0.0, 0.10)
+                polyp.spectral_radius = max(0.5, min(2.0, parent_sr + sr_noise))
+                polyp.ei_ratio = max(0.3, min(3.5, parent_eir + eir_noise))
+
+            # Set caste-specific initial sr/eir for founders (and caste mutants)
+            if is_founder or (not is_founder and parent is None):
+                caste_profiles = {
+                    0: (0.70, 1.5),   # Filter: mild contractive, moderate inhibition
+                    1: (0.95, 0.9),   # Memory: near-critical, balanced
+                    2: (0.85, 0.4),   # Rotor: oscillatory, low inhibition
+                    3: (1.15, 0.7),   # Chaotic: mildly expansive
+                    4: (0.80, 2.0),   # Stabilizer: damped, strong inhibition
+                }
+                base_sr, base_eir = caste_profiles.get(polyp.caste_type, (1.0, 1.0))
+                polyp.spectral_radius = max(0.3, min(2.0, base_sr + sr_noise))
+                polyp.ei_ratio = max(0.2, min(3.5, base_eir + eir_noise))
+        else:
+            polyp.spectral_radius = 1.0
+            polyp.ei_ratio = 1.0
+            polyp.caste_type = 0
+
         # Lifecycle state
         polyp.is_alive = True
         polyp.is_juvenile = True
@@ -715,7 +859,16 @@ class LifecycleManager:
 
         # Accumulation only when trophic exceeds threshold (nutrient signal)
         if trophic > threshold:
-            state.cyclin_d += accumulation_rate * dt_norm
+            # Task-fitness selection: accurate polyps accumulate cyclin faster.
+            # Accuracy 0.5 = 1.0x, Accuracy 1.0 = 1.5x, Accuracy 0.0 = 0.5x.
+            # This creates positive selection: accurate polyps reproduce more,
+            # flooding the population with useful computational traits.
+            accuracy = float(getattr(state, "directional_accuracy_ema", 0.5))
+            if getattr(self.config, "enable_task_fitness_selection", False):
+                accuracy_bonus = 0.5 + min(1.0, max(0.0, accuracy))
+            else:
+                accuracy_bonus = 1.0
+            state.cyclin_d += accumulation_rate * accuracy_bonus * dt_norm
 
         # Continuous degradation (ubiquitin-proteasome pathway analog)
         current_cyclin = float(getattr(state, "cyclin_d", 0.0))
@@ -1992,7 +2145,11 @@ class LifecycleManager:
 
             # Log-space mutation
             log_val = math.log(max(parent_value, 1e-9))
-            noise = random.gauss(0.0, self.BOUNDED_MUTATION_SIGMA)
+            # Neural parameters mutate 3x faster (0.45 sigma) to create
+            # meaningful computational diversity within realistic run lengths.
+            neural_sigma = getattr(self, "_neural_trait_names", set())
+            sigma = 0.45 if trait_name in neural_sigma else self.BOUNDED_MUTATION_SIGMA
+            noise = random.gauss(0.0, sigma)
             mutated_log = log_val + noise
             mutated = math.exp(mutated_log)
 

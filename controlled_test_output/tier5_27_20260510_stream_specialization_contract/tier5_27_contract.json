@@ -1,0 +1,90 @@
+{
+  "claim_boundary": "Host-side NEST diagnostic of heritable stream specialization only. Not mechanism promotion, not a baseline freeze, not hardware evidence, not public usefulness proof.",
+  "code_change": {
+    "description": "1. Add stream_attention_mask (set of ints) to PolypState\n2. Add to TRAIT_BOUNDS as 'stream_mask_coverage' (fraction of channels active, 0.1-1.0)\n3. In _instantiate_polyp, generate specific channel mask from coverage fraction using random selection\n4. In organism._execute_task_step, use each polyp's mask to zero out channels that polyp ignores\n5. Mutation: during reproduction, with probability 0.3, toggle one random channel",
+    "files": [
+      "coral_reef_spinnaker/polyp_state.py",
+      "coral_reef_spinnaker/lifecycle.py",
+      "coral_reef_spinnaker/organism.py"
+    ]
+  },
+  "conditions": [
+    {
+      "description": "Lifecycle ON + neural heritability ON + stream mask heritability ON",
+      "name": "heritable_specialization"
+    },
+    {
+      "description": "Lifecycle ON + neural heritability ON + stream masks clamped to full (all channels). Primary sham.",
+      "name": "clones_no_specialization"
+    },
+    {
+      "description": "Lifecycle OFF \u2014 static population",
+      "name": "static_no_lifecycle"
+    }
+  ],
+  "decision": "contract_locked_authorize_implementation_and_scoring",
+  "diagnosis": "The current organism feeds ALL polyps the SAME sensory_value (encoded[0]) and the SAME set of encoded input channels. Every polyp processes identical information. This is the root cause of the PR ceiling \u2014 if every polyp sees the same input, their activity will be correlated regardless of how different their neural parameters are.\n\nBiological reality: Different cortical minicolumns receive different thalamocortical projections. V1 orientation columns respond to different edge orientations. Cortical column specialization creates orthogonal response subspaces \u2014 the precise thing PR measures.\n\nThe organism already encodes observations into 8 channels (n_input_per_polyp=8). The adapter produces different temporal features in each channel. But all polyps receive all channels identically. If each polyp EVOLVED to attend to a DIFFERENT subset of channels, their activity patterns would naturally decorrelate.",
+  "hypothesis": "Adding a heritable stream_attention_mask to each polyp \u2014 a2^8=256 possible channel combinations \u2014 will allow evolution to discover which combinations produce useful activity. Children inherit their parent's mask with small mutations (toggle 1 channel per generation). Selection preserves masks that produce diverse, informative activity. The population will partition the feature space, creating orthogonal response subspaces and increasing PR.",
+  "layers_on": "Tier 5.26 neural heritability infrastructure",
+  "measurement": {
+    "multi_channel_adapter": true,
+    "n_input_per_polyp": 8,
+    "population": {
+      "initial": 4,
+      "max": 32
+    },
+    "pr_computation": "Standard PR on test-split (last 40%) covariance",
+    "state_vector": "Per-polyp activity_rate (sum of spikes per polyp)",
+    "task": "sine_wave (sin(0..40), with multi-channel encoding)"
+  },
+  "mechanism_under_test": {
+    "description": "Each polyp carries a heritable stream_attention_mask indicating which encoded input channels it attends to. Only masked-in channels contribute to the polyp's input drive. Mutation occasionally toggles one channel per generation. Selection preserves masks that produce useful diversity.",
+    "heritable_mask": {
+      "default": "all channels active (full mask)",
+      "mutation": "toggle one random channel per generation",
+      "mutation_probability": 0.3,
+      "type": "bitmask / set of ints"
+    },
+    "name": "stream_specialization_heritability",
+    "type": "lifecycle/input mechanism"
+  },
+  "null_hypothesis": "Stream specialization does not increase PR because: (1) random channel selection is equivalent to reduced information per polyp (fewer channels = less info = same or lower diversity), (2) the adapter's channels (EMA, deltas, squares) are too correlated for channel selection to matter, or (3) the mutation rate is too slow for masks to diverge meaningfully at tested run lengths.",
+  "outcome_classes": [
+    {
+      "action": "Stream specialization is the mechanism that breaks PR ceiling.",
+      "condition": "primary pass AND sham separated",
+      "outcome": "stream_specialization_confirmed"
+    },
+    {
+      "action": "Stream specialization helps but needs longer evolution or stronger mutation.",
+      "condition": "PR improves but margin < 0.5 vs clone",
+      "outcome": "stream_specialization_partial"
+    },
+    {
+      "action": "Channel selection alone does not create diversity at this scale.",
+      "condition": "No PR difference between specialized and clone",
+      "outcome": "stream_specialization_no_effect"
+    },
+    {
+      "action": "Reducing information per polyp hurts more than specialization helps.",
+      "condition": "Specialized PR < clone PR",
+      "outcome": "stream_specialization_reduces_pr"
+    }
+  ],
+  "pass_criteria": {
+    "primary": "specialized PR > full-mask clone PR by margin > 0.5 at final timepoint, AND specialized > static by > 1.0, AND mask diversity (unique masks / population) > 0.3"
+  },
+  "question": "Does evolved stream specialization \u2014 each polyp inheriting a feature selection mask that determines which encoded input channels it attends to, with mutation during reproduction \u2014 create genuinely orthogonal activity patterns across polyps and increase per-polyp PR beyond the current 2.3 ceiling?",
+  "shams": [
+    {
+      "description": "All polyps receive full channel mask (equivalent to current behavior). Tests whether stream specialization specifically creates diversity.",
+      "name": "full_mask_clones",
+      "role": "primary"
+    },
+    {
+      "description": "Each polyp gets a random mask each step (not inherited). Tests whether mask heritability (lineage-specific accumulation) matters.",
+      "name": "random_mask_per_step",
+      "role": "secondary"
+    }
+  ]
+}

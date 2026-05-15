@@ -1,6 +1,6 @@
 # CRA Mechanism Status
 
-Last updated: 2026-05-09.
+Last updated: 2026-05-14.
 
 This document separates three things that can otherwise get blurred:
 
@@ -32,6 +32,7 @@ appropriate, and a compact regression or freeze gate.
 | 14 | Generic bounded recurrent interface | Tier 7.0j froze bounded host-side v2.3 evidence after the locked public scoreboard and compact regression. | Generic interface evidence only; topology-specific recurrence and ESN superiority remain nonclaims. |
 | 15 | Cost-aware policy/action selection | Tier 7.4c froze bounded host-side v2.4 evidence after full compact regression. | Local policy/action evidence only; not broad public usefulness or reinforcement learning solved. |
 | 16 | Reduced-feature planning/subgoal control | Tier 7.6e froze bounded host-side v2.5 evidence after Tier 7.6d repair and full compact regression. | Bounded software planning diagnostics only; not broad planning/reasoning, language, autonomous on-chip planning, or AGI/ASI. |
+| 17 | Edge-of-chaos predictive benchmark interface | Tier 7.7z-r0 froze v2.6 as the current predictive benchmark baseline. | Predictive benchmark baseline only; not proof that the full organism lifecycle stack is useful. |
 
 ## Diagnostic coverage that is not a promoted mechanism by itself
 
@@ -41,6 +42,7 @@ appropriate, and a compact regression or freeze gate.
 | Spike encoding / temporal code suite | Tier 5.15 passed. | Shows timing information can matter in software diagnostics, but it is coverage, not a new mechanism. |
 | Neuron model / parameter sensitivity | Tier 5.16 passed. | Robustness evidence, not a new mechanism. |
 | Continuous readout/interface repair | Tier 7.0c/7.0d diagnosed and narrowed. | Lag-only baselines explained the benchmark path, so no mechanism was promoted. |
+| v2.7 organism-development stack | Frozen as a diagnostic snapshot after healthy-NEST correction. | Does not supersede v2.6 for predictive benchmarks; true organism PR remained near ~2 and MSE did not improve across tested configurations. New lifecycle/operator/readout mechanisms are opt-in unless later promoted. |
 
 ## Planned, parked, or not-yet-proven mechanisms
 
@@ -63,6 +65,14 @@ until a software/usefulness gate creates a measured need.
 | 12 | Language/multimodal grounding | Future research direction, not current paper scope. | Requires separate task families, baselines, and safety boundaries. |
 
 ## Current strategic rule
+
+Active cleanup state:
+
+```text
+repo-alignment remediation is active
+new science runs are paused until docs, defaults, evidence status, and
+governance tests are aligned
+```
 
 Do not keep porting every planned mechanism to native C just because it is on the
 roadmap. From v0.5 forward:

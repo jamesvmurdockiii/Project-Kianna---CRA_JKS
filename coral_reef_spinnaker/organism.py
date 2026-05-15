@@ -247,6 +247,14 @@ class Organism:
             # Slightly spread seeded founders so spatial/gap-junction logic can
             # distinguish them while preserving deterministic initialisation.
             founder.xyz = np.array([float(founder_idx), 0.0, 0.0], dtype=float)
+            # Assign functional castes to founders (0=Filter,1=Memory,2=Rotor,3=Chaotic,4=Stabilizer)
+            if getattr(self.config.lifecycle, "enable_operator_diversity", False):
+                founder.caste_type = founder_idx % 5
+                caste_profiles = {0: (0.70, 1.5), 1: (0.95, 0.9), 2: (0.85, 0.4), 3: (1.15, 0.7), 4: (0.80, 2.0)}
+                base_sr, base_eir = caste_profiles.get(founder.caste_type, (1.0, 1.0))
+                import random as _rng
+                founder.spectral_radius = max(0.5, min(2.0, base_sr + _rng.gauss(0.0, 0.08)))
+                founder.ei_ratio = max(0.3, min(3.5, base_eir + _rng.gauss(0.0, 0.12)))
             slot_idx = self.polyp_population.add_polyp(founder)
             founder_state = self.polyp_population.states[slot_idx]
             founder_states.append(founder_state)
@@ -284,6 +292,11 @@ class Organism:
                 self.network.sync_to_spinnaker()
             except Exception as exc:
                 logger.warning("Network sync during init failed: %s", exc)
+
+        # Snapshot initial synaptic weights so founders can pass them to children
+        if (getattr(self.config.lifecycle, "enable_synaptic_heritability", False)
+                and self.polyp_population is not None):
+            self.polyp_population.snapshot_all_weights()
 
         # 4. Subsystems
         self.energy_manager = EnergyManager(
@@ -553,20 +566,46 @@ class Organism:
                 n = len(self.polyp_population.states)
                 self._polyp_gains = rng_.uniform(0.3, 1.7, size=n)
 
+            # Per-polyp temporal specialization: each polyp receives the
+            # input at a different time lag.  Polyps track different
+            # temporal windows of the same scalar, creating independent
+            # response subspaces without multi-channel encoding.
+            use_temporal = getattr(self.config.spinnaker,
+                                   "per_polyp_temporal_specialization", False)
+            if use_temporal:
+                if not hasattr(self, '_sensory_history'):
+                    from collections import deque
+                    max_polyp = self.polyp_population.max_polyps
+                    self._sensory_history = deque([0.0] * max_polyp, maxlen=max_polyp)
+                self._sensory_history.append(sensory_value)
+
             for i, state in enumerate(self.polyp_population.states):
                 if state.is_alive:
                     gain = self._polyp_gains[i] if (use_diverse and hasattr(self, '_polyp_gains') and i < len(self._polyp_gains)) else 1.0
-                    state.sensory_drive = sensory_value * 30.0 * gain
-                    # Route encoded channels to per-input-neuron values
+                    # Per-polyp temporal specialization: assign a unique lag
+                    # based on polyp_id so each polyp sees a different past
+                    # value.  Polyp 0 = current, polyp 1 = t-1, etc.
+                    if use_temporal:
+                        max_lag = len(self._sensory_history)
+                        lag = min(state.polyp_id, max_lag - 1)
+                        polyp_sensory = self._sensory_history[-(lag + 1)]
+                    else:
+                        polyp_sensory = sensory_value
+                    state.sensory_drive = polyp_sensory * 30.0 * gain
+                    # Route encoded channels to per-input-neuron values,
+                    # gated by the polyp's heritable stream attention mask
                     n_input = state.input_slice.stop - state.input_slice.start
                     channel_vals = np.zeros(n_input, dtype=float)
-                    encoded = getattr(self, '_last_encoded', None)
-                    if encoded is not None and encoded.size > 1:
-                        for j in range(min(n_input, encoded.size)):
-                            channel_vals[j] = float(encoded[j]) * 30.0 * gain
+                    attention_mask = getattr(state, "stream_attention_mask", None)
+                    encode_all = getattr(self, '_last_encoded', None)
+                    if encode_all is not None and encode_all.size > 1:
+                        for j in range(min(n_input, encode_all.size)):
+                            if attention_mask is None or j in attention_mask:
+                                channel_vals[j] = float(encode_all[j]) * 30.0 * gain
                     else:
                         for j in range(n_input):
-                            channel_vals[j] = sensory_value * 30.0 * gain * (0.5 + 0.5 * j / max(1, n_input-1))
+                            if attention_mask is None or j in attention_mask:
+                                channel_vals[j] = polyp_sensory * 30.0 * gain * (0.5 + 0.5 * j / max(1, n_input-1))
                     state._sensory_lags = channel_vals
             self.polyp_population.update_current_injections()
 
@@ -610,6 +649,12 @@ class Organism:
         )
         task_outcome.raw_dopamine = learning_result.raw_dopamine
 
+        # Vector readout LMS update: train weights using actual task target
+        if getattr(self.config.lifecycle, "enable_vector_readout", False):
+            target = float(getattr(task_outcome, "actual_return_1m",
+                          getattr(task_outcome, "task_signal", 0.0)))
+            self._update_readout_lms(target)
+
         # 4b. Deliver dopamine to NEST native dopamine STDP synapses.
         # LearningManager is the single dopamine source; backend STDP consumes it.
         if self.network is not None and learning_result is not None:
@@ -630,6 +675,161 @@ class Organism:
             step=step,
             dt=1.0,  # host-side ecology uses per-step time
         )
+
+        # Niche pressure: penalize redundant polyps with similar activity.
+        # Polyps that produce near-identical spike patterns are redundant;
+        # the less-accurate member of each similar pair gets a BAX penalty.
+        # This creates ecological niches: only diverse polyps survive.
+        if (getattr(self.config.lifecycle, "enable_niche_pressure", False)
+                and self.polyp_population is not None):
+            alive_states = [s for s in self.polyp_population.states if s.is_alive]
+            if len(alive_states) > 1:
+                # Compare per-polyp activity rates
+                activities = np.array([float(getattr(s, "activity_rate", 0.5))
+                                       for s in alive_states])
+                accuracies = np.array([float(getattr(s, "directional_accuracy_ema", 0.5))
+                                       for s in alive_states])
+                for i in range(len(alive_states)):
+                    for j in range(i + 1, len(alive_states)):
+                        similarity = 1.0 - abs(activities[i] - activities[j])
+                        if similarity > 0.8:  # >80% similar = redundant
+                            penalty = 0.02 * similarity
+                            # Penalize the less-accurate polyp
+                            if accuracies[i] < accuracies[j]:
+                                alive_states[i].bax_activation += penalty
+                            else:
+                                alive_states[j].bax_activation += penalty
+
+        # Signal transport: compute bounded export interface per polyp.
+        # Each polyp exports [activity, prediction, uncertainty, energy, novelty]
+        # with contractive bounds (sigmoid/tanh) to prevent signal amplification.
+        if (getattr(self.config.lifecycle, "enable_signal_transport", False)
+                and self.polyp_population is not None):
+            for state in self.polyp_population.states:
+                if not state.is_alive:
+                    continue
+                # activity: sigmoid of activity_rate
+                ar = float(getattr(state, "activity_rate", 0.5))
+                state.export_activity = 1.0 / (1.0 + math.exp(-((ar - 0.5) * 8.0)))
+                # prediction: tanh of current_prediction
+                cp = float(getattr(state, "current_prediction", 0.0))
+                state.export_prediction = math.tanh(cp)
+                # uncertainty: sigmoid of (1 - accuracy)
+                acc = float(getattr(state, "directional_accuracy_ema", 0.5))
+                uncertainty = max(0.0, 1.0 - acc)
+                state.export_uncertainty = 1.0 / (1.0 + math.exp(-(uncertainty - 0.3) * 6.0))
+                # energy: sigmoid of normalized trophic health
+                th = float(getattr(state, "trophic_health", 10.0))
+                state.export_energy = 1.0 / (1.0 + math.exp(-(th / 20.0 - 0.5) * 5.0))
+                # novelty: tanh of abs(last_raw_rpe)
+                rpe = float(getattr(state, "last_raw_rpe", 0.0))
+                state.export_novelty = math.tanh(abs(rpe))
+
+        # Energy economy: update per-polyp energy reserve based on
+        # prediction usefulness and activity costs.
+        if (getattr(self.config.lifecycle, "enable_energy_economy", False)
+                and self.polyp_population is not None):
+            for state in self.polyp_population.states:
+                if not state.is_alive:
+                    continue
+                # Usefulness: directional accuracy improvement adds energy
+                accuracy = float(getattr(state, "directional_accuracy_ema", 0.5))
+                usefulness = max(0.0, accuracy - 0.5) * 0.1
+                # Metabolic cost: activity rate burns energy
+                activity = float(getattr(state, "activity_rate", 0.5))
+                metabolic = activity * 0.02
+                # Complexity cost: more connections = more energy
+                n_exc = int(getattr(state, "n_exc_alloc", 16))
+                complexity = n_exc * 0.0005
+                # Update energy with slow decay toward baseline
+                energy = float(getattr(state, "energy_reserve", 0.5))
+                energy += usefulness - metabolic - complexity
+                energy = max(0.0, min(1.0, energy))
+                state.energy_reserve = energy
+
+                # Alignment pressure: polyps in castes that contribute
+                # more to the colony prediction get bonus energy.
+                # This creates evolutionary pressure for task-useful dynamics.
+                if (getattr(self.config.lifecycle, "enable_alignment_pressure", False)
+                        and hasattr(self, '_vh_last_head_vals')):
+                    caste_id = int(getattr(state, "caste_type", 0))
+                    if 0 <= caste_id < 5:
+                        contribution = float(self._vh_last_head_vals[caste_id])
+                        alignment_bonus = max(0.0, contribution) * 0.05
+                        state.energy_reserve = min(1.0, state.energy_reserve + alignment_bonus)
+
+                # Causal credit selection: polyps in castes that reduce
+                # prediction error (positive credit) reproduce more.
+                # Polyps in castes that increase error get penalized.
+                # This creates evolutionary pressure for causally useful
+                # dynamics — not just diverse activity.
+                if (getattr(self.config.lifecycle, "enable_causal_credit_selection", False)
+                        and hasattr(self, '_vh_caste_credit')):
+                    caste_id = int(getattr(state, "caste_type", 0))
+                    if 0 <= caste_id < 5:
+                        credit = float(self._vh_caste_credit[caste_id])
+                        if credit > 0:
+                            # Helpful caste: boost energy and reproduction
+                            state.energy_reserve = min(1.0, state.energy_reserve + credit * 0.1)
+                            state.cyclin_d += credit * 0.3
+                        else:
+                            # Harmful caste: penalize
+                            state.energy_reserve = max(0.0, state.energy_reserve + credit * 0.1)
+
+        # Cross-polyp coupling: soft consensus creates symmetry breaking.
+        # Each polyp's export state is perturbed toward colony mean.
+        # Identical polyps diverge due to different coupling contexts.
+        if (getattr(self.config.lifecycle, "enable_cross_polyp_coupling", False)
+                and self.polyp_population is not None):
+            alive = [s for s in self.polyp_population.states if s.is_alive]
+            if len(alive) > 1:
+                mean_act = np.mean([float(getattr(s, "export_activity", 0.5)) for s in alive])
+                mean_pred = np.mean([float(getattr(s, "export_prediction", 0.0)) for s in alive])
+                coupling = 0.03
+                for s in alive:
+                    s.export_prediction = max(-1.0, min(1.0,
+                        float(getattr(s, "export_prediction", 0.0)) + coupling * (mean_pred - float(getattr(s, "export_prediction", 0.0)))))
+                    s.export_activity = max(0.0, min(1.0,
+                        float(getattr(s, "export_activity", 0.5)) + coupling * (mean_act - float(getattr(s, "export_activity", 0.5)))))
+                    novelty = abs(float(getattr(s, "export_prediction", 0.0)) - mean_pred)
+                    s.export_novelty = math.tanh(novelty)
+
+        # Maturation lifecycle: polyps progress through developmental stages
+        # based on accumulated energy.  Larval → Juvenile → Mature → Senescent.
+        # Mature polyps are "calcified" — plastic but resistant to change.
+        # This replaces rigid freezing with biological developmental inertia.
+        if (getattr(self.config.lifecycle, "enable_maturation", False)
+                and self.polyp_population is not None):
+            for state in self.polyp_population.states:
+                if not state.is_alive:
+                    continue
+                energy = float(getattr(state, "energy_reserve", 0.5))
+                age = int(getattr(state, "age_steps", 0))
+                stage = int(getattr(state, "maturation_stage", 0))
+
+                # Larval (stage 0): high plasticity, develops with energy
+                if stage == 0 and energy > 0.6 and age > 50:
+                    state.maturation_stage = 1  # → Juvenile
+                # Juvenile (stage 1): stabilizing, needs sustained energy
+                elif stage == 1 and energy > 0.70 and age > 200:
+                    state.maturation_stage = 2  # → Mature (calcified)
+                # Mature (stage 2): reliable long-term member
+                # Senescent (stage 3): recycling — energy drops, plasticity rises
+                elif stage == 2 and energy < 0.2:
+                    state.maturation_stage = 3  # → Senescent (recycled soon)
+
+                # Stage-specific plasticity modulation
+                plasticity_scale = {0: 1.0, 1: 0.5, 2: 0.15, 3: 1.0}
+                scale = plasticity_scale.get(stage, 0.5)
+                # Apply to learning rate via predictive_readout_lr_scale
+                state.predictive_readout_lr_scale = scale
+
+                # Mature polyps get apoptosis protection (calcification)
+                if stage == 2:
+                    state.bax_activation = max(0.0, state.bax_activation - 0.02)
+                # Senescent polyps get accelerated BAX
+                elif stage == 3:
+                    state.bax_activation += 0.01
 
         # 6. Lifecycle
         lifecycle_events = self._run_lifecycle(
@@ -662,8 +862,10 @@ class Organism:
                 # Pre-allocation mode: hardware topology is static.
                 # Dopamine is delivered earlier in train_step; nothing to sync.
                 logger.debug("train_step: sPyNNaker pre-allocation mode — skipping sync")
-            elif is_spinnaker and self.network is not None:
-                # Dynamic mode (no pre-allocation): full rebuild on topology change
+            elif self.network is not None:
+                # Dynamic mode (lifecycle-enabled): full rebuild on topology change.
+                # Applies to sPyNNaker AND NEST when lifecycle changes polyp count.
+                # NEST requires sim.end() + sim.setup() to add/remove neurons.
                 n_alive = self.n_alive
                 n_edges = sum(
                     1 for e in self.network.edges.values()
@@ -1641,28 +1843,165 @@ class Organism:
         polyp_states: list,
         spike_data: dict[int, int],
     ) -> float:
-        """Compute colony prediction without using the finance bridge."""
+        """Compute colony prediction.
+
+        When enable_vector_readout=True: uses caste-separated vector readout
+        where Filter→trend, Memory→memory, Rotor→oscillation, Chaotic→anomaly.
+
+        When enable_vector_readout=False: uses scalar readout (baseline).
+        """
         if not polyp_states:
             return 0.0
 
-        if self.learning_manager is not None:
-            weights = self.learning_manager.compute_aggregation_weights(
-                polyp_states,
-                {"spike_counts": spike_data},
-            )
-            return float(
-                sum(
-                    weights.get(p.polyp_id, 0.0)
-                    * float(getattr(p, "last_output_signed_contribution", 0.0))
-                    for p in polyp_states
-                )
-            )
+        use_vector = getattr(self.config.lifecycle, "enable_vector_readout", False)
 
-        predictions = [
-            float(getattr(p, "last_output_signed_contribution", 0.0))
-            for p in polyp_states
-        ]
-        return float(np.mean(predictions)) if predictions else 0.0
+        if not use_vector:
+            # === SCALAR READOUT (baseline) ===
+            predictions = [
+                float(getattr(p, "last_output_signed_contribution", 0.0))
+                for p in polyp_states
+            ]
+            if not predictions:
+                return 0.0
+            accuracies = np.array([
+                max(0.0, float(getattr(p, "directional_accuracy_ema", 0.5)))
+                for p in polyp_states
+            ])
+            total_acc = float(np.sum(accuracies))
+            if total_acc > 0:
+                return float(np.dot(accuracies, predictions) / total_acc)
+            return float(np.mean(predictions))
+
+        # === CASTE-SEPARATED VECTOR READOUT ===
+        # Per-caste nonlinear readout heads + learned output fusion.
+        # Filter→trend, Memory→memory, Rotor→oscillation, Chaotic→anomaly.
+        # Each head: tanh(W_caste · state_mean) — nonlinear projection.
+        # Output: softmax-weighted blend of head outputs.
+
+        # Group polyps by caste
+        castes = {0: [], 1: [], 2: [], 3: [], 4: []}
+        for p in polyp_states:
+            c = int(getattr(p, "caste_type", 0))
+            state_vec = np.array([
+                float(getattr(p, "export_activity", 0.5)),
+                float(getattr(p, "export_prediction", 0.0)),
+                float(getattr(p, "export_uncertainty", 0.5)),
+                float(getattr(p, "export_energy", 0.5)),
+                float(getattr(p, "export_novelty", 0.0)),
+            ])
+            castes[min(c, 4)].append(state_vec)
+
+        # Initialize or retrieve per-caste head parameters
+        if not hasattr(self, '_vh_W'):
+            # 5 castes, each mapping 5D state → 3D hidden via tanh
+            self._vh_W = [np.random.randn(3, 5) * 0.1 for _ in range(5)]
+            self._vh_b = [np.zeros(3) for _ in range(5)]
+            # Output weights: 5 castes × 3 hidden → 1 scalar
+            self._vh_out_w = np.ones(5) / 5
+            self._vh_out_b = 0.0
+            self._vh_last_pred = 0.0
+            self._vh_last_head_vals = np.zeros(5)
+
+        head_vals = np.zeros(5, dtype=float)
+        for caste_id in range(5):
+            states = castes.get(caste_id, [])
+            if states:
+                mean_state = np.mean(states, axis=0)
+                hidden = np.tanh(self._vh_W[caste_id] @ mean_state + self._vh_b[caste_id])
+                head_vals[caste_id] = float(np.mean(hidden))
+            else:
+                head_vals[caste_id] = 0.0
+
+        # Colony prediction: softmax-weighted blend of head outputs
+        exp_vals = np.exp(head_vals - np.max(head_vals))  # stable softmax
+        softmax = exp_vals / (np.sum(exp_vals) + 1e-9)
+        pred = float(np.dot(softmax, head_vals)) + self._vh_out_b
+
+        self._vh_last_pred = pred
+        self._vh_last_head_vals = head_vals
+        self._vh_last_softmax = softmax
+
+        return pred
+
+    def _update_readout_lms(self, target: float) -> None:
+        """Update per-caste nonlinear readout head weights using task target.
+        Also computes per-caste causal credit via leave-one-caste-out."""
+        if not hasattr(self, '_vh_last_pred'):
+            return
+        error = target - self._vh_last_pred
+        self._vh_last_error = error
+        lr = 0.02
+        self._vh_out_w += lr * error * self._vh_last_head_vals
+        self._vh_out_b += lr * error
+        head_vals = self._vh_last_head_vals
+        for caste_id in range(5):
+            if head_vals[caste_id] != 0.0:
+                d_hidden = error * self._vh_out_w[caste_id] * (1.0 - np.tanh(head_vals[caste_id])**2)
+                self._vh_W[caste_id] += lr * d_hidden * 0.1
+                self._vh_b[caste_id] += lr * d_hidden * 0.1
+
+        # Causal credit: leave-one-caste-out counterfactual.
+        # How much does each caste contribute to error reduction?
+        if hasattr(self, '_vh_last_softmax'):
+            # Compute prediction without each caste
+            for caste_id in range(5):
+                cropped = np.copy(self._vh_last_head_vals)
+                cropped[caste_id] = 0.0
+                exp_cropped = np.exp(cropped - np.max(cropped))
+                softmax_cropped = exp_cropped / (np.sum(exp_cropped) + 1e-9)
+                pred_without = float(np.dot(softmax_cropped, cropped)) + self._vh_out_b
+                error_without = target - pred_without
+                # Credit = error increases when caste removed = caste is helpful
+                credit = abs(error_without) - abs(error)
+                # Positive credit = caste reduces error (helpful)
+                # Store per-caste credit for selection
+                if not hasattr(self, '_vh_caste_credit'):
+                    self._vh_caste_credit = np.zeros(5)
+                self._vh_caste_credit[caste_id] = float(credit)
+
+        self._vh_last_head_vals = head_vals
+
+    def _inherit_synaptic_weights(self, parent: Any, child: Any) -> None:
+        """Copy parent's synaptic connectivity pattern to child with mutation.
+
+        Stores inherited weight maps on the child and updates the child's
+        PyNN projections (if they exist) with the inherited weights.
+        Uses Python-side connection data stored at projection creation time,
+        avoiding NEST API dependency.
+        """
+        import random as _rng_mod
+        noise_std = 0.08
+        child_block = child.block_start
+        child_end = child.block_end
+
+        for map_attr, conns_attr, is_inhibitory in [
+            ("_learned_exc_weights", "_init_exc_conns", False),
+            ("_learned_inh_weights", "_init_inh_conns", False),  # weights are already negative
+        ]:
+            parent_map = getattr(parent, map_attr, None)
+            if not parent_map:
+                continue
+            child_map = {}
+            child_conns = []
+            for (local_pre, local_post), weight in parent_map.items():
+                if not (0 <= local_pre < child_end - child_block):
+                    continue
+                if not (0 <= local_post < child_end - child_block):
+                    continue
+                mutated = weight + _rng_mod.gauss(0.0, noise_std * max(0.001, abs(weight)))
+                child_map[(local_pre, local_post)] = mutated
+                child_conns.append((child_block + local_pre, child_block + local_post, mutated, 1.0))
+            setattr(child, map_attr, child_map)
+            if child_conns:
+                setattr(child, conns_attr, child_conns)
+                # Attempt to update NEST projection directly
+                proj = getattr(child, "_internal_proj_exc" if "exc" in map_attr else "_internal_proj_inh", None)
+                if proj is not None:
+                    try:
+                        weights_only = [c[2] for c in child_conns]
+                        proj.set(weight=weights_only)
+                    except Exception:
+                        pass
 
     def _apply_lifecycle_events(
         self, events: list, energy_deaths: list[int] | None = None
@@ -1703,8 +2042,23 @@ class Organism:
                 child.polyp_id = -1
                 continue
 
-            # Add properly via population (finds dead slot, sets hardware params)
-            self.polyp_population.add_polyp(child, preserve_identity=True)
+            # Add properly via population (finds dead slot, sets hardware params).
+            # If population is full, skip this birth — excess births are
+            # deferred to future steps when deaths free up slots.
+            try:
+                self.polyp_population.add_polyp(child, preserve_identity=True)
+            except RuntimeError:
+                child.is_alive = False
+                child.polyp_id = -1
+                continue
+
+            # Inherit learned synaptic weights from parent with small mutation
+            parent_id = event.parent_id
+            if (parent_id is not None and
+                getattr(self.config.lifecycle, "enable_synaptic_heritability", False)):
+                parent_state = self.polyp_population.get_state_by_polyp_id(parent_id)
+                if parent_state is not None:
+                    self._inherit_synaptic_weights(parent_state, child)
             if self.lifecycle_manager is not None:
                 self.lifecycle_manager._next_polyp_id = max(
                     self.lifecycle_manager._next_polyp_id,
@@ -1715,7 +2069,6 @@ class Organism:
             self.network.add_polyp(child)
 
             # Add parent-child edge if not present
-            parent_id = event.parent_id
             if parent_id is not None and not self.network.has_edge(parent_id, child.polyp_id):
                 self.network.add_edge(parent_id, child.polyp_id, weight=0.5)
             if parent_id is not None and not self.network.has_edge(child.polyp_id, parent_id):
@@ -1762,15 +2115,41 @@ class Organism:
             return self._synthetic_spike_fallback(runtime_ms)
 
         try:
+            backend_name = getattr(self.sim, "__name__", "")
+            if "nest" in backend_name.lower():
+                try:
+                    import nest
+                    nest.Cleanup()
+                except Exception:
+                    pass
             self.sim.run(runtime_ms)
         except Exception as exc:
-            self._sim_run_failure_count += 1
-            self._last_sim_run_error = str(exc)
-            self._last_backend_failure_stage = "sim.run"
-            self._last_backend_exception_type = type(exc).__name__
-            self._last_backend_traceback = traceback.format_exc()
-            logger.warning("sim.run() failed (%s); falling back to synthetic spikes", exc)
-            return self._synthetic_spike_fallback(runtime_ms)
+            err_str = str(exc)
+            # If NEST kernel is in inconsistent state, reset and retry once
+            if "ResetKernel" in err_str or "inconsistent state" in err_str:
+                try:
+                    import nest
+                    nest.ResetKernel()
+                    self.sim.setup(**self._setup_kwargs)
+                    # Recreate population and projections via rebuild
+                    if (self.polyp_population is not None
+                            and hasattr(self, 'rebuild_spinnaker')):
+                        self.rebuild_spinnaker()
+                    self.sim.run(runtime_ms)
+                    logger.debug("sim.run() recovered via ResetKernel")
+                    # Fall through to normal spike processing below
+                except Exception as exc2:
+                    self._sim_run_failure_count += 2
+                    logger.warning("ResetKernel also failed (%s); synthetic fallback", exc2)
+                    return self._synthetic_spike_fallback(runtime_ms)
+            else:
+                self._sim_run_failure_count += 1
+                self._last_sim_run_error = str(exc)
+                self._last_backend_failure_stage = "sim.run"
+                self._last_backend_exception_type = type(exc).__name__
+                self._last_backend_traceback = traceback.format_exc()
+                logger.warning("sim.run() failed (%s); falling back to synthetic spikes", exc)
+                return self._synthetic_spike_fallback(runtime_ms)
 
         if self.polyp_population is not None:
             try:
@@ -1831,6 +2210,9 @@ class Organism:
         from coral_reef_spinnaker.polyp_neuron import PolypSummary
 
         summaries: Dict[int, Any] = {}
+        # Build per-neuron spike vector for the full population
+        n_total = self.polyp_population.max_polyps * self.polyp_population.neurons_per_polyp
+        per_neuron = np.zeros(n_total, dtype=int)
         for i, state in enumerate(self.polyp_population.states):
             if not state.is_alive:
                 continue
@@ -1853,7 +2235,13 @@ class Organism:
                 n_spikes_total=n_spikes,
                 prediction=pred,
             )
+            # Distribute spikes across the polyp's neurons (Poisson per neuron)
+            n_neurons = state.n_neurons_per_polyp
+            lam_per_neuron = max(0.001, lam / n_neurons)
+            per_neuron[state.block_start:state.block_end] = np.random.poisson(
+                lam_per_neuron, size=n_neurons)
         self._last_polyp_summaries = summaries
+        self._last_per_neuron_spikes = list(per_neuron)
         return spike_data
 
     def backend_diagnostics(self) -> dict[str, Any]:
@@ -2053,6 +2441,12 @@ class Organism:
         saved_spike_buffer = self.spike_buffer
 
         # ------------------------------------------------------------------
+        # 1b. Snapshot learned synaptic weights before teardown
+        # ------------------------------------------------------------------
+        if self.polyp_population is not None:
+            self.polyp_population.snapshot_all_weights()
+
+        # ------------------------------------------------------------------
         # 2. Teardown
         # ------------------------------------------------------------------
         try:
@@ -2101,6 +2495,9 @@ class Organism:
             internal_conn_seed=getattr(cfg_spin, "internal_conn_seed", 42),
             backend_factory=self._backend_factory,
         )
+
+        # Propagate config flags to population for within-polyp recurrence etc.
+        self.polyp_population.config = cfg_spin
 
         for state in saved_states:
             if state.is_alive and 0 <= state.slot_index < max_pop:
@@ -2156,6 +2553,10 @@ class Organism:
         # 8. Sync projections (creates STDP + neuromodulation on sPyNNaker)
         # ------------------------------------------------------------------
         self.network.sync_to_spinnaker()
+
+        # Restore learned synaptic weights from pre-teardown snapshot
+        if self.polyp_population is not None:
+            self.polyp_population.restore_all_weights()
 
         elapsed = (time.perf_counter() - t0) * 1000.0
         n_alive = sum(1 for s in self.polyp_population.states if s.is_alive)

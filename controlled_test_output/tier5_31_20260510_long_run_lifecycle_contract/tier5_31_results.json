@@ -1,0 +1,148 @@
+{
+  "claim_boundary": "Host-side NEST diagnostic of lifecycle diversity at long timescale only. Not mechanism promotion, not baseline freeze, not hardware evidence, not public usefulness proof.",
+  "contract": {
+    "claim_boundary": "Host-side NEST diagnostic of lifecycle diversity at long timescale only. Not mechanism promotion, not baseline freeze, not hardware evidence, not public usefulness proof.",
+    "conditions": {
+      "lifecycle_full": {
+        "enable_apoptosis": true,
+        "enable_neural_heritability": true,
+        "enable_reproduction": true,
+        "enable_stream_specialization": true,
+        "enable_synaptic_heritability": true,
+        "enable_task_fitness_selection": true,
+        "enable_variable_allocation": true
+      },
+      "static_uniform": {
+        "enable_apoptosis": false,
+        "enable_reproduction": false
+      }
+    },
+    "decision": "contract_locked_authorize_long_run_scoring",
+    "diagnosis": "All 5 lifecycle mechanisms show positive-but-small PR margins (+0.1-0.16) at 400 steps. Each creates real architectural diversity (5.1x tau_m std growth, 48% unique masks, 20 allocation profiles, 170+ inherited connections) but the per-polyp PR metric is dominated by population-size inflation until enough generations pass for accumulated divergence to create genuinely orthogonal activity patterns.",
+    "hypothesis": "At 8000 steps, the full lifecycle stack (neural + stream + allocation + fitness + synaptic heritability) will produce per-polyp PR that significantly exceeds the static baseline by more than 0.5, because 8k steps provides 40+ generations of reproduction with compounded trait divergence.",
+    "measurement": {
+      "init_pop": 4,
+      "max_pop": 32,
+      "pr_metric": "per-polyp activity_rate covariance PR on last 40% of steps",
+      "steps": 8000,
+      "sync_interval": 10,
+      "task": "sine_wave (sin(0..80))",
+      "timepoints": [
+        500,
+        1000,
+        2000,
+        4000,
+        6000,
+        8000
+      ]
+    },
+    "null_hypothesis": "PR does not significantly exceed static baseline at 8000 steps because (1) the PR plateau is architectural, not timescale-bound, (2) population size dominates PR regardless of trait diversity, or (3) the per-generation effects are too small to compound meaningfully even at 40+ generations.",
+    "outcome_classes": [
+      {
+        "action": "Lifecycle diversity compounds at evolutionary timescale. Lock as evidence.",
+        "condition": "primary pass AND all secondary pass",
+        "outcome": "lifecycle_diversity_confirmed_at_scale"
+      },
+      {
+        "action": "Diversity helps but not cleanly. Continue investigation.",
+        "condition": "primary pass but not all secondary",
+        "outcome": "lifecycle_partial_at_scale"
+      },
+      {
+        "action": "PR is bounded by architecture, not timescale. Rethink mechanism.",
+        "condition": "PR does not increase with steps (trajectory flat)",
+        "outcome": "lifecycle_plateau"
+      },
+      {
+        "action": "Lifecycle parameters unstable at scale.",
+        "condition": "Population crashes, NaN, or infinite values",
+        "outcome": "lifecycle_unstable"
+      }
+    ],
+    "pass_criteria": {
+      "primary": "lifecycle_full per-polyp PR > static_uniform per-polyp PR by margin > 0.5 at final timepoint (8000 steps)",
+      "secondary": [
+        "PR trajectory increases monotonically (Kendall tau > 0)",
+        "Population stabilizes (final pop between 8 and 32)",
+        "At least 10 unique allocation profiles at final timepoint",
+        "Neural factor std exceeds 0.5 at final timepoint"
+      ]
+    },
+    "question": "At 8000 steps with full lifecycle stack (all 5 diversity mechanisms enabled), does the organism's per-polyp PR exceed the static uniform baseline by more than 0.5, demonstrating that per-generation diversity effects compound into measurable state diversity at evolutionary timescales?"
+  },
+  "criteria": [
+    {
+      "criterion": "question locked",
+      "name": "question locked",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "steps specified",
+      "name": "steps specified",
+      "note": "",
+      "passed": true,
+      "rule": "== 8000",
+      "value": 8000
+    },
+    {
+      "criterion": "two conditions defined",
+      "name": "two conditions defined",
+      "note": "",
+      "passed": true,
+      "rule": "== 2",
+      "value": 2
+    },
+    {
+      "criterion": "5 features in full condition",
+      "name": "5 features in full condition",
+      "note": "",
+      "passed": true,
+      "rule": ">= 5",
+      "value": 7
+    },
+    {
+      "criterion": "primary pass: margin > 0.5",
+      "name": "primary pass: margin > 0.5",
+      "note": "",
+      "passed": true,
+      "rule": "non-empty",
+      "value": "lifecycle_full per-polyp PR > static_uniform per-polyp PR by margin > 0.5 at final timepoint (8000 steps)"
+    },
+    {
+      "criterion": "4 outcome classes",
+      "name": "4 outcome classes",
+      "note": "",
+      "passed": true,
+      "rule": "== 4",
+      "value": 4
+    },
+    {
+      "criterion": "no baseline freeze authorized",
+      "name": "no baseline freeze authorized",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "criterion": "no mechanism promotion authorized",
+      "name": "no mechanism promotion authorized",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 8,
+  "criteria_total": 8,
+  "generated_at_utc": "2026-05-11T23:24:51+00:00",
+  "next_gate": "Tier 5.31a \u2014 Long-Run Lifecycle Scoring Gate",
+  "outcome": "long_run_lifecycle_contract_locked",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_31_20260510_long_run_lifecycle_contract",
+  "runner_revision": "tier5_31_long_run_lifecycle_contract_20260510_0001",
+  "status": "pass",
+  "tier": "Tier 5.31 \u2014 Long-Run Lifecycle Diversity Diagnostic Contract"
+}

@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-09T18:35:00+00:00.
+Last updated: 2026-05-14T00:00:00+00:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -20,20 +20,24 @@ Every broad claim must be earned. If a gate fails, the claim narrows.
 
 ## 1. Current Evidence State
 
-Current software baseline:
+Current software baseline lines:
 
 ```text
-v2.5 = post-Tier-7.6e reduced-feature long-horizon planning software evidence
-       lock
-Tier 7.6e = SOFTWARE PASS / full NEST compact regression / v2.5 freeze
-              bounded reduced-feature subgoal-control/planning evidence only;
-              no public usefulness claim, no hardware/native transfer claim,
-              no language claim, and no AGI/ASI claim
-Tier 7.7a-j = standardized benchmark and failure-diagnosis chain after v2.5.
-              Current latest scored diagnostic is Tier 7.7j:
-              low_rank_collapse_confirmed. No new freeze, mechanism promotion,
-              external-baseline superiority, broad usefulness claim, or
-              hardware/native transfer is authorized from 7.7j.
+v2.6 = current predictive benchmark baseline.
+       Frozen by Tier 7.7z-r0. Edge-of-chaos recurrent dynamics remain the
+       best documented predictive benchmark line unless a later clean
+       promotion gate supersedes them.
+
+v2.7 = diagnostic NEST organism-development snapshot only.
+       It records opt-in lifecycle/operator/readout/conservation mechanisms
+       after the healthy-NEST correction. It does not supersede v2.6 for
+       predictive benchmarks because true organism PR remained near ~2 and
+       MSE did not improve across tested mechanism configurations.
+
+Active execution mode = repo-alignment remediation.
+       New science runs are paused until code hygiene, source-of-truth docs,
+       evidence registry status, config defaults, and governance tests are
+       aligned. See docs/REPO_ALIGNMENT_REMEDIATION_PLAN.md.
 ```
 
 Current hardware/custom-runtime state:

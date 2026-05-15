@@ -5,7 +5,7 @@ ledger is `STUDY_REGISTRY.json`; the compact table is `STUDY_REGISTRY.csv`.
 Older reruns, prepared capsules, debug probes, and baseline-frozen
 mechanism bundles outside the formal registry are preserved for audit.
 
-- Generated: `2026-05-10T23:12:49.615590+00:00`
+- Generated: `2026-05-15T01:09:31.055793+00:00`
 - Registry status: **PASS**
 - Canonical evidence entries: `156`
 - Expanded test-entry count: `156`; see the canonical evidence table below for the exact current tier list.
@@ -471,6 +471,22 @@ cite them as current study results unless promoted in `STUDY_REGISTRY.json`.
 | `controlled_test_output/tier5_18c_20260429_221045` | `self_evaluation_compact_regression_gate` | `pass` | `2026-04-29T22:36:19+00:00` |
 | `controlled_test_output/tier5_21a_20260510_nest_per_neuron_scoring` | `superseded_rerun` | `fail` | `2026-05-10T18:30:11+00:00` |
 | `controlled_test_output/tier5_23_20260510_inter_polyp_antisymmetric_projections_contract` | `superseded_rerun` | `pass` | `2026-05-10T20:29:27+00:00` |
+| `controlled_test_output/tier5_24_20260510_within_polyp_ei_recurrence_contract` | `superseded_rerun` | `pass` | `2026-05-10T23:17:28+00:00` |
+| `controlled_test_output/tier5_24a_20260510_within_polyp_antisymmetric_scoring` | `superseded_rerun` | `pass` | `2026-05-10T23:42:44+00:00` |
+| `controlled_test_output/tier5_25_20260510_lifecycle_state_diversity_contract` | `superseded_rerun` | `pass` | `2026-05-10T23:53:09+00:00` |
+| `controlled_test_output/tier5_25a_20260510_lifecycle_state_diversity_scoring` | `superseded_rerun` | `pass` | `2026-05-11T00:07:58+00:00` |
+| `controlled_test_output/tier5_26_20260510_neural_heritability_contract` | `superseded_rerun` | `pass` | `2026-05-11T00:59:46+00:00` |
+| `controlled_test_output/tier5_26a_20260510_neural_heritability_scoring` | `superseded_rerun` | `pass` | `2026-05-11T02:20:51+00:00` |
+| `controlled_test_output/tier5_27_20260510_stream_specialization_contract` | `superseded_rerun` | `pass` | `2026-05-11T02:43:55+00:00` |
+| `controlled_test_output/tier5_27a_20260510_stream_specialization_scoring` | `superseded_rerun` | `pass` | `2026-05-11T03:28:46+00:00` |
+| `controlled_test_output/tier5_28a_20260510_variable_allocation_scoring` | `superseded_rerun` | `pass` | `2026-05-11T04:31:18+00:00` |
+| `controlled_test_output/tier5_31_20260510_long_run_lifecycle_contract` | `superseded_rerun` | `pass` | `2026-05-11T23:24:51+00:00` |
+| `controlled_test_output/tier5_31a_20260510_long_run_lifecycle_scoring` | `superseded_rerun` | `pass` | `2026-05-12T00:13:56+00:00` |
+| `controlled_test_output/tier5_32_20260511_operator_diversity_contract` | `superseded_rerun` | `pass` | `2026-05-13T02:24:49+00:00` |
+| `controlled_test_output/tier5_36_20260511_full_stacked_8k` | `superseded_rerun` | `unknown` | `None` |
+| `controlled_test_output/tier5_38_20260513_signal_transport_contract` | `superseded_rerun` | `pass` | `2026-05-13T22:43:21+00:00` |
+| `controlled_test_output/tier5_38a_20260513_conservation_laws_scoring` | `superseded_rerun` | `pass` | `2026-05-13T23:47:40+00:00` |
+| `controlled_test_output/tier5_41_20260513_vector_readout_contract` | `superseded_rerun` | `pass` | `2026-05-13T23:53:39+00:00` |
 | `controlled_test_output/tier5_5_20260427_222527` | `superseded_rerun` | `pass` | `2026-04-28T02:25:28+00:00` |
 | `controlled_test_output/tier5_6_20260428_001803` | `superseded_rerun` | `pass` | `2026-04-28T04:18:03+00:00` |
 | `controlled_test_output/tier5_7_20260428_005610` | `superseded_rerun` | `fail` | `2026-04-28T04:56:21+00:00` |

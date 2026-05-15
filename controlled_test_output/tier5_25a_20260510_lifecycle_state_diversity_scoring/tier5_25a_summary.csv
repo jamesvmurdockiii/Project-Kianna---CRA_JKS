@@ -1,0 +1,11 @@
+name,criterion,value,rule,passed,note
+prereq contract exists,prereq contract exists,True,true,True,
+lifecycle OFF completed,lifecycle OFF completed,True,true,True,
+lifecycle ON completed,lifecycle ON completed,True,true,True,
+population grew with lifecycle,population grew with lifecycle,True,true,True,
+per-neuron PR measured,per-neuron PR measured,True,true,True,off=1.23 on=1.59
+primary pass: PR > 1.5x,primary pass: PR > 1.5x,False,> 1.5,False,ratio=1.29x
+PR trajectory increasing,PR trajectory increasing,True,true,True,
+no NaN/infinite values,no NaN/infinite values,True,true,True,
+no baseline freeze authorized,no baseline freeze authorized,False,false,True,
+no mechanism promotion authorized,no mechanism promotion authorized,False,false,True,

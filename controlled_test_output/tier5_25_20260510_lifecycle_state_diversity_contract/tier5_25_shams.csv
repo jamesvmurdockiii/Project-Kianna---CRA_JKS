@@ -1,0 +1,4 @@
+name,role,description,passes_if
+reproduction_no_mutation,ablation/control,Reproduction enabled but mutation disabled. Offspring are exact clones of parents. Tests whether population growth alone (not trait diversification) affects PR.,no-mutation PR < lifecycle-on PR
+no_selection_pressure,ablation/control,"Reproduction + mutation enabled but apoptosis disabled (no death, polyps never culled). Tests whether selection is causal or just reproduction.",no-selection PR < lifecycle-on PR
+shuffled_fitness,sham,Reproduction + mutation enabled but fitness scores are randomly shuffled before selection. Tests whether directed selection produces better diversity than random drift.,shuffled-fitness PR < lifecycle-on PR

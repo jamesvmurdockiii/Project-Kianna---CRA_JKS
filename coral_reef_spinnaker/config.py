@@ -348,6 +348,91 @@ class LifecycleConfig:
     enable_reproduction: bool = True
     """[runtime_ui] Master switch for cyclin-D-driven reproduction."""
 
+    enable_neural_heritability: bool = False
+    """[EXPERIMENTAL] When True, neural device parameters (tau_m_factor,
+    v_thresh_factor, cm_factor) are heritable and subject to mutation
+    during reproduction. When False, all polyps use baseline factor=1.0
+    regardless of parent. This is the primary sham for measuring
+    lifecycle neural diversity vs population-size inflation."""
+
+    enable_stream_specialization: bool = False
+    """[EXPERIMENTAL] When True, stream attention masks are heritable
+    and subject to mutation during reproduction. When False, all polyps
+    receive full channel masks (all channels active)."""
+
+    enable_variable_allocation: bool = False
+    """[EXPERIMENTAL] When True, neuron allocation ratios (input, exc, inh)
+    are heritable and subject to mutation. Different polyps develop genuinely
+    different computational architectures in their 32-neuron blocks. When
+    False, all polyps use default allocation (8, 16, 4, 4)."""
+
+    enable_task_fitness_selection: bool = False
+    """[EXPERIMENTAL] When True, prediction accuracy (directional_accuracy_ema)
+    modulates cyclin-D accumulation, creating positive selection pressure:
+    accurate polyps reproduce faster. When False, only trophic health
+    determines reproduction rate. Sham control for measuring task-fitness
+    selection specifically."""
+
+    enable_operator_diversity: bool = False
+    """[EXPERIMENTAL] When True, per-polyp spectral radius and E/I ratio
+    are heritable and applied in instantiate_internal_template, creating
+    operator diversity. When False, all polyps use sr=1.0, eir=1.0
+    (identical dynamical operators). Primary sham for Tier 5.32."""
+
+    enable_synaptic_heritability: bool = False
+    """[EXPERIMENTAL] When True, STDP-learned synaptic weights are
+    snapshotted before rebuild_spinnaker() teardown, restored after rebuild,
+    and inherited by children during reproduction with small mutation.
+    Requires NEST backend (uses nest.GetConnections/SetStatus)."""
+
+    enable_niche_pressure: bool = False
+    """[EXPERIMENTAL] When True, polyps with >80% similar activity rates
+    accumulate BAX pressure on the less-accurate member. Creates ecological
+    niches: only diverse polyps survive. Sham for Tier 5.34."""
+
+    enable_signal_transport: bool = False
+    """[EXPERIMENTAL] When True, each polyp exports a bounded signal vector
+    [activity, prediction, uncertainty, energy, novelty] with contractive
+    tanh/sigmoid bounds. Prevents cross-polyp signal amplification."""
+
+    enable_energy_economy: bool = False
+    """[EXPERIMENTAL] When True, per-polyp energy_reserve [0,1] tracks
+    usefulness (prediction accuracy) minus costs (metabolic + complexity).
+    Low-energy polyps are eliminated by niche pressure."""
+
+    enable_maturation: bool = False
+    """[EXPERIMENTAL] When True, polyps progress through developmental
+    stages (larval→juvenile→mature→senescent) based on accumulated
+    energy. Mature polyps are calcified — hard to change but reliable.
+    Replaces rigid freezing with biological developmental inertia."""
+
+    enable_vector_readout: bool = False
+    """[EXPERIMENTAL] When True, uses caste-separated vector readout
+    where Filter→trend, Memory→memory, Rotor→oscillation, Chaotic→anomaly.
+    When False, uses scalar accuracy-weighted mean (baseline)."""
+
+    enable_alignment_pressure: bool = False
+    """[EXPERIMENTAL] When True, polyps in castes that contribute more
+    to the colony prediction get bonus energy. Creates evolutionary
+    pressure toward task-useful dynamics."""
+
+    enable_task_coupled_selection: bool = False
+    """[EXPERIMENTAL] When True, reproductive fitness depends on
+    prediction contribution — not just trophic health. High-contribution
+    castes get cyclin boost proportional to prediction error. Low-
+    contribution castes lose energy. Couples evolution to task accuracy."""
+
+    enable_causal_credit_selection: bool = False
+    """[EXPERIMENTAL] When True, per-caste counterfactual credit (leave-
+    one-caste-out) determines reproductive fitness. Polyps in castes that
+    reduce prediction error reproduce more. Castes that increase error
+    lose energy. Causal credit assignment — the missing loop closure."""
+
+    enable_cross_polyp_coupling: bool = False
+    """[EXPERIMENTAL] When True, each polyp's export state is soft-coupled
+    to the colony mean. Creates symmetry breaking — identical polyps
+    diverge due to different coupling contexts. Novelty tracking enabled."""
+
     enable_structural_plasticity: bool = True
     """[runtime_ui] Master switch for axon/dendrite sprouting and synapse
     formation (competitive STDP + activity-dependent growth)."""
