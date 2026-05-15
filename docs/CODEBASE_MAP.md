@@ -36,6 +36,7 @@ are source, which files are generated evidence, and where claims are recorded.
 | `docs/PAPER_READINESS_ROADMAP.md` | Strategic roadmap from current evidence to paper-ready claims, including capability ladder, SNN-native coverage tiers, pass/fail gates, reproduction hygiene, and make-or-break criteria. |
 | `docs/MECHANISM_STATUS.md` | Mechanism status ledger | Separates promoted/bounded mechanisms from diagnostics and planned/parked mechanisms so future agents do not assume every roadmap idea is already proven or ready for native migration. |
 | `docs/MASTER_EXECUTION_PLAN.md` | Operational execution queue from the current state through chip-native migration, remaining software capability work, final matrices, reproduction, and paper lock. |
+| `docs/TIER5_45A_SHARD_EXECUTION_PLAN.md` | Operational shard plan for the Tier 5.45a healthy-NEST rebaseline scoring gate, including smoke/probe boundaries, condition shard commands, merge procedure, and promotion decision rules. |
 | `docs/TIER5_19_CONTINUOUS_TEMPORAL_DYNAMICS_CONTRACT.md` | Completed Tier 5.19 / 7.0e temporal-dynamics contract and result log; records 5.19a/b diagnostics and the 5.19c v2.2 bounded fading-memory promotion boundary. |
 | `docs/REVIEWER_DEFENSE_PLAN.md` | Adversarial reviewer-attack matrix, baseline fairness/statistics requirements, leakage checks, SNN-native mechanism controls, future capability controls, and reproduction requirements. |
 | `docs/WHITEPAPER.md` | Comprehensive technical whitepaper with architecture, evidence, limitations, and roadmap. |

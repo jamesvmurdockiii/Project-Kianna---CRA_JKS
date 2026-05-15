@@ -1,6 +1,6 @@
 # Repo Alignment Remediation Plan
 
-Last updated: 2026-05-14.
+Last updated: 2026-05-15.
 
 This document is the active cleanup checklist for restoring the public Apache
 2.0 repository to research-grade, source-of-truth alignment after the
@@ -129,9 +129,9 @@ Acceptance criteria:
    gate.
 8. Run full Tier 5.45a healthy-NEST rebaseline scoring from the locked Tier
    5.45 contract. Use `make tier5-45a-smoke` only to validate runner plumbing;
-   smoke output is not canonical evidence. The full matrix may be run as
-   sharded condition/task/seed outputs and combined with the runner's
-   `--merge-input-dirs` mode.
+   smoke output is not canonical evidence. Follow
+   `docs/TIER5_45A_SHARD_EXECUTION_PLAN.md` for condition/task/seed sharding,
+   merge mode, pass/fail rules, and promotion boundaries.
 9. Resume science from a documented, clean baseline or a documented no-promotion
    decision.
 

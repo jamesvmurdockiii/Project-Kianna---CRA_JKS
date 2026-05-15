@@ -54,8 +54,10 @@ Active cleanup state:
   current next gate is the full Tier 5.45a scoring run: compare v2.6,
   conservative organism defaults, each of the 15 opt-in organism-development
   mechanisms, the full opt-in stack, and external baselines under zero-fallback
-  NEST. Do not promote a mechanism or freeze a new baseline until full Tier
-  5.45a returns, is ingested or registered as appropriate, and is documented.
+  NEST. Use docs/TIER5_45A_SHARD_EXECUTION_PLAN.md for shard execution and
+  merge rules. Do not promote a mechanism or freeze a new baseline until full
+  Tier 5.45a returns, is ingested or registered as appropriate, and is
+  documented.
 
 Cleanup-era evidence tracking decision:
   Tier 5.24a and Tier 5.25+ diagnostic artifacts/scripts that are already

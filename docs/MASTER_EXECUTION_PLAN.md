@@ -38,7 +38,9 @@ Active execution mode = repo-alignment remediation Gate 5.
        Tier 5.45 locked the healthy-NEST rebaseline contract. The Tier 5.45a
        scoring runner is implemented and smoke-validated. The next required
        gate is full Tier 5.45a scoring before any new mechanism promotion,
-       baseline freeze, or paper-facing claim.
+       baseline freeze, or paper-facing claim. Use
+       docs/TIER5_45A_SHARD_EXECUTION_PLAN.md as the operational shard/merge
+       procedure for that gate.
 ```
 
 Current hardware/custom-runtime state:

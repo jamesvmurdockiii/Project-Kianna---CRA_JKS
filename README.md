@@ -190,6 +190,10 @@ Tier 5.19 temporal-dynamics contract is preserved at
 [`docs/TIER5_19_CONTINUOUS_TEMPORAL_DYNAMICS_CONTRACT.md`](docs/TIER5_19_CONTINUOUS_TEMPORAL_DYNAMICS_CONTRACT.md).
 The current usefulness-testing contract is
 [`docs/TIER6_2_USEFULNESS_BATTERY_CONTRACT.md`](docs/TIER6_2_USEFULNESS_BATTERY_CONTRACT.md).
+The current healthy-NEST rebaseline scoring gate should be run through the
+sharded plan in
+[`docs/TIER5_45A_SHARD_EXECUTION_PLAN.md`](docs/TIER5_45A_SHARD_EXECUTION_PLAN.md)
+before any new mechanism promotion or baseline freeze.
 
 ## Quick Start
 
