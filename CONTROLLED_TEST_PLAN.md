@@ -8,11 +8,11 @@ the failed test before moving forward.
 
 ## Active Remediation Note
 
-As of 2026-05-14, repo-alignment remediation is active. See
-`docs/REPO_ALIGNMENT_REMEDIATION_PLAN.md`. New science runs are paused until
-source-of-truth documents, config defaults, evidence status, and governance
-tests are aligned. `v2.6` remains the predictive benchmark baseline; `v2.7` is a
-diagnostic NEST organism-development snapshot only.
+As of 2026-05-15, repo-alignment remediation is in Gate 5. Tier 5.45 locked
+the healthy-NEST rebaseline contract; Tier 5.45a scoring is the next required
+gate before any new mechanism promotion, baseline freeze, or paper-facing claim.
+`v2.6` remains the predictive benchmark baseline; `v2.7` is a diagnostic NEST
+organism-development snapshot only.
 
 Cleanup-era Tier 5.24a/Tier 5.25+ mechanism outputs are preserved as diagnostic
 audit history when they are small and cited by source-of-truth documents. They
@@ -28,7 +28,7 @@ mechanism promotion, lifecycle/ecology evidence, and native SpiNNaker runtime
 migration. The generated registry is the authority for which results are
 canonical.
 
-The current canonical evidence trail contains **156 registered evidence bundles**
+The current canonical evidence trail contains **157 registered evidence bundles**
 with all expected artifacts present and all criteria passing. The generated
 registry is the source of truth for the full list:
 

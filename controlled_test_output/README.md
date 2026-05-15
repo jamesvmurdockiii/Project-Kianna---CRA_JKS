@@ -5,10 +5,10 @@ ledger is `STUDY_REGISTRY.json`; the compact table is `STUDY_REGISTRY.csv`.
 Older reruns, prepared capsules, debug probes, and baseline-frozen
 mechanism bundles outside the formal registry are preserved for audit.
 
-- Generated: `2026-05-15T01:09:31.055793+00:00`
+- Generated: `2026-05-15T01:20:29.571425+00:00`
 - Registry status: **PASS**
-- Canonical evidence entries: `156`
-- Expanded test-entry count: `156`; see the canonical evidence table below for the exact current tier list.
+- Canonical evidence entries: `157`
+- Expanded test-entry count: `157`; see the canonical evidence table below for the exact current tier list.
 
 ## Evidence Categories
 
@@ -136,6 +136,7 @@ mechanism bundles outside the formal registry are preserved for audit.
 | `tier7_8_polyp_morphology_contract` | **PASS** | `controlled_test_output/tier7_8_20260509_polyp_morphology_contract` | Contract only; not a template implementation, not model scoring, not mechanism promotion, not a baseline freeze, and not hardware/native transfer. |
 | `tier7_7z_r0_compact_regression` | **PASS** | `controlled_test_output/tier7_7z_r0_20260509_compact_regression` | Compact regression on standalone reference implementation. Not full NEST organism regression. Not public usefulness proof. Not hardware/native transfer. |
 | `tier7_7z_r1_standardized_benchmark` | **PASS** | `controlled_test_output/tier7_7z_r1_20260509_standardized_benchmark` | Benchmark scoring with ridge readout. v2.5 comparison uses different readout (online LMS) so ratio is not directly comparable. Not public usefulness proof. Not hardware/native transfer. |
+| `tier5_45_healthy_nest_rebaseline_contract` | **PASS** | `controlled_test_output/tier5_45_20260514_healthy_nest_rebaseline_contract` | Contract only; not scoring, not a mechanism promotion, not a baseline freeze, not hardware/native transfer, not public usefulness evidence, and not AGI/ASI evidence. |
 | `tier4_33_eoc_native_transfer_contract` | **PASS** | `controlled_test_output/tier4_33_20260509_eoc_native_transfer_contract` | Contract only; not C implementation, not hardware evidence, not a baseline freeze. DTCM budget risk at n=128 may require n=64 for first hardware smoke. |
 | `tier7_7z_r3_nab_adapter` | **PASS** | `controlled_test_output/tier7_7z_r3_20260509_nab_adapter` | NAB adapter scoring only. Not a full NAB benchmark. Not public usefulness proof. Not a baseline freeze. |
 | `tier4_33a_eoc_fixed_point_reference` | **PASS** | `controlled_test_output/tier4_33a_20260509_eoc_fixed_point_reference` | Fixed-point reference only; not C runtime implementation, not hardware evidence, not a baseline freeze. |

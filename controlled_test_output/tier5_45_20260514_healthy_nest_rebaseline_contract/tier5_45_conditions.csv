@@ -1,0 +1,16 @@
+condition,role,enabled_flag
+neural_heritability,single opt-in mechanism candidate,enable_neural_heritability
+stream_specialization,single opt-in mechanism candidate,enable_stream_specialization
+variable_allocation,single opt-in mechanism candidate,enable_variable_allocation
+task_fitness_selection,single opt-in mechanism candidate,enable_task_fitness_selection
+operator_diversity,single opt-in mechanism candidate,enable_operator_diversity
+synaptic_heritability,single opt-in mechanism candidate,enable_synaptic_heritability
+niche_pressure,single opt-in mechanism candidate,enable_niche_pressure
+signal_transport,single opt-in mechanism candidate,enable_signal_transport
+energy_economy,single opt-in mechanism candidate,enable_energy_economy
+maturation,single opt-in mechanism candidate,enable_maturation
+vector_readout,single opt-in mechanism candidate,enable_vector_readout
+alignment_pressure,single opt-in mechanism candidate,enable_alignment_pressure
+task_coupled_selection,single opt-in mechanism candidate,enable_task_coupled_selection
+causal_credit_selection,single opt-in mechanism candidate,enable_causal_credit_selection
+cross_polyp_coupling,single opt-in mechanism candidate,enable_cross_polyp_coupling

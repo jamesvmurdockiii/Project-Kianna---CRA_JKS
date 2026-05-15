@@ -4,11 +4,11 @@ This table is generated from `controlled_test_output/STUDY_REGISTRY.json`.
 It is intended as a paper/technical-note citation table, not as a new
 source of claims. If the registry changes, regenerate this file.
 
-- Generated: `2026-05-15T01:09:31.188927+00:00`
-- Registry generated: `2026-05-15T01:09:31.055793+00:00`
+- Generated: `2026-05-15T01:20:29.705655+00:00`
+- Registry generated: `2026-05-15T01:20:29.571425+00:00`
 - Registry status: **PASS**
-- Canonical bundles: `156`
-- Expanded entries: `156`
+- Canonical bundles: `157`
+- Expanded entries: `157`
 
 ## Summary Table
 
@@ -128,6 +128,7 @@ source of claims. If the registry changes, regenerate this file.
 | `tier7_8_polyp_morphology_contract` | PASS | see manifest | Tier 7.8 - Polyp Morphology / Template Variability Contract |  | Contract only; not a template implementation, not model scoring, not mechanism promotion, not a baseline freeze, and not hardware/native transfer. | results: `controlled_test_output/tier7_8_20260509_polyp_morphology_contract/tier7_8_results.json`; report: `controlled_test_output/tier7_8_20260509_polyp_morphology_contract/tier7_8_report.md`; summary: `controlled_test_output/tier7_8_20260509_polyp_morphology_contract/tier7_8_summary.csv` |
 | `tier7_7z_r0_compact_regression` | PASS | see manifest | Tier 7.7z-r0 - Edge-of-Chaos Compact Regression Gate |  | Compact regression on standalone reference implementation. Not full NEST organism regression. Not public usefulness proof. Not hardware/native transfer. | results: `controlled_test_output/tier7_7z_r0_20260509_compact_regression/tier7_7z_r0_results.json`; report: `controlled_test_output/tier7_7z_r0_20260509_compact_regression/tier7_7z_r0_report.md`; summary: `controlled_test_output/tier7_7z_r0_20260509_compact_regression/tier7_7z_r0_summary.csv` |
 | `tier7_7z_r1_standardized_benchmark` | PASS | see manifest | Tier 7.7z-r1 — v2.6 Standardized Benchmark Rerun |  | Benchmark scoring with ridge readout. v2.5 comparison uses different readout (online LMS) so ratio is not directly comparable. Not public usefulness proof. Not hardware/native transfer. | results: `controlled_test_output/tier7_7z_r1_20260509_standardized_benchmark/tier7_7z_r1_results.json`; report: `controlled_test_output/tier7_7z_r1_20260509_standardized_benchmark/tier7_7z_r1_report.md`; summary: `controlled_test_output/tier7_7z_r1_20260509_standardized_benchmark/tier7_7z_r1_summary.csv` |
+| `tier5_45_healthy_nest_rebaseline_contract` | PASS | see manifest | Tier 5.45 — Healthy-NEST Rebaseline Decision Contract |  | Contract only; not scoring, not a mechanism promotion, not a baseline freeze, not hardware/native transfer, not public usefulness evidence, and not AGI/ASI evidence. | results: `controlled_test_output/tier5_45_20260514_healthy_nest_rebaseline_contract/tier5_45_results.json`; report: `controlled_test_output/tier5_45_20260514_healthy_nest_rebaseline_contract/tier5_45_report.md`; summary: `controlled_test_output/tier5_45_20260514_healthy_nest_rebaseline_contract/tier5_45_summary.csv` |
 | `tier4_33_eoc_native_transfer_contract` | PASS | see manifest | Tier 4.33 - Edge-of-Chaos Native Mechanism Transfer Contract |  | Contract only; not C implementation, not hardware evidence, not a baseline freeze. DTCM budget risk at n=128 may require n=64 for first hardware smoke. | results: `controlled_test_output/tier4_33_20260509_eoc_native_transfer_contract/tier4_33_results.json`; report: `controlled_test_output/tier4_33_20260509_eoc_native_transfer_contract/tier4_33_report.md`; summary: `controlled_test_output/tier4_33_20260509_eoc_native_transfer_contract/tier4_33_summary.csv` |
 | `tier7_7z_r3_nab_adapter` | PASS | see manifest | Tier 7.7z-r3 - v2.6 NAB Streaming Anomaly Adapter |  | NAB adapter scoring only. Not a full NAB benchmark. Not public usefulness proof. Not a baseline freeze. | results: `controlled_test_output/tier7_7z_r3_20260509_nab_adapter/tier7_7z_r3_results.json`; report: `controlled_test_output/tier7_7z_r3_20260509_nab_adapter/tier7_7z_r3_report.md`; summary: `controlled_test_output/tier7_7z_r3_20260509_nab_adapter/tier7_7z_r3_summary.csv` |
 | `tier4_33a_eoc_fixed_point_reference` | PASS | see manifest | Tier 4.33a - Edge-of-Chaos Fixed-Point Local Reference |  | Fixed-point reference only; not C runtime implementation, not hardware evidence, not a baseline freeze. | results: `controlled_test_output/tier4_33a_20260509_eoc_fixed_point_reference/tier4_33a_results.json`; report: `controlled_test_output/tier4_33a_20260509_eoc_fixed_point_reference/tier4_33a_report.md`; summary: `controlled_test_output/tier4_33a_20260509_eoc_fixed_point_reference/tier4_33a_summary.csv` |

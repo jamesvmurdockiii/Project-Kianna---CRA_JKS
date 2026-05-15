@@ -4,11 +4,12 @@ Last updated: 2026-05-14
 
 ## Active Remediation Note
 
-Repo-alignment remediation is currently active. See
+Repo-alignment remediation is currently in Gate 5. See
 `docs/REPO_ALIGNMENT_REMEDIATION_PLAN.md`.
 
-Until that plan is closed, do not start new science runs or claim a new paper
-baseline. The current predictive benchmark baseline remains `v2.6`; `v2.7` is a
+Tier 5.45 locked the healthy-NEST rebaseline contract. Tier 5.45a scoring must
+run before any new organism mechanism promotion, baseline freeze, or paper-facing
+claim. The current predictive benchmark baseline remains `v2.6`; `v2.7` is a
 diagnostic NEST organism-development snapshot only and does not supersede `v2.6`
 for predictive usefulness.
 

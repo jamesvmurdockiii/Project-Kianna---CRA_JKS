@@ -34,10 +34,10 @@ v2.7 = diagnostic NEST organism-development snapshot only.
        predictive benchmarks because true organism PR remained near ~2 and
        MSE did not improve across tested mechanism configurations.
 
-Active execution mode = repo-alignment remediation.
-       New science runs are paused until code hygiene, source-of-truth docs,
-       evidence registry status, config defaults, and governance tests are
-       aligned. See docs/REPO_ALIGNMENT_REMEDIATION_PLAN.md.
+Active execution mode = repo-alignment remediation Gate 5.
+       Tier 5.45 locked the healthy-NEST rebaseline contract. The next
+       required gate is Tier 5.45a scoring before any new mechanism promotion,
+       baseline freeze, or paper-facing claim.
 ```
 
 Current hardware/custom-runtime state:

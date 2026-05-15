@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-05-15T01:20:29.206948+00:00",
+  "source_generated_at_utc": "2026-05-15T01:17:53+00:00",
+  "registry_entry_id": "tier5_45_healthy_nest_rebaseline_contract",
+  "tier": "Tier 5.45 - Healthy-NEST Rebaseline Decision Contract",
+  "status": "pass",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_45_20260514_healthy_nest_rebaseline_contract",
+  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_45_20260514_healthy_nest_rebaseline_contract/tier5_45_results.json",
+  "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_45_20260514_healthy_nest_rebaseline_contract/tier5_45_report.md",
+  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_45_20260514_healthy_nest_rebaseline_contract/tier5_45_summary.csv",
+  "canonical": true,
+  "claim": "Tier 5.45 locks the post-cleanup healthy-NEST rebaseline decision protocol: compare v2.6, conservative organism defaults, 15 opt-in single-feature mechanism conditions, full opt-in stack, and external baselines across sine/Mackey-Glass/Lorenz/NARMA10, seeds 42/43/44, with zero synthetic fallback as a hard blocker.",
+  "caveat": "Contract only; not scoring, not a mechanism promotion, not a baseline freeze, not hardware/native transfer, not public usefulness evidence, and not AGI/ASI evidence."
+}

@@ -1,0 +1,2 @@
+status,outcome,criteria_passed,criteria_total,experimental_flag_count,next_gate
+pass,healthy_nest_rebaseline_contract_locked,12,12,15,Tier 5.45a — Healthy-NEST Rebaseline Scoring Gate

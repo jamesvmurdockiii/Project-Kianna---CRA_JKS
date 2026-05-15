@@ -1,0 +1,606 @@
+{
+  "contract": {
+    "claim_boundary": "Contract only. This tier does not prove a mechanism, freeze a baseline, claim hardware transfer, claim public usefulness, or claim AGI/ASI relevance.",
+    "conditions": {
+      "external_baselines": [
+        "persistence_baseline",
+        "online_linear_or_lag_ridge",
+        "esn_or_random_reservoir"
+      ],
+      "full_stack_condition": {
+        "config_overrides": {
+          "lifecycle.enable_alignment_pressure": true,
+          "lifecycle.enable_causal_credit_selection": true,
+          "lifecycle.enable_cross_polyp_coupling": true,
+          "lifecycle.enable_energy_economy": true,
+          "lifecycle.enable_maturation": true,
+          "lifecycle.enable_neural_heritability": true,
+          "lifecycle.enable_niche_pressure": true,
+          "lifecycle.enable_operator_diversity": true,
+          "lifecycle.enable_signal_transport": true,
+          "lifecycle.enable_stream_specialization": true,
+          "lifecycle.enable_synaptic_heritability": true,
+          "lifecycle.enable_task_coupled_selection": true,
+          "lifecycle.enable_task_fitness_selection": true,
+          "lifecycle.enable_variable_allocation": true,
+          "lifecycle.enable_vector_readout": true
+        },
+        "name": "full_opt_in_stack",
+        "role": "interaction stressor; cannot promote individual mechanisms without single-feature support or follow-up ablation."
+      },
+      "reference_conditions": [
+        {
+          "name": "v2_6_predictive_reference",
+          "promotion_rule": "Only superseded if a candidate beats it under locked metrics and external-baseline context.",
+          "role": "current predictive benchmark baseline; standalone/reference path if applicable"
+        },
+        {
+          "config_overrides": {
+            "lifecycle.enable_alignment_pressure": false,
+            "lifecycle.enable_causal_credit_selection": false,
+            "lifecycle.enable_cross_polyp_coupling": false,
+            "lifecycle.enable_energy_economy": false,
+            "lifecycle.enable_maturation": false,
+            "lifecycle.enable_neural_heritability": false,
+            "lifecycle.enable_niche_pressure": false,
+            "lifecycle.enable_operator_diversity": false,
+            "lifecycle.enable_signal_transport": false,
+            "lifecycle.enable_stream_specialization": false,
+            "lifecycle.enable_synaptic_heritability": false,
+            "lifecycle.enable_task_coupled_selection": false,
+            "lifecycle.enable_task_fitness_selection": false,
+            "lifecycle.enable_variable_allocation": false,
+            "lifecycle.enable_vector_readout": false
+          },
+          "name": "organism_defaults_experimental_off",
+          "role": "current conservative NEST organism with all experimental flags false"
+        }
+      ],
+      "single_feature_conditions": [
+        {
+          "config_overrides": {
+            "lifecycle.enable_alignment_pressure": false,
+            "lifecycle.enable_causal_credit_selection": false,
+            "lifecycle.enable_cross_polyp_coupling": false,
+            "lifecycle.enable_energy_economy": false,
+            "lifecycle.enable_maturation": false,
+            "lifecycle.enable_neural_heritability": true,
+            "lifecycle.enable_niche_pressure": false,
+            "lifecycle.enable_operator_diversity": false,
+            "lifecycle.enable_signal_transport": false,
+            "lifecycle.enable_stream_specialization": false,
+            "lifecycle.enable_synaptic_heritability": false,
+            "lifecycle.enable_task_coupled_selection": false,
+            "lifecycle.enable_task_fitness_selection": false,
+            "lifecycle.enable_variable_allocation": false,
+            "lifecycle.enable_vector_readout": false
+          },
+          "name": "neural_heritability",
+          "role": "single opt-in mechanism candidate"
+        },
+        {
+          "config_overrides": {
+            "lifecycle.enable_alignment_pressure": false,
+            "lifecycle.enable_causal_credit_selection": false,
+            "lifecycle.enable_cross_polyp_coupling": false,
+            "lifecycle.enable_energy_economy": false,
+            "lifecycle.enable_maturation": false,
+            "lifecycle.enable_neural_heritability": false,
+            "lifecycle.enable_niche_pressure": false,
+            "lifecycle.enable_operator_diversity": false,
+            "lifecycle.enable_signal_transport": false,
+            "lifecycle.enable_stream_specialization": true,
+            "lifecycle.enable_synaptic_heritability": false,
+            "lifecycle.enable_task_coupled_selection": false,
+            "lifecycle.enable_task_fitness_selection": false,
+            "lifecycle.enable_variable_allocation": false,
+            "lifecycle.enable_vector_readout": false
+          },
+          "name": "stream_specialization",
+          "role": "single opt-in mechanism candidate"
+        },
+        {
+          "config_overrides": {
+            "lifecycle.enable_alignment_pressure": false,
+            "lifecycle.enable_causal_credit_selection": false,
+            "lifecycle.enable_cross_polyp_coupling": false,
+            "lifecycle.enable_energy_economy": false,
+            "lifecycle.enable_maturation": false,
+            "lifecycle.enable_neural_heritability": false,
+            "lifecycle.enable_niche_pressure": false,
+            "lifecycle.enable_operator_diversity": false,
+            "lifecycle.enable_signal_transport": false,
+            "lifecycle.enable_stream_specialization": false,
+            "lifecycle.enable_synaptic_heritability": false,
+            "lifecycle.enable_task_coupled_selection": false,
+            "lifecycle.enable_task_fitness_selection": false,
+            "lifecycle.enable_variable_allocation": true,
+            "lifecycle.enable_vector_readout": false
+          },
+          "name": "variable_allocation",
+          "role": "single opt-in mechanism candidate"
+        },
+        {
+          "config_overrides": {
+            "lifecycle.enable_alignment_pressure": false,
+            "lifecycle.enable_causal_credit_selection": false,
+            "lifecycle.enable_cross_polyp_coupling": false,
+            "lifecycle.enable_energy_economy": false,
+            "lifecycle.enable_maturation": false,
+            "lifecycle.enable_neural_heritability": false,
+            "lifecycle.enable_niche_pressure": false,
+            "lifecycle.enable_operator_diversity": false,
+            "lifecycle.enable_signal_transport": false,
+            "lifecycle.enable_stream_specialization": false,
+            "lifecycle.enable_synaptic_heritability": false,
+            "lifecycle.enable_task_coupled_selection": false,
+            "lifecycle.enable_task_fitness_selection": true,
+            "lifecycle.enable_variable_allocation": false,
+            "lifecycle.enable_vector_readout": false
+          },
+          "name": "task_fitness_selection",
+          "role": "single opt-in mechanism candidate"
+        },
+        {
+          "config_overrides": {
+            "lifecycle.enable_alignment_pressure": false,
+            "lifecycle.enable_causal_credit_selection": false,
+            "lifecycle.enable_cross_polyp_coupling": false,
+            "lifecycle.enable_energy_economy": false,
+            "lifecycle.enable_maturation": false,
+            "lifecycle.enable_neural_heritability": false,
+            "lifecycle.enable_niche_pressure": false,
+            "lifecycle.enable_operator_diversity": true,
+            "lifecycle.enable_signal_transport": false,
+            "lifecycle.enable_stream_specialization": false,
+            "lifecycle.enable_synaptic_heritability": false,
+            "lifecycle.enable_task_coupled_selection": false,
+            "lifecycle.enable_task_fitness_selection": false,
+            "lifecycle.enable_variable_allocation": false,
+            "lifecycle.enable_vector_readout": false
+          },
+          "name": "operator_diversity",
+          "role": "single opt-in mechanism candidate"
+        },
+        {
+          "config_overrides": {
+            "lifecycle.enable_alignment_pressure": false,
+            "lifecycle.enable_causal_credit_selection": false,
+            "lifecycle.enable_cross_polyp_coupling": false,
+            "lifecycle.enable_energy_economy": false,
+            "lifecycle.enable_maturation": false,
+            "lifecycle.enable_neural_heritability": false,
+            "lifecycle.enable_niche_pressure": false,
+            "lifecycle.enable_operator_diversity": false,
+            "lifecycle.enable_signal_transport": false,
+            "lifecycle.enable_stream_specialization": false,
+            "lifecycle.enable_synaptic_heritability": true,
+            "lifecycle.enable_task_coupled_selection": false,
+            "lifecycle.enable_task_fitness_selection": false,
+            "lifecycle.enable_variable_allocation": false,
+            "lifecycle.enable_vector_readout": false
+          },
+          "name": "synaptic_heritability",
+          "role": "single opt-in mechanism candidate"
+        },
+        {
+          "config_overrides": {
+            "lifecycle.enable_alignment_pressure": false,
+            "lifecycle.enable_causal_credit_selection": false,
+            "lifecycle.enable_cross_polyp_coupling": false,
+            "lifecycle.enable_energy_economy": false,
+            "lifecycle.enable_maturation": false,
+            "lifecycle.enable_neural_heritability": false,
+            "lifecycle.enable_niche_pressure": true,
+            "lifecycle.enable_operator_diversity": false,
+            "lifecycle.enable_signal_transport": false,
+            "lifecycle.enable_stream_specialization": false,
+            "lifecycle.enable_synaptic_heritability": false,
+            "lifecycle.enable_task_coupled_selection": false,
+            "lifecycle.enable_task_fitness_selection": false,
+            "lifecycle.enable_variable_allocation": false,
+            "lifecycle.enable_vector_readout": false
+          },
+          "name": "niche_pressure",
+          "role": "single opt-in mechanism candidate"
+        },
+        {
+          "config_overrides": {
+            "lifecycle.enable_alignment_pressure": false,
+            "lifecycle.enable_causal_credit_selection": false,
+            "lifecycle.enable_cross_polyp_coupling": false,
+            "lifecycle.enable_energy_economy": false,
+            "lifecycle.enable_maturation": false,
+            "lifecycle.enable_neural_heritability": false,
+            "lifecycle.enable_niche_pressure": false,
+            "lifecycle.enable_operator_diversity": false,
+            "lifecycle.enable_signal_transport": true,
+            "lifecycle.enable_stream_specialization": false,
+            "lifecycle.enable_synaptic_heritability": false,
+            "lifecycle.enable_task_coupled_selection": false,
+            "lifecycle.enable_task_fitness_selection": false,
+            "lifecycle.enable_variable_allocation": false,
+            "lifecycle.enable_vector_readout": false
+          },
+          "name": "signal_transport",
+          "role": "single opt-in mechanism candidate"
+        },
+        {
+          "config_overrides": {
+            "lifecycle.enable_alignment_pressure": false,
+            "lifecycle.enable_causal_credit_selection": false,
+            "lifecycle.enable_cross_polyp_coupling": false,
+            "lifecycle.enable_energy_economy": true,
+            "lifecycle.enable_maturation": false,
+            "lifecycle.enable_neural_heritability": false,
+            "lifecycle.enable_niche_pressure": false,
+            "lifecycle.enable_operator_diversity": false,
+            "lifecycle.enable_signal_transport": false,
+            "lifecycle.enable_stream_specialization": false,
+            "lifecycle.enable_synaptic_heritability": false,
+            "lifecycle.enable_task_coupled_selection": false,
+            "lifecycle.enable_task_fitness_selection": false,
+            "lifecycle.enable_variable_allocation": false,
+            "lifecycle.enable_vector_readout": false
+          },
+          "name": "energy_economy",
+          "role": "single opt-in mechanism candidate"
+        },
+        {
+          "config_overrides": {
+            "lifecycle.enable_alignment_pressure": false,
+            "lifecycle.enable_causal_credit_selection": false,
+            "lifecycle.enable_cross_polyp_coupling": false,
+            "lifecycle.enable_energy_economy": false,
+            "lifecycle.enable_maturation": true,
+            "lifecycle.enable_neural_heritability": false,
+            "lifecycle.enable_niche_pressure": false,
+            "lifecycle.enable_operator_diversity": false,
+            "lifecycle.enable_signal_transport": false,
+            "lifecycle.enable_stream_specialization": false,
+            "lifecycle.enable_synaptic_heritability": false,
+            "lifecycle.enable_task_coupled_selection": false,
+            "lifecycle.enable_task_fitness_selection": false,
+            "lifecycle.enable_variable_allocation": false,
+            "lifecycle.enable_vector_readout": false
+          },
+          "name": "maturation",
+          "role": "single opt-in mechanism candidate"
+        },
+        {
+          "config_overrides": {
+            "lifecycle.enable_alignment_pressure": false,
+            "lifecycle.enable_causal_credit_selection": false,
+            "lifecycle.enable_cross_polyp_coupling": false,
+            "lifecycle.enable_energy_economy": false,
+            "lifecycle.enable_maturation": false,
+            "lifecycle.enable_neural_heritability": false,
+            "lifecycle.enable_niche_pressure": false,
+            "lifecycle.enable_operator_diversity": false,
+            "lifecycle.enable_signal_transport": false,
+            "lifecycle.enable_stream_specialization": false,
+            "lifecycle.enable_synaptic_heritability": false,
+            "lifecycle.enable_task_coupled_selection": false,
+            "lifecycle.enable_task_fitness_selection": false,
+            "lifecycle.enable_variable_allocation": false,
+            "lifecycle.enable_vector_readout": true
+          },
+          "name": "vector_readout",
+          "role": "single opt-in mechanism candidate"
+        },
+        {
+          "config_overrides": {
+            "lifecycle.enable_alignment_pressure": true,
+            "lifecycle.enable_causal_credit_selection": false,
+            "lifecycle.enable_cross_polyp_coupling": false,
+            "lifecycle.enable_energy_economy": false,
+            "lifecycle.enable_maturation": false,
+            "lifecycle.enable_neural_heritability": false,
+            "lifecycle.enable_niche_pressure": false,
+            "lifecycle.enable_operator_diversity": false,
+            "lifecycle.enable_signal_transport": false,
+            "lifecycle.enable_stream_specialization": false,
+            "lifecycle.enable_synaptic_heritability": false,
+            "lifecycle.enable_task_coupled_selection": false,
+            "lifecycle.enable_task_fitness_selection": false,
+            "lifecycle.enable_variable_allocation": false,
+            "lifecycle.enable_vector_readout": false
+          },
+          "name": "alignment_pressure",
+          "role": "single opt-in mechanism candidate"
+        },
+        {
+          "config_overrides": {
+            "lifecycle.enable_alignment_pressure": false,
+            "lifecycle.enable_causal_credit_selection": false,
+            "lifecycle.enable_cross_polyp_coupling": false,
+            "lifecycle.enable_energy_economy": false,
+            "lifecycle.enable_maturation": false,
+            "lifecycle.enable_neural_heritability": false,
+            "lifecycle.enable_niche_pressure": false,
+            "lifecycle.enable_operator_diversity": false,
+            "lifecycle.enable_signal_transport": false,
+            "lifecycle.enable_stream_specialization": false,
+            "lifecycle.enable_synaptic_heritability": false,
+            "lifecycle.enable_task_coupled_selection": true,
+            "lifecycle.enable_task_fitness_selection": false,
+            "lifecycle.enable_variable_allocation": false,
+            "lifecycle.enable_vector_readout": false
+          },
+          "name": "task_coupled_selection",
+          "role": "single opt-in mechanism candidate"
+        },
+        {
+          "config_overrides": {
+            "lifecycle.enable_alignment_pressure": false,
+            "lifecycle.enable_causal_credit_selection": true,
+            "lifecycle.enable_cross_polyp_coupling": false,
+            "lifecycle.enable_energy_economy": false,
+            "lifecycle.enable_maturation": false,
+            "lifecycle.enable_neural_heritability": false,
+            "lifecycle.enable_niche_pressure": false,
+            "lifecycle.enable_operator_diversity": false,
+            "lifecycle.enable_signal_transport": false,
+            "lifecycle.enable_stream_specialization": false,
+            "lifecycle.enable_synaptic_heritability": false,
+            "lifecycle.enable_task_coupled_selection": false,
+            "lifecycle.enable_task_fitness_selection": false,
+            "lifecycle.enable_variable_allocation": false,
+            "lifecycle.enable_vector_readout": false
+          },
+          "name": "causal_credit_selection",
+          "role": "single opt-in mechanism candidate"
+        },
+        {
+          "config_overrides": {
+            "lifecycle.enable_alignment_pressure": false,
+            "lifecycle.enable_causal_credit_selection": false,
+            "lifecycle.enable_cross_polyp_coupling": true,
+            "lifecycle.enable_energy_economy": false,
+            "lifecycle.enable_maturation": false,
+            "lifecycle.enable_neural_heritability": false,
+            "lifecycle.enable_niche_pressure": false,
+            "lifecycle.enable_operator_diversity": false,
+            "lifecycle.enable_signal_transport": false,
+            "lifecycle.enable_stream_specialization": false,
+            "lifecycle.enable_synaptic_heritability": false,
+            "lifecycle.enable_task_coupled_selection": false,
+            "lifecycle.enable_task_fitness_selection": false,
+            "lifecycle.enable_variable_allocation": false,
+            "lifecycle.enable_vector_readout": false
+          },
+          "name": "cross_polyp_coupling",
+          "role": "single opt-in mechanism candidate"
+        }
+      ]
+    },
+    "expected_artifacts_for_scoring_gate": [
+      "tier5_45a_results.json",
+      "tier5_45a_report.md",
+      "tier5_45a_summary.csv",
+      "tier5_45a_seed_runs.csv",
+      "tier5_45a_model_task_metrics.csv",
+      "tier5_45a_mechanism_decisions.csv",
+      "tier5_45a_backend_diagnostics.json"
+    ],
+    "hypothesis": "At least one opt-in mechanism or the full opt-in stack will improve either locked predictive metrics or a predeclared substrate metric under healthy NEST with zero synthetic fallback, while separating from the relevant sham.",
+    "next_gate": "Tier 5.45a \u2014 Healthy-NEST Rebaseline Scoring Gate",
+    "null_hypothesis": "Healthy-NEST reruns show that the opt-in mechanism stack changes internal state descriptors or population metadata but does not improve predictive performance or sham-separated substrate metrics. In that case, v2.6 remains the predictive baseline and v2.7 remains diagnostic only.",
+    "outcome_classes": [
+      "predictive_baseline_candidate",
+      "organism_predictive_candidate",
+      "substrate_only_candidate",
+      "full_stack_interaction_only",
+      "no_promotion_confirmed",
+      "blocked_by_fallback_or_backend_instability"
+    ],
+    "promotion_rules": {
+      "no_promotion": "No candidate improves locked prediction or sham-separated substrate metrics. v2.6 remains predictive baseline; v2.7 remains diagnostic.",
+      "organism_predictive_candidate": "Candidate improves the conservative organism baseline by at least 5% aggregate MSE with no material regression, but does not supersede v2.6. This authorizes a repair/promotion tier, not a baseline freeze.",
+      "predictive_baseline_supersession": "Candidate must improve locked aggregate MSE versus v2.6 by at least 5%, show no material task regression above 10%, survive all seeds, and be interpreted against persistence/lag-ridge/ESN baselines.",
+      "substrate_candidate": "Candidate improves PR/rank/lineage diversity by a predeclared margin with sham separation and zero fallback, but does not improve MSE. This may be kept as substrate evidence only, not public usefulness evidence."
+    },
+    "question": "After the NEST fallback correction and repo-alignment cleanup, do any currently opt-in organism-development mechanisms improve prediction or a predeclared substrate metric enough to justify promotion beyond the v2.7 diagnostic snapshot?",
+    "reference_models": [
+      "v2_6_predictive_reference",
+      "organism_defaults_experimental_off",
+      "persistence_baseline",
+      "online_linear_or_lag_ridge",
+      "esn_or_random_reservoir"
+    ],
+    "required_controls_and_shams": [
+      "all experimental flags off",
+      "single-feature opt-in isolation",
+      "full-stack interaction stressor",
+      "matched-capacity or population-size sham where a lifecycle feature increases population",
+      "feature-specific ablation or shuffle for any candidate that appears beneficial",
+      "zero-fallback healthy-NEST gate before interpreting PR or MSE"
+    ],
+    "required_metrics": [
+      "mse",
+      "nmse",
+      "tail_mse",
+      "test_correlation",
+      "per_polyp_participation_ratio",
+      "per_neuron_participation_ratio",
+      "rank95_or_effective_rank",
+      "population_size_trajectory",
+      "birth_death_counts",
+      "lineage_diversity",
+      "fallback_counters",
+      "sim_run_failures",
+      "summary_read_failures",
+      "synthetic_fallbacks",
+      "resetkernel_recoveries",
+      "seed_mean_median_std_worst",
+      "rank_against_external_baselines"
+    ],
+    "run_lengths": {
+      "long_run_rule": "Only run long horizon if the 2000-step gate shows a candidate worth stress-testing.",
+      "optional_long_run_steps": [
+        8000
+      ],
+      "primary_steps": 2000
+    },
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "tasks": [
+      "sine",
+      "mackey_glass",
+      "lorenz",
+      "narma10"
+    ]
+  },
+  "criteria": [
+    {
+      "criterion": "question locked",
+      "name": "question locked",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "experimental flags exist",
+      "name": "experimental flags exist",
+      "note": "",
+      "passed": true,
+      "rule": "[]",
+      "value": []
+    },
+    {
+      "criterion": "experimental defaults off",
+      "name": "experimental defaults off",
+      "note": "",
+      "passed": true,
+      "rule": "[]",
+      "value": []
+    },
+    {
+      "criterion": "all single-feature conditions declared",
+      "name": "all single-feature conditions declared",
+      "note": "",
+      "passed": true,
+      "rule": "== 15",
+      "value": 15
+    },
+    {
+      "criterion": "v2.6 reference included",
+      "name": "v2.6 reference included",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "organism conservative baseline included",
+      "name": "organism conservative baseline included",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "external baselines included",
+      "name": "external baselines included",
+      "note": "",
+      "passed": true,
+      "rule": ">= 3",
+      "value": 3
+    },
+    {
+      "criterion": "standard tasks included",
+      "name": "standard tasks included",
+      "note": "",
+      "passed": true,
+      "rule": "contains sine, MG, Lorenz, NARMA10",
+      "value": [
+        "sine",
+        "mackey_glass",
+        "lorenz",
+        "narma10"
+      ]
+    },
+    {
+      "criterion": "three seeds locked",
+      "name": "three seeds locked",
+      "note": "",
+      "passed": true,
+      "rule": "== [42, 43, 44]",
+      "value": [
+        42,
+        43,
+        44
+      ]
+    },
+    {
+      "criterion": "zero fallback metric required",
+      "name": "zero fallback metric required",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "fallback-blocked outcome defined",
+      "name": "fallback-blocked outcome defined",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "no baseline freeze in contract",
+      "name": "no baseline freeze in contract",
+      "note": "",
+      "passed": true,
+      "rule": "no freeze claim",
+      "value": "contract_only"
+    }
+  ],
+  "criteria_passed": 12,
+  "criteria_total": 12,
+  "experimental_flags": [
+    "enable_neural_heritability",
+    "enable_stream_specialization",
+    "enable_variable_allocation",
+    "enable_task_fitness_selection",
+    "enable_operator_diversity",
+    "enable_synaptic_heritability",
+    "enable_niche_pressure",
+    "enable_signal_transport",
+    "enable_energy_economy",
+    "enable_maturation",
+    "enable_vector_readout",
+    "enable_alignment_pressure",
+    "enable_task_coupled_selection",
+    "enable_causal_credit_selection",
+    "enable_cross_polyp_coupling"
+  ],
+  "generated_at_utc": "2026-05-15T01:17:53+00:00",
+  "lifecycle_default_values": {
+    "enable_alignment_pressure": false,
+    "enable_causal_credit_selection": false,
+    "enable_cross_polyp_coupling": false,
+    "enable_energy_economy": false,
+    "enable_maturation": false,
+    "enable_neural_heritability": false,
+    "enable_niche_pressure": false,
+    "enable_operator_diversity": false,
+    "enable_signal_transport": false,
+    "enable_stream_specialization": false,
+    "enable_synaptic_heritability": false,
+    "enable_task_coupled_selection": false,
+    "enable_task_fitness_selection": false,
+    "enable_variable_allocation": false,
+    "enable_vector_readout": false
+  },
+  "outcome": "healthy_nest_rebaseline_contract_locked",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_45_20260514_healthy_nest_rebaseline_contract",
+  "runner_revision": "tier5_45_healthy_nest_rebaseline_contract_20260514_0001",
+  "status": "pass",
+  "tier": "Tier 5.45 \u2014 Healthy-NEST Rebaseline Decision Contract"
+}

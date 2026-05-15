@@ -9,9 +9,10 @@
 
 CRA v2.7 is a NEST organism-development snapshot for measuring whether
 state diversity can be generated through ecological/developmental dynamics
-rather than engineered parameter injection. It records 14 config-gated
-mechanisms spanning lifecycle evolution, operator diversity, conservation
+rather than engineered parameter injection. It records 15 config-gated
+experimental mechanism flags spanning lifecycle evolution, operator diversity, conservation
 laws, structured readout, task-coupled selection, and cross-polyp coupling.
+None are default-promoted by this snapshot.
 
 This snapshot is not a predictive-performance promotion over v2.6.
 
@@ -40,10 +41,12 @@ State diversity does not improve prediction accuracy. Persistence baseline domin
 | 5.29 | Task-fitness selection | infra | enable_task_fitness_selection (False; opt-in) |
 | 5.30 | Synaptic weight heritability | infra | enable_synaptic_heritability (False) |
 | 5.32 | Operator diversity | +4.71* | enable_operator_diversity (False; opt-in) |
+| 5.34 | Niche pressure | infra | enable_niche_pressure (False; opt-in) |
 | 5.38 | Signal transport | infra | enable_signal_transport (False; opt-in) |
 | 5.39 | Energy economy | +0.00 | enable_energy_economy (False; opt-in) |
 | 5.40 | Maturation lifecycle | +1.31* | enable_maturation (False; opt-in) |
 | 5.41 | Vector readout | infra | enable_vector_readout (False) |
+| 5.42 | Alignment pressure | infra | enable_alignment_pressure (False; opt-in) |
 | 5.42 | Task-coupled selection | infra | enable_task_coupled_selection (False; opt-in) |
 | 5.43 | Cross-polyp coupling | infra | enable_cross_polyp_coupling (False; opt-in) |
 | 5.44 | Causal credit assignment | +0.00 | enable_causal_credit_selection (False; opt-in) |

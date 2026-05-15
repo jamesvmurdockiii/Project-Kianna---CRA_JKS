@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-14T00:00:00+00:00.
+Last updated: 2026-05-15T01:15:00+00:00.
 
 Current repo root:
 
@@ -31,7 +31,7 @@ Current software baseline lines:
   promotion gate supersedes it.
 
   v2.7 is a frozen diagnostic NEST organism-development snapshot, not a
-  predictive-performance supersession of v2.6. It records 14 opt-in,
+  predictive-performance supersession of v2.6. It records 15 opt-in,
   config-gated mechanisms across lifecycle evolution, operator diversity,
   conservation laws, structured readout, task-coupled selection, and causal
   credit assignment.
@@ -48,10 +48,12 @@ Current software baseline lines:
   Diagnostic snapshot: baselines/CRA_EVIDENCE_BASELINE_v2.7.md
 
 Active cleanup state:
-  Repo-alignment remediation is active. See
-  docs/REPO_ALIGNMENT_REMEDIATION_PLAN.md. Do not start new science runs until
-  code hygiene, baseline wording, evidence registry hygiene, and governance
-  tests are aligned.
+  Repo-alignment remediation is in Gate 5. Tier 5.45 locked the healthy-NEST
+  rebaseline decision contract (12/12 criteria). The current next gate is
+  Tier 5.45a scoring: compare v2.6, conservative organism defaults, each of
+  the 15 opt-in organism-development mechanisms, the full opt-in stack, and
+  external baselines under zero-fallback NEST. Do not promote a mechanism or
+  freeze a new baseline until Tier 5.45a returns and is documented.
 
 Cleanup-era evidence tracking decision:
   Tier 5.24a and Tier 5.25+ diagnostic artifacts/scripts that are already
@@ -234,11 +236,11 @@ Current simulation (NEST organism) state:
   CHARACTERIZED BOUNDARY (final): State diversity ≠ prediction performance.
   The organism creates evolved architectural diversity that does not
   translate to orthogonal spiking activity under shared scalar input.
-  Prediction MSE is identical across all 14 mechanism configurations.
+  Prediction MSE is identical across tested mechanism configurations.
   Persistence baseline dominates Mackey-Glass (0.076 vs 0.910 MSE).
   v2.6 standalone tanh recurrence remains the predictive baseline.
 
-  CLEANUP STATUS: 14 config-gated mechanisms are present, but the default
+  CLEANUP STATUS: 15 config-gated experimental mechanism flags are present, but the default
   organism behavior must remain conservative. v2.7 is a diagnostic snapshot,
   not proof that the architecture is complete or predictively useful.
 

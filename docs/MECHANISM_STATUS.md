@@ -43,6 +43,7 @@ appropriate, and a compact regression or freeze gate.
 | Neuron model / parameter sensitivity | Tier 5.16 passed. | Robustness evidence, not a new mechanism. |
 | Continuous readout/interface repair | Tier 7.0c/7.0d diagnosed and narrowed. | Lag-only baselines explained the benchmark path, so no mechanism was promoted. |
 | v2.7 organism-development stack | Frozen as a diagnostic snapshot after healthy-NEST correction. | Does not supersede v2.6 for predictive benchmarks; true organism PR remained near ~2 and MSE did not improve across tested configurations. New lifecycle/operator/readout mechanisms are opt-in unless later promoted. |
+| Healthy-NEST rebaseline decision | Tier 5.45 passed as a contract. | Contract only; Tier 5.45a scoring must run before any v2.7 mechanism is promoted or parked with finality. |
 
 ## Planned, parked, or not-yet-proven mechanisms
 

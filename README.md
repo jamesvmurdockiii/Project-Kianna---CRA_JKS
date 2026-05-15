@@ -3,7 +3,7 @@
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
 [![Tests](https://img.shields.io/badge/tests-156%20passing-brightgreen.svg)](#validation)
-[![Evidence](https://img.shields.io/badge/canonical%20evidence-156%20bundles-blue.svg)](STUDY_EVIDENCE_INDEX.md)
+[![Evidence](https://img.shields.io/badge/canonical%20evidence-157%20bundles-blue.svg)](STUDY_EVIDENCE_INDEX.md)
 
 Coral Reef Architecture (CRA) is a neuromorphic learning research platform for
 studying local spiking plasticity, delayed credit assignment, population-level
@@ -20,7 +20,7 @@ controlled ablations, baseline comparisons, and explicit claim boundaries.
 | --- | --- |
 | Predictive software baseline | **`v2.6`** — frozen by Tier 7.7z-r0 (11/11). Edge-of-chaos recurrent dynamics: decay=0, sr=1.0, antisym=0.3 + ridge readout. PR 2→7 (3.5x), sham Δ=4.5, MSE 56% lower. Beats ESN 2.8x; lag-ridge still wins on NARMA10. v2.5 planning mechanism carried forward. |
 | Organism-development diagnostic snapshot | **`v2.7`** — frozen as a NEST diagnostic snapshot only. Healthy-NEST correction shows true organism PR near `1.15-2.05` at 2000 steps and no MSE improvement across tested mechanism configurations. It does **not** supersede `v2.6` as the predictive benchmark baseline. Experimental lifecycle/operator/readout mechanisms are opt-in unless promoted by a later clean gate. |
-| Current repository state | Repo-alignment remediation is active. See [`docs/REPO_ALIGNMENT_REMEDIATION_PLAN.md`](docs/REPO_ALIGNMENT_REMEDIATION_PLAN.md). New science runs are paused until source-of-truth docs, config defaults, evidence status, and governance tests are aligned. |
+| Current repository state | Repo-alignment remediation is in Gate 5. Tier 5.45 locked the healthy-NEST rebaseline contract; Tier 5.45a scoring is the next decision gate before any new mechanism promotion or paper claim. |
 | Native hardware baseline | `CRA_NATIVE_SCALE_BASELINE_v0.5`, frozen by Tier 4.32h after the 4.32a replicated single-chip stress, 4.32d two-chip communication smoke, 4.32e two-chip learning micro-task, and 4.32g two-chip lifecycle traffic/resource smoke all passed with preserved artifacts and bounded claim boundaries. |
 | Latest native-scale closeout | Tier 4.32h passed locally from [`controlled_test_output/tier4_32h_20260508_native_scale_evidence_closeout`](controlled_test_output/tier4_32h_20260508_native_scale_evidence_closeout): `64/64` freeze criteria passed, `CRA_NATIVE_SCALE_BASELINE_v0.5` files were generated under [`baselines/`](baselines), and the next project phase is explicitly software usefulness/baselines before broad new native migration. |
 | Latest lifecycle task bridge | Tier 4.30g local contract passed `9/9`, then Tier 4.30g-hw passed on real SpiNNaker: enabled lifecycle bridge gate `1`, controls bridge gate `0`, enabled reference tail accuracy `1.0`, control reference tail accuracy `0.375`, compact lifecycle payload `68`, and zero stale replies/timeouts. |
@@ -107,8 +107,8 @@ controlled ablations, baseline comparisons, and explicit claim boundaries.
 | Latest minimal-dose mechanism check | Tier 5.20c passed as a harness from [`controlled_test_output/tier5_20c_20260508_minimal_resonant_polyp_diagnostic`](controlled_test_output/tier5_20c_20260508_minimal_resonant_polyp_diagnostic), but 14 LIF / 2 resonant was **not promoted**: all-task geomean MSE `0.2777975100580056` versus v2.3 `0.2610804850928049`, zero task wins, one material regression, and zero sham-separated tasks. |
 | Latest resonant-heavy mechanism check | Tier 5.20d passed as a harness from [`controlled_test_output/tier5_20d_20260508_resonant_heavy_polyp_diagnostic`](controlled_test_output/tier5_20d_20260508_resonant_heavy_polyp_diagnostic), but 4 LIF / 12 resonant was **not promoted**: all-task geomean MSE `0.29289224348599796` versus v2.3 `0.2610804850928049`, three task wins, two material regressions, and two sham-separated tasks. The signal is real enough to record, but not safe enough to integrate. |
 | Latest near-full resonant check | Tier 5.20e passed as a harness from [`controlled_test_output/tier5_20e_20260508_near_full_resonant_polyp_diagnostic`](controlled_test_output/tier5_20e_20260508_near_full_resonant_polyp_diagnostic), but 2 LIF / 14 resonant was **not promoted**: all-task geomean MSE `0.30374770797663714` versus v2.3 `0.2610804850928049`, three task wins, three material regressions, and two sham-separated tasks. This closes the current resonant branch dose sweep; resonant branches remain parked. |
-| Active next gate | Repo-alignment remediation: see [`docs/REPO_ALIGNMENT_REMEDIATION_PLAN.md`](docs/REPO_ALIGNMENT_REMEDIATION_PLAN.md). After cleanup and validation, resume from the documented low-rank/usefulness decision point with experimental mechanisms opt-in and claims bounded by clean evidence. |
-| Canonical registry | 156 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
+| Active next gate | Tier 5.45a healthy-NEST rebaseline scoring: compare `v2.6`, conservative organism defaults, each of the 15 opt-in organism mechanisms, the full stack, and external baselines under zero-fallback NEST. |
+| Canonical registry | 157 evidence bundles, 0 missing expected artifacts, 0 failed criteria. |
 | Validation suite | 156 pytest tests plus registry, paper-table, and repository-audit generation. |
 
 ## What CRA Implements
