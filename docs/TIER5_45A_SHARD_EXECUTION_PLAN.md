@@ -91,6 +91,12 @@ seconds real time before completing one full organism scoring cell. This is not
 a mechanism result and must not be cited as evidence. It does show that a blind
 monolithic local Tier 5.45a run is operationally inappropriate.
 
+A redirected 128-step local health probe completed in `41.884` seconds with
+`10/10` criteria, zero synthetic fallback, zero `sim.run` failures, and zero
+summary-read failures. This confirms runner plumbing after console redirection,
+but it is still noncanonical and does not replace the full 2000-step merged
+gate.
+
 ## Canonical Shard Strategy
 
 Do not run the full matrix as one blind monolith unless runtime has been proven
