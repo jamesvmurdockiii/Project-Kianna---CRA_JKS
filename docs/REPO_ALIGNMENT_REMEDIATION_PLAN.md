@@ -101,8 +101,9 @@ Acceptance criteria:
 
 ### Gate 5 - Clean Rebaseline Decision
 
-Status: contract locked by Tier 5.45 on 2026-05-15. Tier 5.45a scoring is the
-next required gate before any new mechanism promotion, baseline freeze, or
+Status: contract locked by Tier 5.45 on 2026-05-15. The Tier 5.45a scoring
+runner is implemented and smoke-validated; the full Tier 5.45a scoring run is
+the next required gate before any new mechanism promotion, baseline freeze, or
 paper-facing claim.
 
 Acceptance criteria:
@@ -126,8 +127,9 @@ Acceptance criteria:
 7. Track small Tier 5.24a/Tier 5.25+ diagnostic artifacts as noncanonical
    audit history; do not promote them without a fresh registry or promotion
    gate.
-8. Run Tier 5.45a healthy-NEST rebaseline scoring from the locked Tier 5.45
-   contract.
+8. Run full Tier 5.45a healthy-NEST rebaseline scoring from the locked Tier
+   5.45 contract. Use `make tier5-45a-smoke` only to validate runner plumbing;
+   smoke output is not canonical evidence.
 9. Resume science from a documented, clean baseline or a documented no-promotion
    decision.
 

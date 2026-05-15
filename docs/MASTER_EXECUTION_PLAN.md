@@ -35,8 +35,9 @@ v2.7 = diagnostic NEST organism-development snapshot only.
        MSE did not improve across tested mechanism configurations.
 
 Active execution mode = repo-alignment remediation Gate 5.
-       Tier 5.45 locked the healthy-NEST rebaseline contract. The next
-       required gate is Tier 5.45a scoring before any new mechanism promotion,
+       Tier 5.45 locked the healthy-NEST rebaseline contract. The Tier 5.45a
+       scoring runner is implemented and smoke-validated. The next required
+       gate is full Tier 5.45a scoring before any new mechanism promotion,
        baseline freeze, or paper-facing claim.
 ```
 

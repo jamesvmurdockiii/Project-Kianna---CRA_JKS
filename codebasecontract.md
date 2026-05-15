@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-15T01:15:00+00:00.
+Last updated: 2026-05-15T01:35:00+00:00.
 
 Current repo root:
 
@@ -49,11 +49,13 @@ Current software baseline lines:
 
 Active cleanup state:
   Repo-alignment remediation is in Gate 5. Tier 5.45 locked the healthy-NEST
-  rebaseline decision contract (12/12 criteria). The current next gate is
-  Tier 5.45a scoring: compare v2.6, conservative organism defaults, each of
-  the 15 opt-in organism-development mechanisms, the full opt-in stack, and
-  external baselines under zero-fallback NEST. Do not promote a mechanism or
-  freeze a new baseline until Tier 5.45a returns and is documented.
+  rebaseline decision contract (12/12 criteria). The Tier 5.45a scoring runner
+  is implemented and smoke-validated with output directed to /tmp only. The
+  current next gate is the full Tier 5.45a scoring run: compare v2.6,
+  conservative organism defaults, each of the 15 opt-in organism-development
+  mechanisms, the full opt-in stack, and external baselines under zero-fallback
+  NEST. Do not promote a mechanism or freeze a new baseline until full Tier
+  5.45a returns, is ingested or registered as appropriate, and is documented.
 
 Cleanup-era evidence tracking decision:
   Tier 5.24a and Tier 5.25+ diagnostic artifacts/scripts that are already

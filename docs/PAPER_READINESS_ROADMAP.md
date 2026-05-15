@@ -7,8 +7,9 @@ Last updated: 2026-05-14
 Repo-alignment remediation is currently in Gate 5. See
 `docs/REPO_ALIGNMENT_REMEDIATION_PLAN.md`.
 
-Tier 5.45 locked the healthy-NEST rebaseline contract. Tier 5.45a scoring must
-run before any new organism mechanism promotion, baseline freeze, or paper-facing
+Tier 5.45 locked the healthy-NEST rebaseline contract. The Tier 5.45a scoring
+runner is implemented and smoke-validated, but full Tier 5.45a scoring must run
+before any new organism mechanism promotion, baseline freeze, or paper-facing
 claim. The current predictive benchmark baseline remains `v2.6`; `v2.7` is a
 diagnostic NEST organism-development snapshot only and does not supersede `v2.6`
 for predictive usefulness.

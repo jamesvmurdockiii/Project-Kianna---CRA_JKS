@@ -9,8 +9,10 @@ the failed test before moving forward.
 ## Active Remediation Note
 
 As of 2026-05-15, repo-alignment remediation is in Gate 5. Tier 5.45 locked
-the healthy-NEST rebaseline contract; Tier 5.45a scoring is the next required
-gate before any new mechanism promotion, baseline freeze, or paper-facing claim.
+the healthy-NEST rebaseline contract; the Tier 5.45a scoring runner is
+implemented and smoke-validated, and the full Tier 5.45a scoring run is the
+next required gate before any new mechanism promotion, baseline freeze, or
+paper-facing claim.
 `v2.6` remains the predictive benchmark baseline; `v2.7` is a diagnostic NEST
 organism-development snapshot only.
 
