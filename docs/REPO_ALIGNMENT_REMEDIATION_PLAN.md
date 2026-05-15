@@ -102,9 +102,12 @@ Acceptance criteria:
 ### Gate 5 - Clean Rebaseline Decision
 
 Status: contract locked by Tier 5.45 on 2026-05-15. The Tier 5.45a scoring
-runner is implemented and smoke-validated; the full Tier 5.45a scoring run is
-the next required gate before any new mechanism promotion, baseline freeze, or
-paper-facing claim.
+runner is implemented and smoke-validated, and the resumable shard orchestrator
+is committed. The first canonical shard cell
+`organism_defaults_experimental_off / sine / seed 42` passed 10/10 with zero
+fallback, zero `sim.run` failures, and zero summary-read failures. The full
+Tier 5.45a scoring run remains the next required gate before any new mechanism
+promotion, baseline freeze, or paper-facing claim.
 
 Acceptance criteria:
 
@@ -127,8 +130,10 @@ Acceptance criteria:
 7. Track small Tier 5.24a/Tier 5.25+ diagnostic artifacts as noncanonical
    audit history; do not promote them without a fresh registry or promotion
    gate.
-8. Run full Tier 5.45a healthy-NEST rebaseline scoring from the locked Tier
-   5.45 contract. Use `make tier5-45a-smoke` only to validate runner plumbing;
+8. Continue full Tier 5.45a healthy-NEST rebaseline scoring from the locked
+   Tier 5.45 contract. Use `make tier5-45a-shard-run-next` for the next pending
+   condition/task/seed cell and `make tier5-45a-shard-merge` only after all 204
+   cells complete. Use `make tier5-45a-smoke` only to validate runner plumbing;
    smoke output is not canonical evidence. Follow
    `docs/TIER5_45A_SHARD_EXECUTION_PLAN.md` for condition/task/seed sharding,
    merge mode, pass/fail rules, and promotion boundaries.

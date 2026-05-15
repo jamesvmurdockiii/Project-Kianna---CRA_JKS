@@ -118,6 +118,22 @@ runner, marked the cell complete from generated artifacts, and merged the
 complete one-cell matrix. This is workflow validation only, not Tier 5.45a
 evidence.
 
+Current canonical cell progress as of 2026-05-15:
+
+```text
+completed_cells = 1 / 204
+completed = organism_defaults_experimental_off / sine / seed 42
+runtime_seconds = 439.271
+criteria = 10/10
+synthetic_fallbacks = 0
+sim_run_failures = 0
+summary_read_failures = 0
+next_pending = organism_defaults_experimental_off / sine / seed 43
+```
+
+This cell is a valid shard artifact for the eventual merged Tier 5.45a gate, but
+it is not interpretable by itself as a mechanism decision.
+
 ## Canonical Shard Strategy
 
 Do not run the full matrix as one blind monolith unless runtime has been proven
