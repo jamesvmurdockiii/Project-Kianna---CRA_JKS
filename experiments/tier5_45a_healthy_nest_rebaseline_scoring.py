@@ -642,26 +642,51 @@ def write_report(path: Path, payload: dict[str, Any]) -> None:
     path.write_text("\n".join(lines), encoding="utf-8")
 
 
-def run(args: argparse.Namespace) -> dict[str, Any]:
-    output_dir = Path(args.output_dir).resolve()
-    output_dir.mkdir(parents=True, exist_ok=True)
-    tasks = [t.strip() for t in parse_csv(args.tasks) if t.strip()]
-    seeds = sorted(set(parse_seeds(args)))
-    conditions = organism_condition_names(args.conditions)
-    reference_models = ["v2_6_predictive_reference", "persistence_baseline", "online_linear_or_lag_ridge", "esn_or_random_reservoir"]
-    started = time.perf_counter()
+def reference_model_names() -> list[str]:
+    return [
+        "v2_6_predictive_reference",
+        "persistence_baseline",
+        "online_linear_or_lag_ridge",
+        "esn_or_random_reservoir",
+    ]
+
+
+def parse_csv_value(value: str) -> Any:
+    if value == "":
+        return None
+    for caster in (int, float):
+        try:
+            return caster(value)
+        except (TypeError, ValueError):
+            pass
+    return value
+
+
+def read_seed_run_rows(path_or_dir: Path) -> list[dict[str, Any]]:
+    path = path_or_dir
+    if path.is_dir():
+        path = path / "tier5_45a_seed_runs.csv"
     rows: list[dict[str, Any]] = []
+    with path.open("r", newline="", encoding="utf-8") as handle:
+        reader = csv.DictReader(handle)
+        for raw in reader:
+            row = {key: parse_csv_value(value) for key, value in raw.items()}
+            rows.append(row)
+    return rows
 
-    for seed in seeds:
-        for task_name in tasks:
-            task = build_task(task_name, int(args.steps), seed, int(args.horizon))
-            rows.append(score_v26_reference(task, seed, int(args.hidden)))
-            rows.append(score_sequence_baseline(task, "persistence_baseline", seed, args))
-            rows.append(score_sequence_baseline(task, "online_linear_or_lag_ridge", seed, args))
-            rows.append(score_sequence_baseline(task, "esn_or_random_reservoir", seed, args))
-            for condition in conditions:
-                rows.append(score_organism_condition(task, condition, seed, args))
 
+def write_scoring_bundle(
+    *,
+    output_dir: Path,
+    rows: list[dict[str, Any]],
+    tasks: list[str],
+    seeds: list[int],
+    conditions: list[str],
+    args: argparse.Namespace,
+    started: float,
+    mode: str,
+) -> dict[str, Any]:
+    reference_models = reference_model_names()
     task_summary = model_task_summary(rows)
     aggregate_summary = aggregate_by_model(rows, tasks, seeds)
     outcome, decisions = decide_mechanisms(aggregate_summary, task_summary, args)
@@ -672,11 +697,16 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     required_models = set(reference_models + conditions)
     scored_models = {str(r["model"]) for r in rows if r.get("status") == "pass"}
     expected_cells = len(tasks) * len(seeds) * len(required_models)
+    unique_cells = {
+        (str(r.get("model")), str(r.get("task")), int(r.get("seed")))
+        for r in rows
+        if r.get("model") in required_models and r.get("task") in tasks and r.get("seed") in seeds
+    }
     criteria = [
         criterion("Tier 5.45 contract exists", CONTRACT_545.exists(), "true", CONTRACT_545.exists()),
         criterion("all requested tasks known", tasks, "subset of sine/MG/Lorenz/NARMA10", all(t in {"sine", "mackey_glass", "lorenz", "narma10"} for t in tasks)),
         criterion("all required models scored", sorted(required_models - scored_models), "[]", not (required_models - scored_models)),
-        criterion("expected model/task/seed cells", len(rows), f"== {expected_cells}", len(rows) == expected_cells),
+        criterion("expected unique model/task/seed cells", len(unique_cells), f"== {expected_cells}", len(unique_cells) == expected_cells),
         criterion("organism synthetic fallbacks zero", fallback_sum, "== 0", fallback_sum == 0),
         criterion("organism sim.run failures zero", sim_fail_sum, "== 0", sim_fail_sum == 0),
         criterion("organism summary read failures zero", read_fail_sum, "== 0", read_fail_sum == 0),
@@ -695,6 +725,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         "criteria_passed": sum(1 for c in criteria if c["passed"]),
         "criteria_total": len(criteria),
         "output_dir": str(output_dir),
+        "mode": mode,
         "tasks": tasks,
         "seeds": seeds,
         "conditions": conditions,
@@ -747,9 +778,68 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     return payload
 
 
+def run(args: argparse.Namespace) -> dict[str, Any]:
+    output_dir = Path(args.output_dir).resolve()
+    output_dir.mkdir(parents=True, exist_ok=True)
+    tasks = [t.strip() for t in parse_csv(args.tasks) if t.strip()]
+    seeds = sorted(set(parse_seeds(args)))
+    conditions = organism_condition_names(args.conditions)
+    started = time.perf_counter()
+    rows: list[dict[str, Any]] = []
+
+    for seed in seeds:
+        for task_name in tasks:
+            task = build_task(task_name, int(args.steps), seed, int(args.horizon))
+            rows.append(score_v26_reference(task, seed, int(args.hidden)))
+            rows.append(score_sequence_baseline(task, "persistence_baseline", seed, args))
+            rows.append(score_sequence_baseline(task, "online_linear_or_lag_ridge", seed, args))
+            rows.append(score_sequence_baseline(task, "esn_or_random_reservoir", seed, args))
+            for condition in conditions:
+                rows.append(score_organism_condition(task, condition, seed, args))
+
+    return write_scoring_bundle(
+        output_dir=output_dir,
+        rows=rows,
+        tasks=tasks,
+        seeds=seeds,
+        conditions=conditions,
+        args=args,
+        started=started,
+        mode="direct",
+    )
+
+
+def run_merge(args: argparse.Namespace) -> dict[str, Any]:
+    output_dir = Path(args.output_dir).resolve()
+    output_dir.mkdir(parents=True, exist_ok=True)
+    tasks = [t.strip() for t in parse_csv(args.tasks) if t.strip()]
+    seeds = sorted(set(parse_seeds(args)))
+    conditions = organism_condition_names(args.conditions)
+    started = time.perf_counter()
+    rows_by_cell: dict[tuple[str, str, int], dict[str, Any]] = {}
+    for item in parse_csv(args.merge_input_dirs):
+        for row in read_seed_run_rows(Path(item).expanduser().resolve()):
+            try:
+                key = (str(row["model"]), str(row["task"]), int(row["seed"]))
+            except Exception:
+                continue
+            rows_by_cell.setdefault(key, row)
+    return write_scoring_bundle(
+        output_dir=output_dir,
+        rows=list(rows_by_cell.values()),
+        tasks=tasks,
+        seeds=seeds,
+        conditions=conditions,
+        args=args,
+        started=started,
+        mode="merge",
+    )
+
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(description=TIER)
     p.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
+    p.add_argument("--merge-input-dirs", default="")
     p.add_argument("--tasks", default=DEFAULT_TASKS)
     p.add_argument("--seeds", default=DEFAULT_SEEDS)
     p.add_argument("--conditions", default=DEFAULT_CONDITIONS)
@@ -789,7 +879,7 @@ def main() -> int:
         args.initial_population = min(int(args.initial_population), 4)
         args.max_population = min(int(args.max_population), 8)
         args.runtime_ms_per_step = 100.0
-    payload = run(args)
+    payload = run_merge(args) if args.merge_input_dirs else run(args)
     print(json.dumps(json_safe({
         "status": payload["status"],
         "outcome": payload["outcome"],

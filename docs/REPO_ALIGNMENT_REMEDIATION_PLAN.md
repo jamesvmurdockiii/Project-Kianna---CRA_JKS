@@ -129,7 +129,9 @@ Acceptance criteria:
    gate.
 8. Run full Tier 5.45a healthy-NEST rebaseline scoring from the locked Tier
    5.45 contract. Use `make tier5-45a-smoke` only to validate runner plumbing;
-   smoke output is not canonical evidence.
+   smoke output is not canonical evidence. The full matrix may be run as
+   sharded condition/task/seed outputs and combined with the runner's
+   `--merge-input-dirs` mode.
 9. Resume science from a documented, clean baseline or a documented no-promotion
    decision.
 
