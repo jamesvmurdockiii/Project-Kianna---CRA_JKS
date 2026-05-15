@@ -104,10 +104,19 @@ gate.
 After revision `0002`, the same redirected 128-step health probe completed in
 `21.413` seconds with `10/10` criteria and the same zero-failure diagnostics.
 
+A full 2000-step `sine` / seed `42` / `defaults` cell under revision `0002`
+completed in `420.115` seconds with `10/10` criteria, zero synthetic fallback,
+zero `sim.run` failures, and zero summary-read failures. This confirms the
+repaired runner is valid for full-length scoring, but it also means local
+full-matrix execution should be scheduled as small resumable shards.
+
 ## Canonical Shard Strategy
 
 Do not run the full matrix as one blind monolith unless runtime has been proven
-acceptable. Prefer one shard per candidate condition, then merge.
+acceptable. On a local workstation, prefer condition/task/seed shards because
+one full 2000-step organism cell currently takes about seven minutes. On a
+larger batch system, condition-level shards are acceptable if hour-scale jobs
+are reliable.
 
 Example condition shard:
 
@@ -119,6 +128,19 @@ python3 experiments/tier5_45a_healthy_nest_rebaseline_scoring.py \
   --steps 2000 \
   --runtime-ms-per-step 100 \
   --output-dir controlled_test_output/tier5_45a_20260515_shard_enable_neural_heritability
+```
+
+Example local cell shard:
+
+```bash
+python3 experiments/tier5_45a_healthy_nest_rebaseline_scoring.py \
+  --conditions enable_neural_heritability \
+  --tasks sine \
+  --seeds 42 \
+  --steps 2000 \
+  --runtime-ms-per-step 100 \
+  --output-dir controlled_test_output/tier5_45a_20260515_cell_enable_neural_heritability_sine_seed42 \
+  > /tmp/tier5_45a_enable_neural_heritability_sine_seed42.log 2>&1
 ```
 
 Run one shard for each candidate condition plus `defaults` and `full_stack`:
@@ -146,8 +168,10 @@ full_stack
 The runner repeats reference models in every shard. That is acceptable because
 merge mode de-duplicates by `(model, task, seed)`.
 
-If condition shards are still too slow, split further by task or seed. Merge mode
-accepts any set of shard directories as long as the final row set is complete.
+Merge mode accepts any set of shard directories as long as the final row set is
+complete, so mixing condition shards and smaller cell shards is allowed. If a
+large shard fails, rerun only the missing condition/task/seed cells and include
+those replacement dirs in the merge input.
 
 For long local shards, redirect console output to `/tmp` or another ignored log
 path. The generated result bundle is the artifact of record, not the console
