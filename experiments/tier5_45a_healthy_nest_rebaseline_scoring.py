@@ -50,7 +50,7 @@ from tier7_7z_r1_standardized_benchmark import compute_features, ridge  # noqa: 
 
 
 TIER = "Tier 5.45a — Healthy-NEST Rebaseline Scoring Gate"
-RUNNER_REVISION = "tier5_45a_healthy_nest_rebaseline_scoring_20260515_0001"
+RUNNER_REVISION = "tier5_45a_healthy_nest_rebaseline_scoring_20260515_0002"
 DEFAULT_OUTPUT_DIR = CONTROLLED / "tier5_45a_20260515_healthy_nest_rebaseline_scoring"
 CONTRACT_545 = CONTROLLED / "tier5_45_20260514_healthy_nest_rebaseline_contract" / "tier5_45_results.json"
 
@@ -77,6 +77,7 @@ DEFAULT_SEEDS = "42,43,44"
 DEFAULT_CONDITIONS = "all"
 DEFAULT_STEPS = 2000
 DEFAULT_HORIZON = 8
+DEFAULT_RUNTIME_MS_PER_STEP = 100.0
 
 
 def utc_now() -> str:
@@ -337,6 +338,7 @@ def score_organism_condition(task: SequenceTask, condition: str, seed: int, args
     try:
         organism.initialize(stream_keys=[task.name])
         observed = np.asarray(task.observed, dtype=float)
+        runtime_dt_seconds = float(args.runtime_ms_per_step) / 1000.0
         for step, (obs, target) in enumerate(zip(task.observed, task.target)):
             observation = Observation(
                 stream_id=task.name,
@@ -352,7 +354,7 @@ def score_organism_condition(task: SequenceTask, condition: str, seed: int, args
                     "lag2": float(observed[step - 2]) if step >= 2 else 0.0,
                 },
             )
-            metrics = organism.train_adapter_step(adapter, observation, dt_seconds=1.0)
+            metrics = organism.train_adapter_step(adapter, observation, dt_seconds=runtime_dt_seconds)
             predictions.append(float(metrics.colony_prediction))
             per_neuron.append(organism.get_per_neuron_spike_vector())
             population_history.append(int(metrics.n_alive))
@@ -850,7 +852,7 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--max-population", type=int, default=32)
     p.add_argument("--enable-lifecycle", action=argparse.BooleanOptionalAction, default=True)
     p.add_argument("--sync-interval-steps", type=int, default=0)
-    p.add_argument("--runtime-ms-per-step", type=float, default=1000.0)
+    p.add_argument("--runtime-ms-per-step", type=float, default=DEFAULT_RUNTIME_MS_PER_STEP)
     p.add_argument("--readout-lr", type=float, default=0.20)
     p.add_argument("--delayed-readout-lr", type=float, default=0.20)
     p.add_argument("--hidden", type=int, default=128)

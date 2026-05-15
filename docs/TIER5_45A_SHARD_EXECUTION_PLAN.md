@@ -60,6 +60,7 @@ Required tasks and seeds:
 - seeds: `42,43,44`
 - default steps: `2000`
 - backend: `nest`
+- runtime cadence: `100 ms` of NEST simulation per CRA macro-step
 
 ## Noncanonical Smoke And Runtime Probe
 
@@ -80,22 +81,28 @@ python3 experiments/tier5_45a_healthy_nest_rebaseline_scoring.py \
   --seeds 42 \
   --conditions defaults \
   --steps 2000 \
+  --runtime-ms-per-step 100 \
   --output-dir /tmp/cra_tier5_45a_runtime_probe_sine_seed42_defaults_2000
 ```
 
 The probe is operational only. It does not replace the full merged gate.
 
-Observed local runtime note from 2026-05-15: the representative 2000-step
+Observed local runtime note from 2026-05-15 before runner revision
+`tier5_45a_healthy_nest_rebaseline_scoring_20260515_0002`: the representative 2000-step
 `sine` / seed `42` / `defaults` organism probe was interrupted after `834.71`
 seconds real time before completing one full organism scoring cell. This is not
-a mechanism result and must not be cited as evidence. It does show that a blind
-monolithic local Tier 5.45a run is operationally inappropriate.
+a mechanism result and must not be cited as evidence. It exposed that the runner
+was not passing `--runtime-ms-per-step` through to `train_adapter_step()`.
+Revision `0002` repairs this by using `dt_seconds = runtime_ms_per_step / 1000`.
 
 A redirected 128-step local health probe completed in `41.884` seconds with
 `10/10` criteria, zero synthetic fallback, zero `sim.run` failures, and zero
 summary-read failures. This confirms runner plumbing after console redirection,
 but it is still noncanonical and does not replace the full 2000-step merged
 gate.
+
+After revision `0002`, the same redirected 128-step health probe completed in
+`21.413` seconds with `10/10` criteria and the same zero-failure diagnostics.
 
 ## Canonical Shard Strategy
 
@@ -110,6 +117,7 @@ python3 experiments/tier5_45a_healthy_nest_rebaseline_scoring.py \
   --tasks sine,mackey_glass,lorenz,narma10 \
   --seeds 42,43,44 \
   --steps 2000 \
+  --runtime-ms-per-step 100 \
   --output-dir controlled_test_output/tier5_45a_20260515_shard_enable_neural_heritability
 ```
 
@@ -175,6 +183,7 @@ python3 experiments/tier5_45a_healthy_nest_rebaseline_scoring.py \
   --tasks sine,mackey_glass,lorenz,narma10 \
   --seeds 42,43,44 \
   --steps 2000 \
+  --runtime-ms-per-step 100 \
   --output-dir controlled_test_output/tier5_45a_20260515_healthy_nest_rebaseline_scoring
 ```
 

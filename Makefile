@@ -715,7 +715,7 @@ tier5-45:
 	python3 experiments/tier5_45_healthy_nest_rebaseline_contract.py
 
 tier5-45a:
-	python3 experiments/tier5_45a_healthy_nest_rebaseline_scoring.py
+	python3 experiments/tier5_45a_healthy_nest_rebaseline_scoring.py --runtime-ms-per-step 100
 
 tier5-45a-smoke:
 	python3 experiments/tier5_45a_healthy_nest_rebaseline_scoring.py --smoke

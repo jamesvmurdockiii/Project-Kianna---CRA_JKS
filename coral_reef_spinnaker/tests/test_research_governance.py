@@ -7,6 +7,9 @@ creep back in.
 """
 
 from pathlib import Path
+from types import SimpleNamespace
+
+import numpy as np
 
 from coral_reef_spinnaker.config import LifecycleConfig
 
@@ -60,3 +63,78 @@ def test_v27_is_diagnostic_not_predictive_supersession():
     assert "does not supersede v2.6" in baseline
     assert "diagnostic" in baseline.lower()
     assert "not a predictive-performance promotion" in baseline
+
+
+def test_tier5_45a_adapter_dt_uses_runtime_ms_per_step(monkeypatch):
+    """The healthy-NEST gate must not silently ignore its runtime cadence knob."""
+
+    import experiments.tier5_45a_healthy_nest_rebaseline_scoring as gate
+
+    captured_dt: list[float] = []
+
+    class FakeMetrics:
+        colony_prediction = 0.0
+        n_alive = 1
+        births_this_step = 0
+        deaths_this_step = 0
+
+        def to_dict(self):
+            return {"fake": True}
+
+    class FakeOrganism:
+        def __init__(self, *args, **kwargs):
+            pass
+
+        def initialize(self, stream_keys):
+            assert stream_keys == ["sine"]
+
+        def train_adapter_step(self, adapter, observation, dt_seconds):
+            captured_dt.append(float(dt_seconds))
+            return FakeMetrics()
+
+        def get_per_neuron_spike_vector(self):
+            return [1, 0, 1]
+
+        def backend_diagnostics(self):
+            return {
+                "backend": "fake_nest",
+                "synthetic_fallbacks": 0,
+                "sim_run_failures": 0,
+                "summary_read_failures": 0,
+            }
+
+        def shutdown(self):
+            pass
+
+    monkeypatch.setattr(gate, "Organism", FakeOrganism)
+    monkeypatch.setattr(gate, "load_backend", lambda backend: (object(), backend))
+    monkeypatch.setattr(gate, "setup_backend", lambda sim, backend_name: None)
+    monkeypatch.setattr(gate, "end_backend", lambda sim: None)
+
+    observed = np.linspace(0.0, 1.0, 16, dtype=float)
+    task = gate.SequenceTask(
+        name="sine",
+        display_name="sine",
+        observed=observed,
+        target=observed.copy(),
+        train_end=8,
+        horizon=1,
+        metadata={},
+    )
+    args = SimpleNamespace(
+        backend="nest",
+        initial_population=1,
+        max_population=1,
+        enable_lifecycle=False,
+        steps=16,
+        readout_lr=0.2,
+        delayed_readout_lr=0.2,
+        horizon=1,
+        sync_interval_steps=0,
+        runtime_ms_per_step=25.0,
+    )
+
+    row = gate.score_organism_condition(task, "organism_defaults_experimental_off", 42, args)
+
+    assert row["status"] == "pass"
+    assert captured_dt == [0.025] * 16
