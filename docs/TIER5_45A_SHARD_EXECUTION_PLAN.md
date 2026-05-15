@@ -15,6 +15,7 @@ Source files:
 
 - `experiments/tier5_45_healthy_nest_rebaseline_contract.py`
 - `experiments/tier5_45a_healthy_nest_rebaseline_scoring.py`
+- `experiments/tier5_45a_shard_orchestrator.py`
 - `docs/REPO_ALIGNMENT_REMEDIATION_PLAN.md`
 - `docs/MASTER_EXECUTION_PLAN.md`
 - `codebasecontract.md`
@@ -110,6 +111,13 @@ zero `sim.run` failures, and zero summary-read failures. This confirms the
 repaired runner is valid for full-length scoring, but it also means local
 full-matrix execution should be scheduled as small resumable shards.
 
+The shard orchestrator was smoke-validated on 2026-05-15 with a tiny `/tmp`
+cell matrix (`defaults`, `sine`, seed `42`, `16` steps, `20 ms` runtime cadence,
+population `2`). It successfully detected the pending cell, ran the scoring
+runner, marked the cell complete from generated artifacts, and merged the
+complete one-cell matrix. This is workflow validation only, not Tier 5.45a
+evidence.
+
 ## Canonical Shard Strategy
 
 Do not run the full matrix as one blind monolith unless runtime has been proven
@@ -117,6 +125,47 @@ acceptable. On a local workstation, prefer condition/task/seed shards because
 one full 2000-step organism cell currently takes about seven minutes. On a
 larger batch system, condition-level shards are acceptable if hour-scale jobs
 are reliable.
+
+The preferred local workflow is the shard orchestrator. It tracks completed
+condition/task/seed cells, reuses the locked scoring runner for each cell,
+redirects long console streams to `/tmp`, and refuses final merge while the
+matrix is incomplete unless explicitly told to do a diagnostic incomplete merge.
+
+Check status:
+
+```bash
+make tier5-45a-shard-status
+```
+
+Preview the next cell without running it:
+
+```bash
+make tier5-45a-shard-plan
+```
+
+Run the next pending cell:
+
+```bash
+make tier5-45a-shard-run-next
+```
+
+Merge after all cells are complete:
+
+```bash
+make tier5-45a-shard-merge
+```
+
+Equivalent direct commands:
+
+```bash
+python3 experiments/tier5_45a_shard_orchestrator.py --mode status
+python3 experiments/tier5_45a_shard_orchestrator.py --mode plan --max-cells 1
+python3 experiments/tier5_45a_shard_orchestrator.py --mode run-next --max-cells 1
+python3 experiments/tier5_45a_shard_orchestrator.py --mode merge
+```
+
+Do not edit shard outputs by hand. If a cell fails or is incomplete, rerun that
+same cell through the orchestrator so the final merge remains reproducible.
 
 Example condition shard:
 
@@ -162,7 +211,7 @@ enable_alignment_pressure
 enable_task_coupled_selection
 enable_causal_credit_selection
 enable_cross_polyp_coupling
-full_stack
+full_opt_in_stack
 ```
 
 The runner repeats reference models in every shard. That is acceptable because
@@ -182,6 +231,14 @@ stream.
 After all shards finish, merge them into the final Tier 5.45a bundle:
 
 ```bash
+make tier5-45a-shard-merge
+```
+
+The manual merge form is still documented below for reviewability and for cases
+where a batch system produced condition-level shard directories outside the
+orchestrator.
+
+```bash
 MERGE_INPUT_DIRS="\
 controlled_test_output/tier5_45a_20260515_shard_defaults,\
 controlled_test_output/tier5_45a_20260515_shard_enable_neural_heritability,\
@@ -199,7 +256,7 @@ controlled_test_output/tier5_45a_20260515_shard_enable_alignment_pressure,\
 controlled_test_output/tier5_45a_20260515_shard_enable_task_coupled_selection,\
 controlled_test_output/tier5_45a_20260515_shard_enable_causal_credit_selection,\
 controlled_test_output/tier5_45a_20260515_shard_enable_cross_polyp_coupling,\
-controlled_test_output/tier5_45a_20260515_shard_full_stack"
+controlled_test_output/tier5_45a_20260515_shard_full_opt_in_stack"
 
 python3 experiments/tier5_45a_healthy_nest_rebaseline_scoring.py \
   --merge-input-dirs "$MERGE_INPUT_DIRS" \

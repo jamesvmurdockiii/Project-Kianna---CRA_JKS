@@ -138,3 +138,38 @@ def test_tier5_45a_adapter_dt_uses_runtime_ms_per_step(monkeypatch):
 
     assert row["status"] == "pass"
     assert captured_dt == [0.025] * 16
+
+
+def test_tier5_45a_shard_orchestrator_detects_complete_cell(tmp_path):
+    """Shard status must depend on generated artifacts, not directory presence."""
+
+    import experiments.tier5_45a_shard_orchestrator as orchestrator
+
+    cell = orchestrator.Cell("organism_defaults_experimental_off", "sine", 42)
+    output_dir = orchestrator.cell_dir(tmp_path, cell)
+    output_dir.mkdir(parents=True)
+    (output_dir / "tier5_45a_results.json").write_text('{"status": "pass"}\n', encoding="utf-8")
+    (output_dir / "tier5_45a_seed_runs.csv").write_text(
+        "\n".join(
+            [
+                "model,task,seed,status,synthetic_fallbacks,sim_run_failures,summary_read_failures",
+                "v2_6_predictive_reference,sine,42,pass,0,0,0",
+                "organism_defaults_experimental_off,sine,42,pass,0,0,0",
+            ]
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+
+    args = SimpleNamespace(
+        cell_root=tmp_path,
+        conditions="defaults",
+        tasks="sine",
+        seeds="42",
+    )
+    status = orchestrator.matrix_status(args)
+
+    assert orchestrator.cell_complete(output_dir, cell)
+    assert status["total_cells"] == 1
+    assert status["completed_cells"] == 1
+    assert status["pending_cells"] == 0
