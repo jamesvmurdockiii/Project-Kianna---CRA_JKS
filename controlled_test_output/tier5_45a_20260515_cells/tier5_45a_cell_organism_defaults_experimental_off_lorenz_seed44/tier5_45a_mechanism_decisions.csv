@@ -1,0 +1,2 @@
+model,geomean_mse_mean,delta_mse_vs_v2_6,delta_mse_vs_default,task_regression_ok_vs_v2_6,task_regression_ok_vs_default,pr_lift_vs_default_first_task,decision
+organism_defaults_experimental_off,0.4002018038428969,-2.9311989774091938,0.0,False,True,0.0,no_promotion
