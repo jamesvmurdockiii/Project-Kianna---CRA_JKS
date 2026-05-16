@@ -1,6 +1,6 @@
 # Tier 5.45a Sharded Execution Plan
 
-Last updated: 2026-05-15.
+Last updated: 2026-05-16T15:04:58+00:00.
 
 This document is the operational run plan for Tier 5.45a, the healthy-NEST
 rebaseline scoring gate. It exists because the full gate is large enough that a
@@ -121,8 +121,8 @@ evidence.
 Current canonical cell progress as of 2026-05-16:
 
 ```text
-completed_cells = 17 / 204
-completed = organism_defaults_experimental_off / sine,mackey_glass,lorenz,narma10 / seeds 42,43,44; enable_neural_heritability / sine / seeds 42,43,44; enable_neural_heritability / mackey_glass / seeds 42,43
+completed_cells = 18 / 204
+completed = organism_defaults_experimental_off / sine,mackey_glass,lorenz,narma10 / seeds 42,43,44; enable_neural_heritability / sine,mackey_glass / seeds 42,43,44
 mean_sine_runtime_seconds = 424.926
 mean_sine_mse = 0.317516
 mean_sine_participation_ratio = 1.917018
@@ -138,13 +138,14 @@ narma10_mean_participation_ratio = 3.434715
 enable_neural_heritability_sine_mean_runtime_seconds = 414.536
 enable_neural_heritability_sine_mean_mse = 0.317516
 enable_neural_heritability_sine_mean_participation_ratio = 1.945730
-enable_neural_heritability_mackey_glass_completed_seed_mse_mean = 1.763276
-enable_neural_heritability_mackey_glass_completed_seed_participation_ratio_mean = 2.364402
+enable_neural_heritability_mackey_glass_mean_runtime_seconds = 411.770
+enable_neural_heritability_mackey_glass_mean_mse = 1.763055
+enable_neural_heritability_mackey_glass_mean_participation_ratio = 2.342919
 criteria = 10/10
 synthetic_fallbacks = 0
 sim_run_failures = 0
 summary_read_failures = 0
-next_pending = enable_neural_heritability / mackey_glass / seed 44
+next_pending = enable_neural_heritability / lorenz / seed 42
 ```
 
 These cells are valid shard artifacts for the eventual merged Tier 5.45a gate, but

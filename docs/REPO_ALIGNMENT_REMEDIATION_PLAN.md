@@ -1,6 +1,6 @@
 # Repo Alignment Remediation Plan
 
-Last updated: 2026-05-15.
+Last updated: 2026-05-16T15:04:58+00:00.
 
 This document is the active cleanup checklist for restoring the public Apache
 2.0 repository to research-grade, source-of-truth alignment after the
@@ -103,10 +103,10 @@ Acceptance criteria:
 
 Status: contract locked by Tier 5.45 on 2026-05-15. The Tier 5.45a scoring
 runner is implemented and smoke-validated, and the resumable shard orchestrator
-is committed. The first seventeen canonical shard cells completed the full
+is committed. The first eighteen canonical shard cells completed the full
 `organism_defaults_experimental_off` condition across sine, Mackey-Glass,
 Lorenz, and NARMA10 seeds 42, 43, and 44 plus `enable_neural_heritability`
-sine seeds 42, 43, and 44 and Mackey-Glass seeds 42 and 43 with 10/10
+sine and Mackey-Glass seeds 42, 43, and 44 with 10/10
 criteria, zero fallback, zero `sim.run` failures, and zero summary-read
 failures. The full
 Tier 5.45a scoring run remains the next required gate before any new mechanism

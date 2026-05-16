@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-15T01:35:00+00:00.
+Last updated: 2026-05-16T15:04:58+00:00.
 
 Current repo root:
 
@@ -52,10 +52,10 @@ Active cleanup state:
   rebaseline decision contract (12/12 criteria). The Tier 5.45a scoring runner
   is implemented and smoke-validated with output directed to /tmp only. A
   resumable shard orchestrator is committed and smoke-validated. Current shard
-  progress is 17/204 cells complete:
+  progress is 18/204 cells complete:
   organism_defaults_experimental_off completed sine, mackey_glass, lorenz,
   and narma10 across seeds 42, 43, and 44; enable_neural_heritability
-  completed sine seeds 42, 43, and 44 plus mackey_glass seeds 42 and 43. All
+  completed sine and mackey_glass across seeds 42, 43, and 44. All
   completed cells have zero fallback, zero sim.run failures, and zero
   summary-read failures. The current
   next gate is the remaining full Tier 5.45a scoring run: compare v2.6,

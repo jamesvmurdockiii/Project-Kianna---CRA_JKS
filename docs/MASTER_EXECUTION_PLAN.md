@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-15T23:50:00+00:00.
+Last updated: 2026-05-16T15:04:58+00:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -39,10 +39,10 @@ Active execution mode = repo-alignment remediation Gate 5.
        scoring runner is implemented and smoke-validated, and a resumable
        shard orchestrator is available. The next required gate is full Tier
        5.45a scoring before any new mechanism promotion, baseline freeze, or
-       paper-facing claim. Current shard progress is 17/204 cells complete:
+       paper-facing claim. Current shard progress is 18/204 cells complete:
        organism_defaults_experimental_off completed sine, mackey_glass, lorenz,
        and narma10 across seeds 42, 43, and 44; enable_neural_heritability
-       completed sine seeds 42, 43, and 44 plus mackey_glass seeds 42 and 43.
+       completed sine and mackey_glass across seeds 42, 43, and 44.
        All completed cells have zero fallback, zero sim.run failures, and zero
        summary-read failures.
        Use
