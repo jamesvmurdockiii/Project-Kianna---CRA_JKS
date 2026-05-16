@@ -1,0 +1,320 @@
+{
+  "aggregate_summary": [
+    {
+      "geomean_mse_mean": 0.20404120915748816,
+      "geomean_mse_median": 0.20404120915748816,
+      "geomean_mse_worst": 0.20404120915748816,
+      "model": "online_linear_or_lag_ridge",
+      "per_seed": [
+        {
+          "geomean_mse": 0.20404120915748816,
+          "model": "online_linear_or_lag_ridge",
+          "seed": 42,
+          "status": "pass",
+          "task_count": 1
+        }
+      ],
+      "rank_by_geomean_mse": 1,
+      "seed_count": 1,
+      "status": "pass"
+    },
+    {
+      "geomean_mse_mean": 0.43109142492696084,
+      "geomean_mse_median": 0.43109142492696084,
+      "geomean_mse_worst": 0.43109142492696084,
+      "model": "v2_6_predictive_reference",
+      "per_seed": [
+        {
+          "geomean_mse": 0.43109142492696084,
+          "model": "v2_6_predictive_reference",
+          "seed": 42,
+          "status": "pass",
+          "task_count": 1
+        }
+      ],
+      "rank_by_geomean_mse": 2,
+      "seed_count": 1,
+      "status": "pass"
+    },
+    {
+      "geomean_mse_mean": 0.6541374388243136,
+      "geomean_mse_median": 0.6541374388243136,
+      "geomean_mse_worst": 0.6541374388243136,
+      "model": "esn_or_random_reservoir",
+      "per_seed": [
+        {
+          "geomean_mse": 0.6541374388243136,
+          "model": "esn_or_random_reservoir",
+          "seed": 42,
+          "status": "pass",
+          "task_count": 1
+        }
+      ],
+      "rank_by_geomean_mse": 3,
+      "seed_count": 1,
+      "status": "pass"
+    },
+    {
+      "geomean_mse_mean": 1.183703737068195,
+      "geomean_mse_median": 1.183703737068195,
+      "geomean_mse_worst": 1.183703737068195,
+      "model": "organism_defaults_experimental_off",
+      "per_seed": [
+        {
+          "geomean_mse": 1.183703737068195,
+          "model": "organism_defaults_experimental_off",
+          "seed": 42,
+          "status": "pass",
+          "task_count": 1
+        }
+      ],
+      "rank_by_geomean_mse": 4,
+      "seed_count": 1,
+      "status": "pass"
+    },
+    {
+      "geomean_mse_mean": 1.437224390616283,
+      "geomean_mse_median": 1.437224390616283,
+      "geomean_mse_worst": 1.437224390616283,
+      "model": "persistence_baseline",
+      "per_seed": [
+        {
+          "geomean_mse": 1.437224390616283,
+          "model": "persistence_baseline",
+          "seed": 42,
+          "status": "pass",
+          "task_count": 1
+        }
+      ],
+      "rank_by_geomean_mse": 5,
+      "seed_count": 1,
+      "status": "pass"
+    }
+  ],
+  "backend_diagnostics": {
+    "sim_run_failures_sum": 0,
+    "summary_read_failures_sum": 0,
+    "synthetic_fallbacks_sum": 0
+  },
+  "claim_boundary": "Software/NEST scoring gate only. A pass means the post-cleanup healthy-NEST rebaseline was measured under the locked contract. It is not a hardware/native transfer, not an automatic mechanism promotion, not a baseline freeze, and not public superiority evidence.",
+  "conditions": [
+    "organism_defaults_experimental_off"
+  ],
+  "criteria": [
+    {
+      "criterion": "Tier 5.45 contract exists",
+      "name": "Tier 5.45 contract exists",
+      "note": "",
+      "passed": true,
+      "rule": "true",
+      "value": true
+    },
+    {
+      "criterion": "all requested tasks known",
+      "name": "all requested tasks known",
+      "note": "",
+      "passed": true,
+      "rule": "subset of sine/MG/Lorenz/NARMA10",
+      "value": [
+        "narma10"
+      ]
+    },
+    {
+      "criterion": "all required models scored",
+      "name": "all required models scored",
+      "note": "",
+      "passed": true,
+      "rule": "[]",
+      "value": []
+    },
+    {
+      "criterion": "expected unique model/task/seed cells",
+      "name": "expected unique model/task/seed cells",
+      "note": "",
+      "passed": true,
+      "rule": "== 5",
+      "value": 5
+    },
+    {
+      "criterion": "organism synthetic fallbacks zero",
+      "name": "organism synthetic fallbacks zero",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "criterion": "organism sim.run failures zero",
+      "name": "organism sim.run failures zero",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "criterion": "organism summary read failures zero",
+      "name": "organism summary read failures zero",
+      "note": "",
+      "passed": true,
+      "rule": "== 0",
+      "value": 0
+    },
+    {
+      "criterion": "outcome classified",
+      "name": "outcome classified",
+      "note": "",
+      "passed": true,
+      "rule": "non-empty",
+      "value": "no_promotion_confirmed"
+    },
+    {
+      "criterion": "no automatic baseline freeze",
+      "name": "no automatic baseline freeze",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    },
+    {
+      "criterion": "no hardware/native claim",
+      "name": "no hardware/native claim",
+      "note": "",
+      "passed": true,
+      "rule": "false",
+      "value": false
+    }
+  ],
+  "criteria_passed": 10,
+  "criteria_total": 10,
+  "generated_at_utc": "2026-05-16T05:26:38+00:00",
+  "mechanism_decisions": [
+    {
+      "decision": "no_promotion",
+      "delta_mse_vs_default": 0.0,
+      "delta_mse_vs_v2_6": -1.7458299298547824,
+      "geomean_mse_mean": 1.183703737068195,
+      "model": "organism_defaults_experimental_off",
+      "pr_lift_vs_default_first_task": 0.0,
+      "task_regression_ok_vs_default": true,
+      "task_regression_ok_vs_v2_6": false
+    }
+  ],
+  "mode": "direct",
+  "next_gate": "Document promote/park decision; run a promotion/regression gate only if a candidate earns it.",
+  "outcome": "no_promotion_confirmed",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_45a_20260515_cells/tier5_45a_cell_organism_defaults_experimental_off_narma10_seed42",
+  "reference_models": [
+    "v2_6_predictive_reference",
+    "persistence_baseline",
+    "online_linear_or_lag_ridge",
+    "esn_or_random_reservoir"
+  ],
+  "runner_revision": "tier5_45a_healthy_nest_rebaseline_scoring_20260515_0002",
+  "runtime_seconds": 414.117648042,
+  "seeds": [
+    42
+  ],
+  "status": "pass",
+  "steps": 2000,
+  "task_summary": [
+    {
+      "model": "esn_or_random_reservoir",
+      "mse_mean": 0.6541374388243136,
+      "mse_median": 0.6541374388243136,
+      "mse_std": 0.0,
+      "mse_worst": 0.6541374388243136,
+      "nmse_mean": 0.6705000352161237,
+      "pr_mean": null,
+      "rank95_mean": null,
+      "runtime_seconds_mean": 0.016503959000000012,
+      "seed_count": 1,
+      "sim_run_failures_sum": 0,
+      "status": "pass",
+      "summary_read_failures_sum": 0,
+      "synthetic_fallbacks_sum": 0,
+      "tail_mse_mean": 0.6940976264253563,
+      "task": "narma10",
+      "test_correlation_mean": 0.5821892145897275
+    },
+    {
+      "model": "online_linear_or_lag_ridge",
+      "mse_mean": 0.2040412091574882,
+      "mse_median": 0.2040412091574882,
+      "mse_std": 0.0,
+      "mse_worst": 0.2040412091574882,
+      "nmse_mean": 0.2091450967422463,
+      "pr_mean": null,
+      "rank95_mean": null,
+      "runtime_seconds_mean": 0.013707165999999882,
+      "seed_count": 1,
+      "sim_run_failures_sum": 0,
+      "status": "pass",
+      "summary_read_failures_sum": 0,
+      "synthetic_fallbacks_sum": 0,
+      "tail_mse_mean": 0.2790799573210609,
+      "task": "narma10",
+      "test_correlation_mean": 0.8905149041708006
+    },
+    {
+      "model": "organism_defaults_experimental_off",
+      "mse_mean": 1.183703737068195,
+      "mse_median": 1.183703737068195,
+      "mse_std": 0.0,
+      "mse_worst": 1.183703737068195,
+      "nmse_mean": 1.213312906865807,
+      "pr_mean": 3.477810912036656,
+      "rank95_mean": 6.0,
+      "runtime_seconds_mean": 413.609435834,
+      "seed_count": 1,
+      "sim_run_failures_sum": 0,
+      "status": "pass",
+      "summary_read_failures_sum": 0,
+      "synthetic_fallbacks_sum": 0,
+      "tail_mse_mean": 1.156845045093127,
+      "task": "narma10",
+      "test_correlation_mean": 0.16469125762498657
+    },
+    {
+      "model": "persistence_baseline",
+      "mse_mean": 1.437224390616283,
+      "mse_median": 1.437224390616283,
+      "mse_std": 0.0,
+      "mse_worst": 1.437224390616283,
+      "nmse_mean": 1.4731751270095188,
+      "pr_mean": null,
+      "rank95_mean": null,
+      "runtime_seconds_mean": 0.0002399580000000956,
+      "seed_count": 1,
+      "sim_run_failures_sum": 0,
+      "status": "pass",
+      "summary_read_failures_sum": 0,
+      "synthetic_fallbacks_sum": 0,
+      "tail_mse_mean": 1.4528097361835683,
+      "task": "narma10",
+      "test_correlation_mean": 0.266939522424287
+    },
+    {
+      "model": "v2_6_predictive_reference",
+      "mse_mean": 0.43109142492696084,
+      "mse_median": 0.43109142492696084,
+      "mse_std": 0.0,
+      "mse_worst": 0.43109142492696084,
+      "nmse_mean": 0.4418747474757022,
+      "pr_mean": 8.266869556471079,
+      "rank95_mean": 43.0,
+      "runtime_seconds_mean": 0.0,
+      "seed_count": 1,
+      "sim_run_failures_sum": 0,
+      "status": "pass",
+      "summary_read_failures_sum": 0,
+      "synthetic_fallbacks_sum": 0,
+      "tail_mse_mean": 0.4464878323079965,
+      "task": "narma10",
+      "test_correlation_mean": 0.7477557508717996
+    }
+  ],
+  "tasks": [
+    "narma10"
+  ],
+  "tier": "Tier 5.45a \u2014 Healthy-NEST Rebaseline Scoring Gate"
+}
