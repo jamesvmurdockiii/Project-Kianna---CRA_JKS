@@ -121,17 +121,17 @@ evidence.
 Current canonical cell progress as of 2026-05-15:
 
 ```text
-completed_cells = 1 / 204
-completed = organism_defaults_experimental_off / sine / seed 42
-runtime_seconds = 439.271
+completed_cells = 2 / 204
+completed = organism_defaults_experimental_off / sine / seeds 42,43
+latest_runtime_seconds = 422.340
 criteria = 10/10
 synthetic_fallbacks = 0
 sim_run_failures = 0
 summary_read_failures = 0
-next_pending = organism_defaults_experimental_off / sine / seed 43
+next_pending = organism_defaults_experimental_off / sine / seed 44
 ```
 
-This cell is a valid shard artifact for the eventual merged Tier 5.45a gate, but
+These cells are valid shard artifacts for the eventual merged Tier 5.45a gate, but
 it is not interpretable by itself as a mechanism decision.
 
 ## Canonical Shard Strategy
