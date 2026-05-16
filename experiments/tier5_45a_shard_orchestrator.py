@@ -137,6 +137,42 @@ def matrix_status(args: argparse.Namespace) -> dict[str, Any]:
     }
 
 
+def compact_status(status: dict[str, Any], limit: int = 5) -> dict[str, Any]:
+    """Return a terminal-friendly status summary without hiding counts."""
+
+    return {
+        "cell_root": status["cell_root"],
+        "total_cells": status["total_cells"],
+        "completed_cells": status["completed_cells"],
+        "pending_cells": status["pending_cells"],
+        "failed_or_incomplete_cells": status["failed_or_incomplete_cells"],
+        "completed_sample": status["completed"][:limit],
+        "pending_sample": status["pending"][:limit],
+        "failed_or_incomplete_sample": status["failed_or_incomplete"][:limit],
+    }
+
+
+def compact_payload(payload: dict[str, Any], limit: int = 5) -> dict[str, Any]:
+    """Keep command output readable while preserving full on-disk artifacts."""
+
+    mode = payload.get("mode")
+    if mode == "run-next":
+        return {
+            "mode": mode,
+            "before": compact_status(payload["before"], limit=limit),
+            "after": compact_status(payload["after"], limit=limit),
+            "runs": payload["runs"],
+        }
+    if mode == "merge" and "matrix" in payload:
+        compact = dict(payload)
+        compact["matrix"] = compact_status(payload["matrix"], limit=limit)
+        return compact
+    compact = compact_status(payload, limit=limit)
+    if "next_run" in payload:
+        compact["next_run"] = payload["next_run"]
+    return compact
+
+
 def build_cell_command(args: argparse.Namespace, cell: Cell, output_dir: Path) -> list[str]:
     return [
         sys.executable,
@@ -255,6 +291,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--max-cells", type=int, default=1)
     parser.add_argument("--dry-run", action="store_true", default=False)
     parser.add_argument("--allow-incomplete-merge", action="store_true", default=False)
+    parser.add_argument("--verbose-status", action="store_true", default=False)
     return parser
 
 
@@ -268,7 +305,8 @@ def main() -> int:
         payload = run_next(args)
     else:
         payload = merge(args)
-    print(json.dumps(json_safe(payload), indent=2, sort_keys=True))
+    display_payload = payload if args.verbose_status else compact_payload(payload)
+    print(json.dumps(json_safe(display_payload), indent=2, sort_keys=True))
     if payload.get("status") in {"fail", "blocked"}:
         return 1
     return 0

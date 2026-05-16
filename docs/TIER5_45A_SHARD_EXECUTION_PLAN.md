@@ -146,6 +146,9 @@ The preferred local workflow is the shard orchestrator. It tracks completed
 condition/task/seed cells, reuses the locked scoring runner for each cell,
 redirects long console streams to `/tmp`, and refuses final merge while the
 matrix is incomplete unless explicitly told to do a diagnostic incomplete merge.
+Default terminal output is compact: it reports counts plus small completed and
+pending samples. Use `--verbose-status` only when the full completed/pending
+cell list is needed for debugging.
 
 Check status:
 
