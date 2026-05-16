@@ -103,10 +103,10 @@ Acceptance criteria:
 
 Status: contract locked by Tier 5.45 on 2026-05-15. The Tier 5.45a scoring
 runner is implemented and smoke-validated, and the resumable shard orchestrator
-is committed. The first six canonical shard cells
+is committed. The first seven canonical shard cells
 `organism_defaults_experimental_off` on sine and Mackey-Glass seeds 42, 43,
-and 44 passed 10/10 with zero fallback, zero `sim.run` failures, and zero
-summary-read failures. The full
+and 44 plus Lorenz seed 42 passed 10/10 with zero fallback, zero `sim.run`
+failures, and zero summary-read failures. The full
 Tier 5.45a scoring run remains the next required gate before any new mechanism
 promotion, baseline freeze, or paper-facing claim.
 
