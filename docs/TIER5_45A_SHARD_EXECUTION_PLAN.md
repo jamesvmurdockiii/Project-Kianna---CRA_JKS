@@ -118,23 +118,23 @@ runner, marked the cell complete from generated artifacts, and merged the
 complete one-cell matrix. This is workflow validation only, not Tier 5.45a
 evidence.
 
-Current canonical cell progress as of 2026-05-15:
+Current canonical cell progress as of 2026-05-16:
 
 ```text
-completed_cells = 7 / 204
-completed = organism_defaults_experimental_off / sine / seeds 42,43,44; mackey_glass / seeds 42,43,44; lorenz / seed 42
+completed_cells = 8 / 204
+completed = organism_defaults_experimental_off / sine / seeds 42,43,44; mackey_glass / seeds 42,43,44; lorenz / seeds 42,43
 mean_sine_runtime_seconds = 424.926
 mean_sine_mse = 0.317516
 mean_sine_participation_ratio = 1.917018
 mackey_glass_mean_mse = 1.764449
 mackey_glass_mean_participation_ratio = 2.309325
-lorenz_seed42_mse = 1.489216
-lorenz_seed42_participation_ratio = 2.284248
+lorenz_completed_seed_mse_mean = 1.248898
+lorenz_completed_seed_participation_ratio_mean = 2.221304
 criteria = 10/10
 synthetic_fallbacks = 0
 sim_run_failures = 0
 summary_read_failures = 0
-next_pending = organism_defaults_experimental_off / lorenz / seed 43
+next_pending = organism_defaults_experimental_off / lorenz / seed 44
 ```
 
 These cells are valid shard artifacts for the eventual merged Tier 5.45a gate, but

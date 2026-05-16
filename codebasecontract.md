@@ -52,9 +52,9 @@ Active cleanup state:
   rebaseline decision contract (12/12 criteria). The Tier 5.45a scoring runner
   is implemented and smoke-validated with output directed to /tmp only. A
   resumable shard orchestrator is committed and smoke-validated. Current shard
-  progress is 7/204 cells complete:
+  progress is 8/204 cells complete:
   organism_defaults_experimental_off sine and mackey_glass seeds 42, 43,
-  and 44 plus lorenz seed 42 passed 10/10 with zero fallback, zero
+  and 44 plus lorenz seeds 42 and 43 passed 10/10 with zero fallback, zero
   sim.run failures, and zero summary-read failures. The current
   next gate is the remaining full Tier 5.45a scoring run: compare v2.6,
   conservative organism defaults, each of the 15 opt-in organism-development
