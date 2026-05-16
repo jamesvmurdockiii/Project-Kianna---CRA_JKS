@@ -12,6 +12,7 @@ from types import SimpleNamespace
 import numpy as np
 
 from coral_reef_spinnaker.config import LifecycleConfig
+from coral_reef_spinnaker.organism import Organism
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -56,6 +57,19 @@ def test_operator_diversity_inhibitory_scaling_uses_inhibitory_slice():
     source = (REPO_ROOT / "coral_reef_spinnaker" / "polyp_population.py").read_text()
     assert "local_pre = pre - inh_idx(0)" in source
     assert "0 <= local_pre < n_ih" in source
+
+
+def test_nest_numerical_instability_uses_reset_retry_path():
+    """Known NEST root-finding instability should not go straight to fallback."""
+
+    class FakeNumericalInstability(Exception):
+        pass
+
+    err = FakeNumericalInstability(
+        "NEST detected a numerical instability while updating regula_falsi"
+    )
+
+    assert Organism._is_recoverable_backend_run_error(err)
 
 
 def test_v27_is_diagnostic_not_predictive_supersession():

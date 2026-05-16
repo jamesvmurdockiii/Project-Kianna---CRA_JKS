@@ -50,7 +50,7 @@ from tier7_7z_r1_standardized_benchmark import compute_features, ridge  # noqa: 
 
 
 TIER = "Tier 5.45a — Healthy-NEST Rebaseline Scoring Gate"
-RUNNER_REVISION = "tier5_45a_healthy_nest_rebaseline_scoring_20260515_0002"
+RUNNER_REVISION = "tier5_45a_healthy_nest_rebaseline_scoring_20260516_0003"
 DEFAULT_OUTPUT_DIR = CONTROLLED / "tier5_45a_20260515_healthy_nest_rebaseline_scoring"
 CONTRACT_545 = CONTROLLED / "tier5_45_20260514_healthy_nest_rebaseline_contract" / "tier5_45_results.json"
 

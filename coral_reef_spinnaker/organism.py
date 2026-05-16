@@ -2100,6 +2100,27 @@ class Organism:
             for dead_id in energy_deaths:
                 _handle_death(dead_id)
 
+    @staticmethod
+    def _is_recoverable_backend_run_error(exc: Exception) -> bool:
+        """Return whether a backend run error should get one reset/rebuild retry.
+
+        NEST can occasionally leave the kernel in a bad state after numerical
+        root-finding failures. Retrying through the existing ResetKernel rebuild
+        path is safer than silently using synthetic fallback; if the same input
+        is truly unstable, the retry still fails and the failure counters remain
+        visible to the scoring gate.
+        """
+        err = str(exc).lower()
+        exc_name = type(exc).__name__.lower()
+        recoverable_markers = (
+            "resetkernel",
+            "inconsistent state",
+            "numericalinstability",
+            "numerical instability",
+            "regula falsi",
+        )
+        return any(marker in err or marker in exc_name for marker in recoverable_markers)
+
     def _run_spinnaker(self, runtime_ms: float) -> dict[int, int]:
         """Execute the SNN and retrieve spike counts.
 
@@ -2124,9 +2145,9 @@ class Organism:
                     pass
             self.sim.run(runtime_ms)
         except Exception as exc:
-            err_str = str(exc)
-            # If NEST kernel is in inconsistent state, reset and retry once
-            if "ResetKernel" in err_str or "inconsistent state" in err_str:
+            # If NEST enters an inconsistent or numerically unstable state,
+            # reset/rebuild and retry once before falling back synthetically.
+            if self._is_recoverable_backend_run_error(exc):
                 try:
                     import nest
                     nest.ResetKernel()
@@ -2137,6 +2158,10 @@ class Organism:
                         self.rebuild_spinnaker()
                     self.sim.run(runtime_ms)
                     logger.debug("sim.run() recovered via ResetKernel")
+                    self._last_sim_run_error = ""
+                    self._last_backend_failure_stage = ""
+                    self._last_backend_exception_type = ""
+                    self._last_backend_traceback = ""
                     # Fall through to normal spike processing below
                 except Exception as exc2:
                     self._sim_run_failure_count += 2
