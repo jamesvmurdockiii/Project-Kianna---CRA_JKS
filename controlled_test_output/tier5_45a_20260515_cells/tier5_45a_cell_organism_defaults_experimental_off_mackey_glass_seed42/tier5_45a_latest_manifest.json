@@ -1,0 +1,17 @@
+{
+  "artifacts": {
+    "backend_diagnostics_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_45a_20260515_cells/tier5_45a_cell_organism_defaults_experimental_off_mackey_glass_seed42/tier5_45a_backend_diagnostics.json",
+    "mechanism_decisions_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_45a_20260515_cells/tier5_45a_cell_organism_defaults_experimental_off_mackey_glass_seed42/tier5_45a_mechanism_decisions.csv",
+    "model_task_metrics_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_45a_20260515_cells/tier5_45a_cell_organism_defaults_experimental_off_mackey_glass_seed42/tier5_45a_model_task_metrics.csv",
+    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_45a_20260515_cells/tier5_45a_cell_organism_defaults_experimental_off_mackey_glass_seed42/tier5_45a_report.md",
+    "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_45a_20260515_cells/tier5_45a_cell_organism_defaults_experimental_off_mackey_glass_seed42/tier5_45a_results.json",
+    "seed_runs_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_45a_20260515_cells/tier5_45a_cell_organism_defaults_experimental_off_mackey_glass_seed42/tier5_45a_seed_runs.csv",
+    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_45a_20260515_cells/tier5_45a_cell_organism_defaults_experimental_off_mackey_glass_seed42/tier5_45a_summary.csv"
+  },
+  "generated_at_utc": "2026-05-16T00:28:08+00:00",
+  "outcome": "no_promotion_confirmed",
+  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_45a_20260515_cells/tier5_45a_cell_organism_defaults_experimental_off_mackey_glass_seed42",
+  "runner_revision": "tier5_45a_healthy_nest_rebaseline_scoring_20260515_0002",
+  "status": "pass",
+  "tier": "Tier 5.45a \u2014 Healthy-NEST Rebaseline Scoring Gate"
+}
