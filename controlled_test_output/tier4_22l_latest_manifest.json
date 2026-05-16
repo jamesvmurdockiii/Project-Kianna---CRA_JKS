@@ -2,10 +2,10 @@
   "canonical": false,
   "claim": "Latest Tier 4.22l tiny custom-runtime learning parity; pass means a tiny on-chip readout update sequence matched local fixed-point reference only.",
   "generated_at_utc": "2026-05-01T02:23:48+00:00",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_hardware_pass_ingested/tier4_22l_results.json",
+  "manifest": "<repo>/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_hardware_pass_ingested/tier4_22l_results.json",
   "mode": "ingest",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_hardware_pass_ingested",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_hardware_pass_ingested/tier4_22l_report.md",
+  "output_dir": "<repo>/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_hardware_pass_ingested",
+  "report": "<repo>/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_hardware_pass_ingested/tier4_22l_report.md",
   "status": "pass",
   "tier": "Tier 4.22l - Tiny Custom-Runtime Learning Parity"
 }

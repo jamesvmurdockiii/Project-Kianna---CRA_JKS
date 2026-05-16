@@ -2,7 +2,7 @@
 
 - Generated: `2026-04-27T17:17:19.311639+00:00`
 - Status: **PREPARED**
-- Output directory: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_17_20260427_171719_runtime_scaffold`
+- Output directory: `<repo>/controlled_test_output/tier4_17_20260427_171719_runtime_scaffold`
 
 Tier 4.17 is a runtime-contract tier, not a learning-result tier.
 It freezes the vocabulary for moving from proof-grade per-step hardware
@@ -58,7 +58,7 @@ orchestration toward chunked and eventually continuous execution.
 
 ## Artifacts
 
-- `summary_csv`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_17_20260427_171719_runtime_scaffold/tier4_17_runtime_summary.csv`
-- `manifest_json`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_17_20260427_171719_runtime_scaffold/tier4_17_results.json`
-- `report_md`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_17_20260427_171719_runtime_scaffold/tier4_17_report.md`
-- `runtime_reduction_png`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_17_20260427_171719_runtime_scaffold/tier4_17_runtime_reduction.png`
+- `summary_csv`: `<repo>/controlled_test_output/tier4_17_20260427_171719_runtime_scaffold/tier4_17_runtime_summary.csv`
+- `manifest_json`: `<repo>/controlled_test_output/tier4_17_20260427_171719_runtime_scaffold/tier4_17_results.json`
+- `report_md`: `<repo>/controlled_test_output/tier4_17_20260427_171719_runtime_scaffold/tier4_17_report.md`
+- `runtime_reduction_png`: `<repo>/controlled_test_output/tier4_17_20260427_171719_runtime_scaffold/tier4_17_runtime_reduction.png`

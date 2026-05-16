@@ -1,6 +1,6 @@
 {
   "generated_at_utc": "2026-05-10T03:04:44+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7z_r2_20260509_cmapss_adapter",
+  "output_dir": "<repo>/controlled_test_output/tier7_7z_r2_20260509_cmapss_adapter",
   "status": "fail",
   "tier": "Tier 7.7z-r2 - v2.6 C-MAPSS FD001 Adapter Rerun"
 }

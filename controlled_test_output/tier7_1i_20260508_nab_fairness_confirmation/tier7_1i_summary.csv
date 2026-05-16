@@ -1,7 +1,7 @@
 criterion,passed,value,rule
-Tier 7.1g preflight exists,True,/Users/james/JKS:CRA/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_results.json,exists
+Tier 7.1g preflight exists,True,<repo>/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_results.json,exists
 Tier 7.1g preflight passed,True,pass,== pass
-Tier 7.1h compact scoring exists,True,/Users/james/JKS:CRA/controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate/tier7_1h_results.json,exists
+Tier 7.1h compact scoring exists,True,<repo>/controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate/tier7_1h_results.json,exists
 Tier 7.1h compact scoring passed,True,pass,== pass
 NAB source commit matches preflight,True,ea702d75cc2258d9d7dd35ca8e5e2539d71f3140,matches Tier 7.1g
 broader subset expands compact subset,True,20,> 5 streams

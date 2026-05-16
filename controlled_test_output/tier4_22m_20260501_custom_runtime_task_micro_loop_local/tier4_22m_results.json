@@ -1,9 +1,9 @@
 {
   "artifacts": {
-    "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_22m_20260501_custom_runtime_task_micro_loop_local/tier4_22m_results.json",
-    "reference_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22m_20260501_custom_runtime_task_micro_loop_local/tier4_22m_task_reference_rows.csv",
-    "reference_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_22m_20260501_custom_runtime_task_micro_loop_local/tier4_22m_task_reference.json",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_22m_20260501_custom_runtime_task_micro_loop_local/tier4_22m_report.md"
+    "manifest_json": "<repo>/controlled_test_output/tier4_22m_20260501_custom_runtime_task_micro_loop_local/tier4_22m_results.json",
+    "reference_csv": "<repo>/controlled_test_output/tier4_22m_20260501_custom_runtime_task_micro_loop_local/tier4_22m_task_reference_rows.csv",
+    "reference_json": "<repo>/controlled_test_output/tier4_22m_20260501_custom_runtime_task_micro_loop_local/tier4_22m_task_reference.json",
+    "report_md": "<repo>/controlled_test_output/tier4_22m_20260501_custom_runtime_task_micro_loop_local/tier4_22m_report.md"
   },
   "criteria": [
     {
@@ -179,19 +179,19 @@
   "generated_at_utc": "2026-05-01T02:41:02+00:00",
   "main_syntax_check": {
     "normal": {
-      "command": "/usr/bin/cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-int-to-pointer-cast -I /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/stubs -I /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src -c /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src/main.c -o /Users/james/JKS:CRA/controlled_test_output/tier4_22m_20260501_custom_runtime_task_micro_loop_local/tier4_22i_main_syntax_normal.o",
-      "object_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22m_20260501_custom_runtime_task_micro_loop_local/tier4_22i_main_syntax_normal.o",
+      "command": "/usr/bin/cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-int-to-pointer-cast -I <repo>/coral_reef_spinnaker/spinnaker_runtime/stubs -I <repo>/coral_reef_spinnaker/spinnaker_runtime/src -c <repo>/coral_reef_spinnaker/spinnaker_runtime/src/main.c -o <repo>/controlled_test_output/tier4_22m_20260501_custom_runtime_task_micro_loop_local/tier4_22i_main_syntax_normal.o",
+      "object_artifact": "<repo>/controlled_test_output/tier4_22m_20260501_custom_runtime_task_micro_loop_local/tier4_22i_main_syntax_normal.o",
       "returncode": 0,
       "status": "pass",
       "stderr": "",
-      "stderr_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22m_20260501_custom_runtime_task_micro_loop_local/tier4_22i_main_syntax_normal_stderr.txt",
+      "stderr_artifact": "<repo>/controlled_test_output/tier4_22m_20260501_custom_runtime_task_micro_loop_local/tier4_22i_main_syntax_normal_stderr.txt",
       "stdout": "",
-      "stdout_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22m_20260501_custom_runtime_task_micro_loop_local/tier4_22i_main_syntax_normal_stdout.txt"
+      "stdout_artifact": "<repo>/controlled_test_output/tier4_22m_20260501_custom_runtime_task_micro_loop_local/tier4_22i_main_syntax_normal_stdout.txt"
     },
     "status": "pass"
   },
   "mode": "local",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_22m_20260501_custom_runtime_task_micro_loop_local",
+  "output_dir": "<repo>/controlled_test_output/tier4_22m_20260501_custom_runtime_task_micro_loop_local",
   "reference": {
     "equation": "prediction=w*feature+bias; score sign(prediction) before update; error=target-prediction; w+=lr*error*feature; b+=lr*error",
     "final_readout_bias": 0.0,
@@ -505,7 +505,7 @@
     "reference_sequence_length": 12,
     "reference_status": "pass",
     "reference_tail_accuracy": 1.0,
-    "tier4_22l_manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_hardware_pass_ingested/tier4_22l_results.json",
+    "tier4_22l_manifest": "<repo>/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_hardware_pass_ingested/tier4_22l_results.json",
     "tier4_22l_status": "pass"
   },
   "tier": "Tier 4.22m - Minimal Custom-Runtime Task Micro-Loop"

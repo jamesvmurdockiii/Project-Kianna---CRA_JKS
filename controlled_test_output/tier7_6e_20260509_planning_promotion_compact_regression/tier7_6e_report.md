@@ -52,8 +52,8 @@ Reduced-feature planning/subgoal-control improves bounded local planning diagnos
 | Criterion | Value | Rule | Pass |
 | --- | --- | --- | --- |
 | runner revision current | `tier7_6e_planning_promotion_compact_regression_20260509_0001` | expected current source | yes |
-| Tier 7.6d exists | `/Users/james/JKS:CRA/controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization/tier7_6d_results.json` | exists | yes |
-| v2.4 baseline exists | `/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.4.json` | exists | yes |
+| Tier 7.6d exists | `<repo>/controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization/tier7_6d_results.json` | exists | yes |
+| v2.4 baseline exists | `<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.4.json` | exists | yes |
 | Tier 7.6d passed | `PASS` | == PASS | yes |
 | Tier 7.6d candidate outcome | `reduced_feature_planning_signal_supported_requires_promotion_gate` | == reduced_feature_planning_signal_supported_requires_promotion_gate | yes |
 | Tier 7.6d reduced-feature signal authorized | `True` | == true | yes |

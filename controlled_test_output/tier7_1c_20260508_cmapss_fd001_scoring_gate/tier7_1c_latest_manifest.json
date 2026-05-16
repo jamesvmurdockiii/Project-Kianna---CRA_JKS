@@ -3,48 +3,48 @@
     {
       "bytes": 46360,
       "name": "model_metrics_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1c_20260508_cmapss_fd001_scoring_gate/tier7_1c_model_metrics.csv",
+      "path": "<repo>/controlled_test_output/tier7_1c_20260508_cmapss_fd001_scoring_gate/tier7_1c_model_metrics.csv",
       "sha256": "24e5fdfec5eb5288c924f123af1a4138cc2d7bc2e1cce386d33d081144165ac3"
     },
     {
       "bytes": 2071,
       "name": "model_summary_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1c_20260508_cmapss_fd001_scoring_gate/tier7_1c_model_summary.csv",
+      "path": "<repo>/controlled_test_output/tier7_1c_20260508_cmapss_fd001_scoring_gate/tier7_1c_model_summary.csv",
       "sha256": "cb2ffffb074b6167945330c1f2d400fb1df7179e8cbbaa06408438b7fe3a0d1c"
     },
     {
       "bytes": 273509,
       "name": "per_unit_metrics_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1c_20260508_cmapss_fd001_scoring_gate/tier7_1c_per_unit_metrics.csv",
+      "path": "<repo>/controlled_test_output/tier7_1c_20260508_cmapss_fd001_scoring_gate/tier7_1c_per_unit_metrics.csv",
       "sha256": "079e5710fbdc604e8f51f381aafe9e46c1ab253dafd5501ed72f282af40e042e"
     },
     {
       "bytes": 1108,
       "name": "report_md",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1c_20260508_cmapss_fd001_scoring_gate/tier7_1c_report.md",
+      "path": "<repo>/controlled_test_output/tier7_1c_20260508_cmapss_fd001_scoring_gate/tier7_1c_report.md",
       "sha256": "d143539ddbab5fb94d3c96d38f19a12513b4cb17f63f7d76cd32a484e8d242e4"
     },
     {
       "bytes": 11163,
       "name": "results_json",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1c_20260508_cmapss_fd001_scoring_gate/tier7_1c_results.json",
+      "path": "<repo>/controlled_test_output/tier7_1c_20260508_cmapss_fd001_scoring_gate/tier7_1c_results.json",
       "sha256": "e5fb7d858df9bdde385f6f29048c1d1e36956b7ffe5f7f1a0c26ae75a596180a"
     },
     {
       "bytes": 948,
       "name": "scoring_contract_json",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1c_20260508_cmapss_fd001_scoring_gate/tier7_1c_scoring_contract.json",
+      "path": "<repo>/controlled_test_output/tier7_1c_20260508_cmapss_fd001_scoring_gate/tier7_1c_scoring_contract.json",
       "sha256": "107c2fe4f073037de1d153f1156cc4959af303d70ea5af623f6f1c3c829d76eb"
     },
     {
       "bytes": 1410,
       "name": "summary_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1c_20260508_cmapss_fd001_scoring_gate/tier7_1c_summary.csv",
+      "path": "<repo>/controlled_test_output/tier7_1c_20260508_cmapss_fd001_scoring_gate/tier7_1c_summary.csv",
       "sha256": "f0c9cbf403c0164542d7940f2fe058b74be1534cf9f3576f826bb200cf13c5c7"
     }
   ],
   "generated_at_utc": "2026-05-08T21:15:57+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1c_20260508_cmapss_fd001_scoring_gate",
+  "output_dir": "<repo>/controlled_test_output/tier7_1c_20260508_cmapss_fd001_scoring_gate",
   "runner_revision": "tier7_1c_cmapss_fd001_scoring_gate_20260508_0001",
   "status": "pass",
   "tier": "Tier 7.1c - Compact C-MAPSS FD001 Scoring Gate"

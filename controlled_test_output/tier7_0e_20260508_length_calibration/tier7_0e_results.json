@@ -440,7 +440,7 @@
       "task_count": 3
     }
   ],
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_0e_20260508_length_calibration",
+  "output_dir": "<repo>/controlled_test_output/tier7_0e_20260508_length_calibration",
   "runner_revision": "tier7_0e_standard_dynamical_v2_2_sweep_20260508_0002",
   "runtime_seconds": 287.228077792,
   "seeds": [

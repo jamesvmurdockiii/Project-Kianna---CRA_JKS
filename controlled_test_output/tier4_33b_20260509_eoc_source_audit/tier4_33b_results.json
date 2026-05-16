@@ -120,7 +120,7 @@
   "generated_at_utc": "2026-05-10T04:56:26+00:00",
   "next_gate": "Tier 4.33c EBRAINS package preparation",
   "outcome": "source_audit_pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_33b_20260509_eoc_source_audit",
+  "output_dir": "<repo>/controlled_test_output/tier4_33b_20260509_eoc_source_audit",
   "runner_revision": "tier4_33b_eoc_source_audit_20260509_0001",
   "status": "pass",
   "tier": "Tier 4.33b - EOC C Runtime Source Audit",

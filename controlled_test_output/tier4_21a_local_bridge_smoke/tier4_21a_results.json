@@ -1,17 +1,17 @@
 {
   "artifacts": {
-    "comparisons_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_21a_local_bridge_smoke/tier4_21a_comparisons.csv",
-    "context_reentry_interference_keyed_context_memory_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_21a_local_bridge_smoke/spinnaker_hardware_context_reentry_interference_keyed_context_memory_seed42_timeseries.csv",
-    "context_reentry_interference_keyed_context_memory_seed42_timeseries_png": "/Users/james/JKS:CRA/controlled_test_output/tier4_21a_local_bridge_smoke/spinnaker_hardware_context_reentry_interference_keyed_context_memory_seed42_timeseries.png",
-    "context_reentry_interference_slot_reset_ablation_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_21a_local_bridge_smoke/spinnaker_hardware_context_reentry_interference_slot_reset_ablation_seed42_timeseries.csv",
-    "context_reentry_interference_slot_reset_ablation_seed42_timeseries_png": "/Users/james/JKS:CRA/controlled_test_output/tier4_21a_local_bridge_smoke/spinnaker_hardware_context_reentry_interference_slot_reset_ablation_seed42_timeseries.png",
-    "context_reentry_interference_slot_shuffle_ablation_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_21a_local_bridge_smoke/spinnaker_hardware_context_reentry_interference_slot_shuffle_ablation_seed42_timeseries.csv",
-    "context_reentry_interference_slot_shuffle_ablation_seed42_timeseries_png": "/Users/james/JKS:CRA/controlled_test_output/tier4_21a_local_bridge_smoke/spinnaker_hardware_context_reentry_interference_slot_shuffle_ablation_seed42_timeseries.png",
-    "context_reentry_interference_wrong_key_ablation_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_21a_local_bridge_smoke/spinnaker_hardware_context_reentry_interference_wrong_key_ablation_seed42_timeseries.csv",
-    "context_reentry_interference_wrong_key_ablation_seed42_timeseries_png": "/Users/james/JKS:CRA/controlled_test_output/tier4_21a_local_bridge_smoke/spinnaker_hardware_context_reentry_interference_wrong_key_ablation_seed42_timeseries.png",
-    "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_21a_local_bridge_smoke/tier4_21a_results.json",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_21a_local_bridge_smoke/tier4_21a_report.md",
-    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_21a_local_bridge_smoke/tier4_21a_summary.csv"
+    "comparisons_csv": "<repo>/controlled_test_output/tier4_21a_local_bridge_smoke/tier4_21a_comparisons.csv",
+    "context_reentry_interference_keyed_context_memory_seed42_timeseries_csv": "<repo>/controlled_test_output/tier4_21a_local_bridge_smoke/spinnaker_hardware_context_reentry_interference_keyed_context_memory_seed42_timeseries.csv",
+    "context_reentry_interference_keyed_context_memory_seed42_timeseries_png": "<repo>/controlled_test_output/tier4_21a_local_bridge_smoke/spinnaker_hardware_context_reentry_interference_keyed_context_memory_seed42_timeseries.png",
+    "context_reentry_interference_slot_reset_ablation_seed42_timeseries_csv": "<repo>/controlled_test_output/tier4_21a_local_bridge_smoke/spinnaker_hardware_context_reentry_interference_slot_reset_ablation_seed42_timeseries.csv",
+    "context_reentry_interference_slot_reset_ablation_seed42_timeseries_png": "<repo>/controlled_test_output/tier4_21a_local_bridge_smoke/spinnaker_hardware_context_reentry_interference_slot_reset_ablation_seed42_timeseries.png",
+    "context_reentry_interference_slot_shuffle_ablation_seed42_timeseries_csv": "<repo>/controlled_test_output/tier4_21a_local_bridge_smoke/spinnaker_hardware_context_reentry_interference_slot_shuffle_ablation_seed42_timeseries.csv",
+    "context_reentry_interference_slot_shuffle_ablation_seed42_timeseries_png": "<repo>/controlled_test_output/tier4_21a_local_bridge_smoke/spinnaker_hardware_context_reentry_interference_slot_shuffle_ablation_seed42_timeseries.png",
+    "context_reentry_interference_wrong_key_ablation_seed42_timeseries_csv": "<repo>/controlled_test_output/tier4_21a_local_bridge_smoke/spinnaker_hardware_context_reentry_interference_wrong_key_ablation_seed42_timeseries.csv",
+    "context_reentry_interference_wrong_key_ablation_seed42_timeseries_png": "<repo>/controlled_test_output/tier4_21a_local_bridge_smoke/spinnaker_hardware_context_reentry_interference_wrong_key_ablation_seed42_timeseries.png",
+    "manifest_json": "<repo>/controlled_test_output/tier4_21a_local_bridge_smoke/tier4_21a_results.json",
+    "report_md": "<repo>/controlled_test_output/tier4_21a_local_bridge_smoke/tier4_21a_report.md",
+    "summary_csv": "<repo>/controlled_test_output/tier4_21a_local_bridge_smoke/tier4_21a_summary.csv"
   },
   "criteria": [
     {
@@ -27,10 +27,10 @@
       "value": {
         "action": "already_canonical",
         "aliases_checked": [
-          "/Users/james/JKS:CRA/coral-reef-spinnaker",
-          "/Users/james/JKS:CRA/coral reef spinnaker"
+          "<repo>/coral-reef-spinnaker",
+          "<repo>/coral reef spinnaker"
         ],
-        "canonical_package": "/Users/james/JKS:CRA/coral_reef_spinnaker",
+        "canonical_package": "<repo>/coral_reef_spinnaker",
         "canonical_package_exists": true
       }
     },
@@ -39,7 +39,7 @@
       "passed": true,
       "rule": "status == pass locally OR fresh run-hardware",
       "value": {
-        "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_20c_20260430_v2_1_bridge_three_seed_hardware_pass_ingested/tier4_20c_results.json",
+        "manifest": "<repo>/controlled_test_output/tier4_20c_20260430_v2_1_bridge_three_seed_hardware_pass_ingested/tier4_20c_results.json",
         "mode": "local-bridge",
         "status": "pass"
       }
@@ -136,7 +136,7 @@
   "failure_reason": "",
   "generated_at_utc": "2026-04-30T15:52:04+00:00",
   "mode": "local-bridge",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_21a_local_bridge_smoke",
+  "output_dir": "<repo>/controlled_test_output/tier4_21a_local_bridge_smoke",
   "status": "pass",
   "summary": {
     "aggregates": [

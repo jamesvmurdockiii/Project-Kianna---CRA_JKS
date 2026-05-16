@@ -2,7 +2,7 @@
 
 - Generated: `2026-04-30T18:45:15+00:00`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_22e_20260430_local_learning_parity`
+- Output directory: `<repo>/controlled_test_output/tier4_22e_20260430_local_learning_parity`
 
 Tier 4.22e compares the custom-C fixed-point delayed-readout equations against a floating reference on delayed-credit task streams. It also checks that the pending-horizon state does not store future targets at prediction time.
 

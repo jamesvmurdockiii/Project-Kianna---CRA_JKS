@@ -8,7 +8,7 @@
 - Tasks: `silent_context_reentry`
 - Variants: `all`
 - Selected standard baselines: `sign_persistence,online_perceptron`
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier5_11b_20260429_022032`
+- Output directory: `<repo>/controlled_test_output/tier5_11b_20260429_022032`
 
 Tier 5.11b tests whether prioritized offline replay repairs the Tier 5.11a silent-reentry failure. It is not hardware replay and not native on-chip replay.
 

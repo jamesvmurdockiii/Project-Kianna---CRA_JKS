@@ -1,17 +1,17 @@
 {
   "artifacts": {
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_160245/v1_8_compact_regression/tier2_learning/tier2_report.md",
-    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_160245/v1_8_compact_regression/tier2_learning/tier2_summary.csv"
+    "report_md": "<repo>/controlled_test_output/tier5_17e_20260429_160245/v1_8_compact_regression/tier2_learning/tier2_report.md",
+    "summary_csv": "<repo>/controlled_test_output/tier5_17e_20260429_160245/v1_8_compact_regression/tier2_learning/tier2_summary.csv"
   },
   "backend": "nest",
-  "command": "experiments/tier2_learning.py --tests all --backend nest --steps 180 --base-seed 42 --readout-lr 0.1 --delayed-readout-lr 0.2 --stop-on-fail --output-dir /Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_160245/v1_8_compact_regression/tier2_learning",
+  "command": "experiments/tier2_learning.py --tests all --backend nest --steps 180 --base-seed 42 --readout-lr 0.1 --delayed-readout-lr 0.2 --stop-on-fail --output-dir <repo>/controlled_test_output/tier5_17e_20260429_160245/v1_8_compact_regression/tier2_learning",
   "generated_at_utc": "2026-04-29T20:04:01+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_160245/v1_8_compact_regression/tier2_learning",
+  "output_dir": "<repo>/controlled_test_output/tier5_17e_20260429_160245/v1_8_compact_regression/tier2_learning",
   "results": [
     {
       "artifacts": {
-        "plot_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_160245/v1_8_compact_regression/tier2_learning/fixed_pattern_timeseries.png",
-        "timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_160245/v1_8_compact_regression/tier2_learning/fixed_pattern_timeseries.csv"
+        "plot_png": "<repo>/controlled_test_output/tier5_17e_20260429_160245/v1_8_compact_regression/tier2_learning/fixed_pattern_timeseries.png",
+        "timeseries_csv": "<repo>/controlled_test_output/tier5_17e_20260429_160245/v1_8_compact_regression/tier2_learning/fixed_pattern_timeseries.csv"
       },
       "criteria": [
         {
@@ -311,8 +311,8 @@
     },
     {
       "artifacts": {
-        "plot_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_160245/v1_8_compact_regression/tier2_learning/delayed_reward_timeseries.png",
-        "timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_160245/v1_8_compact_regression/tier2_learning/delayed_reward_timeseries.csv"
+        "plot_png": "<repo>/controlled_test_output/tier5_17e_20260429_160245/v1_8_compact_regression/tier2_learning/delayed_reward_timeseries.png",
+        "timeseries_csv": "<repo>/controlled_test_output/tier5_17e_20260429_160245/v1_8_compact_regression/tier2_learning/delayed_reward_timeseries.csv"
       },
       "criteria": [
         {
@@ -622,8 +622,8 @@
     },
     {
       "artifacts": {
-        "plot_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_160245/v1_8_compact_regression/tier2_learning/nonstationary_switch_timeseries.png",
-        "timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_160245/v1_8_compact_regression/tier2_learning/nonstationary_switch_timeseries.csv"
+        "plot_png": "<repo>/controlled_test_output/tier5_17e_20260429_160245/v1_8_compact_regression/tier2_learning/nonstationary_switch_timeseries.png",
+        "timeseries_csv": "<repo>/controlled_test_output/tier5_17e_20260429_160245/v1_8_compact_regression/tier2_learning/nonstationary_switch_timeseries.csv"
       },
       "criteria": [
         {

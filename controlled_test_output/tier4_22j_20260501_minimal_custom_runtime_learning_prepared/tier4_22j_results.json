@@ -1,10 +1,10 @@
 {
   "artifacts": {
-    "job_readme": "/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_prepared/ebrains_upload_bundle/cra_422s/README_TIER4_22J_JOB.md",
-    "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_prepared/tier4_22j_results.json",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_prepared/tier4_22j_report.md",
-    "stable_upload_folder": "/Users/james/JKS:CRA/ebrains_jobs/cra_422s",
-    "upload_bundle": "/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_prepared/ebrains_upload_bundle/cra_422s"
+    "job_readme": "<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_prepared/ebrains_upload_bundle/cra_422s/README_TIER4_22J_JOB.md",
+    "manifest_json": "<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_prepared/tier4_22j_results.json",
+    "report_md": "<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_prepared/tier4_22j_report.md",
+    "stable_upload_folder": "<repo>/ebrains_jobs/cra_422s",
+    "upload_bundle": "<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_prepared/ebrains_upload_bundle/cra_422s"
   },
   "criteria": [
     {
@@ -26,14 +26,14 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_prepared/ebrains_upload_bundle/cra_422s"
+      "value": "<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_prepared/ebrains_upload_bundle/cra_422s"
     },
     {
       "name": "runtime source included",
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_prepared/ebrains_upload_bundle/cra_422s/coral_reef_spinnaker/spinnaker_runtime"
+      "value": "<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_prepared/ebrains_upload_bundle/cra_422s/coral_reef_spinnaker/spinnaker_runtime"
     },
     {
       "name": "run-hardware command emitted",
@@ -243,19 +243,19 @@
   "generated_at_utc": "2026-05-01T01:33:03+00:00",
   "main_syntax_check": {
     "normal": {
-      "command": "/usr/bin/cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-int-to-pointer-cast -I /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/stubs -I /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src -c /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src/main.c -o /Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_prepared/tier4_22i_main_syntax_normal.o",
-      "object_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_prepared/tier4_22i_main_syntax_normal.o",
+      "command": "/usr/bin/cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-int-to-pointer-cast -I <repo>/coral_reef_spinnaker/spinnaker_runtime/stubs -I <repo>/coral_reef_spinnaker/spinnaker_runtime/src -c <repo>/coral_reef_spinnaker/spinnaker_runtime/src/main.c -o <repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_prepared/tier4_22i_main_syntax_normal.o",
+      "object_artifact": "<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_prepared/tier4_22i_main_syntax_normal.o",
       "returncode": 0,
       "status": "pass",
       "stderr": "",
-      "stderr_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_prepared/tier4_22i_main_syntax_normal_stderr.txt",
+      "stderr_artifact": "<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_prepared/tier4_22i_main_syntax_normal_stderr.txt",
       "stdout": "",
-      "stdout_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_prepared/tier4_22i_main_syntax_normal_stdout.txt"
+      "stdout_artifact": "<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_prepared/tier4_22i_main_syntax_normal_stdout.txt"
     },
     "status": "pass"
   },
   "mode": "prepare",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_prepared",
+  "output_dir": "<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_prepared",
   "runner_revision": "tier4_22j_minimal_custom_runtime_learning_20260501_0001",
   "status": "prepared",
   "summary": {
@@ -263,10 +263,10 @@
     "jobmanager_command": "cra_422s/experiments/tier4_22j_minimal_custom_runtime_learning.py --mode run-hardware --output-dir tier4_22j_job_output",
     "main_syntax_check_passed": true,
     "mode": "prepare",
-    "stable_upload_folder": "/Users/james/JKS:CRA/ebrains_jobs/cra_422s",
-    "tier4_22i_manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260501_ebrains_board_roundtrip_pass/tier4_22i_results.json",
+    "stable_upload_folder": "<repo>/ebrains_jobs/cra_422s",
+    "tier4_22i_manifest": "<repo>/controlled_test_output/tier4_22i_20260501_ebrains_board_roundtrip_pass/tier4_22i_results.json",
     "tier4_22i_status": "pass",
-    "upload_folder": "/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_prepared/ebrains_upload_bundle/cra_422s",
+    "upload_folder": "<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_prepared/ebrains_upload_bundle/cra_422s",
     "what_i_need_from_user": "Upload the generated cra_422s folder to EBRAINS/JobManager and run the emitted command; download returned files after completion."
   },
   "tier": "Tier 4.22j - Minimal Custom-Runtime Closed-Loop Learning Smoke"

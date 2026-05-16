@@ -1153,7 +1153,7 @@ Prepared from `controlled_test_output/tier4_22u_20260501_native_memory_route_sta
 Upload folder:
 
 ```text
-/Users/james/JKS:CRA/ebrains_jobs/cra_422ad
+<repo>/ebrains_jobs/cra_422ad
 ```
 
 JobManager command:
@@ -1179,7 +1179,7 @@ Prepared from `controlled_test_output/tier4_22v_20260501_native_memory_route_ree
 Upload folder:
 
 ```text
-/Users/james/JKS:CRA/ebrains_jobs/cra_422ae
+<repo>/ebrains_jobs/cra_422ae
 ```
 
 JobManager command:
@@ -1206,7 +1206,7 @@ Prepared from `controlled_test_output/tier4_22w_20260501_native_decoupled_memory
 Upload folder:
 
 ```text
-/Users/james/JKS:CRA/ebrains_jobs/cra_422ag
+<repo>/ebrains_jobs/cra_422ag
 ```
 
 JobManager command:
@@ -1239,7 +1239,7 @@ Prepared from `controlled_test_output/tier4_22x_20260501_compact_v2_bridge_decou
 Upload folder:
 
 ```text
-/Users/james/JKS:CRA/ebrains_jobs/cra_422ah
+<repo>/ebrains_jobs/cra_422ah
 ```
 
 JobManager command:
@@ -1263,7 +1263,7 @@ Prepared from `controlled_test_output/tier4_32e_20260507_prepared/`.
 Upload folder:
 
 ```text
-/Users/james/JKS:CRA/ebrains_jobs/cra_432e
+<repo>/ebrains_jobs/cra_432e
 ```
 
 JobManager command:

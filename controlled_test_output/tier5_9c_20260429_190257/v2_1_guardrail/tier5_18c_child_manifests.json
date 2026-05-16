@@ -9,18 +9,18 @@
         "mock",
         "--stop-on-fail",
         "--output-dir",
-        "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate"
+        "<repo>/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate"
       ],
       "failure_reason": "",
-      "manifest_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/tier5_17e_results.json",
+      "manifest_path": "<repo>/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/tier5_17e_results.json",
       "name": "v2_0_compact_regression_gate",
-      "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate",
+      "output_dir": "<repo>/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate",
       "purpose": "rerun the v2.0 promotion/regression stack: v1.8 compact regression, v1.9 composition/routing, Tier 5.14, and Tier 5.17d guardrails remain green",
       "return_code": 0,
       "runtime_seconds": 106.10406729099999,
       "status": "pass",
-      "stderr_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v2_0_compact_regression_gate_stderr.log",
-      "stdout_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v2_0_compact_regression_gate_stdout.log"
+      "stderr_path": "<repo>/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v2_0_compact_regression_gate_stderr.log",
+      "stdout_path": "<repo>/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v2_0_compact_regression_gate_stdout.log"
     },
     {
       "command": [
@@ -29,18 +29,18 @@
         "--smoke",
         "--stop-on-fail",
         "--output-dir",
-        "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/tier5_18_self_evaluation_guardrail"
+        "<repo>/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/tier5_18_self_evaluation_guardrail"
       ],
       "failure_reason": "",
-      "manifest_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/tier5_18_self_evaluation_guardrail/tier5_18_results.json",
+      "manifest_path": "<repo>/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/tier5_18_self_evaluation_guardrail/tier5_18_results.json",
       "name": "tier5_18_self_evaluation_guardrail",
-      "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/tier5_18_self_evaluation_guardrail",
+      "output_dir": "<repo>/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/tier5_18_self_evaluation_guardrail",
       "purpose": "rerun the Tier 5.18 calibrated pre-feedback reliability-monitoring and confidence-gated adaptation diagnostic",
       "return_code": 0,
       "runtime_seconds": 1.576596791,
       "status": "pass",
-      "stderr_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/tier5_18_self_evaluation_guardrail/tier5_18_self_evaluation_guardrail_stderr.log",
-      "stdout_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/tier5_18_self_evaluation_guardrail/tier5_18_self_evaluation_guardrail_stdout.log"
+      "stderr_path": "<repo>/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/tier5_18_self_evaluation_guardrail/tier5_18_self_evaluation_guardrail_stderr.log",
+      "stdout_path": "<repo>/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/tier5_18_self_evaluation_guardrail/tier5_18_self_evaluation_guardrail_stdout.log"
     }
   ]
 }

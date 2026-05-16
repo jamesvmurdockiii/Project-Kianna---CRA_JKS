@@ -1,10 +1,10 @@
 {
   "classification_outcome": "task_gain_without_dimension",
   "generated_at_utc": "2026-05-09T16:19:00+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7l_20260509_effective_state_dimensionality_repair_scoring_gate",
-  "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier7_7l_20260509_effective_state_dimensionality_repair_scoring_gate/tier7_7l_report.md",
-  "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier7_7l_20260509_effective_state_dimensionality_repair_scoring_gate/tier7_7l_results.json",
+  "output_dir": "<repo>/controlled_test_output/tier7_7l_20260509_effective_state_dimensionality_repair_scoring_gate",
+  "report_md": "<repo>/controlled_test_output/tier7_7l_20260509_effective_state_dimensionality_repair_scoring_gate/tier7_7l_report.md",
+  "results_json": "<repo>/controlled_test_output/tier7_7l_20260509_effective_state_dimensionality_repair_scoring_gate/tier7_7l_results.json",
   "status": "pass",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7l_20260509_effective_state_dimensionality_repair_scoring_gate/tier7_7l_summary.csv",
+  "summary_csv": "<repo>/controlled_test_output/tier7_7l_20260509_effective_state_dimensionality_repair_scoring_gate/tier7_7l_summary.csv",
   "tier": "Tier 7.7l - Effective-State-Dimensionality Repair Scoring Gate"
 }

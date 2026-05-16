@@ -923,7 +923,7 @@
   "generated_at_utc": "2026-05-08T22:22:18+00:00",
   "horizon": 5,
   "length": 2400,
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_20d_20260508_resonant_heavy_polyp_diagnostic",
+  "output_dir": "<repo>/controlled_test_output/tier5_20d_20260508_resonant_heavy_polyp_diagnostic",
   "resonant_heavy_contract": {
     "mechanism": "resonant_heavy_hybrid_lif_branches",
     "nonclaims": [

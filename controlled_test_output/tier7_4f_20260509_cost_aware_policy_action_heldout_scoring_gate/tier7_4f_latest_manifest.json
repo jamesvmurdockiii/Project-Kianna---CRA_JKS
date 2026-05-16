@@ -3,78 +3,78 @@
     {
       "bytes": 28230,
       "name": "action_rows_sample_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_action_rows_sample.csv",
+      "path": "<repo>/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_action_rows_sample.csv",
       "sha256": "a65b76740eb4a1b1d1cf0ca8394b0d8a4cf7bcd49be2bbce7d2fe548c8e4c455"
     },
     {
       "bytes": 587,
       "name": "cmapss_selected_channels_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_cmapss_selected_channels.csv",
+      "path": "<repo>/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_cmapss_selected_channels.csv",
       "sha256": "c48cb01611c17152e273ae297d184ff28f668bcb914eb58d37becbbd2b1564c7"
     },
     {
       "bytes": 310,
       "name": "cost_model_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_cost_model.csv",
+      "path": "<repo>/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_cost_model.csv",
       "sha256": "8e2723ea5b27774e7eb97f9c8b3a7fc043f69740ccae6745883dd98dc97b40f2"
     },
     {
       "bytes": 765,
       "name": "decision_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_decision.csv",
+      "path": "<repo>/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_decision.csv",
       "sha256": "fa06622cfde391cf970b193790209605b6bc0b94e78be2d48f6e84dfe34e41e8"
     },
     {
       "bytes": 832,
       "name": "decision_json",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_decision.json",
+      "path": "<repo>/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_decision.json",
       "sha256": "9cdf3d4747d8a2fa72f9f5e02934d4c57186e9e24f1ec38172940a2dd356008a"
     },
     {
       "bytes": 1064,
       "name": "family_decisions_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_family_decisions.csv",
+      "path": "<repo>/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_family_decisions.csv",
       "sha256": "c1b146759e97a5740773dffd1331832fbc2d28f61856fc9c3d579edcc5dbb75e"
     },
     {
       "bytes": 4429,
       "name": "model_summary_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_model_summary.csv",
+      "path": "<repo>/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_model_summary.csv",
       "sha256": "f5f847263e88056c19911e5ee188f4403ae6f551e0843e9cfba772bc146f83c6"
     },
     {
       "bytes": 2534,
       "name": "report_md",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_report.md",
+      "path": "<repo>/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_report.md",
       "sha256": "813a257b671b51c397676cf9a054307454229c78ff6668dbd58b4c7d0e88054d"
     },
     {
       "bytes": 25861,
       "name": "results_json",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_results.json",
+      "path": "<repo>/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_results.json",
       "sha256": "84b18cf487c1aaf0d17b5e5fdd245614392f5c7f3ffac4ba937ee982cb73c36a"
     },
     {
       "bytes": 1461177,
       "name": "score_rows_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_score_rows.csv",
+      "path": "<repo>/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_score_rows.csv",
       "sha256": "c9ec63740812becff727db48021f805749c176fc5301bd17a6732b069cfdd68e"
     },
     {
       "bytes": 1195,
       "name": "statistical_support_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_statistical_support.csv",
+      "path": "<repo>/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_statistical_support.csv",
       "sha256": "fcac970d3caee524b5f9a86087a66119099194a60c57e20993b1c152f2f408f6"
     },
     {
       "bytes": 355,
       "name": "summary_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_summary.csv",
+      "path": "<repo>/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_summary.csv",
       "sha256": "845ee09714fd0dccefade44a1722af3b90ed6ebcad561f3b896c5669dbfbcd47"
     }
   ],
   "generated_at_utc": "2026-05-09T02:41:35+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate",
+  "output_dir": "<repo>/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate",
   "runner_revision": "tier7_4f_cost_aware_policy_action_heldout_scoring_gate_20260509_0001",
   "status": "pass",
   "tier": "Tier 7.4f - Cost-Aware Policy/Action Held-Out Scoring Gate"

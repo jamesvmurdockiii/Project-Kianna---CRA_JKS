@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.442466+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.584999+00:00",
   "source_generated_at_utc": "2026-05-09T14:02:25+00:00",
   "registry_entry_id": "tier7_7d_standardized_long_run_failure_scoring_gate",
   "tier": "Tier 7.7d - Standardized Long-Run / Failure-Localization Scoring Gate",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7d_20260509_standardized_long_run_failure_scoring_gate",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_7d_20260509_standardized_long_run_failure_scoring_gate/tier7_7d_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_7d_20260509_standardized_long_run_failure_scoring_gate/tier7_7d_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7d_20260509_standardized_long_run_failure_scoring_gate/tier7_7d_summary.csv",
+  "output_dir": "controlled_test_output/tier7_7d_20260509_standardized_long_run_failure_scoring_gate",
+  "manifest": "controlled_test_output/tier7_7d_20260509_standardized_long_run_failure_scoring_gate/tier7_7d_results.json",
+  "report": "controlled_test_output/tier7_7d_20260509_standardized_long_run_failure_scoring_gate/tier7_7d_report.md",
+  "summary_csv": "controlled_test_output/tier7_7d_20260509_standardized_long_run_failure_scoring_gate/tier7_7d_summary.csv",
   "canonical": true,
   "claim": "Tier 7.7d executed the locked long-run scoring harness and classified the result as benchmark_stream_invalid: Mackey-Glass ratios persisted across 8000/16000/32000, Lorenz did not materially improve, external baselines still remained blockers, and the required NARMA10 stream became non-finite at 16000 and 32000 with the existing generator.",
   "caveat": "Scoring-blocker evidence only; not a complete long-run scoreboard, not public usefulness proof, not a baseline freeze, not hardware/native transfer, and not language, broad planning, AGI, or ASI evidence. NARMA10 long-run generation must be repaired/preflighted before citable long-run standardized scoring."

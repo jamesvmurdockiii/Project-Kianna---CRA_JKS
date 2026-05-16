@@ -28,7 +28,7 @@ CRA now has noncanonical controlled software evidence that bounded keyed context
 
 ## Tier 5.11d Generic Replay / Consolidation Summary
 
-- Output: `/Users/james/JKS:CRA/controlled_test_output/tier5_11d_20260429_041524`
+- Output: `<repo>/controlled_test_output/tier5_11d_20260429_041524`
 - Actual/expected runs: `189` / `189`
 - Backend: `nest`
 - Steps: `960`
@@ -37,7 +37,7 @@ CRA now has noncanonical controlled software evidence that bounded keyed context
 - Candidate replay events: `1185.0`
 - Candidate replay consolidations: `1185.0`
 - No-consolidation writes: `0.0`
-- Compact regression after replay: `pass` at `/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527`
+- Compact regression after replay: `pass` at `<repo>/controlled_test_output/tier5_7_20260429_050527`
 
 ### Criteria
 

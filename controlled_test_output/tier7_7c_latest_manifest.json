@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.441723+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.584370+00:00",
   "source_generated_at_utc": "2026-05-09T13:45:19+00:00",
   "registry_entry_id": "tier7_7c_standardized_long_run_failure_contract",
   "tier": "Tier 7.7c - Standardized Long-Run / Failure-Localization Contract",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract/tier7_7c_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract/tier7_7c_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract/tier7_7c_summary.csv",
+  "output_dir": "controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract",
+  "manifest": "controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract/tier7_7c_results.json",
+  "report": "controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract/tier7_7c_report.md",
+  "summary_csv": "controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract/tier7_7c_summary.csv",
   "canonical": true,
   "claim": "Tier 7.7c locks the post-7.7b long-run failure-localization contract before scoring: Mackey-Glass, Lorenz, and NARMA10 remain fixed with seeds 42/43/44, required lengths 8000/16000/32000, optional diagnostic length 50000, and explicit diagnostics for Mackey signal persistence, Lorenz state-reconstruction gap, NARMA10 memory-depth gap, external-baseline gap, and sham specificity.",
   "caveat": "Contract/pre-registration evidence only; not a long-run score, not a baseline freeze, not public usefulness proof, not hardware/native transfer, and not language, broad planning, AGI, or ASI evidence."

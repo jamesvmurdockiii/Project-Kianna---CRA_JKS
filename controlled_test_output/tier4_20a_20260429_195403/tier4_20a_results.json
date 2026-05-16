@@ -1,21 +1,21 @@
 {
   "artifacts": {
-    "matrix_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_20a_20260429_195403/tier4_20a_transfer_matrix.csv",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_20a_20260429_195403/tier4_20a_report.md",
-    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_20a_20260429_195403/tier4_20a_summary.csv"
+    "matrix_csv": "<repo>/controlled_test_output/tier4_20a_20260429_195403/tier4_20a_transfer_matrix.csv",
+    "report_md": "<repo>/controlled_test_output/tier4_20a_20260429_195403/tier4_20a_report.md",
+    "summary_csv": "<repo>/controlled_test_output/tier4_20a_20260429_195403/tier4_20a_summary.csv"
   },
   "criteria": [
     {
       "name": "frozen v2.1 baseline artifact exists",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.1.json"
+      "value": "<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.1.json"
     },
     {
       "name": "post-chunked-runtime v0.8 baseline artifact exists",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v0.8.json"
+      "value": "<repo>/baselines/CRA_EVIDENCE_BASELINE_v0.8.json"
     },
     {
       "name": "chunked host runtime contract is implemented",
@@ -150,7 +150,7 @@
       "source_tier": "Tier 5.15"
     }
   ],
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_20a_20260429_195403",
+  "output_dir": "<repo>/controlled_test_output/tier4_20a_20260429_195403",
   "status": "pass",
   "summary": {
     "chunked_plan": {

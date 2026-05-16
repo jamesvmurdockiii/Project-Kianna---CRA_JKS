@@ -48,9 +48,9 @@ Tier 4.31a used a conservative initial trace clip in the equation sketch. Tier 4
 | Criterion | Value | Rule | Pass |
 | --- | --- | --- | --- |
 | runner revision current | `tier4_31b_native_temporal_fixed_point_reference_20260506_0001` | expected current source | yes |
-| Tier 4.31a readiness exists | `/Users/james/JKS:CRA/controlled_test_output/tier4_31a_20260506_native_temporal_substrate_readiness/tier4_31a_results.json` | exists | yes |
+| Tier 4.31a readiness exists | `<repo>/controlled_test_output/tier4_31a_20260506_native_temporal_substrate_readiness/tier4_31a_results.json` | exists | yes |
 | Tier 4.31a readiness passed | `pass` | == pass | yes |
-| Tier 5.19c reference exists | `/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/tier5_19c_results.json` | exists | yes |
+| Tier 5.19c reference exists | `<repo>/controlled_test_output/tier5_19c_20260505_fading_memory_regression/tier5_19c_results.json` | exists | yes |
 | Tier 5.19c reference passed | `pass` | == pass | yes |
 | all temporal-memory tasks included | `["heldout_long_memory", "multiscale_echo", "slow_context_drift"]` | subset of tasks | yes |
 | all model rows completed | `81/81` | all pass | yes |

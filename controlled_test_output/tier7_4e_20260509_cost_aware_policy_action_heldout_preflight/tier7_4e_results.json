@@ -32,7 +32,7 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_4d_20260509_cost_aware_policy_action_heldout_contract/tier7_4d_results.json"
+      "value": "<repo>/controlled_test_output/tier7_4d_20260509_cost_aware_policy_action_heldout_contract/tier7_4d_results.json"
     },
     {
       "name": "Tier 7.4d passed",
@@ -143,20 +143,20 @@
           "artifact": "tier7_1g_results",
           "exists": true,
           "family": "nab",
-          "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_results.json"
+          "path": "<repo>/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_results.json"
         },
         {
           "artifact": "tier7_1l_results",
           "exists": true,
           "family": "nab",
-          "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation/tier7_1l_results.json"
+          "path": "<repo>/controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation/tier7_1l_results.json"
         },
         {
           "artifact": "online_smoke_stream",
           "exists": true,
           "family": "nab",
           "header": "stream_id,category,adapter_order_index,source_row_index,timestamp,value,prediction_before_update,label_available_in_stream,anomaly_window_available_in_stream,scoring_labels_file",
-          "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_smoke_stream.csv",
+          "path": "<repo>/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_smoke_stream.csv",
           "rows": 400
         },
         {
@@ -164,21 +164,21 @@
           "exists": true,
           "family": "nab",
           "header": "file,category,window_index,window_start,window_end,source,online_detector_access",
-          "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_label_windows.csv",
+          "path": "<repo>/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_label_windows.csv",
           "rows": 12
         },
         {
           "artifact": "tier7_1b_results",
           "exists": true,
           "family": "cmapss",
-          "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_results.json"
+          "path": "<repo>/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_results.json"
         },
         {
           "artifact": "online_smoke_stream",
           "exists": true,
           "family": "cmapss",
           "header": "event_id,split,unit,cycle,prediction_before_update,feature_count,feature_l2,target_available_in_stream",
-          "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_smoke_stream_preview.csv",
+          "path": "<repo>/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_smoke_stream_preview.csv",
           "rows": 20
         },
         {
@@ -186,7 +186,7 @@
           "exists": true,
           "family": "cmapss",
           "header": "event_id,split,unit,cycle,offline_rul_label",
-          "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_smoke_scoring_labels.csv",
+          "path": "<repo>/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_smoke_scoring_labels.csv",
           "rows": 20
         }
       ]
@@ -500,20 +500,20 @@
       "artifact": "tier7_1g_results",
       "exists": true,
       "family": "nab",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_results.json"
+      "path": "<repo>/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_results.json"
     },
     {
       "artifact": "tier7_1l_results",
       "exists": true,
       "family": "nab",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation/tier7_1l_results.json"
+      "path": "<repo>/controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation/tier7_1l_results.json"
     },
     {
       "artifact": "online_smoke_stream",
       "exists": true,
       "family": "nab",
       "header": "stream_id,category,adapter_order_index,source_row_index,timestamp,value,prediction_before_update,label_available_in_stream,anomaly_window_available_in_stream,scoring_labels_file",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_smoke_stream.csv",
+      "path": "<repo>/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_smoke_stream.csv",
       "rows": 400
     },
     {
@@ -521,21 +521,21 @@
       "exists": true,
       "family": "nab",
       "header": "file,category,window_index,window_start,window_end,source,online_detector_access",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_label_windows.csv",
+      "path": "<repo>/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_label_windows.csv",
       "rows": 12
     },
     {
       "artifact": "tier7_1b_results",
       "exists": true,
       "family": "cmapss",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_results.json"
+      "path": "<repo>/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_results.json"
     },
     {
       "artifact": "online_smoke_stream",
       "exists": true,
       "family": "cmapss",
       "header": "event_id,split,unit,cycle,prediction_before_update,feature_count,feature_l2,target_available_in_stream",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_smoke_stream_preview.csv",
+      "path": "<repo>/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_smoke_stream_preview.csv",
       "rows": 20
     },
     {
@@ -543,7 +543,7 @@
       "exists": true,
       "family": "cmapss",
       "header": "event_id,split,unit,cycle,offline_rul_label",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_smoke_scoring_labels.csv",
+      "path": "<repo>/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_smoke_scoring_labels.csv",
       "rows": 20
     }
   ],

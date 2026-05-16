@@ -10,15 +10,15 @@
       "coral_reef_spinnaker/tests"
     ],
     "failure_reason": "",
-    "manifest_path": "/Users/james/JKS:CRA/controlled_test_output/tier7_7s_20260509_bounded_temporal_basis_utility_promotion/compact_regression_pytest/__returncode__",
+    "manifest_path": "<repo>/controlled_test_output/tier7_7s_20260509_bounded_temporal_basis_utility_promotion/compact_regression_pytest/__returncode__",
     "name": "compact_regression_pytest",
-    "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7s_20260509_bounded_temporal_basis_utility_promotion/compact_regression_pytest",
+    "output_dir": "<repo>/controlled_test_output/tier7_7s_20260509_bounded_temporal_basis_utility_promotion/compact_regression_pytest",
     "purpose": "repository pytest regression guard before bounded temporal-interface utility promotion",
     "return_code": 0,
     "runtime_seconds": 5.002777375,
     "status": "pass",
-    "stderr_path": "/Users/james/JKS:CRA/controlled_test_output/tier7_7s_20260509_bounded_temporal_basis_utility_promotion/compact_regression_pytest/compact_regression_pytest_stderr.log",
-    "stdout_path": "/Users/james/JKS:CRA/controlled_test_output/tier7_7s_20260509_bounded_temporal_basis_utility_promotion/compact_regression_pytest/compact_regression_pytest_stdout.log"
+    "stderr_path": "<repo>/controlled_test_output/tier7_7s_20260509_bounded_temporal_basis_utility_promotion/compact_regression_pytest/compact_regression_pytest_stderr.log",
+    "stdout_path": "<repo>/controlled_test_output/tier7_7s_20260509_bounded_temporal_basis_utility_promotion/compact_regression_pytest/compact_regression_pytest_stdout.log"
   },
   "criteria": [
     {
@@ -30,7 +30,7 @@
       "pass": true,
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_7q_20260509_cra_native_temporal_interface_internalization_scoring_gate/tier7_7q_results.json"
+      "value": "<repo>/controlled_test_output/tier7_7q_20260509_cra_native_temporal_interface_internalization_scoring_gate/tier7_7q_results.json"
     },
     {
       "criterion": "Tier 7.7q passed",
@@ -52,7 +52,7 @@
       "pass": true,
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_7r_20260509_native_temporal_basis_reframing_contract/tier7_7r_results.json"
+      "value": "<repo>/controlled_test_output/tier7_7r_20260509_native_temporal_basis_reframing_contract/tier7_7r_results.json"
     },
     {
       "criterion": "Tier 7.7r passed",
@@ -226,7 +226,7 @@
     "not broad public usefulness",
     "not language, AGI, or ASI evidence"
   ],
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7s_20260509_bounded_temporal_basis_utility_promotion",
+  "output_dir": "<repo>/controlled_test_output/tier7_7s_20260509_bounded_temporal_basis_utility_promotion",
   "runner_revision": "tier7_7s_bounded_temporal_basis_utility_promotion_20260509_0001",
   "status": "pass",
   "tier": "Tier 7.7s - Bounded Temporal-Basis Utility Promotion/Regression Gate"

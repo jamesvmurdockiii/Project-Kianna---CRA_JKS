@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.569193+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.713705+00:00",
   "source_generated_at_utc": "2026-05-09T19:46:58+00:00",
   "registry_entry_id": "tier7_7v_r0_diagnostic_model_variants",
   "tier": "Tier 7.7v-r0 - Diagnostic Model Variant Implementation",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7v_r0_20260509_diagnostic_model_variants",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_7v_r0_20260509_diagnostic_model_variants/tier7_7v_r0_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_7v_r0_20260509_diagnostic_model_variants/tier7_7v_r0_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7v_r0_20260509_diagnostic_model_variants/tier7_7v_r0_summary.csv",
+  "output_dir": "controlled_test_output/tier7_7v_r0_20260509_diagnostic_model_variants",
+  "manifest": "controlled_test_output/tier7_7v_r0_20260509_diagnostic_model_variants/tier7_7v_r0_results.json",
+  "report": "controlled_test_output/tier7_7v_r0_20260509_diagnostic_model_variants/tier7_7v_r0_report.md",
+  "summary_csv": "controlled_test_output/tier7_7v_r0_20260509_diagnostic_model_variants/tier7_7v_r0_summary.csv",
   "canonical": true,
   "claim": "Tier 7.7v-r0 extends tier7_7j.basis_features with random_recurrent and shuffled_input diagnostic modes, declares 6 variant registry entries (orthogonal, block, frozen_recurrent, shuffled_input, no_plasticity, state_reset), and verifies all variants produce state geometry with distinct participation ratios. This provides the infrastructure needed for Tier 7.7u causal localization probes.",
   "caveat": "Model variant implementation and verification only; not a repair, not mechanism promotion, not a baseline freeze, not public usefulness proof, and not hardware/native transfer."

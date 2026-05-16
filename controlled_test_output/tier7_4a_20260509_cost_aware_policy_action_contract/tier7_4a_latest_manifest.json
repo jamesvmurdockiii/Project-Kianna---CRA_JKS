@@ -3,36 +3,36 @@
     {
       "bytes": 2906,
       "name": "contract_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4a_20260509_cost_aware_policy_action_contract/tier7_4a_contract.csv",
+      "path": "<repo>/controlled_test_output/tier7_4a_20260509_cost_aware_policy_action_contract/tier7_4a_contract.csv",
       "sha256": "0c61a353631480d9d7d28871bfaa314495fe685bb85be887b835100aecc91f2e"
     },
     {
       "bytes": 3083,
       "name": "contract_json",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4a_20260509_cost_aware_policy_action_contract/tier7_4a_contract.json",
+      "path": "<repo>/controlled_test_output/tier7_4a_20260509_cost_aware_policy_action_contract/tier7_4a_contract.json",
       "sha256": "c001a519f672a17687b8810591d10258517a3825da8e09b1fc39643fc4de4117"
     },
     {
       "bytes": 1577,
       "name": "report_md",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4a_20260509_cost_aware_policy_action_contract/tier7_4a_report.md",
+      "path": "<repo>/controlled_test_output/tier7_4a_20260509_cost_aware_policy_action_contract/tier7_4a_report.md",
       "sha256": "6951dbd862a86a05b5a9281f67343ed1dad85564a12af7b62bde47a66ec4403e"
     },
     {
       "bytes": 8313,
       "name": "results_json",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4a_20260509_cost_aware_policy_action_contract/tier7_4a_results.json",
+      "path": "<repo>/controlled_test_output/tier7_4a_20260509_cost_aware_policy_action_contract/tier7_4a_results.json",
       "sha256": "098c65e4b805e43936ddc2897e0ace90dcdff6a6e5dc5a942b339471cf8971ed"
     },
     {
       "bytes": 2562,
       "name": "summary_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4a_20260509_cost_aware_policy_action_contract/tier7_4a_summary.csv",
+      "path": "<repo>/controlled_test_output/tier7_4a_20260509_cost_aware_policy_action_contract/tier7_4a_summary.csv",
       "sha256": "acdcf68390bcf4259f482953f47dad5777e229cd536be7fd6bd5018c6eae028a"
     }
   ],
   "generated_at_utc": "2026-05-09T00:13:11+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_4a_20260509_cost_aware_policy_action_contract",
+  "output_dir": "<repo>/controlled_test_output/tier7_4a_20260509_cost_aware_policy_action_contract",
   "runner_revision": "tier7_4a_cost_aware_policy_action_contract_20260509_0001",
   "status": "pass",
   "tier": "Tier 7.4a - Cost-Aware Policy/Action Selection Contract"

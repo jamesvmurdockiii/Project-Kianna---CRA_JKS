@@ -28,7 +28,7 @@ The diagnostic uses a conservative action-confidence floor because the measured 
 
 | Criterion | Value | Rule | Pass |
 | --- | --- | --- | --- |
-| Tier 7.4a exists | `/Users/james/JKS:CRA/controlled_test_output/tier7_4a_20260509_cost_aware_policy_action_contract/tier7_4a_results.json` | exists | yes |
+| Tier 7.4a exists | `<repo>/controlled_test_output/tier7_4a_20260509_cost_aware_policy_action_contract/tier7_4a_results.json` | exists | yes |
 | Tier 7.4a passed | `pass` | == pass | yes |
 | task families covered | `['synthetic_alarm_cost_stream', 'delayed_action_consequence', 'hidden_context_action_switch']` | >= 3 | yes |
 | seeds covered | `[42, 43, 44]` | == [42, 43, 44] | yes |

@@ -4,8 +4,8 @@
   "tier": "Tier 5.18c - Self-Evaluation Compact Regression",
   "status": "pass",
   "failure_reason": "",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/tier5_18c_report.md",
+  "output_dir": "<repo>/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest",
+  "report": "<repo>/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/tier5_18c_report.md",
   "runtime_seconds": 1635.166125834,
   "claim_boundary": "Promotion/regression gate for bounded host-side software self-evaluation evidence. Not consciousness, self-awareness, hardware evidence, AGI, language, planning, or external-baseline superiority."
 }

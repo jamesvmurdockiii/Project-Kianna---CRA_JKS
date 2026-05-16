@@ -1,10 +1,10 @@
 {
   "classification_outcome": "external_controls_still_win",
   "generated_at_utc": "2026-05-09T17:34:02+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7q_20260509_cra_native_temporal_interface_internalization_scoring_gate",
-  "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier7_7q_20260509_cra_native_temporal_interface_internalization_scoring_gate/tier7_7q_report.md",
-  "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier7_7q_20260509_cra_native_temporal_interface_internalization_scoring_gate/tier7_7q_results.json",
+  "output_dir": "<repo>/controlled_test_output/tier7_7q_20260509_cra_native_temporal_interface_internalization_scoring_gate",
+  "report_md": "<repo>/controlled_test_output/tier7_7q_20260509_cra_native_temporal_interface_internalization_scoring_gate/tier7_7q_report.md",
+  "results_json": "<repo>/controlled_test_output/tier7_7q_20260509_cra_native_temporal_interface_internalization_scoring_gate/tier7_7q_results.json",
   "status": "pass",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7q_20260509_cra_native_temporal_interface_internalization_scoring_gate/tier7_7q_summary.csv",
+  "summary_csv": "<repo>/controlled_test_output/tier7_7q_20260509_cra_native_temporal_interface_internalization_scoring_gate/tier7_7q_summary.csv",
   "tier": "Tier 7.7q - CRA-Native Temporal-Interface Internalization Scoring Gate"
 }

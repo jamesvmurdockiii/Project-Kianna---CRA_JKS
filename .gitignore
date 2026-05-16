@@ -87,10 +87,43 @@ data/cache/
 controlled_test_output/*_smoke/
 controlled_test_output/*_probe/
 
-# Note: controlled_test_output/ is INTENTIONALLY NOT IGNORED.
-# It contains the reproducible evidence trail and is part of the
-# open-source research artifact. See README.md and codebasecontract.md.
+# Public-repo hygiene: keep compact evidence summaries in Git, but do not track
+# raw hardware downloads, provenance databases, scratch packages, or bulky
+# generated scratch artifacts by default. Existing tracked files must be removed from
+# the index with `git rm --cached`; .gitignore only protects future files.
+.maintainer/
+Cursor_Audit.md
+*_Audit.md
+*_audit_private.md
+*_handoff.md
+*.zip
+*.sqlite3
+controlled_test_output/**/raw_download*/
+controlled_test_output/**/raw_returned_downloads*/
+controlled_test_output/**/downloaded_files*/
+controlled_test_output/**/_download_intake_originals*/
+controlled_test_output/**/raw_hardware_artifacts*/
+controlled_test_output/**/raw_reports*/
+controlled_test_output/**/spinnaker_reports*/
+controlled_test_output/**/reports*/
+controlled_test_output/**/ebrains_upload_bundle*/
+controlled_test_output/**/stack_trace
+controlled_test_output/**/errored
+controlled_test_output/**/finished
+controlled_test_output/**/*.elf
+controlled_test_output/**/*.aplx
+controlled_test_output/**/*.o
+ebrains_jobs/cra_*/**/__pycache__/
+ebrains_jobs/cra_*/**/*.pyc
+ebrains_jobs/cra_*/**/*.zip
+ebrains_jobs/cra_*/**/*.sqlite3
+ebrains_jobs/cra_*/**/*.elf
+ebrains_jobs/cra_*/**/*.aplx
+ebrains_jobs/cra_*/controlled_test_output/
 
-# Note: ebrains_jobs/ is INTENTIONALLY NOT IGNORED.
-# It contains self-contained EBRAINS upload packages that document
-# exactly what source was sent to hardware. See docs/SPINNAKER_EBRAINS_RUNBOOK.md.
+# Note: controlled_test_output/ is not ignored as a whole. Commit compact,
+# claim-bearing reports, manifests, registry files, and summary tables. Raw
+# returned hardware archives should be externalized and referenced by manifest.
+
+# Note: ebrains_jobs/ is not ignored as a whole. Commit only compact source-only
+# package templates or final source packages that are useful for reproduction.

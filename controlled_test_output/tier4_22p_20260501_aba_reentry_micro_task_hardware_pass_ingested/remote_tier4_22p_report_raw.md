@@ -3,7 +3,7 @@
 - Generated: `2026-05-01T04:12:34+00:00`
 - Mode: `run-hardware`
 - Status: **PASS**
-- Output directory: `/tmp/job12256034446785037510.tmp/tier4_22p_job_output`
+- Output directory: `<jobmanager_tmp>`
 
 Tier 4.22p runs a 30-event A-B-A reentry signed micro-task through the custom runtime. Each event is scored from the chip's pre-update prediction, held across a two-event pending gap, then matured in order with delayed credit and checked against a local s16.15 reference.
 
@@ -127,18 +127,18 @@ Tier 4.22p runs a 30-event A-B-A reentry signed micro-task through the custom ru
 
 ## Artifacts
 
-- `reference_json`: `/tmp/job12256034446785037510.tmp/tier4_22p_job_output/tier4_22p_task_reference.json`
-- `reference_csv`: `/tmp/job12256034446785037510.tmp/tier4_22p_job_output/tier4_22p_task_reference_rows.csv`
-- `environment_json`: `/tmp/job12256034446785037510.tmp/tier4_22p_job_output/tier4_22p_environment.json`
-- `target_acquisition_json`: `/tmp/job12256034446785037510.tmp/tier4_22p_job_output/tier4_22p_target_acquisition.json`
-- `host_test_stdout`: `/tmp/job12256034446785037510.tmp/tier4_22p_job_output/tier4_22i_host_test_stdout.txt`
-- `host_test_stderr`: `/tmp/job12256034446785037510.tmp/tier4_22p_job_output/tier4_22i_host_test_stderr.txt`
-- `main_syntax_stdout`: `/tmp/job12256034446785037510.tmp/tier4_22p_job_output/tier4_22i_main_syntax_normal_stdout.txt`
-- `main_syntax_stderr`: `/tmp/job12256034446785037510.tmp/tier4_22p_job_output/tier4_22i_main_syntax_normal_stderr.txt`
-- `aplx_build_stdout`: `/tmp/job12256034446785037510.tmp/tier4_22p_job_output/tier4_22i_aplx_build_stdout.txt`
-- `aplx_build_stderr`: `/tmp/job12256034446785037510.tmp/tier4_22p_job_output/tier4_22i_aplx_build_stderr.txt`
-- `load_result_json`: `/tmp/job12256034446785037510.tmp/tier4_22p_job_output/tier4_22p_load_result.json`
-- `task_micro_loop_result_json`: `/tmp/job12256034446785037510.tmp/tier4_22p_job_output/tier4_22p_task_micro_loop_result.json`
-- `task_micro_loop_rows_csv`: `/tmp/job12256034446785037510.tmp/tier4_22p_job_output/tier4_22p_task_micro_loop_rows.csv`
-- `manifest_json`: `/tmp/job12256034446785037510.tmp/tier4_22p_job_output/tier4_22p_results.json`
-- `report_md`: `/tmp/job12256034446785037510.tmp/tier4_22p_job_output/tier4_22p_report.md`
+- `reference_json`: `<jobmanager_tmp>`
+- `reference_csv`: `<jobmanager_tmp>`
+- `environment_json`: `<jobmanager_tmp>`
+- `target_acquisition_json`: `<jobmanager_tmp>`
+- `host_test_stdout`: `<jobmanager_tmp>`
+- `host_test_stderr`: `<jobmanager_tmp>`
+- `main_syntax_stdout`: `<jobmanager_tmp>`
+- `main_syntax_stderr`: `<jobmanager_tmp>`
+- `aplx_build_stdout`: `<jobmanager_tmp>`
+- `aplx_build_stderr`: `<jobmanager_tmp>`
+- `load_result_json`: `<jobmanager_tmp>`
+- `task_micro_loop_result_json`: `<jobmanager_tmp>`
+- `task_micro_loop_rows_csv`: `<jobmanager_tmp>`
+- `manifest_json`: `<jobmanager_tmp>`
+- `report_md`: `<jobmanager_tmp>`

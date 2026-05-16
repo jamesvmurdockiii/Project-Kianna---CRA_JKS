@@ -1,20 +1,20 @@
 {
   "artifacts": {
-    "comparisons_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10g_20260428_232824/tier5_10g_comparisons.csv",
-    "fairness_contract_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_10g_20260428_232824/tier5_10g_fairness_contract.json",
-    "memory_edges_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_10g_20260428_232824/tier5_10g_memory_edges.png",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_10g_20260428_232824/tier5_10g_report.md",
-    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10g_20260428_232824/tier5_10g_summary.csv"
+    "comparisons_csv": "<repo>/controlled_test_output/tier5_10g_20260428_232824/tier5_10g_comparisons.csv",
+    "fairness_contract_json": "<repo>/controlled_test_output/tier5_10g_20260428_232824/tier5_10g_fairness_contract.json",
+    "memory_edges_png": "<repo>/controlled_test_output/tier5_10g_20260428_232824/tier5_10g_memory_edges.png",
+    "report_md": "<repo>/controlled_test_output/tier5_10g_20260428_232824/tier5_10g_report.md",
+    "summary_csv": "<repo>/controlled_test_output/tier5_10g_20260428_232824/tier5_10g_summary.csv"
   },
   "command": "experiments/tier5_keyed_context_memory.py --backend mock --tasks intervening_contexts,overlapping_contexts --steps 240 --seed-count 1 --models sign_persistence,online_perceptron --variants all --smoke",
   "generated_at_utc": "2026-04-29T03:28:34+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_10g_20260428_232824",
+  "output_dir": "<repo>/controlled_test_output/tier5_10g_20260428_232824",
   "result": {
     "artifacts": {
-      "comparisons_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10g_20260428_232824/tier5_10g_comparisons.csv",
-      "fairness_contract_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_10g_20260428_232824/tier5_10g_fairness_contract.json",
-      "memory_edges_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_10g_20260428_232824/tier5_10g_memory_edges.png",
-      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10g_20260428_232824/tier5_10g_summary.csv"
+      "comparisons_csv": "<repo>/controlled_test_output/tier5_10g_20260428_232824/tier5_10g_comparisons.csv",
+      "fairness_contract_json": "<repo>/controlled_test_output/tier5_10g_20260428_232824/tier5_10g_fairness_contract.json",
+      "memory_edges_png": "<repo>/controlled_test_output/tier5_10g_20260428_232824/tier5_10g_memory_edges.png",
+      "summary_csv": "<repo>/controlled_test_output/tier5_10g_20260428_232824/tier5_10g_summary.csv"
     },
     "criteria": [
       {

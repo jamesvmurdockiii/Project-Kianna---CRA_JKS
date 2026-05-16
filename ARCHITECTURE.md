@@ -18,10 +18,10 @@ This document is the architectural implementation matrix. It separates implement
 | sPyNNaker neuromodulation wiring | Implemented | `StructuralMechanismSTDP` + `SpikeSourcePoisson` reward source |
 | Chunked PyNN hardware bridge | Implemented | Tier 4.16a/4.16b hardware transfer and Tier 4.18a runtime characterization pass with scheduled input, binned readback, and host replay; still chunked + host, not continuous/on-chip learning |
 | sPyNNaker dynamic rebuild | Partial | `rebuild_spinnaker()` works in virtual mode but loses STDP traces |
-| Custom C runtime (bare-metal) | Partial | Hardware-validated scaffold: build/load/SDP/MCPL/learning-loop and bounded v2 mechanism bridges through Tier 4.29d. Full autonomous CRA substrate migration remains experimental. |
+| Custom C runtime (bare-metal) | Partial | Hardware-validated scaffold: build/load/SDP/MCPL/learning-loop, bounded v2 mechanism bridges through Tier 4.29f, lifecycle/temporal bridges, selected two-chip smokes, and native-scale substrate baseline v0.5. Full autonomous CRA substrate migration remains experimental. |
 | MockSimulator fallback | Implemented | Pure-Python PyNN-compatible mock; covered by CI smoke and stabilization tests |
 
-**Strategic decision:** The Python/PyNN CRA package is the **mainline**. The custom C runtime is a **research backend** with its own protocol tests. Hardware runs have validated build/load, SDP/MCPL communication, learning-loop behavior, native task micro-loops, and bounded v2 mechanism bridges through Tier 4.29d. It will be promoted to mainline only after it implements the required CRA substrate state transitions and learning responsibilities rather than only compact task capsules.
+**Strategic decision:** The Python/PyNN CRA package remains the software mainline for mechanism discovery and benchmark/usefulness testing. The custom C runtime is a hardware research backend with its own protocol tests and bounded baseline line. Hardware runs have validated build/load, SDP/MCPL communication, learning-loop behavior, native task micro-loops, bounded v2 mechanism bridges through Tier 4.29f, lifecycle/temporal state bridges, selected two-chip smokes, and native-scale substrate baseline v0.5. It should not be treated as the full autonomous CRA organism until each mechanism's chip-owned responsibilities are explicitly migrated and tested.
 
 ---
 
@@ -65,8 +65,8 @@ This document is the architectural implementation matrix. It separates implement
 | Internal context memory | Implemented | Tier 5.10d/5.10e validated host-side context binding inside `Organism` and compact regression |
 | Keyed / multi-slot context memory | Implemented | Tier 5.10g repaired the single-slot capacity/interference failure with bounded keyed slots, oracle-key/overcapacity controls, and slot reset/shuffle/wrong-key ablations |
 | Calcification | Partial | `calcification_rate` defined but effect on graph topology is subtle |
-| Sleep / replay consolidation | Partial | Host-side replay/consolidation promoted in Tier 5.11d and carried in software baseline `v1.7+`. Native replay/consolidation bridge Tier 4.29e is active/pending; autonomous on-chip replay buffers are not yet implemented. |
-| Native on-chip state/context slots | Partial | Host-writable keyed context/route/memory/confidence slots validated on chip through Tier 4.29d. Autonomous slot updates, native replay buffers, and full lifecycle state migration remain roadmap. |
+| Sleep / replay consolidation | Partial | Host-side replay/consolidation promoted in Tier 5.11d and carried in software baseline `v1.7+`. Tier 4.29e transferred a bounded host-scheduled native replay/consolidation bridge. Autonomous on-chip replay buffers remain deferred until a measured scaling/timing blocker requires them. |
+| Native on-chip state/context slots | Partial | Host-writable keyed context/route/memory/confidence slots validated on chip through Tier 4.29f, with later lifecycle/temporal substrate smokes. Autonomous slot updates, native replay buffers, and full lifecycle-to-learning autonomy remain roadmap. |
 
 ---
 
@@ -103,4 +103,4 @@ This document is the architectural implementation matrix. It separates implement
 4. **Lifecycle identity:** Lifecycle-created child `polyp_id` and `lineage_id` are preserved when allocating hardware slots in `PolypPopulation`.
 5. **Dataclass names:** `reef_network.py` `ReefConfig` renamed to `ReefNetworkConfig` to avoid collision with root `ReefConfig`.
 6. **SDP protocol:** Verified against AppNote 4 and Rig `SDPPacket` source. `colony_controller.py` uses correct 2-byte padding + 8-byte header order.
-7. **C runtime decision:** Python/PyNN remains mainline. The bare-metal C runtime scaffold is hardware-validated for build, load, SDP command, MCPL routing, spike-readback, learning-loop, pending horizon, task micro-loops, and bounded v2 mechanism bridges through 4.29d. Full autonomous CRA substrate migration remains future work.
+7. **C runtime decision:** Python/PyNN remains the software mechanism mainline. The bare-metal C runtime scaffold is hardware-validated for build, load, SDP command, MCPL routing, compact readback, learning-loop, pending horizon, task micro-loops, bounded v2 mechanism bridges through 4.29f, lifecycle/temporal bridges, selected two-chip smokes, and native-scale substrate baseline v0.5. Full autonomous CRA substrate migration remains future work.

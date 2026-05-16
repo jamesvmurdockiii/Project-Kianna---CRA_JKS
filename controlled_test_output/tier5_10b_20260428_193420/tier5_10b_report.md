@@ -7,7 +7,7 @@
 - Tasks: `delayed_context_cue,distractor_gap_context,hidden_context_recurrence`
 - Selected standard baselines: `sign_persistence,online_perceptron,online_logistic_regression,echo_state_network,small_gru,stdp_only_snn`
 - Smoke mode: `False`
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193420`
+- Output directory: `<repo>/controlled_test_output/tier5_10b_20260428_193420`
 
 Tier 5.10b validates whether repaired recurrence/context tasks actually require remembered context before CRA memory mechanisms are tested.
 

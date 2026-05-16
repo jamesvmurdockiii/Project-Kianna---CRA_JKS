@@ -47,6 +47,6 @@ Tier 4.32d-r0 is a local route/source/package audit only. It is not a SpiNNaker 
 | MCPL send path delegates delivery to router table | `True` | == true | yes |  |
 | MCPL init installs local core routes | `True` | == true | yes |  |
 | explicit inter-chip link route is absent and classified | `False` | == false | yes |  |
-| 4.32d upload folder not prepared prematurely | `/Users/james/JKS:CRA/ebrains_jobs/cra_432d` | must not exist | yes |  |
+| 4.32d upload folder not prepared prematurely | `<repo>/ebrains_jobs/cra_432d` | must not exist | yes |  |
 | hardware package remains blocked by source audit | `blocked` | == blocked | yes |  |
 | next gate is route repair | `Tier 4.32d-r1` | == Tier 4.32d-r1 | yes |  |

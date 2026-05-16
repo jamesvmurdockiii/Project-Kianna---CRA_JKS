@@ -3,7 +3,7 @@
 - Generated: `2026-04-28T01:28:22+00:00`
 - Mode: `run-hardware`
 - Status: **PASS**
-- Output directory: `/tmp/job3949139242826171397.tmp/CRA_test_418/controlled_test_output/tier4_18a_20260428_013742_run_hardware`
+- Output directory: `<jobmanager_tmp>`
 
 Tier 4.18a characterizes runtime/resource cost for the v0.7 chunked-host hardware path that already passed Tier 4.16a and Tier 4.16b.
 
@@ -73,27 +73,27 @@ Tier 4.18a characterizes runtime/resource cost for the v0.7 chunked-host hardwar
 
 ## Artifacts
 
-- `manifest_json`: `/tmp/job3949139242826171397.tmp/CRA_test_418/controlled_test_output/tier4_18a_20260428_013742_run_hardware/tier4_18a_results.json`
-- `summary_csv`: `/tmp/job3949139242826171397.tmp/CRA_test_418/controlled_test_output/tier4_18a_20260428_013742_run_hardware/tier4_18a_summary.csv`
-- `runtime_matrix_csv`: `/tmp/job3949139242826171397.tmp/CRA_test_418/controlled_test_output/tier4_18a_20260428_013742_run_hardware/tier4_18a_runtime_matrix.csv`
-- `delayed_cue_chunk10_seed42_timeseries_csv`: `/tmp/job3949139242826171397.tmp/CRA_test_418/controlled_test_output/tier4_18a_20260428_013742_run_hardware/spinnaker_hardware_delayed_cue_chunk10_seed42_timeseries.csv`
-- `delayed_cue_chunk10_seed42_timeseries_png`: `/tmp/job3949139242826171397.tmp/CRA_test_418/controlled_test_output/tier4_18a_20260428_013742_run_hardware/spinnaker_hardware_delayed_cue_chunk10_seed42_timeseries.png`
-- `delayed_cue_chunk25_seed42_timeseries_csv`: `/tmp/job3949139242826171397.tmp/CRA_test_418/controlled_test_output/tier4_18a_20260428_013742_run_hardware/spinnaker_hardware_delayed_cue_chunk25_seed42_timeseries.csv`
-- `delayed_cue_chunk25_seed42_timeseries_png`: `/tmp/job3949139242826171397.tmp/CRA_test_418/controlled_test_output/tier4_18a_20260428_013742_run_hardware/spinnaker_hardware_delayed_cue_chunk25_seed42_timeseries.png`
-- `delayed_cue_chunk50_seed42_timeseries_csv`: `/tmp/job3949139242826171397.tmp/CRA_test_418/controlled_test_output/tier4_18a_20260428_013742_run_hardware/spinnaker_hardware_delayed_cue_chunk50_seed42_timeseries.csv`
-- `delayed_cue_chunk50_seed42_timeseries_png`: `/tmp/job3949139242826171397.tmp/CRA_test_418/controlled_test_output/tier4_18a_20260428_013742_run_hardware/spinnaker_hardware_delayed_cue_chunk50_seed42_timeseries.png`
-- `hard_noisy_switching_chunk10_seed42_timeseries_csv`: `/tmp/job3949139242826171397.tmp/CRA_test_418/controlled_test_output/tier4_18a_20260428_013742_run_hardware/spinnaker_hardware_hard_noisy_switching_chunk10_seed42_timeseries.csv`
-- `hard_noisy_switching_chunk10_seed42_timeseries_png`: `/tmp/job3949139242826171397.tmp/CRA_test_418/controlled_test_output/tier4_18a_20260428_013742_run_hardware/spinnaker_hardware_hard_noisy_switching_chunk10_seed42_timeseries.png`
-- `hard_noisy_switching_chunk25_seed42_timeseries_csv`: `/tmp/job3949139242826171397.tmp/CRA_test_418/controlled_test_output/tier4_18a_20260428_013742_run_hardware/spinnaker_hardware_hard_noisy_switching_chunk25_seed42_timeseries.csv`
-- `hard_noisy_switching_chunk25_seed42_timeseries_png`: `/tmp/job3949139242826171397.tmp/CRA_test_418/controlled_test_output/tier4_18a_20260428_013742_run_hardware/spinnaker_hardware_hard_noisy_switching_chunk25_seed42_timeseries.png`
-- `hard_noisy_switching_chunk50_seed42_timeseries_csv`: `/tmp/job3949139242826171397.tmp/CRA_test_418/controlled_test_output/tier4_18a_20260428_013742_run_hardware/spinnaker_hardware_hard_noisy_switching_chunk50_seed42_timeseries.csv`
-- `hard_noisy_switching_chunk50_seed42_timeseries_png`: `/tmp/job3949139242826171397.tmp/CRA_test_418/controlled_test_output/tier4_18a_20260428_013742_run_hardware/spinnaker_hardware_hard_noisy_switching_chunk50_seed42_timeseries.png`
-- `runtime_matrix_png`: `/tmp/job3949139242826171397.tmp/CRA_test_418/controlled_test_output/tier4_18a_20260428_013742_run_hardware/tier4_18a_runtime_matrix.png`
-- `spinnaker_report_1`: `/tmp/job3949139242826171397.tmp/CRA_test_418/controlled_test_output/tier4_18a_20260428_013742_run_hardware/spinnaker_reports/2026-04-28-01-37-42-908415`
-- `spinnaker_report_2`: `/tmp/job3949139242826171397.tmp/CRA_test_418/controlled_test_output/tier4_18a_20260428_013742_run_hardware/spinnaker_reports/2026-04-28-01-51-10-320460`
-- `spinnaker_report_3`: `/tmp/job3949139242826171397.tmp/CRA_test_418/controlled_test_output/tier4_18a_20260428_013742_run_hardware/spinnaker_reports/2026-04-28-01-58-07-935047`
-- `spinnaker_report_4`: `/tmp/job3949139242826171397.tmp/CRA_test_418/controlled_test_output/tier4_18a_20260428_013742_run_hardware/spinnaker_reports/2026-04-28-02-02-22-568637`
-- `spinnaker_report_5`: `/tmp/job3949139242826171397.tmp/CRA_test_418/controlled_test_output/tier4_18a_20260428_013742_run_hardware/spinnaker_reports/2026-04-28-02-17-08-597699`
-- `spinnaker_report_6`: `/tmp/job3949139242826171397.tmp/CRA_test_418/controlled_test_output/tier4_18a_20260428_013742_run_hardware/spinnaker_reports/2026-04-28-02-24-00-542410`
+- `manifest_json`: `<jobmanager_tmp>`
+- `summary_csv`: `<jobmanager_tmp>`
+- `runtime_matrix_csv`: `<jobmanager_tmp>`
+- `delayed_cue_chunk10_seed42_timeseries_csv`: `<jobmanager_tmp>`
+- `delayed_cue_chunk10_seed42_timeseries_png`: `<jobmanager_tmp>`
+- `delayed_cue_chunk25_seed42_timeseries_csv`: `<jobmanager_tmp>`
+- `delayed_cue_chunk25_seed42_timeseries_png`: `<jobmanager_tmp>`
+- `delayed_cue_chunk50_seed42_timeseries_csv`: `<jobmanager_tmp>`
+- `delayed_cue_chunk50_seed42_timeseries_png`: `<jobmanager_tmp>`
+- `hard_noisy_switching_chunk10_seed42_timeseries_csv`: `<jobmanager_tmp>`
+- `hard_noisy_switching_chunk10_seed42_timeseries_png`: `<jobmanager_tmp>`
+- `hard_noisy_switching_chunk25_seed42_timeseries_csv`: `<jobmanager_tmp>`
+- `hard_noisy_switching_chunk25_seed42_timeseries_png`: `<jobmanager_tmp>`
+- `hard_noisy_switching_chunk50_seed42_timeseries_csv`: `<jobmanager_tmp>`
+- `hard_noisy_switching_chunk50_seed42_timeseries_png`: `<jobmanager_tmp>`
+- `runtime_matrix_png`: `<jobmanager_tmp>`
+- `spinnaker_report_1`: `<jobmanager_tmp>`
+- `spinnaker_report_2`: `<jobmanager_tmp>`
+- `spinnaker_report_3`: `<jobmanager_tmp>`
+- `spinnaker_report_4`: `<jobmanager_tmp>`
+- `spinnaker_report_5`: `<jobmanager_tmp>`
+- `spinnaker_report_6`: `<jobmanager_tmp>`
 
 ![tier4_18a_runtime_matrix](tier4_18a_runtime_matrix.png)

@@ -2,10 +2,10 @@
   "canonical": false,
   "claim": "Latest Tier 4.22p tiny A-B-A reentry custom-runtime micro-task; pass means a tiny A-B-A reentry pending-queue on-chip loop matched local fixed-point reference and task metrics only.",
   "generated_at_utc": "2026-05-01T04:14:10+00:00",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_22p_20260501_aba_reentry_micro_task_hardware_pass_ingested/tier4_22p_results.json",
+  "manifest": "<repo>/controlled_test_output/tier4_22p_20260501_aba_reentry_micro_task_hardware_pass_ingested/tier4_22p_results.json",
   "mode": "ingest",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_22p_20260501_aba_reentry_micro_task_hardware_pass_ingested",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_22p_20260501_aba_reentry_micro_task_hardware_pass_ingested/tier4_22p_report.md",
+  "output_dir": "<repo>/controlled_test_output/tier4_22p_20260501_aba_reentry_micro_task_hardware_pass_ingested",
+  "report": "<repo>/controlled_test_output/tier4_22p_20260501_aba_reentry_micro_task_hardware_pass_ingested/tier4_22p_report.md",
   "status": "pass",
   "tier": "Tier 4.22p - Tiny A-B-A Reentry Custom-Runtime Micro-Task"
 }

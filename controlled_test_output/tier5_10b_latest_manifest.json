@@ -2,10 +2,10 @@
   "canonical": false,
   "claim": "Latest Tier 5.10b task-pressure validation; passing authorizes memory-mechanism retest only.",
   "generated_at_utc": "2026-04-28T23:36:41+00:00",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193639/tier5_10b_results.json",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193639",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193639/tier5_10b_report.md",
+  "manifest": "<repo>/controlled_test_output/tier5_10b_20260428_193639/tier5_10b_results.json",
+  "output_dir": "<repo>/controlled_test_output/tier5_10b_20260428_193639",
+  "report": "<repo>/controlled_test_output/tier5_10b_20260428_193639/tier5_10b_report.md",
   "status": "pass",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193639/tier5_10b_summary.csv",
+  "summary_csv": "<repo>/controlled_test_output/tier5_10b_20260428_193639/tier5_10b_summary.csv",
   "tier": "Tier 5.10b - Memory-Pressure Task Validation"
 }

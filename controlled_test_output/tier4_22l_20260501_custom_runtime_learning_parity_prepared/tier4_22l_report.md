@@ -3,7 +3,7 @@
 - Generated: `2026-05-01T02:23:48+00:00`
 - Mode: `prepare`
 - Status: **PREPARED**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared`
+- Output directory: `<repo>/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared`
 
 Tier 4.22l compares a tiny chip-owned pending-horizon/readout update sequence against a local s16.15 fixed-point reference.
 
@@ -22,8 +22,8 @@ Tier 4.22l compares a tiny chip-owned pending-horizon/readout update sequence ag
 - reference_final_weight: `-0.125`
 - reference_final_bias: `-0.125`
 - jobmanager_command: `cra_422t/experiments/tier4_22l_custom_runtime_learning_parity.py --mode run-hardware --output-dir tier4_22l_job_output`
-- upload_folder: `/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/ebrains_upload_bundle/cra_422t`
-- stable_upload_folder: `/Users/james/JKS:CRA/ebrains_jobs/cra_422t`
+- upload_folder: `<repo>/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/ebrains_upload_bundle/cra_422t`
+- stable_upload_folder: `<repo>/ebrains_jobs/cra_422t`
 - what_i_need_from_user: `Upload the generated cra_422t folder to EBRAINS/JobManager and run the emitted command; download returned files after completion.`
 - next_step_if_passed: `Run the emitted EBRAINS command and ingest returned files.`
 
@@ -34,8 +34,8 @@ Tier 4.22l compares a tiny chip-owned pending-horizon/readout update sequence ag
 | Tier 4.22j minimal learning-smoke pass exists | `pass` | `== pass` | yes |
 | main.c host syntax check pass | `pass` | `== pass` | yes |
 | local fixed-point reference generated | `pass` | `== pass` | yes |
-| upload bundle created | `/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/ebrains_upload_bundle/cra_422t` | `exists` | yes |
-| runtime source included | `/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/ebrains_upload_bundle/cra_422t/coral_reef_spinnaker/spinnaker_runtime` | `exists` | yes |
+| upload bundle created | `<repo>/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/ebrains_upload_bundle/cra_422t` | `exists` | yes |
+| runtime source included | `<repo>/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/ebrains_upload_bundle/cra_422t/coral_reef_spinnaker/spinnaker_runtime` | `exists` | yes |
 | run-hardware command emitted | `cra_422t/experiments/tier4_22l_custom_runtime_learning_parity.py --mode run-hardware --output-dir tier4_22l_job_output` | `contains --mode run-hardware` | yes |
 | source CMD_SCHEDULE_PENDING defined | `CMD_SCHEDULE_PENDING 9` | `config.h defines opcode` | yes |
 | source CMD_MATURE_PENDING defined | `CMD_MATURE_PENDING 10` | `config.h defines opcode` | yes |
@@ -66,10 +66,10 @@ Tier 4.22l compares a tiny chip-owned pending-horizon/readout update sequence ag
 
 ## Artifacts
 
-- `reference_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/tier4_22l_reference.json`
-- `reference_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/tier4_22l_parity_reference.csv`
-- `upload_bundle`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/ebrains_upload_bundle/cra_422t`
-- `job_readme`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/ebrains_upload_bundle/cra_422t/README_TIER4_22L_JOB.md`
-- `stable_upload_folder`: `/Users/james/JKS:CRA/ebrains_jobs/cra_422t`
-- `manifest_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/tier4_22l_results.json`
-- `report_md`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/tier4_22l_report.md`
+- `reference_json`: `<repo>/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/tier4_22l_reference.json`
+- `reference_csv`: `<repo>/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/tier4_22l_parity_reference.csv`
+- `upload_bundle`: `<repo>/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/ebrains_upload_bundle/cra_422t`
+- `job_readme`: `<repo>/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/ebrains_upload_bundle/cra_422t/README_TIER4_22L_JOB.md`
+- `stable_upload_folder`: `<repo>/ebrains_jobs/cra_422t`
+- `manifest_json`: `<repo>/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/tier4_22l_results.json`
+- `report_md`: `<repo>/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/tier4_22l_report.md`

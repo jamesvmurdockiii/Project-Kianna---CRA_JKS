@@ -1,6 +1,6 @@
 {
   "generated_at_utc": "2026-05-09T20:53:55+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7v_family_c_20260509_compact_score",
+  "output_dir": "<repo>/controlled_test_output/tier7_7v_family_c_20260509_compact_score",
   "status": "fail",
   "tier": "Tier 7.7v-FamilyC - Recurrent Topology/Spectrum Repair Compact Score"
 }

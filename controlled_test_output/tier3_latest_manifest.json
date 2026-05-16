@@ -1,17 +1,17 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.325897+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.484697+00:00",
   "source_generated_at_utc": "2026-04-26T20:01:09+00:00",
   "registry_entry_id": "tier3_architecture",
   "tier": "Tier 3 - architecture ablation tests",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier3_20260426_155852",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier3_20260426_155852/tier3_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier3_20260426_155852/tier3_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier3_20260426_155852/tier3_summary.csv",
+  "output_dir": "controlled_test_output/tier3_20260426_155852",
+  "manifest": "controlled_test_output/tier3_20260426_155852/tier3_results.json",
+  "report": "controlled_test_output/tier3_20260426_155852/tier3_report.md",
+  "summary_csv": "controlled_test_output/tier3_20260426_155852/tier3_summary.csv",
   "canonical": true,
   "claim": "Dopamine, plasticity, and trophic selection each contribute measurable value.",
   "caveat": "Ablation claims are scoped to the controlled tasks and seeds in this bundle.",
-  "latest_manifest": "/Users/james/JKS:CRA/controlled_test_output/tier3_20260426_155852/tier3_results.json",
-  "latest_report": "/Users/james/JKS:CRA/controlled_test_output/tier3_20260426_155852/tier3_report.md",
-  "latest_summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier3_20260426_155852/tier3_summary.csv"
+  "latest_manifest": "controlled_test_output/tier3_20260426_155852/tier3_results.json",
+  "latest_report": "controlled_test_output/tier3_20260426_155852/tier3_report.md",
+  "latest_summary_csv": "controlled_test_output/tier3_20260426_155852/tier3_summary.csv"
 }

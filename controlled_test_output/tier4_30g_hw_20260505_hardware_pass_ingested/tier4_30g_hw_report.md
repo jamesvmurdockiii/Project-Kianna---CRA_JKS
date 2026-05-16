@@ -24,7 +24,7 @@ Ingest confirms returned EBRAINS run-hardware artifacts only; no lifecycle basel
 
 | Criterion | Value | Rule | Pass |
 | --- | --- | --- | --- |
-| hardware results json exists | `"/Users/james/Downloads/tier4_30g_hw_results.json"` | exists | yes |
+| hardware results json exists | `"<downloads>/tier4_30g_hw_results.json"` | exists | yes |
 | hardware mode was run-hardware | `"run-hardware"` | == run-hardware | yes |
 | hardware status pass | `"pass"` | == pass | yes |
 | runner revision current | `"tier4_30g_lifecycle_task_benefit_resource_bridge_20260506_0001"` | == tier4_30g_lifecycle_task_benefit_resource_bridge_20260506_0001 | yes |

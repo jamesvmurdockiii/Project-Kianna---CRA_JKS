@@ -8,7 +8,7 @@
 - Tasks: `silent_context_reentry,long_gap_silent_reentry,partial_key_reentry`
 - Variants: `all`
 - Selected standard baselines: `sign_persistence,online_perceptron,online_logistic_regression,echo_state_network,small_gru,stdp_only_snn`
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier5_11d_20260429_041524`
+- Output directory: `<repo>/controlled_test_output/tier5_11d_20260429_041524`
 
 Tier 5.11d tests whether correct-binding replay/consolidation itself adds causal value after the Tier 5.11b/5.11c priority-specific gates failed. It is not hardware replay and not native on-chip replay.
 

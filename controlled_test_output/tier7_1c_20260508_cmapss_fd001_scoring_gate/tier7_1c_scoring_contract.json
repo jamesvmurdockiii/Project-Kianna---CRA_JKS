@@ -20,7 +20,7 @@
     43,
     44
   ],
-  "source_preflight": "/Users/james/JKS:CRA/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_results.json",
+  "source_preflight": "<repo>/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_results.json",
   "target_policy": "uncapped RUL for compact first gate",
   "train_test_policy": "train_FD001 train prefix, test_FD001 held-out test units"
 }

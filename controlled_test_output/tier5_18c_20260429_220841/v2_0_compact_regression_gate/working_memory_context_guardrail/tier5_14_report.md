@@ -6,7 +6,7 @@
 - Seeds: `seed_count=3`
 - Memory tasks: `intervening_contexts,overlapping_contexts,context_reentry_interference`
 - Routing tasks: `heldout_context_routing,distractor_router_chain,context_reentry_routing`
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail`
+- Output directory: `<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail`
 
 Tier 5.14 asks whether the frozen v1.9 host-side software stack can maintain working state across time: context/cue memory, active module state, and pending subgoal/routing state.
 

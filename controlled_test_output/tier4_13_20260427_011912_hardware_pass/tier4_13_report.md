@@ -3,7 +3,7 @@
 - Generated: `2026-04-27T00:33:33+00:00`
 - Mode: `run-hardware`
 - Status: **PASS**
-- Output directory: `/tmp/job18372215669669985472.tmp/cra_test/controlled_test_output/tier4_13_20260427_011912`
+- Output directory: `<jobmanager_tmp>`
 
 Tier 4.13 is separate from Tier 4.12. It is the hardware capsule step: a minimal fixed-pattern CRA task intended to run on real SpiNNaker hardware through EBRAINS/JobManager.
 
@@ -42,11 +42,11 @@ Tier 4.13 is separate from Tier 4.12. It is the hardware capsule step: a minimal
 
 ## Artifacts
 
-- `manifest_json`: `/tmp/job18372215669669985472.tmp/cra_test/controlled_test_output/tier4_13_20260427_011912/tier4_13_results.json`
-- `summary_csv`: `/tmp/job18372215669669985472.tmp/cra_test/controlled_test_output/tier4_13_20260427_011912/tier4_13_summary.csv`
-- `seed_42_timeseries_csv`: `/tmp/job18372215669669985472.tmp/cra_test/controlled_test_output/tier4_13_20260427_011912/spinnaker_hardware_seed42_timeseries.csv`
-- `seed_42_timeseries_png`: `/tmp/job18372215669669985472.tmp/cra_test/controlled_test_output/tier4_13_20260427_011912/spinnaker_hardware_seed42_timeseries.png`
-- `hardware_summary_png`: `/tmp/job18372215669669985472.tmp/cra_test/controlled_test_output/tier4_13_20260427_011912/hardware_capsule_summary.png`
-- `spinnaker_report_1`: `/tmp/job18372215669669985472.tmp/cra_test/controlled_test_output/tier4_13_20260427_011912/spinnaker_reports/2026-04-27-01-19-12-390038`
+- `manifest_json`: `<jobmanager_tmp>`
+- `summary_csv`: `<jobmanager_tmp>`
+- `seed_42_timeseries_csv`: `<jobmanager_tmp>`
+- `seed_42_timeseries_png`: `<jobmanager_tmp>`
+- `hardware_summary_png`: `<jobmanager_tmp>`
+- `spinnaker_report_1`: `<jobmanager_tmp>`
 
 ![hardware_capsule_summary](hardware_capsule_summary.png)

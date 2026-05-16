@@ -1,10 +1,10 @@
 criterion,passed,value,rule
-Tier 7.1a contract exists,True,/Users/james/JKS:CRA/controlled_test_output/tier7_1a_20260508_realish_adapter_contract/tier7_1a_results.json,exists
+Tier 7.1a contract exists,True,<repo>/controlled_test_output/tier7_1a_20260508_realish_adapter_contract/tier7_1a_results.json,exists
 Tier 7.1a selected C-MAPSS,True,nasa_cmapss_rul_streaming,== nasa_cmapss_rul_streaming
 official download URL reachable,True,https://data.nasa.gov/docs/legacy/CMAPSSData.zip,downloaded or cached non-empty ZIP
 ZIP checksum computed,True,74bef434a34db25c7bf72e668ea4cd52afe5f2cf8e44367c55a82bfd91a5a34f,64 hex chars
-required FD001 files present,True,"{'train_FD001.txt': '/Users/james/JKS:CRA/.cra_data_cache/nasa_cmapss/extracted/train_FD001.txt', 'test_FD001.txt': '/Users/james/JKS:CRA/.cra_data_cache/nasa_cmapss/extracted/test_FD001.txt', 'RUL_FD001.txt': '/Users/james/JKS:CRA/.cra_data_cache/nasa_cmapss/extracted/RUL_FD001.txt'}",train/test/RUL exist
-README/source notes present,True,/Users/james/JKS:CRA/.cra_data_cache/nasa_cmapss/extracted/readme.txt,README found
+required FD001 files present,True,"{'train_FD001.txt': '<repo>/.cra_data_cache/nasa_cmapss/extracted/train_FD001.txt', 'test_FD001.txt': '<repo>/.cra_data_cache/nasa_cmapss/extracted/test_FD001.txt', 'RUL_FD001.txt': '<repo>/.cra_data_cache/nasa_cmapss/extracted/RUL_FD001.txt'}",train/test/RUL exist
+README/source notes present,True,<repo>/.cra_data_cache/nasa_cmapss/extracted/readme.txt,README found
 train/test row parse succeeded,True,"{'train': 20631, 'test': 13096}",> 0 rows
 FD001 column count valid,True,26,== 26
 RUL labels match test units,True,"{'labels': 100, 'test_units': 100}",equal

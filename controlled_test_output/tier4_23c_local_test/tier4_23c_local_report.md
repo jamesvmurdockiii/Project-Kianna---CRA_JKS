@@ -3,7 +3,7 @@
 - Generated: `2026-05-02T01:11:01.589461+00:00`
 - Mode: `local`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_23c_local_test`
+- Output directory: `<repo>/controlled_test_output/tier4_23c_local_test`
 
 ## Summary
 

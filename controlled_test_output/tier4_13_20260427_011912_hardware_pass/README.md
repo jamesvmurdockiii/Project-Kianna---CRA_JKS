@@ -3,7 +3,7 @@
 - Canonical local run id: `tier4_13_20260427_011912_hardware_pass`
 - Source generated at: `2026-04-27T00:33:33+00:00`
 - Imported/canonicalized at: `2026-04-27T00:46:26.855544+00:00`
-- Source remote output directory: `/tmp/job18372215669669985472.tmp/cra_test/controlled_test_output/tier4_13_20260427_011912`
+- Source remote output directory: `<jobmanager_tmp>`
 - Status: **PASS**
 
 ## What This Proves

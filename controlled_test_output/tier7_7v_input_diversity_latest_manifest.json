@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.570379+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.714682+00:00",
   "source_generated_at_utc": "2026-05-09T21:10:36+00:00",
   "registry_entry_id": "tier7_7v_input_diversity_test",
   "tier": "Tier 7.7v-InputDiversity - Multi-Band Decomposition Hypothesis Test",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7v_input_diversity_20260509",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_7v_input_diversity_20260509/tier7_7v_input_diversity_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_7v_input_diversity_20260509/tier7_7v_input_diversity_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7v_input_diversity_20260509/tier7_7v_input_diversity_summary.csv",
+  "output_dir": "controlled_test_output/tier7_7v_input_diversity_20260509",
+  "manifest": "controlled_test_output/tier7_7v_input_diversity_20260509/tier7_7v_input_diversity_results.json",
+  "report": "controlled_test_output/tier7_7v_input_diversity_20260509/tier7_7v_input_diversity_report.md",
+  "summary_csv": "controlled_test_output/tier7_7v_input_diversity_20260509/tier7_7v_input_diversity_summary.csv",
   "canonical": true,
   "claim": "Tier 7.7v-InputDiversity confirms the input redundancy hypothesis: replacing the 7-element EMA trace bank (all convolving the same scalar x) with causal multi-lag temporal differencing at lags [1,2,4,8,16,32,64,128] restores state dimensionality. Diff-embedding PR=4.76 vs orthogonal baseline PR=2.01 (2.37x improvement) across Mackey-Glass/Lorenz/repaired-NARMA10 at 8000 steps, seeds 42/43/44. This identifies the EMA trace bank as the primary low-rank collapse bottleneck.",
   "caveat": "Input diversity hypothesis test only. Not a promoted mechanism, not a baseline freeze, not public usefulness proof, and not hardware/native transfer. Expanded confirmation at longer lengths needed before promotion."

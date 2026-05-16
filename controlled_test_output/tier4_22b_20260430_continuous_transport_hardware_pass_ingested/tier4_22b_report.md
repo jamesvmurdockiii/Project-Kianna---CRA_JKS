@@ -3,7 +3,7 @@
 - Generated: `2026-04-30T18:14:15+00:00`
 - Mode: `run-hardware`
 - Status: **PASS**
-- Output directory: `/tmp/job11885969396211966108.tmp/tier4_22b_job_output`
+- Output directory: `<jobmanager_tmp>`
 
 Tier 4.22b isolates continuous transport: scheduled input, one continuous `sim.run`, and compact/binned spike readback. Learning is intentionally disabled here so transport failures cannot be confused with reward/plasticity bugs.
 

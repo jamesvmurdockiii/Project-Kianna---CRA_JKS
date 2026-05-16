@@ -2,10 +2,10 @@
   "canonical": false,
   "claim": "Latest Tier 4.22k Spin1API event-symbol discovery; not board or learning evidence.",
   "generated_at_utc": "2026-04-30T21:02:05+00:00",
-  "manifest": "/tmp/job7804713621144302745.tmp/tier4_22k_job_output/tier4_22k_results.json",
+  "manifest": "<jobmanager_tmp>",
   "mode": "run-hardware",
-  "output_dir": "/tmp/job7804713621144302745.tmp/tier4_22k_job_output",
-  "report": "/tmp/job7804713621144302745.tmp/tier4_22k_job_output/tier4_22k_report.md",
+  "output_dir": "<jobmanager_tmp>",
+  "report": "<jobmanager_tmp>",
   "status": "pass",
   "tier": "Tier 4.22k - Spin1API Event-Symbol Discovery"
 }

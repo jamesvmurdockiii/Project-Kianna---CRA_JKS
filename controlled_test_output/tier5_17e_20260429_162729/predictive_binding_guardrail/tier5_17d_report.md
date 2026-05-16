@@ -2,7 +2,7 @@
 
 - Generated: `2026-04-29T20:30:43+00:00`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_162729/predictive_binding_guardrail`
+- Output directory: `<repo>/controlled_test_output/tier5_17e_20260429_162729/predictive_binding_guardrail`
 - Tasks: `cross_modal_binding`
 - Seeds: `[42]`
 

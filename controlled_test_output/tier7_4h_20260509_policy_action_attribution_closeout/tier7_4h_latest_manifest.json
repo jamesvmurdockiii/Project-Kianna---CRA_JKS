@@ -3,48 +3,48 @@
     {
       "bytes": 887,
       "name": "claim_boundary_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout/tier7_4h_claim_boundary.csv",
+      "path": "<repo>/controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout/tier7_4h_claim_boundary.csv",
       "sha256": "59a9674806013ec559148e5b8c1a605e91806f713814ad462c49a92c9febb029"
     },
     {
       "bytes": 760,
       "name": "decision_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout/tier7_4h_decision.csv",
+      "path": "<repo>/controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout/tier7_4h_decision.csv",
       "sha256": "91f102e48c1106b40b704a23a96132d0d6b724ddecc45852193d0c860252480c"
     },
     {
       "bytes": 843,
       "name": "decision_json",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout/tier7_4h_decision.json",
+      "path": "<repo>/controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout/tier7_4h_decision.json",
       "sha256": "7d825abea9ba668c81763379598049b12a95d50f6f3846b6fffac4866b1340bd"
     },
     {
       "bytes": 4151,
       "name": "report_md",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout/tier7_4h_report.md",
+      "path": "<repo>/controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout/tier7_4h_report.md",
       "sha256": "be3ddee6aa4d6c96beb579deea07a83a31af932cb20e8a72d2e7e88ad097c07b"
     },
     {
       "bytes": 9607,
       "name": "results_json",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout/tier7_4h_results.json",
+      "path": "<repo>/controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout/tier7_4h_results.json",
       "sha256": "e6bc68364b5a5b278d02ff58fe59d5089cdacab0be00d252e7a6ec48c3e29c16"
     },
     {
       "bytes": 837,
       "name": "route_decision_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout/tier7_4h_route_decision.csv",
+      "path": "<repo>/controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout/tier7_4h_route_decision.csv",
       "sha256": "c8913e43b4744a96e197ed6682eaea65a0e73edc3f8eae3bc515f26dd022a4f7"
     },
     {
       "bytes": 1236,
       "name": "summary_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout/tier7_4h_summary.csv",
+      "path": "<repo>/controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout/tier7_4h_summary.csv",
       "sha256": "fc2a50a6f6bbd50af4f2eb5e3a36f22c834366e4974302e8e202a207bb54ee68"
     }
   ],
   "generated_at_utc": "2026-05-09T03:06:35+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout",
+  "output_dir": "<repo>/controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout",
   "runner_revision": "tier7_4h_policy_action_attribution_closeout_20260509_0001",
   "status": "PASS",
   "tier": "Tier 7.4h - Policy/Action Attribution Closeout / Mechanism Return Decision"

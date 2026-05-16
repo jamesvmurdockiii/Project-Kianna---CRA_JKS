@@ -2,7 +2,7 @@
 
 - Generated: `2026-05-08T22:22:18+00:00`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier5_20d_20260508_resonant_heavy_polyp_diagnostic`
+- Output directory: `<repo>/controlled_test_output/tier5_20d_20260508_resonant_heavy_polyp_diagnostic`
 - Outcome: `resonant_heavy_not_promoted`
 
 ## Claim Boundary

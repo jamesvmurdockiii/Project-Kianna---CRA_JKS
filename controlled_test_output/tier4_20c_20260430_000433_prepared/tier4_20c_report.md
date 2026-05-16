@@ -3,7 +3,7 @@
 - Generated: `2026-04-30T04:04:33+00:00`
 - Mode: `prepare`
 - Status: **PREPARED**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_20c_20260430_000433_prepared`
+- Output directory: `<repo>/controlled_test_output/tier4_20c_20260430_000433_prepared`
 
 Tier 4.20c repeats the passed Tier 4.20b v2.1 bridge/transport path across seeds `42`, `43`, and `44`.
 
@@ -27,7 +27,7 @@ Tier 4.20c repeats the passed Tier 4.20b v2.1 bridge/transport path across seeds
 - expected_child_runs: `6`
 - macro_eligibility_enabled: `False`
 - hardware_run_attempted: `False`
-- capsule_dir: `/Users/james/JKS:CRA/controlled_test_output/tier4_20c_20260430_000433_prepared/jobmanager_capsule`
+- capsule_dir: `<repo>/controlled_test_output/tier4_20c_20260430_000433_prepared/jobmanager_capsule`
 
 ## Bridge Profile
 
@@ -46,9 +46,9 @@ Tier 4.20c repeats the passed Tier 4.20b v2.1 bridge/transport path across seeds
 | Criterion | Value | Rule | Pass |
 | --- | --- | --- | --- |
 | Tier 4.20c runner revision | `tier4_20c_inprocess_no_baselines_20260430_0000` | `expected current source` | yes |
-| source package import path available | `{'canonical_package': '/Users/james/JKS:CRA/coral_reef_spinnaker', 'canonical_package_exists': True, 'action': 'already_canonical', 'aliases_checked': ['/Users/james/JKS:CRA/coral-reef-spinnaker', '/Users/james/JKS:CRA/coral reef spinnaker']}` | `coral_reef_spinnaker exists` | yes |
-| Tier 4.16 child hardware runner exists | `/Users/james/JKS:CRA/experiments/tier4_harder_spinnaker_capsule.py` | `exists` | yes |
-| Tier 4.20b prerequisite pass recorded | `{'status': 'pass', 'manifest': '/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_results.json'}` | `status == pass` | yes |
+| source package import path available | `{'canonical_package': '<repo>/coral_reef_spinnaker', 'canonical_package_exists': True, 'action': 'already_canonical', 'aliases_checked': ['<repo>/coral-reef-spinnaker', '<repo>/coral reef spinnaker']}` | `coral_reef_spinnaker exists` | yes |
+| Tier 4.16 child hardware runner exists | `<repo>/experiments/tier4_harder_spinnaker_capsule.py` | `exists` | yes |
+| Tier 4.20b prerequisite pass recorded | `{'status': 'pass', 'manifest': '<repo>/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_results.json'}` | `status == pass` | yes |
 | three predeclared seeds requested | `[42, 43, 44]` | `== [42, 43, 44]` | yes |
 | tasks match v2.1 bridge repeat | `['delayed_cue', 'hard_noisy_switching']` | `delayed_cue + hard_noisy_switching` | yes |
 | runtime mode is chunked | `chunked` | `fixed` | yes |
@@ -57,16 +57,16 @@ Tier 4.20c repeats the passed Tier 4.20b v2.1 bridge/transport path across seeds
 | macro eligibility disabled | `False` | `== false` | yes |
 | delayed_lr_0_20 selected | `0.2` | `== 0.20` | yes |
 | mode has explicit claim boundary | `prepare` | `prepare|run-hardware|ingest` | yes |
-| capsule directory exists | `/Users/james/JKS:CRA/controlled_test_output/tier4_20c_20260430_000433_prepared/jobmanager_capsule` | `exists` | yes |
+| capsule directory exists | `<repo>/controlled_test_output/tier4_20c_20260430_000433_prepared/jobmanager_capsule` | `exists` | yes |
 
 ## Artifacts
 
-- `bridge_profile_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_20c_20260430_000433_prepared/tier4_20c_bridge_profile.json`
-- `capsule_config_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_20c_20260430_000433_prepared/jobmanager_capsule/capsule_config.json`
-- `capsule_dir`: `/Users/james/JKS:CRA/controlled_test_output/tier4_20c_20260430_000433_prepared/jobmanager_capsule`
-- `expected_outputs_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_20c_20260430_000433_prepared/jobmanager_capsule/expected_outputs.json`
-- `jobmanager_readme`: `/Users/james/JKS:CRA/controlled_test_output/tier4_20c_20260430_000433_prepared/jobmanager_capsule/README_JOBMANAGER.md`
-- `report_md`: `/Users/james/JKS:CRA/controlled_test_output/tier4_20c_20260430_000433_prepared/tier4_20c_report.md`
-- `results_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_20c_20260430_000433_prepared/tier4_20c_results.json`
-- `summary_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier4_20c_20260430_000433_prepared/tier4_20c_summary.csv`
-- `v2_1_bridge_profile_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_20c_20260430_000433_prepared/jobmanager_capsule/v2_1_bridge_profile.json`
+- `bridge_profile_json`: `<repo>/controlled_test_output/tier4_20c_20260430_000433_prepared/tier4_20c_bridge_profile.json`
+- `capsule_config_json`: `<repo>/controlled_test_output/tier4_20c_20260430_000433_prepared/jobmanager_capsule/capsule_config.json`
+- `capsule_dir`: `<repo>/controlled_test_output/tier4_20c_20260430_000433_prepared/jobmanager_capsule`
+- `expected_outputs_json`: `<repo>/controlled_test_output/tier4_20c_20260430_000433_prepared/jobmanager_capsule/expected_outputs.json`
+- `jobmanager_readme`: `<repo>/controlled_test_output/tier4_20c_20260430_000433_prepared/jobmanager_capsule/README_JOBMANAGER.md`
+- `report_md`: `<repo>/controlled_test_output/tier4_20c_20260430_000433_prepared/tier4_20c_report.md`
+- `results_json`: `<repo>/controlled_test_output/tier4_20c_20260430_000433_prepared/tier4_20c_results.json`
+- `summary_csv`: `<repo>/controlled_test_output/tier4_20c_20260430_000433_prepared/tier4_20c_summary.csv`
+- `v2_1_bridge_profile_json`: `<repo>/controlled_test_output/tier4_20c_20260430_000433_prepared/jobmanager_capsule/v2_1_bridge_profile.json`

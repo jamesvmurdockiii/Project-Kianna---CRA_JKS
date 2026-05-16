@@ -109,7 +109,7 @@
     "not a baseline freeze"
   ],
   "outcome": "mechanism_candidate_baselines_partial",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7y_20260509_edge_of_chaos_promotion",
+  "output_dir": "<repo>/controlled_test_output/tier7_7y_20260509_edge_of_chaos_promotion",
   "runner_revision": "tier7_7y_edge_of_chaos_promotion_20260509_0001",
   "sham": {
     "mse_geomean": 0.009900949781958662,

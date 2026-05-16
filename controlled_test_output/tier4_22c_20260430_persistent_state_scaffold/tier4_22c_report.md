@@ -2,7 +2,7 @@
 
 - Generated: `2026-04-30T18:45:11+00:00`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_22c_20260430_persistent_state_scaffold`
+- Output directory: `<repo>/controlled_test_output/tier4_22c_20260430_persistent_state_scaffold`
 
 Tier 4.22c is the first concrete custom-C state-ownership step after the continuous transport pass. It does not claim learning yet. It proves the runtime now owns bounded persistent state that later reward/plasticity code can use without a Python-side dictionary or per-step host ledger.
 

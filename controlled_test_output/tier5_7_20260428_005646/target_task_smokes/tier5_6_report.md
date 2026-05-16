@@ -7,7 +7,7 @@
 - Run lengths: `80`
 - Tasks: `delayed_cue,hard_noisy_switching`
 - Candidate budget: `smoke`
-- Output directory: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005646/target_task_smokes`
+- Output directory: `<repo>/controlled_test_output/tier5_7_20260428_005646/target_task_smokes`
 
 Tier 5.6 locks the promoted CRA delayed-credit setting and gives external baselines a documented hyperparameter budget. It is a reviewer-defense audit against the claim that Tier 5.5 only beat weak/default baselines.
 

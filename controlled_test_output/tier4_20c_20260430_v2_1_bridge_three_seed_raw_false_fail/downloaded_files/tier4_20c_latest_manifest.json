@@ -1,9 +1,0 @@
-{
-  "canonical": false,
-  "claim": "Latest Tier 4.20c v2.1 three-seed chunked hardware repeat; pass means bridge repeatability, not native/on-chip v2.1.",
-  "generated_at_utc": "2026-04-30T04:36:48+00:00",
-  "manifest": "/tmp/job5149451337032864846.tmp/tier4_20c_job_output/tier4_20c_results.json",
-  "output_dir": "/tmp/job5149451337032864846.tmp/tier4_20c_job_output",
-  "report": "/tmp/job5149451337032864846.tmp/tier4_20c_job_output/tier4_20c_report.md",
-  "status": "fail"
-}

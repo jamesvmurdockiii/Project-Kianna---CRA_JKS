@@ -1,5 +1,5 @@
 criterion,value,rule,pass,details
-tier7_4h_prerequisite_exists,True,must exist,True,/Users/james/JKS:CRA/controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout/tier7_4h_results.json
+tier7_4h_prerequisite_exists,True,must exist,True,<repo>/controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout/tier7_4h_results.json
 tier7_4h_prerequisite_passed,PASS,case-insensitive == PASS,True,
 task_family_count,6,>= 5,True,
 difficulty_levels_defined,5,>= 4,True,

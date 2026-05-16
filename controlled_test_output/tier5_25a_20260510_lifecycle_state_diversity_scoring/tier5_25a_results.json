@@ -508,7 +508,7 @@
     ]
   },
   "outcome": "lifecycle_helps_partially",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_25a_20260510_lifecycle_state_diversity_scoring",
+  "output_dir": "<repo>/controlled_test_output/tier5_25a_20260510_lifecycle_state_diversity_scoring",
   "pr_polyp_ratio": 1.6189,
   "pr_ratio": 1.2898,
   "runner_revision": "tier5_25a_lifecycle_state_diversity_scoring_20260510_0001",

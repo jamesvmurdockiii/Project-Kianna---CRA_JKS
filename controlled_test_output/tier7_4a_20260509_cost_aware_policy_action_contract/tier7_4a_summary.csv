@@ -1,5 +1,5 @@
 criterion,passed,value,rule
-Tier 7.1m exists,True,/Users/james/JKS:CRA/controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision/tier7_1m_results.json,exists
+Tier 7.1m exists,True,<repo>/controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision/tier7_1m_results.json,exists
 Tier 7.1m passed,True,pass,== pass
 Tier 7.1m selected policy/action next,True,Tier 7.4a - Cost-Aware Policy/Action Selection Contract,contains Policy/Action
 question defined,True,"Can CRA learn a general policy/action layer that converts internal state, confidence, memory, and prediction error into actions under asymmetric costs, instead of relying on adapter-specific thresholds?",non-empty

@@ -2,10 +2,10 @@
   "canonical": false,
   "claim": "Latest Tier 5.10 memory-timescale diagnostic; promote only after pass plus compact regression.",
   "generated_at_utc": "2026-04-28T22:45:43+00:00",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_10_20260428_181322/tier5_10_results.json",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_10_20260428_181322",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_10_20260428_181322/tier5_10_report.md",
+  "manifest": "<repo>/controlled_test_output/tier5_10_20260428_181322/tier5_10_results.json",
+  "output_dir": "<repo>/controlled_test_output/tier5_10_20260428_181322",
+  "report": "<repo>/controlled_test_output/tier5_10_20260428_181322/tier5_10_report.md",
   "status": "fail",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10_20260428_181322/tier5_10_summary.csv",
+  "summary_csv": "<repo>/controlled_test_output/tier5_10_20260428_181322/tier5_10_summary.csv",
   "tier": "Tier 5.10 - Multi-Timescale Memory And Forgetting Diagnostic"
 }

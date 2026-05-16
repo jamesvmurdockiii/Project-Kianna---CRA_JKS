@@ -2,7 +2,7 @@
 
 - Generated: `2026-05-09T03:15:57+00:00`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight`
+- Output directory: `<repo>/controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight`
 - Runner revision: `tier7_5b_curriculum_environment_preflight_20260509_0001`
 
 ## Boundary
@@ -19,7 +19,7 @@ This preflight materializes deterministic stream/split/schema artifacts only. It
 
 | Criterion | Value | Rule | Pass | Details |
 | --- | --- | --- | --- | --- |
-| tier7_5a_prerequisite_exists | `True` | must exist | yes | /Users/james/JKS:CRA/controlled_test_output/tier7_5a_20260509_curriculum_environment_contract/tier7_5a_results.json |
+| tier7_5a_prerequisite_exists | `True` | must exist | yes | <repo>/controlled_test_output/tier7_5a_20260509_curriculum_environment_contract/tier7_5a_results.json |
 | tier7_5a_prerequisite_passed | `PASS` | case-insensitive == PASS | yes |  |
 | family_count | `6` | == 6 | yes |  |
 | split_count | `4` | == 4 | yes |  |

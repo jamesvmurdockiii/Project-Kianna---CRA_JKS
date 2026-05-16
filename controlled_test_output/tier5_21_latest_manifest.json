@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.576216+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.719023+00:00",
   "source_generated_at_utc": "2026-05-10T18:02:16+00:00",
   "registry_entry_id": "tier5_21_nest_per_neuron_dimensionality_contract",
   "tier": "Tier 5.21 - NEST Per-Neuron State Dimensionality Diagnostic Contract",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_21_20260510_nest_per_neuron_dimensionality_contract",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_21_20260510_nest_per_neuron_dimensionality_contract/tier5_21_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_21_20260510_nest_per_neuron_dimensionality_contract/tier5_21_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_21_20260510_nest_per_neuron_dimensionality_contract/tier5_21_summary.csv",
+  "output_dir": "controlled_test_output/tier5_21_20260510_nest_per_neuron_dimensionality_contract",
+  "manifest": "controlled_test_output/tier5_21_20260510_nest_per_neuron_dimensionality_contract/tier5_21_results.json",
+  "report": "controlled_test_output/tier5_21_20260510_nest_per_neuron_dimensionality_contract/tier5_21_report.md",
+  "summary_csv": "controlled_test_output/tier5_21_20260510_nest_per_neuron_dimensionality_contract/tier5_21_summary.csv",
   "canonical": true,
   "claim": "Tier 5.21 locks the NEST per-neuron state dimensionality diagnostic protocol. Question: does per-neuron spike PR exceed 4.0 at 16 polyps (512 channels) and exceed 2x per-polyp aggregate PR? Primary sham: shuffled neuron-to-polyp assignment. 4 outcome classes. Contract only; no scoring.",
   "caveat": "Contract only; not scoring, not mechanism promotion, not a baseline freeze, not public usefulness proof, not hardware/native transfer."

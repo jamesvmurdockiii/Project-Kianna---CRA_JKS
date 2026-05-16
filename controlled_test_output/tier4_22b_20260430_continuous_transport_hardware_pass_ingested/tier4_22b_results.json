@@ -1,12 +1,12 @@
 {
   "artifact_note": "Returned EBRAINS 7-file Tier 4.22b hardware transport pass plus reports.zip preserved under raw_downloads/.",
   "artifacts": {
-    "delayed_cue_seed42_timeseries_csv": "/tmp/job11885969396211966108.tmp/tier4_22b_job_output/tier4_22b_delayed_cue_seed42_timeseries.csv",
-    "hard_noisy_switching_seed42_timeseries_csv": "/tmp/job11885969396211966108.tmp/tier4_22b_job_output/tier4_22b_hard_noisy_switching_seed42_timeseries.csv",
-    "manifest_json": "/tmp/job11885969396211966108.tmp/tier4_22b_job_output/tier4_22b_results.json",
-    "report_md": "/tmp/job11885969396211966108.tmp/tier4_22b_job_output/tier4_22b_report.md",
-    "summary_csv": "/tmp/job11885969396211966108.tmp/tier4_22b_job_output/tier4_22b_summary.csv",
-    "timeseries_csv": "/tmp/job11885969396211966108.tmp/tier4_22b_job_output/tier4_22b_timeseries.csv"
+    "delayed_cue_seed42_timeseries_csv": "<jobmanager_tmp>",
+    "hard_noisy_switching_seed42_timeseries_csv": "<jobmanager_tmp>",
+    "manifest_json": "<jobmanager_tmp>",
+    "report_md": "<jobmanager_tmp>",
+    "summary_csv": "<jobmanager_tmp>",
+    "timeseries_csv": "<jobmanager_tmp>"
   },
   "case_summaries": [
     {
@@ -207,9 +207,9 @@
   "generated_at_utc": "2026-04-30T18:14:15+00:00",
   "ingested_at_utc": "2026-04-30T18:20:00+00:00",
   "ingested_from_downloads": true,
-  "local_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_22b_20260430_continuous_transport_hardware_pass_ingested",
+  "local_output_dir": "<repo>/controlled_test_output/tier4_22b_20260430_continuous_transport_hardware_pass_ingested",
   "mode": "run-hardware",
-  "output_dir": "/tmp/job11885969396211966108.tmp/tier4_22b_job_output",
+  "output_dir": "<jobmanager_tmp>",
   "status": "pass",
   "summary": {
     "all_cases_passed": true,

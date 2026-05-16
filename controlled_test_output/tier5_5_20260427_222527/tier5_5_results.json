@@ -1,29 +1,29 @@
 {
   "artifacts": {
-    "comparisons_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_5_20260427_222527/tier5_5_comparisons.csv",
-    "edge_summary_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_5_20260427_222527/tier5_5_edge_summary.png",
-    "fairness_contract_json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_5_20260427_222527/tier5_5_fairness_contract.json",
-    "per_seed_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_5_20260427_222527/tier5_5_per_seed.csv",
-    "report_md": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_5_20260427_222527/tier5_5_report.md",
-    "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_5_20260427_222527/tier5_5_summary.csv"
+    "comparisons_csv": "<repo>/controlled_test_output/tier5_5_20260427_222527/tier5_5_comparisons.csv",
+    "edge_summary_png": "<repo>/controlled_test_output/tier5_5_20260427_222527/tier5_5_edge_summary.png",
+    "fairness_contract_json": "<repo>/controlled_test_output/tier5_5_20260427_222527/tier5_5_fairness_contract.json",
+    "per_seed_csv": "<repo>/controlled_test_output/tier5_5_20260427_222527/tier5_5_per_seed.csv",
+    "report_md": "<repo>/controlled_test_output/tier5_5_20260427_222527/tier5_5_report.md",
+    "summary_csv": "<repo>/controlled_test_output/tier5_5_20260427_222527/tier5_5_summary.csv"
   },
   "backend": "mock",
   "command": "experiments/tier5_expanded_baselines.py --backend mock --seed-count 1 --run-lengths 120 --tasks delayed_cue,hard_noisy_switching --models random_sign,sign_persistence --cra-variants v0_8 --bootstrap-reps 50 --min-advantage-regimes 0 --allowed-dominated-hard-regimes 99",
   "generated_at_utc": "2026-04-28T02:25:28+00:00",
-  "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_5_20260427_222527",
+  "output_dir": "<repo>/controlled_test_output/tier5_5_20260427_222527",
   "result": {
     "artifacts": {
-      "comparisons_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_5_20260427_222527/tier5_5_comparisons.csv",
-      "edge_summary_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_5_20260427_222527/tier5_5_edge_summary.png",
-      "fairness_contract_json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_5_20260427_222527/tier5_5_fairness_contract.json",
-      "per_seed_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_5_20260427_222527/tier5_5_per_seed.csv",
-      "steps120_delayed_cue_cra_v0_8_delayed_lr_0_20_seed42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_5_20260427_222527/steps120_delayed_cue_cra_v0_8_delayed_lr_0_20_seed42_timeseries.csv",
-      "steps120_delayed_cue_random_sign_seed42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_5_20260427_222527/steps120_delayed_cue_random_sign_seed42_timeseries.csv",
-      "steps120_delayed_cue_sign_persistence_seed42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_5_20260427_222527/steps120_delayed_cue_sign_persistence_seed42_timeseries.csv",
-      "steps120_hard_noisy_switching_cra_v0_8_delayed_lr_0_20_seed42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_5_20260427_222527/steps120_hard_noisy_switching_cra_v0_8_delayed_lr_0_20_seed42_timeseries.csv",
-      "steps120_hard_noisy_switching_random_sign_seed42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_5_20260427_222527/steps120_hard_noisy_switching_random_sign_seed42_timeseries.csv",
-      "steps120_hard_noisy_switching_sign_persistence_seed42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_5_20260427_222527/steps120_hard_noisy_switching_sign_persistence_seed42_timeseries.csv",
-      "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_5_20260427_222527/tier5_5_summary.csv"
+      "comparisons_csv": "<repo>/controlled_test_output/tier5_5_20260427_222527/tier5_5_comparisons.csv",
+      "edge_summary_png": "<repo>/controlled_test_output/tier5_5_20260427_222527/tier5_5_edge_summary.png",
+      "fairness_contract_json": "<repo>/controlled_test_output/tier5_5_20260427_222527/tier5_5_fairness_contract.json",
+      "per_seed_csv": "<repo>/controlled_test_output/tier5_5_20260427_222527/tier5_5_per_seed.csv",
+      "steps120_delayed_cue_cra_v0_8_delayed_lr_0_20_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_5_20260427_222527/steps120_delayed_cue_cra_v0_8_delayed_lr_0_20_seed42_timeseries.csv",
+      "steps120_delayed_cue_random_sign_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_5_20260427_222527/steps120_delayed_cue_random_sign_seed42_timeseries.csv",
+      "steps120_delayed_cue_sign_persistence_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_5_20260427_222527/steps120_delayed_cue_sign_persistence_seed42_timeseries.csv",
+      "steps120_hard_noisy_switching_cra_v0_8_delayed_lr_0_20_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_5_20260427_222527/steps120_hard_noisy_switching_cra_v0_8_delayed_lr_0_20_seed42_timeseries.csv",
+      "steps120_hard_noisy_switching_random_sign_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_5_20260427_222527/steps120_hard_noisy_switching_random_sign_seed42_timeseries.csv",
+      "steps120_hard_noisy_switching_sign_persistence_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_5_20260427_222527/steps120_hard_noisy_switching_sign_persistence_seed42_timeseries.csv",
+      "summary_csv": "<repo>/controlled_test_output/tier5_5_20260427_222527/tier5_5_summary.csv"
     },
     "criteria": [
       {

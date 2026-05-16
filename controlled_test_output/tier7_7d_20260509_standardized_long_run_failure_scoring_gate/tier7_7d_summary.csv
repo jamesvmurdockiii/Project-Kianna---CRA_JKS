@@ -1,5 +1,5 @@
 name,value,rule,passed,note
-Tier 7.7c contract exists,/Users/james/JKS:CRA/controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract/tier7_7c_results.json,exists and status pass,True,
+Tier 7.7c contract exists,<repo>/controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract/tier7_7c_results.json,exists and status pass,True,
 Tier 7.7c scoring authorization,True,true,True,
 required lengths present,"[8000, 16000, 32000]",contains 8000/16000/32000,True,
 locked tasks,"mackey_glass,lorenz,narma10",Mackey/Lorenz/NARMA,True,

@@ -2,7 +2,7 @@
 
 - Generated: `2026-05-09T01:52:27+00:00`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/compact_regression_full_nest/v2_0_compact_regression_gate/predictive_binding_guardrail`
+- Output directory: `<repo>/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/compact_regression_full_nest/v2_0_compact_regression_gate/predictive_binding_guardrail`
 - Tasks: `cross_modal_binding, reentry_binding`
 - Seeds: `[42, 43, 44]`
 

@@ -1,12 +1,12 @@
 {
   "artifacts": {
-    "job_readme": "/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/ebrains_upload_bundle/cra_422t/README_TIER4_22L_JOB.md",
-    "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/tier4_22l_results.json",
-    "reference_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/tier4_22l_parity_reference.csv",
-    "reference_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/tier4_22l_reference.json",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/tier4_22l_report.md",
-    "stable_upload_folder": "/Users/james/JKS:CRA/ebrains_jobs/cra_422t",
-    "upload_bundle": "/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/ebrains_upload_bundle/cra_422t"
+    "job_readme": "<repo>/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/ebrains_upload_bundle/cra_422t/README_TIER4_22L_JOB.md",
+    "manifest_json": "<repo>/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/tier4_22l_results.json",
+    "reference_csv": "<repo>/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/tier4_22l_parity_reference.csv",
+    "reference_json": "<repo>/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/tier4_22l_reference.json",
+    "report_md": "<repo>/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/tier4_22l_report.md",
+    "stable_upload_folder": "<repo>/ebrains_jobs/cra_422t",
+    "upload_bundle": "<repo>/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/ebrains_upload_bundle/cra_422t"
   },
   "criteria": [
     {
@@ -35,14 +35,14 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/ebrains_upload_bundle/cra_422t"
+      "value": "<repo>/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/ebrains_upload_bundle/cra_422t"
     },
     {
       "name": "runtime source included",
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/ebrains_upload_bundle/cra_422t/coral_reef_spinnaker/spinnaker_runtime"
+      "value": "<repo>/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/ebrains_upload_bundle/cra_422t/coral_reef_spinnaker/spinnaker_runtime"
     },
     {
       "name": "run-hardware command emitted",
@@ -238,19 +238,19 @@
   "generated_at_utc": "2026-05-01T02:23:48+00:00",
   "main_syntax_check": {
     "normal": {
-      "command": "/usr/bin/cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-int-to-pointer-cast -I /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/stubs -I /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src -c /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src/main.c -o /Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/tier4_22i_main_syntax_normal.o",
-      "object_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/tier4_22i_main_syntax_normal.o",
+      "command": "/usr/bin/cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-int-to-pointer-cast -I <repo>/coral_reef_spinnaker/spinnaker_runtime/stubs -I <repo>/coral_reef_spinnaker/spinnaker_runtime/src -c <repo>/coral_reef_spinnaker/spinnaker_runtime/src/main.c -o <repo>/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/tier4_22i_main_syntax_normal.o",
+      "object_artifact": "<repo>/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/tier4_22i_main_syntax_normal.o",
       "returncode": 0,
       "status": "pass",
       "stderr": "",
-      "stderr_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/tier4_22i_main_syntax_normal_stderr.txt",
+      "stderr_artifact": "<repo>/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/tier4_22i_main_syntax_normal_stderr.txt",
       "stdout": "",
-      "stdout_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/tier4_22i_main_syntax_normal_stdout.txt"
+      "stdout_artifact": "<repo>/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/tier4_22i_main_syntax_normal_stdout.txt"
     },
     "status": "pass"
   },
   "mode": "prepare",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared",
+  "output_dir": "<repo>/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared",
   "reference": {
     "equation": "prediction=w*feature+bias; error=target-prediction; w+=lr*error*feature; b+=lr*error",
     "final_readout_bias": -0.125,
@@ -352,10 +352,10 @@
     "reference_final_weight": -0.125,
     "reference_sequence_length": 4,
     "reference_status": "pass",
-    "stable_upload_folder": "/Users/james/JKS:CRA/ebrains_jobs/cra_422t",
-    "tier4_22j_manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/tier4_22j_results.json",
+    "stable_upload_folder": "<repo>/ebrains_jobs/cra_422t",
+    "tier4_22j_manifest": "<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/tier4_22j_results.json",
     "tier4_22j_status": "pass",
-    "upload_folder": "/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/ebrains_upload_bundle/cra_422t",
+    "upload_folder": "<repo>/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_prepared/ebrains_upload_bundle/cra_422t",
     "what_i_need_from_user": "Upload the generated cra_422t folder to EBRAINS/JobManager and run the emitted command; download returned files after completion."
   },
   "tier": "Tier 4.22l - Tiny Custom-Runtime Learning Parity"

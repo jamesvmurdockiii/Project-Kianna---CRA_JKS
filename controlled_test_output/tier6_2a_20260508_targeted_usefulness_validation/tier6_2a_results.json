@@ -572,7 +572,7 @@
   "horizon": 8,
   "invalid_tasks": [],
   "length": 2400,
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier6_2a_20260508_targeted_usefulness_validation",
+  "output_dir": "<repo>/controlled_test_output/tier6_2a_20260508_targeted_usefulness_validation",
   "runner_revision": "tier6_2a_targeted_usefulness_validation_20260508_0001",
   "runtime_seconds": 4.6152630420000005,
   "seeds": [

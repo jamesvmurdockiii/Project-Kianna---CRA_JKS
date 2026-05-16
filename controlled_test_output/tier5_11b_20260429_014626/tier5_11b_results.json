@@ -1,22 +1,22 @@
 {
   "artifacts": {
-    "comparisons_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_11b_20260429_014626/tier5_11b_comparisons.csv",
-    "fairness_contract_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_11b_20260429_014626/tier5_11b_fairness_contract.json",
-    "replay_edges_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_11b_20260429_014626/tier5_11b_replay_edges.png",
-    "replay_events_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_11b_20260429_014626/tier5_11b_replay_events.csv",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_11b_20260429_014626/tier5_11b_report.md",
-    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_11b_20260429_014626/tier5_11b_summary.csv"
+    "comparisons_csv": "<repo>/controlled_test_output/tier5_11b_20260429_014626/tier5_11b_comparisons.csv",
+    "fairness_contract_json": "<repo>/controlled_test_output/tier5_11b_20260429_014626/tier5_11b_fairness_contract.json",
+    "replay_edges_png": "<repo>/controlled_test_output/tier5_11b_20260429_014626/tier5_11b_replay_edges.png",
+    "replay_events_csv": "<repo>/controlled_test_output/tier5_11b_20260429_014626/tier5_11b_replay_events.csv",
+    "report_md": "<repo>/controlled_test_output/tier5_11b_20260429_014626/tier5_11b_report.md",
+    "summary_csv": "<repo>/controlled_test_output/tier5_11b_20260429_014626/tier5_11b_summary.csv"
   },
   "command": "experiments/tier5_sleep_replay_intervention.py --backend mock --tasks silent_context_reentry --steps 240 --seed-count 1 --models sign_persistence,online_perceptron --variants all --smoke",
   "generated_at_utc": "2026-04-29T05:46:30.784965+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_11b_20260429_014626",
+  "output_dir": "<repo>/controlled_test_output/tier5_11b_20260429_014626",
   "result": {
     "artifacts": {
-      "comparisons_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_11b_20260429_014626/tier5_11b_comparisons.csv",
-      "fairness_contract_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_11b_20260429_014626/tier5_11b_fairness_contract.json",
-      "replay_edges_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_11b_20260429_014626/tier5_11b_replay_edges.png",
-      "replay_events_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_11b_20260429_014626/tier5_11b_replay_events.csv",
-      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_11b_20260429_014626/tier5_11b_summary.csv"
+      "comparisons_csv": "<repo>/controlled_test_output/tier5_11b_20260429_014626/tier5_11b_comparisons.csv",
+      "fairness_contract_json": "<repo>/controlled_test_output/tier5_11b_20260429_014626/tier5_11b_fairness_contract.json",
+      "replay_edges_png": "<repo>/controlled_test_output/tier5_11b_20260429_014626/tier5_11b_replay_edges.png",
+      "replay_events_csv": "<repo>/controlled_test_output/tier5_11b_20260429_014626/tier5_11b_replay_events.csv",
+      "summary_csv": "<repo>/controlled_test_output/tier5_11b_20260429_014626/tier5_11b_summary.csv"
     },
     "criteria": [
       {

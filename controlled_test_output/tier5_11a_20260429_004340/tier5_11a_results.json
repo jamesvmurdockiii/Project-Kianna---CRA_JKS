@@ -1,20 +1,20 @@
 {
   "artifacts": {
-    "comparisons_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_11a_20260429_004340/tier5_11a_comparisons.csv",
-    "fairness_contract_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_11a_20260429_004340/tier5_11a_fairness_contract.json",
-    "memory_edges_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_11a_20260429_004340/tier5_11a_memory_edges.png",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_11a_20260429_004340/tier5_11a_report.md",
-    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_11a_20260429_004340/tier5_11a_summary.csv"
+    "comparisons_csv": "<repo>/controlled_test_output/tier5_11a_20260429_004340/tier5_11a_comparisons.csv",
+    "fairness_contract_json": "<repo>/controlled_test_output/tier5_11a_20260429_004340/tier5_11a_fairness_contract.json",
+    "memory_edges_png": "<repo>/controlled_test_output/tier5_11a_20260429_004340/tier5_11a_memory_edges.png",
+    "report_md": "<repo>/controlled_test_output/tier5_11a_20260429_004340/tier5_11a_report.md",
+    "summary_csv": "<repo>/controlled_test_output/tier5_11a_20260429_004340/tier5_11a_summary.csv"
   },
   "command": "experiments/tier5_sleep_replay_need.py --backend nest --tasks silent_context_reentry,long_gap_silent_reentry,partial_key_reentry --steps 960 --seed-count 3 --models sign_persistence,online_perceptron,online_logistic_regression,echo_state_network,small_gru,stdp_only_snn --variants all --stop-on-fail",
   "generated_at_utc": "2026-04-29T05:20:32+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_11a_20260429_004340",
+  "output_dir": "<repo>/controlled_test_output/tier5_11a_20260429_004340",
   "result": {
     "artifacts": {
-      "comparisons_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_11a_20260429_004340/tier5_11a_comparisons.csv",
-      "fairness_contract_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_11a_20260429_004340/tier5_11a_fairness_contract.json",
-      "memory_edges_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_11a_20260429_004340/tier5_11a_memory_edges.png",
-      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_11a_20260429_004340/tier5_11a_summary.csv"
+      "comparisons_csv": "<repo>/controlled_test_output/tier5_11a_20260429_004340/tier5_11a_comparisons.csv",
+      "fairness_contract_json": "<repo>/controlled_test_output/tier5_11a_20260429_004340/tier5_11a_fairness_contract.json",
+      "memory_edges_png": "<repo>/controlled_test_output/tier5_11a_20260429_004340/tier5_11a_memory_edges.png",
+      "summary_csv": "<repo>/controlled_test_output/tier5_11a_20260429_004340/tier5_11a_summary.csv"
     },
     "criteria": [
       {

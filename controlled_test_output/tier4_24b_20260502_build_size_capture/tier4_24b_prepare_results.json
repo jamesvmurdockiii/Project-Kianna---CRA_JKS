@@ -4,10 +4,10 @@
   "generated_at_utc": "2026-05-02T02:42:32.222469+00:00",
   "mode": "prepare",
   "status": "prepared",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_24b_20260502_build_size_capture",
+  "output_dir": "<repo>/controlled_test_output/tier4_24b_20260502_build_size_capture",
   "summary": {
-    "upload_bundle": "/Users/james/JKS:CRA/controlled_test_output/tier4_24b_20260502_build_size_capture/ebrains_upload_bundle/cra_424a",
-    "stable_upload_folder": "/Users/james/JKS:CRA/ebrains_jobs/cra_424a",
+    "upload_bundle": "<repo>/controlled_test_output/tier4_24b_20260502_build_size_capture/ebrains_upload_bundle/cra_424a",
+    "stable_upload_folder": "<repo>/ebrains_jobs/cra_424a",
     "job_command_build_only": "cra_424a/experiments/tier4_24b_ebrains_build_size_capture.py --mode run-hardware --skip-load --out-dir tier4_24b_job_output",
     "job_command_with_load": "cra_424a/experiments/tier4_24b_ebrains_build_size_capture.py --mode run-hardware --out-dir tier4_24b_job_output",
     "what_i_need_from_user": "Upload cra_424a to EBRAINS/JobManager and run the emitted command.",
@@ -24,14 +24,14 @@
     },
     {
       "name": "upload bundle created",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_24b_20260502_build_size_capture/ebrains_upload_bundle/cra_424a",
+      "value": "<repo>/controlled_test_output/tier4_24b_20260502_build_size_capture/ebrains_upload_bundle/cra_424a",
       "rule": "exists",
       "passed": true,
       "note": ""
     },
     {
       "name": "runtime source included",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_24b_20260502_build_size_capture/ebrains_upload_bundle/cra_424a/coral_reef_spinnaker/spinnaker_runtime",
+      "value": "<repo>/controlled_test_output/tier4_24b_20260502_build_size_capture/ebrains_upload_bundle/cra_424a/coral_reef_spinnaker/spinnaker_runtime",
       "rule": "exists",
       "passed": true,
       "note": ""

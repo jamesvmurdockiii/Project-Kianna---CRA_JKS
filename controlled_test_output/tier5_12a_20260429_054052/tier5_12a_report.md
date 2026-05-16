@@ -7,7 +7,7 @@
 - Tasks: `hidden_regime_switching,masked_input_prediction,event_stream_prediction,sensor_anomaly_prediction`
 - Selected standard baselines: `sign_persistence,online_perceptron,online_logistic_regression,echo_state_network,small_gru,stdp_only_snn`
 - Smoke mode: `False`
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier5_12a_20260429_054052`
+- Output directory: `<repo>/controlled_test_output/tier5_12a_20260429_054052`
 
 Tier 5.12a validates predictive-pressure tasks before CRA predictive-coding/world-model mechanisms are tested.
 

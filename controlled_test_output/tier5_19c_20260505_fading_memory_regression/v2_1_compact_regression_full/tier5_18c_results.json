@@ -1,11 +1,11 @@
 {
   "artifacts": {
-    "child_manifests_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/tier5_18c_child_manifests.json",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/tier5_18c_report.md",
-    "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/tier5_18c_results.json",
-    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/tier5_18c_summary.csv"
+    "child_manifests_json": "<repo>/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/tier5_18c_child_manifests.json",
+    "report_md": "<repo>/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/tier5_18c_report.md",
+    "results_json": "<repo>/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/tier5_18c_results.json",
+    "summary_csv": "<repo>/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/tier5_18c_summary.csv"
   },
-  "baseline_in": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.0.json",
+  "baseline_in": "<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.0.json",
   "children": [
     {
       "command": [
@@ -19,18 +19,18 @@
         "0.2",
         "--stop-on-fail",
         "--output-dir",
-        "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/v2_0_compact_regression_gate"
+        "<repo>/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/v2_0_compact_regression_gate"
       ],
       "failure_reason": "",
-      "manifest_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/v2_0_compact_regression_gate/tier5_17e_results.json",
+      "manifest_path": "<repo>/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/v2_0_compact_regression_gate/tier5_17e_results.json",
       "name": "v2_0_compact_regression_gate",
-      "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/v2_0_compact_regression_gate",
+      "output_dir": "<repo>/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/v2_0_compact_regression_gate",
       "purpose": "rerun the v2.0 promotion/regression stack: v1.8 compact regression, v1.9 composition/routing, Tier 5.14, and Tier 5.17d guardrails remain green",
       "return_code": 0,
       "runtime_seconds": 1484.29167825,
       "status": "pass",
-      "stderr_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/v2_0_compact_regression_gate/v2_0_compact_regression_gate_stderr.log",
-      "stdout_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/v2_0_compact_regression_gate/v2_0_compact_regression_gate_stdout.log"
+      "stderr_path": "<repo>/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/v2_0_compact_regression_gate/v2_0_compact_regression_gate_stderr.log",
+      "stdout_path": "<repo>/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/v2_0_compact_regression_gate/v2_0_compact_regression_gate_stdout.log"
     },
     {
       "command": [
@@ -38,18 +38,18 @@
         "experiments/tier5_self_evaluation_metacognition.py",
         "--stop-on-fail",
         "--output-dir",
-        "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/tier5_18_self_evaluation_guardrail"
+        "<repo>/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/tier5_18_self_evaluation_guardrail"
       ],
       "failure_reason": "",
-      "manifest_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/tier5_18_self_evaluation_guardrail/tier5_18_results.json",
+      "manifest_path": "<repo>/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/tier5_18_self_evaluation_guardrail/tier5_18_results.json",
       "name": "tier5_18_self_evaluation_guardrail",
-      "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/tier5_18_self_evaluation_guardrail",
+      "output_dir": "<repo>/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/tier5_18_self_evaluation_guardrail",
       "purpose": "rerun the Tier 5.18 calibrated pre-feedback reliability-monitoring and confidence-gated adaptation diagnostic",
       "return_code": 0,
       "runtime_seconds": 3.064368625000043,
       "status": "pass",
-      "stderr_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/tier5_18_self_evaluation_guardrail/tier5_18_self_evaluation_guardrail_stderr.log",
-      "stdout_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/tier5_18_self_evaluation_guardrail/tier5_18_self_evaluation_guardrail_stdout.log"
+      "stderr_path": "<repo>/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/tier5_18_self_evaluation_guardrail/tier5_18_self_evaluation_guardrail_stderr.log",
+      "stdout_path": "<repo>/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/tier5_18_self_evaluation_guardrail/tier5_18_self_evaluation_guardrail_stdout.log"
     }
   ],
   "criteria": [
@@ -57,7 +57,7 @@
       "name": "frozen v2.0 baseline artifact exists",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.0.json"
+      "value": "<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.0.json"
     },
     {
       "name": "v2.0 compact regression gate remains green",
@@ -80,7 +80,7 @@
   ],
   "failure_reason": "",
   "generated_at_utc": "2026-05-05T19:01:36+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full",
+  "output_dir": "<repo>/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full",
   "status": "pass",
   "summary": {
     "children_passed": 2,

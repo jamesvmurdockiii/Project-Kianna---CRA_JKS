@@ -1,7 +1,7 @@
 {
   "checks": [
     {
-      "details": "14 files present",
+      "details": "20 files present",
       "name": "required source documentation files exist",
       "passed": true,
       "severity": "error"
@@ -47,9 +47,45 @@
       "name": "current docs have no stale evidence-count claims",
       "passed": true,
       "severity": "error"
+    },
+    {
+      "details": "no machine-local absolute paths found in public-facing docs",
+      "name": "public-facing docs avoid machine-local absolute paths",
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "details": "no private/hype/profane terms found in scanned docs",
+      "name": "public docs avoid private/hype/profane language",
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "details": "all README relative links resolve",
+      "name": "README relative links resolve",
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "details": "no tracked reports.zip, sqlite provenance DBs, stack traces, raw downloads, nested upload bundles, or compiled SpiNNaker binaries",
+      "name": "raw hardware/download artifacts are not tracked",
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "details": "no tracked file contains machine-local absolute path patterns",
+      "name": "tracked files avoid machine-local absolute paths",
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "details": "no tracked file exceeds 50 MiB",
+      "name": "no oversized tracked blobs",
+      "passed": true,
+      "severity": "error"
     }
   ],
-  "generated_at_utc": "2026-05-16T15:45:09.908057+00:00",
+  "generated_at_utc": "2026-05-16T19:49:52.212690+00:00",
   "registry_summary": {
     "evidence_count": 157,
     "expanded_test_entry_count": 157,

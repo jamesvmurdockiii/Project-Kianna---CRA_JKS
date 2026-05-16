@@ -3,9 +3,9 @@
   "criteria_passed": 16,
   "criteria_total": 16,
   "generated_at_utc": "2026-05-06T15:21:52+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_31b_20260506_native_temporal_fixed_point_reference",
-  "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_31b_20260506_native_temporal_fixed_point_reference/tier4_31b_report.md",
-  "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_31b_20260506_native_temporal_fixed_point_reference/tier4_31b_results.json",
+  "output_dir": "<repo>/controlled_test_output/tier4_31b_20260506_native_temporal_fixed_point_reference",
+  "report_md": "<repo>/controlled_test_output/tier4_31b_20260506_native_temporal_fixed_point_reference/tier4_31b_report.md",
+  "results_json": "<repo>/controlled_test_output/tier4_31b_20260506_native_temporal_fixed_point_reference/tier4_31b_results.json",
   "status": "pass",
   "tier": "Tier 4.31b - Native Temporal-Substrate Local Fixed-Point Reference"
 }

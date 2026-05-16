@@ -3,7 +3,7 @@
   "canonical_evidence_entries": [
     {
       "boundary": "Single-chip replicated-shard stress only; not multi-chip or speedup evidence.",
-      "canonical_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_hw_replicated_20260507_hardware_pass_ingested",
+      "canonical_dir": "<repo>/controlled_test_output/tier4_32a_hw_replicated_20260507_hardware_pass_ingested",
       "claim": "Single-chip replicated-shard MCPL stress passed at 8/12/16-core stress points with returned artifacts preserved.",
       "criteria": [
         {
@@ -11,7 +11,7 @@
           "note": "",
           "passed": true,
           "rule": "exists",
-          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_hw_replicated_20260507_hardware_pass_ingested/tier4_32a_hw_replicated_results.json"
+          "value": "<repo>/controlled_test_output/tier4_32a_hw_replicated_20260507_hardware_pass_ingested/tier4_32a_hw_replicated_results.json"
         },
         {
           "name": "status pass",
@@ -124,14 +124,14 @@
       "entry_id": "tier4_32a_hw_replicated_shard_stress",
       "failed_criteria": [],
       "label": "Tier 4.32a-hw-replicated single-chip replicated-shard stress",
-      "results_file": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_hw_replicated_20260507_hardware_pass_ingested/tier4_32a_hw_replicated_results.json",
+      "results_file": "<repo>/controlled_test_output/tier4_32a_hw_replicated_20260507_hardware_pass_ingested/tier4_32a_hw_replicated_results.json",
       "returned_artifact_count": 80,
       "runner_revision": "tier4_32a_hw_replicated_shard_stress_20260507_0001",
       "status": "pass"
     },
     {
       "boundary": "Two-chip communication/readback smoke only; not learning scale or speedup evidence.",
-      "canonical_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_32d_20260507_hardware_pass_ingested",
+      "canonical_dir": "<repo>/controlled_test_output/tier4_32d_20260507_hardware_pass_ingested",
       "claim": "Two-chip MCPL lookup communication/readback passed with zero stale replies, duplicate replies, timeouts, or synthetic fallback.",
       "criteria": [
         {
@@ -139,7 +139,7 @@
           "note": "",
           "passed": true,
           "rule": "exists",
-          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_32d_20260507_hardware_pass_ingested/tier4_32d_results.json"
+          "value": "<repo>/controlled_test_output/tier4_32d_20260507_hardware_pass_ingested/tier4_32d_results.json"
         },
         {
           "name": "status pass",
@@ -224,14 +224,14 @@
       "entry_id": "tier4_32d_two_chip_mcpl_lookup_hardware_smoke",
       "failed_criteria": [],
       "label": "Tier 4.32d two-chip MCPL communication/readback smoke",
-      "results_file": "/Users/james/JKS:CRA/controlled_test_output/tier4_32d_20260507_hardware_pass_ingested/tier4_32d_results.json",
+      "results_file": "<repo>/controlled_test_output/tier4_32d_20260507_hardware_pass_ingested/tier4_32d_results.json",
       "returned_artifact_count": 40,
       "runner_revision": "tier4_32d_interchip_mcpl_smoke_20260507_0001",
       "status": "pass"
     },
     {
       "boundary": "Two-chip learning micro-task only; not true two-partition or benchmark evidence.",
-      "canonical_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested",
+      "canonical_dir": "<repo>/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested",
       "claim": "Two-chip single-shard learning-bearing micro-task passed with the enabled-learning case separated from the no-learning control.",
       "criteria": [
         {
@@ -239,7 +239,7 @@
           "note": "",
           "passed": true,
           "rule": "exists",
-          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/tier4_32e_results.json"
+          "value": "<repo>/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/tier4_32e_results.json"
         },
         {
           "name": "status pass",
@@ -338,14 +338,14 @@
       "entry_id": "tier4_32e_multi_chip_learning_microtask",
       "failed_criteria": [],
       "label": "Tier 4.32e two-chip learning-bearing micro-task",
-      "results_file": "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/tier4_32e_results.json",
+      "results_file": "<repo>/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/tier4_32e_results.json",
       "returned_artifact_count": 42,
       "runner_revision": "tier4_32e_multichip_learning_microtask_20260507_0001",
       "status": "pass"
     },
     {
       "boundary": "Two-chip lifecycle traffic/resource smoke only; not lifecycle scaling evidence.",
-      "canonical_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_32g_20260508_hardware_pass_ingested",
+      "canonical_dir": "<repo>/controlled_test_output/tier4_32g_20260508_hardware_pass_ingested",
       "claim": "Two-chip lifecycle traffic/resource smoke passed with source event/trophic requests, remote lifecycle mutation, mask sync, and zero stale/duplicate/missing-ack counters.",
       "criteria": [
         {
@@ -353,7 +353,7 @@
           "note": "",
           "passed": true,
           "rule": "exists",
-          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_32g_20260508_hardware_pass_ingested/tier4_32g_results.json"
+          "value": "<repo>/controlled_test_output/tier4_32g_20260508_hardware_pass_ingested/tier4_32g_results.json"
         },
         {
           "name": "status pass",
@@ -452,7 +452,7 @@
       "entry_id": "tier4_32g_two_chip_lifecycle_traffic_resource_smoke",
       "failed_criteria": [],
       "label": "Tier 4.32g two-chip lifecycle traffic/resource smoke",
-      "results_file": "/Users/james/JKS:CRA/controlled_test_output/tier4_32g_20260508_hardware_pass_ingested/tier4_32g_results.json",
+      "results_file": "<repo>/controlled_test_output/tier4_32g_20260508_hardware_pass_ingested/tier4_32g_results.json",
       "returned_artifact_count": 30,
       "runner_revision": "tier4_32g_multichip_lifecycle_traffic_resource_smoke_20260508_0003",
       "status": "pass"
@@ -539,7 +539,7 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_hw_replicated_20260507_hardware_pass_ingested/tier4_32a_hw_replicated_results.json"
+      "value": "<repo>/controlled_test_output/tier4_32a_hw_replicated_20260507_hardware_pass_ingested/tier4_32a_hw_replicated_results.json"
     },
     {
       "name": "tier4_32a_hw_replicated_shard_stress status pass",
@@ -651,7 +651,7 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_32d_20260507_hardware_pass_ingested/tier4_32d_results.json"
+      "value": "<repo>/controlled_test_output/tier4_32d_20260507_hardware_pass_ingested/tier4_32d_results.json"
     },
     {
       "name": "tier4_32d_two_chip_mcpl_lookup_hardware_smoke status pass",
@@ -735,7 +735,7 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/tier4_32e_results.json"
+      "value": "<repo>/controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/tier4_32e_results.json"
     },
     {
       "name": "tier4_32e_multi_chip_learning_microtask status pass",
@@ -833,7 +833,7 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_32g_20260508_hardware_pass_ingested/tier4_32g_results.json"
+      "value": "<repo>/controlled_test_output/tier4_32g_20260508_hardware_pass_ingested/tier4_32g_results.json"
     },
     {
       "name": "tier4_32g_two_chip_lifecycle_traffic_resource_smoke status pass",
@@ -940,7 +940,7 @@
   "registry_evidence_count": 81,
   "registry_status": "pass",
   "runner_revision": "tier4_32h_native_scale_evidence_closeout_20260508_0001",
-  "source_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_32h_20260508_native_scale_evidence_closeout",
+  "source_output_dir": "<repo>/controlled_test_output/tier4_32h_20260508_native_scale_evidence_closeout",
   "source_registry_generated_at": "2026-05-08T17:35:26.502840+00:00",
   "status": "frozen",
   "strongest_claim": "CRA has a bounded native-scale SpiNNaker substrate baseline: replicated single-chip MCPL stress, two-chip MCPL communication/readback, a two-chip learning-bearing micro-task, and two-chip lifecycle traffic/resource counters have all passed canonical evidence gates with preserved returned artifacts, zero synthetic fallback, and explicit claim boundaries.",

@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.444678+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.587221+00:00",
   "source_generated_at_utc": "2026-05-09T14:39:06+00:00",
   "registry_entry_id": "tier7_7g_lorenz_capacity_narma_memory_contract",
   "tier": "Tier 7.7g - Lorenz State-Capacity / NARMA Memory-Depth Diagnostic Contract",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7g_20260509_lorenz_capacity_narma_memory_contract",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_7g_20260509_lorenz_capacity_narma_memory_contract/tier7_7g_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_7g_20260509_lorenz_capacity_narma_memory_contract/tier7_7g_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7g_20260509_lorenz_capacity_narma_memory_contract/tier7_7g_summary.csv",
+  "output_dir": "controlled_test_output/tier7_7g_20260509_lorenz_capacity_narma_memory_contract",
+  "manifest": "controlled_test_output/tier7_7g_20260509_lorenz_capacity_narma_memory_contract/tier7_7g_results.json",
+  "report": "controlled_test_output/tier7_7g_20260509_lorenz_capacity_narma_memory_contract/tier7_7g_report.md",
+  "summary_csv": "controlled_test_output/tier7_7g_20260509_lorenz_capacity_narma_memory_contract/tier7_7g_summary.csv",
   "canonical": true,
   "claim": "Tier 7.7g locks the Lorenz state-capacity / repaired-NARMA memory-depth diagnostic before scoring: CRA temporal-state capacity 16/32/64/128, matched-capacity ESN and random-reservoir references, repaired NARMA U(0,0.2), Mackey positive-control anchor, shams, metrics, and decision classes.",
   "caveat": "Contract/pre-registration evidence only; not a score, not a mechanism promotion, not a baseline freeze, not hardware/native transfer, and not broad public usefulness evidence."

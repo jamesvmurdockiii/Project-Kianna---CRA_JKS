@@ -1,9 +1,9 @@
 {
   "artifacts": {
-    "hardware_summary_png": "/tmp/job18372215669669985472.tmp/cra_test/controlled_test_output/tier4_13_20260427_011912/hardware_capsule_summary.png",
-    "seed_42_timeseries_csv": "/tmp/job18372215669669985472.tmp/cra_test/controlled_test_output/tier4_13_20260427_011912/spinnaker_hardware_seed42_timeseries.csv",
-    "seed_42_timeseries_png": "/tmp/job18372215669669985472.tmp/cra_test/controlled_test_output/tier4_13_20260427_011912/spinnaker_hardware_seed42_timeseries.png",
-    "spinnaker_report_1": "/tmp/job18372215669669985472.tmp/cra_test/controlled_test_output/tier4_13_20260427_011912/spinnaker_reports/2026-04-27-01-19-12-390038"
+    "hardware_summary_png": "<jobmanager_tmp>",
+    "seed_42_timeseries_csv": "<jobmanager_tmp>",
+    "seed_42_timeseries_png": "<jobmanager_tmp>",
+    "spinnaker_report_1": "<jobmanager_tmp>"
   },
   "criteria": [
     {

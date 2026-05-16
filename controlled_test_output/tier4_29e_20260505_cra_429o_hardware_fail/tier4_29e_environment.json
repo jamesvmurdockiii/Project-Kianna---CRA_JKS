@@ -1,5 +1,5 @@
 {
-  "cwd": "/tmp/job14577681396057830175.tmp",
+  "cwd": "<jobmanager_tmp>",
   "python": "/home/jovyan/spinnaker/bin/python",
   "python_version": "3.13.9 | packaged by conda-forge | (main, Oct 16 2025, 10:31:39) [GCC 14.3.0]",
   "env": {

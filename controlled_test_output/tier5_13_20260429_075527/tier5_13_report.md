@@ -9,7 +9,7 @@
 - Variants: `all`
 - Selected standard baselines: `sign_persistence,online_perceptron`
 - Smoke mode: `True`
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier5_13_20260429_075527`
+- Output directory: `<repo>/controlled_test_output/tier5_13_20260429_075527`
 
 Tier 5.13 tests held-out skill composition: primitive skills are learned separately, then reused on unseen skill-pair combinations.
 

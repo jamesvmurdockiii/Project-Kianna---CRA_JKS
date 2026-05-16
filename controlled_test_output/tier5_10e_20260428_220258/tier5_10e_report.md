@@ -9,7 +9,7 @@
 - Variants: `all`
 - Selected standard baselines: `sign_persistence,online_perceptron`
 - Smoke mode: `True`
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier5_10e_20260428_220258`
+- Output directory: `<repo>/controlled_test_output/tier5_10e_20260428_220258`
 
 Tier 5.10e tests whether CRA's internal host-side context-memory pathway survives longer context gaps, denser distractors, and stronger recurrence pressure while still receiving raw observations.
 

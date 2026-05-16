@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.456821+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.599036+00:00",
   "source_generated_at_utc": "2026-05-09T14:56:35+00:00",
   "registry_entry_id": "tier7_7h_lorenz_capacity_narma_memory_scoring_gate",
   "tier": "Tier 7.7h - Lorenz Capacity / NARMA Memory-Depth Scoring Gate",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7h_20260509_lorenz_capacity_narma_memory_scoring_gate",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_7h_20260509_lorenz_capacity_narma_memory_scoring_gate/tier7_7h_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_7h_20260509_lorenz_capacity_narma_memory_scoring_gate/tier7_7h_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7h_20260509_lorenz_capacity_narma_memory_scoring_gate/tier7_7h_summary.csv",
+  "output_dir": "controlled_test_output/tier7_7h_20260509_lorenz_capacity_narma_memory_scoring_gate",
+  "manifest": "controlled_test_output/tier7_7h_20260509_lorenz_capacity_narma_memory_scoring_gate/tier7_7h_results.json",
+  "report": "controlled_test_output/tier7_7h_20260509_lorenz_capacity_narma_memory_scoring_gate/tier7_7h_report.md",
+  "summary_csv": "controlled_test_output/tier7_7h_20260509_lorenz_capacity_narma_memory_scoring_gate/tier7_7h_summary.csv",
   "canonical": true,
   "claim": "Tier 7.7h scored the locked Lorenz/NARMA capacity matrix. Capacity improved Mackey-Glass and Lorenz materially, but the gate classified the result as overfit_or_sham_blocked because Lorenz did not separate from the permuted-recurrence sham at the best capacity; repaired NARMA improved only weakly.",
   "caveat": "Scoring evidence only; not a baseline freeze, not a mechanism promotion, not hardware/native evidence, not public usefulness evidence, and not external-baseline superiority."

@@ -1,13 +1,13 @@
 {
   "artifacts": {
-    "environment_json": "/tmp/job7804713621144302745.tmp/tier4_22k_job_output/tier4_22k_environment.json",
-    "header_inventory_csv": "/tmp/job7804713621144302745.tmp/tier4_22k_job_output/tier4_22k_header_inventory.csv",
-    "manifest_json": "/tmp/job7804713621144302745.tmp/tier4_22k_job_output/tier4_22k_results.json",
-    "probe_build_stderr": "/tmp/job7804713621144302745.tmp/tier4_22k_job_output/tier4_22k_probe_build_stderr.txt",
-    "probe_build_stdout": "/tmp/job7804713621144302745.tmp/tier4_22k_job_output/tier4_22k_probe_build_stdout.txt",
-    "probe_matrix_csv": "/tmp/job7804713621144302745.tmp/tier4_22k_job_output/tier4_22k_probe_matrix.csv",
-    "report_md": "/tmp/job7804713621144302745.tmp/tier4_22k_job_output/tier4_22k_report.md",
-    "spin1api_symbols_txt": "/tmp/job7804713621144302745.tmp/tier4_22k_job_output/tier4_22k_spin1api_symbols.txt"
+    "environment_json": "<jobmanager_tmp>",
+    "header_inventory_csv": "<jobmanager_tmp>",
+    "manifest_json": "<jobmanager_tmp>",
+    "probe_build_stderr": "<jobmanager_tmp>",
+    "probe_build_stdout": "<jobmanager_tmp>",
+    "probe_matrix_csv": "<jobmanager_tmp>",
+    "report_md": "<jobmanager_tmp>",
+    "spin1api_symbols_txt": "<jobmanager_tmp>"
   },
   "criteria": [
     {
@@ -73,7 +73,7 @@
       "/usr/local/spinnaker_tools",
       "/home/jovyan/spinnaker_tools"
     ],
-    "cwd": "/tmp/job7804713621144302745.tmp",
+    "cwd": "<jobmanager_tmp>",
     "env": {
       "CPATH": "",
       "C_INCLUDE_PATH": "",
@@ -113,7 +113,7 @@
     },
     "python": "/home/jovyan/spinnaker/bin/python",
     "python_version": "3.13.9 | packaged by conda-forge | (main, Oct 16 2025, 10:31:39) [GCC 14.3.0]",
-    "root": "/tmp/job7804713621144302745.tmp/cra_422k",
+    "root": "<jobmanager_tmp>",
     "runner_revision": "tier4_22k_spin1api_event_discovery_20260430_0001",
     "tools": {
       "arm-none-eabi-cpp": "/usr/bin/arm-none-eabi-cpp",
@@ -127,7 +127,7 @@
   "failure_reason": "",
   "generated_at_utc": "2026-04-30T21:02:05+00:00",
   "mode": "run-hardware",
-  "output_dir": "/tmp/job7804713621144302745.tmp/tier4_22k_job_output",
+  "output_dir": "<jobmanager_tmp>",
   "probe_matrix": [
     {
       "command": "/usr/bin/arm-none-eabi-gcc -std=gnu99 -ffreestanding -mthumb-interwork -march=armv5te -I /home/jovyan/spinnaker/spinnaker_tools/include -c /tmp/cra_422k_probe_a1ubr3c5/probe_TIMER_TICK.c -o /tmp/cra_422k_probe_a1ubr3c5/probe_TIMER_TICK.o",

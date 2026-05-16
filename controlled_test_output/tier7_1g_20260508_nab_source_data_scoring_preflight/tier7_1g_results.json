@@ -6,7 +6,7 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_1f_20260508_next_public_adapter_contract/tier7_1f_results.json"
+      "value": "<repo>/controlled_test_output/tier7_1f_20260508_next_public_adapter_contract/tier7_1f_results.json"
     },
     {
       "name": "Tier 7.1f selected NAB",
@@ -221,7 +221,7 @@
   "generated_at_utc": "2026-05-08T22:39:03+00:00",
   "label_window_rows": 12,
   "next_step": "Tier 7.1h may run a compact NAB scoring gate only after this preflight passes. Tier 7.1h must compare CRA v2.2/v2.3 against fair online anomaly baselines, sham controls, and predeclared thresholds/metrics without label leakage.",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight",
+  "output_dir": "<repo>/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight",
   "runner_revision": "tier7_1g_nab_source_data_scoring_preflight_20260508_0001",
   "scoring_contract": {
     "benchmark": "Numenta Anomaly Benchmark (NAB)",
@@ -347,7 +347,7 @@
   "smoke_score_rows": 400,
   "smoke_stream_rows": 400,
   "source": {
-    "data_cache_local_ignored": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab",
+    "data_cache_local_ignored": "<repo>/.cra_data_cache/numenta_nab",
     "official_git_url": "https://github.com/numenta/NAB.git",
     "official_repository": "https://github.com/numenta/NAB",
     "raw_data_git_policy": "raw NAB cache is local-only and ignored by .gitignore",
@@ -357,7 +357,7 @@
       {
         "bytes": 12995,
         "downloaded": false,
-        "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/README.md",
+        "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/README.md",
         "repo_path": "README.md",
         "role": "source documentation",
         "sha256": "418b7afb70dc4550a0a671fd904d1f451ba5aade0ea4de5723645bcb567414cb",
@@ -366,7 +366,7 @@
       {
         "bytes": 1056,
         "downloaded": false,
-        "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/LICENSE.txt",
+        "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/LICENSE.txt",
         "repo_path": "LICENSE.txt",
         "role": "license",
         "sha256": "0a0b4d0b10cb1f7ed9ab2993ef93defc03447e6eba9daca1315dd32dae4877e3",
@@ -375,7 +375,7 @@
       {
         "bytes": 5481,
         "downloaded": false,
-        "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/nab/scorer.py",
+        "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/nab/scorer.py",
         "repo_path": "nab/scorer.py",
         "role": "official scoring code",
         "sha256": "35bb1413e34c141ae414eca94ec0a0d4e3b1a9583c63449a3a38e39159f945a9",
@@ -384,7 +384,7 @@
       {
         "bytes": 404,
         "downloaded": false,
-        "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/config/profiles.json",
+        "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/config/profiles.json",
         "repo_path": "config/profiles.json",
         "role": "official scoring configuration",
         "sha256": "fc018b9a29ae900ab22de167baf06c36f2be528a5a3a1406d6775e238aeb9565",
@@ -393,7 +393,7 @@
       {
         "bytes": 5985,
         "downloaded": false,
-        "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/config/thresholds.json",
+        "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/config/thresholds.json",
         "repo_path": "config/thresholds.json",
         "role": "official scoring configuration",
         "sha256": "b0bd47854e33fede1a774b2c30d8e41c27e3f6cf1fc1f35a95b92beead315e69",
@@ -402,7 +402,7 @@
       {
         "bytes": 15359,
         "downloaded": false,
-        "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/labels/combined_windows.json",
+        "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/labels/combined_windows.json",
         "repo_path": "labels/combined_windows.json",
         "role": "offline anomaly labels/windows",
         "sha256": "1e1fbc4601321aad8d0f8b3784c8134299379f68f6c1f7777565f8ffd57ab6b1",
@@ -411,7 +411,7 @@
       {
         "bytes": 7015,
         "downloaded": false,
-        "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/labels/combined_labels.json",
+        "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/labels/combined_labels.json",
         "repo_path": "labels/combined_labels.json",
         "role": "offline anomaly labels/windows",
         "sha256": "98724014c162fcfd4be605683517f194051a54e98756c53667bd33ddbc644d9b",
@@ -420,7 +420,7 @@
       {
         "bytes": 828,
         "downloaded": false,
-        "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/labels/combined_windows_tiny.json",
+        "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/labels/combined_windows_tiny.json",
         "repo_path": "labels/combined_windows_tiny.json",
         "role": "offline anomaly labels/windows",
         "sha256": "bc7fecdd0d46f56ca046c66dae37145dde1c5603ed0ccc6a2a996a4d3793725d",
@@ -429,7 +429,7 @@
       {
         "bytes": 140292,
         "downloaded": false,
-        "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/artificialWithAnomaly/art_daily_flatmiddle.csv",
+        "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/artificialWithAnomaly/art_daily_flatmiddle.csv",
         "repo_path": "data/artificialWithAnomaly/art_daily_flatmiddle.csv",
         "role": "public time-series data",
         "sha256": "ea5df125947e9ee2b977ac3d341f3c2a029588862af97cae4a654fc56e838702",
@@ -438,7 +438,7 @@
       {
         "bytes": 233321,
         "downloaded": false,
-        "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realKnownCause/ambient_temperature_system_failure.csv",
+        "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realKnownCause/ambient_temperature_system_failure.csv",
         "repo_path": "data/realKnownCause/ambient_temperature_system_failure.csv",
         "role": "public time-series data",
         "sha256": "230b68ccca20f59d562afd5d24ad52939c9b784386bed0054018358bf9120581",
@@ -447,7 +447,7 @@
       {
         "bytes": 732223,
         "downloaded": false,
-        "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realKnownCause/machine_temperature_system_failure.csv",
+        "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realKnownCause/machine_temperature_system_failure.csv",
         "repo_path": "data/realKnownCause/machine_temperature_system_failure.csv",
         "role": "public time-series data",
         "sha256": "92bf5b87fc7f9bba8ca0b7ec63ccaac8cb4a1371a258e8c29a10ae9c018d82a4",
@@ -456,7 +456,7 @@
       {
         "bytes": 105367,
         "downloaded": false,
-        "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realAWSCloudwatch/ec2_cpu_utilization_24ae8d.csv",
+        "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realAWSCloudwatch/ec2_cpu_utilization_24ae8d.csv",
         "repo_path": "data/realAWSCloudwatch/ec2_cpu_utilization_24ae8d.csv",
         "role": "public time-series data",
         "sha256": "ab446fbd8b9f37507eb2fdb06315826d8daeef02e241133ce06e0ee571ba53d9",
@@ -465,7 +465,7 @@
       {
         "bytes": 59846,
         "downloaded": false,
-        "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realTraffic/TravelTime_387.csv",
+        "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realTraffic/TravelTime_387.csv",
         "repo_path": "data/realTraffic/TravelTime_387.csv",
         "role": "public time-series data",
         "sha256": "38e70e9ead8227fd023bff6e93247d5bc01ee008f781b921a156962419b399bb",

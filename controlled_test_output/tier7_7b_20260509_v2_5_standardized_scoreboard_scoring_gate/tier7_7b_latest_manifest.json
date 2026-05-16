@@ -1,12 +1,12 @@
 {
-  "aggregate_scoreboard_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7b_20260509_v2_5_standardized_scoreboard_scoring_gate/tier7_7b_aggregate_scoreboard.csv",
+  "aggregate_scoreboard_csv": "<repo>/controlled_test_output/tier7_7b_20260509_v2_5_standardized_scoreboard_scoring_gate/tier7_7b_aggregate_scoreboard.csv",
   "classification_outcome": "standardized_progress_pass",
   "generated_at_utc": "2026-05-09T13:30:05+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7b_20260509_v2_5_standardized_scoreboard_scoring_gate",
-  "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier7_7b_20260509_v2_5_standardized_scoreboard_scoring_gate/tier7_7b_report.md",
-  "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier7_7b_20260509_v2_5_standardized_scoreboard_scoring_gate/tier7_7b_results.json",
-  "scoreboard_rows_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7b_20260509_v2_5_standardized_scoreboard_scoring_gate/tier7_7b_scoreboard_rows.csv",
+  "output_dir": "<repo>/controlled_test_output/tier7_7b_20260509_v2_5_standardized_scoreboard_scoring_gate",
+  "report_md": "<repo>/controlled_test_output/tier7_7b_20260509_v2_5_standardized_scoreboard_scoring_gate/tier7_7b_report.md",
+  "results_json": "<repo>/controlled_test_output/tier7_7b_20260509_v2_5_standardized_scoreboard_scoring_gate/tier7_7b_results.json",
+  "scoreboard_rows_csv": "<repo>/controlled_test_output/tier7_7b_20260509_v2_5_standardized_scoreboard_scoring_gate/tier7_7b_scoreboard_rows.csv",
   "status": "pass",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7b_20260509_v2_5_standardized_scoreboard_scoring_gate/tier7_7b_summary.csv",
+  "summary_csv": "<repo>/controlled_test_output/tier7_7b_20260509_v2_5_standardized_scoreboard_scoring_gate/tier7_7b_summary.csv",
   "tier": "Tier 7.7b - v2.5 Standardized Benchmark / Usefulness Scoreboard Scoring Gate"
 }

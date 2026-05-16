@@ -1369,7 +1369,7 @@
     ]
   },
   "length": 2400,
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic",
+  "output_dir": "<repo>/controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic",
   "run_rows": [
     {
       "diagnostics": {

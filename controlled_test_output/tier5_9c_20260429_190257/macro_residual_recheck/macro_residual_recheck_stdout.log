@@ -12,11 +12,11 @@
 [tier5.9b] task=variable_delay_cue baseline=online_perceptron seed=42
 {
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/macro_residual_recheck",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/macro_residual_recheck/tier5_9b_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/macro_residual_recheck/tier5_9b_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/macro_residual_recheck/tier5_9b_summary.csv",
-  "comparisons_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/macro_residual_recheck/tier5_9b_comparisons.csv",
-  "fairness_contract_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/macro_residual_recheck/tier5_9b_fairness_contract.json",
+  "output_dir": "<repo>/controlled_test_output/tier5_9c_20260429_190257/macro_residual_recheck",
+  "manifest": "<repo>/controlled_test_output/tier5_9c_20260429_190257/macro_residual_recheck/tier5_9b_results.json",
+  "report": "<repo>/controlled_test_output/tier5_9c_20260429_190257/macro_residual_recheck/tier5_9b_report.md",
+  "summary_csv": "<repo>/controlled_test_output/tier5_9c_20260429_190257/macro_residual_recheck/tier5_9b_summary.csv",
+  "comparisons_csv": "<repo>/controlled_test_output/tier5_9c_20260429_190257/macro_residual_recheck/tier5_9b_comparisons.csv",
+  "fairness_contract_json": "<repo>/controlled_test_output/tier5_9c_20260429_190257/macro_residual_recheck/tier5_9b_fairness_contract.json",
   "failure_reason": ""
 }

@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.403282+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.550128+00:00",
   "source_generated_at_utc": "2026-05-05T17:38:02+00:00",
   "registry_entry_id": "tier5_19a_temporal_substrate_reference",
   "tier": "Tier 5.19a - Local Temporal-Substrate Reference",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_19a_20260505_temporal_substrate_reference",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_19a_20260505_temporal_substrate_reference/tier5_19a_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_19a_20260505_temporal_substrate_reference/tier5_19a_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_19a_20260505_temporal_substrate_reference/tier5_19a_summary.csv",
+  "output_dir": "controlled_test_output/tier5_19a_20260505_temporal_substrate_reference",
+  "manifest": "controlled_test_output/tier5_19a_20260505_temporal_substrate_reference/tier5_19a_results.json",
+  "report": "controlled_test_output/tier5_19a_20260505_temporal_substrate_reference/tier5_19a_report.md",
+  "summary_csv": "controlled_test_output/tier5_19a_20260505_temporal_substrate_reference/tier5_19a_summary.csv",
   "canonical": true,
   "claim": "A bounded fading-memory temporal-state candidate improves the held-out long-memory diagnostic and motivates a sharper recurrence/sham gate.",
   "caveat": "Software local-reference evidence only; recurrence-specific value, hardware transfer, and benchmark superiority remain unproven."

@@ -2,7 +2,7 @@
 
 - Generated: `2026-04-27T14:20:06+00:00`
 - Status: **PASS**
-- Output directory: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16a_debug_20260427_141912`
+- Output directory: `<repo>/controlled_test_output/tier4_16a_debug_20260427_141912`
 
 This diagnostic replays the exact Tier 4.16 `delayed_cue` config on local software backends and compares it to the failed hardware run.
 
@@ -47,10 +47,10 @@ This diagnostic replays the exact Tier 4.16 `delayed_cue` config on local softwa
 
 ## Artifacts
 
-- `summary_csv`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16a_debug_20260427_141912/tier4_16a_debug_summary.csv`
-- `backend_summary_csv`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16a_debug_20260427_141912/tier4_16a_debug_backend_summary.csv`
-- `tail_events_csv`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16a_debug_20260427_141912/tier4_16a_debug_tail_events.csv`
-- `summary_png`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16a_debug_20260427_141912/tier4_16a_debug_summary.png`
-- `hardware_fail_dir`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_124916_hardware_fail`
-- `manifest_json`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16a_debug_20260427_141912/tier4_16a_debug_results.json`
-- `report_md`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16a_debug_20260427_141912/tier4_16a_debug_report.md`
+- `summary_csv`: `<repo>/controlled_test_output/tier4_16a_debug_20260427_141912/tier4_16a_debug_summary.csv`
+- `backend_summary_csv`: `<repo>/controlled_test_output/tier4_16a_debug_20260427_141912/tier4_16a_debug_backend_summary.csv`
+- `tail_events_csv`: `<repo>/controlled_test_output/tier4_16a_debug_20260427_141912/tier4_16a_debug_tail_events.csv`
+- `summary_png`: `<repo>/controlled_test_output/tier4_16a_debug_20260427_141912/tier4_16a_debug_summary.png`
+- `hardware_fail_dir`: `<repo>/controlled_test_output/tier4_16_20260427_124916_hardware_fail`
+- `manifest_json`: `<repo>/controlled_test_output/tier4_16a_debug_20260427_141912/tier4_16a_debug_results.json`
+- `report_md`: `<repo>/controlled_test_output/tier4_16a_debug_20260427_141912/tier4_16a_debug_report.md`

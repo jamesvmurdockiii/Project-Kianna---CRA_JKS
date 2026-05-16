@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.438293+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.581057+00:00",
   "source_generated_at_utc": "2026-05-09T12:13:13+00:00",
   "registry_entry_id": "tier7_7a_v2_5_standardized_scoreboard_contract",
   "tier": "Tier 7.7a - v2.5 Standardized Benchmark / Usefulness Scoreboard Contract",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract/tier7_7a_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract/tier7_7a_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract/tier7_7a_summary.csv",
+  "output_dir": "controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract",
+  "manifest": "controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract/tier7_7a_results.json",
+  "report": "controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract/tier7_7a_report.md",
+  "summary_csv": "controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract/tier7_7a_summary.csv",
   "canonical": true,
   "claim": "Tier 7.7a locks the v2.5 public/standardized benchmark contract before scoring: Mackey-Glass, Lorenz, and NARMA10 at 8000 steps with seeds 42/43/44 form the primary scoreboard, while C-MAPSS FD001 and NAB are secondary public/real-ish confirmation tracks only.",
   "caveat": "Contract/pre-registration evidence only; not a benchmark score, not public usefulness proof, not a new baseline freeze, not hardware/native transfer, and not language, broad planning, AGI, or ASI evidence."

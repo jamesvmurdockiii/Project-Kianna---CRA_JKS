@@ -2,7 +2,7 @@
 
 - Generated: `2026-04-27T20:44:18+00:00`
 - Status: **PASS**
-- Output directory: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16b_debug_20260427_200931_hard_switch`
+- Output directory: `<repo>/controlled_test_output/tier4_16b_debug_20260427_200931_hard_switch`
 
 This is a local-only root-cause diagnostic for the failed Tier 4.16b
 `hard_noisy_switching` hardware run. It is not canonical hardware evidence.
@@ -76,10 +76,10 @@ This is a local-only root-cause diagnostic for the failed Tier 4.16b
 
 ## Artifacts
 
-- `summary_csv`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16b_debug_20260427_200931_hard_switch/tier4_16b_debug_summary.csv`
-- `path_summary_csv`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16b_debug_20260427_200931_hard_switch/tier4_16b_debug_path_summary.csv`
-- `comparisons_csv`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16b_debug_20260427_200931_hard_switch/tier4_16b_debug_comparisons.csv`
-- `timeseries_csv`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16b_debug_20260427_200931_hard_switch/tier4_16b_debug_timeseries.csv`
-- `report_md`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16b_debug_20260427_200931_hard_switch/tier4_16b_debug_report.md`
-- `manifest_json`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16b_debug_20260427_200931_hard_switch/tier4_16b_debug_results.json`
-- `summary_png`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16b_debug_20260427_200931_hard_switch/tier4_16b_debug_summary.png`
+- `summary_csv`: `<repo>/controlled_test_output/tier4_16b_debug_20260427_200931_hard_switch/tier4_16b_debug_summary.csv`
+- `path_summary_csv`: `<repo>/controlled_test_output/tier4_16b_debug_20260427_200931_hard_switch/tier4_16b_debug_path_summary.csv`
+- `comparisons_csv`: `<repo>/controlled_test_output/tier4_16b_debug_20260427_200931_hard_switch/tier4_16b_debug_comparisons.csv`
+- `timeseries_csv`: `<repo>/controlled_test_output/tier4_16b_debug_20260427_200931_hard_switch/tier4_16b_debug_timeseries.csv`
+- `report_md`: `<repo>/controlled_test_output/tier4_16b_debug_20260427_200931_hard_switch/tier4_16b_debug_report.md`
+- `manifest_json`: `<repo>/controlled_test_output/tier4_16b_debug_20260427_200931_hard_switch/tier4_16b_debug_results.json`
+- `summary_png`: `<repo>/controlled_test_output/tier4_16b_debug_20260427_200931_hard_switch/tier4_16b_debug_summary.png`

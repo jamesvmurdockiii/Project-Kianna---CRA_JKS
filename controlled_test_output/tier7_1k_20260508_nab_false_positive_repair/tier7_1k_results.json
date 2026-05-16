@@ -46,7 +46,7 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_1j_20260508_nab_failure_localization/tier7_1j_results.json"
+      "value": "<repo>/controlled_test_output/tier7_1j_20260508_nab_failure_localization/tier7_1j_results.json"
     },
     {
       "name": "Tier 7.1j passed",
@@ -678,10 +678,10 @@
     "v2_3_no_update_ablation"
   ],
   "next_step": "If the repair candidate beats rolling z-score while preserving sham separation, run fairness confirmation. Otherwise narrow the NAB claim or return to planned general mechanisms with this false-positive failure mode as the predeclared target.",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair",
+  "output_dir": "<repo>/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair",
   "runner_revision": "tier7_1k_nab_false_positive_repair_20260508_0001",
   "source": {
-    "cache_root": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab",
+    "cache_root": "<repo>/.cra_data_cache/numenta_nab",
     "commit": "ea702d75cc2258d9d7dd35ca8e5e2539d71f3140",
     "selected_categories": [
       "artificialWithAnomaly",

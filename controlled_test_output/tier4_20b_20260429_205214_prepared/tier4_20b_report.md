@@ -3,7 +3,7 @@
 - Generated: `2026-04-30T00:52:14+00:00`
 - Mode: `prepare`
 - Status: **PREPARED**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_205214_prepared`
+- Output directory: `<repo>/controlled_test_output/tier4_20b_20260429_205214_prepared`
 
 Tier 4.20b checks whether the frozen v2.1 software evidence stack has a clean one-seed SpiNNaker transport path through the current chunked-host bridge.
 
@@ -25,7 +25,7 @@ Tier 4.20b checks whether the frozen v2.1 software evidence stack has a clean on
 - chunk_size_steps: `50`
 - macro_eligibility_enabled: `False`
 - hardware_run_attempted: `False`
-- capsule_dir: `/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_205214_prepared/jobmanager_capsule`
+- capsule_dir: `<repo>/controlled_test_output/tier4_20b_20260429_205214_prepared/jobmanager_capsule`
 
 ## Bridge Profile
 
@@ -43,8 +43,8 @@ Tier 4.20b checks whether the frozen v2.1 software evidence stack has a clean on
 
 | Criterion | Value | Rule | Pass |
 | --- | --- | --- | --- |
-| v2.1 baseline artifact exists | `/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.1.json` | `exists` | yes |
-| Tier 4.20a transfer audit available | `{'status': 'pass', 'manifest': '/Users/james/JKS:CRA/controlled_test_output/tier4_20a_20260429_195403/tier4_20a_results.json'}` | `status == pass` | yes |
+| v2.1 baseline artifact exists | `<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.1.json` | `exists` | yes |
+| Tier 4.20a transfer audit available | `{'status': 'pass', 'manifest': '<repo>/controlled_test_output/tier4_20a_20260429_195403/tier4_20a_results.json'}` | `status == pass` | yes |
 | exactly one seed requested for 4.20b | `[42]` | `len == 1` | yes |
 | runtime mode is chunked | `chunked` | `fixed` | yes |
 | learning location is host | `host` | `fixed` | yes |
@@ -52,20 +52,20 @@ Tier 4.20b checks whether the frozen v2.1 software evidence stack has a clean on
 | macro eligibility disabled | `False` | `== false` | yes |
 | delayed_lr_0_20 selected | `0.2` | `== 0.20` | yes |
 | mode has explicit claim boundary | `prepare` | `prepare|run-hardware|ingest` | yes |
-| capsule directory exists | `/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_205214_prepared/jobmanager_capsule` | `exists` | yes |
+| capsule directory exists | `<repo>/controlled_test_output/tier4_20b_20260429_205214_prepared/jobmanager_capsule` | `exists` | yes |
 
 ## Artifacts
 
-- `bridge_profile_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_205214_prepared/tier4_20b_bridge_profile.json`
-- `capsule_config_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_205214_prepared/jobmanager_capsule/capsule_config.json`
-- `capsule_dir`: `/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_205214_prepared/jobmanager_capsule`
-- `expected_outputs_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_205214_prepared/jobmanager_capsule/expected_outputs.json`
-- `jobmanager_readme`: `/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_205214_prepared/jobmanager_capsule/README_JOBMANAGER.md`
-- `jobmanager_run_script`: `/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_205214_prepared/jobmanager_capsule/run_tier4_20b_on_jobmanager.sh`
-- `report_md`: `/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_205214_prepared/tier4_20b_report.md`
-- `results_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_205214_prepared/tier4_20b_results.json`
-- `summary_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_205214_prepared/tier4_20b_summary.csv`
-- `v2_1_bridge_profile_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_205214_prepared/jobmanager_capsule/v2_1_bridge_profile.json`
+- `bridge_profile_json`: `<repo>/controlled_test_output/tier4_20b_20260429_205214_prepared/tier4_20b_bridge_profile.json`
+- `capsule_config_json`: `<repo>/controlled_test_output/tier4_20b_20260429_205214_prepared/jobmanager_capsule/capsule_config.json`
+- `capsule_dir`: `<repo>/controlled_test_output/tier4_20b_20260429_205214_prepared/jobmanager_capsule`
+- `expected_outputs_json`: `<repo>/controlled_test_output/tier4_20b_20260429_205214_prepared/jobmanager_capsule/expected_outputs.json`
+- `jobmanager_readme`: `<repo>/controlled_test_output/tier4_20b_20260429_205214_prepared/jobmanager_capsule/README_JOBMANAGER.md`
+- `jobmanager_run_script`: `<repo>/controlled_test_output/tier4_20b_20260429_205214_prepared/jobmanager_capsule/run_tier4_20b_on_jobmanager.sh`
+- `report_md`: `<repo>/controlled_test_output/tier4_20b_20260429_205214_prepared/tier4_20b_report.md`
+- `results_json`: `<repo>/controlled_test_output/tier4_20b_20260429_205214_prepared/tier4_20b_results.json`
+- `summary_csv`: `<repo>/controlled_test_output/tier4_20b_20260429_205214_prepared/tier4_20b_summary.csv`
+- `v2_1_bridge_profile_json`: `<repo>/controlled_test_output/tier4_20b_20260429_205214_prepared/jobmanager_capsule/v2_1_bridge_profile.json`
 ## EBRAINS Upload Bundle
 
 Upload this self-contained zip or its contained folder, not `jobmanager_capsule/` by itself:

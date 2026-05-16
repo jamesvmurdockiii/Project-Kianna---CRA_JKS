@@ -7,7 +7,7 @@
 - Run lengths: `120`
 - Tasks: `delayed_cue,hard_noisy_switching`
 - Candidate budget: `smoke`
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/v2_0_compact_regression_gate/v1_8_compact_regression/target_task_smokes`
+- Output directory: `<repo>/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/v2_0_compact_regression_gate/v1_8_compact_regression/target_task_smokes`
 
 Tier 5.6 locks the promoted CRA delayed-credit setting and gives external baselines a documented hyperparameter budget. It is a reviewer-defense audit against the claim that Tier 5.5 only beat weak/default baselines.
 

@@ -7,7 +7,7 @@
 - Run lengths: `960, 1500`
 - Tasks: `delayed_cue,hard_noisy_switching`
 - Candidate: `cra_delayed_lr_0_20`
-- Output directory: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_4_20260427_065412`
+- Output directory: `<repo>/controlled_test_output/tier5_4_20260427_065412`
 
 Tier 5.4 confirms whether the Tier 5.3 delayed-credit candidate survives a direct comparison against current CRA and the external baselines at 960 and 1500 steps.
 

@@ -2,7 +2,7 @@
 
 - Generated: `2026-04-29T23:29:31+00:00`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/v2_1_guardrail/v2_0_compact_regression_gate/predictive_binding_guardrail`
+- Output directory: `<repo>/controlled_test_output/tier5_9c_20260429_190503/v2_1_guardrail/v2_0_compact_regression_gate/predictive_binding_guardrail`
 - Tasks: `cross_modal_binding, reentry_binding`
 - Seeds: `[42, 43, 44]`
 

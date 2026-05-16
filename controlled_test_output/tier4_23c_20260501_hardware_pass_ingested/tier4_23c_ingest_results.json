@@ -4,14 +4,14 @@
   "generated_at_utc": "2026-05-02T01:17:48.985261+00:00",
   "mode": "ingest",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_23c_20260501_hardware_pass_ingested",
+  "output_dir": "<repo>/controlled_test_output/tier4_23c_20260501_hardware_pass_ingested",
   "hardware_results": {
     "tier": "Tier 4.23c - One-Board Hardware Continuous Smoke",
     "runner_revision": "tier4_23c_continuous_hardware_smoke_20260501_0004",
     "generated_at_utc": "2026-05-02T01:15:49.141315+00:00",
     "mode": "run-hardware",
     "status": "pass",
-    "output_dir": "/tmp/job17979659641832627704.tmp/tier4_23c_job_output",
+    "output_dir": "<jobmanager_tmp>",
     "criteria": [
       {
         "name": "runner revision current",
@@ -1393,7 +1393,7 @@
     "status": "pass",
     "passed_count": 21,
     "total_count": 21,
-    "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_23c_local_test",
+    "output_dir": "<repo>/controlled_test_output/tier4_23c_local_test",
     "schedule": [
       {
         "timestep": 1,

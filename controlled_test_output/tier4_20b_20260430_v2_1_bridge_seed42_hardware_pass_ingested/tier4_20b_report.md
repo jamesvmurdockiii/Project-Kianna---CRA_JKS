@@ -3,7 +3,7 @@
 - Generated: `2026-04-30T03:55:05+00:00`
 - Mode: `ingest`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested`
+- Output directory: `<repo>/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested`
 
 Tier 4.20b checks whether the frozen v2.1 software evidence stack has a clean one-seed SpiNNaker transport path through the current chunked-host bridge.
 
@@ -56,10 +56,10 @@ Tier 4.20b checks whether the frozen v2.1 software evidence stack has a clean on
 
 | Criterion | Value | Rule | Pass |
 | --- | --- | --- | --- |
-| v2.1 baseline identity recorded | `{'artifact': '/tmp/job4002618516063700101.tmp/cra_420b/baselines/CRA_EVIDENCE_BASELINE_v2.1.json', 'artifact_present': False, 'baseline': 'v2.1'}` | `runtime does not require baselines/` | yes |
+| v2.1 baseline identity recorded | `{'artifact': '<jobmanager_tmp>', 'artifact_present': False, 'baseline': 'v2.1'}` | `runtime does not require baselines/` | yes |
 | Tier 4.20b runner revision | `tier4_20b_inprocess_no_baselines_20260429_2330` | `expected current source` | yes |
-| source package import path available | `{'action': 'already_canonical', 'aliases_checked': ['/tmp/job4002618516063700101.tmp/cra_420b/coral-reef-spinnaker', '/tmp/job4002618516063700101.tmp/cra_420b/coral reef spinnaker'], 'canonical_package': '/tmp/job4002618516063700101.tmp/cra_420b/coral_reef_spinnaker', 'canonical_package_exists': True}` | `coral_reef_spinnaker exists` | yes |
-| Tier 4.16 child hardware runner exists | `/tmp/job4002618516063700101.tmp/cra_420b/experiments/tier4_harder_spinnaker_capsule.py` | `exists` | yes |
+| source package import path available | `{'action': 'already_canonical', 'aliases_checked': ['<jobmanager_tmp>', '<jobmanager_tmp> reef spinnaker'], 'canonical_package': '<jobmanager_tmp>', 'canonical_package_exists': True}` | `coral_reef_spinnaker exists` | yes |
+| Tier 4.16 child hardware runner exists | `<jobmanager_tmp>` | `exists` | yes |
 | Tier 4.20a transfer audit context | `{'manifest': None, 'status': 'missing'}` | `optional; local audit context only` | yes |
 | exactly one seed requested for 4.20b | `[42]` | `len == 1` | yes |
 | runtime mode is chunked | `chunked` | `fixed` | yes |
@@ -69,7 +69,7 @@ Tier 4.20b checks whether the frozen v2.1 software evidence stack has a clean on
 | delayed_lr_0_20 selected | `0.2` | `== 0.20` | yes |
 | mode has explicit claim boundary | `run-hardware` | `prepare|run-hardware|ingest` | yes |
 | child Tier 4.16 in-process runner exited cleanly | `0` | `== 0` | yes |
-| child Tier 4.16 manifest exists | `/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/tier4_16_results.json` | `exists` | yes |
+| child Tier 4.16 manifest exists | `<jobmanager_tmp>` | `exists` | yes |
 | child hardware status passed | `pass` | `== pass` | yes |
 | child hardware was attempted | `True` | `== true` | yes |
 | child sim.run failures zero | `0` | `== 0` | yes |
@@ -80,15 +80,15 @@ Tier 4.20b checks whether the frozen v2.1 software evidence stack has a clean on
 
 ## Artifacts
 
-- `bridge_profile_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_bridge_profile.json`
-- `ingested_source`: `/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass/tier4_20b_results.json`
-- `report_md`: `/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_report.md`
-- `results_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_results.json`
-- `summary_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_summary.csv`
-- `tier4_20b_bridge_profile.json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_bridge_profile.json`
-- `tier4_20b_child_stderr.log`: `/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_child_stderr.log`
-- `tier4_20b_child_stdout.log`: `/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_child_stdout.log`
-- `tier4_20b_latest_manifest.json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_latest_manifest.json`
-- `tier4_20b_report.md`: `/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_report.md`
-- `tier4_20b_results.json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_results.json`
-- `tier4_20b_summary.csv`: `/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_summary.csv`
+- `bridge_profile_json`: `<repo>/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_bridge_profile.json`
+- `ingested_source`: `<repo>/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass/tier4_20b_results.json`
+- `report_md`: `<repo>/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_report.md`
+- `results_json`: `<repo>/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_results.json`
+- `summary_csv`: `<repo>/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_summary.csv`
+- `tier4_20b_bridge_profile.json`: `<repo>/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_bridge_profile.json`
+- `tier4_20b_child_stderr.log`: `<repo>/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_child_stderr.log`
+- `tier4_20b_child_stdout.log`: `<repo>/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_child_stdout.log`
+- `tier4_20b_latest_manifest.json`: `<repo>/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_latest_manifest.json`
+- `tier4_20b_report.md`: `<repo>/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_report.md`
+- `tier4_20b_results.json`: `<repo>/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_results.json`
+- `tier4_20b_summary.csv`: `<repo>/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_summary.csv`

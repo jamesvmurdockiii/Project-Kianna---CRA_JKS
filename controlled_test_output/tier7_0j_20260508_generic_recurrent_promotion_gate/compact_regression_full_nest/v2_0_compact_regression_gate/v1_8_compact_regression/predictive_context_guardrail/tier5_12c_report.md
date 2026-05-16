@@ -9,7 +9,7 @@
 - Selected standard baselines: `sign_persistence,online_perceptron`
 - Backend: `nest`
 - Smoke mode: `False`
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier7_0j_20260508_generic_recurrent_promotion_gate/compact_regression_full_nest/v2_0_compact_regression_gate/v1_8_compact_regression/predictive_context_guardrail`
+- Output directory: `<repo>/controlled_test_output/tier7_0j_20260508_generic_recurrent_promotion_gate/compact_regression_full_nest/v2_0_compact_regression_gate/v1_8_compact_regression/predictive_context_guardrail`
 
 Tier 5.12c tests whether CRA can store a visible causal predictive precursor before feedback arrives and use it later at a decision point.
 

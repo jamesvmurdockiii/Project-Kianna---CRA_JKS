@@ -2,9 +2,9 @@
   "criteria": [
     {
       "criterion": "tier7_5a_prerequisite_exists",
-      "details": "/Users/james/JKS:CRA/controlled_test_output/tier7_5a_20260509_curriculum_environment_contract/tier7_5a_results.json",
+      "details": "<repo>/controlled_test_output/tier7_5a_20260509_curriculum_environment_contract/tier7_5a_results.json",
       "name": "tier7_5a_prerequisite_exists",
-      "note": "/Users/james/JKS:CRA/controlled_test_output/tier7_5a_20260509_curriculum_environment_contract/tier7_5a_results.json",
+      "note": "<repo>/controlled_test_output/tier7_5a_20260509_curriculum_environment_contract/tier7_5a_results.json",
       "operator": "must exist",
       "pass": true,
       "passed": true,
@@ -222,7 +222,7 @@
     }
   ],
   "manifest": {
-    "contract_source": "/Users/james/JKS:CRA/controlled_test_output/tier7_5a_20260509_curriculum_environment_contract/tier7_5a_results.json",
+    "contract_source": "<repo>/controlled_test_output/tier7_5a_20260509_curriculum_environment_contract/tier7_5a_results.json",
     "families": [
       "generated_delayed_credit",
       "generated_hidden_context_reentry",

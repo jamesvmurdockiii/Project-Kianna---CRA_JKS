@@ -26,15 +26,15 @@
     }
   ],
   "artifacts": {
-    "api_contract_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit/tier4_22f0_api_contract.csv",
-    "host_test_stderr": "/Users/james/JKS:CRA/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit/tier4_22f0_host_test_stderr.txt",
-    "host_test_stdout": "/Users/james/JKS:CRA/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit/tier4_22f0_host_test_stdout.txt",
-    "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit/tier4_22f0_results.json",
-    "memory_budget_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit/tier4_22f0_memory_budget.csv",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit/tier4_22f0_report.md",
-    "runtime_complexity_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit/tier4_22f0_runtime_complexity.csv",
-    "scale_blockers_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit/tier4_22f0_scale_blockers.csv",
-    "static_checks_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit/tier4_22f0_static_checks.csv"
+    "api_contract_csv": "<repo>/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit/tier4_22f0_api_contract.csv",
+    "host_test_stderr": "<repo>/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit/tier4_22f0_host_test_stderr.txt",
+    "host_test_stdout": "<repo>/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit/tier4_22f0_host_test_stdout.txt",
+    "manifest_json": "<repo>/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit/tier4_22f0_results.json",
+    "memory_budget_csv": "<repo>/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit/tier4_22f0_memory_budget.csv",
+    "report_md": "<repo>/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit/tier4_22f0_report.md",
+    "runtime_complexity_csv": "<repo>/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit/tier4_22f0_runtime_complexity.csv",
+    "scale_blockers_csv": "<repo>/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit/tier4_22f0_scale_blockers.csv",
+    "static_checks_csv": "<repo>/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit/tier4_22f0_static_checks.csv"
   },
   "criteria": [
     {
@@ -97,10 +97,10 @@
   "failure_reason": "",
   "generated_at_utc": "2026-04-30T19:01:01+00:00",
   "host_test": {
-    "command": "make -C /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime clean-host test",
+    "command": "make -C <repo>/coral_reef_spinnaker/spinnaker_runtime clean-host test",
     "returncode": 0,
-    "stderr_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit/tier4_22f0_host_test_stderr.txt",
-    "stdout_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit/tier4_22f0_host_test_stdout.txt"
+    "stderr_artifact": "<repo>/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit/tier4_22f0_host_test_stderr.txt",
+    "stdout_artifact": "<repo>/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit/tier4_22f0_host_test_stdout.txt"
   },
   "memory_budget": [
     {
@@ -144,7 +144,7 @@
       "scale_note": "compact summary state; should be expanded intentionally for readback"
     }
   ],
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit",
+  "output_dir": "<repo>/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit",
   "runtime_complexity": [
     {
       "current_complexity": "O(S) per incoming spike",
@@ -394,7 +394,7 @@
     "runner_revision": "tier4_22f0_custom_runtime_scale_audit_20260430_0000",
     "static_checks_passed": 9,
     "static_checks_total": 9,
-    "tier4_22e_manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_22e_20260430_local_learning_parity/tier4_22e_results.json",
+    "tier4_22e_manifest": "<repo>/controlled_test_output/tier4_22e_20260430_local_learning_parity/tier4_22e_results.json",
     "tier4_22e_status": "pass"
   },
   "tier": "Tier 4.22f0 - Custom Runtime Scale-Readiness Audit"

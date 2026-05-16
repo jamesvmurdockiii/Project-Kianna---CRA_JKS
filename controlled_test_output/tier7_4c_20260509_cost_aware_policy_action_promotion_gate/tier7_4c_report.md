@@ -33,8 +33,8 @@ Tier 7.4c is a software-only promotion/regression gate for the cost-aware policy
 | Criterion | Value | Rule | Pass |
 | --- | --- | --- | --- |
 | runner revision current | `tier7_4c_cost_aware_policy_action_promotion_gate_20260509_0001` | expected current source | yes |
-| Tier 7.4b exists | `/Users/james/JKS:CRA/controlled_test_output/tier7_4b_20260509_cost_aware_policy_action_local_diagnostic/tier7_4b_results.json` | exists | yes |
-| v2.3 baseline exists | `/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.3.json` | exists | yes |
+| Tier 7.4b exists | `<repo>/controlled_test_output/tier7_4b_20260509_cost_aware_policy_action_local_diagnostic/tier7_4b_results.json` | exists | yes |
+| v2.3 baseline exists | `<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.3.json` | exists | yes |
 | Tier 7.4b passed | `pass` | == pass | yes |
 | Tier 7.4b candidate outcome | `cost_aware_policy_candidate_requires_regression` | == cost_aware_policy_candidate_requires_regression | yes |
 | v2.3 policy best non-oracle | `v2_3_cost_aware_policy` | == v2_3_cost_aware_policy | yes |

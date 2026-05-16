@@ -5,7 +5,7 @@
   "mode": "ingest",
   "status": "pass",
   "output_dir": "tier4_27a_seed42_job_output",
-  "hardware_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_27a_20260502_pass_ingested",
+  "hardware_output_dir": "<repo>/controlled_test_output/tier4_27a_20260502_pass_ingested",
   "passed_count": 38,
   "total_count": 38,
   "criteria": [

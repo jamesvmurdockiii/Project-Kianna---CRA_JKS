@@ -1,7 +1,7 @@
 {
   "artifacts": {
-    "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_22b_20260430_prepared/tier4_22b_results.json",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_22b_20260430_prepared/tier4_22b_report.md"
+    "manifest_json": "<repo>/controlled_test_output/tier4_22b_20260430_prepared/tier4_22b_results.json",
+    "report_md": "<repo>/controlled_test_output/tier4_22b_20260430_prepared/tier4_22b_report.md"
   },
   "criteria": [
     {
@@ -35,7 +35,7 @@
   ],
   "failure_reason": "",
   "generated_at_utc": "2026-04-30T17:59:06+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_22b_20260430_prepared",
+  "output_dir": "<repo>/controlled_test_output/tier4_22b_20260430_prepared",
   "status": "prepared",
   "summary": {
     "future_runtime_plan_stage": "future_custom_runtime",
@@ -54,7 +54,7 @@
       "delayed_cue",
       "hard_noisy_switching"
     ],
-    "tier4_22a0_manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_22a0_20260430_spinnaker_constrained_preflight/tier4_22a0_results.json",
+    "tier4_22a0_manifest": "<repo>/controlled_test_output/tier4_22a0_20260430_spinnaker_constrained_preflight/tier4_22a0_results.json",
     "tier4_22a0_status": "pass",
     "upload_contract": [
       "Upload source folders only under cra_422b/: experiments/ and coral_reef_spinnaker/.",

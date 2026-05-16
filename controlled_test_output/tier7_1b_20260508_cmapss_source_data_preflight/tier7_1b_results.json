@@ -6,7 +6,7 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_1a_20260508_realish_adapter_contract/tier7_1a_results.json"
+      "value": "<repo>/controlled_test_output/tier7_1a_20260508_realish_adapter_contract/tier7_1a_results.json"
     },
     {
       "name": "Tier 7.1a selected C-MAPSS",
@@ -35,9 +35,9 @@
       "passed": true,
       "rule": "train/test/RUL exist",
       "value": {
-        "RUL_FD001.txt": "/Users/james/JKS:CRA/.cra_data_cache/nasa_cmapss/extracted/RUL_FD001.txt",
-        "test_FD001.txt": "/Users/james/JKS:CRA/.cra_data_cache/nasa_cmapss/extracted/test_FD001.txt",
-        "train_FD001.txt": "/Users/james/JKS:CRA/.cra_data_cache/nasa_cmapss/extracted/train_FD001.txt"
+        "RUL_FD001.txt": "<repo>/.cra_data_cache/nasa_cmapss/extracted/RUL_FD001.txt",
+        "test_FD001.txt": "<repo>/.cra_data_cache/nasa_cmapss/extracted/test_FD001.txt",
+        "train_FD001.txt": "<repo>/.cra_data_cache/nasa_cmapss/extracted/train_FD001.txt"
       }
     },
     {
@@ -45,7 +45,7 @@
       "note": "",
       "passed": true,
       "rule": "README found",
-      "value": "/Users/james/JKS:CRA/.cra_data_cache/nasa_cmapss/extracted/readme.txt"
+      "value": "<repo>/.cra_data_cache/nasa_cmapss/extracted/readme.txt"
     },
     {
       "name": "train/test row parse succeeded",
@@ -129,7 +129,7 @@
   ],
   "criteria_passed": 16,
   "criteria_total": 16,
-  "data_cache_local_ignored": "/Users/james/JKS:CRA/.cra_data_cache/nasa_cmapss",
+  "data_cache_local_ignored": "<repo>/.cra_data_cache/nasa_cmapss",
   "download_url": "https://data.nasa.gov/docs/legacy/CMAPSSData.zip",
   "failed_criteria": [],
   "fd001_profile": {
@@ -176,7 +176,7 @@
   },
   "generated_at_utc": "2026-05-08T20:59:45+00:00",
   "next_step": "Tier 7.1c may run the first compact C-MAPSS FD001 scoring gate only after this preflight passes. Tier 7.1c must score v2.2/v2.3 and fair baselines on the same rows with leakage controls preserved.",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight",
+  "output_dir": "<repo>/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight",
   "runner_revision": "tier7_1b_cmapss_source_data_preflight_20260508_0001",
   "source_manifest": {
     "download_url": "https://data.nasa.gov/docs/legacy/CMAPSSData.zip",
@@ -270,7 +270,7 @@
       }
     ],
     "zip_bytes": 12425978,
-    "zip_path_local_ignored": "/Users/james/JKS:CRA/.cra_data_cache/nasa_cmapss/CMAPSSData.zip",
+    "zip_path_local_ignored": "<repo>/.cra_data_cache/nasa_cmapss/CMAPSSData.zip",
     "zip_sha256": "74bef434a34db25c7bf72e668ea4cd52afe5f2cf8e44367c55a82bfd91a5a34f"
   },
   "status": "pass",

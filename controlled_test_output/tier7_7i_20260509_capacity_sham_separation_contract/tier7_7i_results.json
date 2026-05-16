@@ -290,7 +290,7 @@
       "pass": true,
       "passed": true,
       "rule": "exists and pass",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_7h_20260509_lorenz_capacity_narma_memory_scoring_gate/tier7_7h_results.json"
+      "value": "<repo>/controlled_test_output/tier7_7h_20260509_lorenz_capacity_narma_memory_scoring_gate/tier7_7h_results.json"
     },
     {
       "criterion": "Tier 7.7h outcome requires sham-separation contract",
@@ -312,7 +312,7 @@
       "pass": true,
       "passed": true,
       "rule": "exists and pass",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_7g_20260509_lorenz_capacity_narma_memory_contract/tier7_7g_results.json"
+      "value": "<repo>/controlled_test_output/tier7_7g_20260509_lorenz_capacity_narma_memory_contract/tier7_7g_results.json"
     },
     {
       "criterion": "tasks locked",
@@ -610,13 +610,13 @@
   "criteria_passed": 19,
   "criteria_total": 19,
   "generated_at_utc": "2026-05-09T15:19:38+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7i_20260509_capacity_sham_separation_contract",
+  "output_dir": "<repo>/controlled_test_output/tier7_7i_20260509_capacity_sham_separation_contract",
   "prerequisites": {
-    "tier7_7g_results": "/Users/james/JKS:CRA/controlled_test_output/tier7_7g_20260509_lorenz_capacity_narma_memory_contract/tier7_7g_results.json",
+    "tier7_7g_results": "<repo>/controlled_test_output/tier7_7g_20260509_lorenz_capacity_narma_memory_contract/tier7_7g_results.json",
     "tier7_7g_sha256": "87d2d6c2c5d9f6fdb22e010e311f65232c2a7e3fb11696310b9852f4f496d2a4",
     "tier7_7g_status": "pass",
     "tier7_7h_outcome": "overfit_or_sham_blocked",
-    "tier7_7h_results": "/Users/james/JKS:CRA/controlled_test_output/tier7_7h_20260509_lorenz_capacity_narma_memory_scoring_gate/tier7_7h_results.json",
+    "tier7_7h_results": "<repo>/controlled_test_output/tier7_7h_20260509_lorenz_capacity_narma_memory_scoring_gate/tier7_7h_results.json",
     "tier7_7h_sha256": "4305a2df6030795889c05853382b85ea57b4a46a9f83ccf381d48ac6679bee69",
     "tier7_7h_status": "pass"
   },

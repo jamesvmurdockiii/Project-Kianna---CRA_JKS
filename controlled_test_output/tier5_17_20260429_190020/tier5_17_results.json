@@ -1,13 +1,13 @@
 {
   "artifacts": {
-    "comparisons_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_17_20260429_190020/tier5_17_comparisons.csv",
-    "control_edges_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_17_20260429_190020/tier5_17_control_edges.png",
-    "fairness_contract_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_17_20260429_190020/tier5_17_fairness_contract.json",
-    "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_17_20260429_190020/tier5_17_results.json",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_17_20260429_190020/tier5_17_report.md",
-    "representation_matrix_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_17_20260429_190020/tier5_17_representation_matrix.png",
-    "run_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_17_20260429_190020/tier5_17_runs.csv",
-    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_17_20260429_190020/tier5_17_summary.csv"
+    "comparisons_csv": "<repo>/controlled_test_output/tier5_17_20260429_190020/tier5_17_comparisons.csv",
+    "control_edges_png": "<repo>/controlled_test_output/tier5_17_20260429_190020/tier5_17_control_edges.png",
+    "fairness_contract_json": "<repo>/controlled_test_output/tier5_17_20260429_190020/tier5_17_fairness_contract.json",
+    "manifest_json": "<repo>/controlled_test_output/tier5_17_20260429_190020/tier5_17_results.json",
+    "report_md": "<repo>/controlled_test_output/tier5_17_20260429_190020/tier5_17_report.md",
+    "representation_matrix_png": "<repo>/controlled_test_output/tier5_17_20260429_190020/tier5_17_representation_matrix.png",
+    "run_csv": "<repo>/controlled_test_output/tier5_17_20260429_190020/tier5_17_runs.csv",
+    "summary_csv": "<repo>/controlled_test_output/tier5_17_20260429_190020/tier5_17_summary.csv"
   },
   "canonical": false,
   "claim_boundary": "Noncanonical software diagnostic: CRA-compatible label-free representation scaffold, offline probes only, not hardware/on-chip representation learning or a v2.0 freeze.",
@@ -104,7 +104,7 @@
   "failure_reason": "Failed criteria: candidate reaches minimum ridge-probe accuracy, candidate reaches minimum kNN-probe accuracy, candidate beats no-state-plasticity control, candidate beats current-input-only on temporal-pressure tasks, candidate improves downstream sample efficiency somewhere",
   "generated_at_utc": "2026-04-29T19:00:40+00:00",
   "name": "Tier 5.17 - Pre-Reward Representation Formation",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_17_20260429_190020",
+  "output_dir": "<repo>/controlled_test_output/tier5_17_20260429_190020",
   "status": "fail",
   "summary": {
     "candidate_min_knn_probe_accuracy": 0.4658119658119658,

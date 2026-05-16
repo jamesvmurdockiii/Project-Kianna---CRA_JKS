@@ -181,7 +181,7 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/tier7_4c_results.json"
+      "value": "<repo>/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/tier7_4c_results.json"
     },
     {
       "name": "Tier 7.4c passed",
@@ -195,7 +195,7 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.4.json"
+      "value": "<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.4.json"
     },
     {
       "name": "v2.4 baseline frozen",
@@ -429,13 +429,13 @@
   },
   "generated_at_utc": "2026-05-09T02:11:26+00:00",
   "prior_evidence": {
-    "cmapss_preflight": "/Users/james/JKS:CRA/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_results.json",
+    "cmapss_preflight": "<repo>/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_results.json",
     "cmapss_preflight_status": "pass",
-    "nab_preflight": "/Users/james/JKS:CRA/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_results.json",
+    "nab_preflight": "<repo>/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_results.json",
     "nab_preflight_status": "pass",
-    "tier7_4c_results": "/Users/james/JKS:CRA/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/tier7_4c_results.json",
+    "tier7_4c_results": "<repo>/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/tier7_4c_results.json",
     "tier7_4c_status": "pass",
-    "v2_4_baseline": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.4.json",
+    "v2_4_baseline": "<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.4.json",
     "v2_4_status": "frozen"
   },
   "runner_revision": "tier7_4d_cost_aware_policy_action_heldout_contract_20260509_0001",

@@ -90,7 +90,7 @@
   "mse_ratio": 0.4441,
   "next_gate": "7.7z-r0 compact regression + baseline freeze",
   "outcome": "promotion_supported_requires_compact_regression",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7z_20260509_edge_of_chaos_ridge_promotion",
+  "output_dir": "<repo>/controlled_test_output/tier7_7z_20260509_edge_of_chaos_ridge_promotion",
   "pr_ratio": 3.59,
   "runner_revision": "tier7_7z_edge_of_chaos_ridge_promotion_20260509_0001",
   "sham": {

@@ -1,5 +1,5 @@
 criterion,passed,value,rule
-Tier 7.1e results exist,True,/Users/james/JKS:CRA/controlled_test_output/tier7_1e_20260508_cmapss_capped_readout_fairness_confirmation/tier7_1e_results.json,exists
+Tier 7.1e results exist,True,<repo>/controlled_test_output/tier7_1e_20260508_cmapss_capped_readout_fairness_confirmation/tier7_1e_results.json,exists
 Tier 7.1e passed,True,pass,== pass
 C-MAPSS signal not confirmed,True,v2_2_capped_signal_not_statistically_confirmed,== v2_2_capped_signal_not_statistically_confirmed
 selected adapter declared,True,numenta_nab_streaming_anomaly,non-empty

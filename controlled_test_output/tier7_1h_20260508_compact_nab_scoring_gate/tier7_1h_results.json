@@ -32,7 +32,7 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_results.json"
+      "value": "<repo>/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_results.json"
     },
     {
       "name": "Tier 7.1g preflight passed",
@@ -597,7 +597,7 @@
     }
   ],
   "next_step": "If CRA shows a compact NAB signal, run Tier 7.1i fairness/statistical confirmation on a broader predeclared NAB subset. If simple baselines dominate, localize the failure before adding or transferring mechanisms.",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate",
+  "output_dir": "<repo>/controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate",
   "runner_revision": "tier7_1h_compact_nab_scoring_gate_20260508_0001",
   "seeds": [
     42,
@@ -605,7 +605,7 @@
     44
   ],
   "source": {
-    "cache_root": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab",
+    "cache_root": "<repo>/.cra_data_cache/numenta_nab",
     "commit": "ea702d75cc2258d9d7dd35ca8e5e2539d71f3140",
     "selected_files": [
       "artificialWithAnomaly/art_daily_flatmiddle.csv",

@@ -3,7 +3,7 @@
 - Generated: `2026-04-30T03:41:16+00:00`
 - Mode: `run-hardware`
 - Status: **PASS**
-- Output directory: `/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16`
+- Output directory: `<jobmanager_tmp>`
 
 Tier 4.16 tests whether the Tier 5.4 confirmed delayed-credit setting survives on real SpiNNaker hardware.
 
@@ -54,15 +54,15 @@ Tier 4.16 tests whether the Tier 5.4 confirmed delayed-credit setting survives o
 
 ## Artifacts
 
-- `manifest_json`: `/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/tier4_16_results.json`
-- `summary_csv`: `/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/tier4_16_summary.csv`
-- `task_summary_csv`: `/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/tier4_16_task_summary.csv`
-- `delayed_cue_seed_42_timeseries_csv`: `/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/spinnaker_hardware_delayed_cue_seed42_timeseries.csv`
-- `delayed_cue_seed_42_timeseries_png`: `/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/spinnaker_hardware_delayed_cue_seed42_timeseries.png`
-- `hard_noisy_switching_seed_42_timeseries_csv`: `/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/spinnaker_hardware_hard_noisy_switching_seed42_timeseries.csv`
-- `hard_noisy_switching_seed_42_timeseries_png`: `/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/spinnaker_hardware_hard_noisy_switching_seed42_timeseries.png`
-- `hardware_summary_png`: `/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/tier4_16_hardware_summary.png`
-- `spinnaker_report_1`: `/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/spinnaker_reports/2026-04-30-04-31-53-248207`
-- `spinnaker_report_2`: `/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/spinnaker_reports/2026-04-30-04-36-42-014935`
+- `manifest_json`: `<jobmanager_tmp>`
+- `summary_csv`: `<jobmanager_tmp>`
+- `task_summary_csv`: `<jobmanager_tmp>`
+- `delayed_cue_seed_42_timeseries_csv`: `<jobmanager_tmp>`
+- `delayed_cue_seed_42_timeseries_png`: `<jobmanager_tmp>`
+- `hard_noisy_switching_seed_42_timeseries_csv`: `<jobmanager_tmp>`
+- `hard_noisy_switching_seed_42_timeseries_png`: `<jobmanager_tmp>`
+- `hardware_summary_png`: `<jobmanager_tmp>`
+- `spinnaker_report_1`: `<jobmanager_tmp>`
+- `spinnaker_report_2`: `<jobmanager_tmp>`
 
 ![tier4_16_hardware_summary](tier4_16_hardware_summary.png)

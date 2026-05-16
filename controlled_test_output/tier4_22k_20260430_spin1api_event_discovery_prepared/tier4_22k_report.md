@@ -3,7 +3,7 @@
 - Generated: `2026-04-30T20:54:08+00:00`
 - Mode: `prepare`
 - Status: **PREPARED**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_22k_20260430_spin1api_event_discovery_prepared`
+- Output directory: `<repo>/controlled_test_output/tier4_22k_20260430_spin1api_event_discovery_prepared`
 
 Tier 4.22k inspects the EBRAINS Spin1API build image and compiles a callback-symbol probe matrix. It exists because Tier 4.22i reached the raw custom-runtime layer and failed before board execution on callback event-symbol mismatch.
 
@@ -22,18 +22,18 @@ Tier 4.22k inspects the EBRAINS Spin1API build image and compiles a callback-sym
 | Criterion | Value | Rule | Pass | Note |
 | --- | --- | --- | --- | --- |
 | runner revision current | `tier4_22k_spin1api_event_discovery_20260430_0001` | `expected current source` | yes |  |
-| upload bundle created | `/Users/james/JKS:CRA/controlled_test_output/tier4_22k_20260430_spin1api_event_discovery_prepared/ebrains_upload_bundle/cra_422k` | `exists` | yes |  |
-| discovery runner included | `/Users/james/JKS:CRA/controlled_test_output/tier4_22k_20260430_spin1api_event_discovery_prepared/ebrains_upload_bundle/cra_422k/experiments/tier4_22k_spin1api_event_discovery.py` | `exists` | yes |  |
+| upload bundle created | `<repo>/controlled_test_output/tier4_22k_20260430_spin1api_event_discovery_prepared/ebrains_upload_bundle/cra_422k` | `exists` | yes |  |
+| discovery runner included | `<repo>/controlled_test_output/tier4_22k_20260430_spin1api_event_discovery_prepared/ebrains_upload_bundle/cra_422k/experiments/tier4_22k_spin1api_event_discovery.py` | `exists` | yes |  |
 | run-hardware command emitted | `cra_422k/experiments/tier4_22k_spin1api_event_discovery.py --mode run-hardware --output-dir tier4_22k_job_output` | `contains --mode run-hardware` | yes |  |
-| stable upload folder refreshed | `/Users/james/JKS:CRA/ebrains_jobs/cra_422k` | `exists` | yes |  |
+| stable upload folder refreshed | `<repo>/ebrains_jobs/cra_422k` | `exists` | yes |  |
 
 ## Artifacts
 
-- `upload_bundle`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22k_20260430_spin1api_event_discovery_prepared/ebrains_upload_bundle/cra_422k`
-- `stable_upload_folder`: `/Users/james/JKS:CRA/ebrains_jobs/cra_422k`
-- `job_readme`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22k_20260430_spin1api_event_discovery_prepared/ebrains_upload_bundle/cra_422k/README_TIER4_22K_JOB.md`
-- `manifest_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22k_20260430_spin1api_event_discovery_prepared/tier4_22k_results.json`
-- `report_md`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22k_20260430_spin1api_event_discovery_prepared/tier4_22k_report.md`
+- `upload_bundle`: `<repo>/controlled_test_output/tier4_22k_20260430_spin1api_event_discovery_prepared/ebrains_upload_bundle/cra_422k`
+- `stable_upload_folder`: `<repo>/ebrains_jobs/cra_422k`
+- `job_readme`: `<repo>/controlled_test_output/tier4_22k_20260430_spin1api_event_discovery_prepared/ebrains_upload_bundle/cra_422k/README_TIER4_22K_JOB.md`
+- `manifest_json`: `<repo>/controlled_test_output/tier4_22k_20260430_spin1api_event_discovery_prepared/tier4_22k_results.json`
+- `report_md`: `<repo>/controlled_test_output/tier4_22k_20260430_spin1api_event_discovery_prepared/tier4_22k_report.md`
 
 ## Official Reference Checked
 

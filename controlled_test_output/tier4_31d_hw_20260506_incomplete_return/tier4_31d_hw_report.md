@@ -11,18 +11,18 @@ Ingest only preserves returned artifacts; it cannot create hardware evidence wit
 
 ## Summary
 
-- ingest_dir: `/Users/james/Downloads`
+- ingest_dir: `<downloads>`
 - returned_artifact_count: `2`
 
 ## Criteria
 
 | Criterion | Value | Rule | Pass |
 | --- | --- | --- | --- |
-| hardware results json exists | `/Users/james/Downloads` | contains tier4_31d_hw_results.json | no |
+| hardware results json exists | `<downloads>` | contains tier4_31d_hw_results.json | no |
 | partial returned artifacts preserved | `2` | > 0 when partial artifacts exist | yes |
 
 ## Artifacts
 
-- `results_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_incomplete_return/tier4_31d_hw_results.json`
-- `report_md`: `/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_incomplete_return/tier4_31d_hw_report.md`
-- `summary_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_incomplete_return/tier4_31d_hw_summary.csv`
+- `results_json`: `<repo>/controlled_test_output/tier4_31d_hw_20260506_incomplete_return/tier4_31d_hw_results.json`
+- `report_md`: `<repo>/controlled_test_output/tier4_31d_hw_20260506_incomplete_return/tier4_31d_hw_report.md`
+- `summary_csv`: `<repo>/controlled_test_output/tier4_31d_hw_20260506_incomplete_return/tier4_31d_hw_summary.csv`

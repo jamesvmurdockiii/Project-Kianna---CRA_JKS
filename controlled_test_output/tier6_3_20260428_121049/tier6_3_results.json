@@ -1,32 +1,32 @@
 {
   "artifacts": {
-    "alive_population_plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_3_20260428_121049/tier6_3_alive_population.png",
-    "comparisons_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_3_20260428_121049/tier6_3_comparisons.csv",
-    "lifecycle_events_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_3_20260428_121049/tier6_3_lifecycle_events.csv",
-    "lineage_final_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_3_20260428_121049/tier6_3_lineage_final.csv",
-    "report_md": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_3_20260428_121049/tier6_3_report.md",
-    "sham_manifest_json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_3_20260428_121049/tier6_3_sham_manifest.json",
-    "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_3_20260428_121049/tier6_3_summary.csv",
-    "summary_plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_3_20260428_121049/tier6_3_sham_summary.png"
+    "alive_population_plot_png": "<repo>/controlled_test_output/tier6_3_20260428_121049/tier6_3_alive_population.png",
+    "comparisons_csv": "<repo>/controlled_test_output/tier6_3_20260428_121049/tier6_3_comparisons.csv",
+    "lifecycle_events_csv": "<repo>/controlled_test_output/tier6_3_20260428_121049/tier6_3_lifecycle_events.csv",
+    "lineage_final_csv": "<repo>/controlled_test_output/tier6_3_20260428_121049/tier6_3_lineage_final.csv",
+    "report_md": "<repo>/controlled_test_output/tier6_3_20260428_121049/tier6_3_report.md",
+    "sham_manifest_json": "<repo>/controlled_test_output/tier6_3_20260428_121049/tier6_3_sham_manifest.json",
+    "summary_csv": "<repo>/controlled_test_output/tier6_3_20260428_121049/tier6_3_summary.csv",
+    "summary_plot_png": "<repo>/controlled_test_output/tier6_3_20260428_121049/tier6_3_sham_summary.png"
   },
   "backend": "mock",
   "command": "experiments/tier6_lifecycle_sham_controls.py --backend mock --tasks hard_noisy_switching --regimes life4_16 --controls smoke --steps 80 --seed-count 1 --min-intact-lifecycle-events 0 --min-performance-control-wins 0 --min-fixed-max-wins 0 --min-random-replay-wins 0 --min-lineage-shuffle-detections 1 --stop-on-fail",
   "generated_at_utc": "2026-04-28T16:10:50+00:00",
-  "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_3_20260428_121049",
+  "output_dir": "<repo>/controlled_test_output/tier6_3_20260428_121049",
   "result": {
     "artifacts": {
-      "alive_population_plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_3_20260428_121049/tier6_3_alive_population.png",
-      "comparisons_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_3_20260428_121049/tier6_3_comparisons.csv",
-      "hard_noisy_switching_life4_16_fixed_initial_seed42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_3_20260428_121049/hard_noisy_switching_life4_16_fixed_initial_seed42_timeseries.csv",
-      "hard_noisy_switching_life4_16_fixed_max_seed42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_3_20260428_121049/hard_noisy_switching_life4_16_fixed_max_seed42_timeseries.csv",
-      "hard_noisy_switching_life4_16_intact_seed42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_3_20260428_121049/hard_noisy_switching_life4_16_intact_seed42_timeseries.csv",
-      "hard_noisy_switching_life4_16_lineage_id_shuffle_seed42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_3_20260428_121049/hard_noisy_switching_life4_16_lineage_id_shuffle_seed42_timeseries.csv",
-      "hard_noisy_switching_life4_16_random_event_replay_seed42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_3_20260428_121049/hard_noisy_switching_life4_16_random_event_replay_seed42_timeseries.csv",
-      "lifecycle_events_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_3_20260428_121049/tier6_3_lifecycle_events.csv",
-      "lineage_final_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_3_20260428_121049/tier6_3_lineage_final.csv",
-      "sham_manifest_json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_3_20260428_121049/tier6_3_sham_manifest.json",
-      "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_3_20260428_121049/tier6_3_summary.csv",
-      "summary_plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_3_20260428_121049/tier6_3_sham_summary.png"
+      "alive_population_plot_png": "<repo>/controlled_test_output/tier6_3_20260428_121049/tier6_3_alive_population.png",
+      "comparisons_csv": "<repo>/controlled_test_output/tier6_3_20260428_121049/tier6_3_comparisons.csv",
+      "hard_noisy_switching_life4_16_fixed_initial_seed42_timeseries_csv": "<repo>/controlled_test_output/tier6_3_20260428_121049/hard_noisy_switching_life4_16_fixed_initial_seed42_timeseries.csv",
+      "hard_noisy_switching_life4_16_fixed_max_seed42_timeseries_csv": "<repo>/controlled_test_output/tier6_3_20260428_121049/hard_noisy_switching_life4_16_fixed_max_seed42_timeseries.csv",
+      "hard_noisy_switching_life4_16_intact_seed42_timeseries_csv": "<repo>/controlled_test_output/tier6_3_20260428_121049/hard_noisy_switching_life4_16_intact_seed42_timeseries.csv",
+      "hard_noisy_switching_life4_16_lineage_id_shuffle_seed42_timeseries_csv": "<repo>/controlled_test_output/tier6_3_20260428_121049/hard_noisy_switching_life4_16_lineage_id_shuffle_seed42_timeseries.csv",
+      "hard_noisy_switching_life4_16_random_event_replay_seed42_timeseries_csv": "<repo>/controlled_test_output/tier6_3_20260428_121049/hard_noisy_switching_life4_16_random_event_replay_seed42_timeseries.csv",
+      "lifecycle_events_csv": "<repo>/controlled_test_output/tier6_3_20260428_121049/tier6_3_lifecycle_events.csv",
+      "lineage_final_csv": "<repo>/controlled_test_output/tier6_3_20260428_121049/tier6_3_lineage_final.csv",
+      "sham_manifest_json": "<repo>/controlled_test_output/tier6_3_20260428_121049/tier6_3_sham_manifest.json",
+      "summary_csv": "<repo>/controlled_test_output/tier6_3_20260428_121049/tier6_3_summary.csv",
+      "summary_plot_png": "<repo>/controlled_test_output/tier6_3_20260428_121049/tier6_3_sham_summary.png"
     },
     "criteria": [
       {

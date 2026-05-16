@@ -1,9 +1,9 @@
 name,criterion,value,operator,rule,passed,pass,note,details
-Tier 7.7b prerequisite exists,Tier 7.7b prerequisite exists,/Users/james/JKS:CRA/controlled_test_output/tier7_7b_20260509_v2_5_standardized_scoreboard_scoring_gate/tier7_7b_results.json,exists,exists,True,True,,
+Tier 7.7b prerequisite exists,Tier 7.7b prerequisite exists,<repo>/controlled_test_output/tier7_7b_20260509_v2_5_standardized_scoreboard_scoring_gate/tier7_7b_results.json,exists,exists,True,True,,
 Tier 7.7b prerequisite passed,Tier 7.7b prerequisite passed,pass,== pass,== pass,True,True,,
 Tier 7.7b outcome requires localization,Tier 7.7b outcome requires localization,standardized_progress_pass,in standardized_progress/localized/baseline-gap outcomes,in standardized_progress/localized/baseline-gap outcomes,True,True,,
-Tier 7.7a contract exists,Tier 7.7a contract exists,/Users/james/JKS:CRA/controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract/tier7_7a_results.json,exists and pass,exists and pass,True,True,,
-v2.5 baseline exists,v2.5 baseline exists,/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.5.json,exists,exists,True,True,,
+Tier 7.7a contract exists,Tier 7.7a contract exists,<repo>/controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract/tier7_7a_results.json,exists and pass,exists and pass,True,True,,
+v2.5 baseline exists,v2.5 baseline exists,<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.5.json,exists,exists,True,True,,
 required lengths locked,required lengths locked,"[8000, 16000, 32000]","== [8000, 16000, 32000]","== [8000, 16000, 32000]",True,True,,
 standard tasks locked,standard tasks locked,"['mackey_glass', 'lorenz', 'narma10']",== Mackey/Lorenz/NARMA,== Mackey/Lorenz/NARMA,True,True,,
 same seeds locked,same seeds locked,"[42, 43, 44]","== [42,43,44]","== [42,43,44]",True,True,,

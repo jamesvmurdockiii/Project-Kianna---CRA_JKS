@@ -3,7 +3,7 @@
 - Generated: `2026-05-01T02:57:13+00:00`
 - Mode: `prepare`
 - Status: **PREPARED**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_prepared`
+- Output directory: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_prepared`
 
 Tier 4.22n runs a 12-event delayed-cue-like signed micro-task through the custom runtime. Each event is scored from the chip's pre-update prediction, held across a two-event pending gap, then matured in order with delayed credit and checked against a local s16.15 reference.
 
@@ -26,8 +26,8 @@ Tier 4.22n runs a 12-event delayed-cue-like signed micro-task through the custom
 - reference_pending_gap_depth: `2`
 - reference_max_pending_depth: `3`
 - jobmanager_command: `cra_422v/experiments/tier4_22n_delayed_cue_micro_task.py --mode run-hardware --output-dir tier4_22n_job_output`
-- upload_folder: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_prepared/ebrains_upload_bundle/cra_422v`
-- stable_upload_folder: `/Users/james/JKS:CRA/ebrains_jobs/cra_422v`
+- upload_folder: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_prepared/ebrains_upload_bundle/cra_422v`
+- stable_upload_folder: `<repo>/ebrains_jobs/cra_422v`
 - what_i_need_from_user: `Upload the generated cra_422v folder to EBRAINS/JobManager and run the emitted command; download returned files after completion.`
 - next_step_if_passed: `Run the emitted EBRAINS command and ingest returned files.`
 
@@ -41,8 +41,8 @@ Tier 4.22n runs a 12-event delayed-cue-like signed micro-task through the custom
 | reference tail accuracy | `1` | `>= 1.0` | yes |
 | reference pending gap depth | `2` | `== 2` | yes |
 | reference max pending depth | `3` | `>= 3` | yes |
-| upload bundle created | `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_prepared/ebrains_upload_bundle/cra_422v` | `exists` | yes |
-| runtime source included | `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_prepared/ebrains_upload_bundle/cra_422v/coral_reef_spinnaker/spinnaker_runtime` | `exists` | yes |
+| upload bundle created | `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_prepared/ebrains_upload_bundle/cra_422v` | `exists` | yes |
+| runtime source included | `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_prepared/ebrains_upload_bundle/cra_422v/coral_reef_spinnaker/spinnaker_runtime` | `exists` | yes |
 | run-hardware command emitted | `cra_422v/experiments/tier4_22n_delayed_cue_micro_task.py --mode run-hardware --output-dir tier4_22n_job_output` | `contains --mode run-hardware` | yes |
 | source CMD_SCHEDULE_PENDING defined | `CMD_SCHEDULE_PENDING 9` | `config.h defines opcode` | yes |
 | source CMD_MATURE_PENDING defined | `CMD_MATURE_PENDING 10` | `config.h defines opcode` | yes |
@@ -79,10 +79,10 @@ Tier 4.22n runs a 12-event delayed-cue-like signed micro-task through the custom
 
 ## Artifacts
 
-- `reference_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_prepared/tier4_22n_task_reference.json`
-- `reference_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_prepared/tier4_22n_task_reference_rows.csv`
-- `upload_bundle`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_prepared/ebrains_upload_bundle/cra_422v`
-- `job_readme`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_prepared/ebrains_upload_bundle/cra_422v/README_TIER4_22N_JOB.md`
-- `stable_upload_folder`: `/Users/james/JKS:CRA/ebrains_jobs/cra_422v`
-- `manifest_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_prepared/tier4_22n_results.json`
-- `report_md`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_prepared/tier4_22n_report.md`
+- `reference_json`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_prepared/tier4_22n_task_reference.json`
+- `reference_csv`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_prepared/tier4_22n_task_reference_rows.csv`
+- `upload_bundle`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_prepared/ebrains_upload_bundle/cra_422v`
+- `job_readme`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_prepared/ebrains_upload_bundle/cra_422v/README_TIER4_22N_JOB.md`
+- `stable_upload_folder`: `<repo>/ebrains_jobs/cra_422v`
+- `manifest_json`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_prepared/tier4_22n_results.json`
+- `report_md`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_prepared/tier4_22n_report.md`

@@ -2,8 +2,8 @@
   "canonical": false,
   "claim": "Latest Tier 4.20b v2.1 one-seed chunked hardware bridge/probe; passed returned hardware review when status is pass.",
   "generated_at_utc": "2026-04-30T03:55:05+00:00",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_results.json",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_report.md",
+  "manifest": "<repo>/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_results.json",
+  "output_dir": "<repo>/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested",
+  "report": "<repo>/controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/tier4_20b_report.md",
   "status": "pass"
 }

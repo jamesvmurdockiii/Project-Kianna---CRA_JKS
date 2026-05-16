@@ -915,7 +915,7 @@
   "history": 12,
   "horizon": 8,
   "length": 720,
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_19a_20260505_temporal_substrate_reference",
+  "output_dir": "<repo>/controlled_test_output/tier5_19a_20260505_temporal_substrate_reference",
   "run_rows": [
     {
       "diagnostics": {

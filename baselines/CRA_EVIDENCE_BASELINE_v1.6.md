@@ -29,7 +29,7 @@ CRA now has post-Tier-5.10g noncanonical internal host-side keyed context-memory
 
 ## Tier 5.10g Multi-Slot / Keyed Context-Memory Summary
 
-- Output: `/Users/james/JKS:CRA/controlled_test_output/tier5_10g_20260428_232844`
+- Output: `<repo>/controlled_test_output/tier5_10g_20260428_232844`
 - Actual/expected runs: `171` / `171`
 - Backend: `nest`
 - Steps: `720`
@@ -38,7 +38,7 @@ CRA now has post-Tier-5.10g noncanonical internal host-side keyed context-memory
 - Feedback leakage violations: `0` across `2166` checked feedback rows
 - Candidate feature-active steps: `114.0`
 - Candidate context-memory updates: `121.0`
-- Compact regression after keyed-memory addition: `pass` at `/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260428_235507`
+- Compact regression after keyed-memory addition: `pass` at `<repo>/controlled_test_output/tier5_7_20260428_235507`
 
 ### Criteria
 

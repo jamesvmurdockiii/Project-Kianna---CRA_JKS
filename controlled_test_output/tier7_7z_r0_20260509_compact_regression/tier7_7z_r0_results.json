@@ -92,7 +92,7 @@
   "no_learning_mse": 1.2897900908590538,
   "no_learning_pr": 6.9977422015463855,
   "outcome": "compact_regression_pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7z_r0_20260509_compact_regression",
+  "output_dir": "<repo>/controlled_test_output/tier7_7z_r0_20260509_compact_regression",
   "runner_revision": "tier7_7z_r0_compact_regression_20260509_0001",
   "shuffled_mse": 1.015505397885184,
   "shuffled_pr": 6.9977422015463855,

@@ -7,7 +7,7 @@
   "output_dir": "controlled_test_output/tier4_28b_20260502_prepared",
   "summary": {
     "upload_bundle": "controlled_test_output/tier4_28b_20260502_prepared/ebrains_upload_bundle/cra_428f",
-    "stable_upload_folder": "/Users/james/JKS:CRA/ebrains_jobs/cra_428f",
+    "stable_upload_folder": "<repo>/ebrains_jobs/cra_428f",
     "job_command": "cra_428f/experiments/tier4_28b_delayed_cue_four_core_mcpl.py --mode run-hardware --seed 42",
     "what_i_need_from_user": "Upload cra_428f to EBRAINS/JobManager and run the emitted command for seeds 42, 43, 44.",
     "claim_boundary": "Local package preparation only. NOT hardware evidence."
@@ -51,7 +51,7 @@
     },
     {
       "name": "stable upload folder created",
-      "value": "/Users/james/JKS:CRA/ebrains_jobs/cra_428f",
+      "value": "<repo>/ebrains_jobs/cra_428f",
       "rule": "exists",
       "passed": true
     }

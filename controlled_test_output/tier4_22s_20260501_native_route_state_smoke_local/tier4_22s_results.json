@@ -1,9 +1,9 @@
 {
   "artifacts": {
-    "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_22s_20260501_native_route_state_smoke_local/tier4_22s_results.json",
-    "reference_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22s_20260501_native_route_state_smoke_local/tier4_22s_task_reference_rows.csv",
-    "reference_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_22s_20260501_native_route_state_smoke_local/tier4_22s_task_reference.json",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_22s_20260501_native_route_state_smoke_local/tier4_22s_report.md"
+    "manifest_json": "<repo>/controlled_test_output/tier4_22s_20260501_native_route_state_smoke_local/tier4_22s_results.json",
+    "reference_csv": "<repo>/controlled_test_output/tier4_22s_20260501_native_route_state_smoke_local/tier4_22s_task_reference_rows.csv",
+    "reference_json": "<repo>/controlled_test_output/tier4_22s_20260501_native_route_state_smoke_local/tier4_22s_task_reference.json",
+    "report_md": "<repo>/controlled_test_output/tier4_22s_20260501_native_route_state_smoke_local/tier4_22s_report.md"
   },
   "criteria": [
     {
@@ -273,19 +273,19 @@
   "generated_at_utc": "2026-05-01T07:41:15+00:00",
   "main_syntax_check": {
     "normal": {
-      "command": "/usr/bin/cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-int-to-pointer-cast -I /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/stubs -I /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src -c /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src/main.c -o /Users/james/JKS:CRA/controlled_test_output/tier4_22s_20260501_native_route_state_smoke_local/tier4_22i_main_syntax_normal.o",
-      "object_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22s_20260501_native_route_state_smoke_local/tier4_22i_main_syntax_normal.o",
+      "command": "/usr/bin/cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-int-to-pointer-cast -I <repo>/coral_reef_spinnaker/spinnaker_runtime/stubs -I <repo>/coral_reef_spinnaker/spinnaker_runtime/src -c <repo>/coral_reef_spinnaker/spinnaker_runtime/src/main.c -o <repo>/controlled_test_output/tier4_22s_20260501_native_route_state_smoke_local/tier4_22i_main_syntax_normal.o",
+      "object_artifact": "<repo>/controlled_test_output/tier4_22s_20260501_native_route_state_smoke_local/tier4_22i_main_syntax_normal.o",
       "returncode": 0,
       "status": "pass",
       "stderr": "",
-      "stderr_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22s_20260501_native_route_state_smoke_local/tier4_22i_main_syntax_normal_stderr.txt",
+      "stderr_artifact": "<repo>/controlled_test_output/tier4_22s_20260501_native_route_state_smoke_local/tier4_22i_main_syntax_normal_stderr.txt",
       "stdout": "",
-      "stdout_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22s_20260501_native_route_state_smoke_local/tier4_22i_main_syntax_normal_stdout.txt"
+      "stdout_artifact": "<repo>/controlled_test_output/tier4_22s_20260501_native_route_state_smoke_local/tier4_22i_main_syntax_normal_stdout.txt"
     },
     "status": "pass"
   },
   "mode": "local",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_22s_20260501_native_route_state_smoke_local",
+  "output_dir": "<repo>/controlled_test_output/tier4_22s_20260501_native_route_state_smoke_local",
   "reference": {
     "equation": "chip feature=context_slot_lookup(key)*route_state*visible_cue; schedule prediction=w*feature+bias; keep pending across gap; mature oldest with target; w+=lr*(target-prediction)*feature; b+=lr*(target-prediction)",
     "final_readout_bias": 0.0,
@@ -1902,7 +1902,7 @@
     "reference_sequence_length": 30,
     "reference_status": "pass",
     "reference_tail_accuracy": 1.0,
-    "tier4_22r_manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_22r_20260501_native_context_state_smoke_hardware_pass_ingested/tier4_22r_results.json",
+    "tier4_22r_manifest": "<repo>/controlled_test_output/tier4_22r_20260501_native_context_state_smoke_hardware_pass_ingested/tier4_22r_results.json",
     "tier4_22r_status": "pass"
   },
   "tier": "Tier 4.22s - Tiny Native Route-State Custom-Runtime Smoke"

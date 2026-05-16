@@ -243,6 +243,6 @@
 [tier5.13c] suite=routing task=context_reentry_routing model=stdp_only_snn seed=44
 {
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/v2_1_guardrail/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail",
+  "output_dir": "<repo>/controlled_test_output/tier5_9c_20260429_190503/v2_1_guardrail/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail",
   "failure_reason": ""
 }

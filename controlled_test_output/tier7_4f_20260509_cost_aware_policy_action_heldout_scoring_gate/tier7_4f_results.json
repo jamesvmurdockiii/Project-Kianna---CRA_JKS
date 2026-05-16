@@ -19,7 +19,7 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_4d_20260509_cost_aware_policy_action_heldout_contract/tier7_4d_results.json"
+      "value": "<repo>/controlled_test_output/tier7_4d_20260509_cost_aware_policy_action_heldout_contract/tier7_4d_results.json"
     },
     {
       "name": "Tier 7.4d passed",
@@ -33,7 +33,7 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_4e_20260509_cost_aware_policy_action_heldout_preflight/tier7_4e_results.json"
+      "value": "<repo>/controlled_test_output/tier7_4e_20260509_cost_aware_policy_action_heldout_preflight/tier7_4e_results.json"
     },
     {
       "name": "Tier 7.4e passed",
@@ -72,14 +72,14 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation/tier7_1l_policy_metrics.csv"
+      "value": "<repo>/controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation/tier7_1l_policy_metrics.csv"
     },
     {
       "name": "C-MAPSS repair/scoring source exists",
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/tier7_1d_results.json"
+      "value": "<repo>/controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/tier7_1d_results.json"
     },
     {
       "name": "C-MAPSS source was prior public negative/repair evidence",
@@ -612,11 +612,11 @@
     }
   ],
   "source_artifacts": {
-    "cmapss_repair_results": "/Users/james/JKS:CRA/controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/tier7_1d_results.json",
-    "nab_policy_metrics": "/Users/james/JKS:CRA/controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation/tier7_1l_policy_metrics.csv",
-    "tier7_4d_results": "/Users/james/JKS:CRA/controlled_test_output/tier7_4d_20260509_cost_aware_policy_action_heldout_contract/tier7_4d_results.json",
-    "tier7_4e_results": "/Users/james/JKS:CRA/controlled_test_output/tier7_4e_20260509_cost_aware_policy_action_heldout_preflight/tier7_4e_results.json",
-    "v2_4_baseline": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.4.json"
+    "cmapss_repair_results": "<repo>/controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/tier7_1d_results.json",
+    "nab_policy_metrics": "<repo>/controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation/tier7_1l_policy_metrics.csv",
+    "tier7_4d_results": "<repo>/controlled_test_output/tier7_4d_20260509_cost_aware_policy_action_heldout_contract/tier7_4d_results.json",
+    "tier7_4e_results": "<repo>/controlled_test_output/tier7_4e_20260509_cost_aware_policy_action_heldout_preflight/tier7_4e_results.json",
+    "v2_4_baseline": "<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.4.json"
   },
   "statistical_support": [
     {

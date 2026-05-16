@@ -1,8 +1,8 @@
 {
   "generated_at_utc": "2026-05-09T20:03:13+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7v_20260509_repair_candidate_compact_score",
-  "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier7_7v_20260509_repair_candidate_compact_score/tier7_7v_report.md",
-  "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier7_7v_20260509_repair_candidate_compact_score/tier7_7v_results.json",
+  "output_dir": "<repo>/controlled_test_output/tier7_7v_20260509_repair_candidate_compact_score",
+  "report_md": "<repo>/controlled_test_output/tier7_7v_20260509_repair_candidate_compact_score/tier7_7v_report.md",
+  "results_json": "<repo>/controlled_test_output/tier7_7v_20260509_repair_candidate_compact_score/tier7_7v_results.json",
   "status": "pass",
   "tier": "Tier 7.7v - Repair Candidate Compact Score (Family B)"
 }

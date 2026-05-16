@@ -4,7 +4,7 @@
   "generated_at_utc": "2026-05-02T05:28:23.858951+00:00",
   "mode": "local",
   "host_tests": {
-    "command": "make -C /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime clean-host test",
+    "command": "make -C <repo>/coral_reef_spinnaker/spinnaker_runtime clean-host test",
     "returncode": 0,
     "stdout": "rm -f tests/test_runtime\ncc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-int-to-pointer-cast -I stubs -I src tests/test_runtime.c src/neuron_manager.c src/synapse_manager.c src/state_manager.c src/host_interface.c src/router.c -lm -o tests/test_runtime\n./tests/test_runtime\n=== Coral Reef Runtime Host Tests ===\n\nconfig.h:\n  PASS: MAKE_KEY\n  PASS: fixed-point math\n  PASS: signed large fixed-point product\n  PASS: command constants\n  PASS: weight limits\n\nneuron_manager:\n  PASS: neuron birth/death\n  PASS: neuron find\n  PASS: neuron reset all\n\nsynapse_manager:\n  PASS: synapse create/remove\n  PASS: synapse weight limits\n  PASS: eligibility trace modulation\n  PASS: indexed delivery and active trace list\n\nstate_manager:\n  PASS: persistent context slots\n  PASS: bounded slot eviction\n  PASS: readout state and reset\n  PASS: reward readout update\n  PASS: pending horizon maturation\n  PASS: pending signed switch update\n  PASS: context-derived feature scheduling reference\n  PASS: routed context-derived feature scheduling reference\n  PASS: keyed route/context-derived feature scheduling reference\n  PASS: memory/route/context-derived feature scheduling reference\n  PASS: decoupled memory/route/context-derived feature scheduling reference\n  PASS: bounded pending horizons\n  PASS: schedule entry write and read\n  PASS: continuous tick processing\n  PASS: continuous auto-pause\n\nrouter:\n  PASS: router add/remove\n  PASS: router reset all\n\nhost_interface:\n  PASS: host_interface init\n  PASS: compact state summary pack\n\n=== ALL TESTS PASSED ===\n",
     "stderr": "",
@@ -15,14 +15,14 @@
   "main_syntax": {
     "status": "pass",
     "normal": {
-      "command": "/usr/bin/cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-int-to-pointer-cast -I /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/stubs -I /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src -c /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src/main.c -o /Users/james/JKS:CRA/controlled_test_output/tier4_25c_seed42_local/tier4_22i_main_syntax_normal.o",
+      "command": "/usr/bin/cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-int-to-pointer-cast -I <repo>/coral_reef_spinnaker/spinnaker_runtime/stubs -I <repo>/coral_reef_spinnaker/spinnaker_runtime/src -c <repo>/coral_reef_spinnaker/spinnaker_runtime/src/main.c -o <repo>/controlled_test_output/tier4_25c_seed42_local/tier4_22i_main_syntax_normal.o",
       "returncode": 0,
       "stdout": "",
       "stderr": "",
       "status": "pass",
-      "stdout_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_25c_seed42_local/tier4_22i_main_syntax_normal_stdout.txt",
-      "stderr_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_25c_seed42_local/tier4_22i_main_syntax_normal_stderr.txt",
-      "object_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_25c_seed42_local/tier4_22i_main_syntax_normal.o"
+      "stdout_artifact": "<repo>/controlled_test_output/tier4_25c_seed42_local/tier4_22i_main_syntax_normal_stdout.txt",
+      "stderr_artifact": "<repo>/controlled_test_output/tier4_25c_seed42_local/tier4_22i_main_syntax_normal_stderr.txt",
+      "object_artifact": "<repo>/controlled_test_output/tier4_25c_seed42_local/tier4_22i_main_syntax_normal.o"
     }
   },
   "has_split_opcodes": true,

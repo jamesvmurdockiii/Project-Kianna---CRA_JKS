@@ -1,7 +1,13 @@
 # Polyp Microcircuit Design Specification
 
 ## Status
-**APPROVED for Phase 1 implementation** — v2.1 with 5 guardrails applied.
+
+Historical/current baseline design note. This document specifies the 32-neuron
+polyp microcircuit contract that underlies the main CRA implementation. It is
+not a claim that this template is optimal, final, or sufficient for all future
+benchmarks. Later morphology/resonant/internal-template variants are treated as
+separate diagnostic mechanisms and are only promoted if they pass their own
+controls, baselines, and compact regression gates.
 
 ## Decision
 Each polyp is a **local recurrent spiking microcircuit** (minicolumn-scale), not a single neuron.

@@ -1,5 +1,5 @@
 name,criterion,value,operator,rule,passed,pass,details,note
-Tier 7.7o prerequisite exists,Tier 7.7o prerequisite exists,/Users/james/JKS:CRA/controlled_test_output/tier7_7o_20260509_generic_temporal_interface_reframing_contract/tier7_7o_results.json,exists,exists,True,True,,
+Tier 7.7o prerequisite exists,Tier 7.7o prerequisite exists,<repo>/controlled_test_output/tier7_7o_20260509_generic_temporal_interface_reframing_contract/tier7_7o_results.json,exists,exists,True,True,,
 Tier 7.7o prerequisite passed,Tier 7.7o prerequisite passed,pass,== pass,== pass,True,True,,
 Tier 7.7o authorized internalization,Tier 7.7o authorized internalization,park_partitioned_driver_and_authorize_cra_native_temporal_interface_internalization,authorizes internalization,authorizes internalization,True,True,,
 question locked,question locked,Can CRA internalize the temporal-basis capability exposed by random-projection/nonlinear-lag controls as organism-native dynamics rather than a host-side adapter?,non-empty,non-empty,True,True,,

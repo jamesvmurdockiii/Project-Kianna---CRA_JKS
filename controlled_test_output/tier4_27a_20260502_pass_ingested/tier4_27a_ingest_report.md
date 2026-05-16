@@ -2,7 +2,7 @@
 
 - Status: **PASS**
 - Passed: 38/38
-- Hardware output: `/Users/james/JKS:CRA/controlled_test_output/tier4_27a_20260502_pass_ingested`
+- Hardware output: `<repo>/controlled_test_output/tier4_27a_20260502_pass_ingested`
 
 ## Criteria
 

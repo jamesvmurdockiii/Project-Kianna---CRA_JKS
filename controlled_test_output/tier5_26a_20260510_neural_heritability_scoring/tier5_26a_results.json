@@ -1345,7 +1345,7 @@
     "v_thresh": 2.08
   },
   "outcome": "neural_heritability_partial",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_26a_20260510_neural_heritability_scoring",
+  "output_dir": "<repo>/controlled_test_output/tier5_26a_20260510_neural_heritability_scoring",
   "predeclared_pass_criteria": {
     "margin_heritable_vs_clone": 0.3,
     "margin_heritable_vs_static": 0.5,

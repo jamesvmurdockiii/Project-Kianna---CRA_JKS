@@ -3,7 +3,7 @@
 - Generated: `2026-05-01T01:33:03+00:00`
 - Mode: `prepare`
 - Status: **PREPARED**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_prepared`
+- Output directory: `<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_prepared`
 
 Tier 4.22j tests a minimal chip-owned delayed-credit/readout update after the Tier 4.22i board command path passed.
 
@@ -23,8 +23,8 @@ Tier 4.22j tests a minimal chip-owned delayed-credit/readout update after the Ti
 | --- | --- | --- | --- |
 | Tier 4.22i board roundtrip pass exists | `pass` | `== pass` | yes |
 | main.c host syntax check pass | `pass` | `== pass` | yes |
-| upload bundle created | `/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_prepared/ebrains_upload_bundle/cra_422s` | `exists` | yes |
-| runtime source included | `/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_prepared/ebrains_upload_bundle/cra_422s/coral_reef_spinnaker/spinnaker_runtime` | `exists` | yes |
+| upload bundle created | `<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_prepared/ebrains_upload_bundle/cra_422s` | `exists` | yes |
+| runtime source included | `<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_prepared/ebrains_upload_bundle/cra_422s/coral_reef_spinnaker/spinnaker_runtime` | `exists` | yes |
 | run-hardware command emitted | `cra_422s/experiments/tier4_22j_minimal_custom_runtime_learning.py --mode run-hardware --output-dir tier4_22j_job_output` | `contains --mode run-hardware` | yes |
 | source CMD_SCHEDULE_PENDING defined | `CMD_SCHEDULE_PENDING 9` | `config.h defines opcode` | yes |
 | source CMD_MATURE_PENDING defined | `CMD_MATURE_PENDING 10` | `config.h defines opcode` | yes |
@@ -57,8 +57,8 @@ Tier 4.22j tests a minimal chip-owned delayed-credit/readout update after the Ti
 
 ## Artifacts
 
-- `upload_bundle`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_prepared/ebrains_upload_bundle/cra_422s`
-- `job_readme`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_prepared/ebrains_upload_bundle/cra_422s/README_TIER4_22J_JOB.md`
-- `stable_upload_folder`: `/Users/james/JKS:CRA/ebrains_jobs/cra_422s`
-- `manifest_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_prepared/tier4_22j_results.json`
-- `report_md`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_prepared/tier4_22j_report.md`
+- `upload_bundle`: `<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_prepared/ebrains_upload_bundle/cra_422s`
+- `job_readme`: `<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_prepared/ebrains_upload_bundle/cra_422s/README_TIER4_22J_JOB.md`
+- `stable_upload_folder`: `<repo>/ebrains_jobs/cra_422s`
+- `manifest_json`: `<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_prepared/tier4_22j_results.json`
+- `report_md`: `<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_prepared/tier4_22j_report.md`

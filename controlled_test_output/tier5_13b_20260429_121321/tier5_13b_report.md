@@ -9,7 +9,7 @@
 - Variants: `all`
 - Selected standard baselines: `sign_persistence,online_perceptron`
 - Smoke mode: `True`
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier5_13b_20260429_121321`
+- Output directory: `<repo>/controlled_test_output/tier5_13b_20260429_121321`
 
 Tier 5.13b tests contextual module routing: primitive modules are learned first, context-to-module routing is learned next, and held-out delayed-context trials require selecting the right module before feedback.
 

@@ -216,7 +216,7 @@
   "generated_at_utc": "2026-05-11T00:59:46+00:00",
   "next_gate": "Tier 5.26a \u2014 Neural Heritability Scoring Gate",
   "outcome": "neural_heritability_contract_locked",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_26_20260510_neural_heritability_contract",
+  "output_dir": "<repo>/controlled_test_output/tier5_26_20260510_neural_heritability_contract",
   "runner_revision": "tier5_26_neural_heritability_contract_20260510_0001",
   "status": "pass",
   "tier": "Tier 5.26 \u2014 Neural Parameter Heritability & Mutation Contract"

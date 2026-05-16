@@ -2,7 +2,7 @@
 
 - Generated: `2026-04-29T19:29:01+00:00`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier5_17c_20260429_192900`
+- Output directory: `<repo>/controlled_test_output/tier5_17c_20260429_192900`
 - Tasks: `masked_channel_context`
 - Seeds: `[42]`
 

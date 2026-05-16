@@ -60,4 +60,4 @@
 [tier5.12c] task=sensor_anomaly_prediction model=wrong_horizon_control seed=42
 [tier5.12c] task=sensor_anomaly_prediction model=shuffled_target_control seed=42
 Tier 5.12c status: pass
-Report: /Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070615/predictive_context_guardrail/tier5_12c_report.md
+Report: <repo>/controlled_test_output/tier5_12d_20260429_070615/predictive_context_guardrail/tier5_12c_report.md

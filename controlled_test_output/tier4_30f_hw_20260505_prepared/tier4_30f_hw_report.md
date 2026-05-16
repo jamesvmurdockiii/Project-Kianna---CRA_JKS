@@ -22,6 +22,6 @@ Prepared source bundle only; no hardware evidence until returned run-hardware ar
 | local reference controls separate | `[true, true, true, true, true, true, true]` | all True | yes |
 | lifecycle sham host tests pass | `"pass"` | == pass | yes |
 | main.c host syntax check pass | `"pass"` | == pass | yes |
-| upload bundle created | `"/Users/james/JKS:CRA/controlled_test_output/tier4_30f_hw_20260505_prepared/ebrains_upload_bundle/cra_430f"` | exists | yes |
-| stable upload folder created | `"/Users/james/JKS:CRA/ebrains_jobs/cra_430f"` | exists | yes |
+| upload bundle created | `"<repo>/controlled_test_output/tier4_30f_hw_20260505_prepared/ebrains_upload_bundle/cra_430f"` | exists | yes |
+| stable upload folder created | `"<repo>/ebrains_jobs/cra_430f"` | exists | yes |
 | run-hardware command emitted | `"cra_430f/experiments/tier4_30f_lifecycle_sham_hardware_subset.py --mode run-hardware --output-dir tier4_30f_hw_job_output"` | contains --mode run-hardware | yes |

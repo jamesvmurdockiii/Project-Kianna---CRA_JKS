@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.507720+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.651335+00:00",
   "source_generated_at_utc": "2026-05-09T16:31:54+00:00",
   "registry_entry_id": "tier7_7m_partitioned_driver_attribution_contract",
   "tier": "Tier 7.7m - Partitioned-Driver Attribution Contract",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7m_20260509_partitioned_driver_attribution_contract",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_7m_20260509_partitioned_driver_attribution_contract/tier7_7m_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_7m_20260509_partitioned_driver_attribution_contract/tier7_7m_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7m_20260509_partitioned_driver_attribution_contract/tier7_7m_summary.csv",
+  "output_dir": "controlled_test_output/tier7_7m_20260509_partitioned_driver_attribution_contract",
+  "manifest": "controlled_test_output/tier7_7m_20260509_partitioned_driver_attribution_contract/tier7_7m_results.json",
+  "report": "controlled_test_output/tier7_7m_20260509_partitioned_driver_attribution_contract/tier7_7m_report.md",
+  "summary_csv": "controlled_test_output/tier7_7m_20260509_partitioned_driver_attribution_contract/tier7_7m_summary.csv",
   "canonical": true,
   "claim": "Tier 7.7m locks the attribution plan for the Tier 7.7l task gain before any promotion: the next gate must distinguish causal driver partitioning from nonlinear/lag feature enrichment, readout/interface budget, diversity pressure, generic basis effects, leakage, or non-reproducible scoring noise.",
   "caveat": "Contract evidence only; not an attribution implementation, not a model score, not a mechanism promotion, not a baseline freeze, not hardware/native transfer, not external-baseline superiority, and not broad public usefulness evidence."

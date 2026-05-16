@@ -1,5 +1,5 @@
 criterion,value,rule,pass,details
-tier7_6a_contract_exists,/Users/james/JKS:CRA/controlled_test_output/tier7_6a_20260509_long_horizon_planning_contract/tier7_6a_results.json,exists,True,
+tier7_6a_contract_exists,<repo>/controlled_test_output/tier7_6a_20260509_long_horizon_planning_contract/tier7_6a_results.json,exists,True,
 tier7_6a_contract_passed,PASS,case-insensitive == PASS,True,
 task_families_scored,5,== 5,True,
 seeds_scored,"[42, 43, 44]","== [42, 43, 44]",True,

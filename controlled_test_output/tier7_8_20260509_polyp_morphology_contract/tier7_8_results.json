@@ -316,7 +316,7 @@
       "outcome": "partial_template_signal"
     }
   ],
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_8_20260509_polyp_morphology_contract",
+  "output_dir": "<repo>/controlled_test_output/tier7_8_20260509_polyp_morphology_contract",
   "runner_revision": "tier7_8_polyp_morphology_contract_20260509_0001",
   "status": "pass",
   "tasks": [

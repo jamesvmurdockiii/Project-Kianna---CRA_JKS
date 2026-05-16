@@ -52,9 +52,9 @@ CRA has a bounded v2.4 host-side software baseline for cost-aware policy/action 
 
 ## Files Frozen
 
-- `/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.4.json`
-- `/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.4.md`
-- `/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.4_STUDY_REGISTRY.snapshot.json`
+- `<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.4.json`
+- `<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.4.md`
+- `<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.4_STUDY_REGISTRY.snapshot.json`
 
 ## Next Recommended Evidence
 

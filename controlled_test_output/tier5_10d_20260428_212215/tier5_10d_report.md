@@ -9,7 +9,7 @@
 - Variants: `all`
 - Selected standard baselines: `sign_persistence,online_perceptron`
 - Smoke mode: `True`
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier5_10d_20260428_212215`
+- Output directory: `<repo>/controlled_test_output/tier5_10d_20260428_212215`
 
 Tier 5.10d tests whether CRA can use its internal host-side context-memory pathway on the repaired Tier 5.10b streams when fed raw observations.
 

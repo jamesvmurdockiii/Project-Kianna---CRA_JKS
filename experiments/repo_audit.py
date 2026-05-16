@@ -11,6 +11,7 @@ from __future__ import annotations
 import csv
 import json
 import re
+import subprocess
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
@@ -28,14 +29,20 @@ REQUIRED_SOURCE_DOCS = [
     "CONTROLLED_TEST_PLAN.md",
     "ARTIFACTS.md",
     "ARCHITECTURE.md",
+    "MICROCIRCUIT_DESIGN.md",
+    "CONTRIBUTING.md",
     "docs/ABSTRACT.md",
     "docs/WHITEPAPER.md",
     "docs/REVIEWER_DEFENSE_PLAN.md",
     "docs/MECHANISM_STATUS.md",
     "docs/CODEBASE_MAP.md",
+    "docs/FULL_PROJECT_STATUS.md",
+    "docs/PUBLIC_REPO_HYGIENE.md",
+    "docs/PUBLIC_RELEASE_REPORT.md",
     "docs/PAPER_RESULTS_TABLE.md",
     "experiments/README.md",
     "experiments/EVIDENCE_SCHEMA.md",
+    "ebrains_jobs/README.md",
     "STUDY_EVIDENCE_INDEX.md",
 ]
 
@@ -169,14 +176,67 @@ STALE_SCAN_FILES = [
     "RUNBOOK.md",
     "CONTROLLED_TEST_PLAN.md",
     "ARTIFACTS.md",
+    "ARCHITECTURE.md",
+    "MICROCIRCUIT_DESIGN.md",
     "docs/ABSTRACT.md",
     "docs/WHITEPAPER.md",
     "docs/CODEBASE_MAP.md",
+    "docs/FULL_PROJECT_STATUS.md",
+    "docs/MASTER_EXECUTION_PLAN.md",
+    "docs/MECHANISM_STATUS.md",
     "docs/PAPER_RESULTS_TABLE.md",
     "experiments/README.md",
     "experiments/EVIDENCE_SCHEMA.md",
+    "ebrains_jobs/README.md",
     "STUDY_EVIDENCE_INDEX.md",
 ]
+
+PUBLIC_DOC_SCAN_FILES = [
+    "README.md",
+    "ARCHITECTURE.md",
+    "MICROCIRCUIT_DESIGN.md",
+    "ARTIFACTS.md",
+    "CONTRIBUTING.md",
+    "RUNBOOK.md",
+    "CONTROLLED_TEST_PLAN.md",
+    "docs/ABSTRACT.md",
+    "docs/WHITEPAPER.md",
+    "docs/README.md",
+    "docs/FULL_PROJECT_STATUS.md",
+    "docs/MECHANISM_STATUS.md",
+    "docs/PAPER_READINESS_ROADMAP.md",
+    "docs/MASTER_EXECUTION_PLAN.md",
+    "docs/REVIEWER_DEFENSE_PLAN.md",
+    "docs/PUBLIC_REPO_HYGIENE.md",
+    "docs/PUBLIC_RELEASE_REPORT.md",
+    "docs/SPINNAKER_EBRAINS_RUNBOOK.md",
+    "experiments/README.md",
+    "experiments/EVIDENCE_SCHEMA.md",
+    "ebrains_jobs/README.md",
+]
+
+LOCAL_PATH_PATTERN = re.compile(
+    r"(/" r"Users/[^\s`)]+|/" r"tmp/job[0-9][^\s`)]+|/" r"private/tmp/[^\s`)]+)"
+)
+
+RAW_TRACKED_PATTERN = re.compile(
+    r"("
+    r"(^|/)(reports\.zip|global_provenance\.sqlite3|input_output_database\.sqlite3|"
+    r"data\.sqlite3|ds\.sqlite3|stack_trace|errored|finished)$"
+    r"|raw_download|raw_returned|downloaded_files|_download_intake_originals"
+    r"|raw_hardware_artifacts|raw_reports|spinnaker_reports/"
+    r"|ebrains_upload_bundle"
+    r"|\.elf$|\.aplx$"
+    r")"
+)
+
+HYPE_OR_PRIVATE_LANGUAGE = re.compile(
+    r"\b("
+    r"mic drop|revolutionary|guaranteed|proves AGI|proven AGI|"
+    r"world[- ]?leading scientists will|fuck|shit|bitch|cunt|retard|faggot"
+    r")\b",
+    re.I,
+)
 
 
 @dataclass
@@ -204,6 +264,13 @@ def rel(path: Path) -> str:
         return str(path.relative_to(ROOT))
     except ValueError:
         return str(path)
+
+
+def resolve_repo_path(value: str | None) -> Path:
+    if not value:
+        return Path("")
+    path = Path(value)
+    return path if path.is_absolute() else ROOT / path
 
 
 def load_json(path: Path) -> dict[str, Any]:
@@ -281,8 +348,8 @@ def check_latest_manifests(registry: dict[str, Any]) -> Check:
     failures: list[str] = []
     for entry in registry.get("entries", []):
         entry_id = entry.get("entry_id")
-        run_dir = Path(entry.get("canonical_output_dir") or "")
-        expected_manifest = Path(entry.get("results_json") or "")
+        run_dir = resolve_repo_path(entry.get("canonical_output_dir"))
+        expected_manifest = resolve_repo_path(entry.get("results_json"))
         latest_names = []
         # The registry updates latest pointers from EvidenceSpec. Reading the
         # pointer files directly catches accidental hand edits after registry generation.
@@ -293,7 +360,7 @@ def check_latest_manifests(registry: dict[str, Any]) -> Check:
                 continue
             if data.get("registry_entry_id") == entry_id:
                 latest_names.append(path)
-                if Path(data.get("manifest", "")) != expected_manifest:
+                if resolve_repo_path(data.get("manifest")) != expected_manifest:
                     failures.append(f"{rel(path)} points away from {rel(expected_manifest)}")
                 if data.get("status") != "pass":
                     failures.append(f"{rel(path)} status={data.get('status')}")
@@ -546,6 +613,137 @@ def check_stale_doc_claims() -> Check:
     )
 
 
+def git_ls_files() -> list[str]:
+    try:
+        proc = subprocess.run(
+            ["git", "ls-files"],
+            cwd=ROOT,
+            check=True,
+            text=True,
+            capture_output=True,
+        )
+    except Exception as exc:  # pragma: no cover - defensive in non-git exports
+        return [f"GIT_LS_FILES_FAILED:{exc}"]
+    return [line for line in proc.stdout.splitlines() if line.strip()]
+
+
+def check_public_docs_no_local_paths() -> Check:
+    findings: list[str] = []
+    for rel_path in PUBLIC_DOC_SCAN_FILES:
+        path = ROOT / rel_path
+        if not path.exists():
+            continue
+        text = path.read_text(encoding="utf-8", errors="replace")
+        for match in LOCAL_PATH_PATTERN.finditer(text):
+            line_no = text.count("\n", 0, match.start()) + 1
+            findings.append(f"{rel_path}:{line_no}: {match.group(0)}")
+    return Check(
+        name="public-facing docs avoid machine-local absolute paths",
+        passed=not findings,
+        details=(
+            "; ".join(findings[:20])
+            if findings
+            else "no machine-local absolute paths found in public-facing docs"
+        ),
+    )
+
+
+def check_public_docs_no_private_or_hype_language() -> Check:
+    findings: list[str] = []
+    for rel_path in PUBLIC_DOC_SCAN_FILES + ["codebasecontract.md"]:
+        path = ROOT / rel_path
+        if not path.exists():
+            continue
+        text = path.read_text(encoding="utf-8", errors="replace")
+        for match in HYPE_OR_PRIVATE_LANGUAGE.finditer(text):
+            line_no = text.count("\n", 0, match.start()) + 1
+            findings.append(f"{rel_path}:{line_no}: {match.group(0)}")
+    return Check(
+        name="public docs avoid private/hype/profane language",
+        passed=not findings,
+        details="; ".join(findings[:20]) if findings else "no private/hype/profane terms found in scanned docs",
+    )
+
+
+def check_readme_links_exist() -> Check:
+    path = ROOT / "README.md"
+    if not path.exists():
+        return Check("README relative links resolve", False, "README.md missing")
+    text = path.read_text(encoding="utf-8", errors="replace")
+    findings: list[str] = []
+    for label, target in re.findall(r"\[([^\]]+)\]\(([^)]+)\)", text):
+        if "://" in target or target.startswith("#") or target.startswith("mailto:"):
+            continue
+        target_path = target.split("#", 1)[0]
+        if not target_path:
+            continue
+        if not (ROOT / target_path).exists():
+            findings.append(f"{label} -> {target}")
+    return Check(
+        name="README relative links resolve",
+        passed=not findings,
+        details="; ".join(findings[:20]) if findings else "all README relative links resolve",
+    )
+
+
+def check_no_tracked_raw_artifacts() -> Check:
+    files = git_ls_files()
+    if files and files[0].startswith("GIT_LS_FILES_FAILED:"):
+        return Check("raw hardware/download artifacts are not tracked", False, files[0])
+    offenders = [f for f in files if RAW_TRACKED_PATTERN.search(f)]
+    return Check(
+        name="raw hardware/download artifacts are not tracked",
+        passed=not offenders,
+        details=(
+            "; ".join(offenders[:30])
+            if offenders
+            else "no tracked reports.zip, sqlite provenance DBs, stack traces, raw downloads, nested upload bundles, or compiled SpiNNaker binaries"
+        ),
+    )
+
+
+def check_no_tracked_machine_local_paths() -> Check:
+    files = git_ls_files()
+    if files and files[0].startswith("GIT_LS_FILES_FAILED:"):
+        return Check("tracked files avoid machine-local absolute paths", False, files[0])
+    findings: list[str] = []
+    for rel_path in files:
+        path = ROOT / rel_path
+        if not path.is_file():
+            continue
+        text = path.read_text(encoding="utf-8", errors="replace")
+        for match in LOCAL_PATH_PATTERN.finditer(text):
+            line_no = text.count("\n", 0, match.start()) + 1
+            findings.append(f"{rel_path}:{line_no}: {match.group(0)}")
+            break
+    return Check(
+        name="tracked files avoid machine-local absolute paths",
+        passed=not findings,
+        details=(
+            "; ".join(findings[:30])
+            if findings
+            else "no tracked file contains machine-local absolute path patterns"
+        ),
+    )
+
+
+def check_no_large_tracked_files() -> Check:
+    files = git_ls_files()
+    if files and files[0].startswith("GIT_LS_FILES_FAILED:"):
+        return Check("no oversized tracked blobs", False, files[0])
+    limit = 50 * 1024 * 1024
+    offenders: list[str] = []
+    for rel_path in files:
+        path = ROOT / rel_path
+        if path.is_file() and path.stat().st_size > limit:
+            offenders.append(f"{rel_path} ({path.stat().st_size} bytes)")
+    return Check(
+        name="no oversized tracked blobs",
+        passed=not offenders,
+        details="; ".join(offenders[:20]) if offenders else "no tracked file exceeds 50 MiB",
+    )
+
+
 def build_report(checks: list[Check], registry: dict[str, Any]) -> str:
     status = "PASS" if all(c.passed for c in checks if c.severity == "error") else "FAIL"
     lines = [
@@ -693,6 +891,12 @@ def main() -> int:
         checks.append(Check("paper-facing results table matches registry", False, "registry missing"))
     checks.append(check_frozen_baselines())
     checks.append(check_stale_doc_claims())
+    checks.append(check_public_docs_no_local_paths())
+    checks.append(check_public_docs_no_private_or_hype_language())
+    checks.append(check_readme_links_exist())
+    checks.append(check_no_tracked_raw_artifacts())
+    checks.append(check_no_tracked_machine_local_paths())
+    checks.append(check_no_large_tracked_files())
 
     status = "pass" if all(c.passed for c in checks if c.severity == "error") else "fail"
     payload = {
@@ -708,7 +912,7 @@ def main() -> int:
     write_json(JSON_PATH, payload)
     DOC_PATH.parent.mkdir(parents=True, exist_ok=True)
     DOC_PATH.write_text(build_report(checks, registry), encoding="utf-8")
-    print(json.dumps({"status": status, "markdown": str(DOC_PATH), "json": str(JSON_PATH)}, indent=2))
+    print(json.dumps({"status": status, "markdown": rel(DOC_PATH), "json": rel(JSON_PATH)}, indent=2))
     return 0 if status == "pass" else 1
 
 

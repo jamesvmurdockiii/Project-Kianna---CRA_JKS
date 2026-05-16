@@ -227,7 +227,7 @@
     "not hardware/native transfer"
   ],
   "outcome": "nest_per_neuron_dimensionality_contract_locked",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_21_20260510_nest_per_neuron_dimensionality_contract",
+  "output_dir": "<repo>/controlled_test_output/tier5_21_20260510_nest_per_neuron_dimensionality_contract",
   "runner_revision": "tier5_21_nest_per_neuron_dimensionality_contract_20260510_0001",
   "status": "pass",
   "tier": "Tier 5.21 - NEST Per-Neuron State Dimensionality Diagnostic Contract"

@@ -1,7 +1,7 @@
 {
   "generated_at_utc": "2026-04-27T00:33:33+00:00",
-  "manifest": "/tmp/job18372215669669985472.tmp/cra_test/controlled_test_output/tier4_13_20260427_011912/tier4_13_results.json",
-  "output_dir": "/tmp/job18372215669669985472.tmp/cra_test/controlled_test_output/tier4_13_20260427_011912",
-  "report": "/tmp/job18372215669669985472.tmp/cra_test/controlled_test_output/tier4_13_20260427_011912/tier4_13_report.md",
+  "manifest": "<jobmanager_tmp>",
+  "output_dir": "<jobmanager_tmp>",
+  "report": "<jobmanager_tmp>",
   "status": "pass"
 }

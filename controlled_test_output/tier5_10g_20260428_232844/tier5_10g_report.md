@@ -9,7 +9,7 @@
 - Variants: `all`
 - Selected standard baselines: `sign_persistence,online_perceptron,online_logistic_regression,echo_state_network,small_gru,stdp_only_snn`
 - Smoke mode: `False`
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier5_10g_20260428_232844`
+- Output directory: `<repo>/controlled_test_output/tier5_10g_20260428_232844`
 
 Tier 5.10g tests whether CRA's internal host-side keyed context-memory pathway repairs the Tier 5.10f capacity/interference failure while still receiving raw observations.
 

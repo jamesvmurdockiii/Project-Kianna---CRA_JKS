@@ -9,7 +9,7 @@
 - Variants: `all`
 - Selected baselines: `sign_persistence,online_perceptron,online_logistic_regression,echo_state_network,stdp_only_snn`
 - Smoke mode: `False`
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier5_10_20260428_181322`
+- Output directory: `<repo>/controlled_test_output/tier5_10_20260428_181322`
 
 Tier 5.10 tests whether existing fast/slow/structural memory knobs help CRA retain or reacquire old regimes after they disappear and return.
 

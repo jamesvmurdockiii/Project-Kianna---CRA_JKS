@@ -1,4 +1,4 @@
-make: Entering directory '/tmp/job7861548461818300667.tmp/cra_432g/coral_reef_spinnaker/spinnaker_runtime'
+make: Entering directory '<jobmanager_tmp>'
 rm -f tests/test_runtime tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_lifecycle_core tests/test_four_core_local tests/test_four_core_mcpl_local tests/test_four_core_48event tests/test_mcpl_feasibility tests/test_mcpl_lookup_contract tests/test_mcpl_interchip_route_learning tests/test_mcpl_interchip_route_context tests/test_mcpl_lifecycle_interchip_route_learning tests/test_mcpl_lifecycle_interchip_route_lifecycle tests/test_mcpl_lifecycle_receive_learning tests/test_mcpl_lifecycle_receive_lifecycle tests/test_lifecycle tests/test_lifecycle_split tests/test_temporal_state
 cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_USE_MCPL_LOOKUP=1 -DCRA_RUNTIME_PROFILE_LEARNING_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=3 tests/test_mcpl_lifecycle_receive_contract.c stubs/spin1_api.c src/state_manager.c -lm -o tests/test_mcpl_lifecycle_receive_learning
 ./tests/test_mcpl_lifecycle_receive_learning
@@ -75,4 +75,4 @@ Profile test (RUNTIME_PROFILE_ID=7)
   PASS: lifecycle_core expected commands ack
   PASS: lifecycle_core unexpected commands nak
 All tests passed.
-make: Leaving directory '/tmp/job7861548461818300667.tmp/cra_432g/coral_reef_spinnaker/spinnaker_runtime'
+make: Leaving directory '<jobmanager_tmp>'

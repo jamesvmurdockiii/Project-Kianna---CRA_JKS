@@ -6,7 +6,7 @@
 - Population size: `8` fixed polyps
 - Seeds: `42, 43, 44`
 - Steps per run: `120`
-- Output directory: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808`
+- Output directory: `<repo>/controlled_test_output/tier4_12_20260426_170808`
 
 Tier 4.12 checks whether the fixed-pattern learning result survives movement from NEST to Brian2, while rejecting any synthetic spike fallback. The SpiNNaker item is a readiness prep smoke only; no hardware `sim.run()` is claimed here.
 

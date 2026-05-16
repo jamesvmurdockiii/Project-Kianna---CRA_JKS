@@ -2,7 +2,7 @@
 
 - Generated: `2026-04-29T19:00:40+00:00`
 - Status: **FAIL**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier5_17_20260429_190020`
+- Output directory: `<repo>/controlled_test_output/tier5_17_20260429_190020`
 - Tasks: `latent_cluster_sequence, temporal_motif_sequence, ambiguous_reentry_context`
 - Seeds: `[42, 43, 44]`
 

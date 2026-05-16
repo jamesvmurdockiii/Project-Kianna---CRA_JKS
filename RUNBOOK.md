@@ -522,8 +522,8 @@ make tier5-10c
 ```
 
 Tier 5.10c has completed as a noncanonical software mechanism pass. It shows an
-explicit host-side context-binding scaffold can drive CRA to perfect accuracy on
-the repaired memory-pressure tasks while reset/shuffle/wrong-memory ablations
+explicit host-side context-binding scaffold can drive CRA to `1.0` task accuracy
+on the repaired memory-pressure tasks while reset/shuffle/wrong-memory ablations
 fall behind. This authorizes internal-memory design and compact regression, but
 it is not native/on-chip memory or sleep/replay evidence.
 

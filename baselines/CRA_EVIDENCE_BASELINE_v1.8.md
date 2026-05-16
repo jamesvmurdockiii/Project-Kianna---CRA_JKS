@@ -28,7 +28,7 @@ CRA now has a bounded v1.8 host-side software predictive-context baseline: visib
 
 ## Tier 5.12c Predictive-Context Mechanism Summary
 
-- Output: `/Users/james/JKS:CRA/controlled_test_output/tier5_12c_20260429_062256`
+- Output: `<repo>/controlled_test_output/tier5_12c_20260429_062256`
 - Backend: `nest`
 - Tasks: `masked_input_prediction, event_stream_prediction, sensor_anomaly_prediction`
 - Steps: `720`
@@ -64,7 +64,7 @@ CRA now has a bounded v1.8 host-side software predictive-context baseline: visib
 
 ## Tier 5.12d Compact Regression / Promotion Gate Summary
 
-- Output: `/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070615`
+- Output: `<repo>/controlled_test_output/tier5_12d_20260429_070615`
 - Runtime seconds: `319.63600204200003`
 - Child checks passed: `6` / `6`
 - Criteria passed: `6` / `6`
@@ -73,12 +73,12 @@ CRA now has a bounded v1.8 host-side software predictive-context baseline: visib
 
 | Child | Status | Runtime Seconds | Manifest |
 | --- | --- | ---: | --- |
-| `tier1_controls` | `pass` | `17.536` | `/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070615/tier1_controls/tier1_results.json` |
-| `tier2_learning` | `pass` | `15.651` | `/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070615/tier2_learning/tier2_results.json` |
-| `tier3_ablations` | `pass` | `121.998` | `/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070615/tier3_ablations/tier3_results.json` |
-| `target_task_smokes` | `pass` | `9.938` | `/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070615/target_task_smokes/tier5_6_results.json` |
-| `replay_consolidation_guardrail` | `pass` | `8.937` | `/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070615/replay_consolidation_guardrail/tier5_11d_results.json` |
-| `predictive_context_guardrail` | `pass` | `145.563` | `/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070615/predictive_context_guardrail/tier5_12c_results.json` |
+| `tier1_controls` | `pass` | `17.536` | `<repo>/controlled_test_output/tier5_12d_20260429_070615/tier1_controls/tier1_results.json` |
+| `tier2_learning` | `pass` | `15.651` | `<repo>/controlled_test_output/tier5_12d_20260429_070615/tier2_learning/tier2_results.json` |
+| `tier3_ablations` | `pass` | `121.998` | `<repo>/controlled_test_output/tier5_12d_20260429_070615/tier3_ablations/tier3_results.json` |
+| `target_task_smokes` | `pass` | `9.938` | `<repo>/controlled_test_output/tier5_12d_20260429_070615/target_task_smokes/tier5_6_results.json` |
+| `replay_consolidation_guardrail` | `pass` | `8.937` | `<repo>/controlled_test_output/tier5_12d_20260429_070615/replay_consolidation_guardrail/tier5_11d_results.json` |
+| `predictive_context_guardrail` | `pass` | `145.563` | `<repo>/controlled_test_output/tier5_12d_20260429_070615/predictive_context_guardrail/tier5_12c_results.json` |
 
 ### Promotion Criteria
 

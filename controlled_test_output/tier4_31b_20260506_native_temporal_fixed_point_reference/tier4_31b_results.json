@@ -440,7 +440,7 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_31a_20260506_native_temporal_substrate_readiness/tier4_31a_results.json"
+      "value": "<repo>/controlled_test_output/tier4_31a_20260506_native_temporal_substrate_readiness/tier4_31a_results.json"
     },
     {
       "name": "Tier 4.31a readiness passed",
@@ -454,7 +454,7 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/tier5_19c_results.json"
+      "value": "<repo>/controlled_test_output/tier5_19c_20260505_fading_memory_regression/tier5_19c_results.json"
     },
     {
       "name": "Tier 5.19c reference passed",
@@ -1725,7 +1725,7 @@
     ],
     "tier": "Tier 4.31c - Native Temporal-Substrate Source/Runtime Implementation"
   },
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_31b_20260506_native_temporal_fixed_point_reference",
+  "output_dir": "<repo>/controlled_test_output/tier4_31b_20260506_native_temporal_fixed_point_reference",
   "runner_revision": "tier4_31b_native_temporal_fixed_point_reference_20260506_0001",
   "runtime_seconds": 0.8441608749999998,
   "seeds": [

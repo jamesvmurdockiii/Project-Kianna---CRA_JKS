@@ -1,10 +1,10 @@
 {
   "artifacts": {
-    "command_log": "/Users/james/JKS:CRA/controlled_test_output/tier4_31c_20260506_native_temporal_runtime_source_audit/tier4_31c_command_log.txt",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_31c_20260506_native_temporal_runtime_source_audit/tier4_31c_report.md",
-    "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_31c_20260506_native_temporal_runtime_source_audit/tier4_31c_results.json",
-    "source_checks_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_31c_20260506_native_temporal_runtime_source_audit/tier4_31c_source_checks.csv",
-    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_31c_20260506_native_temporal_runtime_source_audit/tier4_31c_summary.csv"
+    "command_log": "<repo>/controlled_test_output/tier4_31c_20260506_native_temporal_runtime_source_audit/tier4_31c_command_log.txt",
+    "report_md": "<repo>/controlled_test_output/tier4_31c_20260506_native_temporal_runtime_source_audit/tier4_31c_report.md",
+    "results_json": "<repo>/controlled_test_output/tier4_31c_20260506_native_temporal_runtime_source_audit/tier4_31c_results.json",
+    "source_checks_csv": "<repo>/controlled_test_output/tier4_31c_20260506_native_temporal_runtime_source_audit/tier4_31c_source_checks.csv",
+    "summary_csv": "<repo>/controlled_test_output/tier4_31c_20260506_native_temporal_runtime_source_audit/tier4_31c_summary.csv"
   },
   "claim_boundary": "Tier 4.31c is local source/runtime host evidence only. It proves the custom C runtime owns the seven-EMA fixed-point temporal subset from Tier 4.31b with compact readback and behavior-backed shams. It is not EBRAINS hardware evidence, not speedup, not nonlinear recurrence, not native replay/sleep, not native macro eligibility, and not benchmark superiority.",
   "command_collisions": {},
@@ -406,7 +406,7 @@
   "generated_at_utc": "2026-05-06T15:44:12+00:00",
   "mode": "local-source-audit",
   "next_step": "Tier 4.31d native temporal-substrate hardware smoke: prepare and run a one-board/one-seed compact hardware probe only after this local source audit remains green.",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_31c_20260506_native_temporal_runtime_source_audit",
+  "output_dir": "<repo>/controlled_test_output/tier4_31c_20260506_native_temporal_runtime_source_audit",
   "runner_revision": "tier4_31c_native_temporal_runtime_source_audit_20260506_0001",
   "source_checks": [
     {

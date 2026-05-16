@@ -744,11 +744,11 @@
       "outcome": "mechanism_candidate"
     }
   ],
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7t_20260509_low_rank_state_repair_campaign_contract",
-  "planning_document": "/Users/james/JKS:CRA/docs/TIER_7_7_LOW_RANK_REPAIR_PLAN.md",
+  "output_dir": "<repo>/controlled_test_output/tier7_7t_20260509_low_rank_state_repair_campaign_contract",
+  "planning_document": "<repo>/docs/TIER_7_7_LOW_RANK_REPAIR_PLAN.md",
   "prerequisite": {
     "description": "Tier 7.7s promoted temporal-basis interface as bounded engineering utility; Tier 7.7t follows as the next contract.",
-    "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_7s_20260509_bounded_temporal_basis_utility_promotion/tier7_7s_results.json",
+    "path": "<repo>/controlled_test_output/tier7_7s_20260509_bounded_temporal_basis_utility_promotion/tier7_7s_results.json",
     "sha256": "6141abee645d1797c74c3751bdeb92d52b79c9b4cb060cf060261534c5918f3b",
     "tier": "7.7s"
   },

@@ -28,6 +28,6 @@ Ingest confirms returned EBRAINS run-hardware artifacts only; baseline decisions
 
 ## Artifacts
 
-- `results_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_hardware_pass_ingested/tier4_31d_hw_results.json`
-- `report_md`: `/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_hardware_pass_ingested/tier4_31d_hw_report.md`
-- `summary_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier4_31d_hw_20260506_hardware_pass_ingested/tier4_31d_hw_summary.csv`
+- `results_json`: `<repo>/controlled_test_output/tier4_31d_hw_20260506_hardware_pass_ingested/tier4_31d_hw_results.json`
+- `report_md`: `<repo>/controlled_test_output/tier4_31d_hw_20260506_hardware_pass_ingested/tier4_31d_hw_report.md`
+- `summary_csv`: `<repo>/controlled_test_output/tier4_31d_hw_20260506_hardware_pass_ingested/tier4_31d_hw_summary.csv`

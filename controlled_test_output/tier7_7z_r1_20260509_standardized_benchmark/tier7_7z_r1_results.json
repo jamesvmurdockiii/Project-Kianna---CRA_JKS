@@ -88,7 +88,7 @@
   },
   "next_gate": "Post-freeze public adapter rerun (C-MAPSS/NAB) if aggregate improves",
   "outcome": "v26_beats_v25_and_esn",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7z_r1_20260509_standardized_benchmark",
+  "output_dir": "<repo>/controlled_test_output/tier7_7z_r1_20260509_standardized_benchmark",
   "runner_revision": "tier7_7z_r1_standardized_benchmark_20260509_0001",
   "status": "pass",
   "tier": "Tier 7.7z-r1 \u2014 v2.6 Standardized Benchmark Rerun",

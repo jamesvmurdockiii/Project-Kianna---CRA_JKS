@@ -3,7 +3,7 @@
 - Generated: `2026-04-28T20:05:28+00:00`
 - Backend: `mock`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier6_4_20260428_160526`
+- Output directory: `<repo>/controlled_test_output/tier6_4_20260428_160526`
 
 Tier 6.4 tests whether seeded reef circuit motifs are causal contributors rather than decorative labels.
 

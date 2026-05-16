@@ -2,7 +2,7 @@
 
 - Generated: `2026-05-09T03:06:35+00:00`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout`
+- Output directory: `<repo>/controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout`
 - Runner revision: `tier7_4h_policy_action_attribution_closeout_20260509_0001`
 
 ## Summary
@@ -37,9 +37,9 @@
 
 | Criterion | Value | Rule | Pass | Details |
 | --- | --- | --- | --- | --- |
-| tier7_4f_results_exist | `True` | must exist | yes | /Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_results.json |
+| tier7_4f_results_exist | `True` | must exist | yes | <repo>/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_results.json |
 | tier7_4f_status_pass | `pass` | case-insensitive == PASS | yes |  |
-| tier7_4g_results_exist | `True` | must exist | yes | /Users/james/JKS:CRA/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_results.json |
+| tier7_4g_results_exist | `True` | must exist | yes | <repo>/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_results.json |
 | tier7_4g_status_pass | `PASS` | case-insensitive == PASS | yes |  |
 | narrow_cmapss_signal_preserved | `True` | must be True | yes |  |
 | cmapss_external_ci_positive | `56.89735573832698` | > 0 | yes |  |

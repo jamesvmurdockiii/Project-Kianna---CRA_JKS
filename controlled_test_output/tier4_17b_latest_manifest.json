@@ -1,11 +1,11 @@
 {
   "canonical": false,
   "claim": "Tier 4.17b local step-vs-chunked parity diagnostic; not hardware evidence.",
-  "comparison_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_221734_local_preflight/local_step_chunk_parity/tier4_17b_comparisons.csv",
+  "comparison_csv": "<repo>/controlled_test_output/tier4_20b_20260429_221734_local_preflight/local_step_chunk_parity/tier4_17b_comparisons.csv",
   "generated_at_utc": "2026-04-30T02:17:37+00:00",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_221734_local_preflight/local_step_chunk_parity/tier4_17b_results.json",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_221734_local_preflight/local_step_chunk_parity",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_221734_local_preflight/local_step_chunk_parity/tier4_17b_report.md",
+  "manifest": "<repo>/controlled_test_output/tier4_20b_20260429_221734_local_preflight/local_step_chunk_parity/tier4_17b_results.json",
+  "output_dir": "<repo>/controlled_test_output/tier4_20b_20260429_221734_local_preflight/local_step_chunk_parity",
+  "report": "<repo>/controlled_test_output/tier4_20b_20260429_221734_local_preflight/local_step_chunk_parity/tier4_17b_report.md",
   "status": "pass",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_221734_local_preflight/local_step_chunk_parity/tier4_17b_summary.csv"
+  "summary_csv": "<repo>/controlled_test_output/tier4_20b_20260429_221734_local_preflight/local_step_chunk_parity/tier4_17b_summary.csv"
 }

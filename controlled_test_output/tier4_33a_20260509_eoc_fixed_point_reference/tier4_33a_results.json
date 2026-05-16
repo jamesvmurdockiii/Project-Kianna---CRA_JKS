@@ -57,7 +57,7 @@
   "n_total": 9,
   "next_gate": "Tier 4.33b C runtime source audit",
   "outcome": "fixed_point_reference_pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_33a_20260509_eoc_fixed_point_reference",
+  "output_dir": "<repo>/controlled_test_output/tier4_33a_20260509_eoc_fixed_point_reference",
   "runner_revision": "tier4_33a_eoc_fixed_point_reference_20260509_0001",
   "status": "pass",
   "stdev_ratio": 0.0389,

@@ -1,5 +1,5 @@
 criterion,passed,value,rule
-Tier 7.1j exists,True,/Users/james/JKS:CRA/controlled_test_output/tier7_1j_20260508_nab_failure_localization/tier7_1j_results.json,exists
+Tier 7.1j exists,True,<repo>/controlled_test_output/tier7_1j_20260508_nab_failure_localization/tier7_1j_results.json,exists
 Tier 7.1j passed,True,pass,== pass
 alarm policies tested,True,"['raw', 'persist2', 'persist3', 'persist2_cooldown12', 'hysteresis_995_990']",>= 5 policies
 key models present,True,"['ewma_residual_detector', 'fixed_random_reservoir_online_residual', 'rolling_mad_detector', 'rolling_zscore_detector', 'v2_2_fading_memory_prediction_error', 'v2_3_generic_recurrent_prediction_error', 'v2_3_no_update_ablation', 'v2_3_shuffled_state_sham', 'v2_3_shuffled_target_control']",contains key models

@@ -1,5 +1,5 @@
 criterion,value,rule,pass,details
-tier7_5a_prerequisite_exists,True,must exist,True,/Users/james/JKS:CRA/controlled_test_output/tier7_5a_20260509_curriculum_environment_contract/tier7_5a_results.json
+tier7_5a_prerequisite_exists,True,must exist,True,<repo>/controlled_test_output/tier7_5a_20260509_curriculum_environment_contract/tier7_5a_results.json
 tier7_5a_prerequisite_passed,PASS,case-insensitive == PASS,True,
 family_count,6,== 6,True,
 split_count,4,== 4,True,

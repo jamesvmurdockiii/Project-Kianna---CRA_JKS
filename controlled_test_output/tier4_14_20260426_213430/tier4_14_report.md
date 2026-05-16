@@ -3,8 +3,8 @@
 - Generated: `2026-04-27T01:34:30+00:00`
 - Mode: `characterize-existing`
 - Status: **PASS**
-- Output directory: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_14_20260426_213430`
-- Source hardware bundle: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass`
+- Output directory: `<repo>/controlled_test_output/tier4_14_20260426_213430`
+- Source hardware bundle: `<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass`
 
 Tier 4.14 is not a new learning claim. It characterizes the wall-clock and sPyNNaker provenance costs behind the Tier 4.13 minimal hardware capsule.
 
@@ -61,14 +61,14 @@ The next engineering implication is to batch more closed-loop work per hardware 
 
 ## Artifacts
 
-- `manifest_json`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_14_20260426_213430/tier4_14_results.json`
-- `summary_csv`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_14_20260426_213430/tier4_14_summary.csv`
-- `category_timers_csv`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_14_20260426_213430/tier4_14_category_timers.csv`
-- `top_algorithms_csv`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_14_20260426_213430/tier4_14_top_algorithms.csv`
-- `runtime_breakdown_csv`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_14_20260426_213430/tier4_14_runtime_breakdown.csv`
-- `runtime_breakdown_png`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_14_20260426_213430/tier4_14_runtime_breakdown.png`
-- `source_provenance_sqlite`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/spinnaker_reports/2026-04-27-01-19-12-390038/global_provenance.sqlite3`
-- `source_timeseries_csv`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/spinnaker_hardware_seed42_timeseries.csv`
-- `source_tier4_13_results`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_results.json`
+- `manifest_json`: `<repo>/controlled_test_output/tier4_14_20260426_213430/tier4_14_results.json`
+- `summary_csv`: `<repo>/controlled_test_output/tier4_14_20260426_213430/tier4_14_summary.csv`
+- `category_timers_csv`: `<repo>/controlled_test_output/tier4_14_20260426_213430/tier4_14_category_timers.csv`
+- `top_algorithms_csv`: `<repo>/controlled_test_output/tier4_14_20260426_213430/tier4_14_top_algorithms.csv`
+- `runtime_breakdown_csv`: `<repo>/controlled_test_output/tier4_14_20260426_213430/tier4_14_runtime_breakdown.csv`
+- `runtime_breakdown_png`: `<repo>/controlled_test_output/tier4_14_20260426_213430/tier4_14_runtime_breakdown.png`
+- `source_provenance_sqlite`: `<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/spinnaker_reports/2026-04-27-01-19-12-390038/global_provenance.sqlite3`
+- `source_timeseries_csv`: `<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/spinnaker_hardware_seed42_timeseries.csv`
+- `source_tier4_13_results`: `<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_results.json`
 
 ![runtime_breakdown](tier4_14_runtime_breakdown.png)

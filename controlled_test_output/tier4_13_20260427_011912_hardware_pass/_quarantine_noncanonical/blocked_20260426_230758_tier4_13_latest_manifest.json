@@ -1,7 +1,7 @@
 {
   "generated_at_utc": "2026-04-26T23:07:58+00:00",
-  "manifest": "/tmp/job5823082324101597380.tmp/CRA_Spinnaker_Test/controlled_test_output/tier4_13_20260427_000758/tier4_13_results.json",
-  "output_dir": "/tmp/job5823082324101597380.tmp/CRA_Spinnaker_Test/controlled_test_output/tier4_13_20260427_000758",
-  "report": "/tmp/job5823082324101597380.tmp/CRA_Spinnaker_Test/controlled_test_output/tier4_13_20260427_000758/tier4_13_report.md",
+  "manifest": "<jobmanager_tmp>",
+  "output_dir": "<jobmanager_tmp>",
+  "report": "<jobmanager_tmp>",
   "status": "blocked"
 }

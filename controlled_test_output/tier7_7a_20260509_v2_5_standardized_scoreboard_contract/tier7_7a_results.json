@@ -457,7 +457,7 @@
       "pass": true,
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.5.json"
+      "value": "<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.5.json"
     },
     {
       "criterion": "Tier 7.6e prerequisite passed",
@@ -729,13 +729,13 @@
     }
   ],
   "generated_at_utc": "2026-05-09T12:13:13+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract",
+  "output_dir": "<repo>/controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract",
   "prerequisites": {
-    "tier7_0j_results": "/Users/james/JKS:CRA/controlled_test_output/tier7_0j_20260508_generic_recurrent_promotion_gate/tier7_0j_results.json",
+    "tier7_0j_results": "<repo>/controlled_test_output/tier7_0j_20260508_generic_recurrent_promotion_gate/tier7_0j_results.json",
     "tier7_0j_sha256": "94b77b7e02501d96390913f4ee12a967e5df0b0512f2f80b45f163cb8eac93e4",
-    "tier7_6e_results": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/tier7_6e_results.json",
+    "tier7_6e_results": "<repo>/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/tier7_6e_results.json",
     "tier7_6e_sha256": "f33004cab68980d0afe62b0ea7e53f3bdf7dad3c1ca269ad0b7bfa71f131ade6",
-    "v2_5_baseline": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.5.json",
+    "v2_5_baseline": "<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.5.json",
     "v2_5_baseline_claim": "",
     "v2_5_baseline_sha256": "df62ac3b0f76ed6a64f88a9f2a70e31e4fbe409096e2622877e6c6f77db7fb89"
   },

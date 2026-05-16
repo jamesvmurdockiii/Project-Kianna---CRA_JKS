@@ -12,8 +12,8 @@ Prepared source bundle only; no hardware evidence until returned run-hardware ar
 ## Summary
 
 - upload_package: `cra_432a_hw`
-- upload_bundle: `/Users/james/JKS:CRA/controlled_test_output/tier4_32a_hw_20260506_prepared/ebrains_upload_bundle/cra_432a_hw`
-- stable_upload_folder: `/Users/james/JKS:CRA/ebrains_jobs/cra_432a_hw`
+- upload_bundle: `<repo>/controlled_test_output/tier4_32a_hw_20260506_prepared/ebrains_upload_bundle/cra_432a_hw`
+- stable_upload_folder: `<repo>/ebrains_jobs/cra_432a_hw`
 - job_command: `cra_432a_hw/experiments/tier4_32a_hw_single_shard_scale_stress.py --mode run-hardware --output-dir tier4_32a_hw_job_output`
 - what_i_need_from_user: `Upload `cra_432a_hw` to EBRAINS/JobManager and run the emitted command.`
 - scope: `['point_04c_reference', 'point_05c_lifecycle']`
@@ -27,8 +27,8 @@ Prepared source bundle only; no hardware evidence until returned run-hardware ar
 | Tier 4.32a-r1 protocol repair passed | `"pass"` | == pass | yes |
 | MCPL repair source checks pass | `"pass"` | == pass | yes |
 | runner and dependencies py_compile | `"pass"` | == pass | yes |
-| upload bundle created | `"/Users/james/JKS:CRA/controlled_test_output/tier4_32a_hw_20260506_prepared/ebrains_upload_bundle/cra_432a_hw"` | exists | yes |
-| stable upload folder created | `"/Users/james/JKS:CRA/ebrains_jobs/cra_432a_hw"` | exists | yes |
+| upload bundle created | `"<repo>/controlled_test_output/tier4_32a_hw_20260506_prepared/ebrains_upload_bundle/cra_432a_hw"` | exists | yes |
+| stable upload folder created | `"<repo>/ebrains_jobs/cra_432a_hw"` | exists | yes |
 | run-hardware command emitted | `"cra_432a_hw/experiments/tier4_32a_hw_single_shard_scale_stress.py --mode run-hardware --output-dir tier4_32a_hw_job_output"` | contains --mode run-hardware | yes |
 | bundle includes shard-aware MCPL key | `"MCPL_KEY_SHARD_SHIFT"` | present | yes |
 | bundle includes value/meta MCPL replies | `"MCPL_MSG_LOOKUP_REPLY_META"` | present | yes |

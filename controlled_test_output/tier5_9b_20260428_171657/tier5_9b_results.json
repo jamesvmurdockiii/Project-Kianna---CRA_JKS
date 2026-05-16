@@ -1,33 +1,33 @@
 {
   "artifacts": {
-    "comparisons_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_9b_20260428_171657/tier5_9b_comparisons.csv",
-    "fairness_contract_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_9b_20260428_171657/tier5_9b_fairness_contract.json",
-    "macro_edges_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_9b_20260428_171657/tier5_9b_macro_edges.png",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_9b_20260428_171657/tier5_9b_report.md",
-    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_9b_20260428_171657/tier5_9b_summary.csv"
+    "comparisons_csv": "<repo>/controlled_test_output/tier5_9b_20260428_171657/tier5_9b_comparisons.csv",
+    "fairness_contract_json": "<repo>/controlled_test_output/tier5_9b_20260428_171657/tier5_9b_fairness_contract.json",
+    "macro_edges_png": "<repo>/controlled_test_output/tier5_9b_20260428_171657/tier5_9b_macro_edges.png",
+    "report_md": "<repo>/controlled_test_output/tier5_9b_20260428_171657/tier5_9b_report.md",
+    "summary_csv": "<repo>/controlled_test_output/tier5_9b_20260428_171657/tier5_9b_summary.csv"
   },
   "backend": "mock",
   "command": "experiments/tier5_macro_eligibility_repair.py --backend mock --tasks delayed_cue,variable_delay_cue --steps 160 --seed-count 1 --models sign_persistence,online_perceptron --variants all --smoke",
   "generated_at_utc": "2026-04-28T21:17:00+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_9b_20260428_171657",
+  "output_dir": "<repo>/controlled_test_output/tier5_9b_20260428_171657",
   "result": {
     "artifacts": {
-      "comparisons_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_9b_20260428_171657/tier5_9b_comparisons.csv",
-      "delayed_cue_macro_eligibility_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_9b_20260428_171657/delayed_cue_macro_eligibility_seed42_timeseries.csv",
-      "delayed_cue_macro_eligibility_shuffled_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_9b_20260428_171657/delayed_cue_macro_eligibility_shuffled_seed42_timeseries.csv",
-      "delayed_cue_macro_eligibility_zero_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_9b_20260428_171657/delayed_cue_macro_eligibility_zero_seed42_timeseries.csv",
-      "delayed_cue_online_perceptron_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_9b_20260428_171657/delayed_cue_online_perceptron_seed42_timeseries.csv",
-      "delayed_cue_sign_persistence_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_9b_20260428_171657/delayed_cue_sign_persistence_seed42_timeseries.csv",
-      "delayed_cue_v1_4_pending_horizon_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_9b_20260428_171657/delayed_cue_v1_4_pending_horizon_seed42_timeseries.csv",
-      "fairness_contract_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_9b_20260428_171657/tier5_9b_fairness_contract.json",
-      "macro_edges_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_9b_20260428_171657/tier5_9b_macro_edges.png",
-      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_9b_20260428_171657/tier5_9b_summary.csv",
-      "variable_delay_cue_macro_eligibility_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_9b_20260428_171657/variable_delay_cue_macro_eligibility_seed42_timeseries.csv",
-      "variable_delay_cue_macro_eligibility_shuffled_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_9b_20260428_171657/variable_delay_cue_macro_eligibility_shuffled_seed42_timeseries.csv",
-      "variable_delay_cue_macro_eligibility_zero_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_9b_20260428_171657/variable_delay_cue_macro_eligibility_zero_seed42_timeseries.csv",
-      "variable_delay_cue_online_perceptron_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_9b_20260428_171657/variable_delay_cue_online_perceptron_seed42_timeseries.csv",
-      "variable_delay_cue_sign_persistence_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_9b_20260428_171657/variable_delay_cue_sign_persistence_seed42_timeseries.csv",
-      "variable_delay_cue_v1_4_pending_horizon_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_9b_20260428_171657/variable_delay_cue_v1_4_pending_horizon_seed42_timeseries.csv"
+      "comparisons_csv": "<repo>/controlled_test_output/tier5_9b_20260428_171657/tier5_9b_comparisons.csv",
+      "delayed_cue_macro_eligibility_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_9b_20260428_171657/delayed_cue_macro_eligibility_seed42_timeseries.csv",
+      "delayed_cue_macro_eligibility_shuffled_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_9b_20260428_171657/delayed_cue_macro_eligibility_shuffled_seed42_timeseries.csv",
+      "delayed_cue_macro_eligibility_zero_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_9b_20260428_171657/delayed_cue_macro_eligibility_zero_seed42_timeseries.csv",
+      "delayed_cue_online_perceptron_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_9b_20260428_171657/delayed_cue_online_perceptron_seed42_timeseries.csv",
+      "delayed_cue_sign_persistence_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_9b_20260428_171657/delayed_cue_sign_persistence_seed42_timeseries.csv",
+      "delayed_cue_v1_4_pending_horizon_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_9b_20260428_171657/delayed_cue_v1_4_pending_horizon_seed42_timeseries.csv",
+      "fairness_contract_json": "<repo>/controlled_test_output/tier5_9b_20260428_171657/tier5_9b_fairness_contract.json",
+      "macro_edges_png": "<repo>/controlled_test_output/tier5_9b_20260428_171657/tier5_9b_macro_edges.png",
+      "summary_csv": "<repo>/controlled_test_output/tier5_9b_20260428_171657/tier5_9b_summary.csv",
+      "variable_delay_cue_macro_eligibility_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_9b_20260428_171657/variable_delay_cue_macro_eligibility_seed42_timeseries.csv",
+      "variable_delay_cue_macro_eligibility_shuffled_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_9b_20260428_171657/variable_delay_cue_macro_eligibility_shuffled_seed42_timeseries.csv",
+      "variable_delay_cue_macro_eligibility_zero_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_9b_20260428_171657/variable_delay_cue_macro_eligibility_zero_seed42_timeseries.csv",
+      "variable_delay_cue_online_perceptron_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_9b_20260428_171657/variable_delay_cue_online_perceptron_seed42_timeseries.csv",
+      "variable_delay_cue_sign_persistence_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_9b_20260428_171657/variable_delay_cue_sign_persistence_seed42_timeseries.csv",
+      "variable_delay_cue_v1_4_pending_horizon_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_9b_20260428_171657/variable_delay_cue_v1_4_pending_horizon_seed42_timeseries.csv"
     },
     "criteria": [
       {

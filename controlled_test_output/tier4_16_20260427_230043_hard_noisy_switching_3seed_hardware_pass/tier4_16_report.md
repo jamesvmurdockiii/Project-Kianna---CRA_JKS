@@ -3,7 +3,7 @@
 - Generated: `2026-04-27T23:03:52+00:00`
 - Mode: `ingest`
 - Status: **PASS**
-- Output directory: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass`
+- Output directory: `<repo>/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass`
 
 Tier 4.16 tests whether the Tier 5.4 confirmed delayed-credit setting survives on real SpiNNaker hardware.
 
@@ -52,21 +52,21 @@ Tier 4.16 tests whether the Tier 5.4 confirmed delayed-credit setting survives o
 
 ## Artifacts
 
-- `manifest_json`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass/tier4_16_results.json`
-- `summary_csv`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass/tier4_16_summary.csv`
-- `ingested_source`: `/private/tmp/cra_tier4_16b_3seed_hard_switch_ingest/tier4_16_results.json`
-- `tier4_16_summary.csv`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass/tier4_16_summary.csv`
-- `tier4_16_task_summary.csv`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass/tier4_16_task_summary.csv`
-- `tier4_16_hardware_summary.png`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass/tier4_16_hardware_summary.png`
-- `spinnaker_hardware_hard_noisy_switching_seed42_timeseries.csv`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass/spinnaker_hardware_hard_noisy_switching_seed42_timeseries.csv`
-- `spinnaker_hardware_hard_noisy_switching_seed43_timeseries.csv`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass/spinnaker_hardware_hard_noisy_switching_seed43_timeseries.csv`
-- `spinnaker_hardware_hard_noisy_switching_seed44_timeseries.csv`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass/spinnaker_hardware_hard_noisy_switching_seed44_timeseries.csv`
-- `spinnaker_hardware_hard_noisy_switching_seed42_timeseries.png`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass/spinnaker_hardware_hard_noisy_switching_seed42_timeseries.png`
-- `spinnaker_hardware_hard_noisy_switching_seed43_timeseries.png`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass/spinnaker_hardware_hard_noisy_switching_seed43_timeseries.png`
-- `spinnaker_hardware_hard_noisy_switching_seed44_timeseries.png`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass/spinnaker_hardware_hard_noisy_switching_seed44_timeseries.png`
-- `raw_reports.zip`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass/raw_hardware_artifacts/reports.zip`
-- `raw_global_provenance.sqlite3`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass/raw_hardware_artifacts/global_provenance.sqlite3`
-- `raw_finished`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass/raw_hardware_artifacts/finished`
-- `raw_tier4_16_latest_manifest.json`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass/raw_hardware_artifacts/tier4_16_latest_manifest.json`
-- `raw_source_tier4_16_report.md`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass/raw_hardware_artifacts/source_tier4_16_report.md`
-- `raw_hardware_artifacts_dir`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass/raw_hardware_artifacts`
+- `manifest_json`: `<repo>/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass/tier4_16_results.json`
+- `summary_csv`: `<repo>/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass/tier4_16_summary.csv`
+- `ingested_source`: `<private-tmp>/cra_tier4_16b_3seed_hard_switch_ingest/tier4_16_results.json`
+- `tier4_16_summary.csv`: `<repo>/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass/tier4_16_summary.csv`
+- `tier4_16_task_summary.csv`: `<repo>/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass/tier4_16_task_summary.csv`
+- `tier4_16_hardware_summary.png`: `<repo>/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass/tier4_16_hardware_summary.png`
+- `spinnaker_hardware_hard_noisy_switching_seed42_timeseries.csv`: `<repo>/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass/spinnaker_hardware_hard_noisy_switching_seed42_timeseries.csv`
+- `spinnaker_hardware_hard_noisy_switching_seed43_timeseries.csv`: `<repo>/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass/spinnaker_hardware_hard_noisy_switching_seed43_timeseries.csv`
+- `spinnaker_hardware_hard_noisy_switching_seed44_timeseries.csv`: `<repo>/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass/spinnaker_hardware_hard_noisy_switching_seed44_timeseries.csv`
+- `spinnaker_hardware_hard_noisy_switching_seed42_timeseries.png`: `<repo>/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass/spinnaker_hardware_hard_noisy_switching_seed42_timeseries.png`
+- `spinnaker_hardware_hard_noisy_switching_seed43_timeseries.png`: `<repo>/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass/spinnaker_hardware_hard_noisy_switching_seed43_timeseries.png`
+- `spinnaker_hardware_hard_noisy_switching_seed44_timeseries.png`: `<repo>/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass/spinnaker_hardware_hard_noisy_switching_seed44_timeseries.png`
+- `raw_reports.zip`: `<repo>/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass/raw_hardware_artifacts/reports.zip`
+- `raw_global_provenance.sqlite3`: `<repo>/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass/raw_hardware_artifacts/global_provenance.sqlite3`
+- `raw_finished`: `<repo>/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass/raw_hardware_artifacts/finished`
+- `raw_tier4_16_latest_manifest.json`: `<repo>/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass/raw_hardware_artifacts/tier4_16_latest_manifest.json`
+- `raw_source_tier4_16_report.md`: `<repo>/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass/raw_hardware_artifacts/source_tier4_16_report.md`
+- `raw_hardware_artifacts_dir`: `<repo>/controlled_test_output/tier4_16_20260427_230043_hard_noisy_switching_3seed_hardware_pass/raw_hardware_artifacts`

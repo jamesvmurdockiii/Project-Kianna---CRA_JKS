@@ -7,7 +7,7 @@
 - Run lengths: `120, 240, 480, 960, 1500`
 - Tasks: `sensor_control,hard_noisy_switching,delayed_cue`
 - Models: `all`
-- Output directory: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_2_20260426_234500`
+- Output directory: `<repo>/controlled_test_output/tier5_2_20260426_234500`
 
 Tier 5.2 extends Tier 5.1 by repeating the same CRA and external-baseline comparison across multiple online run lengths. It answers whether CRA's hard-task edge grows, disappears, or remains mixed as the stream gets longer.
 

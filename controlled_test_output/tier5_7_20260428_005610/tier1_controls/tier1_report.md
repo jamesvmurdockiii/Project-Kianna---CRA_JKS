@@ -6,7 +6,7 @@
 - Steps per run: `80`
 - Seed repeat count: `3`
 - Base seed: `42`
-- Output directory: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier1_controls`
+- Output directory: `<repo>/controlled_test_output/tier5_7_20260428_005610/tier1_controls`
 
 Tier 1 is a negative-control tier. Passing it does not prove learning; it proves the organism does not appear to learn when useful signal is absent or labels are broken.
 

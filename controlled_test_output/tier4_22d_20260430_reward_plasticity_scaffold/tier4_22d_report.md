@@ -2,7 +2,7 @@
 
 - Generated: `2026-04-30T18:45:12+00:00`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_22d_20260430_reward_plasticity_scaffold`
+- Output directory: `<repo>/controlled_test_output/tier4_22d_20260430_reward_plasticity_scaffold`
 
 Tier 4.22d adds the first custom-C reward/plasticity scaffold after the persistent-state gate. This is intentionally local and bounded: it proves trace-gated reward updates exist and are test-covered before a hardware allocation is spent.
 

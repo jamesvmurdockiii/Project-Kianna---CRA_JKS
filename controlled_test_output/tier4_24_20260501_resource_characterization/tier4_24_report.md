@@ -3,7 +3,7 @@
 - Generated: `2026-05-02T01:51:35.703003+00:00`
 - Mode: `local`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_24_20260501_resource_characterization`
+- Output directory: `<repo>/controlled_test_output/tier4_24_20260501_resource_characterization`
 
 ## Claim Boundary
 

@@ -2,7 +2,7 @@
 
 - Generated: `2026-04-30T17:32:07+00:00`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_22a_20260430_custom_runtime_contract`
+- Output directory: `<repo>/controlled_test_output/tier4_22a_20260430_custom_runtime_contract`
 
 Tier 4.22a is the auditable migration contract from the proven chunked-host hardware bridge toward a custom/hybrid/on-chip runtime. It is a design gate, not a hardware pass.
 
@@ -22,11 +22,11 @@ Tier 4.22a is the auditable migration contract from the proven chunked-host hard
 ## Reference Evidence
 
 - Tier 4.20c status: `pass`
-- Tier 4.20c manifest: `/Users/james/JKS:CRA/controlled_test_output/tier4_20c_20260430_v2_1_bridge_three_seed_hardware_pass_ingested/tier4_20c_results.json`
+- Tier 4.20c manifest: `<repo>/controlled_test_output/tier4_20c_20260430_v2_1_bridge_three_seed_hardware_pass_ingested/tier4_20c_results.json`
 - Tier 4.20c child runs: `6`
 - Tier 4.20c minimum real spike readback: `94727`
 - Tier 4.21a status: `pass`
-- Tier 4.21a manifest: `/Users/james/JKS:CRA/controlled_test_output/tier4_21a_20260430_keyed_context_memory_seed42_hardware_pass_ingested/tier4_21a_results.json`
+- Tier 4.21a manifest: `<repo>/controlled_test_output/tier4_21a_20260430_keyed_context_memory_seed42_hardware_pass_ingested/tier4_21a_results.json`
 - Tier 4.21a runs: `4`
 - Tier 4.21a minimum real spike readback: `714601`
 - Tier 4.21a runtime: `3522.71` seconds

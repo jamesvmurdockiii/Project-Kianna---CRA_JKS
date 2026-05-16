@@ -1,8 +1,8 @@
 {
   "artifacts": {
-    "child_manifests_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070531/tier5_12d_child_manifests.json",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070531/tier5_12d_report.md",
-    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070531/tier5_12d_summary.csv"
+    "child_manifests_json": "<repo>/controlled_test_output/tier5_12d_20260429_070531/tier5_12d_child_manifests.json",
+    "report_md": "<repo>/controlled_test_output/tier5_12d_20260429_070531/tier5_12d_report.md",
+    "summary_csv": "<repo>/controlled_test_output/tier5_12d_20260429_070531/tier5_12d_summary.csv"
   },
   "backend": "mock",
   "candidate_baseline": {
@@ -32,18 +32,18 @@
         "0.2",
         "--stop-on-fail",
         "--output-dir",
-        "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070531/tier1_controls"
+        "<repo>/controlled_test_output/tier5_12d_20260429_070531/tier1_controls"
       ],
       "failure_reason": "",
-      "manifest_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070531/tier1_controls/tier1_results.json",
+      "manifest_path": "<repo>/controlled_test_output/tier5_12d_20260429_070531/tier1_controls/tier1_results.json",
       "name": "tier1_controls",
-      "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070531/tier1_controls",
+      "output_dir": "<repo>/controlled_test_output/tier5_12d_20260429_070531/tier1_controls",
       "purpose": "negative controls stay negative under the candidate v1.8 predictive-context baseline",
       "return_code": 0,
       "runtime_seconds": 3.674636583,
       "status": "pass",
-      "stderr_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070531/tier1_controls/tier1_controls_stderr.log",
-      "stdout_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070531/tier1_controls/tier1_controls_stdout.log"
+      "stderr_path": "<repo>/controlled_test_output/tier5_12d_20260429_070531/tier1_controls/tier1_controls_stderr.log",
+      "stdout_path": "<repo>/controlled_test_output/tier5_12d_20260429_070531/tier1_controls/tier1_controls_stdout.log"
     },
     {
       "command": [
@@ -63,18 +63,18 @@
         "0.2",
         "--stop-on-fail",
         "--output-dir",
-        "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070531/tier2_learning"
+        "<repo>/controlled_test_output/tier5_12d_20260429_070531/tier2_learning"
       ],
       "failure_reason": "",
-      "manifest_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070531/tier2_learning/tier2_results.json",
+      "manifest_path": "<repo>/controlled_test_output/tier5_12d_20260429_070531/tier2_learning/tier2_results.json",
       "name": "tier2_learning",
-      "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070531/tier2_learning",
+      "output_dir": "<repo>/controlled_test_output/tier5_12d_20260429_070531/tier2_learning",
       "purpose": "positive learning controls still pass under the candidate v1.8 predictive-context baseline",
       "return_code": 0,
       "runtime_seconds": 3.003862333,
       "status": "pass",
-      "stderr_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070531/tier2_learning/tier2_learning_stderr.log",
-      "stdout_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070531/tier2_learning/tier2_learning_stdout.log"
+      "stderr_path": "<repo>/controlled_test_output/tier5_12d_20260429_070531/tier2_learning/tier2_learning_stderr.log",
+      "stdout_path": "<repo>/controlled_test_output/tier5_12d_20260429_070531/tier2_learning/tier2_learning_stdout.log"
     },
     {
       "command": [
@@ -98,18 +98,18 @@
         "0.2",
         "--stop-on-fail",
         "--output-dir",
-        "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070531/tier3_ablations"
+        "<repo>/controlled_test_output/tier5_12d_20260429_070531/tier3_ablations"
       ],
       "failure_reason": "",
-      "manifest_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070531/tier3_ablations/tier3_results.json",
+      "manifest_path": "<repo>/controlled_test_output/tier5_12d_20260429_070531/tier3_ablations/tier3_results.json",
       "name": "tier3_ablations",
-      "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070531/tier3_ablations",
+      "output_dir": "<repo>/controlled_test_output/tier5_12d_20260429_070531/tier3_ablations",
       "purpose": "core mechanism ablation gaps remain meaningful under the candidate v1.8 predictive-context baseline",
       "return_code": 0,
       "runtime_seconds": 13.340769458,
       "status": "pass",
-      "stderr_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070531/tier3_ablations/tier3_ablations_stderr.log",
-      "stdout_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070531/tier3_ablations/tier3_ablations_stdout.log"
+      "stderr_path": "<repo>/controlled_test_output/tier5_12d_20260429_070531/tier3_ablations/tier3_ablations_stderr.log",
+      "stdout_path": "<repo>/controlled_test_output/tier5_12d_20260429_070531/tier3_ablations/tier3_ablations_stdout.log"
     },
     {
       "command": [
@@ -137,18 +137,18 @@
         "0",
         "--stop-on-fail",
         "--output-dir",
-        "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070531/target_task_smokes"
+        "<repo>/controlled_test_output/tier5_12d_20260429_070531/target_task_smokes"
       ],
       "failure_reason": "",
-      "manifest_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070531/target_task_smokes/tier5_6_results.json",
+      "manifest_path": "<repo>/controlled_test_output/tier5_12d_20260429_070531/target_task_smokes/tier5_6_results.json",
       "name": "target_task_smokes",
-      "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070531/target_task_smokes",
+      "output_dir": "<repo>/controlled_test_output/tier5_12d_20260429_070531/target_task_smokes",
       "purpose": "delayed_cue and hard_noisy_switching smoke matrix still executes with the carried-forward CRA path",
       "return_code": 0,
       "runtime_seconds": 2.536878209000001,
       "status": "pass",
-      "stderr_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070531/target_task_smokes/target_task_smokes_stderr.log",
-      "stdout_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070531/target_task_smokes/target_task_smokes_stdout.log"
+      "stderr_path": "<repo>/controlled_test_output/tier5_12d_20260429_070531/target_task_smokes/target_task_smokes_stderr.log",
+      "stdout_path": "<repo>/controlled_test_output/tier5_12d_20260429_070531/target_task_smokes/target_task_smokes_stdout.log"
     },
     {
       "command": [
@@ -167,19 +167,19 @@
         "--variants",
         "all",
         "--output-dir",
-        "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070531/replay_consolidation_guardrail",
+        "<repo>/controlled_test_output/tier5_12d_20260429_070531/replay_consolidation_guardrail",
         "--smoke"
       ],
       "failure_reason": "",
-      "manifest_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070531/replay_consolidation_guardrail/tier5_11d_results.json",
+      "manifest_path": "<repo>/controlled_test_output/tier5_12d_20260429_070531/replay_consolidation_guardrail/tier5_11d_results.json",
       "name": "replay_consolidation_guardrail",
-      "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070531/replay_consolidation_guardrail",
+      "output_dir": "<repo>/controlled_test_output/tier5_12d_20260429_070531/replay_consolidation_guardrail",
       "purpose": "v1.7 replay/consolidation mechanism still passes a compact bounded-memory guardrail",
       "return_code": 0,
       "runtime_seconds": 6.092917333000003,
       "status": "pass",
-      "stderr_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070531/replay_consolidation_guardrail/replay_consolidation_guardrail_stderr.log",
-      "stdout_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070531/replay_consolidation_guardrail/replay_consolidation_guardrail_stdout.log"
+      "stderr_path": "<repo>/controlled_test_output/tier5_12d_20260429_070531/replay_consolidation_guardrail/replay_consolidation_guardrail_stderr.log",
+      "stdout_path": "<repo>/controlled_test_output/tier5_12d_20260429_070531/replay_consolidation_guardrail/replay_consolidation_guardrail_stdout.log"
     },
     {
       "command": [
@@ -210,19 +210,19 @@
         "--min-candidate-edge-vs-standard",
         "0.1",
         "--output-dir",
-        "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070531/predictive_context_guardrail",
+        "<repo>/controlled_test_output/tier5_12d_20260429_070531/predictive_context_guardrail",
         "--smoke"
       ],
       "failure_reason": "",
-      "manifest_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070531/predictive_context_guardrail/tier5_12c_results.json",
+      "manifest_path": "<repo>/controlled_test_output/tier5_12d_20260429_070531/predictive_context_guardrail/tier5_12c_results.json",
       "name": "predictive_context_guardrail",
-      "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070531/predictive_context_guardrail",
+      "output_dir": "<repo>/controlled_test_output/tier5_12d_20260429_070531/predictive_context_guardrail",
       "purpose": "Tier 5.12c predictive-context candidate still beats shams on a compact predictive task matrix",
       "return_code": 0,
       "runtime_seconds": 7.968996291,
       "status": "pass",
-      "stderr_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070531/predictive_context_guardrail/predictive_context_guardrail_stderr.log",
-      "stdout_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070531/predictive_context_guardrail/predictive_context_guardrail_stdout.log"
+      "stderr_path": "<repo>/controlled_test_output/tier5_12d_20260429_070531/predictive_context_guardrail/predictive_context_guardrail_stderr.log",
+      "stdout_path": "<repo>/controlled_test_output/tier5_12d_20260429_070531/predictive_context_guardrail/predictive_context_guardrail_stdout.log"
     }
   ],
   "claim_boundary": [
@@ -271,7 +271,7 @@
     }
   ],
   "generated_at_utc": "2026-04-29T11:06:08+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_070531",
+  "output_dir": "<repo>/controlled_test_output/tier5_12d_20260429_070531",
   "runtime_seconds": 36.626760833,
   "status": "pass",
   "summary": {

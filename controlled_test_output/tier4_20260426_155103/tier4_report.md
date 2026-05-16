@@ -6,7 +6,7 @@
 - Population sizes: `4, 8, 16, 32, 64`
 - Seeds: `42, 43, 44`
 - Steps per run: `220`
-- Output directory: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_20260426_155103`
+- Output directory: `<repo>/controlled_test_output/tier4_20260426_155103`
 
 Tier 4.10 runs the same nonstationary switch task at exact fixed colony sizes. Reproduction and apoptosis are disabled so the population-size axis is controlled.
 

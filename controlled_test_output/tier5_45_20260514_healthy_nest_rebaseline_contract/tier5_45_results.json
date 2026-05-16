@@ -599,7 +599,7 @@
     "enable_vector_readout": false
   },
   "outcome": "healthy_nest_rebaseline_contract_locked",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_45_20260514_healthy_nest_rebaseline_contract",
+  "output_dir": "<repo>/controlled_test_output/tier5_45_20260514_healthy_nest_rebaseline_contract",
   "runner_revision": "tier5_45_healthy_nest_rebaseline_contract_20260514_0001",
   "status": "pass",
   "tier": "Tier 5.45 \u2014 Healthy-NEST Rebaseline Decision Contract"

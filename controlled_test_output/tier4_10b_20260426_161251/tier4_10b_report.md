@@ -9,7 +9,7 @@
 - Noise probability: `0.15`
 - Delay range: `3-5`
 - Switch interval range: `40-50`
-- Output directory: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_10b_20260426_161251`
+- Output directory: `<repo>/controlled_test_output/tier4_10b_20260426_161251`
 
 Tier 4.10b asks whether larger fixed populations add value when the task is harder: delayed rewards, irregular switches, and noisy outcomes. Births/deaths are disabled to control N, but trophic/energy dynamics still run.
 

@@ -2,7 +2,7 @@
 
 - Generated: `2026-04-29T23:05:03+00:00`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_20a_20260429_190503`
+- Output directory: `<repo>/controlled_test_output/tier4_20a_20260429_190503`
 
 Tier 4.20a is an engineering audit, not a hardware run. It maps v2.1 mechanisms onto the proven runtime vocabulary so we know what can be tested through chunked host SpiNNaker and what must wait for hybrid/custom-C/on-chip work.
 
@@ -35,8 +35,8 @@ Tier 4.20a is an engineering audit, not a hardware run. It maps v2.1 mechanisms 
 
 | Criterion | Value | Rule | Pass |
 | --- | --- | --- | --- |
-| frozen v2.1 baseline artifact exists | `/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.1.json` | `exists` | yes |
-| post-chunked-runtime v0.8 baseline artifact exists | `/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v0.8.json` | `exists` | yes |
+| frozen v2.1 baseline artifact exists | `<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.1.json` | `exists` | yes |
+| post-chunked-runtime v0.8 baseline artifact exists | `<repo>/baselines/CRA_EVIDENCE_BASELINE_v0.8.json` | `exists` | yes |
 | chunked host runtime contract is implemented | `chunked_host_stepcurrent_binned_replay` | `implemented == true` | yes |
 | continuous/on-chip runtime is explicitly not overclaimed | `future_custom_runtime` | `implemented == false` | yes |
 | all promoted v2.1 mechanisms classified | `7` | `>= 6 classified transferable/probe rows` | yes |

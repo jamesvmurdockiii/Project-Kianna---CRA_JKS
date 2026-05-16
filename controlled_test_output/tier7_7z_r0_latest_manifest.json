@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.571740+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.715668+00:00",
   "source_generated_at_utc": "2026-05-10T02:09:53+00:00",
   "registry_entry_id": "tier7_7z_r0_compact_regression",
   "tier": "Tier 7.7z-r0 - Edge-of-Chaos Compact Regression Gate",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7z_r0_20260509_compact_regression",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_7z_r0_20260509_compact_regression/tier7_7z_r0_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_7z_r0_20260509_compact_regression/tier7_7z_r0_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7z_r0_20260509_compact_regression/tier7_7z_r0_summary.csv",
+  "output_dir": "controlled_test_output/tier7_7z_r0_20260509_compact_regression",
+  "manifest": "controlled_test_output/tier7_7z_r0_20260509_compact_regression/tier7_7z_r0_results.json",
+  "report": "controlled_test_output/tier7_7z_r0_20260509_compact_regression/tier7_7z_r0_report.md",
+  "summary_csv": "controlled_test_output/tier7_7z_r0_20260509_compact_regression/tier7_7z_r0_summary.csv",
   "canonical": true,
   "claim": "Tier 7.7z-r0 runs compact regression (Tier 1-3 controls) on the edge-of-chaos mechanism: shuffled target hurts MSE (Tier 1), no-learning hurts MSE (Tier 2), ablation baseline loses PR (Tier 3). All controls pass across Mackey-Glass/Lorenz/NARMA10 at 8000-32000 steps, seeds 42/43/44. CRA_EVIDENCE_BASELINE_v2.6 frozen.",
   "caveat": "Compact regression on standalone reference implementation. Not full NEST organism regression. Not public usefulness proof. Not hardware/native transfer."

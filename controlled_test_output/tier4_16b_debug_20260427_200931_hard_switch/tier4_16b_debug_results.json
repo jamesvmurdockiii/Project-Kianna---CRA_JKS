@@ -1,12 +1,12 @@
 {
   "artifacts": {
-    "comparisons_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16b_debug_20260427_200931_hard_switch/tier4_16b_debug_comparisons.csv",
-    "manifest_json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16b_debug_20260427_200931_hard_switch/tier4_16b_debug_results.json",
-    "path_summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16b_debug_20260427_200931_hard_switch/tier4_16b_debug_path_summary.csv",
-    "report_md": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16b_debug_20260427_200931_hard_switch/tier4_16b_debug_report.md",
-    "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16b_debug_20260427_200931_hard_switch/tier4_16b_debug_summary.csv",
-    "summary_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16b_debug_20260427_200931_hard_switch/tier4_16b_debug_summary.png",
-    "timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16b_debug_20260427_200931_hard_switch/tier4_16b_debug_timeseries.csv"
+    "comparisons_csv": "<repo>/controlled_test_output/tier4_16b_debug_20260427_200931_hard_switch/tier4_16b_debug_comparisons.csv",
+    "manifest_json": "<repo>/controlled_test_output/tier4_16b_debug_20260427_200931_hard_switch/tier4_16b_debug_results.json",
+    "path_summary_csv": "<repo>/controlled_test_output/tier4_16b_debug_20260427_200931_hard_switch/tier4_16b_debug_path_summary.csv",
+    "report_md": "<repo>/controlled_test_output/tier4_16b_debug_20260427_200931_hard_switch/tier4_16b_debug_report.md",
+    "summary_csv": "<repo>/controlled_test_output/tier4_16b_debug_20260427_200931_hard_switch/tier4_16b_debug_summary.csv",
+    "summary_png": "<repo>/controlled_test_output/tier4_16b_debug_20260427_200931_hard_switch/tier4_16b_debug_summary.png",
+    "timeseries_csv": "<repo>/controlled_test_output/tier4_16b_debug_20260427_200931_hard_switch/tier4_16b_debug_timeseries.csv"
   },
   "comparisons": [
     {
@@ -1240,7 +1240,7 @@
       "runtime_seconds": null,
       "seed": 42,
       "sim_run_calls": 48,
-      "source_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_194526_hard_noisy_switching_3seed_hardware_fail/spinnaker_hardware_hard_noisy_switching_seed42_timeseries.csv",
+      "source_csv": "<repo>/controlled_test_output/tier4_16_20260427_194526_hard_noisy_switching_3seed_hardware_fail/spinnaker_hardware_hard_noisy_switching_seed42_timeseries.csv",
       "steps": 1200,
       "tail_accuracy": 1.0,
       "tail_prediction_target_corr": 0.28540661950782215,
@@ -1802,7 +1802,7 @@
       "runtime_seconds": null,
       "seed": 43,
       "sim_run_calls": 48,
-      "source_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_194526_hard_noisy_switching_3seed_hardware_fail/spinnaker_hardware_hard_noisy_switching_seed43_timeseries.csv",
+      "source_csv": "<repo>/controlled_test_output/tier4_16_20260427_194526_hard_noisy_switching_3seed_hardware_fail/spinnaker_hardware_hard_noisy_switching_seed43_timeseries.csv",
       "steps": 1200,
       "tail_accuracy": 1.0,
       "tail_prediction_target_corr": 0.015429261979302583,
@@ -2364,7 +2364,7 @@
       "runtime_seconds": null,
       "seed": 44,
       "sim_run_calls": 48,
-      "source_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_194526_hard_noisy_switching_3seed_hardware_fail/spinnaker_hardware_hard_noisy_switching_seed44_timeseries.csv",
+      "source_csv": "<repo>/controlled_test_output/tier4_16_20260427_194526_hard_noisy_switching_3seed_hardware_fail/spinnaker_hardware_hard_noisy_switching_seed44_timeseries.csv",
       "steps": 1200,
       "tail_accuracy": 1.0,
       "tail_prediction_target_corr": -0.054214080708377105,
@@ -2914,7 +2914,7 @@
     "chunk_size_steps": 25,
     "classification": "chunked_host_bridge_learning_failure",
     "failures": [],
-    "hardware_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_194526_hard_noisy_switching_3seed_hardware_fail",
+    "hardware_dir": "<repo>/controlled_test_output/tier4_16_20260427_194526_hard_noisy_switching_3seed_hardware_fail",
     "next_step": "repair host-replay bridge or macro delayed-credit path before hardware rerun",
     "seeds": [
       42,

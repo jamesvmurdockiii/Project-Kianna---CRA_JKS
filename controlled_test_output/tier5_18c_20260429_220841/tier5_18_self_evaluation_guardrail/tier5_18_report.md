@@ -2,7 +2,7 @@
 
 - Generated: `2026-04-29T22:10:32+00:00`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/tier5_18_self_evaluation_guardrail`
+- Output directory: `<repo>/controlled_test_output/tier5_18c_20260429_220841/tier5_18_self_evaluation_guardrail`
 - Tasks: `ambiguous_cue, memory_corruption`
 - Seeds: `[42]`
 
@@ -43,22 +43,22 @@ Tier 5.18 tests whether a CRA monitor can estimate reliability before feedback a
 | Criterion | Value | Rule | Pass | Note |
 | --- | --- | --- | --- | --- |
 | task/variant/seed matrix completed | `12` | `== 12` | yes |  |
-| frozen v2.0 baseline artifact exists | `/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.0.json` | `exists True` | yes |  |
+| frozen v2.0 baseline artifact exists | `<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.0.json` | `exists True` | yes |  |
 | non-oracle monitors do not use outcomes | `0` | `== 0` | yes |  |
 | monitor values are computed before feedback | `0` | `== 0` | yes |  |
 
 ## Artifacts
 
-- `ambiguous_cue_v2_0_no_monitor_seed42_timeseries_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/tier5_18_self_evaluation_guardrail/ambiguous_cue_v2_0_no_monitor_seed42_timeseries.csv`
-- `ambiguous_cue_self_eval_gated_seed42_timeseries_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/tier5_18_self_evaluation_guardrail/ambiguous_cue_self_eval_gated_seed42_timeseries.csv`
-- `ambiguous_cue_time_shuffled_confidence_seed42_timeseries_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/tier5_18_self_evaluation_guardrail/ambiguous_cue_time_shuffled_confidence_seed42_timeseries.csv`
-- `memory_corruption_v2_0_no_monitor_seed42_timeseries_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/tier5_18_self_evaluation_guardrail/memory_corruption_v2_0_no_monitor_seed42_timeseries.csv`
-- `memory_corruption_self_eval_gated_seed42_timeseries_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/tier5_18_self_evaluation_guardrail/memory_corruption_self_eval_gated_seed42_timeseries.csv`
-- `memory_corruption_time_shuffled_confidence_seed42_timeseries_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/tier5_18_self_evaluation_guardrail/memory_corruption_time_shuffled_confidence_seed42_timeseries.csv`
-- `summary_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/tier5_18_self_evaluation_guardrail/tier5_18_summary.csv`
-- `aggregates_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/tier5_18_self_evaluation_guardrail/tier5_18_aggregates.csv`
-- `comparisons_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/tier5_18_self_evaluation_guardrail/tier5_18_comparisons.csv`
-- `fairness_contract_json`: `/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/tier5_18_self_evaluation_guardrail/tier5_18_fairness_contract.json`
-- `accuracy_edges_png`: `/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/tier5_18_self_evaluation_guardrail/tier5_18_accuracy_edges.png`
-- `monitor_auroc_matrix_png`: `/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/tier5_18_self_evaluation_guardrail/tier5_18_monitor_auroc_matrix.png`
-- `results_json`: `/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/tier5_18_self_evaluation_guardrail/tier5_18_results.json`
+- `ambiguous_cue_v2_0_no_monitor_seed42_timeseries_csv`: `<repo>/controlled_test_output/tier5_18c_20260429_220841/tier5_18_self_evaluation_guardrail/ambiguous_cue_v2_0_no_monitor_seed42_timeseries.csv`
+- `ambiguous_cue_self_eval_gated_seed42_timeseries_csv`: `<repo>/controlled_test_output/tier5_18c_20260429_220841/tier5_18_self_evaluation_guardrail/ambiguous_cue_self_eval_gated_seed42_timeseries.csv`
+- `ambiguous_cue_time_shuffled_confidence_seed42_timeseries_csv`: `<repo>/controlled_test_output/tier5_18c_20260429_220841/tier5_18_self_evaluation_guardrail/ambiguous_cue_time_shuffled_confidence_seed42_timeseries.csv`
+- `memory_corruption_v2_0_no_monitor_seed42_timeseries_csv`: `<repo>/controlled_test_output/tier5_18c_20260429_220841/tier5_18_self_evaluation_guardrail/memory_corruption_v2_0_no_monitor_seed42_timeseries.csv`
+- `memory_corruption_self_eval_gated_seed42_timeseries_csv`: `<repo>/controlled_test_output/tier5_18c_20260429_220841/tier5_18_self_evaluation_guardrail/memory_corruption_self_eval_gated_seed42_timeseries.csv`
+- `memory_corruption_time_shuffled_confidence_seed42_timeseries_csv`: `<repo>/controlled_test_output/tier5_18c_20260429_220841/tier5_18_self_evaluation_guardrail/memory_corruption_time_shuffled_confidence_seed42_timeseries.csv`
+- `summary_csv`: `<repo>/controlled_test_output/tier5_18c_20260429_220841/tier5_18_self_evaluation_guardrail/tier5_18_summary.csv`
+- `aggregates_csv`: `<repo>/controlled_test_output/tier5_18c_20260429_220841/tier5_18_self_evaluation_guardrail/tier5_18_aggregates.csv`
+- `comparisons_csv`: `<repo>/controlled_test_output/tier5_18c_20260429_220841/tier5_18_self_evaluation_guardrail/tier5_18_comparisons.csv`
+- `fairness_contract_json`: `<repo>/controlled_test_output/tier5_18c_20260429_220841/tier5_18_self_evaluation_guardrail/tier5_18_fairness_contract.json`
+- `accuracy_edges_png`: `<repo>/controlled_test_output/tier5_18c_20260429_220841/tier5_18_self_evaluation_guardrail/tier5_18_accuracy_edges.png`
+- `monitor_auroc_matrix_png`: `<repo>/controlled_test_output/tier5_18c_20260429_220841/tier5_18_self_evaluation_guardrail/tier5_18_monitor_auroc_matrix.png`
+- `results_json`: `<repo>/controlled_test_output/tier5_18c_20260429_220841/tier5_18_self_evaluation_guardrail/tier5_18_results.json`

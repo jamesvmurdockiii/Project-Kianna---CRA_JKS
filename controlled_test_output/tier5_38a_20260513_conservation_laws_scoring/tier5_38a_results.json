@@ -78,7 +78,7 @@
   "criteria_total": 9,
   "generated_at_utc": "2026-05-13T23:47:40+00:00",
   "outcome": "conservation_laws_scored_mse_bottleneck_identified",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_38a_20260513_conservation_laws_scoring",
+  "output_dir": "<repo>/controlled_test_output/tier5_38a_20260513_conservation_laws_scoring",
   "results": {
     "mse_benchmark": {
       "finding": "PR increases 1.3-2.4x but MSE is identical. Colony readout produces same scalar from any internal state.",

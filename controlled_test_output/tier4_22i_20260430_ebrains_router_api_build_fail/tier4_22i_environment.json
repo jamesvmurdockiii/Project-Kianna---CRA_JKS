@@ -1,5 +1,5 @@
 {
-  "cwd": "/tmp/job4574469514829270000.tmp",
+  "cwd": "<jobmanager_tmp>",
   "env": {
     "SPINNAKER_BOARD": "",
     "SPINNAKER_HOST": "",

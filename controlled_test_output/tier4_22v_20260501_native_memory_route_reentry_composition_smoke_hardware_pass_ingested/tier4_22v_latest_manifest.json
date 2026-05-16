@@ -2,10 +2,10 @@
   "canonical": false,
   "claim": "Latest Tier 4.22v tiny native memory-route reentry/composition custom-runtime micro-task; pass means a tiny native memory-route reentry/composition pending-queue on-chip loop matched local fixed-point reference and task metrics only.",
   "generated_at_utc": "2026-05-01T20:15:13+00:00",
-  "manifest": "/tmp/job2375251926664015568.tmp/tier4_22v_job_output/tier4_22v_results.json",
+  "manifest": "<jobmanager_tmp>",
   "mode": "run-hardware",
-  "output_dir": "/tmp/job2375251926664015568.tmp/tier4_22v_job_output",
-  "report": "/tmp/job2375251926664015568.tmp/tier4_22v_job_output/tier4_22v_report.md",
+  "output_dir": "<jobmanager_tmp>",
+  "report": "<jobmanager_tmp>",
   "status": "pass",
   "tier": "Tier 4.22v - Tiny Native Memory-Route Reentry/Composition Custom-Runtime Smoke"
 }

@@ -6,7 +6,7 @@
 - Seeds: `42, 43, 44`
 - Fixed-pattern steps: `180`
 - Ecology steps: `220`
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/tier3_ablations`
+- Output directory: `<repo>/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/tier3_ablations`
 
 Tier 3 asks whether named architecture mechanisms are actually doing work. Each result compares an intact organism against a targeted ablation under the same controlled task.
 

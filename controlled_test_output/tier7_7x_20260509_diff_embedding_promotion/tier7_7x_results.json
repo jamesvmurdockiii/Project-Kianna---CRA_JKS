@@ -106,7 +106,7 @@
   "generated_at_utc": "2026-05-09T21:21:13+00:00",
   "next_gate": "Diagnose and narrow claim",
   "outcome": "candidate_improves_but_sham_not_separated",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7x_20260509_diff_embedding_promotion",
+  "output_dir": "<repo>/controlled_test_output/tier7_7x_20260509_diff_embedding_promotion",
   "random_proj": {
     "mse_geomean": 0.44766418952260295,
     "n": 9,

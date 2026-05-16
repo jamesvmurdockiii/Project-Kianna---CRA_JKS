@@ -1,5 +1,5 @@
 criterion,value,rule,pass,details
-tier7_5c_results_exist,True,must exist,True,/Users/james/JKS:CRA/controlled_test_output/tier7_5c_20260509_curriculum_environment_scoring_gate/tier7_5c_results.json
+tier7_5c_results_exist,True,must exist,True,<repo>/controlled_test_output/tier7_5c_20260509_curriculum_environment_scoring_gate/tier7_5c_results.json
 tier7_5c_status_pass,PASS,case-insensitive == PASS,True,
 tier7_5c_signal_count,6,== 6,True,
 attribution_rows_written,6,== 6,True,

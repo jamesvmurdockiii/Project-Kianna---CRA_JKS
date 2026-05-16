@@ -2,7 +2,7 @@
 
 - Generated: `2026-04-30T23:43:56+00:00`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance`
+- Output directory: `<repo>/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance`
 
 Tier 4.22h adds compact custom-runtime state readback and records build-command readiness. It does not claim a board load or hardware command round-trip unless those are actually run.
 

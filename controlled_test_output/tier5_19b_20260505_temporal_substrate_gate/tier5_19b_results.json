@@ -1137,7 +1137,7 @@
   "history": 12,
   "horizon": 8,
   "length": 720,
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_19b_20260505_temporal_substrate_gate",
+  "output_dir": "<repo>/controlled_test_output/tier5_19b_20260505_temporal_substrate_gate",
   "run_rows": [
     {
       "diagnostics": {

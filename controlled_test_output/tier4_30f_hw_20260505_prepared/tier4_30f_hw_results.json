@@ -1,12 +1,12 @@
 {
   "artifacts": {
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_30f_hw_20260505_prepared/tier4_30f_hw_report.md",
-    "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_30f_hw_20260505_prepared/tier4_30f_hw_results.json"
+    "report_md": "<repo>/controlled_test_output/tier4_30f_hw_20260505_prepared/tier4_30f_hw_report.md",
+    "results_json": "<repo>/controlled_test_output/tier4_30f_hw_20260505_prepared/tier4_30f_hw_results.json"
   },
   "bundle_artifacts": {
-    "job_readme": "/Users/james/JKS:CRA/controlled_test_output/tier4_30f_hw_20260505_prepared/ebrains_upload_bundle/cra_430f/README_TIER4_30F_HW_JOB.md",
-    "stable_upload_folder": "/Users/james/JKS:CRA/ebrains_jobs/cra_430f",
-    "upload_bundle": "/Users/james/JKS:CRA/controlled_test_output/tier4_30f_hw_20260505_prepared/ebrains_upload_bundle/cra_430f"
+    "job_readme": "<repo>/controlled_test_output/tier4_30f_hw_20260505_prepared/ebrains_upload_bundle/cra_430f/README_TIER4_30F_HW_JOB.md",
+    "stable_upload_folder": "<repo>/ebrains_jobs/cra_430f",
+    "upload_bundle": "<repo>/controlled_test_output/tier4_30f_hw_20260505_prepared/ebrains_upload_bundle/cra_430f"
   },
   "claim_boundary": "Prepared source bundle only; no hardware evidence until returned run-hardware artifacts pass.",
   "core_roles": {
@@ -116,14 +116,14 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_30f_hw_20260505_prepared/ebrains_upload_bundle/cra_430f"
+      "value": "<repo>/controlled_test_output/tier4_30f_hw_20260505_prepared/ebrains_upload_bundle/cra_430f"
     },
     {
       "name": "stable upload folder created",
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/ebrains_jobs/cra_430f"
+      "value": "<repo>/ebrains_jobs/cra_430f"
     },
     {
       "name": "run-hardware command emitted",
@@ -135,7 +135,7 @@
   ],
   "generated_at_utc": "2026-05-06T01:27:19+00:00",
   "host_tests": {
-    "command": "make -C /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime clean-host test-lifecycle test-lifecycle-split test-profiles",
+    "command": "make -C <repo>/coral_reef_spinnaker/spinnaker_runtime clean-host test-lifecycle test-lifecycle-split test-profiles",
     "returncode": 0,
     "status": "pass",
     "stderr": "",
@@ -143,19 +143,19 @@
   },
   "main_syntax_check": {
     "normal": {
-      "command": "/usr/bin/cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-int-to-pointer-cast -I /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/stubs -I /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src -c /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src/main.c -o /Users/james/JKS:CRA/controlled_test_output/tier4_30f_hw_20260505_prepared/tier4_22i_main_syntax_normal.o",
-      "object_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_30f_hw_20260505_prepared/tier4_22i_main_syntax_normal.o",
+      "command": "/usr/bin/cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-int-to-pointer-cast -I <repo>/coral_reef_spinnaker/spinnaker_runtime/stubs -I <repo>/coral_reef_spinnaker/spinnaker_runtime/src -c <repo>/coral_reef_spinnaker/spinnaker_runtime/src/main.c -o <repo>/controlled_test_output/tier4_30f_hw_20260505_prepared/tier4_22i_main_syntax_normal.o",
+      "object_artifact": "<repo>/controlled_test_output/tier4_30f_hw_20260505_prepared/tier4_22i_main_syntax_normal.o",
       "returncode": 0,
       "status": "pass",
       "stderr": "",
-      "stderr_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_30f_hw_20260505_prepared/tier4_22i_main_syntax_normal_stderr.txt",
+      "stderr_artifact": "<repo>/controlled_test_output/tier4_30f_hw_20260505_prepared/tier4_22i_main_syntax_normal_stderr.txt",
       "stdout": "",
-      "stdout_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_30f_hw_20260505_prepared/tier4_22i_main_syntax_normal_stdout.txt"
+      "stdout_artifact": "<repo>/controlled_test_output/tier4_30f_hw_20260505_prepared/tier4_22i_main_syntax_normal_stdout.txt"
     },
     "status": "pass"
   },
   "mode": "prepare",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_30f_hw_20260505_prepared",
+  "output_dir": "<repo>/controlled_test_output/tier4_30f_hw_20260505_prepared",
   "references": {
     "active_mask_shuffle_control": {
       "event_count": 32,
@@ -301,8 +301,8 @@
   "summary": {
     "claim_boundary": "Prepared source bundle only; no hardware evidence until returned run-hardware artifacts pass.",
     "job_command": "cra_430f/experiments/tier4_30f_lifecycle_sham_hardware_subset.py --mode run-hardware --output-dir tier4_30f_hw_job_output",
-    "stable_upload_folder": "/Users/james/JKS:CRA/ebrains_jobs/cra_430f",
-    "upload_bundle": "/Users/james/JKS:CRA/controlled_test_output/tier4_30f_hw_20260505_prepared/ebrains_upload_bundle/cra_430f",
+    "stable_upload_folder": "<repo>/ebrains_jobs/cra_430f",
+    "upload_bundle": "<repo>/controlled_test_output/tier4_30f_hw_20260505_prepared/ebrains_upload_bundle/cra_430f",
     "upload_package": "cra_430f",
     "what_i_need_from_user": "Upload `cra_430f` to EBRAINS/JobManager and run the emitted command."
   },

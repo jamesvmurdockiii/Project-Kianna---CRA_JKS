@@ -66,7 +66,7 @@
       "pass": true,
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_7q_20260509_cra_native_temporal_interface_internalization_scoring_gate/tier7_7q_results.json"
+      "value": "<repo>/controlled_test_output/tier7_7q_20260509_cra_native_temporal_interface_internalization_scoring_gate/tier7_7q_results.json"
     },
     {
       "criterion": "Tier 7.7q prerequisite passed",
@@ -450,7 +450,7 @@
       "rule": "Margins conflict or artifacts are insufficient."
     }
   ],
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7r_20260509_native_temporal_basis_reframing_contract",
+  "output_dir": "<repo>/controlled_test_output/tier7_7r_20260509_native_temporal_basis_reframing_contract",
   "promotion_rules": [
     {
       "allows_baseline_freeze": "only after separate promotion/regression gate",

@@ -3,7 +3,7 @@
 - Generated: `2026-05-01T21:14:30+00:00`
 - Mode: `ingest`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_native_decoupled_memory_route_composition_hardware_pass_ingested`
+- Output directory: `<repo>/controlled_test_output/tier4_22w_20260501_native_decoupled_memory_route_composition_hardware_pass_ingested`
 
 Tier 4.22w runs a 48-event signed stream through the custom runtime using native keyed context state, keyed route state, and keyed memory/working-state slots. The host writes context, route, and memory updates, then sends independent context_key, route_key, memory_key, cue, and delay for each decision; the chip retrieves all three by their own keys, computes feature=context[context_key]*route[route_key]*memory[memory_key]*cue, scores the pre-update prediction, holds a two-event pending gap, then matures delayed credit against a local s16.15 reference.
 
@@ -218,22 +218,22 @@ Tier 4.22w runs a 48-event signed stream through the custom runtime using native
 
 ## Artifacts
 
-- `aplx_build_stderr`: `/tmp/job8289100747947928749.tmp/tier4_22w_job_output/tier4_22i_aplx_build_stderr.txt`
-- `aplx_build_stdout`: `/tmp/job8289100747947928749.tmp/tier4_22w_job_output/tier4_22i_aplx_build_stdout.txt`
-- `environment_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_native_decoupled_memory_route_composition_hardware_pass_ingested/tier4_22w_environment.json`
-- `host_test_stderr`: `/tmp/job8289100747947928749.tmp/tier4_22w_job_output/tier4_22i_host_test_stderr.txt`
-- `host_test_stdout`: `/tmp/job8289100747947928749.tmp/tier4_22w_job_output/tier4_22i_host_test_stdout.txt`
-- `load_result_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_native_decoupled_memory_route_composition_hardware_pass_ingested/tier4_22w_load_result.json`
-- `main_syntax_stderr`: `/tmp/job8289100747947928749.tmp/tier4_22w_job_output/tier4_22i_main_syntax_normal_stderr.txt`
-- `main_syntax_stdout`: `/tmp/job8289100747947928749.tmp/tier4_22w_job_output/tier4_22i_main_syntax_normal_stdout.txt`
-- `manifest_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_native_decoupled_memory_route_composition_hardware_pass_ingested/tier4_22w_results.json`
-- `reference_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_native_decoupled_memory_route_composition_hardware_pass_ingested/tier4_22w_task_reference_rows.csv`
-- `reference_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_native_decoupled_memory_route_composition_hardware_pass_ingested/tier4_22w_task_reference.json`
-- `report_md`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_native_decoupled_memory_route_composition_hardware_pass_ingested/tier4_22w_report.md`
-- `runtime_profile_json`: `/tmp/job8289100747947928749.tmp/tier4_22w_job_output/tier4_22w_runtime_profile.json`
-- `target_acquisition_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_native_decoupled_memory_route_composition_hardware_pass_ingested/tier4_22w_target_acquisition.json`
-- `task_micro_loop_result_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_native_decoupled_memory_route_composition_hardware_pass_ingested/tier4_22w_task_micro_loop_result.json`
-- `task_micro_loop_rows_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_native_decoupled_memory_route_composition_hardware_pass_ingested/tier4_22w_task_micro_loop_rows.csv`
-- `raw_remote_manifest_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_native_decoupled_memory_route_composition_hardware_pass_ingested/remote_tier4_22w_results_raw.json`
-- `raw_remote_report_md`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_native_decoupled_memory_route_composition_hardware_pass_ingested/remote_tier4_22w_report_raw.md`
-- `remote_latest_manifest_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_native_decoupled_memory_route_composition_hardware_pass_ingested/tier4_22w_latest_manifest.json`
+- `aplx_build_stderr`: `<jobmanager_tmp>`
+- `aplx_build_stdout`: `<jobmanager_tmp>`
+- `environment_json`: `<repo>/controlled_test_output/tier4_22w_20260501_native_decoupled_memory_route_composition_hardware_pass_ingested/tier4_22w_environment.json`
+- `host_test_stderr`: `<jobmanager_tmp>`
+- `host_test_stdout`: `<jobmanager_tmp>`
+- `load_result_json`: `<repo>/controlled_test_output/tier4_22w_20260501_native_decoupled_memory_route_composition_hardware_pass_ingested/tier4_22w_load_result.json`
+- `main_syntax_stderr`: `<jobmanager_tmp>`
+- `main_syntax_stdout`: `<jobmanager_tmp>`
+- `manifest_json`: `<repo>/controlled_test_output/tier4_22w_20260501_native_decoupled_memory_route_composition_hardware_pass_ingested/tier4_22w_results.json`
+- `reference_csv`: `<repo>/controlled_test_output/tier4_22w_20260501_native_decoupled_memory_route_composition_hardware_pass_ingested/tier4_22w_task_reference_rows.csv`
+- `reference_json`: `<repo>/controlled_test_output/tier4_22w_20260501_native_decoupled_memory_route_composition_hardware_pass_ingested/tier4_22w_task_reference.json`
+- `report_md`: `<repo>/controlled_test_output/tier4_22w_20260501_native_decoupled_memory_route_composition_hardware_pass_ingested/tier4_22w_report.md`
+- `runtime_profile_json`: `<jobmanager_tmp>`
+- `target_acquisition_json`: `<repo>/controlled_test_output/tier4_22w_20260501_native_decoupled_memory_route_composition_hardware_pass_ingested/tier4_22w_target_acquisition.json`
+- `task_micro_loop_result_json`: `<repo>/controlled_test_output/tier4_22w_20260501_native_decoupled_memory_route_composition_hardware_pass_ingested/tier4_22w_task_micro_loop_result.json`
+- `task_micro_loop_rows_csv`: `<repo>/controlled_test_output/tier4_22w_20260501_native_decoupled_memory_route_composition_hardware_pass_ingested/tier4_22w_task_micro_loop_rows.csv`
+- `raw_remote_manifest_json`: `<repo>/controlled_test_output/tier4_22w_20260501_native_decoupled_memory_route_composition_hardware_pass_ingested/remote_tier4_22w_results_raw.json`
+- `raw_remote_report_md`: `<repo>/controlled_test_output/tier4_22w_20260501_native_decoupled_memory_route_composition_hardware_pass_ingested/remote_tier4_22w_report_raw.md`
+- `remote_latest_manifest_json`: `<repo>/controlled_test_output/tier4_22w_20260501_native_decoupled_memory_route_composition_hardware_pass_ingested/tier4_22w_latest_manifest.json`

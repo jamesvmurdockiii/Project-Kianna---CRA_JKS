@@ -324,7 +324,7 @@
       "pass": true,
       "passed": true,
       "rule": "exists and pass",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_7f_20260509_repaired_finite_stream_long_run_scoreboard/tier7_7f_results.json"
+      "value": "<repo>/controlled_test_output/tier7_7f_20260509_repaired_finite_stream_long_run_scoreboard/tier7_7f_results.json"
     },
     {
       "criterion": "Tier 7.7f outcome requires capacity diagnostic",
@@ -346,7 +346,7 @@
       "pass": true,
       "passed": true,
       "rule": "exists and pass",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight/tier7_7e_results.json"
+      "value": "<repo>/controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight/tier7_7e_results.json"
     },
     {
       "criterion": "repaired NARMA stream locked",
@@ -516,14 +516,14 @@
   "criteria_passed": 15,
   "criteria_total": 15,
   "generated_at_utc": "2026-05-09T14:39:06+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7g_20260509_lorenz_capacity_narma_memory_contract",
+  "output_dir": "<repo>/controlled_test_output/tier7_7g_20260509_lorenz_capacity_narma_memory_contract",
   "prerequisites": {
-    "tier7_7e_results": "/Users/james/JKS:CRA/controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight/tier7_7e_results.json",
+    "tier7_7e_results": "<repo>/controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight/tier7_7e_results.json",
     "tier7_7e_selected_generator": "narma10_reduced_input_u02",
     "tier7_7e_sha256": "bae66059ac748e0f34c0c99d7abd5c16a341b5fabc1314e7fa1c67027b9b6788",
     "tier7_7e_status": "pass",
     "tier7_7f_outcome": "mackey_only_localized",
-    "tier7_7f_results": "/Users/james/JKS:CRA/controlled_test_output/tier7_7f_20260509_repaired_finite_stream_long_run_scoreboard/tier7_7f_results.json",
+    "tier7_7f_results": "<repo>/controlled_test_output/tier7_7f_20260509_repaired_finite_stream_long_run_scoreboard/tier7_7f_results.json",
     "tier7_7f_sha256": "592ee6b649a9c31b0685cf056db6afcdfc5170bfc61b6e311b83d2a4bd97dff3",
     "tier7_7f_status": "pass"
   },

@@ -1,4 +1,4 @@
-make: Entering directory '/tmp/job7802684483372657581.tmp/cra_431d/coral_reef_spinnaker/spinnaker_runtime'
+make: Entering directory '<jobmanager_tmp>'
 cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-int-to-pointer-cast -I stubs -I src -DCRA_RUNTIME_PROFILE_CONTEXT_CORE=1 -DCRA_RUNTIME_PROFILE_DECOUPLED_MEMORY_ROUTE=1 -DRUNTIME_PROFILE_ID=4 tests/test_profiles.c stubs/spin1_api.c src/state_manager.c src/host_interface.c -lm -o tests/test_context_core
 ./tests/test_context_core
 Profile test (RUNTIME_PROFILE_ID=4)
@@ -48,4 +48,4 @@ Profile test (RUNTIME_PROFILE_ID=7)
   PASS: lifecycle_core expected commands ack
   PASS: lifecycle_core unexpected commands nak
 All tests passed.
-make: Leaving directory '/tmp/job7802684483372657581.tmp/cra_431d/coral_reef_spinnaker/spinnaker_runtime'
+make: Leaving directory '<jobmanager_tmp>'

@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.395894+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.543538+00:00",
   "source_generated_at_utc": "2026-05-05T13:47:31+00:00",
   "registry_entry_id": "tier7_0_standard_dynamical_benchmarks",
   "tier": "Tier 7.0 - Standard Dynamical Benchmark Suite",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_0_20260505_standard_dynamical_benchmarks",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_0_20260505_standard_dynamical_benchmarks/tier7_0_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_0_20260505_standard_dynamical_benchmarks/tier7_0_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_0_20260505_standard_dynamical_benchmarks/tier7_0_summary.csv",
+  "output_dir": "controlled_test_output/tier7_0_20260505_standard_dynamical_benchmarks",
+  "manifest": "controlled_test_output/tier7_0_20260505_standard_dynamical_benchmarks/tier7_0_results.json",
+  "report": "controlled_test_output/tier7_0_20260505_standard_dynamical_benchmarks/tier7_0_report.md",
+  "summary_csv": "controlled_test_output/tier7_0_20260505_standard_dynamical_benchmarks/tier7_0_summary.csv",
   "canonical": true,
   "claim": "The Tier 7.0 software benchmark harness completed Mackey-Glass, Lorenz, NARMA10, and aggregate geometric-mean MSE across CRA v2.1 and standard causal sequence baselines. It diagnosed CRA v2.1 online underperformance on these continuous-valued dynamical regression benchmarks: CRA ranked 5/5 by aggregate geomean MSE, while the echo-state network was best.",
   "caveat": "Software diagnostic evidence only; not hardware evidence, not a superiority claim, not a tuning run, not a new baseline freeze, and not evidence that CRA is generally weak outside these continuous-regression benchmarks. It triggers Tier 7.0b failure analysis before mechanism changes or hardware migration."

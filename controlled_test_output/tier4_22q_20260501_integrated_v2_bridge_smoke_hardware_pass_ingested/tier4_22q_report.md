@@ -3,7 +3,7 @@
 - Generated: `2026-05-01T06:59:01+00:00`
 - Mode: `ingest`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested`
+- Output directory: `<repo>/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested`
 
 Tier 4.22q runs a 30-event signed stream produced by a tiny host-side keyed-context plus routing bridge through the custom runtime. Each event is scored from the chip's pre-update prediction, held across a two-event pending gap, then matured in order with delayed credit and checked against a local s16.15 reference.
 
@@ -135,32 +135,32 @@ Tier 4.22q runs a 30-event signed stream produced by a tiny host-side keyed-cont
 
 ## Artifacts
 
-- `aplx_build_stderr`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/tier4_22i_aplx_build_stderr (16).txt`
-- `aplx_build_stdout`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/tier4_22i_aplx_build_stdout (15).txt`
-- `environment_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/tier4_22q_environment.json`
-- `host_test_stderr`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/tier4_22i_host_test_stderr (15).txt`
-- `host_test_stdout`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/tier4_22i_host_test_stdout (15).txt`
-- `load_result_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/tier4_22q_load_result.json`
-- `main_syntax_stderr`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/tier4_22i_main_syntax_normal_stderr (14).txt`
-- `main_syntax_stdout`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/tier4_22i_main_syntax_normal_stdout (14).txt`
-- `manifest_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/tier4_22q_results.json`
-- `reference_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/tier4_22q_task_reference_rows.csv`
-- `reference_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/tier4_22q_task_reference.json`
-- `report_md`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/tier4_22q_report.md`
-- `target_acquisition_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/tier4_22q_target_acquisition.json`
-- `task_micro_loop_result_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/tier4_22q_task_micro_loop_result.json`
-- `task_micro_loop_rows_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/tier4_22q_task_micro_loop_rows.csv`
-- `raw_remote_manifest_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/remote_tier4_22q_results_raw.json`
-- `raw_remote_report_md`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/remote_tier4_22q_report_raw.md`
-- `remote_latest_manifest_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/tier4_22q_latest_manifest.json`
-- `main_syntax_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/tier4_22i_main_syntax_normal (14).o`
-- `aplx_binary`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/coral_reef (10).aplx`
-- `elf_binary`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/coral_reef (11).elf`
-- `elf_listing`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/coral_reef (10).txt`
-- `spinnaker_reports_zip`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/reports (21).zip`
-- `main_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/main (13).o`
-- `host_interface_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/host_interface (12).o`
-- `state_manager_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/state_manager (13).o`
-- `synapse_manager_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/synapse_manager (13).o`
-- `neuron_manager_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/neuron_manager (13).o`
-- `router_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/router (11).o`
+- `aplx_build_stderr`: `<repo>/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/tier4_22i_aplx_build_stderr (16).txt`
+- `aplx_build_stdout`: `<repo>/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/tier4_22i_aplx_build_stdout (15).txt`
+- `environment_json`: `<repo>/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/tier4_22q_environment.json`
+- `host_test_stderr`: `<repo>/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/tier4_22i_host_test_stderr (15).txt`
+- `host_test_stdout`: `<repo>/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/tier4_22i_host_test_stdout (15).txt`
+- `load_result_json`: `<repo>/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/tier4_22q_load_result.json`
+- `main_syntax_stderr`: `<repo>/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/tier4_22i_main_syntax_normal_stderr (14).txt`
+- `main_syntax_stdout`: `<repo>/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/tier4_22i_main_syntax_normal_stdout (14).txt`
+- `manifest_json`: `<repo>/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/tier4_22q_results.json`
+- `reference_csv`: `<repo>/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/tier4_22q_task_reference_rows.csv`
+- `reference_json`: `<repo>/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/tier4_22q_task_reference.json`
+- `report_md`: `<repo>/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/tier4_22q_report.md`
+- `target_acquisition_json`: `<repo>/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/tier4_22q_target_acquisition.json`
+- `task_micro_loop_result_json`: `<repo>/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/tier4_22q_task_micro_loop_result.json`
+- `task_micro_loop_rows_csv`: `<repo>/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/tier4_22q_task_micro_loop_rows.csv`
+- `raw_remote_manifest_json`: `<repo>/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/remote_tier4_22q_results_raw.json`
+- `raw_remote_report_md`: `<repo>/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/remote_tier4_22q_report_raw.md`
+- `remote_latest_manifest_json`: `<repo>/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/tier4_22q_latest_manifest.json`
+- `main_syntax_object`: `<repo>/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/tier4_22i_main_syntax_normal (14).o`
+- `aplx_binary`: `<repo>/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/coral_reef (10).aplx`
+- `elf_binary`: `<repo>/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/coral_reef (11).elf`
+- `elf_listing`: `<repo>/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/coral_reef (10).txt`
+- `spinnaker_reports_zip`: `<repo>/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/reports (21).zip`
+- `main_object`: `<repo>/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/main (13).o`
+- `host_interface_object`: `<repo>/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/host_interface (12).o`
+- `state_manager_object`: `<repo>/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/state_manager (13).o`
+- `synapse_manager_object`: `<repo>/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/synapse_manager (13).o`
+- `neuron_manager_object`: `<repo>/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/neuron_manager (13).o`
+- `router_object`: `<repo>/controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/router (11).o`

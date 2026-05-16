@@ -50,9 +50,9 @@ CRA has a bounded v2.5 host-side software baseline for reduced-feature planning/
 
 ## Files Frozen
 
-- `/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.5.json`
-- `/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.5.md`
-- `/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.5_STUDY_REGISTRY.snapshot.json`
+- `<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.5.json`
+- `<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.5.md`
+- `<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.5_STUDY_REGISTRY.snapshot.json`
 
 ## Next Recommended Evidence
 

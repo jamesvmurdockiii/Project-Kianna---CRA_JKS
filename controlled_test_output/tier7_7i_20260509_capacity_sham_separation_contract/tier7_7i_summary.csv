@@ -1,7 +1,7 @@
 name,criterion,value,operator,rule,passed,pass,details,note
-Tier 7.7h prerequisite exists,Tier 7.7h prerequisite exists,/Users/james/JKS:CRA/controlled_test_output/tier7_7h_20260509_lorenz_capacity_narma_memory_scoring_gate/tier7_7h_results.json,exists and pass,exists and pass,True,True,,
+Tier 7.7h prerequisite exists,Tier 7.7h prerequisite exists,<repo>/controlled_test_output/tier7_7h_20260509_lorenz_capacity_narma_memory_scoring_gate/tier7_7h_results.json,exists and pass,exists and pass,True,True,,
 Tier 7.7h outcome requires sham-separation contract,Tier 7.7h outcome requires sham-separation contract,overfit_or_sham_blocked,== overfit_or_sham_blocked,== overfit_or_sham_blocked,True,True,,
-Tier 7.7g contract prerequisite exists,Tier 7.7g contract prerequisite exists,/Users/james/JKS:CRA/controlled_test_output/tier7_7g_20260509_lorenz_capacity_narma_memory_contract/tier7_7g_results.json,exists and pass,exists and pass,True,True,,
+Tier 7.7g contract prerequisite exists,Tier 7.7g contract prerequisite exists,<repo>/controlled_test_output/tier7_7g_20260509_lorenz_capacity_narma_memory_contract/tier7_7g_results.json,exists and pass,exists and pass,True,True,,
 tasks locked,tasks locked,"['lorenz', 'mackey_glass', 'narma10']",Mackey/Lorenz/NARMA,Mackey/Lorenz/NARMA,True,True,,
 lengths locked,lengths locked,"[8000, 16000, 32000]","== [8000,16000,32000]","== [8000,16000,32000]",True,True,,
 seeds locked,seeds locked,"[42, 43, 44]","== [42,43,44]","== [42,43,44]",True,True,,

@@ -70,7 +70,7 @@
   "criteria_total": 8,
   "generated_at_utc": "2026-05-11T04:31:18+00:00",
   "outcome": "variable_allocation_partial",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_28a_20260510_variable_allocation_scoring",
+  "output_dir": "<repo>/controlled_test_output/tier5_28a_20260510_variable_allocation_scoring",
   "runner_revision": "tier5_28a_variable_allocation_scoring_20260510_0001",
   "static": {
     "label": "static",

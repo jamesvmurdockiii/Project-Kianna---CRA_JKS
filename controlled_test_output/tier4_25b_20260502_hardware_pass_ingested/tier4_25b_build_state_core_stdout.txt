@@ -1,4 +1,4 @@
-make: Entering directory '/tmp/job4445315681533454371.tmp/cra_425g/coral_reef_spinnaker/spinnaker_runtime'
+make: Entering directory '<jobmanager_tmp>'
 rm -rf build/gnu/ tests/test_runtime
 mkdir -p build/gnu/src/
 # spinnaker_tools.mk c
@@ -26,4 +26,4 @@ arm-none-eabi-nm build/gnu/coral_reef.elf > build/gnu/coral_reef.nm
 mkdir -p build/
 /home/jovyan/spinnaker/spinnaker_tools/tools/mkaplx build/gnu/coral_reef.nm | cat - build/gnu/coral_reef.bin > build/coral_reef.aplx
 rm build/gnu/coral_reef.bin build/gnu/coral_reef.nm build/gnu/coral_reef_build.c build/gnu/coral_reef_build.o
-make: Leaving directory '/tmp/job4445315681533454371.tmp/cra_425g/coral_reef_spinnaker/spinnaker_runtime'
+make: Leaving directory '<jobmanager_tmp>'

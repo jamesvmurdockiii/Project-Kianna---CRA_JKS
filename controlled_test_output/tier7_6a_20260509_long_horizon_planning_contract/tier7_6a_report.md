@@ -2,7 +2,7 @@
 
 - Generated: `2026-05-09T04:08:38+00:00`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier7_6a_20260509_long_horizon_planning_contract`
+- Output directory: `<repo>/controlled_test_output/tier7_6a_20260509_long_horizon_planning_contract`
 - Runner revision: `tier7_6a_long_horizon_planning_contract_20260509_0001`
 - Criteria: `19/19`
 - Next gate: `Tier 7.6b - Long-Horizon Planning / Subgoal-Control Local Diagnostic`
@@ -27,7 +27,7 @@ Contract only. No planning score, no public usefulness claim, no new baseline fr
 
 | Criterion | Value | Rule | Pass | Details |
 | --- | --- | --- | --- | --- |
-| tier7_5d_prerequisite_exists | `True` | must exist | yes | /Users/james/JKS:CRA/controlled_test_output/tier7_5d_20260509_curriculum_environment_attribution_closeout/tier7_5d_results.json |
+| tier7_5d_prerequisite_exists | `True` | must exist | yes | <repo>/controlled_test_output/tier7_5d_20260509_curriculum_environment_attribution_closeout/tier7_5d_results.json |
 | tier7_5d_prerequisite_passed | `PASS` | case-insensitive == PASS | yes |  |
 | contract_question_defined | `True` | non-empty | yes |  |
 | hypothesis_defined | `True` | non-empty | yes |  |

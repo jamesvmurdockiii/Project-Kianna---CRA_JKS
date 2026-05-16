@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.326924+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.485531+00:00",
   "source_generated_at_utc": "2026-04-26T19:57:00+00:00",
   "registry_entry_id": "tier4_10_population_scaling",
   "tier": "Tier 4.10 - population scaling",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_20260426_155103",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_20260426_155103/tier4_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_20260426_155103/tier4_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_20260426_155103/tier4_summary.csv",
+  "output_dir": "controlled_test_output/tier4_20260426_155103",
+  "manifest": "controlled_test_output/tier4_20260426_155103/tier4_results.json",
+  "report": "controlled_test_output/tier4_20260426_155103/tier4_report.md",
+  "summary_csv": "controlled_test_output/tier4_20260426_155103/tier4_summary.csv",
   "canonical": true,
   "claim": "Fixed populations from N=4 to N=64 remain stable on the switch stressor.",
   "caveat": "This baseline scaling task saturated; the honest claim is stability, not strong scaling advantage."

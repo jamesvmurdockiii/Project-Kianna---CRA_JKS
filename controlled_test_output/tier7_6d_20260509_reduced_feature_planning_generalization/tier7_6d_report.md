@@ -11,7 +11,7 @@
 
 | Criterion | Value | Rule | Pass | Details |
 | --- | --- | --- | --- | --- |
-| tier7_6c_prerequisite_exists | `/Users/james/JKS:CRA/controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout/tier7_6c_results.json` | exists | yes |  |
+| tier7_6c_prerequisite_exists | `<repo>/controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout/tier7_6c_results.json` | exists | yes |  |
 | tier7_6c_prerequisite_passed | `PASS` | == PASS | yes |  |
 | families_scored | `5` | == 5 | yes |  |
 | seeds_scored | `[42, 43, 44]` | == [42, 43, 44] | yes |  |

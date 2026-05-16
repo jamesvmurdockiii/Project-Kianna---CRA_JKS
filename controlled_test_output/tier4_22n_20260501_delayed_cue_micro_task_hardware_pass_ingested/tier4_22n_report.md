@@ -3,7 +3,7 @@
 - Generated: `2026-05-01T03:03:01+00:00`
 - Mode: `ingest`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested`
+- Output directory: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested`
 
 Tier 4.22n runs a 12-event delayed-cue-like signed micro-task through the custom runtime. Each event is scored from the chip's pre-update prediction, held across a two-event pending gap, then matured in order with delayed credit and checked against a local s16.15 reference.
 
@@ -110,32 +110,32 @@ Tier 4.22n runs a 12-event delayed-cue-like signed micro-task through the custom
 
 ## Artifacts
 
-- `aplx_build_stderr`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/tier4_22i_aplx_build_stderr (12).txt`
-- `aplx_build_stdout`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/tier4_22i_aplx_build_stdout (11).txt`
-- `environment_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/tier4_22n_environment.json`
-- `host_test_stderr`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/tier4_22i_host_test_stderr (11).txt`
-- `host_test_stdout`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/tier4_22i_host_test_stdout (11).txt`
-- `load_result_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/tier4_22n_load_result.json`
-- `main_syntax_stderr`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/tier4_22i_main_syntax_normal_stderr (10).txt`
-- `main_syntax_stdout`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/tier4_22i_main_syntax_normal_stdout (10).txt`
-- `manifest_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/tier4_22n_results.json`
-- `reference_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/tier4_22n_task_reference_rows.csv`
-- `reference_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/tier4_22n_task_reference.json`
-- `report_md`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/tier4_22n_report.md`
-- `target_acquisition_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/tier4_22n_target_acquisition.json`
-- `task_micro_loop_result_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/tier4_22n_task_micro_loop_result.json`
-- `task_micro_loop_rows_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/tier4_22n_task_micro_loop_rows.csv`
-- `raw_remote_manifest_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/remote_tier4_22n_results_raw.json`
-- `raw_remote_report_md`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/remote_tier4_22n_report_raw.md`
-- `remote_latest_manifest_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/tier4_22n_latest_manifest.json`
-- `main_syntax_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/tier4_22i_main_syntax_normal (10).o`
-- `aplx_binary`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/coral_reef (6).aplx`
-- `elf_binary`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/coral_reef (7).elf`
-- `elf_listing`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/coral_reef (6).txt`
-- `spinnaker_reports_zip`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/reports (17).zip`
-- `main_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/main (9).o`
-- `host_interface_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/host_interface (8).o`
-- `state_manager_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/state_manager (9).o`
-- `synapse_manager_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/synapse_manager (9).o`
-- `neuron_manager_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/neuron_manager (9).o`
-- `router_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/router (7).o`
+- `aplx_build_stderr`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/tier4_22i_aplx_build_stderr (12).txt`
+- `aplx_build_stdout`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/tier4_22i_aplx_build_stdout (11).txt`
+- `environment_json`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/tier4_22n_environment.json`
+- `host_test_stderr`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/tier4_22i_host_test_stderr (11).txt`
+- `host_test_stdout`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/tier4_22i_host_test_stdout (11).txt`
+- `load_result_json`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/tier4_22n_load_result.json`
+- `main_syntax_stderr`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/tier4_22i_main_syntax_normal_stderr (10).txt`
+- `main_syntax_stdout`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/tier4_22i_main_syntax_normal_stdout (10).txt`
+- `manifest_json`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/tier4_22n_results.json`
+- `reference_csv`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/tier4_22n_task_reference_rows.csv`
+- `reference_json`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/tier4_22n_task_reference.json`
+- `report_md`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/tier4_22n_report.md`
+- `target_acquisition_json`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/tier4_22n_target_acquisition.json`
+- `task_micro_loop_result_json`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/tier4_22n_task_micro_loop_result.json`
+- `task_micro_loop_rows_csv`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/tier4_22n_task_micro_loop_rows.csv`
+- `raw_remote_manifest_json`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/remote_tier4_22n_results_raw.json`
+- `raw_remote_report_md`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/remote_tier4_22n_report_raw.md`
+- `remote_latest_manifest_json`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/tier4_22n_latest_manifest.json`
+- `main_syntax_object`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/tier4_22i_main_syntax_normal (10).o`
+- `aplx_binary`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/coral_reef (6).aplx`
+- `elf_binary`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/coral_reef (7).elf`
+- `elf_listing`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/coral_reef (6).txt`
+- `spinnaker_reports_zip`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/reports (17).zip`
+- `main_object`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/main (9).o`
+- `host_interface_object`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/host_interface (8).o`
+- `state_manager_object`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/state_manager (9).o`
+- `synapse_manager_object`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/synapse_manager (9).o`
+- `neuron_manager_object`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/neuron_manager (9).o`
+- `router_object`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/router (7).o`

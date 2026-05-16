@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.505475+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.648906+00:00",
   "source_generated_at_utc": "2026-05-09T16:19:00+00:00",
   "registry_entry_id": "tier7_7l_effective_state_dimensionality_repair_scoring_gate",
   "tier": "Tier 7.7l - Effective-State-Dimensionality Repair Scoring Gate",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7l_20260509_effective_state_dimensionality_repair_scoring_gate",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_7l_20260509_effective_state_dimensionality_repair_scoring_gate/tier7_7l_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_7l_20260509_effective_state_dimensionality_repair_scoring_gate/tier7_7l_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7l_20260509_effective_state_dimensionality_repair_scoring_gate/tier7_7l_summary.csv",
+  "output_dir": "controlled_test_output/tier7_7l_20260509_effective_state_dimensionality_repair_scoring_gate",
+  "manifest": "controlled_test_output/tier7_7l_20260509_effective_state_dimensionality_repair_scoring_gate/tier7_7l_results.json",
+  "report": "controlled_test_output/tier7_7l_20260509_effective_state_dimensionality_repair_scoring_gate/tier7_7l_report.md",
+  "summary_csv": "controlled_test_output/tier7_7l_20260509_effective_state_dimensionality_repair_scoring_gate/tier7_7l_summary.csv",
   "canonical": true,
   "claim": "Tier 7.7l scored the locked repair and classified the result as task_gain_without_dimension: partitioned causal drivers substantially improved Lorenz, Mackey-Glass, and repaired NARMA against the single-pool reference, but the predeclared effective-dimensionality threshold and diversity-pressure attribution were not met.",
   "caveat": "Diagnostic scoring evidence only; not a mechanism promotion, not a baseline freeze, not hardware/native transfer, not external-baseline superiority, and not broad public usefulness evidence."

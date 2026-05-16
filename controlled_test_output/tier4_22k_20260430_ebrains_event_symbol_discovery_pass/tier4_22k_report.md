@@ -3,7 +3,7 @@
 - Generated: `2026-04-30T21:02:05+00:00`
 - Mode: `run-hardware`
 - Status: **PASS**
-- Output directory: `/tmp/job7804713621144302745.tmp/tier4_22k_job_output`
+- Output directory: `<jobmanager_tmp>`
 
 Tier 4.22k inspects the EBRAINS Spin1API build image and compiles a callback-symbol probe matrix. It exists because Tier 4.22i reached the raw custom-runtime layer and failed before board execution on callback event-symbol mismatch.
 
@@ -39,14 +39,14 @@ Tier 4.22k inspects the EBRAINS Spin1API build image and compiles a callback-sym
 
 ## Artifacts
 
-- `environment_json`: `/tmp/job7804713621144302745.tmp/tier4_22k_job_output/tier4_22k_environment.json`
-- `header_inventory_csv`: `/tmp/job7804713621144302745.tmp/tier4_22k_job_output/tier4_22k_header_inventory.csv`
-- `spin1api_symbols_txt`: `/tmp/job7804713621144302745.tmp/tier4_22k_job_output/tier4_22k_spin1api_symbols.txt`
-- `probe_matrix_csv`: `/tmp/job7804713621144302745.tmp/tier4_22k_job_output/tier4_22k_probe_matrix.csv`
-- `probe_build_stdout`: `/tmp/job7804713621144302745.tmp/tier4_22k_job_output/tier4_22k_probe_build_stdout.txt`
-- `probe_build_stderr`: `/tmp/job7804713621144302745.tmp/tier4_22k_job_output/tier4_22k_probe_build_stderr.txt`
-- `manifest_json`: `/tmp/job7804713621144302745.tmp/tier4_22k_job_output/tier4_22k_results.json`
-- `report_md`: `/tmp/job7804713621144302745.tmp/tier4_22k_job_output/tier4_22k_report.md`
+- `environment_json`: `<jobmanager_tmp>`
+- `header_inventory_csv`: `<jobmanager_tmp>`
+- `spin1api_symbols_txt`: `<jobmanager_tmp>`
+- `probe_matrix_csv`: `<jobmanager_tmp>`
+- `probe_build_stdout`: `<jobmanager_tmp>`
+- `probe_build_stderr`: `<jobmanager_tmp>`
+- `manifest_json`: `<jobmanager_tmp>`
+- `report_md`: `<jobmanager_tmp>`
 
 ## Official Reference Checked
 

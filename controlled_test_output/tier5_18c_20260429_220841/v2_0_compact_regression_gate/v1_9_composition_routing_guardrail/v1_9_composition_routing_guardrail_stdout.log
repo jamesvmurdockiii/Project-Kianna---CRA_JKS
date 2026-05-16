@@ -19,6 +19,6 @@
 [tier5.13c] suite=routing task=heldout_context_routing model=online_perceptron seed=42
 {
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail",
+  "output_dir": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail",
   "failure_reason": ""
 }

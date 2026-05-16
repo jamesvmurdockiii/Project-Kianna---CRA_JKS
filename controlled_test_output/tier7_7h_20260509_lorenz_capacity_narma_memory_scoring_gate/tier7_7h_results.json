@@ -708,7 +708,7 @@
       "note": "",
       "passed": true,
       "rule": "exists and pass",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_7g_20260509_lorenz_capacity_narma_memory_contract/tier7_7g_results.json"
+      "value": "<repo>/controlled_test_output/tier7_7g_20260509_lorenz_capacity_narma_memory_contract/tier7_7g_results.json"
     },
     {
       "name": "Tier 7.7g authorizes scoring",
@@ -722,14 +722,14 @@
       "note": "",
       "passed": true,
       "rule": "exists and pass",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_7f_20260509_repaired_finite_stream_long_run_scoreboard/tier7_7f_results.json"
+      "value": "<repo>/controlled_test_output/tier7_7f_20260509_repaired_finite_stream_long_run_scoreboard/tier7_7f_results.json"
     },
     {
       "name": "Tier 7.7e prerequisite exists",
       "note": "",
       "passed": true,
       "rule": "exists and pass",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight/tier7_7e_results.json"
+      "value": "<repo>/controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight/tier7_7e_results.json"
     },
     {
       "name": "repaired NARMA stream locked",
@@ -1196,13 +1196,13 @@
       "task": "narma10"
     }
   ],
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7h_20260509_lorenz_capacity_narma_memory_scoring_gate",
+  "output_dir": "<repo>/controlled_test_output/tier7_7h_20260509_lorenz_capacity_narma_memory_scoring_gate",
   "prerequisites": {
-    "tier7_7e": "/Users/james/JKS:CRA/controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight/tier7_7e_results.json",
+    "tier7_7e": "<repo>/controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight/tier7_7e_results.json",
     "tier7_7e_status": "pass",
-    "tier7_7f": "/Users/james/JKS:CRA/controlled_test_output/tier7_7f_20260509_repaired_finite_stream_long_run_scoreboard/tier7_7f_results.json",
+    "tier7_7f": "<repo>/controlled_test_output/tier7_7f_20260509_repaired_finite_stream_long_run_scoreboard/tier7_7f_results.json",
     "tier7_7f_status": "pass",
-    "tier7_7g": "/Users/james/JKS:CRA/controlled_test_output/tier7_7g_20260509_lorenz_capacity_narma_memory_contract/tier7_7g_results.json",
+    "tier7_7g": "<repo>/controlled_test_output/tier7_7g_20260509_lorenz_capacity_narma_memory_contract/tier7_7g_results.json",
     "tier7_7g_status": "pass"
   },
   "repaired_stream_manifest": {
@@ -1217,7 +1217,7 @@
     "labeling_rule": "Repaired NARMA10 U(0,0.2); do not silently mix with prior U(0,0.5) NARMA scores.",
     "output_wrapper": "none",
     "selected_generator": "narma10_reduced_input_u02",
-    "source_gate": "/Users/james/JKS:CRA/controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight/tier7_7e_results.json"
+    "source_gate": "<repo>/controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight/tier7_7e_results.json"
   },
   "runner_revision": "tier7_7h_lorenz_capacity_narma_memory_scoring_gate_20260509_0001",
   "runtime_seconds": 366.01677954099995,

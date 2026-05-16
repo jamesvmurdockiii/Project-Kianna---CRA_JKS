@@ -3,7 +3,7 @@
 - Generated: `2026-05-01T08:40:50+00:00`
 - Mode: `ingest`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested`
+- Output directory: `<repo>/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested`
 
 Tier 4.22u runs a 30-event signed stream through the custom runtime using native keyed context state, keyed route state, and keyed memory/working-state slots. The host writes context, route, and memory updates, then sends only key+cue+delay for each decision; the chip retrieves all three by key, computes feature=context[key]*route[key]*memory[key]*cue, scores the pre-update prediction, holds a two-event pending gap, then matures delayed credit against a local s16.15 reference.
 
@@ -192,32 +192,32 @@ Tier 4.22u runs a 30-event signed stream through the custom runtime using native
 
 ## Artifacts
 
-- `aplx_build_stderr`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/tier4_22i_aplx_build_stderr (20).txt`
-- `aplx_build_stdout`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/tier4_22i_aplx_build_stdout (19).txt`
-- `environment_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/tier4_22u_environment.json`
-- `host_test_stderr`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/tier4_22i_host_test_stderr (19).txt`
-- `host_test_stdout`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/tier4_22i_host_test_stdout (19).txt`
-- `load_result_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/tier4_22u_load_result.json`
-- `main_syntax_stderr`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/tier4_22i_main_syntax_normal_stderr (18).txt`
-- `main_syntax_stdout`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/tier4_22i_main_syntax_normal_stdout (18).txt`
-- `manifest_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/tier4_22u_results.json`
-- `reference_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/tier4_22u_task_reference_rows.csv`
-- `reference_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/tier4_22u_task_reference.json`
-- `report_md`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/tier4_22u_report.md`
-- `target_acquisition_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/tier4_22u_target_acquisition.json`
-- `task_micro_loop_result_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/tier4_22u_task_micro_loop_result.json`
-- `task_micro_loop_rows_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/tier4_22u_task_micro_loop_rows.csv`
-- `raw_remote_manifest_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/remote_tier4_22u_results_raw.json`
-- `raw_remote_report_md`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/remote_tier4_22u_report_raw.md`
-- `remote_latest_manifest_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/tier4_22u_latest_manifest.json`
-- `main_syntax_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/tier4_22i_main_syntax_normal (18).o`
-- `aplx_binary`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/coral_reef (14).aplx`
-- `elf_binary`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/coral_reef (15).elf`
-- `elf_listing`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/coral_reef (14).txt`
-- `spinnaker_reports_zip`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/reports (25).zip`
-- `main_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/main (17).o`
-- `host_interface_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/host_interface (16).o`
-- `state_manager_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/state_manager (17).o`
-- `synapse_manager_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/synapse_manager (17).o`
-- `neuron_manager_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/neuron_manager (17).o`
-- `router_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/router (15).o`
+- `aplx_build_stderr`: `<repo>/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/tier4_22i_aplx_build_stderr (20).txt`
+- `aplx_build_stdout`: `<repo>/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/tier4_22i_aplx_build_stdout (19).txt`
+- `environment_json`: `<repo>/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/tier4_22u_environment.json`
+- `host_test_stderr`: `<repo>/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/tier4_22i_host_test_stderr (19).txt`
+- `host_test_stdout`: `<repo>/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/tier4_22i_host_test_stdout (19).txt`
+- `load_result_json`: `<repo>/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/tier4_22u_load_result.json`
+- `main_syntax_stderr`: `<repo>/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/tier4_22i_main_syntax_normal_stderr (18).txt`
+- `main_syntax_stdout`: `<repo>/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/tier4_22i_main_syntax_normal_stdout (18).txt`
+- `manifest_json`: `<repo>/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/tier4_22u_results.json`
+- `reference_csv`: `<repo>/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/tier4_22u_task_reference_rows.csv`
+- `reference_json`: `<repo>/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/tier4_22u_task_reference.json`
+- `report_md`: `<repo>/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/tier4_22u_report.md`
+- `target_acquisition_json`: `<repo>/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/tier4_22u_target_acquisition.json`
+- `task_micro_loop_result_json`: `<repo>/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/tier4_22u_task_micro_loop_result.json`
+- `task_micro_loop_rows_csv`: `<repo>/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/tier4_22u_task_micro_loop_rows.csv`
+- `raw_remote_manifest_json`: `<repo>/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/remote_tier4_22u_results_raw.json`
+- `raw_remote_report_md`: `<repo>/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/remote_tier4_22u_report_raw.md`
+- `remote_latest_manifest_json`: `<repo>/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/tier4_22u_latest_manifest.json`
+- `main_syntax_object`: `<repo>/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/tier4_22i_main_syntax_normal (18).o`
+- `aplx_binary`: `<repo>/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/coral_reef (14).aplx`
+- `elf_binary`: `<repo>/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/coral_reef (15).elf`
+- `elf_listing`: `<repo>/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/coral_reef (14).txt`
+- `spinnaker_reports_zip`: `<repo>/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/reports (25).zip`
+- `main_object`: `<repo>/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/main (17).o`
+- `host_interface_object`: `<repo>/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/host_interface (16).o`
+- `state_manager_object`: `<repo>/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/state_manager (17).o`
+- `synapse_manager_object`: `<repo>/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/synapse_manager (17).o`
+- `neuron_manager_object`: `<repo>/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/neuron_manager (17).o`
+- `router_object`: `<repo>/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_hardware_pass_ingested/router (15).o`

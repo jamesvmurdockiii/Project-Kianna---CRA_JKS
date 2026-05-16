@@ -5,7 +5,7 @@
   },
   "bundle_artifacts": {
     "job_readme": "controlled_test_output/tier4_30e_hw_20260505_prepared/ebrains_upload_bundle/cra_430e/README_TIER4_30E_HW_JOB.md",
-    "stable_upload_folder": "/Users/james/JKS:CRA/ebrains_jobs/cra_430e",
+    "stable_upload_folder": "<repo>/ebrains_jobs/cra_430e",
     "upload_bundle": "controlled_test_output/tier4_30e_hw_20260505_prepared/ebrains_upload_bundle/cra_430e"
   },
   "claim_boundary": "Prepared source bundle only; no hardware evidence until returned run-hardware artifacts pass.",
@@ -78,7 +78,7 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/ebrains_jobs/cra_430e"
+      "value": "<repo>/ebrains_jobs/cra_430e"
     },
     {
       "name": "run-hardware command emitted",
@@ -90,7 +90,7 @@
   ],
   "generated_at_utc": "2026-05-05T22:20:02+00:00",
   "host_tests": {
-    "command": "make -C /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime clean-host test-lifecycle test-lifecycle-split test-profiles",
+    "command": "make -C <repo>/coral_reef_spinnaker/spinnaker_runtime clean-host test-lifecycle test-lifecycle-split test-profiles",
     "returncode": 0,
     "status": "pass",
     "stderr": "",
@@ -98,14 +98,14 @@
   },
   "main_syntax_check": {
     "normal": {
-      "command": "/usr/bin/cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-int-to-pointer-cast -I /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/stubs -I /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src -c /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src/main.c -o /Users/james/JKS:CRA/controlled_test_output/tier4_30e_hw_20260505_prepared/tier4_22i_main_syntax_normal.o",
-      "object_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_30e_hw_20260505_prepared/tier4_22i_main_syntax_normal.o",
+      "command": "/usr/bin/cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-int-to-pointer-cast -I <repo>/coral_reef_spinnaker/spinnaker_runtime/stubs -I <repo>/coral_reef_spinnaker/spinnaker_runtime/src -c <repo>/coral_reef_spinnaker/spinnaker_runtime/src/main.c -o <repo>/controlled_test_output/tier4_30e_hw_20260505_prepared/tier4_22i_main_syntax_normal.o",
+      "object_artifact": "<repo>/controlled_test_output/tier4_30e_hw_20260505_prepared/tier4_22i_main_syntax_normal.o",
       "returncode": 0,
       "status": "pass",
       "stderr": "",
-      "stderr_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_30e_hw_20260505_prepared/tier4_22i_main_syntax_normal_stderr.txt",
+      "stderr_artifact": "<repo>/controlled_test_output/tier4_30e_hw_20260505_prepared/tier4_22i_main_syntax_normal_stderr.txt",
       "stdout": "",
-      "stdout_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_30e_hw_20260505_prepared/tier4_22i_main_syntax_normal_stdout.txt"
+      "stdout_artifact": "<repo>/controlled_test_output/tier4_30e_hw_20260505_prepared/tier4_22i_main_syntax_normal_stdout.txt"
     },
     "status": "pass"
   },
@@ -154,7 +154,7 @@
   "summary": {
     "claim_boundary": "Prepared source bundle only; no hardware evidence until returned run-hardware artifacts pass.",
     "job_command": "cra_430e/experiments/tier4_30e_multicore_lifecycle_hardware_smoke.py --mode run-hardware --output-dir tier4_30e_hw_job_output",
-    "stable_upload_folder": "/Users/james/JKS:CRA/ebrains_jobs/cra_430e",
+    "stable_upload_folder": "<repo>/ebrains_jobs/cra_430e",
     "upload_bundle": "controlled_test_output/tier4_30e_hw_20260505_prepared/ebrains_upload_bundle/cra_430e",
     "upload_package": "cra_430e",
     "what_i_need_from_user": "Upload `cra_430e` to EBRAINS/JobManager and run the emitted command."

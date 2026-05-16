@@ -1,6 +1,6 @@
 tier,mechanism,status,criteria_passed,criteria_total,hardware_criteria_passed,hardware_criteria_total,seeds,canonical_dir
-4.29a,native keyed-memory overcapacity,pass,20,20,141,141,"42,43,44",/Users/james/JKS:CRA/controlled_test_output/tier4_29a_20260503_hardware_pass_ingested
-4.29b,native routing/composition,pass,21,21,156,156,"42,43,44",/Users/james/JKS:CRA/controlled_test_output/tier4_29b_20260503_hardware_pass_ingested
-4.29c,native predictive binding,pass,20,20,78,78,"42,43,44",/Users/james/JKS:CRA/controlled_test_output/tier4_29c_20260504_pass_ingested
-4.29d,native self-evaluation / confidence gating,pass,25,25,90,90,"42,43,44",/Users/james/JKS:CRA/controlled_test_output/tier4_29d_20260504_pass_ingested
-4.29e,native host-scheduled replay/consolidation,pass,25,25,114,114,"42,43,44",/Users/james/JKS:CRA/controlled_test_output/tier4_29e_20260505_pass_ingested
+4.29a,native keyed-memory overcapacity,pass,20,20,141,141,"42,43,44",<repo>/controlled_test_output/tier4_29a_20260503_hardware_pass_ingested
+4.29b,native routing/composition,pass,21,21,156,156,"42,43,44",<repo>/controlled_test_output/tier4_29b_20260503_hardware_pass_ingested
+4.29c,native predictive binding,pass,20,20,78,78,"42,43,44",<repo>/controlled_test_output/tier4_29c_20260504_pass_ingested
+4.29d,native self-evaluation / confidence gating,pass,25,25,90,90,"42,43,44",<repo>/controlled_test_output/tier4_29d_20260504_pass_ingested
+4.29e,native host-scheduled replay/consolidation,pass,25,25,114,114,"42,43,44",<repo>/controlled_test_output/tier4_29e_20260505_pass_ingested

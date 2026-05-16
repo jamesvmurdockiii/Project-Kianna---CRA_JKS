@@ -3,9 +3,9 @@
   "criteria_passed": 24,
   "criteria_total": 24,
   "generated_at_utc": "2026-05-06T04:17:00+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_31a_20260506_native_temporal_substrate_readiness",
-  "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_31a_20260506_native_temporal_substrate_readiness/tier4_31a_report.md",
-  "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_31a_20260506_native_temporal_substrate_readiness/tier4_31a_results.json",
+  "output_dir": "<repo>/controlled_test_output/tier4_31a_20260506_native_temporal_substrate_readiness",
+  "report_md": "<repo>/controlled_test_output/tier4_31a_20260506_native_temporal_substrate_readiness/tier4_31a_report.md",
+  "results_json": "<repo>/controlled_test_output/tier4_31a_20260506_native_temporal_substrate_readiness/tier4_31a_results.json",
   "status": "pass",
   "tier": "Tier 4.31a - Native Temporal-Substrate Readiness"
 }

@@ -3,7 +3,7 @@
 - Generated: `2026-04-30T17:59:06+00:00`
 - Mode: `prepare`
 - Status: **PREPARED**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_22b_20260430_prepared`
+- Output directory: `<repo>/controlled_test_output/tier4_22b_20260430_prepared`
 
 Tier 4.22b isolates continuous transport: scheduled input, one continuous `sim.run`, and compact/binned spike readback. Learning is intentionally disabled here so transport failures cannot be confused with reward/plasticity bugs.
 

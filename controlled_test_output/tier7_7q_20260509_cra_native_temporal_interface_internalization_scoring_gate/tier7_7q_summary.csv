@@ -1,5 +1,5 @@
 name,value,rule,passed,note
-Tier 7.7p contract exists,/Users/james/JKS:CRA/controlled_test_output/tier7_7p_20260509_cra_native_temporal_interface_internalization_contract/tier7_7p_results.json,exists and pass,True,
+Tier 7.7p contract exists,<repo>/controlled_test_output/tier7_7p_20260509_cra_native_temporal_interface_internalization_contract/tier7_7p_results.json,exists and pass,True,
 locked tasks,"['mackey_glass', 'lorenz', 'narma10']",Mackey/Lorenz/NARMA,True,
 locked lengths,"[8000, 16000, 32000]",8000/16000/32000,True,
 locked seeds,"[42, 43, 44]",42/43/44,True,

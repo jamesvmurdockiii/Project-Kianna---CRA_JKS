@@ -2,7 +2,7 @@
 
 - Generated: `2026-04-30T19:10:43+00:00`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_22g_20260430_event_indexed_trace_runtime`
+- Output directory: `<repo>/controlled_test_output/tier4_22g_20260430_event_indexed_trace_runtime`
 
 Tier 4.22g repairs the first custom-C scale blockers identified by Tier 4.22f0: all-synapse spike delivery, all-synapse eligibility decay, and all-synapse dopamine modulation. This remains local C evidence, not hardware learning evidence.
 

@@ -2,16 +2,16 @@
   "backend": "nest",
   "command": "experiments/tier4_domain_transfer.py --backend nest --stop-on-fail",
   "generated_at_utc": "2026-04-26T20:49:35+00:00",
-  "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655",
+  "output_dir": "<repo>/controlled_test_output/tier4_11_20260426_164655",
   "results": [
     {
       "artifacts": {
-        "seed_42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/finance_signed_return_seed42_timeseries.csv",
-        "seed_42_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/finance_signed_return_seed42_timeseries.png",
-        "seed_43_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/finance_signed_return_seed43_timeseries.csv",
-        "seed_43_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/finance_signed_return_seed43_timeseries.png",
-        "seed_44_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/finance_signed_return_seed44_timeseries.csv",
-        "seed_44_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/finance_signed_return_seed44_timeseries.png"
+        "seed_42_timeseries_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/finance_signed_return_seed42_timeseries.csv",
+        "seed_42_timeseries_png": "<repo>/controlled_test_output/tier4_11_20260426_164655/finance_signed_return_seed42_timeseries.png",
+        "seed_43_timeseries_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/finance_signed_return_seed43_timeseries.csv",
+        "seed_43_timeseries_png": "<repo>/controlled_test_output/tier4_11_20260426_164655/finance_signed_return_seed43_timeseries.png",
+        "seed_44_timeseries_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/finance_signed_return_seed44_timeseries.csv",
+        "seed_44_timeseries_png": "<repo>/controlled_test_output/tier4_11_20260426_164655/finance_signed_return_seed44_timeseries.png"
       },
       "criteria": [
         {
@@ -819,12 +819,12 @@
     },
     {
       "artifacts": {
-        "seed_42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/sensor_control_seed42_timeseries.csv",
-        "seed_42_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/sensor_control_seed42_timeseries.png",
-        "seed_43_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/sensor_control_seed43_timeseries.csv",
-        "seed_43_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/sensor_control_seed43_timeseries.png",
-        "seed_44_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/sensor_control_seed44_timeseries.csv",
-        "seed_44_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/sensor_control_seed44_timeseries.png"
+        "seed_42_timeseries_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/sensor_control_seed42_timeseries.csv",
+        "seed_42_timeseries_png": "<repo>/controlled_test_output/tier4_11_20260426_164655/sensor_control_seed42_timeseries.png",
+        "seed_43_timeseries_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/sensor_control_seed43_timeseries.csv",
+        "seed_43_timeseries_png": "<repo>/controlled_test_output/tier4_11_20260426_164655/sensor_control_seed43_timeseries.png",
+        "seed_44_timeseries_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/sensor_control_seed44_timeseries.csv",
+        "seed_44_timeseries_png": "<repo>/controlled_test_output/tier4_11_20260426_164655/sensor_control_seed44_timeseries.png"
       },
       "criteria": [
         {
@@ -1640,12 +1640,12 @@
     },
     {
       "artifacts": {
-        "seed_42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/finance_zero_signal_seed42_timeseries.csv",
-        "seed_42_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/finance_zero_signal_seed42_timeseries.png",
-        "seed_43_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/finance_zero_signal_seed43_timeseries.csv",
-        "seed_43_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/finance_zero_signal_seed43_timeseries.png",
-        "seed_44_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/finance_zero_signal_seed44_timeseries.csv",
-        "seed_44_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/finance_zero_signal_seed44_timeseries.png"
+        "seed_42_timeseries_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/finance_zero_signal_seed42_timeseries.csv",
+        "seed_42_timeseries_png": "<repo>/controlled_test_output/tier4_11_20260426_164655/finance_zero_signal_seed42_timeseries.png",
+        "seed_43_timeseries_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/finance_zero_signal_seed43_timeseries.csv",
+        "seed_43_timeseries_png": "<repo>/controlled_test_output/tier4_11_20260426_164655/finance_zero_signal_seed43_timeseries.png",
+        "seed_44_timeseries_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/finance_zero_signal_seed44_timeseries.csv",
+        "seed_44_timeseries_png": "<repo>/controlled_test_output/tier4_11_20260426_164655/finance_zero_signal_seed44_timeseries.png"
       },
       "criteria": [
         {
@@ -2434,12 +2434,12 @@
     },
     {
       "artifacts": {
-        "seed_42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/sensor_zero_signal_seed42_timeseries.csv",
-        "seed_42_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/sensor_zero_signal_seed42_timeseries.png",
-        "seed_43_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/sensor_zero_signal_seed43_timeseries.csv",
-        "seed_43_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/sensor_zero_signal_seed43_timeseries.png",
-        "seed_44_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/sensor_zero_signal_seed44_timeseries.csv",
-        "seed_44_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/sensor_zero_signal_seed44_timeseries.png"
+        "seed_42_timeseries_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/sensor_zero_signal_seed42_timeseries.csv",
+        "seed_42_timeseries_png": "<repo>/controlled_test_output/tier4_11_20260426_164655/sensor_zero_signal_seed42_timeseries.png",
+        "seed_43_timeseries_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/sensor_zero_signal_seed43_timeseries.csv",
+        "seed_43_timeseries_png": "<repo>/controlled_test_output/tier4_11_20260426_164655/sensor_zero_signal_seed43_timeseries.png",
+        "seed_44_timeseries_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/sensor_zero_signal_seed44_timeseries.csv",
+        "seed_44_timeseries_png": "<repo>/controlled_test_output/tier4_11_20260426_164655/sensor_zero_signal_seed44_timeseries.png"
       },
       "criteria": [
         {
@@ -3236,12 +3236,12 @@
     },
     {
       "artifacts": {
-        "seed_42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/finance_shuffled_label_seed42_timeseries.csv",
-        "seed_42_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/finance_shuffled_label_seed42_timeseries.png",
-        "seed_43_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/finance_shuffled_label_seed43_timeseries.csv",
-        "seed_43_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/finance_shuffled_label_seed43_timeseries.png",
-        "seed_44_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/finance_shuffled_label_seed44_timeseries.csv",
-        "seed_44_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/finance_shuffled_label_seed44_timeseries.png"
+        "seed_42_timeseries_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/finance_shuffled_label_seed42_timeseries.csv",
+        "seed_42_timeseries_png": "<repo>/controlled_test_output/tier4_11_20260426_164655/finance_shuffled_label_seed42_timeseries.png",
+        "seed_43_timeseries_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/finance_shuffled_label_seed43_timeseries.csv",
+        "seed_43_timeseries_png": "<repo>/controlled_test_output/tier4_11_20260426_164655/finance_shuffled_label_seed43_timeseries.png",
+        "seed_44_timeseries_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/finance_shuffled_label_seed44_timeseries.csv",
+        "seed_44_timeseries_png": "<repo>/controlled_test_output/tier4_11_20260426_164655/finance_shuffled_label_seed44_timeseries.png"
       },
       "criteria": [
         {
@@ -4033,12 +4033,12 @@
     },
     {
       "artifacts": {
-        "seed_42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/sensor_shuffled_label_seed42_timeseries.csv",
-        "seed_42_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/sensor_shuffled_label_seed42_timeseries.png",
-        "seed_43_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/sensor_shuffled_label_seed43_timeseries.csv",
-        "seed_43_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/sensor_shuffled_label_seed43_timeseries.png",
-        "seed_44_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/sensor_shuffled_label_seed44_timeseries.csv",
-        "seed_44_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/sensor_shuffled_label_seed44_timeseries.png"
+        "seed_42_timeseries_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/sensor_shuffled_label_seed42_timeseries.csv",
+        "seed_42_timeseries_png": "<repo>/controlled_test_output/tier4_11_20260426_164655/sensor_shuffled_label_seed42_timeseries.png",
+        "seed_43_timeseries_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/sensor_shuffled_label_seed43_timeseries.csv",
+        "seed_43_timeseries_png": "<repo>/controlled_test_output/tier4_11_20260426_164655/sensor_shuffled_label_seed43_timeseries.png",
+        "seed_44_timeseries_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/sensor_shuffled_label_seed44_timeseries.csv",
+        "seed_44_timeseries_png": "<repo>/controlled_test_output/tier4_11_20260426_164655/sensor_shuffled_label_seed44_timeseries.png"
       },
       "criteria": [
         {

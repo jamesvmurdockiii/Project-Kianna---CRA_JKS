@@ -89,6 +89,6 @@ Tier 4.31d is a one-board native temporal-state hardware smoke. It proves build/
 
 ## Artifacts
 
-- `results_json`: `/tmp/job4747701466966001619.tmp/tier4_31d_hw_job_output/tier4_31d_hw_results.json`
-- `report_md`: `/tmp/job4747701466966001619.tmp/tier4_31d_hw_job_output/tier4_31d_hw_report.md`
-- `summary_csv`: `/tmp/job4747701466966001619.tmp/tier4_31d_hw_job_output/tier4_31d_hw_summary.csv`
+- `results_json`: `<jobmanager_tmp>`
+- `report_md`: `<jobmanager_tmp>`
+- `summary_csv`: `<jobmanager_tmp>`

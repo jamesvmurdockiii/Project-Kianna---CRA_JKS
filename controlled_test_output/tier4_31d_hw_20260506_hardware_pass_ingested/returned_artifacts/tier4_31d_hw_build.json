@@ -1,15 +1,15 @@
 {
-  "aplx_artifact": "/tmp/job4747701466966001619.tmp/tier4_31d_hw_job_output/coral_reef_learning_core_temporal.aplx",
+  "aplx_artifact": "<jobmanager_tmp>",
   "aplx_exists": true,
   "base_aplx_exists": true,
   "base_elf_exists": true,
-  "command": "make -C /tmp/job4747701466966001619.tmp/cra_431d_r1/coral_reef_spinnaker/spinnaker_runtime clean all",
+  "command": "make -C <jobmanager_tmp> clean all",
   "returncode": 0,
   "runtime_profile": "learning_core",
   "runtime_seconds": 1.2680523530580103,
   "spinnaker_tools": "/home/jovyan/spinnaker/spinnaker_tools",
   "status": "pass",
-  "stderr_artifact": "/tmp/job4747701466966001619.tmp/tier4_31d_hw_job_output/tier4_31d_aplx_build_stderr.txt",
-  "stdout_artifact": "/tmp/job4747701466966001619.tmp/tier4_31d_hw_job_output/tier4_31d_aplx_build_stdout.txt",
+  "stderr_artifact": "<jobmanager_tmp>",
+  "stdout_artifact": "<jobmanager_tmp>",
   "timed_out": false
 }

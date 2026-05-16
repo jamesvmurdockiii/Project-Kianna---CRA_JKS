@@ -452,7 +452,7 @@ Latest documented result:
 - run directory: `controlled_test_output/tier4_13_20260427_011912_hardware_pass/`
 - source generated at: `2026-04-27T00:33:33+00:00`
 - source remote output directory:
-  `/tmp/job18372215669669985472.tmp/cra_test/controlled_test_output/tier4_13_20260427_011912`
+  `<jobmanager_tmp>`
 - status: pass
 - backend: `pyNN.spiNNaker`
 - hardware run attempted: `True`
@@ -557,7 +557,7 @@ Latest documented result:
 - run directory: `controlled_test_output/tier4_15_20260427_030501_hardware_pass/`
 - source generated at: `2026-04-27T02:48:50+00:00`
 - source remote output directory:
-  `/tmp/job12244319576281684700.tmp/cra_test_1/controlled_test_output/tier4_15_20260427_030501`
+  `<jobmanager_tmp>`
 - status: pass
 - backend: `pyNN.spiNNaker`
 - requested seeds: `42`, `43`, `44`
@@ -5120,7 +5120,7 @@ controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_prepar
 Prepared EBRAINS upload folder and command:
 
 ```text
-/Users/james/JKS:CRA/ebrains_jobs/cra_422ad
+<repo>/ebrains_jobs/cra_422ad
 cra_422ad/experiments/tier4_22u_native_memory_route_state_smoke.py --mode run-hardware --output-dir tier4_22u_job_output
 ```
 
@@ -5165,7 +5165,7 @@ controlled_test_output/tier4_22v_20260501_native_memory_route_reentry_compositio
 Prepared EBRAINS upload folder and command:
 
 ```text
-/Users/james/JKS:CRA/ebrains_jobs/cra_422ae
+<repo>/ebrains_jobs/cra_422ae
 cra_422ae/experiments/tier4_22v_native_memory_route_reentry_composition_smoke.py --mode run-hardware --output-dir tier4_22v_job_output
 ```
 
@@ -5211,7 +5211,7 @@ controlled_test_output/tier4_22w_20260501_native_decoupled_memory_route_composit
 Prepared EBRAINS upload folder and command:
 
 ```text
-/Users/james/JKS:CRA/ebrains_jobs/cra_422ag
+<repo>/ebrains_jobs/cra_422ag
 cra_422ag/experiments/tier4_22w_native_decoupled_memory_route_composition_smoke.py --mode run-hardware --output-dir tier4_22w_job_output
 ```
 
@@ -8671,15 +8671,21 @@ no_dopamine_or_plasticity_control separated trophic_checksum from enabled:
   enabled=466851
 ```
 
-Next:
+Historical next step at the time of the local contract:
 
 ```text
-Tier 4.30g local contract/reference has now passed. The next valid step is the
+At that point, Tier 4.30g local contract/reference had passed and the valid next
+step was the
 Tier 4.30g hardware task-benefit/resource bridge package/run, preserving the
 same enabled/control contract, returned resource/readback accounting, and narrow
 claim boundary. Do not freeze a lifecycle native baseline until hardware task
 effect, controls, and resource accounting pass.
 ```
+
+Current status: Tier 4.30g-hw later passed and was ingested, and the lifecycle
+native line subsequently froze `CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` with a
+host-ferried lifecycle bridge boundary. This paragraph is retained as historical
+execution context, not as the current next step.
 
 ### Tier 4.30g - Lifecycle Task-Benefit / Resource Bridge
 
@@ -9440,7 +9446,7 @@ Status: PASS
 Raw remote status: pass
 Ingest status: pass
 Output: controlled_test_output/tier4_32d_20260507_hardware_pass_ingested/
-Raw runner output: /Users/james/Downloads/tier4_32d_results.json
+Raw runner output: <downloads>/tier4_32d_results.json
 Target acquisition: pyNN.spiNNaker probe, board 10.11.215.169
 Source/learning chip: (0,0), learning core 7
 Remote/state chip: (1,0), context/route/memory cores 4/5/6
@@ -9522,7 +9528,7 @@ Returned EBRAINS result:
 ```text
 Status: HARDWARE PASS / INGEST PASS
 Output: controlled_test_output/tier4_32e_20260507_hardware_pass_ingested/
-Raw runner output: /Users/james/Downloads/tier4_32e_results.json
+Raw runner output: <downloads>/tier4_32e_results.json
 Board: 10.11.205.161
 Source/learning chip: (0,0), learning core 7
 Remote/state chip: (1,0), context/route/memory cores 4/5/6

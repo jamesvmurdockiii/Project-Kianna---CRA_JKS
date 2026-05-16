@@ -1,7 +1,7 @@
 {
   "failure_reason": "'Namespace' object has no attribute 'base_seed'",
   "generated_at_utc": "2026-04-29T16:52:27+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_14_20260429_165213",
+  "output_dir": "<repo>/controlled_test_output/tier5_14_20260429_165213",
   "status": "blocked",
   "tier": "Tier 5.14 - Working Memory / Context Binding"
 }

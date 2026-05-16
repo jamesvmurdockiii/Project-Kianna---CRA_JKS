@@ -6,7 +6,7 @@
 - Seeds: `42, 43`
 - Tasks: `fixed_pattern, delayed_cue, sensor_control`
 - Variants: `default, v_thresh_low, v_thresh_high, tau_m_fast, tau_m_slow, tau_refrac_short, tau_refrac_long, cm_low, cm_high, tau_syn_fast, tau_syn_slow`
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier5_16_20260429_142647`
+- Output directory: `<repo>/controlled_test_output/tier5_16_20260429_142647`
 
 Tier 5.16 tests whether CRA behavior is brittle to one exact LIF neuron parameterization.
 

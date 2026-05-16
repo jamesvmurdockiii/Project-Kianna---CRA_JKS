@@ -6,7 +6,7 @@
 - Steps per run: `120`
 - Base seed: `42`
 - Fixed population: `True`
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier2_learning`
+- Output directory: `<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier2_learning`
 
 Tier 2 is a positive-control tier. These tests check whether the organism can learn causal cue/outcome structure, delayed consequence, and a switched rule after Tier 1 ruled out obvious fake learning.
 

@@ -65,7 +65,7 @@
       "pass": true,
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_7l_20260509_effective_state_dimensionality_repair_scoring_gate/tier7_7l_results.json"
+      "value": "<repo>/controlled_test_output/tier7_7l_20260509_effective_state_dimensionality_repair_scoring_gate/tier7_7l_results.json"
     },
     {
       "criterion": "Tier 7.7l prerequisite passed",
@@ -654,9 +654,9 @@
       "rule": "Full candidate no longer improves over single-pool/reference under the attribution matrix."
     }
   ],
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7m_20260509_partitioned_driver_attribution_contract",
+  "output_dir": "<repo>/controlled_test_output/tier7_7m_20260509_partitioned_driver_attribution_contract",
   "prerequisite": {
-    "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_7l_20260509_effective_state_dimensionality_repair_scoring_gate/tier7_7l_results.json",
+    "path": "<repo>/controlled_test_output/tier7_7l_20260509_effective_state_dimensionality_repair_scoring_gate/tier7_7l_results.json",
     "sha256": "4027880a874b042f6631542f93dfb10e2d2684741d415dd3a15ded32ba4e2784",
     "status": "pass"
   },

@@ -129,7 +129,7 @@
       "pass": true,
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_7d_20260509_standardized_long_run_failure_scoring_gate/tier7_7d_results.json"
+      "value": "<repo>/controlled_test_output/tier7_7d_20260509_standardized_long_run_failure_scoring_gate/tier7_7d_results.json"
     },
     {
       "criterion": "Tier 7.7d prerequisite passed",
@@ -162,7 +162,7 @@
       "pass": true,
       "passed": true,
       "rule": "exists and pass",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract/tier7_7c_results.json"
+      "value": "<repo>/controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract/tier7_7c_results.json"
     },
     {
       "criterion": "selected repair is explicit",
@@ -346,7 +346,7 @@
       "selected": false
     }
   ],
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight",
+  "output_dir": "<repo>/controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight",
   "preflight_rows": [
     {
       "bounded_output": false,
@@ -1178,10 +1178,10 @@
     }
   ],
   "prerequisites": {
-    "tier7_7c_results": "/Users/james/JKS:CRA/controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract/tier7_7c_results.json",
+    "tier7_7c_results": "<repo>/controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract/tier7_7c_results.json",
     "tier7_7c_status": "pass",
     "tier7_7d_outcome": "benchmark_stream_invalid",
-    "tier7_7d_results": "/Users/james/JKS:CRA/controlled_test_output/tier7_7d_20260509_standardized_long_run_failure_scoring_gate/tier7_7d_results.json",
+    "tier7_7d_results": "<repo>/controlled_test_output/tier7_7d_20260509_standardized_long_run_failure_scoring_gate/tier7_7d_results.json",
     "tier7_7d_status": "pass"
   },
   "runner_revision": "tier7_7e_finite_stream_repair_preflight_20260509_0001",

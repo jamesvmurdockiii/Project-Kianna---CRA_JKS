@@ -3,7 +3,7 @@
 - Generated: `2026-05-01T02:57:13+00:00`
 - Mode: `local`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_local`
+- Output directory: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_local`
 
 Tier 4.22n runs a 12-event delayed-cue-like signed micro-task through the custom runtime. Each event is scored from the chip's pre-update prediction, held across a two-event pending gap, then matured in order with delayed credit and checked against a local s16.15 reference.
 
@@ -60,7 +60,7 @@ Tier 4.22n runs a 12-event delayed-cue-like signed micro-task through the custom
 
 ## Artifacts
 
-- `reference_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_local/tier4_22n_task_reference.json`
-- `reference_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_local/tier4_22n_task_reference_rows.csv`
-- `manifest_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_local/tier4_22n_results.json`
-- `report_md`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_local/tier4_22n_report.md`
+- `reference_json`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_local/tier4_22n_task_reference.json`
+- `reference_csv`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_local/tier4_22n_task_reference_rows.csv`
+- `manifest_json`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_local/tier4_22n_results.json`
+- `report_md`: `<repo>/controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_local/tier4_22n_report.md`

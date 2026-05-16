@@ -2,10 +2,10 @@
   "canonical": false,
   "claim": "Latest Tier 4.22v tiny native memory-route reentry/composition custom-runtime micro-task; pass means a tiny native memory-route reentry/composition pending-queue on-chip loop matched local fixed-point reference and task metrics only.",
   "generated_at_utc": "2026-05-01T20:18:14+00:00",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_22v_20260501_native_memory_route_reentry_composition_smoke_hardware_pass_ingested/tier4_22v_results.json",
+  "manifest": "<repo>/controlled_test_output/tier4_22v_20260501_native_memory_route_reentry_composition_smoke_hardware_pass_ingested/tier4_22v_results.json",
   "mode": "ingest",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_22v_20260501_native_memory_route_reentry_composition_smoke_hardware_pass_ingested",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_22v_20260501_native_memory_route_reentry_composition_smoke_hardware_pass_ingested/tier4_22v_report.md",
+  "output_dir": "<repo>/controlled_test_output/tier4_22v_20260501_native_memory_route_reentry_composition_smoke_hardware_pass_ingested",
+  "report": "<repo>/controlled_test_output/tier4_22v_20260501_native_memory_route_reentry_composition_smoke_hardware_pass_ingested/tier4_22v_report.md",
   "status": "pass",
   "tier": "Tier 4.22v - Tiny Native Memory-Route Reentry/Composition Custom-Runtime Smoke"
 }

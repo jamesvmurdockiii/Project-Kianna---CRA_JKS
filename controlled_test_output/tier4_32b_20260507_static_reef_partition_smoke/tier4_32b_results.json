@@ -1,15 +1,15 @@
 {
   "artifacts": {
-    "candidate_layouts_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_candidate_layouts.csv",
-    "criteria_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_criteria.csv",
-    "failure_classes_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_failure_classes.csv",
-    "next_gate_plan_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_next_gate_plan.csv",
-    "ownership_invariants_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_ownership_invariants.csv",
-    "partition_map_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_partition_map.csv",
-    "replicated_envelope_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_replicated_envelope.csv",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_report.md",
-    "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_results.json",
-    "source_checks_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_source_checks.csv"
+    "candidate_layouts_csv": "<repo>/controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_candidate_layouts.csv",
+    "criteria_csv": "<repo>/controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_criteria.csv",
+    "failure_classes_csv": "<repo>/controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_failure_classes.csv",
+    "next_gate_plan_csv": "<repo>/controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_next_gate_plan.csv",
+    "ownership_invariants_csv": "<repo>/controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_ownership_invariants.csv",
+    "partition_map_csv": "<repo>/controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_partition_map.csv",
+    "replicated_envelope_csv": "<repo>/controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_replicated_envelope.csv",
+    "report_md": "<repo>/controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_report.md",
+    "results_json": "<repo>/controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_results.json",
+    "source_checks_csv": "<repo>/controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke/tier4_32b_source_checks.csv"
   },
   "candidate_layouts": [
     {
@@ -475,7 +475,7 @@
       "question": "Is the native runtime stable enough to freeze as a scale baseline?"
     }
   ],
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke",
+  "output_dir": "<repo>/controlled_test_output/tier4_32b_20260507_static_reef_partition_smoke",
   "ownership_invariants": [
     {
       "failure_if": "context slot writes or replies are observed from a non-owner shard/core",

@@ -28,7 +28,7 @@ CRA now has a bounded v2.0 host-side software predictive-binding baseline: cross
 
 ## Tier 5.17e Promotion / Regression Summary
 
-- Output: `/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_163058`
+- Output: `<repo>/controlled_test_output/tier5_17e_20260429_163058`
 - Status: `pass`
 - Runtime seconds: `2102.82749075`
 - Children passed: `4` / `4`
@@ -38,10 +38,10 @@ CRA now has a bounded v2.0 host-side software predictive-binding baseline: cross
 
 | Child | Status | Runtime Seconds | Manifest |
 | --- | --- | ---: | --- |
-| `v1_8_compact_regression` | `pass` | `507.191307833` | `/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_163058/v1_8_compact_regression/tier5_12d_results.json` |
-| `v1_9_composition_routing_guardrail` | `pass` | `864.433224417` | `/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_163058/v1_9_composition_routing_guardrail/tier5_13c_results.json` |
-| `working_memory_context_guardrail` | `pass` | `727.051892` | `/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_163058/working_memory_context_guardrail/tier5_14_results.json` |
-| `predictive_binding_guardrail` | `pass` | `4.073798749999696` | `/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_163058/predictive_binding_guardrail/tier5_17d_results.json` |
+| `v1_8_compact_regression` | `pass` | `507.191307833` | `<repo>/controlled_test_output/tier5_17e_20260429_163058/v1_8_compact_regression/tier5_12d_results.json` |
+| `v1_9_composition_routing_guardrail` | `pass` | `864.433224417` | `<repo>/controlled_test_output/tier5_17e_20260429_163058/v1_9_composition_routing_guardrail/tier5_13c_results.json` |
+| `working_memory_context_guardrail` | `pass` | `727.051892` | `<repo>/controlled_test_output/tier5_17e_20260429_163058/working_memory_context_guardrail/tier5_14_results.json` |
+| `predictive_binding_guardrail` | `pass` | `4.073798749999696` | `<repo>/controlled_test_output/tier5_17e_20260429_163058/predictive_binding_guardrail/tier5_17d_results.json` |
 
 ### Promotion Criteria
 

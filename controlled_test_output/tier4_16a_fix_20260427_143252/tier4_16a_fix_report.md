@@ -2,7 +2,7 @@
 
 - Generated: `2026-04-27T14:53:36+00:00`
 - Status: **PASS**
-- Output directory: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16a_fix_20260427_143252`
+- Output directory: `<repo>/controlled_test_output/tier4_16a_fix_20260427_143252`
 
 This local-only repair keeps `delayed_lr_0_20` fixed and increases delayed-cue run length so the tail metric has enough evaluation events.
 
@@ -33,9 +33,9 @@ This local-only repair keeps `delayed_lr_0_20` fixed and increases delayed-cue r
 
 ## Artifacts
 
-- `summary_csv`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16a_fix_20260427_143252/tier4_16a_fix_summary.csv`
-- `backend_summary_csv`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16a_fix_20260427_143252/tier4_16a_fix_backend_summary.csv`
-- `tail_events_csv`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16a_fix_20260427_143252/tier4_16a_fix_tail_events.csv`
-- `summary_png`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16a_fix_20260427_143252/tier4_16a_fix_summary.png`
-- `manifest_json`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16a_fix_20260427_143252/tier4_16a_fix_results.json`
-- `report_md`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16a_fix_20260427_143252/tier4_16a_fix_report.md`
+- `summary_csv`: `<repo>/controlled_test_output/tier4_16a_fix_20260427_143252/tier4_16a_fix_summary.csv`
+- `backend_summary_csv`: `<repo>/controlled_test_output/tier4_16a_fix_20260427_143252/tier4_16a_fix_backend_summary.csv`
+- `tail_events_csv`: `<repo>/controlled_test_output/tier4_16a_fix_20260427_143252/tier4_16a_fix_tail_events.csv`
+- `summary_png`: `<repo>/controlled_test_output/tier4_16a_fix_20260427_143252/tier4_16a_fix_summary.png`
+- `manifest_json`: `<repo>/controlled_test_output/tier4_16a_fix_20260427_143252/tier4_16a_fix_results.json`
+- `report_md`: `<repo>/controlled_test_output/tier4_16a_fix_20260427_143252/tier4_16a_fix_report.md`

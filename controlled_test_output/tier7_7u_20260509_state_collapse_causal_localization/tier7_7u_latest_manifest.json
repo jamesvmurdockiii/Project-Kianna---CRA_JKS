@@ -1,9 +1,9 @@
 {
   "generated_at_utc": "2026-05-09T19:30:33+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7u_20260509_state_collapse_causal_localization",
-  "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier7_7u_20260509_state_collapse_causal_localization/tier7_7u_report.md",
-  "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier7_7u_20260509_state_collapse_causal_localization/tier7_7u_results.json",
+  "output_dir": "<repo>/controlled_test_output/tier7_7u_20260509_state_collapse_causal_localization",
+  "report_md": "<repo>/controlled_test_output/tier7_7u_20260509_state_collapse_causal_localization/tier7_7u_report.md",
+  "results_json": "<repo>/controlled_test_output/tier7_7u_20260509_state_collapse_causal_localization/tier7_7u_results.json",
   "status": "pass",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7u_20260509_state_collapse_causal_localization/tier7_7u_summary.csv",
+  "summary_csv": "<repo>/controlled_test_output/tier7_7u_20260509_state_collapse_causal_localization/tier7_7u_summary.csv",
   "tier": "Tier 7.7u - State-Collapse Causal Localization"
 }

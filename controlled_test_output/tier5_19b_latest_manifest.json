@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.405854+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.552437+00:00",
   "source_generated_at_utc": "2026-05-05T17:56:17+00:00",
   "registry_entry_id": "tier5_19b_temporal_substrate_gate",
   "tier": "Tier 5.19b - Temporal-Substrate Benchmark/Sham Gate",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_19b_20260505_temporal_substrate_gate",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_19b_20260505_temporal_substrate_gate/tier5_19b_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_19b_20260505_temporal_substrate_gate/tier5_19b_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_19b_20260505_temporal_substrate_gate/tier5_19b_summary.csv",
+  "output_dir": "controlled_test_output/tier5_19b_20260505_temporal_substrate_gate",
+  "manifest": "controlled_test_output/tier5_19b_20260505_temporal_substrate_gate/tier5_19b_results.json",
+  "report": "controlled_test_output/tier5_19b_20260505_temporal_substrate_gate/tier5_19b_report.md",
+  "summary_csv": "controlled_test_output/tier5_19b_20260505_temporal_substrate_gate/tier5_19b_summary.csv",
   "canonical": true,
   "claim": "Fading-memory temporal state remains supported under benchmark/sham pressure while bounded nonlinear recurrence remains unproven.",
   "caveat": "Software diagnostic evidence only; does not freeze a baseline or prove native/on-chip temporal dynamics."

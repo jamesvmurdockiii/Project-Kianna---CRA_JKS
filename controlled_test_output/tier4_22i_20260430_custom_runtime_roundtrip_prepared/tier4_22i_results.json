@@ -1,10 +1,10 @@
 {
   "artifacts": {
-    "job_readme": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/ebrains_upload_bundle/cra_422r/README_TIER4_22I_JOB.md",
-    "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/tier4_22i_results.json",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/tier4_22i_report.md",
-    "stable_upload_folder": "/Users/james/JKS:CRA/ebrains_jobs/cra_422r",
-    "upload_bundle": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/ebrains_upload_bundle/cra_422r"
+    "job_readme": "<repo>/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/ebrains_upload_bundle/cra_422r/README_TIER4_22I_JOB.md",
+    "manifest_json": "<repo>/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/tier4_22i_results.json",
+    "report_md": "<repo>/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/tier4_22i_report.md",
+    "stable_upload_folder": "<repo>/ebrains_jobs/cra_422r",
+    "upload_bundle": "<repo>/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/ebrains_upload_bundle/cra_422r"
   },
   "criteria": [
     {
@@ -26,21 +26,21 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/ebrains_upload_bundle/cra_422r"
+      "value": "<repo>/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/ebrains_upload_bundle/cra_422r"
     },
     {
       "name": "runtime source included",
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/ebrains_upload_bundle/cra_422r/coral_reef_spinnaker/spinnaker_runtime"
+      "value": "<repo>/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/ebrains_upload_bundle/cra_422r/coral_reef_spinnaker/spinnaker_runtime"
     },
     {
       "name": "controller source includes CMD_READ_STATE",
       "note": "",
       "passed": true,
       "rule": "contains CMD_READ_STATE",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/ebrains_upload_bundle/cra_422r/coral_reef_spinnaker/python_host/colony_controller.py"
+      "value": "<repo>/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/ebrains_upload_bundle/cra_422r/coral_reef_spinnaker/python_host/colony_controller.py"
     },
     {
       "name": "run-hardware command emitted",
@@ -376,19 +376,19 @@
   "generated_at_utc": "2026-04-30T23:44:08+00:00",
   "main_syntax_check": {
     "normal": {
-      "command": "/usr/bin/cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-int-to-pointer-cast -I /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/stubs -I /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src -c /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src/main.c -o /Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/tier4_22i_main_syntax_normal.o",
-      "object_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/tier4_22i_main_syntax_normal.o",
+      "command": "/usr/bin/cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-int-to-pointer-cast -I <repo>/coral_reef_spinnaker/spinnaker_runtime/stubs -I <repo>/coral_reef_spinnaker/spinnaker_runtime/src -c <repo>/coral_reef_spinnaker/spinnaker_runtime/src/main.c -o <repo>/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/tier4_22i_main_syntax_normal.o",
+      "object_artifact": "<repo>/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/tier4_22i_main_syntax_normal.o",
       "returncode": 0,
       "status": "pass",
       "stderr": "",
-      "stderr_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/tier4_22i_main_syntax_normal_stderr.txt",
+      "stderr_artifact": "<repo>/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/tier4_22i_main_syntax_normal_stderr.txt",
       "stdout": "",
-      "stdout_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/tier4_22i_main_syntax_normal_stdout.txt"
+      "stdout_artifact": "<repo>/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/tier4_22i_main_syntax_normal_stdout.txt"
     },
     "status": "pass"
   },
   "mode": "prepare",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared",
+  "output_dir": "<repo>/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared",
   "runner_revision": "tier4_22i_custom_runtime_roundtrip_20260430_0009",
   "status": "prepared",
   "summary": {
@@ -397,9 +397,9 @@
     "main_syntax_check_passed": true,
     "mode": "prepare",
     "next_step_if_passed": "Run the emitted EBRAINS command and ingest returned files.",
-    "tier4_22h_manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_results.json",
+    "tier4_22h_manifest": "<repo>/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_results.json",
     "tier4_22h_status": "pass",
-    "upload_folder": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/ebrains_upload_bundle/cra_422r",
+    "upload_folder": "<repo>/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/ebrains_upload_bundle/cra_422r",
     "what_i_need_from_user": "Upload the generated cra_422r folder to EBRAINS/JobManager and run the emitted command; download returned files after completion."
   },
   "tier": "Tier 4.22i - Custom Runtime Board Round-Trip Smoke"

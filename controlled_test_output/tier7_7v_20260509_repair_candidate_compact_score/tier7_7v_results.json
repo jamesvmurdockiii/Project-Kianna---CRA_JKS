@@ -102,7 +102,7 @@
     "not hardware/native transfer"
   ],
   "outcome": "mechanism_candidate_requires_expanded_confirmation",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7v_20260509_repair_candidate_compact_score",
+  "output_dir": "<repo>/controlled_test_output/tier7_7v_20260509_repair_candidate_compact_score",
   "repair_family": "B",
   "repair_name": "independent_causal_subspace_drivers",
   "results_count": 12,

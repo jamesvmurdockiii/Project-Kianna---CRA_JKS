@@ -894,7 +894,7 @@
   "history": 32,
   "horizon": 5,
   "length": 2400,
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic",
+  "output_dir": "<repo>/controlled_test_output/tier5_20a_20260508_resonant_branch_polyp_diagnostic",
   "run_rows": [
     {
       "diagnostics": {

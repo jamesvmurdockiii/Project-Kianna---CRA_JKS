@@ -3,7 +3,7 @@
 - Generated: `2026-04-30T03:41:16+00:00`
 - Mode: `run-hardware`
 - Status: **PASS**
-- Output directory: `/tmp/job4002618516063700101.tmp/tier4_20b_job_output`
+- Output directory: `<jobmanager_tmp>`
 
 Tier 4.20b checks whether the frozen v2.1 software evidence stack has a clean one-seed SpiNNaker transport path through the current chunked-host bridge.
 
@@ -56,10 +56,10 @@ Tier 4.20b checks whether the frozen v2.1 software evidence stack has a clean on
 
 | Criterion | Value | Rule | Pass |
 | --- | --- | --- | --- |
-| v2.1 baseline identity recorded | `{'baseline': 'v2.1', 'artifact': '/tmp/job4002618516063700101.tmp/cra_420b/baselines/CRA_EVIDENCE_BASELINE_v2.1.json', 'artifact_present': False}` | `runtime does not require baselines/` | yes |
+| v2.1 baseline identity recorded | `{'baseline': 'v2.1', 'artifact': '<jobmanager_tmp>', 'artifact_present': False}` | `runtime does not require baselines/` | yes |
 | Tier 4.20b runner revision | `tier4_20b_inprocess_no_baselines_20260429_2330` | `expected current source` | yes |
-| source package import path available | `{'canonical_package': '/tmp/job4002618516063700101.tmp/cra_420b/coral_reef_spinnaker', 'canonical_package_exists': True, 'action': 'already_canonical', 'aliases_checked': ['/tmp/job4002618516063700101.tmp/cra_420b/coral-reef-spinnaker', '/tmp/job4002618516063700101.tmp/cra_420b/coral reef spinnaker']}` | `coral_reef_spinnaker exists` | yes |
-| Tier 4.16 child hardware runner exists | `/tmp/job4002618516063700101.tmp/cra_420b/experiments/tier4_harder_spinnaker_capsule.py` | `exists` | yes |
+| source package import path available | `{'canonical_package': '<jobmanager_tmp>', 'canonical_package_exists': True, 'action': 'already_canonical', 'aliases_checked': ['<jobmanager_tmp>', '<jobmanager_tmp> reef spinnaker']}` | `coral_reef_spinnaker exists` | yes |
+| Tier 4.16 child hardware runner exists | `<jobmanager_tmp>` | `exists` | yes |
 | Tier 4.20a transfer audit context | `{'status': 'missing', 'manifest': None}` | `optional; local audit context only` | yes |
 | exactly one seed requested for 4.20b | `[42]` | `len == 1` | yes |
 | runtime mode is chunked | `chunked` | `fixed` | yes |
@@ -69,7 +69,7 @@ Tier 4.20b checks whether the frozen v2.1 software evidence stack has a clean on
 | delayed_lr_0_20 selected | `0.2` | `== 0.20` | yes |
 | mode has explicit claim boundary | `run-hardware` | `prepare|run-hardware|ingest` | yes |
 | child Tier 4.16 in-process runner exited cleanly | `0` | `== 0` | yes |
-| child Tier 4.16 manifest exists | `/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/tier4_16_results.json` | `exists` | yes |
+| child Tier 4.16 manifest exists | `<jobmanager_tmp>` | `exists` | yes |
 | child hardware status passed | `pass` | `== pass` | yes |
 | child hardware was attempted | `True` | `== true` | yes |
 | child sim.run failures zero | `0` | `== 0` | yes |
@@ -80,19 +80,19 @@ Tier 4.20b checks whether the frozen v2.1 software evidence stack has a clean on
 
 ## Artifacts
 
-- `bridge_profile_json`: `/tmp/job4002618516063700101.tmp/tier4_20b_job_output/tier4_20b_bridge_profile.json`
-- `child_output_dir`: `/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16`
-- `child_spinnaker_hardware_delayed_cue_seed42_timeseries.csv`: `/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/spinnaker_hardware_delayed_cue_seed42_timeseries.csv`
-- `child_spinnaker_hardware_delayed_cue_seed42_timeseries.png`: `/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/spinnaker_hardware_delayed_cue_seed42_timeseries.png`
-- `child_spinnaker_hardware_hard_noisy_switching_seed42_timeseries.csv`: `/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/spinnaker_hardware_hard_noisy_switching_seed42_timeseries.csv`
-- `child_spinnaker_hardware_hard_noisy_switching_seed42_timeseries.png`: `/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/spinnaker_hardware_hard_noisy_switching_seed42_timeseries.png`
-- `child_stderr_log`: `/tmp/job4002618516063700101.tmp/tier4_20b_job_output/tier4_20b_child_stderr.log`
-- `child_stdout_log`: `/tmp/job4002618516063700101.tmp/tier4_20b_job_output/tier4_20b_child_stdout.log`
-- `child_tier4_16_hardware_summary.png`: `/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/tier4_16_hardware_summary.png`
-- `child_tier4_16_report.md`: `/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/tier4_16_report.md`
-- `child_tier4_16_results.json`: `/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/tier4_16_results.json`
-- `child_tier4_16_summary.csv`: `/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/tier4_16_summary.csv`
-- `child_tier4_16_task_summary.csv`: `/tmp/job4002618516063700101.tmp/tier4_20b_job_output/child_tier4_16/tier4_16_task_summary.csv`
-- `report_md`: `/tmp/job4002618516063700101.tmp/tier4_20b_job_output/tier4_20b_report.md`
-- `results_json`: `/tmp/job4002618516063700101.tmp/tier4_20b_job_output/tier4_20b_results.json`
-- `summary_csv`: `/tmp/job4002618516063700101.tmp/tier4_20b_job_output/tier4_20b_summary.csv`
+- `bridge_profile_json`: `<jobmanager_tmp>`
+- `child_output_dir`: `<jobmanager_tmp>`
+- `child_spinnaker_hardware_delayed_cue_seed42_timeseries.csv`: `<jobmanager_tmp>`
+- `child_spinnaker_hardware_delayed_cue_seed42_timeseries.png`: `<jobmanager_tmp>`
+- `child_spinnaker_hardware_hard_noisy_switching_seed42_timeseries.csv`: `<jobmanager_tmp>`
+- `child_spinnaker_hardware_hard_noisy_switching_seed42_timeseries.png`: `<jobmanager_tmp>`
+- `child_stderr_log`: `<jobmanager_tmp>`
+- `child_stdout_log`: `<jobmanager_tmp>`
+- `child_tier4_16_hardware_summary.png`: `<jobmanager_tmp>`
+- `child_tier4_16_report.md`: `<jobmanager_tmp>`
+- `child_tier4_16_results.json`: `<jobmanager_tmp>`
+- `child_tier4_16_summary.csv`: `<jobmanager_tmp>`
+- `child_tier4_16_task_summary.csv`: `<jobmanager_tmp>`
+- `report_md`: `<jobmanager_tmp>`
+- `results_json`: `<jobmanager_tmp>`
+- `summary_csv`: `<jobmanager_tmp>`

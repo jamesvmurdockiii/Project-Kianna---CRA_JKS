@@ -57,7 +57,7 @@
       "pass": true,
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_7j_20260509_capacity_sham_separation_scoring_gate/tier7_7j_results.json"
+      "value": "<repo>/controlled_test_output/tier7_7j_20260509_capacity_sham_separation_scoring_gate/tier7_7j_results.json"
     },
     {
       "criterion": "Tier 7.7j prerequisite passed",
@@ -557,9 +557,9 @@
       "rule": "Metrics conflict or confidence is insufficient."
     }
   ],
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7k_20260509_effective_state_dimensionality_repair_contract",
+  "output_dir": "<repo>/controlled_test_output/tier7_7k_20260509_effective_state_dimensionality_repair_contract",
   "prerequisite": {
-    "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_7j_20260509_capacity_sham_separation_scoring_gate/tier7_7j_results.json",
+    "path": "<repo>/controlled_test_output/tier7_7j_20260509_capacity_sham_separation_scoring_gate/tier7_7j_results.json",
     "sha256": "ec3c0a337e6e9965b87630e65ebc98d439867bbcac6d511bf1e765189cd6bb70",
     "status": "pass"
   },

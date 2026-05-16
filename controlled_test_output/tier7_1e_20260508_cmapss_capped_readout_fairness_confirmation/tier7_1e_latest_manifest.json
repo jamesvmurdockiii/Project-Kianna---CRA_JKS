@@ -3,30 +3,30 @@
     {
       "bytes": 1365,
       "name": "paired_comparisons_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1e_20260508_cmapss_capped_readout_fairness_confirmation/tier7_1e_paired_comparisons.csv",
+      "path": "<repo>/controlled_test_output/tier7_1e_20260508_cmapss_capped_readout_fairness_confirmation/tier7_1e_paired_comparisons.csv",
       "sha256": "7fc2648c5a8dbda256d577d63fb2aa078b5d2a489a3fd75c7c25248099cb58d5"
     },
     {
       "bytes": 1230,
       "name": "report_md",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1e_20260508_cmapss_capped_readout_fairness_confirmation/tier7_1e_report.md",
+      "path": "<repo>/controlled_test_output/tier7_1e_20260508_cmapss_capped_readout_fairness_confirmation/tier7_1e_report.md",
       "sha256": "15b0678af20f9590d2285459790c9c0cd8f57e578b81651d6f00c556701e33f1"
     },
     {
       "bytes": 8009,
       "name": "results_json",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1e_20260508_cmapss_capped_readout_fairness_confirmation/tier7_1e_results.json",
+      "path": "<repo>/controlled_test_output/tier7_1e_20260508_cmapss_capped_readout_fairness_confirmation/tier7_1e_results.json",
       "sha256": "5956befcfe02e39c966d6b07247e0598fcdacdd82bb2fa77ffd70325c1e3fc93"
     },
     {
       "bytes": 1473,
       "name": "summary_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1e_20260508_cmapss_capped_readout_fairness_confirmation/tier7_1e_summary.csv",
+      "path": "<repo>/controlled_test_output/tier7_1e_20260508_cmapss_capped_readout_fairness_confirmation/tier7_1e_summary.csv",
       "sha256": "829332b18856c366e32184192f5c0fab98181d48bc2f8fd7e7c32ec1f45568d9"
     }
   ],
   "generated_at_utc": "2026-05-08T21:28:37+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1e_20260508_cmapss_capped_readout_fairness_confirmation",
+  "output_dir": "<repo>/controlled_test_output/tier7_1e_20260508_cmapss_capped_readout_fairness_confirmation",
   "runner_revision": "tier7_1e_cmapss_capped_readout_fairness_confirmation_20260508_0001",
   "status": "pass",
   "tier": "Tier 7.1e - C-MAPSS Capped-RUL/Readout Fairness Confirmation"

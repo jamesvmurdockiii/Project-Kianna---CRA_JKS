@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.577043+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.719480+00:00",
   "source_generated_at_utc": "2026-05-10T18:59:17+00:00",
   "registry_entry_id": "tier5_22_within_polyp_per_neuron_diversity_contract",
   "tier": "Tier 5.22 - Within-Polyp Per-Neuron Input Diversity Diagnostic Contract",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_22_20260510_within_polyp_per_neuron_diversity_contract",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_22_20260510_within_polyp_per_neuron_diversity_contract/tier5_22_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_22_20260510_within_polyp_per_neuron_diversity_contract/tier5_22_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_22_20260510_within_polyp_per_neuron_diversity_contract/tier5_22_summary.csv",
+  "output_dir": "controlled_test_output/tier5_22_20260510_within_polyp_per_neuron_diversity_contract",
+  "manifest": "controlled_test_output/tier5_22_20260510_within_polyp_per_neuron_diversity_contract/tier5_22_results.json",
+  "report": "controlled_test_output/tier5_22_20260510_within_polyp_per_neuron_diversity_contract/tier5_22_report.md",
+  "summary_csv": "controlled_test_output/tier5_22_20260510_within_polyp_per_neuron_diversity_contract/tier5_22_summary.csv",
   "canonical": true,
   "claim": "Tier 5.22 locks the within-polyp per-neuron input diversity diagnostic. Mechanism: modify update_current_injections() to give each of 8 input neurons a different sensory gain (0.3x-1.5x) and amplify per-neuron biases to 15% of sensory ceiling. Primary pass: 16-polyp PR > 2.5 AND > 1.5x baseline. Sham: shuffled neuron gain assignment. 3 outcome classes. Contract only.",
   "caveat": "Contract only; not code implementation, not scoring, not mechanism promotion, not a baseline freeze."

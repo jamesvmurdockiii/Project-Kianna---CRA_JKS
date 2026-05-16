@@ -73,7 +73,7 @@
   },
   "next_gate": "7.8b expanded confirmation (if candidate beats homogeneous baseline)",
   "outcome": "morphology_compact_scored",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_8a_20260509_morphology_compact_score",
+  "output_dir": "<repo>/controlled_test_output/tier7_8a_20260509_morphology_compact_score",
   "runner_revision": "tier7_8a_morphology_compact_score_20260509_0001",
   "status": "fail",
   "tier": "Tier 7.8a - Morphology Candidate Compact Scoring Gate",

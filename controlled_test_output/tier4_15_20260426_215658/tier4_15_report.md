@@ -3,7 +3,7 @@
 - Generated: `2026-04-27T01:56:58+00:00`
 - Mode: `prepare`
 - Status: **PREPARED**
-- Output directory: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_15_20260426_215658`
+- Output directory: `<repo>/controlled_test_output/tier4_15_20260426_215658`
 - Requested seeds: `[42, 43, 44]`
 
 Tier 4.15 repeats the same minimal fixed-pattern hardware capsule from Tier 4.13 across multiple seeds. It is repeatability evidence, not a harder task and not hardware scaling.
@@ -28,10 +28,10 @@ Tier 4.15 repeats the same minimal fixed-pattern hardware capsule from Tier 4.13
 
 ## Artifacts
 
-- `manifest_json`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_15_20260426_215658/tier4_15_results.json`
-- `summary_csv`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_15_20260426_215658/tier4_15_summary.csv`
-- `capsule_dir`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_15_20260426_215658/jobmanager_capsule`
-- `capsule_config_json`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_15_20260426_215658/jobmanager_capsule/capsule_config.json`
-- `jobmanager_run_script`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_15_20260426_215658/jobmanager_capsule/run_tier4_15_on_jobmanager.sh`
-- `jobmanager_readme`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_15_20260426_215658/jobmanager_capsule/README_JOBMANAGER.md`
-- `expected_outputs_json`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_15_20260426_215658/jobmanager_capsule/expected_outputs.json`
+- `manifest_json`: `<repo>/controlled_test_output/tier4_15_20260426_215658/tier4_15_results.json`
+- `summary_csv`: `<repo>/controlled_test_output/tier4_15_20260426_215658/tier4_15_summary.csv`
+- `capsule_dir`: `<repo>/controlled_test_output/tier4_15_20260426_215658/jobmanager_capsule`
+- `capsule_config_json`: `<repo>/controlled_test_output/tier4_15_20260426_215658/jobmanager_capsule/capsule_config.json`
+- `jobmanager_run_script`: `<repo>/controlled_test_output/tier4_15_20260426_215658/jobmanager_capsule/run_tier4_15_on_jobmanager.sh`
+- `jobmanager_readme`: `<repo>/controlled_test_output/tier4_15_20260426_215658/jobmanager_capsule/README_JOBMANAGER.md`
+- `expected_outputs_json`: `<repo>/controlled_test_output/tier4_15_20260426_215658/jobmanager_capsule/expected_outputs.json`

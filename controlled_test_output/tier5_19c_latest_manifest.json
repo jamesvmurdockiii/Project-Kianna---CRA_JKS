@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.407005+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.553876+00:00",
   "source_generated_at_utc": "2026-05-05T19:01:36+00:00",
   "registry_entry_id": "tier5_19c_fading_memory_regression",
   "tier": "Tier 5.19c - Fading-Memory Narrowing / Compact Regression",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/tier5_19c_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/tier5_19c_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/tier5_19c_summary.csv",
+  "output_dir": "controlled_test_output/tier5_19c_20260505_fading_memory_regression",
+  "manifest": "controlled_test_output/tier5_19c_20260505_fading_memory_regression/tier5_19c_results.json",
+  "report": "controlled_test_output/tier5_19c_20260505_fading_memory_regression/tier5_19c_report.md",
+  "summary_csv": "controlled_test_output/tier5_19c_20260505_fading_memory_regression/tier5_19c_summary.csv",
   "canonical": true,
   "claim": "Bounded fading-memory temporal state is promoted as CRA software baseline v2.2 after compact regression passes.",
   "caveat": "Software evidence only; not bounded nonlinear recurrence, native/on-chip temporal dynamics, universal benchmark superiority, language, planning, AGI, or ASI."

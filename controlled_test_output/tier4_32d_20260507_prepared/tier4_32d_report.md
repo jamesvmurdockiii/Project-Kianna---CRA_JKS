@@ -12,8 +12,8 @@ Prepared source bundle only; no hardware evidence until returned run-hardware ar
 ## Summary
 
 - upload_package: `cra_432d`
-- upload_bundle: `/Users/james/JKS:CRA/controlled_test_output/tier4_32d_20260507_prepared/ebrains_upload_bundle/cra_432d`
-- stable_upload_folder: `/Users/james/JKS:CRA/ebrains_jobs/cra_432d`
+- upload_bundle: `<repo>/controlled_test_output/tier4_32d_20260507_prepared/ebrains_upload_bundle/cra_432d`
+- stable_upload_folder: `<repo>/ebrains_jobs/cra_432d`
 - job_command: `cra_432d/experiments/tier4_32d_interchip_mcpl_smoke.py --mode run-hardware --output-dir tier4_32d_job_output`
 - what_i_need_from_user: `Upload `cra_432d` to EBRAINS/JobManager and run the emitted command.`
 - source_chip: `{'x': 0, 'y': 0}`
@@ -31,8 +31,8 @@ Prepared source bundle only; no hardware evidence until returned run-hardware ar
 | Tier 4.32d-r1 route repair/local QA passed | `"pass"` | == pass | yes |
 | inter-chip route source checks pass | `"pass"` | == pass | yes |
 | runner and dependencies py_compile | `"pass"` | == pass | yes |
-| upload bundle created | `"/Users/james/JKS:CRA/controlled_test_output/tier4_32d_20260507_prepared/ebrains_upload_bundle/cra_432d"` | exists | yes |
-| stable upload folder created | `"/Users/james/JKS:CRA/ebrains_jobs/cra_432d"` | exists | yes |
+| upload bundle created | `"<repo>/controlled_test_output/tier4_32d_20260507_prepared/ebrains_upload_bundle/cra_432d"` | exists | yes |
+| stable upload folder created | `"<repo>/ebrains_jobs/cra_432d"` | exists | yes |
 | run-hardware command emitted | `"cra_432d/experiments/tier4_32d_interchip_mcpl_smoke.py --mode run-hardware --output-dir tier4_32d_job_output"` | contains --mode run-hardware | yes |
 | bundle Makefile exposes request link route | `"MCPL_INTERCHIP_REQUEST_LINK_ROUTE"` | present | yes |
 | bundle Makefile exposes reply link route | `"MCPL_INTERCHIP_REPLY_LINK_ROUTE"` | present | yes |

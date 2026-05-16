@@ -193,7 +193,7 @@
   "generated_at_utc": "2026-05-11T02:43:55+00:00",
   "next_gate": "Tier 5.27a \u2014 Stream Specialization Scoring Gate",
   "outcome": "stream_specialization_contract_locked",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_27_20260510_stream_specialization_contract",
+  "output_dir": "<repo>/controlled_test_output/tier5_27_20260510_stream_specialization_contract",
   "runner_revision": "tier5_27_stream_specialization_contract_20260510_0001",
   "status": "pass",
   "tier": "Tier 5.27 \u2014 Stream Specialization Heritability Contract"

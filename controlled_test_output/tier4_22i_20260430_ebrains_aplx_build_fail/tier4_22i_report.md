@@ -3,7 +3,7 @@
 - Generated: `2026-04-30T20:26:52+00:00`
 - Mode: `ingest`
 - Status: **FAIL**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_ebrains_aplx_build_fail`
+- Output directory: `<repo>/controlled_test_output/tier4_22i_20260430_ebrains_aplx_build_fail`
 
 Tier 4.22i tests the custom C runtime itself on hardware: build/load the tiny `.aplx`, send `CMD_READ_STATE`, and validate the compact state packet after simple command mutations.
 
@@ -23,14 +23,14 @@ Tier 4.22i tests the custom C runtime itself on hardware: build/load the tiny `.
 
 | Criterion | Value | Rule | Pass |
 | --- | --- | --- | --- |
-| downloaded latest manifest exists | `/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_ebrains_aplx_build_fail/tier4_22i_latest_manifest.json` | `exists` | yes |
+| downloaded latest manifest exists | `<repo>/controlled_test_output/tier4_22i_20260430_ebrains_aplx_build_fail/tier4_22i_latest_manifest.json` | `exists` | yes |
 | custom runtime .aplx build pass | `fail` | `== pass` | no |
 | CMD_READ_STATE roundtrip attempted | `not_attempted` | `== pass` | no |
 | synthetic fallback zero | `0` | `== 0` | yes |
 
 ## Artifacts
 
-- `latest_manifest`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_ebrains_aplx_build_fail/tier4_22i_latest_manifest.json`
-- `aplx_build_stderr`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_ebrains_aplx_build_fail/tier4_22i_aplx_build_stderr.txt`
-- `environment_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_ebrains_aplx_build_fail/tier4_22i_environment.json`
-- `roundtrip_result_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_ebrains_aplx_build_fail/tier4_22i_roundtrip_result.json`
+- `latest_manifest`: `<repo>/controlled_test_output/tier4_22i_20260430_ebrains_aplx_build_fail/tier4_22i_latest_manifest.json`
+- `aplx_build_stderr`: `<repo>/controlled_test_output/tier4_22i_20260430_ebrains_aplx_build_fail/tier4_22i_aplx_build_stderr.txt`
+- `environment_json`: `<repo>/controlled_test_output/tier4_22i_20260430_ebrains_aplx_build_fail/tier4_22i_environment.json`
+- `roundtrip_result_json`: `<repo>/controlled_test_output/tier4_22i_20260430_ebrains_aplx_build_fail/tier4_22i_roundtrip_result.json`

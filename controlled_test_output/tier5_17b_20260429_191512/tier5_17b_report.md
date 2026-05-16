@@ -2,7 +2,7 @@
 
 - Generated: `2026-04-29T19:15:13+00:00`
 - Status: **PASS**
-- Source Tier 5.17 bundle: `/Users/james/JKS:CRA/controlled_test_output/tier5_17_20260429_190501`
+- Source Tier 5.17 bundle: `<repo>/controlled_test_output/tier5_17_20260429_190501`
 - Classification: `mechanism_needs_intrinsic_predictive_objective`
 - Next step: `Tier 5.17c - intrinsic predictive / MI-based preexposure objective`
 
@@ -41,7 +41,7 @@ Tier 5.17b diagnoses why Tier 5.17 failed. It does not add a new mechanism and d
 
 | Criterion | Value | Rule | Pass |
 | --- | --- | --- | --- |
-| source Tier 5.17 bundle was found | /Users/james/JKS:CRA/controlled_test_output/tier5_17_20260429_190501 | exists True | yes |
+| source Tier 5.17 bundle was found | <repo>/controlled_test_output/tier5_17_20260429_190501 | exists True | yes |
 | source Tier 5.17 completed expected matrix | 81 | == 81 | yes |
 | non-oracle source had no label leakage | 0 | == 0 | yes |
 | source had no reward visibility | 0 | == 0 | yes |

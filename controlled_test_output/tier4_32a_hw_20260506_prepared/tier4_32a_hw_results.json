@@ -1,13 +1,13 @@
 {
   "artifacts": {
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_hw_20260506_prepared/tier4_32a_hw_report.md",
-    "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_hw_20260506_prepared/tier4_32a_hw_results.json",
-    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_hw_20260506_prepared/tier4_32a_hw_summary.csv"
+    "report_md": "<repo>/controlled_test_output/tier4_32a_hw_20260506_prepared/tier4_32a_hw_report.md",
+    "results_json": "<repo>/controlled_test_output/tier4_32a_hw_20260506_prepared/tier4_32a_hw_results.json",
+    "summary_csv": "<repo>/controlled_test_output/tier4_32a_hw_20260506_prepared/tier4_32a_hw_summary.csv"
   },
   "bundle_artifacts": {
-    "job_readme": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_hw_20260506_prepared/ebrains_upload_bundle/cra_432a_hw/README_TIER4_32A_HW_JOB.md",
-    "stable_upload_folder": "/Users/james/JKS:CRA/ebrains_jobs/cra_432a_hw",
-    "upload_bundle": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_hw_20260506_prepared/ebrains_upload_bundle/cra_432a_hw"
+    "job_readme": "<repo>/controlled_test_output/tier4_32a_hw_20260506_prepared/ebrains_upload_bundle/cra_432a_hw/README_TIER4_32A_HW_JOB.md",
+    "stable_upload_folder": "<repo>/ebrains_jobs/cra_432a_hw",
+    "upload_bundle": "<repo>/controlled_test_output/tier4_32a_hw_20260506_prepared/ebrains_upload_bundle/cra_432a_hw"
   },
   "claim_boundary": "Prepared source bundle only; no hardware evidence until returned run-hardware artifacts pass.",
   "criteria": [
@@ -44,14 +44,14 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_hw_20260506_prepared/ebrains_upload_bundle/cra_432a_hw"
+      "value": "<repo>/controlled_test_output/tier4_32a_hw_20260506_prepared/ebrains_upload_bundle/cra_432a_hw"
     },
     {
       "name": "stable upload folder created",
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/ebrains_jobs/cra_432a_hw"
+      "value": "<repo>/ebrains_jobs/cra_432a_hw"
     },
     {
       "name": "run-hardware command emitted",
@@ -99,7 +99,7 @@
   "failure_reason": "",
   "generated_at_utc": "2026-05-06T23:37:49+00:00",
   "mode": "prepare",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_hw_20260506_prepared",
+  "output_dir": "<repo>/controlled_test_output/tier4_32a_hw_20260506_prepared",
   "py_compile": {
     "command": "/Library/Developer/CommandLineTools/usr/bin/python3 -m py_compile experiments/tier4_32a_hw_single_shard_scale_stress.py experiments/tier4_28a_four_core_mcpl_repeatability.py experiments/tier4_30g_lifecycle_task_benefit_resource_bridge.py experiments/tier4_22i_custom_runtime_roundtrip.py",
     "returncode": 0,
@@ -109,7 +109,7 @@
   },
   "runner_revision": "tier4_32a_hw_single_shard_scale_stress_20260506_0001",
   "source_checks": {
-    "command": "make -C /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime clean-host test-mcpl-lookup-contract test-four-core-mcpl-local test-mcpl-feasibility test-four-core-local test-four-core-48event test-profiles test-lifecycle-split",
+    "command": "make -C <repo>/coral_reef_spinnaker/spinnaker_runtime clean-host test-mcpl-lookup-contract test-four-core-mcpl-local test-mcpl-feasibility test-four-core-local test-four-core-48event test-profiles test-lifecycle-split",
     "returncode": 0,
     "status": "pass",
     "stderr": "",
@@ -123,8 +123,8 @@
       "point_04c_reference",
       "point_05c_lifecycle"
     ],
-    "stable_upload_folder": "/Users/james/JKS:CRA/ebrains_jobs/cra_432a_hw",
-    "upload_bundle": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_hw_20260506_prepared/ebrains_upload_bundle/cra_432a_hw",
+    "stable_upload_folder": "<repo>/ebrains_jobs/cra_432a_hw",
+    "upload_bundle": "<repo>/controlled_test_output/tier4_32a_hw_20260506_prepared/ebrains_upload_bundle/cra_432a_hw",
     "upload_package": "cra_432a_hw",
     "what_i_need_from_user": "Upload `cra_432a_hw` to EBRAINS/JobManager and run the emitted command."
   },

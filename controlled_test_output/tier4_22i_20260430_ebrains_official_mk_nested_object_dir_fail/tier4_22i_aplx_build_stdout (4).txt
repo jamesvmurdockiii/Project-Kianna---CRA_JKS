@@ -1,6 +1,6 @@
-make: Entering directory '/tmp/job10424831914402018480.tmp/cra_422o/coral_reef_spinnaker/spinnaker_runtime'
+make: Entering directory '<jobmanager_tmp>'
 rm -rf build/gnu/ tests/test_runtime
 # spinnaker_tools.mk c
 mkdir -p build/gnu/
 arm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -o build/gnu/src/main.o src/main.c
-make: Leaving directory '/tmp/job10424831914402018480.tmp/cra_422o/coral_reef_spinnaker/spinnaker_runtime'
+make: Leaving directory '<jobmanager_tmp>'

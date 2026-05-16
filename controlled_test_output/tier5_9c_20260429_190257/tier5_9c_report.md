@@ -2,7 +2,7 @@
 
 - Generated: `2026-04-29T23:04:49+00:00`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257`
+- Output directory: `<repo>/controlled_test_output/tier5_9c_20260429_190257`
 - Smoke: `True`
 
 Tier 5.9c rechecks the parked macro-eligibility mechanism after the v2.1 software baseline. It asks whether the current v2.1 guardrails remain green and whether the residual macro trace now earns its own delayed-credit promotion gate.
@@ -31,13 +31,13 @@ Tier 5.9c rechecks the parked macro-eligibility mechanism after the v2.1 softwar
 
 | Criterion | Value | Rule | Pass |
 | --- | --- | --- | --- |
-| frozen v2.1 baseline artifact exists | `/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.1.json` | `exists` | yes |
+| frozen v2.1 baseline artifact exists | `<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.1.json` | `exists` | yes |
 | v2.1 guardrail remains green | `pass` | `status == pass and return_code == 0` | yes |
 | residual macro eligibility earns promotion gate | `pass` | `status == pass and return_code == 0` | yes |
 | all child commands succeeded | `2/2` | `== 2/2` | yes |
 
 ## Artifacts
 
-- `child_manifests_json`: `/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/tier5_9c_child_manifests.json`
-- `summary_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/tier5_9c_summary.csv`
-- `report_md`: `/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/tier5_9c_report.md`
+- `child_manifests_json`: `<repo>/controlled_test_output/tier5_9c_20260429_190257/tier5_9c_child_manifests.json`
+- `summary_csv`: `<repo>/controlled_test_output/tier5_9c_20260429_190257/tier5_9c_summary.csv`
+- `report_md`: `<repo>/controlled_test_output/tier5_9c_20260429_190257/tier5_9c_report.md`

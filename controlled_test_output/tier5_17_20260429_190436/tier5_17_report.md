@@ -2,7 +2,7 @@
 
 - Generated: `2026-04-29T19:04:37+00:00`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier5_17_20260429_190436`
+- Output directory: `<repo>/controlled_test_output/tier5_17_20260429_190436`
 - Tasks: `latent_cluster_sequence`
 - Seeds: `[42]`
 

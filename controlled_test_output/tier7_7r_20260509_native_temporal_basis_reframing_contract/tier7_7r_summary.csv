@@ -1,5 +1,5 @@
 name,criterion,value,operator,rule,passed,pass,details,note
-Tier 7.7q prerequisite exists,Tier 7.7q prerequisite exists,/Users/james/JKS:CRA/controlled_test_output/tier7_7q_20260509_cra_native_temporal_interface_internalization_scoring_gate/tier7_7q_results.json,exists,exists,True,True,,
+Tier 7.7q prerequisite exists,Tier 7.7q prerequisite exists,<repo>/controlled_test_output/tier7_7q_20260509_cra_native_temporal_interface_internalization_scoring_gate/tier7_7q_results.json,exists,exists,True,True,,
 Tier 7.7q prerequisite passed,Tier 7.7q prerequisite passed,pass,== pass,== pass,True,True,,
 Tier 7.7q outcome locked,Tier 7.7q outcome locked,external_controls_still_win,== external_controls_still_win,== external_controls_still_win,True,True,,
 utility signal preserved,utility signal preserved,True,true,true,True,True,,

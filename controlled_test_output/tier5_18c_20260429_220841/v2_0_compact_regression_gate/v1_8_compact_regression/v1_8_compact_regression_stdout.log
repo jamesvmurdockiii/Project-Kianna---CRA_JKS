@@ -12,8 +12,8 @@
 [tier5.12d] predictive_context_guardrail: PASS rc=0
 {
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier5_12d_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier5_12d_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier5_12d_summary.csv"
+  "output_dir": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression",
+  "manifest": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier5_12d_results.json",
+  "report": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier5_12d_report.md",
+  "summary_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier5_12d_summary.csv"
 }

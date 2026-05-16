@@ -3,7 +3,7 @@
 - Generated: `2026-05-06T04:17:00+00:00`
 - Status: **PASS**
 - Criteria: `24/24`
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_31a_20260506_native_temporal_substrate_readiness`
+- Output directory: `<repo>/controlled_test_output/tier4_31a_20260506_native_temporal_substrate_readiness`
 
 ## Claim Boundary
 
@@ -58,14 +58,14 @@ The first native migration is **not** a hidden recurrent substrate. It is the v2
 | Criterion | Value | Rule | Pass |
 | --- | --- | --- | --- |
 | runner revision current | `tier4_31a_native_temporal_substrate_readiness_20260506_0001` | expected current source | yes |
-| v2.2 baseline exists | `/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.2.json` | exists | yes |
+| v2.2 baseline exists | `<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.2.json` | exists | yes |
 | v2.2 baseline frozen | `frozen` | == frozen | yes |
-| Tier 5.19c result exists | `/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/tier5_19c_results.json` | exists | yes |
+| Tier 5.19c result exists | `<repo>/controlled_test_output/tier5_19c_20260505_fading_memory_regression/tier5_19c_results.json` | exists | yes |
 | Tier 5.19c passed | `pass` | == pass | yes |
 | Tier 5.19c freeze authorized | `True` | == true | yes |
 | nonlinear recurrence excluded | `["not bounded nonlinear recurrence", "not hardware evidence", "not native on-chip temporal dynamics", "not universal benchmark superiority", "not language, planning, AGI, or ASI"]` | contains not bounded nonlinear recurrence | yes |
-| lifecycle native baseline exists | `/Users/james/JKS:CRA/baselines/CRA_LIFECYCLE_NATIVE_BASELINE_v0.4.md` | exists | yes |
-| Tier 4.30g hardware pass exists | `/Users/james/JKS:CRA/controlled_test_output/tier4_30g_hw_20260505_hardware_pass_ingested/tier4_30g_hw_results.json` | exists | yes |
+| lifecycle native baseline exists | `<repo>/baselines/CRA_LIFECYCLE_NATIVE_BASELINE_v0.4.md` | exists | yes |
+| Tier 4.30g hardware pass exists | `<repo>/controlled_test_output/tier4_30g_hw_20260505_hardware_pass_ingested/tier4_30g_hw_results.json` | exists | yes |
 | Tier 4.30g hardware status passed | `pass` | == pass | yes |
 | runtime fixed-point helpers present | `FP_MUL FP_FROM_FLOAT` | present in config.h | yes |
 | runtime bounded state constants present | `MAX_MEMORY_SLOTS/MAX_PENDING_HORIZONS` | present | yes |

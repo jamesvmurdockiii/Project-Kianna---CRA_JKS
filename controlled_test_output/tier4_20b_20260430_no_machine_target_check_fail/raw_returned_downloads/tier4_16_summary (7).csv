@@ -1,2 +1,0 @@
-mode,backend,hardware_run_attempted,hardware_target_configured,jobmanager_cli,tasks,seeds,runtime_mode,learning_location,chunk_size_steps
-run-hardware,pyNN.spiNNaker,False,False,,['delayed_cue'],[42],chunked,host,4

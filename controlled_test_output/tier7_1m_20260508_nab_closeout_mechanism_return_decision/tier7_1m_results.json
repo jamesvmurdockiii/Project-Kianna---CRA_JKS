@@ -64,35 +64,35 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate/tier7_1h_results.json"
+      "value": "<repo>/controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate/tier7_1h_results.json"
     },
     {
       "name": "Tier 7.1i exists",
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation/tier7_1i_results.json"
+      "value": "<repo>/controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation/tier7_1i_results.json"
     },
     {
       "name": "Tier 7.1j exists",
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_1j_20260508_nab_failure_localization/tier7_1j_results.json"
+      "value": "<repo>/controlled_test_output/tier7_1j_20260508_nab_failure_localization/tier7_1j_results.json"
     },
     {
       "name": "Tier 7.1k exists",
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/tier7_1k_results.json"
+      "value": "<repo>/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/tier7_1k_results.json"
     },
     {
       "name": "Tier 7.1l exists",
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation/tier7_1l_results.json"
+      "value": "<repo>/controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation/tier7_1l_results.json"
     },
     {
       "name": "all prior gates passed as harnesses",
@@ -161,7 +161,7 @@
   "criteria_total": 13,
   "failed_criteria": [],
   "generated_at_utc": "2026-05-09T00:05:48+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision",
+  "output_dir": "<repo>/controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision",
   "prior_outcomes": {
     "tier7_1h": "v2_3_partial_nab_signal_requires_confirmation",
     "tier7_1i": "v2_3_nab_signal_localized_not_confirmed",
@@ -170,11 +170,11 @@
     "tier7_1l": "v2_3_locked_policy_reduced_fp_but_not_confirmed"
   },
   "prior_results": {
-    "tier7_1h": "/Users/james/JKS:CRA/controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate/tier7_1h_results.json",
-    "tier7_1i": "/Users/james/JKS:CRA/controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation/tier7_1i_results.json",
-    "tier7_1j": "/Users/james/JKS:CRA/controlled_test_output/tier7_1j_20260508_nab_failure_localization/tier7_1j_results.json",
-    "tier7_1k": "/Users/james/JKS:CRA/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/tier7_1k_results.json",
-    "tier7_1l": "/Users/james/JKS:CRA/controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation/tier7_1l_results.json"
+    "tier7_1h": "<repo>/controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate/tier7_1h_results.json",
+    "tier7_1i": "<repo>/controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation/tier7_1i_results.json",
+    "tier7_1j": "<repo>/controlled_test_output/tier7_1j_20260508_nab_failure_localization/tier7_1j_results.json",
+    "tier7_1k": "<repo>/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/tier7_1k_results.json",
+    "tier7_1l": "<repo>/controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation/tier7_1l_results.json"
   },
   "runner_revision": "tier7_1m_nab_closeout_mechanism_return_decision_20260508_0001",
   "status": "pass",

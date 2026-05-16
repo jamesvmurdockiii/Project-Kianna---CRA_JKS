@@ -358,7 +358,7 @@
       "question": "Is the native runtime stable enough to freeze as a scale baseline?"
     }
   ],
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_32_20260506_mapping_resource_model",
+  "output_dir": "<repo>/controlled_test_output/tier4_32_20260506_mapping_resource_model",
   "profile_budgets": [
     {
       "bss_bytes": 8429,

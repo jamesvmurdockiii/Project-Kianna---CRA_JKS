@@ -1,4 +1,4 @@
-make: Entering directory '/tmp/job13780689853698401094.tmp/cra_422af/coral_reef_spinnaker/spinnaker_runtime'
+make: Entering directory '<jobmanager_tmp>'
 rm -rf build/gnu/ tests/test_runtime
 mkdir -p build/gnu/src/
 # spinnaker_tools.mk c
@@ -25,4 +25,4 @@ arm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding 
 # spinnaker_tools.mk elf
 arm-none-eabi-gcc -T/home/jovyan/spinnaker/spinnaker_tools/tools/sark.lnk -Wl,-e,cpu_reset -Wl,-static -ffreestanding -fdata-sections -ffunction-sections -Wl,--gc-sections -Wl,--use-blx -nostartfiles -static -L /home/jovyan/spinnaker/spinnaker_tools/lib build/gnu/src/main.o build/gnu/src/neuron_manager.o build/gnu/src/synapse_manager.o build/gnu/src/state_manager.o build/gnu/src/host_interface.o build/gnu/src/router.o build/gnu/coral_reef_build.o  /home/jovyan/spinnaker/spinnaker_tools/lib/libspin1_api.a -o build/gnu/coral_reef.elf
 rm build/gnu/coral_reef_build.c build/gnu/coral_reef_build.o
-make: Leaving directory '/tmp/job13780689853698401094.tmp/cra_422af/coral_reef_spinnaker/spinnaker_runtime'
+make: Leaving directory '<jobmanager_tmp>'

@@ -17,12 +17,12 @@
 [tier5.11d] task=silent_context_reentry control=wrong_context seed=42
 {
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/replay_consolidation_guardrail",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/replay_consolidation_guardrail/tier5_11d_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/replay_consolidation_guardrail/tier5_11d_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/replay_consolidation_guardrail/tier5_11d_summary.csv",
-  "comparisons_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/replay_consolidation_guardrail/tier5_11d_comparisons.csv",
-  "replay_events_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/replay_consolidation_guardrail/tier5_11d_replay_events.csv",
-  "fairness_contract_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/replay_consolidation_guardrail/tier5_11d_fairness_contract.json",
+  "output_dir": "<repo>/controlled_test_output/tier5_9c_20260429_190503/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/replay_consolidation_guardrail",
+  "manifest": "<repo>/controlled_test_output/tier5_9c_20260429_190503/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/replay_consolidation_guardrail/tier5_11d_results.json",
+  "report": "<repo>/controlled_test_output/tier5_9c_20260429_190503/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/replay_consolidation_guardrail/tier5_11d_report.md",
+  "summary_csv": "<repo>/controlled_test_output/tier5_9c_20260429_190503/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/replay_consolidation_guardrail/tier5_11d_summary.csv",
+  "comparisons_csv": "<repo>/controlled_test_output/tier5_9c_20260429_190503/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/replay_consolidation_guardrail/tier5_11d_comparisons.csv",
+  "replay_events_csv": "<repo>/controlled_test_output/tier5_9c_20260429_190503/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/replay_consolidation_guardrail/tier5_11d_replay_events.csv",
+  "fairness_contract_json": "<repo>/controlled_test_output/tier5_9c_20260429_190503/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/replay_consolidation_guardrail/tier5_11d_fairness_contract.json",
   "failure_reason": ""
 }

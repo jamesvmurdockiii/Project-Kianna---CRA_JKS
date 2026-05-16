@@ -1,5 +1,5 @@
 {
-  "baseline": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.0.json",
+  "baseline": "<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.0.json",
   "claim_boundary": "Software-only operational self-evaluation diagnostic. Non-oracle monitors receive no outcome/reward labels before producing confidence and uncertainty values.",
   "fairness_rules": [
     "Monitor features are generated from pre-feedback primary-path margin, novelty, memory-conflict, prediction-residual, and routing-entropy traces.",

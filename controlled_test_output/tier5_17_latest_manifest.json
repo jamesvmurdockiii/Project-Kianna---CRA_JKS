@@ -1,8 +1,8 @@
 {
   "canonical": false,
-  "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_17_20260429_190501/tier5_17_results.json",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_17_20260429_190501",
-  "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_17_20260429_190501/tier5_17_report.md",
+  "manifest_json": "<repo>/controlled_test_output/tier5_17_20260429_190501/tier5_17_results.json",
+  "output_dir": "<repo>/controlled_test_output/tier5_17_20260429_190501",
+  "report_md": "<repo>/controlled_test_output/tier5_17_20260429_190501/tier5_17_report.md",
   "status": "fail",
   "tier": "Tier 5.17 - Pre-Reward Representation Formation",
   "updated_at_utc": "2026-04-29T19:05:07+00:00"

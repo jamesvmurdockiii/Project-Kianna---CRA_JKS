@@ -21,5 +21,5 @@ Prepared source bundle only; no hardware evidence until returned run-hardware ar
 | lifecycle split host tests pass | `"pass"` | == pass | yes |
 | main.c host syntax check pass | `"pass"` | == pass | yes |
 | upload bundle created | `"controlled_test_output/tier4_30e_hw_20260505_prepared/ebrains_upload_bundle/cra_430e"` | exists | yes |
-| stable upload folder created | `"/Users/james/JKS:CRA/ebrains_jobs/cra_430e"` | exists | yes |
+| stable upload folder created | `"<repo>/ebrains_jobs/cra_430e"` | exists | yes |
 | run-hardware command emitted | `"cra_430e/experiments/tier4_30e_multicore_lifecycle_hardware_smoke.py --mode run-hardware --output-dir tier4_30e_hw_job_output"` | contains --mode run-hardware | yes |

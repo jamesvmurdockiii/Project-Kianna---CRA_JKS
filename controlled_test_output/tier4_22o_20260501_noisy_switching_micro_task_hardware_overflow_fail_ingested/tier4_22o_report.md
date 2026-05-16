@@ -3,7 +3,7 @@
 - Generated: `2026-05-01T03:20:50+00:00`
 - Mode: `ingest`
 - Status: **FAIL**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested`
+- Output directory: `<repo>/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested`
 
 Tier 4.22o runs a 14-event noisy-switching signed micro-task through the custom runtime. Each event is scored from the chip's pre-update prediction, held across a two-event pending gap, then matured in order with delayed credit and checked against a local s16.15 reference.
 
@@ -112,32 +112,32 @@ Tier 4.22o runs a 14-event noisy-switching signed micro-task through the custom 
 
 ## Artifacts
 
-- `aplx_build_stderr`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/tier4_22i_aplx_build_stderr (13).txt`
-- `aplx_build_stdout`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/tier4_22i_aplx_build_stdout (12).txt`
-- `environment_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/tier4_22o_environment.json`
-- `host_test_stderr`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/tier4_22i_host_test_stderr (12).txt`
-- `host_test_stdout`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/tier4_22i_host_test_stdout (12).txt`
-- `load_result_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/tier4_22o_load_result.json`
-- `main_syntax_stderr`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/tier4_22i_main_syntax_normal_stderr (11).txt`
-- `main_syntax_stdout`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/tier4_22i_main_syntax_normal_stdout (11).txt`
-- `manifest_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/tier4_22o_results.json`
-- `reference_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/tier4_22o_task_reference_rows.csv`
-- `reference_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/tier4_22o_task_reference.json`
-- `report_md`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/tier4_22o_report.md`
-- `target_acquisition_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/tier4_22o_target_acquisition.json`
-- `task_micro_loop_result_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/tier4_22o_task_micro_loop_result.json`
-- `task_micro_loop_rows_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/tier4_22o_task_micro_loop_rows.csv`
-- `raw_remote_manifest_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/remote_tier4_22o_results_raw.json`
-- `raw_remote_report_md`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/remote_tier4_22o_report_raw.md`
-- `remote_latest_manifest_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/tier4_22o_latest_manifest.json`
-- `main_syntax_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/tier4_22i_main_syntax_normal (11).o`
-- `aplx_binary`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/coral_reef (7).aplx`
-- `elf_binary`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/coral_reef (8).elf`
-- `elf_listing`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/coral_reef (7).txt`
-- `spinnaker_reports_zip`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/reports (18).zip`
-- `main_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/main (10).o`
-- `host_interface_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/host_interface (9).o`
-- `state_manager_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/state_manager (10).o`
-- `synapse_manager_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/synapse_manager (10).o`
-- `neuron_manager_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/neuron_manager (10).o`
-- `router_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/router (8).o`
+- `aplx_build_stderr`: `<repo>/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/tier4_22i_aplx_build_stderr (13).txt`
+- `aplx_build_stdout`: `<repo>/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/tier4_22i_aplx_build_stdout (12).txt`
+- `environment_json`: `<repo>/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/tier4_22o_environment.json`
+- `host_test_stderr`: `<repo>/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/tier4_22i_host_test_stderr (12).txt`
+- `host_test_stdout`: `<repo>/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/tier4_22i_host_test_stdout (12).txt`
+- `load_result_json`: `<repo>/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/tier4_22o_load_result.json`
+- `main_syntax_stderr`: `<repo>/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/tier4_22i_main_syntax_normal_stderr (11).txt`
+- `main_syntax_stdout`: `<repo>/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/tier4_22i_main_syntax_normal_stdout (11).txt`
+- `manifest_json`: `<repo>/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/tier4_22o_results.json`
+- `reference_csv`: `<repo>/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/tier4_22o_task_reference_rows.csv`
+- `reference_json`: `<repo>/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/tier4_22o_task_reference.json`
+- `report_md`: `<repo>/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/tier4_22o_report.md`
+- `target_acquisition_json`: `<repo>/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/tier4_22o_target_acquisition.json`
+- `task_micro_loop_result_json`: `<repo>/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/tier4_22o_task_micro_loop_result.json`
+- `task_micro_loop_rows_csv`: `<repo>/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/tier4_22o_task_micro_loop_rows.csv`
+- `raw_remote_manifest_json`: `<repo>/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/remote_tier4_22o_results_raw.json`
+- `raw_remote_report_md`: `<repo>/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/remote_tier4_22o_report_raw.md`
+- `remote_latest_manifest_json`: `<repo>/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/tier4_22o_latest_manifest.json`
+- `main_syntax_object`: `<repo>/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/tier4_22i_main_syntax_normal (11).o`
+- `aplx_binary`: `<repo>/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/coral_reef (7).aplx`
+- `elf_binary`: `<repo>/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/coral_reef (8).elf`
+- `elf_listing`: `<repo>/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/coral_reef (7).txt`
+- `spinnaker_reports_zip`: `<repo>/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/reports (18).zip`
+- `main_object`: `<repo>/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/main (10).o`
+- `host_interface_object`: `<repo>/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/host_interface (9).o`
+- `state_manager_object`: `<repo>/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/state_manager (10).o`
+- `synapse_manager_object`: `<repo>/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/synapse_manager (10).o`
+- `neuron_manager_object`: `<repo>/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/neuron_manager (10).o`
+- `router_object`: `<repo>/controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_overflow_fail_ingested/router (8).o`

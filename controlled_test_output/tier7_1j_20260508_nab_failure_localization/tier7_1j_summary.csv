@@ -1,5 +1,5 @@
 criterion,passed,value,rule
-Tier 7.1i exists,True,/Users/james/JKS:CRA/controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation/tier7_1i_results.json,exists
+Tier 7.1i exists,True,<repo>/controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation/tier7_1i_results.json,exists
 Tier 7.1i passed,True,pass,== pass
 key models present,True,"['ewma_residual_detector', 'fixed_random_reservoir_online_residual', 'rolling_mad_detector', 'rolling_zscore_detector', 'v2_2_fading_memory_prediction_error', 'v2_3_generic_recurrent_prediction_error', 'v2_3_no_update_ablation', 'v2_3_shuffled_state_sham', 'v2_3_shuffled_target_control']",contains key models
 threshold policies tested,True,"[0.99, 0.995, 0.999]",>= 3 policies

@@ -56,6 +56,6 @@
     "realTraffic/TravelTime_387.csv"
   ],
   "source_commit": "ea702d75cc2258d9d7dd35ca8e5e2539d71f3140",
-  "source_preflight": "/Users/james/JKS:CRA/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_results.json",
+  "source_preflight": "<repo>/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_results.json",
   "threshold_policy": "per-stream calibration-prefix quantile, no labels"
 }

@@ -28,7 +28,7 @@ CRA now has post-Tier-5.10e noncanonical internal host-side memory-retention evi
 
 ## Tier 5.10e Internal Memory Retention Summary
 
-- Output: `/Users/james/JKS:CRA/controlled_test_output/tier5_10e_20260428_220316`
+- Output: `<repo>/controlled_test_output/tier5_10e_20260428_220316`
 - Actual/expected runs: `153` / `153`
 - Backend: `nest`
 - Steps: `960`

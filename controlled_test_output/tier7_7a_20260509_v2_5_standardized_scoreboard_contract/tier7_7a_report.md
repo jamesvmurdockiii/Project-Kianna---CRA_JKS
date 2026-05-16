@@ -3,7 +3,7 @@
 - Generated: `2026-05-09T12:13:13+00:00`
 - Runner revision: `tier7_7a_v2_5_standardized_scoreboard_contract_20260509_0001`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract`
+- Output directory: `<repo>/controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract`
 
 ## Question
 
@@ -21,7 +21,7 @@ C-MAPSS FD001 and NAB held-out action-cost tracks are included as secondary conf
 
 | Criterion | Value | Rule | Pass |
 | --- | --- | --- | --- |
-| v2.5 baseline exists | `/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.5.json` | exists | yes |
+| v2.5 baseline exists | `<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.5.json` | exists | yes |
 | Tier 7.6e prerequisite passed | `pass` | == pass | yes |
 | Tier 7.0j reference passed | `pass` | == pass | yes |
 | primary standardized tasks locked | `4` | >= 4 including aggregate | yes |

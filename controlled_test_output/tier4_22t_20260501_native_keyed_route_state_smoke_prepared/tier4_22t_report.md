@@ -3,7 +3,7 @@
 - Generated: `2026-05-01T08:11:02+00:00`
 - Mode: `prepare`
 - Status: **PREPARED**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_22t_20260501_native_keyed_route_state_smoke_prepared`
+- Output directory: `<repo>/controlled_test_output/tier4_22t_20260501_native_keyed_route_state_smoke_prepared`
 
 Tier 4.22t runs a 30-event signed stream through the custom runtime using native keyed context state plus native route state. The host writes context slots and route updates, then sends only key+cue+delay for each decision; the chip retrieves context and route, computes feature=context[key]*route[key]*cue, scores the pre-update prediction, holds a two-event pending gap, then matures delayed credit against a local s16.15 reference.
 
@@ -36,8 +36,8 @@ Tier 4.22t runs a 30-event signed stream through the custom runtime using native
 - native_route_values: `[-1, 1]`
 - native_feature_source: `chip_context_keyed_route_lookup_feature_transform`
 - jobmanager_command: `cra_422ac/experiments/tier4_22t_native_keyed_route_state_smoke.py --mode run-hardware --output-dir tier4_22t_job_output`
-- upload_folder: `/Users/james/JKS:CRA/controlled_test_output/tier4_22t_20260501_native_keyed_route_state_smoke_prepared/ebrains_upload_bundle/cra_422ac`
-- stable_upload_folder: `/Users/james/JKS:CRA/ebrains_jobs/cra_422ac`
+- upload_folder: `<repo>/controlled_test_output/tier4_22t_20260501_native_keyed_route_state_smoke_prepared/ebrains_upload_bundle/cra_422ac`
+- stable_upload_folder: `<repo>/ebrains_jobs/cra_422ac`
 - what_i_need_from_user: `Upload the generated cra_422ac folder to EBRAINS/JobManager and run the emitted command; download returned files after completion.`
 - next_step_if_passed: `Run the emitted EBRAINS command and ingest returned files.`
 
@@ -59,8 +59,8 @@ Tier 4.22t runs a 30-event signed stream through the custom runtime using native
 | reference native keyed route retained three slots | `3` | `>= 3` | yes |
 | reference native route values cover both signs | `[-1, 1]` | `contains -1 and 1` | yes |
 | reference native feature source declared | `chip_context_keyed_route_lookup_feature_transform` | `== chip_context_keyed_route_lookup_feature_transform` | yes |
-| upload bundle created | `/Users/james/JKS:CRA/controlled_test_output/tier4_22t_20260501_native_keyed_route_state_smoke_prepared/ebrains_upload_bundle/cra_422ac` | `exists` | yes |
-| runtime source included | `/Users/james/JKS:CRA/controlled_test_output/tier4_22t_20260501_native_keyed_route_state_smoke_prepared/ebrains_upload_bundle/cra_422ac/coral_reef_spinnaker/spinnaker_runtime` | `exists` | yes |
+| upload bundle created | `<repo>/controlled_test_output/tier4_22t_20260501_native_keyed_route_state_smoke_prepared/ebrains_upload_bundle/cra_422ac` | `exists` | yes |
+| runtime source included | `<repo>/controlled_test_output/tier4_22t_20260501_native_keyed_route_state_smoke_prepared/ebrains_upload_bundle/cra_422ac/coral_reef_spinnaker/spinnaker_runtime` | `exists` | yes |
 | run-hardware command emitted | `cra_422ac/experiments/tier4_22t_native_keyed_route_state_smoke.py --mode run-hardware --output-dir tier4_22t_job_output` | `contains --mode run-hardware` | yes |
 | source CMD_SCHEDULE_PENDING defined | `CMD_SCHEDULE_PENDING 9` | `config.h defines opcode` | yes |
 | source CMD_MATURE_PENDING defined | `CMD_MATURE_PENDING 10` | `config.h defines opcode` | yes |
@@ -105,10 +105,10 @@ Tier 4.22t runs a 30-event signed stream through the custom runtime using native
 
 ## Artifacts
 
-- `reference_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22t_20260501_native_keyed_route_state_smoke_prepared/tier4_22t_task_reference.json`
-- `reference_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22t_20260501_native_keyed_route_state_smoke_prepared/tier4_22t_task_reference_rows.csv`
-- `upload_bundle`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22t_20260501_native_keyed_route_state_smoke_prepared/ebrains_upload_bundle/cra_422ac`
-- `job_readme`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22t_20260501_native_keyed_route_state_smoke_prepared/ebrains_upload_bundle/cra_422ac/README_TIER4_22T_JOB.md`
-- `stable_upload_folder`: `/Users/james/JKS:CRA/ebrains_jobs/cra_422ac`
-- `manifest_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22t_20260501_native_keyed_route_state_smoke_prepared/tier4_22t_results.json`
-- `report_md`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22t_20260501_native_keyed_route_state_smoke_prepared/tier4_22t_report.md`
+- `reference_json`: `<repo>/controlled_test_output/tier4_22t_20260501_native_keyed_route_state_smoke_prepared/tier4_22t_task_reference.json`
+- `reference_csv`: `<repo>/controlled_test_output/tier4_22t_20260501_native_keyed_route_state_smoke_prepared/tier4_22t_task_reference_rows.csv`
+- `upload_bundle`: `<repo>/controlled_test_output/tier4_22t_20260501_native_keyed_route_state_smoke_prepared/ebrains_upload_bundle/cra_422ac`
+- `job_readme`: `<repo>/controlled_test_output/tier4_22t_20260501_native_keyed_route_state_smoke_prepared/ebrains_upload_bundle/cra_422ac/README_TIER4_22T_JOB.md`
+- `stable_upload_folder`: `<repo>/ebrains_jobs/cra_422ac`
+- `manifest_json`: `<repo>/controlled_test_output/tier4_22t_20260501_native_keyed_route_state_smoke_prepared/tier4_22t_results.json`
+- `report_md`: `<repo>/controlled_test_output/tier4_22t_20260501_native_keyed_route_state_smoke_prepared/tier4_22t_report.md`

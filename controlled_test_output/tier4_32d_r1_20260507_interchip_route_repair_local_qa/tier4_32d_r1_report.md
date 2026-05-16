@@ -45,7 +45,7 @@ Tier 4.32d-r1 is local source/runtime QA for explicit inter-chip MCPL route entr
 | inter-chip route contract test passes | `0` | == 0 | yes |  |
 | existing MCPL lookup contract still passes | `0` | == 0 | yes |  |
 | existing four-core MCPL local regression still passes | `0` | == 0 | yes |  |
-| 4.32d upload folder not prepared by local QA | `/Users/james/JKS:CRA/ebrains_jobs/cra_432d` | must not exist | yes |  |
+| 4.32d upload folder not prepared by local QA | `<repo>/ebrains_jobs/cra_432d` | must not exist | yes |  |
 | next hardware smoke is authorized only after this local pass | `Tier 4.32d` | authorized_next_if_all_pass | yes |  |
 | no baseline freeze authorized | `blocked` | == blocked | yes |  |
 

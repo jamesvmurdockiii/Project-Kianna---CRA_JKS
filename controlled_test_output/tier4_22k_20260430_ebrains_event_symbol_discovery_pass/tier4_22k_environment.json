@@ -5,7 +5,7 @@
     "/usr/local/spinnaker_tools",
     "/home/jovyan/spinnaker_tools"
   ],
-  "cwd": "/tmp/job7804713621144302745.tmp",
+  "cwd": "<jobmanager_tmp>",
   "env": {
     "CPATH": "",
     "C_INCLUDE_PATH": "",
@@ -45,7 +45,7 @@
   },
   "python": "/home/jovyan/spinnaker/bin/python",
   "python_version": "3.13.9 | packaged by conda-forge | (main, Oct 16 2025, 10:31:39) [GCC 14.3.0]",
-  "root": "/tmp/job7804713621144302745.tmp/cra_422k",
+  "root": "<jobmanager_tmp>",
   "runner_revision": "tier4_22k_spin1api_event_discovery_20260430_0001",
   "tools": {
     "arm-none-eabi-cpp": "/usr/bin/arm-none-eabi-cpp",

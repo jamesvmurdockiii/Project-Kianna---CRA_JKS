@@ -2,7 +2,7 @@
 
 - Generated: `2026-04-27T16:46:31+00:00`
 - Status: **PASS**
-- Output directory: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_17b_20260427_164625_step_chunk_parity`
+- Output directory: `<repo>/controlled_test_output/tier4_17b_20260427_164625_step_chunk_parity`
 
 Tier 4.17b is a local runtime parity diagnostic. It is not SpiNNaker
 hardware evidence and not a continuous/on-chip learning claim.
@@ -61,9 +61,9 @@ hardware evidence and not a continuous/on-chip learning claim.
 
 ## Artifacts
 
-- `summary_csv`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_17b_20260427_164625_step_chunk_parity/tier4_17b_summary.csv`
-- `comparison_csv`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_17b_20260427_164625_step_chunk_parity/tier4_17b_comparisons.csv`
-- `timeseries_csv`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_17b_20260427_164625_step_chunk_parity/tier4_17b_timeseries.csv`
-- `manifest_json`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_17b_20260427_164625_step_chunk_parity/tier4_17b_results.json`
-- `report_md`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_17b_20260427_164625_step_chunk_parity/tier4_17b_report.md`
-- `parity_png`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_17b_20260427_164625_step_chunk_parity/tier4_17b_parity.png`
+- `summary_csv`: `<repo>/controlled_test_output/tier4_17b_20260427_164625_step_chunk_parity/tier4_17b_summary.csv`
+- `comparison_csv`: `<repo>/controlled_test_output/tier4_17b_20260427_164625_step_chunk_parity/tier4_17b_comparisons.csv`
+- `timeseries_csv`: `<repo>/controlled_test_output/tier4_17b_20260427_164625_step_chunk_parity/tier4_17b_timeseries.csv`
+- `manifest_json`: `<repo>/controlled_test_output/tier4_17b_20260427_164625_step_chunk_parity/tier4_17b_results.json`
+- `report_md`: `<repo>/controlled_test_output/tier4_17b_20260427_164625_step_chunk_parity/tier4_17b_report.md`
+- `parity_png`: `<repo>/controlled_test_output/tier4_17b_20260427_164625_step_chunk_parity/tier4_17b_parity.png`

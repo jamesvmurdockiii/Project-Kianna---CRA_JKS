@@ -28,7 +28,7 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_results.json"
+      "value": "<repo>/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_results.json"
     },
     {
       "name": "Tier 7.1b preflight passed",
@@ -42,7 +42,7 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_1c_20260508_cmapss_fd001_scoring_gate/tier7_1c_results.json"
+      "value": "<repo>/controlled_test_output/tier7_1c_20260508_cmapss_fd001_scoring_gate/tier7_1c_results.json"
     },
     {
       "name": "Tier 7.1c outcome was negative",
@@ -399,7 +399,7 @@
     }
   ],
   "next_step": "Use the localized factor result to define the next locked gate. If multichannel CRA state is sham-separated but still loses to fair baselines, design a stricter multichannel adapter/fairness gate. If no adapter factor repairs the gap, stop C-MAPSS promotion and move to the next predeclared public benchmark family or planned general mechanism without native transfer.",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair",
+  "output_dir": "<repo>/controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair",
   "runner_revision": "tier7_1d_cmapss_failure_analysis_adapter_repair_20260508_0001",
   "seed_diagnostics": [
     {

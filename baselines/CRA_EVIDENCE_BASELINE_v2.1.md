@@ -29,7 +29,7 @@ CRA now has a bounded v2.1 host-side software self-evaluation / reliability-moni
 
 ## Tier 5.18c Promotion / Regression Summary
 
-- Output: `/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_221045`
+- Output: `<repo>/controlled_test_output/tier5_18c_20260429_221045`
 - Status: `pass`
 - Runtime seconds: `1534.207275167`
 - Children passed: `2` / `2`
@@ -39,14 +39,14 @@ CRA now has a bounded v2.1 host-side software self-evaluation / reliability-moni
 
 | Child | Status | Runtime Seconds | Manifest |
 | --- | --- | ---: | --- |
-| `v2_0_compact_regression_gate` | `pass` | `1531.03552575` | `/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_221045/v2_0_compact_regression_gate/tier5_17e_results.json` |
-| `tier5_18_self_evaluation_guardrail` | `pass` | `3.168745541999897` | `/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_221045/tier5_18_self_evaluation_guardrail/tier5_18_results.json` |
+| `v2_0_compact_regression_gate` | `pass` | `1531.03552575` | `<repo>/controlled_test_output/tier5_18c_20260429_221045/v2_0_compact_regression_gate/tier5_17e_results.json` |
+| `tier5_18_self_evaluation_guardrail` | `pass` | `3.168745541999897` | `<repo>/controlled_test_output/tier5_18c_20260429_221045/tier5_18_self_evaluation_guardrail/tier5_18_results.json` |
 
 ### Promotion Criteria
 
 | Criterion | Value | Rule | Pass |
 | --- | --- | --- | --- |
-| frozen v2.0 baseline artifact exists | `/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.0.json` | `exists` | yes |
+| frozen v2.0 baseline artifact exists | `<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.0.json` | `exists` | yes |
 | v2.0 compact regression gate remains green | `pass` | `== pass` | yes |
 | Tier 5.18 self-evaluation guardrail remains green | `pass` | `== pass` | yes |
 | all child commands succeeded | `2/2` | `== 2/2` | yes |

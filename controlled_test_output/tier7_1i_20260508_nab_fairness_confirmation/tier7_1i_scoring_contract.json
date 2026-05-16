@@ -1,5 +1,5 @@
 {
-  "compact_prior": "/Users/james/JKS:CRA/controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate/tier7_1h_results.json",
+  "compact_prior": "<repo>/controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate/tier7_1h_results.json",
   "confirmation_rule": "v2.3 must be best overall, sham-separated, and bootstrap CI low > 0 versus best external baseline",
   "cra_models": [
     "v2_2_fading_memory_prediction_error",
@@ -66,6 +66,6 @@
     "realTweets/Twitter_volume_GOOG.csv"
   ],
   "source_commit": "ea702d75cc2258d9d7dd35ca8e5e2539d71f3140",
-  "source_preflight": "/Users/james/JKS:CRA/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_results.json",
+  "source_preflight": "<repo>/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_results.json",
   "threshold_policy": "per-stream calibration-prefix quantile, no labels"
 }

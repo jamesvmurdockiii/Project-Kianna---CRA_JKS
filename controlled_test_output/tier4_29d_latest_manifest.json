@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.393675+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.541295+00:00",
   "source_generated_at_utc": null,
   "registry_entry_id": "tier4_29d_native_self_evaluation",
   "tier": "Tier 4.29d - Native Self-Evaluation Bridge",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_29d_20260504_pass_ingested",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_ingest_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_report_seed44.json",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_combined_results.json",
+  "output_dir": "controlled_test_output/tier4_29d_20260504_pass_ingested",
+  "manifest": "controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_ingest_results.json",
+  "report": "controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_report_seed44.json",
+  "summary_csv": "controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_combined_results.json",
   "canonical": true,
   "claim": "Native four-core runtime gates learning by composite confidence (context \u00d7 route \u00d7 memory) on real SpiNNaker across three seeds on three different boards. All 30/30 criteria pass per seed (90/90 total). Full confidence weight=30912, bias=-1856; zero confidence weight=0, bias=0; zero-context confidence weight=0, bias=0; half-context confidence weight=28093, bias=3517. MCPL lookup lacks confidence transmission; SDP used instead.",
   "caveat": "Native confidence-gated learning hardware evidence only; not speedup evidence, not multi-chip scaling, not full native v2.1 autonomy, not continuous generation, not dynamic lifecycle, and not external-baseline superiority."

@@ -1,12 +1,12 @@
 {
   "artifacts": {
-    "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_22a_20260430_custom_runtime_contract/tier4_22a_results.json",
-    "memory_budget_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22a_20260430_custom_runtime_contract/tier4_22a_memory_budget.csv",
-    "parity_contract_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22a_20260430_custom_runtime_contract/tier4_22a_parity_contract.csv",
-    "reference_manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_22a_20260430_custom_runtime_contract/tier4_22a_reference_manifest.json",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_22a_20260430_custom_runtime_contract/tier4_22a_report.md",
-    "runtime_stages_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22a_20260430_custom_runtime_contract/tier4_22a_runtime_stages.csv",
-    "state_ownership_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22a_20260430_custom_runtime_contract/tier4_22a_state_ownership.csv"
+    "manifest_json": "<repo>/controlled_test_output/tier4_22a_20260430_custom_runtime_contract/tier4_22a_results.json",
+    "memory_budget_csv": "<repo>/controlled_test_output/tier4_22a_20260430_custom_runtime_contract/tier4_22a_memory_budget.csv",
+    "parity_contract_csv": "<repo>/controlled_test_output/tier4_22a_20260430_custom_runtime_contract/tier4_22a_parity_contract.csv",
+    "reference_manifest_json": "<repo>/controlled_test_output/tier4_22a_20260430_custom_runtime_contract/tier4_22a_reference_manifest.json",
+    "report_md": "<repo>/controlled_test_output/tier4_22a_20260430_custom_runtime_contract/tier4_22a_report.md",
+    "runtime_stages_csv": "<repo>/controlled_test_output/tier4_22a_20260430_custom_runtime_contract/tier4_22a_runtime_stages.csv",
+    "state_ownership_csv": "<repo>/controlled_test_output/tier4_22a_20260430_custom_runtime_contract/tier4_22a_state_ownership.csv"
   },
   "criteria": [
     {
@@ -142,7 +142,7 @@
       "scale_driver": "steps, populations, spike volume, variants"
     }
   ],
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_22a_20260430_custom_runtime_contract",
+  "output_dir": "<repo>/controlled_test_output/tier4_22a_20260430_custom_runtime_contract",
   "parity_contract": [
     {
       "candidate": "4.22a0 constrained-NEST preflight",
@@ -401,13 +401,13 @@
     "tier4_20c_child_summary_read_failures_sum": 0,
     "tier4_20c_child_synthetic_fallbacks_sum": 0,
     "tier4_20c_child_total_step_spikes_min": 94727.0,
-    "tier4_20c_manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_20c_20260430_v2_1_bridge_three_seed_hardware_pass_ingested/tier4_20c_results.json",
+    "tier4_20c_manifest": "<repo>/controlled_test_output/tier4_20c_20260430_v2_1_bridge_three_seed_hardware_pass_ingested/tier4_20c_results.json",
     "tier4_20c_runtime_seconds": 1593.9567131639924,
     "tier4_20c_status": "pass",
     "tier4_21a_keyed_context_memory_updates_sum": 11.0,
     "tier4_21a_keyed_feature_active_steps_sum": 20.0,
     "tier4_21a_keyed_max_context_memory_slots": 4.0,
-    "tier4_21a_manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_21a_20260430_keyed_context_memory_seed42_hardware_pass_ingested/tier4_21a_results.json",
+    "tier4_21a_manifest": "<repo>/controlled_test_output/tier4_21a_20260430_keyed_context_memory_seed42_hardware_pass_ingested/tier4_21a_results.json",
     "tier4_21a_runs": 4,
     "tier4_21a_runtime_seconds": 3522.7106956378557,
     "tier4_21a_sim_run_failures_sum": 0,

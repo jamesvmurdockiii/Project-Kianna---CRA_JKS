@@ -22,6 +22,17 @@ ROOT = Path(__file__).resolve().parents[1]
 OUTPUT_ROOT = ROOT / "controlled_test_output"
 
 
+def repo_path(path: Path | str | None) -> str | None:
+    """Return a stable repo-relative path for public artifacts."""
+    if path is None:
+        return None
+    p = Path(path)
+    try:
+        return str(p.relative_to(ROOT))
+    except ValueError:
+        return str(p)
+
+
 @dataclass(frozen=True)
 class EvidenceSpec:
     entry_id: str
@@ -3614,10 +3625,10 @@ def latest_manifest_payload(spec: EvidenceSpec, manifest: dict[str, Any], entry:
         "registry_entry_id": spec.entry_id,
         "tier": spec.tier_label,
         "status": entry["status"],
-        "output_dir": str(run_dir),
-        "manifest": str(run_dir / spec.results_file),
-        "report": str(run_dir / spec.report_file),
-        "summary_csv": str(run_dir / spec.summary_file) if spec.summary_file else None,
+        "output_dir": repo_path(run_dir),
+        "manifest": repo_path(run_dir / spec.results_file),
+        "report": repo_path(run_dir / spec.report_file),
+        "summary_csv": repo_path(run_dir / spec.summary_file) if spec.summary_file else None,
         "canonical": True,
         "claim": spec.claim,
         "caveat": spec.caveat,
@@ -3630,8 +3641,8 @@ def latest_manifest_payload(spec: EvidenceSpec, manifest: dict[str, Any], entry:
     if spec.entry_id == "tier4_13_spinnaker_hardware_capsule":
         study_data = run_dir / "study_data.json"
         provenance_dir = run_dir / "spinnaker_reports" / "2026-04-27-01-19-12-390038"
-        payload["study_data"] = str(study_data)
-        payload["spinnaker_provenance_dir"] = str(provenance_dir)
+        payload["study_data"] = repo_path(study_data)
+        payload["spinnaker_provenance_dir"] = repo_path(provenance_dir)
         payload["claim_boundary"] = [
             "This is a minimal fixed-pattern hardware capsule, not a full hardware scaling claim.",
             "The run used one seed (42), N=8, 120 steps, and a fixed population.",
@@ -3644,8 +3655,8 @@ def latest_manifest_payload(spec: EvidenceSpec, manifest: dict[str, Any], entry:
             run_dir / "spinnaker_reports" / "2026-04-27-03-19-49-290162",
             run_dir / "spinnaker_reports" / "2026-04-27-03-34-22-032643",
         ]
-        payload["study_data"] = str(study_data)
-        payload["spinnaker_provenance_dirs"] = [str(path) for path in provenance_dirs]
+        payload["study_data"] = repo_path(study_data)
+        payload["spinnaker_provenance_dirs"] = [repo_path(path) for path in provenance_dirs]
         payload["claim_boundary"] = [
             "This is a three-seed repeatability result for the minimal fixed-pattern hardware capsule.",
             "The run used seeds 42, 43, and 44, N=8, 120 steps, and a fixed population.",
@@ -3929,12 +3940,12 @@ def classify_noncanonical(canonical_dirs: set[str]) -> list[dict[str, Any]]:
                 status = f"unreadable: {exc}"
         entries.append(
             {
-                "path": str(path),
+                "path": repo_path(path),
                 "name": path.name,
                 "role": role,
                 "status": status,
                 "generated_at_utc": generated,
-                "results_files": [str(p) for p in results_files],
+                "results_files": [repo_path(p) for p in results_files],
             }
         )
     return entries
@@ -3958,7 +3969,7 @@ def build_registry() -> dict[str, Any]:
         manifest = read_json(results_path)
         status = status_from_manifest(manifest)
         tests = normalize_test_results(manifest)
-        missing = [str(path) for path in expected_artifacts(spec) if not path.exists()]
+        missing = [repo_path(path) for path in expected_artifacts(spec) if not path.exists()]
         for missing_path in missing:
             integrity["missing_expected_artifacts"].append(
                 {"entry_id": spec.entry_id, "path": missing_path}
@@ -3978,10 +3989,10 @@ def build_registry() -> dict[str, Any]:
             "plan_position": spec.plan_position,
             "status": status,
             "source_generated_at_utc": manifest.get("generated_at_utc"),
-            "canonical_output_dir": str(run_dir),
-            "results_json": str(results_path),
-            "report_md": str(report_path),
-            "summary_csv": str(summary_path) if summary_path else None,
+            "canonical_output_dir": repo_path(run_dir),
+            "results_json": repo_path(results_path),
+            "report_md": repo_path(report_path),
+            "summary_csv": repo_path(summary_path) if summary_path else None,
             "harness": spec.harness,
             "evidence_role": spec.evidence_role,
             "claim": spec.claim,
@@ -4005,7 +4016,7 @@ def build_registry() -> dict[str, Any]:
             write_json(manifest_path, payload)
             integrity["latest_manifest_updates"].append(
                 {
-                    "path": str(manifest_path),
+                    "path": repo_path(manifest_path),
                     "registry_entry_id": spec.entry_id,
                     "previous_manifest": previous,
                     "new_manifest": payload,
@@ -4352,10 +4363,10 @@ def main() -> None:
                 "failed_criteria": len(registry["integrity"]["failed_criteria"]),
                 "noncanonical_outputs": len(registry["noncanonical_outputs"]),
                 "outputs": {
-                    "registry_json": str(OUTPUT_ROOT / "STUDY_REGISTRY.json"),
-                    "registry_csv": str(OUTPUT_ROOT / "STUDY_REGISTRY.csv"),
-                    "controlled_readme": str(OUTPUT_ROOT / "README.md"),
-                    "study_index": str(ROOT / "STUDY_EVIDENCE_INDEX.md"),
+                    "registry_json": repo_path(OUTPUT_ROOT / "STUDY_REGISTRY.json"),
+                    "registry_csv": repo_path(OUTPUT_ROOT / "STUDY_REGISTRY.csv"),
+                    "controlled_readme": repo_path(OUTPUT_ROOT / "README.md"),
+                    "study_index": repo_path(ROOT / "STUDY_EVIDENCE_INDEX.md"),
                 },
             },
             indent=2,

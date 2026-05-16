@@ -1,6 +1,6 @@
 # CRA Paper-Readiness Roadmap
 
-Last updated: 2026-05-15
+Last updated: 2026-05-16
 
 ## Active Remediation Note
 
@@ -17,10 +17,11 @@ organism-development snapshot only and does not supersede `v2.6` for predictive
 usefulness.
 
 This document is the working plan from the current evidence state to a serious
-paper-ready CRA claim. It is deliberately stricter than a speculative roadmap. The goal
-is to know exactly what we are trying to prove, what would count as a pass, what
-would count as a fail, and where the project would need to stop, debug, narrow
-its claim, or change direction.
+paper-ready CRA claim. It is deliberately stricter than a speculative roadmap.
+The goal is to know exactly what we are trying to prove, what would count as a
+pass, what would count as a fail, and where the project would need to stop,
+debug, narrow its claim, or change direction. Public readers should treat this
+as a preregistered research plan, not as completed evidence.
 
 ## North Star
 
@@ -33,7 +34,8 @@ whose core mechanisms provide measurable value under delayed reward,
 nonstationarity, noise, domain transfer, and hardware constraints.
 ```
 
-The word "paradigm shifting" has to be earned. In this repo, it would mean:
+Any paradigm-level language has to be earned. In this repo, a strong contribution
+would require:
 
 ```text
 1. CRA learns without global backpropagation on controlled tasks.
@@ -105,18 +107,20 @@ Level 12: Open-ended curriculum learning
   Improves across generated task families without hand-tuning each task.
 ```
 
-The current evidence supports only the lower part of this ladder. Higher levels
-are planned research targets, not completed evidence.
+The current evidence supports only the lower and selected middle parts of this
+ladder. Higher levels are planned research targets, not completed evidence.
 
 SNN-native coverage boundary:
 
 ```text
-Current evidence proves CRA can run and learn through spiking backends, including
-real SpiNNaker capsules. `CRA_NATIVE_RUNTIME_BASELINE_v0.1` freezes a bounded
-four-core MCPL distributed scaffold proven across three seeds. It does not yet
-prove multi-chip scaling, speedup, full v2.1 mechanism transfer, or continuous
-host-free operation. Tiers 5.15, 5.16, 5.17, and 6.4 exist to test software
-mechanism claims directly before paper-lock.
+Current evidence proves CRA can run and learn through spiking backends,
+including real SpiNNaker capsules. The native-runtime line has progressed beyond
+the initial `CRA_NATIVE_RUNTIME_BASELINE_v0.1` into the bounded
+`CRA_NATIVE_SCALE_BASELINE_v0.5` substrate baseline. This still does not prove
+speedup, broad multi-chip learning/lifecycle scaling, full host-free autonomy,
+or native implementation of every software mechanism. Tiers 5.15, 5.16, 5.17,
+6.4, and the current Tier 5.45a healthy-NEST rebaseline gate exist to test
+software mechanism claims directly before paper-lock.
 ```
 
 Capability-monitoring boundary:
@@ -6705,12 +6709,12 @@ real-ish tasks show usefulness
 Claim:
 
 ```text
-CRA is a functional organism-style neuromorphic learning architecture whose
+CRA is a functional organism-inspired neuromorphic learning architecture whose
 ecological mechanisms improve adaptation under delayed, noisy, or nonstationary
 conditions and can transfer to SpiNNaker hardware.
 ```
 
-### Paradigm-Shifting Claim
+### Strong Paradigm-Level Claim
 
 Only acceptable if:
 
@@ -6730,7 +6734,7 @@ limitations are well characterized
 Claim:
 
 ```text
-CRA provides evidence for a post-backprop, organism-style neuromorphic learning
+CRA provides evidence for a post-backprop, organism-inspired neuromorphic learning
 paradigm based on local plasticity, trophic ecology, delayed credit, and
 lifecycle pressure, with explicit memory, prediction, and compositional reuse
 mechanisms where they are empirically useful, plus bounded self-monitoring and
@@ -6741,91 +6745,29 @@ Do not use this claim unless the evidence actually reaches it.
 
 ## Immediate Next Steps
 
-From the exact current point:
+From the exact current point, the execution path is:
 
 ```text
-1. Freeze v0.7 as the post-4.16b harder-task hardware-transfer baseline.
-2. Freeze v0.8 as the post-4.18a chunked-runtime hardware baseline.
-3. Treat the first returned Tier 4.16b hard_noisy_switching attempt as noncanonical failure evidence superseded by the repaired pass.
-4. Treat corrected Tier 4.16b-debug as superseded by aligned bridge-repair diagnostics.
-5. Treat aligned Tier 4.16b bridge repair as locally passed on NEST/Brian2: classification `hardware_transfer_or_timing_failure`.
-6. Treat repaired seed `44` hard-switch hardware as a noncanonical one-seed probe pass superseded by the three-seed repeat.
-7. Treat repaired three-seed Tier 4.16b hardware as canonical hard-switch transfer evidence.
-8. Treat Tier 4.18a as canonical runtime/resource evidence and use `chunk_size_steps=50` as the current v0.7 hardware default.
-9. Keep Tier 0.9 reproduction hygiene current while all later work proceeds.
-10. Run Tier 4.18b expanded runtime characterization only if chunk `100` or additional seeds are worth the hardware cost.
-11. Promote Tier 5.5 expanded baselines as v0.9 controlled software evidence.
-12. Promote Tier 5.6 baseline unsupported speculationrparameter fairness audit as v1.0 controlled software evidence.
-13. Promote Tier 5.7 compact regression as v1.1 controlled software evidence.
-14. Promote Tier 6.1 lifecycle/self-scaling as v1.2 controlled software evidence.
-15. Promote Tier 6.3 lifecycle sham controls as v1.3 controlled software evidence.
-16. Promote Tier 6.4 circuit motif causality as v1.4 controlled software evidence.
-17. Add an adult-turnover stressor only if the organism claim needs explicit birth/death replacement rather than cleavage-dominated expansion.
-18. Treat Tier 5.9a macro eligibility and Tier 5.9b residual repair as failed noncanonical diagnostics; revive macro credit only if a later measured blocker specifically requires it.
-19. Treat Tier 5.10 multi-timescale memory as failed noncanonical mechanism evidence.
-20. Treat Tier 5.10b as a passed noncanonical task-validation gate: repaired memory-pressure tasks are ready, but no CRA memory mechanism is promoted by 5.10b alone.
-21. Treat Tier 5.10c as a passed noncanonical software mechanism diagnostic: explicit host-side context binding works on the repaired tasks, but it is not native/internal CRA memory yet.
-22. Treat Tier 5.10d as a passed noncanonical internal software-memory diagnostic: internal host-side context memory matches the scaffold and survives ablations plus full compact regression, but it is not native on-chip memory, sleep/replay, hardware transfer, or solved catastrophic forgetting.
-23. Treat Tier 5.10e as a passed noncanonical internal memory retention stressor: internal host-side context memory survives longer gaps, denser distractors, and recurrence pressure with `1.0` all accuracy on all stress tasks; by itself it did not justify sleep/replay, but Tier 5.11a later supplied a measured silent-reentry need.
-24. Freeze v1.5 as the post-Tier-5.10e internal memory-retention baseline.
-25. Treat Tier 5.10f as a failed noncanonical capacity/interference stressor: it narrows v1.5 by showing single-slot memory misbinds under overlapping/intervening/reentry pressure.
-26. Treat Tier 5.10g as passed baseline-frozen keyed-memory repair evidence: bounded keyed slots repair the 5.10f failure, match oracle-key behavior on tested tasks, beat v1.5 single-slot memory and ablations, and preserve compact regression.
-27. Freeze v1.6 as the post-Tier-5.10g internal keyed context-memory baseline.
-28. Treat Tier 5.11a as a passed noncanonical need diagnostic: v1.6 no-replay fails silent reentry tails while unbounded/oracle controls solve them, producing `replay_or_consolidation_needed`.
-29. Do not freeze v1.7 from 5.11a; it is a need test, not a replay mechanism.
-30. Treat Tier 5.11b as failed/non-promoted replay-intervention evidence: prioritized replay repaired the no-replay failure, but the shuffled-replay sham came too close on `partial_key_reentry`.
-31. Treat Tier 5.11c as failed/non-promoted priority-specific replay evidence: sharper wrong-memory/no-write controls separate from the candidate, but shuffled-order replay still comes too close.
-32. Treat Tier 5.11d as passed baseline-frozen correct-binding replay/consolidation evidence: the candidate repairs silent reentry, separates from wrong-key/key-label/priority-only/no-consolidation controls, and preserves compact regression.
-33. Freeze v1.7 as the post-Tier-5.11d host-side replay/consolidation baseline; do not claim priority weighting, native/on-chip replay, or hardware memory transfer.
-34. Treat Tier 5.12a as passed noncanonical predictive task-validation evidence; it authorizes mechanism testing but is not predictive coding or world modeling.
-35. Treat Tier 5.12b as a failed noncanonical predictive-context diagnostic: the path matched the scaffold, but wrong-sign coding was not an information-destroying sham and the absolute masked-task gate was too blunt.
-36. Treat Tier 5.12c as passed visible predictive-context software evidence: the candidate matched the scaffold, beat v1.7, beat shuffled/permuted/no-write shams, and beat selected external baselines.
-37. Freeze v1.8 after Tier 5.12d compact regression: all old guardrails, v1.7 replay/consolidation, and compact predictive sham separation stayed green.
-38. Treat Tier 5.13 as a passed noncanonical compositional-skill diagnostic: explicit host-side reusable-module composition solves held-out skill combinations; before Tier 5.13c, native/internal CRA composition and module routing remained unproven.
-39. Treat Tier 5.13b as a passed noncanonical module-routing diagnostic: explicit host-side contextual routing selects the correct module before feedback; before Tier 5.13c, native/internal CRA routing and bridge integration remained unproven.
-40. Freeze v1.9 after Tier 5.13c and a fresh full compact regression: internal host-side composition/routing separates from internal shams and preserves guardrails, but is not hardware/on-chip routing, language, planning, AGI, or external-baseline superiority.
-41. Treat Tier 5.14 as passed noncanonical working-memory/context-binding diagnostic evidence: v1.9 host-side context/cue memory and delayed module-state routing survive broader working-memory pressure, but this is not hardware/on-chip working memory, language, planning, AGI, external-baseline superiority, or a v2.0 freeze by itself.
-42. Treat Tier 5.15 as passed noncanonical software temporal-code diagnostic evidence: temporal CRA learns from latency, burst, and temporal-interval codes on fixed_pattern, delayed_cue, and sensor_control; time-shuffle and rate-only controls lose on the successful temporal cells. It is not hardware/on-chip temporal coding, not a v2.0 freeze, and not hard-switch temporal superiority.
-43. Treat Tier 5.16 as passed noncanonical NEST neuron-parameter sensitivity evidence: 66/66 runs completed across 11 LIF variants with all 33 task/variant cells functional, zero parameter-propagation failures, zero fallback/failure counters, zero collapse rows, and monotonic direct LIF response probes. It is not SpiNNaker hardware evidence, custom-C/on-chip neuron evidence, adaptive/Izhikevich evidence, or a v2.0 freeze.
-44. Treat Tier 5.17 as failed noncanonical pre-reward representation diagnostic evidence: the no-label/no-reward harness completed with zero non-oracle leakage and zero raw dopamine, but the strict no-history-input scaffold failed probe/sham-separation/sample-efficiency gates.
-45. Treat Tier 5.17b as passed failure-analysis coverage, not a capability promotion: it classified one positive subcase, one input-encoded/easy task, and one temporal task dominated by fixed-history controls; it routes the repair to Tier 5.17c intrinsic predictive / MI-style preexposure and does not justify returning to Tier 5.9 yet.
-46. Treat Tier 5.17c as failed noncanonical intrinsic predictive preexposure evidence: zero leakage/dopamine and partial gains were present, but the candidate did not clear held-out episode probe accuracy or target-shuffled/wrong-domain/STDP-only/best-control separation. Reward-free representation learning remains unpromoted.
-47. Treat Tier 5.17d as passed bounded noncanonical predictive-binding evidence: cross-modal and reentry binding passed zero-leakage, target-shuffled, wrong-domain, history/reservoir, STDP-only, and best-control gates on held-out ambiguous episodes.
-48. Freeze v2.0 after Tier 5.17e: v1.8 compact regression, v1.9 composition/routing, Tier 5.14 working-memory/context binding, and Tier 5.17d predictive-binding guardrails all pass. v2.0 is bounded host-side predictive-binding evidence, not hardware representation, general unsupervised concept learning, full world modeling, language, planning, AGI, or external-baseline superiority.
-49. Treat Tier 5.18 as passed noncanonical self-evaluation / metacognitive-monitoring diagnostic evidence: the 150-run matrix completed with zero outcome leakage and zero pre-feedback monitor failures, but Tier 5.18 alone does not freeze v2.1 or prove consciousness/self-awareness, hardware self-monitoring, language, planning, AGI, or external-baseline superiority.
-50. Freeze v2.1 after Tier 5.18c: the full v2.0 compact gate and Tier 5.18 guardrail both pass. v2.1 is bounded host-side software self-evaluation / reliability-monitoring evidence, not consciousness, self-awareness, introspection, SpiNNaker/custom-C/on-chip self-monitoring, language, long-horizon planning, AGI, or external-baseline superiority.
-51. Treat Tier 5.9c as failed noncanonical macro-eligibility recheck evidence: the full v2.1 guardrail passed, but macro residual still failed trace-ablation specificity, so macro eligibility remains parked and should not move to hardware/custom C.
-52. Treat Tier 4.20a as passed engineering transfer audit evidence: v2.1 mechanisms are classified by chunked-host readiness versus future custom-runtime/on-chip blockers. It is not hardware evidence; it authorized Tier 4.20b only.
-53. Treat Tier 4.20b as passed one-seed v2.1 chunked-host bridge/transport hardware evidence from `controlled_test_output/tier4_20b_20260430_v2_1_bridge_seed42_hardware_pass_ingested/`: real pyNN.spiNNaker execution, zero fallback, zero sim.run/readback failures, nonzero spike readback, macro eligibility excluded. It is not native/on-chip v2.1 mechanism evidence.
-54. Treat Tier 4.20c as passed three-seed v2.1 chunked-host bridge repeat evidence from `controlled_test_output/tier4_20c_20260430_v2_1_bridge_three_seed_hardware_pass_ingested/`: six real `pyNN.spiNNaker` child runs, seeds 42/43/44, delayed_cue plus hard_noisy_switching, zero fallback, zero `sim.run`/readback failures, nonzero spike readback, macro eligibility excluded. Preserve the raw wrapper false-fail under `controlled_test_output/tier4_20c_20260430_v2_1_bridge_three_seed_raw_false_fail/`; the failure was the missing local Tier 4.20b prerequisite manifest in the minimal EBRAINS source bundle, not a hardware/science failure.
-55. Treat Tier 4.21a as passed one-seed keyed-context-memory bridge hardware evidence from `controlled_test_output/tier4_21a_20260430_keyed_context_memory_seed42_hardware_pass_ingested/`: four real `pyNN.spiNNaker` variants, zero fallback, zero `sim.run`/readback failures, active keyed-memory telemetry, keyed all/tail accuracy `1.0/1.0`, and best-ablation all accuracy `0.5`. It is not native/on-chip memory or broader v2 mechanism transfer.
-56. Do not run large per-mechanism hardware bridge matrices by default; Tier 4.21a runtime was about `3522.7107` seconds for one seed/four variants.
-57. Treat Tier 4.22a as passed engineering contract evidence from `controlled_test_output/tier4_22a_20260430_custom_runtime_contract/`: it defines constrained-NEST plus sPyNNaker mapping preflight, state ownership, parity gates, and memory/resource budgets before custom runtime implementation. It is not custom C, native/on-chip execution, continuous runtime, speedup evidence, or new hardware science evidence.
-58. Treat Tier 4.22a0 as passed local constrained-transfer preflight from `controlled_test_output/tier4_22a0_20260430_spinnaker_constrained_preflight/`: NEST/PyNN/sPyNNaker imports, sPyNNaker feature checks, constrained NEST scheduled-input/binned-readback smoke, static bridge compliance, resource/fixed-point checks, and custom C host tests passed. It is not real hardware evidence, custom-C hardware execution, native/on-chip learning, continuous runtime, or speedup evidence.
-59. Use Tier 4.20c and Tier 4.21a as chunked-host reference traces while starting Tier 4.22 custom/on-chip runtime work. Hybrid paths are transitional diagnostics, not the destination.
-60. Treat Tier 4.22b as passed continuous-transport scaffold evidence: local PyNN/NEST passed at `controlled_test_output/tier4_22b_20260430_continuous_transport_local/`, and the EBRAINS hardware transport probe passed at `controlled_test_output/tier4_22b_20260430_continuous_transport_hardware_pass_ingested/` with real `pyNN.spiNNaker`, one `sim.run` per task, zero fallback/failures, and minimum per-case spike readback `94896`. It is not learning evidence, custom-C execution, native/on-chip learning, continuous-learning parity, or speedup evidence.
-61. Treat Tier 4.22c as passed persistent custom-C state scaffold evidence from `controlled_test_output/tier4_22c_20260430_persistent_state_scaffold/`: host C tests passed, 12/12 static state checks passed, bounded keyed slots/readout/counter/reset state is owned by the custom runtime, and `state_manager.c` avoids dynamic allocation. It is not hardware evidence, reward/plasticity learning, speedup evidence, or full CRA deployment.
-62. Treat Tier 4.22d as passed local custom-C reward/plasticity scaffold evidence from `controlled_test_output/tier4_22d_20260430_reward_plasticity_scaffold/`: host C tests passed, 11/11 static checks passed, eligibility traces, trace-gated dopamine, fixed-point trace decay, signed one-shot dopamine, and runtime-owned readout reward updates exist. It is not hardware evidence, continuous-learning parity, scale-ready eligibility optimization, speedup evidence, or full CRA deployment.
-63. Treat Tier 4.22e as passed local minimal delayed-readout parity evidence from `controlled_test_output/tier4_22e_20260430_local_learning_parity/`: fixed-point C-equation mirror matched the floating reference on delayed_cue and hard_noisy_switching seed 42, pending horizons do not store future targets, no-pending ablation loses, and pending drops are zero. It is not hardware evidence, full CRA parity, lifecycle/replay/routing parity, speedup evidence, or final on-chip proof.
-64. Treat Tier 4.22f0 as passed custom-runtime scale-readiness audit evidence from `controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit/`: host tests and static audit checks passed, PyNN/sPyNNaker remains the primary supported hardware layer, and `7` custom-C scale blockers were documented with `3` high-severity blockers. It is not hardware evidence, not scale-ready evidence, not speedup evidence, and it blocks direct custom-runtime learning hardware claims until event-indexed spike delivery, lazy/active eligibility traces, and compact state readback are repaired.
-65. Treat Tier 4.22g as passed local custom-C event-indexed/active-trace optimization evidence from `controlled_test_output/tier4_22g_20260430_event_indexed_trace_runtime/`: host tests and `12/12` static checks passed; `SCALE-001`, `SCALE-002`, and `SCALE-003` are repaired locally; Tier 4.22i later cleared the compact state-readback/build-load acceptance gate. It is not hardware evidence, measured speedup evidence, full CRA parity, or final on-chip learning proof.
-66. Treat Tier 4.22h as passed local compact-readback/build-readiness evidence from `controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/`: host tests and `30/30` static readback/callback/SARK-SDP/router-API/build-recipe compatibility checks passed, `CMD_READ_STATE` schema v1 packs a 73-byte state summary, and `.aplx` build was honestly recorded as `not_attempted_spinnaker_tools_missing`. It is not hardware evidence, board-load evidence, command round-trip evidence, speedup evidence, or custom-runtime learning evidence.
-67. Treat Tier 4.22k as passed EBRAINS Spin1API event-symbol discovery evidence from `controlled_test_output/tier4_22k_20260430_ebrains_event_symbol_discovery_pass/`: the job image exposed `/home/jovyan/spinnaker/spinnaker_tools/include`, `spin1_callback_on`, and the official enum constants `MC_PACKET_RECEIVED` and `MCPL_PACKET_RECEIVED`; timer, SDP, and both MC receive callback probes compiled with `/usr/bin/arm-none-eabi-gcc`, while legacy guessed `MC_PACKET_RX`/`MCPL_PACKET_RX` did not. This is toolchain/header discovery only, not board execution, command round-trip, learning, or speedup evidence.
-68. Treat Tier 4.22i as passed custom-runtime board-load/command-roundtrip evidence from `controlled_test_output/tier4_22i_20260501_ebrains_board_roundtrip_pass/`: regenerated `cra_422r` built `coral_reef.aplx`, acquired a real board through pyNN.spiNNaker/SpynnakerDataView, selected free core `(0,0,4)`, loaded the app, acknowledged mutation commands, and returned `CMD_READ_STATE` schema version `1` with a 73-byte payload showing `2` neurons, `1` synapse, and `reward_events=1`. Preserve `controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/` as the source-package gate and the earlier failed EBRAINS attempts as noncanonical toolchain/API/target/protocol diagnostics. This is not full CRA learning, speedup, multi-core scaling, continuous runtime parity, or final on-chip autonomy.
-69. Treat Tier 4.22j as passed minimal custom-runtime closed-loop learning-smoke evidence from `controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/`: one chip-owned delayed pending/readout update passed after ingest correction. It is not full CRA task learning, v2.1 mechanism transfer, speedup, scaling, or final autonomy.
-70. Treat Tier 4.22l as passed tiny signed fixed-point learning-parity evidence from `controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_hardware_pass_ingested/`: four signed prediction/weight/bias parity rows matched exactly on real SpiNNaker. It is not full CRA task learning or speedup evidence.
-71. Treat Tier 4.22m as passed minimal fixed-pattern task micro-loop evidence from `controlled_test_output/tier4_22m_20260501_custom_runtime_task_micro_loop_hardware_pass_ingested/`: twelve schedule/mature task events matched the local s16.15 reference with zero raw deltas, observed accuracy `0.9166666667`, tail accuracy `1.0`, and final raw readout `32256/0`. It is not full CRA task learning or speedup evidence.
-72. Treat Tier 4.22n as passed tiny delayed-cue pending-queue evidence from `controlled_test_output/tier4_22n_20260501_delayed_cue_micro_task_hardware_pass_ingested/`: delayed decisions survived a two-event pending gap, all raw deltas were `0`, max pending depth was `3`, and tail accuracy was `1.0`. It is not full delayed_cue transfer, v2.1 transfer, or speedup evidence.
-73. Treat Tier 4.22o as passed tiny noisy-switching custom-runtime evidence from `controlled_test_output/tier4_22o_20260501_noisy_switching_micro_task_hardware_pass_ingested/`: after the `cra_422w` 32-bit `FP_MUL` overflow diagnostic, repaired `cra_422x` passed on board `10.11.210.25`, selected core `(0,0,4)`, with `44/44` criteria, all prediction/weight/bias raw deltas `0`, observed accuracy/tail accuracy `0.7857142857/1.0`, max pending depth `3`, and final raw readout `-48768/-1536`. It is not full CRA hard_noisy_switching, v2.1 mechanism transfer, speedup, scaling, or final autonomy.
-74. Treat Tier 4.22p as passed tiny A-B-A reentry custom-runtime evidence from `controlled_test_output/tier4_22p_20260501_aba_reentry_micro_task_hardware_pass_ingested/`: returned `cra_422y` passed on board `10.11.222.17`, selected core `(0,0,4)`, with `44/44` criteria, all `30` schedule/mature pairs acknowledged, all prediction/weight/bias raw deltas `0`, observed accuracy/tail accuracy `0.8666666667/1.0`, max pending depth `3`, and final raw readout `30810/-1`. It is not full CRA recurrence, v2.1 mechanism transfer, speedup, scaling, or final autonomy.
-75. Treat Tier 4.22q as passed tiny integrated host-v2/custom-runtime bridge-smoke hardware evidence from `controlled_test_output/tier4_22q_20260501_integrated_v2_bridge_smoke_hardware_pass_ingested/`: returned `cra_422z` passed on board `10.11.236.65`, selected core `(0,0,4)`, with `47/47` remote criteria plus ingest criterion, all `30` schedule/mature pairs acknowledged, all prediction/weight/bias raw deltas `0`, observed accuracy/tail accuracy `0.9333333333/1.0`, bridge context/route updates `9/9`, max keyed slots `3`, max pending depth `3`, and final raw readout `32768/0`. It is not native/on-chip v2 memory/routing, full CRA task learning, speedup, scaling, or final autonomy.
-76. Run Tier 4.19 hardware lifecycle feasibility only after software lifecycle survives sham controls and the relevant v2 mechanism bridge/custom-runtime path is clear.
-77. Build Tier 6.2 hard synthetic benchmark suite plus Tier 7.1-7.6 real-ish, holdout, policy/action, curriculum, and long-horizon planning/subgoal tests.
-78. Migrate only proven mechanisms toward Tier 4.22-4.23 custom C/on-chip paths.
-79. Run integrated Tier 8 final software/hardware matrices and reproduction capsule.
-80. Freeze final paper baseline.
-81. Write paper only after the final claim level is known.
+1. Finish Tier 5.45a healthy-NEST rebaseline scoring across all 204 cells.
+2. Merge Tier 5.45a shards only through the documented shard/merge procedure.
+3. Classify each organism-development mechanism as promoted, parked, or diagnostic.
+4. Freeze a new software baseline only if Tier 5.45a produces a clean promotion gate.
+5. If no mechanism earns promotion, keep v2.6 as the predictive benchmark baseline and keep v2.7 diagnostic.
+6. Re-run standardized/public benchmark scoreboards only after the software baseline decision is locked.
+7. Move only promoted mechanisms back toward hardware/native runtime transfer.
+8. Keep `CRA_NATIVE_SCALE_BASELINE_v0.5` as the current bounded native substrate baseline until a new native gate earns a freeze.
+9. Preserve negative/parked evidence and claim boundaries; do not relabel diagnostics as paper claims.
+10. Keep public-repo hygiene green before every public-facing commit or upload.
 ```
+
+The current short-term paper-readiness question is not whether every planned
+mechanism can be ported to chip. It is whether corrected healthy-NEST scoring
+shows that the organism-development mechanisms are useful enough to justify
+promotion and later hardware replication.
+
+Do not start a new mechanism family, public benchmark claim, or native-runtime
+port from the current branch until Tier 5.45a is complete, reviewed, and
+documented.
 
 ## Final Guardrail
 
@@ -7090,7 +7032,7 @@ controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_prepar
 Prepared EBRAINS upload folder and command:
 
 ```text
-/Users/james/JKS:CRA/ebrains_jobs/cra_422ad
+<repo>/ebrains_jobs/cra_422ad
 cra_422ad/experiments/tier4_22u_native_memory_route_state_smoke.py --mode run-hardware --output-dir tier4_22u_job_output
 ```
 
@@ -7135,7 +7077,7 @@ controlled_test_output/tier4_22v_20260501_native_memory_route_reentry_compositio
 Prepared EBRAINS upload folder and command:
 
 ```text
-/Users/james/JKS:CRA/ebrains_jobs/cra_422ae
+<repo>/ebrains_jobs/cra_422ae
 cra_422ae/experiments/tier4_22v_native_memory_route_reentry_composition_smoke.py --mode run-hardware --output-dir tier4_22v_job_output
 ```
 
@@ -7181,7 +7123,7 @@ controlled_test_output/tier4_22w_20260501_native_decoupled_memory_route_composit
 Prepared EBRAINS upload folder and command:
 
 ```text
-/Users/james/JKS:CRA/ebrains_jobs/cra_422ag
+<repo>/ebrains_jobs/cra_422ag
 cra_422ag/experiments/tier4_22w_native_decoupled_memory_route_composition_smoke.py --mode run-hardware --output-dir tier4_22w_job_output
 ```
 

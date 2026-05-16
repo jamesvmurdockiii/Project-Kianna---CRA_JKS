@@ -69,7 +69,7 @@
   },
   "next_gate": "7.7 closeout or morphology routing per 7.7t contract",
   "outcome": "input_diversity_hypothesis_confirmed",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7v_input_diversity_20260509",
+  "output_dir": "<repo>/controlled_test_output/tier7_7v_input_diversity_20260509",
   "pr_ratio": 2.3675836485663853,
   "runner_revision": "tier7_7v_input_diversity_20260509_0001",
   "status": "pass",

@@ -1,17 +1,17 @@
 {
   "artifacts": {
-    "comparisons_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_21a_20260430_keyed_context_memory_seed42_hardware_pass_ingested/tier4_21a_comparisons.csv",
-    "context_reentry_interference_keyed_context_memory_seed42_timeseries_csv": "/tmp/job3097767355678456774.tmp/tier4_21a_job_output/spinnaker_hardware_context_reentry_interference_keyed_context_memory_seed42_timeseries.csv",
-    "context_reentry_interference_keyed_context_memory_seed42_timeseries_png": "/tmp/job3097767355678456774.tmp/tier4_21a_job_output/spinnaker_hardware_context_reentry_interference_keyed_context_memory_seed42_timeseries.png",
-    "context_reentry_interference_slot_reset_ablation_seed42_timeseries_csv": "/tmp/job3097767355678456774.tmp/tier4_21a_job_output/spinnaker_hardware_context_reentry_interference_slot_reset_ablation_seed42_timeseries.csv",
-    "context_reentry_interference_slot_reset_ablation_seed42_timeseries_png": "/tmp/job3097767355678456774.tmp/tier4_21a_job_output/spinnaker_hardware_context_reentry_interference_slot_reset_ablation_seed42_timeseries.png",
-    "context_reentry_interference_slot_shuffle_ablation_seed42_timeseries_csv": "/tmp/job3097767355678456774.tmp/tier4_21a_job_output/spinnaker_hardware_context_reentry_interference_slot_shuffle_ablation_seed42_timeseries.csv",
-    "context_reentry_interference_slot_shuffle_ablation_seed42_timeseries_png": "/tmp/job3097767355678456774.tmp/tier4_21a_job_output/spinnaker_hardware_context_reentry_interference_slot_shuffle_ablation_seed42_timeseries.png",
-    "context_reentry_interference_wrong_key_ablation_seed42_timeseries_csv": "/tmp/job3097767355678456774.tmp/tier4_21a_job_output/spinnaker_hardware_context_reentry_interference_wrong_key_ablation_seed42_timeseries.csv",
-    "context_reentry_interference_wrong_key_ablation_seed42_timeseries_png": "/tmp/job3097767355678456774.tmp/tier4_21a_job_output/spinnaker_hardware_context_reentry_interference_wrong_key_ablation_seed42_timeseries.png",
-    "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_21a_20260430_keyed_context_memory_seed42_hardware_pass_ingested/tier4_21a_results.json",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_21a_20260430_keyed_context_memory_seed42_hardware_pass_ingested/tier4_21a_report.md",
-    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_21a_20260430_keyed_context_memory_seed42_hardware_pass_ingested/tier4_21a_summary.csv"
+    "comparisons_csv": "<repo>/controlled_test_output/tier4_21a_20260430_keyed_context_memory_seed42_hardware_pass_ingested/tier4_21a_comparisons.csv",
+    "context_reentry_interference_keyed_context_memory_seed42_timeseries_csv": "<jobmanager_tmp>",
+    "context_reentry_interference_keyed_context_memory_seed42_timeseries_png": "<jobmanager_tmp>",
+    "context_reentry_interference_slot_reset_ablation_seed42_timeseries_csv": "<jobmanager_tmp>",
+    "context_reentry_interference_slot_reset_ablation_seed42_timeseries_png": "<jobmanager_tmp>",
+    "context_reentry_interference_slot_shuffle_ablation_seed42_timeseries_csv": "<jobmanager_tmp>",
+    "context_reentry_interference_slot_shuffle_ablation_seed42_timeseries_png": "<jobmanager_tmp>",
+    "context_reentry_interference_wrong_key_ablation_seed42_timeseries_csv": "<jobmanager_tmp>",
+    "context_reentry_interference_wrong_key_ablation_seed42_timeseries_png": "<jobmanager_tmp>",
+    "manifest_json": "<repo>/controlled_test_output/tier4_21a_20260430_keyed_context_memory_seed42_hardware_pass_ingested/tier4_21a_results.json",
+    "report_md": "<repo>/controlled_test_output/tier4_21a_20260430_keyed_context_memory_seed42_hardware_pass_ingested/tier4_21a_report.md",
+    "summary_csv": "<repo>/controlled_test_output/tier4_21a_20260430_keyed_context_memory_seed42_hardware_pass_ingested/tier4_21a_summary.csv"
   },
   "criteria": [
     {
@@ -27,10 +27,10 @@
       "value": {
         "action": "already_canonical",
         "aliases_checked": [
-          "/tmp/job3097767355678456774.tmp/cra_421a/coral-reef-spinnaker",
-          "/tmp/job3097767355678456774.tmp/cra_421a/coral reef spinnaker"
+          "<jobmanager_tmp>",
+          "<jobmanager_tmp> reef spinnaker"
         ],
-        "canonical_package": "/tmp/job3097767355678456774.tmp/cra_421a/coral_reef_spinnaker",
+        "canonical_package": "<jobmanager_tmp>",
         "canonical_package_exists": true
       }
     },
@@ -142,7 +142,7 @@
   "failure_reason": "",
   "generated_at_utc": "2026-04-30T17:12:07+00:00",
   "mode": "ingest",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_21a_20260430_keyed_context_memory_seed42_hardware_pass_ingested",
+  "output_dir": "<repo>/controlled_test_output/tier4_21a_20260430_keyed_context_memory_seed42_hardware_pass_ingested",
   "status": "pass",
   "summary": {
     "aggregates": [
@@ -491,7 +491,7 @@
     "context_memory_slot_count": 4,
     "expected_runs": 4,
     "hardware_run_attempted": true,
-    "ingested_from": "/private/tmp/tier4_21a_return",
+    "ingested_from": "<private-tmp>/tier4_21a_return",
     "keyed_context_memory_updates_sum": 11.0,
     "keyed_feature_active_steps_sum": 20.0,
     "keyed_max_context_memory_slots": 4.0,

@@ -3,7 +3,7 @@
 - Generated: `2026-04-28T05:59:44+00:00`
 - Backend: `nest`
 - Status: **PASS**
-- Output directory: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_1_20260428_012109`
+- Output directory: `<repo>/controlled_test_output/tier6_1_20260428_012109`
 
 Tier 6.1 asks whether CRA's lifecycle/self-scaling machinery adds measurable value over fixed-N CRA controls on identical hard/adaptive streams.
 

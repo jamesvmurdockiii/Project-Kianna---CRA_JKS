@@ -1,12 +1,12 @@
 {
   "artifacts": {
-    "criteria_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/tier4_32g_r0_criteria.csv",
-    "next_gates_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/tier4_32g_r0_next_gates.csv",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/tier4_32g_r0_report.md",
-    "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/tier4_32g_r0_results.json",
-    "route_contract_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/tier4_32g_r0_route_contract.csv",
-    "source_findings_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/tier4_32g_r0_source_findings.csv",
-    "test_commands_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/tier4_32g_r0_test_commands.csv"
+    "criteria_csv": "<repo>/controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/tier4_32g_r0_criteria.csv",
+    "next_gates_csv": "<repo>/controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/tier4_32g_r0_next_gates.csv",
+    "report_md": "<repo>/controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/tier4_32g_r0_report.md",
+    "results_json": "<repo>/controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/tier4_32g_r0_results.json",
+    "route_contract_csv": "<repo>/controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/tier4_32g_r0_route_contract.csv",
+    "source_findings_csv": "<repo>/controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/tier4_32g_r0_source_findings.csv",
+    "test_commands_csv": "<repo>/controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit/tier4_32g_r0_test_commands.csv"
   },
   "claim_boundary": "Tier 4.32g-r0 is local source/route QA only. It source-proves lifecycle event/trophic/mask-sync inter-chip MCPL route support before a hardware package. It is not SpiNNaker hardware evidence, not lifecycle scaling, not speedup evidence, not benchmark superiority, not true two-partition learning, not multi-shard learning, and not a native-scale baseline freeze.",
   "criteria": [
@@ -183,7 +183,7 @@
       "question": "What origin/target shard semantics are required before true two-partition cross-chip learning?"
     }
   ],
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit",
+  "output_dir": "<repo>/controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit",
   "route_contract": [
     {
       "key": "MAKE_MCPL_KEY(APP_ID, MCPL_MSG_LIFECYCLE_ACTIVE_MASK_SYNC, 0, 0)",

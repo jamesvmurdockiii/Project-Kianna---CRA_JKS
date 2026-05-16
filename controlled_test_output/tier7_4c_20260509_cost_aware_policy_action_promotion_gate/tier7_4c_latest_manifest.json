@@ -3,42 +3,42 @@
     {
       "bytes": 1292,
       "name": "compact_child_json",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/tier7_4c_compact_child.json",
+      "path": "<repo>/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/tier7_4c_compact_child.json",
       "sha256": "277576646ae267b4d7cb5bb2cb7fdde22e659438199060412006c067ca1dc00d"
     },
     {
       "bytes": 740,
       "name": "promotion_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/tier7_4c_promotion.csv",
+      "path": "<repo>/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/tier7_4c_promotion.csv",
       "sha256": "8891991d6b0f56fdc864ef04aff4a02e8f72c3b8122635dca597e725f6239089"
     },
     {
       "bytes": 851,
       "name": "promotion_json",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/tier7_4c_promotion.json",
+      "path": "<repo>/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/tier7_4c_promotion.json",
       "sha256": "e6c63f0f8def7d097b7e1a429068be781cce33f4ff0f25ab72da5ff4104eed10"
     },
     {
       "bytes": 2858,
       "name": "report_md",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/tier7_4c_report.md",
+      "path": "<repo>/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/tier7_4c_report.md",
       "sha256": "eb9e823b70946fe2e4ed7102cce431063b52b09762b14956bf7aa668f47523ca"
     },
     {
       "bytes": 7105,
       "name": "results_json",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/tier7_4c_results.json",
+      "path": "<repo>/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/tier7_4c_results.json",
       "sha256": "1a8fc825db3f10583b33cc34ad5ffe106715d646dc888b5e14e5c5d6fc9b6b33"
     },
     {
       "bytes": 1452,
       "name": "summary_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/tier7_4c_summary.csv",
+      "path": "<repo>/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/tier7_4c_summary.csv",
       "sha256": "ba2c16ceeb6bac018bc35792e50cbf746ac116b614a0e40de501f09e01faf4f9"
     }
   ],
   "generated_at_utc": "2026-05-09T01:52:33+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate",
+  "output_dir": "<repo>/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate",
   "runner_revision": "tier7_4c_cost_aware_policy_action_promotion_gate_20260509_0001",
   "status": "pass",
   "tier": "Tier 7.4c - Cost-Aware Policy/Action Promotion + Compact Regression"

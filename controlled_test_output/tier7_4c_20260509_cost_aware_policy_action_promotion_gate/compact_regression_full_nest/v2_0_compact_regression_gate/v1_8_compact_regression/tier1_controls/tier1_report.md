@@ -6,7 +6,7 @@
 - Steps per run: `200`
 - Seed repeat count: `20`
 - Base seed: `42`
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/compact_regression_full_nest/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls`
+- Output directory: `<repo>/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/compact_regression_full_nest/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls`
 
 Tier 1 is a negative-control tier. Passing it does not prove learning; it proves the organism does not appear to learn when useful signal is absent or labels are broken.
 

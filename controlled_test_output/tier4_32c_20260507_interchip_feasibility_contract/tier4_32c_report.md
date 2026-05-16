@@ -4,7 +4,7 @@
 - Runner revision: `tier4_32c_interchip_feasibility_contract_20260507_0002`
 - Status: **PASS**
 - Criteria: `19/19`
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract`
+- Output directory: `<repo>/controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract`
 
 ## Claim Boundary
 

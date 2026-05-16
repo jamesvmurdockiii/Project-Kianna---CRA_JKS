@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.621495+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.760508+00:00",
   "source_generated_at_utc": "2026-05-07T19:04:46+00:00",
   "registry_entry_id": "tier4_32f_multichip_resource_lifecycle_decision",
   "tier": "Tier 4.32f - Multi-Chip Resource/Lifecycle Decision Contract",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/tier4_32f_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/tier4_32f_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/tier4_32f_candidate_directions.csv",
+  "output_dir": "controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision",
+  "manifest": "controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/tier4_32f_results.json",
+  "report": "controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/tier4_32f_report.md",
+  "summary_csv": "controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/tier4_32f_candidate_directions.csv",
   "canonical": true,
   "claim": "Tier 4.32f passed as a local decision contract after the 4.32e two-chip learning micro-task: it selected multi-chip lifecycle traffic with resource counters as the next direction, classified the missing lifecycle inter-chip route proof, authorized Tier 4.32g-r0 source/route repair audit next, and blocked immediate lifecycle hardware packaging, speedup, benchmarks, true two-partition learning, multi-shard learning, and native-scale baseline freeze.",
   "caveat": "Local decision/contract evidence only; not hardware evidence, not lifecycle scaling, not speedup evidence, not benchmark superiority, not true two-partition learning, not multi-shard learning, and not a native-scale baseline freeze."

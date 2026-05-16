@@ -1,11 +1,11 @@
 scope,path,check,rule,status,passed
-tier4_16_chunked_bridge_function,/Users/james/JKS:CRA/experiments/tier4_harder_spinnaker_capsule.py,uses pyNN.spiNNaker in direct runner,required,pass,True
-tier4_16_chunked_bridge_function,/Users/james/JKS:CRA/experiments/tier4_harder_spinnaker_capsule.py,uses IF_curr_exp,required hardware-supported cell model,pass,True
-tier4_16_chunked_bridge_function,/Users/james/JKS:CRA/experiments/tier4_harder_spinnaker_capsule.py,uses StepCurrentSource scheduled input,required bridge input primitive,pass,True
-tier4_16_chunked_bridge_function,/Users/james/JKS:CRA/experiments/tier4_harder_spinnaker_capsule.py,uses Population,required hardware population primitive,pass,True
-tier4_16_chunked_bridge_function,/Users/james/JKS:CRA/experiments/tier4_harder_spinnaker_capsule.py,reads spikes through get_data,required binned readback path,pass,True
-tier4_16_chunked_bridge_function,/Users/james/JKS:CRA/experiments/tier4_harder_spinnaker_capsule.py,does not create PyNN Projection in chunk bridge,no dynamic graph/projection mutation in bridge loop,pass,True
-tier4_16_chunked_bridge_function,/Users/james/JKS:CRA/experiments/tier4_harder_spinnaker_capsule.py,does not use STDPMechanism in bridge runner,host replay bridge must not imply unsupported native plasticity,pass,True
-tier4_21a_keyed_bridge_source,/Users/james/JKS:CRA/experiments/tier4_21a_keyed_context_memory_bridge.py,keyed memory bridge has explicit variants,candidate and shams must stay explicit,pass,True
-tier4_21a_keyed_bridge_source,/Users/james/JKS:CRA/experiments/tier4_21a_keyed_context_memory_bridge.py,keyed memory is bounded by configured slot count,bounded-state telemetry required,pass,True
-tier4_22a_contract_source,/Users/james/JKS:CRA/experiments/tier4_22a_custom_runtime_contract.py,contract declares constrained-NEST/sPyNNaker preflight,Tier 4.22a0 must stay in roadmap/contract,pass,True
+tier4_16_chunked_bridge_function,<repo>/experiments/tier4_harder_spinnaker_capsule.py,uses pyNN.spiNNaker in direct runner,required,pass,True
+tier4_16_chunked_bridge_function,<repo>/experiments/tier4_harder_spinnaker_capsule.py,uses IF_curr_exp,required hardware-supported cell model,pass,True
+tier4_16_chunked_bridge_function,<repo>/experiments/tier4_harder_spinnaker_capsule.py,uses StepCurrentSource scheduled input,required bridge input primitive,pass,True
+tier4_16_chunked_bridge_function,<repo>/experiments/tier4_harder_spinnaker_capsule.py,uses Population,required hardware population primitive,pass,True
+tier4_16_chunked_bridge_function,<repo>/experiments/tier4_harder_spinnaker_capsule.py,reads spikes through get_data,required binned readback path,pass,True
+tier4_16_chunked_bridge_function,<repo>/experiments/tier4_harder_spinnaker_capsule.py,does not create PyNN Projection in chunk bridge,no dynamic graph/projection mutation in bridge loop,pass,True
+tier4_16_chunked_bridge_function,<repo>/experiments/tier4_harder_spinnaker_capsule.py,does not use STDPMechanism in bridge runner,host replay bridge must not imply unsupported native plasticity,pass,True
+tier4_21a_keyed_bridge_source,<repo>/experiments/tier4_21a_keyed_context_memory_bridge.py,keyed memory bridge has explicit variants,candidate and shams must stay explicit,pass,True
+tier4_21a_keyed_bridge_source,<repo>/experiments/tier4_21a_keyed_context_memory_bridge.py,keyed memory is bounded by configured slot count,bounded-state telemetry required,pass,True
+tier4_22a_contract_source,<repo>/experiments/tier4_22a_custom_runtime_contract.py,contract declares constrained-NEST/sPyNNaker preflight,Tier 4.22a0 must stay in roadmap/contract,pass,True

@@ -3,66 +3,66 @@
     {
       "bytes": 42954,
       "name": "category_summary_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/tier7_1k_category_summary.csv",
+      "path": "<repo>/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/tier7_1k_category_summary.csv",
       "sha256": "4ff0d8bbc1f4b68e7c65d8bfb9691343aec22fb4ad7a0ba11a37a14a7c65ff2b"
     },
     {
       "bytes": 1053,
       "name": "classification_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/tier7_1k_classification.csv",
+      "path": "<repo>/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/tier7_1k_classification.csv",
       "sha256": "c47e1580e2c256bed75804acd0487ebd290fb9facc8c88978d108504451cde3c"
     },
     {
       "bytes": 2037,
       "name": "contract_json",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/tier7_1k_repair_contract.json",
+      "path": "<repo>/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/tier7_1k_repair_contract.json",
       "sha256": "7a313b5a2e7b8716b1b94b3d095b26b555abc336f1865f8016f8d9c65e5681d3"
     },
     {
       "bytes": 888858,
       "name": "policy_metrics_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/tier7_1k_policy_metrics.csv",
+      "path": "<repo>/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/tier7_1k_policy_metrics.csv",
       "sha256": "e05080dc3e65c6123412a2f8872f15a3748ca48c5244c30d896b84e053bc503d"
     },
     {
       "bytes": 6935,
       "name": "policy_summary_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/tier7_1k_policy_summary.csv",
+      "path": "<repo>/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/tier7_1k_policy_summary.csv",
       "sha256": "9e09e20c08131b72b412657548dcc8f5aa31fec68c2ca1950e270edf78177435"
     },
     {
       "bytes": 1135,
       "name": "report_md",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/tier7_1k_report.md",
+      "path": "<repo>/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/tier7_1k_report.md",
       "sha256": "540ea1a7d4255dbaf510d9dab8b0d4ea44a250f747f1a3048acedc45f11aa7a6"
     },
     {
       "bytes": 19455,
       "name": "results_json",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/tier7_1k_results.json",
+      "path": "<repo>/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/tier7_1k_results.json",
       "sha256": "850f7ef00e694c378ead973bbb4cbdf0acdc6441a4688face823313c58b4dde8"
     },
     {
       "bytes": 156472,
       "name": "stream_summary_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/tier7_1k_stream_summary.csv",
+      "path": "<repo>/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/tier7_1k_stream_summary.csv",
       "sha256": "339dedfdac21dcf7dc9b91d28fa800bac49c7790de2293987ba2af96af901b1b"
     },
     {
       "bytes": 4701,
       "name": "summary_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/tier7_1k_summary.csv",
+      "path": "<repo>/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/tier7_1k_summary.csv",
       "sha256": "2fb7ed9428ed637b3357860d0425291e37ec041ebb79e2fc02cdbdbcd1bde5b3"
     },
     {
       "bytes": 67646,
       "name": "thresholds_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/tier7_1k_thresholds.csv",
+      "path": "<repo>/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/tier7_1k_thresholds.csv",
       "sha256": "26742b7905364ffd8f55b7f472e73cd38c6fd2e8a35364e91abc62fa21ef98c3"
     }
   ],
   "generated_at_utc": "2026-05-08T23:40:54+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair",
+  "output_dir": "<repo>/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair",
   "runner_revision": "tier7_1k_nab_false_positive_repair_20260508_0001",
   "status": "pass",
   "tier": "Tier 7.1k - NAB Adapter/Readout False-Positive Repair"

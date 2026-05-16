@@ -12,7 +12,7 @@
     "total": 0,
     "command_found": false
   },
-  "aplx_path": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/build/coral_reef.aplx",
-  "elf_path": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/build/coral_reef.elf",
+  "aplx_path": "<repo>/coral_reef_spinnaker/spinnaker_runtime/build/coral_reef.aplx",
+  "elf_path": "<repo>/coral_reef_spinnaker/spinnaker_runtime/build/coral_reef.elf",
   "tools_detected": false
 }

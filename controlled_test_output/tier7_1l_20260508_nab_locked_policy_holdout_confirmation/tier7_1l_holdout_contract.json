@@ -57,7 +57,7 @@
     "not hardware/native transfer",
     "not AGI/ASI evidence"
   ],
-  "prior_gate": "/Users/james/JKS:CRA/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/tier7_1k_results.json",
+  "prior_gate": "<repo>/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/tier7_1k_results.json",
   "question": "Does the Tier 7.1k persist3 false-positive repair survive held-out NAB streams without policy re-selection?",
   "source_commit": "ea702d75cc2258d9d7dd35ca8e5e2539d71f3140"
 }

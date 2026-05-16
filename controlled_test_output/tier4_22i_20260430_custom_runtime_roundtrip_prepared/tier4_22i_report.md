@@ -3,7 +3,7 @@
 - Generated: `2026-04-30T23:44:08+00:00`
 - Mode: `prepare`
 - Status: **PREPARED**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared`
+- Output directory: `<repo>/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared`
 
 Tier 4.22i tests the custom C runtime itself on hardware: build/load the tiny `.aplx`, send `CMD_READ_STATE`, and validate the compact state packet after simple command mutations.
 
@@ -25,9 +25,9 @@ Tier 4.22i tests the custom C runtime itself on hardware: build/load the tiny `.
 | --- | --- | --- | --- |
 | Tier 4.22h compact-readback pass exists | `pass` | `== pass` | yes |
 | main.c host syntax check pass | `pass` | `== pass` | yes |
-| upload bundle created | `/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/ebrains_upload_bundle/cra_422r` | `exists` | yes |
-| runtime source included | `/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/ebrains_upload_bundle/cra_422r/coral_reef_spinnaker/spinnaker_runtime` | `exists` | yes |
-| controller source includes CMD_READ_STATE | `/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/ebrains_upload_bundle/cra_422r/coral_reef_spinnaker/python_host/colony_controller.py` | `contains CMD_READ_STATE` | yes |
+| upload bundle created | `<repo>/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/ebrains_upload_bundle/cra_422r` | `exists` | yes |
+| runtime source included | `<repo>/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/ebrains_upload_bundle/cra_422r/coral_reef_spinnaker/spinnaker_runtime` | `exists` | yes |
+| controller source includes CMD_READ_STATE | `<repo>/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/ebrains_upload_bundle/cra_422r/coral_reef_spinnaker/python_host/colony_controller.py` | `contains CMD_READ_STATE` | yes |
 | run-hardware command emitted | `cra_422r/experiments/tier4_22i_custom_runtime_roundtrip.py --mode run-hardware --output-dir tier4_22i_job_output` | `contains --mode run-hardware` | yes |
 | source official no-payload MC callback registered | `spin1_callback_on(MC_PACKET_RECEIVED` | `uses Tier 4.22k-confirmed official Spin1API enum constant` | yes |
 | source official payload MC callback registered | `spin1_callback_on(MCPL_PACKET_RECEIVED` | `uses Tier 4.22k-confirmed official Spin1API enum constant` | yes |
@@ -78,8 +78,8 @@ Tier 4.22i tests the custom C runtime itself on hardware: build/load the tiny `.
 
 ## Artifacts
 
-- `upload_bundle`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/ebrains_upload_bundle/cra_422r`
-- `job_readme`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/ebrains_upload_bundle/cra_422r/README_TIER4_22I_JOB.md`
-- `stable_upload_folder`: `/Users/james/JKS:CRA/ebrains_jobs/cra_422r`
-- `manifest_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/tier4_22i_results.json`
-- `report_md`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/tier4_22i_report.md`
+- `upload_bundle`: `<repo>/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/ebrains_upload_bundle/cra_422r`
+- `job_readme`: `<repo>/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/ebrains_upload_bundle/cra_422r/README_TIER4_22I_JOB.md`
+- `stable_upload_folder`: `<repo>/ebrains_jobs/cra_422r`
+- `manifest_json`: `<repo>/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/tier4_22i_results.json`
+- `report_md`: `<repo>/controlled_test_output/tier4_22i_20260430_custom_runtime_roundtrip_prepared/tier4_22i_report.md`

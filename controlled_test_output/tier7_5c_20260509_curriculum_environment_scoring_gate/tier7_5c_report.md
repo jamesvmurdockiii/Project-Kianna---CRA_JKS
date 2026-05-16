@@ -2,7 +2,7 @@
 
 - Generated: `2026-05-09T03:48:19+00:00`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier7_5c_20260509_curriculum_environment_scoring_gate`
+- Output directory: `<repo>/controlled_test_output/tier7_5c_20260509_curriculum_environment_scoring_gate`
 - Runner revision: `tier7_5c_curriculum_environment_scoring_gate_20260509_0001`
 
 ## Boundary
@@ -31,7 +31,7 @@ Software generated-task scoring only. Hidden labels are opened only inside offli
 
 | Criterion | Value | Rule | Pass | Details |
 | --- | --- | --- | --- | --- |
-| tier7_5b_prerequisite_exists | `True` | must exist | yes | /Users/james/JKS:CRA/controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight/tier7_5b_results.json |
+| tier7_5b_prerequisite_exists | `True` | must exist | yes | <repo>/controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight/tier7_5b_results.json |
 | tier7_5b_prerequisite_passed | `PASS` | case-insensitive == PASS | yes |  |
 | stream_rows_loaded | `384` | == 384 | yes |  |
 | split_manifest_loaded | `24` | >= 24 | yes |  |

@@ -4,7 +4,7 @@
   "generated_at_utc": "2026-05-02T01:15:49.141315+00:00",
   "mode": "run-hardware",
   "status": "pass",
-  "output_dir": "/tmp/job17979659641832627704.tmp/tier4_23c_job_output",
+  "output_dir": "<jobmanager_tmp>",
   "criteria": [
     {
       "name": "runner revision current",

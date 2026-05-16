@@ -2,7 +2,7 @@
 
 - Generated: `2026-05-09T04:01:53+00:00`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier7_5d_20260509_curriculum_environment_attribution_closeout`
+- Output directory: `<repo>/controlled_test_output/tier7_5d_20260509_curriculum_environment_attribution_closeout`
 - Runner revision: `tier7_5d_curriculum_environment_attribution_closeout_20260509_0001`
 
 ## Summary
@@ -57,7 +57,7 @@
 
 | Criterion | Value | Rule | Pass | Details |
 | --- | --- | --- | --- | --- |
-| tier7_5c_results_exist | `True` | must exist | yes | /Users/james/JKS:CRA/controlled_test_output/tier7_5c_20260509_curriculum_environment_scoring_gate/tier7_5c_results.json |
+| tier7_5c_results_exist | `True` | must exist | yes | <repo>/controlled_test_output/tier7_5c_20260509_curriculum_environment_scoring_gate/tier7_5c_results.json |
 | tier7_5c_status_pass | `PASS` | case-insensitive == PASS | yes |  |
 | tier7_5c_signal_count | `6` | == 6 | yes |  |
 | attribution_rows_written | `6` | == 6 | yes |  |

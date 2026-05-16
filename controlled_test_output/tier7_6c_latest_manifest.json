@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.436235+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.579381+00:00",
   "source_generated_at_utc": "2026-05-09T04:23:50+00:00",
   "registry_entry_id": "tier7_6c_long_horizon_planning_attribution_closeout",
   "tier": "Tier 7.6c - Long-Horizon Planning / Subgoal-Control Attribution + Promotion Decision",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout/tier7_6c_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout/tier7_6c_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout/tier7_6c_summary.csv",
+  "output_dir": "controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout",
+  "manifest": "controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout/tier7_6c_results.json",
+  "report": "controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout/tier7_6c_report.md",
+  "summary_csv": "controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout/tier7_6c_summary.csv",
   "canonical": true,
   "claim": "Tier 7.6c preserves the Tier 7.6b local scaffold signal as a diagnostic result while blocking promotion, freeze, broad planning, and hardware/native transfer because feature-alignment risk remains high and reduced-feature generalization has not run.",
   "caveat": "Attribution/decision evidence only; not new performance scoring, not a promoted planning mechanism, not public usefulness proof, not a new baseline freeze, not hardware/native transfer, and not AGI/ASI evidence."

@@ -2,7 +2,7 @@
 
 - Generated: `2026-05-08T22:20:19+00:00`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier5_20c_20260508_minimal_resonant_polyp_diagnostic`
+- Output directory: `<repo>/controlled_test_output/tier5_20c_20260508_minimal_resonant_polyp_diagnostic`
 - Outcome: `minimal_resonant_not_promoted`
 
 ## Claim Boundary

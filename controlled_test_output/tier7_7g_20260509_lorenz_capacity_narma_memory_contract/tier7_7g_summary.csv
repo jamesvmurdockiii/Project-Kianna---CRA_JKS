@@ -1,7 +1,7 @@
 name,criterion,value,operator,rule,passed,pass,note,details
-Tier 7.7f prerequisite exists,Tier 7.7f prerequisite exists,/Users/james/JKS:CRA/controlled_test_output/tier7_7f_20260509_repaired_finite_stream_long_run_scoreboard/tier7_7f_results.json,exists and pass,exists and pass,True,True,,
+Tier 7.7f prerequisite exists,Tier 7.7f prerequisite exists,<repo>/controlled_test_output/tier7_7f_20260509_repaired_finite_stream_long_run_scoreboard/tier7_7f_results.json,exists and pass,exists and pass,True,True,,
 Tier 7.7f outcome requires capacity diagnostic,Tier 7.7f outcome requires capacity diagnostic,mackey_only_localized,== mackey_only_localized,== mackey_only_localized,True,True,,
-Tier 7.7e repaired stream prerequisite exists,Tier 7.7e repaired stream prerequisite exists,/Users/james/JKS:CRA/controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight/tier7_7e_results.json,exists and pass,exists and pass,True,True,,
+Tier 7.7e repaired stream prerequisite exists,Tier 7.7e repaired stream prerequisite exists,<repo>/controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight/tier7_7e_results.json,exists and pass,exists and pass,True,True,,
 repaired NARMA stream locked,repaired NARMA stream locked,narma10_reduced_input_u02,== narma10_reduced_input_u02,== narma10_reduced_input_u02,True,True,,
 capacity sweep includes 16/32/64/128,capacity sweep includes 16/32/64/128,"[16, 32, 64, 128]","== [16,32,64,128]","== [16,32,64,128]",True,True,,
 tasks include Lorenz/NARMA/Mackey,tasks include Lorenz/NARMA/Mackey,"['lorenz', 'narma10', 'mackey_glass']","contains lorenz,narma10,mackey","contains lorenz,narma10,mackey",True,True,,

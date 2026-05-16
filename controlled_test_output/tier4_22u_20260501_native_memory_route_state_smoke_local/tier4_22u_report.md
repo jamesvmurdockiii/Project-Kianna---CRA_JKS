@@ -3,7 +3,7 @@
 - Generated: `2026-05-01T08:34:13+00:00`
 - Mode: `local`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_local`
+- Output directory: `<repo>/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_local`
 
 Tier 4.22u runs a 30-event signed stream through the custom runtime using native keyed context state, keyed route state, and keyed memory/working-state slots. The host writes context, route, and memory updates, then sends only key+cue+delay for each decision; the chip retrieves all three by key, computes feature=context[key]*route[key]*memory[key]*cue, scores the pre-update prediction, holds a two-event pending gap, then matures delayed credit against a local s16.15 reference.
 
@@ -91,7 +91,7 @@ Tier 4.22u runs a 30-event signed stream through the custom runtime using native
 
 ## Artifacts
 
-- `reference_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_local/tier4_22u_task_reference.json`
-- `reference_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_local/tier4_22u_task_reference_rows.csv`
-- `manifest_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_local/tier4_22u_results.json`
-- `report_md`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_local/tier4_22u_report.md`
+- `reference_json`: `<repo>/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_local/tier4_22u_task_reference.json`
+- `reference_csv`: `<repo>/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_local/tier4_22u_task_reference_rows.csv`
+- `manifest_json`: `<repo>/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_local/tier4_22u_results.json`
+- `report_md`: `<repo>/controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_local/tier4_22u_report.md`

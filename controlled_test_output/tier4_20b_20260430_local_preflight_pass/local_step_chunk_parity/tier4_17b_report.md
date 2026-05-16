@@ -2,7 +2,7 @@
 
 - Generated: `2026-04-30T02:13:38+00:00`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/tier4_20b_preflight_output/local_step_chunk_parity`
+- Output directory: `<repo>/tier4_20b_preflight_output/local_step_chunk_parity`
 
 Tier 4.17b is a local runtime parity diagnostic. It is not SpiNNaker
 hardware evidence and not a continuous/on-chip learning claim.
@@ -55,9 +55,9 @@ hardware evidence and not a continuous/on-chip learning claim.
 
 ## Artifacts
 
-- `summary_csv`: `/Users/james/JKS:CRA/tier4_20b_preflight_output/local_step_chunk_parity/tier4_17b_summary.csv`
-- `comparison_csv`: `/Users/james/JKS:CRA/tier4_20b_preflight_output/local_step_chunk_parity/tier4_17b_comparisons.csv`
-- `timeseries_csv`: `/Users/james/JKS:CRA/tier4_20b_preflight_output/local_step_chunk_parity/tier4_17b_timeseries.csv`
-- `manifest_json`: `/Users/james/JKS:CRA/tier4_20b_preflight_output/local_step_chunk_parity/tier4_17b_results.json`
-- `report_md`: `/Users/james/JKS:CRA/tier4_20b_preflight_output/local_step_chunk_parity/tier4_17b_report.md`
-- `parity_png`: `/Users/james/JKS:CRA/tier4_20b_preflight_output/local_step_chunk_parity/tier4_17b_parity.png`
+- `summary_csv`: `<repo>/tier4_20b_preflight_output/local_step_chunk_parity/tier4_17b_summary.csv`
+- `comparison_csv`: `<repo>/tier4_20b_preflight_output/local_step_chunk_parity/tier4_17b_comparisons.csv`
+- `timeseries_csv`: `<repo>/tier4_20b_preflight_output/local_step_chunk_parity/tier4_17b_timeseries.csv`
+- `manifest_json`: `<repo>/tier4_20b_preflight_output/local_step_chunk_parity/tier4_17b_results.json`
+- `report_md`: `<repo>/tier4_20b_preflight_output/local_step_chunk_parity/tier4_17b_report.md`
+- `parity_png`: `<repo>/tier4_20b_preflight_output/local_step_chunk_parity/tier4_17b_parity.png`

@@ -1,8 +1,8 @@
 {
   "generated_at_utc": "2026-04-30T04:36:48+00:00",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_20c_20260430_v2_1_bridge_three_seed_hardware_pass_ingested/tier4_20c_results.json",
+  "manifest": "<repo>/controlled_test_output/tier4_20c_20260430_v2_1_bridge_three_seed_hardware_pass_ingested/tier4_20c_results.json",
   "note": "Corrected false fail: raw wrapper failed only missing local Tier 4.20b manifest in fresh EBRAINS bundle; child hardware repeat passed.",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_20c_20260430_v2_1_bridge_three_seed_hardware_pass_ingested/tier4_20c_report.md",
+  "report": "<repo>/controlled_test_output/tier4_20c_20260430_v2_1_bridge_three_seed_hardware_pass_ingested/tier4_20c_report.md",
   "status": "pass",
   "tier": "Tier 4.20c - v2.1 Three-Seed Chunked Hardware Repeat",
   "updated_at_utc": "2026-04-30T15:22:08+00:00"

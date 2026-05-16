@@ -2,7 +2,7 @@
 
 - Status: **PASS**
 - Passed: 38/38
-- Hardware output: `/Users/james/Downloads/tier4_28b_ingest`
+- Hardware output: `<downloads>/tier4_28b_ingest`
 
 ## Criteria
 

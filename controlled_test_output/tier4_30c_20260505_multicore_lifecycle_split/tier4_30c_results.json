@@ -348,7 +348,7 @@
   ],
   "mode": "local-contract-reference",
   "next_step": "Tier 4.30d multi-core lifecycle runtime source audit/local C host test: implement the lifecycle-core profile and inter-core message/readback stubs against this contract before any EBRAINS package.",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_30c_20260505_multicore_lifecycle_split",
+  "output_dir": "<repo>/controlled_test_output/tier4_30c_20260505_multicore_lifecycle_split",
   "runner_revision": "tier4_30c_multicore_lifecycle_split_20260505_0001",
   "scenarios": [
     {
@@ -473,9 +473,9 @@
     }
   ],
   "source_inputs": {
-    "tier4_30a_results": "/Users/james/JKS:CRA/controlled_test_output/tier4_30a_20260505_static_pool_lifecycle_reference/tier4_30a_results.json",
-    "tier4_30b_hw_results": "/Users/james/JKS:CRA/controlled_test_output/tier4_30b_hw_20260505_hardware_pass_ingested/tier4_30b_hw_results.json",
-    "tier4_30b_results": "/Users/james/JKS:CRA/controlled_test_output/tier4_30b_20260505_lifecycle_source_audit/tier4_30b_results.json"
+    "tier4_30a_results": "<repo>/controlled_test_output/tier4_30a_20260505_static_pool_lifecycle_reference/tier4_30a_results.json",
+    "tier4_30b_hw_results": "<repo>/controlled_test_output/tier4_30b_hw_20260505_hardware_pass_ingested/tier4_30b_hw_results.json",
+    "tier4_30b_results": "<repo>/controlled_test_output/tier4_30b_20260505_lifecycle_source_audit/tier4_30b_results.json"
   },
   "status": "pass",
   "tier": "Tier 4.30c - Multi-Core Lifecycle State Split Contract/Reference"

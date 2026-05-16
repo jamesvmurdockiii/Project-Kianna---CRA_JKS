@@ -202,7 +202,7 @@
   "mode": "direct",
   "next_gate": "Document promote/park decision; run a promotion/regression gate only if a candidate earns it.",
   "outcome": "no_promotion_confirmed",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_45a_20260515_cells/tier5_45a_cell_organism_defaults_experimental_off_sine_seed44",
+  "output_dir": "<repo>/controlled_test_output/tier5_45a_20260515_cells/tier5_45a_cell_organism_defaults_experimental_off_sine_seed44",
   "reference_models": [
     "v2_6_predictive_reference",
     "persistence_baseline",

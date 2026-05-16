@@ -1,17 +1,17 @@
 {
   "artifacts": {
-    "ingested_source": "/private/tmp/cra_tier4_16a_seed43_ingest_source/tier4_16_results.json",
-    "raw_finished": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_182515_chunked_seed43_hardware_pass/raw_hardware_artifacts/finished",
-    "raw_global_provenance.sqlite3": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_182515_chunked_seed43_hardware_pass/raw_hardware_artifacts/global_provenance.sqlite3",
-    "raw_hardware_artifacts_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_182515_chunked_seed43_hardware_pass/raw_hardware_artifacts",
-    "raw_reports.zip": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_182515_chunked_seed43_hardware_pass/raw_hardware_artifacts/reports.zip",
-    "raw_source_tier4_16_report.md": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_182515_chunked_seed43_hardware_pass/raw_hardware_artifacts/source_tier4_16_report.md",
-    "raw_tier4_16_latest_manifest.json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_182515_chunked_seed43_hardware_pass/raw_hardware_artifacts/tier4_16_latest_manifest.json",
-    "spinnaker_hardware_delayed_cue_seed43_timeseries.csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_182515_chunked_seed43_hardware_pass/spinnaker_hardware_delayed_cue_seed43_timeseries.csv",
-    "spinnaker_hardware_delayed_cue_seed43_timeseries.png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_182515_chunked_seed43_hardware_pass/spinnaker_hardware_delayed_cue_seed43_timeseries.png",
-    "tier4_16_hardware_summary.png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_182515_chunked_seed43_hardware_pass/tier4_16_hardware_summary.png",
-    "tier4_16_summary.csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_182515_chunked_seed43_hardware_pass/tier4_16_summary.csv",
-    "tier4_16_task_summary.csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_182515_chunked_seed43_hardware_pass/tier4_16_task_summary.csv"
+    "ingested_source": "<private-tmp>/cra_tier4_16a_seed43_ingest_source/tier4_16_results.json",
+    "raw_finished": "<repo>/controlled_test_output/tier4_16_20260427_182515_chunked_seed43_hardware_pass/raw_hardware_artifacts/finished",
+    "raw_global_provenance.sqlite3": "<repo>/controlled_test_output/tier4_16_20260427_182515_chunked_seed43_hardware_pass/raw_hardware_artifacts/global_provenance.sqlite3",
+    "raw_hardware_artifacts_dir": "<repo>/controlled_test_output/tier4_16_20260427_182515_chunked_seed43_hardware_pass/raw_hardware_artifacts",
+    "raw_reports.zip": "<repo>/controlled_test_output/tier4_16_20260427_182515_chunked_seed43_hardware_pass/raw_hardware_artifacts/reports.zip",
+    "raw_source_tier4_16_report.md": "<repo>/controlled_test_output/tier4_16_20260427_182515_chunked_seed43_hardware_pass/raw_hardware_artifacts/source_tier4_16_report.md",
+    "raw_tier4_16_latest_manifest.json": "<repo>/controlled_test_output/tier4_16_20260427_182515_chunked_seed43_hardware_pass/raw_hardware_artifacts/tier4_16_latest_manifest.json",
+    "spinnaker_hardware_delayed_cue_seed43_timeseries.csv": "<repo>/controlled_test_output/tier4_16_20260427_182515_chunked_seed43_hardware_pass/spinnaker_hardware_delayed_cue_seed43_timeseries.csv",
+    "spinnaker_hardware_delayed_cue_seed43_timeseries.png": "<repo>/controlled_test_output/tier4_16_20260427_182515_chunked_seed43_hardware_pass/spinnaker_hardware_delayed_cue_seed43_timeseries.png",
+    "tier4_16_hardware_summary.png": "<repo>/controlled_test_output/tier4_16_20260427_182515_chunked_seed43_hardware_pass/tier4_16_hardware_summary.png",
+    "tier4_16_summary.csv": "<repo>/controlled_test_output/tier4_16_20260427_182515_chunked_seed43_hardware_pass/tier4_16_summary.csv",
+    "tier4_16_task_summary.csv": "<repo>/controlled_test_output/tier4_16_20260427_182515_chunked_seed43_hardware_pass/tier4_16_task_summary.csv"
   },
   "criteria": [
     {
@@ -86,14 +86,14 @@
     }
   ],
   "generated_at_utc": "2026-04-27T17:40:46+00:00",
-  "ingested_from": "/private/tmp/cra_tier4_16a_seed43_ingest_source/tier4_16_results.json",
+  "ingested_from": "<private-tmp>/cra_tier4_16a_seed43_ingest_source/tier4_16_results.json",
   "mode": "ingest",
   "source_manifest": {
     "artifacts": {
-      "delayed_cue_seed_43_timeseries_csv": "/tmp/job14824426541542099177.tmp/cra_4_17/controlled_test_output/tier4_16_20260427_182515_run_hardware/spinnaker_hardware_delayed_cue_seed43_timeseries.csv",
-      "delayed_cue_seed_43_timeseries_png": "/tmp/job14824426541542099177.tmp/cra_4_17/controlled_test_output/tier4_16_20260427_182515_run_hardware/spinnaker_hardware_delayed_cue_seed43_timeseries.png",
-      "hardware_summary_png": "/tmp/job14824426541542099177.tmp/cra_4_17/controlled_test_output/tier4_16_20260427_182515_run_hardware/tier4_16_hardware_summary.png",
-      "spinnaker_report_1": "/tmp/job14824426541542099177.tmp/cra_4_17/controlled_test_output/tier4_16_20260427_182515_run_hardware/spinnaker_reports/2026-04-27-18-25-15-283203"
+      "delayed_cue_seed_43_timeseries_csv": "<jobmanager_tmp>",
+      "delayed_cue_seed_43_timeseries_png": "<jobmanager_tmp>",
+      "hardware_summary_png": "<jobmanager_tmp>",
+      "spinnaker_report_1": "<jobmanager_tmp>"
     },
     "criteria": [
       {
@@ -452,7 +452,7 @@
     "failure_step": null,
     "hardware_run_attempted": true,
     "hardware_target_configured": false,
-    "ingested_from": "/private/tmp/cra_tier4_16a_seed43_ingest_source/tier4_16_results.json",
+    "ingested_from": "<private-tmp>/cra_tier4_16a_seed43_ingest_source/tier4_16_results.json",
     "jobmanager_cli": null,
     "mode": "ingest",
     "runs": 1,

@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.416156+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.562501+00:00",
   "source_generated_at_utc": "2026-05-08T21:28:37+00:00",
   "registry_entry_id": "tier7_1e_cmapss_capped_readout_fairness_confirmation",
   "tier": "Tier 7.1e - C-MAPSS Capped-RUL/Readout Fairness Confirmation",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1e_20260508_cmapss_capped_readout_fairness_confirmation",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_1e_20260508_cmapss_capped_readout_fairness_confirmation/tier7_1e_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_1e_20260508_cmapss_capped_readout_fairness_confirmation/tier7_1e_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_1e_20260508_cmapss_capped_readout_fairness_confirmation/tier7_1e_summary.csv",
+  "output_dir": "controlled_test_output/tier7_1e_20260508_cmapss_capped_readout_fairness_confirmation",
+  "manifest": "controlled_test_output/tier7_1e_20260508_cmapss_capped_readout_fairness_confirmation/tier7_1e_results.json",
+  "report": "controlled_test_output/tier7_1e_20260508_cmapss_capped_readout_fairness_confirmation/tier7_1e_report.md",
+  "summary_csv": "controlled_test_output/tier7_1e_20260508_cmapss_capped_readout_fairness_confirmation/tier7_1e_summary.csv",
   "canonical": true,
   "claim": "Tier 7.1e tested whether the tiny Tier 7.1d v2.2 capped-ridge C-MAPSS signal was statistically meaningful. It was not confirmed against the lag-multichannel ridge baseline under paired per-unit bootstrap analysis.",
   "caveat": "Statistical/fairness confirmation over Tier 7.1d per-unit results only; not a full C-MAPSS benchmark, not a public usefulness win, not a promoted mechanism, not a baseline freeze, not hardware/native transfer, and not AGI/ASI evidence."

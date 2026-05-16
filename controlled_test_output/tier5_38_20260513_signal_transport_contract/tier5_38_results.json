@@ -177,7 +177,7 @@
   "generated_at_utc": "2026-05-13T22:43:21+00:00",
   "next_gate": "Tier 5.38a \u2014 Signal Transport Scoring Gate",
   "outcome": "signal_transport_contract_locked",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_38_20260513_signal_transport_contract",
+  "output_dir": "<repo>/controlled_test_output/tier5_38_20260513_signal_transport_contract",
   "runner_revision": "tier5_38_signal_transport_contract_20260513_0001",
   "status": "pass",
   "tier": "Tier 5.38 \u2014 Signal Transport: Bounded Export Interface Contract"

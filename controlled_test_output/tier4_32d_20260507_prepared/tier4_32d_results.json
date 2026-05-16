@@ -1,13 +1,13 @@
 {
   "artifacts": {
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_32d_20260507_prepared/tier4_32d_report.md",
-    "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_32d_20260507_prepared/tier4_32d_results.json",
-    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32d_20260507_prepared/tier4_32d_summary.csv"
+    "report_md": "<repo>/controlled_test_output/tier4_32d_20260507_prepared/tier4_32d_report.md",
+    "results_json": "<repo>/controlled_test_output/tier4_32d_20260507_prepared/tier4_32d_results.json",
+    "summary_csv": "<repo>/controlled_test_output/tier4_32d_20260507_prepared/tier4_32d_summary.csv"
   },
   "bundle_artifacts": {
-    "job_readme": "/Users/james/JKS:CRA/controlled_test_output/tier4_32d_20260507_prepared/ebrains_upload_bundle/cra_432d/README_TIER4_32D_JOB.md",
-    "stable_upload_folder": "/Users/james/JKS:CRA/ebrains_jobs/cra_432d",
-    "upload_bundle": "/Users/james/JKS:CRA/controlled_test_output/tier4_32d_20260507_prepared/ebrains_upload_bundle/cra_432d"
+    "job_readme": "<repo>/controlled_test_output/tier4_32d_20260507_prepared/ebrains_upload_bundle/cra_432d/README_TIER4_32D_JOB.md",
+    "stable_upload_folder": "<repo>/ebrains_jobs/cra_432d",
+    "upload_bundle": "<repo>/controlled_test_output/tier4_32d_20260507_prepared/ebrains_upload_bundle/cra_432d"
   },
   "claim_boundary": "Prepared source bundle only; no hardware evidence until returned run-hardware artifacts pass.",
   "criteria": [
@@ -51,14 +51,14 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_32d_20260507_prepared/ebrains_upload_bundle/cra_432d"
+      "value": "<repo>/controlled_test_output/tier4_32d_20260507_prepared/ebrains_upload_bundle/cra_432d"
     },
     {
       "name": "stable upload folder created",
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/ebrains_jobs/cra_432d"
+      "value": "<repo>/ebrains_jobs/cra_432d"
     },
     {
       "name": "run-hardware command emitted",
@@ -129,7 +129,7 @@
   "failure_reason": "",
   "generated_at_utc": "2026-05-07T03:27:14+00:00",
   "mode": "prepare",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_32d_20260507_prepared",
+  "output_dir": "<repo>/controlled_test_output/tier4_32d_20260507_prepared",
   "py_compile": {
     "command": "/Library/Developer/CommandLineTools/usr/bin/python3 -m py_compile experiments/tier4_32d_interchip_mcpl_smoke.py experiments/tier4_28a_four_core_mcpl_repeatability.py experiments/tier4_22i_custom_runtime_roundtrip.py experiments/tier4_22x_compact_v2_bridge_decoupled_smoke.py",
     "returncode": 0,
@@ -139,7 +139,7 @@
   },
   "runner_revision": "tier4_32d_interchip_mcpl_smoke_20260507_0001",
   "source_checks": {
-    "command": "make -C /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime clean-host test-mcpl-interchip-route-contract test-mcpl-lookup-contract test-four-core-mcpl-local",
+    "command": "make -C <repo>/coral_reef_spinnaker/spinnaker_runtime clean-host test-mcpl-interchip-route-contract test-mcpl-lookup-contract test-four-core-mcpl-local",
     "returncode": 0,
     "status": "pass",
     "stderr": "",
@@ -159,8 +159,8 @@
       "x": 0,
       "y": 0
     },
-    "stable_upload_folder": "/Users/james/JKS:CRA/ebrains_jobs/cra_432d",
-    "upload_bundle": "/Users/james/JKS:CRA/controlled_test_output/tier4_32d_20260507_prepared/ebrains_upload_bundle/cra_432d",
+    "stable_upload_folder": "<repo>/ebrains_jobs/cra_432d",
+    "upload_bundle": "<repo>/controlled_test_output/tier4_32d_20260507_prepared/ebrains_upload_bundle/cra_432d",
     "upload_package": "cra_432d",
     "what_i_need_from_user": "Upload `cra_432d` to EBRAINS/JobManager and run the emitted command."
   },

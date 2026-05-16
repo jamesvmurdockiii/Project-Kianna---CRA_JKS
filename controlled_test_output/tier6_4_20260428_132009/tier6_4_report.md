@@ -3,7 +3,7 @@
 - Generated: `2026-04-28T18:31:46+00:00`
 - Backend: `nest`
 - Status: **FAIL**
-- Output directory: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_4_20260428_132009`
+- Output directory: `<repo>/controlled_test_output/tier6_4_20260428_132009`
 
 Tier 6.4 tests whether seeded reef circuit motifs are causal contributors rather than decorative labels.
 

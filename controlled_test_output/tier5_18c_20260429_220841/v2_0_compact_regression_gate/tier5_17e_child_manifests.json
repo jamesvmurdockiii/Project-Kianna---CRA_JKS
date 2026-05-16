@@ -1,14 +1,14 @@
 {
   "predictive_binding_guardrail": {
     "artifacts": {
-      "comparisons_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_comparisons.csv",
-      "control_edges_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_control_edges.png",
-      "fairness_contract_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_fairness_contract.json",
-      "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_results.json",
-      "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_report.md",
-      "representation_matrix_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_representation_matrix.png",
-      "run_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_runs.csv",
-      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_summary.csv"
+      "comparisons_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_comparisons.csv",
+      "control_edges_png": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_control_edges.png",
+      "fairness_contract_json": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_fairness_contract.json",
+      "manifest_json": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_results.json",
+      "report_md": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_report.md",
+      "representation_matrix_png": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_representation_matrix.png",
+      "run_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_runs.csv",
+      "summary_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_summary.csv"
     },
     "canonical": false,
     "claim_boundary": "Noncanonical software diagnostic: predictive binding preexposure under zero-label/zero-reward exposure; not hardware/on-chip representation learning or a v2.0 freeze.",
@@ -57,7 +57,7 @@
     "failure_reason": "",
     "generated_at_utc": "2026-04-29T22:10:30+00:00",
     "name": "Tier 5.17d - Predictive Preexposure Binding/Sham Repair",
-    "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/predictive_binding_guardrail",
+    "output_dir": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/predictive_binding_guardrail",
     "status": "pass",
     "summary": {
       "candidate_min_knn_probe_accuracy": 0.9753086419753086,
@@ -88,9 +88,9 @@
   },
   "v1_8_compact_regression": {
     "artifacts": {
-      "child_manifests_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier5_12d_child_manifests.json",
-      "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier5_12d_report.md",
-      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier5_12d_summary.csv"
+      "child_manifests_json": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier5_12d_child_manifests.json",
+      "report_md": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier5_12d_report.md",
+      "summary_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier5_12d_summary.csv"
     },
     "backend": "mock",
     "candidate_baseline": {
@@ -120,18 +120,18 @@
           "0.2",
           "--stop-on-fail",
           "--output-dir",
-          "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls"
+          "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls"
         ],
         "failure_reason": "",
-        "manifest_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls/tier1_results.json",
+        "manifest_path": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls/tier1_results.json",
         "name": "tier1_controls",
-        "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls",
+        "output_dir": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls",
         "purpose": "negative controls stay negative under the candidate v1.8 predictive-context baseline",
         "return_code": 0,
         "runtime_seconds": 3.814487833,
         "status": "pass",
-        "stderr_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls/tier1_controls_stderr.log",
-        "stdout_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls/tier1_controls_stdout.log"
+        "stderr_path": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls/tier1_controls_stderr.log",
+        "stdout_path": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls/tier1_controls_stdout.log"
       },
       {
         "command": [
@@ -151,18 +151,18 @@
           "0.2",
           "--stop-on-fail",
           "--output-dir",
-          "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier2_learning"
+          "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier2_learning"
         ],
         "failure_reason": "",
-        "manifest_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier2_learning/tier2_results.json",
+        "manifest_path": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier2_learning/tier2_results.json",
         "name": "tier2_learning",
-        "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier2_learning",
+        "output_dir": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier2_learning",
         "purpose": "positive learning controls still pass under the candidate v1.8 predictive-context baseline",
         "return_code": 0,
         "runtime_seconds": 3.1195807909999997,
         "status": "pass",
-        "stderr_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier2_learning/tier2_learning_stderr.log",
-        "stdout_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier2_learning/tier2_learning_stdout.log"
+        "stderr_path": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier2_learning/tier2_learning_stderr.log",
+        "stdout_path": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier2_learning/tier2_learning_stdout.log"
       },
       {
         "command": [
@@ -186,18 +186,18 @@
           "0.2",
           "--stop-on-fail",
           "--output-dir",
-          "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier3_ablations"
+          "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier3_ablations"
         ],
         "failure_reason": "",
-        "manifest_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier3_ablations/tier3_results.json",
+        "manifest_path": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier3_ablations/tier3_results.json",
         "name": "tier3_ablations",
-        "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier3_ablations",
+        "output_dir": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier3_ablations",
         "purpose": "core mechanism ablation gaps remain meaningful under the candidate v1.8 predictive-context baseline",
         "return_code": 0,
         "runtime_seconds": 11.619272958,
         "status": "pass",
-        "stderr_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier3_ablations/tier3_ablations_stderr.log",
-        "stdout_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier3_ablations/tier3_ablations_stdout.log"
+        "stderr_path": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier3_ablations/tier3_ablations_stderr.log",
+        "stdout_path": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/tier3_ablations/tier3_ablations_stdout.log"
       },
       {
         "command": [
@@ -225,18 +225,18 @@
           "0",
           "--stop-on-fail",
           "--output-dir",
-          "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/target_task_smokes"
+          "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/target_task_smokes"
         ],
         "failure_reason": "",
-        "manifest_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/target_task_smokes/tier5_6_results.json",
+        "manifest_path": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/target_task_smokes/tier5_6_results.json",
         "name": "target_task_smokes",
-        "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/target_task_smokes",
+        "output_dir": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/target_task_smokes",
         "purpose": "delayed_cue and hard_noisy_switching smoke matrix still executes with the carried-forward CRA path",
         "return_code": 0,
         "runtime_seconds": 1.9875360000000022,
         "status": "pass",
-        "stderr_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/target_task_smokes/target_task_smokes_stderr.log",
-        "stdout_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/target_task_smokes/target_task_smokes_stdout.log"
+        "stderr_path": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/target_task_smokes/target_task_smokes_stderr.log",
+        "stdout_path": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/target_task_smokes/target_task_smokes_stdout.log"
       },
       {
         "command": [
@@ -255,19 +255,19 @@
           "--variants",
           "all",
           "--output-dir",
-          "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/replay_consolidation_guardrail",
+          "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/replay_consolidation_guardrail",
           "--smoke"
         ],
         "failure_reason": "",
-        "manifest_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/replay_consolidation_guardrail/tier5_11d_results.json",
+        "manifest_path": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/replay_consolidation_guardrail/tier5_11d_results.json",
         "name": "replay_consolidation_guardrail",
-        "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/replay_consolidation_guardrail",
+        "output_dir": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/replay_consolidation_guardrail",
         "purpose": "v1.7 replay/consolidation mechanism still passes a compact bounded-memory guardrail",
         "return_code": 0,
         "runtime_seconds": 5.950981958,
         "status": "pass",
-        "stderr_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/replay_consolidation_guardrail/replay_consolidation_guardrail_stderr.log",
-        "stdout_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/replay_consolidation_guardrail/replay_consolidation_guardrail_stdout.log"
+        "stderr_path": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/replay_consolidation_guardrail/replay_consolidation_guardrail_stderr.log",
+        "stdout_path": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/replay_consolidation_guardrail/replay_consolidation_guardrail_stdout.log"
       },
       {
         "command": [
@@ -298,19 +298,19 @@
           "--min-candidate-edge-vs-standard",
           "0.1",
           "--output-dir",
-          "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/predictive_context_guardrail",
+          "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/predictive_context_guardrail",
           "--smoke"
         ],
         "failure_reason": "",
-        "manifest_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/predictive_context_guardrail/tier5_12c_results.json",
+        "manifest_path": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/predictive_context_guardrail/tier5_12c_results.json",
         "name": "predictive_context_guardrail",
-        "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/predictive_context_guardrail",
+        "output_dir": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/predictive_context_guardrail",
         "purpose": "Tier 5.12c predictive-context candidate still beats shams on a compact predictive task matrix",
         "return_code": 0,
         "runtime_seconds": 7.951338125000003,
         "status": "pass",
-        "stderr_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/predictive_context_guardrail/predictive_context_guardrail_stderr.log",
-        "stdout_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/predictive_context_guardrail/predictive_context_guardrail_stdout.log"
+        "stderr_path": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/predictive_context_guardrail/predictive_context_guardrail_stderr.log",
+        "stdout_path": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression/predictive_context_guardrail/predictive_context_guardrail_stdout.log"
       }
     ],
     "claim_boundary": [
@@ -319,7 +319,7 @@
       "A pass authorizes bounded v1.8 software baseline freeze for visible predictive-context tasks only.",
       "It does not prove hidden-regime inference, full world modeling, language, planning, lifecycle/self-scaling, hardware prediction, hardware scaling, native on-chip learning, compositionality, or external-baseline superiority."
     ],
-    "command": "experiments/tier5_predictive_context_compact_regression.py --backend mock --readout-lr 0.1 --delayed-readout-lr 0.2 --stop-on-fail --output-dir /Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression --tier1-steps 80 --tier1-seeds 3 --tier2-steps 120 --tier3-steps 180 --tier3-ecology-steps 220 --tier3-seed-count 3 --smoke-steps 80 --smoke-seed-count 1 --bootstrap-reps 20 --memory-backend mock --memory-tasks silent_context_reentry --memory-steps 180 --memory-seed-count 1 --memory-models sign_persistence,online_perceptron --memory-smoke --predictive-backend mock --predictive-tasks masked_input_prediction,event_stream_prediction --predictive-steps 180 --predictive-seed-count 1 --predictive-models sign_persistence,online_perceptron --predictive-smoke",
+    "command": "experiments/tier5_predictive_context_compact_regression.py --backend mock --readout-lr 0.1 --delayed-readout-lr 0.2 --stop-on-fail --output-dir <repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression --tier1-steps 80 --tier1-seeds 3 --tier2-steps 120 --tier3-steps 180 --tier3-ecology-steps 220 --tier3-seed-count 3 --smoke-steps 80 --smoke-seed-count 1 --bootstrap-reps 20 --memory-backend mock --memory-tasks silent_context_reentry --memory-steps 180 --memory-seed-count 1 --memory-models sign_persistence,online_perceptron --memory-smoke --predictive-backend mock --predictive-tasks masked_input_prediction,event_stream_prediction --predictive-steps 180 --predictive-seed-count 1 --predictive-models sign_persistence,online_perceptron --predictive-smoke",
     "criteria": [
       {
         "name": "Tier 1 negative controls pass under candidate v1.8 baseline",
@@ -359,7 +359,7 @@
       }
     ],
     "generated_at_utc": "2026-04-29T22:09:16+00:00",
-    "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression",
+    "output_dir": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_8_compact_regression",
     "runtime_seconds": 34.451830833,
     "status": "pass",
     "summary": {
@@ -28592,33 +28592,33 @@
       }
     ],
     "artifacts": {
-      "comparisons_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/tier5_13c_comparisons.csv",
-      "composition_heldout_skill_pair_internal_composition_routing_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/composition_heldout_skill_pair_internal_composition_routing_seed42_timeseries.csv",
-      "composition_heldout_skill_pair_internal_no_write_ablation_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/composition_heldout_skill_pair_internal_no_write_ablation_seed42_timeseries.csv",
-      "composition_heldout_skill_pair_internal_order_shuffle_ablation_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/composition_heldout_skill_pair_internal_order_shuffle_ablation_seed42_timeseries.csv",
-      "composition_heldout_skill_pair_internal_reset_ablation_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/composition_heldout_skill_pair_internal_reset_ablation_seed42_timeseries.csv",
-      "composition_heldout_skill_pair_internal_shuffle_ablation_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/composition_heldout_skill_pair_internal_shuffle_ablation_seed42_timeseries.csv",
-      "composition_heldout_skill_pair_module_composition_scaffold_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/composition_heldout_skill_pair_module_composition_scaffold_seed42_timeseries.csv",
-      "composition_heldout_skill_pair_online_perceptron_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/composition_heldout_skill_pair_online_perceptron_seed42_timeseries.csv",
-      "composition_heldout_skill_pair_sign_persistence_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/composition_heldout_skill_pair_sign_persistence_seed42_timeseries.csv",
-      "composition_heldout_skill_pair_v1_8_raw_cra_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/composition_heldout_skill_pair_v1_8_raw_cra_seed42_timeseries.csv",
-      "fairness_contract_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/tier5_13c_fairness_contract.json",
-      "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/tier5_13c_results.json",
-      "plot_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/tier5_13c_internal_composition_routing.png",
-      "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/tier5_13c_report.md",
-      "routing_heldout_context_routing_contextual_router_scaffold_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/routing_heldout_context_routing_contextual_router_scaffold_seed42_timeseries.csv",
-      "routing_heldout_context_routing_internal_always_on_ablation_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/routing_heldout_context_routing_internal_always_on_ablation_seed42_timeseries.csv",
-      "routing_heldout_context_routing_internal_composition_routing_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/routing_heldout_context_routing_internal_composition_routing_seed42_timeseries.csv",
-      "routing_heldout_context_routing_internal_context_shuffle_ablation_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/routing_heldout_context_routing_internal_context_shuffle_ablation_seed42_timeseries.csv",
-      "routing_heldout_context_routing_internal_no_write_ablation_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/routing_heldout_context_routing_internal_no_write_ablation_seed42_timeseries.csv",
-      "routing_heldout_context_routing_internal_random_router_ablation_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/routing_heldout_context_routing_internal_random_router_ablation_seed42_timeseries.csv",
-      "routing_heldout_context_routing_internal_router_reset_ablation_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/routing_heldout_context_routing_internal_router_reset_ablation_seed42_timeseries.csv",
-      "routing_heldout_context_routing_online_perceptron_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/routing_heldout_context_routing_online_perceptron_seed42_timeseries.csv",
-      "routing_heldout_context_routing_sign_persistence_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/routing_heldout_context_routing_sign_persistence_seed42_timeseries.csv",
-      "routing_heldout_context_routing_v1_8_raw_cra_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/routing_heldout_context_routing_v1_8_raw_cra_seed42_timeseries.csv",
-      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/tier5_13c_summary.csv"
+      "comparisons_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/tier5_13c_comparisons.csv",
+      "composition_heldout_skill_pair_internal_composition_routing_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/composition_heldout_skill_pair_internal_composition_routing_seed42_timeseries.csv",
+      "composition_heldout_skill_pair_internal_no_write_ablation_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/composition_heldout_skill_pair_internal_no_write_ablation_seed42_timeseries.csv",
+      "composition_heldout_skill_pair_internal_order_shuffle_ablation_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/composition_heldout_skill_pair_internal_order_shuffle_ablation_seed42_timeseries.csv",
+      "composition_heldout_skill_pair_internal_reset_ablation_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/composition_heldout_skill_pair_internal_reset_ablation_seed42_timeseries.csv",
+      "composition_heldout_skill_pair_internal_shuffle_ablation_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/composition_heldout_skill_pair_internal_shuffle_ablation_seed42_timeseries.csv",
+      "composition_heldout_skill_pair_module_composition_scaffold_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/composition_heldout_skill_pair_module_composition_scaffold_seed42_timeseries.csv",
+      "composition_heldout_skill_pair_online_perceptron_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/composition_heldout_skill_pair_online_perceptron_seed42_timeseries.csv",
+      "composition_heldout_skill_pair_sign_persistence_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/composition_heldout_skill_pair_sign_persistence_seed42_timeseries.csv",
+      "composition_heldout_skill_pair_v1_8_raw_cra_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/composition_heldout_skill_pair_v1_8_raw_cra_seed42_timeseries.csv",
+      "fairness_contract_json": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/tier5_13c_fairness_contract.json",
+      "manifest_json": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/tier5_13c_results.json",
+      "plot_png": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/tier5_13c_internal_composition_routing.png",
+      "report_md": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/tier5_13c_report.md",
+      "routing_heldout_context_routing_contextual_router_scaffold_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/routing_heldout_context_routing_contextual_router_scaffold_seed42_timeseries.csv",
+      "routing_heldout_context_routing_internal_always_on_ablation_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/routing_heldout_context_routing_internal_always_on_ablation_seed42_timeseries.csv",
+      "routing_heldout_context_routing_internal_composition_routing_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/routing_heldout_context_routing_internal_composition_routing_seed42_timeseries.csv",
+      "routing_heldout_context_routing_internal_context_shuffle_ablation_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/routing_heldout_context_routing_internal_context_shuffle_ablation_seed42_timeseries.csv",
+      "routing_heldout_context_routing_internal_no_write_ablation_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/routing_heldout_context_routing_internal_no_write_ablation_seed42_timeseries.csv",
+      "routing_heldout_context_routing_internal_random_router_ablation_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/routing_heldout_context_routing_internal_random_router_ablation_seed42_timeseries.csv",
+      "routing_heldout_context_routing_internal_router_reset_ablation_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/routing_heldout_context_routing_internal_router_reset_ablation_seed42_timeseries.csv",
+      "routing_heldout_context_routing_online_perceptron_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/routing_heldout_context_routing_online_perceptron_seed42_timeseries.csv",
+      "routing_heldout_context_routing_sign_persistence_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/routing_heldout_context_routing_sign_persistence_seed42_timeseries.csv",
+      "routing_heldout_context_routing_v1_8_raw_cra_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/routing_heldout_context_routing_v1_8_raw_cra_seed42_timeseries.csv",
+      "summary_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/tier5_13c_summary.csv"
     },
-    "command": "experiments/tier5_internal_composition_routing.py --backend mock --stop-on-fail --output-dir /Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail --smoke",
+    "command": "experiments/tier5_internal_composition_routing.py --backend mock --stop-on-fail --output-dir <repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail --smoke",
     "comparisons": [
       {
         "best_ablation_first_accuracy": 0.5,
@@ -28705,7 +28705,7 @@
     ],
     "failure_reason": "",
     "generated_at_utc": "2026-04-29T22:09:53+00:00",
-    "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail",
+    "output_dir": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail",
     "status": "pass",
     "summary": {
       "candidate_module_updates_sum": 64.0,
@@ -28740,14 +28740,14 @@
   },
   "working_memory_context_guardrail": {
     "artifacts": {
-      "fairness_contract_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/tier5_14_fairness_contract.json",
-      "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/tier5_14_results.json",
-      "memory_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/memory_context_binding",
-      "plot_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/tier5_14_working_memory_summary.png",
-      "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/tier5_14_report.md",
-      "routing_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/module_state_routing"
+      "fairness_contract_json": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/tier5_14_fairness_contract.json",
+      "manifest_json": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/tier5_14_results.json",
+      "memory_output_dir": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/memory_context_binding",
+      "plot_png": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/tier5_14_working_memory_summary.png",
+      "report_md": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/tier5_14_report.md",
+      "routing_output_dir": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/module_state_routing"
     },
-    "command": "experiments/tier5_working_memory_context_binding.py --backend mock --stop-on-fail --output-dir /Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail --smoke",
+    "command": "experiments/tier5_working_memory_context_binding.py --backend mock --stop-on-fail --output-dir <repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail --smoke",
     "comparisons": {
       "memory": [
         {
@@ -28831,15 +28831,15 @@
     ],
     "failure_reason": "",
     "generated_at_utc": "2026-04-29T22:10:28+00:00",
-    "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail",
+    "output_dir": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail",
     "status": "pass",
     "subresults": {
       "memory": {
         "artifacts": {
-          "comparisons_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/memory_context_binding/tier5_10g_comparisons.csv",
-          "fairness_contract_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/memory_context_binding/tier5_10g_fairness_contract.json",
-          "memory_edges_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/memory_context_binding/tier5_10g_memory_edges.png",
-          "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/memory_context_binding/tier5_10g_summary.csv"
+          "comparisons_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/memory_context_binding/tier5_10g_comparisons.csv",
+          "fairness_contract_json": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/memory_context_binding/tier5_10g_fairness_contract.json",
+          "memory_edges_png": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/memory_context_binding/tier5_10g_memory_edges.png",
+          "summary_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/memory_context_binding/tier5_10g_summary.csv"
         },
         "criteria": [
           {
@@ -43840,19 +43840,19 @@
           }
         ],
         "artifacts": {
-          "comparisons_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/module_state_routing/tier5_14_routing_comparisons.csv",
-          "plot_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/module_state_routing/tier5_14_routing_edges.png",
-          "routing_heldout_context_routing_contextual_router_scaffold_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/module_state_routing/routing_heldout_context_routing_contextual_router_scaffold_seed42_timeseries.csv",
-          "routing_heldout_context_routing_internal_always_on_ablation_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/module_state_routing/routing_heldout_context_routing_internal_always_on_ablation_seed42_timeseries.csv",
-          "routing_heldout_context_routing_internal_composition_routing_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/module_state_routing/routing_heldout_context_routing_internal_composition_routing_seed42_timeseries.csv",
-          "routing_heldout_context_routing_internal_context_shuffle_ablation_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/module_state_routing/routing_heldout_context_routing_internal_context_shuffle_ablation_seed42_timeseries.csv",
-          "routing_heldout_context_routing_internal_no_write_ablation_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/module_state_routing/routing_heldout_context_routing_internal_no_write_ablation_seed42_timeseries.csv",
-          "routing_heldout_context_routing_internal_random_router_ablation_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/module_state_routing/routing_heldout_context_routing_internal_random_router_ablation_seed42_timeseries.csv",
-          "routing_heldout_context_routing_internal_router_reset_ablation_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/module_state_routing/routing_heldout_context_routing_internal_router_reset_ablation_seed42_timeseries.csv",
-          "routing_heldout_context_routing_online_perceptron_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/module_state_routing/routing_heldout_context_routing_online_perceptron_seed42_timeseries.csv",
-          "routing_heldout_context_routing_sign_persistence_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/module_state_routing/routing_heldout_context_routing_sign_persistence_seed42_timeseries.csv",
-          "routing_heldout_context_routing_v1_8_raw_cra_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/module_state_routing/routing_heldout_context_routing_v1_8_raw_cra_seed42_timeseries.csv",
-          "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/module_state_routing/tier5_14_routing_summary.csv"
+          "comparisons_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/module_state_routing/tier5_14_routing_comparisons.csv",
+          "plot_png": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/module_state_routing/tier5_14_routing_edges.png",
+          "routing_heldout_context_routing_contextual_router_scaffold_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/module_state_routing/routing_heldout_context_routing_contextual_router_scaffold_seed42_timeseries.csv",
+          "routing_heldout_context_routing_internal_always_on_ablation_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/module_state_routing/routing_heldout_context_routing_internal_always_on_ablation_seed42_timeseries.csv",
+          "routing_heldout_context_routing_internal_composition_routing_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/module_state_routing/routing_heldout_context_routing_internal_composition_routing_seed42_timeseries.csv",
+          "routing_heldout_context_routing_internal_context_shuffle_ablation_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/module_state_routing/routing_heldout_context_routing_internal_context_shuffle_ablation_seed42_timeseries.csv",
+          "routing_heldout_context_routing_internal_no_write_ablation_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/module_state_routing/routing_heldout_context_routing_internal_no_write_ablation_seed42_timeseries.csv",
+          "routing_heldout_context_routing_internal_random_router_ablation_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/module_state_routing/routing_heldout_context_routing_internal_random_router_ablation_seed42_timeseries.csv",
+          "routing_heldout_context_routing_internal_router_reset_ablation_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/module_state_routing/routing_heldout_context_routing_internal_router_reset_ablation_seed42_timeseries.csv",
+          "routing_heldout_context_routing_online_perceptron_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/module_state_routing/routing_heldout_context_routing_online_perceptron_seed42_timeseries.csv",
+          "routing_heldout_context_routing_sign_persistence_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/module_state_routing/routing_heldout_context_routing_sign_persistence_seed42_timeseries.csv",
+          "routing_heldout_context_routing_v1_8_raw_cra_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/module_state_routing/routing_heldout_context_routing_v1_8_raw_cra_seed42_timeseries.csv",
+          "summary_csv": "<repo>/controlled_test_output/tier5_18c_20260429_220841/v2_0_compact_regression_gate/working_memory_context_guardrail/module_state_routing/tier5_14_routing_summary.csv"
         },
         "comparisons": [
           {

@@ -9,7 +9,7 @@
 - Selected standard baselines: `sign_persistence,online_perceptron,online_logistic_regression,echo_state_network,small_gru,stdp_only_snn`
 - Backend: `nest`
 - Smoke mode: `False`
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier5_12b_20260429_055923`
+- Output directory: `<repo>/controlled_test_output/tier5_12b_20260429_055923`
 
 Tier 5.12b tests whether CRA can store a visible causal predictive precursor before feedback arrives and use it later at a decision point.
 

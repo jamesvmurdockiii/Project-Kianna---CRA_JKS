@@ -4,7 +4,7 @@
 - Status: **PASS**
 - Backend: `nest`
 - Candidate baseline: `v1.8_host_predictive_context`, `readout_lr=0.1`, `delayed_readout_lr=0.2`
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/v1_8_compact_regression`
+- Output directory: `<repo>/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/v1_8_compact_regression`
 
 Tier 5.12d is a compact regression and promotion guardrail after the Tier 5.12c predictive-context sham-separation pass. It does not prove a new capability beyond 5.12c. It checks that the candidate host-side predictive-context mechanism does not break negative controls, positive learning, architecture ablations, v1.7 replay/consolidation evidence, or the two target hard/adaptive smoke tasks.
 
@@ -19,12 +19,12 @@ Tier 5.12d is a compact regression and promotion guardrail after the Tier 5.12c 
 
 | Child | Status | Return Code | Runtime Seconds | Purpose | Manifest |
 | --- | --- | ---: | ---: | --- | --- |
-| `tier1_controls` | **PASS** | 0 | 18.264 | negative controls stay negative under the candidate v1.8 predictive-context baseline | `/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls/tier1_results.json` |
-| `tier2_learning` | **PASS** | 0 | 17.258 | positive learning controls still pass under the candidate v1.8 predictive-context baseline | `/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/v1_8_compact_regression/tier2_learning/tier2_results.json` |
-| `tier3_ablations` | **PASS** | 0 | 118.218 | core mechanism ablation gaps remain meaningful under the candidate v1.8 predictive-context baseline | `/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/v1_8_compact_regression/tier3_ablations/tier3_results.json` |
-| `target_task_smokes` | **PASS** | 0 | 9.597 | delayed_cue and hard_noisy_switching smoke matrix still executes with the carried-forward CRA path | `/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/v1_8_compact_regression/target_task_smokes/tier5_6_results.json` |
-| `replay_consolidation_guardrail` | **PASS** | 0 | 9.152 | v1.7 replay/consolidation mechanism still passes a compact bounded-memory guardrail | `/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/v1_8_compact_regression/replay_consolidation_guardrail/tier5_11d_results.json` |
-| `predictive_context_guardrail` | **PASS** | 0 | 151.148 | Tier 5.12c predictive-context candidate still beats shams on a compact predictive task matrix | `/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/v1_8_compact_regression/predictive_context_guardrail/tier5_12c_results.json` |
+| `tier1_controls` | **PASS** | 0 | 18.264 | negative controls stay negative under the candidate v1.8 predictive-context baseline | `<repo>/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls/tier1_results.json` |
+| `tier2_learning` | **PASS** | 0 | 17.258 | positive learning controls still pass under the candidate v1.8 predictive-context baseline | `<repo>/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/v1_8_compact_regression/tier2_learning/tier2_results.json` |
+| `tier3_ablations` | **PASS** | 0 | 118.218 | core mechanism ablation gaps remain meaningful under the candidate v1.8 predictive-context baseline | `<repo>/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/v1_8_compact_regression/tier3_ablations/tier3_results.json` |
+| `target_task_smokes` | **PASS** | 0 | 9.597 | delayed_cue and hard_noisy_switching smoke matrix still executes with the carried-forward CRA path | `<repo>/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/v1_8_compact_regression/target_task_smokes/tier5_6_results.json` |
+| `replay_consolidation_guardrail` | **PASS** | 0 | 9.152 | v1.7 replay/consolidation mechanism still passes a compact bounded-memory guardrail | `<repo>/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/v1_8_compact_regression/replay_consolidation_guardrail/tier5_11d_results.json` |
+| `predictive_context_guardrail` | **PASS** | 0 | 151.148 | Tier 5.12c predictive-context candidate still beats shams on a compact predictive task matrix | `<repo>/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/v1_8_compact_regression/predictive_context_guardrail/tier5_12c_results.json` |
 
 ## Criteria
 

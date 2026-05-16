@@ -1,11 +1,11 @@
 {
   "artifacts": {
-    "host_test_stderr": "/Users/james/JKS:CRA/controlled_test_output/tier4_22c_20260430_persistent_state_scaffold/tier4_22c_host_test_stderr.txt",
-    "host_test_stdout": "/Users/james/JKS:CRA/controlled_test_output/tier4_22c_20260430_persistent_state_scaffold/tier4_22c_host_test_stdout.txt",
-    "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_22c_20260430_persistent_state_scaffold/tier4_22c_results.json",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_22c_20260430_persistent_state_scaffold/tier4_22c_report.md",
-    "state_contract_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22c_20260430_persistent_state_scaffold/tier4_22c_state_contract.csv",
-    "static_compliance_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22c_20260430_persistent_state_scaffold/tier4_22c_static_compliance.csv"
+    "host_test_stderr": "<repo>/controlled_test_output/tier4_22c_20260430_persistent_state_scaffold/tier4_22c_host_test_stderr.txt",
+    "host_test_stdout": "<repo>/controlled_test_output/tier4_22c_20260430_persistent_state_scaffold/tier4_22c_host_test_stdout.txt",
+    "manifest_json": "<repo>/controlled_test_output/tier4_22c_20260430_persistent_state_scaffold/tier4_22c_results.json",
+    "report_md": "<repo>/controlled_test_output/tier4_22c_20260430_persistent_state_scaffold/tier4_22c_report.md",
+    "state_contract_csv": "<repo>/controlled_test_output/tier4_22c_20260430_persistent_state_scaffold/tier4_22c_state_contract.csv",
+    "static_compliance_csv": "<repo>/controlled_test_output/tier4_22c_20260430_persistent_state_scaffold/tier4_22c_static_compliance.csv"
   },
   "criteria": [
     {
@@ -61,12 +61,12 @@
   "failure_reason": "",
   "generated_at_utc": "2026-04-30T18:45:11+00:00",
   "host_test": {
-    "command": "make -C /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime clean-host test",
+    "command": "make -C <repo>/coral_reef_spinnaker/spinnaker_runtime clean-host test",
     "returncode": 0,
-    "stderr_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22c_20260430_persistent_state_scaffold/tier4_22c_host_test_stderr.txt",
-    "stdout_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22c_20260430_persistent_state_scaffold/tier4_22c_host_test_stdout.txt"
+    "stderr_artifact": "<repo>/controlled_test_output/tier4_22c_20260430_persistent_state_scaffold/tier4_22c_host_test_stderr.txt",
+    "stdout_artifact": "<repo>/controlled_test_output/tier4_22c_20260430_persistent_state_scaffold/tier4_22c_host_test_stdout.txt"
   },
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_22c_20260430_persistent_state_scaffold",
+  "output_dir": "<repo>/controlled_test_output/tier4_22c_20260430_persistent_state_scaffold",
   "state_contract": [
     {
       "bound": "MAX_CONTEXT_SLOTS",
@@ -115,14 +115,14 @@
       "note": "",
       "passed": true,
       "rule": "file exists",
-      "value": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h"
+      "value": "<repo>/coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h"
     },
     {
       "name": "state_manager source exists",
       "note": "",
       "passed": true,
       "rule": "file exists",
-      "value": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c"
+      "value": "<repo>/coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c"
     },
     {
       "name": "bounded context slot constant",
@@ -236,7 +236,7 @@
     "runtime_state_storage": "static bounded arrays and fixed-point summary fields",
     "static_checks_passed": 16,
     "static_checks_total": 16,
-    "tier4_22b_manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_22b_20260430_continuous_transport_hardware_pass_ingested/tier4_22b_results.json",
+    "tier4_22b_manifest": "<repo>/controlled_test_output/tier4_22b_20260430_continuous_transport_hardware_pass_ingested/tier4_22b_results.json",
     "tier4_22b_status": "pass"
   },
   "tier": "Tier 4.22c - Persistent On-Chip State Scaffold"

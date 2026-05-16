@@ -1,11 +1,11 @@
 {
   "artifacts": {
-    "comparison_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_221734_local_preflight/local_step_chunk_parity/tier4_17b_comparisons.csv",
-    "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_221734_local_preflight/local_step_chunk_parity/tier4_17b_results.json",
-    "parity_png": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_221734_local_preflight/local_step_chunk_parity/tier4_17b_parity.png",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_221734_local_preflight/local_step_chunk_parity/tier4_17b_report.md",
-    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_221734_local_preflight/local_step_chunk_parity/tier4_17b_summary.csv",
-    "timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_221734_local_preflight/local_step_chunk_parity/tier4_17b_timeseries.csv"
+    "comparison_csv": "<repo>/controlled_test_output/tier4_20b_20260429_221734_local_preflight/local_step_chunk_parity/tier4_17b_comparisons.csv",
+    "manifest_json": "<repo>/controlled_test_output/tier4_20b_20260429_221734_local_preflight/local_step_chunk_parity/tier4_17b_results.json",
+    "parity_png": "<repo>/controlled_test_output/tier4_20b_20260429_221734_local_preflight/local_step_chunk_parity/tier4_17b_parity.png",
+    "report_md": "<repo>/controlled_test_output/tier4_20b_20260429_221734_local_preflight/local_step_chunk_parity/tier4_17b_report.md",
+    "summary_csv": "<repo>/controlled_test_output/tier4_20b_20260429_221734_local_preflight/local_step_chunk_parity/tier4_17b_summary.csv",
+    "timeseries_csv": "<repo>/controlled_test_output/tier4_20b_20260429_221734_local_preflight/local_step_chunk_parity/tier4_17b_timeseries.csv"
   },
   "comparisons": [
     {

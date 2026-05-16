@@ -1,5 +1,5 @@
 criterion,passed,value,rule
-Tier 7.1d results exist,True,/Users/james/JKS:CRA/controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/tier7_1d_results.json,exists
+Tier 7.1d results exist,True,<repo>/controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/tier7_1d_results.json,exists
 Tier 7.1d passed,True,pass,== pass
 Tier 7.1d localized target/readout policy,True,compact_failure_partly_readout_or_target_policy,== compact_failure_partly_readout_or_target_policy
 candidate present,True,scalar_pca1_v2_2_ridge_capped125,in Tier 7.1d per-unit rows

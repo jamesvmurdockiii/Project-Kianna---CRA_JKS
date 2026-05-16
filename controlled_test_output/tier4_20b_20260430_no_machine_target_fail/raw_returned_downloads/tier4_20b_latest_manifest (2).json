@@ -1,9 +1,0 @@
-{
-  "canonical": false,
-  "claim": "Latest Tier 4.20b v2.1 one-seed chunked hardware probe; promote only after returned hardware review.",
-  "generated_at_utc": "2026-04-30T01:49:54+00:00",
-  "manifest": "/tmp/job17535888640787705408.tmp/tier4_20b_job_output/tier4_20b_results.json",
-  "output_dir": "/tmp/job17535888640787705408.tmp/tier4_20b_job_output",
-  "report": "/tmp/job17535888640787705408.tmp/tier4_20b_job_output/tier4_20b_report.md",
-  "status": "fail"
-}

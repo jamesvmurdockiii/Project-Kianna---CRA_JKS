@@ -3,7 +3,7 @@
 - Generated: `2026-05-01T03:59:39+00:00`
 - Mode: `local`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_22p_20260501_aba_reentry_micro_task_local`
+- Output directory: `<repo>/controlled_test_output/tier4_22p_20260501_aba_reentry_micro_task_local`
 
 Tier 4.22p runs a 30-event A-B-A reentry signed micro-task through the custom runtime. Each event is scored from the chip's pre-update prediction, held across a two-event pending gap, then matured in order with delayed credit and checked against a local s16.15 reference.
 
@@ -60,7 +60,7 @@ Tier 4.22p runs a 30-event A-B-A reentry signed micro-task through the custom ru
 
 ## Artifacts
 
-- `reference_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22p_20260501_aba_reentry_micro_task_local/tier4_22p_task_reference.json`
-- `reference_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22p_20260501_aba_reentry_micro_task_local/tier4_22p_task_reference_rows.csv`
-- `manifest_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22p_20260501_aba_reentry_micro_task_local/tier4_22p_results.json`
-- `report_md`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22p_20260501_aba_reentry_micro_task_local/tier4_22p_report.md`
+- `reference_json`: `<repo>/controlled_test_output/tier4_22p_20260501_aba_reentry_micro_task_local/tier4_22p_task_reference.json`
+- `reference_csv`: `<repo>/controlled_test_output/tier4_22p_20260501_aba_reentry_micro_task_local/tier4_22p_task_reference_rows.csv`
+- `manifest_json`: `<repo>/controlled_test_output/tier4_22p_20260501_aba_reentry_micro_task_local/tier4_22p_results.json`
+- `report_md`: `<repo>/controlled_test_output/tier4_22p_20260501_aba_reentry_micro_task_local/tier4_22p_report.md`

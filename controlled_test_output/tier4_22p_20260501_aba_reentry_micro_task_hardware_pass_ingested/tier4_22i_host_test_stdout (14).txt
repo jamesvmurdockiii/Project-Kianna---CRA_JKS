@@ -1,4 +1,4 @@
-make: Entering directory '/tmp/job12256034446785037510.tmp/cra_422y/coral_reef_spinnaker/spinnaker_runtime'
+make: Entering directory '<jobmanager_tmp>'
 rm -f tests/test_runtime
 cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-int-to-pointer-cast -I stubs -I src tests/test_runtime.c src/neuron_manager.c src/synapse_manager.c src/state_manager.c src/host_interface.c src/router.c -lm -o tests/test_runtime
 ./tests/test_runtime
@@ -40,4 +40,4 @@ host_interface:
   PASS: compact state summary pack
 
 === ALL TESTS PASSED ===
-make: Leaving directory '/tmp/job12256034446785037510.tmp/cra_422y/coral_reef_spinnaker/spinnaker_runtime'
+make: Leaving directory '<jobmanager_tmp>'

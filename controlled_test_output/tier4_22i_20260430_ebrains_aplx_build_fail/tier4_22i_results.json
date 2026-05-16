@@ -1,14 +1,14 @@
 {
   "aplx_build": {
     "status": "fail",
-    "stderr_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_ebrains_aplx_build_fail/tier4_22i_aplx_build_stderr.txt",
+    "stderr_artifact": "<repo>/controlled_test_output/tier4_22i_20260430_ebrains_aplx_build_fail/tier4_22i_aplx_build_stderr.txt",
     "stderr_excerpt": "/home/jovyan/spinnaker/spinnaker_tools/make/Makefile.common:18: inclusion of Makefile.common instead of spinnaker_tools.mk\nsrc/main.c: In function 'c_main':\nsrc/main.c:113:23: error: 'MC_PACKET_RX' undeclared (first use in this function); did you mean 'SDP_PACKET_RX'?\n  113 |     spin1_callback_on(MC_PACKET_RX, mc_packet_callback, 0);\n      |                       ^~~~~~~~~~~~\n      |                       SDP_PACKET_RX\nsrc/main.c:113:23: note: each undeclared identifier is reported only once for each function it appears in\nmake: *** [Makefile:87: build/main.o] Error 1\n"
   },
   "artifacts": {
-    "aplx_build_stderr": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_ebrains_aplx_build_fail/tier4_22i_aplx_build_stderr.txt",
-    "environment_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_ebrains_aplx_build_fail/tier4_22i_environment.json",
-    "latest_manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_ebrains_aplx_build_fail/tier4_22i_latest_manifest.json",
-    "roundtrip_result_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_ebrains_aplx_build_fail/tier4_22i_roundtrip_result.json"
+    "aplx_build_stderr": "<repo>/controlled_test_output/tier4_22i_20260430_ebrains_aplx_build_fail/tier4_22i_aplx_build_stderr.txt",
+    "environment_json": "<repo>/controlled_test_output/tier4_22i_20260430_ebrains_aplx_build_fail/tier4_22i_environment.json",
+    "latest_manifest": "<repo>/controlled_test_output/tier4_22i_20260430_ebrains_aplx_build_fail/tier4_22i_latest_manifest.json",
+    "roundtrip_result_json": "<repo>/controlled_test_output/tier4_22i_20260430_ebrains_aplx_build_fail/tier4_22i_roundtrip_result.json"
   },
   "criteria": [
     {
@@ -16,7 +16,7 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_ebrains_aplx_build_fail/tier4_22i_latest_manifest.json"
+      "value": "<repo>/controlled_test_output/tier4_22i_20260430_ebrains_aplx_build_fail/tier4_22i_latest_manifest.json"
     },
     {
       "name": "custom runtime .aplx build pass",
@@ -41,7 +41,7 @@
     }
   ],
   "environment": {
-    "cwd": "/tmp/job11098615288353364958.tmp",
+    "cwd": "<jobmanager_tmp>",
     "env": {
       "SPINNAKER_BOARD": "",
       "SPINNAKER_HOST": "",
@@ -80,7 +80,7 @@
   "failure_reason": "Downloaded EBRAINS artifacts did not include tier4_22i_results.json; reconstructed from latest manifest and partial failure files. APLX build failed before board roundtrip.",
   "generated_at_utc": "2026-04-30T20:26:52+00:00",
   "mode": "ingest",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_ebrains_aplx_build_fail",
+  "output_dir": "<repo>/controlled_test_output/tier4_22i_20260430_ebrains_aplx_build_fail",
   "roundtrip": {
     "reason": "blocked_before_roundtrip",
     "status": "not_attempted"
@@ -95,7 +95,7 @@
     "mode": "ingest",
     "next_step_if_passed": "Regenerate cra_422i from fixed source and rerun Tier 4.22i.",
     "python": "/home/jovyan/spinnaker/bin/python",
-    "source_latest_manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_22i_20260430_ebrains_aplx_build_fail/tier4_22i_latest_manifest.json",
+    "source_latest_manifest": "<repo>/controlled_test_output/tier4_22i_20260430_ebrains_aplx_build_fail/tier4_22i_latest_manifest.json",
     "spinnaker_tools": "/home/jovyan/spinnaker/spinnaker_tools"
   },
   "tier": "Tier 4.22i - Custom Runtime Board Round-Trip Smoke"

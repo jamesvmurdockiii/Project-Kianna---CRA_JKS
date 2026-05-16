@@ -1,13 +1,13 @@
 {
   "canonical_run_id": "tier4_13_20260427_011912_hardware_pass",
-  "canonical_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass",
+  "canonical_dir": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass",
   "created_at_utc": "2026-04-27T00:46:26.856230+00:00",
   "policy": "Canonical pass artifacts were copied into stable names. Original downloaded files were moved into intake/quarantine folders instead of hard-deleted.",
   "entries": [
     {
-      "source": "/Users/james/Downloads/tier4_13_results.json",
-      "canonical_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_results.json",
-      "intake_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_download_intake_originals/tier4_13_results.json",
+      "source": "<downloads>/tier4_13_results.json",
+      "canonical_destination": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_results.json",
+      "intake_destination": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_download_intake_originals/tier4_13_results.json",
       "classification": "canonical",
       "reason": "canonical pass manifest",
       "source_metadata": {
@@ -31,9 +31,9 @@
       "action": "copied_to_canonical_then_moved_original"
     },
     {
-      "source": "/Users/james/Downloads/tier4_13_report (9).md",
-      "canonical_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_report.md",
-      "intake_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_download_intake_originals/tier4_13_report (9).md",
+      "source": "<downloads>/tier4_13_report (9).md",
+      "canonical_destination": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_report.md",
+      "intake_destination": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_download_intake_originals/tier4_13_report (9).md",
       "classification": "canonical",
       "reason": "canonical human report",
       "source_metadata": {
@@ -57,9 +57,9 @@
       "action": "copied_to_canonical_then_moved_original"
     },
     {
-      "source": "/Users/james/Downloads/tier4_13_summary (2).csv",
-      "canonical_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_summary.csv",
-      "intake_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_download_intake_originals/tier4_13_summary (2).csv",
+      "source": "<downloads>/tier4_13_summary (2).csv",
+      "canonical_destination": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_summary.csv",
+      "intake_destination": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_download_intake_originals/tier4_13_summary (2).csv",
       "classification": "canonical",
       "reason": "canonical summary CSV",
       "source_metadata": {
@@ -83,9 +83,9 @@
       "action": "copied_to_canonical_then_moved_original"
     },
     {
-      "source": "/Users/james/Downloads/spinnaker_hardware_seed42_timeseries.csv",
-      "canonical_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/spinnaker_hardware_seed42_timeseries.csv",
-      "intake_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_download_intake_originals/spinnaker_hardware_seed42_timeseries.csv",
+      "source": "<downloads>/spinnaker_hardware_seed42_timeseries.csv",
+      "canonical_destination": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/spinnaker_hardware_seed42_timeseries.csv",
+      "intake_destination": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_download_intake_originals/spinnaker_hardware_seed42_timeseries.csv",
       "classification": "canonical",
       "reason": "canonical step time series",
       "source_metadata": {
@@ -109,9 +109,9 @@
       "action": "copied_to_canonical_then_moved_original"
     },
     {
-      "source": "/Users/james/Downloads/spinnaker_hardware_seed42_timeseries.png",
-      "canonical_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/spinnaker_hardware_seed42_timeseries.png",
-      "intake_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_download_intake_originals/spinnaker_hardware_seed42_timeseries.png",
+      "source": "<downloads>/spinnaker_hardware_seed42_timeseries.png",
+      "canonical_destination": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/spinnaker_hardware_seed42_timeseries.png",
+      "intake_destination": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_download_intake_originals/spinnaker_hardware_seed42_timeseries.png",
       "classification": "canonical",
       "reason": "canonical time-series plot",
       "source_metadata": {
@@ -135,9 +135,9 @@
       "action": "copied_to_canonical_then_moved_original"
     },
     {
-      "source": "/Users/james/Downloads/hardware_capsule_summary.png",
-      "canonical_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/hardware_capsule_summary.png",
-      "intake_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_download_intake_originals/hardware_capsule_summary.png",
+      "source": "<downloads>/hardware_capsule_summary.png",
+      "canonical_destination": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/hardware_capsule_summary.png",
+      "intake_destination": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_download_intake_originals/hardware_capsule_summary.png",
       "classification": "canonical",
       "reason": "canonical summary plot",
       "source_metadata": {
@@ -161,9 +161,9 @@
       "action": "copied_to_canonical_then_moved_original"
     },
     {
-      "source": "/Users/james/Downloads/tier4_13_latest_manifest (1).json",
-      "canonical_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/remote_tier4_13_latest_manifest.json",
-      "intake_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_download_intake_originals/tier4_13_latest_manifest (1).json",
+      "source": "<downloads>/tier4_13_latest_manifest (1).json",
+      "canonical_destination": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/remote_tier4_13_latest_manifest.json",
+      "intake_destination": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_download_intake_originals/tier4_13_latest_manifest (1).json",
       "classification": "canonical",
       "reason": "remote JobManager latest manifest for pass",
       "source_metadata": {
@@ -187,8 +187,8 @@
       "action": "copied_to_canonical_then_moved_original"
     },
     {
-      "source": "/Users/james/Downloads/reports (1).zip",
-      "canonical_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/raw_reports/spinnaker_reports_2026-04-27-01-19-12-390038.zip",
+      "source": "<downloads>/reports (1).zip",
+      "canonical_destination": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/raw_reports/spinnaker_reports_2026-04-27-01-19-12-390038.zip",
       "classification": "canonical",
       "reason": "raw sPyNNaker reports zip matching successful pass timestamp",
       "source_metadata": {
@@ -206,7 +206,7 @@
       "extracted_members": [
         {
           "zip_member": "reports/2026-04-27-01-19-12-390038/finished",
-          "extracted_to": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/spinnaker_reports/2026-04-27-01-19-12-390038/finished",
+          "extracted_to": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/spinnaker_reports/2026-04-27-01-19-12-390038/finished",
           "metadata": {
             "exists": true,
             "size_bytes": 26,
@@ -216,7 +216,7 @@
         },
         {
           "zip_member": "reports/2026-04-27-01-19-12-390038/global_provenance.sqlite3",
-          "extracted_to": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/spinnaker_reports/2026-04-27-01-19-12-390038/global_provenance.sqlite3",
+          "extracted_to": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/spinnaker_reports/2026-04-27-01-19-12-390038/global_provenance.sqlite3",
           "metadata": {
             "exists": true,
             "size_bytes": 602112,
@@ -226,7 +226,7 @@
         }
       ],
       "action": "copied_to_canonical_and_extracted",
-      "intake_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_download_intake_originals/reports (1).zip",
+      "intake_destination": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_download_intake_originals/reports (1).zip",
       "intake_metadata": {
         "exists": true,
         "size_bytes": 105309,
@@ -235,8 +235,8 @@
       }
     },
     {
-      "source": "/Users/james/Downloads/global_provenance.sqlite3",
-      "canonical_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/spinnaker_reports/2026-04-27-01-19-12-390038/global_provenance.sqlite3",
+      "source": "<downloads>/global_provenance.sqlite3",
+      "canonical_destination": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/spinnaker_reports/2026-04-27-01-19-12-390038/global_provenance.sqlite3",
       "classification": "canonical",
       "reason": "standalone provenance DB for pass; same as extracted reports zip",
       "source_metadata": {
@@ -252,7 +252,7 @@
         "sha256": "f6bc132fbd294aee89a7959743dfd312f45479f2c18eaa64b9853ee3f78c9be5"
       },
       "action": "moved_original_only_duplicate_of_extracted",
-      "intake_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_download_intake_originals/global_provenance.sqlite3",
+      "intake_destination": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_download_intake_originals/global_provenance.sqlite3",
       "intake_metadata": {
         "exists": true,
         "size_bytes": 602112,
@@ -261,9 +261,9 @@
       }
     },
     {
-      "source": "/Users/james/Downloads/tier4_13_latest_manifest.json",
+      "source": "<downloads>/tier4_13_latest_manifest.json",
       "canonical_destination": null,
-      "intake_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_quarantine_noncanonical/blocked_20260426_230758_tier4_13_latest_manifest.json",
+      "intake_destination": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_quarantine_noncanonical/blocked_20260426_230758_tier4_13_latest_manifest.json",
       "classification": "quarantine",
       "reason": "older blocked manifest, not pass evidence",
       "source_metadata": {
@@ -281,9 +281,9 @@
       "action": "moved_to_quarantine"
     },
     {
-      "source": "/Users/james/Downloads/seed_42_backend_diagnostics.json",
+      "source": "<downloads>/seed_42_backend_diagnostics.json",
       "canonical_destination": null,
-      "intake_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_quarantine_noncanonical/failed_overflow_seed_42_backend_diagnostics.json",
+      "intake_destination": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_quarantine_noncanonical/failed_overflow_seed_42_backend_diagnostics.json",
       "classification": "quarantine",
       "reason": "older overflow failure diagnostic, superseded by pass",
       "source_metadata": {
@@ -301,9 +301,9 @@
       "action": "moved_to_quarantine"
     },
     {
-      "source": "/Users/james/Downloads/seed_42_failure_traceback.txt",
+      "source": "<downloads>/seed_42_failure_traceback.txt",
       "canonical_destination": null,
-      "intake_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_quarantine_noncanonical/failed_overflow_seed_42_failure_traceback.txt",
+      "intake_destination": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_quarantine_noncanonical/failed_overflow_seed_42_failure_traceback.txt",
       "classification": "quarantine",
       "reason": "older overflow failure traceback, superseded by pass",
       "source_metadata": {
@@ -321,9 +321,9 @@
       "action": "moved_to_quarantine"
     },
     {
-      "source": "/Users/james/Downloads/reports.zip",
+      "source": "<downloads>/reports.zip",
       "canonical_destination": null,
-      "intake_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_quarantine_noncanonical/blocked_20260426_223950_reports.zip",
+      "intake_destination": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_quarantine_noncanonical/blocked_20260426_223950_reports.zip",
       "classification": "quarantine",
       "reason": "older blocked/failure reports zip, not pass evidence",
       "source_metadata": {
@@ -341,9 +341,9 @@
       "action": "moved_to_quarantine"
     },
     {
-      "source": "/Users/james/Downloads/finished",
+      "source": "<downloads>/finished",
       "canonical_destination": null,
-      "intake_destination": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_quarantine_noncanonical/older_download_finished_marker",
+      "intake_destination": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_quarantine_noncanonical/older_download_finished_marker",
       "classification": "quarantine",
       "reason": "older standalone finished marker, not aligned with pass report timestamp",
       "source_metadata": {

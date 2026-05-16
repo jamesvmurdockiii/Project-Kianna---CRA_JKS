@@ -6,7 +6,7 @@
   "status": "pass",
   "passed_count": 21,
   "total_count": 21,
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_23c_local_test",
+  "output_dir": "<repo>/controlled_test_output/tier4_23c_local_test",
   "schedule": [
     {
       "timestep": 1,

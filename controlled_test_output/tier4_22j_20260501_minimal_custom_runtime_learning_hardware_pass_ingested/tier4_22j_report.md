@@ -3,7 +3,7 @@
 - Generated: `2026-05-01T01:25:45+00:00`
 - Mode: `ingest`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested`
+- Output directory: `<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested`
 
 Tier 4.22j tests a minimal chip-owned delayed-credit/readout update after the Tier 4.22i board command path passed.
 
@@ -67,28 +67,28 @@ Tier 4.22j tests a minimal chip-owned delayed-credit/readout update after the Ti
 
 ## Artifacts
 
-- `aplx_build_stderr`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/tier4_22i_aplx_build_stderr (9).txt`
-- `aplx_build_stdout`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/tier4_22i_aplx_build_stdout (8).txt`
-- `environment_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/tier4_22j_environment.json`
-- `host_test_stderr`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/tier4_22i_host_test_stderr (8).txt`
-- `host_test_stdout`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/tier4_22i_host_test_stdout (8).txt`
-- `learning_result_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/tier4_22j_learning_result.json`
-- `load_result_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/tier4_22j_load_result.json`
-- `main_syntax_stderr`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/tier4_22i_main_syntax_normal_stderr (7).txt`
-- `main_syntax_stdout`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/tier4_22i_main_syntax_normal_stdout (7).txt`
-- `manifest_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/tier4_22j_results.json`
-- `report_md`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/tier4_22j_report.md`
-- `target_acquisition_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/tier4_22j_target_acquisition.json`
-- `raw_remote_manifest_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/remote_tier4_22j_results_raw.json`
-- `raw_remote_report_md`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/remote_tier4_22j_report_raw.md`
-- `main_syntax_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/tier4_22i_main_syntax_normal (7).o`
-- `aplx_binary`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/coral_reef (3).aplx`
-- `elf_binary`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/coral_reef (4).elf`
-- `elf_listing`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/coral_reef (3).txt`
-- `spinnaker_reports_zip`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/reports (14).zip`
-- `main_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/main (6).o`
-- `host_interface_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/host_interface (5).o`
-- `state_manager_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/state_manager (6).o`
-- `synapse_manager_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/synapse_manager (6).o`
-- `neuron_manager_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/neuron_manager (6).o`
-- `router_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/router (4).o`
+- `aplx_build_stderr`: `<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/tier4_22i_aplx_build_stderr (9).txt`
+- `aplx_build_stdout`: `<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/tier4_22i_aplx_build_stdout (8).txt`
+- `environment_json`: `<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/tier4_22j_environment.json`
+- `host_test_stderr`: `<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/tier4_22i_host_test_stderr (8).txt`
+- `host_test_stdout`: `<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/tier4_22i_host_test_stdout (8).txt`
+- `learning_result_json`: `<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/tier4_22j_learning_result.json`
+- `load_result_json`: `<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/tier4_22j_load_result.json`
+- `main_syntax_stderr`: `<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/tier4_22i_main_syntax_normal_stderr (7).txt`
+- `main_syntax_stdout`: `<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/tier4_22i_main_syntax_normal_stdout (7).txt`
+- `manifest_json`: `<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/tier4_22j_results.json`
+- `report_md`: `<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/tier4_22j_report.md`
+- `target_acquisition_json`: `<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/tier4_22j_target_acquisition.json`
+- `raw_remote_manifest_json`: `<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/remote_tier4_22j_results_raw.json`
+- `raw_remote_report_md`: `<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/remote_tier4_22j_report_raw.md`
+- `main_syntax_object`: `<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/tier4_22i_main_syntax_normal (7).o`
+- `aplx_binary`: `<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/coral_reef (3).aplx`
+- `elf_binary`: `<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/coral_reef (4).elf`
+- `elf_listing`: `<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/coral_reef (3).txt`
+- `spinnaker_reports_zip`: `<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/reports (14).zip`
+- `main_object`: `<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/main (6).o`
+- `host_interface_object`: `<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/host_interface (5).o`
+- `state_manager_object`: `<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/state_manager (6).o`
+- `synapse_manager_object`: `<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/synapse_manager (6).o`
+- `neuron_manager_object`: `<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/neuron_manager (6).o`
+- `router_object`: `<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/router (4).o`

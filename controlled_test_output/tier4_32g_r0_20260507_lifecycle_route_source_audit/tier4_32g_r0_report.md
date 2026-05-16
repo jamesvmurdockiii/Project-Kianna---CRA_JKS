@@ -4,7 +4,7 @@
 - Runner revision: `tier4_32g_r0_lifecycle_route_source_audit_20260507_0001`
 - Status: **PASS**
 - Criteria: `14/14`
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit`
+- Output directory: `<repo>/controlled_test_output/tier4_32g_r0_20260507_lifecycle_route_source_audit`
 
 ## Claim Boundary
 

@@ -3,7 +3,7 @@
 - Generated: `2026-05-01T02:17:11+00:00`
 - Mode: `run-hardware`
 - Status: **PASS**
-- Output directory: `/tmp/job10382156983886380828.tmp/tier4_22l_job_output`
+- Output directory: `<jobmanager_tmp>`
 
 Tier 4.22l compares a tiny chip-owned pending-horizon/readout update sequence against a local s16.15 fixed-point reference.
 
@@ -85,18 +85,18 @@ Tier 4.22l compares a tiny chip-owned pending-horizon/readout update sequence ag
 
 ## Artifacts
 
-- `reference_json`: `/tmp/job10382156983886380828.tmp/tier4_22l_job_output/tier4_22l_reference.json`
-- `reference_csv`: `/tmp/job10382156983886380828.tmp/tier4_22l_job_output/tier4_22l_parity_reference.csv`
-- `environment_json`: `/tmp/job10382156983886380828.tmp/tier4_22l_job_output/tier4_22l_environment.json`
-- `target_acquisition_json`: `/tmp/job10382156983886380828.tmp/tier4_22l_job_output/tier4_22l_target_acquisition.json`
-- `host_test_stdout`: `/tmp/job10382156983886380828.tmp/tier4_22l_job_output/tier4_22i_host_test_stdout.txt`
-- `host_test_stderr`: `/tmp/job10382156983886380828.tmp/tier4_22l_job_output/tier4_22i_host_test_stderr.txt`
-- `main_syntax_stdout`: `/tmp/job10382156983886380828.tmp/tier4_22l_job_output/tier4_22i_main_syntax_normal_stdout.txt`
-- `main_syntax_stderr`: `/tmp/job10382156983886380828.tmp/tier4_22l_job_output/tier4_22i_main_syntax_normal_stderr.txt`
-- `aplx_build_stdout`: `/tmp/job10382156983886380828.tmp/tier4_22l_job_output/tier4_22i_aplx_build_stdout.txt`
-- `aplx_build_stderr`: `/tmp/job10382156983886380828.tmp/tier4_22l_job_output/tier4_22i_aplx_build_stderr.txt`
-- `load_result_json`: `/tmp/job10382156983886380828.tmp/tier4_22l_job_output/tier4_22l_load_result.json`
-- `learning_parity_result_json`: `/tmp/job10382156983886380828.tmp/tier4_22l_job_output/tier4_22l_learning_parity_result.json`
-- `learning_parity_rows_csv`: `/tmp/job10382156983886380828.tmp/tier4_22l_job_output/tier4_22l_learning_parity_rows.csv`
-- `manifest_json`: `/tmp/job10382156983886380828.tmp/tier4_22l_job_output/tier4_22l_results.json`
-- `report_md`: `/tmp/job10382156983886380828.tmp/tier4_22l_job_output/tier4_22l_report.md`
+- `reference_json`: `<jobmanager_tmp>`
+- `reference_csv`: `<jobmanager_tmp>`
+- `environment_json`: `<jobmanager_tmp>`
+- `target_acquisition_json`: `<jobmanager_tmp>`
+- `host_test_stdout`: `<jobmanager_tmp>`
+- `host_test_stderr`: `<jobmanager_tmp>`
+- `main_syntax_stdout`: `<jobmanager_tmp>`
+- `main_syntax_stderr`: `<jobmanager_tmp>`
+- `aplx_build_stdout`: `<jobmanager_tmp>`
+- `aplx_build_stderr`: `<jobmanager_tmp>`
+- `load_result_json`: `<jobmanager_tmp>`
+- `learning_parity_result_json`: `<jobmanager_tmp>`
+- `learning_parity_rows_csv`: `<jobmanager_tmp>`
+- `manifest_json`: `<jobmanager_tmp>`
+- `report_md`: `<jobmanager_tmp>`

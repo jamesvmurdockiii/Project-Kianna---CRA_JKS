@@ -201,7 +201,7 @@
     "not a baseline freeze"
   ],
   "outcome": "within_polyp_ei_recurrence_contract_locked",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_24_20260510_within_polyp_ei_recurrence_contract",
+  "output_dir": "<repo>/controlled_test_output/tier5_24_20260510_within_polyp_ei_recurrence_contract",
   "runner_revision": "tier5_24_within_polyp_ei_recurrence_contract_20260510_0001",
   "status": "pass",
   "tier": "Tier 5.24 - Within-Polyp E/I Antisymmetric Recurrence Diagnostic Contract"

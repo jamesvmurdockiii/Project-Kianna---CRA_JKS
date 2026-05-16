@@ -1,8 +1,8 @@
 {
   "artifacts": {
-    "report_md": "/tmp/job12907274730800089724.tmp/tier4_32a_hw_job_output/tier4_32a_hw_report.md",
-    "results_json": "/tmp/job12907274730800089724.tmp/tier4_32a_hw_job_output/tier4_32a_hw_results.json",
-    "summary_csv": "/tmp/job12907274730800089724.tmp/tier4_32a_hw_job_output/tier4_32a_hw_summary.csv"
+    "report_md": "<jobmanager_tmp>",
+    "results_json": "<jobmanager_tmp>",
+    "summary_csv": "<jobmanager_tmp>"
   },
   "claim_boundary": "Tier 4.32a-hw is a single-shard single-chip EBRAINS hardware stress over the repaired Tier 4.32a-r1 MCPL protocol. It is not replicated-shard stress, not multi-chip evidence, not speedup evidence, not static reef partitioning, not benchmark superiority evidence, and not a native-scale baseline freeze.",
   "criteria": [
@@ -249,7 +249,7 @@
   },
   "generated_at_utc": "2026-05-07T00:24:55+00:00",
   "mode": "run-hardware",
-  "output_dir": "/tmp/job12907274730800089724.tmp/tier4_32a_hw_job_output",
+  "output_dir": "<jobmanager_tmp>",
   "points": {
     "point_04c_reference": {
       "criteria": [
@@ -869,7 +869,7 @@
         }
       },
       "mode": "run-hardware",
-      "output_dir": "/tmp/job12907274730800089724.tmp/tier4_32a_hw_job_output/point_04c_reference",
+      "output_dir": "<jobmanager_tmp>",
       "runner_revision": "tier4_28a_four_core_mcpl_repeatability_20260502_0003",
       "status": "pass",
       "task": {

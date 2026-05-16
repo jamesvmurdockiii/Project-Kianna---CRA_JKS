@@ -1,10 +1,10 @@
 {
   "artifacts": {
-    "criteria_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32d_r0_20260507_interchip_route_source_audit/tier4_32d_r0_criteria.csv",
-    "failure_classes_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32d_r0_20260507_interchip_route_source_audit/tier4_32d_r0_failure_classes.csv",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_32d_r0_20260507_interchip_route_source_audit/tier4_32d_r0_report.md",
-    "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_32d_r0_20260507_interchip_route_source_audit/tier4_32d_r0_results.json",
-    "source_findings_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32d_r0_20260507_interchip_route_source_audit/tier4_32d_r0_source_findings.csv"
+    "criteria_csv": "<repo>/controlled_test_output/tier4_32d_r0_20260507_interchip_route_source_audit/tier4_32d_r0_criteria.csv",
+    "failure_classes_csv": "<repo>/controlled_test_output/tier4_32d_r0_20260507_interchip_route_source_audit/tier4_32d_r0_failure_classes.csv",
+    "report_md": "<repo>/controlled_test_output/tier4_32d_r0_20260507_interchip_route_source_audit/tier4_32d_r0_report.md",
+    "results_json": "<repo>/controlled_test_output/tier4_32d_r0_20260507_interchip_route_source_audit/tier4_32d_r0_results.json",
+    "source_findings_csv": "<repo>/controlled_test_output/tier4_32d_r0_20260507_interchip_route_source_audit/tier4_32d_r0_source_findings.csv"
   },
   "claim_boundary": "Tier 4.32d-r0 is a local route/source/package audit only. It is not a SpiNNaker hardware run, not an EBRAINS package, not multi-chip execution evidence, not speedup evidence, not learning-scale evidence, not benchmark superiority, and not a native-scale baseline freeze.",
   "criteria": [
@@ -62,7 +62,7 @@
       "note": "",
       "passed": true,
       "rule": "must not exist",
-      "value": "/Users/james/JKS:CRA/ebrains_jobs/cra_432d"
+      "value": "<repo>/ebrains_jobs/cra_432d"
     },
     {
       "name": "hardware package remains blocked by source audit",
@@ -100,7 +100,7 @@
     }
   ],
   "generated_at_utc": "2026-05-07T02:59:31+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_32d_r0_20260507_interchip_route_source_audit",
+  "output_dir": "<repo>/controlled_test_output/tier4_32d_r0_20260507_interchip_route_source_audit",
   "runner_revision": "tier4_32d_r0_interchip_route_source_audit_20260507_0001",
   "source_findings": [
     {

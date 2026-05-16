@@ -282,7 +282,7 @@
       "question": "Is native scaling stable enough to freeze as a paper baseline?"
     }
   ],
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_20260506_single_chip_scale_stress",
+  "output_dir": "<repo>/controlled_test_output/tier4_32a_20260506_single_chip_scale_stress",
   "profile_allocations": [
     {
       "allocation_status": "profile_headroom_positive",

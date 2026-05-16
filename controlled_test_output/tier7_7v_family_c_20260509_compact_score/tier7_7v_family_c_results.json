@@ -97,7 +97,7 @@
   "generated_at_utc": "2026-05-09T20:53:55+00:00",
   "next_gate": "Tier 7.7x closeout or next repair family per 7.7t contract",
   "outcome": "family_c_not_confirmed",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7v_family_c_20260509_compact_score",
+  "output_dir": "<repo>/controlled_test_output/tier7_7v_family_c_20260509_compact_score",
   "repair_family": "C",
   "repair_name": "recurrent_topology_spectrum_repair",
   "runner_revision": "tier7_7v_family_c_compact_score_20260509_0001",

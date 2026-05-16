@@ -271,9 +271,9 @@
       "route": "Broadest-applicability repair family first (Family A)."
     }
   ],
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7u_20260509_state_collapse_causal_localization",
+  "output_dir": "<repo>/controlled_test_output/tier7_7u_20260509_state_collapse_causal_localization",
   "prerequisite": {
-    "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_7t_20260509_low_rank_state_repair_campaign_contract/tier7_7t_results.json",
+    "path": "<repo>/controlled_test_output/tier7_7t_20260509_low_rank_state_repair_campaign_contract/tier7_7t_results.json",
     "sha256": "ad006d11df4884d761b8a932529ec52482fec86c87aaa48de10c39f45678f477",
     "status": "pass"
   },

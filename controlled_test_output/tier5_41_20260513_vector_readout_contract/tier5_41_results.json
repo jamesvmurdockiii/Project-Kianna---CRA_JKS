@@ -141,7 +141,7 @@
   "generated_at_utc": "2026-05-13T23:53:39+00:00",
   "next_gate": "Tier 5.41a \u2014 Vector Readout Scoring Gate",
   "outcome": "vector_readout_contract_locked",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_41_20260513_vector_readout_contract",
+  "output_dir": "<repo>/controlled_test_output/tier5_41_20260513_vector_readout_contract",
   "runner_revision": "tier5_41_vector_readout_contract_20260513_0001",
   "status": "pass",
   "tier": "Tier 5.41 \u2014 Structured Vector Readout Contract"

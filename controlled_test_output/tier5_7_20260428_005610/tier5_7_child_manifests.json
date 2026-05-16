@@ -1,18 +1,18 @@
 {
   "tier1_controls": {
     "artifacts": {
-      "report_md": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier1_controls/tier1_report.md",
-      "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier1_controls/tier1_summary.csv"
+      "report_md": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier1_controls/tier1_report.md",
+      "summary_csv": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier1_controls/tier1_summary.csv"
     },
     "backend": "MockSimulator",
-    "command": "experiments/tier1_sanity.py --tests all --steps 80 --seeds 3 --base-seed 42 --readout-lr 0.1 --delayed-readout-lr 0.2 --stop-on-fail --output-dir /Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier1_controls",
+    "command": "experiments/tier1_sanity.py --tests all --steps 80 --seeds 3 --base-seed 42 --readout-lr 0.1 --delayed-readout-lr 0.2 --stop-on-fail --output-dir <repo>/controlled_test_output/tier5_7_20260428_005610/tier1_controls",
     "generated_at_utc": "2026-04-28T04:56:14+00:00",
-    "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier1_controls",
+    "output_dir": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier1_controls",
     "results": [
       {
         "artifacts": {
-          "plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier1_controls/zero_signal_timeseries.png",
-          "timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier1_controls/zero_signal_timeseries.csv"
+          "plot_png": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier1_controls/zero_signal_timeseries.png",
+          "timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier1_controls/zero_signal_timeseries.csv"
         },
         "criteria": [
           {
@@ -88,8 +88,8 @@
       },
       {
         "artifacts": {
-          "plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier1_controls/shuffled_label_timeseries.png",
-          "timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier1_controls/shuffled_label_timeseries.csv"
+          "plot_png": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier1_controls/shuffled_label_timeseries.png",
+          "timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier1_controls/shuffled_label_timeseries.csv"
         },
         "criteria": [
           {
@@ -150,8 +150,8 @@
       },
       {
         "artifacts": {
-          "plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier1_controls/seed_repeat_summary.png",
-          "seed_summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier1_controls/seed_repeat_summary.csv"
+          "plot_png": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier1_controls/seed_repeat_summary.png",
+          "seed_summary_csv": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier1_controls/seed_repeat_summary.csv"
         },
         "criteria": [
           {
@@ -220,18 +220,18 @@
   },
   "tier2_learning": {
     "artifacts": {
-      "report_md": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier2_learning/tier2_report.md",
-      "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier2_learning/tier2_summary.csv"
+      "report_md": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier2_learning/tier2_report.md",
+      "summary_csv": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier2_learning/tier2_summary.csv"
     },
     "backend": "mock",
-    "command": "experiments/tier2_learning.py --tests all --backend mock --steps 120 --base-seed 42 --readout-lr 0.1 --delayed-readout-lr 0.2 --stop-on-fail --output-dir /Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier2_learning",
+    "command": "experiments/tier2_learning.py --tests all --backend mock --steps 120 --base-seed 42 --readout-lr 0.1 --delayed-readout-lr 0.2 --stop-on-fail --output-dir <repo>/controlled_test_output/tier5_7_20260428_005610/tier2_learning",
     "generated_at_utc": "2026-04-28T04:56:17+00:00",
-    "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier2_learning",
+    "output_dir": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier2_learning",
     "results": [
       {
         "artifacts": {
-          "plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier2_learning/fixed_pattern_timeseries.png",
-          "timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier2_learning/fixed_pattern_timeseries.csv"
+          "plot_png": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier2_learning/fixed_pattern_timeseries.png",
+          "timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier2_learning/fixed_pattern_timeseries.csv"
         },
         "criteria": [
           {
@@ -483,8 +483,8 @@
       },
       {
         "artifacts": {
-          "plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier2_learning/delayed_reward_timeseries.png",
-          "timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier2_learning/delayed_reward_timeseries.csv"
+          "plot_png": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier2_learning/delayed_reward_timeseries.png",
+          "timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier2_learning/delayed_reward_timeseries.csv"
         },
         "criteria": [
           {
@@ -746,8 +746,8 @@
       },
       {
         "artifacts": {
-          "plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier2_learning/nonstationary_switch_timeseries.png",
-          "timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier2_learning/nonstationary_switch_timeseries.csv"
+          "plot_png": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier2_learning/nonstationary_switch_timeseries.png",
+          "timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier2_learning/nonstationary_switch_timeseries.csv"
         },
         "criteria": [
           {
@@ -1039,13 +1039,13 @@
   },
   "tier3_ablations": {
     "backend": "mock",
-    "command": "experiments/tier3_ablation.py --tests all --backend mock --steps 120 --ecology-steps 140 --seed-count 1 --base-seed 42 --readout-lr 0.1 --delayed-readout-lr 0.2 --stop-on-fail --output-dir /Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier3_ablations",
+    "command": "experiments/tier3_ablation.py --tests all --backend mock --steps 120 --ecology-steps 140 --seed-count 1 --base-seed 42 --readout-lr 0.1 --delayed-readout-lr 0.2 --stop-on-fail --output-dir <repo>/controlled_test_output/tier5_7_20260428_005610/tier3_ablations",
     "generated_at_utc": "2026-04-28T04:56:21+00:00",
-    "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier3_ablations",
+    "output_dir": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier3_ablations",
     "results": [
       {
         "artifacts": {
-          "comparison_plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier3_ablations/no_dopamine_ablation_comparison.png"
+          "comparison_plot_png": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier3_ablations/no_dopamine_ablation_comparison.png"
         },
         "cases": [
           {
@@ -1114,7 +1114,7 @@
               "total_deaths_sum": 0
             },
             "artifacts": {
-              "seed_42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier3_ablations/no_dopamine_ablation_intact_seed42_timeseries.csv"
+              "seed_42_timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier3_ablations/no_dopamine_ablation_intact_seed42_timeseries.csv"
             },
             "fixed_population": true,
             "label": "intact",
@@ -1410,7 +1410,7 @@
               "total_deaths_sum": 0
             },
             "artifacts": {
-              "seed_42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier3_ablations/no_dopamine_ablation_no_dopamine_seed42_timeseries.csv"
+              "seed_42_timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier3_ablations/no_dopamine_ablation_no_dopamine_seed42_timeseries.csv"
             },
             "fixed_population": true,
             "label": "no_dopamine",
@@ -1818,7 +1818,7 @@
       },
       {
         "artifacts": {
-          "comparison_plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier3_ablations/no_plasticity_ablation_comparison.png"
+          "comparison_plot_png": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier3_ablations/no_plasticity_ablation_comparison.png"
         },
         "cases": [
           {
@@ -1887,7 +1887,7 @@
               "total_deaths_sum": 0
             },
             "artifacts": {
-              "seed_42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier3_ablations/no_plasticity_ablation_intact_seed42_timeseries.csv"
+              "seed_42_timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier3_ablations/no_plasticity_ablation_intact_seed42_timeseries.csv"
             },
             "fixed_population": true,
             "label": "intact",
@@ -2183,7 +2183,7 @@
               "total_deaths_sum": 0
             },
             "artifacts": {
-              "seed_42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier3_ablations/no_plasticity_ablation_no_plasticity_seed42_timeseries.csv"
+              "seed_42_timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier3_ablations/no_plasticity_ablation_no_plasticity_seed42_timeseries.csv"
             },
             "fixed_population": true,
             "label": "no_plasticity",
@@ -2591,7 +2591,7 @@
       },
       {
         "artifacts": {
-          "comparison_plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier3_ablations/no_trophic_selection_ablation_comparison.png"
+          "comparison_plot_png": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier3_ablations/no_trophic_selection_ablation_comparison.png"
         },
         "cases": [
           {
@@ -2660,7 +2660,7 @@
               "total_deaths_sum": 0
             },
             "artifacts": {
-              "seed_42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier3_ablations/no_trophic_selection_ablation_intact_seed42_timeseries.csv"
+              "seed_42_timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier3_ablations/no_trophic_selection_ablation_intact_seed42_timeseries.csv"
             },
             "fixed_population": false,
             "label": "intact",
@@ -2957,7 +2957,7 @@
               "total_deaths_sum": 0
             },
             "artifacts": {
-              "seed_42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier3_ablations/no_trophic_selection_ablation_no_trophic_selection_seed42_timeseries.csv"
+              "seed_42_timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier3_ablations/no_trophic_selection_ablation_no_trophic_selection_seed42_timeseries.csv"
             },
             "fixed_population": true,
             "label": "no_trophic_selection",

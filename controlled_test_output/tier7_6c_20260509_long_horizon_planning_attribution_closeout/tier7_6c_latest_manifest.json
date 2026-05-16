@@ -3,66 +3,66 @@
     {
       "bytes": 1039,
       "name": "attribution_checks_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout/tier7_6c_attribution_checks.csv",
+      "path": "<repo>/controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout/tier7_6c_attribution_checks.csv",
       "sha256": "d035f1f4b78fc305ce2b67d2b65df44a993e0eca28c957b71e9da94f9fc55e5c"
     },
     {
       "bytes": 750,
       "name": "claim_boundary_md",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout/tier7_6c_claim_boundary.md",
+      "path": "<repo>/controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout/tier7_6c_claim_boundary.md",
       "sha256": "e1efccf34beb93ee4bcd9cebdbe07eab3b058856ae81f80f6256d98dd622b673"
     },
     {
       "bytes": 458,
       "name": "decision_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout/tier7_6c_decision.csv",
+      "path": "<repo>/controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout/tier7_6c_decision.csv",
       "sha256": "4b2b75694ce72f17c2600c2dda62d0c68fdfbf0f14aba94aa08889ec94a998fd"
     },
     {
       "bytes": 535,
       "name": "decision_json",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout/tier7_6c_decision.json",
+      "path": "<repo>/controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout/tier7_6c_decision.json",
       "sha256": "16fd5a82b75687eba9ea263d328b961a22edfec1e98b095f0ff02c61b8d65ae6"
     },
     {
       "bytes": 432,
       "name": "promotion_decisions_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout/tier7_6c_promotion_decisions.csv",
+      "path": "<repo>/controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout/tier7_6c_promotion_decisions.csv",
       "sha256": "32ee125e5d84ea8aed6218b88a83f1547069669fdda9b65404697c2e5aab1068"
     },
     {
       "bytes": 2563,
       "name": "report_md",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout/tier7_6c_report.md",
+      "path": "<repo>/controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout/tier7_6c_report.md",
       "sha256": "6f9c8f11414ec31bbcb61c62ea5207a8f5de54dc384b9e8aaa549fcf4f56ba8c"
     },
     {
       "bytes": 10400,
       "name": "results_json",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout/tier7_6c_results.json",
+      "path": "<repo>/controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout/tier7_6c_results.json",
       "sha256": "0c555daebd932f32fa246e08f04521e947c1113aae638562cd6ed84c178a05e5"
     },
     {
       "bytes": 501,
       "name": "risk_register_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout/tier7_6c_risk_register.csv",
+      "path": "<repo>/controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout/tier7_6c_risk_register.csv",
       "sha256": "d23bc151c78121462a859e29bdee90b3a9693750d934d6430aa0a0ef9a24805f"
     },
     {
       "bytes": 142,
       "name": "route_decisions_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout/tier7_6c_route_decisions.csv",
+      "path": "<repo>/controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout/tier7_6c_route_decisions.csv",
       "sha256": "4a5d236eae71900d7a4a5937ac93308d1d44efb4946c6416b29b2ca5b12e3919"
     },
     {
       "bytes": 1169,
       "name": "summary_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout/tier7_6c_summary.csv",
+      "path": "<repo>/controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout/tier7_6c_summary.csv",
       "sha256": "973c8191d85fb2903aa2c7b7f7172abf21baa9baf2343623a4bd93494515eada"
     }
   ],
   "generated_at_utc": "2026-05-09T04:23:50+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout",
+  "output_dir": "<repo>/controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout",
   "runner_revision": "tier7_6c_long_horizon_planning_attribution_closeout_20260509_0001",
   "status": "PASS",
   "tier": "Tier 7.6c - Long-Horizon Planning / Subgoal-Control Attribution + Promotion Decision"

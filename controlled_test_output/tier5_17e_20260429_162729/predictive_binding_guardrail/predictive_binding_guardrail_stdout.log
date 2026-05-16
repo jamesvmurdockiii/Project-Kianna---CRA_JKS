@@ -4,7 +4,7 @@
 [tier5.17d] task=cross_modal_binding variant=fixed_history_baseline seed=42
 [tier5.17d] task=cross_modal_binding variant=oracle_latent_upper_bound seed=42
 {
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_162729/predictive_binding_guardrail",
+  "output_dir": "<repo>/controlled_test_output/tier5_17e_20260429_162729/predictive_binding_guardrail",
   "status": "pass",
   "summary": {
     "candidate_min_knn_probe_accuracy": 0.9753086419753086,

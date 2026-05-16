@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.444038+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.586204+00:00",
   "source_generated_at_utc": "2026-05-09T14:30:32+00:00",
   "registry_entry_id": "tier7_7f_repaired_finite_stream_long_run_scoreboard",
   "tier": "Tier 7.7f - Repaired Finite-Stream Long-Run Scoreboard",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7f_20260509_repaired_finite_stream_long_run_scoreboard",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_7f_20260509_repaired_finite_stream_long_run_scoreboard/tier7_7f_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_7f_20260509_repaired_finite_stream_long_run_scoreboard/tier7_7f_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7f_20260509_repaired_finite_stream_long_run_scoreboard/tier7_7f_summary.csv",
+  "output_dir": "controlled_test_output/tier7_7f_20260509_repaired_finite_stream_long_run_scoreboard",
+  "manifest": "controlled_test_output/tier7_7f_20260509_repaired_finite_stream_long_run_scoreboard/tier7_7f_results.json",
+  "report": "controlled_test_output/tier7_7f_20260509_repaired_finite_stream_long_run_scoreboard/tier7_7f_report.md",
+  "summary_csv": "controlled_test_output/tier7_7f_20260509_repaired_finite_stream_long_run_scoreboard/tier7_7f_summary.csv",
   "canonical": true,
   "claim": "Tier 7.7f reran the locked long-run scoreboard using the repaired NARMA10 U(0,0.2) stream and produced a valid finite-stream classification: mackey_only_localized. Mackey-Glass persisted across 8000/16000/32000, while Lorenz stayed flat/weak, repaired NARMA10 stayed near-flat, and ESN remained the best external baseline.",
   "caveat": "Scoring evidence only; not a baseline freeze, not hardware/native evidence, not broad public usefulness, not external-baseline superiority, and not permission to mix repaired U(0,0.2) NARMA scores with prior U(0,0.5) NARMA scores."

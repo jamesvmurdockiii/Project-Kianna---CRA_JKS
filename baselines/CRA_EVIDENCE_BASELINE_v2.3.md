@@ -52,9 +52,9 @@ CRA has a bounded v2.3 host-side software baseline for a generic bounded recurre
 
 ## Files Frozen
 
-- `/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.3.json`
-- `/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.3.md`
-- `/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.3_STUDY_REGISTRY.snapshot.json`
+- `<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.3.json`
+- `<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.3.md`
+- `<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.3_STUDY_REGISTRY.snapshot.json`
 
 ## Next Recommended Evidence
 

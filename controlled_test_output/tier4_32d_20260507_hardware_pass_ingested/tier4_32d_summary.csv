@@ -1,5 +1,5 @@
 name,value,rule,passed,note
-hardware results json exists,/Users/james/Downloads/tier4_32d_results.json,exists,True,
+hardware results json exists,<downloads>/tier4_32d_results.json,exists,True,
 hardware mode was run-hardware,run-hardware,== run-hardware,True,
 raw hardware status pass,pass,== pass,True,
 interchip smoke pass,pass,== pass,True,

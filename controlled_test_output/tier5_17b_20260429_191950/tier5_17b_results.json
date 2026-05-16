@@ -1,11 +1,11 @@
 {
   "artifacts": {
-    "failure_modes_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_17b_20260429_191950/tier5_17b_failure_modes.csv",
-    "failure_modes_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_17b_20260429_191950/tier5_17b_failure_modes.png",
-    "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_17b_20260429_191950/tier5_17b_results.json",
-    "repair_plan_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_17b_20260429_191950/tier5_17b_repair_plan.json",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_17b_20260429_191950/tier5_17b_report.md",
-    "task_diagnostics_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_17b_20260429_191950/tier5_17b_task_diagnostics.csv"
+    "failure_modes_csv": "<repo>/controlled_test_output/tier5_17b_20260429_191950/tier5_17b_failure_modes.csv",
+    "failure_modes_png": "<repo>/controlled_test_output/tier5_17b_20260429_191950/tier5_17b_failure_modes.png",
+    "manifest_json": "<repo>/controlled_test_output/tier5_17b_20260429_191950/tier5_17b_results.json",
+    "repair_plan_json": "<repo>/controlled_test_output/tier5_17b_20260429_191950/tier5_17b_repair_plan.json",
+    "report_md": "<repo>/controlled_test_output/tier5_17b_20260429_191950/tier5_17b_report.md",
+    "task_diagnostics_csv": "<repo>/controlled_test_output/tier5_17b_20260429_191950/tier5_17b_task_diagnostics.csv"
   },
   "canonical": false,
   "criteria": [
@@ -15,7 +15,7 @@
       "operator": "exists",
       "passed": true,
       "threshold": true,
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier5_17_20260429_190501"
+      "value": "<repo>/controlled_test_output/tier5_17_20260429_190501"
     },
     {
       "name": "source Tier 5.17 completed expected matrix",
@@ -85,7 +85,7 @@
   "failure_reason": "",
   "generated_at_utc": "2026-04-29T19:19:51+00:00",
   "name": "Tier 5.17b - Pre-Reward Representation Failure Analysis",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_17b_20260429_191950",
+  "output_dir": "<repo>/controlled_test_output/tier5_17b_20260429_191950",
   "status": "pass",
   "summary": {
     "claim_boundary": "Noncanonical diagnostic classification only; not a pre-reward representation-learning promotion, not hardware evidence, and not a v2.0 freeze.",
@@ -110,7 +110,7 @@
       "reward_leakage_runs": 0
     },
     "runtime_seconds": 0.1437695830000001,
-    "source_bundle": "/Users/james/JKS:CRA/controlled_test_output/tier5_17_20260429_190501",
+    "source_bundle": "<repo>/controlled_test_output/tier5_17_20260429_190501",
     "source_status": "fail",
     "task_count": 3
   }

@@ -1,32 +1,32 @@
 {
   "artifacts": {
-    "bridge_profile_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_205214_prepared/tier4_20b_bridge_profile.json",
-    "capsule_config_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_205214_prepared/jobmanager_capsule/capsule_config.json",
-    "capsule_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_205214_prepared/jobmanager_capsule",
-    "ebrains_upload_bundle_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_205214_prepared/ebrains_upload_bundle/CRA_TIER4_20B_UPLOAD",
-    "ebrains_upload_manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_205214_prepared/tier4_20b_ebrains_upload_manifest.json",
-    "ebrains_upload_zip": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_205214_prepared/ebrains_upload_bundle/CRA_TIER4_20B_UPLOAD.zip",
-    "expected_outputs_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_205214_prepared/jobmanager_capsule/expected_outputs.json",
-    "jobmanager_readme": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_205214_prepared/jobmanager_capsule/README_JOBMANAGER.md",
-    "jobmanager_run_script": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_205214_prepared/jobmanager_capsule/run_tier4_20b_on_jobmanager.sh",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_205214_prepared/tier4_20b_report.md",
-    "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_205214_prepared/tier4_20b_results.json",
-    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_205214_prepared/tier4_20b_summary.csv",
-    "v2_1_bridge_profile_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_205214_prepared/jobmanager_capsule/v2_1_bridge_profile.json"
+    "bridge_profile_json": "<repo>/controlled_test_output/tier4_20b_20260429_205214_prepared/tier4_20b_bridge_profile.json",
+    "capsule_config_json": "<repo>/controlled_test_output/tier4_20b_20260429_205214_prepared/jobmanager_capsule/capsule_config.json",
+    "capsule_dir": "<repo>/controlled_test_output/tier4_20b_20260429_205214_prepared/jobmanager_capsule",
+    "ebrains_upload_bundle_dir": "<repo>/controlled_test_output/tier4_20b_20260429_205214_prepared/ebrains_upload_bundle/CRA_TIER4_20B_UPLOAD",
+    "ebrains_upload_manifest": "<repo>/controlled_test_output/tier4_20b_20260429_205214_prepared/tier4_20b_ebrains_upload_manifest.json",
+    "ebrains_upload_zip": "<repo>/controlled_test_output/tier4_20b_20260429_205214_prepared/ebrains_upload_bundle/CRA_TIER4_20B_UPLOAD.zip",
+    "expected_outputs_json": "<repo>/controlled_test_output/tier4_20b_20260429_205214_prepared/jobmanager_capsule/expected_outputs.json",
+    "jobmanager_readme": "<repo>/controlled_test_output/tier4_20b_20260429_205214_prepared/jobmanager_capsule/README_JOBMANAGER.md",
+    "jobmanager_run_script": "<repo>/controlled_test_output/tier4_20b_20260429_205214_prepared/jobmanager_capsule/run_tier4_20b_on_jobmanager.sh",
+    "report_md": "<repo>/controlled_test_output/tier4_20b_20260429_205214_prepared/tier4_20b_report.md",
+    "results_json": "<repo>/controlled_test_output/tier4_20b_20260429_205214_prepared/tier4_20b_results.json",
+    "summary_csv": "<repo>/controlled_test_output/tier4_20b_20260429_205214_prepared/tier4_20b_summary.csv",
+    "v2_1_bridge_profile_json": "<repo>/controlled_test_output/tier4_20b_20260429_205214_prepared/jobmanager_capsule/v2_1_bridge_profile.json"
   },
   "criteria": [
     {
       "name": "v2.1 baseline artifact exists",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.1.json"
+      "value": "<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.1.json"
     },
     {
       "name": "Tier 4.20a transfer audit available",
       "passed": true,
       "rule": "status == pass",
       "value": {
-        "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_20a_20260429_195403/tier4_20a_results.json",
+        "manifest": "<repo>/controlled_test_output/tier4_20a_20260429_195403/tier4_20a_results.json",
         "status": "pass"
       }
     },
@@ -78,13 +78,13 @@
       "name": "capsule directory exists",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_205214_prepared/jobmanager_capsule"
+      "value": "<repo>/controlled_test_output/tier4_20b_20260429_205214_prepared/jobmanager_capsule"
     }
   ],
   "failure_reason": "",
   "generated_at_utc": "2026-04-30T00:52:14+00:00",
   "mode": "prepare",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_205214_prepared",
+  "output_dir": "<repo>/controlled_test_output/tier4_20b_20260429_205214_prepared",
   "status": "prepared",
   "summary": {
     "baseline": "v2.1",
@@ -106,7 +106,7 @@
       "profile_name": "v2_1_chunked_bridge_probe",
       "rows": 7
     },
-    "capsule_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_205214_prepared/jobmanager_capsule",
+    "capsule_dir": "<repo>/controlled_test_output/tier4_20b_20260429_205214_prepared/jobmanager_capsule",
     "chunk_size_steps": 50,
     "ebrains_upload_command": "python3 run.py",
     "ebrains_upload_entrypoint": "run.py",

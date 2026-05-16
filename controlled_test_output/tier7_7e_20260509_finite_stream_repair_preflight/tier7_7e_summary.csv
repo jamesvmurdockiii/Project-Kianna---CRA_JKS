@@ -1,8 +1,8 @@
 name,criterion,value,operator,rule,passed,pass,note,details
-Tier 7.7d prerequisite exists,Tier 7.7d prerequisite exists,/Users/james/JKS:CRA/controlled_test_output/tier7_7d_20260509_standardized_long_run_failure_scoring_gate/tier7_7d_results.json,exists,exists,True,True,,
+Tier 7.7d prerequisite exists,Tier 7.7d prerequisite exists,<repo>/controlled_test_output/tier7_7d_20260509_standardized_long_run_failure_scoring_gate/tier7_7d_results.json,exists,exists,True,True,,
 Tier 7.7d prerequisite passed,Tier 7.7d prerequisite passed,pass,== pass,== pass,True,True,,
 Tier 7.7d outcome is finite-stream blocker,Tier 7.7d outcome is finite-stream blocker,benchmark_stream_invalid,== benchmark_stream_invalid,== benchmark_stream_invalid,True,True,,
-Tier 7.7c contract exists,Tier 7.7c contract exists,/Users/james/JKS:CRA/controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract/tier7_7c_results.json,exists and pass,exists and pass,True,True,,
+Tier 7.7c contract exists,Tier 7.7c contract exists,<repo>/controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract/tier7_7c_results.json,exists and pass,exists and pass,True,True,,
 selected repair is explicit,selected repair is explicit,narma10_reduced_input_u02,non-empty selected generator,non-empty selected generator,True,True,,
 selected repair preserves equation coefficients,selected repair preserves equation coefficients,"{'alpha': 0.3, 'beta': 0.05, 'gamma': 1.5, 'delta': 0.1, 'order': 10}",standard NARMA10 coefficients,standard NARMA10 coefficients,True,True,,
 selected repair finite at all required cells,selected repair finite at all required cells,9,== 9,== 9,True,True,,

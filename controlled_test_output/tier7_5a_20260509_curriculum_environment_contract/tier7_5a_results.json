@@ -49,9 +49,9 @@
   "criteria": [
     {
       "criterion": "tier7_4h_prerequisite_exists",
-      "details": "/Users/james/JKS:CRA/controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout/tier7_4h_results.json",
+      "details": "<repo>/controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout/tier7_4h_results.json",
       "name": "tier7_4h_prerequisite_exists",
-      "note": "/Users/james/JKS:CRA/controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout/tier7_4h_results.json",
+      "note": "<repo>/controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout/tier7_4h_results.json",
       "operator": "must exist",
       "pass": true,
       "passed": true,

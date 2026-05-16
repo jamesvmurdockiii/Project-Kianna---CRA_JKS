@@ -1,10 +1,10 @@
 {
   "artifacts": {
-    "criteria_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_r0_20260506_protocol_truth_audit/tier4_32a_r0_criteria.csv",
-    "final_decision_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_r0_20260506_protocol_truth_audit/tier4_32a_r0_final_decision.json",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_r0_20260506_protocol_truth_audit/tier4_32a_r0_report.md",
-    "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_r0_20260506_protocol_truth_audit/tier4_32a_r0_results.json",
-    "source_findings_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_r0_20260506_protocol_truth_audit/tier4_32a_r0_source_findings.csv"
+    "criteria_csv": "<repo>/controlled_test_output/tier4_32a_r0_20260506_protocol_truth_audit/tier4_32a_r0_criteria.csv",
+    "final_decision_json": "<repo>/controlled_test_output/tier4_32a_r0_20260506_protocol_truth_audit/tier4_32a_r0_final_decision.json",
+    "report_md": "<repo>/controlled_test_output/tier4_32a_r0_20260506_protocol_truth_audit/tier4_32a_r0_report.md",
+    "results_json": "<repo>/controlled_test_output/tier4_32a_r0_20260506_protocol_truth_audit/tier4_32a_r0_results.json",
+    "source_findings_csv": "<repo>/controlled_test_output/tier4_32a_r0_20260506_protocol_truth_audit/tier4_32a_r0_source_findings.csv"
   },
   "claim_boundary": "Tier 4.32a-r0 is a source/documentation truth audit. It proves that the planned MCPL-first scale stress cannot be honestly packaged yet because the current confidence-gated lookup path still uses SDP and the MCPL lookup helpers do not carry confidence or shard identity. It is not a hardware run, not speedup evidence, not multi-chip scaling, and not a baseline freeze.",
   "criteria": [

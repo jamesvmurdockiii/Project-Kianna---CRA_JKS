@@ -1,11 +1,11 @@
 {
   "artifacts": {
-    "delayed_cue_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22b_20260430_continuous_transport_local/tier4_22b_delayed_cue_seed42_timeseries.csv",
-    "hard_noisy_switching_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22b_20260430_continuous_transport_local/tier4_22b_hard_noisy_switching_seed42_timeseries.csv",
-    "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_22b_20260430_continuous_transport_local/tier4_22b_results.json",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_22b_20260430_continuous_transport_local/tier4_22b_report.md",
-    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22b_20260430_continuous_transport_local/tier4_22b_summary.csv",
-    "timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22b_20260430_continuous_transport_local/tier4_22b_timeseries.csv"
+    "delayed_cue_seed42_timeseries_csv": "<repo>/controlled_test_output/tier4_22b_20260430_continuous_transport_local/tier4_22b_delayed_cue_seed42_timeseries.csv",
+    "hard_noisy_switching_seed42_timeseries_csv": "<repo>/controlled_test_output/tier4_22b_20260430_continuous_transport_local/tier4_22b_hard_noisy_switching_seed42_timeseries.csv",
+    "manifest_json": "<repo>/controlled_test_output/tier4_22b_20260430_continuous_transport_local/tier4_22b_results.json",
+    "report_md": "<repo>/controlled_test_output/tier4_22b_20260430_continuous_transport_local/tier4_22b_report.md",
+    "summary_csv": "<repo>/controlled_test_output/tier4_22b_20260430_continuous_transport_local/tier4_22b_summary.csv",
+    "timeseries_csv": "<repo>/controlled_test_output/tier4_22b_20260430_continuous_transport_local/tier4_22b_timeseries.csv"
   },
   "case_summaries": [
     {
@@ -171,7 +171,7 @@
   "failure_reason": "",
   "generated_at_utc": "2026-04-30T18:08:05+00:00",
   "mode": "local",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_22b_20260430_continuous_transport_local",
+  "output_dir": "<repo>/controlled_test_output/tier4_22b_20260430_continuous_transport_local",
   "status": "pass",
   "summary": {
     "all_cases_passed": true,
@@ -200,7 +200,7 @@
       "delayed_cue",
       "hard_noisy_switching"
     ],
-    "tier4_22a0_manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_22a0_20260430_spinnaker_constrained_preflight/tier4_22a0_results.json",
+    "tier4_22a0_manifest": "<repo>/controlled_test_output/tier4_22a0_20260430_spinnaker_constrained_preflight/tier4_22a0_results.json",
     "tier4_22a0_status": "pass",
     "total_step_spikes_min": 101056,
     "total_step_spikes_sum": 202168

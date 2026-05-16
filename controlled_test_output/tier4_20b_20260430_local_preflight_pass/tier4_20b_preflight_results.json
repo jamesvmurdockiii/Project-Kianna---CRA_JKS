@@ -1,8 +1,8 @@
 {
   "artifacts": {
-    "local_step_chunk_parity": "/Users/james/JKS:CRA/tier4_20b_preflight_output/local_step_chunk_parity",
-    "results_json": "/Users/james/JKS:CRA/tier4_20b_preflight_output/tier4_20b_preflight_results.json",
-    "source_prepare_smoke": "/Users/james/JKS:CRA/tier4_20b_preflight_output/source_prepare_smoke"
+    "local_step_chunk_parity": "<repo>/tier4_20b_preflight_output/local_step_chunk_parity",
+    "results_json": "<repo>/tier4_20b_preflight_output/tier4_20b_preflight_results.json",
+    "source_prepare_smoke": "<repo>/tier4_20b_preflight_output/source_prepare_smoke"
   },
   "claim_boundary": [
     "This is a cheap source/simulation preflight, not hardware evidence.",
@@ -29,13 +29,13 @@
         "--delayed-readout-lr",
         "0.20",
         "--output-dir",
-        "/Users/james/JKS:CRA/tier4_20b_preflight_output/source_prepare_smoke"
+        "<repo>/tier4_20b_preflight_output/source_prepare_smoke"
       ],
       "label": "source prepare smoke",
       "return_code": 0,
       "started_at_utc": "2026-04-30T02:13:35+00:00",
-      "stderr_log": "/Users/james/JKS:CRA/tier4_20b_preflight_output/source_prepare_smoke_stderr.log",
-      "stdout_log": "/Users/james/JKS:CRA/tier4_20b_preflight_output/source_prepare_smoke_stdout.log"
+      "stderr_log": "<repo>/tier4_20b_preflight_output/source_prepare_smoke_stderr.log",
+      "stdout_log": "<repo>/tier4_20b_preflight_output/source_prepare_smoke_stdout.log"
     },
     {
       "command": [
@@ -48,13 +48,13 @@
         "--chunk-sizes",
         "5,10",
         "--output-dir",
-        "/Users/james/JKS:CRA/tier4_20b_preflight_output/local_step_chunk_parity"
+        "<repo>/tier4_20b_preflight_output/local_step_chunk_parity"
       ],
       "label": "local step chunk parity",
       "return_code": 0,
       "started_at_utc": "2026-04-30T02:13:35+00:00",
-      "stderr_log": "/Users/james/JKS:CRA/tier4_20b_preflight_output/local_step_chunk_parity_stderr.log",
-      "stdout_log": "/Users/james/JKS:CRA/tier4_20b_preflight_output/local_step_chunk_parity_stdout.log"
+      "stderr_log": "<repo>/tier4_20b_preflight_output/local_step_chunk_parity_stderr.log",
+      "stdout_log": "<repo>/tier4_20b_preflight_output/local_step_chunk_parity_stdout.log"
     }
   ],
   "criteria": [

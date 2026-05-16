@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.607374+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.747797+00:00",
   "source_generated_at_utc": "2026-05-06T15:44:12+00:00",
   "registry_entry_id": "tier4_31c_native_temporal_runtime_source_audit",
   "tier": "Tier 4.31c - Native Temporal-Substrate Runtime Source Audit",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_31c_20260506_native_temporal_runtime_source_audit",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_31c_20260506_native_temporal_runtime_source_audit/tier4_31c_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_31c_20260506_native_temporal_runtime_source_audit/tier4_31c_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_31c_20260506_native_temporal_runtime_source_audit/tier4_31c_summary.csv",
+  "output_dir": "controlled_test_output/tier4_31c_20260506_native_temporal_runtime_source_audit",
+  "manifest": "controlled_test_output/tier4_31c_20260506_native_temporal_runtime_source_audit/tier4_31c_results.json",
+  "report": "controlled_test_output/tier4_31c_20260506_native_temporal_runtime_source_audit/tier4_31c_report.md",
+  "summary_csv": "controlled_test_output/tier4_31c_20260506_native_temporal_runtime_source_audit/tier4_31c_summary.csv",
   "canonical": true,
   "claim": "The custom C runtime now owns the seven-EMA fixed-point temporal subset from Tier 4.31b with versioned state, compact readback, behavior-backed sham modes, profile ownership guards, and local C host tests before any EBRAINS upload.",
   "caveat": "Local source/runtime host evidence only; not SpiNNaker hardware evidence, not speedup, not multi-chip scaling, not nonlinear recurrence, not native replay/sleep, not native macro eligibility, not universal benchmark superiority, and not a new baseline freeze."

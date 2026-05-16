@@ -99,7 +99,7 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/tier7_1d_results.json"
+      "value": "<repo>/controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/tier7_1d_results.json"
     },
     {
       "name": "Tier 7.1d passed",
@@ -199,9 +199,9 @@
   "failed_criteria": [],
   "generated_at_utc": "2026-05-08T21:28:37+00:00",
   "next_step": "If the candidate is not confirmed, do not keep tuning C-MAPSS. Move to the next predeclared public benchmark family or a planned general mechanism with its own evidence contract. If confirmed in a later expanded gate, require full C-MAPSS FD001-FD004 and stronger external baselines before any paper usefulness claim.",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1e_20260508_cmapss_capped_readout_fairness_confirmation",
+  "output_dir": "<repo>/controlled_test_output/tier7_1e_20260508_cmapss_capped_readout_fairness_confirmation",
   "runner_revision": "tier7_1e_cmapss_capped_readout_fairness_confirmation_20260508_0001",
-  "source_tier7_1d": "/Users/james/JKS:CRA/controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/tier7_1d_results.json",
+  "source_tier7_1d": "<repo>/controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/tier7_1d_results.json",
   "status": "pass",
   "tier": "Tier 7.1e - C-MAPSS Capped-RUL/Readout Fairness Confirmation"
 }

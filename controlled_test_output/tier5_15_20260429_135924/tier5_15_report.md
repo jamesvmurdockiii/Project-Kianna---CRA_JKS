@@ -7,7 +7,7 @@
 - Tasks: `fixed_pattern, delayed_cue, hard_noisy_switching, sensor_control`
 - Encodings: `rate, latency, burst, population, temporal_interval`
 - Models: `temporal_cra, time_shuffle_control, rate_only_control, sign_persistence, online_perceptron, online_logistic_regression, echo_state_network, small_gru, stdp_only_snn`
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier5_15_20260429_135924`
+- Output directory: `<repo>/controlled_test_output/tier5_15_20260429_135924`
 
 Tier 5.15 tests whether spike timing can carry task-relevant information, rather than only using spikes as a scalar transport layer.
 

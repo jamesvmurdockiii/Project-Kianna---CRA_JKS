@@ -5,7 +5,7 @@
   "mode": "ingest",
   "status": "pass",
   "output_dir": "controlled_test_output/tier4_28b_20260502_hardware_pass_ingested",
-  "hardware_output_dir": "/Users/james/Downloads/tier4_28b_ingest",
+  "hardware_output_dir": "<downloads>/tier4_28b_ingest",
   "passed_count": 38,
   "total_count": 38,
   "criteria": [

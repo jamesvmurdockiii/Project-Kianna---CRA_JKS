@@ -5809,7 +5809,7 @@
     2000,
     8000
   ],
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_0i_20260508_recurrence_topology_specificity_gate",
+  "output_dir": "<repo>/controlled_test_output/tier7_0i_20260508_recurrence_topology_specificity_gate",
   "runner_revision": "tier7_0i_recurrence_topology_specificity_gate_20260508_0001",
   "runtime_seconds": 24.171007707999998,
   "seeds": [

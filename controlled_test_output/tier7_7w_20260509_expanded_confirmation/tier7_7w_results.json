@@ -107,7 +107,7 @@
     "not hardware/native transfer"
   ],
   "outcome": "expanded_not_confirmed",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7w_20260509_expanded_confirmation",
+  "output_dir": "<repo>/controlled_test_output/tier7_7w_20260509_expanded_confirmation",
   "runner_revision": "tier7_7w_expanded_confirmation_20260509_0001",
   "status": "fail",
   "tier": "Tier 7.7w - Expanded Standardized Confirmation (Family B)"

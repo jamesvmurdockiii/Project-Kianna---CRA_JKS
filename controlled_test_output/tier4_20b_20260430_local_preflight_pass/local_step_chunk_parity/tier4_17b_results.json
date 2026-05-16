@@ -1,11 +1,11 @@
 {
   "artifacts": {
-    "comparison_csv": "/Users/james/JKS:CRA/tier4_20b_preflight_output/local_step_chunk_parity/tier4_17b_comparisons.csv",
-    "manifest_json": "/Users/james/JKS:CRA/tier4_20b_preflight_output/local_step_chunk_parity/tier4_17b_results.json",
-    "parity_png": "/Users/james/JKS:CRA/tier4_20b_preflight_output/local_step_chunk_parity/tier4_17b_parity.png",
-    "report_md": "/Users/james/JKS:CRA/tier4_20b_preflight_output/local_step_chunk_parity/tier4_17b_report.md",
-    "summary_csv": "/Users/james/JKS:CRA/tier4_20b_preflight_output/local_step_chunk_parity/tier4_17b_summary.csv",
-    "timeseries_csv": "/Users/james/JKS:CRA/tier4_20b_preflight_output/local_step_chunk_parity/tier4_17b_timeseries.csv"
+    "comparison_csv": "<repo>/tier4_20b_preflight_output/local_step_chunk_parity/tier4_17b_comparisons.csv",
+    "manifest_json": "<repo>/tier4_20b_preflight_output/local_step_chunk_parity/tier4_17b_results.json",
+    "parity_png": "<repo>/tier4_20b_preflight_output/local_step_chunk_parity/tier4_17b_parity.png",
+    "report_md": "<repo>/tier4_20b_preflight_output/local_step_chunk_parity/tier4_17b_report.md",
+    "summary_csv": "<repo>/tier4_20b_preflight_output/local_step_chunk_parity/tier4_17b_summary.csv",
+    "timeseries_csv": "<repo>/tier4_20b_preflight_output/local_step_chunk_parity/tier4_17b_timeseries.csv"
   },
   "comparisons": [
     {

@@ -1,5 +1,5 @@
 criterion,passed,value,rule
-Tier 7.1f contract exists,True,/Users/james/JKS:CRA/controlled_test_output/tier7_1f_20260508_next_public_adapter_contract/tier7_1f_results.json,exists
+Tier 7.1f contract exists,True,<repo>/controlled_test_output/tier7_1f_20260508_next_public_adapter_contract/tier7_1f_results.json,exists
 Tier 7.1f selected NAB,True,numenta_nab_streaming_anomaly,== numenta_nab_streaming_anomaly
 NAB source commit pinned,True,ea702d75cc2258d9d7dd35ca8e5e2539d71f3140,40 hex chars
 official remote reachable or pinned cache usable,True,"{'remote_head': 'ea702d75cc2258d9d7dd35ca8e5e2539d71f3140', 'source_paths_ok': True}",remote observed or cache non-empty

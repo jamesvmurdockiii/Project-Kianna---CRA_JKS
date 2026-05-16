@@ -2,7 +2,7 @@
 
 - Generated: `2026-05-09T03:03:34+00:00`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation`
+- Output directory: `<repo>/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation`
 - Runner revision: `tier7_4g_policy_action_confirmation_reference_separation_20260509_0001`
 
 ## Claim Boundary
@@ -45,12 +45,12 @@
 
 | Criterion | Value | Rule | Pass | Details |
 | --- | --- | --- | --- | --- |
-| tier7_4f_results_exist | `True` | must exist | yes | /Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_results.json |
+| tier7_4f_results_exist | `True` | must exist | yes | <repo>/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_results.json |
 | tier7_4f_status_pass | `pass` | case-insensitive == PASS | yes |  |
-| score_rows_present | `3360` | > 0 | yes | /Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_score_rows.csv |
-| model_summary_present | `20` | > 0 | yes | /Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_model_summary.csv |
-| family_decisions_present | `2` | >= 2 | yes | /Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_family_decisions.csv |
-| locked_cost_model_present | `10` | > 0 | yes | /Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_cost_model.csv |
+| score_rows_present | `3360` | > 0 | yes | <repo>/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_score_rows.csv |
+| model_summary_present | `20` | > 0 | yes | <repo>/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_model_summary.csv |
+| family_decisions_present | `2` | >= 2 | yes | <repo>/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_family_decisions.csv |
+| locked_cost_model_present | `10` | > 0 | yes | <repo>/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_cost_model.csv |
 | heldout_tuning_performed | `False` | must remain False | yes | 7.4g only reuses locked 7.4f scores. |
 | cmapss_candidate_rank_first | `1` | == 1 | yes |  |
 | cmapss_family_previously_confirmed | `True` | == True | yes |  |

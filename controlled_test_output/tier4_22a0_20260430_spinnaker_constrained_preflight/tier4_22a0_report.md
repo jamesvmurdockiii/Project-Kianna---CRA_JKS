@@ -2,7 +2,7 @@
 
 - Generated: `2026-04-30T17:47:50+00:00`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_22a0_20260430_spinnaker_constrained_preflight`
+- Output directory: `<repo>/controlled_test_output/tier4_22a0_20260430_spinnaker_constrained_preflight`
 
 Tier 4.22a0 is a local pre-hardware gate. It reduces transfer risk before more EBRAINS time, but it is not real SpiNNaker evidence.
 

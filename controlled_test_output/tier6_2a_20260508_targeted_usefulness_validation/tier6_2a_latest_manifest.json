@@ -1,10 +1,10 @@
 {
-  "aggregate_summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier6_2a_20260508_targeted_usefulness_validation/tier6_2a_aggregate_summary.csv",
+  "aggregate_summary_csv": "<repo>/controlled_test_output/tier6_2a_20260508_targeted_usefulness_validation/tier6_2a_aggregate_summary.csv",
   "generated_at_utc": "2026-05-08T20:29:19+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier6_2a_20260508_targeted_usefulness_validation",
-  "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier6_2a_20260508_targeted_usefulness_validation/tier6_2a_report.md",
-  "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier6_2a_20260508_targeted_usefulness_validation/tier6_2a_results.json",
+  "output_dir": "<repo>/controlled_test_output/tier6_2a_20260508_targeted_usefulness_validation",
+  "report_md": "<repo>/controlled_test_output/tier6_2a_20260508_targeted_usefulness_validation/tier6_2a_report.md",
+  "results_json": "<repo>/controlled_test_output/tier6_2a_20260508_targeted_usefulness_validation/tier6_2a_results.json",
   "status": "pass",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier6_2a_20260508_targeted_usefulness_validation/tier6_2a_summary.csv",
+  "summary_csv": "<repo>/controlled_test_output/tier6_2a_20260508_targeted_usefulness_validation/tier6_2a_summary.csv",
   "tier": "Tier 6.2a - Targeted Hard-Task Validation Over v2.3"
 }

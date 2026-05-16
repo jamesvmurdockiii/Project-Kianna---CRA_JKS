@@ -1,11 +1,11 @@
 {
   "artifacts": {
-    "fairness_contract_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_14_20260429_165328/tier5_14_fairness_contract.json",
-    "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_14_20260429_165328/tier5_14_results.json",
-    "memory_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_14_20260429_165328/memory_context_binding",
-    "plot_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_14_20260429_165328/tier5_14_working_memory_summary.png",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_14_20260429_165328/tier5_14_report.md",
-    "routing_output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_14_20260429_165328/module_state_routing"
+    "fairness_contract_json": "<repo>/controlled_test_output/tier5_14_20260429_165328/tier5_14_fairness_contract.json",
+    "manifest_json": "<repo>/controlled_test_output/tier5_14_20260429_165328/tier5_14_results.json",
+    "memory_output_dir": "<repo>/controlled_test_output/tier5_14_20260429_165328/memory_context_binding",
+    "plot_png": "<repo>/controlled_test_output/tier5_14_20260429_165328/tier5_14_working_memory_summary.png",
+    "report_md": "<repo>/controlled_test_output/tier5_14_20260429_165328/tier5_14_report.md",
+    "routing_output_dir": "<repo>/controlled_test_output/tier5_14_20260429_165328/module_state_routing"
   },
   "command": "experiments/tier5_working_memory_context_binding.py --backend mock --smoke --stop-on-fail",
   "comparisons": {
@@ -91,15 +91,15 @@
   ],
   "failure_reason": "",
   "generated_at_utc": "2026-04-29T16:54:00+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_14_20260429_165328",
+  "output_dir": "<repo>/controlled_test_output/tier5_14_20260429_165328",
   "status": "pass",
   "subresults": {
     "memory": {
       "artifacts": {
-        "comparisons_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_14_20260429_165328/memory_context_binding/tier5_10g_comparisons.csv",
-        "fairness_contract_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_14_20260429_165328/memory_context_binding/tier5_10g_fairness_contract.json",
-        "memory_edges_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_14_20260429_165328/memory_context_binding/tier5_10g_memory_edges.png",
-        "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_14_20260429_165328/memory_context_binding/tier5_10g_summary.csv"
+        "comparisons_csv": "<repo>/controlled_test_output/tier5_14_20260429_165328/memory_context_binding/tier5_10g_comparisons.csv",
+        "fairness_contract_json": "<repo>/controlled_test_output/tier5_14_20260429_165328/memory_context_binding/tier5_10g_fairness_contract.json",
+        "memory_edges_png": "<repo>/controlled_test_output/tier5_14_20260429_165328/memory_context_binding/tier5_10g_memory_edges.png",
+        "summary_csv": "<repo>/controlled_test_output/tier5_14_20260429_165328/memory_context_binding/tier5_10g_summary.csv"
       },
       "criteria": [
         {
@@ -15100,19 +15100,19 @@
         }
       ],
       "artifacts": {
-        "comparisons_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_14_20260429_165328/module_state_routing/tier5_14_routing_comparisons.csv",
-        "plot_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_14_20260429_165328/module_state_routing/tier5_14_routing_edges.png",
-        "routing_heldout_context_routing_contextual_router_scaffold_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_14_20260429_165328/module_state_routing/routing_heldout_context_routing_contextual_router_scaffold_seed42_timeseries.csv",
-        "routing_heldout_context_routing_internal_always_on_ablation_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_14_20260429_165328/module_state_routing/routing_heldout_context_routing_internal_always_on_ablation_seed42_timeseries.csv",
-        "routing_heldout_context_routing_internal_composition_routing_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_14_20260429_165328/module_state_routing/routing_heldout_context_routing_internal_composition_routing_seed42_timeseries.csv",
-        "routing_heldout_context_routing_internal_context_shuffle_ablation_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_14_20260429_165328/module_state_routing/routing_heldout_context_routing_internal_context_shuffle_ablation_seed42_timeseries.csv",
-        "routing_heldout_context_routing_internal_no_write_ablation_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_14_20260429_165328/module_state_routing/routing_heldout_context_routing_internal_no_write_ablation_seed42_timeseries.csv",
-        "routing_heldout_context_routing_internal_random_router_ablation_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_14_20260429_165328/module_state_routing/routing_heldout_context_routing_internal_random_router_ablation_seed42_timeseries.csv",
-        "routing_heldout_context_routing_internal_router_reset_ablation_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_14_20260429_165328/module_state_routing/routing_heldout_context_routing_internal_router_reset_ablation_seed42_timeseries.csv",
-        "routing_heldout_context_routing_online_perceptron_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_14_20260429_165328/module_state_routing/routing_heldout_context_routing_online_perceptron_seed42_timeseries.csv",
-        "routing_heldout_context_routing_sign_persistence_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_14_20260429_165328/module_state_routing/routing_heldout_context_routing_sign_persistence_seed42_timeseries.csv",
-        "routing_heldout_context_routing_v1_8_raw_cra_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_14_20260429_165328/module_state_routing/routing_heldout_context_routing_v1_8_raw_cra_seed42_timeseries.csv",
-        "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_14_20260429_165328/module_state_routing/tier5_14_routing_summary.csv"
+        "comparisons_csv": "<repo>/controlled_test_output/tier5_14_20260429_165328/module_state_routing/tier5_14_routing_comparisons.csv",
+        "plot_png": "<repo>/controlled_test_output/tier5_14_20260429_165328/module_state_routing/tier5_14_routing_edges.png",
+        "routing_heldout_context_routing_contextual_router_scaffold_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_14_20260429_165328/module_state_routing/routing_heldout_context_routing_contextual_router_scaffold_seed42_timeseries.csv",
+        "routing_heldout_context_routing_internal_always_on_ablation_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_14_20260429_165328/module_state_routing/routing_heldout_context_routing_internal_always_on_ablation_seed42_timeseries.csv",
+        "routing_heldout_context_routing_internal_composition_routing_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_14_20260429_165328/module_state_routing/routing_heldout_context_routing_internal_composition_routing_seed42_timeseries.csv",
+        "routing_heldout_context_routing_internal_context_shuffle_ablation_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_14_20260429_165328/module_state_routing/routing_heldout_context_routing_internal_context_shuffle_ablation_seed42_timeseries.csv",
+        "routing_heldout_context_routing_internal_no_write_ablation_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_14_20260429_165328/module_state_routing/routing_heldout_context_routing_internal_no_write_ablation_seed42_timeseries.csv",
+        "routing_heldout_context_routing_internal_random_router_ablation_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_14_20260429_165328/module_state_routing/routing_heldout_context_routing_internal_random_router_ablation_seed42_timeseries.csv",
+        "routing_heldout_context_routing_internal_router_reset_ablation_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_14_20260429_165328/module_state_routing/routing_heldout_context_routing_internal_router_reset_ablation_seed42_timeseries.csv",
+        "routing_heldout_context_routing_online_perceptron_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_14_20260429_165328/module_state_routing/routing_heldout_context_routing_online_perceptron_seed42_timeseries.csv",
+        "routing_heldout_context_routing_sign_persistence_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_14_20260429_165328/module_state_routing/routing_heldout_context_routing_sign_persistence_seed42_timeseries.csv",
+        "routing_heldout_context_routing_v1_8_raw_cra_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_14_20260429_165328/module_state_routing/routing_heldout_context_routing_v1_8_raw_cra_seed42_timeseries.csv",
+        "summary_csv": "<repo>/controlled_test_output/tier5_14_20260429_165328/module_state_routing/tier5_14_routing_summary.csv"
       },
       "comparisons": [
         {

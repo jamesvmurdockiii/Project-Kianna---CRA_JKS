@@ -315,7 +315,7 @@
   "generated_at_utc": "2026-05-05T19:41:04+00:00",
   "mode": "local-contract",
   "next_step": "Tier 4.30a local static-pool lifecycle reference",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_30_20260505_lifecycle_native_contract",
+  "output_dir": "<repo>/controlled_test_output/tier4_30_20260505_lifecycle_native_contract",
   "readback_schema": [
     {
       "field": "schema_version",
@@ -504,10 +504,10 @@
   ],
   "runner_revision": "tier4_30_lifecycle_native_contract_20260505_0001",
   "source_inputs": {
-    "legacy_neuron_manager": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src/neuron_manager.c",
-    "readiness_results": "/Users/james/JKS:CRA/controlled_test_output/tier4_30_readiness_20260505_lifecycle_native_audit/tier4_30_readiness_results.json",
-    "runtime_config": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src/config.h",
-    "runtime_state_header": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h"
+    "legacy_neuron_manager": "<repo>/coral_reef_spinnaker/spinnaker_runtime/src/neuron_manager.c",
+    "readiness_results": "<repo>/controlled_test_output/tier4_30_readiness_20260505_lifecycle_native_audit/tier4_30_readiness_results.json",
+    "runtime_config": "<repo>/coral_reef_spinnaker/spinnaker_runtime/src/config.h",
+    "runtime_state_header": "<repo>/coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h"
   },
   "status": "pass",
   "tier": "Tier 4.30 - Lifecycle-Native Static-Pool Contract"

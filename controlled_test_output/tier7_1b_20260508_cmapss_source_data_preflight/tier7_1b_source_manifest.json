@@ -90,6 +90,6 @@
     }
   ],
   "zip_bytes": 12425978,
-  "zip_path_local_ignored": "/Users/james/JKS:CRA/.cra_data_cache/nasa_cmapss/CMAPSSData.zip",
+  "zip_path_local_ignored": "<repo>/.cra_data_cache/nasa_cmapss/CMAPSSData.zip",
   "zip_sha256": "74bef434a34db25c7bf72e668ea4cd52afe5f2cf8e44367c55a82bfd91a5a34f"
 }

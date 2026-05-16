@@ -48,7 +48,7 @@ Because the candidate scaffold can read the synthetic context, route, memory, pr
 
 | Criterion | Value | Rule | Pass | Details |
 | --- | --- | --- | --- | --- |
-| tier7_6a_contract_exists | `/Users/james/JKS:CRA/controlled_test_output/tier7_6a_20260509_long_horizon_planning_contract/tier7_6a_results.json` | exists | yes |  |
+| tier7_6a_contract_exists | `<repo>/controlled_test_output/tier7_6a_20260509_long_horizon_planning_contract/tier7_6a_results.json` | exists | yes |  |
 | tier7_6a_contract_passed | `PASS` | case-insensitive == PASS | yes |  |
 | task_families_scored | `5` | == 5 | yes |  |
 | seeds_scored | `[42, 43, 44]` | == [42, 43, 44] | yes |  |

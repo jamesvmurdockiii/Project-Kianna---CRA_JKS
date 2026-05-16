@@ -8,7 +8,7 @@
 - Tasks: `silent_context_reentry`
 - Variants: `all`
 - Selected standard baselines: `sign_persistence,online_perceptron`
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier5_11c_20260429_031407`
+- Output directory: `<repo>/controlled_test_output/tier5_11c_20260429_031407`
 
 Tier 5.11c tests whether prioritized offline replay remains causally specific after the Tier 5.11b shuffled-sham failure. It is not hardware replay and not native on-chip replay.
 

@@ -4,7 +4,7 @@
 - Runner revision: `tier4_32f_multichip_resource_lifecycle_decision_20260507_0001`
 - Status: **PASS**
 - Criteria: `22/22`
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision`
+- Output directory: `<repo>/controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision`
 
 ## Claim Boundary
 

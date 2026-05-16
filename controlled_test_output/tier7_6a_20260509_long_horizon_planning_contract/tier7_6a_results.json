@@ -9,9 +9,9 @@
   "criteria": [
     {
       "criterion": "tier7_5d_prerequisite_exists",
-      "details": "/Users/james/JKS:CRA/controlled_test_output/tier7_5d_20260509_curriculum_environment_attribution_closeout/tier7_5d_results.json",
+      "details": "<repo>/controlled_test_output/tier7_5d_20260509_curriculum_environment_attribution_closeout/tier7_5d_results.json",
       "name": "tier7_5d_prerequisite_exists",
-      "note": "/Users/james/JKS:CRA/controlled_test_output/tier7_5d_20260509_curriculum_environment_attribution_closeout/tier7_5d_results.json",
+      "note": "<repo>/controlled_test_output/tier7_5d_20260509_curriculum_environment_attribution_closeout/tier7_5d_results.json",
       "operator": "must exist",
       "pass": true,
       "passed": true,

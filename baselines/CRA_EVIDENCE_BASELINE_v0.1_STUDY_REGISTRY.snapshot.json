@@ -13,10 +13,10 @@
       "plan_position": "Core tests 1-3",
       "status": "pass",
       "source_generated_at_utc": "2026-04-26T19:58:14+00:00",
-      "canonical_output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_155758",
-      "results_json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_155758/tier1_results.json",
-      "report_md": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_155758/tier1_report.md",
-      "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_155758/tier1_summary.csv",
+      "canonical_output_dir": "<repo>/controlled_test_output/tier1_20260426_155758",
+      "results_json": "<repo>/controlled_test_output/tier1_20260426_155758/tier1_results.json",
+      "report_md": "<repo>/controlled_test_output/tier1_20260426_155758/tier1_report.md",
+      "summary_csv": "<repo>/controlled_test_output/tier1_20260426_155758/tier1_summary.csv",
       "harness": "experiments/tier1_sanity.py",
       "evidence_role": "negative controls",
       "claim": "No usable signal and shuffled labels do not produce false learning.",
@@ -64,8 +64,8 @@
             "warmup_steps": 50
           },
           "artifacts": {
-            "plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_155758/zero_signal_timeseries.png",
-            "timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_155758/zero_signal_timeseries.csv"
+            "plot_png": "<repo>/controlled_test_output/tier1_20260426_155758/zero_signal_timeseries.png",
+            "timeseries_csv": "<repo>/controlled_test_output/tier1_20260426_155758/zero_signal_timeseries.csv"
           }
         },
         {
@@ -104,8 +104,8 @@
             "total_deaths": 0
           },
           "artifacts": {
-            "plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_155758/shuffled_label_timeseries.png",
-            "timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_155758/shuffled_label_timeseries.csv"
+            "plot_png": "<repo>/controlled_test_output/tier1_20260426_155758/shuffled_label_timeseries.png",
+            "timeseries_csv": "<repo>/controlled_test_output/tier1_20260426_155758/shuffled_label_timeseries.csv"
           }
         },
         {
@@ -134,8 +134,8 @@
             "total_runtime_seconds": 13.434143042000002
           },
           "artifacts": {
-            "plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_155758/seed_repeat_summary.png",
-            "seed_summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_155758/seed_repeat_summary.csv"
+            "plot_png": "<repo>/controlled_test_output/tier1_20260426_155758/seed_repeat_summary.png",
+            "seed_summary_csv": "<repo>/controlled_test_output/tier1_20260426_155758/seed_repeat_summary.csv"
           }
         }
       ],
@@ -148,10 +148,10 @@
       "plan_position": "Core tests 4-6",
       "status": "pass",
       "source_generated_at_utc": "2026-04-26T19:58:35+00:00",
-      "canonical_output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_155821",
-      "results_json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_155821/tier2_results.json",
-      "report_md": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_155821/tier2_report.md",
-      "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_155821/tier2_summary.csv",
+      "canonical_output_dir": "<repo>/controlled_test_output/tier2_20260426_155821",
+      "results_json": "<repo>/controlled_test_output/tier2_20260426_155821/tier2_results.json",
+      "report_md": "<repo>/controlled_test_output/tier2_20260426_155821/tier2_report.md",
+      "summary_csv": "<repo>/controlled_test_output/tier2_20260426_155821/tier2_summary.csv",
       "harness": "experiments/tier2_learning.py",
       "evidence_role": "positive learning controls",
       "claim": "Fixed pattern, delayed reward, and nonstationary switch tasks learn above threshold.",
@@ -199,8 +199,8 @@
             "tail_prediction_target_corr": 0.9999998897697358
           },
           "artifacts": {
-            "plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_155821/fixed_pattern_timeseries.png",
-            "timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_155821/fixed_pattern_timeseries.csv"
+            "plot_png": "<repo>/controlled_test_output/tier2_20260426_155821/fixed_pattern_timeseries.png",
+            "timeseries_csv": "<repo>/controlled_test_output/tier2_20260426_155821/fixed_pattern_timeseries.csv"
           }
         },
         {
@@ -239,8 +239,8 @@
             "tail_accuracy_ema": 0.11630880329026452
           },
           "artifacts": {
-            "plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_155821/delayed_reward_timeseries.png",
-            "timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_155821/delayed_reward_timeseries.csv"
+            "plot_png": "<repo>/controlled_test_output/tier2_20260426_155821/delayed_reward_timeseries.png",
+            "timeseries_csv": "<repo>/controlled_test_output/tier2_20260426_155821/delayed_reward_timeseries.csv"
           }
         },
         {
@@ -279,8 +279,8 @@
             "recovery_steps": 38
           },
           "artifacts": {
-            "plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_155821/nonstationary_switch_timeseries.png",
-            "timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_155821/nonstationary_switch_timeseries.csv"
+            "plot_png": "<repo>/controlled_test_output/tier2_20260426_155821/nonstationary_switch_timeseries.png",
+            "timeseries_csv": "<repo>/controlled_test_output/tier2_20260426_155821/nonstationary_switch_timeseries.csv"
           }
         }
       ],
@@ -293,10 +293,10 @@
       "plan_position": "Core tests 7-9",
       "status": "pass",
       "source_generated_at_utc": "2026-04-26T20:01:09+00:00",
-      "canonical_output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_155852",
-      "results_json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_155852/tier3_results.json",
-      "report_md": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_155852/tier3_report.md",
-      "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_155852/tier3_summary.csv",
+      "canonical_output_dir": "<repo>/controlled_test_output/tier3_20260426_155852",
+      "results_json": "<repo>/controlled_test_output/tier3_20260426_155852/tier3_results.json",
+      "report_md": "<repo>/controlled_test_output/tier3_20260426_155852/tier3_report.md",
+      "summary_csv": "<repo>/controlled_test_output/tier3_20260426_155852/tier3_summary.csv",
       "harness": "experiments/tier3_ablation.py",
       "evidence_role": "mechanism ablations",
       "claim": "Dopamine, plasticity, and trophic selection each contribute measurable value.",
@@ -321,7 +321,7 @@
             "delta_tail_accuracy_mean": 1.0
           },
           "artifacts": {
-            "comparison_plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_155852/no_dopamine_ablation_comparison.png"
+            "comparison_plot_png": "<repo>/controlled_test_output/tier3_20260426_155852/no_dopamine_ablation_comparison.png"
           }
         },
         {
@@ -337,7 +337,7 @@
             "delta_tail_accuracy_mean": 1.0
           },
           "artifacts": {
-            "comparison_plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_155852/no_plasticity_ablation_comparison.png"
+            "comparison_plot_png": "<repo>/controlled_test_output/tier3_20260426_155852/no_plasticity_ablation_comparison.png"
           }
         },
         {
@@ -357,7 +357,7 @@
             "tail_accuracy_delta_mean": 0.0
           },
           "artifacts": {
-            "comparison_plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_155852/no_trophic_selection_ablation_comparison.png"
+            "comparison_plot_png": "<repo>/controlled_test_output/tier3_20260426_155852/no_trophic_selection_ablation_comparison.png"
           }
         }
       ],
@@ -370,10 +370,10 @@
       "plan_position": "Core test 10",
       "status": "pass",
       "source_generated_at_utc": "2026-04-26T19:57:00+00:00",
-      "canonical_output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_20260426_155103",
-      "results_json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_20260426_155103/tier4_results.json",
-      "report_md": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_20260426_155103/tier4_report.md",
-      "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_20260426_155103/tier4_summary.csv",
+      "canonical_output_dir": "<repo>/controlled_test_output/tier4_20260426_155103",
+      "results_json": "<repo>/controlled_test_output/tier4_20260426_155103/tier4_results.json",
+      "report_md": "<repo>/controlled_test_output/tier4_20260426_155103/tier4_report.md",
+      "summary_csv": "<repo>/controlled_test_output/tier4_20260426_155103/tier4_summary.csv",
       "harness": "experiments/tier4_scaling.py",
       "evidence_role": "baseline scaling",
       "claim": "Fixed populations from N=4 to N=64 remain stable on the switch stressor.",
@@ -408,8 +408,8 @@
             "switch_step": 110
           },
           "artifacts": {
-            "summary_plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_20260426_155103/population_scaling_summary.png",
-            "timeseries_plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_20260426_155103/population_scaling_timeseries.png"
+            "summary_plot_png": "<repo>/controlled_test_output/tier4_20260426_155103/population_scaling_summary.png",
+            "timeseries_plot_png": "<repo>/controlled_test_output/tier4_20260426_155103/population_scaling_timeseries.png"
           }
         }
       ],
@@ -422,10 +422,10 @@
       "plan_position": "Addendum after core test 10",
       "status": "pass",
       "source_generated_at_utc": "2026-04-26T20:18:39+00:00",
-      "canonical_output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_10b_20260426_161251",
-      "results_json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_10b_20260426_161251/tier4_10b_results.json",
-      "report_md": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_10b_20260426_161251/tier4_10b_report.md",
-      "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_10b_20260426_161251/tier4_10b_summary.csv",
+      "canonical_output_dir": "<repo>/controlled_test_output/tier4_10b_20260426_161251",
+      "results_json": "<repo>/controlled_test_output/tier4_10b_20260426_161251/tier4_10b_results.json",
+      "report_md": "<repo>/controlled_test_output/tier4_10b_20260426_161251/tier4_10b_report.md",
+      "summary_csv": "<repo>/controlled_test_output/tier4_10b_20260426_161251/tier4_10b_summary.csv",
       "harness": "experiments/tier4_hard_scaling.py",
       "evidence_role": "hard scaling stressor",
       "claim": "Hard scaling remains stable and shows value through correlation/recovery/variance rather than raw accuracy.",
@@ -457,8 +457,8 @@
             ]
           },
           "artifacts": {
-            "summary_plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_10b_20260426_161251/hard_population_scaling_summary.png",
-            "timeseries_plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_10b_20260426_161251/hard_population_scaling_timeseries.png"
+            "summary_plot_png": "<repo>/controlled_test_output/tier4_10b_20260426_161251/hard_population_scaling_summary.png",
+            "timeseries_plot_png": "<repo>/controlled_test_output/tier4_10b_20260426_161251/hard_population_scaling_timeseries.png"
           }
         }
       ],
@@ -471,10 +471,10 @@
       "plan_position": "Core test 11",
       "status": "pass",
       "source_generated_at_utc": "2026-04-26T20:49:35+00:00",
-      "canonical_output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655",
-      "results_json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/tier4_11_results.json",
-      "report_md": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/tier4_11_report.md",
-      "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/tier4_11_summary.csv",
+      "canonical_output_dir": "<repo>/controlled_test_output/tier4_11_20260426_164655",
+      "results_json": "<repo>/controlled_test_output/tier4_11_20260426_164655/tier4_11_results.json",
+      "report_md": "<repo>/controlled_test_output/tier4_11_20260426_164655/tier4_11_report.md",
+      "summary_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/tier4_11_summary.csv",
       "harness": "experiments/tier4_domain_transfer.py",
       "evidence_role": "domain transfer",
       "claim": "The same CRA core transfers from finance/signed-return to non-finance sensor_control.",
@@ -493,12 +493,12 @@
           },
           "metrics": {},
           "artifacts": {
-            "seed_42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/finance_signed_return_seed42_timeseries.csv",
-            "seed_42_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/finance_signed_return_seed42_timeseries.png",
-            "seed_43_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/finance_signed_return_seed43_timeseries.csv",
-            "seed_43_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/finance_signed_return_seed43_timeseries.png",
-            "seed_44_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/finance_signed_return_seed44_timeseries.csv",
-            "seed_44_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/finance_signed_return_seed44_timeseries.png"
+            "seed_42_timeseries_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/finance_signed_return_seed42_timeseries.csv",
+            "seed_42_timeseries_png": "<repo>/controlled_test_output/tier4_11_20260426_164655/finance_signed_return_seed42_timeseries.png",
+            "seed_43_timeseries_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/finance_signed_return_seed43_timeseries.csv",
+            "seed_43_timeseries_png": "<repo>/controlled_test_output/tier4_11_20260426_164655/finance_signed_return_seed43_timeseries.png",
+            "seed_44_timeseries_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/finance_signed_return_seed44_timeseries.csv",
+            "seed_44_timeseries_png": "<repo>/controlled_test_output/tier4_11_20260426_164655/finance_signed_return_seed44_timeseries.png"
           }
         },
         {
@@ -512,12 +512,12 @@
           },
           "metrics": {},
           "artifacts": {
-            "seed_42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/sensor_control_seed42_timeseries.csv",
-            "seed_42_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/sensor_control_seed42_timeseries.png",
-            "seed_43_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/sensor_control_seed43_timeseries.csv",
-            "seed_43_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/sensor_control_seed43_timeseries.png",
-            "seed_44_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/sensor_control_seed44_timeseries.csv",
-            "seed_44_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/sensor_control_seed44_timeseries.png"
+            "seed_42_timeseries_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/sensor_control_seed42_timeseries.csv",
+            "seed_42_timeseries_png": "<repo>/controlled_test_output/tier4_11_20260426_164655/sensor_control_seed42_timeseries.png",
+            "seed_43_timeseries_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/sensor_control_seed43_timeseries.csv",
+            "seed_43_timeseries_png": "<repo>/controlled_test_output/tier4_11_20260426_164655/sensor_control_seed43_timeseries.png",
+            "seed_44_timeseries_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/sensor_control_seed44_timeseries.csv",
+            "seed_44_timeseries_png": "<repo>/controlled_test_output/tier4_11_20260426_164655/sensor_control_seed44_timeseries.png"
           }
         },
         {
@@ -531,12 +531,12 @@
           },
           "metrics": {},
           "artifacts": {
-            "seed_42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/finance_zero_signal_seed42_timeseries.csv",
-            "seed_42_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/finance_zero_signal_seed42_timeseries.png",
-            "seed_43_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/finance_zero_signal_seed43_timeseries.csv",
-            "seed_43_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/finance_zero_signal_seed43_timeseries.png",
-            "seed_44_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/finance_zero_signal_seed44_timeseries.csv",
-            "seed_44_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/finance_zero_signal_seed44_timeseries.png"
+            "seed_42_timeseries_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/finance_zero_signal_seed42_timeseries.csv",
+            "seed_42_timeseries_png": "<repo>/controlled_test_output/tier4_11_20260426_164655/finance_zero_signal_seed42_timeseries.png",
+            "seed_43_timeseries_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/finance_zero_signal_seed43_timeseries.csv",
+            "seed_43_timeseries_png": "<repo>/controlled_test_output/tier4_11_20260426_164655/finance_zero_signal_seed43_timeseries.png",
+            "seed_44_timeseries_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/finance_zero_signal_seed44_timeseries.csv",
+            "seed_44_timeseries_png": "<repo>/controlled_test_output/tier4_11_20260426_164655/finance_zero_signal_seed44_timeseries.png"
           }
         },
         {
@@ -550,12 +550,12 @@
           },
           "metrics": {},
           "artifacts": {
-            "seed_42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/sensor_zero_signal_seed42_timeseries.csv",
-            "seed_42_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/sensor_zero_signal_seed42_timeseries.png",
-            "seed_43_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/sensor_zero_signal_seed43_timeseries.csv",
-            "seed_43_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/sensor_zero_signal_seed43_timeseries.png",
-            "seed_44_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/sensor_zero_signal_seed44_timeseries.csv",
-            "seed_44_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/sensor_zero_signal_seed44_timeseries.png"
+            "seed_42_timeseries_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/sensor_zero_signal_seed42_timeseries.csv",
+            "seed_42_timeseries_png": "<repo>/controlled_test_output/tier4_11_20260426_164655/sensor_zero_signal_seed42_timeseries.png",
+            "seed_43_timeseries_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/sensor_zero_signal_seed43_timeseries.csv",
+            "seed_43_timeseries_png": "<repo>/controlled_test_output/tier4_11_20260426_164655/sensor_zero_signal_seed43_timeseries.png",
+            "seed_44_timeseries_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/sensor_zero_signal_seed44_timeseries.csv",
+            "seed_44_timeseries_png": "<repo>/controlled_test_output/tier4_11_20260426_164655/sensor_zero_signal_seed44_timeseries.png"
           }
         },
         {
@@ -569,12 +569,12 @@
           },
           "metrics": {},
           "artifacts": {
-            "seed_42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/finance_shuffled_label_seed42_timeseries.csv",
-            "seed_42_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/finance_shuffled_label_seed42_timeseries.png",
-            "seed_43_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/finance_shuffled_label_seed43_timeseries.csv",
-            "seed_43_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/finance_shuffled_label_seed43_timeseries.png",
-            "seed_44_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/finance_shuffled_label_seed44_timeseries.csv",
-            "seed_44_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/finance_shuffled_label_seed44_timeseries.png"
+            "seed_42_timeseries_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/finance_shuffled_label_seed42_timeseries.csv",
+            "seed_42_timeseries_png": "<repo>/controlled_test_output/tier4_11_20260426_164655/finance_shuffled_label_seed42_timeseries.png",
+            "seed_43_timeseries_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/finance_shuffled_label_seed43_timeseries.csv",
+            "seed_43_timeseries_png": "<repo>/controlled_test_output/tier4_11_20260426_164655/finance_shuffled_label_seed43_timeseries.png",
+            "seed_44_timeseries_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/finance_shuffled_label_seed44_timeseries.csv",
+            "seed_44_timeseries_png": "<repo>/controlled_test_output/tier4_11_20260426_164655/finance_shuffled_label_seed44_timeseries.png"
           }
         },
         {
@@ -588,12 +588,12 @@
           },
           "metrics": {},
           "artifacts": {
-            "seed_42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/sensor_shuffled_label_seed42_timeseries.csv",
-            "seed_42_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/sensor_shuffled_label_seed42_timeseries.png",
-            "seed_43_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/sensor_shuffled_label_seed43_timeseries.csv",
-            "seed_43_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/sensor_shuffled_label_seed43_timeseries.png",
-            "seed_44_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/sensor_shuffled_label_seed44_timeseries.csv",
-            "seed_44_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/sensor_shuffled_label_seed44_timeseries.png"
+            "seed_42_timeseries_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/sensor_shuffled_label_seed42_timeseries.csv",
+            "seed_42_timeseries_png": "<repo>/controlled_test_output/tier4_11_20260426_164655/sensor_shuffled_label_seed42_timeseries.png",
+            "seed_43_timeseries_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/sensor_shuffled_label_seed43_timeseries.csv",
+            "seed_43_timeseries_png": "<repo>/controlled_test_output/tier4_11_20260426_164655/sensor_shuffled_label_seed43_timeseries.png",
+            "seed_44_timeseries_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/sensor_shuffled_label_seed44_timeseries.csv",
+            "seed_44_timeseries_png": "<repo>/controlled_test_output/tier4_11_20260426_164655/sensor_shuffled_label_seed44_timeseries.png"
           }
         }
       ],
@@ -606,10 +606,10 @@
       "plan_position": "Core test 12",
       "status": "pass",
       "source_generated_at_utc": "2026-04-26T21:09:05+00:00",
-      "canonical_output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808",
-      "results_json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/tier4_12_results.json",
-      "report_md": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/tier4_12_report.md",
-      "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/tier4_12_summary.csv",
+      "canonical_output_dir": "<repo>/controlled_test_output/tier4_12_20260426_170808",
+      "results_json": "<repo>/controlled_test_output/tier4_12_20260426_170808/tier4_12_results.json",
+      "report_md": "<repo>/controlled_test_output/tier4_12_20260426_170808/tier4_12_report.md",
+      "summary_csv": "<repo>/controlled_test_output/tier4_12_20260426_170808/tier4_12_summary.csv",
       "harness": "experiments/tier4_backend_parity.py",
       "evidence_role": "backend parity",
       "claim": "The fixed-pattern result survives NEST to Brian2 movement with zero synthetic fallback.",
@@ -628,12 +628,12 @@
           },
           "metrics": {},
           "artifacts": {
-            "seed_42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/nest_fixed_pattern_seed42_timeseries.csv",
-            "seed_42_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/nest_fixed_pattern_seed42_timeseries.png",
-            "seed_43_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/nest_fixed_pattern_seed43_timeseries.csv",
-            "seed_43_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/nest_fixed_pattern_seed43_timeseries.png",
-            "seed_44_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/nest_fixed_pattern_seed44_timeseries.csv",
-            "seed_44_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/nest_fixed_pattern_seed44_timeseries.png"
+            "seed_42_timeseries_csv": "<repo>/controlled_test_output/tier4_12_20260426_170808/nest_fixed_pattern_seed42_timeseries.csv",
+            "seed_42_timeseries_png": "<repo>/controlled_test_output/tier4_12_20260426_170808/nest_fixed_pattern_seed42_timeseries.png",
+            "seed_43_timeseries_csv": "<repo>/controlled_test_output/tier4_12_20260426_170808/nest_fixed_pattern_seed43_timeseries.csv",
+            "seed_43_timeseries_png": "<repo>/controlled_test_output/tier4_12_20260426_170808/nest_fixed_pattern_seed43_timeseries.png",
+            "seed_44_timeseries_csv": "<repo>/controlled_test_output/tier4_12_20260426_170808/nest_fixed_pattern_seed44_timeseries.csv",
+            "seed_44_timeseries_png": "<repo>/controlled_test_output/tier4_12_20260426_170808/nest_fixed_pattern_seed44_timeseries.png"
           }
         },
         {
@@ -647,12 +647,12 @@
           },
           "metrics": {},
           "artifacts": {
-            "seed_42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/brian2_fixed_pattern_seed42_timeseries.csv",
-            "seed_42_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/brian2_fixed_pattern_seed42_timeseries.png",
-            "seed_43_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/brian2_fixed_pattern_seed43_timeseries.csv",
-            "seed_43_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/brian2_fixed_pattern_seed43_timeseries.png",
-            "seed_44_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/brian2_fixed_pattern_seed44_timeseries.csv",
-            "seed_44_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/brian2_fixed_pattern_seed44_timeseries.png"
+            "seed_42_timeseries_csv": "<repo>/controlled_test_output/tier4_12_20260426_170808/brian2_fixed_pattern_seed42_timeseries.csv",
+            "seed_42_timeseries_png": "<repo>/controlled_test_output/tier4_12_20260426_170808/brian2_fixed_pattern_seed42_timeseries.png",
+            "seed_43_timeseries_csv": "<repo>/controlled_test_output/tier4_12_20260426_170808/brian2_fixed_pattern_seed43_timeseries.csv",
+            "seed_43_timeseries_png": "<repo>/controlled_test_output/tier4_12_20260426_170808/brian2_fixed_pattern_seed43_timeseries.png",
+            "seed_44_timeseries_csv": "<repo>/controlled_test_output/tier4_12_20260426_170808/brian2_fixed_pattern_seed44_timeseries.csv",
+            "seed_44_timeseries_png": "<repo>/controlled_test_output/tier4_12_20260426_170808/brian2_fixed_pattern_seed44_timeseries.png"
           }
         },
         {
@@ -718,10 +718,10 @@
       "plan_position": "Hardware addendum after core test 12",
       "status": "pass",
       "source_generated_at_utc": "2026-04-27T00:33:33+00:00",
-      "canonical_output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass",
-      "results_json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_results.json",
-      "report_md": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_report.md",
-      "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_summary.csv",
+      "canonical_output_dir": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass",
+      "results_json": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_results.json",
+      "report_md": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_report.md",
+      "summary_csv": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_summary.csv",
       "harness": "experiments/tier4_spinnaker_hardware_capsule.py",
       "evidence_role": "hardware capsule",
       "claim": "The minimal fixed-pattern CRA capsule executes through pyNN.spiNNaker with real spike readback and passes learning thresholds.",
@@ -767,10 +767,10 @@
             "final_n_alive_std": 0.0
           },
           "artifacts": {
-            "hardware_summary_png": "/tmp/job18372215669669985472.tmp/cra_test/controlled_test_output/tier4_13_20260427_011912/hardware_capsule_summary.png",
-            "seed_42_timeseries_csv": "/tmp/job18372215669669985472.tmp/cra_test/controlled_test_output/tier4_13_20260427_011912/spinnaker_hardware_seed42_timeseries.csv",
-            "seed_42_timeseries_png": "/tmp/job18372215669669985472.tmp/cra_test/controlled_test_output/tier4_13_20260427_011912/spinnaker_hardware_seed42_timeseries.png",
-            "spinnaker_report_1": "/tmp/job18372215669669985472.tmp/cra_test/controlled_test_output/tier4_13_20260427_011912/spinnaker_reports/2026-04-27-01-19-12-390038"
+            "hardware_summary_png": "<jobmanager_tmp>",
+            "seed_42_timeseries_csv": "<jobmanager_tmp>",
+            "seed_42_timeseries_png": "<jobmanager_tmp>",
+            "spinnaker_report_1": "<jobmanager_tmp>"
           }
         }
       ],
@@ -807,7 +807,7 @@
   ],
   "noncanonical_outputs": [
     {
-      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/_legacy_artifacts",
+      "path": "<repo>/controlled_test_output/_legacy_artifacts",
       "name": "_legacy_artifacts",
       "role": "legacy_generated_artifacts",
       "status": "unknown",
@@ -815,77 +815,77 @@
       "results_files": []
     },
     {
-      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/_phase3_probe_ecology",
+      "path": "<repo>/controlled_test_output/_phase3_probe_ecology",
       "name": "_phase3_probe_ecology",
       "role": "probe_or_debug",
       "status": "fail",
       "generated_at_utc": "2026-04-26T19:26:53+00:00",
       "results_files": [
-        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/_phase3_probe_ecology/tier2_results.json"
+        "<repo>/controlled_test_output/_phase3_probe_ecology/tier2_results.json"
       ]
     },
     {
-      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/_phase3_probe_noecology",
+      "path": "<repo>/controlled_test_output/_phase3_probe_noecology",
       "name": "_phase3_probe_noecology",
       "role": "probe_or_debug",
       "status": "fail",
       "generated_at_utc": "2026-04-26T19:27:15+00:00",
       "results_files": [
-        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/_phase3_probe_noecology/tier2_results.json"
+        "<repo>/controlled_test_output/_phase3_probe_noecology/tier2_results.json"
       ]
     },
     {
-      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_150252",
+      "path": "<repo>/controlled_test_output/tier1_20260426_150252",
       "name": "tier1_20260426_150252",
       "role": "superseded_rerun",
       "status": "pass",
       "generated_at_utc": "2026-04-26T19:03:11+00:00",
       "results_files": [
-        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_150252/tier1_results.json"
+        "<repo>/controlled_test_output/tier1_20260426_150252/tier1_results.json"
       ]
     },
     {
-      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_150944",
+      "path": "<repo>/controlled_test_output/tier1_20260426_150944",
       "name": "tier1_20260426_150944",
       "role": "superseded_rerun",
       "status": "pass",
       "generated_at_utc": "2026-04-26T19:10:00+00:00",
       "results_files": [
-        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_150944/tier1_results.json"
+        "<repo>/controlled_test_output/tier1_20260426_150944/tier1_results.json"
       ]
     },
     {
-      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_152035",
+      "path": "<repo>/controlled_test_output/tier1_20260426_152035",
       "name": "tier1_20260426_152035",
       "role": "superseded_rerun",
       "status": "pass",
       "generated_at_utc": "2026-04-26T19:20:51+00:00",
       "results_files": [
-        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_152035/tier1_results.json"
+        "<repo>/controlled_test_output/tier1_20260426_152035/tier1_results.json"
       ]
     },
     {
-      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_153453",
+      "path": "<repo>/controlled_test_output/tier1_20260426_153453",
       "name": "tier1_20260426_153453",
       "role": "superseded_rerun",
       "status": "pass",
       "generated_at_utc": "2026-04-26T19:35:16+00:00",
       "results_files": [
-        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_153453/tier1_results.json"
+        "<repo>/controlled_test_output/tier1_20260426_153453/tier1_results.json"
       ]
     },
     {
-      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_153802",
+      "path": "<repo>/controlled_test_output/tier1_20260426_153802",
       "name": "tier1_20260426_153802",
       "role": "superseded_rerun",
       "status": "pass",
       "generated_at_utc": "2026-04-26T19:38:19+00:00",
       "results_files": [
-        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_153802/tier1_results.json"
+        "<repo>/controlled_test_output/tier1_20260426_153802/tier1_results.json"
       ]
     },
     {
-      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_151539",
+      "path": "<repo>/controlled_test_output/tier2_20260426_151539",
       "name": "tier2_20260426_151539",
       "role": "superseded_rerun",
       "status": "unknown",
@@ -893,213 +893,213 @@
       "results_files": []
     },
     {
-      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_151558",
+      "path": "<repo>/controlled_test_output/tier2_20260426_151558",
       "name": "tier2_20260426_151558",
       "role": "superseded_rerun",
       "status": "fail",
       "generated_at_utc": "2026-04-26T19:16:08+00:00",
       "results_files": [
-        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_151558/tier2_results.json"
+        "<repo>/controlled_test_output/tier2_20260426_151558/tier2_results.json"
       ]
     },
     {
-      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_151659",
+      "path": "<repo>/controlled_test_output/tier2_20260426_151659",
       "name": "tier2_20260426_151659",
       "role": "superseded_rerun",
       "status": "fail",
       "generated_at_utc": "2026-04-26T19:17:08+00:00",
       "results_files": [
-        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_151659/tier2_results.json"
+        "<repo>/controlled_test_output/tier2_20260426_151659/tier2_results.json"
       ]
     },
     {
-      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_151740",
+      "path": "<repo>/controlled_test_output/tier2_20260426_151740",
       "name": "tier2_20260426_151740",
       "role": "superseded_rerun",
       "status": "fail",
       "generated_at_utc": "2026-04-26T19:17:54+00:00",
       "results_files": [
-        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_151740/tier2_results.json"
+        "<repo>/controlled_test_output/tier2_20260426_151740/tier2_results.json"
       ]
     },
     {
-      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_151847",
+      "path": "<repo>/controlled_test_output/tier2_20260426_151847",
       "name": "tier2_20260426_151847",
       "role": "superseded_rerun",
       "status": "fail",
       "generated_at_utc": "2026-04-26T19:18:52+00:00",
       "results_files": [
-        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_151847/tier2_results.json"
+        "<repo>/controlled_test_output/tier2_20260426_151847/tier2_results.json"
       ]
     },
     {
-      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_151923",
+      "path": "<repo>/controlled_test_output/tier2_20260426_151923",
       "name": "tier2_20260426_151923",
       "role": "superseded_rerun",
       "status": "fail",
       "generated_at_utc": "2026-04-26T19:19:37+00:00",
       "results_files": [
-        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_151923/tier2_results.json"
+        "<repo>/controlled_test_output/tier2_20260426_151923/tier2_results.json"
       ]
     },
     {
-      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_152011",
+      "path": "<repo>/controlled_test_output/tier2_20260426_152011",
       "name": "tier2_20260426_152011",
       "role": "superseded_rerun",
       "status": "pass",
       "generated_at_utc": "2026-04-26T19:20:25+00:00",
       "results_files": [
-        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_152011/tier2_results.json"
+        "<repo>/controlled_test_output/tier2_20260426_152011/tier2_results.json"
       ]
     },
     {
-      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_152616",
+      "path": "<repo>/controlled_test_output/tier2_20260426_152616",
       "name": "tier2_20260426_152616",
       "role": "superseded_rerun",
       "status": "pass",
       "generated_at_utc": "2026-04-26T19:26:26+00:00",
       "results_files": [
-        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_152616/tier2_results.json"
+        "<repo>/controlled_test_output/tier2_20260426_152616/tier2_results.json"
       ]
     },
     {
-      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_153522",
+      "path": "<repo>/controlled_test_output/tier2_20260426_153522",
       "name": "tier2_20260426_153522",
       "role": "superseded_rerun",
       "status": "fail",
       "generated_at_utc": "2026-04-26T19:35:42+00:00",
       "results_files": [
-        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_153522/tier2_results.json"
+        "<repo>/controlled_test_output/tier2_20260426_153522/tier2_results.json"
       ]
     },
     {
-      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_153749",
+      "path": "<repo>/controlled_test_output/tier2_20260426_153749",
       "name": "tier2_20260426_153749",
       "role": "superseded_rerun",
       "status": "pass",
       "generated_at_utc": "2026-04-26T19:37:54+00:00",
       "results_files": [
-        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_153749/tier2_results.json"
+        "<repo>/controlled_test_output/tier2_20260426_153749/tier2_results.json"
       ]
     },
     {
-      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_153824",
+      "path": "<repo>/controlled_test_output/tier2_20260426_153824",
       "name": "tier2_20260426_153824",
       "role": "superseded_rerun",
       "status": "pass",
       "generated_at_utc": "2026-04-26T19:38:40+00:00",
       "results_files": [
-        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_153824/tier2_results.json"
+        "<repo>/controlled_test_output/tier2_20260426_153824/tier2_results.json"
       ]
     },
     {
-      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_153145",
+      "path": "<repo>/controlled_test_output/tier3_20260426_153145",
       "name": "tier3_20260426_153145",
       "role": "superseded_rerun",
       "status": "pass",
       "generated_at_utc": "2026-04-26T19:34:10+00:00",
       "results_files": [
-        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_153145/tier3_results.json"
+        "<repo>/controlled_test_output/tier3_20260426_153145/tier3_results.json"
       ]
     },
     {
-      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_153850",
+      "path": "<repo>/controlled_test_output/tier3_20260426_153850",
       "name": "tier3_20260426_153850",
       "role": "superseded_rerun",
       "status": "fail",
       "generated_at_utc": "2026-04-26T19:40:42+00:00",
       "results_files": [
-        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_153850/tier3_results.json"
+        "<repo>/controlled_test_output/tier3_20260426_153850/tier3_results.json"
       ]
     },
     {
-      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_154155",
+      "path": "<repo>/controlled_test_output/tier3_20260426_154155",
       "name": "tier3_20260426_154155",
       "role": "superseded_rerun",
       "status": "pass",
       "generated_at_utc": "2026-04-26T19:43:50+00:00",
       "results_files": [
-        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_154155/tier3_results.json"
+        "<repo>/controlled_test_output/tier3_20260426_154155/tier3_results.json"
       ]
     },
     {
-      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260426_181357",
+      "path": "<repo>/controlled_test_output/tier4_13_20260426_181357",
       "name": "tier4_13_20260426_181357",
       "role": "superseded_rerun",
       "status": "prepared",
       "generated_at_utc": "2026-04-26T22:13:57+00:00",
       "results_files": [
-        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260426_181357/tier4_13_results.json"
+        "<repo>/controlled_test_output/tier4_13_20260426_181357/tier4_13_results.json"
       ]
     },
     {
-      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260426_192413",
+      "path": "<repo>/controlled_test_output/tier4_13_20260426_192413",
       "name": "tier4_13_20260426_192413",
       "role": "superseded_rerun",
       "status": "prepared",
       "generated_at_utc": "2026-04-26T23:24:13+00:00",
       "results_files": [
-        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260426_192413/tier4_13_results.json"
+        "<repo>/controlled_test_output/tier4_13_20260426_192413/tier4_13_results.json"
       ]
     },
     {
-      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260426_192455",
+      "path": "<repo>/controlled_test_output/tier4_13_20260426_192455",
       "name": "tier4_13_20260426_192455",
       "role": "superseded_rerun",
       "status": "prepared",
       "generated_at_utc": "2026-04-26T23:24:55+00:00",
       "results_files": [
-        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260426_192455/tier4_13_results.json"
+        "<repo>/controlled_test_output/tier4_13_20260426_192455/tier4_13_results.json"
       ]
     },
     {
-      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260426_195400",
+      "path": "<repo>/controlled_test_output/tier4_13_20260426_195400",
       "name": "tier4_13_20260426_195400",
       "role": "superseded_rerun",
       "status": "prepared",
       "generated_at_utc": "2026-04-26T23:54:00+00:00",
       "results_files": [
-        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260426_195400/tier4_13_results.json"
+        "<repo>/controlled_test_output/tier4_13_20260426_195400/tier4_13_results.json"
       ]
     },
     {
-      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260426_195507",
+      "path": "<repo>/controlled_test_output/tier4_13_20260426_195507",
       "name": "tier4_13_20260426_195507",
       "role": "superseded_rerun",
       "status": "prepared",
       "generated_at_utc": "2026-04-26T23:55:07+00:00",
       "results_files": [
-        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260426_195507/tier4_13_results.json"
+        "<repo>/controlled_test_output/tier4_13_20260426_195507/tier4_13_results.json"
       ]
     },
     {
-      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260426_201136",
+      "path": "<repo>/controlled_test_output/tier4_13_20260426_201136",
       "name": "tier4_13_20260426_201136",
       "role": "superseded_rerun",
       "status": "prepared",
       "generated_at_utc": "2026-04-27T00:11:36+00:00",
       "results_files": [
-        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260426_201136/tier4_13_results.json"
+        "<repo>/controlled_test_output/tier4_13_20260426_201136/tier4_13_results.json"
       ]
     },
     {
-      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260426_201430",
+      "path": "<repo>/controlled_test_output/tier4_13_20260426_201430",
       "name": "tier4_13_20260426_201430",
       "role": "superseded_rerun",
       "status": "prepared",
       "generated_at_utc": "2026-04-27T00:14:30+00:00",
       "results_files": [
-        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260426_201430/tier4_13_results.json"
+        "<repo>/controlled_test_output/tier4_13_20260426_201430/tier4_13_results.json"
       ]
     },
     {
-      "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260426_201508",
+      "path": "<repo>/controlled_test_output/tier4_13_20260426_201508",
       "name": "tier4_13_20260426_201508",
       "role": "superseded_rerun",
       "status": "prepared",
       "generated_at_utc": "2026-04-27T00:15:08+00:00",
       "results_files": [
-        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260426_201508/tier4_13_results.json"
+        "<repo>/controlled_test_output/tier4_13_20260426_201508/tier4_13_results.json"
       ]
     }
   ],
@@ -1108,7 +1108,7 @@
     "failed_criteria": [],
     "latest_manifest_updates": [
       {
-        "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_latest_manifest.json",
+        "path": "<repo>/controlled_test_output/tier1_latest_manifest.json",
         "registry_entry_id": "tier1_sanity",
         "previous_manifest": {
           "generated_at_utc": "2026-04-27T01:06:25.665497+00:00",
@@ -1116,10 +1116,10 @@
           "registry_entry_id": "tier1_sanity",
           "tier": "Tier 1 - sanity tests",
           "status": "pass",
-          "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_155758",
-          "manifest": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_155758/tier1_results.json",
-          "report": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_155758/tier1_report.md",
-          "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_155758/tier1_summary.csv",
+          "output_dir": "<repo>/controlled_test_output/tier1_20260426_155758",
+          "manifest": "<repo>/controlled_test_output/tier1_20260426_155758/tier1_results.json",
+          "report": "<repo>/controlled_test_output/tier1_20260426_155758/tier1_report.md",
+          "summary_csv": "<repo>/controlled_test_output/tier1_20260426_155758/tier1_summary.csv",
           "canonical": true,
           "claim": "No usable signal and shuffled labels do not produce false learning.",
           "caveat": "Passing Tier 1 rules out obvious fake learning; it does not prove positive learning."
@@ -1130,17 +1130,17 @@
           "registry_entry_id": "tier1_sanity",
           "tier": "Tier 1 - sanity tests",
           "status": "pass",
-          "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_155758",
-          "manifest": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_155758/tier1_results.json",
-          "report": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_155758/tier1_report.md",
-          "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_155758/tier1_summary.csv",
+          "output_dir": "<repo>/controlled_test_output/tier1_20260426_155758",
+          "manifest": "<repo>/controlled_test_output/tier1_20260426_155758/tier1_results.json",
+          "report": "<repo>/controlled_test_output/tier1_20260426_155758/tier1_report.md",
+          "summary_csv": "<repo>/controlled_test_output/tier1_20260426_155758/tier1_summary.csv",
           "canonical": true,
           "claim": "No usable signal and shuffled labels do not produce false learning.",
           "caveat": "Passing Tier 1 rules out obvious fake learning; it does not prove positive learning."
         }
       },
       {
-        "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_latest_manifest.json",
+        "path": "<repo>/controlled_test_output/tier2_latest_manifest.json",
         "registry_entry_id": "tier2_learning",
         "previous_manifest": {
           "generated_at_utc": "2026-04-27T01:06:25.667662+00:00",
@@ -1148,10 +1148,10 @@
           "registry_entry_id": "tier2_learning",
           "tier": "Tier 2 - learning proof tests",
           "status": "pass",
-          "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_155821",
-          "manifest": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_155821/tier2_results.json",
-          "report": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_155821/tier2_report.md",
-          "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_155821/tier2_summary.csv",
+          "output_dir": "<repo>/controlled_test_output/tier2_20260426_155821",
+          "manifest": "<repo>/controlled_test_output/tier2_20260426_155821/tier2_results.json",
+          "report": "<repo>/controlled_test_output/tier2_20260426_155821/tier2_report.md",
+          "summary_csv": "<repo>/controlled_test_output/tier2_20260426_155821/tier2_summary.csv",
           "canonical": true,
           "claim": "Fixed pattern, delayed reward, and nonstationary switch tasks learn above threshold.",
           "caveat": "Positive-control learning evidence depends on the controlled synthetic task definitions."
@@ -1162,17 +1162,17 @@
           "registry_entry_id": "tier2_learning",
           "tier": "Tier 2 - learning proof tests",
           "status": "pass",
-          "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_155821",
-          "manifest": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_155821/tier2_results.json",
-          "report": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_155821/tier2_report.md",
-          "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_155821/tier2_summary.csv",
+          "output_dir": "<repo>/controlled_test_output/tier2_20260426_155821",
+          "manifest": "<repo>/controlled_test_output/tier2_20260426_155821/tier2_results.json",
+          "report": "<repo>/controlled_test_output/tier2_20260426_155821/tier2_report.md",
+          "summary_csv": "<repo>/controlled_test_output/tier2_20260426_155821/tier2_summary.csv",
           "canonical": true,
           "claim": "Fixed pattern, delayed reward, and nonstationary switch tasks learn above threshold.",
           "caveat": "Positive-control learning evidence depends on the controlled synthetic task definitions."
         }
       },
       {
-        "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_latest_manifest.json",
+        "path": "<repo>/controlled_test_output/tier3_latest_manifest.json",
         "registry_entry_id": "tier3_architecture",
         "previous_manifest": {
           "generated_at_utc": "2026-04-27T01:06:25.671077+00:00",
@@ -1180,16 +1180,16 @@
           "registry_entry_id": "tier3_architecture",
           "tier": "Tier 3 - architecture ablation tests",
           "status": "pass",
-          "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_155852",
-          "manifest": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_155852/tier3_results.json",
-          "report": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_155852/tier3_report.md",
-          "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_155852/tier3_summary.csv",
+          "output_dir": "<repo>/controlled_test_output/tier3_20260426_155852",
+          "manifest": "<repo>/controlled_test_output/tier3_20260426_155852/tier3_results.json",
+          "report": "<repo>/controlled_test_output/tier3_20260426_155852/tier3_report.md",
+          "summary_csv": "<repo>/controlled_test_output/tier3_20260426_155852/tier3_summary.csv",
           "canonical": true,
           "claim": "Dopamine, plasticity, and trophic selection each contribute measurable value.",
           "caveat": "Ablation claims are scoped to the controlled tasks and seeds in this bundle.",
-          "latest_manifest": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_155852/tier3_results.json",
-          "latest_report": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_155852/tier3_report.md",
-          "latest_summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_155852/tier3_summary.csv"
+          "latest_manifest": "<repo>/controlled_test_output/tier3_20260426_155852/tier3_results.json",
+          "latest_report": "<repo>/controlled_test_output/tier3_20260426_155852/tier3_report.md",
+          "latest_summary_csv": "<repo>/controlled_test_output/tier3_20260426_155852/tier3_summary.csv"
         },
         "new_manifest": {
           "generated_at_utc": "2026-04-27T01:06:38.010582+00:00",
@@ -1197,20 +1197,20 @@
           "registry_entry_id": "tier3_architecture",
           "tier": "Tier 3 - architecture ablation tests",
           "status": "pass",
-          "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_155852",
-          "manifest": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_155852/tier3_results.json",
-          "report": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_155852/tier3_report.md",
-          "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_155852/tier3_summary.csv",
+          "output_dir": "<repo>/controlled_test_output/tier3_20260426_155852",
+          "manifest": "<repo>/controlled_test_output/tier3_20260426_155852/tier3_results.json",
+          "report": "<repo>/controlled_test_output/tier3_20260426_155852/tier3_report.md",
+          "summary_csv": "<repo>/controlled_test_output/tier3_20260426_155852/tier3_summary.csv",
           "canonical": true,
           "claim": "Dopamine, plasticity, and trophic selection each contribute measurable value.",
           "caveat": "Ablation claims are scoped to the controlled tasks and seeds in this bundle.",
-          "latest_manifest": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_155852/tier3_results.json",
-          "latest_report": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_155852/tier3_report.md",
-          "latest_summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_155852/tier3_summary.csv"
+          "latest_manifest": "<repo>/controlled_test_output/tier3_20260426_155852/tier3_results.json",
+          "latest_report": "<repo>/controlled_test_output/tier3_20260426_155852/tier3_report.md",
+          "latest_summary_csv": "<repo>/controlled_test_output/tier3_20260426_155852/tier3_summary.csv"
         }
       },
       {
-        "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_latest_manifest.json",
+        "path": "<repo>/controlled_test_output/tier4_latest_manifest.json",
         "registry_entry_id": "tier4_10_population_scaling",
         "previous_manifest": {
           "generated_at_utc": "2026-04-27T01:06:25.672518+00:00",
@@ -1218,10 +1218,10 @@
           "registry_entry_id": "tier4_10_population_scaling",
           "tier": "Tier 4.10 - population scaling",
           "status": "pass",
-          "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_20260426_155103",
-          "manifest": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_20260426_155103/tier4_results.json",
-          "report": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_20260426_155103/tier4_report.md",
-          "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_20260426_155103/tier4_summary.csv",
+          "output_dir": "<repo>/controlled_test_output/tier4_20260426_155103",
+          "manifest": "<repo>/controlled_test_output/tier4_20260426_155103/tier4_results.json",
+          "report": "<repo>/controlled_test_output/tier4_20260426_155103/tier4_report.md",
+          "summary_csv": "<repo>/controlled_test_output/tier4_20260426_155103/tier4_summary.csv",
           "canonical": true,
           "claim": "Fixed populations from N=4 to N=64 remain stable on the switch stressor.",
           "caveat": "This baseline scaling task saturated; the honest claim is stability, not strong scaling advantage."
@@ -1232,17 +1232,17 @@
           "registry_entry_id": "tier4_10_population_scaling",
           "tier": "Tier 4.10 - population scaling",
           "status": "pass",
-          "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_20260426_155103",
-          "manifest": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_20260426_155103/tier4_results.json",
-          "report": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_20260426_155103/tier4_report.md",
-          "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_20260426_155103/tier4_summary.csv",
+          "output_dir": "<repo>/controlled_test_output/tier4_20260426_155103",
+          "manifest": "<repo>/controlled_test_output/tier4_20260426_155103/tier4_results.json",
+          "report": "<repo>/controlled_test_output/tier4_20260426_155103/tier4_report.md",
+          "summary_csv": "<repo>/controlled_test_output/tier4_20260426_155103/tier4_summary.csv",
           "canonical": true,
           "claim": "Fixed populations from N=4 to N=64 remain stable on the switch stressor.",
           "caveat": "This baseline scaling task saturated; the honest claim is stability, not strong scaling advantage."
         }
       },
       {
-        "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_10_latest_manifest.json",
+        "path": "<repo>/controlled_test_output/tier4_10_latest_manifest.json",
         "registry_entry_id": "tier4_10_population_scaling",
         "previous_manifest": {
           "generated_at_utc": "2026-04-27T01:06:25.672518+00:00",
@@ -1250,10 +1250,10 @@
           "registry_entry_id": "tier4_10_population_scaling",
           "tier": "Tier 4.10 - population scaling",
           "status": "pass",
-          "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_20260426_155103",
-          "manifest": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_20260426_155103/tier4_results.json",
-          "report": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_20260426_155103/tier4_report.md",
-          "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_20260426_155103/tier4_summary.csv",
+          "output_dir": "<repo>/controlled_test_output/tier4_20260426_155103",
+          "manifest": "<repo>/controlled_test_output/tier4_20260426_155103/tier4_results.json",
+          "report": "<repo>/controlled_test_output/tier4_20260426_155103/tier4_report.md",
+          "summary_csv": "<repo>/controlled_test_output/tier4_20260426_155103/tier4_summary.csv",
           "canonical": true,
           "claim": "Fixed populations from N=4 to N=64 remain stable on the switch stressor.",
           "caveat": "This baseline scaling task saturated; the honest claim is stability, not strong scaling advantage."
@@ -1264,17 +1264,17 @@
           "registry_entry_id": "tier4_10_population_scaling",
           "tier": "Tier 4.10 - population scaling",
           "status": "pass",
-          "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_20260426_155103",
-          "manifest": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_20260426_155103/tier4_results.json",
-          "report": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_20260426_155103/tier4_report.md",
-          "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_20260426_155103/tier4_summary.csv",
+          "output_dir": "<repo>/controlled_test_output/tier4_20260426_155103",
+          "manifest": "<repo>/controlled_test_output/tier4_20260426_155103/tier4_results.json",
+          "report": "<repo>/controlled_test_output/tier4_20260426_155103/tier4_report.md",
+          "summary_csv": "<repo>/controlled_test_output/tier4_20260426_155103/tier4_summary.csv",
           "canonical": true,
           "claim": "Fixed populations from N=4 to N=64 remain stable on the switch stressor.",
           "caveat": "This baseline scaling task saturated; the honest claim is stability, not strong scaling advantage."
         }
       },
       {
-        "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_10b_latest_manifest.json",
+        "path": "<repo>/controlled_test_output/tier4_10b_latest_manifest.json",
         "registry_entry_id": "tier4_10b_hard_population_scaling",
         "previous_manifest": {
           "generated_at_utc": "2026-04-27T01:06:25.674453+00:00",
@@ -1282,10 +1282,10 @@
           "registry_entry_id": "tier4_10b_hard_population_scaling",
           "tier": "Tier 4.10b - hard population scaling",
           "status": "pass",
-          "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_10b_20260426_161251",
-          "manifest": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_10b_20260426_161251/tier4_10b_results.json",
-          "report": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_10b_20260426_161251/tier4_10b_report.md",
-          "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_10b_20260426_161251/tier4_10b_summary.csv",
+          "output_dir": "<repo>/controlled_test_output/tier4_10b_20260426_161251",
+          "manifest": "<repo>/controlled_test_output/tier4_10b_20260426_161251/tier4_10b_results.json",
+          "report": "<repo>/controlled_test_output/tier4_10b_20260426_161251/tier4_10b_report.md",
+          "summary_csv": "<repo>/controlled_test_output/tier4_10b_20260426_161251/tier4_10b_summary.csv",
           "canonical": true,
           "claim": "Hard scaling remains stable and shows value through correlation/recovery/variance rather than raw accuracy.",
           "caveat": "Hard-scaling accuracy is near baseline; the pass is based on stability plus non-accuracy scaling signals."
@@ -1296,17 +1296,17 @@
           "registry_entry_id": "tier4_10b_hard_population_scaling",
           "tier": "Tier 4.10b - hard population scaling",
           "status": "pass",
-          "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_10b_20260426_161251",
-          "manifest": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_10b_20260426_161251/tier4_10b_results.json",
-          "report": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_10b_20260426_161251/tier4_10b_report.md",
-          "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_10b_20260426_161251/tier4_10b_summary.csv",
+          "output_dir": "<repo>/controlled_test_output/tier4_10b_20260426_161251",
+          "manifest": "<repo>/controlled_test_output/tier4_10b_20260426_161251/tier4_10b_results.json",
+          "report": "<repo>/controlled_test_output/tier4_10b_20260426_161251/tier4_10b_report.md",
+          "summary_csv": "<repo>/controlled_test_output/tier4_10b_20260426_161251/tier4_10b_summary.csv",
           "canonical": true,
           "claim": "Hard scaling remains stable and shows value through correlation/recovery/variance rather than raw accuracy.",
           "caveat": "Hard-scaling accuracy is near baseline; the pass is based on stability plus non-accuracy scaling signals."
         }
       },
       {
-        "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_latest_manifest.json",
+        "path": "<repo>/controlled_test_output/tier4_11_latest_manifest.json",
         "registry_entry_id": "tier4_11_domain_transfer",
         "previous_manifest": {
           "generated_at_utc": "2026-04-27T01:06:25.676795+00:00",
@@ -1314,10 +1314,10 @@
           "registry_entry_id": "tier4_11_domain_transfer",
           "tier": "Tier 4.11 - domain transfer",
           "status": "pass",
-          "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655",
-          "manifest": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/tier4_11_results.json",
-          "report": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/tier4_11_report.md",
-          "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/tier4_11_summary.csv",
+          "output_dir": "<repo>/controlled_test_output/tier4_11_20260426_164655",
+          "manifest": "<repo>/controlled_test_output/tier4_11_20260426_164655/tier4_11_results.json",
+          "report": "<repo>/controlled_test_output/tier4_11_20260426_164655/tier4_11_report.md",
+          "summary_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/tier4_11_summary.csv",
           "canonical": true,
           "claim": "The same CRA core transfers from finance/signed-return to non-finance sensor_control.",
           "caveat": "Domain transfer is proven for the controlled adapters here, not arbitrary domains."
@@ -1328,17 +1328,17 @@
           "registry_entry_id": "tier4_11_domain_transfer",
           "tier": "Tier 4.11 - domain transfer",
           "status": "pass",
-          "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655",
-          "manifest": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/tier4_11_results.json",
-          "report": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/tier4_11_report.md",
-          "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655/tier4_11_summary.csv",
+          "output_dir": "<repo>/controlled_test_output/tier4_11_20260426_164655",
+          "manifest": "<repo>/controlled_test_output/tier4_11_20260426_164655/tier4_11_results.json",
+          "report": "<repo>/controlled_test_output/tier4_11_20260426_164655/tier4_11_report.md",
+          "summary_csv": "<repo>/controlled_test_output/tier4_11_20260426_164655/tier4_11_summary.csv",
           "canonical": true,
           "claim": "The same CRA core transfers from finance/signed-return to non-finance sensor_control.",
           "caveat": "Domain transfer is proven for the controlled adapters here, not arbitrary domains."
         }
       },
       {
-        "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_latest_manifest.json",
+        "path": "<repo>/controlled_test_output/tier4_12_latest_manifest.json",
         "registry_entry_id": "tier4_12_backend_parity",
         "previous_manifest": {
           "generated_at_utc": "2026-04-27T01:06:25.679442+00:00",
@@ -1346,10 +1346,10 @@
           "registry_entry_id": "tier4_12_backend_parity",
           "tier": "Tier 4.12 - backend parity",
           "status": "pass",
-          "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808",
-          "manifest": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/tier4_12_results.json",
-          "report": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/tier4_12_report.md",
-          "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/tier4_12_summary.csv",
+          "output_dir": "<repo>/controlled_test_output/tier4_12_20260426_170808",
+          "manifest": "<repo>/controlled_test_output/tier4_12_20260426_170808/tier4_12_results.json",
+          "report": "<repo>/controlled_test_output/tier4_12_20260426_170808/tier4_12_report.md",
+          "summary_csv": "<repo>/controlled_test_output/tier4_12_20260426_170808/tier4_12_summary.csv",
           "canonical": true,
           "claim": "The fixed-pattern result survives NEST to Brian2 movement with zero synthetic fallback.",
           "caveat": "The SpiNNaker item in Tier 4.12 is readiness prep, not a hardware learning result."
@@ -1360,17 +1360,17 @@
           "registry_entry_id": "tier4_12_backend_parity",
           "tier": "Tier 4.12 - backend parity",
           "status": "pass",
-          "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808",
-          "manifest": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/tier4_12_results.json",
-          "report": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/tier4_12_report.md",
-          "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/tier4_12_summary.csv",
+          "output_dir": "<repo>/controlled_test_output/tier4_12_20260426_170808",
+          "manifest": "<repo>/controlled_test_output/tier4_12_20260426_170808/tier4_12_results.json",
+          "report": "<repo>/controlled_test_output/tier4_12_20260426_170808/tier4_12_report.md",
+          "summary_csv": "<repo>/controlled_test_output/tier4_12_20260426_170808/tier4_12_summary.csv",
           "canonical": true,
           "claim": "The fixed-pattern result survives NEST to Brian2 movement with zero synthetic fallback.",
           "caveat": "The SpiNNaker item in Tier 4.12 is readiness prep, not a hardware learning result."
         }
       },
       {
-        "path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_latest_manifest.json",
+        "path": "<repo>/controlled_test_output/tier4_13_latest_manifest.json",
         "registry_entry_id": "tier4_13_spinnaker_hardware_capsule",
         "previous_manifest": {
           "generated_at_utc": "2026-04-27T01:06:25.681424+00:00",
@@ -1378,15 +1378,15 @@
           "registry_entry_id": "tier4_13_spinnaker_hardware_capsule",
           "tier": "Tier 4.13 - SpiNNaker Hardware Capsule",
           "status": "pass",
-          "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass",
-          "manifest": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_results.json",
-          "report": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_report.md",
-          "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_summary.csv",
+          "output_dir": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass",
+          "manifest": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_results.json",
+          "report": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_report.md",
+          "summary_csv": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_summary.csv",
           "canonical": true,
           "claim": "The minimal fixed-pattern CRA capsule executes through pyNN.spiNNaker with real spike readback and passes learning thresholds.",
           "caveat": "Single-seed N=8 fixed-pattern capsule; not full hardware scaling or full CRA hardware deployment.",
-          "study_data": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/study_data.json",
-          "spinnaker_provenance_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/spinnaker_reports/2026-04-27-01-19-12-390038",
+          "study_data": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/study_data.json",
+          "spinnaker_provenance_dir": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/spinnaker_reports/2026-04-27-01-19-12-390038",
           "claim_boundary": [
             "This is a minimal fixed-pattern hardware capsule, not a full hardware scaling claim.",
             "The run used one seed (42), N=8, 120 steps, and a fixed population.",
@@ -1399,15 +1399,15 @@
           "registry_entry_id": "tier4_13_spinnaker_hardware_capsule",
           "tier": "Tier 4.13 - SpiNNaker Hardware Capsule",
           "status": "pass",
-          "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass",
-          "manifest": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_results.json",
-          "report": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_report.md",
-          "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_summary.csv",
+          "output_dir": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass",
+          "manifest": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_results.json",
+          "report": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_report.md",
+          "summary_csv": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_summary.csv",
           "canonical": true,
           "claim": "The minimal fixed-pattern CRA capsule executes through pyNN.spiNNaker with real spike readback and passes learning thresholds.",
           "caveat": "Single-seed N=8 fixed-pattern capsule; not full hardware scaling or full CRA hardware deployment.",
-          "study_data": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/study_data.json",
-          "spinnaker_provenance_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/spinnaker_reports/2026-04-27-01-19-12-390038",
+          "study_data": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/study_data.json",
+          "spinnaker_provenance_dir": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/spinnaker_reports/2026-04-27-01-19-12-390038",
           "claim_boundary": [
             "This is a minimal fixed-pattern hardware capsule, not a full hardware scaling claim.",
             "The run used one seed (42), N=8, 120 steps, and a fixed population.",

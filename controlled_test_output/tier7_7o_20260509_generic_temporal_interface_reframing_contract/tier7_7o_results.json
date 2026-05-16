@@ -25,7 +25,7 @@
       "pass": true,
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_7n_20260509_partitioned_driver_attribution_scoring_gate/tier7_7n_results.json"
+      "value": "<repo>/controlled_test_output/tier7_7n_20260509_partitioned_driver_attribution_scoring_gate/tier7_7n_results.json"
     },
     {
       "criterion": "Tier 7.7n prerequisite passed",
@@ -341,9 +341,9 @@
       "rule": "7.7n generic-interface explanation remains the current result."
     }
   ],
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7o_20260509_generic_temporal_interface_reframing_contract",
+  "output_dir": "<repo>/controlled_test_output/tier7_7o_20260509_generic_temporal_interface_reframing_contract",
   "prerequisite": {
-    "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_7n_20260509_partitioned_driver_attribution_scoring_gate/tier7_7n_results.json",
+    "path": "<repo>/controlled_test_output/tier7_7n_20260509_partitioned_driver_attribution_scoring_gate/tier7_7n_results.json",
     "sha256": "2f9c2006b9d74883dcab51cf7f57aff3b4a485bf1ef48eda4299e94448f47217",
     "status": "pass"
   },

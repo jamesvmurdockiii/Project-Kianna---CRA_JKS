@@ -183,7 +183,7 @@
     "not a baseline freeze"
   ],
   "outcome": "inter_polyp_antisymmetric_projections_contract_locked",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_23_20260510_inter_polyp_antisymmetric_projections_contract",
+  "output_dir": "<repo>/controlled_test_output/tier5_23_20260510_inter_polyp_antisymmetric_projections_contract",
   "runner_revision": "tier5_23_inter_polyp_antisymmetric_projections_contract_20260510_0001",
   "status": "pass",
   "tier": "Tier 5.23 - Inter-Polyp Antisymmetric PyNN Projections Diagnostic Contract"

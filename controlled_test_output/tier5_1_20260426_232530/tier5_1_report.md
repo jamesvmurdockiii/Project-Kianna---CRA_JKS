@@ -5,7 +5,7 @@
 - CRA backend: `nest`
 - Seeds: `42, 43, 44`
 - Steps per task: `240`
-- Output directory: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_1_20260426_232530`
+- Output directory: `<repo>/controlled_test_output/tier5_1_20260426_232530`
 
 Tier 5.1 compares CRA against simpler learners under identical online streams. Every model predicts before seeing the label; delayed tasks only update when consequence feedback matures.
 

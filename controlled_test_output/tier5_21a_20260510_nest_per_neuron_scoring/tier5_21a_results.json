@@ -89,7 +89,7 @@
   "generated_at_utc": "2026-05-10T18:30:11+00:00",
   "next_gate": "Diagnose and narrow",
   "outcome": "per_neuron_pr_not_supported",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_21a_20260510_nest_per_neuron_scoring",
+  "output_dir": "<repo>/controlled_test_output/tier5_21a_20260510_nest_per_neuron_scoring",
   "primary": {
     "pr_neuron": 1.0070142963940678,
     "pr_polyp": 1.3317639533596952,

@@ -6,7 +6,7 @@
 - Steps per run: `180`
 - Base seed: `42`
 - Fixed population: `True`
-- Output directory: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_152616`
+- Output directory: `<repo>/controlled_test_output/tier2_20260426_152616`
 
 Tier 2 is a positive-control tier. These tests check whether the organism can learn causal cue/outcome structure, delayed consequence, and a switched rule after Tier 1 ruled out obvious fake learning.
 

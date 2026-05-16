@@ -1,9 +1,9 @@
 {
   "canonical": false,
   "generated_at_utc": "2026-05-09T05:12:13+00:00",
-  "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/working_memory_context_guardrail/tier5_14_results.json",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/working_memory_context_guardrail",
-  "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/working_memory_context_guardrail/tier5_14_report.md",
+  "manifest_json": "<repo>/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/working_memory_context_guardrail/tier5_14_results.json",
+  "output_dir": "<repo>/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/working_memory_context_guardrail",
+  "report_md": "<repo>/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/working_memory_context_guardrail/tier5_14_report.md",
   "status": "pass",
   "tier": "Tier 5.14 - Working Memory / Context Binding"
 }

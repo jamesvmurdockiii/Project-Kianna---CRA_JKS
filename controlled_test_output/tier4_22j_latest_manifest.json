@@ -2,10 +2,10 @@
   "canonical": false,
   "claim": "Latest Tier 4.22j minimal custom-runtime learning smoke; pass is one delayed pending/readout update on board only, not full CRA learning or speedup evidence.",
   "generated_at_utc": "2026-05-01T01:33:03+00:00",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/tier4_22j_results.json",
+  "manifest": "<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/tier4_22j_results.json",
   "mode": "ingest",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/tier4_22j_report.md",
+  "output_dir": "<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested",
+  "report": "<repo>/controlled_test_output/tier4_22j_20260501_minimal_custom_runtime_learning_hardware_pass_ingested/tier4_22j_report.md",
   "status": "pass",
   "tier": "Tier 4.22j - Minimal Custom-Runtime Closed-Loop Learning Smoke"
 }

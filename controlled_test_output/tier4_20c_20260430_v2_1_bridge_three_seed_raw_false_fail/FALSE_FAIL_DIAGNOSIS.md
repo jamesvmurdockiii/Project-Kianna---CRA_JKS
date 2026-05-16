@@ -2,7 +2,7 @@
 
 - Raw status: `fail`
 - Raw failure: `Failed criteria: Tier 4.20b prerequisite pass recorded`
-- Corrected ingested evidence: `/Users/james/JKS:CRA/controlled_test_output/tier4_20c_20260430_v2_1_bridge_three_seed_hardware_pass_ingested`
+- Corrected ingested evidence: `<repo>/controlled_test_output/tier4_20c_20260430_v2_1_bridge_three_seed_hardware_pass_ingested`
 
 The returned EBRAINS run executed six child hardware runs successfully, but the Tier 4.20c wrapper failed because the fresh upload did not include `controlled_test_output/tier4_20b_latest_manifest.json`. That local prerequisite should not be required inside the minimal EBRAINS source bundle.
 

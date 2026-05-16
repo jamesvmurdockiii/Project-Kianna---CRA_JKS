@@ -7,7 +7,7 @@
 - Seeds: `42, 43, 44`
 - Tasks: `delayed_cue,hard_noisy_switching`
 - Variants: `core`
-- Output directory: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_3_20260427_055629`
+- Output directory: `<repo>/controlled_test_output/tier5_3_20260427_055629`
 
 Tier 5.3 is diagnostic, not a new hardware or superiority claim. It asks which CRA learning-dynamics knobs move the failing Tier 5.2 tasks, using Tier 5.2 external baselines as reference.
 

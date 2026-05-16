@@ -128,7 +128,7 @@
   "criteria_passed": 7,
   "criteria_total": 7,
   "generated_at_utc": "2026-05-08T19:00:57+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_0g_20260508_general_mechanism_selection_contract",
+  "output_dir": "<repo>/controlled_test_output/tier7_0g_20260508_general_mechanism_selection_contract",
   "runner_revision": "tier7_0g_general_mechanism_selection_contract_20260508_0001",
   "selection": {
     "score8000": {

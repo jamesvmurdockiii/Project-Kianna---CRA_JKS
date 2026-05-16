@@ -3,7 +3,7 @@
 - Generated: `2026-05-01T02:41:02+00:00`
 - Mode: `local`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_22m_20260501_custom_runtime_task_micro_loop_local`
+- Output directory: `<repo>/controlled_test_output/tier4_22m_20260501_custom_runtime_task_micro_loop_local`
 
 Tier 4.22m runs a 12-event fixed-pattern signed task micro-loop through the custom runtime. Each event is scored from the chip's pre-update prediction, then matured with delayed credit and checked against a local s16.15 reference.
 
@@ -56,7 +56,7 @@ Tier 4.22m runs a 12-event fixed-pattern signed task micro-loop through the cust
 
 ## Artifacts
 
-- `reference_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22m_20260501_custom_runtime_task_micro_loop_local/tier4_22m_task_reference.json`
-- `reference_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22m_20260501_custom_runtime_task_micro_loop_local/tier4_22m_task_reference_rows.csv`
-- `manifest_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22m_20260501_custom_runtime_task_micro_loop_local/tier4_22m_results.json`
-- `report_md`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22m_20260501_custom_runtime_task_micro_loop_local/tier4_22m_report.md`
+- `reference_json`: `<repo>/controlled_test_output/tier4_22m_20260501_custom_runtime_task_micro_loop_local/tier4_22m_task_reference.json`
+- `reference_csv`: `<repo>/controlled_test_output/tier4_22m_20260501_custom_runtime_task_micro_loop_local/tier4_22m_task_reference_rows.csv`
+- `manifest_json`: `<repo>/controlled_test_output/tier4_22m_20260501_custom_runtime_task_micro_loop_local/tier4_22m_results.json`
+- `report_md`: `<repo>/controlled_test_output/tier4_22m_20260501_custom_runtime_task_micro_loop_local/tier4_22m_report.md`

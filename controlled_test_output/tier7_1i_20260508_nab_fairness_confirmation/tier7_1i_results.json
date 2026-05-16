@@ -1464,7 +1464,7 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_results.json"
+      "value": "<repo>/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_results.json"
     },
     {
       "name": "Tier 7.1g preflight passed",
@@ -1478,7 +1478,7 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate/tier7_1h_results.json"
+      "value": "<repo>/controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate/tier7_1h_results.json"
     },
     {
       "name": "Tier 7.1h compact scoring passed",
@@ -2428,7 +2428,7 @@
     {
       "bytes": 140292,
       "downloaded": false,
-      "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/artificialWithAnomaly/art_daily_flatmiddle.csv",
+      "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/artificialWithAnomaly/art_daily_flatmiddle.csv",
       "repo_path": "data/artificialWithAnomaly/art_daily_flatmiddle.csv",
       "sha256": "ea5df125947e9ee2b977ac3d341f3c2a029588862af97cae4a654fc56e838702",
       "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/artificialWithAnomaly/art_daily_flatmiddle.csv"
@@ -2436,7 +2436,7 @@
     {
       "bytes": 140814,
       "downloaded": false,
-      "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/artificialWithAnomaly/art_daily_jumpsdown.csv",
+      "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/artificialWithAnomaly/art_daily_jumpsdown.csv",
       "repo_path": "data/artificialWithAnomaly/art_daily_jumpsdown.csv",
       "sha256": "4af31802e87dff4b4ba3ceb21714ba9d905f7888e1f53d47cc6dd4f856f9debc",
       "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/artificialWithAnomaly/art_daily_jumpsdown.csv"
@@ -2444,7 +2444,7 @@
     {
       "bytes": 140548,
       "downloaded": false,
-      "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/artificialWithAnomaly/art_daily_jumpsup.csv",
+      "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/artificialWithAnomaly/art_daily_jumpsup.csv",
       "repo_path": "data/artificialWithAnomaly/art_daily_jumpsup.csv",
       "sha256": "f79f92b93ee4f9c10e2dc552505e8880b0c618639ed5e0f9816e044b75c26456",
       "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/artificialWithAnomaly/art_daily_jumpsup.csv"
@@ -2452,7 +2452,7 @@
     {
       "bytes": 101603,
       "downloaded": false,
-      "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/artificialWithAnomaly/art_load_balancer_spikes.csv",
+      "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/artificialWithAnomaly/art_load_balancer_spikes.csv",
       "repo_path": "data/artificialWithAnomaly/art_load_balancer_spikes.csv",
       "sha256": "99f7130e54c7c3e818df8e3bdc0974cd241914bb14a10a9c3fa7c1374125d224",
       "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/artificialWithAnomaly/art_load_balancer_spikes.csv"
@@ -2460,7 +2460,7 @@
     {
       "bytes": 105367,
       "downloaded": false,
-      "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realAWSCloudwatch/ec2_cpu_utilization_24ae8d.csv",
+      "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realAWSCloudwatch/ec2_cpu_utilization_24ae8d.csv",
       "repo_path": "data/realAWSCloudwatch/ec2_cpu_utilization_24ae8d.csv",
       "sha256": "ab446fbd8b9f37507eb2fdb06315826d8daeef02e241133ce06e0ee571ba53d9",
       "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realAWSCloudwatch/ec2_cpu_utilization_24ae8d.csv"
@@ -2468,7 +2468,7 @@
     {
       "bytes": 119229,
       "downloaded": false,
-      "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realAWSCloudwatch/ec2_cpu_utilization_5f5533.csv",
+      "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realAWSCloudwatch/ec2_cpu_utilization_5f5533.csv",
       "repo_path": "data/realAWSCloudwatch/ec2_cpu_utilization_5f5533.csv",
       "sha256": "01613e6f632d067f11a5dfd40a188b0789752b388d9bc77a398bd06333878a76",
       "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realAWSCloudwatch/ec2_cpu_utilization_5f5533.csv"
@@ -2476,7 +2476,7 @@
     {
       "bytes": 101626,
       "downloaded": false,
-      "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realAWSCloudwatch/ec2_disk_write_bytes_c0d644.csv",
+      "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realAWSCloudwatch/ec2_disk_write_bytes_c0d644.csv",
       "repo_path": "data/realAWSCloudwatch/ec2_disk_write_bytes_c0d644.csv",
       "sha256": "a0e734a66098bb81833835f0839dadafbc8ae829c51494670ee8849e46eb5b63",
       "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realAWSCloudwatch/ec2_disk_write_bytes_c0d644.csv"
@@ -2484,7 +2484,7 @@
     {
       "bytes": 131065,
       "downloaded": false,
-      "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realAWSCloudwatch/grok_asg_anomaly.csv",
+      "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realAWSCloudwatch/grok_asg_anomaly.csv",
       "repo_path": "data/realAWSCloudwatch/grok_asg_anomaly.csv",
       "sha256": "86a0abe9d58e376858d2fd4f4a438f1997e24c64a09e5af03accd4e1b372ac47",
       "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realAWSCloudwatch/grok_asg_anomaly.csv"
@@ -2492,7 +2492,7 @@
     {
       "bytes": 113599,
       "downloaded": false,
-      "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realAWSCloudwatch/rds_cpu_utilization_e47b3b.csv",
+      "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realAWSCloudwatch/rds_cpu_utilization_e47b3b.csv",
       "repo_path": "data/realAWSCloudwatch/rds_cpu_utilization_e47b3b.csv",
       "sha256": "6b712b922ab3b3404c5a629d64a570c390c99471ee8b9b0ff7665f553fda92c1",
       "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realAWSCloudwatch/rds_cpu_utilization_e47b3b.csv"
@@ -2500,7 +2500,7 @@
     {
       "bytes": 58313,
       "downloaded": false,
-      "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realAdExchange/exchange-2_cpm_results.csv",
+      "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realAdExchange/exchange-2_cpm_results.csv",
       "repo_path": "data/realAdExchange/exchange-2_cpm_results.csv",
       "sha256": "1f01b9438566d2fe1ac446faa202a395ac86db9240a1955bc1f118c8eada2a19",
       "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realAdExchange/exchange-2_cpm_results.csv"
@@ -2508,7 +2508,7 @@
     {
       "bytes": 58931,
       "downloaded": false,
-      "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realAdExchange/exchange-4_cpm_results.csv",
+      "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realAdExchange/exchange-4_cpm_results.csv",
       "repo_path": "data/realAdExchange/exchange-4_cpm_results.csv",
       "sha256": "4e5c955b632145b77b93fba4a5e3bf615d47e00416e17091d64e05ae109c760e",
       "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realAdExchange/exchange-4_cpm_results.csv"
@@ -2516,7 +2516,7 @@
     {
       "bytes": 233321,
       "downloaded": false,
-      "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realKnownCause/ambient_temperature_system_failure.csv",
+      "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realKnownCause/ambient_temperature_system_failure.csv",
       "repo_path": "data/realKnownCause/ambient_temperature_system_failure.csv",
       "sha256": "230b68ccca20f59d562afd5d24ad52939c9b784386bed0054018358bf9120581",
       "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realKnownCause/ambient_temperature_system_failure.csv"
@@ -2524,7 +2524,7 @@
     {
       "bytes": 539274,
       "downloaded": false,
-      "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realKnownCause/cpu_utilization_asg_misconfiguration.csv",
+      "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realKnownCause/cpu_utilization_asg_misconfiguration.csv",
       "repo_path": "data/realKnownCause/cpu_utilization_asg_misconfiguration.csv",
       "sha256": "58ba65dc0737cfbac11b51514476d50c438d44011232144bb8d93f392df58f9f",
       "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realKnownCause/cpu_utilization_asg_misconfiguration.csv"
@@ -2532,7 +2532,7 @@
     {
       "bytes": 123428,
       "downloaded": false,
-      "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realKnownCause/ec2_request_latency_system_failure.csv",
+      "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realKnownCause/ec2_request_latency_system_failure.csv",
       "repo_path": "data/realKnownCause/ec2_request_latency_system_failure.csv",
       "sha256": "98378580aa80157e057c61d59d81daddccc6c65a2c0c800e3f01f603b8215c3f",
       "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realKnownCause/ec2_request_latency_system_failure.csv"
@@ -2540,7 +2540,7 @@
     {
       "bytes": 732223,
       "downloaded": false,
-      "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realKnownCause/machine_temperature_system_failure.csv",
+      "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realKnownCause/machine_temperature_system_failure.csv",
       "repo_path": "data/realKnownCause/machine_temperature_system_failure.csv",
       "sha256": "92bf5b87fc7f9bba8ca0b7ec63ccaac8cb4a1371a258e8c29a10ae9c018d82a4",
       "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realKnownCause/machine_temperature_system_failure.csv"
@@ -2548,7 +2548,7 @@
     {
       "bytes": 265771,
       "downloaded": false,
-      "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realKnownCause/nyc_taxi.csv",
+      "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realKnownCause/nyc_taxi.csv",
       "repo_path": "data/realKnownCause/nyc_taxi.csv",
       "sha256": "d8fa6f7f0734bf5c8be12c52a94e20a82664c397d9dec4449156bd453d32856d",
       "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realKnownCause/nyc_taxi.csv"
@@ -2556,7 +2556,7 @@
     {
       "bytes": 59846,
       "downloaded": false,
-      "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realTraffic/TravelTime_387.csv",
+      "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realTraffic/TravelTime_387.csv",
       "repo_path": "data/realTraffic/TravelTime_387.csv",
       "sha256": "38e70e9ead8227fd023bff6e93247d5bc01ee008f781b921a156962419b399bb",
       "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realTraffic/TravelTime_387.csv"
@@ -2564,7 +2564,7 @@
     {
       "bytes": 25928,
       "downloaded": false,
-      "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realTraffic/speed_7578.csv",
+      "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realTraffic/speed_7578.csv",
       "repo_path": "data/realTraffic/speed_7578.csv",
       "sha256": "15ba994384730cb5a2e6818f17ded1430b40d92eb7a08e5b1a48a445c8c350f6",
       "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realTraffic/speed_7578.csv"
@@ -2572,7 +2572,7 @@
     {
       "bytes": 368111,
       "downloaded": false,
-      "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realTweets/Twitter_volume_AAPL.csv",
+      "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realTweets/Twitter_volume_AAPL.csv",
       "repo_path": "data/realTweets/Twitter_volume_AAPL.csv",
       "sha256": "826f5cf404c2890784a7824f7102fd00cb134a4948e12e44ec320d095cbbc217",
       "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realTweets/Twitter_volume_AAPL.csv"
@@ -2580,7 +2580,7 @@
     {
       "bytes": 361270,
       "downloaded": false,
-      "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realTweets/Twitter_volume_GOOG.csv",
+      "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realTweets/Twitter_volume_GOOG.csv",
       "repo_path": "data/realTweets/Twitter_volume_GOOG.csv",
       "sha256": "3a39cc23d1ff6a0f234b55298d0c46c21d2e94ddb81a0dad9e1e46e3aaa9ec90",
       "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realTweets/Twitter_volume_GOOG.csv"
@@ -2812,7 +2812,7 @@
     }
   ],
   "next_step": "If v2.3 confirms on the broader subset, design the next holdout/public adapter gate before any transfer. If the signal localizes or collapses, debug the localized stream families or narrow the public usefulness claim before adding mechanisms.",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation",
+  "output_dir": "<repo>/controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation",
   "runner_revision": "tier7_1i_nab_fairness_confirmation_20260508_0001",
   "seeds": [
     42,
@@ -2820,7 +2820,7 @@
     44
   ],
   "source": {
-    "cache_root": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab",
+    "cache_root": "<repo>/.cra_data_cache/numenta_nab",
     "commit": "ea702d75cc2258d9d7dd35ca8e5e2539d71f3140",
     "selected_categories": [
       "artificialWithAnomaly",

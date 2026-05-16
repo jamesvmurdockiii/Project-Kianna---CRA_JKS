@@ -68,7 +68,7 @@
       "pass": true,
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_6b_20260509_long_horizon_planning_local_diagnostic/tier7_6b_results.json"
+      "value": "<repo>/controlled_test_output/tier7_6b_20260509_long_horizon_planning_local_diagnostic/tier7_6b_results.json"
     },
     {
       "criterion": "tier7_6b_passed",
@@ -264,8 +264,8 @@
   },
   "failed_criteria": [],
   "generated_at_utc": "2026-05-09T04:23:50+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout",
-  "prereq_results": "/Users/james/JKS:CRA/controlled_test_output/tier7_6b_20260509_long_horizon_planning_local_diagnostic/tier7_6b_results.json",
+  "output_dir": "<repo>/controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout",
+  "prereq_results": "<repo>/controlled_test_output/tier7_6b_20260509_long_horizon_planning_local_diagnostic/tier7_6b_results.json",
   "promotion_decisions": [
     {
       "authorized": true,

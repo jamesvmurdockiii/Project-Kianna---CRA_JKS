@@ -26,28 +26,28 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29a_20260503_hardware_pass_ingested"
+      "value": "<repo>/controlled_test_output/tier4_29a_20260503_hardware_pass_ingested"
     },
     {
       "name": "4.29a results file exists",
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29a_20260503_hardware_pass_ingested/tier4_29a_multi_seed_ingest_summary.json"
+      "value": "<repo>/controlled_test_output/tier4_29a_20260503_hardware_pass_ingested/tier4_29a_multi_seed_ingest_summary.json"
     },
     {
       "name": "4.29a summary file exists",
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29a_20260503_hardware_pass_ingested/tier4_29a_combined_results.json"
+      "value": "<repo>/controlled_test_output/tier4_29a_20260503_hardware_pass_ingested/tier4_29a_combined_results.json"
     },
     {
       "name": "4.29a report file exists",
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29a_20260503_hardware_pass_ingested/tier4_29a_ingest_report.md"
+      "value": "<repo>/controlled_test_output/tier4_29a_20260503_hardware_pass_ingested/tier4_29a_ingest_report.md"
     },
     {
       "name": "4.29a results status pass",
@@ -170,28 +170,28 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29b_20260503_hardware_pass_ingested"
+      "value": "<repo>/controlled_test_output/tier4_29b_20260503_hardware_pass_ingested"
     },
     {
       "name": "4.29b results file exists",
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29b_20260503_hardware_pass_ingested/tier4_29b_multi_seed_ingest_summary.json"
+      "value": "<repo>/controlled_test_output/tier4_29b_20260503_hardware_pass_ingested/tier4_29b_multi_seed_ingest_summary.json"
     },
     {
       "name": "4.29b summary file exists",
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29b_20260503_hardware_pass_ingested/tier4_29b_combined_results.json"
+      "value": "<repo>/controlled_test_output/tier4_29b_20260503_hardware_pass_ingested/tier4_29b_combined_results.json"
     },
     {
       "name": "4.29b report file exists",
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29b_20260503_hardware_pass_ingested/tier4_29b_report.md"
+      "value": "<repo>/controlled_test_output/tier4_29b_20260503_hardware_pass_ingested/tier4_29b_report.md"
     },
     {
       "name": "4.29b results status pass",
@@ -321,28 +321,28 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29c_20260504_pass_ingested"
+      "value": "<repo>/controlled_test_output/tier4_29c_20260504_pass_ingested"
     },
     {
       "name": "4.29c results file exists",
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29c_20260504_pass_ingested/tier4_29c_ingest_results.json"
+      "value": "<repo>/controlled_test_output/tier4_29c_20260504_pass_ingested/tier4_29c_ingest_results.json"
     },
     {
       "name": "4.29c summary file exists",
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29c_20260504_pass_ingested/tier4_29c_combined_results.json"
+      "value": "<repo>/controlled_test_output/tier4_29c_20260504_pass_ingested/tier4_29c_combined_results.json"
     },
     {
       "name": "4.29c report file exists",
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29c_20260504_pass_ingested/tier4_29c_report_seed42.json"
+      "value": "<repo>/controlled_test_output/tier4_29c_20260504_pass_ingested/tier4_29c_report_seed42.json"
     },
     {
       "name": "4.29c results status pass",
@@ -465,28 +465,28 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29d_20260504_pass_ingested"
+      "value": "<repo>/controlled_test_output/tier4_29d_20260504_pass_ingested"
     },
     {
       "name": "4.29d results file exists",
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_ingest_results.json"
+      "value": "<repo>/controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_ingest_results.json"
     },
     {
       "name": "4.29d summary file exists",
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_combined_results.json"
+      "value": "<repo>/controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_combined_results.json"
     },
     {
       "name": "4.29d report file exists",
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_report_seed44.json"
+      "value": "<repo>/controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_report_seed44.json"
     },
     {
       "name": "4.29d results status pass",
@@ -644,28 +644,28 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29e_20260505_pass_ingested"
+      "value": "<repo>/controlled_test_output/tier4_29e_20260505_pass_ingested"
     },
     {
       "name": "4.29e results file exists",
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29e_20260505_pass_ingested/tier4_29e_ingest_results.json"
+      "value": "<repo>/controlled_test_output/tier4_29e_20260505_pass_ingested/tier4_29e_ingest_results.json"
     },
     {
       "name": "4.29e summary file exists",
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29e_20260505_pass_ingested/tier4_29e_combined_results.json"
+      "value": "<repo>/controlled_test_output/tier4_29e_20260505_pass_ingested/tier4_29e_combined_results.json"
     },
     {
       "name": "4.29e report file exists",
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29e_20260505_pass_ingested/tier4_29e_report.md"
+      "value": "<repo>/controlled_test_output/tier4_29e_20260505_pass_ingested/tier4_29e_report.md"
     },
     {
       "name": "4.29e results status pass",
@@ -825,35 +825,35 @@
   "generated_at_utc": "2026-05-05T13:20:42.804040+00:00",
   "mechanisms": [
     {
-      "canonical_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_29a_20260503_hardware_pass_ingested",
+      "canonical_dir": "<repo>/controlled_test_output/tier4_29a_20260503_hardware_pass_ingested",
       "criteria": [
         {
           "name": "canonical directory exists",
           "note": "",
           "passed": true,
           "rule": "exists",
-          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29a_20260503_hardware_pass_ingested"
+          "value": "<repo>/controlled_test_output/tier4_29a_20260503_hardware_pass_ingested"
         },
         {
           "name": "results file exists",
           "note": "",
           "passed": true,
           "rule": "exists",
-          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29a_20260503_hardware_pass_ingested/tier4_29a_multi_seed_ingest_summary.json"
+          "value": "<repo>/controlled_test_output/tier4_29a_20260503_hardware_pass_ingested/tier4_29a_multi_seed_ingest_summary.json"
         },
         {
           "name": "summary file exists",
           "note": "",
           "passed": true,
           "rule": "exists",
-          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29a_20260503_hardware_pass_ingested/tier4_29a_combined_results.json"
+          "value": "<repo>/controlled_test_output/tier4_29a_20260503_hardware_pass_ingested/tier4_29a_combined_results.json"
         },
         {
           "name": "report file exists",
           "note": "",
           "passed": true,
           "rule": "exists",
-          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29a_20260503_hardware_pass_ingested/tier4_29a_ingest_report.md"
+          "value": "<repo>/controlled_test_output/tier4_29a_20260503_hardware_pass_ingested/tier4_29a_ingest_report.md"
         },
         {
           "name": "results status pass",
@@ -988,35 +988,35 @@
       "total_criteria": 141
     },
     {
-      "canonical_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_29b_20260503_hardware_pass_ingested",
+      "canonical_dir": "<repo>/controlled_test_output/tier4_29b_20260503_hardware_pass_ingested",
       "criteria": [
         {
           "name": "canonical directory exists",
           "note": "",
           "passed": true,
           "rule": "exists",
-          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29b_20260503_hardware_pass_ingested"
+          "value": "<repo>/controlled_test_output/tier4_29b_20260503_hardware_pass_ingested"
         },
         {
           "name": "results file exists",
           "note": "",
           "passed": true,
           "rule": "exists",
-          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29b_20260503_hardware_pass_ingested/tier4_29b_multi_seed_ingest_summary.json"
+          "value": "<repo>/controlled_test_output/tier4_29b_20260503_hardware_pass_ingested/tier4_29b_multi_seed_ingest_summary.json"
         },
         {
           "name": "summary file exists",
           "note": "",
           "passed": true,
           "rule": "exists",
-          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29b_20260503_hardware_pass_ingested/tier4_29b_combined_results.json"
+          "value": "<repo>/controlled_test_output/tier4_29b_20260503_hardware_pass_ingested/tier4_29b_combined_results.json"
         },
         {
           "name": "report file exists",
           "note": "",
           "passed": true,
           "rule": "exists",
-          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29b_20260503_hardware_pass_ingested/tier4_29b_report.md"
+          "value": "<repo>/controlled_test_output/tier4_29b_20260503_hardware_pass_ingested/tier4_29b_report.md"
         },
         {
           "name": "results status pass",
@@ -1158,35 +1158,35 @@
       "total_criteria": 156
     },
     {
-      "canonical_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_29c_20260504_pass_ingested",
+      "canonical_dir": "<repo>/controlled_test_output/tier4_29c_20260504_pass_ingested",
       "criteria": [
         {
           "name": "canonical directory exists",
           "note": "",
           "passed": true,
           "rule": "exists",
-          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29c_20260504_pass_ingested"
+          "value": "<repo>/controlled_test_output/tier4_29c_20260504_pass_ingested"
         },
         {
           "name": "results file exists",
           "note": "",
           "passed": true,
           "rule": "exists",
-          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29c_20260504_pass_ingested/tier4_29c_ingest_results.json"
+          "value": "<repo>/controlled_test_output/tier4_29c_20260504_pass_ingested/tier4_29c_ingest_results.json"
         },
         {
           "name": "summary file exists",
           "note": "",
           "passed": true,
           "rule": "exists",
-          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29c_20260504_pass_ingested/tier4_29c_combined_results.json"
+          "value": "<repo>/controlled_test_output/tier4_29c_20260504_pass_ingested/tier4_29c_combined_results.json"
         },
         {
           "name": "report file exists",
           "note": "",
           "passed": true,
           "rule": "exists",
-          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29c_20260504_pass_ingested/tier4_29c_report_seed42.json"
+          "value": "<repo>/controlled_test_output/tier4_29c_20260504_pass_ingested/tier4_29c_report_seed42.json"
         },
         {
           "name": "results status pass",
@@ -1321,35 +1321,35 @@
       "total_criteria": 78
     },
     {
-      "canonical_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_29d_20260504_pass_ingested",
+      "canonical_dir": "<repo>/controlled_test_output/tier4_29d_20260504_pass_ingested",
       "criteria": [
         {
           "name": "canonical directory exists",
           "note": "",
           "passed": true,
           "rule": "exists",
-          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29d_20260504_pass_ingested"
+          "value": "<repo>/controlled_test_output/tier4_29d_20260504_pass_ingested"
         },
         {
           "name": "results file exists",
           "note": "",
           "passed": true,
           "rule": "exists",
-          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_ingest_results.json"
+          "value": "<repo>/controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_ingest_results.json"
         },
         {
           "name": "summary file exists",
           "note": "",
           "passed": true,
           "rule": "exists",
-          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_combined_results.json"
+          "value": "<repo>/controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_combined_results.json"
         },
         {
           "name": "report file exists",
           "note": "",
           "passed": true,
           "rule": "exists",
-          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_report_seed44.json"
+          "value": "<repo>/controlled_test_output/tier4_29d_20260504_pass_ingested/tier4_29d_report_seed44.json"
         },
         {
           "name": "results status pass",
@@ -1519,35 +1519,35 @@
       "total_criteria": 90
     },
     {
-      "canonical_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_29e_20260505_pass_ingested",
+      "canonical_dir": "<repo>/controlled_test_output/tier4_29e_20260505_pass_ingested",
       "criteria": [
         {
           "name": "canonical directory exists",
           "note": "",
           "passed": true,
           "rule": "exists",
-          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29e_20260505_pass_ingested"
+          "value": "<repo>/controlled_test_output/tier4_29e_20260505_pass_ingested"
         },
         {
           "name": "results file exists",
           "note": "",
           "passed": true,
           "rule": "exists",
-          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29e_20260505_pass_ingested/tier4_29e_ingest_results.json"
+          "value": "<repo>/controlled_test_output/tier4_29e_20260505_pass_ingested/tier4_29e_ingest_results.json"
         },
         {
           "name": "summary file exists",
           "note": "",
           "passed": true,
           "rule": "exists",
-          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29e_20260505_pass_ingested/tier4_29e_combined_results.json"
+          "value": "<repo>/controlled_test_output/tier4_29e_20260505_pass_ingested/tier4_29e_combined_results.json"
         },
         {
           "name": "report file exists",
           "note": "",
           "passed": true,
           "rule": "exists",
-          "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_29e_20260505_pass_ingested/tier4_29e_report.md"
+          "value": "<repo>/controlled_test_output/tier4_29e_20260505_pass_ingested/tier4_29e_report.md"
         },
         {
           "name": "results status pass",
@@ -1718,7 +1718,7 @@
     }
   ],
   "mode": "local-evidence-regression",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_29f_20260505_native_mechanism_regression",
+  "output_dir": "<repo>/controlled_test_output/tier4_29f_20260505_native_mechanism_regression",
   "runner_revision": "tier4_29f_compact_native_mechanism_regression_20260505_0001",
   "status": "pass",
   "tier": "Tier 4.29f - Compact Native Mechanism Regression"

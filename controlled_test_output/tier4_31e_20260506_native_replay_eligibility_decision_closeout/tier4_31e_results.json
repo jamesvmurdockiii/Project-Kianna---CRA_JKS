@@ -227,7 +227,7 @@
     "tier4_32": "authorized_next"
   },
   "generated_at_utc": "2026-05-06T20:30:08+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_31e_20260506_native_replay_eligibility_decision_closeout",
+  "output_dir": "<repo>/controlled_test_output/tier4_31e_20260506_native_replay_eligibility_decision_closeout",
   "recommended_next_step": "Tier 4.32 mapping/resource model over measured 4.27-4.31 hardware data.",
   "runner_revision": "tier4_31e_native_replay_eligibility_decision_20260506_0001",
   "status": "pass",

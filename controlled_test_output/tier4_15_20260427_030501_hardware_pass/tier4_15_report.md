@@ -3,7 +3,7 @@
 - Generated: `2026-04-27T02:48:50+00:00`
 - Mode: `run-hardware`
 - Status: **PASS**
-- Output directory: `/tmp/job12244319576281684700.tmp/cra_test_1/controlled_test_output/tier4_15_20260427_030501`
+- Output directory: `<jobmanager_tmp>`
 - Requested seeds: `[42, 43, 44]`
 
 Tier 4.15 repeats the same minimal fixed-pattern hardware capsule from Tier 4.13 across multiple seeds. It is repeatability evidence, not a harder task and not hardware scaling.
@@ -62,18 +62,18 @@ Tier 4.15 repeats the same minimal fixed-pattern hardware capsule from Tier 4.13
 
 ## Artifacts
 
-- `manifest_json`: `/tmp/job12244319576281684700.tmp/cra_test_1/controlled_test_output/tier4_15_20260427_030501/tier4_15_results.json`
-- `summary_csv`: `/tmp/job12244319576281684700.tmp/cra_test_1/controlled_test_output/tier4_15_20260427_030501/tier4_15_summary.csv`
-- `seed_42_timeseries_csv`: `/tmp/job12244319576281684700.tmp/cra_test_1/controlled_test_output/tier4_15_20260427_030501/spinnaker_hardware_seed42_timeseries.csv`
-- `seed_42_timeseries_png`: `/tmp/job12244319576281684700.tmp/cra_test_1/controlled_test_output/tier4_15_20260427_030501/spinnaker_hardware_seed42_timeseries.png`
-- `seed_43_timeseries_csv`: `/tmp/job12244319576281684700.tmp/cra_test_1/controlled_test_output/tier4_15_20260427_030501/spinnaker_hardware_seed43_timeseries.csv`
-- `seed_43_timeseries_png`: `/tmp/job12244319576281684700.tmp/cra_test_1/controlled_test_output/tier4_15_20260427_030501/spinnaker_hardware_seed43_timeseries.png`
-- `seed_44_timeseries_csv`: `/tmp/job12244319576281684700.tmp/cra_test_1/controlled_test_output/tier4_15_20260427_030501/spinnaker_hardware_seed44_timeseries.csv`
-- `seed_44_timeseries_png`: `/tmp/job12244319576281684700.tmp/cra_test_1/controlled_test_output/tier4_15_20260427_030501/spinnaker_hardware_seed44_timeseries.png`
-- `seed_summary_csv`: `/tmp/job12244319576281684700.tmp/cra_test_1/controlled_test_output/tier4_15_20260427_030501/tier4_15_seed_summary.csv`
-- `multi_seed_summary_png`: `/tmp/job12244319576281684700.tmp/cra_test_1/controlled_test_output/tier4_15_20260427_030501/tier4_15_multi_seed_summary.png`
-- `spinnaker_report_1`: `/tmp/job12244319576281684700.tmp/cra_test_1/controlled_test_output/tier4_15_20260427_030501/spinnaker_reports/2026-04-27-03-05-01-872105`
-- `spinnaker_report_2`: `/tmp/job12244319576281684700.tmp/cra_test_1/controlled_test_output/tier4_15_20260427_030501/spinnaker_reports/2026-04-27-03-19-49-290162`
-- `spinnaker_report_3`: `/tmp/job12244319576281684700.tmp/cra_test_1/controlled_test_output/tier4_15_20260427_030501/spinnaker_reports/2026-04-27-03-34-22-032643`
+- `manifest_json`: `<jobmanager_tmp>`
+- `summary_csv`: `<jobmanager_tmp>`
+- `seed_42_timeseries_csv`: `<jobmanager_tmp>`
+- `seed_42_timeseries_png`: `<jobmanager_tmp>`
+- `seed_43_timeseries_csv`: `<jobmanager_tmp>`
+- `seed_43_timeseries_png`: `<jobmanager_tmp>`
+- `seed_44_timeseries_csv`: `<jobmanager_tmp>`
+- `seed_44_timeseries_png`: `<jobmanager_tmp>`
+- `seed_summary_csv`: `<jobmanager_tmp>`
+- `multi_seed_summary_png`: `<jobmanager_tmp>`
+- `spinnaker_report_1`: `<jobmanager_tmp>`
+- `spinnaker_report_2`: `<jobmanager_tmp>`
+- `spinnaker_report_3`: `<jobmanager_tmp>`
 
 ![multi_seed_summary](tier4_15_multi_seed_summary.png)

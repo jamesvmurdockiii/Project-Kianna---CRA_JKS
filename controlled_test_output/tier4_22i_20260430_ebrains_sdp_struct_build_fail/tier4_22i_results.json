@@ -1,31 +1,31 @@
 {
   "aplx_build": {
     "aplx_artifact": "",
-    "command": "make -C /tmp/job4219600444680192732.tmp/cra_422l/coral_reef_spinnaker/spinnaker_runtime clean all",
+    "command": "make -C <jobmanager_tmp> clean all",
     "returncode": 2,
     "spinnaker_tools": "/home/jovyan/spinnaker/spinnaker_tools",
     "status": "fail",
     "stderr": "/home/jovyan/spinnaker/spinnaker_tools/make/Makefile.common:18: inclusion of Makefile.common instead of spinnaker_tools.mk\nsrc/host_interface.c: In function 'sdp_send_reply':\nsrc/host_interface.c:211:10: error: 'sdp_msg_t' {aka 'struct sdp_msg'} has no member named 'dest_y'\n  211 |     reply->dest_y    = req->src_y;\n      |          ^~\nsrc/host_interface.c:211:27: error: 'sdp_msg_t' {aka 'struct sdp_msg'} has no member named 'src_y'\n  211 |     reply->dest_y    = req->src_y;\n      |                           ^~\nsrc/host_interface.c:212:10: error: 'sdp_msg_t' {aka 'struct sdp_msg'} has no member named 'dest_x'\n  212 |     reply->dest_x    = req->src_x;\n      |          ^~\nsrc/host_interface.c:212:27: error: 'sdp_msg_t' {aka 'struct sdp_msg'} has no member named 'src_x'\n  212 |     reply->dest_x    = req->src_x;\n      |                           ^~\nsrc/host_interface.c:213:29: error: 'sdp_msg_t' {aka 'struct sdp_msg'} has no member named 'src_port'; did you mean 'srce_port'?\n  213 |     reply->dest_port = req->src_port;\n      |                             ^~~~~~~~\n      |                             srce_port\nsrc/host_interface.c:214:10: error: 'sdp_msg_t' {aka 'struct sdp_msg'} has no member named 'dest_cpu'\n  214 |     reply->dest_cpu  = req->src_cpu;\n      |          ^~\nsrc/host_interface.c:214:27: error: 'sdp_msg_t' {aka 'struct sdp_msg'} has no member named 'src_cpu'\n  214 |     reply->dest_cpu  = req->src_cpu;\n      |                           ^~\nsrc/host_interface.c:215:10: error: 'sdp_msg_t' {aka 'struct sdp_msg'} has no member named 'src_y'\n  215 |     reply->src_y     = req->dest_y;\n      |          ^~\nsrc/host_interface.c:215:27: error: 'sdp_msg_t' {aka 'struct sdp_msg'} has no member named 'dest_y'\n  215 |     reply->src_y     = req->dest_y;\n      |                           ^~\nsrc/host_interface.c:216:10: error: 'sdp_msg_t' {aka 'struct sdp_msg'} has no member named 'src_x'\n  216 |     reply->src_x     = req->dest_x;\n      |          ^~\nsrc/host_interface.c:216:27: error: 'sdp_msg_t' {aka 'struct sdp_msg'} has no member named 'dest_x'\n  216 |     reply->src_x     = req->dest_x;\n      |                           ^~\nsrc/host_interface.c:217:12: error: 'sdp_msg_t' {aka 'struct sdp_msg'} has no member named 'src_port'; did you mean 'srce_port'?\n  217 |     reply->src_port  = req->dest_port;\n      |            ^~~~~~~~\n      |            srce_port\nsrc/host_interface.c:218:10: error: 'sdp_msg_t' {aka 'struct sdp_msg'} has no member named 'src_cpu'\n  218 |     reply->src_cpu   = req->dest_cpu;\n      |          ^~\nsrc/host_interface.c:218:27: error: 'sdp_msg_t' {aka 'struct sdp_msg'} has no member named 'dest_cpu'\n  218 |     reply->src_cpu   = req->dest_cpu;\n      |                           ^~\nsrc/host_interface.c:225:5: warning: implicit declaration of function 'sark_memcpy'; did you mean 'sark_mem_cpy'? [-Wimplicit-function-declaration]\n  225 |     sark_memcpy(reply->data, payload, len);\n      |     ^~~~~~~~~~~\n      |     sark_mem_cpy\nmake: *** [Makefile:87: build/host_interface.o] Error 1\n",
-    "stderr_artifact": "/tmp/job4219600444680192732.tmp/tier4_22i_job_output/tier4_22i_aplx_build_stderr.txt",
-    "stdout": "make: Entering directory '/tmp/job4219600444680192732.tmp/cra_422l/coral_reef_spinnaker/spinnaker_runtime'\nrm -rf build tests/test_runtime\nmkdir -p build\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -c src/main.c -o build/main.o\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -c src/neuron_manager.c -o build/neuron_manager.o\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -c src/synapse_manager.c -o build/synapse_manager.o\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -c src/state_manager.c -o build/state_manager.o\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -c src/host_interface.c -o build/host_interface.o\nmake: Leaving directory '/tmp/job4219600444680192732.tmp/cra_422l/coral_reef_spinnaker/spinnaker_runtime'\n",
-    "stdout_artifact": "/tmp/job4219600444680192732.tmp/tier4_22i_job_output/tier4_22i_aplx_build_stdout.txt"
+    "stderr_artifact": "<jobmanager_tmp>",
+    "stdout": "make: Entering directory '<jobmanager_tmp>'\nrm -rf build tests/test_runtime\nmkdir -p build\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -c src/main.c -o build/main.o\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -c src/neuron_manager.c -o build/neuron_manager.o\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -c src/synapse_manager.c -o build/synapse_manager.o\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -c src/state_manager.c -o build/state_manager.o\narm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -c src/host_interface.c -o build/host_interface.o\nmake: Leaving directory '<jobmanager_tmp>'\n",
+    "stdout_artifact": "<jobmanager_tmp>"
   },
   "app_load": {
     "reason": "blocked_before_load",
     "status": "not_attempted"
   },
   "artifacts": {
-    "aplx_build_stderr": "/tmp/job4219600444680192732.tmp/tier4_22i_job_output/tier4_22i_aplx_build_stderr.txt",
-    "aplx_build_stdout": "/tmp/job4219600444680192732.tmp/tier4_22i_job_output/tier4_22i_aplx_build_stdout.txt",
-    "environment_json": "/tmp/job4219600444680192732.tmp/tier4_22i_job_output/tier4_22i_environment.json",
-    "host_test_stderr": "/tmp/job4219600444680192732.tmp/tier4_22i_job_output/tier4_22i_host_test_stderr.txt",
-    "host_test_stdout": "/tmp/job4219600444680192732.tmp/tier4_22i_job_output/tier4_22i_host_test_stdout.txt",
-    "load_result_json": "/tmp/job4219600444680192732.tmp/tier4_22i_job_output/tier4_22i_load_result.json",
-    "main_syntax_stderr": "/tmp/job4219600444680192732.tmp/tier4_22i_job_output/tier4_22i_main_syntax_normal_stderr.txt",
-    "main_syntax_stdout": "/tmp/job4219600444680192732.tmp/tier4_22i_job_output/tier4_22i_main_syntax_normal_stdout.txt",
-    "manifest_json": "/tmp/job4219600444680192732.tmp/tier4_22i_job_output/tier4_22i_results.json",
-    "report_md": "/tmp/job4219600444680192732.tmp/tier4_22i_job_output/tier4_22i_report.md",
-    "roundtrip_result_json": "/tmp/job4219600444680192732.tmp/tier4_22i_job_output/tier4_22i_roundtrip_result.json"
+    "aplx_build_stderr": "<jobmanager_tmp>",
+    "aplx_build_stdout": "<jobmanager_tmp>",
+    "environment_json": "<jobmanager_tmp>",
+    "host_test_stderr": "<jobmanager_tmp>",
+    "host_test_stdout": "<jobmanager_tmp>",
+    "load_result_json": "<jobmanager_tmp>",
+    "main_syntax_stderr": "<jobmanager_tmp>",
+    "main_syntax_stdout": "<jobmanager_tmp>",
+    "manifest_json": "<jobmanager_tmp>",
+    "report_md": "<jobmanager_tmp>",
+    "roundtrip_result_json": "<jobmanager_tmp>"
   },
   "criteria": [
     {
@@ -167,7 +167,7 @@
     }
   ],
   "environment": {
-    "cwd": "/tmp/job4219600444680192732.tmp",
+    "cwd": "<jobmanager_tmp>",
     "env": {
       "SPINNAKER_BOARD": "",
       "SPINNAKER_HOST": "",
@@ -206,29 +206,29 @@
   "failure_reason": "Failed criteria: hardware target configured, custom runtime .aplx build pass, custom runtime app load pass, CMD_READ_STATE roundtrip pass, reset command acknowledged, birth/synapse mutation commands acknowledged, READ_STATE schema version valid, READ_STATE payload compact, post-mutation neuron count visible, post-mutation synapse count visible",
   "generated_at_utc": "2026-04-30T21:37:40+00:00",
   "host_tests": {
-    "command": "make -C /tmp/job4219600444680192732.tmp/cra_422l/coral_reef_spinnaker/spinnaker_runtime clean-host test",
+    "command": "make -C <jobmanager_tmp> clean-host test",
     "returncode": 0,
     "status": "pass",
     "stderr": "/home/jovyan/spinnaker/spinnaker_tools/make/Makefile.common:18: inclusion of Makefile.common instead of spinnaker_tools.mk\nsrc/host_interface.c: In function \u2018sdp_send_reply\u2019:\nsrc/host_interface.c:223:13: warning: comparison is always false due to limited range of data type [-Wtype-limits]\n  223 |     if (len > 255) len = 255;\n      |             ^\n",
-    "stderr_artifact": "/tmp/job4219600444680192732.tmp/tier4_22i_job_output/tier4_22i_host_test_stderr.txt",
-    "stdout": "make: Entering directory '/tmp/job4219600444680192732.tmp/cra_422l/coral_reef_spinnaker/spinnaker_runtime'\nrm -f tests/test_runtime\ncc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-int-to-pointer-cast -I stubs -I src tests/test_runtime.c src/neuron_manager.c src/synapse_manager.c src/state_manager.c src/host_interface.c src/router.c -lm -o tests/test_runtime\n./tests/test_runtime\n=== Coral Reef Runtime Host Tests ===\n\nconfig.h:\n  PASS: MAKE_KEY\n  PASS: fixed-point math\n  PASS: command constants\n  PASS: weight limits\n\nneuron_manager:\n  PASS: neuron birth/death\n  PASS: neuron find\n  PASS: neuron reset all\n\nsynapse_manager:\n  PASS: synapse create/remove\n  PASS: synapse weight limits\n  PASS: eligibility trace modulation\n  PASS: indexed delivery and active trace list\n\nstate_manager:\n  PASS: persistent context slots\n  PASS: bounded slot eviction\n  PASS: readout state and reset\n  PASS: reward readout update\n  PASS: pending horizon maturation\n  PASS: bounded pending horizons\n\nrouter:\n  PASS: router add/remove\n  PASS: router reset all\n\nhost_interface:\n  PASS: host_interface init\n  PASS: compact state summary pack\n\n=== ALL TESTS PASSED ===\nmake: Leaving directory '/tmp/job4219600444680192732.tmp/cra_422l/coral_reef_spinnaker/spinnaker_runtime'\n",
-    "stdout_artifact": "/tmp/job4219600444680192732.tmp/tier4_22i_job_output/tier4_22i_host_test_stdout.txt"
+    "stderr_artifact": "<jobmanager_tmp>",
+    "stdout": "make: Entering directory '<jobmanager_tmp>'\nrm -f tests/test_runtime\ncc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-int-to-pointer-cast -I stubs -I src tests/test_runtime.c src/neuron_manager.c src/synapse_manager.c src/state_manager.c src/host_interface.c src/router.c -lm -o tests/test_runtime\n./tests/test_runtime\n=== Coral Reef Runtime Host Tests ===\n\nconfig.h:\n  PASS: MAKE_KEY\n  PASS: fixed-point math\n  PASS: command constants\n  PASS: weight limits\n\nneuron_manager:\n  PASS: neuron birth/death\n  PASS: neuron find\n  PASS: neuron reset all\n\nsynapse_manager:\n  PASS: synapse create/remove\n  PASS: synapse weight limits\n  PASS: eligibility trace modulation\n  PASS: indexed delivery and active trace list\n\nstate_manager:\n  PASS: persistent context slots\n  PASS: bounded slot eviction\n  PASS: readout state and reset\n  PASS: reward readout update\n  PASS: pending horizon maturation\n  PASS: bounded pending horizons\n\nrouter:\n  PASS: router add/remove\n  PASS: router reset all\n\nhost_interface:\n  PASS: host_interface init\n  PASS: compact state summary pack\n\n=== ALL TESTS PASSED ===\nmake: Leaving directory '<jobmanager_tmp>'\n",
+    "stdout_artifact": "<jobmanager_tmp>"
   },
   "main_syntax_check": {
     "normal": {
-      "command": "/usr/bin/cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-int-to-pointer-cast -I /tmp/job4219600444680192732.tmp/cra_422l/coral_reef_spinnaker/spinnaker_runtime/stubs -I /tmp/job4219600444680192732.tmp/cra_422l/coral_reef_spinnaker/spinnaker_runtime/src -c /tmp/job4219600444680192732.tmp/cra_422l/coral_reef_spinnaker/spinnaker_runtime/src/main.c -o /tmp/job4219600444680192732.tmp/tier4_22i_job_output/tier4_22i_main_syntax_normal.o",
-      "object_artifact": "/tmp/job4219600444680192732.tmp/tier4_22i_job_output/tier4_22i_main_syntax_normal.o",
+      "command": "/usr/bin/cc -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-int-to-pointer-cast -I <jobmanager_tmp> -I <jobmanager_tmp> -c <jobmanager_tmp> -o <jobmanager_tmp>",
+      "object_artifact": "<jobmanager_tmp>",
       "returncode": 0,
       "status": "pass",
       "stderr": "",
-      "stderr_artifact": "/tmp/job4219600444680192732.tmp/tier4_22i_job_output/tier4_22i_main_syntax_normal_stderr.txt",
+      "stderr_artifact": "<jobmanager_tmp>",
       "stdout": "",
-      "stdout_artifact": "/tmp/job4219600444680192732.tmp/tier4_22i_job_output/tier4_22i_main_syntax_normal_stdout.txt"
+      "stdout_artifact": "<jobmanager_tmp>"
     },
     "status": "pass"
   },
   "mode": "run-hardware",
-  "output_dir": "/tmp/job4219600444680192732.tmp/tier4_22i_job_output",
+  "output_dir": "<jobmanager_tmp>",
   "roundtrip": {
     "reason": "blocked_before_roundtrip",
     "status": "not_attempted"

@@ -1,7 +1,7 @@
 # Tier 4.20b Source/Simulation Preflight
 
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/tier4_20b_preflight_output`
+- Output directory: `<repo>/tier4_20b_preflight_output`
 
 This preflight proves the source-only upload folder and local chunked runtime contract are runnable before a full EBRAINS hardware attempt.
 

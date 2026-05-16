@@ -13,7 +13,7 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_4a_20260509_cost_aware_policy_action_contract/tier7_4a_results.json"
+      "value": "<repo>/controlled_test_output/tier7_4a_20260509_cost_aware_policy_action_contract/tier7_4a_results.json"
     },
     {
       "name": "Tier 7.4a passed",
@@ -752,8 +752,8 @@
       "window_recall_std": 0.0
     }
   ],
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_4b_20260509_cost_aware_policy_action_local_diagnostic",
-  "prior_gate": "/Users/james/JKS:CRA/controlled_test_output/tier7_4a_20260509_cost_aware_policy_action_contract/tier7_4a_results.json",
+  "output_dir": "<repo>/controlled_test_output/tier7_4b_20260509_cost_aware_policy_action_local_diagnostic",
+  "prior_gate": "<repo>/controlled_test_output/tier7_4a_20260509_cost_aware_policy_action_contract/tier7_4a_results.json",
   "rows": [
     {
       "abstain_rate": 0.8819444444444444,

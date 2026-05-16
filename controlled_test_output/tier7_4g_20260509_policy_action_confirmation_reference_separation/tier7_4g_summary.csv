@@ -1,10 +1,10 @@
 criterion,value,rule,pass,details
-tier7_4f_results_exist,True,must exist,True,/Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_results.json
+tier7_4f_results_exist,True,must exist,True,<repo>/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_results.json
 tier7_4f_status_pass,pass,case-insensitive == PASS,True,
-score_rows_present,3360,> 0,True,/Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_score_rows.csv
-model_summary_present,20,> 0,True,/Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_model_summary.csv
-family_decisions_present,2,>= 2,True,/Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_family_decisions.csv
-locked_cost_model_present,10,> 0,True,/Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_cost_model.csv
+score_rows_present,3360,> 0,True,<repo>/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_score_rows.csv
+model_summary_present,20,> 0,True,<repo>/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_model_summary.csv
+family_decisions_present,2,>= 2,True,<repo>/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_family_decisions.csv
+locked_cost_model_present,10,> 0,True,<repo>/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_cost_model.csv
 heldout_tuning_performed,False,must remain False,True,7.4g only reuses locked 7.4f scores.
 cmapss_candidate_rank_first,1,== 1,True,
 cmapss_family_previously_confirmed,True,== True,True,

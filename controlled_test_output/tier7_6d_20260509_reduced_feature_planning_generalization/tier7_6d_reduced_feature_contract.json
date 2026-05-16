@@ -12,7 +12,7 @@
     "hierarchical_composition_holdout"
   ],
   "next_gate": "Tier 7.6e - Planning/Subgoal-Control Promotion + Compact Regression Gate",
-  "prerequisite": "/Users/james/JKS:CRA/controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout/tier7_6c_results.json",
+  "prerequisite": "<repo>/controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout/tier7_6c_results.json",
   "splits": {
     "planning_hidden_holdout": 6,
     "planning_ood_holdout": 5,

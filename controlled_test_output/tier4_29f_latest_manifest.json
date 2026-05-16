@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.394931+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.542601+00:00",
   "source_generated_at_utc": "2026-05-05T13:20:42.804040+00:00",
   "registry_entry_id": "tier4_29f_compact_native_mechanism_regression",
   "tier": "Tier 4.29f - Compact Native Mechanism Regression",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_29f_20260505_native_mechanism_regression",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_29f_20260505_native_mechanism_regression/tier4_29f_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_29f_20260505_native_mechanism_regression/tier4_29f_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_29f_20260505_native_mechanism_regression/tier4_29f_summary.csv",
+  "output_dir": "controlled_test_output/tier4_29f_20260505_native_mechanism_regression",
+  "manifest": "controlled_test_output/tier4_29f_20260505_native_mechanism_regression/tier4_29f_results.json",
+  "report": "controlled_test_output/tier4_29f_20260505_native_mechanism_regression/tier4_29f_report.md",
+  "summary_csv": "controlled_test_output/tier4_29f_20260505_native_mechanism_regression/tier4_29f_summary.csv",
   "canonical": true,
   "claim": "The canonical hardware evidence for native keyed memory, routing/composition, predictive binding, confidence gating, and host-scheduled replay/consolidation remains complete and internally aligned. All 113/113 evidence-regression criteria pass.",
   "caveat": "Evidence-regression gate over already-ingested real hardware passes; not a new hardware execution, not a single monolithic all-mechanism task, not lifecycle/self-scaling evidence, not multi-chip scaling, and not speedup evidence."

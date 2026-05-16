@@ -2,7 +2,7 @@
 
 - Generated: `2026-04-29T19:31:55+00:00`
 - Status: **FAIL**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier5_17c_20260429_193147`
+- Output directory: `<repo>/controlled_test_output/tier5_17c_20260429_193147`
 - Tasks: `masked_channel_context, long_gap_temporal_continuation, same_visible_different_latent`
 - Seeds: `[42, 43, 44]`
 

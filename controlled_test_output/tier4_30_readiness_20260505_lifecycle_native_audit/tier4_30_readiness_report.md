@@ -79,7 +79,7 @@ Out of scope for the first lifecycle-native path:
 | native mechanism bridge v0.3 exists | `CRA_NATIVE_MECHANISM_BRIDGE_v0.3` | `== CRA_NATIVE_MECHANISM_BRIDGE_v0.3` | yes |  |
 | native bridge registry stayed green | `pass` | `== pass` | yes |  |
 | Tier 4.29f evidence regression passed | `113/113` | `== 113/113 and status pass` | yes |  |
-| runtime source tree exists | `/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src` | `config/state/host/neuron source files present` | yes |  |
+| runtime source tree exists | `<repo>/coral_reef_spinnaker/spinnaker_runtime/src` | `config/state/host/neuron source files present` | yes |  |
 | static state capacity exists | `{'MAX_NEURONS': 1024, 'MAX_CONTEXT_SLOTS': 128, 'MAX_ROUTE_SLOTS': 8, 'MAX_MEMORY_SLOTS': 8, 'MAX_PENDING_HORIZONS': 128, 'MAX_SCHEDULE_ENTRIES': 512}` | `context>=16 route>=4 memory>=4 pending>=32 schedule>=128` | yes |  |
 | MCPL data plane available for native scaling path | `True` | `== true` | yes |  |
 | compact readback path available | `True` | `== true` | yes |  |

@@ -2,8 +2,8 @@
 
 - Generated: `2026-04-27T19:20:27.494879+00:00`
 - Status: **FAIL, noncanonical diagnostic**
-- Ingested bundle: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_194526_hard_noisy_switching_3seed_hardware_fail`
-- Source: downloaded SpiNNaker JobManager artifacts from `/Users/james/Downloads`
+- Ingested bundle: `<repo>/controlled_test_output/tier4_16_20260427_194526_hard_noisy_switching_3seed_hardware_fail`
+- Source: downloaded SpiNNaker JobManager artifacts from `<downloads>`
 
 ## Short Read
 

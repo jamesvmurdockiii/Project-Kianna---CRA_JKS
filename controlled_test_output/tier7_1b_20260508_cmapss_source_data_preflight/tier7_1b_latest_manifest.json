@@ -3,60 +3,60 @@
     {
       "bytes": 812,
       "name": "fd001_profile_json",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_fd001_profile.json",
+      "path": "<repo>/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_fd001_profile.json",
       "sha256": "07dd5847e37ad2693d4dcc7040a71929a58c0a0909e5ce4e151e27cb276cb84a"
     },
     {
       "bytes": 3482,
       "name": "normalization_stats_json",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_normalization_stats.json",
+      "path": "<repo>/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_normalization_stats.json",
       "sha256": "38ac2648e98a9896e68a5b922a3451b632f9fe5d9e69bb8aa0ff38ec298690c9"
     },
     {
       "bytes": 1539,
       "name": "report_md",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_report.md",
+      "path": "<repo>/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_report.md",
       "sha256": "b9fdc70d2a5e3cb8083120b7ce3e9fda50a110d6dddf6c2ae530a735f09f67a0"
     },
     {
       "bytes": 8871,
       "name": "results_json",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_results.json",
+      "path": "<repo>/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_results.json",
       "sha256": "afbd1ed5130da88a9c15900530cfe53ab04fe6ca27c7f5437d1ec1cc24ca8b02"
     },
     {
       "bytes": 804,
       "name": "smoke_scoring_labels_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_smoke_scoring_labels.csv",
+      "path": "<repo>/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_smoke_scoring_labels.csv",
       "sha256": "c65ffcc8dd7b8dbeeab116100ac1eefad53691fa673a051860e95f79dc6aed16"
     },
     {
       "bytes": 1404,
       "name": "smoke_stream_preview_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_smoke_stream_preview.csv",
+      "path": "<repo>/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_smoke_stream_preview.csv",
       "sha256": "d347297f74000b6437401033a5667de7992456c2b91586556127efdb349f8153"
     },
     {
       "bytes": 1255,
       "name": "source_manifest_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_source_manifest.csv",
+      "path": "<repo>/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_source_manifest.csv",
       "sha256": "0cb4ab8d025bad1baa1e7708b8709de3007f9780beb4a5520be9a282c91b5ccf"
     },
     {
       "bytes": 3354,
       "name": "source_manifest_json",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_source_manifest.json",
+      "path": "<repo>/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_source_manifest.json",
       "sha256": "f1804a7104c11bd4a13d28dab3572c7b78cef95051a01928b0c2915cda7a2d94"
     },
     {
       "bytes": 1605,
       "name": "summary_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_summary.csv",
+      "path": "<repo>/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_summary.csv",
       "sha256": "5850f0f3b8e59258471a90a2f9b05d9a7416c4e97bf87a233de325367f4e2ecf"
     }
   ],
   "generated_at_utc": "2026-05-08T20:59:45+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight",
+  "output_dir": "<repo>/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight",
   "runner_revision": "tier7_1b_cmapss_source_data_preflight_20260508_0001",
   "status": "pass",
   "tier": "Tier 7.1b - NASA C-MAPSS Source/Data Preflight"

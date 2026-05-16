@@ -1,7 +1,7 @@
 name,value,rule,passed,note
-Tier 7.7a contract exists,/Users/james/JKS:CRA/controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract/tier7_7a_results.json,exists and status pass,True,
-v2.5 baseline exists,/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.5.json,exists,True,
-v2.3 baseline exists,/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.3.json,exists,True,
+Tier 7.7a contract exists,<repo>/controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract/tier7_7a_results.json,exists and status pass,True,
+v2.5 baseline exists,<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.5.json,exists,True,
+v2.3 baseline exists,<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.3.json,exists,True,
 primary tasks match contract,"['mackey_glass', 'lorenz', 'narma10']",== Mackey/Lorenz/NARMA,True,
 locked length,8000,== 8000,True,
 locked horizon,8,== 8,True,

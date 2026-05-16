@@ -6,7 +6,7 @@
 - Seeds: `42, 43, 44, 45, 46, 47, 48, 49, 50, 51`
 - Run lengths: `120, 240, 480, 960, 1500`
 - Tasks: `fixed_pattern,delayed_cue,hard_noisy_switching,sensor_control`
-- Output directory: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_5_20260427_222736`
+- Output directory: `<repo>/controlled_test_output/tier5_5_20260427_222736`
 
 Tier 5.5 compares the locked CRA v0.8 delayed-credit configuration against fair external baselines across run lengths and seeds. It exports paired seed deltas, confidence intervals, effect sizes, recovery, runtime, and sample-efficiency metrics.
 

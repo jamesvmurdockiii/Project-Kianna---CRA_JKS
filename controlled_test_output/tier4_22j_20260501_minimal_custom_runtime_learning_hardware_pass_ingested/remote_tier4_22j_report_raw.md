@@ -3,7 +3,7 @@
 - Generated: `2026-05-01T01:25:45+00:00`
 - Mode: `run-hardware`
 - Status: **FAIL**
-- Output directory: `/tmp/job11994622048194933354.tmp/tier4_22j_job_output`
+- Output directory: `<jobmanager_tmp>`
 
 Tier 4.22j tests a minimal chip-owned delayed-credit/readout update after the Tier 4.22i board command path passed.
 
@@ -62,15 +62,15 @@ Tier 4.22j tests a minimal chip-owned delayed-credit/readout update after the Ti
 
 ## Artifacts
 
-- `environment_json`: `/tmp/job11994622048194933354.tmp/tier4_22j_job_output/tier4_22j_environment.json`
-- `target_acquisition_json`: `/tmp/job11994622048194933354.tmp/tier4_22j_job_output/tier4_22j_target_acquisition.json`
-- `host_test_stdout`: `/tmp/job11994622048194933354.tmp/tier4_22j_job_output/tier4_22i_host_test_stdout.txt`
-- `host_test_stderr`: `/tmp/job11994622048194933354.tmp/tier4_22j_job_output/tier4_22i_host_test_stderr.txt`
-- `main_syntax_stdout`: `/tmp/job11994622048194933354.tmp/tier4_22j_job_output/tier4_22i_main_syntax_normal_stdout.txt`
-- `main_syntax_stderr`: `/tmp/job11994622048194933354.tmp/tier4_22j_job_output/tier4_22i_main_syntax_normal_stderr.txt`
-- `aplx_build_stdout`: `/tmp/job11994622048194933354.tmp/tier4_22j_job_output/tier4_22i_aplx_build_stdout.txt`
-- `aplx_build_stderr`: `/tmp/job11994622048194933354.tmp/tier4_22j_job_output/tier4_22i_aplx_build_stderr.txt`
-- `load_result_json`: `/tmp/job11994622048194933354.tmp/tier4_22j_job_output/tier4_22j_load_result.json`
-- `learning_result_json`: `/tmp/job11994622048194933354.tmp/tier4_22j_job_output/tier4_22j_learning_result.json`
-- `manifest_json`: `/tmp/job11994622048194933354.tmp/tier4_22j_job_output/tier4_22j_results.json`
-- `report_md`: `/tmp/job11994622048194933354.tmp/tier4_22j_job_output/tier4_22j_report.md`
+- `environment_json`: `<jobmanager_tmp>`
+- `target_acquisition_json`: `<jobmanager_tmp>`
+- `host_test_stdout`: `<jobmanager_tmp>`
+- `host_test_stderr`: `<jobmanager_tmp>`
+- `main_syntax_stdout`: `<jobmanager_tmp>`
+- `main_syntax_stderr`: `<jobmanager_tmp>`
+- `aplx_build_stdout`: `<jobmanager_tmp>`
+- `aplx_build_stderr`: `<jobmanager_tmp>`
+- `load_result_json`: `<jobmanager_tmp>`
+- `learning_result_json`: `<jobmanager_tmp>`
+- `manifest_json`: `<jobmanager_tmp>`
+- `report_md`: `<jobmanager_tmp>`

@@ -1,6 +1,6 @@
 name,value,rule,passed,note
-state_manager header exists,/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h,file exists,True,
-state_manager source exists,/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c,file exists,True,
+state_manager header exists,<repo>/coral_reef_spinnaker/spinnaker_runtime/src/state_manager.h,file exists,True,
+state_manager source exists,<repo>/coral_reef_spinnaker/spinnaker_runtime/src/state_manager.c,file exists,True,
 bounded context slot constant,MAX_CONTEXT_SLOTS,defined in config.h,True,
 bounded pending horizon constant,MAX_PENDING_HORIZONS,defined in config.h,True,
 static slot table,g_context_slots[MAX_CONTEXT_SLOTS],static fixed-size array,True,

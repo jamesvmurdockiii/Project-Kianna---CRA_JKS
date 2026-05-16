@@ -1,17 +1,17 @@
 {
   "artifacts": {
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls/tier1_report.md",
-    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls/tier1_summary.csv"
+    "report_md": "<repo>/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls/tier1_report.md",
+    "summary_csv": "<repo>/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls/tier1_summary.csv"
   },
   "backend": "MockSimulator",
-  "command": "experiments/tier1_sanity.py --tests all --steps 80 --seeds 3 --base-seed 42 --readout-lr 0.1 --delayed-readout-lr 0.2 --stop-on-fail --output-dir /Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls",
+  "command": "experiments/tier1_sanity.py --tests all --steps 80 --seeds 3 --base-seed 42 --readout-lr 0.1 --delayed-readout-lr 0.2 --stop-on-fail --output-dir <repo>/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls",
   "generated_at_utc": "2026-04-29T23:03:01+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls",
+  "output_dir": "<repo>/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls",
   "results": [
     {
       "artifacts": {
-        "plot_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls/zero_signal_timeseries.png",
-        "timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls/zero_signal_timeseries.csv"
+        "plot_png": "<repo>/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls/zero_signal_timeseries.png",
+        "timeseries_csv": "<repo>/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls/zero_signal_timeseries.csv"
       },
       "criteria": [
         {
@@ -87,8 +87,8 @@
     },
     {
       "artifacts": {
-        "plot_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls/shuffled_label_timeseries.png",
-        "timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls/shuffled_label_timeseries.csv"
+        "plot_png": "<repo>/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls/shuffled_label_timeseries.png",
+        "timeseries_csv": "<repo>/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls/shuffled_label_timeseries.csv"
       },
       "criteria": [
         {
@@ -149,8 +149,8 @@
     },
     {
       "artifacts": {
-        "plot_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls/seed_repeat_summary.png",
-        "seed_summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls/seed_repeat_summary.csv"
+        "plot_png": "<repo>/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls/seed_repeat_summary.png",
+        "seed_summary_csv": "<repo>/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/tier1_controls/seed_repeat_summary.csv"
       },
       "criteria": [
         {

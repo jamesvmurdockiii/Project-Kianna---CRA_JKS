@@ -5005,7 +5005,7 @@
     2000,
     8000
   ],
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_0h_20260508_bounded_recurrent_interface_gate",
+  "output_dir": "<repo>/controlled_test_output/tier7_0h_20260508_bounded_recurrent_interface_gate",
   "runner_revision": "tier7_0h_bounded_recurrent_interface_gate_20260508_0001",
   "runtime_seconds": 18.739579208000002,
   "seeds": [

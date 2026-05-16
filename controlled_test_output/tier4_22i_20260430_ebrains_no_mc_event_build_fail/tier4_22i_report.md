@@ -3,7 +3,7 @@
 - Generated: `2026-04-30T20:36:25+00:00`
 - Mode: `run-hardware`
 - Status: **FAIL**
-- Output directory: `/tmp/job1843265057497893779.tmp/tier4_22i_job_output`
+- Output directory: `<jobmanager_tmp>`
 
 Tier 4.22i tests the custom C runtime itself on hardware: build/load the tiny `.aplx`, send `CMD_READ_STATE`, and validate the compact state packet after simple command mutations.
 
@@ -54,14 +54,14 @@ Tier 4.22i tests the custom C runtime itself on hardware: build/load the tiny `.
 
 ## Artifacts
 
-- `environment_json`: `/tmp/job1843265057497893779.tmp/tier4_22i_job_output/tier4_22i_environment.json`
-- `host_test_stdout`: `/tmp/job1843265057497893779.tmp/tier4_22i_job_output/tier4_22i_host_test_stdout.txt`
-- `host_test_stderr`: `/tmp/job1843265057497893779.tmp/tier4_22i_job_output/tier4_22i_host_test_stderr.txt`
-- `main_syntax_stdout`: `/tmp/job1843265057497893779.tmp/tier4_22i_job_output/tier4_22i_main_syntax_stdout.txt`
-- `main_syntax_stderr`: `/tmp/job1843265057497893779.tmp/tier4_22i_job_output/tier4_22i_main_syntax_stderr.txt`
-- `aplx_build_stdout`: `/tmp/job1843265057497893779.tmp/tier4_22i_job_output/tier4_22i_aplx_build_stdout.txt`
-- `aplx_build_stderr`: `/tmp/job1843265057497893779.tmp/tier4_22i_job_output/tier4_22i_aplx_build_stderr.txt`
-- `load_result_json`: `/tmp/job1843265057497893779.tmp/tier4_22i_job_output/tier4_22i_load_result.json`
-- `roundtrip_result_json`: `/tmp/job1843265057497893779.tmp/tier4_22i_job_output/tier4_22i_roundtrip_result.json`
-- `manifest_json`: `/tmp/job1843265057497893779.tmp/tier4_22i_job_output/tier4_22i_results.json`
-- `report_md`: `/tmp/job1843265057497893779.tmp/tier4_22i_job_output/tier4_22i_report.md`
+- `environment_json`: `<jobmanager_tmp>`
+- `host_test_stdout`: `<jobmanager_tmp>`
+- `host_test_stderr`: `<jobmanager_tmp>`
+- `main_syntax_stdout`: `<jobmanager_tmp>`
+- `main_syntax_stderr`: `<jobmanager_tmp>`
+- `aplx_build_stdout`: `<jobmanager_tmp>`
+- `aplx_build_stderr`: `<jobmanager_tmp>`
+- `load_result_json`: `<jobmanager_tmp>`
+- `roundtrip_result_json`: `<jobmanager_tmp>`
+- `manifest_json`: `<jobmanager_tmp>`
+- `report_md`: `<jobmanager_tmp>`

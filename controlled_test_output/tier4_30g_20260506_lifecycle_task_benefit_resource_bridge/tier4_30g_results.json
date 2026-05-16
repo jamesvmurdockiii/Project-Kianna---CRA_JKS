@@ -9,7 +9,7 @@
   },
   "bridge_contract": {
     "delay_steps": 2,
-    "enabled_reference_source": "/Users/james/JKS:CRA/controlled_test_output/tier4_30f_hw_20260505_hardware_pass_ingested/tier4_30f_hw_results.json",
+    "enabled_reference_source": "<repo>/controlled_test_output/tier4_30f_hw_20260505_hardware_pass_ingested/tier4_30f_hw_results.json",
     "feature_contract": "context_slot * route_slot * lifecycle_gated_memory_slot * cue",
     "hardware_preparation_allowed_after_pass": true,
     "lifecycle_modes": [

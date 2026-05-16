@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.427925+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.573035+00:00",
   "source_generated_at_utc": "2026-05-09T02:11:26+00:00",
   "registry_entry_id": "tier7_4d_cost_aware_policy_action_heldout_contract",
   "tier": "Tier 7.4d - Cost-Aware Policy/Action Held-Out/Public Usefulness Contract",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_4d_20260509_cost_aware_policy_action_heldout_contract",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_4d_20260509_cost_aware_policy_action_heldout_contract/tier7_4d_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_4d_20260509_cost_aware_policy_action_heldout_contract/tier7_4d_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_4d_20260509_cost_aware_policy_action_heldout_contract/tier7_4d_summary.csv",
+  "output_dir": "controlled_test_output/tier7_4d_20260509_cost_aware_policy_action_heldout_contract",
+  "manifest": "controlled_test_output/tier7_4d_20260509_cost_aware_policy_action_heldout_contract/tier7_4d_results.json",
+  "report": "controlled_test_output/tier7_4d_20260509_cost_aware_policy_action_heldout_contract/tier7_4d_report.md",
+  "summary_csv": "controlled_test_output/tier7_4d_20260509_cost_aware_policy_action_heldout_contract/tier7_4d_summary.csv",
   "canonical": true,
   "claim": "Tier 7.4d predeclared the held-out/public usefulness scoring contract for the frozen v2.4 cost-aware policy/action baseline. It locks public/real-ish action-cost families, actions, costs, splits, baselines, shams, statistics, pass/fail criteria, and artifacts before any v2.4 held-out scoring.",
   "caveat": "Contract-only evidence; not a scoring run, not public usefulness proof, not broad anomaly or predictive-maintenance superiority, not a new baseline freeze, not hardware/native transfer, and not AGI/ASI evidence."

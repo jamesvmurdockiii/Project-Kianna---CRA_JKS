@@ -1,6 +1,6 @@
 name,value,rule,passed,note
-Tier 7.7k contract exists,/Users/james/JKS:CRA/controlled_test_output/tier7_7k_20260509_effective_state_dimensionality_repair_contract/tier7_7k_results.json,exists and pass,True,
-Tier 7.7j prerequisite exists,/Users/james/JKS:CRA/controlled_test_output/tier7_7j_20260509_capacity_sham_separation_scoring_gate/tier7_7j_results.json,exists and pass,True,
+Tier 7.7k contract exists,<repo>/controlled_test_output/tier7_7k_20260509_effective_state_dimensionality_repair_contract/tier7_7k_results.json,exists and pass,True,
+Tier 7.7j prerequisite exists,<repo>/controlled_test_output/tier7_7j_20260509_capacity_sham_separation_scoring_gate/tier7_7j_results.json,exists and pass,True,
 locked tasks,"['mackey_glass', 'lorenz', 'narma10']",Mackey/Lorenz/NARMA,True,
 locked lengths,"[8000, 16000, 32000]",8000/16000/32000,True,
 locked seeds,"[42, 43, 44]",42/43/44,True,

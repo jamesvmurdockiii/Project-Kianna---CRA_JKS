@@ -281,7 +281,7 @@
       "pass": true,
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_7b_20260509_v2_5_standardized_scoreboard_scoring_gate/tier7_7b_results.json"
+      "value": "<repo>/controlled_test_output/tier7_7b_20260509_v2_5_standardized_scoreboard_scoring_gate/tier7_7b_results.json"
     },
     {
       "criterion": "Tier 7.7b prerequisite passed",
@@ -314,7 +314,7 @@
       "pass": true,
       "passed": true,
       "rule": "exists and pass",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract/tier7_7a_results.json"
+      "value": "<repo>/controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract/tier7_7a_results.json"
     },
     {
       "criterion": "v2.5 baseline exists",
@@ -325,7 +325,7 @@
       "pass": true,
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.5.json"
+      "value": "<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.5.json"
     },
     {
       "criterion": "required lengths locked",
@@ -464,16 +464,16 @@
   "criteria_passed": 15,
   "criteria_total": 15,
   "generated_at_utc": "2026-05-09T13:45:19+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract",
+  "output_dir": "<repo>/controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract",
   "prerequisites": {
-    "tier7_7a_results": "/Users/james/JKS:CRA/controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract/tier7_7a_results.json",
+    "tier7_7a_results": "<repo>/controlled_test_output/tier7_7a_20260509_v2_5_standardized_scoreboard_contract/tier7_7a_results.json",
     "tier7_7a_sha256": "af3f4b2d14bfc0bd248dd447f7da7910d3f5c3bfb2fef66769a04c03c50bbdeb",
     "tier7_7a_status": "pass",
     "tier7_7b_outcome": "standardized_progress_pass",
-    "tier7_7b_results": "/Users/james/JKS:CRA/controlled_test_output/tier7_7b_20260509_v2_5_standardized_scoreboard_scoring_gate/tier7_7b_results.json",
+    "tier7_7b_results": "<repo>/controlled_test_output/tier7_7b_20260509_v2_5_standardized_scoreboard_scoring_gate/tier7_7b_results.json",
     "tier7_7b_sha256": "6e9da6c8cec20306cf5557968f735a6cf1bde03146b9482f1aca1a429446b1bb",
     "tier7_7b_status": "pass",
-    "v2_5_baseline": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.5.json",
+    "v2_5_baseline": "<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.5.json",
     "v2_5_baseline_sha256": "df62ac3b0f76ed6a64f88a9f2a70e31e4fbe409096e2622877e6c6f77db7fb89"
   },
   "runner_revision": "tier7_7c_standardized_long_run_failure_contract_20260509_0001",

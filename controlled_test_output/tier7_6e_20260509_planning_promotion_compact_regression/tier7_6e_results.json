@@ -30,18 +30,18 @@
       "nest",
       "--stop-on-fail",
       "--output-dir",
-      "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest"
+      "<repo>/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest"
     ],
     "failure_reason": "",
-    "manifest_path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/tier5_18c_results.json",
+    "manifest_path": "<repo>/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/tier5_18c_results.json",
     "name": "compact_regression_full_nest",
-    "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest",
+    "output_dir": "<repo>/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest",
     "purpose": "rerun the promoted software compact regression stack before any v2.5 planning freeze",
     "return_code": 0,
     "runtime_seconds": 1635.2336707919999,
     "status": "pass",
-    "stderr_path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/compact_regression_full_nest_stderr.log",
-    "stdout_path": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/compact_regression_full_nest_stdout.log"
+    "stderr_path": "<repo>/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/compact_regression_full_nest_stderr.log",
+    "stdout_path": "<repo>/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/compact_regression_full_nest_stdout.log"
   },
   "compact_mode": "full",
   "criteria": [
@@ -57,14 +57,14 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization/tier7_6d_results.json"
+      "value": "<repo>/controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization/tier7_6d_results.json"
     },
     {
       "name": "v2.4 baseline exists",
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.4.json"
+      "value": "<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.4.json"
     },
     {
       "name": "Tier 7.6d passed",
@@ -191,12 +191,12 @@
   "failed_criteria": [],
   "failure_reason": "",
   "generated_at_utc": "2026-05-09T05:12:22+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression",
+  "output_dir": "<repo>/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression",
   "runner_revision": "tier7_6e_planning_promotion_compact_regression_20260509_0001",
   "runtime_seconds": 1635.236244375,
   "source_results": {
-    "tier7_6d": "/Users/james/JKS:CRA/controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization/tier7_6d_results.json",
-    "v2_4_baseline": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.4.json"
+    "tier7_6d": "<repo>/controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization/tier7_6d_results.json",
+    "v2_4_baseline": "<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.4.json"
   },
   "status": "pass",
   "support": {

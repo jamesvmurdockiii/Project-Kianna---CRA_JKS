@@ -1,10 +1,10 @@
 {
   "artifacts": {
-    "backend_summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16a_debug_20260427_141912/tier4_16a_debug_backend_summary.csv",
-    "hardware_fail_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16_20260427_124916_hardware_fail",
-    "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16a_debug_20260427_141912/tier4_16a_debug_summary.csv",
-    "summary_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16a_debug_20260427_141912/tier4_16a_debug_summary.png",
-    "tail_events_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_16a_debug_20260427_141912/tier4_16a_debug_tail_events.csv"
+    "backend_summary_csv": "<repo>/controlled_test_output/tier4_16a_debug_20260427_141912/tier4_16a_debug_backend_summary.csv",
+    "hardware_fail_dir": "<repo>/controlled_test_output/tier4_16_20260427_124916_hardware_fail",
+    "summary_csv": "<repo>/controlled_test_output/tier4_16a_debug_20260427_141912/tier4_16a_debug_summary.csv",
+    "summary_png": "<repo>/controlled_test_output/tier4_16a_debug_20260427_141912/tier4_16a_debug_summary.png",
+    "tail_events_csv": "<repo>/controlled_test_output/tier4_16a_debug_20260427_141912/tier4_16a_debug_tail_events.csv"
   },
   "backend_summary_rows": [
     {

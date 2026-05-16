@@ -54,14 +54,14 @@
       "note": "",
       "passed": true,
       "rule": "exists and pass",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_7i_20260509_capacity_sham_separation_contract/tier7_7i_results.json"
+      "value": "<repo>/controlled_test_output/tier7_7i_20260509_capacity_sham_separation_contract/tier7_7i_results.json"
     },
     {
       "name": "Tier 7.7h prerequisite exists",
       "note": "",
       "passed": true,
       "rule": "exists and pass",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_7h_20260509_lorenz_capacity_narma_memory_scoring_gate/tier7_7h_results.json"
+      "value": "<repo>/controlled_test_output/tier7_7h_20260509_lorenz_capacity_narma_memory_scoring_gate/tier7_7h_results.json"
     },
     {
       "name": "locked tasks",
@@ -181,7 +181,7 @@
     16000,
     32000
   ],
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7j_20260509_capacity_sham_separation_scoring_gate",
+  "output_dir": "<repo>/controlled_test_output/tier7_7j_20260509_capacity_sham_separation_scoring_gate",
   "permuted_offsets": [
     11,
     23,

@@ -1,78 +1,92 @@
 # Public Repository Hygiene
 
-This repository is public Apache-2.0 research infrastructure. Treat every commit
-as something a reviewer, reproducer, or future maintainer may inspect without
-uncommitted context.
+CRA is a public Apache-2.0 research repository. Every commit should be readable
+by external reviewers without private chat context, local machine assumptions, or
+unreviewed raw downloads.
 
 ## Public-Repo Goals
 
-- A fresh clone should explain what CRA is, what has been proved, and what has
-  not been proved.
-- Source, generated evidence, EBRAINS upload packages, and transient local work
-  must be clearly separated.
-- Claims must remain traceable from a paper-facing statement to registry rows,
-  tier reports, exact runner code, and returned hardware artifacts where
-  applicable.
-- No credentials, local absolute symlink dependencies, private downloads, or
-  machine-specific caches should enter Git history.
+- A fresh clone explains what CRA is, what has been shown, and what remains
+  unproven.
+- Source, compact evidence, raw hardware returns, and transient local work are
+  clearly separated.
+- Every paper-facing claim can be traced to a registry row, tier report,
+  pass/fail criteria, runner code, and claim boundary.
+- No credentials, private downloads, local caches, machine-specific symlinks, or
+  unnecessary raw hardware artifacts enter Git history.
+- Failed diagnostics remain visible when they affect the scientific claim, but
+  raw failure sludge is summarized rather than dumped into the public tree.
 
 ## What Belongs In Git
 
 | Category | Commit? | Notes |
 | --- | --- | --- |
 | Source code | Yes | `coral_reef_spinnaker/`, `experiments/`, runtime C sources, tests, tooling. |
-| Human docs | Yes | `README.md`, `codebasecontract.md`, `docs/*.md`, `CONTROLLED_TEST_PLAN.md`. |
-| Frozen baselines | Yes | `baselines/CRA_EVIDENCE_BASELINE_*` and native runtime/task baselines. |
-| Canonical evidence registry | Yes | `controlled_test_output/STUDY_REGISTRY.*`, generated paper table, evidence index. |
-| Returned/ingested evidence bundles | Yes | Keep pass/fail/noncanonical history needed for auditability. |
-| EBRAINS upload packages | Yes, source-only | `ebrains_jobs/cra_*` folders document exactly what source was uploaded. They must be real directories, not symlinks. |
-| Prepared-only duplicate package copies | Usually no | Prefer the canonical `ebrains_jobs/cra_*` package plus any tier report. Do not duplicate packages under ad hoc root output folders. |
-| Host test executables | No | Rebuild from source. Ignored by `.gitignore`. |
-| `.aplx`, `.elf`, `.o`, build dirs | No | Rebuild from source/toolchain. Ignored by `.gitignore`. |
-| Root transient output dirs | No | Examples: `tier4_*_output/`, `tier4_*_job_output/`, local scratch folders. |
-| Downloads and reports not ingested | No | `/Users/james/Downloads` is intake only, never canonical evidence. |
-| Credentials or private tokens | Never | Sanitize remotes and scan before public pushes. |
+| Public docs | Yes | `README.md`, `docs/*.md`, `CONTROLLED_TEST_PLAN.md`, `ARTIFACTS.md`. |
+| Frozen baselines | Yes | Compact locks and snapshots under `baselines/`. |
+| Compact evidence | Yes | Reports, results JSON, summaries, selected expected figures/time-series, registry/table/audit outputs. |
+| EBRAINS package templates | Sometimes | Commit compact source-only packages only when they are reproduction-critical. |
+| Raw EBRAINS returns | No by default | Archive externally or summarize through ingest artifacts. |
+| Provenance DBs/zips/stack traces | No by default | Ignore and externalize unless a reviewer explicitly needs a hash-preserved archive. |
+| Compiled binaries/build products | No | Rebuild from source. |
+| Private AI handoff/audit files | No | Rewrite as public docs if useful; otherwise keep ignored. |
+
+## Public Claim Rules
+
+Public docs must be realistic:
+
+- Say “research platform” unless a tier specifically supports a stronger claim.
+- Say “bounded evidence” for hardware/runtime results unless the full scope has
+  passed.
+- Never imply AGI, consciousness, language understanding, production readiness,
+  or broad superiority unless a predeclared future tier actually earns it.
+- Keep negative and parked results visible when they explain why a mechanism was
+  not promoted.
+- Treat `v2.7` as a diagnostic snapshot unless a later promotion gate changes
+  the baseline state.
 
 ## EBRAINS Package Rules
 
-1. Upload only the specific `ebrains_jobs/cra_*` folder for the active tier.
-2. Never upload `controlled_test_output/`; it is local evidence storage and can
-   be gigabytes.
-3. Never commit `ebrains_jobs/cra_*` as a symlink to `/tmp`, `/private/tmp`, a
-   local output folder, or another machine-specific path.
-4. After a package is prepared, verify the runner exists inside the package and
-   the README, command, folder name, runner revision, and active tier all agree.
-5. If a package fails after upload, use a fresh package name for the repair.
-6. Returned EBRAINS files are not canonical until ingested into
-   `controlled_test_output/` and documented with pass/fail boundaries.
+1. Upload only the specific source package required by the active tier.
+2. Never upload `controlled_test_output/`, local Downloads, caches, or the entire
+   repo to JobManager.
+3. Never commit symlink packages that point to `/tmp`, a local output folder, or
+   another machine-specific path.
+4. Verify runner path, command, folder name, README, revision string, and active
+   tier before upload.
+5. Use a fresh package name after a failed upload/repair to avoid stale cache
+   ambiguity.
+6. Returned files are not evidence until ingested and documented.
 
 ## Evidence Size Policy
 
-`controlled_test_output/` is intentionally tracked because this project is being
-kept as a reproducible research artifact, not a minimal source-only library. That
-choice is expensive: the directory is large and contains many generated files.
+The repository may keep compact generated evidence because CRA is a research
+artifact, not only a source library. It should not keep raw hardware downloads by
+default.
 
 Current policy:
 
-- Keep generated evidence when it is needed to reproduce, audit, or explain a
-  claim, failure, or noncanonical decision.
-- Do not keep duplicate scratch output roots when the same information is already
-  represented by a stable job package and an ingested evidence bundle.
-- No individual tracked file should approach GitHub's 100 MB hard limit. If a
-  future artifact does, move it to an external release/archive plan before
-  committing.
-- `.gitattributes` marks generated evidence as generated/binary where useful so
-  GitHub diffs stay focused on source and docs.
+- Keep compact artifacts required by the evidence registry.
+- Keep frozen baseline locks and registry snapshots.
+- Keep selected small figures/time-series only when they are expected artifacts.
+- Ignore raw hardware returns, provenance databases, stack traces, nested upload
+  bundles, and compiled binaries.
+- If a raw artifact is necessary for review, preserve it externally with a hash
+  and reference it from a manifest.
 
-## Security Checklist Before Push
+## Security And Hygiene Checklist
 
-Run these checks before publishing or committing a release-grade cleanup:
+Run before public pushes or release-grade cleanup:
 
 ```bash
 git remote -v
 git grep -n -I -E 'ghp_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]+|sk-[A-Za-z0-9]{20,}|AKIA[0-9A-Z]{16}|BEGIN (RSA|OPENSSH|PRIVATE) KEY' -- . || true
+LOCAL_PATH_REGEX='/(Users/[^ )]+|tmp/job[0-9]|private/tmp)'
+git grep -n -I -E "$LOCAL_PATH_REGEX" -- . || true
+git ls-files | rg '(^|/)(reports\.zip|global_provenance\.sqlite3|input_output_database\.sqlite3|data\.sqlite3|ds\.sqlite3|stack_trace|errored|finished)$|raw_download|raw_returned|downloaded_files|_download_intake_originals|raw_hardware_artifacts|raw_reports|spinnaker_reports/|ebrains_upload_bundle|\.elf$|\.aplx$' || true
 find ebrains_jobs -maxdepth 1 -type l -ls
 find . -path ./.git -prune -o -type f -size +50M -print
+git diff --check
 make validate
 ```
 
@@ -80,32 +94,36 @@ Expected state:
 
 - Git remotes contain no embedded credentials.
 - Secret scan returns no matches.
-- `ebrains_jobs/` contains no symlink upload packages.
-- Large files are known evidence artifacts and below GitHub limits.
+- Machine-local path scan returns no committed local paths.
+- Raw tracked artifact scan returns no matches.
+- EBRAINS packages are not symlinks.
+- Large files are known, justified, and below host limits.
+- `git diff --check` returns clean.
 - `make validate` passes.
 
-## Clean/Commit Pass SOP
+If a raw artifact was already committed in prior public history, `.gitignore` and
+`git rm --cached` protect future commits but do not erase old blobs. If any
+private or sensitive material is ever discovered in history, pause and perform a
+proper history-rewrite/credential-rotation process before treating the repository
+as release-ready.
 
-1. Verify repo root and read `codebasecontract.md` Section 0.
-2. Run `git status --short` and classify every changed/untracked path as source,
-   generated evidence, EBRAINS package, transient local output, cache, or risky
-   public artifact.
-3. Preserve user/source changes. Do not revert unrelated work.
-4. Remove or ignore only clearly transient artifacts: caches, compiled host
-   binaries, root scratch output directories, stale prepared duplicates, and
-   machine-local symlinks.
-5. Materialize any reproducibility-critical upload symlink into a real source
-   directory, or omit it if it is a failed/throwaway package already documented
-   elsewhere.
-6. Update documentation when policy, status, source-of-truth hierarchy, package
-   rules, or active-tier state changes.
-7. Run validation and a secret/symlink/large-file scan.
-8. Inspect staged changes before commit.
-9. Commit with a message that states both the research state and the hygiene
-   scope.
+## Clean/Commit SOP
+
+1. Verify repo root and run `git status --short --branch`.
+2. Classify each changed/untracked path as source, public docs, compact evidence,
+   EBRAINS package, raw return, cache, scratch, or private handoff.
+3. Preserve user/source work. Do not revert unrelated changes.
+4. Update `.gitignore` before new raw artifacts are generated.
+5. Use `git rm --cached` for already tracked raw artifacts that should remain
+   local but leave Git.
+6. Update docs when artifact policy, evidence state, active tier, or claim
+   boundary changes.
+7. Run `make validate` and inspect generated audit output.
+8. Inspect staged changes before committing.
+9. Commit source/docs cleanup separately from new science results when possible.
 
 ## Reviewer-Facing Principle
 
-A clean repo is not just aesthetic. It is evidence integrity. If a reviewer asks
-"what exactly ran, where is the artifact, and what does this not prove?" the repo
-must answer from committed files alone.
+Cleanliness is evidence integrity. A reviewer should be able to ask “what exactly
+ran, where is the compact artifact, and what does this not prove?” and get the
+answer from committed files alone.

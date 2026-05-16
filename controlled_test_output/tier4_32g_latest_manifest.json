@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.622999+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.761763+00:00",
   "source_generated_at_utc": "2026-05-08T17:09:21+00:00",
   "registry_entry_id": "tier4_32g_two_chip_lifecycle_traffic_resource_smoke",
   "tier": "Tier 4.32g - Two-Chip Lifecycle Traffic/Resource Hardware Smoke",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_32g_20260508_hardware_pass_ingested",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_32g_20260508_hardware_pass_ingested/tier4_32g_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_32g_20260508_hardware_pass_ingested/tier4_32g_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32g_20260508_hardware_pass_ingested/tier4_32g_summary.csv",
+  "output_dir": "controlled_test_output/tier4_32g_20260508_hardware_pass_ingested",
+  "manifest": "controlled_test_output/tier4_32g_20260508_hardware_pass_ingested/tier4_32g_results.json",
+  "report": "controlled_test_output/tier4_32g_20260508_hardware_pass_ingested/tier4_32g_report.md",
+  "summary_csv": "controlled_test_output/tier4_32g_20260508_hardware_pass_ingested/tier4_32g_summary.csv",
   "canonical": true,
   "claim": "Tier 4.32g passed on real SpiNNaker with the repaired cache-proof runner: source learning core (0,0,p7) emitted lifecycle event/trophic requests to remote lifecycle core (1,0,p4), received active-mask/lineage sync, returned zero stale/duplicate/missing-ack counters, and preserved 30 returned artifacts with zero synthetic fallback.",
   "caveat": "Two-chip lifecycle traffic/resource smoke only; not lifecycle scaling, not speedup evidence, not benchmark superiority, not true partitioned ecology, not multi-shard learning, and not a native-scale baseline freeze by itself."

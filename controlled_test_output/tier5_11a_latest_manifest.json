@@ -2,10 +2,10 @@
   "canonical": false,
   "claim": "Latest Tier 5.11a sleep/replay need diagnostic; not replay implementation, hardware evidence, or native on-chip memory.",
   "generated_at_utc": "2026-04-29T05:20:32+00:00",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_11a_20260429_004340/tier5_11a_results.json",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_11a_20260429_004340",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_11a_20260429_004340/tier5_11a_report.md",
+  "manifest": "<repo>/controlled_test_output/tier5_11a_20260429_004340/tier5_11a_results.json",
+  "output_dir": "<repo>/controlled_test_output/tier5_11a_20260429_004340",
+  "report": "<repo>/controlled_test_output/tier5_11a_20260429_004340/tier5_11a_report.md",
   "status": "pass",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_11a_20260429_004340/tier5_11a_summary.csv",
+  "summary_csv": "<repo>/controlled_test_output/tier5_11a_20260429_004340/tier5_11a_summary.csv",
   "tier": "Tier 5.11a - Sleep/Replay Need Test"
 }

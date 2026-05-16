@@ -1,9 +1,9 @@
 criterion,passed,value,rule
-Tier 7.1h exists,True,/Users/james/JKS:CRA/controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate/tier7_1h_results.json,exists
-Tier 7.1i exists,True,/Users/james/JKS:CRA/controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation/tier7_1i_results.json,exists
-Tier 7.1j exists,True,/Users/james/JKS:CRA/controlled_test_output/tier7_1j_20260508_nab_failure_localization/tier7_1j_results.json,exists
-Tier 7.1k exists,True,/Users/james/JKS:CRA/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/tier7_1k_results.json,exists
-Tier 7.1l exists,True,/Users/james/JKS:CRA/controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation/tier7_1l_results.json,exists
+Tier 7.1h exists,True,<repo>/controlled_test_output/tier7_1h_20260508_compact_nab_scoring_gate/tier7_1h_results.json,exists
+Tier 7.1i exists,True,<repo>/controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation/tier7_1i_results.json,exists
+Tier 7.1j exists,True,<repo>/controlled_test_output/tier7_1j_20260508_nab_failure_localization/tier7_1j_results.json,exists
+Tier 7.1k exists,True,<repo>/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/tier7_1k_results.json,exists
+Tier 7.1l exists,True,<repo>/controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation/tier7_1l_results.json,exists
 all prior gates passed as harnesses,True,"['pass', 'pass', 'pass', 'pass', 'pass']",all pass
 7.1h partial signal only,True,v2_3_partial_nab_signal_requires_confirmation,partial / requires confirmation
 7.1i not confirmed,True,v2_3_nab_signal_localized_not_confirmed,contains not_confirmed

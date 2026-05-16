@@ -176,7 +176,7 @@ auditable evidence classification.
 For the current Tier 4.22q run, upload exactly this generated folder:
 
 ```text
-/Users/james/JKS:CRA/ebrains_jobs/cra_422z
+<repo>/ebrains_jobs/cra_422z
 ```
 
 The remote JobManager workspace should contain:
@@ -256,7 +256,7 @@ Expected:
 
 ```text
 status = prepared
-upload_folder = /Users/james/JKS:CRA/ebrains_jobs/cra_422z
+upload_folder = <repo>/ebrains_jobs/cra_422z
 ```
 
 The prepare gate checks:
@@ -538,7 +538,7 @@ make tier4-22q-prepare
 Upload:
 
 ```text
-/Users/james/JKS:CRA/ebrains_jobs/cra_422z
+<repo>/ebrains_jobs/cra_422z
 ```
 
 Run command:
@@ -565,7 +565,7 @@ make tier4-22p-prepare
 Upload:
 
 ```text
-/Users/james/JKS:CRA/ebrains_jobs/cra_422y
+<repo>/ebrains_jobs/cra_422y
 ```
 
 Run command:
@@ -629,7 +629,7 @@ make tier4-22n-prepare
 Upload:
 
 ```text
-/Users/james/JKS:CRA/ebrains_jobs/cra_422v
+<repo>/ebrains_jobs/cra_422v
 ```
 
 Run command:
@@ -686,7 +686,7 @@ make tier4-22m-prepare
 Upload:
 
 ```text
-/Users/james/JKS:CRA/ebrains_jobs/cra_422u
+<repo>/ebrains_jobs/cra_422u
 ```
 
 Rerun command:
@@ -726,7 +726,7 @@ make tier4-22l-prepare
 Upload:
 
 ```text
-/Users/james/JKS:CRA/ebrains_jobs/cra_422t
+<repo>/ebrains_jobs/cra_422t
 ```
 
 Rerun command:
@@ -783,7 +783,7 @@ returned pass   = controlled_test_output/tier4_22r_20260501_native_context_state
 Upload folder:
 
 ```text
-/Users/james/JKS:CRA/ebrains_jobs/cra_422aa
+<repo>/ebrains_jobs/cra_422aa
 ```
 
 JobManager command:
@@ -826,7 +826,7 @@ prepared output = controlled_test_output/tier4_22s_20260501_native_route_state_s
 Upload folder:
 
 ```text
-/Users/james/JKS:CRA/ebrains_jobs/cra_422ab
+<repo>/ebrains_jobs/cra_422ab
 ```
 
 JobManager command:
@@ -877,7 +877,7 @@ prepared output = controlled_test_output/tier4_22t_20260501_native_keyed_route_s
 Upload folder:
 
 ```text
-/Users/james/JKS:CRA/ebrains_jobs/cra_422ac
+<repo>/ebrains_jobs/cra_422ac
 ```
 
 JobManager command:
@@ -921,7 +921,7 @@ Prepared from `controlled_test_output/tier4_22u_20260501_native_memory_route_sta
 Upload folder:
 
 ```text
-/Users/james/JKS:CRA/ebrains_jobs/cra_422ad
+<repo>/ebrains_jobs/cra_422ad
 ```
 
 JobManager command:
@@ -947,7 +947,7 @@ Prepared from `controlled_test_output/tier4_22v_20260501_native_memory_route_ree
 Upload folder:
 
 ```text
-/Users/james/JKS:CRA/ebrains_jobs/cra_422ae
+<repo>/ebrains_jobs/cra_422ae
 ```
 
 JobManager command:
@@ -974,7 +974,7 @@ Prepared from `controlled_test_output/tier4_22w_20260501_native_decoupled_memory
 Upload folder:
 
 ```text
-/Users/james/JKS:CRA/ebrains_jobs/cra_422ag
+<repo>/ebrains_jobs/cra_422ag
 ```
 
 JobManager command:

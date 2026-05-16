@@ -1,4 +1,4 @@
-make: Entering directory '/tmp/job18309467254930990212.tmp/cra_422n/coral_reef_spinnaker/spinnaker_runtime'
+make: Entering directory '<jobmanager_tmp>'
 rm -rf build tests/test_runtime
 mkdir -p build
 arm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -c src/main.c -o build/main.o
@@ -9,4 +9,4 @@ arm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding 
 arm-none-eabi-gcc -c -mthumb-interwork -march=armv5te -std=gnu99 -ffreestanding -I /home/jovyan/spinnaker/spinnaker_tools/include -g -I src -c src/router.c -o build/router.o
 arm-none-eabi-gcc -T/home/jovyan/spinnaker/spinnaker_tools/tools/sark.lnk -Wl,-e,cpu_reset -Wl,-static -ffreestanding -fdata-sections -ffunction-sections -Wl,--gc-sections -Wl,--use-blx -nostartfiles -static  build/main.o build/neuron_manager.o build/synapse_manager.o build/state_manager.o build/host_interface.o build/router.o -o build/coral_reef.elf
 arm-none-eabi-objcopy -O binary build/coral_reef.elf build/coral_reef.bin
-make: Leaving directory '/tmp/job18309467254930990212.tmp/cra_422n/coral_reef_spinnaker/spinnaker_runtime'
+make: Leaving directory '<jobmanager_tmp>'

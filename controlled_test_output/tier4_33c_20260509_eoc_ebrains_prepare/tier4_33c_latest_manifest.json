@@ -1,6 +1,6 @@
 {
   "generated_at_utc": "2026-05-10T05:23:11+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_33c_20260509_eoc_ebrains_prepare",
+  "output_dir": "<repo>/controlled_test_output/tier4_33c_20260509_eoc_ebrains_prepare",
   "status": "pass",
   "tier": "Tier 4.33c - EOC EBRAINS Package Preparation"
 }

@@ -1,10 +1,10 @@
 {
   "artifacts": {
-    "capsule_config_json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_18a_20260427_203220_prepared/jobmanager_capsule/capsule_config.json",
-    "capsule_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_18a_20260427_203220_prepared/jobmanager_capsule",
-    "expected_outputs_json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_18a_20260427_203220_prepared/jobmanager_capsule/expected_outputs.json",
-    "jobmanager_readme": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_18a_20260427_203220_prepared/jobmanager_capsule/README_JOBMANAGER.md",
-    "jobmanager_run_script": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_18a_20260427_203220_prepared/jobmanager_capsule/run_tier4_18a_on_jobmanager.sh"
+    "capsule_config_json": "<repo>/controlled_test_output/tier4_18a_20260427_203220_prepared/jobmanager_capsule/capsule_config.json",
+    "capsule_dir": "<repo>/controlled_test_output/tier4_18a_20260427_203220_prepared/jobmanager_capsule",
+    "expected_outputs_json": "<repo>/controlled_test_output/tier4_18a_20260427_203220_prepared/jobmanager_capsule/expected_outputs.json",
+    "jobmanager_readme": "<repo>/controlled_test_output/tier4_18a_20260427_203220_prepared/jobmanager_capsule/README_JOBMANAGER.md",
+    "jobmanager_run_script": "<repo>/controlled_test_output/tier4_18a_20260427_203220_prepared/jobmanager_capsule/run_tier4_18a_on_jobmanager.sh"
   },
   "criteria": [
     {
@@ -13,7 +13,7 @@
       "operator": "exists",
       "passed": true,
       "threshold": true,
-      "value": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_18a_20260427_203220_prepared/jobmanager_capsule"
+      "value": "<repo>/controlled_test_output/tier4_18a_20260427_203220_prepared/jobmanager_capsule"
     },
     {
       "name": "delayed_cue included",
@@ -85,35 +85,35 @@
         "error": "",
         "name": "pyNN.spiNNaker",
         "ok": true,
-        "path": "/Users/james/Library/Python/3.9/lib/python/site-packages/pyNN/spiNNaker.py",
+        "path": "<python-site-packages>/pyNN/spiNNaker.py",
         "version": null
       },
       {
         "error": "",
         "name": "spynnaker.pyNN",
         "ok": true,
-        "path": "/Users/james/Library/Python/3.9/lib/python/site-packages/spynnaker/pyNN/__init__.py",
+        "path": "<python-site-packages>/spynnaker/pyNN/__init__.py",
         "version": "1!7.4.1"
       },
       {
         "error": "",
         "name": "spalloc_client",
         "ok": true,
-        "path": "/Users/james/Library/Python/3.9/lib/python/site-packages/spalloc_client/__init__.py",
+        "path": "<python-site-packages>/spalloc_client/__init__.py",
         "version": "1!7.4.1"
       },
       {
         "error": "",
         "name": "spinnman",
         "ok": true,
-        "path": "/Users/james/Library/Python/3.9/lib/python/site-packages/spinnman/__init__.py",
+        "path": "<python-site-packages>/spinnman/__init__.py",
         "version": "1!7.4.1"
       },
       {
         "error": "",
         "name": "spinn_front_end_common",
         "ok": true,
-        "path": "/Users/james/Library/Python/3.9/lib/python/site-packages/spinn_front_end_common/__init__.py",
+        "path": "<python-site-packages>/spinn_front_end_common/__init__.py",
         "version": "1!7.4.1"
       }
     ],
@@ -125,7 +125,7 @@
       "height": "8",
       "machineName": "None",
       "mode": "Production",
-      "path": "/Users/james/.spynnaker.cfg",
+      "path": "<spynnaker-config>",
       "spalloc_group": "None",
       "spalloc_port": "22244",
       "spalloc_server": "None",
@@ -174,7 +174,7 @@
   "status": "prepared",
   "summary": {
     "backend": "pyNN.spiNNaker",
-    "capsule_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_18a_20260427_203220_prepared/jobmanager_capsule",
+    "capsule_dir": "<repo>/controlled_test_output/tier4_18a_20260427_203220_prepared/jobmanager_capsule",
     "chunk_sizes": [
       10,
       25,

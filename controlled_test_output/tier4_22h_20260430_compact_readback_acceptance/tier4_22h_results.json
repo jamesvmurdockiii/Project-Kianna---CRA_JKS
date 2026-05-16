@@ -32,19 +32,19 @@
     "returncode": null,
     "spinnaker_tools": "",
     "status": "not_attempted_spinnaker_tools_missing",
-    "stderr_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_aplx_build_stderr.txt",
-    "stdout_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_aplx_build_stdout.txt"
+    "stderr_artifact": "<repo>/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_aplx_build_stderr.txt",
+    "stdout_artifact": "<repo>/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_aplx_build_stdout.txt"
   },
   "artifacts": {
-    "acceptance_matrix_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_acceptance_matrix.csv",
-    "aplx_build_stderr": "/Users/james/JKS:CRA/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_aplx_build_stderr.txt",
-    "aplx_build_stdout": "/Users/james/JKS:CRA/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_aplx_build_stdout.txt",
-    "host_test_stderr": "/Users/james/JKS:CRA/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_host_test_stderr.txt",
-    "host_test_stdout": "/Users/james/JKS:CRA/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_host_test_stdout.txt",
-    "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_results.json",
-    "readback_schema_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_readback_schema.csv",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_report.md",
-    "static_checks_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_static_checks.csv"
+    "acceptance_matrix_csv": "<repo>/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_acceptance_matrix.csv",
+    "aplx_build_stderr": "<repo>/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_aplx_build_stderr.txt",
+    "aplx_build_stdout": "<repo>/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_aplx_build_stdout.txt",
+    "host_test_stderr": "<repo>/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_host_test_stderr.txt",
+    "host_test_stdout": "<repo>/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_host_test_stdout.txt",
+    "manifest_json": "<repo>/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_results.json",
+    "readback_schema_csv": "<repo>/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_readback_schema.csv",
+    "report_md": "<repo>/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_report.md",
+    "static_checks_csv": "<repo>/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_static_checks.csv"
   },
   "criteria": [
     {
@@ -107,12 +107,12 @@
   "failure_reason": "",
   "generated_at_utc": "2026-04-30T23:43:56+00:00",
   "host_test": {
-    "command": "make -C /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime clean-host test",
+    "command": "make -C <repo>/coral_reef_spinnaker/spinnaker_runtime clean-host test",
     "returncode": 0,
-    "stderr_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_host_test_stderr.txt",
-    "stdout_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_host_test_stdout.txt"
+    "stderr_artifact": "<repo>/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_host_test_stderr.txt",
+    "stdout_artifact": "<repo>/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance/tier4_22h_host_test_stdout.txt"
   },
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance",
+  "output_dir": "<repo>/controlled_test_output/tier4_22h_20260430_compact_readback_acceptance",
   "readback_schema": [
     {
       "byte_offset": "0",
@@ -476,7 +476,7 @@
     "runner_revision": "tier4_22h_compact_readback_acceptance_20260430_0006",
     "static_checks_passed": 30,
     "static_checks_total": 30,
-    "tier4_22g_manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_22g_20260430_event_indexed_trace_runtime/tier4_22g_results.json",
+    "tier4_22g_manifest": "<repo>/controlled_test_output/tier4_22g_20260430_event_indexed_trace_runtime/tier4_22g_results.json",
     "tier4_22g_status": "pass"
   },
   "tier": "Tier 4.22h - Compact Readback / Build-Command Readiness"

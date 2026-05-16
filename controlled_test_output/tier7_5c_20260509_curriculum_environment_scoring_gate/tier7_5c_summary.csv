@@ -1,5 +1,5 @@
 criterion,value,rule,pass,details
-tier7_5b_prerequisite_exists,True,must exist,True,/Users/james/JKS:CRA/controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight/tier7_5b_results.json
+tier7_5b_prerequisite_exists,True,must exist,True,<repo>/controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight/tier7_5b_results.json
 tier7_5b_prerequisite_passed,PASS,case-insensitive == PASS,True,
 stream_rows_loaded,384,== 384,True,
 split_manifest_loaded,24,>= 24,True,

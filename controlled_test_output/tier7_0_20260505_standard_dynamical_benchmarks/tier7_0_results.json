@@ -331,7 +331,7 @@
     "outcome": "cra_underperforms_standard_sequence_baselines",
     "recommendation": "Run Tier 7.0b failure analysis before tuning or hardware migration; classify whether the gap is continuous-valued regression readout, long-memory state, reservoir dynamics, normalization, or policy/credit mismatch."
   },
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_0_20260505_standard_dynamical_benchmarks",
+  "output_dir": "<repo>/controlled_test_output/tier7_0_20260505_standard_dynamical_benchmarks",
   "run_rows": [
     {
       "diagnostics": {

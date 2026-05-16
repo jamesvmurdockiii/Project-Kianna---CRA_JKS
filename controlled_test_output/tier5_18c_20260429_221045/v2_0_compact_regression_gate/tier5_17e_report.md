@@ -5,7 +5,7 @@
 - Backend for compact regression: `nest`
 - Smoke mode: `False`
 - Candidate baseline: `v2.0_host_predictive_binding`, `readout_lr=0.1`, `delayed_readout_lr=0.2`
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_221045/v2_0_compact_regression_gate`
+- Output directory: `<repo>/controlled_test_output/tier5_18c_20260429_221045/v2_0_compact_regression_gate`
 
 Tier 5.17e is a promotion/regression gate after the Tier 5.17d predictive-binding repair. It is not a new capability claim. It checks that prior compact guardrails, v1.9 composition/routing, Tier 5.14 working-memory/context binding, and Tier 5.17d predictive-binding shams all remain clean before a v2.0 baseline can be frozen.
 
@@ -20,10 +20,10 @@ Tier 5.17e is a promotion/regression gate after the Tier 5.17d predictive-bindin
 
 | Child | Status | Return Code | Runtime Seconds | Purpose | Manifest |
 | --- | --- | ---: | ---: | --- | --- |
-| `v1_8_compact_regression` | **PASS** | 0 | 308.413 | existing compact guardrail: Tier 1/2/3, target smokes, replay/consolidation, and predictive-context checks remain green | `/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_221045/v2_0_compact_regression_gate/v1_8_compact_regression/tier5_12d_results.json` |
-| `v1_9_composition_routing_guardrail` | **PASS** | 0 | 577.517 | v1.9 host-side internal composition/routing remains intact before adding predictive-binding to the baseline lock | `/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_221045/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/tier5_13c_results.json` |
-| `working_memory_context_guardrail` | **PASS** | 0 | 640.957 | Tier 5.14 working-memory/context-binding diagnostic still passes over the carried-forward v1.9-era host-side mechanisms | `/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_221045/v2_0_compact_regression_gate/working_memory_context_guardrail/tier5_14_results.json` |
-| `predictive_binding_guardrail` | **PASS** | 0 | 3.803 | Tier 5.17d predictive-binding repair still clears leakage, dopamine, probe, and sham-separation gates | `/Users/james/JKS:CRA/controlled_test_output/tier5_18c_20260429_221045/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_results.json` |
+| `v1_8_compact_regression` | **PASS** | 0 | 308.413 | existing compact guardrail: Tier 1/2/3, target smokes, replay/consolidation, and predictive-context checks remain green | `<repo>/controlled_test_output/tier5_18c_20260429_221045/v2_0_compact_regression_gate/v1_8_compact_regression/tier5_12d_results.json` |
+| `v1_9_composition_routing_guardrail` | **PASS** | 0 | 577.517 | v1.9 host-side internal composition/routing remains intact before adding predictive-binding to the baseline lock | `<repo>/controlled_test_output/tier5_18c_20260429_221045/v2_0_compact_regression_gate/v1_9_composition_routing_guardrail/tier5_13c_results.json` |
+| `working_memory_context_guardrail` | **PASS** | 0 | 640.957 | Tier 5.14 working-memory/context-binding diagnostic still passes over the carried-forward v1.9-era host-side mechanisms | `<repo>/controlled_test_output/tier5_18c_20260429_221045/v2_0_compact_regression_gate/working_memory_context_guardrail/tier5_14_results.json` |
+| `predictive_binding_guardrail` | **PASS** | 0 | 3.803 | Tier 5.17d predictive-binding repair still clears leakage, dopamine, probe, and sham-separation gates | `<repo>/controlled_test_output/tier5_18c_20260429_221045/v2_0_compact_regression_gate/predictive_binding_guardrail/tier5_17d_results.json` |
 
 ## Criteria
 

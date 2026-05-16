@@ -1,10 +1,10 @@
 {
   "artifacts": {
-    "conditions_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_45_20260514_healthy_nest_rebaseline_contract/tier5_45_conditions.csv",
-    "contract_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_45_20260514_healthy_nest_rebaseline_contract/tier5_45_contract.json",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_45_20260514_healthy_nest_rebaseline_contract/tier5_45_report.md",
-    "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_45_20260514_healthy_nest_rebaseline_contract/tier5_45_results.json",
-    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_45_20260514_healthy_nest_rebaseline_contract/tier5_45_summary.csv"
+    "conditions_csv": "<repo>/controlled_test_output/tier5_45_20260514_healthy_nest_rebaseline_contract/tier5_45_conditions.csv",
+    "contract_json": "<repo>/controlled_test_output/tier5_45_20260514_healthy_nest_rebaseline_contract/tier5_45_contract.json",
+    "report_md": "<repo>/controlled_test_output/tier5_45_20260514_healthy_nest_rebaseline_contract/tier5_45_report.md",
+    "results_json": "<repo>/controlled_test_output/tier5_45_20260514_healthy_nest_rebaseline_contract/tier5_45_results.json",
+    "summary_csv": "<repo>/controlled_test_output/tier5_45_20260514_healthy_nest_rebaseline_contract/tier5_45_summary.csv"
   },
   "generated_at_utc": "2026-05-15T01:17:53+00:00",
   "outcome": "healthy_nest_rebaseline_contract_locked",

@@ -3,7 +3,7 @@
 - Generated: `2026-05-01T07:41:15+00:00`
 - Mode: `local`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_22s_20260501_native_route_state_smoke_local`
+- Output directory: `<repo>/controlled_test_output/tier4_22s_20260501_native_route_state_smoke_local`
 
 Tier 4.22s runs a 30-event signed stream through the custom runtime using native keyed context state plus native route state. The host writes context slots and route updates, then sends only key+cue+delay for each decision; the chip retrieves context and route, computes feature=context*route*cue, scores the pre-update prediction, holds a two-event pending gap, then matures delayed credit against a local s16.15 reference.
 
@@ -80,7 +80,7 @@ Tier 4.22s runs a 30-event signed stream through the custom runtime using native
 
 ## Artifacts
 
-- `reference_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22s_20260501_native_route_state_smoke_local/tier4_22s_task_reference.json`
-- `reference_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22s_20260501_native_route_state_smoke_local/tier4_22s_task_reference_rows.csv`
-- `manifest_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22s_20260501_native_route_state_smoke_local/tier4_22s_results.json`
-- `report_md`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22s_20260501_native_route_state_smoke_local/tier4_22s_report.md`
+- `reference_json`: `<repo>/controlled_test_output/tier4_22s_20260501_native_route_state_smoke_local/tier4_22s_task_reference.json`
+- `reference_csv`: `<repo>/controlled_test_output/tier4_22s_20260501_native_route_state_smoke_local/tier4_22s_task_reference_rows.csv`
+- `manifest_json`: `<repo>/controlled_test_output/tier4_22s_20260501_native_route_state_smoke_local/tier4_22s_results.json`
+- `report_md`: `<repo>/controlled_test_output/tier4_22s_20260501_native_route_state_smoke_local/tier4_22s_report.md`

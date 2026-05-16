@@ -1,26 +1,32 @@
 # Coral Reef Architecture for SpiNNaker
 
-This repository implements and tests the Coral Reef Architecture (CRA): a
-biologically inspired learning system built around polyp populations, trophic
-energy, dopamine-modulated plasticity, lifecycle pressure, and neuromorphic
-backends.
+This file is a historical project-status ledger. It is useful for detailed
+background, but it is not the first source of truth for a public reader. For
+current public framing, start with `README.md`, `docs/ABSTRACT.md`,
+`docs/WHITEPAPER.md`, `docs/MASTER_EXECUTION_PLAN.md`, and the generated
+registry at `controlled_test_output/STUDY_REGISTRY.json`.
 
-The current evidence trail is controlled and staged. The latest host-side
-software baseline is `CRA_EVIDENCE_BASELINE_v2.5`, frozen by Tier 7.6e after
-the reduced-feature planning/subgoal-control signal survived full NEST compact
-regression. Tier 7.7a has now locked the v2.5 standardized benchmark/usefulness
-scoreboard contract. The current next step is Tier 7.7b: score frozen v2.5 on
-that locked contract without changing tasks, baselines, splits, shams, leakage
-rules, pass/fail criteria, or claim boundaries.
+Current public status, as of 2026-05-16:
 
-Current native lifecycle update: Tier 4.30g-hw passed on real SpiNNaker after
-EBRAINS ingest (board `10.11.242.97`, raw `pass`, ingest `pass`, 285/285
-hardware criteria, 5/5 ingest criteria, 36 returned artifacts preserved).
-`CRA_LIFECYCLE_NATIVE_BASELINE_v0.4` is frozen with a strict boundary: bounded
-static-pool lifecycle-native hardware evidence with a host-ferried lifecycle
-task bridge, not autonomous lifecycle-to-learning MCPL, speedup, multi-chip
-scaling, v2.2 temporal migration, or full organism autonomy.
- The latest registry says
+```text
+canonical evidence bundles: 157
+software predictive benchmark baseline: CRA_EVIDENCE_BASELINE_v2.6
+organism-development state: v2.7 diagnostic healthy-NEST snapshot only
+native hardware/runtime line: CRA_NATIVE_SCALE_BASELINE_v0.5
+active gate: Tier 5.45a healthy-NEST rebaseline scoring, 21/204 cells complete
+```
+
+Important boundary: CRA is a neuromorphic research platform and evidence ladder.
+It is not a production system, not a broad benchmark/SOTA claim, not AGI/ASI,
+and not a fully autonomous on-chip organism. The active goal is to determine
+which local-learning, lifecycle, memory, routing, predictive, and native-runtime
+mechanisms survive strict controls and baseline comparisons.
+
+The historical ledger below preserves prior status notes and tier progression.
+When it conflicts with the generated registry or master execution plan, the
+registry and master plan are authoritative.
+
+The latest registry says
 all canonical evidence entries pass, including the Tier 4.13 minimal SpiNNaker
 hardware capsule, Tier 4.14 hardware runtime characterization, Tier 4.15
 three-seed hardware repeat, Tier 5.1 external baselines, Tier 5.2 learning
@@ -1269,7 +1275,7 @@ controlled_test_output/tier4_22u_20260501_native_memory_route_state_smoke_prepar
 Prepared EBRAINS upload folder and command:
 
 ```text
-/Users/james/JKS:CRA/ebrains_jobs/cra_422ad
+<repo>/ebrains_jobs/cra_422ad
 cra_422ad/experiments/tier4_22u_native_memory_route_state_smoke.py --mode run-hardware --output-dir tier4_22u_job_output
 ```
 
@@ -1314,7 +1320,7 @@ controlled_test_output/tier4_22v_20260501_native_memory_route_reentry_compositio
 Prepared EBRAINS upload folder and command:
 
 ```text
-/Users/james/JKS:CRA/ebrains_jobs/cra_422ae
+<repo>/ebrains_jobs/cra_422ae
 cra_422ae/experiments/tier4_22v_native_memory_route_reentry_composition_smoke.py --mode run-hardware --output-dir tier4_22v_job_output
 ```
 
@@ -1360,7 +1366,7 @@ controlled_test_output/tier4_22w_20260501_native_decoupled_memory_route_composit
 Prepared EBRAINS upload folder and command:
 
 ```text
-/Users/james/JKS:CRA/ebrains_jobs/cra_422ag
+<repo>/ebrains_jobs/cra_422ag
 cra_422ag/experiments/tier4_22w_native_decoupled_memory_route_composition_smoke.py --mode run-hardware --output-dir tier4_22w_job_output
 ```
 
@@ -1467,7 +1473,7 @@ controlled_test_output/tier4_25b_20260502_hardware_pass_ingested/
 Prepared EBRAINS upload folder and command:
 
 ```text
-/Users/james/JKS:CRA/ebrains_jobs/cra_425g
+<repo>/ebrains_jobs/cra_425g
 cra_425g/experiments/tier4_25b_two_core_split_smoke.py --mode run-hardware
 ```
 

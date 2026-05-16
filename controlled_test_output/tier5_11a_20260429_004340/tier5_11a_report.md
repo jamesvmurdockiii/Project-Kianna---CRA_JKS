@@ -10,7 +10,7 @@
 - Variants: `all`
 - Selected standard baselines: `sign_persistence,online_perceptron,online_logistic_regression,echo_state_network,small_gru,stdp_only_snn`
 - Smoke mode: `False`
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier5_11a_20260429_004340`
+- Output directory: `<repo>/controlled_test_output/tier5_11a_20260429_004340`
 
 Tier 5.11a does not implement replay. It first asks whether the frozen v1.6 keyed-memory baseline degrades under a stressor replay/consolidation is supposed to solve.
 

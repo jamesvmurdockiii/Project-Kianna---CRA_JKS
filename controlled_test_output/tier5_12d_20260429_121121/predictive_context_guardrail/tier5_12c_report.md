@@ -9,7 +9,7 @@
 - Selected standard baselines: `sign_persistence,online_perceptron`
 - Backend: `mock`
 - Smoke mode: `True`
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_121121/predictive_context_guardrail`
+- Output directory: `<repo>/controlled_test_output/tier5_12d_20260429_121121/predictive_context_guardrail`
 
 Tier 5.12c tests whether CRA can store a visible causal predictive precursor before feedback arrives and use it later at a decision point.
 

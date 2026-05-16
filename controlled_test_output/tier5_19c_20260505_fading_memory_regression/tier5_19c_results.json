@@ -984,12 +984,12 @@
     }
   ],
   "artifacts": {
-    "aggregate_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/tier5_19c_aggregate.csv",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/tier5_19c_report.md",
-    "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/tier5_19c_results.json",
-    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/tier5_19c_summary.csv",
-    "task_diagnostics_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/tier5_19c_task_diagnostics.json",
-    "timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/tier5_19c_timeseries.csv"
+    "aggregate_csv": "<repo>/controlled_test_output/tier5_19c_20260505_fading_memory_regression/tier5_19c_aggregate.csv",
+    "report_md": "<repo>/controlled_test_output/tier5_19c_20260505_fading_memory_regression/tier5_19c_report.md",
+    "results_json": "<repo>/controlled_test_output/tier5_19c_20260505_fading_memory_regression/tier5_19c_results.json",
+    "summary_csv": "<repo>/controlled_test_output/tier5_19c_20260505_fading_memory_regression/tier5_19c_summary.csv",
+    "task_diagnostics_json": "<repo>/controlled_test_output/tier5_19c_20260505_fading_memory_regression/tier5_19c_task_diagnostics.json",
+    "timeseries_csv": "<repo>/controlled_test_output/tier5_19c_20260505_fading_memory_regression/tier5_19c_timeseries.csv"
   },
   "backend": "mock",
   "claim_boundary": "Tier 5.19c is software-only fading-memory promotion/regression evidence. A pass can authorize a bounded fading-memory baseline only with full compact regression. It does not prove bounded nonlinear recurrence, hardware transfer, native on-chip temporal dynamics, universal benchmark superiority, language, planning, AGI, or ASI.",
@@ -1105,18 +1105,18 @@
       "nest",
       "--stop-on-fail",
       "--output-dir",
-      "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full"
+      "<repo>/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full"
     ],
     "failure_reason": "",
-    "manifest_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/tier5_18c_results.json",
+    "manifest_path": "<repo>/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/tier5_18c_results.json",
     "name": "v2_1_compact_regression_full",
-    "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full",
+    "output_dir": "<repo>/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full",
     "purpose": "rerun the current v2.1 promotion/regression guardrail before any temporal-substrate freeze",
     "return_code": 0,
     "runtime_seconds": 1487.440837709,
     "status": "pass",
-    "stderr_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/v2_1_compact_regression_full_stderr.log",
-    "stdout_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/v2_1_compact_regression_full_stdout.log"
+    "stderr_path": "<repo>/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/v2_1_compact_regression_full_stderr.log",
+    "stdout_path": "<repo>/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/v2_1_compact_regression_full_stdout.log"
   },
   "criteria": [
     {
@@ -1131,7 +1131,7 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.1.json"
+      "value": "<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.1.json"
     },
     {
       "name": "all required temporal-memory tasks included",
@@ -1238,7 +1238,7 @@
   "history": 12,
   "horizon": 8,
   "length": 720,
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression",
+  "output_dir": "<repo>/controlled_test_output/tier5_19c_20260505_fading_memory_regression",
   "runner_revision": "tier5_19c_fading_memory_regression_20260505_0001",
   "runtime_seconds": 1563.5435204999999,
   "seeds": [

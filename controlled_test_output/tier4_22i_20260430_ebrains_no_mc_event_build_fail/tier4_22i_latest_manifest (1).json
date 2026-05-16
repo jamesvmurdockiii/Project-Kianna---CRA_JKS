@@ -2,10 +2,10 @@
   "canonical": false,
   "claim": "Latest Tier 4.22i custom-runtime board round-trip smoke; prepared is not hardware evidence, run-hardware pass is command round-trip only.",
   "generated_at_utc": "2026-04-30T20:36:25+00:00",
-  "manifest": "/tmp/job1843265057497893779.tmp/tier4_22i_job_output/tier4_22i_results.json",
+  "manifest": "<jobmanager_tmp>",
   "mode": "run-hardware",
-  "output_dir": "/tmp/job1843265057497893779.tmp/tier4_22i_job_output",
-  "report": "/tmp/job1843265057497893779.tmp/tier4_22i_job_output/tier4_22i_report.md",
+  "output_dir": "<jobmanager_tmp>",
+  "report": "<jobmanager_tmp>",
   "status": "fail",
   "tier": "Tier 4.22i - Custom Runtime Board Round-Trip Smoke"
 }

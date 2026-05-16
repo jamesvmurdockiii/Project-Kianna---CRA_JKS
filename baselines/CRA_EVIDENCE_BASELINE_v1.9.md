@@ -28,7 +28,7 @@ CRA now has a bounded v1.9 host-side software composition/routing baseline: the 
 
 ## Tier 5.13c Internal Composition / Routing Summary
 
-- Output: `/Users/james/JKS:CRA/controlled_test_output/tier5_13c_20260429_160142`
+- Output: `<repo>/controlled_test_output/tier5_13c_20260429_160142`
 - Backend: `mock`
 - Composition tasks: `heldout_skill_pair, order_sensitive_chain, distractor_skill_chain`
 - Routing tasks: `heldout_context_routing, distractor_router_chain, context_reentry_routing`
@@ -61,7 +61,7 @@ CRA now has a bounded v1.9 host-side software composition/routing baseline: the 
 
 ## Full Compact Regression After Composition / Routing
 
-- Output: `/Users/james/JKS:CRA/controlled_test_output/tier5_12d_20260429_122720`
+- Output: `<repo>/controlled_test_output/tier5_12d_20260429_122720`
 - Runtime seconds: `None`
 - Child checks passed: `6` / `6`
 - Criteria passed: `6` / `6`

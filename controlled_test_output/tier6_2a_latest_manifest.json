@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.412784+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.559937+00:00",
   "source_generated_at_utc": "2026-05-08T20:29:19+00:00",
   "registry_entry_id": "tier6_2a_targeted_usefulness_validation",
   "tier": "Tier 6.2a - Targeted Hard-Task Validation Over v2.3",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier6_2a_20260508_targeted_usefulness_validation",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier6_2a_20260508_targeted_usefulness_validation/tier6_2a_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier6_2a_20260508_targeted_usefulness_validation/tier6_2a_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier6_2a_20260508_targeted_usefulness_validation/tier6_2a_summary.csv",
+  "output_dir": "controlled_test_output/tier6_2a_20260508_targeted_usefulness_validation",
+  "manifest": "controlled_test_output/tier6_2a_20260508_targeted_usefulness_validation/tier6_2a_results.json",
+  "report": "controlled_test_output/tier6_2a_20260508_targeted_usefulness_validation/tier6_2a_report.md",
+  "summary_csv": "controlled_test_output/tier6_2a_20260508_targeted_usefulness_validation/tier6_2a_summary.csv",
   "canonical": true,
   "claim": "Tier 6.2a showed frozen v2.3 has a narrow targeted signal on variable-delay multi-cue diagnostics, but v2.2 remains stronger on the aggregate hard-task geomean and no new baseline or hardware transfer is authorized.",
   "caveat": "Software diagnostic evidence only; custom hard tasks cannot make the public usefulness claim, and the result is not a baseline freeze, hardware evidence, native transfer, ESN superiority, or AGI/ASI evidence."

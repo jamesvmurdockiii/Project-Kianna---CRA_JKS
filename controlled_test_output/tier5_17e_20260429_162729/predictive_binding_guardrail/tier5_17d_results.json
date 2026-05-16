@@ -1,13 +1,13 @@
 {
   "artifacts": {
-    "comparisons_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_162729/predictive_binding_guardrail/tier5_17d_comparisons.csv",
-    "control_edges_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_162729/predictive_binding_guardrail/tier5_17d_control_edges.png",
-    "fairness_contract_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_162729/predictive_binding_guardrail/tier5_17d_fairness_contract.json",
-    "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_162729/predictive_binding_guardrail/tier5_17d_results.json",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_162729/predictive_binding_guardrail/tier5_17d_report.md",
-    "representation_matrix_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_162729/predictive_binding_guardrail/tier5_17d_representation_matrix.png",
-    "run_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_162729/predictive_binding_guardrail/tier5_17d_runs.csv",
-    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_162729/predictive_binding_guardrail/tier5_17d_summary.csv"
+    "comparisons_csv": "<repo>/controlled_test_output/tier5_17e_20260429_162729/predictive_binding_guardrail/tier5_17d_comparisons.csv",
+    "control_edges_png": "<repo>/controlled_test_output/tier5_17e_20260429_162729/predictive_binding_guardrail/tier5_17d_control_edges.png",
+    "fairness_contract_json": "<repo>/controlled_test_output/tier5_17e_20260429_162729/predictive_binding_guardrail/tier5_17d_fairness_contract.json",
+    "manifest_json": "<repo>/controlled_test_output/tier5_17e_20260429_162729/predictive_binding_guardrail/tier5_17d_results.json",
+    "report_md": "<repo>/controlled_test_output/tier5_17e_20260429_162729/predictive_binding_guardrail/tier5_17d_report.md",
+    "representation_matrix_png": "<repo>/controlled_test_output/tier5_17e_20260429_162729/predictive_binding_guardrail/tier5_17d_representation_matrix.png",
+    "run_csv": "<repo>/controlled_test_output/tier5_17e_20260429_162729/predictive_binding_guardrail/tier5_17d_runs.csv",
+    "summary_csv": "<repo>/controlled_test_output/tier5_17e_20260429_162729/predictive_binding_guardrail/tier5_17d_summary.csv"
   },
   "canonical": false,
   "claim_boundary": "Noncanonical software diagnostic: predictive binding preexposure under zero-label/zero-reward exposure; not hardware/on-chip representation learning or a v2.0 freeze.",
@@ -56,7 +56,7 @@
   "failure_reason": "",
   "generated_at_utc": "2026-04-29T20:30:43+00:00",
   "name": "Tier 5.17d - Predictive Preexposure Binding/Sham Repair",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_162729/predictive_binding_guardrail",
+  "output_dir": "<repo>/controlled_test_output/tier5_17e_20260429_162729/predictive_binding_guardrail",
   "status": "pass",
   "summary": {
     "candidate_min_knn_probe_accuracy": 0.9753086419753086,

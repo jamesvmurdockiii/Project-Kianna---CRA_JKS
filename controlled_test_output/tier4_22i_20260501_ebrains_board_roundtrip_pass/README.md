@@ -1,8 +1,8 @@
 # Tier 4.22i EBRAINS Board Round-Trip Pass
 
-- Ingested locally from `/Users/james/Downloads` after the EBRAINS JobManager run.
+- Ingested locally from `<downloads>` after the EBRAINS JobManager run.
 - Remote generated UTC: `2026-05-01T00:53:20+00:00`
-- Remote output dir: `/tmp/job11618096177016154229.tmp/tier4_22i_job_output`
+- Remote output dir: `<jobmanager_tmp>`
 - Status: **PASS**
 - Runner revision: `tier4_22i_custom_runtime_roundtrip_20260430_0009`
 - Upload package: `cra_422r`

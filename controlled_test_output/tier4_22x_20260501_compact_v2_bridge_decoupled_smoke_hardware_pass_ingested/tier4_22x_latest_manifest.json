@@ -2,10 +2,10 @@
   "canonical": false,
   "claim": "Latest Tier 4.22x tiny native decoupled memory-route composition custom-runtime micro-task; pass means a tiny native decoupled memory-route composition pending-queue on-chip loop matched local fixed-point reference and task metrics only.",
   "generated_at_utc": "2026-05-01T22:23:01+00:00",
-  "manifest": "/tmp/job10947564092789900545.tmp/tier4_22x_job_output/tier4_22x_results.json",
+  "manifest": "<jobmanager_tmp>",
   "mode": "run-hardware",
-  "output_dir": "/tmp/job10947564092789900545.tmp/tier4_22x_job_output",
-  "report": "/tmp/job10947564092789900545.tmp/tier4_22x_job_output/tier4_22x_report.md",
+  "output_dir": "<jobmanager_tmp>",
+  "report": "<jobmanager_tmp>",
   "status": "pass",
   "tier": "Tier 4.22x - Compact v2 Bridge Over Native Decoupled State Primitive Custom-Runtime Smoke"
 }

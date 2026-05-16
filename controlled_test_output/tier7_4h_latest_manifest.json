@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.430995+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.575527+00:00",
   "source_generated_at_utc": "2026-05-09T03:06:35+00:00",
   "registry_entry_id": "tier7_4h_policy_action_attribution_closeout",
   "tier": "Tier 7.4h - Policy/Action Attribution Closeout / Mechanism Return Decision",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout/tier7_4h_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout/tier7_4h_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout/tier7_4h_summary.csv",
+  "output_dir": "controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout",
+  "manifest": "controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout/tier7_4h_results.json",
+  "report": "controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout/tier7_4h_report.md",
+  "summary_csv": "controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout/tier7_4h_summary.csv",
   "canonical": true,
   "claim": "Tier 7.4h closes the held-out policy/action chain by preserving only the narrow C-MAPSS action-cost claim, blocking broad public usefulness, blocking incremental v2.4-over-v2.2 claims, blocking freeze/hardware transfer, and routing the project back to the general mechanism/benchmark roadmap.",
   "caveat": "Decision/attribution evidence only; not a new scoring run, not a mechanism promotion, not broad public usefulness, not a new baseline freeze, not hardware/native transfer, and not AGI/ASI evidence."

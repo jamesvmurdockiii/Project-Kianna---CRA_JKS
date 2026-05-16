@@ -2,7 +2,7 @@
 
 - Status: **PASS**
 - Passed: 38/38
-- Hardware output: `/Users/james/Downloads`
+- Hardware output: `<downloads>`
 
 ## Criteria
 

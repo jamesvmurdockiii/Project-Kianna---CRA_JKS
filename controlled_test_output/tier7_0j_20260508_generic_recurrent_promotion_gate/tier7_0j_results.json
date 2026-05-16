@@ -30,18 +30,18 @@
       "nest",
       "--stop-on-fail",
       "--output-dir",
-      "/Users/james/JKS:CRA/controlled_test_output/tier7_0j_20260508_generic_recurrent_promotion_gate/compact_regression_full_nest"
+      "<repo>/controlled_test_output/tier7_0j_20260508_generic_recurrent_promotion_gate/compact_regression_full_nest"
     ],
     "failure_reason": "",
-    "manifest_path": "/Users/james/JKS:CRA/controlled_test_output/tier7_0j_20260508_generic_recurrent_promotion_gate/compact_regression_full_nest/tier5_18c_results.json",
+    "manifest_path": "<repo>/controlled_test_output/tier7_0j_20260508_generic_recurrent_promotion_gate/compact_regression_full_nest/tier5_18c_results.json",
     "name": "compact_regression_full_nest",
-    "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_0j_20260508_generic_recurrent_promotion_gate/compact_regression_full_nest",
+    "output_dir": "<repo>/controlled_test_output/tier7_0j_20260508_generic_recurrent_promotion_gate/compact_regression_full_nest",
     "purpose": "rerun the promoted software compact regression stack before any v2.3 freeze",
     "return_code": 0,
     "runtime_seconds": 1684.4580694580002,
     "status": "pass",
-    "stderr_path": "/Users/james/JKS:CRA/controlled_test_output/tier7_0j_20260508_generic_recurrent_promotion_gate/compact_regression_full_nest/compact_regression_full_nest_stderr.log",
-    "stdout_path": "/Users/james/JKS:CRA/controlled_test_output/tier7_0j_20260508_generic_recurrent_promotion_gate/compact_regression_full_nest/compact_regression_full_nest_stdout.log"
+    "stderr_path": "<repo>/controlled_test_output/tier7_0j_20260508_generic_recurrent_promotion_gate/compact_regression_full_nest/compact_regression_full_nest_stderr.log",
+    "stdout_path": "<repo>/controlled_test_output/tier7_0j_20260508_generic_recurrent_promotion_gate/compact_regression_full_nest/compact_regression_full_nest_stdout.log"
   },
   "compact_mode": "full",
   "criteria": [
@@ -57,7 +57,7 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.2.json"
+      "value": "<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.2.json"
     },
     {
       "name": "Tier 7.0h source result pass",
@@ -169,13 +169,13 @@
     ]
   },
   "generated_at_utc": "2026-05-08T20:10:52+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_0j_20260508_generic_recurrent_promotion_gate",
+  "output_dir": "<repo>/controlled_test_output/tier7_0j_20260508_generic_recurrent_promotion_gate",
   "runner_revision": "tier7_0j_generic_recurrent_promotion_gate_20260508_0001",
   "runtime_seconds": 1684.4754914589998,
   "source_results": {
-    "tier7_0h": "/Users/james/JKS:CRA/controlled_test_output/tier7_0h_20260508_bounded_recurrent_interface_gate/tier7_0h_results.json",
-    "tier7_0i": "/Users/james/JKS:CRA/controlled_test_output/tier7_0i_20260508_recurrence_topology_specificity_gate/tier7_0i_results.json",
-    "v2_2_baseline": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.2.json"
+    "tier7_0h": "<repo>/controlled_test_output/tier7_0h_20260508_bounded_recurrent_interface_gate/tier7_0h_results.json",
+    "tier7_0i": "<repo>/controlled_test_output/tier7_0i_20260508_recurrence_topology_specificity_gate/tier7_0i_results.json",
+    "v2_2_baseline": "<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.2.json"
   },
   "status": "pass",
   "support": {

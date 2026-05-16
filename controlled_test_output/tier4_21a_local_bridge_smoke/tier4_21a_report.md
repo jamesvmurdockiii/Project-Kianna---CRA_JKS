@@ -3,7 +3,7 @@
 - Generated: `2026-04-30T15:52:04+00:00`
 - Mode: `local-bridge`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_21a_local_bridge_smoke`
+- Output directory: `<repo>/controlled_test_output/tier4_21a_local_bridge_smoke`
 
 Tier 4.21a is a targeted v2 mechanism bridge probe for keyed context memory. It tests the host-side keyed-memory scheduler through the chunked PyNN/SpiNNaker transport path.
 
@@ -46,8 +46,8 @@ Tier 4.21a is a targeted v2 mechanism bridge probe for keyed context memory. It 
 | Criterion | Value | Rule | Pass |
 | --- | --- | --- | --- |
 | Tier 4.21a runner revision | `tier4_21a_keyed_memory_bridge_20260430_0000` | `expected current source` | yes |
-| source package import path available | `{'canonical_package': '/Users/james/JKS:CRA/coral_reef_spinnaker', 'canonical_package_exists': True, 'action': 'already_canonical', 'aliases_checked': ['/Users/james/JKS:CRA/coral-reef-spinnaker', '/Users/james/JKS:CRA/coral reef spinnaker']}` | `coral_reef_spinnaker exists` | yes |
-| Tier 4.20c bridge repeat prerequisite | `{'status': 'pass', 'manifest': '/Users/james/JKS:CRA/controlled_test_output/tier4_20c_20260430_v2_1_bridge_three_seed_hardware_pass_ingested/tier4_20c_results.json', 'mode': 'local-bridge'}` | `status == pass locally OR fresh run-hardware` | yes |
+| source package import path available | `{'canonical_package': '<repo>/coral_reef_spinnaker', 'canonical_package_exists': True, 'action': 'already_canonical', 'aliases_checked': ['<repo>/coral-reef-spinnaker', '<repo>/coral reef spinnaker']}` | `coral_reef_spinnaker exists` | yes |
+| Tier 4.20c bridge repeat prerequisite | `{'status': 'pass', 'manifest': '<repo>/controlled_test_output/tier4_20c_20260430_v2_1_bridge_three_seed_hardware_pass_ingested/tier4_20c_results.json', 'mode': 'local-bridge'}` | `status == pass locally OR fresh run-hardware` | yes |
 | keyed context-memory included | `['keyed_context_memory', 'slot_reset_ablation', 'slot_shuffle_ablation', 'wrong_key_ablation']` | `contains keyed_context_memory` | yes |
 | memory ablation included | `['keyed_context_memory', 'slot_reset_ablation', 'slot_shuffle_ablation', 'wrong_key_ablation']` | `contains at least one ablation` | yes |
 | runtime mode is chunked | `chunked` | `fixed` | yes |
@@ -64,15 +64,15 @@ Tier 4.21a is a targeted v2 mechanism bridge probe for keyed context memory. It 
 
 ## Artifacts
 
-- `comparisons_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier4_21a_local_bridge_smoke/tier4_21a_comparisons.csv`
-- `context_reentry_interference_keyed_context_memory_seed42_timeseries_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier4_21a_local_bridge_smoke/spinnaker_hardware_context_reentry_interference_keyed_context_memory_seed42_timeseries.csv`
-- `context_reentry_interference_keyed_context_memory_seed42_timeseries_png`: `/Users/james/JKS:CRA/controlled_test_output/tier4_21a_local_bridge_smoke/spinnaker_hardware_context_reentry_interference_keyed_context_memory_seed42_timeseries.png`
-- `context_reentry_interference_slot_reset_ablation_seed42_timeseries_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier4_21a_local_bridge_smoke/spinnaker_hardware_context_reentry_interference_slot_reset_ablation_seed42_timeseries.csv`
-- `context_reentry_interference_slot_reset_ablation_seed42_timeseries_png`: `/Users/james/JKS:CRA/controlled_test_output/tier4_21a_local_bridge_smoke/spinnaker_hardware_context_reentry_interference_slot_reset_ablation_seed42_timeseries.png`
-- `context_reentry_interference_slot_shuffle_ablation_seed42_timeseries_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier4_21a_local_bridge_smoke/spinnaker_hardware_context_reentry_interference_slot_shuffle_ablation_seed42_timeseries.csv`
-- `context_reentry_interference_slot_shuffle_ablation_seed42_timeseries_png`: `/Users/james/JKS:CRA/controlled_test_output/tier4_21a_local_bridge_smoke/spinnaker_hardware_context_reentry_interference_slot_shuffle_ablation_seed42_timeseries.png`
-- `context_reentry_interference_wrong_key_ablation_seed42_timeseries_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier4_21a_local_bridge_smoke/spinnaker_hardware_context_reentry_interference_wrong_key_ablation_seed42_timeseries.csv`
-- `context_reentry_interference_wrong_key_ablation_seed42_timeseries_png`: `/Users/james/JKS:CRA/controlled_test_output/tier4_21a_local_bridge_smoke/spinnaker_hardware_context_reentry_interference_wrong_key_ablation_seed42_timeseries.png`
-- `manifest_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_21a_local_bridge_smoke/tier4_21a_results.json`
-- `report_md`: `/Users/james/JKS:CRA/controlled_test_output/tier4_21a_local_bridge_smoke/tier4_21a_report.md`
-- `summary_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier4_21a_local_bridge_smoke/tier4_21a_summary.csv`
+- `comparisons_csv`: `<repo>/controlled_test_output/tier4_21a_local_bridge_smoke/tier4_21a_comparisons.csv`
+- `context_reentry_interference_keyed_context_memory_seed42_timeseries_csv`: `<repo>/controlled_test_output/tier4_21a_local_bridge_smoke/spinnaker_hardware_context_reentry_interference_keyed_context_memory_seed42_timeseries.csv`
+- `context_reentry_interference_keyed_context_memory_seed42_timeseries_png`: `<repo>/controlled_test_output/tier4_21a_local_bridge_smoke/spinnaker_hardware_context_reentry_interference_keyed_context_memory_seed42_timeseries.png`
+- `context_reentry_interference_slot_reset_ablation_seed42_timeseries_csv`: `<repo>/controlled_test_output/tier4_21a_local_bridge_smoke/spinnaker_hardware_context_reentry_interference_slot_reset_ablation_seed42_timeseries.csv`
+- `context_reentry_interference_slot_reset_ablation_seed42_timeseries_png`: `<repo>/controlled_test_output/tier4_21a_local_bridge_smoke/spinnaker_hardware_context_reentry_interference_slot_reset_ablation_seed42_timeseries.png`
+- `context_reentry_interference_slot_shuffle_ablation_seed42_timeseries_csv`: `<repo>/controlled_test_output/tier4_21a_local_bridge_smoke/spinnaker_hardware_context_reentry_interference_slot_shuffle_ablation_seed42_timeseries.csv`
+- `context_reentry_interference_slot_shuffle_ablation_seed42_timeseries_png`: `<repo>/controlled_test_output/tier4_21a_local_bridge_smoke/spinnaker_hardware_context_reentry_interference_slot_shuffle_ablation_seed42_timeseries.png`
+- `context_reentry_interference_wrong_key_ablation_seed42_timeseries_csv`: `<repo>/controlled_test_output/tier4_21a_local_bridge_smoke/spinnaker_hardware_context_reentry_interference_wrong_key_ablation_seed42_timeseries.csv`
+- `context_reentry_interference_wrong_key_ablation_seed42_timeseries_png`: `<repo>/controlled_test_output/tier4_21a_local_bridge_smoke/spinnaker_hardware_context_reentry_interference_wrong_key_ablation_seed42_timeseries.png`
+- `manifest_json`: `<repo>/controlled_test_output/tier4_21a_local_bridge_smoke/tier4_21a_results.json`
+- `report_md`: `<repo>/controlled_test_output/tier4_21a_local_bridge_smoke/tier4_21a_report.md`
+- `summary_csv`: `<repo>/controlled_test_output/tier4_21a_local_bridge_smoke/tier4_21a_summary.csv`

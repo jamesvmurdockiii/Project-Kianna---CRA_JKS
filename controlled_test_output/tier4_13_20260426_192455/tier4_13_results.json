@@ -1,10 +1,10 @@
 {
   "artifacts": {
-    "capsule_config_json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260426_192455/jobmanager_capsule/capsule_config.json",
-    "capsule_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260426_192455/jobmanager_capsule",
-    "expected_outputs_json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260426_192455/jobmanager_capsule/expected_outputs.json",
-    "jobmanager_readme": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260426_192455/jobmanager_capsule/README_JOBMANAGER.md",
-    "jobmanager_run_script": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260426_192455/jobmanager_capsule/run_tier4_13_on_jobmanager.sh"
+    "capsule_config_json": "<repo>/controlled_test_output/tier4_13_20260426_192455/jobmanager_capsule/capsule_config.json",
+    "capsule_dir": "<repo>/controlled_test_output/tier4_13_20260426_192455/jobmanager_capsule",
+    "expected_outputs_json": "<repo>/controlled_test_output/tier4_13_20260426_192455/jobmanager_capsule/expected_outputs.json",
+    "jobmanager_readme": "<repo>/controlled_test_output/tier4_13_20260426_192455/jobmanager_capsule/README_JOBMANAGER.md",
+    "jobmanager_run_script": "<repo>/controlled_test_output/tier4_13_20260426_192455/jobmanager_capsule/run_tier4_13_on_jobmanager.sh"
   },
   "criteria": [
     {
@@ -41,35 +41,35 @@
         "error": "",
         "name": "pyNN.spiNNaker",
         "ok": true,
-        "path": "/Users/james/Library/Python/3.9/lib/python/site-packages/pyNN/spiNNaker.py",
+        "path": "<python-site-packages>/pyNN/spiNNaker.py",
         "version": null
       },
       {
         "error": "",
         "name": "spynnaker.pyNN",
         "ok": true,
-        "path": "/Users/james/Library/Python/3.9/lib/python/site-packages/spynnaker/pyNN/__init__.py",
+        "path": "<python-site-packages>/spynnaker/pyNN/__init__.py",
         "version": "1!7.4.1"
       },
       {
         "error": "",
         "name": "spalloc_client",
         "ok": true,
-        "path": "/Users/james/Library/Python/3.9/lib/python/site-packages/spalloc_client/__init__.py",
+        "path": "<python-site-packages>/spalloc_client/__init__.py",
         "version": "1!7.4.1"
       },
       {
         "error": "",
         "name": "spinnman",
         "ok": true,
-        "path": "/Users/james/Library/Python/3.9/lib/python/site-packages/spinnman/__init__.py",
+        "path": "<python-site-packages>/spinnman/__init__.py",
         "version": "1!7.4.1"
       },
       {
         "error": "",
         "name": "spinn_front_end_common",
         "ok": true,
-        "path": "/Users/james/Library/Python/3.9/lib/python/site-packages/spinn_front_end_common/__init__.py",
+        "path": "<python-site-packages>/spinn_front_end_common/__init__.py",
         "version": "1!7.4.1"
       }
     ],
@@ -81,7 +81,7 @@
       "height": "8",
       "machineName": "None",
       "mode": "Production",
-      "path": "/Users/james/.spynnaker.cfg",
+      "path": "<spynnaker-config>",
       "spalloc_group": "None",
       "spalloc_port": "22244",
       "spalloc_server": "None",
@@ -94,10 +94,10 @@
   },
   "generated_at_utc": "2026-04-26T23:24:55+00:00",
   "mode": "prepare",
-  "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260426_192455",
+  "output_dir": "<repo>/controlled_test_output/tier4_13_20260426_192455",
   "status": "prepared",
   "summary": {
-    "capsule_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260426_192455/jobmanager_capsule",
+    "capsule_dir": "<repo>/controlled_test_output/tier4_13_20260426_192455/jobmanager_capsule",
     "hardware_run_attempted": false,
     "hardware_target_configured": false,
     "jobmanager_cli": null,
@@ -105,24 +105,24 @@
   },
   "tier": "Tier 4.13 - SpiNNaker Hardware Capsule",
   "tier4_12_reference": {
-    "manifest_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/tier4_12_results.json",
-    "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808",
+    "manifest_path": "<repo>/controlled_test_output/tier4_12_20260426_170808/tier4_12_results.json",
+    "output_dir": "<repo>/controlled_test_output/tier4_12_20260426_170808",
     "pointer": {
       "generated_at_utc": "2026-04-26T21:09:05+00:00",
-      "manifest": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/tier4_12_results.json",
-      "report": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/tier4_12_report.md",
+      "manifest": "<repo>/controlled_test_output/tier4_12_20260426_170808/tier4_12_results.json",
+      "report": "<repo>/controlled_test_output/tier4_12_20260426_170808/tier4_12_report.md",
       "status": "pass",
       "stopped_after": null
     },
     "results": [
       {
         "artifacts": {
-          "seed_42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/nest_fixed_pattern_seed42_timeseries.csv",
-          "seed_42_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/nest_fixed_pattern_seed42_timeseries.png",
-          "seed_43_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/nest_fixed_pattern_seed43_timeseries.csv",
-          "seed_43_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/nest_fixed_pattern_seed43_timeseries.png",
-          "seed_44_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/nest_fixed_pattern_seed44_timeseries.csv",
-          "seed_44_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/nest_fixed_pattern_seed44_timeseries.png"
+          "seed_42_timeseries_csv": "<repo>/controlled_test_output/tier4_12_20260426_170808/nest_fixed_pattern_seed42_timeseries.csv",
+          "seed_42_timeseries_png": "<repo>/controlled_test_output/tier4_12_20260426_170808/nest_fixed_pattern_seed42_timeseries.png",
+          "seed_43_timeseries_csv": "<repo>/controlled_test_output/tier4_12_20260426_170808/nest_fixed_pattern_seed43_timeseries.csv",
+          "seed_43_timeseries_png": "<repo>/controlled_test_output/tier4_12_20260426_170808/nest_fixed_pattern_seed43_timeseries.png",
+          "seed_44_timeseries_csv": "<repo>/controlled_test_output/tier4_12_20260426_170808/nest_fixed_pattern_seed44_timeseries.csv",
+          "seed_44_timeseries_png": "<repo>/controlled_test_output/tier4_12_20260426_170808/nest_fixed_pattern_seed44_timeseries.png"
         },
         "criteria": [
           {
@@ -946,12 +946,12 @@
       },
       {
         "artifacts": {
-          "seed_42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/brian2_fixed_pattern_seed42_timeseries.csv",
-          "seed_42_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/brian2_fixed_pattern_seed42_timeseries.png",
-          "seed_43_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/brian2_fixed_pattern_seed43_timeseries.csv",
-          "seed_43_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/brian2_fixed_pattern_seed43_timeseries.png",
-          "seed_44_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/brian2_fixed_pattern_seed44_timeseries.csv",
-          "seed_44_timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_12_20260426_170808/brian2_fixed_pattern_seed44_timeseries.png"
+          "seed_42_timeseries_csv": "<repo>/controlled_test_output/tier4_12_20260426_170808/brian2_fixed_pattern_seed42_timeseries.csv",
+          "seed_42_timeseries_png": "<repo>/controlled_test_output/tier4_12_20260426_170808/brian2_fixed_pattern_seed42_timeseries.png",
+          "seed_43_timeseries_csv": "<repo>/controlled_test_output/tier4_12_20260426_170808/brian2_fixed_pattern_seed43_timeseries.csv",
+          "seed_43_timeseries_png": "<repo>/controlled_test_output/tier4_12_20260426_170808/brian2_fixed_pattern_seed43_timeseries.png",
+          "seed_44_timeseries_csv": "<repo>/controlled_test_output/tier4_12_20260426_170808/brian2_fixed_pattern_seed44_timeseries.csv",
+          "seed_44_timeseries_png": "<repo>/controlled_test_output/tier4_12_20260426_170808/brian2_fixed_pattern_seed44_timeseries.png"
         },
         "criteria": [
           {
@@ -1941,7 +1941,7 @@
               "error": "",
               "import_ok": true,
               "module_name": "pyNN.spiNNaker",
-              "module_repr": "<module 'pyNN.spiNNaker' from '/Users/james/Library/Python/3.9/lib/python/site-packages/pyNN/spiNNaker.py'>",
+              "module_repr": "<module 'pyNN.spiNNaker' from '<python-site-packages>/pyNN/spiNNaker.py'>",
               "setup_ok": true,
               "version": null
             },
@@ -1950,7 +1950,7 @@
               "error": "",
               "import_ok": true,
               "module_name": "spynnaker.pyNN",
-              "module_repr": "<module 'spynnaker.pyNN' from '/Users/james/Library/Python/3.9/lib/python/site-packages/spynnaker/pyNN/__init__.py'>",
+              "module_repr": "<module 'spynnaker.pyNN' from '<python-site-packages>/spynnaker/pyNN/__init__.py'>",
               "setup_ok": null,
               "version": "1!7.4.1"
             }

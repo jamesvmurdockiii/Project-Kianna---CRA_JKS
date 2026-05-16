@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.441098+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.583580+00:00",
   "source_generated_at_utc": "2026-05-09T13:30:05+00:00",
   "registry_entry_id": "tier7_7b_v2_5_standardized_scoreboard_scoring_gate",
   "tier": "Tier 7.7b - v2.5 Standardized Benchmark / Usefulness Scoreboard Scoring Gate",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7b_20260509_v2_5_standardized_scoreboard_scoring_gate",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_7b_20260509_v2_5_standardized_scoreboard_scoring_gate/tier7_7b_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_7b_20260509_v2_5_standardized_scoreboard_scoring_gate/tier7_7b_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7b_20260509_v2_5_standardized_scoreboard_scoring_gate/tier7_7b_summary.csv",
+  "output_dir": "controlled_test_output/tier7_7b_20260509_v2_5_standardized_scoreboard_scoring_gate",
+  "manifest": "controlled_test_output/tier7_7b_20260509_v2_5_standardized_scoreboard_scoring_gate/tier7_7b_results.json",
+  "report": "controlled_test_output/tier7_7b_20260509_v2_5_standardized_scoreboard_scoring_gate/tier7_7b_report.md",
+  "summary_csv": "controlled_test_output/tier7_7b_20260509_v2_5_standardized_scoreboard_scoring_gate/tier7_7b_summary.csv",
   "canonical": true,
   "claim": "Tier 7.7b passed as a locked scoring gate and found standardized progress versus v2.3 on the 8000-step Mackey-Glass/Lorenz/NARMA10 aggregate: v2.5 geomean MSE 0.0735414741 versus v2.3 0.0951071342, ratio 1.2932448715, paired delta CI 0.0197948122 to 0.0244083440. The signal is one-task-driven: Mackey-Glass improved, while Lorenz and NARMA10 were flat/slightly worse.",
   "caveat": "Scoring evidence only; not a new baseline freeze, not hardware/native evidence, not broad public usefulness, not external-baseline superiority, and not language, broad planning, AGI, or ASI evidence. ESN, online LMS, and ridge/lag baselines still beat v2.5 on aggregate."

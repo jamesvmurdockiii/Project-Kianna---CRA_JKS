@@ -6,18 +6,18 @@
         "experiments/tier5_self_evaluation_compact_regression.py",
         "--smoke",
         "--output-dir",
-        "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail"
+        "<repo>/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail"
       ],
       "failure_reason": "",
-      "manifest_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/tier5_18c_results.json",
+      "manifest_path": "<repo>/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/tier5_18c_results.json",
       "name": "v2_1_guardrail",
-      "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail",
+      "output_dir": "<repo>/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail",
       "purpose": "rerun the v2.1 promotion/regression gate so the current baseline remains intact before interpreting macro-credit work",
       "return_code": 0,
       "runtime_seconds": 107.7322295,
       "status": "pass",
-      "stderr_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_1_guardrail_stderr.log",
-      "stdout_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_1_guardrail_stdout.log"
+      "stderr_path": "<repo>/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_1_guardrail_stderr.log",
+      "stdout_path": "<repo>/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_1_guardrail_stdout.log"
     },
     {
       "command": [
@@ -37,18 +37,18 @@
         "all",
         "--smoke",
         "--output-dir",
-        "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/macro_residual_recheck"
+        "<repo>/controlled_test_output/tier5_9c_20260429_190257/macro_residual_recheck"
       ],
       "failure_reason": "",
-      "manifest_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/macro_residual_recheck/tier5_9b_results.json",
+      "manifest_path": "<repo>/controlled_test_output/tier5_9c_20260429_190257/macro_residual_recheck/tier5_9b_results.json",
       "name": "macro_residual_recheck",
-      "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/macro_residual_recheck",
+      "output_dir": "<repo>/controlled_test_output/tier5_9c_20260429_190257/macro_residual_recheck",
       "purpose": "rerun the residual macro-eligibility diagnostic that previously failed trace-ablation separation",
       "return_code": 0,
       "runtime_seconds": 4.608526832999999,
       "status": "pass",
-      "stderr_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/macro_residual_recheck/macro_residual_recheck_stderr.log",
-      "stdout_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/macro_residual_recheck/macro_residual_recheck_stdout.log"
+      "stderr_path": "<repo>/controlled_test_output/tier5_9c_20260429_190257/macro_residual_recheck/macro_residual_recheck_stderr.log",
+      "stdout_path": "<repo>/controlled_test_output/tier5_9c_20260429_190257/macro_residual_recheck/macro_residual_recheck_stdout.log"
     }
   ]
 }

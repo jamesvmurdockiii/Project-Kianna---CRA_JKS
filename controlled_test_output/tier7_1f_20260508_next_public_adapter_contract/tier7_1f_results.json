@@ -6,7 +6,7 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_1e_20260508_cmapss_capped_readout_fairness_confirmation/tier7_1e_results.json"
+      "value": "<repo>/controlled_test_output/tier7_1e_20260508_cmapss_capped_readout_fairness_confirmation/tier7_1e_results.json"
     },
     {
       "name": "Tier 7.1e passed",
@@ -88,7 +88,7 @@
   "failed_criteria": [],
   "generated_at_utc": "2026-05-08T21:35:18+00:00",
   "next_step": "Tier 7.1g NAB source/data/scoring preflight: verify source access, source hash/commit, file/label parse, label-separated streams, tiny leakage-safe smoke rows, and scoring-interface feasibility before any full NAB scoring.",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1f_20260508_next_public_adapter_contract",
+  "output_dir": "<repo>/controlled_test_output/tier7_1f_20260508_next_public_adapter_contract",
   "runner_revision": "tier7_1f_next_public_adapter_contract_20260508_0001",
   "selected_adapter": {
     "adapter_id": "numenta_nab_streaming_anomaly",
@@ -183,7 +183,7 @@
     ],
     "task_type": "online streaming anomaly detection"
   },
-  "source_tier7_1e": "/Users/james/JKS:CRA/controlled_test_output/tier7_1e_20260508_cmapss_capped_readout_fairness_confirmation/tier7_1e_results.json",
+  "source_tier7_1e": "<repo>/controlled_test_output/tier7_1e_20260508_cmapss_capped_readout_fairness_confirmation/tier7_1e_results.json",
   "status": "pass",
   "tier": "Tier 7.1f - Next Public Adapter Contract / Family Selection"
 }

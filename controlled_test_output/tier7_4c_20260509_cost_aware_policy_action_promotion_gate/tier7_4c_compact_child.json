@@ -6,16 +6,16 @@
     "nest",
     "--stop-on-fail",
     "--output-dir",
-    "/Users/james/JKS:CRA/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/compact_regression_full_nest"
+    "<repo>/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/compact_regression_full_nest"
   ],
   "failure_reason": "",
-  "manifest_path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/compact_regression_full_nest/tier5_18c_results.json",
+  "manifest_path": "<repo>/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/compact_regression_full_nest/tier5_18c_results.json",
   "name": "compact_regression_full_nest",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/compact_regression_full_nest",
+  "output_dir": "<repo>/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/compact_regression_full_nest",
   "purpose": "rerun compact v2.x guardrails before any cost-aware policy/action freeze",
   "return_code": 0,
   "runtime_seconds": 1615.01088625,
   "status": "pass",
-  "stderr_path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/compact_regression_full_nest/compact_regression_full_nest_stderr.log",
-  "stdout_path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/compact_regression_full_nest/compact_regression_full_nest_stdout.log"
+  "stderr_path": "<repo>/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/compact_regression_full_nest/compact_regression_full_nest_stderr.log",
+  "stdout_path": "<repo>/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/compact_regression_full_nest/compact_regression_full_nest_stdout.log"
 }

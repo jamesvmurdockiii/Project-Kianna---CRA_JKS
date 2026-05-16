@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.415297+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.561994+00:00",
   "source_generated_at_utc": "2026-05-08T21:20:55+00:00",
   "registry_entry_id": "tier7_1d_cmapss_failure_analysis_adapter_repair",
   "tier": "Tier 7.1d - C-MAPSS Failure Analysis / Adapter Repair",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/tier7_1d_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/tier7_1d_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/tier7_1d_summary.csv",
+  "output_dir": "controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair",
+  "manifest": "controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/tier7_1d_results.json",
+  "report": "controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/tier7_1d_report.md",
+  "summary_csv": "controlled_test_output/tier7_1d_20260508_cmapss_failure_analysis_adapter_repair/tier7_1d_summary.csv",
   "canonical": true,
   "claim": "Tier 7.1d localized the compact C-MAPSS FD001 gap: capped RUL and ridge readout substantially repaired scalar v2.3 scoring, multichannel state was sham-separated but did not beat the scalar repair or fair public baselines, and no freeze or hardware transfer was authorized.",
   "caveat": "Software failure-analysis evidence only; not a full C-MAPSS benchmark, not a public usefulness win, not a promoted mechanism, not a baseline freeze, not hardware/native transfer, and not AGI/ASI evidence."

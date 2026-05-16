@@ -1,8 +1,8 @@
 name,value,rule,passed,note
-Tier 7.7g contract exists,/Users/james/JKS:CRA/controlled_test_output/tier7_7g_20260509_lorenz_capacity_narma_memory_contract/tier7_7g_results.json,exists and pass,True,
+Tier 7.7g contract exists,<repo>/controlled_test_output/tier7_7g_20260509_lorenz_capacity_narma_memory_contract/tier7_7g_results.json,exists and pass,True,
 Tier 7.7g authorizes scoring,True,true,True,
-Tier 7.7f prerequisite exists,/Users/james/JKS:CRA/controlled_test_output/tier7_7f_20260509_repaired_finite_stream_long_run_scoreboard/tier7_7f_results.json,exists and pass,True,
-Tier 7.7e prerequisite exists,/Users/james/JKS:CRA/controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight/tier7_7e_results.json,exists and pass,True,
+Tier 7.7f prerequisite exists,<repo>/controlled_test_output/tier7_7f_20260509_repaired_finite_stream_long_run_scoreboard/tier7_7f_results.json,exists and pass,True,
+Tier 7.7e prerequisite exists,<repo>/controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight/tier7_7e_results.json,exists and pass,True,
 repaired NARMA stream locked,narma10_reduced_input_u02,== narma10_reduced_input_u02,True,
 locked tasks,"['mackey_glass', 'lorenz', 'narma10']",== Mackey/Lorenz/NARMA,True,
 locked lengths,"[8000, 16000, 32000]",== 8000/16000/32000,True,

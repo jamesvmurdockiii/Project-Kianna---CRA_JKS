@@ -1,8 +1,8 @@
 {
   "artifacts": {
-    "child_manifests_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_160245/tier5_17e_child_manifests.json",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_160245/tier5_17e_report.md",
-    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_160245/tier5_17e_summary.csv"
+    "child_manifests_json": "<repo>/controlled_test_output/tier5_17e_20260429_160245/tier5_17e_child_manifests.json",
+    "report_md": "<repo>/controlled_test_output/tier5_17e_20260429_160245/tier5_17e_report.md",
+    "summary_csv": "<repo>/controlled_test_output/tier5_17e_20260429_160245/tier5_17e_summary.csv"
   },
   "backend": "nest",
   "candidate_baseline": {
@@ -26,18 +26,18 @@
         "0.2",
         "--stop-on-fail",
         "--output-dir",
-        "/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_160245/v1_8_compact_regression"
+        "<repo>/controlled_test_output/tier5_17e_20260429_160245/v1_8_compact_regression"
       ],
       "failure_reason": "",
-      "manifest_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_160245/v1_8_compact_regression/tier5_12d_results.json",
+      "manifest_path": "<repo>/controlled_test_output/tier5_17e_20260429_160245/v1_8_compact_regression/tier5_12d_results.json",
       "name": "v1_8_compact_regression",
-      "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_160245/v1_8_compact_regression",
+      "output_dir": "<repo>/controlled_test_output/tier5_17e_20260429_160245/v1_8_compact_regression",
       "purpose": "existing compact guardrail: Tier 1/2/3, target smokes, replay/consolidation, and predictive-context checks remain green",
       "return_code": 0,
       "runtime_seconds": 599.110544583,
       "status": "pass",
-      "stderr_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_160245/v1_8_compact_regression/v1_8_compact_regression_stderr.log",
-      "stdout_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_160245/v1_8_compact_regression/v1_8_compact_regression_stdout.log"
+      "stderr_path": "<repo>/controlled_test_output/tier5_17e_20260429_160245/v1_8_compact_regression/v1_8_compact_regression_stderr.log",
+      "stdout_path": "<repo>/controlled_test_output/tier5_17e_20260429_160245/v1_8_compact_regression/v1_8_compact_regression_stdout.log"
     },
     {
       "command": [
@@ -47,7 +47,7 @@
         "mock",
         "--stop-on-fail",
         "--output-dir",
-        "/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_160245/v1_9_composition_routing_guardrail",
+        "<repo>/controlled_test_output/tier5_17e_20260429_160245/v1_9_composition_routing_guardrail",
         "--composition-tasks",
         "heldout_skill_pair,order_sensitive_chain,distractor_skill_chain",
         "--routing-tasks",
@@ -61,16 +61,16 @@
         "--models",
         "sign_persistence,online_perceptron,online_logistic_regression,echo_state_network,small_gru,stdp_only_snn"
       ],
-      "failure_reason": "missing manifest: /Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_160245/v1_9_composition_routing_guardrail/tier5_13c_results.json",
-      "manifest_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_160245/v1_9_composition_routing_guardrail/tier5_13c_results.json",
+      "failure_reason": "missing manifest: <repo>/controlled_test_output/tier5_17e_20260429_160245/v1_9_composition_routing_guardrail/tier5_13c_results.json",
+      "manifest_path": "<repo>/controlled_test_output/tier5_17e_20260429_160245/v1_9_composition_routing_guardrail/tier5_13c_results.json",
       "name": "v1_9_composition_routing_guardrail",
-      "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_160245/v1_9_composition_routing_guardrail",
+      "output_dir": "<repo>/controlled_test_output/tier5_17e_20260429_160245/v1_9_composition_routing_guardrail",
       "purpose": "v1.9 host-side internal composition/routing remains intact before adding predictive-binding to the baseline lock",
       "return_code": 0,
       "runtime_seconds": 816.504465417,
       "status": "fail",
-      "stderr_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_160245/v1_9_composition_routing_guardrail/v1_9_composition_routing_guardrail_stderr.log",
-      "stdout_path": "/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_160245/v1_9_composition_routing_guardrail/v1_9_composition_routing_guardrail_stdout.log"
+      "stderr_path": "<repo>/controlled_test_output/tier5_17e_20260429_160245/v1_9_composition_routing_guardrail/v1_9_composition_routing_guardrail_stderr.log",
+      "stdout_path": "<repo>/controlled_test_output/tier5_17e_20260429_160245/v1_9_composition_routing_guardrail/v1_9_composition_routing_guardrail_stdout.log"
     }
   ],
   "claim_boundary": [
@@ -107,7 +107,7 @@
     }
   ],
   "generated_at_utc": "2026-04-29T20:26:21+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_17e_20260429_160245",
+  "output_dir": "<repo>/controlled_test_output/tier5_17e_20260429_160245",
   "runtime_seconds": 1415.642987416,
   "status": "fail",
   "summary": {

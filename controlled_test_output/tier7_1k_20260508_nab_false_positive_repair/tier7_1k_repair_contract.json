@@ -24,7 +24,7 @@
     "not hardware/native transfer",
     "not AGI/ASI evidence"
   ],
-  "prior_gate": "/Users/james/JKS:CRA/controlled_test_output/tier7_1j_20260508_nab_failure_localization/tier7_1j_results.json",
+  "prior_gate": "<repo>/controlled_test_output/tier7_1j_20260508_nab_failure_localization/tier7_1j_results.json",
   "question": "Can no-label alarm/readout policies reduce v2.3 false positives while preserving recall enough to beat rolling z-score?",
   "selected_files": [
     "artificialWithAnomaly/art_daily_flatmiddle.csv",

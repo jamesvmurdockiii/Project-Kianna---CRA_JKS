@@ -7,7 +7,7 @@
   "output_dir": "controlled_test_output/tier4_25c_seed42_prepared",
   "summary": {
     "upload_bundle": "controlled_test_output/tier4_25c_seed42_prepared/ebrains_upload_bundle/cra_425i",
-    "stable_upload_folder": "/Users/james/JKS:CRA/ebrains_jobs/cra_425i",
+    "stable_upload_folder": "<repo>/ebrains_jobs/cra_425i",
     "job_command": "cra_425i/experiments/tier4_25b_two_core_split_smoke.py --mode run-hardware --seed 42",
     "what_i_need_from_user": "Upload cra_425i to EBRAINS/JobManager and run the emitted command.",
     "claim_boundary": "Prepared source bundle only; no hardware evidence until returned artifacts pass ingest.",

@@ -1,5 +1,5 @@
 name,criterion,value,operator,rule,passed,pass,note,details
-v2.5 baseline exists,v2.5 baseline exists,/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.5.json,exists,exists,True,True,,
+v2.5 baseline exists,v2.5 baseline exists,<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.5.json,exists,exists,True,True,,
 Tier 7.6e prerequisite passed,Tier 7.6e prerequisite passed,pass,== pass,== pass,True,True,,
 Tier 7.0j reference passed,Tier 7.0j reference passed,pass,== pass,== pass,True,True,,
 primary standardized tasks locked,primary standardized tasks locked,4,>= 4 including aggregate,>= 4 including aggregate,True,True,,

@@ -3,7 +3,7 @@
 - Generated: `2026-05-01T20:40:04+00:00`
 - Mode: `ingest`
 - Status: **FAIL**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested`
+- Output directory: `<repo>/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested`
 
 Tier 4.22w runs a 48-event signed stream through the custom runtime using native keyed context state, keyed route state, and keyed memory/working-state slots. The host writes context, route, and memory updates, then sends independent context_key, route_key, memory_key, cue, and delay for each decision; the chip retrieves all three by their own keys, computes feature=context[context_key]*route[route_key]*memory[memory_key]*cue, scores the pre-update prediction, holds a two-event pending gap, then matures delayed credit against a local s16.15 reference.
 
@@ -163,32 +163,32 @@ Tier 4.22w runs a 48-event signed stream through the custom runtime using native
 
 ## Artifacts
 
-- `aplx_build_stderr`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/tier4_22i_aplx_build_stderr (22).txt`
-- `aplx_build_stdout`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/tier4_22i_aplx_build_stdout (21).txt`
-- `environment_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/tier4_22w_environment.json`
-- `host_test_stderr`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/tier4_22i_host_test_stderr (21).txt`
-- `host_test_stdout`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/tier4_22i_host_test_stdout (21).txt`
-- `load_result_json`: `/tmp/job13780689853698401094.tmp/tier4_22w_job_output/tier4_22w_load_result.json`
-- `main_syntax_stderr`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/tier4_22i_main_syntax_normal_stderr (20).txt`
-- `main_syntax_stdout`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/tier4_22i_main_syntax_normal_stdout (20).txt`
-- `manifest_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/tier4_22w_results.json`
-- `reference_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/tier4_22w_task_reference_rows.csv`
-- `reference_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/tier4_22w_task_reference.json`
-- `report_md`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/tier4_22w_report.md`
-- `target_acquisition_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/tier4_22w_target_acquisition.json`
-- `task_micro_loop_result_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/tier4_22w_task_micro_loop_result.json`
-- `task_micro_loop_rows_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/tier4_22w_task_micro_loop_rows.csv`
-- `raw_remote_manifest_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/remote_tier4_22w_results_raw.json`
-- `raw_remote_report_md`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/remote_tier4_22w_report_raw.md`
-- `remote_latest_manifest_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/tier4_22w_latest_manifest.json`
-- `main_syntax_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/tier4_22i_main_syntax_normal (20).o`
-- `aplx_binary`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/coral_reef (15).aplx`
-- `elf_binary`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/coral_reef (16).elf`
-- `elf_listing`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/coral_reef (15).txt`
-- `spinnaker_reports_zip`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/reports (26).zip`
-- `main_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/main (19).o`
-- `host_interface_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/host_interface (18).o`
-- `state_manager_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/state_manager (19).o`
-- `synapse_manager_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/synapse_manager (19).o`
-- `neuron_manager_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/neuron_manager (19).o`
-- `router_object`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/router (16).o`
+- `aplx_build_stderr`: `<repo>/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/tier4_22i_aplx_build_stderr (22).txt`
+- `aplx_build_stdout`: `<repo>/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/tier4_22i_aplx_build_stdout (21).txt`
+- `environment_json`: `<repo>/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/tier4_22w_environment.json`
+- `host_test_stderr`: `<repo>/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/tier4_22i_host_test_stderr (21).txt`
+- `host_test_stdout`: `<repo>/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/tier4_22i_host_test_stdout (21).txt`
+- `load_result_json`: `<jobmanager_tmp>`
+- `main_syntax_stderr`: `<repo>/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/tier4_22i_main_syntax_normal_stderr (20).txt`
+- `main_syntax_stdout`: `<repo>/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/tier4_22i_main_syntax_normal_stdout (20).txt`
+- `manifest_json`: `<repo>/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/tier4_22w_results.json`
+- `reference_csv`: `<repo>/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/tier4_22w_task_reference_rows.csv`
+- `reference_json`: `<repo>/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/tier4_22w_task_reference.json`
+- `report_md`: `<repo>/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/tier4_22w_report.md`
+- `target_acquisition_json`: `<repo>/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/tier4_22w_target_acquisition.json`
+- `task_micro_loop_result_json`: `<repo>/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/tier4_22w_task_micro_loop_result.json`
+- `task_micro_loop_rows_csv`: `<repo>/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/tier4_22w_task_micro_loop_rows.csv`
+- `raw_remote_manifest_json`: `<repo>/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/remote_tier4_22w_results_raw.json`
+- `raw_remote_report_md`: `<repo>/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/remote_tier4_22w_report_raw.md`
+- `remote_latest_manifest_json`: `<repo>/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/tier4_22w_latest_manifest.json`
+- `main_syntax_object`: `<repo>/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/tier4_22i_main_syntax_normal (20).o`
+- `aplx_binary`: `<repo>/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/coral_reef (15).aplx`
+- `elf_binary`: `<repo>/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/coral_reef (16).elf`
+- `elf_listing`: `<repo>/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/coral_reef (15).txt`
+- `spinnaker_reports_zip`: `<repo>/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/reports (26).zip`
+- `main_object`: `<repo>/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/main (19).o`
+- `host_interface_object`: `<repo>/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/host_interface (18).o`
+- `state_manager_object`: `<repo>/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/state_manager (19).o`
+- `synapse_manager_object`: `<repo>/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/synapse_manager (19).o`
+- `neuron_manager_object`: `<repo>/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/neuron_manager (19).o`
+- `router_object`: `<repo>/controlled_test_output/tier4_22w_20260501_ebrains_itcm_overflow_fail_ingested/router (16).o`

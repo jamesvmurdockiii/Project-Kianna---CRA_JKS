@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.429590+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.574311+00:00",
   "source_generated_at_utc": "2026-05-09T02:41:35+00:00",
   "registry_entry_id": "tier7_4f_cost_aware_policy_action_heldout_scoring_gate",
   "tier": "Tier 7.4f - Cost-Aware Policy/Action Held-Out Scoring Gate",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_summary.csv",
+  "output_dir": "controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate",
+  "manifest": "controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_results.json",
+  "report": "controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_report.md",
+  "summary_csv": "controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_summary.csv",
   "canonical": true,
   "claim": "Tier 7.4f scored the frozen v2.4 cost-aware policy/action stack on the locked NAB and C-MAPSS public/real-ish action-cost families. The outcome is qualified C-MAPSS-only: v2.4 ranked first on C-MAPSS maintenance utility and beat the strongest external baseline with a positive paired CI, but NAB did not confirm and C-MAPSS did not separate from the prior v2.2 CRA reference with a positive paired CI.",
   "caveat": "Software held-out scoring only; qualified public-action signal, not broad public usefulness, not incremental v2.4 superiority over prior CRA references, not a new baseline freeze, not hardware/native transfer, and not AGI/ASI evidence."

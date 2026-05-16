@@ -8,7 +8,7 @@
 The returned manifest still includes a child subprocess command:
 
 ```text
-['/home/jovyan/spinnaker/bin/python', '/tmp/job1038577973058361128.tmp/cra/experiments/tier4_harder_spinnaker_capsule.py', '--mode', 'run-hardware', '--no-require-real-hardware', '--tasks', 'delayed_cue,hard_noisy_switching', '--seeds', '42', '--steps', '1200', '--population-size', '8', '--runtime-mode', 'chunked', '--learning-location', 'host', '--chunk-size-steps', '50', '--delayed-readout-lr', '0.2', '--output-dir', '/tmp/job1038577973058361128.tmp/tier4_20b_job_output/child_tier4_16']
+['/home/jovyan/spinnaker/bin/python', '<jobmanager_tmp>', '--mode', 'run-hardware', '--no-require-real-hardware', '--tasks', 'delayed_cue,hard_noisy_switching', '--seeds', '42', '--steps', '1200', '--population-size', '8', '--runtime-mode', 'chunked', '--learning-location', 'host', '--chunk-size-steps', '50', '--delayed-readout-lr', '0.2', '--output-dir', '<jobmanager_tmp>']
 ```
 
 The returned criteria still include:

@@ -59,7 +59,7 @@
 [tier5.17d] task=reentry_binding variant=stdp_only_unsupervised seed=44
 [tier5.17d] task=reentry_binding variant=oracle_latent_upper_bound seed=44
 {
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/predictive_binding_guardrail",
+  "output_dir": "<repo>/controlled_test_output/tier7_6e_20260509_planning_promotion_compact_regression/compact_regression_full_nest/v2_0_compact_regression_gate/predictive_binding_guardrail",
   "status": "pass",
   "summary": {
     "candidate_min_knn_probe_accuracy": 0.7738095238095238,

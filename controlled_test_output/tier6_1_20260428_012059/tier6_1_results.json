@@ -1,27 +1,27 @@
 {
   "artifacts": {
-    "alive_population_plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_1_20260428_012059/tier6_1_alive_population.png",
-    "comparisons_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_1_20260428_012059/tier6_1_comparisons.csv",
-    "lifecycle_events_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_1_20260428_012059/tier6_1_lifecycle_events.csv",
-    "lineage_final_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_1_20260428_012059/tier6_1_lineage_final.csv",
-    "report_md": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_1_20260428_012059/tier6_1_report.md",
-    "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_1_20260428_012059/tier6_1_summary.csv",
-    "summary_plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_1_20260428_012059/tier6_1_lifecycle_summary.png"
+    "alive_population_plot_png": "<repo>/controlled_test_output/tier6_1_20260428_012059/tier6_1_alive_population.png",
+    "comparisons_csv": "<repo>/controlled_test_output/tier6_1_20260428_012059/tier6_1_comparisons.csv",
+    "lifecycle_events_csv": "<repo>/controlled_test_output/tier6_1_20260428_012059/tier6_1_lifecycle_events.csv",
+    "lineage_final_csv": "<repo>/controlled_test_output/tier6_1_20260428_012059/tier6_1_lineage_final.csv",
+    "report_md": "<repo>/controlled_test_output/tier6_1_20260428_012059/tier6_1_report.md",
+    "summary_csv": "<repo>/controlled_test_output/tier6_1_20260428_012059/tier6_1_summary.csv",
+    "summary_plot_png": "<repo>/controlled_test_output/tier6_1_20260428_012059/tier6_1_lifecycle_summary.png"
   },
   "backend": "mock",
   "command": "experiments/tier6_lifecycle_self_scaling.py --backend mock --tasks hard_noisy_switching --cases smoke --steps 160 --seed-count 1 --min-advantage-regimes 0 --stop-on-fail",
   "generated_at_utc": "2026-04-28T05:21:00+00:00",
-  "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_1_20260428_012059",
+  "output_dir": "<repo>/controlled_test_output/tier6_1_20260428_012059",
   "result": {
     "artifacts": {
-      "alive_population_plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_1_20260428_012059/tier6_1_alive_population.png",
-      "comparisons_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_1_20260428_012059/tier6_1_comparisons.csv",
-      "hard_noisy_switching_fixed4_seed42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_1_20260428_012059/hard_noisy_switching_fixed4_seed42_timeseries.csv",
-      "hard_noisy_switching_life4_16_seed42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_1_20260428_012059/hard_noisy_switching_life4_16_seed42_timeseries.csv",
-      "lifecycle_events_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_1_20260428_012059/tier6_1_lifecycle_events.csv",
-      "lineage_final_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_1_20260428_012059/tier6_1_lineage_final.csv",
-      "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_1_20260428_012059/tier6_1_summary.csv",
-      "summary_plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_1_20260428_012059/tier6_1_lifecycle_summary.png"
+      "alive_population_plot_png": "<repo>/controlled_test_output/tier6_1_20260428_012059/tier6_1_alive_population.png",
+      "comparisons_csv": "<repo>/controlled_test_output/tier6_1_20260428_012059/tier6_1_comparisons.csv",
+      "hard_noisy_switching_fixed4_seed42_timeseries_csv": "<repo>/controlled_test_output/tier6_1_20260428_012059/hard_noisy_switching_fixed4_seed42_timeseries.csv",
+      "hard_noisy_switching_life4_16_seed42_timeseries_csv": "<repo>/controlled_test_output/tier6_1_20260428_012059/hard_noisy_switching_life4_16_seed42_timeseries.csv",
+      "lifecycle_events_csv": "<repo>/controlled_test_output/tier6_1_20260428_012059/tier6_1_lifecycle_events.csv",
+      "lineage_final_csv": "<repo>/controlled_test_output/tier6_1_20260428_012059/tier6_1_lineage_final.csv",
+      "summary_csv": "<repo>/controlled_test_output/tier6_1_20260428_012059/tier6_1_summary.csv",
+      "summary_plot_png": "<repo>/controlled_test_output/tier6_1_20260428_012059/tier6_1_lifecycle_summary.png"
     },
     "criteria": [
       {

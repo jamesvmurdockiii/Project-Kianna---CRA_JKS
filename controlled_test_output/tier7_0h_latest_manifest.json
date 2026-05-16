@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.409698+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.556896+00:00",
   "source_generated_at_utc": "2026-05-08T19:12:11+00:00",
   "registry_entry_id": "tier7_0h_bounded_recurrent_interface_gate",
   "tier": "Tier 7.0h - Bounded Nonlinear Recurrent Continuous-State / Interface Gate",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_0h_20260508_bounded_recurrent_interface_gate",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_0h_20260508_bounded_recurrent_interface_gate/tier7_0h_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_0h_20260508_bounded_recurrent_interface_gate/tier7_0h_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_0h_20260508_bounded_recurrent_interface_gate/tier7_0h_summary.csv",
+  "output_dir": "controlled_test_output/tier7_0h_20260508_bounded_recurrent_interface_gate",
+  "manifest": "controlled_test_output/tier7_0h_20260508_bounded_recurrent_interface_gate/tier7_0h_results.json",
+  "report": "controlled_test_output/tier7_0h_20260508_bounded_recurrent_interface_gate/tier7_0h_report.md",
+  "summary_csv": "controlled_test_output/tier7_0h_20260508_bounded_recurrent_interface_gate/tier7_0h_summary.csv",
   "canonical": true,
   "claim": "Tier 7.0h showed the bounded nonlinear recurrent continuous-state candidate materially improves the valid 8000-step public scoreboard versus v2.2 and beats lag/reservoir online controls, but recurrence/topology specificity remains unproven because the permuted-recurrence sham stayed too close.",
   "caveat": "Software evidence only; not a baseline freeze, not hardware evidence, not ESN superiority, not native on-chip recurrence, and not public benchmark superiority."

@@ -2,10 +2,10 @@
   "canonical": false,
   "claim": "Latest Tier 5.10c explicit context-memory diagnostic; passing is not hardware or native-memory evidence.",
   "generated_at_utc": "2026-04-29T00:29:08+00:00",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier5_10c_20260428_201314/tier5_10c_results.json",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_10c_20260428_201314",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_10c_20260428_201314/tier5_10c_report.md",
+  "manifest": "<repo>/controlled_test_output/tier5_10c_20260428_201314/tier5_10c_results.json",
+  "output_dir": "<repo>/controlled_test_output/tier5_10c_20260428_201314",
+  "report": "<repo>/controlled_test_output/tier5_10c_20260428_201314/tier5_10c_report.md",
   "status": "pass",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10c_20260428_201314/tier5_10c_summary.csv",
+  "summary_csv": "<repo>/controlled_test_output/tier5_10c_20260428_201314/tier5_10c_summary.csv",
   "tier": "Tier 5.10c - Explicit Context Memory Mechanism Diagnostic"
 }

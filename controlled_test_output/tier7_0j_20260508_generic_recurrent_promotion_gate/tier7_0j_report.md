@@ -40,7 +40,7 @@ Tier 7.0j is a software-only promotion/regression gate for a narrow generic boun
 | Criterion | Value | Rule | Pass |
 | --- | --- | --- | --- |
 | runner revision current | `tier7_0j_generic_recurrent_promotion_gate_20260508_0001` | expected current source | yes |
-| v2.2 baseline artifact exists | `/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.2.json` | exists | yes |
+| v2.2 baseline artifact exists | `<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.2.json` | exists | yes |
 | Tier 7.0h source result pass | `pass` | == pass | yes |
 | Tier 7.0i source result pass | `pass` | == pass | yes |
 | locked public length | `8000` | == 8000 | yes |

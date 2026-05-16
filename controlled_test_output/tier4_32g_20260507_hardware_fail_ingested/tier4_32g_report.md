@@ -21,7 +21,7 @@ Ingest confirms returned EBRAINS run-hardware artifacts only; baseline decisions
 
 | Criterion | Value | Rule | Pass |
 | --- | --- | --- | --- |
-| hardware results json exists | `"/Users/james/Downloads/tier4_32g_results.json"` | exists | yes |
+| hardware results json exists | `"<downloads>/tier4_32g_results.json"` | exists | yes |
 | hardware mode was run-hardware | `"run-hardware"` | == run-hardware | yes |
 | raw hardware status pass | `"fail"` | == pass | no |
 | lifecycle traffic smoke pass | `"fail"` | == pass | no |

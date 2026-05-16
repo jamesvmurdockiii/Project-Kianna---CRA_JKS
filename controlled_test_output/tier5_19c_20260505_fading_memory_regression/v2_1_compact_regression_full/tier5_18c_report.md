@@ -2,7 +2,7 @@
 
 - Generated: `2026-05-05T19:01:36+00:00`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full`
+- Output directory: `<repo>/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full`
 - Smoke: `False`
 
 Tier 5.18c is the promotion/regression gate for the Tier 5.18 self-evaluation diagnostic. It does not add a new capability claim; it asks whether v2.0 guardrails and the self-evaluation diagnostic can pass together before a bounded v2.1 freeze.
@@ -30,13 +30,13 @@ Tier 5.18c is the promotion/regression gate for the Tier 5.18 self-evaluation di
 
 | Criterion | Value | Rule | Pass |
 | --- | --- | --- | --- |
-| frozen v2.0 baseline artifact exists | `/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.0.json` | `exists` | yes |
+| frozen v2.0 baseline artifact exists | `<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.0.json` | `exists` | yes |
 | v2.0 compact regression gate remains green | `pass` | `== pass` | yes |
 | Tier 5.18 self-evaluation guardrail remains green | `pass` | `== pass` | yes |
 | all child commands succeeded | `2/2` | `== 2/2` | yes |
 
 ## Artifacts
 
-- `child_manifests_json`: `/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/tier5_18c_child_manifests.json`
-- `summary_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/tier5_18c_summary.csv`
-- `report_md`: `/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/tier5_18c_report.md`
+- `child_manifests_json`: `<repo>/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/tier5_18c_child_manifests.json`
+- `summary_csv`: `<repo>/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/tier5_18c_summary.csv`
+- `report_md`: `<repo>/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/tier5_18c_report.md`

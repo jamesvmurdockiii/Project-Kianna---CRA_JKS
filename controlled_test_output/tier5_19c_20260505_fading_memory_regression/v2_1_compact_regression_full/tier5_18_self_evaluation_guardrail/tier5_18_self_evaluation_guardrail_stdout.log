@@ -152,8 +152,8 @@
   "tier": "Tier 5.18 - Self-Evaluation / Metacognitive Monitoring",
   "status": "pass",
   "failure_reason": "",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/tier5_18_self_evaluation_guardrail",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/tier5_18_self_evaluation_guardrail/tier5_18_report.md",
+  "output_dir": "<repo>/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/tier5_18_self_evaluation_guardrail",
+  "report": "<repo>/controlled_test_output/tier5_19c_20260505_fading_memory_regression/v2_1_compact_regression_full/tier5_18_self_evaluation_guardrail/tier5_18_report.md",
   "runtime_seconds": 1.3940887499999999,
   "claim_boundary": "Noncanonical software diagnostic: operational self-evaluation/reliability monitoring over frozen v2.0; not consciousness, self-awareness, hardware evidence, AGI, or a v2.1 freeze."
 }

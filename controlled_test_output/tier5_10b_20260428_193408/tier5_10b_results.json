@@ -1,34 +1,34 @@
 {
   "artifacts": {
-    "comparisons_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/tier5_10b_comparisons.csv",
-    "fairness_contract_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/tier5_10b_fairness_contract.json",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/tier5_10b_report.md",
-    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/tier5_10b_summary.csv",
-    "task_pressure_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/tier5_10b_task_pressure.png"
+    "comparisons_csv": "<repo>/controlled_test_output/tier5_10b_20260428_193408/tier5_10b_comparisons.csv",
+    "fairness_contract_json": "<repo>/controlled_test_output/tier5_10b_20260428_193408/tier5_10b_fairness_contract.json",
+    "report_md": "<repo>/controlled_test_output/tier5_10b_20260428_193408/tier5_10b_report.md",
+    "summary_csv": "<repo>/controlled_test_output/tier5_10b_20260428_193408/tier5_10b_summary.csv",
+    "task_pressure_png": "<repo>/controlled_test_output/tier5_10b_20260428_193408/tier5_10b_task_pressure.png"
   },
   "command": "experiments/tier5_memory_pressure_tasks.py --backend mock --tasks delayed_context_cue,hidden_context_recurrence --steps 180 --seed-count 1 --models sign_persistence,online_perceptron --smoke",
   "generated_at_utc": "2026-04-28T23:34:08+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408",
+  "output_dir": "<repo>/controlled_test_output/tier5_10b_20260428_193408",
   "result": {
     "artifacts": {
-      "comparisons_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/tier5_10b_comparisons.csv",
-      "delayed_context_cue_memory_reset_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/delayed_context_cue_memory_reset_seed42_timeseries.csv",
-      "delayed_context_cue_online_perceptron_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/delayed_context_cue_online_perceptron_seed42_timeseries.csv",
-      "delayed_context_cue_oracle_context_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/delayed_context_cue_oracle_context_seed42_timeseries.csv",
-      "delayed_context_cue_shuffled_context_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/delayed_context_cue_shuffled_context_seed42_timeseries.csv",
-      "delayed_context_cue_sign_persistence_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/delayed_context_cue_sign_persistence_seed42_timeseries.csv",
-      "delayed_context_cue_stream_context_memory_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/delayed_context_cue_stream_context_memory_seed42_timeseries.csv",
-      "delayed_context_cue_wrong_context_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/delayed_context_cue_wrong_context_seed42_timeseries.csv",
-      "fairness_contract_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/tier5_10b_fairness_contract.json",
-      "hidden_context_recurrence_memory_reset_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/hidden_context_recurrence_memory_reset_seed42_timeseries.csv",
-      "hidden_context_recurrence_online_perceptron_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/hidden_context_recurrence_online_perceptron_seed42_timeseries.csv",
-      "hidden_context_recurrence_oracle_context_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/hidden_context_recurrence_oracle_context_seed42_timeseries.csv",
-      "hidden_context_recurrence_shuffled_context_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/hidden_context_recurrence_shuffled_context_seed42_timeseries.csv",
-      "hidden_context_recurrence_sign_persistence_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/hidden_context_recurrence_sign_persistence_seed42_timeseries.csv",
-      "hidden_context_recurrence_stream_context_memory_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/hidden_context_recurrence_stream_context_memory_seed42_timeseries.csv",
-      "hidden_context_recurrence_wrong_context_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/hidden_context_recurrence_wrong_context_seed42_timeseries.csv",
-      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/tier5_10b_summary.csv",
-      "task_pressure_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_10b_20260428_193408/tier5_10b_task_pressure.png"
+      "comparisons_csv": "<repo>/controlled_test_output/tier5_10b_20260428_193408/tier5_10b_comparisons.csv",
+      "delayed_context_cue_memory_reset_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_10b_20260428_193408/delayed_context_cue_memory_reset_seed42_timeseries.csv",
+      "delayed_context_cue_online_perceptron_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_10b_20260428_193408/delayed_context_cue_online_perceptron_seed42_timeseries.csv",
+      "delayed_context_cue_oracle_context_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_10b_20260428_193408/delayed_context_cue_oracle_context_seed42_timeseries.csv",
+      "delayed_context_cue_shuffled_context_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_10b_20260428_193408/delayed_context_cue_shuffled_context_seed42_timeseries.csv",
+      "delayed_context_cue_sign_persistence_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_10b_20260428_193408/delayed_context_cue_sign_persistence_seed42_timeseries.csv",
+      "delayed_context_cue_stream_context_memory_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_10b_20260428_193408/delayed_context_cue_stream_context_memory_seed42_timeseries.csv",
+      "delayed_context_cue_wrong_context_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_10b_20260428_193408/delayed_context_cue_wrong_context_seed42_timeseries.csv",
+      "fairness_contract_json": "<repo>/controlled_test_output/tier5_10b_20260428_193408/tier5_10b_fairness_contract.json",
+      "hidden_context_recurrence_memory_reset_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_10b_20260428_193408/hidden_context_recurrence_memory_reset_seed42_timeseries.csv",
+      "hidden_context_recurrence_online_perceptron_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_10b_20260428_193408/hidden_context_recurrence_online_perceptron_seed42_timeseries.csv",
+      "hidden_context_recurrence_oracle_context_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_10b_20260428_193408/hidden_context_recurrence_oracle_context_seed42_timeseries.csv",
+      "hidden_context_recurrence_shuffled_context_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_10b_20260428_193408/hidden_context_recurrence_shuffled_context_seed42_timeseries.csv",
+      "hidden_context_recurrence_sign_persistence_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_10b_20260428_193408/hidden_context_recurrence_sign_persistence_seed42_timeseries.csv",
+      "hidden_context_recurrence_stream_context_memory_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_10b_20260428_193408/hidden_context_recurrence_stream_context_memory_seed42_timeseries.csv",
+      "hidden_context_recurrence_wrong_context_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_10b_20260428_193408/hidden_context_recurrence_wrong_context_seed42_timeseries.csv",
+      "summary_csv": "<repo>/controlled_test_output/tier5_10b_20260428_193408/tier5_10b_summary.csv",
+      "task_pressure_png": "<repo>/controlled_test_output/tier5_10b_20260428_193408/tier5_10b_task_pressure.png"
     },
     "criteria": [
       {

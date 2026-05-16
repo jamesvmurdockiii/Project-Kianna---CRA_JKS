@@ -1,7 +1,7 @@
 Traceback (most recent call last):
-  File "/tmp/job903944207435058239.tmp/tests/experiments/tier4_spinnaker_hardware_capsule.py", line 981, in run_hardware
+  File "<jobmanager_tmp>", line 981, in run_hardware
     rows, summary = run_spinnaker_seed(seed=seed, args=args)
                     ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
-  File "/tmp/job903944207435058239.tmp/tests/experiments/tier4_spinnaker_hardware_capsule.py", line 360, in run_spinnaker_seed
+  File "<jobmanager_tmp>", line 360, in run_spinnaker_seed
     raise BackendFallbackError(step, diagnostics)
 BackendFallbackError: backend fallback detected at step 0: Python integer 3221225472 out of bounds for uint8

@@ -1,17 +1,17 @@
 {
   "artifacts": {
-    "report_md": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_155758/tier1_report.md",
-    "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_155758/tier1_summary.csv"
+    "report_md": "<repo>/controlled_test_output/tier1_20260426_155758/tier1_report.md",
+    "summary_csv": "<repo>/controlled_test_output/tier1_20260426_155758/tier1_summary.csv"
   },
   "backend": "MockSimulator",
   "command": "experiments/tier1_sanity.py --tests all --stop-on-fail",
   "generated_at_utc": "2026-04-26T19:58:14+00:00",
-  "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_155758",
+  "output_dir": "<repo>/controlled_test_output/tier1_20260426_155758",
   "results": [
     {
       "artifacts": {
-        "plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_155758/zero_signal_timeseries.png",
-        "timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_155758/zero_signal_timeseries.csv"
+        "plot_png": "<repo>/controlled_test_output/tier1_20260426_155758/zero_signal_timeseries.png",
+        "timeseries_csv": "<repo>/controlled_test_output/tier1_20260426_155758/zero_signal_timeseries.csv"
       },
       "criteria": [
         {
@@ -87,8 +87,8 @@
     },
     {
       "artifacts": {
-        "plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_155758/shuffled_label_timeseries.png",
-        "timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_155758/shuffled_label_timeseries.csv"
+        "plot_png": "<repo>/controlled_test_output/tier1_20260426_155758/shuffled_label_timeseries.png",
+        "timeseries_csv": "<repo>/controlled_test_output/tier1_20260426_155758/shuffled_label_timeseries.csv"
       },
       "criteria": [
         {
@@ -149,8 +149,8 @@
     },
     {
       "artifacts": {
-        "plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_155758/seed_repeat_summary.png",
-        "seed_summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier1_20260426_155758/seed_repeat_summary.csv"
+        "plot_png": "<repo>/controlled_test_output/tier1_20260426_155758/seed_repeat_summary.png",
+        "seed_summary_csv": "<repo>/controlled_test_output/tier1_20260426_155758/seed_repeat_summary.csv"
       },
       "criteria": [
         {

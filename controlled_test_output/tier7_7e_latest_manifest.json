@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.443312+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.585581+00:00",
   "source_generated_at_utc": "2026-05-09T14:24:47+00:00",
   "registry_entry_id": "tier7_7e_finite_stream_repair_preflight",
   "tier": "Tier 7.7e - Finite-Stream Repair / Preflight Contract",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight/tier7_7e_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight/tier7_7e_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight/tier7_7e_summary.csv",
+  "output_dir": "controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight",
+  "manifest": "controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight/tier7_7e_results.json",
+  "report": "controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight/tier7_7e_report.md",
+  "summary_csv": "controlled_test_output/tier7_7e_20260509_finite_stream_repair_preflight/tier7_7e_summary.csv",
   "canonical": true,
   "claim": "Tier 7.7e reproduced the original long-run NARMA10 finite-stream blocker and selected a predeclared repaired NARMA10 generator: same recurrence coefficients with reduced input range U(0,0.2). The selected repair passed all 9 required length/seed cells across 8000/16000/32000 and seeds 42/43/44.",
   "caveat": "Benchmark repair/preflight evidence only; not a CRA score, not public usefulness proof, not a baseline freeze, not hardware/native transfer, and not permission to silently merge repaired U(0,0.2) NARMA results with prior U(0,0.5) NARMA scores."

@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.421424+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.566888+00:00",
   "source_generated_at_utc": "2026-05-08T23:30:24+00:00",
   "registry_entry_id": "tier7_1j_nab_failure_localization",
   "tier": "Tier 7.1j - NAB Failure/Localization Analysis",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1j_20260508_nab_failure_localization",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_1j_20260508_nab_failure_localization/tier7_1j_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_1j_20260508_nab_failure_localization/tier7_1j_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_1j_20260508_nab_failure_localization/tier7_1j_summary.csv",
+  "output_dir": "controlled_test_output/tier7_1j_20260508_nab_failure_localization",
+  "manifest": "controlled_test_output/tier7_1j_20260508_nab_failure_localization/tier7_1j_results.json",
+  "report": "controlled_test_output/tier7_1j_20260508_nab_failure_localization/tier7_1j_report.md",
+  "summary_csv": "controlled_test_output/tier7_1j_20260508_nab_failure_localization/tier7_1j_summary.csv",
   "canonical": true,
   "claim": "Tier 7.1j localized the broader NAB gap: v2.3 has better event-F1/window recall than rolling z-score but loses on false-positive/NAB-style pressure; the result is threshold/false-positive-policy sensitive rather than a confirmed public usefulness win.",
   "caveat": "Software failure analysis only; not public usefulness proof, not a promoted mechanism, not a baseline freeze, not hardware/native transfer, and not AGI/ASI evidence."

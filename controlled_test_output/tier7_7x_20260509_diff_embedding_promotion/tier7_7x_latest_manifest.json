@@ -1,6 +1,6 @@
 {
   "generated_at_utc": "2026-05-09T21:21:13+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7x_20260509_diff_embedding_promotion",
+  "output_dir": "<repo>/controlled_test_output/tier7_7x_20260509_diff_embedding_promotion",
   "status": "fail",
   "tier": "Tier 7.7x - Diff-Embedding Promotion Gate"
 }

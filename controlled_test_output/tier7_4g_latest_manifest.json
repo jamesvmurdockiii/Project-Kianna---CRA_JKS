@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.430441+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.574918+00:00",
   "source_generated_at_utc": "2026-05-09T03:03:34+00:00",
   "registry_entry_id": "tier7_4g_policy_action_confirmation_reference_separation",
   "tier": "Tier 7.4g - Held-Out Policy/Action Confirmation + Reference Separation",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_summary.csv",
+  "output_dir": "controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation",
+  "manifest": "controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_results.json",
+  "report": "controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_report.md",
+  "summary_csv": "controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_summary.csv",
   "canonical": true,
   "claim": "Tier 7.4g confirms the narrow C-MAPSS external/sham action-cost signal from Tier 7.4f while preserving the critical boundary that v2.4 does not separate from the prior v2.2 CRA reference with a positive paired CI. NAB remains a non-confirmation and is classified as an event-coverage gap rather than a held-out scoring bug.",
   "caveat": "Software held-out confirmation only; narrow C-MAPSS action-cost signal, not broad public usefulness, not incremental v2.4 superiority over v2.2, not a new baseline freeze, not hardware/native transfer, and not AGI/ASI evidence."

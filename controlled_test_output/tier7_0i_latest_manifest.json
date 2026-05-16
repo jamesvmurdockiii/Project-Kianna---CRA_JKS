@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.411328+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.558548+00:00",
   "source_generated_at_utc": "2026-05-08T19:30:54+00:00",
   "registry_entry_id": "tier7_0i_recurrence_topology_specificity_gate",
   "tier": "Tier 7.0i - Recurrence / Topology Specificity Repair Gate",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_0i_20260508_recurrence_topology_specificity_gate",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_0i_20260508_recurrence_topology_specificity_gate/tier7_0i_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_0i_20260508_recurrence_topology_specificity_gate/tier7_0i_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_0i_20260508_recurrence_topology_specificity_gate/tier7_0i_summary.csv",
+  "output_dir": "controlled_test_output/tier7_0i_20260508_recurrence_topology_specificity_gate",
+  "manifest": "controlled_test_output/tier7_0i_20260508_recurrence_topology_specificity_gate/tier7_0i_results.json",
+  "report": "controlled_test_output/tier7_0i_20260508_recurrence_topology_specificity_gate/tier7_0i_report.md",
+  "summary_csv": "controlled_test_output/tier7_0i_20260508_recurrence_topology_specificity_gate/tier7_0i_summary.csv",
   "canonical": true,
   "claim": "Tier 7.0i showed generic bounded recurrent state remains useful on the public benchmark scoreboard, but topology-specific recurrence is not supported because stricter topology shams and no-recurrence controls matched or beat the structured candidate.",
   "caveat": "Software evidence only; not a baseline freeze, not hardware evidence, not ESN superiority, not native on-chip recurrence, and not a topology-specific recurrence claim."

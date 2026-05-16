@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.574287+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.717627+00:00",
   "source_generated_at_utc": "2026-05-10T04:36:04+00:00",
   "registry_entry_id": "tier7_7z_r3_nab_adapter",
   "tier": "Tier 7.7z-r3 - v2.6 NAB Streaming Anomaly Adapter",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7z_r3_20260509_nab_adapter",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_7z_r3_20260509_nab_adapter/tier7_7z_r3_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_7z_r3_20260509_nab_adapter/tier7_7z_r3_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7z_r3_20260509_nab_adapter/tier7_7z_r3_summary.csv",
+  "output_dir": "controlled_test_output/tier7_7z_r3_20260509_nab_adapter",
+  "manifest": "controlled_test_output/tier7_7z_r3_20260509_nab_adapter/tier7_7z_r3_results.json",
+  "report": "controlled_test_output/tier7_7z_r3_20260509_nab_adapter/tier7_7z_r3_report.md",
+  "summary_csv": "controlled_test_output/tier7_7z_r3_20260509_nab_adapter/tier7_7z_r3_summary.csv",
   "canonical": true,
   "claim": "Tier 7.7z-r3 applies v2.6 edge-of-chaos + ridge readout to 5 NAB streaming anomaly detection files, seeds 42/43/44. TravelTime_387 shows strong detection signal (1.56x error ratio, 3/3 seeds). Four other streams show weak/unreliable signal (1.02-1.19x). Ambient temperature is counter-signal (0.46x, model predicts better during anomalies). NAB partial/local signal \u2014 same pattern as v2.3. Consistent with bounded capability: edge-of-chaos helps chaotic/dynamic tasks but not gradual-drift anomaly patterns.",
   "caveat": "NAB adapter scoring only. Not a full NAB benchmark. Not public usefulness proof. Not a baseline freeze."

@@ -1,5 +1,5 @@
 name,criterion,value,operator,rule,passed,pass,details,note
-Tier 7.7l prerequisite exists,Tier 7.7l prerequisite exists,/Users/james/JKS:CRA/controlled_test_output/tier7_7l_20260509_effective_state_dimensionality_repair_scoring_gate/tier7_7l_results.json,exists,exists,True,True,,
+Tier 7.7l prerequisite exists,Tier 7.7l prerequisite exists,<repo>/controlled_test_output/tier7_7l_20260509_effective_state_dimensionality_repair_scoring_gate/tier7_7l_results.json,exists,exists,True,True,,
 Tier 7.7l prerequisite passed,Tier 7.7l prerequisite passed,pass,== pass,== pass,True,True,,
 Tier 7.7l outcome requires attribution,Tier 7.7l outcome requires attribution,task_gain_without_dimension,== task_gain_without_dimension,== task_gain_without_dimension,True,True,,
 question locked,question locked,"What caused the Tier 7.7l partitioned-driver performance gain: causal driver partitioning, lag/nonlinear feature enrichment, readout/interface budget, diversity pressure, or a generic basis confound?",non-empty,non-empty,True,True,,

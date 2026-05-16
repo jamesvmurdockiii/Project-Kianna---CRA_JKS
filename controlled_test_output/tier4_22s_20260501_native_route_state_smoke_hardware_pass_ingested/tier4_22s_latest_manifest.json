@@ -2,10 +2,10 @@
   "canonical": false,
   "claim": "Latest Tier 4.22s tiny native route-state custom-runtime micro-task; pass means a tiny native route-state pending-queue on-chip loop matched local fixed-point reference and task metrics only.",
   "generated_at_utc": "2026-05-01T07:46:44+00:00",
-  "manifest": "/tmp/job7715356932495788943.tmp/tier4_22s_job_output/tier4_22s_results.json",
+  "manifest": "<jobmanager_tmp>",
   "mode": "run-hardware",
-  "output_dir": "/tmp/job7715356932495788943.tmp/tier4_22s_job_output",
-  "report": "/tmp/job7715356932495788943.tmp/tier4_22s_job_output/tier4_22s_report.md",
+  "output_dir": "<jobmanager_tmp>",
+  "report": "<jobmanager_tmp>",
   "status": "fail",
   "tier": "Tier 4.22s - Tiny Native Route-State Custom-Runtime Smoke"
 }

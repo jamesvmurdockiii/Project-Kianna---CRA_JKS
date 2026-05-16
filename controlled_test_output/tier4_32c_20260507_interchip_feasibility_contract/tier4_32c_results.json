@@ -1,15 +1,15 @@
 {
   "artifacts": {
-    "criteria_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_criteria.csv",
-    "failure_classes_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_failure_classes.csv",
-    "identity_contract_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_identity_contract.csv",
-    "message_paths_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_message_paths.csv",
-    "next_gate_plan_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_next_gate_plan.csv",
-    "placement_contract_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_placement_contract.csv",
-    "readback_contract_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_readback_contract.csv",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_report.md",
-    "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_results.json",
-    "source_checks_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_source_checks.csv"
+    "criteria_csv": "<repo>/controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_criteria.csv",
+    "failure_classes_csv": "<repo>/controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_failure_classes.csv",
+    "identity_contract_csv": "<repo>/controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_identity_contract.csv",
+    "message_paths_csv": "<repo>/controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_message_paths.csv",
+    "next_gate_plan_csv": "<repo>/controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_next_gate_plan.csv",
+    "placement_contract_csv": "<repo>/controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_placement_contract.csv",
+    "readback_contract_csv": "<repo>/controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_readback_contract.csv",
+    "report_md": "<repo>/controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_report.md",
+    "results_json": "<repo>/controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_results.json",
+    "source_checks_csv": "<repo>/controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract/tier4_32c_source_checks.csv"
   },
   "claim_boundary": "Tier 4.32c is a local inter-chip feasibility contract over the measured single-chip static partition map. It is not a SpiNNaker hardware run, not multi-chip execution evidence, not speedup evidence, not learning-scale evidence, not benchmark superiority, and not a native-scale baseline freeze. The first authorized hardware target is a two-chip split-role single-shard lookup smoke, not a true two-partition cross-chip learning run.",
   "criteria": [
@@ -398,7 +398,7 @@
       "question": "Is the native runtime stable enough to freeze as the scale baseline?"
     }
   ],
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract",
+  "output_dir": "<repo>/controlled_test_output/tier4_32c_20260507_interchip_feasibility_contract",
   "placement_contract": [
     {
       "board_id": "allocated_board_0",

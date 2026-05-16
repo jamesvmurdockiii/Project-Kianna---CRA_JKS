@@ -1,5 +1,5 @@
 name,criterion,value,operator,rule,passed,pass,details,note
-Tier 7.7n prerequisite exists,Tier 7.7n prerequisite exists,/Users/james/JKS:CRA/controlled_test_output/tier7_7n_20260509_partitioned_driver_attribution_scoring_gate/tier7_7n_results.json,exists,exists,True,True,,
+Tier 7.7n prerequisite exists,Tier 7.7n prerequisite exists,<repo>/controlled_test_output/tier7_7n_20260509_partitioned_driver_attribution_scoring_gate/tier7_7n_results.json,exists,exists,True,True,,
 Tier 7.7n prerequisite passed,Tier 7.7n prerequisite passed,pass,== pass,== pass,True,True,,
 Tier 7.7n generic-interface outcome,Tier 7.7n generic-interface outcome,generic_projection_explains_gain,== generic_projection_explains_gain,== generic_projection_explains_gain,True,True,,
 question locked,question locked,How should CRA handle the Tier 7.7n finding that random projection and nonlinear/lag controls explain or exceed the partitioned-driver gain?,non-empty,non-empty,True,True,,

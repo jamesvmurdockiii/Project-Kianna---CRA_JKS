@@ -1,8 +1,8 @@
 {
   "artifacts": {
-    "child_manifests_json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier5_7_child_manifests.json",
-    "report_md": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier5_7_report.md",
-    "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier5_7_summary.csv"
+    "child_manifests_json": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier5_7_child_manifests.json",
+    "report_md": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier5_7_report.md",
+    "summary_csv": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier5_7_summary.csv"
   },
   "backend": "mock",
   "child_runs": [
@@ -24,18 +24,18 @@
         "0.2",
         "--stop-on-fail",
         "--output-dir",
-        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier1_controls"
+        "<repo>/controlled_test_output/tier5_7_20260428_005610/tier1_controls"
       ],
       "failure_reason": "",
-      "manifest_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier1_controls/tier1_results.json",
+      "manifest_path": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier1_controls/tier1_results.json",
       "name": "tier1_controls",
-      "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier1_controls",
+      "output_dir": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier1_controls",
       "purpose": "negative controls stay negative under the promoted learning setting",
       "return_code": 0,
       "runtime_seconds": 3.6448067920000002,
       "status": "pass",
-      "stderr_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier1_controls/tier1_controls_stderr.log",
-      "stdout_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier1_controls/tier1_controls_stdout.log"
+      "stderr_path": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier1_controls/tier1_controls_stderr.log",
+      "stdout_path": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier1_controls/tier1_controls_stdout.log"
     },
     {
       "command": [
@@ -55,18 +55,18 @@
         "0.2",
         "--stop-on-fail",
         "--output-dir",
-        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier2_learning"
+        "<repo>/controlled_test_output/tier5_7_20260428_005610/tier2_learning"
       ],
       "failure_reason": "",
-      "manifest_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier2_learning/tier2_results.json",
+      "manifest_path": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier2_learning/tier2_results.json",
       "name": "tier2_learning",
-      "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier2_learning",
+      "output_dir": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier2_learning",
       "purpose": "positive learning controls still pass under the promoted setting",
       "return_code": 0,
       "runtime_seconds": 2.957093875,
       "status": "pass",
-      "stderr_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier2_learning/tier2_learning_stderr.log",
-      "stdout_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier2_learning/tier2_learning_stdout.log"
+      "stderr_path": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier2_learning/tier2_learning_stderr.log",
+      "stdout_path": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier2_learning/tier2_learning_stdout.log"
     },
     {
       "command": [
@@ -90,18 +90,18 @@
         "0.2",
         "--stop-on-fail",
         "--output-dir",
-        "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier3_ablations"
+        "<repo>/controlled_test_output/tier5_7_20260428_005610/tier3_ablations"
       ],
       "failure_reason": "failed child results: no_trophic_selection_ablation",
-      "manifest_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier3_ablations/tier3_results.json",
+      "manifest_path": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier3_ablations/tier3_results.json",
       "name": "tier3_ablations",
-      "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier3_ablations",
+      "output_dir": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier3_ablations",
       "purpose": "core mechanism ablation gaps remain meaningful under the promoted setting",
       "return_code": 1,
       "runtime_seconds": 4.096824792,
       "status": "fail",
-      "stderr_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier3_ablations/tier3_ablations_stderr.log",
-      "stdout_path": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610/tier3_ablations/tier3_ablations_stdout.log"
+      "stderr_path": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier3_ablations/tier3_ablations_stderr.log",
+      "stdout_path": "<repo>/controlled_test_output/tier5_7_20260428_005610/tier3_ablations/tier3_ablations_stdout.log"
     }
   ],
   "claim_boundary": [
@@ -137,7 +137,7 @@
     }
   ],
   "generated_at_utc": "2026-04-28T04:56:21+00:00",
-  "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005610",
+  "output_dir": "<repo>/controlled_test_output/tier5_7_20260428_005610",
   "promoted_setting": {
     "baseline": "v1.0",
     "cra_variant": "cra_v0_8_delayed_lr_0_20",

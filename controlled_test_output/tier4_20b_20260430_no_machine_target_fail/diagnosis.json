@@ -19,7 +19,7 @@
       "name": "v2.1 baseline artifact exists",
       "passed": true,
       "rule": "exists",
-      "value": "/tmp/job17535888640787705408.tmp/CRA_TIER4_20B_SOURCE/baselines/CRA_EVIDENCE_BASELINE_v2.1.json"
+      "value": "<jobmanager_tmp>"
     },
     {
       "name": "source package import path available",
@@ -28,10 +28,10 @@
       "value": {
         "action": "already_canonical",
         "aliases_checked": [
-          "/tmp/job17535888640787705408.tmp/CRA_TIER4_20B_SOURCE/coral-reef-spinnaker",
-          "/tmp/job17535888640787705408.tmp/CRA_TIER4_20B_SOURCE/coral reef spinnaker"
+          "<jobmanager_tmp>",
+          "<jobmanager_tmp> reef spinnaker"
         ],
-        "canonical_package": "/tmp/job17535888640787705408.tmp/CRA_TIER4_20B_SOURCE/coral_reef_spinnaker",
+        "canonical_package": "<jobmanager_tmp>",
         "canonical_package_exists": true
       }
     },
@@ -39,7 +39,7 @@
       "name": "Tier 4.16 child hardware runner exists",
       "passed": true,
       "rule": "exists",
-      "value": "/tmp/job17535888640787705408.tmp/CRA_TIER4_20B_SOURCE/experiments/tier4_harder_spinnaker_capsule.py"
+      "value": "<jobmanager_tmp>"
     },
     {
       "name": "Tier 4.20a transfer audit context",

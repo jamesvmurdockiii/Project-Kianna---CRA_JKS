@@ -159,7 +159,7 @@
   "generated_at_utc": "2026-05-13T02:24:49+00:00",
   "next_gate": "Tier 5.32a \u2014 Operator Diversity Scoring Gate",
   "outcome": "operator_diversity_contract_locked",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_32_20260511_operator_diversity_contract",
+  "output_dir": "<repo>/controlled_test_output/tier5_32_20260511_operator_diversity_contract",
   "runner_revision": "tier5_32_operator_diversity_contract_20260511_0001",
   "status": "pass",
   "tier": "Tier 5.32 \u2014 Per-Polyp Operator Diversity Contract"

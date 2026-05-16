@@ -10,7 +10,7 @@
       "pass": true,
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout/tier7_6c_results.json"
+      "value": "<repo>/controlled_test_output/tier7_6c_20260509_long_horizon_planning_attribution_closeout/tier7_6c_results.json"
     },
     {
       "criterion": "tier7_6c_prerequisite_passed",
@@ -391,7 +391,7 @@
   ],
   "generated_at_utc": "2026-05-09T04:40:13+00:00",
   "method_boundary": "Reduced-feature local diagnostic. Direct raw route/context/memory keys are hidden; only aliased context class, coarse route class, memory parity, predictive block risk, and self-evaluation reliability are available.",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization",
+  "output_dir": "<repo>/controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization",
   "runner_revision": "tier7_6d_reduced_feature_planning_generalization_20260509_0001",
   "score_row_count": 5130,
   "statistical_support": [

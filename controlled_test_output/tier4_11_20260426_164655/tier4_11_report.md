@@ -7,7 +7,7 @@
 - Seeds: `42, 43, 44`
 - Steps per run: `220`
 - Delay: `3` steps
-- Output directory: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_11_20260426_164655`
+- Output directory: `<repo>/controlled_test_output/tier4_11_20260426_164655`
 
 Tier 4.11 tests whether the same CRA core and learning manager transfer from the controlled finance/signed-return path to a non-finance `sensor_control` TaskAdapter under the same NEST backend and fixed population settings.
 

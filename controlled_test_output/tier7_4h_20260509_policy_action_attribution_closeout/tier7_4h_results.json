@@ -34,9 +34,9 @@
   "criteria": [
     {
       "criterion": "tier7_4f_results_exist",
-      "details": "/Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_results.json",
+      "details": "<repo>/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_results.json",
       "name": "tier7_4f_results_exist",
-      "note": "/Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_results.json",
+      "note": "<repo>/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_results.json",
       "operator": "must exist",
       "pass": true,
       "passed": true,
@@ -56,9 +56,9 @@
     },
     {
       "criterion": "tier7_4g_results_exist",
-      "details": "/Users/james/JKS:CRA/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_results.json",
+      "details": "<repo>/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_results.json",
       "name": "tier7_4g_results_exist",
-      "note": "/Users/james/JKS:CRA/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_results.json",
+      "note": "<repo>/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_results.json",
       "operator": "must exist",
       "pass": true,
       "passed": true,
@@ -253,12 +253,12 @@
   ],
   "runner_revision": "tier7_4h_policy_action_attribution_closeout_20260509_0001",
   "source_artifacts": {
-    "tier7_4f_decision": "/Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_decision.json",
-    "tier7_4f_results": "/Users/james/JKS:CRA/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_results.json",
-    "tier7_4g_confirmation": "/Users/james/JKS:CRA/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_confirmation_checks.csv",
-    "tier7_4g_decision": "/Users/james/JKS:CRA/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_decision.json",
-    "tier7_4g_nab_failure": "/Users/james/JKS:CRA/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_nab_failure_analysis.csv",
-    "tier7_4g_results": "/Users/james/JKS:CRA/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_results.json"
+    "tier7_4f_decision": "<repo>/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_decision.json",
+    "tier7_4f_results": "<repo>/controlled_test_output/tier7_4f_20260509_cost_aware_policy_action_heldout_scoring_gate/tier7_4f_results.json",
+    "tier7_4g_confirmation": "<repo>/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_confirmation_checks.csv",
+    "tier7_4g_decision": "<repo>/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_decision.json",
+    "tier7_4g_nab_failure": "<repo>/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_nab_failure_analysis.csv",
+    "tier7_4g_results": "<repo>/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_results.json"
   },
   "status": "PASS",
   "tier": "Tier 7.4h - Policy/Action Attribution Closeout / Mechanism Return Decision"

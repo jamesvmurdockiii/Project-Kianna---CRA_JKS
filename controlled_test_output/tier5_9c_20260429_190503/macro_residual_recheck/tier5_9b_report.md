@@ -9,7 +9,7 @@
 - Repair residual scale: `0.1`
 - Repair trace clip: `1.0`
 - Repair decay: `0.92`
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190503/macro_residual_recheck`
+- Output directory: `<repo>/controlled_test_output/tier5_9c_20260429_190503/macro_residual_recheck`
 
 Tier 5.9b tests the narrow repair after 5.9a failed: keep the v1.4 PendingHorizon feature and add only a bounded macro-trace residual.
 

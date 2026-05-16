@@ -3,66 +3,66 @@
     {
       "bytes": 1919,
       "name": "label_windows_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_label_windows.csv",
+      "path": "<repo>/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_label_windows.csv",
       "sha256": "12ef78004bcaf891b2e450c36b7d643f100072f1942e113d5a35bb78ee362090"
     },
     {
       "bytes": 1488,
       "name": "report_md",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_report.md",
+      "path": "<repo>/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_report.md",
       "sha256": "045859b88c6687e4d7aa9be31b0fb723186889d342972b6777ce9ea0310ceb00"
     },
     {
       "bytes": 18549,
       "name": "results_json",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_results.json",
+      "path": "<repo>/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_results.json",
       "sha256": "c37866ce396aa392593ca32c10e7384dee203d1b468b2143c20479c9becbdbf3"
     },
     {
       "bytes": 1336,
       "name": "scoring_contract_json",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_scoring_interface_contract.json",
+      "path": "<repo>/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_scoring_interface_contract.json",
       "sha256": "02d63d415229e8bdb263986dfe7b8c42c047f05d7cd4dc8f832a48c4c7673c1b"
     },
     {
       "bytes": 1180,
       "name": "selected_files_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_selected_files.csv",
+      "path": "<repo>/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_selected_files.csv",
       "sha256": "ba3ba7d7db9af94e19f4cc4c437136f84d90b49e6005f71079f623cfb0fa36b6"
     },
     {
       "bytes": 55054,
       "name": "smoke_scores_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_smoke_anomaly_scores.csv",
+      "path": "<repo>/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_smoke_anomaly_scores.csv",
       "sha256": "f9703c748d45016ee7a752ecf4662cc2a0f9c6ac2a1062ccc10df74d0e48e88c"
     },
     {
       "bytes": 57619,
       "name": "smoke_stream_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_smoke_stream.csv",
+      "path": "<repo>/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_smoke_stream.csv",
       "sha256": "d62caa8581f8b96d1bfb6f502beae4a49c890ab9010ef451b5cc0248fc001708"
     },
     {
       "bytes": 4984,
       "name": "source_manifest_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_source_manifest.csv",
+      "path": "<repo>/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_source_manifest.csv",
       "sha256": "657b4594d2a2b27468c3af67d6e93f2a7a7e4d2989e1e8a1784a5bda954877d0"
     },
     {
       "bytes": 7014,
       "name": "source_manifest_json",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_source_manifest.json",
+      "path": "<repo>/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_source_manifest.json",
       "sha256": "92de46fb3c181054da03e8515330062b8de4f084f217b89be83d797f1539611c"
     },
     {
       "bytes": 2712,
       "name": "summary_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_summary.csv",
+      "path": "<repo>/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight/tier7_1g_summary.csv",
       "sha256": "295d0c970952ee8196905f132e9046f0927dbd1b6971a2f595ea628e3d4b5d39"
     }
   ],
   "generated_at_utc": "2026-05-08T22:39:03+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight",
+  "output_dir": "<repo>/controlled_test_output/tier7_1g_20260508_nab_source_data_scoring_preflight",
   "runner_revision": "tier7_1g_nab_source_data_scoring_preflight_20260508_0001",
   "status": "pass",
   "tier": "Tier 7.1g - NAB Source/Data/Scoring Preflight"

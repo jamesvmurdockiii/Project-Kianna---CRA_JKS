@@ -71,7 +71,7 @@
       "profile": "context_core",
       "build_returncode": 2,
       "aplx_exists": false,
-      "aplx_path": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/build/coral_reef.aplx",
+      "aplx_path": "<repo>/coral_reef_spinnaker/spinnaker_runtime/build/coral_reef.aplx",
       "stdout": "rm -rf build/gnu/ build/coral_reef.aplx tests/test_runtime tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_four_core_local tests/test_four_core_48event\nspinnaker_tools not found.\nHost tests work with 'make test'.\nFor hardware builds set SPINN_DIRS, e.g.:\n  export SPINN_DIRS=/opt/spinnaker_tools\n",
       "stderr": "make: *** [require-spinnaker] Error 2\n"
     },
@@ -79,7 +79,7 @@
       "profile": "route_core",
       "build_returncode": 2,
       "aplx_exists": false,
-      "aplx_path": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/build/coral_reef.aplx",
+      "aplx_path": "<repo>/coral_reef_spinnaker/spinnaker_runtime/build/coral_reef.aplx",
       "stdout": "rm -rf build/gnu/ build/coral_reef.aplx tests/test_runtime tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_four_core_local tests/test_four_core_48event\nspinnaker_tools not found.\nHost tests work with 'make test'.\nFor hardware builds set SPINN_DIRS, e.g.:\n  export SPINN_DIRS=/opt/spinnaker_tools\n",
       "stderr": "make: *** [require-spinnaker] Error 2\n"
     },
@@ -87,7 +87,7 @@
       "profile": "memory_core",
       "build_returncode": 2,
       "aplx_exists": false,
-      "aplx_path": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/build/coral_reef.aplx",
+      "aplx_path": "<repo>/coral_reef_spinnaker/spinnaker_runtime/build/coral_reef.aplx",
       "stdout": "rm -rf build/gnu/ build/coral_reef.aplx tests/test_runtime tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_four_core_local tests/test_four_core_48event\nspinnaker_tools not found.\nHost tests work with 'make test'.\nFor hardware builds set SPINN_DIRS, e.g.:\n  export SPINN_DIRS=/opt/spinnaker_tools\n",
       "stderr": "make: *** [require-spinnaker] Error 2\n"
     },
@@ -95,7 +95,7 @@
       "profile": "learning_core",
       "build_returncode": 2,
       "aplx_exists": true,
-      "aplx_path": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/build/coral_reef_learning_core.aplx",
+      "aplx_path": "<repo>/coral_reef_spinnaker/spinnaker_runtime/build/coral_reef_learning_core.aplx",
       "stdout": "rm -rf build/gnu/ build/coral_reef.aplx tests/test_runtime tests/test_context_core tests/test_route_core tests/test_memory_core tests/test_learning_core tests/test_four_core_local tests/test_four_core_48event\nspinnaker_tools not found.\nHost tests work with 'make test'.\nFor hardware builds set SPINN_DIRS, e.g.:\n  export SPINN_DIRS=/opt/spinnaker_tools\n",
       "stderr": "make: *** [require-spinnaker] Error 2\n"
     }

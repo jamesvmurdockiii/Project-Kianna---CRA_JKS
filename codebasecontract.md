@@ -18,12 +18,12 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-16T15:44:12+00:00.
+Last updated: 2026-05-16T19:39:30+00:00.
 
 Current repo root:
 
 ```text
-/Users/james/JKS:CRA
+<repo>
 ```
 
 Current software baseline lines:
@@ -52,11 +52,11 @@ Active cleanup state:
   rebaseline decision contract (12/12 criteria). The Tier 5.45a scoring runner
   is implemented and smoke-validated with output directed to /tmp only. A
   resumable shard orchestrator is committed and smoke-validated. Current shard
-  progress is 20/204 cells complete:
+  progress is 21/204 cells complete:
   organism_defaults_experimental_off completed sine, mackey_glass, lorenz,
   and narma10 across seeds 42, 43, and 44; enable_neural_heritability
-  completed sine and mackey_glass across seeds 42, 43, and 44 plus lorenz
-  seeds 42 and 43. Tier 5.45a runner revision 0003 adds a NEST numerical-instability
+  completed sine, mackey_glass, and lorenz across seeds 42, 43, and 44.
+  Tier 5.45a runner revision 0003 adds a NEST numerical-instability
   reset/rebuild retry before synthetic fallback; cells still count only when
   final fallback and backend failure counters are zero. All
   completed cells have zero fallback, zero sim.run failures, and zero
@@ -68,6 +68,19 @@ Active cleanup state:
   merge rules. Do not promote a mechanism or freeze a new baseline until full
   Tier 5.45a returns, is ingested or registered as appropriate, and is
   documented.
+
+Public-release hygiene state:
+  The public landing page, abstract, whitepaper, docs index, artifact policy,
+  public hygiene SOP, and release-readiness report have been rewritten for an
+  Apache-2.0 public research repository. The repo audit now checks public docs,
+  README links, raw tracked hardware/download artifacts, machine-local absolute
+  paths across all tracked files, and oversized tracked blobs. Raw EBRAINS
+  downloads, provenance SQLite databases, stack traces, status markers,
+  nested upload bundles, and compiled SpiNNaker binaries have been removed from
+  Git tracking with `git rm --cached` and protected by `.gitignore`. Local raw
+  files may still exist on disk; they are intake/archive material, not public
+  source. Before any public-facing commit or push, run `make validate`,
+  `git diff --check`, and the public hygiene scans in `docs/PUBLIC_REPO_HYGIENE.md`.
 
 Cleanup-era evidence tracking decision:
   Tier 5.24a and Tier 5.25+ diagnostic artifacts/scripts that are already
@@ -2122,7 +2135,7 @@ Tier 4.30b — COMPLETE. Source audit / single-core lifecycle mask smoke prep.
 
 Tier 4.30b-hw — COMPLETE. Single-core lifecycle active-mask/lineage hardware
   smoke run/ingest.
-  Prepared package: `/Users/james/JKS:CRA/ebrains_jobs/cra_430b`.
+  Prepared package: `<repo>/ebrains_jobs/cra_430b`.
   Prepared output: `controlled_test_output/tier4_30b_hw_20260505_prepared/`.
   Ingested output: `controlled_test_output/tier4_30b_hw_20260505_hardware_pass_ingested/`.
   Purpose: prove the audited lifecycle metadata surface survives real SpiNNaker
@@ -2878,7 +2891,7 @@ Important top-level paths:
 | `controlled_test_output/` | Generated evidence, canonical bundles, noncanonical history, manifests, plots. | Never upload this to EBRAINS. It can be very large. Preserve failures. |
 | `docs/` | Research-facing docs, roadmap, reviewer defense, runbooks. | Update whenever claims, workflows, tiers, or hardware lessons change. |
 | `ebrains_jobs/` | Clean source-only EBRAINS upload folders. | Upload the specific `cra_*` folder only. Do not upload the full repo. |
-| `/Users/james/Downloads` | Temporary location where returned EBRAINS artifacts arrive. | Ingest/copy relevant outputs into `controlled_test_output/`; do not treat Downloads as canonical evidence. |
+| `<downloads>` | Temporary location where returned EBRAINS artifacts arrive. | Ingest/copy relevant outputs into `controlled_test_output/`; do not treat Downloads as canonical evidence. |
 | `docs/PUBLIC_REPO_HYGIENE.md` | Public repo hygiene SOP. | Use for artifact classification, clean/commit passes, security scans, and GitHub readiness. |
 
 ## 5. Evidence Levels
@@ -3020,13 +3033,13 @@ Hardware work has caused the most avoidable pain. Follow this exactly.
    `ebrains_jobs/cra_422ag`.
 2. Do not upload the full repo.
 3. Do not upload `controlled_test_output/`.
-4. Do not upload `/Users/james/Downloads`.
+4. Do not upload `<downloads>`.
 5. Do not upload caches, compiled host binaries, old reports, or random
    generated clutter.
 6. If code changes after a failed EBRAINS run, create a fresh upload folder name
    to avoid stale cache confusion.
 7. `ebrains_jobs/cra_*` folders committed to Git must be real source
-   directories, never symlinks to `/tmp`, `/private/tmp`, `tier*_output/`, or
+   directories, never symlinks to `/tmp`, `<private-tmp>`, `tier*_output/`, or
    any machine-local path.
 8. The JobManager command must include the uploaded folder name, for example:
 
@@ -3062,7 +3075,7 @@ Required checks:
    command, and report all refer to the same tier. If the README filename says
    the wrong tier, fix the runner/package before telling the operator to upload it.
 10. Confirm the package is source-only and does not require
-    `controlled_test_output/`, `/Users/james/Downloads`, local caches, or hidden
+    `controlled_test_output/`, `<downloads>`, local caches, or hidden
     chat context.
 11. Confirm the command is direct JobManager style and begins with the uploaded
     folder name.
@@ -3195,12 +3208,12 @@ science failure unless the model actually ran and failed the scientific metric.
 
 ### 9.3 Ingest Rules
 
-The operator downloads EBRAINS returned outputs to `/Users/james/Downloads`.
+The operator downloads EBRAINS returned outputs to `<downloads>`.
 
 Use tier-specific ingest commands when available, usually of this shape:
 
 ```text
-experiments/<tier_runner>.py --mode ingest --ingest-dir /Users/james/Downloads --output-dir controlled_test_output/<tier>_<timestamp>_<status>_ingested
+experiments/<tier_runner>.py --mode ingest --ingest-dir <downloads> --output-dir controlled_test_output/<tier>_<timestamp>_<status>_ingested
 ```
 
 If an ingest command is intentionally ingesting a failed run and returns nonzero,
@@ -3216,7 +3229,7 @@ When the operator says an EBRAINS/JobManager run finished or errored and files w
 downloaded, follow this exact process.
 
 1. Stop adding new mechanisms. First preserve and interpret the returned run.
-2. Identify likely returned files in `/Users/james/Downloads` by timestamp,
+2. Identify likely returned files in `<downloads>` by timestamp,
    filename, tier name, report title, zip contents, and output directory names.
 3. Open the most relevant human report first, usually `*_report*.md`,
    `README*.md`, or a top-level failure traceback.
@@ -3594,7 +3607,7 @@ Specific failures that must be caught by guardrails:
 3. A source doc still says "not yet run", "not implemented", or "planned only"
    after local/prepare/hardware evidence has already passed.
 4. A prepared package includes or depends on `controlled_test_output/`,
-   `/Users/james/Downloads`, local caches, compiled binaries, or hidden chat
+   `<downloads>`, local caches, compiled binaries, or hidden chat
    context.
 5. A quick script counts the wrong criterion field, for example reading `pass`
    when the current result schema uses `passed`.
@@ -3814,7 +3827,7 @@ These are known ways to damage the project.
 
 At the start of a new work session:
 
-1. Confirm repo root. Preferred root is `/Users/james/JKS:CRA` unless the operator
+1. Confirm repo root. Preferred root is `<repo>` unless the operator
    explicitly says otherwise.
 2. Read this file.
 3. Read `README.md` current status.
@@ -3823,7 +3836,7 @@ At the start of a new work session:
 6. If EBRAINS is involved, read `docs/SPINNAKER_EBRAINS_RUNBOOK.md` and the
    exact job README under `ebrains_jobs/`.
 7. If custom runtime is involved, read `PROTOCOL_SPEC.md` and the runtime README.
-8. Inspect returned files in `/Users/james/Downloads` only if the operator says new
+8. Inspect returned files in `<downloads>` only if the operator says new
    output was downloaded.
 9. Avoid broad rewrites until you know whether the task is documentation,
    ingestion, diagnosis, repair, or new mechanism work.
@@ -4013,7 +4026,7 @@ The operator downloaded 20 files from a failed EBRAINS run. What do you do?
 
 Expected answer:
 
-1. Inspect `/Users/james/Downloads`.
+1. Inspect `<downloads>`.
 2. Identify reports/results/stdout/stderr/zip contents.
 3. Classify failure stage before proposing a fix.
 4. Use tier-specific ingest if available.
@@ -4278,7 +4291,7 @@ prove it understands the evidence discipline before it changes anything.
 Paste this into a new agent session before asking for work:
 
 ```text
-You are working in the CRA repository at /Users/james/JKS:CRA.
+You are working in the CRA repository at <repo>.
 
 Before touching code, read codebasecontract.md. Treat it as mandatory operating
 policy. Then read README.md, docs/PAPER_READINESS_ROADMAP.md, CONTROLLED_TEST_PLAN.md,
@@ -4315,7 +4328,7 @@ Required first actions:
    README.
 7. If custom runtime is involved, read `PROTOCOL_SPEC.md`, runtime README, and
    custom-runtime guide.
-8. Check whether `/Users/james/Downloads` contains newly returned files only if
+8. Check whether `<downloads>` contains newly returned files only if
    the operator says it does.
 9. Produce a short orientation summary before making changes.
 

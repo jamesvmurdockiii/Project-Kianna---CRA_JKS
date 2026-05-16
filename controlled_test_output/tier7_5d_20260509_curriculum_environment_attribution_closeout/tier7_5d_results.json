@@ -142,9 +142,9 @@
   "criteria": [
     {
       "criterion": "tier7_5c_results_exist",
-      "details": "/Users/james/JKS:CRA/controlled_test_output/tier7_5c_20260509_curriculum_environment_scoring_gate/tier7_5c_results.json",
+      "details": "<repo>/controlled_test_output/tier7_5c_20260509_curriculum_environment_scoring_gate/tier7_5c_results.json",
       "name": "tier7_5c_results_exist",
-      "note": "/Users/james/JKS:CRA/controlled_test_output/tier7_5c_20260509_curriculum_environment_scoring_gate/tier7_5c_results.json",
+      "note": "<repo>/controlled_test_output/tier7_5c_20260509_curriculum_environment_scoring_gate/tier7_5c_results.json",
       "operator": "must exist",
       "pass": true,
       "passed": true,

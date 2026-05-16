@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.610273+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.750528+00:00",
   "source_generated_at_utc": "2026-05-06T22:24:12+00:00",
   "registry_entry_id": "tier4_32a_single_chip_scale_stress_preflight",
   "tier": "Tier 4.32a - Single-Chip Multi-Core Scale-Stress Preflight",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_20260506_single_chip_scale_stress",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_20260506_single_chip_scale_stress/tier4_32a_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_20260506_single_chip_scale_stress/tier4_32a_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32a_20260506_single_chip_scale_stress/tier4_32a_scale_points.csv",
+  "output_dir": "controlled_test_output/tier4_32a_20260506_single_chip_scale_stress",
+  "manifest": "controlled_test_output/tier4_32a_20260506_single_chip_scale_stress/tier4_32a_results.json",
+  "report": "controlled_test_output/tier4_32a_20260506_single_chip_scale_stress/tier4_32a_report.md",
+  "summary_csv": "controlled_test_output/tier4_32a_20260506_single_chip_scale_stress/tier4_32a_scale_points.csv",
   "canonical": true,
   "claim": "Tier 4.32a converts the Tier 4.32 resource model into a predeclared single-chip MCPL-first stress envelope and catches a source-level scale blocker: the current MCPL lookup key has no shard/group field and dest_core is reserved/ignored. It authorizes only single-shard 4/5-core 4.32a-hw stress, requires Tier 4.32a-r1 shard-aware MCPL repair before replicated 8/12/16-core stress, and keeps 4.32b/multi-chip/native-scale baseline freeze blocked.",
   "caveat": "Local preflight/source-inspection evidence only; not a SpiNNaker hardware run, not speedup evidence, not replicated-shard scaling, not multi-chip scaling, not static reef partition proof, not benchmark superiority, and not a baseline freeze."

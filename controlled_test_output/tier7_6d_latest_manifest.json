@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.436897+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.579974+00:00",
   "source_generated_at_utc": "2026-05-09T04:40:13+00:00",
   "registry_entry_id": "tier7_6d_reduced_feature_planning_generalization",
   "tier": "Tier 7.6d - Reduced-Feature Planning Generalization / Task Repair",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization/tier7_6d_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization/tier7_6d_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization/tier7_6d_summary.csv",
+  "output_dir": "controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization",
+  "manifest": "controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization/tier7_6d_results.json",
+  "report": "controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization/tier7_6d_report.md",
+  "summary_csv": "controlled_test_output/tier7_6d_20260509_reduced_feature_planning_generalization/tier7_6d_summary.csv",
   "canonical": true,
   "claim": "Tier 7.6d repairs the Tier 7.6c feature-alignment blocker by rerunning the planning diagnostic with direct raw keys hidden and aliased/coarse features only. The reduced-feature signal is supported on 4/5 families, including the two prior weak families, and authorizes a promotion/compact-regression gate.",
   "caveat": "Reduced-feature local diagnostic only; not a promoted planning mechanism, not public usefulness proof, not a new baseline freeze, not hardware/native transfer, and not AGI/ASI evidence."

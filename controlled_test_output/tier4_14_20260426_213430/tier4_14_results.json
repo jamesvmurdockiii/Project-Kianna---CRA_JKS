@@ -1,12 +1,12 @@
 {
   "artifacts": {
-    "category_timers_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_14_20260426_213430/tier4_14_category_timers.csv",
-    "runtime_breakdown_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_14_20260426_213430/tier4_14_runtime_breakdown.csv",
-    "runtime_breakdown_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_14_20260426_213430/tier4_14_runtime_breakdown.png",
-    "source_provenance_sqlite": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/spinnaker_reports/2026-04-27-01-19-12-390038/global_provenance.sqlite3",
-    "source_tier4_13_results": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_results.json",
-    "source_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/spinnaker_hardware_seed42_timeseries.csv",
-    "top_algorithms_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_14_20260426_213430/tier4_14_top_algorithms.csv"
+    "category_timers_csv": "<repo>/controlled_test_output/tier4_14_20260426_213430/tier4_14_category_timers.csv",
+    "runtime_breakdown_csv": "<repo>/controlled_test_output/tier4_14_20260426_213430/tier4_14_runtime_breakdown.csv",
+    "runtime_breakdown_png": "<repo>/controlled_test_output/tier4_14_20260426_213430/tier4_14_runtime_breakdown.png",
+    "source_provenance_sqlite": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/spinnaker_reports/2026-04-27-01-19-12-390038/global_provenance.sqlite3",
+    "source_tier4_13_results": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_results.json",
+    "source_timeseries_csv": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/spinnaker_hardware_seed42_timeseries.csv",
+    "top_algorithms_csv": "<repo>/controlled_test_output/tier4_14_20260426_213430/tier4_14_top_algorithms.csv"
   },
   "criteria": [
     {
@@ -1341,13 +1341,13 @@
       "total_step_spikes": 283903
     }
   ],
-  "source_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass",
+  "source_dir": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass",
   "source_manifest": {
     "artifacts": {
-      "hardware_summary_png": "/tmp/job18372215669669985472.tmp/cra_test/controlled_test_output/tier4_13_20260427_011912/hardware_capsule_summary.png",
-      "seed_42_timeseries_csv": "/tmp/job18372215669669985472.tmp/cra_test/controlled_test_output/tier4_13_20260427_011912/spinnaker_hardware_seed42_timeseries.csv",
-      "seed_42_timeseries_png": "/tmp/job18372215669669985472.tmp/cra_test/controlled_test_output/tier4_13_20260427_011912/spinnaker_hardware_seed42_timeseries.png",
-      "spinnaker_report_1": "/tmp/job18372215669669985472.tmp/cra_test/controlled_test_output/tier4_13_20260427_011912/spinnaker_reports/2026-04-27-01-19-12-390038"
+      "hardware_summary_png": "<jobmanager_tmp>",
+      "seed_42_timeseries_csv": "<jobmanager_tmp>",
+      "seed_42_timeseries_png": "<jobmanager_tmp>",
+      "spinnaker_report_1": "<jobmanager_tmp>"
     },
     "criteria": [
       {
@@ -1840,7 +1840,7 @@
     "hardware_target_configured": false,
     "mean_wall_per_step_seconds": 7.155167552516407,
     "mode": "characterize-existing",
-    "provenance_db": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/spinnaker_reports/2026-04-27-01-19-12-390038/global_provenance.sqlite3",
+    "provenance_db": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/spinnaker_reports/2026-04-27-01-19-12-390038/global_provenance.sqlite3",
     "provenance_error": "",
     "provenance_total_algorithm_seconds": 179.96693499999998,
     "provenance_total_category_seconds": 859.285797,
@@ -1849,8 +1849,8 @@
     "runtime_update_seconds_per_step": 0.04130805833333333,
     "sim_run_failures_sum": 0,
     "simulated_biological_seconds": 6.0,
-    "source_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass",
-    "source_tier4_13_results": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_results.json",
+    "source_dir": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass",
+    "source_tier4_13_results": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_results.json",
     "source_tier4_13_status": "pass",
     "steps": 120,
     "summary_read_failures_sum": 0,

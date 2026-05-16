@@ -16,5 +16,5 @@
 
 {
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_20260429_221734_local_preflight/local_step_chunk_parity"
+  "output_dir": "<repo>/controlled_test_output/tier4_20b_20260429_221734_local_preflight/local_step_chunk_parity"
 }

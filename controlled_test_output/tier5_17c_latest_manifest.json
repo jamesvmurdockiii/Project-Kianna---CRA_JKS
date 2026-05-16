@@ -1,10 +1,10 @@
 {
   "canonical": false,
-  "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_17c_20260429_193147/tier5_17c_results.json",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_17c_20260429_193147",
-  "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_17c_20260429_193147/tier5_17c_report.md",
+  "manifest_json": "<repo>/controlled_test_output/tier5_17c_20260429_193147/tier5_17c_results.json",
+  "output_dir": "<repo>/controlled_test_output/tier5_17c_20260429_193147",
+  "report_md": "<repo>/controlled_test_output/tier5_17c_20260429_193147/tier5_17c_report.md",
   "status": "fail",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_17c_20260429_193147/tier5_17c_summary.csv",
+  "summary_csv": "<repo>/controlled_test_output/tier5_17c_20260429_193147/tier5_17c_summary.csv",
   "tier": "Tier 5.17c - Intrinsic Predictive Preexposure",
   "updated_at_utc": "2026-04-29T19:31:55+00:00"
 }

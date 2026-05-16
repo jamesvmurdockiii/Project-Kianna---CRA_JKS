@@ -8,7 +8,7 @@
 - Tasks: `silent_context_reentry`
 - Variants: `all`
 - Selected standard baselines: `sign_persistence,online_perceptron`
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/replay_consolidation_guardrail`
+- Output directory: `<repo>/controlled_test_output/tier5_9c_20260429_190257/v2_1_guardrail/v2_0_compact_regression_gate/v1_8_compact_regression/replay_consolidation_guardrail`
 
 Tier 5.11d tests whether correct-binding replay/consolidation itself adds causal value after the Tier 5.11b/5.11c priority-specific gates failed. It is not hardware replay and not native on-chip replay.
 

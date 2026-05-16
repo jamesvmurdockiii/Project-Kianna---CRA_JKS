@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.608970+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.749346+00:00",
   "source_generated_at_utc": "2026-05-06T20:30:08+00:00",
   "registry_entry_id": "tier4_31e_native_replay_eligibility_decision_closeout",
   "tier": "Tier 4.31e - Native Replay/Eligibility Decision Closeout",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_31e_20260506_native_replay_eligibility_decision_closeout",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_31e_20260506_native_replay_eligibility_decision_closeout/tier4_31e_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_31e_20260506_native_replay_eligibility_decision_closeout/tier4_31e_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_31e_20260506_native_replay_eligibility_decision_closeout/tier4_31e_summary.csv",
+  "output_dir": "controlled_test_output/tier4_31e_20260506_native_replay_eligibility_decision_closeout",
+  "manifest": "controlled_test_output/tier4_31e_20260506_native_replay_eligibility_decision_closeout/tier4_31e_results.json",
+  "report": "controlled_test_output/tier4_31e_20260506_native_replay_eligibility_decision_closeout/tier4_31e_report.md",
+  "summary_csv": "controlled_test_output/tier4_31e_20260506_native_replay_eligibility_decision_closeout/tier4_31e_summary.csv",
   "canonical": true,
   "claim": "Measured evidence does not currently justify immediate native replay buffers, sleep-like replay, or native macro eligibility; Tier 4.31f is deferred and Tier 4.32 mapping/resource modeling is authorized next.",
   "caveat": "Local documentation/decision evidence only; not a hardware run, not a new mechanism implementation, not speedup, not multi-chip scaling, not native replay/sleep proof, not native eligibility proof, not full v2.2 hardware transfer, and not a baseline freeze."

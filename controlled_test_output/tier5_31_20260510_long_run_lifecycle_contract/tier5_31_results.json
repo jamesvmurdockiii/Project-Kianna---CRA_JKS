@@ -141,7 +141,7 @@
   "generated_at_utc": "2026-05-11T23:24:51+00:00",
   "next_gate": "Tier 5.31a \u2014 Long-Run Lifecycle Scoring Gate",
   "outcome": "long_run_lifecycle_contract_locked",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_31_20260510_long_run_lifecycle_contract",
+  "output_dir": "<repo>/controlled_test_output/tier5_31_20260510_long_run_lifecycle_contract",
   "runner_revision": "tier5_31_long_run_lifecycle_contract_20260510_0001",
   "status": "pass",
   "tier": "Tier 5.31 \u2014 Long-Run Lifecycle Diversity Diagnostic Contract"

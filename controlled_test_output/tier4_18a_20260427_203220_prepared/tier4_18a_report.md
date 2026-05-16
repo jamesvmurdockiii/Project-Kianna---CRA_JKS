@@ -3,7 +3,7 @@
 - Generated: `2026-04-28T00:32:20+00:00`
 - Mode: `prepare`
 - Status: **PREPARED**
-- Output directory: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_18a_20260427_203220_prepared`
+- Output directory: `<repo>/controlled_test_output/tier4_18a_20260427_203220_prepared`
 
 Tier 4.18a characterizes runtime/resource cost for the v0.7 chunked-host hardware path that already passed Tier 4.16a and Tier 4.16b.
 
@@ -31,7 +31,7 @@ Tier 4.18a characterizes runtime/resource cost for the v0.7 chunked-host hardwar
 
 | Criterion | Value | Rule | Pass |
 | --- | --- | --- | --- |
-| capsule directory exists | /Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_18a_20260427_203220_prepared/jobmanager_capsule | exists True | yes |
+| capsule directory exists | <repo>/controlled_test_output/tier4_18a_20260427_203220_prepared/jobmanager_capsule | exists True | yes |
 | delayed_cue included | True | == True | yes |
 | hard_noisy_switching included | True | == True | yes |
 | chunk sizes include 10,25,50 | [10, 25, 50] | contains [10, 25, 50] | yes |
@@ -40,10 +40,10 @@ Tier 4.18a characterizes runtime/resource cost for the v0.7 chunked-host hardwar
 
 ## Artifacts
 
-- `manifest_json`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_18a_20260427_203220_prepared/tier4_18a_results.json`
-- `summary_csv`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_18a_20260427_203220_prepared/tier4_18a_summary.csv`
-- `capsule_dir`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_18a_20260427_203220_prepared/jobmanager_capsule`
-- `capsule_config_json`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_18a_20260427_203220_prepared/jobmanager_capsule/capsule_config.json`
-- `jobmanager_run_script`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_18a_20260427_203220_prepared/jobmanager_capsule/run_tier4_18a_on_jobmanager.sh`
-- `jobmanager_readme`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_18a_20260427_203220_prepared/jobmanager_capsule/README_JOBMANAGER.md`
-- `expected_outputs_json`: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_18a_20260427_203220_prepared/jobmanager_capsule/expected_outputs.json`
+- `manifest_json`: `<repo>/controlled_test_output/tier4_18a_20260427_203220_prepared/tier4_18a_results.json`
+- `summary_csv`: `<repo>/controlled_test_output/tier4_18a_20260427_203220_prepared/tier4_18a_summary.csv`
+- `capsule_dir`: `<repo>/controlled_test_output/tier4_18a_20260427_203220_prepared/jobmanager_capsule`
+- `capsule_config_json`: `<repo>/controlled_test_output/tier4_18a_20260427_203220_prepared/jobmanager_capsule/capsule_config.json`
+- `jobmanager_run_script`: `<repo>/controlled_test_output/tier4_18a_20260427_203220_prepared/jobmanager_capsule/run_tier4_18a_on_jobmanager.sh`
+- `jobmanager_readme`: `<repo>/controlled_test_output/tier4_18a_20260427_203220_prepared/jobmanager_capsule/README_JOBMANAGER.md`
+- `expected_outputs_json`: `<repo>/controlled_test_output/tier4_18a_20260427_203220_prepared/jobmanager_capsule/expected_outputs.json`

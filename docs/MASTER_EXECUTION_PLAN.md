@@ -1,6 +1,6 @@
 # CRA Master Execution Plan
 
-Last updated: 2026-05-16T15:44:12+00:00.
+Last updated: 2026-05-16T19:39:30+00:00.
 
 This is the operational execution plan from the current CRA evidence state to a
 paper-ready, reviewer-defensible release. Use this file for what to do next, in
@@ -11,10 +11,10 @@ what order, when to freeze baselines, and when to narrow claims. Use
 ## 0. Purpose
 
 CRA is not trying to publish one lucky task curve. The project is testing
-whether CRA can become a useful, functional, organism-style neuromorphic
-learning architecture whose mechanisms matter under delayed credit,
-nonstationarity, memory pressure, compositional pressure, lifecycle pressure,
-hardware constraints, and eventually more realistic adaptive tasks.
+whether CRA can become a useful neuromorphic local-learning architecture whose
+mechanisms matter under delayed credit, nonstationarity, memory pressure,
+compositional pressure, lifecycle pressure, hardware constraints, and eventually
+more realistic adaptive tasks.
 
 Every broad claim must be earned. If a gate fails, the claim narrows.
 
@@ -39,11 +39,11 @@ Active execution mode = repo-alignment remediation Gate 5.
        scoring runner is implemented and smoke-validated, and a resumable
        shard orchestrator is available. The next required gate is full Tier
        5.45a scoring before any new mechanism promotion, baseline freeze, or
-       paper-facing claim. Current shard progress is 20/204 cells complete:
+       paper-facing claim. Current shard progress is 21/204 cells complete:
        organism_defaults_experimental_off completed sine, mackey_glass, lorenz,
        and narma10 across seeds 42, 43, and 44; enable_neural_heritability
-       completed sine and mackey_glass across seeds 42, 43, and 44 plus
-       lorenz seeds 42 and 43. Tier 5.45a runner revision 0003 adds a NEST
+       completed sine, mackey_glass, and lorenz across seeds 42, 43, and 44.
+       Tier 5.45a runner revision 0003 adds a NEST
        numerical-instability reset/rebuild retry; completed cells still count
        only with zero fallback and zero backend failure counters.
        All completed cells have zero fallback, zero sim.run failures, and zero

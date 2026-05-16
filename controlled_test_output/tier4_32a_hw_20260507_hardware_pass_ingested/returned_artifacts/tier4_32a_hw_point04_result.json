@@ -616,7 +616,7 @@
     }
   },
   "mode": "run-hardware",
-  "output_dir": "/tmp/job12907274730800089724.tmp/tier4_32a_hw_job_output/point_04c_reference",
+  "output_dir": "<jobmanager_tmp>",
   "runner_revision": "tier4_28a_four_core_mcpl_repeatability_20260502_0003",
   "status": "pass",
   "task": {

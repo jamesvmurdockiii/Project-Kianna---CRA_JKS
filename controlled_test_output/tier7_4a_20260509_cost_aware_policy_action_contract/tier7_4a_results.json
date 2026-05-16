@@ -88,7 +88,7 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision/tier7_1m_results.json"
+      "value": "<repo>/controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision/tier7_1m_results.json"
     },
     {
       "name": "Tier 7.1m passed",
@@ -239,8 +239,8 @@
   "criteria_total": 13,
   "failed_criteria": [],
   "generated_at_utc": "2026-05-09T00:13:11+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_4a_20260509_cost_aware_policy_action_contract",
-  "prior_gate": "/Users/james/JKS:CRA/controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision/tier7_1m_results.json",
+  "output_dir": "<repo>/controlled_test_output/tier7_4a_20260509_cost_aware_policy_action_contract",
+  "prior_gate": "<repo>/controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision/tier7_1m_results.json",
   "runner_revision": "tier7_4a_cost_aware_policy_action_contract_20260509_0001",
   "status": "pass",
   "tier": "Tier 7.4a - Cost-Aware Policy/Action Selection Contract"

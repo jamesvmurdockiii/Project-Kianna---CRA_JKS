@@ -1,15 +1,15 @@
 {
   "artifacts": {
-    "bridge_profile_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_prepare_smoke_revision_stamp/tier4_20b_bridge_profile.json",
-    "capsule_config_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_prepare_smoke_revision_stamp/jobmanager_capsule/capsule_config.json",
-    "capsule_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_prepare_smoke_revision_stamp/jobmanager_capsule",
-    "expected_outputs_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_prepare_smoke_revision_stamp/jobmanager_capsule/expected_outputs.json",
-    "jobmanager_readme": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_prepare_smoke_revision_stamp/jobmanager_capsule/README_JOBMANAGER.md",
-    "jobmanager_run_script": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_prepare_smoke_revision_stamp/jobmanager_capsule/run_tier4_20b_on_jobmanager.sh",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_prepare_smoke_revision_stamp/tier4_20b_report.md",
-    "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_prepare_smoke_revision_stamp/tier4_20b_results.json",
-    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_prepare_smoke_revision_stamp/tier4_20b_summary.csv",
-    "v2_1_bridge_profile_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_prepare_smoke_revision_stamp/jobmanager_capsule/v2_1_bridge_profile.json"
+    "bridge_profile_json": "<repo>/controlled_test_output/tier4_20b_prepare_smoke_revision_stamp/tier4_20b_bridge_profile.json",
+    "capsule_config_json": "<repo>/controlled_test_output/tier4_20b_prepare_smoke_revision_stamp/jobmanager_capsule/capsule_config.json",
+    "capsule_dir": "<repo>/controlled_test_output/tier4_20b_prepare_smoke_revision_stamp/jobmanager_capsule",
+    "expected_outputs_json": "<repo>/controlled_test_output/tier4_20b_prepare_smoke_revision_stamp/jobmanager_capsule/expected_outputs.json",
+    "jobmanager_readme": "<repo>/controlled_test_output/tier4_20b_prepare_smoke_revision_stamp/jobmanager_capsule/README_JOBMANAGER.md",
+    "jobmanager_run_script": "<repo>/controlled_test_output/tier4_20b_prepare_smoke_revision_stamp/jobmanager_capsule/run_tier4_20b_on_jobmanager.sh",
+    "report_md": "<repo>/controlled_test_output/tier4_20b_prepare_smoke_revision_stamp/tier4_20b_report.md",
+    "results_json": "<repo>/controlled_test_output/tier4_20b_prepare_smoke_revision_stamp/tier4_20b_results.json",
+    "summary_csv": "<repo>/controlled_test_output/tier4_20b_prepare_smoke_revision_stamp/tier4_20b_summary.csv",
+    "v2_1_bridge_profile_json": "<repo>/controlled_test_output/tier4_20b_prepare_smoke_revision_stamp/jobmanager_capsule/v2_1_bridge_profile.json"
   },
   "criteria": [
     {
@@ -17,7 +17,7 @@
       "passed": true,
       "rule": "runtime does not require baselines/",
       "value": {
-        "artifact": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.1.json",
+        "artifact": "<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.1.json",
         "artifact_present": true,
         "baseline": "v2.1"
       }
@@ -35,10 +35,10 @@
       "value": {
         "action": "already_canonical",
         "aliases_checked": [
-          "/Users/james/JKS:CRA/coral-reef-spinnaker",
-          "/Users/james/JKS:CRA/coral reef spinnaker"
+          "<repo>/coral-reef-spinnaker",
+          "<repo>/coral reef spinnaker"
         ],
-        "canonical_package": "/Users/james/JKS:CRA/coral_reef_spinnaker",
+        "canonical_package": "<repo>/coral_reef_spinnaker",
         "canonical_package_exists": true
       }
     },
@@ -46,14 +46,14 @@
       "name": "Tier 4.16 child hardware runner exists",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/experiments/tier4_harder_spinnaker_capsule.py"
+      "value": "<repo>/experiments/tier4_harder_spinnaker_capsule.py"
     },
     {
       "name": "Tier 4.20a transfer audit context",
       "passed": true,
       "rule": "optional; local audit context only",
       "value": {
-        "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_20a_20260429_195403/tier4_20a_results.json",
+        "manifest": "<repo>/controlled_test_output/tier4_20a_20260429_195403/tier4_20a_results.json",
         "status": "pass"
       }
     },
@@ -105,13 +105,13 @@
       "name": "capsule directory exists",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_prepare_smoke_revision_stamp/jobmanager_capsule"
+      "value": "<repo>/controlled_test_output/tier4_20b_prepare_smoke_revision_stamp/jobmanager_capsule"
     }
   ],
   "failure_reason": "",
   "generated_at_utc": "2026-04-30T03:24:41+00:00",
   "mode": "prepare",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_prepare_smoke_revision_stamp",
+  "output_dir": "<repo>/controlled_test_output/tier4_20b_prepare_smoke_revision_stamp",
   "status": "prepared",
   "summary": {
     "baseline": "v2.1",
@@ -133,7 +133,7 @@
       "profile_name": "v2_1_chunked_bridge_probe",
       "rows": 7
     },
-    "capsule_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_20b_prepare_smoke_revision_stamp/jobmanager_capsule",
+    "capsule_dir": "<repo>/controlled_test_output/tier4_20b_prepare_smoke_revision_stamp/jobmanager_capsule",
     "chunk_size_steps": 25,
     "hardware_run_attempted": false,
     "learning_location": "host",

@@ -2,10 +2,10 @@
   "canonical": false,
   "claim": "Latest Tier 4.22r tiny native context-state custom-runtime micro-task; pass means a tiny native context-state pending-queue on-chip loop matched local fixed-point reference and task metrics only.",
   "generated_at_utc": "2026-05-03T20:36:54+00:00",
-  "manifest": "/private/tmp/tier4_22r_test/tier4_22r_results.json",
+  "manifest": "<private-tmp>/tier4_22r_test/tier4_22r_results.json",
   "mode": "local",
-  "output_dir": "/private/tmp/tier4_22r_test",
-  "report": "/private/tmp/tier4_22r_test/tier4_22r_report.md",
+  "output_dir": "<private-tmp>/tier4_22r_test",
+  "report": "<private-tmp>/tier4_22r_test/tier4_22r_report.md",
   "status": "blocked",
   "tier": "Tier 4.22r - Tiny Native Context-State Custom-Runtime Smoke"
 }

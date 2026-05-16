@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.423621+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.568505+00:00",
   "source_generated_at_utc": "2026-05-09T00:05:48+00:00",
   "registry_entry_id": "tier7_1m_nab_closeout_mechanism_return_decision",
   "tier": "Tier 7.1m - NAB Closeout / Mechanism-Return Decision",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision/tier7_1m_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision/tier7_1m_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision/tier7_1m_summary.csv",
+  "output_dir": "controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision",
+  "manifest": "controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision/tier7_1m_results.json",
+  "report": "controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision/tier7_1m_report.md",
+  "summary_csv": "controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision/tier7_1m_summary.csv",
   "canonical": true,
   "claim": "Tier 7.1m closed the NAB adapter-policy loop: Tier 7.1h-7.1l show partial/local NAB signal and a same-subset false-positive repair candidate, but no held-out public usefulness confirmation. The gate narrows the NAB claim, stops adapter-policy tuning, and routes the next work to general cost-aware policy/action selection.",
   "caveat": "Evidence synthesis and decision gate only; not a new benchmark score, not public usefulness proof, not a promoted mechanism, not a baseline freeze, not hardware/native transfer, and not AGI/ASI evidence."

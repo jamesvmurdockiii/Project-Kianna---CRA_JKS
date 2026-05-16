@@ -54,7 +54,7 @@
       "note": "",
       "passed": true,
       "rule": "config/state/host/neuron source files present",
-      "value": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/src"
+      "value": "<repo>/coral_reef_spinnaker/spinnaker_runtime/src"
     },
     {
       "name": "static state capacity exists",
@@ -284,7 +284,7 @@
     }
   ],
   "mode": "local-readiness-audit",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_30_readiness_20260505_lifecycle_native_audit",
+  "output_dir": "<repo>/controlled_test_output/tier4_30_readiness_20260505_lifecycle_native_audit",
   "recommended_sequence": [
     "Tier 4.30 contract: formalize static-pool lifecycle surface and command/readback schema.",
     "Tier 4.30a local reference: deterministic static-pool event stream and fixed-point parity.",

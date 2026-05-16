@@ -11,7 +11,7 @@
 
 | Criterion | Value | Rule | Pass | Details |
 | --- | --- | --- | --- | --- |
-| tier7_6b_results_exist | `/Users/james/JKS:CRA/controlled_test_output/tier7_6b_20260509_long_horizon_planning_local_diagnostic/tier7_6b_results.json` | exists | yes |  |
+| tier7_6b_results_exist | `<repo>/controlled_test_output/tier7_6b_20260509_long_horizon_planning_local_diagnostic/tier7_6b_results.json` | exists | yes |  |
 | tier7_6b_passed | `PASS` | == PASS | yes |  |
 | tier7_6b_local_signal_authorized | `True` | must be true | yes |  |
 | family_decisions_present | `5` | == 5 | yes |  |

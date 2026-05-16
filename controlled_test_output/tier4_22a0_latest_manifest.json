@@ -2,9 +2,9 @@
   "canonical": false,
   "claim": "Latest Tier 4.22a0 constrained local preflight; not real hardware evidence.",
   "generated_at_utc": "2026-04-30T17:47:50+00:00",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_22a0_20260430_spinnaker_constrained_preflight/tier4_22a0_results.json",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_22a0_20260430_spinnaker_constrained_preflight",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier4_22a0_20260430_spinnaker_constrained_preflight/tier4_22a0_report.md",
+  "manifest": "<repo>/controlled_test_output/tier4_22a0_20260430_spinnaker_constrained_preflight/tier4_22a0_results.json",
+  "output_dir": "<repo>/controlled_test_output/tier4_22a0_20260430_spinnaker_constrained_preflight",
+  "report": "<repo>/controlled_test_output/tier4_22a0_20260430_spinnaker_constrained_preflight/tier4_22a0_report.md",
   "status": "pass",
   "tier": "Tier 4.22a0 - SpiNNaker-Constrained Local Preflight"
 }

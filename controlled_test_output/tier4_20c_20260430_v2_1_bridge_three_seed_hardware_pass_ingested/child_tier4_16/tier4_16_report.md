@@ -3,7 +3,7 @@
 - Generated: `2026-04-30T04:36:48+00:00`
 - Mode: `run-hardware`
 - Status: **PASS**
-- Output directory: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16`
+- Output directory: `<jobmanager_tmp>`
 
 Tier 4.16 tests whether the Tier 5.4 confirmed delayed-credit setting survives on real SpiNNaker hardware.
 
@@ -54,25 +54,25 @@ Tier 4.16 tests whether the Tier 5.4 confirmed delayed-credit setting survives o
 
 ## Artifacts
 
-- `manifest_json`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16/tier4_16_results.json`
-- `summary_csv`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16/tier4_16_summary.csv`
-- `task_summary_csv`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16/tier4_16_task_summary.csv`
-- `delayed_cue_seed_42_timeseries_csv`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16/spinnaker_hardware_delayed_cue_seed42_timeseries.csv`
-- `delayed_cue_seed_42_timeseries_png`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16/spinnaker_hardware_delayed_cue_seed42_timeseries.png`
-- `delayed_cue_seed_43_timeseries_csv`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16/spinnaker_hardware_delayed_cue_seed43_timeseries.csv`
-- `delayed_cue_seed_43_timeseries_png`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16/spinnaker_hardware_delayed_cue_seed43_timeseries.png`
-- `delayed_cue_seed_44_timeseries_csv`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16/spinnaker_hardware_delayed_cue_seed44_timeseries.csv`
-- `delayed_cue_seed_44_timeseries_png`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16/spinnaker_hardware_delayed_cue_seed44_timeseries.png`
-- `hard_noisy_switching_seed_42_timeseries_csv`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16/spinnaker_hardware_hard_noisy_switching_seed42_timeseries.csv`
-- `hard_noisy_switching_seed_42_timeseries_png`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16/spinnaker_hardware_hard_noisy_switching_seed42_timeseries.png`
-- `hard_noisy_switching_seed_43_timeseries_csv`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16/spinnaker_hardware_hard_noisy_switching_seed43_timeseries.csv`
-- `hard_noisy_switching_seed_43_timeseries_png`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16/spinnaker_hardware_hard_noisy_switching_seed43_timeseries.png`
-- `hard_noisy_switching_seed_44_timeseries_csv`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16/spinnaker_hardware_hard_noisy_switching_seed44_timeseries.csv`
-- `hard_noisy_switching_seed_44_timeseries_png`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16/spinnaker_hardware_hard_noisy_switching_seed44_timeseries.png`
-- `hardware_summary_png`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16/tier4_16_hardware_summary.png`
-- `spinnaker_report_1`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16/spinnaker_reports/2026-04-30-05-19-12-829910`
-- `spinnaker_report_2`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16/spinnaker_reports/2026-04-30-05-23-46-070461`
-- `spinnaker_report_3`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16/spinnaker_reports/2026-04-30-05-28-05-614049`
-- `spinnaker_report_4`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16/spinnaker_reports/2026-04-30-05-32-24-286926`
+- `manifest_json`: `<jobmanager_tmp>`
+- `summary_csv`: `<jobmanager_tmp>`
+- `task_summary_csv`: `<jobmanager_tmp>`
+- `delayed_cue_seed_42_timeseries_csv`: `<jobmanager_tmp>`
+- `delayed_cue_seed_42_timeseries_png`: `<jobmanager_tmp>`
+- `delayed_cue_seed_43_timeseries_csv`: `<jobmanager_tmp>`
+- `delayed_cue_seed_43_timeseries_png`: `<jobmanager_tmp>`
+- `delayed_cue_seed_44_timeseries_csv`: `<jobmanager_tmp>`
+- `delayed_cue_seed_44_timeseries_png`: `<jobmanager_tmp>`
+- `hard_noisy_switching_seed_42_timeseries_csv`: `<jobmanager_tmp>`
+- `hard_noisy_switching_seed_42_timeseries_png`: `<jobmanager_tmp>`
+- `hard_noisy_switching_seed_43_timeseries_csv`: `<jobmanager_tmp>`
+- `hard_noisy_switching_seed_43_timeseries_png`: `<jobmanager_tmp>`
+- `hard_noisy_switching_seed_44_timeseries_csv`: `<jobmanager_tmp>`
+- `hard_noisy_switching_seed_44_timeseries_png`: `<jobmanager_tmp>`
+- `hardware_summary_png`: `<jobmanager_tmp>`
+- `spinnaker_report_1`: `<jobmanager_tmp>`
+- `spinnaker_report_2`: `<jobmanager_tmp>`
+- `spinnaker_report_3`: `<jobmanager_tmp>`
+- `spinnaker_report_4`: `<jobmanager_tmp>`
 
 ![tier4_16_hardware_summary](tier4_16_hardware_summary.png)

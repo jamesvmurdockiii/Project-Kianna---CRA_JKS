@@ -31,7 +31,7 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/tier7_1k_results.json"
+      "value": "<repo>/controlled_test_output/tier7_1k_20260508_nab_false_positive_repair/tier7_1k_results.json"
     },
     {
       "name": "Tier 7.1k passed",
@@ -472,7 +472,7 @@
     {
       "bytes": 140478,
       "downloaded": true,
-      "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/artificialWithAnomaly/art_daily_nojump.csv",
+      "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/artificialWithAnomaly/art_daily_nojump.csv",
       "repo_path": "data/artificialWithAnomaly/art_daily_nojump.csv",
       "sha256": "65c85d1834376ed5e622f01721d478609577ea0df0a067c5a5ebe5edea03b077",
       "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/artificialWithAnomaly/art_daily_nojump.csv"
@@ -480,7 +480,7 @@
     {
       "bytes": 96869,
       "downloaded": true,
-      "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/artificialWithAnomaly/art_increase_spike_density.csv",
+      "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/artificialWithAnomaly/art_increase_spike_density.csv",
       "repo_path": "data/artificialWithAnomaly/art_increase_spike_density.csv",
       "sha256": "0959d8871d5c1a3fc3120fb7421e4ef113fffb434af2889085b52aebdb69360c",
       "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/artificialWithAnomaly/art_increase_spike_density.csv"
@@ -488,7 +488,7 @@
     {
       "bytes": 116041,
       "downloaded": true,
-      "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realAWSCloudwatch/ec2_cpu_utilization_53ea38.csv",
+      "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realAWSCloudwatch/ec2_cpu_utilization_53ea38.csv",
       "repo_path": "data/realAWSCloudwatch/ec2_cpu_utilization_53ea38.csv",
       "sha256": "8942e498de7b40f1b4a6d802755592c09b8fb73ce8f658763a09cb9ea1ea94ac",
       "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realAWSCloudwatch/ec2_cpu_utilization_53ea38.csv"
@@ -496,7 +496,7 @@
     {
       "bytes": 120827,
       "downloaded": true,
-      "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realAWSCloudwatch/ec2_network_in_5abac7.csv",
+      "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realAWSCloudwatch/ec2_network_in_5abac7.csv",
       "repo_path": "data/realAWSCloudwatch/ec2_network_in_5abac7.csv",
       "sha256": "c27ef93f582af63bf42e80d804764cbe64ae987620f3cfab5477d6ebb3c6157e",
       "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realAWSCloudwatch/ec2_network_in_5abac7.csv"
@@ -504,7 +504,7 @@
     {
       "bytes": 55474,
       "downloaded": true,
-      "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realAdExchange/exchange-3_cpc_results.csv",
+      "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realAdExchange/exchange-3_cpc_results.csv",
       "repo_path": "data/realAdExchange/exchange-3_cpc_results.csv",
       "sha256": "e70b24dba107a2589657cb3feb9ca5605b4f3f7de49ff445f32f5991bc0bdbe5",
       "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realAdExchange/exchange-3_cpc_results.csv"
@@ -512,7 +512,7 @@
     {
       "bytes": 60212,
       "downloaded": true,
-      "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realAdExchange/exchange-4_cpc_results.csv",
+      "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realAdExchange/exchange-4_cpc_results.csv",
       "repo_path": "data/realAdExchange/exchange-4_cpc_results.csv",
       "sha256": "d4c13abd6f28594dc446f22106562ebe917fdbe76170f60a500c2a402ecc09e2",
       "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realAdExchange/exchange-4_cpc_results.csv"
@@ -520,7 +520,7 @@
     {
       "bytes": 55527,
       "downloaded": true,
-      "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realKnownCause/rogue_agent_key_hold.csv",
+      "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realKnownCause/rogue_agent_key_hold.csv",
       "repo_path": "data/realKnownCause/rogue_agent_key_hold.csv",
       "sha256": "47b110baa8e3636574c1033dda1cce780873647fab58223d159d4fee6f180e86",
       "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realKnownCause/rogue_agent_key_hold.csv"
@@ -528,7 +528,7 @@
     {
       "bytes": 138333,
       "downloaded": true,
-      "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realKnownCause/rogue_agent_key_updown.csv",
+      "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realKnownCause/rogue_agent_key_updown.csv",
       "repo_path": "data/realKnownCause/rogue_agent_key_updown.csv",
       "sha256": "9797cfef477c13306f7a33874ab4d6cf700f8f2c7e5825a2a5bc02004370909a",
       "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realKnownCause/rogue_agent_key_updown.csv"
@@ -536,7 +536,7 @@
     {
       "bytes": 51918,
       "downloaded": true,
-      "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realTraffic/TravelTime_451.csv",
+      "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realTraffic/TravelTime_451.csv",
       "repo_path": "data/realTraffic/TravelTime_451.csv",
       "sha256": "7c174adfc457b201cd111d60688f7ec37eb7201c8080790dc41eeff477bd7345",
       "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realTraffic/TravelTime_451.csv"
@@ -544,7 +544,7 @@
     {
       "bytes": 57400,
       "downloaded": true,
-      "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realTraffic/speed_t4013.csv",
+      "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realTraffic/speed_t4013.csv",
       "repo_path": "data/realTraffic/speed_t4013.csv",
       "sha256": "fa5532d6f7db36cadc73e657fd4dfef05cb1ec44d4010243b314d3f1bbd6a7b5",
       "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realTraffic/speed_t4013.csv"
@@ -552,7 +552,7 @@
     {
       "bytes": 364666,
       "downloaded": true,
-      "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realTweets/Twitter_volume_AMZN.csv",
+      "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realTweets/Twitter_volume_AMZN.csv",
       "repo_path": "data/realTweets/Twitter_volume_AMZN.csv",
       "sha256": "234f5e63f19a62720dfb7ccfd6ecc8349b94d93b33ef8aafbdb17edda0b654f3",
       "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realTweets/Twitter_volume_AMZN.csv"
@@ -560,7 +560,7 @@
     {
       "bytes": 350182,
       "downloaded": true,
-      "local_cache_path": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realTweets/Twitter_volume_UPS.csv",
+      "local_cache_path": "<repo>/.cra_data_cache/numenta_nab/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realTweets/Twitter_volume_UPS.csv",
       "repo_path": "data/realTweets/Twitter_volume_UPS.csv",
       "sha256": "be50f06bbb9d020f37653c8c5cf19af63f77aa0019d8cf10849d91f4af455af4",
       "source_url": "https://raw.githubusercontent.com/numenta/NAB/ea702d75cc2258d9d7dd35ca8e5e2539d71f3140/data/realTweets/Twitter_volume_UPS.csv"
@@ -581,10 +581,10 @@
   ],
   "locked_alarm_policy": "persist3",
   "next_step": "If the locked policy confirms on holdout while preserving sham separation and acceptable recall/FP tradeoffs, design a broader public-adapter confirmation. Otherwise narrow the NAB claim or return to planned general mechanisms with this failure mode predeclared.",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation",
+  "output_dir": "<repo>/controlled_test_output/tier7_1l_20260508_nab_locked_policy_holdout_confirmation",
   "runner_revision": "tier7_1l_nab_locked_policy_holdout_confirmation_20260508_0001",
   "source": {
-    "cache_root": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab",
+    "cache_root": "<repo>/.cra_data_cache/numenta_nab",
     "commit": "ea702d75cc2258d9d7dd35ca8e5e2539d71f3140",
     "disjoint_from_tier7_1k_broad_subset": true,
     "heldout_categories": [

@@ -2,11 +2,11 @@
   "backend": "nest",
   "command": "experiments/tier3_ablation.py --tests all --stop-on-fail",
   "generated_at_utc": "2026-04-26T19:43:50+00:00",
-  "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_154155",
+  "output_dir": "<repo>/controlled_test_output/tier3_20260426_154155",
   "results": [
     {
       "artifacts": {
-        "comparison_plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_154155/no_dopamine_ablation_comparison.png"
+        "comparison_plot_png": "<repo>/controlled_test_output/tier3_20260426_154155/no_dopamine_ablation_comparison.png"
       },
       "cases": [
         {
@@ -77,9 +77,9 @@
             "total_deaths_sum": 0
           },
           "artifacts": {
-            "seed_42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_154155/no_dopamine_ablation_intact_seed42_timeseries.csv",
-            "seed_43_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_154155/no_dopamine_ablation_intact_seed43_timeseries.csv",
-            "seed_44_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_154155/no_dopamine_ablation_intact_seed44_timeseries.csv"
+            "seed_42_timeseries_csv": "<repo>/controlled_test_output/tier3_20260426_154155/no_dopamine_ablation_intact_seed42_timeseries.csv",
+            "seed_43_timeseries_csv": "<repo>/controlled_test_output/tier3_20260426_154155/no_dopamine_ablation_intact_seed43_timeseries.csv",
+            "seed_44_timeseries_csv": "<repo>/controlled_test_output/tier3_20260426_154155/no_dopamine_ablation_intact_seed44_timeseries.csv"
           },
           "fixed_population": true,
           "label": "intact",
@@ -814,9 +814,9 @@
             "total_deaths_sum": 0
           },
           "artifacts": {
-            "seed_42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_154155/no_dopamine_ablation_no_dopamine_seed42_timeseries.csv",
-            "seed_43_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_154155/no_dopamine_ablation_no_dopamine_seed43_timeseries.csv",
-            "seed_44_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_154155/no_dopamine_ablation_no_dopamine_seed44_timeseries.csv"
+            "seed_42_timeseries_csv": "<repo>/controlled_test_output/tier3_20260426_154155/no_dopamine_ablation_no_dopamine_seed42_timeseries.csv",
+            "seed_43_timeseries_csv": "<repo>/controlled_test_output/tier3_20260426_154155/no_dopamine_ablation_no_dopamine_seed43_timeseries.csv",
+            "seed_44_timeseries_csv": "<repo>/controlled_test_output/tier3_20260426_154155/no_dopamine_ablation_no_dopamine_seed44_timeseries.csv"
           },
           "fixed_population": true,
           "label": "no_dopamine",
@@ -1665,7 +1665,7 @@
     },
     {
       "artifacts": {
-        "comparison_plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_154155/no_plasticity_ablation_comparison.png"
+        "comparison_plot_png": "<repo>/controlled_test_output/tier3_20260426_154155/no_plasticity_ablation_comparison.png"
       },
       "cases": [
         {
@@ -1736,9 +1736,9 @@
             "total_deaths_sum": 0
           },
           "artifacts": {
-            "seed_42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_154155/no_plasticity_ablation_intact_seed42_timeseries.csv",
-            "seed_43_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_154155/no_plasticity_ablation_intact_seed43_timeseries.csv",
-            "seed_44_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_154155/no_plasticity_ablation_intact_seed44_timeseries.csv"
+            "seed_42_timeseries_csv": "<repo>/controlled_test_output/tier3_20260426_154155/no_plasticity_ablation_intact_seed42_timeseries.csv",
+            "seed_43_timeseries_csv": "<repo>/controlled_test_output/tier3_20260426_154155/no_plasticity_ablation_intact_seed43_timeseries.csv",
+            "seed_44_timeseries_csv": "<repo>/controlled_test_output/tier3_20260426_154155/no_plasticity_ablation_intact_seed44_timeseries.csv"
           },
           "fixed_population": true,
           "label": "intact",
@@ -2473,9 +2473,9 @@
             "total_deaths_sum": 0
           },
           "artifacts": {
-            "seed_42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_154155/no_plasticity_ablation_no_plasticity_seed42_timeseries.csv",
-            "seed_43_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_154155/no_plasticity_ablation_no_plasticity_seed43_timeseries.csv",
-            "seed_44_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_154155/no_plasticity_ablation_no_plasticity_seed44_timeseries.csv"
+            "seed_42_timeseries_csv": "<repo>/controlled_test_output/tier3_20260426_154155/no_plasticity_ablation_no_plasticity_seed42_timeseries.csv",
+            "seed_43_timeseries_csv": "<repo>/controlled_test_output/tier3_20260426_154155/no_plasticity_ablation_no_plasticity_seed43_timeseries.csv",
+            "seed_44_timeseries_csv": "<repo>/controlled_test_output/tier3_20260426_154155/no_plasticity_ablation_no_plasticity_seed44_timeseries.csv"
           },
           "fixed_population": true,
           "label": "no_plasticity",
@@ -3324,7 +3324,7 @@
     },
     {
       "artifacts": {
-        "comparison_plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_154155/no_trophic_selection_ablation_comparison.png"
+        "comparison_plot_png": "<repo>/controlled_test_output/tier3_20260426_154155/no_trophic_selection_ablation_comparison.png"
       },
       "cases": [
         {
@@ -3395,9 +3395,9 @@
             "total_deaths_sum": 0
           },
           "artifacts": {
-            "seed_42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_154155/no_trophic_selection_ablation_intact_seed42_timeseries.csv",
-            "seed_43_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_154155/no_trophic_selection_ablation_intact_seed43_timeseries.csv",
-            "seed_44_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_154155/no_trophic_selection_ablation_intact_seed44_timeseries.csv"
+            "seed_42_timeseries_csv": "<repo>/controlled_test_output/tier3_20260426_154155/no_trophic_selection_ablation_intact_seed42_timeseries.csv",
+            "seed_43_timeseries_csv": "<repo>/controlled_test_output/tier3_20260426_154155/no_trophic_selection_ablation_intact_seed43_timeseries.csv",
+            "seed_44_timeseries_csv": "<repo>/controlled_test_output/tier3_20260426_154155/no_trophic_selection_ablation_intact_seed44_timeseries.csv"
           },
           "fixed_population": false,
           "label": "intact",
@@ -4135,9 +4135,9 @@
             "total_deaths_sum": 0
           },
           "artifacts": {
-            "seed_42_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_154155/no_trophic_selection_ablation_no_trophic_selection_seed42_timeseries.csv",
-            "seed_43_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_154155/no_trophic_selection_ablation_no_trophic_selection_seed43_timeseries.csv",
-            "seed_44_timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier3_20260426_154155/no_trophic_selection_ablation_no_trophic_selection_seed44_timeseries.csv"
+            "seed_42_timeseries_csv": "<repo>/controlled_test_output/tier3_20260426_154155/no_trophic_selection_ablation_no_trophic_selection_seed42_timeseries.csv",
+            "seed_43_timeseries_csv": "<repo>/controlled_test_output/tier3_20260426_154155/no_trophic_selection_ablation_no_trophic_selection_seed43_timeseries.csv",
+            "seed_44_timeseries_csv": "<repo>/controlled_test_output/tier3_20260426_154155/no_trophic_selection_ablation_no_trophic_selection_seed44_timeseries.csv"
           },
           "fixed_population": true,
           "label": "no_trophic_selection",

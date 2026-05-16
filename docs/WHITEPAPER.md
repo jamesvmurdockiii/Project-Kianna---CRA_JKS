@@ -1,300 +1,208 @@
-# Coral Reef Architecture Whitepaper
+# Coral Reef Architecture Technical Whitepaper
 
 ## Document Status
 
-This whitepaper is a technical overview of the implementation and evidence in
-this repository. It is not a peer-reviewed paper. All claims are bounded by the
-canonical evidence registry in `controlled_test_output/STUDY_REGISTRY.json`, the
-frozen baseline locks in `baselines/`, and the tier definitions in
-`CONTROLLED_TEST_PLAN.md`.
+This document is a technical overview of the CRA repository. It is not a
+peer-reviewed paper and should not be read as a final claim of model superiority.
+All claims are bounded by the committed evidence registry, frozen baselines,
+controlled test definitions, and artifact policy.
+
+Primary sources of truth:
+
+- `controlled_test_output/STUDY_REGISTRY.json`
+- `STUDY_EVIDENCE_INDEX.md`
+- `docs/PAPER_RESULTS_TABLE.md`
+- `baselines/`
+- `CONTROLLED_TEST_PLAN.md`
+- `docs/MASTER_EXECUTION_PLAN.md`
+- `docs/PAPER_READINESS_ROADMAP.md`
 
 ## Executive Summary
 
 Coral Reef Architecture (CRA) is a neuromorphic local-learning research platform.
-It explores whether populations of small spiking agents can learn and adapt using
-local plasticity, delayed consequence signals, trophic selection, lifecycle
-pressure, and hardware-compatible state machines rather than global
-backpropagation.
+It investigates whether populations of small spiking agents can learn and adapt
+through local plasticity, delayed consequence signals, population dynamics,
+context memory, and hardware-compatible state machines rather than global
+backpropagation as the organizing learning rule.
 
-The project contains three integrated layers:
+CRA is best understood as a research scaffold with three integrated layers:
 
-1. A Python/PyNN research implementation of the organism, task adapters,
-   learning, energy, lifecycle, and backend integrations.
-2. A custom SpiNNaker C runtime used to migrate selected mechanisms into native
-   hardware-executed state, routing, memory, and learning cores.
-3. A staged evidence system that records canonical results, failed diagnostics,
-   frozen baselines, and claim boundaries.
+| Layer | Purpose |
+| --- | --- |
+| Python/PyNN organism | Implements polyps, reef graph state, learning, energy, lifecycle, task adapters, and backend integrations. |
+| Custom SpiNNaker runtime | Migrates selected mechanisms into native C state, routing, memory, learning, lifecycle, and MCPL communication experiments. |
+| Evidence system | Records tiered tests, pass/fail criteria, controls, shams, baselines, frozen states, and claim boundaries. |
 
-As of the current registry, CRA has 127 canonical evidence bundles with zero
-missing expected artifacts and zero failed criteria in canonical entries. The
-software program has validated negative controls, positive learning controls,
-architecture ablations, external-baseline comparisons, delayed-credit repairs,
-lifecycle/self-scaling, lifecycle sham controls, circuit-motif causality, and
-bounded host-side mechanisms for memory, replay/consolidation, predictive
-context, composition/routing, working-memory diagnostics, temporal spike coding,
-neuron-parameter sensitivity, predictive binding, self-evaluation, and
-fading-memory temporal state. Tier 7.5c confirmed a generated-family synthetic
-software signal on 6/6 locked curriculum families while preserving the boundary
-that this is not public usefulness, not a new freeze, and not hardware/native
-transfer. Tier 7.5d then attributed that synthetic signal to the keyed/
-compositional mechanism path while explicitly documenting high generator-feature
-alignment risk and again blocking public-usefulness, freeze, and hardware/native
-transfer claims. Tier 7.6a then locked the bounded long-horizon planning /
-subgoal-control contract without scoring, Tier 7.6b passed a bounded local
-scaffold diagnostic, Tier 7.6c preserved that signal while blocking promotion,
-Tier 7.6d passed reduced-feature generalization, and Tier 7.6e froze bounded
-host-side v2.5 planning/subgoal-control evidence after full compact regression.
-Tier 7.7a then locked the v2.5 standardized benchmark/usefulness scoreboard
-contract before scoring: Mackey-Glass, Lorenz, and NARMA10 at 8000 steps are the
-primary standardized scoreboard, while C-MAPSS FD001 and NAB are secondary
-public/real-ish confirmation tracks only. Tier 7.7b then passed that locked
-scoring gate with a standardized-progress result: v2.5 improved the aggregate
-geomean MSE versus v2.3, but the gain was driven by Mackey-Glass, Lorenz and
-NARMA10 remained flat/slightly worse, and ESN/online-linear/ridge baselines still
-beat v2.5 on aggregate. Tier 7.7c then passed as a contract-only
-long-run/failure-localization gate, locking required 8000/16000/32000-step
-standardized streams, optional 50000-step diagnostics, shams, artifacts, and
-failure classes before any longer scoring. Tier 7.7d then ran the scoring
-harness and produced a blocker classification: Mackey-Glass persisted, Lorenz
-remained weak, external baselines remained blockers, and the required long-run
-NARMA10 stream became non-finite at 16000 and 32000 under the existing
-generator.
+The current evidence supports a bounded platform claim: CRA has demonstrated
+controlled local learning, mechanism sensitivity, selected software capability
+gates, and bounded SpiNNaker/custom-runtime transfer for specific task capsules
+and native mechanism bridges. The evidence does not prove general intelligence,
+production readiness, broad external-baseline superiority, or full autonomous
+on-chip implementation of all software mechanisms.
 
-The hardware program has progressed from PyNN/SpiNNaker capsule execution to a
-custom native runtime. The native runtime has passed bounded SpiNNaker hardware
-checks for four-core MCPL task execution, keyed memory, routing/composition,
-predictive binding, confidence-gated learning, host-scheduled
-replay/consolidation, and lifecycle static-pool/sham/task-bridge evidence. Tier
-4.30g-hw froze the lifecycle-native baseline v0.4 with a host-ferried bridge
-boundary. Tier 4.31a then passed local readiness for the next v2.2 temporal-state
-migration, defining seven causal fixed-point EMA traces before any C/runtime or
-EBRAINS package. Tier 4.31b passed the local fixed-point reference gate for that subset, matching
-the v2.2 fading-memory reference with zero selected saturations and separated
-destructive controls. Tier 4.31c then passed local source/runtime audit with
-C-owned temporal state, compact 48-byte readback, command codes 39-42,
-behavior-backed shams, profile ownership guards, and local C host tests. Tier
-4.31d-hw passed the first one-board SpiNNaker hardware smoke for that temporal
-subset with compact payload length 48 and enabled/zero/frozen/reset controls.
-Tier 4.31e then passed a replay/eligibility decision closeout, deferring native
-replay buffers, sleep-like replay, and native macro eligibility until measured
-blockers justify them, and authorizing Tier 4.32 mapping/resource modeling. Tier
-4.32 passed that local resource model: MCPL is the scale data plane and returned
-profile builds have positive ITCM/DTCM headroom. Tier 4.32a then passed the
-local single-chip scale-stress preflight, authorizing only the 4/5-core
-single-shard hardware stress points and blocking replicated 8/12/16-core stress
-until shard-aware MCPL routing exists. Tier 4.32a-r0 then blocked the planned
-MCPL-first hardware package: confidence-gated learning still used transitional
-SDP, MCPL replies dropped confidence/hit status, MCPL receive hardcoded
-confidence=1.0, and the MCPL key lacked shard identity. Tier 4.32a-r1 repaired
-that blocker locally with value/meta MCPL reply packets, shard-aware keys,
-cross-shard controls, and full/zero/half-confidence learning controls over the
-repaired MCPL path. Static partitioning, replicated stress, multi-chip work, and
-native-scale baseline freeze remain blocked until single-shard hardware stress
-passes.
+## Research Question
 
-The current evidence supports a bounded research claim: CRA is a reproducible
-neuromorphic platform with demonstrated local learning, mechanism sensitivity,
-selected software capability upgrades, and repeatable SpiNNaker execution for
-constrained task capsules and native-runtime mechanism bridges. The evidence does
-not establish general intelligence, universal superiority over baselines,
-production readiness, full multi-chip scaling, autonomous lifecycle-to-learning
-MCPL, repeatable/full native v2.2 temporal dynamics beyond the one-board
-seven-EMA smoke, single-shard/repeated confidence-bearing MCPL scale stress on
-hardware, native replay/sleep or native macro eligibility, or fully autonomous
-on-chip implementations of all promoted software mechanisms.
-
-## Motivation
-
-Most modern machine-learning systems are optimized through global differentiable
-objectives. Biological nervous systems use additional mechanisms: local
-plasticity, modulatory signals, temporal spike structure, metabolic constraints,
-structural adaptation, and population-level selection. CRA investigates whether
-those mechanisms can be turned into a computational substrate that is testable,
-falsifiable, and compatible with neuromorphic hardware.
-
-The central research question is:
+The central question is:
 
 ```text
 Can a population of local spiking agents learn, adapt, retain useful state, and
 transfer selected mechanisms to SpiNNaker hardware under strict controls?
 ```
 
-The project does not claim to replace deep learning. It tests a narrower and more
-scientifically useful question: whether a biologically structured local-learning
-system can pass controls that distinguish real mechanism behavior from leakage,
-shortcuts, lucky seeds, and implementation artifacts.
+The project is not trying to win by rhetoric or biological metaphor. A mechanism
+only becomes part of the claim if it survives controls, ablations, baselines
+where relevant, compact regression, and documentation.
 
-## Architecture Overview
+## Architecture
 
 A CRA organism is represented as a directed reef graph of small neural agents
-called polyps. The biological terms are engineering abstractions. They define a
-structured set of mechanisms to test, not a claim that the model is biologically
-literal.
+called polyps. Biological terms are used as engineering abstractions. They define
+mechanisms to test, not literal biological claims.
 
-| Layer | Role | Main files |
+| Component | Role | Representative files |
 | --- | --- | --- |
-| Configuration | Central parameter source | `coral_reef_spinnaker/config.py`, `config_adapters.py` |
+| Configuration | Central parameter and feature-gate surface | `coral_reef_spinnaker/config.py`, `config_adapters.py` |
 | Neural substrate | Polyps, populations, graph motifs, backend projections | `polyp_state.py`, `polyp_population.py`, `polyp_plasticity.py`, `reef_network.py` |
 | Learning | Dopamine/RPE, delayed credit, readout updates | `learning_manager.py` |
-| Energy economy | Sensory, outcome, and retrograde trophic accounting | `energy_manager.py` |
-| Lifecycle | Birth, death, lineage, juvenile/adult state | `lifecycle.py` |
-| Task interface | Domain-neutral consequences and adapters | `signals.py`, `task_adapter.py`, `trading_bridge.py` |
-| Backends | Mock, NEST, Brian2, PyNN/SpiNNaker compatibility | `backend_factory.py`, `mock_simulator.py`, `spinnaker_compat.py` |
-| Custom runtime | Native SpiNNaker state, routing, memory, learning cores | `coral_reef_spinnaker/spinnaker_runtime/` |
+| Energy and lifecycle | Trophic accounting, active masks, lineage, birth/death pressure | `energy_manager.py`, `lifecycle.py` |
+| Task interface | Domain-neutral signals and adapters | `signals.py`, `task_adapter.py`, `trading_bridge.py` |
+| Backends | Mock, NEST, Brian2, SpiNNaker compatibility | `backend_factory.py`, `mock_simulator.py`, `spinnaker_compat.py` |
+| Custom runtime | Native SpiNNaker state, MCPL, learning, lifecycle, readback | `coral_reef_spinnaker/spinnaker_runtime/` |
 | Evidence | Tier runners, registry, paper table, audit | `experiments/`, `controlled_test_output/` |
 
-## Biological Design Principles
+## Mechanism Philosophy
 
-CRA uses the following biological ideas as engineering constraints:
+CRA does not assume that biologically inspired mechanisms are useful merely
+because they are biologically named. Each mechanism is treated as a hypothesis.
+Examples include:
 
-| Principle | CRA interpretation | Evidence status |
-| --- | --- | --- |
-| Local plasticity | Synaptic/readout changes are driven by local state and modulatory signals. | Tiers 2-5.7, custom runtime 4.22-4.29. |
-| Delayed credit | Pending consequence records mature after a horizon and update learning. | Tiers 5.3-5.4, 4.16, 4.22, 4.28. |
-| Trophic selection | Polyps gain or lose support based on information and outcomes. | Tiers 3, 6.1, 6.3. |
-| Lifecycle pressure | Population expansion and lineage are measurable and ablatable. | Tiers 6.1, 6.3. |
-| Circuit motifs | Graph motifs and edge roles are tested causally, not treated as decoration. | Tier 6.4. |
-| Context and memory | Bounded keyed memory, replay, and context routing are tested with shams. | Tiers 5.10-5.14, 4.29a-b. |
-| Prediction and reliability | Predictive binding and confidence-gated learning are tested before reward. | Tiers 5.12, 5.17, 5.18, 4.29c-d. |
-
-These mechanisms remain bounded by their evidence tier. Biological inspiration is
-not treated as proof.
+| Mechanism | Evidence expectation |
+| --- | --- |
+| Local plasticity | Must outperform no-plasticity and shuffled/incorrect-credit controls where the task requires learning. |
+| Delayed credit | Must mature consequences without same-step leakage and must beat weaker delayed-credit variants. |
+| Context memory | Must solve same-input/different-context tasks and lose under reset, wrong-key, or shuffle controls. |
+| Replay/consolidation | Must help bounded-memory stress while wrong-binding controls fail. |
+| Predictive/context binding | Must improve adaptation without feedback leakage or shuffled-target shortcuts. |
+| Composition/routing | Must reuse modules on held-out combinations and fail under module/router shams. |
+| Lifecycle/ecology | Must beat fixed-capacity, random-event, mask-shuffle, no-trophic, and no-dopamine controls. |
+| Native runtime transfer | Must preserve compact reference behavior with zero synthetic fallback and explicit host/chip boundaries. |
 
 ## Evidence Methodology
 
-CRA uses a staged evidence ladder. Each tier is expected to define:
+Every major tier is expected to define:
 
-- The exact question being tested.
-- Hypothesis and null hypothesis.
-- Mechanism under test.
-- Controls, shams, ablations, seeds, and metrics.
-- Pass/fail criteria.
-- Expected artifacts.
-- Claim boundary and nonclaims.
+- exact question;
+- hypothesis and null hypothesis;
+- mechanism under test;
+- controls, shams, ablations, seeds, and metrics;
+- pass/fail criteria;
+- expected artifacts;
+- claim supported if it passes;
+- claim narrowed if it fails.
 
-Results are classified as canonical, baseline-frozen, noncanonical diagnostic,
-failed/parked diagnostic, or prepared hardware evidence. Failed and ambiguous
-runs are preserved so that later claims are not cherry-picked.
+Results are classified as canonical registry evidence, baseline-frozen evidence,
+noncanonical diagnostics, failed/parked diagnostics, or hardware prepare/probe
+evidence. Negative results are kept because they are part of the scientific
+record and prevent silent p-hacking.
 
-The canonical registry is generated by `experiments/evidence_registry.py` and
-written to:
+## Current Evidence State
 
-- `controlled_test_output/STUDY_REGISTRY.json`
-- `controlled_test_output/STUDY_REGISTRY.csv`
-- `controlled_test_output/README.md`
-- `STUDY_EVIDENCE_INDEX.md`
+The current registry contains 157 canonical evidence bundles. The most important
+current state is:
 
-The paper-facing table is generated by
-`experiments/export_paper_results_table.py`.
-
-## Evidence Summary
-
-| Evidence area | Current result | Boundary |
+| Area | Current status | Boundary |
 | --- | --- | --- |
-| Negative controls | Zero-signal and shuffled-label controls do not fake learning. | Does not prove positive learning by itself. |
-| Positive learning | Fixed pattern, delayed reward, and nonstationary switching learn in controlled software tasks. | Controlled task families only. |
-| Architecture ablations | Dopamine, plasticity, and trophic selection matter. | Software ablation evidence. |
-| Scaling and domain transfer | Population stressors, harder scaling, and non-finance sensor-control transfer are documented. | Not arbitrary domain generalization. |
-| Backend parity | NEST/Brian2 parity holds for selected fixed-pattern conditions. | Not universal backend equivalence. |
-| PyNN/SpiNNaker hardware | Minimal and repaired task capsules run on real SpiNNaker with real spike readback and zero synthetic fallback. | Chunked/host-assisted capsule evidence. |
-| External baselines | CRA has bounded hard/adaptive advantage regimes and documented best-baseline losses. | Not universal superiority. |
-| Lifecycle and motifs | Lifecycle and motif structure pass targeted software controls and shams. | Not hardware lifecycle. |
-| Host-side capability mechanisms | Memory, replay, prediction, routing, temporal coding, and self-evaluation pass selected gates. | Mostly software-only unless migrated. |
-| Native custom runtime | Four-core MCPL tasks, keyed memory, routing/composition, predictive binding, and confidence-gated learning pass bounded hardware gates. | Single-chip bounded task capsules, not full runtime autonomy. |
+| Software predictive line | `CRA_EVIDENCE_BASELINE_v2.6` remains the current predictive benchmark baseline. | It is not a broad SOTA or AGI claim. |
+| Organism-development diagnostic | `v2.7` records healthy-NEST organism-development diagnostics. | It does not supersede v2.6 for predictive usefulness. |
+| Active software gate | Tier 5.45a healthy-NEST rebaseline scoring is in progress, currently `21/204` cells complete. | No new organism-mechanism promotion until the full gate is merged. |
+| Native hardware line | `CRA_NATIVE_SCALE_BASELINE_v0.5` freezes bounded native-scale substrate evidence. | It is not speedup, full multi-chip learning, or full organism autonomy. |
+| Public benchmark usefulness | Standardized benchmark results remain mixed. CRA has shown internal progress, but strong baselines still block broad superiority claims. | Usefulness remains an active research question. |
 
-## Hardware Runtime Progression
+## Hardware And SpiNNaker Progression
 
-The hardware program has two lines of evidence.
+CRA has two hardware lines.
 
-First, the PyNN/SpiNNaker path established that bounded CRA capsules can execute
-on real SpiNNaker hardware with real spike readback and zero synthetic fallback.
-This includes the Tier 4.13 hardware capsule, Tier 4.15 repeatability, repaired
-Tier 4.16 delayed-cue and hard-switch transfer, and Tier 4.18 chunked runtime
-characterization.
+First, the PyNN/SpiNNaker path demonstrated bounded task capsules with real
+hardware execution, real spike readback, and zero synthetic fallback for selected
+runs. These are important but remain chunked or host-assisted where documented.
 
-Second, the custom runtime path migrates selected state and learning mechanisms
-into native SpiNNaker C code. This line includes:
+Second, the custom runtime path migrates selected mechanisms into native
+SpiNNaker C code. This line has progressed through continuous execution,
+distributed state, MCPL communication, keyed memory, routing/composition,
+predictive binding, confidence-gated learning, replay/consolidation bridges,
+lifecycle metadata, multi-core and selected two-chip smokes, and a bounded
+native-scale substrate baseline.
 
-| Tier range | Result |
-| --- | --- |
-| 4.22i-4.22x | Custom runtime build/load/roundtrip, learning micro-loops, decoupled state, and compact v2 bridge smoke tests. |
-| 4.23-4.24 | Continuous runtime parity and resource/build-size characterization. |
-| 4.25-4.26 | Two-core and four-core state/learning split hardware passes. |
-| 4.27-4.28 | MCPL migration, harder native task capsules, and native task baseline v0.2. |
-| 4.29a | Native keyed-memory overcapacity gate, three-seed hardware pass. |
-| 4.29b | Native routing/composition gate, three-seed hardware pass. |
-| 4.29c | Native predictive binding bridge, three-seed hardware pass. |
-| 4.29d | Native self-evaluation / confidence-gated learning bridge, three-seed hardware pass. |
-| 4.29e | Native host-scheduled replay/consolidation bridge, three-seed hardware pass after `cra_429p` repair. |
+The native-runtime evidence should be read narrowly: each hardware result proves
+only the named subset, board/run conditions, and pass criteria. It does not imply
+that every host-side software mechanism is already autonomous on chip.
 
-The current custom runtime remains a research runtime, not a production runtime.
-Its purpose is to make mechanism transfer testable under SpiNNaker constraints.
+## Benchmark And Baseline Position
 
-## Baselines And Fairness
+CRA is compared against simple and stronger baselines where appropriate,
+including random/sign controls, online linear models, reservoir/ESN-style
+baselines, small recurrent baselines, STDP-only controls, evolutionary controls,
+lag/ridge baselines, and task-specific public-data baselines.
 
-CRA is compared against simple and stronger external learners where appropriate.
-The comparison program includes random/sign persistence, online perceptron,
-online logistic regression, reservoir/echo-state style baselines, small recurrent
-baselines, STDP-only controls, and evolutionary population controls in selected
-suites.
+The current benchmark picture is mixed and scientifically useful:
 
-The project does not require CRA to win every task. A useful result can be:
+- Some CRA mechanisms improve over earlier CRA baselines on selected tasks.
+- Some gains are localized and not yet externally dominant.
+- Strong baselines remain ahead on several standardized continuous-valued tasks.
+- Healthy-NEST rebaseline work is active because earlier organism-development
+  comparisons needed a corrected, auditable scoring foundation.
 
-- CRA wins under delay, noise, switching, recurrence, or adaptation pressure.
-- CRA loses on easy tasks where simpler learners are sufficient.
-- A proposed mechanism fails to separate from shams and is parked.
-- A hardware bridge passes a transfer gate without making a speedup claim.
+This is why the repo frames CRA as a research platform rather than a completed
+superiority claim.
 
-This distinction is central to the paper strategy. The strongest claim is not
-that CRA is universally superior. The stronger defensible claim is that its
-mechanisms can be isolated, ablated, transferred, and evaluated under conditions
-where local learning and neuromorphic constraints matter.
+## Artifact Policy
 
-## Current Limitations
+The public repository should keep source code, compact evidence summaries,
+registry files, paper tables, frozen baselines, selected canonical reports, and
+reproduction instructions. Raw EBRAINS downloads, provenance databases, stack
+traces, compiled binaries, generated upload bundles, and bulky scratch outputs
+are ignored or externalized by policy. If raw files are needed for a paper or
+reviewer, they should be cited through manifests, hashes, releases, or external
+archives rather than copied into the source tree by default.
 
-The current repository does not yet prove:
+See `ARTIFACTS.md` and `docs/PUBLIC_REPO_HYGIENE.md`.
 
-1. Full multi-chip scaling.
-2. Fully autonomous on-chip execution of all promoted software mechanisms.
-3. Native hardware lifecycle, reproduction, and apoptosis.
-4. Hardware replay buffers or biological sleep.
-5. General reward-free concept learning.
-6. Broad real-world task competence.
-7. Universal superiority over external baselines.
-8. Language, long-horizon planning, or general intelligence.
-9. Production readiness.
+## Limitations
 
-These limitations are not incidental. They define the remaining roadmap and keep
-paper claims bounded.
+CRA currently does not prove:
 
-## Roadmap To Paper Readiness
+- general intelligence or broad autonomous reasoning;
+- language understanding;
+- consciousness or self-awareness;
+- production readiness;
+- universal external-baseline superiority;
+- full native on-chip implementation of every host-side mechanism;
+- broad multi-chip learning/lifecycle scaling;
+- open-ended curriculum learning;
+- long-horizon planning beyond bounded diagnostics;
+- biological realism beyond engineering inspiration.
 
-The forward plan is maintained in `docs/MASTER_EXECUTION_PLAN.md` and
-`docs/PAPER_READINESS_ROADMAP.md`. The high-level sequence is:
+These are not hidden weaknesses; they are the roadmap. The project is valuable
+only if those boundaries remain explicit.
 
-1. Run Tier 4.30-readiness audit to decide how lifecycle-native work layers on
-   v2.2 software evidence and the existing native mechanism bridge.
-2. Define and run Tier 4.30 lifecycle-native static-pool gates with lineage,
-   masks, trophic state, sham controls, and compact hardware readback.
-3. Define any future native temporal-state migration separately; v2.2 does not
-   by itself prove on-chip temporal dynamics.
-4. Add resource, timing, and scalability characterization before larger hardware
-   claims.
-5. Re-run final software and hardware matrices against fair baselines.
-6. Produce a reproduction package with environment locks, artifact manifests,
-   exact commands, and claim-boundary tables.
-7. Write the paper from the evidence level actually earned.
+## Path To A Paper-Ready Claim
+
+The paper path is not “publish when there is a good curve.” It is:
+
+1. Finish the Tier 5.45a healthy-NEST rebaseline matrix.
+2. Promote only mechanisms that survive strict controls and regression.
+3. Re-run standardized/public baselines after the software line stabilizes.
+4. Migrate only promoted, well-understood subsets to hardware/native runtime.
+5. Preserve failures, nonclaims, and baseline losses.
+6. Produce a compact reproduction package with exact commits, manifests, and
+   environment instructions.
+7. Write the paper around the claim actually earned, not the claim hoped for.
 
 ## Conclusion
 
-CRA is best understood as a controlled research system for neuromorphic local
-learning and hardware mechanism transfer. Its value is not a single benchmark
-number. Its value is the combination of explicit mechanisms, controlled
-ablation/sham tests, external baselines, reproducible evidence artifacts, frozen
-baselines, and real SpiNNaker execution.
-
-The current evidence is substantial but bounded. CRA has demonstrated multiple
-software mechanisms and several native SpiNNaker mechanism bridges. The remaining
-work is to continue migrating mechanisms to hardware, characterize scalability,
-strengthen external comparisons, and preserve the same audit discipline through
-final paper lock.
+CRA is a serious neuromorphic research platform with a large and unusually
+explicit evidence trail. Its strongest current contribution is methodological and
+systems-oriented: it provides a reproducible way to test local-learning spiking
+mechanisms, falsify attractive biological metaphors, and move selected mechanisms
+toward SpiNNaker-native execution under documented constraints. Whether it
+becomes a broadly useful learning substrate remains an active empirical question.

@@ -2,7 +2,7 @@
 
 - Generated: `2026-04-30T19:01:01+00:00`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit`
+- Output directory: `<repo>/controlled_test_output/tier4_22f0_20260430_custom_runtime_scale_audit`
 
 Tier 4.22f0 audits the custom-C sidecar before spending another hardware allocation on custom-runtime learning. It keeps the architecture boundary explicit: PyNN/sPyNNaker remains the normal mapping/execution layer, and custom C is reserved for CRA-specific on-chip substrate mechanics that PyNN cannot express or scale directly.
 

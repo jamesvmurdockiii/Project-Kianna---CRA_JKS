@@ -3,7 +3,7 @@
 - Generated: `2026-05-01T01:56:01+00:00`
 - Mode: `local`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_local`
+- Output directory: `<repo>/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_local`
 
 Tier 4.22l compares a tiny chip-owned pending-horizon/readout update sequence against a local s16.15 fixed-point reference.
 
@@ -49,7 +49,7 @@ Tier 4.22l compares a tiny chip-owned pending-horizon/readout update sequence ag
 
 ## Artifacts
 
-- `reference_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_local/tier4_22l_reference.json`
-- `reference_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_local/tier4_22l_parity_reference.csv`
-- `manifest_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_local/tier4_22l_results.json`
-- `report_md`: `/Users/james/JKS:CRA/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_local/tier4_22l_report.md`
+- `reference_json`: `<repo>/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_local/tier4_22l_reference.json`
+- `reference_csv`: `<repo>/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_local/tier4_22l_parity_reference.csv`
+- `manifest_json`: `<repo>/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_local/tier4_22l_results.json`
+- `report_md`: `<repo>/controlled_test_output/tier4_22l_20260501_custom_runtime_learning_parity_local/tier4_22l_report.md`

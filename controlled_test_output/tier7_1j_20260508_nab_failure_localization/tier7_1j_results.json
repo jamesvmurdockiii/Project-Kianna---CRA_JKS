@@ -6,7 +6,7 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation/tier7_1i_results.json"
+      "value": "<repo>/controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation/tier7_1i_results.json"
     },
     {
       "name": "Tier 7.1i passed",
@@ -1782,10 +1782,10 @@
     "v2_3_no_update_ablation"
   ],
   "next_step": "If the failure localizes to scoring/threshold policy, repair the adapter/readout contract before mechanisms. If simple residual baselines dominate across policy variants, narrow the NAB claim or return to planned general mechanisms only with a predeclared failure hypothesis.",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1j_20260508_nab_failure_localization",
+  "output_dir": "<repo>/controlled_test_output/tier7_1j_20260508_nab_failure_localization",
   "runner_revision": "tier7_1j_nab_failure_localization_20260508_0001",
   "source": {
-    "cache_root": "/Users/james/JKS:CRA/.cra_data_cache/numenta_nab",
+    "cache_root": "<repo>/.cra_data_cache/numenta_nab",
     "commit": "ea702d75cc2258d9d7dd35ca8e5e2539d71f3140",
     "selected_categories": [
       "artificialWithAnomaly",

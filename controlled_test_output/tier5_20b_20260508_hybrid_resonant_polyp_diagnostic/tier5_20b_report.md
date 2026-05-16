@@ -2,7 +2,7 @@
 
 - Generated: `2026-05-08T22:13:29+00:00`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic`
+- Output directory: `<repo>/controlled_test_output/tier5_20b_20260508_hybrid_resonant_polyp_diagnostic`
 - Outcome: `hybrid_resonant_not_promoted`
 - Best candidate: `hybrid_8_lif_8_resonant`
 

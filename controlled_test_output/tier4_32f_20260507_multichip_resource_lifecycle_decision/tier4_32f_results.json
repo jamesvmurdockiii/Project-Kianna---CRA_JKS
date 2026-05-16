@@ -1,13 +1,13 @@
 {
   "artifacts": {
-    "candidate_directions_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/tier4_32f_candidate_directions.csv",
-    "criteria_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/tier4_32f_criteria.csv",
-    "learning_cases_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/tier4_32f_learning_cases.csv",
-    "next_gates_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/tier4_32f_next_gates.csv",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/tier4_32f_report.md",
-    "required_readback_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/tier4_32f_required_readback.csv",
-    "results_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/tier4_32f_results.json",
-    "source_checks_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/tier4_32f_source_checks.csv"
+    "candidate_directions_csv": "<repo>/controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/tier4_32f_candidate_directions.csv",
+    "criteria_csv": "<repo>/controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/tier4_32f_criteria.csv",
+    "learning_cases_csv": "<repo>/controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/tier4_32f_learning_cases.csv",
+    "next_gates_csv": "<repo>/controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/tier4_32f_next_gates.csv",
+    "report_md": "<repo>/controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/tier4_32f_report.md",
+    "required_readback_csv": "<repo>/controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/tier4_32f_required_readback.csv",
+    "results_json": "<repo>/controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/tier4_32f_results.json",
+    "source_checks_csv": "<repo>/controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision/tier4_32f_source_checks.csv"
   },
   "candidate_directions": [
     {
@@ -323,7 +323,7 @@
       "status": "blocked_until_lifecycle_resource_gate"
     }
   ],
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision",
+  "output_dir": "<repo>/controlled_test_output/tier4_32f_20260507_multichip_resource_lifecycle_decision",
   "required_readback": [
     {
       "expected_rule": "non-empty and preserved in returned artifacts",

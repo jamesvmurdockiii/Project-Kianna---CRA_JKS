@@ -3,7 +3,7 @@
   "status": "pass",
   "data_generation": {
     "status": "pass",
-    "stdout": "Generated /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/tests/test_four_core_48event_data.h with 48 events.\n",
+    "stdout": "Generated <repo>/coral_reef_spinnaker/spinnaker_runtime/tests/test_four_core_48event_data.h with 48 events.\n",
     "stderr": ""
   },
   "monolithic_reference": {

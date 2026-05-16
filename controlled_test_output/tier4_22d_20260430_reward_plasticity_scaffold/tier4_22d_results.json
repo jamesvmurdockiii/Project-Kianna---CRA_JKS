@@ -1,11 +1,11 @@
 {
   "artifacts": {
-    "host_test_stderr": "/Users/james/JKS:CRA/controlled_test_output/tier4_22d_20260430_reward_plasticity_scaffold/tier4_22d_host_test_stderr.txt",
-    "host_test_stdout": "/Users/james/JKS:CRA/controlled_test_output/tier4_22d_20260430_reward_plasticity_scaffold/tier4_22d_host_test_stdout.txt",
-    "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_22d_20260430_reward_plasticity_scaffold/tier4_22d_results.json",
-    "plasticity_contract_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22d_20260430_reward_plasticity_scaffold/tier4_22d_plasticity_contract.csv",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_22d_20260430_reward_plasticity_scaffold/tier4_22d_report.md",
-    "static_compliance_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_22d_20260430_reward_plasticity_scaffold/tier4_22d_static_compliance.csv"
+    "host_test_stderr": "<repo>/controlled_test_output/tier4_22d_20260430_reward_plasticity_scaffold/tier4_22d_host_test_stderr.txt",
+    "host_test_stdout": "<repo>/controlled_test_output/tier4_22d_20260430_reward_plasticity_scaffold/tier4_22d_host_test_stdout.txt",
+    "manifest_json": "<repo>/controlled_test_output/tier4_22d_20260430_reward_plasticity_scaffold/tier4_22d_results.json",
+    "plasticity_contract_csv": "<repo>/controlled_test_output/tier4_22d_20260430_reward_plasticity_scaffold/tier4_22d_plasticity_contract.csv",
+    "report_md": "<repo>/controlled_test_output/tier4_22d_20260430_reward_plasticity_scaffold/tier4_22d_report.md",
+    "static_compliance_csv": "<repo>/controlled_test_output/tier4_22d_20260430_reward_plasticity_scaffold/tier4_22d_static_compliance.csv"
   },
   "criteria": [
     {
@@ -61,12 +61,12 @@
   "failure_reason": "",
   "generated_at_utc": "2026-04-30T18:45:12+00:00",
   "host_test": {
-    "command": "make -C /Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime clean-host test",
+    "command": "make -C <repo>/coral_reef_spinnaker/spinnaker_runtime clean-host test",
     "returncode": 0,
-    "stderr_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22d_20260430_reward_plasticity_scaffold/tier4_22d_host_test_stderr.txt",
-    "stdout_artifact": "/Users/james/JKS:CRA/controlled_test_output/tier4_22d_20260430_reward_plasticity_scaffold/tier4_22d_host_test_stdout.txt"
+    "stderr_artifact": "<repo>/controlled_test_output/tier4_22d_20260430_reward_plasticity_scaffold/tier4_22d_host_test_stderr.txt",
+    "stdout_artifact": "<repo>/controlled_test_output/tier4_22d_20260430_reward_plasticity_scaffold/tier4_22d_host_test_stdout.txt"
   },
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_22d_20260430_reward_plasticity_scaffold",
+  "output_dir": "<repo>/controlled_test_output/tier4_22d_20260430_reward_plasticity_scaffold",
   "plasticity_contract": [
     {
       "causal_rule": "trace increments when a pre-synaptic spike is delivered to a post-synaptic target",
@@ -197,7 +197,7 @@
     "runner_revision": "tier4_22d_reward_plasticity_scaffold_20260430_0000",
     "static_checks_passed": 11,
     "static_checks_total": 11,
-    "tier4_22c_manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_22c_20260430_persistent_state_scaffold/tier4_22c_results.json",
+    "tier4_22c_manifest": "<repo>/controlled_test_output/tier4_22c_20260430_persistent_state_scaffold/tier4_22c_results.json",
     "tier4_22c_status": "pass"
   },
   "tier": "Tier 4.22d - Reward/Plasticity Runtime Scaffold"

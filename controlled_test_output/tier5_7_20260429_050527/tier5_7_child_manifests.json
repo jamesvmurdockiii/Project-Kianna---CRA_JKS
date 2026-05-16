@@ -1,38 +1,38 @@
 {
   "target_task_smokes": {
     "artifacts": {
-      "best_profiles_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/tier5_6_best_profiles.csv",
-      "candidate_budget_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/tier5_6_candidate_budget.csv",
-      "comparisons_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/tier5_6_comparisons.csv",
-      "edge_summary_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/tier5_6_edge_summary.png",
-      "fairness_contract_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/tier5_6_fairness_contract.json",
-      "per_seed_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/tier5_6_per_seed.csv",
-      "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/tier5_6_report.md",
-      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/tier5_6_summary.csv"
+      "best_profiles_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/tier5_6_best_profiles.csv",
+      "candidate_budget_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/tier5_6_candidate_budget.csv",
+      "comparisons_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/tier5_6_comparisons.csv",
+      "edge_summary_png": "<repo>/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/tier5_6_edge_summary.png",
+      "fairness_contract_json": "<repo>/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/tier5_6_fairness_contract.json",
+      "per_seed_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/tier5_6_per_seed.csv",
+      "report_md": "<repo>/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/tier5_6_report.md",
+      "summary_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/tier5_6_summary.csv"
     },
     "backend": "nest",
-    "command": "experiments/tier5_baseline_fairness_audit.py --backend nest --seed-count 1 --run-lengths 120 --tasks delayed_cue,hard_noisy_switching --models online_perceptron,online_logistic_regression --cra-variants v0_8 --budget smoke --bootstrap-reps 50 --min-retuned-robust-regimes 0 --min-surviving-advantage-regimes 0 --stop-on-fail --output-dir /Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/target_task_smokes",
+    "command": "experiments/tier5_baseline_fairness_audit.py --backend nest --seed-count 1 --run-lengths 120 --tasks delayed_cue,hard_noisy_switching --models online_perceptron,online_logistic_regression --cra-variants v0_8 --budget smoke --bootstrap-reps 50 --min-retuned-robust-regimes 0 --min-surviving-advantage-regimes 0 --stop-on-fail --output-dir <repo>/controlled_test_output/tier5_7_20260429_050527/target_task_smokes",
     "generated_at_utc": "2026-04-29T09:08:17+00:00",
-    "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/target_task_smokes",
+    "output_dir": "<repo>/controlled_test_output/tier5_7_20260429_050527/target_task_smokes",
     "result": {
       "artifacts": {
-        "best_profiles_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/tier5_6_best_profiles.csv",
-        "candidate_budget_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/tier5_6_candidate_budget.csv",
-        "comparisons_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/tier5_6_comparisons.csv",
-        "edge_summary_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/tier5_6_edge_summary.png",
-        "fairness_contract_json": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/tier5_6_fairness_contract.json",
-        "per_seed_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/tier5_6_per_seed.csv",
-        "steps120_delayed_cue_cra_v0_8_delayed_lr_0_20_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/steps120_delayed_cue_cra_v0_8_delayed_lr_0_20_seed42_timeseries.csv",
-        "steps120_delayed_cue_online_logistic_regression__logistic_l2_0_logistic_lr_0p02_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/steps120_delayed_cue_online_logistic_regression__logistic_l2_0_logistic_lr_0p02_seed42_timeseries.csv",
-        "steps120_delayed_cue_online_logistic_regression__logistic_l2_0_logistic_lr_0p05_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/steps120_delayed_cue_online_logistic_regression__logistic_l2_0_logistic_lr_0p05_seed42_timeseries.csv",
-        "steps120_delayed_cue_online_perceptron__perceptron_lr_0p02_perceptron_margin_0_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/steps120_delayed_cue_online_perceptron__perceptron_lr_0p02_perceptron_margin_0_seed42_timeseries.csv",
-        "steps120_delayed_cue_online_perceptron__perceptron_lr_0p05_perceptron_margin_0_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/steps120_delayed_cue_online_perceptron__perceptron_lr_0p05_perceptron_margin_0_seed42_timeseries.csv",
-        "steps120_hard_noisy_switching_cra_v0_8_delayed_lr_0_20_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/steps120_hard_noisy_switching_cra_v0_8_delayed_lr_0_20_seed42_timeseries.csv",
-        "steps120_hard_noisy_switching_online_logistic_regression__logistic_l2_0_logistic_lr_0p02_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/steps120_hard_noisy_switching_online_logistic_regression__logistic_l2_0_logistic_lr_0p02_seed42_timeseries.csv",
-        "steps120_hard_noisy_switching_online_logistic_regression__logistic_l2_0_logistic_lr_0p05_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/steps120_hard_noisy_switching_online_logistic_regression__logistic_l2_0_logistic_lr_0p05_seed42_timeseries.csv",
-        "steps120_hard_noisy_switching_online_perceptron__perceptron_lr_0p02_perceptron_margin_0_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/steps120_hard_noisy_switching_online_perceptron__perceptron_lr_0p02_perceptron_margin_0_seed42_timeseries.csv",
-        "steps120_hard_noisy_switching_online_perceptron__perceptron_lr_0p05_perceptron_margin_0_seed42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/steps120_hard_noisy_switching_online_perceptron__perceptron_lr_0p05_perceptron_margin_0_seed42_timeseries.csv",
-        "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/tier5_6_summary.csv"
+        "best_profiles_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/tier5_6_best_profiles.csv",
+        "candidate_budget_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/tier5_6_candidate_budget.csv",
+        "comparisons_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/tier5_6_comparisons.csv",
+        "edge_summary_png": "<repo>/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/tier5_6_edge_summary.png",
+        "fairness_contract_json": "<repo>/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/tier5_6_fairness_contract.json",
+        "per_seed_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/tier5_6_per_seed.csv",
+        "steps120_delayed_cue_cra_v0_8_delayed_lr_0_20_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/steps120_delayed_cue_cra_v0_8_delayed_lr_0_20_seed42_timeseries.csv",
+        "steps120_delayed_cue_online_logistic_regression__logistic_l2_0_logistic_lr_0p02_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/steps120_delayed_cue_online_logistic_regression__logistic_l2_0_logistic_lr_0p02_seed42_timeseries.csv",
+        "steps120_delayed_cue_online_logistic_regression__logistic_l2_0_logistic_lr_0p05_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/steps120_delayed_cue_online_logistic_regression__logistic_l2_0_logistic_lr_0p05_seed42_timeseries.csv",
+        "steps120_delayed_cue_online_perceptron__perceptron_lr_0p02_perceptron_margin_0_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/steps120_delayed_cue_online_perceptron__perceptron_lr_0p02_perceptron_margin_0_seed42_timeseries.csv",
+        "steps120_delayed_cue_online_perceptron__perceptron_lr_0p05_perceptron_margin_0_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/steps120_delayed_cue_online_perceptron__perceptron_lr_0p05_perceptron_margin_0_seed42_timeseries.csv",
+        "steps120_hard_noisy_switching_cra_v0_8_delayed_lr_0_20_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/steps120_hard_noisy_switching_cra_v0_8_delayed_lr_0_20_seed42_timeseries.csv",
+        "steps120_hard_noisy_switching_online_logistic_regression__logistic_l2_0_logistic_lr_0p02_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/steps120_hard_noisy_switching_online_logistic_regression__logistic_l2_0_logistic_lr_0p02_seed42_timeseries.csv",
+        "steps120_hard_noisy_switching_online_logistic_regression__logistic_l2_0_logistic_lr_0p05_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/steps120_hard_noisy_switching_online_logistic_regression__logistic_l2_0_logistic_lr_0p05_seed42_timeseries.csv",
+        "steps120_hard_noisy_switching_online_perceptron__perceptron_lr_0p02_perceptron_margin_0_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/steps120_hard_noisy_switching_online_perceptron__perceptron_lr_0p02_perceptron_margin_0_seed42_timeseries.csv",
+        "steps120_hard_noisy_switching_online_perceptron__perceptron_lr_0p05_perceptron_margin_0_seed42_timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/steps120_hard_noisy_switching_online_perceptron__perceptron_lr_0p05_perceptron_margin_0_seed42_timeseries.csv",
+        "summary_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/target_task_smokes/tier5_6_summary.csv"
       },
       "criteria": [
         {
@@ -2061,18 +2061,18 @@
   },
   "tier1_controls": {
     "artifacts": {
-      "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier1_controls/tier1_report.md",
-      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier1_controls/tier1_summary.csv"
+      "report_md": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier1_controls/tier1_report.md",
+      "summary_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier1_controls/tier1_summary.csv"
     },
     "backend": "MockSimulator",
-    "command": "experiments/tier1_sanity.py --tests all --steps 200 --seeds 20 --base-seed 42 --readout-lr 0.1 --delayed-readout-lr 0.2 --stop-on-fail --output-dir /Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier1_controls",
+    "command": "experiments/tier1_sanity.py --tests all --steps 200 --seeds 20 --base-seed 42 --readout-lr 0.1 --delayed-readout-lr 0.2 --stop-on-fail --output-dir <repo>/controlled_test_output/tier5_7_20260429_050527/tier1_controls",
     "generated_at_utc": "2026-04-29T09:05:45+00:00",
-    "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier1_controls",
+    "output_dir": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier1_controls",
     "results": [
       {
         "artifacts": {
-          "plot_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier1_controls/zero_signal_timeseries.png",
-          "timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier1_controls/zero_signal_timeseries.csv"
+          "plot_png": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier1_controls/zero_signal_timeseries.png",
+          "timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier1_controls/zero_signal_timeseries.csv"
         },
         "criteria": [
           {
@@ -2148,8 +2148,8 @@
       },
       {
         "artifacts": {
-          "plot_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier1_controls/shuffled_label_timeseries.png",
-          "timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier1_controls/shuffled_label_timeseries.csv"
+          "plot_png": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier1_controls/shuffled_label_timeseries.png",
+          "timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier1_controls/shuffled_label_timeseries.csv"
         },
         "criteria": [
           {
@@ -2210,8 +2210,8 @@
       },
       {
         "artifacts": {
-          "plot_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier1_controls/seed_repeat_summary.png",
-          "seed_summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier1_controls/seed_repeat_summary.csv"
+          "plot_png": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier1_controls/seed_repeat_summary.png",
+          "seed_summary_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier1_controls/seed_repeat_summary.csv"
         },
         "criteria": [
           {
@@ -2280,18 +2280,18 @@
   },
   "tier2_learning": {
     "artifacts": {
-      "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier2_learning/tier2_report.md",
-      "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier2_learning/tier2_summary.csv"
+      "report_md": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier2_learning/tier2_report.md",
+      "summary_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier2_learning/tier2_summary.csv"
     },
     "backend": "nest",
-    "command": "experiments/tier2_learning.py --tests all --backend nest --steps 180 --base-seed 42 --readout-lr 0.1 --delayed-readout-lr 0.2 --stop-on-fail --output-dir /Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier2_learning",
+    "command": "experiments/tier2_learning.py --tests all --backend nest --steps 180 --base-seed 42 --readout-lr 0.1 --delayed-readout-lr 0.2 --stop-on-fail --output-dir <repo>/controlled_test_output/tier5_7_20260429_050527/tier2_learning",
     "generated_at_utc": "2026-04-29T09:06:02+00:00",
-    "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier2_learning",
+    "output_dir": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier2_learning",
     "results": [
       {
         "artifacts": {
-          "plot_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier2_learning/fixed_pattern_timeseries.png",
-          "timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier2_learning/fixed_pattern_timeseries.csv"
+          "plot_png": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier2_learning/fixed_pattern_timeseries.png",
+          "timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier2_learning/fixed_pattern_timeseries.csv"
         },
         "criteria": [
           {
@@ -2562,8 +2562,8 @@
       },
       {
         "artifacts": {
-          "plot_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier2_learning/delayed_reward_timeseries.png",
-          "timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier2_learning/delayed_reward_timeseries.csv"
+          "plot_png": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier2_learning/delayed_reward_timeseries.png",
+          "timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier2_learning/delayed_reward_timeseries.csv"
         },
         "criteria": [
           {
@@ -2844,8 +2844,8 @@
       },
       {
         "artifacts": {
-          "plot_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier2_learning/nonstationary_switch_timeseries.png",
-          "timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier2_learning/nonstationary_switch_timeseries.csv"
+          "plot_png": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier2_learning/nonstationary_switch_timeseries.png",
+          "timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier2_learning/nonstationary_switch_timeseries.csv"
         },
         "criteria": [
           {
@@ -3156,13 +3156,13 @@
   },
   "tier3_ablations": {
     "backend": "nest",
-    "command": "experiments/tier3_ablation.py --tests all --backend nest --steps 180 --ecology-steps 220 --seed-count 3 --base-seed 42 --readout-lr 0.1 --delayed-readout-lr 0.2 --stop-on-fail --output-dir /Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier3_ablations",
+    "command": "experiments/tier3_ablation.py --tests all --backend nest --steps 180 --ecology-steps 220 --seed-count 3 --base-seed 42 --readout-lr 0.1 --delayed-readout-lr 0.2 --stop-on-fail --output-dir <repo>/controlled_test_output/tier5_7_20260429_050527/tier3_ablations",
     "generated_at_utc": "2026-04-29T09:08:07+00:00",
-    "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier3_ablations",
+    "output_dir": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier3_ablations",
     "results": [
       {
         "artifacts": {
-          "comparison_plot_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_dopamine_ablation_comparison.png"
+          "comparison_plot_png": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_dopamine_ablation_comparison.png"
         },
         "cases": [
           {
@@ -3233,9 +3233,9 @@
               "total_deaths_sum": 0
             },
             "artifacts": {
-              "seed_42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_dopamine_ablation_intact_seed42_timeseries.csv",
-              "seed_43_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_dopamine_ablation_intact_seed43_timeseries.csv",
-              "seed_44_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_dopamine_ablation_intact_seed44_timeseries.csv"
+              "seed_42_timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_dopamine_ablation_intact_seed42_timeseries.csv",
+              "seed_43_timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_dopamine_ablation_intact_seed43_timeseries.csv",
+              "seed_44_timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_dopamine_ablation_intact_seed44_timeseries.csv"
             },
             "fixed_population": true,
             "label": "intact",
@@ -4036,9 +4036,9 @@
               "total_deaths_sum": 0
             },
             "artifacts": {
-              "seed_42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_dopamine_ablation_no_dopamine_seed42_timeseries.csv",
-              "seed_43_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_dopamine_ablation_no_dopamine_seed43_timeseries.csv",
-              "seed_44_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_dopamine_ablation_no_dopamine_seed44_timeseries.csv"
+              "seed_42_timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_dopamine_ablation_no_dopamine_seed42_timeseries.csv",
+              "seed_43_timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_dopamine_ablation_no_dopamine_seed43_timeseries.csv",
+              "seed_44_timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_dopamine_ablation_no_dopamine_seed44_timeseries.csv"
             },
             "fixed_population": true,
             "label": "no_dopamine",
@@ -4953,7 +4953,7 @@
       },
       {
         "artifacts": {
-          "comparison_plot_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_plasticity_ablation_comparison.png"
+          "comparison_plot_png": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_plasticity_ablation_comparison.png"
         },
         "cases": [
           {
@@ -5024,9 +5024,9 @@
               "total_deaths_sum": 0
             },
             "artifacts": {
-              "seed_42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_plasticity_ablation_intact_seed42_timeseries.csv",
-              "seed_43_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_plasticity_ablation_intact_seed43_timeseries.csv",
-              "seed_44_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_plasticity_ablation_intact_seed44_timeseries.csv"
+              "seed_42_timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_plasticity_ablation_intact_seed42_timeseries.csv",
+              "seed_43_timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_plasticity_ablation_intact_seed43_timeseries.csv",
+              "seed_44_timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_plasticity_ablation_intact_seed44_timeseries.csv"
             },
             "fixed_population": true,
             "label": "intact",
@@ -5827,9 +5827,9 @@
               "total_deaths_sum": 0
             },
             "artifacts": {
-              "seed_42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_plasticity_ablation_no_plasticity_seed42_timeseries.csv",
-              "seed_43_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_plasticity_ablation_no_plasticity_seed43_timeseries.csv",
-              "seed_44_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_plasticity_ablation_no_plasticity_seed44_timeseries.csv"
+              "seed_42_timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_plasticity_ablation_no_plasticity_seed42_timeseries.csv",
+              "seed_43_timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_plasticity_ablation_no_plasticity_seed43_timeseries.csv",
+              "seed_44_timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_plasticity_ablation_no_plasticity_seed44_timeseries.csv"
             },
             "fixed_population": true,
             "label": "no_plasticity",
@@ -6744,7 +6744,7 @@
       },
       {
         "artifacts": {
-          "comparison_plot_png": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_trophic_selection_ablation_comparison.png"
+          "comparison_plot_png": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_trophic_selection_ablation_comparison.png"
         },
         "cases": [
           {
@@ -6815,9 +6815,9 @@
               "total_deaths_sum": 0
             },
             "artifacts": {
-              "seed_42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_trophic_selection_ablation_intact_seed42_timeseries.csv",
-              "seed_43_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_trophic_selection_ablation_intact_seed43_timeseries.csv",
-              "seed_44_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_trophic_selection_ablation_intact_seed44_timeseries.csv"
+              "seed_42_timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_trophic_selection_ablation_intact_seed42_timeseries.csv",
+              "seed_43_timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_trophic_selection_ablation_intact_seed43_timeseries.csv",
+              "seed_44_timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_trophic_selection_ablation_intact_seed44_timeseries.csv"
             },
             "fixed_population": false,
             "label": "intact",
@@ -7621,9 +7621,9 @@
               "total_deaths_sum": 0
             },
             "artifacts": {
-              "seed_42_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_trophic_selection_ablation_no_trophic_selection_seed42_timeseries.csv",
-              "seed_43_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_trophic_selection_ablation_no_trophic_selection_seed43_timeseries.csv",
-              "seed_44_timeseries_csv": "/Users/james/JKS:CRA/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_trophic_selection_ablation_no_trophic_selection_seed44_timeseries.csv"
+              "seed_42_timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_trophic_selection_ablation_no_trophic_selection_seed42_timeseries.csv",
+              "seed_43_timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_trophic_selection_ablation_no_trophic_selection_seed43_timeseries.csv",
+              "seed_44_timeseries_csv": "<repo>/controlled_test_output/tier5_7_20260429_050527/tier3_ablations/no_trophic_selection_ablation_no_trophic_selection_seed44_timeseries.csv"
             },
             "fixed_population": true,
             "label": "no_trophic_selection",

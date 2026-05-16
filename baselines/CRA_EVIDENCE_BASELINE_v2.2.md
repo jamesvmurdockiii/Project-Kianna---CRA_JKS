@@ -28,7 +28,7 @@ CRA has a bounded v2.2 host-side software baseline for multi-timescale fading-me
 
 ## Tier 5.19c Promotion / Regression Summary
 
-- Output: `/Users/james/JKS:CRA/controlled_test_output/tier5_19c_20260505_fading_memory_regression`
+- Output: `<repo>/controlled_test_output/tier5_19c_20260505_fading_memory_regression`
 - Status: `pass`
 - Runtime seconds: `1563.5435204999999`
 - Criteria passed: `11` / `11`
@@ -107,9 +107,9 @@ CRA has a bounded v2.2 host-side software baseline for multi-timescale fading-me
 
 ## Files Frozen
 
-- `/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.2.json`
-- `/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.2.md`
-- `/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.2_STUDY_REGISTRY.snapshot.json`
+- `<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.2.json`
+- `<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.2.md`
+- `<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.2_STUDY_REGISTRY.snapshot.json`
 
 ## Next Recommended Evidence
 

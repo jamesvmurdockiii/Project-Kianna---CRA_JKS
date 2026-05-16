@@ -1,13 +1,13 @@
 {
   "artifacts": {
-    "capsule_config_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_21a_20260430_prepared/jobmanager_capsule/capsule_config.json",
-    "capsule_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_21a_20260430_prepared/jobmanager_capsule",
-    "comparisons_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_21a_20260430_prepared/tier4_21a_comparisons.csv",
-    "expected_outputs_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_21a_20260430_prepared/jobmanager_capsule/expected_outputs.json",
-    "jobmanager_readme": "/Users/james/JKS:CRA/controlled_test_output/tier4_21a_20260430_prepared/jobmanager_capsule/README_JOBMANAGER.md",
-    "manifest_json": "/Users/james/JKS:CRA/controlled_test_output/tier4_21a_20260430_prepared/tier4_21a_results.json",
-    "report_md": "/Users/james/JKS:CRA/controlled_test_output/tier4_21a_20260430_prepared/tier4_21a_report.md",
-    "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier4_21a_20260430_prepared/tier4_21a_summary.csv"
+    "capsule_config_json": "<repo>/controlled_test_output/tier4_21a_20260430_prepared/jobmanager_capsule/capsule_config.json",
+    "capsule_dir": "<repo>/controlled_test_output/tier4_21a_20260430_prepared/jobmanager_capsule",
+    "comparisons_csv": "<repo>/controlled_test_output/tier4_21a_20260430_prepared/tier4_21a_comparisons.csv",
+    "expected_outputs_json": "<repo>/controlled_test_output/tier4_21a_20260430_prepared/jobmanager_capsule/expected_outputs.json",
+    "jobmanager_readme": "<repo>/controlled_test_output/tier4_21a_20260430_prepared/jobmanager_capsule/README_JOBMANAGER.md",
+    "manifest_json": "<repo>/controlled_test_output/tier4_21a_20260430_prepared/tier4_21a_results.json",
+    "report_md": "<repo>/controlled_test_output/tier4_21a_20260430_prepared/tier4_21a_report.md",
+    "summary_csv": "<repo>/controlled_test_output/tier4_21a_20260430_prepared/tier4_21a_summary.csv"
   },
   "criteria": [
     {
@@ -23,10 +23,10 @@
       "value": {
         "action": "already_canonical",
         "aliases_checked": [
-          "/Users/james/JKS:CRA/coral-reef-spinnaker",
-          "/Users/james/JKS:CRA/coral reef spinnaker"
+          "<repo>/coral-reef-spinnaker",
+          "<repo>/coral reef spinnaker"
         ],
-        "canonical_package": "/Users/james/JKS:CRA/coral_reef_spinnaker",
+        "canonical_package": "<repo>/coral_reef_spinnaker",
         "canonical_package_exists": true
       }
     },
@@ -35,7 +35,7 @@
       "passed": true,
       "rule": "status == pass locally OR fresh run-hardware",
       "value": {
-        "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier4_20c_20260430_v2_1_bridge_three_seed_hardware_pass_ingested/tier4_20c_results.json",
+        "manifest": "<repo>/controlled_test_output/tier4_20c_20260430_v2_1_bridge_three_seed_hardware_pass_ingested/tier4_20c_results.json",
         "mode": "prepare",
         "status": "pass"
       }
@@ -84,7 +84,7 @@
   "failure_reason": "",
   "generated_at_utc": "2026-04-30T15:52:15+00:00",
   "mode": "prepare",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier4_21a_20260430_prepared",
+  "output_dir": "<repo>/controlled_test_output/tier4_21a_20260430_prepared",
   "status": "prepared",
   "summary": {
     "baseline": "v2.1",

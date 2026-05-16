@@ -2,7 +2,7 @@
 
 - Generated: `2026-04-29T19:44:14+00:00`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier5_17d_20260429_194414`
+- Output directory: `<repo>/controlled_test_output/tier5_17d_20260429_194414`
 - Tasks: `masked_code_binding`
 - Seeds: `[42]`
 

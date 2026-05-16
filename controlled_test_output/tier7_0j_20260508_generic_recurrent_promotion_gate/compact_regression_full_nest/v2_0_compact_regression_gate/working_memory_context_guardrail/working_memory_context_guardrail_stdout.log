@@ -299,6 +299,6 @@
 [tier5.14] subsuite=routing task=context_reentry_routing model=stdp_only_snn seed=44
 {
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_0j_20260508_generic_recurrent_promotion_gate/compact_regression_full_nest/v2_0_compact_regression_gate/working_memory_context_guardrail",
+  "output_dir": "<repo>/controlled_test_output/tier7_0j_20260508_generic_recurrent_promotion_gate/compact_regression_full_nest/v2_0_compact_regression_gate/working_memory_context_guardrail",
   "failure_reason": ""
 }

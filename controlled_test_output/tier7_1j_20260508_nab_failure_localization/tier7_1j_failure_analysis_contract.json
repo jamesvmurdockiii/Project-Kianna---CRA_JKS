@@ -24,7 +24,7 @@
     "not hardware/native transfer",
     "not AGI/ASI evidence"
   ],
-  "prior_gate": "/Users/james/JKS:CRA/controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation/tier7_1i_results.json",
+  "prior_gate": "<repo>/controlled_test_output/tier7_1i_20260508_nab_fairness_confirmation/tier7_1i_results.json",
   "question": "Why does rolling z-score win the broader NAB aggregate while v2.3 remains sham-separated and localized?",
   "selected_files": [
     "artificialWithAnomaly/art_daily_flatmiddle.csv",

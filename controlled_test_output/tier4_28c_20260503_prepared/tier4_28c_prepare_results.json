@@ -7,7 +7,7 @@
   "output_dir": "controlled_test_output/tier4_28c_20260503_prepared",
   "summary": {
     "upload_bundle": "controlled_test_output/tier4_28c_20260503_prepared/ebrains_upload_bundle/cra_428h",
-    "stable_upload_folder": "/Users/james/JKS:CRA/ebrains_jobs/cra_428h",
+    "stable_upload_folder": "<repo>/ebrains_jobs/cra_428h",
     "job_command": "cra_428h/experiments/tier4_28c_delayed_cue_repeatability.py --mode run-hardware --seeds 42,43,44",
     "what_i_need_from_user": "Upload cra_428h to EBRAINS/JobManager and run the emitted command for seeds 42, 43, 44.",
     "claim_boundary": "Local package preparation only. NOT hardware evidence."
@@ -51,7 +51,7 @@
     },
     {
       "name": "stable upload folder created",
-      "value": "/Users/james/JKS:CRA/ebrains_jobs/cra_428h",
+      "value": "<repo>/ebrains_jobs/cra_428h",
       "rule": "exists",
       "passed": true
     }

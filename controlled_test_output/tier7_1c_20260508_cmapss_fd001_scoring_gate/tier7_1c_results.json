@@ -22,7 +22,7 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_results.json"
+      "value": "<repo>/controlled_test_output/tier7_1b_20260508_cmapss_source_data_preflight/tier7_1b_results.json"
     },
     {
       "name": "Tier 7.1b preflight passed",
@@ -320,7 +320,7 @@
     }
   ],
   "next_step": "Run Tier 7.1d C-MAPSS failure analysis / adapter repair before adding mechanisms or moving hardware. Localize whether the compact gap comes from scalar PCA1 compression, train-prefix readout policy, target/reset policy, a missing multichannel CRA adapter interface, or a real v2.3 limitation on this public adapter.",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_1c_20260508_cmapss_fd001_scoring_gate",
+  "output_dir": "<repo>/controlled_test_output/tier7_1c_20260508_cmapss_fd001_scoring_gate",
   "runner_revision": "tier7_1c_cmapss_fd001_scoring_gate_20260508_0001",
   "seed_diagnostics": [
     {

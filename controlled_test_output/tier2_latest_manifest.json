@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.323717+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.482909+00:00",
   "source_generated_at_utc": "2026-04-26T19:58:35+00:00",
   "registry_entry_id": "tier2_learning",
   "tier": "Tier 2 - learning proof tests",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier2_20260426_155821",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier2_20260426_155821/tier2_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier2_20260426_155821/tier2_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier2_20260426_155821/tier2_summary.csv",
+  "output_dir": "controlled_test_output/tier2_20260426_155821",
+  "manifest": "controlled_test_output/tier2_20260426_155821/tier2_results.json",
+  "report": "controlled_test_output/tier2_20260426_155821/tier2_report.md",
+  "summary_csv": "controlled_test_output/tier2_20260426_155821/tier2_summary.csv",
   "canonical": true,
   "claim": "Fixed pattern, delayed reward, and nonstationary switch tasks learn above threshold.",
   "caveat": "Positive-control learning evidence depends on the controlled synthetic task definitions."

@@ -37,7 +37,7 @@
     43,
     44
   ],
-  "source_contract": "/Users/james/JKS:CRA/controlled_test_output/tier7_6a_20260509_long_horizon_planning_contract/tier7_6a_results.json",
+  "source_contract": "<repo>/controlled_test_output/tier7_6a_20260509_long_horizon_planning_contract/tier7_6a_results.json",
   "splits": {
     "planning_hidden_holdout": 5,
     "planning_ood_holdout": 4,

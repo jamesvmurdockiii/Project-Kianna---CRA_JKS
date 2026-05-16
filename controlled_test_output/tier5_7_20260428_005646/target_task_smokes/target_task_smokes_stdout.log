@@ -10,14 +10,14 @@
 [tier5.6] steps=80 task=hard_noisy_switching candidate=online_logistic_regression__logistic_l2_0_logistic_lr_0p05 seed=42
 {
   "status": "pass",
-  "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005646/target_task_smokes",
-  "manifest": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005646/target_task_smokes/tier5_6_results.json",
-  "report": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005646/target_task_smokes/tier5_6_report.md",
-  "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005646/target_task_smokes/tier5_6_summary.csv",
-  "comparisons_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005646/target_task_smokes/tier5_6_comparisons.csv",
-  "best_profiles_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005646/target_task_smokes/tier5_6_best_profiles.csv",
-  "candidate_budget_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005646/target_task_smokes/tier5_6_candidate_budget.csv",
-  "per_seed_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005646/target_task_smokes/tier5_6_per_seed.csv",
-  "fairness_contract_json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier5_7_20260428_005646/target_task_smokes/tier5_6_fairness_contract.json",
+  "output_dir": "<repo>/controlled_test_output/tier5_7_20260428_005646/target_task_smokes",
+  "manifest": "<repo>/controlled_test_output/tier5_7_20260428_005646/target_task_smokes/tier5_6_results.json",
+  "report": "<repo>/controlled_test_output/tier5_7_20260428_005646/target_task_smokes/tier5_6_report.md",
+  "summary_csv": "<repo>/controlled_test_output/tier5_7_20260428_005646/target_task_smokes/tier5_6_summary.csv",
+  "comparisons_csv": "<repo>/controlled_test_output/tier5_7_20260428_005646/target_task_smokes/tier5_6_comparisons.csv",
+  "best_profiles_csv": "<repo>/controlled_test_output/tier5_7_20260428_005646/target_task_smokes/tier5_6_best_profiles.csv",
+  "candidate_budget_csv": "<repo>/controlled_test_output/tier5_7_20260428_005646/target_task_smokes/tier5_6_candidate_budget.csv",
+  "per_seed_csv": "<repo>/controlled_test_output/tier5_7_20260428_005646/target_task_smokes/tier5_6_per_seed.csv",
+  "fairness_contract_json": "<repo>/controlled_test_output/tier5_7_20260428_005646/target_task_smokes/tier5_6_fairness_contract.json",
   "failure_reason": ""
 }

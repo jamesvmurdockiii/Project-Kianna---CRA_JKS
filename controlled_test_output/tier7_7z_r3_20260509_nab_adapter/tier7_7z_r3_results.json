@@ -73,7 +73,7 @@
   "mean_ratio": 1.0945,
   "next_gate": "Tier 4 hardware transfer",
   "outcome": "nab_partial_signal",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7z_r3_20260509_nab_adapter",
+  "output_dir": "<repo>/controlled_test_output/tier7_7z_r3_20260509_nab_adapter",
   "runner_revision": "tier7_7z_r3_nab_adapter_20260509_0001",
   "status": "pass",
   "stream_summary": {

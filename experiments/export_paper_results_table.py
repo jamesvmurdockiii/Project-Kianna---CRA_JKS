@@ -113,6 +113,13 @@ def rel(path: str | None) -> str:
         return str(p)
 
 
+def repo_path(path: Path) -> str:
+    try:
+        return str(path.relative_to(ROOT))
+    except ValueError:
+        return str(path)
+
+
 def markdown_escape(value: Any) -> str:
     text = "" if value is None else str(value)
     return text.replace("|", "\\|").replace("\n", " ")
@@ -507,7 +514,7 @@ def main() -> None:
         raise SystemExit("No registry entries found")
     write_csv_table(rows)
     write_markdown(registry, rows)
-    print(json.dumps({"markdown": str(DOC_PATH), "csv": str(CSV_PATH), "rows": len(rows)}, indent=2))
+    print(json.dumps({"markdown": repo_path(DOC_PATH), "csv": repo_path(CSV_PATH), "rows": len(rows)}, indent=2))
 
 
 if __name__ == "__main__":

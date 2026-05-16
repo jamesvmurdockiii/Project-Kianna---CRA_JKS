@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-16T15:45:06.546059+00:00",
+  "generated_at_utc": "2026-05-16T19:49:37.691223+00:00",
   "source_generated_at_utc": "2026-05-09T17:17:28+00:00",
   "registry_entry_id": "tier7_7p_cra_native_temporal_interface_internalization_contract",
   "tier": "Tier 7.7p - CRA-Native Temporal-Interface Internalization Contract",
   "status": "pass",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7p_20260509_cra_native_temporal_interface_internalization_contract",
-  "manifest": "/Users/james/JKS:CRA/controlled_test_output/tier7_7p_20260509_cra_native_temporal_interface_internalization_contract/tier7_7p_results.json",
-  "report": "/Users/james/JKS:CRA/controlled_test_output/tier7_7p_20260509_cra_native_temporal_interface_internalization_contract/tier7_7p_report.md",
-  "summary_csv": "/Users/james/JKS:CRA/controlled_test_output/tier7_7p_20260509_cra_native_temporal_interface_internalization_contract/tier7_7p_summary.csv",
+  "output_dir": "controlled_test_output/tier7_7p_20260509_cra_native_temporal_interface_internalization_contract",
+  "manifest": "controlled_test_output/tier7_7p_20260509_cra_native_temporal_interface_internalization_contract/tier7_7p_results.json",
+  "report": "controlled_test_output/tier7_7p_20260509_cra_native_temporal_interface_internalization_contract/tier7_7p_report.md",
+  "summary_csv": "controlled_test_output/tier7_7p_20260509_cra_native_temporal_interface_internalization_contract/tier7_7p_summary.csv",
   "canonical": true,
   "claim": "Tier 7.7p locks a CRA-native temporal-interface internalization candidate: sparse causal temporal expansion with delay/trace and nonlinear branch units must beat or cleanly separate from random-projection and nonlinear-lag controls before any promotion.",
   "caveat": "Contract evidence only; not a mechanism implementation, not a model score, not a mechanism promotion, not a baseline freeze, not hardware/native transfer, not external-baseline superiority, and not broad public usefulness evidence."

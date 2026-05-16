@@ -59,7 +59,7 @@
       "pass": true,
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_7o_20260509_generic_temporal_interface_reframing_contract/tier7_7o_results.json"
+      "value": "<repo>/controlled_test_output/tier7_7o_20260509_generic_temporal_interface_reframing_contract/tier7_7o_results.json"
     },
     {
       "criterion": "Tier 7.7o prerequisite passed",
@@ -510,9 +510,9 @@
       "rule": "Margins conflict or confidence is insufficient."
     }
   ],
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7p_20260509_cra_native_temporal_interface_internalization_contract",
+  "output_dir": "<repo>/controlled_test_output/tier7_7p_20260509_cra_native_temporal_interface_internalization_contract",
   "prerequisite": {
-    "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_7o_20260509_generic_temporal_interface_reframing_contract/tier7_7o_results.json",
+    "path": "<repo>/controlled_test_output/tier7_7o_20260509_generic_temporal_interface_reframing_contract/tier7_7o_results.json",
     "sha256": "9a331724c1d461d88dd4465823b9013530a3c8cdef5a70a28d0230524a5ea837",
     "status": "pass"
   },

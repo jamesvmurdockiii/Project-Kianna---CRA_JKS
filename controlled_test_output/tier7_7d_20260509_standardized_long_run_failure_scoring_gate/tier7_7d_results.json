@@ -310,7 +310,7 @@
       "narma10"
     ]
   },
-  "contract_results": "/Users/james/JKS:CRA/controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract/tier7_7c_results.json",
+  "contract_results": "<repo>/controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract/tier7_7c_results.json",
   "contract_revision": "tier7_7c_standardized_long_run_failure_contract_20260509_0001",
   "contract_status": "pass",
   "criteria": [
@@ -319,7 +319,7 @@
       "note": "",
       "passed": true,
       "rule": "exists and status pass",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract/tier7_7c_results.json"
+      "value": "<repo>/controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract/tier7_7c_results.json"
     },
     {
       "name": "Tier 7.7c scoring authorization",
@@ -444,7 +444,7 @@
   "fairness_contract": {
     "baseline_freeze_authorized_by_runner": false,
     "candidate": "cra_v2_5_scoreboard_candidate",
-    "contract_source": "/Users/james/JKS:CRA/controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract/tier7_7c_long_run_contract.json",
+    "contract_source": "<repo>/controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract/tier7_7c_long_run_contract.json",
     "external_baselines": [
       "persistence",
       "online_lms",
@@ -462,7 +462,7 @@
       16000,
       32000
     ],
-    "long_run_contract": "/Users/james/JKS:CRA/controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract/tier7_7c_results.json",
+    "long_run_contract": "<repo>/controlled_test_output/tier7_7c_20260509_standardized_long_run_failure_contract/tier7_7c_results.json",
     "no_test_tuning": true,
     "omitted_contract_baselines": [
       {
@@ -473,8 +473,8 @@
     "primary_scoreboard": "Mackey-Glass + Lorenz + NARMA10",
     "reference": "cra_v2_3_generic_recurrent_reference",
     "secondary_public_confirmation": {
-      "cmapss_source": "/Users/james/JKS:CRA/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_results.json",
-      "nab_source": "/Users/james/JKS:CRA/controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision/tier7_1m_results.json",
+      "cmapss_source": "<repo>/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_results.json",
+      "nab_source": "<repo>/controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision/tier7_1m_results.json",
       "rule": "secondary rows are reported only; they cannot rescue failed standardized core"
     },
     "seeds": [
@@ -747,21 +747,21 @@
     16000,
     32000
   ],
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_7d_20260509_standardized_long_run_failure_scoring_gate",
+  "output_dir": "<repo>/controlled_test_output/tier7_7d_20260509_standardized_long_run_failure_scoring_gate",
   "runner_revision": "tier7_7d_standardized_long_run_failure_scoring_gate_20260509_0001",
   "runtime_seconds": 85.846695833,
   "secondary_confirmation": [
     {
       "family": "cmapss_fd001_maintenance_utility",
       "note": "Secondary support only; cannot rescue failed Mackey/Lorenz/NARMA core.",
-      "source": "/Users/james/JKS:CRA/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_results.json",
+      "source": "<repo>/controlled_test_output/tier7_4g_20260509_policy_action_confirmation_reference_separation/tier7_4g_results.json",
       "status": "supportive_prior_v2_4_policy_evidence",
       "supports_strong_pass_secondary_clause": true
     },
     {
       "family": "nab_heldout_alarm_action_cost",
       "note": "Prior NAB closeout is preserved; no same-subset retuning in 7.7b.",
-      "source": "/Users/james/JKS:CRA/controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision/tier7_1m_results.json",
+      "source": "<repo>/controlled_test_output/tier7_1m_20260508_nab_closeout_mechanism_return_decision/tier7_1m_results.json",
       "status": "nab_claim_narrowed_return_to_general_mechanisms",
       "supports_strong_pass_secondary_clause": false
     }

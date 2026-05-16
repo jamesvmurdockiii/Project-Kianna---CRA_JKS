@@ -2,7 +2,7 @@
 
 - Generated: `2026-05-09T03:11:54+00:00`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier7_5a_20260509_curriculum_environment_contract`
+- Output directory: `<repo>/controlled_test_output/tier7_5a_20260509_curriculum_environment_contract`
 - Runner revision: `tier7_5a_curriculum_environment_contract_20260509_0001`
 
 ## Boundary
@@ -19,7 +19,7 @@ This is a contract-only gate. It does not implement curriculum generation, score
 
 | Criterion | Value | Rule | Pass | Details |
 | --- | --- | --- | --- | --- |
-| tier7_4h_prerequisite_exists | `True` | must exist | yes | /Users/james/JKS:CRA/controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout/tier7_4h_results.json |
+| tier7_4h_prerequisite_exists | `True` | must exist | yes | <repo>/controlled_test_output/tier7_4h_20260509_policy_action_attribution_closeout/tier7_4h_results.json |
 | tier7_4h_prerequisite_passed | `PASS` | case-insensitive == PASS | yes |  |
 | task_family_count | `6` | >= 5 | yes |  |
 | difficulty_levels_defined | `5` | >= 4 | yes |  |

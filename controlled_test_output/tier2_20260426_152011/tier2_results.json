@@ -1,17 +1,17 @@
 {
   "artifacts": {
-    "report_md": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_152011/tier2_report.md",
-    "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_152011/tier2_summary.csv"
+    "report_md": "<repo>/controlled_test_output/tier2_20260426_152011/tier2_report.md",
+    "summary_csv": "<repo>/controlled_test_output/tier2_20260426_152011/tier2_summary.csv"
   },
   "backend": "nest",
   "command": "experiments/tier2_learning.py --tests all --stop-on-fail",
   "generated_at_utc": "2026-04-26T19:20:25+00:00",
-  "output_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_152011",
+  "output_dir": "<repo>/controlled_test_output/tier2_20260426_152011",
   "results": [
     {
       "artifacts": {
-        "plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_152011/fixed_pattern_timeseries.png",
-        "timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_152011/fixed_pattern_timeseries.csv"
+        "plot_png": "<repo>/controlled_test_output/tier2_20260426_152011/fixed_pattern_timeseries.png",
+        "timeseries_csv": "<repo>/controlled_test_output/tier2_20260426_152011/fixed_pattern_timeseries.csv"
       },
       "criteria": [
         {
@@ -257,8 +257,8 @@
     },
     {
       "artifacts": {
-        "plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_152011/delayed_reward_timeseries.png",
-        "timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_152011/delayed_reward_timeseries.csv"
+        "plot_png": "<repo>/controlled_test_output/tier2_20260426_152011/delayed_reward_timeseries.png",
+        "timeseries_csv": "<repo>/controlled_test_output/tier2_20260426_152011/delayed_reward_timeseries.csv"
       },
       "criteria": [
         {
@@ -514,8 +514,8 @@
     },
     {
       "artifacts": {
-        "plot_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_152011/nonstationary_switch_timeseries.png",
-        "timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier2_20260426_152011/nonstationary_switch_timeseries.csv"
+        "plot_png": "<repo>/controlled_test_output/tier2_20260426_152011/nonstationary_switch_timeseries.png",
+        "timeseries_csv": "<repo>/controlled_test_output/tier2_20260426_152011/nonstationary_switch_timeseries.csv"
       },
       "criteria": [
         {

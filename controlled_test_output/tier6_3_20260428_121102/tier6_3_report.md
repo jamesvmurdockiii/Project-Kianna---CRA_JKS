@@ -3,7 +3,7 @@
 - Generated: `2026-04-28T16:11:05+00:00`
 - Backend: `mock`
 - Status: **PASS**
-- Output directory: `/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier6_3_20260428_121102`
+- Output directory: `<repo>/controlled_test_output/tier6_3_20260428_121102`
 
 Tier 6.3 defends the Tier 6.1 lifecycle/self-scaling result against capacity, random-event, bookkeeping, trophic, dopamine, and plasticity sham explanations.
 

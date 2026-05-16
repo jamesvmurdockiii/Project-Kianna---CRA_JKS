@@ -9,7 +9,7 @@
 - Variants: `all`
 - Selected baselines: `sign_persistence,online_perceptron`
 - Smoke mode: `True`
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier5_9a_20260428_162252`
+- Output directory: `<repo>/controlled_test_output/tier5_9a_20260428_162252`
 
 Tier 5.9a tests whether a host-side macro eligibility trace earns promotion beyond the frozen v1.4 PendingHorizon delayed-credit path.
 

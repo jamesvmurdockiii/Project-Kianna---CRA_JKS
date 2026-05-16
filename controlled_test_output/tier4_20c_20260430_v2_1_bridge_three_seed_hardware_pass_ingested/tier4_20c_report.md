@@ -3,7 +3,7 @@
 - Generated: `2026-04-30T04:36:48+00:00`
 - Mode: `run-hardware`
 - Status: **PASS**
-- Output directory: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output`
+- Output directory: `<jobmanager_tmp>`
 
 Tier 4.20c repeats the passed Tier 4.20b v2.1 bridge/transport path across seeds `42`, `43`, and `44`.
 
@@ -62,8 +62,8 @@ Correction: raw EBRAINS wrapper reported `FAIL` only because the fresh source bu
 | Criterion | Value | Rule | Pass |
 | --- | --- | --- | --- |
 | Tier 4.20c runner revision | `tier4_20c_inprocess_no_baselines_20260430_0000` | `expected current source` | yes |
-| source package import path available | `{'canonical_package': '/tmp/job5149451337032864846.tmp/cra_420c/coral_reef_spinnaker', 'canonical_package_exists': True, 'action': 'already_canonical', 'aliases_checked': ['/tmp/job5149451337032864846.tmp/cra_420c/coral-reef-spinnaker', '/tmp/job5149451337032864846.tmp/cra_420c/coral reef spinnaker']}` | `coral_reef_spinnaker exists` | yes |
-| Tier 4.16 child hardware runner exists | `/tmp/job5149451337032864846.tmp/cra_420c/experiments/tier4_harder_spinnaker_capsule.py` | `exists` | yes |
+| source package import path available | `{'canonical_package': '<jobmanager_tmp>', 'canonical_package_exists': True, 'action': 'already_canonical', 'aliases_checked': ['<jobmanager_tmp>', '<jobmanager_tmp> reef spinnaker']}` | `coral_reef_spinnaker exists` | yes |
+| Tier 4.16 child hardware runner exists | `<jobmanager_tmp>` | `exists` | yes |
 | Tier 4.20b prerequisite satisfied for execution context | `{'status': 'missing', 'manifest': None, 'mode': 'run-hardware', 'raw_wrapper_false_fail': True}` | `status == pass locally OR fresh run-hardware bundle` | yes |
 | three predeclared seeds requested | `[42, 43, 44]` | `== [42, 43, 44]` | yes |
 | tasks match v2.1 bridge repeat | `['delayed_cue', 'hard_noisy_switching']` | `delayed_cue + hard_noisy_switching` | yes |
@@ -74,7 +74,7 @@ Correction: raw EBRAINS wrapper reported `FAIL` only because the fresh source bu
 | delayed_lr_0_20 selected | `0.2` | `== 0.20` | yes |
 | mode has explicit claim boundary | `run-hardware` | `prepare|run-hardware|ingest` | yes |
 | child Tier 4.16 in-process runner exited cleanly | `0` | `== 0` | yes |
-| child Tier 4.16 manifest exists | `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16/tier4_16_results.json` | `exists` | yes |
+| child Tier 4.16 manifest exists | `<jobmanager_tmp>` | `exists` | yes |
 | child hardware status passed | `pass` | `== pass` | yes |
 | child hardware was attempted | `True` | `== true` | yes |
 | child seeds match repeat plan | `[42, 43, 44]` | `== [42, 43, 44]` | yes |
@@ -88,30 +88,30 @@ Correction: raw EBRAINS wrapper reported `FAIL` only because the fresh source bu
 
 ## Artifacts
 
-- `bridge_profile_json`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/tier4_20c_bridge_profile.json`
-- `child_output_dir`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16`
-- `child_spinnaker_hardware_delayed_cue_seed42_timeseries.csv`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16/spinnaker_hardware_delayed_cue_seed42_timeseries.csv`
-- `child_spinnaker_hardware_delayed_cue_seed42_timeseries.png`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16/spinnaker_hardware_delayed_cue_seed42_timeseries.png`
-- `child_spinnaker_hardware_delayed_cue_seed43_timeseries.csv`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16/spinnaker_hardware_delayed_cue_seed43_timeseries.csv`
-- `child_spinnaker_hardware_delayed_cue_seed43_timeseries.png`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16/spinnaker_hardware_delayed_cue_seed43_timeseries.png`
-- `child_spinnaker_hardware_delayed_cue_seed44_timeseries.csv`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16/spinnaker_hardware_delayed_cue_seed44_timeseries.csv`
-- `child_spinnaker_hardware_delayed_cue_seed44_timeseries.png`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16/spinnaker_hardware_delayed_cue_seed44_timeseries.png`
-- `child_spinnaker_hardware_hard_noisy_switching_seed42_timeseries.csv`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16/spinnaker_hardware_hard_noisy_switching_seed42_timeseries.csv`
-- `child_spinnaker_hardware_hard_noisy_switching_seed42_timeseries.png`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16/spinnaker_hardware_hard_noisy_switching_seed42_timeseries.png`
-- `child_spinnaker_hardware_hard_noisy_switching_seed43_timeseries.csv`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16/spinnaker_hardware_hard_noisy_switching_seed43_timeseries.csv`
-- `child_spinnaker_hardware_hard_noisy_switching_seed43_timeseries.png`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16/spinnaker_hardware_hard_noisy_switching_seed43_timeseries.png`
-- `child_spinnaker_hardware_hard_noisy_switching_seed44_timeseries.csv`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16/spinnaker_hardware_hard_noisy_switching_seed44_timeseries.csv`
-- `child_spinnaker_hardware_hard_noisy_switching_seed44_timeseries.png`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16/spinnaker_hardware_hard_noisy_switching_seed44_timeseries.png`
-- `child_stderr_log`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/tier4_20c_child_stderr.log`
-- `child_stdout_log`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/tier4_20c_child_stdout.log`
-- `child_tier4_16_hardware_summary.png`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16/tier4_16_hardware_summary.png`
-- `child_tier4_16_report.md`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16/tier4_16_report.md`
-- `child_tier4_16_results.json`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16/tier4_16_results.json`
-- `child_tier4_16_summary.csv`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16/tier4_16_summary.csv`
-- `child_tier4_16_task_summary.csv`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/child_tier4_16/tier4_16_task_summary.csv`
-- `report_md`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/tier4_20c_report.md`
-- `results_json`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/tier4_20c_results.json`
-- `summary_csv`: `/tmp/job5149451337032864846.tmp/tier4_20c_job_output/tier4_20c_summary.csv`
+- `bridge_profile_json`: `<jobmanager_tmp>`
+- `child_output_dir`: `<jobmanager_tmp>`
+- `child_spinnaker_hardware_delayed_cue_seed42_timeseries.csv`: `<jobmanager_tmp>`
+- `child_spinnaker_hardware_delayed_cue_seed42_timeseries.png`: `<jobmanager_tmp>`
+- `child_spinnaker_hardware_delayed_cue_seed43_timeseries.csv`: `<jobmanager_tmp>`
+- `child_spinnaker_hardware_delayed_cue_seed43_timeseries.png`: `<jobmanager_tmp>`
+- `child_spinnaker_hardware_delayed_cue_seed44_timeseries.csv`: `<jobmanager_tmp>`
+- `child_spinnaker_hardware_delayed_cue_seed44_timeseries.png`: `<jobmanager_tmp>`
+- `child_spinnaker_hardware_hard_noisy_switching_seed42_timeseries.csv`: `<jobmanager_tmp>`
+- `child_spinnaker_hardware_hard_noisy_switching_seed42_timeseries.png`: `<jobmanager_tmp>`
+- `child_spinnaker_hardware_hard_noisy_switching_seed43_timeseries.csv`: `<jobmanager_tmp>`
+- `child_spinnaker_hardware_hard_noisy_switching_seed43_timeseries.png`: `<jobmanager_tmp>`
+- `child_spinnaker_hardware_hard_noisy_switching_seed44_timeseries.csv`: `<jobmanager_tmp>`
+- `child_spinnaker_hardware_hard_noisy_switching_seed44_timeseries.png`: `<jobmanager_tmp>`
+- `child_stderr_log`: `<jobmanager_tmp>`
+- `child_stdout_log`: `<jobmanager_tmp>`
+- `child_tier4_16_hardware_summary.png`: `<jobmanager_tmp>`
+- `child_tier4_16_report.md`: `<jobmanager_tmp>`
+- `child_tier4_16_results.json`: `<jobmanager_tmp>`
+- `child_tier4_16_summary.csv`: `<jobmanager_tmp>`
+- `child_tier4_16_task_summary.csv`: `<jobmanager_tmp>`
+- `report_md`: `<jobmanager_tmp>`
+- `results_json`: `<jobmanager_tmp>`
+- `summary_csv`: `<jobmanager_tmp>`
 
 
 ## Raw False-Fail Preservation

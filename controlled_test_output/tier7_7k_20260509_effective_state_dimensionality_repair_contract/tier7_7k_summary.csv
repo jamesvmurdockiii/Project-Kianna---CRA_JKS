@@ -1,5 +1,5 @@
 name,criterion,value,operator,rule,passed,pass,details,note
-Tier 7.7j prerequisite exists,Tier 7.7j prerequisite exists,/Users/james/JKS:CRA/controlled_test_output/tier7_7j_20260509_capacity_sham_separation_scoring_gate/tier7_7j_results.json,exists,exists,True,True,,
+Tier 7.7j prerequisite exists,Tier 7.7j prerequisite exists,<repo>/controlled_test_output/tier7_7j_20260509_capacity_sham_separation_scoring_gate/tier7_7j_results.json,exists,exists,True,True,,
 Tier 7.7j prerequisite passed,Tier 7.7j prerequisite passed,pass,== pass,== pass,True,True,,
 Tier 7.7j low-rank outcome,Tier 7.7j low-rank outcome,low_rank_collapse_confirmed,== low_rank_collapse_confirmed,== low_rank_collapse_confirmed,True,True,,
 question locked,question locked,"Can a predeclared state-diversity repair increase effective recurrent state dimensionality and improve Lorenz without relying on generic high-dimensional bases, leakage, or readout concentration?",non-empty,non-empty,True,True,,

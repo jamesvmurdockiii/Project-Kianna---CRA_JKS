@@ -19,14 +19,14 @@
       "note": "",
       "passed": true,
       "rule": "manifest present",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_0e_20260508_length_calibration"
+      "value": "<repo>/controlled_test_output/tier7_0e_20260508_length_calibration"
     },
     {
       "name": "7.0e long scoreboard loaded",
       "note": "",
       "passed": true,
       "rule": "manifest present",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_0e_20260508_length_10000_scoreboard"
+      "value": "<repo>/controlled_test_output/tier7_0e_20260508_length_10000_scoreboard"
     },
     {
       "name": "NARMA finite scan completed",
@@ -370,7 +370,7 @@
       80
     ]
   },
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_0f_20260508_benchmark_protocol_failure_localization",
+  "output_dir": "<repo>/controlled_test_output/tier7_0f_20260508_benchmark_protocol_failure_localization",
   "runner_revision": "tier7_0f_benchmark_protocol_failure_localization_20260508_0001",
   "runtime_seconds": 1.563536875,
   "seed_scan": "42:80",

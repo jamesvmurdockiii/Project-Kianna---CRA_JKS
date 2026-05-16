@@ -3,7 +3,7 @@
   "canonical_run_id": "tier4_13_20260427_011912_hardware_pass",
   "canonicalized_at_utc": "2026-04-27T00:46:26.855544+00:00",
   "source_generated_at_utc": "2026-04-27T00:33:33+00:00",
-  "source_remote_output_dir": "/tmp/job18372215669669985472.tmp/cra_test/controlled_test_output/tier4_13_20260427_011912",
+  "source_remote_output_dir": "<jobmanager_tmp>",
   "status": "pass",
   "pass_interpretation": "PASS",
   "learning_interpretation": "Learned the minimal fixed-pattern hardware capsule: high overall accuracy, perfect tail accuracy, high tail prediction-target correlation, and real spike readback with zero fallback.",
@@ -114,15 +114,15 @@
     }
   ],
   "canonical_artifacts": {
-    "results_json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_results.json",
-    "report_md": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_report.md",
-    "summary_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_summary.csv",
-    "timeseries_csv": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/spinnaker_hardware_seed42_timeseries.csv",
-    "timeseries_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/spinnaker_hardware_seed42_timeseries.png",
-    "summary_png": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/hardware_capsule_summary.png",
-    "remote_manifest_json": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/remote_tier4_13_latest_manifest.json",
-    "spinnaker_provenance_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/spinnaker_reports/2026-04-27-01-19-12-390038",
-    "raw_reports_zip": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/raw_reports/spinnaker_reports_2026-04-27-01-19-12-390038.zip"
+    "results_json": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_results.json",
+    "report_md": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_report.md",
+    "summary_csv": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/tier4_13_summary.csv",
+    "timeseries_csv": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/spinnaker_hardware_seed42_timeseries.csv",
+    "timeseries_png": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/spinnaker_hardware_seed42_timeseries.png",
+    "summary_png": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/hardware_capsule_summary.png",
+    "remote_manifest_json": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/remote_tier4_13_latest_manifest.json",
+    "spinnaker_provenance_dir": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/spinnaker_reports/2026-04-27-01-19-12-390038",
+    "raw_reports_zip": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/raw_reports/spinnaker_reports_2026-04-27-01-19-12-390038.zip"
   },
-  "quarantine_dir": "/Users/james/Kimi_Agent_Spinnaker Neuromorphic Design/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_quarantine_noncanonical"
+  "quarantine_dir": "<repo>/controlled_test_output/tier4_13_20260427_011912_hardware_pass/_quarantine_noncanonical"
 }

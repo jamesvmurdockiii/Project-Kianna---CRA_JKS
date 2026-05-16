@@ -3,7 +3,7 @@
 - Generated: `2026-04-30T17:12:07+00:00`
 - Mode: `ingest`
 - Status: **PASS**
-- Output directory: `/Users/james/JKS:CRA/controlled_test_output/tier4_21a_20260430_keyed_context_memory_seed42_hardware_pass_ingested`
+- Output directory: `<repo>/controlled_test_output/tier4_21a_20260430_keyed_context_memory_seed42_hardware_pass_ingested`
 
 Tier 4.21a is a targeted v2 mechanism bridge probe for keyed context memory. It tests the host-side keyed-memory scheduler through the chunked PyNN/SpiNNaker transport path.
 
@@ -46,7 +46,7 @@ Tier 4.21a is a targeted v2 mechanism bridge probe for keyed context memory. It 
 | Criterion | Value | Rule | Pass |
 | --- | --- | --- | --- |
 | Tier 4.21a runner revision | `tier4_21a_keyed_memory_bridge_20260430_0000` | `expected current source` | yes |
-| source package import path available | `{'action': 'already_canonical', 'aliases_checked': ['/tmp/job3097767355678456774.tmp/cra_421a/coral-reef-spinnaker', '/tmp/job3097767355678456774.tmp/cra_421a/coral reef spinnaker'], 'canonical_package': '/tmp/job3097767355678456774.tmp/cra_421a/coral_reef_spinnaker', 'canonical_package_exists': True}` | `coral_reef_spinnaker exists` | yes |
+| source package import path available | `{'action': 'already_canonical', 'aliases_checked': ['<jobmanager_tmp>', '<jobmanager_tmp> reef spinnaker'], 'canonical_package': '<jobmanager_tmp>', 'canonical_package_exists': True}` | `coral_reef_spinnaker exists` | yes |
 | Tier 4.20c bridge repeat prerequisite | `{'manifest': None, 'mode': 'run-hardware', 'status': 'missing'}` | `status == pass locally OR fresh run-hardware` | yes |
 | keyed context-memory included | `['keyed_context_memory', 'slot_reset_ablation', 'slot_shuffle_ablation', 'wrong_key_ablation']` | `contains keyed_context_memory` | yes |
 | memory ablation included | `['keyed_context_memory', 'slot_reset_ablation', 'slot_shuffle_ablation', 'wrong_key_ablation']` | `contains at least one ablation` | yes |
@@ -65,15 +65,15 @@ Tier 4.21a is a targeted v2 mechanism bridge probe for keyed context memory. It 
 
 ## Artifacts
 
-- `comparisons_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier4_21a_20260430_keyed_context_memory_seed42_hardware_pass_ingested/tier4_21a_comparisons.csv`
-- `context_reentry_interference_keyed_context_memory_seed42_timeseries_csv`: `/tmp/job3097767355678456774.tmp/tier4_21a_job_output/spinnaker_hardware_context_reentry_interference_keyed_context_memory_seed42_timeseries.csv`
-- `context_reentry_interference_keyed_context_memory_seed42_timeseries_png`: `/tmp/job3097767355678456774.tmp/tier4_21a_job_output/spinnaker_hardware_context_reentry_interference_keyed_context_memory_seed42_timeseries.png`
-- `context_reentry_interference_slot_reset_ablation_seed42_timeseries_csv`: `/tmp/job3097767355678456774.tmp/tier4_21a_job_output/spinnaker_hardware_context_reentry_interference_slot_reset_ablation_seed42_timeseries.csv`
-- `context_reentry_interference_slot_reset_ablation_seed42_timeseries_png`: `/tmp/job3097767355678456774.tmp/tier4_21a_job_output/spinnaker_hardware_context_reentry_interference_slot_reset_ablation_seed42_timeseries.png`
-- `context_reentry_interference_slot_shuffle_ablation_seed42_timeseries_csv`: `/tmp/job3097767355678456774.tmp/tier4_21a_job_output/spinnaker_hardware_context_reentry_interference_slot_shuffle_ablation_seed42_timeseries.csv`
-- `context_reentry_interference_slot_shuffle_ablation_seed42_timeseries_png`: `/tmp/job3097767355678456774.tmp/tier4_21a_job_output/spinnaker_hardware_context_reentry_interference_slot_shuffle_ablation_seed42_timeseries.png`
-- `context_reentry_interference_wrong_key_ablation_seed42_timeseries_csv`: `/tmp/job3097767355678456774.tmp/tier4_21a_job_output/spinnaker_hardware_context_reentry_interference_wrong_key_ablation_seed42_timeseries.csv`
-- `context_reentry_interference_wrong_key_ablation_seed42_timeseries_png`: `/tmp/job3097767355678456774.tmp/tier4_21a_job_output/spinnaker_hardware_context_reentry_interference_wrong_key_ablation_seed42_timeseries.png`
-- `manifest_json`: `/Users/james/JKS:CRA/controlled_test_output/tier4_21a_20260430_keyed_context_memory_seed42_hardware_pass_ingested/tier4_21a_results.json`
-- `report_md`: `/Users/james/JKS:CRA/controlled_test_output/tier4_21a_20260430_keyed_context_memory_seed42_hardware_pass_ingested/tier4_21a_report.md`
-- `summary_csv`: `/Users/james/JKS:CRA/controlled_test_output/tier4_21a_20260430_keyed_context_memory_seed42_hardware_pass_ingested/tier4_21a_summary.csv`
+- `comparisons_csv`: `<repo>/controlled_test_output/tier4_21a_20260430_keyed_context_memory_seed42_hardware_pass_ingested/tier4_21a_comparisons.csv`
+- `context_reentry_interference_keyed_context_memory_seed42_timeseries_csv`: `<jobmanager_tmp>`
+- `context_reentry_interference_keyed_context_memory_seed42_timeseries_png`: `<jobmanager_tmp>`
+- `context_reentry_interference_slot_reset_ablation_seed42_timeseries_csv`: `<jobmanager_tmp>`
+- `context_reentry_interference_slot_reset_ablation_seed42_timeseries_png`: `<jobmanager_tmp>`
+- `context_reentry_interference_slot_shuffle_ablation_seed42_timeseries_csv`: `<jobmanager_tmp>`
+- `context_reentry_interference_slot_shuffle_ablation_seed42_timeseries_png`: `<jobmanager_tmp>`
+- `context_reentry_interference_wrong_key_ablation_seed42_timeseries_csv`: `<jobmanager_tmp>`
+- `context_reentry_interference_wrong_key_ablation_seed42_timeseries_png`: `<jobmanager_tmp>`
+- `manifest_json`: `<repo>/controlled_test_output/tier4_21a_20260430_keyed_context_memory_seed42_hardware_pass_ingested/tier4_21a_results.json`
+- `report_md`: `<repo>/controlled_test_output/tier4_21a_20260430_keyed_context_memory_seed42_hardware_pass_ingested/tier4_21a_report.md`
+- `summary_csv`: `<repo>/controlled_test_output/tier4_21a_20260430_keyed_context_memory_seed42_hardware_pass_ingested/tier4_21a_summary.csv`

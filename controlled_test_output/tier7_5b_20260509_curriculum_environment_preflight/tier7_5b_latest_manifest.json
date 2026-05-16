@@ -3,78 +3,78 @@
     {
       "bytes": 8283,
       "name": "baseline_compatibility_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight/tier7_5b_baseline_compatibility.csv",
+      "path": "<repo>/controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight/tier7_5b_baseline_compatibility.csv",
       "sha256": "85b1e76be009301c40dbba4b302e1208962e3ac55c0c10b75403c904a6129cd8"
     },
     {
       "bytes": 365,
       "name": "decision_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight/tier7_5b_decision.csv",
+      "path": "<repo>/controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight/tier7_5b_decision.csv",
       "sha256": "a1491595b760f45a9141984e5c3485fd2c0c362e35d4e7d58ae88ef84c0ddc3d"
     },
     {
       "bytes": 428,
       "name": "decision_json",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight/tier7_5b_decision.json",
+      "path": "<repo>/controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight/tier7_5b_decision.json",
       "sha256": "d5dfe445895b1bb944f8cd24878f6a7723b2eb5860fcc7876696938376ddec38"
     },
     {
       "bytes": 966,
       "name": "generator_manifest_json",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight/tier7_5b_generator_manifest.json",
+      "path": "<repo>/controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight/tier7_5b_generator_manifest.json",
       "sha256": "8e107194fc28fee6f38beb69bff31871a7628a1c32893dd8d6a28bfa42874027"
     },
     {
       "bytes": 68624,
       "name": "hidden_label_hashes_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight/tier7_5b_hidden_label_hashes.csv",
+      "path": "<repo>/controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight/tier7_5b_hidden_label_hashes.csv",
       "sha256": "dc81ba377f9a1bedc22283efcd3f3eba465264dba7cb30e2745193423a9b0b3e"
     },
     {
       "bytes": 271,
       "name": "leakage_checks_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight/tier7_5b_leakage_checks.csv",
+      "path": "<repo>/controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight/tier7_5b_leakage_checks.csv",
       "sha256": "ba8ab9b166b994e3f1d53d38ef536ca64195d5b8820b6855ecdeba808e406c29"
     },
     {
       "bytes": 1943,
       "name": "report_md",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight/tier7_5b_report.md",
+      "path": "<repo>/controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight/tier7_5b_report.md",
       "sha256": "afb4b69db87e92211cdfff8b0830abc178cd2d5ca10ec30b777da8d63425a620"
     },
     {
       "bytes": 6887,
       "name": "results_json",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight/tier7_5b_results.json",
+      "path": "<repo>/controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight/tier7_5b_results.json",
       "sha256": "824ff022bcc992acfbc9a2e8ed871287c87e7016e70e46e041e32cb481265569"
     },
     {
       "bytes": 559,
       "name": "schema_contract_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight/tier7_5b_schema_contract.csv",
+      "path": "<repo>/controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight/tier7_5b_schema_contract.csv",
       "sha256": "68cd803b5a3bf44bb0240de1128034db82c765b1b41642f6aa620957d7799872"
     },
     {
       "bytes": 2266,
       "name": "split_manifest_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight/tier7_5b_split_manifest.csv",
+      "path": "<repo>/controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight/tier7_5b_split_manifest.csv",
       "sha256": "6e78b1ca78e5d280534eabdc47f88d1eb958a14fa0949c792c6bc4bee866fbe5"
     },
     {
       "bytes": 973,
       "name": "summary_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight/tier7_5b_summary.csv",
+      "path": "<repo>/controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight/tier7_5b_summary.csv",
       "sha256": "953c6af4de97da6eaa17bfffc66b1ae2c2fed11e1f38c098df3609bac3c20f3b"
     },
     {
       "bytes": 90644,
       "name": "task_family_streams_csv",
-      "path": "/Users/james/JKS:CRA/controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight/tier7_5b_task_family_streams.csv",
+      "path": "<repo>/controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight/tier7_5b_task_family_streams.csv",
       "sha256": "99fa8d3a0e7a2668fb1a82b3294102fe756fa2261dc9d687aed3e7236af03524"
     }
   ],
   "generated_at_utc": "2026-05-09T03:15:57+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight",
+  "output_dir": "<repo>/controlled_test_output/tier7_5b_20260509_curriculum_environment_preflight",
   "runner_revision": "tier7_5b_curriculum_environment_preflight_20260509_0001",
   "status": "PASS",
   "tier": "Tier 7.5b - Curriculum / Environment Generator Implementation Preflight"

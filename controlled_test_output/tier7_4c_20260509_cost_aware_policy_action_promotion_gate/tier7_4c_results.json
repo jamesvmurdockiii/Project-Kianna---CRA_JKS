@@ -30,18 +30,18 @@
       "nest",
       "--stop-on-fail",
       "--output-dir",
-      "/Users/james/JKS:CRA/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/compact_regression_full_nest"
+      "<repo>/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/compact_regression_full_nest"
     ],
     "failure_reason": "",
-    "manifest_path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/compact_regression_full_nest/tier5_18c_results.json",
+    "manifest_path": "<repo>/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/compact_regression_full_nest/tier5_18c_results.json",
     "name": "compact_regression_full_nest",
-    "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/compact_regression_full_nest",
+    "output_dir": "<repo>/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/compact_regression_full_nest",
     "purpose": "rerun compact v2.x guardrails before any cost-aware policy/action freeze",
     "return_code": 0,
     "runtime_seconds": 1615.01088625,
     "status": "pass",
-    "stderr_path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/compact_regression_full_nest/compact_regression_full_nest_stderr.log",
-    "stdout_path": "/Users/james/JKS:CRA/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/compact_regression_full_nest/compact_regression_full_nest_stdout.log"
+    "stderr_path": "<repo>/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/compact_regression_full_nest/compact_regression_full_nest_stderr.log",
+    "stdout_path": "<repo>/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate/compact_regression_full_nest/compact_regression_full_nest_stdout.log"
   },
   "compact_mode": "full",
   "criteria": [
@@ -57,14 +57,14 @@
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/controlled_test_output/tier7_4b_20260509_cost_aware_policy_action_local_diagnostic/tier7_4b_results.json"
+      "value": "<repo>/controlled_test_output/tier7_4b_20260509_cost_aware_policy_action_local_diagnostic/tier7_4b_results.json"
     },
     {
       "name": "v2.3 baseline exists",
       "note": "",
       "passed": true,
       "rule": "exists",
-      "value": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.3.json"
+      "value": "<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.3.json"
     },
     {
       "name": "Tier 7.4b passed",
@@ -166,12 +166,12 @@
   "failed_criteria": [],
   "failure_reason": "",
   "generated_at_utc": "2026-05-09T01:52:33+00:00",
-  "output_dir": "/Users/james/JKS:CRA/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate",
+  "output_dir": "<repo>/controlled_test_output/tier7_4c_20260509_cost_aware_policy_action_promotion_gate",
   "runner_revision": "tier7_4c_cost_aware_policy_action_promotion_gate_20260509_0001",
   "runtime_seconds": 1615.014759042,
   "source_results": {
-    "tier7_4b": "/Users/james/JKS:CRA/controlled_test_output/tier7_4b_20260509_cost_aware_policy_action_local_diagnostic/tier7_4b_results.json",
-    "v2_3_baseline": "/Users/james/JKS:CRA/baselines/CRA_EVIDENCE_BASELINE_v2.3.json"
+    "tier7_4b": "<repo>/controlled_test_output/tier7_4b_20260509_cost_aware_policy_action_local_diagnostic/tier7_4b_results.json",
+    "v2_3_baseline": "<repo>/baselines/CRA_EVIDENCE_BASELINE_v2.3.json"
   },
   "status": "pass",
   "support": {

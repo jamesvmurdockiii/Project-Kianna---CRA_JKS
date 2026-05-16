@@ -92,28 +92,28 @@
       "profile": "context_core",
       "build_returncode": 0,
       "aplx_exists": true,
-      "aplx_path": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/build/coral_reef_context_core.aplx",
+      "aplx_path": "<repo>/coral_reef_spinnaker/spinnaker_runtime/build/coral_reef_context_core.aplx",
       "itcm_text_bytes": 11248
     },
     "route_core": {
       "profile": "route_core",
       "build_returncode": 0,
       "aplx_exists": true,
-      "aplx_path": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/build/coral_reef_route_core.aplx",
+      "aplx_path": "<repo>/coral_reef_spinnaker/spinnaker_runtime/build/coral_reef_route_core.aplx",
       "itcm_text_bytes": 11280
     },
     "memory_core": {
       "profile": "memory_core",
       "build_returncode": 0,
       "aplx_exists": true,
-      "aplx_path": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/build/coral_reef_memory_core.aplx",
+      "aplx_path": "<repo>/coral_reef_spinnaker/spinnaker_runtime/build/coral_reef_memory_core.aplx",
       "itcm_text_bytes": 11280
     },
     "learning_core": {
       "profile": "learning_core",
       "build_returncode": 0,
       "aplx_exists": true,
-      "aplx_path": "/Users/james/JKS:CRA/coral_reef_spinnaker/spinnaker_runtime/build/coral_reef_learning_core.aplx",
+      "aplx_path": "<repo>/coral_reef_spinnaker/spinnaker_runtime/build/coral_reef_learning_core.aplx",
       "itcm_text_bytes": 12968
     }
   },
