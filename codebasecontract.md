@@ -18,7 +18,7 @@ This section is intentionally current-stateful. Update it whenever work
 finishes, a run returns, the active tier changes, the next plan changes, or a
 new baseline is frozen. Do not let this section become stale.
 
-Last updated: 2026-05-16T15:34:13+00:00.
+Last updated: 2026-05-16T15:44:12+00:00.
 
 Current repo root:
 
@@ -52,11 +52,11 @@ Active cleanup state:
   rebaseline decision contract (12/12 criteria). The Tier 5.45a scoring runner
   is implemented and smoke-validated with output directed to /tmp only. A
   resumable shard orchestrator is committed and smoke-validated. Current shard
-  progress is 19/204 cells complete:
+  progress is 20/204 cells complete:
   organism_defaults_experimental_off completed sine, mackey_glass, lorenz,
   and narma10 across seeds 42, 43, and 44; enable_neural_heritability
   completed sine and mackey_glass across seeds 42, 43, and 44 plus lorenz
-  seed 42. Tier 5.45a runner revision 0003 adds a NEST numerical-instability
+  seeds 42 and 43. Tier 5.45a runner revision 0003 adds a NEST numerical-instability
   reset/rebuild retry before synthetic fallback; cells still count only when
   final fallback and backend failure counters are zero. All
   completed cells have zero fallback, zero sim.run failures, and zero
