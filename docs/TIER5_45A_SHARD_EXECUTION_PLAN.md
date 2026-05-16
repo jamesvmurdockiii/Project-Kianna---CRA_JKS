@@ -121,23 +121,25 @@ evidence.
 Current canonical cell progress as of 2026-05-16:
 
 ```text
-completed_cells = 11 / 204
-completed = organism_defaults_experimental_off / sine / seeds 42,43,44; mackey_glass / seeds 42,43,44; lorenz / seeds 42,43,44; narma10 / seeds 42,43
+completed_cells = 12 / 204
+completed = organism_defaults_experimental_off / sine,mackey_glass,lorenz,narma10 / seeds 42,43,44
 mean_sine_runtime_seconds = 424.926
 mean_sine_mse = 0.317516
 mean_sine_participation_ratio = 1.917018
+mackey_glass_mean_runtime_seconds = 412.473
 mackey_glass_mean_mse = 1.764449
 mackey_glass_mean_participation_ratio = 2.309325
 lorenz_mean_runtime_seconds = 410.410
 lorenz_mean_mse = 0.965999
 lorenz_mean_participation_ratio = 2.179225
-narma10_completed_seed_mse_mean = 1.283804
-narma10_completed_seed_participation_ratio_mean = 3.445939
+narma10_mean_runtime_seconds = 414.606
+narma10_mean_mse = 1.221387
+narma10_mean_participation_ratio = 3.434715
 criteria = 10/10
 synthetic_fallbacks = 0
 sim_run_failures = 0
 summary_read_failures = 0
-next_pending = organism_defaults_experimental_off / narma10 / seed 44
+next_pending = enable_neural_heritability / sine / seed 42
 ```
 
 These cells are valid shard artifacts for the eventual merged Tier 5.45a gate, but

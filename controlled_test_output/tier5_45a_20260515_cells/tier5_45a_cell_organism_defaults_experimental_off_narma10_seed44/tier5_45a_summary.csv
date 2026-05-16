@@ -1,0 +1,11 @@
+name,criterion,value,rule,passed,note
+Tier 5.45 contract exists,Tier 5.45 contract exists,True,true,True,
+all requested tasks known,all requested tasks known,['narma10'],subset of sine/MG/Lorenz/NARMA10,True,
+all required models scored,all required models scored,[],[],True,
+expected unique model/task/seed cells,expected unique model/task/seed cells,5,== 5,True,
+organism synthetic fallbacks zero,organism synthetic fallbacks zero,0,== 0,True,
+organism sim.run failures zero,organism sim.run failures zero,0,== 0,True,
+organism summary read failures zero,organism summary read failures zero,0,== 0,True,
+outcome classified,outcome classified,no_promotion_confirmed,non-empty,True,
+no automatic baseline freeze,no automatic baseline freeze,False,false,True,
+no hardware/native claim,no hardware/native claim,False,false,True,
