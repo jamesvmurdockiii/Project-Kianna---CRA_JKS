@@ -1,0 +1,2 @@
+model,geomean_mse_mean,delta_mse_vs_v2_6,delta_mse_vs_default,task_regression_ok_vs_v2_6,task_regression_ok_vs_default,pr_lift_vs_default_first_task,decision
+enable_neural_heritability,1.7701749913005542,-5.233274891203361,,False,False,,no_promotion
