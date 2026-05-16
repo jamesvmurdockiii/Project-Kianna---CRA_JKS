@@ -39,11 +39,11 @@ Active execution mode = repo-alignment remediation Gate 5.
        scoring runner is implemented and smoke-validated, and a resumable
        shard orchestrator is available. The next required gate is full Tier
        5.45a scoring before any new mechanism promotion, baseline freeze, or
-       paper-facing claim. Current shard progress is 16/204 cells complete:
+       paper-facing claim. Current shard progress is 17/204 cells complete:
        organism_defaults_experimental_off completed sine, mackey_glass, lorenz,
        and narma10 across seeds 42, 43, and 44; enable_neural_heritability
-       completed sine seeds 42, 43, and 44 plus mackey_glass seed 42. All
-       completed cells have zero fallback, zero sim.run failures, and zero
+       completed sine seeds 42, 43, and 44 plus mackey_glass seeds 42 and 43.
+       All completed cells have zero fallback, zero sim.run failures, and zero
        summary-read failures.
        Use
        docs/TIER5_45A_SHARD_EXECUTION_PLAN.md as the operational shard/merge
